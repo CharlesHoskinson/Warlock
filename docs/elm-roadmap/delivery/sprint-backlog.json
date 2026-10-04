@@ -4991,6 +4991,17 @@
       "fullGeometryCampaignAccepted": false,
       "fullReleaseAccepted": false,
       "completedRequirementIds": []
+    },
+    {
+      "manifest": "implementation/elm-shared-keyboard-loss-failure-v443/qa/slice-manifest.json",
+      "manifestSHA256": "d0eb12ce88362907866d2373bd12122326539caf2d1fc42cd1c9524b821b3e1e",
+      "summary": "Shared open-menu loss441 focus cancellation passed then unsupported parentEscape fixture failure; fresh442 focus cancellation/recovered parentA/native Escape passed, capability cancellation/core ledgers/releases/no-effect/output preserved but fresh parentA typing after restoration failed original6s. ParentHypr trace enter/key30 down/up; shared host newkeyboard keymap/repeat with noenter/key pair while popupbuffer continues. Both normal cleanup. Frozen44369files/2failedreports. Current439 source422/runtime435/AQ155 remains candidate; QA440 onlyparent151 faultmodule. Cause not yet proven; native keyboard focus/resource observer next. No new native acceptance.",
+      "nativeAcceptance": false,
+      "evidenceIntegrityPassed": true,
+      "sourceCandidate": "implementation/elm-shared-geometry-carrier-v422",
+      "runtimeCandidate": "implementation/elm-shared-keyboard-runtime-v435",
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
     }
   ]
 }

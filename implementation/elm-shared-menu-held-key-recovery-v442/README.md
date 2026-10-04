@@ -1,0 +1,1 @@
+Fresh436 original69 campaign plus actual shared open-menu parent keyboard focus/capability loss under additive requirements. Core132 observer and protocol7 parent151 provide independent native state and real loss; production source422/AQ155/geometry409 unchanged.

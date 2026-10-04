@@ -1,0 +1,370 @@
+{
+  "passed": true,
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "scope": "Frozen shared open-menu keyboard restoration failure; source439 remains candidate, no new native acceptance",
+  "parentManifest": "/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-keyboard-integrated-v439/qa/slice-manifest.json",
+  "parentManifestSHA256": "111b2e70f9dc1d77f67b36f826785d59977e1439c7ab3aa111f5239598e5820c",
+  "files": [
+    {
+      "path": "implementation/elm-shared-keyboard-loss-runtime-v440/README.md",
+      "sha256": "8e1ac4ae39a625dd9cd52025f209d9eedbb33f13551d5d392ae1b1c1e8b33c5b",
+      "size": 188
+    },
+    {
+      "path": "implementation/elm-shared-keyboard-loss-runtime-v440/aq-tuple.json",
+      "sha256": "4d4c71943b05bb0453184dccb6caabadb72067445ff980e9359bd427ba4d433e",
+      "size": 667
+    },
+    {
+      "path": "implementation/elm-shared-keyboard-loss-runtime-v440/candidate_host.py",
+      "sha256": "7c8cb4c0990d21241a7689fcbf4276f81886d2660606c82f8dff7cd7cff4d387",
+      "size": 10070
+    },
+    {
+      "path": "implementation/elm-shared-keyboard-loss-runtime-v440/native-build-report.json",
+      "sha256": "e40c1c32cea89fb14765bfe34943a77cee7a043f8230ad7adac0853ea8f8c80e",
+      "size": 1772
+    },
+    {
+      "path": "implementation/elm-shared-keyboard-loss-runtime-v440/parent-probe-build.json",
+      "sha256": "add279f7e62becd425d54145c6762e3e6d45c276587f50457384f41302947199",
+      "size": 237
+    },
+    {
+      "path": "implementation/elm-shared-keyboard-loss-runtime-v440/qa/build-pair-manifest.json",
+      "sha256": "3cda14ee71bb195ec42e9247e0fd9d69332f4e2858ceca6a4e325c1e5b07a8da",
+      "size": 2095
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/README.md",
+      "sha256": "87c25405f7b569262a60127c205cfac99f374ff568a6ed7e32c8471fbab08775",
+      "size": 264
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/REQUIREMENTS.md",
+      "sha256": "ba94447d82363291f0949810d605055d6681a2b4c603974438201e22d8e02fdb",
+      "size": 1176
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/fixture.py",
+      "sha256": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06",
+      "size": 5267
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/observer-build.json",
+      "sha256": "22b308daca43e79955f2d33d7c289d812c3aa709c4fa9c9ed1a26e1200bb235c",
+      "size": 236
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/qa/grab_guard.py",
+      "sha256": "a1714ba4298967555af5d417ee2a1e926fbe19035dfa014546a75ff4a5d42770",
+      "size": 443
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/qa/inspection.py",
+      "sha256": "051d44430a49319389781d12bc0389732d76412ef1cf7f59f352f5e78f67bdd2",
+      "size": 2563
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/qa/interactive-client.py",
+      "sha256": "a88b87dbaf4c0ca709279b703e9037e5c8510f43acd5b116855a206b0ebf128b",
+      "size": 8917
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/qa/native-1791130522419869328/native-evidence/authority-config.json",
+      "sha256": "da61c283707936945a1a3927e205263d371e5ee46b6bd05ffb5fa017e81533c5",
+      "size": 246
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/qa/native-1791130522419869328/native-evidence/dmabuf-probe.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/qa/native-1791130522419869328/native-evidence/dmabuf-probe.stdout",
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/qa/native-1791130522419869328/native-evidence/elm-webview.log",
+      "sha256": "0e8a9fb9879931ef2fb4e2c8cb7045cdf18e2fc48dfee8e760d54b39f0fd541b",
+      "size": 106403
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/qa/native-1791130522419869328/native-evidence/fixture.log",
+      "sha256": "561272492b14fb238694bbb0a3c031f8edf3e2e83e02fc32e5dd8c88931944a1",
+      "size": 559505
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/qa/native-1791130522419869328/native-evidence/host-evidence.json",
+      "sha256": "ac9df9d85c8143d1153454f900a845fcb9194cc05f99372ea88746133d42936b",
+      "size": 215802
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/qa/native-1791130522419869328/native-evidence/hyprland.log",
+      "sha256": "f2a6d37fea839b91fb2814d66dedaf981e805bc761550eed833a13587bf402be",
+      "size": 263398
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/qa/native-1791130522419869328/native-evidence/parent-input-interactive.log",
+      "sha256": "6e21c8673b423b2e175934df65f2151d9072f33b2e8811bf6ec8eccfa518f1da",
+      "size": 645
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/qa/native-1791130522419869328/native-evidence/privateBus.log",
+      "sha256": "153945b2f99d0a56816baaf825bd72c2a823948da7b4631c22966ef7f6d4f523",
+      "size": 5570
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/qa/native-1791130522419869328/native-evidence/runtime-archive/.flatpak/webkit-2405217-16/bwrapinfo.json",
+      "sha256": "07522fb202aacc2009e5d7275293cb01ddf89f6cef80c193998d9b55e42e8ed3",
+      "size": 161
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/qa/native-1791130522419869328/native-evidence/runtime-archive/.flatpak/webkit-2405217-4/bwrapinfo.json",
+      "sha256": "b00769497385e752635dbfb87c119b453fab1acaf5fe2cef2dc3fa0e0e65ecb3",
+      "size": 194
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/qa/native-1791130522419869328/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791130524_1316057641/10910404786577703557/ledger-v5.json",
+      "sha256": "b18c490025eb1f50f7a38df6c9d8068d1bb481d387e97097669a8d23a18f2b93",
+      "size": 213
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/qa/native-1791130522419869328/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791130524_1316057641/10910404786577703557/migration-plan.json",
+      "sha256": "260f230e409ba9406e3b3c7ba7dfaa808315623c4c44fd584760d1826a26a074",
+      "size": 248
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/qa/native-1791130522419869328/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791130524_1316057641/10910404786577703557/migration.json",
+      "sha256": "ab4bf6d98057f12aa2c9a7ed635c2f6485530c2241fc8932ec5bb3e9b853784b",
+      "size": 229
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/qa/native-1791130522419869328/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791130524_1316057641/hyprland.log",
+      "sha256": "d0275ccb833a9fdce9d12d1307ee89648ff031dadc27071843ef9366f6173aad",
+      "size": 24339
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/qa/native-1791130522419869328/native-evidence/runtime-archive/hyprland.lua",
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "size": 241
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/qa/native-1791130522419869328/native-evidence/weston-renderer.log",
+      "sha256": "5e2cf18a02e77a163f85ad707af514a748908ad2a6f175bf7430312558c45bb7",
+      "size": 4567
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/qa/native-1791130522419869328/native-evidence/weston.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/qa/native-1791130522419869328/report.json",
+      "sha256": "256ae847cd949066a97e2ddd15b1c9dbf1dd14513b5767890eb5bd6a321d5198",
+      "size": 234042
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/qa/native.py",
+      "sha256": "e7403953726c5a0f64b8abbfceb1194b19d0a6eb85939be41c7c066d180bce01",
+      "size": 30581
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/qa/preflight.json",
+      "sha256": "20b2afcf00d0d197eee3ff60b9d4d5aa2d2a73b78a5cfd0e3a8da692e7070e4a",
+      "size": 31753
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/qa/preflight.py",
+      "sha256": "aedcfc51d327748ef82686e7fac6f722859ae4f4e7e472d811d2d14a7d5174db",
+      "size": 3230
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/qa/sampling.py",
+      "sha256": "d1fd77191300c5ff48e6ba91933c8049a5138cf0de11667a272b6a5066f7652a",
+      "size": 3287
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/README.md",
+      "sha256": "87c25405f7b569262a60127c205cfac99f374ff568a6ed7e32c8471fbab08775",
+      "size": 264
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/REQUIREMENTS.md",
+      "sha256": "160753415af92daeaac7a501da85f30816df96435c1a07af3be93e9a9705ba2e",
+      "size": 1596
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/fixture.py",
+      "sha256": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06",
+      "size": 5267
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/observer-build.json",
+      "sha256": "22b308daca43e79955f2d33d7c289d812c3aa709c4fa9c9ed1a26e1200bb235c",
+      "size": 236
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/qa/grab_guard.py",
+      "sha256": "a1714ba4298967555af5d417ee2a1e926fbe19035dfa014546a75ff4a5d42770",
+      "size": 443
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/qa/inspection.py",
+      "sha256": "051d44430a49319389781d12bc0389732d76412ef1cf7f59f352f5e78f67bdd2",
+      "size": 2563
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/qa/interactive-client.py",
+      "sha256": "a88b87dbaf4c0ca709279b703e9037e5c8510f43acd5b116855a206b0ebf128b",
+      "size": 8917
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/qa/native-1791130606276325902/native-evidence/authority-config.json",
+      "sha256": "e0f1b8da609d047f9f0c0f571f39fd5c0dc7aaf42800375a8ae2fe9643d770d4",
+      "size": 245
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/qa/native-1791130606276325902/native-evidence/dmabuf-probe.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/qa/native-1791130606276325902/native-evidence/dmabuf-probe.stdout",
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/qa/native-1791130606276325902/native-evidence/elm-webview.log",
+      "sha256": "41fb5865db5d68aead658e8aa080f93a77a2d1c56d78622f2befbacd2bfae4be",
+      "size": 254122
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/qa/native-1791130606276325902/native-evidence/fixture-control.events.jsonl",
+      "sha256": "d602601ad62004ed11410c583b1b6f37b5d88895f3c6f8d91e70afc62c021978",
+      "size": 78
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/qa/native-1791130606276325902/native-evidence/fixture.log",
+      "sha256": "36de0a020d9e035b18f13c99f00f1c6944445b49bc2fe8597252b6aaa0a54941",
+      "size": 786509
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/qa/native-1791130606276325902/native-evidence/host-evidence.json",
+      "sha256": "66fb2329295e4ac83c6423939642dfefea44e00d34e556e1f4c94c6e165b9076",
+      "size": 215988
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/qa/native-1791130606276325902/native-evidence/hyprland.log",
+      "sha256": "815fd3c39564eeeea1f2676eed2eae2757c2a3a1482df96e1759f6f7e41b9e58",
+      "size": 495152
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/qa/native-1791130606276325902/native-evidence/parent-input-interactive.log",
+      "sha256": "7ea161a750f994dbc853ad2ae3700370867b20e1388b7781f92422241dece010",
+      "size": 1377
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/qa/native-1791130606276325902/native-evidence/privateBus.log",
+      "sha256": "d7fbf058d6664d51b01bb465ac310fdd93a09e5a1d64891da24836e4e1b3810a",
+      "size": 5570
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/qa/native-1791130606276325902/native-evidence/runtime-archive/.flatpak/webkit-2412727-16/bwrapinfo.json",
+      "sha256": "e27114f217d37cf9983bf4b3283395f2505e1a3d64f2e59c61cc085ff61d8176",
+      "size": 161
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/qa/native-1791130606276325902/native-evidence/runtime-archive/.flatpak/webkit-2412727-4/bwrapinfo.json",
+      "sha256": "4973a930f533464f2b560598e117bed808de5dd60c1bab423b631962b5813898",
+      "size": 194
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/qa/native-1791130606276325902/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791130607_157740521/14919342314245006843/ledger-v5.json",
+      "sha256": "7735495047d6528a1c8739eb9e42196c9c26d9eb05151c49a36e20bf1552a739",
+      "size": 213
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/qa/native-1791130606276325902/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791130607_157740521/14919342314245006843/migration-plan.json",
+      "sha256": "6072c48c13a3c2892af0b506e0257b16c4e1c742bd690741fd23c6bc42bd330d",
+      "size": 247
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/qa/native-1791130606276325902/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791130607_157740521/14919342314245006843/migration.json",
+      "sha256": "baa7b4c80109d9ac913785ac8ed3406c57469fdcbd4b59b526dec79d6a8556ef",
+      "size": 228
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/qa/native-1791130606276325902/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791130607_157740521/hyprland.log",
+      "sha256": "f32cec8a2787fe6a1dbecfc7d648e511418a903200ee728483cab2f43245f65c",
+      "size": 24396
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/qa/native-1791130606276325902/native-evidence/runtime-archive/hyprland.lua",
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "size": 241
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/qa/native-1791130606276325902/native-evidence/weston-renderer.log",
+      "sha256": "0e3a7dc7196d95f77bead634247108dd3df27fbea9fa1148dcf3c16f3e2edfe2",
+      "size": 5533
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/qa/native-1791130606276325902/native-evidence/weston.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/qa/native-1791130606276325902/report.json",
+      "sha256": "a59e3972ce99c8828b16d281bac6b7ac6794601180af16a628e8cb2d11b1db35",
+      "size": 239099
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/qa/native.py",
+      "sha256": "88605af3f2b09430793042a45d09ec23ed30ef5bdda0f3ad82367bc0c27d41c9",
+      "size": 31058
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/qa/preflight.json",
+      "sha256": "3032b67d571979fe8e624b03fefd03f8347f5db714e7982f628fecf1eae4b45a",
+      "size": 31781
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/qa/preflight.py",
+      "sha256": "aedcfc51d327748ef82686e7fac6f722859ae4f4e7e472d811d2d14a7d5174db",
+      "size": 3230
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/qa/sampling.py",
+      "sha256": "d1fd77191300c5ff48e6ba91933c8049a5138cf0de11667a272b6a5066f7652a",
+      "size": 3287
+    },
+    {
+      "path": "implementation/elm-shared-keyboard-loss-failure-v443/HANDOFF.md",
+      "sha256": "9d84e04fb3ca2d3657dbd24879908fd13eba6c8d2eaf23d111228e3a82868394",
+      "size": 2383
+    },
+    {
+      "path": "implementation/elm-shared-keyboard-loss-failure-v443/qa/freeze.py",
+      "sha256": "97f452f961f64a28470a0d9b046a78e8725ba306d80d52a6e3faf93f3e359972",
+      "size": 2503
+    }
+  ],
+  "reports": [
+    {
+      "path": "implementation/elm-shared-menu-held-key-loss-v441/qa/native-1791130522419869328/report.json",
+      "sha256": "256ae847cd949066a97e2ddd15b1c9dbf1dd14513b5767890eb5bd6a321d5198",
+      "passed": false
+    },
+    {
+      "path": "implementation/elm-shared-menu-held-key-recovery-v442/qa/native-1791130606276325902/report.json",
+      "sha256": "a59e3972ce99c8828b16d281bac6b7ac6794601180af16a628e8cb2d11b1db35",
+      "passed": false
+    }
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "completedRequirementIds": []
+}
