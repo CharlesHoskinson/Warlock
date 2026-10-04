@@ -1,0 +1,277 @@
+{
+  "passed": false,
+  "inputs": {
+    "qa/backend.py": "38d11b808739b9f4bc50753741d82ad7df727ed2e744bb7d9111554d230c3664",
+    "qa/broker-entrypoint.py": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+    "qa/deadline.py": "109ec6a1d6e6c74af87d941468a6bd3fc8da80fb6d7accbaf44b6c092c4b1d7c",
+    "qa/edges.py": "1be6f92584856f50e101949d748ed38ff365fefa441018cdabce751cd1da5017",
+    "qa/profile-test.py": "b1d120c8a3e2fe35f6bd8a837421ac1938a3d9dccc57aeaa2a8441dab9eb6474",
+    "qa/receipt-test.py": "aa6e665bf22e770be84a0fb9ca4f170bd2e36d6268ffc58395b93a426081a0ed",
+    "qa/relay.py": "15192ac63edb77b2e7a31f77c8a90574ddb9c70243cb7a30cf03f11111543e79",
+    "qa/selector-test.py": "b7bb05f020e9a28db71838f0abd4371acaa8b8301893d98e2efcc517155da1d9",
+    "qa/staged-test.py": "864b8cb89ea6a59982712ad82d5e30a35b3aa382f834bb0a764c97bf458e119d",
+    "qa/test.py": "3377f219b81ddd86f77542ddbbf4d0b99614fea3778d8ffc12cbe960f127ec7f",
+    "qa/wrapper.py": "150be4b287b6174477bd1033ff3ef7c017a01de411f7eb6d018a387bd033af72",
+    "parent.json": "68599b690847dfd7b194e1eab8e9d76432b8223e3373a811e07b3542243b84fe",
+    "upstream.json": "68599b690847dfd7b194e1eab8e9d76432b8223e3373a811e07b3542243b84fe"
+  },
+  "checks": [
+    {
+      "name": "exact captured current144 schema5 backend imports",
+      "passed": true
+    },
+    {
+      "name": "ordinal2 first distinct fullkey committed passes unchanged and starts no timer",
+      "passed": true
+    },
+    {
+      "name": "outer receipt metadata does not change full native key or advance count",
+      "passed": true
+    },
+    {
+      "name": "Unknown passes unchanged without ordinal increment",
+      "passed": true
+    },
+    {
+      "name": "Refused passes unchanged without ordinal increment",
+      "passed": true
+    },
+    {
+      "name": "target mismatch passes unchanged without counting",
+      "passed": true
+    },
+    {
+      "name": "protocol mismatch passes unchanged without counting",
+      "passed": true
+    },
+    {
+      "name": "operation mismatch passes unchanged without counting",
+      "passed": true
+    },
+    {
+      "name": "second distinct fullkey across reconnect is held exactly without delivery",
+      "passed": true
+    },
+    {
+      "name": "held file records full original second binding intent and receipt",
+      "passed": true
+    },
+    {
+      "name": "duplicate selected fullkey refuses instead of bypassing receipt hold",
+      "passed": true
+    },
+    {
+      "name": "after selecting one hold unrelated further key passes without unbounded metadata",
+      "passed": true
+    },
+    {
+      "name": "selected ordinal2 original receipt releases exactly once",
+      "passed": true
+    },
+    {
+      "name": "retired actorA ordinal2 forwards06 while fresh actorB ordinal1 holds09",
+      "passed": true
+    },
+    {
+      "name": "fresh actor exact09 releases once without retargeting old holder",
+      "passed": true
+    },
+    {
+      "name": "uniform ordinal1 Unknown never counts or fabricatesCommitted",
+      "passed": true
+    },
+    {
+      "name": "uniform ordinal1 Refused never counts or fabricatesCommitted",
+      "passed": true
+    },
+    {
+      "name": "uniform ordinal2 Unknown never counts or fabricatesCommitted",
+      "passed": true
+    },
+    {
+      "name": "uniform ordinal2 Refused never counts or fabricatesCommitted",
+      "passed": true
+    },
+    {
+      "name": "closed ordinal type/value True",
+      "passed": true
+    },
+    {
+      "name": "closed ordinal type/value False",
+      "passed": true
+    },
+    {
+      "name": "closed ordinal type/value 0",
+      "passed": true
+    },
+    {
+      "name": "closed ordinal type/value 3",
+      "passed": true
+    },
+    {
+      "name": "closed ordinal type/value -1",
+      "passed": true
+    },
+    {
+      "name": "closed ordinal type/value 1.0",
+      "passed": true
+    },
+    {
+      "name": "closed ordinal type/value '2'",
+      "passed": true
+    },
+    {
+      "name": "closed ordinal type/value None",
+      "passed": true
+    },
+    {
+      "name": "malformed selected candidate does not consume ordinal bindingzero",
+      "passed": true
+    },
+    {
+      "name": "malformed selected candidate does not consume ordinal requestzero",
+      "passed": true
+    },
+    {
+      "name": "malformed selected candidate does not consume ordinal generationBool",
+      "passed": true
+    },
+    {
+      "name": "malformed selected candidate does not consume ordinal generationOverflow",
+      "passed": true
+    },
+    {
+      "name": "malformed selected candidate does not consume ordinal contextMismatch",
+      "passed": true
+    },
+    {
+      "name": "malformed selected candidate does not consume ordinal extraIntent",
+      "passed": true
+    },
+    {
+      "name": "malformed selected candidate does not consume ordinal extraEnvelope",
+      "passed": true
+    },
+    {
+      "name": "malformed selected candidate does not consume ordinal invalidStatus",
+      "passed": true
+    },
+    {
+      "name": "malformed selected candidate does not consume ordinal badReason",
+      "passed": true
+    },
+    {
+      "name": "watchdog starts at selected original receipt and has original5sec bound",
+      "passed": true
+    },
+    {
+      "name": "deadline not extended by locked or unchanged gate",
+      "passed": true
+    },
+    {
+      "name": "late release cannot bypass deadline",
+      "passed": true
+    },
+    {
+      "name": "exact config optional ordinal None",
+      "passed": true
+    },
+    {
+      "name": "entrypoint forwards explicit ordinal None",
+      "passed": true
+    },
+    {
+      "name": "exact config optional ordinal 1",
+      "passed": true
+    },
+    {
+      "name": "entrypoint forwards explicit ordinal 1",
+      "passed": true
+    },
+    {
+      "name": "exact config optional ordinal 2",
+      "passed": true
+    },
+    {
+      "name": "entrypoint forwards explicit ordinal 2",
+      "passed": true
+    },
+    {
+      "name": "private config rejects wrong ordinal True",
+      "passed": true
+    },
+    {
+      "name": "private config rejects wrong ordinal 0",
+      "passed": true
+    },
+    {
+      "name": "private config rejects wrong ordinal 3",
+      "passed": true
+    },
+    {
+      "name": "private config rejects wrong ordinal '2'",
+      "passed": true
+    },
+    {
+      "name": "private config rejects wrong ordinal 2.0",
+      "passed": true
+    },
+    {
+      "name": "private config rejects wrong ordinal None",
+      "passed": true
+    }
+  ],
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-8d94902a0e6449ef895c29bd8566cf41.scope",
+    "coreLimit": 1
+  },
+  "nativeAcceptance": false,
+  "full09Accepted": false,
+  "scope": "Actual wrapper/controller with synthetic native receipt objects, filesystem gate and actual held backend import. Distinct selector CPU only; no native execution.",
+  "error": "KeyError('path')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-eof-receipt-fixture-v148/qa/selector-test.py\", line 86, in <module>\n    parent=json.loads((ROOT/'parent.json').read_text());base=ROOT.parents[1]/parent['path'];check('frozen V78 ancestor manifest exact',sha(base/'qa/held-source-manifest.json')==parent['heldManifestSHA256'])\n                                                                             ~~~~~~^^^^^^^^\nKeyError: 'path'\n",
+  "artifacts": {
+    "authority.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "wrapper.json": "e7b7a37571a11782c4197007b6190669f302331aa0338368ca4da69347ec8eeb",
+    "inputs/parent.json": "68599b690847dfd7b194e1eab8e9d76432b8223e3373a811e07b3542243b84fe",
+    "inputs/upstream.json": "68599b690847dfd7b194e1eab8e9d76432b8223e3373a811e07b3542243b84fe",
+    "control1/gate.json": "f44624300c4ec898aedabd60b6ef846542b27be376bc858c8b88300144167bd2",
+    "control1/held.json": "ed892324923674ee4e89169f28123f982dac73fbde1e756e76b48e8b5ad0ca6f",
+    "control2/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control3/gate.json": "fbb7e00e3a40220084d687664cfe6b2332ce06a0c479241c05d8ad12aca9b876",
+    "control3/held.json": "7d7273477005e07cc57ba0cf1d8d6d6737c744d225e5c1ef6c900395a339ad92",
+    "control4/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control5/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control6/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control7/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control8/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control9/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control10/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control11/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control12/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control13/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control14/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control15/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control16/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control17/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control18/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control19/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control20/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control21/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control22/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control23/gate.json": "86b726cd9911955d92adacaf4927a78208a6a257c0137357df364dcf03e09044",
+    "control23/held.json": "4be47ac2540d69fa14c0683944b3a2c6dfad019194039edc5492bbb688df209e",
+    "control24/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "inputs/qa/backend.py": "38d11b808739b9f4bc50753741d82ad7df727ed2e744bb7d9111554d230c3664",
+    "inputs/qa/broker-entrypoint.py": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+    "inputs/qa/deadline.py": "109ec6a1d6e6c74af87d941468a6bd3fc8da80fb6d7accbaf44b6c092c4b1d7c",
+    "inputs/qa/edges.py": "1be6f92584856f50e101949d748ed38ff365fefa441018cdabce751cd1da5017",
+    "inputs/qa/profile-test.py": "b1d120c8a3e2fe35f6bd8a837421ac1938a3d9dccc57aeaa2a8441dab9eb6474",
+    "inputs/qa/receipt-test.py": "aa6e665bf22e770be84a0fb9ca4f170bd2e36d6268ffc58395b93a426081a0ed",
+    "inputs/qa/relay.py": "15192ac63edb77b2e7a31f77c8a90574ddb9c70243cb7a30cf03f11111543e79",
+    "inputs/qa/selector-test.py": "b7bb05f020e9a28db71838f0abd4371acaa8b8301893d98e2efcc517155da1d9",
+    "inputs/qa/staged-test.py": "864b8cb89ea6a59982712ad82d5e30a35b3aa382f834bb0a764c97bf458e119d",
+    "inputs/qa/test.py": "3377f219b81ddd86f77542ddbbf4d0b99614fea3778d8ffc12cbe960f127ec7f",
+    "inputs/qa/wrapper.py": "150be4b287b6174477bd1033ff3ef7c017a01de411f7eb6d018a387bd033af72"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "passed": false,
+  "scope": "Actual QA wrapper with synthetic receipts and CPU subprocess cleanup only; no native execution or rendering acceptance",
+  "inputs": {
+    "qa/wrapper.py": "150be4b287b6174477bd1033ff3ef7c017a01de411f7eb6d018a387bd033af72",
+    "qa/backend.py": "38d11b808739b9f4bc50753741d82ad7df727ed2e744bb7d9111554d230c3664",
+    "backend-pin.json": "c64313d34603c306722b1bcfa26417d846b9e402d9da1acefa4ed26d58ad2092",
+    "qa/receipt-test.py": "aa6e665bf22e770be84a0fb9ca4f170bd2e36d6268ffc58395b93a426081a0ed"
+  },
+  "checks": [],
+  "processes": [],
+  "error": "AttributeError(\"module 'receipt_wrapper' has no attribute 'SOURCE'\")",
+  "artifacts": {
+    "inputs/backend-pin.json": "c64313d34603c306722b1bcfa26417d846b9e402d9da1acefa4ed26d58ad2092",
+    "inputs/qa/wrapper.py": "150be4b287b6174477bd1033ff3ef7c017a01de411f7eb6d018a387bd033af72",
+    "inputs/qa/backend.py": "38d11b808739b9f4bc50753741d82ad7df727ed2e744bb7d9111554d230c3664",
+    "inputs/qa/receipt-test.py": "aa6e665bf22e770be84a0fb9ca4f170bd2e36d6268ffc58395b93a426081a0ed"
+  }
+}
