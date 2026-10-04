@@ -1,0 +1,203 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Compiled production CensusBudget bounds and real libwayland resource identity controls; no owning compositor/grab execution",
+  "commands": [
+    {
+      "name": "compile",
+      "args": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-census-v305/qa/test-1791152885205658250",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-census-v305/qa/test-1791152885205658250/budget-test.cpp",
+        "-lwayland-server",
+        "-lm",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-census-v305/qa/test-1791152885205658250/test"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "actual",
+      "args": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-census-v305/qa/test-1791152885205658250/test"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "duplicate-compile",
+      "args": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-census-v305/qa/test-1791152885205658250",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-census-v305/qa/test-1791152885205658250/budget-test.cpp",
+        "-lwayland-server",
+        "-lm",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-census-v305/qa/test-1791152885205658250/duplicate"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "duplicate-witness",
+      "args": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-census-v305/qa/test-1791152885205658250/duplicate"
+      ],
+      "exitCode": -6
+    },
+    {
+      "name": "surface-bound-compile",
+      "args": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-census-v305/qa/test-1791152885205658250",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-census-v305/qa/test-1791152885205658250/budget-test.cpp",
+        "-lwayland-server",
+        "-lm",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-census-v305/qa/test-1791152885205658250/surface-bound"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "surface-bound-witness",
+      "args": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-census-v305/qa/test-1791152885205658250/surface-bound"
+      ],
+      "exitCode": -6
+    },
+    {
+      "name": "member-bound-compile",
+      "args": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-census-v305/qa/test-1791152885205658250",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-census-v305/qa/test-1791152885205658250/budget-test.cpp",
+        "-lwayland-server",
+        "-lm",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-census-v305/qa/test-1791152885205658250/member-bound"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "member-bound-witness",
+      "args": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-census-v305/qa/test-1791152885205658250/member-bound"
+      ],
+      "exitCode": -6
+    },
+    {
+      "name": "output-bound-compile",
+      "args": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-census-v305/qa/test-1791152885205658250",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-census-v305/qa/test-1791152885205658250/budget-test.cpp",
+        "-lwayland-server",
+        "-lm",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-census-v305/qa/test-1791152885205658250/output-bound"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "output-bound-witness",
+      "args": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-census-v305/qa/test-1791152885205658250/output-bound"
+      ],
+      "exitCode": -6
+    }
+  ],
+  "mutants": [
+    {
+      "name": "duplicate",
+      "exitCode": -6,
+      "killed": true
+    },
+    {
+      "name": "surface-bound",
+      "exitCode": -6,
+      "killed": true
+    },
+    {
+      "name": "member-bound",
+      "exitCode": -6,
+      "killed": true
+    },
+    {
+      "name": "output-bound",
+      "exitCode": -6,
+      "killed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-census-v305/native/census-budget.hpp": "d590f4525cca4824adb16aa896b0d6d9b662bb3db06c67699b0280b93064af2b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-census-v305/qa/budget-test.cpp": "813027a52146dbfcc91fe97ae7d5db3969b4b845d7687d9ec6f6c0884e5e03a1",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-census-v305/qa/test.py": "a8bfdbdcead8fa30668a21be64703fc201538c84f6ce27325c897917f3d286bb"
+  },
+  "linkedLibraries": {
+    "/usr/lib/libwayland-server.so.0.26.0": "7e89d8a177a78343a7cf92e3c1c756dc98a437489de4861ff6de907c7e48af89",
+    "/usr/lib/libstdc++.so.6.0.36": "f5fc7380f2ae46fa4053a64be04e7b98109f1066a4bbfff3c37042488aa0be0e",
+    "/usr/lib/libm.so.6": "965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d",
+    "/usr/lib/libgcc_s.so.1": "e618cb9c90c2eb3a1dad1cfea5b6c1eebcf2e799ad805976f4ae47bdd61c716a",
+    "/usr/lib/libc.so.6": "e221b10fee9ee4776d8f0f1701253bc06817f7a4dbe6c5292487277d0bf8ffff",
+    "/usr/lib/libffi.so.8.5.0": "b38bb3a55ba04dfbb5be68e881a72385d6c30010afffb1cf1dfc373b72c2278c",
+    "/usr/lib/ld-linux-x86-64.so.2": "d011113b7054c641c8ca064f58bcc23804fd2654a3dff2444dad06ddeda61bfb"
+  },
+  "tools": {
+    "/usr/bin/c++": "f04191f6a7b2cd7d9a62e1745872b8a6088791e5af6955488c69c9b2c4668bc9",
+    "/usr/bin/pkgconf": "6b445a4786f5ac89bfcbf0aeab5ee80b10cafb8aebeb0d5e24237f99545423fe",
+    "/usr/bin/ldd": "94f332c23cf00596d0387d6f54693664f9a53334d65953b2ff308057cc8530b1"
+  },
+  "artifacts": {
+    "census-budget.hpp": "d590f4525cca4824adb16aa896b0d6d9b662bb3db06c67699b0280b93064af2b",
+    "budget-test.cpp": "813027a52146dbfcc91fe97ae7d5db3969b4b845d7687d9ec6f6c0884e5e03a1",
+    "test.py": "a8bfdbdcead8fa30668a21be64703fc201538c84f6ce27325c897917f3d286bb",
+    "test": "497eb6ecf46a0277da4603187876a5378274eba2f8b8971d3849947d1d79d829",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual.stdout": "255f1af413a6c9198ec388ba268377beff773cca015e1f38478f4e2dec1db219",
+    "actual.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "duplicate": "365154da85be872021f699e424d0f48a23ed469ddcfb2ee8f3dcfd1cb06532f1",
+    "duplicate-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "duplicate-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "duplicate-witness.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "duplicate-witness.stderr": "0617fb1feab05db510a337b509eb8f505e2afeb5c9a446efbac1484289c5db05",
+    "surface-bound": "d83eb1c8c7f846fed4a2a91a43b14b137f85568eb22a528a6c4ca8785871da0f",
+    "surface-bound-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "surface-bound-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "surface-bound-witness.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "surface-bound-witness.stderr": "6ecdf2c3b2888c321340e90603e7bf48c035e12f2b41357e498c18f8e8751e49",
+    "member-bound": "86956a1edb25f76e9668bec1797b43f66141fad30fce386fdf87a3bb82e3ea05",
+    "member-bound-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "member-bound-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "member-bound-witness.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "member-bound-witness.stderr": "8527b47d45f338e06a22ccd494ea77932f34a797a9ebda5f5313877b9c986a81",
+    "output-bound": "2c524765d5f6a029755ea36204b16ea86a3cffcd29eb1d151d9c1df79b67f0e7",
+    "output-bound-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output-bound-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output-bound-witness.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output-bound-witness.stderr": "2126b3ab44a6328bc3932b4e57d197f795439eefdccc3527808eea8a79c5259e"
+  }
+}
