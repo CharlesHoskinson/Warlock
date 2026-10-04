@@ -1,0 +1,16 @@
+
+  reconcile
+    1) noAutomaticReplayTest failed after 1 test(s)
+
+  1 failed
+
+  1) noAutomaticReplayTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-unknown-reconciliation-model-v578/qa/model-1791144272967801443/explicit-intent.qnt:24:126
+        24:  run noAutomaticReplayTest = init.then(attach).then(retire).then(observe).then(persist).then(release).then(submit).then(all {assert(not(s.reserved) and s.submits==0 and s.unknownHistory),s'=s})
+                                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x14245 --match=noAutomaticReplayTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 explicit-intent.qnt

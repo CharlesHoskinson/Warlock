@@ -1,0 +1,704 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      durable: false,
+      explicit: false,
+      newBinding: false,
+      oldLive: true,
+      proof: false,
+      read: false,
+      reserved: true,
+      scope: true,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      durable: false,
+      explicit: false,
+      newBinding: false,
+      oldLive: true,
+      proof: false,
+      read: false,
+      reserved: true,
+      scope: true,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      durable: false,
+      explicit: false,
+      newBinding: false,
+      oldLive: true,
+      proof: false,
+      read: false,
+      reserved: true,
+      scope: true,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      durable: false,
+      explicit: false,
+      newBinding: false,
+      oldLive: true,
+      proof: false,
+      read: false,
+      reserved: true,
+      scope: true,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      durable: false,
+      explicit: false,
+      newBinding: false,
+      oldLive: true,
+      proof: false,
+      read: false,
+      reserved: true,
+      scope: true,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      durable: false,
+      explicit: false,
+      newBinding: false,
+      oldLive: true,
+      proof: false,
+      read: false,
+      reserved: true,
+      scope: true,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      durable: false,
+      explicit: false,
+      newBinding: false,
+      oldLive: true,
+      proof: false,
+      read: false,
+      reserved: true,
+      scope: true,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      durable: false,
+      explicit: false,
+      newBinding: false,
+      oldLive: true,
+      proof: false,
+      read: false,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      durable: false,
+      explicit: false,
+      newBinding: false,
+      oldLive: true,
+      proof: false,
+      read: false,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      durable: false,
+      explicit: false,
+      newBinding: false,
+      oldLive: true,
+      proof: false,
+      read: false,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      durable: false,
+      explicit: false,
+      newBinding: true,
+      oldLive: true,
+      proof: false,
+      read: false,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      durable: false,
+      explicit: false,
+      newBinding: true,
+      oldLive: true,
+      proof: false,
+      read: false,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      durable: false,
+      explicit: false,
+      newBinding: true,
+      oldLive: true,
+      proof: false,
+      read: false,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      durable: false,
+      explicit: false,
+      newBinding: true,
+      oldLive: true,
+      proof: false,
+      read: false,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      durable: false,
+      explicit: false,
+      newBinding: true,
+      oldLive: false,
+      proof: true,
+      read: false,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      durable: false,
+      explicit: false,
+      newBinding: true,
+      oldLive: false,
+      proof: true,
+      read: true,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      durable: false,
+      explicit: false,
+      newBinding: true,
+      oldLive: false,
+      proof: true,
+      read: true,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      durable: false,
+      explicit: false,
+      newBinding: false,
+      oldLive: false,
+      proof: true,
+      read: true,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      durable: false,
+      explicit: false,
+      newBinding: false,
+      oldLive: false,
+      proof: true,
+      read: true,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      durable: false,
+      explicit: false,
+      newBinding: false,
+      oldLive: true,
+      proof: true,
+      read: true,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      durable: false,
+      explicit: false,
+      newBinding: false,
+      oldLive: true,
+      proof: true,
+      read: true,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      durable: false,
+      explicit: false,
+      newBinding: false,
+      oldLive: true,
+      proof: true,
+      read: true,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      durable: true,
+      explicit: false,
+      newBinding: false,
+      oldLive: true,
+      proof: true,
+      read: true,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      durable: true,
+      explicit: false,
+      newBinding: false,
+      oldLive: true,
+      proof: true,
+      read: true,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      durable: true,
+      explicit: false,
+      newBinding: false,
+      oldLive: true,
+      proof: true,
+      read: true,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      durable: true,
+      explicit: false,
+      newBinding: false,
+      oldLive: true,
+      proof: true,
+      read: true,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      durable: true,
+      explicit: false,
+      newBinding: false,
+      oldLive: true,
+      proof: true,
+      read: true,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      durable: true,
+      explicit: false,
+      newBinding: false,
+      oldLive: true,
+      proof: true,
+      read: true,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      durable: true,
+      explicit: false,
+      newBinding: false,
+      oldLive: true,
+      proof: true,
+      read: true,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      durable: true,
+      explicit: false,
+      newBinding: false,
+      oldLive: true,
+      proof: true,
+      read: true,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      durable: true,
+      explicit: false,
+      newBinding: false,
+      oldLive: true,
+      proof: true,
+      read: true,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      durable: true,
+      explicit: false,
+      newBinding: true,
+      oldLive: true,
+      proof: true,
+      read: true,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      durable: true,
+      explicit: false,
+      newBinding: true,
+      oldLive: true,
+      proof: true,
+      read: true,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      durable: true,
+      explicit: false,
+      newBinding: true,
+      oldLive: true,
+      proof: true,
+      read: true,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      durable: true,
+      explicit: false,
+      newBinding: true,
+      oldLive: true,
+      proof: true,
+      read: true,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      durable: true,
+      explicit: false,
+      newBinding: true,
+      oldLive: true,
+      proof: true,
+      read: true,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      durable: true,
+      explicit: false,
+      newBinding: true,
+      oldLive: true,
+      proof: true,
+      read: true,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      durable: true,
+      explicit: false,
+      newBinding: true,
+      oldLive: true,
+      proof: true,
+      read: true,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      durable: true,
+      explicit: false,
+      newBinding: true,
+      oldLive: true,
+      proof: true,
+      read: true,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      durable: true,
+      explicit: false,
+      newBinding: false,
+      oldLive: true,
+      proof: true,
+      read: true,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      durable: true,
+      explicit: false,
+      newBinding: true,
+      oldLive: true,
+      proof: true,
+      read: true,
+      reserved: true,
+      scope: false,
+      submits: 0,
+      unknownHistory: true
+    }
+}
+
+[ok] No violation found (618ms at 1618 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x141e2 --backend=typescript to reproduce.
