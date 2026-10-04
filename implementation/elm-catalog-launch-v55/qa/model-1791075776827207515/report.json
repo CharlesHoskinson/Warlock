@@ -1,0 +1,31 @@
+{
+  "passed": false,
+  "scope": "Abstract catalog scope, journal deduplication and uncertain submission; native refinement/GUI remain separate",
+  "sourceSHA256": "42915a56525663110d9d126395dc392c0feb4c989ecafb3766dc5d908a5e3c9d",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "catalog.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "AssertionError('\\n Error [QNT000]: mismatched input \\'=\\' expecting \\':\\'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-launch-v55/qa/model-1791075776827207515/catalog.qnt:6:27\\n  6:  action submit(result:str)=s\\'={...s,last:s.last+1,lastGeneration:s.shown,lastLifetime:s.shownLifetime,lastEntry:s.present,journal:if(eligible(s)) result else \"Refused\",status:if(eligible(s)) result else \"Refused\",attempts:s.attempts+(if(eligible(s)) 1 else 0),previousAttempts:s.attempts,replay:false,admitted:eligible(s)}\\n                               ^\\n\\n\\n Error [QNT000]: extraneous input \\'action\\' expecting {<EOF>, \\'module\\', DOCCOMMENT}\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-launch-v55/qa/model-1791075776827207515/catalog.qnt:7:2\\n  7:  action retry=all{s.last>0,s\\'={...s,status:if(s.lastLifetime==s.lifetime) s.journal else \"Refused\",previousAttempts:s.attempts,replay:true,admitted:false}}\\n      ^^^^^^\\n\\nerror: parsing failed\\n')",
+  "artifacts": {
+    "catalog.qnt": "42915a56525663110d9d126395dc392c0feb4c989ecafb3766dc5d908a5e3c9d",
+    "model.py": "62afc9b822e0c3dbfbf674cb94e67b356795ee79dc10636cee5b40fd30a56232",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "786ebbd37271efae0665877b6d32bec588a45fba031a54fc4ee1781728c37ae9",
+    "typecheck.stderr": "e5056c9e684a77220bbfbe9b69fbeb0df188d9b5cf7baedd36f27d72fc36039c"
+  }
+}

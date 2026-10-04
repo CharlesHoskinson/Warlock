@@ -1,0 +1,949 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 0,
+      available: true,
+      generation: 1,
+      journal: "Idle",
+      last: 0,
+      lastEntry: false,
+      lastGeneration: 0,
+      lastLifetime: 0,
+      lifetime: 1,
+      present: true,
+      previousAttempts: 0,
+      replay: false,
+      shown: 1,
+      shownLifetime: 1,
+      status: "Idle"
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 0,
+      available: true,
+      generation: 1,
+      journal: "Idle",
+      last: 0,
+      lastEntry: false,
+      lastGeneration: 0,
+      lastLifetime: 0,
+      lifetime: 2,
+      present: true,
+      previousAttempts: 0,
+      replay: false,
+      shown: 1,
+      shownLifetime: 1,
+      status: "Idle"
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 0,
+      available: true,
+      generation: 1,
+      journal: "Refused",
+      last: 1,
+      lastEntry: true,
+      lastGeneration: 1,
+      lastLifetime: 1,
+      lifetime: 2,
+      present: true,
+      previousAttempts: 0,
+      replay: false,
+      shown: 1,
+      shownLifetime: 1,
+      status: "Refused"
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 0,
+      available: true,
+      generation: 1,
+      journal: "Refused",
+      last: 2,
+      lastEntry: true,
+      lastGeneration: 1,
+      lastLifetime: 1,
+      lifetime: 2,
+      present: true,
+      previousAttempts: 0,
+      replay: false,
+      shown: 1,
+      shownLifetime: 1,
+      status: "Refused"
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 0,
+      available: true,
+      generation: 1,
+      journal: "Refused",
+      last: 2,
+      lastEntry: true,
+      lastGeneration: 1,
+      lastLifetime: 1,
+      lifetime: 2,
+      present: true,
+      previousAttempts: 0,
+      replay: true,
+      shown: 1,
+      shownLifetime: 1,
+      status: "Refused"
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 0,
+      available: true,
+      generation: 1,
+      journal: "Refused",
+      last: 3,
+      lastEntry: true,
+      lastGeneration: 1,
+      lastLifetime: 1,
+      lifetime: 2,
+      present: true,
+      previousAttempts: 0,
+      replay: false,
+      shown: 1,
+      shownLifetime: 1,
+      status: "Refused"
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 0,
+      available: true,
+      generation: 1,
+      journal: "Refused",
+      last: 3,
+      lastEntry: true,
+      lastGeneration: 1,
+      lastLifetime: 1,
+      lifetime: 3,
+      present: true,
+      previousAttempts: 0,
+      replay: false,
+      shown: 1,
+      shownLifetime: 1,
+      status: "Idle"
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 0,
+      available: true,
+      generation: 2,
+      journal: "Refused",
+      last: 3,
+      lastEntry: true,
+      lastGeneration: 1,
+      lastLifetime: 1,
+      lifetime: 3,
+      present: true,
+      previousAttempts: 0,
+      replay: false,
+      shown: 1,
+      shownLifetime: 1,
+      status: "Idle"
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 0,
+      available: true,
+      generation: 2,
+      journal: "Refused",
+      last: 3,
+      lastEntry: true,
+      lastGeneration: 1,
+      lastLifetime: 1,
+      lifetime: 4,
+      present: true,
+      previousAttempts: 0,
+      replay: false,
+      shown: 1,
+      shownLifetime: 1,
+      status: "Idle"
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 0,
+      available: true,
+      generation: 2,
+      journal: "Refused",
+      last: 3,
+      lastEntry: true,
+      lastGeneration: 1,
+      lastLifetime: 1,
+      lifetime: 4,
+      present: true,
+      previousAttempts: 0,
+      replay: true,
+      shown: 1,
+      shownLifetime: 1,
+      status: "Refused"
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 0,
+      available: true,
+      generation: 2,
+      journal: "Refused",
+      last: 4,
+      lastEntry: true,
+      lastGeneration: 1,
+      lastLifetime: 1,
+      lifetime: 4,
+      present: true,
+      previousAttempts: 0,
+      replay: false,
+      shown: 1,
+      shownLifetime: 1,
+      status: "Refused"
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 0,
+      available: true,
+      generation: 2,
+      journal: "Refused",
+      last: 4,
+      lastEntry: true,
+      lastGeneration: 1,
+      lastLifetime: 1,
+      lifetime: 4,
+      present: true,
+      previousAttempts: 0,
+      replay: true,
+      shown: 1,
+      shownLifetime: 1,
+      status: "Refused"
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 0,
+      available: true,
+      generation: 2,
+      journal: "Refused",
+      last: 4,
+      lastEntry: true,
+      lastGeneration: 1,
+      lastLifetime: 1,
+      lifetime: 5,
+      present: true,
+      previousAttempts: 0,
+      replay: false,
+      shown: 1,
+      shownLifetime: 1,
+      status: "Idle"
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 0,
+      available: true,
+      generation: 2,
+      journal: "Refused",
+      last: 4,
+      lastEntry: true,
+      lastGeneration: 1,
+      lastLifetime: 1,
+      lifetime: 6,
+      present: true,
+      previousAttempts: 0,
+      replay: false,
+      shown: 1,
+      shownLifetime: 1,
+      status: "Idle"
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 0,
+      available: true,
+      generation: 3,
+      journal: "Refused",
+      last: 4,
+      lastEntry: true,
+      lastGeneration: 1,
+      lastLifetime: 1,
+      lifetime: 6,
+      present: true,
+      previousAttempts: 0,
+      replay: false,
+      shown: 1,
+      shownLifetime: 1,
+      status: "Idle"
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 0,
+      available: true,
+      generation: 3,
+      journal: "Refused",
+      last: 4,
+      lastEntry: true,
+      lastGeneration: 1,
+      lastLifetime: 1,
+      lifetime: 6,
+      present: true,
+      previousAttempts: 0,
+      replay: false,
+      shown: 3,
+      shownLifetime: 6,
+      status: "Idle"
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 0,
+      available: true,
+      generation: 3,
+      journal: "Refused",
+      last: 4,
+      lastEntry: true,
+      lastGeneration: 1,
+      lastLifetime: 1,
+      lifetime: 6,
+      present: true,
+      previousAttempts: 0,
+      replay: true,
+      shown: 3,
+      shownLifetime: 6,
+      status: "Refused"
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 0,
+      available: true,
+      generation: 3,
+      journal: "Refused",
+      last: 4,
+      lastEntry: true,
+      lastGeneration: 1,
+      lastLifetime: 1,
+      lifetime: 6,
+      present: true,
+      previousAttempts: 0,
+      replay: false,
+      shown: 3,
+      shownLifetime: 6,
+      status: "Idle"
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 0,
+      available: true,
+      generation: 3,
+      journal: "Refused",
+      last: 4,
+      lastEntry: true,
+      lastGeneration: 1,
+      lastLifetime: 1,
+      lifetime: 6,
+      present: true,
+      previousAttempts: 0,
+      replay: true,
+      shown: 3,
+      shownLifetime: 6,
+      status: "Refused"
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 0,
+      available: true,
+      generation: 3,
+      journal: "Refused",
+      last: 4,
+      lastEntry: true,
+      lastGeneration: 1,
+      lastLifetime: 1,
+      lifetime: 6,
+      present: true,
+      previousAttempts: 0,
+      replay: true,
+      shown: 3,
+      shownLifetime: 6,
+      status: "Refused"
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      admitted: true,
+      attempts: 1,
+      available: true,
+      generation: 3,
+      journal: "Unknown",
+      last: 5,
+      lastEntry: true,
+      lastGeneration: 3,
+      lastLifetime: 6,
+      lifetime: 6,
+      present: true,
+      previousAttempts: 0,
+      replay: false,
+      shown: 3,
+      shownLifetime: 6,
+      status: "Unknown"
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 1,
+      available: true,
+      generation: 3,
+      journal: "Unknown",
+      last: 5,
+      lastEntry: true,
+      lastGeneration: 3,
+      lastLifetime: 6,
+      lifetime: 6,
+      present: true,
+      previousAttempts: 1,
+      replay: true,
+      shown: 3,
+      shownLifetime: 6,
+      status: "Unknown"
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 1,
+      available: true,
+      generation: 4,
+      journal: "Unknown",
+      last: 5,
+      lastEntry: true,
+      lastGeneration: 3,
+      lastLifetime: 6,
+      lifetime: 6,
+      present: true,
+      previousAttempts: 1,
+      replay: false,
+      shown: 3,
+      shownLifetime: 6,
+      status: "Idle"
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 1,
+      available: true,
+      generation: 4,
+      journal: "Unknown",
+      last: 5,
+      lastEntry: true,
+      lastGeneration: 3,
+      lastLifetime: 6,
+      lifetime: 6,
+      present: true,
+      previousAttempts: 1,
+      replay: true,
+      shown: 3,
+      shownLifetime: 6,
+      status: "Unknown"
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 1,
+      available: true,
+      generation: 4,
+      journal: "Unknown",
+      last: 5,
+      lastEntry: true,
+      lastGeneration: 3,
+      lastLifetime: 6,
+      lifetime: 7,
+      present: true,
+      previousAttempts: 1,
+      replay: false,
+      shown: 3,
+      shownLifetime: 6,
+      status: "Idle"
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 1,
+      available: true,
+      generation: 4,
+      journal: "Unknown",
+      last: 5,
+      lastEntry: true,
+      lastGeneration: 3,
+      lastLifetime: 6,
+      lifetime: 7,
+      present: true,
+      previousAttempts: 1,
+      replay: true,
+      shown: 3,
+      shownLifetime: 6,
+      status: "Refused"
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 1,
+      available: true,
+      generation: 5,
+      journal: "Unknown",
+      last: 5,
+      lastEntry: true,
+      lastGeneration: 3,
+      lastLifetime: 6,
+      lifetime: 7,
+      present: true,
+      previousAttempts: 1,
+      replay: false,
+      shown: 3,
+      shownLifetime: 6,
+      status: "Idle"
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 1,
+      available: true,
+      generation: 5,
+      journal: "Unknown",
+      last: 5,
+      lastEntry: true,
+      lastGeneration: 3,
+      lastLifetime: 6,
+      lifetime: 7,
+      present: true,
+      previousAttempts: 1,
+      replay: true,
+      shown: 3,
+      shownLifetime: 6,
+      status: "Refused"
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 1,
+      available: true,
+      generation: 5,
+      journal: "Refused",
+      last: 6,
+      lastEntry: true,
+      lastGeneration: 3,
+      lastLifetime: 6,
+      lifetime: 7,
+      present: true,
+      previousAttempts: 1,
+      replay: false,
+      shown: 3,
+      shownLifetime: 6,
+      status: "Refused"
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 1,
+      available: true,
+      generation: 5,
+      journal: "Refused",
+      last: 6,
+      lastEntry: true,
+      lastGeneration: 3,
+      lastLifetime: 6,
+      lifetime: 7,
+      present: true,
+      previousAttempts: 1,
+      replay: true,
+      shown: 3,
+      shownLifetime: 6,
+      status: "Refused"
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 1,
+      available: true,
+      generation: 5,
+      journal: "Refused",
+      last: 6,
+      lastEntry: true,
+      lastGeneration: 3,
+      lastLifetime: 6,
+      lifetime: 7,
+      present: true,
+      previousAttempts: 1,
+      replay: false,
+      shown: 5,
+      shownLifetime: 7,
+      status: "Idle"
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 1,
+      available: true,
+      generation: 5,
+      journal: "Refused",
+      last: 6,
+      lastEntry: true,
+      lastGeneration: 3,
+      lastLifetime: 6,
+      lifetime: 8,
+      present: true,
+      previousAttempts: 1,
+      replay: false,
+      shown: 5,
+      shownLifetime: 7,
+      status: "Idle"
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 1,
+      available: true,
+      generation: 6,
+      journal: "Refused",
+      last: 6,
+      lastEntry: true,
+      lastGeneration: 3,
+      lastLifetime: 6,
+      lifetime: 8,
+      present: true,
+      previousAttempts: 1,
+      replay: false,
+      shown: 5,
+      shownLifetime: 7,
+      status: "Idle"
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 1,
+      available: true,
+      generation: 6,
+      journal: "Refused",
+      last: 6,
+      lastEntry: true,
+      lastGeneration: 3,
+      lastLifetime: 6,
+      lifetime: 9,
+      present: true,
+      previousAttempts: 1,
+      replay: false,
+      shown: 5,
+      shownLifetime: 7,
+      status: "Idle"
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 1,
+      available: true,
+      generation: 6,
+      journal: "Refused",
+      last: 7,
+      lastEntry: true,
+      lastGeneration: 5,
+      lastLifetime: 7,
+      lifetime: 9,
+      present: true,
+      previousAttempts: 1,
+      replay: false,
+      shown: 5,
+      shownLifetime: 7,
+      status: "Refused"
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 1,
+      available: true,
+      generation: 6,
+      journal: "Refused",
+      last: 8,
+      lastEntry: true,
+      lastGeneration: 5,
+      lastLifetime: 7,
+      lifetime: 9,
+      present: true,
+      previousAttempts: 1,
+      replay: false,
+      shown: 5,
+      shownLifetime: 7,
+      status: "Refused"
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 1,
+      available: true,
+      generation: 6,
+      journal: "Refused",
+      last: 8,
+      lastEntry: true,
+      lastGeneration: 5,
+      lastLifetime: 7,
+      lifetime: 9,
+      present: true,
+      previousAttempts: 1,
+      replay: true,
+      shown: 5,
+      shownLifetime: 7,
+      status: "Refused"
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 1,
+      available: true,
+      generation: 6,
+      journal: "Refused",
+      last: 8,
+      lastEntry: true,
+      lastGeneration: 5,
+      lastLifetime: 7,
+      lifetime: 10,
+      present: true,
+      previousAttempts: 1,
+      replay: false,
+      shown: 5,
+      shownLifetime: 7,
+      status: "Idle"
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 1,
+      available: true,
+      generation: 6,
+      journal: "Refused",
+      last: 8,
+      lastEntry: true,
+      lastGeneration: 5,
+      lastLifetime: 7,
+      lifetime: 10,
+      present: true,
+      previousAttempts: 1,
+      replay: true,
+      shown: 5,
+      shownLifetime: 7,
+      status: "Refused"
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 1,
+      available: true,
+      generation: 6,
+      journal: "Refused",
+      last: 8,
+      lastEntry: true,
+      lastGeneration: 5,
+      lastLifetime: 7,
+      lifetime: 10,
+      present: true,
+      previousAttempts: 1,
+      replay: false,
+      shown: 6,
+      shownLifetime: 10,
+      status: "Idle"
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      admitted: false,
+      attempts: 1,
+      available: true,
+      generation: 7,
+      journal: "Refused",
+      last: 8,
+      lastEntry: true,
+      lastGeneration: 5,
+      lastLifetime: 7,
+      lifetime: 10,
+      present: false,
+      previousAttempts: 1,
+      replay: false,
+      shown: 6,
+      shownLifetime: 10,
+      status: "Idle"
+    }
+}
+
+[ok] No violation found (1970ms at 508 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

@@ -1,0 +1,16 @@
+const fs=require('fs'),assert=require('assert'),{Elm}=require(process.argv[2]);
+const app=Elm.CatalogReplay.init({flags:null}),deadline=setTimeout(()=>{throw Error('Catalog replay deadline');},4000);
+const entry={id:'org.example.App',name:'Example',iconHint:'example-icon',wmclass:'Example'};
+const snap={catalogProtocol:1,lifetime:'9007199254740993',generation:'18446744073709551615',entries:[entry]};
+function replay(snapshot,entry='org.example.App',request='1'){return new Promise(resolve=>{const cb=value=>{app.ports.outgoing.unsubscribe(cb);resolve(value);};app.ports.outgoing.subscribe(cb);app.ports.incoming.send({snapshot,entry,request});});}
+(async()=>{let cases=[];
+ const value=await replay(snap);assert(value.passed);assert.deepEqual(value.intent,{request:'1',lifetime:snap.lifetime,generation:snap.generation,entry:entry.id});cases.push({name:'lossless admitted desktop identity intent',value});
+ for(const [name,snapshot] of [
+ ['command absent',{...snap,entries:[{...entry,exec:'/bin/sh'}]}],['path absent',{...snap,entries:[{...entry,path:'/tmp/app.desktop'}]}],['duplicate identity',{...snap,entries:[entry,entry]}],['zero lifetime',{...snap,lifetime:'0'}],['zero generation',{...snap,generation:'0'}],['numeric lifetime',{...snap,lifetime:1}],['boolean protocol',{...snap,catalogProtocol:true}],['unknown protocol',{...snap,catalogProtocol:2}],['extra snapshot field',{...snap,extra:true}],['entry extra field',{...snap,entries:[{...entry,launch:true}]}],['control display text',{...snap,entries:[{...entry,name:'bad\nname'}]}],['empty identity',{...snap,entries:[{...entry,id:''}]}],['oversized display',{...snap,entries:[{...entry,name:'a'.repeat(513)}]}],['oversized icon',{...snap,entries:[{...entry,iconHint:'a'.repeat(513)}]}],['oversized wmclass',{...snap,entries:[{...entry,wmclass:'a'.repeat(513)}]}],['capacity rejects entire catalog',{...snap,entries:Array.from({length:2049},(_,i)=>({...entry,id:String(i)}))}]
+ ]){const value=await replay(snapshot);assert.equal(value.passed,false,name);cases.push({name,value});}
+ for(const [name,identity,request] of [['removed identity','removed','1'],['arbitrary path','/bin/sh','1'],['zero request',entry.id,'0']]){const value=await replay(snap,identity,request);assert(value.passed);assert.equal(value.intent,null,name);cases.push({name,value});}
+ const empty=await replay({...snap,entries:[]});assert(empty.passed&&empty.intent===null);cases.push({name:'empty admitted catalog',value:empty});
+ const capacity=await replay({...snap,entries:Array.from({length:2048},(_,i)=>({...entry,id:String(i)}))});assert(capacity.passed&&capacity.entries.length===2048);cases.push({name:'prototype capacity admitted without truncation',value:{entries:capacity.entries.length}});
+ const native=JSON.parse(fs.readFileSync(process.argv[3]));const admitted=await replay(native,'fixture');assert(admitted.passed);assert(admitted.intent&&admitted.intent.entry==='fixture');cases.push({name:'actual native parser packet admitted',value:admitted});
+ fs.writeFileSync(process.argv[4],JSON.stringify({passed:true,checks:cases.length,scope:'Compiled typed catalog admission and intents; authenticated host integration and GUI selection pending',cases},null,2)+'\n');clearTimeout(deadline);
+})();

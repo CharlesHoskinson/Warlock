@@ -1,0 +1,88 @@
+{
+  "passed": true,
+  "inputs": {
+    "elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "src/Catalog.elm": "89ac741d26ddde805afeae8633f357166d999c664fc8867dcf5c2002edde838d",
+    "src/CatalogReplay.elm": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+    "src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "native/catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+    "native/taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "qa/legacy_catalog.py": "53c6b0901576b10a5bd499b3066d77fefdfb0a92ea01fbfed65af16cb2fec870",
+    "qa/catalog.cjs": "895a356b11a0cc50682a6ef2bf473022ed85149c48b795514cb57fedd46d48b3",
+    "qa/check.py": "b9d845a73f08bde319b318d799439374adc3df75b11318f9910e18043bf2bc16"
+  },
+  "commands": [
+    {
+      "name": "legacy",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-launch-v55/qa/checks-1791075715690030179/inputs/qa/legacy_catalog.py"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "compile",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/CatalogReplay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-launch-v55/qa/checks-1791075715690030179/catalog.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "typed",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-launch-v55/qa/checks-1791075715690030179/inputs/qa/catalog.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-launch-v55/qa/checks-1791075715690030179/catalog.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-launch-v55/qa/checks-1791075715690030179/native-snapshot.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-launch-v55/qa/checks-1791075715690030179/typed.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "nativeReport": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-launch-v55/qa/native-1791075707665392131/report.json",
+    "sha256": "5fa2b79f7e7a0b81b4c2030cbe5e18ead89b9d69d8d00c28c4650afaa946f692",
+    "snapshotSHA256": "155dd4e897565889c72073ef01003e07fb3197170fceb8f8c7b971ccd7cb6e80"
+  },
+  "typedChecks": 23,
+  "legacyParserTests": 24,
+  "artifacts": {
+    "native-snapshot.json": "155dd4e897565889c72073ef01003e07fb3197170fceb8f8c7b971ccd7cb6e80",
+    "legacy.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "legacy.stderr": "9f1d92c49cbee12f998e7c008288a647ab87527d0f5cf3dae7b4017ce9dde7a7",
+    "catalog.js": "bd18064c7b8cb16688a9dfdd8493f6c416db303973e38c2421fed626f78a5973",
+    "compile.stdout": "468aa8b6961bddc4cc8812180c1e31161ae5e876e8787d56877727a8c9f2f4ae",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typed.json": "ecab1e698a52a05b539a0ebd894ec8e76fca7d2b099c834e8e5ed2cd3c0960c0",
+    "typed.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typed.stderr": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331",
+    "inputs/elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "inputs/src/Catalog.elm": "89ac741d26ddde805afeae8633f357166d999c664fc8867dcf5c2002edde838d",
+    "inputs/src/CatalogReplay.elm": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+    "inputs/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "inputs/native/catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+    "inputs/native/taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "inputs/qa/legacy_catalog.py": "53c6b0901576b10a5bd499b3066d77fefdfb0a92ea01fbfed65af16cb2fec870",
+    "inputs/qa/catalog.cjs": "895a356b11a0cc50682a6ef2bf473022ed85149c48b795514cb57fedd46d48b3",
+    "inputs/qa/check.py": "b9d845a73f08bde319b318d799439374adc3df75b11318f9910e18043bf2bc16",
+    "inputs/elm-stuff/0.19.2/lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/elm-stuff/0.19.2/o.dat": "7cd6af96bcda469315a586f85a1b009a471a11eb8348bdc7964ca22f91ab38d5",
+    "inputs/elm-stuff/0.19.2/d.dat": "0487bf63dbf045bb7a478266b1aca96ff7bd7a5468713e5201b69ed4ab2c49d2",
+    "inputs/elm-stuff/0.19.2/i.dat": "e75b950b056ab768f666e5285ee2c87e911218c43a695676738667870e947c23",
+    "inputs/elm-stuff/0.19.2/UInt64.elmo": "a01a2537c09010d8dfec6caf3180fcb0780e4ac614952aee0ee71cfce292a611",
+    "inputs/elm-stuff/0.19.2/UInt64.elmi": "633cc78b3dd5fa14a5005c3dceef13f66737a32e0d4876476cdf8c54c086aec1",
+    "inputs/elm-stuff/0.19.2/Catalog.elmo": "369f02e70d39a67bbde5f8cedd0fcbc8d7011f580c30a562c2fe391d3eb6c37d",
+    "inputs/elm-stuff/0.19.2/Catalog.elmi": "c9724fade032b527d058efa851df4e6179c34619989ffa39ea9f55d702942884",
+    "inputs/elm-stuff/0.19.2/CatalogReplay.elmo": "23337121fd76d7bb1bf6b8f610414a1a76af1274a9eb973187c03a7dc3d051b7",
+    "inputs/elm-stuff/0.19.2/CatalogReplay.elmi": "e4027d34fdd3a1c3545bbea75f71a1a95e868fa87ee076b05e6d6cc8c2e90695"
+  }
+}

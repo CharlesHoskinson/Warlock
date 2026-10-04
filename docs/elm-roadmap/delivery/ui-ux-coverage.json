@@ -6484,6 +6484,22 @@
       "wholeFeatureAccepted": false,
       "evidence": "implementation/elm-picker-parent-native-v54/qa/slice-manifest.json",
       "acceptance": "Default800x420/16px nine-document exact clip bounds, Close and final recipient only. No full supported reflow matrix, native AT, production bar/popup or complete UX/release acceptance."
+    },
+    {
+      "slice": "implementation/elm-catalog-launch-v55",
+      "level": "compiled typed catalog and isolated actual GIO submission plus abstract model",
+      "legacyParserTests": 24,
+      "compiledElmChecks": 23,
+      "isolatedNativeChecks": 22,
+      "quintNamedRuns": 8,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "defaultLaunchArgumentReceipt": true,
+      "wholeFeatureAccepted": false,
+      "guiIntegrationAccepted": false,
+      "applicationReadinessAccepted": false,
+      "evidence": "implementation/elm-catalog-launch-v55/qa/slice-manifest.json",
+      "acceptance": "Legacy catalog semantics and bounded ID/generation/journal/default GIO recorder only. No native GUI launch, launch controller, transport authentication, AT/IME, full launcher UX or release acceptance."
     }
   ]
 }

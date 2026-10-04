@@ -1,0 +1,29 @@
+test_cache_permissions (__main__.CatalogTests.test_cache_permissions) ... ok
+test_change_during_parse_not_cached (__main__.CatalogTests.test_change_during_parse_not_cached) ... ok
+test_corrupt_cache_falls_back (__main__.CatalogTests.test_corrupt_cache_falls_back) ... ok
+test_directory_symlink_not_traversed (__main__.CatalogTests.test_directory_symlink_not_traversed) ... ok
+test_edit_same_size_invalidate (__main__.CatalogTests.test_edit_same_size_invalidate) ... ok
+test_file_symlink_target_edit (__main__.CatalogTests.test_file_symlink_target_edit) ... ok
+test_hidden_user_masks_system (__main__.CatalogTests.test_hidden_user_masks_system) ... ok
+test_invalid_user_does_not_mask_system_or_cache_partial (__main__.CatalogTests.test_invalid_user_does_not_mask_system_or_cache_partial) ... ok
+test_inventory_failure_fresh_fallback (__main__.CatalogTests.test_inventory_failure_fresh_fallback) ... ok
+test_missing_root_appears (__main__.CatalogTests.test_missing_root_appears) ... ok
+test_nested_add_remove (__main__.CatalogTests.test_nested_add_remove) ... ok
+test_nonapplication_user_does_not_mask_system (__main__.CatalogTests.test_nonapplication_user_does_not_mask_system) ... ok
+test_nonregular_desktop_skips_without_blocking (__main__.CatalogTests.test_nonregular_desktop_skips_without_blocking) ... ok
+test_original_entries_equivalence (__main__.CatalogTests.test_original_entries_equivalence) ... ok
+test_preserves_entries_actions_and_literal_exec (__main__.CatalogTests.test_preserves_entries_actions_and_literal_exec) ... ok
+test_root_key_invalidation (__main__.CatalogTests.test_root_key_invalidation) ... ok
+test_schema_and_shape_invalidation (__main__.CatalogTests.test_schema_and_shape_invalidation) ... ok
+test_shared_cache_directory_refused (__main__.CatalogTests.test_shared_cache_directory_refused) ... ok
+test_symlink_cache_directory_refused (__main__.CatalogTests.test_symlink_cache_directory_refused) ... ok
+test_symlink_cache_file_not_read (__main__.CatalogTests.test_symlink_cache_file_not_read) ... ok
+test_unicode_malformed_is_not_cached (__main__.CatalogTests.test_unicode_malformed_is_not_cached) ... ok
+test_unreadable_file_does_not_replace_success_cache (__main__.CatalogTests.test_unreadable_file_does_not_replace_success_cache) ... ok
+test_user_precedence (__main__.CatalogTests.test_user_precedence) ... ok
+test_warm_load_eliminates_parse (__main__.CatalogTests.test_warm_load_eliminates_parse) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.016s
+
+OK

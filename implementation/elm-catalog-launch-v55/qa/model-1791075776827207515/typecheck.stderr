@@ -1,0 +1,15 @@
+
+ Error [QNT000]: mismatched input '=' expecting ':'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-launch-v55/qa/model-1791075776827207515/catalog.qnt:6:27
+  6:  action submit(result:str)=s'={...s,last:s.last+1,lastGeneration:s.shown,lastLifetime:s.shownLifetime,lastEntry:s.present,journal:if(eligible(s)) result else "Refused",status:if(eligible(s)) result else "Refused",attempts:s.attempts+(if(eligible(s)) 1 else 0),previousAttempts:s.attempts,replay:false,admitted:eligible(s)}
+                               ^
+
+
+ Error [QNT000]: extraneous input 'action' expecting {<EOF>, 'module', DOCCOMMENT}
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-launch-v55/qa/model-1791075776827207515/catalog.qnt:7:2
+  7:  action retry=all{s.last>0,s'={...s,status:if(s.lastLifetime==s.lifetime) s.journal else "Refused",previousAttempts:s.attempts,replay:true,admitted:false}}
+      ^^^^^^
+
+error: parsing failed

@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-picker-parent-native-v54",
-  "status": "Nine-document long-caption picker passes exact native keyboard reveal/Close/final activation plus original GUI behavior. QA-report admission separated from4KiB actions; viewport-bounded list and two-line visible names preserve full accessible labels/tooltips. Text enlargement, small-output/focus-indicator/AT metrics and production taskbar/popup/release remain open.",
+  "activeSlice": "implementation/elm-catalog-launch-v55",
+  "status": "Catalog/default launch component accepted within isolated scope: original parser24, compiled Elm23, actual GIO recorder/native22 and Quint8/1000. Typed receipt controller, authenticated broker/GUI integration, production taskbar/launcher, full UI/UX/hardware/release remain open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -489,6 +489,20 @@
       "canonicalSceneCapability": false,
       "wholeFeatureAccepted": false,
       "evidence": "implementation/elm-picker-parent-native-v54/qa/slice-manifest.json"
+    },
+    "catalogLaunchV55": {
+      "legacyParserByteIdentical": true,
+      "legacyParserTests": 24,
+      "compiledElmChecks": 23,
+      "isolatedNativeChecks": 22,
+      "realGIORecorderSubmission": true,
+      "quintNamedRuns": 8,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "wholeFeatureAccepted": false,
+      "guiIntegrationAccepted": false,
+      "applicationReadinessAccepted": false,
+      "evidence": "implementation/elm-catalog-launch-v55/qa/slice-manifest.json"
     }
   },
   "next": "Qualify text enlargement and small-output picker/keyboard focus metrics; continue production taskbar/popup/input roles, catalog/icons/pins/launch and switcher/previews. Complete scene/hardware/GPU/WebGPU/AT/IME/human UX and release gates.",

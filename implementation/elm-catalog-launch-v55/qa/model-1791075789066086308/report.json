@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "scope": "Abstract catalog scope, journal deduplication and uncertain submission; native refinement/GUI remain separate",
+  "sourceSHA256": "db2813d6f5d157a92177645bc7f81c76276e3e1a1f90e1eb30266d3fbce7a9c7",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "catalog.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "catalog.qnt",
+        "--backend=typescript",
+        "--match=^(submittedTest|unknownTest|retryTest|reuseTest|staleTest|retiredTest|overflowTest|removedTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170016",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "catalog.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170017",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 8,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "catalog.qnt": "db2813d6f5d157a92177645bc7f81c76276e3e1a1f90e1eb30266d3fbce7a9c7",
+    "model.py": "62afc9b822e0c3dbfbf674cb94e67b356795ee79dc10636cee5b40fd30a56232",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-submittedTest-0.itf.json": "947bc2ee53cdeaa7006098904d81fcf35c7ed059cea6d21272b26b4f9dfdc035",
+    "named-unknownTest-1.itf.json": "ef8ceaacae30ee03c6c92f7f5fa136d54056b7eecee3fe46f65abcdc82a14424",
+    "named-retryTest-2.itf.json": "9f7ac3275f62ee011d1749b6eff8bb06506071e0b99a86152223d94abe1ada26",
+    "named-reuseTest-3.itf.json": "703a4b80c266226297df55bbafdf9997e40e4a4ca92cd066bd5524476fd58e09",
+    "named-staleTest-4.itf.json": "062c19cb3d194a53d0aed04e2b63dbead6e30941b0d618077751abeb3c72d921",
+    "named-retiredTest-5.itf.json": "a85a4daee9a84bebf92cfd3ce4cab574029486457447a4a6012b342d9a82c164",
+    "named-overflowTest-6.itf.json": "90a3cca7404131d82ab8e13b7f15aa74a5b917a3790d3c7adac48edb4431fdf5",
+    "named-removedTest-7.itf.json": "d3dd42d5d331a2a03310cfc8813d0d5a7bd0008ab7303e2a0d13bf09b7fa8f69",
+    "named.stdout": "bbf7179cf4b09dc3642d30d7ce43562615cc4e1deb21f7f3fc74f7dcdcf81479",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "8176bc568e1ac0814d92a2076e5f090966017eeeff073db4b70bc3e3802bcaf7",
+    "invariants.stdout": "ed52956bd2c87a33e64b501f41555e544e60980ec4a17a345a606afacdb47a38",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
