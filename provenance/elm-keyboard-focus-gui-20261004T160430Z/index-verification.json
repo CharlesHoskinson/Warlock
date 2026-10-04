@@ -1,0 +1,514 @@
+{
+  "passed": true,
+  "priorHEAD": "2ec9d8015226c3ed2127ac006b75103daebd4980",
+  "acceptanceManifestSHA256": "1ddee6e397a88d7e39d118503875764ded7ae6b9f839e1dbe5d4824d600428e3",
+  "indexFileCount": 84,
+  "uniqueBlobs": 72,
+  "files": {
+    "docs/elm-roadmap/delivery/KEYBOARD-FOCUS-GUI-V166-ACCEPTANCE.md": {
+      "mode": "100644",
+      "blob": "3b26738cb920e092aa1f40da9fadb1ad1f7f2693",
+      "size": 1945,
+      "sha256": "5d31d94dd6b5d512700935410d8212e888ad90bb10beeabcefae0c36cf487bce"
+    },
+    "docs/elm-roadmap/delivery/build-loop-events/20261004T160155.849711Z--f6779148-8f5d-4bdf-8a0f-044184e486f2--a224bde4ab504303b21b6113a153a6bb.json": {
+      "mode": "100644",
+      "blob": "192e6867c768d6f22575ac5640387f1ef4015322",
+      "size": 1183,
+      "sha256": "dca7c316f64c05c0e7d5010f519b0b864b8ec10697333b025d168bce3594c53c"
+    },
+    "docs/elm-roadmap/delivery/build-loop-events/20261004T160426.510825Z--f6779148-8f5d-4bdf-8a0f-044184e486f2--b8d5da55a22d4eb1ad526a3697e1c245.json": {
+      "mode": "100644",
+      "blob": "97a1a703f9bb5e7b853ee2c05a7f049ed22e309b",
+      "size": 1104,
+      "sha256": "840b884a04d3422bbb3712a9b2972421cd76589565a775d67c3edf79d9a6d324"
+    },
+    "implementation/elm-keyboard-focus-gui-acceptance-v166/HANDOFF.md": {
+      "mode": "100644",
+      "blob": "3b26738cb920e092aa1f40da9fadb1ad1f7f2693",
+      "size": 1945,
+      "sha256": "5d31d94dd6b5d512700935410d8212e888ad90bb10beeabcefae0c36cf487bce"
+    },
+    "implementation/elm-keyboard-focus-gui-acceptance-v166/acceptance-manifest.json": {
+      "mode": "100644",
+      "blob": "0f109ffe95704c6ab633a9028049e756b889c438",
+      "size": 23236,
+      "sha256": "1ddee6e397a88d7e39d118503875764ded7ae6b9f839e1dbe5d4824d600428e3"
+    },
+    "implementation/elm-keyboard-focus-gui-acceptance-v166/qa/freeze.py": {
+      "mode": "100644",
+      "blob": "326813c3aa7107bc7bfb5f1f7da209fd6ec7f6a4",
+      "size": 4464,
+      "sha256": "a2974e1fb363bb0b2cc936d88e4cb90ab229529d8323372632fc726408df9881"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/README.md": {
+      "mode": "100644",
+      "blob": "097219692554c2f8a1e6271fcd913ab2adc44c4a",
+      "size": 266,
+      "sha256": "e91012153efa7e8887ba73b531613c3856650db0682769b69c536f30f565eb8a"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/REVIEW.md": {
+      "mode": "100644",
+      "blob": "10b0b23e261f49795341e90552a3b2c02963f526",
+      "size": 592,
+      "sha256": "52aa2c2bbd10c5462c384be5cde8257fe4f658c7df3a65941b4d304013d86213"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/fixture.py": {
+      "mode": "100644",
+      "blob": "34a180e6b712621c22a740d258963000b828e50b",
+      "size": 5267,
+      "sha256": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/grab_guard.py": {
+      "mode": "100644",
+      "blob": "e00d21c42f4ce83d50a937ba8437282f4e7086d7",
+      "size": 443,
+      "sha256": "a1714ba4298967555af5d417ee2a1e926fbe19035dfa014546a75ff4a5d42770"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/inspection.py": {
+      "mode": "100644",
+      "blob": "a6eb3c34c479f891b3d1849acac7306631d42356",
+      "size": 2563,
+      "sha256": "051d44430a49319389781d12bc0389732d76412ef1cf7f59f352f5e78f67bdd2"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/native-1791129747806470811/native-evidence/authority-config.json": {
+      "mode": "100644",
+      "blob": "144aed36cc754e8eab6133e0435fdc99e60a9f64",
+      "size": 245,
+      "sha256": "60a16f36e0a630c58472fbbf093f6991871d8a8cb43319212f65e3c8f62f4d7c"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/native-1791129747806470811/native-evidence/dmabuf-probe.stderr": {
+      "mode": "100644",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/native-1791129747806470811/native-evidence/dmabuf-probe.stdout": {
+      "mode": "100644",
+      "blob": "7b0492b42b9637366e222526cc706c670602c52b",
+      "size": 174,
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/native-1791129747806470811/native-evidence/elm-webview.log": {
+      "mode": "100644",
+      "blob": "4712c5671f7b2af64965deb94d2338f5ca4410c1",
+      "size": 378230,
+      "sha256": "f8709e4bb459a27feddec6fe78c523ac914d459109bceffb4e71bae872acd653"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/native-1791129747806470811/native-evidence/fixture.log": {
+      "mode": "100644",
+      "blob": "8abe8040481a78ef793e1eb692aa87708d54ff60",
+      "size": 582,
+      "sha256": "2cb168dc4167cc4f6c459b213fc73d453c299ba44aba8e8165ed4e98664d509f"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/native-1791129747806470811/native-evidence/host-evidence.json": {
+      "mode": "100644",
+      "blob": "7b656133ebbd4c7ac5f0eb10728834f2e9eee5a0",
+      "size": 215048,
+      "sha256": "0852b82c127b85be52798db98dec4ffbde2c0d1c347320290a4632d99f696a98"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/native-1791129747806470811/native-evidence/hyprland.log": {
+      "mode": "100644",
+      "blob": "4ff36ee6f3ea70fb9a342a4ef6cb2fecc0b7c8c4",
+      "size": 385118,
+      "sha256": "19d6bc60dafde81a9278037a1057190f4817935bb83543cc01560b0af723ee1b"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/native-1791129747806470811/native-evidence/initialNativeFixturePixelsAreRed-0.png": {
+      "mode": "100644",
+      "blob": "97b51128e4d94ba2542fe54ae779f28c9b09c11d",
+      "size": 64389,
+      "sha256": "f862cece98980c2cc8e6164c9d24ae3beac20362672ba12eb73590be0d3cf618"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/native-1791129747806470811/native-evidence/minimizedNativeFixturePixelsDisappear-0.png": {
+      "mode": "100644",
+      "blob": "4bfe91f3677cc20fe8199bc1e6a3dd0a5220520a",
+      "size": 223402,
+      "sha256": "5cbb18a56e7f470e192c0873575bd6a7fb204b9d491b03d38c7032135a3cdae4"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/native-1791129747806470811/native-evidence/privateBus.log": {
+      "mode": "100644",
+      "blob": "17a0653e65ad6fcb310369cf72d1ec23e9594c57",
+      "size": 5570,
+      "sha256": "ba691458c994dac039d2173e038324fa57e32b551f64aee838ccabdc56e01f78"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/native-1791129747806470811/native-evidence/relay-actor-1/actor.json": {
+      "mode": "100644",
+      "blob": "a3a0f3c97c1e2e817bbb23a683fec6d4f8c303f5",
+      "size": 94,
+      "sha256": "79dbb0f715323974ac78804815411aff9582a799225fcf863653a863e2a042a4"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/native-1791129747806470811/native-evidence/relay-actor-1/exit.json": {
+      "mode": "100644",
+      "blob": "dd740d10762f50c3ba78c1d42c3465a8e1237cec",
+      "size": 131,
+      "sha256": "04b400cfe641c5795f1dc12b28d8d9d8f9f7e67018135b9f974a10ff2893fd3d"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/native-1791129747806470811/native-evidence/relay-actor-1/gate.json": {
+      "mode": "100644",
+      "blob": "e0f716031c42fe3e66baa12fceac32c034b87bc4",
+      "size": 113,
+      "sha256": "f1cc311d8ddb6b31af7d2d8d288d2f7a784351ec415266ecbe215756fac55391"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/native-1791129747806470811/native-evidence/relay-actor-2/actor.json": {
+      "mode": "100644",
+      "blob": "1e10760dfa483914094209f2f6f4c843acf67c45",
+      "size": 94,
+      "sha256": "6fe7576a89dd2b3d14b676b75af366e6b99eb4d53279920077ee0ba276085aff"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/native-1791129747806470811/native-evidence/relay-actor-2/exit.json": {
+      "mode": "100644",
+      "blob": "8b2212ad22b9fcbfd32381e1bfaab325373530ee",
+      "size": 131,
+      "sha256": "33365912fd8dcffeabc404221247fa6bed4f3f99d5b511cb424acb4c413e4bdd"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/native-1791129747806470811/native-evidence/relay-actor-2/gate.json": {
+      "mode": "100644",
+      "blob": "b903d339475c12a21ca5c5c9974ff9ac80d08f5c",
+      "size": 20,
+      "sha256": "de188fce6b3a3614979bf4a74d2f927e12af24b3def1655c4231e8e18773699c"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/native-1791129747806470811/native-evidence/relay-config-actor-1.json": {
+      "mode": "100644",
+      "blob": "1ad87abbacb8ada865053a50a468973e90977a47",
+      "size": 365,
+      "sha256": "d02d5e0512da5f8e4d212316b724535ae9ae08af0172ee7e9fb5baf709012392"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/native-1791129747806470811/native-evidence/relay-config.json": {
+      "mode": "100644",
+      "blob": "b50bbf5b0d263310ae68af08c595af9bac901722",
+      "size": 365,
+      "sha256": "619ef774a584611830fec765bd65ce344a8101ebf58569940c8f7f55ecec64fa"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/native-1791129747806470811/native-evidence/restoredNativeFixturePixelsReturn-0.png": {
+      "mode": "100644",
+      "blob": "698ba6394fff785d737b59c865458a687285bc82",
+      "size": 64416,
+      "sha256": "af10cf3386c445d07de1e156435f2b136da5455fd0e2b947c2dfde181123a893"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/native-1791129747806470811/native-evidence/runtime-archive/.flatpak/webkit-2348154-16/bwrapinfo.json": {
+      "mode": "100644",
+      "blob": "568a514cc3c91a8db72de6d57530a3b1639cb20a",
+      "size": 161,
+      "sha256": "8b9312ff63be681f115c7bfb2dd5a78a4bc6ea844889993e0803bc0f02893e93"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/native-1791129747806470811/native-evidence/runtime-archive/.flatpak/webkit-2348154-4/bwrapinfo.json": {
+      "mode": "100644",
+      "blob": "80f062f6727dee9443d3e40eb12ef38988c46cd8",
+      "size": 194,
+      "sha256": "e7529dcf3dbea25cb8947327bb645835cc3e0720ffa82935b618b967aef22ca4"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/native-1791129747806470811/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791129748_253914460/5509415415810913631/ledger-v5.json": {
+      "mode": "100644",
+      "blob": "cabde4954e9980092259b1dd848419cc689adcb3",
+      "size": 643,
+      "sha256": "681d85de7dced61abbab7c12ba79d967a7fd6b033c0437ec32c5765ceb2a9890"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/native-1791129747806470811/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791129748_253914460/5509415415810913631/migration-plan.json": {
+      "mode": "100644",
+      "blob": "3e2b4726793303168141bd72d8225658af411ec7",
+      "size": 246,
+      "sha256": "bf79d012ca1225a7cab1af794e26803e4a747951f7a84d098eeb0a10f63d435f"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/native-1791129747806470811/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791129748_253914460/5509415415810913631/migration.json": {
+      "mode": "100644",
+      "blob": "fffd8bcc6943280ce91f976969cf47af3d1fe024",
+      "size": 227,
+      "sha256": "ab118d2ecd3b7ee003c6cb3e322c75f0be16a09eead8fa663308f8845486cb31"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/native-1791129747806470811/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791129748_253914460/hyprland.log": {
+      "mode": "100644",
+      "blob": "a240c6b350efe6131668cabc7c26f4e92b92dc35",
+      "size": 25622,
+      "sha256": "6b17ade6f78d81a2c8d9c648b5174c6c63d99b89c1941fd058d86424bb3f6ad9"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/native-1791129747806470811/native-evidence/runtime-archive/hyprland.lua": {
+      "mode": "100644",
+      "blob": "918cb3fefd0775e6a260f19af74c07c04e1790ac",
+      "size": 241,
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/native-1791129747806470811/native-evidence/weston-renderer.log": {
+      "mode": "100644",
+      "blob": "124838bc6b1363b5a547838f607e69ba0a36fa7b",
+      "size": 3767,
+      "sha256": "1d88e0dab88d83181ef891a51105a6ac42fcd2f4698092c6aa405ac65f8a1294"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/native-1791129747806470811/native-evidence/weston.log": {
+      "mode": "100644",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/native-1791129747806470811/report.json": {
+      "mode": "100644",
+      "blob": "7f5a724464090ebe4040d7fa2b01bdd09d58be5d",
+      "size": 252170,
+      "sha256": "70d3940ddaeb92d8732e15bc77c2c79207488afbb5e41435df40b8948dcfb9f1"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/native.py": {
+      "mode": "100644",
+      "blob": "2bb9d3a3896966c0b972e43bf3c021c80629cb02",
+      "size": 22222,
+      "sha256": "63c306dad249d06d65ca422ad900b4c57b7c0f4097df70f1d293ca343313bc57"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/preflight.json": {
+      "mode": "100644",
+      "blob": "ccdef262288073be3e61ed4f2b7eece5e93b6bdb",
+      "size": 32519,
+      "sha256": "28eeec4964f9f2ca597eddca9b09773c0d5269b2d2a3abd7873737afc8563a17"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/preflight.py": {
+      "mode": "100644",
+      "blob": "df76ac4fc1f89b16d58e8769d72ccab30f2e8ea8",
+      "size": 3555,
+      "sha256": "822bd2f52237467045a0fac6e4e6db7c97aef1894d728392336a95d9b7d2dfee"
+    },
+    "implementation/elm-keyboard-focus-gui-reconnect-v165/qa/sampling.py": {
+      "mode": "100644",
+      "blob": "c6bb014542ca87547099cae0db06f76677938d25",
+      "size": 3287,
+      "sha256": "d1fd77191300c5ff48e6ba91933c8049a5138cf0de11667a272b6a5066f7652a"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/README.md": {
+      "mode": "100644",
+      "blob": "be7f11bde722a0085663ff916eb413d93d860744",
+      "size": 273,
+      "sha256": "8476b912ce6eeb81ec5e715104623066cfe785a992373230e96674fce5428022"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/REVIEW.md": {
+      "mode": "100644",
+      "blob": "d6f17b0aede1cbe23144a79e5a81211e449237b9",
+      "size": 588,
+      "sha256": "4c28fd204d0c5936f043ffb217764ad25459819f1c9445eb3e6f60571ce489f4"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/fixture.py": {
+      "mode": "100644",
+      "blob": "34a180e6b712621c22a740d258963000b828e50b",
+      "size": 5267,
+      "sha256": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/grab_guard.py": {
+      "mode": "100644",
+      "blob": "e00d21c42f4ce83d50a937ba8437282f4e7086d7",
+      "size": 443,
+      "sha256": "a1714ba4298967555af5d417ee2a1e926fbe19035dfa014546a75ff4a5d42770"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/inspection.py": {
+      "mode": "100644",
+      "blob": "a6eb3c34c479f891b3d1849acac7306631d42356",
+      "size": 2563,
+      "sha256": "051d44430a49319389781d12bc0389732d76412ef1cf7f59f352f5e78f67bdd2"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/native-1791129716097840152/native-evidence/authority-config.json": {
+      "mode": "100644",
+      "blob": "5071cb5cf845c55f3eddd7bb4bbeed79b0e50f80",
+      "size": 246,
+      "sha256": "1371b71c4beeb37b94a87b22f197b9ac26bac586656c1167716a45df27753b9a"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/native-1791129716097840152/native-evidence/dmabuf-probe.stderr": {
+      "mode": "100644",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/native-1791129716097840152/native-evidence/dmabuf-probe.stdout": {
+      "mode": "100644",
+      "blob": "7b0492b42b9637366e222526cc706c670602c52b",
+      "size": 174,
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/native-1791129716097840152/native-evidence/elm-webview.log": {
+      "mode": "100644",
+      "blob": "128681935ad60e4889186aaac167a1fe5de53ccd",
+      "size": 354557,
+      "sha256": "82c46ce20f5de1436acbeb85ac628ca55a2fda19d6918dbe95fbb506a2f10400"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/native-1791129716097840152/native-evidence/fixture.log": {
+      "mode": "100644",
+      "blob": "fe9342c437ae02e4af44528e992947b78f484a49",
+      "size": 574,
+      "sha256": "3cefa5af386714e4f4ea1be6f06e15877e3256880f142f8829e4ef0fed63849e"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/native-1791129716097840152/native-evidence/host-evidence.json": {
+      "mode": "100644",
+      "blob": "c1aa4a97788bcb852fa72410bb80f9866cd8d4fc",
+      "size": 214912,
+      "sha256": "d2fbf9e3de89a1f3ae4a4ac664002fa111de55ccc068dd4ff414feb44e33dcf6"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/native-1791129716097840152/native-evidence/hyprland.log": {
+      "mode": "100644",
+      "blob": "98a2bbfc0d3782d08b22141defbc01655c2e9b30",
+      "size": 373766,
+      "sha256": "a23640004d08fa280440d4d00ba65a86448f1934f344df5d882d48ebe5b86e7a"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/native-1791129716097840152/native-evidence/initialNativeFixturePixelsAreRed-0.png": {
+      "mode": "100644",
+      "blob": "6b00b3f580d408f00863e3847640aa58f34ad104",
+      "size": 20279,
+      "sha256": "e14ba4c243a7a11b565b81add0f0f75e29c230b84cd29a4e9e167a316788b121"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/native-1791129716097840152/native-evidence/minimizedNativeFixturePixelsDisappear-0.png": {
+      "mode": "100644",
+      "blob": "6e3657ea8019e568d4acd16b8b3216c9dbf9bb0c",
+      "size": 45553,
+      "sha256": "f27dbc790eb8638206ee3ff9b302142ba5dc246abbe6b7e3a8b835fbdd51194e"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/native-1791129716097840152/native-evidence/privateBus.log": {
+      "mode": "100644",
+      "blob": "24f6ec1115cf91a05618d7cc17550835a318c9b7",
+      "size": 5570,
+      "sha256": "17f0e94db976fbfe70942b94a7ef3351c08500b4db86b603eea2067e0059af06"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/native-1791129716097840152/native-evidence/relay-actor-1/actor.json": {
+      "mode": "100644",
+      "blob": "c12fc84dca41033c8f88b65ec35658241bc354a4",
+      "size": 94,
+      "sha256": "3885f20df722635fbe82af38d081ee43d711866e437bdbc30753eb8e5f783a7c"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/native-1791129716097840152/native-evidence/relay-actor-1/exit.json": {
+      "mode": "100644",
+      "blob": "123a10131f95d286d69eb88f1347f83a81435ab9",
+      "size": 131,
+      "sha256": "a4dfe214ebf99b1d1e458b58baff040d151b7a52274b291c9f9cfd430c3668f2"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/native-1791129716097840152/native-evidence/relay-actor-1/gate.json": {
+      "mode": "100644",
+      "blob": "b903d339475c12a21ca5c5c9974ff9ac80d08f5c",
+      "size": 20,
+      "sha256": "de188fce6b3a3614979bf4a74d2f927e12af24b3def1655c4231e8e18773699c"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/native-1791129716097840152/native-evidence/relay-config.json": {
+      "mode": "100644",
+      "blob": "780b8ea8264f0d8df8e597dc938421e2b6c04f32",
+      "size": 366,
+      "sha256": "f59b77cbabdf411ef235fedc0c904536c7df491a8785063f4f2b06bbfa85824a"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/native-1791129716097840152/native-evidence/restoredNativeFixturePixelsReturn-0.png": {
+      "mode": "100644",
+      "blob": "86ec6587c0e9e329a0ea83d5a658193106a4dd98",
+      "size": 20093,
+      "sha256": "4c4fa2e9c51055cfcb7ed2bbba5ca086220813f9bfd6b6e6798b46f7c750d6b7"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/native-1791129716097840152/native-evidence/runtime-archive/.flatpak/webkit-2345984-16/bwrapinfo.json": {
+      "mode": "100644",
+      "blob": "f5a6c0da434aa98baa7a8e0c7c3f7c6781110c06",
+      "size": 161,
+      "sha256": "e1a48e6cf65d323585d1d8e3bbb6a5bc61a500dce2cf276477971dd83f268467"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/native-1791129716097840152/native-evidence/runtime-archive/.flatpak/webkit-2345984-4/bwrapinfo.json": {
+      "mode": "100644",
+      "blob": "056a5f34ffff1c3cd9c2360619a8e97578c8ce9d",
+      "size": 194,
+      "sha256": "f43ed6efc843baa4d5f9824c35a9b5114f9106ea4d9476b1b68ec9fa0717428c"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/native-1791129716097840152/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791129717_1495207521/559162096643491132/ledger-v5.json": {
+      "mode": "100644",
+      "blob": "690b69a808b6359451c22e3f93f07d73e8cf04b9",
+      "size": 948,
+      "sha256": "05a9e3ad25f09ff4c9ae5d64d02fbcd6569b90a01b11867d777dc0929aaef69e"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/native-1791129716097840152/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791129717_1495207521/559162096643491132/migration-plan.json": {
+      "mode": "100644",
+      "blob": "c7f46ba3aeafee766e1915e62838a3c9de3e0821",
+      "size": 246,
+      "sha256": "92eb3ed138a0bc0832fbbaec501490894ed5a447005a6de1dd6f1fa19a6e183f"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/native-1791129716097840152/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791129717_1495207521/559162096643491132/migration.json": {
+      "mode": "100644",
+      "blob": "187b849ea3b38b8f1f5b2fbd731afd15194020cd",
+      "size": 227,
+      "sha256": "1b6f94a1b3dd9b9f71efea00daf772c2cad8cb1fb46e4e0d9a639f53a33ac76c"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/native-1791129716097840152/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791129717_1495207521/hyprland.log": {
+      "mode": "100644",
+      "blob": "50ee0249b34b385442dff8da3b3d65eb5f921250",
+      "size": 25623,
+      "sha256": "0da1df37b92c57a32f64aa2685bd77fd7e3793b4ee25de67453226cc8b983148"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/native-1791129716097840152/native-evidence/runtime-archive/hyprland.lua": {
+      "mode": "100644",
+      "blob": "918cb3fefd0775e6a260f19af74c07c04e1790ac",
+      "size": 241,
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/native-1791129716097840152/native-evidence/weston-renderer.log": {
+      "mode": "100644",
+      "blob": "2ef99a8b21f2b19a05695407267143a533c8fdd8",
+      "size": 3767,
+      "sha256": "d61fe19214d6261618b36e466028001836911fe3a10286ae707737b0cca77bd2"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/native-1791129716097840152/native-evidence/weston.log": {
+      "mode": "100644",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/native-1791129716097840152/report.json": {
+      "mode": "100644",
+      "blob": "e1c0f802677bb62152828a06b86cd5f3cfc846d6",
+      "size": 246786,
+      "sha256": "4042ced86040e9e6363e7bf6f2d849d27414122e3285b99bcfdddd7b355a0e48"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/native.py": {
+      "mode": "100644",
+      "blob": "4121b94a9424a39960cefd04c54d6e2be0d69714",
+      "size": 18519,
+      "sha256": "9b962ce2defc00f22d6fb085cc1023d4a0d5d73550a4455ae649370a1cb9c13c"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/preflight.json": {
+      "mode": "100644",
+      "blob": "dd1cddfacec685cb4c4145285a6c0e0034f3fe48",
+      "size": 32495,
+      "sha256": "ab3971d17d4e94018144c7dcd9dbbb0942e912e7aa13ff5ce6825b1667c45d8e"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/preflight.py": {
+      "mode": "100644",
+      "blob": "df76ac4fc1f89b16d58e8769d72ccab30f2e8ea8",
+      "size": 3555,
+      "sha256": "822bd2f52237467045a0fac6e4e6db7c97aef1894d728392336a95d9b7d2dfee"
+    },
+    "implementation/elm-keyboard-focus-gui-relay-v164/qa/sampling.py": {
+      "mode": "100644",
+      "blob": "c6bb014542ca87547099cae0db06f76677938d25",
+      "size": 3287,
+      "sha256": "d1fd77191300c5ff48e6ba91933c8049a5138cf0de11667a272b6a5066f7652a"
+    },
+    "implementation/elm-keyboard-focus-runtime-v163/REVIEW.json": {
+      "mode": "100644",
+      "blob": "d3cd31f31196ad5f8b21dd0e03e8def61945871e",
+      "size": 843,
+      "sha256": "602bf6c6fd264e78d32ed7c126be08a3000d630323eb974b0edd6b9ad6236fa9"
+    },
+    "implementation/elm-keyboard-focus-runtime-v163/aq-tuple.json": {
+      "mode": "100644",
+      "blob": "1662de0ccdc27c5d0862c9c4e8aa719fd6f62319",
+      "size": 473,
+      "sha256": "19975b079b010fef310d33bff44e8985142d58bb2997b965a6f46f9be739796d"
+    },
+    "implementation/elm-keyboard-focus-runtime-v163/candidate_host.py": {
+      "mode": "100644",
+      "blob": "8365427c87ad9dde8062d79d83908a9e51f026b4",
+      "size": 10070,
+      "sha256": "7c8cb4c0990d21241a7689fcbf4276f81886d2660606c82f8dff7cd7cff4d387"
+    },
+    "implementation/elm-keyboard-focus-runtime-v163/native-build-report.json": {
+      "mode": "100644",
+      "blob": "d6aca8f5b3df7df9c98a7df366f41aac1fe498cd",
+      "size": 1772,
+      "sha256": "e40c1c32cea89fb14765bfe34943a77cee7a043f8230ad7adac0853ea8f8c80e"
+    },
+    "implementation/elm-keyboard-focus-runtime-v163/parent-probe-build.json": {
+      "mode": "100644",
+      "blob": "07ed33740ba9cb6546b533015f217d1743e2cd0f",
+      "size": 239,
+      "sha256": "ca0d1b5b977ead42c4f1bfe45ffdf9f911347e19e773494711a52deab51cc22d"
+    },
+    "implementation/elm-keyboard-focus-runtime-v163/qa/build-pair-manifest.json": {
+      "mode": "100644",
+      "blob": "652f0e11bfcb0295b6acaee3b4d23aa5e0eada55",
+      "size": 1962,
+      "sha256": "d44873b11cb13519fc6d19c3da273e98ed09cb62487b22fb1124638e56c00777"
+    }
+  },
+  "scope": "Owned bounded keyboard focus/capability cancellation archive, raw index bytes checked; existing concurrent stages excluded from this commit"
+}
