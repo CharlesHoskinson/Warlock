@@ -1,0 +1,127 @@
+{
+  "passed": true,
+  "scope": "Synthetic build-loop orchestration safety; no native GUI or ELM parity acceptance",
+  "inputs": {
+    "implementation/elm-build-loop-v1/loop.py": "fcf766eeba0b42ac9560298869c1ff3f70f5a90f42b6f10147905fb972990f88",
+    "implementation/elm-build-loop-v1/qa/test.py": "10abf198e5effd8c7d6ace90d425788c341cb1e642df300afebb1c5cbac95e38",
+    "implementation/elm-build-loop-v1/config.json": "21a7b82f61b08ab277514b8348a322489df2e48c54a2e6c20432bb65eeda610f",
+    "docs/elm-roadmap/REQUIREMENTS.md": "0058972a8133d01689815d3b4148c5fed95d7a79f1a192d512328feeae51c825",
+    "docs/elm-roadmap/SPRINTS.md": "7b0bb55a6539c1e3f4ca2281b4798d235f4a0503285ead815d921463b340b8aa",
+    "docs/elm-roadmap/TRACEABILITY.md": "36fe3e4c494493caaacaae74df750e12c7955c2dae931a10537528ef083ded93",
+    "docs/elm-roadmap/requirements.json": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+    "docs/elm-roadmap/normalizations.json": "b5bc75606af18c1e1ca576eba143d17deb501fd7c6c44e17aa8d99f9ad0710e9",
+    "docs/elm-roadmap/delivery/validation-build-cycles-original.json": "4b7b9e0457382b7702d7a7e2d6b42caa95f5900a4b965e9ae12e1005f30e5d48"
+  },
+  "checks": [
+    {
+      "id": "append-only-checkpoints-bind-evidence-without-promoting-failed-report",
+      "passed": true
+    },
+    {
+      "id": "six-parallel-writers-preserve-thirty-events-and-original-bytes",
+      "passed": true
+    },
+    {
+      "id": "unknown-completion-status-and-invalid-evidence-refused-without-event",
+      "passed": true
+    },
+    {
+      "id": "native-lock-rejects-concurrent-request-before-launch-and-releases",
+      "passed": true
+    },
+    {
+      "id": "two-process-native-contention-launches-exactly-one-synthetic-child",
+      "passed": true
+    },
+    {
+      "id": "existing-qa-conflict-refused-before-launch",
+      "passed": true
+    },
+    {
+      "id": "outside-symlink-missing-directory-nonpython-runners-refused-before-launch",
+      "passed": true
+    },
+    {
+      "id": "native-command-uses-fixed-protected-launcher-and-literal-arguments",
+      "passed": true
+    },
+    {
+      "id": "error-cancellation-and-child-exits-preserved-and-lock-released",
+      "passed": true
+    },
+    {
+      "id": "status-filters-thread-and-observes-lock-without-inventing-acceptance",
+      "passed": true
+    },
+    {
+      "id": "original-roadmap-identities-unchanged-and-no-acceptance-file-created",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-build-loop-v1/qa/test-1791080753933582152/elm-loop-fixture-2bt7g3n7/repository/implementation/synthetic/qa/runner.py"
+      ],
+      "synthetic": true,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-build-loop-v1/qa/test-1791080753933582152/elm-loop-fixture-2bt7g3n7/repository/implementation/synthetic/qa/runner.py",
+        "--fixture",
+        "literal space"
+      ],
+      "synthetic": true,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-build-loop-v1/qa/test-1791080753933582152/elm-loop-fixture-2bt7g3n7/repository/implementation/synthetic/qa/runner.py"
+      ],
+      "synthetic": true,
+      "exitCode": 0
+    }
+  ],
+  "afterInputs": {
+    "implementation/elm-build-loop-v1/loop.py": "fcf766eeba0b42ac9560298869c1ff3f70f5a90f42b6f10147905fb972990f88",
+    "implementation/elm-build-loop-v1/qa/test.py": "10abf198e5effd8c7d6ace90d425788c341cb1e642df300afebb1c5cbac95e38",
+    "implementation/elm-build-loop-v1/config.json": "21a7b82f61b08ab277514b8348a322489df2e48c54a2e6c20432bb65eeda610f",
+    "docs/elm-roadmap/REQUIREMENTS.md": "0058972a8133d01689815d3b4148c5fed95d7a79f1a192d512328feeae51c825",
+    "docs/elm-roadmap/SPRINTS.md": "7b0bb55a6539c1e3f4ca2281b4798d235f4a0503285ead815d921463b340b8aa",
+    "docs/elm-roadmap/TRACEABILITY.md": "36fe3e4c494493caaacaae74df750e12c7955c2dae931a10537528ef083ded93",
+    "docs/elm-roadmap/requirements.json": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+    "docs/elm-roadmap/normalizations.json": "b5bc75606af18c1e1ca576eba143d17deb501fd7c6c44e17aa8d99f9ad0710e9",
+    "docs/elm-roadmap/delivery/validation-build-cycles-original.json": "4b7b9e0457382b7702d7a7e2d6b42caa95f5900a4b965e9ae12e1005f30e5d48"
+  },
+  "artifacts": {
+    "checks.log": "b0d4d225e676740556cd2d790d02e4d3fc41ad8c0b5d0f63a7063a2dc50d8b59",
+    "inputs/docs/elm-roadmap/REQUIREMENTS.md": "0058972a8133d01689815d3b4148c5fed95d7a79f1a192d512328feeae51c825",
+    "inputs/docs/elm-roadmap/SPRINTS.md": "7b0bb55a6539c1e3f4ca2281b4798d235f4a0503285ead815d921463b340b8aa",
+    "inputs/docs/elm-roadmap/TRACEABILITY.md": "36fe3e4c494493caaacaae74df750e12c7955c2dae931a10537528ef083ded93",
+    "inputs/docs/elm-roadmap/requirements.json": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+    "inputs/docs/elm-roadmap/normalizations.json": "b5bc75606af18c1e1ca576eba143d17deb501fd7c6c44e17aa8d99f9ad0710e9",
+    "inputs/docs/elm-roadmap/delivery/validation-build-cycles-original.json": "4b7b9e0457382b7702d7a7e2d6b42caa95f5900a4b965e9ae12e1005f30e5d48",
+    "inputs/implementation/elm-build-loop-v1/loop.py": "fcf766eeba0b42ac9560298869c1ff3f70f5a90f42b6f10147905fb972990f88",
+    "inputs/implementation/elm-build-loop-v1/config.json": "21a7b82f61b08ab277514b8348a322489df2e48c54a2e6c20432bb65eeda610f",
+    "inputs/implementation/elm-build-loop-v1/qa/test.py": "10abf198e5effd8c7d6ace90d425788c341cb1e642df300afebb1c5cbac95e38"
+  }
+}

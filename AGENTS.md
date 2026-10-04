@@ -10,6 +10,12 @@ CPU tests and Quint model results are separate claims.
   whose owning ABI differs from the recorded pair.
 - Native GUI campaigns run serially through the protected `qa_run.py` launcher;
   preserve the five changes in `docs/crash-noise/HANDOFF-codex-window-qa.md`.
+- Follow `docs/elm-roadmap/BUILD-LOOP.md` for automatic roadmap continuation.
+  Read the integration lane and latest per-thread checkpoints before choosing
+  work; preserve concurrent workers' source paths and state. New native GUI
+  campaigns must use `python3 -B implementation/elm-build-loop-v1/loop.py native
+  --runner /absolute/reviewed/runner.py`, which holds the shared native lock and
+  invokes the unchanged protected launcher. CPU QA continues through `qa_run.py`.
 - Do not edit `/usr/share/omarchy`. Read the installed Omarchy skill before
   changing desktop configuration; a snapshot is in `docs/skills/omarchy/`.
 - Installed Files operation semantics are specified in Quint. Change that spec

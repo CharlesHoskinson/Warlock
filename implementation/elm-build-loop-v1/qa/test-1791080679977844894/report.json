@@ -1,0 +1,67 @@
+{
+  "passed": false,
+  "scope": "Synthetic build-loop orchestration safety; no native GUI or ELM parity acceptance",
+  "inputs": {
+    "implementation/elm-build-loop-v1/loop.py": "a62704b3306e9bb0442d3e5013907b7cac2c936c5bf79155db69be57cb0f52c0",
+    "implementation/elm-build-loop-v1/qa/test.py": "cf91cc4f204b5b7cadb376c221ad3b677db68c57b22c4a12ac632baaf47d6d9a",
+    "implementation/elm-build-loop-v1/config.json": "21a7b82f61b08ab277514b8348a322489df2e48c54a2e6c20432bb65eeda610f",
+    "docs/elm-roadmap/REQUIREMENTS.md": "0058972a8133d01689815d3b4148c5fed95d7a79f1a192d512328feeae51c825",
+    "docs/elm-roadmap/SPRINTS.md": "7b0bb55a6539c1e3f4ca2281b4798d235f4a0503285ead815d921463b340b8aa",
+    "docs/elm-roadmap/TRACEABILITY.md": "36fe3e4c494493caaacaae74df750e12c7955c2dae931a10537528ef083ded93",
+    "docs/elm-roadmap/requirements.json": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+    "docs/elm-roadmap/normalizations.json": "b5bc75606af18c1e1ca576eba143d17deb501fd7c6c44e17aa8d99f9ad0710e9",
+    "docs/elm-roadmap/delivery/validation-build-cycles-original.json": "4b7b9e0457382b7702d7a7e2d6b42caa95f5900a4b965e9ae12e1005f30e5d48"
+  },
+  "checks": [
+    {
+      "id": "append-only-checkpoints-bind-evidence-without-promoting-failed-report",
+      "passed": true
+    },
+    {
+      "id": "six-parallel-writers-preserve-thirty-events-and-original-bytes",
+      "passed": false,
+      "error": "RuntimeError('\\n        An attempt has been made to start a new process before the\\n        current process has finished its bootstrapping phase.\\n\\n        This probably means that you are not using fork to start your\\n        child processes and you have forgotten to use the proper idiom\\n        in the main module:\\n\\n            if __name__ == \\'__main__\\':\\n                freeze_support()\\n                ...\\n\\n        The \"freeze_support()\" line can be omitted if the program\\n        is not going to be frozen to produce an executable.\\n\\n        To fix this issue, refer to the \"Safe importing of main module\"\\n        section in https://docs.python.org/3/library/multiprocessing.html\\n        ')",
+      "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-build-loop-v1/qa/test.py\", line 58, in check\n    function()\n    ~~~~~~~~^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-build-loop-v1/qa/test.py\", line 134, in parallel_writers\n    for worker in workers: worker.start()\n                           ~~~~~~~~~~~~^^\n  File \"/usr/lib/python3.14/multiprocessing/process.py\", line 121, in start\n    self._popen = self._Popen(self)\n                  ~~~~~~~~~~~^^^^^^\n  File \"/usr/lib/python3.14/multiprocessing/context.py\", line 230, in _Popen\n    return _default_context.get_context().Process._Popen(process_obj)\n           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/multiprocessing/context.py\", line 306, in _Popen\n    return Popen(process_obj)\n  File \"/usr/lib/python3.14/multiprocessing/popen_forkserver.py\", line 35, in __init__\n    super().__init__(process_obj)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/multiprocessing/popen_fork.py\", line 20, in __init__\n    self._launch(process_obj)\n    ~~~~~~~~~~~~^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/multiprocessing/popen_forkserver.py\", line 42, in _launch\n    prep_data = spawn.get_preparation_data(process_obj._name)\n  File \"/usr/lib/python3.14/multiprocessing/spawn.py\", line 164, in get_preparation_data\n    _check_not_importing_main()\n    ~~~~~~~~~~~~~~~~~~~~~~~~~^^\n  File \"/usr/lib/python3.14/multiprocessing/spawn.py\", line 140, in _check_not_importing_main\n    raise RuntimeError('''\n    ...<16 lines>...\n    ''')\nRuntimeError: \n        An attempt has been made to start a new process before the\n        current process has finished its bootstrapping phase.\n\n        This probably means that you are not using fork to start your\n        child processes and you have forgotten to use the proper idiom\n        in the main module:\n\n            if __name__ == '__main__':\n                freeze_support()\n                ...\n\n        The \"freeze_support()\" line can be omitted if the program\n        is not going to be frozen to produce an executable.\n\n        To fix this issue, refer to the \"Safe importing of main module\"\n        section in https://docs.python.org/3/library/multiprocessing.html\n        \n"
+    },
+    {
+      "id": "unknown-completion-status-and-invalid-evidence-refused-without-event",
+      "passed": true
+    },
+    {
+      "id": "native-lock-rejects-concurrent-request-before-launch-and-releases",
+      "passed": true
+    },
+    {
+      "id": "existing-qa-conflict-refused-before-launch",
+      "passed": true
+    },
+    {
+      "id": "outside-symlink-missing-directory-nonpython-runners-refused-before-launch",
+      "passed": true
+    },
+    {
+      "id": "native-command-uses-fixed-protected-launcher-and-literal-arguments",
+      "passed": true
+    },
+    {
+      "id": "error-cancellation-and-child-exits-preserved-and-lock-released",
+      "passed": true
+    },
+    {
+      "id": "original-roadmap-identities-unchanged-and-no-acceptance-file-created",
+      "passed": true
+    }
+  ],
+  "commands": [],
+  "artifacts": {
+    "inputs/docs/elm-roadmap/REQUIREMENTS.md": "0058972a8133d01689815d3b4148c5fed95d7a79f1a192d512328feeae51c825",
+    "inputs/docs/elm-roadmap/SPRINTS.md": "7b0bb55a6539c1e3f4ca2281b4798d235f4a0503285ead815d921463b340b8aa",
+    "inputs/docs/elm-roadmap/TRACEABILITY.md": "36fe3e4c494493caaacaae74df750e12c7955c2dae931a10537528ef083ded93",
+    "inputs/docs/elm-roadmap/requirements.json": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+    "inputs/docs/elm-roadmap/normalizations.json": "b5bc75606af18c1e1ca576eba143d17deb501fd7c6c44e17aa8d99f9ad0710e9",
+    "inputs/docs/elm-roadmap/delivery/validation-build-cycles-original.json": "4b7b9e0457382b7702d7a7e2d6b42caa95f5900a4b965e9ae12e1005f30e5d48",
+    "inputs/implementation/elm-build-loop-v1/loop.py": "a62704b3306e9bb0442d3e5013907b7cac2c936c5bf79155db69be57cb0f52c0",
+    "inputs/implementation/elm-build-loop-v1/config.json": "21a7b82f61b08ab277514b8348a322489df2e48c54a2e6c20432bb65eeda610f",
+    "inputs/implementation/elm-build-loop-v1/qa/test.py": "cf91cc4f204b5b7cadb376c221ad3b677db68c57b22c4a12ac632baaf47d6d9a"
+  }
+}

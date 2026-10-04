@@ -1,0 +1,224 @@
+{
+  "passed": true,
+  "scope": "Synthetic build-loop orchestration safety; no native GUI or ELM parity acceptance",
+  "inputs": {
+    "implementation/elm-build-loop-v1/loop.py": "13216f4226f4fdb2e439604459e860763ce351fa77cec0f6082c30195372dbd6",
+    "implementation/elm-build-loop-v1/qa/test.py": "fbc8439af9c508bb32e1cda57cf122c54252319c2f6133a60b0499d13676bd0c",
+    "implementation/elm-build-loop-v1/qa/freeze.py": "b5f96cf29b953d2055cabef1e18e205955097ade2fc3060975824642c99239df",
+    "implementation/elm-build-loop-v1/config.json": "21a7b82f61b08ab277514b8348a322489df2e48c54a2e6c20432bb65eeda610f",
+    "implementation/elm-build-loop-v1/goal-receipt.json": "c9c260586141b11636e0c6c6c064abbf9eb0b797bf3fe5eaf4d8e32284088510",
+    "implementation/elm-build-loop-v1/HANDOFF.md": "8e22f46ddeefd0f8548a43462a2f6299eeafc0090e3b401824fc25b6258f12bd",
+    "implementation/elm-build-loop-v1/README.md": "0a64217870c35ab783ba0b2515e3f35612b8fd3a73d162a2760e70c5b51a6dd6",
+    "docs/elm-roadmap/REQUIREMENTS.md": "0058972a8133d01689815d3b4148c5fed95d7a79f1a192d512328feeae51c825",
+    "docs/elm-roadmap/SPRINTS.md": "7b0bb55a6539c1e3f4ca2281b4798d235f4a0503285ead815d921463b340b8aa",
+    "docs/elm-roadmap/TRACEABILITY.md": "36fe3e4c494493caaacaae74df750e12c7955c2dae931a10537528ef083ded93",
+    "docs/elm-roadmap/requirements.json": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+    "docs/elm-roadmap/normalizations.json": "b5bc75606af18c1e1ca576eba143d17deb501fd7c6c44e17aa8d99f9ad0710e9",
+    "docs/elm-roadmap/delivery/validation-build-cycles-original.json": "4b7b9e0457382b7702d7a7e2d6b42caa95f5900a4b965e9ae12e1005f30e5d48",
+    "docs/elm-roadmap/RIGHT-CLICK.md": "a9216264e0656c56fb6452428b51c44ee2137ba6a84019833b4b3a648358c7d9",
+    "docs/elm-roadmap/delivery/right-click-validation.json": "dfba506848575e9900e856070797a21f758ab5c718f709005416be00af5ce13e",
+    "docs/elm-roadmap/delivery/sprint-backlog.json": "a74daafd82f80ef6b13a40b5d9f2f10e6bca7c22e2ac63d7ece7120ed02f58ee"
+  },
+  "checks": [
+    {
+      "id": "append-only-checkpoints-bind-evidence-without-promoting-failed-report",
+      "passed": true
+    },
+    {
+      "id": "six-parallel-writers-preserve-thirty-events-and-original-bytes",
+      "passed": true
+    },
+    {
+      "id": "unknown-completion-status-and-invalid-evidence-refused-without-event",
+      "passed": true
+    },
+    {
+      "id": "native-lock-rejects-concurrent-request-before-launch-and-releases",
+      "passed": true
+    },
+    {
+      "id": "two-process-native-contention-launches-exactly-one-synthetic-child",
+      "passed": true
+    },
+    {
+      "id": "global-native-lock-rejects-different-repository-before-launch",
+      "passed": true
+    },
+    {
+      "id": "inherited-fd-retains-global-lock-after-parent-return-or-cancellation",
+      "passed": true
+    },
+    {
+      "id": "existing-qa-conflict-refused-before-launch",
+      "passed": true
+    },
+    {
+      "id": "outside-symlink-missing-directory-nonpython-runners-refused-before-launch",
+      "passed": true
+    },
+    {
+      "id": "native-command-uses-fixed-protected-launcher-and-literal-arguments",
+      "passed": true
+    },
+    {
+      "id": "error-cancellation-and-child-exits-preserved-and-lock-released",
+      "passed": true
+    },
+    {
+      "id": "supervisor-forwards-sigterm-and-holds-lock-until-real-nongraphics-child-exits",
+      "passed": true
+    },
+    {
+      "id": "graceful-child-zero-exit-after-cancellation-remains-negative-sigterm",
+      "passed": true
+    },
+    {
+      "id": "cli-normalizes-cancellation-to-143-or-130-without-launching",
+      "passed": true
+    },
+    {
+      "id": "baseline-and-amendment-counts-verified-hash-or-count-mismatch-refused",
+      "passed": true
+    },
+    {
+      "id": "status-filters-thread-and-observes-lock-without-inventing-acceptance",
+      "passed": true
+    },
+    {
+      "id": "original-roadmap-identities-unchanged-and-no-acceptance-file-created",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-build-loop-v1/qa/test-1791081128253463208/elm-loop-fixture-qal3gtp8/repository/implementation/synthetic/qa/runner.py"
+      ],
+      "synthetic": true,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-build-loop-v1/qa/test-1791081128253463208/elm-loop-fixture-qal3gtp8/child-lock-other-repository/runner.py"
+      ],
+      "synthetic": true,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-build-loop-v1/qa/test-1791081128253463208/elm-loop-fixture-qal3gtp8/child-lock-other-repository/runner.py"
+      ],
+      "synthetic": true,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-build-loop-v1/qa/test-1791081128253463208/elm-loop-fixture-qal3gtp8/repository/implementation/synthetic/qa/runner.py",
+        "--fixture",
+        "literal space"
+      ],
+      "synthetic": true,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-build-loop-v1/qa/test-1791081128253463208/elm-loop-fixture-qal3gtp8/repository/implementation/synthetic/qa/runner.py"
+      ],
+      "synthetic": true,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-build-loop-v1/qa/test-1791081128253463208/elm-loop-fixture-qal3gtp8/repository/implementation/synthetic/qa/runner.py"
+      ],
+      "synthetic": true,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-build-loop-v1/qa/test-1791081128253463208/elm-loop-fixture-qal3gtp8/repository/implementation/synthetic/qa/runner.py"
+      ],
+      "synthetic": true,
+      "exitCode": 0
+    }
+  ],
+  "afterInputs": {
+    "implementation/elm-build-loop-v1/loop.py": "13216f4226f4fdb2e439604459e860763ce351fa77cec0f6082c30195372dbd6",
+    "implementation/elm-build-loop-v1/qa/test.py": "fbc8439af9c508bb32e1cda57cf122c54252319c2f6133a60b0499d13676bd0c",
+    "implementation/elm-build-loop-v1/qa/freeze.py": "b5f96cf29b953d2055cabef1e18e205955097ade2fc3060975824642c99239df",
+    "implementation/elm-build-loop-v1/config.json": "21a7b82f61b08ab277514b8348a322489df2e48c54a2e6c20432bb65eeda610f",
+    "implementation/elm-build-loop-v1/goal-receipt.json": "c9c260586141b11636e0c6c6c064abbf9eb0b797bf3fe5eaf4d8e32284088510",
+    "implementation/elm-build-loop-v1/HANDOFF.md": "8e22f46ddeefd0f8548a43462a2f6299eeafc0090e3b401824fc25b6258f12bd",
+    "implementation/elm-build-loop-v1/README.md": "0a64217870c35ab783ba0b2515e3f35612b8fd3a73d162a2760e70c5b51a6dd6",
+    "docs/elm-roadmap/REQUIREMENTS.md": "0058972a8133d01689815d3b4148c5fed95d7a79f1a192d512328feeae51c825",
+    "docs/elm-roadmap/SPRINTS.md": "7b0bb55a6539c1e3f4ca2281b4798d235f4a0503285ead815d921463b340b8aa",
+    "docs/elm-roadmap/TRACEABILITY.md": "36fe3e4c494493caaacaae74df750e12c7955c2dae931a10537528ef083ded93",
+    "docs/elm-roadmap/requirements.json": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+    "docs/elm-roadmap/normalizations.json": "b5bc75606af18c1e1ca576eba143d17deb501fd7c6c44e17aa8d99f9ad0710e9",
+    "docs/elm-roadmap/delivery/validation-build-cycles-original.json": "4b7b9e0457382b7702d7a7e2d6b42caa95f5900a4b965e9ae12e1005f30e5d48",
+    "docs/elm-roadmap/RIGHT-CLICK.md": "a9216264e0656c56fb6452428b51c44ee2137ba6a84019833b4b3a648358c7d9",
+    "docs/elm-roadmap/delivery/right-click-validation.json": "dfba506848575e9900e856070797a21f758ab5c718f709005416be00af5ce13e",
+    "docs/elm-roadmap/delivery/sprint-backlog.json": "a74daafd82f80ef6b13a40b5d9f2f10e6bca7c22e2ac63d7ece7120ed02f58ee"
+  },
+  "artifacts": {
+    "checks.log": "f59c31f2111c2ff2b577084a94e81caeb35d862abff721271081c3398f10af79",
+    "inputs/docs/elm-roadmap/REQUIREMENTS.md": "0058972a8133d01689815d3b4148c5fed95d7a79f1a192d512328feeae51c825",
+    "inputs/docs/elm-roadmap/SPRINTS.md": "7b0bb55a6539c1e3f4ca2281b4798d235f4a0503285ead815d921463b340b8aa",
+    "inputs/docs/elm-roadmap/TRACEABILITY.md": "36fe3e4c494493caaacaae74df750e12c7955c2dae931a10537528ef083ded93",
+    "inputs/docs/elm-roadmap/requirements.json": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+    "inputs/docs/elm-roadmap/normalizations.json": "b5bc75606af18c1e1ca576eba143d17deb501fd7c6c44e17aa8d99f9ad0710e9",
+    "inputs/docs/elm-roadmap/RIGHT-CLICK.md": "a9216264e0656c56fb6452428b51c44ee2137ba6a84019833b4b3a648358c7d9",
+    "inputs/docs/elm-roadmap/delivery/validation-build-cycles-original.json": "4b7b9e0457382b7702d7a7e2d6b42caa95f5900a4b965e9ae12e1005f30e5d48",
+    "inputs/docs/elm-roadmap/delivery/right-click-validation.json": "dfba506848575e9900e856070797a21f758ab5c718f709005416be00af5ce13e",
+    "inputs/docs/elm-roadmap/delivery/sprint-backlog.json": "a74daafd82f80ef6b13a40b5d9f2f10e6bca7c22e2ac63d7ece7120ed02f58ee",
+    "inputs/implementation/elm-build-loop-v1/loop.py": "13216f4226f4fdb2e439604459e860763ce351fa77cec0f6082c30195372dbd6",
+    "inputs/implementation/elm-build-loop-v1/config.json": "21a7b82f61b08ab277514b8348a322489df2e48c54a2e6c20432bb65eeda610f",
+    "inputs/implementation/elm-build-loop-v1/goal-receipt.json": "c9c260586141b11636e0c6c6c064abbf9eb0b797bf3fe5eaf4d8e32284088510",
+    "inputs/implementation/elm-build-loop-v1/HANDOFF.md": "8e22f46ddeefd0f8548a43462a2f6299eeafc0090e3b401824fc25b6258f12bd",
+    "inputs/implementation/elm-build-loop-v1/README.md": "0a64217870c35ab783ba0b2515e3f35612b8fd3a73d162a2760e70c5b51a6dd6",
+    "inputs/implementation/elm-build-loop-v1/qa/test.py": "fbc8439af9c508bb32e1cda57cf122c54252319c2f6133a60b0499d13676bd0c",
+    "inputs/implementation/elm-build-loop-v1/qa/freeze.py": "b5f96cf29b953d2055cabef1e18e205955097ade2fc3060975824642c99239df"
+  }
+}

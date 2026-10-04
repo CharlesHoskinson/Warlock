@@ -1,0 +1,548 @@
+[
+  {
+    "id": "ELM-ARC-004",
+    "original": "IF an envelope is malformed or has an unsupported protocol version, the Elm desktop SHALL reject it without a native effect and record the rejection reason.",
+    "normalized": "IF an envelope is malformed or has an unsupported protocol version, THEN the Elm desktop SHALL reject it without a native effect and record the rejection reason.",
+    "originalPattern": "unwanted",
+    "pattern": "unwanted"
+  },
+  {
+    "id": "ELM-ARC-014",
+    "original": "IF an effect outcome is Unknown, the Elm desktop SHALL reconcile native state before permitting a retry of that effect.",
+    "normalized": "IF an effect outcome is Unknown, THEN the Elm desktop SHALL reconcile native state before permitting a retry of that effect.",
+    "originalPattern": "unwanted",
+    "pattern": "unwanted"
+  },
+  {
+    "id": "ELM-ARC-025",
+    "original": "IF a compositor plugin does not match its recorded owning compositor ABI tuple, the Elm desktop SHALL refuse plugin loading.",
+    "normalized": "IF a compositor plugin does not match its recorded owning compositor ABI tuple, THEN the Elm desktop SHALL refuse plugin loading.",
+    "originalPattern": "unwanted",
+    "pattern": "unwanted"
+  },
+  {
+    "id": "ELM-DEL-004",
+    "original": "When a release is rebuilt in two clean isolated environments, the builder SHALL produce identical distributable hashes or block release with the differing inputs recorded.",
+    "normalized": "WHEN a release is rebuilt in two clean isolated environments, the builder SHALL produce identical distributable hashes or block release with the differing inputs recorded.",
+    "originalPattern": "event-driven",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-DEL-006",
+    "original": "When a host candidate is qualified, the host decision SHALL record compatible GTK and layer-shell major versions or Qt WebEngine initialization and transitive runtime dependencies.",
+    "normalized": "WHEN a host candidate is qualified, the host decision SHALL record compatible GTK and layer-shell major versions or Qt WebEngine initialization and transitive runtime dependencies.",
+    "originalPattern": "event-driven",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-DEL-009",
+    "original": "When a component migration is selected, the launcher SHALL activate only that qualified component and retain a selectable working predecessor for rollback.",
+    "normalized": "WHEN a component migration is selected, the launcher SHALL activate only that qualified component and retain a selectable working predecessor for rollback.",
+    "originalPattern": "event-driven",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-DEL-012",
+    "original": "When a privileged operation requires authorization, the shell SHALL delegate to the established native authorization flow and keep credentials outside Elm and JavaScript.",
+    "normalized": "WHEN a privileged operation requires authorization, the shell SHALL delegate to the established native authorization flow and keep credentials outside Elm and JavaScript.",
+    "originalPattern": "event-driven",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-DEL-016",
+    "original": "When a release is rolled back, recovery tooling SHALL restore the preceding compatible settings copy without silently interpreting a newer schema.",
+    "normalized": "WHEN a release is rolled back, the recovery tooling SHALL restore the preceding compatible settings copy without silently interpreting a newer schema.",
+    "originalPattern": "event-driven",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-DEL-018",
+    "original": "When a host or authority restarts, the supervisor SHALL invalidate old epochs and reconcile a fresh native snapshot before enabling new mutating requests.",
+    "normalized": "WHEN a host or authority restarts, the supervisor SHALL invalidate old epochs and reconcile a fresh native snapshot before enabling new mutating requests.",
+    "originalPattern": "event-driven",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-DEL-019",
+    "original": "When an upgrade is interrupted, activation tooling SHALL recover to one complete validated release tuple and preserve user settings and application drafts.",
+    "normalized": "WHEN an upgrade is interrupted, the activation tooling SHALL recover to one complete validated release tuple and preserve user settings and application drafts.",
+    "originalPattern": "event-driven",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-DEL-021",
+    "original": "When an owned session stops, supervision SHALL stop clients and helpers, verify normal exits and retired resources, unload owned modules, and then stop its private compositor and bus.",
+    "normalized": "WHEN an owned session stops, the supervision SHALL stop clients and helpers, verify normal exits and retired resources, unload owned modules, and then stop its private compositor and bus.",
+    "originalPattern": "event-driven",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-DEL-022",
+    "original": "If a compositor and plugin ABI pair differs from the frozen accepted tuple, then the launcher SHALL refuse plugin loading and retain the working shell.",
+    "normalized": "IF a compositor and plugin ABI pair differs from the frozen accepted tuple, THEN the launcher SHALL refuse plugin loading and retain the working shell.",
+    "originalPattern": "unwanted",
+    "pattern": "unwanted"
+  },
+  {
+    "id": "ELM-DEL-023",
+    "original": "When production activation is prepared, the release owner SHALL require one coherent source/runtime/ABI tuple with all mandatory native, model, CPU and user acceptance gates satisfied.",
+    "normalized": "WHEN production activation is prepared, the release owner SHALL require one coherent source/runtime/ABI tuple with all mandatory native, model, CPU and user acceptance gates satisfied.",
+    "originalPattern": "event-driven",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-DEL-025",
+    "original": "When the user acceptance session runs, the candidate SHALL preserve existing windows and drafts while demonstrating the named taskbar, focus, minimize, restore, pin, snap and keyboard flows.",
+    "normalized": "WHEN the user acceptance session runs, the candidate SHALL preserve existing windows and drafts while demonstrating the named taskbar, focus, minimize, restore, pin, snap and keyboard flows.",
+    "originalPattern": "event-driven",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-DEL-027",
+    "original": "If hardware acceleration is unavailable or disabled, then the host SHALL report the active software fallback and qualify its performance independently without claiming GPU acceleration.",
+    "normalized": "IF hardware acceleration is unavailable or disabled, THEN the host SHALL report the active software fallback and qualify its performance independently without claiming GPU acceleration.",
+    "originalPattern": "unwanted",
+    "pattern": "unwanted"
+  },
+  {
+    "id": "ELM-DEL-028",
+    "original": "Where WebGPU is enabled, the host SHALL require a qualified adapter and device, retain an accepted non-WebGPU rendering route, and invalidate GPU resources on device loss before recovery.",
+    "normalized": "WHERE WebGPU is enabled, the host SHALL require a qualified adapter and device, retain an accepted non-WebGPU rendering route, and invalidate GPU resources on device loss before recovery.",
+    "originalPattern": "optional",
+    "pattern": "optional"
+  },
+  {
+    "id": "ELM-UX-012",
+    "original": "WHEN Alt release precedes switcher readiness, the Elm desktop SHALL resolve the native chord once without leaving an open switcher or issuing a second activation.",
+    "normalized": "WHEN Alt release precedes switcher readiness, the Elm desktop SHALL resolve the native chord once without leaving an open switcher or issuing a second activation.",
+    "originalPattern": "complex",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-UX-014",
+    "original": "IF the selected switcher window closes or its identity becomes stale, the Elm desktop SHALL reselect a surviving eligible member or dismiss an empty chord without activating a replacement incarnation.",
+    "normalized": "IF the selected switcher window closes or its identity becomes stale, THEN the Elm desktop SHALL reselect a surviving eligible member or dismiss an empty chord without activating a replacement incarnation.",
+    "originalPattern": "unwanted",
+    "pattern": "unwanted"
+  },
+  {
+    "id": "ELM-UX-020",
+    "original": "IF an output changes during snap selection, the Elm desktop SHALL invalidate the old preview and require geometry derived from the new output generation before commit.",
+    "normalized": "IF an output changes during snap selection, THEN the Elm desktop SHALL invalidate the old preview and require geometry derived from the new output generation before commit.",
+    "originalPattern": "unwanted",
+    "pattern": "unwanted"
+  },
+  {
+    "id": "ELM-UX-034",
+    "original": "WHERE a later Elm Files replacement is approved, the Elm desktop SHALL preserve Quint-specified copy, move, collision, trash and authorization semantics before replacing the installed operation adapter.",
+    "normalized": "WHERE a later Elm Files replacement is approved, the Elm desktop SHALL preserve Quint-specified copy, move, collision, trash and authorization semantics before replacing the installed operation adapter.",
+    "originalPattern": "complex",
+    "pattern": "optional"
+  },
+  {
+    "id": "ELM-GNO-005",
+    "original": "IF native family constraints are cyclic or inconsistent, the Elm desktop SHALL refuse the affected scene transaction without publishing a partially solved paint or hit order.",
+    "normalized": "IF native family constraints are cyclic or inconsistent, THEN the Elm desktop SHALL refuse the affected scene transaction without publishing a partially solved paint or hit order.",
+    "originalPattern": "unwanted",
+    "pattern": "unwanted"
+  },
+  {
+    "id": "ELM-KDE-003",
+    "original": "When a transient family changes, the native authority SHALL recompute parent-child constraints and preserve documented sibling order before committing the stack.",
+    "normalized": "WHEN a transient family changes, the native authority SHALL recompute parent-child constraints and preserve documented sibling order before committing the stack.",
+    "originalPattern": "event-driven",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-KDE-004",
+    "original": "If a window belongs to an inactive special workspace, then native eligibility SHALL exclude its ordinary live painting, pointer targeting and direct focus despite permissive cached visibility or input flags.",
+    "normalized": "IF a window belongs to an inactive special workspace, THEN the native eligibility SHALL exclude its ordinary live painting, pointer targeting and direct focus despite permissive cached visibility or input flags.",
+    "originalPattern": "unwanted",
+    "pattern": "unwanted"
+  },
+  {
+    "id": "ELM-KDE-006",
+    "original": "WHILE a preview or animation actor represents an ineligible application, the native host SHALL exclude the actor from ordinary application hit and focus targeting; any interactive shell preview control SHALL use a separate identity and validated restore intent.",
+    "normalized": "WHILE a preview or animation actor represents an ineligible application, the native host SHALL exclude the actor from ordinary application hit and focus targeting; any interactive shell preview control SHALL use a separate identity and validated restore intent.",
+    "originalPattern": "complex",
+    "pattern": "state-driven"
+  },
+  {
+    "id": "ELM-KDE-007",
+    "original": "When a modal focus request is accepted, the native authority SHALL resolve the current eligible modal family before selecting the committed focus recipient.",
+    "normalized": "WHEN a modal focus request is accepted, the native authority SHALL resolve the current eligible modal family before selecting the committed focus recipient.",
+    "originalPattern": "event-driven",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-KDE-008",
+    "original": "When fullscreen activation or output membership changes, the native authority SHALL recompute fullscreen and pin layering from current output and family state.",
+    "normalized": "WHEN fullscreen activation or output membership changes, the native authority SHALL recompute fullscreen and pin layering from current output and family state.",
+    "originalPattern": "event-driven",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-REN-003",
+    "original": "When a capture source stops, the native renderer SHALL retain the last independently owned accepted frame until its lease is retired.",
+    "normalized": "WHEN a capture source stops, the native renderer SHALL retain the last independently owned accepted frame until its lease is retired.",
+    "originalPattern": "event-driven",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-REN-004",
+    "original": "When a window incarnation is replaced, the native host SHALL revoke its frame leases before accepting previews for the replacement.",
+    "normalized": "WHEN a window incarnation is replaced, the native host SHALL revoke its frame leases before accepting previews for the replacement.",
+    "originalPattern": "event-driven",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-REN-006",
+    "original": "When minimizing a window, the native authority SHALL preserve its normal workspace identity and restore geometry without moving it to a scratchpad.",
+    "normalized": "WHEN minimizing a window, the native authority SHALL preserve its normal workspace identity and restore geometry without moving it to a scratchpad.",
+    "originalPattern": "event-driven",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-REN-007",
+    "original": "When restore motion begins, the native renderer SHALL use the accepted retained frame until an identity-matched live frame is ready for a continuous handoff.",
+    "normalized": "WHEN restore motion begins, the native renderer SHALL use the accepted retained frame until an identity-matched live frame is ready for a continuous handoff.",
+    "originalPattern": "event-driven",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-REN-009",
+    "original": "If cancellation invalidates a motion generation, then the native authority SHALL reject further effects and retire only resources owned by that generation.",
+    "normalized": "IF cancellation invalidates a motion generation, THEN the native authority SHALL reject further effects and retire only resources owned by that generation.",
+    "originalPattern": "unwanted",
+    "pattern": "unwanted"
+  },
+  {
+    "id": "ELM-REN-010",
+    "original": "When motion reverses between minimize and restore, the renderer SHALL start the new trajectory from the last presented geometry of the current transaction.",
+    "normalized": "WHEN motion reverses between minimize and restore, the renderer SHALL start the new trajectory from the last presented geometry of the current transaction.",
+    "originalPattern": "event-driven",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-REN-011",
+    "original": "While reduced motion is enabled, the native host SHALL complete the same minimize and restore state transitions without decorative motion.",
+    "normalized": "WHILE reduced motion is enabled, the native host SHALL complete the same minimize and restore state transitions without decorative motion.",
+    "originalPattern": "state-driven",
+    "pattern": "state-driven"
+  },
+  {
+    "id": "ELM-REN-013",
+    "original": "When a capture transaction ends, its native supervisor SHALL verify closure of owned helpers, callbacks, buffers and surfaces before reporting retirement complete.",
+    "normalized": "WHEN a capture transaction ends, the native supervisor SHALL verify closure of owned helpers, callbacks, buffers and surfaces before reporting retirement complete.",
+    "originalPattern": "event-driven",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-REN-016",
+    "original": "When pin state changes, the native authority SHALL preserve documented MAX return geometry and evaluate painted and input order under the new pin state.",
+    "normalized": "WHEN pin state changes, the native authority SHALL preserve documented MAX return geometry and evaluate painted and input order under the new pin state.",
+    "originalPattern": "event-driven",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-REN-017",
+    "original": "While true fullscreen is active, the native authority SHALL apply an explicit fullscreen and pinned-surface policy without treating fullscreen as floating MAX.",
+    "normalized": "WHILE true fullscreen is active, the native authority SHALL apply an explicit fullscreen and pinned-surface policy without treating fullscreen as floating MAX.",
+    "originalPattern": "state-driven",
+    "pattern": "state-driven"
+  },
+  {
+    "id": "ELM-REN-018",
+    "original": "When focusing a modal family, the native authority SHALL resolve eligible recipients from current native family and input state before committing focus.",
+    "normalized": "WHEN focusing a modal family, the native authority SHALL resolve eligible recipients from current native family and input state before committing focus.",
+    "originalPattern": "event-driven",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-REN-019",
+    "original": "When an output scale, transform or generation changes, the native renderer SHALL invalidate incompatible frame geometry and rebuild presentation against current output truth.",
+    "normalized": "WHEN an output scale, transform or generation changes, the native renderer SHALL invalidate incompatible frame geometry and rebuild presentation against current output truth.",
+    "originalPattern": "event-driven",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-REN-020",
+    "original": "When a window transfers between outputs, the canonical authority SHALL commit placement, snap membership and frame ownership using current output generations.",
+    "normalized": "WHEN a window transfers between outputs, the canonical authority SHALL commit placement, snap membership and frame ownership using current output generations.",
+    "originalPattern": "event-driven",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-REN-021",
+    "original": "Where 240 Hz hardware is available, while motion is active, the native renderer SHALL sample motion in its native presentation loop and record cadence against a same-machine baseline.",
+    "normalized": "WHERE 240 Hz hardware is available, WHILE motion is active, the native renderer SHALL sample motion in its native presentation loop and record cadence against a same-machine baseline.",
+    "originalPattern": "complex",
+    "pattern": "complex"
+  },
+  {
+    "id": "ELM-REN-023",
+    "original": "Where a compositor replacement is selected, the project SHALL document a native Rust or C++ execution boundary and an Elm policy interface before implementation.",
+    "normalized": "WHERE a compositor replacement is selected, the project SHALL document a native Rust or C++ execution boundary and an Elm policy interface before implementation.",
+    "originalPattern": "optional",
+    "pattern": "optional"
+  },
+  {
+    "id": "ELM-REN-024",
+    "original": "Where compositor replacement is selected, the native compositor SHALL implement a versioned Wayland and Xwayland compatibility matrix with explicit unsupported cases.",
+    "normalized": "WHERE compositor replacement is selected, the native compositor SHALL implement a versioned Wayland and Xwayland compatibility matrix with explicit unsupported cases.",
+    "originalPattern": "optional",
+    "pattern": "optional"
+  },
+  {
+    "id": "ELM-REN-025",
+    "original": "Where compositor replacement is selected, the native compositor SHALL own DRM/KMS outputs, seat input and session transitions independently of Elm responsiveness.",
+    "normalized": "WHERE compositor replacement is selected, the native compositor SHALL own DRM/KMS outputs, seat input and session transitions independently of Elm responsiveness.",
+    "originalPattern": "optional",
+    "pattern": "optional"
+  },
+  {
+    "id": "ELM-REN-026",
+    "original": "Where compositor replacement is selected, the native compositor SHALL provide tested IME, preedit and text-input integration for its supported application matrix.",
+    "normalized": "WHERE compositor replacement is selected, the native compositor SHALL provide tested IME, preedit and text-input integration for its supported application matrix.",
+    "originalPattern": "optional",
+    "pattern": "optional"
+  },
+  {
+    "id": "ELM-REN-027",
+    "original": "Where compositor replacement is selected, the native compositor SHALL gate capture and remote-control access through documented portal and permission boundaries.",
+    "normalized": "WHERE compositor replacement is selected, the native compositor SHALL gate capture and remote-control access through documented portal and permission boundaries.",
+    "originalPattern": "optional",
+    "pattern": "optional"
+  },
+  {
+    "id": "ELM-REN-028",
+    "original": "Where compositor replacement is selected, the native compositor SHALL validate client requests and isolate privileged protocols from untrusted shell content.",
+    "normalized": "WHERE compositor replacement is selected, the native compositor SHALL validate client requests and isolate privileged protocols from untrusted shell content.",
+    "originalPattern": "optional",
+    "pattern": "optional"
+  },
+  {
+    "id": "ELM-REN-029",
+    "original": "Where compositor replacement is selected, the native compositor SHALL retain frame scheduling, fences, hit testing and buffer retirement in native loops without awaiting Elm port replies.",
+    "normalized": "WHERE compositor replacement is selected, the native compositor SHALL retain frame scheduling, fences, hit testing and buffer retirement in native loops without awaiting Elm port replies.",
+    "originalPattern": "optional",
+    "pattern": "optional"
+  },
+  {
+    "id": "ELM-REN-030",
+    "original": "Where compositor replacement is selected, the deployment plan SHALL provide tested session fallback and recovery instructions that disclose loss of application connections on compositor failure.",
+    "normalized": "WHERE compositor replacement is selected, the deployment plan SHALL provide tested session fallback and recovery instructions that disclose loss of application connections on compositor failure.",
+    "originalPattern": "optional",
+    "pattern": "optional"
+  },
+  {
+    "id": "ELM-QA-024",
+    "original": "The graphics verifier SHALL record actual hardware adapter, driver, backend, capabilities and displayed acceleration for the selected shell webview; WebGPU availability and execution SHALL be reported separately.",
+    "normalized": "The graphics verifier SHALL record actual hardware adapter, driver, backend, capabilities and displayed acceleration for the selected shell webview; WebGPU availability and execution SHALL be reported separately.",
+    "originalPattern": "optional",
+    "pattern": "ubiquitous"
+  },
+  {
+    "id": "ELM-QA-025",
+    "original": "WHEN a selected host GPU path suffers device loss or allocation failure, the native host SHALL invalidate rendering generations, retire invalid owned resources and reconcile current leases without presenting stale frames.",
+    "normalized": "WHEN a selected host GPU path suffers device loss or allocation failure, the native host SHALL invalidate rendering generations, retire invalid owned resources and reconcile current leases without presenting stale frames.",
+    "originalPattern": "complex",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-GPU-005",
+    "original": "WHEN WebGPU evaluation obtains a nonsoftware adapter and device, the host SHALL verify deterministic render and compute results against supported limits and features and independently observe the native displayed frame.",
+    "normalized": "WHEN WebGPU evaluation obtains a nonsoftware adapter and device, the host SHALL verify deterministic render and compute results against supported limits and features and independently observe the native displayed frame.",
+    "originalPattern": "ubiquitous",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-REV-001",
+    "original": "WHEN stale global scene state delays a valid activation, the authority SHALL reconcile current dependencies and use a distinct freshly validated request to reach a terminal result by the original deadline without waiting for unrelated scene activity to stop.",
+    "normalized": "WHEN stale global scene state delays a valid activation, the authority SHALL reconcile current dependencies and use a distinct freshly validated request to reach a terminal result by the original deadline without waiting for unrelated scene activity to stop.",
+    "originalPattern": "ubiquitous",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-REV-002",
+    "original": "WHILE native session lock is active, the host SHALL suppress application previews and reject new application capture admission.",
+    "normalized": "WHILE native session lock is active, the host SHALL suppress application previews and reject new application capture admission.",
+    "originalPattern": "ubiquitous",
+    "pattern": "state-driven"
+  },
+  {
+    "id": "ELM-REV-003",
+    "original": "WHEN native lock, capture permission revocation or session replacement invalidates a capture generation, the authority SHALL cancel pending captures and revoke retained-lease publication access before subsequent scene publication.",
+    "normalized": "WHEN native lock, capture permission revocation or session replacement invalidates a capture generation, the authority SHALL cancel pending captures and revoke retained-lease publication access before subsequent scene publication.",
+    "originalPattern": "ubiquitous",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-REV-004",
+    "original": "WHEN a locked session unlocks, the capture authority SHALL reconcile current authorization and source identity into a fresh publication generation before exposing previews, and SHALL retire revoked or prior-session leases.",
+    "normalized": "WHEN a locked session unlocks, the capture authority SHALL reconcile current authorization and source identity into a fresh publication generation before exposing previews, and SHALL retire revoked or prior-session leases.",
+    "originalPattern": "ubiquitous",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-REV-008",
+    "original": "WHEN an event sequence gap occurs, the frontend SHALL withhold later deltas and new effect admission until a coherent reconciliation snapshot establishes a fresh contiguous watermark.",
+    "normalized": "WHEN an event sequence gap occurs, the frontend SHALL withhold later deltas and new effect admission until a coherent reconciliation snapshot establishes a fresh contiguous watermark.",
+    "originalPattern": "ubiquitous",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-REV-010",
+    "original": "IF reserved control capacity cannot admit a cancellation or receipt, THEN the authority SHALL stop new effect admission, invalidate uncertain pending generations and supervise reconciliation without silently losing cancellation.",
+    "normalized": "IF reserved control capacity cannot admit a cancellation or receipt, THEN the authority SHALL stop new effect admission, invalidate uncertain pending generations and supervise reconciliation without silently losing cancellation.",
+    "originalPattern": "ubiquitous",
+    "pattern": "unwanted"
+  },
+  {
+    "id": "ELM-REV-011",
+    "original": "IF a request identity is expired, retired or outside its bounded deduplication window, THEN the authority SHALL refuse it without mutation and record an expired-identity outcome.",
+    "normalized": "IF a request identity is expired, retired or outside its bounded deduplication window, THEN the authority SHALL refuse it without mutation and record an expired-identity outcome.",
+    "originalPattern": "ubiquitous",
+    "pattern": "unwanted"
+  },
+  {
+    "id": "ELM-REV-013",
+    "original": "WHILE a window is maximized but unpinned and not true-fullscreen, the native authority SHALL retain it in the ordinary application band.",
+    "normalized": "WHILE a window is maximized but unpinned and not true-fullscreen, the native authority SHALL retain it in the ordinary application band.",
+    "originalPattern": "ubiquitous",
+    "pattern": "state-driven"
+  },
+  {
+    "id": "ELM-REV-017",
+    "original": "WHILE a transient owner is minimized or excluded from the active scene, the native authority SHALL exclude its dependent transient descendants in the same revision until current native family policy accepts an independent or reparented state.",
+    "normalized": "WHILE a transient owner is minimized or excluded from the active scene, the native authority SHALL exclude its dependent transient descendants in the same revision until current native family policy accepts an independent or reparented state.",
+    "originalPattern": "ubiquitous",
+    "pattern": "state-driven"
+  },
+  {
+    "id": "ELM-REV-018",
+    "original": "WHILE native session lock is active, the host SHALL withdraw ordinary shell keyboard and pointer eligibility and prevent shell priority or pin/fullscreen flags from bypassing native lock-surface authority.",
+    "normalized": "WHILE native session lock is active, the host SHALL withdraw ordinary shell keyboard and pointer eligibility and prevent shell priority or pin/fullscreen flags from bypassing native lock-surface authority.",
+    "originalPattern": "ubiquitous",
+    "pattern": "state-driven"
+  },
+  {
+    "id": "ELM-REV-019",
+    "original": "IF device loss invalidates the only accepted storage for a retained frame, THEN the broker SHALL atomically revoke and retire that lease and publish an explicit unavailable-preview state rather than reuse invalid objects or label historical pixels as current.",
+    "normalized": "IF device loss invalidates the only accepted storage for a retained frame, THEN the broker SHALL atomically revoke and retire that lease and publish an explicit unavailable-preview state rather than reuse invalid objects or label historical pixels as current.",
+    "originalPattern": "ubiquitous",
+    "pattern": "unwanted"
+  },
+  {
+    "id": "ELM-REV-022",
+    "original": "IF preview copy volume, acquire-fence wait or cross-GPU transfer exceeds its frozen budget, THEN the preview qualification SHALL reject that import route and preserve a qualified native route or an explicit unavailable state.",
+    "normalized": "IF preview copy volume, acquire-fence wait or cross-GPU transfer exceeds its frozen budget, THEN the preview qualification SHALL reject that import route and preserve a qualified native route or an explicit unavailable state.",
+    "originalPattern": "ubiquitous",
+    "pattern": "unwanted"
+  },
+  {
+    "id": "ELM-REV-023",
+    "original": "WHEN a native buffer is imported, the renderer SHALL wait for accepted acquire synchronization before sampling it and prohibit sampling after lease revocation or rendering-generation invalidation.",
+    "normalized": "WHEN a native buffer is imported, the renderer SHALL wait for accepted acquire synchronization before sampling it and prohibit sampling after lease revocation or rendering-generation invalidation.",
+    "originalPattern": "ubiquitous",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-REV-025",
+    "original": "WHEN the active adapter, driver or engine differs from its qualified tuple, the host SHALL invalidate that acceleration verdict and require matching qualification before presenting the configuration as an accelerated release.",
+    "normalized": "WHEN the active adapter, driver or engine differs from its qualified tuple, the host SHALL invalidate that acceleration verdict and require matching qualification before presenting the configuration as an accelerated release.",
+    "originalPattern": "ubiquitous",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-REV-027",
+    "original": "WHILE the frontend is unready, the native chord journal SHALL retain only declared chord control events and omit unrelated text and credential keystrokes.",
+    "normalized": "WHILE the frontend is unready, the native chord journal SHALL retain only declared chord control events and omit unrelated text and credential keystrokes.",
+    "originalPattern": "ubiquitous",
+    "pattern": "state-driven"
+  },
+  {
+    "id": "ELM-REV-028",
+    "original": "WHEN the machine resumes from suspend, the native host SHALL invalidate changed output and rendering generations, reconcile a fresh snapshot and refuse replay of pre-suspend mutating intents.",
+    "normalized": "WHEN the machine resumes from suspend, the native host SHALL invalidate changed output and rendering generations, reconcile a fresh snapshot and refuse replay of pre-suspend mutating intents.",
+    "originalPattern": "ubiquitous",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-UI-001",
+    "original": "WHEN the focused family minimizes, the native authority SHALL focus the most recently committed eligible successor or the desktop no-application-focus state in the same scene revision, and SHALL preserve current focus when an unfocused family minimizes.",
+    "normalized": "WHEN the focused family minimizes, the native authority SHALL focus the most recently committed eligible successor or the desktop no-application-focus state in the same scene revision, and SHALL preserve current focus when an unfocused family minimizes.",
+    "originalPattern": "ubiquitous",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-UI-002",
+    "original": "WHEN a listed target outside the effective workspace set is activated, the native authority SHALL navigate to its preserved workspace on its owning output before visible activation without implicit transfer, and SHALL maintain an eligible visible fallback or separately validated compensation if a later restore is refused.",
+    "normalized": "WHEN a listed target outside the effective workspace set is activated, the native authority SHALL navigate to its preserved workspace on its owning output before visible activation without implicit transfer, and SHALL maintain an eligible visible fallback or separately validated compensation if a later restore is refused.",
+    "originalPattern": "ubiquitous",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-UI-010",
+    "original": "WHEN an action needs user attention or a notification changes, the shell SHALL publish concise identity-correlated accessible status without moving focus, deduplicate repeated receipts and apply the frozen notification announcement/interruption policy.",
+    "normalized": "WHEN an action needs user attention or a notification changes, the shell SHALL publish concise identity-correlated accessible status without moving focus, deduplicate repeated receipts and apply the frozen notification announcement/interruption policy.",
+    "originalPattern": "ubiquitous",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-UI-011",
+    "original": "WHEN a shell focus scope closes, the host SHALL restore its eligible identity-bound opener or the declared eligible fallback, restore surviving parent scopes for nested dismissal, reject replacement incarnations and let lock security supersede ordinary restoration.",
+    "normalized": "WHEN a shell focus scope closes, the host SHALL restore its eligible identity-bound opener or the declared eligible fallback, restore surviving parent scopes for nested dismissal, reject replacement incarnations and let lock security supersede ordinary restoration.",
+    "originalPattern": "ubiquitous",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-UI-012",
+    "original": "WHILE IME composition owns a field, the host SHALL respect input-method key consumption, bind callbacks to field identity and composition generation, track candidate geometry with caret/output transforms and reject late commits after focus loss, field retirement or host restart.",
+    "normalized": "WHILE IME composition owns a field, the host SHALL respect input-method key consumption, bind callbacks to field identity and composition generation, track candidate geometry with caret/output transforms and reject late commits after focus loss, field retirement or host restart.",
+    "originalPattern": "ubiquitous",
+    "pattern": "state-driven"
+  },
+  {
+    "id": "ELM-UI-014",
+    "original": "WHEN the effective reduced-motion preference changes, the renderer SHALL apply the declared source/override policy without restart and settle decorative transitions without changing acknowledged targets, focus, original deadlines or resource ownership.",
+    "normalized": "WHEN the effective reduced-motion preference changes, the renderer SHALL apply the declared source/override policy without restart and settle decorative transitions without changing acknowledged targets, focus, original deadlines or resource ownership.",
+    "originalPattern": "ubiquitous",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-UI-015",
+    "original": "WHEN an operation exceeds its frozen feedback threshold, the shell SHALL expose accessible pending or reconciling feedback, keep cancellation and independent controls usable and show success only after matching native confirmation.",
+    "normalized": "WHEN an operation exceeds its frozen feedback threshold, the shell SHALL expose accessible pending or reconciling feedback, keep cancellation and independent controls usable and show success only after matching native confirmation.",
+    "originalPattern": "ubiquitous",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-UI-017",
+    "original": "WHILE no visible consumer or required transition needs new content, the capture and rendering services SHALL suspend recurring preview acquisition, uploads and decorative work within the frozen quiescence interval while preserving authorized retained frames, control events and bounded cleanup.",
+    "normalized": "WHILE no visible consumer or required transition needs new content, the capture and rendering services SHALL suspend recurring preview acquisition, uploads and decorative work within the frozen quiescence interval while preserving authorized retained frames, control events and bounded cleanup.",
+    "originalPattern": "ubiquitous",
+    "pattern": "state-driven"
+  },
+  {
+    "id": "ELM-UI-018",
+    "original": "WHEN reduced motion becomes enabled during window or overlay motion, the renderer SHALL settle at the next valid presentation opportunity without restarting deadlines or duplicating effects, and SHALL avoid replaying completed motion when the preference is disabled.",
+    "normalized": "WHEN reduced motion becomes enabled during window or overlay motion, the renderer SHALL settle at the next valid presentation opportunity without restarting deadlines or duplicating effects, and SHALL avoid replaying completed motion when the preference is disabled.",
+    "originalPattern": "ubiquitous",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-UI-019",
+    "original": "WHEN an output disappears, the host SHALL recover shell controls and displaced popup focus on a declared surviving output, preserve workspace identity and reachable application recovery, and reject removed-generation effects until available outputs reconcile.",
+    "normalized": "WHEN an output disappears, the host SHALL recover shell controls and displaced popup focus on a declared surviving output, preserve workspace identity and reachable application recovery, and reject removed-generation effects until available outputs reconcile.",
+    "originalPattern": "ubiquitous",
+    "pattern": "event-driven"
+  },
+  {
+    "id": "ELM-UI-020",
+    "original": "WHEN a migrated component is first enabled, the shell SHALL offer dismissible keyboard-accessible guidance, preserve approved preference mappings, require explicit shortcut-conflict decisions and expose offline recovery without mandatory onboarding.",
+    "normalized": "WHEN a migrated component is first enabled, the shell SHALL offer dismissible keyboard-accessible guidance, preserve approved preference mappings, require explicit shortcut-conflict decisions and expose offline recovery without mandatory onboarding.",
+    "originalPattern": "ubiquitous",
+    "pattern": "event-driven"
+  }
+]

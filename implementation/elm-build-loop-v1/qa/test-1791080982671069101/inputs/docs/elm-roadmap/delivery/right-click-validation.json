@@ -1,0 +1,203 @@
+{
+  "observedUTC": "2026-10-03T22:41:20.915721+00:00",
+  "scope": "Additive right-click planning structure, exact requirement/scenario mirrors, task mapping and local links; no implementation/native acceptance",
+  "baselineLedgerModified": false,
+  "requirements": 24,
+  "acceptanceScenarios": 48,
+  "taskMappings": {
+    "ELM-RC-001": [
+      "RC-P0",
+      "RC-P1",
+      "RC-P2",
+      "RC-P4"
+    ],
+    "ELM-RC-002": [
+      "RC-P0",
+      "RC-P1",
+      "RC-P3"
+    ],
+    "ELM-RC-003": [
+      "RC-P0",
+      "RC-P1",
+      "RC-P2",
+      "RC-P4"
+    ],
+    "ELM-RC-004": [
+      "RC-P0",
+      "RC-P1",
+      "RC-P2"
+    ],
+    "ELM-RC-005": [
+      "RC-P0",
+      "RC-P1",
+      "RC-P2",
+      "RC-P4"
+    ],
+    "ELM-RC-006": [
+      "RC-P0",
+      "RC-P1",
+      "RC-P2"
+    ],
+    "ELM-RC-007": [
+      "RC-P0",
+      "RC-P1",
+      "RC-P2",
+      "RC-P4"
+    ],
+    "ELM-RC-008": [
+      "RC-P0",
+      "RC-P1",
+      "RC-P2",
+      "RC-P3"
+    ],
+    "ELM-RC-009": [
+      "RC-P0",
+      "RC-P1",
+      "RC-P3"
+    ],
+    "ELM-RC-010": [
+      "RC-P0",
+      "RC-P1",
+      "RC-P3"
+    ],
+    "ELM-RC-011": [
+      "RC-P0",
+      "RC-P1",
+      "RC-P2",
+      "RC-P4"
+    ],
+    "ELM-RC-012": [
+      "RC-P0",
+      "RC-P1",
+      "RC-P3"
+    ],
+    "ELM-RC-013": [
+      "RC-P0",
+      "RC-P1",
+      "RC-P3"
+    ],
+    "ELM-RC-014": [
+      "RC-P0",
+      "RC-P1",
+      "RC-P3"
+    ],
+    "ELM-RC-015": [
+      "RC-P0",
+      "RC-P1",
+      "RC-P3"
+    ],
+    "ELM-RC-016": [
+      "RC-P0",
+      "RC-P1",
+      "RC-P2",
+      "RC-P4"
+    ],
+    "ELM-RC-017": [
+      "RC-P0",
+      "RC-P1",
+      "RC-P2",
+      "RC-P4"
+    ],
+    "ELM-RC-018": [
+      "RC-P0",
+      "RC-P1",
+      "RC-P4"
+    ],
+    "ELM-RC-019": [
+      "RC-P0",
+      "RC-P1",
+      "RC-P4"
+    ],
+    "ELM-RC-020": [
+      "RC-P0",
+      "RC-P1",
+      "RC-P2",
+      "RC-P4"
+    ],
+    "ELM-RC-021": [
+      "RC-P0",
+      "RC-P1",
+      "RC-P2",
+      "RC-P3",
+      "RC-P4"
+    ],
+    "ELM-RC-022": [
+      "RC-P0",
+      "RC-P1",
+      "RC-P2",
+      "RC-P4"
+    ],
+    "ELM-RC-023": [
+      "RC-P0",
+      "RC-P1",
+      "RC-P3",
+      "RC-P4"
+    ],
+    "ELM-RC-024": [
+      "RC-P0",
+      "RC-P1",
+      "RC-P3",
+      "RC-P4"
+    ]
+  },
+  "localLinksChecked": 4,
+  "inputs": {
+    "docs/elm-roadmap/RIGHT-CLICK.md": "a9216264e0656c56fb6452428b51c44ee2137ba6a84019833b4b3a648358c7d9",
+    "openspec/changes/elm-right-click/proposal.md": "616afe656dd79634ee8729e1532c31a153943475e879156afe693c7b54099aab",
+    "openspec/changes/elm-right-click/tasks.md": "392ef7fdc8b9f176052bd52615ce9989ff7761878c95d86f750da1d9e265d111",
+    "openspec/changes/elm-right-click/specs/elm-context-menus/spec.md": "22494ea5666c08e907c5da54631370e445617d9e3dcd1617c7e6ad063095379d",
+    "docs/elm-roadmap/tools/validate_right_click.py": "63857fb871c52b2871bb9924a5600316616e3919207a324dc4b1a77c31f5d936"
+  },
+  "openspec": {
+    "command": [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=@fission-ai/openspec@1.14.0",
+      "--",
+      "openspec",
+      "validate",
+      "elm-right-click",
+      "--type",
+      "change",
+      "--strict",
+      "--json",
+      "--no-interactive"
+    ],
+    "exitCode": 0,
+    "stdout": "{\n  \"items\": [\n    {\n      \"id\": \"elm-right-click\",\n      \"type\": \"change\",\n      \"valid\": true,\n      \"issues\": [],\n      \"durationMs\": 13\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 1,\n      \"passed\": 1,\n      \"failed\": 0\n    },\n    \"byType\": {\n      \"change\": {\n        \"items\": 1,\n        \"passed\": 1,\n        \"failed\": 0\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"/home/hoskinson/omarchy-windows-parity\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": "",
+    "json": {
+      "items": [
+        {
+          "id": "elm-right-click",
+          "type": "change",
+          "valid": true,
+          "issues": [],
+          "durationMs": 13
+        }
+      ],
+      "summary": {
+        "totals": {
+          "items": 1,
+          "passed": 1,
+          "failed": 0
+        },
+        "byType": {
+          "change": {
+            "items": 1,
+            "passed": 1,
+            "failed": 0
+          }
+        }
+      },
+      "version": "1.0",
+      "root": {
+        "path": "/home/hoskinson/omarchy-windows-parity",
+        "source": "nearest"
+      }
+    }
+  },
+  "errors": [],
+  "passed": true
+}

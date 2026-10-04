@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "eventId": "b94f7020ec5146a0a460f09b0f6e2455",
+  "thread": "01a101d3-cde7-7370-83b1-3170bdd0c9d1",
+  "observedUTC": "2026-10-04T02:27:48.077234+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-menu-lifecycle-v2",
+  "nextWork": [
+    "Implement and replay bounded menu-provider decoding and persistent correlated operation receipts using the SCOPE.md oracles.",
+    "Coordinate with the shared bar/popup integration lane; use the global native lock and preserve exact protected source/ABI/deadline gates.",
+    "Continue all mandatory S01-S16 and right-click acceptance, then qualify coherent recovery, devices, accessibility and reversible deployment."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-context-menu-v1/qa/implementation-manifest.json",
+      "sha256": "d8f048c99bff7faa246a68426d909c05ea75872bbbf37b4cc84c1f1d1688de12",
+      "size": 120206
+    },
+    {
+      "path": "implementation/elm-build-loop-v1/goal-receipt.json",
+      "sha256": "c9c260586141b11636e0c6c6c064abbf9eb0b797bf3fe5eaf4d8e32284088510",
+      "size": 1309
+    },
+    {
+      "path": "implementation/elm-menu-lifecycle-v2/SCOPE.md",
+      "sha256": "5457b213954f2a5648b9898147eb6735addcffbc910bbee46a54ac4844603e2a",
+      "size": 2278
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

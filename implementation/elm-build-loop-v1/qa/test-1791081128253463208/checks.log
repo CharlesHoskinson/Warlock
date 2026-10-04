@@ -1,0 +1,17 @@
+append-only-checkpoints-bind-evidence-without-promoting-failed-report: PASS
+six-parallel-writers-preserve-thirty-events-and-original-bytes: PASS
+unknown-completion-status-and-invalid-evidence-refused-without-event: PASS
+native-lock-rejects-concurrent-request-before-launch-and-releases: PASS
+two-process-native-contention-launches-exactly-one-synthetic-child: PASS
+global-native-lock-rejects-different-repository-before-launch: PASS
+inherited-fd-retains-global-lock-after-parent-return-or-cancellation: PASS
+existing-qa-conflict-refused-before-launch: PASS
+outside-symlink-missing-directory-nonpython-runners-refused-before-launch: PASS
+native-command-uses-fixed-protected-launcher-and-literal-arguments: PASS
+error-cancellation-and-child-exits-preserved-and-lock-released: PASS
+supervisor-forwards-sigterm-and-holds-lock-until-real-nongraphics-child-exits: PASS
+graceful-child-zero-exit-after-cancellation-remains-negative-sigterm: PASS
+cli-normalizes-cancellation-to-143-or-130-without-launching: PASS
+baseline-and-amendment-counts-verified-hash-or-count-mismatch-refused: PASS
+status-filters-thread-and-observes-lock-without-inventing-acceptance: PASS
+original-roadmap-identities-unchanged-and-no-acceptance-file-created: PASS
