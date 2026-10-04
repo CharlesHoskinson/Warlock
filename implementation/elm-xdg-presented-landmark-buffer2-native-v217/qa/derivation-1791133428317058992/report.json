@@ -1,0 +1,75 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "native-exact-original-except-selection-and-scope",
+      "passed": true
+    },
+    {
+      "name": "pixels-byte-identical",
+      "passed": true
+    },
+    {
+      "name": "original212-manifest-identity",
+      "passed": true
+    },
+    {
+      "name": "original-native-failure-identity",
+      "passed": true
+    },
+    {
+      "name": "genuine-original-failure-preserved",
+      "passed": true
+    },
+    {
+      "name": "scale1-three-positive-one-negative",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native.py": "37e8eb1f8d7c6a72213b0df9896f96a511381b7525078cfd2056ac006a024bbd",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/inputs.json": "1d0236aa487f6c813d078daaef2f087f7db43c441dc2fbdf3ce685f2f7b4a52f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/privateBus.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/weston.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/weston-renderer.log": "c5574644e88583220eb95b0ef6f2160ce86067bf8ad6c0183f5438b2153c2579",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/dmabuf-probe.stdout": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/dmabuf-probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/hyprland.log": "0bf1ad6de93377fe8370a8e572f3e00822fa8f0c875ddb0fae99a5d5f65a55b4",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/zero-scale1.jsonl": "e8ffd2cf42cb17e79168eb99ec2fccd11489c2ccecf651c4917890a66bc5e076",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/origin-scale1.jsonl": "58e25de25825e636acccccff4635d953e53ac44eca40c653224553dc2ae568ab",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/host-evidence.json": "30f6cc7d6b655f96784ae921b143d0bb3fe7199fe1b263278cdbaf913100fafa",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/zero-scale1-pixels-12/measurement.json": "427c8856adc04b9278cae61e04543a4ea9be8fac22aeb4f74fa3d5a533fec420",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/zero-scale1-pixels-12/grim.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/zero-scale1-pixels-12/capture.png": "bfd3fdb05c6f8bea8b2ebc9ec1a89238a0e9cc2bc1074c8d131b43d42ea2c31f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/zero-scale1-pixels-12/dimensions.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/zero-scale1-pixels-12/decode.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/zero-scale1-pixels-12/capture.rgb": "d72343a9a89f94d486f20e42dcf4e8a435db9132de57c0b824089b2231efaef4",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/zero-scale1-pixels-22/measurement.json": "015295df22d65126552d33136738490bec7599814dc392c65eb4385db1e678cf",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/zero-scale1-pixels-22/grim.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/zero-scale1-pixels-22/capture.png": "38b647fa7730def489c431f8ad91b87de8ff1b21d0a7bb8ef92a21cf7ff4d21e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/zero-scale1-pixels-22/dimensions.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/zero-scale1-pixels-22/decode.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/zero-scale1-pixels-22/capture.rgb": "dcb4b2a0c72edc64126593b2b2141b2c6e2e7b6ade0828814756b7e8c27dbb97",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/zero-scale1-pixels-32/measurement.json": "8466e14dab27893e57c7e12a2fa0330091a48b42ea9457b3ec6d91164ba60975",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/zero-scale1-pixels-32/grim.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/zero-scale1-pixels-32/capture.png": "eb2ff0ff21100cca1300e7e7a30f3970f4726b8f552c276564522ec4262ea27e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/zero-scale1-pixels-32/dimensions.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/zero-scale1-pixels-32/decode.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/zero-scale1-pixels-32/capture.rgb": "650c496068ed425c4d2f4dbbbcc7cbae9390b2dea9a9db1d0919e60354b3e7fe",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/origin-scale1-pixels-12/measurement.json": "247bf9f9c41431ed33b2181e6ba204f896fed08c831163c5b5a22171db6b9ffc",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/origin-scale1-pixels-12/grim.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/origin-scale1-pixels-12/capture.png": "4e2e7eee2a25581de90a00f7e8e76e1e7fb8ae911bb38b44e80c1abb130f3402",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/origin-scale1-pixels-12/dimensions.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/origin-scale1-pixels-12/decode.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/origin-scale1-pixels-12/capture.rgb": "304d40b215c4a9b452468f5014d9554af4e7c44b3842f1ebc3b2d60de4d277cb",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/runtime-archive/hyprland.lua": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791133184_2086110301/hyprland.log": "4b5058ea94ee25e06e495e9254c8223b01b41431777dc4cb461fdbe6782fbb3c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-buffer2-native-v217/qa/derivation.py": "bdb2186b49553f070e5db7b7aaad4e01db3889aaa73c07d2b863d43220712e99",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-buffer2-native-v217/origin.json": "c9944eee6048076e26ed8383d591cb664cdac28487d41fe007d723e17a5ed391",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-buffer2-native-v217/qa/native.py": "e732ee754fa715be0c3fa09a3295b24d24ba2b939a40b35dc8dd6666509794dd",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-buffer2-native-v217/qa/pixels.py": "47486cf947914216a59b284de4f5187c2bda62b1c4fab45f8bf4a60458cd7ae4",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/report.json": "1394cfd7791abbf3b01c04cd2ffd7b0c8f965e82b2b1bd2dc365ceef091d20bb",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/component-manifest.json": "73293f58e1799bd5a6f474075d2df17278b0a391da5551c5eb384cf76e4fa362"
+  }
+}

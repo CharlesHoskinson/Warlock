@@ -1,0 +1,703 @@
+{
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "scope": "Independent selected-pointer-record source review; no native injection/hardware qualification",
+  "reviewStatus": "scoped clear",
+  "nativeAcceptance": false,
+  "files": {
+    "REVIEW.md": {
+      "sha256": "9188ab6759528e3704abc89d2ac57837b16d36abedad1bfa983f6bd8f966f726",
+      "size": 3017
+    },
+    "qa/verify.py": {
+      "sha256": "4ac2409961833a2bcd353e83fb7c2458622d871693547fa4167af70470230c59",
+      "size": 1728
+    }
+  },
+  "externalClosure": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-journal-oracle-v213/HANDOFF.md": {
+      "sha256": "2c418511c5df2f3c5d010fc232894cf583f34810947af5c7182a15384d1228fa",
+      "size": 1097
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-journal-oracle-v213/REQUIREMENTS.md": {
+      "sha256": "77158af2477b56eca3fb52be05044c6559e8497f4c4aeef5935cc88f5b6e5266",
+      "size": 829
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-journal-oracle-v213/oracle.py": {
+      "sha256": "45a97d355179b186bb40d74890e813231f3917b43bacdc9e547f10076728ad21",
+      "size": 2211
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-journal-oracle-v213/qa/callback-1791132552310540563/build.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-journal-oracle-v213/qa/callback-1791132552310540563/callback": {
+      "sha256": "93133c3e25e3b6901056e45da78a2d9eebd7666e58b24e51abe5acc678432000",
+      "size": 41064
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-journal-oracle-v213/qa/callback-1791132552310540563/callback.c": {
+      "sha256": "d7d5515ee3803e6517e55d1013914862efc4084bf04866353cc39af5d163bbc1",
+      "size": 583
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-journal-oracle-v213/qa/callback-1791132552310540563/callback.stdout": {
+      "sha256": "576d36939e70c88f59eb341753a1b38744c820d3057abcc18f43977700c4edae",
+      "size": 1000
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-journal-oracle-v213/qa/callback-1791132552310540563/report.json": {
+      "sha256": "e1f13940e254b3ce1a9b83288945d65a79e4fb62e1ee6dbd271d321cc807d640",
+      "size": 18740
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-journal-oracle-v213/qa/callback-1791132552310540563/xdg-origin-client.c": {
+      "sha256": "bfd9ae895fcba50f90690cdc1b8b207ecc31e2240b36e93935a7288e37857b31",
+      "size": 27119
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-journal-oracle-v213/qa/callback-1791132610712052929/build.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-journal-oracle-v213/qa/callback-1791132610712052929/callback": {
+      "sha256": "93133c3e25e3b6901056e45da78a2d9eebd7666e58b24e51abe5acc678432000",
+      "size": 41064
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-journal-oracle-v213/qa/callback-1791132610712052929/callback.c": {
+      "sha256": "d7d5515ee3803e6517e55d1013914862efc4084bf04866353cc39af5d163bbc1",
+      "size": 583
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-journal-oracle-v213/qa/callback-1791132610712052929/callback.stdout": {
+      "sha256": "5341fa904cddd01f50a96531c7b2bd2b7bf2e411a80f184f4d4f5ec8e2e3c3a0",
+      "size": 1000
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-journal-oracle-v213/qa/callback-1791132610712052929/report.json": {
+      "sha256": "a221ec5c23467c86c2d7cebd0fbf6cee6b26ad8662611af7d1b829c95c1cdac3",
+      "size": 18740
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-journal-oracle-v213/qa/callback-1791132610712052929/xdg-origin-client.c": {
+      "sha256": "bfd9ae895fcba50f90690cdc1b8b207ecc31e2240b36e93935a7288e37857b31",
+      "size": 27119
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-journal-oracle-v213/qa/callback-test.py": {
+      "sha256": "4143f38800509d7607872e7912e5c07b58ee00f8e21d5c541c590993835cc681",
+      "size": 3479
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-journal-oracle-v213/qa/freeze.py": {
+      "sha256": "d03918dae36712c85ee4fca271f263650e7c80c3377e4427aa1a9b290021b28c",
+      "size": 1179
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-journal-oracle-v213/qa/test-1791132472362636135/report.json": {
+      "sha256": "5cd950d09f7eb3b0d8e189bf28a56dc25f6f647977e796c386f326dc1f6f44e8",
+      "size": 1286
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-journal-oracle-v213/qa/test-1791132610286534238/report.json": {
+      "sha256": "4e167d70d33118221695906bf4e395a70ee063e8d9fe713ff827f3fb4d3d7551",
+      "size": 1328
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-journal-oracle-v213/qa/test.py": {
+      "sha256": "92f98d9cd4c849876d7287f68fe6601e0c1de7fb23dbcda030ceade9c8c1a5ee",
+      "size": 2255
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/native/xdg-origin-client.c": {
+      "sha256": "bfd9ae895fcba50f90690cdc1b8b207ecc31e2240b36e93935a7288e37857b31",
+      "size": 27119
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/build.py": {
+      "sha256": "acf417473c832f9c5c745dfbca8f9760707c190ae36f505316c765992fe0568f",
+      "size": 5156
+    },
+    "/usr/share/wayland-protocols/stable/xdg-shell/xdg-shell.xml": {
+      "sha256": "7ba7f9c8473deee674cb1f154a18abd0bb0cc072604fc055b0c15e459fc4c7df",
+      "size": 63846
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129756017735997/generated/xdg-shell-client.h": {
+      "sha256": "a09726137ea9fe1a23d58c95f1d33ab77a3fc692c63726bc82fbc91ab8e5c6fc",
+      "size": 86409
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129756017735997/generated/xdg-shell-protocol.c": {
+      "sha256": "9e12fcd5676d8c6b6cfd233c2eba563163c0ea7e586cb6e27f202a328323c7f0",
+      "size": 5999
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129756017735997/inputs/xdg-origin-client.c": {
+      "sha256": "bfd9ae895fcba50f90690cdc1b8b207ecc31e2240b36e93935a7288e37857b31",
+      "size": 27119
+    },
+    "/usr/include/alloca.h": {
+      "sha256": "cb5ea6285def24864da9698db30ba6fbff156e263625e1be33064f94a8dc64b3",
+      "size": 1203
+    },
+    "/usr/include/asm-generic/bitsperlong.h": {
+      "sha256": "3a8e58cc67210c5a2b3bf24c84a96328e974dfe94206c74e5478d3142c991cf7",
+      "size": 1092
+    },
+    "/usr/include/asm-generic/errno-base.h": {
+      "sha256": "2c148e92b8318deeb767fabd60822113e575ee664ff09a1873aed8f7a495793c",
+      "size": 1612
+    },
+    "/usr/include/asm-generic/errno.h": {
+      "sha256": "66a5ad60566fdd62e41701bcfc42bfeca5e5696ad1d47d78981575e0c51622be",
+      "size": 5826
+    },
+    "/usr/include/asm-generic/int-ll64.h": {
+      "sha256": "eb8b891e775ebb50af0353fdcbc625854fd98780399b3a57a404d36af6c29749",
+      "size": 864
+    },
+    "/usr/include/asm-generic/posix_types.h": {
+      "sha256": "f9b2bcd020a7041ca71acdc66ed04113d37d4141eba74a26f9a9fd81286c14fe",
+      "size": 2420
+    },
+    "/usr/include/asm-generic/types.h": {
+      "sha256": "09b4477d655ddd2c5657e83a0761700d6706f012c7365f310a6b0a6696936a10",
+      "size": 233
+    },
+    "/usr/include/asm/bitsperlong.h": {
+      "sha256": "8ef5efeb3f25ae47ce03ba892f5caf77631b1257715fc12de72c21e61db17e43",
+      "size": 321
+    },
+    "/usr/include/asm/errno.h": {
+      "sha256": "4ee384515a4325315992e61dd957f0fa91f3858fe7c079de59f56edded51de86",
+      "size": 31
+    },
+    "/usr/include/asm/posix_types.h": {
+      "sha256": "983090c7e5e7eaff27114ec216889a8ad26e40ad8fbb78b8ae6c09391dc61543",
+      "size": 224
+    },
+    "/usr/include/asm/posix_types_64.h": {
+      "sha256": "5cdabc01dac0a3e9731ac16353210a615ca44e85b6ec9eafd2e79206e0b26c76",
+      "size": 609
+    },
+    "/usr/include/asm/types.h": {
+      "sha256": "b6bdcd528bce555b2ecb58e8a1624e3e13e09312c31318023c4e86b957e2b01f",
+      "size": 31
+    },
+    "/usr/include/bits/atomic_wide_counter.h": {
+      "sha256": "7d508b02d7ed3a94c1a556779fdd590fd2e0668a34b0d736e40eab6df7d60154",
+      "size": 1283
+    },
+    "/usr/include/bits/byteswap.h": {
+      "sha256": "6462236f7c0743d1fd371e12fd318c7f65595604744bbd564d2942096e96fd07",
+      "size": 2450
+    },
+    "/usr/include/bits/cloexec.h": {
+      "sha256": "fe4bf3585d48939dc11fe267943518a6714acc3cd6abd07efab46bb805376946",
+      "size": 29
+    },
+    "/usr/include/bits/confname.h": {
+      "sha256": "dbed2d3724ad68fac2eeb79b553ef113c008c4f3f787e1acec1b874802497182",
+      "size": 23828
+    },
+    "/usr/include/bits/endian.h": {
+      "sha256": "112b43d5b891adcb526fbbbd582625d1d92d68612f8251dc2ee5b47ba488899f",
+      "size": 1905
+    },
+    "/usr/include/bits/endianness.h": {
+      "sha256": "659a7060004eda113671a38852c4d1e9cb97a35932bcd1d8540f98c09c180747",
+      "size": 273
+    },
+    "/usr/include/bits/environments.h": {
+      "sha256": "26080a9c9e54409330a6e05c9022e03d97c066ea0412fb5a2d04e5f0e527f441",
+      "size": 3791
+    },
+    "/usr/include/bits/errno.h": {
+      "sha256": "2c169b750ca9bdf063ae033299426bf1c858213df8ca6df0ef43dd9c7e9d500b",
+      "size": 1426
+    },
+    "/usr/include/bits/fcntl-linux.h": {
+      "sha256": "33ca5fffcf66a26c3c115c82ef3458f0147c86a4c6932645839d800a657222a3",
+      "size": 15952
+    },
+    "/usr/include/bits/fcntl.h": {
+      "sha256": "385d7a9118790e783bb2c6273602faca25ffe71046606d1e3afbe19d5d67d4a8",
+      "size": 2246
+    },
+    "/usr/include/bits/floatn-common.h": {
+      "sha256": "8d5c5517e58c6d7ac4c915037f3af518fadc41ceb47999ee3387e4fb91cb4eaa",
+      "size": 10325
+    },
+    "/usr/include/bits/floatn.h": {
+      "sha256": "00524c02db9c4aa6dce6cdee90183bfca40fb254a93f0ea22a397f3355711d1f",
+      "size": 4929
+    },
+    "/usr/include/bits/flt-eval-method.h": {
+      "sha256": "a6f8c3b06e50fc4f0df226abbab5bdcfe73a596b0a22b4ade08fb2fd2293b8d1",
+      "size": 1215
+    },
+    "/usr/include/bits/fp-fast.h": {
+      "sha256": "e779cf7b858bc3bb506b0145832f66dc31bef4a75dd00edd64f290c81cfcf331",
+      "size": 1216
+    },
+    "/usr/include/bits/fp-logb.h": {
+      "sha256": "44fb675f5fd2fee75005ede827719e61fd169f31d27bb9f8de3a42e3fb6b79dc",
+      "size": 1012
+    },
+    "/usr/include/bits/getopt_core.h": {
+      "sha256": "238ff9f16662d515d6b191662965bb27e208b04dc929d04a69399de41bcd7d45",
+      "size": 3667
+    },
+    "/usr/include/bits/getopt_posix.h": {
+      "sha256": "660e8e89f9b4df5722c3ac2d57320bdf1c1fafcff17db9f0e57c681fcc8d3a79",
+      "size": 1810
+    },
+    "/usr/include/bits/iscanonical.h": {
+      "sha256": "6d36b036d25df4e90d0a98b474a572836fc00d13862b288bbea9135cf33e7d3c",
+      "size": 2479
+    },
+    "/usr/include/bits/libc-header-start.h": {
+      "sha256": "9ec1af1a58b5d6431708a7ca71ef65944622921ca6fce878ae2ab486f3145296",
+      "size": 4286
+    },
+    "/usr/include/bits/libm-simd-decl-stubs.h": {
+      "sha256": "bff48d9c0882ed7b833047e463d6f56878c7827cff13b9e9720bbc6a88467bf9",
+      "size": 13079
+    },
+    "/usr/include/bits/long-double.h": {
+      "sha256": "9b3fe370666b72e74d2c19c9fa44bd18a72f671e5ca24fbf4cca6a29b114459d",
+      "size": 970
+    },
+    "/usr/include/bits/math-vector.h": {
+      "sha256": "fcf87dafedf439e56ba593a614b78216e3d7a51a661528ee4c6749ef52fda04a",
+      "size": 5402
+    },
+    "/usr/include/bits/mathcalls-helper-functions.h": {
+      "sha256": "7587e45507eb8280820251e66530b1341d8eac5d1347a5ee5d99d9bdbf3c58b0",
+      "size": 1863
+    },
+    "/usr/include/bits/mathcalls-macros.h": {
+      "sha256": "502a8c7704161110b71b5533d39a20ee986c4abd9ea3321a3e6ebab7c0480d6a",
+      "size": 2216
+    },
+    "/usr/include/bits/mathcalls-narrow.h": {
+      "sha256": "a1b6bb2f135f2b90e69f525a0b6bb53854403d104efabeeacb22ea3167a5a454",
+      "size": 1515
+    },
+    "/usr/include/bits/mathcalls.h": {
+      "sha256": "2cd79b60f1e381ef50d2d9aac13f0a780025f14ac88f04aba50c880b50c06376",
+      "size": 16171
+    },
+    "/usr/include/bits/mman-linux.h": {
+      "sha256": "f4af12399c841716e2318ca5b7d18ae7a23ae7ed29c603d81f86b05d6b4ee44a",
+      "size": 6185
+    },
+    "/usr/include/bits/mman-map-flags-generic.h": {
+      "sha256": "2cb9af9f89d9f5904ddff1806268e99c71564361770064ffd0f4c682209928fe",
+      "size": 1961
+    },
+    "/usr/include/bits/mman-shared.h": {
+      "sha256": "c4adc07904fd01652f225879d6134234d4bf63e5946e1303d630ed50191facd2",
+      "size": 3480
+    },
+    "/usr/include/bits/mman.h": {
+      "sha256": "790b4736ef9bdcc2ca101a1a1f3fe2db007016fb6c4377e40481bb07b905e11b",
+      "size": 1463
+    },
+    "/usr/include/bits/mman_ext.h": {
+      "sha256": "6276988239dba1a3d70ecd553b0084303827294850f6549262e98991997b7409",
+      "size": 1230
+    },
+    "/usr/include/bits/openat2.h": {
+      "sha256": "1b89059bfc8622770f5d4b398c49b3c4cc6bb966a59cefa8cf75f816dc918f5a",
+      "size": 2041
+    },
+    "/usr/include/bits/poll.h": {
+      "sha256": "f89453e09a0c652ee1dc30744bcc2c73fec8e1170b56de6fcea02dcb2a3dafcd",
+      "size": 2076
+    },
+    "/usr/include/bits/posix_opt.h": {
+      "sha256": "b2825f0ce2b045cff606a35ca14c2e47d990d94cf0092c9a8c7d25042feaff83",
+      "size": 5910
+    },
+    "/usr/include/bits/pthreadtypes-arch.h": {
+      "sha256": "1e4016c31b2b5412c4984f7f12f6659cf93ec5c55cad21dfb0ecf2813ba3116c",
+      "size": 1838
+    },
+    "/usr/include/bits/pthreadtypes.h": {
+      "sha256": "aa3af8683d56aa08f5fcedf866212c48f227f1f9f7045944f7977c0ad58ffe81",
+      "size": 3072
+    },
+    "/usr/include/bits/select.h": {
+      "sha256": "e879dad16c60061ac0ef11e917ddcb39b0ccb6fa082f7033479c3ce96fc18eef",
+      "size": 1505
+    },
+    "/usr/include/bits/stat.h": {
+      "sha256": "13945ae82e81d5433007b1da37c5a4a98ecd3906e58e6e16abf8880c05e89061",
+      "size": 2231
+    },
+    "/usr/include/bits/stdint-intn.h": {
+      "sha256": "ed15fd5be7a39b8145b2beb08fd4a316bb72f0bd5ebca707399b4f5b0c0bf304",
+      "size": 1037
+    },
+    "/usr/include/bits/stdint-least.h": {
+      "sha256": "24c527a005947517a1d3032fdf161577e5a62184f4419066a2112a79ab2da788",
+      "size": 1305
+    },
+    "/usr/include/bits/stdint-uintn.h": {
+      "sha256": "f0d1ad8c0effab436bebd7a4c177a28a567f0faaae69877e9ccbe3d631a7cd68",
+      "size": 1049
+    },
+    "/usr/include/bits/stdio_lim.h": {
+      "sha256": "7f6274022abc6b0a4970c9c78280abdf548660656e76f066949fedbfe6445920",
+      "size": 1059
+    },
+    "/usr/include/bits/stdlib-float.h": {
+      "sha256": "8900ab8d754778a6df25a040202726097d29f65954c4525de4542abef79c0c01",
+      "size": 1115
+    },
+    "/usr/include/bits/struct_mutex.h": {
+      "sha256": "dca410963a519c04fa3ed4175b13d0baaf20c22723c67414cf2433b00237d1e3",
+      "size": 1773
+    },
+    "/usr/include/bits/struct_rwlock.h": {
+      "sha256": "309124e37fac2b64a00fd0a93973fef769943cfeb36e8fc8678f83f705635255",
+      "size": 1784
+    },
+    "/usr/include/bits/struct_stat.h": {
+      "sha256": "b19478cbd3055193a7b184d8f8b7e36b2ebbf637c660c68b184603b247e17f6f",
+      "size": 6210
+    },
+    "/usr/include/bits/thread-shared-types.h": {
+      "sha256": "2c1bcabe7b6b7e9192feb703d888f4e871749070b8fb30f96878386e869ff21b",
+      "size": 3961
+    },
+    "/usr/include/bits/time.h": {
+      "sha256": "7c8d7e65c0b95928b7f6ec32308b9d21a5373afac19b97bf9becb17281fd3c15",
+      "size": 3331
+    },
+    "/usr/include/bits/time64.h": {
+      "sha256": "c502af2b2d265699b53ccb52e7a20521ab3ec4d346deb1366f494d1e22354ff9",
+      "size": 1340
+    },
+    "/usr/include/bits/timesize.h": {
+      "sha256": "9d075412fa9c84e68a59e22944daad36905cb2eb19c3a7613d652b85ece4f207",
+      "size": 1109
+    },
+    "/usr/include/bits/timex.h": {
+      "sha256": "3e630d5280638ac300a05cf10d3e70e368c9738928550db550c1d6a1e639f194",
+      "size": 6203
+    },
+    "/usr/include/bits/types.h": {
+      "sha256": "3fcf066dbf9fac9c5a15ff6327ca6a437e955e9aa571de1c3347cd0f4da4f93d",
+      "size": 8806
+    },
+    "/usr/include/bits/types/FILE.h": {
+      "sha256": "37515f78be386f2edad4746f2947c928f480728c56d9a94e25302ebbdaef3c96",
+      "size": 180
+    },
+    "/usr/include/bits/types/__FILE.h": {
+      "sha256": "26c909942e8a6bc82725e9c402f393aed9e32d94190257ddf71e1b5f819b4e5e",
+      "size": 110
+    },
+    "/usr/include/bits/types/__fpos64_t.h": {
+      "sha256": "8afae3abf006beb39fd9d4d4bae38745cdf08a91e6217ddf25833c8d4b04751b",
+      "size": 410
+    },
+    "/usr/include/bits/types/__fpos_t.h": {
+      "sha256": "603e58ab31ed75b7e0ab09a2ca94e99955f7fbc63310466321ce27c906227eb4",
+      "size": 381
+    },
+    "/usr/include/bits/types/__locale_t.h": {
+      "sha256": "293f874c654c206b3f18021510b2612487177d9010a333b9313991ae1877fc96",
+      "size": 1661
+    },
+    "/usr/include/bits/types/__mbstate_t.h": {
+      "sha256": "c561df72d5b987ccbd022059fdb1bcb6899c3e94b403997a0576ef3e1afb0f94",
+      "size": 564
+    },
+    "/usr/include/bits/types/__sigset_t.h": {
+      "sha256": "05291a7d38bb1d0da1ed01c09fe85fa2b1f4d5bc708e06bb930efec672db08d5",
+      "size": 206
+    },
+    "/usr/include/bits/types/clock_t.h": {
+      "sha256": "81e60e8a8d99b28bc723c14b156d7f7fc8ff663d98a857a3f5aea90431f577e3",
+      "size": 143
+    },
+    "/usr/include/bits/types/clockid_t.h": {
+      "sha256": "dcd64d184855b245e5c7acf21910a0aaca590f1faf094e400da5d30551d11eb0",
+      "size": 174
+    },
+    "/usr/include/bits/types/cookie_io_functions_t.h": {
+      "sha256": "68dd9728ed4cb7d36d745e4131588a700fd2071f7218a93637a6d4035df4dd4f",
+      "size": 2725
+    },
+    "/usr/include/bits/types/error_t.h": {
+      "sha256": "3ebc9695bacdc88623dc0dd8b88e071b51521d2a3d9ade39b86ca81045c9a446",
+      "size": 894
+    },
+    "/usr/include/bits/types/locale_t.h": {
+      "sha256": "8675fb9fc99a2763f278421e4adf57ecc8838ac5668b2db3cac52fabb440d802",
+      "size": 983
+    },
+    "/usr/include/bits/types/once_flag.h": {
+      "sha256": "1cda55270e969dca774272ec5e2dbf417442bc40183e4fbfeab3f0e22a31f4da",
+      "size": 1007
+    },
+    "/usr/include/bits/types/sigset_t.h": {
+      "sha256": "3db5ded9d98a694e8c7196a06690b2e816ec6bb82689940d281f6504533f37e1",
+      "size": 195
+    },
+    "/usr/include/bits/types/struct_FILE.h": {
+      "sha256": "5e9432ad4ca91afc6849cc610093b81721f425e24f38bb60e756ffa37a09a075",
+      "size": 4383
+    },
+    "/usr/include/bits/types/struct_iovec.h": {
+      "sha256": "81521ecd97170ff2f8ca8e972b4dc8986994477891a84eece68954f2d0166878",
+      "size": 1066
+    },
+    "/usr/include/bits/types/struct_itimerspec.h": {
+      "sha256": "d6299fbc46fc57e7d14635cd5cf69125710ed021ab7305586c84644a03a39f8e",
+      "size": 288
+    },
+    "/usr/include/bits/types/struct_timespec.h": {
+      "sha256": "798e773d0c7f3796033c043910db2b093d1e43116c4b3d2cf3be85f8c4304cf1",
+      "size": 877
+    },
+    "/usr/include/bits/types/struct_timeval.h": {
+      "sha256": "6585bf0dcd3d5a780d6246da841031f9b314ceb7400a3210f34815f5da93b1fa",
+      "size": 416
+    },
+    "/usr/include/bits/types/struct_tm.h": {
+      "sha256": "e7bdda3f42eb0633850ed150fef0a0cf6193cbba8fa740e7505925424a595566",
+      "size": 760
+    },
+    "/usr/include/bits/types/time_t.h": {
+      "sha256": "d1cc45e24a80009117f61ee4ae9cae5d12f69f38d691e0a933f989f7a1d27bb0",
+      "size": 208
+    },
+    "/usr/include/bits/types/timer_t.h": {
+      "sha256": "d96a2452da0d933941273d11d1048ea525f033306892835b0a7a0999b13853aa",
+      "size": 159
+    },
+    "/usr/include/bits/typesizes.h": {
+      "sha256": "a52fb9d6cca3d305618b036183fe11fbb1789afea64f5436197bbb058e5edf0f",
+      "size": 3737
+    },
+    "/usr/include/bits/uintn-identity.h": {
+      "sha256": "9546f287d641234edb1dc1082032b7256f9dae76b2244cef63d0769d5b4d536b",
+      "size": 1542
+    },
+    "/usr/include/bits/unistd_ext.h": {
+      "sha256": "40f5c4a876a8cd22796eb07359505082515db6ef4540b07be0e88c5925579d8f",
+      "size": 2035
+    },
+    "/usr/include/bits/waitflags.h": {
+      "sha256": "e9d5a8255131a9b555f35b04c5a1596bb3cdc96e6fd518cf43c473cbf41b6016",
+      "size": 1697
+    },
+    "/usr/include/bits/waitstatus.h": {
+      "sha256": "cc93cc0c23d21e2695414318d79124a5ca08e1a0ea60f81c2842a7a566b06711",
+      "size": 2287
+    },
+    "/usr/include/bits/wchar.h": {
+      "sha256": "9a3e6e246753da1e142227f6a81a9d0064cbb3189073c367263a491b4044373f",
+      "size": 1906
+    },
+    "/usr/include/bits/wordsize.h": {
+      "sha256": "948177c0fc84c4746588f62252029880ec4c6f88b743ba55d952f980303ebfbb",
+      "size": 398
+    },
+    "/usr/include/endian.h": {
+      "sha256": "5eef32c1a3965adcc0f4a838c8b631f4f42541e0de1692bb424de75d22b656ff",
+      "size": 2299
+    },
+    "/usr/include/errno.h": {
+      "sha256": "6af988372fbf273c6e462f4a488674bfe53fd4f535491c52b658357b46ede3dd",
+      "size": 1679
+    },
+    "/usr/include/fcntl.h": {
+      "sha256": "91c6a8ff5eee5863af4f6b15b325741ef28c61c9ba5fe6c4e0168d3ecdabd254",
+      "size": 11458
+    },
+    "/usr/include/features-time64.h": {
+      "sha256": "c7c33cddd4ffbbca1eb0de042131a51201a42f29139820d0a36c1e1dd0d16ba5",
+      "size": 1532
+    },
+    "/usr/include/features.h": {
+      "sha256": "5ac21294ba6a85013ead693eba6b5587ddbb8afd6922e4fb351e858b14833a12",
+      "size": 19842
+    },
+    "/usr/include/gnu/stubs-64.h": {
+      "sha256": "3836bee19ddace5e06e967be88015d8492335daa08ce39a236618f520ccc40db",
+      "size": 481
+    },
+    "/usr/include/gnu/stubs.h": {
+      "sha256": "ef444295a0a9e8f5c40918399a00cc91ba0bd79774110cdf6e652baa6cfadb2e",
+      "size": 384
+    },
+    "/usr/include/inttypes.h": {
+      "sha256": "f7b6d71ce5912c40209b716a7e681f69f208b97809397f33fdcedf3eb8ff6e13",
+      "size": 11563
+    },
+    "/usr/include/linux/close_range.h": {
+      "sha256": "54f02dee64fba028529c5265273d23a96629f3217d6abc31574ef7cce5a63f70",
+      "size": 377
+    },
+    "/usr/include/linux/errno.h": {
+      "sha256": "a47fb2f49bce0546a1e88805cec954338abb1b2ac87de042166e8e3a74b23261",
+      "size": 23
+    },
+    "/usr/include/linux/falloc.h": {
+      "sha256": "67210a836eee09c18aa02e4c18d12291f97267d3fbaaf5d6ae215837852cd777",
+      "size": 4477
+    },
+    "/usr/include/linux/openat2.h": {
+      "sha256": "8db1c89e62b93f8e08e2700a1fd5fa7349da815b63083e0dcf025a6fbe56239f",
+      "size": 1714
+    },
+    "/usr/include/linux/posix_types.h": {
+      "sha256": "bc68636a383418f235d3457e4b21cf27cefc7c7f3edea4c1f6706f1018db196f",
+      "size": 1098
+    },
+    "/usr/include/linux/stddef.h": {
+      "sha256": "8de0ac8eae3695cbf769f27069f44dd622f9bb4ba2ca8e35e4af8c2a14f0bf5f",
+      "size": 2196
+    },
+    "/usr/include/linux/types.h": {
+      "sha256": "4152b3c5d095f5cf0adf5cc13ee0670e737eb7c4efef5fa08e9d1eb87e68ed78",
+      "size": 1829
+    },
+    "/usr/include/math.h": {
+      "sha256": "c727536544246f3c48d2d116cae82e02539bdec1b905799bf93579ba35527ecf",
+      "size": 53032
+    },
+    "/usr/include/poll.h": {
+      "sha256": "04bd7e134e86aabf9499d9ef2f5b13546a7d0e113e141e8f935076d87ba185fd",
+      "size": 22
+    },
+    "/usr/include/stdc-predef.h": {
+      "sha256": "383ff8bd7dcc87deefedd062637f4afe28f85f8be443beda8b41d15e45ef1679",
+      "size": 2462
+    },
+    "/usr/include/stdint.h": {
+      "sha256": "fbd21c7a64b876eddd4e179172fb58a4921fd616d103b8107a28a54cf687289b",
+      "size": 8268
+    },
+    "/usr/include/stdio.h": {
+      "sha256": "7b9d4ea5a3d988998113785f389c635428dbfd25f503197d81688ec9ef0149fa",
+      "size": 34258
+    },
+    "/usr/include/stdlib.h": {
+      "sha256": "936ffcdf6161aa702d9fe433879e59b039731effebea7a9c02506da183a99d02",
+      "size": 42963
+    },
+    "/usr/include/string.h": {
+      "sha256": "6284f89702acd61ff489bc6d20b38f6a942c438783076b9b64633d073be3337d",
+      "size": 21266
+    },
+    "/usr/include/strings.h": {
+      "sha256": "9103b78ed40bae6ad74f43ea4536f96d2f1405adcd52c070a66614207f1429dd",
+      "size": 4753
+    },
+    "/usr/include/sys/cdefs.h": {
+      "sha256": "a5a71b01109709190529d0c3532751869d05db6a5e8ce01c8c73229b797cfb83",
+      "size": 35168
+    },
+    "/usr/include/sys/mman.h": {
+      "sha256": "aebf7874a8c61ef2b62d989ee437c0a10ef5b493b79bc711ca37365bee0ed7d2",
+      "size": 5669
+    },
+    "/usr/include/sys/poll.h": {
+      "sha256": "a06e7534727af34cb7a0c7eb47e23fbdd750921f1b45a93d441ac14cced813f4",
+      "size": 3030
+    },
+    "/usr/include/sys/select.h": {
+      "sha256": "9becffb0018558dd368e025bffb8cb75d6b531cb8d18806e859172991a41f1a5",
+      "size": 5049
+    },
+    "/usr/include/sys/types.h": {
+      "sha256": "25d29436b206e2b36e3fbe7057fa8b9822fa9f0f7823659c489a8fc71c8cd1db",
+      "size": 5713
+    },
+    "/usr/include/time.h": {
+      "sha256": "e27a0238aa4cbec65b5d3b94dfffa1f127415e1c33d95565a8a4acd8cf935f60",
+      "size": 15326
+    },
+    "/usr/include/unistd.h": {
+      "sha256": "0dfb7a26409b84548986b0cd2d991a25e2f629f724cf68b0fcb4fc22c391f82f",
+      "size": 45053
+    },
+    "/usr/include/wayland-client-core.h": {
+      "sha256": "936e6d191144358aec15edf1271781ea333a15da96e81bb9c99d137292a8403b",
+      "size": 10233
+    },
+    "/usr/include/wayland-client-protocol.h": {
+      "sha256": "09d49cd7a692a122a76d0bf5cc1dabd5b5f84c2af634353ffbe67d4ee23fb0e4",
+      "size": 221262
+    },
+    "/usr/include/wayland-client.h": {
+      "sha256": "e9dd1fb014aa6ad848cb7d241cc223b1a70fc0b17fed5997262024e4c05532f7",
+      "size": 1573
+    },
+    "/usr/include/wayland-util.h": {
+      "sha256": "f336a00a03fcf442a59dc9e5fcce3fc94b2cbfcbcf0befba018be3657b7ea381",
+      "size": 24520
+    },
+    "/usr/include/wayland-version.h": {
+      "sha256": "35578b408ab6a91bea914a1b6e462c5b85018ee1c4f83ce89ddc5b36d4ad74ed",
+      "size": 1354
+    },
+    "/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdarg.h": {
+      "sha256": "173a81bfbe88a2da5ed5d238e14e0eaca61b090ee6d7b12b5f9614daeea21600",
+      "size": 4378
+    },
+    "/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdbool.h": {
+      "sha256": "f2a112e8b2128fb1d76e7c0b625cec8760955ebeae5cdf6b419ccf0c6d62768f",
+      "size": 1490
+    },
+    "/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stddef.h": {
+      "sha256": "868352506950054491b9c76a4e2814f4f3601d227d3dea62a3e75875f327f2c1",
+      "size": 14134
+    },
+    "/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdint.h": {
+      "sha256": "64ab730bb09eba38f01a62174fb8371ef281778ac33f141a6fa4217a9b39466a",
+      "size": 443
+    },
+    "/usr/bin/wayland-scanner": {
+      "sha256": "ce267015aacab2108ac8a76f273ef5431161603e1b63c7d976847b3f467bef51",
+      "size": 51376
+    },
+    "/usr/bin/gcc": {
+      "sha256": "8aac907d6fbf40394b424b5fa4a2ad1aa291dac7d3a0315c5b415c1f5ace1287",
+      "size": 1733976
+    },
+    "/usr/bin/pkgconf": {
+      "sha256": "6b445a4786f5ac89bfcbf0aeab5ee80b10cafb8aebeb0d5e24237f99545423fe",
+      "size": 51400
+    },
+    "/usr/bin/as": {
+      "sha256": "3dfdf6007545ea36176c350eef201d1ece55c347a182697bb5f9bac815a1f34b",
+      "size": 879712
+    },
+    "/usr/bin/ld": {
+      "sha256": "4d83828f709f0eade25bcae2f4a2508c47db2f01b58daaca5c1c4cefce897847",
+      "size": 1611760
+    },
+    "/usr/bin/ldd": {
+      "sha256": "94f332c23cf00596d0387d6f54693664f9a53334d65953b2ff308057cc8530b1",
+      "size": 5440
+    },
+    "/usr/lib/gcc/x86_64-pc-linux-gnu/16/cc1": {
+      "sha256": "49a325fc4c6c5aa5a8f9ea8c828e37f3900a757c6be48d997ff4af0b51ee8315",
+      "size": 47885368
+    },
+    "/usr/lib/ld-linux-x86-64.so.2": {
+      "sha256": "d011113b7054c641c8ca064f58bcc23804fd2654a3dff2444dad06ddeda61bfb",
+      "size": 263152
+    },
+    "/usr/lib/libc.so.6": {
+      "sha256": "e221b10fee9ee4776d8f0f1701253bc06817f7a4dbe6c5292487277d0bf8ffff",
+      "size": 2215072
+    },
+    "/usr/lib/libffi.so.8.5.0": {
+      "sha256": "b38bb3a55ba04dfbb5be68e881a72385d6c30010afffb1cf1dfc373b72c2278c",
+      "size": 51432
+    },
+    "/usr/lib/libm.so.6": {
+      "sha256": "965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d",
+      "size": 1268336
+    },
+    "/usr/lib/libwayland-client.so.0.26.0": {
+      "sha256": "39c83ae7b73d22f18b4f81da14749c4535c304b7e62910a2f1aae682f279cc9d",
+      "size": 60168
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-journal-oracle-v213/component-manifest.json": {
+      "sha256": "af45469f364e5b63cb49732775caa81240a2f587c016b1f1269254b4d1f9df77",
+      "size": 3511
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "nativeAcceptance": false,
+  "full22Coverage": false,
+  "scope": "four-profile screenshot source-only; CPU and preflight closure only",
+  "files": {
+    "HANDOFF.md": {
+      "sha256": "64276e29f6e6decdd5e8a75ce98ac98da818bf2bb61184ae5e25f397599acfb8",
+      "size": 3140,
+      "mode": 420
+    },
+    "REQUIREMENTS.md": {
+      "sha256": "193bb08caa814437925c58dd526730013ae9f17e656bd00ac16f020d92a59a51",
+      "size": 1964,
+      "mode": 420
+    },
+    "oracle-pin.json": {
+      "sha256": "c90009acb075233965c996f550d6a58845870e009b898bad2cbfdc31a74761a7",
+      "size": 168,
+      "mode": 420
+    },
+    "origin.json": {
+      "sha256": "399f03c1f2f24cad3660a641161c60cc1205f0374b7a06585abbb26760084ed6",
+      "size": 350,
+      "mode": 420
+    },
+    "original/native.py": {
+      "sha256": "ca4b37efeaba17152b834c3faa8913c6cfaba1f5775fe9dfdf55adb4c06d8c2a",
+      "size": 27227,
+      "mode": 420
+    },
+    "original/pins.json": {
+      "sha256": "6cf38465c56726c8ed36bf4df8f92f9543dbced19e4d163c583e949601ad07b6",
+      "size": 4359,
+      "mode": 420
+    },
+    "original/profiles.json": {
+      "sha256": "460c451fcfa234d435b293cdd780631e83b84e412770daac0c48bd588973ae9a",
+      "size": 22898,
+      "mode": 420
+    },
+    "pins.json": {
+      "sha256": "6cf38465c56726c8ed36bf4df8f92f9543dbced19e4d163c583e949601ad07b6",
+      "size": 4359,
+      "mode": 420
+    },
+    "profiles.json": {
+      "sha256": "460c451fcfa234d435b293cdd780631e83b84e412770daac0c48bd588973ae9a",
+      "size": 22898,
+      "mode": 420
+    },
+    "qa/freeze.py": {
+      "sha256": "35fec0b413f5b84f772b8e6dd688ce7c6b98132e2da6a12bb2838287cc8b34e7",
+      "size": 1542,
+      "mode": 420
+    },
+    "qa/native.py": {
+      "sha256": "37e8eb1f8d7c6a72213b0df9896f96a511381b7525078cfd2056ac006a024bbd",
+      "size": 30132,
+      "mode": 420
+    },
+    "qa/pixels.py": {
+      "sha256": "47486cf947914216a59b284de4f5187c2bda62b1c4fab45f8bf4a60458cd7ae4",
+      "size": 6781,
+      "mode": 420
+    },
+    "qa/preflight-1791132853806964315/inputs.json": {
+      "sha256": "1d0236aa487f6c813d078daaef2f087f7db43c441dc2fbdf3ce685f2f7b4a52f",
+      "size": 485979,
+      "mode": 420
+    },
+    "qa/preflight-1791132853806964315/native.py": {
+      "sha256": "37e8eb1f8d7c6a72213b0df9896f96a511381b7525078cfd2056ac006a024bbd",
+      "size": 30132,
+      "mode": 420
+    },
+    "qa/preflight-1791132853806964315/report.json": {
+      "sha256": "523f2784b88f42ebd8ee7a96b3fb0b0bfd07bdc38a15020a6df3256ee455957e",
+      "size": 491975,
+      "mode": 420
+    },
+    "qa/test-1791132822524568289/report.json": {
+      "sha256": "21f645482660ba39ced343167e6a134125d3b5bc31c137550bc9192d482a8dbb",
+      "size": 6288,
+      "mode": 420
+    },
+    "qa/test-1791132955386570598/report.json": {
+      "sha256": "7258b78c4ef7eebf6e1a773ec2053bcc86b5d57a931f8dca602557c77b2060a8",
+      "size": 6629,
+      "mode": 420
+    },
+    "qa/test.py": {
+      "sha256": "d7dbf454d5ef0e7ace9ad102923f5c5edaa1f3cad1bad8ad9e782330de70fcac",
+      "size": 6314,
+      "mode": 420
+    }
+  },
+  "acceptedCPUReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/test-1791132955386570598/report.json",
+  "acceptedPreflight": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-native-v212/qa/preflight-1791132853806964315/report.json"
+}
