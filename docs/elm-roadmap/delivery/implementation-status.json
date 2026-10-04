@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-output-shared-qa-v151",
-  "status": "Actual one-controller/one-backend multiple-output host passes135 native checks; bars, popup anchoring/reflow/keyboard, hotplug/replug preserve authority binding. Full desktop/menu/hardware/AT/IME/release incomplete.",
+  "activeSlice": "implementation/elm-shared-gpu-qa-v157",
+  "status": "Shared-host native142 passes with actual shader readback/display and Mesa Intel renderer diagnostics. Secure origin has no navigator.gpu. Full performance/GPU/AT/IME/menu/release gates remain open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -876,12 +876,45 @@
       "cleanupPassed": true,
       "scope": "Private native shared-output host/window/input/fault component. Complete menu, zero-output recovery, full scene, AT/IME, actual hardware budgets and release remain open.",
       "failedLineage": "V146 compile/cleanup initialization failures; V148 scope test aborts on JSON-node type. V149/V147 native127 passes. V150 duplicate-field admission and V151 actual one-backend/replug observations pass135."
+    },
+    "sharedHostGraphicsV157": {
+      "evidence": "implementation/elm-shared-gpu-qa-v157/qa/slice-manifest.json",
+      "nativeChecks": 142,
+      "originalNativeChecks": 91,
+      "sharedControllerChecks": 37,
+      "inheritedControllerChecks": 58,
+      "inheritedPresenterChecks": 12,
+      "nativeHostTestGroups": 11,
+      "nativeSurfaceTestGroups": 4,
+      "quintNamedScenarios": 10,
+      "quintInvariantSamples": 1000,
+      "shaderReadback": [
+        17,
+        193,
+        71,
+        255
+      ],
+      "nativeDisplayedPixel": [
+        17,
+        193,
+        71
+      ],
+      "nativeRenderer": "Mesa Intel(R) Graphics (ARL)",
+      "renderNode": "/dev/dri/renderD129",
+      "engine": "WebKitGTK 2.52.6",
+      "secureContext": true,
+      "webgpuExposed": false,
+      "webgpuVerdict": "Unavailable for current browser host; no device/WGSL execution accepted",
+      "webExposedRenderer": "Apple GPU (not used for hardware identification)",
+      "performanceBudgetsAccepted": false,
+      "cleanupPassed": true,
+      "scope": "Bounded shared-host shader execution/display and native hardware diagnostics. Full GPU/host-selection/performance/hybrid/device-loss/release gates remain open."
     }
   },
   "next": [
-    "Qualify actual hardware rendering and resource budgets on the shared host; separately inspect WebGPU capability and keep physical/AT/IME gates explicit.",
-    "Integrate reviewed menu-reflow and new native buffer/viewport guard lane with shared immutable view scopes and single allocator; preserve original window/output oracles.",
-    "Continue zero-output recovery, fractional/all-transform/negative-origin/workarea coverage, full scene/fullscreen/lock, missing native window operations, human journeys, C00 and release."
+    "Measure and freeze workload/resource/input-presentation budgets on the shared host; qualify GPU context loss/recovery and keep WebGPU unavailability explicit.",
+    "Integrate reviewed menu/new native buffer/viewport tuple with shared scope/controller host; preserve old accepted source/ABI evidence and rerun original campaigns.",
+    "Continue actual AT/IME, physical output/device and human UX, full scene/window operations, zero-output recovery, C00 and release."
   ],
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {

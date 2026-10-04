@@ -41,3 +41,9 @@ Record external-memory/fence support on each native adapter, copy count/bytes an
 Select a host only after actual hardware-accelerated rendering passes the frozen P0 budgets and protected native acceptance. Publish the selected GPU/backend and qualification verdict in the release evidence. A software renderer can preserve essential controls during failure, but is explicitly degraded and cannot satisfy the GPU acceleration gate.
 
 If WebGPU is unsupported or fails, disable its optional effects and retain an accepted native/engine GPU path. If every GPU path fails, preserve essential controls in a disclosed recovery mode and block promotion of that configuration as an accelerated release. Recovery must remain usable without a GPU-accelerated Elm view.
+
+## Shared-host native result — 2026-10-04 UTC
+
+The [V157 source/evidence packet](../../implementation/elm-shared-gpu-qa-v157/HANDOFF.md) passes142 native checks with the actual shared output host. A compiled WebGL shader reads backRGBA(17,193,71,255), and an independent native screenshot showsRGB(17,193,71). WebKit native diagnostics identify Mesa Intel Graphics(ARL), EGL/OpenGL and renderD129. Web-exposed debug strings instead say Apple GPU; those strings are not hardware identification evidence.
+
+The local origin is secure, but this pinned WebKitGTK2.52.6 host exposes no navigator.gpu. No WebGPU device/WGSL execution is accepted. This bounded graphics result does not close measured workload/presentation/resource budgets, context loss, hybrid devices, preview imports/fences, actual AT/IME or release gates. Native diagnostics support DMABuf, which alone is not zero-copy or import-safety proof.

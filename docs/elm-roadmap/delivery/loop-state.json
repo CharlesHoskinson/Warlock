@@ -1,5 +1,5 @@
 {
-  "observedUTC": "2026-10-04T05:17:51.293901+00:00",
+  "observedUTC": "2026-10-04T05:32:29.225270+00:00",
   "status": "active",
   "execution": "Automatic goal-driven continuation in the current thread; outcome-driven build cycles, no calendar schedule.",
   "branch": "feature/elm",
@@ -30,15 +30,15 @@
     "C05",
     "C06"
   ],
-  "currentSlice": "implementation/elm-output-shared-qa-v151",
+  "currentSlice": "implementation/elm-shared-gpu-qa-v157",
   "nextWork": [
-    "Qualify actual hardware rendering and resource budgets on the shared host; separately inspect WebGPU capability and keep physical/AT/IME gates explicit.",
-    "Integrate reviewed menu-reflow and new native buffer/viewport guard lane with shared immutable view scopes and single allocator; preserve original window/output oracles.",
-    "Continue zero-output recovery, fractional/all-transform/negative-origin/workarea coverage, full scene/fullscreen/lock, missing native window operations, human journeys, C00 and release."
+    "Measure and freeze workload/resource/input-presentation budgets on the shared host; qualify GPU context loss/recovery and keep WebGPU unavailability explicit.",
+    "Integrate reviewed menu/new native buffer/viewport tuple with shared scope/controller host; preserve old accepted source/ABI evidence and rerun original campaigns.",
+    "Continue actual AT/IME, physical output/device and human UX, full scene/window operations, zero-output recovery, C00 and release."
   ],
   "advanceRule": "Do not complete a cycle or requirement without its required accepted evidence. Preserve failed attempts and source/ABI lineage.",
   "nativeQA": "Serialized through shared build-loop native lock and unchanged protected qa_run.py; preserve live desktop and drafts.",
   "deployment": "Prepare accepted artifacts and rollback first; honor required session-activation authorization.",
-  "lastWorkClassification": "progress: actual native shared-host135 including original91; one controller/backend observed, scopes1/2/3, per-output bars/popup anchoring, resize scale2 transform1, removal/replug, normal cleanup. Retained exact37+58+12 Elm, native11+4 groups, Quint10/1000; failed lineage preserved. Full release acceptance open.",
+  "lastWorkClassification": "progress: native142 including original91/shared outputs; shader readback17,193,71,255 matches native displayed17,193,71; separate WebKit diagnostics Mesa Intel ARL/renderD129. WebGPU absent in secure origin. Exact inherited37+58+12 Elm/Quint10/1000 and native11+4 groups retained. Budget/hybrid/context-loss/full-release acceptance open.",
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility."
 }

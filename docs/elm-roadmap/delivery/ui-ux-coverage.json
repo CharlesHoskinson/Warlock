@@ -6159,7 +6159,7 @@
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
   ],
-  "partialEvidenceObservedUTC": "2026-10-04T05:17:51.293901+00:00",
+  "partialEvidenceObservedUTC": "2026-10-04T05:32:29.225270+00:00",
   "boundedImplementationEvidence": [
     {
       "slice": "implementation/elm-seat-effects-v15",
@@ -6889,6 +6889,39 @@
       "cleanupPassed": true,
       "scope": "Private native shared-output host/window/input/fault component. Complete menu, zero-output recovery, full scene, AT/IME, actual hardware budgets and release remain open.",
       "failedLineage": "V146 compile/cleanup initialization failures; V148 scope test aborts on JSON-node type. V149/V147 native127 passes. V150 duplicate-field admission and V151 actual one-backend/replug observations pass135."
+    },
+    {
+      "evidence": "implementation/elm-shared-gpu-qa-v157/qa/slice-manifest.json",
+      "nativeChecks": 142,
+      "originalNativeChecks": 91,
+      "sharedControllerChecks": 37,
+      "inheritedControllerChecks": 58,
+      "inheritedPresenterChecks": 12,
+      "nativeHostTestGroups": 11,
+      "nativeSurfaceTestGroups": 4,
+      "quintNamedScenarios": 10,
+      "quintInvariantSamples": 1000,
+      "shaderReadback": [
+        17,
+        193,
+        71,
+        255
+      ],
+      "nativeDisplayedPixel": [
+        17,
+        193,
+        71
+      ],
+      "nativeRenderer": "Mesa Intel(R) Graphics (ARL)",
+      "renderNode": "/dev/dri/renderD129",
+      "engine": "WebKitGTK 2.52.6",
+      "secureContext": true,
+      "webgpuExposed": false,
+      "webgpuVerdict": "Unavailable for current browser host; no device/WGSL execution accepted",
+      "webExposedRenderer": "Apple GPU (not used for hardware identification)",
+      "performanceBudgetsAccepted": false,
+      "cleanupPassed": true,
+      "scope": "Bounded shared-host shader execution/display and native hardware diagnostics. Full GPU/host-selection/performance/hybrid/device-loss/release gates remain open."
     }
   ]
 }
