@@ -1,0 +1,44 @@
+{
+  "passed": false,
+  "inventoryVerified": true,
+  "observedUTC": "2026-10-04T01:52:17.619340+00:00",
+  "scope": "Native popup-window experiment; temporary native opener/raw Escape are not final Elm GUI/IME",
+  "wholeFeatureAccepted": false,
+  "completedRequirementIds": [],
+  "reports": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-popup-window-v63/qa/build-1791078415675803402/report.json": {
+      "passed": true,
+      "sha256": "8218b98433ffea2dab1c11712555703b03dc5eb59768a16e7dced4f170bb4b76",
+      "scope": "Build/effect20/shell27 only"
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-popup-qa-v64/qa/native-1791078441729336567/report.json": {
+      "passed": false,
+      "sha256": "0b90d7096e4889e12d63010939bc09a8c8f3ae2b41298bc3c07a73783bef34f0",
+      "checksReached": 9,
+      "error": "RuntimeError('Unchanged observation deadline')",
+      "cleanupPassed": true
+    }
+  },
+  "files": {
+    "README.md": "1ce40ae90393c82e61f0305d24fb4a06aa4950753742f34137dd0e80cb703dc0",
+    "fixture.py": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06",
+    "qa/native-1791078441729336567/native-evidence/authority-config.json": "fe0bdd06180594c934c990cc29bfb6ab15c27d759ff3f71a7acea675fa4629b1",
+    "qa/native-1791078441729336567/native-evidence/dmabuf-probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "qa/native-1791078441729336567/native-evidence/dmabuf-probe.stdout": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+    "qa/native-1791078441729336567/native-evidence/elm-native-popover.png": "9f0c0890956289cc8a6f1a23c918c7b7be12ad1356e5ff25063e51eaaff9d3f2",
+    "qa/native-1791078441729336567/native-evidence/elm-webview.log": "a9a9e200ebf625b1a285d6afa50f2051601dfdd8a24b367cc1314578548777e0",
+    "qa/native-1791078441729336567/native-evidence/fixture.log": "cd6720769a47521ea1d0eec3bd6e925917ed4d267572dffd6c6697ef8b747984",
+    "qa/native-1791078441729336567/native-evidence/host-evidence.json": "c2c04c05371c4647d51ca16535a30223221c6ee22ba55c329dd072786d90e0ec",
+    "qa/native-1791078441729336567/native-evidence/hyprland.log": "383a8768a6d70a337d10b3d04fadbf11f65e989846d971e961de5c0294c3064e",
+    "qa/native-1791078441729336567/native-evidence/privateBus.log": "21b9f18f17e15d591482eead91282ec5e433657ae483f7c44130843522090af9",
+    "qa/native-1791078441729336567/native-evidence/runtime-archive/.flatpak/webkit-3130011-13/bwrapinfo.json": "59bd88466d6f8b956f5ca152cb37097f37561b234b4ae932ea11cb9d83763592",
+    "qa/native-1791078441729336567/native-evidence/runtime-archive/.flatpak/webkit-3130011-4/bwrapinfo.json": "cc85c1ad5b76aad4ba01c19704f7192602f59291bc5f1a1af07584aabcf42ec5",
+    "qa/native-1791078441729336567/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791078442_779088176/hyprland.log": "16ae5d2d3df540ddc0d967e44f5a6672c9eb5faa7c6c26722565caf7671718b9",
+    "qa/native-1791078441729336567/native-evidence/runtime-archive/hyprland.lua": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+    "qa/native-1791078441729336567/native-evidence/weston-renderer.log": "26a7d0d335bc57e5be5de5f067bdeee369cffb576068d81dbc8b4570b344b298",
+    "qa/native-1791078441729336567/native-evidence/weston.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "qa/native-1791078441729336567/report.json": "0b90d7096e4889e12d63010939bc09a8c8f3ae2b41298bc3c07a73783bef34f0",
+    "qa/native.py": "2e6b603d549f3e314b26ad1a3d900353100428b298e17bdd8de2c1e7c1d39122",
+    "qa/protocol-geometry.json": "c8e22b314f11422f8c8e64fa9020656c8c948b17c41e9793a2b88cba2814f80a"
+  }
+}

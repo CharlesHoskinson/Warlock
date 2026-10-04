@@ -1,0 +1,30 @@
+const fs=require('fs'),assert=require('assert'),{Elm}=require(process.argv[2]);
+const app=Elm.DesktopReplay.init({flags:null}),timer=setTimeout(()=>{throw Error('Desktop replay deadline');},5000);
+const binding={lifetime:'1',session:'2',frontend:'3'},snapshot={catalogProtocol:1,lifetime:'9',generation:'1',entries:[{id:'fixture',name:'Fixture',iconHint:'',wmclass:''}]};
+const incoming=frame=>({kind:'incoming',frame}),attached=incoming({protocolVersion:3,kind:'attached',binding});
+const catalog=(change={})=>incoming({protocolVersion:3,kind:'application-catalog',binding,requestId:'1',snapshot,...change});
+const intent={request:'1',lifetime:'9',generation:'1',entry:'fixture'},outcome={catalogProtocol:1,kind:'launch-outcome',intent,status:'Submitted',reason:'native-submission-accepted'};
+const settled=(change={})=>incoming({protocolVersion:3,kind:'application-launch-outcome',binding,outcome,...change});
+const admitted=[attached,{kind:'open'},catalog(),{kind:'select',entry:'fixture'},{kind:'start',index:0}];
+function replay(events){return new Promise(resolve=>{const cb=value=>{app.ports.outgoing.unsubscribe(cb);resolve(value);};app.ports.outgoing.subscribe(cb);app.ports.incoming.send(events);});}
+(async()=>{let cases=[];async function check(name,events,verify){const rows=await replay(events);verify(rows,rows.at(-1));cases.push({name,rows});}
+await check('no catalog request before attachment',[{kind:'open'}],(_,last)=>{assert(last.open);assert.deepEqual(last.wires,[]);});
+await check('catalog request carries authenticated binding',[attached,{kind:'open'}],(_,last)=>assert.deepEqual(last.wires,[{protocolVersion:3,kind:'catalog-request',binding,requestId:'1'}]));
+await check('catalog reply binds current request',[attached,{kind:'open'},catalog()],(_,last)=>{assert.equal(last.count,1);assert.equal(last.expected,null);});
+for(const [name,change] of [['old request',{requestId:'2'}],['old binding',{binding:{...binding,frontend:'2'}}],['unknown outer field',{extra:true}],['wrong version',{protocolVersion:4}]]) await check('catalog rejects '+name,[attached,{kind:'open'},catalog(change)],(_,last)=>{assert.equal(last.count,0);assert.equal(last.expected,'1');});
+await check('refresh replaces outstanding request',[attached,{kind:'open'},{kind:'open'},catalog(),catalog({requestId:'2'})],(rows,last)=>{assert.equal(rows.at(-2).count,0);assert.equal(last.count,1);});
+await check('null catalog retires selection',[attached,{kind:'open'},catalog({snapshot:null}),{kind:'select',entry:'fixture'}],(_,last)=>{assert.equal(last.count,0);assert.equal(last.selections,0);});
+await check('desktop launch uses bound ID intent',admitted,(_,last)=>{assert.equal(last.status,'Pending');assert.deepEqual(last.wires,[{protocolVersion:3,kind:'application-launch',binding,intent}]);});
+await check('correlated bound outcome settles',[...admitted,settled()],(_,last)=>assert.equal(last.status,'Submitted'));
+for(const [name,change] of [['old binding',{binding:{...binding,frontend:'2'}}],['extra field',{extra:true}],['unknown version',{protocolVersion:4}]]) await check('outcome rejects '+name,[...admitted,settled(change)],(_,last)=>assert.equal(last.status,'Pending'));
+await check('disconnect retires catalog and preserves Unknown',[...admitted,incoming({protocolVersion:3,kind:'host-disconnected'}),settled()],(_,last)=>{assert.equal(last.count,0);assert.equal(last.status,'Unknown');});
+await check('close preserves in-flight receipt correlation',[...admitted,{kind:'close'},settled()],(_,last)=>{assert.equal(last.open,false);assert.equal(last.status,'Submitted');});
+await check('opening focuses current close while loading',[attached,{kind:'open'}],(_,last)=>assert(last.focus[0].endsWith('control:close')));
+await check('catalog focuses scoped first application',[attached,{kind:'open'},catalog()],(_,last)=>assert(last.focus[0].endsWith('entry:fixture')));
+await check('closing restores current scoped opener',[attached,{kind:'open'},catalog(),{kind:'close'}],(_,last)=>assert(last.focus[0].endsWith('control:opener')));
+await check('old close cannot dismiss reopened view',[attached,{kind:'open'},catalog(),{kind:'capture-view'},{kind:'close'},{kind:'open'},{kind:'close',view:0}],(_,last)=>{assert(last.open);assert.deepEqual(last.focus,[]);});
+await check('old refresh cannot replace current catalog',[attached,{kind:'open'},catalog(),{kind:'capture-view'},{kind:'open'},catalog({requestId:'2'}),{kind:'open',view:0}],(_,last)=>{assert.equal(last.count,1);assert.deepEqual(last.wires,[]);});
+await check('closed pending request cannot change focus generation',[attached,{kind:'open'},{kind:'close'},catalog()],(rows,last)=>{assert(!last.open);assert.equal(last.count,0);assert.deepEqual(last.focus,[]);});
+await check('application named close cannot collide with close control',[attached,{kind:'open'},catalog({snapshot:{...snapshot,entries:[{...snapshot.entries[0],id:'close'}]}})],(_,last)=>assert(last.focus[0].endsWith('entry:close')));
+await check('refresh while pending focuses enabled close',[...admitted,{kind:'open'},catalog({requestId:'2'})],(_,last)=>{assert.equal(last.status,'Pending');assert(last.focus[0].endsWith('control:close'));});
+fs.writeFileSync(process.argv[3],JSON.stringify({passed:true,checks:cases.length,scope:'Compiled Desktop envelope/state integration; native GUI separate',cases},null,2)+'\n');clearTimeout(timer);})();

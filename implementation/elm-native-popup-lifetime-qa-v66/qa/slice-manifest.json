@@ -1,0 +1,58 @@
+{
+  "passed": true,
+  "inventoryVerified": true,
+  "observedUTC": "2026-10-04T01:52:17.636709+00:00",
+  "scope": "Native popup-window experiment; temporary native opener/raw Escape are not final Elm GUI/IME",
+  "wholeFeatureAccepted": false,
+  "completedRequirementIds": [],
+  "reports": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-popup-window-v63/qa/build-1791078415675803402/report.json": {
+      "passed": true,
+      "sha256": "8218b98433ffea2dab1c11712555703b03dc5eb59768a16e7dced4f170bb4b76",
+      "scope": "Build/effect20/shell27 only"
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-popup-qa-v64/qa/native-1791078441729336567/report.json": {
+      "passed": false,
+      "sha256": "0b90d7096e4889e12d63010939bc09a8c8f3ae2b41298bc3c07a73783bef34f0",
+      "checksReached": 9,
+      "error": "RuntimeError('Unchanged observation deadline')",
+      "cleanupPassed": true
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-popup-lifetime-v65/qa/build-1791078564752782496/report.json": {
+      "passed": true,
+      "sha256": "b227d7f2942549a91133b9ab372e6a278a595117fdcce23571addbb96b08d212",
+      "scope": "Build/effect20/shell27 only"
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-popup-lifetime-qa-v66/qa/native-1791078598671610920/report.json": {
+      "passed": true,
+      "sha256": "5db650a9bb49c22a03e4fa8444a1b68dd2c50486b8d74d708e6485af478eab27",
+      "checksReached": 19,
+      "error": null,
+      "cleanupPassed": true
+    }
+  },
+  "files": {
+    "README.md": "afdc8b1af7319a47a059c56428df304acb9a2ce353c824a8d13c729acb51b065",
+    "fixture.py": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06",
+    "qa/freeze.py": "b7195276a945e12e88a85b0c93520bac172a81b15c624f540bcaa18c4af2093f",
+    "qa/native-1791078598671610920/native-evidence/authority-config.json": "22b17564b6f15cfaefbc68002ad9d1f5ec84f7c8c516c03e926c0b995b23543d",
+    "qa/native-1791078598671610920/native-evidence/dmabuf-probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "qa/native-1791078598671610920/native-evidence/dmabuf-probe.stdout": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+    "qa/native-1791078598671610920/native-evidence/elm-native-popover.png": "c815888a3277e2416bf529c1930b92fe9424e60be48570e79b762057f8b44d42",
+    "qa/native-1791078598671610920/native-evidence/elm-webview.log": "75b70b0dc796d219b37b1525ed933fc944267545f3cf59d796c2a4fd423281d0",
+    "qa/native-1791078598671610920/native-evidence/fixture-control.events.jsonl": "30592f6cca8eaa6d05bcef0b17e65ee2e6341995d8e08b78b66f5855c5aa79ae",
+    "qa/native-1791078598671610920/native-evidence/fixture.log": "823df35f133da9618129ef47190a2c7e5d07a45a31e0e12c52f7d48e39e5dccc",
+    "qa/native-1791078598671610920/native-evidence/host-evidence.json": "b5926ceb687a06e14df138e5d9bc08c65f331f5f4daa48071ec09d0a95ea192a",
+    "qa/native-1791078598671610920/native-evidence/hyprland.log": "a5896cfb05f8ee0263694970f1a3040859c1d4d8a31e9b00d5106b9ab80e9ace",
+    "qa/native-1791078598671610920/native-evidence/privateBus.log": "fb1d95c3625efa15c3c22940bcf9e32d46ec0d14e188a0b177d3c6ef07728b5a",
+    "qa/native-1791078598671610920/native-evidence/runtime-archive/.flatpak/webkit-3138741-13/bwrapinfo.json": "3bcdb18fb0004471fd303963208051b153f83da3b0d5a7264aa700290ba6f581",
+    "qa/native-1791078598671610920/native-evidence/runtime-archive/.flatpak/webkit-3138741-4/bwrapinfo.json": "b8b2ca67a2f83100d7103c969c1bbc839fef00e315faa98f8d5f7ea3518770a9",
+    "qa/native-1791078598671610920/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791078599_763039034/hyprland.log": "36ab331cf52628ba4b2a825256ae5878ab887e85959113ce4d3a98b3cd922a8a",
+    "qa/native-1791078598671610920/native-evidence/runtime-archive/hyprland.lua": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+    "qa/native-1791078598671610920/native-evidence/weston-renderer.log": "1cb031bf30b0bb122ce736451d7ff2572fa914126ed166527919c20194c89d82",
+    "qa/native-1791078598671610920/native-evidence/weston.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "qa/native-1791078598671610920/report.json": "5db650a9bb49c22a03e4fa8444a1b68dd2c50486b8d74d708e6485af478eab27",
+    "qa/native.py": "55ebc5ab7549b54b43dc08bcf22e4ef16735df5433a03a1015b8981524c5cd22",
+    "qa/protocol-geometry.json": "326afd1509c3ca41698bdf7c420882989aa463f0911a04348d9a783fac82c5c3"
+  }
+}

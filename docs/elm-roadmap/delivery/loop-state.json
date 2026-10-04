@@ -1,5 +1,5 @@
 {
-  "observedUTC": "2026-10-04T01:45:47.402171+00:00",
+  "observedUTC": "2026-10-04T01:53:55.321977+00:00",
   "status": "active",
   "execution": "Automatic goal-driven continuation in the current thread; outcome-driven build cycles, no calendar schedule.",
   "branch": "feature/elm",
@@ -30,15 +30,15 @@
     "C05",
     "C06"
   ],
-  "currentSlice": "implementation/elm-native-popover-qa-v62",
+  "currentSlice": "implementation/elm-native-popup-lifetime-qa-v66",
   "nextWork": [
-    "Test native GTK popup-window/menu container with actual xdg_popup/layer-parent/seat-grab role, correct position/clip, dismissal and native keyboard/input; keep single logical Elm controller and replace temporary native opener with Elm bar.",
-    "Implement production per-output taskbar/transient/workarea, launcher search/ranking/localization, qualified catalog/window matching/pins/icons, activation tokens, terminal/actions/URI/DBus and real application readiness.",
-    "Continue reflow/native AT/IME/human UX, Unknown reconciliation, canonical scene/roles, original deadlines, outputs/devices/hardware/GPU/WebGPU, separate C00 feasibility and release gates."
+    "Integrate Elm-rendered bar controls with a single typed logical Elm controller and presentation-only popup view; host owns approved xdg_popup position/grab/dismissal. Model and test stale native unmap/grab/reopen epochs and IME-consumed Escape before production acceptance.",
+    "Complete per-output taskbar/transient/workarea, exact margins/scale/transform, fullscreen/lock, full window/launcher regression; launcher search/ranking/localization and qualified catalog/window matching/pins/icons, activation/terminal/actions/URI/DBus/application readiness.",
+    "Continue reflow/native AT/IME/human UX, Unknown reconciliation, canonical scene, original deadlines, devices/hardware/GPU/WebGPU, separate C00 feasibility and release gates."
   ],
   "advanceRule": "Do not complete a cycle or requirement without its required accepted evidence. Preserve failed attempts and source/ABI lineage.",
   "nativeQA": "Serialized through protected qa_run.py; preserve live desktop and drafts.",
   "deployment": "Prepare accepted artifacts and rollback first; honor required session-activation authorization.",
-  "lastWorkClassification": "progress: V61 builds actual48px bar/native GTK3 popover with existing Elm WebKit model. V62 native observation proves reserved[0,48,0,0], retains initial missed buffer readiness, and after readiness exposes actual wl_subsurface with negativeY rather than required xdg_popup. Route rejected; original native failures/source/protocol/cleanup preserved. This is toolkit-container no-go, not C00/compositor-track no-go.",
+  "lastWorkClassification": "progress: V63 native popup window proves actual xdg_popup/layer-parent/seatgrab configure50,48,700,420 and bar48, but V64 native popup_done exposes lost host grab bookkeeping. V65 unmap lifecycle retirement fixes it; V66 native19 pass, application pointer/keys after dismiss, same-engine binding reopen/Escape, normal private cleanup. Exact protocol geometry audited; raw native opener/Escape remain prototype scaffolding.",
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility."
 }

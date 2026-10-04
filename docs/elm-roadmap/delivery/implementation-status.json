@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-native-popover-qa-v62",
-  "status": "V61/V62 native host-role experiment rejects GTK3 GtkPopover for required xdg_popup contract: actual workarea48 observed, but pointer-open trace uses wl_subsurface with negativeY. V60 remains last qualified GUI tuple. Alternative native popup container, final Elm taskbar/transient/role/input/AT/IME/hardware/release remain open.",
+  "activeSlice": "implementation/elm-native-popup-lifetime-qa-v66",
+  "status": "Native GTK popup-window candidate passes actual layer-parent xdg_popup/grab/default geometry/bar48 and native19 lifecycle/input checks. V64 failed grab bookkeeping preserved; V65 unmap retirement accepted within experiment. Final Elm bar/presentation-only popup, stale epochs, outputs/IME/AT/full scene/hardware/release open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -588,6 +588,35 @@
       "cleanupPassed": true,
       "wholeFeatureAccepted": false,
       "evidence": "implementation/elm-native-popover-qa-v62/qa/slice-manifest.json"
+    },
+    "nativePopupV63V66": {
+      "buildPassed": true,
+      "retainedEffectChecks": 20,
+      "retainedShellChecks": 27,
+      "nativeFailurePreserved": true,
+      "nativeRole": "xdg_popup",
+      "nativeLayerParentObserved": true,
+      "nativeSeatGrabObserved": true,
+      "nativeConfigure": [
+        50,
+        48,
+        700,
+        420
+      ],
+      "nativeBarExclusive": 48,
+      "nativeBarKeyboardMode": "none",
+      "nativeChecks": 19,
+      "nativeOutsideDismissal": true,
+      "applicationPointerAndKeyAfterDismissal": true,
+      "oneBindingReopen": true,
+      "nativeEscapeDismissal": true,
+      "normalHostBackendExit": true,
+      "cleanupPassed": true,
+      "newQuintRun": false,
+      "productionElmBarAccepted": false,
+      "nativeATIMEAccepted": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-native-popup-lifetime-qa-v66/qa/slice-manifest.json"
     }
   },
   "next": "Qualify text enlargement and small-output picker/keyboard focus metrics; continue production taskbar/popup/input roles, catalog/icons/pins/launch and switcher/previews. Complete scene/hardware/GPU/WebGPU/AT/IME/human UX and release gates.",
@@ -652,8 +681,9 @@
     },
     {
       "id": "NATIVE-POPUP-ROLE-001",
-      "status": "Open: V62 GtkPopover uses wl_subsurface with negativeY; route rejected. Test actual xdg_popup container before production surface qualification.",
-      "failedEvidence": "implementation/elm-native-popover-qa-v62/qa/slice-manifest.json"
+      "status": "Required xdg_popup/grab/default geometry observed V65/V66 popup-window route; GTK3 GtkPopover no-go retained. Final Elm integration/stale epochs/outputs/IME and production role acceptance remain open.",
+      "failedEvidence": "implementation/elm-native-popover-qa-v62/qa/slice-manifest.json",
+      "evidence": "implementation/elm-native-popup-lifetime-qa-v66/qa/slice-manifest.json"
     }
   ]
 }

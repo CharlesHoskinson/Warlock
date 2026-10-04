@@ -6593,6 +6593,31 @@
       "cleanupPassed": true,
       "evidence": "implementation/elm-native-popover-qa-v62/qa/slice-manifest.json",
       "acceptance": "No popup/visible-render/input/grab acceptance. Coherent DOM is insufficient; actual role failure preserved. Workarea48 only observed; alternate role route/C00/release separate."
+    },
+    {
+      "slice": "implementation/elm-native-popup-lifetime-qa-v66",
+      "level": "native toolkit popup-window/lifecycle/input experiment",
+      "nativeChecks": 19,
+      "nativeBar48Reserved": true,
+      "actualNativeRole": "xdg_popup",
+      "nativeLayerParentAndSeatGrab": true,
+      "actualNativeConfigure": [
+        50,
+        48,
+        700,
+        420
+      ],
+      "nativeOutsideDismissalAndApplicationInput": true,
+      "nativeSameEngineReopenEscape": true,
+      "normalHostBackendExit": true,
+      "cleanupPassed": true,
+      "newQuintRun": false,
+      "staleLifecycleEpochAccepted": false,
+      "productionElmBarAccepted": false,
+      "nativeComposingIMEAccepted": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-native-popup-lifetime-qa-v66/qa/slice-manifest.json",
+      "acceptance": "Default unit-scale native role/grab/geometry/bar48 and explicit outside/Escape lifecycle only. Temporary native opener/raw Escape are scaffolding; complete single-model Elm bar/popup, stale native epochs, outputs/fullscreen/lock/AT/IME and release separate."
     }
   ]
 }
