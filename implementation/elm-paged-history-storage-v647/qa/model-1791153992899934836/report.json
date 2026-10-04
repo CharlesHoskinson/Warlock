@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-storage-v647/spec/storage.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-storage-v647/spec/storage.qnt",
+        "--main=storage",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=64701"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-storage-v647/spec/storage.qnt",
+        "--main=storage",
+        "--invariant=safety",
+        "--max-samples=500",
+        "--max-steps=50",
+        "--seed=64702"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "nativeAcceptance": false
+}

@@ -1,0 +1,6 @@
+Running as unit: qa-harness-0cca509630e649f3a461203a69fb00e4.scope; invocation ID: bdb4d0f8ef8c4dd181fc6b18c3c541cc
+Traceback (most recent call last):
+  File "/home/hoskinson/omarchy-windows-parity/implementation/elm-recovery-delivery-pinned-toolchain-v651/qa/provenance.py", line 20, in <module>
+    assert sha(ROOT/n)==h;expected=build['artifacts'].get('inputs/'+n,h);assert sha(buildpath.parent/'inputs'/n)==expected
+           ^^^^^^^^^^^^^^
+AssertionError

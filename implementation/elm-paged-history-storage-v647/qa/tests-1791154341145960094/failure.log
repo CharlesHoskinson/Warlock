@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-storage-v647/qa/test.py", line 37, in <module>
+    before=a.page_reads;check('paged_lookup_depth_bound',a.lookup(origin(501,'Released'))==raw(501) and a.page_reads-before<=18)
+                        ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-storage-v647/qa/test.py", line 11, in check
+    if not condition:raise AssertionError(name)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: paged_lookup_depth_bound

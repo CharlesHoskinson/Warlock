@@ -1,0 +1,24 @@
+{
+  "passed": false,
+  "assertions": 7,
+  "checks": [
+    "1025_actual_records_retained",
+    "history_beyond64_hot_bound",
+    "exact_old_full_origin_bytes",
+    "different_same_target_origin_absent",
+    "predecessor_root_preserved",
+    "exact_idempotency_no_new_generation",
+    "immutable_old_outcome_cannot_change"
+  ],
+  "elapsedSeconds": 0.9358660559955752,
+  "actualLargeRecordCount": 1026,
+  "nativeAcceptance": false,
+  "ledgerIntegrated": false,
+  "powerLossQualified": false,
+  "sourceSHA256": {
+    "adapter/archive.py": "93d96a883f6aef1803573cdca471ed02c44cbbb059c6570399f24722ae7b5dcc",
+    "spec/storage.qnt": "8cd02502a0db2177d8146ef4037a37298c4f85da90c927c769b9e15e5a4acb37",
+    "spec/REFINEMENT.md": "9be7ae719517e28c2a807d1588ac5f770cee141dcd5e793ce3bd420a6a9bf124",
+    "qa/test.py": "1290e7e38245b441f8c555b648681f2464384afa15254f429e63313fe581430e"
+  }
+}

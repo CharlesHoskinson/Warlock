@@ -1,0 +1,13 @@
+
+ Error [QNT000]: Expected [durable,visible,staged,charge,phase,ready,exposed] and [] to be the same
+Trying to unify entities ['durable', 'visible', 'staged', 'charge', 'phase', 'ready', 'exposed'] and []
+Trying to unify Read[_v672] & Update['durable', 'visible', 'staged', 'charge', 'phase', 'ready', 'exposed'] and Read['exposed', 'durable', 'charge']
+Trying to unify (Read[_v670] & Update[_v671], Read[_v672] & Update[_v671]) => Read[_v673] & Update[_v671] and (Read[_v653] & Update['durable', 'visible', 'staged', 'charge', 'phase', 'ready', 'exposed'], Read['exposed', 'durable', 'charge']) => _e132
+Trying to infer effect for operator application in then(then(then(then(then(then(then(then(then(init, reserve(1)), advance), advance), advance), advance), crash), restart), expose(1)), assert(and(safety, eq(durable, Set(1)))))
+
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-storage-v647/spec/storage.qnt:20:27
+  20:  run visibleRestartTest = init.then(reserve(1)).then(advance).then(advance).then(advance).then(advance).then(crash).then(restart).then(expose(1)).then(assert(safety and durable==Set(1)))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: typechecking failed

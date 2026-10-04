@@ -1,0 +1,24 @@
+# Explicit pinned Elm producer V651
+
+Fresh producer derivative of V640. Every production src/native/adapter/assets byte and elm.json is identical to V640; no GUI/runtime policy changed. This closes the missing exact Elm compiler/package/cache inventory for this newly executed producer, without editing or reconstructing V640's historical build report.
+
+The resolved npm-exec cache contains package elm0.19.2-0 and its Linux x64 ELF. The ELF from @elm_binaries/linux_x64/elm and installed elm/bin/elm has identical bytes, SHA256 `c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948`; actual --version reports0.19.2. V651 copies and holds those binaries, package metadata/install scripts/package-lock files, the exact registry cache and all files for the seven declared Elm dependency versions. There are111 held compiler/package/cache files. It reads no credentials/global user configuration and edits no global caches or configuration.
+
+The builder invokes the held ELF directly using its absolute path, not npm exec. ELM_HOME points to the owned private copied dependency cache. All held inventory names and SHA256 bytes are verified before and after each command. The manifest's hash is captured at module initialization and checked on every load, so changing expected hashes between commands cannot bypass the guard. Only the compiler's empty current-UID single-link cache lock is exempted from immutable inventory; new package files, symlinks, removed files, changed bytes or nonempty/unsafe lock refuse. Eight isolated synthetic fixtures execute this same guard and detect missing/changed/added/symlink files, unsafe lock and rewritten manifest, while allowing valid input/empty cache lock. No fixture executes a compiler.
+
+The final actual optimized Main/Bar/Popup and C host/carrier/context/surface self-tests pass. All21 build commands and39 public-proof commands retain the held compiler/cache before-and-after check. All51 compiled public assertions pass, including two original611 differential witnesses; compiler invocations in both optimized current and original differential builds use the exact held ELF. C compiler/tools/header/link-library inputs are retained by the original producer inventory mechanism and verified against current bytes in the provenance receipt.
+
+The final generated elm.js, bar.js, popup.js and elm-host are **byte-identical** to V640's hash-pinned artifacts. This establishes the same compiled runtime program payloads on these inputs; it does not assert which unrecorded compiler binary historical V640 used. qa/provenance-report.json records each comparison, exact source closure, actual version, selected final reports and guard evidence. Current-build.json points to the final producer report.
+
+Earlier successful producer stages are preserved: first explicit-binary build/public51, then inventory-name guard, then anchored manifest guard. The final build/public run uses the strongest guard; earlier passes are not silently relabeled. A provenance-check attempt initially treated still-growing redirected QA logs as immutable production inputs; the failed checker/log are retained under qa/failed-qa-log-assumption. The corrected checker still verifies the held snapshot bytes and records the two terminal unused QA log differences. Those logs are not compiler/runtime inputs. Production sources, executable QA producer code, toolchain manifest and generated artifacts remain strict pins.
+
+qa/ancestry/build640-missing-elm-inventory.json retains the original report and review649.md retains the stated limitation. No old report/compiler inventory was patched. Native646's existing V640 campaign is independent; V651 does not launch native QA, mutate a ledger, alter installed configuration or commit. It supplies fresh same-program producer evidence, not native, power-loss, GPU, UI/UX, accessibility, archive scaling, deployment or full-release acceptance. Hermetic platform/build reproducibility beyond the explicitly captured compiler/package/registry/native-header/tool/library sets remains a separate scope.
+
+CPU reproduction:
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 -B /home/hoskinson/window-integration-qa/qa_run.py -- /usr/bin/python3 -B /home/hoskinson/omarchy-windows-parity/implementation/elm-recovery-delivery-pinned-toolchain-v651/qa/build.py
+PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 -B /home/hoskinson/window-integration-qa/qa_run.py -- /usr/bin/python3 -B /home/hoskinson/omarchy-windows-parity/implementation/elm-recovery-delivery-pinned-toolchain-v651/qa/run.py
+```
+
+Prepare.py materializes the initial held toolchain once into a fresh directory; its frozen manifest cannot be overwritten in place for a different compiler. A later compiler/dependency change needs a new producer derivative and fresh guards/evidence.

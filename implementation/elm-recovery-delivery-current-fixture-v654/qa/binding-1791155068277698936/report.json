@@ -1,0 +1,216 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "actual captured640 backend selected",
+      "passed": true
+    },
+    {
+      "name": "all captured640 adapter siblings equal current source",
+      "passed": true
+    },
+    {
+      "name": "receipt behavior unchanged HoldFailure",
+      "passed": true
+    },
+    {
+      "name": "receipt behavior unchanged start",
+      "passed": true
+    },
+    {
+      "name": "receipt behavior unchanged exact",
+      "passed": true
+    },
+    {
+      "name": "receipt behavior unchanged counter",
+      "passed": true
+    },
+    {
+      "name": "receipt behavior unchanged decode",
+      "passed": true
+    },
+    {
+      "name": "receipt behavior unchanged directory",
+      "passed": true
+    },
+    {
+      "name": "receipt behavior unchanged gate_fd",
+      "passed": true
+    },
+    {
+      "name": "receipt behavior unchanged ReceiptHold",
+      "passed": true
+    },
+    {
+      "name": "receipt behavior unchanged supervise",
+      "passed": true
+    },
+    {
+      "name": "receipt behavior unchanged write_release",
+      "passed": true
+    },
+    {
+      "name": "receipt behavior unchanged load_backend",
+      "passed": true
+    },
+    {
+      "name": "receipt behavior unchanged main",
+      "passed": true
+    },
+    {
+      "name": "host receipt entrypoint byte exact255",
+      "passed": true
+    },
+    {
+      "name": "relay behavior unchanged RelayFailure",
+      "passed": true
+    },
+    {
+      "name": "relay behavior unchanged sha",
+      "passed": true
+    },
+    {
+      "name": "relay behavior unchanged start",
+      "passed": true
+    },
+    {
+      "name": "relay behavior unchanged unique",
+      "passed": true
+    },
+    {
+      "name": "relay behavior unchanged decode",
+      "passed": true
+    },
+    {
+      "name": "relay behavior unchanged exact",
+      "passed": true
+    },
+    {
+      "name": "relay behavior unchanged directory",
+      "passed": true
+    },
+    {
+      "name": "relay behavior unchanged read_private",
+      "passed": true
+    },
+    {
+      "name": "relay behavior unchanged write_all",
+      "passed": true
+    },
+    {
+      "name": "relay behavior unchanged actor_status",
+      "passed": true
+    },
+    {
+      "name": "relay behavior unchanged exit_status",
+      "passed": true
+    },
+    {
+      "name": "relay behavior unchanged close_stdin",
+      "passed": true
+    },
+    {
+      "name": "relay behavior unchanged pump",
+      "passed": true
+    },
+    {
+      "name": "relay behavior unchanged verify_receipt",
+      "passed": true
+    },
+    {
+      "name": "relay behavior unchanged main",
+      "passed": true
+    },
+    {
+      "name": "both profile selection behavior unchanged except owned path and failclosed cache guard",
+      "passed": true
+    },
+    {
+      "name": "actual broker command targets626 daemon",
+      "passed": true
+    },
+    {
+      "name": "actual receipt command targets634 entrypoint",
+      "passed": true
+    },
+    {
+      "name": "receipt entrypoint accepts genuine full private config",
+      "passed": true
+    },
+    {
+      "name": "foreign instance refuses",
+      "passed": true
+    },
+    {
+      "name": "foreign runtime refuses",
+      "passed": true
+    },
+    {
+      "name": "foreign profile refuses",
+      "passed": true
+    },
+    {
+      "name": "extra field refuses",
+      "passed": true
+    },
+    {
+      "name": "bool config refuses",
+      "passed": true
+    },
+    {
+      "name": "foreign manifest refuses backend",
+      "passed": true
+    },
+    {
+      "name": "stale626 producer hash refuses640 backend",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt manifest refuses both profiles",
+      "passed": true
+    },
+    {
+      "name": "cached231 wrapper cannot select stale broker",
+      "passed": true
+    },
+    {
+      "name": "cached626 wrapper cannot select stale broker",
+      "passed": true
+    },
+    {
+      "name": "actual verified640 daemon imports authoritative coordinator",
+      "passed": true
+    }
+  ],
+  "nativeAcceptance": false,
+  "scope": "CPU actual production fixture command selection, strict backend byte closure and AST equivalence; no native transport",
+  "capturedBackend": "/home/hoskinson/omarchy-windows-parity/implementation/elm-recovery-delivery-integrated-gui-v640/qa/build-1791153819143987946/inputs/adapter",
+  "backendManifestSHA256": "f09652e1b61b5850d9efead5ac624c4d3097a69d68470b986fd94655d52765df",
+  "backendAdapter": {
+    "endpoint.py": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+    "effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+    "geometry_endpoint.py": "83a76bc1e14e18357d7d921f0071f49a9e7e47c984ad3a5db0ae4279dc32d59c",
+    "daemon.py": "c5a3aea3b57dffced55268bfde08c3dcc100a9dc12e2604ed3576384079e1055",
+    "catalog_transport.py": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+    "catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+    "taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "taskbar_projection.py": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+    "recovery_journal.py": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+    "recovery_fault.py": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+    "durable_ledger.py": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+    "recovery_store.py": "fa7e852c963bc4602c2066d05e77d47d8535c732775fe04258021accd3cd7be1",
+    "admission_ledger.py": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1",
+    "geometry_size_policy.py": "bcca6dd280911a38ed189e2e8ca6d81ea98c775ef261444f9b1e0f4b9a754888",
+    "grant_endpoint.py": "4b60a6c7e43aade3f2ce59495600f3b418b781865a7289dae53a189388f5c3f0",
+    "retirement_ledger.py": "213cbb6ecd5c2218075d2cc98132c1c53680933f3898c757e7ba1848261faec5",
+    "reconciliation.py": "5f558130f005b722fec187e87a88a8cd69606c786c27beb0decede715c54e5f9",
+    "delivery_ledger.py": "ce1ff3528b454bdca7412389f5693f69023a5c76bc9586541c1091c1cddc5ca4"
+  },
+  "inputs": {
+    "qa/binding.py": "aa4a5f91cd4c63f00ac9763f67dd4df8de55efda7c8fdf885aa41a68ecc56ed4",
+    "receipt/qa/wrapper.py": "4c76dbfdc2effba4d65fd81f333b791c2a7a8a12212a8b4666e791de9db4d2e4",
+    "receipt/qa/broker-entrypoint.py": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+    "receipt/qa/held-source-manifest.json": "6404cfb16f11e16df7daa4be1b4d179e50feec7c8c2efef02ed1d9b8f13613db",
+    "relay/qa/relay.py": "a2e084a9abfc638b5f98c3b78ba6d4e118e2c0e2c24f3258a5207bda9e264272"
+  }
+}

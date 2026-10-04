@@ -1,0 +1,17 @@
+
+  storage
+    1) conservationTest failed after 1 test(s)
+
+  1 failed
+
+  1) conservationTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-storage-v647/qa/model-1791154519801068704/drop-durable-history-on-restart.qnt:22:126
+        22:  run conservationTest = init.then(reserve(1)).then(commit).then(reserve(2)).then(commit).then(crash).then(restart).then(all {assert(safety and durable==Set(1,2)),reset})
+                                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xfcbd --match=conservationTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-storage-v647/qa/model-1791154519801068704/drop-durable-history-on-restart.qnt
+error: Tests failed

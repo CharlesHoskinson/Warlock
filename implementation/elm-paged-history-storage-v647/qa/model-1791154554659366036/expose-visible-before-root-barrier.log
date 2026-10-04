@@ -1,0 +1,17 @@
+
+  storage
+    1) unsafeExposureWitnessTest failed after 1 test(s)
+
+  1 failed
+
+  1) unsafeExposureWitnessTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-storage-v647/qa/model-1791154554659366036/expose-visible-before-root-barrier.qnt:23:137
+        23: run unsafeExposureWitnessTest = init.then(reserve(1)).then(advance).then(advance).then(advance).then(advance).then(expose(1)).then(all {assert(safety),reset})
+                                                                                                                                                    ^^^^^^^^^^^^^^
+    Use --seed=0xfcbd --match=unsafeExposureWitnessTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-storage-v647/qa/model-1791154554659366036/expose-visible-before-root-barrier.qnt
+error: Tests failed

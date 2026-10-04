@@ -1,0 +1,85 @@
+{
+  "S15Accepted": false,
+  "component": "elm-paged-ledger-integration-review-v661",
+  "files": {
+    "ARCHITECTURE.md": {
+      "sha256": "9c411df4b1084dbae5826df8c7952a2946b3469fdc9c20b60d1b1f3f92c61869",
+      "size": 11774
+    },
+    "REVIEW.md": {
+      "sha256": "8cbc69044b49ffe3d658a0eb1a48d91ebec3640485790680f424997f4d9b2c5b",
+      "size": 6769
+    },
+    "SPEC-AMENDMENT.md": {
+      "sha256": "09e5abb25e0df749aabd1bdc77bef2311f22e00038597b2706d4bdeb3bf53b9f",
+      "size": 5266
+    },
+    "qa/freeze.py": {
+      "sha256": "628458d535c3ecadb15d11d58d1789612b821ee94e84fe20d5059d3046ee6f8c",
+      "size": 2086
+    },
+    "qa/report.json": {
+      "sha256": "ff47ce4a86269f45d4674a3c623537bc2bbe3b2b6b09f1fecf8593a1f434e409",
+      "size": 4049
+    },
+    "qa/review.py": {
+      "sha256": "c4fbb0284baeb81b2513f0ffb2f11673b8bf6fc4fd0ec5ccd33cf0af6de2ad03",
+      "size": 4739
+    }
+  },
+  "historical362NotRerun": true,
+  "ledgerIntegrated": false,
+  "nativeAcceptance": false,
+  "newAssertions": 62,
+  "parentManifestSHA256": "30eaeeada4ff5fcd60c67378d682a74e162eb57721e01d7269909cc3bfa560ac",
+  "powerLossQualified": false,
+  "reviewedInputs": {
+    "elm-durable-reservation-release-v608/adapter/retirement_ledger.py": {
+      "sha256": "213cbb6ecd5c2218075d2cc98132c1c53680933f3898c757e7ba1848261faec5",
+      "size": 18804
+    },
+    "elm-informational-history-drain-v642/src/ReconciliationTracking.elm": {
+      "sha256": "84482d1bb84160e3bd9e026b2043635c35b76422d6e9066f703411f784b29bf9",
+      "size": 7152
+    },
+    "elm-paged-history-archive-v629/requirements.json": {
+      "sha256": "ee11b2f4ae2f7fbecb20ad955cc4927e8f65685f7ee831487c6b90fc19f26a14",
+      "size": 7731
+    },
+    "elm-paged-history-storage-v647/adapter/archive.py": {
+      "sha256": "d20d8488889280a0167d0a6f3833a725b5b3e841f73950637d9391d92f8c7608",
+      "size": 19942
+    },
+    "elm-paged-history-storage-v647/qa/model-1791154554659366036/report.json": {
+      "sha256": "ae5f08709b678e2e6ba4befd2231ac08237352ecb05c0f23a6ab7e76821ddd2d",
+      "size": 1315
+    },
+    "elm-paged-history-storage-v647/qa/tests-1791154696119822432/report.json": {
+      "sha256": "38f73371e73efeb03321537622ae69505ab58a67461b7aead886afb8e039bb27",
+      "size": 15076
+    },
+    "elm-paged-history-storage-v647/spec/REFINEMENT.md": {
+      "sha256": "6f9ff53eb1975c0f49a8666d343700f78c11c7f876ac35523d5cbc246f1c4348",
+      "size": 3095
+    },
+    "elm-paged-history-storage-v647/spec/storage.qnt": {
+      "sha256": "8cd02502a0db2177d8146ef4037a37298c4f85da90c927c769b9e15e5a4acb37",
+      "size": 2407
+    },
+    "elm-recovery-delivery-integration-v630/adapter/durable_ledger.py": {
+      "sha256": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+      "size": 10986
+    },
+    "elm-recovery-delivery-integration-v630/adapter/reconciliation.py": {
+      "sha256": "5f558130f005b722fec187e87a88a8cd69606c786c27beb0decede715c54e5f9",
+      "size": 6224
+    },
+    "elm-release-delivery-attestation-v624/adapter/delivery_ledger.py": {
+      "sha256": "ce1ff3528b454bdca7412389f5693f69023a5c76bc9586541c1091c1cddc5ca4",
+      "size": 7783
+    }
+  },
+  "schema": 1,
+  "scope": "independent storage-only review and proposed V7 architecture, no semantic integration",
+  "verdict": "confirmed bounded647 storage scope; V7 changes required"
+}

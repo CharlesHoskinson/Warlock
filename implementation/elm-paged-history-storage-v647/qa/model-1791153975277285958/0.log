@@ -1,0 +1,16 @@
+[DEBUG] ignoring listener exception in favor of parse errors. Exception: violated grammar of annotated params return type
+
+ Error [QNT000]: mismatched input '=' expecting ':'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-storage-v647/spec/storage.qnt:10:24
+  10:  action reserve(k:int) = all { ready and phase==0 and charge<4 and not(durable.contains(k)), charge'=charge+1, staged'=Set(k), phase'=1, durable'=durable, visible'=visible, ready'=ready, exposed'=exposed }
+                             ^
+
+
+ Error [QNT000]: extraneous input 'action' expecting {<EOF>, 'module', DOCCOMMENT}
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-storage-v647/spec/storage.qnt:11:2
+  11:  action advance = all { phase>0 and phase<6, phase'=phase+1, visible'=if(phase==4) durable.union(staged) else visible, durable'=if(phase==5) visible else durable, ready'=if(phase==5) true else ready, staged'=if(phase==5) Set() else staged, charge'=charge, exposed'=exposed }
+       ^^^^^^
+
+error: parsing failed
