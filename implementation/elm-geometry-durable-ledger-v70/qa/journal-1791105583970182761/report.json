@@ -1,0 +1,86 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "emptyJournalHasNoRecovery",
+      "passed": true
+    },
+    {
+      "name": "concurrentWriterRefused",
+      "passed": true
+    },
+    {
+      "name": "pendingDurablyRoundTrips",
+      "passed": true
+    },
+    {
+      "name": "freshBindingRecoversOnlyUncertainIntent",
+      "passed": true
+    },
+    {
+      "name": "foreignCompositorRefused",
+      "passed": true
+    },
+    {
+      "name": "mismatchedReceiptRefused",
+      "passed": true
+    },
+    {
+      "name": "mismatchDoesNotClearPending",
+      "passed": true
+    },
+    {
+      "name": "durableCommitIsNotUnknown",
+      "passed": true
+    },
+    {
+      "name": "duplicateTerminalReceiptRefused",
+      "passed": true
+    },
+    {
+      "name": "writerConfirmsDurableSubmission",
+      "passed": true
+    },
+    {
+      "name": "abruptWriterExitIsRecorded",
+      "passed": true
+    },
+    {
+      "name": "freshWriterReadsUnknownAfterActualDeath",
+      "passed": true
+    },
+    {
+      "name": "duplicateJSONRefused",
+      "passed": true
+    },
+    {
+      "name": "publicRecordRefused",
+      "passed": true
+    },
+    {
+      "name": "oversizeRecordRefused",
+      "passed": true
+    },
+    {
+      "name": "symlinkRecordRefused",
+      "passed": true
+    },
+    {
+      "name": "unsupportedOperationRefusedBeforeWrite",
+      "passed": true
+    },
+    {
+      "name": "rejectedWritePreservesRecord",
+      "passed": true
+    },
+    {
+      "name": "publicRecoveryDirectoryRefused",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-durable-ledger-v70/qa/journal.py": "b4dfb3a4d61723b7ced9f8d9332c2c28b7f2e096c63e35bee5436f3fd0b0d1f6",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-durable-ledger-v70/adapter/recovery_journal.py": "34b332a218798406e7b497b7de16a532f6f7e47b021f42c5b7b3016f22483c6b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-durable-ledger-v70/adapter/endpoint.py": "d0ce3b056078d052d42bb6bf1fddf07afec21b1ad732d1289e43d7eaf0f6c51f"
+  }
+}

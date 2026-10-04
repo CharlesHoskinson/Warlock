@@ -1,0 +1,251 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "durableTypedPending:minimize",
+      "passed": true
+    },
+    {
+      "name": "informationalUnknownExactWire:minimize",
+      "passed": true
+    },
+    {
+      "name": "oppositeProtocolReceiptRefused:minimize",
+      "passed": true
+    },
+    {
+      "name": "wrongReceiptPreservesDurablePending:minimize",
+      "passed": true
+    },
+    {
+      "name": "matchedCommitSuppressesUnknown:minimize",
+      "passed": true
+    },
+    {
+      "name": "durableTypedPending:restore",
+      "passed": true
+    },
+    {
+      "name": "informationalUnknownExactWire:restore",
+      "passed": true
+    },
+    {
+      "name": "oppositeProtocolReceiptRefused:restore",
+      "passed": true
+    },
+    {
+      "name": "wrongReceiptPreservesDurablePending:restore",
+      "passed": true
+    },
+    {
+      "name": "matchedCommitSuppressesUnknown:restore",
+      "passed": true
+    },
+    {
+      "name": "durableTypedPending:activate",
+      "passed": true
+    },
+    {
+      "name": "informationalUnknownExactWire:activate",
+      "passed": true
+    },
+    {
+      "name": "oppositeProtocolReceiptRefused:activate",
+      "passed": true
+    },
+    {
+      "name": "wrongReceiptPreservesDurablePending:activate",
+      "passed": true
+    },
+    {
+      "name": "matchedCommitSuppressesUnknown:activate",
+      "passed": true
+    },
+    {
+      "name": "durableTypedPending:maximize",
+      "passed": true
+    },
+    {
+      "name": "informationalUnknownExactWire:maximize",
+      "passed": true
+    },
+    {
+      "name": "oppositeProtocolReceiptRefused:maximize",
+      "passed": true
+    },
+    {
+      "name": "wrongReceiptPreservesDurablePending:maximize",
+      "passed": true
+    },
+    {
+      "name": "missingProtocolCannotSettleGeometry:maximize",
+      "passed": true
+    },
+    {
+      "name": "matchedCommitSuppressesUnknown:maximize",
+      "passed": true
+    },
+    {
+      "name": "durableTypedPending:restore-geometry",
+      "passed": true
+    },
+    {
+      "name": "informationalUnknownExactWire:restore-geometry",
+      "passed": true
+    },
+    {
+      "name": "oppositeProtocolReceiptRefused:restore-geometry",
+      "passed": true
+    },
+    {
+      "name": "wrongReceiptPreservesDurablePending:restore-geometry",
+      "passed": true
+    },
+    {
+      "name": "missingProtocolCannotSettleGeometry:restore-geometry",
+      "passed": true
+    },
+    {
+      "name": "matchedCommitSuppressesUnknown:restore-geometry",
+      "passed": true
+    },
+    {
+      "name": "invalidProtocolRefused:True",
+      "passed": true
+    },
+    {
+      "name": "invalidProtocolRefused:False",
+      "passed": true
+    },
+    {
+      "name": "invalidProtocolRefused:1.0",
+      "passed": true
+    },
+    {
+      "name": "invalidProtocolRefused:2.0",
+      "passed": true
+    },
+    {
+      "name": "invalidProtocolRefused:'2'",
+      "passed": true
+    },
+    {
+      "name": "invalidProtocolRefused:0",
+      "passed": true
+    },
+    {
+      "name": "invalidProtocolRefused:3",
+      "passed": true
+    },
+    {
+      "name": "invalidProtocolRefused:None",
+      "passed": true
+    },
+    {
+      "name": "operationProtocolMismatchRefused:maximize1",
+      "passed": true
+    },
+    {
+      "name": "operationProtocolMismatchRefused:restore-geometry1",
+      "passed": true
+    },
+    {
+      "name": "operationProtocolMismatchRefused:minimize2",
+      "passed": true
+    },
+    {
+      "name": "operationProtocolMismatchRefused:restore2",
+      "passed": true
+    },
+    {
+      "name": "operationProtocolMismatchRefused:activate2",
+      "passed": true
+    },
+    {
+      "name": "operationProtocolMismatchRefused:close2",
+      "passed": true
+    },
+    {
+      "name": "invalidSchemaRefused:True",
+      "passed": true
+    },
+    {
+      "name": "invalidSchemaRefused:2.0",
+      "passed": true
+    },
+    {
+      "name": "invalidSchemaRefused:0",
+      "passed": true
+    },
+    {
+      "name": "invalidSchemaRefused:3",
+      "passed": true
+    },
+    {
+      "name": "invalidSchemaRefused:'2'",
+      "passed": true
+    },
+    {
+      "name": "invalidSchemaRefused:None",
+      "passed": true
+    },
+    {
+      "name": "legacySchemaNormalizesToOne",
+      "passed": true
+    },
+    {
+      "name": "legacyRecordRoundTripsUnchanged",
+      "passed": true
+    },
+    {
+      "name": "legacyHostNewBrokerSettlementSuppressesUnknown",
+      "passed": true
+    },
+    {
+      "name": "olderLegacyCommitCannotClearGeometryAdmission",
+      "passed": true
+    },
+    {
+      "name": "settledUnknownRemainsInformational",
+      "passed": true
+    },
+    {
+      "name": "invalidStatusRefused",
+      "passed": true
+    },
+    {
+      "name": "invalidStatusPreservesPending",
+      "passed": true
+    },
+    {
+      "name": "noncanonicalIntentRefused:request",
+      "passed": true
+    },
+    {
+      "name": "noncanonicalIntentRefused:generation",
+      "passed": true
+    },
+    {
+      "name": "noncanonicalIntentRefused:incarnation",
+      "passed": true
+    },
+    {
+      "name": "foreignContextRefused:lifetime",
+      "passed": true
+    },
+    {
+      "name": "foreignContextRefused:epoch",
+      "passed": true
+    },
+    {
+      "name": "geometryUnknownSurvivesNewWriter",
+      "passed": true
+    }
+  ],
+  "scope": "CPU durable journal only; geometry host/broker/Elm integration and native acceptance remain open",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-durable-ledger-v70/qa/protocols.py": "742e08083a2feac3b64c55f207003db911a585967cbcf2a4519c876805af3bac",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-durable-ledger-v70/adapter/recovery_journal.py": "34b332a218798406e7b497b7de16a532f6f7e47b021f42c5b7b3016f22483c6b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-durable-ledger-v70/adapter/endpoint.py": "d0ce3b056078d052d42bb6bf1fddf07afec21b1ad732d1289e43d7eaf0f6c51f"
+  }
+}

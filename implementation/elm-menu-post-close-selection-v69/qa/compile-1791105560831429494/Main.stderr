@@ -1,0 +1,12 @@
+-- TYPE MISMATCH -------------------------------------------- src/MenuBridge.elm
+
+This is not a record, so it has no fields to access!
+
+201|                 Just slot -> if slot.originalBinding.output==output && slot.originalBinding.outputGeneration==generation then cancelPrepared "Selection output retired" shell model else answer (Model {state|menu=Tuple.first (Menu.update message state.menu)}) shell [] Nothing
+                                     ^^^^^^^^^^^^^^^^^^^^
+The value at .originalBinding is a:
+
+    Menu.Binding
+
+But I need a record with a output field!
+

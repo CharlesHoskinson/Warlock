@@ -1,0 +1,4378 @@
+{
+  "passed": true,
+  "scope": "Independent compiled post-close CPU source and evidence closure only; original suites retain diagnostic failures; no native acceptance",
+  "checks": [
+    {
+      "name": "59 independent compiled cases passed",
+      "passed": true
+    },
+    {
+      "name": "actual Main and Popup compiled",
+      "passed": true
+    },
+    {
+      "name": "five actual compiled mutants killed",
+      "passed": true
+    },
+    {
+      "name": "exact held V69 source/evidence manifest",
+      "passed": true
+    },
+    {
+      "name": "V69 held elm.json",
+      "passed": true
+    },
+    {
+      "name": "V69 held upstream.json",
+      "passed": true
+    },
+    {
+      "name": "V69 held SPEC.md",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/Effects.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/UInt64.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/ActionProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/Replay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/Binding.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/Shell.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/ShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/Taskbar.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/TaskbarReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/TaskbarShell.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/TaskbarShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/Catalog.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/Launch.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/LaunchReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/CatalogReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/Desktop.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/DesktopReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/Surface.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/SurfaceController.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/SurfaceRenderer.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/Popup.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/SurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/Presentation.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/PresentationReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/Main.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/Inspection.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/Menu.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/Provider.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/ReceiptRouter.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/MenuBridge.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/NativeProvider.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/NativeOutcome.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/MenuSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/OutputSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held src/GeometryProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile.py",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/Main.stdout",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/Main.stderr",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/report.json",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/Main.stdout",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/Main.stderr",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/report.json",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/Main.js",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/Main.stdout",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/Main.stderr",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/Popup.js",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/Popup.stdout",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/Popup.stderr",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/MenuSurfaceReplay.js",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/MenuSurfaceReplay.stdout",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/MenuSurfaceReplay.stderr",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/report.json",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/Main.js",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/Main.stdout",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/Main.stderr",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/Popup.js",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/Popup.stdout",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/Popup.stderr",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/MenuSurfaceReplay.js",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/MenuSurfaceReplay.stdout",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/MenuSurfaceReplay.stderr",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/report.json",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm.json",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/upstream.json",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/SPEC.md",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/Effects.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/UInt64.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/ActionProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/Replay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/Binding.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/Shell.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/ShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/Taskbar.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/TaskbarReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/TaskbarShell.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/TaskbarShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/Catalog.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/Launch.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/LaunchReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/CatalogReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/Desktop.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/DesktopReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/Surface.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/SurfaceController.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/SurfaceRenderer.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/Popup.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/SurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/Presentation.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/PresentationReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/Main.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/Inspection.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/Menu.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/Provider.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/ReceiptRouter.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/MenuBridge.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/NativeProvider.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/NativeOutcome.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/MenuSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/OutputSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/src/GeometryProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/qa/compile.py",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/lock",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/d.dat",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/i.dat",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/o.dat",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/UInt64.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/UInt64.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Binding.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Binding.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Catalog.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/ActionProjection.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/NativeOutcome.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/ActionProjection.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Catalog.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/NativeOutcome.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Menu.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Launch.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Menu.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Launch.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/GeometryProjection.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/GeometryProjection.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Effects.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Provider.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Effects.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Provider.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Taskbar.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Taskbar.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/ReceiptRouter.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/ReceiptRouter.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Shell.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Shell.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/NativeProvider.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/NativeProvider.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/MenuBridge.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/MenuBridge.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/TaskbarShell.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/TaskbarShell.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Desktop.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Desktop.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Surface.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Surface.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/SurfaceController.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/SurfaceController.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Inspection.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Inspection.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Main.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Main.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Presentation.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Presentation.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Popup.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Popup.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm.json",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/upstream.json",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/SPEC.md",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/Effects.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/UInt64.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/ActionProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/Replay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/Binding.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/Shell.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/ShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/Taskbar.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/TaskbarReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/TaskbarShell.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/TaskbarShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/Catalog.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/Launch.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/LaunchReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/CatalogReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/Desktop.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/DesktopReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/Surface.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/SurfaceController.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/SurfaceRenderer.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/Popup.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/SurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/Presentation.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/PresentationReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/Main.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/Inspection.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/Menu.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/Provider.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/ReceiptRouter.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/MenuBridge.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/NativeProvider.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/NativeOutcome.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/MenuSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/OutputSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/src/GeometryProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/qa/compile.py",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/lock",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/d.dat",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/i.dat",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/o.dat",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/UInt64.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/UInt64.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Binding.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Binding.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Catalog.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Catalog.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Menu.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/NativeOutcome.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Menu.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/NativeOutcome.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/ActionProjection.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/ActionProjection.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Launch.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Launch.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/GeometryProjection.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/GeometryProjection.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Effects.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Provider.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Effects.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Provider.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Taskbar.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Taskbar.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/ReceiptRouter.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/ReceiptRouter.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Shell.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Shell.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/NativeProvider.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/NativeProvider.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/MenuBridge.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/MenuBridge.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/TaskbarShell.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/TaskbarShell.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Desktop.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Desktop.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Surface.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Surface.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/SurfaceController.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/SurfaceController.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Inspection.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Inspection.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Main.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Main.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Presentation.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Presentation.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Popup.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Popup.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm.json",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/upstream.json",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/SPEC.md",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/Effects.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/UInt64.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/ActionProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/Replay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/Binding.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/Shell.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/ShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/Taskbar.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/TaskbarReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/TaskbarShell.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/TaskbarShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/Catalog.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/Launch.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/LaunchReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/CatalogReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/Desktop.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/DesktopReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/Surface.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/SurfaceController.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/SurfaceRenderer.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/Popup.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/SurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/Presentation.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/PresentationReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/Main.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/Inspection.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/Menu.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/Provider.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/ReceiptRouter.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/MenuBridge.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/NativeProvider.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/NativeOutcome.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/MenuSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/OutputSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/src/GeometryProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/qa/compile.py",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/lock",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/i.dat",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/o.dat",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/d.dat",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/UInt64.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/UInt64.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Binding.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Binding.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Catalog.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Catalog.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Menu.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/ActionProjection.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/NativeOutcome.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/NativeOutcome.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/ActionProjection.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Menu.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Launch.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Launch.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/GeometryProjection.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/GeometryProjection.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Effects.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Provider.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Effects.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Provider.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Taskbar.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Taskbar.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/ReceiptRouter.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/ReceiptRouter.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Shell.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Shell.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/NativeProvider.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/NativeProvider.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm.json",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/upstream.json",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/SPEC.md",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/Effects.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/UInt64.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/ActionProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/Replay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/Binding.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/Shell.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/ShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/Taskbar.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/TaskbarReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/TaskbarShell.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/TaskbarShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/Catalog.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/Launch.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/LaunchReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/CatalogReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/Desktop.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/DesktopReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/Surface.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/SurfaceController.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/SurfaceRenderer.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/Popup.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/SurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/Presentation.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/PresentationReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/Main.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/Inspection.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/Menu.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/Provider.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/ReceiptRouter.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/MenuBridge.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/NativeProvider.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/NativeOutcome.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/MenuSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/OutputSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/src/GeometryProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/qa/compile.py",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/lock",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/o.dat",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/i.dat",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/d.dat",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/UInt64.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/UInt64.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Binding.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Binding.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/NativeOutcome.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Catalog.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/NativeOutcome.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Menu.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/ActionProjection.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Catalog.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/ActionProjection.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Menu.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Launch.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/GeometryProjection.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/GeometryProjection.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Launch.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Effects.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Effects.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Provider.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Taskbar.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Provider.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Taskbar.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/ReceiptRouter.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/ReceiptRouter.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Shell.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Shell.elmi",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/NativeProvider.elmo",
+      "passed": true
+    },
+    {
+      "name": "V69 held qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/NativeProvider.elmi",
+      "passed": true
+    },
+    {
+      "name": "compiled production source elm.json",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/ActionProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/Binding.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/Catalog.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/CatalogReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/Desktop.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/DesktopReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/Effects.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/GeometryProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/Inspection.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/Launch.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/LaunchReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/Main.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/Menu.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/MenuBridge.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/MenuSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/NativeOutcome.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/NativeProvider.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/OutputSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/Popup.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/Presentation.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/PresentationReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/Provider.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/ReceiptRouter.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/Replay.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/Shell.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/ShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/Surface.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/SurfaceController.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/SurfaceRenderer.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/SurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/Taskbar.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/TaskbarReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/TaskbarShell.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/TaskbarShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled production source src/UInt64.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled QA source src/MenuSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled QA source qa/replay.py",
+      "passed": true
+    },
+    {
+      "name": "compiled QA source qa/post-close.cjs",
+      "passed": true
+    },
+    {
+      "name": "compiled QA source qa/upstream.json",
+      "passed": true
+    },
+    {
+      "name": "compiled QA source qa/original/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "compiled QA source qa/original/geometry-fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "compiled QA source qa/original/geometry.cjs",
+      "passed": true
+    },
+    {
+      "name": "compiled QA source qa/original/menu.cjs",
+      "passed": true
+    },
+    {
+      "name": "compiled QA source qa/original/refresh.cjs",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact replay.js",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact compile.stdout",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact compile.stderr",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact menu-original-checks.json",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact menu-original.stdout",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact menu-original.stderr",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact geometry-original.stdout",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact geometry-original.stderr",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact refresh-original-checks.json",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact refresh-original.stdout",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact refresh-original.stderr",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact post-close-checks.json",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact post-close.stdout",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact post-close.stderr",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact Main.js",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact Main-compile.stdout",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact Main-compile.stderr",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact Popup.js",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact Popup-compile.stdout",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact Popup-compile.stderr",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm.json",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/ActionProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/Binding.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/Catalog.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/CatalogReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/Desktop.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/DesktopReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/Effects.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/GeometryProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/Inspection.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/Launch.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/LaunchReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/Main.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/Menu.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/MenuBridge.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/MenuSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/NativeOutcome.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/NativeProvider.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/OutputSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/Popup.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/Presentation.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/PresentationReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/Provider.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/ReceiptRouter.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/Replay.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/Shell.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/ShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/Surface.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/SurfaceController.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/SurfaceRenderer.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/SurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/Taskbar.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/TaskbarReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/TaskbarShell.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/TaskbarShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/src/UInt64.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/source-worker/MenuSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/qa/replay.py",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/qa/post-close.cjs",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/qa/upstream.json",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/lock",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/o.dat",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/d.dat",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/i.dat",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/UInt64.elmo",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/UInt64.elmi",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/Binding.elmo",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/Binding.elmi",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/Catalog.elmo",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/Catalog.elmi",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/ActionProjection.elmo",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/NativeOutcome.elmo",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/SurfaceRenderer.elmo",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/NativeOutcome.elmi",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/ActionProjection.elmi",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/SurfaceRenderer.elmi",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/Menu.elmo",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/Launch.elmo",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/GeometryProjection.elmo",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/Menu.elmi",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/GeometryProjection.elmi",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/Launch.elmi",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/Effects.elmo",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/Effects.elmi",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/Provider.elmo",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/Provider.elmi",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/Taskbar.elmo",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/Taskbar.elmi",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/ReceiptRouter.elmo",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/ReceiptRouter.elmi",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/Shell.elmo",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/Shell.elmi",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/NativeProvider.elmo",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/NativeProvider.elmi",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/MenuBridge.elmo",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/MenuBridge.elmi",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/TaskbarShell.elmo",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/TaskbarShell.elmi",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/Desktop.elmo",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/Desktop.elmi",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/Surface.elmo",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/Surface.elmi",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/SurfaceController.elmo",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/SurfaceController.elmi",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmo",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmi",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/Inspection.elmo",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/Inspection.elmi",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/Main.elmo",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/Main.elmi",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/Presentation.elmo",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/Presentation.elmi",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/Popup.elmo",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/elm-stuff/0.19.2/Popup.elmi",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/qa/original/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/qa/original/geometry-fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/qa/original/geometry.cjs",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/qa/original/menu.cjs",
+      "passed": true
+    },
+    {
+      "name": "compiled retained artifact inputs/qa/original/refresh.cjs",
+      "passed": true
+    },
+    {
+      "name": "mutations production source elm.json",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/ActionProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/Binding.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/Catalog.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/CatalogReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/Desktop.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/DesktopReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/Effects.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/GeometryProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/Inspection.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/Launch.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/LaunchReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/Main.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/Menu.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/MenuBridge.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/MenuSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/NativeOutcome.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/NativeProvider.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/OutputSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/Popup.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/Presentation.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/PresentationReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/Provider.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/ReceiptRouter.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/Replay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/Shell.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/ShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/Surface.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/SurfaceController.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/SurfaceRenderer.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/SurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/Taskbar.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/TaskbarReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/TaskbarShell.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/TaskbarShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations production source src/UInt64.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations QA source src/MenuSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations QA source qa/post-close.cjs",
+      "passed": true
+    },
+    {
+      "name": "mutations QA source qa/original/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "mutations QA source qa/original/geometry-fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "mutations QA source qa/original/geometry.cjs",
+      "passed": true
+    },
+    {
+      "name": "mutations QA source qa/original/menu.cjs",
+      "passed": true
+    },
+    {
+      "name": "mutations QA source qa/original/refresh.cjs",
+      "passed": true
+    },
+    {
+      "name": "mutations QA source qa/mutations.py",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/replay.js",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/compile.stdout",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/compile.stderr",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/checks.json",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/checks.stdout",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/checks.stderr",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/replay.js",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/compile.stdout",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/compile.stderr",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/checks.json",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/checks.stdout",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/checks.stderr",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/replay.js",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/compile.stdout",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/compile.stderr",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/checks.json",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/checks.stdout",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/checks.stderr",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/replay.js",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/compile.stdout",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/compile.stderr",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/checks.json",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/checks.stdout",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/checks.stderr",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/replay.js",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/compile.stdout",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/compile.stderr",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/checks.json",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/checks.stdout",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/checks.stderr",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm.json",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/ActionProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/Binding.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/Catalog.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/CatalogReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/Desktop.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/DesktopReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/Effects.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/GeometryProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/Inspection.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/Launch.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/LaunchReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/Main.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/Menu.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/MenuBridge.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/MenuSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/NativeOutcome.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/NativeProvider.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/OutputSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/Popup.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/Presentation.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/PresentationReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/Provider.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/ReceiptRouter.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/Replay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/Shell.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/ShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/Surface.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/SurfaceController.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/SurfaceRenderer.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/SurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/Taskbar.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/TaskbarReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/TaskbarShell.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/TaskbarShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/src/UInt64.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/qa/post-close.cjs",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/qa/mutations.py",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/lock",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/o.dat",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/d.dat",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/i.dat",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/UInt64.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/UInt64.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/Binding.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/Binding.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/Catalog.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/Catalog.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/ActionProjection.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/NativeOutcome.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/NativeOutcome.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/ActionProjection.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/Menu.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/GeometryProjection.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/Launch.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/GeometryProjection.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/Menu.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/Launch.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/Effects.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/Effects.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/Provider.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/Taskbar.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/Taskbar.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/Provider.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/ReceiptRouter.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/ReceiptRouter.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/Shell.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/Shell.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/NativeProvider.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/NativeProvider.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/MenuBridge.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/MenuBridge.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/TaskbarShell.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/TaskbarShell.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/Desktop.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/Desktop.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/Surface.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/Surface.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/SurfaceController.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/SurfaceController.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/qa/original/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/qa/original/geometry-fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/qa/original/geometry.cjs",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/qa/original/menu.cjs",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact apps-popup-bypasses-preparation/inputs/qa/original/refresh.cjs",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm.json",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/ActionProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/Binding.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/Catalog.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/CatalogReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/Desktop.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/DesktopReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/Effects.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/GeometryProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/Inspection.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/Launch.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/LaunchReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/Main.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/Menu.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/MenuBridge.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/MenuSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/NativeOutcome.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/NativeProvider.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/OutputSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/Popup.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/Presentation.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/PresentationReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/Provider.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/ReceiptRouter.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/Replay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/Shell.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/ShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/Surface.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/SurfaceController.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/SurfaceRenderer.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/SurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/Taskbar.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/TaskbarReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/TaskbarShell.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/TaskbarShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/src/UInt64.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/qa/post-close.cjs",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/qa/mutations.py",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/lock",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/i.dat",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/o.dat",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/d.dat",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/UInt64.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/UInt64.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/Binding.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/Binding.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/NativeOutcome.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/Catalog.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/NativeOutcome.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/Catalog.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/ActionProjection.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/Menu.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/ActionProjection.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/Menu.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/GeometryProjection.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/Launch.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/GeometryProjection.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/Launch.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/Effects.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/Provider.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/Effects.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/Provider.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/Taskbar.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/Taskbar.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/ReceiptRouter.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/ReceiptRouter.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/Shell.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/Shell.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/NativeProvider.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/NativeProvider.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/MenuBridge.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/MenuBridge.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/TaskbarShell.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/TaskbarShell.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/Desktop.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/Desktop.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/Surface.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/Surface.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/SurfaceController.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/SurfaceController.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/qa/original/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/qa/original/geometry-fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/qa/original/geometry.cjs",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/qa/original/menu.cjs",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact notification-replaces-correlation/inputs/qa/original/refresh.cjs",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm.json",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/ActionProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/Binding.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/Catalog.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/CatalogReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/Desktop.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/DesktopReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/Effects.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/GeometryProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/Inspection.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/Launch.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/LaunchReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/Main.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/Menu.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/MenuBridge.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/MenuSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/NativeOutcome.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/NativeProvider.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/OutputSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/Popup.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/Presentation.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/PresentationReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/Provider.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/ReceiptRouter.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/Replay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/Shell.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/ShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/Surface.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/SurfaceController.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/SurfaceRenderer.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/SurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/Taskbar.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/TaskbarReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/TaskbarShell.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/TaskbarShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/src/UInt64.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/qa/post-close.cjs",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/qa/mutations.py",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/lock",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/i.dat",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/o.dat",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/d.dat",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/UInt64.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/UInt64.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/Binding.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/Binding.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/Catalog.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/NativeOutcome.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/NativeOutcome.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/Catalog.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/ActionProjection.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/Menu.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/ActionProjection.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/GeometryProjection.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/Menu.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/Launch.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/GeometryProjection.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/Launch.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/Provider.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/Provider.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/Effects.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/Effects.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/Taskbar.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/ReceiptRouter.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/Taskbar.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/ReceiptRouter.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/Shell.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/Shell.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/NativeProvider.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/NativeProvider.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/MenuBridge.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/MenuBridge.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/TaskbarShell.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/TaskbarShell.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/Desktop.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/Desktop.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/Surface.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/Surface.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/SurfaceController.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/SurfaceController.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/qa/original/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/qa/original/geometry-fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/qa/original/geometry.cjs",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/qa/original/menu.cjs",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact changed-geometry-records-retarget/inputs/qa/original/refresh.cjs",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm.json",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/ActionProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/Binding.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/Catalog.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/CatalogReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/Desktop.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/DesktopReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/Effects.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/GeometryProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/Inspection.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/Launch.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/LaunchReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/Main.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/Menu.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/MenuBridge.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/MenuSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/NativeOutcome.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/NativeProvider.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/OutputSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/Popup.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/Presentation.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/PresentationReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/Provider.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/ReceiptRouter.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/Replay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/Shell.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/ShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/Surface.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/SurfaceController.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/SurfaceRenderer.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/SurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/Taskbar.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/TaskbarReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/TaskbarShell.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/TaskbarShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/src/UInt64.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/qa/post-close.cjs",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/qa/mutations.py",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/lock",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/o.dat",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/d.dat",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/i.dat",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/UInt64.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/UInt64.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/Binding.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/Binding.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/Catalog.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/Catalog.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/NativeOutcome.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/Menu.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/NativeOutcome.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/Menu.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/ActionProjection.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/Launch.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/ActionProjection.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/Launch.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/GeometryProjection.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/GeometryProjection.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/Provider.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/Provider.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/Effects.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/Effects.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/ReceiptRouter.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/Taskbar.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/Taskbar.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/ReceiptRouter.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/Shell.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/Shell.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/NativeProvider.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/NativeProvider.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/MenuBridge.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/MenuBridge.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/TaskbarShell.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/TaskbarShell.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/Desktop.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/Desktop.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/Surface.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/Surface.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/SurfaceController.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/SurfaceController.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/qa/original/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/qa/original/geometry-fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/qa/original/geometry.cjs",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/qa/original/menu.cjs",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact fresh-stage-drops-sent-registry/inputs/qa/original/refresh.cjs",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm.json",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/ActionProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/Binding.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/Catalog.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/CatalogReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/Desktop.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/DesktopReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/Effects.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/GeometryProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/Inspection.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/Launch.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/LaunchReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/Main.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/Menu.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/MenuBridge.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/MenuSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/NativeOutcome.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/NativeProvider.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/OutputSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/Popup.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/Presentation.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/PresentationReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/Provider.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/ReceiptRouter.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/Replay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/Shell.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/ShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/Surface.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/SurfaceController.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/SurfaceRenderer.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/SurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/Taskbar.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/TaskbarReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/TaskbarShell.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/TaskbarShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/src/UInt64.elm",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/qa/post-close.cjs",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/qa/mutations.py",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/lock",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/o.dat",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/i.dat",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/d.dat",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/UInt64.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/UInt64.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/Binding.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/Binding.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/Catalog.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/Catalog.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/NativeOutcome.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/NativeOutcome.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/ActionProjection.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/Launch.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/Menu.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/ActionProjection.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/Launch.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/Menu.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/GeometryProjection.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/GeometryProjection.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/Effects.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/Provider.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/Effects.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/Provider.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/Taskbar.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/Taskbar.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/ReceiptRouter.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/ReceiptRouter.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/Shell.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/Shell.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/NativeProvider.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/NativeProvider.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/MenuBridge.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/MenuBridge.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/TaskbarShell.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/TaskbarShell.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/Desktop.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/Desktop.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/Surface.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/Surface.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/SurfaceController.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/SurfaceController.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmo",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmi",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/qa/original/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/qa/original/geometry-fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/qa/original/geometry.cjs",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/qa/original/menu.cjs",
+      "passed": true
+    },
+    {
+      "name": "mutations retained artifact wrong-timer-cancels/inputs/qa/original/refresh.cjs",
+      "passed": true
+    },
+    {
+      "name": "original menu failures remain failures",
+      "passed": true
+    },
+    {
+      "name": "original refresh failures remain failures",
+      "passed": true
+    },
+    {
+      "name": "original geometry fatal is not counted as a pass",
+      "passed": true
+    },
+    {
+      "name": "V58 original hold",
+      "passed": true
+    },
+    {
+      "name": "byte-exact original oracle qa/menu.cjs",
+      "passed": true
+    },
+    {
+      "name": "byte-exact original oracle qa/geometry.cjs",
+      "passed": true
+    },
+    {
+      "name": "byte-exact original oracle qa/refresh.cjs",
+      "passed": true
+    },
+    {
+      "name": "byte-exact original oracle qa/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "byte-exact original oracle qa/geometry-fixtures.json",
+      "passed": true
+    }
+  ]
+}

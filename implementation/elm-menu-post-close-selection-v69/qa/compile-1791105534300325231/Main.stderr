@@ -1,0 +1,24 @@
+-- BAD TUPLE ------------------------------------------------ src/MenuBridge.elm
+
+I only accept tuples with two or three items. This has too many:
+
+225|                                 case (state.prepared,UInt64.next state.preparedSerial,(Menu.snapshot state.menu).menu,shell.effects.observed) of
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+I recommend switching to records. Each item will be named, and you can use the
+`point.x` syntax to access them.
+
+Note: Read <https://elm-lang.org/0.19.2/tuples> for more comprehensive advice on
+working with large chunks of data in Elm.
+
+-- BAD TUPLE ------------------------------------------------ src/MenuBridge.elm
+
+I only accept tuples with two or three items. This has too many:
+
+226|                                     (Nothing,Just token,Just view,Just observed) ->
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+I recommend switching to records. Each item will be named, and you can use the
+`point.x` syntax to access them.
+
+Note: Read <https://elm-lang.org/0.19.2/tuples> for more comprehensive advice on
+working with large chunks of data in Elm.
+

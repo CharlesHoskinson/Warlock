@@ -1,0 +1,35 @@
+{
+  "passed": false,
+  "checks": [
+    {
+      "name": "AUnknown survives B legacy commit and restart then original A receipt frees exactly its target",
+      "passed": false
+    }
+  ],
+  "inputs": {
+    "adapter/durable_ledger.py": "6582d2f41405932d4fdf94a66d9e7a050d9b8ca0e50e69cdac75e884ce886964",
+    "adapter/endpoint.py": "d0ce3b056078d052d42bb6bf1fddf07afec21b1ad732d1289e43d7eaf0f6c51f",
+    "adapter/recovery_journal.py": "34b332a218798406e7b497b7de16a532f6f7e47b021f42c5b7b3016f22483c6b",
+    "SPEC.md": "8a6d1c0a4c3f4e3c9d4f621a0a5edf60c4a17aa3d2f869de753aa223730164f9",
+    "upstream.json": "163fffbad5bb1bf628eb6b022b5ce99742a6278245e597fc28f8371efae49dbf",
+    "qa/ledger-test.py": "e83205599d9a20dba58cbd4301bca01f0f72937b03d180abd2b2caaa49c65167"
+  },
+  "error": "Refused('Ledger allocation replay/order')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-durable-ledger-v70/qa/mutations-1791105767807408371/1/qa/ledger-test.py\", line 55, in <module>\n    check('AUnknown survives B legacy commit and restart then original A receipt frees exactly its target',independent_lifecycle)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-durable-ledger-v70/qa/mutations-1791105767807408371/1/qa/ledger-test.py\", line 26, in check\n    try:fn()\n        ~~^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-durable-ledger-v70/qa/mutations-1791105767807408371/1/qa/ledger-test.py\", line 47, in independent_lifecycle\n    j.settle(outcome(b,a,'Unknown'));eq(j.begin(b,a,2),False)\n                                        ~~~~~~~^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-durable-ledger-v70/qa/mutations-1791105767807408371/1/qa/ledger-1791105768206240252/inputs/adapter/durable_ledger.py\", line 125, in begin\n    if int(intent['request'])<=int(m['request']) or int(intent['generation'])<=int(m['generation']):raise Refused('Ledger allocation replay/order')\n                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nendpoint.Refused: Ledger allocation replay/order\n",
+  "nativeAcceptance": false,
+  "artifacts": {
+    "inputs/SPEC.md": "8a6d1c0a4c3f4e3c9d4f621a0a5edf60c4a17aa3d2f869de753aa223730164f9",
+    "inputs/upstream.json": "163fffbad5bb1bf628eb6b022b5ce99742a6278245e597fc28f8371efae49dbf",
+    "runtime/independent/elm-window-recovery/writer.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtime/independent/elm-window-recovery/host-writer.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtime/independent/elm-window-recovery/fixture/71/writer.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtime/independent/elm-window-recovery/fixture/71/migration-plan.json": "d963b2791d136dd052f52b65204ae400277caa99590d43bf689eed953d9f3ecc",
+    "runtime/independent/elm-window-recovery/fixture/71/migration.json": "82f0b403d9fced6900ad784400dde768e8c5b3284c2230b47b126d5f905dd334",
+    "runtime/independent/elm-window-recovery/fixture/71/host-writer.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtime/independent/elm-window-recovery/fixture/71/ledger-v3.json": "0793c3b11fd4ac131b0e8e33614efcd7caab6f73d9ee0b8155bf56b245224a9f",
+    "inputs/adapter/durable_ledger.py": "6582d2f41405932d4fdf94a66d9e7a050d9b8ca0e50e69cdac75e884ce886964",
+    "inputs/adapter/endpoint.py": "d0ce3b056078d052d42bb6bf1fddf07afec21b1ad732d1289e43d7eaf0f6c51f",
+    "inputs/adapter/recovery_journal.py": "34b332a218798406e7b497b7de16a532f6f7e47b021f42c5b7b3016f22483c6b",
+    "inputs/qa/ledger-test.py": "e83205599d9a20dba58cbd4301bca01f0f72937b03d180abd2b2caaa49c65167"
+  }
+}
