@@ -1,0 +1,1307 @@
+{
+  "passed": false,
+  "scope": "Immutable native596 wire decoder replay plus explicitly synthetic transport/fault controls; no new SO_PEERCRED/native qualification",
+  "checks": [
+    {
+      "name": "producer42-checks-passed",
+      "passed": true
+    },
+    {
+      "name": "immutable-native-proof-fixtures-exist",
+      "passed": true
+    },
+    {
+      "name": "native-wire-20",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-20",
+      "passed": true
+    },
+    {
+      "name": "native-wire-21",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-21",
+      "passed": true
+    },
+    {
+      "name": "native-wire-22",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-22",
+      "passed": true
+    },
+    {
+      "name": "native-wire-24",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-24",
+      "passed": true
+    },
+    {
+      "name": "native-wire-26",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-26",
+      "passed": true
+    },
+    {
+      "name": "native-wire-33",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-33",
+      "passed": true
+    },
+    {
+      "name": "native-wire-34",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-34",
+      "passed": true
+    },
+    {
+      "name": "native-wire-35",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-35",
+      "passed": true
+    },
+    {
+      "name": "native-wire-36",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-36",
+      "passed": true
+    },
+    {
+      "name": "legacy-methods-inherited",
+      "passed": true
+    },
+    {
+      "name": "immutable-proof",
+      "passed": true
+    },
+    {
+      "name": "proof-export-copy",
+      "passed": true
+    },
+    {
+      "name": "duplicate-sequence",
+      "passed": true
+    },
+    {
+      "name": "duplicate-sequence-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "lower-sequence",
+      "passed": true
+    },
+    {
+      "name": "lower-sequence-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "frontend-change-does-not-reset-sequence",
+      "passed": true
+    },
+    {
+      "name": "frontend-change-does-not-reset-sequence-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "missing-protocolVersion",
+      "passed": true
+    },
+    {
+      "name": "missing-protocolVersion-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "missing-kind",
+      "passed": true
+    },
+    {
+      "name": "missing-kind-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "missing-retirementProtocol",
+      "passed": true
+    },
+    {
+      "name": "missing-retirementProtocol-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "missing-operation",
+      "passed": true
+    },
+    {
+      "name": "missing-operation-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "missing-binding",
+      "passed": true
+    },
+    {
+      "name": "missing-binding-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "missing-requestId",
+      "passed": true
+    },
+    {
+      "name": "missing-requestId-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "missing-queriedBinding",
+      "passed": true
+    },
+    {
+      "name": "missing-queriedBinding-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "missing-sequence",
+      "passed": true
+    },
+    {
+      "name": "missing-sequence-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "missing-grantState",
+      "passed": true
+    },
+    {
+      "name": "missing-grantState-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "extra-reply-field",
+      "passed": true
+    },
+    {
+      "name": "extra-reply-field-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-protocolVersion-0",
+      "passed": true
+    },
+    {
+      "name": "bad-protocolVersion-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-protocolVersion-1",
+      "passed": true
+    },
+    {
+      "name": "bad-protocolVersion-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-protocolVersion-2",
+      "passed": true
+    },
+    {
+      "name": "bad-protocolVersion-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-protocolVersion-3",
+      "passed": true
+    },
+    {
+      "name": "bad-protocolVersion-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-retirementProtocol-0",
+      "passed": true
+    },
+    {
+      "name": "bad-retirementProtocol-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-retirementProtocol-1",
+      "passed": true
+    },
+    {
+      "name": "bad-retirementProtocol-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-retirementProtocol-2",
+      "passed": true
+    },
+    {
+      "name": "bad-retirementProtocol-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-retirementProtocol-3",
+      "passed": true
+    },
+    {
+      "name": "bad-retirementProtocol-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-kind-0",
+      "passed": true
+    },
+    {
+      "name": "bad-kind-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-kind-1",
+      "passed": true
+    },
+    {
+      "name": "bad-kind-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-operation-0",
+      "passed": true
+    },
+    {
+      "name": "bad-operation-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-operation-1",
+      "passed": true
+    },
+    {
+      "name": "bad-operation-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-operation-2",
+      "passed": true
+    },
+    {
+      "name": "bad-operation-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-0",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-1",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-2",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-3",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-4",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-4-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-5",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-5-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-6",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-6-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-0",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-1",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-2",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-3",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-4",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-4-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-5",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-5-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-6",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-6-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-7",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-7-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-8",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-8-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-9",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-9-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-10",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-10-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-11",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-11-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-12",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-12-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-0",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-1",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-2",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-3",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-4",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-4-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-5",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-5-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-6",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-6-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-7",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-7-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-8",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-8-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-9",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-9-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-10",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-10-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-11",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-11-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-12",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-12-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-0",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-1",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-2",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-3",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-4",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-4-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-5",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-5-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-6",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-6-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-7",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-7-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-8",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-8-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-9",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-9-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-10",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-10-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-11",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-11-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-12",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-12-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "mismatched-binding-lifetime",
+      "passed": true
+    },
+    {
+      "name": "mismatched-binding-lifetime-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-0",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-1",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-2",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-3",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-4",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-4-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-5",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-5-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-6",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-6-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-7",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-7-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-8",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-8-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-9",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-9-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-10",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-10-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-11",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-11-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-12",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-12-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "mismatched-binding-session",
+      "passed": true
+    },
+    {
+      "name": "mismatched-binding-session-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-0",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-1",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-2",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-3",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-4",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-4-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-5",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-5-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-6",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-6-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-7",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-7-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-8",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-8-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-9",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-9-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-10",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-10-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-11",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-11-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-12",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-12-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "mismatched-binding-frontend",
+      "passed": true
+    },
+    {
+      "name": "mismatched-binding-frontend-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-shape-None",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-shape-None-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-shape-[]",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-shape-[]-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-shape-{'lifetime': '1', 'session': '1'}",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-shape-{'lifetime': '1', 'session': '1'}-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-shape-{'lifetime': '16466285324869842288', 'session': '2', 'frontend': '1', 'extra': '1'}",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-shape-{'lifetime': '16466285324869842288', 'session': '2', 'frontend': '1', 'extra': '1'}-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-0",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-1",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-2",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-3",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-4",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-4-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-5",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-5-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-6",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-6-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-7",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-7-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-8",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-8-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-9",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-9-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-10",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-10-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-11",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-11-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-12",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-12-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "mismatched-queriedBinding-lifetime",
+      "passed": true
+    },
+    {
+      "name": "mismatched-queriedBinding-lifetime-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-0",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-1",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-2",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-3",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-4",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-4-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-5",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-5-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-6",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-6-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-7",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-7-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-8",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-8-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-9",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-9-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-10",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-10-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-11",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-11-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-12",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-12-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "mismatched-queriedBinding-session",
+      "passed": true
+    },
+    {
+      "name": "mismatched-queriedBinding-session-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-0",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-1",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-2",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-3",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-4",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-4-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-5",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-5-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-6",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-6-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-7",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-7-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-8",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-8-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-9",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-9-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-10",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-10-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-11",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-11-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-12",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-12-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "mismatched-queriedBinding-frontend",
+      "passed": true
+    },
+    {
+      "name": "mismatched-queriedBinding-frontend-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-shape-None",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-shape-None-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-shape-[]",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-shape-[]-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-shape-{'lifetime': '1', 'session': '1'}",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-shape-{'lifetime': '1', 'session': '1'}-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-shape-{'lifetime': '16466285324869842288', 'session': '1', 'frontend': '2', 'extra': '1'}",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-shape-{'lifetime': '16466285324869842288', 'session': '1', 'frontend': '2', 'extra': '1'}-watermark-unchanged",
+      "passed": true
+    }
+  ],
+  "error": "AssertionError('mismatched-request-id accepted')"
+}

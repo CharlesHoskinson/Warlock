@@ -1,0 +1,182 @@
+{
+  "passed": true,
+  "controls": [
+    {
+      "name": "queried-binding-guard",
+      "detected": true,
+      "counterexamples": 1,
+      "commands": [
+        {
+          "command": [
+            "npm",
+            "exec",
+            "--yes",
+            "--package=elm@0.19.2-0",
+            "--",
+            "elm",
+            "make",
+            "--optimize",
+            "src/Probe.elm",
+            "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/mutations-1791147737208565786/queried-binding-guard/worker.js"
+          ],
+          "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/mutations-1791147737208565786/queried-binding-guard",
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "node",
+            "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/probe.cjs",
+            "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/mutations-1791147737208565786/queried-binding-guard/worker.js",
+            "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/mutations-1791147737208565786/cases.json",
+            "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/mutations-1791147737208565786/queried-binding-guard/results.json"
+          ],
+          "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/mutations-1791147737208565786/queried-binding-guard",
+          "exitCode": 0
+        }
+      ],
+      "sourceSHA256": "75d91d42fde8c6a99dbe09f00aab60327ba5739aad9086c87fa18159439d5bb0"
+    },
+    {
+      "name": "accepted-action-read-id",
+      "detected": true,
+      "counterexamples": 1,
+      "commands": [
+        {
+          "command": [
+            "npm",
+            "exec",
+            "--yes",
+            "--package=elm@0.19.2-0",
+            "--",
+            "elm",
+            "make",
+            "--optimize",
+            "src/Probe.elm",
+            "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/mutations-1791147737208565786/accepted-action-read-id/worker.js"
+          ],
+          "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/mutations-1791147737208565786/accepted-action-read-id",
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "node",
+            "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/probe.cjs",
+            "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/mutations-1791147737208565786/accepted-action-read-id/worker.js",
+            "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/mutations-1791147737208565786/cases.json",
+            "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/mutations-1791147737208565786/accepted-action-read-id/results.json"
+          ],
+          "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/mutations-1791147737208565786/accepted-action-read-id",
+          "exitCode": 0
+        }
+      ],
+      "sourceSHA256": "0ea89725609a46e091a2f385964ff0a23e9857853c47fa2009d7590ba57e8e27"
+    },
+    {
+      "name": "accepted-geometry-own-revision",
+      "detected": true,
+      "counterexamples": 1,
+      "commands": [
+        {
+          "command": [
+            "npm",
+            "exec",
+            "--yes",
+            "--package=elm@0.19.2-0",
+            "--",
+            "elm",
+            "make",
+            "--optimize",
+            "src/Probe.elm",
+            "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/mutations-1791147737208565786/accepted-geometry-own-revision/worker.js"
+          ],
+          "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/mutations-1791147737208565786/accepted-geometry-own-revision",
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "node",
+            "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/probe.cjs",
+            "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/mutations-1791147737208565786/accepted-geometry-own-revision/worker.js",
+            "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/mutations-1791147737208565786/cases.json",
+            "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/mutations-1791147737208565786/accepted-geometry-own-revision/results.json"
+          ],
+          "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/mutations-1791147737208565786/accepted-geometry-own-revision",
+          "exitCode": 0
+        }
+      ],
+      "sourceSHA256": "ec859fa7588da89a4076fffbb298be5e98d4e9978e1cf8b4d6c51faa0ffdb74c"
+    },
+    {
+      "name": "incorrect-cross-domain-equality",
+      "detected": true,
+      "counterexamples": 4,
+      "commands": [
+        {
+          "command": [
+            "npm",
+            "exec",
+            "--yes",
+            "--package=elm@0.19.2-0",
+            "--",
+            "elm",
+            "make",
+            "--optimize",
+            "src/Probe.elm",
+            "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/mutations-1791147737208565786/incorrect-cross-domain-equality/worker.js"
+          ],
+          "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/mutations-1791147737208565786/incorrect-cross-domain-equality",
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "node",
+            "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/probe.cjs",
+            "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/mutations-1791147737208565786/incorrect-cross-domain-equality/worker.js",
+            "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/mutations-1791147737208565786/cases.json",
+            "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/mutations-1791147737208565786/incorrect-cross-domain-equality/results.json"
+          ],
+          "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/mutations-1791147737208565786/incorrect-cross-domain-equality",
+          "exitCode": 0
+        }
+      ],
+      "sourceSHA256": "cdcbeca780f09e6554521e6023482fc77e713612d8f433dff9163611c8efb915"
+    },
+    {
+      "name": "unknown-history-conflation",
+      "detected": true,
+      "counterexamples": 5,
+      "commands": [
+        {
+          "command": [
+            "npm",
+            "exec",
+            "--yes",
+            "--package=elm@0.19.2-0",
+            "--",
+            "elm",
+            "make",
+            "--optimize",
+            "src/Probe.elm",
+            "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/mutations-1791147737208565786/unknown-history-conflation/worker.js"
+          ],
+          "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/mutations-1791147737208565786/unknown-history-conflation",
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "node",
+            "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/probe.cjs",
+            "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/mutations-1791147737208565786/unknown-history-conflation/worker.js",
+            "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/mutations-1791147737208565786/cases.json",
+            "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/mutations-1791147737208565786/unknown-history-conflation/results.json"
+          ],
+          "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/mutations-1791147737208565786/unknown-history-conflation",
+          "exitCode": 0
+        }
+      ],
+      "sourceSHA256": "ac82a9ee789952c6da69264c1bda7068ce1e4d6d387f7a5eaf45733a223e942c"
+    }
+  ],
+  "primaryCasesSHA256": "21d75b34011be2ffcb84a6b6cd46ae86549221e57e5cdec344b2023d140aefa1",
+  "nativeAcceptance": false
+}

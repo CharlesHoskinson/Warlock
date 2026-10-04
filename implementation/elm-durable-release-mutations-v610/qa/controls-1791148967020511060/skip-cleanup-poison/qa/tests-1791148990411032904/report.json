@@ -1,0 +1,242 @@
+{
+  "passed": false,
+  "checks": [
+    {
+      "name": "unchanged actual C admission producer compiles",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "C Pending imported as Unknown",
+      "passed": true
+    },
+    {
+      "name": "Unknown target blocks before proof",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 1",
+      "passed": true
+    },
+    {
+      "name": "prepare file + rename + root barrier before unlink + admission barrier + final file/rename/root",
+      "passed": true
+    },
+    {
+      "name": "release returned only final durable phase",
+      "passed": true
+    },
+    {
+      "name": "historical Unknown exact and latest never Committed",
+      "passed": true
+    },
+    {
+      "name": "exact admission gone",
+      "passed": true
+    },
+    {
+      "name": "live reservation released",
+      "passed": true
+    },
+    {
+      "name": "independent read IDs revisions retained",
+      "passed": true
+    },
+    {
+      "name": "v5 predecessor remains byte-identical",
+      "passed": true
+    },
+    {
+      "name": "release idempotent across restart",
+      "passed": true
+    },
+    {
+      "name": "fresh valid join preserves immutable first disposition",
+      "passed": true
+    },
+    {
+      "name": "fresh join never relabels stored read IDs",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "late exact C key removed without resurrection",
+      "passed": true
+    },
+    {
+      "name": "retired binding cannot submit different new intent",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "only fresh explicit C-admitted next request can begin",
+      "passed": true
+    },
+    {
+      "name": "new request does not rewrite old history",
+      "passed": true
+    },
+    {
+      "name": "new request blocks duplicate target",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "definitive absence barrier failure propagates Committed",
+      "passed": true
+    },
+    {
+      "name": "inherited absence barrier error poisons Committed",
+      "passed": true
+    },
+    {
+      "name": "absence barrier poison snapshot Committed",
+      "passed": true
+    },
+    {
+      "name": "absence barrier poison begin Committed",
+      "passed": true
+    },
+    {
+      "name": "absence barrier poison release Committed",
+      "passed": true
+    },
+    {
+      "name": "absence barrier corrected on explicit reopen Committed",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "definitive absence barrier failure propagates Refused",
+      "passed": true
+    },
+    {
+      "name": "inherited absence barrier error poisons Refused",
+      "passed": true
+    },
+    {
+      "name": "absence barrier poison snapshot Refused",
+      "passed": true
+    },
+    {
+      "name": "absence barrier poison begin Refused",
+      "passed": true
+    },
+    {
+      "name": "absence barrier poison release Refused",
+      "passed": true
+    },
+    {
+      "name": "absence barrier corrected on explicit reopen Refused",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "latest Unknown is preserved with released history",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "geometry effect protocol retains Unknown",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "populated V5 bytes unchanged Pending",
+      "passed": true
+    },
+    {
+      "name": "populated V5 normalized durably Pending",
+      "passed": true
+    },
+    {
+      "name": "populated predecessor cannot lose reservation Pending",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "populated V5 bytes unchanged Unknown",
+      "passed": true
+    },
+    {
+      "name": "populated V5 normalized durably Unknown",
+      "passed": true
+    },
+    {
+      "name": "populated predecessor cannot lose reservation Unknown",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "populated V5 bytes unchanged Committed",
+      "passed": true
+    },
+    {
+      "name": "populated definitive history retained Committed",
+      "passed": true
+    },
+    {
+      "name": "definitive history survives admission disappearance Committed",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "populated V5 bytes unchanged Refused",
+      "passed": true
+    },
+    {
+      "name": "populated definitive history retained Refused",
+      "passed": true
+    },
+    {
+      "name": "definitive history survives admission disappearance Refused",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "cleanup error propagates Prepared",
+      "passed": true
+    },
+    {
+      "name": "cleanup error poisons Prepared",
+      "passed": false
+    }
+  ],
+  "error": "AssertionError('cleanup error poisons Prepared')"
+}

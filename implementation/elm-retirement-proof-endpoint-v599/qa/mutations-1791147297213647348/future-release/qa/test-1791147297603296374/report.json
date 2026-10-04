@@ -1,0 +1,31 @@
+{
+  "passed": false,
+  "scope": "Immutable native596 wire decoder replay plus explicitly synthetic transport/fault controls; no new SO_PEERCRED/native qualification",
+  "checks": [
+    {
+      "name": "producer42-checks-passed",
+      "passed": true
+    },
+    {
+      "name": "immutable-native-proof-fixtures-exist",
+      "passed": true
+    },
+    {
+      "name": "native-wire-20",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-20",
+      "passed": true
+    },
+    {
+      "name": "native-wire-21",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-21",
+      "passed": false
+    }
+  ],
+  "error": "AssertionError('native-release-policy-21')"
+}

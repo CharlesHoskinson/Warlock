@@ -1,0 +1,71 @@
+{
+  "passed": true,
+  "controls": [
+    {
+      "name": "inflight-binding",
+      "syntaxValid": true,
+      "exitCode": 1,
+      "error": "AssertionError('inflight-binding-replacement accepted')",
+      "report": "qa/mutations-1791147297213647348/inflight-binding/qa/test-1791147297254651240/report.json"
+    },
+    {
+      "name": "caller-correlation",
+      "syntaxValid": true,
+      "exitCode": 1,
+      "error": "AssertionError('bad-binding-lifetime-0 accepted')",
+      "report": "qa/mutations-1791147297213647348/caller-correlation/qa/test-1791147297302237527/report.json"
+    },
+    {
+      "name": "target-correlation",
+      "syntaxValid": true,
+      "exitCode": 1,
+      "error": "AssertionError('bad-queriedBinding-lifetime-0 accepted')",
+      "report": "qa/mutations-1791147297213647348/target-correlation/qa/test-1791147297344568864/report.json"
+    },
+    {
+      "name": "request-correlation",
+      "syntaxValid": true,
+      "exitCode": 1,
+      "error": "AssertionError('mismatched-request-id accepted')",
+      "report": "qa/mutations-1791147297213647348/request-correlation/qa/test-1791147297389541926/report.json"
+    },
+    {
+      "name": "operation-correlation",
+      "syntaxValid": true,
+      "exitCode": 1,
+      "error": "AssertionError('bad-operation-0 accepted')",
+      "report": "qa/mutations-1791147297213647348/operation-correlation/qa/test-1791147297436618759/report.json"
+    },
+    {
+      "name": "boolean-protocol",
+      "syntaxValid": true,
+      "exitCode": 1,
+      "error": "AssertionError('bad-retirementProtocol-0 accepted')",
+      "report": "qa/mutations-1791147297213647348/boolean-protocol/qa/test-1791147297479346291/report.json"
+    },
+    {
+      "name": "duplicate-proof",
+      "syntaxValid": true,
+      "exitCode": 1,
+      "error": "AssertionError('duplicate-sequence accepted')",
+      "report": "qa/mutations-1791147297213647348/duplicate-proof/qa/test-1791147297521651642/report.json"
+    },
+    {
+      "name": "retired-only",
+      "syntaxValid": true,
+      "exitCode": 1,
+      "error": "AssertionError('bad-grantState-0 accepted')",
+      "report": "qa/mutations-1791147297213647348/retired-only/qa/test-1791147297562105504/report.json"
+    },
+    {
+      "name": "future-release",
+      "syntaxValid": true,
+      "exitCode": 1,
+      "error": "AssertionError('native-release-policy-21')",
+      "report": "qa/mutations-1791147297213647348/future-release/qa/test-1791147297603296374/report.json"
+    }
+  ],
+  "scope": "Python decoder guard controls, synthetic transport only",
+  "mutantsRejected": 9,
+  "endpointSHA256": "4b60a6c7e43aade3f2ce59495600f3b418b781865a7289dae53a189388f5c3f0"
+}

@@ -1,0 +1,17 @@
+
+  tests
+    1) futureProofRefusedTest failed after 1 test(s)
+
+  1 failed
+
+  1) futureProofRefusedTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/qa/mutants/future-proof/tests.qnt:14:123
+        14:  run futureProofRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof({kind:1,key:1,epoch:1,barrier:3}))).then(all {assert(not(s.proof) and allProps),fire(Crash)})
+                                                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xeb2c --match=futureProofRefusedTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/qa/mutants/future-proof/tests.qnt
+error: Tests failed

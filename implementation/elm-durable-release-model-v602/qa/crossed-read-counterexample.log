@@ -1,0 +1,17 @@
+
+  tests
+    1) crossedRequestsRefusedTest failed after 1 test(s)
+
+  1 failed
+
+  1) crossedRequestsRefusedTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/qa/mutants/crossed-read/tests.qnt:16:262
+        16:  run crossedRequestsRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof({kind:1,key:1,epoch:1,barrier:1}))).then(fire(RequestReads)).then(fire(Observe({kind:1,request:12,epoch:1,seq:2}))).then(fire(Observe({kind:2,request:11,epoch:1,seq:2}))).then(all {assert(not(s.actionRead) and not(s.geometry) and allProps),fire(Crash)})
+                                                                                                                                                                                                                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xeb2c --match=crossedRequestsRefusedTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/qa/mutants/crossed-read/tests.qnt
+error: Tests failed

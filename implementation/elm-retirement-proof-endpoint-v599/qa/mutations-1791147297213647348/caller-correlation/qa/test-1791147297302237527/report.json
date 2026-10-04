@@ -1,0 +1,571 @@
+{
+  "passed": false,
+  "scope": "Immutable native596 wire decoder replay plus explicitly synthetic transport/fault controls; no new SO_PEERCRED/native qualification",
+  "checks": [
+    {
+      "name": "producer42-checks-passed",
+      "passed": true
+    },
+    {
+      "name": "immutable-native-proof-fixtures-exist",
+      "passed": true
+    },
+    {
+      "name": "native-wire-20",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-20",
+      "passed": true
+    },
+    {
+      "name": "native-wire-21",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-21",
+      "passed": true
+    },
+    {
+      "name": "native-wire-22",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-22",
+      "passed": true
+    },
+    {
+      "name": "native-wire-24",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-24",
+      "passed": true
+    },
+    {
+      "name": "native-wire-26",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-26",
+      "passed": true
+    },
+    {
+      "name": "native-wire-33",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-33",
+      "passed": true
+    },
+    {
+      "name": "native-wire-34",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-34",
+      "passed": true
+    },
+    {
+      "name": "native-wire-35",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-35",
+      "passed": true
+    },
+    {
+      "name": "native-wire-36",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-36",
+      "passed": true
+    },
+    {
+      "name": "legacy-methods-inherited",
+      "passed": true
+    },
+    {
+      "name": "immutable-proof",
+      "passed": true
+    },
+    {
+      "name": "proof-export-copy",
+      "passed": true
+    },
+    {
+      "name": "duplicate-sequence",
+      "passed": true
+    },
+    {
+      "name": "duplicate-sequence-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "lower-sequence",
+      "passed": true
+    },
+    {
+      "name": "lower-sequence-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "frontend-change-does-not-reset-sequence",
+      "passed": true
+    },
+    {
+      "name": "frontend-change-does-not-reset-sequence-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "missing-protocolVersion",
+      "passed": true
+    },
+    {
+      "name": "missing-protocolVersion-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "missing-kind",
+      "passed": true
+    },
+    {
+      "name": "missing-kind-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "missing-retirementProtocol",
+      "passed": true
+    },
+    {
+      "name": "missing-retirementProtocol-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "missing-operation",
+      "passed": true
+    },
+    {
+      "name": "missing-operation-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "missing-binding",
+      "passed": true
+    },
+    {
+      "name": "missing-binding-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "missing-requestId",
+      "passed": true
+    },
+    {
+      "name": "missing-requestId-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "missing-queriedBinding",
+      "passed": true
+    },
+    {
+      "name": "missing-queriedBinding-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "missing-sequence",
+      "passed": true
+    },
+    {
+      "name": "missing-sequence-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "missing-grantState",
+      "passed": true
+    },
+    {
+      "name": "missing-grantState-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "extra-reply-field",
+      "passed": true
+    },
+    {
+      "name": "extra-reply-field-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-protocolVersion-0",
+      "passed": true
+    },
+    {
+      "name": "bad-protocolVersion-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-protocolVersion-1",
+      "passed": true
+    },
+    {
+      "name": "bad-protocolVersion-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-protocolVersion-2",
+      "passed": true
+    },
+    {
+      "name": "bad-protocolVersion-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-protocolVersion-3",
+      "passed": true
+    },
+    {
+      "name": "bad-protocolVersion-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-retirementProtocol-0",
+      "passed": true
+    },
+    {
+      "name": "bad-retirementProtocol-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-retirementProtocol-1",
+      "passed": true
+    },
+    {
+      "name": "bad-retirementProtocol-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-retirementProtocol-2",
+      "passed": true
+    },
+    {
+      "name": "bad-retirementProtocol-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-retirementProtocol-3",
+      "passed": true
+    },
+    {
+      "name": "bad-retirementProtocol-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-kind-0",
+      "passed": true
+    },
+    {
+      "name": "bad-kind-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-kind-1",
+      "passed": true
+    },
+    {
+      "name": "bad-kind-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-operation-0",
+      "passed": true
+    },
+    {
+      "name": "bad-operation-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-operation-1",
+      "passed": true
+    },
+    {
+      "name": "bad-operation-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-operation-2",
+      "passed": true
+    },
+    {
+      "name": "bad-operation-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-0",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-1",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-2",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-3",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-4",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-4-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-5",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-5-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-6",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-6-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-0",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-1",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-2",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-3",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-4",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-4-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-5",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-5-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-6",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-6-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-7",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-7-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-8",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-8-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-9",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-9-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-10",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-10-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-11",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-11-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-12",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-12-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-0",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-1",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-2",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-3",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-4",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-4-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-5",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-5-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-6",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-6-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-7",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-7-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-8",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-8-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-9",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-9-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-10",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-10-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-11",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-11-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-12",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-12-watermark-unchanged",
+      "passed": true
+    }
+  ],
+  "error": "AssertionError('bad-binding-lifetime-0 accepted')"
+}

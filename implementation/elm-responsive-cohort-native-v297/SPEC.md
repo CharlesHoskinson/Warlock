@@ -1,0 +1,3 @@
+Original183 current native recovery/click/cohort/replacement/cancellation oracle, all check calls unchanged. Exact231/205/206/AQ155 and sealed264 runtime. Strengthen both fault signals to verified PIDFD, original6s absolute deadline and empty clients before unload. Current262 normative contract, no production or oracle relaxation; original241 failure stays frozen.
+
+Fresh297 applies original18333static/40actual recovery checks to exact278 assets sealed296. Parent294473GUI/280893bounds accepted. Original6s/PIDFD/exactapp/geometry/bar48/realnativeRestart/secondfailurecancel/normalownedcohort cleanup assertions unchanged. Old-packet guard remains local endpoint only; Unknown/serveroldgrant/fullrelease separate.

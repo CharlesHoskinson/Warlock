@@ -1,0 +1,400 @@
+{
+  "sourceHeld": true,
+  "cpuAccepted": true,
+  "nativeAcceptance": false,
+  "syntheticTransportQualified": false,
+  "durableReservationReleaseAccepted": false,
+  "fullRoadmapAccepted": false,
+  "scope": "Strict actual Python decoder replay; immutable native596 wires and synthetic transport controls only",
+  "testReport": "qa/test-1791147297220045657/report.json",
+  "mutationReport": "qa/mutations-1791147297213647348/report.json",
+  "checks": 625,
+  "nativeWireFixtures": 9,
+  "syntaxValidMutationControls": 9,
+  "files": {
+    "HANDOFF.md": {
+      "sha256": "69e763a36f81758cb667e97f950fe00479f58e4ffbbdcb0d0514b27ceb4e8f6c",
+      "size": 1593
+    },
+    "SPEC.md": {
+      "sha256": "0e6182b02e1e580e85c67cc880969686857f82d3a30b780e327d8984050e703a",
+      "size": 4029
+    },
+    "adapter/effect_endpoint.py": {
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985
+    },
+    "adapter/endpoint.py": {
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129
+    },
+    "adapter/grant_endpoint.py": {
+      "sha256": "4b60a6c7e43aade3f2ce59495600f3b418b781865a7289dae53a189388f5c3f0",
+      "size": 4610
+    },
+    "origin.json": {
+      "sha256": "362f87757e273ca287434b77aecc21d3d4e113352de4ef9ae6e841e3f3c2f1ff",
+      "size": 887
+    },
+    "qa/fixtures/native596-report.json": {
+      "sha256": "8af9abfdad0f4c25f74eb2458df4624b1a8d1da6972d33f11884d2c52801caf8",
+      "size": 276698
+    },
+    "qa/freeze.py": {
+      "sha256": "59ebf7d5aac774b57125f291e88182cc38ea467b178dae4c6263748ed719183a",
+      "size": 1540
+    },
+    "qa/mutations-1791147297213647348/boolean-protocol/adapter/effect_endpoint.py": {
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985
+    },
+    "qa/mutations-1791147297213647348/boolean-protocol/adapter/endpoint.py": {
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129
+    },
+    "qa/mutations-1791147297213647348/boolean-protocol/adapter/grant_endpoint.py": {
+      "sha256": "d6b065943cd0dfef62aa2dee246e320404f97367c0279056e735eddeb86a9a03",
+      "size": 4568
+    },
+    "qa/mutations-1791147297213647348/boolean-protocol/qa/fixtures/native596-report.json": {
+      "sha256": "8af9abfdad0f4c25f74eb2458df4624b1a8d1da6972d33f11884d2c52801caf8",
+      "size": 276698
+    },
+    "qa/mutations-1791147297213647348/boolean-protocol/qa/test-1791147297479346291/native-wire-fixtures.json": {
+      "sha256": "3535f6cf139bd604a9376dee696e6be32702eda56b567657d33d509849c06e33",
+      "size": 8004
+    },
+    "qa/mutations-1791147297213647348/boolean-protocol/qa/test-1791147297479346291/report.json": {
+      "sha256": "bd43450fb52669b654ced1e08235f2e6617efb1a856c63cdd4b2b19e8a3c231a",
+      "size": 4691
+    },
+    "qa/mutations-1791147297213647348/boolean-protocol/qa/test.py": {
+      "sha256": "d3ba404ce14b7da52b80fd9c3c47abe97557c48bd6a5ee4599cb08e438766a0f",
+      "size": 8397
+    },
+    "qa/mutations-1791147297213647348/boolean-protocol/stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/mutations-1791147297213647348/boolean-protocol/stdout": {
+      "sha256": "f8b55f967841e0be01c14886aec17c30c809711ad3a8f8f294d2d6c7cf112bac",
+      "size": 288
+    },
+    "qa/mutations-1791147297213647348/caller-correlation/adapter/effect_endpoint.py": {
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985
+    },
+    "qa/mutations-1791147297213647348/caller-correlation/adapter/endpoint.py": {
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129
+    },
+    "qa/mutations-1791147297213647348/caller-correlation/adapter/grant_endpoint.py": {
+      "sha256": "b10216652af360f77990a93ce55c72e6751c18a30452be589f79d7ca8ac455a9",
+      "size": 4563
+    },
+    "qa/mutations-1791147297213647348/caller-correlation/qa/fixtures/native596-report.json": {
+      "sha256": "8af9abfdad0f4c25f74eb2458df4624b1a8d1da6972d33f11884d2c52801caf8",
+      "size": 276698
+    },
+    "qa/mutations-1791147297213647348/caller-correlation/qa/test-1791147297302237527/native-wire-fixtures.json": {
+      "sha256": "3535f6cf139bd604a9376dee696e6be32702eda56b567657d33d509849c06e33",
+      "size": 8004
+    },
+    "qa/mutations-1791147297213647348/caller-correlation/qa/test-1791147297302237527/report.json": {
+      "sha256": "db98d080165c8a15507000eeacbebe286c6eddd74bb4715de032e0411059aa67",
+      "size": 11625
+    },
+    "qa/mutations-1791147297213647348/caller-correlation/qa/test.py": {
+      "sha256": "d3ba404ce14b7da52b80fd9c3c47abe97557c48bd6a5ee4599cb08e438766a0f",
+      "size": 8397
+    },
+    "qa/mutations-1791147297213647348/caller-correlation/stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/mutations-1791147297213647348/caller-correlation/stdout": {
+      "sha256": "ad1348a8394d23dea17e493a996a942be5e3a72873a79f1c10c6b91a5f9b5c94",
+      "size": 289
+    },
+    "qa/mutations-1791147297213647348/duplicate-proof/adapter/effect_endpoint.py": {
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985
+    },
+    "qa/mutations-1791147297213647348/duplicate-proof/adapter/endpoint.py": {
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129
+    },
+    "qa/mutations-1791147297213647348/duplicate-proof/adapter/grant_endpoint.py": {
+      "sha256": "61ec2deaeadf738fc886b742832484687219bb0eb79339ee2941ba80e5c4e61e",
+      "size": 4609
+    },
+    "qa/mutations-1791147297213647348/duplicate-proof/qa/fixtures/native596-report.json": {
+      "sha256": "8af9abfdad0f4c25f74eb2458df4624b1a8d1da6972d33f11884d2c52801caf8",
+      "size": 276698
+    },
+    "qa/mutations-1791147297213647348/duplicate-proof/qa/test-1791147297521651642/native-wire-fixtures.json": {
+      "sha256": "3535f6cf139bd604a9376dee696e6be32702eda56b567657d33d509849c06e33",
+      "size": 8004
+    },
+    "qa/mutations-1791147297213647348/duplicate-proof/qa/test-1791147297521651642/report.json": {
+      "sha256": "51489cba3c9f661967ae107125c40ef934ca72214d9f8c8196c3df4bca1d11fd",
+      "size": 1901
+    },
+    "qa/mutations-1791147297213647348/duplicate-proof/qa/test.py": {
+      "sha256": "d3ba404ce14b7da52b80fd9c3c47abe97557c48bd6a5ee4599cb08e438766a0f",
+      "size": 8397
+    },
+    "qa/mutations-1791147297213647348/duplicate-proof/stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/mutations-1791147297213647348/duplicate-proof/stdout": {
+      "sha256": "832f672aae3001843e55f4b62cfc75f1ada4a317ffd85c2b1714c518b3fd5665",
+      "size": 281
+    },
+    "qa/mutations-1791147297213647348/future-release/adapter/effect_endpoint.py": {
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985
+    },
+    "qa/mutations-1791147297213647348/future-release/adapter/endpoint.py": {
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129
+    },
+    "qa/mutations-1791147297213647348/future-release/adapter/grant_endpoint.py": {
+      "sha256": "3cafe608521987fc564afa9ab3a7941cf8b157baa6790c4ac6723c9a24296281",
+      "size": 4585
+    },
+    "qa/mutations-1791147297213647348/future-release/qa/fixtures/native596-report.json": {
+      "sha256": "8af9abfdad0f4c25f74eb2458df4624b1a8d1da6972d33f11884d2c52801caf8",
+      "size": 276698
+    },
+    "qa/mutations-1791147297213647348/future-release/qa/test-1791147297603296374/native-wire-fixtures.json": {
+      "sha256": "3535f6cf139bd604a9376dee696e6be32702eda56b567657d33d509849c06e33",
+      "size": 8004
+    },
+    "qa/mutations-1791147297213647348/future-release/qa/test-1791147297603296374/report.json": {
+      "sha256": "e66e5294f5d696bd770ddebbedec4e3aead16e26db3fb1944d0167cb0a6b6d1d",
+      "size": 693
+    },
+    "qa/mutations-1791147297213647348/future-release/qa/test.py": {
+      "sha256": "d3ba404ce14b7da52b80fd9c3c47abe97557c48bd6a5ee4599cb08e438766a0f",
+      "size": 8397
+    },
+    "qa/mutations-1791147297213647348/future-release/stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/mutations-1791147297213647348/future-release/stdout": {
+      "sha256": "4bdf447716fac2c3be7b33ea553cdc4fbc4abc9d1638ac82ea510fdbefc8c855",
+      "size": 276
+    },
+    "qa/mutations-1791147297213647348/inflight-binding/adapter/effect_endpoint.py": {
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985
+    },
+    "qa/mutations-1791147297213647348/inflight-binding/adapter/endpoint.py": {
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129
+    },
+    "qa/mutations-1791147297213647348/inflight-binding/adapter/grant_endpoint.py": {
+      "sha256": "dbf545ce7ba78bb6198c835724eee469943e94ff73959b02f2ce9bf9183c4e5d",
+      "size": 4554
+    },
+    "qa/mutations-1791147297213647348/inflight-binding/qa/fixtures/native596-report.json": {
+      "sha256": "8af9abfdad0f4c25f74eb2458df4624b1a8d1da6972d33f11884d2c52801caf8",
+      "size": 276698
+    },
+    "qa/mutations-1791147297213647348/inflight-binding/qa/test-1791147297254651240/native-wire-fixtures.json": {
+      "sha256": "3535f6cf139bd604a9376dee696e6be32702eda56b567657d33d509849c06e33",
+      "size": 8004
+    },
+    "qa/mutations-1791147297213647348/inflight-binding/qa/test-1791147297254651240/report.json": {
+      "sha256": "66eac5fbde7606589f0d3b970823a7befce741b9a47cae36d8673b50180f8933",
+      "size": 55087
+    },
+    "qa/mutations-1791147297213647348/inflight-binding/qa/test.py": {
+      "sha256": "d3ba404ce14b7da52b80fd9c3c47abe97557c48bd6a5ee4599cb08e438766a0f",
+      "size": 8397
+    },
+    "qa/mutations-1791147297213647348/inflight-binding/stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/mutations-1791147297213647348/inflight-binding/stdout": {
+      "sha256": "6b21033f83e760ff39bc5a7012adfa2c0fb3fe81bb0286c358614d8f2a809b6b",
+      "size": 293
+    },
+    "qa/mutations-1791147297213647348/operation-correlation/adapter/effect_endpoint.py": {
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985
+    },
+    "qa/mutations-1791147297213647348/operation-correlation/adapter/endpoint.py": {
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129
+    },
+    "qa/mutations-1791147297213647348/operation-correlation/adapter/grant_endpoint.py": {
+      "sha256": "c20c87d64fc9e803010e49adb8c9e21bdae86641e97ced411cd6edc8b195291e",
+      "size": 4581
+    },
+    "qa/mutations-1791147297213647348/operation-correlation/qa/fixtures/native596-report.json": {
+      "sha256": "8af9abfdad0f4c25f74eb2458df4624b1a8d1da6972d33f11884d2c52801caf8",
+      "size": 276698
+    },
+    "qa/mutations-1791147297213647348/operation-correlation/qa/test-1791147297436618759/native-wire-fixtures.json": {
+      "sha256": "3535f6cf139bd604a9376dee696e6be32702eda56b567657d33d509849c06e33",
+      "size": 8004
+    },
+    "qa/mutations-1791147297213647348/operation-correlation/qa/test-1791147297436618759/report.json": {
+      "sha256": "6ef032f99493cd6fe10c75ab4133d3441f5ab4b9b2162ad2c4b85f1eb26ae80f",
+      "size": 5658
+    },
+    "qa/mutations-1791147297213647348/operation-correlation/qa/test.py": {
+      "sha256": "d3ba404ce14b7da52b80fd9c3c47abe97557c48bd6a5ee4599cb08e438766a0f",
+      "size": 8397
+    },
+    "qa/mutations-1791147297213647348/operation-correlation/stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/mutations-1791147297213647348/operation-correlation/stdout": {
+      "sha256": "e41d8ca263eb21fb600e81f074f5d560180354701be00caf084ed84df0c8ff5b",
+      "size": 284
+    },
+    "qa/mutations-1791147297213647348/report.json": {
+      "sha256": "b2e2ee1e86b2be68b8afe324ec4f06892936b4be290e96de226ef0d1091be304",
+      "size": 2662
+    },
+    "qa/mutations-1791147297213647348/request-correlation/adapter/effect_endpoint.py": {
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985
+    },
+    "qa/mutations-1791147297213647348/request-correlation/adapter/endpoint.py": {
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129
+    },
+    "qa/mutations-1791147297213647348/request-correlation/adapter/grant_endpoint.py": {
+      "sha256": "09b6afe91094b5fecfe3ecd19ce32edd05e0216bdbd4d27bf6212eff27ab1565",
+      "size": 4580
+    },
+    "qa/mutations-1791147297213647348/request-correlation/qa/fixtures/native596-report.json": {
+      "sha256": "8af9abfdad0f4c25f74eb2458df4624b1a8d1da6972d33f11884d2c52801caf8",
+      "size": 276698
+    },
+    "qa/mutations-1791147297213647348/request-correlation/qa/test-1791147297389541926/native-wire-fixtures.json": {
+      "sha256": "3535f6cf139bd604a9376dee696e6be32702eda56b567657d33d509849c06e33",
+      "size": 8004
+    },
+    "qa/mutations-1791147297213647348/request-correlation/qa/test-1791147297389541926/report.json": {
+      "sha256": "6dcaa48f9ff7d63e9f94bd25d2da4be4110807991f320c4a1755d1712a1c9a3e",
+      "size": 28188
+    },
+    "qa/mutations-1791147297213647348/request-correlation/qa/test.py": {
+      "sha256": "d3ba404ce14b7da52b80fd9c3c47abe97557c48bd6a5ee4599cb08e438766a0f",
+      "size": 8397
+    },
+    "qa/mutations-1791147297213647348/request-correlation/stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/mutations-1791147297213647348/request-correlation/stdout": {
+      "sha256": "c0002d13c0471d9bbd28a607ea95a046991306124a08986934cd317e65ddbc70",
+      "size": 289
+    },
+    "qa/mutations-1791147297213647348/retired-only/adapter/effect_endpoint.py": {
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985
+    },
+    "qa/mutations-1791147297213647348/retired-only/adapter/endpoint.py": {
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129
+    },
+    "qa/mutations-1791147297213647348/retired-only/adapter/grant_endpoint.py": {
+      "sha256": "3be862daf2ab8f56ed0ad9310623c8442e26a4adb6de0746d64dfddd74d32e71",
+      "size": 4571
+    },
+    "qa/mutations-1791147297213647348/retired-only/qa/fixtures/native596-report.json": {
+      "sha256": "8af9abfdad0f4c25f74eb2458df4624b1a8d1da6972d33f11884d2c52801caf8",
+      "size": 276698
+    },
+    "qa/mutations-1791147297213647348/retired-only/qa/test-1791147297562105504/native-wire-fixtures.json": {
+      "sha256": "3535f6cf139bd604a9376dee696e6be32702eda56b567657d33d509849c06e33",
+      "size": 8004
+    },
+    "qa/mutations-1791147297213647348/retired-only/qa/test-1791147297562105504/report.json": {
+      "sha256": "0ec85d40bd68facff9013a4dbe9faaf8d8d0089377eca9798a3c4c15be28e8ee",
+      "size": 6121
+    },
+    "qa/mutations-1791147297213647348/retired-only/qa/test.py": {
+      "sha256": "d3ba404ce14b7da52b80fd9c3c47abe97557c48bd6a5ee4599cb08e438766a0f",
+      "size": 8397
+    },
+    "qa/mutations-1791147297213647348/retired-only/stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/mutations-1791147297213647348/retired-only/stdout": {
+      "sha256": "98b1b008d7bb8e793d944b1ccd7b3d3a438f8ae2d04bf2ee3b8d11201776981a",
+      "size": 276
+    },
+    "qa/mutations-1791147297213647348/target-correlation/adapter/effect_endpoint.py": {
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985
+    },
+    "qa/mutations-1791147297213647348/target-correlation/adapter/endpoint.py": {
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129
+    },
+    "qa/mutations-1791147297213647348/target-correlation/adapter/grant_endpoint.py": {
+      "sha256": "37b9e689cf6a44495b93da9f7dd19948217fdda3a32fd6213cc95c912be652f7",
+      "size": 4558
+    },
+    "qa/mutations-1791147297213647348/target-correlation/qa/fixtures/native596-report.json": {
+      "sha256": "8af9abfdad0f4c25f74eb2458df4624b1a8d1da6972d33f11884d2c52801caf8",
+      "size": 276698
+    },
+    "qa/mutations-1791147297213647348/target-correlation/qa/test-1791147297344568864/native-wire-fixtures.json": {
+      "sha256": "3535f6cf139bd604a9376dee696e6be32702eda56b567657d33d509849c06e33",
+      "size": 8004
+    },
+    "qa/mutations-1791147297213647348/target-correlation/qa/test-1791147297344568864/report.json": {
+      "sha256": "1edfab6efe28981f4798da5e8faf692c95ac32bdea709deeeea613bcc37b042b",
+      "size": 19592
+    },
+    "qa/mutations-1791147297213647348/target-correlation/qa/test.py": {
+      "sha256": "d3ba404ce14b7da52b80fd9c3c47abe97557c48bd6a5ee4599cb08e438766a0f",
+      "size": 8397
+    },
+    "qa/mutations-1791147297213647348/target-correlation/stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/mutations-1791147297213647348/target-correlation/stdout": {
+      "sha256": "7a2022a728726995edf42e2fe8ed7270725711dc9ba5b126769e78aad0a24108",
+      "size": 296
+    },
+    "qa/mutations.py": {
+      "sha256": "d52e9873f3ee32c43f3a75f9aae9da3a7d81bf572ca0f3a2a733343d83faed16",
+      "size": 2627
+    },
+    "qa/test-1791147207992986044/native-wire-fixtures.json": {
+      "sha256": "3535f6cf139bd604a9376dee696e6be32702eda56b567657d33d509849c06e33",
+      "size": 8004
+    },
+    "qa/test-1791147207992986044/report.json": {
+      "sha256": "b35982202b7edc593a12580370adfb4af921c678e81acc4e299897470799ae44",
+      "size": 56165
+    },
+    "qa/test-1791147297220045657/native-wire-fixtures.json": {
+      "sha256": "3535f6cf139bd604a9376dee696e6be32702eda56b567657d33d509849c06e33",
+      "size": 8004
+    },
+    "qa/test-1791147297220045657/report.json": {
+      "sha256": "7a7613d3554672bb73d064c6170250f6a50a4bf59d232a27814b53f6d7645334",
+      "size": 56474
+    },
+    "qa/test.py": {
+      "sha256": "d3ba404ce14b7da52b80fd9c3c47abe97557c48bd6a5ee4599cb08e438766a0f",
+      "size": 8397
+    }
+  }
+}

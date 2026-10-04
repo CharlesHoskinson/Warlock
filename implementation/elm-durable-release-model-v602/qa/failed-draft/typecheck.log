@@ -1,0 +1,1296 @@
+
+ Error [QNT000]: extraneous input '(' expecting {'}', 'const', 'var', 'assume', 'val', 'pure', 'type', 'def', 'action', 'run', 'temporal', 'nondet', 'import', 'export', DOCCOMMENT}
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:16:181
+  16:  run crossedRequestsRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,1))).then(fire(RequestReads)).then(fire(Observe(1,12,1,2))).then(fire(Observe(2,11,1,2))).then(all {assert(not(s.action) and not(s.geometry) and allProps),fire(Crash)})
+                                                                                                                                                                                          ^
+
+
+ Error [QNT000]: extraneous input ')' expecting {<EOF>, 'module', DOCCOMMENT}
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:16:254
+  16:  run crossedRequestsRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,1))).then(fire(RequestReads)).then(fire(Observe(1,12,1,2))).then(fire(Observe(2,11,1,2))).then(all {assert(not(s.action) and not(s.geometry) and allProps),fire(Crash)})
+                                                                                                                                                                                                                                                                   ^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:3:26
+  3:  run normalReleaseTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(s.effect and s.ack and not(reserved(s)) and allProps),fire(Crash)})
+                              ^^^^
+
+
+ Error [QNT404]: Name 'establish' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:3:36
+  3:  run normalReleaseTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(s.effect and s.ack and not(reserved(s)) and allProps),fire(Crash)})
+                                        ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'prepare' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:3:52
+  3:  run normalReleaseTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(s.effect and s.ack and not(reserved(s)) and allProps),fire(Crash)})
+                                                        ^^^^^^^
+
+
+ Error [QNT404]: Name 'finish' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:3:66
+  3:  run normalReleaseTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(s.effect and s.ack and not(reserved(s)) and allProps),fire(Crash)})
+                                                                      ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:3:79
+  3:  run normalReleaseTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(s.effect and s.ack and not(reserved(s)) and allProps),fire(Crash)})
+                                                                                   ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Ack' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:3:84
+  3:  run normalReleaseTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(s.effect and s.ack and not(reserved(s)) and allProps),fire(Crash)})
+                                                                                        ^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:3:95
+  3:  run normalReleaseTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(s.effect and s.ack and not(reserved(s)) and allProps),fire(Crash)})
+                                                                                                   ^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Explicit' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:3:100
+  3:  run normalReleaseTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(s.effect and s.ack and not(reserved(s)) and allProps),fire(Crash)})
+                                                                                                        ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:3:131
+  3:  run normalReleaseTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(s.effect and s.ack and not(reserved(s)) and allProps),fire(Crash)})
+                                                                                                                                       ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:3:144
+  3:  run normalReleaseTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(s.effect and s.ack and not(reserved(s)) and allProps),fire(Crash)})
+                                                                                                                                                    ^
+
+
+ Error [QNT404]: Name 'reserved' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:3:158
+  3:  run normalReleaseTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(s.effect and s.ack and not(reserved(s)) and allProps),fire(Crash)})
+                                                                                                                                                                  ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:3:167
+  3:  run normalReleaseTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(s.effect and s.ack and not(reserved(s)) and allProps),fire(Crash)})
+                                                                                                                                                                           ^
+
+
+ Error [QNT404]: Name 'allProps' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:3:175
+  3:  run normalReleaseTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(s.effect and s.ack and not(reserved(s)) and allProps),fire(Crash)})
+                                                                                                                                                                                   ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:3:185
+  3:  run normalReleaseTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(s.effect and s.ack and not(reserved(s)) and allProps),fire(Crash)})
+                                                                                                                                                                                             ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Crash' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:3:190
+  3:  run normalReleaseTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(s.effect and s.ack and not(reserved(s)) and allProps),fire(Crash)})
+                                                                                                                                                                                                  ^^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:4:38
+  4:  run preparedCrashStaysBlockedTest = init.then(establish).then(prepare).then(fire(Crash)).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(reserved(s) and not(s.ack) and not(s.effect) and allProps),finish}).then(fire(Ack)).then(all {assert(s.ack and allProps),fire(Explicit(2))})
+                                          ^^^^
+
+
+ Error [QNT404]: Name 'establish' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:4:48
+  4:  run preparedCrashStaysBlockedTest = init.then(establish).then(prepare).then(fire(Crash)).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(reserved(s) and not(s.ack) and not(s.effect) and allProps),finish}).then(fire(Ack)).then(all {assert(s.ack and allProps),fire(Explicit(2))})
+                                                    ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'prepare' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:4:64
+  4:  run preparedCrashStaysBlockedTest = init.then(establish).then(prepare).then(fire(Crash)).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(reserved(s) and not(s.ack) and not(s.effect) and allProps),finish}).then(fire(Ack)).then(all {assert(s.ack and allProps),fire(Explicit(2))})
+                                                                    ^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:4:78
+  4:  run preparedCrashStaysBlockedTest = init.then(establish).then(prepare).then(fire(Crash)).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(reserved(s) and not(s.ack) and not(s.effect) and allProps),finish}).then(fire(Ack)).then(all {assert(s.ack and allProps),fire(Explicit(2))})
+                                                                                  ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Crash' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:4:83
+  4:  run preparedCrashStaysBlockedTest = init.then(establish).then(prepare).then(fire(Crash)).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(reserved(s) and not(s.ack) and not(s.effect) and allProps),finish}).then(fire(Ack)).then(all {assert(s.ack and allProps),fire(Explicit(2))})
+                                                                                       ^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:4:96
+  4:  run preparedCrashStaysBlockedTest = init.then(establish).then(prepare).then(fire(Crash)).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(reserved(s) and not(s.ack) and not(s.effect) and allProps),finish}).then(fire(Ack)).then(all {assert(s.ack and allProps),fire(Explicit(2))})
+                                                                                                    ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Ack' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:4:101
+  4:  run preparedCrashStaysBlockedTest = init.then(establish).then(prepare).then(fire(Crash)).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(reserved(s) and not(s.ack) and not(s.effect) and allProps),finish}).then(fire(Ack)).then(all {assert(s.ack and allProps),fire(Explicit(2))})
+                                                                                                         ^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:4:112
+  4:  run preparedCrashStaysBlockedTest = init.then(establish).then(prepare).then(fire(Crash)).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(reserved(s) and not(s.ack) and not(s.effect) and allProps),finish}).then(fire(Ack)).then(all {assert(s.ack and allProps),fire(Explicit(2))})
+                                                                                                                    ^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Explicit' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:4:117
+  4:  run preparedCrashStaysBlockedTest = init.then(establish).then(prepare).then(fire(Crash)).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(reserved(s) and not(s.ack) and not(s.effect) and allProps),finish}).then(fire(Ack)).then(all {assert(s.ack and allProps),fire(Explicit(2))})
+                                                                                                                         ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'reserved' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:4:148
+  4:  run preparedCrashStaysBlockedTest = init.then(establish).then(prepare).then(fire(Crash)).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(reserved(s) and not(s.ack) and not(s.effect) and allProps),finish}).then(fire(Ack)).then(all {assert(s.ack and allProps),fire(Explicit(2))})
+                                                                                                                                                        ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:4:157
+  4:  run preparedCrashStaysBlockedTest = init.then(establish).then(prepare).then(fire(Crash)).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(reserved(s) and not(s.ack) and not(s.effect) and allProps),finish}).then(fire(Ack)).then(all {assert(s.ack and allProps),fire(Explicit(2))})
+                                                                                                                                                                 ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:4:168
+  4:  run preparedCrashStaysBlockedTest = init.then(establish).then(prepare).then(fire(Crash)).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(reserved(s) and not(s.ack) and not(s.effect) and allProps),finish}).then(fire(Ack)).then(all {assert(s.ack and allProps),fire(Explicit(2))})
+                                                                                                                                                                            ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:4:183
+  4:  run preparedCrashStaysBlockedTest = init.then(establish).then(prepare).then(fire(Crash)).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(reserved(s) and not(s.ack) and not(s.effect) and allProps),finish}).then(fire(Ack)).then(all {assert(s.ack and allProps),fire(Explicit(2))})
+                                                                                                                                                                                           ^
+
+
+ Error [QNT404]: Name 'allProps' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:4:197
+  4:  run preparedCrashStaysBlockedTest = init.then(establish).then(prepare).then(fire(Crash)).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(reserved(s) and not(s.ack) and not(s.effect) and allProps),finish}).then(fire(Ack)).then(all {assert(s.ack and allProps),fire(Explicit(2))})
+                                                                                                                                                                                                         ^^^^^^^^
+
+
+ Error [QNT404]: Name 'finish' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:4:207
+  4:  run preparedCrashStaysBlockedTest = init.then(establish).then(prepare).then(fire(Crash)).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(reserved(s) and not(s.ack) and not(s.effect) and allProps),finish}).then(fire(Ack)).then(all {assert(s.ack and allProps),fire(Explicit(2))})
+                                                                                                                                                                                                                   ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:4:221
+  4:  run preparedCrashStaysBlockedTest = init.then(establish).then(prepare).then(fire(Crash)).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(reserved(s) and not(s.ack) and not(s.effect) and allProps),finish}).then(fire(Ack)).then(all {assert(s.ack and allProps),fire(Explicit(2))})
+                                                                                                                                                                                                                                 ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Ack' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:4:226
+  4:  run preparedCrashStaysBlockedTest = init.then(establish).then(prepare).then(fire(Crash)).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(reserved(s) and not(s.ack) and not(s.effect) and allProps),finish}).then(fire(Ack)).then(all {assert(s.ack and allProps),fire(Explicit(2))})
+                                                                                                                                                                                                                                      ^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:4:249
+  4:  run preparedCrashStaysBlockedTest = init.then(establish).then(prepare).then(fire(Crash)).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(reserved(s) and not(s.ack) and not(s.effect) and allProps),finish}).then(fire(Ack)).then(all {assert(s.ack and allProps),fire(Explicit(2))})
+                                                                                                                                                                                                                                                             ^
+
+
+ Error [QNT404]: Name 'allProps' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:4:259
+  4:  run preparedCrashStaysBlockedTest = init.then(establish).then(prepare).then(fire(Crash)).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(reserved(s) and not(s.ack) and not(s.effect) and allProps),finish}).then(fire(Ack)).then(all {assert(s.ack and allProps),fire(Explicit(2))})
+                                                                                                                                                                                                                                                                       ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:4:269
+  4:  run preparedCrashStaysBlockedTest = init.then(establish).then(prepare).then(fire(Crash)).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(reserved(s) and not(s.ack) and not(s.effect) and allProps),finish}).then(fire(Ack)).then(all {assert(s.ack and allProps),fire(Explicit(2))})
+                                                                                                                                                                                                                                                                                 ^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Explicit' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:4:274
+  4:  run preparedCrashStaysBlockedTest = init.then(establish).then(prepare).then(fire(Crash)).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(reserved(s) and not(s.ack) and not(s.effect) and allProps),finish}).then(fire(Ack)).then(all {assert(s.ack and allProps),fire(Explicit(2))})
+                                                                                                                                                                                                                                                                                      ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:5:39
+  5:  run unlinkBeforePrepareRefusedTest = init.then(fire(Unlink)).then(all {assert(s.file and allProps),fire(Crash)})
+                                           ^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:5:49
+  5:  run unlinkBeforePrepareRefusedTest = init.then(fire(Unlink)).then(all {assert(s.file and allProps),fire(Crash)})
+                                                     ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Unlink' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:5:54
+  5:  run unlinkBeforePrepareRefusedTest = init.then(fire(Unlink)).then(all {assert(s.file and allProps),fire(Crash)})
+                                                          ^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:5:80
+  5:  run unlinkBeforePrepareRefusedTest = init.then(fire(Unlink)).then(all {assert(s.file and allProps),fire(Crash)})
+                                                                                    ^
+
+
+ Error [QNT404]: Name 'allProps' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:5:91
+  5:  run unlinkBeforePrepareRefusedTest = init.then(fire(Unlink)).then(all {assert(s.file and allProps),fire(Crash)})
+                                                                                               ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:5:101
+  5:  run unlinkBeforePrepareRefusedTest = init.then(fire(Unlink)).then(all {assert(s.file and allProps),fire(Crash)})
+                                                                                                         ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Crash' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:5:106
+  5:  run unlinkBeforePrepareRefusedTest = init.then(fire(Unlink)).then(all {assert(s.file and allProps),fire(Crash)})
+                                                                                                              ^^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:6:38
+  6:  run ackBeforeFinalSyncRefusedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(Ack)).then(all {assert(not(s.ack) and reserved(s) and allProps),fire(SyncReleased)})
+                                          ^^^^
+
+
+ Error [QNT404]: Name 'establish' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:6:48
+  6:  run ackBeforeFinalSyncRefusedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(Ack)).then(all {assert(not(s.ack) and reserved(s) and allProps),fire(SyncReleased)})
+                                                    ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'prepare' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:6:64
+  6:  run ackBeforeFinalSyncRefusedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(Ack)).then(all {assert(not(s.ack) and reserved(s) and allProps),fire(SyncReleased)})
+                                                                    ^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:6:78
+  6:  run ackBeforeFinalSyncRefusedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(Ack)).then(all {assert(not(s.ack) and reserved(s) and allProps),fire(SyncReleased)})
+                                                                                  ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Unlink' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:6:83
+  6:  run ackBeforeFinalSyncRefusedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(Ack)).then(all {assert(not(s.ack) and reserved(s) and allProps),fire(SyncReleased)})
+                                                                                       ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:6:97
+  6:  run ackBeforeFinalSyncRefusedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(Ack)).then(all {assert(not(s.ack) and reserved(s) and allProps),fire(SyncReleased)})
+                                                                                                     ^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'SyncUnlinkDir' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:6:102
+  6:  run ackBeforeFinalSyncRefusedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(Ack)).then(all {assert(not(s.ack) and reserved(s) and allProps),fire(SyncReleased)})
+                                                                                                          ^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:6:123
+  6:  run ackBeforeFinalSyncRefusedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(Ack)).then(all {assert(not(s.ack) and reserved(s) and allProps),fire(SyncReleased)})
+                                                                                                                               ^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'WriteReleased' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:6:128
+  6:  run ackBeforeFinalSyncRefusedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(Ack)).then(all {assert(not(s.ack) and reserved(s) and allProps),fire(SyncReleased)})
+                                                                                                                                    ^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:6:149
+  6:  run ackBeforeFinalSyncRefusedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(Ack)).then(all {assert(not(s.ack) and reserved(s) and allProps),fire(SyncReleased)})
+                                                                                                                                                         ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Ack' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:6:154
+  6:  run ackBeforeFinalSyncRefusedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(Ack)).then(all {assert(not(s.ack) and reserved(s) and allProps),fire(SyncReleased)})
+                                                                                                                                                              ^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:6:181
+  6:  run ackBeforeFinalSyncRefusedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(Ack)).then(all {assert(not(s.ack) and reserved(s) and allProps),fire(SyncReleased)})
+                                                                                                                                                                                         ^
+
+
+ Error [QNT404]: Name 'reserved' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:6:192
+  6:  run ackBeforeFinalSyncRefusedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(Ack)).then(all {assert(not(s.ack) and reserved(s) and allProps),fire(SyncReleased)})
+                                                                                                                                                                                                    ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:6:201
+  6:  run ackBeforeFinalSyncRefusedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(Ack)).then(all {assert(not(s.ack) and reserved(s) and allProps),fire(SyncReleased)})
+                                                                                                                                                                                                             ^
+
+
+ Error [QNT404]: Name 'allProps' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:6:208
+  6:  run ackBeforeFinalSyncRefusedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(Ack)).then(all {assert(not(s.ack) and reserved(s) and allProps),fire(SyncReleased)})
+                                                                                                                                                                                                                    ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:6:218
+  6:  run ackBeforeFinalSyncRefusedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(Ack)).then(all {assert(not(s.ack) and reserved(s) and allProps),fire(SyncReleased)})
+                                                                                                                                                                                                                              ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'SyncReleased' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:6:223
+  6:  run ackBeforeFinalSyncRefusedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(Ack)).then(all {assert(not(s.ack) and reserved(s) and allProps),fire(SyncReleased)})
+                                                                                                                                                                                                                                   ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:7:48
+  7:  run unlinkCrashRestoresExactReservationTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(Crash)).then(all {assert(s.file and s.durableFile and reserved(s) and allProps),finish})
+                                                    ^^^^
+
+
+ Error [QNT404]: Name 'establish' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:7:58
+  7:  run unlinkCrashRestoresExactReservationTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(Crash)).then(all {assert(s.file and s.durableFile and reserved(s) and allProps),finish})
+                                                              ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'prepare' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:7:74
+  7:  run unlinkCrashRestoresExactReservationTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(Crash)).then(all {assert(s.file and s.durableFile and reserved(s) and allProps),finish})
+                                                                              ^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:7:88
+  7:  run unlinkCrashRestoresExactReservationTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(Crash)).then(all {assert(s.file and s.durableFile and reserved(s) and allProps),finish})
+                                                                                            ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Unlink' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:7:93
+  7:  run unlinkCrashRestoresExactReservationTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(Crash)).then(all {assert(s.file and s.durableFile and reserved(s) and allProps),finish})
+                                                                                                 ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:7:107
+  7:  run unlinkCrashRestoresExactReservationTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(Crash)).then(all {assert(s.file and s.durableFile and reserved(s) and allProps),finish})
+                                                                                                               ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Crash' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:7:112
+  7:  run unlinkCrashRestoresExactReservationTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(Crash)).then(all {assert(s.file and s.durableFile and reserved(s) and allProps),finish})
+                                                                                                                    ^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:7:137
+  7:  run unlinkCrashRestoresExactReservationTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(Crash)).then(all {assert(s.file and s.durableFile and reserved(s) and allProps),finish})
+                                                                                                                                             ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:7:148
+  7:  run unlinkCrashRestoresExactReservationTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(Crash)).then(all {assert(s.file and s.durableFile and reserved(s) and allProps),finish})
+                                                                                                                                                        ^
+
+
+ Error [QNT404]: Name 'reserved' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:7:166
+  7:  run unlinkCrashRestoresExactReservationTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(Crash)).then(all {assert(s.file and s.durableFile and reserved(s) and allProps),finish})
+                                                                                                                                                                          ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:7:175
+  7:  run unlinkCrashRestoresExactReservationTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(Crash)).then(all {assert(s.file and s.durableFile and reserved(s) and allProps),finish})
+                                                                                                                                                                                   ^
+
+
+ Error [QNT404]: Name 'allProps' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:7:182
+  7:  run unlinkCrashRestoresExactReservationTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(Crash)).then(all {assert(s.file and s.durableFile and reserved(s) and allProps),finish})
+                                                                                                                                                                                          ^^^^^^^^
+
+
+ Error [QNT404]: Name 'finish' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:7:192
+  7:  run unlinkCrashRestoresExactReservationTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(Crash)).then(all {assert(s.file and s.durableFile and reserved(s) and allProps),finish})
+                                                                                                                                                                                                    ^^^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:8:43
+  8:  run durableUnlinkCrashStillBlockedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(Crash)).then(fire(Ack)).then(all {assert(not(s.file) and reserved(s) and not(s.ack) and allProps),fire(WriteReleased)})
+                                               ^^^^
+
+
+ Error [QNT404]: Name 'establish' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:8:53
+  8:  run durableUnlinkCrashStillBlockedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(Crash)).then(fire(Ack)).then(all {assert(not(s.file) and reserved(s) and not(s.ack) and allProps),fire(WriteReleased)})
+                                                         ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'prepare' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:8:69
+  8:  run durableUnlinkCrashStillBlockedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(Crash)).then(fire(Ack)).then(all {assert(not(s.file) and reserved(s) and not(s.ack) and allProps),fire(WriteReleased)})
+                                                                         ^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:8:83
+  8:  run durableUnlinkCrashStillBlockedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(Crash)).then(fire(Ack)).then(all {assert(not(s.file) and reserved(s) and not(s.ack) and allProps),fire(WriteReleased)})
+                                                                                       ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Unlink' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:8:88
+  8:  run durableUnlinkCrashStillBlockedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(Crash)).then(fire(Ack)).then(all {assert(not(s.file) and reserved(s) and not(s.ack) and allProps),fire(WriteReleased)})
+                                                                                            ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:8:102
+  8:  run durableUnlinkCrashStillBlockedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(Crash)).then(fire(Ack)).then(all {assert(not(s.file) and reserved(s) and not(s.ack) and allProps),fire(WriteReleased)})
+                                                                                                          ^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'SyncUnlinkDir' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:8:107
+  8:  run durableUnlinkCrashStillBlockedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(Crash)).then(fire(Ack)).then(all {assert(not(s.file) and reserved(s) and not(s.ack) and allProps),fire(WriteReleased)})
+                                                                                                               ^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:8:128
+  8:  run durableUnlinkCrashStillBlockedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(Crash)).then(fire(Ack)).then(all {assert(not(s.file) and reserved(s) and not(s.ack) and allProps),fire(WriteReleased)})
+                                                                                                                                    ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Crash' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:8:133
+  8:  run durableUnlinkCrashStillBlockedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(Crash)).then(fire(Ack)).then(all {assert(not(s.file) and reserved(s) and not(s.ack) and allProps),fire(WriteReleased)})
+                                                                                                                                         ^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:8:146
+  8:  run durableUnlinkCrashStillBlockedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(Crash)).then(fire(Ack)).then(all {assert(not(s.file) and reserved(s) and not(s.ack) and allProps),fire(WriteReleased)})
+                                                                                                                                                      ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Ack' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:8:151
+  8:  run durableUnlinkCrashStillBlockedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(Crash)).then(fire(Ack)).then(all {assert(not(s.file) and reserved(s) and not(s.ack) and allProps),fire(WriteReleased)})
+                                                                                                                                                           ^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:8:178
+  8:  run durableUnlinkCrashStillBlockedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(Crash)).then(fire(Ack)).then(all {assert(not(s.file) and reserved(s) and not(s.ack) and allProps),fire(WriteReleased)})
+                                                                                                                                                                                      ^
+
+
+ Error [QNT404]: Name 'reserved' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:8:190
+  8:  run durableUnlinkCrashStillBlockedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(Crash)).then(fire(Ack)).then(all {assert(not(s.file) and reserved(s) and not(s.ack) and allProps),fire(WriteReleased)})
+                                                                                                                                                                                                  ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:8:199
+  8:  run durableUnlinkCrashStillBlockedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(Crash)).then(fire(Ack)).then(all {assert(not(s.file) and reserved(s) and not(s.ack) and allProps),fire(WriteReleased)})
+                                                                                                                                                                                                           ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:8:210
+  8:  run durableUnlinkCrashStillBlockedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(Crash)).then(fire(Ack)).then(all {assert(not(s.file) and reserved(s) and not(s.ack) and allProps),fire(WriteReleased)})
+                                                                                                                                                                                                                      ^
+
+
+ Error [QNT404]: Name 'allProps' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:8:221
+  8:  run durableUnlinkCrashStillBlockedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(Crash)).then(fire(Ack)).then(all {assert(not(s.file) and reserved(s) and not(s.ack) and allProps),fire(WriteReleased)})
+                                                                                                                                                                                                                                 ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:8:231
+  8:  run durableUnlinkCrashStillBlockedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(Crash)).then(fire(Ack)).then(all {assert(not(s.file) and reserved(s) and not(s.ack) and allProps),fire(WriteReleased)})
+                                                                                                                                                                                                                                           ^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'WriteReleased' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:8:236
+  8:  run durableUnlinkCrashStillBlockedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(Crash)).then(fire(Ack)).then(all {assert(not(s.file) and reserved(s) and not(s.ack) and allProps),fire(WriteReleased)})
+                                                                                                                                                                                                                                                ^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:9:41
+  9:  run releasedCrashNeverResurrectsTest = init.then(establish).then(prepare).then(finish).then(fire(Crash)).then(fire(RecreateOld)).then(all {assert(not(s.file) and not(s.durableFile) and allProps),fire(Ack)})
+                                             ^^^^
+
+
+ Error [QNT404]: Name 'establish' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:9:51
+  9:  run releasedCrashNeverResurrectsTest = init.then(establish).then(prepare).then(finish).then(fire(Crash)).then(fire(RecreateOld)).then(all {assert(not(s.file) and not(s.durableFile) and allProps),fire(Ack)})
+                                                       ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'prepare' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:9:67
+  9:  run releasedCrashNeverResurrectsTest = init.then(establish).then(prepare).then(finish).then(fire(Crash)).then(fire(RecreateOld)).then(all {assert(not(s.file) and not(s.durableFile) and allProps),fire(Ack)})
+                                                                       ^^^^^^^
+
+
+ Error [QNT404]: Name 'finish' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:9:81
+  9:  run releasedCrashNeverResurrectsTest = init.then(establish).then(prepare).then(finish).then(fire(Crash)).then(fire(RecreateOld)).then(all {assert(not(s.file) and not(s.durableFile) and allProps),fire(Ack)})
+                                                                                     ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:9:94
+  9:  run releasedCrashNeverResurrectsTest = init.then(establish).then(prepare).then(finish).then(fire(Crash)).then(fire(RecreateOld)).then(all {assert(not(s.file) and not(s.durableFile) and allProps),fire(Ack)})
+                                                                                                  ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Crash' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:9:99
+  9:  run releasedCrashNeverResurrectsTest = init.then(establish).then(prepare).then(finish).then(fire(Crash)).then(fire(RecreateOld)).then(all {assert(not(s.file) and not(s.durableFile) and allProps),fire(Ack)})
+                                                                                                       ^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:9:112
+  9:  run releasedCrashNeverResurrectsTest = init.then(establish).then(prepare).then(finish).then(fire(Crash)).then(fire(RecreateOld)).then(all {assert(not(s.file) and not(s.durableFile) and allProps),fire(Ack)})
+                                                                                                                    ^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'RecreateOld' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:9:117
+  9:  run releasedCrashNeverResurrectsTest = init.then(establish).then(prepare).then(finish).then(fire(Crash)).then(fire(RecreateOld)).then(all {assert(not(s.file) and not(s.durableFile) and allProps),fire(Ack)})
+                                                                                                                         ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:9:152
+  9:  run releasedCrashNeverResurrectsTest = init.then(establish).then(prepare).then(finish).then(fire(Crash)).then(fire(RecreateOld)).then(all {assert(not(s.file) and not(s.durableFile) and allProps),fire(Ack)})
+                                                                                                                                                            ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:9:168
+  9:  run releasedCrashNeverResurrectsTest = init.then(establish).then(prepare).then(finish).then(fire(Crash)).then(fire(RecreateOld)).then(all {assert(not(s.file) and not(s.durableFile) and allProps),fire(Ack)})
+                                                                                                                                                                            ^
+
+
+ Error [QNT404]: Name 'allProps' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:9:187
+  9:  run releasedCrashNeverResurrectsTest = init.then(establish).then(prepare).then(finish).then(fire(Crash)).then(fire(RecreateOld)).then(all {assert(not(s.file) and not(s.durableFile) and allProps),fire(Ack)})
+                                                                                                                                                                                               ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:9:197
+  9:  run releasedCrashNeverResurrectsTest = init.then(establish).then(prepare).then(finish).then(fire(Crash)).then(fire(RecreateOld)).then(all {assert(not(s.file) and not(s.durableFile) and allProps),fire(Ack)})
+                                                                                                                                                                                                         ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Ack' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:9:202
+  9:  run releasedCrashNeverResurrectsTest = init.then(establish).then(prepare).then(finish).then(fire(Crash)).then(fire(RecreateOld)).then(all {assert(not(s.file) and not(s.durableFile) and allProps),fire(Ack)})
+                                                                                                                                                                                                              ^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:10:36
+  10:  run historyUnknownNotCommitTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(1))).then(all {assert(s.history.contains(1) and not(s.committed) and not(s.effect) and allProps),fire(Crash)})
+                                         ^^^^
+
+
+ Error [QNT404]: Name 'establish' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:10:46
+  10:  run historyUnknownNotCommitTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(1))).then(all {assert(s.history.contains(1) and not(s.committed) and not(s.effect) and allProps),fire(Crash)})
+                                                   ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'prepare' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:10:62
+  10:  run historyUnknownNotCommitTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(1))).then(all {assert(s.history.contains(1) and not(s.committed) and not(s.effect) and allProps),fire(Crash)})
+                                                                   ^^^^^^^
+
+
+ Error [QNT404]: Name 'finish' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:10:76
+  10:  run historyUnknownNotCommitTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(1))).then(all {assert(s.history.contains(1) and not(s.committed) and not(s.effect) and allProps),fire(Crash)})
+                                                                                 ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:10:89
+  10:  run historyUnknownNotCommitTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(1))).then(all {assert(s.history.contains(1) and not(s.committed) and not(s.effect) and allProps),fire(Crash)})
+                                                                                              ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Ack' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:10:94
+  10:  run historyUnknownNotCommitTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(1))).then(all {assert(s.history.contains(1) and not(s.committed) and not(s.effect) and allProps),fire(Crash)})
+                                                                                                   ^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:10:105
+  10:  run historyUnknownNotCommitTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(1))).then(all {assert(s.history.contains(1) and not(s.committed) and not(s.effect) and allProps),fire(Crash)})
+                                                                                                              ^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Explicit' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:10:110
+  10:  run historyUnknownNotCommitTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(1))).then(all {assert(s.history.contains(1) and not(s.committed) and not(s.effect) and allProps),fire(Crash)})
+                                                                                                                   ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:10:141
+  10:  run historyUnknownNotCommitTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(1))).then(all {assert(s.history.contains(1) and not(s.committed) and not(s.effect) and allProps),fire(Crash)})
+                                                                                                                                                  ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:10:171
+  10:  run historyUnknownNotCommitTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(1))).then(all {assert(s.history.contains(1) and not(s.committed) and not(s.effect) and allProps),fire(Crash)})
+                                                                                                                                                                                ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:10:192
+  10:  run historyUnknownNotCommitTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(1))).then(all {assert(s.history.contains(1) and not(s.committed) and not(s.effect) and allProps),fire(Crash)})
+                                                                                                                                                                                                     ^
+
+
+ Error [QNT404]: Name 'allProps' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:10:206
+  10:  run historyUnknownNotCommitTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(1))).then(all {assert(s.history.contains(1) and not(s.committed) and not(s.effect) and allProps),fire(Crash)})
+                                                                                                                                                                                                                   ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:10:216
+  10:  run historyUnknownNotCommitTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(1))).then(all {assert(s.history.contains(1) and not(s.committed) and not(s.effect) and allProps),fire(Crash)})
+                                                                                                                                                                                                                             ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Crash' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:10:221
+  10:  run historyUnknownNotCommitTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(1))).then(all {assert(s.history.contains(1) and not(s.committed) and not(s.effect) and allProps),fire(Crash)})
+                                                                                                                                                                                                                                  ^^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:11:35
+  11:  run registeredProofRefusedTest = init.then(fire(Proof(0,1,1,1))).then(fire(RequestReads)).then(all {assert(not(s.proof) and not(s.reads) and allProps),fire(Crash)})
+                                        ^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:11:45
+  11:  run registeredProofRefusedTest = init.then(fire(Proof(0,1,1,1))).then(fire(RequestReads)).then(all {assert(not(s.proof) and not(s.reads) and allProps),fire(Crash)})
+                                                  ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Proof' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:11:50
+  11:  run registeredProofRefusedTest = init.then(fire(Proof(0,1,1,1))).then(fire(RequestReads)).then(all {assert(not(s.proof) and not(s.reads) and allProps),fire(Crash)})
+                                                       ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:11:72
+  11:  run registeredProofRefusedTest = init.then(fire(Proof(0,1,1,1))).then(fire(RequestReads)).then(all {assert(not(s.proof) and not(s.reads) and allProps),fire(Crash)})
+                                                                             ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'RequestReads' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:11:77
+  11:  run registeredProofRefusedTest = init.then(fire(Proof(0,1,1,1))).then(fire(RequestReads)).then(all {assert(not(s.proof) and not(s.reads) and allProps),fire(Crash)})
+                                                                                  ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:11:113
+  11:  run registeredProofRefusedTest = init.then(fire(Proof(0,1,1,1))).then(fire(RequestReads)).then(all {assert(not(s.proof) and not(s.reads) and allProps),fire(Crash)})
+                                                                                                                      ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:11:130
+  11:  run registeredProofRefusedTest = init.then(fire(Proof(0,1,1,1))).then(fire(RequestReads)).then(all {assert(not(s.proof) and not(s.reads) and allProps),fire(Crash)})
+                                                                                                                                       ^
+
+
+ Error [QNT404]: Name 'allProps' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:11:143
+  11:  run registeredProofRefusedTest = init.then(fire(Proof(0,1,1,1))).then(fire(RequestReads)).then(all {assert(not(s.proof) and not(s.reads) and allProps),fire(Crash)})
+                                                                                                                                                    ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:11:153
+  11:  run registeredProofRefusedTest = init.then(fire(Proof(0,1,1,1))).then(fire(RequestReads)).then(all {assert(not(s.proof) and not(s.reads) and allProps),fire(Crash)})
+                                                                                                                                                              ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Crash' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:11:158
+  11:  run registeredProofRefusedTest = init.then(fire(Proof(0,1,1,1))).then(fire(RequestReads)).then(all {assert(not(s.proof) and not(s.reads) and allProps),fire(Crash)})
+                                                                                                                                                                   ^^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:12:32
+  12:  run foreignProofRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,2,1,1))).then(all {assert(not(s.proof) and allProps),fire(Crash)})
+                                     ^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:12:42
+  12:  run foreignProofRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,2,1,1))).then(all {assert(not(s.proof) and allProps),fire(Crash)})
+                                               ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'NativeRetire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:12:47
+  12:  run foreignProofRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,2,1,1))).then(all {assert(not(s.proof) and allProps),fire(Crash)})
+                                                    ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:12:67
+  12:  run foreignProofRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,2,1,1))).then(all {assert(not(s.proof) and allProps),fire(Crash)})
+                                                                        ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Proof' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:12:72
+  12:  run foreignProofRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,2,1,1))).then(all {assert(not(s.proof) and allProps),fire(Crash)})
+                                                                             ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:12:110
+  12:  run foreignProofRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,2,1,1))).then(all {assert(not(s.proof) and allProps),fire(Crash)})
+                                                                                                                   ^
+
+
+ Error [QNT404]: Name 'allProps' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:12:123
+  12:  run foreignProofRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,2,1,1))).then(all {assert(not(s.proof) and allProps),fire(Crash)})
+                                                                                                                                ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:12:133
+  12:  run foreignProofRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,2,1,1))).then(all {assert(not(s.proof) and allProps),fire(Crash)})
+                                                                                                                                          ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Crash' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:12:138
+  12:  run foreignProofRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,2,1,1))).then(all {assert(not(s.proof) and allProps),fire(Crash)})
+                                                                                                                                               ^^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:13:30
+  13:  run staleProofRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,0,1))).then(fire(Proof(1,1,1,0))).then(all {assert(not(s.proof) and allProps),fire(Crash)})
+                                   ^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:13:40
+  13:  run staleProofRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,0,1))).then(fire(Proof(1,1,1,0))).then(all {assert(not(s.proof) and allProps),fire(Crash)})
+                                             ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'NativeRetire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:13:45
+  13:  run staleProofRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,0,1))).then(fire(Proof(1,1,1,0))).then(all {assert(not(s.proof) and allProps),fire(Crash)})
+                                                  ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:13:65
+  13:  run staleProofRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,0,1))).then(fire(Proof(1,1,1,0))).then(all {assert(not(s.proof) and allProps),fire(Crash)})
+                                                                      ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Proof' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:13:70
+  13:  run staleProofRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,0,1))).then(fire(Proof(1,1,1,0))).then(all {assert(not(s.proof) and allProps),fire(Crash)})
+                                                                           ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:13:92
+  13:  run staleProofRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,0,1))).then(fire(Proof(1,1,1,0))).then(all {assert(not(s.proof) and allProps),fire(Crash)})
+                                                                                                 ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Proof' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:13:97
+  13:  run staleProofRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,0,1))).then(fire(Proof(1,1,1,0))).then(all {assert(not(s.proof) and allProps),fire(Crash)})
+                                                                                                      ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:13:135
+  13:  run staleProofRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,0,1))).then(fire(Proof(1,1,1,0))).then(all {assert(not(s.proof) and allProps),fire(Crash)})
+                                                                                                                                            ^
+
+
+ Error [QNT404]: Name 'allProps' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:13:148
+  13:  run staleProofRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,0,1))).then(fire(Proof(1,1,1,0))).then(all {assert(not(s.proof) and allProps),fire(Crash)})
+                                                                                                                                                         ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:13:158
+  13:  run staleProofRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,0,1))).then(fire(Proof(1,1,1,0))).then(all {assert(not(s.proof) and allProps),fire(Crash)})
+                                                                                                                                                                   ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Crash' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:13:163
+  13:  run staleProofRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,0,1))).then(fire(Proof(1,1,1,0))).then(all {assert(not(s.proof) and allProps),fire(Crash)})
+                                                                                                                                                                        ^^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:14:31
+  14:  run futureProofRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,3))).then(all {assert(not(s.proof) and allProps),fire(Crash)})
+                                    ^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:14:41
+  14:  run futureProofRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,3))).then(all {assert(not(s.proof) and allProps),fire(Crash)})
+                                              ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'NativeRetire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:14:46
+  14:  run futureProofRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,3))).then(all {assert(not(s.proof) and allProps),fire(Crash)})
+                                                   ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:14:66
+  14:  run futureProofRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,3))).then(all {assert(not(s.proof) and allProps),fire(Crash)})
+                                                                       ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Proof' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:14:71
+  14:  run futureProofRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,3))).then(all {assert(not(s.proof) and allProps),fire(Crash)})
+                                                                            ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:14:109
+  14:  run futureProofRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,3))).then(all {assert(not(s.proof) and allProps),fire(Crash)})
+                                                                                                                  ^
+
+
+ Error [QNT404]: Name 'allProps' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:14:122
+  14:  run futureProofRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,3))).then(all {assert(not(s.proof) and allProps),fire(Crash)})
+                                                                                                                               ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:14:132
+  14:  run futureProofRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,3))).then(all {assert(not(s.proof) and allProps),fire(Crash)})
+                                                                                                                                         ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Crash' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:14:137
+  14:  run futureProofRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,3))).then(all {assert(not(s.proof) and allProps),fire(Crash)})
+                                                                                                                                              ^^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:15:33
+  15:  run oneReadCannotPrepareTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,1))).then(fire(RequestReads)).then(fire(Observe(1,11,1,2))).then(fire(WriteProof)).then(all {assert(not(s.proofWritten) and allProps),fire(Crash)})
+                                      ^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:15:43
+  15:  run oneReadCannotPrepareTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,1))).then(fire(RequestReads)).then(fire(Observe(1,11,1,2))).then(fire(WriteProof)).then(all {assert(not(s.proofWritten) and allProps),fire(Crash)})
+                                                ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'NativeRetire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:15:48
+  15:  run oneReadCannotPrepareTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,1))).then(fire(RequestReads)).then(fire(Observe(1,11,1,2))).then(fire(WriteProof)).then(all {assert(not(s.proofWritten) and allProps),fire(Crash)})
+                                                     ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:15:68
+  15:  run oneReadCannotPrepareTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,1))).then(fire(RequestReads)).then(fire(Observe(1,11,1,2))).then(fire(WriteProof)).then(all {assert(not(s.proofWritten) and allProps),fire(Crash)})
+                                                                         ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Proof' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:15:73
+  15:  run oneReadCannotPrepareTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,1))).then(fire(RequestReads)).then(fire(Observe(1,11,1,2))).then(fire(WriteProof)).then(all {assert(not(s.proofWritten) and allProps),fire(Crash)})
+                                                                              ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:15:95
+  15:  run oneReadCannotPrepareTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,1))).then(fire(RequestReads)).then(fire(Observe(1,11,1,2))).then(fire(WriteProof)).then(all {assert(not(s.proofWritten) and allProps),fire(Crash)})
+                                                                                                    ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'RequestReads' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:15:100
+  15:  run oneReadCannotPrepareTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,1))).then(fire(RequestReads)).then(fire(Observe(1,11,1,2))).then(fire(WriteProof)).then(all {assert(not(s.proofWritten) and allProps),fire(Crash)})
+                                                                                                         ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:15:120
+  15:  run oneReadCannotPrepareTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,1))).then(fire(RequestReads)).then(fire(Observe(1,11,1,2))).then(fire(WriteProof)).then(all {assert(not(s.proofWritten) and allProps),fire(Crash)})
+                                                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Observe' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:15:125
+  15:  run oneReadCannotPrepareTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,1))).then(fire(RequestReads)).then(fire(Observe(1,11,1,2))).then(fire(WriteProof)).then(all {assert(not(s.proofWritten) and allProps),fire(Crash)})
+                                                                                                                                  ^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:15:150
+  15:  run oneReadCannotPrepareTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,1))).then(fire(RequestReads)).then(fire(Observe(1,11,1,2))).then(fire(WriteProof)).then(all {assert(not(s.proofWritten) and allProps),fire(Crash)})
+                                                                                                                                                           ^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'WriteProof' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:15:155
+  15:  run oneReadCannotPrepareTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,1))).then(fire(RequestReads)).then(fire(Observe(1,11,1,2))).then(fire(WriteProof)).then(all {assert(not(s.proofWritten) and allProps),fire(Crash)})
+                                                                                                                                                                ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:15:189
+  15:  run oneReadCannotPrepareTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,1))).then(fire(RequestReads)).then(fire(Observe(1,11,1,2))).then(fire(WriteProof)).then(all {assert(not(s.proofWritten) and allProps),fire(Crash)})
+                                                                                                                                                                                                  ^
+
+
+ Error [QNT404]: Name 'allProps' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:15:209
+  15:  run oneReadCannotPrepareTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,1))).then(fire(RequestReads)).then(fire(Observe(1,11,1,2))).then(fire(WriteProof)).then(all {assert(not(s.proofWritten) and allProps),fire(Crash)})
+                                                                                                                                                                                                                      ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:15:219
+  15:  run oneReadCannotPrepareTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,1))).then(fire(RequestReads)).then(fire(Observe(1,11,1,2))).then(fire(WriteProof)).then(all {assert(not(s.proofWritten) and allProps),fire(Crash)})
+                                                                                                                                                                                                                                ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Crash' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:15:224
+  15:  run oneReadCannotPrepareTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,1))).then(fire(RequestReads)).then(fire(Observe(1,11,1,2))).then(fire(WriteProof)).then(all {assert(not(s.proofWritten) and allProps),fire(Crash)})
+                                                                                                                                                                                                                                     ^^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:16:35
+  16:  run crossedRequestsRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,1))).then(fire(RequestReads)).then(fire(Observe(1,12,1,2))).then(fire(Observe(2,11,1,2))).then(all {assert(not(s.action) and not(s.geometry) and allProps),fire(Crash)})
+                                        ^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:16:45
+  16:  run crossedRequestsRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,1))).then(fire(RequestReads)).then(fire(Observe(1,12,1,2))).then(fire(Observe(2,11,1,2))).then(all {assert(not(s.action) and not(s.geometry) and allProps),fire(Crash)})
+                                                  ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'NativeRetire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:16:50
+  16:  run crossedRequestsRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,1))).then(fire(RequestReads)).then(fire(Observe(1,12,1,2))).then(fire(Observe(2,11,1,2))).then(all {assert(not(s.action) and not(s.geometry) and allProps),fire(Crash)})
+                                                       ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:16:70
+  16:  run crossedRequestsRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,1))).then(fire(RequestReads)).then(fire(Observe(1,12,1,2))).then(fire(Observe(2,11,1,2))).then(all {assert(not(s.action) and not(s.geometry) and allProps),fire(Crash)})
+                                                                           ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Proof' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:16:75
+  16:  run crossedRequestsRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,1))).then(fire(RequestReads)).then(fire(Observe(1,12,1,2))).then(fire(Observe(2,11,1,2))).then(all {assert(not(s.action) and not(s.geometry) and allProps),fire(Crash)})
+                                                                                ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:16:97
+  16:  run crossedRequestsRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,1))).then(fire(RequestReads)).then(fire(Observe(1,12,1,2))).then(fire(Observe(2,11,1,2))).then(all {assert(not(s.action) and not(s.geometry) and allProps),fire(Crash)})
+                                                                                                      ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'RequestReads' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:16:102
+  16:  run crossedRequestsRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,1))).then(fire(RequestReads)).then(fire(Observe(1,12,1,2))).then(fire(Observe(2,11,1,2))).then(all {assert(not(s.action) and not(s.geometry) and allProps),fire(Crash)})
+                                                                                                           ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:16:122
+  16:  run crossedRequestsRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,1))).then(fire(RequestReads)).then(fire(Observe(1,12,1,2))).then(fire(Observe(2,11,1,2))).then(all {assert(not(s.action) and not(s.geometry) and allProps),fire(Crash)})
+                                                                                                                               ^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Observe' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:16:127
+  16:  run crossedRequestsRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,1))).then(fire(RequestReads)).then(fire(Observe(1,12,1,2))).then(fire(Observe(2,11,1,2))).then(all {assert(not(s.action) and not(s.geometry) and allProps),fire(Crash)})
+                                                                                                                                    ^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:16:152
+  16:  run crossedRequestsRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,1))).then(fire(RequestReads)).then(fire(Observe(1,12,1,2))).then(fire(Observe(2,11,1,2))).then(all {assert(not(s.action) and not(s.geometry) and allProps),fire(Crash)})
+                                                                                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Observe' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:16:157
+  16:  run crossedRequestsRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof(1,1,1,1))).then(fire(RequestReads)).then(fire(Observe(1,12,1,2))).then(fire(Observe(2,11,1,2))).then(all {assert(not(s.action) and not(s.geometry) and allProps),fire(Crash)})
+                                                                                                                                                                  ^^^^^^^^^^^^^^^^^
+
+error: parsing failed

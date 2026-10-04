@@ -1,0 +1,30 @@
+{
+  "passed": false,
+  "checks": [
+    {
+      "name": "unchanged actual C admission producer compiles",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "C Pending imported as Unknown",
+      "passed": true
+    },
+    {
+      "name": "Unknown target blocks before proof",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 1",
+      "passed": true
+    },
+    {
+      "name": "prepare file + rename + root barrier before unlink + admission barrier + final file/rename/root",
+      "passed": false
+    }
+  ],
+  "error": "AssertionError('prepare file + rename + root barrier before unlink + admission barrier + final file/rename/root')"
+}

@@ -1,0 +1,1611 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Isolated pure typed frame decoding/correlation only; no production policy, effects, backend authentication or fsync acceptance",
+  "checks": [
+    {
+      "name": "normalized-cross-campaign-release",
+      "passed": true,
+      "expectedOk": true,
+      "result": {
+        "ok": true,
+        "historicalStatus": "Unknown",
+        "oldBinding": {
+          "lifetime": "16466285324869842288",
+          "session": "1",
+          "frontend": "2"
+        },
+        "intent": {
+          "request": "12",
+          "generation": "12",
+          "incarnation": "2",
+          "operation": "minimize",
+          "context": {
+            "lifetime": "16466285324869842288",
+            "epoch": "2",
+            "output": "1",
+            "revision": "21"
+          }
+        },
+        "releaseId": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+      }
+    },
+    {
+      "name": "unknown-retains-old-binding",
+      "passed": true,
+      "expectedOk": true,
+      "result": {
+        "ok": true,
+        "historicalStatus": "Unknown",
+        "oldBinding": {
+          "lifetime": "16466285324869842288",
+          "session": "1",
+          "frontend": "2"
+        },
+        "intent": {
+          "request": "12",
+          "generation": "12",
+          "incarnation": "2",
+          "operation": "minimize",
+          "context": {
+            "lifetime": "16466285324869842288",
+            "epoch": "2",
+            "output": "1",
+            "revision": "21"
+          }
+        }
+      }
+    },
+    {
+      "name": "proof-observe-retired",
+      "passed": true,
+      "expectedOk": true,
+      "result": {
+        "ok": true,
+        "historicalStatus": "Unknown",
+        "oldBinding": {
+          "lifetime": "16466285324869842288",
+          "session": "1",
+          "frontend": "2"
+        },
+        "intent": {
+          "request": "12",
+          "generation": "12",
+          "incarnation": "2",
+          "operation": "minimize",
+          "context": {
+            "lifetime": "16466285324869842288",
+            "epoch": "2",
+            "output": "1",
+            "revision": "21"
+          }
+        },
+        "releaseId": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+      }
+    },
+    {
+      "name": "geometry-record-unknown",
+      "passed": true,
+      "expectedOk": true,
+      "result": {
+        "ok": true,
+        "historicalStatus": "Unknown",
+        "oldBinding": {
+          "lifetime": "16466285324869842288",
+          "session": "1",
+          "frontend": "2"
+        },
+        "intent": {
+          "request": "12",
+          "generation": "12",
+          "incarnation": "2",
+          "operation": "maximize",
+          "context": {
+            "lifetime": "16466285324869842288",
+            "epoch": "2",
+            "output": "1",
+            "revision": "21"
+          }
+        },
+        "releaseId": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+      }
+    },
+    {
+      "name": "max-uint64-independent-history-sequence",
+      "passed": true,
+      "expectedOk": true,
+      "result": {
+        "ok": true,
+        "historicalStatus": "Unknown",
+        "oldBinding": {
+          "lifetime": "16466285324869842288",
+          "session": "1",
+          "frontend": "2"
+        },
+        "intent": {
+          "request": "18446744073709551615",
+          "generation": "18446744073709551615",
+          "incarnation": "2",
+          "operation": "minimize",
+          "context": {
+            "lifetime": "16466285324869842288",
+            "epoch": "2",
+            "output": "1",
+            "revision": "21"
+          }
+        },
+        "releaseId": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+      }
+    },
+    {
+      "name": "foreign-or-stale-binding-session",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Uncorrelated retirement or current observation"
+      }
+    },
+    {
+      "name": "foreign-or-stale-release-proof-binding-session",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Uncorrelated retirement or current observation"
+      }
+    },
+    {
+      "name": "foreign-or-stale-release-proof-queriedBinding-session",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Uncorrelated retirement or current observation"
+      }
+    },
+    {
+      "name": "foreign-or-stale-release-proof-requestId",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Uncorrelated retirement or current observation"
+      }
+    },
+    {
+      "name": "foreign-or-stale-release-observation-actionRequestId",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Uncorrelated retirement or current observation"
+      }
+    },
+    {
+      "name": "foreign-or-stale-release-observation-geometryRequestId",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Uncorrelated retirement or current observation"
+      }
+    },
+    {
+      "name": "foreign-or-stale-record-binding-frontend",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record:\n\n    {\n        \"schema\": 2,\n        \"effectProtocol\": 1,\n        \"binding\": {\n            \"lifetime\": \"16466285324869842288\",\n            \"session\": \"1\",\n            \"frontend\": \"9\"\n        },\n        \"intent\": {\n            \"context\": {\n                \"epoch\": \"2\",\n                \"lifetime\": \"16466285324869842288\",\n                \"output\": \"1\",\n                \"revision\": \"21\"\n            },\n            \"generation\": \"12\",\n            \"incarnation\": \"2\",\n            \"operation\": \"minimize\",\n            \"request\": \"12\"\n        },\n        \"status\": \"Unknown\"\n    }\n\nRecord authority or operation/protocol mismatch"
+      }
+    },
+    {
+      "name": "foreign-or-stale-record-intent-request",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Uncorrelated retirement or current observation"
+      }
+    },
+    {
+      "name": "foreign-or-stale-record-intent-generation",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Uncorrelated retirement or current observation"
+      }
+    },
+    {
+      "name": "foreign-or-stale-record-intent-incarnation",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Uncorrelated retirement or current observation"
+      }
+    },
+    {
+      "name": "foreign-or-stale-record-intent-context-lifetime",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record:\n\n    {\n        \"schema\": 2,\n        \"effectProtocol\": 1,\n        \"binding\": {\n            \"lifetime\": \"16466285324869842288\",\n            \"session\": \"1\",\n            \"frontend\": \"2\"\n        },\n        \"intent\": {\n            \"context\": {\n                \"epoch\": \"2\",\n                \"lifetime\": \"9\",\n                \"output\": \"1\",\n                \"revision\": \"21\"\n            },\n            \"generation\": \"12\",\n            \"incarnation\": \"2\",\n            \"operation\": \"minimize\",\n            \"request\": \"12\"\n        },\n        \"status\": \"Unknown\"\n    }\n\nRecord authority or operation/protocol mismatch"
+      }
+    },
+    {
+      "name": "foreign-or-stale-record-intent-context-epoch",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record:\n\n    {\n        \"schema\": 2,\n        \"effectProtocol\": 1,\n        \"binding\": {\n            \"lifetime\": \"16466285324869842288\",\n            \"session\": \"1\",\n            \"frontend\": \"2\"\n        },\n        \"intent\": {\n            \"context\": {\n                \"epoch\": \"9\",\n                \"lifetime\": \"16466285324869842288\",\n                \"output\": \"1\",\n                \"revision\": \"21\"\n            },\n            \"generation\": \"12\",\n            \"incarnation\": \"2\",\n            \"operation\": \"minimize\",\n            \"request\": \"12\"\n        },\n        \"status\": \"Unknown\"\n    }\n\nRecord authority or operation/protocol mismatch"
+      }
+    },
+    {
+      "name": "foreign-or-stale-record-intent-context-output",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Uncorrelated retirement or current observation"
+      }
+    },
+    {
+      "name": "foreign-or-stale-record-intent-context-revision",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Uncorrelated retirement or current observation"
+      }
+    },
+    {
+      "name": "foreign-or-stale-release-observation-actionContext-lifetime",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Uncorrelated retirement or current observation"
+      }
+    },
+    {
+      "name": "foreign-or-stale-release-observation-actionContext-epoch",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Uncorrelated retirement or current observation"
+      }
+    },
+    {
+      "name": "foreign-or-stale-release-observation-actionContext-output",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Uncorrelated retirement or current observation"
+      }
+    },
+    {
+      "name": "foreign-or-stale-release-observation-actionContext-revision",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Uncorrelated retirement or current observation"
+      }
+    },
+    {
+      "name": "foreign-or-stale-release-observation-geometryContext-lifetime",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Uncorrelated retirement or current observation"
+      }
+    },
+    {
+      "name": "foreign-or-stale-release-observation-geometryContext-epoch",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Uncorrelated retirement or current observation"
+      }
+    },
+    {
+      "name": "foreign-or-stale-release-observation-geometryContext-output",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Uncorrelated retirement or current observation"
+      }
+    },
+    {
+      "name": "foreign-or-stale-release-observation-geometryContext-revision",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Uncorrelated retirement or current observation"
+      }
+    },
+    {
+      "name": "counter-shape-record-intent-request-True",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.intent.request:\n\n    true\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "counter-shape-record-intent-request-12",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.intent.request:\n\n    12\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "counter-shape-record-intent-request-0",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.intent.request:\n\n    0\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "counter-shape-record-intent-request-'0'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.intent.request:\n\n    \"0\"\n\nZero identity"
+      }
+    },
+    {
+      "name": "counter-shape-record-intent-request-'01'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.intent.request:\n\n    \"01\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-record-intent-request-'-1'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.intent.request:\n\n    \"-1\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-record-intent-request-'18446744073709551616'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.intent.request:\n\n    \"18446744073709551616\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-record-intent-request-''",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.intent.request:\n\n    \"\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-record-intent-generation-True",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.intent.generation:\n\n    true\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "counter-shape-record-intent-generation-12",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.intent.generation:\n\n    12\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "counter-shape-record-intent-generation-0",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.intent.generation:\n\n    0\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "counter-shape-record-intent-generation-'0'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.intent.generation:\n\n    \"0\"\n\nZero identity"
+      }
+    },
+    {
+      "name": "counter-shape-record-intent-generation-'01'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.intent.generation:\n\n    \"01\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-record-intent-generation-'-1'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.intent.generation:\n\n    \"-1\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-record-intent-generation-'18446744073709551616'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.intent.generation:\n\n    \"18446744073709551616\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-record-intent-generation-''",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.intent.generation:\n\n    \"\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-record-intent-incarnation-True",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.intent.incarnation:\n\n    true\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "counter-shape-record-intent-incarnation-12",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.intent.incarnation:\n\n    12\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "counter-shape-record-intent-incarnation-0",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.intent.incarnation:\n\n    0\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "counter-shape-record-intent-incarnation-'0'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.intent.incarnation:\n\n    \"0\"\n\nZero identity"
+      }
+    },
+    {
+      "name": "counter-shape-record-intent-incarnation-'01'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.intent.incarnation:\n\n    \"01\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-record-intent-incarnation-'-1'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.intent.incarnation:\n\n    \"-1\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-record-intent-incarnation-'18446744073709551616'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.intent.incarnation:\n\n    \"18446744073709551616\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-record-intent-incarnation-''",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.intent.incarnation:\n\n    \"\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-release-proof-sequence-True",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.proof.sequence:\n\n    true\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "counter-shape-release-proof-sequence-12",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.proof.sequence:\n\n    12\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "counter-shape-release-proof-sequence-0",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.proof.sequence:\n\n    0\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "counter-shape-release-proof-sequence-'0'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.proof.sequence:\n\n    \"0\"\n\nZero authority counter"
+      }
+    },
+    {
+      "name": "counter-shape-release-proof-sequence-'01'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.proof.sequence:\n\n    \"01\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-release-proof-sequence-'-1'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.proof.sequence:\n\n    \"-1\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-release-proof-sequence-'18446744073709551616'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.proof.sequence:\n\n    \"18446744073709551616\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-release-proof-sequence-''",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.proof.sequence:\n\n    \"\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-release-proof-requestId-True",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.proof.requestId:\n\n    true\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "counter-shape-release-proof-requestId-12",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.proof.requestId:\n\n    12\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "counter-shape-release-proof-requestId-0",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.proof.requestId:\n\n    0\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "counter-shape-release-proof-requestId-'0'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.proof.requestId:\n\n    \"0\"\n\nZero authority counter"
+      }
+    },
+    {
+      "name": "counter-shape-release-proof-requestId-'01'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.proof.requestId:\n\n    \"01\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-release-proof-requestId-'-1'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.proof.requestId:\n\n    \"-1\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-release-proof-requestId-'18446744073709551616'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.proof.requestId:\n\n    \"18446744073709551616\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-release-proof-requestId-''",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.proof.requestId:\n\n    \"\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-actionRequestId-True",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.actionRequestId:\n\n    true\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-actionRequestId-12",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.actionRequestId:\n\n    12\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-actionRequestId-0",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.actionRequestId:\n\n    0\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-actionRequestId-'0'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.actionRequestId:\n\n    \"0\"\n\nZero authority counter"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-actionRequestId-'01'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.actionRequestId:\n\n    \"01\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-actionRequestId-'-1'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.actionRequestId:\n\n    \"-1\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-actionRequestId-'18446744073709551616'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.actionRequestId:\n\n    \"18446744073709551616\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-actionRequestId-''",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.actionRequestId:\n\n    \"\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-geometryRequestId-True",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.geometryRequestId:\n\n    true\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-geometryRequestId-12",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.geometryRequestId:\n\n    12\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-geometryRequestId-0",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.geometryRequestId:\n\n    0\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-geometryRequestId-'0'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.geometryRequestId:\n\n    \"0\"\n\nZero authority counter"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-geometryRequestId-'01'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.geometryRequestId:\n\n    \"01\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-geometryRequestId-'-1'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.geometryRequestId:\n\n    \"-1\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-geometryRequestId-'18446744073709551616'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.geometryRequestId:\n\n    \"18446744073709551616\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-geometryRequestId-''",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.geometryRequestId:\n\n    \"\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-actionContext-revision-True",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.actionContext.revision:\n\n    true\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-actionContext-revision-12",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.actionContext.revision:\n\n    12\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-actionContext-revision-0",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.actionContext.revision:\n\n    0\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-actionContext-revision-'0'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.actionContext.revision:\n\n    \"0\"\n\nZero authority counter"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-actionContext-revision-'01'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.actionContext.revision:\n\n    \"01\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-actionContext-revision-'-1'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.actionContext.revision:\n\n    \"-1\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-actionContext-revision-'18446744073709551616'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.actionContext.revision:\n\n    \"18446744073709551616\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-actionContext-revision-''",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.actionContext.revision:\n\n    \"\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-geometryContext-output-True",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.geometryContext.output:\n\n    true\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-geometryContext-output-12",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.geometryContext.output:\n\n    12\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-geometryContext-output-0",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.geometryContext.output:\n\n    0\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-geometryContext-output-'0'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.geometryContext.output:\n\n    \"0\"\n\nZero authority counter"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-geometryContext-output-'01'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.geometryContext.output:\n\n    \"01\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-geometryContext-output-'-1'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.geometryContext.output:\n\n    \"-1\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-geometryContext-output-'18446744073709551616'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.geometryContext.output:\n\n    \"18446744073709551616\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-release-observation-geometryContext-output-''",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.geometryContext.output:\n\n    \"\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-binding-session-True",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.binding.session:\n\n    true\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "counter-shape-binding-session-12",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.binding.session:\n\n    12\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "counter-shape-binding-session-0",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.binding.session:\n\n    0\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "counter-shape-binding-session-'0'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.binding.session:\n\n    \"0\"\n\nZero identity"
+      }
+    },
+    {
+      "name": "counter-shape-binding-session-'01'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.binding.session:\n\n    \"01\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-binding-session-'-1'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.binding.session:\n\n    \"-1\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-binding-session-'18446744073709551616'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.binding.session:\n\n    \"18446744073709551616\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "counter-shape-binding-session-''",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.binding.session:\n\n    \"\"\n\nExpected canonical uint64 string"
+      }
+    },
+    {
+      "name": "enum-shape-protocolVersion-True",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.protocolVersion:\n\n    true\n\nExpecting an INT"
+      }
+    },
+    {
+      "name": "enum-shape-protocolVersion-2",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.protocolVersion:\n\n    2\n\nUnsupported protocol/schema"
+      }
+    },
+    {
+      "name": "enum-shape-protocolVersion-'3'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.protocolVersion:\n\n    \"3\"\n\nExpecting an INT"
+      }
+    },
+    {
+      "name": "enum-shape-kind-'host-reservation-unknown'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.kind:\n\n    \"host-reservation-unknown\"\n\nUnexpected frame/status"
+      }
+    },
+    {
+      "name": "enum-shape-kind-'other'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.kind:\n\n    \"other\"\n\nUnexpected frame/status"
+      }
+    },
+    {
+      "name": "enum-shape-record-schema-True",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.schema:\n\n    true\n\nExpecting an INT"
+      }
+    },
+    {
+      "name": "enum-shape-record-schema-1",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.schema:\n\n    1\n\nUnsupported protocol/schema"
+      }
+    },
+    {
+      "name": "enum-shape-record-schema-'2'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.schema:\n\n    \"2\"\n\nExpecting an INT"
+      }
+    },
+    {
+      "name": "enum-shape-record-effectProtocol-True",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.effectProtocol:\n\n    true\n\nExpecting an INT"
+      }
+    },
+    {
+      "name": "enum-shape-record-effectProtocol-0",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.effectProtocol:\n\n    0\n\nUnsupported effect protocol"
+      }
+    },
+    {
+      "name": "enum-shape-record-effectProtocol-3",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.effectProtocol:\n\n    3\n\nUnsupported effect protocol"
+      }
+    },
+    {
+      "name": "enum-shape-record-effectProtocol-'1'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.effectProtocol:\n\n    \"1\"\n\nExpecting an INT"
+      }
+    },
+    {
+      "name": "enum-shape-record-status-'Pending'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.status:\n\n    \"Pending\"\n\nUnexpected frame/status"
+      }
+    },
+    {
+      "name": "enum-shape-record-status-'Committed'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.status:\n\n    \"Committed\"\n\nUnexpected frame/status"
+      }
+    },
+    {
+      "name": "enum-shape-record-status-'Refused'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.status:\n\n    \"Refused\"\n\nUnexpected frame/status"
+      }
+    },
+    {
+      "name": "enum-shape-record-status-'Cancelled'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.status:\n\n    \"Cancelled\"\n\nUnexpected frame/status"
+      }
+    },
+    {
+      "name": "enum-shape-record-intent-operation-'maximize'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record:\n\n    {\n        \"schema\": 2,\n        \"effectProtocol\": 1,\n        \"binding\": {\n            \"lifetime\": \"16466285324869842288\",\n            \"session\": \"1\",\n            \"frontend\": \"2\"\n        },\n        \"intent\": {\n            \"context\": {\n                \"epoch\": \"2\",\n                \"lifetime\": \"16466285324869842288\",\n                \"output\": \"1\",\n                \"revision\": \"21\"\n            },\n            \"generation\": \"12\",\n            \"incarnation\": \"2\",\n            \"operation\": \"maximize\",\n            \"request\": \"12\"\n        },\n        \"status\": \"Unknown\"\n    }\n\nRecord authority or operation/protocol mismatch"
+      }
+    },
+    {
+      "name": "enum-shape-record-intent-operation-'unsupported'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.intent.operation:\n\n    \"unsupported\"\n\nUnsupported operation"
+      }
+    },
+    {
+      "name": "enum-shape-release-proof-grantState-'Registered'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.proof.grantState:\n\n    \"Registered\"\n\nUnexpected frame/status"
+      }
+    },
+    {
+      "name": "enum-shape-release-proof-grantState-'Future'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.proof.grantState:\n\n    \"Future\"\n\nUnexpected frame/status"
+      }
+    },
+    {
+      "name": "enum-shape-release-proof-grantState-'Unknown'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.proof.grantState:\n\n    \"Unknown\"\n\nUnexpected frame/status"
+      }
+    },
+    {
+      "name": "enum-shape-release-proof-operation-'settle'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.proof.operation:\n\n    \"settle\"\n\nRetirement operation"
+      }
+    },
+    {
+      "name": "enum-shape-release-proof-operation-''",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.proof.operation:\n\n    \"\"\n\nRetirement operation"
+      }
+    },
+    {
+      "name": "enum-shape-release-proof-retirementProtocol-True",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.proof.retirementProtocol:\n\n    true\n\nExpecting an INT"
+      }
+    },
+    {
+      "name": "enum-shape-release-proof-retirementProtocol-2",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.proof.retirementProtocol:\n\n    2\n\nUnsupported protocol/schema"
+      }
+    },
+    {
+      "name": "enum-shape-release-proof-kind-'effect-outcome'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.proof.kind:\n\n    \"effect-outcome\"\n\nUnexpected frame/status"
+      }
+    },
+    {
+      "name": "enum-shape-release-id-'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.id:\n\n    \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"\n\nRelease ID must be64lowerhex"
+      }
+    },
+    {
+      "name": "enum-shape-release-id-'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.id:\n\n    \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"\n\nRelease ID must be64lowerhex"
+      }
+    },
+    {
+      "name": "enum-shape-release-id-'GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.id:\n\n    \"GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG\"\n\nRelease ID must be64lowerhex"
+      }
+    },
+    {
+      "name": "enum-shape-release-id-'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.id:\n\n    \"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\"\n\nRelease ID must be64lowerhex"
+      }
+    },
+    {
+      "name": "enum-shape-release-id-True",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.id:\n\n    true\n\nExpecting a STRING"
+      }
+    },
+    {
+      "name": "enum-shape-release-id-'gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg'",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.id:\n\n    \"gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg\"\n\nRelease ID must be64lowerhex"
+      }
+    },
+    {
+      "name": "extra-fields-[]",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the given value:\n\n{\n        \"protocolVersion\": 3,\n        \"kind\": \"host-reservation-released\",\n        \"binding\": {\n            \"lifetime\": \"16466285324869842288\",\n            \"session\": \"2\",\n            \"frontend\": \"1\"\n        },\n        \"record\": {\n            \"schema\": 2,\n            \"effectProtocol\": 1,\n            \"binding\": {\n                \"lifetime\": \"16466285324869842288\",\n                \"session\": \"1\",\n                \"frontend\": \"2\"\n            },\n            \"intent\": {\n                \"context\": {\n                    \"epoch\": \"2\",\n                    \"lifetime\": \"16466285324869842288\",\n                    \"output\": \"1\",\n                    \"revision\": \"21\"\n                },\n                \"generation\": \"12\",\n                \"incarnation\": \"2\",\n                \"operation\": \"minimize\",\n                \"request\": \"12\"\n            },\n            \"status\": \"Unknown\"\n        },\n        \"release\": {\n            \"id\": \"0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef\",\n            \"proof\": {\n                \"protocolVersion\": 3,\n                \"kind\": \"binding-retirement\",\n                \"retirementProtocol\": 1,\n                \"operation\": \"retire\",\n                \"binding\": {\n                    \"lifetime\": \"16466285324869842288\",\n                    \"session\": \"2\",\n                    \"frontend\": \"1\"\n                },\n                \"requestId\": \"23\",\n                \"queriedBinding\": {\n                    \"lifetime\": \"16466285324869842288\",\n                    \"session\": \"1\",\n                    \"frontend\": \"2\"\n                },\n                \"sequence\": \"5\",\n                \"grantState\": \"Retired\"\n            },\n            \"observation\": {\n                \"actionRequestId\": \"91\",\n                \"geometryRequestId\": \"93\",\n                \"actionContext\": {\n                    \"lifetime\": \"16466285324869842288\",\n                    \"epoch\": \"1\",\n                    \"output\": \"7\",\n                    \"revision\": \"37\"\n                },\n                \"geometryContext\": {\n                    \"lifetime\": \"16466285324869842288\",\n                    \"epoch\": \"1\",\n                    \"output\": \"7\",\n                    \"revision\": \"101\"\n                }\n            }\n        },\n        \"unexpected\": true\n    }\n\nUnexpected or missing reconciliation fields"
+      }
+    },
+    {
+      "name": "missing-fields-[]",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the given value:\n\n{\n        \"kind\": \"host-reservation-released\",\n        \"binding\": {\n            \"lifetime\": \"16466285324869842288\",\n            \"session\": \"2\",\n            \"frontend\": \"1\"\n        },\n        \"record\": {\n            \"schema\": 2,\n            \"effectProtocol\": 1,\n            \"binding\": {\n                \"lifetime\": \"16466285324869842288\",\n                \"session\": \"1\",\n                \"frontend\": \"2\"\n            },\n            \"intent\": {\n                \"context\": {\n                    \"epoch\": \"2\",\n                    \"lifetime\": \"16466285324869842288\",\n                    \"output\": \"1\",\n                    \"revision\": \"21\"\n                },\n                \"generation\": \"12\",\n                \"incarnation\": \"2\",\n                \"operation\": \"minimize\",\n                \"request\": \"12\"\n            },\n            \"status\": \"Unknown\"\n        },\n        \"release\": {\n            \"id\": \"0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef\",\n            \"proof\": {\n                \"protocolVersion\": 3,\n                \"kind\": \"binding-retirement\",\n                \"retirementProtocol\": 1,\n                \"operation\": \"retire\",\n                \"binding\": {\n                    \"lifetime\": \"16466285324869842288\",\n                    \"session\": \"2\",\n                    \"frontend\": \"1\"\n                },\n                \"requestId\": \"23\",\n                \"queriedBinding\": {\n                    \"lifetime\": \"16466285324869842288\",\n                    \"session\": \"1\",\n                    \"frontend\": \"2\"\n                },\n                \"sequence\": \"5\",\n                \"grantState\": \"Retired\"\n            },\n            \"observation\": {\n                \"actionRequestId\": \"91\",\n                \"geometryRequestId\": \"93\",\n                \"actionContext\": {\n                    \"lifetime\": \"16466285324869842288\",\n                    \"epoch\": \"1\",\n                    \"output\": \"7\",\n                    \"revision\": \"37\"\n                },\n                \"geometryContext\": {\n                    \"lifetime\": \"16466285324869842288\",\n                    \"epoch\": \"1\",\n                    \"output\": \"7\",\n                    \"revision\": \"101\"\n                }\n            }\n        }\n    }\n\nUnexpected or missing reconciliation fields"
+      }
+    },
+    {
+      "name": "extra-fields-['record']",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record:\n\n    {\n        \"schema\": 2,\n        \"effectProtocol\": 1,\n        \"binding\": {\n            \"lifetime\": \"16466285324869842288\",\n            \"session\": \"1\",\n            \"frontend\": \"2\"\n        },\n        \"intent\": {\n            \"context\": {\n                \"epoch\": \"2\",\n                \"lifetime\": \"16466285324869842288\",\n                \"output\": \"1\",\n                \"revision\": \"21\"\n            },\n            \"generation\": \"12\",\n            \"incarnation\": \"2\",\n            \"operation\": \"minimize\",\n            \"request\": \"12\"\n        },\n        \"status\": \"Unknown\",\n        \"unexpected\": true\n    }\n\nUnexpected or missing reconciliation fields"
+      }
+    },
+    {
+      "name": "missing-fields-['record']",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record:\n\n    {\n        \"effectProtocol\": 1,\n        \"binding\": {\n            \"lifetime\": \"16466285324869842288\",\n            \"session\": \"1\",\n            \"frontend\": \"2\"\n        },\n        \"intent\": {\n            \"context\": {\n                \"epoch\": \"2\",\n                \"lifetime\": \"16466285324869842288\",\n                \"output\": \"1\",\n                \"revision\": \"21\"\n            },\n            \"generation\": \"12\",\n            \"incarnation\": \"2\",\n            \"operation\": \"minimize\",\n            \"request\": \"12\"\n        },\n        \"status\": \"Unknown\"\n    }\n\nUnexpected or missing reconciliation fields"
+      }
+    },
+    {
+      "name": "extra-fields-['record', 'binding']",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.binding:\n\n    {\n        \"lifetime\": \"16466285324869842288\",\n        \"session\": \"1\",\n        \"frontend\": \"2\",\n        \"unexpected\": true\n    }\n\nBinding fields"
+      }
+    },
+    {
+      "name": "missing-fields-['record', 'binding']",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.binding:\n\n    {\n        \"session\": \"1\",\n        \"frontend\": \"2\"\n    }\n\nBinding fields"
+      }
+    },
+    {
+      "name": "extra-fields-['record', 'intent']",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.intent:\n\n    {\n        \"context\": {\n            \"epoch\": \"2\",\n            \"lifetime\": \"16466285324869842288\",\n            \"output\": \"1\",\n            \"revision\": \"21\"\n        },\n        \"generation\": \"12\",\n        \"incarnation\": \"2\",\n        \"operation\": \"minimize\",\n        \"request\": \"12\",\n        \"unexpected\": true\n    }\n\nUnexpected/missing field"
+      }
+    },
+    {
+      "name": "missing-fields-['record', 'intent']",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.intent:\n\n    {\n        \"generation\": \"12\",\n        \"incarnation\": \"2\",\n        \"operation\": \"minimize\",\n        \"request\": \"12\"\n    }\n\nUnexpected/missing field"
+      }
+    },
+    {
+      "name": "extra-fields-['record', 'intent', 'context']",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.intent.context:\n\n    {\n        \"epoch\": \"2\",\n        \"lifetime\": \"16466285324869842288\",\n        \"output\": \"1\",\n        \"revision\": \"21\",\n        \"unexpected\": true\n    }\n\nUnexpected/missing field"
+      }
+    },
+    {
+      "name": "missing-fields-['record', 'intent', 'context']",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.intent.context:\n\n    {\n        \"lifetime\": \"16466285324869842288\",\n        \"output\": \"1\",\n        \"revision\": \"21\"\n    }\n\nUnexpected/missing field"
+      }
+    },
+    {
+      "name": "extra-fields-['release']",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release:\n\n    {\n        \"id\": \"0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef\",\n        \"proof\": {\n            \"protocolVersion\": 3,\n            \"kind\": \"binding-retirement\",\n            \"retirementProtocol\": 1,\n            \"operation\": \"retire\",\n            \"binding\": {\n                \"lifetime\": \"16466285324869842288\",\n                \"session\": \"2\",\n                \"frontend\": \"1\"\n            },\n            \"requestId\": \"23\",\n            \"queriedBinding\": {\n                \"lifetime\": \"16466285324869842288\",\n                \"session\": \"1\",\n                \"frontend\": \"2\"\n            },\n            \"sequence\": \"5\",\n            \"grantState\": \"Retired\"\n        },\n        \"observation\": {\n            \"actionRequestId\": \"91\",\n            \"geometryRequestId\": \"93\",\n            \"actionContext\": {\n                \"lifetime\": \"16466285324869842288\",\n                \"epoch\": \"1\",\n                \"output\": \"7\",\n                \"revision\": \"37\"\n            },\n            \"geometryContext\": {\n                \"lifetime\": \"16466285324869842288\",\n                \"epoch\": \"1\",\n                \"output\": \"7\",\n                \"revision\": \"101\"\n            }\n        },\n        \"unexpected\": true\n    }\n\nUnexpected or missing reconciliation fields"
+      }
+    },
+    {
+      "name": "missing-fields-['release']",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release:\n\n    {\n        \"proof\": {\n            \"protocolVersion\": 3,\n            \"kind\": \"binding-retirement\",\n            \"retirementProtocol\": 1,\n            \"operation\": \"retire\",\n            \"binding\": {\n                \"lifetime\": \"16466285324869842288\",\n                \"session\": \"2\",\n                \"frontend\": \"1\"\n            },\n            \"requestId\": \"23\",\n            \"queriedBinding\": {\n                \"lifetime\": \"16466285324869842288\",\n                \"session\": \"1\",\n                \"frontend\": \"2\"\n            },\n            \"sequence\": \"5\",\n            \"grantState\": \"Retired\"\n        },\n        \"observation\": {\n            \"actionRequestId\": \"91\",\n            \"geometryRequestId\": \"93\",\n            \"actionContext\": {\n                \"lifetime\": \"16466285324869842288\",\n                \"epoch\": \"1\",\n                \"output\": \"7\",\n                \"revision\": \"37\"\n            },\n            \"geometryContext\": {\n                \"lifetime\": \"16466285324869842288\",\n                \"epoch\": \"1\",\n                \"output\": \"7\",\n                \"revision\": \"101\"\n            }\n        }\n    }\n\nUnexpected or missing reconciliation fields"
+      }
+    },
+    {
+      "name": "extra-fields-['release', 'proof']",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.proof:\n\n    {\n        \"protocolVersion\": 3,\n        \"kind\": \"binding-retirement\",\n        \"retirementProtocol\": 1,\n        \"operation\": \"retire\",\n        \"binding\": {\n            \"lifetime\": \"16466285324869842288\",\n            \"session\": \"2\",\n            \"frontend\": \"1\"\n        },\n        \"requestId\": \"23\",\n        \"queriedBinding\": {\n            \"lifetime\": \"16466285324869842288\",\n            \"session\": \"1\",\n            \"frontend\": \"2\"\n        },\n        \"sequence\": \"5\",\n        \"grantState\": \"Retired\",\n        \"unexpected\": true\n    }\n\nUnexpected or missing reconciliation fields"
+      }
+    },
+    {
+      "name": "missing-fields-['release', 'proof']",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.proof:\n\n    {\n        \"kind\": \"binding-retirement\",\n        \"retirementProtocol\": 1,\n        \"operation\": \"retire\",\n        \"binding\": {\n            \"lifetime\": \"16466285324869842288\",\n            \"session\": \"2\",\n            \"frontend\": \"1\"\n        },\n        \"requestId\": \"23\",\n        \"queriedBinding\": {\n            \"lifetime\": \"16466285324869842288\",\n            \"session\": \"1\",\n            \"frontend\": \"2\"\n        },\n        \"sequence\": \"5\",\n        \"grantState\": \"Retired\"\n    }\n\nUnexpected or missing reconciliation fields"
+      }
+    },
+    {
+      "name": "extra-fields-['release', 'observation']",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation:\n\n    {\n        \"actionRequestId\": \"91\",\n        \"geometryRequestId\": \"93\",\n        \"actionContext\": {\n            \"lifetime\": \"16466285324869842288\",\n            \"epoch\": \"1\",\n            \"output\": \"7\",\n            \"revision\": \"37\"\n        },\n        \"geometryContext\": {\n            \"lifetime\": \"16466285324869842288\",\n            \"epoch\": \"1\",\n            \"output\": \"7\",\n            \"revision\": \"101\"\n        },\n        \"unexpected\": true\n    }\n\nUnexpected or missing reconciliation fields"
+      }
+    },
+    {
+      "name": "missing-fields-['release', 'observation']",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation:\n\n    {\n        \"geometryRequestId\": \"93\",\n        \"actionContext\": {\n            \"lifetime\": \"16466285324869842288\",\n            \"epoch\": \"1\",\n            \"output\": \"7\",\n            \"revision\": \"37\"\n        },\n        \"geometryContext\": {\n            \"lifetime\": \"16466285324869842288\",\n            \"epoch\": \"1\",\n            \"output\": \"7\",\n            \"revision\": \"101\"\n        }\n    }\n\nUnexpected or missing reconciliation fields"
+      }
+    },
+    {
+      "name": "extra-fields-['release', 'observation', 'actionContext']",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.actionContext:\n\n    {\n        \"lifetime\": \"16466285324869842288\",\n        \"epoch\": \"1\",\n        \"output\": \"7\",\n        \"revision\": \"37\",\n        \"unexpected\": true\n    }\n\nUnexpected or missing reconciliation fields"
+      }
+    },
+    {
+      "name": "missing-fields-['release', 'observation', 'actionContext']",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.release.observation.actionContext:\n\n    {\n        \"epoch\": \"1\",\n        \"output\": \"7\",\n        \"revision\": \"37\"\n    }\n\nUnexpected or missing reconciliation fields"
+      }
+    },
+    {
+      "name": "expected-output-scope-mismatch",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Uncorrelated retirement or current observation"
+      }
+    },
+    {
+      "name": "expected-current-epoch-mismatch",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Uncorrelated retirement or current observation"
+      }
+    },
+    {
+      "name": "unknown-foreign-current-binding",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Foreign current binding"
+      }
+    },
+    {
+      "name": "unknown-invalid-old-authority",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record:\n\n    {\n        \"schema\": 2,\n        \"effectProtocol\": 1,\n        \"binding\": {\n            \"lifetime\": \"16466285324869842288\",\n            \"session\": \"1\",\n            \"frontend\": \"2\"\n        },\n        \"intent\": {\n            \"context\": {\n                \"epoch\": \"9\",\n                \"lifetime\": \"16466285324869842288\",\n                \"output\": \"1\",\n                \"revision\": \"21\"\n            },\n            \"generation\": \"12\",\n            \"incarnation\": \"2\",\n            \"operation\": \"minimize\",\n            \"request\": \"12\"\n        },\n        \"status\": \"Unknown\"\n    }\n\nRecord authority or operation/protocol mismatch"
+      }
+    },
+    {
+      "name": "unknown-nonunknown-status",
+      "passed": true,
+      "expectedOk": false,
+      "result": {
+        "ok": false,
+        "error": "Problem with the value at json.record.status:\n\n    \"Committed\"\n\nUnexpected frame/status"
+      }
+    }
+  ],
+  "commands": [
+    {
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "--optimize",
+        "src/Probe.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/tests-1791147720077417859/worker.js"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/tests-1791147720077417859/inputs",
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/tests-1791147720077417859/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/tests-1791147720077417859/cases.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601/qa/tests-1791147720077417859/results.json"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frame-decoder-v601",
+      "exitCode": 0
+    }
+  ],
+  "syntheticNormalization": {
+    "sourceProof": "/home/hoskinson/omarchy-windows-parity/implementation/elm-grant-retirement-native-v596/qa/native-1791146569027803533/report.json",
+    "sourceProofSHA256": "8af9abfdad0f4c25f74eb2458df4624b1a8d1da6972d33f11884d2c52801caf8",
+    "sourceUnknown": "/home/hoskinson/omarchy-windows-parity/implementation/elm-unknown-reservation-reproducer-v575/qa/replay-1791143832598854566/frames.json",
+    "sourceUnknownSHA256": "e81849680e92d52b94535fb028057fda988d05d1647b81ab03a9880defa498db",
+    "mapping": "596 retired queriedBinding becomes old record binding;573 request12 intent lifetime/epoch normalized to that binding. Independent current action/geometry contexts and IDs are synthetic declared expectations, not one captured campaign."
+  },
+  "artifacts": {
+    "captured596-proof.json": "35521b0ce53978519bf3eb764c0dca285db3946a3aa462a5d24f8e314de0330d",
+    "captured573-unknown-source.json": "e81849680e92d52b94535fb028057fda988d05d1647b81ab03a9880defa498db",
+    "captured596-report.json": "8af9abfdad0f4c25f74eb2458df4624b1a8d1da6972d33f11884d2c52801caf8",
+    "cases.json": "21d75b34011be2ffcb84a6b6cd46ae86549221e57e5cdec344b2023d140aefa1",
+    "worker.js": "b634836c7abcba1d07ec57d1847ef36f903236545ef3f9796e07f853ee139d71",
+    "compile.stdout": "da48e43f37385fe843437d9873f7fdbc7a56c61c92d1424fe96d98c16c76968e",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results.json": "2179bee80bdb6c44ea18c6f94b1166cd1e6c1c8035fe5a2a4c81c62c0610e002",
+    "test.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "inputs/src/Effects.elm": "5fb87f2cbeafe899e083882084c0c223f99a6b83bc9815d44493962cbd485c20",
+    "inputs/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "inputs/src/ActionProjection.elm": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996",
+    "inputs/src/Binding.elm": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+    "inputs/src/GeometryProjection.elm": "4aee2448599d3b94d3dd4762aa8d0c223b77e9d1a61898e70d6870151194d1d9",
+    "inputs/src/GeometrySizePolicy.elm": "46dda2de43642cd33997382e90813c8eeccde80745d79b7d5cd5fd425b062c43",
+    "inputs/src/ReconciliationFrame.elm": "649dd74721deffb1d1380386bed39f1304656708b4e99bc2966fcd09f0d2a972",
+    "inputs/src/Probe.elm": "f16ab7e05d147922956429b5fff1580dff64de519d69df2f1c21477aa6125ab5"
+  }
+}

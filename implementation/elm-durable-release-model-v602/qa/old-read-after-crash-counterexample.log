@@ -1,0 +1,17 @@
+
+  tests
+    1) oldReadAfterCrashRefusedTest failed after 1 test(s)
+
+  1 failed
+
+  1) oldReadAfterCrashRefusedTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/qa/mutants/old-read-after-crash/tests.qnt:33:218
+        33:  run oldReadAfterCrashRefusedTest = init.then(establish).then(fire(Crash)).then(fire(Proof({kind:1,key:1,epoch:1,barrier:1}))).then(fire(RequestReads)).then(fire(Observe({kind:1,request:11,epoch:1,seq:2}))).then(all {assert(not(s.actionRead) and s.frontendEpoch==2 and allProps),fire(Crash)})
+                                                                                                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xeb2c --match=oldReadAfterCrashRefusedTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/qa/mutants/old-read-after-crash/tests.qnt
+error: Tests failed

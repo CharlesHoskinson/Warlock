@@ -1,0 +1,106 @@
+{
+  "passed": false,
+  "checks": [
+    {
+      "name": "unchanged actual C admission producer compiles",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "C Pending imported as Unknown",
+      "passed": true
+    },
+    {
+      "name": "Unknown target blocks before proof",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 1",
+      "passed": true
+    },
+    {
+      "name": "prepare file + rename + root barrier before unlink + admission barrier + final file/rename/root",
+      "passed": true
+    },
+    {
+      "name": "release returned only final durable phase",
+      "passed": true
+    },
+    {
+      "name": "historical Unknown exact and latest never Committed",
+      "passed": true
+    },
+    {
+      "name": "exact admission gone",
+      "passed": true
+    },
+    {
+      "name": "live reservation released",
+      "passed": true
+    },
+    {
+      "name": "independent read IDs revisions retained",
+      "passed": true
+    },
+    {
+      "name": "v5 predecessor remains byte-identical",
+      "passed": true
+    },
+    {
+      "name": "release idempotent across restart",
+      "passed": true
+    },
+    {
+      "name": "fresh valid join preserves immutable first disposition",
+      "passed": true
+    },
+    {
+      "name": "fresh join never relabels stored read IDs",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "late exact C key removed without resurrection",
+      "passed": true
+    },
+    {
+      "name": "retired binding cannot submit different new intent",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "only fresh explicit C-admitted next request can begin",
+      "passed": true
+    },
+    {
+      "name": "new request does not rewrite old history",
+      "passed": true
+    },
+    {
+      "name": "new request blocks duplicate target",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "definitive absence barrier failure propagates Committed",
+      "passed": true
+    },
+    {
+      "name": "inherited absence barrier error poisons Committed",
+      "passed": false
+    }
+  ],
+  "error": "AssertionError('inherited absence barrier error poisons Committed')"
+}

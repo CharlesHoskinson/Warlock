@@ -1,0 +1,662 @@
+{
+  "sourceHeld": true,
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "CPU process-restart-visible rename versus power-loss durability model only",
+  "namedCount": 36,
+  "sampledTraces": 2000,
+  "maxTransitions": 80,
+  "typedMutants": 9,
+  "files": [
+    {
+      "path": "HANDOFF.md",
+      "sha256": "9aa5410e91395e3ea114ef0fcb3d04f2d553695516a6d2d70a3dab02c029886a",
+      "size": 4802
+    },
+    {
+      "path": "qa/accepted_ackBeforeFinalSyncRefusedTest_3.itf.json",
+      "sha256": "e3c9ec85db1d97571106d57ff07f9c6df946ee020c81ae2617cf9493de003bee",
+      "size": 8934
+    },
+    {
+      "path": "qa/accepted_boundedHistoryNoOverwriteTest_18.itf.json",
+      "sha256": "923c63b6960112315e2cc032208702e79990010932969144dd0379b469d6be5e",
+      "size": 2346
+    },
+    {
+      "path": "qa/accepted_crashAfterSyncPreparedDirTest_24.itf.json",
+      "sha256": "9fdbaf3e77e67fdbdf2cac898edcd90aecf6a54cb27426ee6b8098bd45318efd",
+      "size": 8472
+    },
+    {
+      "path": "qa/accepted_crashAfterSyncPreparedTest_23.itf.json",
+      "sha256": "f16b328d445489815d6ce322d8c1e85fb481ca1b9a0fb26bd0d688428a353231",
+      "size": 7534
+    },
+    {
+      "path": "qa/accepted_crashAfterSyncProofDirTest_21.itf.json",
+      "sha256": "43e06a2526deee83c2bb48c8a69d3d2e4616f38fc20e297f40c9a0d09de6a707",
+      "size": 6587
+    },
+    {
+      "path": "qa/accepted_crashAfterSyncProofTest_20.itf.json",
+      "sha256": "917ca9b731344652c7e958aaccda6f5307e4c253019a2a0ebd121aa346f2c14d",
+      "size": 6124
+    },
+    {
+      "path": "qa/accepted_crashAfterSyncReleasedTest_28.itf.json",
+      "sha256": "34e044fc909a16b5d179291db5bb3345f21fbf7faf9a1a131dba0925442eeaaf",
+      "size": 11312
+    },
+    {
+      "path": "qa/accepted_crashAfterSyncUnlinkDirTest_26.itf.json",
+      "sha256": "de4efc7a6b75e1618401b0c73ebae893c1cf3992e3006bf9deca12a3f451a712",
+      "size": 9429
+    },
+    {
+      "path": "qa/accepted_crashAfterUnlinkTest_25.itf.json",
+      "sha256": "f46b3dffa50928b05be4177fb1e7330171b34bbdd037f078f6cb3bdfccb79438",
+      "size": 8946
+    },
+    {
+      "path": "qa/accepted_crashAfterWritePreparedTest_22.itf.json",
+      "sha256": "ccf9d5bffc96f7d488077a932d284fc5c8d3e36b6980dbc19af987c3f6f9bea3",
+      "size": 7061
+    },
+    {
+      "path": "qa/accepted_crashAfterWriteProofTest_19.itf.json",
+      "sha256": "1cd99a2ead1e40f6c1edee83c6273a67e66741969160e01a357aa88858f16642",
+      "size": 5648
+    },
+    {
+      "path": "qa/accepted_crashAfterWriteReleasedTest_27.itf.json",
+      "sha256": "8c5531da9e102e33b031e92780631bef9a674cbf5ed8d12f809f723c7a23d710",
+      "size": 9903
+    },
+    {
+      "path": "qa/accepted_crossedRequestsRefusedTest_13.itf.json",
+      "sha256": "6625b34c0256a7d60563e68cae126592ea5f26452b0278d34539fbaf8faa8fdd",
+      "size": 3731
+    },
+    {
+      "path": "qa/accepted_durableReleasedRestartNeedsBarrierTest_33.itf.json",
+      "sha256": "0e92aab2386a761e7d59cfa13dc2edf2689d3cbab2e8c2aaa2e93216524c1403",
+      "size": 11792
+    },
+    {
+      "path": "qa/accepted_durableUnlinkCrashStillBlockedTest_5.itf.json",
+      "sha256": "4bc87a081b40783cf094086cbb9474a596c1bf4b662a842b5eab8eb344f10b7c",
+      "size": 9428
+    },
+    {
+      "path": "qa/accepted_epochExhaustionRefusesReadsTest_30.itf.json",
+      "sha256": "172d0ad7df98abfe9235c3876d409f324bfe42e8762013dfc51da7617be29dd9",
+      "size": 4222
+    },
+    {
+      "path": "qa/accepted_foreignProofRefusedTest_9.itf.json",
+      "sha256": "2e1f80123d33ef245f0e0031ebc81faa72c838e0f35a502ada2e37c63336d9f0",
+      "size": 2295
+    },
+    {
+      "path": "qa/accepted_futureObservationRefusedTest_17.itf.json",
+      "sha256": "abcd157f6d0575ad1ef47eeb0704c829b79a3ab3c2bb1e0a8a60521431a26d43",
+      "size": 3252
+    },
+    {
+      "path": "qa/accepted_futureProofRefusedTest_11.itf.json",
+      "sha256": "3ac76c4129c2c4d78d030ef1524a030add7f35b24be8158f0c4047c435dd3b1f",
+      "size": 2295
+    },
+    {
+      "path": "qa/accepted_historyFullBlocksNewTest_15.itf.json",
+      "sha256": "e55e75737a506941bfda04a220989fae661b3eeb1e38cbdca681ced45ad90ed0",
+      "size": 11347
+    },
+    {
+      "path": "qa/accepted_historyUnknownNotCommitTest_7.itf.json",
+      "sha256": "2595838d30afb40a057104a479423e935c8bf0e7e97a92d9e9f5e9d21ee45180",
+      "size": 10827
+    },
+    {
+      "path": "qa/accepted_normalReleaseTest_0.itf.json",
+      "sha256": "201f26fff23f46f83bad4f899b299c66a1ba38c6a5158b0015f4602968e7984b",
+      "size": 10857
+    },
+    {
+      "path": "qa/accepted_oldReadAfterCrashRefusedTest_29.itf.json",
+      "sha256": "88017884e43efc56b5c30f788fa873e4fb81f45812856d5df01fd54af0a49738",
+      "size": 5652
+    },
+    {
+      "path": "qa/accepted_oneReadCannotPrepareTest_12.itf.json",
+      "sha256": "a23d7303dcffbc446a939351787fd66d2533300ffa31bb7dda00f1f32f8a150c",
+      "size": 3729
+    },
+    {
+      "path": "qa/accepted_preparedCrashStaysBlockedTest_1.itf.json",
+      "sha256": "5a90fe1cd6f606839bc351e5b55a6e06cc2ca779f003f1b5839c158a112658f8",
+      "size": 12782
+    },
+    {
+      "path": "qa/accepted_preparedRenameLostOnPowerLossTest_34.itf.json",
+      "sha256": "4612528fd10bc246920b7ae835b040960a8a8063a1d90a77c4846f1b6035643a",
+      "size": 7049
+    },
+    {
+      "path": "qa/accepted_registeredProofRefusedTest_8.itf.json",
+      "sha256": "65d275c8c90021a311a6fe3f91fc726655986d1edddcad5f84880eaba601c11b",
+      "size": 2298
+    },
+    {
+      "path": "qa/accepted_releasedCrashNeverResurrectsTest_6.itf.json",
+      "sha256": "89208ba337a8fdbc10983dd32ae4bc1e4135951d87c4d34169dcf8bb9db8beff",
+      "size": 10839
+    },
+    {
+      "path": "qa/accepted_releasedRenameLostOnPowerLossTest_35.itf.json",
+      "sha256": "5cb6129774a78eb3e284a8e1e6ee2ce306d3e763b319e306ad9f90c911e1361d",
+      "size": 9891
+    },
+    {
+      "path": "qa/accepted_releasedStageCannotRegressTest_16.itf.json",
+      "sha256": "e1510da60d86cb5d675a847f95b2dd2032d9a02035a2da68298d205898d1768a",
+      "size": 11344
+    },
+    {
+      "path": "qa/accepted_staleObservationRefusedTest_14.itf.json",
+      "sha256": "a1e681dc128e7c5512f6409dbc5bb1e430145569d4f578960cd9f82b9a7c3fdd",
+      "size": 3252
+    },
+    {
+      "path": "qa/accepted_staleProofRefusedTest_10.itf.json",
+      "sha256": "eb13ae37017f04c727f0f45c9b7887cb08fe4fb5efc2750f81aaf394b6eb7d20",
+      "size": 2776
+    },
+    {
+      "path": "qa/accepted_unlinkBeforePrepareRefusedTest_2.itf.json",
+      "sha256": "45130cfb75df7a5373de3043019b81a08b5e7adb622eb773cad483bc3510681d",
+      "size": 1816
+    },
+    {
+      "path": "qa/accepted_unlinkCrashRestoresExactReservationTest_4.itf.json",
+      "sha256": "8c68ac9e49e8742b42af4ae169f458125919966ca589fdb616ffc74ce5dd5603",
+      "size": 10858
+    },
+    {
+      "path": "qa/accepted_visiblePreparedRestartNeedsRootSyncTest_31.itf.json",
+      "sha256": "116072f34afa34e15d7b4a724fee68946af3cc132247bf9a10d4b72e94a71afa",
+      "size": 8480
+    },
+    {
+      "path": "qa/accepted_visibleReleasedRestartNeedsRootSyncTest_32.itf.json",
+      "sha256": "d53a119783801659b7f2e2339cea2d200f6c50edee3c7546beb395e1e85f044b",
+      "size": 12303
+    },
+    {
+      "path": "qa/ancestor602/release.qnt",
+      "sha256": "2df0b95fabac7981ce0d34fa2dc9926c4544158128b5026a7b192a501a8b4929",
+      "size": 5655
+    },
+    {
+      "path": "qa/ancestor602/tests.qnt",
+      "sha256": "35d619e524fec65e6fa935baa79b30af5196f0ea95eb2c9b4919139b9dfea74f",
+      "size": 8012
+    },
+    {
+      "path": "qa/durable-release-skips-restart-barrier-counterexample.log",
+      "sha256": "ae20b5c9c9d761fe5d9987905606b9b2e8db97c7d18e761188a98a77916ac12c",
+      "size": 1168
+    },
+    {
+      "path": "qa/durable-release-skips-restart-barrier-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/failed-selector/accepted_ackBeforeFinalSyncRefusedTest_3.itf.json",
+      "sha256": "7697d749106e1281a6d4b5e6a059500b83979707d256d03d4e696a25e6ce3db6",
+      "size": 8934
+    },
+    {
+      "path": "qa/failed-selector/accepted_boundedHistoryNoOverwriteTest_18.itf.json",
+      "sha256": "74d0c8693ccbf8f1a06277ae0210a9dcd9e2fa2fabc03b344d715c3cd5ded91b",
+      "size": 2346
+    },
+    {
+      "path": "qa/failed-selector/accepted_crashAfterSyncPreparedDirTest_24.itf.json",
+      "sha256": "f19ca331901f63e695c14f55c07e4b213f74912fb0a63810a1e92efedfc543c3",
+      "size": 8472
+    },
+    {
+      "path": "qa/failed-selector/accepted_crashAfterSyncPreparedTest_23.itf.json",
+      "sha256": "5ea7813e610f3f2c6e9f8643432aeb34cb0cfe71e29067880f6113e79eea7013",
+      "size": 7534
+    },
+    {
+      "path": "qa/failed-selector/accepted_crashAfterSyncProofDirTest_21.itf.json",
+      "sha256": "c36219c5f63c800ee02b3e18d87a8370d451f6ecdf61572e1e628da88c5cc387",
+      "size": 6587
+    },
+    {
+      "path": "qa/failed-selector/accepted_crashAfterSyncProofTest_20.itf.json",
+      "sha256": "1892f8b12875ba6d425eaac9ec5c19d3c572f5a5c44f6a0cf018bdfc159c0701",
+      "size": 6124
+    },
+    {
+      "path": "qa/failed-selector/accepted_crashAfterSyncReleasedTest_28.itf.json",
+      "sha256": "d92eabb182587730c7c03473ad5ee5abec58a1d536825f11bb0d942c04a6aa3d",
+      "size": 11312
+    },
+    {
+      "path": "qa/failed-selector/accepted_crashAfterSyncUnlinkDirTest_26.itf.json",
+      "sha256": "d48907854bd1369aa8e7f2703ced5aed0fcb6f1dc974895adddaf0b11167111f",
+      "size": 9429
+    },
+    {
+      "path": "qa/failed-selector/accepted_crashAfterUnlinkTest_25.itf.json",
+      "sha256": "69c01a2c561db309ec36da548a6310523c04183f0d3fecafcf5531af89c5ef7f",
+      "size": 8946
+    },
+    {
+      "path": "qa/failed-selector/accepted_crashAfterWritePreparedTest_22.itf.json",
+      "sha256": "75e8285b953eadf73ee050cbc8a78c30d803e09d80a67f2208262e9ab3dec9ff",
+      "size": 7061
+    },
+    {
+      "path": "qa/failed-selector/accepted_crashAfterWriteProofTest_19.itf.json",
+      "sha256": "cb8363a4ca130d3c37cc7c7c7505ca62289692dae5e350f60d4c6ec3f760f6bb",
+      "size": 5648
+    },
+    {
+      "path": "qa/failed-selector/accepted_crashAfterWriteReleasedTest_27.itf.json",
+      "sha256": "0a2eb75babbb1eebe46d33915d182065a7eff0665412c5a230e39f289b5c37bd",
+      "size": 9903
+    },
+    {
+      "path": "qa/failed-selector/accepted_crossedRequestsRefusedTest_13.itf.json",
+      "sha256": "bcc94a09ca9932b7bc3a14c4fe0dbd418e9894a3647135d17b5ae5df10681f42",
+      "size": 3731
+    },
+    {
+      "path": "qa/failed-selector/accepted_durableReleasedRestartNeedsBarrierTest_33.itf.json",
+      "sha256": "7cd7dc3d5e17b78764c50c429a5efc6e32e7b5e022abcb33e62bdfaf48bb162c",
+      "size": 11792
+    },
+    {
+      "path": "qa/failed-selector/accepted_durableUnlinkCrashStillBlockedTest_5.itf.json",
+      "sha256": "2abc29ee8b8eee0dad930f2974d7e63ec19ae23bbf0653a0dfaecbc748b3ed93",
+      "size": 9428
+    },
+    {
+      "path": "qa/failed-selector/accepted_epochExhaustionRefusesReadsTest_30.itf.json",
+      "sha256": "1cb160e05b68a33cd0e7f6f6b6a9b116f86b372c1eb10f3e72aa51d84b034c05",
+      "size": 4222
+    },
+    {
+      "path": "qa/failed-selector/accepted_foreignProofRefusedTest_9.itf.json",
+      "sha256": "f9bb47212d9404a03f346446b3ba8ec7ed854cde3f553b83c9b87cac77f83348",
+      "size": 2295
+    },
+    {
+      "path": "qa/failed-selector/accepted_futureObservationRefusedTest_17.itf.json",
+      "sha256": "c690dc1cb19cc654c9e592e790752bc09ec1019b23ca88ff7028a1a7dd4b2e02",
+      "size": 3252
+    },
+    {
+      "path": "qa/failed-selector/accepted_futureProofRefusedTest_11.itf.json",
+      "sha256": "65d044309edf32a332b97d7cf5c6548d46b2749516e47a884d2f8f240698b6dd",
+      "size": 2295
+    },
+    {
+      "path": "qa/failed-selector/accepted_historyFullBlocksNewTest_15.itf.json",
+      "sha256": "364cec5b3f601f45e0bee425f1ca9bbf8a335420f7c90f3852f3142ef7fbed03",
+      "size": 11347
+    },
+    {
+      "path": "qa/failed-selector/accepted_historyUnknownNotCommitTest_7.itf.json",
+      "sha256": "98fbfbe6d4af7df72670c8b0f9422d1d5d9c85c5e5871c76fec89745de972e3c",
+      "size": 10827
+    },
+    {
+      "path": "qa/failed-selector/accepted_normalReleaseTest_0.itf.json",
+      "sha256": "ec576619246b2b855d9d1971976b7f21d8634db6c5612dab9a7b978d5c7c38e6",
+      "size": 10857
+    },
+    {
+      "path": "qa/failed-selector/accepted_oldReadAfterCrashRefusedTest_29.itf.json",
+      "sha256": "69a971cf4ad891be7ac800faff02ab70ff22a0eb633935851bd4f24134196c69",
+      "size": 5652
+    },
+    {
+      "path": "qa/failed-selector/accepted_oneReadCannotPrepareTest_12.itf.json",
+      "sha256": "095ad125863cd90c5389837af3007ccaa5d33365794f56569c016a3d3f41ca74",
+      "size": 3729
+    },
+    {
+      "path": "qa/failed-selector/accepted_preparedCrashStaysBlockedTest_1.itf.json",
+      "sha256": "0a3f8e21e1322c97e76098dee82f163f8e4aa464651895a9414752c0e4bcad1a",
+      "size": 12782
+    },
+    {
+      "path": "qa/failed-selector/accepted_preparedRenameLostOnPowerLossTest_34.itf.json",
+      "sha256": "dbd5b7d80a3fd14e867c68e0ebb6e12747ee5433e6aaa612394b3b02c78e92e1",
+      "size": 7049
+    },
+    {
+      "path": "qa/failed-selector/accepted_registeredProofRefusedTest_8.itf.json",
+      "sha256": "734c06daa320fdb04609eb09476fe371fa858c29bf454c1668c22f4b07f60eb2",
+      "size": 2298
+    },
+    {
+      "path": "qa/failed-selector/accepted_releasedCrashNeverResurrectsTest_6.itf.json",
+      "sha256": "3a3ec945304e91beeda3c062c447e0154c33a49f96ed1aa47d5c235db4e922e0",
+      "size": 10839
+    },
+    {
+      "path": "qa/failed-selector/accepted_releasedRenameLostOnPowerLossTest_35.itf.json",
+      "sha256": "9bc7e38d5e1879b5ccf5a58ea0417c7f4bb2a8195319d150fd632ea8aba9f16b",
+      "size": 9891
+    },
+    {
+      "path": "qa/failed-selector/accepted_releasedStageCannotRegressTest_16.itf.json",
+      "sha256": "3e59475a573bf286dcbbb0506e8649e06e716244e8fca716fab40d1276a97c79",
+      "size": 11344
+    },
+    {
+      "path": "qa/failed-selector/accepted_staleObservationRefusedTest_14.itf.json",
+      "sha256": "d6bd5f2d11e408c66e9f93b8c71005f50c55ffbd4dcd8b1ea004c1f70116782d",
+      "size": 3252
+    },
+    {
+      "path": "qa/failed-selector/accepted_staleProofRefusedTest_10.itf.json",
+      "sha256": "7169c7671d374834e174d8c9be05281516dead257cd75593518fa3ee9ce44216",
+      "size": 2776
+    },
+    {
+      "path": "qa/failed-selector/accepted_unlinkBeforePrepareRefusedTest_2.itf.json",
+      "sha256": "5a439745aa069837c01ae1f14d24c3f9d07ef4c057ffae525ce8327b5af74351",
+      "size": 1816
+    },
+    {
+      "path": "qa/failed-selector/accepted_unlinkCrashRestoresExactReservationTest_4.itf.json",
+      "sha256": "e05c2421bbc73b4914861351025533896beecf91f7d010a7a569e404d342c4c8",
+      "size": 10858
+    },
+    {
+      "path": "qa/failed-selector/accepted_visiblePreparedRestartNeedsRootSyncTest_31.itf.json",
+      "sha256": "09c4c770627c3bbe712cf1dcb0dd45cddaa903fe04e159cd09954c812931919c",
+      "size": 8480
+    },
+    {
+      "path": "qa/failed-selector/accepted_visibleReleasedRestartNeedsRootSyncTest_32.itf.json",
+      "sha256": "9e7546812d86daeaa8cb06381e851e2fcd5b136d640812d05ecade6ff59db636",
+      "size": 12303
+    },
+    {
+      "path": "qa/failed-selector/named.log",
+      "sha256": "dc435339894a14a030e135c29db7c3a9c5a1dd0471f4cc82d829e8f1e3324b9f",
+      "size": 1943
+    },
+    {
+      "path": "qa/failed-selector/release.qnt",
+      "sha256": "898b11eb72eb257513d078917e73a0c627ec59920cfcf01506cb3a53df7f4160",
+      "size": 7197
+    },
+    {
+      "path": "qa/failed-selector/run.py",
+      "sha256": "e4c092ba839cc2c0725161d161abcf2c4c272ebc4c17fe36b790c5d432623bde",
+      "size": 3801
+    },
+    {
+      "path": "qa/failed-selector/skip-restart-prepared-root-barrier-counterexample.log",
+      "sha256": "8c3a41b58847b21288db5f39ac33fc4df84814e465c328bec42c4f0c774fcdae",
+      "size": 1529
+    },
+    {
+      "path": "qa/failed-selector/skip-restart-prepared-root-barrier-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/failed-selector/tests.qnt",
+      "sha256": "1f71ce6193c87e364e8ac908bb77f05fb78370abd9bfef9cf4609c26a4bef05f",
+      "size": 10706
+    },
+    {
+      "path": "qa/failed-selector/traces.log",
+      "sha256": "0e0769cd71be651bc3e75577e0d35dfa1aa911d0f8363ccc37d0ded95e6709e2",
+      "size": 45557
+    },
+    {
+      "path": "qa/failed-selector/typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/failed-selector/version.log",
+      "sha256": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+      "size": 7
+    },
+    {
+      "path": "qa/freeze.py",
+      "sha256": "98c57a378e0be3eba28ecc8277731102b308d3907f603a14fbb604adc8da2456",
+      "size": 1835
+    },
+    {
+      "path": "qa/mutants/durable-release-skips-restart-barrier/release.qnt",
+      "sha256": "5d8de60b4a8c9042a78a91fbf2d5da5b8dd4d3aa8e22ecce18da5c0c9b26ef71",
+      "size": 7181
+    },
+    {
+      "path": "qa/mutants/durable-release-skips-restart-barrier/tests.qnt",
+      "sha256": "1f71ce6193c87e364e8ac908bb77f05fb78370abd9bfef9cf4609c26a4bef05f",
+      "size": 10706
+    },
+    {
+      "path": "qa/mutants/old-intent-replay/release.qnt",
+      "sha256": "e5786e12a51c33a639dd7ed7f73b8cf1dd23a55682e0331967946521779ec0de",
+      "size": 7164
+    },
+    {
+      "path": "qa/mutants/old-intent-replay/tests.qnt",
+      "sha256": "1f71ce6193c87e364e8ac908bb77f05fb78370abd9bfef9cf4609c26a4bef05f",
+      "size": 10706
+    },
+    {
+      "path": "qa/mutants/powerloss-keeps-unsynced-rename/release.qnt",
+      "sha256": "c5ded661cb55587714dfb80226c49f442b1a94e985bbfa7d7f39fff867a45a1a",
+      "size": 7204
+    },
+    {
+      "path": "qa/mutants/powerloss-keeps-unsynced-rename/tests.qnt",
+      "sha256": "1f71ce6193c87e364e8ac908bb77f05fb78370abd9bfef9cf4609c26a4bef05f",
+      "size": 10706
+    },
+    {
+      "path": "qa/mutants/prepare-rename-implies-durability/release.qnt",
+      "sha256": "72c8a3267a23d65e8d0dd580fc5dfdf7fb928b2adc8fa6011dbdbd6ea828e298",
+      "size": 7205
+    },
+    {
+      "path": "qa/mutants/prepare-rename-implies-durability/tests.qnt",
+      "sha256": "1f71ce6193c87e364e8ac908bb77f05fb78370abd9bfef9cf4609c26a4bef05f",
+      "size": 10706
+    },
+    {
+      "path": "qa/mutants/registered-proof/release.qnt",
+      "sha256": "4cdfd9cd4b0f8edbc7f165114636bdba441f90582f2d32f1ae560fdf64756d52",
+      "size": 7163
+    },
+    {
+      "path": "qa/mutants/registered-proof/tests.qnt",
+      "sha256": "1f71ce6193c87e364e8ac908bb77f05fb78370abd9bfef9cf4609c26a4bef05f",
+      "size": 10706
+    },
+    {
+      "path": "qa/mutants/released-rename-implies-durability/release.qnt",
+      "sha256": "9e925a9879304f020d600ec0c89327b41977cddf050681943afbd0c63cf84cd1",
+      "size": 7205
+    },
+    {
+      "path": "qa/mutants/released-rename-implies-durability/tests.qnt",
+      "sha256": "1f71ce6193c87e364e8ac908bb77f05fb78370abd9bfef9cf4609c26a4bef05f",
+      "size": 10706
+    },
+    {
+      "path": "qa/mutants/skip-restart-prepared-root-barrier/release.qnt",
+      "sha256": "21722f867988a403bf6c3d4c852df479f337ad0788fd806b3769a9c32c601276",
+      "size": 7188
+    },
+    {
+      "path": "qa/mutants/skip-restart-prepared-root-barrier/tests.qnt",
+      "sha256": "1f71ce6193c87e364e8ac908bb77f05fb78370abd9bfef9cf4609c26a4bef05f",
+      "size": 10706
+    },
+    {
+      "path": "qa/mutants/skip-restart-released-root-barrier/release.qnt",
+      "sha256": "e327c41fac59364cfddcadb0212847ab58d5e7e594efdc0f4f74edb45f03eb42",
+      "size": 7206
+    },
+    {
+      "path": "qa/mutants/skip-restart-released-root-barrier/tests.qnt",
+      "sha256": "1f71ce6193c87e364e8ac908bb77f05fb78370abd9bfef9cf4609c26a4bef05f",
+      "size": 10706
+    },
+    {
+      "path": "qa/mutants/stage-regression/release.qnt",
+      "sha256": "840a85b6855c4c74fe348c932697946ec9494e24066cc960635125192a8cc18c",
+      "size": 7160
+    },
+    {
+      "path": "qa/mutants/stage-regression/tests.qnt",
+      "sha256": "1f71ce6193c87e364e8ac908bb77f05fb78370abd9bfef9cf4609c26a4bef05f",
+      "size": 10706
+    },
+    {
+      "path": "qa/named.log",
+      "sha256": "b745f8208f5e6455bd5d675188b1ee38ced91ebdfe8583d97ead26c1c9565968",
+      "size": 1943
+    },
+    {
+      "path": "qa/old-intent-replay-counterexample.log",
+      "sha256": "66e5dd45633324d6c32f0666dd7571900ac477632c76f492ff860736612505d7",
+      "size": 1070
+    },
+    {
+      "path": "qa/old-intent-replay-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/powerloss-keeps-unsynced-rename-counterexample.log",
+      "sha256": "2c25e097dd6e2e17c604d6a2e74cb6f3b4ca877be3eb098448353efe853a1562",
+      "size": 1306
+    },
+    {
+      "path": "qa/powerloss-keeps-unsynced-rename-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/prepare-rename-implies-durability-counterexample.log",
+      "sha256": "5ecd63df51eb3c746b2402024671763bcdb7ea7eab9535da1b8ec2a105cdf1c6",
+      "size": 1527
+    },
+    {
+      "path": "qa/prepare-rename-implies-durability-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/registered-proof-counterexample.log",
+      "sha256": "c4fab4edece2510692bbf11d18949a19fc72bd55bf2ee24e074bc92c4776968d",
+      "size": 989
+    },
+    {
+      "path": "qa/registered-proof-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/released-rename-implies-durability-counterexample.log",
+      "sha256": "5210b36ac7e849a3082cadf0905df6d7a85d9a77b8ddcb4b4264c02881d65cc4",
+      "size": 1605
+    },
+    {
+      "path": "qa/released-rename-implies-durability-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/report.json",
+      "sha256": "4ae07a3394692c5988683ca79fec4107130a8e97494450e581318256ef753328",
+      "size": 15458
+    },
+    {
+      "path": "qa/run.py",
+      "sha256": "132023ecf7211a243cec4b13d4a2fed902f4ab7950c30b95c0ff2ee0960cb85f",
+      "size": 3857
+    },
+    {
+      "path": "qa/skip-restart-prepared-root-barrier-counterexample.log",
+      "sha256": "8c3a41b58847b21288db5f39ac33fc4df84814e465c328bec42c4f0c774fcdae",
+      "size": 1529
+    },
+    {
+      "path": "qa/skip-restart-prepared-root-barrier-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/skip-restart-released-root-barrier-counterexample.log",
+      "sha256": "2722e02ff539497c0d623e0aac1fbd855a0d8153408e52c099fae2f79263e142",
+      "size": 1605
+    },
+    {
+      "path": "qa/skip-restart-released-root-barrier-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/stage-regression-counterexample.log",
+      "sha256": "4b6f980f2c313dece81bcfb898b96c812c3fb112a90ac27d821c7b187a04ed59",
+      "size": 1039
+    },
+    {
+      "path": "qa/stage-regression-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/traces.log",
+      "sha256": "1b6969b99b062794857e9c69c3df3f4ddf4786a4f3be4446068f41c2045d7868",
+      "size": 45557
+    },
+    {
+      "path": "qa/typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/version.log",
+      "sha256": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+      "size": 7
+    },
+    {
+      "path": "release.qnt",
+      "sha256": "898b11eb72eb257513d078917e73a0c627ec59920cfcf01506cb3a53df7f4160",
+      "size": 7197
+    },
+    {
+      "path": "tests.qnt",
+      "sha256": "1f71ce6193c87e364e8ac908bb77f05fb78370abd9bfef9cf4609c26a4bef05f",
+      "size": 10706
+    },
+    {
+      "path": "qa/ancestor602/component-manifest.json",
+      "sha256": "b137861f4608d2e8b2ce47175f413544ebbf7346c346e53bc1aaa27b428f915c",
+      "size": 19600
+    }
+  ]
+}

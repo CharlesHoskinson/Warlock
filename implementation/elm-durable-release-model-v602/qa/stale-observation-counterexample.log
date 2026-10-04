@@ -1,0 +1,17 @@
+
+  tests
+    1) staleObservationRefusedTest failed after 1 test(s)
+
+  1 failed
+
+  1) staleObservationRefusedTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/qa/mutants/stale-observation/tests.qnt:17:208
+        17:  run staleObservationRefusedTest = init.then(fire(NativeRetire)).then(fire(Proof({kind:1,key:1,epoch:1,barrier:1}))).then(fire(RequestReads)).then(fire(Observe({kind:2,request:12,epoch:1,seq:1}))).then(all {assert(not(s.geometry) and allProps),fire(Crash)})
+                                                                                                                                                                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xeb2c --match=staleObservationRefusedTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/qa/mutants/stale-observation/tests.qnt
+error: Tests failed
