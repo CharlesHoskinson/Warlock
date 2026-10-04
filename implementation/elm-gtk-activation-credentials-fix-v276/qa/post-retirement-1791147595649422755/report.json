@@ -1,0 +1,35 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "actualPrivateBusOnly": true,
+  "checks": [
+    {
+      "name": "late-normal",
+      "passed": true,
+      "provisionalCount": 0,
+      "finalCount": 1,
+      "busExitCode": 0,
+      "case": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-activation-credentials-fix-v276/qa/post-retirement-1791147595649422755/late-normal",
+      "actualWrapper": {
+        "pid": 3612397,
+        "start": "11569938",
+        "pgid": 3612397,
+        "ppid": 3612396,
+        "uid": 1000,
+        "realUid": 1000,
+        "effectiveUid": 1000,
+        "savedUid": 1000,
+        "filesystemUid": 1000,
+        "procOwnerUid": 1000,
+        "privilegedCredentials": false
+      }
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-activation-credentials-fix-v276/qa/post-retirement-test.py": "445d360453f849d1074ed6f627d122f0672f686b155b1e58dbe66ef3fec4c4ab",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-activation-credentials-fix-v276/qa/private_bus.py": "f79ad26930beb57f18839df1322975740c691cdbe1d9becb0217966f487e51bc",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-activation-credentials-fix-v276/qa/activation-supervisor.py": "3847677ba2af4aaea4ddc7239f9216017fe238048a2a4b6d2f6c674028825be4",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-activation-credentials-fix-v276/qa/owned_bus_host.py": "5740c57915a91748e46b2dfaebcc2762c04bea7f8e5abdc8ed785123c14f8158",
+    "/usr/bin/dbus-daemon": "e9ffeaea83965fa53077f716e352d3038794200bacb8eee043fe55117ce2c7d7"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "passed": false,
+  "busIdentity": {
+    "pid": 3629036,
+    "start": "11587447",
+    "pgid": 3629036,
+    "ppid": 3628772,
+    "uid": 1000,
+    "realUid": 1000,
+    "effectiveUid": 1000,
+    "savedUid": 1000,
+    "filesystemUid": 1000,
+    "procOwnerUid": 1000,
+    "privilegedCredentials": false
+  },
+  "records": [
+    {
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-activation-credentials-fix-v276/qa/post-retirement-1791147770004575210/late-fallback/activation-journals/org.elm.LateActivation/3629048-1791147770893887678.jsonl",
+      "sha256": "44a03f3839aaeb64313aef3b0f93d79696887ce13b6a3387efa617d2be7b6a72",
+      "wrapper": {
+        "pid": 3629048,
+        "start": "11587450",
+        "pgid": 3629048,
+        "ppid": 3629047,
+        "uid": 1000,
+        "realUid": 1000,
+        "effectiveUid": 1000,
+        "savedUid": 1000,
+        "filesystemUid": 1000,
+        "procOwnerUid": 1000,
+        "privilegedCredentials": false
+      },
+      "terminal": {
+        "sequence": 7,
+        "kind": "terminal",
+        "monotonic": 112037.766059948,
+        "childExitCode": -9,
+        "cancelled": true,
+        "fallback": true,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3629073,
+              "start": "11587460",
+              "pgid": 3629048,
+              "ppid": 3629048,
+              "uid": 1000,
+              "realUid": 1000,
+              "effectiveUid": 1000,
+              "savedUid": 1000,
+              "filesystemUid": 1000,
+              "procOwnerUid": 1000,
+              "privilegedCredentials": false
+            },
+            "exitCode": -9
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      }
+    }
+  ],
+  "error": "Refused('actual terminal error/fallback/live child')"
+}

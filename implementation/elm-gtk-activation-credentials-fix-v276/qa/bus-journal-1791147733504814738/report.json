@@ -1,0 +1,102 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "valid",
+      "passed": true,
+      "accepted": true
+    },
+    {
+      "name": "boolseq",
+      "passed": true,
+      "accepted": false
+    },
+    {
+      "name": "boolpid",
+      "passed": true,
+      "accepted": false
+    },
+    {
+      "name": "extra",
+      "passed": true,
+      "accepted": false
+    },
+    {
+      "name": "badstatus",
+      "passed": true,
+      "accepted": false
+    },
+    {
+      "name": "numericcancel",
+      "passed": true,
+      "accepted": false
+    },
+    {
+      "name": "nonfiniteerror",
+      "passed": true,
+      "accepted": false
+    },
+    {
+      "name": "boolchildexit",
+      "passed": true,
+      "accepted": false
+    },
+    {
+      "name": "boolruid",
+      "passed": true,
+      "accepted": false
+    },
+    {
+      "name": "wrongrealuid",
+      "passed": true,
+      "accepted": false
+    },
+    {
+      "name": "negativeeuid",
+      "passed": true,
+      "accepted": false
+    },
+    {
+      "name": "numericprivilege",
+      "passed": true,
+      "accepted": false
+    },
+    {
+      "name": "wrongprivilegeclass",
+      "passed": true,
+      "accepted": false
+    },
+    {
+      "name": "missingcredentials",
+      "passed": true,
+      "accepted": false
+    },
+    {
+      "name": "exitobservedwrongstart",
+      "passed": true,
+      "accepted": false
+    },
+    {
+      "name": "duplicateseq",
+      "passed": true,
+      "accepted": false
+    },
+    {
+      "name": "partialterminal",
+      "passed": true,
+      "accepted": false
+    },
+    {
+      "name": "laterrecord",
+      "passed": true,
+      "accepted": false
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-activation-credentials-fix-v276/qa/bus-journal-test.py": "1c02e7ffab0b6bd53cd230577dca1a2a06e47ba0853b7cd6ec992f2b1f6b071c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-activation-credentials-fix-v276/qa/private_bus.py": "1925f37ab31c4fecfec4d18a80768c829dbe9e1a157155b98db16fd7935eee34",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-activation-credentials-fix-v276/qa/private-bus-1791147578802060564/activation-journals/org.elm.CPUActivation/3611268-1791147578863413020.jsonl": "85ada344cd18ad379731cdae0f2cbf3a1297d7b04449ec30c0433288bc57b57e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-activation-credentials-fix-v276/qa/activation-supervisor.py": "3847677ba2af4aaea4ddc7239f9216017fe238048a2a4b6d2f6c674028825be4"
+  }
+}

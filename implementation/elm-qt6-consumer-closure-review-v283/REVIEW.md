@@ -1,0 +1,7 @@
+# Qt journal consumer closure review
+
+The held consumer separates raw QWindow input delivery from propagated QWidget observations. Complete raw intervals retain other-role and untracked events; exact pair checks bind current role/instance/map generation/source resource, Qt event kinds, button/source/modifier states and key domains. Double clicks and extra recipients fail the single-gesture oracle. Coordinates are explicit measured client values; globalQt is not native compositor placement.
+
+Parsing requires the owning PID/start/profile, contiguous sequence, nondecreasing clock/request sequence, primitive finite bounded fields, closed producer event vocabulary and immutable previously observed prefix. Complete newline records only are admitted; native callers must independently settle and bound interval completion before using negative input claims. The decoder is not an authenticator or complete event-specific schema validator. Physical routing, focus and toolkit modality require raw protocol/native evidence.
+
+The freezer binds actual captured journal/test sources, compiled Qt enum source/binary and recorded tool/header/library closure. Held250 producer source and its own manifest are independently pinned here. Tests remain synthetic input plus actual enum compilation: neither native input nor GUI/full Qt acceptance is claimed. No identified source/freezer blocker within this bounded CPU scope.

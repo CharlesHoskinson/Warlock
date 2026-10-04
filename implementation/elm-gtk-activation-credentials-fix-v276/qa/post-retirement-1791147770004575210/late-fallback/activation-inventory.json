@@ -1,0 +1,23 @@
+{
+  "services": [
+    {
+      "name": "org.elm.LateActivation",
+      "source": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-activation-credentials-fix-v276/qa/post-retirement-1791147770004575210/late-fallback/service.py",
+      "sourceSHA256": "0ab4de33c34a0b9c34c0c2c18de3fbd7a2e550c4a97df62e8151387815b4f338",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-activation-credentials-fix-v276/qa/post-retirement-1791147770004575210/late-fallback/service.py"
+      ],
+      "binarySHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "descriptor": "/run/user/1000/wqa/b98a/activations/org.elm.LateActivation.json",
+      "descriptorSHA256": "c05881472c0aa5775cb8b9af0e41c2899ed9eae78d05d4e51c0926b8d6568c36",
+      "descriptorCapture": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-activation-credentials-fix-v276/qa/post-retirement-1791147770004575210/late-fallback/activation-descriptors/org.elm.LateActivation.json",
+      "journalDirectory": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-activation-credentials-fix-v276/qa/post-retirement-1791147770004575210/late-fallback/activation-journals/org.elm.LateActivation"
+    }
+  ],
+  "supervisorSHA256": "3847677ba2af4aaea4ddc7239f9216017fe238048a2a4b6d2f6c674028825be4",
+  "configurationSource": "/usr/share/dbus-1/session.conf",
+  "configurationSourceSHA256": "206f009ddcf909422f3651c687b4623a5780fb7486c6d650e5332f57c00d6be1",
+  "configurationSHA256": "efee16ef79a4332d0b2709e3b05ceab31054d0ac765dd939e9296d55b8ca9ace"
+}

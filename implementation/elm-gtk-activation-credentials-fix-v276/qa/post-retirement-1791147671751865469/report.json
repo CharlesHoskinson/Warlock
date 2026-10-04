@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "actualPrivateBusOnly": true,
+  "checks": [
+    {
+      "name": "late-normal",
+      "passed": true,
+      "provisionalCount": 0,
+      "finalCount": 1,
+      "busExitCode": 0,
+      "case": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-activation-credentials-fix-v276/qa/post-retirement-1791147671751865469/late-normal",
+      "actualWrapper": {
+        "pid": 3620443,
+        "start": "11577548",
+        "pgid": 3620443,
+        "ppid": 3620442,
+        "uid": 1000,
+        "realUid": 1000,
+        "effectiveUid": 1000,
+        "savedUid": 1000,
+        "filesystemUid": 1000,
+        "procOwnerUid": 1000,
+        "privilegedCredentials": false
+      }
+    },
+    {
+      "name": "late-fallback",
+      "passed": true,
+      "provisionalCount": 0,
+      "finalCount": 1,
+      "busExitCode": 0,
+      "case": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-activation-credentials-fix-v276/qa/post-retirement-1791147671751865469/late-fallback",
+      "actualWrapper": {
+        "pid": 3620583,
+        "start": "11577583",
+        "pgid": 3620583,
+        "ppid": 3620582,
+        "uid": 1000,
+        "realUid": 1000,
+        "effectiveUid": 1000,
+        "savedUid": 1000,
+        "filesystemUid": 1000,
+        "procOwnerUid": 1000,
+        "privilegedCredentials": false
+      }
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-activation-credentials-fix-v276/qa/post-retirement-test.py": "445d360453f849d1074ed6f627d122f0672f686b155b1e58dbe66ef3fec4c4ab",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-activation-credentials-fix-v276/qa/private_bus.py": "9b541e2f11b76d96fc967d48fad8e1424089bb4ee473a935abec3724e153b5bb",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-activation-credentials-fix-v276/qa/activation-supervisor.py": "3847677ba2af4aaea4ddc7239f9216017fe238048a2a4b6d2f6c674028825be4",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-activation-credentials-fix-v276/qa/owned_bus_host.py": "5740c57915a91748e46b2dfaebcc2762c04bea7f8e5abdc8ed785123c14f8158",
+    "/usr/bin/dbus-daemon": "e9ffeaea83965fa53077f716e352d3038794200bacb8eee043fe55117ce2c7d7"
+  }
+}

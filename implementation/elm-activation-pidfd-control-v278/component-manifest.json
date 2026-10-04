@@ -1,0 +1,60 @@
+{
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "nativeAcceptance": false,
+  "scope": "Actual kernel pidfd signaling and retired-fd refusal only",
+  "files": {
+    "HANDOFF.md": {
+      "sha256": "a122f75673b67fa74696a8399eede18eeb19fe085e26919ede44f8401b80f6d4",
+      "size": 1073
+    },
+    "qa/pidfd-1791147400032395157/normal-retired-fd/opened-fdinfo.txt": {
+      "sha256": "2a3a0da9b790aa35f00754dfb4a1868a37c7294f921b2d5d428781c25cf18b83",
+      "size": 74
+    },
+    "qa/pidfd-1791147400032395157/normal-retired-fd/retired-fdinfo.txt": {
+      "sha256": "88f54e8684ae07faa3c7f7ca0e6bee1463860779cab868bf0cf3220813ff9deb",
+      "size": 64
+    },
+    "qa/pidfd-1791147400032395157/normal-retired-fd/stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/pidfd-1791147400032395157/normal-retired-fd/stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/pidfd-1791147400032395157/owned-TERM/opened-fdinfo.txt": {
+      "sha256": "8c721ebac6912d26cfd40299a6201f9552c1756323502e98ddfbc0a8a43d60d2",
+      "size": 74
+    },
+    "qa/pidfd-1791147400032395157/owned-TERM/retired-fdinfo.txt": {
+      "sha256": "5a11fdfff36651628c66cdb6d7e33943284ba11fe7103ae21b9a95c04b6ccfd7",
+      "size": 64
+    },
+    "qa/pidfd-1791147400032395157/owned-TERM/stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/pidfd-1791147400032395157/owned-TERM/stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/pidfd-1791147400032395157/report.json": {
+      "sha256": "131a2f56e5b7f552e0f4341a636972911278e93299eac7fee460463c1bb93c5f",
+      "size": 712
+    },
+    "qa/pidfd-1791147400032395157/test.py": {
+      "sha256": "4eb3f6ba1e7982079dbe4ccbb399e40815d36e5c76ef98c499b60400a7dd3ec8",
+      "size": 3163
+    },
+    "qa/test.py": {
+      "sha256": "4eb3f6ba1e7982079dbe4ccbb399e40815d36e5c76ef98c499b60400a7dd3ec8",
+      "size": 3163
+    }
+  },
+  "externalFiles": {
+    "/usr/bin/python3": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+  },
+  "report": "/home/hoskinson/omarchy-windows-parity/implementation/elm-activation-pidfd-control-v278/qa/pidfd-1791147400032395157/report.json"
+}

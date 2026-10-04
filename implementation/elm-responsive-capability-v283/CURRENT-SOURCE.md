@@ -1,0 +1,1 @@
+Fresh283: unchanged original256 capability native83 checks/deadlines on actual278 CSS-only GUI; independent source gate checks all check calls AST identity.280 all22/893 bounds and282 fullmenu89 actual current GUI accepted; actual broker255 adapter byte-identical278/231. Full473/recovery40 not yet accepted on278.
