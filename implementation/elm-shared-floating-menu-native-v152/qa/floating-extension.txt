@@ -1,0 +1,51 @@
+   # Additive actual floating-window multi-action/maximize/restore route.
+   floating_deadline=time.monotonic()+6
+   def floating_remaining():
+    value=floating_deadline-time.monotonic()
+    if value<=0:raise RuntimeError('Unchanged observation deadline')
+    return value
+   def floating_wait(predicate):return wait(predicate,seconds=floating_remaining())
+   placement=next(w for w in s.data('clients') if w['pid']==fixture.pid and w['title']=='ELM-AUTHORITY-FIXTURE')
+   check('floatingPlacementTargetsExactAuthorityIncarnation',placement['pid']==fixture.pid and inc==next(w['incarnation'] for w in client.snapshot('3')['windows'] if w['label']=='ELM-AUTHORITY-FIXTURE'))
+   selector=json.dumps('address:'+placement['address'])
+   check('floatingFixturePlacementAdmitted',s.ctl('eval','local r=hl.dispatch(hl.dsp.window.float({action="enable",window='+selector+'}));if type(r)~="table" or r.ok~=true then error("placement refused") end').strip()=='ok')
+   floating_wait(lambda:next((w for w in s.data('clients') if w['pid']==fixture.pid and w['address']==placement['address'] and w['title']=='ELM-AUTHORITY-FIXTURE' and w['floating']),None))
+   # Native observed geometry is captured before the first UI geometry operation.
+   ordinary=floating_wait(lambda:state(False))['window']
+   prior=journal();click(floating_wait(group));right(floating_wait(lambda:selection('ELM-AUTHORITY-FIXTURE')))
+   floating_menu=floating_wait(native_menu)
+   enabled=[(i,a) for i,a in enumerate(floating_menu['body']['menu']['actions']) if a['enabled']]
+   check('floatingMenuHasMultipleActualEnabledActions',floating_menu['body']['menu']['incarnation']==inc and len(enabled)>=2,actions=enabled)
+   max_index=next(i for i,a in enabled if a['label']=='Maximize')
+   original_selected=floating_menu['body']['menu']['selected'];count=len(inspections())
+   keys('key 108 1\nkey 108 0\n')
+   moved=floating_wait(lambda:native_menu() if len(inspections())>count and native_menu() else None)
+   next_index=next((i for i,a in enabled if i>original_selected),enabled[0][0])
+   check('floatingArrowMovesToNextEnabledActionWithoutEffect',moved['body']['menu']['selected']==next_index and journal()==prior,inspection=moved)
+   # End selects the last enabled action, which must be Maximize for this fixture.
+   check('floatingMaximizeIsLastEnabledAction',max_index==enabled[-1][0])
+   keys('key 107 1\nkey 107 0\n')
+   selected_max=floating_wait(lambda:native_menu() if native_menu() and native_menu()['body']['menu']['selected']==max_index else None)
+   check('floatingEndSelectsMaximizeWithoutEffect',journal()==prior,inspection=selected_max)
+   keys('key 28 1\nkey 28 0\n')
+   floating_wait(lambda:len(outcomes())==3)
+   request=journal();receipt=outcomes()[-1]
+   check('floatingMaximizeHasOneActualCorrelatedCommittedReceipt',len(request)==len(prior)+1 and request[-1]['intent']['incarnation']==inc and request[-1]['intent']['operation']=='maximize' and request[-1]['effectProtocol']==2 and receipt['effectProtocol']==2 and receipt['status']=='Committed' and receipt['binding']==request[-1]['binding'] and receipt['intent']==request[-1]['intent'],request=request[-1],receipt=receipt)
+   maximized=floating_wait(lambda:state(False) if state(False) and state(False)['window']['geometry']!=ordinary['geometry'] else None)['window']
+   floating_remaining()
+   check('floatingMaximizeChangesNativeGeometryPreservingOwnership',maximized['workspace']==ordinary['workspace'] and maximized['monitor']==ordinary['monitor'] and maximized['shouldRenderAny'] and maximized['acceptsInput'],before=ordinary,after=maximized)
+   # Restore uses its own original six-second whole-transition budget.
+   floating_deadline=time.monotonic()+6
+   click(floating_wait(group));right(floating_wait(lambda:selection('ELM-AUTHORITY-FIXTURE')))
+   restored_menu=floating_wait(native_menu)
+   check('floatingRestoreMenuTargetsOriginalIncarnation',restored_menu['body']['menu']['incarnation']==inc)
+   restore_index=next(i for i,a in enumerate(restored_menu['body']['menu']['actions']) if a['label']=='Restore' and a['enabled'])
+   keys('key 102 1\nkey 102 0\n')
+   floating_wait(lambda:native_menu() if native_menu() and native_menu()['body']['menu']['selected']==restore_index else None)
+   keys('key 28 1\nkey 28 0\n');floating_wait(lambda:len(outcomes())==4)
+   request=journal();receipt=outcomes()[-1]
+   check('floatingGeometryRestoreHasOneActualCorrelatedCommittedReceipt',len(request)==len(prior)+2 and request[-1]['intent']['incarnation']==inc and request[-1]['intent']['operation']=='restore-geometry' and request[-1]['effectProtocol']==2 and receipt['effectProtocol']==2 and receipt['status']=='Committed' and receipt['binding']==request[-1]['binding'] and receipt['intent']==request[-1]['intent'],request=request[-1],receipt=receipt)
+   geometry_restored=floating_wait(lambda:state(False) if state(False) and state(False)['window']['geometry']==ordinary['geometry'] else None)['window']
+   floating_remaining()
+   check('floatingGeometryRestoreReturnsOriginalPlacementAndOwnership',geometry_restored['workspace']==ordinary['workspace'] and geometry_restored['monitor']==ordinary['monitor'] and geometry_restored['shouldRenderAny'] and geometry_restored['acceptsInput'],before=ordinary,after=geometry_restored)
+   report['floatingExtension']={'nativeClientACKQualified':False,'fullGeometryCampaignAccepted':False,'deadlineSecondsPerTransition':6}
