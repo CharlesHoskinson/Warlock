@@ -1,0 +1,63 @@
+native/provider-grant-test.cpp:45:33: error: ‘fd’ does not name a type
+   45 |     fs::path root;pid_t pid{-1};fd::Owned stop;std::string mode;
+      |                                 ^~
+native/provider-grant-test.cpp: In constructor ‘Server::Server(std::string)’:
+native/provider-grant-test.cpp:52:17: error: ‘fd’ has not been declared
+   52 |                 fd::Owned listener(::socket(AF_UNIX,SOCK_STREAM|SOCK_CLOEXEC,0));sockaddr_un address{};address.sun_family=AF_UNIX;auto path=(root/"hypr/fixture/.socket.sock").string();memcpy(address.sun_path,path.c_str(),path.size()+1);
+      |                 ^~
+native/provider-grant-test.cpp:53:25: error: ‘listener’ was not declared in this scope; did you mean ‘listen’?
+   53 |                 require(listener && bind(listener.get(),reinterpret_cast<sockaddr*>(&address),sizeof(address))==0 && listen(listener.get(),8)==0,"Fixture listens in actual server process");require(write(ready[1],"R",1)==1,"Fixture ready");close(ready[1]);
+      |                         ^~~~~~~~
+      |                         listen
+native/provider-grant-test.cpp:57:21: error: ‘fd’ has not been declared
+   57 |                     fd::Owned connection(accept4(listener.get(),nullptr,nullptr,SOCK_CLOEXEC));require(bool(connection),"Fixture accept");timeval timeout{1,0};setsockopt(connection.get(),SOL_SOCKET,SO_RCVTIMEO,&timeout,sizeof(timeout));
+      |                     ^~
+native/provider-grant-test.cpp:57:109: error: ‘connection’ was not declared in this scope; did you mean ‘connect’?
+   57 |                     fd::Owned connection(accept4(listener.get(),nullptr,nullptr,SOCK_CLOEXEC));require(bool(connection),"Fixture accept");timeval timeout{1,0};setsockopt(connection.get(),SOL_SOCKET,SO_RCVTIMEO,&timeout,sizeof(timeout));
+      |                                                                                                             ^~~~~~~~~~
+      |                                                                                                             connect
+native/provider-grant-test.cpp:64:21: error: ‘fd’ has not been declared
+   64 |                     fd::Owned replacement;
+      |                     ^~
+native/provider-grant-test.cpp:65:106: error: ‘replacement’ was not declared in this scope; did you mean ‘replace’?
+   65 |                     if(mode=="replace-socket") {require(unlink(path.c_str())==0,"Fixture socket unlink");replacement=fd::Owned(::socket(AF_UNIX,SOCK_STREAM|SOCK_CLOEXEC,0));require(bind(replacement.get(),reinterpret_cast<sockaddr*>(&address),sizeof(address))==0,"Fixture replacement socket");}
+      |                                                                                                          ^~~~~~~~~~~
+      |                                                                                                          replace
+native/provider-grant-test.cpp:65:118: error: ‘fd’ has not been declared
+   65 |                     if(mode=="replace-socket") {require(unlink(path.c_str())==0,"Fixture socket unlink");replacement=fd::Owned(::socket(AF_UNIX,SOCK_STREAM|SOCK_CLOEXEC,0));require(bind(replacement.get(),reinterpret_cast<sockaddr*>(&address),sizeof(address))==0,"Fixture replacement socket");}
+      |                                                                                                                      ^~
+native/provider-grant-test.cpp:66:184: error: ‘replacement’ was not declared in this scope; did you mean ‘replace’?
+   66 |                     if(mode=="replace-directory") {fs::rename(root/"hypr/fixture",root/"hypr/old");fs::create_directory(root/"hypr/fixture");chmod((root/"hypr/fixture").c_str(),0700);replacement=fd::Owned(::socket(AF_UNIX,SOCK_STREAM|SOCK_CLOEXEC,0));require(bind(replacement.get(),reinterpret_cast<sockaddr*>(&address),sizeof(address))==0,"Fixture replacement directory socket");}
+      |                                                                                                                                                                                        ^~~~~~~~~~~
+      |                                                                                                                                                                                        replace
+native/provider-grant-test.cpp:66:196: error: ‘fd’ has not been declared
+   66 |                     if(mode=="replace-directory") {fs::rename(root/"hypr/fixture",root/"hypr/old");fs::create_directory(root/"hypr/fixture");chmod((root/"hypr/fixture").c_str(),0700);replacement=fd::Owned(::socket(AF_UNIX,SOCK_STREAM|SOCK_CLOEXEC,0));require(bind(replacement.get(),reinterpret_cast<sockaddr*>(&address),sizeof(address))==0,"Fixture replacement directory socket");}
+      |                                                                                                                                                                                                    ^~
+native/provider-grant-test.cpp:74:42: error: ‘stop’ was not declared in this scope
+   74 |         close(signal[0]);close(ready[1]);stop=fd::Owned(signal[1]);fd::Owned init(ready[0]);char value{};require(read(init.get(),&value,1)==1 && value=='R',"Fixture startup acknowledged");
+      |                                          ^~~~
+native/provider-grant-test.cpp:74:47: error: ‘fd’ has not been declared
+   74 |         close(signal[0]);close(ready[1]);stop=fd::Owned(signal[1]);fd::Owned init(ready[0]);char value{};require(read(init.get(),&value,1)==1 && value=='R',"Fixture startup acknowledged");
+      |                                               ^~
+native/provider-grant-test.cpp:74:68: error: ‘fd’ has not been declared
+   74 |         close(signal[0]);close(ready[1]);stop=fd::Owned(signal[1]);fd::Owned init(ready[0]);char value{};require(read(init.get(),&value,1)==1 && value=='R',"Fixture startup acknowledged");
+      |                                                                    ^~
+native/provider-grant-test.cpp:74:119: error: ‘init’ was not declared in this scope; did you mean ‘int’?
+   74 |         close(signal[0]);close(ready[1]);stop=fd::Owned(signal[1]);fd::Owned init(ready[0]);char value{};require(read(init.get(),&value,1)==1 && value=='R',"Fixture startup acknowledged");
+      |                                                                                                                       ^~~~
+      |                                                                                                                       int
+native/provider-grant-test.cpp: In member function ‘void Server::finish()’:
+native/provider-grant-test.cpp:77:50: error: ‘stop’ was not declared in this scope
+   77 |     void finish() {if(pid<0)return;require(write(stop.get(),"S",1)==1,"Fixture graceful stop");int status=0;require(waitpid(pid,&status,0)==pid && WIFEXITED(status) && !WEXITSTATUS(status),"Fixture normal terminal");pid=-1;fs::remove_all(root);}
+      |                                                  ^~~~
+native/provider-grant-test.cpp: In destructor ‘Server::~Server()’:
+native/provider-grant-test.cpp:78:32: error: ‘stop’ was not declared in this scope
+   78 |     ~Server(){if(pid>=0){write(stop.get(),"S",1);int status=0;waitpid(pid,&status,0);fs::remove_all(root);}}
+      |                                ^~~~
+native/provider-grant-test.cpp: In function ‘int main()’:
+native/provider-grant-test.cpp:90:345: error: ‘fd’ has not been declared
+   90 |             int pipefd[2];require(pipe2(pipefd,O_CLOEXEC)==0,"Backend fixture pipe");child=fork();require(child>=0,"Backend child fork");if(!child){close(pipefd[0]);try{auto own=server.open();auto session=own->binding().session.value;write(pipefd[1],&session,sizeof(session));_exit(0);}catch(...){_exit(2);}}close(pipefd[1]);uint64_t backend{};fd::Owned pipe(pipefd[0]);require(read(pipe.get(),&backend,sizeof(backend))==sizeof(backend) && waitpid(child,&status,0)==child && WIFEXITED(status) && !WEXITSTATUS(status),"Backend own grant child normal exit");check(backend==uint64_t(child) && backend!=binding.session.value,"Provider grant separate from backend process grant");
+      |                                                                                                                                                                                                                                                                                                                                                         ^~
+native/provider-grant-test.cpp:90:389: error: request for member ‘get’ in ‘pipe’, which is of non-class type ‘int(int*) noexcept’
+   90 |             int pipefd[2];require(pipe2(pipefd,O_CLOEXEC)==0,"Backend fixture pipe");child=fork();require(child>=0,"Backend child fork");if(!child){close(pipefd[0]);try{auto own=server.open();auto session=own->binding().session.value;write(pipefd[1],&session,sizeof(session));_exit(0);}catch(...){_exit(2);}}close(pipefd[1]);uint64_t backend{};fd::Owned pipe(pipefd[0]);require(read(pipe.get(),&backend,sizeof(backend))==sizeof(backend) && waitpid(child,&status,0)==child && WIFEXITED(status) && !WEXITSTATUS(status),"Backend own grant child normal exit");check(backend==uint64_t(child) && backend!=binding.session.value,"Provider grant separate from backend process grant");
+      |                                                                                                                                                                                                                                                                                                                                                                                                     ^~~

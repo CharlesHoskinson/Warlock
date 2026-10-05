@@ -1,0 +1,245 @@
+[
+  {
+    "id": "WLD-DESK-01",
+    "title": "Publish taskbar activation decision table",
+    "decision": "adapt",
+    "ears": "When the user activates a taskbar group control, the shell shall derive exactly one decision from Taskbar.primary and render the targeted control Pending until a correlated native receipt, never representing the decision as completed before it.",
+    "acceptance": [
+      "single active family -> Apply Minimize shown Pending",
+      "Committed -> state from next projection",
+      "Unknown -> 'could not be confirmed', no retry",
+      "two families -> Picker, no effect issued"
+    ],
+    "sourceUrls": [
+      "https://userbase.kde.org/Plasma/Tasks",
+      "https://help.gnome.org/gnome-help/shell-windows-switching.html"
+    ],
+    "dependencies": [
+      "W07",
+      "ELM-ADOPT-008",
+      "ELM-ADOPT-020"
+    ]
+  },
+  {
+    "id": "WLD-DESK-02",
+    "title": "Picker previews with honest freshness vocabulary",
+    "decision": "adapt",
+    "ears": "While the picker is open, each entry shall present title and application as text and show exactly one of Placeholder, Current, Earlier frame or Unavailable with non-color cue and text; stale pixels shall never be labelled current.",
+    "acceptance": [
+      "no frame -> placeholder text",
+      "liveness lost -> 'Earlier view' badge",
+      "revoked -> 'Preview unavailable', still selectable if available",
+      "close -> demand cancelled, lifecycle retained"
+    ],
+    "sourceUrls": [
+      "https://userbase.kde.org/Plasma/Tasks",
+      "https://help.gnome.org/gnome-help/shell-windows-switching.html",
+      "https://developer.apple.com/design/human-interface-guidelines/context-menus"
+    ],
+    "dependencies": [
+      "W03",
+      "W06",
+      "ELM-ADOPT-022",
+      "ELM-ADOPT-027",
+      "ELM-ADOPT-028"
+    ]
+  },
+  {
+    "id": "WLD-DESK-03",
+    "title": "Window-actions menu content policy (omit unsupported, disable unavailable with reason, <=3 groups)",
+    "decision": "adapt",
+    "ears": "When the window-actions menu opens, the shell shall omit capability-unsupported actions, list currently-unavailable supported actions as disabled with a reason, and present at most three separated groups.",
+    "acceptance": [
+      "maximized -> Maximize disabled 'Already maximized'",
+      "Pending -> all items unavailable with waiting reason",
+      "no geometry protocol -> Maximize/Restore Size omitted"
+    ],
+    "sourceUrls": [
+      "https://developer.apple.com/design/human-interface-guidelines/the-menu-bar",
+      "https://developer.apple.com/design/human-interface-guidelines/context-menus",
+      "https://developer.gnome.org/hig/patterns/controls/menus.html",
+      "https://develop.kde.org/hig/text_and_labels/"
+    ],
+    "dependencies": [
+      "ELM-ADOPT-030",
+      "right-click24",
+      "W07"
+    ]
+  },
+  {
+    "id": "WLD-DESK-04",
+    "title": "Complete menu/popup keyboard contract",
+    "decision": "borrow",
+    "ears": "While a Warlock popup menu has focus, Up/Down shall wrap, Home/End jump, printable characters type-ahead and Enter/Space activate enabled items; when Escape is pressed the popup shall close and return focus to the invoker without issuing a window effect.",
+    "acceptance": [
+      "'c' focuses Close",
+      "Esc after Unknown preserves outstanding obligation",
+      "focused disabled item announces reason and does not activate"
+    ],
+    "sourceUrls": [
+      "https://www.w3.org/WAI/ARIA/apg/patterns/menubar/",
+      "https://learn.microsoft.com/en-us/windows/apps/design/input/keyboard-interactions",
+      "https://developer.gnome.org/hig/guidelines/keyboard.html"
+    ],
+    "dependencies": [
+      "W07",
+      "ELM-ADOPT-016",
+      "ELM-ADOPT-029",
+      "ELM-ADOPT-030"
+    ]
+  },
+  {
+    "id": "WLD-DESK-05",
+    "title": "Taskbar keyboard entry, roving focus and exit",
+    "decision": "adapt",
+    "ears": "While keyboard focus is in the taskbar, Left/Right shall move between group controls, Down shall open the picker for multi-family groups and Shift+F10/Menu shall open window actions; when Escape is pressed focus shall leave without recording an activation.",
+    "acceptance": [
+      "arrow focus issues no Apply",
+      "Esc returns focus with zero native activations",
+      "focus vs active cue distinguishable in grayscale"
+    ],
+    "sourceUrls": [
+      "https://learn.microsoft.com/en-us/windows/apps/design/input/keyboard-interactions",
+      "https://help.gnome.org/gnome-help/shell-windows-switching.html",
+      "https://develop.kde.org/hig/accessibility/"
+    ],
+    "dependencies": [
+      "W07",
+      "ELM-ADOPT-016",
+      "ELM-ADOPT-029"
+    ]
+  },
+  {
+    "id": "WLD-DESK-06",
+    "title": "Status-surface taxonomy with one announcement owner",
+    "decision": "adapt",
+    "ears": "While the shell is Detached, Exhausted or transport-refused, surfaces shall show exactly one persistent banner naming the condition and safe next step; when an outcome arrives it shall be announced at most once through one owner without moving focus.",
+    "acceptance": [
+      "disconnect -> single banner with Reconnect",
+      "duplicate Unknown -> one announcement",
+      "later distinct Refused -> new announcement"
+    ],
+    "sourceUrls": [
+      "https://developer.gnome.org/hig/patterns/feedback/banners.html",
+      "https://developer.gnome.org/hig/patterns/feedback/toasts.html",
+      "https://develop.kde.org/hig/status_changes/"
+    ],
+    "dependencies": [
+      "W08",
+      "ELM-ADOPT-011",
+      "ELM-ADOPT-012",
+      "ELM-ADOPT-017"
+    ]
+  },
+  {
+    "id": "WLD-DESK-07",
+    "title": "Outcome-state visual vocabulary and semantic alias tokens",
+    "decision": "adapt",
+    "ears": "The shell shall render Pending, Committed, Refused, Cancelled, Unknown and Unavailable with distinct text and glyph shapes via alias tokens, and shall not use the brand diamond, mint or gold decoration as an outcome indicator.",
+    "acceptance": [
+      "six states distinguishable in grayscale",
+      "light theme uses light accents",
+      "contrast measured against frozen ELM-ADOPT-019 budget"
+    ],
+    "sourceUrls": [
+      "https://fluent2.microsoft.design/design-tokens",
+      "https://developer.gnome.org/hig/guidelines/ui-styling.html"
+    ],
+    "dependencies": [
+      "ELM-ADOPT-019",
+      "W08",
+      "tokens.json"
+    ]
+  },
+  {
+    "id": "WLD-DESK-08",
+    "title": "Applications launcher type-to-filter and honest launch outcome",
+    "decision": "adapt",
+    "ears": "While the applications popup is open, typed characters shall filter catalog entries locally without native requests; when an entry is activated the launch shall show as pending until a correlated native outcome.",
+    "acceptance": [
+      "'ter' filters",
+      "Esc clears then closes",
+      "Refused shows reason",
+      "Unknown not replayed"
+    ],
+    "sourceUrls": [
+      "https://develop.kde.org/hig/simple_by_default/",
+      "https://help.gnome.org/gnome-help/shell-overview.html"
+    ],
+    "dependencies": [
+      "W04",
+      "ELM-ADOPT-018",
+      "ELM-ADOPT-020"
+    ]
+  },
+  {
+    "id": "WLD-DESK-09",
+    "title": "Snapping/tiling (reject hover-maximize flyout)",
+    "decision": "defer",
+    "ears": "If a snap/tile action is offered, then the shell shall display native-proposed target geometry before commitment and show the arrangement applied only after a correlated Committed receipt.",
+    "acceptance": [
+      "catalog shows 'Not in Warlock yet' only"
+    ],
+    "sourceUrls": [
+      "https://learn.microsoft.com/en-us/windows/apps/desktop/modernize/apply-snap-layout-menu",
+      "https://help.gnome.org/gnome-help/shell-windows-tiled.html"
+    ],
+    "dependencies": [
+      "geometry protocol extension",
+      "W05",
+      "W12",
+      "restore38",
+      "drag-resize52"
+    ]
+  },
+  {
+    "id": "WLD-DESK-10",
+    "title": "Workspaces documented as host-owned",
+    "decision": "defer",
+    "ears": "The catalog shall list workspaces as not provided by Warlock and shall not depict workspace switching in demos.",
+    "acceptance": [
+      "no workspace control in any demo"
+    ],
+    "sourceUrls": [
+      "https://help.gnome.org/gnome-help/shell-workspaces.html"
+    ],
+    "dependencies": []
+  },
+  {
+    "id": "WLD-DESK-11",
+    "title": "Settings rules before settings UI",
+    "decision": "borrow",
+    "ears": "Each Warlock setting shall declare the behavior it changes and the guarantees it preserves, and changing a setting shall not retarget a pending action.",
+    "acceptance": [
+      "grouping change with picker open preserves focused identity or applies declared fallback"
+    ],
+    "sourceUrls": [
+      "https://develop.kde.org/hig/powerful_when_needed/",
+      "https://developer.gnome.org/hig/guidelines/ui-styling.html"
+    ],
+    "dependencies": [
+      "ELM-ADOPT-016",
+      "ELM-ADOPT-019",
+      "ELM-ADOPT-023"
+    ]
+  },
+  {
+    "id": "WLD-DESK-12",
+    "title": "Warlock Design catalog site with evidence badges and simulated-authority demos",
+    "decision": "adapt",
+    "ears": "Every component page shall badge each claim as existing source, proposed, browser demonstration or native acceptance, and every interactive demo shall identify its native outcomes as simulated.",
+    "acceptance": [
+      "CI fails on any undocumented Decision/Status/Outcome/Phase/mode/control kind",
+      "every demo shows 'Simulated authority \u2014 not native evidence'"
+    ],
+    "sourceUrls": [
+      "https://fluent2.microsoft.design/design-tokens",
+      "https://github.com/pbakaus/impeccable"
+    ],
+    "dependencies": [
+      "WLD-DESK-01..11",
+      "tokens.json",
+      "full source manifest"
+    ]
+  }
+]

@@ -1,0 +1,109 @@
+# Peer review of candidate-v1 (reviewer opus-03-desktop)
+
+**My vote: accept 27 contracts, revise 3 (WARLOCK-DL-017, -018 and -030).** I do not recommend consensus on this exact version.
+
+Each revise below is a small, specific wording fix. Every other contract I accept as written, with its guardrail. Nothing here claims native acceptance, and all prior release scope and the Warlock brand stay as they are.
+
+**Integrity check.** `candidate-v1.json` matches `candidate-v1.md` for all 30 contracts. The hash in `candidate-v1.sha256` matches the one you stated. I could not recompute SHA-256 because I have no shell in this session, so I relied on that recorded value.
+
+## Corrections to my own earlier report
+
+The supplemental modules (`Surface.elm`, `context.js`, `activation.js`, `Desktop.elm`, `PreviewLifecycle.elm`) show that several things I called proposals already exist, and one finding was wrong:
+
+- **My finding F6 was wrong.** I said menu items look enabled while an operation is pending. In fact `Surface.elm:65-68` disables the rows and shows "Awaiting native confirmation", and the menu notice reads "Working…" (`:109`).
+- **Shift+F10 and the Menu key already work** on bar groups and picker entries (`context.js:51-54` → `Surface.elm:159-172`).
+- **Escape is already wired.** In a picker it activates `control:close` (`activation.js:99-106`). In a menu, Escape and Close are routed through native navigation to `Menu.Dismiss` (`context.js:46-48`, `Surface.elm:148-149`).
+- **Focus return already exists.** After a menu is dismissed or the picker closes, focus goes back to the group once a matching observation arrives (`Desktop.elm:143,151,191-199`).
+- **Space does nothing in menu mode.** Neither `context.js` nor `activation.js` routes it, and `context.js:15-18` blocks the zero-detail click that Space would produce.
+- **`aria-current="true"` drives focus in menus.** `context.js:58,71-72` uses it as the roving-focus target. Any typed replacement (WARLOCK-DL-007) has to move that focus logic in the bridge too.
+
+## Findings from the supplemental source
+
+1. **The Launch row is unreachable on the taskbar.** The shipped controller always calls `Taskbar.primary False` (`TaskbarShell.elm:83`, `Surface.elm:87-91`), and every group has at least one window. So the "zero families" and "pinned → Launch" rows exist in the function but never happen in the shipped taskbar. My own WLD-DESK-01 implied otherwise.
+2. **Preview states already exist in source.** `PreviewLifecycle.elm:137-147,360-375` defines Live, Historical, Loading and Unavailable, shown as "Live preview", "Historical preview", "Preview loading" and "Preview unavailable".
+   - Historical only applies while the existing lease is still authorized, unexpired and has a matching privacy generation.
+   - "Live" means the source is live and the scene/content generations match. It does not require evidence that the frame was physically presented.
+3. **Label-in-name failures are real.**
+   - Bar groups have a visible label such as "Firefox" but an accessible name of "Activate/Minimize/Restore Firefox" or "Choose a window from Firefox" (`Surface.elm:91-98`).
+   - "Windows" is named "Close applications and return to windows", and "Applications" is named "Open applications".
+   - The WARLOCK-DL-007 validator will flag all of these. That is correct, and they should be reported as findings rather than rewritten.
+4. **The product stylesheet does not use the brand yet.** `shell.css` uses `system-ui` and colours that aren't Warlock tokens (#17202a, #263544, #7ed7ff). Its focus ring is 3px with a 1px offset. The bar's status region is visually hidden but still a live region.
+5. **The menu shrinks on the geometry path.** `Provider.withGeometry` (`:408-416`) replaces the item list with Restore/Minimize plus Maximize when supported, and keeps unadvertised Restore/Minimize as disabled rows.
+   - `PinToTaskbar` is never produced (`Provider.elm:204`).
+   - It is unclear whether `AlwaysOnTop checked` reports the current state or the requested one.
+6. **Other details:**
+   - An Unknown launch is released only by an explicit "I checked; allow another launch" control (`Surface.elm:56`). That is a user action, not a replay.
+   - `bar.html` and `popup.html` have no `lang` attribute.
+   - `asset-manifest.json` records absolute local paths under `/home/hoskinson/.codex/...`.
+
+## Blocking corrections
+
+- **WARLOCK-DL-017.** Replace the first acceptance bullet with: "The published truth table records the shipped call `Taskbar.primary False` (`TaskbarShell.elm:83`, `Surface.elm:87-91`); zero-family and pinned→Launch rows are labeled function-level Source, unreachable from shipped groups, with pinned launch remaining a separate native contract."
+  - Scope the EARS pending clause to "for Apply decisions", because Picker and Unavailable never settle.
+- **WARLOCK-DL-018.**
+  - In the EARS, replace "Current shall require the applicable authenticated source and presentation evidence" with: "Live retains its frozen PreviewLifecycle definition; any stronger 'presented' claim requires native presentation evidence."
+  - Replace acceptance bullet 2 with: "Source states Live preview / Historical preview / Preview loading / Preview unavailable (`PreviewLifecycle.elm:137-147,360-375`) are documented as Source under the frozen historical/live/unavailable policy and preview13; authorized Historical display is neither removed nor relabeled. Only retention beyond the existing authorized, unexpired, privacy-matched lease is deferred; native492 previewEligible:false is preserved."
+- **WARLOCK-DL-030.** Replace "Apple iOS HIG" with "Apple Human Interface Guidelines (all platforms, including macOS)". The desktop menu-bar, context-menu and window guidance the candidate cites is macOS guidance, and the requested source is the full HIG.
+
+```json
+{
+  "reviewerId": "opus-03-desktop",
+  "candidateVersion": "candidate-v1",
+  "candidateSHA256": "3bef8fec0517273501f94d26f79a29f4f38d22e5d2dcb6d29ccb4b5ef966e3e2",
+  "votes": [
+    {"id":"WARLOCK-DL-001","vote":"accept","reason":"Preserves name, sigil, tagline, faces and schema-1 values; fonts provenance and tokens.css consistent."},
+    {"id":"WARLOCK-DL-002","vote":"accept","reason":"Future token resolution; current shell.css literals become documented findings, not claims."},
+    {"id":"WARLOCK-DL-003","vote":"accept","reason":"Measured pairs with explicit applicability; non-color cues."},
+    {"id":"WARLOCK-DL-004","vote":"accept","reason":"Consistent with Surface.elm blocked rows/groups and Menu.elm no-second-intent."},
+    {"id":"WARLOCK-DL-005","vote":"accept","reason":"Popup is unkeyed in source; keyed identity and declared fallback are correct targets."},
+    {"id":"WARLOCK-DL-006","vote":"accept","reason":"Minimum is compatible with existing 3px ring; native treatment separately qualified."},
+    {"id":"WARLOCK-DL-007","vote":"accept","reason":"Label-prefix rule correctly exposes bar-group and applications label-in-name findings."},
+    {"id":"WARLOCK-DL-008","vote":"accept","reason":"Source skip-disabled stays Source; focusable menu disabled is a gated future target under ELM-ADOPT-030."},
+    {"id":"WARLOCK-DL-009","vote":"accept","reason":"Matches Menu.Dismiss obligation retention and Desktop returnFocus; source-status rows allow Space=unsupported."},
+    {"id":"WARLOCK-DL-010","vote":"accept","reason":"Defers roving/F6 to ELM-ADOPT-029; Shift+F10/ContextMenu rows can be labeled Source."},
+    {"id":"WARLOCK-DL-011","vote":"accept","reason":"One owner, no success toasts; matches two-live-region finding."},
+    {"id":"WARLOCK-DL-012","vote":"accept","reason":"Recovery control already reads observations without retry; launch acknowledge is explicit, not replay."},
+    {"id":"WARLOCK-DL-013","vote":"accept","reason":"24px is catalog-scoped; native geometry contracts unchanged."},
+    {"id":"WARLOCK-DL-014","vote":"accept","reason":"Continuity of identity/authority without freezing revisions."},
+    {"id":"WARLOCK-DL-015","vote":"accept","reason":"Reduced motion and native-geometry motion under frozen S02/023/024."},
+    {"id":"WARLOCK-DL-016","vote":"accept","reason":"Matches ChoiceDeadline expiry notice and RetryWindows refresh path; isComposing guards present."},
+    {"id":"WARLOCK-DL-017","vote":"revise","reason":"Shipped TaskbarShell/Surface call Taskbar.primary False; Launch rows unreachable and pending applies only to Apply."},
+    {"id":"WARLOCK-DL-018","vote":"revise","reason":"Source already ships Live/Historical/Loading/Unavailable; wording would relabel Live or defer authorized Historical, conflicting with frozen ELM-ADOPT-028/preview13."},
+    {"id":"WARLOCK-DL-019","vote":"accept","reason":"Consistent with Provider capability-gated Maximize; documentation of all constructors with reachability."},
+    {"id":"WARLOCK-DL-020","vote":"accept","reason":"Search remains guarded extension; current no-search source documented."},
+    {"id":"WARLOCK-DL-021","vote":"accept","reason":"Host-owned workspaces; no hover flyout; release scope retained."},
+    {"id":"WARLOCK-DL-022","vote":"accept","reason":"Settings declare guarantees; illustrations remain Proposed."},
+    {"id":"WARLOCK-DL-023","vote":"accept","reason":"Supplement supplies full Elm import closure plus bridge and stylesheet."},
+    {"id":"WARLOCK-DL-024","vote":"accept","reason":"Read-mode IA with Not yet specified markers."},
+    {"id":"WARLOCK-DL-025","vote":"accept","reason":"Scoped evidence records; Native label requires receipt, scenario and ABI tuple."},
+    {"id":"WARLOCK-DL-026","vote":"accept","reason":"Shipped Elm through typed wrapper; fixture-only authority; no auto retry."},
+    {"id":"WARLOCK-DL-027","vote":"accept","reason":"Inventory with source locations; no silent rewrite."},
+    {"id":"WARLOCK-DL-028","vote":"accept","reason":"Reflow, local assets, no native socket."},
+    {"id":"WARLOCK-DL-029","vote":"accept","reason":"Hash/changelog reconciliation and bounded finish review."},
+    {"id":"WARLOCK-DL-030","vote":"revise","reason":"'Apple iOS HIG' misnames the requested Apple HIG; cited desktop menu/window guidance is macOS."}
+  ],
+  "blockingCorrections": [
+    "WARLOCK-DL-017: acceptance bullet 1 -> 'The published truth table records the shipped call Taskbar.primary False (TaskbarShell.elm:83, Surface.elm:87-91); zero-family and pinned->Launch rows are labeled function-level Source, unreachable from shipped groups, with pinned launch remaining a separate native contract.' EARS: '...present pending feedback for Apply decisions until correlated settlement.'",
+    "WARLOCK-DL-018: EARS 'Current shall require the applicable authenticated source and presentation evidence' -> 'Live retains its frozen PreviewLifecycle definition; any stronger presented claim requires native presentation evidence.' Acceptance bullet 2 -> 'Source states Live preview / Historical preview / Preview loading / Preview unavailable (PreviewLifecycle.elm:137-147,360-375) are documented as Source under the frozen historical/live/unavailable policy and preview13; authorized Historical display is neither removed nor relabeled. Only retention beyond the existing authorized, unexpired, privacy-matched lease is deferred; native492 previewEligible:false is preserved.'",
+    "WARLOCK-DL-030: replace 'Apple iOS HIG' with 'Apple Human Interface Guidelines (all platforms, including macOS)'."
+  ],
+  "nonblockingAdvice": [
+    "DL-007/009: aria-current is the menu roving-focus target in context.js:58,71-72; a typed selected/checked field must migrate bridge focus logic in the same change.",
+    "DL-009: document Space as unsupported in menu mode (Source) rather than implying Enter/Space parity.",
+    "DL-010/009: label Shift+F10/ContextMenu, picker Escape->control:close and menu Escape->Dismiss rows as Source with file:line.",
+    "DL-002/027: inventory shell.css literal colors, system-ui font and 3px #7ed7ff focus ring as Source; do not imply the product already uses Warlock tokens.",
+    "DL-019: classify geometry-path stable Restore/Minimize rows as supported-but-unavailable so the omission rule does not change Provider.withGeometry semantics; note PinToTaskbar is never produced by Provider and AlwaysOnTop 'checked' semantics need confirmation.",
+    "DL-027: record inconsistent pending copy ('Working…' vs 'Applying window change…') and missing lang attribute on bar.html/popup.html as findings.",
+    "DL-029: redact absolute local originalFile paths from asset-manifest when publishing provenance.",
+    "DL-012/020: document 'I checked; allow another launch' as explicit user release of Unknown, not replay."
+  ],
+  "sourceGaps": [
+    "SHA-256 of candidate-v1.json not independently recomputed (no shell in this session); relied on candidate-v1.sha256.",
+    "Compiled bar.js/popup.js/index bundle not supplied; only Elm sources and adapters.",
+    "Font binaries and raster art not supplied; only licenses, provenance hashes and SVG companions.",
+    "right-click24 contract text and original preview13/S09 scenario text not in packet; DL-008/018/019 compatibility checked only via WORKPLAN guardrails.",
+    "Native host C sources not reviewed in depth for keyboard/AT routing; no native receipts exist."
+  ],
+  "consensusRecommended": false
+}
+```

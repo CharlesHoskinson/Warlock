@@ -1,0 +1,109 @@
+{
+  "duration_api_ms": 1161047,
+  "stop_reason": "end_turn",
+  "session_id": "ebad540a-fcdf-4671-a8b4-02a1d0bed9be",
+  "total_cost_usd": 5.238691799999999,
+  "usage": {
+    "input_tokens": 12,
+    "cache_creation_input_tokens": 40905,
+    "cache_read_input_tokens": 1579342,
+    "output_tokens": 5443,
+    "output_tokens_details": {
+      "thinking_tokens": 929
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 40905,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 3999,
+        "cache_read_input_tokens": 282915,
+        "cache_creation_input_tokens": 1074,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1074
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 104,
+      "outputTokens": 62072,
+      "thinkingTokens": 22009,
+      "cacheReadInputTokens": 7071014,
+      "cacheCreationInputTokens": 280337,
+      "webSearchRequests": 0,
+      "costUSD": 4.8987548,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 244157,
+      "outputTokens": 13156,
+      "thinkingTokens": 0,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 3,
+      "costUSD": 0.339937,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 9,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I accept all 30 contracts in candidate-v2 and recommend ratifying it at the requested hash, `63f5311d840a736d109993d096ccb444adb14057acbe1e9f29ab2e3e805a8754`. That's my vote only. It becomes consensus only if all five reviewers accept this same hash, and every ballot on file today is still a v1 ballot.\n\n**Hash limit:** I did not compute that hash; this session has no hashing tool. It matches `candidate-v2.sha256`. I compared the 26 unchanged contracts with v1 by reading them, not by a byte diff, and saw no differences.\n\n**The four corrections, checked against the source and the v1 ballots:**\n- **DL-004:** the new acceptance wording is substantively my v1 correction, and it also covers opus-01's. Pending and Unknown focus now depends on the declared per-surface policy, and focus falls back as DL-005 declares. In today's source those controls are disabled (`Surface.elm:52-55, 65-68, 75-77, 87-98`). My blocking objection is resolved.\n- **DL-017:** this matches opus-03's correction exactly. The shipped code always calls `Taskbar.primary False` (`TaskbarShell.elm:83`, `Surface.elm:87-91`). Pending feedback is limited to Apply decisions, and the pinned-to-Launch row is marked unreachable from shipped groups.\n- **DL-018:** this covers what opus-02, 03 and 05 asked for, plus most of opus-01's. The existing preview labels stay as they are: \"Live preview\", \"Historical preview\", \"Preview loading\", \"Preview unavailable\" (`PreviewLifecycle.elm:365-369`), along with the fidelity text and the authorized Historical display. \"Current\", \"Placeholder\" and \"Earlier frame\" are proposed terms, and any rename waits for the ELM-ADOPT-028 review. Only new retention is deferred; expiry, the lock check (`:369`) and `previewEligible:false` don't change.\n  - One part differs from opus-01's request: opus-01 wanted \"Current\" to simply mean today's Live state. v2 instead makes any rename wait for that review. I think that's consistent with the frozen policy, but only opus-01 can say whether it resolves their objection.\n- **DL-030:** the iOS reference the user asked for stays, with macOS desktop guidance explicitly labelled as supplementary. I consider that a faithful resolution. opus-01, 02 and 03 had asked for broader \"all platforms\" wording, so they need to confirm it.\n\n**Prior disagreement, kept on record:**\n- Focusable disabled menu items remain a gated future target. The current skip-disabled behaviour stays labelled as Source.\n- The withdrawn AM-08 timing concern stays withdrawn.\n- No native or full-release claim is made.\n\n```json\n{\n  \"reviewerId\": \"opus-04-accessibility-motion\",\n  \"candidateVersion\": \"candidate-v2\",\n  \"candidateSHA256\": \"63f5311d840a736d109993d096ccb444adb14057acbe1e9f29ab2e3e805a8754\",\n  \"hashVerification\": \"Not independently computed (no hashing tool in this read-only session). Requested hash matches candidate-v2.sha256. Unchanged contracts compared to v1 by reading, not byte diff.\",\n  \"votes\": [\n    {\"id\":\"WARLOCK-DL-001\",\"vote\":\"accept\",\"reason\":\"Unchanged; preserves brand and philosophy.\"},\n    {\"id\":\"WARLOCK-DL-002\",\"vote\":\"accept\",\"reason\":\"Unchanged; shell.css literals remain a documented target gap.\"},\n    {\"id\":\"WARLOCK-DL-003\",\"vote\":\"accept\",\"reason\":\"Unchanged; composited contrast and explicit inactive classification.\"},\n    {\"id\":\"WARLOCK-DL-004\",\"vote\":\"accept\",\"reason\":\"Corrected acceptance makes focus conditional on declared policy with DL-005 fallback; consistent with Source disabled Pending controls.\"},\n    {\"id\":\"WARLOCK-DL-005\",\"vote\":\"accept\",\"reason\":\"Unchanged; declared fallback covers focus loss on disable.\"},\n    {\"id\":\"WARLOCK-DL-006\",\"vote\":\"accept\",\"reason\":\"Unchanged; existing 3px outline meets floor; native separately qualified.\"},\n    {\"id\":\"WARLOCK-DL-007\",\"vote\":\"accept\",\"reason\":\"Unchanged; validator reports existing label-prefix failures.\"},\n    {\"id\":\"WARLOCK-DL-008\",\"vote\":\"accept\",\"reason\":\"Unchanged; skip-disabled labelled Source, focusable menu items gated.\"},\n    {\"id\":\"WARLOCK-DL-009\",\"vote\":\"accept\",\"reason\":\"Unchanged; matches Source Escape/Dismiss/returnFocus.\"},\n    {\"id\":\"WARLOCK-DL-010\",\"vote\":\"accept\",\"reason\":\"Unchanged; ADOPT-029 authority, no F6/global shortcut.\"},\n    {\"id\":\"WARLOCK-DL-011\",\"vote\":\"accept\",\"reason\":\"Unchanged; single announcement owner.\"},\n    {\"id\":\"WARLOCK-DL-012\",\"vote\":\"accept\",\"reason\":\"Unchanged; no fabricated refusal, no Unknown replay.\"},\n    {\"id\":\"WARLOCK-DL-013\",\"vote\":\"accept\",\"reason\":\"Unchanged; 24px is catalog-only.\"},\n    {\"id\":\"WARLOCK-DL-014\",\"vote\":\"accept\",\"reason\":\"Unchanged; preference changes cannot rebind or activate.\"},\n    {\"id\":\"WARLOCK-DL-015\",\"vote\":\"accept\",\"reason\":\"Unchanged; consistent with brand preview Source and ADOPT-023/024.\"},\n    {\"id\":\"WARLOCK-DL-016\",\"vote\":\"accept\",\"reason\":\"Unchanged; ChoiceDeadline is a post-choice native wait with a safe refresh path.\"},\n    {\"id\":\"WARLOCK-DL-017\",\"vote\":\"accept\",\"reason\":\"Records shipped Taskbar.primary False, unreachable pinned rows, pending only for Apply; verified in TaskbarShell.elm:83 and Surface.elm:87-91.\"},\n    {\"id\":\"WARLOCK-DL-018\",\"vote\":\"accept\",\"reason\":\"Preserves Source Live/Historical/Loading/Unavailable labels (PreviewLifecycle.elm:365-369), authorized Historical display and preview13; new terms and renames gated; only new retention deferred.\"},\n    {\"id\":\"WARLOCK-DL-019\",\"vote\":\"accept\",\"reason\":\"Unchanged.\"},\n    {\"id\":\"WARLOCK-DL-020\",\"vote\":\"accept\",\"reason\":\"Unchanged; composition-safe guarded search.\"},\n    {\"id\":\"WARLOCK-DL-021\",\"vote\":\"accept\",\"reason\":\"Unchanged.\"},\n    {\"id\":\"WARLOCK-DL-022\",\"vote\":\"accept\",\"reason\":\"Unchanged.\"},\n    {\"id\":\"WARLOCK-DL-023\",\"vote\":\"accept\",\"reason\":\"Unchanged; full supplemental closure is the inventory basis.\"},\n    {\"id\":\"WARLOCK-DL-024\",\"vote\":\"accept\",\"reason\":\"Unchanged.\"},\n    {\"id\":\"WARLOCK-DL-025\",\"vote\":\"accept\",\"reason\":\"Unchanged; scoped evidence, native label needs receipt/scenario/ABI tuple.\"},\n    {\"id\":\"WARLOCK-DL-026\",\"vote\":\"accept\",\"reason\":\"Unchanged; shipped modules, fixture-only authority, no Unknown retry.\"},\n    {\"id\":\"WARLOCK-DL-027\",\"vote\":\"accept\",\"reason\":\"Unchanged.\"},\n    {\"id\":\"WARLOCK-DL-028\",\"vote\":\"accept\",\"reason\":\"Unchanged; reduced motion and forced colors exercised.\"},\n    {\"id\":\"WARLOCK-DL-029\",\"vote\":\"accept\",\"reason\":\"Unchanged.\"},\n    {\"id\":\"WARLOCK-DL-030\",\"vote\":\"accept\",\"reason\":\"Keeps user-requested iOS reference and explicitly labels supplemental macOS desktop guidance.\"}\n  ],\n  \"blockingCorrections\": [],\n  \"nonblockingAdvice\": [\n    \"DL-005: declare the menu fallback while rows are disabled (e.g. control:menu-close); popup is not keyed in Source.\",\n    \"DL-007: seed the validator with Source failures at Surface.elm:57, :84 and :98; keep the operation verb as description; change the context.js aria-current focus hook in the same change as any semantics update.\",\n    \"DL-011: bar and popup render the same notice in two polite live regions; designate one route before native AT qualification.\",\n    \"DL-015: product reduced motion should be a typed native observation (portal, then GTK settings); WebView media query only as fallback.\",\n    \"DL-018/DL-030: opus-01, 02 and 03 should confirm that the v2 wording resolves their v1 objections (the 'Current' deferral, and iOS with supplemental macOS rather than all platforms).\"\n  ],\n  \"sourceGaps\": [\n    \"No declared per-surface focus fallback when the focused control is disabled during Pending/Unknown; DOM focus is lost.\",\n    \"shell.css uses non-token literal colors and system-ui; disabled controls have only opacity, with no reason text.\",\n    \"No typeahead; Space is unbound in menu mode; no arrow navigation in picker/applications popups.\",\n    \"No typed checked/selected field; aria-current is derived from the detail string 'Selected'.\",\n    \"Native AT, IME, reduced-motion/contrast observation and presentation evidence are absent; no native or full-release acceptance is claimed.\",\n    \"Candidate SHA-256 not independently recomputed in this session; all consensus ballots on file are v1, so v2 ballots from the other four reviewers are not yet visible.\"\n  ],\n  \"consensusRecommended\": true\n}\n```",
+  "ttft_ms": 12185,
+  "type": "result",
+  "duration_ms": 70728,
+  "uuid": "2149eb77-aa58-4af7-95c4-0d9286c984ab",
+  "ttft_stream_ms": 11649,
+  "time_to_request_ms": 1792,
+  "first_content_frame_ms": 11650,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

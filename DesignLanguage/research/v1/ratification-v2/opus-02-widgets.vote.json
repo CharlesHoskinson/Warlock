@@ -1,0 +1,168 @@
+{
+  "reviewerId": "opus-02-widgets",
+  "candidateVersion": "candidate-v2",
+  "candidateSHA256": "63f5311d840a736d109993d096ccb444adb14057acbe1e9f29ab2e3e805a8754",
+  "votes": [
+    {
+      "id": "WARLOCK-DL-001",
+      "vote": "accept",
+      "reason": "Unchanged from v1; brand and philosophy preserved."
+    },
+    {
+      "id": "WARLOCK-DL-002",
+      "vote": "accept",
+      "reason": "Unchanged; token tiers are a target over Source shell.css literals."
+    },
+    {
+      "id": "WARLOCK-DL-003",
+      "vote": "accept",
+      "reason": "Unchanged; composited measurement and inactive classification."
+    },
+    {
+      "id": "WARLOCK-DL-004",
+      "vote": "accept",
+      "reason": "Focus now conditional on declared policy with DL-005 fallback; matches Source disabled blocking."
+    },
+    {
+      "id": "WARLOCK-DL-005",
+      "vote": "accept",
+      "reason": "Unchanged; popup unkeyed in Source, keyed identity is the target."
+    },
+    {
+      "id": "WARLOCK-DL-006",
+      "vote": "accept",
+      "reason": "Unchanged; existing 3px outline meets the floor."
+    },
+    {
+      "id": "WARLOCK-DL-007",
+      "vote": "accept",
+      "reason": "Unchanged; consistent with ELM-ADOPT-017; validator reports Source failures."
+    },
+    {
+      "id": "WARLOCK-DL-008",
+      "vote": "accept",
+      "reason": "Unchanged; skip-disabled labeled Source, focusable menus gated."
+    },
+    {
+      "id": "WARLOCK-DL-009",
+      "vote": "accept",
+      "reason": "Unchanged; Msg mapping with source status."
+    },
+    {
+      "id": "WARLOCK-DL-010",
+      "vote": "accept",
+      "reason": "Unchanged; defers to ELM-ADOPT-029, no global shortcut."
+    },
+    {
+      "id": "WARLOCK-DL-011",
+      "vote": "accept",
+      "reason": "Unchanged; addresses duplicate polite regions."
+    },
+    {
+      "id": "WARLOCK-DL-012",
+      "vote": "accept",
+      "reason": "Unchanged; no automatic Unknown replay."
+    },
+    {
+      "id": "WARLOCK-DL-013",
+      "vote": "accept",
+      "reason": "Unchanged; 24px catalog-only."
+    },
+    {
+      "id": "WARLOCK-DL-014",
+      "vote": "accept",
+      "reason": "Unchanged; legitimate generation changes allowed."
+    },
+    {
+      "id": "WARLOCK-DL-015",
+      "vote": "accept",
+      "reason": "Unchanged; native timing under frozen gates."
+    },
+    {
+      "id": "WARLOCK-DL-016",
+      "vote": "accept",
+      "reason": "Unchanged; deadlines fixed, expired choices unavailable."
+    },
+    {
+      "id": "WARLOCK-DL-017",
+      "vote": "accept",
+      "reason": "Records shipped Taskbar.primary False (TaskbarShell.elm:83, Surface.elm:87-91); unreachable rows labeled; pending only for Apply."
+    },
+    {
+      "id": "WARLOCK-DL-018",
+      "vote": "accept",
+      "reason": "Preserves Source Live/Historical labels and authorized historical display under frozen S09; only new retention deferred. Resolves my v1 correction."
+    },
+    {
+      "id": "WARLOCK-DL-019",
+      "vote": "accept",
+      "reason": "Unchanged; capability-driven content with reasons."
+    },
+    {
+      "id": "WARLOCK-DL-020",
+      "vote": "accept",
+      "reason": "Unchanged; guarded extension."
+    },
+    {
+      "id": "WARLOCK-DL-021",
+      "vote": "accept",
+      "reason": "Unchanged; host ownership and gates."
+    },
+    {
+      "id": "WARLOCK-DL-022",
+      "vote": "accept",
+      "reason": "Unchanged; settings guarantees."
+    },
+    {
+      "id": "WARLOCK-DL-023",
+      "vote": "accept",
+      "reason": "Unchanged; full closure registry."
+    },
+    {
+      "id": "WARLOCK-DL-024",
+      "vote": "accept",
+      "reason": "Unchanged; Read-mode IA."
+    },
+    {
+      "id": "WARLOCK-DL-025",
+      "vote": "accept",
+      "reason": "Unchanged; scoped evidence records."
+    },
+    {
+      "id": "WARLOCK-DL-026",
+      "vote": "accept",
+      "reason": "Unchanged; shipped Elm with fixture authority."
+    },
+    {
+      "id": "WARLOCK-DL-027",
+      "vote": "accept",
+      "reason": "Unchanged; inventory without rewriting frozen strings."
+    },
+    {
+      "id": "WARLOCK-DL-028",
+      "vote": "accept",
+      "reason": "Unchanged; offline accessible catalog."
+    },
+    {
+      "id": "WARLOCK-DL-029",
+      "vote": "accept",
+      "reason": "Unchanged; versioned provenance and bounded review."
+    },
+    {
+      "id": "WARLOCK-DL-030",
+      "vote": "accept",
+      "reason": "Names full Apple HIG with the request's iOS reference (request.json:27) and explicit supplemental macOS guidance; resolves my v1 correction."
+    }
+  ],
+  "blockingCorrections": [],
+  "nonblockingAdvice": [
+    "Retain v1 advice: registry must cover all Surface.elm:57-101 controls; record label-in-name Source failures (Surface.elm:57,84,98); document menu key map incl. unbound Space, Tab toggle and aria-current-driven focus (context.js:56-73); migrate bridge focus logic with any typed selected field.",
+    "DL-018: catalog copy should state that 'Current'/'Earlier frame' are unratified terms and render Source labels verbatim alongside them."
+  ],
+  "sourceGaps": [
+    "Candidate SHA-256 not independently computed in this session (no hashing tool); relied on coordinator-computed hash.",
+    "native/host.c and shared-host.c not fully reviewed; native focus restoration and menu-navigation handling unverified here.",
+    "Original S01-S16/right-click24 scenario oracles not in packet."
+  ],
+  "consensusRecommended": true
+}

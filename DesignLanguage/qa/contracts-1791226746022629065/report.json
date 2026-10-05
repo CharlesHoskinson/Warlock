@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-436bc71c3ad44ecd98bcc9453e35ac43.scope",
+    "coreLimit": 1
+  },
+  "checks": [
+    "exact candidate receipt",
+    "30 unique stable contracts",
+    "all60 proposals routed",
+    "source-manifest.json exact input bytes",
+    "supplemental-manifest.json exact input bytes",
+    "research actual five terminal Opus/high executions",
+    "consensus actual five terminal Opus/high executions",
+    "ratification-v2 actual five terminal Opus/high executions",
+    "opus-01-identity exact unanimous ballot",
+    "opus-02-widgets exact unanimous ballot",
+    "opus-03-desktop exact unanimous ballot",
+    "opus-04-accessibility-motion exact unanimous ballot",
+    "opus-05-catalog-craft exact unanimous ballot",
+    "EARS exact voted requirements and guardrails",
+    "OpenSpec exact30 contracts and60 acceptance scenarios",
+    "OpenSpec1.14 strict validation"
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "candidateSHA256": "63f5311d840a736d109993d096ccb444adb14057acbe1e9f29ab2e3e805a8754",
+  "openspecCLI": {
+    "path": "/home/hoskinson/.npm/_npx/b05ce0373733faa6/node_modules/@fission-ai/openspec/bin/openspec.js",
+    "sha256": "ca136f0e9fd4951dcf93d8ed729ebc97b2d97d3980cd9dc9d42fc80e32e797c6"
+  }
+}

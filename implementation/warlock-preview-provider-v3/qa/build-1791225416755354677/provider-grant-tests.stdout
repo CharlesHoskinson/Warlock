@@ -1,0 +1,44 @@
+PASS Valid repeated member names in distinct objects and escaped literal preserved
+PASS Duplicate JSON refused
+PASS Lossless own process binding through actual socket, prefix and half-close
+PASS Inherited grant rejected in child process
+PASS Provider grant separate from backend process grant
+PASS Wrong process start refused
+PASS Wrong executable hash refused
+PASS Different actual socket peer refused
+PASS Outgoing request bounded before transport
+PASS Actual C bootstrap owns native grant
+PASS C bootstrap returns owned binding
+PASS C bootstrap has fresh own process frontend epoch
+PASS Public enrollment file refused
+PASS Symlink enrollment file refused
+PASS Multiply linked enrollment file refused
+PASS Duplicate config field refused
+PASS Nonprivate runtime refused
+PASS Symlink directory ancestor refused
+PASS Parent directory component refused
+PASS Noncanonical instance refused
+PASS version
+PASS bool-version
+PASS float-version
+PASS duplicate
+PASS escaped-duplicate
+PASS nested-duplicate
+PASS nul
+PASS zero
+PASS leading-zero
+PASS overflow
+PASS numeric-counter
+PASS wrong-pid
+PASS float-pid
+PASS wrong-instance
+PASS extra
+PASS wrong-caps
+PASS wrong-operations
+PASS bad-fd
+PASS oversized
+PASS raw-nul
+PASS replace-socket
+PASS replace-directory
+PASS Dripping reply cannot restart original absolute three-second deadline
+CHECKS 43

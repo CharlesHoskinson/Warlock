@@ -1,0 +1,14 @@
+# Own native provider grant — additive EARS
+
+These requirements refine the existing preview lane; they do not replace baseline IDs, deadlines or acceptance gates. C bootstrap failure is local unavailable enrollment, not a native Refused receipt for an issued operation.
+
+- GRANT-01: When the shared native host starts, it shall validate a private bounded authority file and obtain a hello grant as its own PID/start identity from the exact enrolled compositor PID/start/executable/socket, before constructing the provider surfaces. The backend grant remains separate.
+- GRANT-02: If any config field is duplicate, mistyped, unknown or noncanonical, or the file is public, multiply linked or reached through a symlink ancestor, the bootstrap shall fail closed without a desktop effect.
+- GRANT-03: When native hello is admitted, the client shall require exact protocol3 attached/schema492-shape capabilities, owning PID/instance and canonical positive uint64 binding strings without truncation or floating conversion. The hello core ABI metadata is bounded and retained by admission; executable SHA verification does not certify the loaded plugin by itself.
+- GRANT-04: When control transport runs, it shall preserve the original absolute three-second budget across connect, readiness, write, half-close, each receive and final admission. A partial/dripping response shall not renew the deadline. Requests and metadata replies shall remain bounded to4096 and65536 bytes respectively.
+- GRANT-05: When a connection is used, pre/post checks shall require the enrolled current process/executable and canonical runtime/hypr/instance identities, exact socket peer PID/UID, and unchanged control socket identity. A changed identity shall fail local admission, never settle an outstanding effect.
+- GRANT-06: If a process inherits a provider handle through fork, public grant operations shall reject it; that child must independently enroll to obtain its own grant.
+- GRANT-07: When the bootstrap handle is freed, it shall release only its local handle. It shall not fabricate grant retirement, capture retirement, terminal delivery acknowledgement or producer/consumer completion evidence.
+- GRANT-08: While production capture/source authority is incomplete, the component shall not expose an unqualified root-monitor plane as an eligible client/family preview or claim native/full release acceptance.
+
+The actual compiled fixture oracle covers43 cases. Protected full build includes the new bootstrap in all actual host and inherited carrier linkages; socket fixtures execute the real Native and C bootstrap code using real forked peer credentials. Demand Quint results are a separate bounded projection. Native acceptance still requires the exact owning205/492/AQ155 tuple, actual producer FD/image/renderer/stream/fence/drain, retained correlated receipts and original preview13. The single Elm model retains ordinary policy authority.

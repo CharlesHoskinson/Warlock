@@ -1,0 +1,109 @@
+{
+  "duration_api_ms": 1109184,
+  "stop_reason": "end_turn",
+  "session_id": "1566f278-2f78-4fa3-9591-4f15db4f6024",
+  "total_cost_usd": 5.026870000000001,
+  "usage": {
+    "input_tokens": 18,
+    "cache_creation_input_tokens": 23858,
+    "cache_read_input_tokens": 2341843,
+    "output_tokens": 5684,
+    "output_tokens_details": {
+      "thinking_tokens": 966
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 23858,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 3661,
+        "cache_read_input_tokens": 267433,
+        "cache_creation_input_tokens": 4828,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 4828
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 88,
+      "outputTokens": 60833,
+      "thinkingTokens": 22688,
+      "cacheReadInputTokens": 7263705,
+      "cacheCreationInputTokens": 269236,
+      "webSearchRequests": 0,
+      "costUSD": 4.823641000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 130009,
+      "outputTokens": 6644,
+      "thinkingTokens": 0,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 4,
+      "costUSD": 0.20322900000000002,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 11,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "# Ratification of candidate-v2 (opus-05-catalog-craft)\n\n**I accept all 30 contracts in candidate-v2 and recommend consensus. Consensus exists only if all five reviewers accept this exact version.**\n\n**Hash.** The version under vote is `63f5311d840a736d109993d096ccb444adb14057acbe1e9f29ab2e3e805a8754`. I did not compute it myself, because this session has no shell hashing tool. That value is what `candidate-v2.sha256` states and what the request names; I'm relying on the coordinator's computation.\n\n**The 26 unchanged contracts.** I checked every EARS requirement and guardrail line in `candidate-v2.json` against v1. Unchanged text sits at the same line positions with the same wording. I compared by reading, not by byte hash.\n\n**v1 ballot history.** In v1, five revise objections covered four contracts:\n- DL-004: opus-01 and opus-04.\n- DL-017: opus-03.\n- DL-018: opus-01, opus-02, opus-03 and me.\n- DL-030: opus-01, opus-02 and opus-03.\n\nMy v1 revise on DL-018 is part of that record. Each v2 change resolves its objection on the source:\n\n- **DL-004.** Focus is now conditional on each surface's declared policy, with the DL-005 fallback otherwise. That matches the shipped behavior: Pending rows are disabled (`Surface.elm:65,68`), Escape still works at document level (`context.js:45-47`), and the outcome shows through the row detail \"Awaiting native confirmation\" or the status line. ELM-ADOPT-030 still governs.\n- **DL-017.** It now records the shipped call `Taskbar.primary False` (`TaskbarShell.elm:83`, `Surface.elm:87-96`). The zero-family and pinned rows are marked as reachable only through the function, and pending feedback applies only to Apply. All of that is accurate.\n- **DL-018.** This resolves my blocking correction. The source labels Live preview, Historical preview, Preview loading and Preview unavailable stay unchanged (`PreviewLifecycle.elm:364-375`). Authorized Historical display is neither removed nor relabeled. \"Current\", \"Placeholder\" and \"Earlier frame\" are proposed catalog terms only, and any rename or added Live evidence is gated on ELM-ADOPT-028 review. The deferral now covers only new retention.\n- **DL-030.** It keeps the iOS reference the user asked for and labels the macOS desktop guidance as supplementary. That fixes the misattribution.\n\nI'm making no native-acceptance or full-release claim.\n\n```json\n{\n  \"reviewerId\": \"opus-05-catalog-craft\",\n  \"candidateVersion\": \"candidate-v2\",\n  \"candidateSHA256\": \"63f5311d840a736d109993d096ccb444adb14057acbe1e9f29ab2e3e805a8754\",\n  \"votes\": [\n    {\"id\":\"WARLOCK-DL-001\",\"vote\":\"accept\",\"reason\":\"Unchanged from v1; brand and schema-1 preservation.\"},\n    {\"id\":\"WARLOCK-DL-002\",\"vote\":\"accept\",\"reason\":\"Unchanged; token tiers are a target; shell.css literals remain labeled Source.\"},\n    {\"id\":\"WARLOCK-DL-003\",\"vote\":\"accept\",\"reason\":\"Unchanged; composited contrast and explicit classification.\"},\n    {\"id\":\"WARLOCK-DL-004\",\"vote\":\"accept\",\"reason\":\"v2 makes focus conditional on declared policy with DL-005 fallback, matching Source disabled Pending rows (Surface.elm:65,68) and ELM-ADOPT-030.\"},\n    {\"id\":\"WARLOCK-DL-005\",\"vote\":\"accept\",\"reason\":\"Unchanged; declared fallback covers Source focus loss.\"},\n    {\"id\":\"WARLOCK-DL-006\",\"vote\":\"accept\",\"reason\":\"Unchanged; catalog focus floor; native separately qualified.\"},\n    {\"id\":\"WARLOCK-DL-007\",\"vote\":\"accept\",\"reason\":\"Unchanged; prefix rule per ELM-ADOPT-017; Source failures reported, not rewritten.\"},\n    {\"id\":\"WARLOCK-DL-008\",\"vote\":\"accept\",\"reason\":\"Unchanged; skip-disabled is Source; focusable disabled menu items are a gated future target.\"},\n    {\"id\":\"WARLOCK-DL-009\",\"vote\":\"accept\",\"reason\":\"Unchanged; matches context.js/Surface.resolve mapping; dismissal retains obligations.\"},\n    {\"id\":\"WARLOCK-DL-010\",\"vote\":\"accept\",\"reason\":\"Unchanged; defers to ELM-ADOPT-029.\"},\n    {\"id\":\"WARLOCK-DL-011\",\"vote\":\"accept\",\"reason\":\"Unchanged; single announcement owner target.\"},\n    {\"id\":\"WARLOCK-DL-012\",\"vote\":\"accept\",\"reason\":\"Unchanged; no automatic Unknown replay.\"},\n    {\"id\":\"WARLOCK-DL-013\",\"vote\":\"accept\",\"reason\":\"Unchanged; 24px scoped to the catalog.\"},\n    {\"id\":\"WARLOCK-DL-014\",\"vote\":\"accept\",\"reason\":\"Unchanged; permits legitimate publication/lease and generation changes.\"},\n    {\"id\":\"WARLOCK-DL-015\",\"vote\":\"accept\",\"reason\":\"Unchanged; S02/023/024 preserved.\"},\n    {\"id\":\"WARLOCK-DL-016\",\"vote\":\"accept\",\"reason\":\"Unchanged; matches Desktop ChoiceDeadline and ExpirePrepared; deadlines fixed.\"},\n    {\"id\":\"WARLOCK-DL-017\",\"vote\":\"accept\",\"reason\":\"v2 records shipped Taskbar.primary False, function-only rows and pending for Apply only; accurate to TaskbarShell.elm:83 and Surface.elm:87-96.\"},\n    {\"id\":\"WARLOCK-DL-018\",\"vote\":\"accept\",\"reason\":\"v2 preserves Source Live/Historical/Loading/Unavailable labels and authorized Historical display under frozen S09/ADOPT-028; proposed terms do not rename; deferral narrowed to new retention. Resolves my v1 blocking correction.\"},\n    {\"id\":\"WARLOCK-DL-019\",\"vote\":\"accept\",\"reason\":\"Unchanged.\"},\n    {\"id\":\"WARLOCK-DL-020\",\"vote\":\"accept\",\"reason\":\"Unchanged; current launcher has no search.\"},\n    {\"id\":\"WARLOCK-DL-021\",\"vote\":\"accept\",\"reason\":\"Unchanged.\"},\n    {\"id\":\"WARLOCK-DL-022\",\"vote\":\"accept\",\"reason\":\"Unchanged.\"},\n    {\"id\":\"WARLOCK-DL-023\",\"vote\":\"accept\",\"reason\":\"Unchanged; supplemental closure inventory.\"},\n    {\"id\":\"WARLOCK-DL-024\",\"vote\":\"accept\",\"reason\":\"Unchanged.\"},\n    {\"id\":\"WARLOCK-DL-025\",\"vote\":\"accept\",\"reason\":\"Unchanged; scoped evidence; native label requires receipt, scenario and ABI tuple.\"},\n    {\"id\":\"WARLOCK-DL-026\",\"vote\":\"accept\",\"reason\":\"Unchanged; shipped Elm plus labeled simulated authority.\"},\n    {\"id\":\"WARLOCK-DL-027\",\"vote\":\"accept\",\"reason\":\"Unchanged.\"},\n    {\"id\":\"WARLOCK-DL-028\",\"vote\":\"accept\",\"reason\":\"Unchanged.\"},\n    {\"id\":\"WARLOCK-DL-029\",\"vote\":\"accept\",\"reason\":\"Unchanged.\"},\n    {\"id\":\"WARLOCK-DL-030\",\"vote\":\"accept\",\"reason\":\"v2 names Apple Human Interface Guidelines with the user-requested iOS design language and explicitly supplemental macOS desktop guidance.\"}\n  ],\n  \"blockingCorrections\": [],\n  \"nonblockingAdvice\": [\n    \"DL-018: when documenting 'authorized, unexpired, privacy-matched lease', cite the exact PreviewLifecycle.authorized predicate (PreviewLifecycle.elm:134-135: connected, present, not locked, GPU ready, owned, binding/clock/generation match, unexpired, client coverage) rather than paraphrasing.\",\n    \"Carry forward the v1 nonblocking items: Source label-in-name findings (Surface.elm:57,84,98), Space/typeahead absence and the Tab toggle in menu mode (context.js), duplicate polite status regions, and DL-023 coverage of Launch statuses, preview statuses and all Surface.elm control identities.\",\n    \"Retain the v1 ballot history: my v1 revise on DL-018 is resolved by v2, not withdrawn.\"\n  ],\n  \"sourceGaps\": [\n    \"Candidate-v2 SHA-256 not independently computed (no shell hashing tool); identified from candidate-v2.sha256 and the request.\",\n    \"Unchanged contracts compared to v1 by reading line-aligned EARS/guardrail text, not by byte hash.\",\n    \"Native focus restoration after Escape, AT tree, IME, keyboard scope and hardware presentation are not evidenced; nothing here is native or full-release acceptance.\",\n    \"host.c and shared-host.c reviewed only for key handling.\"\n  ],\n  \"consensusRecommended\": true\n}\n```",
+  "ttft_ms": 12078,
+  "type": "result",
+  "duration_ms": 76329,
+  "uuid": "ef889346-b6ab-4143-97df-d44281a63ea3",
+  "ttft_stream_ms": 11550,
+  "time_to_request_ms": 1745,
+  "first_content_frame_ms": 11550,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

@@ -1,0 +1,7 @@
+# Warlock design consensus
+
+Five actual Claude Opus 5.5 reviewers, each at high effort, independently researched the existing design and named references. They submitted60 proposals and reviewed one consolidated30-contract candidate. The initial ballot required four corrections: conditional focusability, the shipped taskbar call, preservation of Live/Historical preview behavior, and labeling the iOS reference alongside supplemental macOS desktop guidance. All five then accepted all30 contracts in the same exact candidate v2.
+
+The [candidate](research/v1/candidate-v2.json) SHA-256 is `63f5311d840a736d109993d096ccb444adb14057acbe1e9f29ab2e3e805a8754`. The [consensus receipt](research/v1/consensus-receipt-v2.json) links each ballot and its hash. Initial dissent, both candidates, raw CLI streams, observed model identifiers, execution records and frozen input manifests remain retained. The coordinator verified hashes; reviewers disclosed that their read-only tool sets could not independently run a shell hasher.
+
+This accepts the design targets and their guardrails. Implementation, rendered catalog review and actual native GUI qualification remain open. Existing242 requirements/417 scenarios, separate right-click24/48, original preview13/restore38/recovery34/drag-resize52 and original deadlines are unchanged. The website will document the single immutable Elm controller and read-only display surfaces; simulated native outcomes remain explicitly identified.

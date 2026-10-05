@@ -1,0 +1,770 @@
+{
+  "schema": 1,
+  "version": "candidate-v2",
+  "brand": "Warlock",
+  "mode": "Read catalog; Operate desktop",
+  "consensus": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "researchReportCount": 5,
+  "originalProposalCount": 60,
+  "sourceInventoryScope": "Full warlock-preview-provider-v1 GUI519-derived Elm/assets/bridge closure plus brand provenance; integration lanes and all original release gates remain separately open.",
+  "decisionRule": "Existing frozen release/adoption contracts and philosophy outrank reference suggestions. No reference numeric value adopted solely from a snippet.",
+  "contracts": [
+    {
+      "id": "WARLOCK-DL-001",
+      "title": "Preserve Warlock identity and philosophical priorities",
+      "ears": "The design language shall preserve the approved Warlock name, flow sigil, tagline, bundled typefaces and schema-1 palette values, and shall apply the existing philosophy when resolving conflicts.",
+      "acceptance": [
+        "A byte comparison confirms all schema-1 values are unchanged.",
+        "Brand decoration never encodes confirmation or grants native authority."
+      ],
+      "sourceProposals": [
+        "WL-ID-07",
+        "OPUS05-CAT-12"
+      ],
+      "scope": "catalog-and-product-design",
+      "guardrail": "Existing release contracts, deadlines, authority, ownership and native qualification remain mandatory.",
+      "status": "proposed-consensus",
+      "sources": [
+        "https://developer.apple.com/design/human-interface-guidelines/",
+        "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/branding.json",
+        "https://fluent2.microsoft.design/",
+        "https://m3.material.io/"
+      ]
+    },
+    {
+      "id": "WARLOCK-DL-002",
+      "title": "Three token tiers and explicit role pairs",
+      "ears": "When a control renders, its styles shall resolve through component tokens and semantic role tokens backed by the preserved reference palette, with explicit foreground/background pairs.",
+      "acceptance": [
+        "The catalog publishes reference, semantic and component token mappings.",
+        "Artwork may use reference colors; actionable components cannot substitute unreviewed literal colors."
+      ],
+      "sourceProposals": [
+        "WL-ID-01",
+        "OPUS05-CAT-05"
+      ],
+      "scope": "catalog-and-product-design",
+      "guardrail": "Existing release contracts, deadlines, authority, ownership and native qualification remain mandatory.",
+      "status": "proposed-consensus",
+      "sources": [
+        "https://developer.apple.com/design/human-interface-guidelines/accessibility",
+        "https://developer.gnome.org/hig/guidelines/ui-styling.html",
+        "https://fluent2.microsoft.design/design-tokens",
+        "https://learn.microsoft.com/en-us/windows/apps/design/accessibility/high-contrast-themes",
+        "https://m3.material.io/foundations/design-tokens/overview"
+      ]
+    },
+    {
+      "id": "WARLOCK-DL-003",
+      "title": "Measured contrast and non-color state cues",
+      "ears": "When tokens are built, the build shall verify declared text pairs at 4.5:1 and declared large-text, boundary and focus pairs at 3:1 in dark and light themes; all meaningful states shall have text or shape cues.",
+      "acceptance": [
+        "Pair tests evaluate the actual composited state background, including overlays.",
+        "Disabled items retain readable reasons; decorative or inactive elements are classified explicitly rather than claiming universal WCAG applicability."
+      ],
+      "sourceProposals": [
+        "WL-ID-02",
+        "WLK-WGT-03",
+        "AM-02"
+      ],
+      "scope": "catalog-and-product-design",
+      "guardrail": "Existing release contracts, deadlines, authority, ownership and native qualification remain mandatory.",
+      "status": "proposed-consensus",
+      "sources": [
+        "https://developer.apple.com/design/human-interface-guidelines/accessibility",
+        "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/accessibility.json",
+        "https://github.com/material-components/material-components-android/blob/master/docs/theming/Color.md",
+        "https://github.com/material-components/material-web/discussions/5566",
+        "https://learn.microsoft.com/en-us/windows/apps/design/input/guidelines-for-visualfeedback",
+        "https://raw.githubusercontent.com/material-components/material-web/main/docs/components/focus-ring.md",
+        "https://raw.githubusercontent.com/material-components/material-web/main/tokens/versions/v0_192/_md-sys-state.scss",
+        "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html",
+        "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html"
+      ]
+    },
+    {
+      "id": "WARLOCK-DL-004",
+      "title": "Independent interaction and outcome axes",
+      "ears": "While an outcome is Pending or Unknown, the surface shall expose that outcome independently from hover, focus, pressed, selection, current and unavailable states, and shall preserve the targeted intent identity.",
+      "acceptance": [
+        "Where the declared per-surface policy lets a Pending or Unknown control hold focus, focus and outcome cues are both perceivable; where policy removes it from focus, the outcome remains perceivable through status or description and focus follows the declared WARLOCK-DL-005 fallback.",
+        "Unknown cannot be presented as Committed; repeating activation never creates a second intent for its blocked target."
+      ],
+      "sourceProposals": [
+        "WL-ID-03",
+        "WLK-WGT-02",
+        "WLD-DESK-07",
+        "OPUS05-CAT-04",
+        "AM-01"
+      ],
+      "scope": "catalog-and-product-design",
+      "guardrail": "Existing release contracts, deadlines, authority, ownership and native qualification remain mandatory.",
+      "status": "proposed-consensus",
+      "sources": [
+        "https://develop.kde.org/hig/components/assistance/progress/",
+        "https://develop.kde.org/hig/status_changes/",
+        "https://develop.kde.org/hig/text_and_labels/",
+        "https://developer.apple.com/design/human-interface-guidelines/feedback",
+        "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/accessibility.json",
+        "https://developer.gnome.org/hig/guidelines/ui-styling.html",
+        "https://developer.gnome.org/hig/patterns/feedback/spinners.html",
+        "https://fluent2.microsoft.design/color",
+        "https://fluent2.microsoft.design/design-tokens",
+        "https://learn.microsoft.com/en-us/windows/apps/design/input/guidelines-for-visualfeedback",
+        "https://m3.material.io/foundations/interaction/states/applying-states"
+      ]
+    },
+    {
+      "id": "WARLOCK-DL-005",
+      "title": "Stable focus and keyed control identity",
+      "ears": "When a publication changes control order, the renderer shall preserve identity and eligible focus for each surviving control; it shall not infer selection, current state or an effect from focus.",
+      "acceptance": [
+        "Reordering and inserting neighboring popup entries preserves the existing keyed control.",
+        "Removing or disabling the focused identity invokes the declared per-surface fallback."
+      ],
+      "sourceProposals": [
+        "WL-ID-08",
+        "WLK-WGT-08",
+        "AM-11"
+      ],
+      "scope": "catalog-and-product-design",
+      "guardrail": "Existing release contracts, deadlines, authority, ownership and native qualification remain mandatory.",
+      "status": "proposed-consensus",
+      "sources": [
+        "https://develop.kde.org/hig/accessibility/",
+        "https://developer.apple.com/design/human-interface-guidelines/focus-and-selection",
+        "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/focus-and-selection.json",
+        "https://fluent2.microsoft.design/accessibility",
+        "https://www.w3.org/WAI/ARIA/apg/patterns/menubar/",
+        "https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html",
+        "https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html"
+      ]
+    },
+    {
+      "id": "WARLOCK-DL-006",
+      "title": "Visible focus with theme and contrast support",
+      "ears": "When keyboard focus is visible, the surface shall display a focus treatment distinguishable from selection and hover with at least a 2 CSS pixel outer indicator and 3:1 adjacent-color contrast; forced-colors rendering shall retain it.",
+      "acceptance": [
+        "A two-tone 2px outer/1px inner ring is the initial catalog treatment; equivalent native treatment is separately qualified.",
+        "Dark, light, forced colors and enlarged text are included in the rendered matrix."
+      ],
+      "sourceProposals": [
+        "WLK-WGT-04",
+        "AM-02",
+        "WL-ID-04"
+      ],
+      "scope": "catalog-and-product-design",
+      "guardrail": "Existing release contracts, deadlines, authority, ownership and native qualification remain mandatory.",
+      "status": "proposed-consensus",
+      "sources": [
+        "https://develop.kde.org/hig/accessibility/",
+        "https://developer.apple.com/design/human-interface-guidelines/accessibility",
+        "https://developer.gnome.org/hig/guidelines/accessibility.html",
+        "https://flatpak.github.io/xdg-desktop-portal/docs/doc-org.freedesktop.portal.Settings.html",
+        "https://github.com/material-components/material-web/blob/main/docs/components/focus-ring.md",
+        "https://learn.microsoft.com/en-us/windows/apps/design/accessibility/high-contrast-themes",
+        "https://learn.microsoft.com/en-us/windows/apps/design/input/guidelines-for-visualfeedback",
+        "https://raw.githubusercontent.com/material-components/material-web/main/docs/components/focus-ring.md",
+        "https://raw.githubusercontent.com/material-components/material-web/main/tokens/versions/v0_192/_md-sys-state.scss",
+        "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html"
+      ]
+    },
+    {
+      "id": "WARLOCK-DL-007",
+      "title": "Accessible label, description and typed semantics",
+      "ears": "When a control is published, its accessible name shall begin with its normalized visible stable label, while transient detail and outcomes use description or state; toggle checked state shall derive from admitted observation.",
+      "acceptance": [
+        "A label-in-name validator reports the identity of any failing fixture.",
+        "Menu toggles use typed checked semantics and do not infer current state from a future toggle action or display string."
+      ],
+      "sourceProposals": [
+        "WL-ID-09",
+        "WLK-WGT-07",
+        "AM-05",
+        "OPUS05-CAT-08"
+      ],
+      "scope": "catalog-and-product-design",
+      "guardrail": "Existing release contracts, deadlines, authority, ownership and native qualification remain mandatory.",
+      "status": "proposed-consensus",
+      "sources": [
+        "https://develop.kde.org/hig/accessibility/",
+        "https://develop.kde.org/hig/text_and_labels/",
+        "https://developer.apple.com/design/human-interface-guidelines/menus",
+        "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/context-menus.json",
+        "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/menus.json",
+        "https://developer.gnome.org/hig/guidelines/accessibility.html",
+        "https://developer.gnome.org/hig/patterns/controls/menus.html",
+        "https://learn.microsoft.com/en-us/windows/apps/develop/ui/controls/menus",
+        "https://www.w3.org/WAI/ARIA/apg/patterns/menubar/",
+        "https://www.w3.org/WAI/WCAG22/Understanding/label-in-name.html"
+      ]
+    },
+    {
+      "id": "WARLOCK-DL-008",
+      "title": "Explicit disabled-item policies per surface",
+      "ears": "Where a surface supports unavailable controls, the specification shall declare whether navigation focuses them, the rejection behavior, readable reason and fallback; unavailable controls shall never emit an effect intent.",
+      "acceptance": [
+        "The current source skip-disabled policy is labeled Source, not silently rewritten.",
+        "The proposed menu focus-disabled policy is separately documented and gated on model, browser and native AT/keyboard qualification; other surfaces keep their declared policy."
+      ],
+      "sourceProposals": [
+        "AM-07",
+        "WLK-WGT-07"
+      ],
+      "scope": "catalog-and-product-design",
+      "guardrail": "ELM-ADOPT-030 remains authoritative. The consensus chooses focusable disabled menu items as a future guarded design target; it does not claim this behavior exists or globally change all surfaces.",
+      "status": "proposed-consensus",
+      "sources": [
+        "https://developer.apple.com/design/human-interface-guidelines/menus",
+        "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/context-menus.json",
+        "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/menus.json",
+        "https://developer.gnome.org/hig/patterns/controls/menus.html",
+        "https://learn.microsoft.com/en-us/windows/apps/design/input/keyboard-interactions",
+        "https://learn.microsoft.com/en-us/windows/apps/develop/ui/controls/menus",
+        "https://www.w3.org/WAI/ARIA/apg/patterns/menubar/"
+      ]
+    },
+    {
+      "id": "WARLOCK-DL-009",
+      "title": "Complete popup keyboard and dismissal contract",
+      "ears": "While a qualified popup holds keyboard scope, Up/Down and Home/End shall follow its declared navigation policy; Escape shall dismiss by exact identity and restore eligible invoker focus or declared fallback without settling or replaying Pending or Unknown operations.",
+      "acceptance": [
+        "Menu wrap, Enter/Space and typeahead are documented with exact Msg mapping and source status.",
+        "Dismissal retains outstanding intent and cleanup obligations; no keyboard event gains authority merely from a browser demo."
+      ],
+      "sourceProposals": [
+        "WLK-WGT-06",
+        "WLD-DESK-04",
+        "AM-06"
+      ],
+      "scope": "catalog-and-product-design",
+      "guardrail": "Existing release contracts, deadlines, authority, ownership and native qualification remain mandatory.",
+      "status": "proposed-consensus",
+      "sources": [
+        "https://developer.apple.com/design/human-interface-guidelines/keyboards",
+        "https://developer.gnome.org/hig/guidelines/keyboard.html",
+        "https://learn.microsoft.com/en-us/windows/apps/design/input/keyboard-interactions",
+        "https://www.w3.org/WAI/ARIA/apg/patterns/menubar/",
+        "https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/"
+      ]
+    },
+    {
+      "id": "WARLOCK-DL-010",
+      "title": "Taskbar entry, navigation and exit through existing contracts",
+      "ears": "When taskbar keyboard interaction is qualified, its entry, arrow movement, popup invocation and exit shall follow the existing ELM-ADOPT-029 contract without introducing an unreviewed default global shortcut or altering activation history.",
+      "acceptance": [
+        "Source, proposed and binding-unverified key rows are distinct.",
+        "Toolbar role, roving focus and Down-to-picker are design targets until coherent native scope and recipient tests pass."
+      ],
+      "sourceProposals": [
+        "WLK-WGT-09",
+        "WLD-DESK-05",
+        "OPUS05-CAT-07"
+      ],
+      "scope": "catalog-and-product-design",
+      "guardrail": "Existing native keyboard ownership and input identity gates are prerequisites. No automatic F6/global shortcut adoption.",
+      "status": "proposed-consensus",
+      "sources": [
+        "https://develop.kde.org/hig/accessibility/",
+        "https://developer.gnome.org/hig/guidelines/keyboard.html",
+        "https://help.gnome.org/gnome-help/shell-windows-switching.html",
+        "https://learn.microsoft.com/en-us/windows/apps/design/accessibility/keyboard-accessibility",
+        "https://learn.microsoft.com/en-us/windows/apps/design/input/keyboard-interactions",
+        "https://learn.microsoft.com/en-us/windows/apps/develop/input/keyboard-interactions",
+        "https://m3.material.io/components/menus/accessibility"
+      ]
+    },
+    {
+      "id": "WARLOCK-DL-011",
+      "title": "One announcement owner with honest feedback channels",
+      "ears": "When an allowlisted outcome needs an announcement, the designated route shall announce it once under the existing attention policy without moving focus; persistent blocking or unconfirmed conditions shall remain readable.",
+      "acceptance": [
+        "Repeated same-outcome publications do not re-announce; unrelated controls remain usable.",
+        "Routine Committed window changes use the resulting visible state rather than unsolicited success toasts."
+      ],
+      "sourceProposals": [
+        "WLK-WGT-10",
+        "WLD-DESK-06",
+        "AM-09",
+        "AM-01"
+      ],
+      "scope": "catalog-and-product-design",
+      "guardrail": "Existing release contracts, deadlines, authority, ownership and native qualification remain mandatory.",
+      "status": "proposed-consensus",
+      "sources": [
+        "https://develop.kde.org/hig/status_changes/",
+        "https://developer.apple.com/design/human-interface-guidelines/feedback",
+        "https://developer.gnome.org/hig/patterns/feedback/banners.html",
+        "https://developer.gnome.org/hig/patterns/feedback/spinners.html",
+        "https://developer.gnome.org/hig/patterns/feedback/toasts.html",
+        "https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html"
+      ]
+    },
+    {
+      "id": "WARLOCK-DL-012",
+      "title": "Plain status copy and safe reconciliation",
+      "ears": "When a status is presented, its catalog entry shall distinguish the condition and any safe next action without exposing unnecessary protocol jargon or fabricating a refusal reason; Unknown shall never offer automatic replay.",
+      "acceptance": [
+        "Existing strings are inventoried with source locations; proposed replacements remain reviewable entries.",
+        "Reconcile refreshes native truth and does not resend the original Unknown action."
+      ],
+      "sourceProposals": [
+        "WLK-WGT-11",
+        "OPUS05-CAT-09",
+        "AM-01"
+      ],
+      "scope": "catalog-and-product-design",
+      "guardrail": "Existing release contracts, deadlines, authority, ownership and native qualification remain mandatory.",
+      "status": "proposed-consensus",
+      "sources": [
+        "https://develop.kde.org/hig/status_changes/",
+        "https://developer.apple.com/design/human-interface-guidelines/feedback",
+        "https://developer.apple.com/design/human-interface-guidelines/menus",
+        "https://developer.gnome.org/hig/guidelines/writing-style.html",
+        "https://developer.gnome.org/hig/patterns/feedback/spinners.html",
+        "https://fluent2.microsoft.design/components/web/react/core/menu/usage",
+        "https://github.com/pbakaus/impeccable"
+      ]
+    },
+    {
+      "id": "WARLOCK-DL-013",
+      "title": "Responsive type, density and target geometry",
+      "ears": "When density or text scale changes, surfaces shall preserve labels, accessible names, outcomes and focus indicators; catalog compact actionable targets shall be at least 24x24 CSS pixels, and a comfortable profile shall be available.",
+      "acceptance": [
+        "The catalog checks constrained width, text enlargement, long names and RTL.",
+        "24px is a catalog design choice, not a claim that every native handle or input device meets a new blanket threshold; native targets retain their frozen device/geometry contracts."
+      ],
+      "sourceProposals": [
+        "WL-ID-06",
+        "WLK-WGT-05"
+      ],
+      "scope": "catalog-and-product-design",
+      "guardrail": "Existing release contracts, deadlines, authority, ownership and native qualification remain mandatory.",
+      "status": "proposed-consensus",
+      "sources": [
+        "https://develop.kde.org/hig/text_and_labels/",
+        "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/branding.json",
+        "https://developer.gnome.org/hig/guidelines/typography.html",
+        "https://github.com/material-components/material-components-android/blob/master/docs/theming/Typography.md",
+        "https://learn.microsoft.com/en-gb/windows/apps/develop/input/guidelines-for-targeting",
+        "https://learn.microsoft.com/en-us/windows/apps/design/basics/content-basics",
+        "https://learn.microsoft.com/en-us/windows/apps/design/signature-experiences/typography",
+        "https://m3.material.io/foundations/layout/understanding-layout/density",
+        "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html"
+      ]
+    },
+    {
+      "id": "WARLOCK-DL-014",
+      "title": "Live appearance with action-target continuity",
+      "ears": "When appearance or contrast preference changes, the controller shall publish applicable presentation preferences while preserving pending target and control identity and respecting actual native dependency-generation changes.",
+      "acceptance": [
+        "Changing theme cannot rebind a Pending intent or activate a control.",
+        "Forced-colors uses system roles; native preference observation and in-flight adoption require real qualification."
+      ],
+      "sourceProposals": [
+        "WL-ID-04",
+        "WL-ID-05"
+      ],
+      "scope": "catalog-and-product-design",
+      "guardrail": "Do not forbid legitimate publication/lease or native rendering-generation changes; continuity preserves identity and authority rather than freezing revision numbers.",
+      "status": "proposed-consensus",
+      "sources": [
+        "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/color.json",
+        "https://developer.gnome.org/hig/guidelines/accessibility.html",
+        "https://developer.gnome.org/hig/guidelines/ui-styling.html",
+        "https://flatpak.github.io/xdg-desktop-portal/docs/doc-org.freedesktop.portal.Settings.html",
+        "https://learn.microsoft.com/en-us/windows/apps/design/accessibility/high-contrast-themes"
+      ]
+    },
+    {
+      "id": "WARLOCK-DL-015",
+      "title": "Reduced motion and native presentation continuity",
+      "ears": "While reduced motion is active, the catalog shall run no decorative or velocity-continuation motion, and product motion shall convey equivalent state with instant or permitted opacity changes driven by native last-presented geometry.",
+      "acceptance": [
+        "The website starts still, pauses hidden decorative work and responds live to preference changes.",
+        "Motion never delays input, extends a native deadline or settles an outcome; native timing stays under frozen S02/ELM-ADOPT-023/024."
+      ],
+      "sourceProposals": [
+        "WL-ID-10",
+        "AM-03",
+        "AM-04"
+      ],
+      "scope": "catalog-and-product-design",
+      "guardrail": "Existing release contracts, deadlines, authority, ownership and native qualification remain mandatory.",
+      "status": "proposed-consensus",
+      "sources": [
+        "https://develop.kde.org/hig/accessibility/",
+        "https://developer.apple.com/design/human-interface-guidelines/accessibility",
+        "https://developer.apple.com/design/human-interface-guidelines/motion",
+        "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/accessibility.json",
+        "https://docs.gtk.org/gtk4/property.Settings.gtk-enable-animations.html",
+        "https://docs.gtk.org/gtk4/property.Settings.gtk-interface-reduced-motion.html",
+        "https://flatpak.github.io/xdg-desktop-portal/docs/doc-org.freedesktop.portal.Settings.html",
+        "https://github.com/pbakaus/impeccable",
+        "https://learn.microsoft.com/en-us/windows/apps/design/motion/",
+        "https://raw.githubusercontent.com/material-components/material-web/main/tokens/versions/v0_192/_md-sys-motion.scss",
+        "https://webkitgtk.org/2026/09/16/webkitgtk-2.54-highlights.html"
+      ]
+    },
+    {
+      "id": "WARLOCK-DL-016",
+      "title": "Timers and composition never fabricate authority",
+      "ears": "When a prepared-choice deadline expires or composition is active, the interface shall preserve user context while invalidating expired authority and suppressing shortcut/typeahead interpretation during owned composition.",
+      "acceptance": [
+        "Expired choices may remain visibly unavailable with a safe refresh path but cannot activate under the old grant or deadline.",
+        "IME commits bind to native composition identity; browser IME behavior is not native qualification."
+      ],
+      "sourceProposals": [
+        "AM-08",
+        "AM-10"
+      ],
+      "scope": "catalog-and-product-design",
+      "guardrail": "Original choice, transport and operation deadlines are unchanged. No expired choice stays actionable; original AT/IME qualification remains open.",
+      "status": "proposed-consensus",
+      "sources": [
+        "https://developer.apple.com/design/human-interface-guidelines/accessibility",
+        "https://wayland.app/protocols/text-input-unstable-v3"
+      ]
+    },
+    {
+      "id": "WARLOCK-DL-017",
+      "title": "Publish exact taskbar activation decisions",
+      "ears": "When a taskbar group is activated, the controller shall derive its decision from the shipped Taskbar.primary call and present pending feedback for Apply decisions until correlated settlement.",
+      "acceptance": [
+        "The truth table records the shipped call Taskbar.primary False (TaskbarShell.elm and Surface.elm); zero-family and pinned-to-Launch rows are function-level Source and unreachable from shipped groups, while pinned launch remains a separate native contract.",
+        "A decision or sent request is never labeled a confirmed native result."
+      ],
+      "sourceProposals": [
+        "WLD-DESK-01"
+      ],
+      "scope": "catalog-and-product-design",
+      "guardrail": "Existing release contracts, deadlines, authority, ownership and native qualification remain mandatory.",
+      "status": "proposed-consensus",
+      "sources": [
+        "https://help.gnome.org/gnome-help/shell-windows-switching.html",
+        "https://userbase.kde.org/Plasma/Tasks"
+      ]
+    },
+    {
+      "id": "WARLOCK-DL-018",
+      "title": "Preview identity, eligibility and honest freshness",
+      "ears": "While a preview is displayed, its title/application and state shall remain understandable; Live shall retain its frozen PreviewLifecycle definition, and any stronger native-presented claim shall require the applicable native presentation evidence.",
+      "acceptance": [
+        "Source Live preview, Historical preview, Preview loading and Preview unavailable and their fidelity text are documented under the frozen historical/live/unavailable policy and original S09 preview13. Existing authorized Historical display is neither removed nor relabeled.",
+        "Current, Placeholder and Earlier frame are proposed catalog terms only. Any label rename or added Live evidence condition is gated on ELM-ADOPT-028 review; only new retention beyond the existing authorized, unexpired, privacy-matched lease is deferred. Existing expiry/lock revocation and native492 root-plane previewEligible:false remain unchanged."
+      ],
+      "sourceProposals": [
+        "WLK-WGT-12",
+        "WLD-DESK-02"
+      ],
+      "scope": "catalog-and-product-design",
+      "guardrail": "Preserve the frozen S09/ELM-ADOPT-028 Historical/Live/Unavailable meanings, authorized historical pixels and original preview13 oracles. A timestamp, browser canvas or unqualified root-plane capture does not prove native presentation.",
+      "status": "proposed-consensus",
+      "sources": [
+        "https://develop.kde.org/hig/status_changes/",
+        "https://developer.apple.com/design/human-interface-guidelines/context-menus",
+        "https://help.gnome.org/gnome-help/shell-windows-switching.html",
+        "https://userbase.kde.org/Plasma/Tasks"
+      ]
+    },
+    {
+      "id": "WARLOCK-DL-019",
+      "title": "Capability-driven window-actions content",
+      "ears": "When window actions are shown, unsupported actions shall be omitted and supported but currently unavailable actions shall have a reason, with checkable states derived from native observation.",
+      "acceptance": [
+        "The catalog documents all existing Menu.Action constructors, targets and outcome states.",
+        "At most three groups is a content preference for the initial design, not permission to omit required actions or alter provider semantics."
+      ],
+      "sourceProposals": [
+        "WLD-DESK-03",
+        "WLK-WGT-07"
+      ],
+      "scope": "catalog-and-product-design",
+      "guardrail": "Existing release contracts, deadlines, authority, ownership and native qualification remain mandatory.",
+      "status": "proposed-consensus",
+      "sources": [
+        "https://develop.kde.org/hig/text_and_labels/",
+        "https://developer.apple.com/design/human-interface-guidelines/context-menus",
+        "https://developer.apple.com/design/human-interface-guidelines/the-menu-bar",
+        "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/context-menus.json",
+        "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/menus.json",
+        "https://developer.gnome.org/hig/patterns/controls/menus.html",
+        "https://learn.microsoft.com/en-us/windows/apps/develop/ui/controls/menus"
+      ]
+    },
+    {
+      "id": "WARLOCK-DL-020",
+      "title": "Launcher search as a guarded extension",
+      "ears": "While a proposed launcher search is active, filtering shall remain local to admitted catalog entries and composition-safe; activation shall use the existing typed launch and correlated native outcome path.",
+      "acceptance": [
+        "Current source without search is documented accurately.",
+        "Search never executes a command from free text or infers a launch outcome from process disappearance."
+      ],
+      "sourceProposals": [
+        "WLD-DESK-08"
+      ],
+      "scope": "catalog-and-product-design",
+      "guardrail": "Existing release contracts, deadlines, authority, ownership and native qualification remain mandatory.",
+      "status": "proposed-consensus",
+      "sources": [
+        "https://develop.kde.org/hig/simple_by_default/",
+        "https://help.gnome.org/gnome-help/shell-overview.html"
+      ]
+    },
+    {
+      "id": "WARLOCK-DL-021",
+      "title": "Host-owned workspaces and gated placement patterns",
+      "ears": "Where the catalog explains workspaces, snapping or tiling, it shall identify current host ownership and existing roadmap gates and shall not present an unsupported browser arrangement as implemented native placement.",
+      "acceptance": [
+        "Existing mandatory release requirements remain in scope; no design deferral removes them.",
+        "Snap geometry is a native proposal and an applied layout requires correlated authority; no default maximize-hover flyout is added by this catalog."
+      ],
+      "sourceProposals": [
+        "WLD-DESK-09",
+        "WLD-DESK-10"
+      ],
+      "scope": "catalog-and-product-design",
+      "guardrail": "Existing release contracts, deadlines, authority, ownership and native qualification remain mandatory.",
+      "status": "proposed-consensus",
+      "sources": [
+        "https://help.gnome.org/gnome-help/shell-windows-tiled.html",
+        "https://help.gnome.org/gnome-help/shell-workspaces.html",
+        "https://learn.microsoft.com/en-us/windows/apps/desktop/modernize/apply-snap-layout-menu"
+      ]
+    },
+    {
+      "id": "WARLOCK-DL-022",
+      "title": "Settings declare behavioral guarantees",
+      "ears": "When a setting is designed, its documentation shall state the behavior changed, defaults, keyboard/accessibility behavior, privacy/ownership implications and guarantees preserved.",
+      "acceptance": [
+        "Settings illustrations are Proposed until integrated.",
+        "A setting cannot silently retarget a pending action or bypass bounded admission/recovery."
+      ],
+      "sourceProposals": [
+        "WLD-DESK-11"
+      ],
+      "scope": "catalog-and-product-design",
+      "guardrail": "Existing release contracts, deadlines, authority, ownership and native qualification remain mandatory.",
+      "status": "proposed-consensus",
+      "sources": [
+        "https://develop.kde.org/hig/powerful_when_needed/",
+        "https://developer.gnome.org/hig/guidelines/ui-styling.html"
+      ]
+    },
+    {
+      "id": "WARLOCK-DL-023",
+      "title": "Source-derived complete widget registry",
+      "ears": "When the catalog builds, it shall compare a versioned source inventory for the selected coherent GUI closure against the widget registry and fail on an uncovered rendered surface, role, mode, action or outcome constructor.",
+      "acceptance": [
+        "The full Elm source, stylesheet and bridge closure supplement replaces inference from the initial ten-module subset.",
+        "Removing a current menu action or preview state from coverage fails with its source identity; other integration lanes are explicitly tracked rather than asserted integrated."
+      ],
+      "sourceProposals": [
+        "WLK-WGT-01",
+        "OPUS05-CAT-01",
+        "WL-ID-11"
+      ],
+      "scope": "catalog",
+      "guardrail": "Existing release contracts, deadlines, authority, ownership and native qualification remain mandatory.",
+      "status": "proposed-consensus",
+      "sources": [
+        "https://developer.gnome.org/hig/",
+        "https://fluent2.microsoft.design/",
+        "https://github.com/material-components/material-web/blob/main/docs/components/menu.md",
+        "https://github.com/pbakaus/impeccable",
+        "https://learn.microsoft.com/en-us/windows/apps/develop/ui/controls/",
+        "https://m3.material.io/components"
+      ]
+    },
+    {
+      "id": "WARLOCK-DL-024",
+      "title": "Read-mode website with consistent component sections",
+      "ears": "The catalog shall provide Overview, Foundations, Components, Patterns, Accessibility, Tokens, Evidence and Changelog navigation, and every component shall expose Overview, Anatomy & states, Behavior & keyboard, Accessibility, Content and Evidence sections.",
+      "acceptance": [
+        "Search, deep links, theme choice and responsive navigation work with keyboard.",
+        "Unknown or absent information is marked Not yet specified rather than implied to exist; long pages may use linked headings instead of mandatory tab widgets."
+      ],
+      "sourceProposals": [
+        "OPUS05-CAT-02",
+        "WL-ID-11"
+      ],
+      "scope": "catalog",
+      "guardrail": "Existing release contracts, deadlines, authority, ownership and native qualification remain mandatory.",
+      "status": "proposed-consensus",
+      "sources": [
+        "https://developer.apple.com/design/human-interface-guidelines/",
+        "https://developer.gnome.org/hig/",
+        "https://fluent2.microsoft.design/",
+        "https://github.com/pbakaus/impeccable",
+        "https://m3.material.io/components/navigation-bar/overview"
+      ]
+    },
+    {
+      "id": "WARLOCK-DL-025",
+      "title": "Claim-specific status and evidence records",
+      "ears": "When a behavioral claim is displayed, the catalog shall separate Proposed/Implemented status from scoped evidence records and shall require a frozen receipt, scenario identity and owning ABI tuple for any Native-qualified label.",
+      "acceptance": [
+        "A claim may link Source and Browser-demo records with distinct scopes; neither implies CPU or native acceptance.",
+        "Demo interaction cannot change recorded evidence or acceptance badges."
+      ],
+      "sourceProposals": [
+        "OPUS05-CAT-03",
+        "WLD-DESK-12",
+        "AM-12"
+      ],
+      "scope": "catalog",
+      "guardrail": "Evidence levels are distinct scopes, not a universal confidence ladder. Multiple records are allowed; the prominent badge names the scope of the exact claim.",
+      "status": "proposed-consensus",
+      "sources": [
+        "https://develop.kde.org/hig/",
+        "https://developer.apple.com/design/human-interface-guidelines/",
+        "https://developer.apple.com/design/human-interface-guidelines/menus",
+        "https://developer.gnome.org/hig/",
+        "https://fluent2.microsoft.design/",
+        "https://fluent2.microsoft.design/design-tokens",
+        "https://github.com/pbakaus/impeccable",
+        "https://m3.material.io/"
+      ]
+    },
+    {
+      "id": "WARLOCK-DL-026",
+      "title": "Real Elm demonstrations with explicit fixture authority",
+      "ears": "When a demo claims Elm behavior, it shall run the relevant shipped Elm decoder/view/update or decision function through an isolated typed wrapper; any native outcome shall be supplied only through a clearly labeled simulated-authority panel.",
+      "acceptance": [
+        "Pending and Unknown examples remain unchanged until explicit reader settlement; Unknown cannot be automatically retried.",
+        "Static visual specimens may use semantic CSS but are labeled style specimens and cannot implement a competing desktop policy in JavaScript."
+      ],
+      "sourceProposals": [
+        "WL-ID-12",
+        "OPUS05-CAT-06"
+      ],
+      "scope": "catalog",
+      "guardrail": "Existing release contracts, deadlines, authority, ownership and native qualification remain mandatory.",
+      "status": "proposed-consensus",
+      "sources": [
+        "https://github.com/pbakaus/impeccable",
+        "https://learn.microsoft.com/en-us/windows/apps/develop/ui/controls/"
+      ]
+    },
+    {
+      "id": "WARLOCK-DL-027",
+      "title": "Content and accessible semantics inventory",
+      "ears": "When the catalog builds, it shall inventory source labels/status text, show wording and semantic findings with source locations, and keep proposed fixes separate from the original source.",
+      "acceptance": [
+        "Sentence case, stable labels, toggle roles and announcement duplication have reviewable findings.",
+        "Source strings are never silently rewritten inside the frozen input packet."
+      ],
+      "sourceProposals": [
+        "OPUS05-CAT-08",
+        "OPUS05-CAT-09"
+      ],
+      "scope": "catalog",
+      "guardrail": "Existing release contracts, deadlines, authority, ownership and native qualification remain mandatory.",
+      "status": "proposed-consensus",
+      "sources": [
+        "https://develop.kde.org/hig/accessibility/",
+        "https://develop.kde.org/hig/status_changes/",
+        "https://develop.kde.org/hig/text_and_labels/",
+        "https://developer.apple.com/design/human-interface-guidelines/menus",
+        "https://developer.gnome.org/hig/guidelines/writing-style.html",
+        "https://fluent2.microsoft.design/components/web/react/core/menu/usage"
+      ]
+    },
+    {
+      "id": "WARLOCK-DL-028",
+      "title": "Responsive, accessible and offline-capable catalog",
+      "ears": "When the catalog is viewed at constrained width or enlarged zoom, content shall reflow without two-dimensional scrolling except explicitly labeled fixed-size specimen canvases or data tables; core content, fonts and demos shall work from bundled local assets.",
+      "acceptance": [
+        "320 CSS pixel viewport, desktop, text enlargement, focus, reduced motion and forced colors are exercised.",
+        "No external CDN or native control socket is necessary to read or exercise the catalog; network references are links."
+      ],
+      "sourceProposals": [
+        "OPUS05-CAT-10",
+        "AM-02"
+      ],
+      "scope": "catalog",
+      "guardrail": "Existing release contracts, deadlines, authority, ownership and native qualification remain mandatory.",
+      "status": "proposed-consensus",
+      "sources": [
+        "https://developer.apple.com/design/human-interface-guidelines/accessibility",
+        "https://github.com/pbakaus/impeccable",
+        "https://learn.microsoft.com/en-us/windows/apps/design/input/guidelines-for-visualfeedback",
+        "https://raw.githubusercontent.com/material-components/material-web/main/docs/components/focus-ring.md",
+        "https://raw.githubusercontent.com/material-components/material-web/main/tokens/versions/v0_192/_md-sys-state.scss",
+        "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html"
+      ]
+    },
+    {
+      "id": "WARLOCK-DL-029",
+      "title": "Versioned assets, coverage and bounded finish review",
+      "ears": "When a covered source or token changes, its manifest hash and changelog shall be reconciled before publication; the catalog shall retain asset/source licenses and actual generated-art provenance and receive bounded independent finish review.",
+      "acceptance": [
+        "Failing source hash/coverage tests name the drift.",
+        "One batched desktop/mobile inspection and at most one correction inspection are planned; unavailable visual evidence stays explicitly unverified."
+      ],
+      "sourceProposals": [
+        "OPUS05-CAT-11",
+        "OPUS05-CAT-01"
+      ],
+      "scope": "catalog",
+      "guardrail": "Existing release contracts, deadlines, authority, ownership and native qualification remain mandatory.",
+      "status": "proposed-consensus",
+      "sources": [
+        "https://developer.apple.com/design/human-interface-guidelines/menus",
+        "https://github.com/pbakaus/impeccable",
+        "https://learn.microsoft.com/en-us/windows/apps/develop/ui/controls/",
+        "https://m3.material.io/components"
+      ]
+    },
+    {
+      "id": "WARLOCK-DL-030",
+      "title": "Reference adoption matrix with original visual identity",
+      "ears": "The design language shall publish borrow/adapt/reject/defer decisions for Material Design, Impeccable, Apple Human Interface Guidelines (iOS design language, with supplemental macOS desktop guidance), Plasma/KDE, Windows/Fluent and GNOME, with primary-source links and explicit Warlock rationale.",
+      "acceptance": [
+        "Borrow token/component documentation, readable craft, continuity, desktop conventions and approachable defaults where compatible.",
+        "Reject platform logos/themes and unmeasured glass, blur, ripples or animation costs; inaccessible or snippet-only sources do not establish binding numeric values."
+      ],
+      "sourceProposals": [
+        "OPUS05-CAT-12",
+        "WL-ID-01"
+      ],
+      "scope": "catalog-and-product-design",
+      "guardrail": "Existing release contracts, deadlines, authority, ownership and native qualification remain mandatory.",
+      "status": "proposed-consensus",
+      "sources": [
+        "https://developer.apple.com/design/human-interface-guidelines/",
+        "https://developer.gnome.org/hig/guidelines/ui-styling.html",
+        "https://fluent2.microsoft.design/",
+        "https://fluent2.microsoft.design/design-tokens",
+        "https://learn.microsoft.com/en-us/windows/apps/design/accessibility/high-contrast-themes",
+        "https://m3.material.io/"
+      ]
+    }
+  ],
+  "deferredDesignTargets": [
+    "Native keyboard group implementation and disabled focus policy pending original gates",
+    "Earlier-frame retention pending privacy/ownership contract",
+    "Launcher search, settings and workspace/snap additions pending applicable roadmap gates",
+    "Native preference/IME observation pending real platform qualification"
+  ],
+  "changesFromV1": [
+    {
+      "id": "WARLOCK-DL-004",
+      "reason": "Focusability conditional on declared disabled policy; no hidden focus-policy override."
+    },
+    {
+      "id": "WARLOCK-DL-017",
+      "reason": "Exact shipped call and reachable decisions; pending applies to Apply."
+    },
+    {
+      "id": "WARLOCK-DL-018",
+      "reason": "Preserve existing authorized Historical/Live labels and frozen preview policy; narrow new retention deferral."
+    },
+    {
+      "id": "WARLOCK-DL-030",
+      "reason": "Keep user-requested iOS reference and label supplemental macOS desktop guidance explicitly."
+    }
+  ]
+}

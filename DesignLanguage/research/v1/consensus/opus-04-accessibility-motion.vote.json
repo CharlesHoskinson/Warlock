@@ -1,0 +1,185 @@
+{
+  "reviewerId": "opus-04-accessibility-motion",
+  "candidateVersion": "candidate-v1",
+  "candidateSHA256": "3bef8fec0517273501f94d26f79a29f4f38d22e5d2dcb6d29ccb4b5ef966e3e2",
+  "hashVerification": "not independently recomputed (no hashing tool in read-only session); matches candidate-v1.sha256 and stated value",
+  "votes": [
+    {
+      "id": "WARLOCK-DL-001",
+      "vote": "accept",
+      "reason": "Preserves brand values and philosophy; decoration never evidence."
+    },
+    {
+      "id": "WARLOCK-DL-002",
+      "vote": "accept",
+      "reason": "Token tiers sound; shell.css literals are a documented target gap, not a contradiction."
+    },
+    {
+      "id": "WARLOCK-DL-003",
+      "vote": "accept",
+      "reason": "Measured pairs with composited backgrounds and explicit inactive classification."
+    },
+    {
+      "id": "WARLOCK-DL-004",
+      "vote": "revise",
+      "reason": "Acceptance 1 requires a focused Pending control, but the shipped Surface.elm disables all Pending/Unknown controls (HTML disabled), so it is unsatisfiable without changing the ADOPT-030/DL-008-gated focus policy."
+    },
+    {
+      "id": "WARLOCK-DL-005",
+      "vote": "accept",
+      "reason": "Declared fallback requirement covers the observed focus loss when rows become disabled."
+    },
+    {
+      "id": "WARLOCK-DL-006",
+      "vote": "accept",
+      "reason": "2px/3:1 floor is met by the existing 3px outline; native treatment separately qualified."
+    },
+    {
+      "id": "WARLOCK-DL-007",
+      "vote": "accept",
+      "reason": "Exact visible-label prefix matches ADOPT-017; validator reports current failures without claiming compliance."
+    },
+    {
+      "id": "WARLOCK-DL-008",
+      "vote": "accept",
+      "reason": "Skip-disabled labeled Source; focusable menu disabled is a gated future target."
+    },
+    {
+      "id": "WARLOCK-DL-009",
+      "vote": "accept",
+      "reason": "Matches source Escape/Dismiss and returnFocus; dismissal retains outstanding intents."
+    },
+    {
+      "id": "WARLOCK-DL-010",
+      "vote": "accept",
+      "reason": "Defers to ADOPT-029; no F6/global shortcut adoption."
+    },
+    {
+      "id": "WARLOCK-DL-011",
+      "vote": "accept",
+      "reason": "One owner, once, no focus move; addresses the duplicated notice in two live regions."
+    },
+    {
+      "id": "WARLOCK-DL-012",
+      "vote": "accept",
+      "reason": "No fabricated refusal; reconcile is observation-only with no Unknown replay."
+    },
+    {
+      "id": "WARLOCK-DL-013",
+      "vote": "accept",
+      "reason": "24px is a catalog choice; native target contracts unchanged."
+    },
+    {
+      "id": "WARLOCK-DL-014",
+      "vote": "accept",
+      "reason": "Preference changes cannot rebind or activate; revisions may legitimately change."
+    },
+    {
+      "id": "WARLOCK-DL-015",
+      "vote": "accept",
+      "reason": "Consistent with brand preview source and ADOPT-023/024; product motion currently none."
+    },
+    {
+      "id": "WARLOCK-DL-016",
+      "vote": "accept",
+      "reason": "Source ChoiceDeadline is a post-choice native wait with a safe refresh path; composition suppression exists at the browser layer."
+    },
+    {
+      "id": "WARLOCK-DL-017",
+      "vote": "accept",
+      "reason": "Derives from shipped Taskbar.primary; decisions never labeled confirmed."
+    },
+    {
+      "id": "WARLOCK-DL-018",
+      "vote": "accept",
+      "reason": "Honest freshness; earlier frame deferred; preview13 gates preserved."
+    },
+    {
+      "id": "WARLOCK-DL-019",
+      "vote": "accept",
+      "reason": "All Menu.Action constructors documented; checkable state from observation."
+    },
+    {
+      "id": "WARLOCK-DL-020",
+      "vote": "accept",
+      "reason": "Search guarded, composition-safe, no free-text execution."
+    },
+    {
+      "id": "WARLOCK-DL-021",
+      "vote": "accept",
+      "reason": "Host ownership explicit; no release scope removed."
+    },
+    {
+      "id": "WARLOCK-DL-022",
+      "vote": "accept",
+      "reason": "Settings declare guarantees; cannot retarget pending actions."
+    },
+    {
+      "id": "WARLOCK-DL-023",
+      "vote": "accept",
+      "reason": "Full supplemental closure is the inventory basis; integration lanes tracked separately."
+    },
+    {
+      "id": "WARLOCK-DL-024",
+      "vote": "accept",
+      "reason": "Read-mode structure with Not-yet-specified marking."
+    },
+    {
+      "id": "WARLOCK-DL-025",
+      "vote": "accept",
+      "reason": "Scoped evidence records; native label requires receipt, scenario and ABI tuple."
+    },
+    {
+      "id": "WARLOCK-DL-026",
+      "vote": "accept",
+      "reason": "Shipped Elm modules with fixture-only authority; no automatic Unknown retry."
+    },
+    {
+      "id": "WARLOCK-DL-027",
+      "vote": "accept",
+      "reason": "Inventory with source locations; frozen strings untouched."
+    },
+    {
+      "id": "WARLOCK-DL-028",
+      "vote": "accept",
+      "reason": "Reflow, reduced motion, forced colors and offline assets exercised."
+    },
+    {
+      "id": "WARLOCK-DL-029",
+      "vote": "accept",
+      "reason": "Hash/coverage drift named; bounded finish review."
+    },
+    {
+      "id": "WARLOCK-DL-030",
+      "vote": "accept",
+      "reason": "Primary-source matrix; snippet-only values non-binding; no platform marks."
+    }
+  ],
+  "blockingCorrections": [
+    {
+      "id": "WARLOCK-DL-004",
+      "field": "acceptance[0]",
+      "replace": "A focused Pending control shows both states.",
+      "with": "Where the declared per-surface policy lets a Pending or Unknown control hold focus, its focus treatment and outcome cue are both perceivable; where policy removes it from focus, the outcome stays perceivable through status or description and focus follows the declared DL-005 fallback.",
+      "evidence": "Surface.elm:65-68,75-77,87-98,52-55 publish blocked controls with enabled=False; SurfaceRenderer.elm:62 renders HTML disabled; context.js:45-48,69-73 and popup-adapter.js:20 skip disabled focus."
+    }
+  ],
+  "nonblockingAdvice": [
+    "DL-005: declare the menu fallback while rows are disabled (e.g. control:menu-close) and key popup controls like the bar.",
+    "DL-007: validator should flag bar groups (operation verb prepended, count detail omitted), 'Applications'/'Open applications' and 'Windows'/'Close applications and return to windows'; keep the operation verb as description.",
+    "DL-015: product reduced motion should be a typed native observation (portal reduced-motion, then gtk-interface-reduced-motion/gtk-enable-animations); WebView CSS media query only as fallback.",
+    "DL-017: mark pinned/Launch rows unreachable in current integration because Taskbar.primary is called with pinned=False.",
+    "DL-011: bar and popup render the same notice string as two polite live regions; designate one route before native AT qualification.",
+    "AM-08 WCAG 2.2.1 concern withdrawn: ChoiceDeadline measures native refresh after the user's choice, not user reading time."
+  ],
+  "sourceGaps": [
+    "No declared per-surface focus fallback when the focused control becomes disabled during Pending/Unknown; DOM focus is lost.",
+    "Popup controls rendered with List.map, not Html.Keyed (SurfaceRenderer.elm:63).",
+    "shell.css uses non-token literal colors and system-ui; disabled controls have only opacity with no reason text.",
+    "No arrow/typeahead navigation for picker and applications popups; Space does nothing in menus; no typeahead in menus.",
+    "No checked-state field for AlwaysOnTop/PinToTaskbar; aria-current derived from detail string 'Selected'.",
+    "Product reduced-motion and contrast preferences are not observed natively; native AT, IME and presentation evidence absent.",
+    "SHA-256 of candidate-v1.json not independently recomputed in this session."
+  ],
+  "consensusRecommended": false
+}

@@ -1,0 +1,109 @@
+{
+  "duration_api_ms": 1034752,
+  "stop_reason": "end_turn",
+  "session_id": "1566f278-2f78-4fa3-9591-4f15db4f6024",
+  "total_cost_usd": 4.2538854,
+  "usage": {
+    "input_tokens": 30,
+    "cache_creation_input_tokens": 102369,
+    "cache_read_input_tokens": 3197468,
+    "output_tokens": 18092,
+    "output_tokens_details": {
+      "thinking_tokens": 9309
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 102369,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 9300,
+        "cache_read_input_tokens": 246887,
+        "cache_creation_input_tokens": 1516,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1516
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 70,
+      "outputTokens": 55149,
+      "thinkingTokens": 21722,
+      "cacheReadInputTokens": 4921862,
+      "cacheCreationInputTokens": 245378,
+      "webSearchRequests": 0,
+      "costUSD": 4.0506564,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 130009,
+      "outputTokens": 6644,
+      "thinkingTokens": 0,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 4,
+      "costUSD": 0.20322900000000002,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 24,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "# Peer review of candidate-v1 (opus-05-catalog-craft)\n\n**Vote: 29 accept, 1 revise (WARLOCK-DL-018). I do not recommend recording consensus on candidate-v1.**\n\nI read all five reports, `candidate-v1.json` and `.md` (they match, 30 contracts), `supplemental-manifest.json` and the full set of supplemental Elm modules, stylesheet, adapters and native files. I edited nothing and launched no agents.\n\nI could not recompute the candidate's SHA-256 because I had no shell tool. `candidate-v1.sha256` states `3bef8fec\u202666e3e2`, which matches the hash in the request, but I haven't verified it independently.\n\n## Findings from the supplemental source\n\nThese correct or sharpen my original report.\n\n1. **Preview states already exist, and DL-018 doesn't match them.**\n   - `PreviewLifecycle.elm:25` defines four states: `Live`, `Historical`, `Loading`, `Unavailable`.\n   - The visible labels are \"Live preview\", \"Historical preview\", \"Preview loading\" and \"Preview unavailable\", plus fidelity labels \"Window family\" and \"Client content\" (`:364-375`).\n   - `Historical` already draws an authorized, unexpired frame whose source is no longer live (`:137-143`).\n   - Expired frames and locked scopes are already revoked (`:224-227`, `:277`).\n   - DL-018 instead uses \"Current\", \"Placeholder\" and \"Earlier frame\", and defers \"Earlier frame\". Read literally, that removes or renames existing Source behavior. It also adds a presentation-evidence condition to the live label. ELM-ADOPT-028 forbids both until the frozen historical/live/unavailable policy is reviewed. This is my one blocking correction.\n2. **Label-in-name: three current controls already fail DL-007's prefix rule.** The rule is correct as a target; these are Source findings to report, not to rewrite.\n\n   | Control | Location | Visible label | Accessible name |\n   |---|---|---|---|\n   | Bar group | `Surface.elm:98` | \"Firefox\" | \"Minimize Firefox\" or \"Choose a window from \u2026\" |\n   | `bar:applications` | `Surface.elm:84` | \"Applications\" | \"Open applications\" |\n   | Applications `control:close` | `Surface.elm:57` | \"Windows\" | \"Close applications and return to windows\" |\n\n   Menu rows, picker entries, app entries, Reconnect, Refresh and Recovery all pass.\n3. **Menu key bindings are in source.** I previously marked them \"binding unverified\"; they are not.\n   - `context.js:42-67` forwards Escape, ArrowUp/Down, Home, End and Enter. `Surface.elm:144-155` maps them to `Menu.Dismiss`, `Navigate` and `Activate`.\n   - The native proof route is in `shared-context.h:47-49,135-176`.\n   - Space does nothing in menu mode: the zero-detail click is suppressed (`context.js:15-18`).\n   - Tab toggles between Close and the selected row (`:56-59`).\n   - Focus follows `aria-current=\"true\"` (`:69-73`). Any change to selection semantics must migrate this adapter in the same derivative.\n   - Typeahead does not exist.\n4. **Product styling is not yet on Warlock tokens.** `shell.css:1` uses `system-ui` and literal colors (`#17202a`, focus ring `#7ed7ff`, 3 px). Disabled controls use `opacity:.55`. The bar's status region is visually hidden. DL-001, -002, -003 and -006 are therefore targets; the current styling must be labeled Source rather than claimed compliant.\n5. **Focus loss while Pending.** When a menu operation is Pending, every row becomes disabled (`Surface.elm:65,68`), so the focused row drops focus. Only Escape stays live, at document level. This is the Source fallback that DL-005 and DL-008 require to be documented.\n6. **Other details:**\n   - `Taskbar.primary` is always called with `pinned=False` (`Surface.elm:87-96`, `TaskbarShell.elm:83`), so the \"zero pinned \u2192 Launch\" row in DL-017 is unreachable in the current bar.\n   - Launch has its own statuses: Pending, Submitted, Refused, Unknown (`Launch.elm:275-291`).\n   - Recovery after a launch Unknown is a manual \"I checked; allow another launch\" control (`Surface.elm:56`), which is compatible with \"no automatic retry\".\n   - When the 2 s choice deadline expires, the choice is cleared and a \"Refresh windows\" path appears (`Desktop.elm:222-227`). That matches DL-016.\n\n## Blocking correction (DL-018)\n\nReplace the acceptance and guardrail wording with the following:\n\n> \"The catalog maps preview presentation to the Source statuses `Live`, `Historical`, `Loading` and `Unavailable` (`PreviewLifecycle.elm:25,364-375`), with their existing labels and fidelity text, governed by the frozen historical/live/unavailable policy and original preview13/S09. 'Current', 'Placeholder' and 'Earlier frame' are proposed catalog terms only. Renaming a label, or adding an evidence condition to `Live`, is a proposed refinement gated on ELM-ADOPT-028 review. The earlier-frame deferral covers only new retention beyond the existing authorized, unexpired accepted packet. It does not remove or alter `Historical`. Existing revocation on expiry or lock remains Source.\"\n\n## Nonblocking advice\n\n- **DL-002:** migrating `shell.css` to tokens is a product change to a frozen component. Mark it Proposed and do it in a fresh derivative.\n- **DL-003:** evaluate disabled text at the composited `opacity:.55`, or classify it explicitly.\n- **DL-005:** surviving identity means the same surface identity under the same picker scope and generation. A new generation is intentionally a new identity. Keyed DOM is an implementation choice under ADOPT-016. The popup is currently not keyed.\n- **DL-007 / DL-027:** report the three failing identities above as Source findings.\n- **DL-009:** record that Space and typeahead are absent, and record the Tab toggle and focus-follows-`aria-current`.\n- **DL-011:** bar and popup both render the same status text in polite live regions. Record this as a duplicate-announcement finding.\n- **DL-017:** mark the pinned row as reachable only through the function.\n- **DL-023:** coverage must include:\n  - Launch statuses and the preview statuses and fidelity labels;\n  - every `Surface.elm` control identity (`bar:applications`, `bar:reconnect`, `bar:refresh-windows`, `bar:recovery-refresh`, `control:acknowledge`, `control:menu-close`, `control:close`, `control:refresh`);\n  - all notice strings.\n- **DL-026:** menu keyboard demos need the shipped `context.js` (or must state that it is absent), since Tab, Escape and click suppression live there.\n- **DL-030:** name the family \"Apple Human Interface Guidelines\" rather than \"Apple iOS HIG\". The menu and keyboard guidance cited is cross-platform.\n\n```json\n{\n  \"reviewerId\": \"opus-05-catalog-craft\",\n  \"candidateVersion\": \"candidate-v1\",\n  \"candidateSHA256\": \"3bef8fec0517273501f94d26f79a29f4f38d22e5d2dcb6d29ccb4b5ef966e3e2\",\n  \"votes\": [\n    {\"id\":\"WARLOCK-DL-001\",\"vote\":\"accept\",\"reason\":\"Preserves brand and schema-1 values; shell.css system-ui styling is current Source, not a conflict.\"},\n    {\"id\":\"WARLOCK-DL-002\",\"vote\":\"accept\",\"reason\":\"Token tiers are a proposed target; shell.css literals are labeled Source under DL-025.\"},\n    {\"id\":\"WARLOCK-DL-003\",\"vote\":\"accept\",\"reason\":\"Composited-pair testing and explicit classification are correct.\"},\n    {\"id\":\"WARLOCK-DL-004\",\"vote\":\"accept\",\"reason\":\"Matches Menu outstanding-target blocking and Surface familyBlocked; no second intent.\"},\n    {\"id\":\"WARLOCK-DL-005\",\"vote\":\"accept\",\"reason\":\"Declared fallback requirement covers the Source focus loss when Pending disables rows.\"},\n    {\"id\":\"WARLOCK-DL-006\",\"vote\":\"accept\",\"reason\":\"2px/3:1 floor; native treatment separately qualified; current 3px outline is Source.\"},\n    {\"id\":\"WARLOCK-DL-007\",\"vote\":\"accept\",\"reason\":\"Prefix rule matches ELM-ADOPT-017; current failures are reported, not rewritten.\"},\n    {\"id\":\"WARLOCK-DL-008\",\"vote\":\"accept\",\"reason\":\"Skip-disabled labeled Source; focusable disabled menus remain a gated future target under ADOPT-030.\"},\n    {\"id\":\"WARLOCK-DL-009\",\"vote\":\"accept\",\"reason\":\"Escape/arrow/Home/End/Enter mapping exists in context.js and Surface.resolve; dismissal retains obligations.\"},\n    {\"id\":\"WARLOCK-DL-010\",\"vote\":\"accept\",\"reason\":\"Defers to ELM-ADOPT-029; no new global shortcut.\"},\n    {\"id\":\"WARLOCK-DL-011\",\"vote\":\"accept\",\"reason\":\"Single-owner target is correct; current duplicate regions become findings.\"},\n    {\"id\":\"WARLOCK-DL-012\",\"vote\":\"accept\",\"reason\":\"Consistent with source notices and the manual launch acknowledgement; no automatic replay.\"},\n    {\"id\":\"WARLOCK-DL-013\",\"vote\":\"accept\",\"reason\":\"24px is scoped to the catalog; native target contracts unchanged.\"},\n    {\"id\":\"WARLOCK-DL-014\",\"vote\":\"accept\",\"reason\":\"Guardrail correctly permits publication/lease and rendering-generation changes.\"},\n    {\"id\":\"WARLOCK-DL-015\",\"vote\":\"accept\",\"reason\":\"Website and native motion scopes separated; S02/023/024 preserved.\"},\n    {\"id\":\"WARLOCK-DL-016\",\"vote\":\"accept\",\"reason\":\"Matches Desktop ChoiceDeadline/ExpirePrepared: original deadlines fixed, expired choice unavailable with refresh path.\"},\n    {\"id\":\"WARLOCK-DL-017\",\"vote\":\"accept\",\"reason\":\"Derives from shipped Taskbar.primary; pinned row reachability is advisory.\"},\n    {\"id\":\"WARLOCK-DL-018\",\"vote\":\"revise\",\"reason\":\"Terms Current/Placeholder/Earlier frame do not match Source Live/Historical/Loading/Unavailable; deferral and the added Current evidence condition would alter existing Historical/Live behavior contrary to ELM-ADOPT-028.\"},\n    {\"id\":\"WARLOCK-DL-019\",\"vote\":\"accept\",\"reason\":\"Documents all Menu.Action constructors; three-group preference cannot omit actions.\"},\n    {\"id\":\"WARLOCK-DL-020\",\"vote\":\"accept\",\"reason\":\"Accurately states that the current launcher has no search; uses the typed launch path.\"},\n    {\"id\":\"WARLOCK-DL-021\",\"vote\":\"accept\",\"reason\":\"Keeps host ownership and release scope; no browser placement claims.\"},\n    {\"id\":\"WARLOCK-DL-022\",\"vote\":\"accept\",\"reason\":\"Settings stay Proposed; no retargeting or admission bypass.\"},\n    {\"id\":\"WARLOCK-DL-023\",\"vote\":\"accept\",\"reason\":\"Supplemental closure replaces subset inference; integration lanes tracked separately.\"},\n    {\"id\":\"WARLOCK-DL-024\",\"vote\":\"accept\",\"reason\":\"Matches proposed IA; linked headings allowed.\"},\n    {\"id\":\"WARLOCK-DL-025\",\"vote\":\"accept\",\"reason\":\"Scopes are not a ladder; Native label requires receipt, scenario and ABI tuple.\"},\n    {\"id\":\"WARLOCK-DL-026\",\"vote\":\"accept\",\"reason\":\"Shipped Elm functions plus a labeled simulated-authority panel; no competing JavaScript policy.\"},\n    {\"id\":\"WARLOCK-DL-027\",\"vote\":\"accept\",\"reason\":\"Findings kept separate from frozen source strings.\"},\n    {\"id\":\"WARLOCK-DL-028\",\"vote\":\"accept\",\"reason\":\"Reflow, local assets and offline operation; no native socket needed.\"},\n    {\"id\":\"WARLOCK-DL-029\",\"vote\":\"accept\",\"reason\":\"Hash/changelog reconciliation, licenses, provenance and bounded review.\"},\n    {\"id\":\"WARLOCK-DL-030\",\"vote\":\"accept\",\"reason\":\"Adoption matrix with rejections of platform marks and snippet-derived numbers.\"}\n  ],\n  \"blockingCorrections\": [\n    {\"id\":\"WARLOCK-DL-018\",\"correction\":\"Map preview presentation to the Source statuses Live, Historical, Loading and Unavailable (PreviewLifecycle.elm:25,364-375) with existing labels and fidelity text under the frozen historical/live/unavailable policy and original preview13/S09. Treat Current, Placeholder and Earlier frame as proposed catalog terms only. Any label rename or added evidence condition for Live is a refinement gated on ELM-ADOPT-028 review. The earlier-frame deferral applies only to new retention beyond the existing authorized, unexpired accepted packet and does not remove or alter Historical. Existing expiry and lock revocation remain Source.\"}\n  ],\n  \"nonblockingAdvice\": [\n    \"DL-002: shell.css token migration is a frozen-component product change; label Proposed and implement in a fresh derivative.\",\n    \"DL-003: evaluate disabled text at the composited opacity .55 (shell.css:1) or classify it explicitly.\",\n    \"DL-005: surviving identity means the same surface identity within the same picker scope/generation; keyed DOM remains an implementation choice (ADOPT-016); popup is not keyed in Source.\",\n    \"DL-007/027: report Source label-in-name failures at Surface.elm:98 (bar groups), :84 (bar:applications) and :57 (applications control:close).\",\n    \"DL-009: document Space suppressed in menu mode (context.js:15-18), Tab toggling Close/selected (:56-59), focus following aria-current (:69-73) and absent typeahead.\",\n    \"DL-011: bar and popup render the same notice in two polite live regions; record a duplicate-announcement finding.\",\n    \"DL-017: Taskbar.primary is always called with pinned=False; mark the pinned row as function-only.\",\n    \"DL-023: include Launch statuses, preview statuses/fidelity labels, all Surface.elm control identities and notice strings in coverage.\",\n    \"DL-026: menu keyboard demos must include shipped context.js or declare its absence.\",\n    \"DL-030: name the family Apple Human Interface Guidelines, not Apple iOS HIG.\"\n  ],\n  \"sourceGaps\": [\n    \"Candidate SHA-256 not independently recomputed (no shell tool); relied on candidate-v1.sha256.\",\n    \"Native focus restoration after Escape (Desktop.returnFocus route through host.c/shared-host.c) not traced end to end.\",\n    \"No native AT tree, IME, keyboard-scope or hardware evidence reviewed; nothing here is native acceptance.\",\n    \"host.c and shared-host.c reviewed only for key handling, not fully.\",\n    \"Visual rendering of shell.css not inspected; no screenshots available.\"\n  ],\n  \"consensusRecommended\": false\n}\n```",
+  "ttft_ms": 2518,
+  "type": "result",
+  "duration_ms": 201200,
+  "uuid": "a3562e31-7540-4564-9bf8-497d29076413",
+  "ttft_stream_ms": 2494,
+  "time_to_request_ms": 73,
+  "first_content_frame_ms": 2494,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

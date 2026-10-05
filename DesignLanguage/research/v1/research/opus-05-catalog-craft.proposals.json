@@ -1,0 +1,217 @@
+[
+  {
+    "id": "OPUS05-CAT-01",
+    "title": "Source-derived widget manifest and coverage gate",
+    "decision": "borrow-adapt",
+    "ears": "When the catalog builds, the build shall fail if any manifest identity lacks a catalog page or state row, or any page cites an identity or source hash absent from the manifest.",
+    "acceptance": [
+      "Removing ExitFullscreen row fails build naming Menu.Action.ExitFullscreen",
+      "Changing Menu.elm without regeneration fails on hash mismatch"
+    ],
+    "sourceUrls": [
+      "https://learn.microsoft.com/en-us/windows/apps/develop/ui/controls/",
+      "https://m3.material.io/components"
+    ],
+    "dependencies": [
+      "frozen source hashes",
+      "catalog lane ownership"
+    ]
+  },
+  {
+    "id": "OPUS05-CAT-02",
+    "title": "Read-mode IA with uniform six-tab component pages",
+    "decision": "adapt",
+    "ears": "The catalog shall present every manifest component with Overview, Anatomy & states, Behavior & keyboard, Accessibility, Content and Evidence tabs in that order, showing 'Not yet specified' where content is unverified.",
+    "acceptance": [
+      "Window-actions menu page shows six tabs",
+      "Its Evidence tab lists only Source and Browser demo items"
+    ],
+    "sourceUrls": [
+      "https://developer.apple.com/design/human-interface-guidelines/",
+      "https://developer.gnome.org/hig/",
+      "https://m3.material.io/components/navigation-bar/overview",
+      "https://github.com/pbakaus/impeccable"
+    ],
+    "dependencies": [
+      "OPUS05-CAT-01"
+    ]
+  },
+  {
+    "id": "OPUS05-CAT-03",
+    "title": "Evidence-level labeling on every behavioral claim",
+    "decision": "original",
+    "ears": "The catalog shall display exactly one evidence level per behavioral claim and shall not render Native qualified unless a frozen native receipt and owning ABI tuple are linked; while rendered in a browser, demo interaction shall not change any evidence level.",
+    "acceptance": [
+      "Committed-closes-menu shows Source and Browser demo",
+      "Native label without receipt fails build"
+    ],
+    "sourceUrls": [
+      "https://developer.apple.com/design/human-interface-guidelines/menus"
+    ],
+    "dependencies": [
+      "evidence ledger",
+      "receipt format"
+    ]
+  },
+  {
+    "id": "OPUS05-CAT-04",
+    "title": "Orthogonal interaction and outcome state axes",
+    "decision": "adapt",
+    "ears": "The catalog shall render each outcome state with a text word and a non-color glyph; when a demo is in Unknown, it shall not offer automatic retry.",
+    "acceptance": [
+      "Grayscale outcome table remains distinguishable",
+      "Unknown demo has no Retry control"
+    ],
+    "sourceUrls": [
+      "https://m3.material.io/foundations/interaction/states/applying-states"
+    ],
+    "dependencies": [
+      "OPUS05-CAT-05",
+      "ELM-ADOPT-011"
+    ]
+  },
+  {
+    "id": "OPUS05-CAT-05",
+    "title": "Additive three-tier token schema 2 with contrast gate",
+    "decision": "borrow-adapt",
+    "ears": "When tokens build, the build shall fail if any sys text pair is below 4.5:1 or non-text/focus pair below 3:1 in either theme, and schema 2 shall reproduce all schema 1 values unchanged.",
+    "acceptance": [
+      "colors.lilac remains #B7A2FF",
+      "Lightening light border to #9AA0AE fails gate"
+    ],
+    "sourceUrls": [
+      "https://m3.material.io/foundations/design-tokens/overview",
+      "https://fluent2.microsoft.design/design-tokens",
+      "https://developer.apple.com/design/human-interface-guidelines/accessibility"
+    ],
+    "dependencies": [
+      "brand owner approval",
+      "tokens.css regeneration"
+    ]
+  },
+  {
+    "id": "OPUS05-CAT-06",
+    "title": "Live demos on real Elm modules with explicit simulated authority",
+    "decision": "borrow-adapt",
+    "ears": "While a demo is active, it shall change outcome state only on an explicit reader action on the Simulated authority panel, label every outcome simulated, and never replay an Unknown request.",
+    "acceptance": [
+      "Minimize stays Pending after 60 s idle",
+      "Second activation while pending emits no Dispatch",
+      "Dismiss and reopen shows Pending"
+    ],
+    "sourceUrls": [
+      "https://learn.microsoft.com/en-us/windows/apps/develop/ui/controls/"
+    ],
+    "dependencies": [
+      "OPUS05-CAT-01",
+      "PreviewLifecycle and ActionProjection sources"
+    ]
+  },
+  {
+    "id": "OPUS05-CAT-07",
+    "title": "Published per-component keyboard contract tables",
+    "decision": "borrow-defer-roving",
+    "ears": "The catalog shall publish key, resulting Msg and evidence level for each interactive component, labeling rows 'binding unverified' where the key binding is not in verified source.",
+    "acceptance": [
+      "Menu Down with no selection maps to first enabled item labeled Source",
+      "Esc row reads binding unverified"
+    ],
+    "sourceUrls": [
+      "https://learn.microsoft.com/en-us/windows/apps/develop/input/keyboard-interactions",
+      "https://developer.gnome.org/hig/guidelines/keyboard.html",
+      "https://m3.material.io/components/menus/accessibility"
+    ],
+    "dependencies": [
+      "bridge keymap source",
+      "ELM-ADOPT-029",
+      "ELM-ADOPT-030"
+    ]
+  },
+  {
+    "id": "OPUS05-CAT-08",
+    "title": "Accessible-name and semantics audit page",
+    "decision": "adapt",
+    "ears": "When a fixture's ariaLabel does not contain its visible label (case-insensitive, whitespace-normalized), the catalog build shall report a label-in-name finding against that fixture and component.",
+    "acceptance": [
+      "Label Firefox with ariaLabel 'Switch to window 3' produces a finding"
+    ],
+    "sourceUrls": [
+      "https://develop.kde.org/hig/text_and_labels/",
+      "https://develop.kde.org/hig/accessibility/"
+    ],
+    "dependencies": [
+      "ELM-ADOPT-017",
+      "native AT tree acceptance"
+    ]
+  },
+  {
+    "id": "OPUS05-CAT-09",
+    "title": "Sentence-case content standard with source string inventory",
+    "decision": "borrow-reject-title-case",
+    "ears": "The catalog shall list every user-facing source string with path:line and shall show rule violations as findings rather than silently rewriting strings.",
+    "acceptance": [
+      "'Connection lost. Reconnect to continue.' passes actionable rule",
+      "'Error 42' fails"
+    ],
+    "sourceUrls": [
+      "https://developer.gnome.org/hig/guidelines/writing-style.html",
+      "https://develop.kde.org/hig/status_changes/",
+      "https://fluent2.microsoft.design/components/web/react/core/menu/usage",
+      "https://developer.apple.com/design/human-interface-guidelines/menus"
+    ],
+    "dependencies": [
+      "OPUS05-CAT-01",
+      "ELM-ADOPT-011"
+    ]
+  },
+  {
+    "id": "OPUS05-CAT-10",
+    "title": "Responsive reading layout and website motion policy",
+    "decision": "adapt",
+    "ears": "When the viewport is 320 CSS px at 400% zoom, the catalog shall present content without two-dimensional scrolling except inside fixed-size demo canvases; while reduced motion is preferred, it shall run no decorative animation.",
+    "acceptance": [
+      "No text overflow at 390 and 1440 px",
+      "Reduced-motion toggle stops animation without reload"
+    ],
+    "sourceUrls": [
+      "https://developer.apple.com/design/human-interface-guidelines/accessibility",
+      "https://github.com/pbakaus/impeccable"
+    ],
+    "dependencies": [
+      "OPUS05-CAT-05",
+      "self-hosted licensed fonts"
+    ]
+  },
+  {
+    "id": "OPUS05-CAT-11",
+    "title": "Versioning, changelog, provenance and finish review",
+    "decision": "borrow",
+    "ears": "When a manifest component's source hash changes, the catalog shall require a changelog entry for that component before publishing.",
+    "acceptance": [
+      "Menu.elm hash bump without changelog entry blocks publish"
+    ],
+    "sourceUrls": [
+      "https://developer.apple.com/design/human-interface-guidelines/menus",
+      "https://github.com/pbakaus/impeccable"
+    ],
+    "dependencies": [
+      "OPUS05-CAT-01",
+      "publication authorization"
+    ]
+  },
+  {
+    "id": "OPUS05-CAT-12",
+    "title": "Reject platform look-alikes, dynamic color and protected assets",
+    "decision": "reject",
+    "ears": "The catalog shall not include platform logos, platform screenshots or themes named after another platform; comparisons shall be text and links.",
+    "acceptance": [
+      "Provenance scan shows zero third-party platform rasters"
+    ],
+    "sourceUrls": [
+      "https://m3.material.io/",
+      "https://fluent2.microsoft.design/",
+      "https://developer.apple.com/design/human-interface-guidelines/"
+    ],
+    "dependencies": []
+  }
+]

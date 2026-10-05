@@ -18,6 +18,12 @@ CPU tests and Quint model results are separate claims.
   campaigns must use `python3 -B implementation/elm-build-loop-v1/loop.py native
   --runner /absolute/reviewed/runner.py`, which holds the shared native lock and
   invokes the unchanged protected launcher. CPU QA continues through `qa_run.py`.
+- The additional Warlock design-language work follows
+  `docs/warlock-build-loop/design-language-v1/INSTRUCTIONS.md` and
+  `DesignLanguage/WORKPLAN.md`. Its exact five-reviewer consensus preserves the
+  baseline, native gates and original preview meanings. Implement the catalog
+  in parallel with the native GUI work; browser demonstrations never qualify
+  native behavior or replace the single Elm policy authority.
 - Do not edit `/usr/share/omarchy`. Read the installed Omarchy skill before
   changing desktop configuration; a snapshot is in `docs/skills/omarchy/`.
 - Installed Files operation semantics are specified in Quint. Change that spec

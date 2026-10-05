@@ -1,0 +1,109 @@
+{
+  "duration_api_ms": 989911,
+  "stop_reason": "end_turn",
+  "session_id": "eef4def7-d974-40cb-a1f7-4d785c717cad",
+  "total_cost_usd": 4.6614384,
+  "usage": {
+    "input_tokens": 24,
+    "cache_creation_input_tokens": 95609,
+    "cache_read_input_tokens": 2760773,
+    "output_tokens": 16301,
+    "output_tokens_details": {
+      "thinking_tokens": 8323
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 95609,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 6397,
+        "cache_read_input_tokens": 262926,
+        "cache_creation_input_tokens": 5873,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 5873
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 82,
+      "outputTokens": 56769,
+      "thinkingTokens": 22619,
+      "cacheReadInputTokens": 5789992,
+      "cacheCreationInputTokens": 265147,
+      "webSearchRequests": 0,
+      "costUSD": 4.414882400000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 159941,
+      "outputTokens": 7323,
+      "thinkingTokens": 0,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 5,
+      "costUSD": 0.24655600000000003,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 22,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "# Peer review of Warlock design language candidate-v1: opus-02-widgets\n\n**My vote: 28 accept, 2 revise (DL-018, DL-030).** I do not recommend consensus on this exact version. Both corrections are one-sentence wording fixes, and once they are made I would accept every contract.\n\n**What I checked:**\n- **The candidate itself.** I compared `candidate-v1.json` and `candidate-v1.md` contract by contract. The EARS text, acceptance, guardrails and source-proposal routing match for all 30 contracts.\n- **The hash.** I could not recompute the SHA-256: this session had no shell or hashing tool. My votes are bound to the supplied hash `3bef8fec\u2026e3e2`.\n- **The other reports.** I searched all five reports for points where they conflict.\n- **Source.** I checked the candidate's claims against the supplemental closure: `Surface.elm`, `SurfaceRenderer.elm`, `PreviewLifecycle.elm`, `Presentation.elm`, `shell.css`, `activation.js`, `context.js`, `bar-adapter.js`, `popup-adapter.js` and `adapter.js`.\n- **Not read in full:** native `host.c` and `shared-host.c`.\n\n## What the supplemental source showed\n\n1. **The real control set is larger than my original inventory** (`Surface.elm:57-101`):\n   - Bar: `bar:applications` or `bar:reconnect`, `bar:group:*`, `bar:refresh-windows`, `bar:recovery-refresh`.\n   - Popup: `control:close` (labelled \"Windows\" in applications mode, \"Close\" in the picker), `control:refresh`, `control:acknowledge` (\"I checked; allow another launch\"), `entry:*`, `family:*`, `menu:N:i`, `control:menu-close`, `control:recovery-refresh`.\n   - DL-023 is correct to require the full closure.\n2. **Several current controls fail DL-007's visible-label-prefix rule:**\n   - Taskbar group: shows \"Firefox\", but its accessible name is \"Activate Firefox\"/\"Minimize \u2026\" (`Surface.elm:91-98`).\n   - `bar:applications`: shows \"Applications\", named \"Open applications\".\n   - The applications-mode close button: shows \"Windows\", named \"Close applications and return to windows\".\n   - The verb in the name is transient state, which ELM-ADOPT-017 already says belongs in the description.\n3. **`aria-current` is load-bearing in the bridge.** `context.js:58,69-73` moves focus to `[aria-current=\"true\"]` and uses it as the Tab target. Replacing it (DL-007) needs a coordinated bridge change, not just a renderer change.\n4. **Source keyboard map** (`context.js`, `activation.js`):\n   - In menu mode, Escape, Up/Down, Home/End and Enter post `surface-menu-navigation` to native.\n   - **Space is not bound in menu mode.**\n   - Tab toggles between the selected row and Close.\n   - Shift+F10 and the ContextMenu key open the context menu.\n   - In picker and applications mode, Escape activates `control:close`.\n   - Enter/Space activation is guarded against IME composition, key repeat and modifier keys.\n5. **Pending or blocked items are shown by disabling the HTML control,** with the detail text \"Awaiting native confirmation\". That removes focus, so DL-004's \"a focused Pending control shows both states\" is a Proposed target, not current Source.\n6. **The taskbar is called as `Taskbar.primary False`** (`Surface.elm:87-91`). Pins are hard-coded off, so the \"zero pinned \u2192 Launch\" row of DL-017's truth table cannot be reached in the current bar.\n7. **Preview tiles already have four Source states:** Live, Historical, Loading and Unavailable, with the visible text \"Live preview\" / \"Historical preview\" / \"Preview loading\" / \"Preview unavailable\" (`PreviewLifecycle.elm:25,137-147,364-375`). Historical frames are authorized, unexpired frames from an older scene or content revision, and they are displayed. Expired or locked frames are not. DL-018's \"Earlier frame is deferred\" can be read as suppressing this existing display, which the original S09/preview13 assertions cover. That is why I vote revise.\n8. **Two live regions confirmed.** The bar status is screen-reader-only (clipped in `shell.css`) but still `aria-live=polite`, and it carries the same `Surface.notice` text as the visible popup status. This supports DL-011.\n9. **`shell.css` doesn't use the brand yet.** It uses `system-ui` and literal colors that are not brand tokens. The existing focus outline is a single 3px `#7ed7ff` line with 1px offset, which already meets DL-006's \u22652px minimum. Disabled controls use `opacity: .55`, which DL-003 has to classify and measure.\n\n## Blocking corrections\n\n- **DL-018:** Add to the acceptance: *\"The existing Source Live/Historical/Loading/Unavailable states, visible labels and authorized Historical frame display are preserved under the frozen S09 historical/live/unavailable policy. 'Current' and 'Earlier frame' are proposed catalog terms. They do not rename, suppress or extend those Source states until the ELM-ADOPT-028 review.\"*\n- **DL-030:** Replace \"Apple iOS HIG\" with *\"Apple Human Interface Guidelines (including the macOS menu, focus and keyboard guidance used by DL-007/008/019)\"*. The user named the whole HIG, the product is a desktop, and the candidate's own citations are to `menus.json` and `focus-and-selection.json`.\n\n```json\n{\n \"reviewerId\":\"opus-02-widgets\",\n \"candidateVersion\":\"candidate-v1\",\n \"candidateSHA256\":\"3bef8fec0517273501f94d26f79a29f4f38d22e5d2dcb6d29ccb4b5ef966e3e2\",\n \"votes\":[\n  {\"id\":\"WARLOCK-DL-001\",\"vote\":\"accept\",\"reason\":\"Preserves schema-1 brand and philosophy; decoration grants no authority.\"},\n  {\"id\":\"WARLOCK-DL-002\",\"vote\":\"accept\",\"reason\":\"Token tiers are a target; shell.css literals are Source to migrate, not contradicted.\"},\n  {\"id\":\"WARLOCK-DL-003\",\"vote\":\"accept\",\"reason\":\"Composited-pair measurement and explicit inactive classification cover disabled opacity .55.\"},\n  {\"id\":\"WARLOCK-DL-004\",\"vote\":\"accept\",\"reason\":\"Matches Menu/Surface blocking (no second intent); focused-Pending is properly a proposed target.\"},\n  {\"id\":\"WARLOCK-DL-005\",\"vote\":\"accept\",\"reason\":\"Popup is still unkeyed in supplemental SurfaceRenderer.elm:63; keyed identity is warranted.\"},\n  {\"id\":\"WARLOCK-DL-006\",\"vote\":\"accept\",\"reason\":\"Existing 3px focus-visible outline meets the >=2px floor; the two-tone ring is an initial catalog treatment only.\"},\n  {\"id\":\"WARLOCK-DL-007\",\"vote\":\"accept\",\"reason\":\"Consistent with ELM-ADOPT-017; validator surfaces current failures without rewriting frozen oracles.\"},\n  {\"id\":\"WARLOCK-DL-008\",\"vote\":\"accept\",\"reason\":\"Labels skip-disabled as Source; focusable disabled menus remain a gated future target under ELM-ADOPT-030.\"},\n  {\"id\":\"WARLOCK-DL-009\",\"vote\":\"accept\",\"reason\":\"Escape/navigation route through native with exact stamp; Msg mapping plus source status covers unbound Space.\"},\n  {\"id\":\"WARLOCK-DL-010\",\"vote\":\"accept\",\"reason\":\"Defers to ELM-ADOPT-029; no F6/global shortcut.\"},\n  {\"id\":\"WARLOCK-DL-011\",\"vote\":\"accept\",\"reason\":\"Source has two polite regions with identical notice; single owner is correct.\"},\n  {\"id\":\"WARLOCK-DL-012\",\"vote\":\"accept\",\"reason\":\"Matches 'read observations without retrying actions'; no automatic Unknown replay.\"},\n  {\"id\":\"WARLOCK-DL-013\",\"vote\":\"accept\",\"reason\":\"24px limited to catalog; native geometry contracts untouched.\"},\n  {\"id\":\"WARLOCK-DL-014\",\"vote\":\"accept\",\"reason\":\"Allows legitimate publication/lease and generation changes while preserving targets.\"},\n  {\"id\":\"WARLOCK-DL-015\",\"vote\":\"accept\",\"reason\":\"Still-by-default catalog; native timing remains under S02/023/024.\"},\n  {\"id\":\"WARLOCK-DL-016\",\"vote\":\"accept\",\"reason\":\"Original deadlines unchanged; expired choices unavailable.\"},\n  {\"id\":\"WARLOCK-DL-017\",\"vote\":\"accept\",\"reason\":\"Truth table mirrors Taskbar.primary; decisions never labeled confirmed.\"},\n  {\"id\":\"WARLOCK-DL-018\",\"vote\":\"revise\",\"reason\":\"'Earlier frame is deferred' is ambiguous against existing Source Historical frame display (PreviewLifecycle.elm:142,366) covered by frozen S09 policy.\"},\n  {\"id\":\"WARLOCK-DL-019\",\"vote\":\"accept\",\"reason\":\"Omit unsupported, reason for unavailable, checked state from observation; documents all Menu.Action constructors.\"},\n  {\"id\":\"WARLOCK-DL-020\",\"vote\":\"accept\",\"reason\":\"Search is a guarded extension; current source documented as having none.\"},\n  {\"id\":\"WARLOCK-DL-021\",\"vote\":\"accept\",\"reason\":\"Host ownership and gates stated; no browser placement claims.\"},\n  {\"id\":\"WARLOCK-DL-022\",\"vote\":\"accept\",\"reason\":\"Settings documentation constraints only; Proposed until integrated.\"},\n  {\"id\":\"WARLOCK-DL-023\",\"vote\":\"accept\",\"reason\":\"Full closure supersedes ten-module inference; supplemental reveals additional controls that must be covered.\"},\n  {\"id\":\"WARLOCK-DL-024\",\"vote\":\"accept\",\"reason\":\"Read-mode IA with Not yet specified markers.\"},\n  {\"id\":\"WARLOCK-DL-025\",\"vote\":\"accept\",\"reason\":\"Scoped evidence records; Native label requires receipt, scenario and ABI tuple.\"},\n  {\"id\":\"WARLOCK-DL-026\",\"vote\":\"accept\",\"reason\":\"Shipped Elm functions with labeled fixture authority; no competing JS policy.\"},\n  {\"id\":\"WARLOCK-DL-027\",\"vote\":\"accept\",\"reason\":\"Inventory with source locations; frozen strings never rewritten.\"},\n  {\"id\":\"WARLOCK-DL-028\",\"vote\":\"accept\",\"reason\":\"Offline, reflow, forced-colors and reduced-motion coverage.\"},\n  {\"id\":\"WARLOCK-DL-029\",\"vote\":\"accept\",\"reason\":\"Hash/changelog reconciliation, provenance and bounded review.\"},\n  {\"id\":\"WARLOCK-DL-030\",\"vote\":\"revise\",\"reason\":\"'Apple iOS HIG' mis-scopes the user-named Apple HIG for a desktop product; candidate cites macOS menu/focus guidance.\"}\n ],\n \"blockingCorrections\":[\n  {\"id\":\"WARLOCK-DL-018\",\"correction\":\"Add acceptance: 'The existing Source Live/Historical/Loading/Unavailable states, visible labels and authorized Historical frame display are preserved under the frozen S09 historical/live/unavailable policy; Current and Earlier frame are proposed catalog terms that do not rename, suppress or extend those Source states until the ELM-ADOPT-028 review.'\"},\n  {\"id\":\"WARLOCK-DL-030\",\"correction\":\"Replace 'Apple iOS HIG' with 'Apple Human Interface Guidelines (including macOS menu, focus and keyboard guidance)'.\"}\n ],\n \"nonblockingAdvice\":[\n  \"DL-023: registry must include Surface.elm:57-101 controls: bar:applications, bar:reconnect, bar:group:*, bar:refresh-windows, bar:recovery-refresh, control:close (two labels by mode), control:refresh, control:acknowledge, entry:*, family:*, menu:N:i, control:menu-close, control:recovery-refresh.\",\n  \"DL-007/027: record current label-prefix failures (bar groups 'Firefox' vs 'Activate Firefox'; bar:applications; applications control:close 'Windows') as findings migrated under ELM-ADOPT-017 without altering frozen oracles.\",\n  \"DL-007/009: aria-current drives focus and Tab in context.js:58,69-73; any replacement needs a coordinated bridge change and a surfaceProtocol decision by the owning lane.\",\n  \"DL-009: source key map: menu mode Escape/Up/Down/Home/End/Enter -> native surface-menu-navigation; Space unbound in menu mode; Tab toggles selected row and Close; Shift+F10/ContextMenu opens context menu; picker/applications Escape activates control:close.\",\n  \"DL-004/008: source conveys blocked/Pending by HTML-disabling controls with 'Awaiting native confirmation', which drops focus; label focused-Pending as Proposed.\",\n  \"DL-017: Surface.elm calls Taskbar.primary False, so the pinned/Launch row is unreachable in the current bar; mark row reachability.\",\n  \"DL-005: menu row identities are positional (menu:N:i) and items are immutable per MenuId; keyed-preservation tests apply to picker/application entries.\",\n  \"DL-012: inventory Surface.notice strings and reservationReason; document acknowledge as explicit user action, not replay.\"\n ],\n \"sourceGaps\":[\n  \"Candidate SHA-256 not independently recomputed (no hashing tool in this read-only session); JSON and Markdown text compared manually and match.\",\n  \"native/host.c and shared-host.c not fully reviewed; native focus restoration and native handling of surface-menu-navigation/Escape unverified here.\",\n  \"Original S01-S16/right-click24 scenario oracles not in packet; cannot confirm whether any frozen oracle asserts current ariaLabel strings.\",\n  \"MenuBridge provider item construction (toggle labels, reasons) only partially reviewed.\"\n ],\n \"consensusRecommended\":false\n}\n```\n\nNo native acceptance is claimed. The Warlock brand and all prior release scope are preserved.",
+  "ttft_ms": 2828,
+  "type": "result",
+  "duration_ms": 179578,
+  "uuid": "16195370-b0f2-405f-b96f-ffd8d773ff21",
+  "ttft_stream_ms": 2751,
+  "time_to_request_ms": 140,
+  "first_content_frame_ms": 2751,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

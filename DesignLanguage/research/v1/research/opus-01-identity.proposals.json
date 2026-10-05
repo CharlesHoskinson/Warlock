@@ -1,0 +1,248 @@
+[
+  {
+    "id": "WL-ID-01",
+    "title": "Three-tier tokens: brand reference -> semantic role -> component",
+    "decision": "adapt",
+    "ears": "Where a Warlock surface or catalog page renders color, the renderer shall resolve the color through a semantic role token; no component style shall reference a reference-tier token or literal color value.",
+    "acceptance": [
+      "Lint finds zero color literals outside token sources",
+      "Theme switch changes roles only",
+      "Schema-1 keys preserved as aliases"
+    ],
+    "sourceUrls": [
+      "https://fluent2.microsoft.design/design-tokens",
+      "https://learn.microsoft.com/en-us/windows/apps/design/accessibility/high-contrast-themes",
+      "https://developer.gnome.org/hig/guidelines/ui-styling.html"
+    ],
+    "dependencies": [
+      "tokens owner",
+      "W08",
+      "ELM-ADOPT-019"
+    ]
+  },
+  {
+    "id": "WL-ID-02",
+    "title": "Paired content-on-container roles with frozen contrast floors",
+    "decision": "borrow",
+    "ears": "The token build shall refuse any declared foreground/background role pair whose WCAG 2 contrast is below its declared floor (text 4.5:1; large text and non-text 3:1) in every theme.",
+    "acceptance": [
+      "Published contrast table matches computed values",
+      "Lilac-on-parchment pair fails build",
+      "Light outline-strong added for control boundaries"
+    ],
+    "sourceUrls": [
+      "https://github.com/material-components/material-components-android/blob/master/docs/theming/Color.md",
+      "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html",
+      "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/accessibility.json"
+    ],
+    "dependencies": [
+      "WL-ID-01"
+    ]
+  },
+  {
+    "id": "WL-ID-03",
+    "title": "Outcome-status roles separate from decorative accents, with copy catalog",
+    "decision": "adapt",
+    "ears": "When the controller reports an outcome status, the surface shall present that status's catalog text and glyph; color shall not be the only cue, and the Unknown presentation shall share neither glyph nor role with Committed.",
+    "acceptance": [
+      "Greyscale screenshots distinguish all states",
+      "Unknown never shows a check",
+      "Mint never used as a status role",
+      "Jargon strings at Menu.elm:473 and Shell.elm:71 reviewed"
+    ],
+    "sourceUrls": [
+      "https://fluent2.microsoft.design/color",
+      "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/accessibility.json",
+      "https://develop.kde.org/hig/components/assistance/progress/",
+      "https://develop.kde.org/hig/text_and_labels/"
+    ],
+    "dependencies": [
+      "ELM-ADOPT-011",
+      "ELM-ADOPT-012",
+      "ELM-ADOPT-017",
+      "W08"
+    ]
+  },
+  {
+    "id": "WL-ID-04",
+    "title": "High-contrast theme mapped to system colors",
+    "decision": "adapt",
+    "ears": "While the native contrast preference reports higher contrast, Warlock surfaces shall resolve roles to the high-contrast set and keep focus, selection, disabled and every outcome state distinguishable without hue.",
+    "acceptance": [
+      "DEMO: forced-colors and prefers-contrast emulation pass for all widgets",
+      "NATIVE: portal contrast=1 flip on running shell with screenshot and AT receipts (not supplied)"
+    ],
+    "sourceUrls": [
+      "https://learn.microsoft.com/en-us/windows/apps/design/accessibility/high-contrast-themes",
+      "https://developer.gnome.org/hig/guidelines/accessibility.html",
+      "https://flatpak.github.io/xdg-desktop-portal/docs/doc-org.freedesktop.portal.Settings.html"
+    ],
+    "dependencies": [
+      "WL-ID-01",
+      "WL-ID-03",
+      "native settings bridge",
+      "W08"
+    ]
+  },
+  {
+    "id": "WL-ID-05",
+    "title": "Live appearance preference that never moves the action target",
+    "decision": "adapt",
+    "ears": "When the system color-scheme or contrast preference changes, the shell shall re-resolve role tokens without changing focus, selection, publication/lease identity or the pending action target.",
+    "acceptance": [
+      "DEMO: theme toggle keeps focused menu row and selection",
+      "NATIVE: toggle during Pending keeps receipt binding"
+    ],
+    "sourceUrls": [
+      "https://developer.gnome.org/hig/guidelines/ui-styling.html",
+      "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/color.json",
+      "https://flatpak.github.io/xdg-desktop-portal/docs/doc-org.freedesktop.portal.Settings.html"
+    ],
+    "dependencies": [
+      "ELM-ADOPT-016",
+      "W07"
+    ]
+  },
+  {
+    "id": "WL-ID-06",
+    "title": "Role-based type scale with brand faces scoped",
+    "decision": "adapt",
+    "ears": "Where text is rendered in a shell surface, the renderer shall size it from a type role relative to the native text-scale factor; Space Grotesk shall appear only in the wordmark and catalog display roles.",
+    "acceptance": [
+      "No clipping at 100/150/200% text zoom for W1-W12",
+      "Computed-style audit finds Space Grotesk only in display/wordmark",
+      "NATIVE: system font size 14 and large-text checks"
+    ],
+    "sourceUrls": [
+      "https://github.com/material-components/material-components-android/blob/master/docs/theming/Typography.md",
+      "https://learn.microsoft.com/en-us/windows/apps/design/signature-experiences/typography",
+      "https://developer.gnome.org/hig/guidelines/typography.html",
+      "https://develop.kde.org/hig/text_and_labels/",
+      "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/branding.json"
+    ],
+    "dependencies": [
+      "ELM-ADOPT-019",
+      "font bundle provenance"
+    ]
+  },
+  {
+    "id": "WL-ID-07",
+    "title": "Sigil asset ladder and brand-defers-to-content rule",
+    "decision": "borrow",
+    "ears": "Where the sigil is rendered below 32 px, or while high contrast is active, the asset selector shall choose the monochrome silhouette (24-31 px) or the W letterform (below 24 px), and shall keep one diamond-width of clear space.",
+    "acceptance": [
+      "Size slider switches at 31/32 and 23/24 device px at DPR 1 and 2",
+      "No sigil inside bar, popup or menu",
+      "Variant manifest hashes displayed"
+    ],
+    "sourceUrls": [
+      "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/branding.json"
+    ],
+    "dependencies": [
+      "asset-manifest.json",
+      "vector sources"
+    ]
+  },
+  {
+    "id": "WL-ID-08",
+    "title": "Distinct focus, selection, current, pressed and disabled states",
+    "decision": "adapt",
+    "ears": "While a control has keyboard focus, the surface shall draw a focus indicator at least 2 CSS px thick with at least 3:1 contrast against its unfocused pixels, visually distinct from the selected and current indications.",
+    "acceptance": [
+      "Pixel diff of focus states in three themes meets 3:1",
+      "Selected-unfocused vs focused-unselected distinguishable in greyscale",
+      "Structured selected field only via versioned surface protocol"
+    ],
+    "sourceUrls": [
+      "https://develop.kde.org/hig/accessibility/",
+      "https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html",
+      "https://www.w3.org/WAI/ARIA/apg/patterns/menubar/"
+    ],
+    "dependencies": [
+      "ELM-ADOPT-016",
+      "ELM-ADOPT-017",
+      "ELM-ADOPT-030",
+      "W07"
+    ]
+  },
+  {
+    "id": "WL-ID-09",
+    "title": "Accessible name begins with visible label; single announcement owner",
+    "decision": "borrow",
+    "ears": "If a published control's accessible name does not begin with its visible label, then the presentation QA validator shall report the control identity and fail the publication fixture.",
+    "acceptance": [
+      "Fixture label Firefox / name 'Firefox, 2 windows' passes",
+      "Fixture label Firefox / name 'Browser group' fails",
+      "One announcer per ELM-ADOPT-012 (native transcript required)"
+    ],
+    "sourceUrls": [
+      "https://www.w3.org/WAI/WCAG22/Understanding/label-in-name.html",
+      "https://developer.gnome.org/hig/guidelines/accessibility.html"
+    ],
+    "dependencies": [
+      "W07",
+      "W08",
+      "ELM-ADOPT-012",
+      "ELM-ADOPT-017"
+    ]
+  },
+  {
+    "id": "WL-ID-10",
+    "title": "Motion roles bound to native presentation and live reduced motion",
+    "decision": "borrow",
+    "ears": "While the reduced-motion preference is active, the shell and catalog shall replace decorative and velocity-continuation motion with instant or cross-fade changes that convey the same state information.",
+    "acceptance": [
+      "DEMO: outcome states remain perceivable with reduced motion; ribbons never autostart",
+      "NATIVE: ELM-ADOPT-023 under original 38/34/52 cases"
+    ],
+    "sourceUrls": [
+      "https://develop.kde.org/hig/accessibility/",
+      "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/accessibility.json",
+      "https://flatpak.github.io/xdg-desktop-portal/docs/doc-org.freedesktop.portal.Settings.html"
+    ],
+    "dependencies": [
+      "S02",
+      "W12",
+      "ELM-ADOPT-023"
+    ]
+  },
+  {
+    "id": "WL-ID-11",
+    "title": "Warlock Design catalog website with evidence badges and coverage gate",
+    "decision": "adapt",
+    "ears": "Where a catalog page shows a widget, the page shall display its evidence level (Source, Demo or Native) and shall not display Native accepted without a linked native receipt identifier; the build shall fail if any repository Html view surface is uncatalogued.",
+    "acceptance": [
+      "Coverage report lists W1-W13 plus repository-scan additions",
+      "Missing receipt renders 'Demo only'",
+      "No eyebrows, section numbers or card grids"
+    ],
+    "sourceUrls": [
+      "https://developer.gnome.org/hig/",
+      "https://fluent2.microsoft.design/",
+      "https://github.com/pbakaus/impeccable"
+    ],
+    "dependencies": [
+      "WL-ID-01..10",
+      "WL-ID-12",
+      "full repository scan"
+    ]
+  },
+  {
+    "id": "WL-ID-12",
+    "title": "Demos run real Elm modules against labelled fixtures",
+    "decision": "adopt",
+    "ears": "The catalog shall render every widget demo through the shipped Elm view and update functions; if a demo needs a native outcome, then the page shall inject it as a labelled fixture and shall not compute state transitions outside Elm.",
+    "acceptance": [
+      "Demo bundles display module hashes",
+      "No JS reimplementation of Menu status transitions",
+      "Fixtures pass SurfaceRenderer.decode and Catalog.decode"
+    ],
+    "sourceUrls": [
+      "https://github.com/pbakaus/impeccable"
+    ],
+    "dependencies": [
+      "source hash freeze",
+      "WL-ID-11"
+    ]
+  }
+]

@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "candidate": "candidate-v2.json",
+  "candidateSHA256": "63f5311d840a736d109993d096ccb444adb14057acbe1e9f29ab2e3e805a8754",
+  "reviewerCount": 5,
+  "contractCount": 30,
+  "sourceProposalCount": 60,
+  "unanimous": true,
+  "ballots": [
+    {
+      "reviewer": "opus-01-identity",
+      "path": "DesignLanguage/research/v1/ratification-v2/opus-01-identity.vote.json",
+      "sha256": "b0cbcc2b8f29dc1501f0329745dcc83948476b3d38dcd51a042e4ba8c0c1fe18",
+      "acceptsAll": true
+    },
+    {
+      "reviewer": "opus-02-widgets",
+      "path": "DesignLanguage/research/v1/ratification-v2/opus-02-widgets.vote.json",
+      "sha256": "bafea38b272c884c18a8f8985eba8fae2df0b0149ebba886b26694908c99bcde",
+      "acceptsAll": true
+    },
+    {
+      "reviewer": "opus-03-desktop",
+      "path": "DesignLanguage/research/v1/ratification-v2/opus-03-desktop.vote.json",
+      "sha256": "6cd546e1d0151c9dca7db21ac0f8ee8ec3cc74b2a89f53e0cd13cfd06843332d",
+      "acceptsAll": true
+    },
+    {
+      "reviewer": "opus-04-accessibility-motion",
+      "path": "DesignLanguage/research/v1/ratification-v2/opus-04-accessibility-motion.vote.json",
+      "sha256": "0709b42225ea99d79c6a6070aa6bd487c23fa59253310c543a3284113aa369e2",
+      "acceptsAll": true
+    },
+    {
+      "reviewer": "opus-05-catalog-craft",
+      "path": "DesignLanguage/research/v1/ratification-v2/opus-05-catalog-craft.vote.json",
+      "sha256": "cbfec44af18a727b7e618e5aaa6ecf099a5527a385353523069764ae51790dbd",
+      "acceptsAll": true
+    }
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "hashVerification": "Coordinator computed all candidate/input/ballot hashes; reviewers explicitly lacked a shell hasher and relied on identified candidate version."
+}

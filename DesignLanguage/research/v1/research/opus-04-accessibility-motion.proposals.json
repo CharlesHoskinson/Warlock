@@ -1,0 +1,248 @@
+[
+  {
+    "id": "AM-01",
+    "title": "Outcome feedback ladder",
+    "decision": "adapt",
+    "ears": "When native authority reports Committed for an intent, the surface shall present the resulting state and shall not present a success message for routine window operations; while an intent is Unknown, the surface shall show persistent unconfirmed text and a reconcile action and shall not replay.",
+    "acceptance": [
+      "Minimize Committed shows Minimized detail and no message",
+      "Disconnect during Pending yields persistent Unknown text",
+      "Refused reason visible and announced once"
+    ],
+    "sourceUrls": [
+      "https://developer.apple.com/design/human-interface-guidelines/feedback",
+      "https://develop.kde.org/hig/status_changes/",
+      "https://developer.gnome.org/hig/patterns/feedback/spinners.html"
+    ],
+    "dependencies": [
+      "ELM-ADOPT-011",
+      "ELM-ADOPT-012",
+      "ELM-ADOPT-020",
+      "ELM-ADOPT-021",
+      "S02"
+    ]
+  },
+  {
+    "id": "AM-02",
+    "title": "State and focus tokens",
+    "decision": "adapt",
+    "ears": "When any control receives keyboard focus, the surface shall draw focus.ring with at least 3:1 contrast against adjacent colors and shall not rely on color alone for state.",
+    "acceptance": [
+      "Ring contrast >=3:1 on ink, surface, parchment, white",
+      "Grayscale capture distinguishes all outcome states"
+    ],
+    "sourceUrls": [
+      "https://learn.microsoft.com/en-us/windows/apps/design/input/guidelines-for-visualfeedback",
+      "https://raw.githubusercontent.com/material-components/material-web/main/tokens/versions/v0_192/_md-sys-state.scss",
+      "https://raw.githubusercontent.com/material-components/material-web/main/docs/components/focus-ring.md",
+      "https://developer.apple.com/design/human-interface-guidelines/accessibility",
+      "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html"
+    ],
+    "dependencies": [
+      "ELM-ADOPT-019"
+    ]
+  },
+  {
+    "id": "AM-03",
+    "title": "Motion roles and reduced profile",
+    "decision": "adapt",
+    "ears": "While reduced motion is active, every surface shall replace spatial motion with opacity or instant change, render pending indicators statically, and not continue velocity; when a user acts during an animation, the surface shall accept the input without waiting.",
+    "acceptance": [
+      "Reduced-motion toggle mid-entry settles at final position next frame",
+      "Input during exit animation is not swallowed",
+      "Native presentation timestamps for restore38/recovery34/drag-resize52"
+    ],
+    "sourceUrls": [
+      "https://developer.apple.com/design/human-interface-guidelines/motion",
+      "https://developer.apple.com/design/human-interface-guidelines/accessibility",
+      "https://develop.kde.org/hig/accessibility/",
+      "https://learn.microsoft.com/en-us/windows/apps/design/motion/",
+      "https://raw.githubusercontent.com/material-components/material-web/main/tokens/versions/v0_192/_md-sys-motion.scss",
+      "https://github.com/pbakaus/impeccable"
+    ],
+    "dependencies": [
+      "ELM-ADOPT-023",
+      "ELM-ADOPT-024",
+      "W12",
+      "S02"
+    ]
+  },
+  {
+    "id": "AM-04",
+    "title": "Reduced motion as typed native observation",
+    "decision": "borrow",
+    "ears": "When the native reduced-motion observation changes, the controller shall publish the new motion profile to every surface in the next publication and each surface shall apply it to in-flight animation.",
+    "acceptance": [
+      "Portal change with popups on two outputs switches both surfaces with matching revision in native trace"
+    ],
+    "sourceUrls": [
+      "https://flatpak.github.io/xdg-desktop-portal/docs/doc-org.freedesktop.portal.Settings.html",
+      "https://docs.gtk.org/gtk4/property.Settings.gtk-interface-reduced-motion.html",
+      "https://docs.gtk.org/gtk4/property.Settings.gtk-enable-animations.html",
+      "https://webkitgtk.org/2026/09/16/webkitgtk-2.54-highlights.html"
+    ],
+    "dependencies": [
+      "ELM-ADOPT-017",
+      "ELM-ADOPT-023",
+      "W08",
+      "W12"
+    ]
+  },
+  {
+    "id": "AM-05",
+    "title": "Accessible name, description and typed state contract",
+    "decision": "adapt",
+    "ears": "The surface shall expose each control's visible label as the start of its accessible name and expose transient detail and outcome as description or state, not name.",
+    "acceptance": [
+      "Projection test flags ariaLabel not starting with label",
+      "Orca reads label, role, then detail",
+      "Toggle actions announce checked state"
+    ],
+    "sourceUrls": [
+      "https://www.w3.org/WAI/WCAG22/Understanding/label-in-name.html",
+      "https://www.w3.org/WAI/ARIA/apg/patterns/menubar/",
+      "https://developer.apple.com/design/human-interface-guidelines/menus",
+      "https://develop.kde.org/hig/accessibility/"
+    ],
+    "dependencies": [
+      "ELM-ADOPT-017",
+      "surfaceProtocol version bump"
+    ]
+  },
+  {
+    "id": "AM-06",
+    "title": "Keyboard contract for bar, picker and menu",
+    "decision": "adapt",
+    "ears": "When Esc is pressed in a popup, the shell shall request dismissal and return focus to the invoking control if it still exists, else the declared fallback; arrow wrapping shall apply only within popups.",
+    "acceptance": [
+      "Scripted key table passes in browser demo",
+      "Native key-route transcript per row including focus retained in application"
+    ],
+    "sourceUrls": [
+      "https://developer.gnome.org/hig/guidelines/keyboard.html",
+      "https://learn.microsoft.com/en-us/windows/apps/design/input/keyboard-interactions",
+      "https://developer.apple.com/design/human-interface-guidelines/keyboards"
+    ],
+    "dependencies": [
+      "ELM-ADOPT-016",
+      "ELM-ADOPT-029",
+      "ELM-ADOPT-030"
+    ]
+  },
+  {
+    "id": "AM-07",
+    "title": "Per-surface disabled and unavailable action policy",
+    "decision": "adapt",
+    "ears": "Where a menu item is unavailable, the menu shall keep it focusable, refuse activation without emitting an intent, and expose the reason as its description.",
+    "acceptance": [
+      "Arrowing announces unavailable item with reason",
+      "Enter on disabled item emits no Dispatch",
+      "Unavailable taskbar group remains focusable with explanation"
+    ],
+    "sourceUrls": [
+      "https://www.w3.org/WAI/ARIA/apg/patterns/menubar/",
+      "https://learn.microsoft.com/en-us/windows/apps/design/input/keyboard-interactions",
+      "https://developer.apple.com/design/human-interface-guidelines/menus"
+    ],
+    "dependencies": [
+      "ELM-ADOPT-030",
+      "right-click24"
+    ]
+  },
+  {
+    "id": "AM-08",
+    "title": "Repeated input and user-perceivable timers",
+    "decision": "borrow",
+    "ears": "If a timer expires for a user-visible prepared choice, then the surface shall keep the choice visible and shall not treat expiry as Refused or Committed.",
+    "acceptance": [
+      "30-second dwell still permits activation or shows explicit re-armable state",
+      "Repeated activation during Pending yields no second intent or announcement"
+    ],
+    "sourceUrls": [
+      "https://developer.apple.com/design/human-interface-guidelines/accessibility"
+    ],
+    "dependencies": [
+      "ELM-ADOPT-010",
+      "ELM-ADOPT-020"
+    ]
+  },
+  {
+    "id": "AM-09",
+    "title": "Single announcement owner and banner/toast channels",
+    "decision": "adapt",
+    "ears": "When an outcome class first applies to an intent, the controller shall emit exactly one announcement through the designated route without moving focus.",
+    "acceptance": [
+      "Orca speech/braille transcript shows one utterance per outcome including with focus outside the shell"
+    ],
+    "sourceUrls": [
+      "https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html",
+      "https://developer.gnome.org/hig/patterns/feedback/banners.html",
+      "https://developer.gnome.org/hig/patterns/feedback/toasts.html"
+    ],
+    "dependencies": [
+      "ELM-ADOPT-012",
+      "ELM-ADOPT-017"
+    ]
+  },
+  {
+    "id": "AM-10",
+    "title": "Composition-safe input",
+    "decision": "defer",
+    "ears": "While composition is active in a Warlock-owned field, the shell shall not interpret key events as shortcuts or typeahead and shall bind commits to the native composition epoch.",
+    "acceptance": [
+      "Native fcitx5/IBus CJK preedit sessions with correctly placed candidates and no shortcut leakage"
+    ],
+    "sourceUrls": [
+      "https://wayland.app/protocols/text-input-unstable-v3"
+    ],
+    "dependencies": [
+      "ELM-ADOPT-018"
+    ]
+  },
+  {
+    "id": "AM-11",
+    "title": "Focus continuity and return",
+    "decision": "adapt",
+    "ears": "When a popup closes for any reason, the shell shall place keyboard focus on the invoking control if still eligible, otherwise on the frozen fallback, and shall not move focus on unrelated publications.",
+    "acceptance": [
+      "Committed Close of last group window focuses next group and AT announces it",
+      "Unrelated republication leaves focus unchanged"
+    ],
+    "sourceUrls": [
+      "https://developer.apple.com/design/human-interface-guidelines/focus-and-selection",
+      "https://fluent2.microsoft.design/accessibility",
+      "https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html"
+    ],
+    "dependencies": [
+      "ELM-ADOPT-016",
+      "ELM-ADOPT-029"
+    ]
+  },
+  {
+    "id": "AM-12",
+    "title": "Warlock Design catalog website with evidence badges",
+    "decision": "adapt",
+    "ears": "Each component page shall declare its evidence level and shall not present a browser demonstration as native qualification.",
+    "acceptance": [
+      "Coverage matrix includes W1-W12 and every Status/Outcome constructor",
+      "Site passes keyboard and automated accessibility checks",
+      "Demos built from hashed frozen sources"
+    ],
+    "sourceUrls": [
+      "https://m3.material.io/",
+      "https://github.com/pbakaus/impeccable",
+      "https://developer.apple.com/design/human-interface-guidelines/",
+      "https://develop.kde.org/hig/",
+      "https://developer.gnome.org/hig/",
+      "https://fluent2.microsoft.design/"
+    ],
+    "dependencies": [
+      "AM-01",
+      "AM-02",
+      "AM-03",
+      "AM-05",
+      "AM-06",
+      "AM-07"
+    ]
+  }
+]

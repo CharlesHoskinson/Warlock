@@ -1,0 +1,11 @@
+# Warlock visual system
+
+The existing Warlock identity is authoritative. Preserve its folded W and central diamond, “Crafted for flow.” tagline, ink/parchment palette with lilac, mint and gold accents, bundled Space Grotesk display face, Inter body/control face and JetBrains Mono code face. Dark and light themes use their distinct approved palettes. Esoteric identity lives in crisp folded geometry and restrained event-stream illustration; readable controls use familiar desktop affordances.
+
+The catalog surface is Read mode. It uses a persistent documentation rail, searchable component index, a wide reading column with linked section navigation, and real state specimens. Foundations lead to Components, Patterns, Accessibility, Tokens, Evidence and Changelog. Each component uses the same six sections: Overview, Anatomy & states, Behavior & keyboard, Accessibility, Content and Evidence. This is the established visual world extended into documentation, not a replacement brand.
+
+Token evolution is additive: reference palette -> semantic role -> component role. Publish explicit content/container pairs, interaction and outcome cues, focus treatment, spacing/type/density roles and forced-color mappings. Verify actual rendered contrast, responsive text/geometry, reduced motion and keyboard behavior. Source palette values remain unchanged. There is no decorative blur/glass or perpetual animation requirement.
+
+The desktop remains Operate mode. Preserve target and control identity, declared disabled/focus policy, native presentation meaning and outstanding intents. Pending, Refused, Cancelled and Unknown have readable text and distinct cues; focus does not imply selection or settlement. Native timing and allocation limits are governed by their frozen contracts. Document Source Live/Historical/Loading/Unavailable preview behavior accurately; no catalog relabel silently changes it.
+
+The approved30 contracts and guarded/deferred decisions are in the exact consensus candidate. A browser demo is an isolated example using real Elm modules with explicitly simulated native outcomes. It cannot contact the compositor or alter evidence badges. Static style specimens never become a second desktop policy engine.

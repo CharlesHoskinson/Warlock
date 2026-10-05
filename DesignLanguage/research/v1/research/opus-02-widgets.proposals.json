@@ -1,0 +1,232 @@
+[
+  {
+    "id": "WLK-WGT-01",
+    "title": "Source-traced widget registry and catalog coverage gate",
+    "decision": "adopt",
+    "ears": "When the catalog is built, the build shall fail if any class, role, data-mode value, identity prefix or Status/Phase constructor present in the referenced Elm sources is absent from the registry.",
+    "acceptance": [
+      "Removing control-recovery from registry fails build",
+      "New popup mode without registry entry fails",
+      "No [N] badge without linked native receipt"
+    ],
+    "sourceUrls": [
+      "https://github.com/material-components/material-web/blob/main/docs/components/menu.md",
+      "https://github.com/pbakaus/impeccable"
+    ],
+    "dependencies": [
+      "full module set incl. Presentation, PreviewLifecycle"
+    ]
+  },
+  {
+    "id": "WLK-WGT-02",
+    "title": "Two-axis state model: interaction x outcome",
+    "decision": "adapt",
+    "ears": "While a control's target has an outstanding Pending or Unknown intent, the surface shall render a text outcome indicator on that control and shall not emit a second intent for the same target when the control is activated again.",
+    "acceptance": [
+      "Repeat Activate on outstanding target yields no Dispatch (Menu.elm:466-467)",
+      "Second activation shows one non-announced waiting cue",
+      "Unknown persists across Dismiss and reopen (browser demo)"
+    ],
+    "sourceUrls": [
+      "https://develop.kde.org/hig/status_changes/",
+      "https://learn.microsoft.com/en-us/windows/apps/design/input/guidelines-for-visualfeedback"
+    ],
+    "dependencies": [
+      "ELM-ADOPT-011",
+      "ELM-ADOPT-020",
+      "W07",
+      "surfaceProtocol 3"
+    ]
+  },
+  {
+    "id": "WLK-WGT-03",
+    "title": "Measured state-layer and disabled tokens",
+    "decision": "adapt",
+    "ears": "The design system shall define each interaction state as a token whose rendered result meets >=3:1 non-text contrast for component boundaries and >=4.5:1 for text against its actual state background, in both themes.",
+    "acceptance": [
+      "Generated contrast table for every state token in both themes",
+      "Disabled reason text >=4.5:1",
+      "Selected uses a non-color cue"
+    ],
+    "sourceUrls": [
+      "https://github.com/material-components/material-web/discussions/5566",
+      "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html"
+    ],
+    "dependencies": [
+      "CSS host source",
+      "ELM-ADOPT-019"
+    ]
+  },
+  {
+    "id": "WLK-WGT-04",
+    "title": "Two-tone keyboard focus indicator",
+    "decision": "borrow",
+    "ears": "When a control receives keyboard focus, the surface shall draw a 2px outer and 1px inner focus indicator that is visually distinct from the selected and hover states and meets >=3:1 against adjacent colors.",
+    "acceptance": [
+      "Browser: Tab through bar/popup at 100% and 200% both themes",
+      "Focus distinct from selected",
+      "Native: unclipped ring in compositor frames at 1x/2x"
+    ],
+    "sourceUrls": [
+      "https://learn.microsoft.com/en-us/windows/apps/design/input/guidelines-for-visualfeedback",
+      "https://github.com/material-components/material-web/blob/main/docs/components/focus-ring.md",
+      "https://develop.kde.org/hig/accessibility/"
+    ],
+    "dependencies": [
+      "WLK-WGT-03",
+      "ELM-ADOPT-019"
+    ]
+  },
+  {
+    "id": "WLK-WGT-05",
+    "title": "Desktop density and spacing ramp",
+    "decision": "adapt",
+    "ears": "Where compact density is selected, the surface shall render no actionable target smaller than 24x24 CSS px and shall preserve label text, focus indicator and outcome indicator without truncating the accessible name.",
+    "acceptance": [
+      "64 items x 256-unit labels at 200% text in compact",
+      "No target <24px",
+      "Native constrained-output qualification under ELM-ADOPT-019"
+    ],
+    "sourceUrls": [
+      "https://learn.microsoft.com/en-us/windows/apps/design/basics/content-basics",
+      "https://learn.microsoft.com/en-gb/windows/apps/develop/input/guidelines-for-targeting",
+      "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html",
+      "https://m3.material.io/foundations/layout/understanding-layout/density"
+    ],
+    "dependencies": [
+      "ELM-ADOPT-019",
+      "touch-input scope decision"
+    ]
+  },
+  {
+    "id": "WLK-WGT-06",
+    "title": "Popup menu keyboard and dismissal contract",
+    "decision": "adapt",
+    "ears": "When Escape is pressed while a popup is open, the controller shall dismiss that popup by MenuId without cancelling any Pending or Unknown intent, and the intent shall remain blocking for its binding.",
+    "acceptance": [
+      "Activate->Pending->Esc->reopen shows Pending/Unknown",
+      "Up/Down cycle, Home/End (existing)",
+      "Native keyboard transcript with focus return"
+    ],
+    "sourceUrls": [
+      "https://learn.microsoft.com/en-us/windows/apps/design/input/keyboard-interactions",
+      "https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/"
+    ],
+    "dependencies": [
+      "W07",
+      "ELM-ADOPT-016",
+      "ELM-ADOPT-018",
+      "ELM-ADOPT-030"
+    ]
+  },
+  {
+    "id": "WLK-WGT-07",
+    "title": "Menu item semantics: checkable toggles, typed selection, per-surface disabled policy",
+    "decision": "adapt",
+    "ears": "Where a menu item's action is a toggle, the popup shall expose its current state as checked or unchecked in both its accessible state and its visible rendering, and that state shall be derived from controller observation, not from the item label.",
+    "acceptance": [
+      "menuitemcheckbox aria-checked reflects observed state",
+      "During Pending shows observed value plus pending cue",
+      "No aria-current/'Selected' string coupling"
+    ],
+    "sourceUrls": [
+      "https://learn.microsoft.com/en-us/windows/apps/develop/ui/controls/menus",
+      "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/menus.json",
+      "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/context-menus.json",
+      "https://developer.gnome.org/hig/patterns/controls/menus.html"
+    ],
+    "dependencies": [
+      "WLK-WGT-02",
+      "ELM-ADOPT-017",
+      "ELM-ADOPT-030"
+    ]
+  },
+  {
+    "id": "WLK-WGT-08",
+    "title": "Keyed popup controls",
+    "decision": "adopt",
+    "ears": "When a popup publication reorders, inserts or removes controls, the renderer shall preserve DOM identity, and therefore focus, for every control whose surface identity persists.",
+    "acceptance": [
+      "Focus on 3rd picker entry survives insertion above it",
+      "ELM-ADOPT-016 scenarios"
+    ],
+    "sourceUrls": [
+      "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/focus-and-selection.json"
+    ],
+    "dependencies": [
+      "ELM-ADOPT-016"
+    ]
+  },
+  {
+    "id": "WLK-WGT-09",
+    "title": "Taskbar as one keyboard group (toolbar)",
+    "decision": "defer",
+    "ears": "While the taskbar holds native keyboard scope, Left and Right arrow keys shall move focus between enabled bar controls without wrapping and without changing activation history.",
+    "acceptance": [
+      "Browser demo only",
+      "Native remains ELM-ADOPT-029 P5"
+    ],
+    "sourceUrls": [
+      "https://learn.microsoft.com/en-us/windows/apps/design/input/keyboard-interactions",
+      "https://learn.microsoft.com/en-us/windows/apps/design/accessibility/keyboard-accessibility"
+    ],
+    "dependencies": [
+      "ELM-ADOPT-029",
+      "W07"
+    ]
+  },
+  {
+    "id": "WLK-WGT-10",
+    "title": "Single announcement owner",
+    "decision": "adopt",
+    "ears": "When the shared status text changes, assistive technology shall receive at most one announcement for that change across bar and popup surfaces, and an unchanged outcome shall not be re-announced.",
+    "acceptance": [
+      "One aria-live region across bar and popup documents",
+      "Native speech/braille transcript shows one utterance"
+    ],
+    "sourceUrls": [
+      "https://develop.kde.org/hig/status_changes/"
+    ],
+    "dependencies": [
+      "ELM-ADOPT-012",
+      "ELM-ADOPT-017",
+      "W08"
+    ]
+  },
+  {
+    "id": "WLK-WGT-11",
+    "title": "Status copy catalog",
+    "decision": "adopt",
+    "ears": "The shell shall display only catalog-defined status text, each entry naming the condition and a safe next step, and an unknown reason within a validated Refused class shall use generic refusal text without inventing a reason.",
+    "acceptance": [
+      "Every Shell/Menu string mapped to a catalog key",
+      "Geometry strings rewritten in plain language",
+      "Lint rejects literal user-facing strings outside catalog"
+    ],
+    "sourceUrls": [
+      "https://develop.kde.org/hig/status_changes/",
+      "https://github.com/pbakaus/impeccable"
+    ],
+    "dependencies": [
+      "ELM-ADOPT-011"
+    ]
+  },
+  {
+    "id": "WLK-WGT-12",
+    "title": "Preview tile freshness states",
+    "decision": "defer",
+    "ears": "While a preview frame's freshness is not established by native evidence, the tile shall not be labeled as current or live.",
+    "acceptance": [
+      "Catalog tile carries synthetic badge",
+      "S09 preview13 unchanged"
+    ],
+    "sourceUrls": [
+      "https://develop.kde.org/hig/status_changes/"
+    ],
+    "dependencies": [
+      "ELM-ADOPT-028",
+      "W03",
+      "W06"
+    ]
+  }
+]

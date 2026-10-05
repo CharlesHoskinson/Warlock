@@ -1,0 +1,3586 @@
+{
+  "schema": 1,
+  "status": "compiled-shared-broker-component-qualified",
+  "fullGUIBuildPassed": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "ownNativeChildGrantInstalled": false,
+  "productionCaptureWired": false,
+  "integrationChecks": 23,
+  "compiledDemandChecks": 36,
+  "namedQuintScenarios": [
+    "latestRevisionTest",
+    "pacingPreventsSpinTest",
+    "closeDoesNotRetireTest",
+    "closeDropsPendingTest",
+    "newLeaseReopenTest",
+    "finishNotRetirementTest",
+    "heldCapacityNotReusedTest",
+    "drainAllowsLatestTest",
+    "idleDoesNotCaptureTest",
+    "sameRevisionNotReplayedTest"
+  ],
+  "invariantSamples": 300,
+  "coupledTraces": 22,
+  "projectedStatesCompared": 564,
+  "unsafeMutantsDetected": 3,
+  "projection": "latest/captured/issuedLease,busy,broker activeItems,visible,native-now,last-start,lease and broker floor for one fixed native lifetime/domain/entry; exact scope/auth/fence/deadline/bytes outside abstraction covered separately, not complete concrete-field refinement",
+  "proofs": [
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/report.json",
+      "sha256": "bc58f2d8bc0a41dd819cbb5716566574b9d856f610037c023d276680b7ce9ec2"
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/report.json",
+      "sha256": "5f4a071239a92becd62d7825fddb74176d70ef1dc1a5b59882319eb4b3e5cc5c"
+    }
+  ],
+  "files": [
+    {
+      "path": "implementation/warlock-preview-provider-v1/ANCESTRY.json",
+      "sha256": "8b3aef8890f10a988a98cdfa6a130f9c821d14492d139c71a43aa3e261f575b0",
+      "size": 10316
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/README.md",
+      "sha256": "da3b218efd774793338e673f934375a99e3cee57889666e3a78d14f8e7a053a3",
+      "size": 1162
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/SPEC.md",
+      "sha256": "203f34e012cb78e7ae9828ec0541332c3e46a8913f66420300e61940b6301669",
+      "size": 2093
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/adapter/admission_ledger.py",
+      "sha256": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1",
+      "size": 11214
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/adapter/catalog_authority.py",
+      "sha256": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+      "size": 5008
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/adapter/catalog_transport.py",
+      "sha256": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+      "size": 2666
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/adapter/daemon.py",
+      "sha256": "c5a3aea3b57dffced55268bfde08c3dcc100a9dc12e2604ed3576384079e1055",
+      "size": 11101
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/adapter/delivery_ledger.py",
+      "sha256": "ce1ff3528b454bdca7412389f5693f69023a5c76bc9586541c1091c1cddc5ca4",
+      "size": 7783
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/adapter/durable_ledger.py",
+      "sha256": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+      "size": 10986
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/adapter/effect_endpoint.py",
+      "sha256": "5968f91e393edc6fe5f84f011191608ffbe23ed734e833150e289a6a7ef420c9",
+      "size": 7334
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/adapter/endpoint.py",
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/adapter/geometry_endpoint.py",
+      "sha256": "83a76bc1e14e18357d7d921f0071f49a9e7e47c984ad3a5db0ae4279dc32d59c",
+      "size": 14255
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/adapter/geometry_size_policy.py",
+      "sha256": "bcca6dd280911a38ed189e2e8ca6d81ea98c775ef261444f9b1e0f4b9a754888",
+      "size": 5287
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/adapter/grant_endpoint.py",
+      "sha256": "4b60a6c7e43aade3f2ce59495600f3b418b781865a7289dae53a189388f5c3f0",
+      "size": 4610
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/adapter/reconciliation.py",
+      "sha256": "5f558130f005b722fec187e87a88a8cd69606c786c27beb0decede715c54e5f9",
+      "size": 6224
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/adapter/recovery_fault.py",
+      "sha256": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+      "size": 2017
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/adapter/recovery_journal.py",
+      "sha256": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+      "size": 11003
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/adapter/recovery_store.py",
+      "sha256": "fa7e852c963bc4602c2066d05e77d47d8535c732775fe04258021accd3cd7be1",
+      "size": 2587
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/adapter/retirement_ledger.py",
+      "sha256": "213cbb6ecd5c2218075d2cc98132c1c53680933f3898c757e7ba1848261faec5",
+      "size": 18804
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/adapter/taskbar_catalog.py",
+      "sha256": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+      "size": 8809
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/adapter/taskbar_projection.py",
+      "sha256": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+      "size": 1170
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/assets/activation.js",
+      "sha256": "74990d2530314753f64dc30119682e7bb9cddb14e679c79b5427ef79c8fa48e6",
+      "size": 7849
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/assets/adapter.js",
+      "sha256": "4569cbf9bcfdcca94f639fd913a6301b858420213adecb723dd591fab4ac98e8",
+      "size": 2101
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/assets/bar-adapter.js",
+      "sha256": "afd3480afb5427346620d31cf439b17cc27dc43d1102b2c7132781bec8369ae1",
+      "size": 2341
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/assets/bar.html",
+      "sha256": "7f6e501f62ec06aeb132fdf9a32042e8fca65554be7043a0adbcb8627b5a920e",
+      "size": 356
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/assets/bar.js",
+      "sha256": "34892e1fed8ad524d8988206da7960832c063ecd7fa1d2b2e58a2d2f913f850c",
+      "size": 130801
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/assets/context.js",
+      "sha256": "84f9f4eb3291783c66ebd6bbff34e10e0cff3711c251ea68eae8f315be389ad2",
+      "size": 4615
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/assets/elm.js",
+      "sha256": "11ab663b724c4069ac57b5cbd18b1fea536a582fd8c0f7316af0b0086b9ac401",
+      "size": 477838
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/assets/index.html",
+      "sha256": "ba09087a0dda2fbc4a912d2d5d8f8adb90ae553a8027963fdb6b74a7afaa5d1b",
+      "size": 281
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/assets/popup-adapter.js",
+      "sha256": "0fdb1344a28fc32a669feb236d845b57eb466d92de6ab5abd8c909f8f6448c52",
+      "size": 2572
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/assets/popup.html",
+      "sha256": "d46ef44459900ad2ecada10fb5087bc875e884344accaa15be580c9904ec5119",
+      "size": 362
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/assets/popup.js",
+      "sha256": "8cf5d55802eeb2ca0afdce7f5d5bef6c2ee2aafbacf4e47dd3b8bedebf643c76",
+      "size": 132068
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/assets/shell.css",
+      "sha256": "54eb33bbe517607739e268fbb47fd5c271c638297da5653632160d15c59a85b2",
+      "size": 1885
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/elm.json",
+      "sha256": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+      "size": 306
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/native/admission-test.c",
+      "sha256": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+      "size": 805
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/native/context-keys-test.c",
+      "sha256": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+      "size": 2959
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/native/context-keys.h",
+      "sha256": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+      "size": 2623
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/native/demand.hpp",
+      "sha256": "b7721cb9e67b7845252918213b5560fdaaafcacff42eb52eaa37697a341a7dcc",
+      "size": 7342
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/native/geometry-carrier-test.c",
+      "sha256": "770835580c7a4a2e21e49a9c3da586ee3ae59e66a92320dd7bb12fa8e516d921",
+      "size": 5425
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/native/handoff-test.c",
+      "sha256": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+      "size": 1054
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/native/host-fault.h",
+      "sha256": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+      "size": 2495
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/native/host-journal.h",
+      "sha256": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+      "size": 16541
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/native/host.c",
+      "sha256": "0f01aef906d28b359791eae8401a00b0b9c47bb4ca7823da212821166e75a6f9",
+      "size": 64831
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/native/preview-integration.h",
+      "sha256": "c70b5a1cf7ca5b0f510cf26bee012ca2f0597d5c916251a924bc4412ce9f4ff3",
+      "size": 646
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/native/preview-uri-api.h",
+      "sha256": "7a02550a807102f6ebdad9c1570eb6a719a50b0ed422ff26add97dbd6408b002",
+      "size": 683
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/native/preview-uri-webkit.cpp",
+      "sha256": "c8cc48442d8d098315b7ad64b71be267679bc361041dc6d2de405c657fa74ea2",
+      "size": 1624
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/native/preview_broker.hpp",
+      "sha256": "2954630241ad5e5dc1ee7ce770ef622cd7eff0c3b6d9c5feedc07fcdeec7e3a1",
+      "size": 17508
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/native/preview_client.hpp",
+      "sha256": "bcec3f0f831af3f33685297f833beb002cc20860f69e62c8f04c8b6c9504b2fd",
+      "size": 8422
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/native/preview_fd.hpp",
+      "sha256": "a630c2299bff7a0ef2fe1d0b776335d6f7d925c796ea4f07dc05009515852945",
+      "size": 7703
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/native/preview_uri.cpp",
+      "sha256": "d960c1a3d0cd5a569e84af3d005e184d412c1d86ea6bef6f73ad55b1ab2eaa15",
+      "size": 6546
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/native/preview_uri.hpp",
+      "sha256": "223c89f17e4d7a57115237d85905dc4a8d39e53e2fc9dd41e62a85ea96874c9c",
+      "size": 3362
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/native/provider-ownership-test.cpp",
+      "sha256": "d79fe711a90d24ac96e8522a33a4dc3582989b40b692aec73109e365e3f44675",
+      "size": 5754
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/native/reconciliation-carrier-test.c",
+      "sha256": "38210317eff28d8a436e640e971f91df71ffcc3b17e82c27a60ee34f57d9f73d",
+      "size": 3024
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/native/recovery-presentation-test.c",
+      "sha256": "812bbab1640e12269bc195979cd319a96a505157ba8f5c637eebfd5561bc8e67",
+      "size": 2766
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/native/shared-context-test.c",
+      "sha256": "ed50c8ed6b0fee3db3818e2f38c8bb57985b388b26ee09a5624d32f1bfa258ee",
+      "size": 20901
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/native/shared-context.h",
+      "sha256": "e86f3ba7a4c76d7839ef8d67d14c7f9ea6b514afa2ac110fc7cebf2da2fd62ce",
+      "size": 22281
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/native/shared-host.c",
+      "sha256": "818a14984fb554cebd064cc4a13ed0e79cf03d37cf0f0cd3af5258e6451385a2",
+      "size": 45470
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/native/surface-test.c",
+      "sha256": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+      "size": 4091
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/native/surface.h",
+      "sha256": "2bdf2d9b3b34fa7193da90e58ac378e7a640ae91e7b02d46987e33c559209f0b",
+      "size": 5561
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/adapter-syntax.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/adapter-syntax.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/bar-adapter-syntax.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/bar-adapter-syntax.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/bar-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/bar-build.stdout",
+      "sha256": "e163c4577b923fc06f329fd180a6ede86278bd5efcc21d5d2c38246b5f084072",
+      "size": 91
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/context-guard-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/context-guard-build.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/context-guard-tests",
+      "sha256": "7e24f943012e6f079883cfcd2cc38c8af8d4c1db7649a9a1da188686f235ba7f",
+      "size": 214896
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/context-guard-tests.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/context-guard-tests.stdout",
+      "sha256": "76b0df9c2185a11964fb8fb0980b5a8e6874f25c404c064f08f980758f47811a",
+      "size": 27
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/context-key-tests",
+      "sha256": "332420493e4b3dbfd027fc3cf0e4218e4c6043e9c342671bc0b4763bca174c6f",
+      "size": 16320
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/context-keys-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/context-keys-build.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/context-keys-tests.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/context-keys-tests.stdout",
+      "sha256": "0efe435998bd0891aa05109c0e9f0c0f6cda61f47c1d7a8e3d1c08950a3239a5",
+      "size": 688
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/context-syntax.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/context-syntax.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/elm-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/elm-build.stdout",
+      "sha256": "c9f7e2171ec908fe18d94c30acd1eec05cb0b9869f58a4c4f14940239351fa20",
+      "size": 446
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/elm-host",
+      "sha256": "07c1bcc64978d08f3f79c90ad3282cc030e0a833d6f4dab24647cb69050bd22d",
+      "size": 193680
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/flags.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/flags.stdout",
+      "sha256": "6cc9c1c055cb28056a5ae95d2ad83db1f4d3a203caecc15f680486028dee888c",
+      "size": 935
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/geometry-carrier-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/geometry-carrier-build.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/geometry-carrier-tests",
+      "sha256": "5cc395339e32c6c470bf0bea286617d17318242b5ed8b5a8d15953aaaee02921",
+      "size": 151816
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/geometry-carrier-tests.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/geometry-carrier-tests.stdout",
+      "sha256": "98e14afac10c4d54e23008dfda907d8b3835af0ba689b6f9141503b40a8d5116",
+      "size": 28
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/host-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/host-build.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/host-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/host-compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/host-tests.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/host-tests.stdout",
+      "sha256": "b3ae666f51b0b298a25e59d7dac422a33f9237fefa610fc60849c93cbd67fe71",
+      "size": 790
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/host.d",
+      "sha256": "b39926e0fa8968b9fd77acd851c0c491d18ed9500471d6295481789185229d52",
+      "size": 45518
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/host.o",
+      "sha256": "c029325d754a2d7a02bc0d2758958ef901dbc787717e5d3508979600a47eef13",
+      "size": 242968
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/adapter/admission_ledger.py",
+      "sha256": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1",
+      "size": 11214
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/adapter/catalog_authority.py",
+      "sha256": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+      "size": 5008
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/adapter/catalog_transport.py",
+      "sha256": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+      "size": 2666
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/adapter/daemon.py",
+      "sha256": "c5a3aea3b57dffced55268bfde08c3dcc100a9dc12e2604ed3576384079e1055",
+      "size": 11101
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/adapter/delivery_ledger.py",
+      "sha256": "ce1ff3528b454bdca7412389f5693f69023a5c76bc9586541c1091c1cddc5ca4",
+      "size": 7783
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/adapter/durable_ledger.py",
+      "sha256": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+      "size": 10986
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/adapter/effect_endpoint.py",
+      "sha256": "5968f91e393edc6fe5f84f011191608ffbe23ed734e833150e289a6a7ef420c9",
+      "size": 7334
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/adapter/endpoint.py",
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/adapter/geometry_endpoint.py",
+      "sha256": "83a76bc1e14e18357d7d921f0071f49a9e7e47c984ad3a5db0ae4279dc32d59c",
+      "size": 14255
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/adapter/geometry_size_policy.py",
+      "sha256": "bcca6dd280911a38ed189e2e8ca6d81ea98c775ef261444f9b1e0f4b9a754888",
+      "size": 5287
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/adapter/grant_endpoint.py",
+      "sha256": "4b60a6c7e43aade3f2ce59495600f3b418b781865a7289dae53a189388f5c3f0",
+      "size": 4610
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/adapter/reconciliation.py",
+      "sha256": "5f558130f005b722fec187e87a88a8cd69606c786c27beb0decede715c54e5f9",
+      "size": 6224
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/adapter/recovery_fault.py",
+      "sha256": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+      "size": 2017
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/adapter/recovery_journal.py",
+      "sha256": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+      "size": 11003
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/adapter/recovery_store.py",
+      "sha256": "fa7e852c963bc4602c2066d05e77d47d8535c732775fe04258021accd3cd7be1",
+      "size": 2587
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/adapter/retirement_ledger.py",
+      "sha256": "213cbb6ecd5c2218075d2cc98132c1c53680933f3898c757e7ba1848261faec5",
+      "size": 18804
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/adapter/taskbar_catalog.py",
+      "sha256": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+      "size": 8809
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/adapter/taskbar_projection.py",
+      "sha256": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+      "size": 1170
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/assets/activation.js",
+      "sha256": "74990d2530314753f64dc30119682e7bb9cddb14e679c79b5427ef79c8fa48e6",
+      "size": 7849
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/assets/adapter.js",
+      "sha256": "4569cbf9bcfdcca94f639fd913a6301b858420213adecb723dd591fab4ac98e8",
+      "size": 2101
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/assets/bar-adapter.js",
+      "sha256": "afd3480afb5427346620d31cf439b17cc27dc43d1102b2c7132781bec8369ae1",
+      "size": 2341
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/assets/bar.html",
+      "sha256": "7f6e501f62ec06aeb132fdf9a32042e8fca65554be7043a0adbcb8627b5a920e",
+      "size": 356
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/assets/bar.js",
+      "sha256": "a739329ed3bf21d0d7aca0d1957d0914bedd8a73f1b03c566071873ba77614dd",
+      "size": 132866
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/assets/context.js",
+      "sha256": "84f9f4eb3291783c66ebd6bbff34e10e0cff3711c251ea68eae8f315be389ad2",
+      "size": 4615
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/assets/elm.js",
+      "sha256": "58ac818cd5eea13f1fff2615d0d22d6df483b73f30db1be540c0925159ceecf0",
+      "size": 529779
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/assets/index.html",
+      "sha256": "ba09087a0dda2fbc4a912d2d5d8f8adb90ae553a8027963fdb6b74a7afaa5d1b",
+      "size": 281
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/assets/popup-adapter.js",
+      "sha256": "0fdb1344a28fc32a669feb236d845b57eb466d92de6ab5abd8c909f8f6448c52",
+      "size": 2572
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/assets/popup.html",
+      "sha256": "d46ef44459900ad2ecada10fb5087bc875e884344accaa15be580c9904ec5119",
+      "size": 362
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/assets/popup.js",
+      "sha256": "1ebd4793644bcba14d7f0da1aef856bc74c0fd35fef860e1fd0d64d301754456",
+      "size": 212858
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/assets/preview-replay.js",
+      "sha256": "e845980998a60f1402f1a6d8ab38bbcc65720f20d86ebf5888a08e865e57edb5",
+      "size": 153372
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/assets/shell.css",
+      "sha256": "54eb33bbe517607739e268fbb47fd5c271c638297da5653632160d15c59a85b2",
+      "size": 1885
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/ActionProjection.elmi",
+      "sha256": "367d8af3316f1f761aa53ded4006f91d030a9ece5deaf90b783daa8d8974bd93",
+      "size": 2096
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/ActionProjection.elmo",
+      "sha256": "69c45304fb315bb1e7a6433b2bc6a730dea84334a48d4a29e04867fcf39cb6c0",
+      "size": 12006
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/Bar.elmi",
+      "sha256": "1e117f6469afe3c04e86fcb8c1baa04d7b83d3d7e945df235148e3c102b1f1da",
+      "size": 333
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/Bar.elmo",
+      "sha256": "a84d31a73c5a6c6f991321478b1ed19d7095d4894eb9aee19bd9d28cae9251df",
+      "size": 2282
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/Binding.elmi",
+      "sha256": "8352e66cee2ad9138a85362353d80bfb83cf136666ed12bb54d26c5903495e5f",
+      "size": 798
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/Binding.elmo",
+      "sha256": "1a2bf3901ca9e1fac8515e7bf098fd4aff465e4101989bc30e01e5da5296f153",
+      "size": 3465
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/CapturedAction.elmi",
+      "sha256": "480a0b81b1870f6a1dd057b1da9169eda58c72d88c72362e4d0c92090cb4b841",
+      "size": 924
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/CapturedAction.elmo",
+      "sha256": "06497d4833608ef6bb16a5c49a9553ab2e5a3191a4bff0dd8343dc01209259ab",
+      "size": 4364
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/Catalog.elmi",
+      "sha256": "d962e4144704d6b5db230df002bf985707ddd3e06780ab685ae33a159f0c6aeb",
+      "size": 1759
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/Catalog.elmo",
+      "sha256": "70d59b93bb81b39d57bc7b8c767ec2624ab7e4964fc048d4303336758b1a0b37",
+      "size": 7931
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/Desktop.elmi",
+      "sha256": "54d66e16c68ef757b895d56c0d43f8fb03c51629d60638dbcd1f92d8631a47d2",
+      "size": 77955
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/Desktop.elmo",
+      "sha256": "a0ce6d864cad0f63ef3de4852b04451f7f46f4ae7c4cd139ba38514e0e5c83c7",
+      "size": 43677
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/Effects.elmi",
+      "sha256": "b002a7de3a98e4401f40de648b0242c30c83801d3efeaa160a612aa08142596c",
+      "size": 38742
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/Effects.elmo",
+      "sha256": "5b2f28607f82623476c58f1b7a58d28af249376d0f5837d9cb938a9d054320fc",
+      "size": 35164
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/GeometryProjection.elmi",
+      "sha256": "d2c9486aa4bf10237346f81d131b309a38920d33855d5d9e04aebc710c12fa6e",
+      "size": 16054
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/GeometryProjection.elmo",
+      "sha256": "037bec2c938b5f38c12b151b129234bc787b0526d04fa77e55996e9fcefe0317",
+      "size": 28365
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/GeometrySizePolicy.elmi",
+      "sha256": "ad93e36ff56e8aac456b7a8b9f1f441624cb7e31e7c5837e0d0b3ad325d75678",
+      "size": 9436
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/GeometrySizePolicy.elmo",
+      "sha256": "b5c859d53aea05d96e9b9616c13ea7f51dcca9fdb12a902b0a997951b3cabcbe",
+      "size": 19961
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/Inspection.elmi",
+      "sha256": "e1476b8c5b50866403d6da3c41c4f1d4f5aed5ace5caf4fedb3b927491c38142",
+      "size": 131
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/Inspection.elmo",
+      "sha256": "2072ba207606473b664db6346fa38ac6b02c7aa42fc21b9af1d29a01337a5193",
+      "size": 8687
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/Launch.elmi",
+      "sha256": "9ad834959319931175d6215dc30028475211a0d2b014a52c5f228d0ac50c2b98",
+      "size": 3424
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/Launch.elmo",
+      "sha256": "b53f3186f30ed908dbd21a378d4c8295f375f313bb6cee02ecab157a183886bc",
+      "size": 16054
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/Main.elmi",
+      "sha256": "51689692f6843b357016f6a73993845a657156176c8d5310f2b5f28ea22c5e50",
+      "size": 1038
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/Main.elmo",
+      "sha256": "44c46b88a16f21fbf2095298781ca690ba1d2493eb175cfce3f9072c97978d0b",
+      "size": 7474
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/Menu.elmi",
+      "sha256": "d1626ae93f3527213ed15bf098ff0f62d6053adecdd203659c4f913a2d49d81f",
+      "size": 9136
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/Menu.elmo",
+      "sha256": "fd5da26cf1d25b2193bb89515f7b5611a90d974e47cc445cc99b477198775119",
+      "size": 25398
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/MenuBridge.elmi",
+      "sha256": "60360a67e386282c66fbac16e27d6ee165ab2003a08c13b05d6d3be5a9359ad2",
+      "size": 115659
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/MenuBridge.elmo",
+      "sha256": "c83e6ed920821a855ccb95839a5dda8d62780f33d6fd43dc30f31ee7f36e2bef",
+      "size": 46356
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/NativeOutcome.elmi",
+      "sha256": "790b0470dfaaeed986af162123c1c3bd62d21c40c05496e291b70ec160f0299a",
+      "size": 149
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/NativeOutcome.elmo",
+      "sha256": "ef49932dc61030fa50cd6d27e8c61f49ade2eb8a70300e056c6288dbf05339a0",
+      "size": 7336
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/NativeProvider.elmi",
+      "sha256": "01ee6b390f5926dd4296d909456317812515b079fa6669d929a223e1c880756d",
+      "size": 8174
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/NativeProvider.elmo",
+      "sha256": "bb0db8f1abd833d2a1eef51e15c36c6cd627f1f0c19a209fc25ee732a2e4bd34",
+      "size": 8073
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/OutputController.elmi",
+      "sha256": "c88d6fff92415e7905ee41d187bc6e8ca9c7fe7eb03bba10c7ce37ec1e3f454a",
+      "size": 4826
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/OutputController.elmo",
+      "sha256": "82a25e365bdc791dd35c3b2ddc4d522b527957a19cf3f881d5e1f73947525957",
+      "size": 47568
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/Popup.elmi",
+      "sha256": "1dbd5f33e10f2795dd24781cbb4f506097039ae1292e8f9540523574fe7ed6dc",
+      "size": 675
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/Popup.elmo",
+      "sha256": "2dfecb8b3d3f952dbd6f942c1496b58ee71fcc680bcc23e34ab61672d6bd06d1",
+      "size": 4006
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/Presentation.elmi",
+      "sha256": "debfd4c822aaa4f2614754fb6d0db1d9696c8d81b4fc428bb61ce1fbdbe32399",
+      "size": 780
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/Presentation.elmo",
+      "sha256": "f1188878ba9508dd98c8a9ec5c35154462d7dfda42f15efb589df43fff24bd55",
+      "size": 3345
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/PreviewIdentity.elmi",
+      "sha256": "57e031ff6c9d1733778699ab0d562c3c75e39bb5a436ecf985bca4b8c4516854",
+      "size": 1963
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/PreviewIdentity.elmo",
+      "sha256": "fbcdc3476e38dfe51138422f77badecde71829125cb0485f9c883faf8c8eff69",
+      "size": 2619
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/PreviewLifecycle.elmi",
+      "sha256": "c3dd9cb2611f06ce3d681a2fefc41ff814c1dda46bb212d0e26fa3c0a1b1a4ea",
+      "size": 60635
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/PreviewLifecycle.elmo",
+      "sha256": "75cd00ae3ba3cc2019621cf4a2d32bf62d2ee172d57a131d3246863b6307ace1",
+      "size": 66929
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/PreviewPresenter.elmi",
+      "sha256": "e4487f93185fcda8820fcdbbb9fa00ef5befac85a8e85d31d97feb89c56efba7",
+      "size": 2469
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/PreviewPresenter.elmo",
+      "sha256": "8759700de9a29e7c33c8d5877bc9988c4b61f8a0afd5f4a54ea83165ae5cb08f",
+      "size": 19777
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/PreviewPresenterReplay.elmi",
+      "sha256": "bbf44e8a906f2791e6d256676a99f20bdac9df901dfaeff73a5a9cfeae2c8c91",
+      "size": 529
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/PreviewPresenterReplay.elmo",
+      "sha256": "225302106c6be35aa2147ac368c9620332d2228c7733b6887f12a24fae54f1ba",
+      "size": 3328
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/Provider.elmi",
+      "sha256": "1ecea6b8f83c19895953a1486dc340e0d3930bf5e1ecb1ba20d0bcafadd094c8",
+      "size": 18044
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/Provider.elmo",
+      "sha256": "55b48cd80f71fdc273368aca8705f02486ecb2adc2436c71efd8fd3435019f32",
+      "size": 30739
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/ReceiptRouter.elmi",
+      "sha256": "c445e9d72644e2c96134c1324ffbad24882f1056468bd5404bd22bbb467650f6",
+      "size": 5384
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/ReceiptRouter.elmo",
+      "sha256": "11e191f60a6d9a5d587f85685cd7bdfffe58c1dc2942a314110e0081154176d4",
+      "size": 26283
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/ReconciliationFrame.elmi",
+      "sha256": "5e380b2ae16f0edc6b6d2c0650d090315b85322c38874c44c2160ce061b45831",
+      "size": 11907
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/ReconciliationFrame.elmo",
+      "sha256": "582d898f5d86856be267c67f7af7227f7cbceb4d4a6fc5b471e3ee93bd371e7a",
+      "size": 21369
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/ReconciliationTracking.elmi",
+      "sha256": "bf1ad0df031773cf1205cdc25c850736ce309322e8508247b8b16e42d93bd998",
+      "size": 72822
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/ReconciliationTracking.elmo",
+      "sha256": "68c5468f72eacb07544834fe40f0630257fccdae6e06c7e8683877496991dfc2",
+      "size": 16460
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/Shell.elmi",
+      "sha256": "4e295006189abf173de6d5bcd50a1d9495618fdfb1dcd17471919c8e61dbd66b",
+      "size": 104487
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/Shell.elmo",
+      "sha256": "6b587cc7da23bd3a163d2510eee4e192346a42c485eab5755198f57e894d53ba",
+      "size": 61691
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/Surface.elmi",
+      "sha256": "f58f1fe1b28f46cf99308bb68164f0daef27d92cec01331e2fda117f166d4672",
+      "size": 38557
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/Surface.elmo",
+      "sha256": "ec36deaf6b85b0529a22b355731bd081bcdc4ea341ae9930344c7befe3a6ed25",
+      "size": 35452
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/SurfaceController.elmi",
+      "sha256": "1dd9f96de342ec87bb5c7d97b72124269ae8cdf673676d1a005d7560676edb5b",
+      "size": 26488
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/SurfaceController.elmo",
+      "sha256": "43366d96682ef5a01a336135fc4807eb7c807e348e7a9e9771fae7d3e35a732e",
+      "size": 26376
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmi",
+      "sha256": "77aa58d948000fe3a12fa6f6ba279fce67df0b2da95f4483b9be5aeae0d1a760",
+      "size": 2283
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmo",
+      "sha256": "5a3c91934a0a5e88fc1346d5244fc96cc2f54a142cf613d18699f2649573707c",
+      "size": 13859
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/Taskbar.elmi",
+      "sha256": "b0fd361aa1b074b02663d9658b3679d41a42b722130d2d799605585b0b713c61",
+      "size": 1719
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/Taskbar.elmo",
+      "sha256": "f21c6e5b786bbf946c11b4574b43d027323d61449899194053b479ab8a8d2cb1",
+      "size": 5495
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/TaskbarShell.elmi",
+      "sha256": "a6e31292ed443e9f5de7d24135bcfa4cdf6d3c6ed524af1266b30837cc42f5c8",
+      "size": 33299
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/TaskbarShell.elmo",
+      "sha256": "b170d88379381880d6fe0b91a88e6b67071ed13028de783808c5fa3c4b46ece9",
+      "size": 12786
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/UInt64.elmi",
+      "sha256": "633cc78b3dd5fa14a5005c3dceef13f66737a32e0d4876476cdf8c54c086aec1",
+      "size": 530
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/UInt64.elmo",
+      "sha256": "a01a2537c09010d8dfec6caf3180fcb0780e4ac614952aee0ee71cfce292a611",
+      "size": 3318
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/UnsentOperation.elmi",
+      "sha256": "2b4293dfd84d06abeec1440c4337c3d58d3d91abd453f3951202608e77a26a71",
+      "size": 1883
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/UnsentOperation.elmo",
+      "sha256": "1d65cdfa7ea737c78b595fabda34b4e74f35d951727c8f4b12f2f93191478e0c",
+      "size": 3326
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/d.dat",
+      "sha256": "69787bd9276af70c8011760bb27ce457286d3957f423dd9d8b75e3d4d6fc55c4",
+      "size": 13206
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/i.dat",
+      "sha256": "e75b950b056ab768f666e5285ee2c87e911218c43a695676738667870e947c23",
+      "size": 105328
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/lock",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm-stuff/0.19.2/o.dat",
+      "sha256": "7cd6af96bcda469315a586f85a1b009a471a11eb8348bdc7964ca22f91ab38d5",
+      "size": 441107
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/elm.json",
+      "sha256": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+      "size": 306
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/native/admission-test.c",
+      "sha256": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+      "size": 805
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/native/context-keys-test.c",
+      "sha256": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+      "size": 2959
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/native/context-keys.h",
+      "sha256": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+      "size": 2623
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/native/demand.hpp",
+      "sha256": "b7721cb9e67b7845252918213b5560fdaaafcacff42eb52eaa37697a341a7dcc",
+      "size": 7342
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/native/geometry-carrier-test.c",
+      "sha256": "770835580c7a4a2e21e49a9c3da586ee3ae59e66a92320dd7bb12fa8e516d921",
+      "size": 5425
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/native/handoff-test.c",
+      "sha256": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+      "size": 1054
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/native/host-fault.h",
+      "sha256": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+      "size": 2495
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/native/host-journal.h",
+      "sha256": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+      "size": 16541
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/native/host.c",
+      "sha256": "0f01aef906d28b359791eae8401a00b0b9c47bb4ca7823da212821166e75a6f9",
+      "size": 64831
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/native/preview-integration.h",
+      "sha256": "c70b5a1cf7ca5b0f510cf26bee012ca2f0597d5c916251a924bc4412ce9f4ff3",
+      "size": 646
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/native/preview-uri-api.h",
+      "sha256": "7a02550a807102f6ebdad9c1570eb6a719a50b0ed422ff26add97dbd6408b002",
+      "size": 683
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/native/preview-uri-webkit.cpp",
+      "sha256": "c8cc48442d8d098315b7ad64b71be267679bc361041dc6d2de405c657fa74ea2",
+      "size": 1624
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/native/preview_broker.hpp",
+      "sha256": "2954630241ad5e5dc1ee7ce770ef622cd7eff0c3b6d9c5feedc07fcdeec7e3a1",
+      "size": 17508
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/native/preview_client.hpp",
+      "sha256": "bcec3f0f831af3f33685297f833beb002cc20860f69e62c8f04c8b6c9504b2fd",
+      "size": 8422
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/native/preview_fd.hpp",
+      "sha256": "a630c2299bff7a0ef2fe1d0b776335d6f7d925c796ea4f07dc05009515852945",
+      "size": 7703
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/native/preview_uri.cpp",
+      "sha256": "d960c1a3d0cd5a569e84af3d005e184d412c1d86ea6bef6f73ad55b1ab2eaa15",
+      "size": 6546
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/native/preview_uri.hpp",
+      "sha256": "223c89f17e4d7a57115237d85905dc4a8d39e53e2fc9dd41e62a85ea96874c9c",
+      "size": 3362
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/native/provider-ownership-test.cpp",
+      "sha256": "d79fe711a90d24ac96e8522a33a4dc3582989b40b692aec73109e365e3f44675",
+      "size": 5754
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/native/reconciliation-carrier-test.c",
+      "sha256": "38210317eff28d8a436e640e971f91df71ffcc3b17e82c27a60ee34f57d9f73d",
+      "size": 3024
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/native/recovery-presentation-test.c",
+      "sha256": "812bbab1640e12269bc195979cd319a96a505157ba8f5c637eebfd5561bc8e67",
+      "size": 2766
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/native/shared-context-test.c",
+      "sha256": "ed50c8ed6b0fee3db3818e2f38c8bb57985b388b26ee09a5624d32f1bfa258ee",
+      "size": 20901
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/native/shared-context.h",
+      "sha256": "e86f3ba7a4c76d7839ef8d67d14c7f9ea6b514afa2ac110fc7cebf2da2fd62ce",
+      "size": 22281
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/native/shared-host.c",
+      "sha256": "818a14984fb554cebd064cc4a13ed0e79cf03d37cf0f0cd3af5258e6451385a2",
+      "size": 45470
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/native/surface-test.c",
+      "sha256": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+      "size": 4091
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/native/surface.h",
+      "sha256": "2bdf2d9b3b34fa7193da90e58ac378e7a640ae91e7b02d46987e33c559209f0b",
+      "size": 5561
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/qa/build.py",
+      "sha256": "16834c0a3b6d2a257ddd1e93fe8b93c90b04e5d7c1189f47ae6eaccaa3ff12e5",
+      "size": 7804
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/qa/check.py",
+      "sha256": "64ddfc2ce1af5c12405eb6a2643e05175ab24dafad50d45187347861229b744d",
+      "size": 5543
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/qa/checks.cpp",
+      "sha256": "d9d5fe80ea0470dd43176219200ea9b3ab4d7cb49a7d19b30cdfdd5e4a9ec0fe",
+      "size": 8914
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/qa/toolchain.json",
+      "sha256": "fe3d29078d30c6cf9bd431233c5eed1ad4550e2873ff55739d50a5a87a97edaa",
+      "size": 42770
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/qa/toolchain.py",
+      "sha256": "284b407e018531a8adee6bd40694ae02dbb19ba964ddb8c5f848bf4355c5749c",
+      "size": 1123
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/ActionProjection.elm",
+      "sha256": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996",
+      "size": 3989
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/Bar.elm",
+      "sha256": "a10abbe7d0542c642552d90cfa459b353a3843391ce47e06ba94b91afb0b6113",
+      "size": 981
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/BatchReplay.elm",
+      "sha256": "6300d3c2e617de14b2fd70a40606ea8c94db435a93f0ae30bd19765f5cdce852",
+      "size": 8901
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/Binding.elm",
+      "sha256": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+      "size": 1480
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/CapturedAction.elm",
+      "sha256": "a3e22c7dd5643a1c0424ea1ae09e134bc8b19567de980e57095e08273604fb66",
+      "size": 2172
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/Catalog.elm",
+      "sha256": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+      "size": 2701
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/CatalogReplay.elm",
+      "sha256": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+      "size": 1300
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/Desktop.elm",
+      "sha256": "dd0f778c70bb0e53fb4f7d344f7995fd5bbce75a9002bace15b5d70ae1428df0",
+      "size": 22302
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/DesktopReplay.elm",
+      "sha256": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+      "size": 3077
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/Effects.elm",
+      "sha256": "c41a0732a640ca7727506193c654fd6e9c996e3b9e136ca58e911961233e9e4b",
+      "size": 16479
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/GeometryProjection.elm",
+      "sha256": "4aee2448599d3b94d3dd4762aa8d0c223b77e9d1a61898e70d6870151194d1d9",
+      "size": 10573
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/GeometrySizePolicy.elm",
+      "sha256": "46dda2de43642cd33997382e90813c8eeccde80745d79b7d5cd5fd425b062c43",
+      "size": 6205
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/Inspection.elm",
+      "sha256": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+      "size": 3570
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/Launch.elm",
+      "sha256": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6",
+      "size": 8353
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/LaunchReplay.elm",
+      "sha256": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+      "size": 4031
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/Main.elm",
+      "sha256": "2e9c042c5b2b068dbe582680ed37e6fa766b636d6d1a422297f843d135fb5405",
+      "size": 2976
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/Menu.elm",
+      "sha256": "c40fcfa24bf9d48044ccbe2c08df0abb7d8b94ee04111776234ecd88792ff4f0",
+      "size": 18993
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/MenuBridge.elm",
+      "sha256": "c8b83efc426e83d5b1ebde79aaa78b44e9c0150849d68d77477793c0e344ebe2",
+      "size": 26793
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/MenuSurfaceReplay.elm",
+      "sha256": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39",
+      "size": 5461
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/NativeOutcome.elm",
+      "sha256": "fc9e824d315e0316b850fd36760c9f4ab4239eb97d1c4b3cc752144b70f98d89",
+      "size": 2645
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/NativeProvider.elm",
+      "sha256": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+      "size": 5100
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/OutputController.elm",
+      "sha256": "edc3e8d07788b6ae3eeae48b00b289fd69b55d358dc2860944dd83cf0f876bb9",
+      "size": 21757
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/OutputReplay.elm",
+      "sha256": "44f156b65f816400b75d928371fe5bdba675545eba805fee4793422d5b3f73ff",
+      "size": 2289
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/OutputSurfaceReplay.elm",
+      "sha256": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26",
+      "size": 3244
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/Popup.elm",
+      "sha256": "f202fd191161fdb0fe66b185d8218bd9a2473f7a0c3f2469fb85bb050d14a482",
+      "size": 1834
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/Presentation.elm",
+      "sha256": "e65c93507188186328c597d8b15e171fbb626ca89835f0f90476ad5aa5c4c48d",
+      "size": 1495
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/PresentationReplay.elm",
+      "sha256": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+      "size": 1234
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/PreviewIdentity.elm",
+      "sha256": "262240e59eed37d362f921a4e7e89d0bb23c8b0f84fb39f0fddc29faaa3de3b5",
+      "size": 1586
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/PreviewLifecycle.elm",
+      "sha256": "4b3fa3a2d6810c52073f3b53819e6f4b5a1842fc67e63c966fdb46a5ce8a9583",
+      "size": 25670
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/PreviewPresenter.elm",
+      "sha256": "bfeed911c88b2c1174c2942a7b68f51a6885409be0392d7610a5f3c3c0b89606",
+      "size": 7920
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/PreviewPresenterReplay.elm",
+      "sha256": "0eb03b99d5d5470936b51ea77de9b102b9742284020d01c469110388efdbc06e",
+      "size": 1302
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/Provider.elm",
+      "sha256": "328d8fd6349eb4151fe448081e8a418f98e7d31bbe467e4cd60d12ed23ae71d0",
+      "size": 17531
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/ReceiptRouter.elm",
+      "sha256": "ffcf85cf38de5665b35b3e2b6eb5a9f261360ec4b226b2fcefc0723cece1a011",
+      "size": 10743
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/ReconciliationFrame.elm",
+      "sha256": "b72ccb317751848506841c020f83c68e3d93eba3b6fb1c1a9b3d84283fec6676",
+      "size": 7675
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/ReconciliationTracking.elm",
+      "sha256": "84482d1bb84160e3bd9e026b2043635c35b76422d6e9066f703411f784b29bf9",
+      "size": 7152
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/Replay.elm",
+      "sha256": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+      "size": 1001
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/SharedRecoveryReplay.elm",
+      "sha256": "f44d52432e1c6c876207c273d8a013fd446b186b85a23d7bf5474943ef26ff8b",
+      "size": 3457
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/Shell.elm",
+      "sha256": "06867a8be89fa184ccf3da55724cc5245dec9ab6fa82c6edfd663f5296c99f9f",
+      "size": 31167
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/ShellReplay.elm",
+      "sha256": "be85fbef5dda8dd07093b578c4be204d8d92772147e1ffacf80368216b5ba8ca",
+      "size": 2054
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/Surface.elm",
+      "sha256": "64cd1e4c25caf057071d8478729598dcb4fb0547340303ca0590ed9c0edfb613",
+      "size": 16121
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/SurfaceController.elm",
+      "sha256": "41874fca4f1df7f5b8dfe2ccb9f08ac710c7134670a6b55d8aaa3b7442ae8fef",
+      "size": 13166
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/SurfaceRenderer.elm",
+      "sha256": "981991412bd57a6709bd6240e9b893c57779105f601bb6bc81594232ce98dab9",
+      "size": 5904
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/SurfaceReplay.elm",
+      "sha256": "476f94f33d9225035a479bd8ae8eb755ae8ac914c29ca533f62913fb378a603a",
+      "size": 2781
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/Taskbar.elm",
+      "sha256": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb",
+      "size": 2564
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/TaskbarReplay.elm",
+      "sha256": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+      "size": 1658
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/TaskbarShell.elm",
+      "sha256": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+      "size": 6429
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/TaskbarShellReplay.elm",
+      "sha256": "72ca534bb5adc6d0a02fd68ff9f287cb1815fcb0f68313ce7d0b3033d4ebf130",
+      "size": 2239
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/UInt64.elm",
+      "sha256": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+      "size": 1459
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/inputs/src/UnsentOperation.elm",
+      "sha256": "46e315cc739e097805af3c9358f9ca27a807ef1119c733aa296687342c8238ea",
+      "size": 1426
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/linked-libraries.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/linked-libraries.stdout",
+      "sha256": "5a51aa3102d3215b4d878b5b0c5e6db1df6896108d6ccaf4f96c7ec3db6f5f8a",
+      "size": 9741
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/browser/1.0.2/LICENSE",
+      "sha256": "d33481c057f582207d41425b1b3ecb740291f9f9c86b21e9a045cd3bea0f6ac8",
+      "size": 1467
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/browser/1.0.2/README.md",
+      "sha256": "7f840d168653866570c8589d01eb07c964659a178d63deecbfed716e80098a33",
+      "size": 1507
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/browser/1.0.2/artifacts.dat",
+      "sha256": "fe5b6fe79715147ffc845ce685b7090adedbd6de05934155779cb8f0594b1139",
+      "size": 199295
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/browser/1.0.2/docs.json",
+      "sha256": "bc722e08b6ca01697a17302ae9d4ecb3ce706459025fafc444173f018432bf02",
+      "size": 30934
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/browser/1.0.2/elm.json",
+      "sha256": "f50e12cb6b89a97ef18dde0c64fa92aa78469c412c19d64ca1c56931a1fbc52f",
+      "size": 693
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/browser/1.0.2/src/Browser/AnimationManager.elm",
+      "sha256": "b5eec62b6f9e2e94f5f1b573228e332784580fddc5898c732c4f5c48f4a5a854",
+      "size": 2497
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/browser/1.0.2/src/Browser/Dom.elm",
+      "sha256": "03bee2960770cea5b6ee2a208f33622432b8a1ae12e77412cf84b67a453ac2a7",
+      "size": 11815
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/browser/1.0.2/src/Browser/Events.elm",
+      "sha256": "b72f8970ee085dab3c7e5504f661e21ed6cefaea21890899d9cd32ebc7f2bd4f",
+      "size": 8706
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/browser/1.0.2/src/Browser/Navigation.elm",
+      "sha256": "329085431ef02615190706903d090364097ed3ddaf466370918af69379354706",
+      "size": 5770
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/browser/1.0.2/src/Browser.elm",
+      "sha256": "2722873214de2d381a02e037dd56f764c522c0b4ccbbfb3edccce69e0c3c32a5",
+      "size": 9064
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/browser/1.0.2/src/Debugger/Expando.elm",
+      "sha256": "c93b00af7bf99c8929db06cdfaf7c6b26b955ac576e62ee4fe2c0be6e4f01a6b",
+      "size": 15442
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/browser/1.0.2/src/Debugger/History.elm",
+      "sha256": "4ef4701403e4b960a902a12f20f5feb3ac8881850ba7a71ca6c50f363c60caa9",
+      "size": 11103
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/browser/1.0.2/src/Debugger/Main.elm",
+      "sha256": "4513896c62d0ba2f3f27bae3cf39145af8e5ccf428abde16db782ed1c7db3b6a",
+      "size": 19871
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/browser/1.0.2/src/Debugger/Metadata.elm",
+      "sha256": "733be27ac5b7651c55b62161f24c508c9a62cf69a481672f17a0c58068591cd8",
+      "size": 6980
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/browser/1.0.2/src/Debugger/Overlay.elm",
+      "sha256": "cbb5380cc49af503a462d4e1c0112fe6d46653fc34d8948243f5782591094b47",
+      "size": 14130
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/browser/1.0.2/src/Debugger/Report.elm",
+      "sha256": "2323bbd81acaaf3b6077d66fda4fd12a15b1d9c21e9571ab21f0b7c069a5d096",
+      "size": 1861
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/browser/1.0.2/src/Elm/Kernel/Browser.js",
+      "sha256": "ae20f6a08a7926cc4f19290da136a4e39d9993076db91fa85f54d7d0f244eb0d",
+      "size": 10517
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/browser/1.0.2/src/Elm/Kernel/Browser.server.js",
+      "sha256": "e5e2a7ad542e5b222ac71f989e3f29a43035b44e6fcc8a7af0341585a35c9ee5",
+      "size": 3239
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/browser/1.0.2/src/Elm/Kernel/Debugger.js",
+      "sha256": "c74f81f8684fbafeba01b90273f575b3a66fcf317c129074b1244a07845f0c97",
+      "size": 14173
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/LICENSE",
+      "sha256": "431192066654a9060d29033714fa19eb6f7749031710957c55cf8b8d8bd246c3",
+      "size": 1467
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/README.md",
+      "sha256": "194a0f3dcbd764305b73dd62679d4026bccad5f2992b0d145e38e75d9342b8d1",
+      "size": 1174
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/artifacts.dat",
+      "sha256": "aff919cb770b4106652f7f3018cc6e6007c1ffde09f1cde3f37f0b86189143bf",
+      "size": 165900
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/docs.json",
+      "sha256": "5109354b63fd32313fafe6aeafb5e13640e54f29d888cbc0bee93aa7e61a7034",
+      "size": 99846
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/elm.json",
+      "sha256": "db814e9f01c211e63d3b86e2546e924aaba8be2ee2b12299ab81456e9a268993",
+      "size": 817
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/src/Array.elm",
+      "sha256": "1f60be42ecfeaae7dab6e5f6887c49ecdc4089e4348b6f9694e095bd0f434eac",
+      "size": 30059
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/src/Basics.elm",
+      "sha256": "649e41513480066f951eef04931a1caea463d3b052cb4a86182c6fcd87e980f2",
+      "size": 23139
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/src/Bitwise.elm",
+      "sha256": "0b3c9aef28504672f08209b26e24390aa65ee8a7ae97e71ba84770ff56d25978",
+      "size": 2064
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/src/Char.elm",
+      "sha256": "90db4547054916b2e71b364e3253f50f551e03627ce7e8ae53d1fb1ae667e387",
+      "size": 5013
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/src/Debug.elm",
+      "sha256": "1407cfff0d9882dc4b6557c7b99f8bbb6f19dbf345ae919c87daf0ca979fd4fe",
+      "size": 3122
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/src/Dict.elm",
+      "sha256": "2afc5fcbc080b98903d9b05a98eb0efbf65265eb42ed076b2d442d9e4aca14e5",
+      "size": 16564
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/JsArray.elm",
+      "sha256": "bfa0bc6ae1b5b5786f1224b9c0eb476380e9818af53523fdda4b0c30eb60a0d2",
+      "size": 4518
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Basics.js",
+      "sha256": "30364c4d72f08888cb16a5ecdd6f04bcf66e6a7d5902ece907c9c01f1ca4d55d",
+      "size": 1635
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Bitwise.js",
+      "sha256": "41a1e83136e4a5222bd11dd372c508b33815fe45c8795fe4e8c78a5acfeb35d8",
+      "size": 473
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Char.js",
+      "sha256": "b77e57164741ab7e5e1b78cdfdeffb125c665eb748ea5d5ac62318435b7105b7",
+      "size": 840
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Debug.js",
+      "sha256": "8371e580481da98ca6ccaed2638053ffcee4bee04e2b5c8b86e2ea5c955fc462",
+      "size": 7416
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/JsArray.js",
+      "sha256": "888aa1150c7ef8b485f835de1cebc5f69056d547155e624a8aa77a18bf102dd3",
+      "size": 2677
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/List.js",
+      "sha256": "975268b3694443d66e3e68c4dac9a8bb20e6b84f324046b12222e51b64eaa687",
+      "size": 1863
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Platform.js",
+      "sha256": "569148a4e6b9371214da1e54285a6a4bfdd1cb42220886f2392a46d8f84e5863",
+      "size": 10655
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Process.js",
+      "sha256": "50554f94246d84921109584196c7c43f90775ff4256ce4df363b44f7794065da",
+      "size": 337
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Process.server.js",
+      "sha256": "823d7abb8d78ea9f88488d9b1eeb2d2b049544f05d8223862e7cef76c1c1db34",
+      "size": 131
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Scheduler.js",
+      "sha256": "bdc18efab541e63edd65173fd995e35edc0fefe182fdb46c914b56734e2dbe6a",
+      "size": 3141
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/String.js",
+      "sha256": "037260f1df8da6007eb54f9464167ce59e9332b804013127a5e036f0919e266b",
+      "size": 5126
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Utils.js",
+      "sha256": "cc6c6c94d8e8c0ba0041ab09fabf6235c2cc4ab220d54257e6c7c4ffa7876017",
+      "size": 3618
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/src/List.elm",
+      "sha256": "79e513a52ab45ab98f3a5ad9c87779c2cb29519c5adcf91ab3b70fb5de234f41",
+      "size": 13279
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/src/Maybe.elm",
+      "sha256": "35aa285d930a4da6d918717209f230667ab127d357f69d6ea3dbab31e567f5aa",
+      "size": 5619
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/src/Platform/Cmd.elm",
+      "sha256": "015c3c2469abeb1cfcf757017d4448c0e453da972fb846f93a91768488e7dfd5",
+      "size": 2248
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/src/Platform/Sub.elm",
+      "sha256": "fdb296916f45f3ed0096959e5d727b32a05e7459ef5cc95f00e76951221499dd",
+      "size": 2404
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/src/Platform.elm",
+      "sha256": "71d83575a51451379e81fc2712e925a5fc242286c5c971259ff1740274f7e527",
+      "size": 3059
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/src/Process.elm",
+      "sha256": "a6af86afca70423a8ec9092c34f5b4b4247cb25dc67074864cdcab8c895d0455",
+      "size": 3664
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/src/Result.elm",
+      "sha256": "1efa7ed54dfcfc31c35ffae770afc6b9b095e063b325d80f5e5550600ded746b",
+      "size": 6419
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/src/Set.elm",
+      "sha256": "765ce399f1ed4c92bb47fe0af07808875a2377fdc89f951d513b6f55e5744f85",
+      "size": 4459
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/src/String.elm",
+      "sha256": "e7300d71211211e5e0b8b1b3bcd0d6407416a498bcfb682b26a8642fa965e4a0",
+      "size": 13527
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/src/Task.elm",
+      "sha256": "f546ccb07a58b26fcf791ed45a6236e80e45aaed00c29cbaeced5dcd6da034fa",
+      "size": 8764
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/core/1.0.5/src/Tuple.elm",
+      "sha256": "b970211ee185cf3184634702aa54f6ec33e2aafb8930caead713ee7929236b46",
+      "size": 2295
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/html/1.0.0/LICENSE",
+      "sha256": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad",
+      "size": 1534
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/html/1.0.0/README.md",
+      "sha256": "a2a02ab6786aea9bc3d8eb8378f02620d9b72fbb8c0e1af15bf118107c68ae46",
+      "size": 1508
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/html/1.0.0/artifacts.dat",
+      "sha256": "59605a1652ecc9c2fe612c5583c85882a2289c31304bff338f35d85302e31157",
+      "size": 75070
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/html/1.0.0/docs.json",
+      "sha256": "d4765c6dc9da2c5860277ae05caffbd97c49c300f8c26b83670c986e27ecd0aa",
+      "size": 51303
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/html/1.0.0/elm.json",
+      "sha256": "84dbb28e88ffbaf32e0e7ce11b8d14ccc97c0798b2d0945ed94668c12a0b9e25",
+      "size": 500
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/html/1.0.0/src/Html/Attributes.elm",
+      "sha256": "b4ff344168f9199de2bfee5f8e3c1441c621692ddc99a5ce7e380f3014e6d367",
+      "size": 21659
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/html/1.0.0/src/Html/Events.elm",
+      "sha256": "d633d86ecee6195d6bea6f7c8b49a5df3befecd8e9589745055dc5f30b0cef9e",
+      "size": 8544
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/html/1.0.0/src/Html/Keyed.elm",
+      "sha256": "346e9fe65945ccedc250e5d5cc739fe3505dc9be37bcb93fd311527964b55ff7",
+      "size": 1181
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/html/1.0.0/src/Html/Lazy.elm",
+      "sha256": "e6ec7de40a8c6318a055898a144e8cc56b2c9b32f7694be1bf223e98db6cd031",
+      "size": 2457
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/html/1.0.0/src/Html.elm",
+      "sha256": "2e567c415bfeb2a743b0c6fee980383b3e378785247b3e930f77aa98e1dbb4d9",
+      "size": 21330
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/json/1.1.3/LICENSE",
+      "sha256": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad",
+      "size": 1534
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/json/1.1.3/README.md",
+      "sha256": "5569c109a48d6746e5f767097b71e081a8637900ec4a44523c7e3bdc07281a67",
+      "size": 2471
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/json/1.1.3/artifacts.dat",
+      "sha256": "56975991a480f8294c3a8c2fee87b529872182aaeb49e94af4e5aaa5acb52acc",
+      "size": 27251
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/json/1.1.3/docs.json",
+      "sha256": "21863efbfc0af238b90089a03362fcc13539c7a930d8ab5438f3e7ec3a179c52",
+      "size": 22170
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/json/1.1.3/elm.json",
+      "sha256": "b6c2ce9de7bd7ed70de7a111e87c449ec3aa7819bf6c48953ce7221e776f7a3e",
+      "size": 371
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/json/1.1.3/src/Elm/Kernel/Json.js",
+      "sha256": "17d5536d6f22be1614a73837368e2a61439ebfa9dd0ff732880ee544baa41af2",
+      "size": 9592
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/json/1.1.3/src/Json/Decode.elm",
+      "sha256": "f68189c7da6b1fb23c08878296b0e55575480ac0632adfc6d7ba76f8617672ea",
+      "size": 19194
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/json/1.1.3/src/Json/Encode.elm",
+      "sha256": "9cdf3d660f182aed97117205e72388e2bb0d0ad795b4749975fa2c639b808a2a",
+      "size": 4764
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/time/1.0.0/LICENSE",
+      "sha256": "a1c31dacffb1a470cb3aaf4844904114b9bc5ebf091e113b2d46bc4953c2c2ea",
+      "size": 1534
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/time/1.0.0/README.md",
+      "sha256": "54e771f9408d791a73f7f10ff25779d64a4155b177c839d790ab4f62e5bc4556",
+      "size": 6933
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/time/1.0.0/artifacts.dat",
+      "sha256": "5da15278ba51679734decb6f74203dbd9ab547c1f4d3e2a4a13f0a2779739c3c",
+      "size": 16584
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/time/1.0.0/docs.json",
+      "sha256": "1a783589793e0258102e0951eb60edd2bf83db98c16c436cb5ae4c3bdfb2665b",
+      "size": 10008
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/time/1.0.0/elm.json",
+      "sha256": "03445516f62e4a779b7267e25f053732f57bda580b871f99a3e53a7979b2dfa4",
+      "size": 343
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/time/1.0.0/src/Elm/Kernel/Time.js",
+      "sha256": "cc59eff642bd2dc98ffde4a99ed0c682821e09a4601c083338d442b15ccd5cb1",
+      "size": 1033
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/time/1.0.0/src/Elm/Kernel/Time.server.js",
+      "sha256": "888d36edbd6d8fe5e69a3802c56f93a1341f0dcfa14e9be1ab10de3c188602c8",
+      "size": 301
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/time/1.0.0/src/Time.elm",
+      "sha256": "e4c55a925c664c25b8ffcd1510c827793d670ec159dc18af3ebd7f642ee4e638",
+      "size": 15315
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/url/1.0.0/LICENSE",
+      "sha256": "1c818d8c5f129ee90e6a855c9edd16d9c6bd25e2959b1aeaeb8626e7c539cc9b",
+      "size": 1490
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/url/1.0.0/README.md",
+      "sha256": "4e9c1ebc4cd9b938005e62762da092ea9882fca23700b4e271f67ec10e21b496",
+      "size": 2614
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/url/1.0.0/artifacts.dat",
+      "sha256": "c0afb9601eb78a98cd9c2bbc94ec068a48c66d32591ef0f8a714abba23b873b8",
+      "size": 32898
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/url/1.0.0/docs.json",
+      "sha256": "58d93cd2643a77f2499078ab935e3f082620bd4636f992b74b97a1b283556db6",
+      "size": 26378
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/url/1.0.0/elm.json",
+      "sha256": "b2c089bbe199a8431fd53635a55fdc10e7ee4bb4a993064688f74812dc94dc5e",
+      "size": 467
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/url/1.0.0/src/Elm/Kernel/Url.js",
+      "sha256": "56250d3bec1cbc6c8974514ea56040043b237b058cb8cdad54a8b32e33676922",
+      "size": 268
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/url/1.0.0/src/Url/Builder.elm",
+      "sha256": "e4922467375bcedd187bbd811b5dfd49b7f9b6a08063b7ef411f2ad0aa6e8dad",
+      "size": 5543
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/url/1.0.0/src/Url/Parser/Internal.elm",
+      "sha256": "91cec106bc5eb47ae5b1ff86ac1589989785080805bc4e38dd187ec22dbbfc26",
+      "size": 144
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/url/1.0.0/src/Url/Parser/Query.elm",
+      "sha256": "2b14aab77b663bef2b9434fccc3ca6c102990b9cf87dea650ae8341a9325bf4e",
+      "size": 7271
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/url/1.0.0/src/Url/Parser.elm",
+      "sha256": "0a42ac79944c28778c0e32510cd089e7d80e6d202937238f829d4de2d942d028",
+      "size": 11658
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/url/1.0.0/src/Url.elm",
+      "sha256": "c1dad01869f5a4fe29406b3409508ec4754bf8125cc01ef5106b2e369c5c647c",
+      "size": 8045
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/virtual-dom/1.0.3/LICENSE",
+      "sha256": "c63bca41c3a19de3b16ede979ca1dfeb2ce0db93a62f4555dbb61ae3ee777425",
+      "size": 1534
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/virtual-dom/1.0.3/README.md",
+      "sha256": "bcfb2f4a8f0f49c7e7b65fe1ee5371fdb438ce3decfd3256d2e65d08a85d567b",
+      "size": 395
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/virtual-dom/1.0.3/artifacts.dat",
+      "sha256": "d0d597d90653335aca5f8570077acaf0ff130692534be607318690344f0ce1a7",
+      "size": 42924
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/virtual-dom/1.0.3/docs.json",
+      "sha256": "76a43b5769c6d68ecfc8f1a87b60bd2dd3e7586f78b7a846c3ed83708b1ff2ba",
+      "size": 11111
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/virtual-dom/1.0.3/elm.json",
+      "sha256": "f00299c02b546533702cacd34ed0eef09bf2bbba138585bb86a79e6b0fd11a83",
+      "size": 433
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/virtual-dom/1.0.3/src/Elm/Kernel/VirtualDom.js",
+      "sha256": "9246c8591d9b511468e8257b60c8495020164a5fd58f21d523722775292095db",
+      "size": 32836
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/virtual-dom/1.0.3/src/Elm/Kernel/VirtualDom.server.js",
+      "sha256": "68c145d1f3ae40618e023b4109edc3f474f12c83af9ad5a3cfa2232f7cfd0bd9",
+      "size": 3251
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/elm/virtual-dom/1.0.3/src/VirtualDom.elm",
+      "sha256": "85f06afbc5f418f69c424ecc9b61969cc460444f97987054fb14d2a944d3bba8",
+      "size": 11520
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/lock",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/mutable-elm-home/0.19.2/packages/registry.dat",
+      "sha256": "7dffefbb217899de7030a895bce9b7c3587cb85895ce31a0835dcadb0afd33b5",
+      "size": 148349
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/popup-adapter-syntax.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/popup-adapter-syntax.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/popup-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/popup-build.stdout",
+      "sha256": "a5bbe06a5586c88d60f7792604cbdd6bbfda15765bc0c340179459d91f391a53",
+      "size": 476
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/preview-replay-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/preview-replay-build.stdout",
+      "sha256": "fc669d7dbc951eb4541f9cd8f3fed8ed18266e59f693ba682cd03a29232cf29d",
+      "size": 121
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/preview-uri-webkit.cpp-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/preview-uri-webkit.cpp-compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/preview-uri-webkit.cpp.d",
+      "sha256": "3784bc7d8821d47d41614774c2596122456f2b6d836e1d9e7220c2a85e6a5d82",
+      "size": 49688
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/preview-uri-webkit.cpp.o",
+      "sha256": "ed8faf34d6644367cd624307a4f161cccacd4c8572a8bdafceefbd5f71d27434",
+      "size": 5200
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/preview_uri.cpp-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/preview_uri.cpp-compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/preview_uri.cpp.d",
+      "sha256": "3ee3222e93412320974779465f92c257b63cea20fb731bfb21d8fa8a75ac7ef0",
+      "size": 25013
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/preview_uri.cpp.o",
+      "sha256": "278d32c09801d3680b8bc90c8cb6f9f698d31dc126ed4dd83a38b8d8738f09b8",
+      "size": 47624
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/provider-ownership-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/provider-ownership-build.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/provider-ownership-tests",
+      "sha256": "6e00329665cbc8112cb8f69b65111bf38d8aeacdd2b9b93776300d9ee6f1f986",
+      "size": 5615056
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/provider-ownership-tests.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/provider-ownership-tests.stdout",
+      "sha256": "f3b51cea7f9d41bed756e9ce30aa740fa4a144b0b6922461e88947cc60ab2145",
+      "size": 28
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/reconciliation-carrier-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/reconciliation-carrier-build.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/reconciliation-carrier-tests",
+      "sha256": "448acf41bda278bf5a33583bcf3e45e4b44d1ec40e868c466b49d6288344d8c0",
+      "size": 147560
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/reconciliation-carrier-tests.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/reconciliation-carrier-tests.stdout",
+      "sha256": "af24689a935b49f819138ea5a422f8f1e9ab588019a2b9c19d83b662d1719b6c",
+      "size": 34
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/report.json",
+      "sha256": "bc58f2d8bc0a41dd819cbb5716566574b9d856f610037c023d276680b7ce9ec2",
+      "size": 387994
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/surface-test-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/surface-test-build.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/surface-tests",
+      "sha256": "e38bdf9a647474f2a88f3877c26570197cb120f848c698101414689e0215665b",
+      "size": 27408
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/surface-tests.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build-1791223692924565922/surface-tests.stdout",
+      "sha256": "7ecb34e227e0ef9dc9ceb9831e0313cf7f2ac18702f56e7c846113f673a8660b",
+      "size": 254
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/build.py",
+      "sha256": "16834c0a3b6d2a257ddd1e93fe8b93c90b04e5d7c1189f47ae6eaccaa3ff12e5",
+      "size": 7804
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/checks",
+      "sha256": "af32ab06485f0c3f027346aedeb2fa11ba21ca60fa6ceeff73d714a8693b8453",
+      "size": 3598936
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/closed-lease/checks",
+      "sha256": "295cdd9c3e4ecc45e6f4d6ba401babd902092ff196009f7cced197aa21aa1f23",
+      "size": 80520
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/closed-lease/demand.hpp",
+      "sha256": "8387386842d7c99a7943ae60bf94863e1982efd0d5d76f53cfc1f321c07c7c4f",
+      "size": 7325
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/closed-lease/preview_broker.hpp",
+      "sha256": "2954630241ad5e5dc1ee7ce770ef622cd7eff0c3b6d9c5feedc07fcdeec7e3a1",
+      "size": 17508
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/closed-lease-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/closed-lease-compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/closed-lease-control.stderr",
+      "sha256": "3e07666ee6824fa602b3077a9e6cc4c71e4771a8fab246605db7ce2dee0fed14",
+      "size": 27
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/closed-lease-control.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/compiled-controls.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/compiled-controls.stdout",
+      "sha256": "3ca2f23009703acdcad6eddeacda7bd122e4256d00b59c27c9b845cf07f24f2d",
+      "size": 28
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/inputs/native/admission-test.c",
+      "sha256": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+      "size": 805
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/inputs/native/context-keys-test.c",
+      "sha256": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+      "size": 2959
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/inputs/native/context-keys.h",
+      "sha256": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+      "size": 2623
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/inputs/native/demand.hpp",
+      "sha256": "b7721cb9e67b7845252918213b5560fdaaafcacff42eb52eaa37697a341a7dcc",
+      "size": 7342
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/inputs/native/geometry-carrier-test.c",
+      "sha256": "770835580c7a4a2e21e49a9c3da586ee3ae59e66a92320dd7bb12fa8e516d921",
+      "size": 5425
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/inputs/native/handoff-test.c",
+      "sha256": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+      "size": 1054
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/inputs/native/host-fault.h",
+      "sha256": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+      "size": 2495
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/inputs/native/host-journal.h",
+      "sha256": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+      "size": 16541
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/inputs/native/host.c",
+      "sha256": "0f01aef906d28b359791eae8401a00b0b9c47bb4ca7823da212821166e75a6f9",
+      "size": 64831
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/inputs/native/preview-integration.h",
+      "sha256": "c70b5a1cf7ca5b0f510cf26bee012ca2f0597d5c916251a924bc4412ce9f4ff3",
+      "size": 646
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/inputs/native/preview-uri-api.h",
+      "sha256": "7a02550a807102f6ebdad9c1570eb6a719a50b0ed422ff26add97dbd6408b002",
+      "size": 683
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/inputs/native/preview-uri-webkit.cpp",
+      "sha256": "c8cc48442d8d098315b7ad64b71be267679bc361041dc6d2de405c657fa74ea2",
+      "size": 1624
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/inputs/native/preview_broker.hpp",
+      "sha256": "2954630241ad5e5dc1ee7ce770ef622cd7eff0c3b6d9c5feedc07fcdeec7e3a1",
+      "size": 17508
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/inputs/native/preview_client.hpp",
+      "sha256": "bcec3f0f831af3f33685297f833beb002cc20860f69e62c8f04c8b6c9504b2fd",
+      "size": 8422
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/inputs/native/preview_fd.hpp",
+      "sha256": "a630c2299bff7a0ef2fe1d0b776335d6f7d925c796ea4f07dc05009515852945",
+      "size": 7703
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/inputs/native/preview_uri.cpp",
+      "sha256": "d960c1a3d0cd5a569e84af3d005e184d412c1d86ea6bef6f73ad55b1ab2eaa15",
+      "size": 6546
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/inputs/native/preview_uri.hpp",
+      "sha256": "223c89f17e4d7a57115237d85905dc4a8d39e53e2fc9dd41e62a85ea96874c9c",
+      "size": 3362
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/inputs/native/provider-ownership-test.cpp",
+      "sha256": "d79fe711a90d24ac96e8522a33a4dc3582989b40b692aec73109e365e3f44675",
+      "size": 5754
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/inputs/native/reconciliation-carrier-test.c",
+      "sha256": "38210317eff28d8a436e640e971f91df71ffcc3b17e82c27a60ee34f57d9f73d",
+      "size": 3024
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/inputs/native/recovery-presentation-test.c",
+      "sha256": "812bbab1640e12269bc195979cd319a96a505157ba8f5c637eebfd5561bc8e67",
+      "size": 2766
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/inputs/native/shared-context-test.c",
+      "sha256": "ed50c8ed6b0fee3db3818e2f38c8bb57985b388b26ee09a5624d32f1bfa258ee",
+      "size": 20901
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/inputs/native/shared-context.h",
+      "sha256": "e86f3ba7a4c76d7839ef8d67d14c7f9ea6b514afa2ac110fc7cebf2da2fd62ce",
+      "size": 22281
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/inputs/native/shared-host.c",
+      "sha256": "818a14984fb554cebd064cc4a13ed0e79cf03d37cf0f0cd3af5258e6451385a2",
+      "size": 45470
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/inputs/native/surface-test.c",
+      "sha256": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+      "size": 4091
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/inputs/native/surface.h",
+      "sha256": "2bdf2d9b3b34fa7193da90e58ac378e7a640ae91e7b02d46987e33c559209f0b",
+      "size": 5561
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/inputs/qa/check.py",
+      "sha256": "64ddfc2ce1af5c12405eb6a2643e05175ab24dafad50d45187347861229b744d",
+      "size": 5543
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/inputs/qa/checks.cpp",
+      "sha256": "d9d5fe80ea0470dd43176219200ea9b3ab4d7cb49a7d19b30cdfdd5e4a9ec0fe",
+      "size": 8914
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/inputs/spec/demand.qnt",
+      "sha256": "a43b820819e160a0a57656916ec99faa0939c7d7541ca5efbf83223bd9ab5336",
+      "size": 1510
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/inputs/spec/tests.qnt",
+      "sha256": "5e9a8f45cc16df53a15a7614a044d6a617b05b1d97acee63ea75bb3059ce3560",
+      "size": 2131
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/named-closeDoesNotRetireTest-2.itf.json",
+      "sha256": "e081df5df626bac63e8cdafe2ffb755c0ddd57f2e0331802b7eea3761a1d65ef",
+      "size": 1443
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/named-closeDropsPendingTest-3.itf.json",
+      "sha256": "738fb4f124c2ff2b878479825184840303a9587fcfa37436b182d92151e4e0ec",
+      "size": 3099
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/named-drainAllowsLatestTest-7.itf.json",
+      "sha256": "251a2eba5f2fb509227af3176f372e45e00956c62f0eb89915e7aa3f58d8a49e",
+      "size": 4949
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/named-finishNotRetirementTest-5.itf.json",
+      "sha256": "3da6fd901aded5cf2dd03f8a1e68bd28e363f879474997dc6829dc5761b80793",
+      "size": 1445
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/named-heldCapacityNotReusedTest-6.itf.json",
+      "sha256": "933fea5be3978220e7b610db0915a8bb9cf8eb4369c37d62738185bff4ed9791",
+      "size": 4564
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/named-idleDoesNotCaptureTest-8.itf.json",
+      "sha256": "74f5d0764fcd5bc2b07876c270cb2921f95cc95f392bf24b89b7c6ba6abe9250",
+      "size": 1439
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/named-latestRevisionTest-0.itf.json",
+      "sha256": "54c1aabff126bb8adbe7f3a3a008b07836159e240b8ffd756894065aa27bb322",
+      "size": 3103
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/named-newLeaseReopenTest-4.itf.json",
+      "sha256": "86ffb908d60bd05bee56dcb811975744e6d6f4601fffc7e0b5b031334236f75c",
+      "size": 3440
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/named-pacingPreventsSpinTest-1.itf.json",
+      "sha256": "aae595aea1e5d9a736441212a26f2b9617a632bc6ac38fcb4b97ac95ac44cb9b",
+      "size": 2752
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/named-sameRevisionNotReplayedTest-9.itf.json",
+      "sha256": "76a0e20444ca3726b53fcee0b22b39b9cef4cb6f881d21e5fbed3b0da3230713",
+      "size": 2401
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/pacing/checks",
+      "sha256": "6d13bb52509fa43397a35cf8124f8633edec00d71d648eb2e722bc0177583b74",
+      "size": 80520
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/pacing/demand.hpp",
+      "sha256": "d30abb5e4829644cf8f6ebfbb516f460610c00f20899ad14c67dca640a6e00fe",
+      "size": 7298
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/pacing/preview_broker.hpp",
+      "sha256": "2954630241ad5e5dc1ee7ce770ef622cd7eff0c3b6d9c5feedc07fcdeec7e3a1",
+      "size": 17508
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/pacing-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/pacing-compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/pacing-control.stderr",
+      "sha256": "beb39402a46621ff5aa1e18b124cf52e2b53a6401bf124afe394dcce3e3b61a9",
+      "size": 32
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/pacing-control.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/producer-owner/checks",
+      "sha256": "6b3092d758d09954f768455b9a5c0112977624729732436cf4a4ae8909084ccc",
+      "size": 80520
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/producer-owner/demand.hpp",
+      "sha256": "0a46d0f9720cea9a79cd58a652e31566177887d78fe1cf7bbb2368802d69afd2",
+      "size": 7323
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/producer-owner/preview_broker.hpp",
+      "sha256": "2954630241ad5e5dc1ee7ce770ef622cd7eff0c3b6d9c5feedc07fcdeec7e3a1",
+      "size": 17508
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/producer-owner-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/producer-owner-compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/producer-owner-control.stderr",
+      "sha256": "0e501469b6317e15a2cfe2952a7b32f499221af479753fe2b931d4260c974ac1",
+      "size": 59
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/producer-owner-control.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/quint-named.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/quint-named.stdout",
+      "sha256": "088116fc99d7f6088ba2e458299737e30ef0013af6df0da30eac571f212b507b",
+      "size": 506
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/quint-sampling.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/quint-sampling.stdout",
+      "sha256": "fe7e6ff94aeb1dbeb2b87f139ad85f971c33b808c03c49e69f50e47156ea2675",
+      "size": 26622
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/quint-typecheck.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/quint-typecheck.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-named-closeDoesNotRetireTest-2.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-named-closeDoesNotRetireTest-2.itf.stdout",
+      "sha256": "0969af907a508b842895aaaf7f441e9d26cca7aeba8711cd3d2b8c5ea65825af",
+      "size": 368
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-named-closeDropsPendingTest-3.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-named-closeDropsPendingTest-3.itf.stdout",
+      "sha256": "5ab32867466943dc19d3f452413a18ed46d519bd6b5d591bcf23d6552732f8c6",
+      "size": 986
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-named-drainAllowsLatestTest-7.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-named-drainAllowsLatestTest-7.itf.stdout",
+      "sha256": "3ab8b2ecf87de831644716f06c2394b11f844914f6488d336353bde26a50111b",
+      "size": 1596
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-named-finishNotRetirementTest-5.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-named-finishNotRetirementTest-5.itf.stdout",
+      "sha256": "5ecd5310498de2746738e44dcb90cfe37e4ebf280894e6176c3e4d242752d9a7",
+      "size": 368
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-named-heldCapacityNotReusedTest-6.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-named-heldCapacityNotReusedTest-6.itf.stdout",
+      "sha256": "9d892bbb2092f4c6ec441e2bf80ff6cd764bfde94a39276e674a48f180fc825e",
+      "size": 1474
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-named-idleDoesNotCaptureTest-8.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-named-idleDoesNotCaptureTest-8.itf.stdout",
+      "sha256": "8e2d1db9e28cc93c862014696a7f05385b57db06842eb9c616313c9833546af4",
+      "size": 369
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-named-latestRevisionTest-0.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-named-latestRevisionTest-0.itf.stdout",
+      "sha256": "13a3cc4b66692cfe340fc23f3689e6161b9b302b40022cb19db68c186af6a6db",
+      "size": 980
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-named-newLeaseReopenTest-4.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-named-newLeaseReopenTest-4.itf.stdout",
+      "sha256": "e622cbfca84616eb630960a93d1efe3bfcb1ed11881990b4fc63a84fc252bb80",
+      "size": 1107
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-named-pacingPreventsSpinTest-1.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-named-pacingPreventsSpinTest-1.itf.stdout",
+      "sha256": "bd9f543c52ee96e125b986737eebc40654be3b79920ac1db1529e4f47ad5f320",
+      "size": 860
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-named-sameRevisionNotReplayedTest-9.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-named-sameRevisionNotReplayedTest-9.itf.stdout",
+      "sha256": "1afb896a157b85b931254b253a102eba69c65a48ce19772e198b0ee15e6bdd44",
+      "size": 737
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-sample-0.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-sample-0.itf.stdout",
+      "sha256": "6fd90994ce6ba5de62ef247dbf360e4cdd06c2f7e70b2724e942f18fdd4dab98",
+      "size": 5050
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-sample-1.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-sample-1.itf.stdout",
+      "sha256": "67575bff34267fd73fd8bbb21bee1af728df630b47de96f8819730f53f9b511f",
+      "size": 5058
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-sample-10.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-sample-10.itf.stdout",
+      "sha256": "2aee8271434becdaf33428128299870da275a67deebf74d7a88b0294418c1c7e",
+      "size": 5072
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-sample-11.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-sample-11.itf.stdout",
+      "sha256": "918af480f044411b58fb9bf3380c8b4c289224d5c725e92b451e0748d6d8211c",
+      "size": 5077
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-sample-2.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-sample-2.itf.stdout",
+      "sha256": "7391544ff558192e5e9561f229ee8d66109ff974c85ddb0ec52aed12ef242c81",
+      "size": 5047
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-sample-3.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-sample-3.itf.stdout",
+      "sha256": "043cfce6ad93e2cc119a07adf0672711516e473a5e612cfd57abbe22d5f655da",
+      "size": 5080
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-sample-4.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-sample-4.itf.stdout",
+      "sha256": "551922d4fa0e3e7b1f9b6e1d49c6eae48834deaf318d562fdd717e2c24573759",
+      "size": 5055
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-sample-5.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-sample-5.itf.stdout",
+      "sha256": "79810fcc60a6f046ebd728ef5e60de98d82a02708de98636f74958351693dc7e",
+      "size": 5035
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-sample-6.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-sample-6.itf.stdout",
+      "sha256": "a814418e37877c517abd875b33a08bdea30cad7f469d571ffd5466aad599221b",
+      "size": 5061
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-sample-7.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-sample-7.itf.stdout",
+      "sha256": "2279a384430066fd892eb9e8890f0431ea2efad8765b9f1b2bde142b25ea7955",
+      "size": 5059
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-sample-8.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-sample-8.itf.stdout",
+      "sha256": "15d54ea6831fa19e4de20d2369a39b55d32a6c0254173cb58cc09fdcb3e625fd",
+      "size": 5073
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-sample-9.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/replay-sample-9.itf.stdout",
+      "sha256": "40c933bece8a8c6d02aeba081decc9e0f77102a5db53c845dd4f6a2d9a69413f",
+      "size": 5056
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/report.json",
+      "sha256": "5f4a071239a92becd62d7825fddb74176d70ef1dc1a5b59882319eb4b3e5cc5c",
+      "size": 31034
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/sample-0.itf.json",
+      "sha256": "92226a4e6aa4e50ace141fe7005d48c5f4cef45d3ab4f8be4747f1270b26c798",
+      "size": 18666
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/sample-1.itf.json",
+      "sha256": "2d6e769023715c9452237a9b26854fb1adfa9b897f0f79fb52ba80c8ebf4c578",
+      "size": 18808
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/sample-10.itf.json",
+      "sha256": "a9e0dd5f47ab02a0c6b1cdfe4aa35893df73be63a87672126e56d00958d0bcf2",
+      "size": 18798
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/sample-11.itf.json",
+      "sha256": "ef7f7fdcfa00ab4a0371f1004bacdad9baaeb24592497b86adcd0049c9ecbd38",
+      "size": 18959
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/sample-2.itf.json",
+      "sha256": "c2d81a9b3c553264476930a43cdde0a910eb0550a5148a3152f974f2e14a2dfc",
+      "size": 18585
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/sample-3.itf.json",
+      "sha256": "24f4240ea9af898117a3d0b0eca488681f1d731e7ccc51dea947686d44d36a8b",
+      "size": 18804
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/sample-4.itf.json",
+      "sha256": "a4748a2a54ac41a9604a4f881c0ca88c507543d2de4182e582f9d1301e0d439a",
+      "size": 18656
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/sample-5.itf.json",
+      "sha256": "8251a853753a3cd099ba814a7ed378b583ebee6f9cc34127e766e8ccbf74b5f3",
+      "size": 18779
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/sample-6.itf.json",
+      "sha256": "57565d229f7e74eb966c0a9b1e4478ee962bd57eb9376e44f44e2dbd59e1b1e2",
+      "size": 18749
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/sample-7.itf.json",
+      "sha256": "b8c312e4f113a127503cf5a7738c18a03b2fd402d643b4fc38dbb8046a31e8d3",
+      "size": 18685
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/sample-8.itf.json",
+      "sha256": "3a3e8e626a95c528a23eaac1c0e78c7367dd07227f2774accd075430d781b267",
+      "size": 18395
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check-1791223694064449230/sample-9.itf.json",
+      "sha256": "ec006f06e020150b61241137ba568e2a427da7e05006d5fef76a17fe0a6a89e7",
+      "size": 18708
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/check.py",
+      "sha256": "64ddfc2ce1af5c12405eb6a2643e05175ab24dafad50d45187347861229b744d",
+      "size": 5543
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/checks.cpp",
+      "sha256": "d9d5fe80ea0470dd43176219200ea9b3ab4d7cb49a7d19b30cdfdd5e4a9ec0fe",
+      "size": 8914
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/LICENSE",
+      "sha256": "d33481c057f582207d41425b1b3ecb740291f9f9c86b21e9a045cd3bea0f6ac8",
+      "size": 1467
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/README.md",
+      "sha256": "7f840d168653866570c8589d01eb07c964659a178d63deecbfed716e80098a33",
+      "size": 1507
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/artifacts.dat",
+      "sha256": "fe5b6fe79715147ffc845ce685b7090adedbd6de05934155779cb8f0594b1139",
+      "size": 199295
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/docs.json",
+      "sha256": "bc722e08b6ca01697a17302ae9d4ecb3ce706459025fafc444173f018432bf02",
+      "size": 30934
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/elm.json",
+      "sha256": "f50e12cb6b89a97ef18dde0c64fa92aa78469c412c19d64ca1c56931a1fbc52f",
+      "size": 693
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Browser/AnimationManager.elm",
+      "sha256": "b5eec62b6f9e2e94f5f1b573228e332784580fddc5898c732c4f5c48f4a5a854",
+      "size": 2497
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Browser/Dom.elm",
+      "sha256": "03bee2960770cea5b6ee2a208f33622432b8a1ae12e77412cf84b67a453ac2a7",
+      "size": 11815
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Browser/Events.elm",
+      "sha256": "b72f8970ee085dab3c7e5504f661e21ed6cefaea21890899d9cd32ebc7f2bd4f",
+      "size": 8706
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Browser/Navigation.elm",
+      "sha256": "329085431ef02615190706903d090364097ed3ddaf466370918af69379354706",
+      "size": 5770
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Browser.elm",
+      "sha256": "2722873214de2d381a02e037dd56f764c522c0b4ccbbfb3edccce69e0c3c32a5",
+      "size": 9064
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Debugger/Expando.elm",
+      "sha256": "c93b00af7bf99c8929db06cdfaf7c6b26b955ac576e62ee4fe2c0be6e4f01a6b",
+      "size": 15442
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Debugger/History.elm",
+      "sha256": "4ef4701403e4b960a902a12f20f5feb3ac8881850ba7a71ca6c50f363c60caa9",
+      "size": 11103
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Debugger/Main.elm",
+      "sha256": "4513896c62d0ba2f3f27bae3cf39145af8e5ccf428abde16db782ed1c7db3b6a",
+      "size": 19871
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Debugger/Metadata.elm",
+      "sha256": "733be27ac5b7651c55b62161f24c508c9a62cf69a481672f17a0c58068591cd8",
+      "size": 6980
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Debugger/Overlay.elm",
+      "sha256": "cbb5380cc49af503a462d4e1c0112fe6d46653fc34d8948243f5782591094b47",
+      "size": 14130
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Debugger/Report.elm",
+      "sha256": "2323bbd81acaaf3b6077d66fda4fd12a15b1d9c21e9571ab21f0b7c069a5d096",
+      "size": 1861
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Elm/Kernel/Browser.js",
+      "sha256": "ae20f6a08a7926cc4f19290da136a4e39d9993076db91fa85f54d7d0f244eb0d",
+      "size": 10517
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Elm/Kernel/Browser.server.js",
+      "sha256": "e5e2a7ad542e5b222ac71f989e3f29a43035b44e6fcc8a7af0341585a35c9ee5",
+      "size": 3239
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Elm/Kernel/Debugger.js",
+      "sha256": "c74f81f8684fbafeba01b90273f575b3a66fcf317c129074b1244a07845f0c97",
+      "size": 14173
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/LICENSE",
+      "sha256": "431192066654a9060d29033714fa19eb6f7749031710957c55cf8b8d8bd246c3",
+      "size": 1467
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/README.md",
+      "sha256": "194a0f3dcbd764305b73dd62679d4026bccad5f2992b0d145e38e75d9342b8d1",
+      "size": 1174
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/artifacts.dat",
+      "sha256": "aff919cb770b4106652f7f3018cc6e6007c1ffde09f1cde3f37f0b86189143bf",
+      "size": 165900
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/docs.json",
+      "sha256": "5109354b63fd32313fafe6aeafb5e13640e54f29d888cbc0bee93aa7e61a7034",
+      "size": 99846
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/elm.json",
+      "sha256": "db814e9f01c211e63d3b86e2546e924aaba8be2ee2b12299ab81456e9a268993",
+      "size": 817
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Array.elm",
+      "sha256": "1f60be42ecfeaae7dab6e5f6887c49ecdc4089e4348b6f9694e095bd0f434eac",
+      "size": 30059
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Basics.elm",
+      "sha256": "649e41513480066f951eef04931a1caea463d3b052cb4a86182c6fcd87e980f2",
+      "size": 23139
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Bitwise.elm",
+      "sha256": "0b3c9aef28504672f08209b26e24390aa65ee8a7ae97e71ba84770ff56d25978",
+      "size": 2064
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Char.elm",
+      "sha256": "90db4547054916b2e71b364e3253f50f551e03627ce7e8ae53d1fb1ae667e387",
+      "size": 5013
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Debug.elm",
+      "sha256": "1407cfff0d9882dc4b6557c7b99f8bbb6f19dbf345ae919c87daf0ca979fd4fe",
+      "size": 3122
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Dict.elm",
+      "sha256": "2afc5fcbc080b98903d9b05a98eb0efbf65265eb42ed076b2d442d9e4aca14e5",
+      "size": 16564
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/JsArray.elm",
+      "sha256": "bfa0bc6ae1b5b5786f1224b9c0eb476380e9818af53523fdda4b0c30eb60a0d2",
+      "size": 4518
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Basics.js",
+      "sha256": "30364c4d72f08888cb16a5ecdd6f04bcf66e6a7d5902ece907c9c01f1ca4d55d",
+      "size": 1635
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Bitwise.js",
+      "sha256": "41a1e83136e4a5222bd11dd372c508b33815fe45c8795fe4e8c78a5acfeb35d8",
+      "size": 473
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Char.js",
+      "sha256": "b77e57164741ab7e5e1b78cdfdeffb125c665eb748ea5d5ac62318435b7105b7",
+      "size": 840
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Debug.js",
+      "sha256": "8371e580481da98ca6ccaed2638053ffcee4bee04e2b5c8b86e2ea5c955fc462",
+      "size": 7416
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/JsArray.js",
+      "sha256": "888aa1150c7ef8b485f835de1cebc5f69056d547155e624a8aa77a18bf102dd3",
+      "size": 2677
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/List.js",
+      "sha256": "975268b3694443d66e3e68c4dac9a8bb20e6b84f324046b12222e51b64eaa687",
+      "size": 1863
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Platform.js",
+      "sha256": "569148a4e6b9371214da1e54285a6a4bfdd1cb42220886f2392a46d8f84e5863",
+      "size": 10655
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Process.js",
+      "sha256": "50554f94246d84921109584196c7c43f90775ff4256ce4df363b44f7794065da",
+      "size": 337
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Process.server.js",
+      "sha256": "823d7abb8d78ea9f88488d9b1eeb2d2b049544f05d8223862e7cef76c1c1db34",
+      "size": 131
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Scheduler.js",
+      "sha256": "bdc18efab541e63edd65173fd995e35edc0fefe182fdb46c914b56734e2dbe6a",
+      "size": 3141
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/String.js",
+      "sha256": "037260f1df8da6007eb54f9464167ce59e9332b804013127a5e036f0919e266b",
+      "size": 5126
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Utils.js",
+      "sha256": "cc6c6c94d8e8c0ba0041ab09fabf6235c2cc4ab220d54257e6c7c4ffa7876017",
+      "size": 3618
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/List.elm",
+      "sha256": "79e513a52ab45ab98f3a5ad9c87779c2cb29519c5adcf91ab3b70fb5de234f41",
+      "size": 13279
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Maybe.elm",
+      "sha256": "35aa285d930a4da6d918717209f230667ab127d357f69d6ea3dbab31e567f5aa",
+      "size": 5619
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Platform/Cmd.elm",
+      "sha256": "015c3c2469abeb1cfcf757017d4448c0e453da972fb846f93a91768488e7dfd5",
+      "size": 2248
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Platform/Sub.elm",
+      "sha256": "fdb296916f45f3ed0096959e5d727b32a05e7459ef5cc95f00e76951221499dd",
+      "size": 2404
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Platform.elm",
+      "sha256": "71d83575a51451379e81fc2712e925a5fc242286c5c971259ff1740274f7e527",
+      "size": 3059
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Process.elm",
+      "sha256": "a6af86afca70423a8ec9092c34f5b4b4247cb25dc67074864cdcab8c895d0455",
+      "size": 3664
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Result.elm",
+      "sha256": "1efa7ed54dfcfc31c35ffae770afc6b9b095e063b325d80f5e5550600ded746b",
+      "size": 6419
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Set.elm",
+      "sha256": "765ce399f1ed4c92bb47fe0af07808875a2377fdc89f951d513b6f55e5744f85",
+      "size": 4459
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/String.elm",
+      "sha256": "e7300d71211211e5e0b8b1b3bcd0d6407416a498bcfb682b26a8642fa965e4a0",
+      "size": 13527
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Task.elm",
+      "sha256": "f546ccb07a58b26fcf791ed45a6236e80e45aaed00c29cbaeced5dcd6da034fa",
+      "size": 8764
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Tuple.elm",
+      "sha256": "b970211ee185cf3184634702aa54f6ec33e2aafb8930caead713ee7929236b46",
+      "size": 2295
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/html/1.0.0/LICENSE",
+      "sha256": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad",
+      "size": 1534
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/html/1.0.0/README.md",
+      "sha256": "a2a02ab6786aea9bc3d8eb8378f02620d9b72fbb8c0e1af15bf118107c68ae46",
+      "size": 1508
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/html/1.0.0/artifacts.dat",
+      "sha256": "59605a1652ecc9c2fe612c5583c85882a2289c31304bff338f35d85302e31157",
+      "size": 75070
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/html/1.0.0/docs.json",
+      "sha256": "d4765c6dc9da2c5860277ae05caffbd97c49c300f8c26b83670c986e27ecd0aa",
+      "size": 51303
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/html/1.0.0/elm.json",
+      "sha256": "84dbb28e88ffbaf32e0e7ce11b8d14ccc97c0798b2d0945ed94668c12a0b9e25",
+      "size": 500
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/html/1.0.0/src/Html/Attributes.elm",
+      "sha256": "b4ff344168f9199de2bfee5f8e3c1441c621692ddc99a5ce7e380f3014e6d367",
+      "size": 21659
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/html/1.0.0/src/Html/Events.elm",
+      "sha256": "d633d86ecee6195d6bea6f7c8b49a5df3befecd8e9589745055dc5f30b0cef9e",
+      "size": 8544
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/html/1.0.0/src/Html/Keyed.elm",
+      "sha256": "346e9fe65945ccedc250e5d5cc739fe3505dc9be37bcb93fd311527964b55ff7",
+      "size": 1181
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/html/1.0.0/src/Html/Lazy.elm",
+      "sha256": "e6ec7de40a8c6318a055898a144e8cc56b2c9b32f7694be1bf223e98db6cd031",
+      "size": 2457
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/html/1.0.0/src/Html.elm",
+      "sha256": "2e567c415bfeb2a743b0c6fee980383b3e378785247b3e930f77aa98e1dbb4d9",
+      "size": 21330
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/json/1.1.3/LICENSE",
+      "sha256": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad",
+      "size": 1534
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/json/1.1.3/README.md",
+      "sha256": "5569c109a48d6746e5f767097b71e081a8637900ec4a44523c7e3bdc07281a67",
+      "size": 2471
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/json/1.1.3/artifacts.dat",
+      "sha256": "56975991a480f8294c3a8c2fee87b529872182aaeb49e94af4e5aaa5acb52acc",
+      "size": 27251
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/json/1.1.3/docs.json",
+      "sha256": "21863efbfc0af238b90089a03362fcc13539c7a930d8ab5438f3e7ec3a179c52",
+      "size": 22170
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/json/1.1.3/elm.json",
+      "sha256": "b6c2ce9de7bd7ed70de7a111e87c449ec3aa7819bf6c48953ce7221e776f7a3e",
+      "size": 371
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/json/1.1.3/src/Elm/Kernel/Json.js",
+      "sha256": "17d5536d6f22be1614a73837368e2a61439ebfa9dd0ff732880ee544baa41af2",
+      "size": 9592
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/json/1.1.3/src/Json/Decode.elm",
+      "sha256": "f68189c7da6b1fb23c08878296b0e55575480ac0632adfc6d7ba76f8617672ea",
+      "size": 19194
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/json/1.1.3/src/Json/Encode.elm",
+      "sha256": "9cdf3d660f182aed97117205e72388e2bb0d0ad795b4749975fa2c639b808a2a",
+      "size": 4764
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/time/1.0.0/LICENSE",
+      "sha256": "a1c31dacffb1a470cb3aaf4844904114b9bc5ebf091e113b2d46bc4953c2c2ea",
+      "size": 1534
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/time/1.0.0/README.md",
+      "sha256": "54e771f9408d791a73f7f10ff25779d64a4155b177c839d790ab4f62e5bc4556",
+      "size": 6933
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/time/1.0.0/artifacts.dat",
+      "sha256": "5da15278ba51679734decb6f74203dbd9ab547c1f4d3e2a4a13f0a2779739c3c",
+      "size": 16584
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/time/1.0.0/docs.json",
+      "sha256": "1a783589793e0258102e0951eb60edd2bf83db98c16c436cb5ae4c3bdfb2665b",
+      "size": 10008
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/time/1.0.0/elm.json",
+      "sha256": "03445516f62e4a779b7267e25f053732f57bda580b871f99a3e53a7979b2dfa4",
+      "size": 343
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/time/1.0.0/src/Elm/Kernel/Time.js",
+      "sha256": "cc59eff642bd2dc98ffde4a99ed0c682821e09a4601c083338d442b15ccd5cb1",
+      "size": 1033
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/time/1.0.0/src/Elm/Kernel/Time.server.js",
+      "sha256": "888d36edbd6d8fe5e69a3802c56f93a1341f0dcfa14e9be1ab10de3c188602c8",
+      "size": 301
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/time/1.0.0/src/Time.elm",
+      "sha256": "e4c55a925c664c25b8ffcd1510c827793d670ec159dc18af3ebd7f642ee4e638",
+      "size": 15315
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0/LICENSE",
+      "sha256": "1c818d8c5f129ee90e6a855c9edd16d9c6bd25e2959b1aeaeb8626e7c539cc9b",
+      "size": 1490
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0/README.md",
+      "sha256": "4e9c1ebc4cd9b938005e62762da092ea9882fca23700b4e271f67ec10e21b496",
+      "size": 2614
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0/artifacts.dat",
+      "sha256": "c0afb9601eb78a98cd9c2bbc94ec068a48c66d32591ef0f8a714abba23b873b8",
+      "size": 32898
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0/docs.json",
+      "sha256": "58d93cd2643a77f2499078ab935e3f082620bd4636f992b74b97a1b283556db6",
+      "size": 26378
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0/elm.json",
+      "sha256": "b2c089bbe199a8431fd53635a55fdc10e7ee4bb4a993064688f74812dc94dc5e",
+      "size": 467
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0/src/Elm/Kernel/Url.js",
+      "sha256": "56250d3bec1cbc6c8974514ea56040043b237b058cb8cdad54a8b32e33676922",
+      "size": 268
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0/src/Url/Builder.elm",
+      "sha256": "e4922467375bcedd187bbd811b5dfd49b7f9b6a08063b7ef411f2ad0aa6e8dad",
+      "size": 5543
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0/src/Url/Parser/Internal.elm",
+      "sha256": "91cec106bc5eb47ae5b1ff86ac1589989785080805bc4e38dd187ec22dbbfc26",
+      "size": 144
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0/src/Url/Parser/Query.elm",
+      "sha256": "2b14aab77b663bef2b9434fccc3ca6c102990b9cf87dea650ae8341a9325bf4e",
+      "size": 7271
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0/src/Url/Parser.elm",
+      "sha256": "0a42ac79944c28778c0e32510cd089e7d80e6d202937238f829d4de2d942d028",
+      "size": 11658
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0/src/Url.elm",
+      "sha256": "c1dad01869f5a4fe29406b3409508ec4754bf8125cc01ef5106b2e369c5c647c",
+      "size": 8045
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/virtual-dom/1.0.3/LICENSE",
+      "sha256": "c63bca41c3a19de3b16ede979ca1dfeb2ce0db93a62f4555dbb61ae3ee777425",
+      "size": 1534
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/virtual-dom/1.0.3/README.md",
+      "sha256": "bcfb2f4a8f0f49c7e7b65fe1ee5371fdb438ce3decfd3256d2e65d08a85d567b",
+      "size": 395
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/virtual-dom/1.0.3/artifacts.dat",
+      "sha256": "d0d597d90653335aca5f8570077acaf0ff130692534be607318690344f0ce1a7",
+      "size": 42924
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/virtual-dom/1.0.3/docs.json",
+      "sha256": "76a43b5769c6d68ecfc8f1a87b60bd2dd3e7586f78b7a846c3ed83708b1ff2ba",
+      "size": 11111
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/virtual-dom/1.0.3/elm.json",
+      "sha256": "f00299c02b546533702cacd34ed0eef09bf2bbba138585bb86a79e6b0fd11a83",
+      "size": 433
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/virtual-dom/1.0.3/src/Elm/Kernel/VirtualDom.js",
+      "sha256": "9246c8591d9b511468e8257b60c8495020164a5fd58f21d523722775292095db",
+      "size": 32836
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/virtual-dom/1.0.3/src/Elm/Kernel/VirtualDom.server.js",
+      "sha256": "68c145d1f3ae40618e023b4109edc3f474f12c83af9ad5a3cfa2232f7cfd0bd9",
+      "size": 3251
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/elm/virtual-dom/1.0.3/src/VirtualDom.elm",
+      "sha256": "85f06afbc5f418f69c424ecc9b61969cc460444f97987054fb14d2a944d3bba8",
+      "size": 11520
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/lock",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/elm-home/0.19.2/packages/registry.dat",
+      "sha256": "dca90142c0f0936665c1ca208996cd18fdfc4d3524f3687a7609fd918414c42d",
+      "size": 148343
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/npm-package/node_modules/.package-lock.json",
+      "sha256": "0378d3369db72f70e9c3e6bfb78bf1d42680f23e6a812beebcab961ca7659c4a",
+      "size": 1226
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/README.md",
+      "sha256": "f30a5769af4ec6c2a46db6709ec0f370d24b0ae0abf5a69d5f17f3b65c10b2c3",
+      "size": 409
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/elm",
+      "sha256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+      "size": 47976272
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/package.json",
+      "sha256": "3781fc4d4589f36037bece84c62b8ea05c7fc751b35c2b1b52cd4fa71e15302d",
+      "size": 302
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/npm-package/node_modules/elm/README.md",
+      "sha256": "3c75f66d0f37d00286b08fb971f93a4db772091ac3018c2fdd18bea900960a19",
+      "size": 2048
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/npm-package/node_modules/elm/bin/elm",
+      "sha256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+      "size": 47976272
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/npm-package/node_modules/elm/binary.js",
+      "sha256": "43e17364dd32cf7a3a8613cdd38e909604f9037b8bb43d54071ab0bf9b637e62",
+      "size": 3619
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/npm-package/node_modules/elm/install.js",
+      "sha256": "2ca03540f6b59935137e4eb2dd3f2d6374aa064f0d6f49f7421feb7b3534ac5d",
+      "size": 26
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/npm-package/node_modules/elm/package.json",
+      "sha256": "40261a256c19b122c95d519f1796e7d3d3b9ace02fa86fea040ec06dabf45600",
+      "size": 1067
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/npm-package/package-lock.json",
+      "sha256": "a2a339e6df901717a4fd0a4d88e1430e22d35bbe1641d339d5e4c477c93f22f0",
+      "size": 3046
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain/npm-package/package.json",
+      "sha256": "6ccd78bed686ecff3759eb9b7d134f9f2d3a456fd2bdcd3db1bf13251f5ef2d0",
+      "size": 113
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain.json",
+      "sha256": "fe3d29078d30c6cf9bd431233c5eed1ad4550e2873ff55739d50a5a87a97edaa",
+      "size": 42770
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/qa/toolchain.py",
+      "sha256": "284b407e018531a8adee6bd40694ae02dbb19ba964ddb8c5f848bf4355c5749c",
+      "size": 1123
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/spec/demand.qnt",
+      "sha256": "a43b820819e160a0a57656916ec99faa0939c7d7541ca5efbf83223bd9ab5336",
+      "size": 1510
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/spec/tests.qnt",
+      "sha256": "5e9a8f45cc16df53a15a7614a044d6a617b05b1d97acee63ea75bb3059ce3560",
+      "size": 2131
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/ActionProjection.elm",
+      "sha256": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996",
+      "size": 3989
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/Bar.elm",
+      "sha256": "a10abbe7d0542c642552d90cfa459b353a3843391ce47e06ba94b91afb0b6113",
+      "size": 981
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/BatchReplay.elm",
+      "sha256": "6300d3c2e617de14b2fd70a40606ea8c94db435a93f0ae30bd19765f5cdce852",
+      "size": 8901
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/Binding.elm",
+      "sha256": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+      "size": 1480
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/CapturedAction.elm",
+      "sha256": "a3e22c7dd5643a1c0424ea1ae09e134bc8b19567de980e57095e08273604fb66",
+      "size": 2172
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/Catalog.elm",
+      "sha256": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+      "size": 2701
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/CatalogReplay.elm",
+      "sha256": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+      "size": 1300
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/Desktop.elm",
+      "sha256": "dd0f778c70bb0e53fb4f7d344f7995fd5bbce75a9002bace15b5d70ae1428df0",
+      "size": 22302
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/DesktopReplay.elm",
+      "sha256": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+      "size": 3077
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/Effects.elm",
+      "sha256": "c41a0732a640ca7727506193c654fd6e9c996e3b9e136ca58e911961233e9e4b",
+      "size": 16479
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/GeometryProjection.elm",
+      "sha256": "4aee2448599d3b94d3dd4762aa8d0c223b77e9d1a61898e70d6870151194d1d9",
+      "size": 10573
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/GeometrySizePolicy.elm",
+      "sha256": "46dda2de43642cd33997382e90813c8eeccde80745d79b7d5cd5fd425b062c43",
+      "size": 6205
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/Inspection.elm",
+      "sha256": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+      "size": 3570
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/Launch.elm",
+      "sha256": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6",
+      "size": 8353
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/LaunchReplay.elm",
+      "sha256": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+      "size": 4031
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/Main.elm",
+      "sha256": "2e9c042c5b2b068dbe582680ed37e6fa766b636d6d1a422297f843d135fb5405",
+      "size": 2976
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/Menu.elm",
+      "sha256": "c40fcfa24bf9d48044ccbe2c08df0abb7d8b94ee04111776234ecd88792ff4f0",
+      "size": 18993
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/MenuBridge.elm",
+      "sha256": "c8b83efc426e83d5b1ebde79aaa78b44e9c0150849d68d77477793c0e344ebe2",
+      "size": 26793
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/MenuSurfaceReplay.elm",
+      "sha256": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39",
+      "size": 5461
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/NativeOutcome.elm",
+      "sha256": "fc9e824d315e0316b850fd36760c9f4ab4239eb97d1c4b3cc752144b70f98d89",
+      "size": 2645
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/NativeProvider.elm",
+      "sha256": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+      "size": 5100
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/OutputController.elm",
+      "sha256": "edc3e8d07788b6ae3eeae48b00b289fd69b55d358dc2860944dd83cf0f876bb9",
+      "size": 21757
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/OutputReplay.elm",
+      "sha256": "44f156b65f816400b75d928371fe5bdba675545eba805fee4793422d5b3f73ff",
+      "size": 2289
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/OutputSurfaceReplay.elm",
+      "sha256": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26",
+      "size": 3244
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/Popup.elm",
+      "sha256": "f202fd191161fdb0fe66b185d8218bd9a2473f7a0c3f2469fb85bb050d14a482",
+      "size": 1834
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/Presentation.elm",
+      "sha256": "e65c93507188186328c597d8b15e171fbb626ca89835f0f90476ad5aa5c4c48d",
+      "size": 1495
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/PresentationReplay.elm",
+      "sha256": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+      "size": 1234
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/PreviewIdentity.elm",
+      "sha256": "262240e59eed37d362f921a4e7e89d0bb23c8b0f84fb39f0fddc29faaa3de3b5",
+      "size": 1586
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/PreviewLifecycle.elm",
+      "sha256": "4b3fa3a2d6810c52073f3b53819e6f4b5a1842fc67e63c966fdb46a5ce8a9583",
+      "size": 25670
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/PreviewPresenter.elm",
+      "sha256": "bfeed911c88b2c1174c2942a7b68f51a6885409be0392d7610a5f3c3c0b89606",
+      "size": 7920
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/PreviewPresenterReplay.elm",
+      "sha256": "0eb03b99d5d5470936b51ea77de9b102b9742284020d01c469110388efdbc06e",
+      "size": 1302
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/Provider.elm",
+      "sha256": "328d8fd6349eb4151fe448081e8a418f98e7d31bbe467e4cd60d12ed23ae71d0",
+      "size": 17531
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/ReceiptRouter.elm",
+      "sha256": "ffcf85cf38de5665b35b3e2b6eb5a9f261360ec4b226b2fcefc0723cece1a011",
+      "size": 10743
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/ReconciliationFrame.elm",
+      "sha256": "b72ccb317751848506841c020f83c68e3d93eba3b6fb1c1a9b3d84283fec6676",
+      "size": 7675
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/ReconciliationTracking.elm",
+      "sha256": "84482d1bb84160e3bd9e026b2043635c35b76422d6e9066f703411f784b29bf9",
+      "size": 7152
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/Replay.elm",
+      "sha256": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+      "size": 1001
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/SharedRecoveryReplay.elm",
+      "sha256": "f44d52432e1c6c876207c273d8a013fd446b186b85a23d7bf5474943ef26ff8b",
+      "size": 3457
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/Shell.elm",
+      "sha256": "06867a8be89fa184ccf3da55724cc5245dec9ab6fa82c6edfd663f5296c99f9f",
+      "size": 31167
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/ShellReplay.elm",
+      "sha256": "be85fbef5dda8dd07093b578c4be204d8d92772147e1ffacf80368216b5ba8ca",
+      "size": 2054
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/Surface.elm",
+      "sha256": "64cd1e4c25caf057071d8478729598dcb4fb0547340303ca0590ed9c0edfb613",
+      "size": 16121
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/SurfaceController.elm",
+      "sha256": "41874fca4f1df7f5b8dfe2ccb9f08ac710c7134670a6b55d8aaa3b7442ae8fef",
+      "size": 13166
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/SurfaceRenderer.elm",
+      "sha256": "981991412bd57a6709bd6240e9b893c57779105f601bb6bc81594232ce98dab9",
+      "size": 5904
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/SurfaceReplay.elm",
+      "sha256": "476f94f33d9225035a479bd8ae8eb755ae8ac914c29ca533f62913fb378a603a",
+      "size": 2781
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/Taskbar.elm",
+      "sha256": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb",
+      "size": 2564
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/TaskbarReplay.elm",
+      "sha256": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+      "size": 1658
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/TaskbarShell.elm",
+      "sha256": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+      "size": 6429
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/TaskbarShellReplay.elm",
+      "sha256": "72ca534bb5adc6d0a02fd68ff9f287cb1815fcb0f68313ce7d0b3033d4ebf130",
+      "size": 2239
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/UInt64.elm",
+      "sha256": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+      "size": 1459
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v1/src/UnsentOperation.elm",
+      "sha256": "46e315cc739e097805af3c9358f9ca27a807ef1119c733aa296687342c8238ea",
+      "size": 1426
+    }
+  ],
+  "nextWork": "Own trusted native host child grant/bootstrap, strict observed scope and Elm requested-job/retained receipt conversion; actual capture/FD/render/fence/drain and original native gates."
+}

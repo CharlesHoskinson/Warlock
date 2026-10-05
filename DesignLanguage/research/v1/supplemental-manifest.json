@@ -1,0 +1,334 @@
+{
+  "schema": 1,
+  "purpose": "Complete source/styles/bridge and brand provenance missing from initial packet. Original research inputs remain byte-identical.",
+  "files": {
+    "implementation/warlock-preview-provider-v1/src/Effects.elm": {
+      "sha256": "c41a0732a640ca7727506193c654fd6e9c996e3b9e136ca58e911961233e9e4b",
+      "bytes": 16479
+    },
+    "implementation/warlock-preview-provider-v1/src/UInt64.elm": {
+      "sha256": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+      "bytes": 1459
+    },
+    "implementation/warlock-preview-provider-v1/src/ActionProjection.elm": {
+      "sha256": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996",
+      "bytes": 3989
+    },
+    "implementation/warlock-preview-provider-v1/src/Replay.elm": {
+      "sha256": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+      "bytes": 1001
+    },
+    "implementation/warlock-preview-provider-v1/src/Binding.elm": {
+      "sha256": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+      "bytes": 1480
+    },
+    "implementation/warlock-preview-provider-v1/src/Shell.elm": {
+      "sha256": "06867a8be89fa184ccf3da55724cc5245dec9ab6fa82c6edfd663f5296c99f9f",
+      "bytes": 31167
+    },
+    "implementation/warlock-preview-provider-v1/src/ShellReplay.elm": {
+      "sha256": "be85fbef5dda8dd07093b578c4be204d8d92772147e1ffacf80368216b5ba8ca",
+      "bytes": 2054
+    },
+    "implementation/warlock-preview-provider-v1/src/Taskbar.elm": {
+      "sha256": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb",
+      "bytes": 2564
+    },
+    "implementation/warlock-preview-provider-v1/src/TaskbarReplay.elm": {
+      "sha256": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+      "bytes": 1658
+    },
+    "implementation/warlock-preview-provider-v1/src/TaskbarShell.elm": {
+      "sha256": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+      "bytes": 6429
+    },
+    "implementation/warlock-preview-provider-v1/src/TaskbarShellReplay.elm": {
+      "sha256": "72ca534bb5adc6d0a02fd68ff9f287cb1815fcb0f68313ce7d0b3033d4ebf130",
+      "bytes": 2239
+    },
+    "implementation/warlock-preview-provider-v1/src/Catalog.elm": {
+      "sha256": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+      "bytes": 2701
+    },
+    "implementation/warlock-preview-provider-v1/src/Launch.elm": {
+      "sha256": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6",
+      "bytes": 8353
+    },
+    "implementation/warlock-preview-provider-v1/src/LaunchReplay.elm": {
+      "sha256": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+      "bytes": 4031
+    },
+    "implementation/warlock-preview-provider-v1/src/CatalogReplay.elm": {
+      "sha256": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+      "bytes": 1300
+    },
+    "implementation/warlock-preview-provider-v1/src/Desktop.elm": {
+      "sha256": "dd0f778c70bb0e53fb4f7d344f7995fd5bbce75a9002bace15b5d70ae1428df0",
+      "bytes": 22302
+    },
+    "implementation/warlock-preview-provider-v1/src/DesktopReplay.elm": {
+      "sha256": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+      "bytes": 3077
+    },
+    "implementation/warlock-preview-provider-v1/src/Surface.elm": {
+      "sha256": "64cd1e4c25caf057071d8478729598dcb4fb0547340303ca0590ed9c0edfb613",
+      "bytes": 16121
+    },
+    "implementation/warlock-preview-provider-v1/src/SurfaceController.elm": {
+      "sha256": "41874fca4f1df7f5b8dfe2ccb9f08ac710c7134670a6b55d8aaa3b7442ae8fef",
+      "bytes": 13166
+    },
+    "implementation/warlock-preview-provider-v1/src/SurfaceRenderer.elm": {
+      "sha256": "981991412bd57a6709bd6240e9b893c57779105f601bb6bc81594232ce98dab9",
+      "bytes": 5904
+    },
+    "implementation/warlock-preview-provider-v1/src/Popup.elm": {
+      "sha256": "f202fd191161fdb0fe66b185d8218bd9a2473f7a0c3f2469fb85bb050d14a482",
+      "bytes": 1834
+    },
+    "implementation/warlock-preview-provider-v1/src/SurfaceReplay.elm": {
+      "sha256": "476f94f33d9225035a479bd8ae8eb755ae8ac914c29ca533f62913fb378a603a",
+      "bytes": 2781
+    },
+    "implementation/warlock-preview-provider-v1/src/Presentation.elm": {
+      "sha256": "e65c93507188186328c597d8b15e171fbb626ca89835f0f90476ad5aa5c4c48d",
+      "bytes": 1495
+    },
+    "implementation/warlock-preview-provider-v1/src/PresentationReplay.elm": {
+      "sha256": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+      "bytes": 1234
+    },
+    "implementation/warlock-preview-provider-v1/src/Main.elm": {
+      "sha256": "2e9c042c5b2b068dbe582680ed37e6fa766b636d6d1a422297f843d135fb5405",
+      "bytes": 2976
+    },
+    "implementation/warlock-preview-provider-v1/src/Inspection.elm": {
+      "sha256": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+      "bytes": 3570
+    },
+    "implementation/warlock-preview-provider-v1/src/OutputController.elm": {
+      "sha256": "edc3e8d07788b6ae3eeae48b00b289fd69b55d358dc2860944dd83cf0f876bb9",
+      "bytes": 21757
+    },
+    "implementation/warlock-preview-provider-v1/src/OutputReplay.elm": {
+      "sha256": "44f156b65f816400b75d928371fe5bdba675545eba805fee4793422d5b3f73ff",
+      "bytes": 2289
+    },
+    "implementation/warlock-preview-provider-v1/src/Bar.elm": {
+      "sha256": "a10abbe7d0542c642552d90cfa459b353a3843391ce47e06ba94b91afb0b6113",
+      "bytes": 981
+    },
+    "implementation/warlock-preview-provider-v1/src/GeometryProjection.elm": {
+      "sha256": "4aee2448599d3b94d3dd4762aa8d0c223b77e9d1a61898e70d6870151194d1d9",
+      "bytes": 10573
+    },
+    "implementation/warlock-preview-provider-v1/src/NativeOutcome.elm": {
+      "sha256": "fc9e824d315e0316b850fd36760c9f4ab4239eb97d1c4b3cc752144b70f98d89",
+      "bytes": 2645
+    },
+    "implementation/warlock-preview-provider-v1/src/SharedRecoveryReplay.elm": {
+      "sha256": "f44d52432e1c6c876207c273d8a013fd446b186b85a23d7bf5474943ef26ff8b",
+      "bytes": 3457
+    },
+    "implementation/warlock-preview-provider-v1/src/Menu.elm": {
+      "sha256": "c40fcfa24bf9d48044ccbe2c08df0abb7d8b94ee04111776234ecd88792ff4f0",
+      "bytes": 18993
+    },
+    "implementation/warlock-preview-provider-v1/src/Provider.elm": {
+      "sha256": "328d8fd6349eb4151fe448081e8a418f98e7d31bbe467e4cd60d12ed23ae71d0",
+      "bytes": 17531
+    },
+    "implementation/warlock-preview-provider-v1/src/ReceiptRouter.elm": {
+      "sha256": "ffcf85cf38de5665b35b3e2b6eb5a9f261360ec4b226b2fcefc0723cece1a011",
+      "bytes": 10743
+    },
+    "implementation/warlock-preview-provider-v1/src/MenuBridge.elm": {
+      "sha256": "c8b83efc426e83d5b1ebde79aaa78b44e9c0150849d68d77477793c0e344ebe2",
+      "bytes": 26793
+    },
+    "implementation/warlock-preview-provider-v1/src/NativeProvider.elm": {
+      "sha256": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+      "bytes": 5100
+    },
+    "implementation/warlock-preview-provider-v1/src/MenuSurfaceReplay.elm": {
+      "sha256": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39",
+      "bytes": 5461
+    },
+    "implementation/warlock-preview-provider-v1/src/OutputSurfaceReplay.elm": {
+      "sha256": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26",
+      "bytes": 3244
+    },
+    "implementation/warlock-preview-provider-v1/src/BatchReplay.elm": {
+      "sha256": "6300d3c2e617de14b2fd70a40606ea8c94db435a93f0ae30bd19765f5cdce852",
+      "bytes": 8901
+    },
+    "implementation/warlock-preview-provider-v1/src/UnsentOperation.elm": {
+      "sha256": "46e315cc739e097805af3c9358f9ca27a807ef1119c733aa296687342c8238ea",
+      "bytes": 1426
+    },
+    "implementation/warlock-preview-provider-v1/src/GeometrySizePolicy.elm": {
+      "sha256": "46dda2de43642cd33997382e90813c8eeccde80745d79b7d5cd5fd425b062c43",
+      "bytes": 6205
+    },
+    "implementation/warlock-preview-provider-v1/src/ReconciliationFrame.elm": {
+      "sha256": "b72ccb317751848506841c020f83c68e3d93eba3b6fb1c1a9b3d84283fec6676",
+      "bytes": 7675
+    },
+    "implementation/warlock-preview-provider-v1/src/ReconciliationTracking.elm": {
+      "sha256": "84482d1bb84160e3bd9e026b2043635c35b76422d6e9066f703411f784b29bf9",
+      "bytes": 7152
+    },
+    "implementation/warlock-preview-provider-v1/src/CapturedAction.elm": {
+      "sha256": "a3e22c7dd5643a1c0424ea1ae09e134bc8b19567de980e57095e08273604fb66",
+      "bytes": 2172
+    },
+    "implementation/warlock-preview-provider-v1/src/PreviewLifecycle.elm": {
+      "sha256": "4b3fa3a2d6810c52073f3b53819e6f4b5a1842fc67e63c966fdb46a5ce8a9583",
+      "bytes": 25670
+    },
+    "implementation/warlock-preview-provider-v1/src/PreviewIdentity.elm": {
+      "sha256": "262240e59eed37d362f921a4e7e89d0bb23c8b0f84fb39f0fddc29faaa3de3b5",
+      "bytes": 1586
+    },
+    "implementation/warlock-preview-provider-v1/src/PreviewPresenter.elm": {
+      "sha256": "bfeed911c88b2c1174c2942a7b68f51a6885409be0392d7610a5f3c3c0b89606",
+      "bytes": 7920
+    },
+    "implementation/warlock-preview-provider-v1/src/PreviewPresenterReplay.elm": {
+      "sha256": "0eb03b99d5d5470936b51ea77de9b102b9742284020d01c469110388efdbc06e",
+      "bytes": 1302
+    },
+    "implementation/warlock-preview-provider-v1/assets/index.html": {
+      "sha256": "ba09087a0dda2fbc4a912d2d5d8f8adb90ae553a8027963fdb6b74a7afaa5d1b",
+      "bytes": 281
+    },
+    "implementation/warlock-preview-provider-v1/assets/shell.css": {
+      "sha256": "54eb33bbe517607739e268fbb47fd5c271c638297da5653632160d15c59a85b2",
+      "bytes": 1885
+    },
+    "implementation/warlock-preview-provider-v1/assets/adapter.js": {
+      "sha256": "4569cbf9bcfdcca94f639fd913a6301b858420213adecb723dd591fab4ac98e8",
+      "bytes": 2101
+    },
+    "implementation/warlock-preview-provider-v1/assets/popup-adapter.js": {
+      "sha256": "0fdb1344a28fc32a669feb236d845b57eb466d92de6ab5abd8c909f8f6448c52",
+      "bytes": 2572
+    },
+    "implementation/warlock-preview-provider-v1/assets/popup.html": {
+      "sha256": "d46ef44459900ad2ecada10fb5087bc875e884344accaa15be580c9904ec5119",
+      "bytes": 362
+    },
+    "implementation/warlock-preview-provider-v1/assets/bar.html": {
+      "sha256": "7f6e501f62ec06aeb132fdf9a32042e8fca65554be7043a0adbcb8627b5a920e",
+      "bytes": 356
+    },
+    "implementation/warlock-preview-provider-v1/assets/bar-adapter.js": {
+      "sha256": "afd3480afb5427346620d31cf439b17cc27dc43d1102b2c7132781bec8369ae1",
+      "bytes": 2341
+    },
+    "implementation/warlock-preview-provider-v1/assets/context.js": {
+      "sha256": "84f9f4eb3291783c66ebd6bbff34e10e0cff3711c251ea68eae8f315be389ad2",
+      "bytes": 4615
+    },
+    "implementation/warlock-preview-provider-v1/assets/activation.js": {
+      "sha256": "74990d2530314753f64dc30119682e7bb9cddb14e679c79b5427ef79c8fa48e6",
+      "bytes": 7849
+    },
+    "implementation/warlock-preview-provider-v1/native/shared-host.c": {
+      "sha256": "818a14984fb554cebd064cc4a13ed0e79cf03d37cf0f0cd3af5258e6451385a2",
+      "bytes": 45470
+    },
+    "implementation/warlock-preview-provider-v1/native/host.c": {
+      "sha256": "0f01aef906d28b359791eae8401a00b0b9c47bb4ca7823da212821166e75a6f9",
+      "bytes": 64831
+    },
+    "implementation/warlock-preview-provider-v1/native/shared-context.h": {
+      "sha256": "e86f3ba7a4c76d7839ef8d67d14c7f9ea6b514afa2ac110fc7cebf2da2fd62ce",
+      "bytes": 22281
+    },
+    "implementation/warlock-preview-provider-v1/native/context-keys.h": {
+      "sha256": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+      "bytes": 2623
+    },
+    "implementation/warlock-preview-provider-v1/native/preview-integration.h": {
+      "sha256": "c70b5a1cf7ca5b0f510cf26bee012ca2f0597d5c916251a924bc4412ce9f4ff3",
+      "bytes": 646
+    },
+    "docs/warlock-brand/v1/tokens.json": {
+      "sha256": "867798998ee747bb992b69291f106fb5a886e49b122ae5c014f8c02f34a2d37e",
+      "bytes": 1257
+    },
+    "docs/warlock-brand/v1/tokens.css": {
+      "sha256": "c853f203026c1d4b1f60dc014b1d777da53d0f57db9fef703ff7d83e33478b84",
+      "bytes": 855
+    },
+    "docs/warlock-brand/v1/build_identity.py": {
+      "sha256": "b848f6dac1b72563f7dfabbf76522b48d4eebd4322bc7b52e21846371ebd967b",
+      "bytes": 3337
+    },
+    "docs/warlock-brand/v1/BRAND-GUIDE.md": {
+      "sha256": "a4802a89df172c2a3ed618868542b20eb1e5ab4fb52046d4d23c2fd833e61d11",
+      "bytes": 4809
+    },
+    "docs/warlock-brand/v1/index.html": {
+      "sha256": "763fd6486a2c6502c3b566ddacaf6a52002e2e48b3083c9941240f2f1413de37",
+      "bytes": 5956
+    },
+    "docs/warlock-brand/v1/preview.css": {
+      "sha256": "6c20e2ca63161f287fee50d1e72b3316bc31f554d6a42e8a38a71b8f94498f0d",
+      "bytes": 6523
+    },
+    "docs/warlock-brand/v1/preview.js": {
+      "sha256": "5ae206e6c99ad142899e5dc59352c36eaa1ce71f1c3bea1e95a15477492bb1be",
+      "bytes": 2470
+    },
+    "docs/warlock-brand/v1/asset-manifest.json": {
+      "sha256": "88c7b245e7efe4defc07f8ad86b843c68f2cb2ecb91407f72d1e508a9d071589",
+      "bytes": 1824
+    },
+    "docs/warlock-brand/v1/preview.py": {
+      "sha256": "291d8fa35e9e3b8d9d7e33bc47beec6e4a87379ea0049af65c83ed50a430073b",
+      "bytes": 678
+    },
+    "docs/warlock-brand/v1/prompts/01-brand-board.txt": {
+      "sha256": "c54c28ba0a0a13cef0502b8ab86afa729655f8ef5f3ca9ebddd86d718c0d06ac",
+      "bytes": 2280
+    },
+    "docs/warlock-brand/v1/prompts/02-mark-transparent.txt": {
+      "sha256": "24de95d10e5d4d92f326eab4050696316672374de92c1d542109d9e4f1d5685e",
+      "bytes": 1256
+    },
+    "docs/warlock-brand/v1/prompts/03-wallpaper.txt": {
+      "sha256": "243c4793cf49f4f6ce6c22aa40baf61e18fcf979707aadc6a83ccbd1d386fd64",
+      "bytes": 1366
+    },
+    "docs/warlock-brand/v1/identity/warlock-mark.svg": {
+      "sha256": "457e541a3c93a6dac8e1ac16baee9c93cec4c63d803dc5d6945768cd7d8ac5dd",
+      "bytes": 839
+    },
+    "docs/warlock-brand/v1/identity/warlock-mark-mono.svg": {
+      "sha256": "880eeaba695d27feda6d80e3c487195288c476aa0da22a011a2ebc83666fa7fd",
+      "bytes": 899
+    },
+    "docs/warlock-brand/v1/identity/warlock-app-icon.svg": {
+      "sha256": "493dea441cbd757591a39779dd10709167fa17a731e03a251ec45b014bcd2928",
+      "bytes": 916
+    },
+    "docs/warlock-brand/v1/fonts/space-grotesk-OFL.txt": {
+      "sha256": "564ce565c371c5e5bbf286006565a7c9aa55a9f56e7ca58d56e05d649dd61a72",
+      "bytes": 4495
+    },
+    "docs/warlock-brand/v1/fonts/inter-LICENSE.txt": {
+      "sha256": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a",
+      "bytes": 4380
+    },
+    "docs/warlock-brand/v1/fonts/jetbrains-mono-OFL.txt": {
+      "sha256": "a76abf002c49097d146e86740a3105a5d00450b1592e820a1109a8c5680cd697",
+      "bytes": 4399
+    },
+    "docs/warlock-brand/v1/fonts/provenance.json": {
+      "sha256": "f900a2c1d9e728dda1c305e7d8cebd9d7730eb4ac25f098c70734f389a37284c",
+      "bytes": 2270
+    }
+  }
+}
