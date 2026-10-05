@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "passed": true,
+  "components": [
+    {
+      "path": "implementation/warlock-source-presenter-model-v3/component-manifest.json",
+      "sha256": "ca197a2276a18b90472fef7f03f6cb37a0833969ea1bd29c47714cd3df5569e0",
+      "files": 126
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v6/component-manifest.json",
+      "sha256": "5612cc51ec8f81b1a91e432b0be9ef5c4be85a99174c6a4f40470c0007770707",
+      "files": 180
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v16/component-manifest.json",
+      "sha256": "adc3fe97313573991d868ef049fdcd6003c8330d850e9d0bfcb6c299900b7c1e",
+      "files": 485
+    }
+  ],
+  "evidence": {
+    "implementation/warlock-preview-provider-v16/qa/build-1791242212679054777/report.json": "69fa6ca4f2e532f45e96dee4330522f23f12edbd000bdd282dbc33f943f23b40",
+    "implementation/warlock-client-provider-native-v6/qa/native-1791242591387161664/report.json": "d26fcceac259db64b65c802885831d4805f24e1c9dc3e4f8f5cfa71d36015d79",
+    "implementation/warlock-source-presenter-model-v3/qa/check-1791242572841304213/report.json": "6f51e57a9fc5b70f5e6ae6389ccca0923c7818ff654ef4402c7aef87c75c82c1"
+  },
+  "boundedNativeChangedContentQualified": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "next": "Typed correlated native scope-denial path and held physical cleanup retry for source loss/session lock; retain original job/expiry and unknown settlement"
+}
