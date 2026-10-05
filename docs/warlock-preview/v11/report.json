@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "passed": true,
+  "components": [
+    {
+      "path": "implementation/warlock-client-source-decoder-checks-v1/component-manifest.json",
+      "sha256": "d1bdea518b164ce44dac66fb73f3b8c2a8387d19ceb82a73ac8c8109433a08a0",
+      "files": 9
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v1/component-manifest.json",
+      "sha256": "17219ea643f9d86e1235044f7a409e2c9d8a1c174a7bd726c5818a1fbea3f46d",
+      "files": 169
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v7/component-manifest.json",
+      "sha256": "c4409c22c1b4779d549f27e90a7ee22c689e50caf217ebc3162e6ecad883d6a4",
+      "files": 938
+    }
+  ],
+  "evidence": {
+    "implementation/warlock-preview-provider-v7/qa/build-1791238777317896722/report.json": "7cb80be3998df0a61b89a451582055e28d9b35a63caa5ed4ec2bac924f858642",
+    "implementation/warlock-preview-provider-v7/qa/check-1791238975118220172/report.json": "3f26e768e2863f03b5e3aa4ed3505f60b58e6ae39ec723e02cbd8a8ebf0f997a",
+    "implementation/warlock-client-provider-native-v1/qa/native-1791239211683329896/report.json": "879487a3c53260d284a575704073beb6af6421519c84db7c41fc863e54e5d7de",
+    "implementation/warlock-client-source-decoder-checks-v1/qa/check-1791239361778821135/report.json": "165cca9014bcb1dfd0e675d6e1ed81c929488154733261cb2e23f5b45d2a50a3"
+  },
+  "scope": "Compiled full provider primitives and private native/GIO client frame with typed source boundary; full WebKit/production/release remains open",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

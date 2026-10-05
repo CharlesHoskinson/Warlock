@@ -1,0 +1,100 @@
+PASS Valid repeated member names in distinct objects and escaped literal preserved
+PASS Duplicate JSON refused
+PASS Lossless own process binding through actual socket, prefix and half-close
+PASS Typed enrollment retains verified owner, executable and admitted metadata
+PASS Typed actual-socket scope preserves lossless counters and ineligible source
+PASS Native scope requests retain monotonically increasing correlation
+PASS Client scope uses same own grant and explicit ineligible source type
+PASS Zero subject fails before native transport
+PASS Inherited grant rejected in child process
+PASS Provider grant separate from backend process grant
+PASS Wrong process start refused
+PASS Wrong executable hash refused
+PASS Different actual socket peer refused
+PASS Outgoing request bounded before transport
+PASS Actual C bootstrap owns native grant
+PASS C bootstrap returns owned binding
+PASS C bootstrap has fresh own process frontend epoch
+PASS Actual C typed enrollment serializes admitted native facts
+PASS C enrollment preserves provider owner and distinguishes core hash from plugin attestation
+PASS Actual C scope fetch succeeds
+PASS C scope never upgrades unqualified pixels and preserves uint64 subject
+PASS Actual C client scope fetch succeeds
+PASS C client observation remains separate from monitor and ineligible
+PASS C typed enrollment rejects inherited foreign process
+PASS C delivery refuses unenrolled native popup
+PASS C bootstrap attaches actual Broker journal delivery
+PASS C delivery enrollment cannot be replaced
+PASS C delivery cannot invent proof for active capture
+PASS C delivery leaves actual terminal journal retained
+PASS C wrong family acknowledgement refused
+PASS C exact final acknowledgement reclaims physical Broker journal
+PASS Public enrollment file refused
+PASS Symlink enrollment file refused
+PASS Multiply linked enrollment file refused
+PASS Duplicate config field refused
+PASS Nonprivate runtime refused
+PASS Symlink directory ancestor refused
+PASS Parent directory component refused
+PASS Noncanonical instance refused
+PASS version
+PASS bool-version
+PASS float-version
+PASS duplicate
+PASS escaped-duplicate
+PASS nested-duplicate
+PASS nul
+PASS zero
+PASS leading-zero
+PASS overflow
+PASS numeric-counter
+PASS wrong-pid
+PASS float-pid
+PASS wrong-instance
+PASS extra
+PASS wrong-caps
+PASS wrong-operations
+PASS bad-fd
+PASS oversized
+PASS raw-nul
+PASS replace-socket
+PASS replace-directory
+PASS Dripping reply cannot restart original absolute three-second deadline
+PASS scope-kind
+PASS scope-request
+PASS scope-binding
+PASS scope-inner-binding
+PASS scope-subject
+PASS scope-lifetime
+PASS scope-clock
+PASS scope-zero
+PASS scope-float
+PASS scope-numeric
+PASS scope-bool
+PASS scope-extra
+PASS scope-context-extra
+PASS scope-duplicate
+PASS scope-eligible
+PASS scope-source-kind
+PASS scope-cost
+PASS client-scope-kind
+PASS client-scope-request
+PASS client-scope-binding
+PASS client-scope-inner-binding
+PASS client-scope-subject
+PASS client-scope-lifetime
+PASS client-scope-clock
+PASS client-scope-zero
+PASS client-scope-float
+PASS client-scope-numeric
+PASS client-scope-bool
+PASS client-scope-extra
+PASS client-scope-context-extra
+PASS client-scope-duplicate
+PASS client-scope-eligible
+PASS client-scope-source-kind
+PASS client-scope-cost
+PASS Scope drip cannot reset original three-second transport budget
+PASS Quoted ABI native metadata admitted through C API
+PASS C enrollment correctly escapes quote and backslash metadata
+CHECKS 99

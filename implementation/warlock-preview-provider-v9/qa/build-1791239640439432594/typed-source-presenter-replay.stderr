@@ -1,0 +1,6 @@
+AssertionError [ERR_ASSERTION]: Popup closure retains physical release obligations
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v9/qa/build-1791239640439432594/inputs/qa/source-presenter-replay.js:17:31)
+    at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v9/qa/build-1791239640439432594/inputs/qa/source-presenter-replay.js:71:3
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)

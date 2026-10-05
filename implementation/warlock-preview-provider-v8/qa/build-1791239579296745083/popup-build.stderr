@@ -1,0 +1,24 @@
+-- BAD TUPLE ------------------------------------------ src/PreviewPresenter.elm
+
+I only accept tuples with two or three items. This has too many:
+
+46|                 case (D.decodeValue NativePreviewSource.decoder seed.raw,D.decodeValue (D.field "scope" D.value) seed.raw,D.decodeValue (D.at ["scope","context","incarnation"] positive) seed.raw,D.decodeValue (D.at ["scope","binding"] binding) seed.raw) of
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+I recommend switching to records. Each item will be named, and you can use the
+`point.x` syntax to access them.
+
+Note: Read <https://elm-lang.org/0.19.2/tuples> for more comprehensive advice on
+working with large chunks of data in Elm.
+
+-- BAD TUPLE ------------------------------------------ src/PreviewPresenter.elm
+
+I only accept tuples with two or three items. This has too many:
+
+47|                     (Ok observation,Ok native,Ok incarnation,Ok owner) ->
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+I recommend switching to records. Each item will be named, and you can use the
+`point.x` syntax to access them.
+
+Note: Read <https://elm-lang.org/0.19.2/tuples> for more comprehensive advice on
+working with large chunks of data in Elm.
+

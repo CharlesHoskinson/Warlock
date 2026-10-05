@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "passed": true,
+  "components": [
+    {
+      "path": "implementation/warlock-source-presenter-model-v2/component-manifest.json",
+      "sha256": "4cd7819c087364a9a7b10d139e612aac51e372634fb84dd8237fdc38adb3355b",
+      "files": 38
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v10/component-manifest.json",
+      "sha256": "f62add32a0f19b0ce5d8f60e357470fe0cb9b9332a823c8580e7fd722df7e445",
+      "files": 458
+    }
+  ],
+  "evidence": {
+    "implementation/warlock-preview-provider-v10/qa/build-1791239716165875864/report.json": "0f4e4fe69070aa7ca5f2983a07616742bc98d40e9cad1c61aacd54923aa3d905",
+    "implementation/warlock-source-presenter-model-v2/qa/check-1791239866310289142/report.json": "576f3250ec0101ba69fb715a613b5b3426caaf7300c1237a829797747425b707"
+  },
+  "changedProductionSources": [
+    "src/PreviewPresenter.elm"
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "next": "Actual owning producer and typed source publication in the full WebKit host with actual Elm ACK and independent rendered pixels"
+}

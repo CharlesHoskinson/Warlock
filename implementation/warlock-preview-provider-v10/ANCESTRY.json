@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "parent": "implementation/warlock-preview-provider-v9/component-manifest.json",
+  "parentSHA256": "6597d31f39f06c1a68bc4ed508960fd59882ec00f3671ae075d44942987b2ad3",
+  "correction": "Retain existing close/cache semantics; explicitly deliver actual Expired event before testing physical release. Prior test assumed close retires accepted cache, contrary to unchanged lifecycle. All prior failure evidence retained. Restore unchanged demand model source directory omitted from v8 copy.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

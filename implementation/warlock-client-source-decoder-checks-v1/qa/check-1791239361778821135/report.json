@@ -1,0 +1,1042 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-a910515398fa4dfea3eca2fdcbf93edf.scope",
+    "coreLimit": 1
+  },
+  "argv": [
+    "node",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-source-decoder-checks-v1/qa/check-1791239361778821135/check.js",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-source-decoder-checks-v1/qa/check-1791239361778821135/native-source-replay.js",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-source-decoder-checks-v1/qa/check-1791239361778821135/client-scope.json"
+  ],
+  "exitCode": 0,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/qa/build-1791238777317896722/report.json": "7cb80be3998df0a61b89a451582055e28d9b35a63caa5ed4ec2bac924f858642",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v1/qa/native-1791239211683329896/report.json": "879487a3c53260d284a575704073beb6af6421519c84db7c41fc863e54e5d7de",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/qa/build-1791238777317896722/inputs/assets/native-source-replay.js": "f557466e74a00bfa99bd1e643a8d20c8e0e871e562f205a2c2ed14a5ed1b9c34",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-source-decoder-checks-v1/SPEC.md": "8dd0acdab78247d4b325ba4cd50445fb0badde0fec8c9ed59a6ee775cf3ab7fa",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-source-decoder-checks-v1/qa/check.js": "0275a24e733c5a42327b452d6fb11410e6b42f7808e2ec71220184051528a5fb",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-source-decoder-checks-v1/qa/check.py": "67f80434ea3b99753ec4001c588708e8e2aeb1a6aa06dfbdf1d146367f26b29f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/Effects.elm": "c41a0732a640ca7727506193c654fd6e9c996e3b9e136ca58e911961233e9e4b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/ActionProjection.elm": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/Replay.elm": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/Binding.elm": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/Shell.elm": "06867a8be89fa184ccf3da55724cc5245dec9ab6fa82c6edfd663f5296c99f9f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/ShellReplay.elm": "be85fbef5dda8dd07093b578c4be204d8d92772147e1ffacf80368216b5ba8ca",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/Taskbar.elm": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/TaskbarReplay.elm": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/TaskbarShellReplay.elm": "72ca534bb5adc6d0a02fd68ff9f287cb1815fcb0f68313ce7d0b3033d4ebf130",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/Catalog.elm": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/Launch.elm": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/LaunchReplay.elm": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/CatalogReplay.elm": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/Desktop.elm": "dd0f778c70bb0e53fb4f7d344f7995fd5bbce75a9002bace15b5d70ae1428df0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/DesktopReplay.elm": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/Surface.elm": "64cd1e4c25caf057071d8478729598dcb4fb0547340303ca0590ed9c0edfb613",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/SurfaceController.elm": "41874fca4f1df7f5b8dfe2ccb9f08ac710c7134670a6b55d8aaa3b7442ae8fef",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/SurfaceRenderer.elm": "981991412bd57a6709bd6240e9b893c57779105f601bb6bc81594232ce98dab9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/Popup.elm": "f202fd191161fdb0fe66b185d8218bd9a2473f7a0c3f2469fb85bb050d14a482",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/SurfaceReplay.elm": "476f94f33d9225035a479bd8ae8eb755ae8ac914c29ca533f62913fb378a603a",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/Presentation.elm": "e65c93507188186328c597d8b15e171fbb626ca89835f0f90476ad5aa5c4c48d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/PresentationReplay.elm": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/Main.elm": "2e9c042c5b2b068dbe582680ed37e6fa766b636d6d1a422297f843d135fb5405",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/Inspection.elm": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/OutputController.elm": "edc3e8d07788b6ae3eeae48b00b289fd69b55d358dc2860944dd83cf0f876bb9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/OutputReplay.elm": "44f156b65f816400b75d928371fe5bdba675545eba805fee4793422d5b3f73ff",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/Bar.elm": "a10abbe7d0542c642552d90cfa459b353a3843391ce47e06ba94b91afb0b6113",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/GeometryProjection.elm": "4aee2448599d3b94d3dd4762aa8d0c223b77e9d1a61898e70d6870151194d1d9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/NativeOutcome.elm": "fc9e824d315e0316b850fd36760c9f4ab4239eb97d1c4b3cc752144b70f98d89",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/SharedRecoveryReplay.elm": "f44d52432e1c6c876207c273d8a013fd446b186b85a23d7bf5474943ef26ff8b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/Menu.elm": "c40fcfa24bf9d48044ccbe2c08df0abb7d8b94ee04111776234ecd88792ff4f0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/Provider.elm": "328d8fd6349eb4151fe448081e8a418f98e7d31bbe467e4cd60d12ed23ae71d0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/ReceiptRouter.elm": "ffcf85cf38de5665b35b3e2b6eb5a9f261360ec4b226b2fcefc0723cece1a011",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/MenuBridge.elm": "c8b83efc426e83d5b1ebde79aaa78b44e9c0150849d68d77477793c0e344ebe2",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/NativeProvider.elm": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/MenuSurfaceReplay.elm": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/OutputSurfaceReplay.elm": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/BatchReplay.elm": "6300d3c2e617de14b2fd70a40606ea8c94db435a93f0ae30bd19765f5cdce852",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/UnsentOperation.elm": "46e315cc739e097805af3c9358f9ca27a807ef1119c733aa296687342c8238ea",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/GeometrySizePolicy.elm": "46dda2de43642cd33997382e90813c8eeccde80745d79b7d5cd5fd425b062c43",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/ReconciliationFrame.elm": "b72ccb317751848506841c020f83c68e3d93eba3b6fb1c1a9b3d84283fec6676",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/ReconciliationTracking.elm": "84482d1bb84160e3bd9e026b2043635c35b76422d6e9066f703411f784b29bf9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/CapturedAction.elm": "a3e22c7dd5643a1c0424ea1ae09e134bc8b19567de980e57095e08273604fb66",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/PreviewLifecycle.elm": "4b3fa3a2d6810c52073f3b53819e6f4b5a1842fc67e63c966fdb46a5ce8a9583",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/PreviewIdentity.elm": "262240e59eed37d362f921a4e7e89d0bb23c8b0f84fb39f0fddc29faaa3de3b5",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/PreviewPresenter.elm": "bfeed911c88b2c1174c2942a7b68f51a6885409be0392d7610a5f3c3c0b89606",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/PreviewPresenterReplay.elm": "0eb03b99d5d5470936b51ea77de9b102b9742284020d01c469110388efdbc06e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/NativePreviewSource.elm": "5bacb5c31a91add951e2da305c6572470411a38543bbeed28495e3a13cf7080f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/src/NativePreviewSourceReplay.elm": "d6f26c64fd55fe4943968ff7b0d7774ede6b7c6c62f924b16e96a558fcf6edd8",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v7/elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208"
+  },
+  "checks": [
+    {
+      "name": "actual-own-provider-client-observation",
+      "passed": true
+    },
+    {
+      "name": "explicit-legacy-monitor-kind",
+      "passed": true
+    },
+    {
+      "name": "client-kind-with-monitor-label",
+      "passed": true
+    },
+    {
+      "name": "monitor-kind-with-client-label",
+      "passed": true
+    },
+    {
+      "name": "no-eligibility-promotion-true",
+      "passed": true
+    },
+    {
+      "name": "no-eligibility-promotion-1",
+      "passed": true
+    },
+    {
+      "name": "no-eligibility-promotion-\"false\"",
+      "passed": true
+    },
+    {
+      "name": "no-eligibility-promotion-null",
+      "passed": true
+    },
+    {
+      "name": "protocol-2",
+      "passed": true
+    },
+    {
+      "name": "protocol-4",
+      "passed": true
+    },
+    {
+      "name": "protocol-\"3\"",
+      "passed": true
+    },
+    {
+      "name": "protocol-null",
+      "passed": true
+    },
+    {
+      "name": "protocol-true",
+      "passed": true
+    },
+    {
+      "name": "outer-binding-mismatch-lifetime",
+      "passed": true
+    },
+    {
+      "name": "inner-binding-mismatch-lifetime",
+      "passed": true
+    },
+    {
+      "name": "outer-binding-mismatch-session",
+      "passed": true
+    },
+    {
+      "name": "inner-binding-mismatch-session",
+      "passed": true
+    },
+    {
+      "name": "outer-binding-mismatch-frontend",
+      "passed": true
+    },
+    {
+      "name": "inner-binding-mismatch-frontend",
+      "passed": true
+    },
+    {
+      "name": "context-lifetime-mismatch",
+      "passed": true
+    },
+    {
+      "name": "clock-domain-mismatch",
+      "passed": true
+    },
+    {
+      "name": "requestId-invalid-\"0\"",
+      "passed": true
+    },
+    {
+      "name": "requestId-invalid-\"01\"",
+      "passed": true
+    },
+    {
+      "name": "requestId-invalid-\"-1\"",
+      "passed": true
+    },
+    {
+      "name": "requestId-invalid-\"1.0\"",
+      "passed": true
+    },
+    {
+      "name": "requestId-invalid-\"1e3\"",
+      "passed": true
+    },
+    {
+      "name": "requestId-invalid-\"18446744073709551616\"",
+      "passed": true
+    },
+    {
+      "name": "requestId-invalid-1",
+      "passed": true
+    },
+    {
+      "name": "requestId-invalid-null",
+      "passed": true
+    },
+    {
+      "name": "requestId-invalid-true",
+      "passed": true
+    },
+    {
+      "name": "maximumTransferBytes-invalid-\"0\"",
+      "passed": true
+    },
+    {
+      "name": "maximumTransferBytes-invalid-\"01\"",
+      "passed": true
+    },
+    {
+      "name": "maximumTransferBytes-invalid-\"-1\"",
+      "passed": true
+    },
+    {
+      "name": "maximumTransferBytes-invalid-\"1.0\"",
+      "passed": true
+    },
+    {
+      "name": "maximumTransferBytes-invalid-\"1e3\"",
+      "passed": true
+    },
+    {
+      "name": "maximumTransferBytes-invalid-\"18446744073709551616\"",
+      "passed": true
+    },
+    {
+      "name": "maximumTransferBytes-invalid-1",
+      "passed": true
+    },
+    {
+      "name": "maximumTransferBytes-invalid-null",
+      "passed": true
+    },
+    {
+      "name": "maximumTransferBytes-invalid-true",
+      "passed": true
+    },
+    {
+      "name": "binding.lifetime-invalid-\"0\"",
+      "passed": true
+    },
+    {
+      "name": "binding.lifetime-invalid-\"01\"",
+      "passed": true
+    },
+    {
+      "name": "binding.lifetime-invalid-\"-1\"",
+      "passed": true
+    },
+    {
+      "name": "binding.lifetime-invalid-\"1.0\"",
+      "passed": true
+    },
+    {
+      "name": "binding.lifetime-invalid-\"1e3\"",
+      "passed": true
+    },
+    {
+      "name": "binding.lifetime-invalid-\"18446744073709551616\"",
+      "passed": true
+    },
+    {
+      "name": "binding.lifetime-invalid-1",
+      "passed": true
+    },
+    {
+      "name": "binding.lifetime-invalid-null",
+      "passed": true
+    },
+    {
+      "name": "binding.lifetime-invalid-true",
+      "passed": true
+    },
+    {
+      "name": "scope.binding.lifetime-invalid-\"0\"",
+      "passed": true
+    },
+    {
+      "name": "scope.binding.lifetime-invalid-\"01\"",
+      "passed": true
+    },
+    {
+      "name": "scope.binding.lifetime-invalid-\"-1\"",
+      "passed": true
+    },
+    {
+      "name": "scope.binding.lifetime-invalid-\"1.0\"",
+      "passed": true
+    },
+    {
+      "name": "scope.binding.lifetime-invalid-\"1e3\"",
+      "passed": true
+    },
+    {
+      "name": "scope.binding.lifetime-invalid-\"18446744073709551616\"",
+      "passed": true
+    },
+    {
+      "name": "scope.binding.lifetime-invalid-1",
+      "passed": true
+    },
+    {
+      "name": "scope.binding.lifetime-invalid-null",
+      "passed": true
+    },
+    {
+      "name": "scope.binding.lifetime-invalid-true",
+      "passed": true
+    },
+    {
+      "name": "binding.session-invalid-\"0\"",
+      "passed": true
+    },
+    {
+      "name": "binding.session-invalid-\"01\"",
+      "passed": true
+    },
+    {
+      "name": "binding.session-invalid-\"-1\"",
+      "passed": true
+    },
+    {
+      "name": "binding.session-invalid-\"1.0\"",
+      "passed": true
+    },
+    {
+      "name": "binding.session-invalid-\"1e3\"",
+      "passed": true
+    },
+    {
+      "name": "binding.session-invalid-\"18446744073709551616\"",
+      "passed": true
+    },
+    {
+      "name": "binding.session-invalid-1",
+      "passed": true
+    },
+    {
+      "name": "binding.session-invalid-null",
+      "passed": true
+    },
+    {
+      "name": "binding.session-invalid-true",
+      "passed": true
+    },
+    {
+      "name": "scope.binding.session-invalid-\"0\"",
+      "passed": true
+    },
+    {
+      "name": "scope.binding.session-invalid-\"01\"",
+      "passed": true
+    },
+    {
+      "name": "scope.binding.session-invalid-\"-1\"",
+      "passed": true
+    },
+    {
+      "name": "scope.binding.session-invalid-\"1.0\"",
+      "passed": true
+    },
+    {
+      "name": "scope.binding.session-invalid-\"1e3\"",
+      "passed": true
+    },
+    {
+      "name": "scope.binding.session-invalid-\"18446744073709551616\"",
+      "passed": true
+    },
+    {
+      "name": "scope.binding.session-invalid-1",
+      "passed": true
+    },
+    {
+      "name": "scope.binding.session-invalid-null",
+      "passed": true
+    },
+    {
+      "name": "scope.binding.session-invalid-true",
+      "passed": true
+    },
+    {
+      "name": "binding.frontend-invalid-\"0\"",
+      "passed": true
+    },
+    {
+      "name": "binding.frontend-invalid-\"01\"",
+      "passed": true
+    },
+    {
+      "name": "binding.frontend-invalid-\"-1\"",
+      "passed": true
+    },
+    {
+      "name": "binding.frontend-invalid-\"1.0\"",
+      "passed": true
+    },
+    {
+      "name": "binding.frontend-invalid-\"1e3\"",
+      "passed": true
+    },
+    {
+      "name": "binding.frontend-invalid-\"18446744073709551616\"",
+      "passed": true
+    },
+    {
+      "name": "binding.frontend-invalid-1",
+      "passed": true
+    },
+    {
+      "name": "binding.frontend-invalid-null",
+      "passed": true
+    },
+    {
+      "name": "binding.frontend-invalid-true",
+      "passed": true
+    },
+    {
+      "name": "scope.binding.frontend-invalid-\"0\"",
+      "passed": true
+    },
+    {
+      "name": "scope.binding.frontend-invalid-\"01\"",
+      "passed": true
+    },
+    {
+      "name": "scope.binding.frontend-invalid-\"-1\"",
+      "passed": true
+    },
+    {
+      "name": "scope.binding.frontend-invalid-\"1.0\"",
+      "passed": true
+    },
+    {
+      "name": "scope.binding.frontend-invalid-\"1e3\"",
+      "passed": true
+    },
+    {
+      "name": "scope.binding.frontend-invalid-\"18446744073709551616\"",
+      "passed": true
+    },
+    {
+      "name": "scope.binding.frontend-invalid-1",
+      "passed": true
+    },
+    {
+      "name": "scope.binding.frontend-invalid-null",
+      "passed": true
+    },
+    {
+      "name": "scope.binding.frontend-invalid-true",
+      "passed": true
+    },
+    {
+      "name": "scope.context.lifetime-invalid-\"0\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.lifetime-invalid-\"01\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.lifetime-invalid-\"-1\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.lifetime-invalid-\"1.0\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.lifetime-invalid-\"1e3\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.lifetime-invalid-\"18446744073709551616\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.lifetime-invalid-1",
+      "passed": true
+    },
+    {
+      "name": "scope.context.lifetime-invalid-null",
+      "passed": true
+    },
+    {
+      "name": "scope.context.lifetime-invalid-true",
+      "passed": true
+    },
+    {
+      "name": "scope.context.incarnation-invalid-\"0\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.incarnation-invalid-\"01\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.incarnation-invalid-\"-1\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.incarnation-invalid-\"1.0\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.incarnation-invalid-\"1e3\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.incarnation-invalid-\"18446744073709551616\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.incarnation-invalid-1",
+      "passed": true
+    },
+    {
+      "name": "scope.context.incarnation-invalid-null",
+      "passed": true
+    },
+    {
+      "name": "scope.context.incarnation-invalid-true",
+      "passed": true
+    },
+    {
+      "name": "scope.context.output-invalid-\"0\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.output-invalid-\"01\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.output-invalid-\"-1\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.output-invalid-\"1.0\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.output-invalid-\"1e3\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.output-invalid-\"18446744073709551616\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.output-invalid-1",
+      "passed": true
+    },
+    {
+      "name": "scope.context.output-invalid-null",
+      "passed": true
+    },
+    {
+      "name": "scope.context.output-invalid-true",
+      "passed": true
+    },
+    {
+      "name": "scope.context.privacy-invalid-\"0\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.privacy-invalid-\"01\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.privacy-invalid-\"-1\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.privacy-invalid-\"1.0\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.privacy-invalid-\"1e3\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.privacy-invalid-\"18446744073709551616\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.privacy-invalid-1",
+      "passed": true
+    },
+    {
+      "name": "scope.context.privacy-invalid-null",
+      "passed": true
+    },
+    {
+      "name": "scope.context.privacy-invalid-true",
+      "passed": true
+    },
+    {
+      "name": "scope.context.rendering-invalid-\"0\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.rendering-invalid-\"01\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.rendering-invalid-\"-1\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.rendering-invalid-\"1.0\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.rendering-invalid-\"1e3\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.rendering-invalid-\"18446744073709551616\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.rendering-invalid-1",
+      "passed": true
+    },
+    {
+      "name": "scope.context.rendering-invalid-null",
+      "passed": true
+    },
+    {
+      "name": "scope.context.rendering-invalid-true",
+      "passed": true
+    },
+    {
+      "name": "scope.context.scene-invalid-\"0\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.scene-invalid-\"01\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.scene-invalid-\"-1\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.scene-invalid-\"1.0\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.scene-invalid-\"1e3\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.scene-invalid-\"18446744073709551616\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.scene-invalid-1",
+      "passed": true
+    },
+    {
+      "name": "scope.context.scene-invalid-null",
+      "passed": true
+    },
+    {
+      "name": "scope.context.scene-invalid-true",
+      "passed": true
+    },
+    {
+      "name": "scope.context.content-invalid-\"0\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.content-invalid-\"01\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.content-invalid-\"-1\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.content-invalid-\"1.0\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.content-invalid-\"1e3\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.content-invalid-\"18446744073709551616\"",
+      "passed": true
+    },
+    {
+      "name": "scope.context.content-invalid-1",
+      "passed": true
+    },
+    {
+      "name": "scope.context.content-invalid-null",
+      "passed": true
+    },
+    {
+      "name": "scope.context.content-invalid-true",
+      "passed": true
+    },
+    {
+      "name": "scope.observation-invalid-\"0\"",
+      "passed": true
+    },
+    {
+      "name": "scope.observation-invalid-\"01\"",
+      "passed": true
+    },
+    {
+      "name": "scope.observation-invalid-\"-1\"",
+      "passed": true
+    },
+    {
+      "name": "scope.observation-invalid-\"1.0\"",
+      "passed": true
+    },
+    {
+      "name": "scope.observation-invalid-\"1e3\"",
+      "passed": true
+    },
+    {
+      "name": "scope.observation-invalid-\"18446744073709551616\"",
+      "passed": true
+    },
+    {
+      "name": "scope.observation-invalid-1",
+      "passed": true
+    },
+    {
+      "name": "scope.observation-invalid-null",
+      "passed": true
+    },
+    {
+      "name": "scope.observation-invalid-true",
+      "passed": true
+    },
+    {
+      "name": "scope.clock-invalid-\"0\"",
+      "passed": true
+    },
+    {
+      "name": "scope.clock-invalid-\"01\"",
+      "passed": true
+    },
+    {
+      "name": "scope.clock-invalid-\"-1\"",
+      "passed": true
+    },
+    {
+      "name": "scope.clock-invalid-\"1.0\"",
+      "passed": true
+    },
+    {
+      "name": "scope.clock-invalid-\"1e3\"",
+      "passed": true
+    },
+    {
+      "name": "scope.clock-invalid-\"18446744073709551616\"",
+      "passed": true
+    },
+    {
+      "name": "scope.clock-invalid-1",
+      "passed": true
+    },
+    {
+      "name": "scope.clock-invalid-null",
+      "passed": true
+    },
+    {
+      "name": "scope.clock-invalid-true",
+      "passed": true
+    },
+    {
+      "name": "scope.now-invalid-\"0\"",
+      "passed": true
+    },
+    {
+      "name": "scope.now-invalid-\"01\"",
+      "passed": true
+    },
+    {
+      "name": "scope.now-invalid-\"-1\"",
+      "passed": true
+    },
+    {
+      "name": "scope.now-invalid-\"1.0\"",
+      "passed": true
+    },
+    {
+      "name": "scope.now-invalid-\"1e3\"",
+      "passed": true
+    },
+    {
+      "name": "scope.now-invalid-\"18446744073709551616\"",
+      "passed": true
+    },
+    {
+      "name": "scope.now-invalid-1",
+      "passed": true
+    },
+    {
+      "name": "scope.now-invalid-null",
+      "passed": true
+    },
+    {
+      "name": "scope.now-invalid-true",
+      "passed": true
+    },
+    {
+      "name": "unaligned-budget-1",
+      "passed": true
+    },
+    {
+      "name": "unaligned-budget-4095",
+      "passed": true
+    },
+    {
+      "name": "unaligned-budget-4097",
+      "passed": true
+    },
+    {
+      "name": "unaligned-budget-9007199254740991",
+      "passed": true
+    },
+    {
+      "name": "unaligned-budget-18446744073709551615",
+      "passed": true
+    },
+    {
+      "name": "lossless-aligned-budget-4096",
+      "passed": true
+    },
+    {
+      "name": "lossless-aligned-budget-9007199254740992",
+      "passed": true
+    },
+    {
+      "name": "lossless-aligned-budget-18446744073709547520",
+      "passed": true
+    },
+    {
+      "name": "missing-protocolVersion",
+      "passed": true
+    },
+    {
+      "name": "missing-kind",
+      "passed": true
+    },
+    {
+      "name": "missing-binding",
+      "passed": true
+    },
+    {
+      "name": "missing-requestId",
+      "passed": true
+    },
+    {
+      "name": "missing-scope",
+      "passed": true
+    },
+    {
+      "name": "missing-maximumTransferBytes",
+      "passed": true
+    },
+    {
+      "name": "missing-previewEligible",
+      "passed": true
+    },
+    {
+      "name": "missing-scopeKind",
+      "passed": true
+    },
+    {
+      "name": "extra-envelope",
+      "passed": true
+    },
+    {
+      "name": "missing-binding.lifetime",
+      "passed": true
+    },
+    {
+      "name": "missing-binding.session",
+      "passed": true
+    },
+    {
+      "name": "missing-binding.frontend",
+      "passed": true
+    },
+    {
+      "name": "extra-binding",
+      "passed": true
+    },
+    {
+      "name": "missing-scope.binding",
+      "passed": true
+    },
+    {
+      "name": "missing-scope.context",
+      "passed": true
+    },
+    {
+      "name": "missing-scope.observation",
+      "passed": true
+    },
+    {
+      "name": "missing-scope.clock",
+      "passed": true
+    },
+    {
+      "name": "missing-scope.now",
+      "passed": true
+    },
+    {
+      "name": "missing-scope.present",
+      "passed": true
+    },
+    {
+      "name": "missing-scope.sourceLive",
+      "passed": true
+    },
+    {
+      "name": "missing-scope.locked",
+      "passed": true
+    },
+    {
+      "name": "missing-scope.gpuReady",
+      "passed": true
+    },
+    {
+      "name": "extra-scope",
+      "passed": true
+    },
+    {
+      "name": "missing-scope.binding.lifetime",
+      "passed": true
+    },
+    {
+      "name": "missing-scope.binding.session",
+      "passed": true
+    },
+    {
+      "name": "missing-scope.binding.frontend",
+      "passed": true
+    },
+    {
+      "name": "extra-scope.binding",
+      "passed": true
+    },
+    {
+      "name": "missing-scope.context.lifetime",
+      "passed": true
+    },
+    {
+      "name": "missing-scope.context.incarnation",
+      "passed": true
+    },
+    {
+      "name": "missing-scope.context.output",
+      "passed": true
+    },
+    {
+      "name": "missing-scope.context.privacy",
+      "passed": true
+    },
+    {
+      "name": "missing-scope.context.rendering",
+      "passed": true
+    },
+    {
+      "name": "missing-scope.context.scene",
+      "passed": true
+    },
+    {
+      "name": "missing-scope.context.content",
+      "passed": true
+    },
+    {
+      "name": "extra-scope.context",
+      "passed": true
+    },
+    {
+      "name": "typed-native-flag-present",
+      "passed": true
+    },
+    {
+      "name": "malformed-native-flag-present",
+      "passed": true
+    },
+    {
+      "name": "typed-native-flag-sourceLive",
+      "passed": true
+    },
+    {
+      "name": "malformed-native-flag-sourceLive",
+      "passed": true
+    },
+    {
+      "name": "typed-native-flag-locked",
+      "passed": true
+    },
+    {
+      "name": "malformed-native-flag-locked",
+      "passed": true
+    },
+    {
+      "name": "typed-native-flag-gpuReady",
+      "passed": true
+    },
+    {
+      "name": "malformed-native-flag-gpuReady",
+      "passed": true
+    },
+    {
+      "name": "non-envelope-null",
+      "passed": true
+    },
+    {
+      "name": "non-envelope-[]",
+      "passed": true
+    },
+    {
+      "name": "non-envelope-true",
+      "passed": true
+    },
+    {
+      "name": "non-envelope-3",
+      "passed": true
+    },
+    {
+      "name": "non-envelope-\"client\"",
+      "passed": true
+    }
+  ],
+  "projectionScope": "Actual optimized Elm typed source decoder with retained real native observation; no full Popup/WebKit presentation claim",
+  "artifacts": {
+    "native-source-replay.js": "f557466e74a00bfa99bd1e643a8d20c8e0e871e562f205a2c2ed14a5ed1b9c34",
+    "check.js": "0275a24e733c5a42327b452d6fb11410e6b42f7808e2ec71220184051528a5fb",
+    "client-scope.json": "e2d2801207900159cb777367869470c5cecef244304d4a3079d51d7ac9f19c99",
+    "checks.stdout": "e4cff2bf643fe7e7e764a8a3a7002cc30a5e9d8958f99971d5c68661f2fbb620",
+    "checks.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

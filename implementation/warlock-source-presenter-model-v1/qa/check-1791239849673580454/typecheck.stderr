@@ -1,0 +1,8 @@
+
+ Error [QNT101]: Built-in name 'next' is redefined in module 'source'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v1/qa/check-1791239849673580454/spec/source.qnt:21:68
+  21:  action fire(e:Event):bool={val cleared={...s,commands:List()};val next=reduce(cleared,e);s'={...next,history:s.history.append(label(e))}}
+                                                                         ^^^^
+
+error: parsing failed
