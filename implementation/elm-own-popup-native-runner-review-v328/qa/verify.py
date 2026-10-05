@@ -1,0 +1,44 @@
+"""Read-only protected binder for held325; no native launch or imports."""
+import hashlib,json,pathlib,stat,time,resource
+ROOT=pathlib.Path(__file__).resolve().parents[1]
+OWNER=ROOT.parent/'elm-own-popup-native-diagnostic-v325'
+def sha(p):
+ with p.open('rb') as f:
+  h=hashlib.file_digest(f,'sha256')
+ return h.hexdigest()
+def run():
+ assert resource.getrlimit(resource.RLIMIT_CORE)==(1,1)
+ out=ROOT/'qa'/('verify-'+str(time.time_ns()));out.mkdir()
+ report={'passed':False,'nativeAcceptance':False,'sourceReviewOnly':True}
+ sources={str(p.relative_to(ROOT)):sha(p) for p in [ROOT/'qa/verify.py',ROOT/'REQUIREMENTS.md',ROOT/'REVIEW.md',ROOT/'owner-pin.json']}
+ try:
+  pin=json.loads((ROOT/'owner-pin.json').read_text());p=OWNER/'component-manifest.json'
+  assert sha(p)==pin['sha256'];m=json.loads(p.read_text())
+  assert m['sourceHeld'] is True and m['evidenceIntegrityPassed'] is True
+  count=0
+  for rel,row in m['files'].items():
+   path=pathlib.Path(rel);assert not path.is_absolute() and '..' not in path.parts
+   p=OWNER/path;assert p.is_file() and not p.is_symlink()
+   assert sha(p)==row['sha256'] and p.stat().st_size==row['size']
+   assert oct(stat.S_IMODE(p.stat().st_mode))==row['mode'];count+=1
+  for rel,target in m.get('symlinks',{}).items():
+   p=OWNER/rel;assert p.is_symlink() and str(p.readlink())==target
+  external=0
+  for name,value in m['externalFiles'].items():
+   p=pathlib.Path(name);assert p.is_file()
+   digest=value if isinstance(value,str) else value['sha256']
+   assert sha(p)==digest;external+=1
+  test=pathlib.Path(m['testReport']);assert sha(test)==m['testReportSHA256']
+  t=json.loads(test.read_text());assert t['passed'] is True
+  for rel,digest in t['inputs'].items():assert sha(OWNER/rel)==digest
+  assert sha(OWNER/'component-manifest.json')==pin['sha256']
+  for rel,digest in sources.items():assert sha(ROOT/rel)==digest
+  report.update(passed=True,ownerManifestSHA256=pin['sha256'],ownFiles=count,externalFiles=external,testReport=str(test),checks=len(t['checks']),nativeSourceSHA256=sha(OWNER/'qa/native.py'))
+ except BaseException as e:report['error']=repr(e)
+ report['reviewInputs']=sources
+ (out/'report.json').write_text(json.dumps(report,indent=2)+'\n')
+ if report['passed']:
+  rows={str(p.relative_to(ROOT)):{'sha256':sha(p),'size':p.stat().st_size,'mode':oct(stat.S_IMODE(p.stat().st_mode))} for p in sorted(ROOT.rglob('*')) if p.is_file() and not p.is_symlink() and p.name!='component-manifest.json'}
+  (ROOT/'component-manifest.json').write_text(json.dumps({'sourceHeld':True,'evidenceIntegrityPassed':True,'nativeAcceptance':False,'scope':'Independent held source readiness for picker diagnostic only','ownerManifestSHA256':pin['sha256'],'verificationReport':str(out/'report.json'),'verificationReportSHA256':sha(out/'report.json'),'files':rows},indent=2)+'\n')
+ print(out/'report.json');return report
+if __name__=='__main__':raise SystemExit(not run()['passed'])

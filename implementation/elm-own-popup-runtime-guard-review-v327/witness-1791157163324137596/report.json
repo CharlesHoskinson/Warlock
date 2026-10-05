@@ -1,0 +1,90 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Captured actual guard with owned regular-file atomic replacements and actual self mmap; synthetic tuple data/no compositor/host authentication",
+  "inputs": {
+    "inputs/guard.py": "e6e66031924ef426baedf8e59840284b0e8c1527d519c8710a271893be4fbbf3",
+    "inputs/qa/test.py": "2e658178c7a6936ee06ad9d0a5ad1ebb44bbe1f55a272e552fd96bf8ccd4851e"
+  },
+  "cases": [
+    {
+      "name": "control",
+      "accepted": true,
+      "events": [],
+      "result": {
+        "artifacts": {
+          "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-guard-review-v327/witness-1791157163324137596/control/core": "0d45f5fd462b8c70bffb10021ac1bcff3f58f29b1faf7568595095427d42812c",
+          "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-guard-review-v327/witness-1791157163324137596/control/plugin": "5e689e2b01672bf33996e75d5e372ff60c536ce1599a1458e867cd8f4bef5160",
+          "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-guard-review-v327/witness-1791157163324137596/control/observer": "e41f1d834710df8c7bc2befedb7b92339973a92288d8581b3696604c0d04c5f7",
+          "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-guard-review-v327/witness-1791157163324137596/control/libaquamarine.so.fixture": "540053bbf53f00492b441dee3a0f071340f6210ca7141ca6a34d1b01649456dd"
+        },
+        "libraries": {
+          "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-guard-review-v327/witness-1791157163324137596/control/libaquamarine.so.fixture": "540053bbf53f00492b441dee3a0f071340f6210ca7141ca6a34d1b01649456dd"
+        },
+        "descriptorSHA256": "7c5efd073d374c0f26082e213f9ea4191f09055c842827b7a3cc9cebc5de593b",
+        "authenticatedHost": false,
+        "nativeAcceptance": false
+      }
+    },
+    {
+      "name": "descriptor-replaced",
+      "accepted": true,
+      "events": [
+        "replaced after checked hash before parse"
+      ],
+      "result": {
+        "artifacts": {
+          "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-guard-review-v327/witness-1791157163324137596/descriptor-replaced/alternate-core": "a15ed329d68d97d9cd6927b0a9cf67cecb96378f78fb8b423a7f31f475d89516",
+          "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-guard-review-v327/witness-1791157163324137596/descriptor-replaced/plugin": "5e689e2b01672bf33996e75d5e372ff60c536ce1599a1458e867cd8f4bef5160",
+          "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-guard-review-v327/witness-1791157163324137596/descriptor-replaced/observer": "e41f1d834710df8c7bc2befedb7b92339973a92288d8581b3696604c0d04c5f7",
+          "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-guard-review-v327/witness-1791157163324137596/descriptor-replaced/libaquamarine.so.fixture": "540053bbf53f00492b441dee3a0f071340f6210ca7141ca6a34d1b01649456dd"
+        },
+        "libraries": {
+          "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-guard-review-v327/witness-1791157163324137596/descriptor-replaced/libaquamarine.so.fixture": "540053bbf53f00492b441dee3a0f071340f6210ca7141ca6a34d1b01649456dd"
+        },
+        "descriptorSHA256": "5e892b18e420f63e1618956e67872f1d4fc37273ce039c5425204f33e0246898",
+        "authenticatedHost": false,
+        "nativeAcceptance": false
+      }
+    },
+    {
+      "name": "closure-replaced",
+      "accepted": true,
+      "events": [
+        "replaced after checked hash before parse"
+      ],
+      "result": {
+        "artifacts": {
+          "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-guard-review-v327/witness-1791157163324137596/closure-replaced/core": "0d45f5fd462b8c70bffb10021ac1bcff3f58f29b1faf7568595095427d42812c",
+          "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-guard-review-v327/witness-1791157163324137596/closure-replaced/plugin": "5e689e2b01672bf33996e75d5e372ff60c536ce1599a1458e867cd8f4bef5160",
+          "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-guard-review-v327/witness-1791157163324137596/closure-replaced/observer": "e41f1d834710df8c7bc2befedb7b92339973a92288d8581b3696604c0d04c5f7",
+          "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-guard-review-v327/witness-1791157163324137596/closure-replaced/libaquamarine.so.alternate": "765cb4d4d448225c2c933c6d1d88d031803ed269a4dd8d4031d4ce79fa6b6bbc"
+        },
+        "libraries": {
+          "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-guard-review-v327/witness-1791157163324137596/closure-replaced/libaquamarine.so.alternate": "765cb4d4d448225c2c933c6d1d88d031803ed269a4dd8d4031d4ce79fa6b6bbc"
+        },
+        "descriptorSHA256": "aa8f2ab4bffb84a488d5c0e2140309c6f9d164b9f25b038440b4b11d4e899720",
+        "authenticatedHost": false,
+        "nativeAcceptance": false
+      }
+    },
+    {
+      "name": "additional mapped lookup-library basename",
+      "accepted": true,
+      "result": {
+        "pid": 173854,
+        "start": 12526692,
+        "requiredArtifacts": [
+          "/usr/bin/python3.14"
+        ],
+        "mappedLibraryCount": 1,
+        "mapsSHA256": "5372c76873c1322a51e6bb0c1b7bc40e5dc38c01aca491d687e7a1b0c95473cd",
+        "authenticatedHost": false,
+        "nativeAcceptance": false,
+        "scope": "Bracketed diagnostic process mapping; no atomic compositor/host/menu proof"
+      },
+      "mappedAlternate": "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-guard-review-v327/witness-1791157163324137596/libc.so.6",
+      "scope": "real data mmap, no claim alternate ELF executed"
+    }
+  ]
+}
