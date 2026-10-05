@@ -1,0 +1,4 @@
+native/client-command-test.cpp: In function ‘int main()’:
+native/client-command-test.cpp:16:100: error: local variable ‘packet’ may not appear in this context
+   16 |     auto reject=[&](const std::string& identity,const std::string& text,std::optional<Packet> held=packet){bool refused=false;try{decodeClientCommand(identity,text,job,held);}catch(const std::exception&){refused=true;}check(refused,"Malformed/foreign client command refuses");};
+      |                                                                                                    ^~~~~~

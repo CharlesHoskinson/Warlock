@@ -1,0 +1,28 @@
+view-process-policy: related=1 distinct-manager=1
+view-process-policy: related=1 distinct-manager=1
+view-added: id=1 geometry=0,0,800,600
+shared-host-start: views=1 controllers=1 backend-clients=1 sandbox=1
+
+** (process:2): WARNING **: 17:04:05.712: Can't connect to a11y bus: Could not connect: No such file or directory
+view-topology: {"viewProtocol":1,"kind":"view-topology","revision":"1","views":[{"id":"1","generation":"1"}]}
+surface-report: origin=bar {"kind":"surface-report","body":{"publication":null,"lease":null,"buttons":[],"focus":"","text":""}}
+view-report: id=1 x=0 y=0 {"kind":"surface-report","body":{"publication":null,"lease":null,"buttons":[],"focus":"","text":""}}
+surface-commit: publication=3 lease=0 open=0
+view-commit: popup=0 focus=1 publication=3
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"3","lease":"0","body":{"phase":"Detached","transaction":"Idle","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:detached:2:control:opener","reconnectId":"reconnect"}}
+surface-report: origin=bar {"kind":"surface-report","body":{"publication":"3","lease":"0","buttons":[{"id":"reconnect","label":"Reconnect","accessibleName":"Reconnect to the window system","disabled":true,"x":1,"y":1,"width":80,"height":46}],"focus":"","text":"\nReconnect\nConnecting…"}}
+view-report: id=1 x=0 y=0 {"kind":"surface-report","body":{"publication":"3","lease":"0","buttons":[{"id":"reconnect","label":"Reconnect","accessibleName":"Reconnect to the window system","disabled":true,"x":1,"y":1,"width":80,"height":46}],"focus":"","text":"\nReconnect\nConnecting…"}}
+backend-frame: {"protocolVersion":3,"kind":"host-disconnected"}
+Backend failure locations: daemon.py:195:run,daemon.py:162:main,grant_endpoint.py:37:__init__,endpoint.py:43:__init__,endpoint.py:52:verify_process
+Authority backend stopped: Native process identity changed
+surface-commit: publication=4 lease=0 open=0
+view-commit: popup=0 focus=1 publication=4
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"4","lease":"0","body":{"phase":"Detached","transaction":"Idle","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:detached:3:control:opener","reconnectId":"reconnect"}}
+backend-exit: waited=1 normal=1 code=1
+surface-commit: publication=5 lease=0 open=0
+view-commit: popup=0 focus=1 publication=5
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"5","lease":"0","body":{"phase":"Detached","transaction":"Idle","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:detached:4:control:opener","reconnectId":"reconnect"}}
+surface-report: origin=bar {"kind":"surface-report","body":{"publication":"5","lease":"0","buttons":[{"id":"reconnect","label":"Reconnect","accessibleName":"Reconnect to the window system","disabled":false,"x":1,"y":1,"width":80,"height":46}],"focus":"","text":"\nReconnect\nConnection lost. Reconnect to continue."}}
+view-report: id=1 x=0 y=0 {"kind":"surface-report","body":{"publication":"5","lease":"0","buttons":[{"id":"reconnect","label":"Reconnect","accessibleName":"Reconnect to the window system","disabled":false,"x":1,"y":1,"width":80,"height":46}],"focus":"","text":"\nReconnect\nConnection lost. Reconnect to continue."}}
+view-retired: id=1
+shared-host-exit: failure=0 rendered=1

@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "passed": true,
+  "components": [
+    {
+      "path": "implementation/warlock-client-provider-native-v4/component-manifest.json",
+      "sha256": "a40d3e6b6646637a2e7e2344a2f3bc924e5ea1bf34934e3971807e0414e8db6d",
+      "files": 175
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v15/component-manifest.json",
+      "sha256": "3e97fb3ad3e004211990d407c1b1297669e89462c342676cc30f07f837d2dec1",
+      "files": 478
+    }
+  ],
+  "evidence": {
+    "implementation/warlock-preview-provider-v15/qa/build-1791241554931840085/report.json": "a29f29d4b63a490f9655dc8e824332620dba7b1bf321e2d32ed17d11b2779cb4",
+    "implementation/warlock-client-provider-native-v4/qa/native-1791241690666401240/report.json": "cec46dc77e6eff39004a761e565b8098c02aef8176d7577ea67c36719a3a85d9"
+  },
+  "boundedNativeClientPathQualified": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "next": "Admit changing client observations in the actual Popup through the one Elm owner; qualify invalidation/cancel/physical drain before production eligibility, measured S02 and full preview13"
+}
