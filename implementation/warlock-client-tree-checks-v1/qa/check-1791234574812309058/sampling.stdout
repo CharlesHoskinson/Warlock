@@ -1,0 +1,88 @@
+An example execution:
+
+[State 0] { complete: false, kind: -1, revision: 1 }
+
+[State 1] { complete: true, kind: 0, revision: 2 }
+
+[State 2] { complete: true, kind: 3, revision: 3 }
+
+[State 3] { complete: true, kind: 7, revision: 4 }
+
+[State 4] { complete: true, kind: 7, revision: 4 }
+
+[State 5] { complete: true, kind: 1, revision: 5 }
+
+[State 6] { complete: true, kind: 1, revision: 5 }
+
+[State 7] { complete: true, kind: 4, revision: 6 }
+
+[State 8] { complete: true, kind: 1, revision: 7 }
+
+[State 9] { complete: true, kind: 6, revision: 8 }
+
+[State 10] { complete: true, kind: 5, revision: 9 }
+
+[State 11] { complete: true, kind: 3, revision: 10 }
+
+[State 12] { complete: true, kind: 2, revision: 11 }
+
+[State 13] { complete: true, kind: 6, revision: 12 }
+
+[State 14] { complete: true, kind: 5, revision: 13 }
+
+[State 15] { complete: true, kind: 3, revision: 14 }
+
+[State 16] { complete: true, kind: 1, revision: 15 }
+
+[State 17] { complete: true, kind: 1, revision: 15 }
+
+[State 18] { complete: true, kind: 7, revision: 16 }
+
+[State 19] { complete: true, kind: 0, revision: 17 }
+
+[State 20] { complete: true, kind: 4, revision: 18 }
+
+[State 21] { complete: true, kind: 8, revision: 19 }
+
+[State 22] { complete: false, kind: 9, revision: 20 }
+
+[State 23] { complete: true, kind: 3, revision: 21 }
+
+[State 24] { complete: true, kind: 0, revision: 22 }
+
+[State 25] { complete: false, kind: 9, revision: 23 }
+
+[State 26] { complete: true, kind: 1, revision: 24 }
+
+[State 27] { complete: true, kind: 1, revision: 24 }
+
+[State 28] { complete: false, kind: 9, revision: 25 }
+
+[State 29] { complete: true, kind: 0, revision: 26 }
+
+[State 30] { complete: true, kind: 7, revision: 27 }
+
+[State 31] { complete: true, kind: 2, revision: 28 }
+
+[State 32] { complete: true, kind: 2, revision: 28 }
+
+[State 33] { complete: false, kind: 9, revision: 29 }
+
+[State 34] { complete: true, kind: 4, revision: 30 }
+
+[State 35] { complete: true, kind: 1, revision: 31 }
+
+[State 36] { complete: true, kind: 3, revision: 32 }
+
+[State 37] { complete: true, kind: 2, revision: 33 }
+
+[State 38] { complete: true, kind: 4, revision: 34 }
+
+[State 39] { complete: true, kind: 6, revision: 35 }
+
+[State 40] { complete: true, kind: 5, revision: 36 }
+
+[ok] No violation found (125ms at 2400 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "boundedRootRegressionPassed": true,
+  "nativeChildTreeQualified": false,
+  "mainDesktopActivated": false,
+  "evidence": {
+    "implementation/warlock-core-surface-revision-v2/build-1791234190898766722/report.json": "4f73ee7958eb0e0414009ea79ad6a6aaa9f12313201ee69f9fd36689f6dfcac2",
+    "implementation/warlock-client-source-revisions-v1/qa/build-1791234326683052589/report.json": "97cb85b1f1f7cb307a35c3ade345f73ae23f340e062023618a85ec54ed24f08e",
+    "implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058/report.json": "f4b7a10e937d304b816eb20c25b2d5a12a8f6a0b94e206fa1cc6ec5b6060a15f",
+    "implementation/warlock-client-source-native-v1/qa/native-1791234649244421021/report.json": "2a12a411cc418e0266494e9d9b0ebed66e805c07c5d9087bc65149a32fd2b74a"
+  },
+  "components": {
+    "warlock-core-surface-revision-v1": "30de29839169e4e1163dc3784ef9d02a013fee663a7c05d417d27deb2327a0fd",
+    "warlock-core-surface-revision-v2": "060c0c198f2bd88f0ead44f425ffe9efe74f7cf4900dc38e593eeb529c7ad52c",
+    "warlock-client-source-revisions-v1": "9f8c7a23bf9bfe7b52c1941ee95bd3f144f10ae82a490ff6ecd3512c382faf79",
+    "warlock-client-tree-checks-v1": "2f077c719403ab44a13aaa020a2f94796626d6bd3019f795b0fb8424cf8b436e",
+    "warlock-client-source-native-v1": "55637f99e6af67776af5b4c7ca10dc561fa424bfc372ca6464ee036c3403243d"
+  },
+  "remainingWorkplanSHA256": "5bc7f8c7f2171261cd17bd50c364a5bac0812f816c20821ca50c21385442c135",
+  "scope": "Applied-state native API and bounded tree revision snapshot compiled; 65 CPU controls/9 named Quint/300 samples/21 traces508 states; retained native73 root pixel/context/FD regression on exact new tuple. Real child-only qualification and production integration remain open."
+}

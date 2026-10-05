@@ -1,0 +1,438 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-04678b9ce83744a580abdfc468c599c7.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "implementation/warlock-client-tree-checks-v1/qa/check.py": "377a89024f4ad0b87a3611bc02e84f1c619efe9e560c434d6fff036d86c7bab0",
+    "implementation/warlock-client-tree-checks-v1/qa/checks.cpp": "3ad25a760c6cbd7cc5b25ff82bba40263a5c75b6e692b92cb39c99c8a6673077",
+    "implementation/warlock-client-tree-checks-v1/spec/tree.qnt": "d92ac8ca67db383fc872458e37731e2457a5ba302688293842562a8a326b4dfd",
+    "implementation/warlock-client-source-revisions-v1/native/tree_revision.hpp": "e66275f37faabd7b939a4f628e22857b77cd598535e58bbf793c60bf5d4f3f46",
+    "implementation/warlock-client-source-revisions-v1/native/source_epoch.hpp": "df64eec18b8bd62b0b21b73e3aabbc1a9db10f122af65e36f78a6147bd67860f",
+    "implementation/warlock-core-surface-revision-v2/candidate/src/protocols/core/AppliedSurfaceRevision.hpp": "867509f9c54d6877810a63f7d5385b50c6cbb56e69b19a73dd0f8b00626e4036"
+  },
+  "commands": [
+    {
+      "name": "compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-O1",
+        "-g",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058/checks.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "controls",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058/tree.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058/tree.qnt",
+        "--main=tree",
+        "--backend=typescript",
+        "--match=^(unchangedTest|childOnlyTest|detachTest|reincarnationTest|geometryTest|orderTest|syncTest|unavailableTest|recoveryTest)$",
+        "--seed=730001",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "sampling",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058/tree.qnt",
+        "--main=tree",
+        "--backend=typescript",
+        "--invariant=safety",
+        "--seed=730002",
+        "--max-samples=300",
+        "--max-steps=40",
+        "--n-traces=12",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058/sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-childOnlyTest-1.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058/checks",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-detachTest-2.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058/checks",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-geometryTest-4.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058/checks",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-orderTest-5.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058/checks",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-recoveryTest-8.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058/checks",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-reincarnationTest-3.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058/checks",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-syncTest-6.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058/checks",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-unavailableTest-7.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058/checks",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-unchangedTest-0.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058/checks",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-0.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058/checks",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-1.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058/checks",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-10.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058/checks",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-11.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058/checks",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-2.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058/checks",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-3.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058/checks",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-4.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058/checks",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-5.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058/checks",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-6.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058/checks",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-7.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058/checks",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-8.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058/checks",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-9.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-tree-checks-v1/qa/check-1791234574812309058/checks",
+        "--replay"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "projection": "Actual pure AppliedRevision/TreeRevision helpers; no compositor registry, weak-resource identity, GPU, IPC, native child pixels or complete release acceptance.",
+  "actualControls": 65,
+  "selectedNames": [
+    "unchangedTest",
+    "childOnlyTest",
+    "detachTest",
+    "reincarnationTest",
+    "geometryTest",
+    "orderTest",
+    "syncTest",
+    "unavailableTest",
+    "recoveryTest"
+  ],
+  "coupledTraces": [
+    {
+      "trace": "named-childOnlyTest-1.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-detachTest-2.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-geometryTest-4.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-orderTest-5.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-recoveryTest-8.itf.json",
+      "statesCompared": 4
+    },
+    {
+      "trace": "named-reincarnationTest-3.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-syncTest-6.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-unavailableTest-7.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-unchangedTest-0.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "sample-0.itf.json",
+      "statesCompared": 40
+    },
+    {
+      "trace": "sample-1.itf.json",
+      "statesCompared": 40
+    },
+    {
+      "trace": "sample-10.itf.json",
+      "statesCompared": 40
+    },
+    {
+      "trace": "sample-11.itf.json",
+      "statesCompared": 40
+    },
+    {
+      "trace": "sample-2.itf.json",
+      "statesCompared": 40
+    },
+    {
+      "trace": "sample-3.itf.json",
+      "statesCompared": 40
+    },
+    {
+      "trace": "sample-4.itf.json",
+      "statesCompared": 40
+    },
+    {
+      "trace": "sample-5.itf.json",
+      "statesCompared": 40
+    },
+    {
+      "trace": "sample-6.itf.json",
+      "statesCompared": 40
+    },
+    {
+      "trace": "sample-7.itf.json",
+      "statesCompared": 40
+    },
+    {
+      "trace": "sample-8.itf.json",
+      "statesCompared": 40
+    },
+    {
+      "trace": "sample-9.itf.json",
+      "statesCompared": 40
+    }
+  ],
+  "namedScenarios": 9,
+  "invariantSamples": 300,
+  "maxSteps": 40,
+  "artifacts": {
+    "check.py": "377a89024f4ad0b87a3611bc02e84f1c619efe9e560c434d6fff036d86c7bab0",
+    "checks.cpp": "3ad25a760c6cbd7cc5b25ff82bba40263a5c75b6e692b92cb39c99c8a6673077",
+    "tree.qnt": "d92ac8ca67db383fc872458e37731e2457a5ba302688293842562a8a326b4dfd",
+    "tree_revision.hpp": "e66275f37faabd7b939a4f628e22857b77cd598535e58bbf793c60bf5d4f3f46",
+    "source_epoch.hpp": "df64eec18b8bd62b0b21b73e3aabbc1a9db10f122af65e36f78a6147bd67860f",
+    "AppliedSurfaceRevision.hpp": "867509f9c54d6877810a63f7d5385b50c6cbb56e69b19a73dd0f8b00626e4036",
+    "checks": "3ba46beb9aa124709cd2d334f2af3dc01d08dc8452a3ec38fc0f87d6a441aa1f",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls.stdout": "e020a7e4b3b6f4288acde082cf3e11839aa78f31e6576bd70bea228aae2731aa",
+    "controls.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-unchangedTest-0.itf.json": "eccf1696c9e444e9f0ebfdadaf481f495cca0b0e88ec683166981918582360b7",
+    "named-childOnlyTest-1.itf.json": "4628a310dfe5562021278e3b8bfb20db06b9e1902e5ad7d5da9eb839facb485e",
+    "named-detachTest-2.itf.json": "a1834c839ad4106cf0e9b65494d9c42d961bf917e01c3238b6b101a832d4f2ad",
+    "named-reincarnationTest-3.itf.json": "0aecf12fc589fcfe6450c29ca0e4f3295bfbac54ffbb2a05507c92b3426be085",
+    "named-geometryTest-4.itf.json": "bf51a2dcc326cc6de567c1a3c8fc00a8dc71d55c017b9c409b71c496dc8354e1",
+    "named-orderTest-5.itf.json": "05f0af74d7f298aa08879d5c547886f8a28b58980f9b66fa41b4599f5d000777",
+    "named-syncTest-6.itf.json": "d73d23fd036c41ab8c21d19cf0915f95c572b74d24f3de54b71cc743cd03b6f0",
+    "named-unavailableTest-7.itf.json": "f82e65d60eae27d3aea38085fb9dd4579b1ba390870babd69579519866aaad86",
+    "named-recoveryTest-8.itf.json": "01c1834870597cc31f3316715a8b7ac1ab8304b2cb36cfb9619ef6a9dc72c2c1",
+    "named.stdout": "8f5fa095e46159a7de455d784fedd9939362b77ac377f5ed358682a2808bb565",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "c15bf0f220fe376067d13a9e2d43c48856460f1786966cf4b0492fa57eb0c320",
+    "sample-1.itf.json": "fafee4f35a44d6f30c05daa55689c1ade8ae1eaf76bdcec5db5adeaaecac6140",
+    "sample-2.itf.json": "16da6533285361e28bda67b1ac58b6b56b30771af54d4a7b7b8f69bbe709df4d",
+    "sample-3.itf.json": "512a787d918fbae736e4a40ba4908f693306055e2beddc9396880e4aa2a7896b",
+    "sample-4.itf.json": "b67d8a96cfc64bb7607b7db0b9af10abbf706f61b1c35a4c56b29e3f0555abd7",
+    "sample-5.itf.json": "681cc8ba014908136187e99c39c71a4f93a1e8918beb9cc9b121dd950fa1c192",
+    "sample-6.itf.json": "185aa6a8bd14572c39496e3212b098dca60f7a084b9634fd774d178226895272",
+    "sample-7.itf.json": "62e704025a2f361141efd24e3bf67d0be0013f08cec69ffa549a2ac94158b2b4",
+    "sample-8.itf.json": "4ddea3b00c92086909ad9b6d8c7560fbab88d7b95216f838baecd8611e3c3ab0",
+    "sample-9.itf.json": "30277f21a5f2c1884b4ad123bf53d93bc98428dd7936751931b19c2475550421",
+    "sample-10.itf.json": "8a5d667c52674ccd06001ecc05dc7833f50a48637b9dc910c71be1642d8cf72e",
+    "sample-11.itf.json": "85b6f5e12e9f18ec2ce9f7532d853ef66f43543eba4e6629bb60a18e72df8890",
+    "sampling.stdout": "6582adbe4813b960712e99ec0554c9cca96d14a198ac05d4e242cc683df7dfc0",
+    "sampling.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-childOnlyTest-1.itf.stdout": "de3226b3f34c512908c7d8f103295f3c2399cbbe0a7ea4a88c22ee3d4b9f07c6",
+    "replay-named-childOnlyTest-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-detachTest-2.itf.stdout": "de3226b3f34c512908c7d8f103295f3c2399cbbe0a7ea4a88c22ee3d4b9f07c6",
+    "replay-named-detachTest-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-geometryTest-4.itf.stdout": "de3226b3f34c512908c7d8f103295f3c2399cbbe0a7ea4a88c22ee3d4b9f07c6",
+    "replay-named-geometryTest-4.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-orderTest-5.itf.stdout": "de3226b3f34c512908c7d8f103295f3c2399cbbe0a7ea4a88c22ee3d4b9f07c6",
+    "replay-named-orderTest-5.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-recoveryTest-8.itf.stdout": "ba909f34b82a1f45226766ff678e61483136f770be65e3e7e01cfb2b2b305f62",
+    "replay-named-recoveryTest-8.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-reincarnationTest-3.itf.stdout": "de3226b3f34c512908c7d8f103295f3c2399cbbe0a7ea4a88c22ee3d4b9f07c6",
+    "replay-named-reincarnationTest-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-syncTest-6.itf.stdout": "de3226b3f34c512908c7d8f103295f3c2399cbbe0a7ea4a88c22ee3d4b9f07c6",
+    "replay-named-syncTest-6.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-unavailableTest-7.itf.stdout": "1a13d674f2574847dc704f88e5e0d56c79904d528659dc2ab4d41ac6fda92ac7",
+    "replay-named-unavailableTest-7.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-unchangedTest-0.itf.stdout": "6a772aa409d29fcf904a0128d0e2db820e359493b27bbddf180055af809dbad0",
+    "replay-named-unchangedTest-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-0.itf.stdout": "f4767ed6515a0f2d99aa26f93cd2e5f830bcaf62da208764074e285ef58cea30",
+    "replay-sample-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-1.itf.stdout": "c1e0c5eb12a1f8c61e783e885e371e0cac20c61a9182a2399bb4816426b29d8f",
+    "replay-sample-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-10.itf.stdout": "053c79888d655c2778c3df17eca90687d3476fc07b3716b5790eab041d4243fd",
+    "replay-sample-10.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-11.itf.stdout": "797e5987915ee24e132c4134e4a92015ca7fd21aa05f32848de7f56d3788be99",
+    "replay-sample-11.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-2.itf.stdout": "26c5cc95243739c13795757d169bc1c91f5e6a9951c8a0ec8e0fa0790a1778ef",
+    "replay-sample-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-3.itf.stdout": "2c73a885060bc06e6e8993d563d4b318f9e87e625f6781880aa4f80509e7898d",
+    "replay-sample-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-4.itf.stdout": "9fd70798b88f75e831bccd0c0b21bafdce702fdc95f16616dc16f774a1e12aad",
+    "replay-sample-4.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-5.itf.stdout": "89f32852d991934bce1ad5260aaa7406f851eca4f931bb13a1ec3e2461d191e6",
+    "replay-sample-5.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-6.itf.stdout": "5a19265a55ec43bb28b37d7df054f6516373a79f260e271584f5a37603446a29",
+    "replay-sample-6.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-7.itf.stdout": "5111f7b03149e407162894605cffb2777e438022442576538580cacc5cac9e0c",
+    "replay-sample-7.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-8.itf.stdout": "e6a3a5b309b955e4f94656b332082880c9aca4790af6ad83fef434ea696e20de",
+    "replay-sample-8.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-9.itf.stdout": "537336405e1758b6cb6f5652963e9e49213b4135ecaa3599c7591cb80ec095c6",
+    "replay-sample-9.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
