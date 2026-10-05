@@ -1,0 +1,1376 @@
+{
+  "schema": 1,
+  "observedUTC": "2026-10-05T09:30:58.245501+00:00",
+  "head": "7acf7a790b6e914ac902e75351da4a059155574f",
+  "files": {
+    "AGENTS.md": {
+      "sha256": "afca96160331713fce50ba7812ece7bdd53054e9d068a44e80dcf16352b5e33c",
+      "bytes": 2800
+    },
+    "docs/HANDOFF.md": {
+      "sha256": "339f702523fe5f4113700978c14c84e6eaa289ba964053d2d1e7d4954dacdbbd",
+      "bytes": 7965
+    },
+    "docs/elm-roadmap/ARCHITECTURE.md": {
+      "sha256": "d024afa7f40abb4a4c2eab4f85a2f557e332f4fdc5ecc4d5fefa1233c0cda906",
+      "bytes": 45470
+    },
+    "docs/elm-roadmap/BUILD-LOOP.md": {
+      "sha256": "bc909f13e31f7812af3e7351e1058e52c7e82e9426681fa0dd3fac465ee8c3db",
+      "bytes": 5298
+    },
+    "docs/elm-roadmap/ELM-PRACTICES.md": {
+      "sha256": "510b204bf099c8f2fb52b92c8e03431483e5c2c5bc25269905c8950833d63796",
+      "bytes": 6188
+    },
+    "docs/elm-roadmap/INTERACTION.md": {
+      "sha256": "2a947a3aa56d7b7b9e7d2f5c1ceb100ac7b8c345a73fd7616c0c4c567d0e01c4",
+      "bytes": 7343
+    },
+    "docs/elm-roadmap/REQUIREMENTS.md": {
+      "sha256": "0058972a8133d01689815d3b4148c5fed95d7a79f1a192d512328feeae51c825",
+      "bytes": 134856
+    },
+    "docs/elm-roadmap/RIGHT-CLICK.md": {
+      "sha256": "a9216264e0656c56fb6452428b51c44ee2137ba6a84019833b4b3a648358c7d9",
+      "bytes": 35194
+    },
+    "docs/elm-roadmap/ROADMAP.md": {
+      "sha256": "496c7c3a6b2593b277c118f4bb5142b8c8129f372e910671b0fd9fb4d1a546a9",
+      "bytes": 19801
+    },
+    "docs/elm-roadmap/SPRINTS.md": {
+      "sha256": "7b0bb55a6539c1e3f4ca2281b4798d235f4a0503285ead815d921463b340b8aa",
+      "bytes": 70250
+    },
+    "docs/elm-roadmap/delivery/FRP-ELM-WORKPLAN.json": {
+      "sha256": "a23f7e0f0ab55ae15567633c6a43bf3c627d4923a9272439079b3b63049258b6",
+      "bytes": 37406
+    },
+    "docs/elm-roadmap/delivery/FRP-ELM-WORKPLAN.md": {
+      "sha256": "22d5c481851d4a2133ea13657d325644e8f59ee7646b289b5fe0e8d40674b70f",
+      "bytes": 32363
+    },
+    "docs/elm-roadmap/delivery/loop-state.json": {
+      "sha256": "bd5d8278968a077bc095cc375aa06f479d0c3da14227e70ad2b0a8f814602e98",
+      "bytes": 1861
+    },
+    "docs/elm-roadmap/delivery/sprint-backlog.json": {
+      "sha256": "0189e47a340f9c2328f9f9a8ac087f5f50c04eac0b15e486d666b2b4418066db",
+      "bytes": 246008
+    },
+    "docs/elm-roadmap/requirements.json": {
+      "sha256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+      "bytes": 341676
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/HANDOFF.md": {
+      "sha256": "f5edaa75bf4f275cccab2261e74240f483379544c861e4a8d16fa93b4ced0e5b",
+      "bytes": 2191
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/adapter/admission_ledger.py": {
+      "sha256": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1",
+      "bytes": 11214
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/adapter/catalog_authority.py": {
+      "sha256": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+      "bytes": 5008
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/adapter/catalog_transport.py": {
+      "sha256": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+      "bytes": 2666
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/adapter/daemon.py": {
+      "sha256": "c5a3aea3b57dffced55268bfde08c3dcc100a9dc12e2604ed3576384079e1055",
+      "bytes": 11101
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/adapter/delivery_ledger.py": {
+      "sha256": "ce1ff3528b454bdca7412389f5693f69023a5c76bc9586541c1091c1cddc5ca4",
+      "bytes": 7783
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/adapter/durable_ledger.py": {
+      "sha256": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+      "bytes": 10986
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/adapter/effect_endpoint.py": {
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "bytes": 6985
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/adapter/endpoint.py": {
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "bytes": 10129
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/adapter/geometry_endpoint.py": {
+      "sha256": "83a76bc1e14e18357d7d921f0071f49a9e7e47c984ad3a5db0ae4279dc32d59c",
+      "bytes": 14255
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/adapter/geometry_size_policy.py": {
+      "sha256": "bcca6dd280911a38ed189e2e8ca6d81ea98c775ef261444f9b1e0f4b9a754888",
+      "bytes": 5287
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/adapter/grant_endpoint.py": {
+      "sha256": "4b60a6c7e43aade3f2ce59495600f3b418b781865a7289dae53a189388f5c3f0",
+      "bytes": 4610
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/adapter/reconciliation.py": {
+      "sha256": "5f558130f005b722fec187e87a88a8cd69606c786c27beb0decede715c54e5f9",
+      "bytes": 6224
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/adapter/recovery_fault.py": {
+      "sha256": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+      "bytes": 2017
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/adapter/recovery_journal.py": {
+      "sha256": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+      "bytes": 11003
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/adapter/recovery_store.py": {
+      "sha256": "fa7e852c963bc4602c2066d05e77d47d8535c732775fe04258021accd3cd7be1",
+      "bytes": 2587
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/adapter/retirement_ledger.py": {
+      "sha256": "213cbb6ecd5c2218075d2cc98132c1c53680933f3898c757e7ba1848261faec5",
+      "bytes": 18804
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/adapter/taskbar_catalog.py": {
+      "sha256": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+      "bytes": 8809
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/adapter/taskbar_projection.py": {
+      "sha256": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+      "bytes": 1170
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/native/admission-test.c": {
+      "sha256": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+      "bytes": 805
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/native/context-keys-test.c": {
+      "sha256": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+      "bytes": 2959
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/native/context-keys.h": {
+      "sha256": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+      "bytes": 2623
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/native/geometry-carrier-test.c": {
+      "sha256": "770835580c7a4a2e21e49a9c3da586ee3ae59e66a92320dd7bb12fa8e516d921",
+      "bytes": 5425
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/native/handoff-test.c": {
+      "sha256": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+      "bytes": 1054
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/native/host-fault.h": {
+      "sha256": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+      "bytes": 2495
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/native/host-journal.h": {
+      "sha256": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+      "bytes": 16541
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/native/host.c": {
+      "sha256": "08b5b5467890fa487f73fdd6bc8b2027b73d7618ab2de481d8e30061d1400c1a",
+      "bytes": 62942
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/native/reconciliation-carrier-test.c": {
+      "sha256": "38210317eff28d8a436e640e971f91df71ffcc3b17e82c27a60ee34f57d9f73d",
+      "bytes": 3024
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/native/recovery-presentation-test.c": {
+      "sha256": "812bbab1640e12269bc195979cd319a96a505157ba8f5c637eebfd5561bc8e67",
+      "bytes": 2766
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/native/shared-context-test.c": {
+      "sha256": "ed50c8ed6b0fee3db3818e2f38c8bb57985b388b26ee09a5624d32f1bfa258ee",
+      "bytes": 20901
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/native/shared-context.h": {
+      "sha256": "e86f3ba7a4c76d7839ef8d67d14c7f9ea6b514afa2ac110fc7cebf2da2fd62ce",
+      "bytes": 22281
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/native/shared-host.c": {
+      "sha256": "8004998d6fd6ec223c4c6e5a174ad91116901b8c0591a061e5bad7ef7e140c22",
+      "bytes": 43116
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/native/surface-test.c": {
+      "sha256": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+      "bytes": 4091
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/native/surface.h": {
+      "sha256": "2bdf2d9b3b34fa7193da90e58ac378e7a640ae91e7b02d46987e33c559209f0b",
+      "bytes": 5561
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/qa/activation-1791174198376043295/report.json": {
+      "sha256": "a2f395a70abd4ad677325f1fe3c3e17287e081ff3c6f862435e255c755acf312",
+      "bytes": 11198
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/qa/activation.py": {
+      "sha256": "fccd4bc028486fb4c3a9591989afec02f1b5db4e0624ab87296bb318faee33f2",
+      "bytes": 2095
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/qa/build-1791173661566450220/report.json": {
+      "sha256": "5da7bf3ae01c73f51763dc907941c0d9b32bc4755c950d5689209103a18290b5",
+      "bytes": 330402
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/qa/build-1791174179201587518/report.json": {
+      "sha256": "345a6266ba650da917a55bc68bacf3e980499d7835fe368cf4fcb7d0d94ac442",
+      "bytes": 330590
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/qa/build.py": {
+      "sha256": "49f283277d8c3a4bdc47ddda98fc8b06105adc0b290003b4361b3510aea08ef0",
+      "bytes": 5706
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/qa/callback-1791173881790562495/report.json": {
+      "sha256": "2f8c2d2b341d971ceb5b01493c092f17c551af3aa0d88ba1a3901dbad50a9194",
+      "bytes": 3374
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/qa/callback.py": {
+      "sha256": "ce4be117adb67ec7b2ae97632f468e449d3e5e3089ece34d8ba352c55a096af6",
+      "bytes": 2539
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-controls-1791173703109781991/report.json": {
+      "sha256": "c108ba68628d685dd5c73dd9ebeecda48e73ac9322f10ab650ccec3dce9dd3b5",
+      "bytes": 13863
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/report.json": {
+      "sha256": "8c4f6e74c2769c114b53f10afe339af9a1f34eb78fd49cd07177dc8fa05ad46d",
+      "bytes": 11003
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/qa/catalog_controls.py": {
+      "sha256": "7ca5bac7fc9d4ad4b212848f537f4894903ede855b74cca441aaf4f8e12d1446",
+      "bytes": 3891
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/qa/catalog_mutations.py": {
+      "sha256": "6b8ab1d320e21252bfe4d191553b01192bc42df015e181769f2819ff9fefd772",
+      "bytes": 4413
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/qa/decoder-1791173731221421461/report.json": {
+      "sha256": "d517a9795d3c70f0903d5b739edb68cde54544067f4d8d030475e10888d94b7c",
+      "bytes": 49777
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/qa/decoder.py": {
+      "sha256": "5c26044ee04c8969b2b9716d10493ce5d1f777151b0b0e511f70c6a0c7bca8d7",
+      "bytes": 3912
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/qa/freeze-1791174214655136555/report.json": {
+      "sha256": "f8f91c29568bcf3bf832ffcfe9b26591694288bd478c18f09f1cd44f87023097",
+      "bytes": 2516
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/qa/freeze.py": {
+      "sha256": "17649cdb2fe477ee3cef0f581ff12648ff3cc88607bae61fa57c5c3899ed99cd",
+      "bytes": 4363
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/qa/freeze_model.py": {
+      "sha256": "e92c7a6fdcb080fb669bc68bd8312713be001d1e9409d9dab5f4180672ea23d0",
+      "bytes": 3345
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/qa/model.py": {
+      "sha256": "a460f55f3f827bf28a746ce603a9b742957727b65d3ed2246a8923be3f96286a",
+      "bytes": 2438
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/qa/mutations.py": {
+      "sha256": "80693c1431731ea4fd8725e2736d8de50b6fab4b4ee6427ac3427c0b34a3743d",
+      "bytes": 3700
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/qa/negative-1791173731221423578/report.json": {
+      "sha256": "c860caf9f8dcca75d0d8c82122b36315c0506ac8247c327d9ea97bf6af6b12e2",
+      "bytes": 10479
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/qa/negative.py": {
+      "sha256": "a2e4ec551e88fcc0b41a0dad2286ed352f1b0fdfdd3432b4ed92288aecac79db",
+      "bytes": 3432
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/qa/ownership-1791173731219825704/report.json": {
+      "sha256": "de5503ba2556d05248d1652b9cbbc1ff8c68cc574737782925366561a7737d92",
+      "bytes": 2241
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/qa/ownership.py": {
+      "sha256": "5d645069e6abf48120fd9af56f338f8e99aa7333369634632cbc5ebc6fad8524",
+      "bytes": 5606
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/report.json": {
+      "sha256": "eb4fbf243e16455c9ff2f6689bb248d2b664e7f642a4c49c7092897b0aae1f43",
+      "bytes": 15334
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/qa/producer.py": {
+      "sha256": "fbd87c81825d8f7bebf256c039127dab8775009aa8f25077aa2e354b1e10af09",
+      "bytes": 6240
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/qa/producer_candidate.py": {
+      "sha256": "b01383ced7aa45028b2fdc56dc06a496c87e12e9acc5cdac63f819ec6b95c571",
+      "bytes": 7006
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/qa/resource-closure-1791173881790424741/report.json": {
+      "sha256": "f98343af5811325e6420428deb1300c825df9cfba159a459f30a96a3dc17d8c9",
+      "bytes": 2617
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/qa/resource_closure.py": {
+      "sha256": "c2e15ef802e68b53c4dab5499c971ebd33016aaa392b086023a587f017693030",
+      "bytes": 1876
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/qa/run.py": {
+      "sha256": "24b5ecd0e4af4c1abf3f1d1d3622d961a1f318c57f55d2db01b2d17bba7d14f7",
+      "bytes": 19706
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/qa/tests-1791173731277421227/report.json": {
+      "sha256": "9f9412068337c3c7ae5c2103aa7920033c2259bf9022c583a629306862e9b37e",
+      "bytes": 43466
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/qa/toolchain.py": {
+      "sha256": "284b407e018531a8adee6bd40694ae02dbb19ba964ddb8c5f848bf4355c5749c",
+      "bytes": 1123
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/ActionProjection.elm": {
+      "sha256": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996",
+      "bytes": 3989
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/Bar.elm": {
+      "sha256": "a10abbe7d0542c642552d90cfa459b353a3843391ce47e06ba94b91afb0b6113",
+      "bytes": 981
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/BatchReplay.elm": {
+      "sha256": "6300d3c2e617de14b2fd70a40606ea8c94db435a93f0ae30bd19765f5cdce852",
+      "bytes": 8901
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/Binding.elm": {
+      "sha256": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+      "bytes": 1480
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/CapturedAction.elm": {
+      "sha256": "a3e22c7dd5643a1c0424ea1ae09e134bc8b19567de980e57095e08273604fb66",
+      "bytes": 2172
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/Catalog.elm": {
+      "sha256": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+      "bytes": 2701
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/CatalogReplay.elm": {
+      "sha256": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+      "bytes": 1300
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/Desktop.elm": {
+      "sha256": "dd0f778c70bb0e53fb4f7d344f7995fd5bbce75a9002bace15b5d70ae1428df0",
+      "bytes": 22302
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/DesktopReplay.elm": {
+      "sha256": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+      "bytes": 3077
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/Effects.elm": {
+      "sha256": "c41a0732a640ca7727506193c654fd6e9c996e3b9e136ca58e911961233e9e4b",
+      "bytes": 16479
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/GeometryProjection.elm": {
+      "sha256": "4aee2448599d3b94d3dd4762aa8d0c223b77e9d1a61898e70d6870151194d1d9",
+      "bytes": 10573
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/GeometrySizePolicy.elm": {
+      "sha256": "46dda2de43642cd33997382e90813c8eeccde80745d79b7d5cd5fd425b062c43",
+      "bytes": 6205
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/Inspection.elm": {
+      "sha256": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+      "bytes": 3570
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/Launch.elm": {
+      "sha256": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6",
+      "bytes": 8353
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/LaunchReplay.elm": {
+      "sha256": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+      "bytes": 4031
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/Main.elm": {
+      "sha256": "2e9c042c5b2b068dbe582680ed37e6fa766b636d6d1a422297f843d135fb5405",
+      "bytes": 2976
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/Menu.elm": {
+      "sha256": "c40fcfa24bf9d48044ccbe2c08df0abb7d8b94ee04111776234ecd88792ff4f0",
+      "bytes": 18993
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/MenuBridge.elm": {
+      "sha256": "c8b83efc426e83d5b1ebde79aaa78b44e9c0150849d68d77477793c0e344ebe2",
+      "bytes": 26793
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/MenuSurfaceReplay.elm": {
+      "sha256": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39",
+      "bytes": 5461
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/NativeOutcome.elm": {
+      "sha256": "fc9e824d315e0316b850fd36760c9f4ab4239eb97d1c4b3cc752144b70f98d89",
+      "bytes": 2645
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/NativeProvider.elm": {
+      "sha256": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+      "bytes": 5100
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/OutputController.elm": {
+      "sha256": "edc3e8d07788b6ae3eeae48b00b289fd69b55d358dc2860944dd83cf0f876bb9",
+      "bytes": 21757
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/OutputReplay.elm": {
+      "sha256": "44f156b65f816400b75d928371fe5bdba675545eba805fee4793422d5b3f73ff",
+      "bytes": 2289
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/OutputSurfaceReplay.elm": {
+      "sha256": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26",
+      "bytes": 3244
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/Popup.elm": {
+      "sha256": "3b6475ae6bd948c8c5e46ec3e95a1797c26d06c7228dad6baff95bb907e5fd34",
+      "bytes": 958
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/Presentation.elm": {
+      "sha256": "e65c93507188186328c597d8b15e171fbb626ca89835f0f90476ad5aa5c4c48d",
+      "bytes": 1495
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/PresentationReplay.elm": {
+      "sha256": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+      "bytes": 1234
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/Provider.elm": {
+      "sha256": "328d8fd6349eb4151fe448081e8a418f98e7d31bbe467e4cd60d12ed23ae71d0",
+      "bytes": 17531
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/ReceiptRouter.elm": {
+      "sha256": "ffcf85cf38de5665b35b3e2b6eb5a9f261360ec4b226b2fcefc0723cece1a011",
+      "bytes": 10743
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/ReconciliationFrame.elm": {
+      "sha256": "b72ccb317751848506841c020f83c68e3d93eba3b6fb1c1a9b3d84283fec6676",
+      "bytes": 7675
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/ReconciliationTracking.elm": {
+      "sha256": "84482d1bb84160e3bd9e026b2043635c35b76422d6e9066f703411f784b29bf9",
+      "bytes": 7152
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/Replay.elm": {
+      "sha256": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+      "bytes": 1001
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/SharedRecoveryReplay.elm": {
+      "sha256": "f44d52432e1c6c876207c273d8a013fd446b186b85a23d7bf5474943ef26ff8b",
+      "bytes": 3457
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/Shell.elm": {
+      "sha256": "06867a8be89fa184ccf3da55724cc5245dec9ab6fa82c6edfd663f5296c99f9f",
+      "bytes": 31167
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/ShellReplay.elm": {
+      "sha256": "be85fbef5dda8dd07093b578c4be204d8d92772147e1ffacf80368216b5ba8ca",
+      "bytes": 2054
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/Surface.elm": {
+      "sha256": "64cd1e4c25caf057071d8478729598dcb4fb0547340303ca0590ed9c0edfb613",
+      "bytes": 16121
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/SurfaceController.elm": {
+      "sha256": "41874fca4f1df7f5b8dfe2ccb9f08ac710c7134670a6b55d8aaa3b7442ae8fef",
+      "bytes": 13166
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/SurfaceRenderer.elm": {
+      "sha256": "e53debca2155fc047dd263ab1472f7cb591898d9389de398264b5f497a44e11d",
+      "bytes": 5677
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/SurfaceReplay.elm": {
+      "sha256": "476f94f33d9225035a479bd8ae8eb755ae8ac914c29ca533f62913fb378a603a",
+      "bytes": 2781
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/Taskbar.elm": {
+      "sha256": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb",
+      "bytes": 2564
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/TaskbarReplay.elm": {
+      "sha256": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+      "bytes": 1658
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/TaskbarShell.elm": {
+      "sha256": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+      "bytes": 6429
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/TaskbarShellReplay.elm": {
+      "sha256": "72ca534bb5adc6d0a02fd68ff9f287cb1815fcb0f68313ce7d0b3033d4ebf130",
+      "bytes": 2239
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/UInt64.elm": {
+      "sha256": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+      "bytes": 1459
+    },
+    "implementation/elm-catalog-input-integrated-gui-v814/src/UnsentOperation.elm": {
+      "sha256": "46e315cc739e097805af3c9358f9ca27a807ef1119c733aa296687342c8238ea",
+      "bytes": 1426
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/HANDOFF.md": {
+      "sha256": "590ed0fae034428278e9b49cb4e4a01c2a6e544c79d5b7c2ff1fd66482bf8b27",
+      "bytes": 4737
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/REQUIREMENTS.md": {
+      "sha256": "0740caeac5ad8d4d4f7ec5fe15bc8d6e2f9735fff28b503efe0eacec81f14c1b",
+      "bytes": 2190
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/adoption-test.py": {
+      "sha256": "b41873c51fe47c7de89ff152d81aedf5709a9b29b348492569d9ce0867c2ba93",
+      "bytes": 2356
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/ancestor-freeze.py": {
+      "sha256": "c7155032624290e7625e69ef96dd1d1d84e792bba7ec2abce584d0008e6b9c78",
+      "bytes": 3069
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/ancestor-index-freeze.py": {
+      "sha256": "f183593ecadbcfdf125acb78cb1f0b354d639a5f54b433e896e07431c4f1a6f3",
+      "bytes": 5565
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/ancestor-observer_endpoint.py": {
+      "sha256": "68ab481cc88576ea821cdc638c88c54571988c57819bc88d8624f033220cfbc8",
+      "bytes": 2476
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/ancestor-shell.py": {
+      "sha256": "266ae3571b7931900ba4e24fee7e03d2586f90604c92f40ae1a85131320d67f4",
+      "bytes": 22325
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/budget_timing.py": {
+      "sha256": "662d1a2023c99450f1658d938d9a7d9434d8830645076cf73ff149678a56e280",
+      "bytes": 1858
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/freeze-1791176276131266361/report.json": {
+      "sha256": "64c5470f952457e5715e4d02c83a1ed9be8cf59482f44d6357fcdd54729dfcfb",
+      "bytes": 183
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/freeze.py": {
+      "sha256": "cbb0c4c3df5da080f4dae5605223e5f09693718ef47c0048ee8f6d64aedfdd5d",
+      "bytes": 7986
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/host_guard.py": {
+      "sha256": "d4da6dd1cd18d4b251716d3d5e8391a91843755ceecf1ef1ff4abac82d3e5eb0",
+      "bytes": 712
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/join.py": {
+      "sha256": "c90c1908f293f059714a7e9d98b04ca5e87dfaadbc097febbc90784fad329d27",
+      "bytes": 6970
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/loader-1791173767751797754/report.json": {
+      "sha256": "59d532ec1423e4c954304c3a6397e94300ef9deca9322701d0ad2eb3bf5bf26e",
+      "bytes": 1659
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/loader-1791174560058542630/report.json": {
+      "sha256": "c637d20da04d335c8e020dd4bb167d253219ae49bd82a8365d3633dc7c81eb7b",
+      "bytes": 1659
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/loader-1791175269643535724/report.json": {
+      "sha256": "04e61c906119d441b92a55c9cd5fc3f06cacba8220ed0d4f9165570ed6152d5a",
+      "bytes": 2726
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/loader-1791175310810092563/report.json": {
+      "sha256": "acc8eca6b0c7a0200c7241b00d0c5374f3e1680022210417ccd95de9ee4a60df",
+      "bytes": 1659
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/loader-test.py": {
+      "sha256": "4954fa7304e1ace8cf30939abee36ba14397782323a42af20442a04788da2e3f",
+      "bytes": 6201
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/map-failure-test.py": {
+      "sha256": "5958b8216309ff945f95cfeff4790840315b61d4d08b2ec924f12d5093901904",
+      "bytes": 5845
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/map_failure.py": {
+      "sha256": "28923502ef91162090e1893a09f631732f60ff2fc392d032ba7d42227f66a3a9",
+      "bytes": 1681
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/mapping-test.py": {
+      "sha256": "7bc28d2ff1a274f472df2454f276b8e80be499c7ad31cdfc7f12552e5c1d1767",
+      "bytes": 3323
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/native.py": {
+      "sha256": "7ef06fa1f3ce6d245137ef983756ddd75a1c88b72bdd000a92211456ba67993a",
+      "bytes": 18818
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/origin-1791173833435573734/report.json": {
+      "sha256": "fdd01ad3505afc094d81695346ef6d2cafa3240f78baa1df9ba4c5651268c122",
+      "bytes": 8440
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/origin-1791173890291527752/report.json": {
+      "sha256": "45f4c2130f6f1f49b0850dd1de0846d420e7c725c8fbca1f6c02e0ff93cfa514",
+      "bytes": 9448
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/origin-1791175271221032091/report.json": {
+      "sha256": "6dd7aa03b0fe5f63d898124d1c1761bc838ea2724fafd08cd99d5e1e3020bd71",
+      "bytes": 9448
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/origin-adopted-test.py": {
+      "sha256": "40a4682542b15d8f0845bc15a9fb66abbc3af81bf8455d4fc7ff4876ea71b3ab",
+      "bytes": 7844
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/origin-current-test.py": {
+      "sha256": "3e508413db379844358affd78473cbe7ecbab4b1f38e529378473e0c4c2fac06",
+      "bytes": 7793
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/origin-test.py": {
+      "sha256": "5a8e40bd642e202de984307a1a5c83bd16592f27f3edadaaa72d4306bd71954b",
+      "bytes": 7810
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/parent-1791173313678577277/report.json": {
+      "sha256": "9d13a4843940b934254714d57a5c76e6cd9887a78fbddc7d739b90dd4da80600",
+      "bytes": 33950
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/parent-1791173468695277580/report.json": {
+      "sha256": "1df074dbbc9dd235c6a1a1d7e4ee5b3cf6489aa251284d0aec260a2627a330ed",
+      "bytes": 33950
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/parent-1791173545846323074/report.json": {
+      "sha256": "d6a72c2fc6a427c6afeb167e69e32b8317bf26a90b008e79a8e1f22882a0347a",
+      "bytes": 33955
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/parent-1791174527158844399/report.json": {
+      "sha256": "3e8a1aeeaae9083843a79910f0d8975674ea82a41483237b3431344998b5b795",
+      "bytes": 35308
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/parent-1791174559469576326/report.json": {
+      "sha256": "064c1b3d63d40248faf84d8ab78d81249a45c2dc0dde33e595f51bd003289192",
+      "bytes": 34146
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/parent-1791175268897890422/report.json": {
+      "sha256": "bb7c68e6bf7e9874ebe2b04461bb8c3581acd87b63fe17b89838ff4d1262c0da",
+      "bytes": 34146
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/parent-test.py": {
+      "sha256": "d2c18889a2ddab6af3450f867161e6f461ab09bf4e126c2dea4122d4d7ce98c5",
+      "bytes": 4759
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/parent_loader.py": {
+      "sha256": "54e0d908ad067f0ae8eaef334e798c17df89f18875439ac7a0187d982feb0a9e",
+      "bytes": 6521
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/parent_source.py": {
+      "sha256": "272176073b1f4c225931efa22fae5a1b2759dbab036b5e5df0bd588ba967ab28",
+      "bytes": 6233
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/precorrection-test.py": {
+      "sha256": "ffd37aa944694ddcc05a1918b9ff17d783a41648fffd36590b883d60e0c4be96",
+      "bytes": 1972
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/preflight.py": {
+      "sha256": "af0bb18947a62764cf751df504e6ebffafef3ba3fbe6a3bf72b39d61aad11644",
+      "bytes": 5445
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/selector-current-test.py": {
+      "sha256": "0f701fa925fb1e4a6ac0aeb6d89b8619716b896573e73d509634cd3fdeee8454",
+      "bytes": 5886
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/selector-test.py": {
+      "sha256": "394a569fa443b96459f02881e359a2a59cde5e7aba7ed03ab65f7b98d3aec5cb",
+      "bytes": 4945
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/selector.py": {
+      "sha256": "52291b4818cd4d134f36c798cc49f235ae6529ea1383953ae057ca7957ca54d9",
+      "bytes": 3690
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/stamp.py": {
+      "sha256": "6ca51890a2abb63e6fd66f7c1c10087681f49d9f7f615cdafd48db07c064e915",
+      "bytes": 2394
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/stdlib_origin.py": {
+      "sha256": "c806a9c89f22dc43d9e70d4bb59fd924b17d6dbc73ea5141853325d2b71432a4",
+      "bytes": 12891
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/target.py": {
+      "sha256": "a328154fa70c7dad9d29fd7bba8a2f6fc34eaf8e9654a3bae4eb373cce00b7eb",
+      "bytes": 2117
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/targeted-1791173833996105640/report.json": {
+      "sha256": "c0a6ab6c079e5d790bea77540bca6addb5328a93cdda6cf20714eea1bea34055",
+      "bytes": 1920
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/targeted-1791173891110824690/report.json": {
+      "sha256": "7712c378992813500b15ad6b0daab0f74f7446ab2b3b832cf504298f79d6d964",
+      "bytes": 786109
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/targeted-1791175271813584119/report.json": {
+      "sha256": "0c5924783b66ac7f5074b032f8d339ab88fe2042b2bbb05c81b0d610f0139b7f",
+      "bytes": 786300
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/targeted-1791175636024192328/report.json": {
+      "sha256": "d71725eb0cd4b97a65b83290fc257a4df585dd064bc9fb7e5c8683e4dd4e88f0",
+      "bytes": 786388
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/targeted-1791176201795605293/report.json": {
+      "sha256": "c32edf3e1f962cd291330f53403339d9a9d8e0ee795389999daac9fe254fec63",
+      "bytes": 786388
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/targeted-adopted-test.py": {
+      "sha256": "77f78e3f4447daffd707ec27a2ac65d31b2e945e0b3ba75a48a6e4266d63c103",
+      "bytes": 6394
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/targeted-current-test.py": {
+      "sha256": "e73146c179ade46cab013a68ec3216aa07e90d084fc9874107680fccd15b0ef8",
+      "bytes": 6343
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/targeted-test.py": {
+      "sha256": "974320ce9bae3c8d32aeccf81a0e219ae6de22249cf67c01955f5734eaa7b86b",
+      "bytes": 6312
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/test-1791173832383685373/report.json": {
+      "sha256": "6f182cf81aeb6e9f9df8e6266a120e65c92d6aa47798a1c5ece724113ca52c5d",
+      "bytes": 786240
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/test-1791175270118229866/report.json": {
+      "sha256": "99d47be1b563ffe53da615a281acc6922be13674e9aac998e31f312f4ead96a0",
+      "bytes": 786736
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/test-1791175635531094316/report.json": {
+      "sha256": "d9d3fce93fda19400477ceb94d1a5fd3bf759d70afcb9c5562a881759613284c",
+      "bytes": 786824
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/test-1791176201007320934/report.json": {
+      "sha256": "441abff0c5f5a71e907cb09d52b68707a90dda7673ae7261ef0b0415092bb0fd",
+      "bytes": 786824
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/test.py": {
+      "sha256": "c3fc47775e4441c5af52df2d9eb66825f92d643afafde860a0d44e1700f1a490",
+      "bytes": 7246
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/timing-1791173834211533054/report.json": {
+      "sha256": "91ad4e100885ffdda57058b61790640d6af8576a84c5562835458ca7029cd9e9",
+      "bytes": 446
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/timing-1791173892045777229/report.json": {
+      "sha256": "2f21a349bc9a612337f252555872b3d03c7803589da17c3a844463bea2a54398",
+      "bytes": 1435
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/timing-1791175272577858662/report.json": {
+      "sha256": "e9cb8ea38695507404aca7d90fd944c0d5165ae0b1be22bbda148a3fac2b28af",
+      "bytes": 1435
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/timing-adopted-test.py": {
+      "sha256": "7025646290f083350fab5a0b0f95e963ad1dedcb9ce492d65b803658d7cb3f91",
+      "bytes": 3394
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/timing-test.py": {
+      "sha256": "f158b1cb3502ab6429f14a909ef4650b6ca243fa27b1e63fd68cfddc33efad5b",
+      "bytes": 3267
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/timing_source.py": {
+      "sha256": "f55e47d7b3d1a99ad98d6241b9d3f951d8331a3e5b2407a70a22d8427353e5f6",
+      "bytes": 3333
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/tuple.py": {
+      "sha256": "f58babd3b68cbca5293e93ee023e264c5327e2d3ff34e02f025d05940cb23850",
+      "bytes": 7657
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/wrapper-1791174725381561461/report.json": {
+      "sha256": "d01aecea02fe7633f84ba20e84dfd62cf228d9402fb560d00afdc2cefe3acc08",
+      "bytes": 1303
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/wrapper-1791175195764976389/report.json": {
+      "sha256": "3f41bed0ceeed0c8dfb720aafd7f27c836727eb2dacf4858f79f87146d9e21e4",
+      "bytes": 1465
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/wrapper-1791175224542510207/report.json": {
+      "sha256": "29d4ed1eff170fb7163dbdb120dfc19f7f4e76b437cc6c37d443581bb156d104",
+      "bytes": 1465
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/wrapper-1791175311424638720/report.json": {
+      "sha256": "9cc0fa5ec6b6141cc2b6bfa630b64ace7b568185d20590ed6de1ce3ed95bc475",
+      "bytes": 1532
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/wrapper-test.py": {
+      "sha256": "758871e36620ef6137c0c67e62a0b4ea12ca6e713131e98bf33b3aba31fa3618",
+      "bytes": 5419
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/wrapper-witness-1791174302098239123/report.json": {
+      "sha256": "e3c51ba6420472c8bc008b6975263772a75fe9753562098cf5d00d3154019d45",
+      "bytes": 6715
+    },
+    "implementation/elm-own-popup-native-parent-parallel-v391/qa/wrapper-witness.py": {
+      "sha256": "cc1fa99d5ae1b236a3e6c95b9d053797d1d5860ef3c4572ac519d71950addfef",
+      "bytes": 3220
+    },
+    "implementation/elm-preview-producer-refusal-policy-v516/qa/formal-1791184652734355751/report.json": {
+      "sha256": "430ef88d5dff1b269c3863ef9236a6fb1476d28da5d3a4233930d97ec7fcafa4",
+      "bytes": 12022
+    },
+    "implementation/elm-preview-producer-refusal-policy-v516/qa/formal.py": {
+      "sha256": "38783f514f15c33e923218a9d1b5ad10a0e89db6d31f87a0d37ae049d12b48e5",
+      "bytes": 3808
+    },
+    "implementation/elm-preview-producer-refusal-policy-v516/spec/source.qnt": {
+      "sha256": "338a1fb8b0b045ccb369178ac3c29c58c0e4f5f59aa5bd7bc25ed6a64e3f442e",
+      "bytes": 1148
+    },
+    "implementation/elm-preview-producer-refusal-policy-v516/spec/tests.qnt": {
+      "sha256": "c6918287477bde96dbfa976482cb756e786513b005084334589ccac1efe7fab9",
+      "bytes": 1217
+    },
+    "implementation/elm-preview-producer-refusal-qualification-v520/qa/check.py": {
+      "sha256": "c6849b48354dfda399f7e7b6ad9d8d8826b240ac5ec5fa350451f6225ce0e365",
+      "bytes": 6594
+    },
+    "implementation/elm-preview-producer-refusal-qualification-v520/qa/qualification-1791184889821018975/report.json": {
+      "sha256": "d04732d01cf2207ee13ee2741f141c24612d3d9cd4db520aa902f382f68a235f",
+      "bytes": 6787
+    },
+    "implementation/elm-preview-producer-refusal-v517/src/preview_broker.hpp": {
+      "sha256": "54e2ced192b718dfeb0a09bc29b35b748eb7d933ac51b78807ec0e9bb02db9c8",
+      "bytes": 17462
+    },
+    "implementation/elm-preview-shared-bridge-v509/SPEC.md": {
+      "sha256": "c076481b7f5dbe09886de2eb45f5208bec72130743dce0d9ab5ece74302337e0",
+      "bytes": 577
+    },
+    "implementation/elm-preview-shared-bridge-v509/adapter/admission_ledger.py": {
+      "sha256": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1",
+      "bytes": 11214
+    },
+    "implementation/elm-preview-shared-bridge-v509/adapter/catalog_authority.py": {
+      "sha256": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+      "bytes": 5008
+    },
+    "implementation/elm-preview-shared-bridge-v509/adapter/catalog_transport.py": {
+      "sha256": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+      "bytes": 2666
+    },
+    "implementation/elm-preview-shared-bridge-v509/adapter/daemon.py": {
+      "sha256": "c5a3aea3b57dffced55268bfde08c3dcc100a9dc12e2604ed3576384079e1055",
+      "bytes": 11101
+    },
+    "implementation/elm-preview-shared-bridge-v509/adapter/delivery_ledger.py": {
+      "sha256": "ce1ff3528b454bdca7412389f5693f69023a5c76bc9586541c1091c1cddc5ca4",
+      "bytes": 7783
+    },
+    "implementation/elm-preview-shared-bridge-v509/adapter/durable_ledger.py": {
+      "sha256": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+      "bytes": 10986
+    },
+    "implementation/elm-preview-shared-bridge-v509/adapter/effect_endpoint.py": {
+      "sha256": "5968f91e393edc6fe5f84f011191608ffbe23ed734e833150e289a6a7ef420c9",
+      "bytes": 7334
+    },
+    "implementation/elm-preview-shared-bridge-v509/adapter/endpoint.py": {
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "bytes": 10129
+    },
+    "implementation/elm-preview-shared-bridge-v509/adapter/geometry_endpoint.py": {
+      "sha256": "83a76bc1e14e18357d7d921f0071f49a9e7e47c984ad3a5db0ae4279dc32d59c",
+      "bytes": 14255
+    },
+    "implementation/elm-preview-shared-bridge-v509/adapter/geometry_size_policy.py": {
+      "sha256": "bcca6dd280911a38ed189e2e8ca6d81ea98c775ef261444f9b1e0f4b9a754888",
+      "bytes": 5287
+    },
+    "implementation/elm-preview-shared-bridge-v509/adapter/grant_endpoint.py": {
+      "sha256": "4b60a6c7e43aade3f2ce59495600f3b418b781865a7289dae53a189388f5c3f0",
+      "bytes": 4610
+    },
+    "implementation/elm-preview-shared-bridge-v509/adapter/reconciliation.py": {
+      "sha256": "5f558130f005b722fec187e87a88a8cd69606c786c27beb0decede715c54e5f9",
+      "bytes": 6224
+    },
+    "implementation/elm-preview-shared-bridge-v509/adapter/recovery_fault.py": {
+      "sha256": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+      "bytes": 2017
+    },
+    "implementation/elm-preview-shared-bridge-v509/adapter/recovery_journal.py": {
+      "sha256": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+      "bytes": 11003
+    },
+    "implementation/elm-preview-shared-bridge-v509/adapter/recovery_store.py": {
+      "sha256": "fa7e852c963bc4602c2066d05e77d47d8535c732775fe04258021accd3cd7be1",
+      "bytes": 2587
+    },
+    "implementation/elm-preview-shared-bridge-v509/adapter/retirement_ledger.py": {
+      "sha256": "213cbb6ecd5c2218075d2cc98132c1c53680933f3898c757e7ba1848261faec5",
+      "bytes": 18804
+    },
+    "implementation/elm-preview-shared-bridge-v509/adapter/taskbar_catalog.py": {
+      "sha256": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+      "bytes": 8809
+    },
+    "implementation/elm-preview-shared-bridge-v509/adapter/taskbar_projection.py": {
+      "sha256": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+      "bytes": 1170
+    },
+    "implementation/elm-preview-shared-bridge-v509/native/admission-test.c": {
+      "sha256": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+      "bytes": 805
+    },
+    "implementation/elm-preview-shared-bridge-v509/native/context-keys-test.c": {
+      "sha256": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+      "bytes": 2959
+    },
+    "implementation/elm-preview-shared-bridge-v509/native/context-keys.h": {
+      "sha256": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+      "bytes": 2623
+    },
+    "implementation/elm-preview-shared-bridge-v509/native/geometry-carrier-test.c": {
+      "sha256": "770835580c7a4a2e21e49a9c3da586ee3ae59e66a92320dd7bb12fa8e516d921",
+      "bytes": 5425
+    },
+    "implementation/elm-preview-shared-bridge-v509/native/handoff-test.c": {
+      "sha256": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+      "bytes": 1054
+    },
+    "implementation/elm-preview-shared-bridge-v509/native/host-fault.h": {
+      "sha256": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+      "bytes": 2495
+    },
+    "implementation/elm-preview-shared-bridge-v509/native/host-journal.h": {
+      "sha256": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+      "bytes": 16541
+    },
+    "implementation/elm-preview-shared-bridge-v509/native/host.c": {
+      "sha256": "0f01aef906d28b359791eae8401a00b0b9c47bb4ca7823da212821166e75a6f9",
+      "bytes": 64831
+    },
+    "implementation/elm-preview-shared-bridge-v509/native/preview-integration.h": {
+      "sha256": "c70b5a1cf7ca5b0f510cf26bee012ca2f0597d5c916251a924bc4412ce9f4ff3",
+      "bytes": 646
+    },
+    "implementation/elm-preview-shared-bridge-v509/native/preview-uri-api.h": {
+      "sha256": "7a02550a807102f6ebdad9c1570eb6a719a50b0ed422ff26add97dbd6408b002",
+      "bytes": 683
+    },
+    "implementation/elm-preview-shared-bridge-v509/native/preview-uri-webkit.cpp": {
+      "sha256": "c8cc48442d8d098315b7ad64b71be267679bc361041dc6d2de405c657fa74ea2",
+      "bytes": 1624
+    },
+    "implementation/elm-preview-shared-bridge-v509/native/preview_broker.hpp": {
+      "sha256": "b70ad3a81e495924be9f354d17439e6853aeb1cf6c733bd6cfb22fe14e45df80",
+      "bytes": 16339
+    },
+    "implementation/elm-preview-shared-bridge-v509/native/preview_uri.cpp": {
+      "sha256": "d960c1a3d0cd5a569e84af3d005e184d412c1d86ea6bef6f73ad55b1ab2eaa15",
+      "bytes": 6546
+    },
+    "implementation/elm-preview-shared-bridge-v509/native/preview_uri.hpp": {
+      "sha256": "fccf1cd38df5dede20511e5ef7bf453a64c973efb7270ba8dd940745cfd2c399",
+      "bytes": 2595
+    },
+    "implementation/elm-preview-shared-bridge-v509/native/reconciliation-carrier-test.c": {
+      "sha256": "38210317eff28d8a436e640e971f91df71ffcc3b17e82c27a60ee34f57d9f73d",
+      "bytes": 3024
+    },
+    "implementation/elm-preview-shared-bridge-v509/native/recovery-presentation-test.c": {
+      "sha256": "812bbab1640e12269bc195979cd319a96a505157ba8f5c637eebfd5561bc8e67",
+      "bytes": 2766
+    },
+    "implementation/elm-preview-shared-bridge-v509/native/shared-context-test.c": {
+      "sha256": "ed50c8ed6b0fee3db3818e2f38c8bb57985b388b26ee09a5624d32f1bfa258ee",
+      "bytes": 20901
+    },
+    "implementation/elm-preview-shared-bridge-v509/native/shared-context.h": {
+      "sha256": "e86f3ba7a4c76d7839ef8d67d14c7f9ea6b514afa2ac110fc7cebf2da2fd62ce",
+      "bytes": 22281
+    },
+    "implementation/elm-preview-shared-bridge-v509/native/shared-host.c": {
+      "sha256": "818a14984fb554cebd064cc4a13ed0e79cf03d37cf0f0cd3af5258e6451385a2",
+      "bytes": 45470
+    },
+    "implementation/elm-preview-shared-bridge-v509/native/surface-test.c": {
+      "sha256": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+      "bytes": 4091
+    },
+    "implementation/elm-preview-shared-bridge-v509/native/surface.h": {
+      "sha256": "2bdf2d9b3b34fa7193da90e58ac378e7a640ae91e7b02d46987e33c559209f0b",
+      "bytes": 5561
+    },
+    "implementation/elm-preview-shared-bridge-v509/qa/build-1791183483127592453/report.json": {
+      "sha256": "e32e738bc00d9abca1cdaec96835567476ca434dd722ca7d1dbfca811d22c2d3",
+      "bytes": 384743
+    },
+    "implementation/elm-preview-shared-bridge-v509/qa/build.py": {
+      "sha256": "7321f911d5909994d6ac31b2951d331af322b6c22f28829b642e60a8fcd44a9a",
+      "bytes": 7325
+    },
+    "implementation/elm-preview-shared-bridge-v509/qa/toolchain.py": {
+      "sha256": "284b407e018531a8adee6bd40694ae02dbb19ba964ddb8c5f848bf4355c5749c",
+      "bytes": 1123
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/ActionProjection.elm": {
+      "sha256": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996",
+      "bytes": 3989
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/Bar.elm": {
+      "sha256": "a10abbe7d0542c642552d90cfa459b353a3843391ce47e06ba94b91afb0b6113",
+      "bytes": 981
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/BatchReplay.elm": {
+      "sha256": "6300d3c2e617de14b2fd70a40606ea8c94db435a93f0ae30bd19765f5cdce852",
+      "bytes": 8901
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/Binding.elm": {
+      "sha256": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+      "bytes": 1480
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/CapturedAction.elm": {
+      "sha256": "a3e22c7dd5643a1c0424ea1ae09e134bc8b19567de980e57095e08273604fb66",
+      "bytes": 2172
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/Catalog.elm": {
+      "sha256": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+      "bytes": 2701
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/CatalogReplay.elm": {
+      "sha256": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+      "bytes": 1300
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/Desktop.elm": {
+      "sha256": "dd0f778c70bb0e53fb4f7d344f7995fd5bbce75a9002bace15b5d70ae1428df0",
+      "bytes": 22302
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/DesktopReplay.elm": {
+      "sha256": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+      "bytes": 3077
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/Effects.elm": {
+      "sha256": "c41a0732a640ca7727506193c654fd6e9c996e3b9e136ca58e911961233e9e4b",
+      "bytes": 16479
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/GeometryProjection.elm": {
+      "sha256": "4aee2448599d3b94d3dd4762aa8d0c223b77e9d1a61898e70d6870151194d1d9",
+      "bytes": 10573
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/GeometrySizePolicy.elm": {
+      "sha256": "46dda2de43642cd33997382e90813c8eeccde80745d79b7d5cd5fd425b062c43",
+      "bytes": 6205
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/Inspection.elm": {
+      "sha256": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+      "bytes": 3570
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/Launch.elm": {
+      "sha256": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6",
+      "bytes": 8353
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/LaunchReplay.elm": {
+      "sha256": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+      "bytes": 4031
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/Main.elm": {
+      "sha256": "2e9c042c5b2b068dbe582680ed37e6fa766b636d6d1a422297f843d135fb5405",
+      "bytes": 2976
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/Menu.elm": {
+      "sha256": "c40fcfa24bf9d48044ccbe2c08df0abb7d8b94ee04111776234ecd88792ff4f0",
+      "bytes": 18993
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/MenuBridge.elm": {
+      "sha256": "c8b83efc426e83d5b1ebde79aaa78b44e9c0150849d68d77477793c0e344ebe2",
+      "bytes": 26793
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/MenuSurfaceReplay.elm": {
+      "sha256": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39",
+      "bytes": 5461
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/NativeOutcome.elm": {
+      "sha256": "fc9e824d315e0316b850fd36760c9f4ab4239eb97d1c4b3cc752144b70f98d89",
+      "bytes": 2645
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/NativeProvider.elm": {
+      "sha256": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+      "bytes": 5100
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/OutputController.elm": {
+      "sha256": "edc3e8d07788b6ae3eeae48b00b289fd69b55d358dc2860944dd83cf0f876bb9",
+      "bytes": 21757
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/OutputReplay.elm": {
+      "sha256": "44f156b65f816400b75d928371fe5bdba675545eba805fee4793422d5b3f73ff",
+      "bytes": 2289
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/OutputSurfaceReplay.elm": {
+      "sha256": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26",
+      "bytes": 3244
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/Popup.elm": {
+      "sha256": "f202fd191161fdb0fe66b185d8218bd9a2473f7a0c3f2469fb85bb050d14a482",
+      "bytes": 1834
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/Presentation.elm": {
+      "sha256": "e65c93507188186328c597d8b15e171fbb626ca89835f0f90476ad5aa5c4c48d",
+      "bytes": 1495
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/PresentationReplay.elm": {
+      "sha256": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+      "bytes": 1234
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/PreviewIdentity.elm": {
+      "sha256": "262240e59eed37d362f921a4e7e89d0bb23c8b0f84fb39f0fddc29faaa3de3b5",
+      "bytes": 1586
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/PreviewLifecycle.elm": {
+      "sha256": "4b3fa3a2d6810c52073f3b53819e6f4b5a1842fc67e63c966fdb46a5ce8a9583",
+      "bytes": 25670
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/PreviewPresenter.elm": {
+      "sha256": "bfeed911c88b2c1174c2942a7b68f51a6885409be0392d7610a5f3c3c0b89606",
+      "bytes": 7920
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/PreviewPresenterReplay.elm": {
+      "sha256": "0eb03b99d5d5470936b51ea77de9b102b9742284020d01c469110388efdbc06e",
+      "bytes": 1302
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/Provider.elm": {
+      "sha256": "328d8fd6349eb4151fe448081e8a418f98e7d31bbe467e4cd60d12ed23ae71d0",
+      "bytes": 17531
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/ReceiptRouter.elm": {
+      "sha256": "ffcf85cf38de5665b35b3e2b6eb5a9f261360ec4b226b2fcefc0723cece1a011",
+      "bytes": 10743
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/ReconciliationFrame.elm": {
+      "sha256": "b72ccb317751848506841c020f83c68e3d93eba3b6fb1c1a9b3d84283fec6676",
+      "bytes": 7675
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/ReconciliationTracking.elm": {
+      "sha256": "84482d1bb84160e3bd9e026b2043635c35b76422d6e9066f703411f784b29bf9",
+      "bytes": 7152
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/Replay.elm": {
+      "sha256": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+      "bytes": 1001
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/SharedRecoveryReplay.elm": {
+      "sha256": "f44d52432e1c6c876207c273d8a013fd446b186b85a23d7bf5474943ef26ff8b",
+      "bytes": 3457
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/Shell.elm": {
+      "sha256": "06867a8be89fa184ccf3da55724cc5245dec9ab6fa82c6edfd663f5296c99f9f",
+      "bytes": 31167
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/ShellReplay.elm": {
+      "sha256": "be85fbef5dda8dd07093b578c4be204d8d92772147e1ffacf80368216b5ba8ca",
+      "bytes": 2054
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/Surface.elm": {
+      "sha256": "64cd1e4c25caf057071d8478729598dcb4fb0547340303ca0590ed9c0edfb613",
+      "bytes": 16121
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/SurfaceController.elm": {
+      "sha256": "41874fca4f1df7f5b8dfe2ccb9f08ac710c7134670a6b55d8aaa3b7442ae8fef",
+      "bytes": 13166
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/SurfaceRenderer.elm": {
+      "sha256": "981991412bd57a6709bd6240e9b893c57779105f601bb6bc81594232ce98dab9",
+      "bytes": 5904
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/SurfaceReplay.elm": {
+      "sha256": "476f94f33d9225035a479bd8ae8eb755ae8ac914c29ca533f62913fb378a603a",
+      "bytes": 2781
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/Taskbar.elm": {
+      "sha256": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb",
+      "bytes": 2564
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/TaskbarReplay.elm": {
+      "sha256": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+      "bytes": 1658
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/TaskbarShell.elm": {
+      "sha256": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+      "bytes": 6429
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/TaskbarShellReplay.elm": {
+      "sha256": "72ca534bb5adc6d0a02fd68ff9f287cb1815fcb0f68313ce7d0b3033d4ebf130",
+      "bytes": 2239
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/UInt64.elm": {
+      "sha256": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+      "bytes": 1459
+    },
+    "implementation/elm-preview-shared-bridge-v509/src/UnsentOperation.elm": {
+      "sha256": "46e315cc739e097805af3c9358f9ca27a807ef1119c733aa296687342c8238ea",
+      "bytes": 1426
+    },
+    "implementation/elm-preview-shared-native-v513/SPEC.md": {
+      "sha256": "ee9ef7b7ef5d82abb066b7fee907e9986e568cc68664ac8f3bd4941526db8a5d",
+      "bytes": 428
+    },
+    "implementation/elm-preview-shared-native-v513/qa/inspection.py": {
+      "sha256": "051d44430a49319389781d12bc0389732d76412ef1cf7f59f352f5e78f67bdd2",
+      "bytes": 2563
+    },
+    "implementation/elm-preview-shared-native-v513/qa/isolation.py": {
+      "sha256": "95e6999ccb1528311e950d95bf855a00bc29327458152eb7943f1f01bce1ceb8",
+      "bytes": 7257
+    },
+    "implementation/elm-preview-shared-native-v513/qa/native-1791183899921279817/report.json": {
+      "sha256": "ace571d28d0b4c0c0643ed31fea984fd777415c1a836331db8c930436aa11560",
+      "bytes": 232448
+    },
+    "implementation/elm-preview-shared-native-v513/qa/native.py": {
+      "sha256": "87138faad2941bd81bf8bc58594d2ed80e45ca02b8d990a73d80098a39a6ada2",
+      "bytes": 7456
+    },
+    "implementation/elm-preview-shared-native-v513/qa/session_bus.py": {
+      "sha256": "d8f945a68a8e772ffd26458e8e60beac8c8ad79849f08a2daf4110f5c8178916",
+      "bytes": 1902
+    },
+    "implementation/elm-preview-shared-native-v513/qa/system_isolation.py": {
+      "sha256": "029a41bc8aae39936c69dc591857795aabd43df17b1f9a86b02b6c6a83dddc0e",
+      "bytes": 1109
+    },
+    "implementation/elm-preview-source-authority-v492/SPEC.md": {
+      "sha256": "c85f6e055ffcbd90b378458734f8e852a0750ea9bb67d4544428562f6e669918",
+      "bytes": 3085
+    },
+    "implementation/elm-preview-source-authority-v492/native/authority.cpp": {
+      "sha256": "ac90b48775e5fc26ed37e1a346f56fd64c453e8e692ee496b8e1bcf570fc78d9",
+      "bytes": 48950
+    },
+    "implementation/elm-preview-source-authority-v492/native/binding-registration.hpp": {
+      "sha256": "108be279d8ae3ab5948a78c478acdaa82441a08a93ead1318048c07491872fad",
+      "bytes": 392
+    },
+    "implementation/elm-preview-source-authority-v492/native/grant-registry.hpp": {
+      "sha256": "9379fd3e014d38b3ac8f7d09e139c6710664d006f9499c6e46b0efd654705def",
+      "bytes": 5061
+    },
+    "implementation/elm-preview-source-authority-v492/native/png_checks.cpp": {
+      "sha256": "23a7f1df73acd7c3db612dfef8ee1c95815ec815a81ee62dcaded63e2d7eb95c",
+      "bytes": 6911
+    },
+    "implementation/elm-preview-source-authority-v492/native/preview_broker.hpp": {
+      "sha256": "b70ad3a81e495924be9f354d17439e6853aeb1cf6c733bd6cfb22fe14e45df80",
+      "bytes": 16339
+    },
+    "implementation/elm-preview-source-authority-v492/native/preview_capture.hpp": {
+      "sha256": "50d53edc405549f2ea6babd5501238cf59f7d7c3783cea8deeea2bb1bce9c60c",
+      "bytes": 4621
+    },
+    "implementation/elm-preview-source-authority-v492/native/preview_fd.hpp": {
+      "sha256": "0be78e9c6a75173f17fdbfeb2eb1d31c9c97cc4294b91c292a97bf99ca915c97",
+      "bytes": 7641
+    },
+    "implementation/elm-preview-source-authority-v492/native/preview_png.hpp": {
+      "sha256": "308007220baf1d7f2ad30569237ffaf7d6427d900ee1243811480402f188e670",
+      "bytes": 5592
+    },
+    "implementation/elm-preview-source-authority-v492/native/preview_uri.cpp": {
+      "sha256": "d960c1a3d0cd5a569e84af3d005e184d412c1d86ea6bef6f73ad55b1ab2eaa15",
+      "bytes": 6546
+    },
+    "implementation/elm-preview-source-authority-v492/native/preview_uri.hpp": {
+      "sha256": "fccf1cd38df5dede20511e5ef7bf453a64c973efb7270ba8dd940745cfd2c399",
+      "bytes": 2595
+    },
+    "implementation/elm-preview-source-authority-v492/native/source_epoch.hpp": {
+      "sha256": "df64eec18b8bd62b0b21b73e3aabbc1a9db10f122af65e36f78a6147bd67860f",
+      "bytes": 524
+    },
+    "implementation/elm-preview-source-authority-v492/qa/build-1791181876901504454/report.json": {
+      "sha256": "ce0be3c84223740f00734950032dd1ba0a48e6179eaa737cdc042fa32f525ca0",
+      "bytes": 411098
+    },
+    "implementation/elm-preview-source-authority-v492/qa/build.py": {
+      "sha256": "84c43d55fc88c8e6114d84185ca942f5dad6c4a273006f48e1e11e2f3c5c05c2",
+      "bytes": 10094
+    },
+    "openspec/changes/elm-desktop-pivot/.openspec.yaml": {
+      "sha256": "df4fb22c89b17a0d45d8ca25e98028a2244dceafe5a64ecbbc3bae35db97ccbc",
+      "bytes": 40
+    },
+    "openspec/changes/elm-desktop-pivot/design.md": {
+      "sha256": "c060a040da54a6b65ca24aa1bfc8e62207dbe31d812958182ebdf77bdeca3776",
+      "bytes": 8336
+    },
+    "openspec/changes/elm-desktop-pivot/proposal.md": {
+      "sha256": "df69a447e9dad3778aa73389973ffe6db7fc7030e998b6040c5f4e2b34b979b5",
+      "bytes": 3463
+    },
+    "openspec/changes/elm-desktop-pivot/specs/elm-accessibility/spec.md": {
+      "sha256": "b348a4ae2a3967b9270e07d944611379ef8aa0017f798fc2f81e4c54b7d00b51",
+      "bytes": 17357
+    },
+    "openspec/changes/elm-desktop-pivot/specs/elm-capture-motion/spec.md": {
+      "sha256": "2992298f327f98adccf62ef306b9f9ba55efb9271e6c6af4e59dee820833be82",
+      "bytes": 13754
+    },
+    "openspec/changes/elm-desktop-pivot/specs/elm-delivery/spec.md": {
+      "sha256": "2bbf055d9d683c6459ed58ec05bd102eeb61cd6ac0f9e5d70aa2fcfc3668aaa3",
+      "bytes": 8650
+    },
+    "openspec/changes/elm-desktop-pivot/specs/elm-gpu/spec.md": {
+      "sha256": "eac9eaa6c25e5668635cbff1f0b2730fdeefa055a31c65d3e776161df116c08b",
+      "bytes": 6683
+    },
+    "openspec/changes/elm-desktop-pivot/specs/elm-host/spec.md": {
+      "sha256": "7af6fba69a3c206b3bc72d09d4fdfa03648753159f076b5f271cca35b0d78aeb",
+      "bytes": 8002
+    },
+    "openspec/changes/elm-desktop-pivot/specs/elm-layering/spec.md": {
+      "sha256": "685509a72ff963316eb4d70543f6dbc0d5b52fdf09368f0c5a3ce0ee369936e3",
+      "bytes": 16055
+    },
+    "openspec/changes/elm-desktop-pivot/specs/elm-native-bridge/spec.md": {
+      "sha256": "f040f0730144c83413e6f837791d43921bb3b0c44d99740f5cc5dfbedaa990bc",
+      "bytes": 15384
+    },
+    "openspec/changes/elm-desktop-pivot/specs/elm-native-compositor/spec.md": {
+      "sha256": "cbf98d4a895b4eb1110ae859587b7ad056f53367c52f8fee3c04a179feec9205",
+      "bytes": 3134
+    },
+    "openspec/changes/elm-desktop-pivot/specs/elm-performance/spec.md": {
+      "sha256": "3db6e49f36a0553af519fe2b6d24c4f895c5038e158052892b2ae9aefcc8c16b",
+      "bytes": 3397
+    },
+    "openspec/changes/elm-desktop-pivot/specs/elm-security/spec.md": {
+      "sha256": "ebe1d40ac837f4192330050e7adb4b768770917a6346a522b2f63577fb1e01ca",
+      "bytes": 5519
+    },
+    "openspec/changes/elm-desktop-pivot/specs/elm-shell-experience/spec.md": {
+      "sha256": "bfafe5b875568244297f9694afbe18a6cac899ed99ecd2d1d05806abcec49524",
+      "bytes": 18715
+    },
+    "openspec/changes/elm-desktop-pivot/specs/elm-switcher/spec.md": {
+      "sha256": "39ffbec354854815fca4acbc94783be2c406ea6f8f3a015305577fb0204016d7",
+      "bytes": 3119
+    },
+    "openspec/changes/elm-desktop-pivot/specs/elm-taskbar/spec.md": {
+      "sha256": "8a18dd0c5b912b9145c61cc21125196b0454f98e739a92cd4480b274758d7404",
+      "bytes": 5874
+    },
+    "openspec/changes/elm-desktop-pivot/specs/elm-verification/spec.md": {
+      "sha256": "d76dc1b7afac0bb78c16cd409ad2456d390cdde846de8d554e65895e0f5652e5",
+      "bytes": 16331
+    },
+    "openspec/changes/elm-desktop-pivot/specs/elm-window-policy/spec.md": {
+      "sha256": "538bf5390ea850821d0e6e7bd7be3780992a7cf1118bb82bb3af403ee2b170bd",
+      "bytes": 4036
+    },
+    "openspec/changes/elm-desktop-pivot/tasks.md": {
+      "sha256": "d0ebeb98bbeb715bf1e9cb07e0406484948132a4b5119567211bb0e74bf049b4",
+      "bytes": 51308
+    },
+    "openspec/changes/elm-right-click/proposal.md": {
+      "sha256": "616afe656dd79634ee8729e1532c31a153943475e879156afe693c7b54099aab",
+      "bytes": 1490
+    },
+    "openspec/changes/elm-right-click/specs/elm-context-menus/spec.md": {
+      "sha256": "22494ea5666c08e907c5da54631370e445617d9e3dcd1617c7e6ad063095379d",
+      "bytes": 22473
+    },
+    "openspec/changes/elm-right-click/tasks.md": {
+      "sha256": "392ef7fdc8b9f176052bd52615ce9989ff7761878c95d86f750da1d9e265d111",
+      "bytes": 3229
+    },
+    "openspec/config.yaml": {
+      "sha256": "fccc72d7b3ca46e74809b608d6369169e426e594a9fbef72bee3bdd340c99724",
+      "bytes": 420
+    }
+  },
+  "fileCount": 338,
+  "components": [
+    "elm-preview-shared-bridge-v509",
+    "elm-catalog-input-integrated-gui-v814",
+    "elm-own-popup-native-parent-parallel-v391",
+    "elm-preview-source-authority-v492",
+    "elm-preview-producer-refusal-v517",
+    "elm-preview-producer-refusal-policy-v516",
+    "elm-preview-producer-refusal-qualification-v520",
+    "elm-preview-shared-native-v513",
+    "elm-preview-elm-policy-v470"
+  ],
+  "frozenBaseline": {
+    "requirements": 242,
+    "scenarios": 417
+  },
+  "acceptance": "Research inventory only; no native or full-release acceptance."
+}

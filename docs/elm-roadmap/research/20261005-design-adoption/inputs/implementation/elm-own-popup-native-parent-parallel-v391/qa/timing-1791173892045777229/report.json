@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    "exact one callback and returned identity",
+    "original deadline recorded unchanged",
+    "primary BaseException object retained",
+    "failed call recorded",
+    "delegate enter and suppression preserved",
+    "clock failure does not omit callback",
+    "clock failure explicitly incomplete",
+    "bounded records retain all call counts",
+    "exact original365 AST excluding approved measurements",
+    "unsafe source deadline rejected",
+    "unsafe source guard rejected",
+    "byteexact365 stdlib_origin.py",
+    "byteexact365 preflight.py",
+    "byteexact365 host_guard.py"
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-parent-parallel-v391/qa/native.py": "66364e5817df4d93dedc2c48391d58f51ff9d182d99da4eda66a93f44c342a25",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-parent-parallel-v391/qa/budget_timing.py": "662d1a2023c99450f1658d938d9a7d9434d8830645076cf73ff149678a56e280",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-parent-parallel-v391/qa/timing_source.py": "f55e47d7b3d1a99ad98d6241b9d3f951d8331a3e5b2407a70a22d8427353e5f6",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-parent-parallel-v391/qa/timing-adopted-test.py": "7025646290f083350fab5a0b0f95e963ad1dedcb9ce492d65b803658d7cb3f91"
+  }
+}

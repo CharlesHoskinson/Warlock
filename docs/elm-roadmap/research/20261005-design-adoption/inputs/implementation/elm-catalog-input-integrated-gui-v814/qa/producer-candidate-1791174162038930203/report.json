@@ -1,0 +1,440 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "flags",
+      "args": [
+        "pkg-config",
+        "--cflags",
+        "--libs",
+        "gtk+-3.0",
+        "webkit2gtk-4.1",
+        "gtk-layer-shell-0",
+        "json-glib-1.0",
+        "gio-unix-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "compile",
+      "args": [
+        "cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-deprecated-declarations",
+        "qa/admission-probe.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/probe",
+        "-I/usr/include/webkitgtk-4.1",
+        "-I/usr/include/libsoup-3.0",
+        "-I/usr/include/gtk-layer-shell",
+        "-I/usr/include/gtk-3.0",
+        "-I/usr/include/pango-1.0",
+        "-I/usr/include/cloudproviders",
+        "-I/usr/include/cairo",
+        "-I/usr/include/gdk-pixbuf-2.0",
+        "-I/usr/include/glycin-2",
+        "-I/usr/include/at-spi2-atk/2.0",
+        "-I/usr/include/at-spi-2.0",
+        "-I/usr/include/atk-1.0",
+        "-I/usr/include/dbus-1.0",
+        "-I/usr/lib/dbus-1.0/include",
+        "-I/usr/include/fribidi",
+        "-I/usr/include/pixman-1",
+        "-I/usr/include/harfbuzz",
+        "-I/usr/include/freetype2",
+        "-I/usr/include/libpng16",
+        "-I/usr/include/json-glib-1.0",
+        "-I/usr/include/gio-unix-2.0",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lwebkit2gtk-4.1",
+        "-lsoup-3.0",
+        "-ljavascriptcoregtk-4.1",
+        "-lgtk-layer-shell",
+        "-lgtk-3",
+        "-lgdk-3",
+        "-lpangocairo-1.0",
+        "-lcairo-gobject",
+        "-lgdk_pixbuf-2.0",
+        "-latk-1.0",
+        "-lpango-1.0",
+        "-lcairo",
+        "-lharfbuzz",
+        "-ljson-glib-1.0",
+        "-lgio-2.0",
+        "-lgobject-2.0",
+        "-lgmodule-2.0",
+        "-pthread",
+        "-lglib-2.0",
+        "-lz"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "invalid-intent",
+      "args": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/probe",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/effect-controls.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/runtime-invalid-intent/config.json",
+        "invalid-intent"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "invalid-intent no durable acknowledgement",
+      "passed": true
+    },
+    {
+      "name": "invalid-intent visible final admission exactly matches interruption point",
+      "passed": true
+    },
+    {
+      "name": "invalid-intent existing store preserves only exact anchored Unknown",
+      "passed": true
+    },
+    {
+      "name": "invalid-intent no fabricated or lost Unknown",
+      "passed": true
+    },
+    {
+      "name": "invalid-intent no inferred release",
+      "passed": true
+    },
+    {
+      "name": "invalid-intent repeated reopen conserves Unknown",
+      "passed": true
+    },
+    {
+      "name": "foreign-binding",
+      "args": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/probe",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/effect-controls.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/runtime-foreign-binding/config.json",
+        "foreign-binding"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "foreign-binding no durable acknowledgement",
+      "passed": true
+    },
+    {
+      "name": "foreign-binding visible final admission exactly matches interruption point",
+      "passed": true
+    },
+    {
+      "name": "foreign-binding existing store preserves only exact anchored Unknown",
+      "passed": true
+    },
+    {
+      "name": "foreign-binding no fabricated or lost Unknown",
+      "passed": true
+    },
+    {
+      "name": "foreign-binding no inferred release",
+      "passed": true
+    },
+    {
+      "name": "foreign-binding repeated reopen conserves Unknown",
+      "passed": true
+    },
+    {
+      "name": "multiple-effects",
+      "args": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/probe",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/effect-controls.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/runtime-multiple-effects/config.json",
+        "multiple-effects"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "multiple-effects no durable acknowledgement",
+      "passed": true
+    },
+    {
+      "name": "multiple-effects visible final admission exactly matches interruption point",
+      "passed": true
+    },
+    {
+      "name": "multiple-effects existing store preserves only exact anchored Unknown",
+      "passed": true
+    },
+    {
+      "name": "multiple-effects no fabricated or lost Unknown",
+      "passed": true
+    },
+    {
+      "name": "multiple-effects no inferred release",
+      "passed": true
+    },
+    {
+      "name": "multiple-effects repeated reopen conserves Unknown",
+      "passed": true
+    },
+    {
+      "name": "partial-write",
+      "args": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/probe",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/effect-controls.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/runtime-partial-write/config.json",
+        "partial-write"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "partial-write no durable acknowledgement",
+      "passed": true
+    },
+    {
+      "name": "partial-write visible final admission exactly matches interruption point",
+      "passed": true
+    },
+    {
+      "name": "partial-write existing store preserves only exact anchored Unknown",
+      "passed": true
+    },
+    {
+      "name": "partial-write no fabricated or lost Unknown",
+      "passed": true
+    },
+    {
+      "name": "partial-write no inferred release",
+      "passed": true
+    },
+    {
+      "name": "partial-write repeated reopen conserves Unknown",
+      "passed": true
+    },
+    {
+      "name": "file-fsync",
+      "args": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/probe",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/effect-controls.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/runtime-file-fsync/config.json",
+        "file-fsync"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "file-fsync no durable acknowledgement",
+      "passed": true
+    },
+    {
+      "name": "file-fsync visible final admission exactly matches interruption point",
+      "passed": true
+    },
+    {
+      "name": "file-fsync existing store preserves only exact anchored Unknown",
+      "passed": true
+    },
+    {
+      "name": "file-fsync no fabricated or lost Unknown",
+      "passed": true
+    },
+    {
+      "name": "file-fsync no inferred release",
+      "passed": true
+    },
+    {
+      "name": "file-fsync repeated reopen conserves Unknown",
+      "passed": true
+    },
+    {
+      "name": "rename",
+      "args": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/probe",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/effect-controls.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/runtime-rename/config.json",
+        "rename"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "rename no durable acknowledgement",
+      "passed": true
+    },
+    {
+      "name": "rename visible final admission exactly matches interruption point",
+      "passed": true
+    },
+    {
+      "name": "rename existing store preserves only exact anchored Unknown",
+      "passed": true
+    },
+    {
+      "name": "rename no fabricated or lost Unknown",
+      "passed": true
+    },
+    {
+      "name": "rename no inferred release",
+      "passed": true
+    },
+    {
+      "name": "rename repeated reopen conserves Unknown",
+      "passed": true
+    },
+    {
+      "name": "directory-fsync",
+      "args": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/probe",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/effect-controls.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/runtime-directory-fsync/config.json",
+        "directory-fsync"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "directory-fsync no durable acknowledgement",
+      "passed": true
+    },
+    {
+      "name": "directory-fsync visible final admission exactly matches interruption point",
+      "passed": true
+    },
+    {
+      "name": "directory-fsync existing store preserves only exact anchored Unknown",
+      "passed": true
+    },
+    {
+      "name": "directory-fsync no fabricated or lost Unknown",
+      "passed": true
+    },
+    {
+      "name": "directory-fsync no inferred release",
+      "passed": true
+    },
+    {
+      "name": "directory-fsync exact target remains reserved",
+      "passed": true
+    },
+    {
+      "name": "directory-fsync repeated reopen conserves Unknown",
+      "passed": true
+    },
+    {
+      "name": "directory-fsync-after",
+      "args": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/probe",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/effect-controls.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/runtime-directory-fsync-after/config.json",
+        "directory-fsync-after"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "directory-fsync-after no durable acknowledgement",
+      "passed": true
+    },
+    {
+      "name": "directory-fsync-after visible final admission exactly matches interruption point",
+      "passed": true
+    },
+    {
+      "name": "directory-fsync-after existing store preserves only exact anchored Unknown",
+      "passed": true
+    },
+    {
+      "name": "directory-fsync-after no fabricated or lost Unknown",
+      "passed": true
+    },
+    {
+      "name": "directory-fsync-after no inferred release",
+      "passed": true
+    },
+    {
+      "name": "directory-fsync-after exact target remains reserved",
+      "passed": true
+    },
+    {
+      "name": "directory-fsync-after repeated reopen conserves Unknown",
+      "passed": true
+    },
+    {
+      "name": "partial-write-cleanup",
+      "args": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/probe",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/effect-controls.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/runtime-partial-write-cleanup/config.json",
+        "partial-write-cleanup"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "partial-write-cleanup no durable acknowledgement",
+      "passed": true
+    },
+    {
+      "name": "partial-write-cleanup visible final admission exactly matches interruption point",
+      "passed": true
+    },
+    {
+      "name": "cleanup failure preserves actual partial temp evidence",
+      "passed": true
+    },
+    {
+      "name": "partial-write-cleanup existing store preserves only exact anchored Unknown",
+      "passed": true
+    },
+    {
+      "name": "partial-write-cleanup no fabricated or lost Unknown",
+      "passed": true
+    },
+    {
+      "name": "partial-write-cleanup no inferred release",
+      "passed": true
+    },
+    {
+      "name": "partial-write-cleanup repeated reopen conserves Unknown",
+      "passed": true
+    },
+    {
+      "name": "crash-after-rename",
+      "args": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/probe",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/effect-controls.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/runtime-crash-after-rename/config.json",
+        "crash-after-rename"
+      ],
+      "exitCode": 73
+    },
+    {
+      "name": "crash-after-rename no durable acknowledgement",
+      "passed": true
+    },
+    {
+      "name": "crash-after-rename visible final admission exactly matches interruption point",
+      "passed": true
+    },
+    {
+      "name": "crash-after-rename existing store preserves only exact anchored Unknown",
+      "passed": true
+    },
+    {
+      "name": "crash-after-rename no fabricated or lost Unknown",
+      "passed": true
+    },
+    {
+      "name": "crash-after-rename no inferred release",
+      "passed": true
+    },
+    {
+      "name": "crash-after-rename exact target remains reserved",
+      "passed": true
+    },
+    {
+      "name": "crash-after-rename repeated reopen conserves Unknown",
+      "passed": true
+    }
+  ],
+  "nativeAcceptance": false,
+  "scope": "Actual candidate778 C surface_receive and admission producer; GUI deliver captured; real isolated filesystem/syscall before/after injected failures, real owned subprocess cancellation/termination, unchanged copied640 RecoveryStore reopen. Process interruption is not power-loss durability or native authentication."
+}

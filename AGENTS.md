@@ -10,7 +10,9 @@ CPU tests and Quint model results are separate claims.
   whose owning ABI differs from the recorded pair.
 - Native GUI campaigns run serially through the protected `qa_run.py` launcher;
   preserve the five changes in `docs/crash-noise/HANDOFF-codex-window-qa.md`.
-- Follow `docs/elm-roadmap/BUILD-LOOP.md` for automatic roadmap continuation.
+- Follow `docs/warlock-build-loop/v1/INSTRUCTIONS.md` for the current Warlock
+  GUI completion loop. It incorporates the inherited `docs/elm-roadmap/BUILD-LOOP.md`
+  QA/coordination rules and the consensus research adoption and release contracts.
   Read the integration lane and latest per-thread checkpoints before choosing
   work; preserve concurrent workers' source paths and state. New native GUI
   campaigns must use `python3 -B implementation/elm-build-loop-v1/loop.py native
@@ -38,7 +40,7 @@ Allow time for the popup. If the user cancels, stop instead of repeatedly prompt
 
 ## GitHub
 
-This repository has no remote. Do not publish it without explicit authorization.
+The `github` remote currently points to `https://github.com/CharlesHoskinson/Warlock.git`. The repository is named Warlock. `/home/hoskinson/Warlock` points to the original source root to preserve frozen paths and live workers. Honor existing publication authorization and preserve concurrent workers when publishing.
 For authorized GitHub operations, use `gh` (logged in as CharlesHoskinson) and
 HTTPS Git URLs. Never print, copy or store its token. Do not rerun authentication
 setup. Git identity is `charles hoskinson <charles.hoskinson@gmail.com>`.

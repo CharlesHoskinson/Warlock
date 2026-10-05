@@ -1,0 +1,5 @@
+{
+  "parent": "implementation/warlock-preview-demand-v2",
+  "reason": "Preserve stale-allocation fixture failure. Allocate test buffer at authenticated capture start, then independently signal producer fence after later content updates. Production logic unchanged; no weakening of native exact-context validation.",
+  "originalFailedReport": "implementation/warlock-preview-demand-v2/qa/check-1791205742725136135/report.json"
+}

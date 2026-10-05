@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    "actual native import never executes ordinary wrapper cache; verified path refuses it before execution",
+    "actual native factory ignores foreign ordinary wrapper module/slot",
+    "own wrapper checked_parent foreign slot refuses on actual next qualification",
+    "own wrapper collector method foreign slot refuses",
+    "actual external entry rejects compromised self-verifier before forged collector call",
+    "actual external entry rejects instance method shadow",
+    "actual external entry rejects forged collector with genuine wrapper verifier",
+    "restored own wrapper actual full qualification succeeds",
+    "actual external entry accepts genuine full-row self collect"
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-parent-parallel-v391/qa/native.py": "7ef06fa1f3ce6d245137ef983756ddd75a1c88b72bdd000a92211456ba67993a",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-parent-parallel-v391/qa/parent_loader.py": "54e0d908ad067f0ae8eaef334e798c17df89f18875439ac7a0187d982feb0a9e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-parent-parallel-v391/qa/parent_source.py": "272176073b1f4c225931efa22fae5a1b2759dbab036b5e5df0bd588ba967ab28",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-parent-parallel-v391/qa/wrapper-test.py": "758871e36620ef6137c0c67e62a0b4ea12ca6e713131e98bf33b3aba31fa3618"
+  }
+}

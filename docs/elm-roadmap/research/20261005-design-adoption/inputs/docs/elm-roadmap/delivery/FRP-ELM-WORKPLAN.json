@@ -1,0 +1,617 @@
+{
+  "schema": 1,
+  "updatedUTC": "2026-10-05T07:09:38.503125+00:00",
+  "scope": "Additive review work; original roadmap/requirements/deadlines unchanged",
+  "reviewPacket": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z",
+  "findingCount": 44,
+  "workItems": [
+    {
+      "id": "W01",
+      "title": "Batch topology/capacity liveness",
+      "priority": "P0",
+      "ownerLane": "existing-gui-integration-lane",
+      "dependsOn": [],
+      "status": "ready-for-model",
+      "findings": [
+        "01-01",
+        "03-02",
+        "05-02"
+      ]
+    },
+    {
+      "id": "W02",
+      "title": "Durable ledger longevity and display outcomes",
+      "priority": "P0",
+      "ownerLane": "existing-receipt-integration-lane",
+      "dependsOn": [],
+      "status": "ready-for-model",
+      "findings": [
+        "02-08",
+        "03-01",
+        "03-05"
+      ]
+    },
+    {
+      "id": "W03",
+      "title": "Preview observation/ownership/liveness model and effects",
+      "priority": "P0",
+      "ownerLane": "retained-preview-lane",
+      "dependsOn": [],
+      "status": "bounded-coupled-native-elm-protocol-qualified-integration-open",
+      "findings": [
+        "01-02",
+        "01-04",
+        "02-01",
+        "02-06",
+        "03-04",
+        "04-1",
+        "04-2",
+        "04-3",
+        "04-4",
+        "04-6",
+        "04-7",
+        "04-8",
+        "05-06"
+      ]
+    },
+    {
+      "id": "W04",
+      "title": "Typed internal messages, admission and identity domains",
+      "priority": "P1",
+      "ownerLane": "gui-integration-after-coordination",
+      "dependsOn": [
+        "W01",
+        "W02"
+      ],
+      "status": "queued-with-prerequisites",
+      "findings": [
+        "02-02",
+        "02-03",
+        "02-04",
+        "02-05",
+        "02-10"
+      ]
+    },
+    {
+      "id": "W05",
+      "title": "Original native monotonic deadlines and late outcomes",
+      "priority": "P0",
+      "ownerLane": "native-protocol-after-coordination",
+      "dependsOn": [
+        "W01",
+        "W02"
+      ],
+      "status": "queued-with-prerequisites",
+      "findings": [
+        "01-03",
+        "02-07",
+        "03-03",
+        "03-07",
+        "05-05"
+      ]
+    },
+    {
+      "id": "W06",
+      "title": "Native preview resources and actual fidelity/pixels",
+      "priority": "P0",
+      "ownerLane": "retained-preview-lane",
+      "dependsOn": [
+        "W03"
+      ],
+      "status": "bounded-shared-host-native-coexistence-qualified-provider-open",
+      "findings": [
+        "01-05",
+        "04-5",
+        "05-04"
+      ]
+    },
+    {
+      "id": "W07",
+      "title": "Input identity, popup focus and native keyboard scope",
+      "priority": "P0",
+      "ownerLane": "existing-gui-integration-lane",
+      "dependsOn": [],
+      "status": "ready-for-model",
+      "findings": [
+        "05-01",
+        "05-03",
+        "05-09"
+      ]
+    },
+    {
+      "id": "W08",
+      "title": "Accessibility announcements, scaling and measured performance",
+      "priority": "P1",
+      "ownerLane": "gui-accessibility-lane",
+      "dependsOn": [
+        "W07",
+        "W06"
+      ],
+      "status": "queued-with-prerequisites",
+      "findings": [
+        "04-9",
+        "05-07",
+        "05-08"
+      ]
+    },
+    {
+      "id": "W09",
+      "title": "Revision invalidation and coherent fact admission",
+      "priority": "P1",
+      "ownerLane": "native-projection-after-source-review",
+      "dependsOn": [],
+      "status": "ready-for-model",
+      "findings": [
+        "01-06",
+        "01-07"
+      ]
+    },
+    {
+      "id": "W10",
+      "title": "Normal ordered broker drain/resource closure",
+      "priority": "P1",
+      "ownerLane": "native-recovery-after-source-review",
+      "dependsOn": [],
+      "status": "ready-for-model",
+      "findings": [
+        "03-06"
+      ]
+    },
+    {
+      "id": "W11",
+      "title": "Malformed boundary fail-closed policy",
+      "priority": "P1",
+      "ownerLane": "boundary-after-policy-review",
+      "dependsOn": [],
+      "status": "ready-for-model",
+      "findings": [
+        "01-08",
+        "02-09"
+      ]
+    },
+    {
+      "id": "W12",
+      "title": "Native last-presented motion/reversal",
+      "priority": "P1",
+      "ownerLane": "motion-lane",
+      "dependsOn": [
+        "W05",
+        "W06"
+      ],
+      "status": "queued-with-prerequisites",
+      "findings": [
+        "01-09"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "01-01",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/01-frp-architecture.md",
+      "workItem": "W01",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "Source locations independently inspected; reproduce topology race; historical certificate must authenticate exact registered batch."
+    },
+    {
+      "id": "01-02",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/01-frp-architecture.md",
+      "workItem": "W03",
+      "status": "partially-addressed",
+      "disposition": "incorporated-with-authority-constraints",
+      "note": "372/373 record capture cancellation and retiring leases through exact cleanup receipts. Native allocation ownership, delivery and leak proof remain open. Fresh388 bounded model and actual394 C++ RAM ownership prototype compile/test/sanitizers pass;43 controls,200 cancellation jobs+200 full owned-buffer cycles,7 precise compiled mutants. Coupled native/Elm oracle and frontend Ack remain open; Backpressure/full-record and terminal-replay semantics need reconciliation. No GPU/transport/URI or original S09 gate accepted. Coupled402 now compares actual native397 C++ receipts/resources/charges/floors/certificates with typed399 Elm states and ordered effects including cleanup Ack under36 named403 scenarios+24 sampled traces. No GPU/native URI/production channel/native S09 acceptance; source400/401/404/406 attempts remain preserved."
+    },
+    {
+      "id": "01-03",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/01-frp-architecture.md",
+      "workItem": "W05",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "JavaScript sleep source verified; hidden-page throttling not measured; keep original budgets."
+    },
+    {
+      "id": "01-04",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/01-frp-architecture.md",
+      "workItem": "W03",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "Implement/measure under the assigned work item; original acceptance scope remains unchanged."
+    },
+    {
+      "id": "01-05",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/01-frp-architecture.md",
+      "workItem": "W06",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "Implement/measure under the assigned work item; original acceptance scope remains unchanged. Fresh434 real owning205 snapshot/SHM/PNG producer compiled and436 private native QA19 PASS: actual capture24.55ms under original2s, native peer/binding/incarnation/deadline refusal, independently owned encoded bytes unchanged after actual minimize and source process exit, explicit physical CPU retirement, client-normal-exit then plugin unload then private host cleanup. Native PNG pixels were NOT independently decoded or sampled in436: only size/checksum/ownership metadata. Fresh430 actual26 libpng/GIO/broker checks include original source raster destruction;428 four precise compiled row/alpha/budget regressions and prior25 ASanUBSan controls pass with byte-identical production encoder. Initial423/424 include-path and425 Vector2D/GL namespace compile failures retained. First432 exact-owning native capture SIGSEGV at internal Readback inherited client release; crash+failednormalfixtureexit preserved, no core under mandatoryRLIMIT_CORE1.434 internal release override reviewed438/439 and native rerun436 passes. This is a bounded native producer prerequisite, not original S09 or production fidelity/bridge/GUI qualification. Actual native FD delivery into412/421, host view/scope enrollment, native decoded/presented pixel oracle, composed family/crop/output transform/color, lock/device/replacement events, production ledger/supervised drain, fullstream/runtime model refinement and all13 originalS09 native scenarios remain open. Strengthened fresh441 native rerun20 PASS at22.72ms additionally records/asserts exitCode0 for exact source client,205 compositor, privateWeston and privateDBus; all original19 producer controls rerun unchanged.436 earlier19 metadata controls and cleanup evidence retained separately; normal parent/compositor exit was not recorded by that earlier runner.442 preflight binds434/435/441 owningtuple unchanged. Independent native PNG pixels and production WebKit bridge remain open."
+    },
+    {
+      "id": "01-06",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/01-frp-architecture.md",
+      "workItem": "W09",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "Owning core/plugin event coverage absent from reviewer snapshot; inspect before changing event allowlist."
+    },
+    {
+      "id": "01-07",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/01-frp-architecture.md",
+      "workItem": "W09",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "Implement/measure under the assigned work item; original acceptance scope remains unchanged."
+    },
+    {
+      "id": "01-08",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/01-frp-architecture.md",
+      "workItem": "W11",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "Product fail-closed decision; do not preserve revoked authority or pixels."
+    },
+    {
+      "id": "01-09",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/01-frp-architecture.md",
+      "workItem": "W12",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "Implement/measure under the assigned work item; original acceptance scope remains unchanged."
+    },
+    {
+      "id": "02-01",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/02-elm-model-update.md",
+      "workItem": "W03",
+      "status": "partially-addressed",
+      "disposition": "incorporated",
+      "note": "373 uses opaque typed capture/candidate/accepted states and separate handle/identity domains. Coherent native integration remains open."
+    },
+    {
+      "id": "02-02",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/02-elm-model-update.md",
+      "workItem": "W04",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "Typed API refactor gated on byte-identical wire regression, no second authoritative state model."
+    },
+    {
+      "id": "02-03",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/02-elm-model-update.md",
+      "workItem": "W04",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "Implement/measure under the assigned work item; original acceptance scope remains unchanged."
+    },
+    {
+      "id": "02-04",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/02-elm-model-update.md",
+      "workItem": "W04",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "Dropped child effects visible at Desktop OwnerScope241; reachability not established; first add expected-request oracle."
+    },
+    {
+      "id": "02-05",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/02-elm-model-update.md",
+      "workItem": "W04",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "Implement/measure under the assigned work item; original acceptance scope remains unchanged."
+    },
+    {
+      "id": "02-06",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/02-elm-model-update.md",
+      "workItem": "W03",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "Implement/measure under the assigned work item; original acceptance scope remains unchanged."
+    },
+    {
+      "id": "02-07",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/02-elm-model-update.md",
+      "workItem": "W05",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "Implement/measure under the assigned work item; original acceptance scope remains unchanged."
+    },
+    {
+      "id": "02-08",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/02-elm-model-update.md",
+      "workItem": "W02",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "Coordinate with existing670/675/693 work; do not duplicate or evict unresolved authority."
+    },
+    {
+      "id": "02-09",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/02-elm-model-update.md",
+      "workItem": "W11",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "Decision on malformed authenticated attachment is pending; fail-closed is potentially intentional."
+    },
+    {
+      "id": "02-10",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/02-elm-model-update.md",
+      "workItem": "W04",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "Implement/measure under the assigned work item; original acceptance scope remains unchanged."
+    },
+    {
+      "id": "03-01",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/03-native-effects-protocol.md",
+      "workItem": "W02",
+      "status": "open",
+      "disposition": "incorporated-with-authority-constraints",
+      "note": "Cumulative history guard inspected; existing long-running receipt prototype not yet integrated. Never turn an already-committed duplicate into false Refused."
+    },
+    {
+      "id": "03-02",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/03-native-effects-protocol.md",
+      "workItem": "W01",
+      "status": "open",
+      "disposition": "incorporated-with-authority-constraints",
+      "note": "Early-refusal/topology and uncertain disposition concerns confirmed in source; native reproduction pending."
+    },
+    {
+      "id": "03-03",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/03-native-effects-protocol.md",
+      "workItem": "W05",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "Original trusted event deadline must survive queue/transport hops; protocol migration required."
+    },
+    {
+      "id": "03-04",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/03-native-effects-protocol.md",
+      "workItem": "W03",
+      "status": "partially-addressed",
+      "disposition": "incorporated-with-authority-constraints",
+      "note": "372/373 bind capture jobs to exact lifetime/session/frontend and reset attachment with previous binding. Actual authenticated attachment/cleanup transport remains open. Fresh388 bounded model and actual394 C++ RAM ownership prototype compile/test/sanitizers pass;43 controls,200 cancellation jobs+200 full owned-buffer cycles,7 precise compiled mutants. Coupled native/Elm oracle and frontend Ack remain open; Backpressure/full-record and terminal-replay semantics need reconciliation. No GPU/transport/URI or original S09 gate accepted. Coupled402 now compares actual native397 C++ receipts/resources/charges/floors/certificates with typed399 Elm states and ordered effects including cleanup Ack under36 named403 scenarios+24 sampled traces. No GPU/native URI/production channel/native S09 acceptance; source400/401/404/406 attempts remain preserved."
+    },
+    {
+      "id": "03-05",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/03-native-effects-protocol.md",
+      "workItem": "W02",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "Ledger/display divergence requires compiled reproducer and exact outcome correlation."
+    },
+    {
+      "id": "03-06",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/03-native-effects-protocol.md",
+      "workItem": "W10",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "Inspect prior normal-exit campaigns; grace and cleanup changes must preserve original operation deadlines."
+    },
+    {
+      "id": "03-07",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/03-native-effects-protocol.md",
+      "workItem": "W05",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "Reconcile exact late definitive receipt; explicit acknowledgement/relaunch semantics need product policy."
+    },
+    {
+      "id": "04-1",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/04-quint-refinement.md",
+      "workItem": "W03",
+      "status": "partially-addressed",
+      "disposition": "incorporated-with-authority-constraints",
+      "note": "372/373 check observation/clock binding, reset/exhaustion event, coherent revisions and source-live scene advance. Native event production and bounded exhaustion enrollment remain open."
+    },
+    {
+      "id": "04-2",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/04-quint-refinement.md",
+      "workItem": "W03",
+      "status": "partially-addressed",
+      "disposition": "incorporated-with-authority-constraints",
+      "note": "372/373 emit typed cancellation/release, record resources until matching receipts and reject duplicate accepted release. Native receipts and global broker ledger remain open. Fresh383 adds two-entry broker admission before allocation, separate issued/revoked/producer/consumer histories, delayed channels and scoped fetch. Native compiled broker, bounded production history/transport, fairness and original S09 evidence remain open. Fresh388 bounded model and actual394 C++ RAM ownership prototype compile/test/sanitizers pass;43 controls,200 cancellation jobs+200 full owned-buffer cycles,7 precise compiled mutants. Coupled native/Elm oracle and frontend Ack remain open; Backpressure/full-record and terminal-replay semantics need reconciliation. No GPU/transport/URI or original S09 gate accepted. Coupled402 now compares actual native397 C++ receipts/resources/charges/floors/certificates with typed399 Elm states and ordered effects including cleanup Ack under36 named403 scenarios+24 sampled traces. No GPU/native URI/production channel/native S09 acceptance; source400/401/404/406 attempts remain preserved."
+    },
+    {
+      "id": "04-3",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/04-quint-refinement.md",
+      "workItem": "W03",
+      "status": "partially-addressed",
+      "disposition": "incorporated",
+      "note": "372/373 cancel capture and retire unsignaled candidates at original absolute deadline; lease expiry distinct. Native clock enforcement and stable refresh liveness remain open."
+    },
+    {
+      "id": "04-4",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/04-quint-refinement.md",
+      "workItem": "W03",
+      "status": "partially-addressed",
+      "disposition": "incorporated",
+      "note": "372 runner checks actual typecheck success and exact named QNT508 assertion for all seven mutants. Independent issued/revoked broker history and exhaustive model checking remain open. Fresh383 adds two-entry broker admission before allocation, separate issued/revoked/producer/consumer histories, delayed channels and scoped fetch. Native compiled broker, bounded production history/transport, fairness and original S09 evidence remain open. Fresh388 bounded model and actual394 C++ RAM ownership prototype compile/test/sanitizers pass;43 controls,200 cancellation jobs+200 full owned-buffer cycles,7 precise compiled mutants. Coupled native/Elm oracle and frontend Ack remain open; Backpressure/full-record and terminal-replay semantics need reconciliation. No GPU/transport/URI or original S09 gate accepted. Coupled402 now compares actual native397 C++ receipts/resources/charges/floors/certificates with typed399 Elm states and ordered effects including cleanup Ack under36 named403 scenarios+24 sampled traces. No GPU/native URI/production channel/native S09 acceptance; source400/401/404/406 attempts remain preserved."
+    },
+    {
+      "id": "04-5",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/04-quint-refinement.md",
+      "workItem": "W06",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "Implement/measure under the assigned work item; original acceptance scope remains unchanged. Fresh434 real owning205 snapshot/SHM/PNG producer compiled and436 private native QA19 PASS: actual capture24.55ms under original2s, native peer/binding/incarnation/deadline refusal, independently owned encoded bytes unchanged after actual minimize and source process exit, explicit physical CPU retirement, client-normal-exit then plugin unload then private host cleanup. Native PNG pixels were NOT independently decoded or sampled in436: only size/checksum/ownership metadata. Fresh430 actual26 libpng/GIO/broker checks include original source raster destruction;428 four precise compiled row/alpha/budget regressions and prior25 ASanUBSan controls pass with byte-identical production encoder. Initial423/424 include-path and425 Vector2D/GL namespace compile failures retained. First432 exact-owning native capture SIGSEGV at internal Readback inherited client release; crash+failednormalfixtureexit preserved, no core under mandatoryRLIMIT_CORE1.434 internal release override reviewed438/439 and native rerun436 passes. This is a bounded native producer prerequisite, not original S09 or production fidelity/bridge/GUI qualification. Actual native FD delivery into412/421, host view/scope enrollment, native decoded/presented pixel oracle, composed family/crop/output transform/color, lock/device/replacement events, production ledger/supervised drain, fullstream/runtime model refinement and all13 originalS09 native scenarios remain open. Strengthened fresh441 native rerun20 PASS at22.72ms additionally records/asserts exitCode0 for exact source client,205 compositor, privateWeston and privateDBus; all original19 producer controls rerun unchanged.436 earlier19 metadata controls and cleanup evidence retained separately; normal parent/compositor exit was not recorded by that earlier runner.442 preflight binds434/435/441 owningtuple unchanged. Independent native PNG pixels and production WebKit bridge remain open."
+    },
+    {
+      "id": "04-6",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/04-quint-refinement.md",
+      "workItem": "W03",
+      "status": "partially-addressed",
+      "disposition": "incorporated",
+      "note": "373 optimized replay/view compile; real372 ITF refinement compares state AND ordered commands across70 traces/1509 steps. Seven real compiled mutants caught. Random557 inactive-slot events rejected with unchanged state/no effects; all46 named cases had zero typed rejections. Native sender/resource integration remains open."
+    },
+    {
+      "id": "04-7",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/04-quint-refinement.md",
+      "workItem": "W03",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "Original S09 clock/expiry/minimize/fidelity/native coverage retained; honest client fidelity is not missing-family acceptance."
+    },
+    {
+      "id": "04-8",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/04-quint-refinement.md",
+      "workItem": "W03",
+      "status": "partially-addressed",
+      "disposition": "incorporated",
+      "note": "Per-entry safety cannot prove global budgets or native lock-gap behavior. Fresh383 adds two-entry broker admission before allocation, separate issued/revoked/producer/consumer histories, delayed channels and scoped fetch. Native compiled broker, bounded production history/transport, fairness and original S09 evidence remain open. Fresh388 bounded model and actual394 C++ RAM ownership prototype compile/test/sanitizers pass;43 controls,200 cancellation jobs+200 full owned-buffer cycles,7 precise compiled mutants. Coupled native/Elm oracle and frontend Ack remain open; Backpressure/full-record and terminal-replay semantics need reconciliation. No GPU/transport/URI or original S09 gate accepted. Coupled402 now compares actual native397 C++ receipts/resources/charges/floors/certificates with typed399 Elm states and ordered effects including cleanup Ack under36 named403 scenarios+24 sampled traces. No GPU/native URI/production channel/native S09 acceptance; source400/401/404/406 attempts remain preserved."
+    },
+    {
+      "id": "04-9",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/04-quint-refinement.md",
+      "workItem": "W08",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "Implement/measure under the assigned work item; original acceptance scope remains unchanged."
+    },
+    {
+      "id": "05-01",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/05-gui-performance-accessibility.md",
+      "workItem": "W07",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "Unkeyed lists and press guard gap source-confirmed; real midpoint publication/recipient fixture required."
+    },
+    {
+      "id": "05-02",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/05-gui-performance-accessibility.md",
+      "workItem": "W01",
+      "status": "open",
+      "disposition": "incorporated-with-authority-constraints",
+      "note": "Whole-packet bound and sticky recovery branch inspected; protocol split must preserve atomic stamps/dependencies."
+    },
+    {
+      "id": "05-03",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/05-gui-performance-accessibility.md",
+      "workItem": "W07",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "MutationObserver and missing Space source-confirmed on690; integrate in existing GUI lane."
+    },
+    {
+      "id": "05-04",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/05-gui-performance-accessibility.md",
+      "workItem": "W06",
+      "status": "open",
+      "disposition": "incorporated-with-authority-constraints",
+      "note": "Keyed frame/icon elements are insufficient for physical revoke acceptance; native denial and output samples required. Fresh434 real owning205 snapshot/SHM/PNG producer compiled and436 private native QA19 PASS: actual capture24.55ms under original2s, native peer/binding/incarnation/deadline refusal, independently owned encoded bytes unchanged after actual minimize and source process exit, explicit physical CPU retirement, client-normal-exit then plugin unload then private host cleanup. Native PNG pixels were NOT independently decoded or sampled in436: only size/checksum/ownership metadata. Fresh430 actual26 libpng/GIO/broker checks include original source raster destruction;428 four precise compiled row/alpha/budget regressions and prior25 ASanUBSan controls pass with byte-identical production encoder. Initial423/424 include-path and425 Vector2D/GL namespace compile failures retained. First432 exact-owning native capture SIGSEGV at internal Readback inherited client release; crash+failednormalfixtureexit preserved, no core under mandatoryRLIMIT_CORE1.434 internal release override reviewed438/439 and native rerun436 passes. This is a bounded native producer prerequisite, not original S09 or production fidelity/bridge/GUI qualification. Actual native FD delivery into412/421, host view/scope enrollment, native decoded/presented pixel oracle, composed family/crop/output transform/color, lock/device/replacement events, production ledger/supervised drain, fullstream/runtime model refinement and all13 originalS09 native scenarios remain open. Strengthened fresh441 native rerun20 PASS at22.72ms additionally records/asserts exitCode0 for exact source client,205 compositor, privateWeston and privateDBus; all original19 producer controls rerun unchanged.436 earlier19 metadata controls and cleanup evidence retained separately; normal parent/compositor exit was not recorded by that earlier runner.442 preflight binds434/435/441 owningtuple unchanged. Independent native PNG pixels and production WebKit bridge remain open."
+    },
+    {
+      "id": "05-05",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/05-gui-performance-accessibility.md",
+      "workItem": "W05",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "Clock divergence confirmed; timer throttling still a measured-risk task."
+    },
+    {
+      "id": "05-06",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/05-gui-performance-accessibility.md",
+      "workItem": "W03",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "Implement/measure under the assigned work item; original acceptance scope remains unchanged."
+    },
+    {
+      "id": "05-07",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/05-gui-performance-accessibility.md",
+      "workItem": "W08",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "Choose one announcement owner and inert image semantics; actual AT transcript required."
+    },
+    {
+      "id": "05-08",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/05-gui-performance-accessibility.md",
+      "workItem": "W08",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "Measure with QA observers disabled before lazy/section revision changes; native presentation distinct from DOM ack."
+    },
+    {
+      "id": "05-09",
+      "report": "docs/elm-roadmap/reviews/frp-elm-opus55-20261005T005653Z/05-gui-performance-accessibility.md",
+      "workItem": "W07",
+      "status": "open",
+      "disposition": "incorporated",
+      "note": "Existing AT recipient campaign failed; adding keyboard authority needs current native role/focus proof."
+    }
+  ],
+  "boundedEvidence": [
+    "implementation/elm-retained-preview-elm-v367/qa/build-1791161953995831163/report.json",
+    "implementation/elm-retained-preview-elm-v367/qa/refinement-1791162075655532257/report.json",
+    "implementation/elm-retained-preview-elm-v367/qa/mutations-1791162156743209566/report.json",
+    "implementation/elm-retained-preview-elm-v367/qa/adversarial-1791162301881097912/report.json",
+    "implementation/elm-preview-lifecycle-policy-v372/qa/formal-1791164990095776091/report.json",
+    "implementation/elm-preview-lifecycle-elm-v373/qa/build-1791165769694873626/report.json",
+    "implementation/elm-preview-lifecycle-elm-v373/qa/refinement-1791165853199294073/report.json",
+    "implementation/elm-preview-lifecycle-elm-v373/qa/mutations-1791165927807424563/report.json",
+    "implementation/elm-preview-lifecycle-elm-v373/qa/adversarial-1791165987063985825/report.json",
+    "implementation/elm-preview-broker-model-v383/qa/formal-1791167233662212533/report.json",
+    "implementation/elm-preview-broker-refinement-v384/qa/refinement-1791167375573668981/report.json",
+    "implementation/elm-preview-broker-bounded-model-v388/qa/formal-1791168232986046429/report.json",
+    "implementation/elm-preview-native-ledger-v394/qa/build-1791168964167216726/report.json",
+    "implementation/elm-preview-native-ledger-v394/qa/mutations-1791169032262507139/report.json",
+    "implementation/elm-preview-native-ledger-v394/qa/sanitize-1791169032262521724/report.json",
+    "implementation/elm-preview-protocol-model-v403/qa/formal-1791171341894803499/report.json",
+    "implementation/elm-preview-protocol-native-v407/qa/build-1791171626324433831/report.json",
+    "implementation/elm-preview-receipt-elm-v399/qa/build-1791170920337466402/report.json",
+    "implementation/elm-preview-protocol-coupled-v402/qa/refinement-1791171510062836223/report.json",
+    "implementation/elm-preview-protocol-guards-v404/qa/adversarial-1791171402437674577/report.json",
+    "implementation/elm-preview-protocol-guards-v406/qa/frontend-1791171511249013105/report.json",
+    "implementation/elm-preview-protocol-guards-v408/qa/elm-mutations-1791171627485410874/report.json",
+    "implementation/elm-preview-protocol-guards-v409/qa/mutations-1791171659968066702/report.json",
+    "implementation/elm-preview-protocol-guards-v409/qa/sanitize-1791171659969856717/report.json",
+    "implementation/elm-preview-uri-policy-v418/qa/formal-1791172991470682104/report.json",
+    "implementation/elm-preview-uri-stream-v412/qa/build-1791172628421539487/report.json",
+    "implementation/elm-preview-uri-qualification-v419/qa/qualify-1791173051134580102/report.json",
+    "implementation/elm-preview-native-capture-v434/qa/build-1791175247223825007/report.json",
+    "implementation/elm-preview-png-qualification-v430/qa/qualification-1791174926404496402/report.json",
+    "implementation/elm-preview-png-mutations-v428/qa/qualification-1791174836338040403/report.json",
+    "implementation/elm-preview-capture-native-v432/qa/native-1791175108040399620/report.json",
+    "implementation/elm-preview-capture-native-v436/qa/native-1791175385182957053/report.json",
+    "implementation/elm-preview-capture-crash-review-v438/qa/review-1791175294002312724/report.json",
+    "implementation/elm-preview-capture-source-review-v439/qa/review-1791175372534399465/report.json",
+    "implementation/elm-preview-capture-native-v441/qa/native-1791175559900735168/report.json",
+    "implementation/elm-preview-capture-preflight-v442/qa/review-1791175547326205517/report.json",
+    "implementation/elm-preview-fd-authority-v446/qa/build-1791176799474399001/report.json",
+    "implementation/elm-preview-fd-transport-v447/qa/build-1791177079637006749/report.json",
+    "implementation/elm-preview-fd-webkit-v448/qa/build-1791177656837930207/report.json",
+    "implementation/elm-preview-fd-native-v450/qa/native-1791178292573437061/report.json",
+    "implementation/elm-preview-fd-preflight-v452/qa/review-1791178284559398869/report.json",
+    "implementation/elm-preview-fd-qualification-v453/qa/qualification-1791178353911011353/report.json",
+    "implementation/elm-preview-fd-transport-v454/qa/build-1791178452299343534/report.json",
+    "implementation/elm-preview-fd-qualification-v455/qa/qualification-1791178464062736784/report.json",
+    "implementation/elm-preview-fd-policy-v458/qa/formal-1791178556166784342/report.json",
+    "implementation/elm-preview-integrated-gui-v460/qa/build-1791179120304809602/report.json",
+    "implementation/elm-preview-integrated-gui-v461/qa/build-1791179243366745503/report.json",
+    "implementation/elm-preview-integrated-gui-v462/qa/build-1791179376669187283/report.json",
+    "implementation/elm-preview-integrated-gui-v463/qa/build-1791179427780099482/report.json",
+    "implementation/elm-preview-presenter-controls-v467/qa/checks-1791179665717448881/report.json",
+    "implementation/elm-preview-integrated-gui-v468/qa/build-1791179700524679043/report.json",
+    "implementation/elm-preview-presenter-controls-v469/qa/checks-1791179839066708938/report.json",
+    "implementation/elm-preview-integrated-gui-v470/qa/build-1791179944956492550/report.json",
+    "implementation/elm-preview-presenter-qualification-v476/qa/qualification-1791180644745857160/report.json",
+    "implementation/elm-preview-presenter-policy-v481/qa/formal-1791180517744511891/report.json",
+    "implementation/elm-preview-elm-pixels-v485/qa/build-1791180792805338839/report.json",
+    "implementation/elm-preview-elm-native-v473/qa/native-1791180345521313417/report.json",
+    "implementation/elm-preview-elm-native-v479/qa/native-1791180590305235892/report.json",
+    "implementation/elm-preview-elm-preflight-v487/qa/review-1791180881264521668/report.json",
+    "implementation/elm-preview-elm-native-v486/qa/native-1791180890744568342/report.json",
+    "implementation/elm-preview-source-epoch-v491/qa/formal-1791181760653534988/report.json",
+    "implementation/elm-preview-source-authority-v492/qa/build-1791181876901504454/report.json",
+    "implementation/elm-preview-source-epoch-qualification-v493/qa/qualification-1791182142602385733/report.json",
+    "implementation/elm-preview-source-demand-v502/qa/build-1791182717673765692/report.json",
+    "implementation/elm-preview-source-preflight-v505/qa/review-1791182742761029642/report.json",
+    "implementation/elm-preview-source-native-v504/qa/native-1791182743863984708/report.json",
+    "implementation/elm-preview-shared-bridge-v509/qa/build-1791183483127592453/report.json",
+    "implementation/elm-preview-handshake-controls-v510/qa/checks-1791183698070819676/report.json",
+    "implementation/elm-preview-shared-preflight-v511/qa/review-1791183884439580985/report.json",
+    "implementation/elm-preview-shared-native-v513/qa/native-1791183899921279817/report.json",
+    "implementation/elm-preview-shared-router-qualification-v514/qa/qualification-1791184069018489471/report.json"
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "completedBaselineRequirements": []
+}

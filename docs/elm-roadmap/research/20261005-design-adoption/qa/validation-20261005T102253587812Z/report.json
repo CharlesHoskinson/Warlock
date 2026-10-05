@@ -1,0 +1,123 @@
+{
+  "status": "PASS",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-7165ffd56d17491da71725f056c220e7.scope",
+    "coreLimit": 1
+  },
+  "checks": [
+    {
+      "name": "338 frozen inputs byte-identical",
+      "passed": true
+    },
+    {
+      "name": "authoritative input unchanged docs/elm-roadmap/requirements.json",
+      "passed": true
+    },
+    {
+      "name": "authoritative input unchanged docs/elm-roadmap/delivery/sprint-backlog.json",
+      "passed": true
+    },
+    {
+      "name": "authoritative input unchanged docs/elm-roadmap/RIGHT-CLICK.md",
+      "passed": true
+    },
+    {
+      "name": "30 unique adoption IDs and67 scenarios",
+      "passed": true
+    },
+    {
+      "name": "53 proposals accounted",
+      "passed": true
+    },
+    {
+      "name": "ten initial reports hash-bound",
+      "passed": true
+    },
+    {
+      "name": "242 baseline requirements/417 scenarios preserved",
+      "passed": true
+    },
+    {
+      "name": "baseline mapped once",
+      "passed": true
+    },
+    {
+      "name": "24 closure contracts/48 scenarios",
+      "passed": true
+    },
+    {
+      "name": "right-click amendment remains separate24/48",
+      "passed": true
+    },
+    {
+      "name": "all12 prior workitems and44 findings crosswalked",
+      "passed": true
+    },
+    {
+      "name": "canonical adoption preserves exact contracts",
+      "passed": true
+    },
+    {
+      "name": "all30 adoption drafts package mapped",
+      "passed": true
+    },
+    {
+      "name": "elm-design-adoption exact EARS/scenario strings",
+      "passed": true
+    },
+    {
+      "name": "elm-design-adoption EARS templates",
+      "passed": true
+    },
+    {
+      "name": "elm-design-adoption implementation remains unchecked",
+      "passed": true
+    },
+    {
+      "name": "elm-design-adoption OpenSpec1.14.0 strict",
+      "passed": true
+    },
+    {
+      "name": "elm-release-closure exact EARS/scenario strings",
+      "passed": true
+    },
+    {
+      "name": "elm-release-closure EARS templates",
+      "passed": true
+    },
+    {
+      "name": "elm-release-closure implementation remains unchecked",
+      "passed": true
+    },
+    {
+      "name": "elm-release-closure OpenSpec1.14.0 strict",
+      "passed": true
+    },
+    {
+      "name": "ten explicit exact-version ratifications",
+      "passed": true
+    },
+    {
+      "name": "all29 core draft contracts accepted;015 deferred",
+      "passed": true
+    },
+    {
+      "name": "ten exact one-scenario amendment endorsements",
+      "passed": true
+    },
+    {
+      "name": "five actual Opus amendment executions passed",
+      "passed": true
+    },
+    {
+      "name": "five actual Opus5.5 executions passed",
+      "passed": true
+    },
+    {
+      "name": "canonical philosophy exact",
+      "passed": true
+    }
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseComplete": false
+}

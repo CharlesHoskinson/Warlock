@@ -1,0 +1,216 @@
+[
+  {
+    "id": "SOL-FLUID-01",
+    "title": "Stage-qualified feedback and physical presentation evidence",
+    "classification": "refinement",
+    "ears": "WHEN an interaction stage is observed, the native authority and read-only projection SHALL label feedback, effect commitment, renderer submission, presentation and retirement separately, accepting physical completion only from identity-matched native evidence.",
+    "baselineIds": [
+      "ELM-ARC-020",
+      "ELM-REN-005",
+      "ELM-REN-022"
+    ],
+    "workItems": [
+      "W06",
+      "W08",
+      "P4-ELM-ARC-020",
+      "P4-ELM-REN-005",
+      "P6-ELM-REN-022"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/wayland-mirror/wayland-protocols/main/stable/presentation-time/presentation-time.xml",
+      "https://doc.qt.io/qt-6/qquickwindow.html",
+      "https://docs.kernel.org/gpu/drm-uapi.html"
+    ],
+    "scenarios": [
+      {
+        "name": "Queued is not presented",
+        "given": "a matching image was decoded and a renderer queued a frame",
+        "when": "only image load or frameSwapped arrives",
+        "then": "presentation remains unproven and no physical-completion verdict is recorded"
+      },
+      {
+        "name": "Stale output presentation",
+        "given": "a transaction targets one output generation",
+        "when": "a presentation receipt arrives after hotplug changed that generation",
+        "then": "the receipt is retained diagnostically but cannot complete the replacement transaction"
+      }
+    ],
+    "priority": "P0",
+    "tradeoffs": [
+      "Extra trace stages and correlation storage",
+      "Native feedback can approximate light output; independent hardware evidence is still needed"
+    ]
+  },
+  {
+    "id": "SOL-FLUID-02",
+    "title": "Demand scheduling with bounded control liveness",
+    "classification": "refinement",
+    "ears": "WHILE preview or observation demand exceeds admitted capacity, the bridge SHALL coalesce only replaceable observations within their identity domain, refuse unadmitted effects explicitly and preserve ordered cancellation, receipts and retirement capacity.",
+    "baselineIds": [
+      "ELM-ARC-015",
+      "ELM-ARC-016",
+      "ELM-REN-012"
+    ],
+    "workItems": [
+      "W01",
+      "W03",
+      "W06",
+      "W10"
+    ],
+    "sources": [
+      "https://wayland.freedesktop.org/docs/html/apa.html#protocol-spec-wl_surface",
+      "https://docs.gtk.org/gdk4/class.FrameClock.html",
+      "https://doc.qt.io/qt-6/qquickwindow.html"
+    ],
+    "scenarios": [
+      {
+        "name": "Observation storm with cancellation",
+        "given": "preview queues are saturated within frozen byte and item bounds",
+        "when": "new observations and a cancellation arrive",
+        "then": "only semantically replaceable observations coalesce; cancellation and all retirement receipts remain deliverable in order"
+      },
+      {
+        "name": "Close during producer reservation",
+        "given": "a producer owns a reservation and the picker closes",
+        "when": "a late producer result arrives",
+        "then": "demand remains cancelled and the existing owner receives cleanup; no new capture is admitted until capacity is legitimately released"
+      }
+    ],
+    "priority": "P0",
+    "tradeoffs": [
+      "Fairness and reserving control bytes reduce peak preview throughput",
+      "Coalescing requires explicit event taxonomy and atomic dependency preservation"
+    ]
+  },
+  {
+    "id": "SOL-FLUID-03",
+    "title": "Absolute semantic deadline independent of paint scheduling",
+    "classification": "duplicate",
+    "ears": "WHEN work crosses a queue, retry, frontend restart or paint suspension, the native authority SHALL preserve its original absolute deadline and start event; late exact outcomes SHALL reconcile uncertainty without extending acceptance or automatically replaying Unknown.",
+    "baselineIds": [
+      "ELM-ARC-013",
+      "ELM-ARC-014",
+      "ELM-REN-008"
+    ],
+    "workItems": [
+      "W05",
+      "P4-ELM-REN-008"
+    ],
+    "sources": [
+      "https://wayland.freedesktop.org/docs/html/apa.html#protocol-spec-wl_surface",
+      "https://docs.gtk.org/gdk4/class.FrameClock.html",
+      "https://raw.githubusercontent.com/wayland-mirror/wayland-protocols/main/stable/presentation-time/presentation-time.xml"
+    ],
+    "scenarios": [
+      {
+        "name": "Obscured frontend deadline",
+        "given": "the transaction has its original native deadline",
+        "when": "paint callbacks stop while capture is queued",
+        "then": "native expiry still occurs at that deadline and UI silence cannot extend the operation"
+      },
+      {
+        "name": "Late exact commit",
+        "given": "an operation became Unknown at its original deadline",
+        "when": "an authenticated exact commit receipt arrives later",
+        "then": "native truth is reconciled while the original deadline verdict remains a failure and no automatic replay occurs"
+      }
+    ],
+    "priority": "P0",
+    "tradeoffs": [
+      "Requires native expiry independent of frontend updates",
+      "Late reconciliation and acceptance verdict are deliberately separate records"
+    ]
+  },
+  {
+    "id": "SOL-FLUID-04",
+    "title": "Reversal and live reduced motion share native semantics",
+    "classification": "refinement",
+    "ears": "WHEN motion is interrupted or the reduced-motion preference changes, the native renderer SHALL derive the successor from the last-presented geometry and preserve the same identity, cancellation, commitment and retirement rules under the approved motion profile.",
+    "baselineIds": [
+      "ELM-REN-010",
+      "ELM-REN-011",
+      "ELM-UI-014",
+      "ELM-UX-022"
+    ],
+    "workItems": [
+      "W12",
+      "P4-ELM-REN-010",
+      "P4-ELM-REN-011",
+      "P4-ELM-UI-014"
+    ],
+    "sources": [
+      "https://www.yorku.ca/mack/p488-mackenzie.pdf",
+      "https://www.tactuallabs.com/papers/designingLowLatencyDirectTouchInputUIST12.pdf",
+      "https://docs.gtk.org/gdk4/class.FrameClock.html",
+      "https://docs.gtk.org/gtk4/property.Settings.gtk-enable-animations.html",
+      "https://raw.githubusercontent.com/wayland-mirror/wayland-protocols/main/stable/presentation-time/presentation-time.xml"
+    ],
+    "scenarios": [
+      {
+        "name": "Reverse after an unpresented sample",
+        "given": "a restore has a queued sample newer than its last native presentation",
+        "when": "a minimize intent reverses it",
+        "then": "the successor starts from last-presented geometry under the native continuity rule and retires only the superseded generation"
+      },
+      {
+        "name": "Preference changes during capture",
+        "given": "a restore is awaiting a retained frame",
+        "when": "reduced motion becomes enabled before its matching frame arrives",
+        "then": "the approved reduced-motion route uses identical commit and cancellation obligations without replaying the effect or resetting its deadline"
+      }
+    ],
+    "priority": "P1",
+    "tradeoffs": [
+      "Geometry and velocity continuity need native samples, not model time",
+      "The exact preference-switch policy must be frozen before qualification"
+    ]
+  },
+  {
+    "id": "SOL-FLUID-05",
+    "title": "Separate feedback latency and useful completion measurement",
+    "classification": "refinement",
+    "ears": "BEFORE host selection or release evaluation, the performance owner SHALL freeze measured same-machine workload budgets with separate input-to-feedback, input-to-native-presentation and resource-closure measures, stage coverage, observer overhead and missing-stage declarations.",
+    "baselineIds": [
+      "ELM-QA-021",
+      "ELM-QA-023",
+      "ELM-REV-020",
+      "ELM-REV-021",
+      "ELM-REN-021",
+      "ELM-REN-022"
+    ],
+    "workItems": [
+      "W08",
+      "W12",
+      "P6-ELM-QA-023",
+      "P6-ELM-REN-021",
+      "P6-ELM-REN-022"
+    ],
+    "sources": [
+      "https://www.yorku.ca/mack/p488-mackenzie.pdf",
+      "https://www.tactuallabs.com/papers/designingLowLatencyDirectTouchInputUIST12.pdf",
+      "https://raw.githubusercontent.com/wayland-mirror/wayland-protocols/main/stable/presentation-time/presentation-time.xml",
+      "https://docs.gtk.org/gdk4/class.FrameClock.html",
+      "https://doc.qt.io/qt-6/qquickwindow.html",
+      "https://docs.kernel.org/gpu/drm-uapi.html"
+    ],
+    "scenarios": [
+      {
+        "name": "Missing presentation instrument",
+        "given": "a benchmark records CPU submission and feedback but lacks a presentation span",
+        "when": "the host comparison is evaluated",
+        "then": "unsupported spans are explicit and physical latency acceptance remains blocked rather than treating submission as presentation"
+      },
+      {
+        "name": "Observer hides tail failure",
+        "given": "a debug observer improves or perturbs scheduling",
+        "when": "the final benchmark packet is prepared",
+        "then": "paired observed and minimally observed runs expose overhead and all frozen workload thresholds are evaluated without discarding misses"
+      }
+    ],
+    "priority": "P0",
+    "tradeoffs": [
+      "Hardware and minimally observed measurements cost time",
+      "Academic thresholds do not substitute for the frozen local budget contract"
+    ]
+  }
+]

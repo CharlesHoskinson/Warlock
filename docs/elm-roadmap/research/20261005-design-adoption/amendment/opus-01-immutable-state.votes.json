@@ -1,0 +1,10 @@
+{
+  "reviewer": "opus-01-immutable-state",
+  "previousBallotSHA256": "129ac50d8fef08aecae1ae9c83bb6a0e2bba1e8c27e9587e9405d92887c6f936",
+  "finalBallotSHA256": "1f4ab93e1ab93afd94ea58511d8a426dbed8ccdc4e08096e6c80bf72e62aa78f",
+  "decision": "accept",
+  "requirement": "ELM-ADOPT-030",
+  "reason": "I endorse this one change. I read amendment/change.json and the ELM-ADOPT-030 entry in candidates-v3.json. The v3 supported-disabled-action THEN now requires native AT to expose unavailable state and 'any reason required by the frozen per-surface policy', which matches the v2 EARS wording exactly. The v2 THEN demanded a reason in every case, which the EARS and guardrails ('no universal requirement', GTK vs Windows/APG differences) do not support, so the change removes an unsupported scenario claim. The safety properties are unchanged: stable position, an exposed unavailable state, and no dispatch through pointer, keyboard or AT activation. The all-disabled-and-focus-retirement scenario is byte-identical to v2 in change.json. I did not diff the other 29 contracts myself; I rely on the coordinator's statement that they are unchanged. My v2 votes carry forward as cast: 29 accept as guarded draft contracts and ELM-ADOPT-015 defer as a conditional deferred draft. I cannot compute SHA-256 in this session, so both hashes above are taken from the request, not independently verified. This is my position only, not a claim of consensus. It implies no native acceptance, baseline expansion or product selection. I made no source, config or GUI edits and spawned no agents.",
+  "requiredChanges": [],
+  "carryForwardUnchangedVotes": true
+}

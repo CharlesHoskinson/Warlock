@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "userRequest": "Ten deep research reviewers (five Sol6.1, five Opus5.5); consensus; additive EARS/OpenSpec; audit remaining work and draft it in both forms.",
+  "models": {
+    "sol": "gpt-6.1-sol",
+    "opus": "claude-opus-5-5"
+  },
+  "effort": "high",
+  "topics": [
+    "immutable-state",
+    "typed-events",
+    "error-reporting",
+    "ux-ui-accessibility",
+    "fluid-interaction"
+  ],
+  "status": "research, cross-review, corrections and exact-version ten-reviewer ratification complete; draft integration and implementation remain",
+  "sourceManifest": "source-manifest.json",
+  "consensusPolicy": "Independent research, explicit cross-review, corrected exact-version ratification and unanimous one-scenario amendment; dissent retained in earlier votes.",
+  "draftOnly": true,
+  "reviewers": [
+    {
+      "id": "sol-01-immutable-state",
+      "family": "sol",
+      "topic": "immutable-state",
+      "sessionId": null
+    },
+    {
+      "id": "opus-01-immutable-state",
+      "family": "opus",
+      "topic": "immutable-state",
+      "sessionId": "6bae14fb-e961-4c92-a5b6-fb7836b6e783"
+    },
+    {
+      "id": "sol-02-typed-events",
+      "family": "sol",
+      "topic": "typed-events",
+      "sessionId": null
+    },
+    {
+      "id": "opus-02-typed-events",
+      "family": "opus",
+      "topic": "typed-events",
+      "sessionId": "e94ceb52-a01f-4e67-8edc-542ee3d55090"
+    },
+    {
+      "id": "sol-03-error-reporting",
+      "family": "sol",
+      "topic": "error-reporting",
+      "sessionId": null
+    },
+    {
+      "id": "opus-03-error-reporting",
+      "family": "opus",
+      "topic": "error-reporting",
+      "sessionId": "78cbaef1-8770-4e4d-9fe8-269f95f44115"
+    },
+    {
+      "id": "sol-04-ux-ui-accessibility",
+      "family": "sol",
+      "topic": "ux-ui-accessibility",
+      "sessionId": null
+    },
+    {
+      "id": "opus-04-ux-ui-accessibility",
+      "family": "opus",
+      "topic": "ux-ui-accessibility",
+      "sessionId": "42ba4925-7e89-4e68-b037-706577a791b4"
+    },
+    {
+      "id": "sol-05-fluid-interaction",
+      "family": "sol",
+      "topic": "fluid-interaction",
+      "sessionId": null
+    },
+    {
+      "id": "opus-05-fluid-interaction",
+      "family": "opus",
+      "topic": "fluid-interaction",
+      "sessionId": "28a0601f-7384-40aa-a583-68959020c1ae"
+    }
+  ]
+}

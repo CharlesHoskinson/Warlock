@@ -1,0 +1,93 @@
+{
+  "passed": true,
+  "actualAssetFunctionCompiled": true,
+  "resources": {
+    "index.html": [
+      "shell.css",
+      "elm.js",
+      "adapter.js"
+    ],
+    "bar.html": [
+      "shell.css",
+      "bar.js",
+      "bar-adapter.js",
+      "context.js",
+      "activation.js"
+    ],
+    "popup.html": [
+      "shell.css",
+      "popup.js",
+      "popup-adapter.js",
+      "context.js",
+      "activation.js"
+    ]
+  },
+  "commands": [
+    {
+      "name": "flags",
+      "command": [
+        "pkg-config",
+        "--cflags",
+        "--libs",
+        "glib-2.0"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0
+    },
+    {
+      "name": "compile",
+      "command": [
+        "cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/resource-closure-1791173881790424741/actual.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/resource-closure-1791173881790424741/closure",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lglib-2.0"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0
+    },
+    {
+      "name": "all-three-HTML-resource-closure",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/resource-closure-1791173881790424741/closure",
+        "elm-shell://app/shell.css",
+        "elm-shell://app/elm.js",
+        "elm-shell://app/adapter.js",
+        "elm-shell://app/shell.css",
+        "elm-shell://app/bar.js",
+        "elm-shell://app/bar-adapter.js",
+        "elm-shell://app/context.js",
+        "elm-shell://app/activation.js",
+        "elm-shell://app/shell.css",
+        "elm-shell://app/popup.js",
+        "elm-shell://app/popup-adapter.js",
+        "elm-shell://app/context.js",
+        "elm-shell://app/activation.js"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0
+    },
+    {
+      "name": "QA-recorder-not-production-allowlisted",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/resource-closure-1791173881790424741/closure",
+        "elm-shell://app/event-fields.js"
+      ],
+      "exitCode": 1,
+      "expectedExitCode": 1
+    }
+  ],
+  "sourceHeld": true,
+  "sourceSHA256": "08b5b5467890fa487f73fdd6bc8b2027b73d7618ab2de481d8e30061d1400c1a",
+  "nativeLaunched": false,
+  "nativeEngineLoadingProved": false
+}

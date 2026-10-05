@@ -1,0 +1,23 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "checks": [
+    "actual loader refuses altered source buffer before execution",
+    "actual loader cache branch truncated",
+    "actual loader cache branch wrong-code",
+    "actual loader cache branch extra-record",
+    "actual loader cache branch wrong-code-stack",
+    "actual cache validator accepts exact compiled collector source",
+    "foreign sys.modules collector never executes or survives loader",
+    "actual executed collector file origin mismatch",
+    "actual executed collector cache origin mismatch"
+  ],
+  "error": "AssertionError()",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-parent-parallel-v391/qa/loader-test.py\", line 51, in <module>\n    try:env['parent_map']()\n        ~~~~~~~~~~~~~~~~~^^\n  File \"<actual-parent-map-wrapper>\", line 2, in parent_map\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-parent-parallel-v391/qa/budget_timing.py\", line 20, in call\n    try:return call()\n               ~~~~^^\n  File \"<actual-parent-map-wrapper>\", line 2, in <lambda>\nNameError: name 'parent_collect' is not defined. Did you mean: 'parent_collector'?\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-parent-parallel-v391/qa/loader-test.py\", line 52, in <module>\n    except BaseException as e:assert e is marker and record['sameReadParentMapFailure']['pid']==pid and (OUT/'parent-map-failure/maps.raw').read_bytes()==body;r['checks'].append('actual native wrapper archives parent owner bytes and preserves primary')\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-parent-parallel-v391/qa/native.py": "7ef06fa1f3ce6d245137ef983756ddd75a1c88b72bdd000a92211456ba67993a",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-parent-parallel-v391/qa/parent_loader.py": "54e0d908ad067f0ae8eaef334e798c17df89f18875439ac7a0187d982feb0a9e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-parent-parallel-v391/qa/parent_source.py": "272176073b1f4c225931efa22fae5a1b2759dbab036b5e5df0bd588ba967ab28",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-parent-parallel-v391/qa/loader-test.py": "f97574f49196d74674996b0f30315d6a9e70b24991dc57f4c63ceddc3c109437"
+  }
+}

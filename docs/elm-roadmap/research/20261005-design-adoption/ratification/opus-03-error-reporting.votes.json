@@ -1,0 +1,217 @@
+{
+  "reviewer": "opus-03-error-reporting",
+  "ballotSHA256": "129ac50d8fef08aecae1ae9c83bb6a0e2bba1e8c27e9587e9405d92887c6f936",
+  "philosophySHA256": "8c0fbf2a93b4493a41872efc209669a07abf6566d87fae86c30cab803b27d38c",
+  "remainingWorkSHA256": "7cba3d8013a8575aec3ddbb10a8352203dcd70a6d218d76df3fd54ce843bd830",
+  "votes": [
+    {
+      "id": "ELM-ADOPT-001",
+      "decision": "accept",
+      "reason": "Unchanged apart from status, and I accepted it in round 2. Both scenarios follow from the EARS: deterministic state and effect rows with no endpoint invoked, and malformed clock input rejected explicitly while original deadlines are kept. Recorded timer inputs still do not qualify native deadlines.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-002",
+      "decision": "accept",
+      "reason": "The corrected EARS and guardrail separate capacity refusal from the original operation's outcome and allow scope replay floors to retire only through authority-certified proof. The revised 'Expired replay' scenario keeps retained Unknown unchanged and does not let a retention disposition pass for definitive refusal. This is consistent with my diagnostics rule that rotation never frees authority.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-003",
+      "decision": "accept",
+      "reason": "Unchanged apart from status. Both scenarios restore coherent state without dispatching old mutations, and stay fail-closed under interrupted migration without losing Unknown or resetting deadlines. A coherent checkpoint is still not proof of window-action completion.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-004",
+      "decision": "accept",
+      "reason": "The revised scenario now asserts only that output equals the uncached oracle, and moves measured benefit into the adoption decision. That matches the new guardrail that equivalence alone does not justify enabling the mechanism. The mechanism remains optional and unselected.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-005",
+      "decision": "accept",
+      "reason": "The field-coverage guardrail and the new unlisted-field-mutation scenario directly catch the failure mode that matters for my topic: a runtime mutant that silently drops an Unknown reservation. Quotients must preserve binding, deadline and outcome meaning.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-006",
+      "decision": "accept",
+      "reason": "This resolves my round-2 blocking correction. 'Foreign input' now yields no admitted event, mutation or settlement; it keeps only a bounded allowlisted rejection diagnostic and fabricates no Refused outcome. The new guardrail limits terminal Refused to exact authenticated native evidence or a validated unsent certificate. That matches Effects.locallyRefuseUnsent and the workplan rule. The new authenticated-historical-reconciliation scenario matches ReconciliationTracking: the proof is bound to the current binding and queries the old one, settles only the historical obligation, and renews no deadline.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-007",
+      "decision": "accept",
+      "reason": "The corrected EARS keeps native revalidation at commit (ELM-ARC-008/012 now mapped) and makes prerequisites protocol-specific, so a window Committed cannot stand in for preview drain or presentation. This closes my round-2 note that controller gating must not replace native enforcement. Both scenarios still follow from the EARS.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-008",
+      "decision": "accept",
+      "reason": "The revised EARS rejects inadmissible protocol events without authority, ownership or settlement effect and keeps a bounded rejection diagnostic. This is consistent with ELM-ADOPT-006/013 and with the silent-drop gap I found at Shell.elm (Err _ -> (model,[])). Scenarios unchanged and supported.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-009",
+      "decision": "accept",
+      "reason": "Unchanged apart from status. Conservation covers admission and transfer. Cancel/Release emission is not retirement. Both scenarios require ordered proofs and reader drain before release.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-010",
+      "decision": "accept",
+      "reason": "The revised tradeoff allows frontend timers only for feedback or fail-closed withdrawal of unsent local intent; they never authorize, extend, settle or time native work. That is consistent with Effects canProveUnsent and the native deadline authority. Scenarios unchanged and supported.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-011",
+      "decision": "accept",
+      "reason": "This resolves my round-2 blocking correction. The text must come from a catalog that supports localization, and the guardrail says this adds no translation release gate. The rest preserves my and sol-03's substance. ERR-01-01 is consistent with Effects disconnect turning Pending into Unknown with no repeat. ERR-01-02 is consistent with certificate-exact local refusal.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-012",
+      "decision": "accept",
+      "reason": "A duplicate of W08 and ELM-UI-010 with a sharper oracle. The revised ERR-02-02 now separates unauthenticated or unrelated receipts (no update) from exact authenticated historical evidence that may reconcile retained Unknown through the declared route. The guardrail requires a native speech/braille/focus transcript, consistent with the duplicated live regions at SurfaceRenderer.elm:60-61. Non-blocking: per ELM-ADOPT-010, a late settlement is presented as reconciled knowledge, not timely success.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-013",
+      "decision": "accept",
+      "reason": "This resolves my round-2 blocking correction. Secrets, credentials, drafts and pixels are always excluded under ELM-DEL-017; raw port bodies, titles, arguments and paths are excluded by this ordinary allowlist; any other mode needs a separate contract. The budget mapping now cites ELM-QA-021/023 and ELM-REV-020/021 without inventing numbers. ERR-03-01 covers decoder-error leakage (Elm errorToString renders the offending value), and ERR-03-02 checks that settlement matches diagnostics-disabled execution. Editorial, non-blocking: the tradeoffs repeat the budget-measurement sentence.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-014",
+      "decision": "accept",
+      "reason": "This resolves my round-2 blocking correction. ERR-04-02 now says each affected operation's original deadline is unchanged and not renewed. ERR-04-01 recovers availability while the previous effect stays unconfirmed and is never replayed. Non-blocking residual: reachable recovery from the Exhausted and reconciliation-full phases stays owned by 816/W02 and is not closed by this draft.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-015",
+      "decision": "accept",
+      "reason": "I accept it only as kept deferred and conditional, WHERE-gated and not a release blocker. It is local-only, sends nothing externally, includes no default cores, screenshots or environment, and gives a truthful partial-artifact outcome. ERR-05-01/02 follow from the EARS and guardrails. If ever selected, it inherits the ELM-ADOPT-013 allowlist.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-016",
+      "decision": "accept",
+      "reason": "The state-driven EARS dispatches keyboard and assistive activation only to the native AT-exposed focused identity and rejects retired or changed-scope targets. The guardrail keeps press-time publication, lease and incarnation authoritative for pointer release, which supports SOL04-01-scenario-2. The new focus-without-publication scenario is supported. Keyed DOM is still an implementation choice.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-017",
+      "decision": "accept",
+      "reason": "This resolves my round-2 blocking correction. SOL04-02-scenario-1 now asserts shared refusal state and focus, and defers announcement count to ELM-ADOPT-012, so the two candidates no longer compete as oracles. The stable-name-state-change scenario and the cross-WebView native-tree guardrail are supported.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-018",
+      "decision": "accept",
+      "reason": "Unchanged apart from status. Commits are bound to the native composition generation, and both scenarios require actual-field evidence. The final-acceptance dependency on S12 field evidence in remaining work is consistent with this.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-019",
+      "decision": "accept",
+      "reason": "Unchanged apart from status. Policy is frozen before evaluation, and 'localized labels' is a fixture condition, not a localization obligation.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-020",
+      "decision": "accept",
+      "reason": "The corrected EARS and guardrail scope independence to unchanged dependency domains, require no concurrent native transactions, and forbid a second intent during Pending. same-control-during-pending matches the Effects 'Operation already pending' refusal, whose text should come from the ELM-ADOPT-011 catalog. unrelated-observation-refresh is supported. Non-blocking clarification: 'input not accepted in that state' should be read as excluding natively captured ordered input under ELM-ARC-011 and S08 release-before-open, which native authority has already accepted.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-021",
+      "decision": "accept",
+      "reason": "Unchanged apart from status. Image load or frameSwapped is not presentation, and a stale-output receipt kept for diagnostics cannot complete a replacement transaction. This is compatible with ELM-ADOPT-013.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-022",
+      "decision": "accept",
+      "reason": "The revised 'Close during producer reservation' scenario keeps the held reservation and its cleanup recorded, and lets other demand use only independently available capacity. This is consistent with ELM-ARC-016 reserved control capacity.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-023",
+      "decision": "accept",
+      "reason": "Unchanged apart from status. Native last-presented geometry; no replay or deadline reset; the original 38/34/52 cases are retained.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-024",
+      "decision": "accept",
+      "reason": "Unchanged apart from status. Missing stages are declared, numbers are not invented, and observed runs are paired with minimally observed runs. It supplies the measure-then-freeze path that ELM-ADOPT-012/013 rely on.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-025",
+      "decision": "accept",
+      "reason": "Unchanged apart from status. Proof IDs are not delivery ordinals, known-safe idempotent Ack retry is preserved, and no unseen cleanup is acknowledged.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-026",
+      "decision": "accept",
+      "reason": "Accepted as conditional on an S02 budget row that does not yet exist; remaining work adds that row only if this draft is separately adopted. The unavailable fallback does not close the source-stop/family gates.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-027",
+      "decision": "accept",
+      "reason": "Frozen pacing, root-surface-only tracked coverage and no deadline renewal are now explicit. The continuous-change scenario is bounded by pacing and measured under ELM-ADOPT-026 without expanding fidelity scope.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-028",
+      "decision": "accept",
+      "reason": "Unchanged apart from status. It is consistent with the corrected S09 gate: live source or a retained lease cannot describe stale pixels as current.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-029",
+      "decision": "accept",
+      "reason": "The priority is corrected to existing phase P5 with early feasibility work only. This honestly reflects the unverified compositor feasibility opus-04 noted, without a mandated exclusive mode or a new default shortcut.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-030",
+      "decision": "accept",
+      "reason": "The revised EARS exposes a reason only where the frozen per-surface policy requires one, and links ELM-RC-006/017/018 without changing the amendment. Both scenarios dispatch nothing from disabled actions and do not trap focus.",
+      "requiredChanges": []
+    }
+  ],
+  "philosophy": {
+    "decision": "accept",
+    "reason": "All three of my round-2 fidelity corrections are present. Principle 1 now promises knowing whether an outcome is 'confirmed, refused or still unconfirmed' instead of promising certainty. Principle 4 lists refused and cancelled, says never automatically replay Unknown, and says to reconcile with native truth first. Principle 9 says diagnostics contain only allowlisted facts, never secrets, drafts or pixels, and never act as authority; it also says to never forget unresolved obligations to make space. Principle 2's 'native facts held as read-only observations' and principle 6's 'announcements reach the user once under the frozen attention policy, without moving focus' match ELM-ADOPT-012 and the controller/native split. The decision rule still guides concrete tradeoffs. I treat 'Aletheia' as an editorial working name only; it carries no technical weight.",
+    "requiredChanges": []
+  },
+  "remainingWork": {
+    "decision": "accept",
+    "reason": "remaining-work-v2.json records baseline 242/417, mandatory 230/405, conditional compositor 12/12 and the separate right-click amendment 24/48. Its source hashes match the frozen manifest for requirements.json, sprint-backlog.json, FRP-ELM-WORKPLAN.json and RIGHT-CLICK.md, and it records candidates-v2 at the ballot hash. The S16 finding union lists all 44 findings across W01-W12. My round-2 non-blocking notes are now normative gate text: S05 adds diagnostic redaction/canary evidence plus admissible authenticated historical settlement while rejecting automatic Unknown replay; S07 adds single-owner native AT outcome deduplication on actual S12 surfaces; S15 adds storage-full/interrupted migration and 'no restart replays mutations or renews deadlines'. S09, S10, S14 and S16 keep preview13, restore38/recovery34 with case-34 time origin, drag/resize52 and original deadlines, and say unfinished provider integration cannot be relabeled complete. Final-acceptance evidence dependencies stay separate from the unchanged build sequence, and 026/027 add S02 rows only if separately adopted.",
+    "requiredChanges": []
+  },
+  "disagreements": [
+    {
+      "id": "ELM-ADOPT-020",
+      "position": "Non-blocking clarification only: 'never queue, defer \u2026 input not accepted in that state' should be read as excluding natively captured ordered input already accepted under ELM-ARC-011 and S08 release-before-open; I do not condition my vote on it."
+    },
+    {
+      "id": "ELM-ADOPT-014",
+      "position": "Non-blocking residual: reachable recovery from the Exhausted and reconciliation-full phases (Shell.elm:61,70; v814 HANDOFF 816) remains owned by 816/W02 and is not closed by this draft."
+    },
+    {
+      "id": "ELM-ADOPT-012",
+      "position": "Non-blocking residual: validation should include a fixture where a launch status masks Unknown (Surface.elm:103-119 priority ladder); this rule is carried only by the ELM-ADOPT-011 guardrail 'Unknown remains perceivable'."
+    },
+    {
+      "id": "ELM-ADOPT-013",
+      "position": "Editorial only: the tradeoffs repeat the budget-contract measurement sentence."
+    }
+  ],
+  "summary": "Final ratification from opus-03-error-reporting. Votes: 30 accept, 0 refine, 0 defer, 0 reject. ELM-ADOPT-015 is accepted only on condition that it stays deferred and conditional. All five of my round-2 blocking corrections appear verbatim in the v2 bytes: 006 no longer fabricates Refused from rejected input, 011 adds no localization gate, 013 makes the ELM-DEL-017 exclusions absolute, 014 states that original operation deadlines are not renewed, and 017 defers announcement count to 012. My three philosophy corrections and my remaining-work notes are also included. I checked the 67 scenarios against the frozen source; the remaining comments are non-blocking. Each accept means a guarded draft contract only; no conditional mechanism is selected. No native, GUI, assistive-technology or full-release acceptance is implied, and the baseline is not expanded. 242/417, RC 24/48, preview13, restore38/recovery34, drag52, original deadlines, native authority, no Unknown replay and conditional compositor scope are all preserved. I did not compute the ballot or philosophy SHA256 myself because no shell was available. remaining-work-v2.json records the candidates-v2 hash as equal to the ballot hash. I speak only for myself and claim no agreement on behalf of other reviewers. I made no edits, ran no GUI and spawned no agents."
+}

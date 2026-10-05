@@ -1,0 +1,109 @@
+{
+  "duration_api_ms": 1117767,
+  "stop_reason": "end_turn",
+  "session_id": "42ba4925-7e89-4e68-b037-706577a791b4",
+  "total_cost_usd": 8.356581599999997,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 9646,
+    "cache_read_input_tokens": 734642,
+    "output_tokens": 975,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 9646,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 681,
+        "cache_read_input_tokens": 371320,
+        "cache_creation_input_tokens": 1648,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1648
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 170,
+      "outputTokens": 80970,
+      "thinkingTokens": 36382,
+      "cacheReadInputTokens": 16405963,
+      "cacheCreationInputTokens": 369316,
+      "webSearchRequests": 0,
+      "costUSD": 7.855800599999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 395481,
+      "outputTokens": 9060,
+      "thinkingTokens": 0,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 6,
+      "costUSD": 0.5007809999999999,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"reviewer\":\"opus-04-ux-ui-accessibility\",\"previousBallotSHA256\":\"129ac50d8fef08aecae1ae9c83bb6a0e2bba1e8c27e9587e9405d92887c6f936\",\"finalBallotSHA256\":\"1f4ab93e1ab93afd94ea58511d8a426dbed8ccdc4e08096e6c80bf72e62aa78f\",\"decision\":\"accept\",\"requirement\":\"ELM-ADOPT-030\",\"reason\":\"I endorse this change. It fixes my last blocking objection, and I ratify ELM-ADOPT-030 as a guarded draft refinement only. amendment/change.json and candidates-v3.json (line 1959) change exactly one string: the THEN of the supported-disabled-action scenario. It no longer requires a reason for every disabled action; it now reads 'unavailable state and any reason required by the frozen per-surface policy'. That matches the corrected EARS (line 1917) and guardrails, which already make the reason policy-specific. It also avoids forcing reasons for state-table disables under ELM-RC-006 that have no meaningful user-facing reason. The all-disabled-and-focus-retirement scenario is unchanged. The related amendment IDs RC-006/017/018 remain as related identities and do not change the amendment. I did not independently diff the other 29 contracts against v2; I rely on the coordinator's statement that they are byte-unchanged. My non-blocking preference from earlier rounds still stands: menus and jump lists should keep disabled items focusable, for APG and Windows parity. I accept that this is a per-surface policy freeze and that GTK3's convention of skipping them is defensible. This vote selects no policy or mechanism, grants no native/AT acceptance, and does not expand the baseline. I could not recompute either hash because no hashing tool was available; both are echoed as supplied. This is my vote only and implies no consensus on behalf of other reviewers.\",\"requiredChanges\":[],\"carryForwardUnchangedVotes\":true}",
+  "ttft_ms": 4596,
+  "type": "result",
+  "duration_ms": 16294,
+  "uuid": "d504ff10-37a8-4b1e-a475-325b0e1379da",
+  "ttft_stream_ms": 3698,
+  "time_to_request_ms": 94,
+  "first_content_frame_ms": 3698,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

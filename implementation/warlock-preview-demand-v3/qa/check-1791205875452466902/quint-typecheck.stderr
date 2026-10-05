@@ -1,0 +1,8 @@
+
+ Error [QNT101]: Built-in name 'next' is redefined in module 'demand'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v3/qa/check-1791205875452466902/inputs/spec/demand.qnt:17:33
+  17:  action fire(e:Event):bool={val next=reduce(s,e);s'={...next,history:s.history.append(label(e))}}
+                                      ^^^^
+
+error: parsing failed

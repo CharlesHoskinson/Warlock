@@ -1,0 +1,10 @@
+{
+  "reviewer": "opus-05-fluid-interaction",
+  "previousBallotSHA256": "129ac50d8fef08aecae1ae9c83bb6a0e2bba1e8c27e9587e9405d92887c6f936",
+  "finalBallotSHA256": "1f4ab93e1ab93afd94ea58511d8a426dbed8ccdc4e08096e6c80bf72e62aa78f",
+  "decision": "accept",
+  "requirement": "ELM-ADOPT-030",
+  "reason": "I endorse this change. amendment/change.json alters only the THEN of the 'supported-disabled-action' scenario: 'unavailable state and reason' becomes 'unavailable state and any reason required by the frozen per-surface policy'. In candidates-v3.json the new wording is in the scenario (line 1959) and matches the existing EARS (line 1917). In v2 the scenario was stricter than its EARS; this fixes that mismatch. The safety parts of the scenario are unchanged: the action keeps a stable position, native AT exposes unavailable state, and activation dispatches no effect. The 'all-disabled-and-focus-retirement' scenario is identical before and after. The change does not touch the related RC-006/017/018 amendment semantics. My v2 vote on ELM-ADOPT-030 was already accept, so it stays accept. I checked only the 030 entry and the amendment diff. I did not recompute the SHA256 values or re-diff the other 29 contracts; I rely on the coordinator's statement that they are unchanged. This vote endorses a guarded draft scenario correction only. It is not native acceptance, baseline expansion or product selection, and it does not imply other reviewers agree.",
+  "requiredChanges": [],
+  "carryForwardUnchangedVotes": true
+}

@@ -1,0 +1,223 @@
+{
+  "reviewer": "opus-04-ux-ui-accessibility",
+  "ballotSHA256": "ae1d72ea0b44236c40cc9e94db47c3b9e180660b207378097c45c833caf7807e",
+  "philosophySHA256": "b042de217ebf1fdc3667d7e06fce96a2c1d1c9c100a466bfc5281617f2b3b11f",
+  "votes": [
+    {
+      "id": "ELM-ADOPT-001",
+      "decision": "accept",
+      "reason": "Consistent with the frozen reducer/replay design. Effect isolation and explicit refused-input counting stop a selected corpus from passing on zero inputs. The guardrail keeps recorded timer inputs from qualifying native deadlines, so this cannot stand in for restore38/recovery34. Both scenarios follow from the EARS.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-002",
+      "decision": "accept",
+      "reason": "Reclamation is tied to retained proofs and replay floors. When capacity runs out, the fallback is explicit refusal. Unknown, cleanup and floors cannot be reclaimed by age, and presentation close/restart is not reclamation. Non-blocking UX note: when new admission is refused at the bound, the user should see it through the ADOPT-011/020 reporting contract rather than a silent no-op.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-003",
+      "decision": "accept",
+      "reason": "Checkpoint validation happens before effect admission, Unknown is reconciled without replay, and original deadlines are preserved. The constraint that a coherent checkpoint does not prove a window action completed is correctly honest. The interrupted-migration scenario follows from the EARS plus guardrails.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-004",
+      "decision": "refine",
+      "reason": "The EARS correctly requires cache output to equal uncached derivation and invalidation to precede any use of changed or retired dependencies. Scenario 'Unchanged dependency' also asserts that 'measured recomputation improves'. That claim is not in the EARS. It is an adoption/profiling criterion (the guardrail says caching is an option after profiling). As written, a correct cache that is equal but no faster fails a conformance scenario. The two concerns need separating.",
+      "requiredChanges": [
+        "Change the 'Unchanged dependency' THEN to assert equality with the uncached oracle and correct revision keys only.",
+        "Move 'measured recomputation improves under frozen workload comparison' into the adoption/validation gate, not the conformance scenario."
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-005",
+      "decision": "accept",
+      "reason": "An explicit abstraction map with disclosed stuttering and environmental assumptions, comparing commands and resources as well as states, is the honest form of the existing coupled-replay evidence. The guardrail explicitly denies exhaustiveness and native substitution.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-006",
+      "decision": "accept",
+      "reason": "Module-owned typed identities and outcomes, carried through to wire encoding with wire bytes unchanged, fit the controller. The guardrail correctly says phantom types do not authenticate senders. Minor wording: for a foreign-binding payload, 'correlated refusal is retained' may be impossible, because no local request correlates. Reading it as a retained boundary rejection is acceptable and not blocking.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-007",
+      "decision": "accept",
+      "reason": "Admitting a dependent request only on the exact committed prerequisite matches INTERACTION.md's individually receipted navigation/restore. The 'independent controls remain usable' clause matches ELM-UI-015. Non-blocking: while a dependent waits, the pending feedback should follow ELM-UI-015/ADOPT-020, and the waiting activation keeps its own original deadline.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-008",
+      "decision": "accept",
+      "reason": "The coordinator correction is applied: outcome classes are shared, but transition reachability is protocol-specific, and window Committed is not preview Released/fenced/presented. Typestate is explicitly an implementation choice. The scenarios match the guardrails.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-009",
+      "decision": "accept",
+      "reason": "Conservation now covers admission and transfer. Cancel/Release emission does not discharge ownership. The held-reader scenario keeps revocation of fetch separate from terminal release. Consistent with the v516/517/520 evidence boundaries and with not qualifying the production provider.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-010",
+      "decision": "accept",
+      "reason": "Keeps the original native clock domain and deadline separate from causal order and epoch. A late receipt can reconcile knowledge without becoming timely success. Frontend timers are feedback only, which matches the UX contract that feedback thresholds never stand in for native deadlines.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-011",
+      "decision": "accept",
+      "reason": "Distinguishing definitive refusal from Unknown, with no implied completion and no replay, is what users need to act safely. Fail-closed handling of unknown schemas is correct. Cross-review of opus-03: the current single notice string can let a stale 'Launch submitted.' hide a window Unknown (Surface.elm:111-119). The 'Unknown remains perceivable' guardrail addresses that and must stay. Editorial: normalize the priority value '1' to 'P1' (also 012-014).",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-012",
+      "decision": "accept",
+      "reason": "This is my UXA-04 merged with opus-03/sol-04. The guardrail requires delivery to a qualified AT-active document or a declared native/fallback route, including when application focus is outside the shell. That is exactly the risk I found. Orca's live_region_presenter drops updates from inactive documents unless configured otherwise, and dedups identical text only within 0.25 s. The shared lane publishes the same status into every bar and the popup (shared-host.c:50-53; SurfaceRenderer.elm:63-64), and the bars never hold keyboard focus. The GTK3 host lacks GTK4's announce API, so the fallback route remains a research unknown and a policy freeze. Non-blocking suggestion: add a scenario where an application, not the shell, holds focus when the outcome arrives.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-013",
+      "decision": "accept",
+      "reason": "Allowlisted, bounded diagnostics, with titles, paths and pixels excluded by default and loss made observable, protect privacy and authority. The ring buffer is an implementation option. No numbers are invented.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-014",
+      "decision": "accept",
+      "reason": "Restored availability is reported separately from unresolved past outcomes, which avoids misleading 'recovered' banners. Original restore38/recovery34 stay the acceptance oracle, and compositor replacement is excluded as incidental recovery.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-015",
+      "decision": "defer",
+      "reason": "Conditional and deferrable per the coordinator correction. There is no product decision selecting local export. If it is later selected, its review UI must also meet ELM-UI-009/ELM-UX-023 keyboard/AT obligations. The content and privacy guardrails are otherwise sound.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-016",
+      "decision": "refine",
+      "reason": "Merges sol-04 SOL04-01 with my UXA-01. The EARS trigger is 'WHEN a presentation publication changes'. The most concrete hazard I found occurs with no publication change. Tab moves DOM/AT focus to Close, then Enter activates the controller's menu.selected (Surface.elm:154), while keyboard-context admission trusts document.activeElement (shared-context.h:265). Today that invariant ('admitted keyboard activation must equal the native AT-exposed focused identity') lives only in the guardrail and no scenario can falsify it. Sol-04 scenario 1 needs a publication to happen.",
+      "requiredChanges": [
+        "Add an EARS clause (or a second requirement sentence): WHEN keyboard or assistive activation is admitted within a shell focus scope, the host SHALL dispatch only the control identity currently exposed to native AT as focused.",
+        "Add a no-publication scenario: GIVEN Close has keyboard/AT focus while another row is selected, WHEN Enter or Space is admitted with no intervening publication, THEN only Close is invoked and no window intent is dispatched."
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-017",
+      "decision": "refine",
+      "reason": "Merges SOL04-02 with my UXA-03. The stable-visible-label-as-name guardrail matches UIA Name guidance and KDE Task.qml (name = model.display; the action is in the description). The current verb-first, count-hiding names (Surface.elm:91-98) need it. However, the EARS explicitly hands announcement ownership to ADOPT-012, yet scenario SOL04-02-scenario-1 asserts 'one relevant refusal is announced'. That claim is not supported by this EARS and duplicates 012. Also, bar\u2194popup relationships cross separate WebKit documents, so DOM idrefs cannot express them. 'Relationships' must be qualified through the native bridge, not ARIA alone.",
+      "requiredChanges": [
+        "Move SOL04-02-scenario-1 to ADOPT-012, or restate its THEN as a semantics claim (both projections expose the same outcome state on the same control identity, with focus unchanged).",
+        "Add a name-stability scenario: GIVEN a single-window group transitions inactive\u2192active or becomes pending, WHEN AT re-reads the control, THEN its accessible name is unchanged and only state/description changes.",
+        "State in the guardrails that cross-surface relationships must be verified in the native AT tree."
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-018",
+      "decision": "accept",
+      "reason": "A duplicate of ELM-UI-012/UX-028 with better evidence packaging. It correctly rejects isComposing-only testing (sol-04) and toolkit API transplantation. From my research: the native key-proof handler is attached to the engine's generic 'event' signal before WebKit's IM handling (shared-host.c:329, shared-context.h:52-123). The IME fixture must therefore include the native proof path as well as the DOM path. No text field exists in the snapshot yet, so this gates the first shell field rather than describing current behavior.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-019",
+      "decision": "accept",
+      "reason": "Thresholds are frozen before qualification, and native bounds are not inferred from CSS or screenshots. Wrapping, scrolling and labeled overflow remain implementation choices. The scenarios follow from the EARS and ELM-UI-019.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-020",
+      "decision": "accept",
+      "reason": "Exposing reason and next step, retaining focus and independent controls, and never queuing or replaying rejected or Unknown actions matches INTERACTION.md feedback rules and ELM-UI-007/015. 'Avoid queuing' does not conflict with ADOPT-007, which admits a registered dependent only after its exact prerequisite commits.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-021",
+      "decision": "accept",
+      "reason": "Separating feedback, commitment, submission, presentation and retirement, with physical completion only from identity-matched native evidence, is technically honest. Image load or frameSwapped is not presentation. Accessible feedback is one 'feedback' stage and should be traced separately from visual feedback (see 024).",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-022",
+      "decision": "accept",
+      "reason": "Only explicitly replaceable observations coalesce, and ordered lossless control/cleanup with reserved progress capacity is preserved. Consistent with the cancellation-is-not-retirement correction.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-023",
+      "decision": "accept",
+      "reason": "Live reduced-motion changes that settle the existing transaction without replay or deadline reset match INTERACTION.md:45. Successors derive from native last-presented geometry. The exact preference-switch policy is correctly left to be frozen.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-024",
+      "decision": "accept",
+      "reason": "Freezing same-machine budgets that separate feedback latency, useful presentation, resource closure and observer overhead, and declaring missing stages, avoids invented numbers. Non-blocking: INTERACTION.md:41 requires accessible pending status after the feedback threshold. The workload matrix should therefore list AT-event feedback latency as a stage, or explicitly declare it missing, rather than using visual feedback alone.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-025",
+      "decision": "accept",
+      "reason": "The coordinator correction is applied: proof IDs are not delivery ordinals, and known-safe idempotent Ack retry stays possible. There is no global total order. The scenarios follow from the EARS.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-026",
+      "decision": "accept",
+      "reason": "Rejecting over-budget capture routes in favor of a truthful unavailable-preview state does not close source-stop/family gates. Readback cost is labelled a concern, not a measured regression. UX note: the unavailable state should be exposed on the control, consistent with 017/028.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-027",
+      "decision": "accept",
+      "reason": "The coordinator correction is applied: a follow-up is a new native-scoped request with its own clock, there is no allocation while backpressured, and nothing is admitted after close, lock or revocation.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-028",
+      "decision": "accept",
+      "reason": "Distinguishing source liveness from frame freshness corrects a real honesty risk. The current captions ('Live preview', 'Client content'; PreviewLifecycle.elm:364-374) need exactly this review. The frozen historical/live/unavailable policy and the original 13 S09 assertions are preserved. State must be carried on the control, with imagery staying inert.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-029",
+      "decision": "accept",
+      "reason": "This is my UXA-02. Bars in the shared lane use GTK_LAYER_SHELL_KEYBOARD_MODE_NONE (shared-host.c:325), and focus-return effects reach only bar DOM, ungated (host.c:624). As a result, ELM-UX-023 taskbar keyboard routes and ELM-UI-011 native focus return currently have no entry route. The candidate correctly requires native keyboard and AT focus, not DOM focus. It also says no mandated EXCLUSIVE mode, no new default chord, a bounded scope, lock inertness and declared focus-only versus activation history changes. Feasibility on the owning compositor is unverified and stays a draft.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-030",
+      "decision": "refine",
+      "reason": "This is my UXA-05. Freezing a per-surface policy is the right call. GTK3 skips insensitive items (_gtk_menu_item_is_selectable), while APG and Qt's Windows style keep them reachable. I retain my recommendation of focusable disabled items for menus and jump lists for Windows parity, but I accept that this is a policy decision. Two blocking textual issues. (1) The EARS unconditionally requires every disabled action to 'expose its reason'. The RC-006 state table disables many actions with no meaningful user-facing reason (e.g. Restore on an ordinary window). An unconditional reason obligation conflicts with chattiness guidance and is not grounded in the baseline. (2) The mapping omits the right-click amendment requirements this directly refines.",
+      "requiredChanges": [
+        "Change 'expose its reason and disabled state' to 'expose its disabled state and, where the frozen policy declares one, its reason'.",
+        "Add ELM-RC-006, ELM-RC-017 and ELM-RC-018 to the mapping as related amendment identities, without mutating the right-click amendment."
+      ]
+    }
+  ],
+  "philosophy": {
+    "decision": "accept",
+    "reason": "The text is faithful to the converged design: one coherent model, native truth for physical claims, honest pending/Unknown reporting, cancellation that does not prove cleanup, bounded resources, and evidence levels kept distinct. It explicitly says it is not a release gate or proof of superiority. The principles guide concrete decisions. Principle 3 settles 021/026/028. Principle 5 settles 016. Principle 7 settles 009/027. Principle 8's 'Publish the rules that shortcuts, menus, focus and disabled controls follow' directly justifies 029/030 policy freezes instead of picking GNOME or Windows silently. Non-blocking suggestions: Principle 5 says keep 'selection and focus stable' but should also say they are distinct (017/016 rely on this). Principle 6 could note that announcements reach the user once regardless of output count, without moving focus. 'Accord' is an editorial name. My vote is not a technical unanimity claim.",
+    "requiredChanges": []
+  },
+  "remainingWork": {
+    "decision": "refine",
+    "reason": "Arithmetic checks out: S01-S16 total 230/405 and C00-C06 total 12/12, giving 242/417, with 13 S09 scenarios and the conditional compositor scope preserved. The listed requirement mappings that bear on accessibility (UI-009, UI-010, UI-011, UI-012, UI-013, UX-023-028) appear once each. Two closure-truthfulness problems. (1) 'Mapped exactly once' places requirements whose scenarios exercise surfaces in other packages into a single package. ELM-UI-010 is in S07 but its scenarios cover settings, notifications and adapter-unavailable (S12 surfaces). ELM-UI-012/UX-028 are in S04 (host selection), while P1-ELM-UI-012 requires minimal-host and then actual-field IME qualification, and the launcher field belongs to S12. Without explicit cross-package dependencies, S04/S07 could appear closed on partial evidence. (2) The RC row shows '0 / 0', which reads as zero remaining obligations rather than '24 separate amendment requirements'. The per-package EARS are identical boilerplate; the gate text lives only in the table. That is acceptable if the table is normative, but should be stated.",
+    "requiredChanges": [
+      "For each requirement whose scenarios span surfaces owned by another package (at least ELM-UI-010 and ELM-UI-012/ELM-UX-028), record a cross-package closure dependency. The package must not close until those scenarios pass on the relevant actual surfaces/fields in the same tuple.",
+      "Replace the RC row's '0 / 0' with the amendment's own counts (24 requirements plus their scenarios), labelled separate from the 242/417 baseline.",
+      "State that the Gate column is the normative closure outcome for each ELM-CLOSE-Sxx EARS, or fold the gate text into each EARS."
+    ]
+  },
+  "disagreements": [
+    "ADOPT-016 vs the ballot: the activation-equals-AT-focused-identity invariant must be in the EARS with a no-publication scenario, not only in the guardrail. The live hazard (Tab to Close, then Enter activates the selected row) needs no publication change.",
+    "ADOPT-017 vs the ballot: scenario 1 asserts an announcement outcome that the EARS delegates to ADOPT-012. Move it, or restate it as a semantics claim.",
+    "ADOPT-030 vs the ballot: an unconditional 'expose its reason' over-obligates relative to ELM-RC-006. As the original author I also keep a soft recommendation that menus and jump lists keep disabled items focusable (APG, Windows parity), while accepting that the freeze is a policy decision and GTK3's skip convention is defensible.",
+    "ADOPT-004 vs the ballot: a performance-improvement assertion in a conformance scenario conflates adoption evidence with correctness.",
+    "Partial difference with sol-04 on ADOPT-018: I agree isComposing-only testing is insufficient, and I add that the native GDK key-proof hook runs before WebKit IM filtering, so the native proof path must be in IME fixtures. This adds coverage and does not contradict sol-04.",
+    "Remaining work: the exactly-once package mapping needs cross-package closure dependencies for ELM-UI-010 and ELM-UI-012/UX-028."
+  ],
+  "summary": "Votes: 25 accept, 4 refine (004, 016, 017, 030), 1 defer (015, the conditional export). No rejects. The refines are textual and safety-of-claim corrections. ADOPT-016 needs the activation=AT-focus invariant made falsifiable. ADOPT-017 needs its announcement scenario moved to 012 and a name-stability scenario added. ADOPT-030 needs the reason obligation made conditional and the RC amendment mapping added. ADOPT-004 needs the speed claim moved out of the conformance scenario. None of these demands an implementation choice. Cross-review was done against sol-04 (paired), opus-03 (announcement/Unknown visibility) and sol-05 (reduced motion). The candidates preserve 242/417, the 13 S09 cases, 38/34 and original deadlines, native authority, no Unknown replay and conditional compositor scope, and they incorporate all six coordinator corrections. My UX evidence on the current source still stands: bars cannot take keyboard focus in the shared lane, status is published to N+1 live regions, names change with state and hide counts, and there is no IME field yet. ADOPT-012/016/017/018/029/030 cover these as drafts, not acceptance. Philosophy: accept, with non-blocking wording suggestions. Remaining work: refine, for cross-package closure dependencies, the RC count presentation and gate normativity. Hashes are echoed as supplied. I could not recompute them in this session because no hashing tool was available. These are my votes only. They do not represent agreement by other reviewers, and dissent is retained for reconciliation."
+}

@@ -1,0 +1,227 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "Seven producer failure, reservation, physical ownership, cancellation, stable receipt, exhaustion and original deadline scenarios. Finite model only, no actual broker trace coupling or native acceptance",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-preview-producer-refusal-policy-v516/spec/source.qnt": "338a1fb8b0b045ccb369178ac3c29c58c0e4f5f59aa5bd7bc25ed6a64e3f442e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-preview-producer-refusal-policy-v516/spec/tests.qnt": "c6918287477bde96dbfa976482cb756e786513b005084334589ccac1efe7fab9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-preview-producer-refusal-policy-v516/qa/formal.py": "38783f514f15c33e923218a9d1b5ad10a0e89db6d31f87a0d37ae049d12b48e5",
+    "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/0.33.0/node_modules/.bin/quint": "bd6e9400f6358a8a69d80eb636eb62f59f993039868a7be9719f76ba74191b4e",
+    "/home/hoskinson/.local/share/mise/installs/node/26.10.0/bin/node": "ab9c8eecf9f82d6693cdc3accced17034065c8d96213b0aa76a7e803d20ae1da"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "tests.qnt"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "tests.qnt",
+        "--main=source_tests",
+        "--backend=typescript",
+        "--match=^(reservedFailureClearsChargeTest|physicalBufferCannotRefuseTest|cancellationRaceBothProofsTest|duplicateRefusalStableIdentityTest|receiptExhaustionRetainsOwnershipTest|lateAllocationCannotPublishTest|originalDeadlinePreservedTest)$",
+        "--seed=201010",
+        "--max-samples=1",
+        "--out-itf=named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0
+    },
+    {
+      "name": "invariants-201011",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "source.qnt",
+        "--main=source",
+        "--backend=typescript",
+        "--invariant=safety",
+        "--seed=201011",
+        "--max-samples=500",
+        "--max-steps=50",
+        "--n-traces=12",
+        "--out-itf=sample-201011-{seq}.itf.json"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0
+    },
+    {
+      "name": "invariants-201012",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "source.qnt",
+        "--main=source",
+        "--backend=typescript",
+        "--invariant=safety",
+        "--seed=201012",
+        "--max-samples=500",
+        "--max-steps=50",
+        "--n-traces=12",
+        "--out-itf=sample-201012-{seq}.itf.json"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0
+    },
+    {
+      "name": "physical-owner-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "physical-owner-tests.qnt"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0
+    },
+    {
+      "name": "physical-owner-counterexample",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "physical-owner-tests.qnt",
+        "--main=source_tests",
+        "--backend=typescript",
+        "--match=^physicalBufferCannotRefuseTest$",
+        "--seed=201013",
+        "--max-samples=1"
+      ],
+      "exitCode": 1,
+      "expectedExitCode": 1
+    },
+    {
+      "name": "retained-budget-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "retained-budget-tests.qnt"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0
+    },
+    {
+      "name": "retained-budget-counterexample",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "retained-budget-tests.qnt",
+        "--main=source_tests",
+        "--backend=typescript",
+        "--match=^reservedFailureClearsChargeTest$",
+        "--seed=201013",
+        "--max-samples=1"
+      ],
+      "exitCode": 1,
+      "expectedExitCode": 1
+    },
+    {
+      "name": "cancel-proof-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "cancel-proof-tests.qnt"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0
+    },
+    {
+      "name": "cancel-proof-counterexample",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "cancel-proof-tests.qnt",
+        "--main=source_tests",
+        "--backend=typescript",
+        "--match=^cancellationRaceBothProofsTest$",
+        "--seed=201013",
+        "--max-samples=1"
+      ],
+      "exitCode": 1,
+      "expectedExitCode": 1
+    }
+  ],
+  "selectedNames": [
+    "reservedFailureClearsChargeTest",
+    "physicalBufferCannotRefuseTest",
+    "cancellationRaceBothProofsTest",
+    "duplicateRefusalStableIdentityTest",
+    "receiptExhaustionRetainsOwnershipTest",
+    "lateAllocationCannotPublishTest",
+    "originalDeadlinePreservedTest"
+  ],
+  "unsafeMutantsDetected": 3,
+  "namedScenarios": 7,
+  "invariantSamples": 1000,
+  "maxSteps": 50,
+  "retainedSampleTraces": 24,
+  "artifacts": {
+    "source.qnt": "338a1fb8b0b045ccb369178ac3c29c58c0e4f5f59aa5bd7bc25ed6a64e3f442e",
+    "tests.qnt": "c6918287477bde96dbfa976482cb756e786513b005084334589ccac1efe7fab9",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-reservedFailureClearsChargeTest-0.itf.json": "6d0bfbc37e9bea6f56ba52568acf88b7a88353ce1ac528f0cc4e9b738ded7df8",
+    "named-physicalBufferCannotRefuseTest-1.itf.json": "8255b0e64255ae7b4bd2d97931ff2a81e8d0e7e1f06784e56407e04cb659d047",
+    "named-cancellationRaceBothProofsTest-2.itf.json": "a7d4da7b63ba9702fe8346dfb7993bc3721b16228bd47c6f42a5d7e20efb1bf3",
+    "named-duplicateRefusalStableIdentityTest-3.itf.json": "1f7735032fb8ff44c1ddb2c31f629f4baa6f8326f3eb9ac3a304cc0a16d66c45",
+    "named-receiptExhaustionRetainsOwnershipTest-4.itf.json": "5001944d7fdf7b952deadb2f0931e11fc3e26e1f2470ecc2b0f91c6719f3bc00",
+    "named-lateAllocationCannotPublishTest-5.itf.json": "b3e069b155525397fa22039326dec38609ca5c92999db2dc35d571c6d193b683",
+    "named-originalDeadlinePreservedTest-6.itf.json": "bcd06844f7a1854a7daa7e7666a91b90bed634b837d1856a86d63073b56436d4",
+    "named.stdout": "173b4830c748691ea212ac2e7431d9766a4b80145cef7f19fbf7948de9ac3d14",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-201011-0.itf.json": "179f95ff3bcadf038a62551fd44753c56f84795849de3438e5a14259d88a273b",
+    "sample-201011-1.itf.json": "63e5fef28fc876e7316be93b3ad4a99f73d89c234fd13777b67918671fa0c337",
+    "sample-201011-2.itf.json": "d39bcd8eab626f4177ed444088abe88e1b0a98de43c30710f1d74cf0920d080a",
+    "sample-201011-3.itf.json": "9839819b5ed78a8d3e2463c4cdc01c5d2e885d0a93f7bcf416f57cbb6c04d4af",
+    "sample-201011-4.itf.json": "dece1be9174a9b9695b9cd10ed5e78fd2482df70cbf1ae75c182bf28b8f57f76",
+    "sample-201011-5.itf.json": "a30d27e88c58fe17de8172c8fac0a128c7a1cf557d2133bb006c9c7c4167c7aa",
+    "sample-201011-6.itf.json": "fdc923294fd9d6b730d056855e4d8f524edc351e8f3b7e3938435afdb188a9da",
+    "sample-201011-7.itf.json": "6b21adbaff3f0afc26e5cc5d4238febf5d03f3e6cd9fc4a0ad4c0a19042adbd0",
+    "sample-201011-8.itf.json": "923db6bae10ecafdbc5a48c357b94651339b59eba5d006603e8725b8f15fa537",
+    "sample-201011-9.itf.json": "91a2094939305873e6adab8f272b6a497978e2cdc284e7897623b0fbe4859113",
+    "sample-201011-10.itf.json": "30f2c02949b2fd543178b6a63bbc55e080e7939845671d84507caa22d557d703",
+    "sample-201011-11.itf.json": "37b8402dcaf9b8cd2ab44d9c0fe333662a2e7979890afc168d6af6f9b8ce4bcf",
+    "invariants-201011.stdout": "631dad6a873847d4a04ad5f983083b290d91b6befc219e3bbeea5fedc375b6f3",
+    "invariants-201011.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-201012-0.itf.json": "08e1c53d8be2b2344fdf3f0247fc00255c640e62ccf28d28aa0801cafb311020",
+    "sample-201012-1.itf.json": "2fcb571920ec511168065a8225f857e65092dbe1ba8acf25261ede391411f1c0",
+    "sample-201012-2.itf.json": "4bddb8380cf67ded30aeb971495905e4fe2ab1852ff539f3a79a31d2eda8fde7",
+    "sample-201012-3.itf.json": "3b310d24d517706c6eaca9429298c488bd8023836726a4392ca15d29dcf76257",
+    "sample-201012-4.itf.json": "eb1175d04e095e4a08459acba6738a62bd59395b51727f71a0697befe9060444",
+    "sample-201012-5.itf.json": "5108af76269e912a477a7079b85455b254ace2aa9ea0843e213390c141d3a7cc",
+    "sample-201012-6.itf.json": "9d02d3eb1190c1b8f8faf19ce075c1862deea41d6b0f40469c719468b81026b5",
+    "sample-201012-7.itf.json": "ab016c91efef7fa5bff81df00578acf898b5df918b9701aa97d3fe25a82cc29a",
+    "sample-201012-8.itf.json": "1b3303c2a41d61f18d8c4388aa8cf8257778b09a300ad8ddc4cdb1a22de37d47",
+    "sample-201012-9.itf.json": "c3793810af6ace88651c723be255de4a1a13d575cef8c4c64d75eb7ed60a8aea",
+    "sample-201012-10.itf.json": "3f9c23285d8f488cd471b3b5bd01b02ae7a3321eae88c19d8a036583e2245188",
+    "sample-201012-11.itf.json": "4d883588ef93b32c54ea2c1bcd85f511013b5c59aeed4f7a4b4bc0faf43d2062",
+    "invariants-201012.stdout": "d8a7db4bd45e51eb78587a9812d12706a8e779703f6c8c959fd2d84a21fc307d",
+    "invariants-201012.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "physical-owner.qnt": "3ea8adf3d266b5606dcc489c3e69b5a360f9e314dbddc6dad0b3ef9f592539fd",
+    "physical-owner-tests.qnt": "e16bc2f7559aead7904526236bde8b41800a60e1420d60bd44dd2a664f8e9461",
+    "physical-owner-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "physical-owner-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "physical-owner-counterexample.stdout": "ffc727f24aa234e42e38b8fcbb4d8dd3669cecd0d9e332294eb09373023b15af",
+    "physical-owner-counterexample.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "retained-budget.qnt": "b04c4b77374b891ca6444c6108828ec59a99b0d3a7d8a29b71ab4cf305ecd61a",
+    "retained-budget-tests.qnt": "f3751329bd98b878efacdf2649547fa6b03a21148d76f5398a70dbec170ff1e5",
+    "retained-budget-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "retained-budget-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "retained-budget-counterexample.stdout": "e3d7f382fff5094bbaf5b59d346ff37ee46d776f770b1827bfc1670beac992ac",
+    "retained-budget-counterexample.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "cancel-proof.qnt": "7fb466f0789b7320d4f545578b5747572533cf84df9e5031ba98d5a27c9f5315",
+    "cancel-proof-tests.qnt": "e187a66bc17c4d30bbfc87e510ece038f726c1430e95f11373a69f2024b1f585",
+    "cancel-proof-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cancel-proof-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cancel-proof-counterexample.stdout": "8ffbfaf4bb37496dd36b88ca5c327a16a3df507895f8cd9705812b505148a93c",
+    "cancel-proof-counterexample.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2"
+  }
+}

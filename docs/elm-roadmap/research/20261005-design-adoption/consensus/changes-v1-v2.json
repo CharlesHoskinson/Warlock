@@ -1,0 +1,851 @@
+{
+  "fromSHA256": "ae1d72ea0b44236c40cc9e94db47c3b9e180660b207378097c45c833caf7807e",
+  "toSHA256": "129ac50d8fef08aecae1ae9c83bb6a0e2bba1e8c27e9587e9405d92887c6f936",
+  "changes": [
+    {
+      "id": "ELM-ADOPT-001",
+      "field": "status",
+      "before": "draft-for-consensus",
+      "after": "draft-refinement-awaiting-ratification"
+    },
+    {
+      "id": "ELM-ADOPT-002",
+      "field": "ears",
+      "before": "WHEN retained records reach their configured bound, the authority SHALL reclaim only records whose safety obligations are preserved by retained proofs and replay floors, or explicitly refuse new admission while preserving unresolved and cleanup obligations.",
+      "after": "WHEN retained records reach their configured bound, the authority SHALL reclaim only records whose obligations remain protected by proofs and replay floors, or report distinct capacity refusal while preserving unresolved and cleanup obligations until proof-safe reclamation permits admission."
+    },
+    {
+      "id": "ELM-ADOPT-002",
+      "field": "guardrails",
+      "before": "No age-based deletion of Unknown, cleanup, issuance/revocation authority or replay floors. A presentation close/restart is not proof-safe reclamation.",
+      "after": "No age-based deletion of Unknown, cleanup, issuance/revocation authority or replay floors. A presentation close/restart is not proof-safe reclamation. Capacity refusal is distinct from the original operation outcome and clears when proof-safe reclamation is possible. Scope replay floors retire only through authority-certified scope retirement or equivalent retained proof."
+    },
+    {
+      "id": "ELM-ADOPT-002",
+      "field": "scenarios",
+      "before": [
+        {
+          "name": "Expired replay after compaction",
+          "given": "A settled reclaimable record and retained replay floor",
+          "when": "Compaction completes and its old identity returns",
+          "then": "No mutation occurs and defined expired disposition is recorded"
+        },
+        {
+          "name": "Unknown and late cleanup",
+          "given": "Capacity pressure, Unknown request and outstanding consumer fence",
+          "when": "Diagnostics rotate and matching late receipt arrives",
+          "then": "Unresolved/cleanup obligations remain reconciled and charged storage is not freed prematurely"
+        }
+      ],
+      "after": [
+        {
+          "name": "Expired replay after compaction",
+          "given": "A settled reclaimable record and retained replay floor",
+          "when": "Compaction completes and its old identity returns",
+          "then": "no mutation occurs; expired or retention disposition is distinct from definitive refusal of the original operation, and retained Unknown remains unchanged"
+        },
+        {
+          "name": "Unknown and late cleanup",
+          "given": "Capacity pressure, Unknown request and outstanding consumer fence",
+          "when": "Diagnostics rotate and matching late receipt arrives",
+          "then": "Unresolved/cleanup obligations remain reconciled and charged storage is not freed prematurely"
+        }
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-002",
+      "field": "status",
+      "before": "draft-for-consensus",
+      "after": "draft-refinement-awaiting-ratification"
+    },
+    {
+      "id": "ELM-ADOPT-003",
+      "field": "status",
+      "before": "draft-for-consensus",
+      "after": "draft-refinement-awaiting-ratification"
+    },
+    {
+      "id": "ELM-ADOPT-004",
+      "field": "guardrails",
+      "before": "Caching/indexing is an implementation option after profiling. Cache keys include native dependency/output/publication revisions; stale cached data grants no authority.",
+      "after": "Caching/indexing is an implementation option after profiling. Cache keys include native dependency/output/publication revisions; stale cached data grants no authority. Enable an optimization only after the frozen workload comparison shows an accepted benefit; equivalence alone does not justify adopting it."
+    },
+    {
+      "id": "ELM-ADOPT-004",
+      "field": "scenarios",
+      "before": [
+        {
+          "name": "Unchanged dependency",
+          "given": "Pointer events with unchanged scene/query/policy revisions",
+          "when": "Taskbar groups are derived",
+          "then": "Output equals uncached oracle and measured recomputation improves under frozen workload comparison"
+        },
+        {
+          "name": "Identity reuse race",
+          "given": "Cached retired family incarnation",
+          "when": "Same label appears under new lifetime/incarnation during query change",
+          "then": "New identities govern derivation and action eligibility; stale family/preview authority does not survive"
+        }
+      ],
+      "after": [
+        {
+          "name": "Unchanged dependency",
+          "given": "Pointer events with unchanged scene/query/policy revisions",
+          "when": "Taskbar groups are derived",
+          "then": "output equals the uncached oracle under the correct dependency revision; recomputation and whole-process resource results are measured separately for the adoption decision"
+        },
+        {
+          "name": "Identity reuse race",
+          "given": "Cached retired family incarnation",
+          "when": "Same label appears under new lifetime/incarnation during query change",
+          "then": "New identities govern derivation and action eligibility; stale family/preview authority does not survive"
+        }
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-004",
+      "field": "status",
+      "before": "draft-for-consensus",
+      "after": "draft-refinement-awaiting-ratification"
+    },
+    {
+      "id": "ELM-ADOPT-005",
+      "field": "guardrails",
+      "before": "Explicit partial-observation/stuttering abstraction; compare actual commands and resources as well as model state. Bounded sampling/trace validation is not an exhaustive proof.",
+      "after": "Explicit partial-observation/stuttering abstraction; compare actual commands and resources as well as model state. Bounded sampling/trace validation is not an exhaustive proof. Every concrete state and command field is listed as mapped or explicitly reviewed quotient/stutter/ghost-only; an unlisted field fails coverage. Quotients preserve authentication/binding identity, clock/deadline and outcome meaning; reviewed opaque-nonce renaming is allowed without erasing those relations."
+    },
+    {
+      "id": "ELM-ADOPT-005",
+      "field": "scenarioIDs",
+      "before": [
+        "ELM-ADOPT-005 Backend stuttering",
+        "ELM-ADOPT-005 Equal final state with incorrect effect order"
+      ],
+      "after": [
+        "ELM-ADOPT-005 Backend stuttering",
+        "ELM-ADOPT-005 Equal final state with incorrect effect order",
+        "ELM-ADOPT-005 unlisted-field-mutation"
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-005",
+      "field": "scenarios",
+      "before": [
+        {
+          "name": "Backend stuttering",
+          "given": "Broker housekeeping without observable frontend change",
+          "when": "Coupled replay applies declared abstraction map",
+          "then": "Frontend stutters while native accounting and eligible queued receipts remain checked"
+        },
+        {
+          "name": "Equal final state with incorrect effect order",
+          "given": "Executions with equal final visible model",
+          "when": "One reorders Cancel/Ack or retires before consumer completion",
+          "then": "Transition/command/resource comparison fails at first relevant mismatch"
+        }
+      ],
+      "after": [
+        {
+          "name": "Backend stuttering",
+          "given": "Broker housekeeping without observable frontend change",
+          "when": "Coupled replay applies declared abstraction map",
+          "then": "Frontend stutters while native accounting and eligible queued receipts remain checked"
+        },
+        {
+          "name": "Equal final state with incorrect effect order",
+          "given": "Executions with equal final visible model",
+          "when": "One reorders Cancel/Ack or retires before consumer completion",
+          "then": "Transition/command/resource comparison fails at first relevant mismatch"
+        },
+        {
+          "name": "unlisted-field-mutation",
+          "given": "a runtime mutant drops an Unknown reservation or changes an undeclared field",
+          "when": "abstraction coverage and coupled replay run",
+          "then": "verification fails at that field rather than silently observing only the visible model"
+        }
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-005",
+      "field": "status",
+      "before": "draft-for-consensus",
+      "after": "draft-refinement-awaiting-ratification"
+    },
+    {
+      "id": "ELM-ADOPT-006",
+      "field": "guardrails",
+      "before": "Narrow module-owned typed events, effects and identity domains; native authenticates context. Do not mandate a new language, framework, giant event type or incompatible wire change.",
+      "after": "Narrow module-owned typed events, effects and identity domains; native authenticates context. Do not mandate a new language, framework, giant event type or incompatible wire change. Terminal Refused requires exact authenticated native evidence or a validated definitive unsent certificate. Historical proof admission follows its explicit recovery contract."
+    },
+    {
+      "id": "ELM-ADOPT-006",
+      "field": "scenarioIDs",
+      "before": [
+        "ELM-ADOPT-006 Exact receipt",
+        "ELM-ADOPT-006 Foreign input"
+      ],
+      "after": [
+        "ELM-ADOPT-006 Exact receipt",
+        "ELM-ADOPT-006 Foreign input",
+        "ELM-ADOPT-006 authenticated-historical-reconciliation"
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-006",
+      "field": "scenarios",
+      "before": [
+        {
+          "name": "Exact receipt",
+          "given": "a validated receipt for one request/incarnation",
+          "when": "the typed outcome is reduced",
+          "then": "only the exact transaction settles and wire encoding remains unchanged"
+        },
+        {
+          "name": "Foreign input",
+          "given": "a malformed or foreign-binding payload",
+          "when": "boundary validation runs",
+          "then": "no admitted event or mutation is produced and correlated refusal is retained"
+        }
+      ],
+      "after": [
+        {
+          "name": "Exact receipt",
+          "given": "a validated receipt for one request/incarnation",
+          "when": "the typed outcome is reduced",
+          "then": "only the exact transaction settles and wire encoding remains unchanged"
+        },
+        {
+          "name": "Foreign input",
+          "given": "a malformed, untrusted or unauthorized payload that fails boundary admission",
+          "when": "boundary validation runs",
+          "then": "no admitted event, native mutation or transaction settlement is produced; only a bounded allowlisted rejection diagnostic is retained, with no fabricated Refused outcome"
+        },
+        {
+          "name": "authenticated-historical-reconciliation",
+          "given": "an exact authenticated historical receipt for a retained obligation and its declared reconciliation route",
+          "when": "it arrives after frontend replacement",
+          "then": "only the historical obligation may settle; the receipt grants no authority to the replacement binding and renews no deadline"
+        }
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-006",
+      "field": "status",
+      "before": "draft-for-consensus",
+      "after": "draft-refinement-awaiting-ratification"
+    },
+    {
+      "id": "ELM-ADOPT-007",
+      "field": "baselineIds",
+      "before": [
+        "ELM-TEA-002",
+        "ELM-TEA-003"
+      ],
+      "after": [
+        "ELM-ARC-008",
+        "ELM-ARC-012",
+        "ELM-TEA-002",
+        "ELM-TEA-003"
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-007",
+      "field": "ears",
+      "before": "WHEN a native effect depends on another effect's completion, the controller SHALL admit the dependent request only after the matching native committed receipt satisfies the recorded prerequisite.",
+      "after": "WHEN a native effect depends on a prerequisite, the controller SHALL admit its request only after matching authenticated evidence satisfies that operation's protocol-specific prerequisite, while native authority revalidates the dependency at commit."
+    },
+    {
+      "id": "ELM-ADOPT-007",
+      "field": "guardrails",
+      "before": "Register every implied native request; preserve child effects. Cmd.batch does not sequence dependent results. Independent actions need not wait for unrelated dependencies.",
+      "after": "Register every implied native request; preserve child effects. Cmd.batch does not sequence dependent results. Independent actions need not wait for unrelated dependencies. Native revalidates prerequisite incarnation, generation and dependency revision. Preview drain/release/presentation require their own evidence; a window Committed receipt cannot substitute."
+    },
+    {
+      "id": "ELM-ADOPT-007",
+      "field": "status",
+      "before": "draft-for-consensus",
+      "after": "draft-refinement-awaiting-ratification"
+    },
+    {
+      "id": "ELM-ADOPT-008",
+      "field": "baselineIds",
+      "before": [
+        "ELM-TEA-001",
+        "ELM-ARC-012",
+        "ELM-ARC-014",
+        "ELM-REV-008",
+        "ELM-REV-009",
+        "ELM-REV-011"
+      ],
+      "after": [
+        "ELM-ARC-004",
+        "ELM-ARC-007",
+        "ELM-ARC-012",
+        "ELM-ARC-014",
+        "ELM-REV-008",
+        "ELM-REV-009",
+        "ELM-REV-011",
+        "ELM-TEA-001"
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-008",
+      "field": "ears",
+      "before": "WHEN an authenticated protocol event is admitted, each participant SHALL follow the declared actor-specific legal transitions and outcome reachability for that protocol version, preserving exact correlation and stable proof identities.",
+      "after": "WHEN a protocol event is received, each participant SHALL admit it only under the declared actor-specific transitions, version and outcome reachability with exact correlation; otherwise it SHALL reject it without authority, ownership or settlement effect and retain a bounded rejection diagnostic."
+    },
+    {
+      "id": "ELM-ADOPT-008",
+      "field": "status",
+      "before": "draft-for-consensus",
+      "after": "draft-refinement-awaiting-ratification"
+    },
+    {
+      "id": "ELM-ADOPT-009",
+      "field": "status",
+      "before": "draft-for-consensus",
+      "after": "draft-refinement-awaiting-ratification"
+    },
+    {
+      "id": "ELM-ADOPT-010",
+      "field": "status",
+      "before": "draft-for-consensus",
+      "after": "draft-refinement-awaiting-ratification"
+    },
+    {
+      "id": "ELM-ADOPT-010",
+      "field": "tradeoffs",
+      "before": "Metadata and clock/queue instrumentation; frontend timers feedback only; vector clocks unnecessary.",
+      "after": "Metadata and clock/queue instrumentation; frontend timers may provide feedback or fail-closed withdrawal of unsent local intent, but cannot authorize, extend, settle or time native work or substitute for native original deadlines. Vector clocks are unnecessary."
+    },
+    {
+      "id": "ELM-ADOPT-011",
+      "field": "guardrails",
+      "before": "Stable bounded outcome/reason catalog and actionable localized text. Unknown remains perceivable. Unknown reason within a validated Refused class may use generic refusal text; unknown schema/outcome cannot fabricate Refused.",
+      "after": "Stable bounded outcome/reason catalog and actionable, reviewed text from a catalog that supports localization. Unknown remains perceivable. Unknown reason within a validated Refused class may use generic refusal text; unknown schema/outcome cannot fabricate Refused. Supporting localization does not add a translation release gate."
+    },
+    {
+      "id": "ELM-ADOPT-011",
+      "field": "status",
+      "before": "draft-for-consensus",
+      "after": "draft-refinement-awaiting-ratification"
+    },
+    {
+      "id": "ELM-ADOPT-012",
+      "field": "scenarios",
+      "before": [
+        {
+          "name": "ERR-02-01",
+          "given": "bar and popup projections on two outputs with stable focus",
+          "when": "the same refusal receipt is delivered repeatedly and a popup recreates",
+          "then": "one eligible announcement occurs and recovery detail remains reachable."
+        },
+        {
+          "name": "ERR-02-02",
+          "given": "Unknown was announced and the original deadline has elapsed",
+          "when": "a valid late correlated receipt settles knowledge",
+          "then": "a distinct policy-eligible update is exposed without restarting the effect or changing its deadline; foreign-epoch receipts produce no such update."
+        }
+      ],
+      "after": [
+        {
+          "name": "ERR-02-01",
+          "given": "bar and popup projections on two outputs with stable focus",
+          "when": "the same refusal receipt is delivered repeatedly and a popup recreates",
+          "then": "one eligible announcement occurs and recovery detail remains reachable."
+        },
+        {
+          "name": "ERR-02-02",
+          "given": "Unknown was announced and the original deadline has elapsed",
+          "when": "a valid late correlated receipt settles knowledge",
+          "then": "a distinct policy-eligible update is exposed without restarting the effect or changing its deadline; unauthenticated, unrelated or unauthorized receipts cause no update, while exact authenticated historical evidence may reconcile retained Unknown through the declared recovery route"
+        }
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-012",
+      "field": "status",
+      "before": "draft-for-consensus",
+      "after": "draft-refinement-awaiting-ratification"
+    },
+    {
+      "id": "ELM-ADOPT-013",
+      "field": "baselineIds",
+      "before": [
+        "ELM-DEL-017"
+      ],
+      "after": [
+        "ELM-DEL-017",
+        "ELM-QA-021",
+        "ELM-QA-023",
+        "ELM-REV-020",
+        "ELM-REV-021"
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-013",
+      "field": "guardrails",
+      "before": "Allowlist excludes secrets, draft content, pixels, raw port bodies, titles/arguments/paths by default. Bounded lost-record counters. Diagnostics saturation cannot block native control/cleanup or compact durable authority.",
+      "after": "Secrets, credentials, draft contents and captured pixels are always excluded from ordinary diagnostics under ELM-DEL-017. Raw port bodies, titles, arguments and paths are also excluded by this ordinary allowlist. A different scoped mode requires a separate reviewed contract and is outside this draft. Retention/loss counters remain bounded. Saturation cannot block native control/cleanup or compact durable authority."
+    },
+    {
+      "id": "ELM-ADOPT-013",
+      "field": "status",
+      "before": "draft-for-consensus",
+      "after": "draft-refinement-awaiting-ratification"
+    },
+    {
+      "id": "ELM-ADOPT-013",
+      "field": "tradeoffs",
+      "before": "unrestricted verbose logs simplify one incident at privacy/resource cost; aggregate-only metrics lose sequence context. Cost: event schema, producer audits and saturation tests. A ring buffer and separate counters are possible implementations, not mandated architecture. Validation: sensitive canaries across nested values and error strings; resource saturation, failure to write and malformed events preserve controller decisions. Measure log-rate, whole-process CPU/wakeups/memory, export cost and retention against `elm-performance/spec.md` ELM-PER obligations; the performance owner freezes numeric limits from P0 workloads before acceptance.",
+      "after": "unrestricted verbose logs simplify one incident at privacy/resource cost; aggregate-only metrics lose sequence context. Cost: event schema, producer audits and saturation tests. A ring buffer and separate counters are possible implementations, not mandated architecture. Validation: sensitive canaries across nested values and error strings; resource saturation, failure to write and malformed events preserve controller decisions. Measure log-rate, whole-process CPU/wakeups/memory, export cost and retention against `elm-performance/spec.md` ELM-QA-021/023 and ELM-REV-020/021; the performance owner freezes numeric limits from P0 workloads before acceptance. Measure under the actual ELM-QA-021/023 and ELM-REV-020/021 budget contract."
+    },
+    {
+      "id": "ELM-ADOPT-014",
+      "field": "scenarios",
+      "before": [
+        {
+          "name": "ERR-04-01",
+          "given": "an admitted effect and crash before durable settlement",
+          "when": "a fresh epoch receives a coherent snapshot",
+          "then": "availability may recover while the previous effect remains unconfirmed and is never replayed."
+        },
+        {
+          "name": "ERR-04-02",
+          "given": "a storage-full recovery failure and matching-looking geometry from a replacement incarnation",
+          "when": "reconciliation is attempted",
+          "then": "geometry alone cannot clear the historical reservation, no new dependent effect is admitted and the original recovery deadline remains enforced."
+        }
+      ],
+      "after": [
+        {
+          "name": "ERR-04-01",
+          "given": "an admitted effect and crash before durable settlement",
+          "when": "a fresh epoch receives a coherent snapshot",
+          "then": "availability may recover while the previous effect remains unconfirmed and is never replayed."
+        },
+        {
+          "name": "ERR-04-02",
+          "given": "a storage-full recovery failure and matching-looking geometry from a replacement incarnation",
+          "when": "reconciliation is attempted",
+          "then": "geometry alone cannot clear the historical reservation, no new dependent effect is admitted and each affected operation's original deadline is unchanged and is not renewed by recovery."
+        }
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-014",
+      "field": "status",
+      "before": "draft-for-consensus",
+      "after": "draft-refinement-awaiting-ratification"
+    },
+    {
+      "id": "ELM-ADOPT-015",
+      "field": "status",
+      "before": "draft-for-consensus",
+      "after": "deferred-conditional-draft"
+    },
+    {
+      "id": "ELM-ADOPT-016",
+      "field": "ears",
+      "before": "WHEN a presentation publication changes while a shell scope retains focus, the host SHALL preserve the focused surviving control identity, reject activation captured for retired or changed-scope identities, and apply the frozen eligible fallback only when that control is no longer eligible.",
+      "after": "WHILE a shell focus scope is open, the host SHALL preserve an eligible focused control through unrelated publications and dispatch admitted keyboard or assistive activation only to that native AT-exposed identity, rejecting retired or changed-scope targets and applying the frozen fallback when focus becomes ineligible."
+    },
+    {
+      "id": "ELM-ADOPT-016",
+      "field": "guardrails",
+      "before": "Publication/lease/incarnation captured at press remains authoritative at release. Preserve a surviving focus identity across unrelated changes; explicit eligible fallback only on removal. Keyed DOM is an implementation choice. Admitted keyboard activation must equal the native AT-exposed focused identity, not merely a selected row.",
+      "after": "Publication, lease and incarnation captured at press remain authoritative at release. Preserve the surviving focused identity while eligible under the frozen per-surface policy; disabled-but-focusable controls remain focused when030 allows it, otherwise apply the declared fallback. Selection is distinct from focus. Keyed DOM is an implementation choice."
+    },
+    {
+      "id": "ELM-ADOPT-016",
+      "field": "pattern",
+      "before": "event-driven",
+      "after": "state-driven"
+    },
+    {
+      "id": "ELM-ADOPT-016",
+      "field": "scenarioIDs",
+      "before": [
+        "ELM-ADOPT-016 SOL04-01-scenario-1",
+        "ELM-ADOPT-016 SOL04-01-scenario-2"
+      ],
+      "after": [
+        "ELM-ADOPT-016 SOL04-01-scenario-1",
+        "ELM-ADOPT-016 SOL04-01-scenario-2",
+        "ELM-ADOPT-016 focus-without-publication"
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-016",
+      "field": "scenarios",
+      "before": [
+        {
+          "name": "SOL04-01-scenario-1",
+          "given": "Close is focused while another row is selected",
+          "when": "an unrelated catalog publication arrives",
+          "then": "Close keeps focus and the next activation invokes only Close"
+        },
+        {
+          "name": "SOL04-01-scenario-2",
+          "given": "an activation press belongs to a window incarnation and lease",
+          "when": "that incarnation retires and the row position is reused before release",
+          "then": "release dispatches no replacement action and eligible fallback remains reachable"
+        }
+      ],
+      "after": [
+        {
+          "name": "SOL04-01-scenario-1",
+          "given": "Close is focused while another row is selected",
+          "when": "an unrelated catalog publication arrives",
+          "then": "Close keeps focus and the next activation invokes only Close"
+        },
+        {
+          "name": "SOL04-01-scenario-2",
+          "given": "an activation press belongs to a window incarnation and lease",
+          "when": "that incarnation retires and the row position is reused before release",
+          "then": "release dispatches no replacement action and eligible fallback remains reachable"
+        },
+        {
+          "name": "focus-without-publication",
+          "given": "Close has keyboard/native AT focus while another row is selected",
+          "when": "Enter or Space is admitted without an intervening publication",
+          "then": "only Close is invoked, no window intent is dispatched and selection cannot override focused identity"
+        }
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-016",
+      "field": "status",
+      "before": "draft-for-consensus",
+      "after": "draft-refinement-awaiting-ratification"
+    },
+    {
+      "id": "ELM-ADOPT-017",
+      "field": "guardrails",
+      "before": "Control semantics plus actual native bridge required. Announcement ownership is separately ELM-ADOPT-012; multiple read-only status regions do not establish a single AT announcement. Keep the visible stable control label as the accessible name; expose transient state and action descriptions separately, within the frozen per-control naming policy.",
+      "after": "Control semantics plus actual native bridge required. Announcement ownership is separately ELM-ADOPT-012; multiple read-only status regions do not establish a single AT announcement. Keep the visible stable control label as the accessible name; expose transient state and action descriptions separately, within the frozen per-control naming policy. Verify cross-surface relationships in the native AT tree; DOM-local relationships do not automatically cross WebView documents."
+    },
+    {
+      "id": "ELM-ADOPT-017",
+      "field": "scenarioIDs",
+      "before": [
+        "ELM-ADOPT-017 SOL04-02-scenario-1",
+        "ELM-ADOPT-017 SOL04-02-scenario-2"
+      ],
+      "after": [
+        "ELM-ADOPT-017 SOL04-02-scenario-1",
+        "ELM-ADOPT-017 SOL04-02-scenario-2",
+        "ELM-ADOPT-017 stable-name-state-change"
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-017",
+      "field": "scenarios",
+      "before": [
+        {
+          "name": "SOL04-02-scenario-1",
+          "given": "bar and popup show the same pending operation",
+          "when": "the matching refusal arrives twice",
+          "then": "one relevant refusal is announced, both projections show the same outcome, and focus remains on the user's control"
+        },
+        {
+          "name": "SOL04-02-scenario-2",
+          "given": "a preview image has retired while its restore control survives",
+          "when": "AT explores the control",
+          "then": "source state and supported action are available without an actionable image object or stale-incarnation activation"
+        }
+      ],
+      "after": [
+        {
+          "name": "SOL04-02-scenario-1",
+          "given": "bar and popup show the same pending operation",
+          "when": "the matching refusal arrives twice",
+          "then": "both projections expose the same refusal state for the same control identity and focus remains on the user's control; announcement count follows ELM-ADOPT-012"
+        },
+        {
+          "name": "SOL04-02-scenario-2",
+          "given": "a preview image has retired while its restore control survives",
+          "when": "AT explores the control",
+          "then": "source state and supported action are available without an actionable image object or stale-incarnation activation"
+        },
+        {
+          "name": "stable-name-state-change",
+          "given": "a single-window group whose visible identity label is unchanged becomes active or pending",
+          "when": "native AT re-reads the control",
+          "then": "the accessible name remains aligned with the same visible label while state/description changes under the frozen naming policy"
+        }
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-017",
+      "field": "status",
+      "before": "draft-for-consensus",
+      "after": "draft-refinement-awaiting-ratification"
+    },
+    {
+      "id": "ELM-ADOPT-018",
+      "field": "status",
+      "before": "draft-for-consensus",
+      "after": "draft-refinement-awaiting-ratification"
+    },
+    {
+      "id": "ELM-ADOPT-019",
+      "field": "status",
+      "before": "draft-for-consensus",
+      "after": "draft-refinement-awaiting-ratification"
+    },
+    {
+      "id": "ELM-ADOPT-020",
+      "field": "ears",
+      "before": "WHEN a shell action is unavailable or its outcome is unresolved, the shell SHALL expose the correlated reason and safe next step, retain eligible focus and independent controls, and avoid queuing or automatically replaying a rejected or Unknown action.",
+      "after": "WHEN a shell action is unavailable or unresolved, the shell SHALL expose the correlated reason and safe next step, retain eligible focus and controls outside its dependency domain, and never queue, defer or automatically replay input not accepted in that state or a rejected or Unknown action."
+    },
+    {
+      "id": "ELM-ADOPT-020",
+      "field": "guardrails",
+      "before": "Unrelated refresh must not collapse a valid picker or disable unrelated actions. Repeated clicks during pending have truthful outcome under the interruption policy; no announcement storm.",
+      "after": "Unrelated refresh means an unchanged declared family/target dependency domain and must preserve a valid picker/focus. Do not require concurrent native transactions. Repeated input during Pending follows INTERACTION.md feedback policy and ELM-UI-015; no second intent or announcement storm."
+    },
+    {
+      "id": "ELM-ADOPT-020",
+      "field": "scenarioIDs",
+      "before": [
+        "ELM-ADOPT-020 SOL04-05-scenario-1",
+        "ELM-ADOPT-020 SOL04-05-scenario-2"
+      ],
+      "after": [
+        "ELM-ADOPT-020 SOL04-05-scenario-1",
+        "ELM-ADOPT-020 SOL04-05-scenario-2",
+        "ELM-ADOPT-020 unrelated-observation-refresh",
+        "ELM-ADOPT-020 same-control-during-pending"
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-020",
+      "field": "scenarios",
+      "before": [
+        {
+          "name": "SOL04-05-scenario-1",
+          "given": "a minimized generic application family is selected",
+          "when": "activation is refused natively",
+          "then": "it is not shown as restored, the reason and next action are reachable, and its preserved identity remains selected"
+        },
+        {
+          "name": "SOL04-05-scenario-2",
+          "given": "an operation has Unknown disposition and guidance was dismissed",
+          "when": "the user opens help or recovery with the keyboard",
+          "then": "guidance is available without resetting the desktop and reconciliation creates no automatic repeated mutation"
+        }
+      ],
+      "after": [
+        {
+          "name": "SOL04-05-scenario-1",
+          "given": "a minimized generic application family is selected",
+          "when": "activation is refused natively",
+          "then": "it is not shown as restored, the reason and next action are reachable, and its preserved identity remains selected"
+        },
+        {
+          "name": "SOL04-05-scenario-2",
+          "given": "an operation has Unknown disposition and guidance was dismissed",
+          "when": "the user opens help or recovery with the keyboard",
+          "then": "guidance is available without resetting the desktop and reconciliation creates no automatic repeated mutation"
+        },
+        {
+          "name": "unrelated-observation-refresh",
+          "given": "a picker is open for a family",
+          "when": "an unrelated observation refresh completes with that family's dependency revision unchanged",
+          "then": "picker identity and focus persist and no new intent is emitted"
+        },
+        {
+          "name": "same-control-during-pending",
+          "given": "a native operation is Pending for a control",
+          "when": "the same control is activated again",
+          "then": "no second intent is emitted; one truthful not-accepted result is exposed under the frozen feedback policy without repeated announcement or later replay"
+        }
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-020",
+      "field": "status",
+      "before": "draft-for-consensus",
+      "after": "draft-refinement-awaiting-ratification"
+    },
+    {
+      "id": "ELM-ADOPT-021",
+      "field": "status",
+      "before": "draft-for-consensus",
+      "after": "draft-refinement-awaiting-ratification"
+    },
+    {
+      "id": "ELM-ADOPT-022",
+      "field": "scenarios",
+      "before": [
+        {
+          "name": "Observation storm with cancellation",
+          "given": "preview queues are saturated within frozen byte and item bounds",
+          "when": "new observations and a cancellation arrive",
+          "then": "only semantically replaceable observations coalesce; cancellation and all retirement receipts remain deliverable in order"
+        },
+        {
+          "name": "Close during producer reservation",
+          "given": "a producer owns a reservation and the picker closes",
+          "when": "a late producer result arrives",
+          "then": "demand remains cancelled and the existing owner receives cleanup; no new capture is admitted until capacity is legitimately released"
+        }
+      ],
+      "after": [
+        {
+          "name": "Observation storm with cancellation",
+          "given": "preview queues are saturated within frozen byte and item bounds",
+          "when": "new observations and a cancellation arrive",
+          "then": "only semantically replaceable observations coalesce; cancellation and all retirement receipts remain deliverable in order"
+        },
+        {
+          "name": "Close during producer reservation",
+          "given": "a producer owns a reservation and the picker closes",
+          "when": "a late producer result arrives",
+          "then": "the closed demand remains cancelled and its existing owner/cleanup stays recorded; another authorized demand may use only independently available eligible capacity, never the held reservation before matching release"
+        }
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-022",
+      "field": "status",
+      "before": "draft-for-consensus",
+      "after": "draft-refinement-awaiting-ratification"
+    },
+    {
+      "id": "ELM-ADOPT-023",
+      "field": "status",
+      "before": "draft-for-consensus",
+      "after": "draft-refinement-awaiting-ratification"
+    },
+    {
+      "id": "ELM-ADOPT-024",
+      "field": "status",
+      "before": "draft-for-consensus",
+      "after": "draft-refinement-awaiting-ratification"
+    },
+    {
+      "id": "ELM-ADOPT-025",
+      "field": "status",
+      "before": "draft-for-consensus",
+      "after": "draft-refinement-awaiting-ratification"
+    },
+    {
+      "id": "ELM-ADOPT-026",
+      "field": "status",
+      "before": "draft-for-consensus",
+      "after": "draft-refinement-awaiting-ratification"
+    },
+    {
+      "id": "ELM-ADOPT-027",
+      "field": "ears",
+      "before": "WHILE preview demand remains authorized, WHEN a newer content revision arrives during outstanding capture, the provider SHALL retain bounded latest-content demand and service it after eligible capacity returns, without admitting work after demand closes or authority revokes.",
+      "after": "WHILE authorized preview demand persists, WHEN tracked source content advances during outstanding capture, the provider SHALL retain bounded latest-revision demand and service it under the frozen pacing policy after eligible capacity returns, admitting none after closure or revocation."
+    },
+    {
+      "id": "ELM-ADOPT-027",
+      "field": "guardrails",
+      "before": "No forced allocation while backpressured/exhausted. Follow-up is a genuine new native-scoped request with its own original issued clock, not renewal of expired work. Control/retirement events are lossless.",
+      "after": "No forced allocation while backpressured/exhausted. Follow-up is a genuine new native-scoped request with its own original issued clock, not renewal of expired work. Control/retirement events are lossless. Pacing/refresh is frozen in the existing budget matrix before qualification; continuous change cannot create unbounded back-to-back capture. Latest revision is limited to native-tracked coverage, currently root-surface commits only; no subsurface/family fidelity expansion."
+    },
+    {
+      "id": "ELM-ADOPT-027",
+      "field": "scenarioIDs",
+      "before": [
+        "ELM-ADOPT-027 final-content-while-busy",
+        "ELM-ADOPT-027 close-or-lock-before-followup"
+      ],
+      "after": [
+        "ELM-ADOPT-027 final-content-while-busy",
+        "ELM-ADOPT-027 close-or-lock-before-followup",
+        "ELM-ADOPT-027 continuous-change-and-final-revision"
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-027",
+      "field": "scenarios",
+      "before": [
+        {
+          "name": "final-content-while-busy",
+          "given": "one admitted capture and multiple newer same-source revisions while visible demand persists",
+          "when": "the first job terminates and capacity returns",
+          "then": "bounded demand selects the latest valid revision without losing the final update or extending the first job deadline"
+        },
+        {
+          "name": "close-or-lock-before-followup",
+          "given": "a pending latest-content update",
+          "when": "demand closes, lock/revocation occurs or source identity changes before admission",
+          "then": "no unauthorized follow-up capture is admitted; existing jobs and cleanup obligations remain accounted"
+        }
+      ],
+      "after": [
+        {
+          "name": "final-content-while-busy",
+          "given": "one admitted capture and multiple newer same-source revisions while visible demand persists",
+          "when": "the first job terminates and capacity returns",
+          "then": "bounded demand selects the latest valid revision without losing the final update or extending the first job deadline"
+        },
+        {
+          "name": "close-or-lock-before-followup",
+          "given": "a pending latest-content update",
+          "when": "demand closes, lock/revocation occurs or source identity changes before admission",
+          "then": "no unauthorized follow-up capture is admitted; existing jobs and cleanup obligations remain accounted"
+        },
+        {
+          "name": "continuous-change-and-final-revision",
+          "given": "authorized visible demand, continuously changing tracked content and eventually available eligible capacity",
+          "when": "the provider runs and then content change stops",
+          "then": "capture follows the frozen pacing policy, the final tracked revision is serviced when eligible, and presentation impact is measured under026 with no original deadline renewal"
+        }
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-027",
+      "field": "status",
+      "before": "draft-for-consensus",
+      "after": "draft-refinement-awaiting-ratification"
+    },
+    {
+      "id": "ELM-ADOPT-028",
+      "field": "status",
+      "before": "draft-for-consensus",
+      "after": "draft-refinement-awaiting-ratification"
+    },
+    {
+      "id": "ELM-ADOPT-029",
+      "field": "priority",
+      "before": "P0",
+      "after": "existing-phase-P5; early-feasibility-only"
+    },
+    {
+      "id": "ELM-ADOPT-029",
+      "field": "status",
+      "before": "draft-for-consensus",
+      "after": "draft-refinement-awaiting-ratification"
+    },
+    {
+      "id": "ELM-ADOPT-030",
+      "field": "ears",
+      "before": "WHEN a supported shell action becomes disabled, the shell SHALL retain its declared position, expose its reason and disabled state, and follow the frozen per-surface navigation policy without dispatching it through pointer, keyboard or accessibility activation.",
+      "after": "WHEN a supported shell action becomes disabled, the shell SHALL retain its declared position, expose disabled state and any reason required by the frozen per-surface policy, and follow that navigation policy without dispatching it through pointer, keyboard or accessibility activation."
+    },
+    {
+      "id": "ELM-ADOPT-030",
+      "field": "relatedAmendmentIds",
+      "before": null,
+      "after": [
+        "ELM-RC-006",
+        "ELM-RC-017",
+        "ELM-RC-018"
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-030",
+      "field": "status",
+      "before": "draft-for-consensus",
+      "after": "draft-refinement-awaiting-ratification"
+    }
+  ]
+}

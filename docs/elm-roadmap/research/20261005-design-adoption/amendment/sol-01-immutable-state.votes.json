@@ -1,0 +1,10 @@
+{
+  "reviewer": "sol-01-immutable-state",
+  "previousBallotSHA256": "129ac50d8fef08aecae1ae9c83bb6a0e2bba1e8c27e9587e9405d92887c6f936",
+  "finalBallotSHA256": "1f4ab93e1ab93afd94ea58511d8a426dbed8ccdc4e08096e6c80bf72e62aa78f",
+  "decision": "accept",
+  "requirement": "ELM-ADOPT-030",
+  "reason": "Verified the exact V3 hash and requirement-level diff: only the supported-disabled-action THEN qualifies reason availability by the frozen per-surface policy. This aligns the scenario with existing EARS/guardrails while preserving stable position, native unavailable semantics and zero disabled dispatch. I endorse this sole correction and explicitly carry forward all unchanged V2 votes, including deferred015 and accepted philosophy/remaining-work. No native acceptance, mandatory baseline expansion or product selection is implied.",
+  "requiredChanges": [],
+  "carryForwardUnchangedVotes": true
+}

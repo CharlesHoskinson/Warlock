@@ -1,0 +1,216 @@
+{
+  "reviewer": "sol-01-immutable-state",
+  "ballotSHA256": "ae1d72ea0b44236c40cc9e94db47c3b9e180660b207378097c45c833caf7807e",
+  "philosophySHA256": "b042de217ebf1fdc3667d7e06fce96a2c1d1c9c100a466bfc5281617f2b3b11f",
+  "votes": [
+    {
+      "id": "ELM-ADOPT-001",
+      "decision": "accept",
+      "reason": "Accepts complete recorded-input replay, explicit rejection/coverage and effect isolation. Semantics-preserving sanitation and native deadline separation resolve the paired reviewer's vacuity/model-derived-input concerns.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-002",
+      "decision": "accept",
+      "reason": "Proof-safe reclamation preserves Unknown, cleanup and replay floors. Both scenarios exercise authority safety rather than treating diagnostic rotation or persistent sharing as reclamation evidence.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-003",
+      "decision": "accept",
+      "reason": "Coherent recovery validation and interruption faults refine existing durable mechanisms. The scenarios correctly preserve uncertainty and original clocks instead of treating a checkpoint as action completion.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-004",
+      "decision": "accept",
+      "reason": "Accept as conditional cache correctness and measured-adoption contract. The unchanged-input performance scenario is an adoption qualification against frozen workloads, not a universal claim that caching improves every workload.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-005",
+      "decision": "accept",
+      "reason": "Declared abstraction, partial observation and stuttering preserve the distinction between bounded conformance and proof. State, ordered commands and resource comparisons catch equal-final-state regressions.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-006",
+      "decision": "refine",
+      "reason": "The typed-boundary requirement is sound, but Foreign input requires a correlated refusal even for malformed or foreign payloads that cannot establish authenticated correlation. This contradicts the uncertainty discipline in 011 and may fabricate terminal Refused.",
+      "requiredChanges": [
+        "Replace Foreign input THEN with: no admitted event or mutation is produced; a bounded rejection diagnostic is retained. A correlated terminal Refused is retained only when authenticated exact native refusal or a validated unsent certificate proves it."
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-007",
+      "decision": "accept",
+      "reason": "Exact prerequisite commitment and registration preserve dependent-effect semantics while leaving unrelated work independent. The refused/foreign prerequisite scenario supplies the necessary negative control.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-008",
+      "decision": "accept",
+      "reason": "Protocol-specific reachability avoids importing static session-type claims or equating window Committed with preview Released. Producer-refusal/final-ack controls retain actor provenance and drainage obligations.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-009",
+      "decision": "accept",
+      "reason": "Admission and transfer are included in accounting; cancellation and release intent cannot discharge charge. The held-reader and pre-adoption-refusal scenarios preserve distinct producer/consumer closure.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-010",
+      "decision": "accept",
+      "reason": "Separates logical order, epochs and native monotonic time. Late receipts reconcile knowledge without timely-success claims, deadline renewal or mutation replay.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-011",
+      "decision": "accept",
+      "reason": "Validated outcome classes permit generic wording for unknown refusal reasons without manufacturing refusal from an unknown schema. The lost receipt and unrelated late receipt scenarios retain exact uncertainty.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-012",
+      "decision": "refine",
+      "reason": "One semantic announcement owner and native AT-active delivery are appropriate, but ERR-02-02 rejects all foreign-epoch updates without distinguishing unauthenticated foreign input from authenticated historical old-epoch receipts needed to settle retained Unknown after replacement.",
+      "requiredChanges": [
+        "Replace ERR-02-02 foreign-epoch clause with: unauthenticated, unrelated or invalid foreign-binding receipts cause no announcement; authenticated exact historical receipts may reconcile retained Unknown through the declared native recovery path without granting a new epoch authority or changing its deadline."
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-013",
+      "decision": "accept",
+      "reason": "Allowlisted bounded diagnostics remain observational and cannot consume authority/cleanup guarantees. Sensitive-canary and saturation cases test privacy and decision equivalence; no ring buffer or export mechanism is mandated.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-014",
+      "decision": "accept",
+      "reason": "Separates recovered availability from historical uncertainty and forbids geometry-only settlement. Storage-full, replacement-incarnation and original-deadline guards retain native recovery safety.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-015",
+      "decision": "defer",
+      "reason": "Defer the optional export feature pending explicit product selection and frozen assembly/retention/privacy budget decisions. Its no-upload and truthful-partial-artifact guardrails are sound; it must not block mandatory release.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-016",
+      "decision": "accept",
+      "reason": "Focus identity and press-time incarnation/lease validation are observable contracts rather than a DOM prescription. Retired-position reuse and unrelated publication scenarios preserve exact action targets.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-017",
+      "decision": "accept",
+      "reason": "Native semantic coherence and inert images refine existing accessibility obligations. The announcement scenario composes with 012 rather than claiming semantic properties alone prove AT delivery.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-018",
+      "decision": "accept",
+      "reason": "Composition generation and current field identity constrain committed text; consumed Enter cannot also launch. The delayed retired-field commit supplies a meaningful negative case.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-019",
+      "decision": "accept",
+      "reason": "Readability and reachability remain governed by measured frozen policy, not screenshots or tokens alone. Hotplug fallback and constrained reflow scenarios preserve native identity and keyboard usability.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-020",
+      "decision": "accept",
+      "reason": "Unavailable/unresolved guidance retains independent controls and safe context without automatic replay. Refusal does not imply restored state and keyboard recovery remains reachable.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-021",
+      "decision": "accept",
+      "reason": "Submission, presentation and retirement have separate identity-matched evidence. Image load/frameSwapped and stale-output receipts cannot prove replacement-transaction completion.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-022",
+      "decision": "accept",
+      "reason": "Only explicitly replaceable observations coalesce; effects and cleanup retain ordered reserved capacity. Late producer completion after close does not create demand or justify early allocation.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-023",
+      "decision": "accept",
+      "reason": "Native last-presented geometry and approved reduced-motion profile retain operation semantics. Queued-but-unpresented reversal and live preference change preserve original deadlines and retirement boundaries.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-024",
+      "decision": "accept",
+      "reason": "Same-machine budgets and minimally observed runs qualify actual presentation/resource spans with missing stages disclosed. This adds no paper-derived timing thresholds and preserves missed samples.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-025",
+      "decision": "accept",
+      "reason": "Separates proof identity from delivery continuity and permits known-safe idempotent Ack retry. Cross-entry proof interleaving and lost-Ack scenario correctly avoid false gaps or repeated physical cleanup.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-026",
+      "decision": "accept",
+      "reason": "Over-budget route rejection is conditional on actual measurement. Qualified alternatives/unavailable disclosure do not erase mandatory native source-stop/family evidence; no async implementation is imposed.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-027",
+      "decision": "accept",
+      "reason": "Bounded latest-content demand remains authorization-scoped and waits for eligible capacity. Genuine fresh request timing cannot renew the first capture deadline; close/lock/source replacement cancels follow-up admission.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-028",
+      "decision": "accept",
+      "reason": "Explicitly separates live source from old captured pixels, honoring frozen historical/live/unavailable policy. Revocation remains native and cannot leave eligible revoked pixels.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-029",
+      "decision": "accept",
+      "reason": "Native keyboard scope remains bounded and lock-inert with prior eligible identity retained. No new default shortcut, permanent exclusive mode or MRU override is introduced.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-030",
+      "decision": "accept",
+      "reason": "Supported-disabled state remains visible and non-dispatchable under a chosen per-surface navigation policy. All-disabled dismissal and focus-retirement scenarios avoid both forced focusability and traps.",
+      "requiredChanges": []
+    }
+  ],
+  "philosophy": {
+    "decision": "accept",
+    "reason": "All ten principles guide concrete decisions about exact targets, one policy controller, native physical evidence, uncertainty, continuity, native accessibility, ownership/recovery, customization contracts, measured bounded resources and evidence-level release closure. The text is technically honest about pending capabilities and distinguishes editorial name preference from technical acceptance. This is only my vote, not agreement by the other reviewers.",
+    "requiredChanges": []
+  },
+  "remainingWork": {
+    "decision": "accept",
+    "reason": "Checked remaining-work.json against frozen requirements.json: 242 unique baseline IDs, 417 scenarios, and each original EARS/scenario object preserved exactly. S01-S16 and conditional C00-C06 closure retain source/ABI/evidence separation, original13 preview cases, restore38/recovery34 and deadlines. Right-click24 remains additive; generic compatibility does not reinstate removed named repair targets. Component evidence must be reconciled before assigning missing implementation, so open closure does not declare every behavior absent.",
+    "requiredChanges": []
+  },
+  "disagreements": [
+    {
+      "id": "ELM-ADOPT-006",
+      "issue": "A malformed or foreign payload cannot itself prove a correlated terminal refusal. Require a rejection diagnostic unless exact authenticated evidence permits terminal disposition."
+    },
+    {
+      "id": "ELM-ADOPT-012",
+      "issue": "Reject untrusted foreign epoch input, but do not prohibit authenticated exact historical receipts from reconciling durable Unknown after frontend replacement."
+    },
+    {
+      "id": "ELM-ADOPT-015",
+      "issue": "Sound conditional contract, deferred pending explicit product selection and budget/policy evidence; not mandatory release expansion."
+    }
+  ],
+  "summary": "Cross-reviewed paired Opus immutable-state report and Sol typed-events report. Verified ballot/philosophy hashes and exact remaining-work baseline preservation. Votes: 27 accept, 2 refine, 1 defer. Blocking textual corrections are limited to terminal-refusal fabrication in 006 and historical-receipt/foreign-epoch distinction in 012. No claim of unanimous consensus or native acceptance."
+}

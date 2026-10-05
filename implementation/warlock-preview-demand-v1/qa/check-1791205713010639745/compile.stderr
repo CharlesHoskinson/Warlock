@@ -1,0 +1,138 @@
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/qa/checks.cpp: In function ‘void controls()’:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/qa/checks.cpp:29:33: error: reference to ‘demand’ is ambiguous
+   29 |     auto q=coordinator();auto d=demand();check(q.observe(d).accepted,"exact native demand enrolled");
+      |                                 ^~~~~~
+  • there are 2 candidates
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/qa/checks.cpp:1:
+    • candidate 1: ‘namespace preview::demand { }’
+      /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/src/demand.hpp:4:20:
+          4 | namespace preview::demand {
+            |                    ^~~~~~
+    • candidate 2: ‘preview::demand::NativeDemand demand(uint64_t)’
+      /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/qa/checks.cpp:9:21:
+          9 | static NativeDemand demand(uint64_t entry=1){return {entry,1,{{{1},{2},{3}},{{1},{4},{5},{6},{7},{8},{1}},{10},1,true,true,false,true},{11},32,true};}
+            |                     ^~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/qa/checks.cpp:53:41: error: reference to ‘demand’ is ambiguous
+   53 |     auto separate=coordinator(1);auto a=demand();separate.observe(a);auto held=separate.start(1,20);a.visible=false;separate.observe(a);
+      |                                         ^~~~~~
+  • there are 2 candidates
+    • candidate 1: ‘namespace preview::demand { }’
+      /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/src/demand.hpp:4:20:
+          4 | namespace preview::demand {
+            |                    ^~~~~~
+    • candidate 2: ‘preview::demand::NativeDemand demand(uint64_t)’
+      /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/qa/checks.cpp:9:21:
+          9 | static NativeDemand demand(uint64_t entry=1){return {entry,1,{{{1},{2},{3}},{{1},{4},{5},{6},{7},{8},{1}},{10},1,true,true,false,true},{11},32,true};}
+            |                     ^~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/qa/checks.cpp:54:12: error: reference to ‘demand’ is ambiguous
+   54 |     auto b=demand(2);b.scope.context.incarnation={9};b.scope.now=3;check(separate.observe(b).accepted,"independent demand enrolled");
+      |            ^~~~~~
+  • there are 2 candidates
+    • candidate 1: ‘namespace preview::demand { }’
+      /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/src/demand.hpp:4:20:
+          4 | namespace preview::demand {
+            |                    ^~~~~~
+    • candidate 2: ‘preview::demand::NativeDemand demand(uint64_t)’
+      /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/qa/checks.cpp:9:21:
+          9 | static NativeDemand demand(uint64_t entry=1){return {entry,1,{{{1},{2},{3}},{{1},{4},{5},{6},{7},{8},{1}},{10},1,true,true,false,true},{11},32,true};}
+            |                     ^~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/qa/checks.cpp:57:38: error: reference to ‘demand’ is ambiguous
+   57 |     auto expiry=coordinator();auto e=demand();expiry.observe(e);auto timed=expiry.start(1,3);e.scope.now=3;expiry.observe(e);check(expiry.inspect(1).capture==timed.job && expiry.nativeBroker().charge()==32,"elapsed deadline is not producer retirement");
+      |                                      ^~~~~~
+  • there are 2 candidates
+    • candidate 1: ‘namespace preview::demand { }’
+      /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/src/demand.hpp:4:20:
+          4 | namespace preview::demand {
+            |                    ^~~~~~
+    • candidate 2: ‘preview::demand::NativeDemand demand(uint64_t)’
+      /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/qa/checks.cpp:9:21:
+          9 | static NativeDemand demand(uint64_t entry=1){return {entry,1,{{{1},{2},{3}},{{1},{4},{5},{6},{7},{8},{1}},{10},1,true,true,false,true},{11},32,true};}
+            |                     ^~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/qa/checks.cpp:59:43: error: reference to ‘demand’ is ambiguous
+   59 |     auto noDeadline=coordinator();auto nd=demand();noDeadline.observe(nd);check(noDeadline.start(1,1).status==Attempt::Status::NotReady && noDeadline.nativeBroker().recordCount()==0,"unsent expired deadline rejected locally");
+      |                                           ^~~~~~
+  • there are 2 candidates
+    • candidate 1: ‘namespace preview::demand { }’
+      /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/src/demand.hpp:4:20:
+          4 | namespace preview::demand {
+            |                    ^~~~~~
+    • candidate 2: ‘preview::demand::NativeDemand demand(uint64_t)’
+      /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/qa/checks.cpp:9:21:
+          9 | static NativeDemand demand(uint64_t entry=1){return {entry,1,{{{1},{2},{3}},{{1},{4},{5},{6},{7},{8},{1}},{10},1,true,true,false,true},{11},32,true};}
+            |                     ^~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/qa/checks.cpp:60:38: error: reference to ‘demand’ is ambiguous
+   60 |     auto locked=coordinator();auto l=demand();locked.observe(l);l.scope.locked=true;l.scope.now=2;locked.observe(l);check(locked.start(1,10).status==Attempt::Status::NotReady,"lock blocks queued capture");l.scope.locked=false;l.scope.now=3;check(locked.observe(l).accepted && locked.start(1,12).status==Attempt::Status::Started,"native eligibility recovery retains authorized lease");
+      |                                      ^~~~~~
+  • there are 2 candidates
+    • candidate 1: ‘namespace preview::demand { }’
+      /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/src/demand.hpp:4:20:
+          4 | namespace preview::demand {
+            |                    ^~~~~~
+    • candidate 2: ‘preview::demand::NativeDemand demand(uint64_t)’
+      /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/qa/checks.cpp:9:21:
+          9 | static NativeDemand demand(uint64_t entry=1){return {entry,1,{{{1},{2},{3}},{{1},{4},{5},{6},{7},{8},{1}},{10},1,true,true,false,true},{11},32,true};}
+            |                     ^~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/qa/checks.cpp:61:45: error: reference to ‘demand’ is ambiguous
+   61 |     auto limit=coordinator(2,20,1);auto one=demand();limit.observe(one);auto two=demand(2);two.scope.context.incarnation={7};check(!limit.observe(two).accepted,"bounded entry capacity fails closed");
+      |                                             ^~~~~~
+  • there are 2 candidates
+    • candidate 1: ‘namespace preview::demand { }’
+      /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/src/demand.hpp:4:20:
+          4 | namespace preview::demand {
+            |                    ^~~~~~
+    • candidate 2: ‘preview::demand::NativeDemand demand(uint64_t)’
+      /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/qa/checks.cpp:9:21:
+          9 | static NativeDemand demand(uint64_t entry=1){return {entry,1,{{{1},{2},{3}},{{1},{4},{5},{6},{7},{8},{1}},{10},1,true,true,false,true},{11},32,true};}
+            |                     ^~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/qa/checks.cpp:61:82: error: reference to ‘demand’ is ambiguous
+   61 |     auto limit=coordinator(2,20,1);auto one=demand();limit.observe(one);auto two=demand(2);two.scope.context.incarnation={7};check(!limit.observe(two).accepted,"bounded entry capacity fails closed");
+      |                                                                                  ^~~~~~
+  • there are 2 candidates
+    • candidate 1: ‘namespace preview::demand { }’
+      /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/src/demand.hpp:4:20:
+          4 | namespace preview::demand {
+            |                    ^~~~~~
+    • candidate 2: ‘preview::demand::NativeDemand demand(uint64_t)’
+      /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/qa/checks.cpp:9:21:
+          9 | static NativeDemand demand(uint64_t entry=1){return {entry,1,{{{1},{2},{3}},{{1},{4},{5},{6},{7},{8},{1}},{10},1,true,true,false,true},{11},32,true};}
+            |                     ^~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/qa/checks.cpp:62:42: error: reference to ‘demand’ is ambiguous
+   62 |     auto records=coordinator(2,1);auto r=demand();records.observe(r);records.start(1,20);finish(records,1);r.scope.context.content={2};r.scope.now=3;records.observe(r);check(records.start(1,30).status==Attempt::Status::Capacity,"unacknowledged broker records remain bounded");
+      |                                          ^~~~~~
+  • there are 2 candidates
+    • candidate 1: ‘namespace preview::demand { }’
+      /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/src/demand.hpp:4:20:
+          4 | namespace preview::demand {
+            |                    ^~~~~~
+    • candidate 2: ‘preview::demand::NativeDemand demand(uint64_t)’
+      /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/qa/checks.cpp:9:21:
+          9 | static NativeDemand demand(uint64_t entry=1){return {entry,1,{{{1},{2},{3}},{{1},{4},{5},{6},{7},{8},{1}},{10},1,true,true,false,true},{11},32,true};}
+            |                     ^~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/qa/checks.cpp:63:42: error: reference to ‘demand’ is ambiguous
+   63 |     auto exhaustion=coordinator();auto x=demand();exhaustion.observe(x);Job max{x.scope.binding,x.scope.context,{UINT64_MAX},x.origin,x.scope.clock,20};exhaustion.nativeBroker().acquire(1,x.scope.binding,max);auto refused=exhaustion.nativeBroker().producerRefused(1,max);exhaustion.nativeBroker().acknowledge(1,x.scope.binding,max,refused.receipts.back().sequence);check(exhaustion.start(1,30).status==Attempt::Status::Exhausted,"request counter never wraps replay floor");
+      |                                          ^~~~~~
+  • there are 2 candidates
+    • candidate 1: ‘namespace preview::demand { }’
+      /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/src/demand.hpp:4:20:
+          4 | namespace preview::demand {
+            |                    ^~~~~~
+    • candidate 2: ‘preview::demand::NativeDemand demand(uint64_t)’
+      /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/qa/checks.cpp:9:21:
+          9 | static NativeDemand demand(uint64_t entry=1){return {entry,1,{{{1},{2},{3}},{{1},{4},{5},{6},{7},{8},{1}},{10},1,true,true,false,true},{11},32,true};}
+            |                     ^~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/qa/checks.cpp: In function ‘void replay()’:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/qa/checks.cpp:68:33: error: reference to ‘demand’ is ambiguous
+   68 |     auto q=coordinator();auto d=demand();q.observe(d);std::string line;
+      |                                 ^~~~~~
+  • there are 2 candidates
+    • candidate 1: ‘namespace preview::demand { }’
+      /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/src/demand.hpp:4:20:
+          4 | namespace preview::demand {
+            |                    ^~~~~~
+    • candidate 2: ‘preview::demand::NativeDemand demand(uint64_t)’
+      /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/qa/checks.cpp:9:21:
+          9 | static NativeDemand demand(uint64_t entry=1){return {entry,1,{{{1},{2},{3}},{{1},{4},{5},{6},{7},{8},{1}},{10},1,true,true,false,true},{11},32,true};}
+            |                     ^~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/qa/checks.cpp: At global scope:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/inputs/qa/checks.cpp:9:21: error: ‘preview::demand::NativeDemand demand(uint64_t)’ defined but not used [-Werror=unused-function]
+cc1plus: all warnings being treated as errors

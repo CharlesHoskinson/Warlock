@@ -1,0 +1,109 @@
+{
+  "duration_api_ms": 1054219,
+  "stop_reason": "end_turn",
+  "session_id": "78cbaef1-8770-4e4d-9fe8-269f95f44115",
+  "total_cost_usd": 6.545228,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 8132,
+    "cache_read_input_tokens": 672926,
+    "output_tokens": 1053,
+    "output_tokens_details": {
+      "thinking_tokens": 148
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 8132,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 786,
+        "cache_read_input_tokens": 339874,
+        "cache_creation_input_tokens": 1310,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1310
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 124,
+      "outputTokens": 67103,
+      "thinkingTokens": 28640,
+      "cacheReadInputTokens": 10739090,
+      "cacheCreationInputTokens": 337532,
+      "webSearchRequests": 0,
+      "costUSD": 6.190629999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 317798,
+      "outputTokens": 5360,
+      "thinkingTokens": 0,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 1,
+      "costUSD": 0.35459799999999997,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"reviewer\":\"opus-03-error-reporting\",\"previousBallotSHA256\":\"129ac50d8fef08aecae1ae9c83bb6a0e2bba1e8c27e9587e9405d92887c6f936\",\"finalBallotSHA256\":\"1f4ab93e1ab93afd94ea58511d8a426dbed8ccdc4e08096e6c80bf72e62aa78f\",\"decision\":\"accept\",\"requirement\":\"ELM-ADOPT-030\",\"reason\":\"I endorse this change. amendment/change.json alters only the THEN clause of the supported-disabled-action scenario: 'unavailable state and reason' becomes 'unavailable state and any reason required by the frozen per-surface policy'. candidates-v3.json line 1959 contains that exact text. The scenario now agrees with the ELM-ADOPT-030 EARS and its guardrails, which already make the reason policy-specific and avoid a universal rule across GTK and Windows/APG. Stable position, exposed native unavailable state and no dispatch on activation are all kept. all-disabled-and-focus-retirement is unchanged. Safety is not weakened: when the disabled state comes from a Pending, Refused or Unknown outcome, ELM-ADOPT-020 and ELM-ADOPT-011 still independently require the correlated reason and safe next step from the reviewed catalog, so this edit cannot hide Unknown. My limits: I checked only this changed field. I did not diff the other 29 contracts or the other scenarios against v2, and I did not compute either SHA256 because I had no shell. Both of those rest on the coordinator's statement. This is my vote alone; I do not infer consensus or speak for other reviewers. It implies no native acceptance, baseline expansion or product selection. I made no edits, ran no GUI and spawned no agents.\",\"requiredChanges\":[],\"carryForwardUnchangedVotes\":true}",
+  "ttft_ms": 8703,
+  "type": "result",
+  "duration_ms": 24431,
+  "uuid": "d10e035a-ce0e-45d8-996f-f469e2ca551a",
+  "ttft_stream_ms": 7793,
+  "time_to_request_ms": 85,
+  "first_content_frame_ms": 7793,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

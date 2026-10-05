@@ -1,0 +1,88 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "original710-nested17",
+      "mode": "nested-17",
+      "exitCode": 1,
+      "expected": "asan",
+      "passed": true
+    },
+    {
+      "name": "candidate-nested17",
+      "mode": "nested-17",
+      "exitCode": 0,
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "candidate-binding-reset",
+      "mode": "binding-reset",
+      "exitCode": 0,
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "candidate-processing-duplicate",
+      "mode": "processing-duplicate",
+      "exitCode": 0,
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "candidate-immutable-first",
+      "mode": "immutable-first",
+      "exitCode": 0,
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "candidate-normal",
+      "mode": "normal",
+      "exitCode": 0,
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "mutant-borrowed-reference",
+      "mode": "nested-17",
+      "exitCode": 1,
+      "expected": "asan",
+      "passed": true
+    },
+    {
+      "name": "mutant-leaked-caller",
+      "mode": "normal",
+      "exitCode": -6,
+      "expected": "assertion",
+      "passed": true
+    },
+    {
+      "name": "mutant-provisional-processing",
+      "mode": "processing-duplicate",
+      "exitCode": -6,
+      "expected": "assertion",
+      "passed": true
+    },
+    {
+      "name": "mutant-rewrite-first",
+      "mode": "immutable-first",
+      "exitCode": -6,
+      "expected": "assertion",
+      "passed": true
+    },
+    {
+      "name": "mutant-old-binding-emit",
+      "mode": "binding-reset",
+      "exitCode": -6,
+      "expected": "assertion",
+      "passed": true
+    }
+  ],
+  "nativeAcceptance": false,
+  "ownershipTrigger": "Synthetic nested shared_commit hook immediately after actual reserve; capture stub replaces surface_eval only. No observed native nested callback or crash claim.",
+  "FIFOTransportGate": "OPEN",
+  "sourceSHA256": "8004998d6fd6ec223c4c6e5a174ad91116901b8c0591a061e5bad7ef7e140c22",
+  "originalSHA256": "9a903be55397e170e6cd74e240849e8b6c0b24aa6c4600e9c409962b0c98f497",
+  "packetSHA256": "43488cf0b313319b662b42afe03ef001d053c524e893c49a62725fa62f4af021"
+}

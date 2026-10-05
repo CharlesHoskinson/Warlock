@@ -1,0 +1,23 @@
+# Qualified parent collector adoption candidate
+
+Fresh V391 derives held V373, retaining its instrumented picker/map/close diagnostic and original 307/319/315/AQ155 tuple. There is no own-blocker grant or GTK02 acceptance. Root alone may launch native GUI after review and freeze.
+
+The declared native changes are the source-executed wrapper loader and external collect validator, preallocation collector qualification, replacement of privateParentMap's callback, and separate parent-PID same-read failure archival. `parent_source.py` checks every added statement/wrapper against a closed AST literal, then restores the complete exact V373 AST. All original query brackets, 144 host-library checks, target/resource/configure/ACK/incarnation joins, six-second boot/stage/close budgets, three-second endpoint transport, timing labels and cleanup remain. No timer is reset, mapping is deduplicated or per-call hash skipped.
+
+`checked_parent(checkedGuard, guardFiles)` verifies the pinned V382 manifest and once-read collector source, checks a present cache against compiled source, then executes only that source buffer. It also requires the already checked V364 source pin and qualifies all actual loaded collector/guard function/class slots, descriptor kinds, recursive code metadata and module globals ownership. The qualified object checks executor aggregator, captured shutdown, threading and Future module linkage. Before every actual collect, it repeats the loaded collector/guard checks and the pinned stdlib interpreter/source/current-cache/loaded-code qualification under the original deadline. This does not attest every mutable global/default value or native C factory. The loader and owning QA files still need their final source closure and independent review; no production authority is granted by Python code-origin checks.
+
+V382 then acquires one bounded maps snapshot and performs every eligible duplicate row's full FD/path-checked hash using the original absolute deadline and eight qualified strided workers. Its existing first-error/quiescence policy remains. `wait=True` is not a hard wall-time bound; an uncertain-worker BaseException produces no accepted result and preserves native finally. Real uncertain-worker native teardown remains unqualified. Parent failure archival uses the actual parent PID/start, never the core identity or a later maps reread; archive failure is secondary and cannot replace the original error.
+
+The native source-executed `parent_collect` entry is mandatory. It independently validates the pinned wrapper, collector and guard loaded code before any wrapper method; validates the exact object/type/guard/path/buffers; rejects instance method shadows; and invokes the verified class method. Direct `QualifiedParent.collect` or `qualify` is an internal self-verifying method and does not provide this independent adversarial boundary. V394 preserved a real predecessor bypass replacing the self-verifier plus collector; final entry controls reject that actual combination before dispatch. Initial source-only wrapper loading also uses the independent validator before the factory.
+
+Source-current protected CPU reports:
+
+- `qa/parent-1791175268897890422/report.json`: 15 collector/dependency and exact native-delta controls.
+- `qa/loader-1791175310810092563/report.json`: 14 source/cache/origin/archive/error and unsafe native-delta controls. Its earlier failure1791175269643535724 is retained: extracted archive test namespace lacked the newly explicit external entry. The corrected harness supplies a controlled failing entry only for archive behavior, independently from actual-entry tests.
+- `qa/wrapper-1791175311424638720/report.json`: 9 actual native-entry controls, including malicious ordinary cache, foreign ordinary module, wrapper slots, compromised self-verifier plus forged collector, instance shadow, collector-only replacement, and genuine self-process all-row hash acceptance.
+- `qa/test-1791176201007320934/report.json`: original35.
+- `qa/origin-1791175271221032091/report.json`: original31 source/cache/loaded-code cases with closed parent AST normalization before prior timing normalization.
+- `qa/targeted-1791176201795605293/report.json`: original32 targeted cases with the same closed normalization.
+- `qa/timing-1791175272577858662/report.json`: original14 timing controls with the same closed normalization.
+
+Predecessor positive preparation reports, original scripts refusing changed AST, malicious `.pyc` and self-verifier witnesses, and failed QA attempts are preserved as distinct evidence. No GUI, native performance improvement, completed picker lifecycle or release acceptance is claimed. Final source closure and independent review remain prerequisites.

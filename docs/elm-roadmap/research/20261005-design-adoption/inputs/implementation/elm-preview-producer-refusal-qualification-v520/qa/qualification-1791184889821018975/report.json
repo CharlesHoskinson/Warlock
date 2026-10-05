@@ -1,0 +1,139 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "Actual Broker native producer-refusal retirement, cancellation and owned-buffer preservation with sanitizer and precise compiled regressions; no service integration or native acceptance",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-preview-producer-refusal-v517/src/preview_broker.hpp": "54e2ced192b718dfeb0a09bc29b35b748eb7d933ac51b78807ec0e9bb02db9c8",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-preview-producer-refusal-qualification-v520/qa/check.py": "c6849b48354dfda399f7e7b6ad9d8d8826b240ac5ec5fa350451f6225ce0e365"
+  },
+  "variants": [
+    {
+      "name": "sanitize",
+      "compile": {
+        "argv": [
+          "g++",
+          "-std=c++20",
+          "-O1",
+          "-g",
+          "-Wall",
+          "-Wextra",
+          "-Werror",
+          "/home/hoskinson/omarchy-windows-parity/implementation/elm-preview-producer-refusal-qualification-v520/qa/qualification-1791184889821018975/sanitize/checks.cpp",
+          "-o",
+          "/home/hoskinson/omarchy-windows-parity/implementation/elm-preview-producer-refusal-qualification-v520/qa/qualification-1791184889821018975/sanitize/checks",
+          "-fsanitize=address,undefined",
+          "-fno-omit-frame-pointer"
+        ],
+        "exitCode": 0
+      },
+      "binarySHA256": "5bbc73a40ead0ca7e669edb850fd7bce646920e580643d1d15443d65c719b2c4",
+      "execution": {
+        "exitCode": 0
+      },
+      "checks": 19
+    },
+    {
+      "name": "budget",
+      "compile": {
+        "argv": [
+          "g++",
+          "-std=c++20",
+          "-O1",
+          "-g",
+          "-Wall",
+          "-Wextra",
+          "-Werror",
+          "/home/hoskinson/omarchy-windows-parity/implementation/elm-preview-producer-refusal-qualification-v520/qa/qualification-1791184889821018975/budget/checks.cpp",
+          "-o",
+          "/home/hoskinson/omarchy-windows-parity/implementation/elm-preview-producer-refusal-qualification-v520/qa/qualification-1791184889821018975/budget/checks"
+        ],
+        "exitCode": 0
+      },
+      "binarySHA256": "c24d940cb65a36d5ad65a1bdb1b299c5fa139de9e317b1d79a5cde3520d5fb90",
+      "execution": {
+        "exitCode": 1
+      },
+      "detected": true,
+      "expectedAssertion": "producer refusal releases reserved budget"
+    },
+    {
+      "name": "owned",
+      "compile": {
+        "argv": [
+          "g++",
+          "-std=c++20",
+          "-O1",
+          "-g",
+          "-Wall",
+          "-Wextra",
+          "-Werror",
+          "/home/hoskinson/omarchy-windows-parity/implementation/elm-preview-producer-refusal-qualification-v520/qa/qualification-1791184889821018975/owned/checks.cpp",
+          "-o",
+          "/home/hoskinson/omarchy-windows-parity/implementation/elm-preview-producer-refusal-qualification-v520/qa/qualification-1791184889821018975/owned/checks"
+        ],
+        "exitCode": 0
+      },
+      "binarySHA256": "0e2c997f77442a923aab118d84e8e5e5e1b7bb920e113a1173e705aafb79abac",
+      "execution": {
+        "exitCode": 1
+      },
+      "detected": true,
+      "expectedAssertion": "owned packet cannot produce refusal or free physical image"
+    },
+    {
+      "name": "cancel",
+      "compile": {
+        "argv": [
+          "g++",
+          "-std=c++20",
+          "-O1",
+          "-g",
+          "-Wall",
+          "-Wextra",
+          "-Werror",
+          "/home/hoskinson/omarchy-windows-parity/implementation/elm-preview-producer-refusal-qualification-v520/qa/qualification-1791184889821018975/cancel/checks.cpp",
+          "-o",
+          "/home/hoskinson/omarchy-windows-parity/implementation/elm-preview-producer-refusal-qualification-v520/qa/qualification-1791184889821018975/cancel/checks"
+        ],
+        "exitCode": 0
+      },
+      "binarySHA256": "abe46a4b81cf7b4701a1fdd7087c05a7853504c2d836efd25608cf2c416fca5b",
+      "execution": {
+        "exitCode": 1
+      },
+      "detected": true,
+      "expectedAssertion": "cancel racing refusal retains both terminal proofs"
+    }
+  ],
+  "artifacts": {
+    "sanitize/preview_broker.hpp": "54e2ced192b718dfeb0a09bc29b35b748eb7d933ac51b78807ec0e9bb02db9c8",
+    "sanitize/checks.cpp": "914118816fa02936344ed9e0e92144b7e3892036a62886aba73271bf48d428d9",
+    "sanitize/checks": "5bbc73a40ead0ca7e669edb850fd7bce646920e580643d1d15443d65c719b2c4",
+    "sanitize/compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sanitize/compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sanitize/checks.stdout": "a06880ab3cf66eedfec6974deabe37156348925fce57a2b0b72eeaca87b79c5b",
+    "sanitize/checks.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "budget/preview_broker.hpp": "bcff62a09aa564c6c14ae257466cc45d7319d7d56d48e841848a94cf9c097bdf",
+    "budget/checks.cpp": "914118816fa02936344ed9e0e92144b7e3892036a62886aba73271bf48d428d9",
+    "budget/checks": "c24d940cb65a36d5ad65a1bdb1b299c5fa139de9e317b1d79a5cde3520d5fb90",
+    "budget/compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "budget/compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "budget/checks.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "budget/checks.stderr": "73edca1041f8277dc306d5597ddeb3e3accc84947b4a898668fb66cc23e0a0e8",
+    "owned/preview_broker.hpp": "7144f6485abc07870d1d2bd5c4652f08592d869b84440974287c7067e45e520a",
+    "owned/checks.cpp": "914118816fa02936344ed9e0e92144b7e3892036a62886aba73271bf48d428d9",
+    "owned/checks": "0e2c997f77442a923aab118d84e8e5e5e1b7bb920e113a1173e705aafb79abac",
+    "owned/compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "owned/compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "owned/checks.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "owned/checks.stderr": "42c1b59755cf9bce378398e23dfa1c4f5c471e0347b60f70f693583f83278672",
+    "cancel/preview_broker.hpp": "4676cdcf3aae61736bbb8298df866290e748c4c5534bcf6f6890470bcaccb230",
+    "cancel/checks.cpp": "914118816fa02936344ed9e0e92144b7e3892036a62886aba73271bf48d428d9",
+    "cancel/checks": "abe46a4b81cf7b4701a1fdd7087c05a7853504c2d836efd25608cf2c416fca5b",
+    "cancel/compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cancel/compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cancel/checks.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cancel/checks.stderr": "7f241c4f9ca5ee0e314fd5f5c484a88aaedcc390941d0dba7673214d0057fdb1"
+  }
+}

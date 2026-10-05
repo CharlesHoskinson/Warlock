@@ -1,0 +1,652 @@
+{
+  "schema": 1,
+  "component": "Warlock native preview demand coordinator",
+  "status": "component-qualified",
+  "productionWired": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "sourceInputs": {
+    "src/preview_broker.hpp": "54e2ced192b718dfeb0a09bc29b35b748eb7d933ac51b78807ec0e9bb02db9c8",
+    "src/demand.hpp": "7994f0df198a2ed6acef5a380f64f61a5d287dc541a373db87b877a77ceea7cc",
+    "spec/demand.qnt": "a43b820819e160a0a57656916ec99faa0939c7d7541ca5efbf83223bd9ab5336",
+    "spec/tests.qnt": "5e9a8f45cc16df53a15a7614a044d6a617b05b1d97acee63ea75bb3059ce3560",
+    "qa/checks.cpp": "d9d5fe80ea0470dd43176219200ea9b3ab4d7cb49a7d19b30cdfdd5e4a9ec0fe",
+    "qa/check.py": "4d1d81d86f26f071fa34bab87b487665cfc4ba9ca1c265e31b4c149456b2819f"
+  },
+  "qualification": {
+    "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/report.json",
+    "sha256": "97627f4ad636d7045c629dae5bd8fbaff0b9a6c2371dd5cd019fc0c177f731e0",
+    "size": 26166
+  },
+  "compiledChecks": 36,
+  "namedQuintScenarios": [
+    "latestRevisionTest",
+    "pacingPreventsSpinTest",
+    "closeDoesNotRetireTest",
+    "closeDropsPendingTest",
+    "newLeaseReopenTest",
+    "finishNotRetirementTest",
+    "heldCapacityNotReusedTest",
+    "drainAllowsLatestTest",
+    "idleDoesNotCaptureTest",
+    "sameRevisionNotReplayedTest"
+  ],
+  "invariantSamples": 300,
+  "coupledTraceCount": 22,
+  "comparedStates": 564,
+  "unsafeMutantsDetected": 3,
+  "projectionBoundary": "latest/captured/issuedLease,busy,broker activeItems,visible,native-now,last-start,lease and broker floor for one fixed native lifetime/domain/entry; exact scope/auth/fence/deadline/bytes outside abstraction covered separately, not complete concrete-field refinement",
+  "fixedFixture": {
+    "binding": [
+      1,
+      2,
+      3
+    ],
+    "incarnation": 4,
+    "output": 5,
+    "privacy": 6,
+    "rendering": 7,
+    "scene": 8,
+    "clock": 10,
+    "origin": 11,
+    "cost": 32,
+    "items": 2,
+    "bytes": 64,
+    "interval": 2,
+    "freshDeadline": "native now+100 for a NEW job; no old deadline renewed"
+  },
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-8a10fdeef1064fc1b2291ec62d19ad4b.scope",
+    "coreLimit": 1
+  },
+  "failedAncestry": [
+    {
+      "path": "implementation/warlock-preview-demand-v1/qa/check-1791205713010639745/report.json",
+      "sha256": "5efd7abbed57aaf52baafbd9fe0f8e3b563ea843e054fcc57971d4d428715733",
+      "size": 17859
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v2/qa/check-1791205742725136135/report.json",
+      "sha256": "e50eeed1690d58dbdeba8d19fe835a61dc30a334cbb8766929546b060272e16f",
+      "size": 3667
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v3/qa/check-1791205875452466902/report.json",
+      "sha256": "0d61c8d9cadf34ed71f9941b5a2e7dd2ac8082bf0abd12e3108dead0b3dbecf0",
+      "size": 4506
+    }
+  ],
+  "files": [
+    {
+      "path": "implementation/warlock-preview-demand-v4/ANCESTRY.json",
+      "sha256": "4f2bc13edc85407ff79917e4ff621aaa0c496c1a0ce8a557460a1386eb316cb0",
+      "size": 328
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/README.md",
+      "sha256": "8436ba8c9ba3a4a7c923b85bb88beb60e97f575f2f072126e47aa3b32b144e55",
+      "size": 1446
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/SPEC.md",
+      "sha256": "1e80b4a993cf7a6454956b91f9908c8ebc251aee833d5a98ec2dfc90b08d260d",
+      "size": 2002
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/checks",
+      "sha256": "c7a9cbfc36dd5045a7f8a6f07b471d06e231ab8108ed2719240f60b30705e013",
+      "size": 3480792
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/closed-lease/checks",
+      "sha256": "754c5f7a4922da94818d4e7cd542bb4a95d7e9a6964c173b5ca4da223a8f44c3",
+      "size": 84448
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/closed-lease/demand.hpp",
+      "sha256": "6d840a7839410ff080a28db44978c723b4fb62af82f80422a635392477f0e04c",
+      "size": 6019
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/closed-lease/preview_broker.hpp",
+      "sha256": "54e2ced192b718dfeb0a09bc29b35b748eb7d933ac51b78807ec0e9bb02db9c8",
+      "size": 17462
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/closed-lease-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/closed-lease-compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/closed-lease-control.stderr",
+      "sha256": "3e07666ee6824fa602b3077a9e6cc4c71e4771a8fab246605db7ce2dee0fed14",
+      "size": 27
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/closed-lease-control.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/compiled-controls.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/compiled-controls.stdout",
+      "sha256": "3ca2f23009703acdcad6eddeacda7bd122e4256d00b59c27c9b845cf07f24f2d",
+      "size": 28
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/inputs/qa/check.py",
+      "sha256": "4d1d81d86f26f071fa34bab87b487665cfc4ba9ca1c265e31b4c149456b2819f",
+      "size": 5572
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/inputs/qa/checks.cpp",
+      "sha256": "d9d5fe80ea0470dd43176219200ea9b3ab4d7cb49a7d19b30cdfdd5e4a9ec0fe",
+      "size": 8914
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/inputs/spec/demand.qnt",
+      "sha256": "a43b820819e160a0a57656916ec99faa0939c7d7541ca5efbf83223bd9ab5336",
+      "size": 1510
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/inputs/spec/tests.qnt",
+      "sha256": "5e9a8f45cc16df53a15a7614a044d6a617b05b1d97acee63ea75bb3059ce3560",
+      "size": 2131
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/inputs/src/demand.hpp",
+      "sha256": "7994f0df198a2ed6acef5a380f64f61a5d287dc541a373db87b877a77ceea7cc",
+      "size": 6036
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/inputs/src/preview_broker.hpp",
+      "sha256": "54e2ced192b718dfeb0a09bc29b35b748eb7d933ac51b78807ec0e9bb02db9c8",
+      "size": 17462
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/named-closeDoesNotRetireTest-2.itf.json",
+      "sha256": "cf131d07d21f3120f557ab42c7e36b24b9994cfb70dd182bea00f4785e847c09",
+      "size": 1443
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/named-closeDropsPendingTest-3.itf.json",
+      "sha256": "10edc61ccf88b279bb459d3285e05ed0cc87162b32a7d78f335c1865d4f2958d",
+      "size": 3099
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/named-drainAllowsLatestTest-7.itf.json",
+      "sha256": "bfdb0f9d787195d33db7772605f7c5032f792a511fce91aabf0d54e359e91c52",
+      "size": 4949
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/named-finishNotRetirementTest-5.itf.json",
+      "sha256": "bf7138b2c73a0344116a6d0b74ee776170ccc82593b95e8df269302f69aa6ab5",
+      "size": 1445
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/named-heldCapacityNotReusedTest-6.itf.json",
+      "sha256": "fc910941165534e5319640a5844dd1cf244b8b1bd60c72b4376cdec55027505e",
+      "size": 4564
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/named-idleDoesNotCaptureTest-8.itf.json",
+      "sha256": "36da8b1f1a713903295ffe8241e466d841bf6307a3534c3a11d790c22bdcc88b",
+      "size": 1439
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/named-latestRevisionTest-0.itf.json",
+      "sha256": "e791ed805b5d31f4413e31cbbe2f879b4c44abfdfd0d204ae98927d419be69ff",
+      "size": 3103
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/named-newLeaseReopenTest-4.itf.json",
+      "sha256": "79e1294d5d630f6ba763274540781414f69e137eb9e33f4d14c8f8878ef5117f",
+      "size": 3440
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/named-pacingPreventsSpinTest-1.itf.json",
+      "sha256": "1102792fbf6763a510bfd049f258ec7a7e884c5844caf4968432485f5bb849c8",
+      "size": 2752
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/named-sameRevisionNotReplayedTest-9.itf.json",
+      "sha256": "de509290c0a8af6a7fc715da1e3f5e863ea43e80e645de3d073496575269c19c",
+      "size": 2401
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/pacing/checks",
+      "sha256": "239fcc00f752a162101e557cf6bf827b5705b8ddb8b28241ea0de44593b4ce97",
+      "size": 84448
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/pacing/demand.hpp",
+      "sha256": "a9af0b55dcee936b64217348565aff6a3868f89df6f21c48515c7b246394ac86",
+      "size": 5992
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/pacing/preview_broker.hpp",
+      "sha256": "54e2ced192b718dfeb0a09bc29b35b748eb7d933ac51b78807ec0e9bb02db9c8",
+      "size": 17462
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/pacing-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/pacing-compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/pacing-control.stderr",
+      "sha256": "beb39402a46621ff5aa1e18b124cf52e2b53a6401bf124afe394dcce3e3b61a9",
+      "size": 32
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/pacing-control.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/producer-owner/checks",
+      "sha256": "7d2df30e10c3c94331ae01fa22134b63a227f0aa84bee91cebacd031d8c738c6",
+      "size": 84448
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/producer-owner/demand.hpp",
+      "sha256": "895f2289cf5cbb879d030a3c53b84dd40cc90ff4a2989015e81365f64ccdb156",
+      "size": 6018
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/producer-owner/preview_broker.hpp",
+      "sha256": "54e2ced192b718dfeb0a09bc29b35b748eb7d933ac51b78807ec0e9bb02db9c8",
+      "size": 17462
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/producer-owner-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/producer-owner-compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/producer-owner-control.stderr",
+      "sha256": "0e501469b6317e15a2cfe2952a7b32f499221af479753fe2b931d4260c974ac1",
+      "size": 59
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/producer-owner-control.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/quint-named.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/quint-named.stdout",
+      "sha256": "c32ac8f3d45c20be72f6a4380e966d617ff81432c8c4a634f0fbc03cb7bc51c1",
+      "size": 506
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/quint-sampling.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/quint-sampling.stdout",
+      "sha256": "8edf7336df4c64d9b253337e69281ba19aad80447669c5f1d5daf634962ed680",
+      "size": 26622
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/quint-typecheck.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/quint-typecheck.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-named-closeDoesNotRetireTest-2.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-named-closeDoesNotRetireTest-2.itf.stdout",
+      "sha256": "0969af907a508b842895aaaf7f441e9d26cca7aeba8711cd3d2b8c5ea65825af",
+      "size": 368
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-named-closeDropsPendingTest-3.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-named-closeDropsPendingTest-3.itf.stdout",
+      "sha256": "5ab32867466943dc19d3f452413a18ed46d519bd6b5d591bcf23d6552732f8c6",
+      "size": 986
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-named-drainAllowsLatestTest-7.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-named-drainAllowsLatestTest-7.itf.stdout",
+      "sha256": "3ab8b2ecf87de831644716f06c2394b11f844914f6488d336353bde26a50111b",
+      "size": 1596
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-named-finishNotRetirementTest-5.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-named-finishNotRetirementTest-5.itf.stdout",
+      "sha256": "5ecd5310498de2746738e44dcb90cfe37e4ebf280894e6176c3e4d242752d9a7",
+      "size": 368
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-named-heldCapacityNotReusedTest-6.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-named-heldCapacityNotReusedTest-6.itf.stdout",
+      "sha256": "9d892bbb2092f4c6ec441e2bf80ff6cd764bfde94a39276e674a48f180fc825e",
+      "size": 1474
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-named-idleDoesNotCaptureTest-8.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-named-idleDoesNotCaptureTest-8.itf.stdout",
+      "sha256": "8e2d1db9e28cc93c862014696a7f05385b57db06842eb9c616313c9833546af4",
+      "size": 369
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-named-latestRevisionTest-0.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-named-latestRevisionTest-0.itf.stdout",
+      "sha256": "13a3cc4b66692cfe340fc23f3689e6161b9b302b40022cb19db68c186af6a6db",
+      "size": 980
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-named-newLeaseReopenTest-4.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-named-newLeaseReopenTest-4.itf.stdout",
+      "sha256": "e622cbfca84616eb630960a93d1efe3bfcb1ed11881990b4fc63a84fc252bb80",
+      "size": 1107
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-named-pacingPreventsSpinTest-1.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-named-pacingPreventsSpinTest-1.itf.stdout",
+      "sha256": "bd9f543c52ee96e125b986737eebc40654be3b79920ac1db1529e4f47ad5f320",
+      "size": 860
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-named-sameRevisionNotReplayedTest-9.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-named-sameRevisionNotReplayedTest-9.itf.stdout",
+      "sha256": "1afb896a157b85b931254b253a102eba69c65a48ce19772e198b0ee15e6bdd44",
+      "size": 737
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-sample-0.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-sample-0.itf.stdout",
+      "sha256": "6fd90994ce6ba5de62ef247dbf360e4cdd06c2f7e70b2724e942f18fdd4dab98",
+      "size": 5050
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-sample-1.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-sample-1.itf.stdout",
+      "sha256": "67575bff34267fd73fd8bbb21bee1af728df630b47de96f8819730f53f9b511f",
+      "size": 5058
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-sample-10.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-sample-10.itf.stdout",
+      "sha256": "2aee8271434becdaf33428128299870da275a67deebf74d7a88b0294418c1c7e",
+      "size": 5072
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-sample-11.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-sample-11.itf.stdout",
+      "sha256": "918af480f044411b58fb9bf3380c8b4c289224d5c725e92b451e0748d6d8211c",
+      "size": 5077
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-sample-2.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-sample-2.itf.stdout",
+      "sha256": "7391544ff558192e5e9561f229ee8d66109ff974c85ddb0ec52aed12ef242c81",
+      "size": 5047
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-sample-3.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-sample-3.itf.stdout",
+      "sha256": "043cfce6ad93e2cc119a07adf0672711516e473a5e612cfd57abbe22d5f655da",
+      "size": 5080
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-sample-4.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-sample-4.itf.stdout",
+      "sha256": "551922d4fa0e3e7b1f9b6e1d49c6eae48834deaf318d562fdd717e2c24573759",
+      "size": 5055
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-sample-5.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-sample-5.itf.stdout",
+      "sha256": "79810fcc60a6f046ebd728ef5e60de98d82a02708de98636f74958351693dc7e",
+      "size": 5035
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-sample-6.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-sample-6.itf.stdout",
+      "sha256": "a814418e37877c517abd875b33a08bdea30cad7f469d571ffd5466aad599221b",
+      "size": 5061
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-sample-7.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-sample-7.itf.stdout",
+      "sha256": "2279a384430066fd892eb9e8890f0431ea2efad8765b9f1b2bde142b25ea7955",
+      "size": 5059
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-sample-8.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-sample-8.itf.stdout",
+      "sha256": "15d54ea6831fa19e4de20d2369a39b55d32a6c0254173cb58cc09fdcb3e625fd",
+      "size": 5073
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-sample-9.itf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/replay-sample-9.itf.stdout",
+      "sha256": "40c933bece8a8c6d02aeba081decc9e0f77102a5db53c845dd4f6a2d9a69413f",
+      "size": 5056
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/report.json",
+      "sha256": "97627f4ad636d7045c629dae5bd8fbaff0b9a6c2371dd5cd019fc0c177f731e0",
+      "size": 26166
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/sample-0.itf.json",
+      "sha256": "229ef410fa0e307629c71a50581227ef8a100c45d29a07c7c589015c0be726ee",
+      "size": 18666
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/sample-1.itf.json",
+      "sha256": "bfe7a835895d426529027e8afd3f07ac89f51fff7e88d3a320b92bf77db2a2f5",
+      "size": 18808
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/sample-10.itf.json",
+      "sha256": "824e3ff6ca5b5e061dd0e7368abb077aab4825eee65e4d049e4d33f800aa8f01",
+      "size": 18798
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/sample-11.itf.json",
+      "sha256": "d2dc0c4749b1b5d33623eec293601dfd231e4eb507988ad51323bbed74ff2b4d",
+      "size": 18959
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/sample-2.itf.json",
+      "sha256": "4d8d3ac1f7c7009a19db0f68c8a10f2ea7de3650cd8578e2e133f24e803014b1",
+      "size": 18585
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/sample-3.itf.json",
+      "sha256": "356cb36b75c4e2f77876e876927d06e4f85d607349d6d3a680820302911da7cb",
+      "size": 18804
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/sample-4.itf.json",
+      "sha256": "cf93fb78cbb494b40a046fa70d48eddf0e3b443a1ccefb51efeef5dea5a6d284",
+      "size": 18656
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/sample-5.itf.json",
+      "sha256": "37ff8a7cef0cfca0996779d332c8d2e36c9125861f1366aef6321b948b449f20",
+      "size": 18779
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/sample-6.itf.json",
+      "sha256": "19efed47cdd4932e8b71ea17af064afd92de39d41d17687839c7464fe247886a",
+      "size": 18749
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/sample-7.itf.json",
+      "sha256": "63fd4b10ca94880eea7e327bb3f3b9286f8dd0b447b8789273855715e92755b1",
+      "size": 18685
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/sample-8.itf.json",
+      "sha256": "d9dc28dd507230a21b2c72cda6773cd664271c4a809d200eb2978ed854983fce",
+      "size": 18395
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check-1791205979611537846/sample-9.itf.json",
+      "sha256": "239b304d0d309aa47a45b36bc65a3ea3551ba38bc637ff90b1d0f2d851291ad8",
+      "size": 18708
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/check.py",
+      "sha256": "4d1d81d86f26f071fa34bab87b487665cfc4ba9ca1c265e31b4c149456b2819f",
+      "size": 5572
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/qa/checks.cpp",
+      "sha256": "d9d5fe80ea0470dd43176219200ea9b3ab4d7cb49a7d19b30cdfdd5e4a9ec0fe",
+      "size": 8914
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/spec/demand.qnt",
+      "sha256": "a43b820819e160a0a57656916ec99faa0939c7d7541ca5efbf83223bd9ab5336",
+      "size": 1510
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/spec/tests.qnt",
+      "sha256": "5e9a8f45cc16df53a15a7614a044d6a617b05b1d97acee63ea75bb3059ce3560",
+      "size": 2131
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/src/demand.hpp",
+      "sha256": "7994f0df198a2ed6acef5a380f64f61a5d287dc541a373db87b877a77ceea7cc",
+      "size": 6036
+    },
+    {
+      "path": "implementation/warlock-preview-demand-v4/src/preview_broker.hpp",
+      "sha256": "54e2ced192b718dfeb0a09bc29b35b748eb7d933ac51b78807ec0e9bb02db9c8",
+      "size": 17462
+    }
+  ],
+  "nextIntegration": "docs/warlock-brand/IMPLEMENTATION.md"
+}

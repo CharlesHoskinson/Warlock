@@ -1,0 +1,198 @@
+[
+  {
+    "id": "IMM-01",
+    "title": "Versioned complete replay inputs with effect isolation",
+    "classification": "refinement",
+    "priority": "P0",
+    "baselineIds": [
+      "ELM-TEA-002",
+      "ELM-TEA-003",
+      "ELM-QA-006",
+      "ELM-QA-007",
+      "ELM-REV-007",
+      "ELM-REV-012"
+    ],
+    "workItems": [
+      "W03",
+      "W04",
+      "W05"
+    ],
+    "sources": [
+      "https://guide.elm-lang.org/architecture/",
+      "https://redux.js.org/usage/structuring-reducers/prerequisite-concepts",
+      "https://doc.akka.io/libraries/akka-core/current/typed/persistence.html"
+    ],
+    "ears": "WHEN a reducer replay is evaluated, the verifier SHALL reproduce state and ordered effect descriptions from the same versioned initial state and complete sanitized message history, while rejecting invalid replay input explicitly and executing no native mutations.",
+    "tradeoffs": "Fixture/schema upkeep and log bytes; preserve existing reducer rather than build another. Recorded timer inputs do not qualify native deadlines.",
+    "scenarios": [
+      {
+        "name": "Deterministic history",
+        "given": "A valid checkpoint and ordered native observations including deadlines",
+        "when": "The compiled reducer processes them twice",
+        "then": "All state/effect rows match and no effect endpoint is invoked"
+      },
+      {
+        "name": "Malformed racing clock input",
+        "given": "A pending request and envelope missing clock-domain metadata",
+        "when": "A late receipt is supplied through the envelope",
+        "then": "Validation fails explicitly; valid inputs retain original deadline and recorded order"
+      }
+    ]
+  },
+  {
+    "id": "IMM-02",
+    "title": "Proof-safe bounded history retention and compaction",
+    "classification": "refinement",
+    "priority": "P0",
+    "baselineIds": [
+      "ELM-ARC-014",
+      "ELM-ARC-015",
+      "ELM-ARC-016",
+      "ELM-REV-011"
+    ],
+    "workItems": [
+      "W01",
+      "W02",
+      "W03",
+      "W10"
+    ],
+    "sources": [
+      "https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/abadi-existence.pdf",
+      "https://raw.githubusercontent.com/elm/core/1.0.5/src/Array.elm",
+      "https://immutable-js.com/"
+    ],
+    "ears": "WHEN retained records reach their configured bound, the authority SHALL reclaim only records whose safety obligations are preserved by retained proofs and replay floors, or explicitly refuse new admission while preserving unresolved and cleanup obligations.",
+    "tradeoffs": "Retention ownership table and compaction proof work; persistent sharing cannot make retained roots free; diagnostics may rotate independently.",
+    "scenarios": [
+      {
+        "name": "Expired replay after compaction",
+        "given": "A settled reclaimable record and retained replay floor",
+        "when": "Compaction completes and its old identity returns",
+        "then": "No mutation occurs and defined expired disposition is recorded"
+      },
+      {
+        "name": "Unknown and late cleanup",
+        "given": "Capacity pressure, Unknown request and outstanding consumer fence",
+        "when": "Diagnostics rotate and matching late receipt arrives",
+        "then": "Unresolved/cleanup obligations remain reconciled and charged storage is not freed prematurely"
+      }
+    ]
+  },
+  {
+    "id": "IMM-03",
+    "title": "Coherent recovery checkpoints and interrupted migration qualification",
+    "classification": "refinement",
+    "priority": "P0",
+    "baselineIds": [
+      "ELM-ARC-010",
+      "ELM-ARC-014",
+      "ELM-REV-008",
+      "ELM-REV-012",
+      "ELM-QA-007"
+    ],
+    "workItems": [
+      "W01",
+      "W02",
+      "W09",
+      "W10"
+    ],
+    "sources": [
+      "https://sqlite.org/atomiccommit.html",
+      "https://doc.akka.io/libraries/akka-core/current/typed/persistence.html"
+    ],
+    "ears": "WHEN recovery installs a checkpoint, the authority SHALL validate its coherent schema, lifetime, watermark and retained obligations before effect admission, reconcile uncertain outcomes without replay, and preserve each original deadline.",
+    "tradeoffs": "Crash-barrier fixture maintenance and synchronous storage cost; a manifest over existing stores may suffice; database replacement is deferred.",
+    "scenarios": [
+      {
+        "name": "Completed checkpoint",
+        "given": "Synchronized checkpoint with Unknown and retired-request floors",
+        "when": "Frontend restarts",
+        "then": "Coherent observation/reconciliation state is restored without old mutation dispatch"
+      },
+      {
+        "name": "Interrupted migration",
+        "given": "Visible rename and incomplete synchronization/migration barrier",
+        "when": "Recovery sees newer scene plus late old-binding receipt",
+        "then": "Validated recovery completes or remains fail-closed without mixed owners, lost Unknown, or reset deadline"
+      }
+    ]
+  },
+  {
+    "id": "IMM-04",
+    "title": "Measured revision-bound derived caching",
+    "classification": "refinement",
+    "priority": "P1",
+    "baselineIds": [
+      "ELM-TEA-001",
+      "ELM-QA-021",
+      "ELM-QA-022",
+      "ELM-QA-023",
+      "ELM-REV-020",
+      "ELM-REV-021"
+    ],
+    "workItems": [
+      "W08",
+      "W09"
+    ],
+    "sources": [
+      "https://elm-lang.org/assets/papers/concurrent-frp.pdf",
+      "https://redux.js.org/usage/deriving-data-selectors",
+      "https://raw.githubusercontent.com/elm/core/1.0.5/src/Array.elm",
+      "https://immutable-js.com/"
+    ],
+    "ears": "WHERE derived-state caching is enabled, the frontend SHALL return the same projection as uncached derivation for every accepted revision and invalidate cached results before using changed or retired dependencies.",
+    "tradeoffs": "Cache/index memory and invalidation bookkeeping may outweigh scan savings; adoption requires frozen-budget evidence, no invented thresholds.",
+    "scenarios": [
+      {
+        "name": "Unchanged dependency",
+        "given": "Pointer events with unchanged scene/query/policy revisions",
+        "when": "Taskbar groups are derived",
+        "then": "Output equals uncached oracle and measured recomputation improves under frozen workload comparison"
+      },
+      {
+        "name": "Identity reuse race",
+        "given": "Cached retired family incarnation",
+        "when": "Same label appears under new lifetime/incarnation during query change",
+        "then": "New identities govern derivation and action eligibility; stale family/preview authority does not survive"
+      }
+    ]
+  },
+  {
+    "id": "IMM-05",
+    "title": "Explicit concrete state and command refinement mapping",
+    "classification": "refinement",
+    "priority": "P1",
+    "baselineIds": [
+      "ELM-QA-004",
+      "ELM-QA-005",
+      "ELM-QA-006",
+      "ELM-TEA-002",
+      "ELM-REV-009"
+    ],
+    "workItems": [
+      "W03",
+      "W04",
+      "W10"
+    ],
+    "sources": [
+      "https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/abadi-existence.pdf",
+      "https://redux.js.org/usage/structuring-reducers/prerequisite-concepts"
+    ],
+    "ears": "WHEN coupled replay is reported as conformance evidence, the verifier SHALL compare concrete state and ordered commands through a documented abstraction map and disclose stuttering, equivalence and environmental assumptions without substituting that evidence for native acceptance.",
+    "tradeoffs": "Mapping/comparator reviewer upkeep; full mechanized proof deferred; sampled exploration remains bounded evidence.",
+    "scenarios": [
+      {
+        "name": "Backend stuttering",
+        "given": "Broker housekeeping without observable frontend change",
+        "when": "Coupled replay applies declared abstraction map",
+        "then": "Frontend stutters while native accounting and eligible queued receipts remain checked"
+      },
+      {
+        "name": "Equal final state with incorrect effect order",
+        "given": "Executions with equal final visible model",
+        "when": "One reorders Cancel/Ack or retires before consumer completion",
+        "then": "Transition/command/resource comparison fails at first relevant mismatch"
+      }
+    ]
+  }
+]

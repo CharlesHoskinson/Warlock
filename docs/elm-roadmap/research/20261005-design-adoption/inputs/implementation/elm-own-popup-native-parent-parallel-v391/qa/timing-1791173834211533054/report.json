@@ -1,0 +1,15 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "checks": [
+    "exact one callback and returned identity",
+    "original deadline recorded unchanged",
+    "primary BaseException object retained",
+    "failed call recorded",
+    "delegate enter and suppression preserved",
+    "clock failure does not omit callback",
+    "clock failure explicitly incomplete",
+    "bounded records retain all call counts"
+  ],
+  "error": "AssertionError()"
+}

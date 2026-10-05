@@ -1,0 +1,10 @@
+{
+  "reviewer": "opus-04-ux-ui-accessibility",
+  "previousBallotSHA256": "129ac50d8fef08aecae1ae9c83bb6a0e2bba1e8c27e9587e9405d92887c6f936",
+  "finalBallotSHA256": "1f4ab93e1ab93afd94ea58511d8a426dbed8ccdc4e08096e6c80bf72e62aa78f",
+  "decision": "accept",
+  "requirement": "ELM-ADOPT-030",
+  "reason": "I endorse this change. It fixes my last blocking objection, and I ratify ELM-ADOPT-030 as a guarded draft refinement only. amendment/change.json and candidates-v3.json (line 1959) change exactly one string: the THEN of the supported-disabled-action scenario. It no longer requires a reason for every disabled action; it now reads 'unavailable state and any reason required by the frozen per-surface policy'. That matches the corrected EARS (line 1917) and guardrails, which already make the reason policy-specific. It also avoids forcing reasons for state-table disables under ELM-RC-006 that have no meaningful user-facing reason. The all-disabled-and-focus-retirement scenario is unchanged. The related amendment IDs RC-006/017/018 remain as related identities and do not change the amendment. I did not independently diff the other 29 contracts against v2; I rely on the coordinator's statement that they are byte-unchanged. My non-blocking preference from earlier rounds still stands: menus and jump lists should keep disabled items focusable, for APG and Windows parity. I accept that this is a per-surface policy freeze and that GTK3's convention of skipping them is defensible. This vote selects no policy or mechanism, grants no native/AT acceptance, and does not expand the baseline. I could not recompute either hash because no hashing tool was available; both are echoed as supplied. This is my vote only and implies no consensus on behalf of other reviewers.",
+  "requiredChanges": [],
+  "carryForwardUnchangedVotes": true
+}

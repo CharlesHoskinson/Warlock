@@ -1,4 +1,6 @@
-# Omarchy Windows parity workspace
+# Warlock window system
+
+[GitHub: CharlesHoskinson/Warlock](https://github.com/CharlesHoskinson/Warlock) · [Local repository entry and rename record](docs/warlock-repository/v1/README.md)
 
 Local Git snapshot of the Windows 11 window-system work on this desktop.
 **Full parity is incomplete. This snapshot does not deploy anything.**
@@ -6,6 +8,8 @@ Local Git snapshot of the Windows 11 window-system work on this desktop.
 Start with [the current handoff](docs/HANDOFF.md). It supplements the historical
 [requirements](window-behavior-spec/requirements.md) and
 [status](window-behavior-spec/PARITY_STATUS.md), which are preserved unchanged.
+
+Warlock is the name of the Elm-based window-system project. See the [brand identity](docs/warlock-brand/README.md), [design philosophy](docs/warlock-brand/PHILOSOPHY.md), and [research implementation plan](docs/elm-roadmap/research/20261005-design-adoption/WORKPLAN.md). Original archival names and evidence remain preserved.
 
 ## Contents
 

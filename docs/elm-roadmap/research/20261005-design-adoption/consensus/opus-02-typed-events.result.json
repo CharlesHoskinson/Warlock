@@ -1,0 +1,109 @@
+{
+  "duration_api_ms": 861454,
+  "stop_reason": "end_turn",
+  "session_id": "e94ceb52-a01f-4e67-8edc-542ee3d55090",
+  "total_cost_usd": 6.383039,
+  "usage": {
+    "input_tokens": 18,
+    "cache_creation_input_tokens": 76405,
+    "cache_read_input_tokens": 2482586,
+    "output_tokens": 20039,
+    "output_tokens_details": {
+      "thinking_tokens": 10924
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 76405,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 12855,
+        "cache_read_input_tokens": 300885,
+        "cache_creation_input_tokens": 6195,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 6195
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 122,
+      "outputTokens": 64562,
+      "thinkingTokens": 31839,
+      "cacheReadInputTokens": 11079625,
+      "cacheCreationInputTokens": 303428,
+      "webSearchRequests": 0,
+      "costUSD": 5.935076999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 391482,
+      "outputTokens": 5296,
+      "thinkingTokens": 0,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 3,
+      "costUSD": 0.4479619999999999,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 16,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"reviewer\":\"opus-02-typed-events\",\"ballotSHA256\":\"ae1d72ea0b44236c40cc9e94db47c3b9e180660b207378097c45c833caf7807e\",\"philosophySHA256\":\"b042de217ebf1fdc3667d7e06fce96a2c1d1c9c100a466bfc5281617f2b3b11f\",\"votes\":[{\"id\":\"ELM-ADOPT-001\",\"decision\":\"accept\",\"reason\":\"Consistent with ELM-TEA-002 and the existing compiled state/ordered-command replay. The guardrails correctly forbid passing by processing zero inputs and keep recorded timer inputs from qualifying native deadlines. Both scenarios follow from the EARS.\",\"requiredChanges\":[]},{\"id\":\"ELM-ADOPT-002\",\"decision\":\"accept\",\"reason\":\"Matches the broker design: records are erased only after the final proof is acknowledged (preview_broker.hpp:255-259), request floors are retained, and ELM-REV-011 expired disposition is kept. The guardrail correctly rejects age-based deletion of Unknown or cleanup records.\",\"requiredChanges\":[]},{\"id\":\"ELM-ADOPT-003\",\"decision\":\"accept\",\"reason\":\"Refines ELM-ARC-010/014 and ELM-REV-008/012 through the existing durable ledger. It reconciles without replay and keeps original deadlines. Interrupted-migration faults are appropriate qualifying fixtures, and the scenarios are supported by the EARS.\",\"requiredChanges\":[]},{\"id\":\"ELM-ADOPT-004\",\"decision\":\"refine\",\"reason\":\"The EARS only requires cached and uncached derivation to be equivalent, conditional on caching being enabled. Scenario 'Unchanged dependency' also asserts that measured recomputation improves. That is a performance claim the EARS does not support, and it conflicts with the guardrail that adoption is a profiling-gated implementation option.\",\"requiredChanges\":[\"Remove 'and measured recomputation improves under frozen workload comparison' from the scenario THEN clause. State the improvement as the adoption precondition in the guardrail, measured under ELM-QA-021/ELM-REV-020/021, rather than as an observable behavior.\"]},{\"id\":\"ELM-ADOPT-005\",\"decision\":\"accept\",\"reason\":\"Requiring a documented abstraction map, declared stuttering and command/resource comparison is the honest framing of the existing 402-style coupled evidence. Scenario 2 rightly fails equal-final-state executions whose effect order differs.\",\"requiredChanges\":[]},{\"id\":\"ELM-ADOPT-006\",\"decision\":\"accept\",\"reason\":\"Fixes my source findings: bare UInt64.Counter for every domain (Effects.elm:13-15), positional Binding comparisons (Binding.elm:18-19), and JSON rebuilt inside the controller (Effects.elm:219, Shell.elm:141-146/240-257). 'Until wire encoding' implies decode-once without mandating a mechanism. The guardrails correctly say phantom types do not authenticate senders and that wire bytes are preserved. Domain-fixed decoders and compile-negative fixtures remain implementation and validation choices.\",\"requiredChanges\":[]},{\"id\":\"ELM-ADOPT-007\",\"decision\":\"refine\",\"reason\":\"The EARS almost restates ELM-TEA-003 (frontend sequences dependent effects through matching committed receipts) and the frontend half of ELM-ARC-008. ELM-ARC-008 is not in the mapping, and the text does not say the native authority remains the serialization point. Without that, it could be read as a second, frontend-only dependency authority.\",\"requiredChanges\":[\"Add ELM-ARC-008 and task P2-ELM-ARC-008 to the mapping, and classify the candidate as a refinement that tightens ELM-TEA-003/ELM-ARC-008 rather than as a new contract.\",\"Add a guardrail: controller gating supplements, and does not replace, native validation of prerequisite incarnation, generation and dependency revision (ELM-ARC-008/012).\"]},{\"id\":\"ELM-ADOPT-008\",\"decision\":\"refine\",\"reason\":\"Protocol-specific outcome reachability is correct and adopts the coordinator correction. My source evidence supports it: Effects.statusDecoder accepts Cancelled (Effects.elm:44) while the protocol-3 gate excludes it (NativeOutcome.elm:42). However, 'SHALL follow the declared transitions' only binds a participant's own sends. It does not oblige a receiver to reject an illegal or undeclared message without effect. The scenarios assume that rejection.\",\"requiredChanges\":[\"Extend the EARS: a participant receiving an event outside the declared actor, transition or outcome reachability for its protocol version SHALL reject it without authority, ownership or settlement effect and SHALL record a bounded refusal.\",\"Add ELM-ARC-004 and ELM-ARC-007 to the mapping.\"]},{\"id\":\"ELM-ADOPT-009\",\"decision\":\"accept\",\"reason\":\"Correctly adopts the corrections: cancellation is not retirement, and conservation includes admission and transfer. It matches the broker's refusal-before-adoption, use_count drain and destroy-before-proof ordering (preview_broker.hpp:210-252) and the cancel-racing-refusal evidence (v520 check.py:23). Non-blocking note: my OPUS02-TE-06 frontend obligation, that the controller must not silently forget a held handle without Cancel, Release or terminal proof, is not stated. That is a liveness gap, not a safety gap, because the native side retains ownership. Also, 'fetch revoked immediately' should be read as 'before any further fetch is served'.\",\"requiredChanges\":[]},{\"id\":\"ELM-ADOPT-010\",\"decision\":\"accept\",\"reason\":\"Separating causal order counters, epochs, presentation, input and deadline clocks fits ELM-REV-012 and my finding that C++ deadline/now are raw uint64 (preview_broker.hpp:33,37). Ruling out vector clocks is consistent with a single serialization point. Non-blocking: its control-order clause overlaps ELM-ADOPT-025; final drafting should cross-reference them so there is one delivery-continuity contract.\",\"requiredChanges\":[]},{\"id\":\"ELM-ADOPT-011\",\"decision\":\"accept\",\"reason\":\"Deriving text from validated correlated outcomes, never fabricating Refused, and keeping Unknown perceivable all match the design. It also addresses the concatenated-notice defect opus-03 found (Shell.elm:75,189). Editorial: normalize priority '1' to 'P1' for 011-014.\",\"requiredChanges\":[]},{\"id\":\"ELM-ADOPT-012\",\"decision\":\"accept\",\"reason\":\"Correctly classified as a duplicate of W08 and ELM-UI-009/010, and outcome-aware deduplication is sound. Non-blocking: ERR-02-02's late-settlement update should follow the ELM-ADOPT-010 guardrail that a late receipt reconciles knowledge but is not reported as timely success.\",\"requiredChanges\":[]},{\"id\":\"ELM-ADOPT-013\",\"decision\":\"refine\",\"reason\":\"The intent is sound: diagnostics are bounded, allowlisted and cannot block control or cleanup. But the validation text cites 'elm-performance/spec.md ELM-PER obligations', and no ELM-PER identifiers exist in the frozen inputs. That spec defines ELM-QA-021..026 and ELM-REV-020/021. A nonexistent reference breaks traceability to the frozen budget contract.\",\"requiredChanges\":[\"Replace 'ELM-PER obligations' with ELM-QA-021, ELM-QA-023, ELM-REV-020 and ELM-REV-021, and add them to the mapping as the budget-freezing dependency.\"]},{\"id\":\"ELM-ADOPT-014\",\"decision\":\"accept\",\"reason\":\"Distinguishing restored availability from unresolved historical outcomes, with original restore38/recovery34 and no replay, is consistent with the frozen recovery table (ARCHITECTURE.md:275-284) and ELM-ARC-014.\",\"requiredChanges\":[]},{\"id\":\"ELM-ADOPT-015\",\"decision\":\"defer\",\"reason\":\"Conditional and new. Whether local diagnostic export is selected at all is an open product decision, and its privacy review depends on ELM-ADOPT-013's allowlist and frozen budgets. It must not become a release blocker.\",\"requiredChanges\":[]},{\"id\":\"ELM-ADOPT-016\",\"decision\":\"accept\",\"reason\":\"The press-time identity guard is an exact-identity and causality obligation consistent with W07 and ELM-PRACTICES.md:19. Keyed DOM is correctly left as an implementation choice.\",\"requiredChanges\":[]},{\"id\":\"ELM-ADOPT-017\",\"decision\":\"accept\",\"reason\":\"Coherent native semantics with inert imagery is consistent with the PreviewLifecycle view (aria-hidden images, state on the control, PreviewLifecycle.elm:371-375). Announcement ownership correctly defers to ELM-ADOPT-012.\",\"requiredChanges\":[]},{\"id\":\"ELM-ADOPT-018\",\"decision\":\"accept\",\"reason\":\"Duplicate of ELM-UI-012/ELM-UX-028. Binding commits to a field/composition generation is the same exact-identity principle as the effect lane, and native evidence is required.\",\"requiredChanges\":[]},{\"id\":\"ELM-ADOPT-019\",\"decision\":\"accept\",\"reason\":\"Uses frozen thresholds rather than inventing them. Scenario 2 correctly stops removed-generation input from activating controls.\",\"requiredChanges\":[]},{\"id\":\"ELM-ADOPT-020\",\"decision\":\"accept\",\"reason\":\"No queuing or automatic replay of rejected or Unknown actions is consistent with the frozen no-replay rule and Effects.blocked (Effects.elm:169-170).\",\"requiredChanges\":[]},{\"id\":\"ELM-ADOPT-021\",\"decision\":\"accept\",\"reason\":\"Stage separation (commit, submission, presentation, retirement) matches ELM-ARC-020 and my source finding that receipts and presentation are distinct. Editorial: the Markdown tradeoffs for 021-024 render as Python list literals.\",\"requiredChanges\":[]},{\"id\":\"ELM-ADOPT-022\",\"decision\":\"accept\",\"reason\":\"Coalescing only explicitly replaceable observations while keeping ordered cancellation, receipt and retirement capacity matches ELM-ARC-015/016 and ELM-REV-009/010.\",\"requiredChanges\":[]},{\"id\":\"ELM-ADOPT-023\",\"decision\":\"accept\",\"reason\":\"Native last-presented geometry and live reduced motion under the same identity and cancellation rules, with 38/34/52 preserved, is consistent with W12. The preference-switch policy is correctly flagged to be frozen first.\",\"requiredChanges\":[]},{\"id\":\"ELM-ADOPT-024\",\"decision\":\"accept\",\"reason\":\"Freezes measurement method and budgets without inventing numbers, and separates feedback, presentation and observer overhead, consistent with ELM-QA-021/022/023.\",\"requiredChanges\":[]},{\"id\":\"ELM-ADOPT-025\",\"decision\":\"accept\",\"reason\":\"Faithful to OPUS02-TE-04 after the coordinator's corrections. The proof sequence is global (preview_broker.hpp:76,91-97), and FIFO is an explicit unqualified gate (shared-host.c:132-133). I accept the correction allowing known-safe idempotent Ack retry and withdraw my original 'no second Ack' wording: losing a final Ack would otherwise strand the native record, and the broker rejects stale Acks (preview_broker.hpp:258). 'Separate delivery ordinal or independently qualified continuity mechanism' correctly leaves the mechanism open while making continuity observable.\",\"requiredChanges\":[]},{\"id\":\"ELM-ADOPT-026\",\"decision\":\"accept\",\"reason\":\"A conditional rejection rule against a frozen budget, with the fallback correctly not closing the source-stop/family gates. Measurement note: the ELM-REV-020 matrix names first-capture and minimized-preview workloads, but cross-output presentation impact may need its own row before this can be qualified.\",\"requiredChanges\":[]},{\"id\":\"ELM-ADOPT-027\",\"decision\":\"accept\",\"reason\":\"Adopts the correction that a follow-up capture is a new native-scoped request and does not renew the first job's deadline. It is consistent with PreviewLifecycle admitting a new Request only when capture is Idle and no cancellation or retirement is outstanding (PreviewLifecycle.elm:258). Non-blocking: final text should name the native start event for the follow-up deadline so no frontend timer becomes its origin (ELM-REV-012).\",\"requiredChanges\":[]},{\"id\":\"ELM-ADOPT-028\",\"decision\":\"accept\",\"reason\":\"Liveness and freshness being separate facts is honest, and the current reducer already labels a live source whose content revision advanced as Historical, not Live (PreviewLifecycle.elm:142). The guardrail keeps the frozen labels and the 13 S09 assertions. Whether frame age is displayed remains a UX policy choice.\",\"requiredChanges\":[]},{\"id\":\"ELM-ADOPT-029\",\"decision\":\"accept\",\"reason\":\"Native keyboard scope bound to the current output and the prior eligible identity, inert while locked, without mandating a shortcut. Consistent with W07.\",\"requiredChanges\":[]},{\"id\":\"ELM-ADOPT-030\",\"decision\":\"accept\",\"reason\":\"A frozen per-surface policy rather than a universal disabled-focus rule. Attempted activation of a disabled action dispatches no effect, and the right-click amendment is preserved.\",\"requiredChanges\":[]}],\"philosophy\":{\"decision\":\"refine\",\"reason\":\"Mostly faithful and technically honest. It keeps native authority over physical claims, separates request from commit, presentation and retirement (principle 3), says cancellation starts cleanup but does not prove it (principle 7), and lets evidence govern change (principle 10). The decision rule is concrete enough to settle real tradeoffs, and naming is correctly called editorial. One wording weakens a frozen invariant: principle 4 says 'avoid replaying uncertain operations automatically', but the design requires never automatically replaying Unknown. Principle 4's state list also omits refused and cancelled. Non-blocking: nothing states that delivery order is a declared and qualified contract rather than an assumption, which would guide ELM-ADOPT-010/025.\",\"requiredChanges\":[\"Principle 4: replace 'avoid replaying uncertain operations automatically' with 'never replay uncertain operations automatically; reconcile with native truth first'.\",\"Principle 4: list the distinction as requested, committed, refused, cancelled, presented and unconfirmed (Unknown), so it matches ELM-ARC-007 and principle 3.\"]},\"remainingWork\":{\"decision\":\"refine\",\"reason\":\"Counts check: S01-S16 total 230 requirements/405 scenarios, plus conditional C00-C06 at 12/12, giving 242/417. The 24 closure requirements match 16+7+1, conditional scope is preserved, and RC stays separate. Three problems: (1) all 24 closure EARS are identical boilerplate, so the package-specific gates (the 13 S09 native cases, the S10 baseline38/recovery34 case-34 oracle) are normative only by implication from the table; (2) drag/resize52, which INVENTORY.md:20 lists as required, is not named in any gate; (3) the 30 ELM-ADOPT drafts are not mapped to packages as non-gating refinements, which risks scope creep or orphaning. Non-blocking: the S05 gate does not name native-to-Elm control-delivery continuity (ELM-REV-009, shared-host.c:133), which is a known open qualification.\",\"requiredChanges\":[\"Make each package gate normative inside its ELM-CLOSE requirement, for example 'SHALL satisfy the gate recorded for <package> in the closure table', or inline the gate text.\",\"Name drag/resize52 explicitly in its owning package gate (S10 or S14) alongside restore38/recovery34 and the 13 original S09 native cases.\",\"Add a mapping from each accepted ELM-ADOPT candidate to its package, labeled as a conditional draft refinement that adds no release gate unless separately accepted; ELM-ADOPT-015 stays conditional and deferred.\"]},\"disagreements\":[\"ELM-ADOPT-028 vs opus-05 FI-05: FI-05's EARS would label an authorized frame 'live regardless of newer content revisions'. I support the ballot's position and the current reducer (PreviewLifecycle.elm:142): a frame from an advanced content revision is not presented as current content.\",\"ELM-ADOPT-009 vs my OPUS02-TE-06: the ballot binds conservation only to the native broker. I retain non-blocking dissent that a frontend obligation is missing: the controller must not drop a held handle or job reference without Cancel, Release or an admitted terminal proof. Native ownership stays safe, but silent frontend discard can strand records until reconciliation.\",\"ELM-ADOPT-025 vs my own initial OPUS02-TE-04: I withdraw my duplicate-terminal scenario that forbade a second Acknowledge and accept the coordinator's idempotent-Ack-retry correction.\",\"ELM-ADOPT-008 subsumes my OPUS02-TE-02/TE-05, but window-effect specifics remain open research items: whether Cancelled is reachable for effect protocols 1/2, and Effects.apply accepting a legacy receipt without effectProtocol (Effects.elm:105). Any narrowing of accepted inbound shapes must go through ELM-ARC-004/ELM-REV-034 versioning, not a silent decoder change.\",\"ELM-ADOPT-007 is close to a duplicate of ELM-TEA-003 and ELM-ARC-008. I disagree with classifying it as an independent refinement until the mapping is corrected.\"],\"summary\":\"Votes: 25 accept, 4 refine (004, 007, 008, 013), 1 defer (015). The refines are specific textual corrections: an unsupported performance claim in an 004 scenario; missing ELM-ARC-008 mapping and a native-authority guardrail for 007; an explicit receiver-side rejection clause for 008; and a nonexistent ELM-PER reference in 013. The typed-events candidates (006, 008, 009, 010, 025) faithfully absorb my initial proposals and the six coordinator corrections. I accept the idempotent-Ack-retry correction. Philosophy needs 'never replay Unknown' and the full outcome vocabulary. Remaining-work counts reconcile to 242/417 but should make package gates normative, name drag/resize52, and map adoption drafts as non-gating. All votes are draft-level only: no native, production-provider or release acceptance is implied, and implementation tasks stay unchecked. I echo the supplied SHA256 values; with only read/search tools I could not recompute them, and I do not claim agreement on behalf of other reviewers.\"}",
+  "ttft_ms": 4039,
+  "type": "result",
+  "duration_ms": 217879,
+  "uuid": "d4afc730-ddb2-45df-b0a7-4b288b2cedc9",
+  "ttft_stream_ms": 4036,
+  "time_to_request_ms": 101,
+  "first_content_frame_ms": 4036,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

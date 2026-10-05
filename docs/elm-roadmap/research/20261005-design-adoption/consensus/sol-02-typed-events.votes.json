@@ -1,0 +1,210 @@
+{
+  "reviewer": "sol-02-typed-events",
+  "ballotSHA256": "ae1d72ea0b44236c40cc9e94db47c3b9e180660b207378097c45c833caf7807e",
+  "philosophySHA256": "b042de217ebf1fdc3667d7e06fce96a2c1d1c9c100a466bfc5281617f2b3b11f",
+  "votes": [
+    {
+      "id": "ELM-ADOPT-001",
+      "decision": "accept",
+      "reason": "Complete versioned inputs, explicit invalid-input accounting and isolated effects make replay falsifiable without native acceptance claims.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-002",
+      "decision": "accept",
+      "reason": "Reclamation preserves Unknown, cleanup charges and replay floors; both late-cleanup and expired-replay scenarios test the safety boundary.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-003",
+      "decision": "accept",
+      "reason": "Coherent checkpoint validation and interrupted synchronization faults preserve historical uncertainty and original deadlines using existing storage.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-004",
+      "decision": "accept",
+      "reason": "Accept conditional caching contract under profiling guard: equivalence and stale-identity rejection are normative; enabling caching remains optional.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-005",
+      "decision": "accept",
+      "reason": "State plus command/resource refinement prevents equal-final-state false passes; disclosed stuttering and bounded exploration retain evidence honesty.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-006",
+      "decision": "accept",
+      "reason": "Typed identities survive internal reducers without mandating language migration; exact and malformed-boundary scenarios preserve native authentication.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-007",
+      "decision": "accept",
+      "reason": "Matching committed prerequisites and registered child effects express actual dependency order; foreign/refused receipts cannot unlock dependent work.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-008",
+      "decision": "accept",
+      "reason": "Protocol-specific actor transitions avoid conflating window outcomes with preview fence/release/presentation and make illegal retirement testable.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-009",
+      "decision": "accept",
+      "reason": "Corrected accounting includes admission and transfer and retains charge through asynchronous cancel/drain; held-reader scenario prevents premature release.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-010",
+      "decision": "accept",
+      "reason": "Original clock/time origin and control continuity remain separate from revisions; late receipt changes knowledge without renewing work.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-011",
+      "decision": "accept",
+      "reason": "Validated reporting preserves refusal versus Unknown and correlates unsent evidence without permitting automatic repeat.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-012",
+      "decision": "refine",
+      "reason": "Announcement ownership and distinct-transition deduplication are sound, but blanket foreign-epoch scenario language can wrongly suppress legitimate reconciliation of historical exact receipts.",
+      "requiredChanges": [
+        "In ERR-02-02 replace blanket foreign-epoch receipts produce no update with unauthenticated, uncorrelated or superseded receipts produce no update; explicitly permit an authenticated exact historical receipt admitted through the declared reconciliation/old-actor route to update knowledge after frontend replacement without replay or deadline renewal."
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-013",
+      "decision": "accept",
+      "reason": "Allowlisted bounded diagnostics remain independent of durable authority and terminal settlement; canary/saturation controls test both privacy and noninterference.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-014",
+      "decision": "accept",
+      "reason": "Current availability is distinct from historical effect success; replacement geometry cannot discharge old reservations or renew deadlines.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-015",
+      "decision": "defer",
+      "reason": "Local export remains an optional new product feature; destination safety, export-specific privacy policy and resource budgets still need product/measurement decisions.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-016",
+      "decision": "accept",
+      "reason": "Press identity and surviving native focused control remain stable through publication races; replacement row cannot inherit activation.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-017",
+      "decision": "accept",
+      "reason": "Coherent native semantics preserve inert imagery and focus/selection distinction; announcement scenario composes with candidate012 rather than separate owners.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-018",
+      "decision": "accept",
+      "reason": "Composition generation and consumed-key handling prevent Enter launch and delayed commit contamination; actual native field evidence remains required.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-019",
+      "decision": "accept",
+      "reason": "Frozen reflow/contrast/fallback policies make constrained geometry and removed-output reachability observable without inventing numeric budgets.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-020",
+      "decision": "accept",
+      "reason": "Unresolved/refused actions retain context and independent controls; keyboard recovery exposes guidance without replay or desktop reset.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-021",
+      "decision": "accept",
+      "reason": "Explicit stage evidence prevents image-load/submission from proving physical presentation and rejects stale-output completion.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-022",
+      "decision": "accept",
+      "reason": "Identity-scoped observation coalescing preserves ordered control capacity and owned reservations through late producer results.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-023",
+      "decision": "accept",
+      "reason": "Last-presented successor geometry and live reduced-motion profile preserve commitment/cancellation/resource semantics under interruptions.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-024",
+      "decision": "accept",
+      "reason": "Same-machine frozen budgets, missing-stage disclosure and observer comparison prevent unsupported physical latency or performance claims.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-025",
+      "decision": "accept",
+      "reason": "Delivery continuity is separate from global proof IDs; idempotent known-proof Ack retry avoids both false gaps and lost final acknowledgements.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-026",
+      "decision": "accept",
+      "reason": "Capture-impact rejection is measurement-based; truthful unavailable fallback expressly cannot close mandatory family/source-stop acceptance.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-027",
+      "decision": "accept",
+      "reason": "Bounded latest demand does not force allocation or renew expired captures; close/lock/identity race rejects unauthorized follow-up.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-028",
+      "decision": "accept",
+      "reason": "Source liveness, captured revision and pixel freshness remain distinct; frozen historical/live/unavailable assertions are preserved.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-029",
+      "decision": "accept",
+      "reason": "Native bounded taskbar entry/exit preserves prior eligible identity, lock and MRU policies without imposing a new shortcut or permanent exclusive mode.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-030",
+      "decision": "accept",
+      "reason": "Per-surface disabled navigation policy avoids an unsupported universal focus rule while blocking all activation routes and retaining dismissal.",
+      "requiredChanges": []
+    }
+  ],
+  "philosophy": {
+    "decision": "accept",
+    "reason": "Ten principles express the established one-controller/native-authority design with concrete choices about effects, accessibility, ownership, bounded work and evidence. Claims remain commitments rather than release capabilities. Accord is an editorial working name, not technical unanimity or an accepted rename.",
+    "requiredChanges": []
+  },
+  "remainingWork": {
+    "decision": "accept",
+    "reason": "Package closure preserves baseline242/scenario417, S01-S16, conditional C00-C06 and separate right-click24; explicitly retains restore38/recovery34/case34, native13,52, clocks, hardware/IME/AT, resource budgets and coherent reversible release. Existing component evidence must be reconciled before assigning missing implementation. S09 source-state wording must be read with candidate028 freshness distinction; no source liveness alone proves fresh pixels.",
+    "requiredChanges": []
+  },
+  "disagreements": [
+    {
+      "id": "ELM-ADOPT-012",
+      "issue": "Epoch difference alone is not invalid historical correlation; exact old-actor reconciliation receipts can legitimately settle knowledge."
+    },
+    {
+      "id": "ELM-ADOPT-015",
+      "issue": "Safe conditional future contract accepted in principle but feature adoption deferred pending product, destination/privacy and budget decisions."
+    }
+  ],
+  "summary": "Reviewed all30 requirements and60 scenarios, paired opus-02 and sol-03 reporting research, philosophy and release closure.28 accept as guarded drafts,1 refine scenario epoch language,1 defer optional export. Corrected cancellation/accounting, protocol outcome, proof-versus-delivery, follow-up deadline and liveness/freshness guards are essential. No native acceptance or agreement on behalf of other reviewers."
+}

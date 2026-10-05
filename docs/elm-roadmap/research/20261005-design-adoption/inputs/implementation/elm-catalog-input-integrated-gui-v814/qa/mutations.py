@@ -1,0 +1,18 @@
+import json,pathlib,shlex,shutil,subprocess,sys,time,hashlib,os
+sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
+require_qa_scope()
+from toolchain import verify
+r=pathlib.Path(__file__).resolve().parents[1];parent=sorted(p for p in (r/'qa').glob('negative-*/report.json') if json.loads(p.read_bytes())['passed'])[-1];base=parent.parent;out=r/'qa'/('mutations-'+str(time.time_ns()));out.mkdir();checks=[]
+flags=shlex.split(subprocess.check_output(['pkg-config','--cflags','--libs','gtk+-3.0','webkit2gtk-4.1','gtk-layer-shell-0','json-glib-1.0','gio-unix-2.0'],text=True))
+source=(base/'inputs/qa/instrumented-shared-host.c').read_text()
+mutants=[('allow-unissued-scope',' || id>issued_view','', 'future-id'),('downgrade-duplicate','if(duplicate){shared_batch_emit(record);return;}', 'if(duplicate){json_object_set_string_member(json_node_get_object(record->certificate),"disposition","preflight-unsent");shared_batch_emit(record);return;}','duplicate-admitted'),('replayed-eviction-new-negative','if(publication<=shared_batch_highest)return NULL;','if(FALSE)return NULL;','evicted-replay')]
+try:
+ for name,old,new,mode in mutants:
+  assert old in source;d=out/name;shutil.copytree(base/'inputs/native',d/'native');(d/'qa').mkdir();shutil.copy2(r/'qa/negative-probe.c',d/'qa/negative-probe.c');(d/'qa/instrumented-shared-host.c').write_text(source.replace(old,new))
+  cmd=['cc','-std=c11','-O2','-Wall','-Wextra','-Werror','-Wno-deprecated-declarations','qa/negative-probe.c','-o',str(d/'probe'),*flags];compiled=subprocess.run(cmd,cwd=d,capture_output=True,text=True);(d/'compile.log').write_text(compiled.stdout+compiled.stderr);assert compiled.returncode==0,compiled.stderr
+  observed=subprocess.run([str(d/'probe'),str(base/'packet.json'),mode],capture_output=True,text=True);(d/'counterexample.log').write_text(observed.stdout+observed.stderr);assert observed.returncode!=0,name;checks.append({'name':name,'compileExit':compiled.returncode,'counterexampleExit':observed.returncode,'mode':mode})
+ tc=verify();d=out/'erase-old-elm-registry';shutil.copytree(r/'src',d/'src');shutil.copy2(r/'elm.json',d/'elm.json');shutil.copytree(r/tc['elmHome'],d/'elm-home');f=d/'src/OutputController.elm';elm=f.read_text();old='controller=refreshed,batchExhausted=';assert old in elm;f.write_text(elm.replace(old,'controller=refreshed,batches=[],batchExhausted='));compiled=subprocess.run([str(r/tc['compiler']),'make','src/BatchReplay.elm','--optimize','--output='+str(d/'worker.js')],cwd=d,env=dict(os.environ,ELM_HOME=str(d/'elm-home')),capture_output=True,text=True);(d/'compile.log').write_text(compiled.stdout+compiled.stderr);assert compiled.returncode==0,compiled.stderr
+ observed=subprocess.run(['node',str(base/'inputs/qa/negative.cjs'),str(d/'worker.js'),str(r.parent/'elm-topology-batch-channel-model-v709/qa/ready-events.json'),str(d/'packet.json'),str(base/'probe'),str(d/'checks.json'),str(r.parent/'elm-topology-batch-channel-model-v709/qa/original-1791163383225147012/worker.js')],capture_output=True,text=True);(d/'counterexample.log').write_text(observed.stdout+observed.stderr);assert observed.returncode!=0;checks.append({'name':'erase-old-elm-registry','compileExit':compiled.returncode,'counterexampleExit':observed.returncode});verify()
+ report={'passed':True,'controls':checks,'nativeAcceptance':False,'parentReport':str(parent),'scope':'Actual compiled C/Elm semantic mutants, synthetic wire/callback capture'}
+except Exception as e:report={'passed':False,'controls':checks,'error':repr(e),'nativeAcceptance':False}
+(out/'report.json').write_text(json.dumps(report,indent=2)+'\n');print(out/'report.json');sys.exit(not report['passed'])

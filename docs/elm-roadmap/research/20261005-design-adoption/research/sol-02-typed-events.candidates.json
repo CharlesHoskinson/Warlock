@@ -1,0 +1,197 @@
+[
+  {
+    "id": "TE-01",
+    "title": "Complete typed internal boundaries",
+    "classification": "refinement",
+    "ears": "WHEN a validated external event enters an internal reducer, the controller SHALL carry domain-specific typed identities and outcomes through its resulting effect descriptions until wire encoding.",
+    "baselineIds": [
+      "ELM-TEA-001",
+      "ELM-TEA-002",
+      "ELM-TEA-003",
+      "ELM-REV-007"
+    ],
+    "workItems": [
+      "W04",
+      "W01",
+      "W02"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/elm/core/master/src/Platform/Cmd.elm",
+      "https://arxiv.org/pdf/1910.11108"
+    ],
+    "scenarios": [
+      {
+        "name": "Exact receipt",
+        "given": "a validated receipt for one request/incarnation",
+        "when": "the typed outcome is reduced",
+        "then": "only the exact transaction settles and wire encoding remains unchanged"
+      },
+      {
+        "name": "Foreign input",
+        "given": "a malformed or foreign-binding payload",
+        "when": "boundary validation runs",
+        "then": "no admitted event or mutation is produced and correlated refusal is retained"
+      }
+    ],
+    "priority": "P0",
+    "tradeoffs": "Codec and call-site migration; phantom types do not authenticate senders; preserve wire bytes.",
+    "status": "draft"
+  },
+  {
+    "id": "TE-02",
+    "title": "Preserve effects as an auditable dependency algebra",
+    "classification": "refinement",
+    "ears": "WHEN a native effect depends on another effect's completion, the controller SHALL admit the dependent request only after the matching native committed receipt satisfies the recorded prerequisite.",
+    "baselineIds": [
+      "ELM-TEA-002",
+      "ELM-TEA-003"
+    ],
+    "workItems": [
+      "W04",
+      "W01",
+      "W02",
+      "W09"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/elm/core/master/src/Platform/Cmd.elm",
+      "https://www.doc.ic.ac.uk/~yoshida/multiparty/multiparty.pdf",
+      "https://www.microsoft.com/en-us/research/wp-content/uploads/2016/12/Time-Clocks-and-the-Ordering-of-Events-in-a-Distributed-System.pdf"
+    ],
+    "scenarios": [
+      {
+        "name": "Pending prerequisite",
+        "given": "restore-before-activate dependency for an exact incarnation",
+        "when": "restore remains Pending then its exact committed receipt arrives",
+        "then": "activation waits then registered activation can proceed"
+      },
+      {
+        "name": "Wrong prerequisite",
+        "given": "a refused restore or foreign committed receipt",
+        "when": "it arrives before activation",
+        "then": "it cannot satisfy the prerequisite and independent controls remain usable"
+      }
+    ],
+    "priority": "P0",
+    "tradeoffs": "Explicit dependency metadata and replay oracle costs; retain independence; no new framework necessary.",
+    "status": "draft"
+  },
+  {
+    "id": "TE-03",
+    "title": "Publish one conversation contract with local obligations",
+    "classification": "refinement",
+    "ears": "WHEN a protocol participant receives a control message, the system SHALL validate its actor, exact conversation identity and permitted transition before producing authority or ownership effects.",
+    "baselineIds": [
+      "ELM-TEA-001",
+      "ELM-ARC-012",
+      "ELM-ARC-014",
+      "ELM-REV-008",
+      "ELM-REV-009",
+      "ELM-REV-011"
+    ],
+    "workItems": [
+      "W03",
+      "W04",
+      "W06"
+    ],
+    "sources": [
+      "https://arxiv.org/pdf/1910.11108",
+      "https://www.doc.ic.ac.uk/~yoshida/multiparty/multiparty.pdf"
+    ],
+    "scenarios": [
+      {
+        "name": "Unadopted refusal",
+        "given": "an admitted reservation without storage",
+        "when": "the trusted producer refuses",
+        "then": "stable refusal proof preserves already-ordered cancellation proof"
+      },
+      {
+        "name": "Illegal retirement",
+        "given": "an adopted buffer or stale actor",
+        "when": "producer-refused or final-ack is supplied",
+        "then": "it cannot bypass drainage or retire current actor resource"
+      }
+    ],
+    "priority": "P1",
+    "tradeoffs": "New verification artifact refining existing behavior; manual table maintenance; no static-session-typing claim.",
+    "status": "draft"
+  },
+  {
+    "id": "TE-04",
+    "title": "Treat cancellation as a request followed by proved closure",
+    "classification": "refinement",
+    "ears": "WHEN cancellation invalidates an owned operation, the native authority SHALL reject subsequent unauthorized publication and retain its ownership record until matching physical retirement proof permits final acknowledgement.",
+    "baselineIds": [
+      "ELM-ARC-012",
+      "ELM-ARC-016",
+      "ELM-REV-010"
+    ],
+    "workItems": [
+      "W03",
+      "W06",
+      "W10"
+    ],
+    "sources": [
+      "https://wayland.freedesktop.org/docs/html/apa.html#protocol-spec-wl_buffer",
+      "https://docs.gtk.org/gio/method.Cancellable.cancel.html",
+      "https://docs.gtk.org/gio/method.InputStream.close_async.html",
+      "https://docs.rs/tokio/latest/tokio/task/struct.JoinHandle.html"
+    ],
+    "scenarios": [
+      {
+        "name": "Cancel refusal race",
+        "given": "capture cancelled before adoption",
+        "when": "refusal completes asynchronously",
+        "then": "ordered cancellation/refusal proofs leave no reservation after final ack"
+      },
+      {
+        "name": "Held reader",
+        "given": "adopted buffer with held GIO reader",
+        "when": "cancel and shutdown occur",
+        "then": "fetch revoked immediately and terminal release waits for producer completion and reader drainage"
+      }
+    ],
+    "priority": "P0",
+    "tradeoffs": "Retained records and native callback coordination; release on cancel-send unsafe; generation-scoped drain avoids global waits.",
+    "status": "draft"
+  },
+  {
+    "id": "TE-05",
+    "title": "Separate causal order, epoch identity and deadline time",
+    "classification": "refinement",
+    "ears": "WHEN queueing, frontend replacement or reconciliation occurs, the authority SHALL preserve the operation's original native clock domain, time origin and deadline while validating ordered control delivery independently of observation revisions.",
+    "baselineIds": [
+      "ELM-REV-007",
+      "ELM-REV-008",
+      "ELM-REV-009",
+      "ELM-REV-012",
+      "ELM-ARC-013",
+      "ELM-ARC-014"
+    ],
+    "workItems": [
+      "W01",
+      "W02",
+      "W05"
+    ],
+    "sources": [
+      "https://www.microsoft.com/en-us/research/wp-content/uploads/2016/12/Time-Clocks-and-the-Ordering-of-Events-in-a-Distributed-System.pdf",
+      "https://raw.githubusercontent.com/elm/core/master/src/Platform/Cmd.elm"
+    ],
+    "scenarios": [
+      {
+        "name": "Restart receipt",
+        "given": "pending work and frontend restart",
+        "when": "exact late receipt arrives",
+        "then": "original request reconciles without deadline renewal or mutation replay"
+      },
+      {
+        "name": "Gap clock",
+        "given": "control sequence gap or replaced clock domain",
+        "when": "later delta/timeout arrives",
+        "then": "new admission withheld until coherent reconciliation and invalid timing cannot authorize work"
+      }
+    ],
+    "priority": "P1",
+    "tradeoffs": "Metadata and clock/queue instrumentation; frontend timers feedback only; vector clocks unnecessary.",
+    "status": "draft"
+  }
+]

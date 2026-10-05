@@ -1,0 +1,109 @@
+{
+  "duration_api_ms": 1031555,
+  "stop_reason": "end_turn",
+  "session_id": "28a0601f-7384-40aa-a583-68959020c1ae",
+  "total_cost_usd": 7.942039600000001,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 7340,
+    "cache_read_input_tokens": 1092697,
+    "output_tokens": 866,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 7340,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 589,
+        "cache_read_input_tokens": 366812,
+        "cache_creation_input_tokens": 460,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 460
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 166,
+      "outputTokens": 76699,
+      "thinkingTokens": 33647,
+      "cacheReadInputTokens": 15350178,
+      "cacheCreationInputTokens": 363620,
+      "webSearchRequests": 0,
+      "costUSD": 7.5136395999999985,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 339025,
+      "outputTokens": 5875,
+      "thinkingTokens": 0,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 6,
+      "costUSD": 0.4284,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"reviewer\":\"opus-05-fluid-interaction\",\"previousBallotSHA256\":\"129ac50d8fef08aecae1ae9c83bb6a0e2bba1e8c27e9587e9405d92887c6f936\",\"finalBallotSHA256\":\"1f4ab93e1ab93afd94ea58511d8a426dbed8ccdc4e08096e6c80bf72e62aa78f\",\"decision\":\"accept\",\"requirement\":\"ELM-ADOPT-030\",\"reason\":\"I endorse this change. amendment/change.json alters only the THEN of the 'supported-disabled-action' scenario: 'unavailable state and reason' becomes 'unavailable state and any reason required by the frozen per-surface policy'. In candidates-v3.json the new wording is in the scenario (line 1959) and matches the existing EARS (line 1917). In v2 the scenario was stricter than its EARS; this fixes that mismatch. The safety parts of the scenario are unchanged: the action keeps a stable position, native AT exposes unavailable state, and activation dispatches no effect. The 'all-disabled-and-focus-retirement' scenario is identical before and after. The change does not touch the related RC-006/017/018 amendment semantics. My v2 vote on ELM-ADOPT-030 was already accept, so it stays accept. I checked only the 030 entry and the amendment diff. I did not recompute the SHA256 values or re-diff the other 29 contracts; I rely on the coordinator's statement that they are unchanged. This vote endorses a guarded draft scenario correction only. It is not native acceptance, baseline expansion or product selection, and it does not imply other reviewers agree.\",\"requiredChanges\":[],\"carryForwardUnchangedVotes\":true}",
+  "ttft_ms": 6619,
+  "type": "result",
+  "duration_ms": 25238,
+  "uuid": "72d5fee3-dacd-4e15-8e58-26ac13aef34a",
+  "ttft_stream_ms": 5704,
+  "time_to_request_ms": 61,
+  "first_content_frame_ms": 5704,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

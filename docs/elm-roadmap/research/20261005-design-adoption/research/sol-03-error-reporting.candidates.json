@@ -1,0 +1,177 @@
+[
+  {
+    "id": "ERR-01",
+    "title": "preserve uncertainty in a structured reporting contract",
+    "classification": "refinement",
+    "ears": "WHEN an operation report is presented, the shell SHALL derive its message and available recovery actions from a validated correlated outcome and SHALL distinguish definitive refusal from Unknown without implying completion or authorizing replay.",
+    "baselineIds": [
+      "ELM-ARC-007",
+      "ELM-ARC-008",
+      "ELM-ARC-014"
+    ],
+    "workItems": [
+      "W04",
+      "W11"
+    ],
+    "sources": [
+      "https://www.microsoft.com/en-us/research/wp-content/uploads/2019/01/Guidelines-for-Human-AI-Interaction-camera-ready.pdf",
+      "https://docs.rs/thiserror/latest/thiserror/"
+    ],
+    "scenarios": [
+      {
+        "name": "ERR-01-01",
+        "given": "an admitted restore with lost receipt",
+        "when": "transport disconnects",
+        "then": "the report states that completion is unconfirmed, preserves Unknown and offers no automatic repeat."
+      },
+      {
+        "name": "ERR-01-02",
+        "given": "an exact unsent certificate and a simultaneous late receipt for a different request",
+        "when": "reports are reduced",
+        "then": "refusal is attached only to the certified request and the foreign receipt cannot alter its message or actions."
+      }
+    ],
+    "priority": 1,
+    "tradeoffs": "status-only messages are cheaper but obscure safe recovery; raw native messages reduce mapping work but leak details and blur semantics. Cost: category registry, compatibility review and differential fixtures. Validation: enumerate every existing outcome/recovery reason; every class has reviewed text and enabled-action oracle; corrupt or future reasons fail closed without fabricating a terminal outcome.",
+    "status": "draft"
+  },
+  {
+    "id": "ERR-02",
+    "title": "one announcement owner and outcome-aware deduplication",
+    "classification": "duplicate",
+    "ears": "WHEN an eligible correlated outcome transition requires attention, the controller SHALL publish one accessible status through the designated announcement owner, retain focus and suppress repeats of that outcome while preserving later distinct outcome transitions.",
+    "baselineIds": [
+      "ELM-UI-009",
+      "ELM-UI-010"
+    ],
+    "workItems": [
+      "W08"
+    ],
+    "sources": [
+      "https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html",
+      "https://sre.google/sre-book/monitoring-distributed-systems/"
+    ],
+    "scenarios": [
+      {
+        "name": "ERR-02-01",
+        "given": "bar and popup projections on two outputs with stable focus",
+        "when": "the same refusal receipt is delivered repeatedly and a popup recreates",
+        "then": "one eligible announcement occurs and recovery detail remains reachable."
+      },
+      {
+        "name": "ERR-02-02",
+        "given": "Unknown was announced and the original deadline has elapsed",
+        "when": "a valid late correlated receipt settles knowledge",
+        "then": "a distinct policy-eligible update is exposed without restarting the effect or changing its deadline; foreign-epoch receipts produce no such update."
+      }
+    ],
+    "priority": 1,
+    "tradeoffs": "per-view live regions are simple locally but duplicate output on multiple surfaces; one modal per failure interferes with focus and ordinary work. Cost: semantic routing, native AT integration and multi-output transcript qualification. Validation: count announcements against distinct eligible transitions, observe focus and speech/braille, include duplicate receipts and surface recreation. Preserve existing policy thresholds; freeze any missing quantitative oracle through S02/P0 rather than inventing one.",
+    "status": "draft"
+  },
+  {
+    "id": "ERR-03",
+    "title": "bounded allowlisted diagnostics independent of authority",
+    "classification": "refinement",
+    "ears": "WHILE ordinary diagnostics are enabled, the diagnostics subsystem SHALL admit only allowlisted bounded records and SHALL report record loss without collecting excluded content or altering native authority, operation outcomes or deadlines.",
+    "baselineIds": [
+      "ELM-DEL-017"
+    ],
+    "workItems": [
+      "W04",
+      "W11"
+    ],
+    "sources": [
+      "https://opentelemetry.io/docs/security/handling-sensitive-data/",
+      "https://opentelemetry.io/docs/specs/otel/logs/data-model/"
+    ],
+    "scenarios": [
+      {
+        "name": "ERR-03-01",
+        "given": "a decoder failure containing a secret canary and window title",
+        "when": "a diagnostic record is produced",
+        "then": "only allowed category/context fields appear and neither canary nor title is retained."
+      },
+      {
+        "name": "ERR-03-02",
+        "given": "diagnostic capacity is exhausted during a pending effect",
+        "when": "further records arrive and a terminal receipt races",
+        "then": "loss is observable, memory stays within the frozen budget and receipt settlement is identical to diagnostics-disabled execution."
+      }
+    ],
+    "priority": 2,
+    "tradeoffs": "unrestricted verbose logs simplify one incident at privacy/resource cost; aggregate-only metrics lose sequence context. Cost: event schema, producer audits and saturation tests. A ring buffer and separate counters are possible implementations, not mandated architecture. Validation: sensitive canaries across nested values and error strings; resource saturation, failure to write and malformed events preserve controller decisions. Measure log-rate, whole-process CPU/wakeups/memory, export cost and retention against `elm-performance/spec.md` ELM-PER obligations; the performance owner freezes numeric limits from P0 workloads before acceptance.",
+    "status": "draft"
+  },
+  {
+    "id": "ERR-04",
+    "title": "recovery evidence distinguishes restored availability from past success",
+    "classification": "refinement",
+    "ears": "WHEN a failed frontend or authority recovers, the shell SHALL report verified current availability separately from unresolved historical outcomes and SHALL admit new effects only after native reconciliation under the original deadline and identity contracts.",
+    "baselineIds": [
+      "ELM-ARC-014",
+      "ELM-ARC-026",
+      "ELM-QA-002",
+      "ELM-QA-003"
+    ],
+    "workItems": [
+      "W05",
+      "W10",
+      "W11"
+    ],
+    "sources": [
+      "https://www2.eecs.berkeley.edu/Pubs/TechRpts/2002/Archive/CSD-02-1175.pdf",
+      "https://raw.githubusercontent.com/systemd/systemd/main/man/systemd-coredump.xml"
+    ],
+    "scenarios": [
+      {
+        "name": "ERR-04-01",
+        "given": "an admitted effect and crash before durable settlement",
+        "when": "a fresh epoch receives a coherent snapshot",
+        "then": "availability may recover while the previous effect remains unconfirmed and is never replayed."
+      },
+      {
+        "name": "ERR-04-02",
+        "given": "a storage-full recovery failure and matching-looking geometry from a replacement incarnation",
+        "when": "reconciliation is attempted",
+        "then": "geometry alone cannot clear the historical reservation, no new dependent effect is admitted and the original recovery deadline remains enforced."
+      }
+    ],
+    "priority": 1,
+    "tradeoffs": "automatic retries may appear faster but are prohibited here; generic \u201crecovered\u201d banners omit the critical uncertainty. Cost: recovery phase/report integration and protected fault campaign evidence. Validation: original restore38/recovery34 with unchanged identity/oracle/deadline, held effects, missing/corrupt journal, unavailable storage, frontend/authority epoch replacement and stale proof. Component replay supplements rather than replaces native acceptance.",
+    "status": "draft"
+  },
+  {
+    "id": "ERR-05",
+    "title": "explicit diagnostics export boundary",
+    "classification": "new",
+    "ears": "WHEN the user requests a diagnostic export, the shell SHALL produce an inspectable local bundle containing only validated export-allowed evidence and declared omissions, without exporting excluded content, sending it externally or modifying recovery authority.",
+    "baselineIds": [
+      "ELM-DEL-017"
+    ],
+    "workItems": [
+      "W11"
+    ],
+    "sources": [
+      "https://opentelemetry.io/docs/security/handling-sensitive-data/",
+      "https://raw.githubusercontent.com/systemd/systemd/main/man/systemd-coredump.xml"
+    ],
+    "scenarios": [
+      {
+        "name": "ERR-05-01",
+        "given": "diagnostics and an available core dump containing private memory",
+        "when": "the user requests the ordinary bundle",
+        "then": "the bundle includes allowed metadata and states that core/pixels/content are omitted."
+      },
+      {
+        "name": "ERR-05-02",
+        "given": "export is assembling records while frontend epoch changes",
+        "when": "cancellation or disk-full occurs",
+        "then": "no success is reported, partial-artifact disposition is explicit, and neither old nor fresh recovery reservation is changed."
+      }
+    ],
+    "priority": 2,
+    "tradeoffs": "copying a journal manually is cheaper but produces unreviewable privacy and scope surprises; automated cloud uploads introduce unsupported product scope. Cost: bundle builder, accessible review and export fault testing. Validation: unpack and schema-check artifacts; canary and content scans; stale-epoch snapshot race, cancellation, disk-full and symlink/path defenses; measured export overhead must meet frozen performance budgets.",
+    "status": "draft"
+  }
+]

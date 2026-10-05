@@ -1,0 +1,95 @@
+{
+  "passed": false,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-ca2393fb86e444f0afc6ea044a11a26b.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "src/preview_broker.hpp": "54e2ced192b718dfeb0a09bc29b35b748eb7d933ac51b78807ec0e9bb02db9c8",
+    "src/demand.hpp": "7994f0df198a2ed6acef5a380f64f61a5d287dc541a373db87b877a77ceea7cc",
+    "spec/demand.qnt": "734fb17bbfad26210f71944431d9522a391486894f44209807c21dc676da9060",
+    "spec/tests.qnt": "5e9a8f45cc16df53a15a7614a044d6a617b05b1d97acee63ea75bb3059ce3560",
+    "qa/checks.cpp": "d9d5fe80ea0470dd43176219200ea9b3ab4d7cb49a7d19b30cdfdd5e4a9ec0fe",
+    "qa/check.py": "4d1d81d86f26f071fa34bab87b487665cfc4ba9ca1c265e31b4c149456b2819f"
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "commands": [
+    {
+      "name": "compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-O1",
+        "-g",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v3/qa/check-1791205875452466902/inputs/src",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v3/qa/check-1791205875452466902/inputs/qa/checks.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v3/qa/check-1791205875452466902/checks"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "compiled-controls",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v3/qa/check-1791205875452466902/checks"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "quint-typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "tests.qnt"
+      ],
+      "exitCode": 1,
+      "expected": 0
+    }
+  ],
+  "projection": "latest/captured/issuedLease,busy,broker activeItems,visible,native-now,last-start,lease and broker floor for one fixed native lifetime/domain/entry; exact scope/auth/fence/deadline/bytes outside abstraction covered separately, not complete concrete-field refinement",
+  "fixedFixture": {
+    "binding": [
+      1,
+      2,
+      3
+    ],
+    "incarnation": 4,
+    "output": 5,
+    "privacy": 6,
+    "rendering": 7,
+    "scene": 8,
+    "clock": 10,
+    "origin": 11,
+    "cost": 32,
+    "items": 2,
+    "bytes": 64,
+    "interval": 2,
+    "freshDeadline": "native now+100 for a NEW job; no old deadline renewed"
+  },
+  "toolSHA256": "bd6e9400f6358a8a69d80eb636eb62f59f993039868a7be9719f76ba74191b4e",
+  "compiledChecks": 36,
+  "error": "AssertionError(\"\\n Error [QNT101]: Built-in name 'next' is redefined in module 'demand'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v3/qa/check-1791205875452466902/inputs/spec/demand.qnt:17:33\\n  17:  action fire(e:Event):bool={val next=reduce(s,e);s'={...next,history:s.history.append(label(e))}}\\n                                      ^^^^\\n\\nerror: parsing failed\\n\")",
+  "artifacts": {
+    "checks": "4db47bbdfd29acc20e9e1e8dc0d93f756af8881c430c931bc3fa14cfcd3ed445",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compiled-controls.stdout": "3ca2f23009703acdcad6eddeacda7bd122e4256d00b59c27c9b845cf07f24f2d",
+    "compiled-controls.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "quint-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "quint-typecheck.stderr": "5569049e68b75ab28fb62be08e0c3070633bba91a9e7bc0a17007769e17a1baa",
+    "inputs/src/preview_broker.hpp": "54e2ced192b718dfeb0a09bc29b35b748eb7d933ac51b78807ec0e9bb02db9c8",
+    "inputs/src/demand.hpp": "7994f0df198a2ed6acef5a380f64f61a5d287dc541a373db87b877a77ceea7cc",
+    "inputs/spec/demand.qnt": "734fb17bbfad26210f71944431d9522a391486894f44209807c21dc676da9060",
+    "inputs/spec/tests.qnt": "5e9a8f45cc16df53a15a7614a044d6a617b05b1d97acee63ea75bb3059ce3560",
+    "inputs/qa/checks.cpp": "d9d5fe80ea0470dd43176219200ea9b3ab4d7cb49a7d19b30cdfdd5e4a9ec0fe",
+    "inputs/qa/check.py": "4d1d81d86f26f071fa34bab87b487665cfc4ba9ca1c265e31b4c149456b2819f"
+  }
+}

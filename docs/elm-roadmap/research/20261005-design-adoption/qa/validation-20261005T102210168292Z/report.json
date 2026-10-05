@@ -1,0 +1,75 @@
+{
+  "status": "FAIL",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-dc62ba5a1e9047949c432f342e3ed347.scope",
+    "coreLimit": 1
+  },
+  "checks": [
+    {
+      "name": "338 frozen inputs byte-identical",
+      "passed": true
+    },
+    {
+      "name": "authoritative input unchanged docs/elm-roadmap/requirements.json",
+      "passed": true
+    },
+    {
+      "name": "authoritative input unchanged docs/elm-roadmap/delivery/sprint-backlog.json",
+      "passed": true
+    },
+    {
+      "name": "authoritative input unchanged docs/elm-roadmap/RIGHT-CLICK.md",
+      "passed": true
+    },
+    {
+      "name": "30 unique adoption IDs and67 scenarios",
+      "passed": true
+    },
+    {
+      "name": "53 proposals accounted",
+      "passed": true
+    },
+    {
+      "name": "ten initial reports hash-bound",
+      "passed": true
+    },
+    {
+      "name": "242 baseline requirements/417 scenarios preserved",
+      "passed": true
+    },
+    {
+      "name": "baseline mapped once",
+      "passed": true
+    },
+    {
+      "name": "24 closure contracts/48 scenarios",
+      "passed": true
+    },
+    {
+      "name": "right-click amendment remains separate24/48",
+      "passed": true
+    },
+    {
+      "name": "all12 prior workitems and44 findings crosswalked",
+      "passed": true
+    },
+    {
+      "name": "canonical adoption preserves exact contracts",
+      "passed": true
+    },
+    {
+      "name": "all30 adoption drafts package mapped",
+      "passed": true
+    },
+    {
+      "name": "elm-design-adoption exact EARS/scenario strings",
+      "passed": false
+    },
+    {
+      "error": "AssertionError('elm-design-adoption exact EARS/scenario strings')",
+      "passed": false
+    }
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseComplete": false
+}

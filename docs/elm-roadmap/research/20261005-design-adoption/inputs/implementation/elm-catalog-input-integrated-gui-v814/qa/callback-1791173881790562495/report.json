@@ -1,0 +1,99 @@
+{
+  "passed": true,
+  "commands": [
+    {
+      "name": "flags",
+      "command": [
+        "pkg-config",
+        "--cflags",
+        "--libs",
+        "gio-2.0"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0
+    },
+    {
+      "name": "current-compile",
+      "command": [
+        "cc",
+        "-std=c11",
+        "-D_GNU_SOURCE",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/callback-1791173881790562495/current.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/callback-1791173881790562495/current",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lgio-2.0",
+        "-lgobject-2.0",
+        "-lglib-2.0"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0
+    },
+    {
+      "name": "current-cases",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/callback-1791173881790562495/current",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/callback-1791173881790562495/current-assets"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0
+    },
+    {
+      "name": "omitted-activation-entry-compile",
+      "command": [
+        "cc",
+        "-std=c11",
+        "-D_GNU_SOURCE",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/callback-1791173881790562495/omitted-activation-entry.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/callback-1791173881790562495/omitted-activation-entry",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lgio-2.0",
+        "-lgobject-2.0",
+        "-lglib-2.0"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0
+    },
+    {
+      "name": "omitted-activation-entry-cases",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/callback-1791173881790562495/omitted-activation-entry",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/callback-1791173881790562495/omitted-activation-entry-assets"
+      ],
+      "exitCode": -6,
+      "expectedExitCode": -6
+    }
+  ],
+  "actualCallbackBodyExtractedExactly": true,
+  "actualFileIO": true,
+  "captureOnlyWebKitAPIFixture": true,
+  "actualNativeRequestObjectExecuted": false,
+  "specificOmissionMutantKilled": true,
+  "sourceSHA256": "08b5b5467890fa487f73fdd6bc8b2027b73d7618ab2de481d8e30061d1400c1a",
+  "sourceHeld": true,
+  "nativeLaunched": false,
+  "nativeAcceptance": false,
+  "productQualified": false,
+  "cases": 15,
+  "originalProductChangedOnlyActivationEntryAndSelftest": false,
+  "scope": "Actual same786 callback/asset-name in combined814 GUI; no overall product-byte equality claim"
+}

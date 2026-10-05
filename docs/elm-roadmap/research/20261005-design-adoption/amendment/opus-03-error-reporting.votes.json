@@ -1,0 +1,10 @@
+{
+  "reviewer": "opus-03-error-reporting",
+  "previousBallotSHA256": "129ac50d8fef08aecae1ae9c83bb6a0e2bba1e8c27e9587e9405d92887c6f936",
+  "finalBallotSHA256": "1f4ab93e1ab93afd94ea58511d8a426dbed8ccdc4e08096e6c80bf72e62aa78f",
+  "decision": "accept",
+  "requirement": "ELM-ADOPT-030",
+  "reason": "I endorse this change. amendment/change.json alters only the THEN clause of the supported-disabled-action scenario: 'unavailable state and reason' becomes 'unavailable state and any reason required by the frozen per-surface policy'. candidates-v3.json line 1959 contains that exact text. The scenario now agrees with the ELM-ADOPT-030 EARS and its guardrails, which already make the reason policy-specific and avoid a universal rule across GTK and Windows/APG. Stable position, exposed native unavailable state and no dispatch on activation are all kept. all-disabled-and-focus-retirement is unchanged. Safety is not weakened: when the disabled state comes from a Pending, Refused or Unknown outcome, ELM-ADOPT-020 and ELM-ADOPT-011 still independently require the correlated reason and safe next step from the reviewed catalog, so this edit cannot hide Unknown. My limits: I checked only this changed field. I did not diff the other 29 contracts or the other scenarios against v2, and I did not compute either SHA256 because I had no shell. Both of those rest on the coordinator's statement. This is my vote alone; I do not infer consensus or speak for other reviewers. It implies no native acceptance, baseline expansion or product selection. I made no edits, ran no GUI and spawned no agents.",
+  "requiredChanges": [],
+  "carryForwardUnchangedVotes": true
+}

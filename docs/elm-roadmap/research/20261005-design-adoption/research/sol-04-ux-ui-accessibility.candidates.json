@@ -1,0 +1,180 @@
+[
+  {
+    "id": "SOL04-01",
+    "title": "Preserve control identity across publication and focus changes",
+    "classification": "refinement",
+    "ears": "WHEN a presentation publication changes while a shell scope retains focus, the host SHALL preserve the focused surviving control identity, reject activation captured for retired or changed-scope identities, and apply the frozen eligible fallback only when that control is no longer eligible.",
+    "baselineIds": [
+      "ELM-UI-011",
+      "ELM-UX-023",
+      "ELM-UX-024"
+    ],
+    "workItems": [
+      "W07"
+    ],
+    "sources": [
+      "https://developer.gnome.org/hig/guidelines/keyboard.html",
+      "https://learn.microsoft.com/en-us/windows/apps/develop/input/keyboard-interactions"
+    ],
+    "scenarios": [
+      {
+        "name": "SOL04-01-scenario-1",
+        "given": "Close is focused while another row is selected",
+        "when": "an unrelated catalog publication arrives",
+        "then": "Close keeps focus and the next activation invokes only Close"
+      },
+      {
+        "name": "SOL04-01-scenario-2",
+        "given": "an activation press belongs to a window incarnation and lease",
+        "when": "that incarnation retires and the row position is reused before release",
+        "then": "release dispatches no replacement action and eligible fallback remains reachable"
+      }
+    ],
+    "priority": "P0",
+    "tradeoffs": "Identity propagation and native focus evidence; preserve identity rather than index or automatic selected-row refocus."
+  },
+  {
+    "id": "SOL04-02",
+    "title": "Treat native semantics and announcements as a coherent projection",
+    "classification": "refinement",
+    "ears": "WHEN a correlated shell outcome is presented on multiple projections, the shell SHALL expose its current control semantics through the native bridge and announce it once under the frozen interruption policy without changing keyboard focus.",
+    "baselineIds": [
+      "ELM-UI-009",
+      "ELM-UI-010",
+      "ELM-UX-025",
+      "ELM-UX-026"
+    ],
+    "workItems": [
+      "W08",
+      "W07",
+      "W06"
+    ],
+    "sources": [
+      "https://gnome.pages.gitlab.gnome.org/orca/help/howto_forms.html",
+      "https://docs.gtk.org/gtk4/method.Accessible.announce.html"
+    ],
+    "scenarios": [
+      {
+        "name": "SOL04-02-scenario-1",
+        "given": "bar and popup show the same pending operation",
+        "when": "the matching refusal arrives twice",
+        "then": "one relevant refusal is announced, both projections show the same outcome, and focus remains on the user's control"
+      },
+      {
+        "name": "SOL04-02-scenario-2",
+        "given": "a preview image has retired while its restore control survives",
+        "when": "AT explores the control",
+        "then": "source state and supported action are available without an actionable image object or stale-incarnation activation"
+      }
+    ],
+    "priority": "P0",
+    "tradeoffs": "One outcome owner requires lifecycle correlation and native speech/braille inspection; API availability differs by ABI."
+  },
+  {
+    "id": "SOL04-03",
+    "title": "Qualify composition as native field ownership",
+    "classification": "duplicate",
+    "ears": "WHILE an input method owns a shell field composition, the host SHALL preserve native preedit and candidate interaction, suppress shell handling of consumed keys, and accept commits only for the current field identity and composition generation.",
+    "baselineIds": [
+      "ELM-UI-012",
+      "ELM-UX-028"
+    ],
+    "workItems": [
+      "W07"
+    ],
+    "sources": [
+      "https://docs.gtk.org/gtk4/method.IMContext.filter_keypress.html",
+      "https://raw.githubusercontent.com/GNOME/gtk/main/gtk/gtkimcontext.h",
+      "https://gnome.pages.gitlab.gnome.org/orca/help/howto_forms.html"
+    ],
+    "scenarios": [
+      {
+        "name": "SOL04-03-scenario-1",
+        "given": "a launcher field has active preedit",
+        "when": "the input method consumes Enter to commit text",
+        "then": "the query receives the commit once and no launch occurs from that consumed key"
+      },
+      {
+        "name": "SOL04-03-scenario-2",
+        "given": "composition belongs to a retired field generation",
+        "when": "its delayed commit arrives after a new field takes focus",
+        "then": "neither field nor shell action receives the stale commit"
+      }
+    ],
+    "priority": "P0",
+    "tradeoffs": "Native IME campaigns are costly; toolkit API examples cannot be transplanted across host lanes."
+  },
+  {
+    "id": "SOL04-04",
+    "title": "Preserve hierarchy and reachability under constrained geometry",
+    "classification": "refinement",
+    "ears": "WHEN output geometry, text scale or label length changes, the shell SHALL preserve readable control names, visible focus, non-color state cues and keyboard-reachable actions using the frozen contrast, geometry and reflow policy.",
+    "baselineIds": [
+      "ELM-UI-013",
+      "ELM-UX-027",
+      "ELM-UI-019"
+    ],
+    "workItems": [
+      "W08"
+    ],
+    "sources": [
+      "https://faculty.washington.edu/wobbrock/pubs/taccess-11.pdf",
+      "https://raw.githubusercontent.com/KDE/kirigami/master/src/controls/Action.qml",
+      "https://learn.microsoft.com/en-us/windows/apps/develop/input/keyboard-interactions"
+    ],
+    "scenarios": [
+      {
+        "name": "SOL04-04-scenario-1",
+        "given": "enlarged text and long localized labels on a small output",
+        "when": "the picker opens",
+        "then": "every action remains reachable and focused labels are legible according to the frozen oracle"
+      },
+      {
+        "name": "SOL04-04-scenario-2",
+        "given": "a popup owns focus on a removed output",
+        "when": "surviving-output recovery runs",
+        "then": "its declared fallback or rehosted scope is reachable and removed-generation input cannot activate controls"
+      }
+    ],
+    "priority": "P1",
+    "tradeoffs": "Layout choices need measured geometry and AT bounds; freeze thresholds before qualification."
+  },
+  {
+    "id": "SOL04-05",
+    "title": "Make action discovery agree with acknowledged outcomes",
+    "classification": "refinement",
+    "ears": "WHEN a user discovers or invokes a shell action, the shell SHALL expose its frozen meaning and correlated outcome, preserve user context on refusal, and offer keyboard-reachable guidance and reconciliation without automatic replay of Unknown operations.",
+    "baselineIds": [
+      "ELM-UI-005",
+      "ELM-UI-007",
+      "ELM-UI-015",
+      "ELM-UI-020"
+    ],
+    "workItems": [
+      "W07",
+      "W08",
+      "W01",
+      "W02"
+    ],
+    "sources": [
+      "https://www.cs.umd.edu/~ben/papers/Shneiderman1983Direct.pdf",
+      "https://raw.githubusercontent.com/KDE/kirigami/master/src/controls/Action.qml"
+    ],
+    "scenarios": [
+      {
+        "name": "SOL04-05-scenario-1",
+        "given": "a minimized generic application family is selected",
+        "when": "activation is refused natively",
+        "then": "it is not shown as restored, the reason and next action are reachable, and its preserved identity remains selected"
+      },
+      {
+        "name": "SOL04-05-scenario-2",
+        "given": "an operation has Unknown disposition and guidance was dismissed",
+        "when": "the user opens help or recovery with the keyboard",
+        "then": "guidance is available without resetting the desktop and reconciliation creates no automatic repeated mutation"
+      }
+    ],
+    "priority": "P1",
+    "tradeoffs": "Shared vocabulary must follow native outcomes; no optimistic success or Unknown replay."
+  }
+]

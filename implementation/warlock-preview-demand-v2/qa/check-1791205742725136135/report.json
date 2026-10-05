@@ -1,0 +1,82 @@
+{
+  "passed": false,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-37b0f06ce89641ada8a9f454e4a88002.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "src/preview_broker.hpp": "54e2ced192b718dfeb0a09bc29b35b748eb7d933ac51b78807ec0e9bb02db9c8",
+    "src/demand.hpp": "7994f0df198a2ed6acef5a380f64f61a5d287dc541a373db87b877a77ceea7cc",
+    "spec/demand.qnt": "734fb17bbfad26210f71944431d9522a391486894f44209807c21dc676da9060",
+    "spec/tests.qnt": "5e9a8f45cc16df53a15a7614a044d6a617b05b1d97acee63ea75bb3059ce3560",
+    "qa/checks.cpp": "de36a198886ac5d61d18f0b87e372652a6697d392590656459aca93c16023aed",
+    "qa/check.py": "0e289e27f52a4f51e49e0398b542266759b9c4dc6f4cecdffac8c3cffcf916d1"
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "commands": [
+    {
+      "name": "compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-O1",
+        "-g",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v2/qa/check-1791205742725136135/inputs/src",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v2/qa/check-1791205742725136135/inputs/qa/checks.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v2/qa/check-1791205742725136135/checks"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "compiled-controls",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-demand-v2/qa/check-1791205742725136135/checks"
+      ],
+      "exitCode": 1,
+      "expected": 0
+    }
+  ],
+  "projection": "latest/captured/issuedLease,busy,broker activeItems,visible,native-now,last-start,lease and broker floor for one fixed native lifetime/domain/entry; exact scope/auth/fence/deadline/bytes outside abstraction covered separately, not complete concrete-field refinement",
+  "fixedFixture": {
+    "binding": [
+      1,
+      2,
+      3
+    ],
+    "incarnation": 4,
+    "output": 5,
+    "privacy": 6,
+    "rendering": 7,
+    "scene": 8,
+    "clock": 10,
+    "origin": 11,
+    "cost": 32,
+    "items": 2,
+    "bytes": 64,
+    "interval": 2,
+    "freshDeadline": "native now+100 for a NEW job; no old deadline renewed"
+  },
+  "toolSHA256": "bd6e9400f6358a8a69d80eb636eb62f59f993039868a7be9719f76ba74191b4e",
+  "error": "AssertionError('producer completion preserves physical charge\\n')",
+  "artifacts": {
+    "checks": "2ea539f5ed2793aab194a399da5004d3d93f4bed7ea1abfe8bb861b716337c9e",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compiled-controls.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compiled-controls.stderr": "262a9f2d0139c503e0c6717a88628aea874cda8c0ec16ccd3f203064adf500c8",
+    "inputs/src/preview_broker.hpp": "54e2ced192b718dfeb0a09bc29b35b748eb7d933ac51b78807ec0e9bb02db9c8",
+    "inputs/src/demand.hpp": "7994f0df198a2ed6acef5a380f64f61a5d287dc541a373db87b877a77ceea7cc",
+    "inputs/spec/demand.qnt": "734fb17bbfad26210f71944431d9522a391486894f44209807c21dc676da9060",
+    "inputs/spec/tests.qnt": "5e9a8f45cc16df53a15a7614a044d6a617b05b1d97acee63ea75bb3059ce3560",
+    "inputs/qa/checks.cpp": "de36a198886ac5d61d18f0b87e372652a6697d392590656459aca93c16023aed",
+    "inputs/qa/check.py": "0e289e27f52a4f51e49e0398b542266759b9c4dc6f4cecdffac8c3cffcf916d1"
+  }
+}

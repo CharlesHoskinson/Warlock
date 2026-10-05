@@ -1,0 +1,197 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "ignore-current-request-compile",
+      "args": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/elm",
+        "make",
+        "src/BatchReplay.elm",
+        "--optimize",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/ignore-current-request/worker.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "ignore-current-request-counterexample",
+      "args": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/catalog-controls.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/ignore-current-request/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/ready-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/baseline-worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/probe",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/effect-controls.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/ignore-current-request/packet.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/ignore-current-request/controls.json"
+      ],
+      "exitCode": 1
+    },
+    {
+      "name": "remint-current-popup-lease-compile",
+      "args": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/elm",
+        "make",
+        "src/BatchReplay.elm",
+        "--optimize",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/remint-current-popup-lease/worker.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "remint-current-popup-lease-counterexample",
+      "args": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/catalog-controls.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/remint-current-popup-lease/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/ready-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/baseline-worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/probe",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/effect-controls.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/remint-current-popup-lease/packet.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/remint-current-popup-lease/controls.json"
+      ],
+      "exitCode": 1
+    },
+    {
+      "name": "omit-local-catalog-proof-compile",
+      "args": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/elm",
+        "make",
+        "src/BatchReplay.elm",
+        "--optimize",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/omit-local-catalog-proof/worker.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "omit-local-catalog-proof-counterexample",
+      "args": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/catalog-controls.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/omit-local-catalog-proof/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/ready-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/baseline-worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/probe",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/effect-controls.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/omit-local-catalog-proof/packet.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/omit-local-catalog-proof/controls.json"
+      ],
+      "exitCode": 1
+    },
+    {
+      "name": "ignore-exact-native-wire-compile",
+      "args": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/elm",
+        "make",
+        "src/BatchReplay.elm",
+        "--optimize",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/ignore-exact-native-wire/worker.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "ignore-exact-native-wire-counterexample",
+      "args": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/catalog-controls.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/ignore-exact-native-wire/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/ready-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/baseline-worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/probe",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/effect-controls.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/ignore-exact-native-wire/packet.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/ignore-exact-native-wire/controls.json"
+      ],
+      "exitCode": 1
+    },
+    {
+      "name": "flags",
+      "args": [
+        "pkg-config",
+        "--cflags",
+        "--libs",
+        "gtk+-3.0",
+        "webkit2gtk-4.1",
+        "gtk-layer-shell-0",
+        "json-glib-1.0",
+        "gio-unix-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "uncertain-popup-classification-compile",
+      "args": [
+        "cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-deprecated-declarations",
+        "qa/catalog-probe.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/uncertain-popup-classification/probe",
+        "-I/usr/include/webkitgtk-4.1",
+        "-I/usr/include/libsoup-3.0",
+        "-I/usr/include/gtk-layer-shell",
+        "-I/usr/include/gtk-3.0",
+        "-I/usr/include/pango-1.0",
+        "-I/usr/include/cloudproviders",
+        "-I/usr/include/cairo",
+        "-I/usr/include/gdk-pixbuf-2.0",
+        "-I/usr/include/glycin-2",
+        "-I/usr/include/at-spi2-atk/2.0",
+        "-I/usr/include/at-spi-2.0",
+        "-I/usr/include/atk-1.0",
+        "-I/usr/include/dbus-1.0",
+        "-I/usr/lib/dbus-1.0/include",
+        "-I/usr/include/fribidi",
+        "-I/usr/include/pixman-1",
+        "-I/usr/include/harfbuzz",
+        "-I/usr/include/freetype2",
+        "-I/usr/include/libpng16",
+        "-I/usr/include/json-glib-1.0",
+        "-I/usr/include/gio-unix-2.0",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lwebkit2gtk-4.1",
+        "-lsoup-3.0",
+        "-ljavascriptcoregtk-4.1",
+        "-lgtk-layer-shell",
+        "-lgtk-3",
+        "-lgdk-3",
+        "-lpangocairo-1.0",
+        "-lcairo-gobject",
+        "-lgdk_pixbuf-2.0",
+        "-latk-1.0",
+        "-lpango-1.0",
+        "-lcairo",
+        "-lharfbuzz",
+        "-ljson-glib-1.0",
+        "-lgio-2.0",
+        "-lgobject-2.0",
+        "-lgmodule-2.0",
+        "-pthread",
+        "-lglib-2.0",
+        "-lz"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "uncertain-popup-classification-counterexample",
+      "args": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/uncertain-popup-classification/probe",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-controls-1791173703109781991/packet.json",
+        "catalog"
+      ],
+      "exitCode": -6
+    }
+  ],
+  "nativeAcceptance": false,
+  "scope": "Four actual compiled Elm guard/source mutants and one actual C classification mutant rejected by preserved original/candidate controls; source retained per mutation, no product or frozen-source mutation"
+}

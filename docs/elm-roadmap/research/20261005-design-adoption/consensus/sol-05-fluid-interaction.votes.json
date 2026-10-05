@@ -1,0 +1,218 @@
+{
+  "reviewer": "sol-05-fluid-interaction",
+  "ballotSHA256": "ae1d72ea0b44236c40cc9e94db47c3b9e180660b207378097c45c833caf7807e",
+  "philosophySHA256": "b042de217ebf1fdc3667d7e06fce96a2c1d1c9c100a466bfc5281617f2b3b11f",
+  "votes": [
+    {
+      "id": "ELM-ADOPT-001",
+      "decision": "accept",
+      "reason": "Complete recorded inputs, processed coverage and effect isolation prevent a vacuous replay pass; both scenarios preserve native acceptance limits.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-002",
+      "decision": "accept",
+      "reason": "Proof-safe compaction preserves Unknown, cleanup and replay floors while permitting explicit admission refusal; neither scenario equates rotation with retirement.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-003",
+      "decision": "accept",
+      "reason": "Checkpoint coherence precedes admission and retains historical uncertainty and original deadlines, including interrupted migration.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-004",
+      "decision": "accept",
+      "reason": "Conditional caching preserves an uncached oracle and exact revision dependencies; measured benefit remains an adoption criterion rather than a mandatory caching mechanism.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-005",
+      "decision": "accept",
+      "reason": "State-and-command abstraction mapping catches equal-state wrong-order executions without overstating bounded exploration or native coverage.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-006",
+      "decision": "accept",
+      "reason": "Typed internal identities improve boundary discipline while authenticated native context remains authoritative; malformed input does not enter a reducer.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-007",
+      "decision": "refine",
+      "reason": "The universal native committed prerequisite is too narrow: preview dependencies can require reader drainage, release or presentation evidence rather than a window Committed receipt.",
+      "requiredChanges": [
+        "Replace universal matching native committed receipt with matching authenticated native evidence required by the recorded operation/protocol-specific prerequisite; retain the restore-before-activate scenarios as Committed examples and explicitly prohibit substituting window commitment for preview drain/release/presentation."
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-008",
+      "decision": "accept",
+      "reason": "Actor-specific legal transitions and protocol-specific outcomes correctly separate window commitment from preview drainage and presentation.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-009",
+      "decision": "accept",
+      "reason": "Admission, transfer and cleanup accounting correctly distinguish cancellation intent from physical retirement and preserve held-reader obligations.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-010",
+      "decision": "accept",
+      "reason": "Native original clock, origin and deadline are preserved independently of causal counters and epochs; late knowledge is not timely success.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-011",
+      "decision": "accept",
+      "reason": "Validated correlated outcomes preserve Unknown and bounded truthful refusal fallback without giving malformed schema authority.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-012",
+      "decision": "accept",
+      "reason": "A semantic announcement owner plus a qualified AT delivery route handles outside-shell focus and distinct late outcomes without deadline renewal.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-013",
+      "decision": "accept",
+      "reason": "Allowlisted bounded diagnostics cannot obstruct control or compact authority; loss counters and disabled-execution comparison are appropriate.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-014",
+      "decision": "accept",
+      "reason": "Availability recovery is correctly separate from historical effect success, durable reservations and deadline acceptance.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-015",
+      "decision": "accept",
+      "reason": "Accept only as the written optional future local-export contract; its explicit deferrability prevents new mandatory release scope and excludes unsafe default evidence.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-016",
+      "decision": "accept",
+      "reason": "Press-time identity and native AT-focused activation prevent row reuse and unrelated publication from redirecting a user action.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-017",
+      "decision": "accept",
+      "reason": "Native semantics remain a coherent projection with inert images and stable accessible labels; announcement scenario relies appropriately on candidate012.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-018",
+      "decision": "accept",
+      "reason": "Native composition ownership and consumed-key suppression preserve field generations and prohibit stale commit or shortcut leakage.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-019",
+      "decision": "accept",
+      "reason": "Frozen measurable layout and reachability policy makes constrained output and hotplug scenarios falsifiable without assuming CSS proves native behavior.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-020",
+      "decision": "accept",
+      "reason": "Truthful refused/Unknown guidance preserves independent controls and identity without queueing stale input or replaying effects.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-021",
+      "decision": "accept",
+      "reason": "Stage separation and flags/missing-event declarations match my research; queued image load cannot prove physical completion and stale output evidence cannot settle a replacement.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-022",
+      "decision": "refine",
+      "reason": "The close-race scenario prohibits every new capture until an existing reservation is released even if unrelated capacity is available; this overstates bounded admission and could block independent demand.",
+      "requiredChanges": [
+        "Change Close during producer reservation THEN to prohibit new capture for the closed demand while retaining its owner and cleanup; permit other authorized demand only against independently available eligible capacity and prohibit reuse of the held reservation before matching release."
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-023",
+      "decision": "accept",
+      "reason": "Native last-presented geometry and the approved live reduced profile preserve the existing commitment and cleanup contracts without deadline resets.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-024",
+      "decision": "accept",
+      "reason": "Same-machine stage-qualified distributions and observer-overhead comparison preserve budget freezing and honestly block missing physical measurements.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-025",
+      "decision": "accept",
+      "reason": "Proof identity is correctly separated from transport continuity; authenticated duplicate proofs can finish safe Ack retries without invented global order.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-026",
+      "decision": "accept",
+      "reason": "Measured capture impact can reject a route without assuming synchronous capture is already a regression; unavailable fallback cannot close mandatory family/source-stop gates.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-027",
+      "decision": "accept",
+      "reason": "Bounded persistent demand addresses the paired reviewers lost-final-update finding while follow-up admission is a genuinely new native-scoped request, not deadline renewal.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-028",
+      "decision": "accept",
+      "reason": "Source liveness and pixel freshness are separated without importing the paired reviewers unconditional Live label or changing original S09 assertions.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-029",
+      "decision": "accept",
+      "reason": "Native bounded keyboard entry and exit preserve eligible identity and frozen MRU policy without prescribing EXCLUSIVE mode or a shortcut.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-030",
+      "decision": "accept",
+      "reason": "Per-surface disabled navigation remains a frozen product contract and preserves right-click amendment and unsupported-action distinctions.",
+      "requiredChanges": []
+    }
+  ],
+  "philosophy": {
+    "decision": "accept",
+    "reason": "The ten principles faithfully connect confidence, one policy controller, native physical authority, stage-qualified feedback, continuity, native accessibility, owned cleanup, consistent customization, bounded resource use and evidence-based release. They guide concrete choices without claiming current acceptance. The esoteric replacement name is editorial and carries no technical vote or gate.",
+    "requiredChanges": []
+  },
+  "remainingWork": {
+    "decision": "refine",
+    "reason": "The closure inventory preserves mandatory S01-S16, conditional C00-C06, right-click24, original counts and deadlines, but S09 source-state labeling needs the same liveness-versus-freshness precision as candidate028 to avoid reintroducing the paired reviewers proposed unconditional Live labeling.",
+    "requiredChanges": [
+      "Clarify the S09 outcome so source liveness, captured revision and frame freshness are separately verified under the frozen historical/live/unavailable policy; neither a live source nor a retained authorized lease by itself permits calling stale pixels current. Preserve original13 S09 oracles verbatim."
+    ]
+  },
+  "disagreements": [
+    {
+      "id": "ELM-ADOPT-007",
+      "issue": "A universal Committed prerequisite can collapse operation-specific native evidence."
+    },
+    {
+      "id": "ELM-ADOPT-022",
+      "issue": "Closed demand and held image ownership must not impose a global capture blockade when unrelated qualified capacity remains."
+    },
+    {
+      "id": "remainingWork:S09",
+      "issue": "Source-state labels alone must not imply current pixel content."
+    }
+  ],
+  "summary": "Independent second-round review after reading paired opus-05-fluid-interaction and sol-02-typed-events. Vote:28 accept as guarded drafts,2 refine; philosophy accepted as design guidance,remaining work requires one labeling clarification. Native clock/presentation/deadline authority,admitted effects versus image ownership,all frozen cases,and unfinished-provider acceptance limits remain unchanged. No implementation choice or name preference is a new release gate."
+}

@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "observedUTC": "2026-10-05T13:28:05.713529+00:00",
+  "goalThread": "01a10577-e8bd-79d0-9344-518f3a72c97f",
+  "observedStatus": "blocked",
+  "userRequestedAutomaticContinuation": true,
+  "automaticContinuationArmed": false,
+  "createGoalAttempt": "rejected",
+  "toolError": "cannot create a new goal because this thread has an unfinished goal; complete the existing goal first",
+  "availableGoalTools": [
+    "create_goal",
+    "get_goal",
+    "update_goal"
+  ],
+  "resumeOperationAvailable": false,
+  "fullReleaseAccepted": false,
+  "disposition": "Keep unfinished goal truthful; retain implementation and next slice in the repository checkpoint. No replacement AI process or daemon started."
+}

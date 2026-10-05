@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    "actual loader refuses altered source buffer before execution",
+    "actual loader cache branch truncated",
+    "actual loader cache branch wrong-code",
+    "actual loader cache branch extra-record",
+    "actual loader cache branch wrong-code-stack",
+    "actual cache validator accepts exact compiled collector source",
+    "foreign sys.modules collector never executes or survives loader",
+    "actual executed collector file origin mismatch",
+    "actual executed collector cache origin mismatch",
+    "actual native wrapper archives parent owner bytes and preserves primary",
+    "archive I/O failure cannot replace original parent error",
+    "actual native AST unsafe deadline-reset rejected",
+    "actual native AST unsafe lost-archive-primary rejected",
+    "actual native AST unsafe guard-skip rejected"
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-parent-parallel-v391/qa/native.py": "66364e5817df4d93dedc2c48391d58f51ff9d182d99da4eda66a93f44c342a25",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-parent-parallel-v391/qa/parent_loader.py": "5fc27362a522652c5358c5415bb18d433117be6569ce77befe4cd17fbc19dfc0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-parent-parallel-v391/qa/parent_source.py": "24b76eff0139f52a8ace3c174647cbeb80b33694bd7c267be3aa7d186d042ab6",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-parent-parallel-v391/qa/loader-test.py": "c30f2712bfe000287ccbdf6fd2f1aae21894555adf55009d4c7d4a9c9863ae7b"
+  }
+}

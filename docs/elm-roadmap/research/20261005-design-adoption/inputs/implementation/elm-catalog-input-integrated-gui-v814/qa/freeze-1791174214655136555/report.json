@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "verifiedInventories": {
+    "778": 3372,
+    "786": 893
+  },
+  "productionDifferencesByParent": {
+    "778": [
+      "assets/activation.js",
+      "assets/bar-adapter.js",
+      "assets/bar.html",
+      "assets/popup-adapter.js",
+      "assets/popup.html",
+      "native/host.c",
+      "src/Bar.elm",
+      "src/CapturedAction.elm",
+      "src/Popup.elm",
+      "src/Presentation.elm",
+      "src/SurfaceRenderer.elm"
+    ],
+    "786": [
+      "native/host.c",
+      "native/shared-host.c",
+      "src/Desktop.elm",
+      "src/OutputController.elm",
+      "src/Surface.elm"
+    ]
+  },
+  "reports": {
+    "catalog-controls": "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-controls-1791173703109781991/report.json",
+    "catalog-mutations": "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/catalog-mutations-1791173881796956576/report.json",
+    "producer-candidate": "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/producer-candidate-1791174162038930203/report.json",
+    "negative": "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/negative-1791173731221423578/report.json",
+    "tests": "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/tests-1791173731277421227/report.json",
+    "ownership": "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/ownership-1791173731219825704/report.json",
+    "decoder": "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/decoder-1791173731221421461/report.json",
+    "callback": "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/callback-1791173881790562495/report.json",
+    "resource": "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/resource-closure-1791173881790424741/report.json",
+    "activation": "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/activation-1791174198376043295/report.json",
+    "build": "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-input-integrated-gui-v814/qa/build-1791174179201587518/report.json"
+  },
+  "nativeAcceptance": false,
+  "wholeGUIAcceptance": false,
+  "packetBudgetRecoveryGate": "OPEN",
+  "FIFOTransportGate": "OPEN"
+}

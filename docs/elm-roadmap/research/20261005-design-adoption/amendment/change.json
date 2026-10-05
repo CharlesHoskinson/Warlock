@@ -1,0 +1,34 @@
+{
+  "fromSHA256": "129ac50d8fef08aecae1ae9c83bb6a0e2bba1e8c27e9587e9405d92887c6f936",
+  "toSHA256": "1f4ab93e1ab93afd94ea58511d8a426dbed8ccdc4e08096e6c80bf72e62aa78f",
+  "requirement": "ELM-ADOPT-030",
+  "before": [
+    {
+      "name": "supported-disabled-action",
+      "given": "a state change disables a supported menu action",
+      "when": "the user navigates with the declared per-surface policy",
+      "then": "the action position remains stable, native AT exposes unavailable state and reason, and attempted activation dispatches no effect"
+    },
+    {
+      "name": "all-disabled-and-focus-retirement",
+      "given": "all menu actions are disabled or the focused action becomes disabled",
+      "when": "navigation, Enter/Space or Escape occurs",
+      "then": "the frozen policy keeps focus and dismissal reachable without invoking a disabled action or trapping focus"
+    }
+  ],
+  "after": [
+    {
+      "name": "supported-disabled-action",
+      "given": "a state change disables a supported menu action",
+      "when": "the user navigates with the declared per-surface policy",
+      "then": "the action position remains stable, native AT exposes unavailable state and any reason required by the frozen per-surface policy, and attempted activation dispatches no effect"
+    },
+    {
+      "name": "all-disabled-and-focus-retirement",
+      "given": "all menu actions are disabled or the focused action becomes disabled",
+      "when": "navigation, Enter/Space or Escape occurs",
+      "then": "the frozen policy keeps focus and dismissal reachable without invoking a disabled action or trapping focus"
+    }
+  ],
+  "reason": "Opus UX final-review objection: scenario reason availability must match frozen per-surface policy, consistent with EARS."
+}

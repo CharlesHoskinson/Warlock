@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "retrievedDate": "2026-10-05",
+  "method": "Direct web opens of primary author/publisher/maintainer materials; source limitations retained.",
+  "sources": [
+    {
+      "id": "ears",
+      "url": "https://alistairmavin.com/ears/",
+      "supportingClaim": "Originator guidance for event/state/optional/unwanted requirement clauses.",
+      "limits": "Format guidance, not acceptance."
+    },
+    {
+      "id": "openspec",
+      "url": "https://github.com/Fission-AI/OpenSpec/blob/main/docs/cli.md",
+      "supportingClaim": "Official change validation and spec-driven artifact workflow.",
+      "limits": "Pinned local CLI1.14.0; no automatic archive."
+    },
+    {
+      "id": "mvu-communicate",
+      "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ECOOP.2020.14",
+      "supportingClaim": "Session-typed MVU integration with linearity and model transitions.",
+      "limits": "Links calculus soundness is not a theorem about current Elm/C++ implementation."
+    },
+    {
+      "id": "elm-cmd",
+      "url": "https://raw.githubusercontent.com/elm/core/1.0.5/src/Platform/Cmd.elm",
+      "supportingClaim": "Managed effects and no batch-result ordering guarantee.",
+      "limits": "Data-level sequencing needs explicit native receipt dependencies."
+    },
+    {
+      "id": "reactive-streams",
+      "url": "https://github.com/reactive-streams/reactive-streams-jvm",
+      "supportingClaim": "Bounded asynchronous demand/backpressure and cancellation protocol.",
+      "limits": "Adopt channel distinctions; no JVM migration; retain lossless authority/cleanup channel."
+    },
+    {
+      "id": "presentation",
+      "url": "https://raw.githubusercontent.com/wayland-mirror/wayland-protocols/main/stable/presentation-time/presentation-time.xml",
+      "supportingClaim": "Per-commit presented/discarded feedback with named clock domain and output/hardware flags.",
+      "limits": "Mirror of upstream source, not measured hardware evidence; direct freedesktop access denied. Input clock is distinct."
+    },
+    {
+      "id": "menu-button",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/",
+      "supportingClaim": "Enter/Space opens menu; role and expanded state contract.",
+      "limits": "DOM semantics do not qualify native AT/IME."
+    },
+    {
+      "id": "gtk",
+      "url": "https://docs.gtk.org/gtk3/",
+      "supportingClaim": "Host API and widget input/accessibility behavior documentation.",
+      "limits": "Actual installed library/source pins and native behavior need qualification."
+    },
+    {
+      "id": "webkit",
+      "url": "https://webkitgtk.org/reference/webkit2gtk/stable/class.WebView.html",
+      "supportingClaim": "WebView APIs including scripting/process/view lifecycle.",
+      "limits": "Host APIs do not establish acceleration, presentation or resource drain."
+    }
+  ],
+  "failures": [
+    {
+      "url": "https://gitlab.freedesktop.org/wayland/wayland-protocols/-/blob/main/stable/presentation-time/presentation-time.xml",
+      "reason": "Anubis access denial; source XML read through mirror instead."
+    },
+    {
+      "url": "https://developer.gnome.org/hig/patterns/feedback/error-pages.html",
+      "reason": "Tool returned inaccessible; not relied on as evidence."
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "reviewer": "sol-04-ux-ui-accessibility",
+  "ballotSHA256": "ae1d72ea0b44236c40cc9e94db47c3b9e180660b207378097c45c833caf7807e",
+  "philosophySHA256": "b042de217ebf1fdc3667d7e06fce96a2c1d1c9c100a466bfc5281617f2b3b11f",
+  "votes": [
+    {
+      "id": "ELM-ADOPT-001",
+      "decision": "accept",
+      "reason": "Complete replay and processed coverage prevent vacuous passes; both scenarios keep native mutations isolated and original clock evidence distinct.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-002",
+      "decision": "accept",
+      "reason": "Proof-safe retention preserves Unknown, replay floors and held cleanup under both compaction scenarios; diagnostics rotation grants no reclamation authority.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-003",
+      "decision": "accept",
+      "reason": "Coherent recovery and interrupted synchronization scenarios preserve uncertainty and original deadlines without requiring database replacement.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-004",
+      "decision": "refine",
+      "reason": "The unchanged-dependency scenario requires measured recomputation improvement although the EARS requires equivalence and validity only. Optional caching may fail to improve performance without violating projection correctness.",
+      "requiredChanges": [
+        "Change Unchanged dependency THEN to require uncached-equivalent output and measured recomputation/resource results evaluated against frozen budgets; make improvement a separately measured optimization-adoption criterion rather than guaranteed correctness behavior."
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-005",
+      "decision": "accept",
+      "reason": "Transition and ordered-command comparison catches equal-final-state failures while declaring abstraction assumptions; bounded exploration remains explicitly limited.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-006",
+      "decision": "refine",
+      "reason": "The Foreign input scenario promises correlated refusal for malformed or foreign payloads even when no trusted correlation exists. Rejecting an invalid envelope must not fabricate a terminal Refused outcome for an admitted request.",
+      "requiredChanges": [
+        "For malformed/foreign input require no admitted event or mutation and a bounded rejection diagnostic; retain correlated refusal only where validated request correlation and an authoritative protocol-specific refusal actually exist."
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-007",
+      "decision": "accept",
+      "reason": "Restore-before-activate and wrong-prerequisite scenarios preserve native sequencing and leave unrelated controls independent.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-008",
+      "decision": "accept",
+      "reason": "Actor-specific transition reachability avoids conflating Committed with Released/fenced/presented; illegal-retirement scenario retains native drainage.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-009",
+      "decision": "accept",
+      "reason": "Admission, transfers and cleanup remain charged until matched completion; both cancellation race and held-reader scenarios respect physical retirement.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-010",
+      "decision": "accept",
+      "reason": "Causal delivery, epochs and native timing are explicitly distinct; restart and gap scenarios do not renew deadlines or replay mutation.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-011",
+      "decision": "accept",
+      "reason": "User reporting follows validated knowledge rather than raw transport errors; unsent certificates stay request-specific and Unknown remains perceivable.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-012",
+      "decision": "accept",
+      "reason": "The AT-active or declared native/fallback delivery guardrail resolves the paired review concern that an unfocused bar can announce nothing. Both scenarios preserve distinct late knowledge transitions and deduplicate repeated outcomes; this is not proof that the current GTK3 route works.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-013",
+      "decision": "accept",
+      "reason": "Allowlisted diagnostics and loss counters remain independent of durable authority; canary and saturation scenarios test both privacy and settlement invariance.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-014",
+      "decision": "accept",
+      "reason": "Current availability is separated from historical effect success; recovery scenarios preserve exact identities and original fault/deadline obligations.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-015",
+      "decision": "defer",
+      "reason": "Local export is a defensible conditional contract, but product selection, accessible destination/review policy and measured export overhead remain unresolved; keep it deferred outside mandatory release closure.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-016",
+      "decision": "refine",
+      "reason": "The EARS permits fallback when a surviving control becomes ineligible, but its guardrail says fallback only on removal. This conflicts with disabled-focus transitions covered by030 and can preserve an unusable focus target.",
+      "requiredChanges": [
+        "Replace fallback only on removal with fallback only when the prior control is no longer eligible under the frozen per-surface policy; explicitly preserve a disabled-but-focusable control when030 permits it, and apply the declared fallback when it does not."
+      ]
+    },
+    {
+      "id": "ELM-ADOPT-017",
+      "decision": "accept",
+      "reason": "Native semantics, inert imagery and focus-versus-selection are explicit. Stable visible names with separately exposed descriptions improve continuity without prescribing a particular packet type. The first scenario is jointly dependent on012, not proof of announcement ownership from017 alone.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-018",
+      "decision": "accept",
+      "reason": "Composition consumes keys natively and stale commits bind to field/generation. Unlike the paired broad all-keys ban, this preserves the declared consumed-key contract without assuming every key during composition is swallowed.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-019",
+      "decision": "accept",
+      "reason": "Frozen geometry, reflow and non-color oracles govern constrained layouts; removal recovery scenario follows UI019 and does not claim screenshots qualify native reachability.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-020",
+      "decision": "accept",
+      "reason": "Correlated refusal and Unknown preserve user context, independent controls and keyboard recovery. Guidance scenario also relies on unchanged UI020; no automatic retry is introduced.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-021",
+      "decision": "accept",
+      "reason": "Feedback, commitment, submission, presentation and retirement stay separate; queued/stale-output scenarios do not mistake image load for physical completion.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-022",
+      "decision": "accept",
+      "reason": "Only replaceable observation domains coalesce; cancellation and cleanup capacity remain reliable under saturation and late-result scenarios.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-023",
+      "decision": "accept",
+      "reason": "Last-presented geometry and live reduced-motion rules preserve original identity/deadline/retirement semantics. Approved profile must be frozen and native-qualified, not inferred from queued samples.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-024",
+      "decision": "accept",
+      "reason": "Feedback and useful native completion measurements remain distinct, with explicit missing spans and observer overhead; no imported academic timing numbers.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-025",
+      "decision": "accept",
+      "reason": "Proof identity does not become a delivery ordinal. Per-channel continuity and known-safe idempotent Ack retries preserve cleanup under both scenarios.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-026",
+      "decision": "accept",
+      "reason": "Capture impact must be measured on all active outputs; rejection with truthful unavailability does not waive mandatory source-stop/family acceptance.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-027",
+      "decision": "accept",
+      "reason": "Bounded latest demand converges only when capacity and authorization permit. Follow-up is a genuinely new native request and cannot renew the first capture deadline.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-028",
+      "decision": "accept",
+      "reason": "Source liveness and captured frame freshness are separate; historical/unavailable policy and original13 preview assertions remain unchanged.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-029",
+      "decision": "accept",
+      "reason": "The paired report identifies an actual missing native bar-entry route. This contract qualifies bounded entry/exit, retired-output and lock behavior without imposing permanent EXCLUSIVE mode, a new default chord or changed MRU policy.",
+      "requiredChanges": []
+    },
+    {
+      "id": "ELM-ADOPT-030",
+      "decision": "accept",
+      "reason": "The per-surface disabled-navigation decision is honestly left to a versioned owner policy; stable positions, reasons, native AT availability and zero activation are required without universally making disabled items focusable.",
+      "requiredChanges": []
+    }
+  ],
+  "philosophy": {
+    "decision": "accept",
+    "reason": "The ten principles faithfully connect confidence, one controller, native physical truth, honest outcomes, continuity, complete accessibility, ownership/recovery, deliberate customization, measured cost and evidence. They guide concrete decisions such as rejecting focus stealing, stale-incarnation activation and speculative cleanup. Accord remains an editorial working name pending user preference, not technical unanimity or a release gate.",
+    "requiredChanges": []
+  },
+  "remainingWork": {
+    "decision": "accept",
+    "reason": "The package audit preserves242/417, S01\u2013S16, conditional C00\u2013C06, additive right-click24, original13 preview and38/34/52 identities/deadlines. S04 and S14 retain actual native AT/IME and keyboard gates; S02 freezes missing numeric/usability oracles, S09/S11 retain production capture/drain qualification, and S15/S16 require a coherent reversible release. The closure checklist is not evidence that every component is missing or accepted.",
+    "requiredChanges": []
+  },
+  "disagreements": [
+    "ELM-ADOPT-004 optimization benefit must be measured rather than guaranteed by an equivalence requirement.",
+    "ELM-ADOPT-006 malformed input cannot fabricate correlated Refused knowledge.",
+    "ELM-ADOPT-016 fallback guardrail must agree with030 eligibility policy.",
+    "ELM-ADOPT-015 remains deferred, not a mandatory release feature."
+  ],
+  "summary": "Cross-reviewed paired opus-04 and sol-03 error-reporting, exact30 EARS and60 scenarios, philosophy and remaining release work. Votes:26 accept as guarded drafts,3 refine,1 defer. AT-active announcement transport, native keyboard entry/exit, disabled-navigation and stable naming policies require actual native qualification and explicit policy freezing; no implementation, GUI or release acceptance is claimed."
+}
