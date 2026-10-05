@@ -1,0 +1,66 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "chain": [
+    {
+      "report": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-keyboardless-focus-v205/build-1791139089126747676/report.json",
+      "reportSHA256": "b898a709e06dc0c7e46eb0527e19d25dd4d02fa42506f01ef15bce6debff3f3d",
+      "archive": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-keyboardless-focus-v205/build-1791139089126747676/libhyprland_lib.a",
+      "archiveSHA256": "4797f9af33e433f6d4f130bdfc0900d6198e91fdf9a0e45e0594a3786cb67c27",
+      "rendererObjectSHA256": "9f29bd592bf6ff37967a12d9f9618a9a35033fa0ffc05ac3122de75c6690c903"
+    },
+    {
+      "report": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-xdg-origin-projection-v470/build-1791134095830955197/report.json",
+      "reportSHA256": "e8021cc9d7ca8ce9e8e1a9520bba54b1331fdb918cb4ac2f524c8aa4699edf92",
+      "archive": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-xdg-origin-projection-v470/build-1791134095830955197/libhyprland_lib.a",
+      "archiveSHA256": "a6cec90ddce9c8f599621bd0337192dd93d27fd469b583cb136e601a06fbff02",
+      "rendererObjectSHA256": "9f29bd592bf6ff37967a12d9f9618a9a35033fa0ffc05ac3122de75c6690c903"
+    },
+    {
+      "report": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-seat-focus-restoration-v450/build-1791131758410759196/report.json",
+      "reportSHA256": "85f8e502e544829db218c6efde32ec2916972fe2c74e295aabd653decc9bb9da",
+      "archive": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-seat-focus-restoration-v450/build-1791131758410759196/libhyprland_lib.a",
+      "archiveSHA256": "fb4d598657d9d756208e7dd0353b5e618bcbae023238e881c06a9af10adefa4b",
+      "rendererObjectSHA256": "9f29bd592bf6ff37967a12d9f9618a9a35033fa0ffc05ac3122de75c6690c903"
+    },
+    {
+      "report": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/build-1791107301396755104/report.json",
+      "reportSHA256": "78cf190a801980fd159d86acefd9e715f7dcd259608253e539ff2cb9a424656c",
+      "archive": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/build-1791107301396755104/libhyprland_lib.a",
+      "archiveSHA256": "7ad9657f8aa997e6bc1de3647dbdc82e1632c7b248a92d0abe22ac15e2ff5ad6",
+      "rendererObjectSHA256": "9f29bd592bf6ff37967a12d9f9618a9a35033fa0ffc05ac3122de75c6690c903"
+    },
+    {
+      "report": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-core-v73/core/build-1791106255338249967/report.json",
+      "reportSHA256": "673219a31839ff80f232bf61cd2d31b0d24d9f9f43e5fea44ac5f5c59d6dd2c6",
+      "archive": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-core-v73/core/build-1791106255338249967/libhyprland_lib.a",
+      "archiveSHA256": "bdc6e0e26094319c60bc9e6c28aca3372c54adeef7254aa52741dc4e6fb14942",
+      "rendererObjectSHA256": "9f29bd592bf6ff37967a12d9f9618a9a35033fa0ffc05ac3122de75c6690c903"
+    }
+  ],
+  "source": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-core-v73/core/build-1791106255338249967/owning-headers/src/render/Renderer.cpp",
+  "sourceSHA256": "be7f86da4716a53225e3c806f052923869515b4cfad994324c5866bb4bc47695",
+  "rendererObjectSHA256": "9f29bd592bf6ff37967a12d9f9618a9a35033fa0ffc05ac3122de75c6690c903",
+  "referenceSources": {
+    "src/render/GLRenderer.cpp": {
+      "referenceSourceSHA256": "2072807043b5d53a0910ebcc3936e69905abdf5905457d363f70d8c1043a4a81",
+      "baselineObjectSHA256": "24110e5b5049c8a2158895c78b7e456057801509377d836853e12409ed051aee",
+      "finalArchiveMemberSHA256": "24110e5b5049c8a2158895c78b7e456057801509377d836853e12409ed051aee",
+      "sourceCompilerClosureQualified": false
+    },
+    "src/render/OpenGL.cpp": {
+      "referenceSourceSHA256": "7bbf0f8f6714cc7ed7b6d17dbc670d75f5f17db54637def8d8b322ac3b873d58",
+      "baselineObjectSHA256": "d90ed9af60a3bdb4fca02ba1eec6e2ca695d3c02f75916fe1770f65983cd2b25",
+      "finalArchiveMemberSHA256": "d90ed9af60a3bdb4fca02ba1eec6e2ca695d3c02f75916fe1770f65983cd2b25",
+      "sourceCompilerClosureQualified": false
+    },
+    "src/render/pass/Pass.cpp": {
+      "referenceSourceSHA256": "529c5c9d55dd707c4bc98da38832b0006880d3948592678a31db62e876e34820",
+      "baselineObjectSHA256": "4bfa9810dc0e45b0b1b55e3cf512275c2b606ece7f52ce631b3168033b8d40ab",
+      "finalArchiveMemberSHA256": "4bfa9810dc0e45b0b1b55e3cf512275c2b606ece7f52ce631b3168033b8d40ab",
+      "sourceCompilerClosureQualified": false
+    }
+  },
+  "scope": "Renderer source dependency and unchanged linked object verified through core73/89/450/470/205; baseline GL/Pass objects unchanged, reference source closure separately unqualified"
+}

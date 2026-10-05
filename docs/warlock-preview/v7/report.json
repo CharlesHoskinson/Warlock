@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "scope": "Bounded isolated root-client source prototype, selected pure source-kind controls and native73; no eligible production capture, whole GUI or full release acceptance",
+  "components": {
+    "implementation/warlock-client-capture-v5": {
+      "manifestSHA256": "e51eb60211ea7dc5ebbd55c1bb54ebe2e397522f0d95a00794f24581594f9084",
+      "files": 1128
+    },
+    "implementation/warlock-client-capture-native-v5": {
+      "manifestSHA256": "6dddfa219f13eb5ca229164e0e1cfb1a49ab6b6d33146ad4a357a9d9945a9426",
+      "files": 32
+    },
+    "implementation/warlock-client-projection-v1": {
+      "manifestSHA256": "1d44a2f78d54e950a915e0513eb616d333ce1bb8e85631374e9640e89a5fe3b1",
+      "files": 6
+    }
+  },
+  "sourceBuildReport": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v5/qa/build-1791233354765496171/report.json",
+  "nativeReport": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-native-v5/qa/native-1791233397651613475/report.json",
+  "nativeChecks": 73,
+  "compiledControls": 2091,
+  "selectedQuintScenarios": 5,
+  "coupledStates": 507,
+  "previewEligible": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "nextWorkplan": "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v7/WORKPLAN.md"
+}

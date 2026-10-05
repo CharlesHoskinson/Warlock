@@ -1,0 +1,113 @@
+{
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "nativeLaunched": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "files": {
+    "fixture.py": {
+      "sha256": "c5f48bd68eb234779f3539faae8b2e1a86028df4d0dd16660af79fff5bfc8dd4",
+      "size": 5907
+    },
+    "pixels.cpp": {
+      "sha256": "6441055011a3d243ee7741d2207f4526f4031064db5e3a351fe50e1dedbbae36",
+      "size": 822
+    },
+    "SPEC.md": {
+      "sha256": "0d31beacc5b138634c11654f0f0ce248b17146c3e81986bb60193b3fafcc823c",
+      "size": 1440
+    },
+    "README.md": {
+      "sha256": "4c04e5907e69c1c60b42c661631c7d26a4552658105d6ac1d97e48588e3e7c2c",
+      "size": 513
+    },
+    "qa/prepare.py": {
+      "sha256": "daae2550fd48536683aa60306ea48abd0e1c059760462221de91568e7fedb7fa",
+      "size": 2819
+    },
+    "qa/native.py": {
+      "sha256": "5bec8096a1b0cfbc5e49d348ec3a36045c4bdae9d6570eb3586e858babd920b7",
+      "size": 14868
+    },
+    "qa/session_bus.py": {
+      "sha256": "d8f945a68a8e772ffd26458e8e60beac8c8ad79849f08a2daf4110f5c8178916",
+      "size": 1902
+    },
+    "qa/system_isolation.py": {
+      "sha256": "029a41bc8aae39936c69dc591857795aabd43df17b1f9a86b02b6c6a83dddc0e",
+      "size": 1109
+    },
+    "qa/isolation.py": {
+      "sha256": "95e6999ccb1528311e950d95bf855a00bc29327458152eb7943f1f01bce1ceb8",
+      "size": 7257
+    },
+    "qa/preflight.json": {
+      "sha256": "44a29b7df0a0ec6e81188ce18e1969335ef8d7a22ae233e7ccad168d1aa187f6",
+      "size": 615064
+    },
+    "qa/prepare-1791233059910462720/pixels": {
+      "sha256": "1e9c8df3d38146501878b12edeef13782025bc5ed05f6399285e18f401e6d457",
+      "size": 16896
+    },
+    "qa/prepare-1791233059910462720/compile.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/prepare-1791233059910462720/compile.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/prepare-1791233059910462720/report.json": {
+      "sha256": "def99fb2943cda29651e464df5e66185c09a5252b757d235ceaadfd013adc1e3",
+      "size": 613604
+    },
+    "qa/native-1791233060962035195/report.json": {
+      "sha256": "a8d8103635c96cbd76c5c2ce5dbadc97d17bcb4c422bdf83359d688f3f58d5d7",
+      "size": 223465
+    },
+    "qa/native-1791233060962035195/private-evidence/privateBus.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/native-1791233060962035195/private-evidence/weston.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/native-1791233060962035195/private-evidence/weston-renderer.log": {
+      "sha256": "4ce0a5b05e4f016c34ecb7f69ad35286824de17c050d99e054c90416c1099a32",
+      "size": 3782
+    },
+    "qa/native-1791233060962035195/private-evidence/dmabuf-probe.stdout": {
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    "qa/native-1791233060962035195/private-evidence/dmabuf-probe.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/native-1791233060962035195/private-evidence/hyprland.log": {
+      "sha256": "b1f8e548787bba8cb0bb84ee504cabf1c86d470c48092b6b91c2a3548f4c5eac",
+      "size": 99516
+    },
+    "qa/native-1791233060962035195/private-evidence/source.log": {
+      "sha256": "692120dbca9a5b9f92921b738ad97d0d1904ae5f6b54670d0c64329ae33c0e7c",
+      "size": 765
+    },
+    "qa/native-1791233060962035195/private-evidence/fixture-control.events.jsonl": {
+      "sha256": "bc82e61c323e7fb567c0b65450b326053359a0b4f6da4beb74e23e63d51f505f",
+      "size": 139
+    },
+    "qa/native-1791233060962035195/private-evidence/host-evidence.json": {
+      "sha256": "23261d6c11cf553f82f4a798b810fddf1fe575ffb1b1ee20b2a09fc4cc73c52d",
+      "size": 211379
+    },
+    "qa/native-1791233060962035195/private-evidence/runtime-archive/hyprland.lua": {
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "size": 241
+    },
+    "qa/native-1791233060962035195/private-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791233062_1239935335/hyprland.log": {
+      "sha256": "7eb834f3be1b9f720141414381ef4f8df9607253978ea9d176ffe72dc4a76960",
+      "size": 25623
+    }
+  }
+}

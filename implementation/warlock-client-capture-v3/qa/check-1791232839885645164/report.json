@@ -1,0 +1,421 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-216c7d235cb945fa868758539d7cbb22.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "native/CONTRACT.md": "78f18c44c18c1e895fb8672cadba8a40bfe8274453888f846d5b500e49b8ee19",
+    "native/authority.cpp": "7f524edde3b1b727bec3916945c7951155c4e0a937fb135627f4bdd7a9120e7d",
+    "native/geometry-effects.inc": "92469bb571662238085980bbdabbe0e8144ad45075fb08276ffd3fa1fdf33400",
+    "native/geometry.inc": "75d1d99e1297c61d541254f9b6f5c606709afd684b79275e77d701b4d88f1947",
+    "native/geometry-policy.inc": "3199de75489bf2ecd3fab19200c11e87668d602ec2fefdbd99c148cfc90ed404",
+    "native/binding-registration.hpp": "108be279d8ae3ab5948a78c478acdaa82441a08a93ead1318048c07491872fad",
+    "native/grant-registry.hpp": "9379fd3e014d38b3ac8f7d09e139c6710664d006f9499c6e46b0efd654705def",
+    "native/preview_uri.hpp": "fccf1cd38df5dede20511e5ef7bf453a64c973efb7270ba8dd940745cfd2c399",
+    "native/preview_broker.hpp": "b70ad3a81e495924be9f354d17439e6853aeb1cf6c733bd6cfb22fe14e45df80",
+    "native/preview_uri.cpp": "d960c1a3d0cd5a569e84af3d005e184d412c1d86ea6bef6f73ad55b1ab2eaa15",
+    "native/preview_png.hpp": "308007220baf1d7f2ad30569237ffaf7d6427d900ee1243811480402f188e670",
+    "native/preview_capture.hpp": "50d53edc405549f2ea6babd5501238cf59f7d7c3783cea8deeea2bb1bce9c60c",
+    "native/capture-probe.inc": "a2fbed2ca9122b3ab31b4c6a5352bfd43c06b2c8b313cee920afbaaeebd07a51",
+    "native/png_checks.cpp": "23a7f1df73acd7c3db612dfef8ee1c95815ec815a81ee62dcaded63e2d7eb95c",
+    "native/preview_fd.hpp": "44cd8506fe04b27c55fb85768dc3011c8fcc2c65c115ae3a2b638af0e4d08786",
+    "native/capture-fd-server.inc": "a5e178ed23497c646f05f923aed0ec75d04977b5adbe085c6745e675c59da1ea",
+    "native/source_epoch.hpp": "df64eec18b8bd62b0b21b73e3aabbc1a9db10f122af65e36f78a6147bd67860f",
+    "native/source-scope.inc": "4b43a3ffb6cde88105372035737cd1423a0c06503e7942f74d9f3b2272a762e8",
+    "native/client_plan.hpp": "cd115ca351556c1080104af149305c7921acd7e259f32e6ba6dbda8fef7568e3",
+    "native/client_capture.hpp": "e5ef753bc3afaa2e238cf3a5492c3151a70153c10c51c17d4ddfcef209c97741",
+    "native/client-probe.inc": "291951cb8f3dd94557b2a1dd60fb16633df51b87d865db2f92ab01110934a883",
+    "spec/planes.qnt": "0d4dd4a145a0832d4df6cbddfc4f231f311b2f7491cc1bc2765d2aa1cb411ac6",
+    "qa/check.py": "d827bc391b9d41db432cd737d7eaea797c12cb086e76534563417a62a6c6e135",
+    "qa/checks.cpp": "6bd3507913c618ba3553f07b793b3a6075d153a255e334547d86545f9d630c74"
+  },
+  "commands": [
+    {
+      "name": "compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-O1",
+        "-g",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/check-1791232839885645164/inputs/native",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/check-1791232839885645164/inputs/qa/checks.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/check-1791232839885645164/checks",
+        "-I/usr/include/libpng16",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lpng16",
+        "-lgio-2.0",
+        "-lgobject-2.0",
+        "-lglib-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "actual-controls",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/check-1791232839885645164/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/check-1791232839885645164/inputs/spec/planes.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/check-1791232839885645164/inputs/spec/planes.qnt",
+        "--main=planes",
+        "--backend=typescript",
+        "--match=^(rootRetainedTest|clientDistinctTest|mixedRejectedTest|emptyRejectedTest|unknownRejectedTest)$",
+        "--seed=720002",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/check-1791232839885645164/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "sampling",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/check-1791232839885645164/inputs/spec/planes.qnt",
+        "--main=planes",
+        "--backend=typescript",
+        "--invariant=safety",
+        "--seed=720003",
+        "--max-samples=300",
+        "--max-steps=40",
+        "--n-traces=12",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/check-1791232839885645164/sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-clientDistinctTest-1.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/check-1791232839885645164/checks",
+        "--flags"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-emptyRejectedTest-3.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/check-1791232839885645164/checks",
+        "--flags"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-mixedRejectedTest-2.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/check-1791232839885645164/checks",
+        "--flags"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-rootRetainedTest-0.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/check-1791232839885645164/checks",
+        "--flags"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-unknownRejectedTest-4.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/check-1791232839885645164/checks",
+        "--flags"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-0.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/check-1791232839885645164/checks",
+        "--flags"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-1.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/check-1791232839885645164/checks",
+        "--flags"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-10.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/check-1791232839885645164/checks",
+        "--flags"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-11.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/check-1791232839885645164/checks",
+        "--flags"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-2.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/check-1791232839885645164/checks",
+        "--flags"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-3.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/check-1791232839885645164/checks",
+        "--flags"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-4.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/check-1791232839885645164/checks",
+        "--flags"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-5.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/check-1791232839885645164/checks",
+        "--flags"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-6.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/check-1791232839885645164/checks",
+        "--flags"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-7.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/check-1791232839885645164/checks",
+        "--flags"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-8.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/check-1791232839885645164/checks",
+        "--flags"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-9.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/check-1791232839885645164/checks",
+        "--flags"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "projection": "Pure source-kind admission only; native context, authentication, GPU fence and all product policy outside this five-scenario model; actual memory/FD controls separately checked",
+  "compiledChecks": 2091,
+  "selectedNames": [
+    "rootRetainedTest",
+    "clientDistinctTest",
+    "mixedRejectedTest",
+    "emptyRejectedTest",
+    "unknownRejectedTest"
+  ],
+  "coupledTraces": [
+    {
+      "trace": "named-clientDistinctTest-1.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-emptyRejectedTest-3.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-mixedRejectedTest-2.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-rootRetainedTest-0.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-unknownRejectedTest-4.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "sample-0.itf.json",
+      "statesCompared": 41
+    },
+    {
+      "trace": "sample-1.itf.json",
+      "statesCompared": 41
+    },
+    {
+      "trace": "sample-10.itf.json",
+      "statesCompared": 41
+    },
+    {
+      "trace": "sample-11.itf.json",
+      "statesCompared": 41
+    },
+    {
+      "trace": "sample-2.itf.json",
+      "statesCompared": 41
+    },
+    {
+      "trace": "sample-3.itf.json",
+      "statesCompared": 41
+    },
+    {
+      "trace": "sample-4.itf.json",
+      "statesCompared": 41
+    },
+    {
+      "trace": "sample-5.itf.json",
+      "statesCompared": 41
+    },
+    {
+      "trace": "sample-6.itf.json",
+      "statesCompared": 41
+    },
+    {
+      "trace": "sample-7.itf.json",
+      "statesCompared": 41
+    },
+    {
+      "trace": "sample-8.itf.json",
+      "statesCompared": 41
+    },
+    {
+      "trace": "sample-9.itf.json",
+      "statesCompared": 41
+    }
+  ],
+  "namedScenarios": 5,
+  "invariantSamples": 300,
+  "maxSteps": 40,
+  "artifacts": {
+    "checks": "bfdf88fb4f93a8938b8f522138a4b70c996b05c6c600b349dc8bc487cde604d8",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual-controls.stdout": "4276af6565b29dd3722108df1058ef66e71637be6fc4da3a7b4594ef9659bda9",
+    "actual-controls.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-rootRetainedTest-0.itf.json": "89cd5c8ce8542ae3462ab222944e7cbe09bfd2fccd6d7a32ad67cdbc3ffa4b2e",
+    "named-clientDistinctTest-1.itf.json": "87f5f0224e9645f3bbfd9e8144e0ff2c9f26253bd3344b95dfff3ff7d1274a70",
+    "named-mixedRejectedTest-2.itf.json": "4321be79dadd4b54940fb79499d670c5dc68d868ca36675584a795adba963134",
+    "named-emptyRejectedTest-3.itf.json": "c3788dfe1935b83ce98cd4bc6be0b160862b0312738e0e976b0d4d0ad1dff414",
+    "named-unknownRejectedTest-4.itf.json": "1e8e0945446747dd0fe392426a8985a0923a7765c0325c05e6bb0ee0fdea2606",
+    "named.stdout": "d439fe779138f1e932a2c5b883c89bafabd18fce7d0339ce713dae16083e3f03",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "cb79a5c1598218e5f9a16c862f09ff34bd5a003a9f17eaab6eddda79bbdff901",
+    "sample-1.itf.json": "8f555c715f350f660ab3d7089d797bfaa470428428525a70d0440332e9ad1ed7",
+    "sample-2.itf.json": "8478266e5b1d48c862c8f48572d8a0b2f0bad85c65c88528ef8c32ecbc24ff11",
+    "sample-3.itf.json": "d91a67b0f2b073a0b147195f104cdbb3eb919056877fa796c56186fcfcd8cdc4",
+    "sample-4.itf.json": "2aacfd1c3d54cdbc5c5aa652035c2fd0ef2ac8d89d27dc740ddbf7009f2fec5e",
+    "sample-5.itf.json": "5e367a77de98cdd6a750b613434010e3a889526b2ebcf9a9051097ce3b35290a",
+    "sample-6.itf.json": "ad43e99e5262f080b0db26a2b64a3daaee6c2a276745955110178a9f2667e323",
+    "sample-7.itf.json": "d9fba6f5038e075a62dc6078a0529683d08be0721fc929644d39e796e26a0d37",
+    "sample-8.itf.json": "4191e18096642391bf5ff7a64e6934b92f1283798c9f94b10da4dbe78f586d09",
+    "sample-9.itf.json": "f9df7ddbbe5a9a0e8a34b8b53921e39dd78cdbe3f8932b1768c3b207a892bdbb",
+    "sample-10.itf.json": "cfac68086dafd8eecff7bf28932b7b8dcabf974af80183fbb60287055cf1d088",
+    "sample-11.itf.json": "94ce00f54facfe9ac3cbf7341482055efac0755ad0a5fbf6e5c60bdbd88bb043",
+    "sampling.stdout": "82bdcb459d0016319a2d9c8aa64d3daf6762b21fa4139ae731359bc733a07b50",
+    "sampling.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-clientDistinctTest-1.itf.stdout": "cfa0049e6e2e009d44ad154f79c31a7ccdcebdcf25d64ee2ed4ce0d9af89891f",
+    "replay-named-clientDistinctTest-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-emptyRejectedTest-3.itf.stdout": "e02d6865f76e4dce2dda645ddaca4d221390b78ba14d8fce4253611042e2b1f2",
+    "replay-named-emptyRejectedTest-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-mixedRejectedTest-2.itf.stdout": "e02d6865f76e4dce2dda645ddaca4d221390b78ba14d8fce4253611042e2b1f2",
+    "replay-named-mixedRejectedTest-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-rootRetainedTest-0.itf.stdout": "11583aba9dc7a02967861de5f7c84505272f57b16cf244e2d4f0ff303d7fea36",
+    "replay-named-rootRetainedTest-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-unknownRejectedTest-4.itf.stdout": "e02d6865f76e4dce2dda645ddaca4d221390b78ba14d8fce4253611042e2b1f2",
+    "replay-named-unknownRejectedTest-4.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-0.itf.stdout": "41e9c78648e1fcd19785e80ac3e36599de0d8ed3be880fec93637ae950fc6d78",
+    "replay-sample-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-1.itf.stdout": "da32927ce929c6a764a7028e8858842bba48b4aee07952a04c275e6d06513a49",
+    "replay-sample-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-10.itf.stdout": "04e79fa7a0b7f241fb7e045803fca06700343a45db197a8c0c34f9167237deb7",
+    "replay-sample-10.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-11.itf.stdout": "36d96119f34ce12192d273062d696760e3545abefe15d7481b7f7510d0ba48a0",
+    "replay-sample-11.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-2.itf.stdout": "db439d7a58a9c4a46c6b888202807734b32ad31d25c63334edf4662af9bbe351",
+    "replay-sample-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-3.itf.stdout": "a1f0cef33fa9971ed702bd4e90623e5e081fe583679375e29ddbdbc0695a688b",
+    "replay-sample-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-4.itf.stdout": "9ea52ce5d4cc78edee8df3cc99a06f0768fe598edb2a0a1b6be520c3f54f8469",
+    "replay-sample-4.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-5.itf.stdout": "0e71c997c8f76d05340fdfc0a52943bece05b5b92f07c2f6b91e40b19693ce65",
+    "replay-sample-5.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-6.itf.stdout": "461c65a2d58fca732a5e6eca0d03efffe2c0450e35ed0003aa170f96762a514d",
+    "replay-sample-6.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-7.itf.stdout": "59a458b7ee9a12f59d744c2722370f48393292ed115d2ca7da58e79780ddb4b6",
+    "replay-sample-7.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-8.itf.stdout": "de1264caa0f75e40efd53dc2fe9ed26fc5d5daa1fb1981df848f2c0aa72a5c24",
+    "replay-sample-8.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-9.itf.stdout": "52fa2ca30c7fd76a12fda693557cf43a29f2602d432d9a33448038217cc95c7d",
+    "replay-sample-9.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/native/CONTRACT.md": "78f18c44c18c1e895fb8672cadba8a40bfe8274453888f846d5b500e49b8ee19",
+    "inputs/native/authority.cpp": "7f524edde3b1b727bec3916945c7951155c4e0a937fb135627f4bdd7a9120e7d",
+    "inputs/native/geometry-effects.inc": "92469bb571662238085980bbdabbe0e8144ad45075fb08276ffd3fa1fdf33400",
+    "inputs/native/geometry.inc": "75d1d99e1297c61d541254f9b6f5c606709afd684b79275e77d701b4d88f1947",
+    "inputs/native/geometry-policy.inc": "3199de75489bf2ecd3fab19200c11e87668d602ec2fefdbd99c148cfc90ed404",
+    "inputs/native/binding-registration.hpp": "108be279d8ae3ab5948a78c478acdaa82441a08a93ead1318048c07491872fad",
+    "inputs/native/grant-registry.hpp": "9379fd3e014d38b3ac8f7d09e139c6710664d006f9499c6e46b0efd654705def",
+    "inputs/native/preview_uri.hpp": "fccf1cd38df5dede20511e5ef7bf453a64c973efb7270ba8dd940745cfd2c399",
+    "inputs/native/preview_broker.hpp": "b70ad3a81e495924be9f354d17439e6853aeb1cf6c733bd6cfb22fe14e45df80",
+    "inputs/native/preview_uri.cpp": "d960c1a3d0cd5a569e84af3d005e184d412c1d86ea6bef6f73ad55b1ab2eaa15",
+    "inputs/native/preview_png.hpp": "308007220baf1d7f2ad30569237ffaf7d6427d900ee1243811480402f188e670",
+    "inputs/native/preview_capture.hpp": "50d53edc405549f2ea6babd5501238cf59f7d7c3783cea8deeea2bb1bce9c60c",
+    "inputs/native/capture-probe.inc": "a2fbed2ca9122b3ab31b4c6a5352bfd43c06b2c8b313cee920afbaaeebd07a51",
+    "inputs/native/png_checks.cpp": "23a7f1df73acd7c3db612dfef8ee1c95815ec815a81ee62dcaded63e2d7eb95c",
+    "inputs/native/preview_fd.hpp": "44cd8506fe04b27c55fb85768dc3011c8fcc2c65c115ae3a2b638af0e4d08786",
+    "inputs/native/capture-fd-server.inc": "a5e178ed23497c646f05f923aed0ec75d04977b5adbe085c6745e675c59da1ea",
+    "inputs/native/source_epoch.hpp": "df64eec18b8bd62b0b21b73e3aabbc1a9db10f122af65e36f78a6147bd67860f",
+    "inputs/native/source-scope.inc": "4b43a3ffb6cde88105372035737cd1423a0c06503e7942f74d9f3b2272a762e8",
+    "inputs/native/client_plan.hpp": "cd115ca351556c1080104af149305c7921acd7e259f32e6ba6dbda8fef7568e3",
+    "inputs/native/client_capture.hpp": "e5ef753bc3afaa2e238cf3a5492c3151a70153c10c51c17d4ddfcef209c97741",
+    "inputs/native/client-probe.inc": "291951cb8f3dd94557b2a1dd60fb16633df51b87d865db2f92ab01110934a883",
+    "inputs/spec/planes.qnt": "0d4dd4a145a0832d4df6cbddfc4f231f311b2f7491cc1bc2765d2aa1cb411ac6",
+    "inputs/qa/check.py": "d827bc391b9d41db432cd737d7eaea797c12cb086e76534563417a62a6c6e135",
+    "inputs/qa/checks.cpp": "6bd3507913c618ba3553f07b793b3a6075d153a255e334547d86545f9d630c74"
+  }
+}

@@ -1,0 +1,16 @@
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/build-1791232832322860927/inputs/native/authority.cpp:44:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/build-1791232832322860927/inputs/native/client_capture.hpp: In member function ‘void preview::capture::captureOwnedClient(PHLWINDOW, Budget&, uint64_t, const std::function<bool()>&)::Restore::reset()’:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/build-1791232832322860927/inputs/native/client_capture.hpp:25:13: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+   25 |             if(restored)return;restored=true;
+      |             ^~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/build-1791232832322860927/inputs/native/client_capture.hpp:25:32: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   25 |             if(restored)return;restored=true;
+      |                                ^~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/build-1791232832322860927/inputs/native/client_capture.hpp: In function ‘std::unique_ptr<const preview::capture::OwnedPng> preview::capture::captureOwnedClient(PHLWINDOW, Budget&, uint64_t, const std::function<bool()>&)’:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/build-1791232832322860927/inputs/native/client_capture.hpp:44:68: error: missing initializer for member ‘CSurfacePassElement::SRenderData::pos’ [-Werror=missing-field-initializers]
+   44 |     CSurfacePassElement::SRenderData data{monitor,Time::steadyNow()};
+      |                                                                    ^
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/build-1791232832322860927/inputs/native/client_capture.hpp:44:68: error: missing initializer for member ‘CSurfacePassElement::SRenderData::localPos’ [-Werror=missing-field-initializers]
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/build-1791232832322860927/inputs/native/client_capture.hpp:44:68: error: missing initializer for member ‘CSurfacePassElement::SRenderData::pWindow’ [-Werror=missing-field-initializers]
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v3/qa/build-1791232832322860927/inputs/native/client_capture.hpp:44:68: error: missing initializer for member ‘CSurfacePassElement::SRenderData::pLS’ [-Werror=missing-field-initializers]
+cc1plus: all warnings being treated as errors

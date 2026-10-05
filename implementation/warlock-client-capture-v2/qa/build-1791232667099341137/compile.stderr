@@ -1,0 +1,9 @@
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v2/qa/build-1791232667099341137/inputs/native/authority.cpp:44:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v2/qa/build-1791232667099341137/inputs/native/client_capture.hpp: In function ‘std::unique_ptr<const preview::capture::OwnedPng> preview::capture::captureOwnedClient(PHLWINDOW, Budget&, uint64_t, const std::function<bool()>&)’:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v2/qa/build-1791232667099341137/inputs/native/client_capture.hpp:40:34: error: ‘void Render::IHyprRenderer::renderWindow(PHLWINDOW, PHLMONITOR, const Time::steady_tp&, bool, Render::eRenderPassMode, bool, bool)’ is protected within this context
+   40 |     g_pHyprRenderer->renderWindow(window,monitor,Time::steadyNow(),false,Render::RENDER_PASS_MAIN,true,true);
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v2/qa/build-1791232667099341137/inputs/native/authority.cpp:20:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v2/qa/build-1791232667099341137/owning-headers/src/render/Renderer.hpp:268:14: note: declared protected here
+  268 |         void renderWindow(PHLWINDOW, PHLMONITOR, const Time::steady_tp&, bool, eRenderPassMode, bool ignorePosition = false, bool standalone = false);
+      |              ^~~~~~~~~~~~
