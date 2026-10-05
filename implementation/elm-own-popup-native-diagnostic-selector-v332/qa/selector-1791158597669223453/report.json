@@ -1,0 +1,123 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "actual-enabled-publication6",
+      "passed": true
+    },
+    {
+      "name": "actual-disabled-publication4",
+      "passed": true
+    },
+    {
+      "name": "actual-final-awaiting7-not-old-coherent6",
+      "passed": true
+    },
+    {
+      "name": "matching-frame-roundtrip",
+      "passed": true
+    },
+    {
+      "name": "stale-publication-no-point",
+      "passed": true
+    },
+    {
+      "name": "stale-lease-no-point",
+      "passed": true
+    },
+    {
+      "name": "disabled-no-point",
+      "passed": true
+    },
+    {
+      "name": "changed-dom-id-no-point",
+      "passed": true
+    },
+    {
+      "name": "current-awaiting-no-point",
+      "passed": true
+    },
+    {
+      "name": "outstanding-no-point",
+      "passed": true
+    },
+    {
+      "name": "registry-no-point",
+      "passed": true
+    },
+    {
+      "name": "picker-open-no-point",
+      "passed": true
+    },
+    {
+      "name": "pending-no-point",
+      "passed": true
+    },
+    {
+      "name": "duplicate-control-refused",
+      "passed": true
+    },
+    {
+      "name": "ambiguous-group-refused",
+      "passed": true
+    },
+    {
+      "name": "bool-disabled-refused",
+      "passed": true
+    },
+    {
+      "name": "nan-geometry-refused",
+      "passed": true
+    },
+    {
+      "name": "bool-geometry-refused",
+      "passed": true
+    },
+    {
+      "name": "huge-geometry-refused",
+      "passed": true
+    },
+    {
+      "name": "offscreen-refused",
+      "passed": true
+    },
+    {
+      "name": "zero-width-refused",
+      "passed": true
+    },
+    {
+      "name": "numeric-publication-refused",
+      "passed": true
+    },
+    {
+      "name": "leadingzero-lease-refused",
+      "passed": true
+    },
+    {
+      "name": "boolean-ledger-refused",
+      "passed": true
+    },
+    {
+      "name": "partial-future-write-not-parsed",
+      "passed": true
+    },
+    {
+      "name": "entire-native-body-except-selector-AST-unchanged",
+      "passed": true
+    },
+    {
+      "name": "actual-unsafe-old-prefix-killed-by-positive-log",
+      "passed": true
+    }
+  ],
+  "actualPoint": [
+    217,
+    21
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-diagnostic-v325/qa/native-1791158297819510551/native-evidence/elm-webview.log": "269da1c5c5f58d9703bf3540d116a28d0a4e67cbcf3f277d6374c5dc2e858f9a",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-diagnostic-v325/qa/native-1791158297819510551/report.json": "c5787457090b8dc2eabdd5233d2395c57e3f600a11480183e170db33445d0321",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-diagnostic-selector-v332/qa/selector.py": "52291b4818cd4d134f36c798cc49f235ae6529ea1383953ae057ca7957ca54d9"
+  }
+}
