@@ -1,0 +1,1099 @@
+{
+  "passed": true,
+  "component": "elm-focus-recovery-responsive-held-v353",
+  "sourceHeld": true,
+  "selectedNativeProduction": "implementation/elm-focus-recovery-integrated-gui-v333",
+  "freshSameProgramProducer": "implementation/elm-focus-recovery-pinned-toolchain-v349",
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-keyboardless-focus-v205/build-1791139089126747676/Hyprland",
+      "sha256": "bda6ce0094961c285673589afa2b61fe2b97321a1d86b248823b482122fec0f5"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-authority-v594/qa/build-1791146293692158705/elm-window-geometry-authority.so",
+      "sha256": "fa43d6b6601e26d1980a01ccfeec818f226bb412c093032c7083337f17df948b"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "parentManifest": "implementation/elm-focus-recovery-coherent-reviewed-v350/acceptance-manifest.json",
+  "parentManifestSHA256": "966470b215087c9ff13db6f8a009acb3d4359cdd7443098ffb26316f0d2b550b",
+  "parentScopedNativeChecks": 626,
+  "responsiveNativeChecks": 893,
+  "responsiveProfileCount": 22,
+  "pollingObservationControls": 16,
+  "failedAttemptPreserved": {
+    "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/report.json",
+    "sha256": "9cad024793323261ed0b0beb8db5032d4dcccd1da2b23f13964e4f15f8f8ef3e",
+    "checksReached": 293,
+    "cleanupPassed": true
+  },
+  "nativeReports": [
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/report.json",
+      "sha256": "f864bd18ff0b623ded25ab8f225e4fcb1c51ce2d0ed28077d55e38660343bed0",
+      "checks": 547,
+      "passed": true,
+      "normalCleanupPassed": true
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/report.json",
+      "sha256": "a09e741e7529f9460d5ec9feb8dd7639379729d6bde5b43783c371a0431adbf1",
+      "checks": 287,
+      "passed": true,
+      "normalCleanupPassed": true
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158091783935537/report.json",
+      "sha256": "40f1d89885c53e13d5c7e5b0245ada29b45ed832715297cdd87e45507d480ea7",
+      "checks": 59,
+      "passed": true,
+      "normalCleanupPassed": true
+    }
+  ],
+  "references": {
+    "implementation/elm-focus-recovery-coherent-reviewed-v350/acceptance-manifest.json": "966470b215087c9ff13db6f8a009acb3d4359cdd7443098ffb26316f0d2b550b",
+    "implementation/elm-focus-recovery-responsive-bounds-v352/qa/preflight.json": "e129532ff22acc8a3048eb1280c9e7c7dd1a3f0e11ca3e08a0357a9c006f2aff",
+    "implementation/elm-focus-recovery-responsive-bounds-v352/qa/observations-1791157748031210800/report.json": "5d75c22041e685353740bead0460932626ec6414f39f2c8dde4793f5faff2c1c",
+    "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/report.json": "9cad024793323261ed0b0beb8db5032d4dcccd1da2b23f13964e4f15f8f8ef3e",
+    "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/report.json": "f864bd18ff0b623ded25ab8f225e4fcb1c51ce2d0ed28077d55e38660343bed0",
+    "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/report.json": "a09e741e7529f9460d5ec9feb8dd7639379729d6bde5b43783c371a0431adbf1",
+    "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158091783935537/report.json": "40f1d89885c53e13d5c7e5b0245ada29b45ed832715297cdd87e45507d480ea7"
+  },
+  "ownedRoots": [
+    "implementation/elm-focus-recovery-responsive-bounds-v351",
+    "implementation/elm-focus-recovery-responsive-bounds-v352",
+    "implementation/elm-focus-recovery-responsive-held-v353"
+  ],
+  "files": [
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/REQUIREMENTS.md",
+      "mode": 420,
+      "sha256": "1103cb51cbc66367f72ebdfc47a0f41fd2b012ebc1b157c071b68e11f89089b7",
+      "size": 2086
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/SPEC.md",
+      "mode": 420,
+      "sha256": "9278bc3ac357a967d940a16ac07968dbd3232f3700ee00fab8e4d138c25b637f",
+      "size": 700
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/origin.json",
+      "mode": 420,
+      "sha256": "14003f721bd073a612703250fb918d66e8cb5163a92d288274fe3c0db3e26db2",
+      "size": 367
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/pins.json",
+      "mode": 420,
+      "sha256": "a6da070a7a1e1f16647a757775ebbc810036cac263ab0540afd2c96ca2943938",
+      "size": 5106
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/profiles.json",
+      "mode": 420,
+      "sha256": "460c451fcfa234d435b293cdd780631e83b84e412770daac0c48bd588973ae9a",
+      "size": 22898
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/bus_policy.py",
+      "mode": 420,
+      "sha256": "bf1c53c38a2a7bd74a8762c1bb7767bca543d47d8a642ded74c494366cf73949",
+      "size": 1681
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/bus_test.py",
+      "mode": 420,
+      "sha256": "0531efff842bda8e518aa476d5f89f0522a22f02dadf0c4e5eb3dbaee63d6c21",
+      "size": 2929
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/closure.py",
+      "mode": 420,
+      "sha256": "3285406edc4ed68ef0bc0a1a9cd50afafc2fcc613f7059539dac3b96e7f8d1c4",
+      "size": 5600
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/gui.py",
+      "mode": 420,
+      "sha256": "51fad01fe3fe06890884c2d2bd18e2bafbb4fcca5865746b01e270dd5bc320bf",
+      "size": 6732
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/inspection.py",
+      "mode": 420,
+      "sha256": "6b89e8a432c0cc328bd28a34bd3e130ee55069da52fac28effdfd04cf7e5dff7",
+      "size": 3082
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/inputs.json",
+      "mode": 420,
+      "sha256": "2db6fc195ff953db4efaa3f59c0c8a9427229a02a39c3973d7db5193a461ffde",
+      "size": 1231561
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/authority-config.json",
+      "mode": 384,
+      "sha256": "88e48e612698ad45a3a6444e778c94712b4c9ee8aaabc553e8d2251a5875588b",
+      "size": 245
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/dmabuf-probe.stderr",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/dmabuf-probe.stdout",
+      "mode": 384,
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/elm-bounds.log",
+      "mode": 384,
+      "sha256": "7fa926a51c691eedc6eb8f46e2d2dedb37ac6285eaa9cfe2e9e5fb7dd6ebf077",
+      "size": 575795
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/feasible-finite-monitor1-buffer1.jsonl",
+      "mode": 384,
+      "sha256": "dfe679cdf1862bc713e06a7270a3cb5240c687d054bc4813e3d22a94f6d69da2",
+      "size": 8167
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/finite-scale1.jsonl",
+      "mode": 384,
+      "sha256": "472f26ff2aae23c71623f17271f7a61c4d11bbb14d3485e432e27832038030e4",
+      "size": 6141
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/finite-scale2.jsonl",
+      "mode": 384,
+      "sha256": "b3a80b680478a117f59195341694265463da02573e8c5ff1e848ebf520926364",
+      "size": 6203
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/fixed-scale1.jsonl",
+      "mode": 384,
+      "sha256": "0b76c77d9ed91002f389045deb2cbfb66e4c5a2347fe1fb85ad7a2fcfe2b9d9f",
+      "size": 6149
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/fixed-scale2.jsonl",
+      "mode": 384,
+      "sha256": "7213227b1a69547abd3754306e696a29a95e08fb696c341b455a94e653b6e3df",
+      "size": 6193
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/host-evidence.json",
+      "mode": 384,
+      "sha256": "6f91dbac9c573bb20d0cb1a1b30088709b1a86b26a27b110c192a32fbe7da1a3",
+      "size": 214716
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/hyprland.log",
+      "mode": 384,
+      "sha256": "ec5751b117f869f3f307d23e3ad8397c9f20417c23d7366f59ddab7b3a922bda",
+      "size": 329576
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/origin-scale1.jsonl",
+      "mode": 384,
+      "sha256": "7cb72a0cccf93291f7a9d77f56d4afea0794d084a0749a76eb29f1e0e896d025",
+      "size": 6836
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/origin-scale2.jsonl",
+      "mode": 384,
+      "sha256": "689c01ae50d897db7ed80bcbd57f89d7536340332ffd741cdf08921ffbf0a7c9",
+      "size": 6912
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/privateBus.log",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/runtime-archive/.flatpak/webkit-196936-16/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "a4a11fa0b0ab38168d91ef1d578b6b6ebe124b48254a349965b7704502073354",
+      "size": 160
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/runtime-archive/.flatpak/webkit-196936-4/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "5cd1301fdb00a8dcbd8eff4636067dcf43fdabad367ae3928250dd8322c0a831",
+      "size": 193
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791157540_160447639/10839789998520063312/ledger-v5.json",
+      "mode": 384,
+      "sha256": "e71bae6c29007d08bbb91515e4db0bb7a88c6af78e6b095879db3cb63390dff1",
+      "size": 213
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791157540_160447639/10839789998520063312/ledger-v6.json",
+      "mode": 384,
+      "sha256": "e3149123f53c0762a830d6487c15eb3494cd0f7b509ed7dced9903d669db8ff8",
+      "size": 2528
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791157540_160447639/10839789998520063312/migration-plan.json",
+      "mode": 384,
+      "sha256": "e98bd368496598d92dd2157bf74c62aa5645f2071ed6b2c8f06db49869586b7d",
+      "size": 247
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791157540_160447639/10839789998520063312/migration.json",
+      "mode": 384,
+      "sha256": "1fc81dacd416dae4b655c293ab4f0ea52a4389c93e5331db10f2b196d387e07a",
+      "size": 228
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791157540_160447639/10839789998520063312/release-deliveries-v1.json",
+      "mode": 384,
+      "sha256": "980f85b4d82ce2812aa461a0a03621eea4e7844fcb1759192f1de2925087f9c7",
+      "size": 64
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791157540_160447639/hyprland.log",
+      "mode": 384,
+      "sha256": "0b75e8d87bb84f11b543425a808214bc7e7dccaacf0816b039081682db3afe15",
+      "size": 24338
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/runtime-archive/hyprland.lua",
+      "mode": 384,
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "size": 241
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/weston-renderer.log",
+      "mode": 384,
+      "sha256": "c66b1034ab18c7bc8de12dc92bbd541685f6ed6e045f9fe8f5d704790634081f",
+      "size": 12784
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/weston.log",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/zero-scale1-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "07afdf18d06660ebf4af4995e0d8ad424f881e593099df73e8e28b478a2af7e7",
+      "size": 12202
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/zero-scale1-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "37425b39255c7acd8407dd287edef53ea47b5f3ba884278e5e55b08a6bc7597f",
+      "size": 12171
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/zero-scale1.jsonl",
+      "mode": 384,
+      "sha256": "fda63e44e77d90738fe31bc644474d927613532e2fa3d347fcd370d7305e8522",
+      "size": 12135
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/zero-scale2-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "6700309c16643ca9bea39f052797be0261065f4558eb1382922d61bb1626cabc",
+      "size": 12200
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/zero-scale2-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "5ca6b83c6c37830ed71a6a1a7fd9c529c9610aba4c6ca6a009592a306c048328",
+      "size": 12171
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native-evidence/zero-scale2.jsonl",
+      "mode": 384,
+      "sha256": "5c630476ad0306dbacbfceba6baa0445441b82cd402d9875e0ec7f9bc012cc7d",
+      "size": 12321
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/native.py",
+      "mode": 420,
+      "sha256": "d5611225aebc1a0f1c00256e07e3aa8f51ebd2069c2d7e4092ae984e256b6866",
+      "size": 31337
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native-1791157538587667379/report.json",
+      "mode": 420,
+      "sha256": "9cad024793323261ed0b0beb8db5032d4dcccd1da2b23f13964e4f15f8f8ef3e",
+      "size": 1880996
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/native.py",
+      "mode": 420,
+      "sha256": "d5611225aebc1a0f1c00256e07e3aa8f51ebd2069c2d7e4092ae984e256b6866",
+      "size": 31337
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/preflight.json",
+      "mode": 420,
+      "sha256": "76697d7f56f4d3687d084f73eaebf9c3ddb68d1e46929e21d1ebe4c6295fe8f0",
+      "size": 1243651
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v351/qa/review.py",
+      "mode": 420,
+      "sha256": "4305b6964cf19e1b4c9ae48e303f3f70ba0488e0aa795a0d6d581316e129bc7a",
+      "size": 5529
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/REQUIREMENTS.md",
+      "mode": 420,
+      "sha256": "1103cb51cbc66367f72ebdfc47a0f41fd2b012ebc1b157c071b68e11f89089b7",
+      "size": 2086
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/SPEC.md",
+      "mode": 420,
+      "sha256": "4cd66338a6a65ea20d21f7c886c66bbd9698e622263256f82e8ef266bfebe249",
+      "size": 1262
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/origin.json",
+      "mode": 420,
+      "sha256": "14003f721bd073a612703250fb918d66e8cb5163a92d288274fe3c0db3e26db2",
+      "size": 367
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/parent-failure.json",
+      "mode": 420,
+      "sha256": "6dd6761cc8ab9287bc00fcec8d2007b4bca676d9b78ced48286490c680505ee7",
+      "size": 450
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/pins.json",
+      "mode": 420,
+      "sha256": "a6da070a7a1e1f16647a757775ebbc810036cac263ab0540afd2c96ca2943938",
+      "size": 5106
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/profiles.json",
+      "mode": 420,
+      "sha256": "460c451fcfa234d435b293cdd780631e83b84e412770daac0c48bd588973ae9a",
+      "size": 22898
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/bus_policy.py",
+      "mode": 420,
+      "sha256": "bf1c53c38a2a7bd74a8762c1bb7767bca543d47d8a642ded74c494366cf73949",
+      "size": 1681
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/bus_test.py",
+      "mode": 420,
+      "sha256": "0531efff842bda8e518aa476d5f89f0522a22f02dadf0c4e5eb3dbaee63d6c21",
+      "size": 2929
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/closure.py",
+      "mode": 420,
+      "sha256": "3285406edc4ed68ef0bc0a1a9cd50afafc2fcc613f7059539dac3b96e7f8d1c4",
+      "size": 5600
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/gui.py",
+      "mode": 420,
+      "sha256": "b1d3063af2f1e10aca0a877a386480187f88fcb55a22fd3209cfa15903d1999f",
+      "size": 6612
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/inspection.py",
+      "mode": 420,
+      "sha256": "6b89e8a432c0cc328bd28a34bd3e130ee55069da52fac28effdfd04cf7e5dff7",
+      "size": 3082
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/inputs.json",
+      "mode": 420,
+      "sha256": "5986b6d5a0228ca05b1e5364dce0b53b002de29a8c6ce11bb28f25261a862c25",
+      "size": 1231953
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/authority-config.json",
+      "mode": 384,
+      "sha256": "039ea7d78d14e8fe51354b3c7c549a997c04d82038171dbd6ce080f3d2c22bfc",
+      "size": 246
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/dmabuf-probe.stderr",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/dmabuf-probe.stdout",
+      "mode": 384,
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/elm-bounds.log",
+      "mode": 384,
+      "sha256": "644c4d6af8a5ed841f52e84b19cadd5fd480c71706287bd1ecf3bf8bd557b092",
+      "size": 1026195
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/feasible-finite-monitor1-buffer1-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "5bfb96a2dacd5b92012aed8e393f3f74c9cb5bba21c975c1c21dae5bef295f66",
+      "size": 12202
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/feasible-finite-monitor1-buffer1-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "d904e2d51a9a889aba85f54b91e539054b75e74b94538be6a43109611aab2fba",
+      "size": 12170
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/feasible-finite-monitor1-buffer1.jsonl",
+      "mode": 384,
+      "sha256": "4867651a6ba87d2bf3d85a8a3b185f05e7d2e3d6426b7c759a261520c32714a6",
+      "size": 12301
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/feasible-finite-monitor1-buffer2-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "10ba0ecc6759b6a18388e04547fad22b69e8035b9e06931fb281cde4cbd63a1a",
+      "size": 12201
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/feasible-finite-monitor1-buffer2-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "efb5b6afd7eb9085690edaa1deadc9cfe6ca6189512e3b1c229608f028b22e6c",
+      "size": 12169
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/feasible-finite-monitor1-buffer2.jsonl",
+      "mode": 384,
+      "sha256": "3e5606412f53f59fe8e3f750dfc7849c3cf0d06850523f77b92ba5f9ee9c38eb",
+      "size": 12321
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/feasible-high-min-monitor1-buffer1-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "e1288cee03ace50a8a7beb6dbb625af99475229c6cec99e32d0f0daf568d08c0",
+      "size": 12202
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/feasible-high-min-monitor1-buffer1-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "c51947fa21d97ca524cf1570b3be9274e0a28255761064d6986c08df08ee5b74",
+      "size": 12171
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/feasible-high-min-monitor1-buffer1.jsonl",
+      "mode": 384,
+      "sha256": "1d4774b844581dc2c3e89b84d7294f104393f1d29fe7a0e57a1ef1cdff327c37",
+      "size": 12301
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/feasible-high-min-monitor1-buffer2-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "921ee21004c6bd93ebc67a507ad7982c1cf705ada194f2611949d85cbd98f1a0",
+      "size": 12202
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/feasible-high-min-monitor1-buffer2-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "7bf3dc527c4e1f1c73df82eef0c653d1dcb8a7f5ca5eba53bf3acd2239d6b6c4",
+      "size": 12170
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/feasible-high-min-monitor1-buffer2.jsonl",
+      "mode": 384,
+      "sha256": "5404a6f64e8bf19ca2c8a462ee053659378b5280314e99bb3555a74945edf66d",
+      "size": 12321
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/finite-scale1.jsonl",
+      "mode": 384,
+      "sha256": "92ab6481b254933a179320e4b93244fb9c2817de6151c89eda3aad1f9c993659",
+      "size": 6141
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/finite-scale2.jsonl",
+      "mode": 384,
+      "sha256": "3585cea9bca4f742d3a97e4440b80238188a2a7e25e9a74ee39c6566c15919ae",
+      "size": 6203
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/fixed-scale1.jsonl",
+      "mode": 384,
+      "sha256": "7f25d0438eed6017303a2a995466897a4e3bc1f7d43bdc4ddce1c7f083b3be26",
+      "size": 6149
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/fixed-scale2.jsonl",
+      "mode": 384,
+      "sha256": "81e6fd88df1be4db60fef640f45efdc1d0aab7964b15071e3fde7c659acf01a8",
+      "size": 6193
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/host-evidence.json",
+      "mode": 384,
+      "sha256": "fef9e8141dfef1ec15e7002704d85aa919d6396be8f0b518f95cb103030914aa",
+      "size": 213826
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/hyprland.log",
+      "mode": 384,
+      "sha256": "95dffdde8dc896a62922be93f76cbdedf95c5e4c2dfbc6a681cf7abb29ca005b",
+      "size": 538224
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/minimum-above-workarea-monitor1-buffer1.jsonl",
+      "mode": 384,
+      "sha256": "9b5db4dbecc996d46fdaf602177aea3e70590f0d7d8bbeec2fa56efee2d7d977",
+      "size": 6882
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/minimum-above-workarea-monitor1-buffer2.jsonl",
+      "mode": 384,
+      "sha256": "23202e08f8b3d76471140571ec56cef0d76a7a361846c1bc53a331892a431389",
+      "size": 6894
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/origin-scale1.jsonl",
+      "mode": 384,
+      "sha256": "e18b94eb4f9a2f792af133705fa136e0c370f4517d2e3056b83ffcb71489d678",
+      "size": 6836
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/origin-scale2.jsonl",
+      "mode": 384,
+      "sha256": "69363b2562e572e7cfb41787fe52eafb44cc442b49f7561c4e7056d3aad8f396",
+      "size": 6912
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/privateBus.log",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/runtime-archive/.flatpak/webkit-246263-16/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "3cd01254f0c649dbdd3f92a21c803126afe9eaf4384ac56502503d678dad0ca8",
+      "size": 160
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/runtime-archive/.flatpak/webkit-246263-4/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "09978f7f826c6322d375821a8671d66840e8344155f62ff6561ea871663954c0",
+      "size": 193
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791158069_1943026815/6663427230244058798/ledger-v5.json",
+      "mode": 384,
+      "sha256": "46baff6bdfd7482fbfc7cf272cec8e3fcd84f009dc19dc91e1d8b5bfccf3e4d7",
+      "size": 212
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791158069_1943026815/6663427230244058798/ledger-v6.json",
+      "mode": 384,
+      "sha256": "55888da97f72cb76b90d9a62fd02964843ae0c22a4875ee32da9d1403fe514a0",
+      "size": 4652
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791158069_1943026815/6663427230244058798/migration-plan.json",
+      "mode": 384,
+      "sha256": "24273603b03eb4aaea4962fea09aa6d4b9e0b60fe7dc5f01239eb4812c827f9b",
+      "size": 247
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791158069_1943026815/6663427230244058798/migration.json",
+      "mode": 384,
+      "sha256": "90b65e6b3f5a79d0291df01e5574aafe5f87748be8d7167227d398532f98b978",
+      "size": 228
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791158069_1943026815/6663427230244058798/release-deliveries-v1.json",
+      "mode": 384,
+      "sha256": "f260eecb97c9c4209900e1c3ce126ca648a98f8a0cdef412205ecfaf028ed406",
+      "size": 63
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791158069_1943026815/hyprland.log",
+      "mode": 384,
+      "sha256": "a01bddab9a46844709b6a321113d26a470eee190969e547de32a9365a44d79e1",
+      "size": 24339
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/runtime-archive/hyprland.lua",
+      "mode": 384,
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "size": 241
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/weston-renderer.log",
+      "mode": 384,
+      "sha256": "aa43341b083084362f0bd28c806def9ab09d06c9e528ac856acb11a464bfaab1",
+      "size": 19676
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/weston.log",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/zero-scale1-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "2c26433535ac76862bdb3925b1646ed8c75592cb1f842173f35a587a1ae85392",
+      "size": 12201
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/zero-scale1-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "81292d612b9a3ca24f7749518363811bb4e52b68b6bf05bfb8aaa1605618e4f8",
+      "size": 12169
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/zero-scale1.jsonl",
+      "mode": 384,
+      "sha256": "de7da191481079f70083503b1b69282ac75e6d50bade29387b28681a1d0be033",
+      "size": 12135
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/zero-scale2-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "31421bf1e4a7eb254e9444db6703066922cdc5c6488a56931d1ee7b8aaf5f457",
+      "size": 12202
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/zero-scale2-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "e65d1449c434fcaaf3cf822ad2c7ec695e6a35c7892f8a9930dfa69106cc6d36",
+      "size": 12170
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native-evidence/zero-scale2.jsonl",
+      "mode": 384,
+      "sha256": "72d1ffaea1fc4af66ab2a62189eb9bd0578570abab628881dcda7df6cc55d9a3",
+      "size": 12321
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/native.py",
+      "mode": 420,
+      "sha256": "d5611225aebc1a0f1c00256e07e3aa8f51ebd2069c2d7e4092ae984e256b6866",
+      "size": 31337
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158065638296661/report.json",
+      "mode": 420,
+      "sha256": "f864bd18ff0b623ded25ab8f225e4fcb1c51ce2d0ed28077d55e38660343bed0",
+      "size": 2150022
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/inputs.json",
+      "mode": 420,
+      "sha256": "5986b6d5a0228ca05b1e5364dce0b53b002de29a8c6ce11bb28f25261a862c25",
+      "size": 1231953
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/authority-config.json",
+      "mode": 384,
+      "sha256": "aa387c986188a5ca49ab0c4599eea63331a256d108e20e53fd201ad99ac0529d",
+      "size": 244
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/dmabuf-probe.stderr",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/dmabuf-probe.stdout",
+      "mode": 384,
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/elm-bounds.log",
+      "mode": 384,
+      "sha256": "0e0113fa6c76621f03486bb597d5d61bc9dc92768b952dceb8262780d7b337c8",
+      "size": 567684
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/feasible-finite-monitor2-buffer1-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "9031b6b5e1710614eb070fdbe33c01426f1f2115a3539c4d43aa12fecfca8275",
+      "size": 28029
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/feasible-finite-monitor2-buffer1-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "5132665b3c485cdf25835ff6675a5bcf65321adf37326b04b160998fd37eb7e4",
+      "size": 27839
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/feasible-finite-monitor2-buffer1.jsonl",
+      "mode": 384,
+      "sha256": "8c5c1ed79ec1ca21f6af08e02954eb29201380113e07e778cfe166b7288325be",
+      "size": 12135
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/feasible-finite-monitor2-buffer2-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "f7217f18d5ecc9235be609b6cf9341b3ac0898c8bfd262b1e8ecb61b4b99de11",
+      "size": 27660
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/feasible-finite-monitor2-buffer2-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "a42e99ef137908dc323ae0b2b2196579ae9eddcf56a40b5529c8aa17d22191fb",
+      "size": 27617
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/feasible-finite-monitor2-buffer2.jsonl",
+      "mode": 384,
+      "sha256": "5dd66a0981b3d7ed6426d89b6212b14bff5655039bd21708d11a5f4082598151",
+      "size": 12321
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/feasible-high-min-monitor2-buffer1-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "fcd64a6448ffc45ad543256c6a521d67b6205e48547ef02c987be6bf7f439405",
+      "size": 28010
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/feasible-high-min-monitor2-buffer1-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "01ea9e65f4333fe8f0dfe19eac73f6a001288be60b40ce7d1b26ba1f6439f64d",
+      "size": 27837
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/feasible-high-min-monitor2-buffer1.jsonl",
+      "mode": 384,
+      "sha256": "ab810c6e51ab723689a70fd04f42275f59a47209b3e9d7844ed59c03f193c12b",
+      "size": 12214
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/feasible-high-min-monitor2-buffer2-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "d1a18c4808e467dfeea087cc172b972240d27ef49976daef19203a330c432889",
+      "size": 27665
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/feasible-high-min-monitor2-buffer2-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "ed27fbfeed5a69754bb00102a62a9ba6428e0ebb921d69df0e5e3c25baf26b70",
+      "size": 27617
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/feasible-high-min-monitor2-buffer2.jsonl",
+      "mode": 384,
+      "sha256": "f8e514a7e1965c593df5abc2e3a9dc629ab26b27eb9547091c33804c04edc2c6",
+      "size": 12321
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/host-evidence.json",
+      "mode": 384,
+      "sha256": "033401750700888878ba784c933c2d466b538a63620d79b271d14f138d0174f4",
+      "size": 213742
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/hyprland.log",
+      "mode": 384,
+      "sha256": "7b15842bb4466b4afc95d8451b94bcc30d17930270b07bce0e03d1fb259173e1",
+      "size": 366135
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/minimum-above-workarea-monitor2-buffer1.jsonl",
+      "mode": 384,
+      "sha256": "c5ae254b9f18d785060c47de1325627de5c63c4da8bcce218f85deba41b36d52",
+      "size": 6882
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/minimum-above-workarea-monitor2-buffer2.jsonl",
+      "mode": 384,
+      "sha256": "33103235049756d6bb8f422519e2378b09cf7b67ac225a00f56bf913f9493003",
+      "size": 6894
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/privateBus.log",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/runtime-archive/.flatpak/webkit-247765-16/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "ab9cfab6405314c36d53e709343f7b3c96b5d11ea207fe17947c8de6ebec8773",
+      "size": 160
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/runtime-archive/.flatpak/webkit-247765-4/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "c366f88e4ff7d6f9af6edd672f1571150288b663646420ec6c0cca0f5507d8b4",
+      "size": 193
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791158083_40452124/1718240902665828215/ledger-v5.json",
+      "mode": 384,
+      "sha256": "65a98e74c01e6fe492bf07c6a3744e536af1f720438fe6e7e372979d92c0764e",
+      "size": 212
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791158083_40452124/1718240902665828215/ledger-v6.json",
+      "mode": 384,
+      "sha256": "acd0dc554b47d85a4f8e5a1a66a6db397759b71d24f892ac2a716f93a3608f43",
+      "size": 3432
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791158083_40452124/1718240902665828215/migration-plan.json",
+      "mode": 384,
+      "sha256": "236896e84fb787f08d144c1d049010977d0bec99377afe2bebc2dbdd2dacaa77",
+      "size": 245
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791158083_40452124/1718240902665828215/migration.json",
+      "mode": 384,
+      "sha256": "1026ed9580747f5656be1978a3a605a414c2d931665a857fb040d7f2cd4124a1",
+      "size": 226
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791158083_40452124/1718240902665828215/release-deliveries-v1.json",
+      "mode": 384,
+      "sha256": "378082db8fd37be6013f5b99cef3e9af3c8fd54acf740e4a1e59e054be0a6452",
+      "size": 63
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791158083_40452124/hyprland.log",
+      "mode": 384,
+      "sha256": "341f7cb2c9fb91ead626bb477589ecd03f15a2c63f03668bdc7774d58363ab57",
+      "size": 24349
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/runtime-archive/hyprland.lua",
+      "mode": 384,
+      "sha256": "60fad1e6e6785fac747409c3ffaff3992f6712925473728b82984e0904ef1ca1",
+      "size": 243
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/weston-renderer.log",
+      "mode": 384,
+      "sha256": "69aa499097c1e1487cbc76eb6c036e0dd507c1f0e238b18dd3afe92e9ab13491",
+      "size": 11722
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native-evidence/weston.log",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/native.py",
+      "mode": 420,
+      "sha256": "d5611225aebc1a0f1c00256e07e3aa8f51ebd2069c2d7e4092ae984e256b6866",
+      "size": 31337
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158081018812854/report.json",
+      "mode": 420,
+      "sha256": "a09e741e7529f9460d5ec9feb8dd7639379729d6bde5b43783c371a0431adbf1",
+      "size": 1901283
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158091783935537/inputs.json",
+      "mode": 420,
+      "sha256": "5986b6d5a0228ca05b1e5364dce0b53b002de29a8c6ce11bb28f25261a862c25",
+      "size": 1231953
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158091783935537/native-evidence/authority-config.json",
+      "mode": 384,
+      "sha256": "db086b34fe8728c7154774b28fc4587476f5e3e1633a1d8927f759ec608d85d6",
+      "size": 245
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158091783935537/native-evidence/dmabuf-probe.stderr",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158091783935537/native-evidence/dmabuf-probe.stdout",
+      "mode": 384,
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158091783935537/native-evidence/elm-bounds.log",
+      "mode": 384,
+      "sha256": "6b88f13907243a3218cd89cab2f820430de4ee7a85686cf268558fe065861e03",
+      "size": 143877
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158091783935537/native-evidence/high-min-small-logical-monitor2-buffer1.jsonl",
+      "mode": 384,
+      "sha256": "0a2fd0c525bda1fa068a3376cea18bcc4744a30777b522bfa1549a2840ee9707",
+      "size": 6757
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158091783935537/native-evidence/high-min-small-logical-monitor2-buffer2.jsonl",
+      "mode": 384,
+      "sha256": "9115d5effd33dbf9c68ffa5cf3b7882016588d312393ffd4dfb6412bc55d54c6",
+      "size": 6824
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158091783935537/native-evidence/host-evidence.json",
+      "mode": 384,
+      "sha256": "e2c647e97914f3c4aeb84cb8d757acc0f7f40b302b03899d3961e0d9d15bb5ac",
+      "size": 214054
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158091783935537/native-evidence/hyprland.log",
+      "mode": 384,
+      "sha256": "55ae564f626dc6951ef36c03edf0d700f5486882480619054d74b961b5b9df13",
+      "size": 168910
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158091783935537/native-evidence/privateBus.log",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158091783935537/native-evidence/runtime-archive/.flatpak/webkit-248753-16/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "b97d736fc54874a6e064f9875efd2816bee956b489e63485a2fc4f10ac279bc8",
+      "size": 160
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158091783935537/native-evidence/runtime-archive/.flatpak/webkit-248753-4/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "f008d5ff89019d0dc1e2c25039355758dd83d21485068db3895f53002016a2f7",
+      "size": 193
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158091783935537/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791158094_245778366/9530605283633113918/ledger-v5.json",
+      "mode": 384,
+      "sha256": "93938250a30872a21fc234cd50a0af515b8e091708a96f335396d785ac22695b",
+      "size": 212
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158091783935537/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791158094_245778366/9530605283633113918/ledger-v6.json",
+      "mode": 384,
+      "sha256": "75b46160567a8693317233af104d28160dd72a2177b89c4f634af5232f691d04",
+      "size": 327
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158091783935537/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791158094_245778366/9530605283633113918/migration-plan.json",
+      "mode": 384,
+      "sha256": "337ed3e0544267c8cbbec871431039fcad43872f3c6d1d934e52cb435d0cd77f",
+      "size": 246
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158091783935537/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791158094_245778366/9530605283633113918/migration.json",
+      "mode": 384,
+      "sha256": "7c4e8f9da27ba655c8dcf749acd19676818c0e547ca6390f5192964d23fde0c9",
+      "size": 227
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158091783935537/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791158094_245778366/9530605283633113918/release-deliveries-v1.json",
+      "mode": 384,
+      "sha256": "2288c349585d6bac4d1ccc5738856d2365a06def68c165f253e27539df837548",
+      "size": 63
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158091783935537/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791158094_245778366/hyprland.log",
+      "mode": 384,
+      "sha256": "336dc6ffb09411cfd70c246ebfe2f668a1ff0b90fac89058bed525f7f619983e",
+      "size": 24338
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158091783935537/native-evidence/runtime-archive/hyprland.lua",
+      "mode": 384,
+      "sha256": "e8ea01321b08bab43c36659cbd45d7fa9da755f4b457002e90d444a48d205c2f",
+      "size": 241
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158091783935537/native-evidence/weston-renderer.log",
+      "mode": 384,
+      "sha256": "7c59844199ed7c8b1ba997a0f434bb91c12c58220e7f38fb65ad7fa28c527c86",
+      "size": 5360
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158091783935537/native-evidence/weston.log",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158091783935537/native.py",
+      "mode": 420,
+      "sha256": "d5611225aebc1a0f1c00256e07e3aa8f51ebd2069c2d7e4092ae984e256b6866",
+      "size": 31337
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native-1791158091783935537/report.json",
+      "mode": 420,
+      "sha256": "40f1d89885c53e13d5c7e5b0245ada29b45ed832715297cdd87e45507d480ea7",
+      "size": 1646826
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/native.py",
+      "mode": 420,
+      "sha256": "d5611225aebc1a0f1c00256e07e3aa8f51ebd2069c2d7e4092ae984e256b6866",
+      "size": 31337
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/observation-amendment.json",
+      "mode": 420,
+      "sha256": "cdea3ae2c1c47621e53d9b68986b4801b8454196becd7497fa59d4c47bdbfdeb",
+      "size": 853
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/observation_tests.py",
+      "mode": 420,
+      "sha256": "193c4c2978e9c466d05485e74867a79020d3748b7574fad00a52b576a4ec0a5b",
+      "size": 2788
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/observations-1791157748031210800/report.json",
+      "mode": 420,
+      "sha256": "5d75c22041e685353740bead0460932626ec6414f39f2c8dde4793f5faff2c1c",
+      "size": 2547
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/preflight.json",
+      "mode": 420,
+      "sha256": "e129532ff22acc8a3048eb1280c9e7c7dd1a3f0e11ca3e08a0357a9c006f2aff",
+      "size": 1244047
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-bounds-v352/qa/review.py",
+      "mode": 420,
+      "sha256": "a91bf1a29a62fc9641f84201ab63bcb3ef4b2f71654af80ec87cfa3f77ecf30d",
+      "size": 5900
+    },
+    {
+      "path": "implementation/elm-focus-recovery-responsive-held-v353/qa/review_freeze.py",
+      "mode": 420,
+      "sha256": "48af4aaad31ecf504335913b8ff9500e6970238540abc364f67f6163790948eb",
+      "size": 8546
+    }
+  ],
+  "allGeometryContractScenariosAccepted": false,
+  "currentRendererCohortAccepted": false,
+  "nativeMixedMultiOriginLossAccepted": false,
+  "nativeATIMEHardwareBudgetsAccepted": false,
+  "fullUIUXAccepted": false,
+  "fullReleaseAccepted": false,
+  "scope": "Original22 responsive profiles and893 actual GUI/receipt/ACK/RGB checks on fresh349 byte-identical333. Four single-observation QA predicates only; original production, check identities and deadlines retained. Repeated observation records are not additional profiles. Parent626 and broader release gates remain separate."
+}

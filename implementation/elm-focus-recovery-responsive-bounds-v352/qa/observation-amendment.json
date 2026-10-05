@@ -1,0 +1,18 @@
+[
+  [
+    "lambda:self.coherent() if self.coherent() and len(self.coherent()['groups'])==1 and not self.coherent()['groups'][0]['disabled'] else None",
+    "lambda:p if (p:=self.coherent()) and len(p['groups'])==1 and not p['groups'][0]['disabled'] else None"
+  ],
+  [
+    "lambda:self.coherent()['menu'] if self.coherent() and self.coherent()['menu'] else None",
+    "lambda:p['menu'] if (p:=self.coherent()) and p['menu'] else None"
+  ],
+  [
+    "lambda:self.coherent() if self.coherent() and self.coherent()['menu'] is None else None",
+    "lambda:p if (p:=self.coherent()) and p['menu'] is None else None"
+  ],
+  [
+    "lambda:self.coherent() if self.coherent() and self.coherent()['menu'] is None and self.coherent()['outstanding']==0 else None",
+    "lambda:p if (p:=self.coherent()) and p['menu'] is None and p['outstanding']==0 else None"
+  ]
+]
