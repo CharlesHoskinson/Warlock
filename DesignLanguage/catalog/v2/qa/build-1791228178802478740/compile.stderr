@@ -1,0 +1,20 @@
+-- MISSING PATTERNS ----------------------------------------- src/DesignDemo.elm
+
+This `case` does not have branches for all possibilities:
+
+107|>        Taskbar.Apply operation _ -> case operation of
+108|>            Effects.Restore -> "Request restore"
+109|>            Effects.Minimize -> "Request minimize"
+110|>            Effects.Activate -> "Request activate"
+
+Missing possibilities include:
+
+    Maximize
+    RestoreGeometry
+
+I would have to crash if I saw one of those. Add branches for them!
+
+Hint: If you want to write the code for each branch later, use `Debug.todo` as a
+placeholder. Read <https://elm-lang.org/0.19.2/missing-patterns> for more
+guidance on this workflow.
+

@@ -1,0 +1,3 @@
+# Catalog publication
+
+Publish only exact owner files from the catalog commit and the previously verified publication-receipt commit over GitHub's existing c0095f0 history. The archival workspace ancestry and concurrent workers are not pushed. `publish.py --source-commit <owned-commit>` verifies the remote/base, preserves raw blobs/modes, creates a normal child commit in the existing bare mirror, pushes through the working HTTPS helper, and reads back the remote ref. No force push or token export is used. Private browser profiles and mutable copies of the separately pinned Elm cache are preserved locally and excluded from the owner publication set.

@@ -1,0 +1,221 @@
+{
+  "passed": false,
+  "checks": [
+    {
+      "name": "No external asset request at initial load"
+    },
+    {
+      "name": "49 source modules, 14 current component families"
+    },
+    {
+      "name": "overview has readable heading"
+    },
+    {
+      "name": "overview no desktop overflow"
+    },
+    {
+      "name": "philosophy has readable heading"
+    },
+    {
+      "name": "philosophy no desktop overflow"
+    },
+    {
+      "name": "foundations has readable heading"
+    },
+    {
+      "name": "foundations no desktop overflow"
+    },
+    {
+      "name": "tokens has readable heading"
+    },
+    {
+      "name": "tokens no desktop overflow"
+    },
+    {
+      "name": "states has readable heading"
+    },
+    {
+      "name": "states no desktop overflow"
+    },
+    {
+      "name": "component/taskbar has readable heading"
+    },
+    {
+      "name": "component/taskbar six sections"
+    },
+    {
+      "name": "component/taskbar no desktop overflow"
+    },
+    {
+      "name": "component/window-group has readable heading"
+    },
+    {
+      "name": "component/window-group six sections"
+    },
+    {
+      "name": "component/window-group no desktop overflow"
+    },
+    {
+      "name": "component/utility has readable heading"
+    },
+    {
+      "name": "component/utility six sections"
+    },
+    {
+      "name": "component/utility no desktop overflow"
+    },
+    {
+      "name": "component/recovery has readable heading"
+    },
+    {
+      "name": "component/recovery six sections"
+    },
+    {
+      "name": "component/recovery no desktop overflow"
+    },
+    {
+      "name": "component/popup has readable heading"
+    },
+    {
+      "name": "component/popup six sections"
+    },
+    {
+      "name": "component/popup no desktop overflow"
+    },
+    {
+      "name": "component/applications has readable heading"
+    },
+    {
+      "name": "component/applications six sections"
+    },
+    {
+      "name": "component/applications no desktop overflow"
+    },
+    {
+      "name": "component/picker has readable heading"
+    },
+    {
+      "name": "component/picker six sections"
+    },
+    {
+      "name": "component/picker no desktop overflow"
+    },
+    {
+      "name": "component/menu has readable heading"
+    },
+    {
+      "name": "component/menu six sections"
+    },
+    {
+      "name": "component/menu no desktop overflow"
+    },
+    {
+      "name": "component/menu-item has readable heading"
+    },
+    {
+      "name": "component/menu-item six sections"
+    },
+    {
+      "name": "component/menu-item no desktop overflow"
+    },
+    {
+      "name": "component/preview has readable heading"
+    },
+    {
+      "name": "component/preview six sections"
+    },
+    {
+      "name": "component/preview no desktop overflow"
+    },
+    {
+      "name": "component/preview-image has readable heading"
+    },
+    {
+      "name": "component/preview-image six sections"
+    },
+    {
+      "name": "component/preview-image no desktop overflow"
+    },
+    {
+      "name": "component/preview-caption has readable heading"
+    },
+    {
+      "name": "component/preview-caption six sections"
+    },
+    {
+      "name": "component/preview-caption no desktop overflow"
+    },
+    {
+      "name": "component/status has readable heading"
+    },
+    {
+      "name": "component/status six sections"
+    },
+    {
+      "name": "component/status no desktop overflow"
+    },
+    {
+      "name": "component/native-fallback has readable heading"
+    },
+    {
+      "name": "component/native-fallback six sections"
+    },
+    {
+      "name": "component/native-fallback no desktop overflow"
+    },
+    {
+      "name": "patterns has readable heading"
+    },
+    {
+      "name": "patterns no desktop overflow"
+    },
+    {
+      "name": "accessibility has readable heading"
+    },
+    {
+      "name": "accessibility no desktop overflow"
+    },
+    {
+      "name": "library has readable heading"
+    },
+    {
+      "name": "library no desktop overflow"
+    },
+    {
+      "name": "references has readable heading"
+    },
+    {
+      "name": "references no desktop overflow"
+    },
+    {
+      "name": "evidence has readable heading"
+    },
+    {
+      "name": "evidence no desktop overflow"
+    },
+    {
+      "name": "changelog has readable heading"
+    },
+    {
+      "name": "changelog no desktop overflow"
+    }
+  ],
+  "captures": [
+    "desktop-overview.png"
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "browser": {
+    "Browser": "HeadlessChrome/154.0.8037.57",
+    "Protocol-Version": "1.3",
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.8037.57 Safari/537.36",
+    "V8-Version": "15.4.80.11",
+    "WebKit-Version": "537.36 (@73c14f6228d7cd537c855007e8f88678969cc0eb)",
+    "webSocketDebuggerUrl": "ws://127.0.0.1:34641/devtools/browser/564c25d7-aa46-47dc-8135-70a8f35ee11c"
+  },
+  "binary": "/home/hoskinson/.cache/puppeteer/chrome-headless-shell/linux-154.0.8037.57/chrome-headless-shell-linux64/chrome-headless-shell",
+  "error": "Error: {\"exceptionId\":1,\"text\":\"Uncaught\",\"lineNumber\":0,\"columnNumber\":23,\"scriptId\":\"64\",\"exception\":{\"type\":\"object\",\"subtype\":\"error\",\"className\":\"SyntaxError\",\"description\":\"SyntaxError: missing ) after argument list\",\"objectId\":\"6994805924059623679.2.2\"}}\n    at evaluate (file:///home/hoskinson/omarchy-windows-parity/DesignLanguage/catalog/v3/qa/browser.mjs:11:154)\n    at async file:///home/hoskinson/omarchy-windows-parity/DesignLanguage/catalog/v3/qa/browser.mjs:35:46",
+  "browserExitCode": 0
+}

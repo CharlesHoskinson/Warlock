@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "reviewVerdict": "accept-with-corrections",
+  "independentReview": "DesignLanguage/catalog/review-v1/report.md",
+  "reviewModelObserved": "claude-opus-5-5",
+  "finalDerivative": "DesignLanguage/catalog/v6",
+  "correctionBatchCount": 1,
+  "confirmationBatchCount": 1,
+  "requiredCorrections": {
+    "B1": [
+      "Narrow to wide restores navigation and search"
+    ],
+    "B2": [
+      "Landmark focus has no overflowing page ring"
+    ],
+    "B3": [
+      "Arrow navigation moves DOM focus to source-selected row",
+      "Menu Tab moves to Close",
+      "Menu Tab returns to selected row",
+      "Unknown fixture rows name reconciliation"
+    ]
+  },
+  "conditionsVerifiedByCoordinator": true,
+  "browserReport": "DesignLanguage/catalog/v6/qa/check-1791229227446501411/browser-report.json",
+  "browserReportSHA256": "1e3b699900eb75768e9b1041243f1f17eed9ce92533aff164e75de3ffe48cb11",
+  "browserChecks": 104,
+  "sourceTokenChecks": 42,
+  "captures": [
+    "desktop-overview.png",
+    "desktop-menu-unknown.png",
+    "desktop-preview-historical.png",
+    "desktop-tokens-light.png",
+    "mobile-overview.png",
+    "narrow-menu.png",
+    "forced-colors-focus.png"
+  ],
+  "limitations": [
+    "One engine: private HeadlessChrome154; emulated viewport, not physical touch or native GUI.",
+    "Embedded popup h1 semantics are retained and documented as a source finding.",
+    "Forced-color capture proves navigation and state distinction; it does not independently qualify every focus-ring state or assistive-technology announcement.",
+    "No native compositor input, GTK fallback, AT/IME, speech, braille or actual frame presentation is accepted."
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}
