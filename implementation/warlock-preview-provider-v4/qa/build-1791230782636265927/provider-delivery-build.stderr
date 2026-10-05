@@ -1,0 +1,19 @@
+native/provider-delivery-test.cpp: In function ‘int main(int, char**)’:
+native/provider-delivery-test.cpp:39:23: error: reference to ‘bridge’ is ambiguous
+   39 |     if(argc==2)return bridge(std::string_view(argv[1])=="--bridge-released");
+      |                       ^~~~~~
+  • there are 2 candidates
+In file included from native/preview_wire.hpp:2,
+                 from native/preview_delivery.hpp:3,
+                 from native/provider-delivery-test.cpp:1:
+    • candidate 1: ‘namespace preview::bridge { }’
+      native/preview_client.hpp:12:20:
+         12 | namespace preview::bridge {
+            |                    ^~~~~~
+    • candidate 2: ‘int bridge(bool)’
+      native/provider-delivery-test.cpp:19:12:
+         19 | static int bridge(bool released){
+            |            ^~~~~~
+native/provider-delivery-test.cpp: At global scope:
+native/provider-delivery-test.cpp:19:12: error: ‘int bridge(bool)’ defined but not used [-Werror=unused-function]
+cc1plus: all warnings being treated as errors

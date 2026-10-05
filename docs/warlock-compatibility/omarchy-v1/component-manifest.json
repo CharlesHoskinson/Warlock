@@ -1,0 +1,132 @@
+{
+  "schema": 1,
+  "status": "installed-inventory-and-additive-contracts-recorded",
+  "commands": 443,
+  "effectiveBindings": 265,
+  "sourceFiles": 17,
+  "productCompatibilityQualified": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "files": {
+    "README.md": {
+      "sha256": "e5b0280c707b455c4574932f362636decb59a96269bc79ac62d733b9a48cf496",
+      "size": 2549,
+      "mode": "0o644"
+    },
+    "commands.json": {
+      "sha256": "63b47b80a6937c1f4fce63a15e2bb37108d2497c9c059c0bc2ef93a1059e2796",
+      "size": 219454,
+      "mode": "0o644"
+    },
+    "effective-bindings.json": {
+      "sha256": "406005980db7bd091707f952f9420a107b91b5e328eeef235c0492b0e10a7c34",
+      "size": 118835,
+      "mode": "0o644"
+    },
+    "inventory.json": {
+      "sha256": "05030d1020fc46afc91c0e3086a665c402f64632137e0208a44e57089d278075",
+      "size": 5454,
+      "mode": "0o644"
+    },
+    "inventory.py": {
+      "sha256": "1586b67fccf0e3f497778920eda4639d459a811a64b090460cf5d5e4024ba3e2",
+      "size": 2982,
+      "mode": "0o644"
+    },
+    "keybindings.txt": {
+      "sha256": "82da0317f71d227386c1dcd29e902fc7f4a4d32df5f327369836196933dd572b",
+      "size": 15716,
+      "mode": "0o644"
+    },
+    "keywords.json": {
+      "sha256": "c82af780cc4ac1d3f8183e510ba638a4f23dcbe0d3ebaa7e8e1ea6ba6db23765",
+      "size": 158113,
+      "mode": "0o644"
+    },
+    "sources/packaged/bindings/applications.lua": {
+      "sha256": "6ef93bfe3df6f3b93379e0b194f3ec925cd84cfdb30115c6ece18198f21e0e3e",
+      "size": 2457,
+      "mode": "0o644"
+    },
+    "sources/packaged/bindings/clipboard.lua": {
+      "sha256": "3c197296f8efd7c3eb4b048d05c452fd9bbe0ad3c4969d938ea24a1e2d034717",
+      "size": 1891,
+      "mode": "0o644"
+    },
+    "sources/packaged/bindings/media.lua": {
+      "sha256": "956980e5bc440e51d305f0e40cdee7f791eff6d4692f866b70275036ff82d2c1",
+      "size": 3160,
+      "mode": "0o644"
+    },
+    "sources/packaged/bindings/tiling.lua": {
+      "sha256": "85aac24c8a44fc3d0513e77ac2c59eefb179228834d6670ec76fb310d9f99aaf",
+      "size": 6905,
+      "mode": "0o644"
+    },
+    "sources/packaged/bindings/utilities.lua": {
+      "sha256": "60b4ad67084d71222f04b118d6b5df0da7bc7b48169655674b84ae6d2f36b5ff",
+      "size": 7150,
+      "mode": "0o644"
+    },
+    "sources/packaged/bindings/voxtype.lua": {
+      "sha256": "ff39dcab7a834082abc12a5563c3b37ce434a39a1969a1ecb2f025553b69c446",
+      "size": 275,
+      "mode": "0o644"
+    },
+    "sources/packaged/bindings.lua": {
+      "sha256": "7ada30a9a70254c40234efdf41074d1f008c179d92242aacec98f48b132e2dde",
+      "size": 192,
+      "mode": "0o644"
+    },
+    "sources/packaged/bootstrap.lua": {
+      "sha256": "ee16813516877df26984a78baf389f153af302e0d11736582cfbd0e002f2d531",
+      "size": 921,
+      "mode": "0o644"
+    },
+    "sources/packaged/helpers.lua": {
+      "sha256": "e3408ef27412436b834f3fed8fe57e74a9e75a0a754a802dc5bd959c57da7088",
+      "size": 3743,
+      "mode": "0o644"
+    },
+    "sources/packaged/omarchy.lua": {
+      "sha256": "e566ebf77176b0253f07fc1d57085116fe370f527601d22597748136d0f3f2e5",
+      "size": 806,
+      "mode": "0o644"
+    },
+    "sources/packaged/paths.lua": {
+      "sha256": "9862b85c515511c55d2430777c7453b781ef0f088380e53bb89684c906445a5d",
+      "size": 774,
+      "mode": "0o644"
+    },
+    "sources/packaged/require_all.lua": {
+      "sha256": "0b95e2e15465b3f1247868bb3000d348077d1ca42db428c45f888e09bc6ee88f",
+      "size": 1356,
+      "mode": "0o644"
+    },
+    "sources/packaged/require_optional.lua": {
+      "sha256": "912a4f09fb5bd6ea886edcf2f683ba10f30bc533ec3e99454d06fc69a02c328c",
+      "size": 260,
+      "mode": "0o644"
+    },
+    "sources/user/bindings.lua": {
+      "sha256": "c9d7f292c9ee6e5f2e2730adcfdfd5b9b58bfc77812a0af1887e7964a03ca676",
+      "size": 1605,
+      "mode": "0o644"
+    },
+    "sources/user/hyprland.lua": {
+      "sha256": "8873214e82931bf52d0cdff1c70e2fcd59d27610938565759485d75b4c5f2bd5",
+      "size": 2232,
+      "mode": "0o644"
+    },
+    "sources/user/pin.lua": {
+      "sha256": "02d577ce52b4652fdaed116150387b4309f16a73f3159223e159c0be6e8cb478",
+      "size": 3199,
+      "mode": "0o644"
+    },
+    "sources/user/snap.lua": {
+      "sha256": "389bc19a23e090e1a43d446fc927a65e265b1742bbbd15a88b1163ef0fc59e7c",
+      "size": 30732,
+      "mode": "0o644"
+    }
+  }
+}

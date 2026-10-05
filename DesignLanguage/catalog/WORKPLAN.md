@@ -12,7 +12,7 @@ The five-reviewer exact-v2 consensus is accepted as a design target. The native 
 - [x] Build additive semantic/component tokens, contrast checks, icon/asset rules and original visual library.
 - [x] Implement the offline-capable catalog with search, deep links, responsive navigation, all component sections and faithful actual-Elm fixture demos.
 - [x] Qualify browser accessibility/keyboard, token/coverage/source checks and one bounded independent visual finish review.
-- [ ] Commit and publish only owned design files, with exact artifact and evidence identity.
+- [x] Commit and publish only owned design files, with exact artifact and evidence identity.
 - [ ] Integrate product renderer/input/feedback improvements in fresh owned GUI derivatives, preserving existing priorities and native gates.
 
 ## Contract tracking
@@ -59,3 +59,5 @@ New settings/search/snap presentation and focusable disabled-menu targets remain
 ## Catalog closure — selected source scope
 
 Catalog/v6 compiled against the pinned Elm toolchain and passed 42 source/token and 104 browser checks. The source-derived registry covers all49 selected modules, 17 rendered/wrapper classes,14 component families and2338 source string tokens. Five earlier derivatives retain failures and the primary finish candidate. The independent review accepted with required corrections; allB1–B3 conditions passed in one correction/confirmation batch. DL023–029 are closed only for this catalog scope; DL030’s reference matrix is implemented in the catalog, while its product scope remains open, including the reference decision matrix; product adoption and native gates remain open. No full WCAG/native AT claim is inferred from DOM checks. See catalog/finish-receipt.json.
+
+Publication: exact959 owned files over existing GitHub history, remote verified at382523ab82ed4158f97a3502c463f12bad355f3b. Native/product integration remains open.

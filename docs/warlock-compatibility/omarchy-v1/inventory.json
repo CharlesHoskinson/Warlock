@@ -1,0 +1,153 @@
+{
+  "schema": 1,
+  "observedUTC": "2026-10-05T20:06:55.127810+00:00",
+  "scope": "Read-only live Omarchy vocabulary, effective Hyprland bindings and binding source; not Warlock native acceptance",
+  "commandCount": 443,
+  "effectiveBindingCount": 265,
+  "hiddenCommandsIncluded": true,
+  "observations": [
+    {
+      "argv": [
+        "omarchy",
+        "commands",
+        "--json",
+        "--all"
+      ],
+      "exitCode": 0,
+      "file": "commands.json",
+      "sha256": "63b47b80a6937c1f4fce63a15e2bb37108d2497c9c059c0bc2ef93a1059e2796"
+    },
+    {
+      "argv": [
+        "hyprctl",
+        "-j",
+        "binds"
+      ],
+      "exitCode": 0,
+      "file": "effective-bindings.json",
+      "sha256": "406005980db7bd091707f952f9420a107b91b5e328eeef235c0492b0e10a7c34"
+    },
+    {
+      "argv": [
+        "omarchy",
+        "menu",
+        "keybindings",
+        "--print"
+      ],
+      "exitCode": 0,
+      "file": "keybindings.txt",
+      "sha256": "82da0317f71d227386c1dcd29e902fc7f4a4d32df5f327369836196933dd572b"
+    }
+  ],
+  "sources": [
+    {
+      "path": "/usr/share/omarchy/default/hypr/bootstrap.lua",
+      "snapshot": "sources/packaged/bootstrap.lua",
+      "sha256": "ee16813516877df26984a78baf389f153af302e0d11736582cfbd0e002f2d531",
+      "bytes": 921
+    },
+    {
+      "path": "/usr/share/omarchy/default/hypr/omarchy.lua",
+      "snapshot": "sources/packaged/omarchy.lua",
+      "sha256": "e566ebf77176b0253f07fc1d57085116fe370f527601d22597748136d0f3f2e5",
+      "bytes": 806
+    },
+    {
+      "path": "/usr/share/omarchy/default/hypr/helpers.lua",
+      "snapshot": "sources/packaged/helpers.lua",
+      "sha256": "e3408ef27412436b834f3fed8fe57e74a9e75a0a754a802dc5bd959c57da7088",
+      "bytes": 3743
+    },
+    {
+      "path": "/usr/share/omarchy/default/hypr/bindings.lua",
+      "snapshot": "sources/packaged/bindings.lua",
+      "sha256": "7ada30a9a70254c40234efdf41074d1f008c179d92242aacec98f48b132e2dde",
+      "bytes": 192
+    },
+    {
+      "path": "/usr/share/omarchy/default/hypr/require_optional.lua",
+      "snapshot": "sources/packaged/require_optional.lua",
+      "sha256": "912a4f09fb5bd6ea886edcf2f683ba10f30bc533ec3e99454d06fc69a02c328c",
+      "bytes": 260
+    },
+    {
+      "path": "/usr/share/omarchy/default/hypr/require_all.lua",
+      "snapshot": "sources/packaged/require_all.lua",
+      "sha256": "0b95e2e15465b3f1247868bb3000d348077d1ca42db428c45f888e09bc6ee88f",
+      "bytes": 1356
+    },
+    {
+      "path": "/usr/share/omarchy/default/hypr/paths.lua",
+      "snapshot": "sources/packaged/paths.lua",
+      "sha256": "9862b85c515511c55d2430777c7453b781ef0f088380e53bb89684c906445a5d",
+      "bytes": 774
+    },
+    {
+      "path": "/usr/share/omarchy/default/hypr/bindings/applications.lua",
+      "snapshot": "sources/packaged/bindings/applications.lua",
+      "sha256": "6ef93bfe3df6f3b93379e0b194f3ec925cd84cfdb30115c6ece18198f21e0e3e",
+      "bytes": 2457
+    },
+    {
+      "path": "/usr/share/omarchy/default/hypr/bindings/clipboard.lua",
+      "snapshot": "sources/packaged/bindings/clipboard.lua",
+      "sha256": "3c197296f8efd7c3eb4b048d05c452fd9bbe0ad3c4969d938ea24a1e2d034717",
+      "bytes": 1891
+    },
+    {
+      "path": "/usr/share/omarchy/default/hypr/bindings/media.lua",
+      "snapshot": "sources/packaged/bindings/media.lua",
+      "sha256": "956980e5bc440e51d305f0e40cdee7f791eff6d4692f866b70275036ff82d2c1",
+      "bytes": 3160
+    },
+    {
+      "path": "/usr/share/omarchy/default/hypr/bindings/tiling.lua",
+      "snapshot": "sources/packaged/bindings/tiling.lua",
+      "sha256": "85aac24c8a44fc3d0513e77ac2c59eefb179228834d6670ec76fb310d9f99aaf",
+      "bytes": 6905
+    },
+    {
+      "path": "/usr/share/omarchy/default/hypr/bindings/utilities.lua",
+      "snapshot": "sources/packaged/bindings/utilities.lua",
+      "sha256": "60b4ad67084d71222f04b118d6b5df0da7bc7b48169655674b84ae6d2f36b5ff",
+      "bytes": 7150
+    },
+    {
+      "path": "/usr/share/omarchy/default/hypr/bindings/voxtype.lua",
+      "snapshot": "sources/packaged/bindings/voxtype.lua",
+      "sha256": "ff39dcab7a834082abc12a5563c3b37ce434a39a1969a1ecb2f025553b69c446",
+      "bytes": 275
+    },
+    {
+      "path": "/home/hoskinson/.config/hypr/hyprland.lua",
+      "snapshot": "sources/user/hyprland.lua",
+      "sha256": "8873214e82931bf52d0cdff1c70e2fcd59d27610938565759485d75b4c5f2bd5",
+      "bytes": 2232
+    },
+    {
+      "path": "/home/hoskinson/.config/hypr/bindings.lua",
+      "snapshot": "sources/user/bindings.lua",
+      "sha256": "c9d7f292c9ee6e5f2e2730adcfdfd5b9b58bfc77812a0af1887e7964a03ca676",
+      "bytes": 1605
+    },
+    {
+      "path": "/home/hoskinson/.config/hypr/snap.lua",
+      "snapshot": "sources/user/snap.lua",
+      "sha256": "389bc19a23e090e1a43d446fc927a65e265b1742bbbd15a88b1163ef0fc59e7c",
+      "bytes": 30732
+    },
+    {
+      "path": "/home/hoskinson/.config/hypr/pin.lua",
+      "snapshot": "sources/user/pin.lua",
+      "sha256": "02d577ce52b4652fdaed116150387b4309f16a73f3159223e159c0be6e8cb478",
+      "bytes": 3199
+    }
+  ],
+  "warnings": [
+    "Hyprland __lua arg values are runtime callback IDs, never portable command targets. Preserve Lua source semantics and prove action routing on the owning release tuple.",
+    "User overrides take precedence over packaged defaults; effective order and binding flags must remain intact."
+  ],
+  "productCompatibilityQualified": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}
