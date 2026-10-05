@@ -1,0 +1,70 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-2b1883265b554de6b4c608702f6087ab.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-child-native-v3/qa/model.py": "12b6849523af1dfaa0862912e6ee79d1a0b942a057e98db84b260513435e166e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-child-native-v3/spec/cache.qnt": "c1728320e493424d0751c26ee8e5a2c1604ca91e88448f89f2d06657d9c093eb",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-child-native-v3/SPEC.md": "1dff1d694e9d15216b9b871e1c1ca268fe40bef9bde2510508efb1add1e9edbc"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-child-native-v3/qa/model-1791237071922655982/cache.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-child-native-v3/qa/model-1791237071922655982/cache.qnt",
+        "--main=cache",
+        "--backend=typescript",
+        "--match=^(defaultSyncTest|mergeEmptyTest|inheritedDesyncTest|queuedNullTest|destroyCacheTest)$",
+        "--seed=730011",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-child-native-v3/qa/model-1791237071922655982/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "scope": "Five fixed SHM cache scenarios; exported projections require separate actual native replay. No fence/layout/presentation or full release claim.",
+  "selectedNames": [
+    "defaultSyncTest",
+    "mergeEmptyTest",
+    "inheritedDesyncTest",
+    "queuedNullTest",
+    "destroyCacheTest"
+  ],
+  "traces": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-child-native-v3/qa/model-1791237071922655982/named-defaultSyncTest-0.itf.json": "91a09c06b7f10169239a3f0317cc9f02e1c718d359aae77562ba01a546c8ca6e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-child-native-v3/qa/model-1791237071922655982/named-destroyCacheTest-4.itf.json": "c75536ad46592df3d831176e3eb7296c74e92ca2900978954aa02f030fbf7e02",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-child-native-v3/qa/model-1791237071922655982/named-inheritedDesyncTest-2.itf.json": "204d9f8f8153a39bbf484d2a3c39bce0f62f931d3fa87b88bc8965eb8d138b67",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-child-native-v3/qa/model-1791237071922655982/named-mergeEmptyTest-1.itf.json": "c5012e7b17ba8b17e200a2b3095fd22e659b91ab5485e0b1ef69e8de68fc5116",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-child-native-v3/qa/model-1791237071922655982/named-queuedNullTest-3.itf.json": "85058f421693016103b09a8bc109dd181b8ffb1e261b6c6103002a7aa3ac889f"
+  },
+  "states": 46,
+  "artifacts": {
+    "model.py": "12b6849523af1dfaa0862912e6ee79d1a0b942a057e98db84b260513435e166e",
+    "cache.qnt": "c1728320e493424d0751c26ee8e5a2c1604ca91e88448f89f2d06657d9c093eb",
+    "SPEC.md": "1dff1d694e9d15216b9b871e1c1ca268fe40bef9bde2510508efb1add1e9edbc",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-defaultSyncTest-0.itf.json": "91a09c06b7f10169239a3f0317cc9f02e1c718d359aae77562ba01a546c8ca6e",
+    "named-mergeEmptyTest-1.itf.json": "c5012e7b17ba8b17e200a2b3095fd22e659b91ab5485e0b1ef69e8de68fc5116",
+    "named-inheritedDesyncTest-2.itf.json": "204d9f8f8153a39bbf484d2a3c39bce0f62f931d3fa87b88bc8965eb8d138b67",
+    "named-queuedNullTest-3.itf.json": "85058f421693016103b09a8bc109dd181b8ffb1e261b6c6103002a7aa3ac889f",
+    "named-destroyCacheTest-4.itf.json": "c75536ad46592df3d831176e3eb7296c74e92ca2900978954aa02f030fbf7e02",
+    "selected.stdout": "0e050447800f152910f815d04128241bc8214d938acea87bae439d5ef389e1f8",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

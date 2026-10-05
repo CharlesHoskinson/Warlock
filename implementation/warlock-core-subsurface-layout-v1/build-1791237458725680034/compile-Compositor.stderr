@@ -1,0 +1,9 @@
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-core-subsurface-layout-v1/build-1791237458725680034/owning-headers/src/protocols/core/Compositor.cpp: In function ‘bool Warlock::queueSubsurfaceOrder(SP<CWLSubsurfaceResource>, SP<CWLSurfaceResource>, bool)’:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-core-subsurface-layout-v1/build-1791237458725680034/owning-headers/src/protocols/core/Compositor.cpp:201:21: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  201 |                     if(layout->order.size()>=65536)return false;layout->order.push_back({false,child});
+      |                     ^~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-core-subsurface-layout-v1/build-1791237458725680034/owning-headers/src/protocols/core/Compositor.cpp:201:65: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  201 |                     if(layout->order.size()>=65536)return false;layout->order.push_back({false,child});
+      |                                                                 ^~~~~~
+At global scope:
+cc1plus: note: unrecognized command-line option ‘-Wno-gnu-zero-variadic-macro-arguments’ may have been intended to silence earlier diagnostics

@@ -1,0 +1,15 @@
+
+ Error [QNT000]: mismatched input '=' expecting ':'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-client-child-native-v3/qa/model-1791237036120655440/cache.qnt:17:23
+  17:   action paint(c:int) = all {exists, child'=if(sync)child else c,
+                            ^
+
+
+ Error [QNT000]: extraneous input 'action' expecting {<EOF>, 'module', DOCCOMMENT}
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-client-child-native-v3/qa/model-1791237036120655440/cache.qnt:21:3
+  21:   action empty = all {exists, child'=child, queued'=queued, grand'=grand,
+        ^^^^^^
+
+error: parsing failed

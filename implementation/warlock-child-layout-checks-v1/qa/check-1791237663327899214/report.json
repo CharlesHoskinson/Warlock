@@ -1,0 +1,947 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-1a8828042c1f466a8a3fa693c0c47447.scope",
+    "coreLimit": 1
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-child-layout-checks-v1/qa/check-1791237663327899214/layout.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-child-layout-checks-v1/qa/check-1791237663327899214/layout.qnt",
+        "--main=layout",
+        "--backend=typescript",
+        "--match=^(positionParentTest|stackingParentTest)$",
+        "--seed=730021",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-child-layout-checks-v1/qa/check-1791237663327899214/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "scope": "One fixed child pending/applied position and parent stacking; actual native sample coupling, not general layout/fence/presentation/fullrelease.",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-child-layout-checks-v1/qa/check.py": "5a851f529683a24d813ce44a1186c591bfed3b283c54be30bf74bcb24ff3d560",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-child-layout-checks-v1/SPEC.md": "3268df1dde4b738afedfd43adb19877e4552b22a98620a9129d6903b3db0b72d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-child-layout-checks-v1/spec/layout.qnt": "41b301247563e37ed481e7c076a0df17df327a9c0e93682561a16a7a2c51b75d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-child-native-v6/qa/native-result.json": "e172c6f05cc62030763693bf74bdb2b58ed950dc6f31d9896525cf50434d80ad",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-child-native-v6/qa/native-1791237601053306854/report.json": "5497e09ba51376bdcb8da4c1f4d701eb15f233729901749ffe0d5e357585ffcd",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-child-native-v5/qa/native-1791237339537618288/report.json": "7fa8dd31053e79d1b6a3c9984c1b32da85e9f4b79c3cdde09d6dee50b6a33b04"
+  },
+  "actualPrematureLayoutNegativeDetected": {
+    "report": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-child-native-v5/qa/native-1791237339537618288/report.json",
+    "sha256": "7fa8dd31053e79d1b6a3c9984c1b32da85e9f4b79c3cdde09d6dee50b6a33b04",
+    "pixelsAndContextViolation": true
+  },
+  "selectedNames": [
+    "positionParentTest",
+    "stackingParentTest"
+  ],
+  "traces": [
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-child-layout-checks-v1/qa/check-1791237663327899214/named-positionParentTest-0.itf.json",
+      "sha256": "7c22f9a2b0eb5a0c03564efca751d11c1d2852c9b23fbb8f30b4513609031b9f",
+      "statesCompared": 5,
+      "rows": [
+        {
+          "state": {
+            "#meta": {
+              "index": 0
+            },
+            "above": true,
+            "queuedAbove": true,
+            "queuedX": {
+              "#bigint": "20"
+            },
+            "sample": "layout-baseline",
+            "x": {
+              "#bigint": "20"
+            }
+          },
+          "nativeSample": "layout-baseline",
+          "context": {
+            "lifetime": "15732585088012735796",
+            "incarnation": "2",
+            "output": "1",
+            "privacy": "1",
+            "rendering": "2",
+            "scene": "1",
+            "content": "39"
+          },
+          "pixels": {
+            "width": 320,
+            "height": 240,
+            "red": 73728,
+            "green": 0,
+            "blue": 3072,
+            "yellow": 0,
+            "cyan": 0,
+            "opaque": 76800,
+            "points": {
+              "root": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "old": [
+                0,
+                0,
+                255,
+                255
+              ],
+              "moved": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "nested": [
+                255,
+                0,
+                0,
+                255
+              ]
+            }
+          }
+        },
+        {
+          "state": {
+            "#meta": {
+              "index": 1
+            },
+            "above": true,
+            "queuedAbove": true,
+            "queuedX": {
+              "#bigint": "100"
+            },
+            "sample": "layout-position-pending",
+            "x": {
+              "#bigint": "20"
+            }
+          },
+          "nativeSample": "layout-position-pending",
+          "context": {
+            "lifetime": "15732585088012735796",
+            "incarnation": "2",
+            "output": "1",
+            "privacy": "1",
+            "rendering": "2",
+            "scene": "1",
+            "content": "39"
+          },
+          "pixels": {
+            "width": 320,
+            "height": 240,
+            "red": 73728,
+            "green": 0,
+            "blue": 3072,
+            "yellow": 0,
+            "cyan": 0,
+            "opaque": 76800,
+            "points": {
+              "root": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "old": [
+                0,
+                0,
+                255,
+                255
+              ],
+              "moved": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "nested": [
+                255,
+                0,
+                0,
+                255
+              ]
+            }
+          }
+        },
+        {
+          "state": {
+            "#meta": {
+              "index": 2
+            },
+            "above": true,
+            "queuedAbove": true,
+            "queuedX": {
+              "#bigint": "100"
+            },
+            "sample": "layout-position-pending",
+            "x": {
+              "#bigint": "20"
+            }
+          },
+          "nativeSample": "layout-position-pending",
+          "context": {
+            "lifetime": "15732585088012735796",
+            "incarnation": "2",
+            "output": "1",
+            "privacy": "1",
+            "rendering": "2",
+            "scene": "1",
+            "content": "39"
+          },
+          "pixels": {
+            "width": 320,
+            "height": 240,
+            "red": 73728,
+            "green": 0,
+            "blue": 3072,
+            "yellow": 0,
+            "cyan": 0,
+            "opaque": 76800,
+            "points": {
+              "root": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "old": [
+                0,
+                0,
+                255,
+                255
+              ],
+              "moved": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "nested": [
+                255,
+                0,
+                0,
+                255
+              ]
+            }
+          }
+        },
+        {
+          "state": {
+            "#meta": {
+              "index": 3
+            },
+            "above": true,
+            "queuedAbove": true,
+            "queuedX": {
+              "#bigint": "100"
+            },
+            "sample": "layout-position-applied",
+            "x": {
+              "#bigint": "100"
+            }
+          },
+          "nativeSample": "layout-position-applied",
+          "context": {
+            "lifetime": "15732585088012735796",
+            "incarnation": "2",
+            "output": "1",
+            "privacy": "1",
+            "rendering": "2",
+            "scene": "1",
+            "content": "40"
+          },
+          "pixels": {
+            "width": 320,
+            "height": 240,
+            "red": 73728,
+            "green": 0,
+            "blue": 3072,
+            "yellow": 0,
+            "cyan": 0,
+            "opaque": 76800,
+            "points": {
+              "root": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "old": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "moved": [
+                0,
+                0,
+                255,
+                255
+              ],
+              "nested": [
+                0,
+                0,
+                255,
+                255
+              ]
+            }
+          }
+        },
+        {
+          "state": {
+            "#meta": {
+              "index": 4
+            },
+            "above": true,
+            "queuedAbove": true,
+            "queuedX": {
+              "#bigint": "100"
+            },
+            "sample": "layout-position-applied",
+            "x": {
+              "#bigint": "100"
+            }
+          },
+          "nativeSample": "layout-position-applied",
+          "context": {
+            "lifetime": "15732585088012735796",
+            "incarnation": "2",
+            "output": "1",
+            "privacy": "1",
+            "rendering": "2",
+            "scene": "1",
+            "content": "40"
+          },
+          "pixels": {
+            "width": 320,
+            "height": 240,
+            "red": 73728,
+            "green": 0,
+            "blue": 3072,
+            "yellow": 0,
+            "cyan": 0,
+            "opaque": 76800,
+            "points": {
+              "root": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "old": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "moved": [
+                0,
+                0,
+                255,
+                255
+              ],
+              "nested": [
+                0,
+                0,
+                255,
+                255
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-child-layout-checks-v1/qa/check-1791237663327899214/named-stackingParentTest-1.itf.json",
+      "sha256": "23af5f5a804b61db981dc750c454762d7b12437d626234cc6ff7f3a8d8cd195a",
+      "statesCompared": 9,
+      "rows": [
+        {
+          "state": {
+            "#meta": {
+              "index": 0
+            },
+            "above": true,
+            "queuedAbove": true,
+            "queuedX": {
+              "#bigint": "100"
+            },
+            "sample": "layout-position-applied",
+            "x": {
+              "#bigint": "100"
+            }
+          },
+          "nativeSample": "layout-position-applied",
+          "context": {
+            "lifetime": "15732585088012735796",
+            "incarnation": "2",
+            "output": "1",
+            "privacy": "1",
+            "rendering": "2",
+            "scene": "1",
+            "content": "40"
+          },
+          "pixels": {
+            "width": 320,
+            "height": 240,
+            "red": 73728,
+            "green": 0,
+            "blue": 3072,
+            "yellow": 0,
+            "cyan": 0,
+            "opaque": 76800,
+            "points": {
+              "root": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "old": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "moved": [
+                0,
+                0,
+                255,
+                255
+              ],
+              "nested": [
+                0,
+                0,
+                255,
+                255
+              ]
+            }
+          }
+        },
+        {
+          "state": {
+            "#meta": {
+              "index": 1
+            },
+            "above": true,
+            "queuedAbove": false,
+            "queuedX": {
+              "#bigint": "100"
+            },
+            "sample": "layout-below-pending",
+            "x": {
+              "#bigint": "100"
+            }
+          },
+          "nativeSample": "layout-below-pending",
+          "context": {
+            "lifetime": "15732585088012735796",
+            "incarnation": "2",
+            "output": "1",
+            "privacy": "1",
+            "rendering": "2",
+            "scene": "1",
+            "content": "40"
+          },
+          "pixels": {
+            "width": 320,
+            "height": 240,
+            "red": 73728,
+            "green": 0,
+            "blue": 3072,
+            "yellow": 0,
+            "cyan": 0,
+            "opaque": 76800,
+            "points": {
+              "root": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "old": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "moved": [
+                0,
+                0,
+                255,
+                255
+              ],
+              "nested": [
+                0,
+                0,
+                255,
+                255
+              ]
+            }
+          }
+        },
+        {
+          "state": {
+            "#meta": {
+              "index": 2
+            },
+            "above": true,
+            "queuedAbove": false,
+            "queuedX": {
+              "#bigint": "100"
+            },
+            "sample": "layout-below-pending",
+            "x": {
+              "#bigint": "100"
+            }
+          },
+          "nativeSample": "layout-below-pending",
+          "context": {
+            "lifetime": "15732585088012735796",
+            "incarnation": "2",
+            "output": "1",
+            "privacy": "1",
+            "rendering": "2",
+            "scene": "1",
+            "content": "40"
+          },
+          "pixels": {
+            "width": 320,
+            "height": 240,
+            "red": 73728,
+            "green": 0,
+            "blue": 3072,
+            "yellow": 0,
+            "cyan": 0,
+            "opaque": 76800,
+            "points": {
+              "root": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "old": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "moved": [
+                0,
+                0,
+                255,
+                255
+              ],
+              "nested": [
+                0,
+                0,
+                255,
+                255
+              ]
+            }
+          }
+        },
+        {
+          "state": {
+            "#meta": {
+              "index": 3
+            },
+            "above": false,
+            "queuedAbove": false,
+            "queuedX": {
+              "#bigint": "100"
+            },
+            "sample": "layout-below-applied",
+            "x": {
+              "#bigint": "100"
+            }
+          },
+          "nativeSample": "layout-below-applied",
+          "context": {
+            "lifetime": "15732585088012735796",
+            "incarnation": "2",
+            "output": "1",
+            "privacy": "1",
+            "rendering": "2",
+            "scene": "1",
+            "content": "41"
+          },
+          "pixels": {
+            "width": 320,
+            "height": 240,
+            "red": 76800,
+            "green": 0,
+            "blue": 0,
+            "yellow": 0,
+            "cyan": 0,
+            "opaque": 76800,
+            "points": {
+              "root": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "old": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "moved": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "nested": [
+                255,
+                0,
+                0,
+                255
+              ]
+            }
+          }
+        },
+        {
+          "state": {
+            "#meta": {
+              "index": 4
+            },
+            "above": false,
+            "queuedAbove": false,
+            "queuedX": {
+              "#bigint": "100"
+            },
+            "sample": "layout-below-applied",
+            "x": {
+              "#bigint": "100"
+            }
+          },
+          "nativeSample": "layout-below-applied",
+          "context": {
+            "lifetime": "15732585088012735796",
+            "incarnation": "2",
+            "output": "1",
+            "privacy": "1",
+            "rendering": "2",
+            "scene": "1",
+            "content": "41"
+          },
+          "pixels": {
+            "width": 320,
+            "height": 240,
+            "red": 76800,
+            "green": 0,
+            "blue": 0,
+            "yellow": 0,
+            "cyan": 0,
+            "opaque": 76800,
+            "points": {
+              "root": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "old": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "moved": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "nested": [
+                255,
+                0,
+                0,
+                255
+              ]
+            }
+          }
+        },
+        {
+          "state": {
+            "#meta": {
+              "index": 5
+            },
+            "above": false,
+            "queuedAbove": true,
+            "queuedX": {
+              "#bigint": "100"
+            },
+            "sample": "layout-above-pending",
+            "x": {
+              "#bigint": "100"
+            }
+          },
+          "nativeSample": "layout-above-pending",
+          "context": {
+            "lifetime": "15732585088012735796",
+            "incarnation": "2",
+            "output": "1",
+            "privacy": "1",
+            "rendering": "2",
+            "scene": "1",
+            "content": "41"
+          },
+          "pixels": {
+            "width": 320,
+            "height": 240,
+            "red": 76800,
+            "green": 0,
+            "blue": 0,
+            "yellow": 0,
+            "cyan": 0,
+            "opaque": 76800,
+            "points": {
+              "root": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "old": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "moved": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "nested": [
+                255,
+                0,
+                0,
+                255
+              ]
+            }
+          }
+        },
+        {
+          "state": {
+            "#meta": {
+              "index": 6
+            },
+            "above": false,
+            "queuedAbove": true,
+            "queuedX": {
+              "#bigint": "100"
+            },
+            "sample": "layout-above-pending",
+            "x": {
+              "#bigint": "100"
+            }
+          },
+          "nativeSample": "layout-above-pending",
+          "context": {
+            "lifetime": "15732585088012735796",
+            "incarnation": "2",
+            "output": "1",
+            "privacy": "1",
+            "rendering": "2",
+            "scene": "1",
+            "content": "41"
+          },
+          "pixels": {
+            "width": 320,
+            "height": 240,
+            "red": 76800,
+            "green": 0,
+            "blue": 0,
+            "yellow": 0,
+            "cyan": 0,
+            "opaque": 76800,
+            "points": {
+              "root": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "old": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "moved": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "nested": [
+                255,
+                0,
+                0,
+                255
+              ]
+            }
+          }
+        },
+        {
+          "state": {
+            "#meta": {
+              "index": 7
+            },
+            "above": true,
+            "queuedAbove": true,
+            "queuedX": {
+              "#bigint": "100"
+            },
+            "sample": "layout-above-applied",
+            "x": {
+              "#bigint": "100"
+            }
+          },
+          "nativeSample": "layout-above-applied",
+          "context": {
+            "lifetime": "15732585088012735796",
+            "incarnation": "2",
+            "output": "1",
+            "privacy": "1",
+            "rendering": "2",
+            "scene": "1",
+            "content": "42"
+          },
+          "pixels": {
+            "width": 320,
+            "height": 240,
+            "red": 73728,
+            "green": 0,
+            "blue": 3072,
+            "yellow": 0,
+            "cyan": 0,
+            "opaque": 76800,
+            "points": {
+              "root": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "old": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "moved": [
+                0,
+                0,
+                255,
+                255
+              ],
+              "nested": [
+                0,
+                0,
+                255,
+                255
+              ]
+            }
+          }
+        },
+        {
+          "state": {
+            "#meta": {
+              "index": 8
+            },
+            "above": true,
+            "queuedAbove": true,
+            "queuedX": {
+              "#bigint": "100"
+            },
+            "sample": "layout-above-applied",
+            "x": {
+              "#bigint": "100"
+            }
+          },
+          "nativeSample": "layout-above-applied",
+          "context": {
+            "lifetime": "15732585088012735796",
+            "incarnation": "2",
+            "output": "1",
+            "privacy": "1",
+            "rendering": "2",
+            "scene": "1",
+            "content": "42"
+          },
+          "pixels": {
+            "width": 320,
+            "height": 240,
+            "red": 73728,
+            "green": 0,
+            "blue": 3072,
+            "yellow": 0,
+            "cyan": 0,
+            "opaque": 76800,
+            "points": {
+              "root": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "old": [
+                255,
+                0,
+                0,
+                255
+              ],
+              "moved": [
+                0,
+                0,
+                255,
+                255
+              ],
+              "nested": [
+                0,
+                0,
+                255,
+                255
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "nativeStatesCompared": 14,
+  "artifacts": {
+    "layout.qnt": "41b301247563e37ed481e7c076a0df17df327a9c0e93682561a16a7a2c51b75d",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-positionParentTest-0.itf.json": "7c22f9a2b0eb5a0c03564efca751d11c1d2852c9b23fbb8f30b4513609031b9f",
+    "named-stackingParentTest-1.itf.json": "23af5f5a804b61db981dc750c454762d7b12437d626234cc6ff7f3a8d8cd195a",
+    "selected.stdout": "de18cd2aa9558f52a0d30ce0bcdb61c455b290a7fe38fe826fb2364d65991026",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

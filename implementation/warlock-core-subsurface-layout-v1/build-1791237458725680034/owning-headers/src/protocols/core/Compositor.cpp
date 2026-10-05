@@ -1,0 +1,1082 @@
+#include "Compositor.hpp"
+#include "AppliedSurfaceRevision.hpp"
+#include "SubsurfaceCommit.hpp"
+#include <map>
+#include "../../Compositor.hpp"
+#include "Output.hpp"
+#include "Seat.hpp"
+#include "../types/WLBuffer.hpp"
+#include <algorithm>
+#include <array>
+#include <ranges>
+#include "Subcompositor.hpp"
+#include "../Viewporter.hpp"
+#include "../../output/Monitor.hpp"
+#include "../PresentationTime.hpp"
+#include "../DRMSyncobj.hpp"
+#include "../types/DMABuffer.hpp"
+#include "../../render/Renderer.hpp"
+#include "config/ConfigValue.hpp"
+#include "../../managers/eventLoop/EventLoopManager.hpp"
+#include "../../state/MonitorState.hpp"
+#include "protocols/types/SurfaceRole.hpp"
+#include "render/Texture.hpp"
+#include <cstring>
+
+using namespace NColorManagement;
+
+namespace {
+struct CachedSurfaceState { WP<CWLSurfaceResource> identity; UP<SSurfaceState> state; };
+struct PendingPosition { WP<CWLSubsurfaceResource> identity; Vector2D position; };
+struct PendingOrderItem { bool parent=false; WP<CWLSubsurfaceResource> child; };
+struct PendingLayout {
+    WP<CWLSurfaceResource> identity;
+    std::map<const CWLSubsurfaceResource*,PendingPosition> positions;
+    std::vector<PendingOrderItem> order;
+};
+struct AppliedRegistry {
+    wl_display* display=nullptr;wl_listener destroy{};
+    std::map<const CWLSurfaceResource*,Warlock::AppliedRevision> revisions;
+    std::map<const CWLSurfaceResource*,CachedSurfaceState> cached;
+    std::map<const CWLSurfaceResource*,PendingLayout> layouts;
+    const CWLSurfaceResource* applying=nullptr;
+    bool unavailable=false;
+};
+// Owned by this compositor's wl_display, not a frontend or process-global
+// destructor order. The display listener drops all records and its own storage.
+AppliedRegistry* appliedRegistry=nullptr;
+void ensureAppliedRegistry(wl_display* display) noexcept {
+    if(!display)return;
+    if(appliedRegistry){if(appliedRegistry->display!=display)appliedRegistry->unavailable=true;return;}
+    try {
+        auto owner=std::make_unique<AppliedRegistry>();owner->display=display;
+        owner->destroy.notify=[](wl_listener* listener,void*) {
+            auto registry=appliedRegistry;
+            if(!registry || listener!=&registry->destroy)return;
+            appliedRegistry=nullptr;wl_list_remove(&registry->destroy.link);delete registry;
+        };
+        wl_display_add_destroy_listener(display,&owner->destroy);appliedRegistry=owner.release();
+    } catch(...) { /* zero API revision refuses capture when storage is absent */ }
+}
+void recordAppliedSurface(const CWLSurfaceResource* surface) noexcept {
+    if(!appliedRegistry || appliedRegistry->unavailable)return;
+    try {
+        constexpr size_t prototypeMaximumTrackedSurfaces=65536;
+        if(appliedRegistry->revisions.size()>=prototypeMaximumTrackedSurfaces && !appliedRegistry->revisions.contains(surface)){appliedRegistry->unavailable=true;return;}
+        appliedRegistry->revisions[surface].apply();
+    } catch(...) {appliedRegistry->unavailable=true;}
+}
+bool effectivelySynchronized(SP<CWLSurfaceResource> surface) {
+    std::set<const CWLSurfaceResource*> seen;
+    while(surface && surface->m_role && surface->m_role->role()==SURFACE_ROLE_SUBSURFACE) {
+        if(!seen.insert(surface.get()).second)return true;
+        auto role=dynamicPointerCast<CSubsurfaceRole>(surface->m_role);
+        auto sub=role?role->m_subsurface.lock():nullptr;
+        if(!sub)return true;
+        if(sub->m_sync)return true;
+        surface=sub->m_parent.lock();
+    }
+    return false;
+}
+void discardCached(const CWLSurfaceResource* surface) {
+    if(!appliedRegistry)return;
+    auto node=appliedRegistry->cached.extract(surface);
+    if(!node.empty())PROTO::presentation->discardFeedbacks(node.mapped().state->presentationFeedbacks);
+}
+void retireAppliedSurface(const CWLSurfaceResource* surface) noexcept {
+    discardCached(surface);
+    if(appliedRegistry){appliedRegistry->revisions.erase(surface);appliedRegistry->layouts.erase(surface);}
+}
+bool attachedChild(SP<CWLSurfaceResource> parent,SP<CWLSubsurfaceResource> child) {
+    return parent && child && child->m_parent.lock()==parent &&
+        std::ranges::any_of(parent->m_subsurfaces,[&](const auto& weak){return weak.lock()==child;});
+}
+PendingLayout* pendingLayout(SP<CWLSurfaceResource> parent) {
+    if(!appliedRegistry || !parent)return nullptr;
+    auto found=appliedRegistry->layouts.find(parent.get());
+    if(found!=appliedRegistry->layouts.end() && found->second.identity.lock()!=parent){
+        appliedRegistry->layouts.erase(found);found=appliedRegistry->layouts.end();
+    }
+    if(found==appliedRegistry->layouts.end()){
+        if(appliedRegistry->layouts.size()>=65536)return nullptr;
+        found=appliedRegistry->layouts.emplace(parent.get(),PendingLayout{parent,{},{}}).first;
+    }
+    return &found->second;
+}
+// A sentinel preserves the parent's place while weak children can retire.
+// Build a pending sequence once, then apply successive requests to that sequence.
+bool includeNewChildren(PendingLayout& layout,SP<CWLSurfaceResource> parent) {
+    for(const auto& weak:parent->m_subsurfaces){
+        auto child=weak.lock();if(!attachedChild(parent,child))continue;
+        if(std::ranges::none_of(layout.order,[&](const auto& row){return !row.parent && row.child.lock()==child;})){
+            if(layout.order.size()>=65537)return false;
+            layout.order.push_back({false,child});
+        }
+    }
+    return true;
+}
+void applyParentLayout(SP<CWLSurfaceResource> parent) {
+    if(!appliedRegistry || !parent)return;
+    auto node=appliedRegistry->layouts.extract(parent.get());if(node.empty())return;
+    auto& layout=node.mapped();if(layout.identity.lock()!=parent)return;
+    if(!layout.order.empty() && !includeNewChildren(layout,parent)){
+        appliedRegistry->unavailable=true;parent->getResource()->noMemory();return;
+    }
+    for(const auto& [key,row]:layout.positions){
+        auto child=row.identity.lock();if(child && child.get()==key && attachedChild(parent,child))child->m_position=row.position;
+    }
+    if(layout.order.empty())return;
+    std::erase_if(layout.order,[&](const auto& row){return !row.parent && !attachedChild(parent,row.child.lock());});
+    auto pivot=std::ranges::find_if(layout.order,[](const auto& row){return row.parent;});
+    if(pivot==layout.order.end())return;
+    const auto parentIndex=std::distance(layout.order.begin(),pivot);
+    for(size_t i=0;i<layout.order.size();++i){
+        if(layout.order[i].parent)continue;
+        auto child=layout.order[i].child.lock();if(child)child->m_zIndex=static_cast<int>(i)-static_cast<int>(parentIndex);
+    }
+    parent->sortSubsurfaces();
+}
+bool cacheSynchronized(SP<CWLSurfaceResource> surface,SSurfaceState& state) {
+    if(!effectivelySynchronized(surface) || (appliedRegistry && appliedRegistry->applying==surface.get()))return false;
+    if(!appliedRegistry){surface->getResource()->noMemory();return true;}
+    try {
+        auto found=appliedRegistry->cached.find(surface.get());
+        if(found!=appliedRegistry->cached.end() && found->second.identity.lock()!=surface){discardCached(surface.get());found=appliedRegistry->cached.end();}
+        if(found==appliedRegistry->cached.end()){
+            if(appliedRegistry->cached.size()>=65536){appliedRegistry->unavailable=true;surface->getResource()->noMemory();return true;}
+            appliedRegistry->cached.emplace(surface.get(),CachedSurfaceState{surface,makeUnique<SSurfaceState>(state)});
+            state.callbacks.clear();state.presentationFeedbacks.clear();
+        } else {
+            auto& cached=*found->second.state;
+            const auto updated=cached.updated.all|state.updated.all;
+            auto damage=cached.damage.copy(),bufferDamage=cached.bufferDamage.copy();
+            if(state.updated.bits.buffer)PROTO::presentation->discardFeedbacks(cached.presentationFeedbacks);
+            cached.updateFrom(state);cached.updated.all=updated;
+            cached.damage.add(damage);cached.bufferDamage.add(bufferDamage);
+        }
+    } catch(...) {appliedRegistry->unavailable=true;surface->getResource()->noMemory();}
+    return true;
+}
+void applyCached(SP<CWLSurfaceResource> surface) {
+    if(!appliedRegistry)return;
+    auto node=appliedRegistry->cached.extract(surface.get());
+    if(node.empty())return;
+    if(node.mapped().identity.lock()!=surface){PROTO::presentation->discardFeedbacks(node.mapped().state->presentationFeedbacks);return;}
+    struct Applying {AppliedRegistry* registry;const CWLSurfaceResource* prior;~Applying(){if(appliedRegistry==registry)registry->applying=prior;}} guard{appliedRegistry,appliedRegistry->applying};
+    appliedRegistry->applying=surface.get();surface->commitState(*node.mapped().state);
+}
+void applySynchronizedChildren(SP<CWLSurfaceResource> parent,std::set<const CWLSurfaceResource*>& seen) {
+    if(!parent || !seen.insert(parent.get()).second)return;
+    for(const auto& weak:parent->m_subsurfaces){auto sub=weak.lock();if(!sub)continue;auto surface=sub->m_surface.lock();if(!surface || sub->m_parent.lock()!=parent)continue;
+        if(!effectivelySynchronized(surface))continue;
+        applyCached(surface);applySynchronizedChildren(surface,seen);
+    }
+}
+void flushDesynchronizedTree(SP<CWLSurfaceResource> surface,std::set<const CWLSurfaceResource*>& seen) {
+    if(!surface || !seen.insert(surface.get()).second)return;
+    if(!effectivelySynchronized(surface))applyCached(surface);
+    for(const auto& weak:surface->m_subsurfaces){auto sub=weak.lock();if(sub)flushDesynchronizedTree(sub->m_surface.lock(),seen);}
+}
+}
+void Warlock::flushDesynchronizedSurface(SP<CWLSurfaceResource> surface) {std::set<const CWLSurfaceResource*> seen;flushDesynchronizedTree(surface,seen);}
+bool Warlock::queueSubsurfacePosition(SP<CWLSubsurfaceResource> sub,int32_t x,int32_t y) {
+    try {
+        auto parent=sub?sub->m_parent.lock():nullptr;if(!attachedChild(parent,sub))return false;
+        auto layout=pendingLayout(parent);if(!layout)return false;
+        auto found=layout->positions.find(sub.get());
+        if(found==layout->positions.end() && layout->positions.size()>=65536)return false;
+        layout->positions[sub.get()]={sub,Vector2D{x,y}};return true;
+    } catch(...) {return false;}
+}
+bool Warlock::queueSubsurfaceOrder(SP<CWLSubsurfaceResource> sub,SP<CWLSurfaceResource> sibling,bool above) {
+    try {
+        auto parent=sub?sub->m_parent.lock():nullptr;if(!attachedChild(parent,sub) || !sibling)return false;
+        auto layout=pendingLayout(parent);if(!layout)return false;
+        if(layout->order.empty()){
+            // Reserve the entire prototype admission bound so applying a parent
+            // needs no allocation to include children created after requests.
+            layout->order.reserve(65537);
+            for(const auto& weak:parent->m_subsurfaces){auto child=weak.lock();
+                if(attachedChild(parent,child) && child->m_zIndex<0){
+                    if(layout->order.size()>=65536)return false;layout->order.push_back({false,child});
+                }
+            }
+            layout->order.push_back({true,{}});
+        }
+        if(!includeNewChildren(*layout,parent))return false;
+        std::erase_if(layout->order,[&](const auto& row){return !row.parent && (!attachedChild(parent,row.child.lock()) || row.child.lock()==sub);});
+        auto reference=std::ranges::find_if(layout->order,[&](const auto& row){
+            if(row.parent)return sibling==parent;
+            auto child=row.child.lock();return child && child->m_surface.lock()==sibling;
+        });
+        if(reference==layout->order.end())return false;
+        if(above)++reference;
+        layout->order.insert(reference,{false,sub});return true;
+    } catch(...) {return false;}
+}
+uint64_t Warlock::appliedSurfaceRevision(const CWLSurfaceResource* surface) noexcept {
+    if(!surface || !appliedRegistry || appliedRegistry->unavailable)return 0;
+    const auto found=appliedRegistry->revisions.find(surface);
+    return found==appliedRegistry->revisions.end()?0:found->second.value();
+}
+
+
+static bool addSafeDamage(CRegion& damage, int32_t x, int32_t y, int32_t w, int32_t h) {
+    if (w <= 0 || h <= 0)
+        return false;
+
+    const int64_t x2 = std::min<int64_t>(sc<int64_t>(x) + w, INT32_MAX);
+    const int64_t y2 = std::min<int64_t>(sc<int64_t>(y) + h, INT32_MAX);
+
+    if (x2 <= x || y2 <= y)
+        return false;
+
+    damage.add(x, y, x2 - x, y2 - y);
+    return true;
+}
+
+class CDefaultSurfaceRole : public ISurfaceRole {
+  public:
+    virtual eSurfaceRole role() {
+        return SURFACE_ROLE_UNASSIGNED;
+    }
+};
+
+CWLCallbackResource::CWLCallbackResource(SP<CWlCallback>&& resource_) : m_resource(std::move(resource_)) {
+    ;
+}
+
+bool CWLCallbackResource::good() {
+    return m_resource && m_resource->resource();
+}
+
+void CWLCallbackResource::send(const Time::steady_tp& now) {
+    if (!good())
+        return;
+
+    m_resource->sendDone(Time::millis(now));
+    m_resource.reset();
+}
+
+CWLRegionResource::CWLRegionResource(SP<CWlRegion> resource_) : m_resource(resource_) {
+    if UNLIKELY (!good())
+        return;
+
+    m_resource->setData(this);
+
+    m_resource->setDestroy([this](CWlRegion* r) { PROTO::compositor->destroyResource(this); });
+    m_resource->setOnDestroy([this](CWlRegion* r) { PROTO::compositor->destroyResource(this); });
+
+    m_resource->setAdd([this](CWlRegion* r, int32_t x, int32_t y, int32_t w, int32_t h) { m_region.add(CBox{x, y, w, h}); });
+    m_resource->setSubtract([this](CWlRegion* r, int32_t x, int32_t y, int32_t w, int32_t h) { m_region.subtract(CBox{x, y, w, h}); });
+}
+
+bool CWLRegionResource::good() {
+    return m_resource->resource();
+}
+
+SP<CWLRegionResource> CWLRegionResource::fromResource(wl_resource* res) {
+    auto data = sc<CWLRegionResource*>(sc<CWlRegion*>(wl_resource_get_user_data(res))->data());
+    return data ? data->m_self.lock() : nullptr;
+}
+
+CWLSurfaceResource::CWLSurfaceResource(SP<CWlSurface> resource_) : m_resource(resource_) {
+    if UNLIKELY (!good())
+        return;
+
+    m_client = m_resource->client();
+
+    m_resource->setData(this);
+
+    m_role = makeShared<CDefaultSurfaceRole>();
+
+    m_resource->setDestroy([this](CWlSurface* r) { destroy(); });
+    m_resource->setOnDestroy([this](CWlSurface* r) { destroy(); });
+
+    m_resource->setAttach([this](CWlSurface* r, wl_resource* buffer, int32_t x, int32_t y) {
+        m_pending.updated.bits.buffer = true;
+        m_pending.updated.bits.offset = true;
+
+        m_pending.offset = {x, y};
+
+        if (m_pending.buffer)
+            m_pending.buffer.drop();
+
+        auto buf = buffer ? CWLBufferResource::fromResource(buffer) : nullptr;
+
+        if (buf && buf->m_buffer) {
+            m_pending.buffer     = CHLBufferReference(buf->m_buffer.lock());
+            m_pending.texture    = buf->m_buffer->m_texture;
+            m_pending.size       = buf->m_buffer->size;
+            m_pending.bufferSize = buf->m_buffer->size;
+        } else {
+            m_pending.buffer = {};
+            m_pending.texture.reset();
+            m_pending.size       = Vector2D{};
+            m_pending.bufferSize = Vector2D{};
+        }
+
+        if (m_pending.bufferSize != m_current.bufferSize) {
+            m_pending.updated.bits.damage = true;
+            m_pending.bufferDamage        = CBox{{}, m_pending.bufferSize};
+        }
+    });
+
+    m_resource->setCommit([this](CWlSurface* r) {
+        if (m_pending.buffer)
+            m_pending.bufferDamage.intersect(CBox{{}, m_pending.bufferSize});
+
+        if (!m_pending.buffer)
+            m_pending.size = {};
+        else if (m_pending.viewport.hasDestination)
+            m_pending.size = m_pending.viewport.destination;
+        else if (m_pending.viewport.hasSource)
+            m_pending.size = m_pending.viewport.source.size();
+        else {
+            Vector2D tfs   = m_pending.transform % 2 == 1 ? Vector2D{m_pending.bufferSize.y, m_pending.bufferSize.x} : m_pending.bufferSize;
+            m_pending.size = tfs / m_pending.scale;
+        }
+
+        if (m_pending.size.x <= 0 || m_pending.size.y <= 0)
+            m_pending.damage.clear();
+        else
+            m_pending.damage.intersect(CBox{{}, m_pending.size});
+
+        m_events.precommit.emit();
+        if (m_pending.rejected) {
+            m_pending.rejected = false;
+            PROTO::presentation->discardFeedbacks(m_pending.presentationFeedbacks);
+            dropPendingBuffer();
+            return;
+        }
+
+        // null buffer attached
+        if (!m_pending.buffer && m_pending.updated.bits.buffer) {
+            commitState(m_pending);
+
+            // remove any pending states.
+            m_stateQueue.clear();
+            m_pending.reset();
+            return;
+        }
+
+        // save state while we wait for buffer to become ready
+        auto state = m_stateQueue.enqueue(makeUnique<SSurfaceState>(m_pending));
+        m_pending.reset();
+
+        // fifo and fences first
+        m_events.stateCommit.emit(state);
+
+        if (state->buffer && state->buffer->type() == Aquamarine::BUFFER_TYPE_DMABUF && state->buffer->dmabuf().success && !state->updated.bits.acquire) {
+            state->buffer->m_syncFds = dc<CDMABuffer*>(state->buffer.m_buffer.get())->exportSyncFiles();
+            if (!state->buffer->m_syncFds.empty())
+                m_stateQueue.lock(state, LOCK_REASON_FENCE);
+        }
+
+        // now for timer.
+        m_events.stateCommit2.emit(state);
+
+        if (state->rejected) {
+            m_stateQueue.dropState(state);
+            return;
+        }
+
+        scheduleState(state);
+    });
+
+    m_resource->setDamage([this](CWlSurface* r, int32_t x, int32_t y, int32_t w, int32_t h) {
+        if (addSafeDamage(m_pending.damage, x, y, w, h))
+            m_pending.updated.bits.damage = true;
+    });
+    m_resource->setDamageBuffer([this](CWlSurface* r, int32_t x, int32_t y, int32_t w, int32_t h) {
+        if (addSafeDamage(m_pending.bufferDamage, x, y, w, h))
+            m_pending.updated.bits.damage = true;
+    });
+
+    m_resource->setSetBufferScale([this](CWlSurface* r, int32_t scale) {
+        if (scale == m_pending.scale)
+            return;
+
+        m_pending.updated.bits.scale  = true;
+        m_pending.updated.bits.damage = true;
+
+        m_pending.scale        = scale;
+        m_pending.bufferDamage = CBox{{}, m_pending.bufferSize};
+    });
+
+    m_resource->setSetBufferTransform([this](CWlSurface* r, uint32_t tr) {
+        if (tr == m_pending.transform)
+            return;
+
+        m_pending.updated.bits.transform = true;
+        m_pending.updated.bits.damage    = true;
+
+        m_pending.transform    = sc<wl_output_transform>(tr);
+        m_pending.bufferDamage = CBox{{}, m_pending.bufferSize};
+    });
+
+    m_resource->setSetInputRegion([this](CWlSurface* r, wl_resource* region) {
+        m_pending.updated.bits.input = true;
+
+        if (!region) {
+            m_pending.inputIsInfinite = true;
+            m_pending.input.clear();
+            return;
+        }
+
+        auto RG                   = CWLRegionResource::fromResource(region);
+        m_pending.inputIsInfinite = false;
+        m_pending.input           = RG->m_region;
+    });
+
+    m_resource->setSetOpaqueRegion([this](CWlSurface* r, wl_resource* region) {
+        m_pending.updated.bits.opaque = true;
+
+        if (!region) {
+            m_pending.opaque = CBox{{}, {}};
+            return;
+        }
+
+        auto RG          = CWLRegionResource::fromResource(region);
+        m_pending.opaque = RG->m_region;
+    });
+
+    m_resource->setFrame([this](CWlSurface* r, uint32_t id) {
+        m_pending.updated.bits.frame = true;
+        m_pending.callbacks.emplace_back(makeShared<CWLCallbackResource>(makeShared<CWlCallback>(m_client, 1, id)));
+    });
+
+    m_resource->setOffset([this](CWlSurface* r, int32_t x, int32_t y) {
+        m_pending.updated.bits.offset = true;
+        m_pending.offset              = {x, y};
+    });
+}
+
+CWLSurfaceResource::~CWLSurfaceResource() {
+    retireAppliedSurface(this);
+    discardPresentationFeedbacks();
+    m_events.destroy.emit();
+}
+
+void CWLSurfaceResource::discardPresentationFeedbacks() {
+    PROTO::presentation->discardFeedbacks(m_pending.presentationFeedbacks);
+    PROTO::presentation->discardFeedbacks(m_current.presentationFeedbacks);
+    PROTO::presentation->discardFeedbacksForSurface(m_self);
+}
+
+void CWLSurfaceResource::destroy() {
+    retireAppliedSurface(this);
+    discardPresentationFeedbacks();
+
+    if (m_mapped) {
+        m_events.unmap.emit();
+        unmap();
+    }
+    m_events.destroy.emit();
+    releaseBuffers(false);
+    PROTO::compositor->destroyResource(this);
+}
+
+void CWLSurfaceResource::dropPendingBuffer() {
+    m_pending.buffer = {};
+}
+
+void CWLSurfaceResource::dropCurrentBuffer() {
+    m_current.buffer = {};
+}
+
+SP<CWLSurfaceResource> CWLSurfaceResource::fromResource(wl_resource* res) {
+    auto data = sc<CWLSurfaceResource*>(sc<CWlSurface*>(wl_resource_get_user_data(res))->data());
+    return data ? data->m_self.lock() : nullptr;
+}
+
+bool CWLSurfaceResource::good() {
+    return m_resource->resource();
+}
+
+wl_client* CWLSurfaceResource::client() {
+    return m_client;
+}
+
+void CWLSurfaceResource::enter(PHLMONITOR monitor) {
+    if (std::ranges::find(m_enteredOutputs, monitor) != m_enteredOutputs.end())
+        return;
+
+    if UNLIKELY (!PROTO::outputs.contains(monitor->m_name)) {
+        // can happen on unplug/replug
+        LOGM(Log::ERR, "enter() called on a non-existent output global");
+        return;
+    }
+
+    if UNLIKELY (PROTO::outputs.at(monitor->m_name)->isDefunct()) {
+        LOGM(Log::ERR, "enter() called on a defunct output global");
+        return;
+    }
+
+    auto outputs = PROTO::outputs.at(monitor->m_name)->outputResourcesFrom(m_client);
+
+    if UNLIKELY (outputs.empty() || std::ranges::all_of(outputs, [](const auto& o) { return !o->getResource() || !o->getResource()->resource(); })) {
+        LOGM(Log::ERR, "Cannot enter surface {:x} to {}, client hasn't bound the output", (uintptr_t)this, monitor->m_name);
+        return;
+    }
+
+    m_enteredOutputs.emplace_back(monitor);
+
+    for (const auto& o : outputs) {
+        if (!o->getResource() || !o->getResource()->resource())
+            continue;
+        m_resource->sendEnter(o->getResource().get());
+    }
+    m_events.enter.emit(monitor);
+}
+
+void CWLSurfaceResource::leave(PHLMONITOR monitor) {
+    if UNLIKELY (std::ranges::find(m_enteredOutputs, monitor) == m_enteredOutputs.end())
+        return;
+
+    auto outputs = PROTO::outputs.at(monitor->m_name)->outputResourcesFrom(m_client);
+
+    if UNLIKELY (outputs.empty() || std::ranges::all_of(outputs, [](const auto& o) { return !o->getResource() || !o->getResource()->resource(); })) {
+        LOGM(Log::ERR, "Cannot leave surface {:x} from {}, client hasn't bound the output", (uintptr_t)this, monitor->m_name);
+        return;
+    }
+
+    std::erase(m_enteredOutputs, monitor);
+
+    for (const auto& o : outputs) {
+        if (!o->getResource() || !o->getResource()->resource())
+            continue;
+        m_resource->sendLeave(o->getResource().get());
+    }
+    m_events.leave.emit(monitor);
+}
+
+void CWLSurfaceResource::sendPreferredTransform(wl_output_transform t) {
+    if (m_resource->version() < 6 || (m_lastTransform && *m_lastTransform == t))
+        return;
+
+    m_lastTransform = t;
+    m_resource->sendPreferredBufferTransform(t);
+}
+
+void CWLSurfaceResource::sendPreferredScale(int32_t scale) {
+    if (m_resource->version() < 6 || scale == m_lastScale.value_or(-1))
+        return;
+
+    m_lastScale = scale;
+    m_resource->sendPreferredBufferScale(scale);
+}
+
+void CWLSurfaceResource::frame(const Time::steady_tp& now) {
+    if (m_current.callbacks.empty())
+        return;
+
+    for (auto const& c : m_current.callbacks) {
+        c->send(now);
+    }
+
+    m_current.callbacks.clear();
+}
+
+void CWLSurfaceResource::resetRole() {
+    m_role = makeShared<CDefaultSurfaceRole>();
+}
+
+void CWLSurfaceResource::bfHelper(std::span<const SP<CWLSurfaceResource>> nodes, std::function<void(SP<CWLSurfaceResource>, const Vector2D&, void*)> fn, void* data) {
+    std::vector<SP<CWLSurfaceResource>> nodes2;
+
+    // first, gather all nodes below
+    for (auto const& n : nodes) {
+        std::erase_if(n->m_subsurfaces, [](const auto& e) { return e.expired(); });
+
+        // subsurfaces is sorted lowest -> highest
+        for (auto const& subsurfaceRef : n->m_subsurfaces) {
+            const auto subsurface = subsurfaceRef.lock();
+            if (!subsurface)
+                continue;
+
+            if (subsurface->m_zIndex >= 0)
+                break;
+
+            const auto surface = subsurface->m_surface.lock();
+            if (!surface)
+                continue;
+
+            if (nodes2.empty())
+                nodes2.reserve(nodes.size() * 2);
+
+            nodes2.emplace_back(surface);
+        }
+    }
+
+    if (!nodes2.empty())
+        bfHelper(nodes2, fn, data);
+
+    nodes2.clear();
+
+    for (auto const& n : nodes) {
+        Vector2D offset = {};
+        if (n->m_role->role() == SURFACE_ROLE_SUBSURFACE) {
+            auto subsurface = sc<CSubsurfaceRole*>(n->m_role.get())->m_subsurface.lock();
+            if (subsurface)
+                offset = subsurface->posRelativeToParent();
+        }
+
+        fn(n, offset, data);
+    }
+
+    for (auto const& n : nodes) {
+        std::erase_if(n->m_subsurfaces, [](const auto& e) { return e.expired(); });
+
+        for (auto const& subsurfaceRef : n->m_subsurfaces) {
+            const auto subsurface = subsurfaceRef.lock();
+            if (!subsurface)
+                continue;
+
+            if (subsurface->m_zIndex < 0)
+                continue;
+
+            const auto surface = subsurface->m_surface.lock();
+            if (!surface)
+                continue;
+
+            if (nodes2.empty())
+                nodes2.reserve(nodes.size() * 2);
+
+            nodes2.emplace_back(surface);
+        }
+    }
+
+    if (!nodes2.empty())
+        bfHelper(nodes2, fn, data);
+}
+
+void CWLSurfaceResource::breadthfirst(std::function<void(SP<CWLSurfaceResource>, const Vector2D&, void*)> fn, void* data) {
+    const std::array surfs = {m_self.lock()};
+    bfHelper(surfs, fn, data);
+}
+
+SP<CWLSurfaceResource> CWLSurfaceResource::findFirstPreorderHelper(SP<CWLSurfaceResource> root, std::function<bool(SP<CWLSurfaceResource>)> fn) {
+    if (fn(root))
+        return root;
+
+    std::erase_if(root->m_subsurfaces, [](const auto& e) { return e.expired(); });
+
+    for (auto const& subsurfaceRef : root->m_subsurfaces) {
+        const auto subsurface = subsurfaceRef.lock();
+        if (!subsurface)
+            continue;
+
+        const auto surface = subsurface->m_surface.lock();
+        if (!surface)
+            continue;
+
+        const auto found = findFirstPreorderHelper(surface, fn);
+        if (found)
+            return found;
+    }
+    return nullptr;
+}
+
+SP<CWLSurfaceResource> CWLSurfaceResource::findFirstPreorder(std::function<bool(SP<CWLSurfaceResource>)> fn) {
+    return findFirstPreorderHelper(m_self.lock(), fn);
+}
+
+SP<CWLSurfaceResource> CWLSurfaceResource::findWithCM() {
+    return findFirstPreorder([this](SP<CWLSurfaceResource> surf) { return surf->m_colorManagement.valid() && surf->extends() == extends(); });
+}
+
+std::pair<SP<CWLSurfaceResource>, Vector2D> CWLSurfaceResource::at(const Vector2D& localCoords, bool allowsInput) {
+    std::vector<std::pair<SP<CWLSurfaceResource>, Vector2D>> surfs;
+    breadthfirst([&surfs](SP<CWLSurfaceResource> surf, const Vector2D& offset, void* data) { surfs.emplace_back(surf, offset); }, &surfs);
+
+    for (auto const& [surf, pos] : surfs | std::views::reverse) {
+        if (!allowsInput) {
+            const auto BOX = CBox{pos, surf->m_current.size};
+            if (BOX.containsPoint(localCoords))
+                return {surf, localCoords - pos};
+        } else {
+            const auto REGION = surf->m_current.effectiveInputRegion().translate(pos);
+            if (REGION.containsPoint(localCoords))
+                return {surf, localCoords - pos};
+        }
+    }
+
+    return {nullptr, {}};
+}
+
+uint32_t CWLSurfaceResource::id() {
+    return wl_resource_get_id(m_resource->resource());
+}
+
+void CWLSurfaceResource::map() {
+    if UNLIKELY (m_mapped)
+        return;
+
+    m_mapped = true;
+
+    frame(Time::steadyNow());
+
+    m_current.bufferDamage = CBox{{}, m_current.bufferSize};
+    m_pending.bufferDamage = CBox{{}, m_pending.bufferSize};
+}
+
+void CWLSurfaceResource::unmap() {
+    if UNLIKELY (!m_mapped)
+        return;
+
+    // unmapped content will never be displayed: terminate outstanding feedbacks,
+    // or clients blocking on them (present_wait) stall forever.
+    discardPresentationFeedbacks();
+
+    m_mapped        = false;
+    m_lastTransform = std::nullopt;
+    m_lastScale     = std::nullopt;
+
+    // release the buffers.
+    // this is necessary for XWayland to function correctly,
+    // as it does not unmap via the traditional commit(null buffer) method, but via the X11 protocol.
+    releaseBuffers();
+}
+
+void CWLSurfaceResource::releaseBuffers(bool onlyCurrent) {
+    if (!onlyCurrent)
+        dropPendingBuffer();
+    dropCurrentBuffer();
+}
+
+void CWLSurfaceResource::error(int code, const std::string& str) {
+    m_resource->error(code, str);
+}
+
+SP<CWlSurface> CWLSurfaceResource::getResource() {
+    return m_resource;
+}
+
+CBox CWLSurfaceResource::extends() {
+    CRegion full = CBox{{}, m_current.size};
+    breadthfirst(
+        [](SP<CWLSurfaceResource> surf, const Vector2D& offset, void* d) {
+            if (surf->m_role->role() != SURFACE_ROLE_SUBSURFACE)
+                return;
+
+            sc<CRegion*>(d)->add(CBox{offset, surf->m_current.size});
+        },
+        &full);
+    return full.getExtents();
+}
+
+void CWLSurfaceResource::scheduleState(WP<SSurfaceState> state) {
+    auto whenReadable = [this, surf = m_self](auto state, auto reason) {
+        if (!surf || !state)
+            return;
+
+        m_stateQueue.unlock(state, reason);
+    };
+
+    if (state->updated.bits.acquire) {
+        // wait on acquire point for this surface, from explicit sync protocol
+        if (!state->acquire.addWaiter([state, whenReadable]() { whenReadable(state, LOCK_REASON_FENCE); })) {
+            Log::logger->log(Log::ERR, "Failed to addWaiter in CWLSurfaceResource::scheduleState");
+            whenReadable(state, LOCK_REASON_FENCE);
+        }
+    } else if (state->buffer && state->buffer->isSynchronous()) {
+        // synchronous (shm) buffers can be read immediately
+        m_stateQueue.unlock(state, LOCK_REASON_FENCE);
+    } else if (state->buffer && !state->buffer->m_syncFds.empty()) {
+        // async buffer and is dmabuf, then we can wait on implicit fences
+        drainSyncFds(state, LOCK_REASON_FENCE);
+    } else {
+        // state commit without a buffer.
+        m_stateQueue.tryProcess();
+    }
+}
+
+void CWLSurfaceResource::drainSyncFds(WP<SSurfaceState> state, eLockReason reason) {
+    auto& fds = state->buffer->m_syncFds;
+
+    std::erase_if(fds, [](const auto& fd) { return fd.isReadable(); });
+
+    if (!fds.empty()) {
+        auto fd = std::move(fds.front());
+        fds.erase(fds.begin());
+        g_pEventLoopManager->doOnReadable(std::move(fd), [this, surf = m_self, state, reason]() {
+            if (!surf || !state)
+                return;
+
+            drainSyncFds(state, reason);
+        });
+        return;
+    }
+
+    m_stateQueue.unlock(state, reason);
+}
+
+void CWLSurfaceResource::commitState(SSurfaceState& state) {
+    // TODO might be incorrect. needed for VRR with FIFO to avoid same buffer extra frames for second commit when it's used in this way:
+    // wp_fifo_v1#43.set_barrier()
+    // wp_fifo_v1#43.wait_barrier()
+    // wl_surface#3.commit()
+    // wp_fifo_v1#43.wait_barrier()
+    // wl_surface#3.commit()
+    if (!state.updated.all && m_mapped && state.fifoScheduled)
+        return;
+
+    if(cacheSynchronized(m_self.lock(),state))return;
+    applyParentLayout(m_self.lock());
+
+    // only a new buffer supersedes the current, not yet presented content.
+    if (state.updated.bits.buffer)
+        PROTO::presentation->discardFeedbacks(m_current.presentationFeedbacks);
+
+    auto lastTexture = m_current.texture;
+    m_current.updateFrom(state);
+
+    if (m_current.buffer) {
+        if (m_current.buffer->isSynchronous())
+            m_current.updateSynchronousTexture(lastTexture);
+
+        // if the surface is a cursor, update the shm buffer
+        // TODO: don't update the entire texture
+        if (m_role->role() == SURFACE_ROLE_CURSOR)
+            updateCursorShm(m_current.accumulateBufferDamage());
+    }
+
+    if (m_current.texture)
+        m_current.texture->m_transform = Math::wlTransformToHyprutils(m_current.transform);
+
+    recordAppliedSurface(this);
+
+    // Apply cached synchronized descendant state before publishing native
+    // observers, without exposing the cached texture as current state.
+    std::set<const CWLSurfaceResource*> seen;
+    applySynchronizedChildren(m_self.lock(),seen);
+    m_events.commit.emit();
+
+    // release the buffer if it's synchronous (SHM) as updateSynchronousTexture() has copied the buffer data to a GPU tex
+    // if it doesn't have a role, we can't release it yet, in case it gets turned into a cursor.
+    if (m_current.buffer && m_current.buffer->isSynchronous() && m_role->role() != SURFACE_ROLE_UNASSIGNED)
+        dropCurrentBuffer();
+}
+
+PImageDescription CWLSurfaceResource::getPreferredImageDescription() {
+    static const auto PFORCE_HDR = CConfigValue<Config::INTEGER>("quirks:prefer_hdr");
+    const auto        WINDOW     = m_hlSurface ? Desktop::View::CWindow::fromView(m_hlSurface->view()) : nullptr;
+
+    if (*PFORCE_HDR == 1 || (*PFORCE_HDR == 2 && m_hlSurface && WINDOW && WINDOW->m_class == "gamescope"))
+        return g_pCompositor->getHDRImageDescription();
+
+    auto parent = m_self;
+    if (parent->m_role->role() == SURFACE_ROLE_SUBSURFACE) {
+        auto subsurface = sc<CSubsurfaceRole*>(parent->m_role.get())->m_subsurface.lock();
+        parent          = subsurface->t1Parent();
+    }
+    PHLMONITORREF monitor;
+    if (parent->m_enteredOutputs.size() == 1)
+        monitor = parent->m_enteredOutputs[0];
+    else if (m_hlSurface.valid() && WINDOW)
+        monitor = WINDOW->m_monitor;
+
+    return monitor ? monitor->m_imageDescription : g_pCompositor->getPreferredImageDescription();
+}
+
+void CWLSurfaceResource::sortSubsurfaces() {
+    std::erase_if(m_subsurfaces, [](const auto& subsurface) { return !subsurface; });
+    std::ranges::sort(m_subsurfaces, [](const auto& a, const auto& b) { return a->m_zIndex < b->m_zIndex; });
+
+    // find the first non-negative index. We will preserve negativity: e.g. -2, -1, 1, 2
+    int firstNonNegative = -1;
+    for (size_t i = 0; i < m_subsurfaces.size(); ++i) {
+        if (m_subsurfaces.at(i)->m_zIndex >= 0) {
+            firstNonNegative = i;
+            break;
+        }
+    }
+
+    if (firstNonNegative == -1)
+        firstNonNegative = m_subsurfaces.size();
+
+    for (size_t i = firstNonNegative; i < m_subsurfaces.size(); ++i) {
+        m_subsurfaces.at(i)->m_zIndex = i - firstNonNegative;
+    }
+
+    for (int i = 0; i < firstNonNegative; ++i) {
+        m_subsurfaces.at(i)->m_zIndex = -firstNonNegative + i;
+    }
+}
+
+bool CWLSurfaceResource::hasVisibleSubsurface() {
+    for (auto const& subsurface : m_subsurfaces) {
+        if (!subsurface || !subsurface->m_surface)
+            continue;
+
+        const auto& surf = subsurface->m_surface;
+        if (surf->m_current.size.x > 0 && surf->m_current.size.y > 0)
+            return true;
+    }
+
+    return false;
+}
+
+bool CWLSurfaceResource::isTearing() {
+    if (m_enteredOutputs.empty() && m_hlSurface) {
+        for (auto& m : State::monitorState()->monitors()) {
+            if (!m || !m->m_enabled)
+                continue;
+
+            auto box = m_hlSurface->getSurfaceBoxGlobal();
+            if (box && !box->intersection({m->m_position, m->m_size}).empty()) {
+                if (m->m_tearingState.activelyTearing)
+                    return true;
+            }
+        }
+    } else {
+        for (auto& m : m_enteredOutputs) {
+            if (!m)
+                continue;
+
+            if (m->m_tearingState.activelyTearing)
+                return true;
+        }
+    }
+    return false;
+}
+
+void CWLSurfaceResource::updateCursorShm(CRegion damage) {
+    if (damage.empty())
+        return;
+
+    auto buf = m_current.buffer ? m_current.buffer : SP<IHLBuffer>{};
+
+    if UNLIKELY (!buf)
+        return;
+
+    auto& shmData  = CCursorSurfaceRole::cursorPixelData(m_self.lock());
+    auto  shmAttrs = buf->shm();
+
+    if (!shmAttrs.success) {
+        LOGM(Log::TRACE, "updateCursorShm: ignoring, not a shm buffer");
+        return;
+    }
+
+    damage.intersect(CBox{0, 0, buf->size.x, buf->size.y});
+
+    // no need to end, shm.
+    auto [pixelData, fmt, bufLen] = buf->beginDataPtr(0);
+
+    shmData.resize(bufLen);
+
+    int         rectsNum = 0;
+    const auto* rects    = pixman_region32_rectangles(damage.pixman(), &rectsNum);
+
+    if (rectsNum == 1 && rects[0].x2 == buf->size.x && rects[0].y2 == buf->size.y)
+        memcpy(shmData.data(), pixelData, bufLen);
+    else {
+        const auto stride = shmAttrs.stride;
+        damage.forEachRect([&pixelData, &shmData, stride](const auto& box) {
+            for (auto y = box.y1; y < box.y2; ++y) {
+                // bpp is 32 INSALLAH
+                auto begin = y * stride + 4 * box.x1;
+                auto len   = 4 * (box.x2 - box.x1);
+                memcpy(shmData.data() + begin, pixelData + begin, len);
+            }
+        });
+    }
+}
+
+void CWLSurfaceResource::presentFeedback(const Time::steady_tp& when, PHLMONITOR pMonitor, bool discarded) {
+    frame(when);
+
+    auto FEEDBACK = makeUnique<CQueuedPresentationData>(m_self.lock(), std::move(m_current.presentationFeedbacks));
+    FEEDBACK->attachMonitor(pMonitor);
+    if (discarded)
+        FEEDBACK->discarded();
+    else {
+        FEEDBACK->presented();
+        if (!pMonitor->m_lastScanout.expired()) {
+            const auto WINDOW = m_hlSurface ? Desktop::View::CWindow::fromView(m_hlSurface->view()) : nullptr;
+            if (WINDOW == pMonitor->m_lastScanout)
+                FEEDBACK->setPresentationType(true);
+        }
+    }
+    PROTO::presentation->queueData(std::move(FEEDBACK));
+}
+
+CWLCompositorResource::CWLCompositorResource(SP<CWlCompositor> resource_) : m_resource(resource_) {
+    if UNLIKELY (!good())
+        return;
+
+    m_resource->setOnDestroy([this](CWlCompositor* r) { PROTO::compositor->destroyResource(this); });
+
+    m_resource->setCreateSurface([](CWlCompositor* r, uint32_t id) {
+        const auto RESOURCE = PROTO::compositor->m_surfaces.emplace_back(makeShared<CWLSurfaceResource>(makeShared<CWlSurface>(r->client(), r->version(), id)));
+
+        if UNLIKELY (!RESOURCE->good()) {
+            r->noMemory();
+            PROTO::compositor->m_surfaces.pop_back();
+            return;
+        }
+
+        RESOURCE->m_self       = RESOURCE;
+        RESOURCE->m_stateQueue = CSurfaceStateQueue(RESOURCE);
+
+        LOGM(Log::DEBUG, "New wl_surface with id {} at {:x}", id, (uintptr_t)RESOURCE.get());
+
+        PROTO::compositor->m_events.newSurface.emit(RESOURCE);
+    });
+
+    m_resource->setCreateRegion([](CWlCompositor* r, uint32_t id) {
+        const auto RESOURCE = PROTO::compositor->m_regions.emplace_back(makeShared<CWLRegionResource>(makeShared<CWlRegion>(r->client(), r->version(), id)));
+
+        if UNLIKELY (!RESOURCE->good()) {
+            r->noMemory();
+            PROTO::compositor->m_regions.pop_back();
+            return;
+        }
+
+        RESOURCE->m_self = RESOURCE;
+
+        LOGM(Log::DEBUG, "New wl_region with id {} at {:x}", id, (uintptr_t)RESOURCE.get());
+    });
+}
+
+bool CWLCompositorResource::good() {
+    return m_resource->resource();
+}
+
+CWLCompositorProtocol::CWLCompositorProtocol(const wl_interface* iface, const int& ver, const std::string& name) : IWaylandProtocol(iface, ver, name) {
+    ensureAppliedRegistry(g_pCompositor ? g_pCompositor->m_wlDisplay : nullptr);
+}
+
+void CWLCompositorProtocol::bindManager(wl_client* client, void* data, uint32_t ver, uint32_t id) {
+    const auto RESOURCE = m_managers.emplace_back(makeShared<CWLCompositorResource>(makeShared<CWlCompositor>(client, ver, id)));
+
+    if UNLIKELY (!RESOURCE->good()) {
+        wl_client_post_no_memory(client);
+        m_managers.pop_back();
+        return;
+    }
+}
+
+void CWLCompositorProtocol::destroyResource(CWLCompositorResource* resource) {
+    std::erase_if(m_managers, [&](const auto& other) { return other.get() == resource; });
+}
+
+void CWLCompositorProtocol::destroyResource(CWLSurfaceResource* resource) {
+    std::erase_if(m_surfaces, [&](const auto& other) { return other.get() == resource; });
+}
+
+void CWLCompositorProtocol::destroyResource(CWLRegionResource* resource) {
+    std::erase_if(m_regions, [&](const auto& other) { return other.get() == resource; });
+}
+
+void CWLCompositorProtocol::forEachSurface(std::function<void(SP<CWLSurfaceResource>)> fn) {
+    const auto surfaces = m_surfaces;
+
+    for (auto& surf : surfaces) {
+        if (!surf)
+            continue;
+
+        fn(surf);
+    }
+}

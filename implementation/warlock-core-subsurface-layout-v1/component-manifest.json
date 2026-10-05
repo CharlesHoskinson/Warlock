@@ -1,0 +1,2957 @@
+{
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "nativeAcceptance": false,
+  "buildReport": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-core-subsurface-layout-v1/build-1791237458725680034/report.json",
+  "buildReportSHA256": "b916a2e54cbcb58a09bb039517fe22d14735cf2d1d998cf25c2cc1544d282879",
+  "files": {
+    "SPEC.md": {
+      "sha256": "cbf1b19a7aae1a35c0b355ac97e74f366a79ab5aa31e05e3e42e7d7919592057",
+      "size": 1507
+    },
+    "ANCESTRY.json": {
+      "sha256": "0adb4157f43b7b83e65ff7d88df63fe705d5cf505d4eaa4ba55285669ca25b71",
+      "size": 364
+    },
+    "qa/archive.py": {
+      "sha256": "7c697d2fe07f30040359d2ce19e0d3e51a31334696d30b6114b16e1fa17003f5",
+      "size": 1931
+    },
+    "qa/build.py": {
+      "sha256": "37aa02bdabcc8a5ff0349362344232cc90fbc1c6f6dde3b908e0449278c0d940",
+      "size": 8182
+    },
+    "build-1791237458725680034/Compositor.d": {
+      "sha256": "3e6b1e501586e3ad39d82a5340e394e2eb3d21b613242efa6603b55f4ef0d37a",
+      "size": 46123
+    },
+    "build-1791237458725680034/Compositor.cpp.o": {
+      "sha256": "211448f94274cc0986d5d0cba8c3006a9f9d001ce864c8572988e11cf3f4c57d",
+      "size": 566000
+    },
+    "build-1791237458725680034/compile-Compositor.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "build-1791237458725680034/compile-Compositor.stderr": {
+      "sha256": "1659eb3e10e9b7c65ae417151f9633b7a8c7841d26e420046ec34948202e8ff3",
+      "size": 1293
+    },
+    "build-1791237458725680034/Subcompositor.d": {
+      "sha256": "452ecde42c6b179baef60e697a94cb6a71e2c0611fe28b728a006e352ab4a7c7",
+      "size": 22044
+    },
+    "build-1791237458725680034/Subcompositor.cpp.o": {
+      "sha256": "91e8873d564aa880513a78015a99bda5670bc90ac0936f9c8bc2880412a05c61",
+      "size": 311384
+    },
+    "build-1791237458725680034/compile-Subcompositor.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "build-1791237458725680034/compile-Subcompositor.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "build-1791237458725680034/libhyprland_lib.a": {
+      "sha256": "81164be58b9bf3cc3489ba583d4737fc0c0ed09402a1e880eaa57d1dc764dfd9",
+      "size": 91356520
+    },
+    "build-1791237458725680034/archive-index.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "build-1791237458725680034/archive-index.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "build-1791237458725680034/ancestor-archive-payloads.json": {
+      "sha256": "2359041b07fe7929be42d55ac44dbbd8156b44a32b6949f792a7417c53e67647",
+      "size": 63214
+    },
+    "build-1791237458725680034/new-archive-payloads.json": {
+      "sha256": "5ebda9c7618ece8c279dbcaacb3a487fb03c0fdd15625cbddbf5364870f17567",
+      "size": 63214
+    },
+    "build-1791237458725680034/Hyprland": {
+      "sha256": "b67fb2e1467ae4bb7e220ec45250f31607fd947ff5fe88326568b88f585fea6f",
+      "size": 19669616
+    },
+    "build-1791237458725680034/link.d": {
+      "sha256": "2eb0faa6f48f06810d4fde311e3693076d8fbf818e5ac098ddb4bb608e47f368",
+      "size": 17010
+    },
+    "build-1791237458725680034/link.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "build-1791237458725680034/link.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "build-1791237458725680034/Hyprland-relink": {
+      "sha256": "b67fb2e1467ae4bb7e220ec45250f31607fd947ff5fe88326568b88f585fea6f",
+      "size": 19669616
+    },
+    "build-1791237458725680034/relink.d": {
+      "sha256": "6a6af7768c313488c3c5fec93114c14c997dd91faf118b311fbe1ace834b6048",
+      "size": 17017
+    },
+    "build-1791237458725680034/relink.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "build-1791237458725680034/relink.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "build-1791237458725680034/ancestor-exports.stdout": {
+      "sha256": "d83b2e4d8f0f33aeda02d12ed35c894c81ae66f6d6c050f5fb394096dff12d49",
+      "size": 1162139
+    },
+    "build-1791237458725680034/ancestor-exports.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "build-1791237458725680034/candidate-exports.stdout": {
+      "sha256": "fcf16f78f15efa36577343a6096d99dd9db499ebbbda27087853410d38e6caca",
+      "size": 1163107
+    },
+    "build-1791237458725680034/candidate-exports.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "build-1791237458725680034/libraries.stdout": {
+      "sha256": "9ea9c8102754ac91f480ca623e7b9b8acc68c46cc558c929c83b5f48319b494c",
+      "size": 13899
+    },
+    "build-1791237458725680034/libraries.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "build-1791237458725680034/report.json": {
+      "sha256": "b916a2e54cbcb58a09bb039517fe22d14735cf2d1d998cf25c2cc1544d282879",
+      "size": 325779
+    },
+    "build-1791237458725680034/inputs/candidate/WindowPolicy.hpp": {
+      "sha256": "73c5a6d32e4e14c504ecb5806ce7d4c2d99c0a26c80b14e4dae0b7e035588b90",
+      "size": 311
+    },
+    "build-1791237458725680034/inputs/candidate/SceneModal.hpp": {
+      "sha256": "e179d660844d41715b62f822423f48f4187436b9f9cb3d97a3670bd3501d7aec",
+      "size": 2863
+    },
+    "build-1791237458725680034/inputs/candidate/SceneTrace.hpp": {
+      "sha256": "5895ab04c1b663cac9a79f40ed8b288769edeb09ff6d64675ff28f4394523044",
+      "size": 1303
+    },
+    "build-1791237458725680034/owning-headers/src/Compositor.hpp": {
+      "sha256": "e5254d98bbdd079a5f688682181ce1155871369b9de381fdb81de2f57750c645",
+      "size": 4033
+    },
+    "build-1791237458725680034/owning-headers/src/SharedDefs.hpp": {
+      "sha256": "0b40cc83f827587f3a94260ca89d4464150dc2b45de2b9331e3d1876cafe0087",
+      "size": 1915
+    },
+    "build-1791237458725680034/owning-headers/src/defines.hpp": {
+      "sha256": "45a77e9d89db7375a36eaa2e5b987663cefdacfdcd022435a04490522ed94004",
+      "size": 277
+    },
+    "build-1791237458725680034/owning-headers/src/includes.hpp": {
+      "sha256": "d0c4395014ce44f81b37b05014b5bbfa4503a5dd5c5278391db9e71c8e1a9b87",
+      "size": 618
+    },
+    "build-1791237458725680034/owning-headers/src/macros.hpp": {
+      "sha256": "b62d51406768f08d3a820c882de77ac47b55c15693b68322180ff2002164d738",
+      "size": 10778
+    },
+    "build-1791237458725680034/owning-headers/src/version.h": {
+      "sha256": "0cb4913dc18c35bc0fb5e33f8786453c0781216bb4ead20b2afd82ba84981946",
+      "size": 655
+    },
+    "build-1791237458725680034/owning-headers/protocols/xwayland-shell-v1.hpp": {
+      "sha256": "f36eee2c8d8ca03a9fe5596648d8c2542ec815673e6059298b7af9d0a78348e8",
+      "size": 5644
+    },
+    "build-1791237458725680034/owning-headers/protocols/alpha-modifier-v1.hpp": {
+      "sha256": "11ff265c374f816341052c1ddd7dbf53adc031c4b230670fe413b200b52263c0",
+      "size": 5727
+    },
+    "build-1791237458725680034/owning-headers/protocols/color-management-v1.hpp": {
+      "sha256": "8ec18a8b56f9bf5007eb0e961bcc37406d12a297fbe22b0bad4ec8c303232fb9",
+      "size": 29748
+    },
+    "build-1791237458725680034/owning-headers/protocols/commit-timing-v1.hpp": {
+      "sha256": "99499181fc4a03283978b8c24397e41bfba7cff75319b9500ea8714fd3c937cf",
+      "size": 5820
+    },
+    "build-1791237458725680034/owning-headers/protocols/content-type-v1.hpp": {
+      "sha256": "c9206f657c16ae46cb036c26fbb72b8495566154ef834f951eab4bb50c090710",
+      "size": 5848
+    },
+    "build-1791237458725680034/owning-headers/protocols/cursor-shape-v1.hpp": {
+      "sha256": "21ae54195a5ac809a5c7e9187422f344743348cb8a85dc47421e64d963e71254",
+      "size": 7834
+    },
+    "build-1791237458725680034/owning-headers/protocols/drm-lease-v1.hpp": {
+      "sha256": "64492e5525fdbcb180ed2dc31cd508222857728efd347763e1b1342f901fa21c",
+      "size": 10042
+    },
+    "build-1791237458725680034/owning-headers/protocols/ext-background-effect-v1.hpp": {
+      "sha256": "92b96fe30dbe0b51bca3e76b78f15c09417c250eeddfa7a43f68f7fe0d138268",
+      "size": 6407
+    },
+    "build-1791237458725680034/owning-headers/protocols/ext-data-control-v1.hpp": {
+      "sha256": "f9536aac10dc693bd9d825882768fcf11d2e56674cb43a6a2902c4bfa2bb88d6",
+      "size": 10915
+    },
+    "build-1791237458725680034/owning-headers/protocols/ext-foreign-toplevel-list-v1.hpp": {
+      "sha256": "677ad67cf7b1462b432a9bf970f8c783860ab1db8c22cc11f7e117f8f907bc12",
+      "size": 6046
+    },
+    "build-1791237458725680034/owning-headers/protocols/ext-idle-notify-v1.hpp": {
+      "sha256": "010704850e97fb6466ab56ccc697b14a51e04ba5989e284c1413e1d17ccde884",
+      "size": 5752
+    },
+    "build-1791237458725680034/owning-headers/protocols/ext-image-capture-source-v1.hpp": {
+      "sha256": "e21933ecbc696632e16d5abad164f857d82c534fb2c0cf371f1db48bffc209f3",
+      "size": 8060
+    },
+    "build-1791237458725680034/owning-headers/protocols/ext-image-copy-capture-v1.hpp": {
+      "sha256": "3bcbdf593d2a45ac19f217515944765e08da4331f38920cb59012923f965659e",
+      "size": 13011
+    },
+    "build-1791237458725680034/owning-headers/protocols/ext-session-lock-v1.hpp": {
+      "sha256": "fe4c074fa9e19967828511378730ac46cf8f297d916573900ab94cf49765dd68",
+      "size": 8420
+    },
+    "build-1791237458725680034/owning-headers/protocols/ext-workspace-v1.hpp": {
+      "sha256": "f835b27670a46dbf7bfeef820a7f366ce2ac1064e95edfcfc6c3f6bcc2f76eda",
+      "size": 10119
+    },
+    "build-1791237458725680034/owning-headers/protocols/fifo-v1.hpp": {
+      "sha256": "6f0d427e56e8036f31fab881cff261803f37ecc9640ec7d2e4bc3554a4de2fa8",
+      "size": 5483
+    },
+    "build-1791237458725680034/owning-headers/protocols/fractional-scale-v1.hpp": {
+      "sha256": "668a184b59d5a1c42463c5cd197b4db2d9c00803f950bceb55ea580fdd6f5d2a",
+      "size": 5654
+    },
+    "build-1791237458725680034/owning-headers/protocols/hyprland-ctm-control-v1.hpp": {
+      "sha256": "b2788e7d3ff2de936b9cca6a3fee679bc76bc325dea8aebb0b0f0104c9641ddf",
+      "size": 4556
+    },
+    "build-1791237458725680034/owning-headers/protocols/hyprland-focus-grab-v1.hpp": {
+      "sha256": "02b9cece405abedd0122365262920449ba5b6d935e56e0c42c486e30f61d78c7",
+      "size": 6306
+    },
+    "build-1791237458725680034/owning-headers/protocols/hyprland-global-shortcuts-v1.hpp": {
+      "sha256": "2c034e0b3c194924b5f4a02d759f956799db0eb29638185c8de9b42e19e52be9",
+      "size": 6423
+    },
+    "build-1791237458725680034/owning-headers/protocols/hyprland-input-capture-v1.hpp": {
+      "sha256": "93234abd21e8a7a619b1491df895de8befd94ff79f3d9c992b1b8ba36b4f7222",
+      "size": 7010
+    },
+    "build-1791237458725680034/owning-headers/protocols/hyprland-lock-notify-v1.hpp": {
+      "sha256": "6652e1cbed36bfd14751c57861dffeae7d875713976c147182d147f5e5918026",
+      "size": 5978
+    },
+    "build-1791237458725680034/owning-headers/protocols/hyprland-surface-v1.hpp": {
+      "sha256": "d511a3f1d3353f07a467bff03c9d0b395a3cd8a0494bb3556292ee29d591e77e",
+      "size": 6378
+    },
+    "build-1791237458725680034/owning-headers/protocols/hyprland-toplevel-export-v1.hpp": {
+      "sha256": "622cebdc3d3775db05447cb72bd5d1ad2a24af1552565278821d1e85048e5562",
+      "size": 7572
+    },
+    "build-1791237458725680034/owning-headers/protocols/hyprland-toplevel-mapping-v1.hpp": {
+      "sha256": "0f10225d1f1996369ee2eb7c1b748aed2f424b674d9a1823ecb6bcb657c31073",
+      "size": 6654
+    },
+    "build-1791237458725680034/owning-headers/protocols/idle-inhibit-unstable-v1.hpp": {
+      "sha256": "8f1b15a1c516ba00ab10237d3d77a108f351d25ab7a29d364a273b62ab6cf34e",
+      "size": 5407
+    },
+    "build-1791237458725680034/owning-headers/protocols/input-method-unstable-v2.hpp": {
+      "sha256": "aa49151200df873983f8b932a3a2723f3996ccb5cea55b93da66bab9a38668d8",
+      "size": 11579
+    },
+    "build-1791237458725680034/owning-headers/protocols/kde-server-decoration.hpp": {
+      "sha256": "2d683b23ce999cabff24e8cfda4f8575c65dd902b5bca1a89c9ec301612b000f",
+      "size": 5150
+    },
+    "build-1791237458725680034/owning-headers/protocols/keyboard-shortcuts-inhibit-unstable-v1.hpp": {
+      "sha256": "a0876cc9926d59de998365f9343831c1f993d94897ddbb4155f29715635a03a2",
+      "size": 6044
+    },
+    "build-1791237458725680034/owning-headers/protocols/linux-dmabuf-v1.hpp": {
+      "sha256": "6d9442cd5f4dddc01463a9e5bc016c4528b8e6ead1e5b8040514a7497845ee1c",
+      "size": 10278
+    },
+    "build-1791237458725680034/owning-headers/protocols/linux-drm-syncobj-v1.hpp": {
+      "sha256": "2eaac89d22244099ca493875e5cfb66ede253f472b3717f5e5fb5e3478759243",
+      "size": 8826
+    },
+    "build-1791237458725680034/owning-headers/protocols/pointer-constraints-unstable-v1.hpp": {
+      "sha256": "32a8e4f219b271a53c3029b694a7d4b8fbbd39c2b049c2464e2bb1cb76ac3268",
+      "size": 8766
+    },
+    "build-1791237458725680034/owning-headers/protocols/pointer-gestures-unstable-v1.hpp": {
+      "sha256": "90f5e4e25620ea6e360e078892b5b38869427e1b28ac5fc29d7a62fdf21f8184",
+      "size": 10634
+    },
+    "build-1791237458725680034/owning-headers/protocols/pointer-warp-v1.hpp": {
+      "sha256": "af9934e6465c83431c164dbd9cf3aef94f6035ed8d3131c810a016119f144a33",
+      "size": 3659
+    },
+    "build-1791237458725680034/owning-headers/protocols/presentation-time.hpp": {
+      "sha256": "af7e4c8d90622756bbb70232546b741f9f4edc9d0fe02571344e123a4355d717",
+      "size": 6009
+    },
+    "build-1791237458725680034/owning-headers/protocols/primary-selection-unstable-v1.hpp": {
+      "sha256": "e632455636463b8ada09d82f3014dbbebb5604690228250874ca7d74351f32f3",
+      "size": 10641
+    },
+    "build-1791237458725680034/owning-headers/protocols/relative-pointer-unstable-v1.hpp": {
+      "sha256": "7330b05bf80b1e1d92e6fbfad213ce039ef27dcd254859c3bd280464ddd458bd",
+      "size": 5725
+    },
+    "build-1791237458725680034/owning-headers/protocols/security-context-v1.hpp": {
+      "sha256": "9d472e7ebcd44361f73275639b2e968c4badc79b84a17db683b83c789da08c3c",
+      "size": 6352
+    },
+    "build-1791237458725680034/owning-headers/protocols/single-pixel-buffer-v1.hpp": {
+      "sha256": "7fcb522b5d0addc212ec4c2724f496934611603f60b2475c31cbf87a0153089c",
+      "size": 3716
+    },
+    "build-1791237458725680034/owning-headers/protocols/tablet-v2.hpp": {
+      "sha256": "9bf37615161daf6ca4e024aaf8177a947e5d5f1c481f3cedc6b0839c93b0d243",
+      "size": 24308
+    },
+    "build-1791237458725680034/owning-headers/protocols/tearing-control-v1.hpp": {
+      "sha256": "111eb3ea49b91082f5f5d9e9fb21c4d9b861212a29b243916543c93636be81e4",
+      "size": 5907
+    },
+    "build-1791237458725680034/owning-headers/protocols/text-input-unstable-v1.hpp": {
+      "sha256": "83de2a713148b66c1087db0a0d66147496587aad96b38e7c921250902f9827c1",
+      "size": 10185
+    },
+    "build-1791237458725680034/owning-headers/protocols/text-input-unstable-v3.hpp": {
+      "sha256": "734d086b0afcf89cabcc5f72c89fe627a34704cec5fcefd4def4d24b2b3ab66c",
+      "size": 10141
+    },
+    "build-1791237458725680034/owning-headers/protocols/vicinae-hotkey-v1.hpp": {
+      "sha256": "4c9276b259c0918dd9f36081b98c8bce2ae8aa08304dae2e565d5f1175ae65a5",
+      "size": 6586
+    },
+    "build-1791237458725680034/owning-headers/protocols/viewporter.hpp": {
+      "sha256": "bb2b31e60eb0ba9b2e8bae3ad361f628e71e34366d0b8dac8d4f7c8caecaf4c0",
+      "size": 5725
+    },
+    "build-1791237458725680034/owning-headers/protocols/virtual-keyboard-unstable-v1.hpp": {
+      "sha256": "6cfdb43b827d523fba937388c0d382218c133d13a1406c8c5709a16560d9e5bf",
+      "size": 6243
+    },
+    "build-1791237458725680034/owning-headers/protocols/wayland-drm.hpp": {
+      "sha256": "d3136409e5463502b8a64ec4fe6831ba237210214c2388a95b5ee64d3bc0a33d",
+      "size": 7086
+    },
+    "build-1791237458725680034/owning-headers/protocols/wayland.hpp": {
+      "sha256": "f466aa8f2a216fd93732aad543f52ff9aaa8ac80cd26cfa03ea204838211f165",
+      "size": 54301
+    },
+    "build-1791237458725680034/owning-headers/protocols/wlr-data-control-unstable-v1.hpp": {
+      "sha256": "89dd209cfd4512904de9ba91562b3379e538919e7af8dd4e61a8004094f4ad9b",
+      "size": 10966
+    },
+    "build-1791237458725680034/owning-headers/protocols/wlr-foreign-toplevel-management-unstable-v1.hpp": {
+      "sha256": "9a9cb9619656460f94e269cd850b43b8ca225578d3261ca678c28c5ed484910e",
+      "size": 8058
+    },
+    "build-1791237458725680034/owning-headers/protocols/wlr-gamma-control-unstable-v1.hpp": {
+      "sha256": "f0cb2c62a3839d64714aefa724727b4d96461f2d3aea27c5a81069e83e237b78",
+      "size": 5855
+    },
+    "build-1791237458725680034/owning-headers/protocols/wlr-layer-shell-unstable-v1.hpp": {
+      "sha256": "450fee458966942a082309ae19575ebfc2d094785950cab88022cff75e42be4b",
+      "size": 8305
+    },
+    "build-1791237458725680034/owning-headers/protocols/wlr-output-management-unstable-v1.hpp": {
+      "sha256": "fd191eb4ff16a2ef8d4f7da8a943897d0e5ab87fd229a228e5ec6f2ce044e74d",
+      "size": 15074
+    },
+    "build-1791237458725680034/owning-headers/protocols/wlr-output-power-management-unstable-v1.hpp": {
+      "sha256": "556fcdb274728951293247ad02c4d1f887c29dd5019f2c7dd7aac259b2c5cea8",
+      "size": 5906
+    },
+    "build-1791237458725680034/owning-headers/protocols/wlr-screencopy-unstable-v1.hpp": {
+      "sha256": "742c0d2145ba7b01653cb315f02bdae47489a49e420e39041577ed574f879336",
+      "size": 7062
+    },
+    "build-1791237458725680034/owning-headers/protocols/wlr-virtual-pointer-unstable-v1.hpp": {
+      "sha256": "ead9d757f8c8bb23b80e10b106c3e8764e88d87084c679dd6e92280dd5772228",
+      "size": 7314
+    },
+    "build-1791237458725680034/owning-headers/protocols/xdg-activation-v1.hpp": {
+      "sha256": "31f6ceb24b3c1c20c437fb206f8e92c5a322c6d58853c766779c79e31c294bad",
+      "size": 6280
+    },
+    "build-1791237458725680034/owning-headers/protocols/xdg-decoration-unstable-v1.hpp": {
+      "sha256": "fc54dc1a0271b78d7b86f9a4e0b8e2514fd08f53ef216421a65416094006938b",
+      "size": 6343
+    },
+    "build-1791237458725680034/owning-headers/protocols/xdg-dialog-v1.hpp": {
+      "sha256": "0d7d6ace6fe5d77f8f355a80986c32fb51438a896b6a088becb6d720cf3a75d0",
+      "size": 5430
+    },
+    "build-1791237458725680034/owning-headers/protocols/xdg-foreign-unstable-v2.hpp": {
+      "sha256": "886b0a203ad26a74d4f51a716fa8e29ac175fa9f03839fabb6597c944d5d2e59",
+      "size": 9305
+    },
+    "build-1791237458725680034/owning-headers/protocols/xdg-output-unstable-v1.hpp": {
+      "sha256": "9a4e535156c5949804bdc6c62041e29bd0760040c4c6fd853e5b569e2b605ec2",
+      "size": 5629
+    },
+    "build-1791237458725680034/owning-headers/protocols/xdg-shell.hpp": {
+      "sha256": "9afb63734f356c7010ed370e4ff60e7954dc4b49be38eb21b9d2e78ce0621362",
+      "size": 18929
+    },
+    "build-1791237458725680034/owning-headers/protocols/xdg-system-bell-v1.hpp": {
+      "sha256": "33239deeb7afd6676bc30d3a010b493dd37a8e69637396990c513c2754a5b58a",
+      "size": 3431
+    },
+    "build-1791237458725680034/owning-headers/protocols/xdg-toplevel-tag-v1.hpp": {
+      "sha256": "9d7c0a532c53a30872a0526d3c02466c7c54fa2ab7b35613853d56638bdfc79b",
+      "size": 3812
+    },
+    "build-1791237458725680034/owning-headers/start/src/core/Instance.hpp": {
+      "sha256": "2b428192560e1a6cb712fba9b18b6fa430cf75344b0a996a67abdaa312596727",
+      "size": 1190
+    },
+    "build-1791237458725680034/owning-headers/start/src/core/State.hpp": {
+      "sha256": "9d159d3e8852cf2d64cadda59b208f4875aa10f25f5fdedf548954069c051488",
+      "size": 348
+    },
+    "build-1791237458725680034/owning-headers/start/src/helpers/Logger.hpp": {
+      "sha256": "598aa5069e18ddcf27a3e8569a9a392e1703711dcc2dc1e624facad5cf6e2f89",
+      "size": 283
+    },
+    "build-1791237458725680034/owning-headers/start/src/helpers/Memory.hpp": {
+      "sha256": "bced45e92f63667e0049d0438bf4bea62a3af10ee8158da1dc0db9139f1417a3",
+      "size": 419
+    },
+    "build-1791237458725680034/owning-headers/start/src/helpers/Nix.hpp": {
+      "sha256": "c05059ed6a2308df82ce087384a98e4d872880eb92be918f5c3c5a0eb8427642",
+      "size": 183
+    },
+    "build-1791237458725680034/owning-headers/hyprtester/src/Log.hpp": {
+      "sha256": "28ffac04c3151ef3ab51af18740c897388cfb9b8c990b380ac5feaf2779e0cd4",
+      "size": 1524
+    },
+    "build-1791237458725680034/owning-headers/hyprtester/src/hyprctlCompat.hpp": {
+      "sha256": "200508876a09425fefc9917a8cbe587a6d78ef96240654f6b8ce36c60ebfd3dd",
+      "size": 321
+    },
+    "build-1791237458725680034/owning-headers/hyprtester/src/shared.hpp": {
+      "sha256": "f249ef3dc1c05c8df961f24b3c62dd29e46adb66a52999fba32dbb904e219c74",
+      "size": 34234
+    },
+    "build-1791237458725680034/owning-headers/hyprtester/src/tests/shared.hpp": {
+      "sha256": "aa472074f55e5548d6d614533dab1d935bad5705330f81d14fad99eaf8b2738f",
+      "size": 1795
+    },
+    "build-1791237458725680034/owning-headers/hyprtester/src/tests/clients/tests.hpp": {
+      "sha256": "26d4bafb8152a38153a954e55b93f2a85937f56ec8598cccaedec47dde28a191",
+      "size": 377
+    },
+    "build-1791237458725680034/owning-headers/hyprtester/src/tests/main/tests.hpp": {
+      "sha256": "dfd17ef59d426d592771eb72bec6942238ac55a7313c944e5757b2f54465ba20",
+      "size": 370
+    },
+    "build-1791237458725680034/owning-headers/hyprtester/src/tests/misc/tests.hpp": {
+      "sha256": "8ba164f0741bf1ca7a4a57026e3b2e051baf1795d9681810c314284f4f3c4eed",
+      "size": 370
+    },
+    "build-1791237458725680034/owning-headers/hyprtester/plugin/src/globals.hpp": {
+      "sha256": "5eaead170631f561ff5133f39f5512dcd1e6b2594b4b906be9e1279367860fb2",
+      "size": 84
+    },
+    "build-1791237458725680034/owning-headers/hyprpm/src/core/DataState.hpp": {
+      "sha256": "2f5513510e40b51cdb72b86ce3ac804d39c824f05d342aebfec47cf8e83c14e1",
+      "size": 1124
+    },
+    "build-1791237458725680034/owning-headers/hyprpm/src/core/HyprlandSocket.hpp": {
+      "sha256": "d55c45bcca3d45a4f5d3955e6a06078773be6806c80b9964f1e3c9f2b4bdae09",
+      "size": 109
+    },
+    "build-1791237458725680034/owning-headers/hyprpm/src/core/Manifest.hpp": {
+      "sha256": "5872b28a84a7782832bf2111ace58094bef326f744693fbd27309feea211cd09",
+      "size": 926
+    },
+    "build-1791237458725680034/owning-headers/hyprpm/src/core/Plugin.hpp": {
+      "sha256": "94e6247372e211eca580c17c5a867b38845acd6c4852c59af8f6b7dfe66588a4",
+      "size": 1224
+    },
+    "build-1791237458725680034/owning-headers/hyprpm/src/core/PluginManager.hpp": {
+      "sha256": "09ddc7d3947d3a180073ab82908360995143c9f6351998f3b2821e5192bdadb0",
+      "size": 2737
+    },
+    "build-1791237458725680034/owning-headers/hyprpm/src/helpers/Colors.hpp": {
+      "sha256": "230acfb3d858d8f79b46411f9812a97063160bd34a4682094077d0d023a8c871",
+      "size": 370
+    },
+    "build-1791237458725680034/owning-headers/hyprpm/src/helpers/Die.hpp": {
+      "sha256": "0f296a2afceba397d922830dbf078f36394cfa0cad5cb1cd389715e4b790307b",
+      "size": 363
+    },
+    "build-1791237458725680034/owning-headers/hyprpm/src/helpers/StringUtils.hpp": {
+      "sha256": "1ac0d270f01a9d72cf3415967accd2ddcff8cf362488eba6e8ad766efb28f7ed",
+      "size": 1037
+    },
+    "build-1791237458725680034/owning-headers/hyprpm/src/helpers/Sys.hpp": {
+      "sha256": "b29faa8486ef467e7703cd22c3dbdaa3b498702e422073dbbbadc96b24154870",
+      "size": 940
+    },
+    "build-1791237458725680034/owning-headers/hyprpm/src/progress/CProgressBar.hpp": {
+      "sha256": "d2c5b1050558382ab3afa760a3fa357bbdefa7df23506161cf5f5f068086a93a",
+      "size": 385
+    },
+    "build-1791237458725680034/owning-headers/hyprctl/hw-protocols/hyprpaper_core-client.hpp": {
+      "sha256": "44ba067e45d421718ffcbb7c3d1cbd4ddc7c8b4e088cb1c1bb4489fd35f76309",
+      "size": 4583
+    },
+    "build-1791237458725680034/owning-headers/hyprctl/hw-protocols/hyprpaper_core-spec.hpp": {
+      "sha256": "7b3bd91b37985ef0342b03e4352f7cacb92381a13842bccc39ccc69990e8b03c",
+      "size": 6474
+    },
+    "build-1791237458725680034/owning-headers/hyprctl/src/Strings.hpp": {
+      "sha256": "a340ef9bedc66bed6365f6c920e83748db8ee5cbe0a49de278fc567768c7a181",
+      "size": 7064
+    },
+    "build-1791237458725680034/owning-headers/hyprctl/src/helpers/Memory.hpp": {
+      "sha256": "ab21524a8755ff8e5906ed8254df17195460066cc91849fb70337fb1a3c577ca",
+      "size": 250
+    },
+    "build-1791237458725680034/owning-headers/hyprctl/src/hyprpaper/Hyprpaper.hpp": {
+      "sha256": "bb0908e08d044ba738ddfa2e7473f67d16016e53ebbc55672a9d6a1b4fc7d23c",
+      "size": 164
+    },
+    "build-1791237458725680034/owning-headers/subprojects/udis86/udis86.h": {
+      "sha256": "7bb20dcac5f1b00313d4dc65f74894e93c40d4edf4e772606386d42a58fc759f",
+      "size": 1554
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/dtl/Diff.hpp": {
+      "sha256": "a06791ab40e2e84e67c7b7581165828a2c2984471c75cf8f98ca4f8dc7ba27dc",
+      "size": 25667
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/dtl/Diff3.hpp": {
+      "sha256": "2feb6d6188ecee1c0450ff4f1559751e5297b8d9efda9905dcaa91ca60483630",
+      "size": 9498
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/dtl/Lcs.hpp": {
+      "sha256": "1e035f2a3706dc6376f89fa24939ae06fecbf41fa8974d3c894bf9c0045ecb1e",
+      "size": 2050
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/dtl/Sequence.hpp": {
+      "sha256": "be03c007753898580cd280e3d2d87967015a44e21296cfad72ab0787020b52dd",
+      "size": 2295
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/dtl/Ses.hpp": {
+      "sha256": "02ba757b9e6b69103781045652f6649e41a2d062394dbcdfad2b9792892703f7",
+      "size": 4415
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/dtl/dtl.hpp": {
+      "sha256": "06b22d03297ac080f11b8bd75badf81faabb5c8fd4a7c7236248c6222a7d6bdd",
+      "size": 1906
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/dtl/functors.hpp": {
+      "sha256": "6f77255009046f1eb449e69a4d840bf80537ca23b5a6639d085e9bcebd3b0c1b",
+      "size": 5188
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/dtl/variables.hpp": {
+      "sha256": "236ade0eff4c26c61663a29145ebdc213b281ef770ad9ff82745ec12a83d5732",
+      "size": 4934
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/getopt/getopt.h": {
+      "sha256": "8df4d7ce4f278be1ae62e133b41aed38a382b0be8eab78c172418c6e4b249556",
+      "size": 2307
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/server/TracyCharUtil.hpp": {
+      "sha256": "b85d2614117e9ac12d8f817491b33b86543816e3f35c2d8ff63ecfee985cdf12",
+      "size": 1253
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/server/TracyEvent.hpp": {
+      "sha256": "57f98a3295dbb3c62be19de53f14c080e0b103ac168417e3aeea047e1b067ad9",
+      "size": 26984
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/server/TracyFileHeader.hpp": {
+      "sha256": "b0c05d0767d620b8b8c2b6766d9deec1b0d5aef735627ecd3e3d6f4b954e0793",
+      "size": 487
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/server/TracyFileMeta.hpp": {
+      "sha256": "34ab9a70fd4b6b7020f8c365a75f412447d35b4ba4b69d7728f281f29361b761",
+      "size": 350
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/server/TracyFileRead.hpp": {
+      "sha256": "9179eb6996049a09cc5a590f904348f80bfba5ca6862f9943a71aa5d84bdfaba",
+      "size": 24961
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/server/TracyFileWrite.hpp": {
+      "sha256": "413be82fb72bee8e912ceec78725f12bd796277ef516f0b1601a21edea048312",
+      "size": 8015
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/server/TracyMemory.hpp": {
+      "sha256": "eaf8e91a83cdd52ef13ff9dd548634b06afa5bf19e35937e4a2561973634cc42",
+      "size": 164
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/server/TracyMmap.hpp": {
+      "sha256": "89bb36c6625da403b041d78e7aa5afcf840832169f84ea574411ff0d5dc33c9b",
+      "size": 361
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/server/TracyPopcnt.hpp": {
+      "sha256": "998fdd92511499fcadf6a9b30e739b468dc1a63a52f82ef06363d639927c0e93",
+      "size": 939
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/server/TracyPrint.hpp": {
+      "sha256": "3297ba68c21cc605739d38e75a95716e3d1b309ecca12722ea8e3d39319bbc3d",
+      "size": 3370
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/server/TracyShortPtr.hpp": {
+      "sha256": "1ab7d9a07650a38ba77c193ebff814cea6c003d4aff1e8c3a8865e6af83553d7",
+      "size": 2238
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/server/TracySlab.hpp": {
+      "sha256": "3a5b82aaaccb59d81ab1f3dc5e169e6f73a15a7e3f4948f7598d17888dd35df8",
+      "size": 3538
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/server/TracySort.hpp": {
+      "sha256": "c6d456382a666b15c7308155269afff0db8646678d2bda4328852d2ab15569b7",
+      "size": 148
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/server/TracySortedVector.hpp": {
+      "sha256": "343586304d6355f9a45166265de46d207a3879fe612b7909fb70d3c952abde73",
+      "size": 3684
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/server/TracyStringDiscovery.hpp": {
+      "sha256": "a905c73bf2951cceeee19879b439216be6df85fa015e0051a1406f2e291e42ca",
+      "size": 2327
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/server/TracySysUtil.hpp": {
+      "sha256": "4fab6a922ffafa8dd34cc7924d2526191c93ee78c225ae7292796ff6e556b6f1",
+      "size": 142
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/server/TracyTaskDispatch.hpp": {
+      "sha256": "f99cfb1f6ab426407a27cf03924f49e8378e14873302fe4b695ab6e482bea954",
+      "size": 750
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/server/TracyTextureCompression.hpp": {
+      "sha256": "8b4cd1fef2dee857773e836d9a7d448910ebb1aac4db79e2d7c43c473c0dc026",
+      "size": 1657
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/server/TracyThreadCompress.hpp": {
+      "sha256": "74d8296bdd86b2c20bfc1260ad84d461e56d5ff7ec68f6a6ff92a407687cfa00",
+      "size": 1401
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/server/TracyVarArray.hpp": {
+      "sha256": "3d446030bf6e0a60c93d3a983b451fc7ae853d3203fb42a363bd9649725c5d78",
+      "size": 2320
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/server/TracyVector.hpp": {
+      "sha256": "5e7f31e574bce6a9896d0fba57769c88206deaf3b544258700f00109ac3d8db1",
+      "size": 10143
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/server/TracyWorker.hpp": {
+      "sha256": "5ee0ac22517c212ef6c832fef6a3a399ccb2cfbd74a36b558f017488b5d820a1",
+      "size": 52542
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/server/tracy_pdqsort.h": {
+      "sha256": "d6471740759ccb33e310e0df8fab62cdd7fef58e80905503c56914a291606f6d",
+      "size": 22549
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/server/tracy_robin_hood.h": {
+      "sha256": "b341cbc928ae25fa36cbc8feb642d3b9c5b06c2ec6731c66858424b61a20a862",
+      "size": 94668
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/server/tracy_xxhash.h": {
+      "sha256": "be275e9db21a503c37f24683cdb4908f2370a3e35ab96e02c4ea73dc8e399c43",
+      "size": 253096
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/test/stb_image.h": {
+      "sha256": "38e08c1c5ab8869ae8d605ddaefa85ad3fea24a2964fd63a099c0c0f79c70bcc",
+      "size": 284733
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/update/src/OfflineSymbolResolver.h": {
+      "sha256": "64406908b7ab5aeb6edac893569dd3dfb8622991e36ea1905d8727b9672b820d",
+      "size": 996
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/python/bindings/Memory.hpp": {
+      "sha256": "2508fe51e58e5de73ea99699e5a2b912148df11010026fd59161ec05296d0913",
+      "size": 2634
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/python/bindings/NameBuffer.hpp": {
+      "sha256": "7dbe429ff0c2c93aadd0f3c7ce897980f6c7c17ff4589b930f37b32ba6c35e07",
+      "size": 1407
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/python/bindings/ScopedZone.hpp": {
+      "sha256": "640bac587b7347f639ee6ab8bd2ef7e0aceeec3a6614433e5f26317a9196a6e6",
+      "size": 3020
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/client/TracyArmCpuTable.hpp": {
+      "sha256": "4fc235a82da94a5136477a806e6391e230c7ae3c0fe62053f5c211d9e321f5a8",
+      "size": 14543
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/client/TracyCallstack.h": {
+      "sha256": "946034086733907080ce26cf1f7d0f12cd32a377768ee5e7379a44a4817a4163",
+      "size": 926
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/client/TracyCallstack.hpp": {
+      "sha256": "92fd23ac71ab2a399934f5408420abc2d9f3938f8f8aef8ec527d247e0d16127",
+      "size": 3702
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/client/TracyCpuid.hpp": {
+      "sha256": "91f4b9da8b860b4b9f91e69668d3d29e384fd72f311b5458856562aec01440cb",
+      "size": 435
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/client/TracyDebug.hpp": {
+      "sha256": "038afed2e613d22f859f0937bfb7a07c6be5567cc33051c9dbed6ea613257e27",
+      "size": 202
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/client/TracyDxt1.hpp": {
+      "sha256": "3c21b2ec285b969b0f7aaff8a576a57ff5a32afd41c195a1943407654005912d",
+      "size": 151
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/client/TracyFastVector.hpp": {
+      "sha256": "aec011fc54b1df82b6e7ffd78e974a85869cdae91cfaf73178114b4a54044c86",
+      "size": 2673
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/client/TracyKCore.hpp": {
+      "sha256": "b874b8e5b06db4b01ccc1bdce34d05ec6d0d7812f82ae6afb75bb29b6b12b08b",
+      "size": 437
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/client/TracyLock.hpp": {
+      "sha256": "95fe77a7b938631ecb21a8ee1e012858bfb9f9175df6ac027dcd3786926e2a0e",
+      "size": 17132
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/client/TracyProfiler.hpp": {
+      "sha256": "19ac2e4e145c32d6d2509a405c4e4d450117c90dafdaae4128cc0381e4c2e00a",
+      "size": 36581
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/client/TracyRingBuffer.hpp": {
+      "sha256": "0ce9c5397676edd0c45e88ab2c10f32c6239b75dca38b5cc099c90e3ef6a954c",
+      "size": 3598
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/client/TracyScoped.hpp": {
+      "sha256": "46e64c08a5bb7f68f94ff9ce3281ccb8170fb8c74a3d9daaba37d86ca06be8fd",
+      "size": 7154
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/client/TracyStringHelpers.hpp": {
+      "sha256": "b655b26bf0df158e763f516aefc82faae81bdaa9213585a406bfa2be77515e01",
+      "size": 837
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/client/TracySysPower.hpp": {
+      "sha256": "bb1edd89aa226572e6af54aaeadd22062f2636fd4c966ac63f642b1342f58903",
+      "size": 592
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/client/TracySysTime.hpp": {
+      "sha256": "a5a9a18671ab22c19bd88db1512be516d72e60509af4d836bec2b97b1c85b62e",
+      "size": 435
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/client/TracySysTrace.hpp": {
+      "sha256": "6e7fa65b00d71c57f5517222d58380e0d545c1472a6a199dfd98d3ea7f98739b",
+      "size": 563
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/client/TracyThread.hpp": {
+      "sha256": "5c02df54ebda30ffc6d31e5b415a6c7a5b680781665bc3403d3a2a887270399b",
+      "size": 1579
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/client/tracy_SPSCQueue.h": {
+      "sha256": "8cb74f10b233693d83da294dc48aa8ba8bb2a860a1d4dafb19dfbe3a76620a70",
+      "size": 4954
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/client/tracy_concurrentqueue.h": {
+      "sha256": "f94ead8ee471b85320a4b549e1916919c7018f651ec00244642f4d7ca8eab74e",
+      "size": 54120
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/client/tracy_rpmalloc.hpp": {
+      "sha256": "5db11b9a63d08da1a9381a08c4f0c61f140c2cea44d84cee26d4c04fdc0c667b",
+      "size": 17850
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/common/TracyAlign.hpp": {
+      "sha256": "316d6ec57c62834d2b83adde547f001160832705aa86abc46336709b1bdd615c",
+      "size": 394
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/common/TracyAlloc.hpp": {
+      "sha256": "60706b629718792fff32372da4efa710a76d6bd7ca503eb20572f26c8158c5c0",
+      "size": 1186
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/common/TracyApi.h": {
+      "sha256": "6198a31de880ab2037dead016f98392b25c2aa14c1151985a9576cb970b1d306",
+      "size": 352
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/common/TracyColor.hpp": {
+      "sha256": "a9dc70ed1921fcca3258909d1a941f91bb18f6651c225d40e36ded48324a6640",
+      "size": 17206
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/common/TracyForceInline.hpp": {
+      "sha256": "b4035600f7f1042c76e79d418fd49d3217d339a6b9435ba57528eaad6bda230e",
+      "size": 465
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/common/TracyMutex.hpp": {
+      "sha256": "e63b7a9cde4000c07cf4c965733e063762181ec3c11124cb93713eb55a54ab0b",
+      "size": 255
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/common/TracyProtocol.hpp": {
+      "sha256": "5eacb350f9a35db93919966bc0b44380e58df494adf4413e76e145402cbcdd5e",
+      "size": 3855
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/common/TracyQueue.hpp": {
+      "sha256": "0350401265b3467a184de885ee9a07d8a1de83af0f3a963b7f2c46d928a80384",
+      "size": 23476
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/common/TracySocket.hpp": {
+      "sha256": "b52b40eb848f799b2a3a7156b8a377630c40cbe0d6251690db16fe6d49794999",
+      "size": 3236
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/common/TracyStackFrames.hpp": {
+      "sha256": "fbd2359bd907581b97c66a286dcda3eafec884498af260d108b38d2dcb06fc58",
+      "size": 322
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/common/TracySystem.hpp": {
+      "sha256": "ba00e7784c9bf49581cf4e2166073c24e22012d2f7728bcb1ae93628a005279d",
+      "size": 754
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/common/TracyVersion.hpp": {
+      "sha256": "28316a5f3689f02be7e8c0f6707a33c9a4c8f834f9292d878716c888709c5683",
+      "size": 170
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/common/TracyWinFamily.hpp": {
+      "sha256": "a5bf76bc68be60b23982e963d5f93f0cfb6260695003a074082fcd4da5a84d58",
+      "size": 392
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/common/TracyYield.hpp": {
+      "sha256": "7d4ea857b76a6c2a2d010579075a0fde28969c8e1201f5573239cd0288a311cc",
+      "size": 512
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/common/tracy_lz4.hpp": {
+      "sha256": "4b3b0577518f334dee2c851f74f3fb4e940ba04e5d16deb18d00c2adacd8e7f7",
+      "size": 43279
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/common/tracy_lz4hc.hpp": {
+      "sha256": "6284759c4a4c92750a61158af8c891b74cb7200a0931dd11faaf3e4d40004620",
+      "size": 20095
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/libbacktrace/backtrace.hpp": {
+      "sha256": "79231477cf0483608aa3f640a2d4f7d8aa8f239b4916e8bd60e4db3d00dec72b",
+      "size": 8731
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/libbacktrace/config.h": {
+      "sha256": "2734b54de6d7695205c7be60cbb67d404e15ad86f04091f049cea85c6d52aa8e",
+      "size": 598
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/libbacktrace/filenames.hpp": {
+      "sha256": "8d2c2d284c3f071a8b418c2ce71e42e48b48caa0c4485b7319a4afe82b236c36",
+      "size": 2149
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/libbacktrace/internal.hpp": {
+      "sha256": "145767be4ff0b646510862a891fc1140747eb401271717ed1b2ce7633adbb137",
+      "size": 14112
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/tracy/Tracy.hpp": {
+      "sha256": "2d28896112f80f97967d190dc4105ff7b2f2fec3ea63accda2e1c805fd7cb35c",
+      "size": 15041
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/tracy/TracyC.h": {
+      "sha256": "9330679fc1603f76998bdd0cce9f7850477a08a949719f81ffd8b0f5ff98706f",
+      "size": 19343
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/tracy/TracyCUDA.hpp": {
+      "sha256": "967659a473eb58ef2103ed752487cb2c264dfd5d411c20e4b2735e2ba241114e",
+      "size": 57724
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/tracy/TracyD3D11.hpp": {
+      "sha256": "8a8ca2746ef45771ad29b34712281562fd80822eb5c1811f60dc26e83449609f",
+      "size": 17800
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/tracy/TracyD3D12.hpp": {
+      "sha256": "7172bf48b6599bd3dc0cccfe1424e93a823d3119be89ed5c35eb04406c759265",
+      "size": 21566
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/tracy/TracyLua.hpp": {
+      "sha256": "fc04041bda48169178eb0019c336d2a8cbc187d85c030c6e9cac32495ae00cac",
+      "size": 14548
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/tracy/TracyOpenCL.hpp": {
+      "sha256": "834d67772e5f431f98834a691378c8843fb1f8bd960f71ca4b62b226a4dfc6e1",
+      "size": 18606
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/tracy/TracyOpenGL.hpp": {
+      "sha256": "9af3baf8021a3852385feb3319731ce8545c5484fb6050c315c4bbfe8ab67c89",
+      "size": 13416
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/public/tracy/TracyVulkan.hpp": {
+      "sha256": "56bf418bef05bf7655282b475829ed35b140d25c36a4bfc5dc9c509c18376080",
+      "size": 31673
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/Backend.hpp": {
+      "sha256": "32a81f3a183f71bb94e6a0cda4d0b51a50e620903a215393a9817d8c8cb10cbb",
+      "size": 665
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/ConnectionHistory.hpp": {
+      "sha256": "a21fcc67ca4929733d48cf6426d46b58bad69d0e81681a888b5c6a6e2ca71c70",
+      "size": 728
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/Filters.hpp": {
+      "sha256": "563f4388bb6c34f7481494cd98725750db8477cb5ecbba7d9881eb09e6b6fa8e",
+      "size": 436
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/Fonts.hpp": {
+      "sha256": "41942efbdb2eeacb97f1e0999569f80bdc87d0850d93e2179510f11ff434c4d0",
+      "size": 293
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/HttpRequest.hpp": {
+      "sha256": "46a5cae8fa55af260d3b2a9096a80c11e71dabc478b36dae3db0d4dbd1d6a10d",
+      "size": 203
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/ImGuiContext.hpp": {
+      "sha256": "d37da6863dfd690b76d2462d50629297c601f1fb652052aa91282b868631d5c4",
+      "size": 215
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/IsElevated.hpp": {
+      "sha256": "0356f1abe09219e8eaff85c6b05a063abb34491dfd4db2a8ea07bb54b82ae4b2",
+      "size": 82
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/ResolvService.hpp": {
+      "sha256": "1c39355027f911e8b81c949f0300496abd7de62021e78058c49df5afb45ed21d",
+      "size": 715
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/RunQueue.hpp": {
+      "sha256": "54d22406de6dee54b0da7c7788a71d6b5a30326e80dda82677d8b26338af5388",
+      "size": 387
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/WindowPosition.hpp": {
+      "sha256": "e186573c917fbd5b686ed300b44dade0e3c614180a871f6d3bb7fcb45e0ad4c2",
+      "size": 254
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/icon.hpp": {
+      "sha256": "06c448c7818d7411d8c73591b514f501e790b144ee4f6cd1a737baaa2a406845",
+      "size": 2829
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/ini.h": {
+      "sha256": "2fad721941f145186292120b99a71fc685a2ad43d82867580d571cb0290d410f",
+      "size": 606
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/stb_image.h": {
+      "sha256": "c54b15a689e6a1f32c75e2ec23afa442e3e0e37e894b73c1974d08679b20dd5c",
+      "size": 282848
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/stb_image_resize.h": {
+      "sha256": "6a0e75adbabb48df9031c2e39ccd97437bb226fe31e7d4a01c7bf70a18d32ec6",
+      "size": 116516
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/zigzag01.hpp": {
+      "sha256": "61df087a72034fd7b930cb929926952987214e8a8c9b517b58672c24023a8eab",
+      "size": 582
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/zigzag02.hpp": {
+      "sha256": "72ecb533927a42b1e9088710ba9c96adb958a529db226a1fbafaad23e7dd3bda",
+      "size": 606
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/zigzag04.hpp": {
+      "sha256": "657bda47207e42739282310d675ee49221bae1a07dddb850cb90a561762af311",
+      "size": 659
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/zigzag08.hpp": {
+      "sha256": "6293a601dd005a4ef290de4478aa1563805a579c93425e384ff690a8fa656c14",
+      "size": 779
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/zigzag16.hpp": {
+      "sha256": "272794a2e3990900e81e70098e06971cdff82c66b43c072131f4aece24c71d64",
+      "size": 916
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/zigzag32.hpp": {
+      "sha256": "6e37ee786479f0d026e16c950b3f60fcdafd717a31670e1d2f033007a2752c7b",
+      "size": 1005
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/IconsFontAwesome6.h": {
+      "sha256": "0c741829ad4d4d1fa21b58cca5fb106fc1fc99e4a6e0f49e36ba322186c71056",
+      "size": 73902
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyAchievements.hpp": {
+      "sha256": "59998383a2932696bb4e9d1b85ce2ae9ee11da03eab6ebca0ea4930cf1699794",
+      "size": 1459
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyBadVersion.hpp": {
+      "sha256": "2b06a378ec080cd2a113f4a6961f02ad16ec496c23d85221a73cb98149816858",
+      "size": 617
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyBuzzAnim.hpp": {
+      "sha256": "bfd87aabca77c995f2c374cc7b46ccb703155f14da5cea289c481c4353a092c4",
+      "size": 706
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyColor.hpp": {
+      "sha256": "66eb14a72c1a73d4f99b08ce11cf58983a02c3550cbafeadeeafe2c8c2d672a4",
+      "size": 1751
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyConfig.hpp": {
+      "sha256": "61447ffd67af5f50f8a4a732a9ee1bb068eb9ede8568b650c7cbca8763500ad2",
+      "size": 1302
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyDecayValue.hpp": {
+      "sha256": "ab57e79c6f655572bfaac7c825f6c2a7d92d20e2787d76e0f9e99c603a153f60",
+      "size": 843
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyEmbed.hpp": {
+      "sha256": "b0de05f4bcbb78b3c48e5cc67e525aae1f5bac808d76df6d09c20eba5475451f",
+      "size": 469
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyEventDebug.hpp": {
+      "sha256": "9790f34d8d270eb6aa7a87001572242bf6afca32016055ca2c5e4a13ddae122d",
+      "size": 151
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyFileselector.hpp": {
+      "sha256": "f6c86932b8a54c4759dfe0d10014aef4856cc84a0a8a7e0549aebcc9d9737399",
+      "size": 389
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyFilesystem.hpp": {
+      "sha256": "af93073f884593f9475030e93bbf2aa5836d3e50a6a1f4e73a4c3a629185f8aa",
+      "size": 407
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyImGui.hpp": {
+      "sha256": "46ac5d88e5fdc216033196b16f4aae2f0aac19476555ecb0f8fcbbc6374dbd3b",
+      "size": 10747
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyLlm.hpp": {
+      "sha256": "5ea85f8fc6fc94d7e9132bdfe3d0c857bcec7f6da7b28e2bc9ac82be78729085",
+      "size": 2196
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyLlmApi.hpp": {
+      "sha256": "4f6eff5b460958dcea84870e50c92e702fa25bb2f12aae3227f8ffb208a3e729",
+      "size": 1350
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyLlmChat.hpp": {
+      "sha256": "1fac9ff03aa632e1d901a34ac1f8080de0d3008449b7829ce3dac96ace16b6cd",
+      "size": 965
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyLlmEmbeddings.hpp": {
+      "sha256": "c777bfc846407e3447537f4353db61fd1dc18449f10458a90eca331e288ce3f0",
+      "size": 814
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyLlmTools.hpp": {
+      "sha256": "59658abc04a303d443646fbe86833dfefec582835cc5d1fdabce6fddce3fa043",
+      "size": 2304
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyLockHelpers.hpp": {
+      "sha256": "8fdb2ad965e91feaf9c79a172409bd9690cb3490b4ae1f91524dff8656db9390",
+      "size": 541
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyManualData.hpp": {
+      "sha256": "edb94e3946498c83b11be57aba99266b0656f0e45353a043f1fa97cb6401134c",
+      "size": 827
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyMarkdown.hpp": {
+      "sha256": "98530f15231cc422c5ea516af009556c74ee8749eaaf3ab05356e4ab8c845287",
+      "size": 276
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyMicroArchitecture.hpp": {
+      "sha256": "78dce31aef40bba29bb35e8124ff41e65b2b406f25e3cc77efd91eab110a24f1",
+      "size": 716
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyMouse.hpp": {
+      "sha256": "94b15d8464ef0f65da5cdaec9444573fb6d59a1b36adf66b77194b3523c837c1",
+      "size": 427
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyProtoHistory.hpp": {
+      "sha256": "ed041a3ad791f6c6e6c2293169146edd1f14bbcee3cef1a01b29c6923d02df15",
+      "size": 265
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracySourceContents.hpp": {
+      "sha256": "5edfaf408a393f0099cec2bc4ef85c5eecddffc9661048b14b0c3b42e61f09c0",
+      "size": 1116
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracySourceTokenizer.hpp": {
+      "sha256": "0ecdc2d9e2399ed7548ebfe791c7bd583e068fbcc2a4e7f56028a0e864b68c78",
+      "size": 1389
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracySourceView.hpp": {
+      "sha256": "c14d5d8ecfe4c98d29062bdb09b87b02f374abc1e7b5e0a59bc186b9c516ee2c",
+      "size": 8915
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyStorage.hpp": {
+      "sha256": "84fcb0a6fef9ee8c9daabe27cd853203964e231ef85014ef20b3aa26a11e232f",
+      "size": 296
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyTexture.hpp": {
+      "sha256": "2fd5fa30b6eaa1c6848d1af076c41919e02ea5b4a9ede859ca0b524500b47556",
+      "size": 525
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyTimelineContext.hpp": {
+      "sha256": "8f2da2d1e4d51ed69ebd022562d0664caf3f8f9c885d5b05623e49eeb7bc1cef",
+      "size": 307
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyTimelineController.hpp": {
+      "sha256": "fdd54aa3be8f6f7eb1971a9d80beb59393a3e4cd016e05f31b94a414365d8a71",
+      "size": 1705
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyTimelineDraw.hpp": {
+      "sha256": "00f79951510094860314900dba48c15d231fe989484f6f78d636e028b1b11130",
+      "size": 1435
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyTimelineItem.hpp": {
+      "sha256": "6b0806a7ee95d2a3bc11e61733d99040e2fadbb709d857f435be617612601eae",
+      "size": 2095
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyTimelineItemCpuData.hpp": {
+      "sha256": "a2558a22dc0539e702b17e319fdf891a0612f1579b2e23cd65d7604175e44020",
+      "size": 1358
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyTimelineItemGpu.hpp": {
+      "sha256": "64e029502c020c35c5267e978cf936e1ebca5ae495074c583f892d5229010bb4",
+      "size": 1004
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyTimelineItemPlot.hpp": {
+      "sha256": "b52c0a3da19cee8b168eb1493ece19b0b8a84ba72c027f0af09dd2cf3a3d2138",
+      "size": 1175
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyTimelineItemThread.hpp": {
+      "sha256": "06a01dd92141082837e7b1b138c3226d121699c9d27f9b45d4d6227fbd70bcbf",
+      "size": 2522
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyUserData.hpp": {
+      "sha256": "2d88186a97b254d4d62add9ee094722d10609708d4b870641101b81326b4abdb",
+      "size": 1250
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyUtility.hpp": {
+      "sha256": "e6c871b17a2ce5823bd45aeaa51b22c17acab32c202e77f08cce5954e4320cb3",
+      "size": 926
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyView.hpp": {
+      "sha256": "0bd200b9c5259727f03f7c4b17f54ea789159b618ecfccc0da00e39ee78e853d",
+      "size": 33971
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyViewData.hpp": {
+      "sha256": "e91102eebceb9085128aecdfb82145b51252cd1b15f48a10ef188892ff9e7bd8",
+      "size": 1756
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/profiler/src/profiler/TracyWeb.hpp": {
+      "sha256": "579ae853209dd57a465e98e4d44d04744e897d49517a6915297380e45e3ce7fe",
+      "size": 118
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/extra/uarch/TracyMicroArchitecture.hpp": {
+      "sha256": "78dce31aef40bba29bb35e8124ff41e65b2b406f25e3cc77efd91eab110a24f1",
+      "size": 716
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/examples/ToyPathTracer/Source/Config.h": {
+      "sha256": "35efab7f6adbbb1b7658c63c5333856fe356c5b1032acb8c6f640f818f21b7cb",
+      "size": 802
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/examples/ToyPathTracer/Source/MathSimd.h": {
+      "sha256": "748cc70fda61413a830793138493f28f2ce9853dffb69250b5fad6d9dad58c0d",
+      "size": 8111
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/examples/ToyPathTracer/Source/Maths.h": {
+      "sha256": "b6b161a61f9e4313bfbce8c8bc0d03d276263783a18eaa58890acde927d7a25f",
+      "size": 15925
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/examples/ToyPathTracer/Source/Test.h": {
+      "sha256": "2157936fcbbcb417f8a3c124735172346e556b832d2476acc40d93db6ca2f216",
+      "size": 607
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/examples/ToyPathTracer/Source/enkiTS/Atomics.h": {
+      "sha256": "03f0e5a465923ee863d463009f2f3720968f6380c45d4e4aa849182275700119",
+      "size": 3077
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/examples/ToyPathTracer/Source/enkiTS/LockLessMultiReadPipe.h": {
+      "sha256": "bf9b801d8f3d86219bf46b2fbb98cdcccdf0e079ea7ffee49d9ef8ffc9d8af02",
+      "size": 9132
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/examples/ToyPathTracer/Source/enkiTS/TaskScheduler.h": {
+      "sha256": "daa8e574fde530e296dba4f49df77bfce52e1f7a4bba2221014937793a1d28bb",
+      "size": 6717
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/examples/ToyPathTracer/Source/enkiTS/TaskScheduler_c.h": {
+      "sha256": "da3cafafdb6f4e7ac3b992faa72a62b678538c905b9b3163d6fdce24a44997f3",
+      "size": 4000
+    },
+    "build-1791237458725680034/owning-headers/subprojects/tracy/examples/ToyPathTracer/Source/enkiTS/Threads.h": {
+      "sha256": "a826d0232a2b1b6f623aa1d0f5fd555a50219b19b534019d5144a7c6a98b356d",
+      "size": 5099
+    },
+    "build-1791237458725680034/owning-headers/subprojects/udis86/libudis86/decode.h": {
+      "sha256": "b3e2321de06d424a91916738972ff05d04799950b19f76b1488b4ad17492e95d",
+      "size": 6311
+    },
+    "build-1791237458725680034/owning-headers/subprojects/udis86/libudis86/extern.h": {
+      "sha256": "22e8f1c9f0e7648cc5a9a03f3250792e16ec84af67d14ace5061a1e125338eca",
+      "size": 4828
+    },
+    "build-1791237458725680034/owning-headers/subprojects/udis86/libudis86/syn.h": {
+      "sha256": "16e126745d55b39f5e4ddd7fc6f6c9367896940f6caf24035de643821f17eed7",
+      "size": 2119
+    },
+    "build-1791237458725680034/owning-headers/subprojects/udis86/libudis86/types.h": {
+      "sha256": "7657216511e15475c9caa8dc37e7c9a0d39b4a34f0921961a89d3d5748ef141c",
+      "size": 9921
+    },
+    "build-1791237458725680034/owning-headers/subprojects/udis86/libudis86/udint.h": {
+      "sha256": "eafeaad877342b20298aed75a18a5dd002f271f55ea327a7ce0c44d3090fe80a",
+      "size": 2940
+    },
+    "build-1791237458725680034/owning-headers/subprojects/udis86/libudis86/itab.h": {
+      "sha256": "61426eb988757de6b9566ab817dd71edaa479361cd34ac8b3abe973c10658ccb",
+      "size": 25562
+    },
+    "build-1791237458725680034/owning-headers/src/animation/AnimationManager.hpp": {
+      "sha256": "e7834aef3b0f3259a109e5407c27bd31d5ad8ed05b698e4726e5972bacd479fa",
+      "size": 2638
+    },
+    "build-1791237458725680034/owning-headers/src/animation/WorkspaceAnimationController.hpp": {
+      "sha256": "77d505048415c82fa712a012adb80845bfe3c22388ca0e2f766e7001275ee631",
+      "size": 669
+    },
+    "build-1791237458725680034/owning-headers/src/config/ConfigManager.hpp": {
+      "sha256": "26b118b5adf233dc0620e914f63581ced38599c23e5706f22ee71d8eb39da38a",
+      "size": 2972
+    },
+    "build-1791237458725680034/owning-headers/src/config/ConfigValue.hpp": {
+      "sha256": "828c7bb00b64a1085c82c56d3353c3b8b007bc2f1634fcc6ec0c348d969c68b3",
+      "size": 2774
+    },
+    "build-1791237458725680034/owning-headers/src/debug/HyprCtl.hpp": {
+      "sha256": "5f3ec0e128c814e556115c4f89bb70f9fc52c35408ab77156a2ff746853b11cc",
+      "size": 1985
+    },
+    "build-1791237458725680034/owning-headers/src/debug/Overlay.hpp": {
+      "sha256": "be5aa997f55a769b74384062ca89334434fb24446c95888d3b31b83da6c5d36c",
+      "size": 3088
+    },
+    "build-1791237458725680034/owning-headers/src/debug/TracyDefines.hpp": {
+      "sha256": "13dddd41b669e33f7b5a469f3a7de5212f9d10091ed7f5648b67b51cf9029494",
+      "size": 570
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/DesktopTypes.hpp": {
+      "sha256": "f56ae989653c5d9be2fd97a9f5febc4c4e3cc8c2012bb8932d6714cb4dbf5731",
+      "size": 1061
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/Workspace.hpp": {
+      "sha256": "d6bcfebb3c0b5a963effe0f42e9e440943fe77a706028450ad77447b51626868",
+      "size": 3097
+    },
+    "build-1791237458725680034/owning-headers/src/devices/IHID.hpp": {
+      "sha256": "137664de4d0a7e2f2660237eb56116b1612a671bcff0af5ded69fd507f2b5556",
+      "size": 929
+    },
+    "build-1791237458725680034/owning-headers/src/devices/IKeyboard.hpp": {
+      "sha256": "82e0bc9e1f31f6342f193b0981000245b932719cf406988d98aba64f0f716f05",
+      "size": 4816
+    },
+    "build-1791237458725680034/owning-headers/src/devices/IPointer.hpp": {
+      "sha256": "bf4b2309526ca44ac30d2c3d3ad6a66cc7bf8d7a398b22a8fdde58c0f0ab1310",
+      "size": 3580
+    },
+    "build-1791237458725680034/owning-headers/src/devices/ITouch.hpp": {
+      "sha256": "0d723d8e0d4d2a5580baf2dcce29e6087726e846d86f3f535735f1723d756e5a",
+      "size": 1103
+    },
+    "build-1791237458725680034/owning-headers/src/devices/Keyboard.hpp": {
+      "sha256": "94c0c6de37dc5a0f4ce39e14134d2ae5bacee286cb9d7d65ade9429560850f70",
+      "size": 507
+    },
+    "build-1791237458725680034/owning-headers/src/devices/Mouse.hpp": {
+      "sha256": "dd92ab654e3865c0300bc3b06c5e7c5376e3278f5188b1fc459f5d100326825c",
+      "size": 924
+    },
+    "build-1791237458725680034/owning-headers/src/devices/Tablet.hpp": {
+      "sha256": "6ca539b6ddf4a78de8d28cbcead1db52f2964e09e1ee5894a4c519c98a7eb4c1",
+      "size": 6418
+    },
+    "build-1791237458725680034/owning-headers/src/devices/TouchDevice.hpp": {
+      "sha256": "f273874e5ed547d70d380b171a54d379e9f61738d6f4e97251adf369bce0f713",
+      "size": 589
+    },
+    "build-1791237458725680034/owning-headers/src/devices/VirtualKeyboard.hpp": {
+      "sha256": "9f8cc077c83d2d7b87619883d20e0d56853f54f39c67603411bdb6dadc1973f4",
+      "size": 660
+    },
+    "build-1791237458725680034/owning-headers/src/devices/VirtualPointer.hpp": {
+      "sha256": "69d7f329595768b0f8f62649a1baa0bada3a1a5ddf721bbafda630974e0d5125",
+      "size": 989
+    },
+    "build-1791237458725680034/owning-headers/src/errorOverlay/Overlay.hpp": {
+      "sha256": "0300e8b77811b5099b9e508d1a04f6c2768730cb2dfaa7882aac6600ef81b0d2",
+      "size": 2031
+    },
+    "build-1791237458725680034/owning-headers/src/event/EventBus.hpp": {
+      "sha256": "bfb8be17d84a0d8e7f10a0d61bcdc2b2e67378d139aaae8a484bebd96f62eede",
+      "size": 7264
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/AnimatedVariable.hpp": {
+      "sha256": "6c8db9a2a55eac3f1463918b39a2a36bd641c8ea1c33e74414d64fe891aaea3a",
+      "size": 2028
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/AsyncDialogBox.hpp": {
+      "sha256": "f69de5bce2c6546e1cc3dc8be907b195494fa053824efaad4c413b1491919dca",
+      "size": 2065
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/ByteOperations.hpp": {
+      "sha256": "0485bfa922df625c5f65755f66fd18078ecc79ccf5616e6b0d3c2b9cc4ff60f1",
+      "size": 1614
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/CMType.hpp": {
+      "sha256": "174db4cc3423968b65ee7ca6cef7f2d2fc0341afefd6a2345b1b510030d8edf8",
+      "size": 812
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/Color.hpp": {
+      "sha256": "2276a8cc068799abc09e2688910633e370bfa271f5da3b4217d0ff51258aa9a8",
+      "size": 2139
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/CursorShapes.hpp": {
+      "sha256": "c65ada2f118cc9bfc21dfa6679ac2f1658d1490e6d3269171dbb39264625e8b0",
+      "size": 722
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/Drm.hpp": {
+      "sha256": "fcfea2839b9b5ea31f956f4d484a2df62a7c05d4be4ffe88294cc5090aadb300",
+      "size": 512
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/Format.hpp": {
+      "sha256": "a02692122864c46bd6bf5a2a17a883c28ccdf9440eb2eebda12ce9926dcf0806",
+      "size": 695
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/MainLoopExecutor.hpp": {
+      "sha256": "bd1dea4c422664cc1ef29cd12201e9d04e72357265905c9535191037fb6b37ba",
+      "size": 779
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/MiscFunctions.hpp": {
+      "sha256": "084844f04b5be8ca1e9d7c6e49f94a4b6fc9cd3e387a060d6f70dcc0b68c7c79",
+      "size": 2534
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/MotionBlur.hpp": {
+      "sha256": "acd99da023c973942bbb890ceceb696b4eff371a80318537d01ef8d86cdc2c14",
+      "size": 741
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/SdDaemon.hpp": {
+      "sha256": "da7c828148658f9516aa2bf20ad02acbbe9e60136cad30915eec4b2f17692daa",
+      "size": 121
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/Splashes.hpp": {
+      "sha256": "54a2a492a31ba9119c03917ecd3d31886e8be96796b2bf737de393543d8d1fda",
+      "size": 4825
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/SystemInfo.hpp": {
+      "sha256": "343f4b461356a27c773ee25e1e015e01b45de884792f0fbe77375008182cb542",
+      "size": 237
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/TagKeeper.hpp": {
+      "sha256": "ea9559b297ceae73f517a05bb79b33ae62daa0a0de32d68604e15b12ad266e95",
+      "size": 427
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/TransferFunction.hpp": {
+      "sha256": "da4e343255455f24ac3a1ce946e14230542158cd984a88e8374ca1c2b39ba8fb",
+      "size": 410
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/WLClasses.hpp": {
+      "sha256": "f6d95b8d13a21f412ab206479302f00da3ff3e92aa400dca918e1f2fa46bdfba",
+      "size": 642
+    },
+    "build-1791237458725680034/owning-headers/src/i18n/Engine.hpp": {
+      "sha256": "a96319b626d1979f7731f8114c3761d5c6c8f63c2b208af6085a78a0be8e3d80",
+      "size": 1852
+    },
+    "build-1791237458725680034/owning-headers/src/init/initHelpers.hpp": {
+      "sha256": "fca2fd42f91906c0c26be793e339bb02e6250ddae4683b3380a20bc9f71ccf17",
+      "size": 105
+    },
+    "build-1791237458725680034/owning-headers/src/layout/LayoutManager.hpp": {
+      "sha256": "7a90c6b2ba5329965c0c27ccdcdb00d19bfdb5dbc1f0426ec5e8cf1ab3f12e31",
+      "size": 4152
+    },
+    "build-1791237458725680034/owning-headers/src/managers/ANRManager.hpp": {
+      "sha256": "bf08f4022ffd42a0a8c60cb5d7b4b4c4cbe2f2f2f452a7c5e1298686361d9935",
+      "size": 1817
+    },
+    "build-1791237458725680034/owning-headers/src/managers/DonationNagManager.hpp": {
+      "sha256": "0b5d408f221452b535d37ed708d8224869374db515bc28e3029f082875124701",
+      "size": 480
+    },
+    "build-1791237458725680034/owning-headers/src/managers/EventManager.hpp": {
+      "sha256": "ef399cfed2e65013581ea7bc0143d9f122d528b563f3768c01c3ba407c37e14a",
+      "size": 1289
+    },
+    "build-1791237458725680034/owning-headers/src/managers/KeybindManager.hpp": {
+      "sha256": "cee22c13d413ab389803e0eb87a6fcefadedea885cee4457b56ae351228dd1e0",
+      "size": 7936
+    },
+    "build-1791237458725680034/owning-headers/src/managers/ProtocolManager.hpp": {
+      "sha256": "24079d3dda39b73ec00c00597599b9c477094bd8c2754e23f616944a79d45711",
+      "size": 529
+    },
+    "build-1791237458725680034/owning-headers/src/managers/SeatManager.hpp": {
+      "sha256": "d1ac1c45e8ba329827f46b371b96df42fad3f6dccd92917f98f0046d6fa3bb44",
+      "size": 6511
+    },
+    "build-1791237458725680034/owning-headers/src/managers/SessionLockManager.hpp": {
+      "sha256": "46f9e6472a26ef83b132190eb041284566cd4faacbf813c275747f13fcb3906e",
+      "size": 2495
+    },
+    "build-1791237458725680034/owning-headers/src/managers/TokenManager.hpp": {
+      "sha256": "cde861526522ed5b5723bcc0a9c9bf5c927c0215c811162c6e7eb9ef7f677845",
+      "size": 819
+    },
+    "build-1791237458725680034/owning-headers/src/managers/VersionKeeperManager.hpp": {
+      "sha256": "7a7079ab879e7a87cfc69ca944a5a3240d68184bba942eb4598b3ad68931d622",
+      "size": 358
+    },
+    "build-1791237458725680034/owning-headers/src/managers/WelcomeManager.hpp": {
+      "sha256": "e389c7acb1002f80f61311bd02f5119dc763bae890cb37e8c139da433cd3cc41",
+      "size": 273
+    },
+    "build-1791237458725680034/owning-headers/src/managers/XCursorManager.hpp": {
+      "sha256": "2ba3b0706f85820072d7755618b3791445731461238b24486078bc3fb3f01c46",
+      "size": 1574
+    },
+    "build-1791237458725680034/owning-headers/src/managers/XWaylandManager.hpp": {
+      "sha256": "be619227776ed328a3fd312fec21a8506507af42b09043f6760dc9f3c4278fa0",
+      "size": 1079
+    },
+    "build-1791237458725680034/owning-headers/src/notification/Notification.hpp": {
+      "sha256": "b395426a09dd14333a2ff50ab894ffd8c788d88775f5311b71952790bb90be08",
+      "size": 2033
+    },
+    "build-1791237458725680034/owning-headers/src/notification/NotificationOverlay.hpp": {
+      "sha256": "15dde0a314ca229c8c4604af8e30622f5995cd2724f9a7d165fe41017e5ff3d6",
+      "size": 1602
+    },
+    "build-1791237458725680034/owning-headers/src/notification/SharedDefines.hpp": {
+      "sha256": "a1fc4a3bd06d8e9d49a5636c6bdb973869d7d6762f717b8dc064dd126913f081",
+      "size": 1491
+    },
+    "build-1791237458725680034/owning-headers/src/output/DamageRing.hpp": {
+      "sha256": "2bd8cad57b761ccf13e7478740702ca6f0ad262f6f815b6e78337d78b71a523b",
+      "size": 735
+    },
+    "build-1791237458725680034/owning-headers/src/output/IMonitorArrangeable.hpp": {
+      "sha256": "f5ee14983d97bf0ab23ae02ea0fe8babdbfc10da401a230ad42c7859be90f4b9",
+      "size": 851
+    },
+    "build-1791237458725680034/owning-headers/src/output/IMonitorGeometry.hpp": {
+      "sha256": "aff2589190c44817a2e50e38b20450cbb08252a0afaf199cbc3412095ee2b45c",
+      "size": 893
+    },
+    "build-1791237458725680034/owning-headers/src/output/IMonitorIdentifiable.hpp": {
+      "sha256": "bbd397f796dac31386bd947074929deb6f8106a3082f57967dbe55036368bcfc",
+      "size": 661
+    },
+    "build-1791237458725680034/owning-headers/src/output/IMonitorMutableGeometry.hpp": {
+      "sha256": "e76166dc23aab935aa87626add0d58267842f153aa20fb9bb54b2bc8fc1452a3",
+      "size": 214
+    },
+    "build-1791237458725680034/owning-headers/src/output/IMonitorQueryable.hpp": {
+      "sha256": "c26e2122e78280cfa46483d9f7be051f44fb1cce0b4701748a59a3ee9aa2d336",
+      "size": 501
+    },
+    "build-1791237458725680034/owning-headers/src/output/Monitor.hpp": {
+      "sha256": "4e9d88475f614f83015ed799d31425e35b47eb796dd91a4d8ec8f8ae88442621",
+      "size": 19020
+    },
+    "build-1791237458725680034/owning-headers/src/output/MonitorFrameScheduler.hpp": {
+      "sha256": "99bd44f2b414dfe5e3d04c5da543ba7dbef3da54896ced1f14471f88822d4ac4",
+      "size": 1265
+    },
+    "build-1791237458725680034/owning-headers/src/output/MonitorResources.hpp": {
+      "sha256": "a9778ac9a2c9889f9ba6412b2a855d0e804223a97fa93c73e887938314927d30",
+      "size": 2552
+    },
+    "build-1791237458725680034/owning-headers/src/output/MonitorTypes.hpp": {
+      "sha256": "09c3650a1b3950e4bb68c8aa091f4801db819af28ff3553b76048bf6eb71e9df",
+      "size": 448
+    },
+    "build-1791237458725680034/owning-headers/src/output/MonitorZoomController.hpp": {
+      "sha256": "6319e3fe3ca80cc729c0030e86c01702f50bfa241b974e268ad0b0a7ad27e1df",
+      "size": 781
+    },
+    "build-1791237458725680034/owning-headers/src/pch/pch.hpp": {
+      "sha256": "5d5851729c250d606888589f6364cc47c59e53ccbdb489d136b768e64135870b",
+      "size": 465
+    },
+    "build-1791237458725680034/owning-headers/src/plugins/HookSystem.hpp": {
+      "sha256": "9ea3fd2145acd1d953d7916004a592a6ee6151eebdb763513b016d3a02fba28d",
+      "size": 2253
+    },
+    "build-1791237458725680034/owning-headers/src/plugins/PluginAPI.hpp": {
+      "sha256": "6a47b6bf31e781bf40297f7385ff7a18082812f252f5039961c2dae26a5ef740",
+      "size": 13018
+    },
+    "build-1791237458725680034/owning-headers/src/plugins/PluginSystem.hpp": {
+      "sha256": "e45bac011ba1bdbe807af1c059da73bd42c71973d2eaebd547af95850e7fc826",
+      "size": 2272
+    },
+    "build-1791237458725680034/owning-headers/src/pointer/PointerController.hpp": {
+      "sha256": "260fa1c172d0f469d420dc1b7e5311c0dfec0777fa6a6cf08af69ea854fdbb55",
+      "size": 284
+    },
+    "build-1791237458725680034/owning-headers/src/pointer/PointerManager.hpp": {
+      "sha256": "af62bde2f8cf14e0440a99d0e81b361d3845eb95873be549e4ce44f45edb345e",
+      "size": 7224
+    },
+    "build-1791237458725680034/owning-headers/src/pointer/CursorBufferExtent.hpp": {
+      "sha256": "d5bd661bedcc711b9136ab8c678be51f79a41886ab82a207daeabe8da6f6d1c0",
+      "size": 1687
+    },
+    "build-1791237458725680034/owning-headers/src/pointer/ParentNormalizedPosition.hpp": {
+      "sha256": "29be1203c351b77bcc6e9f102f59caf88c53af8f513d93197f6cd3bb1cca0112",
+      "size": 987
+    },
+    "build-1791237458725680034/owning-headers/src/pointer/ParentPointerFocus.hpp": {
+      "sha256": "6dac8387e71b0b8bb8c002e30f770c82718791319cf5be0aff637b8e3ffceaf2",
+      "size": 220
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/AlphaModifier.hpp": {
+      "sha256": "86be224df4c0a3153d36959b9cf713c53b5493f0acc600b6720ca43b0785bf6e",
+      "size": 1547
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/BackgroundEffect.hpp": {
+      "sha256": "f0bda6d37b82ab2947488d042a35adf23b9fe7f8de8c3be0a99d18b91dd90a69",
+      "size": 1842
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/CTMControl.hpp": {
+      "sha256": "0084343373434d4aa7fb5b5f7373397b925b1aaf19e07fdf0d2ed2ce99924ac0",
+      "size": 1500
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/ColorManagement.hpp": {
+      "sha256": "161efa345711451ba1f44199d7ed4acf13ba6fdaf84512e07187d02e85f663e8",
+      "size": 8445
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/CommitTiming.hpp": {
+      "sha256": "06434b37b49dceffa9ffa3e7c9c3c47f8f3fe98a5651f5bfa4975c297c809c62",
+      "size": 1965
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/ContentType.hpp": {
+      "sha256": "488fcab29a9127203ee310163e78d200edf217e171986490bd078310a1243214",
+      "size": 1580
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/CursorShape.hpp": {
+      "sha256": "83a9be61f85f30daa4a3f4388c556c252ce98d15345620dadb58edb2a7a424c5",
+      "size": 1337
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/DRMLease.hpp": {
+      "sha256": "35b704b3bdafd2e67a94184d8429c7f0552bdd7d0a4ee4f57a86ff592dfc43c4",
+      "size": 4347
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/DRMSyncobj.hpp": {
+      "sha256": "09d02b79b30af3815eff93e3eccf7c96be4f6a0d5d92396dd28ae00d5c2c86d1",
+      "size": 3403
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/DataDeviceWlr.hpp": {
+      "sha256": "8657001c9fe04de594ecc266015da5a7584272e65f0af0a09680a92de6b7d920",
+      "size": 3666
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/ExtDataDevice.hpp": {
+      "sha256": "c4e054211088b6c25965225363c3ab65912857e476b241a3022f7a002cfb9202",
+      "size": 3654
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/ExtWorkspace.hpp": {
+      "sha256": "00ac5760d5e5cd96354123a7fb63d774c95b3e38a088f15915ffb47971857c72",
+      "size": 4076
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/Fifo.hpp": {
+      "sha256": "90d1b82684676c646290a7788803b3465b20233d7dcfc2908b2976177d24f185",
+      "size": 1493
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/FocusGrab.hpp": {
+      "sha256": "dce47251853f8d95eeec0eb357665efdceccd52b111e633c56412e5c55103421",
+      "size": 2607
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/ForeignToplevel.hpp": {
+      "sha256": "afb603fc76750db2a9fead2b51ff3b4ab942f8a1a34261bee47194ec55f3c4ad",
+      "size": 1921
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/ForeignToplevelWlr.hpp": {
+      "sha256": "848da1e88a9731fd2219ecd3c3d7c0c6ea99c64e1cea6192acdff861b8c5dbd0",
+      "size": 2362
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/FractionalScale.hpp": {
+      "sha256": "e43410125253ee6c092091aaad5201b5b9a12e3471a9fc9feb618b1d18e56af5",
+      "size": 2053
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/GammaControl.hpp": {
+      "sha256": "8daf04b7423b02662d6dac3d9fd3aef740023b60d82a7ed30e2d2bb9ecec6535",
+      "size": 1566
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/GlobalShortcuts.hpp": {
+      "sha256": "13f25210560ae2dc81a718ab4e3e77f51f892475e3fa56a233e4b2dd722e1ab7",
+      "size": 1308
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/Hotkey.hpp": {
+      "sha256": "0f897b2ca5392fc8e800df221938693549adda6c90a9e3963fa78f4cdb8fa184",
+      "size": 1907
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/HyprlandSurface.hpp": {
+      "sha256": "bfe2307186a3406b9a293414d524b569bdc5419039709d0d4e633143fba24974",
+      "size": 1861
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/IdleInhibit.hpp": {
+      "sha256": "53ffbb7fd541f098c36246774aa6f88f1732a9554ccf3b6fd760cbc7e833df9f",
+      "size": 1771
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/IdleNotify.hpp": {
+      "sha256": "53d94ec5f6e40418b791d762f4392e98316edc1b8f2d7e196c8fd3339e118d18",
+      "size": 1722
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/ImageCaptureSource.hpp": {
+      "sha256": "c64da774f187e0255c55dde8190cdbf319ccd4ecdf7cf01c9d876e468e07bc43",
+      "size": 2460
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/ImageCopyCapture.hpp": {
+      "sha256": "a23a8bf4acab8b42c636ac0490ac5ec434f8ef36e44daed157f3313368b7d62f",
+      "size": 4088
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/InputCapture.hpp": {
+      "sha256": "31da31b02d4e32943c9af02640c0629bea14999b0540fa874a19afc6ac9793a5",
+      "size": 4088
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/InputMethodV2.hpp": {
+      "sha256": "8073fc60231fb6864f1039bfe9510bfa615b1abb344556098e6324145dc26e85",
+      "size": 4925
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/LayerShell.hpp": {
+      "sha256": "b5219eccc360fbcef087414d7203a08f0762eb41bc5271b1b61f1c750b312de4",
+      "size": 3559
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/LinuxDMABUF.hpp": {
+      "sha256": "86f4e2557856fc737d01b8cc3dc81bc469b343d90417787ec81775ca97fd61e3",
+      "size": 4326
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/LockNotify.hpp": {
+      "sha256": "5e9e5bc556e268328acfb5a8697b70215fe8dd5f2a99055cfef5c5d89b276eb3",
+      "size": 1298
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/MesaDRM.hpp": {
+      "sha256": "cbf177dd585bd04cff294e412ac61adf62358daba2d260688c4838dc8c873b70",
+      "size": 1346
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/OutputManagement.hpp": {
+      "sha256": "59d8e04f0c8d73766fcd75723d9b5739bc0f65e049666e2b55cde8a67e204a81",
+      "size": 5789
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/OutputPower.hpp": {
+      "sha256": "1effef9375f1f2ebf29b82b8f5453b20582d71bcf444049859708c429ea24f14",
+      "size": 1248
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/PointerConstraints.hpp": {
+      "sha256": "37ddbf9bad0a51ff31e39dab043d245400dc02f90c034f0908612e703d288be6",
+      "size": 3077
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/PointerGestures.hpp": {
+      "sha256": "709618c3bf77dee9effa4c05e0aa1088a13c3173a89188bc7f994ee4f2173d43",
+      "size": 2563
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/PointerWarp.hpp": {
+      "sha256": "ea3089d27fee25e26ae8d3b8deec42002df3397158d066a5a70e2615613911da",
+      "size": 521
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/PresentationTime.hpp": {
+      "sha256": "0da13e9c0e610c405783c72a31a2ffa5951327a6aae3e0e9568811c249b3a3ca",
+      "size": 2603
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/PrimarySelection.hpp": {
+      "sha256": "2de45f6f2f4644966bab0ea4057861254d54999e4e78d4d051dd60a93f94036d",
+      "size": 3922
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/RelativePointer.hpp": {
+      "sha256": "af587f7383e8d7fb34735e42dbb4b067d5e6d9889a5a674b5104abab2104b1a1",
+      "size": 1508
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/Screencopy.hpp": {
+      "sha256": "963a914c7b57c12ddbdc730d8cc52c69dc4c60cce32e57119f7abe7739c08db9",
+      "size": 2180
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/SecurityContext.hpp": {
+      "sha256": "003187c42f32b3dae3592ac292f64e7735b7f2105be6af99ae2c375d7389c1b7",
+      "size": 2824
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/ServerDecorationKDE.hpp": {
+      "sha256": "a5d0a52a08b8f7cd6af90432b234c42b5f71bdde4b4706bad3e0a5a42274bd70",
+      "size": 1606
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/SessionLock.hpp": {
+      "sha256": "f2ef83f49fa6e6de3a2b3717f8409cd37bf25967153bba800dee3614911825d8",
+      "size": 2876
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/ShortcutsInhibit.hpp": {
+      "sha256": "4a965cd9ba0566cf152efdb91d62f093c155eba0763a1f0a755cc38954afc029",
+      "size": 1402
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/SinglePixel.hpp": {
+      "sha256": "5154931561641e2d03831906449cebc830e7d2574b84cef6f07ae6b2d595a219",
+      "size": 2148
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/Tablet.hpp": {
+      "sha256": "a0722286e8931bc2825fce46b9312d6223ddc4c7b7c2e4e43d2db16d0fbbcff0",
+      "size": 7486
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/TearingControl.hpp": {
+      "sha256": "f3cecb2535021789636ddef7211439de676474cbae2a76bf5d235a7d48a697a8",
+      "size": 1654
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/TextInputV1.hpp": {
+      "sha256": "501e59d8f44f6f74ef0f2c28187a94bf8ca4a3d18b23caae01474c9466367c13",
+      "size": 2344
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/TextInputV3.hpp": {
+      "sha256": "7bce49d5118f4b654e2f501c3eb8b4896565bb5e2d773584e2360dd2576fd8de",
+      "size": 2708
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/ToplevelExport.hpp": {
+      "sha256": "debdc98a3813583bfcbbf819b606c011f0e50137ab79f2fa19f9091544716b14",
+      "size": 2259
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/ToplevelMapping.hpp": {
+      "sha256": "dfafff35aef111af6cc18bf189a26389c3c39377b8069380cf914b9c90f6416b",
+      "size": 1346
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/Viewporter.hpp": {
+      "sha256": "4a4a0368db329fe7ac3ac86fcec2722c486d377c6fae0591d7c3a3114b3937ae",
+      "size": 1312
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/VirtualKeyboard.hpp": {
+      "sha256": "58a0e81985301f1a89df0e1be8422d77e17eb87bcfb06365070d20029671bc09",
+      "size": 1828
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/VirtualPointer.hpp": {
+      "sha256": "dde6704e9f99578a257c5f85b6047df7cc3e393f62d7b5554c6cd41e802ad8a4",
+      "size": 2493
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/WaylandProtocol.hpp": {
+      "sha256": "67e891d3d1a4bc19703f24b96da039c838bd2db270106718ecfc51bec5679c81",
+      "size": 5961
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/XDGActivation.hpp": {
+      "sha256": "be860d130a5a05d3863a23b2019d58a8dd9612ac9f60e7102b76cba8871e781f",
+      "size": 1373
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/XDGBell.hpp": {
+      "sha256": "6ad239c3b91875ca80769801b2ca231446f2de940e74bb9d51b1b60701bd625d",
+      "size": 803
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/XDGDecoration.hpp": {
+      "sha256": "4f1b4dd79b8fe5eeee7513f13bff7e4a651d5ff11b869c30246eb59d613764e6",
+      "size": 1495
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/XDGDialog.hpp": {
+      "sha256": "ea398cb16469c383fccf6161a3afa1d0c75d7ce02ed6bcd6267e872b8efdcd0e",
+      "size": 1348
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/XDGForeignV2.hpp": {
+      "sha256": "981c2cbe454058b0f4f1929fcd6bcae33a326948808ed89934ed22e71335d23f",
+      "size": 3198
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/XDGOutput.hpp": {
+      "sha256": "c14c06a34495ed194dea6cce413f3b11e5ef159c3793319653ddfd7bee2ab565",
+      "size": 1269
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/XDGShell.hpp": {
+      "sha256": "40b7dce364c1034304130b3441645138173b9fc335e0a9942c116228055809c8",
+      "size": 9078
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/XDGTag.hpp": {
+      "sha256": "0695216834d518f2fc5c0776b6b28939b65c63e3d4c8d5aa7125f974f63cef3c",
+      "size": 856
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/XWaylandShell.hpp": {
+      "sha256": "b1bdf7106a55bdd953a6c17c92aa3c77e20fb390b705dcf35963b16b68d72839",
+      "size": 1686
+    },
+    "build-1791237458725680034/owning-headers/src/render/AsyncResourceGatherer.hpp": {
+      "sha256": "c4f84c78c4a175ec7025cc91e42a93b6e393a1ea7eb8e05ba9004cbff3a52175",
+      "size": 249
+    },
+    "build-1791237458725680034/owning-headers/src/render/ElementRenderer.hpp": {
+      "sha256": "3b1d6db6d1e893423e0966aa12e4723e8800920850b61acc43bdf9f1fdf86979",
+      "size": 2692
+    },
+    "build-1791237458725680034/owning-headers/src/render/Framebuffer.hpp": {
+      "sha256": "596ae497640d9c6d7b1e7850d9a8c7a9b84d76622abb91b926f22d84d5482629",
+      "size": 2178
+    },
+    "build-1791237458725680034/owning-headers/src/render/GLRenderer.hpp": {
+      "sha256": "8d2c0f8dd00fa2e99330dc0059818d72ff8e851e9694783bf71dab0c075ffb87",
+      "size": 3613
+    },
+    "build-1791237458725680034/owning-headers/src/render/OpenGL.hpp": {
+      "sha256": "e08060838c88d6bf650fd2e2b695acbda48e10f04a317a397d35f2f1dff9c813",
+      "size": 16660
+    },
+    "build-1791237458725680034/owning-headers/src/render/Renderbuffer.hpp": {
+      "sha256": "358473978b1819eb56e1a95964cd4491e71cc8b7960db0f9b04727029de921b4",
+      "size": 753
+    },
+    "build-1791237458725680034/owning-headers/src/render/Renderer.hpp": {
+      "sha256": "b947bec0fee19c19056cbbe07e6db9f14d075c363ff2b4f74124a2b0622a52ea",
+      "size": 21490
+    },
+    "build-1791237458725680034/owning-headers/src/render/Shader.hpp": {
+      "sha256": "6a2d5f001f1cbff94ba01e455ccafeb4c042b2de8aea9eb48541d645bdbfdbbe",
+      "size": 5014
+    },
+    "build-1791237458725680034/owning-headers/src/render/ShaderLoader.hpp": {
+      "sha256": "7f3c109c8ac1c044c0b48b56e98b977ad29b6138fed9f45041163a83eea23663",
+      "size": 3889
+    },
+    "build-1791237458725680034/owning-headers/src/render/SyncFDManager.hpp": {
+      "sha256": "3fe97140cab97194e57701e7bdd3d2c647fb4c2ac9ca120a28ed8be44c202371",
+      "size": 479
+    },
+    "build-1791237458725680034/owning-headers/src/render/Texture.hpp": {
+      "sha256": "19d60589437730d71dec2050f79bbf69a4df4890fd1945aeceba654d2746739e",
+      "size": 2357
+    },
+    "build-1791237458725680034/owning-headers/src/render/types.hpp": {
+      "sha256": "0c208274ea18e0f4ad84d46fbb1e2674856516db652fcb28984b3d59a13b7446",
+      "size": 4884
+    },
+    "build-1791237458725680034/owning-headers/src/state/FallbackState.hpp": {
+      "sha256": "a5353899ec8969cdf2b949b98b5cddc3060e9c31fa0988312caab8e68bd0cd3e",
+      "size": 1275
+    },
+    "build-1791237458725680034/owning-headers/src/state/MonitorLayoutController.hpp": {
+      "sha256": "d5b50a07eec7accf3457f2c0069d326e6fc5e7252e18cc925036b52ef47b5983",
+      "size": 776
+    },
+    "build-1791237458725680034/owning-headers/src/state/MonitorPositionController.hpp": {
+      "sha256": "109f03856afad7392d21565d80ab2a8db30668a9382e872a060b8db0e4f108f4",
+      "size": 400
+    },
+    "build-1791237458725680034/owning-headers/src/state/MonitorQuery.hpp": {
+      "sha256": "3ee41bcdfbb052cd860811076261d281b87c5df416cf9661e836b7345aa5f306",
+      "size": 1716
+    },
+    "build-1791237458725680034/owning-headers/src/state/MonitorQueryCore.hpp": {
+      "sha256": "829581d4aeb084cdd30de9c8c8e310ead38d357061df4e82a8279d634870e0f4",
+      "size": 2192
+    },
+    "build-1791237458725680034/owning-headers/src/state/MonitorState.hpp": {
+      "sha256": "cf04c62fe25a86fc3e17d5abdd6aad87e18d86fd4c327e68745108ec83d39488",
+      "size": 1419
+    },
+    "build-1791237458725680034/owning-headers/src/state/MonitorStateTracker.hpp": {
+      "sha256": "8db64ce7fc08e15972fe30df71fe8c5b7351fc418ffbd74143258377e79acbf8",
+      "size": 577
+    },
+    "build-1791237458725680034/owning-headers/src/state/WorkspacePlacementController.hpp": {
+      "sha256": "ecd15e51abbd9177bd2eb088f7f56b4553e99adf6db0fe3f085c94e638347eac",
+      "size": 999
+    },
+    "build-1791237458725680034/owning-headers/src/state/WorkspaceQuery.hpp": {
+      "sha256": "99e1f0ef96c6d4cf85ae4ceb539f29a6617372afbc7f6abfbc296ab8ca3b291a",
+      "size": 875
+    },
+    "build-1791237458725680034/owning-headers/src/state/WorkspaceQueryCore.hpp": {
+      "sha256": "698a1814b9d47ef08fe8ed54e723a839d73b9191335f3ba879f2e8389b3025a2",
+      "size": 1596
+    },
+    "build-1791237458725680034/owning-headers/src/state/WorkspaceState.hpp": {
+      "sha256": "098b4dbbca33c983367e8aa803d69b9e314e96828d72b003c73598a0cb004f59",
+      "size": 1757
+    },
+    "build-1791237458725680034/owning-headers/src/state/WorkspaceStateTracker.hpp": {
+      "sha256": "43057e862a4bcf4738be63112711e0cc87e166fafd11ff8ca8f65854d40ac628",
+      "size": 659
+    },
+    "build-1791237458725680034/owning-headers/src/xwayland/Dnd.hpp": {
+      "sha256": "ac009f173bc7147c75895346c4797841a6bfe19c80f8397017d741658eb037fd",
+      "size": 3245
+    },
+    "build-1791237458725680034/owning-headers/src/xwayland/Server.hpp": {
+      "sha256": "ec5940fe92c72d507ef2f875330641bc3d38613c26e42ff66fc465042ff0603e",
+      "size": 1356
+    },
+    "build-1791237458725680034/owning-headers/src/xwayland/XDataSource.hpp": {
+      "sha256": "212f478ecfcce929fab38a0cc3974949158c927bbce1ba59da46bb61936505e5",
+      "size": 781
+    },
+    "build-1791237458725680034/owning-headers/src/xwayland/XSurface.hpp": {
+      "sha256": "8080f3c9f573a42f99f42a1f1b73308c9c9fa410f250bb448361f5359859a88f",
+      "size": 4182
+    },
+    "build-1791237458725680034/owning-headers/src/xwayland/XWM.hpp": {
+      "sha256": "f1cc5eab4c4be117a37299c33ea08c3753286437f7093e8d8e6769c6e14633cc",
+      "size": 8542
+    },
+    "build-1791237458725680034/owning-headers/src/xwayland/XWayland.hpp": {
+      "sha256": "5c3ce74f1168a93a4d036296bb1e33fe7788822f9911ead1ea98d90d68f13010",
+      "size": 3998
+    },
+    "build-1791237458725680034/owning-headers/src/render/decorations/CHyprBorderDecoration.hpp": {
+      "sha256": "4b25436622a4140596fe6cf8bbdec6e84688a21f91271aa4954eecd1dd77f1b1",
+      "size": 1080
+    },
+    "build-1791237458725680034/owning-headers/src/render/decorations/CHyprDropShadowDecoration.hpp": {
+      "sha256": "013d55c2923012159989fc06cecd655ed75e51578c6f086254e5d840238c33bc",
+      "size": 1967
+    },
+    "build-1791237458725680034/owning-headers/src/render/decorations/CHyprGroupBarDecoration.hpp": {
+      "sha256": "c8f54a37154a29a1df3515473064f20d3106babb0550ca90c5b48dfb5cb49009",
+      "size": 2569
+    },
+    "build-1791237458725680034/owning-headers/src/render/decorations/CHyprInnerGlowDecoration.hpp": {
+      "sha256": "abf3f42f430e91df9dc8efd572b6bedeef9ad1e67cd56166fec2387ab1f9c1f0",
+      "size": 1441
+    },
+    "build-1791237458725680034/owning-headers/src/render/decorations/DecorationPositioner.hpp": {
+      "sha256": "54dece1f36e8dfa6e46ccd06648335e00090fb4bfa4245b0c2c3b8ae12a9e26f",
+      "size": 4114
+    },
+    "build-1791237458725680034/owning-headers/src/render/decorations/IHyprWindowDecoration.hpp": {
+      "sha256": "bbee67179967f6148d74c4b8b7b335b58a33f1c88995f051e2de3ac67f303798",
+      "size": 2066
+    },
+    "build-1791237458725680034/owning-headers/src/render/gl/GLElementRenderer.hpp": {
+      "sha256": "b8ddb301f5e24db3add112a1f5b9525ace7a14475677680a7e6f19097cc7b692",
+      "size": 1019
+    },
+    "build-1791237458725680034/owning-headers/src/render/gl/GLFramebuffer.hpp": {
+      "sha256": "123c2d1f7def7a63923b708bdcb7f77c3c087e32f945e4cb09e6691eb0ce310e",
+      "size": 1060
+    },
+    "build-1791237458725680034/owning-headers/src/render/gl/GLRenderbuffer.hpp": {
+      "sha256": "bf9d413f32bd821611509db79929e4bd06036aa07165cbdc4fb23533f58795ee",
+      "size": 469
+    },
+    "build-1791237458725680034/owning-headers/src/render/gl/GLTexture.hpp": {
+      "sha256": "beee988c473126ada9a2f4519ab5cafc5bebde2ec4e289427f395f3c0acaa984",
+      "size": 1937
+    },
+    "build-1791237458725680034/owning-headers/src/render/pass/BorderPassElement.hpp": {
+      "sha256": "0aafff3cbfc3290bd725a6b2ea2f4a10f7f47f5505108ce36569395e7fc53efd",
+      "size": 934
+    },
+    "build-1791237458725680034/owning-headers/src/render/pass/ClearPassElement.hpp": {
+      "sha256": "a2e99486ecab7cce551fe9db0fadd3ab607a960d4944707072a744a452dc4568",
+      "size": 634
+    },
+    "build-1791237458725680034/owning-headers/src/render/pass/FramebufferElement.hpp": {
+      "sha256": "4a33253beecbbc38347b6a9fa7dad5eceb8ffee5e5238c15b24047160876f39c",
+      "size": 656
+    },
+    "build-1791237458725680034/owning-headers/src/render/pass/InnerGlowPassElement.hpp": {
+      "sha256": "1fbda26296b9a6acefcb9c41aa55cbe887d93aa7aeffbb3e241ef486ec1b0676",
+      "size": 652
+    },
+    "build-1791237458725680034/owning-headers/src/render/pass/Pass.hpp": {
+      "sha256": "27484d3ecfdc9b528bd585c9d98013922507c58059be5536c0450c7bcb18b42d",
+      "size": 1218
+    },
+    "build-1791237458725680034/owning-headers/src/render/pass/PassElement.hpp": {
+      "sha256": "90bdb76c61c35310a661d0e299157c2a8e7260ef340fa839cca195e297d628b9",
+      "size": 1196
+    },
+    "build-1791237458725680034/owning-headers/src/render/pass/PreBlurElement.hpp": {
+      "sha256": "50675b156230bc29e1ef11844f360cc5e01d0b514ee10ae817a4a70f3ae38528",
+      "size": 495
+    },
+    "build-1791237458725680034/owning-headers/src/render/pass/RectPassElement.hpp": {
+      "sha256": "29b59dc0f46df48ea6624a1bec7705f359ddb99390458a9d5c8914c63fcb3569",
+      "size": 1008
+    },
+    "build-1791237458725680034/owning-headers/src/render/pass/RendererHintsPassElement.hpp": {
+      "sha256": "43df138573d2431350abc611102167c8e39f3303dd520532a68a4d4350a3523b",
+      "size": 631
+    },
+    "build-1791237458725680034/owning-headers/src/render/pass/ShadowPassElement.hpp": {
+      "sha256": "79940f54a970ada16599b96335d9d3e8480f9b5ce4e0ec0b7edd3443d19406d6",
+      "size": 630
+    },
+    "build-1791237458725680034/owning-headers/src/render/pass/SurfacePassElement.hpp": {
+      "sha256": "74bd3d56f5d6e75b43fa9d8291141869849341f4b5ec9d10f6c7ed3f5b55c2d5",
+      "size": 2439
+    },
+    "build-1791237458725680034/owning-headers/src/render/pass/TexPassElement.hpp": {
+      "sha256": "9f3a858292d9b2892df0f8b64ee605d2d4322cb57dd3bb5b3ed12e1f0638de3a",
+      "size": 2595
+    },
+    "build-1791237458725680034/owning-headers/src/render/pass/TextureMatteElement.hpp": {
+      "sha256": "7eb3442ad25acca05db71a081fb01a3df01d79a43feb87ec1091bf410c3cad1b",
+      "size": 783
+    },
+    "build-1791237458725680034/owning-headers/src/render/pass/TransformedWindowPassElement.hpp": {
+      "sha256": "69f56207aa9071b3628981ad2b497d15d1183978a906a0acd3d14ab5d544ccfe",
+      "size": 1165
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/Shaders.hpp": {
+      "sha256": "59e9f468ec6a9fd67d2548e58841a63c0d858ba8d62d8a3b738a8938cbc7b7ed",
+      "size": 1846
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/CM.glsl.inc": {
+      "sha256": "a0673e3bb6e9c0410c8fc87288680c7cb55593ee8d91b6302636b8acba30a963",
+      "size": 575
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/blur1.frag.inc": {
+      "sha256": "6e334f214f3210b4cf2e3033222e862fc65bd642595939752243c88ebe4788c1",
+      "size": 509
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/blur1.glsl.inc": {
+      "sha256": "3526bf6a9f83524d6f3ea47324bd0568bffd0044795325715c29a3012903915c",
+      "size": 4546
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/blur2.frag.inc": {
+      "sha256": "0df84f7312a5fc9eed4dd3759833465c951aec43dc8df0641773cb5c7caf0c30",
+      "size": 381
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/blur2.glsl.inc": {
+      "sha256": "63ae73f3d22803b70689b480e866ccd526f66d99c733eff72a186137c3d3edd3",
+      "size": 760
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/blurFinish.glsl.inc": {
+      "sha256": "5bcbc67d54bbfa0ac450cf0b99a5aaef7b8b0e666ca39f223f2843743d8738fa",
+      "size": 891
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/blurfinish.frag.inc": {
+      "sha256": "4dea7e26367305931989ac6720d6d412bcc6b8ccd4d280ee3b73e2163624dc88",
+      "size": 737
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/blurprepare.frag.inc": {
+      "sha256": "dd870b0461521fa1b2369d8293802b8348345836a87b937a362352a8ae677b73",
+      "size": 957
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/blurprepare.glsl.inc": {
+      "sha256": "6f54bcdb779ae0019e1813deb95c561072852b0014aeaaf3d0f260daf9e23add",
+      "size": 955
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/border.frag.inc": {
+      "sha256": "2c4a1f38ee8653344a0d66d7c95e4fb5ac762daf0cb7646b2852f8c15be3e531",
+      "size": 1851
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/border.glsl.inc": {
+      "sha256": "c39a214f35268f8562571c6f48705137a964541a6faf977401738ea40001e6a2",
+      "size": 4455
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/cm_helpers.glsl.inc": {
+      "sha256": "0d5d89cddb0a2480cb403a7a054a623ededbe75b119500a56caaf581e6571541",
+      "size": 9783
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/constants.h.inc": {
+      "sha256": "7bf482918b4990341ea0ce40e2ad60eb0213b146768c18911985f0f6a425d8d1",
+      "size": 1805
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/defines.h.inc": {
+      "sha256": "ac6cf2353e991b71a6e68f69f9b38309e3c585887934fdd65648821a032928c6",
+      "size": 626
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/ext.frag.inc": {
+      "sha256": "56f2b8f0a23813b7d4b8660b49ab45d51a479c3db43f3deb5b6dbb8476fb2a11",
+      "size": 1095
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/gain.glsl.inc": {
+      "sha256": "e638eaba27d7516b245dd6a97406a3b3425d9a2a6259b42d9f4963aebdb2b98c",
+      "size": 209
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/glitch.frag.inc": {
+      "sha256": "6d7c325c9b4e766a0e76233af52b5b5988385ca14fdd91e85668150357f6c7ff",
+      "size": 2435
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/gradient.glsl.inc": {
+      "sha256": "ade438707e1fe94b39b7cda4c16cd441486f0557d0198b6219e768d0a9e9323c",
+      "size": 3627
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/inner_glow.frag.inc": {
+      "sha256": "16b27d42bc1dea049b9dd1596bdb7b0f69262fc1d638e1085f0fffa9ac0c034a",
+      "size": 1223
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/inner_glow.glsl.inc": {
+      "sha256": "1e6a6733e27b20385a8d72f2a6f363718f83783ed5d4db6fccc7ad5f8b4560ad",
+      "size": 2536
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/motion_blur.glsl.inc": {
+      "sha256": "50f658bdbef260c30054af6759dab8e73b517c4959af8001779a0438b4f1dfe6",
+      "size": 1062
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/passthru.frag.inc": {
+      "sha256": "e31ac43dff710825972185549628a7de6a046c168306b5c0ab827ba1e4014690",
+      "size": 204
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/quad.frag.inc": {
+      "sha256": "a1245b061eb306f537e5c1b3de0a60718ab3390d4ec96fa52b76e6684e777f3a",
+      "size": 779
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/rgbamatte.frag.inc": {
+      "sha256": "fcff39ea825da5ebf492ffab3af9a68d90534c613990da57875b10fd9b612683",
+      "size": 565
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/rounding.glsl.inc": {
+      "sha256": "e848f64a0580b38c436f086a375a1d042c0c45ea7eca4cea396d708570c76b2a",
+      "size": 1128
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/shadow.frag.inc": {
+      "sha256": "a53797764dc4e4bc4de96643bb9f8c78868554ae32357171c19b867f61484e41",
+      "size": 1481
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/shadow.glsl.inc": {
+      "sha256": "16ae5b17d3803e4cf85150b0ac125f9cf4a7368163709549e9fcbe18e109cc5b",
+      "size": 5085
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/surface.frag.inc": {
+      "sha256": "79bc5bdb67e61562e7b7d0811724b689809b54c305acd92f08b8bc88a1eb2259",
+      "size": 5396
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/tex300.vert.inc": {
+      "sha256": "8970c87f2333b4a62639a4783738fccd9fa2a5ebb8318d057612608084c6f730",
+      "size": 339
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/tex320.vert.inc": {
+      "sha256": "ba6397c7487efe76562ad65c90571f9908742140116b339bf06649d762dd9a5f",
+      "size": 339
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/tonemap.glsl.inc": {
+      "sha256": "cb48638b62754863df9e1233124f8aa42ce4290f630820ef263992f7135b75f3",
+      "size": 3482
+    },
+    "build-1791237458725680034/owning-headers/src/render/transformer/MotionBlurTransformer.hpp": {
+      "sha256": "a0be1a71d6bfc8631037982f69779aab128f21165d8e22a23fb70190b51c8c67",
+      "size": 994
+    },
+    "build-1791237458725680034/owning-headers/src/render/transformer/Transformer.hpp": {
+      "sha256": "808b972617b135f1d2c0a4746948dfb04472fb36580660d7b6d6265a4a9f40b3",
+      "size": 1225
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/glsl/constants.h": {
+      "sha256": "40467a58a526d038313e2f9ffad940862599d2d90def5feffe1c7608b8f85d04",
+      "size": 1797
+    },
+    "build-1791237458725680034/owning-headers/src/render/shaders/glsl/defines.h": {
+      "sha256": "5e8831f44fb54ca7f7e51fefa10ee41eae3f1956afa662d11c246c65cb38ff04",
+      "size": 618
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/core/Compositor.hpp": {
+      "sha256": "583f949a5b899f2f220fa13aa5ab1c3adf8e7c13d2f389d18797a06f0d864424",
+      "size": 7805
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/core/DataDevice.hpp": {
+      "sha256": "3e7d8c10d5842129881eb4bb644874ca600b170c17a96dbb032faa710f50a695",
+      "size": 7263
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/core/Output.hpp": {
+      "sha256": "d6388b58409bc3437a92152cd355fdcda2dba8d6083b9bf5ea1a7a2f42f0f97f",
+      "size": 2502
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/core/Seat.hpp": {
+      "sha256": "1339126e53b4da9a38a4ed356108b5a9eeef126f2b6d4427052a7f9cca501e15",
+      "size": 6371
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/core/Shm.hpp": {
+      "sha256": "fb12d2db61c9a4a7986b9cee8ef5681137c477b8e3d47c6eb8c44d23b679287c",
+      "size": 3024
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/core/Subcompositor.hpp": {
+      "sha256": "cdc5cb3f76980ec34722ee35f4669f59372f4cb95f5a9e90eb63bc6b0fa695db",
+      "size": 2279
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/core/Compositor.cpp": {
+      "sha256": "90bab573f1ee776453648108c65a1d3f105d488c4498623a57d92ddd624167d9",
+      "size": 41008
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/core/Subcompositor.cpp": {
+      "sha256": "28c47b45308b69fc48e8058889f8b7fedcd411d88c5957a460f074147f059618",
+      "size": 7747
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/core/AppliedSurfaceRevision.hpp": {
+      "sha256": "867509f9c54d6877810a63f7d5385b50c6cbb56e69b19a73dd0f8b00626e4036",
+      "size": 776
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/core/SubsurfaceCommit.hpp": {
+      "sha256": "7e92dee5480af2c31adb1ce42b9c11f7ef97fdae8e3ed440169a201fb00c25ed",
+      "size": 630
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/types/Buffer.hpp": {
+      "sha256": "d3325c61403b6c34806b96a8e7ab33f7bd0896adb36c440b957e98e07ed2345d",
+      "size": 2665
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/types/ContentType.hpp": {
+      "sha256": "760baaa2d18559bc377df5fdc5a6bc8be2bd4dd5eb70ece5f7295c0c33216db3",
+      "size": 464
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/types/DMABuffer.hpp": {
+      "sha256": "d6ad2da4eb567cd0650af5b235aa65defae08c9b0592d23c7eaf4a817160163d",
+      "size": 1112
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/types/DataDevice.hpp": {
+      "sha256": "c507b9b42acc748fa5fb991b5f68468c1d307b089e8775d731b27f73ef2dc51c",
+      "size": 3531
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/types/SurfaceRole.hpp": {
+      "sha256": "798165986044b905a5a2b7fd7a81bdea7d76fa7595742cb657361566b3823fe6",
+      "size": 336
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/types/SurfaceState.hpp": {
+      "sha256": "521654c9949097522d76e256c4eca60ae60d5b6ba2e170d42f11517f82d276b8",
+      "size": 4097
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/types/SurfaceStateQueue.hpp": {
+      "sha256": "a3c776625a4e8ef60d1ee07570a47599e05551358286fa73691122ec5a93727c",
+      "size": 906
+    },
+    "build-1791237458725680034/owning-headers/src/protocols/types/WLBuffer.hpp": {
+      "sha256": "fc943645fedeb0de2f92f1573c4f50a77d7ab4002b17b14c06560f18d9272947",
+      "size": 709
+    },
+    "build-1791237458725680034/owning-headers/src/pointer/cursor/CursorManager.hpp": {
+      "sha256": "4bb3a7d6647683f17d77a8699c938cfb67acadd4c10c83cba7d94fa6a8c7f03c",
+      "size": 3336
+    },
+    "build-1791237458725680034/owning-headers/src/pointer/cursor/CursorShapeOverrideController.hpp": {
+      "sha256": "ebf7cfcdb16d94762cc0e0beec21a1f59a1ff5c643ceecd41464212004d31e6e",
+      "size": 1601
+    },
+    "build-1791237458725680034/owning-headers/src/managers/eventLoop/EventLoopManager.hpp": {
+      "sha256": "c8b0def65f6383e92c863e719c55fd5938b36c901299c29ec0962e82ee4ed125",
+      "size": 3529
+    },
+    "build-1791237458725680034/owning-headers/src/managers/eventLoop/EventLoopTimer.hpp": {
+      "sha256": "cb8ec55cfc919c97f254a50b7269843559036fe84b28598d3c87a0889d121635",
+      "size": 948
+    },
+    "build-1791237458725680034/owning-headers/src/managers/fullscreen/FullscreenController.hpp": {
+      "sha256": "7f3585f23e4d756f3f165670a604de39717eb3fd704114e2a230bdd6ffba2378",
+      "size": 4388
+    },
+    "build-1791237458725680034/owning-headers/src/managers/input/Eis.hpp": {
+      "sha256": "902ae5cc573d22f8cb0e3d5f2f3f615ca575c807982f17fc9c642a6f2782cff5",
+      "size": 1535
+    },
+    "build-1791237458725680034/owning-headers/src/managers/input/InputManager.hpp": {
+      "sha256": "bb8ceaf61e274bedae10555173760055e632e0ff2ac050636e06c29dffcb188d",
+      "size": 11312
+    },
+    "build-1791237458725680034/owning-headers/src/managers/input/InputMethodPopup.hpp": {
+      "sha256": "fa296a9e2a3484de68bcaddc61a9bd7736106b7fdff4ffc26e9e29b5cf5671d5",
+      "size": 1262
+    },
+    "build-1791237458725680034/owning-headers/src/managers/input/InputMethodRelay.hpp": {
+      "sha256": "c50677357e45684f374facddb26c0b8ff634d371d7677ad482fa2ad8340f24ac",
+      "size": 1811
+    },
+    "build-1791237458725680034/owning-headers/src/managers/input/TextInput.hpp": {
+      "sha256": "7a1417c7d14325d72c31fdf8f6919366b1d942deef3d1800a70af239343c6ee1",
+      "size": 1725
+    },
+    "build-1791237458725680034/owning-headers/src/managers/input/UnifiedWorkspaceSwipeGesture.hpp": {
+      "sha256": "7afe342783b18ffdc72bbe53337a9c016203f560aca02fb9be14dec001c04578",
+      "size": 735
+    },
+    "build-1791237458725680034/owning-headers/src/managers/permissions/DynamicPermissionManager.hpp": {
+      "sha256": "8dcf116e4261f33aeaad5d8b028b90e22e7ab0445135f08e00ce78432c76005a",
+      "size": 4353
+    },
+    "build-1791237458725680034/owning-headers/src/managers/screenshare/ScreenshareManager.hpp": {
+      "sha256": "6e7a35dd006c4bc62100d6495b545340d7654f217d9f3c25bade153588a2e48a",
+      "size": 9571
+    },
+    "build-1791237458725680034/owning-headers/src/managers/input/trackpad/GestureTypes.hpp": {
+      "sha256": "87ef4e338afd1ba8f16f2d4a9c03dfccedef3da0f5cdb4464da0c3ec903f23c1",
+      "size": 444
+    },
+    "build-1791237458725680034/owning-headers/src/managers/input/trackpad/TrackpadGestures.hpp": {
+      "sha256": "f0e2a20af8b5c7e41d1c7a7e3bf650b9a6ac89f883adeefca0f39ff060cdce09",
+      "size": 2206
+    },
+    "build-1791237458725680034/owning-headers/src/managers/input/trackpad/gestures/CloseGesture.hpp": {
+      "sha256": "7776e38366996c24098412109a30b63ff529006ed490a0c3738002d53dd0404a",
+      "size": 671
+    },
+    "build-1791237458725680034/owning-headers/src/managers/input/trackpad/gestures/CursorZoomGesture.hpp": {
+      "sha256": "9861e8cf3c6d26632731f164da5a4a016553d4f8ea6f71d68855cc7a682a6962",
+      "size": 816
+    },
+    "build-1791237458725680034/owning-headers/src/managers/input/trackpad/gestures/DispatcherGesture.hpp": {
+      "sha256": "1bb53de37fa5c08f76ced66d23a2da9536eaf38789196b68e72eeced910d9fe1",
+      "size": 533
+    },
+    "build-1791237458725680034/owning-headers/src/managers/input/trackpad/gestures/FloatGesture.hpp": {
+      "sha256": "dfc7559d79b9109ed36f202483d4bcd64d1f08b4e2daef182fd44d5433b0e307",
+      "size": 781
+    },
+    "build-1791237458725680034/owning-headers/src/managers/input/trackpad/gestures/FullscreenGesture.hpp": {
+      "sha256": "576dd48493e13dc26c56b7fb028084debe2080ac02f7ef644b38675f1217889e",
+      "size": 1041
+    },
+    "build-1791237458725680034/owning-headers/src/managers/input/trackpad/gestures/ITrackpadGesture.hpp": {
+      "sha256": "3e89e749eeebee1050907830432221963e4ad9c2e7b76cebf784ef993e445890",
+      "size": 1565
+    },
+    "build-1791237458725680034/owning-headers/src/managers/input/trackpad/gestures/LuaFunctionGesture.hpp": {
+      "sha256": "65850acfc9d931e5a6154843e705284a3f2a9c993f63fecc6e554150d288e66c",
+      "size": 620
+    },
+    "build-1791237458725680034/owning-headers/src/managers/input/trackpad/gestures/MoveGesture.hpp": {
+      "sha256": "f249de6ccfd546ed6c651adc3ada124551312cc1ca88b9918d2e488c168c25bc",
+      "size": 548
+    },
+    "build-1791237458725680034/owning-headers/src/managers/input/trackpad/gestures/ResizeGesture.hpp": {
+      "sha256": "b2d447f7e0423b2c8aca1c4d7398eb8f010f196056b76e75d72e12eae831bc38",
+      "size": 524
+    },
+    "build-1791237458725680034/owning-headers/src/managers/input/trackpad/gestures/ScrollMoveGesture.hpp": {
+      "sha256": "7bd1508e37012f6458a52aaceea1939c8f9276a2979940392224f56a11855e5f",
+      "size": 917
+    },
+    "build-1791237458725680034/owning-headers/src/managers/input/trackpad/gestures/SpecialWorkspaceGesture.hpp": {
+      "sha256": "d1d2be5027b63050fa5ef7f71a964c95ae9bdceae47d08765298977e6cf63c22",
+      "size": 1063
+    },
+    "build-1791237458725680034/owning-headers/src/managers/input/trackpad/gestures/WorkspaceSwipeGesture.hpp": {
+      "sha256": "4d7850fa920f58109884d47079a557338214d909d0839921b70d4f16fd642795",
+      "size": 526
+    },
+    "build-1791237458725680034/owning-headers/src/managers/fullscreen/handler/FullscreenHandler.hpp": {
+      "sha256": "694ce5c470650fa98cc838e267860fcbee177bf1330cf9a0ec8b0e167bd92d7a",
+      "size": 3337
+    },
+    "build-1791237458725680034/owning-headers/src/layout/algorithm/Algorithm.hpp": {
+      "sha256": "e0cebb2d679a77259e174c2d09676431800e379b6dc963babaced4aff3561438",
+      "size": 2697
+    },
+    "build-1791237458725680034/owning-headers/src/layout/algorithm/FloatingAlgorithm.hpp": {
+      "sha256": "604f7b93ec908331c2644bfdf982913519109ccfcc66943c69a4fde06d639edf",
+      "size": 801
+    },
+    "build-1791237458725680034/owning-headers/src/layout/algorithm/ModeAlgorithm.hpp": {
+      "sha256": "490a9b2d91cd9c3aabdd1a40a4cd0e83a9e0f3ecb6b556b5a50b411c9bf7655d",
+      "size": 2461
+    },
+    "build-1791237458725680034/owning-headers/src/layout/algorithm/TiledAlgorithm.hpp": {
+      "sha256": "54e3fdd3fe042f198a1e29a8b6d97f8e153a02a71f474530a5ffe3de0026b390",
+      "size": 774
+    },
+    "build-1791237458725680034/owning-headers/src/layout/space/Space.hpp": {
+      "sha256": "3f3cd8c34948a295cb6a5e5f8c09e39bbb604f85ce467910924e1aae0815fbe0",
+      "size": 3135
+    },
+    "build-1791237458725680034/owning-headers/src/layout/supplementary/DragController.hpp": {
+      "sha256": "1563ecea4de107bf78c4fa6302f89b6441fded92eed3e1ad1bcbcf8c97c0de6b",
+      "size": 2411
+    },
+    "build-1791237458725680034/owning-headers/src/layout/supplementary/WorkspaceAlgoMatcher.hpp": {
+      "sha256": "3e38c9e551302b9544d4b73fb58e1f4a2385fabd8847893c204e1ab8ba9f517b",
+      "size": 1785
+    },
+    "build-1791237458725680034/owning-headers/src/layout/target/Target.hpp": {
+      "sha256": "17f4bdb08d8f776b3a1f71f12463f78bb126a63de36fd01371a599bdb23595cf",
+      "size": 3918
+    },
+    "build-1791237458725680034/owning-headers/src/layout/target/WindowGroupTarget.hpp": {
+      "sha256": "49d8eb74a4be1958bbbece82b7c41153e6c592eeb83380d6d7e8e3baa7b8f7b2",
+      "size": 1754
+    },
+    "build-1791237458725680034/owning-headers/src/layout/target/WindowTarget.hpp": {
+      "sha256": "39181b0405ee5020e02070a3ef4ba3260ef4f29aa27dfef071a8e39a8b9a9d1e",
+      "size": 1621
+    },
+    "build-1791237458725680034/owning-headers/src/layout/algorithm/floating/default/DefaultFloatingAlgorithm.hpp": {
+      "sha256": "1655d8263a0cd01cd340669cd7ae64290a17e0632ebbe7051bc0e6f87b11a89c",
+      "size": 1247
+    },
+    "build-1791237458725680034/owning-headers/src/layout/algorithm/tiled/dwindle/DwindleAlgorithm.hpp": {
+      "sha256": "537d3b1bc48f2e3d12ece91d3a97b351d8c476bfa11d20af3eae9610dfd73b05",
+      "size": 3527
+    },
+    "build-1791237458725680034/owning-headers/src/layout/algorithm/tiled/master/MasterAlgorithm.hpp": {
+      "sha256": "8bac5c016c0de28db453646f69cd3dc3ff8400fc1eb606a0ed9ce0d0d13703d9",
+      "size": 3778
+    },
+    "build-1791237458725680034/owning-headers/src/layout/algorithm/tiled/monocle/MonocleAlgorithm.hpp": {
+      "sha256": "756949534f2bf1bcbf625448720e20033b11de906ea46cb474c301e9e59cab99",
+      "size": 1999
+    },
+    "build-1791237458725680034/owning-headers/src/layout/algorithm/tiled/scrolling/ScrollTapeController.hpp": {
+      "sha256": "8d323c113de33352578a0382a32bbecdec9bc56b58f44dffd09196af79f954c1",
+      "size": 4176
+    },
+    "build-1791237458725680034/owning-headers/src/layout/algorithm/tiled/scrolling/ScrollingAlgorithm.hpp": {
+      "sha256": "df87ddb6595743b86fc48e822aceeaee4f49b01490b03add203ad7d0e7b9f9fc",
+      "size": 7238
+    },
+    "build-1791237458725680034/owning-headers/src/layout/algorithm/tiled/scrolling/ScrollingFullscreenHandler.hpp": {
+      "sha256": "48f2e2d0710ae4c470a2b3b94056c54ffc0e9228d15b06e979af5f0d1ea0ca80",
+      "size": 4472
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/cm/ColorManagement.hpp": {
+      "sha256": "c9b4823032e12cb45907aac714a19c5de89e5565a773b4eccbecd83ddb5d4de6",
+      "size": 20757
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/defer/Promise.hpp": {
+      "sha256": "d6bd68ba0e8c031ea3f5d4b96523c7d15c088066814bbd8dac7841e84c7d0abc",
+      "size": 2961
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/env/Env.hpp": {
+      "sha256": "c9f1f53fd1c9b59f4e3d8c6e58fca43b57b17c6a61f14fdd7809809a2c386116",
+      "size": 90
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/fs/FsUtils.hpp": {
+      "sha256": "ba5c77c188b7d088660544cb51bb564c2eb4562b4aa29b5a390f880565316a86",
+      "size": 432
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/math/Direction.hpp": {
+      "sha256": "8fd5181e01230618e8fde3dd159d9f862c51403ed087c2049e633b9e2999f9f1",
+      "size": 881
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/math/Expression.hpp": {
+      "sha256": "8a71461aa850c4f2c23d7d2bb3a5f7e63036c895c6251f705801d752f21fe7b6",
+      "size": 882
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/math/Math.hpp": {
+      "sha256": "26e71b8ba323d68015b6e7c67abab4ec125b9e5f996acce9413af27d9dce2b5b",
+      "size": 572
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/memory/Memory.hpp": {
+      "sha256": "bced45e92f63667e0049d0438bf4bea62a3af10ee8158da1dc0db9139f1417a3",
+      "size": 419
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/signal/Signal.hpp": {
+      "sha256": "967b79dfb8ae4d74e6076ba5b3338ae9c4233e7b5c171d3dbd2e59b58d9670c3",
+      "size": 106
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/sync/SyncReleaser.hpp": {
+      "sha256": "f319c6c34ff58d0deb297ef1dbebf79063745f235b966ab8099dd263dfffdcc5",
+      "size": 751
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/sync/SyncTimeline.hpp": {
+      "sha256": "efc4a6943a223e78229a2409b7a04f8a1455391e818185070b2e7678b267cb6b",
+      "size": 1513
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/time/Time.hpp": {
+      "sha256": "b6235aaadbbf396d080d7dc7150b8204ef4b14ea44ce937e0a14c2b15cda0dbf",
+      "size": 911
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/time/Timer.hpp": {
+      "sha256": "c2252c410f73c9f855cf5903d48fffcbc1eedb98cbcc8d23a6a469115785d732",
+      "size": 324
+    },
+    "build-1791237458725680034/owning-headers/src/helpers/varlist/VarList.hpp": {
+      "sha256": "79fe2000a24c5bb42e7b586840bed8ed358cb802db049d8c2d778d240be19e80",
+      "size": 148
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/history/WindowHistoryTracker.hpp": {
+      "sha256": "98afc6d11daf3411df18994cff48e8fa3eb35c3962fa69421d53b345627152b4",
+      "size": 874
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/history/WorkspaceHistoryTracker.hpp": {
+      "sha256": "89afe0b8578d193b6636af422911922a39b7bfdf130bfb286d0708d4a489d009",
+      "size": 1633
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/reserved/ReservedArea.hpp": {
+      "sha256": "6222d11418cae1050b34f07eaddd6f7fc25b4c8d92bf78012ee9e94a1159e99a",
+      "size": 1498
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/rule/Engine.hpp": {
+      "sha256": "ee1b0e64c970c62ada2110935de4afb4b8023838244732520c2695dd50e7de19",
+      "size": 707
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/rule/Rule.hpp": {
+      "sha256": "2a6fd2d17a3ef7ebc7434be12022ff5b486a6b6039576cb4bdb1b68806178dec",
+      "size": 3505
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/rule/RuleWithEffects.hpp": {
+      "sha256": "0c9d2b181c7ce3d219dacc77e1b143593c6b6ac6ef63ea8611ee78850b22a55a",
+      "size": 1711
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/state/Fadeout.hpp": {
+      "sha256": "8808727a84220d04a976a8fe30d33879d0ebe69b85ee1bfefaa2a6a937dca118",
+      "size": 2130
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/state/FadingOutState.hpp": {
+      "sha256": "7430589289759d9f7e607dba8a57b9a38a3c0b62013c4e3761bd055ec15d7ea7",
+      "size": 644
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/state/FloatState.hpp": {
+      "sha256": "abaa75b1d44e074ce75074d27939317e416cb2716cf23ed29ea7d8fe3950e8d0",
+      "size": 1678
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/state/FocusState.hpp": {
+      "sha256": "1ce236b2675a15d9df42c59f0c2f1bc208e38bedb941857439c83ab1b987accc",
+      "size": 2124
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/state/GlobalWindowController.hpp": {
+      "sha256": "c3c09291a347eac0202982672c31d715c895e22119bdc0e196e1592199869096",
+      "size": 365
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/state/LayerFadeout.hpp": {
+      "sha256": "2c39221cbaaaa225a781631f9e1cb5edbebd449678983f26822e30748f78960b",
+      "size": 1003
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/state/LayerState.hpp": {
+      "sha256": "50e269b71a1a55fbe2c86b45be995305661800a4d1a73e36fec989a8b2e4eb91",
+      "size": 601
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/state/OtherViewState.hpp": {
+      "sha256": "bd3afe6cdf898f8c1b289281dee4545e0d9416803eaa803cfd16ab0797dbd955",
+      "size": 621
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/state/PopupFadeout.hpp": {
+      "sha256": "5d618ed7c8daf7fd4560e5c846bd50da403b31a16e99d00e7777a6060d3a5509",
+      "size": 862
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/state/ViewHitTester.hpp": {
+      "sha256": "cf0a1e4026365937f1df0330ffc4fd014b6a5131f7ce6295e222091c7fadaccc",
+      "size": 1462
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/state/ViewQuery.hpp": {
+      "sha256": "e7037e695a48e3b856f2c42285225db03f62aa41b4f694539db4b65be5736a7e",
+      "size": 2037
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/state/ViewState.hpp": {
+      "sha256": "9a065d1a6cda8fec77a3f898c1a06f1a5efb9847804bec462a3bd75731eb6ff2",
+      "size": 539
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/state/ViewStateTracker.hpp": {
+      "sha256": "d3da3151e4604ec0ee062a3f8b679753451c17d33ee17fe460723ee6765bfb7f",
+      "size": 638
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/state/WindowFadeout.hpp": {
+      "sha256": "de1c513a819c0a370a9033ff7f35d87bf635547b69a34f6989d87c2e6c97ccb6",
+      "size": 1201
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/state/WindowQuery.hpp": {
+      "sha256": "6bef8acae9b3c4ea47d5cf43769936ec03bbf84d7416e0cdd5f129276ad3866d",
+      "size": 1458
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/state/WindowState.hpp": {
+      "sha256": "3645229ff9b49980ad962c560b20a3d339f8802c0c25c255dd6675379dfae28e",
+      "size": 1095
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/types/MultiAnimatedVariable.hpp": {
+      "sha256": "803afcd8478e2695f24eca4265fa3ff0d2b3108e94fa81495203b31d8459793a",
+      "size": 5040
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/types/OverridableVar.hpp": {
+      "sha256": "4d111c95b15133ca8f6f8a579fe36f9652a7298d031c45d84d83576670c06501",
+      "size": 5510
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/view/GlobalViewMethods.hpp": {
+      "sha256": "f8721f6a1a1bbc10d876ef5bb3f5e55b2840461682863ff36d5fb00271212c46",
+      "size": 177
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/view/Group.hpp": {
+      "sha256": "5ea8fb3549cbe800e4c8f17e896a5e8e004082027de1bf5b4e282c9081973a12",
+      "size": 2658
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/view/LayerSurface.hpp": {
+      "sha256": "cd53ab4e4d709aed400349d01279e3503c08f2aae5369044142fadc22befbe68",
+      "size": 4036
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/view/Popup.hpp": {
+      "sha256": "272aedc5efdbeb695a66f899808cd0d7b03c0237fbf6465ad65a5511c2d29096",
+      "size": 5500
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/view/SessionLock.hpp": {
+      "sha256": "99e8e5c1e1f5c1e7c36b5fa38c917efdece92e29c0707084b84f2e6a171d6fb7",
+      "size": 1207
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/view/Subsurface.hpp": {
+      "sha256": "0bd514669abf79259204c4068a06e9a53bef898b1f4244f39652155259081a6f",
+      "size": 3410
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/view/View.hpp": {
+      "sha256": "ce951a2a4d93d5e87f7b558c4d4ca7356270e0fafc3f5b90f27c61d6e6d19c5b",
+      "size": 1347
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/view/WLSurface.hpp": {
+      "sha256": "e0af09d273605e7f731168f77896eb389da806dd20b7b8116a402cb6bc064cfe",
+      "size": 3806
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/view/Window.hpp": {
+      "sha256": "1f60b8ff0bc6b5a48af5c03cb2cac1108db677efc70b4424b56ef6f1f2d1cc81",
+      "size": 23988
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/view/animationControllers/LayerSurfaceAnimationController.hpp": {
+      "sha256": "ccd36c62936c7b4a825293f465a940e76a196bf69b16a609a80404e3a30c2701",
+      "size": 790
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/view/animationControllers/PopupAnimationController.hpp": {
+      "sha256": "623992fa966c2a7c51edfe443f3e5f4a496b120a4317ea2a23aa582bce32d087",
+      "size": 741
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/view/animationControllers/WindowAnimationController.hpp": {
+      "sha256": "b8b59c1b972cd0b32565c134f9cf2fa2c58500eb5bb44f9db67defa00fb3507f",
+      "size": 747
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/view/types/AlphaModifiable.hpp": {
+      "sha256": "ebebb59e0e5bd8a2781b2522496c34c29c42399584de796684017bd9a095fa9b",
+      "size": 634
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/view/types/Geometric.hpp": {
+      "sha256": "bf44b21b17999986c7654d532bb67b1b63357144aac0e79991a4f6f822664cb4",
+      "size": 765
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/view/types/GeometricAnimated.hpp": {
+      "sha256": "eecac08d28b65e4b4aa3c019bac410ec60ef0d8bde1debd85a0c48d9465547c6",
+      "size": 683
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/view/types/GeometricMovable.hpp": {
+      "sha256": "6af1a93891f3e0ec02e10530904a284ee658d5247c00d52d10757d34c1a98d51",
+      "size": 410
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/view/types/GeometricMovableAnimated.hpp": {
+      "sha256": "8dcf6e86a78eb0e4bd2c71a289329d8ffef7ca400cf6971dd4e744ba38499394",
+      "size": 1097
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/view/types/GeometricMovableStatic.hpp": {
+      "sha256": "d9fedb762610ba0e7b48a4d01fe8a2531615f039dca73289d2a57a8751ce55fd",
+      "size": 718
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/view/types/GeometricStatic.hpp": {
+      "sha256": "7b44012b883decf78f3dc8de03d9abcab51f070cb08f2ef4f9a52ae3c6861195",
+      "size": 548
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/rule/effect/EffectContainer.hpp": {
+      "sha256": "1b995f1bdb45719b457c9015fff818b7a6a79201e41a74684b2b9f1e99d3bc00",
+      "size": 2483
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/rule/layerRule/LayerRule.hpp": {
+      "sha256": "549a1a47e13afb9e2f8e1140e575996129da84c2bc8affbc4dced459beffea16",
+      "size": 1125
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/rule/layerRule/LayerRuleApplicator.hpp": {
+      "sha256": "f62c45a977fa6dd5c4dcef245e791c56a33dc4a136ea2704696f6312f406b0fe",
+      "size": 3844
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/rule/layerRule/LayerRuleEffectContainer.hpp": {
+      "sha256": "d9b85eb9fee97d40b74dd54f3e417cd9e1e30e306667942d4cb451804498cb7d",
+      "size": 881
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/rule/matchEngine/BoolMatchEngine.hpp": {
+      "sha256": "2a6206671b8929c97bbf62c9329efc938071c75dd8b0e00c6203abd43cf844ca",
+      "size": 321
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/rule/matchEngine/IntMatchEngine.hpp": {
+      "sha256": "fc54001b331a09280119fa76aa19c6d3e36c9ff4f215628a07f696a3695878f5",
+      "size": 312
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/rule/matchEngine/MatchEngine.hpp": {
+      "sha256": "dd2ea4c9a63583a425abefa073dcf39a009905a7514f4e21bd38496140fdb582",
+      "size": 662
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/rule/matchEngine/RegexMatchEngine.hpp": {
+      "sha256": "1bd284a2bcf76e806a72c892dffdbba93fe181198ef23e5769a89c62a5b99099",
+      "size": 483
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/rule/matchEngine/TagMatchEngine.hpp": {
+      "sha256": "d9eb7f43a7d35c6c43aaa6e3ec05cab73663545fee0357c57cc7b99b31f7800f",
+      "size": 352
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/rule/matchEngine/WorkspaceMatchEngine.hpp": {
+      "sha256": "07491505f65b747d31df5471a73d6832191b990b78ab4ae36250ec64a0586e83",
+      "size": 364
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/rule/utils/SetUtils.hpp": {
+      "sha256": "e2371d31a5df62c9827e20b1f6ce06f0b6473e65cbdd38f77781bce04bb8646d",
+      "size": 386
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/rule/windowRule/WindowRule.hpp": {
+      "sha256": "12cf28cc2aab0126a52ed61b7dcabd77ec6aebb643846883cd4d439e1603853a",
+      "size": 2468
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/rule/windowRule/WindowRuleApplicator.hpp": {
+      "sha256": "334e1254a66e2df8ef243544e3ff99db398ed5ec6e48996d496d05ff7bf50f44",
+      "size": 9865
+    },
+    "build-1791237458725680034/owning-headers/src/desktop/rule/windowRule/WindowRuleEffectContainer.hpp": {
+      "sha256": "75a96873da1465d4a4c7dc151ae0224cb13a4b3865506fb67f2440cd3b1ab053",
+      "size": 2783
+    },
+    "build-1791237458725680034/owning-headers/src/debug/crash/CrashReporter.hpp": {
+      "sha256": "c0405520024316b9e708c1822aca458aad20fc1102ee099539d1a37798ce7364",
+      "size": 80
+    },
+    "build-1791237458725680034/owning-headers/src/debug/crash/SignalSafe.hpp": {
+      "sha256": "3409938a0f09480f59aa101f5dd439ab3893d040b5c5af92a9e195da7a401b96",
+      "size": 5306
+    },
+    "build-1791237458725680034/owning-headers/src/debug/log/Logger.hpp": {
+      "sha256": "aeb07ba1ba1fd5cfdb75aaf7434910c887096c24952f1a6788f71a4d7dbe78fe",
+      "size": 1767
+    },
+    "build-1791237458725680034/owning-headers/src/debug/log/RollingLogFollow.hpp": {
+      "sha256": "ae1d3c36f07a8bd4c286dfb4275c036fa6b044bd5050b07e6dbf2ae8fcff045c",
+      "size": 2407
+    },
+    "build-1791237458725680034/owning-headers/src/config/legacy/ConfigManager.hpp": {
+      "sha256": "32afb1719c61ccb94b89d07cb0e5e9e6885e2531b5a3ad0507d52e89660fca5b",
+      "size": 8421
+    },
+    "build-1791237458725680034/owning-headers/src/config/legacy/DefaultConfig.hpp": {
+      "sha256": "e3449f7495316e4b5b5a8c0b4a5aceb98098d228b7536b1ec4146434f4f11947",
+      "size": 639
+    },
+    "build-1791237458725680034/owning-headers/src/config/legacy/DispatcherTranslator.hpp": {
+      "sha256": "438c1e662f5c9fa4d5821fbab251113c66562dd452d1844f965c294bb3444e87",
+      "size": 567
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/ConfigManager.hpp": {
+      "sha256": "762cb890f89f32fe3d62ffbf65b25068d5aa56f7b8c377ad8887f5ad9c752968",
+      "size": 9805
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/DefaultConfig.hpp": {
+      "sha256": "71b1ab7b9212fd66217bb7491db9378bf891ef7cbdd474d24eee0c1b0aa2b59a",
+      "size": 656
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/Emergency.hpp": {
+      "sha256": "2daa3a9059c4e0f261356a7a8c4a0b78b6b04288ebc5d61b5e3a7d53f8e67575",
+      "size": 1069
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/LuaBindings.hpp": {
+      "sha256": "7787b9d89deaf4469c0efe5644084d1ec724c642d61a6eb3be6d343a44f5fa2a",
+      "size": 198
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/LuaEventHandler.hpp": {
+      "sha256": "b7be5ac34a1631bdc11299d90c86738b33620bfeb3bc3fbebd05143e4b3a54eb",
+      "size": 2738
+    },
+    "build-1791237458725680034/owning-headers/src/config/shared/ConfigErrors.hpp": {
+      "sha256": "171ee3a148e443daa62719937a6df15b3bc0381ca80bd962ad2ae3eb2e956934",
+      "size": 2341
+    },
+    "build-1791237458725680034/owning-headers/src/config/shared/Types.hpp": {
+      "sha256": "337556a3fbedda3e34f31f600f4a44d4e85f53a04220f3c90d8394f98d1eb638",
+      "size": 486
+    },
+    "build-1791237458725680034/owning-headers/src/config/values/ConfigValues.hpp": {
+      "sha256": "2ff559fd1d8efb53e8ef18643335cdf1d4ed1c0425821b8195eb7f2c2c49697a",
+      "size": 5685
+    },
+    "build-1791237458725680034/owning-headers/src/config/supplementary/executor/Executor.hpp": {
+      "sha256": "343e39134f35e3554e52422219aedcab4e1733800e6b65afab3fa8ab54c5517c",
+      "size": 2055
+    },
+    "build-1791237458725680034/owning-headers/src/config/supplementary/jeremy/Jeremy.hpp": {
+      "sha256": "d02c068f2dcd04bde4d56fa9ffef39f42ce16cf4b6046cdb1a1b8ae8b16ce8c9",
+      "size": 530
+    },
+    "build-1791237458725680034/owning-headers/src/config/supplementary/propRefresher/PropRefresher.hpp": {
+      "sha256": "37acaaf16a24dcfe89d0702818b82d300d0da5e91ef1ba47494f7fd2ab0af2d0",
+      "size": 1322
+    },
+    "build-1791237458725680034/owning-headers/src/config/values/types/BoolValue.hpp": {
+      "sha256": "470617542e1a97914e1dead012f05b5d29fde7c92616bd34135743119fe54905",
+      "size": 759
+    },
+    "build-1791237458725680034/owning-headers/src/config/values/types/ColorValue.hpp": {
+      "sha256": "de2a4e19f4da8d4f0177795ceb60e35acea2cfdb344a5b8e0b5c9ecea4413265",
+      "size": 769
+    },
+    "build-1791237458725680034/owning-headers/src/config/values/types/CssGapValue.hpp": {
+      "sha256": "5780a6e1565ddc845e01924ed5155a547f31ab9a52c204c7a0428c5d043c3511",
+      "size": 1047
+    },
+    "build-1791237458725680034/owning-headers/src/config/values/types/FloatValue.hpp": {
+      "sha256": "eaf67cf7aa691a93e0e7faa127a2df689941c8f618da9927df4685d3beda2876",
+      "size": 969
+    },
+    "build-1791237458725680034/owning-headers/src/config/values/types/FontWeightValue.hpp": {
+      "sha256": "a0562369ed1d09181290a79aac8e1121b2c3044423cab624483af80dfb2b3e27",
+      "size": 921
+    },
+    "build-1791237458725680034/owning-headers/src/config/values/types/GradientValue.hpp": {
+      "sha256": "2baa1b92f488c5347a77258ec674fa4e30e043fd02130e733a6b1c01a375c100",
+      "size": 868
+    },
+    "build-1791237458725680034/owning-headers/src/config/values/types/IValue.hpp": {
+      "sha256": "5a415bbc55c0491f6d8cfa6d43ec489e09d159051e69987b8e83fdf926ce5509",
+      "size": 796
+    },
+    "build-1791237458725680034/owning-headers/src/config/values/types/IntValue.hpp": {
+      "sha256": "7e87c3b5e5fdc6b30048f0dae0976a3d7112c57d577b4514462daa4f63e39251",
+      "size": 1481
+    },
+    "build-1791237458725680034/owning-headers/src/config/values/types/StringValue.hpp": {
+      "sha256": "b8813e3eed42508dfed286cf6c26d7c7b4c2ba51866272b66fe2a457cbb1a99c",
+      "size": 1128
+    },
+    "build-1791237458725680034/owning-headers/src/config/values/types/Vec2Value.hpp": {
+      "sha256": "acf1ab268d3cd101c9658c40cd42cf739870c42f06383faa9975ebe68d6263fc",
+      "size": 1106
+    },
+    "build-1791237458725680034/owning-headers/src/config/shared/actions/ConfigActions.hpp": {
+      "sha256": "746c6f517620eb039afbfbb9a4a0e2d5ba1c5eb117bcc8f396173f63091b7073",
+      "size": 6960
+    },
+    "build-1791237458725680034/owning-headers/src/config/shared/animation/AnimationTree.hpp": {
+      "sha256": "7bd902ec92b800a4c2623ddeb87d4a67f55e2c7c6ea920280904838cde689a3f",
+      "size": 889
+    },
+    "build-1791237458725680034/owning-headers/src/config/shared/complex/ComplexDataType.hpp": {
+      "sha256": "e7fee893be361e6e11102aeac549dd8ed527dd2c0e1a5a879f717b4c8222882e",
+      "size": 481
+    },
+    "build-1791237458725680034/owning-headers/src/config/shared/complex/ComplexDataTypes.hpp": {
+      "sha256": "95733223b115510dda23e753aae64e373205cc7081b0eeb204df866ea7e68807",
+      "size": 6116
+    },
+    "build-1791237458725680034/owning-headers/src/config/shared/inotify/ConfigWatcher.hpp": {
+      "sha256": "0c52dc7c873d505daf7a2dca98010e41cbdca86f60c77b8923f2afa08eaaa2c5",
+      "size": 1100
+    },
+    "build-1791237458725680034/owning-headers/src/config/shared/monitor/MonitorRule.hpp": {
+      "sha256": "b01d31a16d5fb413ead28f46825381f36a70c29b86eceb58cd633dcbf031a2f5",
+      "size": 3148
+    },
+    "build-1791237458725680034/owning-headers/src/config/shared/monitor/MonitorRuleManager.hpp": {
+      "sha256": "772f39b378737572c3fdd656515cf277355ff356929163f5a30b670adc269f75",
+      "size": 1184
+    },
+    "build-1791237458725680034/owning-headers/src/config/shared/monitor/Parser.hpp": {
+      "sha256": "3fe340eefb09367a568e779869a75f57bd9449599ac4f8a41bc19c2b91eae04b",
+      "size": 1360
+    },
+    "build-1791237458725680034/owning-headers/src/config/shared/parserUtils/ParserUtils.hpp": {
+      "sha256": "115393e7d7da71b4c1e585797a33ea63e0d47597b7207ca8fb298909651ec64b",
+      "size": 252
+    },
+    "build-1791237458725680034/owning-headers/src/config/shared/workspace/WorkspaceRule.hpp": {
+      "sha256": "924caa92a66b414ad852c793b61fe987c2f1a6286962e6622d495ff98a1227ab",
+      "size": 1944
+    },
+    "build-1791237458725680034/owning-headers/src/config/shared/workspace/WorkspaceRuleManager.hpp": {
+      "sha256": "d9ce8271e195d3e8a298fde9591ce449a4c8df0e1563acf775ac9a34c2b3d323",
+      "size": 1174
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/bindings/Check.hpp": {
+      "sha256": "063ebb8b0af6105284d60e078e8d1a1ec300c0587dac59d17b59aa40076fe479",
+      "size": 451
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/bindings/LuaBindingsInternal.hpp": {
+      "sha256": "83630401a5b3d2cd99ec42705a7b70b0fdd73ddb3989c561a4316d15d72f0edd",
+      "size": 15901
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/layout/LuaLayoutContext.hpp": {
+      "sha256": "930c6da0545e72256b08a486776cb21b15b554b08e8464461706db2aacec18f3",
+      "size": 446
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/layout/LuaLayoutProvider.hpp": {
+      "sha256": "9a442897044e559ae8eca94f83e7a48851fe8048d10cac838b321b91af181001",
+      "size": 2460
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/layout/LuaLayoutTarget.hpp": {
+      "sha256": "88a0fc7fac66380f59af9cfdf3884ee5f9b3d22276d43882f23ec4136da38ab6",
+      "size": 322
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/objects/LuaEventSubscription.hpp": {
+      "sha256": "8d7df08449cc6c30eaf96be4717d093b47da1cc6b4411e2bccd1dec83c4a9fff",
+      "size": 332
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/objects/LuaGroup.hpp": {
+      "sha256": "619c704e46b81ba61222dd6e786a123b536e686daf8b265d93861fee8002dd52",
+      "size": 311
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/objects/LuaKeybind.hpp": {
+      "sha256": "24aa6eb22e1f26f5e25b617a97323f81e6085b50c7aa051e389115b267dbf392",
+      "size": 321
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/objects/LuaLayerRule.hpp": {
+      "sha256": "6666e4b2a6ac8a229845cb31eabf6acaaeb4c5d9df576b5fd1cab2c8f27913ea",
+      "size": 346
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/objects/LuaLayerSurface.hpp": {
+      "sha256": "7e67d67d4c791080c5b0167b33ffa8437e5df5dadea3b37903089797514e8fb9",
+      "size": 307
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/objects/LuaMonitor.hpp": {
+      "sha256": "b9870169ae871a16d218b6cfb02e95370af963485cf29c7b58998d5e94d99be8",
+      "size": 308
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/objects/LuaNotification.hpp": {
+      "sha256": "31d8e9527bd86fda66e844c039d4c384c320c1c4d9fefd985469aa6463d77b81",
+      "size": 359
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/objects/LuaObjectHelpers.hpp": {
+      "sha256": "647c768735a1132d3ff3aa42191552e12fcb807313b90c64ea8566d9bbd20209",
+      "size": 1353
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/objects/LuaTimer.hpp": {
+      "sha256": "d554fe255cce1f6a9bae1f4677352d630a3a6a1e04ead2de5247cebeeb28006a",
+      "size": 349
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/objects/LuaWindow.hpp": {
+      "sha256": "ecc67ca8039ab91e86a0245af965dfbe2c73af123f59c7b1136eabff2c8822e6",
+      "size": 304
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/objects/LuaWindowRule.hpp": {
+      "sha256": "f114a41cf6f98c5f5bae1227b00337e3c3a944ac6c611379dddf1078a9fd49f2",
+      "size": 350
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/objects/LuaWorkspace.hpp": {
+      "sha256": "03c9476664839bab217bde661a900987652de08518142ec6d0e6860694cce534",
+      "size": 368
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/objects/LuaWorkspaceRule.hpp": {
+      "sha256": "5ee006d935716f82e4de9178081bad35e2a09b3415692f484fd08b149c9042e8",
+      "size": 342
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/types/LuaConfigBool.hpp": {
+      "sha256": "a4a61487f4306139c50d8ec0fe1fc8550823674c9d7b3f3a251731ac97d22423",
+      "size": 737
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/types/LuaConfigColor.hpp": {
+      "sha256": "78cb1f55f41890c7ba1854ad5d6ff555712965882b60876f72abb16f230cf645",
+      "size": 742
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/types/LuaConfigCssGap.hpp": {
+      "sha256": "b5385cccef55bac4c93b20483095e432f3577694f7d14d676635e652262edacc",
+      "size": 909
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/types/LuaConfigExpressionVec2.hpp": {
+      "sha256": "d00d5af92a364f750a85b88789774a45259566a57957ffdc930b06de3047cd02",
+      "size": 782
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/types/LuaConfigFloat.hpp": {
+      "sha256": "a0d62af1414cf022b1b13cfb660ced98ed0ed523aa1d51d81b364433408f197b",
+      "size": 941
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/types/LuaConfigFontWeight.hpp": {
+      "sha256": "0300ae5454ba74544afe3cae52d439034fdee15d81846821616c9126f85b1970",
+      "size": 813
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/types/LuaConfigGradient.hpp": {
+      "sha256": "7092667e6fea62e1d17324d7fa60d863497a1df4f456d56910ff822b2da4127a",
+      "size": 746
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/types/LuaConfigInt.hpp": {
+      "sha256": "ac09d7aaf681bfdf998991a4902f70a71ec296edb39f1291e3e4dd1fd3e2faf7",
+      "size": 1268
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/types/LuaConfigString.hpp": {
+      "sha256": "a7859050ec83ecb4ecef033c3862be9558448add26650bf862f9cb48c689c727",
+      "size": 1091
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/types/LuaConfigUtils.hpp": {
+      "sha256": "08840ff207d6af75a337bff2ea0afba81230fc560975bd2978eb0aa4fe00195d",
+      "size": 231
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/types/LuaConfigValue.hpp": {
+      "sha256": "c4f9fbc61d3c3bb91061a3adddfe8c48ce6008e1fcf66134f005777f35e008e3",
+      "size": 1690
+    },
+    "build-1791237458725680034/owning-headers/src/config/lua/types/LuaConfigVec2.hpp": {
+      "sha256": "c27ed894208ed05f5bd2fdb01183a62e40c809bd0824b0f89374219674669f7a",
+      "size": 1064
+    },
+    "build-1791237458725680034/owning-headers/src/animation/controller/ViewAnimationController.hpp": {
+      "sha256": "274b98b2c3911fd808b6fc5c6f5b60ff4297a475cdbd939e622cc2c223db27da",
+      "size": 557
+    },
+    "candidate/src/protocols/core/Compositor.cpp": {
+      "sha256": "90bab573f1ee776453648108c65a1d3f105d488c4498623a57d92ddd624167d9",
+      "size": 41008
+    },
+    "candidate/src/protocols/core/Subcompositor.cpp": {
+      "sha256": "28c47b45308b69fc48e8058889f8b7fedcd411d88c5957a460f074147f059618",
+      "size": 7747
+    },
+    "candidate/src/protocols/core/AppliedSurfaceRevision.hpp": {
+      "sha256": "867509f9c54d6877810a63f7d5385b50c6cbb56e69b19a73dd0f8b00626e4036",
+      "size": 776
+    },
+    "candidate/src/protocols/core/SubsurfaceCommit.hpp": {
+      "sha256": "7e92dee5480af2c31adb1ce42b9c11f7ef97fdae8e3ed440169a201fb00c25ed",
+      "size": 630
+    }
+  }
+}

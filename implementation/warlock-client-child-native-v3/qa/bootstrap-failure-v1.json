@@ -1,0 +1,9 @@
+{
+  "passed": false,
+  "exitCode": 1,
+  "nativeLaunched": false,
+  "failure": "ModuleNotFoundError: No module named isolation",
+  "stage": "Before native output directory or private host launch",
+  "source": "protected native launcher output at initial fresh native-v3 execution",
+  "correction": "Copied unchanged reviewed native-v2 isolation.py into fresh derivative; retained error and rerun preflight with its hash."
+}

@@ -1,0 +1,159 @@
+#define _GNU_SOURCE
+#include <wayland-client.h>
+#include "xdg-shell-client.h"
+#include <errno.h>
+#include <fcntl.h>
+#include <inttypes.h>
+#include <poll.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/mman.h>
+#include <sys/stat.h>
+#include <time.h>
+#include <unistd.h>
+
+struct client;
+struct buffer {struct client *client;struct wl_buffer *resource;void *data;size_t bytes;struct buffer *next;};
+struct barrier {struct client *client;struct wl_callback *callback;uint64_t control;const char *command;struct barrier *next;};
+struct client {
+    struct wl_display *display;struct wl_registry *registry;
+    struct wl_compositor *compositor;struct wl_subcompositor *subcompositor;struct wl_shm *shm;struct xdg_wm_base *wm;
+    struct wl_surface *root,*child,*grandchild;struct wl_subsurface *child_role,*grandchild_role;
+    struct xdg_surface *xdg;struct xdg_toplevel *toplevel;
+    struct buffer *buffers;struct barrier *barriers;unsigned inflight,outstanding;size_t allocated;
+    uint64_t sequence,control,root_commits,child_commits;uint32_t child_color,serial;int width,height;
+    const char *control_path;bool ready,quit,failed;
+};
+static uint64_t stamp(void){struct timespec t;if(clock_gettime(CLOCK_MONOTONIC,&t))return 0;return (uint64_t)t.tv_sec*UINT64_C(1000000000)+(uint64_t)t.tv_nsec;}
+static void event(struct client *c,const char *kind,const char *extra){
+    if(c->sequence==UINT64_MAX){c->failed=true;c->quit=true;return;}
+    printf("{\"event\":\"%s\",\"sequence\":%" PRIu64 ",\"controlSequence\":%" PRIu64 ",\"rootCommits\":%" PRIu64 ",\"childCommits\":%" PRIu64 ",\"serial\":%u,\"width\":%d,\"height\":%d,\"monotonicNs\":%" PRIu64 "%s}\n",kind,++c->sequence,c->control,c->root_commits,c->child_commits,c->serial,c->width,c->height,stamp(),extra?extra:"");fflush(stdout);
+}
+static void refuse(struct client *c,const char *reason){char extra[160];snprintf(extra,sizeof extra,",\"reason\":\"%s\"",reason);event(c,"refused",extra);c->failed=true;c->quit=true;}
+// Ownership and release ordering derived from reviewed xdg-origin-fixture-v184.
+static void remove_buffer(struct buffer *b){struct client *c=b->client;struct buffer **p=&c->buffers;while(*p && *p!=b)p=&(*p)->next;if(*p){*p=b->next;--c->inflight;c->allocated-=b->bytes;}wl_buffer_destroy(b->resource);munmap(b->data,b->bytes);free(b);}
+static void released(void *data,struct wl_buffer *resource){(void)resource;struct buffer *b=data;event(b->client,"buffer-release",NULL);remove_buffer(b);}
+static const struct wl_buffer_listener buffer_listener={released};
+static bool commit_buffer(struct client *c,struct wl_surface *surface,int width,int height,uint32_t argb){
+    if(!surface || width<1 || height<1 || width>4096 || height>4096){refuse(c,"buffer-dimensions");return false;}
+    size_t bytes=(size_t)width*(size_t)height*4;
+    if(c->inflight>=8 || bytes>UINT64_C(64)*1024*1024 || bytes>UINT64_C(128)*1024*1024-c->allocated){refuse(c,"buffer-bound");return false;}
+    int fd=memfd_create("warlock-child-probe",MFD_CLOEXEC);
+    if(fd<0 || ftruncate(fd,(off_t)bytes)){if(fd>=0)close(fd);refuse(c,"memfd-allocation");return false;}
+    void *pixels=mmap(NULL,bytes,PROT_READ|PROT_WRITE,MAP_SHARED,fd,0);
+    if(pixels==MAP_FAILED){close(fd);refuse(c,"shm-mapping");return false;}
+    for(int y=0;y<height;++y)for(int x=0;x<width;++x)((uint32_t*)pixels)[(size_t)y*width+x]=argb;
+    struct wl_shm_pool *pool=wl_shm_create_pool(c->shm,fd,(int)bytes);
+    struct wl_buffer *resource=pool?wl_shm_pool_create_buffer(pool,0,width,height,width*4,WL_SHM_FORMAT_ARGB8888):NULL;
+    if(pool)wl_shm_pool_destroy(pool);
+    close(fd);
+    if(!resource){munmap(pixels,bytes);refuse(c,"shm-buffer");return false;}
+    struct buffer *b=calloc(1,sizeof *b);
+    if(!b){wl_buffer_destroy(resource);munmap(pixels,bytes);refuse(c,"buffer-record");return false;}
+    *b=(struct buffer){.client=c,.resource=resource,.data=pixels,.bytes=bytes,.next=c->buffers};c->buffers=b;++c->inflight;c->allocated+=bytes;
+    wl_buffer_add_listener(resource,&buffer_listener,b);
+    if(surface==c->root)xdg_surface_set_window_geometry(c->xdg,0,0,width,height);
+    wl_surface_attach(surface,resource,0,0);wl_surface_damage(surface,0,0,width,height);wl_surface_commit(surface);
+    if(surface==c->root)++c->root_commits;else ++c->child_commits;
+    event(c,"buffercommit",NULL);return true;
+}
+static void configure(void *data,struct xdg_surface *surface,uint32_t serial){struct client *c=data;if(c->quit)return;c->serial=serial;xdg_surface_ack_configure(surface,serial);event(c,"ack-configure",NULL);if(!commit_buffer(c,c->root,c->width,c->height,UINT32_C(0xffff0000)))return;if(!c->ready){c->ready=true;event(c,"ready",NULL);}}
+static const struct xdg_surface_listener surface_listener={configure};
+static void top_configure(void *data,struct xdg_toplevel *top,int32_t width,int32_t height,struct wl_array *states){(void)top;(void)states;struct client *c=data;if(width<0 || height<0 || width>4096 || height>4096){refuse(c,"configure-dimensions");return;}if(width)c->width=width;if(height)c->height=height;}
+static void top_close(void *data,struct xdg_toplevel *top){(void)top;struct client *c=data;c->quit=true;event(c,"server-close",NULL);}
+static void top_bounds(void *data,struct xdg_toplevel *top,int32_t width,int32_t height){(void)top;if(width<0 || height<0 || width>4096 || height>4096)refuse(data,"configure-bounds");}
+static void top_caps(void *data,struct xdg_toplevel *top,struct wl_array *caps){(void)data;(void)top;(void)caps;}
+static const struct xdg_toplevel_listener top_listener={top_configure,top_close,top_bounds,top_caps};
+static void ping(void *data,struct xdg_wm_base *wm,uint32_t serial){(void)data;xdg_wm_base_pong(wm,serial);}
+static const struct xdg_wm_base_listener wm_listener={ping};
+static void global(void *data,struct wl_registry *registry,uint32_t name,const char *interface,uint32_t version){
+    struct client *c=data;
+    if(!strcmp(interface,"wl_compositor"))c->compositor=wl_registry_bind(registry,name,&wl_compositor_interface,version<4?version:4);
+    else if(!strcmp(interface,"wl_subcompositor"))c->subcompositor=wl_registry_bind(registry,name,&wl_subcompositor_interface,1);
+    else if(!strcmp(interface,"wl_shm"))c->shm=wl_registry_bind(registry,name,&wl_shm_interface,1);
+    else if(!strcmp(interface,"xdg_wm_base")){c->wm=wl_registry_bind(registry,name,&xdg_wm_base_interface,version<6?version:6);xdg_wm_base_add_listener(c->wm,&wm_listener,c);}
+}
+static void removed(void *data,struct wl_registry *registry,uint32_t name){(void)data;(void)registry;(void)name;}
+static const struct wl_registry_listener registry_listener={global,removed};
+static void remove_barrier(struct barrier *b){struct client *c=b->client;struct barrier **p=&c->barriers;while(*p && *p!=b)p=&(*p)->next;if(*p){*p=b->next;--c->outstanding;}wl_callback_destroy(b->callback);free(b);}
+static void barrier_done(void *data,struct wl_callback *callback,uint32_t value){(void)callback;(void)value;struct barrier *b=data;char extra[160];snprintf(extra,sizeof extra,",\"command\":\"%s\",\"barrierControl\":%" PRIu64,b->command,b->control);event(b->client,"server-barrier",extra);remove_barrier(b);}
+static const struct wl_callback_listener barrier_listener={barrier_done};
+static void queue_barrier(struct client *c,const char *command){if(c->outstanding>=8){refuse(c,"barrier-bound");return;}struct barrier *b=calloc(1,sizeof *b);if(!b){refuse(c,"barrier-record");return;}b->callback=wl_display_sync(c->display);if(!b->callback){free(b);refuse(c,"barrier-callback");return;}b->client=c;b->control=c->control;b->command=command;b->next=c->barriers;c->barriers=b;++c->outstanding;wl_callback_add_listener(b->callback,&barrier_listener,b);}
+static void destroy_children(struct client *c){if(c->grandchild_role)wl_subsurface_destroy(c->grandchild_role);if(c->grandchild)wl_surface_destroy(c->grandchild);if(c->child_role)wl_subsurface_destroy(c->child_role);if(c->child)wl_surface_destroy(c->child);c->grandchild_role=NULL;c->grandchild=NULL;c->child_role=NULL;c->child=NULL;}
+static void execute(struct client *c,const char *command){
+    if(!strcmp(command,"quit")){c->quit=true;event(c,"request",",\"command\":\"quit\"");return;}
+    if(!c->ready){refuse(c,"command-before-ready");return;}
+    const char *known=NULL;
+    if(!strcmp(command,"child-create") || !strcmp(command,"child-create-sync")){
+        known=!strcmp(command,"child-create")?"child-create":"child-create-sync";if(c->child){refuse(c,"child-already-exists");return;}
+        c->child=wl_compositor_create_surface(c->compositor);c->child_role=wl_subcompositor_get_subsurface(c->subcompositor,c->child,c->root);
+        if(!strcmp(command,"child-create"))wl_subsurface_set_desync(c->child_role);
+        wl_subsurface_set_position(c->child_role,20,30);c->child_color=UINT32_C(0xff0000ff);
+        if(!commit_buffer(c,c->child,64,48,c->child_color))return;
+        if(!strcmp(command,"child-create")){wl_surface_commit(c->root);++c->root_commits;}
+    } else if(!strcmp(command,"root-commit")){known="root-commit";wl_surface_commit(c->root);++c->root_commits;}
+    else if(!c->child){refuse(c,"missing-child");return;}
+    else if(!strcmp(command,"child-blue")){known="child-blue";c->child_color=UINT32_C(0xff0000ff);if(!commit_buffer(c,c->child,64,48,c->child_color))return;}
+    else if(!strcmp(command,"child-yellow")){known="child-yellow";c->child_color=UINT32_C(0xffffff00);if(!commit_buffer(c,c->child,64,48,c->child_color))return;}
+    else if(!strcmp(command,"child-empty")){known="child-empty";wl_surface_commit(c->child);++c->child_commits;}
+    else if(!strcmp(command,"grand-yellow")){known="grand-yellow";if(!c->grandchild){refuse(c,"missing-grandchild");return;}if(!commit_buffer(c,c->grandchild,16,12,UINT32_C(0xffffff00)))return;}
+    else if(!strcmp(command,"grand-desync")){known="grand-desync";if(!c->grandchild_role){refuse(c,"missing-grandchild");return;}wl_subsurface_set_desync(c->grandchild_role);}
+    else if(!strcmp(command,"child-sync")){known="child-sync";wl_subsurface_set_sync(c->child_role);}
+    else if(!strcmp(command,"child-desync")){known="child-desync";wl_subsurface_set_desync(c->child_role);}
+    else if(!strcmp(command,"child-move-pending")){known="child-move-pending";wl_subsurface_set_position(c->child_role,100,110);}
+    else if(!strcmp(command,"child-below-pending")){known="child-below-pending";wl_subsurface_place_below(c->child_role,c->root);}
+    else if(!strcmp(command,"child-above-pending")){known="child-above-pending";wl_subsurface_place_above(c->child_role,c->root);}
+    else if(!strcmp(command,"child-move")){known="child-move";wl_subsurface_set_position(c->child_role,100,110);wl_surface_commit(c->root);++c->root_commits;}
+    else if(!strcmp(command,"child-below")){known="child-below";wl_subsurface_place_below(c->child_role,c->root);wl_surface_commit(c->root);++c->root_commits;}
+    else if(!strcmp(command,"child-above")){known="child-above";wl_subsurface_place_above(c->child_role,c->root);wl_surface_commit(c->root);++c->root_commits;}
+    else if(!strcmp(command,"child-detach")){known="child-detach";wl_surface_attach(c->child,NULL,0,0);wl_surface_commit(c->child);++c->child_commits;}
+    else if(!strcmp(command,"child-reattach")){known="child-reattach";if(!commit_buffer(c,c->child,64,48,c->child_color))return;}
+    else if(!strcmp(command,"child-destroy")){known="child-destroy";destroy_children(c);}
+    else if(!strcmp(command,"grand-create")){
+        known="grand-create";if(c->grandchild){refuse(c,"grandchild-already-exists");return;}
+        c->grandchild=wl_compositor_create_surface(c->compositor);c->grandchild_role=wl_subcompositor_get_subsurface(c->subcompositor,c->grandchild,c->child);
+        wl_subsurface_set_desync(c->grandchild_role);wl_subsurface_set_position(c->grandchild_role,7,9);
+        if(!commit_buffer(c,c->grandchild,16,12,UINT32_C(0xff00ffff)))return;
+        wl_surface_commit(c->child);++c->child_commits;
+    } else {refuse(c,"unknown-command");return;}
+    char extra[128];snprintf(extra,sizeof extra,",\"command\":\"%s\"",known);event(c,"request",extra);if(!c->failed)queue_barrier(c,known);
+}
+static void control_ready(struct client *c){
+    int fd=open(c->control_path,O_RDONLY|O_CLOEXEC|O_NOFOLLOW);if(fd<0){if(errno!=ENOENT)refuse(c,"control-open");return;}
+    struct stat st;if(fstat(fd,&st) || !S_ISREG(st.st_mode) || st.st_uid!=getuid() || (st.st_mode&077) || st.st_size<1 || st.st_size>=128){close(fd);refuse(c,"control-file-bound");return;}
+    char bytes[128];ssize_t count=read(fd,bytes,sizeof bytes-1);close(fd);
+    if(count!=st.st_size || memchr(bytes,0,(size_t)count)){refuse(c,"control-read");return;}bytes[count]=0;
+    uint64_t sequence=0;char command[32],trailer;if(sscanf(bytes,"%" SCNu64 " %31s %c",&sequence,command,&trailer)!=2 || !sequence){refuse(c,"control-shape");return;}
+    if(sequence==c->control)return;
+    if(c->control==UINT64_MAX || sequence!=c->control+1){refuse(c,"control-sequence");return;}
+    c->control=sequence;execute(c,command);
+}
+int main(int argc,char **argv){
+    if(argc==2 && !strcmp(argv[1],"--validate")){puts("{\"valid\":true,\"width\":320,\"height\":240,\"inflightLimit\":8,\"barrierLimit\":8}");return 0;}
+    if(argc!=1)return 64;
+    struct client c={.width=320,.height=240,.control_path=getenv("WARLOCK_CHILD_CONTROL_PATH")};if(!c.control_path || c.control_path[0]!='/')return 64;
+    c.display=wl_display_connect(NULL);if(!c.display)return 2;c.registry=wl_display_get_registry(c.display);wl_registry_add_listener(c.registry,&registry_listener,&c);
+    if(wl_display_roundtrip(c.display)<0 || !c.compositor || !c.subcompositor || !c.shm || !c.wm){wl_display_disconnect(c.display);return 3;}
+    c.root=wl_compositor_create_surface(c.compositor);c.xdg=xdg_wm_base_get_xdg_surface(c.wm,c.root);xdg_surface_add_listener(c.xdg,&surface_listener,&c);
+    c.toplevel=xdg_surface_get_toplevel(c.xdg);xdg_toplevel_add_listener(c.toplevel,&top_listener,&c);xdg_toplevel_set_title(c.toplevel,"WARLOCK-CHILD-PROBE");xdg_toplevel_set_app_id(c.toplevel,"warlock-child-probe");xdg_toplevel_set_min_size(c.toplevel,320,240);xdg_toplevel_set_max_size(c.toplevel,320,240);
+    wl_surface_commit(c.root);++c.root_commits;
+    while(!c.quit){
+        bool prepared=false;while(!c.quit){if(wl_display_prepare_read(c.display)==0){prepared=true;break;}if(wl_display_dispatch_pending(c.display)<0){refuse(&c,"dispatch-pending");break;}}
+        if(!prepared)break;
+        int flushed=wl_display_flush(c.display);if(flushed<0 && errno!=EAGAIN){wl_display_cancel_read(c.display);refuse(&c,"flush-transport");break;}
+        struct pollfd p={.fd=wl_display_get_fd(c.display),.events=POLLIN|(flushed<0?POLLOUT:0)};int result=poll(&p,1,25);
+        if(result<0){wl_display_cancel_read(c.display);if(errno==EINTR)continue;refuse(&c,"poll");break;}
+        if(p.revents&POLLIN){if(wl_display_read_events(c.display)<0 || wl_display_dispatch_pending(c.display)<0){refuse(&c,"read-transport");break;}}else wl_display_cancel_read(c.display);
+        if(p.revents&(POLLERR|POLLHUP|POLLNVAL)){refuse(&c,"display-disconnected");break;}
+        if(!c.quit)control_ready(&c);
+    }
+    while(c.barriers)remove_barrier(c.barriers);
+    destroy_children(&c);xdg_toplevel_destroy(c.toplevel);xdg_surface_destroy(c.xdg);wl_surface_destroy(c.root);
+    while(c.buffers)remove_buffer(c.buffers);
+    xdg_wm_base_destroy(c.wm);wl_shm_destroy(c.shm);wl_subcompositor_destroy(c.subcompositor);wl_compositor_destroy(c.compositor);wl_registry_destroy(c.registry);
+    if(!c.failed && wl_display_flush(c.display)<0 && errno!=EAGAIN)c.failed=true;
+    wl_display_disconnect(c.display);if(!c.failed)event(&c,"normalexit",NULL);return c.failed?1:0;
+}

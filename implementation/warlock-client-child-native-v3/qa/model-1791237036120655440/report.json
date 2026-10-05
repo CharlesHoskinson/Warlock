@@ -1,0 +1,34 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-66b8767c5cee4db1b640658a18f7c009.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-child-native-v3/qa/model.py": "12b6849523af1dfaa0862912e6ee79d1a0b942a057e98db84b260513435e166e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-child-native-v3/spec/cache.qnt": "414cbef7b53101bef96e141c07fec142f9fb5c93f00f4554924287209e51b895",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-child-native-v3/SPEC.md": "1dff1d694e9d15216b9b871e1c1ca268fe40bef9bde2510508efb1add1e9edbc"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-child-native-v3/qa/model-1791237036120655440/cache.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "scope": "Five fixed SHM cache scenarios; exported projections require separate actual native replay. No fence/layout/presentation or full release claim.",
+  "error": "AssertionError(\"[DEBUG] ignoring listener exception in favor of parse errors. Exception: violated grammar of annotated params return type\\n\\n Error [QNT000]: mismatched input '=' expecting ':'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-client-child-native-v3/qa/model-1791237036120655440/cache.qnt:17:23\\n  17:   action paint(c:int) = all {exists, child'=if(sync)child else c,\\n                            ^\\n\\n\\n Error [QNT000]: extraneous input 'action' expecting {<EOF>, 'module', DOCCOMMENT}\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-client-child-native-v3/qa/model-1791237036120655440/cache.qnt:21:3\\n  21:   action empty = all {exists, child'=child, queued'=queued, grand'=grand,\\n        ^^^^^^\\n\\nerror: parsing failed\\n\")",
+  "artifacts": {
+    "model.py": "12b6849523af1dfaa0862912e6ee79d1a0b942a057e98db84b260513435e166e",
+    "cache.qnt": "414cbef7b53101bef96e141c07fec142f9fb5c93f00f4554924287209e51b895",
+    "SPEC.md": "1dff1d694e9d15216b9b871e1c1ca268fe40bef9bde2510508efb1add1e9edbc",
+    "typecheck.stdout": "786ebbd37271efae0665877b6d32bec588a45fba031a54fc4ee1781728c37ae9",
+    "typecheck.stderr": "6ff62337ecbc83efacc7807717c0b3796ac1d8ed963e164b3cd2aaebd4e4b19b"
+  }
+}

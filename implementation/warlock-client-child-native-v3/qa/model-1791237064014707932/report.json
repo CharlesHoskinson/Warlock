@@ -1,0 +1,34 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-902bc51a023e4cc0818525433a01d3dc.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-child-native-v3/qa/model.py": "12b6849523af1dfaa0862912e6ee79d1a0b942a057e98db84b260513435e166e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-child-native-v3/spec/cache.qnt": "f6f89e9b25822cdd9085cecedf3f1a9c612366389d56e04692a11880c3e2aee0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-child-native-v3/SPEC.md": "1dff1d694e9d15216b9b871e1c1ca268fe40bef9bde2510508efb1add1e9edbc"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-child-native-v3/qa/model-1791237064014707932/cache.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "scope": "Five fixed SHM cache scenarios; exported projections require separate actual native replay. No fence/layout/presentation or full release claim.",
+  "error": "AssertionError(\"\\n Error [QNT101]: Built-in name 'exists' is redefined in module 'cache'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-client-child-native-v3/qa/model-1791237064014707932/cache.qnt:8:3\\n  8:   var exists: bool\\n       ^^^^^^^^^^^^^^^^\\n\\nerror: parsing failed\\n\")",
+  "artifacts": {
+    "model.py": "12b6849523af1dfaa0862912e6ee79d1a0b942a057e98db84b260513435e166e",
+    "cache.qnt": "f6f89e9b25822cdd9085cecedf3f1a9c612366389d56e04692a11880c3e2aee0",
+    "SPEC.md": "1dff1d694e9d15216b9b871e1c1ca268fe40bef9bde2510508efb1add1e9edbc",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e9041a812827ec1e08dd154c691060bb115a5a05d7ead06c74f03357b7999dc1"
+  }
+}
