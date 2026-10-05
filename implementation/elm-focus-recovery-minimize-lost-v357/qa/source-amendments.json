@@ -1,0 +1,62 @@
+[
+  [
+    "CORE=REPO/'implementation/elm-grab-safe-background-v89';GUI=REPO/'implementation/elm-journal-namespace-v238'",
+    "CORE=REPO/'implementation/elm-grant-retirement-runtime-v595';GUI=REPO/'implementation/elm-focus-recovery-pinned-toolchain-v349'"
+  ],
+  [
+    "SUP=REPO/'implementation/elm-namespaced-supervisor-v239'",
+    "SUP=REPO/'implementation/elm-focus-recovery-renderer-cohort-v354'"
+  ],
+  [
+    "host.original.qa.require_qa_scope()",
+    "host.original.qa.require_qa_scope()\nsys.path.insert(0,str(ROOT/'qa'))\nimport bus_policy\nbus_policy.install(host)"
+  ],
+  [
+    "from effect_endpoint import Endpoint",
+    "from effect_endpoint import Endpoint\nfrom admission_ledger import storage_key"
+  ],
+  [
+    "build_path=sorted((GUI/'qa').glob('build-*/report.json'))[-1]",
+    "review=json.loads((ROOT/'qa/preflight.json').read_text());assert review['passed']\n for path,digest in review['inputs'].items():assert host.digest(path)==digest,path\n build_path=GUI/'qa/build-1791156669069885164/report.json'"
+  ],
+  [
+    "report.update(buildReport=str(build_path),",
+    "report['inputs']=dict(review['inputs'])\n report['inputs'][str(ROOT/'qa/preflight.json')]=host.digest(ROOT/'qa/preflight.json')\n report.update(buildReport=str(build_path),"
+  ],
+  [
+    "with host.PrivateHyprSession(OUTPUT,dict(os.environ),1600,1000,LUA,mesa_vendor=True) as s:",
+    "report['inputs'].update(review['inputs']);report['inputs'][str(ROOT/'qa/preflight.json')]=host.digest(ROOT/'qa/preflight.json')\n with host.PrivateHyprSession(OUTPUT,dict(os.environ),1600,1000,LUA,mesa_vendor=True) as s:"
+  ],
+  [
+    "s.guard();value=fn()\n  if value:return value",
+    "s.guard();value=fn()\n  if time.monotonic()>=until:raise RuntimeError('Unchanged observation deadline')\n  if value:return value"
+  ],
+  [
+    "recovery_dir/'host-intent.json'",
+    "recovery_dir/'admissions-v1'/(storage_key({'schema':2,'effectProtocol':old_request['effectProtocol'],'binding':old_binding,'intent':old_request['intent'],'status':'Pending'})+'.json')"
+  ],
+  [
+    "f.get('kind')=='host-uncertain'",
+    "f.get('kind')=='host-reservation-unknown'"
+  ],
+  [
+    "uncertain['intent']==old_request['intent']",
+    "uncertain['record']['intent']==old_request['intent'] and uncertain['record']['binding']==old_binding and uncertain['record']['status']=='Unknown'"
+  ],
+  [
+    "s.guard();os.kill(renderer['pid'],signal.SIGKILL)",
+    "s.guard();renderer_fd=os.pidfd_open(renderer['pid'],0)\n   try:\n    assert start_time(renderer['pid'])==renderer['start'];signal.pidfd_send_signal(renderer_fd,signal.SIGKILL,None,0)\n   finally:os.close(renderer_fd)"
+  ],
+  [
+    "s.guard();os.kill(second_renderers[0]['pid'],signal.SIGKILL)",
+    "s.guard();renderer_fd=os.pidfd_open(second_renderers[0]['pid'],0)\n   try:\n    assert start_time(second_renderers[0]['pid'])==second_renderers[0]['start'];signal.pidfd_send_signal(renderer_fd,signal.SIGKILL,None,0)\n   finally:os.close(renderer_fd)"
+  ],
+  [
+    "   check('replacementReceivesFreshlyBoundOriginalUnknownIntent',uncertain['binding']==fresh_binding and uncertain['record']['intent']==old_request['intent'] and uncertain['record']['binding']==old_binding and uncertain['record']['status']=='Unknown',frame=uncertain)",
+    "   check('replacementReceivesFreshlyBoundOriginalUnknownIntent',uncertain['binding']==fresh_binding and uncertain['record']['intent']==old_request['intent'] and uncertain['record']['binding']==old_binding and uncertain['record']['status']=='Unknown',frame=uncertain)\n   released=wait(lambda:next((f for f in reversed(frames('backend-frame: ')) if f.get('kind')=='host-reservation-released' and f['binding']==fresh_binding and f['record']==uncertain['record']),None))\n   proof=released['release']['proof'];observation=released['release']['observation']\n   native_proof=next(f for f in frames('backend-frame: ') if f.get('kind')=='binding-retirement' and f==proof)\n   check('actualPostRetirementReadsReleaseExactHistoricalUnknown',proof==native_proof and proof['binding']==fresh_binding and proof['queriedBinding']==old_binding and proof['grantState']=='Retired' and observation['actionContext']['epoch']==fresh_binding['frontend'] and observation['geometryContext']['epoch']==fresh_binding['frontend'] and observation['actionContext']['output']==observation['geometryContext']['output'],wire=released)\n   archive=json.loads((recovery_dir/'ledger-v6.json').read_text());deliveries=json.loads((recovery_dir/'release-deliveries-v1.json').read_text())\n   certificate=next(c for c in deliveries['certificates'] if c['record']==uncertain['record'] and {k:c[k] for k in ('id','proof','observation')}==released['release'])\n   original_release=next(r for r in archive['releases'] if r['id']==certificate['anchorId'])\n   check('actualDurableReleaseAnchorsUnknownWithoutNativeOutcomeRelabel',original_release['phase']=='Released' and original_release['record']==uncertain['record'] and original_release['record']['status']=='Unknown' and not record_path.exists() and not journal(),archive=original_release,certificate=certificate)\n   report['retirementRelease']={'wire':released,'historical':original_release,'certificate':certificate}\n"
+  ],
+  [
+    "if loaded:s.guard();assert s.ctl('plugin','unload',plugin).strip()=='ok';loaded=False",
+    "if loaded:wait(lambda:s.data('clients')==[]);s.guard();assert s.ctl('plugin','unload',plugin).strip()=='ok';loaded=False"
+  ]
+]
