@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "boundedClientProducerChecksPassed": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "designConsensusAccepted": true,
+  "visualEffectsImplemented": false,
+  "mainDesktopActivated": false,
+  "evidence": {
+    "implementation/warlock-core-subsurface-cache-v1/build-1791235691070651144/report.json": "bc46e169482412c1c50a0696918b64a395b36ba006682605c02415f064b12f51",
+    "implementation/warlock-client-source-revisions-v2/qa/build-1791235828080814824/report.json": "e924afb40224712cc0886a1298427ad80e3ff1bf489742d34d19b8ee33a397b1",
+    "implementation/warlock-client-child-native-v2/qa/native-1791235916575327729/report.json": "9b93b66c1efc7e779d192027aecc8a7dbb6efddd54324aa00e02350959ce9792",
+    "implementation/warlock-client-source-native-v2/qa/native-1791236297652478028/report.json": "d57c25b5aaf73bfe6e2c083f54b3c90ceb26ee9436a4b492b6fd2c1cd182f517",
+    "DesignLanguage/layered-windows/v1/qa/contracts-1791236439877157919/report.json": "392a210445f3915420eb6fc978c0203109e7aca3e480b2ffb3f8bd87437daf70"
+  },
+  "preservedFailure": {
+    "path": "implementation/warlock-client-child-native-v1/qa/native-1791235378927242729/report.json",
+    "sha256": "ee166bde09472031f7005805537b6192983487bbd8cbd8ea8cda8393437cfd86"
+  },
+  "unchangedPureHelpersWithPrior65CPU9Quint21Traces508States": {
+    "implementation/warlock-client-source-revisions-v2/native/tree_revision.hpp": "e66275f37faabd7b939a4f628e22857b77cd598535e58bbf793c60bf5d4f3f46",
+    "implementation/warlock-client-source-revisions-v2/native/source_epoch.hpp": "df64eec18b8bd62b0b21b73e3aabbc1a9db10f122af65e36f78a6147bd67860f",
+    "implementation/warlock-core-subsurface-cache-v1/candidate/src/protocols/core/AppliedSurfaceRevision.hpp": "867509f9c54d6877810a63f7d5385b50c6cbb56e69b19a73dd0f8b00626e4036"
+  },
+  "priorModelScope": "Pure AppliedRevision/TreeRevision only; new compositor cache/merge/fence protocol is not modeled by that packet",
+  "workplanSHA256": "bdcf8599107e04bddf85ed217c6c2106597dd0a0b23c6b475439326bac1ff916",
+  "components": {
+    "warlock-core-subsurface-cache-v1": "d6d6b493b811515ee251cadea89c8547e81142deec61465f67402b2921fe6205",
+    "warlock-client-child-fixture-v1": "32b49f17acd291b538ab310d56cb8cded680af8084864d7b683d89d417405e6f",
+    "warlock-client-child-native-v1": "b7d9b63c832217e547655a5daab6622241217cb8a9573e11150e62f78569803e",
+    "warlock-client-child-native-v2": "a488e7ccdebfb9544656a1759efc62db04fb392ee529e901c740bebc17bbc6e0",
+    "warlock-client-source-revisions-v2": "4fd408d5fcc62916ee859149f3260a0116f37e7e92cebd48024f2c69121d705b",
+    "warlock-client-source-native-v2": "9c8d43303c4abadfdc4d5ae75fd71c167704ad37cc53326d4f0d7cd8552708d3"
+  }
+}

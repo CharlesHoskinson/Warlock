@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "packetManifest": "DesignLanguage/layered-windows/v1/packet-manifest-v1.json",
+  "packetSHA256": "feb9f0ef16f1d53a6a6b3b81bbfdc3e7a648ef1caf08926987bff0fa7ad00377",
+  "candidateSHA256": "32f070326d85bbb86bc985498fac766bd39d64d2f0cd72367d7c9aa2e0fc515e",
+  "unanimous": true,
+  "reviewerCount": 3,
+  "requirements": 14,
+  "scenarios": 30,
+  "ballots": [
+    {
+      "role": "color",
+      "path": "DesignLanguage/layered-windows/v1/council/color.ballot-v1.json",
+      "sha256": "7e213d4fba56847ff676555299163a84437409409143028696d5d0f436cf6161"
+    },
+    {
+      "role": "depth",
+      "path": "DesignLanguage/layered-windows/v1/council/depth.ballot-v1.json",
+      "sha256": "a2f688412587cf8c4c6f84d4f037b1cab2c84b55f25256e5659492b1eee32052"
+    },
+    {
+      "role": "interaction",
+      "path": "DesignLanguage/layered-windows/v1/council/interaction.ballot-v1.json",
+      "sha256": "a8356ca523b77a3b7e523909a6dfba9346c615cf2c39206581d8f6762cc4d7d6"
+    }
+  ],
+  "scope": "Accepted additive design targets only; actual visual/native/product implementation and release qualification remain open",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

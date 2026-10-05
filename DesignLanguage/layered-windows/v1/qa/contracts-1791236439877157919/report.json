@@ -1,0 +1,292 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-8d686b452a2241caa9b305c2391f9ea6.scope",
+    "coreLimit": 1
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "checks": [
+    "Exact packet receipt",
+    "Packet DesignLanguage/layered-windows/v1/candidate-v1.json",
+    "Packet DesignLanguage/layered-windows/v1/EARS.md",
+    "Packet DesignLanguage/layered-windows/v1/tokens.json",
+    "Packet DesignLanguage/layered-windows/v1/DECISIONS.md",
+    "Packet DesignLanguage/layered-windows/v1/WORKPLAN.md",
+    "Packet DesignLanguage/layered-windows/v1/source-manifest.json",
+    "Packet DesignLanguage/layered-windows/v1/council/color.md",
+    "Packet DesignLanguage/layered-windows/v1/council/depth.md",
+    "Packet DesignLanguage/layered-windows/v1/council/interaction.md",
+    "Packet openspec/changes/warlock-layered-window-language/proposal.md",
+    "Packet openspec/changes/warlock-layered-window-language/design.md",
+    "Packet openspec/changes/warlock-layered-window-language/tasks.md",
+    "Packet openspec/changes/warlock-layered-window-language/specs/warlock-layered-window-language/spec.md",
+    "Frozen source DesignLanguage/CONSENSUS.md",
+    "Frozen source DesignLanguage/EARS.md",
+    "Frozen source DesignLanguage/catalog/v6/tokens.json",
+    "Frozen source docs/warlock-brand/v1/BRAND-GUIDE.md",
+    "Frozen source docs/warlock-compatibility/omarchy-v1/README.md",
+    "Frozen source openspec/changes/warlock-omarchy-compatibility/specs/omarchy-compatibility/spec.md",
+    "Fourteen unique requirements",
+    "Thirty unique scenarios",
+    "color exact acceptance",
+    "depth exact acceptance",
+    "interaction exact acceptance",
+    "EARS exact voted clauses",
+    "OpenSpec exact clauses/scenarios",
+    "Palette preserved",
+    "dark rest text opaque pair",
+    "dark rest muted opaque pair",
+    "dark rest accent opaque pair",
+    "dark rest border opaque pair",
+    "dark raised text opaque pair",
+    "dark raised muted opaque pair",
+    "dark raised accent opaque pair",
+    "dark raised border opaque pair",
+    "dark recessed text opaque pair",
+    "dark recessed muted opaque pair",
+    "dark recessed accent opaque pair",
+    "dark recessed border opaque pair",
+    "light rest text opaque pair",
+    "light rest muted opaque pair",
+    "light rest accent opaque pair",
+    "light rest border opaque pair",
+    "light raised text opaque pair",
+    "light raised muted opaque pair",
+    "light raised accent opaque pair",
+    "light raised border opaque pair",
+    "light recessed text opaque pair",
+    "light recessed muted opaque pair",
+    "light recessed accent opaque pair",
+    "light recessed border opaque pair",
+    "Bounded effect recipes",
+    "No periodic decoration clock",
+    "No false native qualification",
+    "Strict OpenSpec1.14"
+  ],
+  "contrasts": [
+    {
+      "theme": "dark",
+      "surface": "rest",
+      "role": "text",
+      "foreground": "#F5F0E8",
+      "background": "#1B1E2B",
+      "ratio": 14.608459123385975,
+      "minimum": 4.5
+    },
+    {
+      "theme": "dark",
+      "surface": "rest",
+      "role": "muted",
+      "foreground": "#ABB1C4",
+      "background": "#1B1E2B",
+      "ratio": 7.747461309551536,
+      "minimum": 4.5
+    },
+    {
+      "theme": "dark",
+      "surface": "rest",
+      "role": "accent",
+      "foreground": "#B7A2FF",
+      "background": "#1B1E2B",
+      "ratio": 7.595978764183988,
+      "minimum": 3
+    },
+    {
+      "theme": "dark",
+      "surface": "rest",
+      "role": "border",
+      "foreground": "#68718C",
+      "background": "#1B1E2B",
+      "ratio": 3.416483873311321,
+      "minimum": 3
+    },
+    {
+      "theme": "dark",
+      "surface": "raised",
+      "role": "text",
+      "foreground": "#F5F0E8",
+      "background": "#242633",
+      "ratio": 13.222105610281154,
+      "minimum": 4.5
+    },
+    {
+      "theme": "dark",
+      "surface": "raised",
+      "role": "muted",
+      "foreground": "#ABB1C4",
+      "background": "#242633",
+      "ratio": 7.012221534197943,
+      "minimum": 4.5
+    },
+    {
+      "theme": "dark",
+      "surface": "raised",
+      "role": "accent",
+      "foreground": "#B7A2FF",
+      "background": "#242633",
+      "ratio": 6.875114793778103,
+      "minimum": 3
+    },
+    {
+      "theme": "dark",
+      "surface": "raised",
+      "role": "border",
+      "foreground": "#68718C",
+      "background": "#242633",
+      "ratio": 3.092257041430828,
+      "minimum": 3
+    },
+    {
+      "theme": "dark",
+      "surface": "recessed",
+      "role": "text",
+      "foreground": "#F5F0E8",
+      "background": "#1A1D2A",
+      "ratio": 14.772758154125075,
+      "minimum": 4.5
+    },
+    {
+      "theme": "dark",
+      "surface": "recessed",
+      "role": "muted",
+      "foreground": "#ABB1C4",
+      "background": "#1A1D2A",
+      "ratio": 7.834595782331781,
+      "minimum": 4.5
+    },
+    {
+      "theme": "dark",
+      "surface": "recessed",
+      "role": "accent",
+      "foreground": "#B7A2FF",
+      "background": "#1A1D2A",
+      "ratio": 7.6814095367199045,
+      "minimum": 3
+    },
+    {
+      "theme": "dark",
+      "surface": "recessed",
+      "role": "border",
+      "foreground": "#68718C",
+      "background": "#1A1D2A",
+      "ratio": 3.4549085274230076,
+      "minimum": 3
+    },
+    {
+      "theme": "light",
+      "surface": "rest",
+      "role": "text",
+      "foreground": "#10111A",
+      "background": "#FFFFFF",
+      "ratio": 18.798210776455615,
+      "minimum": 4.5
+    },
+    {
+      "theme": "light",
+      "surface": "rest",
+      "role": "muted",
+      "foreground": "#53596C",
+      "background": "#FFFFFF",
+      "ratio": 6.969119113269721,
+      "minimum": 4.5
+    },
+    {
+      "theme": "light",
+      "surface": "rest",
+      "role": "accent",
+      "foreground": "#583DA4",
+      "background": "#FFFFFF",
+      "ratio": 8.019840303964083,
+      "minimum": 3
+    },
+    {
+      "theme": "light",
+      "surface": "rest",
+      "role": "border",
+      "foreground": "#838A9A",
+      "background": "#FFFFFF",
+      "ratio": 3.4613087720748563,
+      "minimum": 3
+    },
+    {
+      "theme": "light",
+      "surface": "raised",
+      "role": "text",
+      "foreground": "#10111A",
+      "background": "#FFFFFF",
+      "ratio": 18.798210776455615,
+      "minimum": 4.5
+    },
+    {
+      "theme": "light",
+      "surface": "raised",
+      "role": "muted",
+      "foreground": "#53596C",
+      "background": "#FFFFFF",
+      "ratio": 6.969119113269721,
+      "minimum": 4.5
+    },
+    {
+      "theme": "light",
+      "surface": "raised",
+      "role": "accent",
+      "foreground": "#583DA4",
+      "background": "#FFFFFF",
+      "ratio": 8.019840303964083,
+      "minimum": 3
+    },
+    {
+      "theme": "light",
+      "surface": "raised",
+      "role": "border",
+      "foreground": "#838A9A",
+      "background": "#FFFFFF",
+      "ratio": 3.4613087720748563,
+      "minimum": 3
+    },
+    {
+      "theme": "light",
+      "surface": "recessed",
+      "role": "text",
+      "foreground": "#10111A",
+      "background": "#FEFEFE",
+      "ratio": 18.63891110605308,
+      "minimum": 4.5
+    },
+    {
+      "theme": "light",
+      "surface": "recessed",
+      "role": "muted",
+      "foreground": "#53596C",
+      "background": "#FEFEFE",
+      "ratio": 6.910061451296363,
+      "minimum": 4.5
+    },
+    {
+      "theme": "light",
+      "surface": "recessed",
+      "role": "accent",
+      "foreground": "#583DA4",
+      "background": "#FEFEFE",
+      "ratio": 7.951878627595258,
+      "minimum": 3
+    },
+    {
+      "theme": "light",
+      "surface": "recessed",
+      "role": "border",
+      "foreground": "#838A9A",
+      "background": "#FEFEFE",
+      "ratio": 3.4319769727291694,
+      "minimum": 3
+    }
+  ],
+  "packetSHA256": "feb9f0ef16f1d53a6a6b3b81bbfdc3e7a648ef1caf08926987bff0fa7ad00377",
+  "candidateSHA256": "32f070326d85bbb86bc985498fac766bd39d64d2f0cd72367d7c9aa2e0fc515e",
+  "runnerSHA256": "95f19266442b5f08516fc6f7ce281b3bbe14106c7ea92aa6eca32f89ea1fb3ac",
+  "openspecCLI": {
+    "path": "/home/hoskinson/.npm/_npx/b05ce0373733faa6/node_modules/@fission-ai/openspec/bin/openspec.js",
+    "sha256": "ca136f0e9fd4951dcf93d8ed729ebc97b2d97d3980cd9dc9d42fc80e32e797c6"
+  }
+}

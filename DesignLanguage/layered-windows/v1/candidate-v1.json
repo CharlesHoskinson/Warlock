@@ -1,0 +1,315 @@
+{
+  "schema": 1,
+  "status": "candidate-awaiting-exact-ratification",
+  "guardrail": "Additive accepted-design targets only after exact council ratification. Implementation and native qualification remain open. Frozen242/417, separate right-click24/48, thirty design contracts, original identities/deadlines, one Elm policy owner, physical ownership and all release gates remain mandatory.",
+  "contracts": [
+    {
+      "id": "WARLOCK-LAYER-001",
+      "title": "Focus and native keyboard scope",
+      "ears": "WHEN admitted native observations identify the active application and current keyboard recipient, Warlock SHALL render an opaque solid active-application contour and SHALL place its steady primary violet halo only on the confirmed keyboard recipient's eligible window or Warlock-owned shell chrome; IF that recipient is unconfirmed, it SHALL omit the primary halo and expose that uncertainty independently from operation outcomes.",
+      "scenarios": [
+        {
+          "id": "WARLOCK-LAYER-001-01",
+          "name": "Chooser owns typing",
+          "given": "application A remains the native active application while an admitted chooser owns keyboard scope",
+          "when": "the chooser selects candidate B",
+          "then": "A retains its Active application contour, the chooser chrome receives the primary halo, and B receives Candidate marks without implying that A or B receives typing"
+        },
+        {
+          "id": "WARLOCK-LAYER-001-02",
+          "name": "Unconfirmed recipient",
+          "given": "active application facts are available but current keyboard scope is unavailable",
+          "when": "the view renders",
+          "then": "the active contour is retained where qualified, the primary halo is absent, and Input target unconfirmed does not become a Committed or Unknown operation"
+        }
+      ]
+    },
+    {
+      "id": "WARLOCK-LAYER-002",
+      "title": "Candidate distinct from active",
+      "ears": "WHILE navigation has a prospective window candidate, Warlock SHALL show violet corner marks or a dashed boundary and the visible Candidate label on its navigation tile, independently from active-application, keyboard-recipient, control-focus and outcome cues, without raising or focusing a window merely to draw that decoration.",
+      "scenarios": [
+        {
+          "id": "WARLOCK-LAYER-002-01",
+          "name": "Cancel navigation",
+          "given": "A is active and B is a candidate in the existing chooser",
+          "when": "navigation is cancelled through its effective binding",
+          "then": "B's Candidate cue is removed and no decorative action focuses or raises B"
+        },
+        {
+          "id": "WARLOCK-LAYER-002-02",
+          "name": "Valid focus after candidate advances",
+          "given": "candidate C follows B and a newer valid native observation confirms focus on B",
+          "when": "the observation is admitted against native revision and incarnation",
+          "then": "B becomes observed active while C remains Candidate; validity is not inferred from whether B equals the current candidate"
+        },
+        {
+          "id": "WARLOCK-LAYER-002-03",
+          "name": "Retired candidate",
+          "given": "candidate B has a fixed native incarnation",
+          "when": "B retires during navigation",
+          "then": "existing eligibility rules choose or clear the candidate, stale target decorations retire, and no replacement with a reused title or address inherits B's identity"
+        }
+      ]
+    },
+    {
+      "id": "WARLOCK-LAYER-003",
+      "title": "Neutral shadow depth",
+      "ears": "WHILE eligible layered windows are presented, Warlock SHALL use bounded neutral contact and ambient shadows selected by semantic surface role and qualified committed scene geometry, independently from focus, pin state, candidate order and effect outcome; it SHALL preserve native stack order and clipping.",
+      "scenarios": [
+        {
+          "id": "WARLOCK-LAYER-003-01",
+          "name": "Focus does not lift",
+          "given": "two ordinary windows have committed order and fixed geometry",
+          "when": "focus decoration changes",
+          "then": "their shadow class and native order do not change solely because the halo changes"
+        },
+        {
+          "id": "WARLOCK-LAYER-003-02",
+          "name": "Occlusion and edges",
+          "given": "an eligible decorated window is covered by an unrelated surface or touches a maximized output edge",
+          "when": "the qualified scene renders",
+          "then": "its effects are occluded and clipped with its own scene surface; no glow leaks through the cover or creates an input region"
+        }
+      ]
+    },
+    {
+      "id": "WARLOCK-LAYER-004",
+      "title": "Owned chrome shading",
+      "ears": "WHILE layer grouping is displayed, Warlock SHALL shade opaque Warlock-owned chrome and shell backplates through the additive token tiers, and SHALL preserve client-owned pixels, readable chrome text, actual source geometry and input eligibility.",
+      "scenarios": [
+        {
+          "id": "WARLOCK-LAYER-004-01",
+          "name": "Editor content preserved",
+          "given": "an inactive editor sits behind a focused dialog",
+          "when": "depth treatment is drawn",
+          "then": "the editor's client pixels retain their original color and opacity except actual native occlusion; only qualified owned chrome receives shading"
+        },
+        {
+          "id": "WARLOCK-LAYER-004-02",
+          "name": "No owned titlebar",
+          "given": "a client supplies all of its own chrome",
+          "when": "Warlock presents its layer relationship",
+          "then": "relationship marks and labels appear on qualified shell framing or navigation tiles without recoloring the client titlebar"
+        }
+      ]
+    },
+    {
+      "id": "WARLOCK-LAYER-005",
+      "title": "Native family relation",
+      "ears": "WHEN admitted native observations establish a window family, Warlock SHALL represent that relation with segmented brackets and a Family or Context label; any optional relationship glow SHALL stay confined to short brackets at alpha no greater than 0.06, subordinate to the primary halo, and SHALL imply neither keyboard focus nor input eligibility.",
+      "scenarios": [
+        {
+          "id": "WARLOCK-LAYER-005-01",
+          "name": "Same process is not family",
+          "given": "two unrelated windows share a PID and similar titles",
+          "when": "family observations are evaluated",
+          "then": "no shared family markers are inferred from PID, title, icon or proximity"
+        },
+        {
+          "id": "WARLOCK-LAYER-005-02",
+          "name": "Family under chooser",
+          "given": "owner and dialog belong to one admitted family while the chooser owns keyboard scope",
+          "when": "their family is shown in navigation",
+          "then": "short relation brackets remain distinct from the chooser's primary halo and neither application window is falsely identified as the typing recipient"
+        }
+      ]
+    },
+    {
+      "id": "WARLOCK-LAYER-006",
+      "title": "Modal scope and independent pin state",
+      "ears": "WHILE native observations admit modality, blocking or pinning, Warlock SHALL show their specific glyphs, labels and reasons independently from glow, depth and candidate cues; modal shading SHALL affect only admitted blocked owned chrome and SHALL leave unrelated windows under their existing focus and input rules.",
+      "scenarios": [
+        {
+          "id": "WARLOCK-LAYER-006-01",
+          "name": "Unrelated peer remains usable",
+          "given": "a modal blocks owner O and an unrelated peer P is present",
+          "when": "layer effects are rendered",
+          "then": "O alone receives its observed blocked chrome treatment and P preserves its existing click-to-focus and input eligibility"
+        },
+        {
+          "id": "WARLOCK-LAYER-006-02",
+          "name": "Pinned inactive window",
+          "given": "native facts show pinned window P while window A is active",
+          "when": "the view renders",
+          "then": "P shows a neutral pin marker and Pinned label without inheriting A's active contour or changing its semantic shadow class"
+        }
+      ]
+    },
+    {
+      "id": "WARLOCK-LAYER-007",
+      "title": "Outcomes remain independent",
+      "ears": "WHILE an operation is Pending, Refused, Cancelled or Unknown, Warlock SHALL preserve its correlated target and readable outcome cue independently from focus, hover, candidate, family and depth effects; decoration SHALL neither confirm an effect nor replay an Unknown operation.",
+      "scenarios": [
+        {
+          "id": "WARLOCK-LAYER-007-01",
+          "name": "Pending focus request",
+          "given": "candidate B has a Pending activation while A remains admitted active",
+          "when": "B's tile is drawn",
+          "then": "B remains Candidate with Pending text and does not receive a native-confirmed primary halo"
+        },
+        {
+          "id": "WARLOCK-LAYER-007-02",
+          "name": "Unknown with observed focus",
+          "given": "an operation is Unknown and a separate valid observation changes focus",
+          "when": "the observation is admitted",
+          "then": "focus decorations update from the observation while the correlated Unknown outcome remains unresolved and is not automatically replayed"
+        }
+      ]
+    },
+    {
+      "id": "WARLOCK-LAYER-008",
+      "title": "Minimized and ineligible surfaces",
+      "ears": "WHEN a surface is minimized, retired, fully occluded or ineligible in the admitted scene, Warlock SHALL suppress its desktop decoration according to that native eligibility and SHALL keep its permitted taskbar or navigation representation distinct, preserving Source Live, Historical, Loading and Unavailable preview meanings.",
+      "scenarios": [
+        {
+          "id": "WARLOCK-LAYER-008-01",
+          "name": "Minimized Historical card",
+          "given": "a minimized window has an authorized Historical preview",
+          "when": "the taskbar shows its card",
+          "then": "the card retains Historical and Minimized cues without a phantom desktop halo or relabeling the pixels as Live"
+        },
+        {
+          "id": "WARLOCK-LAYER-008-02",
+          "name": "Workspace retirement",
+          "given": "a decorated surface becomes ineligible through workspace or output change",
+          "when": "the scene generation advances",
+          "then": "its desktop effects retire under the qualified scene and output generation, with no ghost glow or surviving hit region"
+        }
+      ]
+    },
+    {
+      "id": "WARLOCK-LAYER-009",
+      "title": "Contrast and non-color cues",
+      "ears": "WHEN layered-window tokens are built or rendered, Warlock SHALL verify declared small-text pairs at 4.5:1 and required non-text boundary and focus pairs at 3:1 against their actual adjacent or composited backgrounds, SHALL supply visible shape or text for each meaningful state, and SHALL provide opaque controlled backing for essential contours over arbitrary content.",
+      "scenarios": [
+        {
+          "id": "WARLOCK-LAYER-009-01",
+          "name": "Contrast extremes",
+          "given": "black, white and patterned adjacent pixels occur in both themes",
+          "when": "focus and candidate contours are rendered",
+          "then": "essential contours meet their declared threshold against their controlled adjacent backing; decorative halo is not counted as the sole state indicator"
+        },
+        {
+          "id": "WARLOCK-LAYER-009-02",
+          "name": "Grayscale navigation",
+          "given": "color distinctions are unavailable",
+          "when": "active, candidate, family, pin, minimized, blocked and outcome states coexist",
+          "then": "their different contours, glyphs and visible labels remain distinguishable; accessible names alone do not substitute for visible non-color cues"
+        }
+      ]
+    },
+    {
+      "id": "WARLOCK-LAYER-010",
+      "title": "Equivalent preference modes",
+      "ears": "WHERE high contrast, reduced transparency, reduced motion or effects-off is requested through the qualified preference route, Warlock SHALL retain equivalent focus, candidate, family, depth and outcome information using opaque boundaries, shapes, labels and permitted shading while preserving native observations, target identity, outstanding obligations and original deadlines.",
+      "scenarios": [
+        {
+          "id": "WARLOCK-LAYER-010-01",
+          "name": "High contrast",
+          "given": "native preferences request high contrast",
+          "when": "the view projects layered windows",
+          "then": "soft halos and shadows are disabled, opaque system-role boundaries and state distinctions remain, and effects-off does not change desktop policy"
+        },
+        {
+          "id": "WARLOCK-LAYER-010-02",
+          "name": "Preference during Unknown",
+          "given": "an operation is Unknown and a theme or motion preference changes",
+          "when": "the new view is presented",
+          "then": "the same target and outcome remain, no intent is replayed or confirmed, and the original operation deadline is not renewed"
+        }
+      ]
+    },
+    {
+      "id": "WARLOCK-LAYER-011",
+      "title": "Palette and brand scope",
+      "ears": "WHEN the layered-window language is applied, Warlock SHALL preserve the frozen schema-1 palette, typefaces and existing thirty design contracts, SHALL resolve additive reference-to-semantic-to-component tokens, and SHALL restrict major glow to eligible window or shell chrome and short relationship brackets; ordinary controls and small logos SHALL retain their existing crisp treatment.",
+      "scenarios": [
+        {
+          "id": "WARLOCK-LAYER-011-01",
+          "name": "Dark and light accents",
+          "given": "the user switches between approved dark and light themes",
+          "when": "the layer tokens resolve",
+          "then": "the approved lilac and darker light-theme violet roles are used without changing frozen reference values"
+        },
+        {
+          "id": "WARLOCK-LAYER-011-02",
+          "name": "User accent fails contrast",
+          "given": "a user-supplied accent fails a declared role pair",
+          "when": "essential cues render",
+          "then": "a contrast-qualified derived role or preserved default is used without silently changing the stored personal preference or losing non-color meaning"
+        }
+      ]
+    },
+    {
+      "id": "WARLOCK-LAYER-012",
+      "title": "Bounded motion and resource work",
+      "ears": "WHILE layered-window effects are displayed, Warlock SHALL keep them static at rest, SHALL schedule no recurring frame work solely for decorative glow, SHALL limit the initial recipe to two neutral shadow components and one primary halo per eligible surface with blur caps of 32 and 12 logical units respectively, and SHALL qualify their actual lifetime and costs against the original measured S02 and presentation gates before release.",
+      "scenarios": [
+        {
+          "id": "WARLOCK-LAYER-012-01",
+          "name": "Idle effects",
+          "given": "window geometry and admitted layer states are stable",
+          "when": "the desktop remains idle",
+          "then": "decorations create no periodic animation timers or independent clocks; ordinary client damage remains governed by the existing renderer"
+        },
+        {
+          "id": "WARLOCK-LAYER-012-02",
+          "name": "Rapid transitions",
+          "given": "native focus changes again during an optional at-most-120ms decorative opacity transition",
+          "when": "the latest valid observation is admitted",
+          "then": "the essential boundary updates immediately, reduced motion removes the decorative transition, and no transition extends an operation deadline"
+        },
+        {
+          "id": "WARLOCK-LAYER-012-03",
+          "name": "Outputs and physical retirement",
+          "given": "decorated windows cross scales or rendering generations then retire",
+          "when": "native output and lifecycle events are exercised",
+          "then": "owning renderer resources are generation-qualified and physically retired, with actual S02 and hardware evidence required rather than browser timing claims"
+        }
+      ]
+    },
+    {
+      "id": "WARLOCK-LAYER-013",
+      "title": "Omarchy interaction compatibility",
+      "ears": "WHEN layered-window navigation is exercised, Warlock SHALL preserve the effective Omarchy command vocabulary, arguments, keybindings and user override precedence, including chooser or immediate-cycle behavior as actually configured, release/repeat/submap/mouse/lock/consumption semantics, popup and IME ownership; visual cues SHALL add no speculative native effects or new shortcut meaning.",
+      "scenarios": [
+        {
+          "id": "WARLOCK-LAYER-013-01",
+          "name": "User AltTab chooser",
+          "given": "the frozen user override maps Alt+Tab to the chooser",
+          "when": "navigation and Alt release are exercised",
+          "then": "the effective chooser and non-consuming release behavior are retained, with no replacement by a packaged immediate-cycle assumption"
+        },
+        {
+          "id": "WARLOCK-LAYER-013-02",
+          "name": "Different effective map",
+          "given": "the admitted effective configuration uses immediate cycle behavior",
+          "when": "its native binding executes",
+          "then": "the actual behavior and observation-driven cues are preserved without fabricating a chooser commit or importing runtime Lua callback numbers as portable action names"
+        }
+      ]
+    },
+    {
+      "id": "WARLOCK-LAYER-014",
+      "title": "Qualification and one authority",
+      "ears": "WHEN layered-window work is integrated or reported, Warlock SHALL derive policy and view state from the one immutable Elm owner and admitted native facts, SHALL distinguish token/model/browser evidence from native focus, presented pixels, accessibility and physical retirement evidence, and SHALL preserve every original release gate and scenario identity.",
+      "scenarios": [
+        {
+          "id": "WARLOCK-LAYER-014-01",
+          "name": "Browser specimen",
+          "given": "the catalog renders illustrative layer states with explicit supplied fixtures",
+          "when": "it is inspected",
+          "then": "it demonstrates design only and cannot establish native focus, stack order, eligibility, rendered desktop pixels or full release acceptance"
+        },
+        {
+          "id": "WARLOCK-LAYER-014-02",
+          "name": "Native adoption",
+          "given": "the new effects are integrated into a fresh owning GUI derivative",
+          "when": "release qualification runs",
+          "then": "the exact core/plugin/host tuple and original preview13, restore38/recovery34, drag52, input, hardware/output, AT/IME, resource, journeys and rollback gates remain applicable"
+        }
+      ]
+    }
+  ]
+}
