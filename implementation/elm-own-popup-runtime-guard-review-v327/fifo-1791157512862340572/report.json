@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Actual guarded open original150ms deadline with owned regular/FIFO CPU helper; no compositor/host operation",
+  "sourceSHA256": "97a7a1dbbe46269f2d24703e55f39022377a9c71dd4433c2bb64c9e0fdbdf397",
+  "cases": [
+    {
+      "mode": "regular",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-guard-review-v327/fifo-witness.py",
+        "--child",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-guard-review-v327/fifo-1791157512862340572/guard.py",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-guard-review-v327/fifo-1791157512862340572/regular.target",
+        "f5e6d024c05c9cc2746a3e127408b91a8b7a7f2a30da0c259bc54265502ddef4"
+      ],
+      "pid": 195265,
+      "start": "12561657",
+      "exitCode": 0,
+      "timedOut": false,
+      "originalDeadlineSeconds": 0.15,
+      "boundedOwnerTimeoutSeconds": 0.8,
+      "elapsed": 0.03166807799425442,
+      "stdout": "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-guard-review-v327/fifo-1791157512862340572/regular.stdout",
+      "stderr": "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-guard-review-v327/fifo-1791157512862340572/regular.stderr"
+    },
+    {
+      "mode": "fifo",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-guard-review-v327/fifo-witness.py",
+        "--child",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-guard-review-v327/fifo-1791157512862340572/guard.py",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-guard-review-v327/fifo-1791157512862340572/fifo.target",
+        "0000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "pid": 195266,
+      "start": "12561660",
+      "exitCode": -15,
+      "timedOut": true,
+      "originalDeadlineSeconds": 0.15,
+      "boundedOwnerTimeoutSeconds": 0.8,
+      "elapsed": 0.8014023560099304,
+      "stdout": "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-guard-review-v327/fifo-1791157512862340572/fifo.stdout",
+      "stderr": "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-guard-review-v327/fifo-1791157512862340572/fifo.stderr"
+    }
+  ]
+}

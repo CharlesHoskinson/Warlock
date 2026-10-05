@@ -1,0 +1,7 @@
+# V332 selector source review
+
+No remaining source blocker was identified for the root-owned picker diagnostic. Selection uses the latest complete inspection and bar report, exact publication/lease, Coherent Idle closed state, empty unresolved ledgers and one inspection group domId matching exactly one enabled DOM button. Geometry must be finite, positive and inside the original viewport. Missing/stale/disabled states yield no point; ambiguity and malformed typed values refuse. No old coherent frame is searched as a fallback. Incomplete trailing writes remain unqualified until complete; the native host still validates gesture freshness.
+
+Retained actual publication6 yields [217,21]; disabled publication4 and final Awaiting7 yield no point. The original V325 guessed-prefix function fails the same actual positive log. All 27 selector controls and the retained inherited parser checks must bind to the final inventory. The complete native body remains AST-identical except the point function, which still checks the original deadline after selecting. V310/V592 host tuple, V330 runtime guards, GTK role/resource/configure-ACK/native-incarnation joins, empty effects, direct broker EOF evidence and ordered cleanup are inherited unchanged.
+
+This corrects a diagnostic selector. It does not qualify popup delivery, own-blocker authorization, GTK02, menu effects or the full GTK campaign. Actual root-owned native evidence is still required.

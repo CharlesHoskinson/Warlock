@@ -1,0 +1,18 @@
+[
+  [
+    "CORE=REPO/'implementation/elm-picker-ready-runtime-v239';GUI=REPO/'implementation/elm-responsive-surfaces-gui-v278'",
+    "CORE=REPO/'implementation/elm-grant-retirement-runtime-v595';GUI=REPO/'implementation/elm-focus-recovery-pinned-toolchain-v349'"
+  ],
+  [
+    "SUP=REPO/'implementation/elm-responsive-cohort-v296'",
+    "SUP=REPO/'implementation/elm-focus-recovery-renderer-cohort-v354'"
+  ],
+  [
+    "host.original.qa.require_qa_scope()",
+    "host.original.qa.require_qa_scope()\nsys.path.insert(0,str(ROOT/'qa'))\nimport bus_policy\nbus_policy.install(host)"
+  ],
+  [
+    "build_path=sorted((GUI/'qa').glob('build-*/report.json'))[-1]",
+    "build_path=GUI/'qa/build-1791156669069885164/report.json'"
+  ]
+]

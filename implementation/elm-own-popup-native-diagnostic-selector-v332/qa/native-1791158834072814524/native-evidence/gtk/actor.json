@@ -1,0 +1,50 @@
+{
+  "nativeAccepted": false,
+  "argv": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-popup-landmark-fixture-v272/qa/build-1791146386617637699/gtk-role-client",
+    "--run"
+  ],
+  "commands": [
+    {
+      "sequence": 1,
+      "operation": "create-owners",
+      "role": null,
+      "payload": "1 create-owners\n",
+      "startedMonotonic": 123103.858108899,
+      "written": true,
+      "requestObserved": true
+    },
+    {
+      "sequence": 2,
+      "operation": "inspect",
+      "role": null,
+      "payload": "2 inspect\n",
+      "startedMonotonic": 123103.859571236,
+      "written": true,
+      "requestObserved": true
+    }
+  ],
+  "process": {
+    "pid": 311691,
+    "start": "12694109",
+    "pgid": 311691,
+    "name": "gtk-role-client",
+    "command": [
+      "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-popup-landmark-fixture-v272/qa/build-1791146386617637699/gtk-role-client",
+      "--run"
+    ],
+    "log": "/home/hoskinson/window-integration-qa/own-popup-1791158834072889648/gtk/wayland.log"
+  },
+  "registered": true,
+  "actualStart": "12694109",
+  "stdoutBytes": 13142,
+  "stdoutCapturedBytes": 13142,
+  "stdoutPrefixSHA256": "45c253e42c85684887e895afe3782a258dd6ad454792113dc9ae58e37ff9139b",
+  "stdoutTruncated": false,
+  "stderrBytes": 450959,
+  "stderrCapturedBytes": 450959,
+  "stderrPrefixSHA256": "aebac7639782bb6ab50d7ced1ac77690dceff0ee58268240525ad7615a9f2841",
+  "stderrTruncated": false,
+  "failureCleanupTerminate": true,
+  "exitCode": -15
+}

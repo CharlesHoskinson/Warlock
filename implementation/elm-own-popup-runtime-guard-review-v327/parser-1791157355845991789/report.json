@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Actual captured predecessor parser characterization, hostile synthetic syntax/kernel-domain boundary only",
+  "source": "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-guard-review-v327/witness-1791157163324137596/inputs/guard.py",
+  "sourceSHA256": "e6e66031924ef426baedf8e59840284b0e8c1527d519c8710a271893be4fbbf3",
+  "cases": [
+    {
+      "name": "5000-digit map inode",
+      "outcome": "ordinary-error",
+      "result": "ValueError('Exceeds the limit (4300 digits) for integer string conversion: value has 5000 digits; use sys.set_int_max_str_digits() to increase the limit')"
+    },
+    {
+      "name": "5000-digit process start",
+      "outcome": "ordinary-error",
+      "result": "ValueError('Exceeds the limit (4300 digits) for integer string conversion: value has 5000 digits; use sys.set_int_max_str_digits() to increase the limit')"
+    },
+    {
+      "name": "5000-digit mount device",
+      "outcome": "ordinary-error",
+      "result": "ValueError('Exceeds the limit (4300 digits) for integer string conversion: value has 5000 digits; use sys.set_int_max_str_digits() to increase the limit')"
+    },
+    {
+      "name": "unknown process state",
+      "outcome": "accepted",
+      "result": "12545941"
+    },
+    {
+      "name": "reversed map range",
+      "outcome": "accepted",
+      "result": "{'/tmp/a': (0, 1, 1)}"
+    }
+  ]
+}

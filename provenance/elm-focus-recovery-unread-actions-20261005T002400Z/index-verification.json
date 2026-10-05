@@ -1,0 +1,556 @@
+{
+  "passed": true,
+  "priorHEAD": "3117d82941e8089a59f3dcb8f18aed0e26c00ad5",
+  "acceptanceManifestSHA256": "5e75fbc175be49709dcb4fca7c1b3e14dde68f6371f737f43146a515c7537d1d",
+  "indexFileCount": 91,
+  "uniqueBlobs": 79,
+  "files": {
+    "docs/elm-roadmap/delivery/UNREAD-ACTIONS-V362-EVIDENCE.md": {
+      "mode": "100644",
+      "blob": "e492621354f6853ec7c68235f00b36ad29b125c3",
+      "size": 2978,
+      "sha256": "7a0d99d262f53e3b2ce69caae054b86df144a84d52d4b76b686f57ed515d8c6b"
+    },
+    "docs/elm-roadmap/delivery/build-loop-events/20261005T002250.441921Z--f6779148-8f5d-4bdf-8a0f-044184e486f2--6ef98689b67c40be87dd8b39541c3ee8.json": {
+      "mode": "100644",
+      "blob": "3b39e04a9f54c43217161b44f6e9442cab26e2af",
+      "size": 2127,
+      "sha256": "f7c74bb2351e23abb83f541b55c60639b2474d8edb2e63ba3eafc8d2ee64a5b7"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/SPEC.md": {
+      "mode": "100644",
+      "blob": "1d45d62f7d9c3c798d8bac5d92cda7089db01463",
+      "size": 728,
+      "sha256": "f6cccc1c08da385df42c6a5d3284c01a06faeb42a3ba224552e4ef877fae7e26"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/fixture.py": {
+      "mode": "100644",
+      "blob": "34a180e6b712621c22a740d258963000b828e50b",
+      "size": 5267,
+      "sha256": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/bus_policy.py": {
+      "mode": "100644",
+      "blob": "6ab6f0ea380ac66eac43f2b055e47802c419f743",
+      "size": 1681,
+      "sha256": "bf1c53c38a2a7bd74a8762c1bb7767bca543d47d8a642ded74c494366cf73949"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/inspection.py": {
+      "mode": "100644",
+      "blob": "a6eb3c34c479f891b3d1849acac7306631d42356",
+      "size": 2563,
+      "sha256": "051d44430a49319389781d12bc0389732d76412ef1cf7f59f352f5e78f67bdd2"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/atInterruption.png": {
+      "mode": "100644",
+      "blob": "5f44bdd2a0bdaa6e07bbc195ca2489eab269858b",
+      "size": 25175,
+      "sha256": "eeaa024ebf2b67ed3a9ce6f0e764abb48f3829367a9c8b41a5f244f1cae9e1bb"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/authority-config.json": {
+      "mode": "100644",
+      "blob": "3f4ea00c542826569c097b4a5d8cfa228706069f",
+      "size": 246,
+      "sha256": "6431b89bc42a3c02fbe13de6f8cfa8db0ae6fedfd757aa2a2c634fb1ef8c674c"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/beforeFault.png": {
+      "mode": "100644",
+      "blob": "bbc7b9523266822f34362419b439cc04d9c0d55c",
+      "size": 18462,
+      "sha256": "0fa79a1d3a54a33adf563c9309aedd2fcbde00ca864441172d256586291f3350"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/dmabuf-probe.stderr": {
+      "mode": "100644",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/dmabuf-probe.stdout": {
+      "mode": "100644",
+      "blob": "7b0492b42b9637366e222526cc706c670602c52b",
+      "size": 174,
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/elm-supervisor.log": {
+      "mode": "100644",
+      "blob": "41cb394f7140f187d87d5bf01c99031273ed97e9",
+      "size": 999,
+      "sha256": "3cafcce484e789fa4798c2d53b1f408e76e67d18e001f75246bad704e6d55266"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/explicitAction.png": {
+      "mode": "100644",
+      "blob": "6cee5aea227e20c5ed446f75380f514b8a910165",
+      "size": 47813,
+      "sha256": "105e90abc4475d8e1c1b7952be7c9da356cd567c734450e43bc83debc7974e8f"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/finalFallback.png": {
+      "mode": "100644",
+      "blob": "19faf36ce7c8fe0ca8469f3c71dfaa848bd3fc1c",
+      "size": 46280,
+      "sha256": "e73d4c766e88f0598496c5b768ed099b8ab2182a1c0dafea46f186d577f48bfc"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/fixture-control.events.jsonl": {
+      "mode": "100644",
+      "blob": "5e942aa4842044af5225acaffe06434102ebfdf6",
+      "size": 400,
+      "sha256": "2aeb690e41afcce3571b04afcf860adc572843d0940f6005ffcfc3419e8918c2"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/fixture.log": {
+      "mode": "100644",
+      "blob": "4a863b0b5b916ebfc7bbaef70b63af2fb623beba",
+      "size": 746795,
+      "sha256": "f5f7ba578f71416961fd66fb07f05f01bbc0b9234db53604963001dff6a0664a"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/generation-1.log": {
+      "mode": "100644",
+      "blob": "1a217026984a4f8da426d425b0ad935679ad8986",
+      "size": 76331,
+      "sha256": "c8394f88f9e532bd0978755a084e84b584fd5ab04898ff9de7f8a17ed9e4cb87"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/generation-2.log": {
+      "mode": "100644",
+      "blob": "de4d02636d6677f9bc0c8ec21041981ef25c2bfb",
+      "size": 91995,
+      "sha256": "eccf33820e63cd91d6cb6b11ede4976600d50f8c0dd15fed379645f6c77c9dd8"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/host-evidence.json": {
+      "mode": "100644",
+      "blob": "18635bbf468912be0ea336cd68a21b3688c76d0c",
+      "size": 215986,
+      "sha256": "feb38b5e32b5b7174861e38c5f6caa2d37ac4dc690473e0b2b83f529ae26d458"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/hyprland.log": {
+      "mode": "100644",
+      "blob": "752743f166845a1dc5fbaa8c7da172f937af7dcf",
+      "size": 629573,
+      "sha256": "7e86c4b9ccf6b75e3069d608d5b028a988d4aad04d6f380cd11f041fe0e71ca5"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/native-recovery.png": {
+      "mode": "100644",
+      "blob": "0581687f53708654f426477965ee02373f851ec4",
+      "size": 17737,
+      "sha256": "f5bbf4f633153512d94a441066dc08c482c6a2946013c8b3febdf0f98d960ba4"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/nativeFallback.png": {
+      "mode": "100644",
+      "blob": "9fb717b87d472c6bfddbd8afe1b8f5efab913c0b",
+      "size": 17764,
+      "sha256": "6b81623aa06b042b1dfb65a44574200ea8d3980ef3c31fbf44bca16ab213b015"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/privateBus.log": {
+      "mode": "100644",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/replacement-unknown.png": {
+      "mode": "100644",
+      "blob": "e9e47426c3d3b20a4cf0829a85ec8d329e965365",
+      "size": 19455,
+      "sha256": "2b0dabca7d6d0a6da0b2636e4e3aa60079feddc136297a2707ca14e3fff12736"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/replacementUnknown.png": {
+      "mode": "100644",
+      "blob": "e9f5e3279804d8e08283057a03e7380ab5ee51ce",
+      "size": 19454,
+      "sha256": "e2ac6a559540d620e14530e5ebf58c558d24aeb64e50df385a33947eb5570747"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/runtime-archive/.flatpak/webkit-377923-16/bwrapinfo.json": {
+      "mode": "100644",
+      "blob": "413464df630088223271e4cd0fc2cc90a2717618",
+      "size": 160,
+      "sha256": "22a63a678bee9f5af088648ec03624db053b2edf2bdcff7a788bd60beb5b40e8"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/runtime-archive/.flatpak/webkit-377923-4/bwrapinfo.json": {
+      "mode": "100644",
+      "blob": "4f835fada90ac10779a35b18df6fe4d292dcc7e3",
+      "size": 193,
+      "sha256": "497fe528b6eb1e8562b8e19415c0509cc05229697cac29e277a9c7fb1fb7fc27"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/runtime-archive/.flatpak/webkit-378418-16/bwrapinfo.json": {
+      "mode": "100644",
+      "blob": "a3562244a37c48569b2980c2ad886256b6d9894c",
+      "size": 160,
+      "sha256": "03d046d4e4f61bf4e8f4b8482df5a4780359cad78bb369bbf0ea1a92a91b3c14"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/runtime-archive/.flatpak/webkit-378418-4/bwrapinfo.json": {
+      "mode": "100644",
+      "blob": "21b6925f5572fa311c727d9175fb0fa52f10cb6e",
+      "size": 193,
+      "sha256": "5470ca52237f45c1cb97196087eae24f32b17c9faf532c50e80e8d26165206ac"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791159499_1114369629/15057910665021676026/host-before-write-marker.json": {
+      "mode": "100644",
+      "blob": "f16c202b2e5ccbd095f0f24a1036b5096354bb71",
+      "size": 427,
+      "sha256": "91da05d6c73c5309dc80fe071453ac9966bc20579ca2218429375bb02cc149e3"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791159499_1114369629/15057910665021676026/ledger-v5.json": {
+      "mode": "100644",
+      "blob": "010cb3010c721286240128ea9d4d299e94be568f",
+      "size": 213,
+      "sha256": "b33ebe48f6c6519d058e33ed67e74e95db4827a118612ef09aa2f300ac589860"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791159499_1114369629/15057910665021676026/ledger-v6.json": {
+      "mode": "100644",
+      "blob": "7c74304f4e2004c3707224430b4eb1ac4ebe5e27",
+      "size": 2384,
+      "sha256": "a6183e911fad0198d6ba65298c973aed13e913d6e40c7d4d2ab5b5bd4ef918d2"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791159499_1114369629/15057910665021676026/migration-plan.json": {
+      "mode": "100644",
+      "blob": "4a738cacaad447e7a9243373fa37467ed15e3598",
+      "size": 248,
+      "sha256": "3f0f8f4d9c661bca925f2603783774bd8a084dc7842cd3cd72c11856d5376ec4"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791159499_1114369629/15057910665021676026/migration.json": {
+      "mode": "100644",
+      "blob": "ce44d8932cea26a1f6ebf36f9901e818849caafc",
+      "size": 229,
+      "sha256": "ef77fc63662c53cf13c80b2b7860268ea7856c24e4b601a1f98eaec7ae17e789"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791159499_1114369629/15057910665021676026/release-deliveries-v1.json": {
+      "mode": "100644",
+      "blob": "8c652e6598e70d20dac0d0331a7a4cdfabfd796c",
+      "size": 1080,
+      "sha256": "548bdd554819508f2bb09ae2ddc755b1356117db6e872b4091d9994ff7ea1e81"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791159499_1114369629/hyprland.log": {
+      "mode": "100644",
+      "blob": "d21cf8d83a830bd06ea78188a6b3ab999c52dd21",
+      "size": 25623,
+      "sha256": "1e98a50558958d7cdbd6bcfba7706c4ae33ebb2462f8a74ea0a59f8e748483c0"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/runtime-archive/hyprland.lua": {
+      "mode": "100644",
+      "blob": "918cb3fefd0775e6a260f19af74c07c04e1790ac",
+      "size": 241,
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/weston-renderer.log": {
+      "mode": "100644",
+      "blob": "0e0a23329cf2ea4e635f6216487c8d7397fb0758",
+      "size": 3775,
+      "sha256": "772e753d90aa0c20c01bf5e5ef75172ad4d111a338df9c3cb7e6409086350395"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/native-evidence/weston.log": {
+      "mode": "100644",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native-1791159497193947287/report.json": {
+      "mode": "100644",
+      "blob": "ecddd689278afe12808559c572d50e1c45b5a244",
+      "size": 1457855,
+      "sha256": "d56d47870509504beddd45029f1fe1f37fc1ce52bea8f4a0d59ee2d3897a53ce"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/native.py": {
+      "mode": "100644",
+      "blob": "3592687476c3d2b808f8b1e9c035e7e5cd781b07",
+      "size": 31085,
+      "sha256": "184ff39adc84c277cd31330187295c52503794632b9375cb7143dec3b19f546e"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/preflight.json": {
+      "mode": "100644",
+      "blob": "ff73993c957aa95e3df47d1abd27ed76fa4d86d6",
+      "size": 1183408,
+      "sha256": "01d812d353863cf989ff293c31faf21c33508b49019115b4e47af6f5c8d6990d"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/preflight.py": {
+      "mode": "100644",
+      "blob": "4888de70644119a74de3a6141e66dab83f342de6",
+      "size": 5903,
+      "sha256": "0eed04fa7bc3e12cf390b89c8302c46c1b1dc4d28eaea65366edf991c114e80b"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/sampling.py": {
+      "mode": "100644",
+      "blob": "c6bb014542ca87547099cae0db06f76677938d25",
+      "size": 3287,
+      "sha256": "d1fd77191300c5ff48e6ba91933c8049a5138cf0de11667a272b6a5066f7652a"
+    },
+    "implementation/elm-focus-recovery-minimize-unread-v360/qa/source-amendments.json": {
+      "mode": "100644",
+      "blob": "a1b77f07c31abdf5e461992ed80a02c562ea59f3",
+      "size": 5468,
+      "sha256": "80915b266df3777326b5bc6dd3b9701cc6fde973c42d2bb59e87dd90cdc41bf5"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/SPEC.md": {
+      "mode": "100644",
+      "blob": "e75ad81ac7754055ece078703ebf15714be5c98c",
+      "size": 727,
+      "sha256": "4595c5962babc5af2234216531dc27c4fb1442abcf4c10e8d50e1a9bd53387e0"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/fixture.py": {
+      "mode": "100644",
+      "blob": "34a180e6b712621c22a740d258963000b828e50b",
+      "size": 5267,
+      "sha256": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/bus_policy.py": {
+      "mode": "100644",
+      "blob": "6ab6f0ea380ac66eac43f2b055e47802c419f743",
+      "size": 1681,
+      "sha256": "bf1c53c38a2a7bd74a8762c1bb7767bca543d47d8a642ded74c494366cf73949"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/inspection.py": {
+      "mode": "100644",
+      "blob": "a6eb3c34c479f891b3d1849acac7306631d42356",
+      "size": 2563,
+      "sha256": "051d44430a49319389781d12bc0389732d76412ef1cf7f59f352f5e78f67bdd2"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/atInterruption.png": {
+      "mode": "100644",
+      "blob": "4cfcb364a5934460a3b071159c5881a0245ac43b",
+      "size": 54187,
+      "sha256": "c605165a195726624ed5ec2d8f3459f926a2896739a962209efaca31f83cda25"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/authority-config.json": {
+      "mode": "100644",
+      "blob": "8028c7dbd69792ba4acf10f3c05dc43220e72d27",
+      "size": 245,
+      "sha256": "d86f687f28cb9f712e3940e6f82c5b5688126fecfe43d45c1160828a26b55130"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/beforeFault.png": {
+      "mode": "100644",
+      "blob": "5def18d49cbf48e39724442af567ca57793e8bd0",
+      "size": 48361,
+      "sha256": "ba2bae9da605caec84197735affb58ded24e4f0670253abb7e491377885e11a5"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/dmabuf-probe.stderr": {
+      "mode": "100644",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/dmabuf-probe.stdout": {
+      "mode": "100644",
+      "blob": "7b0492b42b9637366e222526cc706c670602c52b",
+      "size": 174,
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/elm-supervisor.log": {
+      "mode": "100644",
+      "blob": "adcdfdd89744b09b6e40f8adc37cc4ef4f7e84df",
+      "size": 999,
+      "sha256": "a6221841d526c54da29d40ffec06f002edc47e01ea3d12916e2a6a2f0993be01"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/explicitAction.png": {
+      "mode": "100644",
+      "blob": "baca10d02337a95ed03d2fca8cc4d2226048af31",
+      "size": 19519,
+      "sha256": "f053b7887c855f178ce3e66c703e1f18b35167ca8bd936a09f712d0ae70c74d4"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/finalFallback.png": {
+      "mode": "100644",
+      "blob": "209346861241343ff3196bf7d5794b9fcbb9adbe",
+      "size": 18220,
+      "sha256": "b6ea766decea1174b2317940870a97c692c327bbdf3260d7af56e826e6f32b5c"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/fixture-control.events.jsonl": {
+      "mode": "100644",
+      "blob": "b32f55102b4936abc70d9082a2948613792abff8",
+      "size": 240,
+      "sha256": "396208a8f7ce2bf825f14b03c4c8f6047b8e017486b34251040c9754dc470bc1"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/fixture.log": {
+      "mode": "100644",
+      "blob": "8b140aa37aa98306f31982c2f3ae18888b541792",
+      "size": 615960,
+      "sha256": "65ba491a04fae18c716d81cb8946c59aa51a3913bc2c9c5f97aba622176c94e0"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/generation-1.log": {
+      "mode": "100644",
+      "blob": "6a39b7c10a0ac7cf1ebd3c97d50014b7a3c7d33e",
+      "size": 92775,
+      "sha256": "4365f9ffd2ebfa28d15954ff1d108ff561968dd50412b7f91258ebd11c03925c"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/generation-2.log": {
+      "mode": "100644",
+      "blob": "88351daefc5c0258fe7d3df77d749184557b8a4e",
+      "size": 88977,
+      "sha256": "c5f70e5cec858f905bdf0fbb038508bf156b489e0145ebb8318effe1d49455e7"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/host-evidence.json": {
+      "mode": "100644",
+      "blob": "235d433526fb5bd020c4bd5e1ca2a7f70dda5b36",
+      "size": 215765,
+      "sha256": "e4b47dc0ec2823c0d18891ba7b0642439b9f5684625f6d73f25f180f9f1163bb"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/hyprland.log": {
+      "mode": "100644",
+      "blob": "b38650084492254b550ffc9895c81f78b8ce7a63",
+      "size": 569782,
+      "sha256": "64552df3c8c407fb7d6d5e0f4ade6d317651b730e85255a699d2af04e85ce372"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/native-recovery.png": {
+      "mode": "100644",
+      "blob": "bb4e9693335a716b8dd0c518519903185321f655",
+      "size": 46613,
+      "sha256": "cdd3626d7a49e345efa812369cc9c57bca635aeec61aa57f806510950abe12c7"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/nativeFallback.png": {
+      "mode": "100644",
+      "blob": "462ad546e242167615b0d51138a3495ffa97b609",
+      "size": 46748,
+      "sha256": "fdb3ce95fed2304366353e01e96f4965cf90b10b59e87cf5dfad53f564f3e29d"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/privateBus.log": {
+      "mode": "100644",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/replacement-unknown.png": {
+      "mode": "100644",
+      "blob": "7df64c2deaa7486f5ea1a6592b6574e433217d0d",
+      "size": 48360,
+      "sha256": "8f68944ee14e482f45bb5170418f6ded7385f3dbd57a61de24f4e6d42957ba86"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/replacementUnknown.png": {
+      "mode": "100644",
+      "blob": "0b74895cad244dc264e9843267f58827c8674799",
+      "size": 48359,
+      "sha256": "cec1c843286fa37dfb7261c6f330f2eac85055fa55daa3438589ac243ada3636"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/runtime-archive/.flatpak/webkit-392155-16/bwrapinfo.json": {
+      "mode": "100644",
+      "blob": "643a31b314ea3982ec09ee0a18349211770a3b0f",
+      "size": 160,
+      "sha256": "81540be74270cd4572bc133d7199d59387ffc9dbfe807604f59dd9818cc3f4dd"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/runtime-archive/.flatpak/webkit-392155-4/bwrapinfo.json": {
+      "mode": "100644",
+      "blob": "797bd114f60383c45ba95df3cd158ee254c2bba1",
+      "size": 193,
+      "sha256": "98f3cbe5ed0e5cdd67fc0bfe907d1e55b20c7e081a4ab59652795d648730bfdd"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/runtime-archive/.flatpak/webkit-393009-16/bwrapinfo.json": {
+      "mode": "100644",
+      "blob": "4e20a94b2a71608723aa36c0eb84febfbcb213ff",
+      "size": 160,
+      "sha256": "0a6940c526b93664109a6cc795a5b218a9bac95b87f0da63981db3c47a92aae9"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/runtime-archive/.flatpak/webkit-393009-4/bwrapinfo.json": {
+      "mode": "100644",
+      "blob": "49ef78ef3bd9a473258b25357c0707b978bced75",
+      "size": 193,
+      "sha256": "d6a7bed8324081313ea1b08d96ac5349642314ce98cb1f3d0308bb37fb2f0ad0"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791159576_628431806/17712740376234903567/host-before-write-marker.json": {
+      "mode": "100644",
+      "blob": "25e25ddbb05e7c06b466903eb2220b63c8c1393d",
+      "size": 426,
+      "sha256": "c04ab8d8abe16dd3637a48efa7afd3a8253adc307de40d1e08b22e062aca0246"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791159576_628431806/17712740376234903567/ledger-v5.json": {
+      "mode": "100644",
+      "blob": "2f1ee717fd7e19322ae97ba871cf64c81fd24233",
+      "size": 213,
+      "sha256": "b7f920f227943c442fe9e042813157581e2a2a794262c2aa09d22cf401aad28a"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791159576_628431806/17712740376234903567/ledger-v6.json": {
+      "mode": "100644",
+      "blob": "e8f71489858585f9ffbb45b3248ddd741eaabfd3",
+      "size": 2677,
+      "sha256": "009a31e2a2fc007517ec6d154b1dc39036dc94108a25b16cf0f6a3c5759b9d48"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791159576_628431806/17712740376234903567/migration-plan.json": {
+      "mode": "100644",
+      "blob": "1704471d1c2da09f8ec1e10d9b8b35e3748835d1",
+      "size": 247,
+      "sha256": "945d96c71ceccfeecf72cd0c8c3dab2bd65280f447ad856035067011148083ec"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791159576_628431806/17712740376234903567/migration.json": {
+      "mode": "100644",
+      "blob": "ee0b478e7f8ff06ca6ee20f99aa9be6f3151a1a0",
+      "size": 228,
+      "sha256": "b31fa359603d9aa6d3867b5fafcb71b784eeb28298959400892ec3659c741fbf"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791159576_628431806/17712740376234903567/release-deliveries-v1.json": {
+      "mode": "100644",
+      "blob": "34aadb99614e3291ccbc979226317afc9e972ff8",
+      "size": 1079,
+      "sha256": "926a14e8a0c6e0f2782688ad5786a0ae856d371e46d4ade5afcc248a744bd829"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791159576_628431806/hyprland.log": {
+      "mode": "100644",
+      "blob": "81b00d16a64f7750553e4c724ae3a7c54bc6893d",
+      "size": 25622,
+      "sha256": "31a2a4ae67b57e79742c658ccd810006a892b49eefcd33dd0be6ff349466fe5e"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/runtime-archive/hyprland.lua": {
+      "mode": "100644",
+      "blob": "918cb3fefd0775e6a260f19af74c07c04e1790ac",
+      "size": 241,
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/weston-renderer.log": {
+      "mode": "100644",
+      "blob": "54228ddac3aa808f24d7393bab3238d4436190ff",
+      "size": 3775,
+      "sha256": "731e25c16202dc90622e60a7934f98bbc4d6e10188671337b17f6ff0e9dd571a"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/native-evidence/weston.log": {
+      "mode": "100644",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native-1791159574053961957/report.json": {
+      "mode": "100644",
+      "blob": "b29333ad003694d94a57c0a3ab4bee3e0f23340c",
+      "size": 1457422,
+      "sha256": "0136d9a218f7649876b5a39977267a126e1cb7f06eaccbd85a99d6439829a4ab"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/native.py": {
+      "mode": "100644",
+      "blob": "bcdcbfd856f0fdba018fc711c32b2ad73f51dbad",
+      "size": 31084,
+      "sha256": "2d2a1c88ef324c833f3bda5e1f8e646521f298c52ea3046e4732f7f31c121733"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/preflight.json": {
+      "mode": "100644",
+      "blob": "516af8553eb1b7ee5f63bf1b44e735c677a8fe5b",
+      "size": 1183400,
+      "sha256": "60cba34b8427ca9d4152d29475ca804191d058c4a7cabb046386d5eb0250d3fd"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/preflight.py": {
+      "mode": "100644",
+      "blob": "4888de70644119a74de3a6141e66dab83f342de6",
+      "size": 5903,
+      "sha256": "0eed04fa7bc3e12cf390b89c8302c46c1b1dc4d28eaea65366edf991c114e80b"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/sampling.py": {
+      "mode": "100644",
+      "blob": "c6bb014542ca87547099cae0db06f76677938d25",
+      "size": 3287,
+      "sha256": "d1fd77191300c5ff48e6ba91933c8049a5138cf0de11667a272b6a5066f7652a"
+    },
+    "implementation/elm-focus-recovery-restore-unread-v361/qa/source-amendments.json": {
+      "mode": "100644",
+      "blob": "915f0ed6f5c95cda22b5b8cbf7a61858cdda6cc9",
+      "size": 5557,
+      "sha256": "19e048d5c977056705da8436cedd873e39b550abfb293ddbf405945cfbb0fb65"
+    },
+    "implementation/elm-focus-recovery-unread-actions-held-v362/acceptance-manifest.json": {
+      "mode": "100644",
+      "blob": "afcab77c5b0d26002ef34dd146660aa4c6a9dde7",
+      "size": 27962,
+      "sha256": "5e75fbc175be49709dcb4fca7c1b3e14dde68f6371f737f43146a515c7537d1d"
+    },
+    "implementation/elm-focus-recovery-unread-actions-held-v362/qa/review-1791159685429659473/report.json": {
+      "mode": "100644",
+      "blob": "a43727974c5242802d7642b3884676d288a1ae4d",
+      "size": 221,
+      "sha256": "db624e03d248ed091576a76143564133475f706aed1a538d667e8d880d39b850"
+    },
+    "implementation/elm-focus-recovery-unread-actions-held-v362/qa/review_freeze.py": {
+      "mode": "100644",
+      "blob": "4a6abb0933385da8b20a96a50deb6c50ccd21b29",
+      "size": 8781,
+      "sha256": "f33d82679921c5db35b94c27ad959469489ec112780bbeec2b51be37172bad05"
+    }
+  },
+  "scope": "Owned actual360minimize61/361restore63 actual C-admitted requests before broker write/read; six originalpixel/input stages each, no replay/statechange until fresh action, currentUnknown/proof/read/durablecertificate; independent362 hold87files. Parent350626/353893/35640/359124 separate, previews/mixedloss/fullrelease open; raw index bytes/modes checked and concurrent stages excluded"
+}

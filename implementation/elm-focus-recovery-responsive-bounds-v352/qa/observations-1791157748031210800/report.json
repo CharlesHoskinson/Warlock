@@ -1,0 +1,78 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "0-old-changing-observation-counterexample",
+      "passed": true
+    },
+    {
+      "name": "0-single-snapshot-accepts-exact-valid-facts",
+      "passed": true
+    },
+    {
+      "name": "0-unavailable-snapshot-refused-without-mixing",
+      "passed": true
+    },
+    {
+      "name": "0-ineligible-snapshot-refused-without-mixing",
+      "passed": true
+    },
+    {
+      "name": "1-old-changing-observation-counterexample",
+      "passed": true
+    },
+    {
+      "name": "1-single-snapshot-accepts-exact-valid-facts",
+      "passed": true
+    },
+    {
+      "name": "1-unavailable-snapshot-refused-without-mixing",
+      "passed": true
+    },
+    {
+      "name": "1-ineligible-snapshot-refused-without-mixing",
+      "passed": true
+    },
+    {
+      "name": "2-old-changing-observation-counterexample",
+      "passed": true
+    },
+    {
+      "name": "2-single-snapshot-accepts-exact-valid-facts",
+      "passed": true
+    },
+    {
+      "name": "2-unavailable-snapshot-refused-without-mixing",
+      "passed": true
+    },
+    {
+      "name": "2-ineligible-snapshot-refused-without-mixing",
+      "passed": true
+    },
+    {
+      "name": "3-old-changing-observation-counterexample",
+      "passed": true
+    },
+    {
+      "name": "3-single-snapshot-accepts-exact-valid-facts",
+      "passed": true
+    },
+    {
+      "name": "3-unavailable-snapshot-refused-without-mixing",
+      "passed": true
+    },
+    {
+      "name": "3-ineligible-snapshot-refused-without-mixing",
+      "passed": true
+    }
+  ],
+  "nativeAcceptance": false,
+  "productionChanged": false,
+  "scope": "Actual four owned polling predicates under declared changing observation fixtures; original checks/deadlines remain native obligations",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-responsive-bounds-v351/qa/gui.py": "51fad01fe3fe06890884c2d2bd18e2bafbb4fcca5865746b01e270dd5bc320bf",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-responsive-bounds-v352/qa/gui.py": "b1d3063af2f1e10aca0a877a386480187f88fcb55a22fd3209cfa15903d1999f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-responsive-bounds-v352/qa/observation_tests.py": "193c4c2978e9c466d05485e74867a79020d3748b7574fad00a52b576a4ec0a5b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-responsive-bounds-v352/qa/observation-amendment.json": "cdea3ae2c1c47621e53d9b68986b4801b8454196becd7497fa59d4c47bdbfdeb"
+  }
+}
