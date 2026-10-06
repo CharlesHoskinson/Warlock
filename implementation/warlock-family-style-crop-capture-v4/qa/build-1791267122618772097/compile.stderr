@@ -1,0 +1,46 @@
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v4/qa/build-1791267122618772097/inputs/native/source-scope.inc:71,
+                 from /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v4/qa/build-1791267122618772097/inputs/native/authority.cpp:455:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v4/qa/build-1791267122618772097/inputs/native/style-source.inc: In function ‘std::optional<{anonymous}::FamilyStyleObservation> {anonymous}::familyStyleContext(PHLWINDOW, uint64_t)’:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v4/qa/build-1791267122618772097/inputs/native/style-source.inc:57:52: error: passing ‘const Desktop::Rule::CWindowRuleApplicator’ as ‘this’ argument discards qualifiers [-fpermissive]
+   57 |         style.effectFlags=(uint64_t{rules->decorate().valueOrDefault()}<<0)
+      |                                     ~~~~~~~~~~~~~~~^~
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v4/qa/build-1791267122618772097/inputs/native/authority.cpp:2:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v4/qa/build-1791267122618772097/owning-headers/src/desktop/rule/windowRule/WindowRuleApplicator.hpp:96:9: note:   in call to ‘Desktop::Types::COverridableVar<bool>& Desktop::Rule::CWindowRuleApplicator::decorate()’
+   96 |         DEFINE_PROP(bool, decorate, true, WINDOW_RULE_EFFECT_DECORATE)
+      |         ^~~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v4/qa/build-1791267122618772097/inputs/native/style-source.inc:58:40: error: passing ‘const Desktop::Rule::CWindowRuleApplicator’ as ‘this’ argument discards qualifiers [-fpermissive]
+   58 |             | (uint64_t{rules->noShadow().valueOrDefault()}<<1)
+      |                         ~~~~~~~~~~~~~~~^~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v4/qa/build-1791267122618772097/owning-headers/src/desktop/rule/windowRule/WindowRuleApplicator.hpp:105:9: note:   in call to ‘Desktop::Types::COverridableVar<bool>& Desktop::Rule::CWindowRuleApplicator::noShadow()’
+  105 |         DEFINE_PROP(bool, noShadow, false, WINDOW_RULE_EFFECT_NO_SHADOW)
+      |         ^~~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v4/qa/build-1791267122618772097/inputs/native/style-source.inc:59:38: error: passing ‘const Desktop::Rule::CWindowRuleApplicator’ as ‘this’ argument discards qualifiers [-fpermissive]
+   59 |             | (uint64_t{rules->noBlur().valueOrDefault()}<<2)
+      |                         ~~~~~~~~~~~~~^~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v4/qa/build-1791267122618772097/owning-headers/src/desktop/rule/windowRule/WindowRuleApplicator.hpp:101:9: note:   in call to ‘Desktop::Types::COverridableVar<bool>& Desktop::Rule::CWindowRuleApplicator::noBlur()’
+  101 |         DEFINE_PROP(bool, noBlur, false, WINDOW_RULE_EFFECT_NO_BLUR)
+      |         ^~~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v4/qa/build-1791267122618772097/inputs/native/style-source.inc:60:36: error: passing ‘const Desktop::Rule::CWindowRuleApplicator’ as ‘this’ argument discards qualifiers [-fpermissive]
+   60 |             | (uint64_t{rules->RGBX().valueOrDefault()}<<3)
+      |                         ~~~~~~~~~~~^~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v4/qa/build-1791267122618772097/owning-headers/src/desktop/rule/windowRule/WindowRuleApplicator.hpp:109:9: note:   in call to ‘Desktop::Types::COverridableVar<bool>& Desktop::Rule::CWindowRuleApplicator::RGBX()’
+  109 |         DEFINE_PROP(bool, RGBX, false, WINDOW_RULE_EFFECT_FORCE_RGBX)
+      |         ^~~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v4/qa/build-1791267122618772097/inputs/native/style-source.inc:61:36: error: passing ‘const Desktop::Rule::CWindowRuleApplicator’ as ‘this’ argument discards qualifiers [-fpermissive]
+   61 |             | (uint64_t{rules->xray().hasValue()}<<4)
+      |                         ~~~~~~~~~~~^~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v4/qa/build-1791267122618772097/owning-headers/src/desktop/rule/windowRule/WindowRuleApplicator.hpp:112:9: note:   in call to ‘Desktop::Types::COverridableVar<bool>& Desktop::Rule::CWindowRuleApplicator::xray()’
+  112 |         DEFINE_PROP(bool, xray, false, WINDOW_RULE_EFFECT_XRAY)
+      |         ^~~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v4/qa/build-1791267122618772097/inputs/native/style-source.inc:62:36: error: passing ‘const Desktop::Rule::CWindowRuleApplicator’ as ‘this’ argument discards qualifiers [-fpermissive]
+   62 |             | (uint64_t{rules->xray().valueOrDefault()}<<5)
+      |                         ~~~~~~~~~~~^~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v4/qa/build-1791267122618772097/owning-headers/src/desktop/rule/windowRule/WindowRuleApplicator.hpp:112:9: note:   in call to ‘Desktop::Types::COverridableVar<bool>& Desktop::Rule::CWindowRuleApplicator::xray()’
+  112 |         DEFINE_PROP(bool, xray, false, WINDOW_RULE_EFFECT_XRAY)
+      |         ^~~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v4/qa/build-1791267122618772097/inputs/native/style-source.inc:63:41: error: passing ‘const Desktop::Rule::CWindowRuleApplicator’ as ‘this’ argument discards qualifiers [-fpermissive]
+   63 |             | (uint64_t{rules->dimAround().valueOrDefault()}<<6)
+      |                         ~~~~~~~~~~~~~~~~^~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v4/qa/build-1791267122618772097/owning-headers/src/desktop/rule/windowRule/WindowRuleApplicator.hpp:108:9: note:   in call to ‘Desktop::Types::COverridableVar<bool>& Desktop::Rule::CWindowRuleApplicator::dimAround()’
+  108 |         DEFINE_PROP(bool, dimAround, false, WINDOW_RULE_EFFECT_DIM_AROUND)
+      |         ^~~~~~~~~~~

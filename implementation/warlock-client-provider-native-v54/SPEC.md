@@ -1,0 +1,9 @@
+# Runtime renderer configuration source fidelity
+
+Retain all1783 ordered native50 controls, original deadlines and exact corecrop2/stylecrop2/GUI34 tuple. Native source review suggests shadow render_power affects actual GL output but is absent from native18 style channels/gradients. Do not treat that inference as a confirmed defect. Configure real native shadow range16 and power1, obtain actual typed style-family crop scope and FD3 pixels, change only power4 and repeat. Compare independent image bytes/native geometry/commits/18 channels and native epochs. Restore private native config before normal ordered teardown. If actual image bytes change, the style source must change its content epoch; exact native clock/lifetime/output/privacy/rendering/scene remain independently recorded. No new product deadline or weaker original oracle.
+
+Record all original assertions and normal exits first, then fail source-fidelity oracle when same native source epoch describes distinct actual renderer pixels. A negative result is evidence, not release acceptance. Full style/fidelity, hardware/output, original preview13 and all full release gates remain open. Main desktop unchanged.
+
+Fresh v53 retains failed v52 scope/bounds evidence. Wait for actual native shadow extents within the unchanged six-second fixture observation budget before creating the original two-second capture job. No capture retry, context weakening or job deadline extension.
+
+Fresh v54 retains failed v53 actual pixel/unchanged-epoch evidence and original assertion-count failure. Native dim restoration performs two explicit actual read-only observations matching both original identities; any intermediate polling receives a distinct new name. The same zero-dim/later-epoch oracle and original six-second wait remain. Configuration counterexample final oracle still executes after normal teardown and all original1783 assertions.

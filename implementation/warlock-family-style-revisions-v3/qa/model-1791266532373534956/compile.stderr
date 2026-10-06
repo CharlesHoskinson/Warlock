@@ -1,0 +1,33 @@
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/qa/model-1791266532373534956/replay.cpp: In function ‘int main(int, char**)’:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/qa/model-1791266532373534956/replay.cpp:10:9: error: ‘RenderConfiguration’ was not declared in this scope; did you mean ‘preview::RenderConfiguration’?
+   10 |         RenderConfiguration config;config.integers[ShadowPower]=shadow;config.integers[GlowPower]=glow;config.integers[BlurPasses]=blur;
+      |         ^~~~~~~~~~~~~~~~~~~
+      |         preview::RenderConfiguration
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/qa/model-1791266532373534956/replay.cpp:1:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/qa/model-1791266532373534956/style_revision.hpp:18:8: note: ‘preview::RenderConfiguration’ declared here
+   18 | struct RenderConfiguration {
+      |        ^~~~~~~~~~~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/qa/model-1791266532373534956/replay.cpp:10:36: error: ‘config’ was not declared in this scope
+   10 |         RenderConfiguration config;config.integers[ShadowPower]=shadow;config.integers[GlowPower]=glow;config.integers[BlurPasses]=blur;
+      |                                    ^~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/qa/model-1791266532373534956/replay.cpp:10:52: error: ‘ShadowPower’ was not declared in this scope; did you mean ‘preview::ShadowPower’?
+   10 |         RenderConfiguration config;config.integers[ShadowPower]=shadow;config.integers[GlowPower]=glow;config.integers[BlurPasses]=blur;
+      |                                                    ^~~~~~~~~~~
+      |                                                    preview::ShadowPower
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/qa/model-1791266532373534956/style_revision.hpp:16:54: note: ‘preview::ShadowPower’ declared here
+   16 | enum RenderInteger:size_t {ShadowEnabled,ShadowRange,ShadowPower,ShadowIgnoreWindow,GlowEnabled,GlowRange,GlowPower,BlurEnabled,BlurSize,BlurPasses,BlurNewOptimizations,BlurXray,BlurIgnoreOpacity,BlurPopups,BlurInputMethods,BlurBlend,CMEnabled,CMAutoHDR,NonShaderCM,NonShaderCMInterop,SendContentType,XpMode,RenderIntegerCount};
+      |                                                      ^~~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/qa/model-1791266532373534956/replay.cpp:10:88: error: ‘GlowPower’ was not declared in this scope; did you mean ‘preview::GlowPower’?
+   10 |         RenderConfiguration config;config.integers[ShadowPower]=shadow;config.integers[GlowPower]=glow;config.integers[BlurPasses]=blur;
+      |                                                                                        ^~~~~~~~~
+      |                                                                                        preview::GlowPower
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/qa/model-1791266532373534956/style_revision.hpp:16:107: note: ‘preview::GlowPower’ declared here
+   16 | enum RenderInteger:size_t {ShadowEnabled,ShadowRange,ShadowPower,ShadowIgnoreWindow,GlowEnabled,GlowRange,GlowPower,BlurEnabled,BlurSize,BlurPasses,BlurNewOptimizations,BlurXray,BlurIgnoreOpacity,BlurPopups,BlurInputMethods,BlurBlend,CMEnabled,CMAutoHDR,NonShaderCM,NonShaderCMInterop,SendContentType,XpMode,RenderIntegerCount};
+      |                                                                                                           ^~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/qa/model-1791266532373534956/replay.cpp:10:120: error: ‘BlurPasses’ was not declared in this scope; did you mean ‘preview::BlurPasses’?
+   10 |         RenderConfiguration config;config.integers[ShadowPower]=shadow;config.integers[GlowPower]=glow;config.integers[BlurPasses]=blur;
+      |                                                                                                                        ^~~~~~~~~~
+      |                                                                                                                        preview::BlurPasses
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/qa/model-1791266532373534956/style_revision.hpp:16:138: note: ‘preview::BlurPasses’ declared here
+   16 | enum RenderInteger:size_t {ShadowEnabled,ShadowRange,ShadowPower,ShadowIgnoreWindow,GlowEnabled,GlowRange,GlowPower,BlurEnabled,BlurSize,BlurPasses,BlurNewOptimizations,BlurXray,BlurIgnoreOpacity,BlurPopups,BlurInputMethods,BlurBlend,CMEnabled,CMAutoHDR,NonShaderCM,NonShaderCMInterop,SendContentType,XpMode,RenderIntegerCount};
+      |                                                                                                                                          ^~~~~~~~~~

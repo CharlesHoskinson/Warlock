@@ -1,0 +1,163 @@
+{
+  "schema": 1,
+  "passed": true,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-cf172b7be5294ef7913e4e072dd34571.scope",
+    "coreLimit": 1
+  },
+  "components": [
+    {
+      "path": "implementation/warlock-family-style-revisions-v3/component-manifest.json",
+      "sha256": "31141a0e62e5ef0c535cb1b4b15c7bbe7f7498c60b785089dc7e093ce45593a1",
+      "files": 16
+    },
+    {
+      "path": "implementation/warlock-family-style-revisions-v4/component-manifest.json",
+      "sha256": "773a1de5ab656a566730fe6d610074d692fa68705b52d4eaddb5db505976f4e7",
+      "files": 33
+    },
+    {
+      "path": "implementation/warlock-family-style-revisions-v5/component-manifest.json",
+      "sha256": "f43bff67cc9d498e67b35f6ab02dc208a29f4a4892b4825ba44ecfcf2c6f6e33",
+      "files": 91
+    },
+    {
+      "path": "implementation/warlock-family-style-revisions-v6/component-manifest.json",
+      "sha256": "8da5850245d50cd141b02a118414a08aab6621bd590b7251817039f9daea21c4",
+      "files": 95
+    },
+    {
+      "path": "implementation/warlock-family-style-crop-capture-v3/component-manifest.json",
+      "sha256": "b45ece97740c28c21bc546b9e6be1328935511de7426491f1cfa4007062a7ec6",
+      "files": 791
+    },
+    {
+      "path": "implementation/warlock-family-style-crop-capture-v4/component-manifest.json",
+      "sha256": "4f2535dde528b8c13ba605c9484d186bdad6e0b3fd38b329d70e089261030c65",
+      "files": 791
+    },
+    {
+      "path": "implementation/warlock-family-style-crop-capture-v5/component-manifest.json",
+      "sha256": "ca2b0701be1996f4971e7bbdde47d7f5f1a12223f7f20b10ddf50ffacc2019e9",
+      "files": 1148
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v51/component-manifest.json",
+      "sha256": "b4034f07e75623d9c2f00ff7fb50b7af44c5c985e0c4cd71ba821f6f09da9c41",
+      "files": 210
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v52/component-manifest.json",
+      "sha256": "4e5744b6fe054bd44fe6f9d31f41eb043eac0c7045eeeebe21917ad01f6e14c0",
+      "files": 348
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v53/component-manifest.json",
+      "sha256": "ea2d52c9ae63182094d29db9b2a5d28588359c82ac6c5180192d6c927f24f287",
+      "files": 366
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v54/component-manifest.json",
+      "sha256": "24b15602a4ab0358a788c18be7387d9582ec278c69373062bd3419186ac99f0c",
+      "files": 366
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v55/component-manifest.json",
+      "sha256": "ace4953e92d81e68d91a19da24bb851fe280ae0dad60c262af3661f690c8b146",
+      "files": 366
+    }
+  ],
+  "evidence": {
+    "implementation/warlock-family-style-revisions-v6/qa/model-1791267012035660685/report.json": "c5a2fe2de962cf71867d89dbfcf2f7a89de1ba3cfc0e96a8aaf32cb41824accc",
+    "implementation/warlock-family-style-revisions-v6/qa/test-1791267012034569147/report.json": "01878dfca7c12a0b4e31a3bc1c765ef661b4140a2362766acb8455ecb0544867",
+    "implementation/warlock-family-style-crop-capture-v5/qa/build-1791267174874370624/report.json": "e1aca2cc75dd22b552199117ea7940b1f98bc4034cfccc741d40c35558d6943d",
+    "implementation/warlock-client-provider-native-v50/qa/native-1791265841870106110/report.json": "41b65aa20c9a774e8568815c2ccd02fed4064550d8a6f57c22fcf410bc62cf25",
+    "implementation/warlock-client-provider-native-v54/qa/native-1791267146852469629/report.json": "5fd3c1ef6fece405098012a46af66ac15dd004e9086998390e1233e33f6fdc37",
+    "implementation/warlock-client-provider-native-v55/qa/native-1791267298767196849/report.json": "63c6570579008e846431c30b3529842bff642a713abe5c510e2188e17d89b6e0"
+  },
+  "pixelProof": [
+    {
+      "label": "counterexample",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v39/pixel-proof/shadow-pixels",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v54/qa/native-1791267146852469629/private-evidence/config-shadow-power-one.png",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v54/qa/native-1791267146852469629/private-evidence/config-shadow-power-four.png",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v54/qa/native-1791267146852469629/private-evidence/config-shadow-power-one-native-output.png",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v54/qa/native-1791267146852469629/private-evidence/config-shadow-power-four-native-output.png",
+        "61",
+        "61",
+        "80",
+        "80",
+        "320",
+        "240"
+      ],
+      "exitCode": 0,
+      "images": {
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v54/qa/native-1791267146852469629/private-evidence/config-shadow-power-one.png": "07d91106a545c37141bd4139bce40768732df4e5ee2bfcc2af6ca9cd62bacdc6",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v54/qa/native-1791267146852469629/private-evidence/config-shadow-power-four.png": "84d6a48437f64783d86444a88fd9dce2b852fe4a0870bf04a5466ea490210501",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v54/qa/native-1791267146852469629/private-evidence/config-shadow-power-one-native-output.png": "9e0bee5b437a7d70f62dcdd8dda07c07ee752adc6a0b709c64ef87f0e24d454c",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v54/qa/native-1791267146852469629/private-evidence/config-shadow-power-four-native-output.png": "73afb50b1193d82437b5d95eec28ed5ba5870597438e06254afbfe4e90e6adcb"
+      },
+      "result": {
+        "passed": true,
+        "changedFamilyPixels": 18860,
+        "changedOutputPixels": 42004,
+        "changedFamilyInterior": 0,
+        "changedOutputInterior": 0
+      }
+    },
+    {
+      "label": "fixed",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v39/pixel-proof/shadow-pixels",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v55/qa/native-1791267298767196849/private-evidence/config-shadow-power-one.png",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v55/qa/native-1791267298767196849/private-evidence/config-shadow-power-four.png",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v55/qa/native-1791267298767196849/private-evidence/config-shadow-power-one-native-output.png",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v55/qa/native-1791267298767196849/private-evidence/config-shadow-power-four-native-output.png",
+        "61",
+        "61",
+        "80",
+        "80",
+        "320",
+        "240"
+      ],
+      "exitCode": 0,
+      "images": {
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v55/qa/native-1791267298767196849/private-evidence/config-shadow-power-one.png": "07d91106a545c37141bd4139bce40768732df4e5ee2bfcc2af6ca9cd62bacdc6",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v55/qa/native-1791267298767196849/private-evidence/config-shadow-power-four.png": "84d6a48437f64783d86444a88fd9dce2b852fe4a0870bf04a5466ea490210501",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v55/qa/native-1791267298767196849/private-evidence/config-shadow-power-one-native-output.png": "9e0bee5b437a7d70f62dcdd8dda07c07ee752adc6a0b709c64ef87f0e24d454c",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v55/qa/native-1791267298767196849/private-evidence/config-shadow-power-four-native-output.png": "73afb50b1193d82437b5d95eec28ed5ba5870597438e06254afbfe4e90e6adcb"
+      },
+      "result": {
+        "passed": true,
+        "changedFamilyPixels": 18860,
+        "changedOutputPixels": 42004,
+        "changedFamilyInterior": 0,
+        "changedOutputInterior": 0
+      }
+    }
+  ],
+  "pixelOracle": {
+    "command": [
+      "g++",
+      "-std=c++20",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v39/shadow-pixels.cpp",
+      "-o",
+      "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v39/pixel-proof/shadow-pixels",
+      "-lpng"
+    ],
+    "sha256": "469969e7cc2b008828845d6f84ceb3320702bd959602d7859bb8da7bb521a2cc",
+    "sourceSHA256": "3a81717a05c5ad320ba9fbcb41a0307bd8f7687da8f4b321abdde2b0f8cd97c4"
+  },
+  "nativeControls": 1853,
+  "retainedOriginalControls": 1783,
+  "normalOwnedExits": 172,
+  "actualNativeConfigurationFreshnessQualified": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "next": "Qualify full shared Elm retained preview label/URI after live source configuration change, then remaining style/config/shader/transform/hardware/output and original preview13/full GUI gates."
+}

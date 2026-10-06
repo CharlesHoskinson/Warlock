@@ -1,0 +1,59 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-00aca0024760400cbb6ed63cdaa6f4cb.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v4/qa/model.py": "ac73ca941b33e56de95e276c654e1d1b87a0934af2c667d21db87d244f6421de",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v4/spec/style.qnt": "f625812704217710bddf36c2e6edf77b0fa924fb95f36519e5a4e385faf69daa",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v4/native/replay.cpp": "46a3d042944815fbe6002686e536d42f6af66bfdb369a8ca2116092e5a047e10",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v4/SPEC.md": "cc5c0a5929ce240a05b41308f7bed469697739ceb5f95b3356eb30f604e86873",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v4/native/style_revision.hpp": "4b2566f5a18cd4dc5244d9d659a00cd46bdc23bc8725e8bef08d94aec5a2e3f0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v4/native/source_epoch.hpp": "df64eec18b8bd62b0b21b73e3aabbc1a9db10f122af65e36f78a6147bd67860f"
+  },
+  "commands": [
+    {
+      "name": "compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v4/qa/model-1791266599810858239",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v4/qa/model-1791266599810858239/replay.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v4/qa/model-1791266599810858239/replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v4/qa/model-1791266599810858239/style.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "scope": "Selected style-channel/membership/unavailable projection replayed through actual StyleRevision; native collection, full renderer coverage and crop/Elm fidelity remain separate.",
+  "error": "AssertionError(\"\\n Error [QNT000]: no viable alternative at input '!=ball'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v4/qa/model-1791266599810858239/style.qnt:19:3\\n  19:   all {family'=family,tint'=tint,alpha'=alpha,angle'=angle,color'=color,count'=count,complete'=complete,shadowPower'=s,glowPower'=g,blurPasses'=b,epoch'=(if(changed)epoch+1 else epoch)}\\n        ^^^\\n\\n\\n Error [QNT000]: missing '}' at 'all'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v4/qa/model-1791266599810858239/style.qnt:19:3\\n  19:   all {family'=family,tint'=tint,alpha'=alpha,angle'=angle,color'=color,count'=count,complete'=complete,shadowPower'=s,glowPower'=g,blurPasses'=b,epoch'=(if(changed)epoch+1 else epoch)}\\n        ^^^\\n\\nerror: parsing failed\\n\")",
+  "artifacts": {
+    "model.py": "ac73ca941b33e56de95e276c654e1d1b87a0934af2c667d21db87d244f6421de",
+    "style.qnt": "f625812704217710bddf36c2e6edf77b0fa924fb95f36519e5a4e385faf69daa",
+    "replay.cpp": "46a3d042944815fbe6002686e536d42f6af66bfdb369a8ca2116092e5a047e10",
+    "SPEC.md": "cc5c0a5929ce240a05b41308f7bed469697739ceb5f95b3356eb30f604e86873",
+    "style_revision.hpp": "4b2566f5a18cd4dc5244d9d659a00cd46bdc23bc8725e8bef08d94aec5a2e3f0",
+    "source_epoch.hpp": "df64eec18b8bd62b0b21b73e3aabbc1a9db10f122af65e36f78a6147bd67860f",
+    "replay": "87db255848032d00a11c7aac867b42c8e4d6897556d09bd2a60b8d76f8bd7e6c",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "d806a7c6fcaa21b3119376de3fc82845813a0838d92674a4c347b5dee378716d"
+  }
+}

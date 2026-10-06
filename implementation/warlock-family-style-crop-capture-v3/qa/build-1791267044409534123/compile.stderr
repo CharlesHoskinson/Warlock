@@ -1,0 +1,17 @@
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v3/qa/build-1791267044409534123/inputs/native/source-scope.inc:71,
+                 from /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v3/qa/build-1791267044409534123/inputs/native/authority.cpp:455:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v3/qa/build-1791267044409534123/inputs/native/style-source.inc: In function ‘std::optional<{anonymous}::FamilyStyleObservation> {anonymous}::familyStyleContext(PHLWINDOW, uint64_t)’:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v3/qa/build-1791267044409534123/inputs/native/style-source.inc:56:34: error: use of deleted function ‘Hyprutils::Memory::CUniquePointer<T>::CUniquePointer(const Hyprutils::Memory::CUniquePointer<T>&) [with T = Desktop::Rule::CWindowRuleApplicator]’
+   56 |         const auto rules=window->m_ruleApplicator;if(!rules)return refused();
+      |                                  ^~~~~~~~~~~~~~~~
+In file included from /usr/include/hyprutils/memory/WeakPtr.hpp:4,
+                 from /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v3/qa/build-1791267044409534123/owning-headers/src/helpers/memory/Memory.hpp:3,
+                 from /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v3/qa/build-1791267044409534123/owning-headers/src/macros.hpp:9,
+                 from /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v3/qa/build-1791267044409534123/owning-headers/src/config/ConfigValue.hpp:7,
+                 from /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v3/qa/build-1791267044409534123/inputs/native/authority.cpp:1:
+/usr/include/hyprutils/memory/UniquePtr.hpp:32:9: note: declared here
+   32 |         CUniquePointer(const CUniquePointer& ref)    = delete;
+      |         ^~~~~~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v3/qa/build-1791267044409534123/inputs/native/style-source.inc:56:34: note: use ‘-fdiagnostics-all-candidates’ to display considered candidates
+   56 |         const auto rules=window->m_ruleApplicator;if(!rules)return refused();
+      |                                  ^~~~~~~~~~~~~~~~

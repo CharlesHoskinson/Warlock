@@ -1,0 +1,11 @@
+# Native family geometry observation independent of capture eligibility
+
+The style-crop scope uses owning corecrop2 familyObservationCropBounds to describe the current mapped native family even when minimized or nonrendered. This read-only operation samples actual current members/styles/context and native clock and returns no pixels. SourceLive is still derived from current native eligibility. Existing scoped capture keeps its original source-liveness, strict makeFamilyCropFB planner, own child grant, original deadline, style/context and physical reservation gates. Retained FD3 pixels may remain historically available after source stop under original native lifetime/output/privacy/rendering/expiry. No renderer or policy authority is moved into the frontend.
+
+Compile this plugin against exact new owning headers and record complete strong symbol closure. Retain all original1756 native controls plus actual full shared Elm/WebKit family minimize, historical reopen, no new capture/deadline and ordered physical retirement/ACK. Full style/fidelity, async/hardware/output, original preview13 and all full release gates remain open. No installed/main desktop changes.
+
+Native v3 samples the immutable configuration tracker from style-revisions-v6: actual22 integer/11 floating renderer settings, owned screen-shader path, and8 per-member rule/X11 bits. A changed sampled input advances the existing native content epoch; typed wire schema and single Elm policy remain unchanged. Canonical unavailable, original capture/source/deadline/physical retirement guards and exact corecrop-v2 ABI remain. Shader file contents, motion transformer/output/HDR/background-dependent blur and complete fidelity remain unqualified.
+
+Fresh v4 retains actual v3 compile failure: native rule applicator is uniquely owned. Borrow its const pointer on the native owner thread and copy only its immutable scalar facts into the configuration tracker.
+
+Fresh v5 retains v4 actual compiler evidence. Owning rule accessors are non-const; borrow the native applicator pointer without modifying any property, read the same valueOrDefault/hasValue scalars as the renderer, then retain only copied facts. No ownership transfer or new setter is introduced.

@@ -1,0 +1,47 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-24ff9b867ce8471a8d274188cf98aab1.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/qa/model.py": "ac73ca941b33e56de95e276c654e1d1b87a0934af2c667d21db87d244f6421de",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/spec/style.qnt": "f625812704217710bddf36c2e6edf77b0fa924fb95f36519e5a4e385faf69daa",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/native/replay.cpp": "038ef3857801aaddae5f08acb0e6d60afc3b3322edddb82be9b6d33d8b892919",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/SPEC.md": "cc5c0a5929ce240a05b41308f7bed469697739ceb5f95b3356eb30f604e86873",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/native/style_revision.hpp": "232eaada857fe42b6e51e9d83e06a705926db6afe57cf86c1ad3e5a587b3ad9c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/native/source_epoch.hpp": "df64eec18b8bd62b0b21b73e3aabbc1a9db10f122af65e36f78a6147bd67860f"
+  },
+  "commands": [
+    {
+      "name": "compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/qa/model-1791266532373534956",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/qa/model-1791266532373534956/replay.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/qa/model-1791266532373534956/replay"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "scope": "Selected style-channel/membership/unavailable projection replayed through actual StyleRevision; native collection, full renderer coverage and crop/Elm fidelity remain separate.",
+  "error": "AssertionError('/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/qa/model-1791266532373534956/replay.cpp: In function \u2018int main(int, char**)\u2019:\\n/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/qa/model-1791266532373534956/replay.cpp:10:9: error: \u2018RenderConfiguration\u2019 was not declared in this scope; did you mean \u2018preview::RenderConfiguration\u2019?\\n   10 |         RenderConfiguration config;config.integers[ShadowPower]=shadow;config.integers[GlowPower]=glow;config.integers[BlurPasses]=blur;\\n      |         ^~~~~~~~~~~~~~~~~~~\\n      |         preview::RenderConfiguration\\nIn file included from /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/qa/model-1791266532373534956/replay.cpp:1:\\n/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/qa/model-1791266532373534956/style_revision.hpp:18:8: note: \u2018preview::RenderConfiguration\u2019 declared here\\n   18 | struct RenderConfiguration {\\n      |        ^~~~~~~~~~~~~~~~~~~\\n/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/qa/model-1791266532373534956/replay.cpp:10:36: error: \u2018config\u2019 was not declared in this scope\\n   10 |         RenderConfiguration config;config.integers[ShadowPower]=shadow;config.integers[GlowPower]=glow;config.integers[BlurPasses]=blur;\\n      |                                    ^~~~~~\\n/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/qa/model-1791266532373534956/replay.cpp:10:52: error: \u2018ShadowPower\u2019 was not declared in this scope; did you mean \u2018preview::ShadowPower\u2019?\\n   10 |         RenderConfiguration config;config.integers[ShadowPower]=shadow;config.integers[GlowPower]=glow;config.integers[BlurPasses]=blur;\\n      |                                                    ^~~~~~~~~~~\\n      |                                                    preview::ShadowPower\\n/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/qa/model-1791266532373534956/style_revision.hpp:16:54: note: \u2018preview::ShadowPower\u2019 declared here\\n   16 | enum RenderInteger:size_t {ShadowEnabled,ShadowRange,ShadowPower,ShadowIgnoreWindow,GlowEnabled,GlowRange,GlowPower,BlurEnabled,BlurSize,BlurPasses,BlurNewOptimizations,BlurXray,BlurIgnoreOpacity,BlurPopups,BlurInputMethods,BlurBlend,CMEnabled,CMAutoHDR,NonShaderCM,NonShaderCMInterop,SendContentType,XpMode,RenderIntegerCount};\\n      |                                                      ^~~~~~~~~~~\\n/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/qa/model-1791266532373534956/replay.cpp:10:88: error: \u2018GlowPower\u2019 was not declared in this scope; did you mean \u2018preview::GlowPower\u2019?\\n   10 |         RenderConfiguration config;config.integers[ShadowPower]=shadow;config.integers[GlowPower]=glow;config.integers[BlurPasses]=blur;\\n      |                                                                                        ^~~~~~~~~\\n      |                                                                                        preview::GlowPower\\n/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/qa/model-1791266532373534956/style_revision.hpp:16:107: note: \u2018preview::GlowPower\u2019 declared here\\n   16 | enum RenderInteger:size_t {ShadowEnabled,ShadowRange,ShadowPower,ShadowIgnoreWindow,GlowEnabled,GlowRange,GlowPower,BlurEnabled,BlurSize,BlurPasses,BlurNewOptimizations,BlurXray,BlurIgnoreOpacity,BlurPopups,BlurInputMethods,BlurBlend,CMEnabled,CMAutoHDR,NonShaderCM,NonShaderCMInterop,SendContentType,XpMode,RenderIntegerCount};\\n      |                                                                                                           ^~~~~~~~~\\n/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/qa/model-1791266532373534956/replay.cpp:10:120: error: \u2018BlurPasses\u2019 was not declared in this scope; did you mean \u2018preview::BlurPasses\u2019?\\n   10 |         RenderConfiguration config;config.integers[ShadowPower]=shadow;config.integers[GlowPower]=glow;config.integers[BlurPasses]=blur;\\n      |                                                                                                                        ^~~~~~~~~~\\n      |                                                                                                                        preview::BlurPasses\\n/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v3/qa/model-1791266532373534956/style_revision.hpp:16:138: note: \u2018preview::BlurPasses\u2019 declared here\\n   16 | enum RenderInteger:size_t {ShadowEnabled,ShadowRange,ShadowPower,ShadowIgnoreWindow,GlowEnabled,GlowRange,GlowPower,BlurEnabled,BlurSize,BlurPasses,BlurNewOptimizations,BlurXray,BlurIgnoreOpacity,BlurPopups,BlurInputMethods,BlurBlend,CMEnabled,CMAutoHDR,NonShaderCM,NonShaderCMInterop,SendContentType,XpMode,RenderIntegerCount};\\n      |                                                                                                                                          ^~~~~~~~~~\\n')",
+  "artifacts": {
+    "model.py": "ac73ca941b33e56de95e276c654e1d1b87a0934af2c667d21db87d244f6421de",
+    "style.qnt": "f625812704217710bddf36c2e6edf77b0fa924fb95f36519e5a4e385faf69daa",
+    "replay.cpp": "038ef3857801aaddae5f08acb0e6d60afc3b3322edddb82be9b6d33d8b892919",
+    "SPEC.md": "cc5c0a5929ce240a05b41308f7bed469697739ceb5f95b3356eb30f604e86873",
+    "style_revision.hpp": "232eaada857fe42b6e51e9d83e06a705926db6afe57cf86c1ad3e5a587b3ad9c",
+    "source_epoch.hpp": "df64eec18b8bd62b0b21b73e3aabbc1a9db10f122af65e36f78a6147bd67860f",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "17cc2719e188b9cda1840ce35aed43643bb0440e85f3d2b8f591ed26e0956abc"
+  }
+}

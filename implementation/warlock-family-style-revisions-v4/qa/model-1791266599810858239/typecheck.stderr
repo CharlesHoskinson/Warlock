@@ -1,0 +1,15 @@
+
+ Error [QNT000]: no viable alternative at input '!=ball'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v4/qa/model-1791266599810858239/style.qnt:19:3
+  19:   all {family'=family,tint'=tint,alpha'=alpha,angle'=angle,color'=color,count'=count,complete'=complete,shadowPower'=s,glowPower'=g,blurPasses'=b,epoch'=(if(changed)epoch+1 else epoch)}
+        ^^^
+
+
+ Error [QNT000]: missing '}' at 'all'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v4/qa/model-1791266599810858239/style.qnt:19:3
+  19:   all {family'=family,tint'=tint,alpha'=alpha,angle'=angle,color'=color,count'=count,complete'=complete,shadowPower'=s,glowPower'=g,blurPasses'=b,epoch'=(if(changed)epoch+1 else epoch)}
+        ^^^
+
+error: parsing failed
