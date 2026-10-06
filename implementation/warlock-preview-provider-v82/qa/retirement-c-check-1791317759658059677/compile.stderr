@@ -1,0 +1,12 @@
+native/retirement-observation-test.cpp: In function ‘int main(int, char**)’:
+native/retirement-observation-test.cpp:164:32: error: too few arguments to function ‘gboolean warlock_imported_clients_close(WarlockImportedClients*, GError**)’
+  164 |  warlock_imported_clients_close(owner);warlock_preview_bootstrap_close(bootstrap);server.finish();
+      |  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from native/retirement-observation-test.cpp:4:
+native/imported-clients.h:55:10: note: declared here
+   55 | gboolean warlock_imported_clients_close(WarlockImportedClients*,GError**);
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+native/retirement-observation-test.cpp:164:40: error: ‘warlock_preview_bootstrap_close’ was not declared in this scope; did you mean ‘warlock_preview_bootstrap_scope’?
+  164 |  warlock_imported_clients_close(owner);warlock_preview_bootstrap_close(bootstrap);server.finish();
+      |                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                        warlock_preview_bootstrap_scope

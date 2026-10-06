@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "7210a6f163984c23a526bd94aa9ef35d",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-06T20:06:01.649060+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/warlock-client-provider-native-v121",
+  "nextWork": [
+    "PROGRESS native120 actual authenticated Active/Future/minimizedActive/Retired/liveNeighbor and original116 controls passed with276 normal exits; failed only new118 fixed-retry audit (118 nine trials versus120 one). Source/evidence120 held. Fresh121 fixes new audit only, validates all actual retry oracles/normal exits/original frame expiry and exact fixed ordered gates; full objective preserved. Next audit mutations/preflight/serial native."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/warlock-client-provider-native-v120/component-manifest.json",
+      "sha256": "0c4eeb6ed3664a1ed457c8b73c2e3cba945396958005b64f42c0aad50221e6f6",
+      "size": 154530
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v121/ANCESTRY.json",
+      "sha256": "bc514c92c68558fb06dc75be4624c8838e557de358c6bb092d3853c0d6712945",
+      "size": 635
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

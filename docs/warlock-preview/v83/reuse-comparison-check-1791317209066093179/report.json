@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v121/qa/reuse_comparison.py": "36d46e0ca077443b6b5d36a629307331ce168ed80bcd53421aa77411f945a3c6",
+    "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v83/reuse-comparison-check.py": "20dd05c35785be3924df3e8ed0c7fa99f39433896ff2684def095557fbbdca43",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v118/qa/native-1791316136615598312/report.json": "f7f1a587b5e6cea1e84ceb278b8ef7af563f1aef48361619a3878a08c4c46aec",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v120/qa/native-1791316929285314159/report.json": "c0ae4fb3f9288a8bd740e471a15c558b5c03b050d3d70a3c7880c5c506158ac6"
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "actualComparison": {
+    "passed": true,
+    "fixedOrderedControls": 2437,
+    "prior": {
+      "attempts": 9,
+      "actualAttemptChecks": 26,
+      "originalExpiryUnchanged": true,
+      "allOwnedAttemptExitsNormal": true
+    },
+    "current": {
+      "attempts": 1,
+      "actualAttemptChecks": 2,
+      "originalExpiryUnchanged": true,
+      "allOwnedAttemptExitsNormal": true
+    },
+    "scope": "Conditional allocator trials each verified against their actual native evidence; unchanged fixed ordered oracles, physical/receipt/clock/pixel/deadline gates remain required."
+  },
+  "unsafeMutantsDetected": 8,
+  "mutants": [
+    {
+      "name": "missing-attempt-clock",
+      "caught": true
+    },
+    {
+      "name": "late-attempt",
+      "caught": true
+    },
+    {
+      "name": "wrong-attempt-normal-exit",
+      "caught": true
+    },
+    {
+      "name": "native-address-not-reused",
+      "caught": true
+    },
+    {
+      "name": "replayed-incarnation",
+      "caught": true
+    },
+    {
+      "name": "missing-fixed-oracle",
+      "caught": true
+    },
+    {
+      "name": "failed-fixed-oracle",
+      "caught": true
+    },
+    {
+      "name": "reordered-attempt-oracles",
+      "caught": true
+    }
+  ],
+  "scope": "Actual archived118 nine conditional allocator trials versus120 one; each real attempt and all2437 fixed ordered identities verified. No original predicate/deadline change or new native acceptance."
+}

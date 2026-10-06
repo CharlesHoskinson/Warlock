@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "579f822e6a964f45a0fb4e018c83017e",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-06T20:01:05.278465+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/warlock-client-provider-native-v120",
+  "nextWork": [
+    "PROGRESS native18 compiled and selected classifier8/20/438states/2mutants held. Prepared119 preflightpassed/unlaunched; prelaunchreview found two newexpectedrefusal discriminants wrong (error versus native refused). Source119 held unchanged, fresh120 corrects only those expectations before any native120 execution. Next preflight then serialized full campaign, preserving original118 oracles/ABI/deadlines. Native/fullrelease and actor erasure remainopen."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/warlock-client-provider-native-v119/component-manifest.json",
+      "sha256": "5ad162753b2c35b5f1d739a731ec77494084c0fcaa6e624677d42b43000bff76",
+      "size": 24969
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v120/ANCESTRY.json",
+      "sha256": "942e87b347048da2b1815951b9ea5d5c886e2c185f7f1eca5c49ca0eceb50db6",
+      "size": 545
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

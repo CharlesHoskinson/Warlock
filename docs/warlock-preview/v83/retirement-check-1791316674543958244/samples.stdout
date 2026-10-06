@@ -1,0 +1,1107 @@
+An example execution:
+
+[State 0]
+{
+  s: { history: [], issued: 0, minimized: false, owned: Set(), status: "Ready" }
+}
+
+[State 1]
+{
+  s:
+    {
+      history: ["Birth"],
+      issued: 1,
+      minimized: false,
+      owned: Set(1),
+      status: "Born"
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      history: ["Birth", "QueryFuture"],
+      issued: 1,
+      minimized: false,
+      owned: Set(1),
+      status: "Future"
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      history: ["Birth", "QueryFuture", "Birth"],
+      issued: 2,
+      minimized: false,
+      owned: Set(1, 2),
+      status: "Born"
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      history: ["Birth", "QueryFuture", "Birth", "QueryIncoherent"],
+      issued: 2,
+      minimized: false,
+      owned: Set(1, 2),
+      status: "Invalid"
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      history:
+        ["Birth", "QueryFuture", "Birth", "QueryIncoherent", "QueryFirst"],
+      issued: 2,
+      minimized: false,
+      owned: Set(1, 2),
+      status: "Active"
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      history:
+        [
+          "Birth",
+          "QueryFuture",
+          "Birth",
+          "QueryIncoherent",
+          "QueryFirst",
+          "MinimizeFirst"
+        ],
+      issued: 2,
+      minimized: true,
+      owned: Set(1, 2),
+      status: "Minimized"
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      history:
+        [
+          "Birth",
+          "QueryFuture",
+          "Birth",
+          "QueryIncoherent",
+          "QueryFirst",
+          "MinimizeFirst",
+          "QueryZero"
+        ],
+      issued: 2,
+      minimized: true,
+      owned: Set(1, 2),
+      status: "Invalid"
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      history:
+        [
+          "Birth",
+          "QueryFuture",
+          "Birth",
+          "QueryIncoherent",
+          "QueryFirst",
+          "MinimizeFirst",
+          "QueryZero",
+          "QueryFirst"
+        ],
+      issued: 2,
+      minimized: true,
+      owned: Set(1, 2),
+      status: "Active"
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      history:
+        [
+          "Birth",
+          "QueryFuture",
+          "Birth",
+          "QueryIncoherent",
+          "QueryFirst",
+          "MinimizeFirst",
+          "QueryZero",
+          "QueryFirst",
+          "QueryZero"
+        ],
+      issued: 2,
+      minimized: true,
+      owned: Set(1, 2),
+      status: "Invalid"
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      history:
+        [
+          "Birth",
+          "QueryFuture",
+          "Birth",
+          "QueryIncoherent",
+          "QueryFirst",
+          "MinimizeFirst",
+          "QueryZero",
+          "QueryFirst",
+          "QueryZero",
+          "QueryZero"
+        ],
+      issued: 2,
+      minimized: true,
+      owned: Set(1, 2),
+      status: "Invalid"
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      history:
+        [
+          "Birth",
+          "QueryFuture",
+          "Birth",
+          "QueryIncoherent",
+          "QueryFirst",
+          "MinimizeFirst",
+          "QueryZero",
+          "QueryFirst",
+          "QueryZero",
+          "QueryZero",
+          "QueryIncoherent"
+        ],
+      issued: 2,
+      minimized: true,
+      owned: Set(1, 2),
+      status: "Invalid"
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      history:
+        [
+          "Birth",
+          "QueryFuture",
+          "Birth",
+          "QueryIncoherent",
+          "QueryFirst",
+          "MinimizeFirst",
+          "QueryZero",
+          "QueryFirst",
+          "QueryZero",
+          "QueryZero",
+          "QueryIncoherent",
+          "Birth"
+        ],
+      issued: 3,
+      minimized: true,
+      owned: Set(1, 2, 3),
+      status: "Born"
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      history:
+        [
+          "Birth",
+          "QueryFuture",
+          "Birth",
+          "QueryIncoherent",
+          "QueryFirst",
+          "MinimizeFirst",
+          "QueryZero",
+          "QueryFirst",
+          "QueryZero",
+          "QueryZero",
+          "QueryIncoherent",
+          "Birth",
+          "QueryZero"
+        ],
+      issued: 3,
+      minimized: true,
+      owned: Set(1, 2, 3),
+      status: "Invalid"
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      history:
+        [
+          "Birth",
+          "QueryFuture",
+          "Birth",
+          "QueryIncoherent",
+          "QueryFirst",
+          "MinimizeFirst",
+          "QueryZero",
+          "QueryFirst",
+          "QueryZero",
+          "QueryZero",
+          "QueryIncoherent",
+          "Birth",
+          "QueryZero",
+          "QueryFuture"
+        ],
+      issued: 3,
+      minimized: true,
+      owned: Set(1, 2, 3),
+      status: "Future"
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      history:
+        [
+          "Birth",
+          "QueryFuture",
+          "Birth",
+          "QueryIncoherent",
+          "QueryFirst",
+          "MinimizeFirst",
+          "QueryZero",
+          "QueryFirst",
+          "QueryZero",
+          "QueryZero",
+          "QueryIncoherent",
+          "Birth",
+          "QueryZero",
+          "QueryFuture",
+          "CloseFirst"
+        ],
+      issued: 3,
+      minimized: true,
+      owned: Set(2, 3),
+      status: "Closed"
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      history:
+        [
+          "Birth",
+          "QueryFuture",
+          "Birth",
+          "QueryIncoherent",
+          "QueryFirst",
+          "MinimizeFirst",
+          "QueryZero",
+          "QueryFirst",
+          "QueryZero",
+          "QueryZero",
+          "QueryIncoherent",
+          "Birth",
+          "QueryZero",
+          "QueryFuture",
+          "CloseFirst",
+          "QueryIncoherent"
+        ],
+      issued: 3,
+      minimized: true,
+      owned: Set(2, 3),
+      status: "Invalid"
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      history:
+        [
+          "Birth",
+          "QueryFuture",
+          "Birth",
+          "QueryIncoherent",
+          "QueryFirst",
+          "MinimizeFirst",
+          "QueryZero",
+          "QueryFirst",
+          "QueryZero",
+          "QueryZero",
+          "QueryIncoherent",
+          "Birth",
+          "QueryZero",
+          "QueryFuture",
+          "CloseFirst",
+          "QueryIncoherent",
+          "QueryFuture"
+        ],
+      issued: 3,
+      minimized: true,
+      owned: Set(2, 3),
+      status: "Future"
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      history:
+        [
+          "Birth",
+          "QueryFuture",
+          "Birth",
+          "QueryIncoherent",
+          "QueryFirst",
+          "MinimizeFirst",
+          "QueryZero",
+          "QueryFirst",
+          "QueryZero",
+          "QueryZero",
+          "QueryIncoherent",
+          "Birth",
+          "QueryZero",
+          "QueryFuture",
+          "CloseFirst",
+          "QueryIncoherent",
+          "QueryFuture",
+          "Birth"
+        ],
+      issued: 4,
+      minimized: true,
+      owned: Set(2, 3, 4),
+      status: "Born"
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      history:
+        [
+          "Birth",
+          "QueryFuture",
+          "Birth",
+          "QueryIncoherent",
+          "QueryFirst",
+          "MinimizeFirst",
+          "QueryZero",
+          "QueryFirst",
+          "QueryZero",
+          "QueryZero",
+          "QueryIncoherent",
+          "Birth",
+          "QueryZero",
+          "QueryFuture",
+          "CloseFirst",
+          "QueryIncoherent",
+          "QueryFuture",
+          "Birth",
+          "QueryFuture"
+        ],
+      issued: 4,
+      minimized: true,
+      owned: Set(2, 3, 4),
+      status: "Future"
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      history:
+        [
+          "Birth",
+          "QueryFuture",
+          "Birth",
+          "QueryIncoherent",
+          "QueryFirst",
+          "MinimizeFirst",
+          "QueryZero",
+          "QueryFirst",
+          "QueryZero",
+          "QueryZero",
+          "QueryIncoherent",
+          "Birth",
+          "QueryZero",
+          "QueryFuture",
+          "CloseFirst",
+          "QueryIncoherent",
+          "QueryFuture",
+          "Birth",
+          "QueryFuture",
+          "QueryFirst"
+        ],
+      issued: 4,
+      minimized: true,
+      owned: Set(2, 3, 4),
+      status: "Retired"
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      history:
+        [
+          "Birth",
+          "QueryFuture",
+          "Birth",
+          "QueryIncoherent",
+          "QueryFirst",
+          "MinimizeFirst",
+          "QueryZero",
+          "QueryFirst",
+          "QueryZero",
+          "QueryZero",
+          "QueryIncoherent",
+          "Birth",
+          "QueryZero",
+          "QueryFuture",
+          "CloseFirst",
+          "QueryIncoherent",
+          "QueryFuture",
+          "Birth",
+          "QueryFuture",
+          "QueryFirst",
+          "QueryFuture"
+        ],
+      issued: 4,
+      minimized: true,
+      owned: Set(2, 3, 4),
+      status: "Future"
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      history:
+        [
+          "Birth",
+          "QueryFuture",
+          "Birth",
+          "QueryIncoherent",
+          "QueryFirst",
+          "MinimizeFirst",
+          "QueryZero",
+          "QueryFirst",
+          "QueryZero",
+          "QueryZero",
+          "QueryIncoherent",
+          "Birth",
+          "QueryZero",
+          "QueryFuture",
+          "CloseFirst",
+          "QueryIncoherent",
+          "QueryFuture",
+          "Birth",
+          "QueryFuture",
+          "QueryFirst",
+          "QueryFuture",
+          "QueryIncoherent"
+        ],
+      issued: 4,
+      minimized: true,
+      owned: Set(2, 3, 4),
+      status: "Invalid"
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      history:
+        [
+          "Birth",
+          "QueryFuture",
+          "Birth",
+          "QueryIncoherent",
+          "QueryFirst",
+          "MinimizeFirst",
+          "QueryZero",
+          "QueryFirst",
+          "QueryZero",
+          "QueryZero",
+          "QueryIncoherent",
+          "Birth",
+          "QueryZero",
+          "QueryFuture",
+          "CloseFirst",
+          "QueryIncoherent",
+          "QueryFuture",
+          "Birth",
+          "QueryFuture",
+          "QueryFirst",
+          "QueryFuture",
+          "QueryIncoherent",
+          "QueryFirst"
+        ],
+      issued: 4,
+      minimized: true,
+      owned: Set(2, 3, 4),
+      status: "Retired"
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      history:
+        [
+          "Birth",
+          "QueryFuture",
+          "Birth",
+          "QueryIncoherent",
+          "QueryFirst",
+          "MinimizeFirst",
+          "QueryZero",
+          "QueryFirst",
+          "QueryZero",
+          "QueryZero",
+          "QueryIncoherent",
+          "Birth",
+          "QueryZero",
+          "QueryFuture",
+          "CloseFirst",
+          "QueryIncoherent",
+          "QueryFuture",
+          "Birth",
+          "QueryFuture",
+          "QueryFirst",
+          "QueryFuture",
+          "QueryIncoherent",
+          "QueryFirst",
+          "QueryIncoherent"
+        ],
+      issued: 4,
+      minimized: true,
+      owned: Set(2, 3, 4),
+      status: "Invalid"
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      history:
+        [
+          "Birth",
+          "QueryFuture",
+          "Birth",
+          "QueryIncoherent",
+          "QueryFirst",
+          "MinimizeFirst",
+          "QueryZero",
+          "QueryFirst",
+          "QueryZero",
+          "QueryZero",
+          "QueryIncoherent",
+          "Birth",
+          "QueryZero",
+          "QueryFuture",
+          "CloseFirst",
+          "QueryIncoherent",
+          "QueryFuture",
+          "Birth",
+          "QueryFuture",
+          "QueryFirst",
+          "QueryFuture",
+          "QueryIncoherent",
+          "QueryFirst",
+          "QueryIncoherent",
+          "QueryZero"
+        ],
+      issued: 4,
+      minimized: true,
+      owned: Set(2, 3, 4),
+      status: "Invalid"
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      history:
+        [
+          "Birth",
+          "QueryFuture",
+          "Birth",
+          "QueryIncoherent",
+          "QueryFirst",
+          "MinimizeFirst",
+          "QueryZero",
+          "QueryFirst",
+          "QueryZero",
+          "QueryZero",
+          "QueryIncoherent",
+          "Birth",
+          "QueryZero",
+          "QueryFuture",
+          "CloseFirst",
+          "QueryIncoherent",
+          "QueryFuture",
+          "Birth",
+          "QueryFuture",
+          "QueryFirst",
+          "QueryFuture",
+          "QueryIncoherent",
+          "QueryFirst",
+          "QueryIncoherent",
+          "QueryZero",
+          "QueryZero"
+        ],
+      issued: 4,
+      minimized: true,
+      owned: Set(2, 3, 4),
+      status: "Invalid"
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      history:
+        [
+          "Birth",
+          "QueryFuture",
+          "Birth",
+          "QueryIncoherent",
+          "QueryFirst",
+          "MinimizeFirst",
+          "QueryZero",
+          "QueryFirst",
+          "QueryZero",
+          "QueryZero",
+          "QueryIncoherent",
+          "Birth",
+          "QueryZero",
+          "QueryFuture",
+          "CloseFirst",
+          "QueryIncoherent",
+          "QueryFuture",
+          "Birth",
+          "QueryFuture",
+          "QueryFirst",
+          "QueryFuture",
+          "QueryIncoherent",
+          "QueryFirst",
+          "QueryIncoherent",
+          "QueryZero",
+          "QueryZero",
+          "QueryFirst"
+        ],
+      issued: 4,
+      minimized: true,
+      owned: Set(2, 3, 4),
+      status: "Retired"
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      history:
+        [
+          "Birth",
+          "QueryFuture",
+          "Birth",
+          "QueryIncoherent",
+          "QueryFirst",
+          "MinimizeFirst",
+          "QueryZero",
+          "QueryFirst",
+          "QueryZero",
+          "QueryZero",
+          "QueryIncoherent",
+          "Birth",
+          "QueryZero",
+          "QueryFuture",
+          "CloseFirst",
+          "QueryIncoherent",
+          "QueryFuture",
+          "Birth",
+          "QueryFuture",
+          "QueryFirst",
+          "QueryFuture",
+          "QueryIncoherent",
+          "QueryFirst",
+          "QueryIncoherent",
+          "QueryZero",
+          "QueryZero",
+          "QueryFirst",
+          "QueryIncoherent"
+        ],
+      issued: 4,
+      minimized: true,
+      owned: Set(2, 3, 4),
+      status: "Invalid"
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      history:
+        [
+          "Birth",
+          "QueryFuture",
+          "Birth",
+          "QueryIncoherent",
+          "QueryFirst",
+          "MinimizeFirst",
+          "QueryZero",
+          "QueryFirst",
+          "QueryZero",
+          "QueryZero",
+          "QueryIncoherent",
+          "Birth",
+          "QueryZero",
+          "QueryFuture",
+          "CloseFirst",
+          "QueryIncoherent",
+          "QueryFuture",
+          "Birth",
+          "QueryFuture",
+          "QueryFirst",
+          "QueryFuture",
+          "QueryIncoherent",
+          "QueryFirst",
+          "QueryIncoherent",
+          "QueryZero",
+          "QueryZero",
+          "QueryFirst",
+          "QueryIncoherent",
+          "QueryFuture"
+        ],
+      issued: 4,
+      minimized: true,
+      owned: Set(2, 3, 4),
+      status: "Future"
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      history:
+        [
+          "Birth",
+          "QueryFuture",
+          "Birth",
+          "QueryIncoherent",
+          "QueryFirst",
+          "MinimizeFirst",
+          "QueryZero",
+          "QueryFirst",
+          "QueryZero",
+          "QueryZero",
+          "QueryIncoherent",
+          "Birth",
+          "QueryZero",
+          "QueryFuture",
+          "CloseFirst",
+          "QueryIncoherent",
+          "QueryFuture",
+          "Birth",
+          "QueryFuture",
+          "QueryFirst",
+          "QueryFuture",
+          "QueryIncoherent",
+          "QueryFirst",
+          "QueryIncoherent",
+          "QueryZero",
+          "QueryZero",
+          "QueryFirst",
+          "QueryIncoherent",
+          "QueryFuture",
+          "Birth"
+        ],
+      issued: 5,
+      minimized: true,
+      owned: Set(2, 3, 4, 5),
+      status: "Born"
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      history:
+        [
+          "Birth",
+          "QueryFuture",
+          "Birth",
+          "QueryIncoherent",
+          "QueryFirst",
+          "MinimizeFirst",
+          "QueryZero",
+          "QueryFirst",
+          "QueryZero",
+          "QueryZero",
+          "QueryIncoherent",
+          "Birth",
+          "QueryZero",
+          "QueryFuture",
+          "CloseFirst",
+          "QueryIncoherent",
+          "QueryFuture",
+          "Birth",
+          "QueryFuture",
+          "QueryFirst",
+          "QueryFuture",
+          "QueryIncoherent",
+          "QueryFirst",
+          "QueryIncoherent",
+          "QueryZero",
+          "QueryZero",
+          "QueryFirst",
+          "QueryIncoherent",
+          "QueryFuture",
+          "Birth",
+          "QueryFirst"
+        ],
+      issued: 5,
+      minimized: true,
+      owned: Set(2, 3, 4, 5),
+      status: "Retired"
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      history:
+        [
+          "Birth",
+          "QueryFuture",
+          "Birth",
+          "QueryIncoherent",
+          "QueryFirst",
+          "MinimizeFirst",
+          "QueryZero",
+          "QueryFirst",
+          "QueryZero",
+          "QueryZero",
+          "QueryIncoherent",
+          "Birth",
+          "QueryZero",
+          "QueryFuture",
+          "CloseFirst",
+          "QueryIncoherent",
+          "QueryFuture",
+          "Birth",
+          "QueryFuture",
+          "QueryFirst",
+          "QueryFuture",
+          "QueryIncoherent",
+          "QueryFirst",
+          "QueryIncoherent",
+          "QueryZero",
+          "QueryZero",
+          "QueryFirst",
+          "QueryIncoherent",
+          "QueryFuture",
+          "Birth",
+          "QueryFirst",
+          "QueryZero"
+        ],
+      issued: 5,
+      minimized: true,
+      owned: Set(2, 3, 4, 5),
+      status: "Invalid"
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      history:
+        [
+          "Birth",
+          "QueryFuture",
+          "Birth",
+          "QueryIncoherent",
+          "QueryFirst",
+          "MinimizeFirst",
+          "QueryZero",
+          "QueryFirst",
+          "QueryZero",
+          "QueryZero",
+          "QueryIncoherent",
+          "Birth",
+          "QueryZero",
+          "QueryFuture",
+          "CloseFirst",
+          "QueryIncoherent",
+          "QueryFuture",
+          "Birth",
+          "QueryFuture",
+          "QueryFirst",
+          "QueryFuture",
+          "QueryIncoherent",
+          "QueryFirst",
+          "QueryIncoherent",
+          "QueryZero",
+          "QueryZero",
+          "QueryFirst",
+          "QueryIncoherent",
+          "QueryFuture",
+          "Birth",
+          "QueryFirst",
+          "QueryZero",
+          "QueryFirst"
+        ],
+      issued: 5,
+      minimized: true,
+      owned: Set(2, 3, 4, 5),
+      status: "Retired"
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      history:
+        [
+          "Birth",
+          "QueryFuture",
+          "Birth",
+          "QueryIncoherent",
+          "QueryFirst",
+          "MinimizeFirst",
+          "QueryZero",
+          "QueryFirst",
+          "QueryZero",
+          "QueryZero",
+          "QueryIncoherent",
+          "Birth",
+          "QueryZero",
+          "QueryFuture",
+          "CloseFirst",
+          "QueryIncoherent",
+          "QueryFuture",
+          "Birth",
+          "QueryFuture",
+          "QueryFirst",
+          "QueryFuture",
+          "QueryIncoherent",
+          "QueryFirst",
+          "QueryIncoherent",
+          "QueryZero",
+          "QueryZero",
+          "QueryFirst",
+          "QueryIncoherent",
+          "QueryFuture",
+          "Birth",
+          "QueryFirst",
+          "QueryZero",
+          "QueryFirst",
+          "QueryZero"
+        ],
+      issued: 5,
+      minimized: true,
+      owned: Set(2, 3, 4, 5),
+      status: "Invalid"
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      history:
+        [
+          "Birth",
+          "QueryFuture",
+          "Birth",
+          "QueryIncoherent",
+          "QueryFirst",
+          "MinimizeFirst",
+          "QueryZero",
+          "QueryFirst",
+          "QueryZero",
+          "QueryZero",
+          "QueryIncoherent",
+          "Birth",
+          "QueryZero",
+          "QueryFuture",
+          "CloseFirst",
+          "QueryIncoherent",
+          "QueryFuture",
+          "Birth",
+          "QueryFuture",
+          "QueryFirst",
+          "QueryFuture",
+          "QueryIncoherent",
+          "QueryFirst",
+          "QueryIncoherent",
+          "QueryZero",
+          "QueryZero",
+          "QueryFirst",
+          "QueryIncoherent",
+          "QueryFuture",
+          "Birth",
+          "QueryFirst",
+          "QueryZero",
+          "QueryFirst",
+          "QueryZero",
+          "QueryFirst"
+        ],
+      issued: 5,
+      minimized: true,
+      owned: Set(2, 3, 4, 5),
+      status: "Retired"
+    }
+}
+
+[ok] No violation found (199ms at 754 traces/second).
+Trace length statistics: max=36, min=36, average=36.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
