@@ -1,0 +1,11 @@
+{"event":"ack-configure","sequence":1,"controlSequence":0,"rootCommits":1,"childCommits":0,"serial":151,"width":320,"height":240,"monotonicNs":276263745820925}
+{"event":"buffercommit","sequence":2,"controlSequence":0,"rootCommits":2,"childCommits":0,"serial":151,"width":320,"height":240,"monotonicNs":276263746345769}
+{"event":"ready","sequence":3,"controlSequence":0,"rootCommits":2,"childCommits":0,"serial":151,"width":320,"height":240,"monotonicNs":276263746382583}
+{"event":"buffer-release","sequence":4,"controlSequence":0,"rootCommits":2,"childCommits":0,"serial":151,"width":320,"height":240,"monotonicNs":276263748061968}
+{"event":"ack-configure","sequence":5,"controlSequence":0,"rootCommits":2,"childCommits":0,"serial":152,"width":320,"height":240,"monotonicNs":276263748158235}
+{"event":"buffercommit","sequence":6,"controlSequence":1,"rootCommits":2,"childCommits":1,"serial":152,"width":320,"height":240,"monotonicNs":276263801141377}
+{"event":"request","sequence":7,"controlSequence":1,"rootCommits":3,"childCommits":1,"serial":152,"width":320,"height":240,"monotonicNs":276263801182072,"command":"child-create"}
+{"event":"buffer-release","sequence":8,"controlSequence":1,"rootCommits":3,"childCommits":1,"serial":152,"width":320,"height":240,"monotonicNs":276263801895736}
+{"event":"server-barrier","sequence":9,"controlSequence":1,"rootCommits":3,"childCommits":1,"serial":152,"width":320,"height":240,"monotonicNs":276263801971587,"command":"child-create","barrierControl":1}
+{"event":"request","sequence":10,"controlSequence":2,"rootCommits":3,"childCommits":1,"serial":152,"width":320,"height":240,"monotonicNs":276271889158535,"command":"quit"}
+{"event":"normalexit","sequence":11,"controlSequence":2,"rootCommits":3,"childCommits":1,"serial":152,"width":320,"height":240,"monotonicNs":276271889190406}

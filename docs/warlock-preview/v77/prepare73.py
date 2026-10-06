@@ -1,0 +1,18 @@
+"""Retain failed feedback fixture evidence; fresh derivative corrects its command oracle."""
+import hashlib,json,pathlib,resource,shutil,stat,sys
+sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
+require_qa_scope();assert resource.getrlimit(resource.RLIMIT_CORE)==(1,1)
+r=pathlib.Path('/home/hoskinson/omarchy-windows-parity');p=r/'implementation/warlock-preview-provider-v72';t=r/'implementation/warlock-preview-provider-v73';sha=lambda f:hashlib.sha256(f.read_bytes()).hexdigest()
+build=next(p.glob('qa/build-*/report.json'));failure=next(p.glob('qa/feedback-check-*/report.json'));resume=next(p.glob('qa/resume-check-*/report.json'))
+assert json.loads(build.read_text())['passed'] and not json.loads(failure.read_text())['passed'] and json.loads(resume.read_text())['passed']
+assert not (p/'component-manifest.json').exists() and not t.exists()
+files={str(f.relative_to(p)):{'sha256':sha(f),'size':f.stat().st_size,'mode':oct(stat.S_IMODE(f.stat().st_mode))} for f in sorted(p.rglob('*')) if f.is_file() and '__pycache__' not in f.parts}
+(p/'component-manifest.json').write_text(json.dumps({'sourceHeld':True,'passed':False,'evidenceIntegrityPassed':True,'files':files,'buildReport':str(build),'feedbackReport':str(failure),'resumeCReport':str(resume),'nativeAcceptance':False,'fullReleaseAccepted':False,'failure':'New feedback guard compared prior transient Acquire to current feedback command list. Actual capturing lifecycle/feedback remain unchanged; fresh73 corrects assertion to retained models/feedback plus empty current effects.'},indent=2)+'\n')
+shutil.copytree(p,t,ignore=shutil.ignore_patterns('build-*','*check-*','component-manifest.json','ANCESTRY.json','__pycache__','elm-stuff','elm-home','mutable-elm-home'))
+f=t/'qa/feedback-replay.js';s=f.read_text();old="check(result,owned,'Late local capacity cannot replace capturing job');";assert s.count(old)==1
+s=s.replace(old,"check(result.models,owned.models,'Late local capacity retains capturing job');check(result.feedback,owned.feedback,'Late local capacity cannot replace local state');check(cmds(result),[],'Late local capacity emits no command');");f.write_text(s)
+f=t/'qa/build.py';s=f.read_text();marker=" run('preview-replay-build',";start=s.index(marker);end=s.index('\n',start)
+s=s[:end]+"\n run('feedback-replay-build',['npm','exec','--yes','--package=elm@0.19.2-0','--','elm','make','src/PreviewFeedbackReplay.elm','--optimize','--output=assets/feedback-replay.js'])"+s[end:];f.write_text(s)
+(t/'ANCESTRY.json').write_text(json.dumps({'owner':'f6779148-8f5d-4bdf-8a0f-044184e486f2','parent':str(p),'parentManifestSHA256':sha(p/'component-manifest.json'),'purpose':'Unchanged72 production local feedback, correct new fixture command oracle, compile feedback replay in current full build. Retain failed72 and passed legacy79. All original release gates active.','nativeAcceptance':False,'fullReleaseAccepted':False},indent=2)+'\n')
+sys.path.insert(0,str(r/'implementation/elm-build-loop-v1'));import loop
+e=loop.write_checkpoint(r,'f6779148-8f5d-4bdf-8a0f-044184e486f2',str(t.relative_to(r)),['PROGRESS72 full94 and legacyC79/Elm17 pass; newfeedback fixture fails prior transientAcquire/currentempty comparison, actualpolicy remains unchanged. Holdall72source/evidence; fresh73 correct fixture command oracle and includes feedback worker in full build. Nativefeedback APIs/Elm/fullGTKdynamic3route implemented but newmodel/nativeDOM qualification pending. Original fullrelease scope preserved.'],'progress',[str((t/'ANCESTRY.json').relative_to(r))]);print(json.dumps({'source':str(t),'checkpoint':str(e)}))

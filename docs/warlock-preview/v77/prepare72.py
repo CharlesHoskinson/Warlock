@@ -1,0 +1,11 @@
+"""Own GUI72 local demand feedback through the existing trusted full host."""
+import hashlib,json,pathlib,resource,shutil,sys
+sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
+require_qa_scope();assert resource.getrlimit(resource.RLIMIT_CORE)==(1,1)
+r=pathlib.Path('/home/hoskinson/omarchy-windows-parity');p=r/'implementation/warlock-preview-provider-v71';t=r/'implementation/warlock-preview-provider-v72';sha=lambda f:hashlib.sha256(f.read_bytes()).hexdigest()
+m=p/'component-manifest.json';d=json.loads(m.read_text());assert d['passed'] and not t.exists()
+for name,row in d['files'].items():assert sha(p/name)==row['sha256'],name
+shutil.copytree(p,t,ignore=shutil.ignore_patterns('build-*','*check-*','component-manifest.json','elm-stuff','mutable-elm-home','__pycache__','ANCESTRY.json'))
+(t/'ANCESTRY.json').write_text(json.dumps({'owner':'f6779148-8f5d-4bdf-8a0f-044184e486f2','parent':str(p),'parentManifestSHA256':sha(m),'purpose':'Typed local capacity/expiry feedback with native scope/stamp/clock/sequence, one immutable Elm policy, no fake job or terminal proof; three-subject full host qualification through same trusted bootstrap/allocator. Preserve original legacy APIs, source meanings/deadlines and all frozen release gates.','nativeAcceptance':False,'fullReleaseAccepted':False},indent=2)+'\n')
+sys.path.insert(0,str(r/'implementation/elm-build-loop-v1'));import loop
+e=loop.write_checkpoint(r,'f6779148-8f5d-4bdf-8a0f-044184e486f2',str(t.relative_to(r)),['Previous turn PROGRESS verified actualHEAD e023b55/public55 e79e5e7/native1092419/270normalclean/C125/fullGUI71. No live prior handles. Fresh72 owns local feedback wire/native outcome under same admission mutex, immutable Elm scope/stamp/clock/sequence guard and accessible current-label display; full shared GTK host uses trusted feedback APIs and additive three-subject qualification route with unchanged two physical items. Native slot serialized; alloriginalS01-S16/S09/recovery/drag/hardware/ATIME/resources/journeys/deployment/fullrelease remainactive. Five foreigntrackedchanges preserved.'],'progress',[str((t/'ANCESTRY.json').relative_to(r))]);print(json.dumps({'source':str(t),'checkpoint':str(e)}))

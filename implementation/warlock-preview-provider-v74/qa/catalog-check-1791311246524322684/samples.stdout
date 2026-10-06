@@ -1,0 +1,721 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      cancels: 0,
+      demand: false,
+      history: [],
+      known: 0,
+      minimized: false,
+      pending: false,
+      present: false,
+      request: 0,
+      scoped: false
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      cancels: 0,
+      demand: false,
+      history: ["Stale"],
+      known: 0,
+      minimized: false,
+      pending: false,
+      present: false,
+      request: 0,
+      scoped: false
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      cancels: 0,
+      demand: false,
+      history: ["Stale", "Catalog"],
+      known: 0,
+      minimized: false,
+      pending: false,
+      present: true,
+      request: 1,
+      scoped: false
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      cancels: 0,
+      demand: false,
+      history: ["Stale", "Catalog", "Minimized"],
+      known: 0,
+      minimized: true,
+      pending: false,
+      present: true,
+      request: 2,
+      scoped: false
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      cancels: 0,
+      demand: false,
+      history: ["Stale", "Catalog", "Minimized", "Stale"],
+      known: 0,
+      minimized: true,
+      pending: false,
+      present: true,
+      request: 2,
+      scoped: false
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      cancels: 0,
+      demand: true,
+      history: ["Stale", "Catalog", "Minimized", "Stale", "Start"],
+      known: 1,
+      minimized: true,
+      pending: false,
+      present: true,
+      request: 2,
+      scoped: true
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      cancels: 0,
+      demand: true,
+      history: ["Stale", "Catalog", "Minimized", "Stale", "Start", "Catalog"],
+      known: 1,
+      minimized: true,
+      pending: false,
+      present: true,
+      request: 3,
+      scoped: true
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      cancels: 0,
+      demand: true,
+      history:
+        [
+          "Stale",
+          "Catalog",
+          "Minimized",
+          "Stale",
+          "Start",
+          "Catalog",
+          "Foreign"
+        ],
+      known: 1,
+      minimized: true,
+      pending: false,
+      present: true,
+      request: 3,
+      scoped: true
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      cancels: 1,
+      demand: false,
+      history:
+        [
+          "Stale",
+          "Catalog",
+          "Minimized",
+          "Stale",
+          "Start",
+          "Catalog",
+          "Foreign",
+          "Remove"
+        ],
+      known: 1,
+      minimized: true,
+      pending: true,
+      present: true,
+      request: 4,
+      scoped: true
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      cancels: 1,
+      demand: false,
+      history:
+        [
+          "Stale",
+          "Catalog",
+          "Minimized",
+          "Stale",
+          "Start",
+          "Catalog",
+          "Foreign",
+          "Remove",
+          "Remove"
+        ],
+      known: 1,
+      minimized: true,
+      pending: true,
+      present: true,
+      request: 5,
+      scoped: true
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      cancels: 1,
+      demand: false,
+      history:
+        [
+          "Stale",
+          "Catalog",
+          "Minimized",
+          "Stale",
+          "Start",
+          "Catalog",
+          "Foreign",
+          "Remove",
+          "Remove",
+          "Foreign"
+        ],
+      known: 1,
+      minimized: true,
+      pending: true,
+      present: true,
+      request: 5,
+      scoped: true
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      cancels: 1,
+      demand: false,
+      history:
+        [
+          "Stale",
+          "Catalog",
+          "Minimized",
+          "Stale",
+          "Start",
+          "Catalog",
+          "Foreign",
+          "Remove",
+          "Remove",
+          "Foreign",
+          "Receipt"
+        ],
+      known: 0,
+      minimized: true,
+      pending: false,
+      present: true,
+      request: 5,
+      scoped: true
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      cancels: 1,
+      demand: false,
+      history:
+        [
+          "Stale",
+          "Catalog",
+          "Minimized",
+          "Stale",
+          "Start",
+          "Catalog",
+          "Foreign",
+          "Remove",
+          "Remove",
+          "Foreign",
+          "Receipt",
+          "Stale"
+        ],
+      known: 0,
+      minimized: true,
+      pending: false,
+      present: true,
+      request: 5,
+      scoped: true
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      cancels: 1,
+      demand: false,
+      history:
+        [
+          "Stale",
+          "Catalog",
+          "Minimized",
+          "Stale",
+          "Start",
+          "Catalog",
+          "Foreign",
+          "Remove",
+          "Remove",
+          "Foreign",
+          "Receipt",
+          "Stale",
+          "Minimized"
+        ],
+      known: 0,
+      minimized: true,
+      pending: false,
+      present: true,
+      request: 6,
+      scoped: true
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      cancels: 1,
+      demand: false,
+      history:
+        [
+          "Stale",
+          "Catalog",
+          "Minimized",
+          "Stale",
+          "Start",
+          "Catalog",
+          "Foreign",
+          "Remove",
+          "Remove",
+          "Foreign",
+          "Receipt",
+          "Stale",
+          "Minimized",
+          "Catalog"
+        ],
+      known: 0,
+      minimized: true,
+      pending: false,
+      present: true,
+      request: 7,
+      scoped: true
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      cancels: 1,
+      demand: false,
+      history:
+        [
+          "Stale",
+          "Catalog",
+          "Minimized",
+          "Stale",
+          "Start",
+          "Catalog",
+          "Foreign",
+          "Remove",
+          "Remove",
+          "Foreign",
+          "Receipt",
+          "Stale",
+          "Minimized",
+          "Catalog",
+          "Catalog"
+        ],
+      known: 0,
+      minimized: true,
+      pending: false,
+      present: true,
+      request: 8,
+      scoped: true
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      cancels: 1,
+      demand: false,
+      history:
+        [
+          "Stale",
+          "Catalog",
+          "Minimized",
+          "Stale",
+          "Start",
+          "Catalog",
+          "Foreign",
+          "Remove",
+          "Remove",
+          "Foreign",
+          "Receipt",
+          "Stale",
+          "Minimized",
+          "Catalog",
+          "Catalog",
+          "Catalog"
+        ],
+      known: 0,
+      minimized: true,
+      pending: false,
+      present: true,
+      request: 9,
+      scoped: true
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      cancels: 1,
+      demand: false,
+      history:
+        [
+          "Stale",
+          "Catalog",
+          "Minimized",
+          "Stale",
+          "Start",
+          "Catalog",
+          "Foreign",
+          "Remove",
+          "Remove",
+          "Foreign",
+          "Receipt",
+          "Stale",
+          "Minimized",
+          "Catalog",
+          "Catalog",
+          "Catalog",
+          "Foreign"
+        ],
+      known: 0,
+      minimized: true,
+      pending: false,
+      present: true,
+      request: 9,
+      scoped: true
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      cancels: 1,
+      demand: false,
+      history:
+        [
+          "Stale",
+          "Catalog",
+          "Minimized",
+          "Stale",
+          "Start",
+          "Catalog",
+          "Foreign",
+          "Remove",
+          "Remove",
+          "Foreign",
+          "Receipt",
+          "Stale",
+          "Minimized",
+          "Catalog",
+          "Catalog",
+          "Catalog",
+          "Foreign",
+          "Catalog"
+        ],
+      known: 0,
+      minimized: true,
+      pending: false,
+      present: true,
+      request: 10,
+      scoped: true
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      cancels: 1,
+      demand: false,
+      history:
+        [
+          "Stale",
+          "Catalog",
+          "Minimized",
+          "Stale",
+          "Start",
+          "Catalog",
+          "Foreign",
+          "Remove",
+          "Remove",
+          "Foreign",
+          "Receipt",
+          "Stale",
+          "Minimized",
+          "Catalog",
+          "Catalog",
+          "Catalog",
+          "Foreign",
+          "Catalog",
+          "Foreign"
+        ],
+      known: 0,
+      minimized: true,
+      pending: false,
+      present: true,
+      request: 10,
+      scoped: true
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      cancels: 1,
+      demand: false,
+      history:
+        [
+          "Stale",
+          "Catalog",
+          "Minimized",
+          "Stale",
+          "Start",
+          "Catalog",
+          "Foreign",
+          "Remove",
+          "Remove",
+          "Foreign",
+          "Receipt",
+          "Stale",
+          "Minimized",
+          "Catalog",
+          "Catalog",
+          "Catalog",
+          "Foreign",
+          "Catalog",
+          "Foreign",
+          "Minimized"
+        ],
+      known: 0,
+      minimized: true,
+      pending: false,
+      present: true,
+      request: 11,
+      scoped: true
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      cancels: 1,
+      demand: false,
+      history:
+        [
+          "Stale",
+          "Catalog",
+          "Minimized",
+          "Stale",
+          "Start",
+          "Catalog",
+          "Foreign",
+          "Remove",
+          "Remove",
+          "Foreign",
+          "Receipt",
+          "Stale",
+          "Minimized",
+          "Catalog",
+          "Catalog",
+          "Catalog",
+          "Foreign",
+          "Catalog",
+          "Foreign",
+          "Minimized",
+          "Minimized"
+        ],
+      known: 0,
+      minimized: true,
+      pending: false,
+      present: true,
+      request: 12,
+      scoped: true
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      cancels: 1,
+      demand: false,
+      history:
+        [
+          "Stale",
+          "Catalog",
+          "Minimized",
+          "Stale",
+          "Start",
+          "Catalog",
+          "Foreign",
+          "Remove",
+          "Remove",
+          "Foreign",
+          "Receipt",
+          "Stale",
+          "Minimized",
+          "Catalog",
+          "Catalog",
+          "Catalog",
+          "Foreign",
+          "Catalog",
+          "Foreign",
+          "Minimized",
+          "Minimized",
+          "Catalog"
+        ],
+      known: 0,
+      minimized: true,
+      pending: false,
+      present: true,
+      request: 13,
+      scoped: true
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      cancels: 1,
+      demand: false,
+      history:
+        [
+          "Stale",
+          "Catalog",
+          "Minimized",
+          "Stale",
+          "Start",
+          "Catalog",
+          "Foreign",
+          "Remove",
+          "Remove",
+          "Foreign",
+          "Receipt",
+          "Stale",
+          "Minimized",
+          "Catalog",
+          "Catalog",
+          "Catalog",
+          "Foreign",
+          "Catalog",
+          "Foreign",
+          "Minimized",
+          "Minimized",
+          "Catalog",
+          "Catalog"
+        ],
+      known: 0,
+      minimized: true,
+      pending: false,
+      present: true,
+      request: 14,
+      scoped: true
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      cancels: 1,
+      demand: false,
+      history:
+        [
+          "Stale",
+          "Catalog",
+          "Minimized",
+          "Stale",
+          "Start",
+          "Catalog",
+          "Foreign",
+          "Remove",
+          "Remove",
+          "Foreign",
+          "Receipt",
+          "Stale",
+          "Minimized",
+          "Catalog",
+          "Catalog",
+          "Catalog",
+          "Foreign",
+          "Catalog",
+          "Foreign",
+          "Minimized",
+          "Minimized",
+          "Catalog",
+          "Catalog",
+          "Catalog"
+        ],
+      known: 0,
+      minimized: true,
+      pending: false,
+      present: true,
+      request: 15,
+      scoped: true
+    }
+}
+
+[ok] No violation found (120ms at 833 traces/second).
+Trace length statistics: max=25, min=25, average=25.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

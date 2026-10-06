@@ -1,0 +1,5 @@
+- [x] Compile current full Elm/GTK/native host and preserve original controls (GUI76, full95).
+- [x] Execute selected Quint and actual compiled feedback traces (9 cases, 21 traces).
+- [x] Verify actual native C outcomes and same Elm lifecycle/counters (49 C, 18 compiled Elm wire checks; 43 guards).
+- [ ] Qualify three-window full host on serialized exact native tuple.
+- [ ] Freeze and publish owned evidence, then continue all original release gates.

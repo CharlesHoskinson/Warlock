@@ -1,0 +1,44 @@
+AssertionError [ERR_ASSERTION]: Late local capacity cannot replace capturing job
++ actual - expected
+
+  {
++   commands: [],
+-   commands: [
+-     {
+-       commands: [
+-         {
+-           job: {
+-             binding: {
+-               frontend: '1',
+-               lifetime: '12618083744238620417',
+-               session: '2'
+-             },
+-             clock: '12618083744238620417',
+-             context: {
+-               content: '42',
+-               incarnation: '2',
+-               lifetime: '12618083744238620417',
+-               output: '1',
+-               privacy: '1',
+-               rendering: '2',
+-               scene: '1'
+-             },
+-             deadline: '203485677514126',
+-             origin: '1',
+-             request: '1'
+-           },
+-           kind: 'acquire'
+-         }
+-       ],
+-       identity: 'family:2'
+-     }
+-   ],
+    feedback: [
+      {
+        deadline: null,
+        floor: '3',
+        identity: 'family:2',
+
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v72/qa/feedback-check-1791310809505635403/inputs/qa/feedback-replay.js:6:61)
+    at controls (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v72/qa/feedback-check-1791310809505635403/inputs/qa/feedback-replay.js:20:280)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v72/qa/feedback-check-1791310809505635403/inputs/qa/feedback-replay.js:65:217
