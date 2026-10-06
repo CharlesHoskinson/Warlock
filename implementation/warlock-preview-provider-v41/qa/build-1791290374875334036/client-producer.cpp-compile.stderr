@@ -1,0 +1,5 @@
+native/client-producer.cpp: In member function ‘std::string WarlockClientProducer::decorate(const std::string&, bool)’:
+native/client-producer.cpp:38:13: error: ‘json_object_get_object’ was not declared in this scope; did you mean ‘json_object_get_type’?
+   38 |    auto row=json_object_get_object(json_array_get_element(rows,i));
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+      |             json_object_get_type

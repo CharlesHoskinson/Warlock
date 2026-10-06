@@ -1,0 +1,12 @@
+{
+  "passed": false,
+  "stage": "local receipt staging equality",
+  "protectedScope": "qa-harness-5f66dbd0c025493fba3040b34104e926.scope",
+  "exitCode": 1,
+  "reason": "The latest native92 source checkpoint was already committed; original receipt routine wrongly required all paths to appear newly staged. Five owned receipt files remain staged and preserved.",
+  "publicationPushedAndRemoteVerified": true,
+  "sourceCommit": "fbbca523b5cd5da6fa5855a4d4237f6822662da7",
+  "publishedCommit": "ebced54f118d4f92975b5377beee9cbe0f197864",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

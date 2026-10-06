@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-61dde5b4fb4243f19fb10857b039c406.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-window-metadata/specs/elm-capture-motion/spec.md": "ddc9b4e5e96e6d326712a6bea6320be92341569401d5192f8cd0ea76dc4ba923",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-window-metadata/qa/validate_v2.py": "7fdc4206a2fa0527cdb51bb6dfbe268a1f0a72e7ad17b11a3d13e58cc77fc6ca",
+    "/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/requirements.json": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+    "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v54/S09-EVIDENCE-PLAN.json": "2615c4c684fedf3c2ffbd7a03b3e4b31f48ae2b203ab7dfc246f48853f04b20d",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-window-metadata/proposal.md": "cf9ae0114fe77a4c851f9ce897ccfa8524da949a99540325659d025ea3539cd6",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-window-metadata/design.md": "4e0bab8f8074518991b8fec0dde58ce5f3ece5281bfc24e7b3fc94ea5d575ab3",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-window-metadata/tasks.md": "074b4e97d9445d9e4cb5a95c2f4a5cea42e7a73f3f1eca43be6af1d7a08f764e"
+  },
+  "requirements": [
+    "WARLOCK-METADATA-001",
+    "WARLOCK-METADATA-002",
+    "WARLOCK-METADATA-003",
+    "WARLOCK-METADATA-004"
+  ],
+  "scenarios": [
+    [
+      "WARLOCK-METADATA-001",
+      "current and stale metadata"
+    ],
+    [
+      "WARLOCK-METADATA-002",
+      "held reader and incarnation/privacy change"
+    ],
+    [
+      "WARLOCK-METADATA-003",
+      "lock before scope update"
+    ],
+    [
+      "WARLOCK-METADATA-004",
+      "held replaced assets"
+    ]
+  ],
+  "frozenBaseline": [
+    242,
+    417
+  ],
+  "originalS09ScenarioIds": 13,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

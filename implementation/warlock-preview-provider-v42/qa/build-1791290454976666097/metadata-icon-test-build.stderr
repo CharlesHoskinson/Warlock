@@ -1,0 +1,170 @@
+native/metadata-icon-test.cpp: In function ‘int main()’:
+native/metadata-icon-test.cpp:43:12: error: reference to ‘uri’ is ambiguous
+   43 |  denied(43,uri(*token));denied(42,"elm-shell://icons/"+*token);denied(42,uri(*token)+"?x=1");denied(42,uri(std::string(64,'0')));denied(42,uri(std::string(64,'f')));
+      |            ^~~
+  • there are 2 candidates
+    • candidate 1: ‘std::string {anonymous}::uri(const std::string&)’
+      native/metadata-icon-test.cpp:14:13:
+         14 | std::string uri(const std::string& token){return "elm-shell://icon/"+token;}
+            |             ^~~
+In file included from native/preview_fd.hpp:2,
+                 from native/preview_client.hpp:2,
+                 from native/preview_wire.hpp:2,
+                 from native/preview_metadata.hpp:2,
+                 from native/preview_icons.hpp:2,
+                 from native/metadata-icon-test.cpp:1:
+    • candidate 2: ‘namespace preview::uri { }’
+      native/preview_uri.hpp:10:20:
+         10 | namespace preview::uri {
+            |                    ^~~
+native/metadata-icon-test.cpp:43:74: error: reference to ‘uri’ is ambiguous
+   43 |  denied(43,uri(*token));denied(42,"elm-shell://icons/"+*token);denied(42,uri(*token)+"?x=1");denied(42,uri(std::string(64,'0')));denied(42,uri(std::string(64,'f')));
+      |                                                                          ^~~
+  • there are 2 candidates
+    • candidate 1: ‘std::string {anonymous}::uri(const std::string&)’
+      native/metadata-icon-test.cpp:14:13:
+         14 | std::string uri(const std::string& token){return "elm-shell://icon/"+token;}
+            |             ^~~
+    • candidate 2: ‘namespace preview::uri { }’
+      native/preview_uri.hpp:10:20:
+         10 | namespace preview::uri {
+            |                    ^~~
+native/metadata-icon-test.cpp:43:104: error: reference to ‘uri’ is ambiguous
+   43 |  denied(43,uri(*token));denied(42,"elm-shell://icons/"+*token);denied(42,uri(*token)+"?x=1");denied(42,uri(std::string(64,'0')));denied(42,uri(std::string(64,'f')));
+      |                                                                                                        ^~~
+  • there are 2 candidates
+    • candidate 1: ‘std::string {anonymous}::uri(const std::string&)’
+      native/metadata-icon-test.cpp:14:13:
+         14 | std::string uri(const std::string& token){return "elm-shell://icon/"+token;}
+            |             ^~~
+    • candidate 2: ‘namespace preview::uri { }’
+      native/preview_uri.hpp:10:20:
+         10 | namespace preview::uri {
+            |                    ^~~
+native/metadata-icon-test.cpp:43:140: error: reference to ‘uri’ is ambiguous
+   43 |  denied(43,uri(*token));denied(42,"elm-shell://icons/"+*token);denied(42,uri(*token)+"?x=1");denied(42,uri(std::string(64,'0')));denied(42,uri(std::string(64,'f')));
+      |                                                                                                                                            ^~~
+  • there are 2 candidates
+    • candidate 1: ‘std::string {anonymous}::uri(const std::string&)’
+      native/metadata-icon-test.cpp:14:13:
+         14 | std::string uri(const std::string& token){return "elm-shell://icon/"+token;}
+            |             ^~~
+    • candidate 2: ‘namespace preview::uri { }’
+      native/preview_uri.hpp:10:20:
+         10 | namespace preview::uri {
+            |                    ^~~
+native/metadata-icon-test.cpp: In lambda function:
+native/metadata-icon-test.cpp:44:71: error: reference to ‘uri’ is ambiguous
+   44 |  auto open=[&](const std::string& value){auto stream=endpoint.open(42,uri(value),&length,&error);check(stream && !error && length>0,"Own native icon open");return stream;};
+      |                                                                       ^~~
+  • there are 2 candidates
+    • candidate 1: ‘std::string {anonymous}::uri(const std::string&)’
+      native/metadata-icon-test.cpp:14:13:
+         14 | std::string uri(const std::string& token){return "elm-shell://icon/"+token;}
+            |             ^~~
+    • candidate 2: ‘namespace preview::uri { }’
+      native/preview_uri.hpp:10:20:
+         10 | namespace preview::uri {
+            |                    ^~~
+native/metadata-icon-test.cpp: In function ‘int main()’:
+native/metadata-icon-test.cpp:47:225: error: reference to ‘uri’ is ambiguous
+   47 |  current.locked=true;check(g_input_stream_read(held,piece,1,nullptr,&error)==-1 && g_error_matches(error,G_IO_ERROR,G_IO_ERROR_PERMISSION_DENIED),"Held reader denies lock before Elm effects");g_clear_error(&error);denied(42,uri(*token));
+      |                                                                                                                                                                                                                                 ^~~
+  • there are 2 candidates
+    • candidate 1: ‘std::string {anonymous}::uri(const std::string&)’
+      native/metadata-icon-test.cpp:14:13:
+         14 | std::string uri(const std::string& token){return "elm-shell://icon/"+token;}
+            |             ^~~
+    • candidate 2: ‘namespace preview::uri { }’
+      native/preview_uri.hpp:10:20:
+         10 | namespace preview::uri {
+            |                    ^~~
+native/metadata-icon-test.cpp:48:198: error: reference to ‘uri’ is ambiguous
+   48 |  current.locked=false;current.context.privacy.value++;check(g_input_stream_read(held,piece,1,nullptr,&error)==-1 && error,"Unlock cannot revive old privacy handle");g_clear_error(&error);denied(42,uri(*token));
+      |                                                                                                                                                                                                      ^~~
+  • there are 2 candidates
+    • candidate 1: ‘std::string {anonymous}::uri(const std::string&)’
+      native/metadata-icon-test.cpp:14:13:
+         14 | std::string uri(const std::string& token){return "elm-shell://icon/"+token;}
+            |             ^~~
+    • candidate 2: ‘namespace preview::uri { }’
+      native/preview_uri.hpp:10:20:
+         10 | namespace preview::uri {
+            |                    ^~~
+native/metadata-icon-test.cpp:51:192: error: reference to ‘uri’ is ambiguous
+   51 |  auto active=open(*fresh);application="foreign.app";check(g_input_stream_read(active,piece,1,nullptr,&error)==-1 && error,"Held icon refuses app replacement");g_clear_error(&error);denied(42,uri(*fresh));application="own.app";current.context.incarnation.value=8;denied(42,uri(*fresh));current.context.incarnation.value=7;current.present=false;denied(42,uri(*fresh));current.present=true;authorizationThrows=true;denied(42,uri(*fresh));authorizationThrows=false;g_input_stream_close(active,nullptr,nullptr);g_object_unref(active);
+      |                                                                                                                                                                                                ^~~
+  • there are 2 candidates
+    • candidate 1: ‘std::string {anonymous}::uri(const std::string&)’
+      native/metadata-icon-test.cpp:14:13:
+         14 | std::string uri(const std::string& token){return "elm-shell://icon/"+token;}
+            |             ^~~
+    • candidate 2: ‘namespace preview::uri { }’
+      native/preview_uri.hpp:10:20:
+         10 | namespace preview::uri {
+            |                    ^~~
+native/metadata-icon-test.cpp:51:273: error: reference to ‘uri’ is ambiguous
+   51 |  auto active=open(*fresh);application="foreign.app";check(g_input_stream_read(active,piece,1,nullptr,&error)==-1 && error,"Held icon refuses app replacement");g_clear_error(&error);denied(42,uri(*fresh));application="own.app";current.context.incarnation.value=8;denied(42,uri(*fresh));current.context.incarnation.value=7;current.present=false;denied(42,uri(*fresh));current.present=true;authorizationThrows=true;denied(42,uri(*fresh));authorizationThrows=false;g_input_stream_close(active,nullptr,nullptr);g_object_unref(active);
+      |                                                                                                                                                                                                                                                                                 ^~~
+  • there are 2 candidates
+    • candidate 1: ‘std::string {anonymous}::uri(const std::string&)’
+      native/metadata-icon-test.cpp:14:13:
+         14 | std::string uri(const std::string& token){return "elm-shell://icon/"+token;}
+            |             ^~~
+    • candidate 2: ‘namespace preview::uri { }’
+      native/preview_uri.hpp:10:20:
+         10 | namespace preview::uri {
+            |                    ^~~
+native/metadata-icon-test.cpp:51:354: error: reference to ‘uri’ is ambiguous
+   51 |  auto active=open(*fresh);application="foreign.app";check(g_input_stream_read(active,piece,1,nullptr,&error)==-1 && error,"Held icon refuses app replacement");g_clear_error(&error);denied(42,uri(*fresh));application="own.app";current.context.incarnation.value=8;denied(42,uri(*fresh));current.context.incarnation.value=7;current.present=false;denied(42,uri(*fresh));current.present=true;authorizationThrows=true;denied(42,uri(*fresh));authorizationThrows=false;g_input_stream_close(active,nullptr,nullptr);g_object_unref(active);
+      |                                                                                                                                                                                                                                                                                                                                                                  ^~~
+  • there are 2 candidates
+    • candidate 1: ‘std::string {anonymous}::uri(const std::string&)’
+      native/metadata-icon-test.cpp:14:13:
+         14 | std::string uri(const std::string& token){return "elm-shell://icon/"+token;}
+            |             ^~~
+    • candidate 2: ‘namespace preview::uri { }’
+      native/preview_uri.hpp:10:20:
+         10 | namespace preview::uri {
+            |                    ^~~
+native/metadata-icon-test.cpp:51:423: error: reference to ‘uri’ is ambiguous
+   51 |  auto active=open(*fresh);application="foreign.app";check(g_input_stream_read(active,piece,1,nullptr,&error)==-1 && error,"Held icon refuses app replacement");g_clear_error(&error);denied(42,uri(*fresh));application="own.app";current.context.incarnation.value=8;denied(42,uri(*fresh));current.context.incarnation.value=7;current.present=false;denied(42,uri(*fresh));current.present=true;authorizationThrows=true;denied(42,uri(*fresh));authorizationThrows=false;g_input_stream_close(active,nullptr,nullptr);g_object_unref(active);
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                       ^~~
+  • there are 2 candidates
+    • candidate 1: ‘std::string {anonymous}::uri(const std::string&)’
+      native/metadata-icon-test.cpp:14:13:
+         14 | std::string uri(const std::string& token){return "elm-shell://icon/"+token;}
+            |             ^~~
+    • candidate 2: ‘namespace preview::uri { }’
+      native/preview_uri.hpp:10:20:
+         10 | namespace preview::uri {
+            |                    ^~~
+native/metadata-icon-test.cpp:52:104: error: reference to ‘uri’ is ambiguous
+   52 |  std::vector<GInputStream*> readers;for(unsigned i=0;i<4;++i)readers.push_back(open(*fresh));denied(42,uri(*fresh));check(endpoint.readers()==4,"Reader budget enforced");for(auto stream:readers){g_input_stream_close(stream,nullptr,nullptr);g_object_unref(stream);}check(endpoint.readers()==0,"Reader capacity returns on actual close");
+      |                                                                                                        ^~~
+  • there are 2 candidates
+    • candidate 1: ‘std::string {anonymous}::uri(const std::string&)’
+      native/metadata-icon-test.cpp:14:13:
+         14 | std::string uri(const std::string& token){return "elm-shell://icon/"+token;}
+            |             ^~~
+    • candidate 2: ‘namespace preview::uri { }’
+      native/preview_uri.hpp:10:20:
+         10 | namespace preview::uri {
+            |                    ^~~
+native/metadata-icon-test.cpp:58:75: error: reference to ‘uri’ is ambiguous
+   58 |  check(endpoint.close(),"No-reader endpoint physically closes");denied(42,uri(*third));auto closedStatus=Json(endpoint.status());check(Json::integer(closedStatus.object(),"bytes")==0 && Json::integer(closedStatus.object(),"assets")==0,"Closed icon physical bytes zero");
+      |                                                                           ^~~
+  • there are 2 candidates
+    • candidate 1: ‘std::string {anonymous}::uri(const std::string&)’
+      native/metadata-icon-test.cpp:14:13:
+         14 | std::string uri(const std::string& token){return "elm-shell://icon/"+token;}
+            |             ^~~
+    • candidate 2: ‘namespace preview::uri { }’
+      native/preview_uri.hpp:10:20:
+         10 | namespace preview::uri {
+            |                    ^~~
+native/metadata-icon-test.cpp: At global scope:
+native/metadata-icon-test.cpp:14:13: error: ‘std::string {anonymous}::uri(const std::string&)’ defined but not used [-Werror=unused-function]
+   14 | std::string uri(const std::string& token){return "elm-shell://icon/"+token;}
+      |             ^~~
+cc1plus: all warnings being treated as errors

@@ -1,0 +1,382 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-e63fa47847dd4a548e3bf6d5f34dc119.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "spec/metadata_tests.qnt": "25af23b35954ac1816179a8a5746066d94d109801fe4d01a30eacc184a483194",
+    "spec/metadata.qnt": "869f4d1cdd5b0afb87dc5ff9a07c49941fd0b0fc9817468a411afa2e051141ed",
+    "qa/metadata-replay.js": "06f7cf4bc33b591e147e095d7e1fe47a70530a58074cd6786ed6efb305dc99b7",
+    "qa/native-source-fixture.json": "1c0c3b87e773ace53adc79b9b7e8696b32167ee3ea698112b765a03c8e6c1ff1",
+    "qa/metadata-check.py": "a4407484b44d5c5e87ddf538b9b087fe94bf842da460ba9a6430257925adbd38"
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "toolSHA256": "bd6e9400f6358a8a69d80eb636eb62f59f993039868a7be9719f76ba74191b4e",
+  "commands": [
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "metadata_tests.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "metadata_tests.qnt",
+        "--main=metadata_tests",
+        "--backend=typescript",
+        "--match=^(freshMetadata|staleAndForeign|lockConceals|metadataCannotUnlock|staleUnlockIgnored|freshUnlockRetainsCleanup|foreignLockIgnored|lockedScopeConceals)$",
+        "--seed=710003",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "samples",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "metadata.qnt",
+        "--main=metadata",
+        "--backend=typescript",
+        "--invariant=safety",
+        "--seed=710004",
+        "--max-samples=100",
+        "--max-steps=24",
+        "--n-traces=8",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-foreignLockIgnored-6.itf",
+      "argv": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/native-source-fixture.json",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-freshMetadata-0.itf",
+      "argv": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/native-source-fixture.json",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-freshUnlockRetainsCleanup-5.itf",
+      "argv": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/native-source-fixture.json",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-lockConceals-2.itf",
+      "argv": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/native-source-fixture.json",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-lockedScopeConceals-7.itf",
+      "argv": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/native-source-fixture.json",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-metadataCannotUnlock-3.itf",
+      "argv": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/native-source-fixture.json",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-staleAndForeign-1.itf",
+      "argv": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/native-source-fixture.json",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-staleUnlockIgnored-4.itf",
+      "argv": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/native-source-fixture.json",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-0.itf",
+      "argv": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/native-source-fixture.json",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-1.itf",
+      "argv": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/native-source-fixture.json",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-2.itf",
+      "argv": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/native-source-fixture.json",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-3.itf",
+      "argv": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/native-source-fixture.json",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-4.itf",
+      "argv": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/native-source-fixture.json",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-5.itf",
+      "argv": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/native-source-fixture.json",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-6.itf",
+      "argv": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/native-source-fixture.json",
+        "--replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-7.itf",
+      "argv": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/metadata-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/inputs/qa/native-source-fixture.json",
+        "--replay"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "projection": "Metadata delivery revision, rendered metadata visibility, original capture cancellation count and retained cleanup under one fixed native binding/incarnation/known capturing job. Does not abstract source clock/fence/expiry/resource bytes, complete policy refinement or native icon/pixels.",
+  "compiledBuild": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v43/qa/build-1791290538093085498/report.json",
+    "sha256": "141ac42b42a7c87f9d2a58f6f099378fd28165abda93da61661c7bca635a60c9"
+  },
+  "compiledElmSHA256": "084f1cfd65e8769f4790de8193808dc48a91d8dc73a14b1d8ee5038035890520",
+  "selectedNames": [
+    "freshMetadata",
+    "staleAndForeign",
+    "lockConceals",
+    "metadataCannotUnlock",
+    "staleUnlockIgnored",
+    "freshUnlockRetainsCleanup",
+    "foreignLockIgnored",
+    "lockedScopeConceals"
+  ],
+  "namedScenarios": 8,
+  "invariantSamples": 100,
+  "coupledTraces": [
+    {
+      "trace": "named-foreignLockIgnored-6.itf.json",
+      "statesCompared": 1
+    },
+    {
+      "trace": "named-freshMetadata-0.itf.json",
+      "statesCompared": 1
+    },
+    {
+      "trace": "named-freshUnlockRetainsCleanup-5.itf.json",
+      "statesCompared": 2
+    },
+    {
+      "trace": "named-lockConceals-2.itf.json",
+      "statesCompared": 2
+    },
+    {
+      "trace": "named-lockedScopeConceals-7.itf.json",
+      "statesCompared": 4
+    },
+    {
+      "trace": "named-metadataCannotUnlock-3.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-staleAndForeign-1.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-staleUnlockIgnored-4.itf.json",
+      "statesCompared": 2
+    },
+    {
+      "trace": "sample-0.itf.json",
+      "statesCompared": 24
+    },
+    {
+      "trace": "sample-1.itf.json",
+      "statesCompared": 24
+    },
+    {
+      "trace": "sample-2.itf.json",
+      "statesCompared": 24
+    },
+    {
+      "trace": "sample-3.itf.json",
+      "statesCompared": 24
+    },
+    {
+      "trace": "sample-4.itf.json",
+      "statesCompared": 24
+    },
+    {
+      "trace": "sample-5.itf.json",
+      "statesCompared": 24
+    },
+    {
+      "trace": "sample-6.itf.json",
+      "statesCompared": 24
+    },
+    {
+      "trace": "sample-7.itf.json",
+      "statesCompared": 24
+    }
+  ],
+  "statesCompared": 210,
+  "artifacts": {
+    "metadata-replay.js": "084f1cfd65e8769f4790de8193808dc48a91d8dc73a14b1d8ee5038035890520",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-freshMetadata-0.itf.json": "816e302eaebeedecf1a4a31569747afee2334a53e04f729f33c51cba608169a3",
+    "named-staleAndForeign-1.itf.json": "fe315ff897b265e47c414cb95d3d78f544fa6e51f199989ce1ae743afdd7405a",
+    "named-lockConceals-2.itf.json": "6f642735371a910ea5d5f8ff994bc5ca0b7280f55ccbaeb2f394b4a2e29de16d",
+    "named-metadataCannotUnlock-3.itf.json": "26cf3729c573e5d741e5dd4e87823a0b76ed44ef1a852b5b00068d8f2e983bb3",
+    "named-staleUnlockIgnored-4.itf.json": "28bdea695b7ad368d362c2d37ba032fe1cd17aa36ac3198d4c75dfc3cc26917c",
+    "named-freshUnlockRetainsCleanup-5.itf.json": "4378773b94d382fa8e6355c4a782ce84a4e1d7ee5a766e5ff2de76be91edea50",
+    "named-foreignLockIgnored-6.itf.json": "8ee6964ee6379f986243e21b4dbc9d212cff59f06a66f1485f3b40567f95e2d8",
+    "named-lockedScopeConceals-7.itf.json": "0b1a00c139226eea325cc810b67a9416ddb7e8b2c3ee392f50d383fe287be6fd",
+    "selected.stdout": "a19a86e2a0a878dff4614e1c56f691bde17b3a5abf8ed4f4addd276b9058319c",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "865532fb7b1f0892f867ce861ee7dc93637a9174e02e3ddd401a320b29f6ce34",
+    "sample-1.itf.json": "3d3d834fadbbf46013150d0039ac588f2de7ff87e25dfd7b73f108345d59367a",
+    "sample-2.itf.json": "fd752d89d023fd05d81836d3e695b1a1790a65cc9a9abc5c55585fc295997724",
+    "sample-3.itf.json": "1ef62857409ad278437e76079dbf733557c487fd191b4eb5d77075b97561a449",
+    "sample-4.itf.json": "d09170e833c720977a6b7dde9976d237b170df5b495a427e603d74e4547ad84a",
+    "sample-5.itf.json": "aeffae6191f4daf03b8881115817863b2699eb5dfe131d1878b8f5d409f5eefc",
+    "sample-6.itf.json": "27838461ee05df900ce0ad765206186ba39ec4e235255aac2f7f3cede1556847",
+    "sample-7.itf.json": "a8925777f5994345306a8ed24c654578230d9a013a107588382a61f2e42ada7c",
+    "samples.stdout": "8cfe63fca0c0477beb7459aaeac85a1c7773ffc4e82137bc3cbc3dcb062b1983",
+    "samples.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-foreignLockIgnored-6.itf.stdout": "49659a12ce0d0de52d591943420dfa58275fbe32ccd0900c024653df61d8a98f",
+    "replay-named-foreignLockIgnored-6.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-freshMetadata-0.itf.stdout": "d21aa29985d513713faeabc418f1f801712b396170b0a05812d103b2339a20dd",
+    "replay-named-freshMetadata-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-freshUnlockRetainsCleanup-5.itf.stdout": "ebedb64b841e913cb564818aed2f8a15ec71fe5e2f03a8cedef9d963bfeba765",
+    "replay-named-freshUnlockRetainsCleanup-5.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-lockConceals-2.itf.stdout": "3f00a2821189290758bc2e88bf70e4061b96d2986e4c34d9130180fc41fb521e",
+    "replay-named-lockConceals-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-lockedScopeConceals-7.itf.stdout": "383af3e97817801c17bfee3c275dabbc141e86fd5db6e1513190b7881bd3e752",
+    "replay-named-lockedScopeConceals-7.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-metadataCannotUnlock-3.itf.stdout": "5e618861e64853734e0f69c565d48cb27d334217d9533b5c1460840336fb921e",
+    "replay-named-metadataCannotUnlock-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-staleAndForeign-1.itf.stdout": "1d2f2d663efa594c07fc897ebde6f44ed760d835ea415992eece469f266b70d5",
+    "replay-named-staleAndForeign-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-staleUnlockIgnored-4.itf.stdout": "1ce3c3f4c40e6adff0235ee5f1b4759518d145607d2b73993e62c92649006158",
+    "replay-named-staleUnlockIgnored-4.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-0.itf.stdout": "8a601bd66ee8ec7c9fe642d91d0bddbf8b75f4a22416e14cc83785957aa574f5",
+    "replay-sample-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-1.itf.stdout": "046286c8224e51c0118cea7f1f2192513fab1ccfe0e11a074d08cf0a82fdf5e9",
+    "replay-sample-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-2.itf.stdout": "c0aad43a77da0bfad118c0ea4a6b099b3dc08de3f08ede58324b5eb252d50101",
+    "replay-sample-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-3.itf.stdout": "efbed3058860eebfdca865a9253a59efdf6afe7ccf66d2920f17aab5229f3cd4",
+    "replay-sample-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-4.itf.stdout": "296aa0e611d9ed25abf486293ee7eb38dae24159b59b8a89eb65f176c536fd02",
+    "replay-sample-4.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-5.itf.stdout": "2ec7bb731cb5ecb4d722bd576da8c53842e49c63f145a710ae194277c871aa43",
+    "replay-sample-5.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-6.itf.stdout": "1252b4943feffed34222fec8499583ed81f310fef3b1fcb29e133fe11a63c605",
+    "replay-sample-6.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-7.itf.stdout": "7b49b4b5b9aa3d85224f43bb7daa382283716c33eb6eec6e486d0071cdee0a9c",
+    "replay-sample-7.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/spec/metadata.qnt": "869f4d1cdd5b0afb87dc5ff9a07c49941fd0b0fc9817468a411afa2e051141ed",
+    "inputs/spec/metadata_tests.qnt": "25af23b35954ac1816179a8a5746066d94d109801fe4d01a30eacc184a483194",
+    "inputs/qa/metadata-replay.js": "06f7cf4bc33b591e147e095d7e1fe47a70530a58074cd6786ed6efb305dc99b7",
+    "inputs/qa/native-source-fixture.json": "1c0c3b87e773ace53adc79b9b7e8696b32167ee3ea698112b765a03c8e6c1ff1"
+  }
+}

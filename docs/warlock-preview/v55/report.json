@@ -1,0 +1,158 @@
+{
+  "schema": 1,
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-56a9c6842815418081a27d345693873e.scope",
+    "coreLimit": 1
+  },
+  "components": [
+    {
+      "path": "implementation/warlock-preview-provider-v39/component-manifest.json",
+      "sha256": "9fedef676c5b80583c939ed683f1af5c22435365f9987530329903b900681ed5",
+      "files": 478
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v40/component-manifest.json",
+      "sha256": "ef052f8f1025c36fed1afcc7fb34a344707cec049dd592158a0d0692e937b853",
+      "files": 498
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v41/component-manifest.json",
+      "sha256": "acdb8bf085240a4092b0e3ca0a9bb6f431b56f891376517df114ae97f5a90506",
+      "files": 529
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v42/component-manifest.json",
+      "sha256": "5ac285a017a8dcd4c65766789b1af0593f82896b2c61af279f33bdf85b6d2ed7",
+      "files": 539
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v43/component-manifest.json",
+      "sha256": "aad3e6d068834106f665e83c525fed8dc8f67928a8d3f292080048e65b8cda52",
+      "files": 856
+    },
+    {
+      "path": "implementation/warlock-preview-metadata-model-v1/component-manifest.json",
+      "sha256": "467987a3225a78628765d9ae2e76a2b5c0408e19b8f18594563cdb7e7f2c4116",
+      "files": 66
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v93/component-manifest.json",
+      "sha256": "2f5de178202bfd95230d87218c37728c71f475d73c16a60e240d7ab877dfafef",
+      "files": 592
+    },
+    {
+      "path": "openspec/changes/warlock-preview-window-metadata/component-manifest.json",
+      "sha256": "bf2e143b2a3619bc2270a3ef022415839b35a307674c39883d7559c87acc28db",
+      "files": 8
+    }
+  ],
+  "evidence": {
+    "implementation/warlock-preview-provider-v39/qa/build-1791290111328359688/report.json": "6dab341d751b0a84d3403482a7c1c9b744af5c078aad4d1ea3cf7811c2e0ff97",
+    "implementation/warlock-preview-provider-v40/qa/build-1791290306086888939/report.json": "04a002e3b2a5b9a7414e793a9ec3526c064034644cff6cf11dc3462b55cca748",
+    "implementation/warlock-preview-provider-v41/qa/build-1791290374875334036/report.json": "db92211e37caefd7c68b5da6a1deb1241fee0cdff37dfd3fcabc21987ef054a0",
+    "implementation/warlock-preview-provider-v42/qa/build-1791290454976666097/report.json": "6488d999e7987cb4f0bd5a73b05e8bc01689b4bc654f8eaf88ee575a233b0f51",
+    "implementation/warlock-preview-provider-v43/qa/build-1791290538093085498/report.json": "141ac42b42a7c87f9d2a58f6f099378fd28165abda93da61661c7bca635a60c9",
+    "implementation/warlock-preview-provider-v43/qa/check-1791290617605676296/report.json": "be917406a9e808588af97441cbd7befc5f1b34be6438638cc4adeff1b19b9c4d",
+    "implementation/warlock-preview-metadata-model-v1/qa/metadata-check-1791290837085367996/report.json": "e3b7b605e2665c8df560e1d7f9aa7e2f1e36b576b0eb781633d442770e7f2f07",
+    "implementation/warlock-preview-provider-v43/qa/metadata-check-1791290742610835828/report.json": "1078f94c9aac23adbf72f7d107e9e2d9a19d3ee7a72077d709c033c251124b90",
+    "implementation/warlock-client-provider-native-v93/qa/prepare-1791290959665584317/report.json": "5a3e99484d1f87d18a3fe32b28acc355b5307267e7732edc8e1404f7dafa7e39",
+    "implementation/warlock-client-provider-native-v93/qa/preflight.json": "d4cde101aa7e049c76e2b1b491f7cb37c9a9dc5a6ea041ad9d080526afb5ef2a",
+    "implementation/warlock-client-provider-native-v93/qa/native-1791291001579271690/report.json": "79fc552a466f9f558218b00da403bb9383946eca87cc5e53977e38c58c38830e",
+    "openspec/changes/warlock-preview-window-metadata/qa/validate-1791290539124493699/report.json": "2553657a793aaa81e7c91926bd75150749ebdd9b0295ba2e5e0d27f990f343df",
+    "docs/warlock-preview/v54/S09-EVIDENCE-PLAN.json": "2615c4c684fedf3c2ffbd7a03b3e4b31f48ae2b203ab7dfc246f48853f04b20d"
+  },
+  "nativeControls": 2372,
+  "retainedOriginalControls": 1783,
+  "retainedNative92Controls": 2363,
+  "normalOwnedExits": 255,
+  "nativeTitleIconFallbackBoundedQualified": true,
+  "fallbackMetadataEvidence": {
+    "scenarioId": "ELM-UX-007 ux-007",
+    "metadata": {
+      "kind": "metadata",
+      "identity": "family:2",
+      "binding": {
+        "lifetime": "2043300861004587762",
+        "session": "28",
+        "frontend": "1"
+      },
+      "subject": "2",
+      "revision": "3",
+      "title": "WARLOCK-CHILD-PROBE",
+      "application": "warlock-child-probe",
+      "iconKind": "application",
+      "icon": "d14d048da30e17cf8c053714b69cbc02fafd1596413fe8007790e3d3e9e0f012"
+    },
+    "actualNativeTitle": "WARLOCK-CHILD-PROBE",
+    "actualNativeApplication": "warlock-child-probe",
+    "originalJob": {
+      "binding": {
+        "lifetime": "2043300861004587762",
+        "session": "28",
+        "frontend": "1"
+      },
+      "context": {
+        "lifetime": "2043300861004587762",
+        "incarnation": "2",
+        "output": "1",
+        "privacy": "5",
+        "rendering": "2",
+        "scene": "63",
+        "content": "54"
+      },
+      "request": "1",
+      "origin": "1",
+      "clock": "2043300861004587762",
+      "deadline": "255355811102229"
+    },
+    "unavailableDenial": {
+      "protocolVersion": 3,
+      "kind": "refused",
+      "reason": "preview-family-backdrop-source-unavailable"
+    },
+    "dom": [
+      {
+        "state": "unavailable",
+        "title": "WARLOCK-CHILD-PROBE",
+        "icons": [
+          {
+            "uri": "elm-shell://icon/d14d048da30e17cf8c053714b69cbc02fafd1596413fe8007790e3d3e9e0f012",
+            "complete": true,
+            "naturalWidth": 48,
+            "naturalHeight": 48,
+            "width": 48,
+            "height": 48
+          }
+        ]
+      }
+    ],
+    "beforePixels": {
+      "width": 700,
+      "height": 420,
+      "ownApplicationIconPixels": 0,
+      "oldSourceExactNativePixels": 12516,
+      "foreignGreenPixels": 0,
+      "hardwarePresentation": false
+    },
+    "afterPixels": {
+      "width": 700,
+      "height": 420,
+      "ownApplicationIconPixels": 2304,
+      "oldSourceExactNativePixels": 0,
+      "foreignGreenPixels": 0,
+      "hardwarePresentation": false
+    },
+    "iconAssetSHA256": "1e3103f39c92206c6c879eec10bccbda2e428ee397d39e456104a83acc315de2",
+    "desktopEntrySHA256": "0b68462042c038de15367b599887b572cbbcceb5dc94dec91b5105e3b22cb594",
+    "hardwarePresentation": false,
+    "nativeAcceptance": false,
+    "fullReleaseAccepted": false,
+    "lockedConcealmentNativeQualified": false,
+    "ordinaryProductEnrollmentQualified": false
+  },
+  "nativeAcceptance": false,
+  "S09Accepted": false,
+  "fullReleaseAccepted": false,
+  "next": "Compile/verify freshGUI44 binding reset/theme update, actual native privacy/held icon URI, ordinary multi-entry enrollment and all original S09/restore/recovery/drag/input/hardware/output/AT/IME/resource/journey/reversible deployment gates."
+}

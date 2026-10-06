@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "scenarioId": "ELM-UX-007 ux-007",
+  "findings": [
+    {
+      "path": "implementation/warlock-preview-provider-v38/src/PreviewPresenter.elm",
+      "sha256": "6e95e731a7747e3835087c519651c0b2a0f6580daf37a0d9deafbefb1cfd9659",
+      "lines": [
+        138
+      ],
+      "finding": "icon=Nothing"
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v38/native/client_producer.hpp",
+      "sha256": "b93355d804613a68593bfd2447295287ac04c76427007c5772e6244b4c51d990",
+      "lines": [
+        31
+      ],
+      "finding": "text(\"title\",\"Client content\")"
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v38/native/family_producer.hpp",
+      "sha256": "148240aaf174b3d0f27d8385cd3e93811e48dd8c39b3b65a691fc754c2eebe22",
+      "lines": [
+        46
+      ],
+      "finding": "text(\"title\",\"Native family sample\")"
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v38/native/host.c",
+      "sha256": "0f01aef906d28b359791eae8401a00b0b9c47bb4ca7823da212821166e75a6f9",
+      "lines": [
+        362
+      ],
+      "finding": "Asset not allowlisted"
+    }
+  ],
+  "actualIconURIHandlerImplemented": false,
+  "next": "Fresh full GUI39 trusted metadata/icon enrollment and actual native fallback oracle; normal generic icon must not pretend to be a resolved application icon.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

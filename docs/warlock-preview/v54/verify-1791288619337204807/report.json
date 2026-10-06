@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-b6de242a7fd14bf098a8a21b1cc541c6.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v54/verify.py": "66f3ca1ba23a3267c1c9d9f9cfe4503b090f17ba89950023f1531213a4b2ceba",
+    "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v52/S09-EVIDENCE-PLAN.json": "822ae4bbb49e44dd1e8faf6a5ee2f19fbf3c54f52d6125ab65c1a72f4466050b",
+    "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v54/S09-EVIDENCE-PLAN.json": "2615c4c684fedf3c2ffbd7a03b3e4b31f48ae2b203ab7dfc246f48853f04b20d",
+    "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v53/report.json": "b0455e5e09694fceb0df6102c6fa2ec1adba70609582fd22cc1d0e53fa351e6f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v92/qa/native-1791288138505615354/report.json": "0cae023c308697159d11692b55d4fe6102bd4495d9af500e1105bd58af07b358",
+    "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v54/FALLBACK-SOURCE-FINDINGS.json": "c0cd14bb2f071c3d7b623407fc1a454d927c48644e9630147fabe2748a396ecc",
+    "/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/requirements.json": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v38/src/PreviewPresenter.elm": "6e95e731a7747e3835087c519651c0b2a0f6580daf37a0d9deafbefb1cfd9659",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v38/native/client_producer.hpp": "b93355d804613a68593bfd2447295287ac04c76427007c5772e6244b4c51d990",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v38/native/family_producer.hpp": "148240aaf174b3d0f27d8385cd3e93811e48dd8c39b3b65a691fc754c2eebe22",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v38/native/host.c": "0f01aef906d28b359791eae8401a00b0b9c47bb4ca7823da212821166e75a6f9"
+  },
+  "originalRequirements": 9,
+  "originalS09ScenarioIds": 13,
+  "frozenBaseline": [
+    242,
+    417
+  ],
+  "actualNativeAddressReuseMapped": true,
+  "fallbackDefectsSourceVerified": 4,
+  "nativeAcceptance": false,
+  "S09Accepted": false,
+  "fullReleaseAccepted": false,
+  "nextExecutableSlice": "Original ELM-UX-007 ux-007 actual correct-title/icon/no-unrelated-pixels fallback. Fix full PreviewPresenter hardcoded icon=Nothing and native client/family qualification-label seeds through trusted identity-bound metadata and opaque bounded native icon serving; preserve source-denial, original ownership/receipt/expiry and one immutable Elm policy. Then remaining original S09/native/product fidelity/presentation/state and full S01-S16 release work."
+}
