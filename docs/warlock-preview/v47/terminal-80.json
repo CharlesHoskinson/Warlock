@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "report": "implementation/warlock-client-provider-native-v80/qa/native-1791280152652471078/report.json",
+  "nativeExecSession": 29650,
+  "terminal": true,
+  "nativeControls": 2224,
+  "ownedNormalExits": 221,
+  "cleanupPassed": true,
+  "wholeCrop": [
+    {
+      "name": "shader-identity-pixels",
+      "pixels": {
+        "passed": true,
+        "comparedCropPixels": 84836,
+        "mismatchedCompositedPixels": 0,
+        "opaqueFamilyPixels": 77924,
+        "partialAlphaFamilyPixels": 3416,
+        "transparentFamilyPixels": 3496,
+        "wrongNativeOutputAlphaPixels": 0,
+        "independentBackgroundRGBA": [
+          0,
+          0,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "name": "shader-tint-pixels",
+      "pixels": {
+        "passed": true,
+        "comparedCropPixels": 84836,
+        "mismatchedCompositedPixels": 0,
+        "opaqueFamilyPixels": 77924,
+        "partialAlphaFamilyPixels": 3416,
+        "transparentFamilyPixels": 3496,
+        "wrongNativeOutputAlphaPixels": 0,
+        "independentBackgroundRGBA": [
+          0,
+          0,
+          0,
+          255
+        ]
+      }
+    }
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "next": "Freeze47 and publish42 only owned79/80 evidence; advance half-alpha/body and arbitrary backdrop privacy/full shader/resource/hardware/coherent release gates."
+}

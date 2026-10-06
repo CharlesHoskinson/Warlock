@@ -1,0 +1,131 @@
+{
+  "schema": 1,
+  "passed": true,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-7db387b0b7324a5e831589b95f926dec.scope",
+    "coreLimit": 1
+  },
+  "components": [
+    {
+      "path": "implementation/warlock-client-provider-native-v79/component-manifest.json",
+      "sha256": "4d83afc27663589936610598fefaa721694e581374731232a66879bd4271a020",
+      "files": 488
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v80/component-manifest.json",
+      "sha256": "457879ef41da011b8e7c7693c56b70aa781c42838a822908a645923aeb446f1b",
+      "files": 492
+    },
+    {
+      "path": "openspec/changes/warlock-preview-alpha-composition/component-manifest.json",
+      "sha256": "0633b829876b94f1b5e0a03142389569076c2b2dec84e53a1ccbc67b8568a27c",
+      "files": 8
+    }
+  ],
+  "evidence": {
+    "docs/warlock-preview/v46/report.json": "9589d3ab48720c1685e346bc0513bdb00e0cad31b739c5eb3d6a4a3dcf9f7e87",
+    "implementation/warlock-client-provider-native-v79/qa/prepare-1791279703811759313/report.json": "3b99c952c51184f459b7611dbc23c08baefd1e005d51e44afc4ee93f4437437e",
+    "implementation/warlock-client-provider-native-v79/qa/native-1791279763519516140/report.json": "8c7034cebac851726f39a2a30d19305309ece07be44a56172bae89523c9037f5",
+    "implementation/warlock-client-provider-native-v80/qa/prepare-1791280074043336094/report.json": "fa9b9dc34955186a3b2a40d7f331b75d6d52d31d853c9fbfd1f399e551b93f15",
+    "implementation/warlock-client-provider-native-v80/qa/native-1791280152652471078/report.json": "4bbfa2b21c52ec53ec3fe4e0151190f99dfb1e7549f06f723f0d4f362ff1ee91",
+    "implementation/warlock-client-provider-native-v50/qa/native-1791265841870106110/report.json": "41b65aa20c9a774e8568815c2ccd02fed4064550d8a6f57c22fcf410bc62cf25",
+    "implementation/warlock-client-provider-native-v78/qa/native-1791278994447344491/report.json": "99983f5cdefe4b7c68c275f6520c3620b189848733bfabee7970543999b8d461",
+    "openspec/changes/warlock-preview-alpha-composition/qa/validate-1791280535448762136/report.json": "f0c03eb96997bc47c1fc82c360fe82d5cf15855350470970a7b052027b0f9f4c"
+  },
+  "nativeControls": 2224,
+  "retainedOriginalControls": 1783,
+  "retainedPriorNativeControls": 2213,
+  "addedIntermediatePollComparison": {
+    "styleAgainDimPendingNativeReadonlyScope": {
+      "native78": 2,
+      "native80": 2
+    },
+    "styleCropDimIntermediateReadonlyScope": {
+      "native78": 1,
+      "native80": 1
+    },
+    "styleDimPendingNativeReadonlyScope": {
+      "native78": 1,
+      "native80": 1
+    },
+    "styleRestoreIntermediateReadonlyScope": {
+      "native78": 0,
+      "native80": 0
+    }
+  },
+  "normalOwnedExits": 221,
+  "shaderCompositedCropPixels": [
+    {
+      "name": "shader-identity-pixels",
+      "pixels": {
+        "passed": true,
+        "comparedCropPixels": 84836,
+        "mismatchedCompositedPixels": 0,
+        "opaqueFamilyPixels": 77924,
+        "partialAlphaFamilyPixels": 3416,
+        "transparentFamilyPixels": 3496,
+        "wrongNativeOutputAlphaPixels": 0,
+        "independentBackgroundRGBA": [
+          0,
+          0,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "name": "shader-tint-pixels",
+      "pixels": {
+        "passed": true,
+        "comparedCropPixels": 84836,
+        "mismatchedCompositedPixels": 0,
+        "opaqueFamilyPixels": 77924,
+        "partialAlphaFamilyPixels": 3416,
+        "transparentFamilyPixels": 3496,
+        "wrongNativeOutputAlphaPixels": 0,
+        "independentBackgroundRGBA": [
+          0,
+          0,
+          0,
+          255
+        ]
+      }
+    }
+  ],
+  "nativeShaderWholeCropOverBlackQualified": true,
+  "shaderWholeRootPixels": {
+    "passed": true,
+    "comparedRootPixels": 76800,
+    "changedFamilyPixels": 73728,
+    "changedOutputPixels": 73728,
+    "mismatchedBefore": 0,
+    "mismatchedAfter": 0,
+    "wrongAlphaPixels": 0,
+    "redPixels": 73728,
+    "unchangedBlueChildPixels": 3072,
+    "unexpectedFixturePixels": 0
+  },
+  "shaderWholeCoordinatePixels": {
+    "passed": true,
+    "comparedRootPixels": 76800,
+    "mismatchedRootPixels": 0,
+    "wrongAlphaPixels": 0,
+    "nativeRedRange": [
+      26,
+      127
+    ],
+    "nativeGreenRange": [
+      34,
+      136
+    ]
+  },
+  "nativeShaderGlobalCoordinateSampleQualified": true,
+  "nativeShaderOpaqueRootCoordinatesQualified": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "previewEligible": false,
+  "completeShaderFidelityQualified": false,
+  "backgroundPixelFidelityQualified": false,
+  "completeFamilyFidelityQualified": false,
+  "next": "Qualify half-alpha root/child body and arbitrary backdrop/blur source dependency/privacy, general shader/contextual/color/HDR/transform/driver/resources/hardware and every original coherent GUI release gate."
+}
