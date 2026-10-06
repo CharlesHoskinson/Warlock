@@ -1,0 +1,2078 @@
+{
+  "schema": 1,
+  "repository": "https://github.com/CharlesHoskinson/Warlock",
+  "branch": "feature/elm",
+  "sourceCommits": [
+    "ec063c5169fd6e0316a1092b08d4f60f77694302"
+  ],
+  "sourceCommit": "ec063c5169fd6e0316a1092b08d4f60f77694302",
+  "priorPublication": "29c5642283af14e0f8414719be5360ac3888e5a3",
+  "publishedCommit": "2b929ca037ed03a5adc9fc2ef801950296144e0d",
+  "ownedFiles": 294,
+  "inventory": [
+    {
+      "path": "docs/elm-roadmap/delivery/build-loop-events/20261006T023337.648900Z--f6779148-8f5d-4bdf-8a0f-044184e486f2--bdb8cd9725184d1d89a81d19650ce825.json",
+      "mode": "100644",
+      "gitBlob": "858986881976f7c30e3b187493dcb28c9cf38b4b",
+      "bytes": 1414,
+      "sha256": "db1f5f20c731c6f396daabf3c15817bc48924beab6e79711294efec18ffbbc94"
+    },
+    {
+      "path": "docs/elm-roadmap/delivery/build-loop-events/20261006T023604.822724Z--f6779148-8f5d-4bdf-8a0f-044184e486f2--6a0f04c29a5348bdb94ca85d0179628f.json",
+      "mode": "100644",
+      "gitBlob": "e5dc828a945aeae7a114c66a9b44840d1a5cf6be",
+      "bytes": 1656,
+      "sha256": "03362e47f6009dd9a8c17d546d36372b7b297a3734299f88d733edc814bdd7b1"
+    },
+    {
+      "path": "docs/elm-roadmap/delivery/build-loop-events/20261006T023830.564712Z--f6779148-8f5d-4bdf-8a0f-044184e486f2--13275bf46e454f9a8024f01258ad1d14.json",
+      "mode": "100644",
+      "gitBlob": "8041f3eaa722d7e5aced6f0f7cfb5f4947ee1562",
+      "bytes": 1408,
+      "sha256": "d8ebff0444b3212549ed0d303580632e4c4ceeabb6d50baac8d596bc39b2e264"
+    },
+    {
+      "path": "docs/warlock-preview/v25/SPEC.md",
+      "mode": "100644",
+      "gitBlob": "da7c496497251843a7ab8eee4b5fd7e1bd118a94",
+      "bytes": 1237,
+      "sha256": "3466f7b5e022f3139875ae18233a021a209a07ffd235f1dbccd3d928ef644660"
+    },
+    {
+      "path": "docs/warlock-preview/v25/freeze.py",
+      "mode": "100644",
+      "gitBlob": "2c1cacb7ae0e194f9f1eb17d49b375ce25b1f704",
+      "bytes": 3661,
+      "sha256": "58c9c0ac50062bff147d9e6cf7f171433f34d4c31140591cefb282e19e96db5f"
+    },
+    {
+      "path": "docs/warlock-preview/v25/report.json",
+      "mode": "100644",
+      "gitBlob": "b77a871f99d2d1d46a77f4e440b434e165baae92",
+      "bytes": 1333,
+      "sha256": "8786f53349e35a2a6b2c4fbdd40a1eba7625131a60670ae3c575678f175c7cc8"
+    },
+    {
+      "path": "docs/warlock-repository/v20/publication/delivery.json",
+      "mode": "100644",
+      "gitBlob": "f42e7ed95e22c03d1a8ab0ea2b9c85721f844f42",
+      "bytes": 554529,
+      "sha256": "bea330177dcf552b2b61dfea1f74d9502520c5df693af978ce030d31a18471be"
+    },
+    {
+      "path": "docs/warlock-repository/v20/publication/prepared.json",
+      "mode": "100644",
+      "gitBlob": "cd1b060628d441ea501b01b87dd3db5b86eec5cb",
+      "bytes": 554442,
+      "sha256": "20e7b978632d1676f3ca0ac9442b61b594ce9c3583308e5c939cf44cbc7f9b47"
+    },
+    {
+      "path": "docs/warlock-repository/v20/publication/push.stderr",
+      "mode": "100644",
+      "gitBlob": "8bc1166e3d93fed27561f137362f2ebe7c201ad3",
+      "bytes": 103,
+      "sha256": "7094900779650d4a248c845ff9b5bb0ef1a29aaba8bced38b8df21c3b449e33a"
+    },
+    {
+      "path": "docs/warlock-repository/v20/publication/push.stdout",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/warlock-repository/v20/publication/visibility.json",
+      "mode": "100644",
+      "gitBlob": "ef39e2f2253639ca1809ca307e9c4ee074e9dc1d",
+      "bytes": 119,
+      "sha256": "91402e19d2f77618a2bea71424e64d5a8d1e111cd6582a173a72ca442a18aa9b"
+    },
+    {
+      "path": "docs/warlock-repository/v21/publication/commit_owned.py",
+      "mode": "100644",
+      "gitBlob": "960ee9a63c82a18caad2d1ae9925450a123067e1",
+      "bytes": 3255,
+      "sha256": "b6c55383f934cf9adff55928a6871946b7e28fd8153863ef7af6cecc2ca9d68f"
+    },
+    {
+      "path": "docs/warlock-repository/v21/publication/publish.py",
+      "mode": "100644",
+      "gitBlob": "e3f4b58f4d8373acadd698fb2c291732dc2421e8",
+      "bytes": 5277,
+      "sha256": "2ceb530a87b5249b716d052593f049f2d5342703d23b259fcc672f76df6d8fdb"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/ANCESTRY.json",
+      "mode": "100644",
+      "gitBlob": "b0cee1f8893ad2f3cec51be51529a3860d72dc57",
+      "bytes": 461,
+      "sha256": "07af1860d7bc4d2cd9fc4bf2a7e0b96c6d3da73129c72ec8672737fc6dbfdd0f"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/DERIVATION.json",
+      "mode": "100644",
+      "gitBlob": "bf75d82e81c95b1d32de6f4e5ddb643fcb5678a0",
+      "bytes": 402,
+      "sha256": "7285ea3bdd9c43263949a7e620287ca023ae2d18b9015f451ac19885a956f574"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/SPEC.md",
+      "mode": "100644",
+      "gitBlob": "ae39400792deb52cb051f0af0abc842a11dae202",
+      "bytes": 5617,
+      "sha256": "ef7e0868b3d270b45e8ef1b06de51851aa399cc870e1f37660d485ede28fdd0c"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/aq-tuple.json",
+      "mode": "100644",
+      "gitBlob": "3192b0ed8a71fc26be79bf7738b5d004f15baca4",
+      "bytes": 667,
+      "sha256": "4d4c71943b05bb0453184dccb6caabadb72067445ff980e9359bd427ba4d433e"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/candidate_host.py",
+      "mode": "100644",
+      "gitBlob": "8365427c87ad9dde8062d79d83908a9e51f026b4",
+      "bytes": 10070,
+      "sha256": "7c8cb4c0990d21241a7689fcbf4276f81886d2660606c82f8dff7cd7cff4d387"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/component-manifest.json",
+      "mode": "100644",
+      "gitBlob": "c61aaba2a9c7dc2fdd37ff1b485c7e35b336e13d",
+      "bytes": 60736,
+      "sha256": "36fa25900d14add051ab4a8852268c50a88b8937305179801de2c848d16bac06"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/native-build-report.json",
+      "mode": "100644",
+      "gitBlob": "d082619dcc6da9b7a570b198731e5c4d7600c3d0",
+      "bytes": 1751,
+      "sha256": "7d1b671a4bf147aee3206e81a24df53799bbdf8acf1c7edeaa548b9f60d32c4d"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/parent-probe-build.json",
+      "mode": "100644",
+      "gitBlob": "d813c0aaf3b3670e649f93ce9bab96764c75e179",
+      "bytes": 243,
+      "sha256": "5c719c99fde9da4357b90e711c50f34d61ed0daca5f6d94cfdedcaf705254221"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/peer.py",
+      "mode": "100644",
+      "gitBlob": "38e37b1d93f09aff057343093a7c8f3627e23026",
+      "bytes": 6149,
+      "sha256": "e83a2c0fce062fb2c3664dd8d56584db0905763ce80ad2a5ae5c6c4a92ef2529"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/pixels.cpp",
+      "mode": "100644",
+      "gitBlob": "5d8e32ad4ea0215a271992d6cc564a02a876c162",
+      "bytes": 1610,
+      "sha256": "8f0ab2522b0b8c6a2c71aa53e4d7df66b77acca47f685ae846bd7a540e6faeb9"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/probe.cpp",
+      "mode": "100644",
+      "gitBlob": "0b648da6466cc820c0d2298ddd4e22a83b7db6d7",
+      "bytes": 6583,
+      "sha256": "9d7227ddaecd2ab4781d2cb184bdb45814f7738604d4ee69565ab7416bfd9ac7"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/full-prepare.py",
+      "mode": "100644",
+      "gitBlob": "7e91af8b84f7e659ecbd01aad7e95b9d8f6433dd",
+      "bytes": 7768,
+      "sha256": "af740e3590fd4b4f4f928e5e3552afaacb2ca4867b39d52523b38bfe508337f3"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/isolation.py",
+      "mode": "100644",
+      "gitBlob": "bf33fc946170f6993c30a1840149a0780d5230eb",
+      "bytes": 7257,
+      "sha256": "95e6999ccb1528311e950d95bf855a00bc29327458152eb7943f1f01bce1ceb8"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/asymmetric-native-pixels.1.png",
+      "mode": "100644",
+      "gitBlob": "32015658dfc68e4513c8093a6b9364198764ba30",
+      "bytes": 307528,
+      "sha256": "861e25fecd1683be11dd392f0b248205cbc30dde115b9b13b86ca9d61bd2ef28"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/asymmetric-native-pixels.1.request-2.png",
+      "mode": "100644",
+      "gitBlob": "04381f8dd715015ed3e9521d6dce919f10f55e9d",
+      "bytes": 307528,
+      "sha256": "117507b93befd95c75bcc2bd433775859a8c054218532d183db7e5811e599829"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/asymmetric-native-pixels.2.png",
+      "mode": "100644",
+      "gitBlob": "6d0b563fb667ea86c75a38d917691daf092778e2",
+      "bytes": 307528,
+      "sha256": "cf11a527b0f05bd415c95bd26931938ff8d89d0ffb8841dfb20ee4d72643e446"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/asymmetric-native-witness.log",
+      "mode": "100644",
+      "gitBlob": "411421149ec0623aeb66cee336b52022c7936eb8",
+      "bytes": 16343,
+      "sha256": "fb48edb66de718fc78be7fe8bc2382afb4e44cfaba8e0d10bada055176417e7b"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/below-root.png",
+      "mode": "100644",
+      "gitBlob": "b8ebfa86a781389a4751b086078f737b4520d710",
+      "bytes": 307528,
+      "sha256": "c0e55a1cccaf90e217545b605d469181019152ec66d9102f56b34d39740dafca"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-defaultSyncTest-0.itf-0.png",
+      "mode": "100644",
+      "gitBlob": "b8ebfa86a781389a4751b086078f737b4520d710",
+      "bytes": 307528,
+      "sha256": "c0e55a1cccaf90e217545b605d469181019152ec66d9102f56b34d39740dafca"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-defaultSyncTest-0.itf-1.png",
+      "mode": "100644",
+      "gitBlob": "b8ebfa86a781389a4751b086078f737b4520d710",
+      "bytes": 307528,
+      "sha256": "c0e55a1cccaf90e217545b605d469181019152ec66d9102f56b34d39740dafca"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-defaultSyncTest-0.itf-2.png",
+      "mode": "100644",
+      "gitBlob": "b8ebfa86a781389a4751b086078f737b4520d710",
+      "bytes": 307528,
+      "sha256": "c0e55a1cccaf90e217545b605d469181019152ec66d9102f56b34d39740dafca"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-defaultSyncTest-0.itf-3.png",
+      "mode": "100644",
+      "gitBlob": "204ea9ac12a99cc5790ba64e0535ea3595230df1",
+      "bytes": 307528,
+      "sha256": "5c46319440e17037a318d846e42e201c2771059bbe3638b0fa8cecbcccc55eb7"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-defaultSyncTest-0.itf-4.png",
+      "mode": "100644",
+      "gitBlob": "204ea9ac12a99cc5790ba64e0535ea3595230df1",
+      "bytes": 307528,
+      "sha256": "5c46319440e17037a318d846e42e201c2771059bbe3638b0fa8cecbcccc55eb7"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-destroyCacheTest-4.itf-0.png",
+      "mode": "100644",
+      "gitBlob": "b8ebfa86a781389a4751b086078f737b4520d710",
+      "bytes": 307528,
+      "sha256": "c0e55a1cccaf90e217545b605d469181019152ec66d9102f56b34d39740dafca"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-destroyCacheTest-4.itf-1.png",
+      "mode": "100644",
+      "gitBlob": "b8ebfa86a781389a4751b086078f737b4520d710",
+      "bytes": 307528,
+      "sha256": "c0e55a1cccaf90e217545b605d469181019152ec66d9102f56b34d39740dafca"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-destroyCacheTest-4.itf-2.png",
+      "mode": "100644",
+      "gitBlob": "204ea9ac12a99cc5790ba64e0535ea3595230df1",
+      "bytes": 307528,
+      "sha256": "5c46319440e17037a318d846e42e201c2771059bbe3638b0fa8cecbcccc55eb7"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-destroyCacheTest-4.itf-3.png",
+      "mode": "100644",
+      "gitBlob": "204ea9ac12a99cc5790ba64e0535ea3595230df1",
+      "bytes": 307528,
+      "sha256": "5c46319440e17037a318d846e42e201c2771059bbe3638b0fa8cecbcccc55eb7"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-destroyCacheTest-4.itf-4.png",
+      "mode": "100644",
+      "gitBlob": "b8ebfa86a781389a4751b086078f737b4520d710",
+      "bytes": 307528,
+      "sha256": "c0e55a1cccaf90e217545b605d469181019152ec66d9102f56b34d39740dafca"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-destroyCacheTest-4.itf-5.png",
+      "mode": "100644",
+      "gitBlob": "b8ebfa86a781389a4751b086078f737b4520d710",
+      "bytes": 307528,
+      "sha256": "c0e55a1cccaf90e217545b605d469181019152ec66d9102f56b34d39740dafca"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-destroyCacheTest-4.itf-6.png",
+      "mode": "100644",
+      "gitBlob": "b8ebfa86a781389a4751b086078f737b4520d710",
+      "bytes": 307528,
+      "sha256": "c0e55a1cccaf90e217545b605d469181019152ec66d9102f56b34d39740dafca"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-destroyCacheTest-4.itf-7.png",
+      "mode": "100644",
+      "gitBlob": "b8ebfa86a781389a4751b086078f737b4520d710",
+      "bytes": 307528,
+      "sha256": "c0e55a1cccaf90e217545b605d469181019152ec66d9102f56b34d39740dafca"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-destroyCacheTest-4.itf-8.png",
+      "mode": "100644",
+      "gitBlob": "204ea9ac12a99cc5790ba64e0535ea3595230df1",
+      "bytes": 307528,
+      "sha256": "5c46319440e17037a318d846e42e201c2771059bbe3638b0fa8cecbcccc55eb7"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-destroyCacheTest-4.itf-9.png",
+      "mode": "100644",
+      "gitBlob": "204ea9ac12a99cc5790ba64e0535ea3595230df1",
+      "bytes": 307528,
+      "sha256": "5c46319440e17037a318d846e42e201c2771059bbe3638b0fa8cecbcccc55eb7"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-inheritedDesyncTest-2.itf-0.png",
+      "mode": "100644",
+      "gitBlob": "b8ebfa86a781389a4751b086078f737b4520d710",
+      "bytes": 307528,
+      "sha256": "c0e55a1cccaf90e217545b605d469181019152ec66d9102f56b34d39740dafca"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-inheritedDesyncTest-2.itf-1.png",
+      "mode": "100644",
+      "gitBlob": "b8ebfa86a781389a4751b086078f737b4520d710",
+      "bytes": 307528,
+      "sha256": "c0e55a1cccaf90e217545b605d469181019152ec66d9102f56b34d39740dafca"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-inheritedDesyncTest-2.itf-10.png",
+      "mode": "100644",
+      "gitBlob": "ccb1225c8ab2345fcd960886428e3baf8075f097",
+      "bytes": 307528,
+      "sha256": "49862c98287878b509f1820d7035cd4915b6dd893b1ccc2d45ab6161931c056b"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-inheritedDesyncTest-2.itf-11.png",
+      "mode": "100644",
+      "gitBlob": "ccb1225c8ab2345fcd960886428e3baf8075f097",
+      "bytes": 307528,
+      "sha256": "49862c98287878b509f1820d7035cd4915b6dd893b1ccc2d45ab6161931c056b"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-inheritedDesyncTest-2.itf-2.png",
+      "mode": "100644",
+      "gitBlob": "204ea9ac12a99cc5790ba64e0535ea3595230df1",
+      "bytes": 307528,
+      "sha256": "5c46319440e17037a318d846e42e201c2771059bbe3638b0fa8cecbcccc55eb7"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-inheritedDesyncTest-2.itf-3.png",
+      "mode": "100644",
+      "gitBlob": "204ea9ac12a99cc5790ba64e0535ea3595230df1",
+      "bytes": 307528,
+      "sha256": "5c46319440e17037a318d846e42e201c2771059bbe3638b0fa8cecbcccc55eb7"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-inheritedDesyncTest-2.itf-4.png",
+      "mode": "100644",
+      "gitBlob": "204ea9ac12a99cc5790ba64e0535ea3595230df1",
+      "bytes": 307528,
+      "sha256": "5c46319440e17037a318d846e42e201c2771059bbe3638b0fa8cecbcccc55eb7"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-inheritedDesyncTest-2.itf-5.png",
+      "mode": "100644",
+      "gitBlob": "a6347de1a07f00210bf98b3dc7e12eb78f052d11",
+      "bytes": 307528,
+      "sha256": "9a524494648fb7b1c9c5b169d1fa58b1a424e860e445adfde4f1205055e612bd"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-inheritedDesyncTest-2.itf-6.png",
+      "mode": "100644",
+      "gitBlob": "a6347de1a07f00210bf98b3dc7e12eb78f052d11",
+      "bytes": 307528,
+      "sha256": "9a524494648fb7b1c9c5b169d1fa58b1a424e860e445adfde4f1205055e612bd"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-inheritedDesyncTest-2.itf-7.png",
+      "mode": "100644",
+      "gitBlob": "a6347de1a07f00210bf98b3dc7e12eb78f052d11",
+      "bytes": 307528,
+      "sha256": "9a524494648fb7b1c9c5b169d1fa58b1a424e860e445adfde4f1205055e612bd"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-inheritedDesyncTest-2.itf-8.png",
+      "mode": "100644",
+      "gitBlob": "a6347de1a07f00210bf98b3dc7e12eb78f052d11",
+      "bytes": 307528,
+      "sha256": "9a524494648fb7b1c9c5b169d1fa58b1a424e860e445adfde4f1205055e612bd"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-inheritedDesyncTest-2.itf-9.png",
+      "mode": "100644",
+      "gitBlob": "a6347de1a07f00210bf98b3dc7e12eb78f052d11",
+      "bytes": 307528,
+      "sha256": "9a524494648fb7b1c9c5b169d1fa58b1a424e860e445adfde4f1205055e612bd"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-mergeEmptyTest-1.itf-0.png",
+      "mode": "100644",
+      "gitBlob": "b8ebfa86a781389a4751b086078f737b4520d710",
+      "bytes": 307528,
+      "sha256": "c0e55a1cccaf90e217545b605d469181019152ec66d9102f56b34d39740dafca"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-mergeEmptyTest-1.itf-1.png",
+      "mode": "100644",
+      "gitBlob": "b8ebfa86a781389a4751b086078f737b4520d710",
+      "bytes": 307528,
+      "sha256": "c0e55a1cccaf90e217545b605d469181019152ec66d9102f56b34d39740dafca"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-mergeEmptyTest-1.itf-2.png",
+      "mode": "100644",
+      "gitBlob": "204ea9ac12a99cc5790ba64e0535ea3595230df1",
+      "bytes": 307528,
+      "sha256": "5c46319440e17037a318d846e42e201c2771059bbe3638b0fa8cecbcccc55eb7"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-mergeEmptyTest-1.itf-3.png",
+      "mode": "100644",
+      "gitBlob": "204ea9ac12a99cc5790ba64e0535ea3595230df1",
+      "bytes": 307528,
+      "sha256": "5c46319440e17037a318d846e42e201c2771059bbe3638b0fa8cecbcccc55eb7"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-mergeEmptyTest-1.itf-4.png",
+      "mode": "100644",
+      "gitBlob": "204ea9ac12a99cc5790ba64e0535ea3595230df1",
+      "bytes": 307528,
+      "sha256": "5c46319440e17037a318d846e42e201c2771059bbe3638b0fa8cecbcccc55eb7"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-mergeEmptyTest-1.itf-5.png",
+      "mode": "100644",
+      "gitBlob": "204ea9ac12a99cc5790ba64e0535ea3595230df1",
+      "bytes": 307528,
+      "sha256": "5c46319440e17037a318d846e42e201c2771059bbe3638b0fa8cecbcccc55eb7"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-mergeEmptyTest-1.itf-6.png",
+      "mode": "100644",
+      "gitBlob": "204ea9ac12a99cc5790ba64e0535ea3595230df1",
+      "bytes": 307528,
+      "sha256": "5c46319440e17037a318d846e42e201c2771059bbe3638b0fa8cecbcccc55eb7"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-mergeEmptyTest-1.itf-7.png",
+      "mode": "100644",
+      "gitBlob": "204ea9ac12a99cc5790ba64e0535ea3595230df1",
+      "bytes": 307528,
+      "sha256": "5c46319440e17037a318d846e42e201c2771059bbe3638b0fa8cecbcccc55eb7"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-mergeEmptyTest-1.itf-8.png",
+      "mode": "100644",
+      "gitBlob": "81f7373dee01b2783e94d97b20c7893bf02e2c81",
+      "bytes": 307528,
+      "sha256": "d8d22dd2d335148f8478992fcc202cd0edeb9d9d6237762857fe24ae8b61e0dd"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-mergeEmptyTest-1.itf-9.png",
+      "mode": "100644",
+      "gitBlob": "81f7373dee01b2783e94d97b20c7893bf02e2c81",
+      "bytes": 307528,
+      "sha256": "d8d22dd2d335148f8478992fcc202cd0edeb9d9d6237762857fe24ae8b61e0dd"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-queuedNullTest-3.itf-0.png",
+      "mode": "100644",
+      "gitBlob": "b8ebfa86a781389a4751b086078f737b4520d710",
+      "bytes": 307528,
+      "sha256": "c0e55a1cccaf90e217545b605d469181019152ec66d9102f56b34d39740dafca"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-queuedNullTest-3.itf-1.png",
+      "mode": "100644",
+      "gitBlob": "b8ebfa86a781389a4751b086078f737b4520d710",
+      "bytes": 307528,
+      "sha256": "c0e55a1cccaf90e217545b605d469181019152ec66d9102f56b34d39740dafca"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-queuedNullTest-3.itf-2.png",
+      "mode": "100644",
+      "gitBlob": "204ea9ac12a99cc5790ba64e0535ea3595230df1",
+      "bytes": 307528,
+      "sha256": "5c46319440e17037a318d846e42e201c2771059bbe3638b0fa8cecbcccc55eb7"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-queuedNullTest-3.itf-3.png",
+      "mode": "100644",
+      "gitBlob": "204ea9ac12a99cc5790ba64e0535ea3595230df1",
+      "bytes": 307528,
+      "sha256": "5c46319440e17037a318d846e42e201c2771059bbe3638b0fa8cecbcccc55eb7"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-queuedNullTest-3.itf-4.png",
+      "mode": "100644",
+      "gitBlob": "a6347de1a07f00210bf98b3dc7e12eb78f052d11",
+      "bytes": 307528,
+      "sha256": "9a524494648fb7b1c9c5b169d1fa58b1a424e860e445adfde4f1205055e612bd"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-queuedNullTest-3.itf-5.png",
+      "mode": "100644",
+      "gitBlob": "a6347de1a07f00210bf98b3dc7e12eb78f052d11",
+      "bytes": 307528,
+      "sha256": "9a524494648fb7b1c9c5b169d1fa58b1a424e860e445adfde4f1205055e612bd"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-queuedNullTest-3.itf-6.png",
+      "mode": "100644",
+      "gitBlob": "a6347de1a07f00210bf98b3dc7e12eb78f052d11",
+      "bytes": 307528,
+      "sha256": "9a524494648fb7b1c9c5b169d1fa58b1a424e860e445adfde4f1205055e612bd"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-queuedNullTest-3.itf-7.png",
+      "mode": "100644",
+      "gitBlob": "b8ebfa86a781389a4751b086078f737b4520d710",
+      "bytes": 307528,
+      "sha256": "c0e55a1cccaf90e217545b605d469181019152ec66d9102f56b34d39740dafca"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/cache-named-queuedNullTest-3.itf-8.png",
+      "mode": "100644",
+      "gitBlob": "b8ebfa86a781389a4751b086078f737b4520d710",
+      "bytes": 307528,
+      "sha256": "c0e55a1cccaf90e217545b605d469181019152ec66d9102f56b34d39740dafca"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/changing-pointer.log",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/changing-webkit-client.png",
+      "mode": "100644",
+      "gitBlob": "0f3790d047bdf4e1efca6346353317cfd92edf17",
+      "bytes": 23546,
+      "sha256": "95d92bc34e6cf9940d14443b9fa8629da4ed249b0fab2440137588c3f9e3f340"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/child-control",
+      "mode": "100644",
+      "gitBlob": "38a2f58a458b9b38ccb2700d6e5b92b2faaae660",
+      "bytes": 8,
+      "sha256": "5b9f94f8720a92552b0adefab5f554737577196c7737f6302d97cefb47a2fc70"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/child.log",
+      "mode": "100644",
+      "gitBlob": "7c459a5b47bf77c4656589b99ea9b5fd1782ac31",
+      "bytes": 43940,
+      "sha256": "2154aa54a98ddf352cdcaa195086eebe9c8644311923e9f7a78bf8b761324018"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/companion-control",
+      "mode": "100644",
+      "gitBlob": "a03b43aed2a873ebf344d7a986038e4470828438",
+      "bytes": 7,
+      "sha256": "938ff155d31d23a3ab099c99c0f25cafd7f5a5dd462e75484d6e3b7389ed694a"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/destroyed-child.png",
+      "mode": "100644",
+      "gitBlob": "b8ebfa86a781389a4751b086078f737b4520d710",
+      "bytes": 307528,
+      "sha256": "c0e55a1cccaf90e217545b605d469181019152ec66d9102f56b34d39740dafca"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/desync-yellow.png",
+      "mode": "100644",
+      "gitBlob": "81f7373dee01b2783e94d97b20c7893bf02e2c81",
+      "bytes": 307528,
+      "sha256": "d8d22dd2d335148f8478992fcc202cd0edeb9d9d6237762857fe24ae8b61e0dd"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/detached-child.png",
+      "mode": "100644",
+      "gitBlob": "b8ebfa86a781389a4751b086078f737b4520d710",
+      "bytes": 307528,
+      "sha256": "c0e55a1cccaf90e217545b605d469181019152ec66d9102f56b34d39740dafca"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/dmabuf-probe.stderr",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/dmabuf-probe.stdout",
+      "mode": "100644",
+      "gitBlob": "7b0492b42b9637366e222526cc706c670602c52b",
+      "bytes": 174,
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/family-popup-client-boundary.png",
+      "mode": "100644",
+      "gitBlob": "32015658dfc68e4513c8093a6b9364198764ba30",
+      "bytes": 307528,
+      "sha256": "861e25fecd1683be11dd392f0b248205cbc30dde115b9b13b86ca9d61bd2ef28"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/full-client-changing.log",
+      "mode": "100644",
+      "gitBlob": "9ba848cd4a9dd08c02c550069fb976cedacb2047",
+      "bytes": 31449,
+      "sha256": "96abbff0da50ec94ea821074c8205321dc8be78c03ace82d310d17f8ef688f8d"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/full-client-gone.log",
+      "mode": "100644",
+      "gitBlob": "0d656ef956e50ac5e413e191ed7f723150d895b1",
+      "bytes": 38681,
+      "sha256": "cc50b0167f710753292b5aaeef65275925196f61f7e2bb83cfd1a66b902a3a84"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/full-client-locked.log",
+      "mode": "100644",
+      "gitBlob": "3adb37e7dd6f04e831e0a7b59078ac578cab8397",
+      "bytes": 38451,
+      "sha256": "617cde6896475019c4217ce6fbed8ef88230b849897f5732d1052fd0b35a495e"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/full-client-provider.log",
+      "mode": "100644",
+      "gitBlob": "d2954b380ba843b16fdd7cfff71401e59b8ad626",
+      "bytes": 31251,
+      "sha256": "f22e5816fef83d1ea3a2022270a5b7cb10bb146203a39a8508ac65f7c5a0f3de"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/full-client-resumed.log",
+      "mode": "100644",
+      "gitBlob": "2b72f78eca47cf31261e40d39c4d9f2b59ff21a9",
+      "bytes": 52725,
+      "sha256": "f98e2d8c25fe0eb5811dd89cfab921400781919f1a035f2fb2b9233ec1a8e760"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/full-client-stopped.log",
+      "mode": "100644",
+      "gitBlob": "ba01060bf3ab6201fa53c29c13cc434b08c66b11",
+      "bytes": 47208,
+      "sha256": "1dca0c41e7c7b294c31129bb4278389456b9eba4cec0ac7eb377024717e2dd6c"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/full-host-pointer.log",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/full-imported-gui.log",
+      "mode": "100644",
+      "gitBlob": "4e9235c3c1d1cd8b087c6f8cb42170a7ca1e61fc",
+      "bytes": 73640,
+      "sha256": "c89b2c8aea246bf25228ac6e58b12bf3fa1cc0feb7714d6f40429444e9eb2151"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/full-imported-historical.log",
+      "mode": "100644",
+      "gitBlob": "9c1b2b29b125995f492b17d9b4e9a6b78d7b2e01",
+      "bytes": 58654,
+      "sha256": "055b1b92a5426563cda12e52d0ea3f53b769305bc802c329d888c358d86318da"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/full-webkit-client.png",
+      "mode": "100644",
+      "gitBlob": "0f3790d047bdf4e1efca6346353317cfd92edf17",
+      "bytes": 23546,
+      "sha256": "95d92bc34e6cf9940d14443b9fa8629da4ed249b0fab2440137588c3f9e3f340"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/gone-native-witness.log",
+      "mode": "100644",
+      "gitBlob": "7f9528a8bc1db519c9b4679d55f041e28cef03fe",
+      "bytes": 2655,
+      "sha256": "4e1cecf48d725569666b4bc2d8ab0f895ee15c9a36120b9ec0b614545a24bf3b"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/gone-pointer.log",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/gone-source-control",
+      "mode": "100644",
+      "gitBlob": "a03b43aed2a873ebf344d7a986038e4470828438",
+      "bytes": 7,
+      "sha256": "938ff155d31d23a3ab099c99c0f25cafd7f5a5dd462e75484d6e3b7389ed694a"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/gone-webkit-client.png",
+      "mode": "100644",
+      "gitBlob": "0f3790d047bdf4e1efca6346353317cfd92edf17",
+      "bytes": 23546,
+      "sha256": "95d92bc34e6cf9940d14443b9fa8629da4ed249b0fab2440137588c3f9e3f340"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/gone-witness-source.log",
+      "mode": "100644",
+      "gitBlob": "c0a1baac1bf1141a92790158283754509fd87495",
+      "bytes": 1440,
+      "sha256": "dc44df8f2ab223a506c48aca3b8649bd8bf538c9911eea11220aa175621d374d"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/gui-imported-pointer.log",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/gui-imported-webkit.png",
+      "mode": "100644",
+      "gitBlob": "b8d0f71348e7535f7b4f64c9e6bd8d6876789db7",
+      "bytes": 26102,
+      "sha256": "6196e3b5bd440d0efb76c1e39f6119a969c0661046100745f44cabd63d264a2c"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/gui-imported-webkit.png.request-2.png",
+      "mode": "100644",
+      "gitBlob": "deec3dbd56976883ad051aafb30905942451a270",
+      "bytes": 26098,
+      "sha256": "bed63c68a96cf5b904a08ec4d6bf906f28288d3f7e03edf3741e911e24e496f4"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/gui-lock.log",
+      "mode": "100644",
+      "gitBlob": "4992dbaeba2bfd1f8d579dfbcf1e805aee8943d8",
+      "bytes": 705,
+      "sha256": "59cba70824be500d34f45153618a5dec960405e1c8e4a2ffebe878f834790278"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/gui-resumed-dismiss-pointer.log",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/gui-resumed-reopen-pointer.log",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/gui-shared-historical.png",
+      "mode": "100644",
+      "gitBlob": "b8d0f71348e7535f7b4f64c9e6bd8d6876789db7",
+      "bytes": 26102,
+      "sha256": "6196e3b5bd440d0efb76c1e39f6119a969c0661046100745f44cabd63d264a2c"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/gui-shared-historical.png.request-2.png",
+      "mode": "100644",
+      "gitBlob": "34d6876c8d19c523d746eb57cd96f2597e8066b8",
+      "bytes": 27098,
+      "sha256": "41f51ee32f80edd61fa3a76101c89d924fd2800c947f85ab4d03c4d5d0f76cbc"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/host-evidence.json",
+      "mode": "100644",
+      "gitBlob": "b8b253acda7b1211e2fff38472d3c13953bc0729",
+      "bytes": 279291,
+      "sha256": "e9ddc0182fa9883cbaf2b4378f593cc6523475b56c360ef2c44236ecde9ad3e0"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/hyprland.log",
+      "mode": "100644",
+      "gitBlob": "d286cb09d03b7ff0359f4cbaabec7f3b5e942d7a",
+      "bytes": 919800,
+      "sha256": "4ddb9104f9108ea15be819e77cdf85e732f7445268692aa92e24392990718d5e"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/imported-native-pixels.1.png",
+      "mode": "100644",
+      "gitBlob": "32015658dfc68e4513c8093a6b9364198764ba30",
+      "bytes": 307528,
+      "sha256": "861e25fecd1683be11dd392f0b248205cbc30dde115b9b13b86ca9d61bd2ef28"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/imported-native-pixels.2.png",
+      "mode": "100644",
+      "gitBlob": "6d0b563fb667ea86c75a38d917691daf092778e2",
+      "bytes": 307528,
+      "sha256": "cf11a527b0f05bd415c95bd26931938ff8d89d0ffb8841dfb20ee4d72643e446"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/imported-native-witness.log",
+      "mode": "100644",
+      "gitBlob": "d1fa2a3086069793a93214c4ce1d2f04cd4d0518",
+      "bytes": 10851,
+      "sha256": "152d14c352d08140a341499407f73693ba5d8956771d80c6af26f983bcdb6ffc"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/imported-session-lock.log",
+      "mode": "100644",
+      "gitBlob": "38cf8cbff20d1583570c9367498b22e4df89da7b",
+      "bytes": 705,
+      "sha256": "b3362f9b194711e3410fa4e252dbf863e8bdc96e9ea839dde4874675b65ec007"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/initial-child.png",
+      "mode": "100644",
+      "gitBlob": "204ea9ac12a99cc5790ba64e0535ea3595230df1",
+      "bytes": 307528,
+      "sha256": "5c46319440e17037a318d846e42e201c2771059bbe3638b0fa8cecbcccc55eb7"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/layout-above-applied.png",
+      "mode": "100644",
+      "gitBlob": "32015658dfc68e4513c8093a6b9364198764ba30",
+      "bytes": 307528,
+      "sha256": "861e25fecd1683be11dd392f0b248205cbc30dde115b9b13b86ca9d61bd2ef28"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/layout-above-pending.png",
+      "mode": "100644",
+      "gitBlob": "b8ebfa86a781389a4751b086078f737b4520d710",
+      "bytes": 307528,
+      "sha256": "c0e55a1cccaf90e217545b605d469181019152ec66d9102f56b34d39740dafca"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/layout-baseline.png",
+      "mode": "100644",
+      "gitBlob": "204ea9ac12a99cc5790ba64e0535ea3595230df1",
+      "bytes": 307528,
+      "sha256": "5c46319440e17037a318d846e42e201c2771059bbe3638b0fa8cecbcccc55eb7"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/layout-below-applied.png",
+      "mode": "100644",
+      "gitBlob": "b8ebfa86a781389a4751b086078f737b4520d710",
+      "bytes": 307528,
+      "sha256": "c0e55a1cccaf90e217545b605d469181019152ec66d9102f56b34d39740dafca"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/layout-below-pending.png",
+      "mode": "100644",
+      "gitBlob": "32015658dfc68e4513c8093a6b9364198764ba30",
+      "bytes": 307528,
+      "sha256": "861e25fecd1683be11dd392f0b248205cbc30dde115b9b13b86ca9d61bd2ef28"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/layout-position-applied.png",
+      "mode": "100644",
+      "gitBlob": "32015658dfc68e4513c8093a6b9364198764ba30",
+      "bytes": 307528,
+      "sha256": "861e25fecd1683be11dd392f0b248205cbc30dde115b9b13b86ca9d61bd2ef28"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/layout-position-pending.png",
+      "mode": "100644",
+      "gitBlob": "204ea9ac12a99cc5790ba64e0535ea3595230df1",
+      "bytes": 307528,
+      "sha256": "5c46319440e17037a318d846e42e201c2771059bbe3638b0fa8cecbcccc55eb7"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/locked-native-witness.log",
+      "mode": "100644",
+      "gitBlob": "c2ff67a35c11c0cef3d439208166410295dca602",
+      "bytes": 3091,
+      "sha256": "469436fa253e2c7b70256784a55de9c1ee74b8b393a0f509413cc0447a08f567"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/locked-pointer.log",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/locked-webkit-client.png",
+      "mode": "100644",
+      "gitBlob": "d48aa5440cbe2d9edb9598abff8df502865dffe4",
+      "bytes": 23541,
+      "sha256": "41522fe1548af7e0018b79152a4f0591ef141aa60373d69a3bfc670f71d3860d"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/moved-child.png",
+      "mode": "100644",
+      "gitBlob": "32015658dfc68e4513c8093a6b9364198764ba30",
+      "bytes": 307528,
+      "sha256": "861e25fecd1683be11dd392f0b248205cbc30dde115b9b13b86ca9d61bd2ef28"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/nested-child.png",
+      "mode": "100644",
+      "gitBlob": "32d0caecf369098ab9058a3f9e8b487667754969",
+      "bytes": 307528,
+      "sha256": "cd1ef811268cc895973501e6488b6659cf89aba061f905920e3e428425e7b9a5"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/own-client-provider.log",
+      "mode": "100644",
+      "gitBlob": "63e0c862800a3f310aeff6621d47692d6f617d17",
+      "bytes": 1303,
+      "sha256": "fbbda71c81167315401f5a6a05138e7e9bf49e502f1a3f84ad1330f0528af5df"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/own-provider-client.png",
+      "mode": "100644",
+      "gitBlob": "32015658dfc68e4513c8093a6b9364198764ba30",
+      "bytes": 307528,
+      "sha256": "861e25fecd1683be11dd392f0b248205cbc30dde115b9b13b86ca9d61bd2ef28"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/peer.log",
+      "mode": "100644",
+      "gitBlob": "b15e534cb464b1d18318232225c53af9ad30c275",
+      "bytes": 570,
+      "sha256": "c9391bc04ca63e193e2243b3e43192f9fe12f916065a6c69ce8850f3cfb59ec4"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-asymmetric-new-first.log",
+      "mode": "100644",
+      "gitBlob": "91280c54c29dd29782afb33962e454d5f2cc426d",
+      "bytes": 197,
+      "sha256": "871578024fca36266781de645ee8e771adca2f177ae3855cfb7fee04c0cabc6d"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-asymmetric-original-first.log",
+      "mode": "100644",
+      "gitBlob": "699766b3fe7f3200af364414917250c8398243c0",
+      "bytes": 193,
+      "sha256": "ed12720592901987acf023943014d9a4938ab20271a552133be5b779af57b02f"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-asymmetric-original-sibling.log",
+      "mode": "100644",
+      "gitBlob": "1b2fd74e737d056d0bb6c8dad001169082b32467",
+      "bytes": 194,
+      "sha256": "1d7465adcb9f36005dcfcffcbc0cc32dfb636966b5555ea773e50574d46e829a"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-below-root.log",
+      "mode": "100644",
+      "gitBlob": "6ef4f2be1125f0e872b0a51491cddd1370c3bd50",
+      "bytes": 190,
+      "sha256": "97e7c848e6d71f238a6ce6aad0704431cda64dafab796c39be5ad86e50873d65"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-defaultSyncTest-0.itf-0.log",
+      "mode": "100644",
+      "gitBlob": "6ef4f2be1125f0e872b0a51491cddd1370c3bd50",
+      "bytes": 190,
+      "sha256": "97e7c848e6d71f238a6ce6aad0704431cda64dafab796c39be5ad86e50873d65"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-defaultSyncTest-0.itf-1.log",
+      "mode": "100644",
+      "gitBlob": "6ef4f2be1125f0e872b0a51491cddd1370c3bd50",
+      "bytes": 190,
+      "sha256": "97e7c848e6d71f238a6ce6aad0704431cda64dafab796c39be5ad86e50873d65"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-defaultSyncTest-0.itf-2.log",
+      "mode": "100644",
+      "gitBlob": "6ef4f2be1125f0e872b0a51491cddd1370c3bd50",
+      "bytes": 190,
+      "sha256": "97e7c848e6d71f238a6ce6aad0704431cda64dafab796c39be5ad86e50873d65"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-defaultSyncTest-0.itf-3.log",
+      "mode": "100644",
+      "gitBlob": "3e240d3a1119d829122de9edc55f1aa0b6babb93",
+      "bytes": 193,
+      "sha256": "81f0279860eaf01d5e57aa1e5794464ab2ca99ddfb0d9d913261880eedd0aa0a"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-defaultSyncTest-0.itf-4.log",
+      "mode": "100644",
+      "gitBlob": "3e240d3a1119d829122de9edc55f1aa0b6babb93",
+      "bytes": 193,
+      "sha256": "81f0279860eaf01d5e57aa1e5794464ab2ca99ddfb0d9d913261880eedd0aa0a"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-destroyCacheTest-4.itf-0.log",
+      "mode": "100644",
+      "gitBlob": "6ef4f2be1125f0e872b0a51491cddd1370c3bd50",
+      "bytes": 190,
+      "sha256": "97e7c848e6d71f238a6ce6aad0704431cda64dafab796c39be5ad86e50873d65"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-destroyCacheTest-4.itf-1.log",
+      "mode": "100644",
+      "gitBlob": "6ef4f2be1125f0e872b0a51491cddd1370c3bd50",
+      "bytes": 190,
+      "sha256": "97e7c848e6d71f238a6ce6aad0704431cda64dafab796c39be5ad86e50873d65"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-destroyCacheTest-4.itf-2.log",
+      "mode": "100644",
+      "gitBlob": "3e240d3a1119d829122de9edc55f1aa0b6babb93",
+      "bytes": 193,
+      "sha256": "81f0279860eaf01d5e57aa1e5794464ab2ca99ddfb0d9d913261880eedd0aa0a"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-destroyCacheTest-4.itf-3.log",
+      "mode": "100644",
+      "gitBlob": "3e240d3a1119d829122de9edc55f1aa0b6babb93",
+      "bytes": 193,
+      "sha256": "81f0279860eaf01d5e57aa1e5794464ab2ca99ddfb0d9d913261880eedd0aa0a"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-destroyCacheTest-4.itf-4.log",
+      "mode": "100644",
+      "gitBlob": "6ef4f2be1125f0e872b0a51491cddd1370c3bd50",
+      "bytes": 190,
+      "sha256": "97e7c848e6d71f238a6ce6aad0704431cda64dafab796c39be5ad86e50873d65"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-destroyCacheTest-4.itf-5.log",
+      "mode": "100644",
+      "gitBlob": "6ef4f2be1125f0e872b0a51491cddd1370c3bd50",
+      "bytes": 190,
+      "sha256": "97e7c848e6d71f238a6ce6aad0704431cda64dafab796c39be5ad86e50873d65"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-destroyCacheTest-4.itf-6.log",
+      "mode": "100644",
+      "gitBlob": "6ef4f2be1125f0e872b0a51491cddd1370c3bd50",
+      "bytes": 190,
+      "sha256": "97e7c848e6d71f238a6ce6aad0704431cda64dafab796c39be5ad86e50873d65"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-destroyCacheTest-4.itf-7.log",
+      "mode": "100644",
+      "gitBlob": "6ef4f2be1125f0e872b0a51491cddd1370c3bd50",
+      "bytes": 190,
+      "sha256": "97e7c848e6d71f238a6ce6aad0704431cda64dafab796c39be5ad86e50873d65"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-destroyCacheTest-4.itf-8.log",
+      "mode": "100644",
+      "gitBlob": "3e240d3a1119d829122de9edc55f1aa0b6babb93",
+      "bytes": 193,
+      "sha256": "81f0279860eaf01d5e57aa1e5794464ab2ca99ddfb0d9d913261880eedd0aa0a"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-destroyCacheTest-4.itf-9.log",
+      "mode": "100644",
+      "gitBlob": "3e240d3a1119d829122de9edc55f1aa0b6babb93",
+      "bytes": 193,
+      "sha256": "81f0279860eaf01d5e57aa1e5794464ab2ca99ddfb0d9d913261880eedd0aa0a"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-inheritedDesyncTest-2.itf-0.log",
+      "mode": "100644",
+      "gitBlob": "6ef4f2be1125f0e872b0a51491cddd1370c3bd50",
+      "bytes": 190,
+      "sha256": "97e7c848e6d71f238a6ce6aad0704431cda64dafab796c39be5ad86e50873d65"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-inheritedDesyncTest-2.itf-1.log",
+      "mode": "100644",
+      "gitBlob": "6ef4f2be1125f0e872b0a51491cddd1370c3bd50",
+      "bytes": 190,
+      "sha256": "97e7c848e6d71f238a6ce6aad0704431cda64dafab796c39be5ad86e50873d65"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-inheritedDesyncTest-2.itf-10.log",
+      "mode": "100644",
+      "gitBlob": "84b450cf149a5bba0ca46a47607612589da292b3",
+      "bytes": 195,
+      "sha256": "3f7499cf8961ef7884eceaf765e64a879869b3c670644b7de95a2a61ef3b0818"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-inheritedDesyncTest-2.itf-11.log",
+      "mode": "100644",
+      "gitBlob": "84b450cf149a5bba0ca46a47607612589da292b3",
+      "bytes": 195,
+      "sha256": "3f7499cf8961ef7884eceaf765e64a879869b3c670644b7de95a2a61ef3b0818"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-inheritedDesyncTest-2.itf-2.log",
+      "mode": "100644",
+      "gitBlob": "3e240d3a1119d829122de9edc55f1aa0b6babb93",
+      "bytes": 193,
+      "sha256": "81f0279860eaf01d5e57aa1e5794464ab2ca99ddfb0d9d913261880eedd0aa0a"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-inheritedDesyncTest-2.itf-3.log",
+      "mode": "100644",
+      "gitBlob": "3e240d3a1119d829122de9edc55f1aa0b6babb93",
+      "bytes": 193,
+      "sha256": "81f0279860eaf01d5e57aa1e5794464ab2ca99ddfb0d9d913261880eedd0aa0a"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-inheritedDesyncTest-2.itf-4.log",
+      "mode": "100644",
+      "gitBlob": "3e240d3a1119d829122de9edc55f1aa0b6babb93",
+      "bytes": 193,
+      "sha256": "81f0279860eaf01d5e57aa1e5794464ab2ca99ddfb0d9d913261880eedd0aa0a"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-inheritedDesyncTest-2.itf-5.log",
+      "mode": "100644",
+      "gitBlob": "e1dc1ba33655a234c3df0d1545c5917f209a15de",
+      "bytes": 195,
+      "sha256": "981c2b1cfeb1f348312465d57baacbeb1c7d2952caab9afc74c864a84cbd49fa"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-inheritedDesyncTest-2.itf-6.log",
+      "mode": "100644",
+      "gitBlob": "e1dc1ba33655a234c3df0d1545c5917f209a15de",
+      "bytes": 195,
+      "sha256": "981c2b1cfeb1f348312465d57baacbeb1c7d2952caab9afc74c864a84cbd49fa"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-inheritedDesyncTest-2.itf-7.log",
+      "mode": "100644",
+      "gitBlob": "e1dc1ba33655a234c3df0d1545c5917f209a15de",
+      "bytes": 195,
+      "sha256": "981c2b1cfeb1f348312465d57baacbeb1c7d2952caab9afc74c864a84cbd49fa"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-inheritedDesyncTest-2.itf-8.log",
+      "mode": "100644",
+      "gitBlob": "e1dc1ba33655a234c3df0d1545c5917f209a15de",
+      "bytes": 195,
+      "sha256": "981c2b1cfeb1f348312465d57baacbeb1c7d2952caab9afc74c864a84cbd49fa"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-inheritedDesyncTest-2.itf-9.log",
+      "mode": "100644",
+      "gitBlob": "e1dc1ba33655a234c3df0d1545c5917f209a15de",
+      "bytes": 195,
+      "sha256": "981c2b1cfeb1f348312465d57baacbeb1c7d2952caab9afc74c864a84cbd49fa"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-mergeEmptyTest-1.itf-0.log",
+      "mode": "100644",
+      "gitBlob": "6ef4f2be1125f0e872b0a51491cddd1370c3bd50",
+      "bytes": 190,
+      "sha256": "97e7c848e6d71f238a6ce6aad0704431cda64dafab796c39be5ad86e50873d65"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-mergeEmptyTest-1.itf-1.log",
+      "mode": "100644",
+      "gitBlob": "6ef4f2be1125f0e872b0a51491cddd1370c3bd50",
+      "bytes": 190,
+      "sha256": "97e7c848e6d71f238a6ce6aad0704431cda64dafab796c39be5ad86e50873d65"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-mergeEmptyTest-1.itf-2.log",
+      "mode": "100644",
+      "gitBlob": "3e240d3a1119d829122de9edc55f1aa0b6babb93",
+      "bytes": 193,
+      "sha256": "81f0279860eaf01d5e57aa1e5794464ab2ca99ddfb0d9d913261880eedd0aa0a"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-mergeEmptyTest-1.itf-3.log",
+      "mode": "100644",
+      "gitBlob": "3e240d3a1119d829122de9edc55f1aa0b6babb93",
+      "bytes": 193,
+      "sha256": "81f0279860eaf01d5e57aa1e5794464ab2ca99ddfb0d9d913261880eedd0aa0a"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-mergeEmptyTest-1.itf-4.log",
+      "mode": "100644",
+      "gitBlob": "3e240d3a1119d829122de9edc55f1aa0b6babb93",
+      "bytes": 193,
+      "sha256": "81f0279860eaf01d5e57aa1e5794464ab2ca99ddfb0d9d913261880eedd0aa0a"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-mergeEmptyTest-1.itf-5.log",
+      "mode": "100644",
+      "gitBlob": "3e240d3a1119d829122de9edc55f1aa0b6babb93",
+      "bytes": 193,
+      "sha256": "81f0279860eaf01d5e57aa1e5794464ab2ca99ddfb0d9d913261880eedd0aa0a"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-mergeEmptyTest-1.itf-6.log",
+      "mode": "100644",
+      "gitBlob": "3e240d3a1119d829122de9edc55f1aa0b6babb93",
+      "bytes": 193,
+      "sha256": "81f0279860eaf01d5e57aa1e5794464ab2ca99ddfb0d9d913261880eedd0aa0a"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-mergeEmptyTest-1.itf-7.log",
+      "mode": "100644",
+      "gitBlob": "3e240d3a1119d829122de9edc55f1aa0b6babb93",
+      "bytes": 193,
+      "sha256": "81f0279860eaf01d5e57aa1e5794464ab2ca99ddfb0d9d913261880eedd0aa0a"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-mergeEmptyTest-1.itf-8.log",
+      "mode": "100644",
+      "gitBlob": "bfc16303d75c6a5972518488874ab9ec2db84be9",
+      "bytes": 195,
+      "sha256": "9bf59f74b10246cc390899dd0c56359c7a1cdebfbc461a804273b86180667a56"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-mergeEmptyTest-1.itf-9.log",
+      "mode": "100644",
+      "gitBlob": "bfc16303d75c6a5972518488874ab9ec2db84be9",
+      "bytes": 195,
+      "sha256": "9bf59f74b10246cc390899dd0c56359c7a1cdebfbc461a804273b86180667a56"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-queuedNullTest-3.itf-0.log",
+      "mode": "100644",
+      "gitBlob": "6ef4f2be1125f0e872b0a51491cddd1370c3bd50",
+      "bytes": 190,
+      "sha256": "97e7c848e6d71f238a6ce6aad0704431cda64dafab796c39be5ad86e50873d65"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-queuedNullTest-3.itf-1.log",
+      "mode": "100644",
+      "gitBlob": "6ef4f2be1125f0e872b0a51491cddd1370c3bd50",
+      "bytes": 190,
+      "sha256": "97e7c848e6d71f238a6ce6aad0704431cda64dafab796c39be5ad86e50873d65"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-queuedNullTest-3.itf-2.log",
+      "mode": "100644",
+      "gitBlob": "3e240d3a1119d829122de9edc55f1aa0b6babb93",
+      "bytes": 193,
+      "sha256": "81f0279860eaf01d5e57aa1e5794464ab2ca99ddfb0d9d913261880eedd0aa0a"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-queuedNullTest-3.itf-3.log",
+      "mode": "100644",
+      "gitBlob": "3e240d3a1119d829122de9edc55f1aa0b6babb93",
+      "bytes": 193,
+      "sha256": "81f0279860eaf01d5e57aa1e5794464ab2ca99ddfb0d9d913261880eedd0aa0a"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-queuedNullTest-3.itf-4.log",
+      "mode": "100644",
+      "gitBlob": "e1dc1ba33655a234c3df0d1545c5917f209a15de",
+      "bytes": 195,
+      "sha256": "981c2b1cfeb1f348312465d57baacbeb1c7d2952caab9afc74c864a84cbd49fa"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-queuedNullTest-3.itf-5.log",
+      "mode": "100644",
+      "gitBlob": "e1dc1ba33655a234c3df0d1545c5917f209a15de",
+      "bytes": 195,
+      "sha256": "981c2b1cfeb1f348312465d57baacbeb1c7d2952caab9afc74c864a84cbd49fa"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-queuedNullTest-3.itf-6.log",
+      "mode": "100644",
+      "gitBlob": "e1dc1ba33655a234c3df0d1545c5917f209a15de",
+      "bytes": 195,
+      "sha256": "981c2b1cfeb1f348312465d57baacbeb1c7d2952caab9afc74c864a84cbd49fa"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-queuedNullTest-3.itf-7.log",
+      "mode": "100644",
+      "gitBlob": "6ef4f2be1125f0e872b0a51491cddd1370c3bd50",
+      "bytes": 190,
+      "sha256": "97e7c848e6d71f238a6ce6aad0704431cda64dafab796c39be5ad86e50873d65"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-cache-named-queuedNullTest-3.itf-8.log",
+      "mode": "100644",
+      "gitBlob": "6ef4f2be1125f0e872b0a51491cddd1370c3bd50",
+      "bytes": 190,
+      "sha256": "97e7c848e6d71f238a6ce6aad0704431cda64dafab796c39be5ad86e50873d65"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-destroyed-child.log",
+      "mode": "100644",
+      "gitBlob": "6ef4f2be1125f0e872b0a51491cddd1370c3bd50",
+      "bytes": 190,
+      "sha256": "97e7c848e6d71f238a6ce6aad0704431cda64dafab796c39be5ad86e50873d65"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-desync-yellow.log",
+      "mode": "100644",
+      "gitBlob": "bfc16303d75c6a5972518488874ab9ec2db84be9",
+      "bytes": 195,
+      "sha256": "9bf59f74b10246cc390899dd0c56359c7a1cdebfbc461a804273b86180667a56"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-detached-child.log",
+      "mode": "100644",
+      "gitBlob": "6ef4f2be1125f0e872b0a51491cddd1370c3bd50",
+      "bytes": 190,
+      "sha256": "97e7c848e6d71f238a6ce6aad0704431cda64dafab796c39be5ad86e50873d65"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-family-popup-client-boundary.log",
+      "mode": "100644",
+      "gitBlob": "699766b3fe7f3200af364414917250c8398243c0",
+      "bytes": 193,
+      "sha256": "ed12720592901987acf023943014d9a4938ab20271a552133be5b779af57b02f"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-full-webkit.log",
+      "mode": "100644",
+      "gitBlob": "e7e3eaae2ec17095ebc020df7c3420df5e7679cf",
+      "bytes": 195,
+      "sha256": "72f0bb46de2e39ac37c4337538583571775facf0b72e911584cdd460b8439286"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-gui-imported.log",
+      "mode": "100644",
+      "gitBlob": "c3dc10d7e570fd72e3f3a58b74cf02e8c268f155",
+      "bytes": 195,
+      "sha256": "1888db5186a87dd0aa8a6518830ca70630574f2e7a4ae1f62844093d679254b1"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-gui-resumed.log",
+      "mode": "100644",
+      "gitBlob": "6720494597b4f4ba5c188245d1aedb235f882dbf",
+      "bytes": 195,
+      "sha256": "88d0a9278f5fb4070dec1455ca9e4bb2687e9c3f7ce474f9ecaf64ca252f75c1"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-imported-first.log",
+      "mode": "100644",
+      "gitBlob": "699766b3fe7f3200af364414917250c8398243c0",
+      "bytes": 193,
+      "sha256": "ed12720592901987acf023943014d9a4938ab20271a552133be5b779af57b02f"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-imported-second.log",
+      "mode": "100644",
+      "gitBlob": "1b2fd74e737d056d0bb6c8dad001169082b32467",
+      "bytes": 194,
+      "sha256": "1d7465adcb9f36005dcfcffcbc0cc32dfb636966b5555ea773e50574d46e829a"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-initial-child.log",
+      "mode": "100644",
+      "gitBlob": "3e240d3a1119d829122de9edc55f1aa0b6babb93",
+      "bytes": 193,
+      "sha256": "81f0279860eaf01d5e57aa1e5794464ab2ca99ddfb0d9d913261880eedd0aa0a"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-layout-above-applied.log",
+      "mode": "100644",
+      "gitBlob": "699766b3fe7f3200af364414917250c8398243c0",
+      "bytes": 193,
+      "sha256": "ed12720592901987acf023943014d9a4938ab20271a552133be5b779af57b02f"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-layout-above-pending.log",
+      "mode": "100644",
+      "gitBlob": "6ef4f2be1125f0e872b0a51491cddd1370c3bd50",
+      "bytes": 190,
+      "sha256": "97e7c848e6d71f238a6ce6aad0704431cda64dafab796c39be5ad86e50873d65"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-layout-baseline.log",
+      "mode": "100644",
+      "gitBlob": "3e240d3a1119d829122de9edc55f1aa0b6babb93",
+      "bytes": 193,
+      "sha256": "81f0279860eaf01d5e57aa1e5794464ab2ca99ddfb0d9d913261880eedd0aa0a"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-layout-below-applied.log",
+      "mode": "100644",
+      "gitBlob": "6ef4f2be1125f0e872b0a51491cddd1370c3bd50",
+      "bytes": 190,
+      "sha256": "97e7c848e6d71f238a6ce6aad0704431cda64dafab796c39be5ad86e50873d65"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-layout-below-pending.log",
+      "mode": "100644",
+      "gitBlob": "699766b3fe7f3200af364414917250c8398243c0",
+      "bytes": 193,
+      "sha256": "ed12720592901987acf023943014d9a4938ab20271a552133be5b779af57b02f"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-layout-position-applied.log",
+      "mode": "100644",
+      "gitBlob": "699766b3fe7f3200af364414917250c8398243c0",
+      "bytes": 193,
+      "sha256": "ed12720592901987acf023943014d9a4938ab20271a552133be5b779af57b02f"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-layout-position-pending.log",
+      "mode": "100644",
+      "gitBlob": "3e240d3a1119d829122de9edc55f1aa0b6babb93",
+      "bytes": 193,
+      "sha256": "81f0279860eaf01d5e57aa1e5794464ab2ca99ddfb0d9d913261880eedd0aa0a"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-moved-child.log",
+      "mode": "100644",
+      "gitBlob": "699766b3fe7f3200af364414917250c8398243c0",
+      "bytes": 193,
+      "sha256": "ed12720592901987acf023943014d9a4938ab20271a552133be5b779af57b02f"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-nested-child.log",
+      "mode": "100644",
+      "gitBlob": "43f204365a2b1b72039afbe6824175fa80aa471f",
+      "bytes": 197,
+      "sha256": "40532123c6e329e3275b46ef9ac740b129eafebd78ba3aa56b33daed13f86f90"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-own-provider.log",
+      "mode": "100644",
+      "gitBlob": "699766b3fe7f3200af364414917250c8398243c0",
+      "bytes": 193,
+      "sha256": "ed12720592901987acf023943014d9a4938ab20271a552133be5b779af57b02f"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-reattached-child.log",
+      "mode": "100644",
+      "gitBlob": "43f204365a2b1b72039afbe6824175fa80aa471f",
+      "bytes": 197,
+      "sha256": "40532123c6e329e3275b46ef9ac740b129eafebd78ba3aa56b33daed13f86f90"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-replacement-child.log",
+      "mode": "100644",
+      "gitBlob": "3e240d3a1119d829122de9edc55f1aa0b6babb93",
+      "bytes": 193,
+      "sha256": "81f0279860eaf01d5e57aa1e5794464ab2ca99ddfb0d9d913261880eedd0aa0a"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-resumed-new.log",
+      "mode": "100644",
+      "gitBlob": "e7e3eaae2ec17095ebc020df7c3420df5e7679cf",
+      "bytes": 195,
+      "sha256": "72f0bb46de2e39ac37c4337538583571775facf0b72e911584cdd460b8439286"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-resumed-original.log",
+      "mode": "100644",
+      "gitBlob": "882b0556642c10d22612650a013469e63363dee1",
+      "bytes": 195,
+      "sha256": "c00304875eb2321d6dc233f3be9c9c0a6d613420517aec398ce5c2b59f5d9c0d"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-shared-historical-visible.log",
+      "mode": "100644",
+      "gitBlob": "c3dc10d7e570fd72e3f3a58b74cf02e8c268f155",
+      "bytes": 195,
+      "sha256": "1888db5186a87dd0aa8a6518830ca70630574f2e7a4ae1f62844093d679254b1"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-stopped-original.log",
+      "mode": "100644",
+      "gitBlob": "e7e3eaae2ec17095ebc020df7c3420df5e7679cf",
+      "bytes": 195,
+      "sha256": "72f0bb46de2e39ac37c4337538583571775facf0b72e911584cdd460b8439286"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-sync-applied-blue.log",
+      "mode": "100644",
+      "gitBlob": "3e240d3a1119d829122de9edc55f1aa0b6babb93",
+      "bytes": 193,
+      "sha256": "81f0279860eaf01d5e57aa1e5794464ab2ca99ddfb0d9d913261880eedd0aa0a"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/pixels-sync-pending-blue.log",
+      "mode": "100644",
+      "gitBlob": "bfc16303d75c6a5972518488874ab9ec2db84be9",
+      "bytes": 195,
+      "sha256": "9bf59f74b10246cc390899dd0c56359c7a1cdebfbc461a804273b86180667a56"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/privateBus.log",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/provider-authority.json",
+      "mode": "100644",
+      "gitBlob": "c75c72a5dbba3732935c2810de5032f7c70bb9b4",
+      "bytes": 244,
+      "sha256": "bbc6de680e67563d02f72de3380b73fda838d2b83533731370adb5d147797d3d"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/reattached-child.png",
+      "mode": "100644",
+      "gitBlob": "32d0caecf369098ab9058a3f9e8b487667754969",
+      "bytes": 307528,
+      "sha256": "cd1ef811268cc895973501e6488b6659cf89aba061f905920e3e428425e7b9a5"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/replacement-child.png",
+      "mode": "100644",
+      "gitBlob": "204ea9ac12a99cc5790ba64e0535ea3595230df1",
+      "bytes": 307528,
+      "sha256": "5c46319440e17037a318d846e42e201c2771059bbe3638b0fa8cecbcccc55eb7"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/resumed-gui-lock.log",
+      "mode": "100644",
+      "gitBlob": "bc971949c612c3bb0f69e5e969b9da089c76dbb0",
+      "bytes": 705,
+      "sha256": "86bf5fadab8d8f63da3fa7e0bd932fb5f59ceabc6f9391ee628b2eb09082d804"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/resumed-pointer.log",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/resumed-reopen-pointer.log",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/resumed-webkit-client.png",
+      "mode": "100644",
+      "gitBlob": "d48aa5440cbe2d9edb9598abff8df502865dffe4",
+      "bytes": 23541,
+      "sha256": "41522fe1548af7e0018b79152a4f0591ef141aa60373d69a3bfc670f71d3860d"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/resumed-webkit-client.png.request-2.png",
+      "mode": "100644",
+      "gitBlob": "0f3790d047bdf4e1efca6346353317cfd92edf17",
+      "bytes": 23546,
+      "sha256": "95d92bc34e6cf9940d14443b9fa8629da4ed249b0fab2440137588c3f9e3f340"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/runtime-archive/.flatpak/webkit-2526289-17/bwrapinfo.json",
+      "mode": "100644",
+      "gitBlob": "aac27c444f699aca32457373f3f68032ae1c048e",
+      "bytes": 161,
+      "sha256": "95613dd270b1242b27673e8dbc4547cddecf9a7f074f4785196483a471c9cf07"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/runtime-archive/.flatpak/webkit-2526289-4/bwrapinfo.json",
+      "mode": "100644",
+      "gitBlob": "1a8bd1a20474c124cf22d306480e6a1abf087b8c",
+      "bytes": 194,
+      "sha256": "9d542ca54b42dbf759dc445eb7a29abaff4027c040bbeac85e7e55851c335b01"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/runtime-archive/.flatpak/webkit-2526520-17/bwrapinfo.json",
+      "mode": "100644",
+      "gitBlob": "c10c4253fc1aee3b6e7b07265aa8394c25a231ce",
+      "bytes": 161,
+      "sha256": "13950b4c5269458a60b9ed73a44e77abae570ee3de0f77794d2904e553efb479"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/runtime-archive/.flatpak/webkit-2526520-4/bwrapinfo.json",
+      "mode": "100644",
+      "gitBlob": "d3fa43b7a01d7ae432c34f6fb6e598487a0c598c",
+      "bytes": 194,
+      "sha256": "905848818fe78dd46ecdc0c9ea269451fcdf76e1b5bc20c1f8bbe26ca5598b64"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/runtime-archive/.flatpak/webkit-2527074-17/bwrapinfo.json",
+      "mode": "100644",
+      "gitBlob": "653d941664facea11d52028a54c838f847a323e3",
+      "bytes": 161,
+      "sha256": "ef058371f79850a8a08b60132eb4c15191dfc91a1fd94f98071c8f3b66ca7d14"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/runtime-archive/.flatpak/webkit-2527074-4/bwrapinfo.json",
+      "mode": "100644",
+      "gitBlob": "fd0011ac0c6cd3fb37cfbc1efb358f00bf575ff6",
+      "bytes": 194,
+      "sha256": "dd9f99c5d96718f02bbc1cf7fc88549f0191ccdfd9304f187a1fb7dd015a5ea6"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/runtime-archive/.flatpak/webkit-2527228-17/bwrapinfo.json",
+      "mode": "100644",
+      "gitBlob": "e44520ed414b8dcd32be512b0e06b838a02534ea",
+      "bytes": 161,
+      "sha256": "c426ac1a312c3faeff06325d3cd206ecb02a089c9bf57acd771e47343386a6cb"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/runtime-archive/.flatpak/webkit-2527228-4/bwrapinfo.json",
+      "mode": "100644",
+      "gitBlob": "d1a3e22e29a9eb80ee7f29680c6c8117756cc334",
+      "bytes": 194,
+      "sha256": "21744533a1522a97961327bb8d0cca636c044f3364ad45d4ce6e041c28537b97"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/runtime-archive/.flatpak/webkit-2527694-17/bwrapinfo.json",
+      "mode": "100644",
+      "gitBlob": "20d5b92136cfb83f4f58edda818bbe05377cd90c",
+      "bytes": 161,
+      "sha256": "be6ddef579843939b4320910b437aa5ca96fe9e00d896dea276c5e88e7e60012"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/runtime-archive/.flatpak/webkit-2527694-4/bwrapinfo.json",
+      "mode": "100644",
+      "gitBlob": "d84580751e29c3d896a87c6594d6a2f100e460e8",
+      "bytes": 194,
+      "sha256": "9207aed5dd0543304db45908226b04934d7c30cb5eb019307bc70d57e14bbde3"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/runtime-archive/.flatpak/webkit-2528262-17/bwrapinfo.json",
+      "mode": "100644",
+      "gitBlob": "5a80176b52547b0335ea8a998ee030fd9d32b80c",
+      "bytes": 161,
+      "sha256": "24ab6c56fe19ab0e431bed79e6315c89af5fe6f73ce69eebcba2fb244a07c088"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/runtime-archive/.flatpak/webkit-2528262-4/bwrapinfo.json",
+      "mode": "100644",
+      "gitBlob": "6ca1a193aadba84d8709d008e872cd314365a09b",
+      "bytes": 194,
+      "sha256": "bec7317b4389bb8aa7b820061f5df64c3272a9082167e2264fffa7721cbbe0f2"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/runtime-archive/.flatpak/webkit-2528877-17/bwrapinfo.json",
+      "mode": "100644",
+      "gitBlob": "c7f9de54852165af7a3869b623dfdd52096debad",
+      "bytes": 161,
+      "sha256": "a38665f38618b76e74bb200970aed73139f872bb97a473d1eaad338cf28bb57a"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/runtime-archive/.flatpak/webkit-2528877-4/bwrapinfo.json",
+      "mode": "100644",
+      "gitBlob": "18789e5178e0d82b5870338d1419c068cf9fcc8e",
+      "bytes": 194,
+      "sha256": "3b48cee88c83693b6341f467f4e489efab4fdf4f1ded54d9183a111b8fb869ec"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/runtime-archive/.flatpak/webkit-2529250-17/bwrapinfo.json",
+      "mode": "100644",
+      "gitBlob": "a684149d7e0fd47c08a899b3bf412007dc45a9ba",
+      "bytes": 161,
+      "sha256": "7e7c0424b263e29d2b548f636c32712d519111792aa02506b6763a4ef70049b3"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/runtime-archive/.flatpak/webkit-2529250-4/bwrapinfo.json",
+      "mode": "100644",
+      "gitBlob": "00cc0471dc3c471e553d0862fe0c107f2b497ae1",
+      "bytes": 194,
+      "sha256": "567dac676c7d3bdf0e891d86618cd2ab4db89b84974364a98f370fb28aa93f1a"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791254166_610282214/9680349172652809573/ledger-v5.json",
+      "mode": "100644",
+      "gitBlob": "d8bba6b76dc2a7a2fde307bded4514c45cad4cae",
+      "bytes": 212,
+      "sha256": "93ad8be946861ac2f0937070d2c6f029252584e049b3e2af8c29269e815c76d3"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791254166_610282214/9680349172652809573/ledger-v6.json",
+      "mode": "100644",
+      "gitBlob": "0c098df6247e66897df3125676f0a4c250a3af66",
+      "bytes": 327,
+      "sha256": "f90bc0bae54f65aebc3c9861cc2567b3a4281ed37fa191008d963e07cfa0b02d"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791254166_610282214/9680349172652809573/migration-plan.json",
+      "mode": "100644",
+      "gitBlob": "b7c647f2d0966a4ecb45b3ef3d1dccba15bc1b2b",
+      "bytes": 246,
+      "sha256": "369b50b816fcb62dcba60a631cda08033057411348fb962b2c2f63e456f9f9a9"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791254166_610282214/9680349172652809573/migration.json",
+      "mode": "100644",
+      "gitBlob": "3dd59cce3ddfd7cabed32be22144310c18a522b7",
+      "bytes": 227,
+      "sha256": "3888ddf7895b956b6a1e484e02dc7b79c98448947c82681adad15bb7f3cedc96"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791254166_610282214/9680349172652809573/release-deliveries-v1.json",
+      "mode": "100644",
+      "gitBlob": "b66b547d6c34d9f623d31c14111ac95aea355e25",
+      "bytes": 63,
+      "sha256": "8c708d281d2f2f307f088e6818d864ded957072792d6b35976004ec579cdc71c"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791254166_610282214/hyprland.log",
+      "mode": "100644",
+      "gitBlob": "8d89285285da89537019856da78d821860d888f5",
+      "bytes": 25622,
+      "sha256": "c7cd42890bbb88ffeccce67eb38852a0afea57fd16a8fc27f1f33a58f757974e"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/runtime-archive/hyprland.lua",
+      "mode": "100644",
+      "gitBlob": "918cb3fefd0775e6a260f19af74c07c04e1790ac",
+      "bytes": 241,
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/same-app-companion.log",
+      "mode": "100644",
+      "gitBlob": "16e80a0f458bff5903ab75895c2aabc01e6133dc",
+      "bytes": 6747,
+      "sha256": "71346ade30084cdfe2f3821f8b67ffcf00515b330460409b408d2792e125f1e3"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/sharedHistoricalOpen-pointer.log",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/sharedHistoricalReopen-pointer.log",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/stopped-pointer.log",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/stopped-reopen-pointer.log",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/stopped-webkit-client.png",
+      "mode": "100644",
+      "gitBlob": "0f3790d047bdf4e1efca6346353317cfd92edf17",
+      "bytes": 23546,
+      "sha256": "95d92bc34e6cf9940d14443b9fa8629da4ed249b0fab2440137588c3f9e3f340"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/sync-applied-blue.png",
+      "mode": "100644",
+      "gitBlob": "204ea9ac12a99cc5790ba64e0535ea3595230df1",
+      "bytes": 307528,
+      "sha256": "5c46319440e17037a318d846e42e201c2771059bbe3638b0fa8cecbcccc55eb7"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/sync-pending-blue.png",
+      "mode": "100644",
+      "gitBlob": "81f7373dee01b2783e94d97b20c7893bf02e2c81",
+      "bytes": 307528,
+      "sha256": "d8d22dd2d335148f8478992fcc202cd0edeb9d9d6237762857fe24ae8b61e0dd"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/weston-renderer.log",
+      "mode": "100644",
+      "gitBlob": "015a062b3b85357138cc89b02a1b0708f01c676a",
+      "bytes": 3780,
+      "sha256": "e3ad66eceb7ff55a94bcde31a97d189bbaedd1bea80d65a2fcfd04c052b1d352"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/weston.log",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/private-evidence/witness-lock.log",
+      "mode": "100644",
+      "gitBlob": "430b03854f97f55e542addc50d4f00411883eaaa",
+      "bytes": 705,
+      "sha256": "b766123f466ec54e45e6bf63c5021d8020a8ad41a5abef3d6b6890faa3cfd267"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/report.json",
+      "mode": "100644",
+      "gitBlob": "5a7b3b43a9dabd73cc9820adcd87688bf2dee5f1",
+      "bytes": 1004158,
+      "sha256": "deeb62222f674e1d5ab1284b8c7d1ccfb19293068efc73b27c89f2f99ecdf218"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/native.py",
+      "mode": "100644",
+      "gitBlob": "8f6c3c9871799f529f23abf241652dafadfdb04f",
+      "bytes": 96005,
+      "sha256": "4eca9adc34c9bac545e3bd728e57f6e74eb064a934351649774a4f8c9ad35e32"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/preflight.json",
+      "mode": "100644",
+      "gitBlob": "29f5a76bc590f45898b60e636ddf04d3afeb867b",
+      "bytes": 1124585,
+      "sha256": "5f57dc858edbe79ccfcd1a86945fa08514ddef0a4874266f8009d6c147fd3a0d"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/prepare-1791254138531338332/report.json",
+      "mode": "100644",
+      "gitBlob": "7bcb4cf388aa8cacf64863b01519353d23c8ed2d",
+      "bytes": 1117566,
+      "sha256": "53a942647aafd40e84300ba3aacd067e188842d1f016f63f5e6c6f30cde3442b"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/prepare.py",
+      "mode": "100644",
+      "gitBlob": "1cfd878d86bb72a92691144ad12b8044e5319c58",
+      "bytes": 6189,
+      "sha256": "9a1f02aa4117d8fa1fd4e5855358ca77e693e89e9262b2b3468e899312794ba5"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/session_bus.py",
+      "mode": "100644",
+      "gitBlob": "ed65ba10bf0c0a9d906a6d92d08adae86ec1fe99",
+      "bytes": 1902,
+      "sha256": "d8f945a68a8e772ffd26458e8e60beac8c8ad79849f08a2daf4110f5c8178916"
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/qa/system_isolation.py",
+      "mode": "100644",
+      "gitBlob": "51d0ce9014943877a090dc364d949475d411c363",
+      "bytes": 1109,
+      "sha256": "029a41bc8aae39936c69dc591857795aabd43df17b1f9a86b02b6c6a83dddc0e"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/ANCESTRY.json",
+      "mode": "100644",
+      "gitBlob": "8de3aba1d091a61fbc6b4ae622df64d886b55629",
+      "bytes": 242,
+      "sha256": "91a4396d426e4ea4f5a4db9f969f50cc0a6437e0bb8e6ed89e0ca6bd10f4e733"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/SPEC.md",
+      "mode": "100644",
+      "gitBlob": "4353e55282bb5af043c1666dfa220848d633320d",
+      "bytes": 1242,
+      "sha256": "5fb682da3b87825b3319fde0a5ff8189c019fde1a5ef67f587e5b362312e5e57"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/component-manifest.json",
+      "mode": "100644",
+      "gitBlob": "c69bcbbc7d4bfd5808123f469d360c27af07422f",
+      "bytes": 7282,
+      "sha256": "abd6784b0dd7080b2ccce8607de0f16b78373afdfa2127b804bfe0a46514e662"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/native/child-client.c",
+      "mode": "100644",
+      "gitBlob": "03c593e69c97772cbe1e340a527ad4b60f635843",
+      "bytes": 21000,
+      "sha256": "021c6cb843941acab1c79ee1bf5838ae81f4d7efc4d0552d50b1ef547f87f3ce"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/qa/build.py",
+      "mode": "100644",
+      "gitBlob": "2fb9a3c0fde0c78bec4713dfccb127c1baa27a5c",
+      "bytes": 5154,
+      "sha256": "21725ce31f86a5d7112e79a0454058356e0364d364de62f6e1b7896662906bf1"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/qa/client-build-1791254017761898959/child-client",
+      "mode": "100755",
+      "gitBlob": "dbb3021a598d2cc2d6a31214a9937da39c6cc34d",
+      "bytes": 45744,
+      "sha256": "7e0a8bf990210adcb8657ffebcdf2dfa76d00957ad31c1295547d5a4541c43ce"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/qa/client-build-1791254017761898959/client-build.stderr",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/qa/client-build-1791254017761898959/client-build.stdout",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/qa/client-build-1791254017761898959/client-dependencies.d",
+      "mode": "100644",
+      "gitBlob": "e40ab686e299c0b1398dc7dfa156771695641f86",
+      "bytes": 4954,
+      "sha256": "c76e489a3ef95d4ea5ff024e42452e1019591814ee02545a628131bd5b0dbd13"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/qa/client-build-1791254017761898959/client-dependencies.stderr",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/qa/client-build-1791254017761898959/client-dependencies.stdout",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/qa/client-build-1791254017761898959/client-flags.stderr",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/qa/client-build-1791254017761898959/client-flags.stdout",
+      "mode": "100644",
+      "gitBlob": "2aed5b3171135e24567d3de7d18da2cb7489f62f",
+      "bytes": 21,
+      "sha256": "daeb877303c6117ce9622ed510740569c724d685d27e3401d358afb0ab932236"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/qa/client-build-1791254017761898959/client-header.stderr",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/qa/client-build-1791254017761898959/client-header.stdout",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/qa/client-build-1791254017761898959/client.d",
+      "mode": "100644",
+      "gitBlob": "904919fef2f07963bc937c72c9cbcb388c5c2840",
+      "bytes": 1590,
+      "sha256": "f0d3069e15eb1a253db094911ac09ad24001e24b11f6ccb4f521d3831f8c00d4"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/qa/client-build-1791254017761898959/compiler-version.stderr",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/qa/client-build-1791254017761898959/compiler-version.stdout",
+      "mode": "100644",
+      "gitBlob": "27ce08411c7204fec68efda2358d675062b42ae3",
+      "bytes": 228,
+      "sha256": "bdf8abcd8e56cec825a021925617afad1e7e258c738cc61d6325c7250da733cd"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/qa/client-build-1791254017761898959/generated/xdg-shell-client.h",
+      "mode": "100644",
+      "gitBlob": "64470e4e91635ea928b772cde15ebc40bc002b1f",
+      "bytes": 86409,
+      "sha256": "a09726137ea9fe1a23d58c95f1d33ab77a3fc692c63726bc82fbc91ab8e5c6fc"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/qa/client-build-1791254017761898959/generated/xdg-shell-protocol.c",
+      "mode": "100644",
+      "gitBlob": "33881aab5e02d6bf4b09e11d7fe76e94e5df317e",
+      "bytes": 5999,
+      "sha256": "9e12fcd5676d8c6b6cfd233c2eba563163c0ea7e586cb6e27f202a328323c7f0"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/qa/client-build-1791254017761898959/inputs/build.py",
+      "mode": "100644",
+      "gitBlob": "2fb9a3c0fde0c78bec4713dfccb127c1baa27a5c",
+      "bytes": 5154,
+      "sha256": "21725ce31f86a5d7112e79a0454058356e0364d364de62f6e1b7896662906bf1"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/qa/client-build-1791254017761898959/inputs/child-client.c",
+      "mode": "100644",
+      "gitBlob": "03c593e69c97772cbe1e340a527ad4b60f635843",
+      "bytes": 21000,
+      "sha256": "021c6cb843941acab1c79ee1bf5838ae81f4d7efc4d0552d50b1ef547f87f3ce"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/qa/client-build-1791254017761898959/inputs/xdg-shell.xml",
+      "mode": "100644",
+      "gitBlob": "f8b78eea7bf3bd686753befd30e83f757326aed0",
+      "bytes": 63846,
+      "sha256": "7ba7f9c8473deee674cb1f154a18abd0bb0cc072604fc055b0c15e459fc4c7df"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/qa/client-build-1791254017761898959/linked-libraries.stderr",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/qa/client-build-1791254017761898959/linked-libraries.stdout",
+      "mode": "100644",
+      "gitBlob": "52ca0a6d37bff2f784d785949ecb10b02404b7fc",
+      "bytes": 369,
+      "sha256": "7c7395b89d434720ec1cf24fba9462e2d13d4481d250c3120406726b487b0e50"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/qa/client-build-1791254017761898959/protocol-code.stderr",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/qa/client-build-1791254017761898959/protocol-code.stdout",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/qa/client-build-1791254017761898959/protocol-dependencies.d",
+      "mode": "100644",
+      "gitBlob": "567a35912cf5a800b8741357edb9e98b735a97ba",
+      "bytes": 1441,
+      "sha256": "1d96f6dcb1f98a981040918d43a86ac977bcd13e9a85ba542f4df195e6e81e8c"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/qa/client-build-1791254017761898959/protocol-dependencies.stderr",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/qa/client-build-1791254017761898959/protocol-dependencies.stdout",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/qa/client-build-1791254017761898959/report.json",
+      "mode": "100644",
+      "gitBlob": "3710579e4166cb98355cd2d7c86db2f110d2b925",
+      "bytes": 24589,
+      "sha256": "ec6ecbac39350c38e4de65ee94aaf1e5af1ee144983ab44f7ba68d6dcd3e875c"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/qa/client-build-1791254017761898959/scanner-version.stderr",
+      "mode": "100644",
+      "gitBlob": "7dc6febcd53a2dcc90b63eed74299e7774404e28",
+      "bytes": 23,
+      "sha256": "7781d4bdaabd8c59b362476a40f44a32c136372c265defc11595f5f347797e1d"
+    },
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/qa/client-build-1791254017761898959/scanner-version.stdout",
+      "mode": "100644",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "providerComponentImplemented": true,
+  "pushCompleted": true,
+  "gitPushExitCode": 0,
+  "remoteObserved": "2b929ca037ed03a5adc9fc2ef801950296144e0d"
+}
