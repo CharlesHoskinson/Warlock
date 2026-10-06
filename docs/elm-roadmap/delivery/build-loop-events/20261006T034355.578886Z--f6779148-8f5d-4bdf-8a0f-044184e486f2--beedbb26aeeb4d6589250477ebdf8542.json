@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "beedbb26aeeb4d6589250477ebdf8542",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-06T03:43:55.578886+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/warlock-core-family-render-v1",
+  "nextWork": [
+    "Native34 held/published743cc6a passes1351 retaining1214 and125 normal exits. New owned core family render boundary derives actual native membership, uses owning tiled/floating/fullscreen/pinned passes and restores renderer/GL state with GPU drain. Review and compile actual changed Renderer TU against retained433-member archive; then fresh plugin family capture/FD and native qualification under exact new tuple. All original preview13 and release gates remain open."
+  ],
+  "evidence": [
+    {
+      "path": "docs/warlock-preview/v30/report.json",
+      "sha256": "ad624981d62c68dcae3daa1eef85cc43306f62cf67f98ec69cf73d7f4bdf1b48",
+      "size": 2072
+    },
+    {
+      "path": "implementation/warlock-core-family-render-v1/SPEC.md",
+      "sha256": "ad029a93418c0fac6f5c1115a2b8e72ac337a01c57797dccd6dc043c47e5eb62",
+      "size": 1040
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

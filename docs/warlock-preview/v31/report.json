@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "passed": true,
+  "components": [
+    {
+      "path": "implementation/warlock-core-family-render-v4/component-manifest.json",
+      "sha256": "b1d5feead5548838a4a73012a3a9faa90292ab4e0428868f31f560b1a5ce9027",
+      "files": 732
+    },
+    {
+      "path": "implementation/warlock-core-family-render-v1/component-manifest.json",
+      "sha256": "a362259672d14d8d4f263199527fd8fe4f62db2adc648728e7571727dfee4643",
+      "files": 8
+    },
+    {
+      "path": "implementation/warlock-core-family-render-v2/component-manifest.json",
+      "sha256": "77882c21e87a11300a015cb78cc1cfd79c7b6d6f6f333e85a9cb7722cd54fc2a",
+      "files": 705
+    },
+    {
+      "path": "implementation/warlock-core-family-render-v3/component-manifest.json",
+      "sha256": "01f793c48be3c72d9856ef28afb2aad2564c72e6fd4de70ee9602d7eb9c7de7c",
+      "files": 732
+    },
+    {
+      "path": "implementation/warlock-family-capture-v1/component-manifest.json",
+      "sha256": "79b06e052feaf7c080e898ddadbc70da7f8e2052dffb5693ab8b57853eb64d09",
+      "files": 1130
+    },
+    {
+      "path": "implementation/warlock-family-capture-v2/component-manifest.json",
+      "sha256": "e61a27667702752a92f06d966a92089639a053aea8d9ec0f15f587c655907f7c",
+      "files": 1131
+    },
+    {
+      "path": "implementation/warlock-family-fd-qualification-v1/component-manifest.json",
+      "sha256": "4df16ad7ce386cc2c40a3f138ee994898ec4009d5967c1efff7de37ea35892bd",
+      "files": 29
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v35/component-manifest.json",
+      "sha256": "d4bfcf6dd41d3a8812a4b965a3d3e2e26c38772b0e0caf82f538a8cc755861a3",
+      "files": 272
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v36/component-manifest.json",
+      "sha256": "95bcb4449ef1ecd862d4e5f99fa82d7d469d522063ae0bc302da5242f6ba2663",
+      "files": 287
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v37/component-manifest.json",
+      "sha256": "45a2e60f673282543d2c4c5a65209b986e7eea8c539287bf0614aa5d21af1bf2",
+      "files": 310
+    }
+  ],
+  "evidence": {
+    "implementation/warlock-client-provider-native-v34/qa/native-1791257839724867928/report.json": "d34bc19fb757ddd8db71309cc9d7ac8bcbef488752d6d4ac9f1c705a0db671ca",
+    "implementation/warlock-client-provider-native-v35/qa/native-1791258719937490629/report.json": "f5db144c1d4807b9d710ac1a0642f6bb4344aaf98b9970a6aa68d41ed5c7a27c",
+    "implementation/warlock-client-provider-native-v36/qa/native-1791258972830203329/report.json": "ddd42987d199a4be233532c25726eb34f3451c124855045647b29e3e9da37466",
+    "implementation/warlock-client-provider-native-v37/qa/native-1791259128393147111/report.json": "c999b3093826c2057442ecf0b2433125aa7ef226719df80f4fd6f5ad032499a8",
+    "implementation/warlock-family-capture-v1/qa/build-1791258482410939074/report.json": "570a495c8edfd3741795c32a7ccf2aa812adae4b6a747e72803ab7fe396cd283",
+    "implementation/warlock-family-capture-v2/qa/build-1791258891855118479/report.json": "530e338885b2747228894eb3abd1fa7b24e53c0ad64e2c1c50c6154c9ffbe341",
+    "implementation/warlock-family-fd-qualification-v1/qa/test-1791258529371382790/report.json": "8b626e04d342883463b0d7b6f9a1fbf3da6221b3b899ae4d796c40d5799e1e55"
+  },
+  "nativeControls": 1524,
+  "normalOwnedExits": 146,
+  "actualCombinedNativeFamilyFramebufferQualified": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "next": "Complete native source/style/animation/crop/fidelity, typed shared Elm family adoption and original production preview13, coherent release gates."
+}

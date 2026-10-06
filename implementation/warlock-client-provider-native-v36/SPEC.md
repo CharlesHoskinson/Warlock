@@ -1,0 +1,3 @@
+# Actual combined native family framebuffer
+
+Retain all1351 native34 assertions in order on the exact new owning core/plugin. Qualify one-image root, popup and related dialog pixels, native geometry and interior color, distinct family FD plane35, context/deadline binding, stale paint/link/hint/incarnation refusal and physical mapping/FD/export/producer release. Rounded dialog boundaries use actual native rendering; independent interior pixels must all match. Foreign overlapping peers contribute zero green. No original oracle/deadline changes. Complete style/crop/fidelity/hardware, minimized/source-stop, typed full GUI and all original production preview13/release gates remain open.

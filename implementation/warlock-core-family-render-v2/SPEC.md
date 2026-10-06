@@ -1,0 +1,5 @@
+# Owning-core combined family render boundary
+
+The renderer accepts only an actual native root and derives related mapped members from native parent chains. It preserves existing workspace paint passes and pinned priority while restricting window contributors to that native family. It does not render desktop background, layer surfaces or retired views into the family plane. Snapshot/feedback/render-data/GL state is restored and sampled async buffers are physically held until synchronous GPU completion. The existing one-window snapshot API and object layouts remain unchanged.
+
+Actual compilation/retained archive relink is required before native loading. This boundary alone does not qualify complete family source revision coverage, clipping/crop, decoration/style/animation fidelity, arbitrary outputs/HDR/hardware, exported FD ownership, minimized/source-stop, full shared Elm adoption, production preview13 or the GUI release. Original deadlines and owning ABI remain mandatory. No main-session change is authorized incidentally.

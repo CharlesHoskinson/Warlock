@@ -1,0 +1,3 @@
+# Distinct family FD ownership boundary
+
+Compile the actual family capture header and PNG encoder. A real sealed memfd and read-only mapping carry NativeFamilyPlane32; explicit family decoding admits only its presence/live flags. Existing monitor, client and popup decoders reject it and close every rejected descriptor. Missing/mixed plane masks and insufficient prior reservation refuse. Actual mapping and FD disappear before the independent reservation is reset. Synthetic CPU PNG is not native family pixel qualification. Original provider/stream/broker fences and native production preview13 remain separate requirements.
