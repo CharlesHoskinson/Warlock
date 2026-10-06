@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "passed": true,
+  "components": [
+    {
+      "path": "implementation/warlock-family-popup-fixture-v1/component-manifest.json",
+      "sha256": "abd6784b0dd7080b2ccce8607de0f16b78373afdfa2127b804bfe0a46514e662",
+      "files": 32
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v28/component-manifest.json",
+      "sha256": "36fa25900d14add051ab4a8852268c50a88b8937305179801de2c848d16bac06",
+      "files": 247
+    }
+  ],
+  "evidence": {
+    "implementation/warlock-client-provider-native-v28/qa/native-1791254165527530711/report.json": "deeb62222f674e1d5ab1284b8c7d1ccfb19293068efc73b27c89f2f99ecdf218",
+    "implementation/warlock-client-provider-native-v27/qa/native-1791253777156909074/report.json": "9190ab2d77308ab69dee19dba7586ae924b652f59e1de64cce44ea6ca2217f71",
+    "implementation/warlock-family-popup-fixture-v1/qa/client-build-1791254017761898959/report.json": "ec6ecbac39350c38e4de65ee94aaf1e5af1ee144983ab44f7ba68d6dcd3e875c"
+  },
+  "nativeControls": 990,
+  "normalOwnedExits": 115,
+  "actualNativePopupLifecycleQualified": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "next": "Actual owning renderer popup-inclusive pixels and native complete family revision/geometry authority, then all original production preview13 and full GUI release gates"
+}
