@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "passed": true,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-66b1111d166144f2bb2a42b691ee20f9.scope",
+    "coreLimit": 1
+  },
+  "components": [
+    {
+      "path": "implementation/warlock-client-provider-native-v56/component-manifest.json",
+      "sha256": "64109e8ff004b8f8be46564c6f8ef9364a7a543bb5da987d67b467003f1758ca",
+      "files": 373
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v57/component-manifest.json",
+      "sha256": "2eac7e85f29af051990078073893ddb8b3bc3271fcc89d51e386adac08c5cc5d",
+      "files": 373
+    }
+  ],
+  "evidence": {
+    "docs/warlock-preview/v39/report.json": "c6a4d201d983ce6a404996c7a475738e95e358297c6994cc4f99c5f9a36cfd25",
+    "implementation/warlock-client-provider-native-v50/qa/native-1791265841870106110/report.json": "41b65aa20c9a774e8568815c2ccd02fed4064550d8a6f57c22fcf410bc62cf25",
+    "implementation/warlock-client-provider-native-v56/qa/native-1791267724171862557/report.json": "79aff0372e2bad92c9fe1763355482cd0a1b22fbf39451df33bce89e04169e36",
+    "implementation/warlock-client-provider-native-v57/qa/native-1791267929432150447/report.json": "b3dfa9c34b2039b75e7791d0e593dd5c3936f2db73306e6ca042ea09faf1f109"
+  },
+  "nativeControls": 1880,
+  "retainedOriginalControls": 1783,
+  "normalOwnedExits": 176,
+  "actualLiveSourceHistoricalFamilyQualified": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "next": "Qualify remaining real renderer style/config/fidelity including glow/blur, shader and transforms; continue original preview13/hardware/output/restore38/recovery34/drag52 and coherent full release gates."
+}

@@ -1,0 +1,7 @@
+# Historical family pixels while the source remains live
+
+Actual shared GUI34 receives its own trusted native style-cropped family source and sealed FD3 frame on the exact unchanged corecrop2/stylecrop5 tuple. After only native shadow falloff changes, the native source remains present and live with a later content epoch. A new GTK picker lease must show Historical preview for the retained original image URI and dimensions. The same immutable Elm policy distinguishes source liveness from captured revision; no second policy is added.
+
+Require one original capture/job/expiry, no resume/renewal, exact original image expiry and actual mapping/export/producer retirement before the retained Elm acknowledgment3, then normal host/process exits. Retain all original1783 ordered assertions and configuration source/capture qualification from packet39. Private previewEligible and hardwarePresentation remain false. This does not qualify complete family rendering, shader/transform/background-dependent blur/output/hardware, original preview13 or coherent full GUI release.
+
+Failed native56 passed the new GUI behavior and all176 normal exits but failed an inherited timing-dependent polling-count assertion. Fresh57 makes the two original actual native dim .3 observations explicit, with separate names for any intermediate polls and the unchanged exact .3/pixel/source/deadline oracles. Preserve failed56 and all previous held evidence; do not relabel it as a passing campaign.
