@@ -1,0 +1,7 @@
+# Distinct style-aware native cropped family capture
+
+Fresh derivative of accepted style-source3/crop-capture3 integrates actual native style observation into a separate crop source. New style-crop scope/requests carry the native StyleRevision content epoch, origin/dimensions/scale, crop-specific maximum FD transfer size, and unchanged owning grant/clock/privacy/source/output identity. Native source and style are re-observed around capture and before publishing; stale style context cannot produce an accepted image. Original two-second job deadline and physical producer/export/reader retirement remain unchanged.
+
+Distinct FD version3/StyleCroppedFamilyPlane128 carries the existing28 word crop layout with new source meaning. Legacy plane/version/state/retire paths must neither import nor alias this image. Typed new mapping owns descriptors before every validation refusal. Native capture uses unchanged owning core-crop1 contributor/framebuffer boundary and original producer accounting. No caller supplies crop/member/style authority. Original client/monitor/popup/family/crop2/source channels stay unchanged.
+
+Compilation/decoder controls/selected model coupling and actual native stale-style/current pixels/held-export qualification are required. This does not attest complete decoration/blur/shader/transform/color-management/motion/HDR/source-stop/minimized/hardware source coverage or grant production preview eligibility. Shared typed Elm integration, original preview13 and full coherent release remain open. Main desktop is untouched.

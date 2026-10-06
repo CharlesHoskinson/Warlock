@@ -1,0 +1,5 @@
+# Native style-aware cropped family qualification
+
+Retain all 1,636 ordered native41 assertions, the same private background and original fixture/capture deadlines. Load only the compiled style-crop1 plugin on the exact core-crop1/AQ155 ABI tuple. The new native scope observes actual immutable style channels and family content; caller-supplied membership, pixels, origin and clocks cannot attest capture authority.
+
+Observe a real inactive root and popup at applied dim 0.3, then change native dim to 0.6 without a client commit or family-content change. Reject the original scope before allocation, derive a fresh scope with its own original two-second native deadline and compare actual cropped pixels with independently sampled native output. Retain version3/plane128, signed origin/native scale, sealed FD/mmap, charged export, old-plane state/retire/version refusal, physical close before release and ordered normal teardown. Original native41 controls remain unchanged. Full family fidelity, production preview13, minimized/source-stop, hardware/presentation, async capture, typed Elm integration and whole release remain open.
