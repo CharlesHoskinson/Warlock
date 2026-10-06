@@ -1,0 +1,5 @@
+# Compiled shared provider family metadata boundary
+
+Full GUI/provider31 adds a distinct immutable C++ and Elm style-crop scope decoder and an own-child Native transport accessor with original binding/PID/start/socket/core/request/deadline checks. Actual optimized Elm and C++ decode three exact native43 scopes and reject43 malformed scope variants;107 coupled assertions pass. Full GUI/Main/Bar/Popup and actual host compile, with all original30 build/control command identities retained. Existing broker/demand/client/imported lifecycle policies stay byte-identical. Original selected model evidence remains separate from new structural decoder checks.
+
+This is metadata-boundary qualification. It does not route new family FD3 images through shared WebKit/URI/Elm lifecycle, does not confer complete-family fidelity or production preview eligibility and does not close native preview13 or any release gate. Source/style/fidelity coverage, physical capture/export/reader retirement, original restore/recovery/drag, hardware/output/AT/IME/resources/journeys/reversible deployment remain open.
