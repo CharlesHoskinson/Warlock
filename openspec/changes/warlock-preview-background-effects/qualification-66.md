@@ -1,0 +1,7 @@
+# Actual native root protocol qualification
+
+Native65 is a preserved counterexample on previous collector6: actual get_background_effect is processed without a root buffer commit, but before/created/pending content remains29. Applying commits produce30/31/32/33 as expected. All1783 ordered original assertions pass; the final source-input epoch oracle fails after2086 reached checks,202 normal owned exits and clean teardown.
+
+Fresh native66 on exact corecrop2/collector8 and the same compiled fixture3 passes2088 checks/all1783 ordered originals/202 normal exits. Creation advances content28 to29 without changing member buffers/geometry, current style channels/gradients or crop. The old context is refused before producer allocation. Pending region29/applied30, changed pending30/applied31, pending clear31/applied32 and pending destruction32/applied33 retain the correct owning protocol timing. Capture clocks/deadlines, source identities, one Elm policy and physical retirement obligations remain unchanged.
+
+Model8 executes26 explicitly selected Quint cases/99 replayed actual implementation states and360 compiled controls; native collection of exact root rectangles is supported by its compiled owning code and value-copy/boundary checks. The current public scope does not expose all rectangles as a separate native diagnostic. Complete nested/popup region coverage, actual background pixels/blur, full renderer/output/hardware/production preview eligibility and the coherent original GUI release remain open.

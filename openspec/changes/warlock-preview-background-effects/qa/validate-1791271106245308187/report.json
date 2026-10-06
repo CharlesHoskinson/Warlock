@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-69f1314ccb904193b2a5b1eac193e1ff.scope",
+    "coreLimit": 1
+  },
+  "argv": [
+    "node",
+    "/home/hoskinson/.npm/_npx/b05ce0373733faa6/node_modules/@fission-ai/openspec/bin/openspec.js",
+    "validate",
+    "warlock-preview-background-effects",
+    "--strict",
+    "--json",
+    "--no-interactive"
+  ],
+  "exitCode": 0,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-background-effects/proposal.md": "4e68a4fcb61d79c2f4991be241290562fee65314f1d91358444cfdc8914f7220",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-background-effects/design.md": "d17529d83047db2680f5dda04f10f3be127fa8ee63c648a8e0456b57b2694bcb",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-background-effects/tasks.md": "32d73ac97a522cb2f10696db88ff088288b3289a7d7a25f1080ff9188b9f9912",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-background-effects/specs/elm-capture-motion/spec.md": "0864ed64d0abade85365d05b751ab00ea0d2f5bc1e17dbdbfe2f430d66bbece7",
+    "/home/hoskinson/.npm/_npx/b05ce0373733faa6/node_modules/@fission-ai/openspec/bin/openspec.js": "ca136f0e9fd4951dcf93d8ed729ebc97b2d97d3980cd9dc9d42fc80e32e797c6",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-background-effects/qa/validate.py": "1c4b1f60f45b5a890cae140a071260e580a65ac43bddb54a2fea00626aaac9fc"
+  },
+  "artifacts": {
+    "stdout.json": "e06cda11b6cdbc7fa2742bb9ffaae1b787281b79aaf9015d9ea3c6032f85194a",
+    "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

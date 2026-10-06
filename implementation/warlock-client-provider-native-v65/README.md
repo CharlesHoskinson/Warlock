@@ -1,0 +1,1 @@
+Actual style-aware family capture qualification on the owning compiled tuple. Prepare through protected CPU QA, then run qa/native.py through the serialized build-loop native launcher. No installed or main desktop changes.

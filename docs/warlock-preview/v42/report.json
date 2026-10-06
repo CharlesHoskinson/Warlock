@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "passed": true,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-2eeec79c41e9472ab0ed5cc5126e9016.scope",
+    "coreLimit": 1
+  },
+  "components": [
+    {
+      "path": "implementation/warlock-family-style-revisions-v8/component-manifest.json",
+      "sha256": "d29d9a585fb9fcd223029b766103243859f56f13b9625aef2667a17a24150194",
+      "files": 140
+    },
+    {
+      "path": "implementation/warlock-family-style-crop-capture-v7/component-manifest.json",
+      "sha256": "0ddae73ea5bb70a3e2b5760e3a8d68877717ac7add42eb1c2bd0835cfd868ed0",
+      "files": 40
+    },
+    {
+      "path": "implementation/warlock-family-style-crop-capture-v8/component-manifest.json",
+      "sha256": "bbb1fb4f9563b30d847fb2d2d04b94e10e68c9add97a8bafa34a5e9a51683a7c",
+      "files": 1149
+    },
+    {
+      "path": "implementation/warlock-family-modal-fixture-v3/component-manifest.json",
+      "sha256": "f7b8a0030f468808c6e42d60a169cfaed99db36f192c23e94fc24b98a779052a",
+      "files": 52
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v65/component-manifest.json",
+      "sha256": "39a23d3c5c47265f71ea97acc6a120e8dc9496587a0703edf502d53e32fc958c",
+      "files": 431
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v66/component-manifest.json",
+      "sha256": "0ff2ddbc102cd3a0ff24242801f5214f0ddf05fc038c2c6228ceb1a821480795",
+      "files": 432
+    },
+    {
+      "path": "openspec/changes/warlock-preview-background-effects/component-manifest.json",
+      "sha256": "d7ea89459c205533ca4c7d1d6772fe6ed436f5ea7eabba7a1facac711b351b73",
+      "files": 12
+    }
+  ],
+  "evidence": {
+    "docs/warlock-preview/v41/report.json": "7d0d09ff2fc45c756ab07f01684817b8ee923462422ddee1086050c74e443e7c",
+    "implementation/warlock-family-style-revisions-v8/qa/model-1791270652367222303/report.json": "64cf3e16d023f8e721ff547754ee62b2db1bb797cde7e713ad3eb96171b1acd5",
+    "implementation/warlock-family-style-revisions-v8/qa/test-1791270652369771422/report.json": "8790b8aae169dd898c9fce90c7c673f075f88280618754987cbbec7f9c738383",
+    "implementation/warlock-family-style-crop-capture-v8/qa/build-1791270755296437200/report.json": "13a7bdb8b6de0f150e6c13fb7c95d574fcb0e147fa9bfa90bc10b6d988cf6d69",
+    "implementation/warlock-family-modal-fixture-v3/qa/client-build-1791270930519214616/report.json": "156609602aa4020144f19a0c21df115353a8d2295dae2c14eb0f558a303395f0",
+    "implementation/warlock-family-style-crop-capture-v7/qa/build-1791270718086215355/report.json": "55a5423258795b364c332fb90514dc95d2c554644293204c0f781c88d93e793c",
+    "implementation/warlock-client-provider-native-v50/qa/native-1791265841870106110/report.json": "41b65aa20c9a774e8568815c2ccd02fed4064550d8a6f57c22fcf410bc62cf25",
+    "implementation/warlock-client-provider-native-v65/qa/native-1791271084435994222/report.json": "572c670ceadc3f1bddb223bf7b59dd422e0c57ec5fd11fb35b545a431fd57a99",
+    "implementation/warlock-client-provider-native-v66/qa/native-1791271302348322684/report.json": "1f85092d12dc12a3ae9a174d7f83819644175c97b6fb9f1e710eacea2c5c7041",
+    "openspec/changes/warlock-preview-background-effects/qa/validate-1791271106245308187/report.json": "f550bc44a10de6554f968e280b271dced34c3c8ee50d96b80817eb88c747bcf8",
+    "openspec/changes/warlock-preview-background-effects/qa/validate-1791271528167912004/report.json": "ec807d6e3a336b0f9b8c469ab8af50e0320570b08c9c43e19ee5541fb1dba8a9"
+  },
+  "nativeControls": 2088,
+  "retainedOriginalControls": 1783,
+  "normalOwnedExits": 202,
+  "actualNativeRootBackgroundFactsQualified": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "backgroundPixelFidelityQualified": false,
+  "nestedEffectFactsQualified": false,
+  "completeFamilyFidelityQualified": false,
+  "next": "Implement/qualify complete subsurface/popup background-effect facts and actual background-dependent blur/backdrop source/privacy ownership; complete shader/transform/output/hardware, original preview13/restore38/recovery34/drag52 and coherent full GUI release gates."
+}
