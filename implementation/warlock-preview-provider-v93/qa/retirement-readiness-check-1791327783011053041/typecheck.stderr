@@ -1,0 +1,8 @@
+
+ Error [QNT101]: Built-in name 'next' is redefined in module 'retirement_readiness'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v93/qa/retirement-readiness-check-1791327783011053041/inputs/spec/retirement_readiness.qnt:20:7
+  20:   val next=reduce(s,e);s'={...next,history:s.history.append(label(e))}
+            ^^^^
+
+error: parsing failed

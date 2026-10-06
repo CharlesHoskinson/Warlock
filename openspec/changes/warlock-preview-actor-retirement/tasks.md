@@ -5,7 +5,7 @@
 - [ ] Qualify real native turnover beyond256 distinct windows with a retained live neighbor and replay controls.
 - [ ] Freeze and publish exact source/evidence; preserve all original GUI acceptance gates.
 
-Native observation and bridge evidence: [current report](../../../docs/warlock-preview/v89/report.json).
+Native observation and bridge evidence: [current report](../../../docs/warlock-preview/v91/report.json).
 Core16/plugin18/current GUI89/native126 passed2465 checks and277 normal owned
 exits with complete cleanup and all2457 prior125 fixed controls. Full95 and all
 original12 regression suites passed. The strict decoder13/25/439states/three
@@ -50,11 +50,19 @@ passed. Native128 qualifies the current assets on unchanged core16/plugin18 with
 controls and allocator/expiry oracles. Failed127 preflight metadata references
 remain held; it launched no native campaign.
 
-Fresh GUI93 retains validated readiness in the same native transport row while
+Held GUI93 retains validated readiness in the same native transport row while
 physical/proof/receiver barriers block aggregate removal. Its poll path rechecks
-the original barriers without another Elm readiness emission. Compilation and
-the actual retained-readiness C/native/Elm fixture are being qualified; this
-mutable source does not inherit completed acceptance.
+the original barriers without another Elm readiness emission. Full95 compiled,
+with byte-identical Elm assets and45 processing-prefix controls. Its actual
+C/native/Elm fixture passed54 controls, including a real second native receiver
+barrier and completion without another readiness effect. The transport journal
+passed8 explicitly selected Quint scenarios,200 bounded invariant samples and20
+coupled compiled C++ traces/384 state comparisons. Three separately compiled
+native mutations are detected by exact observable mismatches. Earlier reserved
+Quint-name and invalid fixture-clock failures are retained. Commit remains trusted
+caller bookkeeping, with separate physical/proof/receiver checks. The full native
+qualified runtime remains GUI92/native128; GUI93's new poll API is not activated
+through the WebKit host. See its [component report](../../../docs/warlock-preview/v93/component-report.json).
 
 These are bounded qualifications. Native observation/readiness/final
 completion routing through the actual WebKit host, reliable outgoing transport,

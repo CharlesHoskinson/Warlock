@@ -1,0 +1,12 @@
+
+  retirement_readiness_tests
+    ok observationDoesNotInventReadiness passed 1 test(s)
+    ok exactReadinessRetained passed 1 test(s)
+    ok repeatedObservationRetainsReady passed 1 test(s)
+    ok abandonedPreparationHasNoOrdinal passed 1 test(s)
+    ok completedRecordLeavesReadyQueue passed 1 test(s)
+    ok gapAcknowledgmentKeepsRecord passed 1 test(s)
+    ok compactPrefixSurvivesConfirmation passed 1 test(s)
+    ok foreignEpochCannotReadReady passed 1 test(s)
+
+  8 passing (10ms)

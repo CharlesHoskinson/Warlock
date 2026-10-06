@@ -1,0 +1,10 @@
+import json,pathlib,resource,subprocess,sys
+sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
+require_qa_scope();assert resource.getrlimit(resource.RLIMIT_CORE)==(1,1)
+r=pathlib.Path('/home/hoskinson/omarchy-windows-parity');base=pathlib.Path(__file__).parent;d=json.loads((base/'delivery.json').read_text());assert d['pushCompleted'] and d['ownedFiles']>1000
+v=json.loads(subprocess.check_output(['gh','repo','view','CharlesHoskinson/Warlock','--json','name,url,visibility'],text=True));assert v['visibility']=='PUBLIC';(base/'visibility.json').write_text(json.dumps(v,indent=2)+'\n')
+observed=subprocess.check_output(['gh','api','repos/CharlesHoskinson/Warlock/branches/feature%2Felm','--jq','.commit.sha'],text=True).strip();assert observed==d['publishedCommit']
+(base/'branch.json').write_text(json.dumps({'commit':observed,'verified':True},indent=2)+'\n')
+report=json.loads((r/'docs/warlock-preview/v93/component-report.json').read_text())
+sys.path.insert(0,str(r/'implementation/elm-build-loop-v1'));import loop
+e=loop.write_checkpoint(r,'f6779148-8f5d-4bdf-8a0f-044184e486f2','implementation/warlock-preview-provider-v93',['PROGRESS PUBLIC65 '+d['publishedCommit']+' verified '+str(d['ownedFiles'])+' exact owned blobs. HeldGUI93 full95/identicalElm/45controls and native readiness8selected/20actualC++traces/384states/3compiled mutants plus54CnativeElm receiver/loss/ACK/neighbor/close/normalexit controls. Qualified runtime staysGUI92/native128/core16/plugin18 PASS2466/277normal/all2458prior126fixed. No actual GUI/QA process is continuing; verify again on resume. Next own fresh host/transport derivative: freeze bounded retry/ACK/cleanup-reservation and epoch/reload contract, implement actual dispatcher/channel/observations/readiness/final retry without effect replay. Actual captured retirement, >256realwindows and all original release gates remain.'],'progress',['docs/warlock-preview/v93/component-report.json','implementation/warlock-preview-provider-v93/component-manifest.json','docs/warlock-repository/v65/publication/delivery.json']);print(e)

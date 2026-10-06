@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "providerManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v93/component-manifest.json",
+  "providerManifestSHA256": "02fd2147aab21d0eaee05c03fcee5507f2bbc453badb7cf68a003960d3094c76",
+  "buildCommands": 95,
+  "retainedDeliveryControls": 45,
+  "readinessNativeElmControls": 54,
+  "readinessScenarios": 8,
+  "readinessTraces": 20,
+  "readinessStates": 384,
+  "unsafeCompiledNativeMutantsDetected": 3,
+  "unchangedElmAssetIdentityVerified": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "next": "Fresh derivative: implement bounded host readiness/observation/final routing and exact outgoing control delivery acknowledgment/retry without effect replay or namespace reset. Freeze the transport/capacity/cleanup reservation contract first. Keep current fully qualified GUI92/native128 tuple and all original gates. Review polling fairness and original operation budgets before production evaluation."
+}
