@@ -1,0 +1,5 @@
+{
+  "parent": "implementation/warlock-family-modal-fixture-v1",
+  "retainedFailure": "implementation/warlock-client-provider-native-v32/qa/native-1791256828360243563/report.json",
+  "change": "Actual client ACKs all own configure serials; buffer draw only for initial map/changed dimensions or changed own color. Same-size activation-only configure does not allocate/redraw unchanged pixels or force a parent commit. Preserve native33 original assertion/deadline meanings and no artificial root/child commit oracle."
+}

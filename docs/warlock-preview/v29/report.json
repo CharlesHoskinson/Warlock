@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "passed": true,
+  "components": [
+    {
+      "path": "implementation/warlock-family-modal-fixture-v1/component-manifest.json",
+      "sha256": "dc010f0a23ca2bc3373041d61faae4fba8a385c17ca35638ccd0d4f48103c85b",
+      "files": 42
+    },
+    {
+      "path": "implementation/warlock-family-modal-fixture-v2/component-manifest.json",
+      "sha256": "ea237af6d7cccb5700599a13f2278ecb14dffa6e275a0386a5a6d15822b5a11f",
+      "files": 42
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v32/component-manifest.json",
+      "sha256": "d5faf81475f22e81229f36d6dfa5348456d47a52b124ca0e16f02068517d954a",
+      "files": 256
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v33/component-manifest.json",
+      "sha256": "ab270c0959124e5880e0f875fd6d19a41b60928830e69ccb75f485c64d13d6d2",
+      "files": 270
+    }
+  ],
+  "evidence": {
+    "implementation/warlock-client-provider-native-v33/qa/native-1791257049560687982/report.json": "6693f2e7c626f0dace504b21c199e7b40b7c41a1673248b864c75856a96a4f1b",
+    "implementation/warlock-client-provider-native-v31/qa/native-1791256379960337558/report.json": "f5008c43ff80328df5e16218ff768500fecc6e62381ba4a632cf400393fe8023",
+    "implementation/warlock-client-provider-native-v32/qa/native-1791256828360243563/report.json": "0ee7a200556190a9865f054d37f308870dd80a3e60a313bb05694129aa1c2135",
+    "implementation/warlock-family-modal-fixture-v1/qa/client-build-1791256626576765859/report.json": "e06e306fbfdca8307e8e2e9a2960c76944e66b19baac4a0fcf55c99cc1ea3ed5",
+    "implementation/warlock-family-modal-fixture-v2/qa/client-build-1791256974563376493/report.json": "ca8605780767148dd90930a16991a5e0f7d6b26103cae2c174dced2133535f60"
+  },
+  "nativeControls": 1214,
+  "normalOwnedExits": 125,
+  "actualRelatedModalFixtureQualified": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "next": "Implement/qualify complete native root/popup/modal membership and geometry/revision/crop, then family renderer/FD and typed full shared GUI under original production preview13 and coherent release gates."
+}

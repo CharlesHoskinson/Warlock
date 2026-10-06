@@ -1,0 +1,7 @@
+# Actual native related-modal family fixture
+
+FAMILY-FIXTURE-01: WHEN modal-create is requested and the native xdg_dialog_v1 manager exists, the fixture SHALL create a separate96x64 xdg_toplevel, set its actual parent to the original root, obtain its own dialog object and set modal before initial commit. It SHALL acknowledge its own configure before committing magenta pixels, without modifying root/child/popup commits.
+FAMILY-FIXTURE-02: WHEN modal-yellow, modal-set/unset or modal-unparent/reparent is requested, the fixture SHALL update only the exact admitted native protocol object and report own serial/commit or ordered control; a display barrier SHALL NOT substitute for native configure/commit/membership/pixels.
+FAMILY-FIXTURE-03: WHEN the dialog is destroyed or the client exits, the fixture SHALL destroy its dialog/toplevel/xdg/surface before the parent and preserve real buffer release/normal process exit. Missing/repeated/unconfigured/unsupported controls SHALL refuse. Original eight-buffer/eight-barrier/128MiB and original scenario/deadline bounds remain unchanged.
+
+This implements the next missing native family/modal specimen. Compile actual changes, then qualify native parent relation/modal flags/independent commits/destruction alongside the original1160 regression controls on the exact owning tuple. Full family capture and production fidelity/preview13, hardware and coherent release qualification remain pending. No main desktop changes or second Elm policy authority.
