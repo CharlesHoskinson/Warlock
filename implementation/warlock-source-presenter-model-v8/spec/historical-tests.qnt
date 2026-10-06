@@ -1,0 +1,14 @@
+module historical_tests {
+ import historical.* from "./historical"
+ action check(ok:bool):bool=all{assert(ok and safety),s'=s}
+ run retainedStoppedFrameReopensAndDrains=init.then(fire(Seed)).then(fire(Request)).then(fire(Capture)).then(fire(Stop)).then(fire(Close)).then(fire(Reopen)).then(fire(Retain)).then(check(s.accepted and not(s.fresh) and s.floor==1 and s.commands==List())).then(fire(Expire)).then(fire(Drain)).then(fire(Ack)).then(check(s.records==0))
+ run hiddenOwnerObservesStoppedThenReopens=init.then(fire(Seed)).then(fire(Request)).then(fire(Capture)).then(fire(Close)).then(fire(Stop)).then(fire(Reopen)).then(fire(Retain)).then(check(s.open and s.accepted and not(s.fresh) and s.floor==1))
+ run oldLeaseCannotRebindHistorical=init.then(fire(Seed)).then(fire(Request)).then(fire(Capture)).then(fire(Stop)).then(fire(Close)).then(fire(Reopen)).then(fire(OldLease)).then(check(not(s.open) and s.charged and s.commands==List()))
+ run missingPublicationCannotRebindHistorical=init.then(fire(Seed)).then(fire(Request)).then(fire(Capture)).then(fire(Stop)).then(fire(Close)).then(fire(Reopen)).then(fire(MissingPublication)).then(check(not(s.open) and s.charged and s.commands==List()))
+ run foreignScopeCannotRebindHistorical=init.then(fire(Seed)).then(fire(Request)).then(fire(Capture)).then(fire(Stop)).then(fire(Close)).then(fire(Reopen)).then(fire(ForeignScope)).then(check(not(s.open) and s.charged and s.commands==List()))
+ run changedExpiryCannotAliasHistorical=init.then(fire(Seed)).then(fire(Request)).then(fire(Capture)).then(fire(Stop)).then(fire(Close)).then(fire(Reopen)).then(fire(ChangedExpiry)).then(check(not(s.open) and s.floor==1 and s.commands==List()))
+ run unknownCleanupCannotReplayOnReopen=init.then(fire(Seed)).then(fire(Request)).then(fire(Capture)).then(fire(Unknown)).then(fire(Close)).then(fire(Reopen)).then(fire(Retain)).then(check(not(s.ready) and s.retiring and s.floor==1 and s.commands==List()))
+ run expiredPacketCannotRebindHistorical=init.then(fire(Seed)).then(fire(Request)).then(fire(Capture)).then(fire(Stop)).then(fire(Expire)).then(fire(Close)).then(fire(Reopen)).then(fire(Retain)).then(check(s.retiring and not(s.open) and s.commands==List()))
+ run terminalJournalCannotRebindHistorical=init.then(fire(Seed)).then(fire(Request)).then(fire(Capture)).then(fire(Stop)).then(fire(Expire)).then(fire(Drain)).then(fire(Close)).then(fire(Reopen)).then(fire(Retain)).then(fire(Ack)).then(check(s.records==0 and s.floor==1 and not(s.open)))
+ run heldHistoricalReaderBlocksRetirement=init.then(fire(Seed)).then(fire(Request)).then(fire(Capture)).then(fire(Stop)).then(fire(Close)).then(fire(Reopen)).then(fire(Retain)).then(fire(Hold)).then(fire(Expire)).then(fire(Drain)).then(check(s.held and s.charged and s.known and s.commands==List())).then(fire(CloseReader)).then(fire(Drain)).then(fire(Ack)).then(check(s.records==0 and not(s.charged)))
+}

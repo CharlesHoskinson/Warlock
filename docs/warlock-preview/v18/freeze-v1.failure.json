@@ -1,0 +1,8 @@
+{
+  "passed": false,
+  "source": "docs/warlock-preview/v18/freeze.py",
+  "sourceSHA256": "68a52f37c5b2820e6a3dfd9153857f8d263ebb013469c74b16822a959fc6334c",
+  "exitCode": 1,
+  "error": "AssertionError at failed-provider expected error repr; no component manifests had been written",
+  "correction": "Fresh freeze-v2.py compares exact Python RuntimeError repr including escaped newline; source/evidence and qualification oracles unchanged"
+}

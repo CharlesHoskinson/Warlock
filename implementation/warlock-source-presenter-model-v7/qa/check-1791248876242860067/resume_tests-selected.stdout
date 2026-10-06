@@ -1,0 +1,13 @@
+
+  resume_tests
+    ok freshLeaseReservesSecondAndDrains passed 1 test(s)
+    ok physicalChargeBlocksResume passed 1 test(s)
+    ok terminalJournalBlocksUntilExactAck passed 1 test(s)
+    ok oldLeaseCannotReserveNewJob passed 1 test(s)
+    ok staleScopeCannotReserveNewJob passed 1 test(s)
+    ok foreignScopeCannotReserveNewJob passed 1 test(s)
+    ok costlySourceDoesNotIncreaseBudget passed 1 test(s)
+    ok oldDenialCannotRevokeNewCapturingOwner passed 1 test(s)
+    ok oldTerminalAckCannotEraseNewOwner passed 1 test(s)
+
+  9 passing (18ms)

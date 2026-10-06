@@ -1,0 +1,1744 @@
+
+ Error [QNT405]: Module transfer_tests imports an unknown module transfers
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:2:2
+  2:  import transfers.* from "./transfers"
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT405]: Module 'transfers' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:2:2
+  2:  import transfers.* from "./transfers"
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:3:31
+  3:  run ImportedSingleTransfer = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                   ^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:3:41
+  3:  run ImportedSingleTransfer = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                             ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Capture1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:3:46
+  3:  run ImportedSingleTransfer = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                  ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:3:62
+  3:  run ImportedSingleTransfer = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                  ^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Transfer1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:3:67
+  3:  run ImportedSingleTransfer = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                       ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:3:84
+  3:  run ImportedSingleTransfer = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                        ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Release1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:3:89
+  3:  run ImportedSingleTransfer = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                             ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:3:105
+  3:  run ImportedSingleTransfer = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                             ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Drain1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:3:110
+  3:  run ImportedSingleTransfer = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                  ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:3:124
+  3:  run ImportedSingleTransfer = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Ack1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:3:129
+  3:  run ImportedSingleTransfer = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                     ^^^^
+
+
+ Error [QNT404]: Name 'safety' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:3:148
+  3:  run ImportedSingleTransfer = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                        ^^^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:4:28
+  4:  run ImportedTwoFamilies = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Ack1)).then(fire(Ack2)).then(assert(safety))
+                                ^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:4:38
+  4:  run ImportedTwoFamilies = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Ack1)).then(fire(Ack2)).then(assert(safety))
+                                          ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Capture1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:4:43
+  4:  run ImportedTwoFamilies = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Ack1)).then(fire(Ack2)).then(assert(safety))
+                                               ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:4:59
+  4:  run ImportedTwoFamilies = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Ack1)).then(fire(Ack2)).then(assert(safety))
+                                                               ^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Transfer1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:4:64
+  4:  run ImportedTwoFamilies = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Ack1)).then(fire(Ack2)).then(assert(safety))
+                                                                    ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:4:81
+  4:  run ImportedTwoFamilies = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Ack1)).then(fire(Ack2)).then(assert(safety))
+                                                                                     ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Capture2' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:4:86
+  4:  run ImportedTwoFamilies = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Ack1)).then(fire(Ack2)).then(assert(safety))
+                                                                                          ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:4:102
+  4:  run ImportedTwoFamilies = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Ack1)).then(fire(Ack2)).then(assert(safety))
+                                                                                                          ^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Transfer2' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:4:107
+  4:  run ImportedTwoFamilies = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Ack1)).then(fire(Ack2)).then(assert(safety))
+                                                                                                               ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:4:124
+  4:  run ImportedTwoFamilies = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Ack1)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Release1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:4:129
+  4:  run ImportedTwoFamilies = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Ack1)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                     ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:4:145
+  4:  run ImportedTwoFamilies = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Ack1)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                                     ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Release2' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:4:150
+  4:  run ImportedTwoFamilies = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Ack1)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                                          ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:4:166
+  4:  run ImportedTwoFamilies = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Ack1)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                                                          ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Drain1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:4:171
+  4:  run ImportedTwoFamilies = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Ack1)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                                                               ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:4:185
+  4:  run ImportedTwoFamilies = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Ack1)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                                                                             ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Drain2' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:4:190
+  4:  run ImportedTwoFamilies = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Ack1)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                                                                                  ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:4:204
+  4:  run ImportedTwoFamilies = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Ack1)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                                                                                                ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Ack1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:4:209
+  4:  run ImportedTwoFamilies = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Ack1)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                                                                                                     ^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:4:221
+  4:  run ImportedTwoFamilies = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Ack1)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                                                                                                                 ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Ack2' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:4:226
+  4:  run ImportedTwoFamilies = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Ack1)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                                                                                                                      ^^^^
+
+
+ Error [QNT404]: Name 'safety' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:4:245
+  4:  run ImportedTwoFamilies = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Ack1)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                                                                                                                                         ^^^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:5:38
+  5:  run ImportedUnretiredBlocksSecond = init.then(fire(Capture1)).then(fire(Capture2)).then(assert(s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                          ^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:5:48
+  5:  run ImportedUnretiredBlocksSecond = init.then(fire(Capture1)).then(fire(Capture2)).then(assert(s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                    ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Capture1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:5:53
+  5:  run ImportedUnretiredBlocksSecond = init.then(fire(Capture1)).then(fire(Capture2)).then(assert(s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                         ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:5:69
+  5:  run ImportedUnretiredBlocksSecond = init.then(fire(Capture1)).then(fire(Capture2)).then(assert(s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                         ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Capture2' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:5:74
+  5:  run ImportedUnretiredBlocksSecond = init.then(fire(Capture1)).then(fire(Capture2)).then(assert(s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                              ^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:5:97
+  5:  run ImportedUnretiredBlocksSecond = init.then(fire(Capture1)).then(fire(Capture2)).then(assert(s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                     ^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:5:124
+  5:  run ImportedUnretiredBlocksSecond = init.then(fire(Capture1)).then(fire(Capture2)).then(assert(s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                ^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Transfer1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:5:129
+  5:  run ImportedUnretiredBlocksSecond = init.then(fire(Capture1)).then(fire(Capture2)).then(assert(s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                     ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:5:146
+  5:  run ImportedUnretiredBlocksSecond = init.then(fire(Capture1)).then(fire(Capture2)).then(assert(s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                      ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Release1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:5:151
+  5:  run ImportedUnretiredBlocksSecond = init.then(fire(Capture1)).then(fire(Capture2)).then(assert(s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                           ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:5:167
+  5:  run ImportedUnretiredBlocksSecond = init.then(fire(Capture1)).then(fire(Capture2)).then(assert(s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                           ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Drain1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:5:172
+  5:  run ImportedUnretiredBlocksSecond = init.then(fire(Capture1)).then(fire(Capture2)).then(assert(s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:5:186
+  5:  run ImportedUnretiredBlocksSecond = init.then(fire(Capture1)).then(fire(Capture2)).then(assert(s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                              ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Ack1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:5:191
+  5:  run ImportedUnretiredBlocksSecond = init.then(fire(Capture1)).then(fire(Capture2)).then(assert(s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                   ^^^^
+
+
+ Error [QNT404]: Name 'safety' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:5:210
+  5:  run ImportedUnretiredBlocksSecond = init.then(fire(Capture1)).then(fire(Capture2)).then(assert(s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                      ^^^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:6:39
+  6:  run ImportedReleaseFailureRetained = init.then(fire(Capture1)).then(fire(Fail1)).then(fire(Capture2)).then(assert(s.second.records==0 and slots(s.first)==2)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                           ^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:6:49
+  6:  run ImportedReleaseFailureRetained = init.then(fire(Capture1)).then(fire(Fail1)).then(fire(Capture2)).then(assert(s.second.records==0 and slots(s.first)==2)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                     ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Capture1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:6:54
+  6:  run ImportedReleaseFailureRetained = init.then(fire(Capture1)).then(fire(Fail1)).then(fire(Capture2)).then(assert(s.second.records==0 and slots(s.first)==2)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                          ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:6:70
+  6:  run ImportedReleaseFailureRetained = init.then(fire(Capture1)).then(fire(Fail1)).then(fire(Capture2)).then(assert(s.second.records==0 and slots(s.first)==2)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                          ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Fail1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:6:75
+  6:  run ImportedReleaseFailureRetained = init.then(fire(Capture1)).then(fire(Fail1)).then(fire(Capture2)).then(assert(s.second.records==0 and slots(s.first)==2)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                               ^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:6:88
+  6:  run ImportedReleaseFailureRetained = init.then(fire(Capture1)).then(fire(Fail1)).then(fire(Capture2)).then(assert(s.second.records==0 and slots(s.first)==2)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                            ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Capture2' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:6:93
+  6:  run ImportedReleaseFailureRetained = init.then(fire(Capture1)).then(fire(Fail1)).then(fire(Capture2)).then(assert(s.second.records==0 and slots(s.first)==2)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                 ^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:6:116
+  6:  run ImportedReleaseFailureRetained = init.then(fire(Capture1)).then(fire(Fail1)).then(fire(Capture2)).then(assert(s.second.records==0 and slots(s.first)==2)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                        ^
+
+
+ Error [QNT404]: Name 'slots' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:6:140
+  6:  run ImportedReleaseFailureRetained = init.then(fire(Capture1)).then(fire(Fail1)).then(fire(Capture2)).then(assert(s.second.records==0 and slots(s.first)==2)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:6:146
+  6:  run ImportedReleaseFailureRetained = init.then(fire(Capture1)).then(fire(Fail1)).then(fire(Capture2)).then(assert(s.second.records==0 and slots(s.first)==2)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                      ^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:6:165
+  6:  run ImportedReleaseFailureRetained = init.then(fire(Capture1)).then(fire(Fail1)).then(fire(Capture2)).then(assert(s.second.records==0 and slots(s.first)==2)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                         ^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Transfer1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:6:170
+  6:  run ImportedReleaseFailureRetained = init.then(fire(Capture1)).then(fire(Fail1)).then(fire(Capture2)).then(assert(s.second.records==0 and slots(s.first)==2)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                              ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:6:187
+  6:  run ImportedReleaseFailureRetained = init.then(fire(Capture1)).then(fire(Fail1)).then(fire(Capture2)).then(assert(s.second.records==0 and slots(s.first)==2)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                               ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Release1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:6:192
+  6:  run ImportedReleaseFailureRetained = init.then(fire(Capture1)).then(fire(Fail1)).then(fire(Capture2)).then(assert(s.second.records==0 and slots(s.first)==2)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                    ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:6:208
+  6:  run ImportedReleaseFailureRetained = init.then(fire(Capture1)).then(fire(Fail1)).then(fire(Capture2)).then(assert(s.second.records==0 and slots(s.first)==2)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                    ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Drain1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:6:213
+  6:  run ImportedReleaseFailureRetained = init.then(fire(Capture1)).then(fire(Fail1)).then(fire(Capture2)).then(assert(s.second.records==0 and slots(s.first)==2)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                         ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:6:227
+  6:  run ImportedReleaseFailureRetained = init.then(fire(Capture1)).then(fire(Fail1)).then(fire(Capture2)).then(assert(s.second.records==0 and slots(s.first)==2)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                       ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Ack1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:6:232
+  6:  run ImportedReleaseFailureRetained = init.then(fire(Capture1)).then(fire(Fail1)).then(fire(Capture2)).then(assert(s.second.records==0 and slots(s.first)==2)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                            ^^^^
+
+
+ Error [QNT404]: Name 'safety' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:6:251
+  6:  run ImportedReleaseFailureRetained = init.then(fire(Capture1)).then(fire(Fail1)).then(fire(Capture2)).then(assert(s.second.records==0 and slots(s.first)==2)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                                               ^^^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:7:33
+  7:  run ImportedLockPendingRetry = init.then(fire(Capture1)).then(fire(Pending1)).then(fire(Capture2)).then(assert(s.second.records==0 and s.first.charged)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(fire(Release2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(safety))
+                                     ^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:7:43
+  7:  run ImportedLockPendingRetry = init.then(fire(Capture1)).then(fire(Pending1)).then(fire(Capture2)).then(assert(s.second.records==0 and s.first.charged)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(fire(Release2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(safety))
+                                               ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Capture1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:7:48
+  7:  run ImportedLockPendingRetry = init.then(fire(Capture1)).then(fire(Pending1)).then(fire(Capture2)).then(assert(s.second.records==0 and s.first.charged)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(fire(Release2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(safety))
+                                                    ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:7:64
+  7:  run ImportedLockPendingRetry = init.then(fire(Capture1)).then(fire(Pending1)).then(fire(Capture2)).then(assert(s.second.records==0 and s.first.charged)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(fire(Release2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(safety))
+                                                                    ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Pending1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:7:69
+  7:  run ImportedLockPendingRetry = init.then(fire(Capture1)).then(fire(Pending1)).then(fire(Capture2)).then(assert(s.second.records==0 and s.first.charged)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(fire(Release2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(safety))
+                                                                         ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:7:85
+  7:  run ImportedLockPendingRetry = init.then(fire(Capture1)).then(fire(Pending1)).then(fire(Capture2)).then(assert(s.second.records==0 and s.first.charged)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(fire(Release2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(safety))
+                                                                                         ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Capture2' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:7:90
+  7:  run ImportedLockPendingRetry = init.then(fire(Capture1)).then(fire(Pending1)).then(fire(Capture2)).then(assert(s.second.records==0 and s.first.charged)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(fire(Release2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(safety))
+                                                                                              ^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:7:113
+  7:  run ImportedLockPendingRetry = init.then(fire(Capture1)).then(fire(Pending1)).then(fire(Capture2)).then(assert(s.second.records==0 and s.first.charged)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(fire(Release2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                     ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:7:137
+  7:  run ImportedLockPendingRetry = init.then(fire(Capture1)).then(fire(Pending1)).then(fire(Capture2)).then(assert(s.second.records==0 and s.first.charged)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(fire(Release2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                             ^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:7:160
+  7:  run ImportedLockPendingRetry = init.then(fire(Capture1)).then(fire(Pending1)).then(fire(Capture2)).then(assert(s.second.records==0 and s.first.charged)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(fire(Release2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                                                    ^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Transfer1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:7:165
+  7:  run ImportedLockPendingRetry = init.then(fire(Capture1)).then(fire(Pending1)).then(fire(Capture2)).then(assert(s.second.records==0 and s.first.charged)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(fire(Release2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                                                         ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:7:182
+  7:  run ImportedLockPendingRetry = init.then(fire(Capture1)).then(fire(Pending1)).then(fire(Capture2)).then(assert(s.second.records==0 and s.first.charged)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(fire(Release2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                                                                          ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Capture2' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:7:187
+  7:  run ImportedLockPendingRetry = init.then(fire(Capture1)).then(fire(Pending1)).then(fire(Capture2)).then(assert(s.second.records==0 and s.first.charged)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(fire(Release2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                                                                               ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:7:203
+  7:  run ImportedLockPendingRetry = init.then(fire(Capture1)).then(fire(Pending1)).then(fire(Capture2)).then(assert(s.second.records==0 and s.first.charged)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(fire(Release2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                                                                                               ^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Transfer2' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:7:208
+  7:  run ImportedLockPendingRetry = init.then(fire(Capture1)).then(fire(Pending1)).then(fire(Capture2)).then(assert(s.second.records==0 and s.first.charged)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(fire(Release2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                                                                                                    ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:7:225
+  7:  run ImportedLockPendingRetry = init.then(fire(Capture1)).then(fire(Pending1)).then(fire(Capture2)).then(assert(s.second.records==0 and s.first.charged)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(fire(Release2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                                                                                                                     ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Release1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:7:230
+  7:  run ImportedLockPendingRetry = init.then(fire(Capture1)).then(fire(Pending1)).then(fire(Capture2)).then(assert(s.second.records==0 and s.first.charged)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(fire(Release2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                                                                                                                          ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:7:246
+  7:  run ImportedLockPendingRetry = init.then(fire(Capture1)).then(fire(Pending1)).then(fire(Capture2)).then(assert(s.second.records==0 and s.first.charged)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(fire(Release2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                                                                                                                                          ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Drain1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:7:251
+  7:  run ImportedLockPendingRetry = init.then(fire(Capture1)).then(fire(Pending1)).then(fire(Capture2)).then(assert(s.second.records==0 and s.first.charged)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(fire(Release2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                                                                                                                                               ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:7:265
+  7:  run ImportedLockPendingRetry = init.then(fire(Capture1)).then(fire(Pending1)).then(fire(Capture2)).then(assert(s.second.records==0 and s.first.charged)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(fire(Release2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                                                                                                                                                             ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Ack1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:7:270
+  7:  run ImportedLockPendingRetry = init.then(fire(Capture1)).then(fire(Pending1)).then(fire(Capture2)).then(assert(s.second.records==0 and s.first.charged)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(fire(Release2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                                                                                                                                                                  ^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:7:282
+  7:  run ImportedLockPendingRetry = init.then(fire(Capture1)).then(fire(Pending1)).then(fire(Capture2)).then(assert(s.second.records==0 and s.first.charged)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(fire(Release2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                                                                                                                                                                              ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Release2' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:7:287
+  7:  run ImportedLockPendingRetry = init.then(fire(Capture1)).then(fire(Pending1)).then(fire(Capture2)).then(assert(s.second.records==0 and s.first.charged)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(fire(Release2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                                                                                                                                                                                   ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:7:303
+  7:  run ImportedLockPendingRetry = init.then(fire(Capture1)).then(fire(Pending1)).then(fire(Capture2)).then(assert(s.second.records==0 and s.first.charged)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(fire(Release2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                                                                                                                                                                                                   ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Drain2' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:7:308
+  7:  run ImportedLockPendingRetry = init.then(fire(Capture1)).then(fire(Pending1)).then(fire(Capture2)).then(assert(s.second.records==0 and s.first.charged)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(fire(Release2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                                                                                                                                                                                                        ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:7:322
+  7:  run ImportedLockPendingRetry = init.then(fire(Capture1)).then(fire(Pending1)).then(fire(Capture2)).then(assert(s.second.records==0 and s.first.charged)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(fire(Release2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                                                                                                                                                                                                                      ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Ack2' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:7:327
+  7:  run ImportedLockPendingRetry = init.then(fire(Capture1)).then(fire(Pending1)).then(fire(Capture2)).then(assert(s.second.records==0 and s.first.charged)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(fire(Release2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                                                                                                                                                                                                                           ^^^^
+
+
+ Error [QNT404]: Name 'safety' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:7:346
+  7:  run ImportedLockPendingRetry = init.then(fire(Capture1)).then(fire(Pending1)).then(fire(Capture2)).then(assert(s.second.records==0 and s.first.charged)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(fire(Release2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(safety))
+                                                                                                                                                                                                                                                                                                                                                              ^^^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:8:39
+  8:  run ImportedUnknownRetainsProducer = init.then(fire(Capture1)).then(fire(Unknown1)).then(fire(Capture2)).then(assert(s.first.producer and s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                           ^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:8:49
+  8:  run ImportedUnknownRetainsProducer = init.then(fire(Capture1)).then(fire(Unknown1)).then(fire(Capture2)).then(assert(s.first.producer and s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                     ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Capture1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:8:54
+  8:  run ImportedUnknownRetainsProducer = init.then(fire(Capture1)).then(fire(Unknown1)).then(fire(Capture2)).then(assert(s.first.producer and s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                          ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:8:70
+  8:  run ImportedUnknownRetainsProducer = init.then(fire(Capture1)).then(fire(Unknown1)).then(fire(Capture2)).then(assert(s.first.producer and s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                          ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Unknown1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:8:75
+  8:  run ImportedUnknownRetainsProducer = init.then(fire(Capture1)).then(fire(Unknown1)).then(fire(Capture2)).then(assert(s.first.producer and s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                               ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:8:91
+  8:  run ImportedUnknownRetainsProducer = init.then(fire(Capture1)).then(fire(Unknown1)).then(fire(Capture2)).then(assert(s.first.producer and s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                               ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Capture2' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:8:96
+  8:  run ImportedUnknownRetainsProducer = init.then(fire(Capture1)).then(fire(Unknown1)).then(fire(Capture2)).then(assert(s.first.producer and s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                    ^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:8:119
+  8:  run ImportedUnknownRetainsProducer = init.then(fire(Capture1)).then(fire(Unknown1)).then(fire(Capture2)).then(assert(s.first.producer and s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                           ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:8:140
+  8:  run ImportedUnknownRetainsProducer = init.then(fire(Capture1)).then(fire(Unknown1)).then(fire(Capture2)).then(assert(s.first.producer and s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                ^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:8:167
+  8:  run ImportedUnknownRetainsProducer = init.then(fire(Capture1)).then(fire(Unknown1)).then(fire(Capture2)).then(assert(s.first.producer and s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                           ^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Transfer1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:8:172
+  8:  run ImportedUnknownRetainsProducer = init.then(fire(Capture1)).then(fire(Unknown1)).then(fire(Capture2)).then(assert(s.first.producer and s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:8:189
+  8:  run ImportedUnknownRetainsProducer = init.then(fire(Capture1)).then(fire(Unknown1)).then(fire(Capture2)).then(assert(s.first.producer and s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                 ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Release1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:8:194
+  8:  run ImportedUnknownRetainsProducer = init.then(fire(Capture1)).then(fire(Unknown1)).then(fire(Capture2)).then(assert(s.first.producer and s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                      ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:8:210
+  8:  run ImportedUnknownRetainsProducer = init.then(fire(Capture1)).then(fire(Unknown1)).then(fire(Capture2)).then(assert(s.first.producer and s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                      ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Drain1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:8:215
+  8:  run ImportedUnknownRetainsProducer = init.then(fire(Capture1)).then(fire(Unknown1)).then(fire(Capture2)).then(assert(s.first.producer and s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                           ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:8:229
+  8:  run ImportedUnknownRetainsProducer = init.then(fire(Capture1)).then(fire(Unknown1)).then(fire(Capture2)).then(assert(s.first.producer and s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                         ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Ack1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:8:234
+  8:  run ImportedUnknownRetainsProducer = init.then(fire(Capture1)).then(fire(Unknown1)).then(fire(Capture2)).then(assert(s.first.producer and s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                              ^^^^
+
+
+ Error [QNT404]: Name 'safety' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:8:253
+  8:  run ImportedUnknownRetainsProducer = init.then(fire(Capture1)).then(fire(Unknown1)).then(fire(Capture2)).then(assert(s.first.producer and s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                                                 ^^^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:9:48
+  9:  run ImportedHeldReaderBlocksLocalRetirement = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Release1)).then(fire(Drain1)).then(assert(s.first.charged and not(s.first.terminal))).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                    ^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:9:58
+  9:  run ImportedHeldReaderBlocksLocalRetirement = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Release1)).then(fire(Drain1)).then(assert(s.first.charged and not(s.first.terminal))).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                              ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Capture1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:9:63
+  9:  run ImportedHeldReaderBlocksLocalRetirement = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Release1)).then(fire(Drain1)).then(assert(s.first.charged and not(s.first.terminal))).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                   ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:9:79
+  9:  run ImportedHeldReaderBlocksLocalRetirement = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Release1)).then(fire(Drain1)).then(assert(s.first.charged and not(s.first.terminal))).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                   ^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Transfer1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:9:84
+  9:  run ImportedHeldReaderBlocksLocalRetirement = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Release1)).then(fire(Drain1)).then(assert(s.first.charged and not(s.first.terminal))).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                        ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:9:101
+  9:  run ImportedHeldReaderBlocksLocalRetirement = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Release1)).then(fire(Drain1)).then(assert(s.first.charged and not(s.first.terminal))).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                         ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Hold1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:9:106
+  9:  run ImportedHeldReaderBlocksLocalRetirement = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Release1)).then(fire(Drain1)).then(assert(s.first.charged and not(s.first.terminal))).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                              ^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:9:119
+  9:  run ImportedHeldReaderBlocksLocalRetirement = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Release1)).then(fire(Drain1)).then(assert(s.first.charged and not(s.first.terminal))).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                           ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Release1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:9:124
+  9:  run ImportedHeldReaderBlocksLocalRetirement = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Release1)).then(fire(Drain1)).then(assert(s.first.charged and not(s.first.terminal))).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:9:140
+  9:  run ImportedHeldReaderBlocksLocalRetirement = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Release1)).then(fire(Drain1)).then(assert(s.first.charged and not(s.first.terminal))).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Drain1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:9:145
+  9:  run ImportedHeldReaderBlocksLocalRetirement = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Release1)).then(fire(Drain1)).then(assert(s.first.charged and not(s.first.terminal))).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                     ^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:9:166
+  9:  run ImportedHeldReaderBlocksLocalRetirement = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Release1)).then(fire(Drain1)).then(assert(s.first.charged and not(s.first.terminal))).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                          ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:9:190
+  9:  run ImportedHeldReaderBlocksLocalRetirement = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Release1)).then(fire(Drain1)).then(assert(s.first.charged and not(s.first.terminal))).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                  ^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:9:215
+  9:  run ImportedHeldReaderBlocksLocalRetirement = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Release1)).then(fire(Drain1)).then(assert(s.first.charged and not(s.first.terminal))).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                           ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Close1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:9:220
+  9:  run ImportedHeldReaderBlocksLocalRetirement = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Release1)).then(fire(Drain1)).then(assert(s.first.charged and not(s.first.terminal))).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:9:234
+  9:  run ImportedHeldReaderBlocksLocalRetirement = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Release1)).then(fire(Drain1)).then(assert(s.first.charged and not(s.first.terminal))).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                              ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Drain1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:9:239
+  9:  run ImportedHeldReaderBlocksLocalRetirement = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Release1)).then(fire(Drain1)).then(assert(s.first.charged and not(s.first.terminal))).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                                   ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:9:253
+  9:  run ImportedHeldReaderBlocksLocalRetirement = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Release1)).then(fire(Drain1)).then(assert(s.first.charged and not(s.first.terminal))).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                                                 ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Ack1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:9:258
+  9:  run ImportedHeldReaderBlocksLocalRetirement = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Release1)).then(fire(Drain1)).then(assert(s.first.charged and not(s.first.terminal))).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                                                      ^^^^
+
+
+ Error [QNT404]: Name 'safety' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:9:277
+  9:  run ImportedHeldReaderBlocksLocalRetirement = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Release1)).then(fire(Drain1)).then(assert(s.first.charged and not(s.first.terminal))).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                                                                         ^^^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:41
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                              ^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:51
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                        ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Capture1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:56
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                             ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:72
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                             ^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Transfer1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:77
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                  ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:94
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                   ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Capture2' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:99
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                        ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:115
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                        ^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Transfer2' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:120
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                             ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:137
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                              ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Hold1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:142
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                   ^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:155
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Hold2' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:160
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                     ^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:173
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                  ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Release1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:178
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                       ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:194
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                       ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Release2' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:199
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                            ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:215
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                            ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Drain1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:220
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                 ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:234
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                               ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Drain2' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:239
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                                    ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:253
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                                                  ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Close2' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:258
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                                                       ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:272
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                                                                     ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Drain2' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:277
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                                                                          ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:291
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                                                                                        ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Ack2' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:296
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                                                                                             ^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:315
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                                                                                                                ^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:338
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                                                                                                                                       ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Close1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:343
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                                                                                                                                            ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:357
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                                                                                                                                                          ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Drain1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:362
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                                                                                                                                                               ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:376
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                                                                                                                                                                             ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Ack1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:381
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                                                                                                                                                                                  ^^^^
+
+
+ Error [QNT404]: Name 'safety' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:10:400
+  10:  run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(assert(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                                                                                                                                                                                                     ^^^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:11:34
+  11:  run ImportedStoppedHistorical = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Stop1)).then(assert(projection(s.first).readable)).then(fire(Hold1)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                       ^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:11:44
+  11:  run ImportedStoppedHistorical = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Stop1)).then(assert(projection(s.first).readable)).then(fire(Hold1)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                 ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Capture1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:11:49
+  11:  run ImportedStoppedHistorical = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Stop1)).then(assert(projection(s.first).readable)).then(fire(Hold1)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                      ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:11:65
+  11:  run ImportedStoppedHistorical = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Stop1)).then(assert(projection(s.first).readable)).then(fire(Hold1)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                      ^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Transfer1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:11:70
+  11:  run ImportedStoppedHistorical = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Stop1)).then(assert(projection(s.first).readable)).then(fire(Hold1)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                           ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:11:87
+  11:  run ImportedStoppedHistorical = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Stop1)).then(assert(projection(s.first).readable)).then(fire(Hold1)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                            ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Stop1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:11:92
+  11:  run ImportedStoppedHistorical = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Stop1)).then(assert(projection(s.first).readable)).then(fire(Hold1)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                 ^^^^^
+
+
+ Error [QNT404]: Name 'projection' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:11:112
+  11:  run ImportedStoppedHistorical = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Stop1)).then(assert(projection(s.first).readable)).then(fire(Hold1)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                     ^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:11:123
+  11:  run ImportedStoppedHistorical = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Stop1)).then(assert(projection(s.first).readable)).then(fire(Hold1)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                ^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:11:148
+  11:  run ImportedStoppedHistorical = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Stop1)).then(assert(projection(s.first).readable)).then(fire(Hold1)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                         ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Hold1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:11:153
+  11:  run ImportedStoppedHistorical = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Stop1)).then(assert(projection(s.first).readable)).then(fire(Hold1)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                              ^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:11:166
+  11:  run ImportedStoppedHistorical = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Stop1)).then(assert(projection(s.first).readable)).then(fire(Hold1)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                           ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Release1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:11:171
+  11:  run ImportedStoppedHistorical = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Stop1)).then(assert(projection(s.first).readable)).then(fire(Hold1)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:11:187
+  11:  run ImportedStoppedHistorical = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Stop1)).then(assert(projection(s.first).readable)).then(fire(Hold1)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Close1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:11:192
+  11:  run ImportedStoppedHistorical = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Stop1)).then(assert(projection(s.first).readable)).then(fire(Hold1)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                     ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:11:206
+  11:  run ImportedStoppedHistorical = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Stop1)).then(assert(projection(s.first).readable)).then(fire(Hold1)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                   ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Drain1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:11:211
+  11:  run ImportedStoppedHistorical = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Stop1)).then(assert(projection(s.first).readable)).then(fire(Hold1)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                        ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:11:225
+  11:  run ImportedStoppedHistorical = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Stop1)).then(assert(projection(s.first).readable)).then(fire(Hold1)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                      ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Ack1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:11:230
+  11:  run ImportedStoppedHistorical = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Stop1)).then(assert(projection(s.first).readable)).then(fire(Hold1)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                           ^^^^
+
+
+ Error [QNT404]: Name 'safety' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:11:249
+  11:  run ImportedStoppedHistorical = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Stop1)).then(assert(projection(s.first).readable)).then(fire(Hold1)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                                              ^^^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:12:37
+  12:  run ImportedLockReadBeforePolicy = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Lock1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                          ^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:12:47
+  12:  run ImportedLockReadBeforePolicy = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Lock1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                    ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Capture1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:12:52
+  12:  run ImportedLockReadBeforePolicy = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Lock1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                         ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:12:68
+  12:  run ImportedLockReadBeforePolicy = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Lock1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                         ^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Transfer1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:12:73
+  12:  run ImportedLockReadBeforePolicy = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Lock1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                              ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:12:90
+  12:  run ImportedLockReadBeforePolicy = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Lock1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                               ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Hold1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:12:95
+  12:  run ImportedLockReadBeforePolicy = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Lock1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                    ^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:12:108
+  12:  run ImportedLockReadBeforePolicy = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Lock1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                 ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Lock1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:12:113
+  12:  run ImportedLockReadBeforePolicy = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Lock1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                      ^^^^^
+
+
+ Error [QNT404]: Name 'projection' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:12:137
+  12:  run ImportedLockReadBeforePolicy = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Lock1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                              ^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:12:148
+  12:  run ImportedLockReadBeforePolicy = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Lock1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                         ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:12:171
+  12:  run ImportedLockReadBeforePolicy = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Lock1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                ^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:12:194
+  12:  run ImportedLockReadBeforePolicy = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Lock1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                       ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Release1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:12:199
+  12:  run ImportedLockReadBeforePolicy = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Lock1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                            ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:12:215
+  12:  run ImportedLockReadBeforePolicy = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Lock1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                            ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Close1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:12:220
+  12:  run ImportedLockReadBeforePolicy = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Lock1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                 ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:12:234
+  12:  run ImportedLockReadBeforePolicy = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Lock1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                               ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Drain1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:12:239
+  12:  run ImportedLockReadBeforePolicy = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Lock1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                                    ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:12:253
+  12:  run ImportedLockReadBeforePolicy = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Lock1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                                                  ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Ack1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:12:258
+  12:  run ImportedLockReadBeforePolicy = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Lock1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                                                       ^^^^
+
+
+ Error [QNT404]: Name 'safety' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:12:277
+  12:  run ImportedLockReadBeforePolicy = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Lock1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                                                                          ^^^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:13:31
+  13:  run ImportedOriginalExpiry = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Expire1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                    ^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:13:41
+  13:  run ImportedOriginalExpiry = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Expire1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                              ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Capture1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:13:46
+  13:  run ImportedOriginalExpiry = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Expire1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                   ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:13:62
+  13:  run ImportedOriginalExpiry = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Expire1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                   ^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Transfer1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:13:67
+  13:  run ImportedOriginalExpiry = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Expire1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                        ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:13:84
+  13:  run ImportedOriginalExpiry = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Expire1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                         ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Hold1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:13:89
+  13:  run ImportedOriginalExpiry = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Expire1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                              ^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:13:102
+  13:  run ImportedOriginalExpiry = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Expire1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                           ^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Expire1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:13:107
+  13:  run ImportedOriginalExpiry = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Expire1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                ^^^^^^^
+
+
+ Error [QNT404]: Name 'projection' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:13:133
+  13:  run ImportedOriginalExpiry = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Expire1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                          ^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:13:144
+  13:  run ImportedOriginalExpiry = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Expire1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                     ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:13:167
+  13:  run ImportedOriginalExpiry = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Expire1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                            ^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:13:190
+  13:  run ImportedOriginalExpiry = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Expire1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                   ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Release1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:13:195
+  13:  run ImportedOriginalExpiry = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Expire1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                        ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:13:211
+  13:  run ImportedOriginalExpiry = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Expire1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                        ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Close1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:13:216
+  13:  run ImportedOriginalExpiry = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Expire1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                             ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:13:230
+  13:  run ImportedOriginalExpiry = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Expire1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                           ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Drain1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:13:235
+  13:  run ImportedOriginalExpiry = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Expire1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                                ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:13:249
+  13:  run ImportedOriginalExpiry = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Expire1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                                              ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Ack1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:13:254
+  13:  run ImportedOriginalExpiry = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Expire1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                                                   ^^^^
+
+
+ Error [QNT404]: Name 'safety' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:13:273
+  13:  run ImportedOriginalExpiry = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Expire1)).then(assert(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                                                                      ^^^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:14:37
+  14:  run ImportedForeignReadAuthority = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Foreign1)).then(assert(not(projection(s.first).readable))).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                          ^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:14:47
+  14:  run ImportedForeignReadAuthority = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Foreign1)).then(assert(not(projection(s.first).readable))).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                    ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Capture1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:14:52
+  14:  run ImportedForeignReadAuthority = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Foreign1)).then(assert(not(projection(s.first).readable))).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                         ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:14:68
+  14:  run ImportedForeignReadAuthority = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Foreign1)).then(assert(not(projection(s.first).readable))).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                         ^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Transfer1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:14:73
+  14:  run ImportedForeignReadAuthority = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Foreign1)).then(assert(not(projection(s.first).readable))).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                              ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:14:90
+  14:  run ImportedForeignReadAuthority = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Foreign1)).then(assert(not(projection(s.first).readable))).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                               ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Foreign1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:14:95
+  14:  run ImportedForeignReadAuthority = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Foreign1)).then(assert(not(projection(s.first).readable))).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                    ^^^^^^^^
+
+
+ Error [QNT404]: Name 'projection' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:14:122
+  14:  run ImportedForeignReadAuthority = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Foreign1)).then(assert(not(projection(s.first).readable))).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                               ^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:14:133
+  14:  run ImportedForeignReadAuthority = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Foreign1)).then(assert(not(projection(s.first).readable))).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                          ^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:14:159
+  14:  run ImportedForeignReadAuthority = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Foreign1)).then(assert(not(projection(s.first).readable))).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                    ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Release1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:14:164
+  14:  run ImportedForeignReadAuthority = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Foreign1)).then(assert(not(projection(s.first).readable))).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                         ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:14:180
+  14:  run ImportedForeignReadAuthority = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Foreign1)).then(assert(not(projection(s.first).readable))).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                         ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Drain1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:14:185
+  14:  run ImportedForeignReadAuthority = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Foreign1)).then(assert(not(projection(s.first).readable))).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                              ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:14:199
+  14:  run ImportedForeignReadAuthority = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Foreign1)).then(assert(not(projection(s.first).readable))).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                            ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Ack1' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:14:204
+  14:  run ImportedForeignReadAuthority = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Foreign1)).then(assert(not(projection(s.first).readable))).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                 ^^^^
+
+
+ Error [QNT404]: Name 'safety' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-source-presenter-model-v7/qa/check-1791248876242860067/spec/transfer-tests.qnt:14:223
+  14:  run ImportedForeignReadAuthority = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Foreign1)).then(assert(not(projection(s.first).readable))).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(assert(safety))
+                                                                                                                                                                                                                                    ^^^^^^
+
+error: parsing failed

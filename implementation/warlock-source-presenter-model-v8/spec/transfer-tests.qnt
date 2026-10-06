@@ -1,0 +1,16 @@
+module transfer_tests {
+ import transfers.* from "./transfers"
+ action check(ok:bool):bool=all{s'=s,assert(ok and safety)}
+ run ImportedSingleTransfer = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(check(safety))
+ run ImportedTwoFamilies = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Ack1)).then(fire(Ack2)).then(check(safety))
+ run ImportedUnretiredBlocksSecond = init.then(fire(Capture1)).then(fire(Capture2)).then(check(s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(check(safety))
+ run ImportedReleaseFailureRetained = init.then(fire(Capture1)).then(fire(Fail1)).then(fire(Capture2)).then(check(s.second.records==0 and slots(s.first)==2)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(check(safety))
+ run ImportedLockPendingRetry = init.then(fire(Capture1)).then(fire(Pending1)).then(fire(Capture2)).then(check(s.second.records==0 and s.first.charged)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(fire(Release2)).then(fire(Drain2)).then(fire(Ack2)).then(check(safety))
+ run ImportedUnknownRetainsProducer = init.then(fire(Capture1)).then(fire(Unknown1)).then(fire(Capture2)).then(check(s.first.producer and s.second.records==0)).then(fire(Transfer1)).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(check(safety))
+ run ImportedHeldReaderBlocksLocalRetirement = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Release1)).then(fire(Drain1)).then(check(s.first.charged and not(s.first.terminal))).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(check(safety))
+ run ImportedBothHeldIndependentDrain = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Capture2)).then(fire(Transfer2)).then(fire(Hold1)).then(fire(Hold2)).then(fire(Release1)).then(fire(Release2)).then(fire(Drain1)).then(fire(Drain2)).then(fire(Close2)).then(fire(Drain2)).then(fire(Ack2)).then(check(s.first.charged)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(check(safety))
+ run ImportedStoppedHistorical = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Stop1)).then(check(projection(s.first).readable)).then(fire(Hold1)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(check(safety))
+ run ImportedLockReadBeforePolicy = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Lock1)).then(check(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(check(safety))
+ run ImportedOriginalExpiry = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Hold1)).then(fire(Expire1)).then(check(not(projection(s.first).readable) and s.first.charged)).then(fire(Release1)).then(fire(Close1)).then(fire(Drain1)).then(fire(Ack1)).then(check(safety))
+ run ImportedForeignReadAuthority = init.then(fire(Capture1)).then(fire(Transfer1)).then(fire(Foreign1)).then(check(not(projection(s.first).readable))).then(fire(Release1)).then(fire(Drain1)).then(fire(Ack1)).then(check(safety))
+}
