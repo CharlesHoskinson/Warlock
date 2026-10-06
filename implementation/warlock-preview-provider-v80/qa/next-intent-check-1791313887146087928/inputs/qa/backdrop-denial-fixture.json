@@ -1,0 +1,169 @@
+{
+  "sourceReport": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v87/qa/native-1791284904509033826/report.json",
+  "sourceReportSHA256": "fe8b354e2bcf23df3f6bd51db3feb586d8276ba1347df65034d56a012f647f4e",
+  "clientScope": {
+    "protocolVersion": 3,
+    "kind": "preview-family-backdrop-crop-scope",
+    "binding": {
+      "lifetime": "8110771576667666893",
+      "session": "26",
+      "frontend": "1"
+    },
+    "requestId": "1",
+    "scope": {
+      "binding": {
+        "lifetime": "8110771576667666893",
+        "session": "26",
+        "frontend": "1"
+      },
+      "context": {
+        "lifetime": "8110771576667666893",
+        "incarnation": "2",
+        "output": "1",
+        "privacy": "5",
+        "rendering": "2",
+        "scene": "63",
+        "content": "52"
+      },
+      "observation": "2131",
+      "clock": "8110771576667666893",
+      "now": "249250030527696",
+      "present": true,
+      "sourceLive": true,
+      "locked": false,
+      "gpuReady": true
+    },
+    "maximumTransferBytes": "339968",
+    "previewEligible": false,
+    "scopeKind": "native-generated-backdrop-family-crop-unqualified",
+    "members": [
+      {
+        "incarnation": "2",
+        "parent": null,
+        "content": "28",
+        "renderOrder": 2,
+        "flags": 178,
+        "geometry": [
+          80.0,
+          80.0,
+          320.0,
+          240.0,
+          73.0,
+          73.0,
+          334.0,
+          254.0
+        ]
+      }
+    ],
+    "styles": [
+      {
+        "incarnation": "2",
+        "flags": 1344,
+        "channels": [
+          1,
+          0.5,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          2,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "gradients": [
+          {
+            "angle": 0,
+            "colors": 1
+          },
+          {
+            "angle": 0,
+            "colors": 1
+          },
+          {
+            "angle": 0,
+            "colors": 1
+          },
+          {
+            "angle": 0,
+            "colors": 0
+          },
+          {
+            "angle": 0,
+            "colors": 1
+          },
+          {
+            "angle": 0,
+            "colors": 1
+          }
+        ]
+      }
+    ],
+    "crop": {
+      "pixelX": "73",
+      "pixelY": "73",
+      "width": 334,
+      "height": 254,
+      "scale": 1
+    },
+    "generatedBackdrop": {
+      "kind": "native-opaque-generated-color",
+      "colorARGB": "4294967295"
+    }
+  },
+  "terminalReceipts": [
+    {
+      "kind": "event",
+      "identity": "family:2",
+      "event": {
+        "kind": "receipt",
+        "sequence": "3",
+        "event": {
+          "kind": "released",
+          "frame": {
+            "job": {
+              "binding": {
+                "lifetime": "8110771576667666893",
+                "session": "26",
+                "frontend": "1"
+              },
+              "context": {
+                "lifetime": "8110771576667666893",
+                "incarnation": "2",
+                "output": "1",
+                "privacy": "5",
+                "rendering": "2",
+                "scene": "63",
+                "content": "52"
+              },
+              "request": "1",
+              "origin": "1",
+              "clock": "8110771576667666893",
+              "deadline": "249252030527696"
+            },
+            "handle": "0000000000000000144c4afb02dd5874a2d89865b6ab4ea60000000000000001",
+            "owned": true,
+            "signaled": true,
+            "fidelity": "family",
+            "coverage": [
+              "client",
+              "decoration",
+              "modal",
+              "popup"
+            ],
+            "expires": "249255043471354"
+          }
+        }
+      }
+    }
+  ],
+  "scope": "Actual native87 source/original frame/exact ACK identities; receipt delivery is simulated in this component replay"
+}

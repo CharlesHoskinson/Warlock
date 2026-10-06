@@ -1,0 +1,1205 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 20,
+      free: false,
+      history: [],
+      issued: false,
+      now: 3,
+      records: 2,
+      status: "Admitted"
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history: ["Drain"],
+      issued: false,
+      now: 3,
+      records: 1,
+      status: "CapacityReturned"
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history: ["Drain", "Expire"],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "ClockAdvanced"
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history: ["Drain", "Expire", "Foreign"],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "Invalid"
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history: ["Drain", "Expire", "Foreign", "Foreign"],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "Invalid"
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history: ["Drain", "Expire", "Foreign", "Foreign", "Retry"],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "Expired"
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history: ["Drain", "Expire", "Foreign", "Foreign", "Retry", "Retry"],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "Expired"
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        ["Drain", "Expire", "Foreign", "Foreign", "Retry", "Retry", "Foreign"],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "Invalid"
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "Drain",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry"
+        ],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "Expired"
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "Drain",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Renew"
+        ],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "Conflict"
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "Drain",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Renew",
+          "Retry"
+        ],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "Expired"
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "Drain",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Renew",
+          "Retry",
+          "Foreign"
+        ],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "Invalid"
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "Drain",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Renew",
+          "Retry",
+          "Foreign",
+          "Retry"
+        ],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "Expired"
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "Drain",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Renew",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry"
+        ],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "Expired"
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "Drain",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Renew",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Retry"
+        ],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "Expired"
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "Drain",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Renew",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Expire"
+        ],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "ClockAdvanced"
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "Drain",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Renew",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Expire",
+          "Retry"
+        ],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "Expired"
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "Drain",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Renew",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign"
+        ],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "Invalid"
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "Drain",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Renew",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Expire"
+        ],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "ClockAdvanced"
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "Drain",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Renew",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "Renew"
+        ],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "Conflict"
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "Drain",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Renew",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "Renew",
+          "Foreign"
+        ],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "Invalid"
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "Drain",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Renew",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "Renew",
+          "Foreign",
+          "Expire"
+        ],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "ClockAdvanced"
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "Drain",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Renew",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "Renew",
+          "Foreign",
+          "Expire",
+          "Foreign"
+        ],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "Invalid"
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "Drain",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Renew",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "Renew",
+          "Foreign",
+          "Expire",
+          "Foreign",
+          "Expire"
+        ],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "ClockAdvanced"
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "Drain",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Renew",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "Renew",
+          "Foreign",
+          "Expire",
+          "Foreign",
+          "Expire",
+          "Foreign"
+        ],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "Invalid"
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "Drain",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Renew",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "Renew",
+          "Foreign",
+          "Expire",
+          "Foreign",
+          "Expire",
+          "Foreign",
+          "Foreign"
+        ],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "Invalid"
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "Drain",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Renew",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "Renew",
+          "Foreign",
+          "Expire",
+          "Foreign",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry"
+        ],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "Expired"
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "Drain",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Renew",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "Renew",
+          "Foreign",
+          "Expire",
+          "Foreign",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Foreign"
+        ],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "Invalid"
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "Drain",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Renew",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "Renew",
+          "Foreign",
+          "Expire",
+          "Foreign",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Foreign",
+          "Foreign"
+        ],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "Invalid"
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "Drain",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Renew",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "Renew",
+          "Foreign",
+          "Expire",
+          "Foreign",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Foreign",
+          "Foreign",
+          "ChangeStamp"
+        ],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "Conflict"
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "Drain",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Renew",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "Renew",
+          "Foreign",
+          "Expire",
+          "Foreign",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Foreign",
+          "Foreign",
+          "ChangeStamp",
+          "Foreign"
+        ],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "Invalid"
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "Drain",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Renew",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "Renew",
+          "Foreign",
+          "Expire",
+          "Foreign",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Foreign",
+          "Foreign",
+          "ChangeStamp",
+          "Foreign",
+          "Renew"
+        ],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "Conflict"
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "Drain",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Renew",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "Renew",
+          "Foreign",
+          "Expire",
+          "Foreign",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Foreign",
+          "Foreign",
+          "ChangeStamp",
+          "Foreign",
+          "Renew",
+          "Expire"
+        ],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "ClockAdvanced"
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "Drain",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Renew",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "Renew",
+          "Foreign",
+          "Expire",
+          "Foreign",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Foreign",
+          "Foreign",
+          "ChangeStamp",
+          "Foreign",
+          "Renew",
+          "Expire",
+          "Retry"
+        ],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "Expired"
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "Drain",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Renew",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "Renew",
+          "Foreign",
+          "Expire",
+          "Foreign",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Foreign",
+          "Foreign",
+          "ChangeStamp",
+          "Foreign",
+          "Renew",
+          "Expire",
+          "Retry",
+          "Renew"
+        ],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "Conflict"
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "Drain",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Renew",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "Renew",
+          "Foreign",
+          "Expire",
+          "Foreign",
+          "Expire",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Foreign",
+          "Foreign",
+          "ChangeStamp",
+          "Foreign",
+          "Renew",
+          "Expire",
+          "Retry",
+          "Renew",
+          "Foreign"
+        ],
+      issued: false,
+      now: 21,
+      records: 1,
+      status: "Invalid"
+    }
+}
+
+[ok] No violation found (322ms at 466 traces/second).
+Trace length statistics: max=36, min=36, average=36.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

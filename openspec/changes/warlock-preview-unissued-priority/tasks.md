@@ -1,0 +1,3 @@
+- [x] Compile the current full host and retain original component controls (GUI80 full95,successor10/22/C45/Elm21,original feedback/resume/receipt/metadata/catalog and five native models).
+- [x] Qualify native expiry/reopen/actual third image and exact normal cleanup (native116,2433 checks,274 normal exits; bounded owning-ABI GUI evidence).
+- [ ] Freeze and publish exact owned evidence with remaining full-release scope.

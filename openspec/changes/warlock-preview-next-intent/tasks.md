@@ -1,0 +1,6 @@
+- [x] Implement native bounded monotonic succession and explicit C/host route.
+- [x] Compile the full Elm/native host and preserve original controls (GUI79 full95).
+- [x] Run explicitly selected Quint cases and coupled ledger/Broker traces (10 cases,22 traces,two unsafe mutations detected).
+- [x] Verify actual C/socket outputs through the current optimized Elm presenter (C45,Elm21).
+- [ ] Qualify native GUI expiry/reopen/actual image/normal cleanup on the owning ABI.
+- [ ] Freeze, commit and publish exact owned evidence; retain all full release gates.
