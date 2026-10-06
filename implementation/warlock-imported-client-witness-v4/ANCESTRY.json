@@ -1,0 +1,8 @@
+{
+  "parent": "implementation/warlock-imported-client-witness-v3",
+  "provider": "implementation/warlock-preview-provider-v29",
+  "retainedFailedBuild": "implementation/warlock-imported-client-witness-v3/qa/build-1791253189134027462/report.json",
+  "correction": "Native issuance comes from exact new seed scope.now; Job retains absolute deadline and clock without inventing an issued field. Add loop braces for Werror.",
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "nativeAcceptance": false
+}

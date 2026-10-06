@@ -1,0 +1,8 @@
+{
+  "parent": "implementation/warlock-client-provider-native-v26",
+  "failedNative": "implementation/warlock-client-provider-native-v26/qa/native-1791253679807767669/report.json",
+  "provider": "implementation/warlock-preview-provider-v30",
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "correction": "Shared Historical feature and normal cleanup passed but added effect calls reused original importedMinimize/Restore case names, violating ordered original inventory. Give additional effect oracles their own sharedHistorical names; original identities, checks, order, deadlines and resource gates unchanged.",
+  "nativeAcceptance": false
+}

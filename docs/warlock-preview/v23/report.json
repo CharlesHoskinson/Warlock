@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "passed": true,
+  "components": [
+    {
+      "path": "implementation/warlock-imported-client-witness-v3/component-manifest.json",
+      "sha256": "5fa482ca8fef01c56cf43da993d314d155e1cc49d0c0a5c2f9cf23467970d672",
+      "files": 60
+    },
+    {
+      "path": "implementation/warlock-imported-client-witness-v4/component-manifest.json",
+      "sha256": "08e51ad4e49cb749f336611e79e70776d5f4d3dfc30819426db6ccb9c15b5049",
+      "files": 61
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v24/component-manifest.json",
+      "sha256": "99bf8c36bbd77e739b70fa049a8e5babc6594fe8f7205af52a699ac3c77a5cf9",
+      "files": 237
+    }
+  ],
+  "priorPacket": {
+    "path": "docs/warlock-preview/v22/report.json",
+    "sha256": "1c8e627ef4f75337c4bd61cb983b98a0e2e01f2a9e53e02883c27900ea9411e6"
+  },
+  "evidence": {
+    "implementation/warlock-client-provider-native-v24/qa/native-1791253306487720300/report.json": "4bc3fc038a81522a36d6aabeecaabbadb846a6e195ba0f1523bb8c75bfa47c76",
+    "implementation/warlock-client-provider-native-v23/qa/native-1791252749472257123/report.json": "46c78af0dfe71d1e2d9c78272aa213dbbb16d1880dfdb1f63015faae6546b4fb",
+    "implementation/warlock-client-provider-native-v24/qa/preflight.json": "6bd220b2b11d0f686b4a84000496c8e50dd998ae4164acd9255755441790e86a"
+  },
+  "nativeControls": 951,
+  "normalOwnedExits": 110,
+  "nativeSiblingHeldResumptionQualified": true,
+  "actualNewGTKGateQualification": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "next": "Actual shared retained Historical new-lease GUI; production family preview13 and all original coherent GUI release gates"
+}

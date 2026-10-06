@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "7f6f4cce434245cf9857aab8247b3832",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-06T02:27:50.189405+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/warlock-client-provider-native-v26",
+  "nextWork": [
+    "Native25 protected90851 terminal1 retained; shared Historical newlease and real second snapshot occurred, check assumed pre-pointer content52 stays unchanged but coherent reopened native seed has content53. Early failing cleanup normal-exit assertions also retained (owned children terminated by protected teardown, private cleanup complete). Fresh26 independently queries reopened stopped scope and requires exact seed/currentcontext with nonregressing scene/content; original packet/job/token/expiry/no-recapture checks unchanged. Failure cleanup waits original6sec for actual admitted owner original expiry/drain before terminating host. Prepare then serialize native26. Native24 PASS951 held23 and full release gates remain."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/warlock-client-provider-native-v25/qa/native-1791253574564906597/report.json",
+      "sha256": "2679c05e34a0a600bd31a6144dc85854414706b96f01edf34a98d9b49207da63",
+      "size": 946449
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v26/DERIVATION.json",
+      "sha256": "690a0e3771485c36ba39cd0eb8c60deef76ac8ee427861eabd4d63099d3acc7e",
+      "size": 628
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}
