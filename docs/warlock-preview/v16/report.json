@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "passed": true,
+  "components": [
+    {
+      "path": "implementation/warlock-preview-provider-v18/component-manifest.json",
+      "sha256": "47310eacc0070928839bfa3677c650ff6b8fe1d556d8ee1e5a3758839e57f340",
+      "files": 503
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v10/component-manifest.json",
+      "sha256": "204525372c8633ec862415a285048b9eb064a399244b5085e95e95fe490effc4",
+      "files": 198
+    },
+    {
+      "path": "implementation/warlock-source-presenter-model-v5/component-manifest.json",
+      "sha256": "4e14ff83d185b6284c7ff7e1d691d38a89e1ef53131bbc1e72b2a46d7c624de0",
+      "files": 218
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v11/component-manifest.json",
+      "sha256": "19ba3f7886fe989f76abfd4e541871381a6501f40d1255fc1dd8e5f20f7ede32",
+      "files": 206
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v19/component-manifest.json",
+      "sha256": "0448236366f9ac951fd95367625e0471813910f2a56717d1fa4cc3df02fcb20a",
+      "files": 503
+    }
+  ],
+  "evidence": {
+    "implementation/warlock-preview-provider-v18/qa/build-1791245775650363441/report.json": "1769a2abce7e84d0711d1ae5785e034b8d56876bcbf8134b3ba4ce7de78acf5b",
+    "implementation/warlock-preview-provider-v19/qa/build-1791246550190438668/report.json": "68eb2bbe7ea073ab5fc5fd9a5fe010d73477687f3bf075b02d1ee331c91eeced",
+    "implementation/warlock-client-provider-native-v11/qa/native-1791246651449352688/report.json": "a306d53ff811c9e35a9c50ab08e3686959a5f3cdc82cd4725fd5f77936bbe2a2",
+    "implementation/warlock-source-presenter-model-v5/qa/check-1791246279881456886/report.json": "7d518ff89c9bcfbbcfc3cf62c241809a2bb8b4469433aca4468e87123fdea665",
+    "implementation/warlock-client-provider-native-v10/qa/native-1791246438045077944/report.json": "0ae756365b3d5ce6123ad88a2dca00f8d0ce1faf0be8c947ec4354356710250e"
+  },
+  "boundedNativeFreshDemandQualified": true,
+  "nativeControls": 857,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "next": "Actual native stopped/minimized source and Historical retention; then production multi-family/fidelity original preview13 and all remaining coherent GUI release gates"
+}

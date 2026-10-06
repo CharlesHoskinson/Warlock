@@ -1,0 +1,12 @@
+
+  source_tests
+    ok clientRejectsMonitorWithOwner passed 1 test(s)
+    ok clientRejectsLegacyWithOwner passed 1 test(s)
+    ok monitorRejectsClient passed 1 test(s)
+    ok legacyRejectsTypedUpgrade passed 1 test(s)
+    ok sameClientAdmitsNewFacts passed 1 test(s)
+    ok malformedPreservesOwner passed 1 test(s)
+    ok closeRetainsOwner passed 1 test(s)
+    ok closedCannotEnroll passed 1 test(s)
+
+  8 passing (10ms)

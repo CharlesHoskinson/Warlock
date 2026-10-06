@@ -1,0 +1,13 @@
+module resume_tests {
+ import resumes.* from "./resumes"
+ action check(ok:bool):bool=all{assert(ok and safety),s'=s}
+ run freshLeaseReservesSecondAndDrains=init.then(fire(Seed)).then(fire(Request)).then(fire(Capture)).then(fire(DenyLocked)).then(fire(Drain)).then(fire(Ack)).then(fire(Reopen)).then(fire(Reserve)).then(fire(Recapture)).then(fire(Expire)).then(fire(Drain)).then(fire(Ack)).then(check(s.floor==2 and s.records==0 and not(s.charged)))
+ run physicalChargeBlocksResume=init.then(fire(Seed)).then(fire(Request)).then(fire(Capture)).then(fire(DenyLocked)).then(fire(Reopen)).then(fire(Reserve)).then(check(s.floor==1 and s.charged and not(s.ready) and s.commands==List()))
+ run terminalJournalBlocksUntilExactAck=init.then(fire(Seed)).then(fire(Request)).then(fire(Capture)).then(fire(DenyLocked)).then(fire(Drain)).then(fire(Reopen)).then(fire(Reserve)).then(check(s.floor==1 and s.records==1)).then(fire(Ack)).then(fire(Reserve)).then(check(s.floor==2 and s.capturing))
+ run oldLeaseCannotReserveNewJob=init.then(fire(Seed)).then(fire(Request)).then(fire(Capture)).then(fire(DenyLocked)).then(fire(Drain)).then(fire(Ack)).then(fire(OldLease)).then(check(s.floor==1 and s.records==0 and not(s.ready)))
+ run staleScopeCannotReserveNewJob=init.then(fire(Seed)).then(fire(Request)).then(fire(Capture)).then(fire(DenyLocked)).then(fire(Drain)).then(fire(Ack)).then(fire(Reopen)).then(fire(StaleScope)).then(check(s.floor==1 and s.records==0 and not(s.ready)))
+ run foreignScopeCannotReserveNewJob=init.then(fire(Seed)).then(fire(Request)).then(fire(Capture)).then(fire(DenyLocked)).then(fire(Drain)).then(fire(Ack)).then(fire(Reopen)).then(fire(ForeignScope)).then(check(s.floor==1 and s.records==0 and not(s.ready)))
+ run costlySourceDoesNotIncreaseBudget=init.then(fire(Seed)).then(fire(Request)).then(fire(Capture)).then(fire(DenyLocked)).then(fire(Drain)).then(fire(Ack)).then(fire(Reopen)).then(fire(TooCostly)).then(check(s.floor==1 and s.records==0 and not(s.charged)))
+ run oldDenialCannotRevokeNewCapturingOwner=init.then(fire(Seed)).then(fire(Request)).then(fire(Capture)).then(fire(DenyLocked)).then(fire(Drain)).then(fire(Ack)).then(fire(Reopen)).then(fire(Reserve)).then(fire(LateDenied)).then(check(s.floor==2 and s.ready and s.capturing and s.charged and s.commands==List()))
+ run oldTerminalAckCannotEraseNewOwner=init.then(fire(Seed)).then(fire(Request)).then(fire(Capture)).then(fire(DenyLocked)).then(fire(Drain)).then(fire(Ack)).then(fire(Reopen)).then(fire(Reserve)).then(fire(Recapture)).then(fire(LateAck)).then(check(s.floor==2 and s.accepted and s.charged and s.records==1))
+}

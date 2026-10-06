@@ -1,0 +1,7 @@
+{
+  "parent": "implementation/warlock-client-provider-native-v10",
+  "failedReport": "implementation/warlock-client-provider-native-v10/qa/native-1791246438045077944/report.json",
+  "failedReportSHA256": "0ae756365b3d5ce6123ad88a2dca00f8d0ce1faf0be8c947ec4354356710250e",
+  "provider": "implementation/warlock-preview-provider-v19",
+  "change": "Retain all original828 plus every v10 recovery oracle. Use actual command-time physical status and wait for completion after the exact second ACK, not earlier old completion lines. Original six-second bound unchanged."
+}

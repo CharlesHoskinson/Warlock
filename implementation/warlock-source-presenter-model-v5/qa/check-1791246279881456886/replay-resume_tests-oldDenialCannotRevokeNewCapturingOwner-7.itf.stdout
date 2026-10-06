@@ -1,0 +1,10 @@
+{"state":"unavailable","known":0,"capturing":false,"accepted":false,"retiring":0,"demand":false,"ready":true,"commands":[],"broker":{"readable":false,"charged":false,"records":0,"cleanup":false,"floor":0}}
+{"state":"unavailable","known":0,"capturing":false,"accepted":false,"retiring":0,"demand":true,"ready":true,"commands":[],"broker":{"readable":false,"charged":false,"records":0,"cleanup":false,"floor":0}}
+{"state":"loading","known":1,"capturing":true,"accepted":false,"retiring":0,"demand":true,"ready":true,"commands":["acquire"],"broker":{"readable":false,"charged":true,"records":1,"cleanup":false,"floor":1}}
+{"state":"live","known":1,"capturing":false,"accepted":true,"retiring":0,"demand":true,"ready":true,"commands":[],"broker":{"readable":true,"charged":true,"records":1,"cleanup":false,"floor":1}}
+{"state":"unavailable","known":1,"capturing":false,"accepted":false,"retiring":1,"demand":true,"ready":false,"commands":["release"],"broker":{"readable":false,"charged":true,"records":1,"cleanup":true,"floor":1}}
+{"state":"unavailable","known":0,"capturing":false,"accepted":false,"retiring":0,"demand":true,"ready":false,"commands":["acknowledge"],"broker":{"readable":false,"charged":false,"records":1,"cleanup":true,"floor":1}}
+{"state":"unavailable","known":0,"capturing":false,"accepted":false,"retiring":0,"demand":true,"ready":false,"commands":[],"broker":{"readable":false,"charged":false,"records":0,"cleanup":false,"floor":1}}
+{"state":"unavailable","known":0,"capturing":false,"accepted":false,"retiring":0,"demand":false,"ready":false,"commands":[],"broker":{"readable":false,"charged":false,"records":0,"cleanup":false,"floor":1}}
+{"state":"loading","known":1,"capturing":true,"accepted":false,"retiring":0,"demand":true,"ready":true,"commands":["acquire"],"broker":{"readable":false,"charged":true,"records":1,"cleanup":false,"floor":2}}
+{"state":"loading","known":1,"capturing":true,"accepted":false,"retiring":0,"demand":true,"ready":true,"commands":[],"broker":{"readable":false,"charged":true,"records":1,"cleanup":false,"floor":2}}
