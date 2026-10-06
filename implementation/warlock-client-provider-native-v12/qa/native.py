@@ -332,6 +332,50 @@ try:
    check('resumedBothExactElmReleaseAndACK6',len(releases)==2 and releases[0]['job']==recoveryPacket['job'] and releases[1]=={**newer,'signaled':True} and acks()==[{'kind':'acknowledge','job':recoveryPacket['job'],'sequence':'3'},{'kind':'acknowledge','job':newer['job'],'sequence':'6'}])
    check('resumedNewPhysicalRetirementBeforeACK6',any(row['job']==newer['job'] and row['charge']=='0' and row['producerRetired'] for row in ownership()) and fullLog().index('native-client-command: '+json.dumps({'kind':'release','frame':releases[1]},separators=(',',':')))<fullLog().index('native-client-ack: '+json.dumps(acks()[1],separators=(',',':')))<fullLog().rindex('native-client-complete:'))
    web.terminate();web.wait(timeout=5);check('resumedFullHostNormalExit',web.returncode==0 and 'shared-host-exit: failure=0 rendered=1' in fullLog() and 'Native client teardown incomplete:' not in fullLog())
+   # Stop is real native minimization, distinct from retirement of owned pixels.
+   stoppedPacket=openQualification('stopped')
+   firstStoppedSeed=next(event for event in events() if event['kind']=='source-seed')
+   stoppedPixels=decodeSnapshot('stopped-original',private/'stopped-webkit-client.png')
+   check('stoppedOriginalBluePixels',stoppedPixels['blue']==32*24 and stoppedPixels['yellow']==0 and stoppedPixels['green']==0,pixels=stoppedPixels)
+   effectSequence=0
+   def actualEffect(operation):
+    global effectSequence
+    effectSequence+=1;facts=request('scene-facts-request',minimumWatermark='0')
+    intent={'request':str(effectSequence),'generation':str(effectSequence),'incarnation':subject,'operation':operation,'context':{'lifetime':attached['binding']['lifetime'],'epoch':attached['binding']['frontend'],'output':facts['outputGeneration'],'revision':facts['revision']}}
+    result=observe({'protocolVersion':3,'kind':'window-effect','binding':attached['binding'],'effectProtocol':1,'intent':intent})
+    check('stopped'+operation.title()+'ExactCommittedNativeEffect',result.get('kind')=='effect-outcome' and result['binding']==attached['binding'] and result['intent']==intent and result['status']=='Committed' and result['reason']=='applied',outcome=result)
+    return result
+   minimizeOutcome=actualEffect('minimize')
+   minimizedFacts=request('scene-facts-request',minimumWatermark='0');minimizedMember=next(row for row in minimizedFacts['facts']['windows'] if row['incarnation']==subject)
+   check('stoppedActualFirstClassMinimized',minimizedMember['minimized'] is True,window=minimizedMember,outcome=minimizeOutcome)
+   stoppedScope=sourceScope()
+   check('stoppedActualPresentNotSourceLive',stoppedScope['present'] and not stoppedScope['sourceLive'] and not stoppedScope['locked'] and stoppedScope['gpuReady'] and int(stoppedScope['context']['scene'])>int(firstStoppedSeed['source']['scope']['context']['scene']),scope=stoppedScope)
+   def stoppedObservation():
+    return next((event for event in events() if event['kind']=='source-seed' and event['source']['scope']['sourceLive'] is False),None)
+   stoppedSeed=wait(stoppedObservation)
+   check('stoppedOwnCoherentNativeScope',stoppedSeed['identity']==firstStoppedSeed['identity'] and stoppedSeed['source']['binding']==firstStoppedSeed['source']['binding'] and stoppedSeed['source']['previewEligible'] is False and stoppedSeed['source']['scope']['context']==stoppedScope['context'],source=stoppedSeed)
+   def stoppedHistorical():
+    rows=[json.loads(line[len('surface-report: origin=popup '):]) for line in fullLog().splitlines() if line.startswith('surface-report: origin=popup ')]
+    return next((row for row in rows if row['body']['publication']==stoppedSeed['publication'] and row['body']['lease']==stoppedSeed['lease'] and 'Historical preview' in row['body']['text']),None)
+   historical=wait(stoppedHistorical)
+   check('stoppedActualElmHistoricalVisible',historical is not None,report=historical)
+   offers=[event['event']['frame'] for event in events() if event['kind']=='event' and event['event']['kind']=='offer']
+   check('stoppedNoRecaptureOrLifetimeRenewal',offers==[stoppedPacket] and len([line for line in fullLog().splitlines() if line.startswith('native-client-command: {"kind":"acquire"')])==1 and 'native-client-command: {"kind":"release"' not in fullLog())
+   images=[json.loads(line[len('native-client-image: '):]) for line in fullLog().splitlines() if line.startswith('native-client-image: ')]
+   check('stoppedOriginalURIAndPixelsRetained',images and all(len(row)==1 and row[0]['uri']=='elm-shell://preview/'+stoppedPacket['handle'] and row[0]['naturalWidth']==320 and row[0]['naturalHeight']==240 for row in images),images=images)
+   check('stoppedIndependentOriginalPhysicalOwnership',any(row['job']==stoppedPacket['job'] and int(row['charge'])>0 and row['records']==1 and not row['mappedFDClosed'] and not row['producerRetired'] for row in ownership()))
+   denied=request('preview-client-scoped-request',subjectIncarnation=subject,deadlineNs=str(int(stoppedScope['now'])+2000000000),context=stoppedScope['context'])
+   check('stoppedNativeRefusesNewCapture',denied.get('kind')=='refused' and denied.get('reason')=='preview-client-source-unavailable',reply=denied)
+   wait(lambda:'native-client-complete: physical=0 journal=0 previewEligible=0' in fullLog())
+   expired=[event['event']['frame'] for event in events() if event['kind']=='event' and event['event']['kind']=='expired']
+   check('stoppedOriginalExpiryAndJob',len(expired)==1 and expired[0]['job']==stoppedPacket['job'] and expired[0]['handle']==stoppedPacket['handle'] and expired[0]['expires']==stoppedPacket['expires'])
+   retainedOriginal('stopped',stoppedPacket)
+   check('stoppedActualPhysicalBeforeExactACK3',acks()==[{'kind':'acknowledge','job':stoppedPacket['job'],'sequence':'3'}] and any(row['job']==stoppedPacket['job'] and row['charge']=='0' and row['producerRetired'] for row in ownership()))
+   # End this owned popup before a focus-changing restore is requested.
+   web.terminate();web.wait(timeout=5);check('stoppedFullHostNormalExit',web.returncode==0 and 'shared-host-exit: failure=0 rendered=1' in fullLog())
+   restoreOutcome=actualEffect('restore');restoredFacts=request('scene-facts-request',minimumWatermark='0');restoredMember=next(row for row in restoredFacts['facts']['windows'] if row['incarnation']==subject)
+   check('stoppedActuallyRestoredOriginalSource',restoredMember['minimized'] is False and restoredMember['workspace']==minimizedMember['workspace'],window=restoredMember,outcome=restoreOutcome)
+   liveAgain=sourceScope();check('stoppedSourceActuallyLiveAgain',liveAgain['present'] and liveAgain['sourceLive'] and int(liveAgain['context']['scene'])>int(stoppedScope['context']['scene']),scope=liveAgain)
    sourceBefore=request('scene-facts-request',minimumWatermark='0');oldIDs={w['incarnation'] for w in sourceBefore['facts']['windows']}
    witnessSource=s.host.launch('gone-witness-source',[pre['fixtureClient']],env=dict(env,WARLOCK_CHILD_CONTROL_PATH=str(private/'gone-source-control')))
    wait(lambda:len(s.data('clients'))==4)
@@ -368,6 +412,7 @@ try:
    if loaded:wait(lambda:not s.data('clients'));check('clientsEmptyBeforePluginUnload',not s.data('clients'));check('pluginUnloadsAfterConsumers',s.ctl('plugin','unload',plugin).strip()=='ok');loaded=False
  r['ownedExitCodes']=[{'name':row['name'],'pid':row['pid'],'start':row['start'],'exitCode':p.returncode} for p,row in s.host.processes];check('allOwnedProcessesNormalExit',all(row['exitCode']==0 for row in r['ownedExitCodes']),exits=r['ownedExitCodes'])
  baseline=json.loads(pathlib.Path(pre['retainedNativeReport']).read_text());names=[row['name'] for row in baseline['checks']];check('allOriginal828OrderedAssertionsRetained',len(names)==828 and [row['name'] for row in r['checks'] if row['name'] in set(names)]==names)
+ freshBaseline=json.loads(pathlib.Path(pre['retainedFreshDemandReport']).read_text());freshNames=[row['name'] for row in freshBaseline['checks']];check('allOriginal857OrderedAssertionsRetained',len(freshNames)==857 and [row['name'] for row in r['checks'] if row['name'] in set(freshNames)]==freshNames)
 except Exception as error:r.update(passed=False,error=repr(error),traceback=traceback.format_exc())
 finally:
  if s:

@@ -1,0 +1,14 @@
+
+  historical_tests
+    ok retainedStoppedFrameReopensAndDrains passed 1 test(s)
+    ok hiddenOwnerObservesStoppedThenReopens passed 1 test(s)
+    ok oldLeaseCannotRebindHistorical passed 1 test(s)
+    ok missingPublicationCannotRebindHistorical passed 1 test(s)
+    ok foreignScopeCannotRebindHistorical passed 1 test(s)
+    ok changedExpiryCannotAliasHistorical passed 1 test(s)
+    ok unknownCleanupCannotReplayOnReopen passed 1 test(s)
+    ok expiredPacketCannotRebindHistorical passed 1 test(s)
+    ok terminalJournalCannotRebindHistorical passed 1 test(s)
+    ok heldHistoricalReaderBlocksRetirement passed 1 test(s)
+
+  10 passing (16ms)

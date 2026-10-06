@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "passed": true,
+  "components": [
+    {
+      "path": "implementation/warlock-client-provider-native-v12/component-manifest.json",
+      "sha256": "33af9940b2858e85e8b639ae9671b8f39b5dd03e70affa5885f8615640f87869",
+      "files": 204
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v20/component-manifest.json",
+      "sha256": "08f83010d4a58d85bbf89990cbd8fafe8619c11c90e1e12ab433ddc59b38f089",
+      "files": 495
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v13/component-manifest.json",
+      "sha256": "0add73a80d19dbcbabe73594e4c8753652f6659d77b2284285e2a86443ce1704",
+      "files": 15
+    },
+    {
+      "path": "implementation/warlock-source-presenter-model-v6/component-manifest.json",
+      "sha256": "ba71ffd74ff7c1cce48ee65674312ed722f74945554e37198cc27b741769de9e",
+      "files": 264
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v14/component-manifest.json",
+      "sha256": "27d362e49a2fbce3075295a380e669813a91b320a3a14e5faf443da9abb75941",
+      "files": 213
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v21/component-manifest.json",
+      "sha256": "80fc851e2bbe1de80b776300afe2904566955b0d962c12d83b5753c658669dbc",
+      "files": 510
+    }
+  ],
+  "evidence": {
+    "implementation/warlock-preview-provider-v21/qa/build-1791247389209321576/report.json": "f77fa87890dc7167ba584e22c4623d6c23caba57c59bf793edfc2b7f92e72480",
+    "implementation/warlock-client-provider-native-v14/qa/native-1791247665571383988/report.json": "c7d672d49a25800f7503cfc9c48d304301678443d9bc08d5a30e67819fb3caef",
+    "implementation/warlock-source-presenter-model-v6/qa/check-1791247602360619293/report.json": "5f60943c9c22d3ec4a276ef4a18d9962f24ba157362863dd289b1498421a3912",
+    "implementation/warlock-client-provider-native-v12/qa/native-1791247004234576394/report.json": "7e2504bdd2b7f53cdae9d98d840b0a06ab5799b8456fcb88f49223f5da85cf5f",
+    "implementation/warlock-preview-provider-v20/qa/build-1791247271999199307/report.json": "3689e73457d582bc813851d84785782cdd22985315fb127940c76e74f0153716"
+  },
+  "boundedNativeStoppedHistoricalQualified": true,
+  "nativeControls": 883,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "next": "Production multi-family and decor/modal/minimized fidelity original preview13, physical async fencing and measured budgets; all remaining coherent GUI release gates"
+}

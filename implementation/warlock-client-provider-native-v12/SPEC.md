@@ -6,7 +6,7 @@ original six-second observation/three-second socket/five-second process bounds.
 
 After a new full Main/Bar/Popup host obtains a real original native client
 packet, actually minimize the private source window through its authenticated
-native effect protocol. Require definitive matching Applied outcome and actual
+native effect protocol. Require definitive matching Committed/applied outcome and actual
 minimized scene facts, no workspace/scratchpad substitution. Observe own native
 present/sourceLive false facts with coherent scene revision. Confirm actual Elm
 Historical preview while its current picker representation remains eligible;

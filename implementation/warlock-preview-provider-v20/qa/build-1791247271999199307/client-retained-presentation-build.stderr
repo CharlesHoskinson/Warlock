@@ -1,0 +1,14 @@
+native/client-retained-presentation-test.cpp: In function ‘int main()’:
+native/client-retained-presentation-test.cpp:27:9: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+   27 |         if(mutation==2)invalid.scope.now++;if(mutation==3)invalid.kind=SourceObservation::Kind::UnqualifiedRootMonitorPlane;if(mutation==4)invalid.previewEligible=true;
+      |         ^~
+native/client-retained-presentation-test.cpp:27:44: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   27 |         if(mutation==2)invalid.scope.now++;if(mutation==3)invalid.kind=SourceObservation::Kind::UnqualifiedRootMonitorPlane;if(mutation==4)invalid.previewEligible=true;
+      |                                            ^~
+native/client-retained-presentation-test.cpp:32:9: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+   32 |         if(mutation==3)invalid.expires++;if(mutation==4)invalid.coverage=15;if(mutation==5)invalid.fidelity=Packet::Fidelity::Family;if(mutation==6)invalid.job.deadline++;
+      |         ^~
+native/client-retained-presentation-test.cpp:32:42: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   32 |         if(mutation==3)invalid.expires++;if(mutation==4)invalid.coverage=15;if(mutation==5)invalid.fidelity=Packet::Fidelity::Family;if(mutation==6)invalid.job.deadline++;
+      |                                          ^~
+cc1plus: all warnings being treated as errors

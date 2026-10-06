@@ -25,6 +25,7 @@ try:
   for rel,h in compiled['artifacts'].items():p=report.parent/rel;assert sha(p)==h;inputs[str(p)]=h
   binaryKey='client' if key=='lockFixture' else 'binary';pre[key]=compiled[binaryKey];pre[key+'Report']=str(report)
  retained=REPO/'implementation/warlock-client-provider-native-v9/qa/native-1791244709653558848/report.json';baseline=json.loads(retained.read_text());assert baseline['passed'] and len(baseline['checks'])==828;inputs[str(retained)]=sha(retained);pre['retainedNativeReport']=str(retained)
+ freshRetained=REPO/'implementation/warlock-client-provider-native-v11/qa/native-1791246651449352688/report.json';freshBaseline=json.loads(freshRetained.read_text());assert freshBaseline['passed'] and len(freshBaseline['checks'])==857;inputs[str(freshRetained)]=sha(freshRetained);pre['retainedFreshDemandReport']=str(freshRetained)
  pre.update(inputs=inputs,fullHostBinary=str(binary),fullHostAssets=str(assets),fullHostBackend=str(build.parent/'inputs/adapter/daemon.py'),fullHostBuildReport=str(build),pointer=str(pointer))
  for p in (build.parent/'inputs/adapter').glob('*.py'):inputs[str(p)]=sha(p)
  assert all(sha(p)==h for p,h in inputs.items())
