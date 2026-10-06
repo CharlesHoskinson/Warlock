@@ -1,0 +1,585 @@
+{
+  "passed": true,
+  "inputs": {
+    "assets/retained-preview-controls.js": "64bb384ee03acbb59619f78f3b931b922ed008d14006133b7294e864b92e93e5",
+    "qa/control-outbox-confirmation-replay.js": "3aee1eef90cf894c0d52e4c8e10ae8e55876ff148c734fbc36ef0b5b12544aea",
+    "qa/control-outbox-confirmation-model-check.py": "89f2201ebbc8d0a8f379da4aedf1499d1623c8c7569798852c49ccd260e235f0",
+    "spec/control_outbox_confirmation.qnt": "8375fe11d9e2cdb79e7b99360cdd5ca0c78b2bc4d0f07579413dcc13f27be1b8",
+    "spec/control_outbox_confirmation_tests.qnt": "b60aa689e686e274d632d1083106b273d2f5c84deea0a36273f316e0a82bbd0d"
+  },
+  "commands": [
+    {
+      "name": "syntax",
+      "argv": [
+        "node",
+        "--check",
+        "assets/retained-preview-controls.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "control_outbox_confirmation_tests.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "control_outbox_confirmation_tests.qnt",
+        "--main=control_outbox_confirmation_tests",
+        "--backend=typescript",
+        "--match=^(exactPacketRetriesAtSameOrdinal|noOvertakingWhileReceiptMissing|queueBackpressureConsumesNoOrdinal|failedPostPreservesQueuedPacket|gapReceiptCannotReleaseQueue|foreignEpochCannotReleaseQueue|foreignBindingCannotReleaseQueue|confirmedPacketReleasesOnlyHead|duplicateReceiptCannotAdvanceAgain|finalOrdinalRetainedWithoutWrap|emptyQueueRetriesLostConfirmation|oldReceiptRepeatsLatestCompactConfirmation|dataAndConfirmationRetryAreBounded)$",
+        "--seed=960061",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-outbox-confirmation-model-check-1791330616698785550/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "samples",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "control_outbox_confirmation.qnt",
+        "--main=control_outbox",
+        "--backend=typescript",
+        "--invariant=safety",
+        "--seed=960062",
+        "--max-samples=200",
+        "--max-steps=30",
+        "--n-traces=12",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-outbox-confirmation-model-check-1791330616698785550/sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-confirmedPacketReleasesOnlyHead-7.itf",
+      "argv": [
+        "node",
+        "qa/control-outbox-confirmation-replay.js",
+        "assets/retained-preview-controls.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-outbox-confirmation-model-check-1791330616698785550/named-confirmedPacketReleasesOnlyHead-7.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-dataAndConfirmationRetryAreBounded-12.itf",
+      "argv": [
+        "node",
+        "qa/control-outbox-confirmation-replay.js",
+        "assets/retained-preview-controls.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-outbox-confirmation-model-check-1791330616698785550/named-dataAndConfirmationRetryAreBounded-12.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-duplicateReceiptCannotAdvanceAgain-8.itf",
+      "argv": [
+        "node",
+        "qa/control-outbox-confirmation-replay.js",
+        "assets/retained-preview-controls.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-outbox-confirmation-model-check-1791330616698785550/named-duplicateReceiptCannotAdvanceAgain-8.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-emptyQueueRetriesLostConfirmation-10.itf",
+      "argv": [
+        "node",
+        "qa/control-outbox-confirmation-replay.js",
+        "assets/retained-preview-controls.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-outbox-confirmation-model-check-1791330616698785550/named-emptyQueueRetriesLostConfirmation-10.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-exactPacketRetriesAtSameOrdinal-0.itf",
+      "argv": [
+        "node",
+        "qa/control-outbox-confirmation-replay.js",
+        "assets/retained-preview-controls.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-outbox-confirmation-model-check-1791330616698785550/named-exactPacketRetriesAtSameOrdinal-0.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-failedPostPreservesQueuedPacket-3.itf",
+      "argv": [
+        "node",
+        "qa/control-outbox-confirmation-replay.js",
+        "assets/retained-preview-controls.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-outbox-confirmation-model-check-1791330616698785550/named-failedPostPreservesQueuedPacket-3.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-finalOrdinalRetainedWithoutWrap-9.itf",
+      "argv": [
+        "node",
+        "qa/control-outbox-confirmation-replay.js",
+        "assets/retained-preview-controls.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-outbox-confirmation-model-check-1791330616698785550/named-finalOrdinalRetainedWithoutWrap-9.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-foreignBindingCannotReleaseQueue-6.itf",
+      "argv": [
+        "node",
+        "qa/control-outbox-confirmation-replay.js",
+        "assets/retained-preview-controls.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-outbox-confirmation-model-check-1791330616698785550/named-foreignBindingCannotReleaseQueue-6.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-foreignEpochCannotReleaseQueue-5.itf",
+      "argv": [
+        "node",
+        "qa/control-outbox-confirmation-replay.js",
+        "assets/retained-preview-controls.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-outbox-confirmation-model-check-1791330616698785550/named-foreignEpochCannotReleaseQueue-5.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-gapReceiptCannotReleaseQueue-4.itf",
+      "argv": [
+        "node",
+        "qa/control-outbox-confirmation-replay.js",
+        "assets/retained-preview-controls.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-outbox-confirmation-model-check-1791330616698785550/named-gapReceiptCannotReleaseQueue-4.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-noOvertakingWhileReceiptMissing-1.itf",
+      "argv": [
+        "node",
+        "qa/control-outbox-confirmation-replay.js",
+        "assets/retained-preview-controls.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-outbox-confirmation-model-check-1791330616698785550/named-noOvertakingWhileReceiptMissing-1.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-oldReceiptRepeatsLatestCompactConfirmation-11.itf",
+      "argv": [
+        "node",
+        "qa/control-outbox-confirmation-replay.js",
+        "assets/retained-preview-controls.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-outbox-confirmation-model-check-1791330616698785550/named-oldReceiptRepeatsLatestCompactConfirmation-11.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-queueBackpressureConsumesNoOrdinal-2.itf",
+      "argv": [
+        "node",
+        "qa/control-outbox-confirmation-replay.js",
+        "assets/retained-preview-controls.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-outbox-confirmation-model-check-1791330616698785550/named-queueBackpressureConsumesNoOrdinal-2.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-0.itf",
+      "argv": [
+        "node",
+        "qa/control-outbox-confirmation-replay.js",
+        "assets/retained-preview-controls.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-outbox-confirmation-model-check-1791330616698785550/sample-0.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-1.itf",
+      "argv": [
+        "node",
+        "qa/control-outbox-confirmation-replay.js",
+        "assets/retained-preview-controls.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-outbox-confirmation-model-check-1791330616698785550/sample-1.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-10.itf",
+      "argv": [
+        "node",
+        "qa/control-outbox-confirmation-replay.js",
+        "assets/retained-preview-controls.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-outbox-confirmation-model-check-1791330616698785550/sample-10.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-11.itf",
+      "argv": [
+        "node",
+        "qa/control-outbox-confirmation-replay.js",
+        "assets/retained-preview-controls.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-outbox-confirmation-model-check-1791330616698785550/sample-11.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-2.itf",
+      "argv": [
+        "node",
+        "qa/control-outbox-confirmation-replay.js",
+        "assets/retained-preview-controls.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-outbox-confirmation-model-check-1791330616698785550/sample-2.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-3.itf",
+      "argv": [
+        "node",
+        "qa/control-outbox-confirmation-replay.js",
+        "assets/retained-preview-controls.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-outbox-confirmation-model-check-1791330616698785550/sample-3.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-4.itf",
+      "argv": [
+        "node",
+        "qa/control-outbox-confirmation-replay.js",
+        "assets/retained-preview-controls.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-outbox-confirmation-model-check-1791330616698785550/sample-4.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-5.itf",
+      "argv": [
+        "node",
+        "qa/control-outbox-confirmation-replay.js",
+        "assets/retained-preview-controls.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-outbox-confirmation-model-check-1791330616698785550/sample-5.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-6.itf",
+      "argv": [
+        "node",
+        "qa/control-outbox-confirmation-replay.js",
+        "assets/retained-preview-controls.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-outbox-confirmation-model-check-1791330616698785550/sample-6.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-7.itf",
+      "argv": [
+        "node",
+        "qa/control-outbox-confirmation-replay.js",
+        "assets/retained-preview-controls.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-outbox-confirmation-model-check-1791330616698785550/sample-7.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-8.itf",
+      "argv": [
+        "node",
+        "qa/control-outbox-confirmation-replay.js",
+        "assets/retained-preview-controls.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-outbox-confirmation-model-check-1791330616698785550/sample-8.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-9.itf",
+      "argv": [
+        "node",
+        "qa/control-outbox-confirmation-replay.js",
+        "assets/retained-preview-controls.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-outbox-confirmation-model-check-1791330616698785550/sample-9.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "skip-frontend-confirmation-syntax",
+      "argv": [
+        "node",
+        "--check",
+        "assets/retained-preview-controls.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "forget-empty-queue-confirmation-retry-syntax",
+      "argv": [
+        "node",
+        "--check",
+        "assets/retained-preview-controls.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-packet-on-old-receipt-syntax",
+      "argv": [
+        "node",
+        "--check",
+        "assets/retained-preview-controls.js"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "Actual bounded JS queue, issued/confirmed prefixes, exact immutable repeated wire, ordered transmission attempts and results against explicitly selected Quint traces. Boundary uses an explicit initial-counter fixture. No native admission cleanup reservations, actual WebKit activation or effect/physical acceptance.",
+  "namedScenarios": 13,
+  "invariantSamples": 200,
+  "coupledTraces": [
+    {
+      "trace": "named-confirmedPacketReleasesOnlyHead-7.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-dataAndConfirmationRetryAreBounded-12.itf.json",
+      "statesCompared": 4
+    },
+    {
+      "trace": "named-duplicateReceiptCannotAdvanceAgain-8.itf.json",
+      "statesCompared": 4
+    },
+    {
+      "trace": "named-emptyQueueRetriesLostConfirmation-10.itf.json",
+      "statesCompared": 6
+    },
+    {
+      "trace": "named-exactPacketRetriesAtSameOrdinal-0.itf.json",
+      "statesCompared": 2
+    },
+    {
+      "trace": "named-failedPostPreservesQueuedPacket-3.itf.json",
+      "statesCompared": 5
+    },
+    {
+      "trace": "named-finalOrdinalRetainedWithoutWrap-9.itf.json",
+      "statesCompared": 4
+    },
+    {
+      "trace": "named-foreignBindingCannotReleaseQueue-6.itf.json",
+      "statesCompared": 2
+    },
+    {
+      "trace": "named-foreignEpochCannotReleaseQueue-5.itf.json",
+      "statesCompared": 2
+    },
+    {
+      "trace": "named-gapReceiptCannotReleaseQueue-4.itf.json",
+      "statesCompared": 2
+    },
+    {
+      "trace": "named-noOvertakingWhileReceiptMissing-1.itf.json",
+      "statesCompared": 2
+    },
+    {
+      "trace": "named-oldReceiptRepeatsLatestCompactConfirmation-11.itf.json",
+      "statesCompared": 5
+    },
+    {
+      "trace": "named-queueBackpressureConsumesNoOrdinal-2.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "sample-0.itf.json",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-1.itf.json",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-10.itf.json",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-11.itf.json",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-2.itf.json",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-3.itf.json",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-4.itf.json",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-5.itf.json",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-6.itf.json",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-7.itf.json",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-8.itf.json",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-9.itf.json",
+      "statesCompared": 30
+    }
+  ],
+  "statesCompared": 404,
+  "unsafeActualJSVariantsDetected": 3,
+  "mutants": [
+    {
+      "name": "skip-frontend-confirmation",
+      "syntaxPassed": true,
+      "witness": "confirmedPacketReleasesOnlyHead",
+      "namedObservableMismatch": true
+    },
+    {
+      "name": "forget-empty-queue-confirmation-retry",
+      "syntaxPassed": true,
+      "witness": "emptyQueueRetriesLostConfirmation",
+      "namedObservableMismatch": true
+    },
+    {
+      "name": "replay-packet-on-old-receipt",
+      "syntaxPassed": true,
+      "witness": "duplicateReceiptCannotAdvanceAgain",
+      "namedObservableMismatch": true
+    }
+  ],
+  "artifacts": {
+    "syntax.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "syntax.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-exactPacketRetriesAtSameOrdinal-0.itf.json": "eb61d4fa2ea6f66566d7afd830f727ad73c2f8c9c65ce570e4b13dd6bfaa5614",
+    "named-noOvertakingWhileReceiptMissing-1.itf.json": "1c598ccc0aa8484a8bf8fe2a18d2b1b4d125ef75879fe688a94e34e095145ce5",
+    "named-queueBackpressureConsumesNoOrdinal-2.itf.json": "30140440917ff37e8f1a3125cf1804107cd5be4a679f3bc340d0afc96e62c032",
+    "named-failedPostPreservesQueuedPacket-3.itf.json": "c1eceea56e55b312cf69abe42836b42a39028a617c2873c3ded7e0dc9f992d3a",
+    "named-gapReceiptCannotReleaseQueue-4.itf.json": "0c1a8052670685e5a16aaae8f89fd62af0968f5c954559d796c95b6ac3c8af11",
+    "named-foreignEpochCannotReleaseQueue-5.itf.json": "6fa17732bc760f6659f37ff478b7b597ada1d8ad91142e803d4021b8595b1846",
+    "named-foreignBindingCannotReleaseQueue-6.itf.json": "58f8f1cb83cafba15b5c3e386cc1a4357f48e846c6d8a7a8825f4ea2ec8285f3",
+    "named-confirmedPacketReleasesOnlyHead-7.itf.json": "027e8b201f579f5a6640d343a440384a01fd70864fc9324644375a10138bc261",
+    "named-duplicateReceiptCannotAdvanceAgain-8.itf.json": "45d3a52fc527760deea5b541cdccd0f14d0262a9ca6b082d351f14b0538c8a8b",
+    "named-finalOrdinalRetainedWithoutWrap-9.itf.json": "b9dced6279ec380896999badd91b946856df32a7942caa1b5477d91b28705758",
+    "named-emptyQueueRetriesLostConfirmation-10.itf.json": "d8927c33934c3d34d4bd7ded22594258df2e440d62ad8c9928a938f4e6b31561",
+    "named-oldReceiptRepeatsLatestCompactConfirmation-11.itf.json": "14fb2e067333795e33cb4b85b2553906af29bc5bcfe38373ca5be1b3665f96c1",
+    "named-dataAndConfirmationRetryAreBounded-12.itf.json": "1f388318a43ea4960e469b3465d2096484cb645cf8c972dbc7f461920d9c5cc4",
+    "selected.stdout": "100383e6c1ba7f3b3af4b73c21fb63fc83708b44e202d59105ccddeab5f22fb3",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "4744f7defbd877fcbc9c4aed2071f60c4295c7032dd33ce523d410837330cc33",
+    "sample-1.itf.json": "13a9a95ba3a90cd5b973337ad332eedcd851420feebe106769aabeb15a4ebe1a",
+    "sample-2.itf.json": "15518100fb6cfe10025e160bc31b97f5337c23c31eaceeef8fbbd9391e70e806",
+    "sample-3.itf.json": "bd15def5e2c34be6670a420cab79b245319e44cb552d5f7faa9e4390be8c0e8c",
+    "sample-4.itf.json": "e7eca6f393889d014a1495ce30740025f13782ea51ffa8183cfc01419e8c1351",
+    "sample-5.itf.json": "0a841efc417a1a4d70e50d2f1f1f05c79b34a3892ffd741abde3fbb83775ce21",
+    "sample-6.itf.json": "9c49fb4bbf9f8833308602bb026597ae341eb19dc1020c1408c0731188203b24",
+    "sample-7.itf.json": "cefef6faf6df42bc0745f056911584ff53364265dd2d445828bbff61879de061",
+    "sample-8.itf.json": "5ae2fe8275d3367145ed5f6641ba2bfde09333bcf6d51b93e73e369b1c6458a1",
+    "sample-9.itf.json": "26739b25315181faa0d657397dce8b0e0274cb114df7fda0af04543d6b27413f",
+    "sample-10.itf.json": "a80f4474cef83a19d52b9f3f80d6d86d3f7252646e2eaeaee8c776f41cb62731",
+    "sample-11.itf.json": "8d78d4babac6329164d6f09b440e91fee9fa7630584f3ba2960148170f171e5f",
+    "samples.stdout": "6830d5c9c989d8eb5126c012c8dcda889898a05a128184edbb66b39e1b96f8bd",
+    "samples.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-confirmedPacketReleasesOnlyHead-7.itf.stdout": "39bd95c87f2215cc39c1490d540d4de69778772d5f5ef3b1baaceb0f888dd3b2",
+    "replay-named-confirmedPacketReleasesOnlyHead-7.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-dataAndConfirmationRetryAreBounded-12.itf.stdout": "b9598864a6806af74fe120760475e24cbbea9c24b834641565aa509d9a05645f",
+    "replay-named-dataAndConfirmationRetryAreBounded-12.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-duplicateReceiptCannotAdvanceAgain-8.itf.stdout": "b9598864a6806af74fe120760475e24cbbea9c24b834641565aa509d9a05645f",
+    "replay-named-duplicateReceiptCannotAdvanceAgain-8.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-emptyQueueRetriesLostConfirmation-10.itf.stdout": "51a59c25827ef533c2ca428b0fabd63144cdf29883dfc9f1c69f5e3257697c18",
+    "replay-named-emptyQueueRetriesLostConfirmation-10.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-exactPacketRetriesAtSameOrdinal-0.itf.stdout": "8d98e1916cc2d3c021e5d0ae6dd193a8903eca15035287daab98efa7525a1336",
+    "replay-named-exactPacketRetriesAtSameOrdinal-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-failedPostPreservesQueuedPacket-3.itf.stdout": "2f8f8a4f669794ab484d191d578e919e6a0f37c20d4ed7debf9b72086b925d87",
+    "replay-named-failedPostPreservesQueuedPacket-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-finalOrdinalRetainedWithoutWrap-9.itf.stdout": "b9598864a6806af74fe120760475e24cbbea9c24b834641565aa509d9a05645f",
+    "replay-named-finalOrdinalRetainedWithoutWrap-9.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-foreignBindingCannotReleaseQueue-6.itf.stdout": "8d98e1916cc2d3c021e5d0ae6dd193a8903eca15035287daab98efa7525a1336",
+    "replay-named-foreignBindingCannotReleaseQueue-6.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-foreignEpochCannotReleaseQueue-5.itf.stdout": "8d98e1916cc2d3c021e5d0ae6dd193a8903eca15035287daab98efa7525a1336",
+    "replay-named-foreignEpochCannotReleaseQueue-5.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-gapReceiptCannotReleaseQueue-4.itf.stdout": "8d98e1916cc2d3c021e5d0ae6dd193a8903eca15035287daab98efa7525a1336",
+    "replay-named-gapReceiptCannotReleaseQueue-4.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-noOvertakingWhileReceiptMissing-1.itf.stdout": "8d98e1916cc2d3c021e5d0ae6dd193a8903eca15035287daab98efa7525a1336",
+    "replay-named-noOvertakingWhileReceiptMissing-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-oldReceiptRepeatsLatestCompactConfirmation-11.itf.stdout": "2f8f8a4f669794ab484d191d578e919e6a0f37c20d4ed7debf9b72086b925d87",
+    "replay-named-oldReceiptRepeatsLatestCompactConfirmation-11.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-queueBackpressureConsumesNoOrdinal-2.itf.stdout": "39bd95c87f2215cc39c1490d540d4de69778772d5f5ef3b1baaceb0f888dd3b2",
+    "replay-named-queueBackpressureConsumesNoOrdinal-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-0.itf.stdout": "771dde728d516f9992698c41c952195b456e7a4e0fd8b1da9d070d3eca67edc7",
+    "replay-sample-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-1.itf.stdout": "771dde728d516f9992698c41c952195b456e7a4e0fd8b1da9d070d3eca67edc7",
+    "replay-sample-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-10.itf.stdout": "771dde728d516f9992698c41c952195b456e7a4e0fd8b1da9d070d3eca67edc7",
+    "replay-sample-10.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-11.itf.stdout": "771dde728d516f9992698c41c952195b456e7a4e0fd8b1da9d070d3eca67edc7",
+    "replay-sample-11.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-2.itf.stdout": "771dde728d516f9992698c41c952195b456e7a4e0fd8b1da9d070d3eca67edc7",
+    "replay-sample-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-3.itf.stdout": "771dde728d516f9992698c41c952195b456e7a4e0fd8b1da9d070d3eca67edc7",
+    "replay-sample-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-4.itf.stdout": "771dde728d516f9992698c41c952195b456e7a4e0fd8b1da9d070d3eca67edc7",
+    "replay-sample-4.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-5.itf.stdout": "771dde728d516f9992698c41c952195b456e7a4e0fd8b1da9d070d3eca67edc7",
+    "replay-sample-5.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-6.itf.stdout": "771dde728d516f9992698c41c952195b456e7a4e0fd8b1da9d070d3eca67edc7",
+    "replay-sample-6.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-7.itf.stdout": "771dde728d516f9992698c41c952195b456e7a4e0fd8b1da9d070d3eca67edc7",
+    "replay-sample-7.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-8.itf.stdout": "771dde728d516f9992698c41c952195b456e7a4e0fd8b1da9d070d3eca67edc7",
+    "replay-sample-8.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-9.itf.stdout": "771dde728d516f9992698c41c952195b456e7a4e0fd8b1da9d070d3eca67edc7",
+    "replay-sample-9.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "skip-frontend-confirmation-syntax.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "skip-frontend-confirmation-syntax.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "forget-empty-queue-confirmation-retry-syntax.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "forget-empty-queue-confirmation-retry-syntax.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-packet-on-old-receipt-syntax.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-packet-on-old-receipt-syntax.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "skip-frontend-confirmation/replay.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "skip-frontend-confirmation/replay.stderr": "1921ca8afad17887752253f40a05bd264512fa2da3f419de6d8fbb1d5e476c20",
+    "forget-empty-queue-confirmation-retry/replay.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "forget-empty-queue-confirmation-retry/replay.stderr": "1e233793329e3d715dd4fcd513c5b02cd531c170d53a731339036adbfec9cff8",
+    "replay-packet-on-old-receipt/replay.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-packet-on-old-receipt/replay.stderr": "6c026240140cf04b632c29d3c882328d9400fa7bdfa53afbada95f8eadbafd37",
+    "replay-packet-on-old-receipt/assets/retained-preview-controls.js": "e6961b179fed0b9e072b45f12399c345a0e02473b9aad3bfe9f8d45fb5fcc8fe",
+    "replay-packet-on-old-receipt/qa/control-outbox-confirmation-replay.js": "3aee1eef90cf894c0d52e4c8e10ae8e55876ff148c734fbc36ef0b5b12544aea",
+    "replay-packet-on-old-receipt/qa/control-outbox-confirmation-model-check.py": "89f2201ebbc8d0a8f379da4aedf1499d1623c8c7569798852c49ccd260e235f0",
+    "replay-packet-on-old-receipt/spec/control_outbox_confirmation.qnt": "8375fe11d9e2cdb79e7b99360cdd5ca0c78b2bc4d0f07579413dcc13f27be1b8",
+    "replay-packet-on-old-receipt/spec/control_outbox_confirmation_tests.qnt": "b60aa689e686e274d632d1083106b273d2f5c84deea0a36273f316e0a82bbd0d",
+    "forget-empty-queue-confirmation-retry/assets/retained-preview-controls.js": "23acc1a1fed39c97794989f09565a53f6262df5655d6f1d93fe5f198244cebd3",
+    "forget-empty-queue-confirmation-retry/qa/control-outbox-confirmation-replay.js": "3aee1eef90cf894c0d52e4c8e10ae8e55876ff148c734fbc36ef0b5b12544aea",
+    "forget-empty-queue-confirmation-retry/qa/control-outbox-confirmation-model-check.py": "89f2201ebbc8d0a8f379da4aedf1499d1623c8c7569798852c49ccd260e235f0",
+    "forget-empty-queue-confirmation-retry/spec/control_outbox_confirmation.qnt": "8375fe11d9e2cdb79e7b99360cdd5ca0c78b2bc4d0f07579413dcc13f27be1b8",
+    "forget-empty-queue-confirmation-retry/spec/control_outbox_confirmation_tests.qnt": "b60aa689e686e274d632d1083106b273d2f5c84deea0a36273f316e0a82bbd0d",
+    "skip-frontend-confirmation/assets/retained-preview-controls.js": "f6c62ac33cc07faf76097eb207b2dbc1d4cfe508bbf3e9bd555f84b7b3eb83ab",
+    "skip-frontend-confirmation/qa/control-outbox-confirmation-replay.js": "3aee1eef90cf894c0d52e4c8e10ae8e55876ff148c734fbc36ef0b5b12544aea",
+    "skip-frontend-confirmation/qa/control-outbox-confirmation-model-check.py": "89f2201ebbc8d0a8f379da4aedf1499d1623c8c7569798852c49ccd260e235f0",
+    "skip-frontend-confirmation/spec/control_outbox_confirmation.qnt": "8375fe11d9e2cdb79e7b99360cdd5ca0c78b2bc4d0f07579413dcc13f27be1b8",
+    "skip-frontend-confirmation/spec/control_outbox_confirmation_tests.qnt": "b60aa689e686e274d632d1083106b273d2f5c84deea0a36273f316e0a82bbd0d",
+    "inputs/assets/retained-preview-controls.js": "64bb384ee03acbb59619f78f3b931b922ed008d14006133b7294e864b92e93e5",
+    "inputs/qa/control-outbox-confirmation-replay.js": "3aee1eef90cf894c0d52e4c8e10ae8e55876ff148c734fbc36ef0b5b12544aea",
+    "inputs/qa/control-outbox-confirmation-model-check.py": "89f2201ebbc8d0a8f379da4aedf1499d1623c8c7569798852c49ccd260e235f0",
+    "inputs/spec/control_outbox_confirmation.qnt": "8375fe11d9e2cdb79e7b99360cdd5ca0c78b2bc4d0f07579413dcc13f27be1b8",
+    "inputs/spec/control_outbox_confirmation_tests.qnt": "b60aa689e686e274d632d1083106b273d2f5c84deea0a36273f316e0a82bbd0d"
+  }
+}

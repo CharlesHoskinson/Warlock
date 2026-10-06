@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "eventId": "189853122e6f4d87939aae146514ccf5",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-06T23:47:34.378574+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/warlock-preview-provider-v95",
+  "nextWork": [
+    "PROGRESS PUBLIC67 f6b9ef964d1551178fb3c21693da957feb44d0d7 verified 798 exact owned blobs. HeldGUI95 inactive native control12selected/20traces/190states/3compiled mutants, JS10selected/22traces/389states/3JSvariants and64nativeMetadata+JS loss/retry/Unknown/order/backpressure/normalcleanup controls. Productionmodules unchanged; fullyqualifiedGUI92/native128 unchanged. Next receipt confirmation before native close, cleanup reservations before native admission, receiver reconciliation and actual WebKit activation. All original release gates remain."
+  ],
+  "evidence": [
+    {
+      "path": "docs/warlock-preview/v93/component-report95.json",
+      "sha256": "7a92969a6382a348dd428336f7e3187d2d265abeb3ac432ecaa06cf1a28d949c",
+      "size": 949
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v95/component-manifest.json",
+      "sha256": "994527cc9a42103881d7bffeddb7d722883f4b3df756fdcfebd6cf19ebe0dd77",
+      "size": 173887
+    },
+    {
+      "path": "docs/warlock-repository/v67/publication/delivery.json",
+      "sha256": "e4dfb4d982ad8b713c15af175049ee5f0555c1137756e9c6ed19270d8dfc4aa1",
+      "size": 255586
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

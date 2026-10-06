@@ -1,0 +1,17 @@
+
+  control_outbox_confirmation_tests
+    ok exactPacketRetriesAtSameOrdinal passed 1 test(s)
+    ok noOvertakingWhileReceiptMissing passed 1 test(s)
+    ok queueBackpressureConsumesNoOrdinal passed 1 test(s)
+    ok failedPostPreservesQueuedPacket passed 1 test(s)
+    ok gapReceiptCannotReleaseQueue passed 1 test(s)
+    ok foreignEpochCannotReleaseQueue passed 1 test(s)
+    ok foreignBindingCannotReleaseQueue passed 1 test(s)
+    ok confirmedPacketReleasesOnlyHead passed 1 test(s)
+    ok duplicateReceiptCannotAdvanceAgain passed 1 test(s)
+    ok finalOrdinalRetainedWithoutWrap passed 1 test(s)
+    ok emptyQueueRetriesLostConfirmation passed 1 test(s)
+    ok oldReceiptRepeatsLatestCompactConfirmation passed 1 test(s)
+    ok dataAndConfirmationRetryAreBounded passed 1 test(s)
+
+  13 passing (14ms)

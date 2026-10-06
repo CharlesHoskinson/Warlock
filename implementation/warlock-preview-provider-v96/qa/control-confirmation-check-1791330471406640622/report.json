@@ -1,0 +1,705 @@
+{
+  "passed": true,
+  "inputs": {
+    "native/preview-control.h": "eeb41047554ba5a84f75614a62c1de93e871b3099a12560584150d6c4b6540d8",
+    "native/preview-control-delivery.h": "9e3623cd66cf9c80c725a8617da4424c94abb72e2ba6caa01fb773f1b660165f",
+    "qa/control-confirmation-replay.c": "639c436d757709c8756ff0fb8c2cd807f443efe4eb10f856699be69c621a2a81",
+    "qa/control-confirmation-check.py": "7df5c1fedbf666f3f8e0132e17067e64324d8048d89a0644e57b016807d9331c",
+    "spec/control_confirmation.qnt": "398c9083214d05a9160dec4f5fea2b0a0cc6ab23d30f2f6f0c5957e9f2f66376",
+    "spec/control_confirmation_tests.qnt": "cc1f87c8dca6ed1cd9d5be6e4df2dd73db524d6ebf695198678397aca0078b01"
+  },
+  "commands": [
+    {
+      "name": "flags",
+      "argv": [
+        "pkg-config",
+        "--cflags",
+        "--libs",
+        "glib-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "compile",
+      "argv": [
+        "cc",
+        "-std=c11",
+        "-O1",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Inative",
+        "qa/control-confirmation-replay.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/checks",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lglib-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "control_confirmation_tests.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "control_confirmation_tests.qnt",
+        "--main=control_confirmation_tests",
+        "--backend=typescript",
+        "--match=^(lostReceiptRetriesWithoutEffect|changedPacketCannotReuseOrdinal|inFlightPacketCannotReenter|missingPacketCannotBeSkipped|foreignReceiverCannotEnter|foreignEpochCannotEnter|foreignBindingCannotEnter|reloadCannotResetPrefix|finalOrdinalRetriesWithoutWrap|deliveryReceiptDoesNotOvertakeHandler|laterDeliveryRejectsEarlierReplay|malformedSizeCannotEnter|deliveredReceiptStillNeedsConfirmation|exactFrontendConfirmationClosesOnlyPrefix|lostConfirmationPreservesOriginalReceipt|futureConfirmationCannotSkipDispatch|cumulativeConfirmationCoversKnownPrefix|olderConfirmationCannotRewind|foreignConfirmationDoesNotClose|laterInvocationReopensConfirmationBarrier)$",
+        "--seed=960031",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "samples",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "control_confirmation.qnt",
+        "--main=control_delivery",
+        "--backend=typescript",
+        "--invariant=safety",
+        "--seed=960032",
+        "--max-samples=100",
+        "--max-steps=20",
+        "--n-traces=8",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-changedPacketCannotReuseOrdinal-1.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-cumulativeConfirmationCoversKnownPrefix-16.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-deliveredReceiptStillNeedsConfirmation-12.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-deliveryReceiptDoesNotOvertakeHandler-9.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-exactFrontendConfirmationClosesOnlyPrefix-13.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-finalOrdinalRetriesWithoutWrap-8.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-foreignBindingCannotEnter-6.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-foreignConfirmationDoesNotClose-18.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-foreignEpochCannotEnter-5.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-foreignReceiverCannotEnter-4.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-futureConfirmationCannotSkipDispatch-15.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-inFlightPacketCannotReenter-2.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-laterDeliveryRejectsEarlierReplay-10.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-laterInvocationReopensConfirmationBarrier-19.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-lostConfirmationPreservesOriginalReceipt-14.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-lostReceiptRetriesWithoutEffect-0.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-malformedSizeCannotEnter-11.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-missingPacketCannotBeSkipped-3.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-olderConfirmationCannotRewind-17.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-reloadCannotResetPrefix-7.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-0.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-1.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-2.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-3.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-4.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-5.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-6.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-7.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "skip-final-receipt-confirmation-compile",
+      "argv": [
+        "cc",
+        "-std=c11",
+        "-O1",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/skip-final-receipt-confirmation/native",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/skip-final-receipt-confirmation/qa/control-confirmation-replay.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/skip-final-receipt-confirmation/checks",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lglib-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "skip-final-receipt-confirmation-replay",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/skip-final-receipt-confirmation/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "confirm-future-dispatch-compile",
+      "argv": [
+        "cc",
+        "-std=c11",
+        "-O1",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/confirm-future-dispatch/native",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/confirm-future-dispatch/qa/control-confirmation-replay.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/confirm-future-dispatch/checks",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lglib-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "confirm-future-dispatch-replay",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/confirm-future-dispatch/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "rewind-confirmation-prefix-compile",
+      "argv": [
+        "cc",
+        "-std=c11",
+        "-O1",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/rewind-confirmation-prefix/native",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/rewind-confirmation-prefix/qa/control-confirmation-replay.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/rewind-confirmation-prefix/checks",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lglib-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "rewind-confirmation-prefix-replay",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/rewind-confirmation-prefix/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "ignore-confirmation-receiver-compile",
+      "argv": [
+        "cc",
+        "-std=c11",
+        "-O1",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/ignore-confirmation-receiver/native",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/ignore-confirmation-receiver/qa/control-confirmation-replay.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/ignore-confirmation-receiver/checks",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lglib-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "ignore-confirmation-receiver-replay",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v96/qa/control-confirmation-check-1791330471406640622/ignore-confirmation-receiver/checks"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "Actual C bounded original-grant exact-wire receive/complete/receipt functions. Explicit selected Quint and sampled coupled traces compare actual prefix, pending/latest packet identity, receiver refusal, handler invocation count and receipt availability. Inactive in WebKit: no admission cleanup reservations, renderer outbox, reload reconciliation or actual effects/physical/full release qualification.",
+  "selectedNames": [
+    "lostReceiptRetriesWithoutEffect",
+    "changedPacketCannotReuseOrdinal",
+    "inFlightPacketCannotReenter",
+    "missingPacketCannotBeSkipped",
+    "foreignReceiverCannotEnter",
+    "foreignEpochCannotEnter",
+    "foreignBindingCannotEnter",
+    "reloadCannotResetPrefix",
+    "finalOrdinalRetriesWithoutWrap",
+    "deliveryReceiptDoesNotOvertakeHandler",
+    "laterDeliveryRejectsEarlierReplay",
+    "malformedSizeCannotEnter",
+    "deliveredReceiptStillNeedsConfirmation",
+    "exactFrontendConfirmationClosesOnlyPrefix",
+    "lostConfirmationPreservesOriginalReceipt",
+    "futureConfirmationCannotSkipDispatch",
+    "cumulativeConfirmationCoversKnownPrefix",
+    "olderConfirmationCannotRewind",
+    "foreignConfirmationDoesNotClose",
+    "laterInvocationReopensConfirmationBarrier"
+  ],
+  "namedScenarios": 20,
+  "invariantSamples": 100,
+  "coupledTraces": [
+    {
+      "trace": "named-changedPacketCannotReuseOrdinal-1.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-cumulativeConfirmationCoversKnownPrefix-16.itf.json",
+      "statesCompared": 5
+    },
+    {
+      "trace": "named-deliveredReceiptStillNeedsConfirmation-12.itf.json",
+      "statesCompared": 2
+    },
+    {
+      "trace": "named-deliveryReceiptDoesNotOvertakeHandler-9.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-exactFrontendConfirmationClosesOnlyPrefix-13.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-finalOrdinalRetriesWithoutWrap-8.itf.json",
+      "statesCompared": 5
+    },
+    {
+      "trace": "named-foreignBindingCannotEnter-6.itf.json",
+      "statesCompared": 1
+    },
+    {
+      "trace": "named-foreignConfirmationDoesNotClose-18.itf.json",
+      "statesCompared": 4
+    },
+    {
+      "trace": "named-foreignEpochCannotEnter-5.itf.json",
+      "statesCompared": 1
+    },
+    {
+      "trace": "named-foreignReceiverCannotEnter-4.itf.json",
+      "statesCompared": 1
+    },
+    {
+      "trace": "named-futureConfirmationCannotSkipDispatch-15.itf.json",
+      "statesCompared": 2
+    },
+    {
+      "trace": "named-inFlightPacketCannotReenter-2.itf.json",
+      "statesCompared": 2
+    },
+    {
+      "trace": "named-laterDeliveryRejectsEarlierReplay-10.itf.json",
+      "statesCompared": 5
+    },
+    {
+      "trace": "named-laterInvocationReopensConfirmationBarrier-19.itf.json",
+      "statesCompared": 5
+    },
+    {
+      "trace": "named-lostConfirmationPreservesOriginalReceipt-14.itf.json",
+      "statesCompared": 4
+    },
+    {
+      "trace": "named-lostReceiptRetriesWithoutEffect-0.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-malformedSizeCannotEnter-11.itf.json",
+      "statesCompared": 2
+    },
+    {
+      "trace": "named-missingPacketCannotBeSkipped-3.itf.json",
+      "statesCompared": 1
+    },
+    {
+      "trace": "named-olderConfirmationCannotRewind-17.itf.json",
+      "statesCompared": 6
+    },
+    {
+      "trace": "named-reloadCannotResetPrefix-7.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "sample-0.itf.json",
+      "statesCompared": 20
+    },
+    {
+      "trace": "sample-1.itf.json",
+      "statesCompared": 20
+    },
+    {
+      "trace": "sample-2.itf.json",
+      "statesCompared": 20
+    },
+    {
+      "trace": "sample-3.itf.json",
+      "statesCompared": 20
+    },
+    {
+      "trace": "sample-4.itf.json",
+      "statesCompared": 20
+    },
+    {
+      "trace": "sample-5.itf.json",
+      "statesCompared": 20
+    },
+    {
+      "trace": "sample-6.itf.json",
+      "statesCompared": 20
+    },
+    {
+      "trace": "sample-7.itf.json",
+      "statesCompared": 20
+    }
+  ],
+  "statesCompared": 221,
+  "unsafeMutantsDetected": 4,
+  "mutants": [
+    {
+      "name": "skip-final-receipt-confirmation",
+      "witness": "named-deliveredReceiptStillNeedsConfirmation-12.itf.json",
+      "differentObservableState": true
+    },
+    {
+      "name": "confirm-future-dispatch",
+      "witness": "named-futureConfirmationCannotSkipDispatch-15.itf.json",
+      "differentObservableState": true
+    },
+    {
+      "name": "rewind-confirmation-prefix",
+      "witness": "named-olderConfirmationCannotRewind-17.itf.json",
+      "differentObservableState": true
+    },
+    {
+      "name": "ignore-confirmation-receiver",
+      "witness": "named-foreignConfirmationDoesNotClose-18.itf.json",
+      "differentObservableState": true
+    }
+  ],
+  "artifacts": {
+    "flags.stdout": "0e1a23b25376e5a0299196cc0a3d88803a8ce781c78abe2463863b267c6ce734",
+    "flags.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "checks": "302e4eb3763a314e8844e4fdb081575813e9c1d3b743333152529fbeaeb41bef",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-lostReceiptRetriesWithoutEffect-0.itf.json": "529aaba0e08c5d504ea910ebc59d180674e0952a93dccda38fbe3a8cbf4e39f4",
+    "named-changedPacketCannotReuseOrdinal-1.itf.json": "10b4b37d4d78ae76b79b1541e22fa67b217b75dc62c2d6d9d5bae2bc3e33fd13",
+    "named-inFlightPacketCannotReenter-2.itf.json": "cf12eb05e7955f670c7c15f2da5be272b9c9dfb437bcff5fb3fa4a5ffa7dd719",
+    "named-missingPacketCannotBeSkipped-3.itf.json": "c84707b6be0e18a2b9000a740639f14be440e6669978651d7d850d0853256081",
+    "named-foreignReceiverCannotEnter-4.itf.json": "d38ec88c64d128ba6164af6c7ae1db1a75935d1a6142cddfab9b82861bc3139b",
+    "named-foreignEpochCannotEnter-5.itf.json": "dd1cc08849f8088673e3d9d375df1902a92a3eece3c088dc686ea8ee07d80379",
+    "named-foreignBindingCannotEnter-6.itf.json": "3704592684002654527735319dc52e1f4240e3fdff9075ac2273325dfd64b301",
+    "named-reloadCannotResetPrefix-7.itf.json": "263f66f0af4e1a9ced3ae69b5c0aeffd4591982a54fe21fe8e91146669773547",
+    "named-finalOrdinalRetriesWithoutWrap-8.itf.json": "b8ef6093efb1ef1a2ff3397130212ca3d0e744e4cc9bf6f6046091056b787c21",
+    "named-deliveryReceiptDoesNotOvertakeHandler-9.itf.json": "9216851fdf21195e02c7fb45333ad831fb3e0d4bd067938da088c73424e21153",
+    "named-laterDeliveryRejectsEarlierReplay-10.itf.json": "2289d5fe5a5363aa905b4513449a2de2670876d1fac3f3433c95bfdfb1999668",
+    "named-malformedSizeCannotEnter-11.itf.json": "dbba430b0afaa42a754554636cc94185b61b939d38b0959fa3b6d3f17d91006d",
+    "named-deliveredReceiptStillNeedsConfirmation-12.itf.json": "1069a58ee2527cf7e07406a87919a0fb270e2b016e2414e2e62728299d306ea3",
+    "named-exactFrontendConfirmationClosesOnlyPrefix-13.itf.json": "8b18b8a3903e0906eb633d2066b86a26a93a87e7da0b8b317a4b2b9dd64ceb72",
+    "named-lostConfirmationPreservesOriginalReceipt-14.itf.json": "dd9d8cb96a396e80202aadfe83ddb96bf6f94eac6ed2a9e83b43bbcc01563b47",
+    "named-futureConfirmationCannotSkipDispatch-15.itf.json": "361d90363402bfa89c5be35a75cbee2ad59179b71bb36f1ffab0239a04f30442",
+    "named-cumulativeConfirmationCoversKnownPrefix-16.itf.json": "0b48a45a3f195abe52028c1cddca8f0c9f08b88a440beb12173fc518e2f44665",
+    "named-olderConfirmationCannotRewind-17.itf.json": "200e78f3507b5eb34935083d806cb1a9fef12a705b70bc259bb1e0bee081cdc8",
+    "named-foreignConfirmationDoesNotClose-18.itf.json": "1e9035faef2590472e0519cf096ba6633dbfb40f065f1986d03f976c8fcbae08",
+    "named-laterInvocationReopensConfirmationBarrier-19.itf.json": "669f910673372203b82ea4a45fdb53d5b25e0148808baf042a69f4c87de5ddd4",
+    "selected.stdout": "9fc09c01c2ab2d407da0df445763d2625273d435a34ffc6f3e0a37aa07ec3f16",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "56202e58c1f6fca8ff5aaa967b92d2b594f5fe5946a1b929d5ae465c48c50b5b",
+    "sample-1.itf.json": "1c89a8254631c5e8487739f778942fcb1894151556f0e9a3d427b59300d4de6a",
+    "sample-2.itf.json": "c1db9e6474569a3fdd97ae372ef8a91f426147a0319d27eb429d99ec0b56fce0",
+    "sample-3.itf.json": "0afb535e6a94a12e5b6a2a6332699a8f2fd96e00db60cc5fc646f0fc0bf09c63",
+    "sample-4.itf.json": "0e1258fd5e0ddbb905b0bce31dfd38316d071c6ee985fe2824f35e1f53b5aca2",
+    "sample-5.itf.json": "36ae0c659f0df3aad2df9e57e58140ca71adc22ebb0f5a4dc21ea1fd2be0f342",
+    "sample-6.itf.json": "d2de637eff8d6d1deac04c074ad5132201ea296b2da98fa1bcc408e413f03e4b",
+    "sample-7.itf.json": "a7a228e384105e172967c1e14bf418ff5bf08499081c1b66b45bb73280585526",
+    "samples.stdout": "7efcbff7c243be09c6dce8498e0a383146a0555996cb6966b11b09fcc2a780bd",
+    "samples.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-changedPacketCannotReuseOrdinal-1.itf.stdout": "2adb378ea5beea32bcfd55388f3b9035117bf1b74170094339365bfe0cc6dff0",
+    "replay-named-changedPacketCannotReuseOrdinal-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-cumulativeConfirmationCoversKnownPrefix-16.itf.stdout": "954a483c6bbc6bf5905da8161a82e6cf09596eb785dbeef153c7a2a62a593b37",
+    "replay-named-cumulativeConfirmationCoversKnownPrefix-16.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-deliveredReceiptStillNeedsConfirmation-12.itf.stdout": "2da165b94db06cf86dc83c85cc222362b44f00cce6056e81652dff4de7702b1e",
+    "replay-named-deliveredReceiptStillNeedsConfirmation-12.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-deliveryReceiptDoesNotOvertakeHandler-9.itf.stdout": "4b18f0c97974c2cd703477e9a6ca09af168c4fa1a13663b153699a720a20453f",
+    "replay-named-deliveryReceiptDoesNotOvertakeHandler-9.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-exactFrontendConfirmationClosesOnlyPrefix-13.itf.stdout": "0f9949dfdfc8b2deee877d5a76673070402eb74bd2add82f7058a7c9ef339993",
+    "replay-named-exactFrontendConfirmationClosesOnlyPrefix-13.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-finalOrdinalRetriesWithoutWrap-8.itf.stdout": "5ed454180d111283a61cf439916807143a669cdfc81c0da13427d4660d3a76cd",
+    "replay-named-finalOrdinalRetriesWithoutWrap-8.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-foreignBindingCannotEnter-6.itf.stdout": "04559d72c99daba2c1f327f842291a65140dbb2baf46f6638e4e0e732586ece4",
+    "replay-named-foreignBindingCannotEnter-6.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-foreignConfirmationDoesNotClose-18.itf.stdout": "e7320eb9299f065e29e37292698b3e4b520e9202b8d8f8da6c0a4395e6ce6d58",
+    "replay-named-foreignConfirmationDoesNotClose-18.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-foreignEpochCannotEnter-5.itf.stdout": "04559d72c99daba2c1f327f842291a65140dbb2baf46f6638e4e0e732586ece4",
+    "replay-named-foreignEpochCannotEnter-5.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-foreignReceiverCannotEnter-4.itf.stdout": "04559d72c99daba2c1f327f842291a65140dbb2baf46f6638e4e0e732586ece4",
+    "replay-named-foreignReceiverCannotEnter-4.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-futureConfirmationCannotSkipDispatch-15.itf.stdout": "7f8a38571ca36729cbec84774c4ea62de02e3b5c3f5fa9f66eae1cc2d906c331",
+    "replay-named-futureConfirmationCannotSkipDispatch-15.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-inFlightPacketCannotReenter-2.itf.stdout": "7f8a38571ca36729cbec84774c4ea62de02e3b5c3f5fa9f66eae1cc2d906c331",
+    "replay-named-inFlightPacketCannotReenter-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-laterDeliveryRejectsEarlierReplay-10.itf.stdout": "07ab1089fb4185f6aeafe90cc02263cffe6f873fd45816ae47be7f8bfed65155",
+    "replay-named-laterDeliveryRejectsEarlierReplay-10.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-laterInvocationReopensConfirmationBarrier-19.itf.stdout": "3a29d1db1bf1be3cf087f04b43aa328babf093f7e5ac3dbcdddc807858d8b23c",
+    "replay-named-laterInvocationReopensConfirmationBarrier-19.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-lostConfirmationPreservesOriginalReceipt-14.itf.stdout": "fcde744c61b5459c973f76146afa53a0ca7aa9d678f33c2f9980cc6da0f1cf76",
+    "replay-named-lostConfirmationPreservesOriginalReceipt-14.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-lostReceiptRetriesWithoutEffect-0.itf.stdout": "4600cc45d5b0aafa118272faf72d2841a81eb07ee3599aec896d063055047c2d",
+    "replay-named-lostReceiptRetriesWithoutEffect-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-malformedSizeCannotEnter-11.itf.stdout": "25db5feb06a01b774b88f1009b45c52688bbdbedc4d5f4c5ea73ee3ac0249ae8",
+    "replay-named-malformedSizeCannotEnter-11.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-missingPacketCannotBeSkipped-3.itf.stdout": "04559d72c99daba2c1f327f842291a65140dbb2baf46f6638e4e0e732586ece4",
+    "replay-named-missingPacketCannotBeSkipped-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-olderConfirmationCannotRewind-17.itf.stdout": "275f9fecee476f124ffe53c1ab62fbe94308e5453760b8fbf6fb417a06eef42b",
+    "replay-named-olderConfirmationCannotRewind-17.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-reloadCannotResetPrefix-7.itf.stdout": "2adb378ea5beea32bcfd55388f3b9035117bf1b74170094339365bfe0cc6dff0",
+    "replay-named-reloadCannotResetPrefix-7.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-0.itf.stdout": "f0b1f388b8edf59e9d23f9aa77ba5da526a326bfa012976b42f8b8352b8d1f6d",
+    "replay-sample-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-1.itf.stdout": "4abf3a18a41f0b922b879ba42a30d2a1a6d43a20595094147bdd412b6fb5acf5",
+    "replay-sample-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-2.itf.stdout": "8a57371d88a5df403362acd2f9f09f7fa87986e99f5436cfc5fc43e5e701c10d",
+    "replay-sample-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-3.itf.stdout": "e328163056effa967a0bde3805753f4c78c78e25ae44c52651beaf5899d59d95",
+    "replay-sample-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-4.itf.stdout": "54cd60410d50ad49c86ea35d8202b522f2d0c36c3182297bc9c6bb0342cdd247",
+    "replay-sample-4.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-5.itf.stdout": "c323a690540062c4e393195ebefc4bb709d2366f51cf3641435f6485d4c27e34",
+    "replay-sample-5.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-6.itf.stdout": "404fe27d42c3600a64b964fb1edfee7a2f2cc11ca04c878b8145160cfa67d40d",
+    "replay-sample-6.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-7.itf.stdout": "e328163056effa967a0bde3805753f4c78c78e25ae44c52651beaf5899d59d95",
+    "replay-sample-7.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "skip-final-receipt-confirmation-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "skip-final-receipt-confirmation-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "skip-final-receipt-confirmation-replay.stdout": "caea26722ce15f6dfbcff63976a2c7789862e2f2c30f288606ffd67f4db1dae9",
+    "skip-final-receipt-confirmation-replay.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "confirm-future-dispatch-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "confirm-future-dispatch-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "confirm-future-dispatch-replay.stdout": "9226319e07da33217009b52f07944cf1ba79b437abd2602583e18890cde610ec",
+    "confirm-future-dispatch-replay.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rewind-confirmation-prefix-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rewind-confirmation-prefix-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rewind-confirmation-prefix-replay.stdout": "11b8fbce955691922db307860b9cedc49d239cf378acfeeae0ec7a8401517583",
+    "rewind-confirmation-prefix-replay.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ignore-confirmation-receiver-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ignore-confirmation-receiver-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ignore-confirmation-receiver-replay.stdout": "d97bfa9ce340a151010f19ca0f911ac3ce9427e4a0fead6c337f5beef611dd77",
+    "ignore-confirmation-receiver-replay.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "skip-final-receipt-confirmation/checks": "2d83e5bc99a4d1dfa9c19e68e580c2f20e719d1442190fc6a0c6bf80bc240425",
+    "confirm-future-dispatch/checks": "428724bc92f4ecdb0d80344bf2af5eda578b3471a0c6e82838d9883001f60b73",
+    "rewind-confirmation-prefix/checks": "63a1bba0aa30cfc4ece395efe925a45540e36d2e63cb519b8ee7c81740136810",
+    "ignore-confirmation-receiver/checks": "f61c8529e800cfe2c7a81a2a781b92451c1b274640b683559055705e56ffa0af",
+    "ignore-confirmation-receiver/native/preview-control.h": "eeb41047554ba5a84f75614a62c1de93e871b3099a12560584150d6c4b6540d8",
+    "ignore-confirmation-receiver/native/preview-control-delivery.h": "84b2557f1f2e6fa275d9053a498c4887cc65699bb53a614f2bfa2ca8936b023c",
+    "ignore-confirmation-receiver/qa/control-confirmation-replay.c": "639c436d757709c8756ff0fb8c2cd807f443efe4eb10f856699be69c621a2a81",
+    "ignore-confirmation-receiver/qa/control-confirmation-check.py": "7df5c1fedbf666f3f8e0132e17067e64324d8048d89a0644e57b016807d9331c",
+    "ignore-confirmation-receiver/spec/control_confirmation.qnt": "398c9083214d05a9160dec4f5fea2b0a0cc6ab23d30f2f6f0c5957e9f2f66376",
+    "ignore-confirmation-receiver/spec/control_confirmation_tests.qnt": "cc1f87c8dca6ed1cd9d5be6e4df2dd73db524d6ebf695198678397aca0078b01",
+    "rewind-confirmation-prefix/native/preview-control.h": "eeb41047554ba5a84f75614a62c1de93e871b3099a12560584150d6c4b6540d8",
+    "rewind-confirmation-prefix/native/preview-control-delivery.h": "a4f2acbdb08173dd8a2ec1d472209917b2e766186f98f013303aec0f98d2fd4d",
+    "rewind-confirmation-prefix/qa/control-confirmation-replay.c": "639c436d757709c8756ff0fb8c2cd807f443efe4eb10f856699be69c621a2a81",
+    "rewind-confirmation-prefix/qa/control-confirmation-check.py": "7df5c1fedbf666f3f8e0132e17067e64324d8048d89a0644e57b016807d9331c",
+    "rewind-confirmation-prefix/spec/control_confirmation.qnt": "398c9083214d05a9160dec4f5fea2b0a0cc6ab23d30f2f6f0c5957e9f2f66376",
+    "rewind-confirmation-prefix/spec/control_confirmation_tests.qnt": "cc1f87c8dca6ed1cd9d5be6e4df2dd73db524d6ebf695198678397aca0078b01",
+    "confirm-future-dispatch/native/preview-control.h": "eeb41047554ba5a84f75614a62c1de93e871b3099a12560584150d6c4b6540d8",
+    "confirm-future-dispatch/native/preview-control-delivery.h": "4584386e39ff8eacb64b9ef6aab5e735990703254cb56b8222d2c7b7759ea1f4",
+    "confirm-future-dispatch/qa/control-confirmation-replay.c": "639c436d757709c8756ff0fb8c2cd807f443efe4eb10f856699be69c621a2a81",
+    "confirm-future-dispatch/qa/control-confirmation-check.py": "7df5c1fedbf666f3f8e0132e17067e64324d8048d89a0644e57b016807d9331c",
+    "confirm-future-dispatch/spec/control_confirmation.qnt": "398c9083214d05a9160dec4f5fea2b0a0cc6ab23d30f2f6f0c5957e9f2f66376",
+    "confirm-future-dispatch/spec/control_confirmation_tests.qnt": "cc1f87c8dca6ed1cd9d5be6e4df2dd73db524d6ebf695198678397aca0078b01",
+    "skip-final-receipt-confirmation/native/preview-control.h": "eeb41047554ba5a84f75614a62c1de93e871b3099a12560584150d6c4b6540d8",
+    "skip-final-receipt-confirmation/native/preview-control-delivery.h": "d7cab57c18a20fe01128c7614fbdb052b95a5121681bb13916385011bfc6ff1a",
+    "skip-final-receipt-confirmation/qa/control-confirmation-replay.c": "639c436d757709c8756ff0fb8c2cd807f443efe4eb10f856699be69c621a2a81",
+    "skip-final-receipt-confirmation/qa/control-confirmation-check.py": "7df5c1fedbf666f3f8e0132e17067e64324d8048d89a0644e57b016807d9331c",
+    "skip-final-receipt-confirmation/spec/control_confirmation.qnt": "398c9083214d05a9160dec4f5fea2b0a0cc6ab23d30f2f6f0c5957e9f2f66376",
+    "skip-final-receipt-confirmation/spec/control_confirmation_tests.qnt": "cc1f87c8dca6ed1cd9d5be6e4df2dd73db524d6ebf695198678397aca0078b01",
+    "inputs/native/preview-control.h": "eeb41047554ba5a84f75614a62c1de93e871b3099a12560584150d6c4b6540d8",
+    "inputs/native/preview-control-delivery.h": "9e3623cd66cf9c80c725a8617da4424c94abb72e2ba6caa01fb773f1b660165f",
+    "inputs/qa/control-confirmation-replay.c": "639c436d757709c8756ff0fb8c2cd807f443efe4eb10f856699be69c621a2a81",
+    "inputs/qa/control-confirmation-check.py": "7df5c1fedbf666f3f8e0132e17067e64324d8048d89a0644e57b016807d9331c",
+    "inputs/spec/control_confirmation.qnt": "398c9083214d05a9160dec4f5fea2b0a0cc6ab23d30f2f6f0c5957e9f2f66376",
+    "inputs/spec/control_confirmation_tests.qnt": "cc1f87c8dca6ed1cd9d5be6e4df2dd73db524d6ebf695198678397aca0078b01"
+  }
+}

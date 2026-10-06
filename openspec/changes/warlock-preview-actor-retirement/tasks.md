@@ -90,6 +90,19 @@ receipt confirmation before close, cleanup capacity/ordinal reservation before
 admission, and fresh-grant receiver reconciliation remain prerequisites.
 See [the component report](../../../docs/warlock-preview/v93/component-report95.json).
 
+Held GUI96 adds the separate original-frontend receipt-confirmation barrier.
+The native owner retains its latest receipt and keeps its prefix confirmation
+barrier open until an original-grant frontend confirmation arrives. Frontend
+retry retains one compact monotonic confirmation, including with an empty data
+queue; old receipts do not recreate packets. Actual C20 selected Quint scenarios,
+28 coupled traces/221 states and four compiled variants passed. Actual JS13
+selected scenarios/25 traces/404 states and three syntax-checked variants passed.
+The actual compiled native metadata/JS round trip passed58 controls with lost
+receipts/confirmations, cumulative confirmation, future/foreign refusal,
+reentrancy and normal close. Activated production modules remain unchanged and
+WebKit activation is still pending native admission cleanup reservations and
+receiver reconciliation. See [the component report](../../../docs/warlock-preview/v93/component-report96.json).
+
 These are bounded qualifications. Native observation/readiness/final
 completion routing through the actual WebKit host, reliable outgoing transport,
 captured physical retirement

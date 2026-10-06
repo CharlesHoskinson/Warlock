@@ -1,0 +1,995 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [],
+      confirmed: 0,
+      fails: false,
+      history: [],
+      issued: 0,
+      last: false,
+      pending: [],
+      posted: []
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [],
+      confirmed: 0,
+      fails: false,
+      history: ["WrongEpoch"],
+      issued: 0,
+      last: false,
+      pending: [],
+      posted: []
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [],
+      confirmed: 0,
+      fails: false,
+      history: ["WrongEpoch", "Offer"],
+      issued: 1,
+      last: true,
+      pending: [1],
+      posted: [1]
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [],
+      confirmed: 0,
+      fails: false,
+      history: ["WrongEpoch", "Offer", "Offer"],
+      issued: 2,
+      last: true,
+      pending: [1, 2],
+      posted: [1]
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [],
+      confirmed: 0,
+      fails: false,
+      history: ["WrongEpoch", "Offer", "Offer", "WrongEpoch"],
+      issued: 2,
+      last: false,
+      pending: [1, 2],
+      posted: [1]
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [],
+      confirmed: 0,
+      fails: false,
+      history: ["WrongEpoch", "Offer", "Offer", "WrongEpoch", "Ack3"],
+      issued: 2,
+      last: false,
+      pending: [1, 2],
+      posted: [1]
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [],
+      confirmed: 0,
+      fails: false,
+      history:
+        ["WrongEpoch", "Offer", "Offer", "WrongEpoch", "Ack3", "WrongBinding"],
+      issued: 2,
+      last: false,
+      pending: [1, 2],
+      posted: [1]
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [],
+      confirmed: 0,
+      fails: false,
+      history:
+        [
+          "WrongEpoch",
+          "Offer",
+          "Offer",
+          "WrongEpoch",
+          "Ack3",
+          "WrongBinding",
+          "RecoverPost"
+        ],
+      issued: 2,
+      last: true,
+      pending: [1, 2],
+      posted: [1]
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [],
+      confirmed: 0,
+      fails: false,
+      history:
+        [
+          "WrongEpoch",
+          "Offer",
+          "Offer",
+          "WrongEpoch",
+          "Ack3",
+          "WrongBinding",
+          "RecoverPost",
+          "Ack3"
+        ],
+      issued: 2,
+      last: false,
+      pending: [1, 2],
+      posted: [1]
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [],
+      confirmed: 0,
+      fails: false,
+      history:
+        [
+          "WrongEpoch",
+          "Offer",
+          "Offer",
+          "WrongEpoch",
+          "Ack3",
+          "WrongBinding",
+          "RecoverPost",
+          "Ack3",
+          "WrongBinding"
+        ],
+      issued: 2,
+      last: false,
+      pending: [1, 2],
+      posted: [1]
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [],
+      confirmed: 0,
+      fails: true,
+      history:
+        [
+          "WrongEpoch",
+          "Offer",
+          "Offer",
+          "WrongEpoch",
+          "Ack3",
+          "WrongBinding",
+          "RecoverPost",
+          "Ack3",
+          "WrongBinding",
+          "FailPost"
+        ],
+      issued: 2,
+      last: true,
+      pending: [1, 2],
+      posted: [1]
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [],
+      confirmed: 0,
+      fails: true,
+      history:
+        [
+          "WrongEpoch",
+          "Offer",
+          "Offer",
+          "WrongEpoch",
+          "Ack3",
+          "WrongBinding",
+          "RecoverPost",
+          "Ack3",
+          "WrongBinding",
+          "FailPost",
+          "Retry"
+        ],
+      issued: 2,
+      last: false,
+      pending: [1, 2],
+      posted: [1, 1]
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [],
+      confirmed: 0,
+      fails: true,
+      history:
+        [
+          "WrongEpoch",
+          "Offer",
+          "Offer",
+          "WrongEpoch",
+          "Ack3",
+          "WrongBinding",
+          "RecoverPost",
+          "Ack3",
+          "WrongBinding",
+          "FailPost",
+          "Retry",
+          "RecoverConfirmation"
+        ],
+      issued: 2,
+      last: true,
+      pending: [1, 2],
+      posted: [1, 1]
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [],
+      confirmed: 0,
+      fails: true,
+      history:
+        [
+          "WrongEpoch",
+          "Offer",
+          "Offer",
+          "WrongEpoch",
+          "Ack3",
+          "WrongBinding",
+          "RecoverPost",
+          "Ack3",
+          "WrongBinding",
+          "FailPost",
+          "Retry",
+          "RecoverConfirmation",
+          "FailPost"
+        ],
+      issued: 2,
+      last: true,
+      pending: [1, 2],
+      posted: [1, 1]
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [],
+      confirmed: 0,
+      fails: true,
+      history:
+        [
+          "WrongEpoch",
+          "Offer",
+          "Offer",
+          "WrongEpoch",
+          "Ack3",
+          "WrongBinding",
+          "RecoverPost",
+          "Ack3",
+          "WrongBinding",
+          "FailPost",
+          "Retry",
+          "RecoverConfirmation",
+          "FailPost",
+          "Ack3"
+        ],
+      issued: 2,
+      last: false,
+      pending: [1, 2],
+      posted: [1, 1]
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [],
+      confirmed: 0,
+      fails: true,
+      history:
+        [
+          "WrongEpoch",
+          "Offer",
+          "Offer",
+          "WrongEpoch",
+          "Ack3",
+          "WrongBinding",
+          "RecoverPost",
+          "Ack3",
+          "WrongBinding",
+          "FailPost",
+          "Retry",
+          "RecoverConfirmation",
+          "FailPost",
+          "Ack3",
+          "WrongBinding"
+        ],
+      issued: 2,
+      last: false,
+      pending: [1, 2],
+      posted: [1, 1]
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [],
+      confirmed: 0,
+      fails: true,
+      history:
+        [
+          "WrongEpoch",
+          "Offer",
+          "Offer",
+          "WrongEpoch",
+          "Ack3",
+          "WrongBinding",
+          "RecoverPost",
+          "Ack3",
+          "WrongBinding",
+          "FailPost",
+          "Retry",
+          "RecoverConfirmation",
+          "FailPost",
+          "Ack3",
+          "WrongBinding",
+          "Retry"
+        ],
+      issued: 2,
+      last: false,
+      pending: [1, 2],
+      posted: [1, 1, 1]
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [],
+      confirmed: 0,
+      fails: true,
+      history:
+        [
+          "WrongEpoch",
+          "Offer",
+          "Offer",
+          "WrongEpoch",
+          "Ack3",
+          "WrongBinding",
+          "RecoverPost",
+          "Ack3",
+          "WrongBinding",
+          "FailPost",
+          "Retry",
+          "RecoverConfirmation",
+          "FailPost",
+          "Ack3",
+          "WrongBinding",
+          "Retry",
+          "RecoverConfirmation"
+        ],
+      issued: 2,
+      last: true,
+      pending: [1, 2],
+      posted: [1, 1, 1]
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [],
+      confirmed: 0,
+      fails: false,
+      history:
+        [
+          "WrongEpoch",
+          "Offer",
+          "Offer",
+          "WrongEpoch",
+          "Ack3",
+          "WrongBinding",
+          "RecoverPost",
+          "Ack3",
+          "WrongBinding",
+          "FailPost",
+          "Retry",
+          "RecoverConfirmation",
+          "FailPost",
+          "Ack3",
+          "WrongBinding",
+          "Retry",
+          "RecoverConfirmation",
+          "RecoverPost"
+        ],
+      issued: 2,
+      last: true,
+      pending: [1, 2],
+      posted: [1, 1, 1]
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [1],
+      confirmed: 1,
+      fails: false,
+      history:
+        [
+          "WrongEpoch",
+          "Offer",
+          "Offer",
+          "WrongEpoch",
+          "Ack3",
+          "WrongBinding",
+          "RecoverPost",
+          "Ack3",
+          "WrongBinding",
+          "FailPost",
+          "Retry",
+          "RecoverConfirmation",
+          "FailPost",
+          "Ack3",
+          "WrongBinding",
+          "Retry",
+          "RecoverConfirmation",
+          "RecoverPost",
+          "Ack1"
+        ],
+      issued: 2,
+      last: true,
+      pending: [2],
+      posted: [1, 1, 1, 2]
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [1],
+      confirmed: 1,
+      fails: false,
+      history:
+        [
+          "WrongEpoch",
+          "Offer",
+          "Offer",
+          "WrongEpoch",
+          "Ack3",
+          "WrongBinding",
+          "RecoverPost",
+          "Ack3",
+          "WrongBinding",
+          "FailPost",
+          "Retry",
+          "RecoverConfirmation",
+          "FailPost",
+          "Ack3",
+          "WrongBinding",
+          "Retry",
+          "RecoverConfirmation",
+          "RecoverPost",
+          "Ack1",
+          "WrongEpoch"
+        ],
+      issued: 2,
+      last: false,
+      pending: [2],
+      posted: [1, 1, 1, 2]
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [1, 1],
+      confirmed: 1,
+      fails: false,
+      history:
+        [
+          "WrongEpoch",
+          "Offer",
+          "Offer",
+          "WrongEpoch",
+          "Ack3",
+          "WrongBinding",
+          "RecoverPost",
+          "Ack3",
+          "WrongBinding",
+          "FailPost",
+          "Retry",
+          "RecoverConfirmation",
+          "FailPost",
+          "Ack3",
+          "WrongBinding",
+          "Retry",
+          "RecoverConfirmation",
+          "RecoverPost",
+          "Ack1",
+          "WrongEpoch",
+          "Ack1"
+        ],
+      issued: 2,
+      last: true,
+      pending: [2],
+      posted: [1, 1, 1, 2]
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [1, 1, 2],
+      confirmed: 2,
+      fails: false,
+      history:
+        [
+          "WrongEpoch",
+          "Offer",
+          "Offer",
+          "WrongEpoch",
+          "Ack3",
+          "WrongBinding",
+          "RecoverPost",
+          "Ack3",
+          "WrongBinding",
+          "FailPost",
+          "Retry",
+          "RecoverConfirmation",
+          "FailPost",
+          "Ack3",
+          "WrongBinding",
+          "Retry",
+          "RecoverConfirmation",
+          "RecoverPost",
+          "Ack1",
+          "WrongEpoch",
+          "Ack1",
+          "Ack2"
+        ],
+      issued: 2,
+      last: true,
+      pending: [],
+      posted: [1, 1, 1, 2]
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [1, 1, 2],
+      confirmed: 2,
+      fails: false,
+      history:
+        [
+          "WrongEpoch",
+          "Offer",
+          "Offer",
+          "WrongEpoch",
+          "Ack3",
+          "WrongBinding",
+          "RecoverPost",
+          "Ack3",
+          "WrongBinding",
+          "FailPost",
+          "Retry",
+          "RecoverConfirmation",
+          "FailPost",
+          "Ack3",
+          "WrongBinding",
+          "Retry",
+          "RecoverConfirmation",
+          "RecoverPost",
+          "Ack1",
+          "WrongEpoch",
+          "Ack1",
+          "Ack2",
+          "Offer"
+        ],
+      issued: 3,
+      last: true,
+      pending: [3],
+      posted: [1, 1, 1, 2, 3]
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [1, 1, 2, 2],
+      confirmed: 2,
+      fails: false,
+      history:
+        [
+          "WrongEpoch",
+          "Offer",
+          "Offer",
+          "WrongEpoch",
+          "Ack3",
+          "WrongBinding",
+          "RecoverPost",
+          "Ack3",
+          "WrongBinding",
+          "FailPost",
+          "Retry",
+          "RecoverConfirmation",
+          "FailPost",
+          "Ack3",
+          "WrongBinding",
+          "Retry",
+          "RecoverConfirmation",
+          "RecoverPost",
+          "Ack1",
+          "WrongEpoch",
+          "Ack1",
+          "Ack2",
+          "Offer",
+          "Retry"
+        ],
+      issued: 3,
+      last: true,
+      pending: [3],
+      posted: [1, 1, 1, 2, 3, 3]
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [1, 1, 2, 2],
+      confirmed: 2,
+      fails: false,
+      history:
+        [
+          "WrongEpoch",
+          "Offer",
+          "Offer",
+          "WrongEpoch",
+          "Ack3",
+          "WrongBinding",
+          "RecoverPost",
+          "Ack3",
+          "WrongBinding",
+          "FailPost",
+          "Retry",
+          "RecoverConfirmation",
+          "FailPost",
+          "Ack3",
+          "WrongBinding",
+          "Retry",
+          "RecoverConfirmation",
+          "RecoverPost",
+          "Ack1",
+          "WrongEpoch",
+          "Ack1",
+          "Ack2",
+          "Offer",
+          "Retry",
+          "RecoverPost"
+        ],
+      issued: 3,
+      last: true,
+      pending: [3],
+      posted: [1, 1, 1, 2, 3, 3]
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [1, 1, 2, 2],
+      confirmed: 2,
+      fails: false,
+      history:
+        [
+          "WrongEpoch",
+          "Offer",
+          "Offer",
+          "WrongEpoch",
+          "Ack3",
+          "WrongBinding",
+          "RecoverPost",
+          "Ack3",
+          "WrongBinding",
+          "FailPost",
+          "Retry",
+          "RecoverConfirmation",
+          "FailPost",
+          "Ack3",
+          "WrongBinding",
+          "Retry",
+          "RecoverConfirmation",
+          "RecoverPost",
+          "Ack1",
+          "WrongEpoch",
+          "Ack1",
+          "Ack2",
+          "Offer",
+          "Retry",
+          "RecoverPost",
+          "RecoverPost"
+        ],
+      issued: 3,
+      last: true,
+      pending: [3],
+      posted: [1, 1, 1, 2, 3, 3]
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [1, 1, 2, 2, 2],
+      confirmed: 2,
+      fails: false,
+      history:
+        [
+          "WrongEpoch",
+          "Offer",
+          "Offer",
+          "WrongEpoch",
+          "Ack3",
+          "WrongBinding",
+          "RecoverPost",
+          "Ack3",
+          "WrongBinding",
+          "FailPost",
+          "Retry",
+          "RecoverConfirmation",
+          "FailPost",
+          "Ack3",
+          "WrongBinding",
+          "Retry",
+          "RecoverConfirmation",
+          "RecoverPost",
+          "Ack1",
+          "WrongEpoch",
+          "Ack1",
+          "Ack2",
+          "Offer",
+          "Retry",
+          "RecoverPost",
+          "RecoverPost",
+          "Ack2"
+        ],
+      issued: 3,
+      last: true,
+      pending: [3],
+      posted: [1, 1, 1, 2, 3, 3]
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [1, 1, 2, 2, 2, 2],
+      confirmed: 2,
+      fails: false,
+      history:
+        [
+          "WrongEpoch",
+          "Offer",
+          "Offer",
+          "WrongEpoch",
+          "Ack3",
+          "WrongBinding",
+          "RecoverPost",
+          "Ack3",
+          "WrongBinding",
+          "FailPost",
+          "Retry",
+          "RecoverConfirmation",
+          "FailPost",
+          "Ack3",
+          "WrongBinding",
+          "Retry",
+          "RecoverConfirmation",
+          "RecoverPost",
+          "Ack1",
+          "WrongEpoch",
+          "Ack1",
+          "Ack2",
+          "Offer",
+          "Retry",
+          "RecoverPost",
+          "RecoverPost",
+          "Ack2",
+          "Ack2"
+        ],
+      issued: 3,
+      last: true,
+      pending: [3],
+      posted: [1, 1, 1, 2, 3, 3]
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [1, 1, 2, 2, 2, 2],
+      confirmed: 2,
+      fails: false,
+      history:
+        [
+          "WrongEpoch",
+          "Offer",
+          "Offer",
+          "WrongEpoch",
+          "Ack3",
+          "WrongBinding",
+          "RecoverPost",
+          "Ack3",
+          "WrongBinding",
+          "FailPost",
+          "Retry",
+          "RecoverConfirmation",
+          "FailPost",
+          "Ack3",
+          "WrongBinding",
+          "Retry",
+          "RecoverConfirmation",
+          "RecoverPost",
+          "Ack1",
+          "WrongEpoch",
+          "Ack1",
+          "Ack2",
+          "Offer",
+          "Retry",
+          "RecoverPost",
+          "RecoverPost",
+          "Ack2",
+          "Ack2",
+          "WrongEpoch"
+        ],
+      issued: 3,
+      last: false,
+      pending: [3],
+      posted: [1, 1, 1, 2, 3, 3]
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      confirmFails: false,
+      confirmations: [1, 1, 2, 2, 2, 2, 2],
+      confirmed: 2,
+      fails: false,
+      history:
+        [
+          "WrongEpoch",
+          "Offer",
+          "Offer",
+          "WrongEpoch",
+          "Ack3",
+          "WrongBinding",
+          "RecoverPost",
+          "Ack3",
+          "WrongBinding",
+          "FailPost",
+          "Retry",
+          "RecoverConfirmation",
+          "FailPost",
+          "Ack3",
+          "WrongBinding",
+          "Retry",
+          "RecoverConfirmation",
+          "RecoverPost",
+          "Ack1",
+          "WrongEpoch",
+          "Ack1",
+          "Ack2",
+          "Offer",
+          "Retry",
+          "RecoverPost",
+          "RecoverPost",
+          "Ack2",
+          "Ack2",
+          "WrongEpoch",
+          "Ack2"
+        ],
+      issued: 3,
+      last: true,
+      pending: [3],
+      posted: [1, 1, 1, 2, 3, 3]
+    }
+}
+
+[ok] No violation found (252ms at 794 traces/second).
+Trace length statistics: max=31, min=31, average=31.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

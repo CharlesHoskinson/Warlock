@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "eventId": "658eb04871db43f180fd2585b871e4d6",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-06T23:45:49.573745+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/warlock-preview-provider-v96",
+  "nextWork": [
+    "PROGRESS ownGUI96: actualNative original-frontend receipt confirmation and independent prefix-confirmed close barrier; actualJS repeats compact original-grant confirmation without packet recreation/effect inference. Preserve held95 native12/20/190,JS10/22/389,64roundtrip. New Quint and actualNative+JS loss-of-confirmation/Unknown/future/in-flight/original grant witnesses required. Native cleanup reservations before admission and fresh-grant reconciliation before WebKit activation still remain."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/warlock-preview-provider-v95/component-manifest.json",
+      "sha256": "994527cc9a42103881d7bffeddb7d722883f4b3df756fdcfebd6cf19ebe0dd77",
+      "size": 173887
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v96/ANCESTRY.json",
+      "sha256": "612eba0ed1168f567651f135ef27f23d3a60c95eb05cfcc91bbfd2764688dd2e",
+      "size": 476
+    },
+    {
+      "path": "docs/warlock-preview/v93/OUTGOING-CONTROL-CONTRACT.md",
+      "sha256": "86fc561e270f5f23a8e6813763c0c03ce7390da423502e3846ef6e04bca6cedd",
+      "size": 4166
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}
