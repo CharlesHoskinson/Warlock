@@ -1,0 +1,63 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-f32b17ebfc3e400a9d50ccf3c3686c95.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-dynamic-enrollment/specs/elm-capture-motion/spec.md": "7eef742f1fd09d731383196ef85c0465be540d04407bb57b5b62fbd2f2905d3c",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-dynamic-enrollment/qa/validate.py": "0e8c9c041d23ba3ba18cb98a27699130b6bdb14d713de6dfe119d02a08c9dd14",
+    "/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/requirements.json": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+    "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v60/S09-EVIDENCE-PLAN.json": "e3b9f35f045f2ff0317498f81d8bf156d8e89cf1de6898590b5c5a3cf4b4f63b",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-dynamic-enrollment/proposal.md": "9bb9060955cf04dce9c0020ff2c03cd0cdddda487c40f79a3a76e71778bdd37a",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-dynamic-enrollment/design.md": "2b2a39ee07056c5dba9851fab2f099eedd8c662158b074028b0bc1a185c1f711",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-dynamic-enrollment/tasks.md": "47f11f28e28fb5d6e5e2a73b43667e933509d0e1ed448e09f18567a0e12b04e6"
+  },
+  "requirements": [
+    "WARLOCK-ENROLL-001",
+    "WARLOCK-ENROLL-002",
+    "WARLOCK-ENROLL-003",
+    "WARLOCK-ENROLL-004"
+  ],
+  "scenarios": [
+    [
+      "WARLOCK-ENROLL-001",
+      "Receiver grows"
+    ],
+    [
+      "WARLOCK-ENROLL-001",
+      "Reused popup refuses"
+    ],
+    [
+      "WARLOCK-ENROLL-002",
+      "Capacity returns in time"
+    ],
+    [
+      "WARLOCK-ENROLL-002",
+      "Capacity returns too late"
+    ],
+    [
+      "WARLOCK-ENROLL-003",
+      "Two items remain owned"
+    ],
+    [
+      "WARLOCK-ENROLL-003",
+      "Duplicate enrollment"
+    ],
+    [
+      "WARLOCK-ENROLL-004",
+      "Membership alone cannot settle"
+    ],
+    [
+      "WARLOCK-ENROLL-004",
+      "Physical drain precedes settlement"
+    ]
+  ],
+  "frozenBaseline": [
+    242,
+    417
+  ],
+  "originalS09ScenarioIds": 13,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

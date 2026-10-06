@@ -1,0 +1,9 @@
+- [x] Implement retained native intent and typed local outcomes.
+- [x] Implement atomic receiver validation and growing C enrollment.
+- [x] Compile full Elm/native code and exercise the actual C/socket boundary.
+- [ ] Freeze explicitly selected new enrollment model and implementation traces.
+- [ ] Qualify actual native dynamic C enrollment and original physical cleanup.
+- [ ] Verify real rejected-job registration and frontend terminal settlement.
+- [ ] Define distinct future intent after unissued expiration with retained history.
+- [ ] Integrate ordinary eligible sources through the single Elm policy.
+- [ ] Close all original S09 and applicable full release gates.

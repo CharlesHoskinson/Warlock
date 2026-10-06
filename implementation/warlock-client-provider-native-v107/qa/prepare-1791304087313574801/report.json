@@ -1,0 +1,279 @@
+{
+  "passed": false,
+  "nativeLaunched": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "retainedShaderWholeRootOracle": [
+    {
+      "version": 74,
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v107/qa/prepare-1791304087313574801/shader-pixels",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v74/qa/native-1791276866539509774/private-evidence/shader-identity-pixels.png",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v74/qa/native-1791276866539509774/private-evidence/shader-tint-pixels.png",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v74/qa/native-1791276866539509774/private-evidence/shader-identity-pixels-native-output.png",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v74/qa/native-1791276866539509774/private-evidence/shader-tint-pixels-native-output.png",
+        "73",
+        "73",
+        "80",
+        "80",
+        "320",
+        "240"
+      ],
+      "exitCode": 0,
+      "pixels": {
+        "passed": true,
+        "comparedRootPixels": 76800,
+        "changedFamilyPixels": 73728,
+        "changedOutputPixels": 73728,
+        "mismatchedBefore": 0,
+        "mismatchedAfter": 0,
+        "wrongAlphaPixels": 0,
+        "redPixels": 73728,
+        "unchangedBlueChildPixels": 3072,
+        "unexpectedFixturePixels": 0
+      }
+    },
+    {
+      "version": 73,
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v107/qa/prepare-1791304087313574801/shader-pixels",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v73/qa/native-1791276008379195044/private-evidence/shader-identity-pixels.png",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v73/qa/native-1791276008379195044/private-evidence/shader-tint-pixels.png",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v73/qa/native-1791276008379195044/private-evidence/shader-identity-pixels-native-output.png",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v73/qa/native-1791276008379195044/private-evidence/shader-tint-pixels-native-output.png",
+        "73",
+        "73",
+        "80",
+        "80",
+        "320",
+        "240"
+      ],
+      "exitCode": 2,
+      "pixels": {
+        "passed": false,
+        "comparedRootPixels": 76800,
+        "changedFamilyPixels": 0,
+        "changedOutputPixels": 73728,
+        "mismatchedBefore": 0,
+        "mismatchedAfter": 73728,
+        "wrongAlphaPixels": 0,
+        "redPixels": 0,
+        "unchangedBlueChildPixels": 3072,
+        "unexpectedFixturePixels": 73728
+      }
+    }
+  ],
+  "retainedWholeRootCoordinates": [
+    {
+      "version": 76,
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v107/qa/prepare-1791304087313574801/coordinate-pixels",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v76/qa/native-1791277798549957384/private-evidence/shader-coordinate-pixels.png",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v76/qa/native-1791277798549957384/private-evidence/shader-coordinate-pixels-native-output.png",
+        "73",
+        "73",
+        "80",
+        "80",
+        "320",
+        "240"
+      ],
+      "exitCode": 2,
+      "pixels": {
+        "passed": false,
+        "comparedRootPixels": 76800,
+        "mismatchedRootPixels": 76796,
+        "wrongAlphaPixels": 0,
+        "nativeRedRange": [
+          26,
+          127
+        ],
+        "nativeGreenRange": [
+          34,
+          136
+        ]
+      }
+    },
+    {
+      "version": 77,
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v107/qa/prepare-1791304087313574801/coordinate-pixels",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v77/qa/native-1791278782420352026/private-evidence/shader-coordinate-pixels.png",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v77/qa/native-1791278782420352026/private-evidence/shader-coordinate-pixels-native-output.png",
+        "73",
+        "73",
+        "80",
+        "80",
+        "320",
+        "240"
+      ],
+      "exitCode": 0,
+      "pixels": {
+        "passed": true,
+        "comparedRootPixels": 76800,
+        "mismatchedRootPixels": 0,
+        "wrongAlphaPixels": 0,
+        "nativeRedRange": [
+          26,
+          127
+        ],
+        "nativeGreenRange": [
+          34,
+          136
+        ]
+      }
+    }
+  ],
+  "retainedCompositedCropProbe": [
+    {
+      "name": "shader-identity-pixels",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v107/qa/prepare-1791304087313574801/composited-crop-pixels",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v78/qa/native-1791278994447344491/private-evidence/shader-identity-pixels.png",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v78/qa/native-1791278994447344491/private-evidence/shader-identity-pixels-native-output.png",
+        "73",
+        "73"
+      ],
+      "exitCode": 0,
+      "pixels": {
+        "passed": false,
+        "comparedCropPixels": 84836,
+        "mismatchedCompositedPixels": 6912,
+        "opaqueFamilyPixels": 77924,
+        "partialAlphaFamilyPixels": 3416,
+        "transparentFamilyPixels": 3496,
+        "wrongNativeOutputAlphaPixels": 0,
+        "independentBackgroundRGBA": [
+          17,
+          17,
+          17,
+          255
+        ]
+      }
+    },
+    {
+      "name": "shader-tint-pixels",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v107/qa/prepare-1791304087313574801/composited-crop-pixels",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v78/qa/native-1791278994447344491/private-evidence/shader-tint-pixels.png",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v78/qa/native-1791278994447344491/private-evidence/shader-tint-pixels-native-output.png",
+        "73",
+        "73"
+      ],
+      "exitCode": 0,
+      "pixels": {
+        "passed": false,
+        "comparedCropPixels": 84836,
+        "mismatchedCompositedPixels": 6912,
+        "opaqueFamilyPixels": 77924,
+        "partialAlphaFamilyPixels": 3416,
+        "transparentFamilyPixels": 3496,
+        "wrongNativeOutputAlphaPixels": 0,
+        "independentBackgroundRGBA": [
+          14,
+          17,
+          17,
+          255
+        ]
+      }
+    }
+  ],
+  "retainedOpaqueDoesNotQualifyHalfAlpha": {
+    "passed": false,
+    "comparedRootPixels": 76800,
+    "mismatchedCompositedPixels": 0,
+    "wrongNativeAlphaPixels": 0,
+    "declaredHalfAlphaRootPixels": 0,
+    "declaredComposedChildPixels": 0,
+    "unexpectedBodyPixels": 76800,
+    "independentBlackBackground": true
+  },
+  "retainedHalfAlphaCursorCounterexample": {
+    "passed": false,
+    "comparedRootPixels": 76800,
+    "mismatchedCompositedPixels": 253,
+    "wrongNativeAlphaPixels": 0,
+    "declaredHalfAlphaRootPixels": 73598,
+    "declaredComposedChildPixels": 2949,
+    "unexpectedBodyPixels": 253,
+    "independentBlackBackground": true
+  },
+  "retainedNativeOmittedBlurCounterexample": {
+    "passed": false,
+    "comparedBodyPixels": 76800,
+    "changedFamilyPixels": 0,
+    "changedNativeOutputPixels": 76800,
+    "mismatchedRGBDeltaPixels": 76800,
+    "wrongAlphaPixels": 0,
+    "independentUnchangedTintedWhiteBackdrop": true
+  },
+  "receiverGrowthBuild": {
+    "argv": [
+      "g++",
+      "-std=c++20",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-MD",
+      "-MF",
+      "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v107/qa/prepare-1791304087313574801/receiver-growth-probe.d",
+      "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v65/native",
+      "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v107/receiver-growth-probe.cpp",
+      "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v65/native/preview_uri.cpp",
+      "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v65/native/preview-provider-bootstrap.cpp",
+      "-o",
+      "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v107/qa/prepare-1791304087313574801/receiver-growth-probe",
+      "-I/usr/include/webkitgtk-4.1",
+      "-I/usr/include/libsoup-3.0",
+      "-I/usr/include/gtk-layer-shell",
+      "-I/usr/include/gtk-3.0",
+      "-I/usr/include/pango-1.0",
+      "-I/usr/include/cloudproviders",
+      "-I/usr/include/cairo",
+      "-I/usr/include/gdk-pixbuf-2.0",
+      "-I/usr/include/glycin-2",
+      "-I/usr/include/at-spi2-atk/2.0",
+      "-I/usr/include/at-spi-2.0",
+      "-I/usr/include/atk-1.0",
+      "-I/usr/include/dbus-1.0",
+      "-I/usr/lib/dbus-1.0/include",
+      "-I/usr/include/fribidi",
+      "-I/usr/include/pixman-1",
+      "-I/usr/include/harfbuzz",
+      "-I/usr/include/freetype2",
+      "-I/usr/include/libpng16",
+      "-I/usr/include/json-glib-1.0",
+      "-I/usr/include/gio-unix-2.0",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/glib-2.0/include",
+      "-I/usr/include/libmount",
+      "-I/usr/include/blkid",
+      "-I/usr/include/sysprof-6",
+      "-pthread",
+      "-lwebkit2gtk-4.1",
+      "-lsoup-3.0",
+      "-ljavascriptcoregtk-4.1",
+      "-lgtk-layer-shell",
+      "-lgtk-3",
+      "-lgdk-3",
+      "-lpangocairo-1.0",
+      "-lcairo-gobject",
+      "-lgdk_pixbuf-2.0",
+      "-latk-1.0",
+      "-lpango-1.0",
+      "-lcairo",
+      "-lharfbuzz",
+      "-ljson-glib-1.0",
+      "-lgio-2.0",
+      "-lgobject-2.0",
+      "-lgmodule-2.0",
+      "-pthread",
+      "-lglib-2.0",
+      "-lz"
+    ],
+    "exitCode": 0,
+    "sha256": "7bfef0efca391e27cb150f22276eedfa333674c7ed1b9ad6a31d73edf2701886"
+  },
+  "error": "AssertionError('/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v107/dynamic-enrollment-probe.cpp: In lambda function:\\n/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v107/dynamic-enrollment-probe.cpp:27:297: error: no match for call to \u2018(preview::bridge::Json) (uint64_t&)\u2019\\n   27 |  const auto drain=[&](uint64_t entry){check(g_input_stream_close(held[entry-1],nullptr,&error) && !error,\"Actual held reader closes normally\");g_object_unref(held[entry-1]);held[entry-1]=nullptr;check(retire(entry),\"Actual consumer, backend, mapping, FD and Broker retirement\");Json status(status(entry));check(Json::boolean(status.object(),\"mappedFDClosed\") && Json::boolean(status.object(),\"producerRetired\") && Json::boolean(status.object(),\"exportReleased\"),\"Actual native import retirement facts\");};\\n      |                                                                                                                                                                                                                                                                                                   ~~~~~~^~~~~~~\\n')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v107/qa/prepare.py\", line 193, in <module>\n    dynamic=OUT/'dynamic-enrollment-probe';dependency=OUT/'dynamic-enrollment-probe.d';dynamicArgv=['g++','-std=c++20','-O2','-Wall','-Wextra','-Werror','-MD','-MF',str(dependency),'-I'+str(provider/'native'),str(ROOT/'dynamic-enrollment-probe.cpp'),str(provider/'native/imported-clients.cpp'),str(provider/'native/preview_uri.cpp'),str(provider/'native/preview-provider-bootstrap.cpp'),'-o',str(dynamic),*growthFlags];dynamicBuild=subprocess.run(dynamicArgv,capture_output=True,text=True,timeout=180);(OUT/'dynamic-enrollment-compile.stdout').write_text(dynamicBuild.stdout);(OUT/'dynamic-enrollment-compile.stderr').write_text(dynamicBuild.stderr);assert dynamicBuild.returncode==0,dynamicBuild.stderr\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: /home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v107/dynamic-enrollment-probe.cpp: In lambda function:\n/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v107/dynamic-enrollment-probe.cpp:27:297: error: no match for call to \u2018(preview::bridge::Json) (uint64_t&)\u2019\n   27 |  const auto drain=[&](uint64_t entry){check(g_input_stream_close(held[entry-1],nullptr,&error) && !error,\"Actual held reader closes normally\");g_object_unref(held[entry-1]);held[entry-1]=nullptr;check(retire(entry),\"Actual consumer, backend, mapping, FD and Broker retirement\");Json status(status(entry));check(Json::boolean(status.object(),\"mappedFDClosed\") && Json::boolean(status.object(),\"producerRetired\") && Json::boolean(status.object(),\"exportReleased\"),\"Actual native import retirement facts\");};\n      |                                                                                                                                                                                                                                                                                                   ~~~~~~^~~~~~~\n\n"
+}

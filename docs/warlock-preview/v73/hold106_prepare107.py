@@ -1,0 +1,20 @@
+"""Retain CPU preflight count mismatch and own corrected native107."""
+import hashlib,json,pathlib,resource,shutil,stat,sys
+sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
+require_qa_scope();assert resource.getrlimit(resource.RLIMIT_CORE)==(1,1)
+repo=pathlib.Path('/home/hoskinson/omarchy-windows-parity');parent=repo/'implementation/warlock-client-provider-native-v106';target=repo/'implementation/warlock-client-provider-native-v107';sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+assert not list(parent.glob('qa/native-*'));failed=next(parent.glob('qa/prepare-*/report.json'));d=json.loads(failed.read_text());assert not d['passed'] and not d['nativeLaunched'] and "len(providerProof['commands'])==90" in d['traceback']
+files={}
+for p in sorted(parent.rglob('*')):
+ rel=p.relative_to(parent)
+ if '__pycache__' in rel.parts:continue
+ assert not p.is_symlink(),p
+ if p.is_file():files[str(rel)]={'kind':'file','sha256':sha(p),'size':p.stat().st_size,'mode':oct(stat.S_IMODE(p.stat().st_mode))}
+manifest=parent/'component-manifest.json';assert not manifest.exists();manifest.write_text(json.dumps({'schema':1,'owner':'f6779148-8f5d-4bdf-8a0f-044184e486f2','passed':False,'sourceHeld':True,'evidenceIntegrityPassed':True,'files':files,'scope':'CPU preflight refuses stale inherited GUI60 command count90 for changed fullGUI65 count94; no native launched or new probe compiled. Fresh107 updates exact changed build count and independently retains original90 command identities. Same ABI/guards/scenarios/deadlines.','nativeAcceptance':False,'fullReleaseAccepted':False},indent=2)+'\n')
+def exclusions(path,names):return [name for name in names if name in {'component-manifest.json','preflight.json','ANCESTRY.json','__pycache__'} or (pathlib.Path(path).name=='qa' and (name.startswith('native-') or name.startswith('prepare-')))]
+assert not target.exists();shutil.copytree(parent,target,ignore=exclusions)
+p=target/'qa/prepare.py';s=p.read_text();old="len(providerProof['commands'])==90";assert s.count(old)==1;s=s.replace(old,"len(providerProof['commands'])==94");needle=" assert len(providerProof['commands'])==94";index=s.index(needle)
+s=s[:index]+" originalBuild=json.loads((REPO/'implementation/warlock-preview-provider-v60/qa/build-1791300224906895169/report.json').read_text());originalCommands=[row['name'] for row in originalBuild['commands']];assert len(originalCommands)==90 and [row['name'] for row in providerProof['commands'] if row['name'] in set(originalCommands)]==originalCommands\n"+s[index:];p.write_text(s)
+(target/'ANCESTRY.json').write_text(json.dumps({'schema':1,'owner':'f6779148-8f5d-4bdf-8a0f-044184e486f2','parent':str(parent),'parentManifestSHA256':sha(manifest),'purpose':'Preserve106 CPU-only stale expected90 build-count failure. Update exact GUI65 count94 and explicitly preserve all original90 build command identities. Same actual dynamic C probe/owning ABI/original105 controls, no scenario/deadline/production guard weakening.','nativeAcceptance':False,'fullReleaseAccepted':False},indent=2)+'\n')
+sys.path.insert(0,str(repo/'implementation/elm-build-loop-v1'));import loop
+event=loop.write_checkpoint(repo,'f6779148-8f5d-4bdf-8a0f-044184e486f2',str(target.relative_to(repo)),['PROGRESS GUI65 frozen2044 files full94/actual C34/intent27/newenrollment8 577states3mutants and alloldmodels pass. Native106 CPUpreflight correctlyfailed stale oldGUI60 count90 before probecompile/no native; held106 fresh107 count94plusalloriginal90 commandidentity retention. CompleteCPUpreflight then serializedprotectednative actual growingC3windows/two physicalitems/originalcapacitydeadline/oldheldGIO/realFD+mapping+backend+consumerdrain/originalterminalACK/pixels, preserveall105 stablecontrols. No whole ordinaryGUIeligible/hardware/fullreleaseacceptance; main desktop preserved.'],'progress',[str(manifest.relative_to(repo)),'implementation/warlock-preview-provider-v65/component-manifest.json']);print(json.dumps({'held':str(manifest),'files':len(files),'source':str(target),'checkpoint':str(event)}))

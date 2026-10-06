@@ -1,0 +1,13 @@
+
+ Error [QNT000]: Expected [s] and [] to be the same
+Trying to unify entities ['s'] and []
+Trying to unify Read[_v569] & Update['s'] and Read['s']
+Trying to unify (Read[_v567] & Update[_v568], Read[_v569] & Update[_v568]) => Read[_v570] & Update[_v568] and (Read[_v535] & Update['s'], Read['s']) => _e158
+Trying to infer effect for operator application in then(then(then(then(then(init, fire(Retry)), fire(Expire)), fire(Drain)), fire(Retry)), assert(and(and(eq(field(s, "status"), "Expired"), not(field(s, "issued"))), eq(field(s, "deadline"), 20))))
+
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v64/qa/enrollment-check-1791303462238461587/inputs/spec/enrollment_tests.qnt:6:30
+  6:  run expiredIntentNotRevived=init.then(fire(Retry)).then(fire(Expire)).then(fire(Drain)).then(fire(Retry)).then(assert(s.status=="Expired" and not(s.issued) and s.deadline==20))
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: typechecking failed

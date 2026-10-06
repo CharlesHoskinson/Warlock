@@ -1,0 +1,4 @@
+import json,resource,subprocess,sys,pathlib,hashlib
+sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
+require_qa_scope();assert resource.getrlimit(resource.RLIMIT_CORE)==(1,1)
+r=pathlib.Path(__file__).parent;tool='/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint';p=subprocess.run([tool,'typecheck','enrollment_tests.qnt'],cwd=r,capture_output=True,text=True,timeout=60);(r/'stdout').write_text(p.stdout);(r/'stderr').write_text(p.stderr);(r/'report.json').write_text(json.dumps({'passed':p.returncode==0,'exitCode':p.returncode,'inputs':{str(x):hashlib.sha256(x.read_bytes()).hexdigest() for x in r.glob('*.qnt')},'nativeAcceptance':False,'fullReleaseAccepted':False},indent=2)+'\n');print(p.stdout,p.stderr);sys.exit(p.returncode)

@@ -1,0 +1,21 @@
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v62/qa/enrollment-check-1791303052219401058/inputs/native/imported_enrollment.hpp:3,
+                 from /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v62/qa/enrollment-check-1791303052219401058/inputs/qa/enrollment-checks.cpp:1:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v62/qa/enrollment-check-1791303052219401058/inputs/native/preview_uri.hpp: In instantiation of ‘auto preview::uri::Endpoint::nativeDemand(F&&) [with F = main()::<lambda(auto:7&)>]’:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v62/qa/enrollment-check-1791303052219401058/inputs/qa/enrollment-checks.cpp:8:263:   required from here
+    8 |  const auto own=scope(1,1).binding;uri::Endpoint endpoint({3,8,2,64},2,1,[](uint64_t)->std::optional<uri::NativeTime>{return uri::NativeTime{{10},3};});check(endpoint.enableDemand({{3,8,2,64},{1},{10},1}),"One own shared queue");auto& queue=endpoint.nativeDemand([](auto& q)->auto&{return q;});ImportedIntentLedger ledger(own,3);NativeStartIdentity original{own,{13},{10},1,1,20};
+      |                                                                                                                                                                                                                                                  ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v62/qa/enrollment-check-1791303052219401058/inputs/native/preview_uri.hpp:80:62: error: use of deleted function ‘preview::demand::Coordinator::Coordinator(const preview::demand::Coordinator&)’
+   80 |         return std::invoke(std::forward<F>(f),*state_->demand);
+      |                                                              ^
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v62/qa/enrollment-check-1791303052219401058/inputs/native/imported_admission.hpp:2,
+                 from /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v62/qa/enrollment-check-1791303052219401058/inputs/native/imported_enrollment.hpp:2:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v62/qa/enrollment-check-1791303052219401058/inputs/native/demand.hpp:69:5: note: declared here
+   69 |     Coordinator(const Coordinator&)=delete;
+      |     ^~~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v62/qa/enrollment-check-1791303052219401058/inputs/native/preview_uri.hpp:80:62: note: use ‘-fdiagnostics-all-candidates’ to display considered candidates
+   80 |         return std::invoke(std::forward<F>(f),*state_->demand);
+      |                                                              ^
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v62/qa/enrollment-check-1791303052219401058/inputs/qa/enrollment-checks.cpp: In function ‘int main()’:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v62/qa/enrollment-check-1791303052219401058/inputs/qa/enrollment-checks.cpp:8:263: error: cannot bind non-const lvalue reference of type ‘preview::demand::Coordinator&’ to an rvalue of type ‘preview::demand::Coordinator’
+    8 |  const auto own=scope(1,1).binding;uri::Endpoint endpoint({3,8,2,64},2,1,[](uint64_t)->std::optional<uri::NativeTime>{return uri::NativeTime{{10},3};});check(endpoint.enableDemand({{3,8,2,64},{1},{10},1}),"One own shared queue");auto& queue=endpoint.nativeDemand([](auto& q)->auto&{return q;});ImportedIntentLedger ledger(own,3);NativeStartIdentity original{own,{13},{10},1,1,20};
+      |                                                                                                                                                                                                                                                  ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,0 +1,19 @@
+"""Retain CPU-only dynamic probe compile failure and own corrected native108."""
+import hashlib,json,pathlib,resource,shutil,stat,sys
+sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
+require_qa_scope();assert resource.getrlimit(resource.RLIMIT_CORE)==(1,1)
+repo=pathlib.Path('/home/hoskinson/omarchy-windows-parity');parent=repo/'implementation/warlock-client-provider-native-v107';target=repo/'implementation/warlock-client-provider-native-v108';sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+assert not list(parent.glob('qa/native-*'));failed=next(parent.glob('qa/prepare-*/report.json'));d=json.loads(failed.read_text());assert not d['passed'] and not d['nativeLaunched'] and 'no match for call' in d['error']
+files={}
+for p in sorted(parent.rglob('*')):
+ rel=p.relative_to(parent)
+ if '__pycache__' in rel.parts:continue
+ assert not p.is_symlink(),p
+ if p.is_file():files[str(rel)]={'kind':'file','sha256':sha(p),'size':p.stat().st_size,'mode':oct(stat.S_IMODE(p.stat().st_mode))}
+manifest=parent/'component-manifest.json';assert not manifest.exists();manifest.write_text(json.dumps({'schema':1,'owner':'f6779148-8f5d-4bdf-8a0f-044184e486f2','passed':False,'sourceHeld':True,'evidenceIntegrityPassed':True,'files':files,'scope':'CPU preflight verifies changedGUI65/original90 command retention and compiles original receiver probe; new dynamic probe compilation fails on Json status variable shadowing the status lambda. No native launched. Fresh108 renames only the probe status accessor, preserving production code, ABI, guards, all scenarios and deadlines.','nativeAcceptance':False,'fullReleaseAccepted':False},indent=2)+'\n')
+def exclusions(path,names):return [name for name in names if name in {'component-manifest.json','preflight.json','ANCESTRY.json','__pycache__'} or (pathlib.Path(path).name=='qa' and (name.startswith('native-') or name.startswith('prepare-')))]
+assert not target.exists();shutil.copytree(parent,target,ignore=exclusions)
+p=target/'dynamic-enrollment-probe.cpp';s=p.read_text();assert 'Json status(status(entry))' in s;s=s.replace('const auto status=[&]', 'const auto ownershipStatus=[&]').replace('status(entry)', 'ownershipStatus(entry)').replace('status(1)', 'ownershipStatus(1)').replace('status(2)', 'ownershipStatus(2)').replace('status(3)', 'ownershipStatus(3)');p.write_text(s)
+(target/'ANCESTRY.json').write_text(json.dumps({'schema':1,'owner':'f6779148-8f5d-4bdf-8a0f-044184e486f2','parent':str(parent),'parentManifestSHA256':sha(manifest),'purpose':'Preserve107 CPU-only dynamic probe status-lambda shadow compilation failure. Rename the probe-only accessor ownershipStatus; production code and exact GUI65/ABI/original105 controls and deadlines unchanged. No native107 launched.','nativeAcceptance':False,'fullReleaseAccepted':False},indent=2)+'\n')
+sys.path.insert(0,str(repo/'implementation/elm-build-loop-v1'));import loop
+event=loop.write_checkpoint(repo,'f6779148-8f5d-4bdf-8a0f-044184e486f2',str(target.relative_to(repo)),['PROGRESS GUI65 held full94/C34/new8 577states3mutants/alloldmodels; Native107 CPU verifies tuple/original90 commands and compiles originalgrowthprobe but dynamicprobe Werror rejects Json status variable shadowing its lambda; held107 fresh108 onlyQA accessor rename. RecompileCPU then serializednative actualgrowingC threewindows/sharedtwoitems/originaldeadline/realGIO+FD+mapping+consumer+backenddrain/exactterminalACK/pixels and allprior105 controls. No originalscenario/productionguard/deadline changes, no native launchedyet and fullreleaseopen'],'progress',[str(manifest.relative_to(repo)),'implementation/warlock-preview-provider-v65/component-manifest.json']);print(json.dumps({'held':str(manifest),'files':len(files),'source':str(target),'checkpoint':str(event)}))
