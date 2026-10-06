@@ -1,0 +1,133 @@
+{
+  "passed": true,
+  "nativeManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v122/component-manifest.json",
+  "nativeManifestSHA256": "b5b7cf671610dd58098bd92df21d4f001e42cf77108e509cf830c6019910370a",
+  "nativeReport": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v122/qa/native-1791318697436457682/report.json",
+  "nativeModuleManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v18/component-manifest.json",
+  "nativeModuleManifestSHA256": "d0930e46fdc9faeab6f3f9a60f8b29dc925f16731d6d929df4912164b2af7c86",
+  "providerManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v84/component-manifest.json",
+  "providerManifestSHA256": "4a552d9b8a47f1f7104603de747d6e1adbbf3b29d3dc9eb540bd127cdd416a8e",
+  "nativeChecks": 2462,
+  "normalOwnedExits": 277,
+  "prior118FixedOrderedControls": 2437,
+  "addressReuseComparison": {
+    "passed": true,
+    "fixedOrderedControls": 2437,
+    "prior": {
+      "attempts": 9,
+      "actualAttemptChecks": 26,
+      "originalExpiryUnchanged": true,
+      "allOwnedAttemptExitsNormal": true
+    },
+    "current": {
+      "attempts": 1,
+      "actualAttemptChecks": 2,
+      "originalExpiryUnchanged": true,
+      "allOwnedAttemptExitsNormal": true
+    },
+    "scope": "Conditional allocator trials each verified against their actual native evidence; unchanged fixed ordered oracles, physical/receipt/clock/pixel/deadline gates remain required."
+  },
+  "nativeRetirementStates": [
+    "Active",
+    "Future",
+    "Active",
+    "Retired",
+    "Active"
+  ],
+  "selectedClassifierScenarios": 8,
+  "classifierTraces": 20,
+  "classifierStates": 438,
+  "unsafeClassifierMutants": 2,
+  "unsafeComparisonMutants": 8,
+  "nativeIncarnationRetirementObservationBoundedQualified": true,
+  "typedNativeRetirementObservationBoundedQualified": true,
+  "typedNativeRetirementEvidence": {
+    "observations": [
+      {
+        "kind": "native-incarnation-retirement",
+        "binding": {
+          "lifetime": "8574369796879451465",
+          "session": "22",
+          "frontend": "1"
+        },
+        "subject": "4",
+        "request": "3",
+        "sequence": "4",
+        "clock": "8574369796879451465",
+        "now": "283017501045624",
+        "issuedThrough": "4",
+        "state": "Active"
+      },
+      {
+        "kind": "native-incarnation-retirement",
+        "binding": {
+          "lifetime": "8574369796879451465",
+          "session": "22",
+          "frontend": "1"
+        },
+        "subject": "2",
+        "request": "4",
+        "sequence": "5",
+        "clock": "8574369796879451465",
+        "now": "283017501528157",
+        "issuedThrough": "4",
+        "state": "Active"
+      },
+      {
+        "kind": "native-incarnation-retirement",
+        "binding": {
+          "lifetime": "8574369796879451465",
+          "session": "22",
+          "frontend": "1"
+        },
+        "subject": "4",
+        "request": "6",
+        "sequence": "6",
+        "clock": "8574369796879451465",
+        "now": "283017522200422",
+        "issuedThrough": "4",
+        "state": "Retired"
+      },
+      {
+        "kind": "native-incarnation-retirement",
+        "binding": {
+          "lifetime": "8574369796879451465",
+          "session": "22",
+          "frontend": "1"
+        },
+        "subject": "2",
+        "request": "7",
+        "sequence": "7",
+        "clock": "8574369796879451465",
+        "now": "283017522558296",
+        "issuedThrough": "4",
+        "state": "Active"
+      }
+    ],
+    "ready": {
+      "stage": "ready",
+      "checks": 16
+    },
+    "complete": {
+      "stage": "complete",
+      "passed": true,
+      "checks": 32,
+      "actorTurnoverAccepted": false,
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false
+    },
+    "normalExit": true,
+    "scope": "Real own native C/socket/bootstrap/ImportedClients observations and original untouched reservation/journal cleanup; no actor removal, pixels or whole GUI release acceptance."
+  },
+  "prior121FixedOrderedControls": 2450,
+  "typedDecoderScenarios": 13,
+  "typedDecoderTraces": 25,
+  "typedDecoderStates": 439,
+  "unsafeDecoderMutants": 3,
+  "retirementCChecks": 96,
+  "actorTurnoverAccepted": false,
+  "ordinaryEligibleCaptureAccepted": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "next": "Commit/publish exact held failedGUI83/passedGUI84/native122 evidence. Fresh GUI85 replaces vector index identities with bounded active membership and nonreused monotonic entry serials, full build66449 running. Integrate atomic proof-safe physical/journal/receiver/Coordinator/Broker/ledger/C retirement and exact Elm settlement facts, then actual more-than256 window turnover; ordinary capture and all original release gates remain."
+}

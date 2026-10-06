@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "25630872627d49c68ab19b05323916bb",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-06T20:24:28.667603+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/warlock-preview-provider-v84",
+  "nextWork": [
+    "PROGRESS GUI83 full95/decoder13/25/439states/3mutants pass; separate C fixture compiled but attempted register over existing receiver, fail + early cleanup leaks held. Fresh84 corrects fixture to actual unregister/register/fresh epoch; production unchanged. Native1212458/276 evidence committed83e294, publication59 live35851. Next compile84/C/model/regressions then actual native path and proof-safe actor turnover beyond256; full release remains open."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/warlock-preview-provider-v83/component-manifest.json",
+      "sha256": "fe6f97ab48fddebd5dba4495335250dce1248b546a10d0922882559366d8f205",
+      "size": 435630
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v84/ANCESTRY.json",
+      "sha256": "11c445044daa875daf6f1e82ae27b5e2ee77a18e369b737b4002320b91275345",
+      "size": 591
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

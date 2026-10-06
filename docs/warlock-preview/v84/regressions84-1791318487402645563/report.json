@@ -1,0 +1,97 @@
+{
+  "passed": true,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v84/qa/next-intent-check.py": "b1d8d599b2b3dc8731f4816723aad3653edf712a8a93d672e2323ba4cbdb4ef8",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v84/qa/feedback-check.py": "6fa4caf800b9ff37a9c10b96c79886363b6384250c0d7ab357f3f3cc480108fe",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v84/qa/resume-enrollment-check.py": "c64249365ad1724a7878dec8fd8ffb2c4fe1c352faa6fa7e15cd5c76a2f0a8a8",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v84/qa/receipt-check.py": "cb9c283c75281bff9a773bb2dd972c90ff6341f7f6dc1aeba5685c60e3bd75ee",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v84/qa/metadata-check.py": "f5daef6f7ef4d9259bb4720ad9dd077fad7ab2a1b31315f5a28e2937fd3bde86",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v84/qa/catalog-check.py": "fe63f17c6f54acbed12f72ce310603c27f6491d27d76a217141a7a3ace79e8e9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v84/qa/check.py": "64ddfc2ce1af5c12405eb6a2643e05175ab24dafad50d45187347861229b744d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v84/qa/delivery-check.py": "de1794c86c085d425323a39287787e8b2fe87c8706e0cdc89a9538b6f71638f8",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v84/qa/resume-model-check.py": "9f391bfee6f305a1fb4f8ee63ecec8d4423eab01a14c7772c6ad88a634399752",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v84/qa/intent-check.py": "c4bc7462d3efc9026393f0f44815fce4a09c095b03cd7575c59440c2a2f7dcea",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v84/qa/enrollment-check.py": "75227f07345413f50b28605ca3b032be16c6acec57d0537ef1fe684c75798bf7",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v84/qa/next-resume-check.py": "37f20c7e3badb6fa7621f697204f864d58e00ccfd95b689e346b2525f495eb81"
+  },
+  "results": [
+    {
+      "script": "next-intent-check.py",
+      "exitCode": 0,
+      "stdoutSHA256": "ed5aabc403e3b0a57ad6a04bd454e8dea6827b0782c740e96f9ef927c00934aa",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "script": "feedback-check.py",
+      "exitCode": 0,
+      "stdoutSHA256": "e1541af19bbfef833380a3fbdc144bf34850b90b9fe5576adaaf9b8b5f8117b1",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "script": "resume-enrollment-check.py",
+      "exitCode": 0,
+      "stdoutSHA256": "174b425a5655ba326feddda9fe212624cce6fbfd7190e812bc123ed79ea8624d",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "script": "receipt-check.py",
+      "exitCode": 0,
+      "stdoutSHA256": "deee5c8d637729399530ed789bfdc3025ea3d841e5a4f2d7aaac8609d5dcebae",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "script": "metadata-check.py",
+      "exitCode": 0,
+      "stdoutSHA256": "41a425c03b30b5d50be5bed3fcb08c8bc12a0b74ac5aaf5597247fb042c72a88",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "script": "catalog-check.py",
+      "exitCode": 0,
+      "stdoutSHA256": "420c23233ca012c7b3a3b78ed65c63a28dc1c29155bcd2a5bfe7db579aef81dc",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "script": "check.py",
+      "exitCode": 0,
+      "stdoutSHA256": "ae50e0553e240907382d749a2196c719b7db80d96a1477e187a50320c08251a6",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "script": "delivery-check.py",
+      "exitCode": 0,
+      "stdoutSHA256": "bc4c8cad4cc71a65c8c4ec00af8d752152bcb4df0858d2e708c66b6fa9b18335",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "script": "resume-model-check.py",
+      "exitCode": 0,
+      "stdoutSHA256": "c1502bcb5455d60ba1329e3294044fb5250606e893fa4943c5fa89f67d4c4264",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "script": "intent-check.py",
+      "exitCode": 0,
+      "stdoutSHA256": "3f2850fa9f25a2162c5249254815e7558b0811e43764a52c831b75e811987ac8",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "script": "enrollment-check.py",
+      "exitCode": 0,
+      "stdoutSHA256": "a25487e857aac0e80097c336f7c1807fbda88956a4d231c8b55b7a95ae0400d4",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "script": "next-resume-check.py",
+      "exitCode": 0,
+      "stdoutSHA256": "b5bdc9d3ba43159691e6f8602300c33d4b5c19ad28dcd8578e723d15247d6eac",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "fullBuild": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v84/qa/build-1791318286405958733/report.json",
+    "sha256": "affc0cc7f78674a5ac6c984bca28e29d036a9e186a44148439c5e563a7816537"
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

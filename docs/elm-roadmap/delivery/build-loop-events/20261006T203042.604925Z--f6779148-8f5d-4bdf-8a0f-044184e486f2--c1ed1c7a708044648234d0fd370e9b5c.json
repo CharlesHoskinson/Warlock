@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "c1ed1c7a708044648234d0fd370e9b5c",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-06T20:30:42.604925+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/warlock-preview-provider-v84",
+  "nextWork": [
+    "PROGRESS GUI84 held: full95 and all eleven original regressions; new resume13/29/605states/3unsafeMutants/guards22/C50Elm30 passed. Typed retirement decoder and C/socket suites passed; actual native122 next. Actor turnover is not accepted. All original release gates preserved."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/warlock-preview-provider-v84/component-manifest.json",
+      "sha256": "4a552d9b8a47f1f7104603de747d6e1adbbf3b29d3dc9eb540bd127cdd416a8e",
+      "size": 1334395
+    },
+    {
+      "path": "docs/warlock-preview/v84/component-report.json",
+      "sha256": "9f56c691febebc026ce0a5bd1f38257b4dc2c88fa8a8be502dfd9bfb61264eb7",
+      "size": 782
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}
