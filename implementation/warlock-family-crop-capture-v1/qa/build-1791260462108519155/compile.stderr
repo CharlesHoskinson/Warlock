@@ -1,0 +1,9 @@
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-capture-v1/qa/build-1791260462108519155/inputs/native/authority.cpp:49:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-capture-v1/qa/build-1791260462108519155/inputs/native/family_crop_capture.hpp: In function ‘std::unique_ptr<const preview::capture::OwnedPng> preview::capture::captureOwnedFamilyCrop(PHLWINDOW, Budget&, uint64_t, const std::function<bool()>&, Hyprutils::Math::CBox*)’:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-capture-v1/qa/build-1791260462108519155/inputs/native/family_crop_capture.hpp:7:5: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+    7 |     if(!pixelBounds)return {};*pixelBounds={};
+      |     ^~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-capture-v1/qa/build-1791260462108519155/inputs/native/family_crop_capture.hpp:7:31: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+    7 |     if(!pixelBounds)return {};*pixelBounds={};
+      |                               ^
+cc1plus: all warnings being treated as errors

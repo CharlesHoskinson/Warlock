@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-654565ca25ec430b90ae5f6a32103e98.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-plan-v2/qa/check.py": "377dd5587371ddf6bf17db629e78841ef1605d3450afcfa1d3bc9d950419d144",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-plan-v2/native/family_crop.hpp": "2f11c881fa627f80817ed1aff2c96f0349602907e7e4b4ea6f0b1abe95db5c8e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-plan-v2/native/check.cpp": "1e4f939b1a8558d961279d38c90584474c6582e3a89580b4c7389bd123cf1c2f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-plan-v2/SPEC.md": "fe76bbe5662165756a403a90ef4f72a9fcef741621473dea296d961e91d45c64",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-capture-v2/native/preview_png.hpp": "308007220baf1d7f2ad30569237ffaf7d6427d900ee1243811480402f188e670",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-capture-v2/native/preview_uri.hpp": "fccf1cd38df5dede20511e5ef7bf453a64c973efb7270ba8dd940745cfd2c399"
+  },
+  "scope": "Actual crop geometry/PNG reservation planner only; selected model/native renderer/FD/typed GUI qualification pending",
+  "argv": [
+    "g++",
+    "-std=c++20",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-capture-v2/native",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-plan-v2/native/check.cpp",
+    "-I/usr/include/glib-2.0",
+    "-I/usr/lib/glib-2.0/include",
+    "-I/usr/include/libmount",
+    "-I/usr/include/blkid",
+    "-I/usr/include/sysprof-6",
+    "-pthread",
+    "-lgio-2.0",
+    "-lgobject-2.0",
+    "-lglib-2.0",
+    "-o",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-plan-v2/qa/check-1791259517997437652/check"
+  ],
+  "compileExitCode": 0,
+  "exitCode": 0,
+  "evidence": {
+    "passed": true,
+    "checks": 30
+  },
+  "artifacts": {
+    "check": "36f98c525e64409caea680f99763431c2eeb58be8c2e6985a179791501176f39",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run.stdout": "94d69d1b90a24414011b423ace62a2f09ad9a1b66bb398e88e575bec6e41640c",
+    "run.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

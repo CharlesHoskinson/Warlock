@@ -1,0 +1,1 @@
+Preserve crop-model1 missing-header failure and crop-model2 built-in set spelling conflict. Fresh3 renames only that action to assignCrop; exact rectangle/model semantics and unchanged planner retained.

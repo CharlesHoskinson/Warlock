@@ -1,0 +1,91 @@
+{
+  "schema": 1,
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "previewEligible": false,
+  "completeFamilyFidelityQualified": false,
+  "files": {
+    "DERIVATION.md": {
+      "kind": "file",
+      "sha256": "e2b4b9299c038dcf5563f919bb7207a812ab330a55d350ce43f45145e2956aa7",
+      "size": 487,
+      "mode": "0o644"
+    },
+    "SPEC.md": {
+      "kind": "file",
+      "sha256": "fe76bbe5662165756a403a90ef4f72a9fcef741621473dea296d961e91d45c64",
+      "size": 1224,
+      "mode": "0o644"
+    },
+    "native/check.cpp": {
+      "kind": "file",
+      "sha256": "1e4f939b1a8558d961279d38c90584474c6582e3a89580b4c7389bd123cf1c2f",
+      "size": 1658,
+      "mode": "0o644"
+    },
+    "native/family_crop.hpp": {
+      "kind": "file",
+      "sha256": "2f11c881fa627f80817ed1aff2c96f0349602907e7e4b4ea6f0b1abe95db5c8e",
+      "size": 1559,
+      "mode": "0o644"
+    },
+    "qa/check-1791259517997437652/check": {
+      "kind": "file",
+      "sha256": "36f98c525e64409caea680f99763431c2eeb58be8c2e6985a179791501176f39",
+      "size": 23472,
+      "mode": "0o755"
+    },
+    "qa/check-1791259517997437652/compile.stderr": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/check-1791259517997437652/compile.stdout": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/check-1791259517997437652/report.json": {
+      "kind": "file",
+      "sha256": "033beb68006b20c4ac87a604c0d737268db4e7f0e72a5d0f4e57a62a38cf2876",
+      "size": 2673,
+      "mode": "0o644"
+    },
+    "qa/check-1791259517997437652/run.stderr": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/check-1791259517997437652/run.stdout": {
+      "kind": "file",
+      "sha256": "94d69d1b90a24414011b423ace62a2f09ad9a1b66bb398e88e575bec6e41640c",
+      "size": 28,
+      "mode": "0o644"
+    },
+    "qa/check-report.json": {
+      "kind": "file",
+      "sha256": "349d4391afb230c80fcf66e0f843e45686a4aa51db37030652c4f55b70a00d5d",
+      "size": 219,
+      "mode": "0o644"
+    },
+    "qa/check.py": {
+      "kind": "file",
+      "sha256": "377dd5587371ddf6bf17db629e78841ef1605d3450afcfa1d3bc9d950419d144",
+      "size": 2188,
+      "mode": "0o644"
+    },
+    "upstream.json": {
+      "kind": "file",
+      "sha256": "0a571685ad1bb681a0b49146b97976d3d5c86270b791ff81fa0bf15dadd22ea5",
+      "size": 446,
+      "mode": "0o644"
+    }
+  },
+  "localBuildLinks": {},
+  "status": "retained-actual-evidence"
+}

@@ -1,0 +1,15 @@
+{
+  "mechanism": "Unhandled std::runtime_error in check.cpp failed assertion28; subprocess stderr states terminate and Crop assertion28",
+  "signal": "SIGABRT",
+  "report": "qa/check-1791259470538010081/report.json",
+  "originalCoreLimit": 1,
+  "sourceCause": "Incorrect test assumption that maximal4096x4096 PNG plan peak fits128MiB",
+  "programPlannerChanged": false,
+  "freshDerivative": "implementation/warlock-family-crop-plan-v2",
+  "mainDesktopAffected": false,
+  "coredumpInfoObserved": "No coredumps found for exact own executable",
+  "coredumpListObserved": "No coredumps found for exact own executable",
+  "recentKernelOOMObserved": false,
+  "memoryAvailableGiB": 45,
+  "limits": "No accessible core or stack; abort cause is directly evidenced by captured stderr and exact failed assertion source"
+}

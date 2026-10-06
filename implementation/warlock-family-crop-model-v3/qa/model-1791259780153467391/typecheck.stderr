@@ -1,0 +1,27 @@
+
+ Error [QNT000]: Expected [valid] and [] to be the same
+Trying to unify entities ['valid'] and []
+Trying to unify Read[_v569] & Update[_v570] and Temporal['valid'] & Update['n', 'x', 'y', 'w', 'h', 'px', 'py', 'pw', 'ph', 'scale', 'ox', 'oy', 'width', 'height']
+Trying to unify (Read[_v569] & Update[_v570], Read[_v571] & Update[_v570]) => Read[_v572] & Update[_v570] and (Temporal['valid'] & Update['n', 'x', 'y', 'w', 'h', 'px', 'py', 'pw', 'ph', 'scale', 'ox', 'oy', 'width', 'height'], Read['valid', 'width', 'height', 'n', 'x', 'y', 'w', 'h', 'px', 'py', 'pw', 'ph', 'scale', 'ox', 'oy'] & Update['n', 'x', 'y', 'w', 'h', 'px', 'py', 'pw', 'ph', 'scale', 'valid', 'ox', 'oy', 'width', 'height']) => _e94
+Trying to infer effect for operator application in then(init, checked)
+
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v3/qa/model-1791259780153467391/crop.qnt:31:19
+  31:  run rootCropTest=init.then(checked)
+                        ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT200]: Using an action as an argument of `and` is only allowed in temporal definitions, but it is used in action `assignCrop`. To combine actions, use `all { ... }` instead.
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v3/qa/model-1791259780153467391/crop.qnt:25:4
+  25:    valid'=count>0 and count<=512 and rw>0 and rh>0 and (count<=1 or (sw>0 and sh>0)) and k>0 and (right-left)*k<=4096 and (bottom-top)*k<=4096,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT200]: action operators may only read and update state variables, but operator `init` performs temporal operations over variables 'valid'. Use temporal instead.
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v3/qa/model-1791259780153467391/crop.qnt:28:9
+  28:  action init=assignCrop(1,73,73,334,254,0,0,1,1,1)
+              ^^^^
+
+error: typechecking failed

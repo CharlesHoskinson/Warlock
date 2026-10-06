@@ -1,0 +1,3 @@
+# Native cropped family qualification
+
+Run all native37 original1524 ordered assertions unchanged on actual core-crop1/crop-capture3/AQ155 tuple. Add actual cropped root, popup/modal, negative origin and fully offscreen contributor pixels, native derived bounds/scale, strict extended FD context/deadline/seals, legacy plane/version refusal, held export and physical close-before-retire. Geometry is changed only by explicit native fixture dispatch; capture must not relocate windows. Independent libpng decoding/native output samples are required. Existing main desktop is untouched. Native pixel controls alone do not qualify full decoration/style/animation/source-stop/minimized/fractional/output/hardware/fidelity/typed production Elm or all original preview13/release gates.

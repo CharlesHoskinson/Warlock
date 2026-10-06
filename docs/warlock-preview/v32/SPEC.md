@@ -1,0 +1,5 @@
+# Native family crop evidence packet
+
+Retain failed/accepted planner/model/core/plugin/FD/native attempts unchanged. Assert actual changed compilation, exact owning core/plugin/AQ155 identity, selected eight crop traces/23 states coupled to unchanged planner2,30 actual planner controls, retained family150/new crop295 physical FD controls, and native campaign only when every recorded assertion and normal owned exit/ordered cleanup passes. Preserve all original1524 native37 ordered assertions, original deadlines and native context/privacy/ownership.
+
+A native crop pass qualifies bounded native root/popup/dialog and negative/offscreen geometry pixels plus distinct origin-bearing export. It does not qualify complete source/style/animation/HDR/fractional/output/hardware/minimized/source-stop fidelity, typed production shared Elm or all original preview13/coherent GUI release. No main desktop activation. All applicable S01-S16 baseline242/417 and separate right-click24/48, restore38/recovery34 including original case34, drag52, AT/IME/resources/journeys/deployment/rollback and C00-C06 decisions remain required.

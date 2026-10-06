@@ -1,0 +1,229 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-f93d16166881428c8a143687ad33af5a.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v4/qa/model.py": "8b0ec87344fe037bf5f6321d6b1e9e289b50fda22bb71e1098e99bfd586cefe8",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v4/spec/crop.qnt": "53df8822d1ee4e6acf1361bb4a5aa7bed7bf398aa76c92ecf972c22bf5a2f197",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v4/native/replay.cpp": "b75b2ac6ad24db4bc113be5ca2f12d92979f0eee83b470bc336f74d639944c3d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v4/SPEC.md": "c95a579a5eed05c97cc8c9d17515b6a9fa523713035b33461bdb8d6643b95a46",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-plan-v2/native/family_crop.hpp": "2f11c881fa627f80817ed1aff2c96f0349602907e7e4b4ea6f0b1abe95db5c8e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-capture-v2/native/preview_png.hpp": "308007220baf1d7f2ad30569237ffaf7d6427d900ee1243811480402f188e670",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-capture-v2/native/binding-registration.hpp": "108be279d8ae3ab5948a78c478acdaa82441a08a93ead1318048c07491872fad",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-capture-v2/native/client_capture.hpp": "2aefe578c2bd84e137cad78387a29cad9652839d8324ef4de6b200b563f9a56a",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-capture-v2/native/client_plan.hpp": "cd115ca351556c1080104af149305c7921acd7e259f32e6ba6dbda8fef7568e3",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-capture-v2/native/family_revision.hpp": "0f90633e48491b3e4effe2d1b5e6fe1a640985e15c3c88a388a080cb8e36c497",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-capture-v2/native/grant-registry.hpp": "9379fd3e014d38b3ac8f7d09e139c6710664d006f9499c6e46b0efd654705def",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-capture-v2/native/popup_tree.hpp": "309eca7ac3de9de49ae4eff4876e9890a14f763331194dd1bd59691f9d4d73b7",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-capture-v2/native/preview_broker.hpp": "b70ad3a81e495924be9f354d17439e6853aeb1cf6c733bd6cfb22fe14e45df80",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-capture-v2/native/preview_capture.hpp": "ea0aebf465dcf5656a4b5e8cd5ac240ed0907f20c069c2e6460ce506efb72f6f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-capture-v2/native/preview_fd.hpp": "2054778e0c130a0d1dcf2284691b1fe15477f62509e5149eeaa14d678eaa497c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-capture-v2/native/preview_uri.hpp": "fccf1cd38df5dede20511e5ef7bf453a64c973efb7270ba8dd940745cfd2c399",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-capture-v2/native/source_epoch.hpp": "df64eec18b8bd62b0b21b73e3aabbc1a9db10f122af65e36f78a6147bd67860f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-capture-v2/native/surface_tree.hpp": "f88d00ca6f0fd972a641bde22951970ca3dec528065800490aad88a4a43d8e85",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-capture-v2/native/tree_revision.hpp": "e66275f37faabd7b939a4f628e22857b77cd598535e58bbf793c60bf5d4f3f46"
+  },
+  "commands": [
+    {
+      "name": "compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v4/qa/model-1791259796294784589",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v4/qa/model-1791259796294784589/replay.cpp",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lgio-2.0",
+        "-lgobject-2.0",
+        "-lglib-2.0",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v4/qa/model-1791259796294784589/replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v4/qa/model-1791259796294784589/crop.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v4/qa/model-1791259796294784589/crop.qnt",
+        "--main=crop",
+        "--backend=typescript",
+        "--match=^(rootCropTest|popupCropTest|negativeOriginTest|scaleCropTest|capacityRefusalTest|dimensionRefusalTest|emptyRefusalTest|zeroExtentTest)$",
+        "--seed=730013",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v4/qa/model-1791259796294784589/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "scope": "Selected integer rectangle/scale crop projection compared to actual unchanged planner; contributor authority/renderer/native FD/hardware separate.",
+  "selectedNames": [
+    "rootCropTest",
+    "popupCropTest",
+    "negativeOriginTest",
+    "scaleCropTest",
+    "capacityRefusalTest",
+    "dimensionRefusalTest",
+    "emptyRefusalTest",
+    "zeroExtentTest"
+  ],
+  "traces": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v4/qa/model-1791259796294784589/named-capacityRefusalTest-4.itf.json": "f56a59e3c599e03dfb916c0e3876f6568852eac794a7868a4b25be6a0d396ad5",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v4/qa/model-1791259796294784589/named-dimensionRefusalTest-5.itf.json": "5fb459be95f2f617276dc2c57ce3cfac0930b287aa6b116871f79139bcde9019",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v4/qa/model-1791259796294784589/named-emptyRefusalTest-6.itf.json": "249d5534024cc16a08c6ad0a3d59f0c7550690e5b452548ec21a11398a8ea663",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v4/qa/model-1791259796294784589/named-negativeOriginTest-2.itf.json": "574f46c84f0bfa9f4a7475db0cd4b8eb8c7ee6a692ce88f37b6238e9e8b6049e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v4/qa/model-1791259796294784589/named-popupCropTest-1.itf.json": "83790c57a0c9a5c4cb94c6b66cfa3144123b0a5d7000a44447f7fca87aca92a0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v4/qa/model-1791259796294784589/named-rootCropTest-0.itf.json": "651d6c19ce5d016f4da9bd3d15598139e9a17e96290ef8df3d6f2446a6717c38",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v4/qa/model-1791259796294784589/named-scaleCropTest-3.itf.json": "c2ec06d0dbc59ee055fb2b5f9cdb5edb0c3bd1effd3528532f928f355ca3dcc2",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v4/qa/model-1791259796294784589/named-zeroExtentTest-7.itf.json": "f82bedc8390f317a454c56adc2ad27fe7ad59d98ef28fff4104b8630a53e7f12"
+  },
+  "states": 23,
+  "implementationReplay": [
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v4/qa/model-1791259796294784589/named-capacityRefusalTest-4.itf.json",
+      "states": 3,
+      "result": {
+        "passed": true,
+        "states": 3
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v4/qa/model-1791259796294784589/named-dimensionRefusalTest-5.itf.json",
+      "states": 3,
+      "result": {
+        "passed": true,
+        "states": 3
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v4/qa/model-1791259796294784589/named-emptyRefusalTest-6.itf.json",
+      "states": 3,
+      "result": {
+        "passed": true,
+        "states": 3
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v4/qa/model-1791259796294784589/named-negativeOriginTest-2.itf.json",
+      "states": 3,
+      "result": {
+        "passed": true,
+        "states": 3
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v4/qa/model-1791259796294784589/named-popupCropTest-1.itf.json",
+      "states": 3,
+      "result": {
+        "passed": true,
+        "states": 3
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v4/qa/model-1791259796294784589/named-rootCropTest-0.itf.json",
+      "states": 2,
+      "result": {
+        "passed": true,
+        "states": 2
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v4/qa/model-1791259796294784589/named-scaleCropTest-3.itf.json",
+      "states": 3,
+      "result": {
+        "passed": true,
+        "states": 3
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v4/qa/model-1791259796294784589/named-zeroExtentTest-7.itf.json",
+      "states": 3,
+      "result": {
+        "passed": true,
+        "states": 3
+      }
+    }
+  ],
+  "artifacts": {
+    "model.py": "8b0ec87344fe037bf5f6321d6b1e9e289b50fda22bb71e1098e99bfd586cefe8",
+    "crop.qnt": "53df8822d1ee4e6acf1361bb4a5aa7bed7bf398aa76c92ecf972c22bf5a2f197",
+    "replay.cpp": "b75b2ac6ad24db4bc113be5ca2f12d92979f0eee83b470bc336f74d639944c3d",
+    "SPEC.md": "c95a579a5eed05c97cc8c9d17515b6a9fa523713035b33461bdb8d6643b95a46",
+    "family_crop.hpp": "2f11c881fa627f80817ed1aff2c96f0349602907e7e4b4ea6f0b1abe95db5c8e",
+    "preview_png.hpp": "308007220baf1d7f2ad30569237ffaf7d6427d900ee1243811480402f188e670",
+    "binding-registration.hpp": "108be279d8ae3ab5948a78c478acdaa82441a08a93ead1318048c07491872fad",
+    "client_capture.hpp": "2aefe578c2bd84e137cad78387a29cad9652839d8324ef4de6b200b563f9a56a",
+    "client_plan.hpp": "cd115ca351556c1080104af149305c7921acd7e259f32e6ba6dbda8fef7568e3",
+    "family_revision.hpp": "0f90633e48491b3e4effe2d1b5e6fe1a640985e15c3c88a388a080cb8e36c497",
+    "grant-registry.hpp": "9379fd3e014d38b3ac8f7d09e139c6710664d006f9499c6e46b0efd654705def",
+    "popup_tree.hpp": "309eca7ac3de9de49ae4eff4876e9890a14f763331194dd1bd59691f9d4d73b7",
+    "preview_broker.hpp": "b70ad3a81e495924be9f354d17439e6853aeb1cf6c733bd6cfb22fe14e45df80",
+    "preview_capture.hpp": "ea0aebf465dcf5656a4b5e8cd5ac240ed0907f20c069c2e6460ce506efb72f6f",
+    "preview_fd.hpp": "2054778e0c130a0d1dcf2284691b1fe15477f62509e5149eeaa14d678eaa497c",
+    "preview_uri.hpp": "fccf1cd38df5dede20511e5ef7bf453a64c973efb7270ba8dd940745cfd2c399",
+    "source_epoch.hpp": "df64eec18b8bd62b0b21b73e3aabbc1a9db10f122af65e36f78a6147bd67860f",
+    "surface_tree.hpp": "f88d00ca6f0fd972a641bde22951970ca3dec528065800490aad88a4a43d8e85",
+    "tree_revision.hpp": "e66275f37faabd7b939a4f628e22857b77cd598535e58bbf793c60bf5d4f3f46",
+    "replay": "f80607e656abf4d1e8c4130bc7e34f9a7235327dd29d44d5a4b758abc49104c9",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-rootCropTest-0.itf.json": "651d6c19ce5d016f4da9bd3d15598139e9a17e96290ef8df3d6f2446a6717c38",
+    "named-popupCropTest-1.itf.json": "83790c57a0c9a5c4cb94c6b66cfa3144123b0a5d7000a44447f7fca87aca92a0",
+    "named-negativeOriginTest-2.itf.json": "574f46c84f0bfa9f4a7475db0cd4b8eb8c7ee6a692ce88f37b6238e9e8b6049e",
+    "named-scaleCropTest-3.itf.json": "c2ec06d0dbc59ee055fb2b5f9cdb5edb0c3bd1effd3528532f928f355ca3dcc2",
+    "named-capacityRefusalTest-4.itf.json": "f56a59e3c599e03dfb916c0e3876f6568852eac794a7868a4b25be6a0d396ad5",
+    "named-dimensionRefusalTest-5.itf.json": "5fb459be95f2f617276dc2c57ce3cfac0930b287aa6b116871f79139bcde9019",
+    "named-emptyRefusalTest-6.itf.json": "249d5534024cc16a08c6ad0a3d59f0c7550690e5b452548ec21a11398a8ea663",
+    "named-zeroExtentTest-7.itf.json": "f82bedc8390f317a454c56adc2ad27fe7ad59d98ef28fff4104b8630a53e7f12",
+    "selected.stdout": "fc552eebd9a7d256db2f9977ecfe81d524f0075a5594fd44b90efb91a364fd6e",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-capacityRefusalTest-4.itf.tsv": "72a7c3cb818c64c0cf926da1802c1caaae698053e184f8e91a2689856345cc2a",
+    "named-capacityRefusalTest-4.itf.stdout": "9d81fe80ca7219722968e7a1be8bb6984ca8bdf1b41f3e86a040f3868d9afec5",
+    "named-capacityRefusalTest-4.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-dimensionRefusalTest-5.itf.tsv": "dfe015cc145b08d8419f0039517344402c81050e4616563f1712405b237d164d",
+    "named-dimensionRefusalTest-5.itf.stdout": "9d81fe80ca7219722968e7a1be8bb6984ca8bdf1b41f3e86a040f3868d9afec5",
+    "named-dimensionRefusalTest-5.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-emptyRefusalTest-6.itf.tsv": "dc646b0a39ec005f0caa7a30d2e0cfb94dbbef73c4ebf6f15f4628208ee75fc4",
+    "named-emptyRefusalTest-6.itf.stdout": "9d81fe80ca7219722968e7a1be8bb6984ca8bdf1b41f3e86a040f3868d9afec5",
+    "named-emptyRefusalTest-6.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-negativeOriginTest-2.itf.tsv": "a420fda84f2752271222784a9c883a407d2e831aa2d8e0fa535542c088c0363b",
+    "named-negativeOriginTest-2.itf.stdout": "9d81fe80ca7219722968e7a1be8bb6984ca8bdf1b41f3e86a040f3868d9afec5",
+    "named-negativeOriginTest-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-popupCropTest-1.itf.tsv": "acfaeafc55a5f9993a4bc0abf4280e20d8897dc10358a8adfae1eb98a1ca3708",
+    "named-popupCropTest-1.itf.stdout": "9d81fe80ca7219722968e7a1be8bb6984ca8bdf1b41f3e86a040f3868d9afec5",
+    "named-popupCropTest-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-rootCropTest-0.itf.tsv": "4e471ee651d1520fbc825a3ba9d9623f37c967df8823f1a8e01cd2ddf0261433",
+    "named-rootCropTest-0.itf.stdout": "1d044f703b27b918e0195fbad0ae225a117596774d309c70369a70da4194a2d9",
+    "named-rootCropTest-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-scaleCropTest-3.itf.tsv": "7eb7c920444aafb9fcb2d5551cfe88ba04e67218e4d2b1bf7568612d75133b1c",
+    "named-scaleCropTest-3.itf.stdout": "9d81fe80ca7219722968e7a1be8bb6984ca8bdf1b41f3e86a040f3868d9afec5",
+    "named-scaleCropTest-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-zeroExtentTest-7.itf.tsv": "19fd0ec6bd97a07d442f92a051641c223743215c60f4a051533a08dae4693c93",
+    "named-zeroExtentTest-7.itf.stdout": "9d81fe80ca7219722968e7a1be8bb6984ca8bdf1b41f3e86a040f3868d9afec5",
+    "named-zeroExtentTest-7.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

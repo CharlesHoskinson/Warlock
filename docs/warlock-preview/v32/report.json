@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "passed": true,
+  "components": [
+    {
+      "path": "implementation/warlock-family-crop-plan-v1/component-manifest.json",
+      "sha256": "79be08f471e0c14f677edc2ed947ca8627375c0cbf27bc418f4246a3f2742e59",
+      "files": 12
+    },
+    {
+      "path": "implementation/warlock-family-crop-plan-v2/component-manifest.json",
+      "sha256": "a1f88d84d0e9b7b367b3705a146912197efc8c689890fe8cc4897bfde25dd607",
+      "files": 13
+    },
+    {
+      "path": "implementation/warlock-family-crop-model-v1/component-manifest.json",
+      "sha256": "c96772600e84d5b41bc2c9e160c98ace413193f8dc66e7b16964d3ce46c1430d",
+      "files": 14
+    },
+    {
+      "path": "implementation/warlock-family-crop-model-v2/component-manifest.json",
+      "sha256": "a91f8fc990d451e6dcae160a39ebcdc4abefdd4b720bca8431e02aa3bcd815f6",
+      "files": 30
+    },
+    {
+      "path": "implementation/warlock-family-crop-model-v3/component-manifest.json",
+      "sha256": "b9f53708c7ada163b605bb08ca2f03b3ac81044acd289766b010bccbb4b4d3cd",
+      "files": 30
+    },
+    {
+      "path": "implementation/warlock-family-crop-model-v4/component-manifest.json",
+      "sha256": "269bd6ea2af13354fc0631b6db21e709ed2e1444a3e863b3fab3014e3b066b90",
+      "files": 65
+    },
+    {
+      "path": "implementation/warlock-core-family-crop-v1/component-manifest.json",
+      "sha256": "b7036daeaa5e8255f78223a3cc57934a2cb86e700b37dddba1d499fc77074284",
+      "files": 756
+    },
+    {
+      "path": "implementation/warlock-family-crop-capture-v1/component-manifest.json",
+      "sha256": "e9fd713f9b6e8a50dece99bd80f0a39d5718d66976e6875b232618328a21bc54",
+      "files": 785
+    },
+    {
+      "path": "implementation/warlock-family-crop-capture-v2/component-manifest.json",
+      "sha256": "e9b8ce3538bef811d49892c58e198695a16cc8b6895cdc6a3f63e77f95857c3f",
+      "files": 1142
+    },
+    {
+      "path": "implementation/warlock-family-crop-capture-v3/component-manifest.json",
+      "sha256": "a3fc4c6e172b4883f2d6719909c92645d6240a753142efea8f83a8aeb14129ec",
+      "files": 1142
+    },
+    {
+      "path": "implementation/warlock-family-crop-fd-qualification-v1/component-manifest.json",
+      "sha256": "8719848548244fc344479365bfee1dbb1c670fdf226bab1520e2093dbac356c0",
+      "files": 34
+    },
+    {
+      "path": "implementation/warlock-family-crop-fd-qualification-v2/component-manifest.json",
+      "sha256": "a9f0821ac1188630ffa0c7c9c5f3870bdbbf9f0c0bdd85760628e5ffb46515f4",
+      "files": 38
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v38/component-manifest.json",
+      "sha256": "62f4483f9e6ad83b018388b17853e7463a60f71c92e84fc0c496abc51ccd999f",
+      "files": 323
+    }
+  ],
+  "evidence": {
+    "implementation/warlock-family-crop-plan-v2/qa/check-1791259517997437652/report.json": "033beb68006b20c4ac87a604c0d737268db4e7f0e72a5d0f4e57a62a38cf2876",
+    "implementation/warlock-family-crop-model-v4/qa/model-1791259796294784589/report.json": "1b58962b1d4c5e73ce912e334cbe8f8a62896af87fdaed182d4772a33ac5caf8",
+    "implementation/warlock-family-crop-fd-qualification-v2/qa/test-1791260584360876092/report.json": "37674a94a62995184273e8ef05c96b396ea01dd44e7bbeefd55e3a78dc98a9f8",
+    "implementation/warlock-core-family-crop-v1/build-1791260322349568389/report.json": "92ed76e113657af6e393b9a5accbcd602e309e4ba3ad582767e8ddf0769f02b1",
+    "implementation/warlock-family-crop-capture-v3/qa/build-1791260584372714714/report.json": "d51ca5bc5d5c6e67587d8b3a2a9d4c5bc4952ef00e759e4692a30e01d08ab5f4",
+    "implementation/warlock-client-provider-native-v38/qa/native-1791260728575460795/report.json": "1183a472cc55bc833bc5f8ed24c4761af7e49cca590325f6b83f05c45bc13bb2",
+    "implementation/warlock-client-provider-native-v37/qa/native-1791259128393147111/report.json": "c999b3093826c2057442ecf0b2433125aa7ef226719df80f4fd6f5ad032499a8"
+  },
+  "nativeControls": 1612,
+  "normalOwnedExits": 150,
+  "actualNativeFamilyCropQualified": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "next": "Complete native source/style/animation/fidelity and shared typed Elm family crop adoption plus original production preview13 and all coherent release gates."
+}

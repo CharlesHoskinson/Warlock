@@ -1,0 +1,7 @@
+# Distinct native cropped-family capture
+
+A new scoped native family source uses the owning core crop planner/framebuffer. Native peer PID/start grant, binding, current incarnation/context/output/privacy, original two-second deadline, producer 128 MiB/two-item admission and physically retained export obligations are unchanged. Request JSON supplies no family members, crop origin, scale or pixel attestation. Reservation precedes native framebuffer allocation; original producer PNG/peak accounting remains.
+
+Only new crop operations/FD query version2 use the extended reply: original25 words followed by signed pixelX/pixelY and IEEE754 output scale, CroppedFamilyPlane64 with current flags67. Origin is monitor-relative native pixel space and PNG dimensions cover the native contributor union. Old25-word formats, flag masks and operation meanings remain unchanged; old operations/FD versions cannot retire, import or alias a crop capture. New typed decoder validates all identities, bounds, scale, seals, length and physical mapping/FD ownership before adoption. Crop previewEligible remains false pending full source/style/fidelity and production-provider acceptance.
+
+Actual changed compilation and symbol closure on exact owning core-crop ABI precede serialized protected native qualification. No component check closes original preview13, minimized/source-stop, arbitrary output/hardware or full GUI release. Main desktop and drafts remain untouched.

@@ -1,0 +1,58 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-0c320eaa21724976863040025c44deee.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v1/qa/model.py": "3e2a7362c167a4fb11439fafd1b8b7328dc81ff8e8c3571de3a7214acfb5b88d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v1/spec/crop.qnt": "57d2da3ce2c5a8bcd5d31a4111f4f7f74913389f7c54ee3d64400fee6f2e23f9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v1/native/replay.cpp": "f9b96438158a90b22d7deaa0404a968cc38982c2120e00bd92b288262b23f41e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v1/SPEC.md": "c95a579a5eed05c97cc8c9d17515b6a9fa523713035b33461bdb8d6643b95a46",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-plan-v2/native/family_crop.hpp": "2f11c881fa627f80817ed1aff2c96f0349602907e7e4b4ea6f0b1abe95db5c8e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-capture-v2/native/preview_png.hpp": "308007220baf1d7f2ad30569237ffaf7d6427d900ee1243811480402f188e670",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-capture-v2/native/preview_uri.hpp": "fccf1cd38df5dede20511e5ef7bf453a64c973efb7270ba8dd940745cfd2c399"
+  },
+  "commands": [
+    {
+      "name": "compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v1/qa/model-1791259737225110717",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v1/qa/model-1791259737225110717/replay.cpp",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lgio-2.0",
+        "-lgobject-2.0",
+        "-lglib-2.0",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v1/qa/model-1791259737225110717/replay"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "scope": "Selected integer rectangle/scale crop projection compared to actual unchanged planner; contributor authority/renderer/native FD/hardware separate.",
+  "error": "AssertionError('In file included from /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v1/qa/model-1791259737225110717/preview_png.hpp:2,\\n                 from /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v1/qa/model-1791259737225110717/family_crop.hpp:2,\\n                 from /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v1/qa/model-1791259737225110717/replay.cpp:1:\\n/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v1/qa/model-1791259737225110717/preview_uri.hpp:2:10: fatal error: preview_broker.hpp: No such file or directory\\n    2 | #include \"preview_broker.hpp\"\\n      |          ^~~~~~~~~~~~~~~~~~~~\\ncompilation terminated.\\n')",
+  "artifacts": {
+    "model.py": "3e2a7362c167a4fb11439fafd1b8b7328dc81ff8e8c3571de3a7214acfb5b88d",
+    "crop.qnt": "57d2da3ce2c5a8bcd5d31a4111f4f7f74913389f7c54ee3d64400fee6f2e23f9",
+    "replay.cpp": "f9b96438158a90b22d7deaa0404a968cc38982c2120e00bd92b288262b23f41e",
+    "SPEC.md": "c95a579a5eed05c97cc8c9d17515b6a9fa523713035b33461bdb8d6643b95a46",
+    "family_crop.hpp": "2f11c881fa627f80817ed1aff2c96f0349602907e7e4b4ea6f0b1abe95db5c8e",
+    "preview_png.hpp": "308007220baf1d7f2ad30569237ffaf7d6427d900ee1243811480402f188e670",
+    "preview_uri.hpp": "fccf1cd38df5dede20511e5ef7bf453a64c973efb7270ba8dd940745cfd2c399",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3915d65ee485e990e74e268578560f2a4a05716f34f3fde74fa69b10b051581"
+  }
+}

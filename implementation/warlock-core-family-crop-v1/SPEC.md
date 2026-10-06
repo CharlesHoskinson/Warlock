@@ -1,0 +1,7 @@
+# Owning native family crop framebuffer
+
+The native caller supplies only a root window. The compositor derives family membership, current decoration bounds and applied root/subsurface/popup bounds. Planning reports monitor-relative native pixel origin and dimensions with the unchanged crop-plan2 outward rounding and image accounting. Capture derives the plan again; callers cannot inject bounds or members. Scope is bounded to 256 native members and 256 total surface rows. Non-normal output transforms are refused pending their own projection qualification.
+
+The scoped capture preserves native geometry, workspace paint order and style. Native pixel damage, clipping and window boxes retain their coordinates until projection/scissor rebasing at the GL boundary. Offscreen eligible native family contributors survive monitor simplification. Minimized, hidden, foreign workspace and invalid contributors remain refused. No unrelated desktop/layer/fadeout is captured. Renderer mode/data/feedback/snapshot/GL state is restored; physical async references remain held until glFinish. Existing exports and object/vtable layouts remain unchanged.
+
+Actual two-TU compilation, complete retained archive and exact relink are required. Native qualification, distinct origin-bearing FD, source revision/fidelity, minimized/source-stop, fractional/transformed/HDR output, hardware fences/cadence, shared typed Elm, original preview13 and coherent GUI release remain open. Main desktop and original acceptance identities/deadlines remain unchanged.

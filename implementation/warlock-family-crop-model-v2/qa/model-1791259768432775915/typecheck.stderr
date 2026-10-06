@@ -1,0 +1,8 @@
+
+ Error [QNT101]: Built-in name 'set' is redefined in module 'crop'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-model-v2/qa/model-1791259768432775915/crop.qnt:19:9
+  19:  action set(count:int,rx:int,ry:int,rw:int,rh:int,sx:int,sy:int,sw:int,sh:int,k:int):bool = {
+              ^^^
+
+error: parsing failed

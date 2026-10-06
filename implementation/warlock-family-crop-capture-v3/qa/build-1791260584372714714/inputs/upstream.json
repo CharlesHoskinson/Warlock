@@ -1,0 +1,122 @@
+{
+  "parent": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-capture-v2",
+  "parentDescriptorSHA256": "8994a2ce645ad920d1e644573ff3a362a4602496d2af598693900b82c0763af3",
+  "coreComponent": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v1",
+  "coreManifestSHA256": "b7036daeaa5e8255f78223a3cc57934a2cb86e700b37dddba1d499fc77074284",
+  "parentSourceFiles": {
+    "native/CONTRACT.md": "78f18c44c18c1e895fb8672cadba8a40bfe8274453888f846d5b500e49b8ee19",
+    "native/authority.cpp": "1a81a6074a9e87a5b9bf576eb7060adbf18744fdcc6c245dfeb1bec13e76d86c",
+    "native/binding-registration.hpp": "108be279d8ae3ab5948a78c478acdaa82441a08a93ead1318048c07491872fad",
+    "native/capture-fd-server.inc": "2a2d76f961e44d18d504f2aa51a0b36634711ebe601d763ab1bb5ee0d943b34e",
+    "native/capture-probe.inc": "0bde7da6dfce72ae35ab995382801cfe2c60a58b7c5f9c368d16c553aaf36010",
+    "native/client-probe.inc": "05caf83253522b8cce2b6c98886bbe6581bf6b9bd15da0f97994a6f53324f3e4",
+    "native/client_capture.hpp": "2aefe578c2bd84e137cad78387a29cad9652839d8324ef4de6b200b563f9a56a",
+    "native/client_plan.hpp": "cd115ca351556c1080104af149305c7921acd7e259f32e6ba6dbda8fef7568e3",
+    "native/family_revision.hpp": "0f90633e48491b3e4effe2d1b5e6fe1a640985e15c3c88a388a080cb8e36c497",
+    "native/geometry-effects.inc": "92469bb571662238085980bbdabbe0e8144ad45075fb08276ffd3fa1fdf33400",
+    "native/geometry-policy.inc": "3199de75489bf2ecd3fab19200c11e87668d602ec2fefdbd99c148cfc90ed404",
+    "native/geometry.inc": "75d1d99e1297c61d541254f9b6f5c606709afd684b79275e77d701b4d88f1947",
+    "native/grant-registry.hpp": "9379fd3e014d38b3ac8f7d09e139c6710664d006f9499c6e46b0efd654705def",
+    "native/png_checks.cpp": "23a7f1df73acd7c3db612dfef8ee1c95815ec815a81ee62dcaded63e2d7eb95c",
+    "native/popup_tree.hpp": "309eca7ac3de9de49ae4eff4876e9890a14f763331194dd1bd59691f9d4d73b7",
+    "native/preview_broker.hpp": "b70ad3a81e495924be9f354d17439e6853aeb1cf6c733bd6cfb22fe14e45df80",
+    "native/preview_capture.hpp": "ea0aebf465dcf5656a4b5e8cd5ac240ed0907f20c069c2e6460ce506efb72f6f",
+    "native/preview_fd.hpp": "2054778e0c130a0d1dcf2284691b1fe15477f62509e5149eeaa14d678eaa497c",
+    "native/preview_png.hpp": "308007220baf1d7f2ad30569237ffaf7d6427d900ee1243811480402f188e670",
+    "native/preview_uri.cpp": "d960c1a3d0cd5a569e84af3d005e184d412c1d86ea6bef6f73ad55b1ab2eaa15",
+    "native/preview_uri.hpp": "fccf1cd38df5dede20511e5ef7bf453a64c973efb7270ba8dd940745cfd2c399",
+    "native/source-scope.inc": "2bf3919ce35e96842fdf884c3e5092886141ef67a66841f00507fc1cdd372ff8",
+    "native/source_epoch.hpp": "df64eec18b8bd62b0b21b73e3aabbc1a9db10f122af65e36f78a6147bd67860f",
+    "native/surface_tree.hpp": "f88d00ca6f0fd972a641bde22951970ca3dec528065800490aad88a4a43d8e85",
+    "native/tree_revision.hpp": "e66275f37faabd7b939a4f628e22857b77cd598535e58bbf793c60bf5d4f3f46",
+    "candidate/EffectBarrier.hpp": "9f1e2459a996df3aa71b5834c766054c8cac33ac80a751e9500fc818392a5ac3",
+    "candidate/PlacementPolicy.hpp": "764d627049e787220dd66be2c93ce1da5bb20ff1a821523e75210a9f7b854202",
+    "candidate/ProspectiveGeometry.hpp": "0102d62ed9e1db22902ab0ab1e071cfbe96153b146a5ad3ecc1174c9eaec548b",
+    "candidate/SceneModal.hpp": "e179d660844d41715b62f822423f48f4187436b9f9cb3d97a3670bd3501d7aec",
+    "candidate/SceneTrace.hpp": "5895ab04c1b663cac9a79f40ed8b288769edeb09ff6d64675ff28f4394523044",
+    "candidate/WindowPolicy.hpp": "73c5a6d32e4e14c504ecb5806ce7d4c2d99c0a26c80b14e4dae0b7e035588b90"
+  },
+  "registrationParent": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboardless-focus-owning-pair-v206",
+    "authoritySHA256": "f5d4ddacfa95a16f93ef67f0d11263bdab42b0a8a7ae55fbd42feb7753b8d1c1"
+  },
+  "grantRegistryComponent": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/component-manifest.json",
+    "sha256": "3e49a26733bb285f212b99b147e754293c425844677b52c777c34bb40ed774f0"
+  },
+  "captureParent": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-authority-v594",
+    "descriptorSHA256": "642f2132d3ce803dc1abdd95e6df0ea4826d82c8933532cae23e7f5018d7d19f",
+    "authoritySHA256": "78baa43847be252a3cd381b874851518bf8eab9f4ae55d6115afecb44258387f"
+  },
+  "attemptParent": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-preview-fd-authority-v445",
+    "report": "/home/hoskinson/omarchy-windows-parity/implementation/elm-preview-fd-authority-v445/qa/build-1791176644123892391/report.json",
+    "sha256": "f02ba168c166398b99a030d1a65d1f317aa2e77903f8bfea55d059f2e023527d"
+  },
+  "fdParent": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-preview-native-capture-v434",
+    "descriptorSHA256": "ba1fefbca9034052df9dda3da4d8cf7801caa6c6dce37cc4729c8991bce56e22"
+  },
+  "scopeParent": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-preview-fd-authority-v446",
+    "descriptorSHA256": "459e73c34e2594b65a41d58fcc71e410107cce6db71bcf96550a150c0bc8465f"
+  },
+  "sourceFiles": {
+    "native/CONTRACT.md": "78f18c44c18c1e895fb8672cadba8a40bfe8274453888f846d5b500e49b8ee19",
+    "native/authority.cpp": "ab7ce60b3afe7ff946aaea6c1711729ca93859ebba7a463631ca647cdc03ffe8",
+    "native/binding-registration.hpp": "108be279d8ae3ab5948a78c478acdaa82441a08a93ead1318048c07491872fad",
+    "native/capture-fd-server.inc": "8e9b90a8c1b47d522dd5b9347037d8b16c355170d91b8e12c56a80b0ff56e647",
+    "native/capture-probe.inc": "d39e9af4c6903a5ca5bce4ec2e2035bfe57fc2c074ee15c9ed240b05509c9531",
+    "native/client-probe.inc": "f1138325f2af7128232382cee558e285b81cf8e9b9e34e988809d6b2af9aaaaf",
+    "native/client_capture.hpp": "2aefe578c2bd84e137cad78387a29cad9652839d8324ef4de6b200b563f9a56a",
+    "native/client_plan.hpp": "cd115ca351556c1080104af149305c7921acd7e259f32e6ba6dbda8fef7568e3",
+    "native/family_crop_capture.hpp": "d497fb1955fc1fa628934def00364b2408a0fd6ccccb4d544c45cf3a46c7c9ef",
+    "native/family_crop_fd.hpp": "11c62132e75325608bc00a7af930384324680ef93405860228af725327a81672",
+    "native/family_revision.hpp": "0f90633e48491b3e4effe2d1b5e6fe1a640985e15c3c88a388a080cb8e36c497",
+    "native/geometry-effects.inc": "92469bb571662238085980bbdabbe0e8144ad45075fb08276ffd3fa1fdf33400",
+    "native/geometry-policy.inc": "3199de75489bf2ecd3fab19200c11e87668d602ec2fefdbd99c148cfc90ed404",
+    "native/geometry.inc": "75d1d99e1297c61d541254f9b6f5c606709afd684b79275e77d701b4d88f1947",
+    "native/grant-registry.hpp": "9379fd3e014d38b3ac8f7d09e139c6710664d006f9499c6e46b0efd654705def",
+    "native/png_checks.cpp": "23a7f1df73acd7c3db612dfef8ee1c95815ec815a81ee62dcaded63e2d7eb95c",
+    "native/popup_tree.hpp": "309eca7ac3de9de49ae4eff4876e9890a14f763331194dd1bd59691f9d4d73b7",
+    "native/preview_broker.hpp": "b70ad3a81e495924be9f354d17439e6853aeb1cf6c733bd6cfb22fe14e45df80",
+    "native/preview_capture.hpp": "ea0aebf465dcf5656a4b5e8cd5ac240ed0907f20c069c2e6460ce506efb72f6f",
+    "native/preview_fd.hpp": "2054778e0c130a0d1dcf2284691b1fe15477f62509e5149eeaa14d678eaa497c",
+    "native/preview_png.hpp": "308007220baf1d7f2ad30569237ffaf7d6427d900ee1243811480402f188e670",
+    "native/preview_uri.cpp": "d960c1a3d0cd5a569e84af3d005e184d412c1d86ea6bef6f73ad55b1ab2eaa15",
+    "native/preview_uri.hpp": "fccf1cd38df5dede20511e5ef7bf453a64c973efb7270ba8dd940745cfd2c399",
+    "native/source-scope.inc": "2bf3919ce35e96842fdf884c3e5092886141ef67a66841f00507fc1cdd372ff8",
+    "native/source_epoch.hpp": "df64eec18b8bd62b0b21b73e3aabbc1a9db10f122af65e36f78a6147bd67860f",
+    "native/surface_tree.hpp": "f88d00ca6f0fd972a641bde22951970ca3dec528065800490aad88a4a43d8e85",
+    "native/tree_revision.hpp": "e66275f37faabd7b939a4f628e22857b77cd598535e58bbf793c60bf5d4f3f46",
+    "candidate/EffectBarrier.hpp": "9f1e2459a996df3aa71b5834c766054c8cac33ac80a751e9500fc818392a5ac3",
+    "candidate/PlacementPolicy.hpp": "764d627049e787220dd66be2c93ce1da5bb20ff1a821523e75210a9f7b854202",
+    "candidate/ProspectiveGeometry.hpp": "0102d62ed9e1db22902ab0ab1e071cfbe96153b146a5ad3ecc1174c9eaec548b",
+    "candidate/SceneModal.hpp": "e179d660844d41715b62f822423f48f4187436b9f9cb3d97a3670bd3501d7aec",
+    "candidate/SceneTrace.hpp": "5895ab04c1b663cac9a79f40ed8b288769edeb09ff6d64675ff28f4394523044",
+    "candidate/WindowPolicy.hpp": "73c5a6d32e4e14c504ecb5806ce7d4c2d99c0a26c80b14e4dae0b7e035588b90"
+  },
+  "failedDerivative": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-capture-v4",
+    "manifestSHA256": "5b876b6bc65074054ba79411670596748d1b9202eac52bd12a482021ca68e71d"
+  },
+  "popupObserverParent": {
+    "componentManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-popup-source-revisions-v1/component-manifest.json",
+    "sha256": "691fda5a71be019a1f65b43b018680cd0b6bd6cfa60469e957fed647f8f4ddc5",
+    "nativeReport": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v30/qa/native-1791256065532190194/report.json"
+  },
+  "familyModalQualification": {
+    "packet": "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v29/report.json",
+    "sha256": "e2a6499334196908d40e377811de3235c73c698d5446bf74059bb3898d1c929e"
+  },
+  "failedCropParent": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-capture-v1",
+    "report": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-capture-v1/qa/build-1791260462108519155/report.json",
+    "sha256": "641b9ebb4bd08dac8348bf1bfbcf9658ea93669c580ca257f9f15d88119cf7fe"
+  },
+  "cropCaptureAncestor": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-capture-v2",
+    "descriptorSHA256": "6b6899821462bab9d0d65dd6251ec7c3894c31b851a4d6f4120480db78dff55a"
+  }
+}

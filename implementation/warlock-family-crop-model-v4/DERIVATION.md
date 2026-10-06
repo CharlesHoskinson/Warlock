@@ -1,0 +1,1 @@
+Preserve crop-model1 missing-header, model2 reserved-name, model3 assignment-precedence failures. Fresh4 explicitly groups the Boolean valid assignment; mathematical crop/validity predicates are unchanged. Actual unchanged planner replay is required.

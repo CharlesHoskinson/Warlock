@@ -1,0 +1,49 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-9bc319f4e4dc4f94a277443e94c71aa2.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-plan-v1/qa/check.py": "377dd5587371ddf6bf17db629e78841ef1605d3450afcfa1d3bc9d950419d144",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-plan-v1/native/family_crop.hpp": "2f11c881fa627f80817ed1aff2c96f0349602907e7e4b4ea6f0b1abe95db5c8e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-plan-v1/native/check.cpp": "b018e1eddeb97b1cd148162ef10fd9d12c2d7adf28b3c1008ad0bc1f717c7c84",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-plan-v1/SPEC.md": "fe76bbe5662165756a403a90ef4f72a9fcef741621473dea296d961e91d45c64",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-capture-v2/native/preview_png.hpp": "308007220baf1d7f2ad30569237ffaf7d6427d900ee1243811480402f188e670",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-capture-v2/native/preview_uri.hpp": "fccf1cd38df5dede20511e5ef7bf453a64c973efb7270ba8dd940745cfd2c399"
+  },
+  "scope": "Actual crop geometry/PNG reservation planner only; selected model/native renderer/FD/typed GUI qualification pending",
+  "argv": [
+    "g++",
+    "-std=c++20",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-capture-v2/native",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-plan-v1/native/check.cpp",
+    "-I/usr/include/glib-2.0",
+    "-I/usr/lib/glib-2.0/include",
+    "-I/usr/include/libmount",
+    "-I/usr/include/blkid",
+    "-I/usr/include/sysprof-6",
+    "-pthread",
+    "-lgio-2.0",
+    "-lgobject-2.0",
+    "-lglib-2.0",
+    "-o",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-plan-v1/qa/check-1791259470538010081/check"
+  ],
+  "compileExitCode": 0,
+  "exitCode": -6,
+  "error": "AssertionError(\"terminate called after throwing an instance of 'std::runtime_error'\\n  what():  Crop assertion 28\\n\")",
+  "artifacts": {
+    "check": "398c3537fc271c25f470625ac6a18352488d86f30fafd96a101f4e51ec3a4482",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run.stderr": "55488bd621f3cf75afe24317f6cbfd4c3d3bab1861de78a76c52ca1166eaae07"
+  }
+}

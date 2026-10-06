@@ -1,0 +1,26 @@
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-fd-qualification-v1/qa/test-1791260542171165674/qualify.cpp:1:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-fd-qualification-v1/qa/test-1791260542171165674/family_crop_fd.hpp: In function ‘preview::fd::Header preview::cropfd::base(const Header&)’:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-fd-qualification-v1/qa/test-1791260542171165674/family_crop_fd.hpp:12:65: error: ‘copy_n’ is not a member of ‘std’; did you mean ‘copy’?
+   12 | inline fd::Header base(const Header& h){fd::Header value{};std::copy_n(h.begin(),fd::Count,value.begin());return value;}
+      |                                                                 ^~~~~~
+      |                                                                 copy
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-fd-qualification-v1/qa/test-1791260542171165674/qualify.cpp: In function ‘int main()’:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-fd-qualification-v1/qa/test-1791260542171165674/qualify.cpp:11:18: error: reference to ‘Lifetime’ is ambiguous
+   11 |     for(size_t i=Lifetime;i<fd::Count;++i)h[i]=1;
+      |                  ^~~~~~~~
+  • there are 2 candidates
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-fd-qualification-v1/qa/test-1791260542171165674/preview_uri.hpp:2,
+                 from /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-fd-qualification-v1/qa/test-1791260542171165674/preview_fd.hpp:2,
+                 from /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-fd-qualification-v1/qa/test-1791260542171165674/family_crop_fd.hpp:2:
+    • candidate 1: ‘struct preview::Lifetime’
+      /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-fd-qualification-v1/qa/test-1791260542171165674/preview_broker.hpp:19:8:
+         19 | struct Lifetime; struct Session; struct Frontend; struct Incarnation;
+            |        ^~~~~~~~
+    • candidate 2: ‘preview::fd::ReplyWord preview::fd::Lifetime’
+      /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-fd-qualification-v1/qa/test-1791260542171165674/preview_fd.hpp:27:46:
+         27 | enum ReplyWord:size_t { Magic,Version,Status,Lifetime,Session,Frontend,Request,Capture,Subject,Output,Completed,Now,Width,Height,Bytes,Charge,Transfer,CRC,Privacy,Rendering,Scene,Content,Flags,Deadline,Expires,Count };
+            |                                              ^~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-fd-qualification-v1/qa/test-1791260542171165674/qualify.cpp:19:48: error: unable to deduce ‘std::initializer_list<auto>&&’ from ‘{0, 4097, 18446744073709551615}’
+   19 |     for(uint64_t width:{0ULL,4097ULL,UINT64_MAX}){auto value=h;value[Width]=width;check(!cropfd::imageHeader(value));}
+      |                                                ^
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-crop-fd-qualification-v1/qa/test-1791260542171165674/qualify.cpp:19:48: note:   deduced conflicting types for parameter ‘auto’ (‘long long unsigned int’ and ‘long unsigned int’)

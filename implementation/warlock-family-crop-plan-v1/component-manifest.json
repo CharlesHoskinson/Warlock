@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "previewEligible": false,
+  "completeFamilyFidelityQualified": false,
+  "files": {
+    "SPEC.md": {
+      "kind": "file",
+      "sha256": "fe76bbe5662165756a403a90ef4f72a9fcef741621473dea296d961e91d45c64",
+      "size": 1224,
+      "mode": "0o644"
+    },
+    "native/check.cpp": {
+      "kind": "file",
+      "sha256": "b018e1eddeb97b1cd148162ef10fd9d12c2d7adf28b3c1008ad0bc1f717c7c84",
+      "size": 1569,
+      "mode": "0o644"
+    },
+    "native/family_crop.hpp": {
+      "kind": "file",
+      "sha256": "2f11c881fa627f80817ed1aff2c96f0349602907e7e4b4ea6f0b1abe95db5c8e",
+      "size": 1559,
+      "mode": "0o644"
+    },
+    "qa/check-1791259470538010081/check": {
+      "kind": "file",
+      "sha256": "398c3537fc271c25f470625ac6a18352488d86f30fafd96a101f4e51ec3a4482",
+      "size": 22096,
+      "mode": "0o755"
+    },
+    "qa/check-1791259470538010081/compile.stderr": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/check-1791259470538010081/compile.stdout": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/check-1791259470538010081/report.json": {
+      "kind": "file",
+      "sha256": "8b1cfb21fa16a19ebab7a3a963b0e98776de5132d82e77c8c443e1b6821ece92",
+      "size": 2753,
+      "mode": "0o644"
+    },
+    "qa/check-1791259470538010081/run.stderr": {
+      "kind": "file",
+      "sha256": "55488bd621f3cf75afe24317f6cbfd4c3d3bab1861de78a76c52ca1166eaae07",
+      "size": 97,
+      "mode": "0o644"
+    },
+    "qa/check-1791259470538010081/run.stdout": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/check.py": {
+      "kind": "file",
+      "sha256": "377dd5587371ddf6bf17db629e78841ef1605d3450afcfa1d3bc9d950419d144",
+      "size": 2188,
+      "mode": "0o644"
+    },
+    "qa/crash-diagnosis.json": {
+      "kind": "file",
+      "sha256": "9250a797d29125c31a4404f2381981b21b84b4b83147c055108b9516a82046c3",
+      "size": 811,
+      "mode": "0o644"
+    },
+    "upstream.json": {
+      "kind": "file",
+      "sha256": "0a571685ad1bb681a0b49146b97976d3d5c86270b791ff81fa0bf15dadd22ea5",
+      "size": 446,
+      "mode": "0o644"
+    }
+  },
+  "localBuildLinks": {},
+  "status": "retained-actual-evidence"
+}
