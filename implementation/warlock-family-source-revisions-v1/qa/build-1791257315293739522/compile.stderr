@@ -1,0 +1,9 @@
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-source-revisions-v1/qa/build-1791257315293739522/inputs/native/authority.cpp:449:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-source-revisions-v1/qa/build-1791257315293739522/inputs/native/source-scope.inc: In function ‘std::optional<{anonymous}::FamilyObservation> {anonymous}::familyContext(PHLWINDOW, uint64_t)’:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-source-revisions-v1/qa/build-1791257315293739522/inputs/native/source-scope.inc:57:5: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+   57 |     if(!state.revision.observe(subject,rows))return refused();base->content={state.revision.value()};return FamilyObservation{*base,std::move(rows)};
+      |     ^~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-source-revisions-v1/qa/build-1791257315293739522/inputs/native/source-scope.inc:57:63: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   57 |     if(!state.revision.observe(subject,rows))return refused();base->content={state.revision.value()};return FamilyObservation{*base,std::move(rows)};
+      |                                                               ^~~~
+cc1plus: all warnings being treated as errors

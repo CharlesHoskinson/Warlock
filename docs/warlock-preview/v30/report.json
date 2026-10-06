@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "passed": true,
+  "components": [
+    {
+      "path": "implementation/warlock-family-source-revisions-v1/component-manifest.json",
+      "sha256": "d0a90623cb766582fb26d4b6c4598d1577a9ad597b2a5c2e9b0d821e3c65c441",
+      "files": 773
+    },
+    {
+      "path": "implementation/warlock-family-source-revisions-v2/component-manifest.json",
+      "sha256": "d8b360070e107f5e61874b6643c4fdd5800f7482f3350928488c358a27349b63",
+      "files": 1131
+    },
+    {
+      "path": "implementation/warlock-family-revision-model-v1/component-manifest.json",
+      "sha256": "3cb5295c826451b804361b7ce85b67f0a05df8c7e582974e99987dd76457f78e",
+      "files": 51
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v34/component-manifest.json",
+      "sha256": "dd95a821c6723c46cbdff8fbf8487f33e99f6eb54b9bf06e0f237b4a14a8e222",
+      "files": 270
+    }
+  ],
+  "evidence": {
+    "implementation/warlock-client-provider-native-v34/qa/native-1791257839724867928/report.json": "d34bc19fb757ddd8db71309cc9d7ac8bcbef488752d6d4ac9f1c705a0db671ca",
+    "implementation/warlock-client-provider-native-v33/qa/native-1791257049560687982/report.json": "6693f2e7c626f0dace504b21c199e7b40b7c41a1673248b864c75856a96a4f1b",
+    "implementation/warlock-family-source-revisions-v1/qa/build-1791257315293739522/report.json": "5d7c3d14947f51feb948fc2b0df4c9188ba6a6ce28cc118837b4bd47963e501e",
+    "implementation/warlock-family-source-revisions-v2/qa/build-1791257388848008537/report.json": "982cbcccd767f7638f068ec9a88749eef8464ac5fd5ddb8483c972907bf2d706",
+    "implementation/warlock-family-revision-model-v1/qa/model-1791257662374501588/report.json": "c470670d220455c14055bcf0f92abfe311313c911690eea86c7ad06a49b9d93b"
+  },
+  "nativeControls": 1351,
+  "normalOwnedExits": 125,
+  "actualNativeFamilyObservationQualified": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "next": "Implement and qualify combined family renderer/crop/FD and complete source inputs, typed shared GUI adoption, original preview13 and coherent GUI release gates."
+}
