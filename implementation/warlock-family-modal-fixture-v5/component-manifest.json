@@ -1,0 +1,339 @@
+{
+  "schema": 1,
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "files": {
+    "DERIVATION.json": {
+      "kind": "file",
+      "sha256": "a8f2bd726803e28e85f17b8ffd7d2dac403d208d9d4c9a5b14ed87bdc880ace1",
+      "size": 789,
+      "mode": "0o644"
+    },
+    "SPEC.md": {
+      "kind": "file",
+      "sha256": "d7cd0103954365de76489e081affd57302bdff0bfad83e6f28f0ce8e0808e516",
+      "size": 625,
+      "mode": "0o644"
+    },
+    "native/child-client.c": {
+      "kind": "file",
+      "sha256": "eb3fde1b5be3933ad14b11cf699a98f369a5a16d04c55c3730d80d648b5caa50",
+      "size": 30969,
+      "mode": "0o644"
+    },
+    "qa/build.py": {
+      "kind": "file",
+      "sha256": "c7d75b5fd2b61901af483b0f416e0de2d65336dbd7356dc9b50ba819fa6fe655",
+      "size": 6164,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/background-code.stderr": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/background-code.stdout": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/background-dependencies.d": {
+      "kind": "file",
+      "sha256": "01415e48a7dc0e850848a2ae5e03b374f28873555233d4eb5ca1b94e2b08a1cc",
+      "size": 1457,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/background-dependencies.stderr": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/background-dependencies.stdout": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/background-header.stderr": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/background-header.stdout": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/child-client": {
+      "kind": "file",
+      "sha256": "b55362da8607527cd88700dd4ce50931a79a89b500e67beefbd15df95ce3acbd",
+      "size": 55472,
+      "mode": "0o755"
+    },
+    "qa/client-build-1791273460581769282/client-build.stderr": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/client-build.stdout": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/client-control-bound-validation.stderr": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/client-control-bound-validation.stdout": {
+      "kind": "file",
+      "sha256": "ae5673b33edde3d81fb73131a3f948b5cb4d5bd0b9b21a35b7195552253c8eb1",
+      "size": 75,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/client-dependencies.d": {
+      "kind": "file",
+      "sha256": "5752189a9dca4973dd1e4ef5cecf38abfa1f31dc764b8a2fbd83c16117b9205f",
+      "size": 5271,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/client-dependencies.stderr": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/client-dependencies.stdout": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/client-flags.stderr": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/client-flags.stdout": {
+      "kind": "file",
+      "sha256": "daeb877303c6117ce9622ed510740569c724d685d27e3401d358afb0ab932236",
+      "size": 21,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/client-header.stderr": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/client-header.stdout": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/client.d": {
+      "kind": "file",
+      "sha256": "21e53f67f2eb4dacdc1974c6979edbdd12e5916a9892320577bf1cc6e196bc0d",
+      "size": 1598,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/compiler-version.stderr": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/compiler-version.stdout": {
+      "kind": "file",
+      "sha256": "bdf8abcd8e56cec825a021925617afad1e7e258c738cc61d6325c7250da733cd",
+      "size": 228,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/dialog-code.stderr": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/dialog-code.stdout": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/dialog-dependencies.d": {
+      "kind": "file",
+      "sha256": "2652121253d32097ad8fd27b120c2ad5e74f76731bdd73f715326c6f5021dbee",
+      "size": 1443,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/dialog-dependencies.stderr": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/dialog-dependencies.stdout": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/dialog-header.stderr": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/dialog-header.stdout": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/generated/background-effect-client.h": {
+      "kind": "file",
+      "sha256": "b883acc41b64204db0a065996f1c65abb8c10d4f1749fbbf3c0b4efcad85f293",
+      "size": 12657,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/generated/background-effect-protocol.c": {
+      "kind": "file",
+      "sha256": "beb37e8d360a194b97e66f15fd864b574e67b5927424c5db9df4b5304e079600",
+      "size": 2992,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/generated/xdg-dialog-client.h": {
+      "kind": "file",
+      "sha256": "d21e169968f05bd7ff13cb735f65115dc8f94d06689a58fd50d042bafac3369c",
+      "size": 9643,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/generated/xdg-dialog-protocol.c": {
+      "kind": "file",
+      "sha256": "9928d9f4acf6a5cdbee908565e77556734dd974310cd3338af75f111044ec11f",
+      "size": 2427,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/generated/xdg-shell-client.h": {
+      "kind": "file",
+      "sha256": "a09726137ea9fe1a23d58c95f1d33ab77a3fc692c63726bc82fbc91ab8e5c6fc",
+      "size": 86409,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/generated/xdg-shell-protocol.c": {
+      "kind": "file",
+      "sha256": "9e12fcd5676d8c6b6cfd233c2eba563163c0ea7e586cb6e27f202a328323c7f0",
+      "size": 5999,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/inputs/build.py": {
+      "kind": "file",
+      "sha256": "c7d75b5fd2b61901af483b0f416e0de2d65336dbd7356dc9b50ba819fa6fe655",
+      "size": 6164,
+      "mode": "0o400"
+    },
+    "qa/client-build-1791273460581769282/inputs/child-client.c": {
+      "kind": "file",
+      "sha256": "eb3fde1b5be3933ad14b11cf699a98f369a5a16d04c55c3730d80d648b5caa50",
+      "size": 30969,
+      "mode": "0o400"
+    },
+    "qa/client-build-1791273460581769282/inputs/ext-background-effect-v1.xml": {
+      "kind": "file",
+      "sha256": "e463b7863c97d7be05489b52b15cd0b3a5d8290b51340f62023b47d03b4217e3",
+      "size": 5590,
+      "mode": "0o400"
+    },
+    "qa/client-build-1791273460581769282/inputs/xdg-dialog-v1.xml": {
+      "kind": "file",
+      "sha256": "2822956bdf13d51848ff4b5e29c509028c1204c6e06262ee926b001f43a42dbb",
+      "size": 4832,
+      "mode": "0o400"
+    },
+    "qa/client-build-1791273460581769282/inputs/xdg-shell.xml": {
+      "kind": "file",
+      "sha256": "7ba7f9c8473deee674cb1f154a18abd0bb0cc072604fc055b0c15e459fc4c7df",
+      "size": 63846,
+      "mode": "0o400"
+    },
+    "qa/client-build-1791273460581769282/linked-libraries.stderr": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/linked-libraries.stdout": {
+      "kind": "file",
+      "sha256": "14a236ea0577f798b04e48aff09cd87c00ddf9af34498e75bd74b0c4ce31c56d",
+      "size": 369,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/protocol-code.stderr": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/protocol-code.stdout": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/protocol-dependencies.d": {
+      "kind": "file",
+      "sha256": "6b41c57596fb10f9db65269caef1b1d50b3048ef511de176488a9999e0a8c545",
+      "size": 1441,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/protocol-dependencies.stderr": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/protocol-dependencies.stdout": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/report.json": {
+      "kind": "file",
+      "sha256": "0a5176446af4567a393a25fc296a2c64884667fffbe6bc03b68cfbb53e1f2ab8",
+      "size": 32357,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/scanner-version.stderr": {
+      "kind": "file",
+      "sha256": "7781d4bdaabd8c59b362476a40f44a32c136372c265defc11595f5f347797e1d",
+      "size": 23,
+      "mode": "0o644"
+    },
+    "qa/client-build-1791273460581769282/scanner-version.stdout": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    }
+  },
+  "localBuildLinks": {},
+  "actualNativeChildPopupFactsQualified": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "previewEligible": false,
+  "backgroundPixelFidelityQualified": false,
+  "nestedEffectFactsQualified": false,
+  "completeFamilyFidelityQualified": false
+}

@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "passed": true,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-76ad8a947fab4be4a5674ee8e3774190.scope",
+    "coreLimit": 1
+  },
+  "components": [
+    {
+      "path": "implementation/warlock-family-style-revisions-v9/component-manifest.json",
+      "sha256": "8599d7530249cca121b695ea0bc4beedd71da00f682f4ac4b9019503eb5828a7",
+      "files": 173
+    },
+    {
+      "path": "implementation/warlock-family-style-crop-capture-v9/component-manifest.json",
+      "sha256": "afe67af04e0803482ab5c48a8e4b2c3b000ec5b3b569e64d6abac00cbc5b023f",
+      "files": 1148
+    },
+    {
+      "path": "implementation/warlock-family-style-crop-capture-v10/component-manifest.json",
+      "sha256": "57f215110544a3ee44186ccf4008b452a79653c60ffe7ec4f9432a1d826f5cfb",
+      "files": 1148
+    },
+    {
+      "path": "implementation/warlock-family-modal-fixture-v4/component-manifest.json",
+      "sha256": "45db1dffcf294b500d0b0288b3e64cc56ed13f8dfa0b8a412fd617c64cc84bbd",
+      "files": 52
+    },
+    {
+      "path": "implementation/warlock-family-modal-fixture-v5/component-manifest.json",
+      "sha256": "17a3592c1df1d31c1a8ae55ef16b5f4820498dd38d27480eca62e9b7988c8038",
+      "files": 54
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v67/component-manifest.json",
+      "sha256": "a9551e797998bd98cbbea8bd8a3454ad86937ecf39151c2d576f3134ac7ab29e",
+      "files": 425
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v68/component-manifest.json",
+      "sha256": "8f33d8e10f12db13cffa12653639931dd7d5ded7f018b012b1c638c18b867b30",
+      "files": 434
+    },
+    {
+      "path": "openspec/changes/warlock-preview-surface-effects/component-manifest.json",
+      "sha256": "7a8a54e0b685e5e423ff7c2b72beb131d8f25e270ea784697604bdcf4369c481",
+      "files": 12
+    }
+  ],
+  "evidence": {
+    "docs/warlock-preview/v42/report.json": "2e569cbf8f47a2a0afcc3125637ffbfd76ab52b8b07661029ef92e6058267cab",
+    "implementation/warlock-family-style-revisions-v9/qa/model-1791272043930449117/report.json": "b9f306c381dac99d64684781e8b19a5e8132b3f603ea6b27c9a2fde79345e70a",
+    "implementation/warlock-family-style-revisions-v9/qa/test-1791272043930915832/report.json": "d8250a99cdf226ba319601e374125533440609e2489c88064c884ee53210ca4e",
+    "implementation/warlock-family-style-crop-capture-v10/qa/build-1791272404328824442/report.json": "46fcdcf02ea425191640859e79bcebf685bfdabd2c2a6c28e8586164e642ebb5",
+    "implementation/warlock-family-style-crop-capture-v9/qa/build-1791272189344456701/report.json": "e0a7ee0aeeb3f452ba86186b9d7792f4e6084357f87e6ac24ac7630f3d0c80d8",
+    "implementation/warlock-family-modal-fixture-v5/qa/client-build-1791273460581769282/report.json": "0a5176446af4567a393a25fc296a2c64884667fffbe6bc03b68cfbb53e1f2ab8",
+    "implementation/warlock-family-modal-fixture-v4/qa/client-build-1791272695610280553/report.json": "1e30fc4cc2793cc545a42901a0e99eae5e943cab2f400901fd3c6ab31ccae622",
+    "implementation/warlock-client-provider-native-v50/qa/native-1791265841870106110/report.json": "41b65aa20c9a774e8568815c2ccd02fed4064550d8a6f57c22fcf410bc62cf25",
+    "implementation/warlock-client-provider-native-v67/qa/native-1791273038897678392/report.json": "20cbc51ff5be5ab12a875fcfdd74be1ff7a236242dee93d72cc4c639dfbd7904",
+    "implementation/warlock-client-provider-native-v68/qa/native-1791273599848012391/report.json": "31943ad529a08ab64592aa669fd6626366520fe8202d58e51781c4278776f5e8",
+    "openspec/changes/warlock-preview-surface-effects/qa/validate-1791273280266668886/report.json": "dd5caf916712588cab7199b9764f057666c47d41a353d15bcfbb9411ca74fe06",
+    "openspec/changes/warlock-preview-surface-effects/qa/validate-1791274012878346187/report.json": "d251c6c9a8767df9361bc51780183b75a179b183d5d7a0f6b8ad4020c0467352"
+  },
+  "nativeControls": 2136,
+  "retainedOriginalControls": 1783,
+  "normalOwnedExits": 202,
+  "actualNativeChildPopupFactsQualified": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "backgroundPixelFidelityQualified": false,
+  "nestedEffectFactsQualified": true,
+  "completeFamilyFidelityQualified": false,
+  "next": "Implement/qualify actual background-dependent blur/backdrop source/privacy ownership and all remaining native surface renderer facts; complete shader/transform/output/hardware, original preview13/restore38/recovery34/drag52 and coherent full GUI release gates."
+}

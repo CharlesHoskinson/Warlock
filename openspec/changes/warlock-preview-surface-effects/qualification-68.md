@@ -1,0 +1,9 @@
+# Native surface-effect fact qualification 68
+
+The fresh fixture5 preserves the original 31-character control bound and validates its actual command registry in the compiled program. Native68 uses collector10/model9 on the unchanged owning corecrop2 tuple. The protected serialized campaign passes 2,136 checks, retains all 1,783 original assertions in order, and closes all 202 owned processes normally with clean teardown.
+
+Actual child and popup effect creation advances family content before any buffer commit. The previous capture context is refused before producer allocation. Pending region/change/clear/destruction requests preserve the applied facts until the explicit target commit. Applied regions are copied exactly as `[0,20,100,220]` and `[10,20,110,220]`; earlier observations retain their original values. Popup destruction retires its native identity. The authenticated read-only QA inspector rejects extra request fields and grants no capture authority.
+
+Evidence: `implementation/warlock-client-provider-native-v68/qa/native-1791273599848012391/report.json`. The failed native67 run remains retained: a new fixture command exceeded the existing bound and the client explicitly exited with code 1; this was not a process crash. Model9 independently passes 395 compiled controls and 34 explicitly selected Quint scenarios with 130 coupled C++ replay states.
+
+This qualifies the tested root/child/popup source facts. It does not qualify actual background-dependent blur pixels, all renderer inputs, hardware presentation, original preview13 acceptance, or the complete GUI release. Snapshots still suppress native blur. Full renderer/backdrop privacy and ownership, output/hardware, original restore38/recovery34/drag52, accessibility/IME, resource budgets, user journeys and deployment/rollback remain open.

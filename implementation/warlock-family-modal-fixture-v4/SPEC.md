@@ -1,0 +1,3 @@
+# Native root/subsurface/popup background protocol fixture
+
+Preserve all original child/modal/popup/root commands, counts, bounds, capability binding and server barriers. Extend actual ext-background-effect-v1 requests to existing root, child and popup surfaces with separate object ownership. Creation/region/clear/destruction are requests without a buffer commit; explicit apply commits only the selected surface and records its real commit count. Retire each effect before its owning child/popup/root surface, then manager and display. Generate and compile actual protocol code with Werror; native behavior and blur pixels require separate qualification.

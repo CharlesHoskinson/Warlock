@@ -1,0 +1,3 @@
+# Bounded real background protocol commands
+
+Fresh fixture5 preserves failed native67 control-shape evidence and the original31-character parser limit. Shorten only new child/popup region change names to background-child-region-two and background-popup-region-two. Runtime dispatch and compiled --validate use the same actual command registry; protected build executes the program's validation before native use. All original root/child/modal/popup commands, native protocol requests, targeted applying commits, bounds, object ownership and cleanup remain unchanged. Actual native qualification is separate from compilation.
