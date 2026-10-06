@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "parent": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v55",
+  "parentManifestSHA256": "f765c814e4fc805100a4867b492a2dd17bbab540860cf9ae3be1c4305fa75a11",
+  "purpose": "Correct receiver growth test: actual GIO stream closure cannot fabricate native consumer completion. Require original explicit native consumer fence before physical destroy and terminal ACK; keep production receiver epoch/authorization/actor and global physical limits unchanged. Product eligible capture integration and actual native qualification remain open.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-d567b6dbdac54b2884dbc60217529f94.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-receiver-membership/specs/elm-capture-motion/spec.md": "1eda599a6a62439e366548a69dc45873cb21fa94725e6eb94026cfacfc7fb912",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-receiver-membership/qa/validate.py": "afd6127fec8b359a5ac4b99e601eba78616bd82d8ea05ca9b4a77216b874972d",
+    "/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/requirements.json": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+    "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v60/S09-EVIDENCE-PLAN.json": "e3b9f35f045f2ff0317498f81d8bf156d8e89cf1de6898590b5c5a3cf4b4f63b",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-receiver-membership/proposal.md": "228d7575f4873cd18615e3e3ce7f1ebf07496d55326283e4f247b32f15c9b386",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-receiver-membership/design.md": "0aee4a54324f790e2c915a9f7a0fdfa20cb5637faf8ab92a6780f2178963e623",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-receiver-membership/tasks.md": "eb2aaf9bc04a694f1c6164f4c2ac1ec7df5923980906f79e4b7f5b5333f93127"
+  },
+  "requirements": [
+    "WARLOCK-RECEIVER-001",
+    "WARLOCK-RECEIVER-002",
+    "WARLOCK-RECEIVER-003"
+  ],
+  "scenarios": [
+    [
+      "WARLOCK-RECEIVER-001",
+      "held reader and new subject"
+    ],
+    [
+      "WARLOCK-RECEIVER-002",
+      "no partial authorization"
+    ],
+    [
+      "WARLOCK-RECEIVER-003",
+      "capacity requires original physical drain"
+    ]
+  ],
+  "frozenBaseline": [
+    242,
+    417
+  ],
+  "originalS09ScenarioIds": 13,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-cedeef4d087c4668838305477bae8d7e.scope",
+    "coreLimit": 1
+  },
+  "components": [
+    {
+      "path": "implementation/warlock-preview-provider-v55/component-manifest.json",
+      "sha256": "f765c814e4fc805100a4867b492a2dd17bbab540860cf9ae3be1c4305fa75a11",
+      "files": 698
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v56/component-manifest.json",
+      "sha256": "704e65bef0e60d5fd84e166ae20031ce37848c5174edb2817b176c754e29b0c0",
+      "files": 1001
+    },
+    {
+      "path": "openspec/changes/warlock-preview-receiver-membership/component-manifest.json",
+      "sha256": "a3e668465c158d017bdeba1263b88c6e9d95d803039dec3018d061c253eeda78",
+      "files": 6
+    }
+  ],
+  "fullBuildCommands": 88,
+  "receiverPhysicalChecks": 40,
+  "catalogReplayChecks": 60,
+  "ownNativeCatalogDecoderChecks": 26,
+  "catalogCoupledStates": 214,
+  "metadataCoupledStates": 210,
+  "demandCoupledStates": 564,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "next": "Actual own native receiver growth with held original GIO stream/two charged captured mappings/third waiting subject; wire dynamic ordinary eligible capture through the same native authority and shared pool without changing unqualified previewEligible:false facts. Original full S09/S01-S16 and all release gates remain open."
+}

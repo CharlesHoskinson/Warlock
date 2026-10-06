@@ -1,0 +1,613 @@
+An example execution:
+
+[State 0]
+{ s: { cancels: 0, capturing: true, history: [], revision: 0, visible: true } }
+
+[State 1]
+{
+  s:
+    {
+      cancels: 0,
+      capturing: true,
+      history: ["UnlockStale"],
+      revision: 0,
+      visible: true
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      cancels: 1,
+      capturing: false,
+      history: ["UnlockStale", "Lock"],
+      revision: 0,
+      visible: false
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      cancels: 1,
+      capturing: false,
+      history: ["UnlockStale", "Lock", "Fresh"],
+      revision: 1,
+      visible: false
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      cancels: 1,
+      capturing: false,
+      history: ["UnlockStale", "Lock", "Fresh", "Fresh"],
+      revision: 2,
+      visible: false
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      cancels: 1,
+      capturing: false,
+      history: ["UnlockStale", "Lock", "Fresh", "Fresh", "Foreign"],
+      revision: 2,
+      visible: false
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      cancels: 1,
+      capturing: false,
+      history:
+        ["UnlockStale", "Lock", "Fresh", "Fresh", "Foreign", "UnlockFresh"],
+      revision: 2,
+      visible: true
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      cancels: 1,
+      capturing: false,
+      history:
+        [
+          "UnlockStale",
+          "Lock",
+          "Fresh",
+          "Fresh",
+          "Foreign",
+          "UnlockFresh",
+          "OtherDenial"
+        ],
+      revision: 2,
+      visible: true
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      cancels: 1,
+      capturing: false,
+      history:
+        [
+          "UnlockStale",
+          "Lock",
+          "Fresh",
+          "Fresh",
+          "Foreign",
+          "UnlockFresh",
+          "OtherDenial",
+          "ForeignLock"
+        ],
+      revision: 2,
+      visible: true
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      cancels: 1,
+      capturing: false,
+      history:
+        [
+          "UnlockStale",
+          "Lock",
+          "Fresh",
+          "Fresh",
+          "Foreign",
+          "UnlockFresh",
+          "OtherDenial",
+          "ForeignLock",
+          "UnlockFresh"
+        ],
+      revision: 2,
+      visible: true
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      cancels: 1,
+      capturing: false,
+      history:
+        [
+          "UnlockStale",
+          "Lock",
+          "Fresh",
+          "Fresh",
+          "Foreign",
+          "UnlockFresh",
+          "OtherDenial",
+          "ForeignLock",
+          "UnlockFresh",
+          "Foreign"
+        ],
+      revision: 2,
+      visible: true
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      cancels: 1,
+      capturing: false,
+      history:
+        [
+          "UnlockStale",
+          "Lock",
+          "Fresh",
+          "Fresh",
+          "Foreign",
+          "UnlockFresh",
+          "OtherDenial",
+          "ForeignLock",
+          "UnlockFresh",
+          "Foreign",
+          "OtherDenial"
+        ],
+      revision: 2,
+      visible: true
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      cancels: 1,
+      capturing: false,
+      history:
+        [
+          "UnlockStale",
+          "Lock",
+          "Fresh",
+          "Fresh",
+          "Foreign",
+          "UnlockFresh",
+          "OtherDenial",
+          "ForeignLock",
+          "UnlockFresh",
+          "Foreign",
+          "OtherDenial",
+          "Lock"
+        ],
+      revision: 2,
+      visible: true
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      cancels: 1,
+      capturing: false,
+      history:
+        [
+          "UnlockStale",
+          "Lock",
+          "Fresh",
+          "Fresh",
+          "Foreign",
+          "UnlockFresh",
+          "OtherDenial",
+          "ForeignLock",
+          "UnlockFresh",
+          "Foreign",
+          "OtherDenial",
+          "Lock",
+          "Fresh"
+        ],
+      revision: 3,
+      visible: true
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      cancels: 1,
+      capturing: false,
+      history:
+        [
+          "UnlockStale",
+          "Lock",
+          "Fresh",
+          "Fresh",
+          "Foreign",
+          "UnlockFresh",
+          "OtherDenial",
+          "ForeignLock",
+          "UnlockFresh",
+          "Foreign",
+          "OtherDenial",
+          "Lock",
+          "Fresh",
+          "Stale"
+        ],
+      revision: 3,
+      visible: true
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      cancels: 1,
+      capturing: false,
+      history:
+        [
+          "UnlockStale",
+          "Lock",
+          "Fresh",
+          "Fresh",
+          "Foreign",
+          "UnlockFresh",
+          "OtherDenial",
+          "ForeignLock",
+          "UnlockFresh",
+          "Foreign",
+          "OtherDenial",
+          "Lock",
+          "Fresh",
+          "Stale",
+          "ObserveLocked"
+        ],
+      revision: 3,
+      visible: false
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      cancels: 1,
+      capturing: false,
+      history:
+        [
+          "UnlockStale",
+          "Lock",
+          "Fresh",
+          "Fresh",
+          "Foreign",
+          "UnlockFresh",
+          "OtherDenial",
+          "ForeignLock",
+          "UnlockFresh",
+          "Foreign",
+          "OtherDenial",
+          "Lock",
+          "Fresh",
+          "Stale",
+          "ObserveLocked",
+          "Foreign"
+        ],
+      revision: 3,
+      visible: false
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      cancels: 1,
+      capturing: false,
+      history:
+        [
+          "UnlockStale",
+          "Lock",
+          "Fresh",
+          "Fresh",
+          "Foreign",
+          "UnlockFresh",
+          "OtherDenial",
+          "ForeignLock",
+          "UnlockFresh",
+          "Foreign",
+          "OtherDenial",
+          "Lock",
+          "Fresh",
+          "Stale",
+          "ObserveLocked",
+          "Foreign",
+          "OtherDenial"
+        ],
+      revision: 3,
+      visible: false
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      cancels: 1,
+      capturing: false,
+      history:
+        [
+          "UnlockStale",
+          "Lock",
+          "Fresh",
+          "Fresh",
+          "Foreign",
+          "UnlockFresh",
+          "OtherDenial",
+          "ForeignLock",
+          "UnlockFresh",
+          "Foreign",
+          "OtherDenial",
+          "Lock",
+          "Fresh",
+          "Stale",
+          "ObserveLocked",
+          "Foreign",
+          "OtherDenial",
+          "Fresh"
+        ],
+      revision: 4,
+      visible: false
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      cancels: 1,
+      capturing: false,
+      history:
+        [
+          "UnlockStale",
+          "Lock",
+          "Fresh",
+          "Fresh",
+          "Foreign",
+          "UnlockFresh",
+          "OtherDenial",
+          "ForeignLock",
+          "UnlockFresh",
+          "Foreign",
+          "OtherDenial",
+          "Lock",
+          "Fresh",
+          "Stale",
+          "ObserveLocked",
+          "Foreign",
+          "OtherDenial",
+          "Fresh",
+          "UnlockFresh"
+        ],
+      revision: 4,
+      visible: true
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      cancels: 1,
+      capturing: false,
+      history:
+        [
+          "UnlockStale",
+          "Lock",
+          "Fresh",
+          "Fresh",
+          "Foreign",
+          "UnlockFresh",
+          "OtherDenial",
+          "ForeignLock",
+          "UnlockFresh",
+          "Foreign",
+          "OtherDenial",
+          "Lock",
+          "Fresh",
+          "Stale",
+          "ObserveLocked",
+          "Foreign",
+          "OtherDenial",
+          "Fresh",
+          "UnlockFresh",
+          "UnlockFresh"
+        ],
+      revision: 4,
+      visible: true
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      cancels: 1,
+      capturing: false,
+      history:
+        [
+          "UnlockStale",
+          "Lock",
+          "Fresh",
+          "Fresh",
+          "Foreign",
+          "UnlockFresh",
+          "OtherDenial",
+          "ForeignLock",
+          "UnlockFresh",
+          "Foreign",
+          "OtherDenial",
+          "Lock",
+          "Fresh",
+          "Stale",
+          "ObserveLocked",
+          "Foreign",
+          "OtherDenial",
+          "Fresh",
+          "UnlockFresh",
+          "UnlockFresh",
+          "UnlockStale"
+        ],
+      revision: 4,
+      visible: true
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      cancels: 1,
+      capturing: false,
+      history:
+        [
+          "UnlockStale",
+          "Lock",
+          "Fresh",
+          "Fresh",
+          "Foreign",
+          "UnlockFresh",
+          "OtherDenial",
+          "ForeignLock",
+          "UnlockFresh",
+          "Foreign",
+          "OtherDenial",
+          "Lock",
+          "Fresh",
+          "Stale",
+          "ObserveLocked",
+          "Foreign",
+          "OtherDenial",
+          "Fresh",
+          "UnlockFresh",
+          "UnlockFresh",
+          "UnlockStale",
+          "UnlockFresh"
+        ],
+      revision: 4,
+      visible: true
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      cancels: 1,
+      capturing: false,
+      history:
+        [
+          "UnlockStale",
+          "Lock",
+          "Fresh",
+          "Fresh",
+          "Foreign",
+          "UnlockFresh",
+          "OtherDenial",
+          "ForeignLock",
+          "UnlockFresh",
+          "Foreign",
+          "OtherDenial",
+          "Lock",
+          "Fresh",
+          "Stale",
+          "ObserveLocked",
+          "Foreign",
+          "OtherDenial",
+          "Fresh",
+          "UnlockFresh",
+          "UnlockFresh",
+          "UnlockStale",
+          "UnlockFresh",
+          "ObserveLocked"
+        ],
+      revision: 4,
+      visible: false
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      cancels: 1,
+      capturing: false,
+      history:
+        [
+          "UnlockStale",
+          "Lock",
+          "Fresh",
+          "Fresh",
+          "Foreign",
+          "UnlockFresh",
+          "OtherDenial",
+          "ForeignLock",
+          "UnlockFresh",
+          "Foreign",
+          "OtherDenial",
+          "Lock",
+          "Fresh",
+          "Stale",
+          "ObserveLocked",
+          "Foreign",
+          "OtherDenial",
+          "Fresh",
+          "UnlockFresh",
+          "UnlockFresh",
+          "UnlockStale",
+          "UnlockFresh",
+          "ObserveLocked",
+          "Lock"
+        ],
+      revision: 4,
+      visible: false
+    }
+}
+
+[ok] No violation found (105ms at 952 traces/second).
+Trace length statistics: max=25, min=25, average=25.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

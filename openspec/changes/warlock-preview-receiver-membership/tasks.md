@@ -1,0 +1,6 @@
+- [x] Implement atomic same-owner native receiver extension with unchanged epoch.
+- [x] Separate bounded subject actor inventory from shared two-item physical limits.
+- [ ] Compile full changed GUI and test actual GIO held-reader/native-revoke/physical-charge/ACK boundaries.
+- [ ] Retain selected Quint/coupled implementation evidence on changed source and freeze exact artifacts.
+- [ ] Integrate actual eligible ordinary capture through the own native grant and shared allocator.
+- [ ] Qualify exact owning-ABI native behavior and all original S09/release gates; do not close from component passes.
