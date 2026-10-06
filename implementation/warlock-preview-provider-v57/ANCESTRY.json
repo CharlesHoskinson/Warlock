@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "parent": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v56",
+  "parentManifestSHA256": "704e65bef0e60d5fd84e166ae20031ce37848c5174edb2817b176c754e29b0c0",
+  "purpose": "Explicit trusted same-epoch native receipt subject growth. Preserve original subject/incarnation mapping, native journal, job and final ACK; atomic view/broker admission and refusal. Couple actual GIO drain/consumer fence/physical destruction to original terminal journal. No ordinary eligible capture or full release claim.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

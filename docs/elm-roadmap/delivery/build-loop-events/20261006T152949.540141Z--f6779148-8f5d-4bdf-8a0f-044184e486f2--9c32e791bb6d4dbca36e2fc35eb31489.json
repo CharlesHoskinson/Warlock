@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "9c32e791bb6d4dbca36e2fc35eb31489",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-06T15:29:49.540141+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/warlock-client-provider-native-v104",
+  "nextWork": [
+    "PROGRESS103 CPU preflight passed exactGUI60/owningtuple; independent source review caught probe-only incompleteRelease envelope before native launch. HeldCPU-only103 fresh104 corrects originalcompleteframe command; productiondecoder/guardunchanged. Recompilepreflight then serialprotectednative allold+growth controls. Fullreleaseopen/main desktoppreserved."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/warlock-client-provider-native-v103/component-manifest.json",
+      "sha256": "59a715f2e474c0fcfe751a05957a4739b8bef02eccd1337bf0e64b158cfe9cd0",
+      "size": 23885
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v104/ANCESTRY.json",
+      "sha256": "225eaec78c9e7d92168f1dfe4ba9e3b03e50293fea86891b3b464e14459c28bd",
+      "size": 575
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

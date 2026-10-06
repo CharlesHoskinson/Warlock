@@ -1,0 +1,1646 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      busy: false,
+      captured: 0,
+      floor: 0,
+      history: ["Init"],
+      issuedLease: 0,
+      lastStart: 0,
+      latest: 1,
+      lease: 1,
+      now: 1,
+      owners: 0,
+      visible: true
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      busy: false,
+      captured: 0,
+      floor: 0,
+      history: ["Init", "Reopen"],
+      issuedLease: 0,
+      lastStart: 0,
+      latest: 1,
+      lease: 2,
+      now: 1,
+      owners: 0,
+      visible: true
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      busy: false,
+      captured: 0,
+      floor: 0,
+      history: ["Init", "Reopen", "Finish"],
+      issuedLease: 0,
+      lastStart: 0,
+      latest: 1,
+      lease: 2,
+      now: 1,
+      owners: 0,
+      visible: true
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      busy: false,
+      captured: 0,
+      floor: 0,
+      history: ["Init", "Reopen", "Finish", "Finish"],
+      issuedLease: 0,
+      lastStart: 0,
+      latest: 1,
+      lease: 2,
+      now: 1,
+      owners: 0,
+      visible: true
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      busy: false,
+      captured: 0,
+      floor: 0,
+      history: ["Init", "Reopen", "Finish", "Finish", "Drain"],
+      issuedLease: 0,
+      lastStart: 0,
+      latest: 1,
+      lease: 2,
+      now: 1,
+      owners: 0,
+      visible: true
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      busy: false,
+      captured: 0,
+      floor: 0,
+      history: ["Init", "Reopen", "Finish", "Finish", "Drain", "Tick"],
+      issuedLease: 0,
+      lastStart: 0,
+      latest: 1,
+      lease: 2,
+      now: 2,
+      owners: 0,
+      visible: true
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      busy: false,
+      captured: 0,
+      floor: 0,
+      history:
+        ["Init", "Reopen", "Finish", "Finish", "Drain", "Tick", "Finish"],
+      issuedLease: 0,
+      lastStart: 0,
+      latest: 1,
+      lease: 2,
+      now: 2,
+      owners: 0,
+      visible: true
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      busy: false,
+      captured: 0,
+      floor: 0,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close"
+        ],
+      issuedLease: 0,
+      lastStart: 0,
+      latest: 1,
+      lease: 2,
+      now: 2,
+      owners: 0,
+      visible: false
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      busy: false,
+      captured: 0,
+      floor: 0,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close"
+        ],
+      issuedLease: 0,
+      lastStart: 0,
+      latest: 1,
+      lease: 2,
+      now: 2,
+      owners: 0,
+      visible: false
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      busy: false,
+      captured: 0,
+      floor: 0,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain"
+        ],
+      issuedLease: 0,
+      lastStart: 0,
+      latest: 1,
+      lease: 2,
+      now: 2,
+      owners: 0,
+      visible: false
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      busy: false,
+      captured: 0,
+      floor: 0,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start"
+        ],
+      issuedLease: 0,
+      lastStart: 0,
+      latest: 1,
+      lease: 2,
+      now: 2,
+      owners: 0,
+      visible: false
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      busy: false,
+      captured: 0,
+      floor: 0,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start",
+          "Start"
+        ],
+      issuedLease: 0,
+      lastStart: 0,
+      latest: 1,
+      lease: 2,
+      now: 2,
+      owners: 0,
+      visible: false
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      busy: false,
+      captured: 0,
+      floor: 0,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start",
+          "Start",
+          "Drain"
+        ],
+      issuedLease: 0,
+      lastStart: 0,
+      latest: 1,
+      lease: 2,
+      now: 2,
+      owners: 0,
+      visible: false
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      busy: false,
+      captured: 0,
+      floor: 0,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start",
+          "Start",
+          "Drain",
+          "Close"
+        ],
+      issuedLease: 0,
+      lastStart: 0,
+      latest: 1,
+      lease: 2,
+      now: 2,
+      owners: 0,
+      visible: false
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      busy: false,
+      captured: 0,
+      floor: 0,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start",
+          "Start",
+          "Drain",
+          "Close",
+          "Finish"
+        ],
+      issuedLease: 0,
+      lastStart: 0,
+      latest: 1,
+      lease: 2,
+      now: 2,
+      owners: 0,
+      visible: false
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      busy: false,
+      captured: 0,
+      floor: 0,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start",
+          "Start",
+          "Drain",
+          "Close",
+          "Finish",
+          "Tick"
+        ],
+      issuedLease: 0,
+      lastStart: 0,
+      latest: 1,
+      lease: 2,
+      now: 3,
+      owners: 0,
+      visible: false
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      busy: false,
+      captured: 0,
+      floor: 0,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start",
+          "Start",
+          "Drain",
+          "Close",
+          "Finish",
+          "Tick",
+          "Content"
+        ],
+      issuedLease: 0,
+      lastStart: 0,
+      latest: 2,
+      lease: 2,
+      now: 3,
+      owners: 0,
+      visible: false
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      busy: false,
+      captured: 0,
+      floor: 0,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start",
+          "Start",
+          "Drain",
+          "Close",
+          "Finish",
+          "Tick",
+          "Content",
+          "Reopen"
+        ],
+      issuedLease: 0,
+      lastStart: 0,
+      latest: 2,
+      lease: 3,
+      now: 3,
+      owners: 0,
+      visible: true
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      busy: false,
+      captured: 0,
+      floor: 0,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start",
+          "Start",
+          "Drain",
+          "Close",
+          "Finish",
+          "Tick",
+          "Content",
+          "Reopen",
+          "Close"
+        ],
+      issuedLease: 0,
+      lastStart: 0,
+      latest: 2,
+      lease: 3,
+      now: 3,
+      owners: 0,
+      visible: false
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      busy: false,
+      captured: 0,
+      floor: 0,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start",
+          "Start",
+          "Drain",
+          "Close",
+          "Finish",
+          "Tick",
+          "Content",
+          "Reopen",
+          "Close",
+          "Drain"
+        ],
+      issuedLease: 0,
+      lastStart: 0,
+      latest: 2,
+      lease: 3,
+      now: 3,
+      owners: 0,
+      visible: false
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      busy: false,
+      captured: 0,
+      floor: 0,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start",
+          "Start",
+          "Drain",
+          "Close",
+          "Finish",
+          "Tick",
+          "Content",
+          "Reopen",
+          "Close",
+          "Drain",
+          "Content"
+        ],
+      issuedLease: 0,
+      lastStart: 0,
+      latest: 3,
+      lease: 3,
+      now: 3,
+      owners: 0,
+      visible: false
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      busy: false,
+      captured: 0,
+      floor: 0,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start",
+          "Start",
+          "Drain",
+          "Close",
+          "Finish",
+          "Tick",
+          "Content",
+          "Reopen",
+          "Close",
+          "Drain",
+          "Content",
+          "Drain"
+        ],
+      issuedLease: 0,
+      lastStart: 0,
+      latest: 3,
+      lease: 3,
+      now: 3,
+      owners: 0,
+      visible: false
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      busy: false,
+      captured: 0,
+      floor: 0,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start",
+          "Start",
+          "Drain",
+          "Close",
+          "Finish",
+          "Tick",
+          "Content",
+          "Reopen",
+          "Close",
+          "Drain",
+          "Content",
+          "Drain",
+          "Tick"
+        ],
+      issuedLease: 0,
+      lastStart: 0,
+      latest: 3,
+      lease: 3,
+      now: 4,
+      owners: 0,
+      visible: false
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      busy: false,
+      captured: 0,
+      floor: 0,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start",
+          "Start",
+          "Drain",
+          "Close",
+          "Finish",
+          "Tick",
+          "Content",
+          "Reopen",
+          "Close",
+          "Drain",
+          "Content",
+          "Drain",
+          "Tick",
+          "Tick"
+        ],
+      issuedLease: 0,
+      lastStart: 0,
+      latest: 3,
+      lease: 3,
+      now: 5,
+      owners: 0,
+      visible: false
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      busy: false,
+      captured: 0,
+      floor: 0,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start",
+          "Start",
+          "Drain",
+          "Close",
+          "Finish",
+          "Tick",
+          "Content",
+          "Reopen",
+          "Close",
+          "Drain",
+          "Content",
+          "Drain",
+          "Tick",
+          "Tick",
+          "Close"
+        ],
+      issuedLease: 0,
+      lastStart: 0,
+      latest: 3,
+      lease: 3,
+      now: 5,
+      owners: 0,
+      visible: false
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      busy: false,
+      captured: 0,
+      floor: 0,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start",
+          "Start",
+          "Drain",
+          "Close",
+          "Finish",
+          "Tick",
+          "Content",
+          "Reopen",
+          "Close",
+          "Drain",
+          "Content",
+          "Drain",
+          "Tick",
+          "Tick",
+          "Close",
+          "Close"
+        ],
+      issuedLease: 0,
+      lastStart: 0,
+      latest: 3,
+      lease: 3,
+      now: 5,
+      owners: 0,
+      visible: false
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      busy: false,
+      captured: 0,
+      floor: 0,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start",
+          "Start",
+          "Drain",
+          "Close",
+          "Finish",
+          "Tick",
+          "Content",
+          "Reopen",
+          "Close",
+          "Drain",
+          "Content",
+          "Drain",
+          "Tick",
+          "Tick",
+          "Close",
+          "Close",
+          "Reopen"
+        ],
+      issuedLease: 0,
+      lastStart: 0,
+      latest: 3,
+      lease: 4,
+      now: 5,
+      owners: 0,
+      visible: true
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      busy: true,
+      captured: 3,
+      floor: 1,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start",
+          "Start",
+          "Drain",
+          "Close",
+          "Finish",
+          "Tick",
+          "Content",
+          "Reopen",
+          "Close",
+          "Drain",
+          "Content",
+          "Drain",
+          "Tick",
+          "Tick",
+          "Close",
+          "Close",
+          "Reopen",
+          "Start"
+        ],
+      issuedLease: 4,
+      lastStart: 5,
+      latest: 3,
+      lease: 4,
+      now: 5,
+      owners: 1,
+      visible: true
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      busy: true,
+      captured: 3,
+      floor: 1,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start",
+          "Start",
+          "Drain",
+          "Close",
+          "Finish",
+          "Tick",
+          "Content",
+          "Reopen",
+          "Close",
+          "Drain",
+          "Content",
+          "Drain",
+          "Tick",
+          "Tick",
+          "Close",
+          "Close",
+          "Reopen",
+          "Start",
+          "Content"
+        ],
+      issuedLease: 4,
+      lastStart: 5,
+      latest: 4,
+      lease: 4,
+      now: 5,
+      owners: 1,
+      visible: true
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      busy: true,
+      captured: 3,
+      floor: 1,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start",
+          "Start",
+          "Drain",
+          "Close",
+          "Finish",
+          "Tick",
+          "Content",
+          "Reopen",
+          "Close",
+          "Drain",
+          "Content",
+          "Drain",
+          "Tick",
+          "Tick",
+          "Close",
+          "Close",
+          "Reopen",
+          "Start",
+          "Content",
+          "Start"
+        ],
+      issuedLease: 4,
+      lastStart: 5,
+      latest: 4,
+      lease: 4,
+      now: 5,
+      owners: 1,
+      visible: true
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      busy: true,
+      captured: 3,
+      floor: 1,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start",
+          "Start",
+          "Drain",
+          "Close",
+          "Finish",
+          "Tick",
+          "Content",
+          "Reopen",
+          "Close",
+          "Drain",
+          "Content",
+          "Drain",
+          "Tick",
+          "Tick",
+          "Close",
+          "Close",
+          "Reopen",
+          "Start",
+          "Content",
+          "Start",
+          "Drain"
+        ],
+      issuedLease: 4,
+      lastStart: 5,
+      latest: 4,
+      lease: 4,
+      now: 5,
+      owners: 1,
+      visible: true
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      busy: true,
+      captured: 3,
+      floor: 1,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start",
+          "Start",
+          "Drain",
+          "Close",
+          "Finish",
+          "Tick",
+          "Content",
+          "Reopen",
+          "Close",
+          "Drain",
+          "Content",
+          "Drain",
+          "Tick",
+          "Tick",
+          "Close",
+          "Close",
+          "Reopen",
+          "Start",
+          "Content",
+          "Start",
+          "Drain",
+          "Content"
+        ],
+      issuedLease: 4,
+      lastStart: 5,
+      latest: 5,
+      lease: 4,
+      now: 5,
+      owners: 1,
+      visible: true
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      busy: true,
+      captured: 3,
+      floor: 1,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start",
+          "Start",
+          "Drain",
+          "Close",
+          "Finish",
+          "Tick",
+          "Content",
+          "Reopen",
+          "Close",
+          "Drain",
+          "Content",
+          "Drain",
+          "Tick",
+          "Tick",
+          "Close",
+          "Close",
+          "Reopen",
+          "Start",
+          "Content",
+          "Start",
+          "Drain",
+          "Content",
+          "Content"
+        ],
+      issuedLease: 4,
+      lastStart: 5,
+      latest: 6,
+      lease: 4,
+      now: 5,
+      owners: 1,
+      visible: true
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      busy: true,
+      captured: 3,
+      floor: 1,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start",
+          "Start",
+          "Drain",
+          "Close",
+          "Finish",
+          "Tick",
+          "Content",
+          "Reopen",
+          "Close",
+          "Drain",
+          "Content",
+          "Drain",
+          "Tick",
+          "Tick",
+          "Close",
+          "Close",
+          "Reopen",
+          "Start",
+          "Content",
+          "Start",
+          "Drain",
+          "Content",
+          "Content",
+          "Drain"
+        ],
+      issuedLease: 4,
+      lastStart: 5,
+      latest: 6,
+      lease: 4,
+      now: 5,
+      owners: 1,
+      visible: true
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      busy: true,
+      captured: 3,
+      floor: 1,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start",
+          "Start",
+          "Drain",
+          "Close",
+          "Finish",
+          "Tick",
+          "Content",
+          "Reopen",
+          "Close",
+          "Drain",
+          "Content",
+          "Drain",
+          "Tick",
+          "Tick",
+          "Close",
+          "Close",
+          "Reopen",
+          "Start",
+          "Content",
+          "Start",
+          "Drain",
+          "Content",
+          "Content",
+          "Drain",
+          "Drain"
+        ],
+      issuedLease: 4,
+      lastStart: 5,
+      latest: 6,
+      lease: 4,
+      now: 5,
+      owners: 1,
+      visible: true
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      busy: true,
+      captured: 3,
+      floor: 1,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start",
+          "Start",
+          "Drain",
+          "Close",
+          "Finish",
+          "Tick",
+          "Content",
+          "Reopen",
+          "Close",
+          "Drain",
+          "Content",
+          "Drain",
+          "Tick",
+          "Tick",
+          "Close",
+          "Close",
+          "Reopen",
+          "Start",
+          "Content",
+          "Start",
+          "Drain",
+          "Content",
+          "Content",
+          "Drain",
+          "Drain",
+          "Content"
+        ],
+      issuedLease: 4,
+      lastStart: 5,
+      latest: 7,
+      lease: 4,
+      now: 5,
+      owners: 1,
+      visible: true
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      busy: true,
+      captured: 3,
+      floor: 1,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start",
+          "Start",
+          "Drain",
+          "Close",
+          "Finish",
+          "Tick",
+          "Content",
+          "Reopen",
+          "Close",
+          "Drain",
+          "Content",
+          "Drain",
+          "Tick",
+          "Tick",
+          "Close",
+          "Close",
+          "Reopen",
+          "Start",
+          "Content",
+          "Start",
+          "Drain",
+          "Content",
+          "Content",
+          "Drain",
+          "Drain",
+          "Content",
+          "Content"
+        ],
+      issuedLease: 4,
+      lastStart: 5,
+      latest: 8,
+      lease: 4,
+      now: 5,
+      owners: 1,
+      visible: true
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      busy: true,
+      captured: 3,
+      floor: 1,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start",
+          "Start",
+          "Drain",
+          "Close",
+          "Finish",
+          "Tick",
+          "Content",
+          "Reopen",
+          "Close",
+          "Drain",
+          "Content",
+          "Drain",
+          "Tick",
+          "Tick",
+          "Close",
+          "Close",
+          "Reopen",
+          "Start",
+          "Content",
+          "Start",
+          "Drain",
+          "Content",
+          "Content",
+          "Drain",
+          "Drain",
+          "Content",
+          "Content",
+          "Content"
+        ],
+      issuedLease: 4,
+      lastStart: 5,
+      latest: 9,
+      lease: 4,
+      now: 5,
+      owners: 1,
+      visible: true
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      busy: true,
+      captured: 3,
+      floor: 1,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start",
+          "Start",
+          "Drain",
+          "Close",
+          "Finish",
+          "Tick",
+          "Content",
+          "Reopen",
+          "Close",
+          "Drain",
+          "Content",
+          "Drain",
+          "Tick",
+          "Tick",
+          "Close",
+          "Close",
+          "Reopen",
+          "Start",
+          "Content",
+          "Start",
+          "Drain",
+          "Content",
+          "Content",
+          "Drain",
+          "Drain",
+          "Content",
+          "Content",
+          "Content",
+          "Drain"
+        ],
+      issuedLease: 4,
+      lastStart: 5,
+      latest: 9,
+      lease: 4,
+      now: 5,
+      owners: 1,
+      visible: true
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      busy: false,
+      captured: 3,
+      floor: 1,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start",
+          "Start",
+          "Drain",
+          "Close",
+          "Finish",
+          "Tick",
+          "Content",
+          "Reopen",
+          "Close",
+          "Drain",
+          "Content",
+          "Drain",
+          "Tick",
+          "Tick",
+          "Close",
+          "Close",
+          "Reopen",
+          "Start",
+          "Content",
+          "Start",
+          "Drain",
+          "Content",
+          "Content",
+          "Drain",
+          "Drain",
+          "Content",
+          "Content",
+          "Content",
+          "Drain",
+          "Finish"
+        ],
+      issuedLease: 4,
+      lastStart: 5,
+      latest: 9,
+      lease: 4,
+      now: 5,
+      owners: 1,
+      visible: true
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      busy: false,
+      captured: 3,
+      floor: 1,
+      history:
+        [
+          "Init",
+          "Reopen",
+          "Finish",
+          "Finish",
+          "Drain",
+          "Tick",
+          "Finish",
+          "Close",
+          "Close",
+          "Drain",
+          "Start",
+          "Start",
+          "Drain",
+          "Close",
+          "Finish",
+          "Tick",
+          "Content",
+          "Reopen",
+          "Close",
+          "Drain",
+          "Content",
+          "Drain",
+          "Tick",
+          "Tick",
+          "Close",
+          "Close",
+          "Reopen",
+          "Start",
+          "Content",
+          "Start",
+          "Drain",
+          "Content",
+          "Content",
+          "Drain",
+          "Drain",
+          "Content",
+          "Content",
+          "Content",
+          "Drain",
+          "Finish",
+          "Close"
+        ],
+      issuedLease: 4,
+      lastStart: 5,
+      latest: 9,
+      lease: 4,
+      now: 5,
+      owners: 1,
+      visible: false
+    }
+}
+
+[ok] No violation found (343ms at 875 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

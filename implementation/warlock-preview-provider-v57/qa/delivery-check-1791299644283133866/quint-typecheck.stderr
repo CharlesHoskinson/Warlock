@@ -1,0 +1,820 @@
+
+ Error [QNT405]: Module delivery_tests imports an unknown module delivery
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:2:2
+  2:  import delivery.* from "./delivery"
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT405]: Module 'delivery' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:2:2
+  2:  import delivery.* from "./delivery"
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'safety' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:3:47
+  3:  action check(ok:bool):bool=all{assert(ok and safety),s'=s}
+                                                   ^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:3:55
+  3:  action check(ok:bool):bool=all{assert(ok and safety),s'=s}
+                                                           ^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:3:58
+  3:  action check(ok:bool):bool=all{assert(ok and safety),s'=s}
+                                                              ^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:4:26
+  4:  run viewGrowthCannotAck=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).newReceipts==0 and projection(s).records==2))
+                              ^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:4:36
+  4:  run viewGrowthCannotAck=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).newReceipts==0 and projection(s).records==2))
+                                        ^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'CancelNew' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:4:41
+  4:  run viewGrowthCannotAck=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).newReceipts==0 and projection(s).records==2))
+                                             ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:4:58
+  4:  run viewGrowthCannotAck=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).newReceipts==0 and projection(s).records==2))
+                                                              ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'CloseNew' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:4:63
+  4:  run viewGrowthCannotAck=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).newReceipts==0 and projection(s).records==2))
+                                                                   ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:4:79
+  4:  run viewGrowthCannotAck=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).newReceipts==0 and projection(s).records==2))
+                                                                                   ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'FenceNew' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:4:84
+  4:  run viewGrowthCannotAck=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).newReceipts==0 and projection(s).records==2))
+                                                                                        ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:4:100
+  4:  run viewGrowthCannotAck=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).newReceipts==0 and projection(s).records==2))
+                                                                                                        ^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'DestroyNew' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:4:105
+  4:  run viewGrowthCannotAck=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).newReceipts==0 and projection(s).records==2))
+                                                                                                             ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:4:123
+  4:  run viewGrowthCannotAck=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).newReceipts==0 and projection(s).records==2))
+                                                                                                                               ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'AckNew' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:4:128
+  4:  run viewGrowthCannotAck=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).newReceipts==0 and projection(s).records==2))
+                                                                                                                                    ^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:4:148
+  4:  run viewGrowthCannotAck=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).newReceipts==0 and projection(s).records==2))
+                                                                                                                                                        ^
+
+
+ Error [QNT404]: Name 'projection' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:4:161
+  4:  run viewGrowthCannotAck=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).newReceipts==0 and projection(s).records==2))
+                                                                                                                                                                     ^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:4:172
+  4:  run viewGrowthCannotAck=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).newReceipts==0 and projection(s).records==2))
+                                                                                                                                                                                ^
+
+
+ Error [QNT404]: Name 'projection' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:4:194
+  4:  run viewGrowthCannotAck=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).newReceipts==0 and projection(s).records==2))
+                                                                                                                                                                                                      ^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:4:205
+  4:  run viewGrowthCannotAck=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).newReceipts==0 and projection(s).records==2))
+                                                                                                                                                                                                                 ^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:5:28
+  5:  run explicitJournalGrowth=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(Extend)).then(check(projection(s).newReceipts==2)).then(fire(AckNew)).then(check(s.new==5 and projection(s).records==1 and projection(s).readers==1))
+                                ^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:5:38
+  5:  run explicitJournalGrowth=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(Extend)).then(check(projection(s).newReceipts==2)).then(fire(AckNew)).then(check(s.new==5 and projection(s).records==1 and projection(s).readers==1))
+                                          ^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'CancelNew' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:5:43
+  5:  run explicitJournalGrowth=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(Extend)).then(check(projection(s).newReceipts==2)).then(fire(AckNew)).then(check(s.new==5 and projection(s).records==1 and projection(s).readers==1))
+                                               ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:5:60
+  5:  run explicitJournalGrowth=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(Extend)).then(check(projection(s).newReceipts==2)).then(fire(AckNew)).then(check(s.new==5 and projection(s).records==1 and projection(s).readers==1))
+                                                                ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'CloseNew' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:5:65
+  5:  run explicitJournalGrowth=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(Extend)).then(check(projection(s).newReceipts==2)).then(fire(AckNew)).then(check(s.new==5 and projection(s).records==1 and projection(s).readers==1))
+                                                                     ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:5:81
+  5:  run explicitJournalGrowth=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(Extend)).then(check(projection(s).newReceipts==2)).then(fire(AckNew)).then(check(s.new==5 and projection(s).records==1 and projection(s).readers==1))
+                                                                                     ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'FenceNew' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:5:86
+  5:  run explicitJournalGrowth=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(Extend)).then(check(projection(s).newReceipts==2)).then(fire(AckNew)).then(check(s.new==5 and projection(s).records==1 and projection(s).readers==1))
+                                                                                          ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:5:102
+  5:  run explicitJournalGrowth=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(Extend)).then(check(projection(s).newReceipts==2)).then(fire(AckNew)).then(check(s.new==5 and projection(s).records==1 and projection(s).readers==1))
+                                                                                                          ^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'DestroyNew' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:5:107
+  5:  run explicitJournalGrowth=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(Extend)).then(check(projection(s).newReceipts==2)).then(fire(AckNew)).then(check(s.new==5 and projection(s).records==1 and projection(s).readers==1))
+                                                                                                               ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:5:125
+  5:  run explicitJournalGrowth=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(Extend)).then(check(projection(s).newReceipts==2)).then(fire(AckNew)).then(check(s.new==5 and projection(s).records==1 and projection(s).readers==1))
+                                                                                                                                 ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Extend' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:5:130
+  5:  run explicitJournalGrowth=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(Extend)).then(check(projection(s).newReceipts==2)).then(fire(AckNew)).then(check(s.new==5 and projection(s).records==1 and projection(s).readers==1))
+                                                                                                                                      ^^^^^^
+
+
+ Error [QNT404]: Name 'projection' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:5:150
+  5:  run explicitJournalGrowth=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(Extend)).then(check(projection(s).newReceipts==2)).then(fire(AckNew)).then(check(s.new==5 and projection(s).records==1 and projection(s).readers==1))
+                                                                                                                                                          ^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:5:161
+  5:  run explicitJournalGrowth=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(Extend)).then(check(projection(s).newReceipts==2)).then(fire(AckNew)).then(check(s.new==5 and projection(s).records==1 and projection(s).readers==1))
+                                                                                                                                                                     ^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:5:186
+  5:  run explicitJournalGrowth=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(Extend)).then(check(projection(s).newReceipts==2)).then(fire(AckNew)).then(check(s.new==5 and projection(s).records==1 and projection(s).readers==1))
+                                                                                                                                                                                              ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'AckNew' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:5:191
+  5:  run explicitJournalGrowth=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(Extend)).then(check(projection(s).newReceipts==2)).then(fire(AckNew)).then(check(s.new==5 and projection(s).records==1 and projection(s).readers==1))
+                                                                                                                                                                                                   ^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:5:211
+  5:  run explicitJournalGrowth=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(Extend)).then(check(projection(s).newReceipts==2)).then(fire(AckNew)).then(check(s.new==5 and projection(s).records==1 and projection(s).readers==1))
+                                                                                                                                                                                                                       ^
+
+
+ Error [QNT404]: Name 'projection' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:5:224
+  5:  run explicitJournalGrowth=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(Extend)).then(check(projection(s).newReceipts==2)).then(fire(AckNew)).then(check(s.new==5 and projection(s).records==1 and projection(s).readers==1))
+                                                                                                                                                                                                                                    ^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:5:235
+  5:  run explicitJournalGrowth=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(Extend)).then(check(projection(s).newReceipts==2)).then(fire(AckNew)).then(check(s.new==5 and projection(s).records==1 and projection(s).readers==1))
+                                                                                                                                                                                                                                               ^
+
+
+ Error [QNT404]: Name 'projection' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:5:253
+  5:  run explicitJournalGrowth=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(Extend)).then(check(projection(s).newReceipts==2)).then(fire(AckNew)).then(check(s.new==5 and projection(s).records==1 and projection(s).readers==1))
+                                                                                                                                                                                                                                                                 ^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:5:264
+  5:  run explicitJournalGrowth=init.then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(Extend)).then(check(projection(s).newReceipts==2)).then(fire(AckNew)).then(check(s.new==5 and projection(s).records==1 and projection(s).readers==1))
+                                                                                                                                                                                                                                                                            ^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:6:27
+  6:  run oldOwnershipSurvives=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(check(projection(s).charge==64)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(AckOld)).then(check(s.old==5 and s.new==0 and projection(s).charge==32))
+                               ^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:6:37
+  6:  run oldOwnershipSurvives=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(check(projection(s).charge==64)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(AckOld)).then(check(s.old==5 and s.new==0 and projection(s).charge==32))
+                                         ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Extend' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:6:42
+  6:  run oldOwnershipSurvives=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(check(projection(s).charge==64)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(AckOld)).then(check(s.old==5 and s.new==0 and projection(s).charge==32))
+                                              ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:6:56
+  6:  run oldOwnershipSurvives=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(check(projection(s).charge==64)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(AckOld)).then(check(s.old==5 and s.new==0 and projection(s).charge==32))
+                                                            ^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'CancelOld' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:6:61
+  6:  run oldOwnershipSurvives=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(check(projection(s).charge==64)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(AckOld)).then(check(s.old==5 and s.new==0 and projection(s).charge==32))
+                                                                 ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:6:78
+  6:  run oldOwnershipSurvives=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(check(projection(s).charge==64)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(AckOld)).then(check(s.old==5 and s.new==0 and projection(s).charge==32))
+                                                                                  ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'CloseOld' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:6:83
+  6:  run oldOwnershipSurvives=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(check(projection(s).charge==64)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(AckOld)).then(check(s.old==5 and s.new==0 and projection(s).charge==32))
+                                                                                       ^^^^^^^^
+
+
+ Error [QNT404]: Name 'projection' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:6:105
+  6:  run oldOwnershipSurvives=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(check(projection(s).charge==64)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(AckOld)).then(check(s.old==5 and s.new==0 and projection(s).charge==32))
+                                                                                                             ^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:6:116
+  6:  run oldOwnershipSurvives=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(check(projection(s).charge==64)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(AckOld)).then(check(s.old==5 and s.new==0 and projection(s).charge==32))
+                                                                                                                        ^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:6:137
+  6:  run oldOwnershipSurvives=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(check(projection(s).charge==64)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(AckOld)).then(check(s.old==5 and s.new==0 and projection(s).charge==32))
+                                                                                                                                             ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'FenceOld' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:6:142
+  6:  run oldOwnershipSurvives=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(check(projection(s).charge==64)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(AckOld)).then(check(s.old==5 and s.new==0 and projection(s).charge==32))
+                                                                                                                                                  ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:6:158
+  6:  run oldOwnershipSurvives=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(check(projection(s).charge==64)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(AckOld)).then(check(s.old==5 and s.new==0 and projection(s).charge==32))
+                                                                                                                                                                  ^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'DestroyOld' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:6:163
+  6:  run oldOwnershipSurvives=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(check(projection(s).charge==64)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(AckOld)).then(check(s.old==5 and s.new==0 and projection(s).charge==32))
+                                                                                                                                                                       ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:6:181
+  6:  run oldOwnershipSurvives=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(check(projection(s).charge==64)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(AckOld)).then(check(s.old==5 and s.new==0 and projection(s).charge==32))
+                                                                                                                                                                                         ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'AckOld' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:6:186
+  6:  run oldOwnershipSurvives=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(check(projection(s).charge==64)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(AckOld)).then(check(s.old==5 and s.new==0 and projection(s).charge==32))
+                                                                                                                                                                                              ^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:6:206
+  6:  run oldOwnershipSurvives=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(check(projection(s).charge==64)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(AckOld)).then(check(s.old==5 and s.new==0 and projection(s).charge==32))
+                                                                                                                                                                                                                  ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:6:219
+  6:  run oldOwnershipSurvives=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(check(projection(s).charge==64)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(AckOld)).then(check(s.old==5 and s.new==0 and projection(s).charge==32))
+                                                                                                                                                                                                                               ^
+
+
+ Error [QNT404]: Name 'projection' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:6:232
+  6:  run oldOwnershipSurvives=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(check(projection(s).charge==64)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(AckOld)).then(check(s.old==5 and s.new==0 and projection(s).charge==32))
+                                                                                                                                                                                                                                            ^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:6:243
+  6:  run oldOwnershipSurvives=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(check(projection(s).charge==64)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(AckOld)).then(check(s.old==5 and s.new==0 and projection(s).charge==32))
+                                                                                                                                                                                                                                                       ^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:7:28
+  7:  run wrongPopupNoAdmission=init.then(fire(WrongPopup)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(not(s.admitted) and s.new==4))
+                                ^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:7:38
+  7:  run wrongPopupNoAdmission=init.then(fire(WrongPopup)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(not(s.admitted) and s.new==4))
+                                          ^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'WrongPopup' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:7:43
+  7:  run wrongPopupNoAdmission=init.then(fire(WrongPopup)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(not(s.admitted) and s.new==4))
+                                               ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:7:61
+  7:  run wrongPopupNoAdmission=init.then(fire(WrongPopup)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(not(s.admitted) and s.new==4))
+                                                                 ^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'CancelNew' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:7:66
+  7:  run wrongPopupNoAdmission=init.then(fire(WrongPopup)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(not(s.admitted) and s.new==4))
+                                                                      ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:7:83
+  7:  run wrongPopupNoAdmission=init.then(fire(WrongPopup)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(not(s.admitted) and s.new==4))
+                                                                                       ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'CloseNew' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:7:88
+  7:  run wrongPopupNoAdmission=init.then(fire(WrongPopup)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(not(s.admitted) and s.new==4))
+                                                                                            ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:7:104
+  7:  run wrongPopupNoAdmission=init.then(fire(WrongPopup)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(not(s.admitted) and s.new==4))
+                                                                                                            ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'FenceNew' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:7:109
+  7:  run wrongPopupNoAdmission=init.then(fire(WrongPopup)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(not(s.admitted) and s.new==4))
+                                                                                                                 ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:7:125
+  7:  run wrongPopupNoAdmission=init.then(fire(WrongPopup)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(not(s.admitted) and s.new==4))
+                                                                                                                                 ^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'DestroyNew' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:7:130
+  7:  run wrongPopupNoAdmission=init.then(fire(WrongPopup)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(not(s.admitted) and s.new==4))
+                                                                                                                                      ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:7:148
+  7:  run wrongPopupNoAdmission=init.then(fire(WrongPopup)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(not(s.admitted) and s.new==4))
+                                                                                                                                                        ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'AckNew' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:7:153
+  7:  run wrongPopupNoAdmission=init.then(fire(WrongPopup)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(not(s.admitted) and s.new==4))
+                                                                                                                                                             ^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:7:177
+  7:  run wrongPopupNoAdmission=init.then(fire(WrongPopup)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(not(s.admitted) and s.new==4))
+                                                                                                                                                                                     ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:7:193
+  7:  run wrongPopupNoAdmission=init.then(fire(WrongPopup)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(not(s.admitted) and s.new==4))
+                                                                                                                                                                                                     ^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:8:37
+  8:  run replacedReceiverRetainsJournal=init.then(fire(Extend)).then(fire(Replace)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).records==2 and projection(s).newReceipts==0))
+                                         ^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:8:47
+  8:  run replacedReceiverRetainsJournal=init.then(fire(Extend)).then(fire(Replace)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).records==2 and projection(s).newReceipts==0))
+                                                   ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Extend' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:8:52
+  8:  run replacedReceiverRetainsJournal=init.then(fire(Extend)).then(fire(Replace)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).records==2 and projection(s).newReceipts==0))
+                                                        ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:8:66
+  8:  run replacedReceiverRetainsJournal=init.then(fire(Extend)).then(fire(Replace)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).records==2 and projection(s).newReceipts==0))
+                                                                      ^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Replace' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:8:71
+  8:  run replacedReceiverRetainsJournal=init.then(fire(Extend)).then(fire(Replace)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).records==2 and projection(s).newReceipts==0))
+                                                                           ^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:8:86
+  8:  run replacedReceiverRetainsJournal=init.then(fire(Extend)).then(fire(Replace)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).records==2 and projection(s).newReceipts==0))
+                                                                                          ^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'CancelNew' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:8:91
+  8:  run replacedReceiverRetainsJournal=init.then(fire(Extend)).then(fire(Replace)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).records==2 and projection(s).newReceipts==0))
+                                                                                               ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:8:108
+  8:  run replacedReceiverRetainsJournal=init.then(fire(Extend)).then(fire(Replace)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).records==2 and projection(s).newReceipts==0))
+                                                                                                                ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'CloseNew' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:8:113
+  8:  run replacedReceiverRetainsJournal=init.then(fire(Extend)).then(fire(Replace)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).records==2 and projection(s).newReceipts==0))
+                                                                                                                     ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:8:129
+  8:  run replacedReceiverRetainsJournal=init.then(fire(Extend)).then(fire(Replace)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).records==2 and projection(s).newReceipts==0))
+                                                                                                                                     ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'FenceNew' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:8:134
+  8:  run replacedReceiverRetainsJournal=init.then(fire(Extend)).then(fire(Replace)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).records==2 and projection(s).newReceipts==0))
+                                                                                                                                          ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:8:150
+  8:  run replacedReceiverRetainsJournal=init.then(fire(Extend)).then(fire(Replace)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).records==2 and projection(s).newReceipts==0))
+                                                                                                                                                          ^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'DestroyNew' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:8:155
+  8:  run replacedReceiverRetainsJournal=init.then(fire(Extend)).then(fire(Replace)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).records==2 and projection(s).newReceipts==0))
+                                                                                                                                                               ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:8:173
+  8:  run replacedReceiverRetainsJournal=init.then(fire(Extend)).then(fire(Replace)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).records==2 and projection(s).newReceipts==0))
+                                                                                                                                                                                 ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'AckNew' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:8:178
+  8:  run replacedReceiverRetainsJournal=init.then(fire(Extend)).then(fire(Replace)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).records==2 and projection(s).newReceipts==0))
+                                                                                                                                                                                      ^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:8:198
+  8:  run replacedReceiverRetainsJournal=init.then(fire(Extend)).then(fire(Replace)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).records==2 and projection(s).newReceipts==0))
+                                                                                                                                                                                                          ^
+
+
+ Error [QNT404]: Name 'projection' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:8:211
+  8:  run replacedReceiverRetainsJournal=init.then(fire(Extend)).then(fire(Replace)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).records==2 and projection(s).newReceipts==0))
+                                                                                                                                                                                                                       ^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:8:222
+  8:  run replacedReceiverRetainsJournal=init.then(fire(Extend)).then(fire(Replace)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).records==2 and projection(s).newReceipts==0))
+                                                                                                                                                                                                                                  ^
+
+
+ Error [QNT404]: Name 'projection' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:8:240
+  8:  run replacedReceiverRetainsJournal=init.then(fire(Extend)).then(fire(Replace)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).records==2 and projection(s).newReceipts==0))
+                                                                                                                                                                                                                                                    ^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:8:251
+  8:  run replacedReceiverRetainsJournal=init.then(fire(Extend)).then(fire(Replace)).then(fire(CancelNew)).then(fire(CloseNew)).then(fire(FenceNew)).then(fire(DestroyNew)).then(fire(AckNew)).then(check(s.new==4 and projection(s).records==2 and projection(s).newReceipts==0))
+                                                                                                                                                                                                                                                               ^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:9:36
+  9:  run repeatedExtensionKeepsCleanup=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(Extend)).then(fire(Extend)).then(check(s.old==4 and projection(s).oldReceipts==2)).then(fire(AckOld)).then(check(projection(s).records==1))
+                                        ^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:9:46
+  9:  run repeatedExtensionKeepsCleanup=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(Extend)).then(fire(Extend)).then(check(s.old==4 and projection(s).oldReceipts==2)).then(fire(AckOld)).then(check(projection(s).records==1))
+                                                  ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Extend' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:9:51
+  9:  run repeatedExtensionKeepsCleanup=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(Extend)).then(fire(Extend)).then(check(s.old==4 and projection(s).oldReceipts==2)).then(fire(AckOld)).then(check(projection(s).records==1))
+                                                       ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:9:65
+  9:  run repeatedExtensionKeepsCleanup=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(Extend)).then(fire(Extend)).then(check(s.old==4 and projection(s).oldReceipts==2)).then(fire(AckOld)).then(check(projection(s).records==1))
+                                                                     ^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'CancelOld' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:9:70
+  9:  run repeatedExtensionKeepsCleanup=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(Extend)).then(fire(Extend)).then(check(s.old==4 and projection(s).oldReceipts==2)).then(fire(AckOld)).then(check(projection(s).records==1))
+                                                                          ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:9:87
+  9:  run repeatedExtensionKeepsCleanup=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(Extend)).then(fire(Extend)).then(check(s.old==4 and projection(s).oldReceipts==2)).then(fire(AckOld)).then(check(projection(s).records==1))
+                                                                                           ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'CloseOld' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:9:92
+  9:  run repeatedExtensionKeepsCleanup=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(Extend)).then(fire(Extend)).then(check(s.old==4 and projection(s).oldReceipts==2)).then(fire(AckOld)).then(check(projection(s).records==1))
+                                                                                                ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:9:108
+  9:  run repeatedExtensionKeepsCleanup=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(Extend)).then(fire(Extend)).then(check(s.old==4 and projection(s).oldReceipts==2)).then(fire(AckOld)).then(check(projection(s).records==1))
+                                                                                                                ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'FenceOld' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:9:113
+  9:  run repeatedExtensionKeepsCleanup=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(Extend)).then(fire(Extend)).then(check(s.old==4 and projection(s).oldReceipts==2)).then(fire(AckOld)).then(check(projection(s).records==1))
+                                                                                                                     ^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:9:129
+  9:  run repeatedExtensionKeepsCleanup=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(Extend)).then(fire(Extend)).then(check(s.old==4 and projection(s).oldReceipts==2)).then(fire(AckOld)).then(check(projection(s).records==1))
+                                                                                                                                     ^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'DestroyOld' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:9:134
+  9:  run repeatedExtensionKeepsCleanup=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(Extend)).then(fire(Extend)).then(check(s.old==4 and projection(s).oldReceipts==2)).then(fire(AckOld)).then(check(projection(s).records==1))
+                                                                                                                                          ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:9:152
+  9:  run repeatedExtensionKeepsCleanup=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(Extend)).then(fire(Extend)).then(check(s.old==4 and projection(s).oldReceipts==2)).then(fire(AckOld)).then(check(projection(s).records==1))
+                                                                                                                                                            ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Extend' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:9:157
+  9:  run repeatedExtensionKeepsCleanup=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(Extend)).then(fire(Extend)).then(check(s.old==4 and projection(s).oldReceipts==2)).then(fire(AckOld)).then(check(projection(s).records==1))
+                                                                                                                                                                 ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:9:171
+  9:  run repeatedExtensionKeepsCleanup=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(Extend)).then(fire(Extend)).then(check(s.old==4 and projection(s).oldReceipts==2)).then(fire(AckOld)).then(check(projection(s).records==1))
+                                                                                                                                                                               ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Extend' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:9:176
+  9:  run repeatedExtensionKeepsCleanup=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(Extend)).then(fire(Extend)).then(check(s.old==4 and projection(s).oldReceipts==2)).then(fire(AckOld)).then(check(projection(s).records==1))
+                                                                                                                                                                                    ^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:9:196
+  9:  run repeatedExtensionKeepsCleanup=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(Extend)).then(fire(Extend)).then(check(s.old==4 and projection(s).oldReceipts==2)).then(fire(AckOld)).then(check(projection(s).records==1))
+                                                                                                                                                                                                        ^
+
+
+ Error [QNT404]: Name 'projection' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:9:209
+  9:  run repeatedExtensionKeepsCleanup=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(Extend)).then(fire(Extend)).then(check(s.old==4 and projection(s).oldReceipts==2)).then(fire(AckOld)).then(check(projection(s).records==1))
+                                                                                                                                                                                                                     ^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:9:220
+  9:  run repeatedExtensionKeepsCleanup=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(Extend)).then(fire(Extend)).then(check(s.old==4 and projection(s).oldReceipts==2)).then(fire(AckOld)).then(check(projection(s).records==1))
+                                                                                                                                                                                                                                ^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:9:245
+  9:  run repeatedExtensionKeepsCleanup=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(Extend)).then(fire(Extend)).then(check(s.old==4 and projection(s).oldReceipts==2)).then(fire(AckOld)).then(check(projection(s).records==1))
+                                                                                                                                                                                                                                                         ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'AckOld' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:9:250
+  9:  run repeatedExtensionKeepsCleanup=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(Extend)).then(fire(Extend)).then(check(s.old==4 and projection(s).oldReceipts==2)).then(fire(AckOld)).then(check(projection(s).records==1))
+                                                                                                                                                                                                                                                              ^^^^^^
+
+
+ Error [QNT404]: Name 'projection' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:9:270
+  9:  run repeatedExtensionKeepsCleanup=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(Extend)).then(fire(Extend)).then(check(s.old==4 and projection(s).oldReceipts==2)).then(fire(AckOld)).then(check(projection(s).records==1))
+                                                                                                                                                                                                                                                                                  ^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v57/qa/delivery-check-1791299644283133866/inputs/spec/delivery_tests.qnt:9:281
+  9:  run repeatedExtensionKeepsCleanup=init.then(fire(Extend)).then(fire(CancelOld)).then(fire(CloseOld)).then(fire(FenceOld)).then(fire(DestroyOld)).then(fire(Extend)).then(fire(Extend)).then(check(s.old==4 and projection(s).oldReceipts==2)).then(fire(AckOld)).then(check(projection(s).records==1))
+                                                                                                                                                                                                                                                                                             ^
+
+error: parsing failed

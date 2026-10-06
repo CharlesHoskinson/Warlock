@@ -1,0 +1,6 @@
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v59/qa/delivery-check-1791300061199452713/inputs/qa/delivery-checks.cpp:1:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v59/qa/delivery-check-1791300061199452713/missing-admission/preview_delivery.hpp: In lambda function:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v59/qa/delivery-check-1791300061199452713/missing-admission/preview_delivery.hpp:63:55: error: unused parameter ‘broker’ [-Werror=unused-parameter]
+   63 |         return endpoint_.nativeView(popup,[&](Broker& broker,const uri::View* registered) {
+      |                                               ~~~~~~~~^~~~~~
+cc1plus: all warnings being treated as errors

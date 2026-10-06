@@ -1,0 +1,15 @@
+
+ Error [QNT101]: Built-in name 'enabled' is redefined in module 'delivery'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v58/qa/delivery-check-1791299841856167124/inputs/spec/delivery.qnt:8:11
+  8:  pure def enabled(st:State,e:Event):bool=match e{ |CancelOld=>st.old==0 |CloseOld=>st.old==1 |FenceOld=>st.old==2 |DestroyOld=>st.old==3 |AckOld=>st.old==4 |CancelNew=>st.new==0 |CloseNew=>st.new==1 |FenceNew=>st.new==2 |DestroyNew=>st.new==3 |AckNew=>st.new==4 |_=>true }
+               ^^^^^^^
+
+
+ Error [QNT101]: Built-in name 'next' is redefined in module 'delivery'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v58/qa/delivery-check-1791299841856167124/inputs/spec/delivery.qnt:17:49
+  17:  action fire(e:Event):bool=all{enabled(s,e),val next=reduce(s,e);s'={...next,history:s.history.append(label(e))}}
+                                                      ^^^^
+
+error: parsing failed

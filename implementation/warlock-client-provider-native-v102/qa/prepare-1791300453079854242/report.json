@@ -1,0 +1,8 @@
+{
+  "passed": false,
+  "nativeLaunched": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "error": "FileNotFoundError(2, 'No such file or directory')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v102/qa/prepare.py\", line 16, in <module>\n    owner=REPO/'implementation/warlock-family-style-crop-capture-v17';descriptor=owner/'native-build-report.json';pair=json.loads(descriptor.read_text());assert pair['result']=='pass' and sha(ROOT/'native-build-report.json')==sha(descriptor) and sha(pair['binary'])==pair['sha256'] and sha(pair['plugin']['path'])==pair['plugin']['sha256']\n                                                                                                                                                                                            ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v102/qa/prepare.py\", line 6, in <lambda>\n    sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()\n                                ~~~~~~~~~~~~~~~~~~~~~~~~~~^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 777, in read_bytes\n    with self.open(mode='rb', buffering=0) as f:\n         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 771, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v102/native-build-report.json'\n"
+}

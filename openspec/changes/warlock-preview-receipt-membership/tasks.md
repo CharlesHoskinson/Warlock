@@ -1,0 +1,7 @@
+- [x] Implement explicit own native journal subject extension and C bootstrap boundary.
+- [x] Serialize receiver identity, epoch and broker access in one native critical section.
+- [x] Compile the actual full GUI and execute physical old/new reader and journal controls.
+- [ ] Freeze explicitly selected coupled Quint traces and unsafe-mutant evidence.
+- [ ] Qualify actual owning native multi-entry captures, retained readers and original/new exact receipts.
+- [ ] Integrate ordinary eligible captures with the single immutable Elm policy.
+- [ ] Close applicable original S09 and all coherent release gates with original identities/deadlines.

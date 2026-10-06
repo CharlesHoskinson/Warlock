@@ -1,0 +1,70 @@
+{
+  "schema": 1,
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-c5da3512673047128dc656eb131ee1b6.scope",
+    "coreLimit": 1
+  },
+  "components": [
+    {
+      "path": "implementation/warlock-preview-provider-v57/component-manifest.json",
+      "sha256": "0de642f3321d23e61710d1e9e5d880613e86048917089719a414c69ebff4bb9e",
+      "files": 1097
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v58/component-manifest.json",
+      "sha256": "258236ea6e558d82db6816cb6a7f05f83434b289541060e57e1469477ddfaed8",
+      "files": 979
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v59/component-manifest.json",
+      "sha256": "ada751bfd07f01dfd4f1bea4b813a3a8d76338440ef1cb29c9030ffafa884679",
+      "files": 512
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v60/component-manifest.json",
+      "sha256": "7085c4c1d23e71debd5ace57e8fdae7ad8cce785716ac162ab8dab62e9917020",
+      "files": 1301
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v102/component-manifest.json",
+      "sha256": "db01d96ef3765a543e82936e97f17a9ab0e250e071c110eab26c6f1011c127cf",
+      "files": 46
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v103/component-manifest.json",
+      "sha256": "59a715f2e474c0fcfe751a05957a4739b8bef02eccd1337bf0e64b158cfe9cd0",
+      "files": 114
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v104/component-manifest.json",
+      "sha256": "360c427668bde6548240f27b1b82aa1efdc02759f6b86f1289b2523d74f74fda",
+      "files": 336
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v105/component-manifest.json",
+      "sha256": "cf8a14fbcd0cb837a82f9df0a370910bdf9b150b750964b2459bf5b8d7f6794e",
+      "files": 616
+    },
+    {
+      "path": "openspec/changes/warlock-preview-receipt-membership/component-manifest.json",
+      "sha256": "814eed5c506f1889f68dacaadbc167080f23eacaac6e19669e9554878f918bd0",
+      "files": 6
+    }
+  ],
+  "guiBuildCommands": 90,
+  "receiverPhysicalChecks": 40,
+  "receiptPhysicalChecks": 49,
+  "deliveryModelScenarios": 6,
+  "deliveryCoupledStates": 388,
+  "deliveryUnsafeMutantsDetected": 2,
+  "nativeReport": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v105/qa/native-1791300971780792992/report.json",
+  "nativeReportSHA256": "9f23f89fdac03485efbb48f6f321fd2d0c23531df2881ace1bbcaa5c2e847d5b",
+  "nativeChecks": 2405,
+  "normalOwnedExits": 265,
+  "nativeReceiverJournalGrowthBoundedQualified": true,
+  "originalS09Accepted": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "next": "Use the same growing receiver and original journal in typed ordinary multi-entry capture enrollment with one Elm policy and actual eligible source grants; close original S09 receipts/fidelity/native/hardware and all S01-S16/release gates without promoting historical previewEligible:false observations."
+}
