@@ -1,0 +1,766 @@
+{
+  "schema": 1,
+  "passed": true,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-98da91489de94985ace8edc1f3c828a7.scope",
+    "coreLimit": 1
+  },
+  "components": [
+    {
+      "path": "implementation/warlock-client-provider-native-v88/component-manifest.json",
+      "sha256": "bb419b4f8cbf0fc3c8b52160f15acb934bbda0a752f8d779d714375972ca54cf",
+      "files": 562
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v36/component-manifest.json",
+      "sha256": "38d25a03a95d4e0f0e909e8cecf71b1477bc75091f7828fd1f154e5036d3e7d1",
+      "files": 800
+    },
+    {
+      "path": "openspec/changes/warlock-preview-shared-backdrop-source-loss/component-manifest.json",
+      "sha256": "e9b824994bfb0b25509bd21fe10a002dbc6106c730e238da2cb9b2a3d30bef2f",
+      "files": 9
+    }
+  ],
+  "evidence": {
+    "docs/warlock-preview/v50/report.json": "7279222468a1ae9e2bf8704594b9d0fdab5bdd1ef9c117e80cba74a216042062",
+    "implementation/warlock-client-provider-native-v88/qa/prepare-1791285540769720174/report.json": "a4b15555173d183aea7ade73a20064f384b765a806c6d2424a6747af6e98c13b",
+    "implementation/warlock-client-provider-native-v88/qa/native-1791285595852446427/report.json": "b344b3a8c31b9b114e674d456f23dcf057187237a7cdde2c6deda7da72155368",
+    "implementation/warlock-preview-provider-v36/qa/build-1791285335984696708/report.json": "c964301dcf43eee332fe5b8e8f86d39359847d3b69ad69b5bd1c6c61c64bd7bb",
+    "implementation/warlock-preview-provider-v36/qa/check-1791285480426860912/report.json": "53807509f5a20c66c3e5483a4ac0ccf01387d72be18f05f45a40a9d29853f51b",
+    "implementation/warlock-client-provider-native-v50/qa/native-1791265841870106110/report.json": "41b65aa20c9a774e8568815c2ccd02fed4064550d8a6f57c22fcf410bc62cf25",
+    "implementation/warlock-client-provider-native-v87/qa/native-1791284904509033826/report.json": "fe8b354e2bcf23df3f6bd51db3feb586d8276ba1347df65034d56a012f647f4e",
+    "openspec/changes/warlock-preview-shared-backdrop-source-loss/qa/validate-1791285813523153621/report.json": "499f276367b490c29709c5f07186cba0f7156fe53f0dba4783e6673fe946606e"
+  },
+  "nativeControls": 2341,
+  "retainedOriginalControls": 1783,
+  "retainedPriorNativeControls": 2322,
+  "normalOwnedExits": 246,
+  "nativeSharedGeneratedBackdropGUIQualified": true,
+  "sharedGUIBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v36/qa/build-1791285335984696708/report.json",
+  "backdropWebKitEvidence": {
+    "initialSource": {
+      "kind": "source-seed",
+      "publication": "9",
+      "lease": "1",
+      "identity": "family:2",
+      "title": "Native family sample",
+      "application": "Native family",
+      "source": {
+        "protocolVersion": 3,
+        "kind": "preview-family-backdrop-crop-scope",
+        "binding": {
+          "lifetime": "10337304061172212245",
+          "session": "26",
+          "frontend": "1"
+        },
+        "requestId": "1",
+        "scope": {
+          "binding": {
+            "lifetime": "10337304061172212245",
+            "session": "26",
+            "frontend": "1"
+          },
+          "context": {
+            "lifetime": "10337304061172212245",
+            "incarnation": "2",
+            "output": "1",
+            "privacy": "5",
+            "rendering": "2",
+            "scene": "63",
+            "content": "52"
+          },
+          "observation": "2130",
+          "clock": "10337304061172212245",
+          "now": "249941461662500",
+          "present": true,
+          "sourceLive": true,
+          "locked": false,
+          "gpuReady": true
+        },
+        "maximumTransferBytes": "339968",
+        "previewEligible": false,
+        "scopeKind": "native-generated-backdrop-family-crop-unqualified",
+        "members": [
+          {
+            "incarnation": "2",
+            "parent": null,
+            "content": "28",
+            "renderOrder": 2,
+            "flags": 178,
+            "geometry": [
+              80.0,
+              80.0,
+              320.0,
+              240.0,
+              73.0,
+              73.0,
+              334.0,
+              254.0
+            ]
+          }
+        ],
+        "styles": [
+          {
+            "incarnation": "2",
+            "flags": 1344,
+            "channels": [
+              1,
+              0.5,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              2,
+              1,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0
+            ],
+            "gradients": [
+              {
+                "angle": 0,
+                "colors": 1
+              },
+              {
+                "angle": 0,
+                "colors": 1
+              },
+              {
+                "angle": 0,
+                "colors": 1
+              },
+              {
+                "angle": 0,
+                "colors": 0
+              },
+              {
+                "angle": 0,
+                "colors": 1
+              },
+              {
+                "angle": 0,
+                "colors": 1
+              }
+            ]
+          }
+        ],
+        "crop": {
+          "pixelX": "73",
+          "pixelY": "73",
+          "width": 334,
+          "height": 254,
+          "scale": 1
+        },
+        "generatedBackdrop": {
+          "kind": "native-opaque-generated-color",
+          "colorARGB": "4294967295"
+        }
+      }
+    },
+    "changedLiveSource": {
+      "kind": "source-seed",
+      "publication": "13",
+      "lease": "2",
+      "identity": "family:2",
+      "title": "Native family sample",
+      "application": "Native family",
+      "source": {
+        "protocolVersion": 3,
+        "kind": "preview-family-backdrop-crop-scope",
+        "binding": {
+          "lifetime": "10337304061172212245",
+          "session": "26",
+          "frontend": "1"
+        },
+        "requestId": "107",
+        "scope": {
+          "binding": {
+            "lifetime": "10337304061172212245",
+            "session": "26",
+            "frontend": "1"
+          },
+          "context": {
+            "lifetime": "10337304061172212245",
+            "incarnation": "2",
+            "output": "1",
+            "privacy": "5",
+            "rendering": "2",
+            "scene": "63",
+            "content": "53"
+          },
+          "observation": "2190",
+          "clock": "10337304061172212245",
+          "now": "249942213585550",
+          "present": true,
+          "sourceLive": true,
+          "locked": false,
+          "gpuReady": true
+        },
+        "maximumTransferBytes": "339968",
+        "previewEligible": false,
+        "scopeKind": "native-generated-backdrop-family-crop-unqualified",
+        "members": [
+          {
+            "incarnation": "2",
+            "parent": null,
+            "content": "28",
+            "renderOrder": 2,
+            "flags": 178,
+            "geometry": [
+              80.0,
+              80.0,
+              320.0,
+              240.0,
+              73.0,
+              73.0,
+              334.0,
+              254.0
+            ]
+          }
+        ],
+        "styles": [
+          {
+            "incarnation": "2",
+            "flags": 1344,
+            "channels": [
+              1,
+              0.5,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              2,
+              1,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0
+            ],
+            "gradients": [
+              {
+                "angle": 0,
+                "colors": 1
+              },
+              {
+                "angle": 0,
+                "colors": 1
+              },
+              {
+                "angle": 0,
+                "colors": 1
+              },
+              {
+                "angle": 0,
+                "colors": 0
+              },
+              {
+                "angle": 0,
+                "colors": 1
+              },
+              {
+                "angle": 0,
+                "colors": 1
+              }
+            ]
+          }
+        ],
+        "crop": {
+          "pixelX": "73",
+          "pixelY": "73",
+          "width": 334,
+          "height": 254,
+          "scale": 1
+        },
+        "generatedBackdrop": {
+          "kind": "native-opaque-generated-color",
+          "colorARGB": "4278190080"
+        }
+      }
+    },
+    "originalFrame": {
+      "job": {
+        "binding": {
+          "lifetime": "10337304061172212245",
+          "session": "26",
+          "frontend": "1"
+        },
+        "context": {
+          "lifetime": "10337304061172212245",
+          "incarnation": "2",
+          "output": "1",
+          "privacy": "5",
+          "rendering": "2",
+          "scene": "63",
+          "content": "52"
+        },
+        "request": "1",
+        "origin": "1",
+        "clock": "10337304061172212245",
+        "deadline": "249943461662500"
+      },
+      "handle": "0000000000000000b62fa8998c67deb7bb40a750f3bbe5030000000000000001",
+      "owned": true,
+      "signaled": false,
+      "fidelity": "family",
+      "coverage": [
+        "client",
+        "decoration",
+        "modal",
+        "popup"
+      ],
+      "expires": "249946470832170"
+    },
+    "historicalProjection": {
+      "kind": "surface-report",
+      "body": {
+        "publication": "13",
+        "lease": "2",
+        "buttons": [
+          {
+            "id": "picker-close:{\"lifetime\":\"10337304061172212245\",\"session\":\"27\",\"frontend\":\"1\"}:1:63:2",
+            "label": "Close",
+            "accessibleName": "Close window picker",
+            "disabled": false,
+            "x": 11,
+            "y": 64,
+            "width": 678,
+            "height": 36
+          },
+          {
+            "id": "picker:{\"lifetime\":\"10337304061172212245\",\"session\":\"27\",\"frontend\":\"1\"}:1:63:2:2",
+            "label": "Historical previewWindow familyActivate WARLOCK-CHILD-PROBEOpen",
+            "accessibleName": "Activate WARLOCK-CHILD-PROBE",
+            "disabled": false,
+            "x": 11,
+            "y": 103,
+            "width": 678,
+            "height": 134
+          },
+          {
+            "id": "picker:{\"lifetime\":\"10337304061172212245\",\"session\":\"27\",\"frontend\":\"1\"}:1:63:2:3",
+            "label": "Activate WARLOCK-CHILD-PROBEOpen",
+            "accessibleName": "Activate WARLOCK-CHILD-PROBE",
+            "disabled": false,
+            "x": 11,
+            "y": 240,
+            "width": 678,
+            "height": 54
+          }
+        ],
+        "focus": "picker:{\"lifetime\":\"10337304061172212245\",\"session\":\"27\",\"frontend\":\"1\"}:1:63:2:2",
+        "text": "Choose a window\nConnected\n\n\nClose\n\nHistorical preview\nWindow family\nActivate WARLOCK-CHILD-PROBE\nOpen\n\nActivate WARLOCK-CHILD-PROBE\nOpen"
+      }
+    },
+    "images": [
+      [
+        {
+          "uri": "elm-shell://preview/0000000000000000b62fa8998c67deb7bb40a750f3bbe5030000000000000001",
+          "complete": true,
+          "naturalWidth": 334,
+          "naturalHeight": 254,
+          "width": 158,
+          "height": 120
+        }
+      ]
+    ],
+    "pixels": {
+      "passed": true,
+      "width": 700,
+      "height": 420,
+      "matchingNativeColorPixels": 12516,
+      "foreignGreenPixels": 0,
+      "expectedNativeRGBA": [
+        204,
+        127,
+        127,
+        255
+      ]
+    },
+    "ownership": [
+      {
+        "job": {
+          "binding": {
+            "lifetime": "10337304061172212245",
+            "session": "26",
+            "frontend": "1"
+          },
+          "context": {
+            "lifetime": "10337304061172212245",
+            "incarnation": "2",
+            "output": "1",
+            "privacy": "5",
+            "rendering": "2",
+            "scene": "63",
+            "content": "52"
+          },
+          "request": "1",
+          "origin": "1",
+          "clock": "10337304061172212245",
+          "deadline": "249943461662500"
+        },
+        "charge": "339968",
+        "records": 1,
+        "mappedFDClosed": false,
+        "exportReleased": false,
+        "producerRetired": false,
+        "retirementPending": false
+      },
+      {
+        "job": {
+          "binding": {
+            "lifetime": "10337304061172212245",
+            "session": "26",
+            "frontend": "1"
+          },
+          "context": {
+            "lifetime": "10337304061172212245",
+            "incarnation": "2",
+            "output": "1",
+            "privacy": "5",
+            "rendering": "2",
+            "scene": "63",
+            "content": "52"
+          },
+          "request": "1",
+          "origin": "1",
+          "clock": "10337304061172212245",
+          "deadline": "249943461662500"
+        },
+        "charge": "0",
+        "records": 1,
+        "mappedFDClosed": true,
+        "exportReleased": true,
+        "producerRetired": true,
+        "retirementPending": false
+      }
+    ],
+    "acks": [
+      {
+        "kind": "acknowledge",
+        "job": {
+          "binding": {
+            "lifetime": "10337304061172212245",
+            "session": "26",
+            "frontend": "1"
+          },
+          "context": {
+            "lifetime": "10337304061172212245",
+            "incarnation": "2",
+            "output": "1",
+            "privacy": "5",
+            "rendering": "2",
+            "scene": "63",
+            "content": "52"
+          },
+          "request": "1",
+          "origin": "1",
+          "clock": "10337304061172212245",
+          "deadline": "249943461662500"
+        },
+        "sequence": "3"
+      }
+    ],
+    "previewEligible": false,
+    "hardwarePresentation": false,
+    "allBodyPixelEqualityClaimed": false
+  },
+  "nativeSharedGeneratedBackdropSourceLossQualified": true,
+  "backdropSourceLossEvidence": {
+    "source": {
+      "kind": "source-seed",
+      "publication": "9",
+      "lease": "1",
+      "identity": "family:2",
+      "title": "Native family sample",
+      "application": "Native family",
+      "source": {
+        "protocolVersion": 3,
+        "kind": "preview-family-backdrop-crop-scope",
+        "binding": {
+          "lifetime": "10337304061172212245",
+          "session": "28",
+          "frontend": "1"
+        },
+        "requestId": "1",
+        "scope": {
+          "binding": {
+            "lifetime": "10337304061172212245",
+            "session": "28",
+            "frontend": "1"
+          },
+          "context": {
+            "lifetime": "10337304061172212245",
+            "incarnation": "2",
+            "output": "1",
+            "privacy": "5",
+            "rendering": "2",
+            "scene": "63",
+            "content": "54"
+          },
+          "observation": "2276",
+          "clock": "10337304061172212245",
+          "now": "249947825525600",
+          "present": true,
+          "sourceLive": true,
+          "locked": false,
+          "gpuReady": true
+        },
+        "maximumTransferBytes": "339968",
+        "previewEligible": false,
+        "scopeKind": "native-generated-backdrop-family-crop-unqualified",
+        "members": [
+          {
+            "incarnation": "2",
+            "parent": null,
+            "content": "28",
+            "renderOrder": 2,
+            "flags": 178,
+            "geometry": [
+              80.0,
+              80.0,
+              320.0,
+              240.0,
+              73.0,
+              73.0,
+              334.0,
+              254.0
+            ]
+          }
+        ],
+        "styles": [
+          {
+            "incarnation": "2",
+            "flags": 1344,
+            "channels": [
+              1,
+              0.5,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              2,
+              1,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0
+            ],
+            "gradients": [
+              {
+                "angle": 0,
+                "colors": 1
+              },
+              {
+                "angle": 0,
+                "colors": 1
+              },
+              {
+                "angle": 0,
+                "colors": 1
+              },
+              {
+                "angle": 0,
+                "colors": 0
+              },
+              {
+                "angle": 0,
+                "colors": 1
+              },
+              {
+                "angle": 0,
+                "colors": 1
+              }
+            ]
+          }
+        ],
+        "crop": {
+          "pixelX": "73",
+          "pixelY": "73",
+          "width": 334,
+          "height": 254,
+          "scale": 1
+        },
+        "generatedBackdrop": {
+          "kind": "native-opaque-generated-color",
+          "colorARGB": "4294967295"
+        }
+      }
+    },
+    "frame": {
+      "job": {
+        "binding": {
+          "lifetime": "10337304061172212245",
+          "session": "28",
+          "frontend": "1"
+        },
+        "context": {
+          "lifetime": "10337304061172212245",
+          "incarnation": "2",
+          "output": "1",
+          "privacy": "5",
+          "rendering": "2",
+          "scene": "63",
+          "content": "54"
+        },
+        "request": "1",
+        "origin": "1",
+        "clock": "10337304061172212245",
+        "deadline": "249949825525600"
+      },
+      "handle": "000000000000000005cb5b8163a2f67354a92b3fd1b041c20000000000000001",
+      "owned": true,
+      "signaled": false,
+      "fidelity": "family",
+      "coverage": [
+        "client",
+        "decoration",
+        "modal",
+        "popup"
+      ],
+      "expires": "249952837896661"
+    },
+    "denial": {
+      "protocolVersion": 3,
+      "kind": "refused",
+      "reason": "preview-family-backdrop-source-unavailable"
+    },
+    "events": [
+      {
+        "kind": "source-denied",
+        "job": {
+          "binding": {
+            "lifetime": "10337304061172212245",
+            "session": "28",
+            "frontend": "1"
+          },
+          "context": {
+            "lifetime": "10337304061172212245",
+            "incarnation": "2",
+            "output": "1",
+            "privacy": "5",
+            "rendering": "2",
+            "scene": "63",
+            "content": "54"
+          },
+          "request": "1",
+          "origin": "1",
+          "clock": "10337304061172212245",
+          "deadline": "249949825525600"
+        },
+        "reason": "source-unavailable"
+      }
+    ],
+    "ownership": [
+      {
+        "job": {
+          "binding": {
+            "lifetime": "10337304061172212245",
+            "session": "28",
+            "frontend": "1"
+          },
+          "context": {
+            "lifetime": "10337304061172212245",
+            "incarnation": "2",
+            "output": "1",
+            "privacy": "5",
+            "rendering": "2",
+            "scene": "63",
+            "content": "54"
+          },
+          "request": "1",
+          "origin": "1",
+          "clock": "10337304061172212245",
+          "deadline": "249949825525600"
+        },
+        "charge": "339968",
+        "records": 1,
+        "mappedFDClosed": false,
+        "exportReleased": false,
+        "producerRetired": false,
+        "retirementPending": false
+      },
+      {
+        "job": {
+          "binding": {
+            "lifetime": "10337304061172212245",
+            "session": "28",
+            "frontend": "1"
+          },
+          "context": {
+            "lifetime": "10337304061172212245",
+            "incarnation": "2",
+            "output": "1",
+            "privacy": "5",
+            "rendering": "2",
+            "scene": "63",
+            "content": "54"
+          },
+          "request": "1",
+          "origin": "1",
+          "clock": "10337304061172212245",
+          "deadline": "249949825525600"
+        },
+        "charge": "0",
+        "records": 1,
+        "mappedFDClosed": true,
+        "exportReleased": true,
+        "producerRetired": true,
+        "retirementPending": false
+      }
+    ],
+    "acks": [
+      {
+        "kind": "acknowledge",
+        "job": {
+          "binding": {
+            "lifetime": "10337304061172212245",
+            "session": "28",
+            "frontend": "1"
+          },
+          "context": {
+            "lifetime": "10337304061172212245",
+            "incarnation": "2",
+            "output": "1",
+            "privacy": "5",
+            "rendering": "2",
+            "scene": "63",
+            "content": "54"
+          },
+          "request": "1",
+          "origin": "1",
+          "clock": "10337304061172212245",
+          "deadline": "249949825525600"
+        },
+        "sequence": "3"
+      }
+    ],
+    "rootCommitsUnchanged": true,
+    "previewEligible": false,
+    "hardwarePresentation": false,
+    "frontendStallQualified": false
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "previewEligible": false,
+  "next": "Reconcile original S09 nine requirements/thirteen scenario identities on coherent GUI36/native88/owning tuple; implement next unmet original gate and remaining restore/recovery/drag/input/AT/IME/hardware/resources/release obligations."
+}

@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-a4e5d5e550ad49dda9931249ed9d6176.scope",
+    "coreLimit": 1
+  },
+  "argv": [
+    "node",
+    "/home/hoskinson/.npm/_npx/b05ce0373733faa6/node_modules/@fission-ai/openspec/bin/openspec.js",
+    "validate",
+    "warlock-preview-shared-backdrop-source-loss",
+    "--strict",
+    "--json",
+    "--no-interactive"
+  ],
+  "exitCode": 0,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-shared-backdrop-source-loss/proposal.md": "43afd6eb2bec16c9f004c145745793a1ce73e4417c90214bb74317e4c3fbd5ab",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-shared-backdrop-source-loss/design.md": "c69399a1aa806c472f44b12d3ab99d5f46aabc909745d7c8cb7dc118695f96d1",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-shared-backdrop-source-loss/tasks.md": "a374bc812da36b7f88536b45261d522e993eda72acb363c6372bf22df4700fee",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-shared-backdrop-source-loss/qualification-88.md": "68d4b409d4dd05a5f371e15378432747ac7f7299794d55803cfdd1949fb66fa2",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-shared-backdrop-source-loss/specs/elm-capture-motion/spec.md": "0568a12b1bb8df6dba281a039d2c3bdb5a448be3a2d731abaec23b78dbe3f54c",
+    "/home/hoskinson/.npm/_npx/b05ce0373733faa6/node_modules/@fission-ai/openspec/bin/openspec.js": "ca136f0e9fd4951dcf93d8ed729ebc97b2d97d3980cd9dc9d42fc80e32e797c6",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-shared-backdrop-source-loss/qa/validate.py": "cd6eb39c6a9f2874d881e7d0f94c4683d520d657d1f6106a2e3a993d20894c5f"
+  },
+  "artifacts": {
+    "stdout.json": "25f7d4431c0b1a6e759b6a6527bc628be5c3872c4f091b4b312ca30098e4b135",
+    "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

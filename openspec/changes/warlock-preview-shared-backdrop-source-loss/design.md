@@ -1,0 +1,5 @@
+# Source loss within the existing ownership path
+
+The typed family refusal decoder first uses the existing common native source denials, then admits only exact shared style-source-unavailable/layout and generated-plane backdrop-source-unavailable names. Undeclared aliases and transport errors remain unknown. Poll emits source-denied with the original job and no invented scope/time; native broker URI authority revokes before Elm consumes the event. Elm emits the original Release and the allocator physically closes mapping/FD, releases its exact export and retires the producer before retaining terminal proof and receiving exact ACK.
+
+GUI36 keeps source35 immutable and uses the same full Main/Bar/Popup package, native child grant, original capacity/native clock/job and generated FD4 branch. Native88 runs all native87 and original1783 assertions, then actual nonopaque native generated color with unchanged root commits, one original source denial and actual physical cleanup. Independently stalled frontend/hardware qualification and broader release gates remain open. Synthetic held/new GIO checks are distinguished from native actual own source/FD cleanup.

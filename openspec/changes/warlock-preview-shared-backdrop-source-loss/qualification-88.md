@@ -1,0 +1,7 @@
+# Actual shared generated source loss evidence
+
+GUI36 qa/build-1791285335984696708/report.json PASS75 commands; original source35 paths retained, new109 sanitizer source-denial/held-new GIO ownership controls and445 optimized Elm generated denial/scope-resume/Unknown/late-job checks. qa/check-1791285480426860912/report.json PASS36 compiled/10 selected Quint/300 invariant samples/22 traces/564 states/3 mutants.
+
+Native88 qa/native-1791285595852446427/report.json PASS2341/all1783/246 normal0/clean on full shared GUI36/core16/collector17/model12/fixture5/AQ155. All native87 bounded shared generated pixel/historical source/expiry checks retained. A fresh owning native child generated source white and FD4 frame precede actual nonopaque native background; root commits unchanged. Exact authenticated preview-family-backdrop-source-unavailable leads to one source-denied original job/source-unavailable event without scope or time. One Acquire/no resume/no expiry renewal, actual mapping/FD/export/producer retirement then exact original sequence3 ACK and physical0/journal0. Original native two-second job remains. No source35/source87/packet50 edits.
+
+Native source loss does not independently qualify a stalled frontend or arbitrary wallpaper/layer/backdrop privacy, hardware/GPU-driver/resources/AT/IME/journeys/original full release gates. Product previewEligible/fullReleaseAccepted remain false; main desktop and drafts unchanged.
