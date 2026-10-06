@@ -1,0 +1,7 @@
+# Shared family FD3 adapter and authenticated query source
+
+Full shared provider32 adds the distinct style-crop FD3/plane128 mapper and Native.familyQuery method. The original client/monitor fd header, broker/demand and existing client/imported lifecycle policies remain unchanged. The new mapper owns the physical descriptor before validation, rejects old/mixed versions/planes and malformed origin/scale/dimensions, then privately reuses existing sealed readonly fd::Mapped storage through its ClientMain storage validator. That implementation conversion cannot make a version3/plane128 header valid for the public legacy import API. Physical closure precedes held-charge release.
+
+The new authenticated query checks the same own child/compositor PID/start/core/socket identities under original absolute3sec IPC deadline and exact28word/FD3 request/grant correlation. Actual native query execution is still unqualified; compilation alone cannot close that claim. Actual adapted295 FD controls use synthetic1pixel RGBA storage and do not attest native family pixels. New code must compile with all60 original31 host/Elm/control commands and retain107 exact-native-scope C++/Elm decoder assertions.
+
+Next implement exact family capture metadata/header/source/deadline validation, URI authorization and retained physical producer/export/reader lifetime and single Elm rendering, then run actual own-child native family transport on accepted owning source tuple. Full source/style/fidelity, original preview13 and complete mandatory release gates remain open.
