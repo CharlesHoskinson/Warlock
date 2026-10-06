@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-2996c76c22144332a3d0423851cf2b32.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-native-address-reuse/specs/elm-capture-motion/spec.md": "15d7fbca848981ac3ddb844651c6d3e9110b98f3bd3178845da2fa53d83a55d5",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-native-address-reuse/qa/validate.py": "f0175fdb53ddf5e82c0c60227fee909ff725ed6a2e439b7398bd7e62d6644591",
+    "/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/requirements.json": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+    "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v52/S09-EVIDENCE-PLAN.json": "822ae4bbb49e44dd1e8faf6a5ee2f19fbf3c54f52d6125ab65c1a72f4466050b",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-native-address-reuse/proposal.md": "c280c777b57502b55d8548103a0b4c02b4b00aaefc7ba2c077ff9d5e89c18730",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-native-address-reuse/design.md": "f1d480299240fa054092e647ff4f5ebb0920145504d5116487e551276b45789e",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-native-address-reuse/tasks.md": "6e77a017bdca7c32ba20044d012e97e07f31505ce0d1754ec8fa4ad782fa14dd"
+  },
+  "requirements": [
+    "WARLOCK-REUSE-001",
+    "WARLOCK-REUSE-002",
+    "WARLOCK-REUSE-003",
+    "WARLOCK-REUSE-004"
+  ],
+  "scenarios": [
+    [
+      "WARLOCK-REUSE-001",
+      "actual-address"
+    ],
+    [
+      "WARLOCK-REUSE-002",
+      "held-and-fresh-read"
+    ],
+    [
+      "WARLOCK-REUSE-003",
+      "actual-view-and-drain"
+    ],
+    [
+      "WARLOCK-REUSE-004",
+      "private-file-boundary"
+    ]
+  ],
+  "frozenBaseline": [
+    242,
+    417
+  ],
+  "originalS09ScenarioIds": 13,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

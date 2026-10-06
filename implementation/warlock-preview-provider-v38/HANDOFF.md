@@ -1,0 +1,7 @@
+# Generated source loss implementation
+
+Fresh GUI36 retains GUI35 shared generated FD4 and original transparent branch. The compositor's exact preview-family-backdrop-source-unavailable refusal maps to SourceUnavailable only for the declared generated plane. Existing shared style-source-unavailable and style-crop-unavailable map to their typed source/layout denials; undeclared aliases and transport failures remain unknown. Native URI revocation, Elm retained original cleanup and physical receipts use the existing ownership path. Source35/native86 failed geometry/native87 accepted evidence remain immutable.
+
+Added sanitizer-compiled strict denial/held GIO URI/physical proof retention checks and actual optimized Elm source-denial replay over original native87 generated source/frame/ACK identities. Native qualification pending; component build/model passed as detailed below. No release completion or main desktop changes.
+
+Protected build qa/build-1791285335984696708/report.json PASS75 commands, including actual optimized Main/Bar/Popup/native host, original/new GUI35 checks and109 sanitizer-compiled source denial/held-new URI/proof retention controls plus445 actual optimized Elm generated denial/scope-resume/Unknown/late-job controls. Fresh qa/check-1791285480426860912/report.json PASS36 compiled controls/10 explicitly selected Quint scenarios/300 invariant samples/22 coupled traces/564 states/3 unsafe mutants detected.

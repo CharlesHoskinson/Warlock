@@ -1,0 +1,7 @@
+# Original address reuse native qualification
+
+Retain all native88/original1783 actual assertions and owning core16/collector17/model12/fixture5/AQ155. Full GUI38 owns its trusted native child grant. An additional actual fixture window supplies a real captured preview and held GIO stream at the same popup endpoint. Close it normally and observe a replacement with exactly the same independently reported native address and a strictly greater compositor incarnation. Original preview expiry and native clock are unchanged.
+
+Before native polling or queued Elm cleanup effects proceed, old held and fresh URI reads must report permission denial while mapping/export/producer charge remains owned by the original job. The replacement must appear in the actual Elm popup without the old incarnation. Release the reader and deliver original undispatched Elm effects once in FIFO order, with physical retirement before exact terminal ACK and charge/journal zero. Independently decoded before/after WebKit PNGs must show actual old source pixels before reuse and none for the replacement.
+
+Bounded allocator attempts and fixture observation retain original deadlines. Failure to observe actual reuse before expiry fails this additional gate. No pointer is fabricated, no grant crosses processes, no effect is retried after Unknown, and no deadline is renewed. Original S09 identifiers remain intact; broad production enrollment/fidelity/hardware/full release acceptance stays open.
