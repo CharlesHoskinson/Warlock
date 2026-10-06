@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-3bdb2ab371774c7d96bea71de513386b.scope",
+    "coreLimit": 1
+  },
+  "argv": [
+    "node",
+    "/home/hoskinson/.npm/_npx/b05ce0373733faa6/node_modules/@fission-ai/openspec/bin/openspec.js",
+    "validate",
+    "warlock-preview-applied-shaders",
+    "--strict",
+    "--json",
+    "--no-interactive"
+  ],
+  "exitCode": 0,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-applied-shaders/proposal.md": "df72470441fff327c8f3b4ea5970547bbc87d128afea024dd257512dd3b45197",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-applied-shaders/design.md": "ba9389097fe34f72fe1d1c0ea516288dca6153331f66854797dedb306652d1e0",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-applied-shaders/tasks.md": "92c7b79e5033ae16a12698dcfe13a6578d7b9bafddd9a3ab163aec75d80e31b7",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-applied-shaders/qualification-72.md": "875bc78fc656d67b1d328c6aac68152d30ae9714bdb1fd3786c148c5ae86696c",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-applied-shaders/qualification-72-runtime-identity.md": "52be78a9b0f4bd669a888d8f319a2de66fed4d1d6ab79ac8cbf2c832f8cfb842",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-applied-shaders/qa/validate-1791275779095785927/historical-inputs/qualification-72.md": "c78799af5b2bf7e6ccbe05eaee1ceb4e0b4a96ba012a9f18a6afe194df231205",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-applied-shaders/specs/elm-capture-motion/spec.md": "046ba96ccbd8fa5f6b48dd071a0c67a3817ec88102c3cddd56c5b456d5e6b0b0",
+    "/home/hoskinson/.npm/_npx/b05ce0373733faa6/node_modules/@fission-ai/openspec/bin/openspec.js": "ca136f0e9fd4951dcf93d8ed729ebc97b2d97d3980cd9dc9d42fc80e32e797c6",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-applied-shaders/qa/validate.py": "49409edfd363560cbb8d4188e5bff745c28a837ea36809690833ea41d97a5fcf"
+  },
+  "artifacts": {
+    "stdout.json": "2ed488f32a5696532da64c08c3a20952eb37012752946d57e3b793319d774592",
+    "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

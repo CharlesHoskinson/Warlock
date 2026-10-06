@@ -1,0 +1,8 @@
+{
+  "passed": false,
+  "error": "AssertionError: ordered prior native68 matcher stopped at1905 because two private opacity-move assertion names include native ASLR addresses",
+  "failedRunnerSHA256": "cff7ce0b3307e03a77cf8e15da9ef64ef3750e0d3bc212d27e1da16b2494d545",
+  "nativePassed": true,
+  "nativeReport": "implementation/warlock-client-provider-native-v72/qa/native-1791275532121068069/report.json",
+  "correction": "Normalize only opacityPrivateForeignWindowMoved- followed by a native 0x hex address for cross-lifetime prior2136 comparison. Preserve full raw labels/values and exact unmodified original1783 ordered comparison."
+}

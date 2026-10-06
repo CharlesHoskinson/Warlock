@@ -1,0 +1,101 @@
+{
+  "schema": 1,
+  "passed": true,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-bfce28f7dd0c48988399ce3b57ff3959.scope",
+    "coreLimit": 1
+  },
+  "components": [
+    {
+      "path": "implementation/warlock-core-family-crop-v3/component-manifest.json",
+      "sha256": "77db8cc035c4849269de32ea6a0d2cd13df8ca7f9f454d3a9dd335230fa531a6",
+      "files": 757
+    },
+    {
+      "path": "implementation/warlock-core-family-crop-v4/component-manifest.json",
+      "sha256": "1a91b1a257b70584446251808a2f02a40f7afba15322e7c6197dd852e093e700",
+      "files": 757
+    },
+    {
+      "path": "implementation/warlock-family-style-revisions-v10/component-manifest.json",
+      "sha256": "41f956256e61dc6ac59bb29b03c29d10631855c41a06a414baa2b384b6c767ee",
+      "files": 202
+    },
+    {
+      "path": "implementation/warlock-family-style-revisions-v11/component-manifest.json",
+      "sha256": "ea3580b5882b4b414408e7e945e400adaed1955a05007f06f6601f1a64f0d442",
+      "files": 202
+    },
+    {
+      "path": "implementation/warlock-family-style-crop-capture-v11/component-manifest.json",
+      "sha256": "f0a0dc5c778eb85cd37793bf7640f1e2248a8a20f494c30d559fcd73bd56c8e7",
+      "files": 794
+    },
+    {
+      "path": "implementation/warlock-family-style-crop-capture-v12/component-manifest.json",
+      "sha256": "1189a1c57396f6fce734d40cf2c81661feee8a666f3572df5675e2a4b2e02b90",
+      "files": 1151
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v69/component-manifest.json",
+      "sha256": "d5f1590152326c6a73a86bc772358c787831de98e8d49d5f25726a3c16c32e5e",
+      "files": 440
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v70/component-manifest.json",
+      "sha256": "94d26115dc4384eea20832bc6411906e63f9aab6be211d4b09de3d1393d9039e",
+      "files": 443
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v71/component-manifest.json",
+      "sha256": "78f975fe8f7f06a46d52908295fedd7272fe892c27f34fe75191e158828f69ca",
+      "files": 443
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v72/component-manifest.json",
+      "sha256": "c35077e16b6681d20ae089e11c40151c44d20d4ab712379947594ba4b454e8be",
+      "files": 443
+    },
+    {
+      "path": "openspec/changes/warlock-preview-applied-shaders/component-manifest.json",
+      "sha256": "9cbc1315cbcfa4c24b688c950fde605b915a9e0ecefdd6466bec35178df4f38f",
+      "files": 21
+    }
+  ],
+  "evidence": {
+    "docs/warlock-preview/v43/report.json": "0c738e7549ad79b91e97ecd8b03b97253faa98a93735650287216269672ee8a8",
+    "implementation/warlock-core-family-crop-v3/component-manifest.json": "77db8cc035c4849269de32ea6a0d2cd13df8ca7f9f454d3a9dd335230fa531a6",
+    "implementation/warlock-core-family-crop-v3/build-1791274269003130903/report.json": "881193c7dc8d2f1baee3e4660acc3df3b9be4a039af24df7a22fd9cee3fb983e",
+    "implementation/warlock-core-family-crop-v4/component-manifest.json": "1a91b1a257b70584446251808a2f02a40f7afba15322e7c6197dd852e093e700",
+    "implementation/warlock-core-family-crop-v4/build-1791274397458679868/report.json": "f2d754d19a437337935e0853f12d16c2ec210654b25132a5969038a154e4e42a",
+    "implementation/warlock-family-style-revisions-v10/qa/test-1791274320942871558/report.json": "a6d3245c2e3f77d33497bbfdc22c032d9ad41dcac7bdcba05acde37cacd3d5a6",
+    "implementation/warlock-family-style-revisions-v10/qa/model-1791274397456449878/report.json": "53901f97b05cb333d6155a7352404c3c6849abbf116b1540757c8a9243bf3e60",
+    "implementation/warlock-family-style-revisions-v11/qa/test-1791274595033650904/report.json": "9702efa9b0129ab601fb307bf31bbf2c02bd255b8f70887e4e957787c5dc164b",
+    "implementation/warlock-family-style-revisions-v11/qa/model-1791274595045370057/report.json": "fbcbcb6b1be14221acdf12dda5bb45839ffc93fcb3c48442e2beb385f96f8bc5",
+    "implementation/warlock-family-style-crop-capture-v11/qa/build-1791274578429693195/report.json": "e59fdc0beaec7141577882dadc851ae3596376523792ed57c771c1441a3bf768",
+    "implementation/warlock-family-style-crop-capture-v12/qa/build-1791274639908359480/report.json": "ab49a798d366f9bb5cd2e75542838ceff2fc5da4126a82f6667df1383a0450d0",
+    "implementation/warlock-client-provider-native-v69/qa/native-1791274804392885567/report.json": "2b472e6f166761fbbd6aa7af0830192a51b534ecf26130ec12e28767551c247f",
+    "implementation/warlock-client-provider-native-v70/qa/native-1791275066933375312/report.json": "ae8fca20be63ec67752e4a08f1b6efb36d22a52bd831fadb34dee1d49ec2e560",
+    "implementation/warlock-client-provider-native-v71/qa/native-1791275305628597524/report.json": "885cbdb6d25a7cc07744e48be44de46f5b49218c1571a67af591a465a7f03bc6",
+    "implementation/warlock-client-provider-native-v72/qa/native-1791275532121068069/report.json": "65118be4048a921230b0638f11ac637262bb6b6b15a1284600aafe5f77d24010",
+    "implementation/warlock-client-provider-native-v50/qa/native-1791265841870106110/report.json": "41b65aa20c9a774e8568815c2ccd02fed4064550d8a6f57c22fcf410bc62cf25",
+    "implementation/warlock-client-provider-native-v68/qa/native-1791273599848012391/report.json": "31943ad529a08ab64592aa669fd6626366520fe8202d58e51781c4278776f5e8",
+    "openspec/changes/warlock-preview-applied-shaders/qa/validate-1791274792428418524/report.json": "4dbd7faff21a826ba78dc9c4139ff327078c83b2ff62910dea126b9d2377982e",
+    "openspec/changes/warlock-preview-applied-shaders/qa/validate-1791275662346464459/report.json": "dad734352b0ab0e070e91a911c9cf3566ba561b2c16e207bb23a20d4f8e8140f",
+    "openspec/changes/warlock-preview-applied-shaders/qa/validate-1791275779095785927/report.json": "0a224490dc3c85d92013a997633524c4efdf73ca3a1a47119d02a899c3f414cc",
+    "openspec/changes/warlock-preview-applied-shaders/qa/validate-1791275831687688401/report.json": "f3b97fb356f75987248efc0c90fad620342c281da0b67f453a795c7855145ab3"
+  },
+  "nativeControls": 2171,
+  "retainedOriginalControls": 1783,
+  "retainedPriorNativeControls": 2136,
+  "priorRuntimeIdentityComparison": "Only two opacity-move names normalize native ASLR hex addresses across lifetimes; raw labels/values retained. Original1783 ordered names are exact and unmodified.",
+  "normalOwnedExits": 206,
+  "actualAppliedShaderFactsQualified": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "previewEligible": false,
+  "shaderPixelFidelityQualified": false,
+  "backgroundPixelFidelityQualified": false,
+  "completeFamilyFidelityQualified": false,
+  "next": "Implement/qualify full static/contextual shader pixels and approved backdrop-dependent blur source/privacy/ownership, all native renderer/output/hardware facts and original GUI release gates."
+}

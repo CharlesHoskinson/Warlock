@@ -1,0 +1,7 @@
+# Actual linked source identity
+
+Corecrop4 copies the exact successfully linked vertex and fragment inputs on the compositor owner thread, bounded to262144 total source bytes. Construction resets owner facts, absent owner is incomplete, and destruction/reload failure/disable retires the old program to canonical off facts. The observer never rereads disk or serializes a GL program/pointer identity. Corecrop3 compilation is retained as precursor; fresh4 fixes renderer recreation lifetime.
+
+Model11 retains exact immutable strings in RenderConfiguration with stable equality and deep copies; malformed/off-with-source, incomplete, oversized or contextual-uniform states expose canonical unavailable and later recovery. Existing FD3/wire/native clocks and ownership stay unchanged. Programs using output/time/pointer uniforms require qualified dependencies and rendering before current fidelity; refusal leaves that mandatory implementation work open.
+
+Collector12 compiles on the exact owning corecrop4. Preserve failed11 anonymous-namespace ABI-header inclusion; fresh12 includes the native declaration at the global translation-unit boundary. Authenticated QA projection copies the same sampled values under the original65536-byte final bound; it grants no capture authority or product diagnostic export. Native69 tests real disk edits/reloads and buffer-commit independence. Actual pixel shader rendering and backdrop privacy/source provenance remain separate release obligations.
