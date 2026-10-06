@@ -1,0 +1,3 @@
+# Actual native popup capture binding
+
+Preserve all1079 ordered assertions, original native clocks/deadlines and physical ownership. Qualify POPUP-CAP-01–03 on the fresh popup-capture-v1 exact owning plugin/core pair. Verify actual renderer cyan/yellow popup pixels, native scope/header stamp, typed RootPopupPlane, sealed FD checksum, stale commit/reposition/destroy/replacement refusal, original two-second bounded issuance and export/local mapping retirement. Retain the original old-plane counterexample; no old scope/FD semantics are promoted. Full family/modal/decor/crop/minimized, hardware, async fence cadence and all original production preview13/full GUI release gates remain open.

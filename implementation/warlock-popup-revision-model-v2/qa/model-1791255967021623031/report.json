@@ -1,0 +1,152 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-c3e2a19612114cca9394d1178b47ade2.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-popup-revision-model-v2/qa/model.py": "25d47190e346e70aee567f8c7c231b03c0a3e1e72c3da5eaf627d37208afcd4b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-popup-revision-model-v2/spec/popup.qnt": "71821e01d5aaf838f722042e45d1dc164083f1178383e026c0e78a7e2d0005f9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-popup-revision-model-v2/native/replay.cpp": "dfa398ed3250c6418fd1d342f7420099ff4c59ef1235a6cddcb9b035328ae1d7",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-popup-revision-model-v2/SPEC.md": "84e9d7030af121cf7ceb490bd3891a591e33acfff2eb24e85e5736804e900b79",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-popup-source-revisions-v1/native/tree_revision.hpp": "e66275f37faabd7b939a4f628e22857b77cd598535e58bbf793c60bf5d4f3f46",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-popup-source-revisions-v1/native/source_epoch.hpp": "df64eec18b8bd62b0b21b73e3aabbc1a9db10f122af65e36f78a6147bd67860f"
+  },
+  "commands": [
+    {
+      "name": "compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-popup-revision-model-v2/qa/model-1791255967021623031",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-popup-revision-model-v2/qa/model-1791255967021623031/replay.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-popup-revision-model-v2/qa/model-1791255967021623031/replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-popup-revision-model-v2/qa/model-1791255967021623031/popup.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-popup-revision-model-v2/qa/model-1791255967021623031/popup.qnt",
+        "--main=popup",
+        "--backend=typescript",
+        "--match=^(rootStableTest|popupCommitTest|popupMoveTest|popupReplacementTest|malformedRefusalTest)$",
+        "--seed=730012",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-popup-revision-model-v2/qa/model-1791255967021623031/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "scope": "Selected root/popup projection compared to compiled actual TreeRevision. Native graph/allocator/renderer, capture binding and hardware remain separate.",
+  "selectedNames": [
+    "rootStableTest",
+    "popupCommitTest",
+    "popupMoveTest",
+    "popupReplacementTest",
+    "malformedRefusalTest"
+  ],
+  "traces": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-popup-revision-model-v2/qa/model-1791255967021623031/named-malformedRefusalTest-4.itf.json": "8751ea2931d4db1c64b63a60f9672c1956b8ff2730e7fc78d272b9fb174e4310",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-popup-revision-model-v2/qa/model-1791255967021623031/named-popupCommitTest-1.itf.json": "723fef2a007359667d8f80bf757e124cbd104b22d5b9397b5ddc3b70e0a00dcc",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-popup-revision-model-v2/qa/model-1791255967021623031/named-popupMoveTest-2.itf.json": "e3b109efec2a09b6a2e748b972bf50fbd50a0a761bfea3bc9bd0d6943338f5d5",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-popup-revision-model-v2/qa/model-1791255967021623031/named-popupReplacementTest-3.itf.json": "65843f562906859bd8f4659af627b2d0231d2e23985cc61644870f59e4756102",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-popup-revision-model-v2/qa/model-1791255967021623031/named-rootStableTest-0.itf.json": "a572ba2f0d31d06e0a638009eb0e12cdf4b63c05c4fab2eaf82924bed490f552"
+  },
+  "states": 28,
+  "implementationReplay": [
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-popup-revision-model-v2/qa/model-1791255967021623031/named-malformedRefusalTest-4.itf.json",
+      "states": 7,
+      "result": {
+        "passed": true,
+        "states": 7
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-popup-revision-model-v2/qa/model-1791255967021623031/named-popupCommitTest-1.itf.json",
+      "states": 6,
+      "result": {
+        "passed": true,
+        "states": 6
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-popup-revision-model-v2/qa/model-1791255967021623031/named-popupMoveTest-2.itf.json",
+      "states": 5,
+      "result": {
+        "passed": true,
+        "states": 5
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-popup-revision-model-v2/qa/model-1791255967021623031/named-popupReplacementTest-3.itf.json",
+      "states": 7,
+      "result": {
+        "passed": true,
+        "states": 7
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-popup-revision-model-v2/qa/model-1791255967021623031/named-rootStableTest-0.itf.json",
+      "states": 3,
+      "result": {
+        "passed": true,
+        "states": 3
+      }
+    }
+  ],
+  "artifacts": {
+    "model.py": "25d47190e346e70aee567f8c7c231b03c0a3e1e72c3da5eaf627d37208afcd4b",
+    "popup.qnt": "71821e01d5aaf838f722042e45d1dc164083f1178383e026c0e78a7e2d0005f9",
+    "replay.cpp": "dfa398ed3250c6418fd1d342f7420099ff4c59ef1235a6cddcb9b035328ae1d7",
+    "SPEC.md": "84e9d7030af121cf7ceb490bd3891a591e33acfff2eb24e85e5736804e900b79",
+    "tree_revision.hpp": "e66275f37faabd7b939a4f628e22857b77cd598535e58bbf793c60bf5d4f3f46",
+    "source_epoch.hpp": "df64eec18b8bd62b0b21b73e3aabbc1a9db10f122af65e36f78a6147bd67860f",
+    "replay": "48fa982f243a9505495fa93b3c340af731d266a370bfe03a801abe30ca584eb8",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-rootStableTest-0.itf.json": "a572ba2f0d31d06e0a638009eb0e12cdf4b63c05c4fab2eaf82924bed490f552",
+    "named-popupCommitTest-1.itf.json": "723fef2a007359667d8f80bf757e124cbd104b22d5b9397b5ddc3b70e0a00dcc",
+    "named-popupMoveTest-2.itf.json": "e3b109efec2a09b6a2e748b972bf50fbd50a0a761bfea3bc9bd0d6943338f5d5",
+    "named-popupReplacementTest-3.itf.json": "65843f562906859bd8f4659af627b2d0231d2e23985cc61644870f59e4756102",
+    "named-malformedRefusalTest-4.itf.json": "8751ea2931d4db1c64b63a60f9672c1956b8ff2730e7fc78d272b9fb174e4310",
+    "selected.stdout": "6eb8ddea3bfba42eec6096a703db50854d6c77a524f6a8d4d1ef72db1f1a3762",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-malformedRefusalTest-4.itf.tsv": "623113804f8570a2e23c79937d5a50721b87db20a54e597640f1087628d432d6",
+    "named-malformedRefusalTest-4.itf.stdout": "199817b24a970059070c8a479516214f3789e52c88b5fb0a4e05cdf152152316",
+    "named-malformedRefusalTest-4.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-popupCommitTest-1.itf.tsv": "74ecc9d399b42ddaf8e696513683863ef543af0787596794eda60105c2d39b18",
+    "named-popupCommitTest-1.itf.stdout": "082ce759e37e7cbaacd0d573f56fba90959ea00855f177c8182036e15659b0c4",
+    "named-popupCommitTest-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-popupMoveTest-2.itf.tsv": "e695e9636bfecb5fae6e30f81361fb51df79f8f7ad78404e9bef4420cca1cb5e",
+    "named-popupMoveTest-2.itf.stdout": "4b0acfcfc6aca6a5896da01c0631c86029825d9e442f7ff6daa961015ec8aeb3",
+    "named-popupMoveTest-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-popupReplacementTest-3.itf.tsv": "27f989ce4785c48c741e0e9ccbd198c199e8d8b81623a4ecf05b81051c5d8e08",
+    "named-popupReplacementTest-3.itf.stdout": "199817b24a970059070c8a479516214f3789e52c88b5fb0a4e05cdf152152316",
+    "named-popupReplacementTest-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-rootStableTest-0.itf.tsv": "834391d0998303b7838d77a6a020cec1e5d9efc4ea1bdce0f77cc631cc27db54",
+    "named-rootStableTest-0.itf.stdout": "9d81fe80ca7219722968e7a1be8bb6984ca8bdf1b41f3e86a040f3868d9afec5",
+    "named-rootStableTest-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

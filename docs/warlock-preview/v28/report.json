@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "passed": true,
+  "components": [
+    {
+      "path": "implementation/warlock-popup-capture-v1/component-manifest.json",
+      "sha256": "0c06cb4469f8f5e6bccec36764a4159fdcadc485665432b265015c401b7beae9",
+      "files": 1128
+    },
+    {
+      "path": "implementation/warlock-popup-fd-qualification-v1/component-manifest.json",
+      "sha256": "788233f1498445d5ca4df93af6552fc249c95ef8b59c53ba90d723ef54282a58",
+      "files": 28
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v31/component-manifest.json",
+      "sha256": "87d4db331b1adead0ab4bb53eed6f703510ddf969e2b67b8d06d3018d7f95cb7",
+      "files": 260
+    }
+  ],
+  "priorPacket": {
+    "path": "docs/warlock-preview/v27/report.json",
+    "sha256": "15a75dfee97db095f75b0ab8542d8a37b5ee48ab0652c485a6e7b6708f6d5edb"
+  },
+  "evidence": {
+    "implementation/warlock-client-provider-native-v31/qa/native-1791256379960337558/report.json": "f5008c43ff80328df5e16218ff768500fecc6e62381ba4a632cf400393fe8023",
+    "implementation/warlock-client-provider-native-v30/qa/native-1791256065532190194/report.json": "f737016b9769e45c97cfc5c953d5f4d1577da0e3ee97a5cf329caecb97476ebb",
+    "implementation/warlock-popup-capture-v1/qa/build-1791256241765594120/report.json": "a608b476a981700da5a036e33ddfd74ab1ea43e204eb1063d6fcd6f9cfad984f",
+    "implementation/warlock-popup-fd-qualification-v1/qa/test-1791256300839731173/report.json": "4b41b2045a3c9660f593fda8facd7e54091621ee9341a869f71ad2bf998c25f0"
+  },
+  "nativeControls": 1160,
+  "normalOwnedExits": 122,
+  "actualNativePopupCaptureQualified": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "next": "Complete native family/modal/decor membership and crop/full fidelity, then typed full shared GUI adoption and production preview13/hardware/coherent release qualification."
+}

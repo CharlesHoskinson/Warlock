@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "passed": true,
+  "components": [
+    {
+      "path": "implementation/warlock-popup-source-revisions-v1/component-manifest.json",
+      "sha256": "691fda5a71be019a1f65b43b018680cd0b6bd6cfa60469e957fed647f8f4ddc5",
+      "files": 1128
+    },
+    {
+      "path": "implementation/warlock-popup-revision-model-v1/component-manifest.json",
+      "sha256": "17ae1551ae7a4fad5a40d1753f775eae61d146c58a938ded304d2fe65f746fc3",
+      "files": 16
+    },
+    {
+      "path": "implementation/warlock-popup-revision-model-v2/component-manifest.json",
+      "sha256": "d4260bd6de093a098a1dd87c781bf47d4b5e98e66c19e285111230692f40bb3f",
+      "files": 40
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v30/component-manifest.json",
+      "sha256": "2d20e524b3e0576aff4ff3b8110cbce00bef14bf60599557febf27ab1ec7a081",
+      "files": 250
+    }
+  ],
+  "evidence": {
+    "implementation/warlock-client-provider-native-v30/qa/native-1791256065532190194/report.json": "f737016b9769e45c97cfc5c953d5f4d1577da0e3ee97a5cf329caecb97476ebb",
+    "implementation/warlock-client-provider-native-v29/qa/native-1791255181974132197/report.json": "ddf2fabb8ad5ad01d42414e4a250a1c3da9e38849e7669d8b50c31c56680f3ea",
+    "implementation/warlock-popup-source-revisions-v1/qa/build-1791255462680623314/report.json": "550d1eaf6bbaf440210264ec58e87464cafc9109525f2ff64d9cef2497e381e3",
+    "implementation/warlock-popup-revision-model-v2/qa/model-1791255967021623031/report.json": "a9d62080a3ae15c4cd0c865e1a57e57480dd9a170476ca00412d538b725c5aee",
+    "implementation/warlock-popup-revision-model-v1/qa/model-1791255954017387348/report.json": "712ee703a11f6cce440a7eed5e95248c3ea584eeec68aa472ce728a9446aa500"
+  },
+  "nativeControls": 1079,
+  "normalOwnedExits": 117,
+  "actualNativePopupObserverQualified": true,
+  "modelScenarios": 5,
+  "modelStates": 28,
+  "nativeProjectionTraces": 4,
+  "nativeProjectionStates": 21,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "next": "Bind distinct native popup context at actual capture start/end with a distinct typed FD plane, then full family/modal/decor and original production preview13/coherent GUI release gates."
+}

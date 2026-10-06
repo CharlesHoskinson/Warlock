@@ -1,0 +1,5 @@
+# Native popup revisions
+
+The actual native campaign retains all 1011 original ordered assertions and qualifies a distinct readonly popup scope. Map, independent popup commit, exact native reposition and ordered destruction advance content 2→3→4→5→6; repeated observations retain content. Four explicitly selected valid Quint projections replay 21 states against the actual native observer. All five projections replay 28 states against the compiled actual TreeRevision header, including malformed graph refusal/recovery; this synthetic case does not prove native malformed-graph or allocator-address reuse behavior.
+
+The root-only snapshot context still stays unchanged across cyan/yellow popup pixels. Both old source meanings remain unqualified and unchanged. The new observer's native grant, clock, binding, strict schema and foreign-binding refusal are qualified on its recorded owning ABI. Capture start/end binding is the next implementation. Production full family, decorations, modal, minimized/source-stop, hardware presentation and the original preview13 and coherent release gates remain open. No main desktop installation or activation occurred.
