@@ -1,0 +1,7 @@
+# Whole-root opacity composition with explicit blur exclusion
+
+Fresh native64 passes2066 checks, retains all1783 ordered original assertions/deadlines and202 normal owned exits on the exact corecrop2/collector6 pair. Before the original two-second jobs, the private fixture moves unrelated windows/cursor outside the root and applies no_blur; that rule is restored afterward. It does not alter the installed desktop or original scenario inventories.
+
+The compiled independent libpng decoder compares all76800 body pixels against actual native output over the controlled black background at half and forced-opaque alpha. All76800 captured and output pixels change, with zero mismatches before or after. The half-alpha root contributes73728 straight-red/alpha128 pixels; its blue child contributes3072 source-over RGB85/0/170/alpha192 pixels. Both match native compositing exactly and become opaque under the native rule. Preserve the failed uniform-alpha/color experiment and actual diagnostics from packet41; this fresh derivative does not weaken a frozen baseline oracle.
+
+Opaque source epochs and stale-context refusal, stable facts, glow falloff and sampling rule/configuration fact transitions remain qualified within their stated scope. Background-dependent blur, filtered sampling pixels, X11 execution and complete family/source/output/hardware fidelity remain open; no_blur is an explicit experimental bound, not a product-wide policy. Original preview13 and complete GUI release acceptance remain unproven.

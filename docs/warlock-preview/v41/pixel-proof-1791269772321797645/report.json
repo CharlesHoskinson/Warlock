@@ -1,0 +1,62 @@
+{
+  "passed": false,
+  "label": "counterexample",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-54f688a782c84ba3b1b5b1634e76dc1b.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v62/qa/native-1791269530323836731/report.json": "432f70b39c0fd5f744208ce4fff2fbb71f8523dd92a3073abf21865f4d1c6244",
+    "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v41/opacity-pixels.cpp": "cbdf411fb30254c1041ea29c7486a3874853fdd996aa6d6fabca790ff53373ca",
+    "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v41/pixel_proof.py": "ee4b24d9f0edcefd79ad482d2ed979437bcf778b5127b3176a0d6c8dfe028934",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v62/qa/native-1791269530323836731/private-evidence/config-opacity-half.png": "b4904848d57abc57c76dae85fa29afc198844401a3a5c37e7a868648c5c22d3d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v62/qa/native-1791269530323836731/private-evidence/config-opacity-opaque.png": "56bafc110a2a980582d2b82776c626d583b664ae3f08cc1c1069d4869a935a8c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v62/qa/native-1791269530323836731/private-evidence/config-opacity-half-native-output.png": "3897f8d77ac8b8e08d3cc83e048f6aa37eb133ae6c00b720c9ad190c3aee40da",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v62/qa/native-1791269530323836731/private-evidence/config-opacity-opaque-native-output.png": "7c28c8d14f953090d24f3e88e23049928d94db26f3dc821adbcc93f2d70f64fb"
+  },
+  "command": [
+    "g++",
+    "-std=c++20",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v41/opacity-pixels.cpp",
+    "-o",
+    "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v41/pixel-proof-1791269772321797645/opacity-pixels",
+    "-lpng"
+  ],
+  "argv": [
+    "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v41/pixel-proof-1791269772321797645/opacity-pixels",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v62/qa/native-1791269530323836731/private-evidence/config-opacity-half.png",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v62/qa/native-1791269530323836731/private-evidence/config-opacity-opaque.png",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v62/qa/native-1791269530323836731/private-evidence/config-opacity-half-native-output.png",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v62/qa/native-1791269530323836731/private-evidence/config-opacity-opaque-native-output.png",
+    "73",
+    "73",
+    "80",
+    "80",
+    "320",
+    "240"
+  ],
+  "exitCode": 2,
+  "result": {
+    "passed": false,
+    "comparedRootPixels": 76800,
+    "changedFamilyPixels": 76800,
+    "changedOutputPixels": 58752,
+    "mismatchedBefore": 29260,
+    "mismatchedAfter": 272,
+    "wrongAlphaPixels": 3072,
+    "changedUnassociatedColorPixels": 3072
+  },
+  "artifacts": {
+    "opacity-pixels": "860471b988da086053181d50c179cfa816ddf7cc76530106cca57546b3b4ddc1",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pixels.stdout": "b2a29364daf2d01e070234abf7e614a8912dcd1a87d9bc35be1a63da4652a487",
+    "pixels.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

@@ -1,0 +1,11 @@
+# Bounded qualification after native63
+
+Native62 establishes an opaque-rule counterexample on collector5: all1783 ordered original assertions pass, all193 owned processes exit normally, and actual captured root alpha changes128 to255 under unchanged native content22, style channels/gradients, members/crop and client commits. Preserve the original report as failed. Native61 is a separate gray-background fixture failure; it does not establish that counterexample.
+
+Native63 on collector6 and exact corecrop2 passes2057 checks, all1783 ordered originals and201 normal exits. Opaque override advances content22 to23 and rejects the preceding context before producer allocation. Identical opaque rules retain the same context. Nearest-neighbor rule epochs24/25/25/26 and conservative Xwayland sampling configuration27/28/28 qualify changed/stable/restored native facts and stale-context refusal. Xwayland remains disabled; solid-color fact tests do not qualify filtered sampling pixels.
+
+The immutable model7 independently executes20 explicitly selected Quint traces,74 replayed implementation states and321 compiled controls. OpenSpec structural validation does not qualify native behavior.
+
+An additional whole-root opacity comparison fails. Its assumptions of uniform128 alpha and unchanged straight RGB are invalid for the composed blue child (observed half-alpha family color85/0/170/192); independent native output also contains background-dependent blur and pointer/occlusion differences. Preserve the failed76800-pixel report and actual color-pair diagnostics. The center-pixel native opacity/state qualification is bounded; it cannot close complete alpha composition, blur or family fidelity. A fresh fixture must control background, other windows and cursor, compare actual per-pixel alpha composition, and explicitly state whether native blur is covered. No failed job is retried or renewed.
+
+WRLK-RENDER001/002/004 have bounded opaque/sampling-fact evidence; WRLK-RENDER006 covers actual glow root pixels in native60. Complete shader contents/transforms/blur/HDR/output/hardware and original preview13/restore38/recovery34/drag52/full release remain open. The original task ledger remains a separate publication/qualification checklist.
