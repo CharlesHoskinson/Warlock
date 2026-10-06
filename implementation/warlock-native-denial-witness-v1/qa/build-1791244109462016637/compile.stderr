@@ -1,0 +1,5 @@
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-native-denial-witness-v1/qa/build-1791244109462016637/witness.cpp: In function ‘int main(int, char**)’:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-native-denial-witness-v1/qa/build-1791244109462016637/witness.cpp:15:18: error: ‘json_node_to_string’ was not declared in this scope; did you mean ‘json_node_set_string’?
+   15 |     auto encoded=json_node_to_string(json_object_get_member(ready,"frame"));require(encoded,"Exact native packet JSON");std::string release="{\"kind\":\"release\",\"frame\":"+std::string(encoded)+"}";g_free(encoded);
+      |                  ^~~~~~~~~~~~~~~~~~~
+      |                  json_node_set_string

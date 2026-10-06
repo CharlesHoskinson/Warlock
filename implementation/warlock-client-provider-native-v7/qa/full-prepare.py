@@ -1,0 +1,32 @@
+"""Bind full current shared host to the preserved native768 owning tuple."""
+import hashlib,json,pathlib,resource,shutil,sys,time
+ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1]
+sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
+require_qa_scope();assert resource.getrlimit(resource.RLIMIT_CORE)==(1,1)
+OUT=ROOT/'qa'/('prepare-'+str(time.time_ns()));OUT.mkdir()
+sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
+r={'passed':False,'nativeLaunched':False,'nativeAcceptance':False,'fullReleaseAccepted':False}
+try:
+ old=REPO/'implementation/warlock-client-provider-native-v1/qa/preflight.json';pre=json.loads(old.read_text());assert pre['passed']
+ for p,h in pre['inputs'].items():assert sha(p)==h,p
+ provider=REPO/'implementation/warlock-preview-provider-v17';reports=sorted(provider.glob('qa/build-*/report.json'));assert len(reports)==1;build=reports[0];built=json.loads(build.read_text());assert built['passed']
+ inputs=dict(pre['inputs']);inputs[str(old)]=sha(old);inputs[str(build)]=sha(build)
+ for rel,h in built['inputs'].items():assert sha(provider/rel)==h;inputs[str(provider/rel)]=h
+ for path in [*ROOT.glob('*.py'),*ROOT.glob('*.json'),*ROOT.glob('*.md'),*ROOT.joinpath('qa').glob('*.py')]:
+  if path.is_file():inputs[str(path)]=sha(path)
+ assets=pathlib.Path(built['compiledAssetPackage']['path'])
+ for name,h in built['compiledAssetPackage']['files'].items():assert sha(assets/name)==h;inputs[str(assets/name)]=h
+ binary=build.parent/'elm-host';assert sha(binary)==built['binarySHA256'];inputs[str(binary)]=built['binarySHA256']
+ pointer=pathlib.Path('/home/hoskinson/.local/share/hypr-window-controls/qa/virtual-pointer');assert pointer.is_file();inputs[str(pointer)]=sha(pointer)
+ for directory,key,buildprefix in [('warlock-session-lock-fixture-v1','lockFixture','lock-build-'),('warlock-native-denial-witness-v2','denialWitness','build-')]:
+  component=REPO/'implementation'/directory;reports=list(component.glob('qa/'+buildprefix+'*/report.json'));assert len(reports)==1
+  report=reports[0];compiled=json.loads(report.read_text());assert compiled['passed'];inputs[str(report)]=sha(report)
+  for p,h in compiled['inputs'].items():assert sha(p)==h;inputs[p]=h
+  for rel,h in compiled['artifacts'].items():p=report.parent/rel;assert sha(p)==h;inputs[str(p)]=h
+  binaryKey='client' if key=='lockFixture' else 'binary';pre[key]=compiled[binaryKey];pre[key+'Report']=str(report)
+ pre.update(inputs=inputs,fullHostBinary=str(binary),fullHostAssets=str(assets),fullHostBackend=str(build.parent/'inputs/adapter/daemon.py'),fullHostBuildReport=str(build),pointer=str(pointer))
+ for p in (build.parent/'inputs/adapter').glob('*.py'):inputs[str(p)]=sha(p)
+ assert all(sha(p)==h for p,h in inputs.items())
+ (ROOT/'qa/preflight.json').write_text(json.dumps(pre,indent=2)+'\n');r.update(passed=True,inputs=inputs,pair=pre['pair'])
+except Exception as e:r['error']=repr(e)
+(OUT/'report.json').write_text(json.dumps(r,indent=2)+'\n');print(json.dumps({'passed':r['passed'],'report':str(OUT/'report.json'),'error':r.get('error')}));raise SystemExit(not r['passed'])

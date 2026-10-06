@@ -1,0 +1,6 @@
+{
+  "parent": "implementation/warlock-native-denial-witness-v3",
+  "failedNativeReport": "implementation/warlock-client-provider-native-v8/qa/native-1791244473241208252/report.json",
+  "failedNativeReportSHA256": "9167514b499de15acb0948143decb87770b7aa1c123d34cc276e0f6abe373e29",
+  "change": "Log exact acquire and independently query own read-only native state after capture admission failure; no replay, no oracle/deadline changes"
+}

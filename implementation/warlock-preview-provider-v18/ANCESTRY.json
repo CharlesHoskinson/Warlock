@@ -1,0 +1,15 @@
+{
+  "parent": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v17",
+  "parentManifestSHA256": "9f3da95663188ed284c14e68fe9d518336d3cbdaab39d7c6f10c0bcc89daff40",
+  "native": {
+    "path": "implementation/warlock-client-provider-native-v9/component-manifest.json",
+    "sha256": "5bc1940fbdb721e22cd40c17cc949ec8d08842889c309dc585b5977d6248b9f6",
+    "files": 196
+  },
+  "model": {
+    "path": "implementation/warlock-source-presenter-model-v4/component-manifest.json",
+    "sha256": "95c63d7528834516d2bdaf3d42972dc0ba52e4c5820526ff901db8b5188dd0cf",
+    "files": 175
+  },
+  "change": "Fresh coherent native scope and next own job after physical zero/terminal ACK, preserving old job/expiry/proof and Unknown. Full production/native release gates remain."
+}

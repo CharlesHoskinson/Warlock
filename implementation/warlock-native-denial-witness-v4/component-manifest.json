@@ -1,0 +1,318 @@
+{
+  "status": "compiled-native-physical-denial-witness",
+  "buildPassed": true,
+  "usedByAcceptedNative": true,
+  "schema": 1,
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "files": {
+    "ANCESTRY.json": {
+      "kind": "file",
+      "sha256": "7a58e4b685600f2c901fbc7de8f77ce21393192a12517531c576b00836c715f9",
+      "size": 437,
+      "mode": "0o644"
+    },
+    "SPEC.md": {
+      "kind": "file",
+      "sha256": "1255509c8f60ed6d5484fe33736845a4e9c345101a5e3d4df20a022b4446cda2",
+      "size": 1413,
+      "mode": "0o644"
+    },
+    "native/witness.cpp": {
+      "kind": "file",
+      "sha256": "df99ab9b22509dd125a49dff2623a081ec26fed24602843cb6eeb3ec8c1ade53",
+      "size": 6129,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/compile.stderr": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/compile.stdout": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/flags.stderr": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/flags.stdout": {
+      "kind": "file",
+      "sha256": "5144b9181fccd70c2f69b15052e64f09c4d0cb1d68feff99b0b252384f8255bf",
+      "size": 239,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/admission-test.c": {
+      "kind": "file",
+      "sha256": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+      "size": 805,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/client-command-test.cpp": {
+      "kind": "file",
+      "sha256": "ef481b7030d6a41831895fca1a5cba7405d08e22b913fa2f0f6cadccf47c25ab",
+      "size": 4731,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/client-denial-test.cpp": {
+      "kind": "file",
+      "sha256": "9c05385a9e1b9da4efe03c414b09d512ab4e3791a33c4ff55fde75e4e0c009f7",
+      "size": 7210,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/client-frame-test.cpp": {
+      "kind": "file",
+      "sha256": "233d4520f3bd200cad1f1ea580e9a2eaaf382822b90aa262d4294f8a3bf68d7f",
+      "size": 2261,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/client-observation-test.cpp": {
+      "kind": "file",
+      "sha256": "bc9a36f1d62669904d5b7003d7b299ad2ee3a836c8f13f381a6669915c74e336",
+      "size": 5730,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/client-producer.cpp": {
+      "kind": "file",
+      "sha256": "07fe0a63860ddd7cef52f7701fca71ebda5e2ffec3a3fb0945de43df955b730a",
+      "size": 2776,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/client-producer.h": {
+      "kind": "file",
+      "sha256": "914d2a7a33b10781813b2af3d6ad6f0367dd3ad77dc04d2a4edc15351af2abf4",
+      "size": 927,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/client_frame.hpp": {
+      "kind": "file",
+      "sha256": "65d1ed6c416b34a43f2d4920001d2da049fb8995b3006475fab1651e97b9a855",
+      "size": 6230,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/client_producer.hpp": {
+      "kind": "file",
+      "sha256": "23b2ecfa378963152ef78c149603dea9ec37e3e964a173cfd1d0770bfc7163e4",
+      "size": 14768,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/context-keys-test.c": {
+      "kind": "file",
+      "sha256": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+      "size": 2959,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/context-keys.h": {
+      "kind": "file",
+      "sha256": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+      "size": 2623,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/demand.hpp": {
+      "kind": "file",
+      "sha256": "b7721cb9e67b7845252918213b5560fdaaafcacff42eb52eaa37697a341a7dcc",
+      "size": 7342,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/geometry-carrier-test.c": {
+      "kind": "file",
+      "sha256": "770835580c7a4a2e21e49a9c3da586ee3ae59e66a92320dd7bb12fa8e516d921",
+      "size": 5425,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/handoff-test.c": {
+      "kind": "file",
+      "sha256": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+      "size": 1054,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/host-fault.h": {
+      "kind": "file",
+      "sha256": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+      "size": 2495,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/host-journal.h": {
+      "kind": "file",
+      "sha256": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+      "size": 16541,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/host.c": {
+      "kind": "file",
+      "sha256": "0f01aef906d28b359791eae8401a00b0b9c47bb4ca7823da212821166e75a6f9",
+      "size": 64831,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/preview-integration.h": {
+      "kind": "file",
+      "sha256": "ffacb4ed6abe6b8019f5bcb489b8abe69f28f863ca9079f29cd1c075a0a49e2a",
+      "size": 1561,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/preview-provider-bootstrap.cpp": {
+      "kind": "file",
+      "sha256": "8b89b6d0a471de47e7af7c2db8345c3c7c22c3ed77f043cd230f184e3d2bb556",
+      "size": 9599,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/preview-provider-bootstrap.h": {
+      "kind": "file",
+      "sha256": "38a1f4a266ea13d82b4aabddb3f0ff8b54745ea32abb99493b7bf7898fd5caf2",
+      "size": 1541,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/preview-uri-api.h": {
+      "kind": "file",
+      "sha256": "7a02550a807102f6ebdad9c1570eb6a719a50b0ed422ff26add97dbd6408b002",
+      "size": 683,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/preview-uri-webkit.cpp": {
+      "kind": "file",
+      "sha256": "c8cc48442d8d098315b7ad64b71be267679bc361041dc6d2de405c657fa74ea2",
+      "size": 1624,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/preview_broker.hpp": {
+      "kind": "file",
+      "sha256": "2954630241ad5e5dc1ee7ce770ef622cd7eff0c3b6d9c5feedc07fcdeec7e3a1",
+      "size": 17508,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/preview_client.hpp": {
+      "kind": "file",
+      "sha256": "165f21621a5fced32d017ad47352bbdbb8b77b2dae7f2b542947ec1a05609cdf",
+      "size": 22360,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/preview_delivery.hpp": {
+      "kind": "file",
+      "sha256": "e330ab73404feb9b9a29e94a56eb2800db15c6cbd94de57bf348e5e9493652e3",
+      "size": 4797,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/preview_fd.hpp": {
+      "kind": "file",
+      "sha256": "60fa114f7f2eb819c7a09085ee737c23d21b31f0ba177d967ff99f1425272a60",
+      "size": 8701,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/preview_uri.cpp": {
+      "kind": "file",
+      "sha256": "d960c1a3d0cd5a569e84af3d005e184d412c1d86ea6bef6f73ad55b1ab2eaa15",
+      "size": 6546,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/preview_uri.hpp": {
+      "kind": "file",
+      "sha256": "aaf2fe962db07e6a48f0764cea6ea008f9b634591d0db306edc088e0e2358672",
+      "size": 3589,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/preview_wire.hpp": {
+      "kind": "file",
+      "sha256": "dd1864dee142ae468117d43fc31101a6b6ad8f92d2a009262b513336b83ccc2b",
+      "size": 3525,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/provider-delivery-test.cpp": {
+      "kind": "file",
+      "sha256": "4e21203fd7acd32ede476df1137b6ea812cb26fa977d05296a884401adfd8fbe",
+      "size": 10670,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/provider-grant-test.cpp": {
+      "kind": "file",
+      "sha256": "95c3a7af0952f55345e552487977f0585b81c9e7b078bcb09772188b642de99a",
+      "size": 26310,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/provider-ownership-test.cpp": {
+      "kind": "file",
+      "sha256": "d79fe711a90d24ac96e8522a33a4dc3582989b40b692aec73109e365e3f44675",
+      "size": 5754,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/reconciliation-carrier-test.c": {
+      "kind": "file",
+      "sha256": "38210317eff28d8a436e640e971f91df71ffcc3b17e82c27a60ee34f57d9f73d",
+      "size": 3024,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/recovery-presentation-test.c": {
+      "kind": "file",
+      "sha256": "812bbab1640e12269bc195979cd319a96a505157ba8f5c637eebfd5561bc8e67",
+      "size": 2766,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/shared-context-test.c": {
+      "kind": "file",
+      "sha256": "ed50c8ed6b0fee3db3818e2f38c8bb57985b388b26ee09a5624d32f1bfa258ee",
+      "size": 20901,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/shared-context.h": {
+      "kind": "file",
+      "sha256": "e86f3ba7a4c76d7839ef8d67d14c7f9ea6b514afa2ac110fc7cebf2da2fd62ce",
+      "size": 22281,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/shared-host.c": {
+      "kind": "file",
+      "sha256": "beb5b2ea6c0c495a4b40196e73101a475dfc37644c8fba9bb119fa2c8cea9161",
+      "size": 64077,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/surface-test.c": {
+      "kind": "file",
+      "sha256": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+      "size": 4091,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/native/surface.h": {
+      "kind": "file",
+      "sha256": "2bdf2d9b3b34fa7193da90e58ac378e7a640ae91e7b02d46987e33c559209f0b",
+      "size": 5561,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/report.json": {
+      "kind": "file",
+      "sha256": "1ec7eb15cb870c3d85f62c01017baf61e3047599c122175001eb699968e7834b",
+      "size": 14710,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/witness": {
+      "kind": "file",
+      "sha256": "a4b400f9f29c0837fb282f6874cec597ea725dd97eab2a4ef65b6f605db43768",
+      "size": 252784,
+      "mode": "0o755"
+    },
+    "qa/build-1791244556752232054/witness.cpp": {
+      "kind": "file",
+      "sha256": "df99ab9b22509dd125a49dff2623a081ec26fed24602843cb6eeb3ec8c1ade53",
+      "size": 6129,
+      "mode": "0o644"
+    },
+    "qa/build-1791244556752232054/witness.d": {
+      "kind": "file",
+      "sha256": "cde38f61f8f1a190c69e34790f2a0222d196966136bdb68f344c5c168c7feb0c",
+      "size": 28485,
+      "mode": "0o644"
+    },
+    "qa/build.py": {
+      "kind": "file",
+      "sha256": "8fe5633848052eeced0200e572b45700c534972a4155a943d4b21166d5a14a73",
+      "size": 2384,
+      "mode": "0o644"
+    }
+  }
+}
