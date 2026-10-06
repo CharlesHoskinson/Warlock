@@ -1,0 +1,48 @@
+-- SHADOWING --------------------------------- src/NativeFamilyPreviewSource.elm
+
+The name `maximum` is first defined here:
+
+101| maximum (Observation value) = value.maximum
+     ^^^^^^^
+But then it is defined AGAIN over here:
+
+66|     (D.map8 (\version kind owner request raw maximum eligible label -> { version=version, kind=kind, owner=owner, request=request, raw=raw, maximum=maximum, eligible=eligible, label=label })
+                                                 ^^^^^^^
+Think of a more helpful name for one of them and you should be all set!
+
+Note: Linters advise against shadowing, so Elm makes “best practices” the
+default. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this
+choice.
+
+-- SHADOWING --------------------------------- src/NativeFamilyPreviewSource.elm
+
+The name `request` is first defined here:
+
+98| request (Observation value) = value.request
+    ^^^^^^^
+But then it is defined AGAIN over here:
+
+66|     (D.map8 (\version kind owner request raw maximum eligible label -> { version=version, kind=kind, owner=owner, request=request, raw=raw, maximum=maximum, eligible=eligible, label=label })
+                                     ^^^^^^^
+Think of a more helpful name for one of them and you should be all set!
+
+Note: Linters advise against shadowing, so Elm makes “best practices” the
+default. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this
+choice.
+
+-- SHADOWING --------------------------------- src/NativeFamilyPreviewSource.elm
+
+The name `maximum` is first defined here:
+
+101| maximum (Observation value) = value.maximum
+     ^^^^^^^
+But then it is defined AGAIN over here:
+
+75|                     maximum = UInt64.string wire.maximum
+                        ^^^^^^^
+Think of a more helpful name for one of them and you should be all set!
+
+Note: Linters advise against shadowing, so Elm makes “best practices” the
+default. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this
+choice.
+

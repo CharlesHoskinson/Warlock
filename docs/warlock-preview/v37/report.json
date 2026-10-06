@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "passed": true,
+  "components": [
+    {
+      "path": "implementation/warlock-preview-provider-v33/component-manifest.json",
+      "sha256": "a389b4c957a753bbbc143f7872f9762f2dff00f76c15985882b04b272ca00bea",
+      "files": 436
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v34/component-manifest.json",
+      "sha256": "7504782607391c025d77ca2b8ed70f5a880aac673fa8e5717f110d3e687ddd64",
+      "files": 752
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v44/component-manifest.json",
+      "sha256": "c084cee27cac4d5bae8f719b415c2058843d1ec98ecc31a3deba132f8eb896f0",
+      "files": 339
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v45/component-manifest.json",
+      "sha256": "b99b5c7040737959835efd7b21c187295f3baeacb81a310a83d7d1ceecc54844",
+      "files": 349
+    }
+  ],
+  "evidence": {
+    "implementation/warlock-preview-provider-v34/qa/build-1791264211840104138/report.json": "34b300398928b44f81fb52558f96833392f517641dac36e0df037d3dd92cc879",
+    "implementation/warlock-preview-provider-v32/qa/build-1791263435710014061/report.json": "0a9ae0d9700cbff3c61311ba1d29a2a096b2388d935c41d47411c7078b09f907",
+    "implementation/warlock-preview-provider-v34/qa/check-1791264617400582316/report.json": "9e9a1975f035fede94e22433ae4b1f1ade37e6b3c9e78843189bbaca80b283cb",
+    "implementation/warlock-preview-provider-v33/qa/build-1791264130024361149/report.json": "dab4d994a0cbb6d3fa9f5a4f8ae032e2464b56b81be085a34478b07d01426a26",
+    "implementation/warlock-client-provider-native-v43/qa/native-1791262717179444040/report.json": "c0440dd16332f1224ac5ae1d190c46cc95b16c9160395f6a92121ab735691e2a",
+    "implementation/warlock-client-provider-native-v44/qa/native-1791264636216724357/report.json": "68e8e528bb12df8e8566cdf76b04c13ac65bd1eaa93d7d485aad4e009bd963d1",
+    "implementation/warlock-client-provider-native-v45/qa/native-1791264757369168051/report.json": "c2ecd53b89eba24ab7a02f2a0b8e19376828ba8d270cdbb512454c1fc9d1185d"
+  },
+  "compiledCommands": 65,
+  "retainedOriginalCommands": 62,
+  "selectedDemandScenarios": 10,
+  "coupledTraces": 22,
+  "nativeControls": 1756,
+  "retainedOriginalControls": 1739,
+  "normalOwnedExits": 162,
+  "actualSharedFamilyWebKitQualified": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "next": "Complete actual family source-stop/minimized historical lifetime and style/fidelity, original preview13 and coherent full release gates."
+}
