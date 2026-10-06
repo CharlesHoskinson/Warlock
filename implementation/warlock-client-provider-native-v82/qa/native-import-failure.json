@@ -1,0 +1,11 @@
+{
+  "passed": false,
+  "nativeLaunched": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "protectedLauncherExitCode": 1,
+  "error": "ModuleNotFoundError: No module named session_bus",
+  "phase": "before native OUT/private construction or compositor/client launch",
+  "cause": "fresh derivative copied native/prepare only and omitted three required private isolation modules",
+  "next": "fresh83 copies all exact parent isolation module bytes; alpha predicates unchanged"
+}

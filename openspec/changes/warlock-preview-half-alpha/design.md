@@ -1,0 +1,9 @@
+# Actual alpha composition
+
+Use the owning core12/collector16/model11/fixture5 tuple. Observe actual root active/inactive opacity=.5, opaque override off and explicit no_blur=1 before issuing a fresh native two-second scoped capture. The decoded straight-alpha family PNG must contain73728 root alpha128 and3072 overlapping child alpha192 pixels. Under the linked red tint program the native black-background output must contain root102/0/0 and composed child51/0/128; encoded child68/0/170 with alpha192 reconstructs those bytes. Include all76800 body pixels with no tolerance, masks or pointer-pixel exclusion.
+
+Native81 retained images fail exactly253 composited pixels; the independent output visibly contains the pointer inside the body after actual focus warped it. Native82 omitted private isolation modules and stopped at import before any compositor/client. Fresh83 retains both, copies unchanged isolation helpers, saves native cursorpos, moves to790/590 and observes exact position before the capture scope. Restore the saved position and observe it after measurement before remaining original controls. No source window relocates during capture and no original job is retried or renewed.
+
+Valid decoded measurements return facts with process exit0; passed:false still fails the mandatory terminal oracle after original1783 assertions and normal owned teardown. Malformed inputs fail. The original FD3 seals/CRC/context/crop/clock/deadline, physical map/FD/export/producer retirement and shared immutable Elm policy remain.
+
+Native83 acceptance is pending actual terminal evidence. This private explicit no-blur experiment cannot qualify arbitrary background-dependent blur, general nonlinear/neighbor/contextual shaders, CM/HDR/output/transform/GPU-driver resources/hardware or original full-release gates.
