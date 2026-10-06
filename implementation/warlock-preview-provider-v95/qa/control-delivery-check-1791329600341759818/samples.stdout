@@ -1,0 +1,567 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      decision: 0,
+      delivered: 0,
+      history: [],
+      inFlight: false,
+      invoked: 0,
+      latest: 0,
+      pending: 0,
+      receipt: 0,
+      wire: 0
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      decision: 1,
+      delivered: 0,
+      history: ["Wrap"],
+      inFlight: true,
+      invoked: 1,
+      latest: 0,
+      pending: 1,
+      receipt: 0,
+      wire: 1
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      decision: 0,
+      delivered: 0,
+      history: ["Wrap", "Empty"],
+      inFlight: true,
+      invoked: 1,
+      latest: 0,
+      pending: 1,
+      receipt: 0,
+      wire: 1
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      decision: 0,
+      delivered: 0,
+      history: ["Wrap", "Empty", "Packet3"],
+      inFlight: true,
+      invoked: 1,
+      latest: 0,
+      pending: 1,
+      receipt: 0,
+      wire: 1
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      decision: 0,
+      delivered: 0,
+      history: ["Wrap", "Empty", "Packet3", "Packet1Changed"],
+      inFlight: true,
+      invoked: 1,
+      latest: 0,
+      pending: 1,
+      receipt: 0,
+      wire: 1
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      decision: 0,
+      delivered: 0,
+      history: ["Wrap", "Empty", "Packet3", "Packet1Changed", "WrongBinding"],
+      inFlight: true,
+      invoked: 1,
+      latest: 0,
+      pending: 1,
+      receipt: 0,
+      wire: 1
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      decision: 3,
+      delivered: 1,
+      history:
+        [
+          "Wrap",
+          "Empty",
+          "Packet3",
+          "Packet1Changed",
+          "WrongBinding",
+          "Finish"
+        ],
+      inFlight: false,
+      invoked: 1,
+      latest: 1,
+      pending: 1,
+      receipt: 1,
+      wire: 1
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      decision: 1,
+      delivered: 1,
+      history:
+        [
+          "Wrap",
+          "Empty",
+          "Packet3",
+          "Packet1Changed",
+          "WrongBinding",
+          "Finish",
+          "Packet2"
+        ],
+      inFlight: true,
+      invoked: 2,
+      latest: 1,
+      pending: 2,
+      receipt: 0,
+      wire: 3
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      decision: 0,
+      delivered: 1,
+      history:
+        [
+          "Wrap",
+          "Empty",
+          "Packet3",
+          "Packet1Changed",
+          "WrongBinding",
+          "Finish",
+          "Packet2",
+          "Packet3"
+        ],
+      inFlight: true,
+      invoked: 2,
+      latest: 1,
+      pending: 2,
+      receipt: 0,
+      wire: 3
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      decision: 0,
+      delivered: 1,
+      history:
+        [
+          "Wrap",
+          "Empty",
+          "Packet3",
+          "Packet1Changed",
+          "WrongBinding",
+          "Finish",
+          "Packet2",
+          "Packet3",
+          "Packet1"
+        ],
+      inFlight: true,
+      invoked: 2,
+      latest: 1,
+      pending: 2,
+      receipt: 0,
+      wire: 3
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      decision: 0,
+      delivered: 1,
+      history:
+        [
+          "Wrap",
+          "Empty",
+          "Packet3",
+          "Packet1Changed",
+          "WrongBinding",
+          "Finish",
+          "Packet2",
+          "Packet3",
+          "Packet1",
+          "Packet2"
+        ],
+      inFlight: true,
+      invoked: 2,
+      latest: 1,
+      pending: 2,
+      receipt: 0,
+      wire: 3
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      decision: 0,
+      delivered: 1,
+      history:
+        [
+          "Wrap",
+          "Empty",
+          "Packet3",
+          "Packet1Changed",
+          "WrongBinding",
+          "Finish",
+          "Packet2",
+          "Packet3",
+          "Packet1",
+          "Packet2",
+          "Packet3"
+        ],
+      inFlight: true,
+      invoked: 2,
+      latest: 1,
+      pending: 2,
+      receipt: 0,
+      wire: 3
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      decision: 0,
+      delivered: 1,
+      history:
+        [
+          "Wrap",
+          "Empty",
+          "Packet3",
+          "Packet1Changed",
+          "WrongBinding",
+          "Finish",
+          "Packet2",
+          "Packet3",
+          "Packet1",
+          "Packet2",
+          "Packet3",
+          "Reinitialize"
+        ],
+      inFlight: true,
+      invoked: 2,
+      latest: 1,
+      pending: 2,
+      receipt: 0,
+      wire: 3
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      decision: 0,
+      delivered: 1,
+      history:
+        [
+          "Wrap",
+          "Empty",
+          "Packet3",
+          "Packet1Changed",
+          "WrongBinding",
+          "Finish",
+          "Packet2",
+          "Packet3",
+          "Packet1",
+          "Packet2",
+          "Packet3",
+          "Reinitialize",
+          "PacketMax"
+        ],
+      inFlight: true,
+      invoked: 2,
+      latest: 1,
+      pending: 2,
+      receipt: 0,
+      wire: 3
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      decision: 3,
+      delivered: 2,
+      history:
+        [
+          "Wrap",
+          "Empty",
+          "Packet3",
+          "Packet1Changed",
+          "WrongBinding",
+          "Finish",
+          "Packet2",
+          "Packet3",
+          "Packet1",
+          "Packet2",
+          "Packet3",
+          "Reinitialize",
+          "PacketMax",
+          "Finish"
+        ],
+      inFlight: false,
+      invoked: 2,
+      latest: 3,
+      pending: 2,
+      receipt: 2,
+      wire: 3
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      decision: 0,
+      delivered: 2,
+      history:
+        [
+          "Wrap",
+          "Empty",
+          "Packet3",
+          "Packet1Changed",
+          "WrongBinding",
+          "Finish",
+          "Packet2",
+          "Packet3",
+          "Packet1",
+          "Packet2",
+          "Packet3",
+          "Reinitialize",
+          "PacketMax",
+          "Finish",
+          "Oversize"
+        ],
+      inFlight: false,
+      invoked: 2,
+      latest: 3,
+      pending: 2,
+      receipt: 2,
+      wire: 3
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      decision: 0,
+      delivered: 2,
+      history:
+        [
+          "Wrap",
+          "Empty",
+          "Packet3",
+          "Packet1Changed",
+          "WrongBinding",
+          "Finish",
+          "Packet2",
+          "Packet3",
+          "Packet1",
+          "Packet2",
+          "Packet3",
+          "Reinitialize",
+          "PacketMax",
+          "Finish",
+          "Oversize",
+          "Packet1"
+        ],
+      inFlight: false,
+      invoked: 2,
+      latest: 3,
+      pending: 2,
+      receipt: 2,
+      wire: 3
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      decision: 0,
+      delivered: 2,
+      history:
+        [
+          "Wrap",
+          "Empty",
+          "Packet3",
+          "Packet1Changed",
+          "WrongBinding",
+          "Finish",
+          "Packet2",
+          "Packet3",
+          "Packet1",
+          "Packet2",
+          "Packet3",
+          "Reinitialize",
+          "PacketMax",
+          "Finish",
+          "Oversize",
+          "Packet1",
+          "PacketMax"
+        ],
+      inFlight: false,
+      invoked: 2,
+      latest: 3,
+      pending: 2,
+      receipt: 2,
+      wire: 3
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      decision: 0,
+      delivered: 2,
+      history:
+        [
+          "Wrap",
+          "Empty",
+          "Packet3",
+          "Packet1Changed",
+          "WrongBinding",
+          "Finish",
+          "Packet2",
+          "Packet3",
+          "Packet1",
+          "Packet2",
+          "Packet3",
+          "Reinitialize",
+          "PacketMax",
+          "Finish",
+          "Oversize",
+          "Packet1",
+          "PacketMax",
+          "Reinitialize"
+        ],
+      inFlight: false,
+      invoked: 2,
+      latest: 3,
+      pending: 2,
+      receipt: 2,
+      wire: 3
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      decision: 0,
+      delivered: 2,
+      history:
+        [
+          "Wrap",
+          "Empty",
+          "Packet3",
+          "Packet1Changed",
+          "WrongBinding",
+          "Finish",
+          "Packet2",
+          "Packet3",
+          "Packet1",
+          "Packet2",
+          "Packet3",
+          "Reinitialize",
+          "PacketMax",
+          "Finish",
+          "Oversize",
+          "Packet1",
+          "PacketMax",
+          "Reinitialize",
+          "Empty"
+        ],
+      inFlight: false,
+      invoked: 2,
+      latest: 3,
+      pending: 2,
+      receipt: 2,
+      wire: 3
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      decision: 0,
+      delivered: 2,
+      history:
+        [
+          "Wrap",
+          "Empty",
+          "Packet3",
+          "Packet1Changed",
+          "WrongBinding",
+          "Finish",
+          "Packet2",
+          "Packet3",
+          "Packet1",
+          "Packet2",
+          "Packet3",
+          "Reinitialize",
+          "PacketMax",
+          "Finish",
+          "Oversize",
+          "Packet1",
+          "PacketMax",
+          "Reinitialize",
+          "Empty",
+          "Packet1Changed"
+        ],
+      inFlight: false,
+      invoked: 2,
+      latest: 3,
+      pending: 2,
+      receipt: 2,
+      wire: 3
+    }
+}
+
+[ok] No violation found (111ms at 901 traces/second).
+Trace length statistics: max=21, min=21, average=21.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

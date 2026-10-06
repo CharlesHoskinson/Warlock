@@ -272,3 +272,75 @@ structural per-call bound SHALL NOT establish measured S02 timing acceptance.
 - WHEN polling occurs
 - THEN no new native retirement query or owner erasure occurs; after exact proof
   acknowledgment, polling still requires a fresh native Retired fact.
+
+### Requirement: Original receiver outgoing control confirmation
+
+EARS WLK-PREVIEW-CONTROL-001: WHEN an original-binding, original-epoch packet is
+the next contiguous ordinal, the dispatcher SHALL retain its exact bytes before
+invoking its handler at most once. WHILE that handler is in flight, repeated or
+later packets SHALL NOT enter it. A delivery receipt SHALL mean the dispatcher
+returned and SHALL NOT assert effect success, physical retirement, terminal proof
+acknowledgment or permission to replay an Unknown effect.
+
+EARS WLK-PREVIEW-CONTROL-002: WHEN the latest delivered packet is retried byte for
+byte under its original receiver grant, the dispatcher SHALL repeat only its
+delivery receipt. Changed bytes, gaps, foreign grants and ordinal exhaustion SHALL
+NOT invoke effects, advance the prefix or reset any namespace.
+
+EARS WLK-PREVIEW-CONTROL-003: WHILE delivery is unconfirmed, the renderer transport
+SHALL retain bounded immutable packets, retry their existing ordinals in order,
+and validate receipts against the original outstanding packet and receiver grant.
+It SHALL NOT recreate commands or infer native effect success from delivery.
+
+EARS WLK-PREVIEW-CONTROL-004: BEFORE native admission creates job or actor
+obligations, the native owner SHALL reserve queue capacity and remaining ordinals
+for their maximum required original cleanup and acknowledgments. Insufficient
+capacity SHALL backpressure or exhaust admission before physical issuance.
+Cleanup capacity SHALL remain available under overload. Bounds SHALL derive from
+the actual owning Broker, actor, journal and proof contracts and have executable
+worst-case witnesses; a renderer queue SHALL NOT silently discard emitted Elm
+commands or authorize native admission.
+
+EARS WLK-PREVIEW-CONTROL-005: WHEN an original receiver disappears or reloads with
+outstanding controls, the native owner SHALL preserve original obligations and
+unknown outcomes. Replacement SHALL require a fresh trusted grant and explicit
+reconciliation. It SHALL NOT reset the old prefix or replay effects under the old
+grant. Normal close SHALL preserve transport and physical barriers.
+
+#### Scenario: Delivery receipt is lost
+- GIVEN a completed dispatcher invocation under its original grant
+- WHEN the renderer retries the exact same packet and ordinal
+- THEN only the original delivery receipt repeats, without another invocation.
+
+#### Scenario: Same ordinal carries different bytes
+- GIVEN the latest delivered packet
+- WHEN a retry changes its bytes while retaining its ordinal
+- THEN the packet is refused and every effect and prefix remains unchanged.
+
+#### Scenario: Admission approaches transport exhaustion
+- GIVEN outstanding cleanup and acknowledgment reservations
+- WHEN a new admission cannot reserve its worst-case cleanup capacity
+- THEN admission is refused before physical issuance and existing cleanup can
+  continue under its original identities.
+
+#### Scenario: Receiver reload has an Unknown effect
+- GIVEN an outstanding original control with an unknown native effect outcome
+- WHEN a renderer reload requests reuse of its old grant
+- THEN the old prefix and obligations remain, and no effect is replayed; a fresh
+  receiver requires explicit reconciliation.
+
+EARS WLK-PREVIEW-CONTROL-006: WHILE the native owner lacks confirmation that its
+latest delivery receipt reached the original frontend, it SHALL retain and retry
+that receipt and keep its transport confirmation barrier open. The frontend SHALL
+repeat an idempotent original-grant confirmation for previously processed
+receipts without recreating packets or asserting effect success. Confirmation
+SHALL NOT exceed the native delivered prefix or confirm an in-flight invocation.
+Normal close SHALL independently require this confirmation, admission cleanup
+reservations, final actor-delivery confirmation and all physical/proof barriers.
+
+#### Scenario: Physical drain precedes final control receipt delivery
+- GIVEN native cleanup has drained but the frontend has not confirmed the final
+  outgoing-control delivery receipt
+- WHEN the native owner attempts normal close
+- THEN its transport confirmation barrier stays open and the original receipt
+  remains available for retry, without another effect invocation.

@@ -1,0 +1,541 @@
+{
+  "passed": true,
+  "inputs": {
+    "native/preview-control.h": "eeb41047554ba5a84f75614a62c1de93e871b3099a12560584150d6c4b6540d8",
+    "native/preview-control-delivery.h": "65d23b510b37ee8bb0dd205b949d9bbd1b989c7c5f57ee488e84a6707ffcf95e",
+    "qa/control-delivery-replay.c": "f3afa904edd9aa4a6caea2ae3a443e62f4db51ef71c6d3c17c5974e353088b26",
+    "qa/control-delivery-check.py": "7d8cb1d57cf796811194a6ac8579078f941ca0ba97fed5a352eab88e5f4291fd",
+    "spec/control_delivery.qnt": "4ecb12463324945ee8e9604d35174f64f5e14a35b6628f900b4403d7b1ecc3b7",
+    "spec/control_delivery_tests.qnt": "123e33aad79611fff97fdb9e5a22c6e4cd098817de339e790fcda14b521d4841"
+  },
+  "commands": [
+    {
+      "name": "flags",
+      "argv": [
+        "pkg-config",
+        "--cflags",
+        "--libs",
+        "glib-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "compile",
+      "argv": [
+        "cc",
+        "-std=c11",
+        "-O1",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Inative",
+        "qa/control-delivery-replay.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/checks",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lglib-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "control_delivery_tests.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "control_delivery_tests.qnt",
+        "--main=control_delivery_tests",
+        "--backend=typescript",
+        "--match=^(lostReceiptRetriesWithoutEffect|changedPacketCannotReuseOrdinal|inFlightPacketCannotReenter|missingPacketCannotBeSkipped|foreignReceiverCannotEnter|foreignEpochCannotEnter|foreignBindingCannotEnter|reloadCannotResetPrefix|finalOrdinalRetriesWithoutWrap|deliveryReceiptDoesNotOvertakeHandler|laterDeliveryRejectsEarlierReplay|malformedSizeCannotEnter)$",
+        "--seed=950031",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "samples",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "control_delivery.qnt",
+        "--main=control_delivery",
+        "--backend=typescript",
+        "--invariant=safety",
+        "--seed=950032",
+        "--max-samples=100",
+        "--max-steps=20",
+        "--n-traces=8",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-changedPacketCannotReuseOrdinal-1.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-deliveryReceiptDoesNotOvertakeHandler-9.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-finalOrdinalRetriesWithoutWrap-8.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-foreignBindingCannotEnter-6.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-foreignEpochCannotEnter-5.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-foreignReceiverCannotEnter-4.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-inFlightPacketCannotReenter-2.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-laterDeliveryRejectsEarlierReplay-10.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-lostReceiptRetriesWithoutEffect-0.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-malformedSizeCannotEnter-11.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-missingPacketCannotBeSkipped-3.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-reloadCannotResetPrefix-7.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-0.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-1.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-2.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-3.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-4.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-5.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-6.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-7.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-effects-after-lost-receipt-compile",
+      "argv": [
+        "cc",
+        "-std=c11",
+        "-O1",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/replay-effects-after-lost-receipt/native",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/replay-effects-after-lost-receipt/qa/control-delivery-replay.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/replay-effects-after-lost-receipt/checks",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lglib-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-effects-after-lost-receipt-replay",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/replay-effects-after-lost-receipt/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "ignore-retry-wire-identity-compile",
+      "argv": [
+        "cc",
+        "-std=c11",
+        "-O1",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/ignore-retry-wire-identity/native",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/ignore-retry-wire-identity/qa/control-delivery-replay.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/ignore-retry-wire-identity/checks",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lglib-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "ignore-retry-wire-identity-replay",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/ignore-retry-wire-identity/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "ignore-original-receiver-compile",
+      "argv": [
+        "cc",
+        "-std=c11",
+        "-O1",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/ignore-original-receiver/native",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/ignore-original-receiver/qa/control-delivery-replay.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/ignore-original-receiver/checks",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lglib-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "ignore-original-receiver-replay",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v95/qa/control-delivery-check-1791329600341759818/ignore-original-receiver/checks"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "Actual C bounded original-grant exact-wire receive/complete/receipt functions. Explicit selected Quint and sampled coupled traces compare actual prefix, pending/latest packet identity, receiver refusal, handler invocation count and receipt availability. Inactive in WebKit: no admission cleanup reservations, renderer outbox, reload reconciliation or actual effects/physical/full release qualification.",
+  "selectedNames": [
+    "lostReceiptRetriesWithoutEffect",
+    "changedPacketCannotReuseOrdinal",
+    "inFlightPacketCannotReenter",
+    "missingPacketCannotBeSkipped",
+    "foreignReceiverCannotEnter",
+    "foreignEpochCannotEnter",
+    "foreignBindingCannotEnter",
+    "reloadCannotResetPrefix",
+    "finalOrdinalRetriesWithoutWrap",
+    "deliveryReceiptDoesNotOvertakeHandler",
+    "laterDeliveryRejectsEarlierReplay",
+    "malformedSizeCannotEnter"
+  ],
+  "namedScenarios": 12,
+  "invariantSamples": 100,
+  "coupledTraces": [
+    {
+      "trace": "named-changedPacketCannotReuseOrdinal-1.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-deliveryReceiptDoesNotOvertakeHandler-9.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-finalOrdinalRetriesWithoutWrap-8.itf.json",
+      "statesCompared": 5
+    },
+    {
+      "trace": "named-foreignBindingCannotEnter-6.itf.json",
+      "statesCompared": 1
+    },
+    {
+      "trace": "named-foreignEpochCannotEnter-5.itf.json",
+      "statesCompared": 1
+    },
+    {
+      "trace": "named-foreignReceiverCannotEnter-4.itf.json",
+      "statesCompared": 1
+    },
+    {
+      "trace": "named-inFlightPacketCannotReenter-2.itf.json",
+      "statesCompared": 2
+    },
+    {
+      "trace": "named-laterDeliveryRejectsEarlierReplay-10.itf.json",
+      "statesCompared": 5
+    },
+    {
+      "trace": "named-lostReceiptRetriesWithoutEffect-0.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-malformedSizeCannotEnter-11.itf.json",
+      "statesCompared": 2
+    },
+    {
+      "trace": "named-missingPacketCannotBeSkipped-3.itf.json",
+      "statesCompared": 1
+    },
+    {
+      "trace": "named-reloadCannotResetPrefix-7.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "sample-0.itf.json",
+      "statesCompared": 20
+    },
+    {
+      "trace": "sample-1.itf.json",
+      "statesCompared": 20
+    },
+    {
+      "trace": "sample-2.itf.json",
+      "statesCompared": 20
+    },
+    {
+      "trace": "sample-3.itf.json",
+      "statesCompared": 20
+    },
+    {
+      "trace": "sample-4.itf.json",
+      "statesCompared": 20
+    },
+    {
+      "trace": "sample-5.itf.json",
+      "statesCompared": 20
+    },
+    {
+      "trace": "sample-6.itf.json",
+      "statesCompared": 20
+    },
+    {
+      "trace": "sample-7.itf.json",
+      "statesCompared": 20
+    }
+  ],
+  "statesCompared": 190,
+  "unsafeMutantsDetected": 3,
+  "mutants": [
+    {
+      "name": "replay-effects-after-lost-receipt",
+      "witness": "named-lostReceiptRetriesWithoutEffect-0.itf.json",
+      "differentObservableState": true
+    },
+    {
+      "name": "ignore-retry-wire-identity",
+      "witness": "named-changedPacketCannotReuseOrdinal-1.itf.json",
+      "differentObservableState": true
+    },
+    {
+      "name": "ignore-original-receiver",
+      "witness": "named-foreignReceiverCannotEnter-4.itf.json",
+      "differentObservableState": true
+    }
+  ],
+  "artifacts": {
+    "flags.stdout": "0e1a23b25376e5a0299196cc0a3d88803a8ce781c78abe2463863b267c6ce734",
+    "flags.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "checks": "4a4bb00d7b09d4d01b47e4f88031cbe48bd0f8568219d66d7c2f7d0797ab3bbc",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-lostReceiptRetriesWithoutEffect-0.itf.json": "4e95c10d23c7d46a89eb814cafb0804cad05bc20349671586b2c7688cd7b50b3",
+    "named-changedPacketCannotReuseOrdinal-1.itf.json": "234bce7b8806c0d4d526e9b5a0d65abf16f39e115012616796b7900dfa87d004",
+    "named-inFlightPacketCannotReenter-2.itf.json": "e9286c969f91e7b8a6a2279ba48e433db1614819c82a36218b18fdfd6b9e4d2e",
+    "named-missingPacketCannotBeSkipped-3.itf.json": "1886b6a9327e2896cdfc859c646e2fcb914653fc616a039238af159b940cda99",
+    "named-foreignReceiverCannotEnter-4.itf.json": "5eef63e7d94eb05805e17e6ae79793d2903f29f46b6fd4ad50f9132c516dea7e",
+    "named-foreignEpochCannotEnter-5.itf.json": "75bddc49e6b2a044d9cc1dd442eb9c7464e8da6f2e7e55af6beb4e8534d2d5c5",
+    "named-foreignBindingCannotEnter-6.itf.json": "ba1efe6cecd356f12cd3f5b8a4305c16ad126e94a96cfbb6d7d92cefa1ed8a4e",
+    "named-reloadCannotResetPrefix-7.itf.json": "db7744b3181666efd7a7770036eac74e9d48cf5abd718d3f1d0137b2df51d821",
+    "named-finalOrdinalRetriesWithoutWrap-8.itf.json": "50120955fbfb98ea36300cfa1ecff218dbd2ca01648430cf447813c7a8b51a5d",
+    "named-deliveryReceiptDoesNotOvertakeHandler-9.itf.json": "59472bc4b8723190a5db1ba561cf6a65a3bfea1e6983b5fc27db4d2d2cf98747",
+    "named-laterDeliveryRejectsEarlierReplay-10.itf.json": "8b3d787d59540c6203cb66e90ff136d0737d169eb27376980f3ff0520f4c3de0",
+    "named-malformedSizeCannotEnter-11.itf.json": "bfaea864b97ac3f0192baaab4df637c1eb33c6e8426ab57d9d1c4a72c9d39a72",
+    "selected.stdout": "80a086f5eda176d659e4b61732a8cceb945ea193c19b7d85514e3da131ae285c",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "dd278a528ff60fd7d9c528b394943e664a454e3edb350af6401d1b2f6c60e93d",
+    "sample-1.itf.json": "726258d560845cb7dd66f675f41362683f129de7e78bf25514e8b0da4534ad9b",
+    "sample-2.itf.json": "6821cb51574c699e33fc64ceb6b68eb5588e0197033e1ce31de6e02d13b060a5",
+    "sample-3.itf.json": "55503e0d74b5fdc4fe9c5fcf32a72f7ececc0d3ecaaae91cc30d52146c38fd61",
+    "sample-4.itf.json": "1038ed13c4ec6cce83e6a5ef3e71dd8ebc58cd5b818b27d6a8d050474c43aed0",
+    "sample-5.itf.json": "554393304f1d2946855637f1c7c76f72d1d1352d9d4ecba620af14bf8d34f075",
+    "sample-6.itf.json": "cff45bbc12d0f9608d76d47c9a95c1a1ab7fb6179f6cb8186f72c6b96daddf93",
+    "sample-7.itf.json": "fef14bfa3064031f7890c9ef982b063ce5c904b48d76584331d5e1acfac719c2",
+    "samples.stdout": "68a21308e398b76cfe76831e281e8deb4adb4e1b5f7cd91c5d4d639b66f100d7",
+    "samples.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-changedPacketCannotReuseOrdinal-1.itf.stdout": "e8bd68964cc50858d1f60675e139557c45df403037af7f4678205dc18ee211ef",
+    "replay-named-changedPacketCannotReuseOrdinal-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-deliveryReceiptDoesNotOvertakeHandler-9.itf.stdout": "003c27c57569499728b80cc3b19d063aa90b9847b1c76de9b04e9338786e78e3",
+    "replay-named-deliveryReceiptDoesNotOvertakeHandler-9.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-finalOrdinalRetriesWithoutWrap-8.itf.stdout": "e20f27e1b523c94a83bf92beeae858a94ebe5d518fa85538e6bf6bed84dcb32a",
+    "replay-named-finalOrdinalRetriesWithoutWrap-8.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-foreignBindingCannotEnter-6.itf.stdout": "b6fc433d8811aaf9d36e75a50058f929969b9b2b91287e6e56824d51388041e6",
+    "replay-named-foreignBindingCannotEnter-6.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-foreignEpochCannotEnter-5.itf.stdout": "b6fc433d8811aaf9d36e75a50058f929969b9b2b91287e6e56824d51388041e6",
+    "replay-named-foreignEpochCannotEnter-5.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-foreignReceiverCannotEnter-4.itf.stdout": "b6fc433d8811aaf9d36e75a50058f929969b9b2b91287e6e56824d51388041e6",
+    "replay-named-foreignReceiverCannotEnter-4.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-inFlightPacketCannotReenter-2.itf.stdout": "8b7a3ff44e1096e9b99b100391141525ddf943a429be58fbb36db38ce382fa20",
+    "replay-named-inFlightPacketCannotReenter-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-laterDeliveryRejectsEarlierReplay-10.itf.stdout": "3a1e8599f2a4dab08f68c134253a36dead17f0a2be8eac5580d86ddd0f799997",
+    "replay-named-laterDeliveryRejectsEarlierReplay-10.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-lostReceiptRetriesWithoutEffect-0.itf.stdout": "817d49225e0b5109b0f7b98e4bc703f6ce77915f3f0b252788ddb3c6176d2df7",
+    "replay-named-lostReceiptRetriesWithoutEffect-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-malformedSizeCannotEnter-11.itf.stdout": "6f7161d68b930701f7b67d0138e683a7f3e1c13353ce8d1bea6949c5b0afdb51",
+    "replay-named-malformedSizeCannotEnter-11.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-missingPacketCannotBeSkipped-3.itf.stdout": "b6fc433d8811aaf9d36e75a50058f929969b9b2b91287e6e56824d51388041e6",
+    "replay-named-missingPacketCannotBeSkipped-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-reloadCannotResetPrefix-7.itf.stdout": "e8bd68964cc50858d1f60675e139557c45df403037af7f4678205dc18ee211ef",
+    "replay-named-reloadCannotResetPrefix-7.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-0.itf.stdout": "9c40ccdad88b9988079ed0a1fb5f52b1591640f862a90b710eee5b74790c3686",
+    "replay-sample-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-1.itf.stdout": "08036c58bb559b1d5677a927db861e4ed32d8e997b41c6ea66d5f6c6c8f076ad",
+    "replay-sample-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-2.itf.stdout": "3bdba59edce1bc9fd6d7edb3feab86ff0ae018cb62896a3678ca8dc0c9e9b48a",
+    "replay-sample-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-3.itf.stdout": "b5b55de6129e22b8fcf9f7ccb4d2204baf67e95a63f1f1587f3852ddcb3be8a8",
+    "replay-sample-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-4.itf.stdout": "48be7aabe5d8bdc9b6f4b30a1a2af0c6c08df8309ae8dd6737d21440f9eb2540",
+    "replay-sample-4.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-5.itf.stdout": "76a5e50d5ef0605bf97f67ad3d8bfc981cf32a8b2d964364816136e9c5799630",
+    "replay-sample-5.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-6.itf.stdout": "8666c6513b118ef16805475dbd293b8d20950d79ad64781a9b9a9994ab5cdfbe",
+    "replay-sample-6.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-7.itf.stdout": "50d0ae3e6243b30b1927994b5171f181632428a615e3438ebe6177c5ddef6d31",
+    "replay-sample-7.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-effects-after-lost-receipt-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-effects-after-lost-receipt-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-effects-after-lost-receipt-replay.stdout": "dd7f9bd27b4525548bfb7b0fd089efb656d3de3ed2f6e4a3f6cc859659fe0e23",
+    "replay-effects-after-lost-receipt-replay.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ignore-retry-wire-identity-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ignore-retry-wire-identity-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ignore-retry-wire-identity-replay.stdout": "817d49225e0b5109b0f7b98e4bc703f6ce77915f3f0b252788ddb3c6176d2df7",
+    "ignore-retry-wire-identity-replay.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ignore-original-receiver-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ignore-original-receiver-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ignore-original-receiver-replay.stdout": "e65a18dd4fc4a536a337a442e14c5e4cfcb6794b04c3fde62d1eaafb92f2820a",
+    "ignore-original-receiver-replay.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-effects-after-lost-receipt/checks": "fd22ce7d98140bcebba216e1a35cbc59c5c20913f3f2751449d97848af052ad1",
+    "ignore-retry-wire-identity/checks": "2119d5aa5be6e3ba700cd5d12b554a41c6f34b3372bff6967579381feaeb28dc",
+    "ignore-original-receiver/checks": "ad302f99140a253d631ee90a390a174e6c1a583be721396b6e11681f4ba78486",
+    "ignore-original-receiver/native/preview-control.h": "eeb41047554ba5a84f75614a62c1de93e871b3099a12560584150d6c4b6540d8",
+    "ignore-original-receiver/native/preview-control-delivery.h": "800cb39965fb3021c6d238a38dbac439dc923b2e7a8a0df368c8fd03bf65b9ba",
+    "ignore-original-receiver/qa/control-delivery-replay.c": "f3afa904edd9aa4a6caea2ae3a443e62f4db51ef71c6d3c17c5974e353088b26",
+    "ignore-original-receiver/qa/control-delivery-check.py": "7d8cb1d57cf796811194a6ac8579078f941ca0ba97fed5a352eab88e5f4291fd",
+    "ignore-original-receiver/spec/control_delivery.qnt": "4ecb12463324945ee8e9604d35174f64f5e14a35b6628f900b4403d7b1ecc3b7",
+    "ignore-original-receiver/spec/control_delivery_tests.qnt": "123e33aad79611fff97fdb9e5a22c6e4cd098817de339e790fcda14b521d4841",
+    "ignore-retry-wire-identity/native/preview-control.h": "eeb41047554ba5a84f75614a62c1de93e871b3099a12560584150d6c4b6540d8",
+    "ignore-retry-wire-identity/native/preview-control-delivery.h": "358f09ed40e67b582cddb21ff2e037532c1527b72725db72c94f35c2423a9cea",
+    "ignore-retry-wire-identity/qa/control-delivery-replay.c": "f3afa904edd9aa4a6caea2ae3a443e62f4db51ef71c6d3c17c5974e353088b26",
+    "ignore-retry-wire-identity/qa/control-delivery-check.py": "7d8cb1d57cf796811194a6ac8579078f941ca0ba97fed5a352eab88e5f4291fd",
+    "ignore-retry-wire-identity/spec/control_delivery.qnt": "4ecb12463324945ee8e9604d35174f64f5e14a35b6628f900b4403d7b1ecc3b7",
+    "ignore-retry-wire-identity/spec/control_delivery_tests.qnt": "123e33aad79611fff97fdb9e5a22c6e4cd098817de339e790fcda14b521d4841",
+    "replay-effects-after-lost-receipt/native/preview-control.h": "eeb41047554ba5a84f75614a62c1de93e871b3099a12560584150d6c4b6540d8",
+    "replay-effects-after-lost-receipt/native/preview-control-delivery.h": "1b58411b5267e4986c76a85a5ad9d9cc6ba403a49a08774736f426332e69be8d",
+    "replay-effects-after-lost-receipt/qa/control-delivery-replay.c": "f3afa904edd9aa4a6caea2ae3a443e62f4db51ef71c6d3c17c5974e353088b26",
+    "replay-effects-after-lost-receipt/qa/control-delivery-check.py": "7d8cb1d57cf796811194a6ac8579078f941ca0ba97fed5a352eab88e5f4291fd",
+    "replay-effects-after-lost-receipt/spec/control_delivery.qnt": "4ecb12463324945ee8e9604d35174f64f5e14a35b6628f900b4403d7b1ecc3b7",
+    "replay-effects-after-lost-receipt/spec/control_delivery_tests.qnt": "123e33aad79611fff97fdb9e5a22c6e4cd098817de339e790fcda14b521d4841",
+    "inputs/native/preview-control.h": "eeb41047554ba5a84f75614a62c1de93e871b3099a12560584150d6c4b6540d8",
+    "inputs/native/preview-control-delivery.h": "65d23b510b37ee8bb0dd205b949d9bbd1b989c7c5f57ee488e84a6707ffcf95e",
+    "inputs/qa/control-delivery-replay.c": "f3afa904edd9aa4a6caea2ae3a443e62f4db51ef71c6d3c17c5974e353088b26",
+    "inputs/qa/control-delivery-check.py": "7d8cb1d57cf796811194a6ac8579078f941ca0ba97fed5a352eab88e5f4291fd",
+    "inputs/spec/control_delivery.qnt": "4ecb12463324945ee8e9604d35174f64f5e14a35b6628f900b4403d7b1ecc3b7",
+    "inputs/spec/control_delivery_tests.qnt": "123e33aad79611fff97fdb9e5a22c6e4cd098817de339e790fcda14b521d4841"
+  }
+}

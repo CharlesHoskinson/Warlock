@@ -77,6 +77,19 @@ Original9068 aggregate and14467 retained-channel controls passed with280 synthet
 subjects. This structural bound does not establish measured timing acceptance or
 actual WebKit activation. See [the component report](../../../docs/warlock-preview/v93/component-report94.json).
 
+Held GUI95 adds inactive outgoing-control receipt/deduplication and immutable
+bounded frontend outbox primitives. The actual C implementation passed12 selected
+Quint scenarios/20 coupled traces/190 states with three compiled mutations
+detected; actual JS passed10 selected scenarios/22 coupled traces/389 states
+and three syntax-checked mutations. The compiled native metadata/JS round trip
+passed64 controls for transmission/receipt loss, exact retry bytes/ordinals,
+Unknown outcomes, backpressure, failed posting, UTF-8 bounds, old/foreign grants
+and exhaustion with normal owned cleanup. Production modules remain byte-identical
+to GUI94; these primitives are not loaded or routed in WebKit. Native frontend
+receipt confirmation before close, cleanup capacity/ordinal reservation before
+admission, and fresh-grant receiver reconciliation remain prerequisites.
+See [the component report](../../../docs/warlock-preview/v93/component-report95.json).
+
 These are bounded qualifications. Native observation/readiness/final
 completion routing through the actual WebKit host, reliable outgoing transport,
 captured physical retirement

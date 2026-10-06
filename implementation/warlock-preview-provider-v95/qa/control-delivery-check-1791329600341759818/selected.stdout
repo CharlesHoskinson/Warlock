@@ -1,0 +1,16 @@
+
+  control_delivery_tests
+    ok lostReceiptRetriesWithoutEffect passed 1 test(s)
+    ok changedPacketCannotReuseOrdinal passed 1 test(s)
+    ok inFlightPacketCannotReenter passed 1 test(s)
+    ok missingPacketCannotBeSkipped passed 1 test(s)
+    ok foreignReceiverCannotEnter passed 1 test(s)
+    ok foreignEpochCannotEnter passed 1 test(s)
+    ok foreignBindingCannotEnter passed 1 test(s)
+    ok reloadCannotResetPrefix passed 1 test(s)
+    ok finalOrdinalRetriesWithoutWrap passed 1 test(s)
+    ok deliveryReceiptDoesNotOvertakeHandler passed 1 test(s)
+    ok laterDeliveryRejectsEarlierReplay passed 1 test(s)
+    ok malformedSizeCannotEnter passed 1 test(s)
+
+  12 passing (12ms)

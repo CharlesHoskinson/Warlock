@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "eventId": "1651d5a9664d4812b60641190cc7acc8",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-06T23:43:38.539501+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/warlock-preview-provider-v95",
+  "nextWork": [
+    "PROGRESS heldGUI95 inactive reliable-control primitives: NativeC12selected/20traces/190states/3compiled mutants; actualJS10selected/22traces/389states/3actualJS variants; actualNativeMetadata+JS64 loss/retry/ACK/Unknown/backpressure/UTF8/oldgrant/exhaustion/normalclose controls. All parent94 production modules unchanged; no current95 fullhost/native runtime claim. PUBLIC66 d67896fdde83540561f5097b22c59f19010e39f8 verified, locala324243c1bcf2b8dfec2c780270905e41d23ae09. Next native frontend receipt-confirmation close barrier, then native cleanup reservations before admission and fresh-grant reconciliation before actual WebKit activation. All original GUI release gates remain."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/warlock-preview-provider-v95/component-manifest.json",
+      "sha256": "994527cc9a42103881d7bffeddb7d722883f4b3df756fdcfebd6cf19ebe0dd77",
+      "size": 173887
+    },
+    {
+      "path": "docs/warlock-preview/v93/component-report95.json",
+      "sha256": "7a92969a6382a348dd428336f7e3187d2d265abeb3ac432ecaa06cf1a28d949c",
+      "size": 949
+    },
+    {
+      "path": "docs/warlock-preview/v93/OUTGOING-CONTROL-CONTRACT.md",
+      "sha256": "86fc561e270f5f23a8e6813763c0c03ce7390da423502e3846ef6e04bca6cedd",
+      "size": 4166
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

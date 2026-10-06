@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "eventId": "5a0913ebfe7d43df8f4e805c5e4636d2",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-06T23:31:34.364169+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/warlock-preview-provider-v95",
+  "nextWork": [
+    "PROGRESS ownGUI95 native original-binding/epoch exact-wire control delivery receipt/dedupe primitive. FrozenCONTROL001-005 contract requires native cleanup reservations before admission, bounded immutable renderer outbox, replay without new ordinal/effect success, and explicit fresh-grant receiver reconciliation before WebKit activation. OriginalS02/fullrelease gates unchanged. GUI94 fairpoll held/publication66 underway."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/warlock-preview-provider-v94/component-manifest.json",
+      "sha256": "5bbb7de51039fe048cad98092545c76b4f75fd1eb958a2477343f6a79d685930",
+      "size": 488749
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v95/ANCESTRY.json",
+      "sha256": "39ab325357fdbab5d994c799f707252c1db0cfd05b739624bd2f0145a38263e4",
+      "size": 483
+    },
+    {
+      "path": "docs/warlock-preview/v93/OUTGOING-CONTROL-CONTRACT.md",
+      "sha256": "0f161f5f710c779c57b5215b2cbe155bc34e53c01ea6ef1928ed06327020ffe2",
+      "size": 3037
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}
