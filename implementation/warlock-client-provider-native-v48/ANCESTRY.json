@@ -1,0 +1,4 @@
+{
+  "parent": "implementation/warlock-client-provider-native-v47",
+  "change": "Prelaunch source review: fixture has popup-destroyed event, not nonexistent popupPresent field. Require actual destruction event at current command barrier. No native47 launched; its prepared source retained."
+}

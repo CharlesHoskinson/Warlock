@@ -1,0 +1,73 @@
+import hashlib,json,pathlib,resource,sys,time,subprocess,shlex,traceback
+sys.path.insert(0,'/home/hoskinson/window-integration-qa')
+from qa_launch import require_qa_scope
+require_qa_scope();assert resource.getrlimit(resource.RLIMIT_CORE)==(1,1)
+ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];OUT=ROOT/'qa'/('prepare-'+str(time.time_ns()));OUT.mkdir()
+sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
+r={'passed':False,'nativeLaunched':False,'nativeAcceptance':False,'fullReleaseAccepted':False}
+try:
+ parent=REPO/'implementation/warlock-client-provider-native-v34';old=parent/'qa/preflight.json';pre=json.loads(old.read_text());assert pre['passed']
+ inputs=dict(pre['inputs'])
+ for p,h in inputs.items():assert sha(p)==h,p
+ inputs[str(old)]=sha(old)
+ baseline=parent/'qa/native-1791257839724867928/report.json';accepted=json.loads(baseline.read_text());assert accepted['passed'] and accepted['cleanupPassed'] and len(accepted['checks'])==1351 and all(row['passed'] for row in accepted['checks']) and len(accepted['ownedExitCodes'])==125 and all(row['exitCode']==0 for row in accepted['ownedExitCodes'])
+ for rel,h in accepted['artifacts'].items():assert sha(baseline.parent/rel)==h,rel
+ inputs[str(baseline)]=sha(baseline);pre['retainedFamilyObserverReport']=str(baseline)
+ owner=REPO/'implementation/warlock-family-style-crop-capture-v2';descriptor=owner/'native-build-report.json';pair=json.loads(descriptor.read_text());assert pair['result']=='pass' and sha(ROOT/'native-build-report.json')==sha(descriptor) and sha(pair['binary'])==pair['sha256'] and sha(pair['plugin']['path'])==pair['plugin']['sha256']
+ build=pathlib.Path(pair['pluginBuildReport']);assert sha(build)==pair['pluginBuildReportSHA256'];compiled=json.loads(build.read_text());assert compiled['passed'] and not compiled['missingSymbols']
+ coreReport=pathlib.Path(pair['buildReport']);assert sha(coreReport)==pair['buildReportSHA256'];coreBuilt=json.loads(coreReport.read_text());assert coreBuilt['passed'] and pathlib.Path(coreBuilt['ancestor']['report']).parent/'Hyprland'==REPO/'implementation/warlock-core-family-crop-v1/build-1791260322349568389/Hyprland'
+ coreManifest=pathlib.Path(pair['coreComponentManifest']);assert sha(coreManifest)==pair['coreComponentManifestSHA256'];held=json.loads(coreManifest.read_text())
+ for rel,row in held['files'].items():assert sha(coreManifest.parent/rel)==row['sha256'],rel
+ for proof in [compiled,coreBuilt]:
+  for key in ['dependencies','linkDependencies','linkedLibraries','tools']:
+   for p,h in proof.get(key,{}).items():assert sha(p)==h,p;inputs[p]=h
+ for rel,h in compiled['inputs'].items():assert sha(owner/rel)==h,rel;inputs[str(owner/rel)]=h
+ closure=pathlib.Path(pair['linkClosureReport']);assert sha(closure)==pair['linkClosureReportSHA256'] and not json.loads(closure.read_text())['missingSymbols']
+ for p in [descriptor,build,closure,coreReport,coreManifest,pathlib.Path(pair['binary']),pathlib.Path(pair['plugin']['path']),*ROOT.glob('*'),*ROOT.joinpath('qa').glob('*.py')]:
+  if p.is_file():inputs[str(p)]=sha(p)
+ familyFD=REPO/'implementation/warlock-family-fd-qualification-v1/qa/test-report.json';pointer=json.loads(familyFD.read_text());familyFDReport=pathlib.Path(pointer['path']);assert sha(familyFDReport)==pointer['sha256'];proof=json.loads(familyFDReport.read_text());assert proof['passed'] and proof['evidence']['physicalFDClosed'] and proof['evidence']['physicalMappingClosed']
+ for p,h in proof['inputs'].items():assert sha(p)==h,p;inputs[p]=h
+ for rel,h in proof['artifacts'].items():assert sha(familyFDReport.parent/rel)==h,rel;inputs[str(familyFDReport.parent/rel)]=h
+ inputs[str(familyFD)]=sha(familyFD);inputs[str(familyFDReport)]=sha(familyFDReport);pre['familyFDReport']=str(familyFDReport)
+ cropFD=REPO/'implementation/warlock-family-crop-fd-qualification-v2/qa/test-report.json';pointer=json.loads(cropFD.read_text());cropReport=pathlib.Path(pointer['path']);assert sha(cropReport)==pointer['sha256'];cropProof=json.loads(cropReport.read_text());assert cropProof['passed'] and cropProof['evidence']['legacy']['checks']==150
+ for p,h in cropProof['inputs'].items():assert sha(p)==h,p;inputs[p]=h
+ for rel,h in cropProof['artifacts'].items():assert sha(cropReport.parent/rel)==h,rel;inputs[str(cropReport.parent/rel)]=h
+ inputs[str(cropFD)]=sha(cropFD);inputs[str(cropReport)]=sha(cropReport);pre['cropFDReport']=str(cropReport)
+ oldCombined=REPO/'implementation/warlock-client-provider-native-v37/qa/native-1791259128393147111/report.json';oldNative=json.loads(oldCombined.read_text());assert oldNative['passed'] and oldNative['cleanupPassed'] and len(oldNative['checks'])==1524
+ inputs[str(oldCombined)]=sha(oldCombined);pre['retainedCombinedFamilyReport']=str(oldCombined)
+ oldCrop=REPO/'implementation/warlock-client-provider-native-v38/qa/native-1791260728575460795/report.json';oldCropNative=json.loads(oldCrop.read_text());assert oldCropNative['passed'] and oldCropNative['cleanupPassed'] and len(oldCropNative['checks'])==1612
+ inputs[str(oldCrop)]=sha(oldCrop);pre['retainedNativeCropReport']=str(oldCrop)
+ styleModel=REPO/'implementation/warlock-family-style-revisions-v2/qa/model-report.json';pointer=json.loads(styleModel.read_text());styleReport=pathlib.Path(pointer['path']);assert sha(styleReport)==pointer['sha256'];styleProof=json.loads(styleReport.read_text());assert styleProof['passed'] and len(styleProof['selectedNames'])==9 and styleProof['states']==29
+ for p,h in styleProof['inputs'].items():assert sha(p)==h,p;inputs[p]=h
+ for rel,h in styleProof['artifacts'].items():assert sha(styleReport.parent/rel)==h,rel;inputs[str(styleReport.parent/rel)]=h
+ inputs[str(styleReport)]=sha(styleReport);inputs[str(styleModel)]=sha(styleModel);pre['styleModelReport']=str(styleReport)
+ retainedStyle=REPO/'implementation/warlock-client-provider-native-v41/qa/native-1791261901860161292/report.json';retained=json.loads(retainedStyle.read_text());assert retained['passed'] and retained['cleanupPassed'] and len(retained['checks'])==1636 and len(retained['ownedExitCodes'])==150 and all(row['exitCode']==0 for row in retained['ownedExitCodes'])
+ for rel,h in retained['artifacts'].items():assert sha(retainedStyle.parent/rel)==h,rel
+ inputs[str(retainedStyle)]=sha(retainedStyle);pre['retainedNativeStyleReport']=str(retainedStyle)
+ styleCropFD=REPO/'implementation/warlock-family-style-crop-fd-qualification-v1/qa/test-report.json';pointer=json.loads(styleCropFD.read_text());styleCropReport=pathlib.Path(pointer['path']);assert sha(styleCropReport)==pointer['sha256'];styleCropProof=json.loads(styleCropReport.read_text());assert styleCropProof['passed'] and styleCropProof['evidence']['legacy']['checks']==150 and styleCropProof['evidence']['qualify']['checks']==295
+ for p,h in styleCropProof['inputs'].items():assert sha(p)==h,p;inputs[p]=h
+ for rel,h in styleCropProof['artifacts'].items():assert sha(styleCropReport.parent/rel)==h,rel;inputs[str(styleCropReport.parent/rel)]=h
+ inputs[str(styleCropFD)]=sha(styleCropFD);inputs[str(styleCropReport)]=sha(styleCropReport);pre['styleCropFDReport']=str(styleCropReport)
+ failed42=REPO/'implementation/warlock-client-provider-native-v42/qa/native-1791262614875927452/report.json';failure=json.loads(failed42.read_text());assert not failure['passed'] and any(row['name']=='stoppedNewLeaseRetainsOriginalNativeJob' and not row['passed'] for row in failure['checks']);inputs[str(failed42)]=sha(failed42);pre['retainedFailedStyleCropReport']=str(failed42)
+ failed44=REPO/'implementation/warlock-client-provider-native-v44/qa/native-1791264636216724357/report.json';failed44Proof=json.loads(failed44.read_text());assert not failed44Proof['passed'] and failed44Proof['cleanupPassed'] and any(row['name']=='familyWebCanonicalFamilyCoverage' and not row['passed'] for row in failed44Proof['checks']);inputs[str(failed44)]=sha(failed44);pre['retainedFailedFamilyWebReport']=str(failed44)
+ old45=REPO/'implementation/warlock-client-provider-native-v45/qa/native-1791264757369168051/report.json';old45Proof=json.loads(old45.read_text());assert old45Proof['passed'] and old45Proof['cleanupPassed'] and len(old45Proof['checks'])==1756 and all(row['exitCode']==0 for row in old45Proof['ownedExitCodes']);inputs[str(old45)]=sha(old45);pre['retainedNativeFamilyWebReport']=str(old45)
+ old43=REPO/'implementation/warlock-client-provider-native-v43/qa/native-1791262717179444040/report.json';old43Proof=json.loads(old43.read_text());assert old43Proof['passed'] and old43Proof['cleanupPassed'] and len(old43Proof['checks'])==1739 and len(old43Proof['ownedExitCodes'])==159 and all(row['exitCode']==0 for row in old43Proof['ownedExitCodes']);inputs[str(old43)]=sha(old43);pre['retainedNativeStyleCropReport']=str(old43)
+ provider=REPO/'implementation/warlock-preview-provider-v34';builds=list((provider/'qa').glob('build-*/report.json'));assert len(builds)==1;providerBuild=builds[0];providerProof=json.loads(providerBuild.read_text());assert providerProof['passed'] and all(row['exitCode']==0 for row in providerProof['commands'])
+ for rel,h in providerProof['inputs'].items():assert sha(provider/rel)==h,rel;inputs[str(provider/rel)]=h
+ for section in ['compilerDependencies','linkedLibraries','tools']:
+  for path,row in providerProof[section].items():assert sha(path)==row['sha256'],path;inputs[path]=row['sha256']
+ for rel,h in providerProof['artifacts'].items():assert sha(providerBuild.parent/rel)==h,rel;inputs[str(providerBuild.parent/rel)]=h
+ binary=providerBuild.parent/'elm-host';assert sha(binary)==providerProof['binarySHA256'];inputs[str(binary)]=sha(binary);inputs[str(providerBuild)]=sha(providerBuild)
+ pre['fullHostBinary']=str(binary);pre['fullHostAssets']=str(providerBuild.parent/'inputs/assets');pre['fullHostBackend']=str(providerBuild.parent/'inputs/adapter/daemon.py');pre['familyProviderBuild']=str(providerBuild)
+ inputs['/usr/bin/grim']=sha('/usr/bin/grim')
+ for line in subprocess.check_output(['ldd','/usr/bin/grim'],text=True).splitlines():
+  assert 'not found' not in line
+  for word in line.split():
+   if word.startswith('/') and pathlib.Path(word).is_file():path=str(pathlib.Path(word).resolve());inputs[path]=sha(path)
+ flags=shlex.split(subprocess.check_output(['pkg-config','--cflags','--libs','libpng'],text=True))
+ for name,key in [('modal-pixels','modalPixelOracle'),('family-pixels','familyPixelOracle'),('crop-pixels','cropPixelOracle'),('family-web-pixels','familyWebPixelOracle')]:
+  argv=['g++','-std=c++20','-O2','-Wall','-Wextra','-Werror',str(ROOT/(name+'.cpp')),*flags,'-o',str(OUT/name)];p=subprocess.run(argv,capture_output=True,text=True,timeout=180);(OUT/(name+'.stdout')).write_text(p.stdout);(OUT/(name+'.stderr')).write_text(p.stderr);assert p.returncode==0,p.stderr;inputs[str(OUT/name)]=sha(OUT/name);pre[key]=str(OUT/name)
+ pre['pair']['core']={'path':pair['binary'],'sha256':pair['sha256']};pre['pair']['plugin']=pair['plugin'];pre['inputs']=inputs
+ assert all(sha(p)==h for p,h in inputs.items());(ROOT/'qa/preflight.json').write_text(json.dumps(pre,indent=2)+'\n');r.update(passed=True,inputs=inputs,pair=pre['pair'])
+except Exception as e:r['error']=repr(e);r['traceback']=traceback.format_exc()
+(OUT/'report.json').write_text(json.dumps(r,indent=2)+'\n');print(json.dumps({'passed':r['passed'],'report':str(OUT/'report.json'),'error':r.get('error')}));raise SystemExit(not r['passed'])

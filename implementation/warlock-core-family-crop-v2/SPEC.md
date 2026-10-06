@@ -1,0 +1,7 @@
+# Read-only family crop observation after source stop
+
+Add an owning native familyObservationCropBounds(root) method. Its only result is a geometry plan derived from the current mapped native parent graph and current applied popup/subsurface/window bounds. It returns no pixels, allocates no image/export, performs no render, and changes no window focus, visibility, workspace or geometry. Preserve all256 graph/member/surface limits, native source validity, same monitor/workspace identity, special-workspace refusal, transform/layout checks, signed outward rounding and original resource plan. Read-only geometry may describe mapped minimized or otherwise nonrendered family members, including a nonvisible ordinary workspace.
+
+The existing familyCropBounds and makeFamilyCropFB use the original strict live eligibility planner and still refuse minimized/hidden/nonrendered families. Scope observation never authorizes capture. Native sourceLive remains the existing current native eligibility flag; native scope clock, scene/style/member revisions and lifetime remain authoritative. Retained physical images are historical under that state, with original job/deadline/expiry and ownership.
+
+Compile actual two owning TUs and exact relink, retain431 unchanged ordered archive members and all prior exports/object layouts. New API, native source-stop/minimized family WebKit lifetime, full fidelity/style, hardware/output, original preview13 and full release require their own actual evidence. No installed/main desktop changes.

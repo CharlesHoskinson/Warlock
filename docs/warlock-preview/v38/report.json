@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "passed": true,
+  "components": [
+    {
+      "path": "implementation/warlock-core-family-crop-v2/component-manifest.json",
+      "sha256": "94a24173e3e2827919fe2437176bdef24382d8769ae2f65832bb13a817c01059",
+      "files": 756
+    },
+    {
+      "path": "implementation/warlock-family-style-crop-capture-v2/component-manifest.json",
+      "sha256": "606073d95b5edf18b0b2a278838214d98a9efb22a1dcf1e258f505074b791d4c",
+      "files": 1149
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v50/component-manifest.json",
+      "sha256": "db38cfdf99226f3c1fb0ee8d8f4f9b2b4565c9f12da1455432244e9173314d1d",
+      "files": 356
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v46/component-manifest.json",
+      "sha256": "756ba5e623bb8c101688a1c57de1efa326eea69e38879904ce3c9aa3cbef10b8",
+      "files": 345
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v47/component-manifest.json",
+      "sha256": "8aa3483b46ed22f9d99148324e1e7ed2b4795598349c1fc29cfe9136fa869128",
+      "files": 37
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v48/component-manifest.json",
+      "sha256": "80ae894db8273f67ce9584b65bd83736ae9da7c07fe0085cf266a351a8eb7d46",
+      "files": 345
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v49/component-manifest.json",
+      "sha256": "8474e0f22e98426652a6ce84076d6b5a9d77b08b2734112f9a350e145ef56065",
+      "files": 348
+    }
+  ],
+  "evidence": {
+    "implementation/warlock-core-family-crop-v2/build-1791265067912965162/report.json": "22d7cf69c16d1ef6cf8ef2f896daf516d44e7142d0eec375b0c6120ea122b5d9",
+    "implementation/warlock-family-style-crop-capture-v2/qa/build-1791265143835532638/report.json": "82343bcc12f390261ca444f71a02fc9deb14028087af8f7162280e98a0dbbfe9",
+    "implementation/warlock-client-provider-native-v45/qa/native-1791264757369168051/report.json": "c2ecd53b89eba24ab7a02f2a0b8e19376828ba8d270cdbb512454c1fc9d1185d",
+    "implementation/warlock-client-provider-native-v46/qa/native-1791265271172342426/report.json": "e94bc3c0ca85988f3fe93252ebfea075cad33b7b08c95f426fd9de42a987528d",
+    "implementation/warlock-client-provider-native-v48/qa/native-1791265464350990212/report.json": "eff3f8cb422b5c58603f57d838f3bdeae0b5fc63e80818f09695c712209b40be",
+    "implementation/warlock-client-provider-native-v49/qa/native-1791265648045047174/report.json": "17f18072aeebcfd845246d657ebac5b6ef605b95211b438f6a9fb8382c0c67a8",
+    "implementation/warlock-client-provider-native-v50/qa/native-1791265841870106110/report.json": "41b65aa20c9a774e8568815c2ccd02fed4064550d8a6f57c22fcf410bc62cf25"
+  },
+  "nativeControls": 1783,
+  "retainedOriginalControls": 1756,
+  "normalOwnedExits": 166,
+  "actualHistoricalFamilyQualified": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "next": "Complete source/style/fidelity, original preview13, async hardware/output and coherent full release gates."
+}

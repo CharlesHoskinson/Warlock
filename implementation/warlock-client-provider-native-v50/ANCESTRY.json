@@ -1,0 +1,5 @@
+{
+  "parent": "implementation/warlock-client-provider-native-v49",
+  "failedNative": "qa/native-1791265648045047174/report.json",
+  "change": "Historical source/picker/expiry/physical ACK passed49, then fixture cleanup duplicated popup destruction. Remove only that already-dismissed native popup cleanup call; retain original1756 assertions and all historical oracles/deadlines."
+}

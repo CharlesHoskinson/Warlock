@@ -1,0 +1,5 @@
+# Actual historical family preview after native minimize
+
+Retain all1756 ordered native45 assertions and original deadlines on exact new owning corecrop2/stylecrop2 pair. Open another actual family picker with native root/popup/fully offscreen modal, then execute exact committed first-class native minimize. Require fresh own typed native style-family source with sourceLive false, changed scene, preserved lifetime/output/privacy/rendering. Reopen actual shared Elm picker under new GTK lease with same historical URI and native pixel dimensions, single original job/expiry/acquire and physically held original image. New native family capture under stopped scope must refuse before allocation. Original expiration must drive exact Elm release, physical mapping/export/producer retirement and final ACK/normal exit; restore the original native family in its workspace afterward.
+
+Read-only observation does not render minimized windows. Full family freshness/fidelity/style/hardware/output and original preview13/whole release are separate and remain open. No main desktop/session/draft changes.
