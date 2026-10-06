@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "eventId": "45d2709fa11b4c059e69ee070622d48c",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-06T02:02:43.266149+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/warlock-preview-provider-v28",
+  "nextWork": [
+    "Publisher90330 terminal1 HTTP408 originalpushretained; authoritative remote stayed039c, mirrorprepared82da9a4. Exactcommitretry89861 terminal0 withsame3140 rawownerblobs verifiedremote82da9a40c9aaea85708278dc2af8725b8d841777; publicvisibilityreverified. Qualified918/103 slice ispublished. Actualfresh28 implements genericperentry retainednewleaseguard andresumebehindactualownphysical/finalACK while sibling remainscharged; actualCpoll_at/resume/lease andtrustedGTKgate/wake wired; original128MiB/two slots/2sec capture maintained. Meaningfulnew ASan/UBSan twoentryBroker/GIO/ReceiptDelivery controls added; fullprotectedbuild8029 confirmedlive nowatoldhostcontrols. Poll exacthandle; do not modifybuildsource; failurefresh29. NextexplicitselectedQuint/conformance and actualnativeGUI resumption derivative retaining918 ordered; allfullreleasegates remainopen."
+  ],
+  "evidence": [
+    {
+      "path": "docs/warlock-repository/v18/publication/delivery.json",
+      "sha256": "1a0b8e31b8ef7ca5e02a079b26f68d5c30de6f1c0ddd0fa02060d2a269e19b52",
+      "size": 1016497
+    },
+    {
+      "path": "docs/warlock-repository/v18/publication/visibility.json",
+      "sha256": "91402e19d2f77618a2bea71424e64d5a8d1e111cd6582a173a72ca442a18aa9b",
+      "size": 119
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v28/derivation.json",
+      "sha256": "4f6194d1308e8e1c60a7ea8bf3a4e6c8a567961de064e29c92e86513a55ab1f5",
+      "size": 30660
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v28/native/imported-lifecycle-test.cpp",
+      "sha256": "cff2f5b82927245461d198301ae390e292d381494222e9c31a1c8567fb607ae8",
+      "size": 8783
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

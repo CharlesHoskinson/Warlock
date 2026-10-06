@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "passed": true,
+  "components": [
+    {
+      "path": "implementation/warlock-preview-provider-v28/component-manifest.json",
+      "sha256": "dcb1a8ea122a5daa86dbe0dda54b842aeebeef3711abfbcc4bc13e9a231eedde",
+      "files": 546
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v22/component-manifest.json",
+      "sha256": "7f395c92d2a271783a81ad35b073bfbcb7d428278433246040dd0b920d91331a",
+      "files": 18
+    },
+    {
+      "path": "implementation/warlock-source-presenter-model-v9/component-manifest.json",
+      "sha256": "4e8069a69879be846b122044594868e27b68722e5f39075b3e2807a48151246c",
+      "files": 371
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v23/component-manifest.json",
+      "sha256": "e5316ecbf91e3817670fceb5c38fb7dd7701bdfca2bb64c2e769ef4803c1e38d",
+      "files": 230
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v29/component-manifest.json",
+      "sha256": "bbe83492cc822cda42db942ed35cdde9d6f5a0ab73a35fee7cfcedb727308ce3",
+      "files": 546
+    }
+  ],
+  "evidence": {
+    "implementation/warlock-preview-provider-v28/qa/build-1791252107730579707/report.json": "cb58d9862db27555ac6dabceaf682fed24661656d91a4e9b1f8be7fb91657bab",
+    "implementation/warlock-preview-provider-v29/qa/build-1791252364450568862/report.json": "ec91f5c64961601d6f923784bc1ec3533f98e06504ef4a33cc950521231c7d98",
+    "implementation/warlock-source-presenter-model-v9/qa/check-1791252602645179242/report.json": "d8849df8c223eab357237c24ecf72acd03735d26ce26d2dcfc0d4fda04ce1ab8",
+    "implementation/warlock-client-provider-native-v22/qa/prepare-1791252704541243210/report.json": "145751254ed7a5079b6667d846049c52d8ef73c54e3035d8bda532ebfe043709",
+    "implementation/warlock-client-provider-native-v23/qa/native-1791252749472257123/report.json": "46c78af0dfe71d1e2d9c78272aa213dbbb16d1880dfdb1f63015faae6546b4fb"
+  },
+  "boundedSharedGUIResumptionQualified": true,
+  "nativeControls": 933,
+  "normalOwnedExits": 106,
+  "selectedScenarios": 73,
+  "comparedStates": 659,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "next": "Actual native per-entry resumption while sibling held/charged, shared retained Historical new-lease presentation, then original production family/decor/modal preview13, async/hardware/S02/output and all full release gates"
+}

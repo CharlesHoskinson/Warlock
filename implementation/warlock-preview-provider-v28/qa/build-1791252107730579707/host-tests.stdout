@@ -1,0 +1,26 @@
+TAP version 14
+# random seed: R02S7a2c17b5c071cdec1a409a731af23687
+1..15
+# Start of host tests
+ok 1 /host/assets
+ok 2 /host/request-schema
+ok 3 /host/qa-report-control-bounds
+ok 4 /host/surface-atomic-preflight
+# surface-refused: popup-origin-or-stale
+# surface-refused: preflight-unsent
+# surface-refused: popup-origin-or-stale
+ok 5 /host/surface-manager-isolation
+# surface-presentation-applied: publication=11 lease=3
+# surface-focus-applied: publication=11 lease=3
+ok 6 /host/surface-acknowledgements
+ok 7 /host/monitor-index-boundaries
+ok 8 /host/popup-logical-dimensions
+ok 9 /host/shared-view-capabilities
+ok 10 /host/shared-projection-capabilities
+ok 11 /host/shared-duplicate-fields
+# view-refused: duplicate-or-malformed-json
+ok 12 /host/shared-preview-router
+ok 13 /host/client-source-target
+ok 14 /host/imported-source-targets
+ok 15 /host/imported-acknowledgement-isolation
+# End of host tests

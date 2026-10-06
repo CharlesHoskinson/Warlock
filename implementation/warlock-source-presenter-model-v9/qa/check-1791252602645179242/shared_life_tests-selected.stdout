@@ -1,0 +1,16 @@
+
+  shared_life_tests
+    ok SharedResumeWithHeldSibling passed 1 test(s)
+    ok SharedResumeBlockedByOwnReader passed 1 test(s)
+    ok SharedResumeBlockedByOwnJournal passed 1 test(s)
+    ok SharedOldLeaseDoesNotReserve passed 1 test(s)
+    ok SharedMissingGateDoesNotReserve passed 1 test(s)
+    ok SharedForeignScopeDoesNotReserve passed 1 test(s)
+    ok SharedStoppedScopeDoesNotReserve passed 1 test(s)
+    ok SharedCostCannotEnlargeBudget passed 1 test(s)
+    ok SharedOldACKCannotEraseNewOwner passed 1 test(s)
+    ok SharedStoppedHistoricalNewLease passed 1 test(s)
+    ok SharedRepeatedLeaseDoesNotRePresent passed 1 test(s)
+    ok SharedForeignPresentationRejected passed 1 test(s)
+
+  12 passing (31ms)

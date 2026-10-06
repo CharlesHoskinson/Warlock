@@ -1,0 +1,15 @@
+
+  denial_tests
+    ok lockedPendingThenUnlock passed 1 test(s)
+    ok goneRetainsUntilDrain passed 1 test(s)
+    ok outputDenialRetains passed 1 test(s)
+    ok layoutDenialRetains passed 1 test(s)
+    ok foreignDenialNoEffect passed 1 test(s)
+    ok staleDenialNoEffect passed 1 test(s)
+    ok unknownRefusalNotSourceDenial passed 1 test(s)
+    ok duplicateDenialNoCleanupReplay passed 1 test(s)
+    ok staleScopeCannotResume passed 1 test(s)
+    ok unknownCannotResumeAutomatically passed 1 test(s)
+    ok hiddenOwnerDenialStillReleases passed 1 test(s)
+
+  11 passing (15ms)

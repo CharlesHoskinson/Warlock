@@ -1,0 +1,29 @@
+{
+  "source": "implementation/warlock-source-presenter-model-v8",
+  "copiedFiles": {
+    "qa/observations.cpp": "eaee92b46c1d637f43ba38a93d8c1e14b0a3932f1f0af55a8caf5ccdd0bbbbc2",
+    "qa/observations.js": "8f7727ee1bbcdc755b36e02806f6fef00973048fca2550691a55430fc4231501",
+    "qa/replay.js": "3ee99c3853e4522e6f6c6cd776c1de9aad052b12eaf0f7b86bdbde4b5fafa3bb",
+    "qa/check.py": "f769e43995efe654d471111a979851b8f9560e3c903d99584dd701a14c600fef",
+    "qa/denials.cpp": "78d9c07c79d8c34eac5beba938fb590609cc17cd18b7d9f69971b3b3b13b820c",
+    "qa/denials.js": "fc25b2aea14c75178d1d4516066b21beac7338787d9447e0ef99628290c186a4",
+    "qa/resumes.cpp": "8e750bd41d54800e0fadb3ed7046cf16eaea31ef6cfbdc3d02b43e462e3c58b6",
+    "qa/resumes.js": "8c262aa35429f1a3d1e8b05e65a22bdafcfeffa572d18be41fd841a4a12bacdf",
+    "qa/historical.cpp": "acb63e616f70d10d2031da9b7c5c9488abffb212663befe116a07c74c5487157",
+    "qa/historical.js": "eb2db0509de4a62e99363eba4aebe091230f27d2fa89081077cef8db433887d4",
+    "qa/transfers.cpp": "09b2f0fc84d1efcf0667cbeef4ec582da1995b91b003e082c911ce9294817ec7",
+    "spec/observations.qnt": "e80d6a07da9c0ea15ee05690fd1decb88adfe37f82f5a8304106b36d1e796d01",
+    "spec/observation-tests.qnt": "9fd84c4e5f30c95d9b7e103ac5507005858803140b7ce21dcad8710ed9423d48",
+    "spec/source.qnt": "6d1beb2332a9fad32c998024f2d3a04ce1d07fbb6ec3ead0ac0814c77775c838",
+    "spec/tests.qnt": "a7a07b97762aaa1d09d450340c4936c226e48da69e4667e80eeb62268d5efbea",
+    "spec/denials.qnt": "b58b4dc2068e4efea03ee60fb61a88680ef6aa26a6df0ecceaa51b3b35ad94cc",
+    "spec/denial-tests.qnt": "c7e9958e5eb8988fbbd7d2e27df896a1298e71e8fc52703cea3e0bc23c7e094d",
+    "spec/resumes.qnt": "58ace4b005b0102b3d226db8ca47788c586d588b5f6a08cab105fcf79eeb2aa4",
+    "spec/resume-tests.qnt": "dac32b871f93da7faf5d85d04bf76bb03c56ec504bd6ebbbe3a69241b317dbd6",
+    "spec/historical.qnt": "7d7e88890cce181069333fbbe6e9ce50c7695d35828c9482d1cff91dbbc5e07f",
+    "spec/historical-tests.qnt": "bfac21fe5fe3297e6bb0bdfac2e5297e5ad82c0e0ee7084f0a885a1b5b864972",
+    "spec/transfers.qnt": "6092ce920cce4508073eefb7a258bb193f82243de0ac8bf59d11073d28e92b34",
+    "spec/transfer-tests.qnt": "c5351c895557b10086db563d972cf5f1b90d1794c0079f5c77c482a973a32aba"
+  },
+  "change": "Retain original61 selected scenarios/464 states, then refine explicitly selected shared per-entry retained-presentation/resumption helpers with actual Broker/GIO/ReceiptDelivery and original issued deadlines. Actual Native/GTK second-cycle qualification separate."
+}

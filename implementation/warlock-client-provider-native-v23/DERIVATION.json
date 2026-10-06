@@ -1,0 +1,5 @@
+{
+  "source": "implementation/warlock-client-provider-native-v22",
+  "sourceStatus": "preflight-only-no-native-launched",
+  "change": "Require exact two-source fresh seed identity set before nested job/clock/deadline comparisons, preventing a vacuous all() match. No relaxed original scenario, oracle or duration."
+}
