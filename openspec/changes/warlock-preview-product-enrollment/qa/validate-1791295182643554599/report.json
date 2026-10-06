@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-dd5d7a1da45b496ea78fe30a8b7b77ae.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-product-enrollment/specs/elm-capture-motion/spec.md": "f06ff468d7f55349982f53ae07491d373f4f18912620da23d31299059ea70b6f",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-product-enrollment/qa/validate.py": "18b649b6fecf8bf328fe9ce413877dd04e55623600de5ad369c846eb0f5d8deb",
+    "/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/requirements.json": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+    "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v60/S09-EVIDENCE-PLAN.json": "e3b9f35f045f2ff0317498f81d8bf156d8e89cf1de6898590b5c5a3cf4b4f63b",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-product-enrollment/proposal.md": "62f72137cbc0c6cea971c520e852eef2e793bbfc69b163d54ec886ff4aa6a34c",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-product-enrollment/design.md": "6e464942ba5302841f8979cd8cd3e6918001607463cb6c2d27f21cbefca634e5",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-product-enrollment/tasks.md": "7e03c6cbb39294eeec4f0d0cc4974af395a4825561e6a8e926a5729cd617cb86"
+  },
+  "requirements": [
+    "WARLOCK-ENROLL-001",
+    "WARLOCK-ENROLL-002",
+    "WARLOCK-ENROLL-003"
+  ],
+  "scenarios": [
+    [
+      "WARLOCK-ENROLL-001",
+      "strict catalog domain"
+    ],
+    [
+      "WARLOCK-ENROLL-002",
+      "automatic ordinary entries"
+    ],
+    [
+      "WARLOCK-ENROLL-003",
+      "multiple entries and late retirement"
+    ]
+  ],
+  "frozenBaseline": [
+    242,
+    417
+  ],
+  "originalS09ScenarioIds": 13,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

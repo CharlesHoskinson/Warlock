@@ -1,0 +1,6 @@
+- [ ] Implement/compile strict actual own-native window catalog preserving single-window metadata decoder.
+- [ ] Model and implement picker/catalog intersection and correlated admission.
+- [ ] Wire ordinary full GUI enrollment through own scope and bounded shared allocator, metadata-only state without fabricated NativeScope.
+- [ ] Retain removed/changed-domain original physical jobs until exact retirement/ACK and prohibit unknown outcome replay.
+- [ ] Qualify actual multi-entry/minimized/scroll/closure/source-loss/privacy/theme/rebinding and originalS09 thirteen.
+- [ ] Continue full original S01-S16 hardware/output/input/ATIME/recovery/resource/journey/reversible deployment gates.
