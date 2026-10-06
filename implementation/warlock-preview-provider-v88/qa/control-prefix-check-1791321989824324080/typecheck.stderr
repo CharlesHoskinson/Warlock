@@ -1,0 +1,8 @@
+
+ Error [QNT101]: Built-in name 'next' is redefined in module 'control_prefix'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-1791321989824324080/inputs/spec/control_prefix.qnt:17:7
+  17:   val next=reduce(s,e);s'={...next,history:s.history.append(label(e))}
+            ^^^^
+
+error: parsing failed

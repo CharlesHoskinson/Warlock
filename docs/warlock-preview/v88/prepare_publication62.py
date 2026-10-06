@@ -1,0 +1,32 @@
+"""Prepare exact held native/Elm retirement and control publication62."""
+import ast,json,pathlib,resource,sys
+sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
+require_qa_scope();assert resource.getrlimit(resource.RLIMIT_CORE)==(1,1)
+r=pathlib.Path('/home/hoskinson/omarchy-windows-parity');report=json.loads((r/'docs/warlock-preview/v88/report.json').read_text())
+assert report['passed'] and report['nativeChecks']==2464 and report['normalOwnedExits']==277 and report['nativeGuiControlTransportBoundedQualified']
+out=r/'docs/warlock-repository/v62/publication';assert not out.exists();out.mkdir(parents=True)
+def put(name,s):ast.parse(s);(out/name).write_text(s)
+s=(r/'docs/warlock-repository/v61/publication/publish.py').read_text()
+s=s.replace("BASE='03582f63a0612b972bf0ad71033e3d4e8b46531b'","BASE='b78826aa09d271ef0d1c879cb3e0a38bc77c72c2'")
+s=s.replace('a0dd6aeca3b8beaa0266b5f535506f1dc5cc06bb..','fec65e7df2829e90f60bd3d7e0ecc729079acdb6..')
+allowed=('docs/warlock-preview/v87/','docs/warlock-preview/v88/','docs/warlock-repository/v61/publication/','docs/warlock-repository/v62/publication/','implementation/warlock-preview-provider-v86/','implementation/warlock-preview-provider-v87/','implementation/warlock-preview-provider-v88/','implementation/warlock-client-provider-native-v125/','openspec/changes/warlock-preview-actor-retirement/tasks.md','openspec/changes/warlock-preview-actor-retirement/specs/preview-actors/spec.md')
+start=s.index('allowed=');end=s.index('\nassert all',start);s=s[:start]+'allowed='+repr(allowed)+s[end:]
+start=s.index(' qualification=');end=s.index('\n published=',start)
+message='Qualify native retirement ownership transaction and ordered Elm controls\n\nNative125 on exact core16/plugin18/currentGUI88 passes2464 checks and277 normal owned exits with complete cleanup and all2456 prior124 fixed controls. Current full95/all original12/C96/decoder13-25-439states-three mutants pass. Actual all-native C/socket transaction passes9068 sanitizer controls through280 synthetic subjects with retained neighbor, original physical reservations and final ACK; this is not native/Elm turnover. Elm33 proves exact settlement, no further entry controls afterReady, immediate accepted-packet release and native-clock replay cutoff. C delivery prefix7 selected/15 coupled/180states/three unsafe mutants and actual popup adapter10 controls pass. Preserve failedGUI87 duplicate ACK counterexample, native fixture/model failures and an additional cross-actor ordering counterexample against heldGUI88. Add EARS/OpenSpec delivery and independent sibling completion requirements. Native readiness/completion routing, captured physical retirement, actual >256 native/Elm turnover, ordinary capture and every original GUI release gate remain open. MutableGUI89 asynchronous completion fix is excluded.\n'
+s=s[:start]+" qualification=json.loads((REPO/'docs/warlock-preview/v88/report.json').read_text());assert qualification['passed'] and qualification['nativeChecks']==2464 and qualification['normalOwnedExits']==277 and qualification['prior124FixedOrderedControls']==2456 and qualification['elmRetirementControls']==33 and qualification['controlPrefixScenarios']==7 and qualification['unsafeControlPrefixMutants']==3 and not qualification['actorTurnoverAccepted'] and not qualification['nativeAcceptance'] and not qualification['fullReleaseAccepted']\n message="+repr(message)+'\n'+s[end:]
+put('publish.py',s)
+s=(r/'docs/warlock-repository/v61/publication/record_delivery.py').read_text().replace('warlock-repository/v61','warlock-repository/v62').replace('warlock-preview/v86','warlock-preview/v88').replace('warlock-preview-provider-v85','warlock-preview-provider-v88').replace('warlock-client-provider-native-v124','warlock-client-provider-native-v125')
+start=s.index("['PROGRESS PUBLIC exactowner publication61 ");end=s.index(",'progress'",start)
+s=s[:start]+"['PROGRESS PUBLIC exactowner publication62 '+d['publishedCommit']+' verified '+str(d['ownedFiles'])+' blobs. CurrentGUI88/native125 exactcore16/plugin18 PASS2464/277normalclean/all2456prior124fixed; full95/original12/C96/decoder13-25-439states-3mutants/aggregate9068through280synthetic/Elm33/Cprefix7-15-180states-3mutants/adapter10. Heldfailed87 and actual ancestor88 sibling-order counterexample preserved. MutableGUI89 full95/Elm33/async replay pass; next selected asynchronous refinement and native observation/readiness/completion routing with retained completion delivery, actual >256native/Elm turnover and all original release gates. Main desktop/drafts/five foreign tracked changes preserved.']"+s[end:]
+put('record_delivery.py',s)
+s=(r/'docs/warlock-preview/v86/commit_owned.py').read_text().replace('70c6f9db74e9a70647ee94b5b32f5950f2adde58','72ee067a6572addd8b9809e7f5809d705cad2f37')
+old="foreign=git(['diff','--name-only'],text=True).splitlines();before={p:sha(r/p) for p in foreign};paths=set()"
+new="ownedTracked={'openspec/changes/warlock-preview-actor-retirement/tasks.md','openspec/changes/warlock-preview-actor-retirement/specs/preview-actors/spec.md'}\nforeign=[p for p in git(['diff','--name-only'],text=True).splitlines() if p not in ownedTracked];before={p:sha(r/p) for p in foreign};paths=set(ownedTracked)"
+assert old in s;s=s.replace(old,new)
+s=s.replace("[('warlock-preview-provider-v85',True),('warlock-client-provider-native-v123',False),('warlock-client-provider-native-v124',True)]","[('warlock-preview-provider-v86',True),('warlock-preview-provider-v87',False),('warlock-preview-provider-v88',True),('warlock-client-provider-native-v125',True)]")
+s=s.replace("[r/'docs/warlock-preview/v85',r/'docs/warlock-preview/v86',r/'docs/warlock-repository/v61/publication']","[r/'docs/warlock-preview/v87',r/'docs/warlock-preview/v88',r/'docs/warlock-repository/v62/publication']")
+s=s.replace('Qualify bounded native window registry and strict lock control publication','Qualify native retirement ownership and ordered Elm controls')
+ast.parse(s);(r/'docs/warlock-preview/v88/commit_owned.py').write_text(s)
+s=(r/'docs/warlock-repository/v61/publication/commit_receipt.py').read_text().replace('03582f63a0612b972bf0ad71033e3d4e8b46531b','b78826aa09d271ef0d1c879cb3e0a38bc77c72c2').replace('Record public native serial registry qualification','Record public native retirement and Elm control qualification')
+put('commit_receipt.py',s)
+print(out)

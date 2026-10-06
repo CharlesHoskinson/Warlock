@@ -1,0 +1,147 @@
+{
+  "passed": true,
+  "nativeManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v125/component-manifest.json",
+  "nativeManifestSHA256": "c5c666635c08633c8c033ae0e87d4e3ae7ab5441a2b7c57ad747b805595cba68",
+  "nativeReport": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v125/qa/native-1791322713358499938/report.json",
+  "nativeModuleManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v18/component-manifest.json",
+  "nativeModuleManifestSHA256": "d0930e46fdc9faeab6f3f9a60f8b29dc925f16731d6d929df4912164b2af7c86",
+  "providerManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/component-manifest.json",
+  "providerManifestSHA256": "90925f111da69d556640cb727ff9d8dd7532db1346ac466d79d8e4534641b271",
+  "nativeChecks": 2464,
+  "normalOwnedExits": 277,
+  "prior124FixedOrderedControls": 2456,
+  "prior118FixedOrderedControls": 2437,
+  "addressReuseComparison": {
+    "passed": true,
+    "fixedOrderedControls": 2437,
+    "prior": {
+      "attempts": 9,
+      "actualAttemptChecks": 26,
+      "originalExpiryUnchanged": true,
+      "allOwnedAttemptExitsNormal": true
+    },
+    "current": {
+      "attempts": 1,
+      "actualAttemptChecks": 2,
+      "originalExpiryUnchanged": true,
+      "allOwnedAttemptExitsNormal": true
+    },
+    "scope": "Conditional allocator trials each verified against their actual native evidence; unchanged fixed ordered oracles, physical/receipt/clock/pixel/deadline gates remain required."
+  },
+  "nativeRetirementStates": [
+    "Active",
+    "Future",
+    "Active",
+    "Retired",
+    "Active"
+  ],
+  "selectedClassifierScenarios": 8,
+  "classifierTraces": 20,
+  "classifierStates": 438,
+  "unsafeClassifierMutants": 2,
+  "unsafeComparisonMutants": 8,
+  "nativeIncarnationRetirementObservationBoundedQualified": true,
+  "typedNativeRetirementObservationBoundedQualified": true,
+  "typedNativeRetirementEvidence": {
+    "observations": [
+      {
+        "kind": "native-incarnation-retirement",
+        "binding": {
+          "lifetime": "18020604094585273778",
+          "session": "22",
+          "frontend": "1"
+        },
+        "subject": "4",
+        "request": "3",
+        "sequence": "4",
+        "clock": "18020604094585273778",
+        "now": "287033357998988",
+        "issuedThrough": "4",
+        "state": "Active"
+      },
+      {
+        "kind": "native-incarnation-retirement",
+        "binding": {
+          "lifetime": "18020604094585273778",
+          "session": "22",
+          "frontend": "1"
+        },
+        "subject": "2",
+        "request": "4",
+        "sequence": "5",
+        "clock": "18020604094585273778",
+        "now": "287033358309298",
+        "issuedThrough": "4",
+        "state": "Active"
+      },
+      {
+        "kind": "native-incarnation-retirement",
+        "binding": {
+          "lifetime": "18020604094585273778",
+          "session": "22",
+          "frontend": "1"
+        },
+        "subject": "4",
+        "request": "6",
+        "sequence": "6",
+        "clock": "18020604094585273778",
+        "now": "287033389429120",
+        "issuedThrough": "4",
+        "state": "Retired"
+      },
+      {
+        "kind": "native-incarnation-retirement",
+        "binding": {
+          "lifetime": "18020604094585273778",
+          "session": "22",
+          "frontend": "1"
+        },
+        "subject": "2",
+        "request": "7",
+        "sequence": "7",
+        "clock": "18020604094585273778",
+        "now": "287033389942253",
+        "issuedThrough": "4",
+        "state": "Active"
+      }
+    ],
+    "ready": {
+      "stage": "ready",
+      "checks": 16
+    },
+    "complete": {
+      "stage": "complete",
+      "passed": true,
+      "checks": 33,
+      "actorTurnoverAccepted": false,
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false
+    },
+    "normalExit": true,
+    "scope": "Real own native C/socket/bootstrap/ImportedClients observations and original untouched reservation/journal cleanup; no actor removal, pixels or whole GUI release acceptance."
+  },
+  "prior121FixedOrderedControls": 2450,
+  "prior122FixedOrderedControls": 2455,
+  "boundedCSerialRegistryQualified": true,
+  "lockControlRaceReport": "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v86/lock-control-check-1791319612925994989/report.json",
+  "retainedFailedNative123Report": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v123/qa/native-1791319359771305032/report.json",
+  "typedDecoderScenarios": 13,
+  "typedDecoderTraces": 25,
+  "typedDecoderStates": 439,
+  "unsafeDecoderMutants": 3,
+  "retirementCChecks": 96,
+  "elmRetirementControls": 33,
+  "controlPrefixScenarios": 7,
+  "controlPrefixTraces": 15,
+  "controlPrefixStates": 180,
+  "unsafeControlPrefixMutants": 3,
+  "controlAdapterControls": 10,
+  "syntheticActorRetirementChecks": 9068,
+  "syntheticSequentialSubjects": 280,
+  "nativeGuiControlTransportBoundedQualified": true,
+  "actorTurnoverAccepted": false,
+  "ordinaryEligibleCaptureAccepted": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "next": "Publish exact held GUI86/failedGUI87/GUI88/native125 source and evidence, PUBLIC61 receipt72ee067 and additive control/retirement contracts. Fresh GUI89 addresses delayed cross-actor completion without a global delivery order, then trusted native observation/readiness/completion routing and retained completion delivery. Actual continuing native/Elm turnover beyond256, ordinary capture and every original full release gate remain."
+}

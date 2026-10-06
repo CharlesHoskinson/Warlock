@@ -1,0 +1,461 @@
+{
+  "passed": true,
+  "inputs": {
+    "native/preview-control.h": "eeb41047554ba5a84f75614a62c1de93e871b3099a12560584150d6c4b6540d8",
+    "qa/control-prefix-replay.c": "7f613a93ddfaa7049939c226a582d8d122ce3d615728cfadb89bed0de3e4a0f6",
+    "qa/control-prefix-check-v3.py": "d9ae75eb1cae6f6697eb8e6bc0555ec5fc3f5cdeb56bca2a0a1ed72ef293d96b",
+    "spec/control_prefix_v2.qnt": "4e301d9eeed25d50e445f4ffc46a3fcd0b5262cc8cd7735a277fc16aab8c9d0a",
+    "spec/control_prefix_tests_v2.qnt": "e868d0c757d9da553cc429ac162cfea11a73b566c301de5a586cb6dcc7656cb9"
+  },
+  "commands": [
+    {
+      "name": "flags",
+      "argv": [
+        "pkg-config",
+        "--cflags",
+        "--libs",
+        "glib-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "compile",
+      "argv": [
+        "cc",
+        "-std=c11",
+        "-O1",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Inative",
+        "qa/control-prefix-replay.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-v3-1791322031220603145/checks",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lglib-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "control_prefix_tests_v2.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "control_prefix_tests_v2.qnt",
+        "--main=control_prefix_tests",
+        "--backend=typescript",
+        "--match=^(gapCannotDeliverReady|ackBeforeReady|reentrantReadyCannotOvertake|reentrantSamePacketCannotReenter|replayCannotStartTwice|missingMiddleCannotAdvance|finalOrdinalThenNoWrap)$",
+        "--seed=880031",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-v3-1791322031220603145/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "samples",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "control_prefix_v2.qnt",
+        "--main=control_prefix",
+        "--backend=typescript",
+        "--invariant=safety",
+        "--seed=880032",
+        "--max-samples=100",
+        "--max-steps=20",
+        "--n-traces=8",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-v3-1791322031220603145/sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-ackBeforeReady-1.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-v3-1791322031220603145/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-finalOrdinalThenNoWrap-6.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-v3-1791322031220603145/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-gapCannotDeliverReady-0.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-v3-1791322031220603145/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-missingMiddleCannotAdvance-5.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-v3-1791322031220603145/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-reentrantReadyCannotOvertake-2.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-v3-1791322031220603145/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-reentrantSamePacketCannotReenter-3.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-v3-1791322031220603145/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-replayCannotStartTwice-4.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-v3-1791322031220603145/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-0.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-v3-1791322031220603145/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-1.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-v3-1791322031220603145/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-2.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-v3-1791322031220603145/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-3.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-v3-1791322031220603145/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-4.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-v3-1791322031220603145/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-5.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-v3-1791322031220603145/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-6.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-v3-1791322031220603145/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-7.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-v3-1791322031220603145/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "missing-flight-guard-compile",
+      "argv": [
+        "cc",
+        "-std=c11",
+        "-O1",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-v3-1791322031220603145/missing-flight-guard/native",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-v3-1791322031220603145/missing-flight-guard/qa/control-prefix-replay.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-v3-1791322031220603145/missing-flight-guard/checks",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lglib-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "missing-flight-guard-replay",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-v3-1791322031220603145/missing-flight-guard/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "skip-missing-control-compile",
+      "argv": [
+        "cc",
+        "-std=c11",
+        "-O1",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-v3-1791322031220603145/skip-missing-control/native",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-v3-1791322031220603145/skip-missing-control/qa/control-prefix-replay.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-v3-1791322031220603145/skip-missing-control/checks",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lglib-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "skip-missing-control-replay",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-v3-1791322031220603145/skip-missing-control/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "reset-exhausted-prefix-compile",
+      "argv": [
+        "cc",
+        "-std=c11",
+        "-O1",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-v3-1791322031220603145/reset-exhausted-prefix/native",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-v3-1791322031220603145/reset-exhausted-prefix/qa/control-prefix-replay.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-v3-1791322031220603145/reset-exhausted-prefix/checks",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lglib-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "reset-exhausted-prefix-replay",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-v3-1791322031220603145/reset-exhausted-prefix/checks"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "Actual C control-prefix begin/complete/exhaustion functions against explicit selected and sampled Quint traces. GUI router own-popup/thread/strict JSON tested separately in actual full host; this prefix is delivery continuity, never native effect success, physical cleanup or full retirement acceptance.",
+  "selectedNames": [
+    "gapCannotDeliverReady",
+    "ackBeforeReady",
+    "reentrantReadyCannotOvertake",
+    "reentrantSamePacketCannotReenter",
+    "replayCannotStartTwice",
+    "missingMiddleCannotAdvance",
+    "finalOrdinalThenNoWrap"
+  ],
+  "namedScenarios": 7,
+  "invariantSamples": 100,
+  "coupledTraces": [
+    {
+      "trace": "named-ackBeforeReady-1.itf.json",
+      "statesCompared": 4
+    },
+    {
+      "trace": "named-finalOrdinalThenNoWrap-6.itf.json",
+      "statesCompared": 4
+    },
+    {
+      "trace": "named-gapCannotDeliverReady-0.itf.json",
+      "statesCompared": 1
+    },
+    {
+      "trace": "named-missingMiddleCannotAdvance-5.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-reentrantReadyCannotOvertake-2.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-reentrantSamePacketCannotReenter-3.itf.json",
+      "statesCompared": 2
+    },
+    {
+      "trace": "named-replayCannotStartTwice-4.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "sample-0.itf.json",
+      "statesCompared": 20
+    },
+    {
+      "trace": "sample-1.itf.json",
+      "statesCompared": 20
+    },
+    {
+      "trace": "sample-2.itf.json",
+      "statesCompared": 20
+    },
+    {
+      "trace": "sample-3.itf.json",
+      "statesCompared": 20
+    },
+    {
+      "trace": "sample-4.itf.json",
+      "statesCompared": 20
+    },
+    {
+      "trace": "sample-5.itf.json",
+      "statesCompared": 20
+    },
+    {
+      "trace": "sample-6.itf.json",
+      "statesCompared": 20
+    },
+    {
+      "trace": "sample-7.itf.json",
+      "statesCompared": 20
+    }
+  ],
+  "statesCompared": 180,
+  "unsafeMutantsDetected": 3,
+  "mutants": [
+    {
+      "name": "missing-flight-guard",
+      "witness": "named-reentrantSamePacketCannotReenter-3.itf.json",
+      "differentObservableState": true
+    },
+    {
+      "name": "skip-missing-control",
+      "witness": "named-gapCannotDeliverReady-0.itf.json",
+      "differentObservableState": true
+    },
+    {
+      "name": "reset-exhausted-prefix",
+      "witness": "named-finalOrdinalThenNoWrap-6.itf.json",
+      "differentObservableState": true
+    }
+  ],
+  "artifacts": {
+    "flags.stdout": "0e1a23b25376e5a0299196cc0a3d88803a8ce781c78abe2463863b267c6ce734",
+    "flags.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "checks": "2fcbf36631bd55474d0a8c504fb9a44bd5e1f6d6899bc044c3b78f9c31489aa1",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-gapCannotDeliverReady-0.itf.json": "da5d7bb4250ffc007d079035b6d93f02ee0cd750dce01d519b9b2393a4b5ee1b",
+    "named-ackBeforeReady-1.itf.json": "b2d0842f953ec8f744ef62a528bef99bcd0151d6194b38d061623e1e7d6c5acc",
+    "named-reentrantReadyCannotOvertake-2.itf.json": "cdd78fc8fcc09fd065db9766d034a976d1b318f1b0c119cc2b85dd7a4100de05",
+    "named-reentrantSamePacketCannotReenter-3.itf.json": "7a867eb05800b630fa3bdef7173303a8da0484ac293acf6261ff33a1a57d53d6",
+    "named-replayCannotStartTwice-4.itf.json": "6616f28685d6e2d31da2a65d2e36e4067d5313447d288b09b8d7c97f7e5b668a",
+    "named-missingMiddleCannotAdvance-5.itf.json": "97026e47de4130be19d6fda7cbe8e8e9515c885486d455cb92b162303a46b86a",
+    "named-finalOrdinalThenNoWrap-6.itf.json": "3f48ff6f9ce249fa676e48bd3759bdb82002e9aabbcf0155ddfa57bbe2abee3f",
+    "selected.stdout": "afc557b0f7f8a0e01365ffd003d6ab31e6dbece079b49dae5f01f21834c09b8f",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "9f87c953469baced3101b60c4ed3d4d578d5bbb503fa325f09a2c49d4bf1ebb3",
+    "sample-1.itf.json": "b2b37120e78f3054b0b3f94e7b58acd56687229a717e562d8d6a2cf74dd5c5fd",
+    "sample-2.itf.json": "6291267207ac84e2d853b6d3e42c003897e93fd0d7ca27a20f604d6db67dbec3",
+    "sample-3.itf.json": "9ae1785749d2355cbfcccece75311864d871828162c68ba73a655b544f708962",
+    "sample-4.itf.json": "cbd6dc9c32c3915dd50d1b3ffcb1c24e2761a4e8e4bea9192fd593fb840f81d0",
+    "sample-5.itf.json": "3c3d28b395ea4a6f751fc7bb0785d28476e588ea39cd517021a421a86a31f9db",
+    "sample-6.itf.json": "b832238d61844089f449981907a4c926e592dfb59718dc4f4e95bc1a8bb94230",
+    "sample-7.itf.json": "a5f14a2d9392a3bd581c189eb41f8466918bea184f7dc931126f650c93780be5",
+    "samples.stdout": "d08695fe8d6ba56494ddeb75e5c1f0c7adc1170dd7bdc8f7a545fb17c0bcdeab",
+    "samples.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-ackBeforeReady-1.itf.stdout": "bb3a5ba45c561a9019ef3ab557445dc8ab17f288c895f4b9bdf780c422f50c0c",
+    "replay-named-ackBeforeReady-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-finalOrdinalThenNoWrap-6.itf.stdout": "ddf0084d5fe03da13b7866d3e02e273a38ad59697e05b791f1c33eb00bae7a5e",
+    "replay-named-finalOrdinalThenNoWrap-6.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-gapCannotDeliverReady-0.itf.stdout": "275b8f0dbfe4568dcba8f80b91865974316947bbc62462d94e80c5fe322402e1",
+    "replay-named-gapCannotDeliverReady-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-missingMiddleCannotAdvance-5.itf.stdout": "f7088d0c3d17d607d4a358ed67e58e02771a5c94bf7b4e8d1fa4586586251215",
+    "replay-named-missingMiddleCannotAdvance-5.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-reentrantReadyCannotOvertake-2.itf.stdout": "ec6b89e136fe2f063b05665e6e71cba9e07dcf9e9dc29befb549d5b31ca0e725",
+    "replay-named-reentrantReadyCannotOvertake-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-reentrantSamePacketCannotReenter-3.itf.stdout": "e0c813e9ca41cf01d7e63a46e49d8df232f99ff3816fdb2692f95c2d0527949c",
+    "replay-named-reentrantSamePacketCannotReenter-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-replayCannotStartTwice-4.itf.stdout": "f7088d0c3d17d607d4a358ed67e58e02771a5c94bf7b4e8d1fa4586586251215",
+    "replay-named-replayCannotStartTwice-4.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-0.itf.stdout": "633b6d554e255466c19faea9777ef03a8bdf8d5aa436846989447985a09b335b",
+    "replay-sample-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-1.itf.stdout": "d86d02342b3e10ff375a36c735d9d9216dbe008e62ba4fbbd7df1c7ee857839f",
+    "replay-sample-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-2.itf.stdout": "be1b211daa1af861867015a4f488c54ebe7a5e7b959b52cbfcbab06a95962bd2",
+    "replay-sample-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-3.itf.stdout": "bc252e34db3a984fd9d76542b575594c603692d7cf84522facfc79bd157a0d10",
+    "replay-sample-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-4.itf.stdout": "a9a26aba220dd928ab663506e1208b66b1a28decf278034fb2a05491b41f4f6b",
+    "replay-sample-4.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-5.itf.stdout": "196e87882b48f6422d2e18277eb11ef0147222178b398da725cbeb9264701e7e",
+    "replay-sample-5.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-6.itf.stdout": "f543a610403069c7a4e0a29a58a27d445e5bdd61cdc9407b1d534f8f12763372",
+    "replay-sample-6.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-7.itf.stdout": "d86d02342b3e10ff375a36c735d9d9216dbe008e62ba4fbbd7df1c7ee857839f",
+    "replay-sample-7.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-flight-guard-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-flight-guard-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-flight-guard-replay.stdout": "25f5b19dcc6b0a5668de4b7c5a183d05c5e38bfd1f3719e07039537f44d1f2ec",
+    "missing-flight-guard-replay.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "skip-missing-control-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "skip-missing-control-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "skip-missing-control-replay.stdout": "2412edbad6796f09aa6a1999806925708690112503d7166ad814edaa1cfb033e",
+    "skip-missing-control-replay.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reset-exhausted-prefix-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reset-exhausted-prefix-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reset-exhausted-prefix-replay.stdout": "0d4dac99a68100590e5a5f3e6cb79f1bff4fc638c4459edf2fff6f11a6055676",
+    "reset-exhausted-prefix-replay.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-flight-guard/checks": "7fca2bd30a17c5d17d2a5c40fe8b11de22ad33ce23a9c3b9b89d9f65e132523c",
+    "skip-missing-control/checks": "2836cb13db076f9651d55409ea0248595800b4b3c8d64c00461dc8da2d313d8d",
+    "reset-exhausted-prefix/checks": "03e4ef7547d49f5e8114b91ba58ed498f8ee2be7b02bb5ac842ef185bbdeaa2f",
+    "reset-exhausted-prefix/native/preview-control.h": "d94d4777156408a671bc0631c187321f26a09f560e6acc35332fae4b898ed24d",
+    "reset-exhausted-prefix/qa/control-prefix-replay.c": "7f613a93ddfaa7049939c226a582d8d122ce3d615728cfadb89bed0de3e4a0f6",
+    "reset-exhausted-prefix/qa/control-prefix-check-v3.py": "d9ae75eb1cae6f6697eb8e6bc0555ec5fc3f5cdeb56bca2a0a1ed72ef293d96b",
+    "reset-exhausted-prefix/spec/control_prefix_v2.qnt": "4e301d9eeed25d50e445f4ffc46a3fcd0b5262cc8cd7735a277fc16aab8c9d0a",
+    "reset-exhausted-prefix/spec/control_prefix_tests_v2.qnt": "e868d0c757d9da553cc429ac162cfea11a73b566c301de5a586cb6dcc7656cb9",
+    "skip-missing-control/native/preview-control.h": "b51e84d328e5cbe8085b2120c1f69dfdb37082a3ab0d552bda93c339c5a7eed6",
+    "skip-missing-control/qa/control-prefix-replay.c": "7f613a93ddfaa7049939c226a582d8d122ce3d615728cfadb89bed0de3e4a0f6",
+    "skip-missing-control/qa/control-prefix-check-v3.py": "d9ae75eb1cae6f6697eb8e6bc0555ec5fc3f5cdeb56bca2a0a1ed72ef293d96b",
+    "skip-missing-control/spec/control_prefix_v2.qnt": "4e301d9eeed25d50e445f4ffc46a3fcd0b5262cc8cd7735a277fc16aab8c9d0a",
+    "skip-missing-control/spec/control_prefix_tests_v2.qnt": "e868d0c757d9da553cc429ac162cfea11a73b566c301de5a586cb6dcc7656cb9",
+    "missing-flight-guard/native/preview-control.h": "933fa7a76a6697ec6493befc3f13be25b2481e946647773305dbc6539dfc5145",
+    "missing-flight-guard/qa/control-prefix-replay.c": "7f613a93ddfaa7049939c226a582d8d122ce3d615728cfadb89bed0de3e4a0f6",
+    "missing-flight-guard/qa/control-prefix-check-v3.py": "d9ae75eb1cae6f6697eb8e6bc0555ec5fc3f5cdeb56bca2a0a1ed72ef293d96b",
+    "missing-flight-guard/spec/control_prefix_v2.qnt": "4e301d9eeed25d50e445f4ffc46a3fcd0b5262cc8cd7735a277fc16aab8c9d0a",
+    "missing-flight-guard/spec/control_prefix_tests_v2.qnt": "e868d0c757d9da553cc429ac162cfea11a73b566c301de5a586cb6dcc7656cb9",
+    "inputs/native/preview-control.h": "eeb41047554ba5a84f75614a62c1de93e871b3099a12560584150d6c4b6540d8",
+    "inputs/qa/control-prefix-replay.c": "7f613a93ddfaa7049939c226a582d8d122ce3d615728cfadb89bed0de3e4a0f6",
+    "inputs/qa/control-prefix-check-v3.py": "d9ae75eb1cae6f6697eb8e6bc0555ec5fc3f5cdeb56bca2a0a1ed72ef293d96b",
+    "inputs/spec/control_prefix_v2.qnt": "4e301d9eeed25d50e445f4ffc46a3fcd0b5262cc8cd7735a277fc16aab8c9d0a",
+    "inputs/spec/control_prefix_tests_v2.qnt": "e868d0c757d9da553cc429ac162cfea11a73b566c301de5a586cb6dcc7656cb9"
+  }
+}

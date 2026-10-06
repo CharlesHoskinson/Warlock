@@ -1,0 +1,1156 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      accepted: 0,
+      history: [],
+      issued: 0,
+      now: 0,
+      sequence: 0,
+      status: "Ready"
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      accepted: 1,
+      history: ["FutureZero"],
+      issued: 0,
+      now: 10,
+      sequence: 1,
+      status: "Future"
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      accepted: 1,
+      history: ["FutureZero", "RetiredAbove"],
+      issued: 0,
+      now: 10,
+      sequence: 1,
+      status: "Invalid"
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      accepted: 1,
+      history: ["FutureZero", "RetiredAbove", "WrongBinding"],
+      issued: 0,
+      now: 10,
+      sequence: 1,
+      status: "Invalid"
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      accepted: 1,
+      history: ["FutureZero", "RetiredAbove", "WrongBinding", "Unknown"],
+      issued: 0,
+      now: 10,
+      sequence: 1,
+      status: "Invalid"
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      accepted: 1,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove"
+        ],
+      issued: 0,
+      now: 10,
+      sequence: 1,
+      status: "Invalid"
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      accepted: 1,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove",
+          "FutureBelow"
+        ],
+      issued: 0,
+      now: 10,
+      sequence: 1,
+      status: "Invalid"
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      accepted: 2,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove",
+          "FutureBelow",
+          "Active"
+        ],
+      issued: 4,
+      now: 20,
+      sequence: 2,
+      status: "Active"
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      accepted: 2,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove",
+          "FutureBelow",
+          "Active",
+          "WrongRequest"
+        ],
+      issued: 4,
+      now: 20,
+      sequence: 2,
+      status: "Invalid"
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      accepted: 2,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove",
+          "FutureBelow",
+          "Active",
+          "WrongRequest",
+          "RetiredAbove"
+        ],
+      issued: 4,
+      now: 20,
+      sequence: 2,
+      status: "Invalid"
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      accepted: 2,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove",
+          "FutureBelow",
+          "Active",
+          "WrongRequest",
+          "RetiredAbove",
+          "FutureBelow"
+        ],
+      issued: 4,
+      now: 20,
+      sequence: 2,
+      status: "Invalid"
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      accepted: 2,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove",
+          "FutureBelow",
+          "Active",
+          "WrongRequest",
+          "RetiredAbove",
+          "FutureBelow",
+          "WrongBinding"
+        ],
+      issued: 4,
+      now: 20,
+      sequence: 2,
+      status: "Invalid"
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      accepted: 3,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove",
+          "FutureBelow",
+          "Active",
+          "WrongRequest",
+          "RetiredAbove",
+          "FutureBelow",
+          "WrongBinding",
+          "Active"
+        ],
+      issued: 5,
+      now: 30,
+      sequence: 3,
+      status: "Active"
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      accepted: 3,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove",
+          "FutureBelow",
+          "Active",
+          "WrongRequest",
+          "RetiredAbove",
+          "FutureBelow",
+          "WrongBinding",
+          "Active",
+          "EarlierNow"
+        ],
+      issued: 5,
+      now: 30,
+      sequence: 3,
+      status: "Invalid"
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      accepted: 3,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove",
+          "FutureBelow",
+          "Active",
+          "WrongRequest",
+          "RetiredAbove",
+          "FutureBelow",
+          "WrongBinding",
+          "Active",
+          "EarlierNow",
+          "EarlierNow"
+        ],
+      issued: 5,
+      now: 30,
+      sequence: 3,
+      status: "Invalid"
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      accepted: 3,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove",
+          "FutureBelow",
+          "Active",
+          "WrongRequest",
+          "RetiredAbove",
+          "FutureBelow",
+          "WrongBinding",
+          "Active",
+          "EarlierNow",
+          "EarlierNow",
+          "WrongRequest"
+        ],
+      issued: 5,
+      now: 30,
+      sequence: 3,
+      status: "Invalid"
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      accepted: 3,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove",
+          "FutureBelow",
+          "Active",
+          "WrongRequest",
+          "RetiredAbove",
+          "FutureBelow",
+          "WrongBinding",
+          "Active",
+          "EarlierNow",
+          "EarlierNow",
+          "WrongRequest",
+          "Replay"
+        ],
+      issued: 5,
+      now: 30,
+      sequence: 3,
+      status: "Invalid"
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      accepted: 3,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove",
+          "FutureBelow",
+          "Active",
+          "WrongRequest",
+          "RetiredAbove",
+          "FutureBelow",
+          "WrongBinding",
+          "Active",
+          "EarlierNow",
+          "EarlierNow",
+          "WrongRequest",
+          "Replay",
+          "WrongBinding"
+        ],
+      issued: 5,
+      now: 30,
+      sequence: 3,
+      status: "Invalid"
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      accepted: 3,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove",
+          "FutureBelow",
+          "Active",
+          "WrongRequest",
+          "RetiredAbove",
+          "FutureBelow",
+          "WrongBinding",
+          "Active",
+          "EarlierNow",
+          "EarlierNow",
+          "WrongRequest",
+          "Replay",
+          "WrongBinding",
+          "WrongBinding"
+        ],
+      issued: 5,
+      now: 30,
+      sequence: 3,
+      status: "Invalid"
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      accepted: 3,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove",
+          "FutureBelow",
+          "Active",
+          "WrongRequest",
+          "RetiredAbove",
+          "FutureBelow",
+          "WrongBinding",
+          "Active",
+          "EarlierNow",
+          "EarlierNow",
+          "WrongRequest",
+          "Replay",
+          "WrongBinding",
+          "WrongBinding",
+          "WrongRequest"
+        ],
+      issued: 5,
+      now: 30,
+      sequence: 3,
+      status: "Invalid"
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      accepted: 4,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove",
+          "FutureBelow",
+          "Active",
+          "WrongRequest",
+          "RetiredAbove",
+          "FutureBelow",
+          "WrongBinding",
+          "Active",
+          "EarlierNow",
+          "EarlierNow",
+          "WrongRequest",
+          "Replay",
+          "WrongBinding",
+          "WrongBinding",
+          "WrongRequest",
+          "Retired"
+        ],
+      issued: 6,
+      now: 40,
+      sequence: 4,
+      status: "Retired"
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      accepted: 4,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove",
+          "FutureBelow",
+          "Active",
+          "WrongRequest",
+          "RetiredAbove",
+          "FutureBelow",
+          "WrongBinding",
+          "Active",
+          "EarlierNow",
+          "EarlierNow",
+          "WrongRequest",
+          "Replay",
+          "WrongBinding",
+          "WrongBinding",
+          "WrongRequest",
+          "Retired",
+          "FutureBelow"
+        ],
+      issued: 6,
+      now: 40,
+      sequence: 4,
+      status: "Invalid"
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      accepted: 4,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove",
+          "FutureBelow",
+          "Active",
+          "WrongRequest",
+          "RetiredAbove",
+          "FutureBelow",
+          "WrongBinding",
+          "Active",
+          "EarlierNow",
+          "EarlierNow",
+          "WrongRequest",
+          "Replay",
+          "WrongBinding",
+          "WrongBinding",
+          "WrongRequest",
+          "Retired",
+          "FutureBelow",
+          "WrongBinding"
+        ],
+      issued: 6,
+      now: 40,
+      sequence: 4,
+      status: "Invalid"
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      accepted: 4,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove",
+          "FutureBelow",
+          "Active",
+          "WrongRequest",
+          "RetiredAbove",
+          "FutureBelow",
+          "WrongBinding",
+          "Active",
+          "EarlierNow",
+          "EarlierNow",
+          "WrongRequest",
+          "Replay",
+          "WrongBinding",
+          "WrongBinding",
+          "WrongRequest",
+          "Retired",
+          "FutureBelow",
+          "WrongBinding",
+          "WrongClock"
+        ],
+      issued: 6,
+      now: 40,
+      sequence: 4,
+      status: "Invalid"
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      accepted: 4,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove",
+          "FutureBelow",
+          "Active",
+          "WrongRequest",
+          "RetiredAbove",
+          "FutureBelow",
+          "WrongBinding",
+          "Active",
+          "EarlierNow",
+          "EarlierNow",
+          "WrongRequest",
+          "Replay",
+          "WrongBinding",
+          "WrongBinding",
+          "WrongRequest",
+          "Retired",
+          "FutureBelow",
+          "WrongBinding",
+          "WrongClock",
+          "EarlierNow"
+        ],
+      issued: 6,
+      now: 40,
+      sequence: 4,
+      status: "Invalid"
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      accepted: 4,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove",
+          "FutureBelow",
+          "Active",
+          "WrongRequest",
+          "RetiredAbove",
+          "FutureBelow",
+          "WrongBinding",
+          "Active",
+          "EarlierNow",
+          "EarlierNow",
+          "WrongRequest",
+          "Replay",
+          "WrongBinding",
+          "WrongBinding",
+          "WrongRequest",
+          "Retired",
+          "FutureBelow",
+          "WrongBinding",
+          "WrongClock",
+          "EarlierNow",
+          "Replay"
+        ],
+      issued: 6,
+      now: 40,
+      sequence: 4,
+      status: "Invalid"
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      accepted: 4,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove",
+          "FutureBelow",
+          "Active",
+          "WrongRequest",
+          "RetiredAbove",
+          "FutureBelow",
+          "WrongBinding",
+          "Active",
+          "EarlierNow",
+          "EarlierNow",
+          "WrongRequest",
+          "Replay",
+          "WrongBinding",
+          "WrongBinding",
+          "WrongRequest",
+          "Retired",
+          "FutureBelow",
+          "WrongBinding",
+          "WrongClock",
+          "EarlierNow",
+          "Replay",
+          "FutureBelow"
+        ],
+      issued: 6,
+      now: 40,
+      sequence: 4,
+      status: "Invalid"
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      accepted: 4,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove",
+          "FutureBelow",
+          "Active",
+          "WrongRequest",
+          "RetiredAbove",
+          "FutureBelow",
+          "WrongBinding",
+          "Active",
+          "EarlierNow",
+          "EarlierNow",
+          "WrongRequest",
+          "Replay",
+          "WrongBinding",
+          "WrongBinding",
+          "WrongRequest",
+          "Retired",
+          "FutureBelow",
+          "WrongBinding",
+          "WrongClock",
+          "EarlierNow",
+          "Replay",
+          "FutureBelow",
+          "WrongRequest"
+        ],
+      issued: 6,
+      now: 40,
+      sequence: 4,
+      status: "Invalid"
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      accepted: 5,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove",
+          "FutureBelow",
+          "Active",
+          "WrongRequest",
+          "RetiredAbove",
+          "FutureBelow",
+          "WrongBinding",
+          "Active",
+          "EarlierNow",
+          "EarlierNow",
+          "WrongRequest",
+          "Replay",
+          "WrongBinding",
+          "WrongBinding",
+          "WrongRequest",
+          "Retired",
+          "FutureBelow",
+          "WrongBinding",
+          "WrongClock",
+          "EarlierNow",
+          "Replay",
+          "FutureBelow",
+          "WrongRequest",
+          "Active"
+        ],
+      issued: 7,
+      now: 50,
+      sequence: 5,
+      status: "Active"
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      accepted: 6,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove",
+          "FutureBelow",
+          "Active",
+          "WrongRequest",
+          "RetiredAbove",
+          "FutureBelow",
+          "WrongBinding",
+          "Active",
+          "EarlierNow",
+          "EarlierNow",
+          "WrongRequest",
+          "Replay",
+          "WrongBinding",
+          "WrongBinding",
+          "WrongRequest",
+          "Retired",
+          "FutureBelow",
+          "WrongBinding",
+          "WrongClock",
+          "EarlierNow",
+          "Replay",
+          "FutureBelow",
+          "WrongRequest",
+          "Active",
+          "Retired"
+        ],
+      issued: 8,
+      now: 60,
+      sequence: 6,
+      status: "Retired"
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      accepted: 6,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove",
+          "FutureBelow",
+          "Active",
+          "WrongRequest",
+          "RetiredAbove",
+          "FutureBelow",
+          "WrongBinding",
+          "Active",
+          "EarlierNow",
+          "EarlierNow",
+          "WrongRequest",
+          "Replay",
+          "WrongBinding",
+          "WrongBinding",
+          "WrongRequest",
+          "Retired",
+          "FutureBelow",
+          "WrongBinding",
+          "WrongClock",
+          "EarlierNow",
+          "Replay",
+          "FutureBelow",
+          "WrongRequest",
+          "Active",
+          "Retired",
+          "WrongRequest"
+        ],
+      issued: 8,
+      now: 60,
+      sequence: 6,
+      status: "Invalid"
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      accepted: 6,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove",
+          "FutureBelow",
+          "Active",
+          "WrongRequest",
+          "RetiredAbove",
+          "FutureBelow",
+          "WrongBinding",
+          "Active",
+          "EarlierNow",
+          "EarlierNow",
+          "WrongRequest",
+          "Replay",
+          "WrongBinding",
+          "WrongBinding",
+          "WrongRequest",
+          "Retired",
+          "FutureBelow",
+          "WrongBinding",
+          "WrongClock",
+          "EarlierNow",
+          "Replay",
+          "FutureBelow",
+          "WrongRequest",
+          "Active",
+          "Retired",
+          "WrongRequest",
+          "Unknown"
+        ],
+      issued: 8,
+      now: 60,
+      sequence: 6,
+      status: "Invalid"
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      accepted: 6,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove",
+          "FutureBelow",
+          "Active",
+          "WrongRequest",
+          "RetiredAbove",
+          "FutureBelow",
+          "WrongBinding",
+          "Active",
+          "EarlierNow",
+          "EarlierNow",
+          "WrongRequest",
+          "Replay",
+          "WrongBinding",
+          "WrongBinding",
+          "WrongRequest",
+          "Retired",
+          "FutureBelow",
+          "WrongBinding",
+          "WrongClock",
+          "EarlierNow",
+          "Replay",
+          "FutureBelow",
+          "WrongRequest",
+          "Active",
+          "Retired",
+          "WrongRequest",
+          "Unknown",
+          "Unknown"
+        ],
+      issued: 8,
+      now: 60,
+      sequence: 6,
+      status: "Invalid"
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      accepted: 7,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove",
+          "FutureBelow",
+          "Active",
+          "WrongRequest",
+          "RetiredAbove",
+          "FutureBelow",
+          "WrongBinding",
+          "Active",
+          "EarlierNow",
+          "EarlierNow",
+          "WrongRequest",
+          "Replay",
+          "WrongBinding",
+          "WrongBinding",
+          "WrongRequest",
+          "Retired",
+          "FutureBelow",
+          "WrongBinding",
+          "WrongClock",
+          "EarlierNow",
+          "Replay",
+          "FutureBelow",
+          "WrongRequest",
+          "Active",
+          "Retired",
+          "WrongRequest",
+          "Unknown",
+          "Unknown",
+          "Retired"
+        ],
+      issued: 9,
+      now: 70,
+      sequence: 7,
+      status: "Retired"
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      accepted: 7,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove",
+          "FutureBelow",
+          "Active",
+          "WrongRequest",
+          "RetiredAbove",
+          "FutureBelow",
+          "WrongBinding",
+          "Active",
+          "EarlierNow",
+          "EarlierNow",
+          "WrongRequest",
+          "Replay",
+          "WrongBinding",
+          "WrongBinding",
+          "WrongRequest",
+          "Retired",
+          "FutureBelow",
+          "WrongBinding",
+          "WrongClock",
+          "EarlierNow",
+          "Replay",
+          "FutureBelow",
+          "WrongRequest",
+          "Active",
+          "Retired",
+          "WrongRequest",
+          "Unknown",
+          "Unknown",
+          "Retired",
+          "EarlierFrontier"
+        ],
+      issued: 9,
+      now: 70,
+      sequence: 7,
+      status: "Invalid"
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      accepted: 7,
+      history:
+        [
+          "FutureZero",
+          "RetiredAbove",
+          "WrongBinding",
+          "Unknown",
+          "RetiredAbove",
+          "FutureBelow",
+          "Active",
+          "WrongRequest",
+          "RetiredAbove",
+          "FutureBelow",
+          "WrongBinding",
+          "Active",
+          "EarlierNow",
+          "EarlierNow",
+          "WrongRequest",
+          "Replay",
+          "WrongBinding",
+          "WrongBinding",
+          "WrongRequest",
+          "Retired",
+          "FutureBelow",
+          "WrongBinding",
+          "WrongClock",
+          "EarlierNow",
+          "Replay",
+          "FutureBelow",
+          "WrongRequest",
+          "Active",
+          "Retired",
+          "WrongRequest",
+          "Unknown",
+          "Unknown",
+          "Retired",
+          "EarlierFrontier",
+          "WrongBinding"
+        ],
+      issued: 9,
+      now: 70,
+      sequence: 7,
+      status: "Invalid"
+    }
+}
+
+[ok] No violation found (267ms at 562 traces/second).
+Trace length statistics: max=36, min=36, average=36.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

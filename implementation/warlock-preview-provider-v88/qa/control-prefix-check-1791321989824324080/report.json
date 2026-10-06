@@ -1,0 +1,70 @@
+{
+  "passed": false,
+  "inputs": {
+    "native/preview-control.h": "eeb41047554ba5a84f75614a62c1de93e871b3099a12560584150d6c4b6540d8",
+    "qa/control-prefix-replay.c": "7f613a93ddfaa7049939c226a582d8d122ce3d615728cfadb89bed0de3e4a0f6",
+    "qa/control-prefix-check.py": "37881583168c390affab5bbfd393f241d28122dfac5dd7064209bd2ea41bee68",
+    "spec/control_prefix.qnt": "a8ec166fb966dcae93f1d7cf73576e42929fa9d4738e98570c435c794e48a80c",
+    "spec/control_prefix_tests.qnt": "036f7810ec87581e955c9db363f8310c3165a8c7674f0ec495428856bab19aea"
+  },
+  "commands": [
+    {
+      "name": "flags",
+      "argv": [
+        "pkg-config",
+        "--cflags",
+        "--libs",
+        "glib-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "compile",
+      "argv": [
+        "cc",
+        "-std=c11",
+        "-O1",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Inative",
+        "qa/control-prefix-replay.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-1791321989824324080/checks",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lglib-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "control_prefix_tests.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "Actual C control-prefix begin/complete/exhaustion functions against explicit selected and sampled Quint traces. GUI router own-popup/thread/strict JSON tested separately in actual full host; this prefix is delivery continuity, never native effect success, physical cleanup or full retirement acceptance.",
+  "error": "AssertionError(\"\\n Error [QNT101]: Built-in name 'next' is redefined in module 'control_prefix'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/control-prefix-check-1791321989824324080/inputs/spec/control_prefix.qnt:17:7\\n  17:   val next=reduce(s,e);s'={...next,history:s.history.append(label(e))}\\n            ^^^^\\n\\nerror: parsing failed\\n\")",
+  "artifacts": {
+    "flags.stdout": "0e1a23b25376e5a0299196cc0a3d88803a8ce781c78abe2463863b267c6ce734",
+    "flags.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "checks": "2fcbf36631bd55474d0a8c504fb9a44bd5e1f6d6899bc044c3b78f9c31489aa1",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "1006b290e3b5f7e7db183133f7583f3a5aac5e59ea463283b9f09f39aa58e2e1",
+    "inputs/native/preview-control.h": "eeb41047554ba5a84f75614a62c1de93e871b3099a12560584150d6c4b6540d8",
+    "inputs/qa/control-prefix-replay.c": "7f613a93ddfaa7049939c226a582d8d122ce3d615728cfadb89bed0de3e4a0f6",
+    "inputs/qa/control-prefix-check.py": "37881583168c390affab5bbfd393f241d28122dfac5dd7064209bd2ea41bee68",
+    "inputs/spec/control_prefix.qnt": "a8ec166fb966dcae93f1d7cf73576e42929fa9d4738e98570c435c794e48a80c",
+    "inputs/spec/control_prefix_tests.qnt": "036f7810ec87581e955c9db363f8310c3165a8c7674f0ec495428856bab19aea"
+  }
+}

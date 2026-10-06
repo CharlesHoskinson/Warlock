@@ -1,0 +1,22 @@
+native/actor-retirement-test.cpp: In function ‘int main(int, char**)’:
+native/actor-retirement-test.cpp:206:51: error: no matching function for call to ‘preview::uri::Endpoint::Endpoint(<brace-enclosed initializer list>, int, int)’
+  206 |  preview::uri::Endpoint foreign({256,8,2,4096},4,2);
+      |                                                   ^
+  • there are 3 candidates
+In file included from native/preview_fd.hpp:2,
+                 from native/preview_client.hpp:2,
+                 from native/preview_wire.hpp:2,
+                 from native/preview_retirement.hpp:2,
+                 from native/actor-retirement-test.cpp:1:
+    • candidate 1: ‘preview::uri::Endpoint::Endpoint(preview::Limits, size_t, size_t, preview::uri::ClockSource)’
+      native/preview_uri.hpp:54:5:
+         54 |     Endpoint(Limits limits,size_t readers,size_t views,ClockSource clock):state_(std::make_shared<Shared>(limits,readers,views,std::move(clock))){}
+            |     ^~~~~~~~
+      • candidate expects 4 arguments, 3 provided
+    • candidate 2: ‘preview::uri::Endpoint::Endpoint(const preview::uri::Endpoint&)’
+      native/preview_uri.hpp:51:7:
+         51 | class Endpoint {
+            |       ^~~~~~~~
+      • candidate expects 1 argument, 3 provided
+    • candidate 3: ‘preview::uri::Endpoint::Endpoint(preview::uri::Endpoint&&)’
+      • candidate expects 1 argument, 3 provided

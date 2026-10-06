@@ -1,0 +1,11 @@
+
+  control_prefix_tests
+    ok gapCannotDeliverReady passed 1 test(s)
+    ok ackBeforeReady passed 1 test(s)
+    ok reentrantReadyCannotOvertake passed 1 test(s)
+    ok reentrantSamePacketCannotReenter passed 1 test(s)
+    ok replayCannotStartTwice passed 1 test(s)
+    ok missingMiddleCannotAdvance passed 1 test(s)
+    ok finalOrdinalThenNoWrap passed 1 test(s)
+
+  7 passing (9ms)

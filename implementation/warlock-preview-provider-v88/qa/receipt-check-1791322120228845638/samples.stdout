@@ -1,0 +1,672 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      ack: 0,
+      acks: 0,
+      history: [],
+      known: 0,
+      lastJob: 0,
+      lastSeq: 0,
+      nextRequest: 1
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      ack: 0,
+      acks: 0,
+      history: ["Future"],
+      known: 0,
+      lastJob: 0,
+      lastSeq: 0,
+      nextRequest: 1
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      ack: 0,
+      acks: 0,
+      history: ["Future", "Issue"],
+      known: 1,
+      lastJob: 0,
+      lastSeq: 0,
+      nextRequest: 2
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      ack: 1,
+      acks: 1,
+      history: ["Future", "Issue", "KnownProof"],
+      known: 0,
+      lastJob: 1,
+      lastSeq: 1,
+      nextRequest: 2
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      ack: 0,
+      acks: 1,
+      history: ["Future", "Issue", "KnownProof", "Future"],
+      known: 0,
+      lastJob: 1,
+      lastSeq: 1,
+      nextRequest: 2
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      ack: 0,
+      acks: 1,
+      history: ["Future", "Issue", "KnownProof", "Future", "AlteredJob"],
+      known: 0,
+      lastJob: 1,
+      lastSeq: 1,
+      nextRequest: 2
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      ack: 0,
+      acks: 1,
+      history:
+        ["Future", "Issue", "KnownProof", "Future", "AlteredJob", "AlteredJob"],
+      known: 0,
+      lastJob: 1,
+      lastSeq: 1,
+      nextRequest: 2
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      ack: 0,
+      acks: 1,
+      history:
+        [
+          "Future",
+          "Issue",
+          "KnownProof",
+          "Future",
+          "AlteredJob",
+          "AlteredJob",
+          "AlteredSeq"
+        ],
+      known: 0,
+      lastJob: 1,
+      lastSeq: 1,
+      nextRequest: 2
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      ack: 1,
+      acks: 2,
+      history:
+        [
+          "Future",
+          "Issue",
+          "KnownProof",
+          "Future",
+          "AlteredJob",
+          "AlteredJob",
+          "AlteredSeq",
+          "Repeat"
+        ],
+      known: 0,
+      lastJob: 1,
+      lastSeq: 1,
+      nextRequest: 2
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      ack: 1,
+      acks: 3,
+      history:
+        [
+          "Future",
+          "Issue",
+          "KnownProof",
+          "Future",
+          "AlteredJob",
+          "AlteredJob",
+          "AlteredSeq",
+          "Repeat",
+          "Repeat"
+        ],
+      known: 0,
+      lastJob: 1,
+      lastSeq: 1,
+      nextRequest: 2
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      ack: 0,
+      acks: 3,
+      history:
+        [
+          "Future",
+          "Issue",
+          "KnownProof",
+          "Future",
+          "AlteredJob",
+          "AlteredJob",
+          "AlteredSeq",
+          "Repeat",
+          "Repeat",
+          "AlteredSeq"
+        ],
+      known: 0,
+      lastJob: 1,
+      lastSeq: 1,
+      nextRequest: 2
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      ack: 0,
+      acks: 3,
+      history:
+        [
+          "Future",
+          "Issue",
+          "KnownProof",
+          "Future",
+          "AlteredJob",
+          "AlteredJob",
+          "AlteredSeq",
+          "Repeat",
+          "Repeat",
+          "AlteredSeq",
+          "AlteredJob"
+        ],
+      known: 0,
+      lastJob: 1,
+      lastSeq: 1,
+      nextRequest: 2
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      ack: 0,
+      acks: 3,
+      history:
+        [
+          "Future",
+          "Issue",
+          "KnownProof",
+          "Future",
+          "AlteredJob",
+          "AlteredJob",
+          "AlteredSeq",
+          "Repeat",
+          "Repeat",
+          "AlteredSeq",
+          "AlteredJob",
+          "Future"
+        ],
+      known: 0,
+      lastJob: 1,
+      lastSeq: 1,
+      nextRequest: 2
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      ack: 1,
+      acks: 4,
+      history:
+        [
+          "Future",
+          "Issue",
+          "KnownProof",
+          "Future",
+          "AlteredJob",
+          "AlteredJob",
+          "AlteredSeq",
+          "Repeat",
+          "Repeat",
+          "AlteredSeq",
+          "AlteredJob",
+          "Future",
+          "Repeat"
+        ],
+      known: 0,
+      lastJob: 1,
+      lastSeq: 1,
+      nextRequest: 2
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      ack: 0,
+      acks: 4,
+      history:
+        [
+          "Future",
+          "Issue",
+          "KnownProof",
+          "Future",
+          "AlteredJob",
+          "AlteredJob",
+          "AlteredSeq",
+          "Repeat",
+          "Repeat",
+          "AlteredSeq",
+          "AlteredJob",
+          "Future",
+          "Repeat",
+          "Issue"
+        ],
+      known: 2,
+      lastJob: 1,
+      lastSeq: 1,
+      nextRequest: 3
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      ack: 0,
+      acks: 4,
+      history:
+        [
+          "Future",
+          "Issue",
+          "KnownProof",
+          "Future",
+          "AlteredJob",
+          "AlteredJob",
+          "AlteredSeq",
+          "Repeat",
+          "Repeat",
+          "AlteredSeq",
+          "AlteredJob",
+          "Future",
+          "Repeat",
+          "Issue",
+          "WrongKnown"
+        ],
+      known: 2,
+      lastJob: 1,
+      lastSeq: 1,
+      nextRequest: 3
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      ack: 0,
+      acks: 4,
+      history:
+        [
+          "Future",
+          "Issue",
+          "KnownProof",
+          "Future",
+          "AlteredJob",
+          "AlteredJob",
+          "AlteredSeq",
+          "Repeat",
+          "Repeat",
+          "AlteredSeq",
+          "AlteredJob",
+          "Future",
+          "Repeat",
+          "Issue",
+          "WrongKnown",
+          "AlteredJob"
+        ],
+      known: 2,
+      lastJob: 1,
+      lastSeq: 1,
+      nextRequest: 3
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      ack: 0,
+      acks: 4,
+      history:
+        [
+          "Future",
+          "Issue",
+          "KnownProof",
+          "Future",
+          "AlteredJob",
+          "AlteredJob",
+          "AlteredSeq",
+          "Repeat",
+          "Repeat",
+          "AlteredSeq",
+          "AlteredJob",
+          "Future",
+          "Repeat",
+          "Issue",
+          "WrongKnown",
+          "AlteredJob",
+          "AlteredSeq"
+        ],
+      known: 2,
+      lastJob: 1,
+      lastSeq: 1,
+      nextRequest: 3
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      ack: 2,
+      acks: 5,
+      history:
+        [
+          "Future",
+          "Issue",
+          "KnownProof",
+          "Future",
+          "AlteredJob",
+          "AlteredJob",
+          "AlteredSeq",
+          "Repeat",
+          "Repeat",
+          "AlteredSeq",
+          "AlteredJob",
+          "Future",
+          "Repeat",
+          "Issue",
+          "WrongKnown",
+          "AlteredJob",
+          "AlteredSeq",
+          "KnownProof"
+        ],
+      known: 0,
+      lastJob: 2,
+      lastSeq: 2,
+      nextRequest: 3
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      ack: 0,
+      acks: 5,
+      history:
+        [
+          "Future",
+          "Issue",
+          "KnownProof",
+          "Future",
+          "AlteredJob",
+          "AlteredJob",
+          "AlteredSeq",
+          "Repeat",
+          "Repeat",
+          "AlteredSeq",
+          "AlteredJob",
+          "Future",
+          "Repeat",
+          "Issue",
+          "WrongKnown",
+          "AlteredJob",
+          "AlteredSeq",
+          "KnownProof",
+          "AlteredSeq"
+        ],
+      known: 0,
+      lastJob: 2,
+      lastSeq: 2,
+      nextRequest: 3
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      ack: 2,
+      acks: 6,
+      history:
+        [
+          "Future",
+          "Issue",
+          "KnownProof",
+          "Future",
+          "AlteredJob",
+          "AlteredJob",
+          "AlteredSeq",
+          "Repeat",
+          "Repeat",
+          "AlteredSeq",
+          "AlteredJob",
+          "Future",
+          "Repeat",
+          "Issue",
+          "WrongKnown",
+          "AlteredJob",
+          "AlteredSeq",
+          "KnownProof",
+          "AlteredSeq",
+          "Repeat"
+        ],
+      known: 0,
+      lastJob: 2,
+      lastSeq: 2,
+      nextRequest: 3
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      ack: 2,
+      acks: 7,
+      history:
+        [
+          "Future",
+          "Issue",
+          "KnownProof",
+          "Future",
+          "AlteredJob",
+          "AlteredJob",
+          "AlteredSeq",
+          "Repeat",
+          "Repeat",
+          "AlteredSeq",
+          "AlteredJob",
+          "Future",
+          "Repeat",
+          "Issue",
+          "WrongKnown",
+          "AlteredJob",
+          "AlteredSeq",
+          "KnownProof",
+          "AlteredSeq",
+          "Repeat",
+          "Repeat"
+        ],
+      known: 0,
+      lastJob: 2,
+      lastSeq: 2,
+      nextRequest: 3
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      ack: 0,
+      acks: 7,
+      history:
+        [
+          "Future",
+          "Issue",
+          "KnownProof",
+          "Future",
+          "AlteredJob",
+          "AlteredJob",
+          "AlteredSeq",
+          "Repeat",
+          "Repeat",
+          "AlteredSeq",
+          "AlteredJob",
+          "Future",
+          "Repeat",
+          "Issue",
+          "WrongKnown",
+          "AlteredJob",
+          "AlteredSeq",
+          "KnownProof",
+          "AlteredSeq",
+          "Repeat",
+          "Repeat",
+          "AlteredJob"
+        ],
+      known: 0,
+      lastJob: 2,
+      lastSeq: 2,
+      nextRequest: 3
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      ack: 0,
+      acks: 7,
+      history:
+        [
+          "Future",
+          "Issue",
+          "KnownProof",
+          "Future",
+          "AlteredJob",
+          "AlteredJob",
+          "AlteredSeq",
+          "Repeat",
+          "Repeat",
+          "AlteredSeq",
+          "AlteredJob",
+          "Future",
+          "Repeat",
+          "Issue",
+          "WrongKnown",
+          "AlteredJob",
+          "AlteredSeq",
+          "KnownProof",
+          "AlteredSeq",
+          "Repeat",
+          "Repeat",
+          "AlteredJob",
+          "AlteredJob"
+        ],
+      known: 0,
+      lastJob: 2,
+      lastSeq: 2,
+      nextRequest: 3
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      ack: 0,
+      acks: 7,
+      history:
+        [
+          "Future",
+          "Issue",
+          "KnownProof",
+          "Future",
+          "AlteredJob",
+          "AlteredJob",
+          "AlteredSeq",
+          "Repeat",
+          "Repeat",
+          "AlteredSeq",
+          "AlteredJob",
+          "Future",
+          "Repeat",
+          "Issue",
+          "WrongKnown",
+          "AlteredJob",
+          "AlteredSeq",
+          "KnownProof",
+          "AlteredSeq",
+          "Repeat",
+          "Repeat",
+          "AlteredJob",
+          "AlteredJob",
+          "Issue"
+        ],
+      known: 3,
+      lastJob: 2,
+      lastSeq: 2,
+      nextRequest: 4
+    }
+}
+
+[ok] No violation found (129ms at 775 traces/second).
+Trace length statistics: max=25, min=25, average=25.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

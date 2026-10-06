@@ -1,0 +1,24 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v87/qa/elm-retirement-replay.js": "bbf2212ab04ce3983b43881fda6375a5b284f2c2d1208bacf1205f76fb129e77",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v87/qa/native-source-fixture.json": "1c0c3b87e773ace53adc79b9b7e8696b32167ee3ea698112b765a03c8e6c1ff1",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v87/qa/build-1791321363498154276/inputs/assets/preview-replay.js": "99a42957510b96be253ffff69cb86fec0019b46e0060717d931922b8e369aca1"
+  },
+  "scope": "Actual optimized immutable Elm retirement ownership/readiness/anti-replay; native resources and WebKit control continuity remain separate.",
+  "fullBuild": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v87/qa/build-1791321363498154276/report.json",
+    "sha256": "edd01dab1b7ef2fc429f4e5bf013060789aec5064e571ac30968d904bb1abf36"
+  },
+  "exitCode": 1,
+  "error": "AssertionError(\"AssertionError [ERR_ASSERTION]: After readiness, duplicate terminal must not enqueue another ACK\\n+ actual - expected\\n\\n  {\\n+   commands: [\\n+     {\\n+       commands: [\\n+         {\\n+           job: {\\n+             binding: {\\n+               frontend: '1',\\n+               lifetime: '12618083744238620417',\\n+               session: '2'\\n+             },\\n+             clock: '12618083744238620417',\\n+             context: {\\n+               content: '42',\\n+               incarnation: '2',\\n+               lifetime: '12618083744238620417',\\n+               output: '1',\\n+               privacy: '1',\\n+               rendering: '2',\\n+               scene: '1'\\n+             },\\n+             deadline: '203485677514126',\\n+             origin: '1',\\n+             request: '1'\\n+           },\\n+           kind: 'acknowledge',\\n+           sequence: '4'\\n+         }\\n+       ],\\n+       identity: 'family:2'\\n+     }\\n+   ],\\n-   commands: [],\\n    models: [\\n      {\\n        active: false,\\n        identity: 'family:2',\\n        model: {\\n\\n    at unchanged (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v87/qa/elm-retirement-check-1791321559574051477/elm-retirement-replay.js:29:49)\\n    at runNextTicks (node:internal/process/task_queues:65:5)\\n    at listOnTimeout (node:internal/timers:644:9)\\n    at process.processTimers (node:internal/timers:618:7)\\n    at async /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v87/qa/elm-retirement-check-1791321559574051477/elm-retirement-replay.js:46:2\\n\")",
+  "artifacts": {
+    "elm-retirement-replay.js": "bbf2212ab04ce3983b43881fda6375a5b284f2c2d1208bacf1205f76fb129e77",
+    "native-source-fixture.json": "1c0c3b87e773ace53adc79b9b7e8696b32167ee3ea698112b765a03c8e6c1ff1",
+    "preview-replay.js": "99a42957510b96be253ffff69cb86fec0019b46e0060717d931922b8e369aca1",
+    "replay.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay.stderr": "b5362d4b273d06e584dc2f51b1b88e92da552dcae3487144f5a0fb2a517e2bfb"
+  }
+}

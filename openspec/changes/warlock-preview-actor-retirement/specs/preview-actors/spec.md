@@ -45,6 +45,51 @@ validated operation serialized with capture, URI readers, delivery and receiver
 replacement. The Elm owner SHALL retain unsettled jobs and queued controls, and
 accept only an exact typed native retirement fact after their settlement.
 
+WHEN the Elm owner receives an exact permanent native retirement observation,
+it SHALL close demand, cancel current work and request release of accepted and
+candidate packets immediately; retain every known job and retiring packet until
+its exact terminal proof; and append retirement readiness after cleanup and final
+acknowledgments on the same output port. WHILE readiness awaits native completion,
+the entry SHALL emit no further controls or reopen demand. The original popup
+transport SHALL carry canonical uint64 delivery ordinals and admit only the next
+ordinal after its previous handler returns. A delivery ordinal SHALL NOT certify
+effect success or physical cleanup. Native removal SHALL independently verify
+all original ownership and journal obligations. Foreign receivers, gaps, replay,
+reentrant delivery and exhausted ordinals SHALL never advance the prefix.
+
+WHEN native facts for different actors arrive in independent delivery order,
+the Elm owner SHALL correlate each completion with that actor's exact pending
+observation and settled state. A newer sibling observation or completion SHALL
+NOT prevent an older exact completion from settling its own actor. Shared native
+clock, catalog and issuance cutoffs SHALL never move backward when an older
+completion arrives. No global event-delivery order SHALL be inferred from native
+proof identities.
+
+#### Scenario: Delayed completion after sibling observation
+- GIVEN one settled actor waiting for completion and a newer sibling observation
+- WHEN the first actor's exact native completion arrives afterward
+- THEN it settles its own actor and preserves the sibling.
+
+#### Scenario: Older completion after newer sibling completion
+- GIVEN independently delayed completions for two settled actors
+- WHEN the newer sibling completion arrives first
+- THEN both exact completions remain usable and the shared replay cutoff never rewinds.
+
+#### Scenario: Duplicate terminal after readiness
+- GIVEN settled Elm ownership and readiness already emitted after its final ACK
+- WHEN the original terminal receipt is delivered again
+- THEN no subsequent entry control is emitted and native completion remains pending.
+
+#### Scenario: Accepted pixels retire without an expiry tick
+- GIVEN an accepted preview packet and exact permanent native retirement
+- WHEN no further source observation or clock event occurs
+- THEN release is requested immediately and the packet remains retiring until exact proof.
+
+#### Scenario: Readiness cannot overtake cleanup
+- GIVEN an original popup control handler still processing its prior ordinal
+- WHEN readiness arrives reentrantly or across a missing ordinal
+- THEN it is refused without advancing the delivered prefix or asserting cleanup.
+
 #### Scenario: Outstanding reader blocks removal
 - GIVEN Retired native evidence and an actual URI reader
 - WHEN actor removal is attempted
@@ -75,6 +120,12 @@ after retirement; a compact issuance frontier SHALL permanently reject previousl
 issued absent entries. Request floors for retained actors SHALL remain unchanged.
 Old job, URI, receipt, feedback and subject replays SHALL never recreate a retired
 actor or authorize capture. Overflow SHALL refuse further issuance without wrap.
+
+WHEN native scope admission refuses a newly proposed subject, staged C membership
+SHALL consume no active slot or entry serial. WHEN a settled actor is removed,
+historical source seeds and catalogs SHALL remain unable to recreate it. The Elm
+owner SHALL compare source and retirement time only in their exact native clock
+domain; their independent observation sequence counters SHALL NOT be compared.
 
 #### Scenario: More than256 sequential windows
 - GIVEN a continuing native/Elm host with successive settled window closures
