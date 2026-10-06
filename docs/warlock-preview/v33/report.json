@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "passed": true,
+  "components": [
+    {
+      "path": "implementation/warlock-family-style-revisions-v1/component-manifest.json",
+      "sha256": "97b23935274742757dc1e452a881311a4909c760ad80e84fb79f5170e0029334",
+      "files": 15
+    },
+    {
+      "path": "implementation/warlock-family-style-revisions-v2/component-manifest.json",
+      "sha256": "f166c3a09a73c665c64fd7425eb7238251cc4974c4f2f4c566eeae13c33d85ce",
+      "files": 57
+    },
+    {
+      "path": "implementation/warlock-family-style-source-v1/component-manifest.json",
+      "sha256": "2339e7735842aa19d6d4e07efa8822b85738b70088e84c9507451c98f1e4dea6",
+      "files": 789
+    },
+    {
+      "path": "implementation/warlock-family-style-source-v2/component-manifest.json",
+      "sha256": "ee4e5216335e336729943d818f610eb3f49aba17f26a472201b6452d3727f883",
+      "files": 1146
+    },
+    {
+      "path": "implementation/warlock-family-style-source-v3/component-manifest.json",
+      "sha256": "d9bccb0cc590aa6427e3a9e2d96b60075a6533c6281b3f1a58f7b4b05ed2709d",
+      "files": 1146
+    },
+    {
+      "path": "implementation/warlock-family-style-controls-v1/component-manifest.json",
+      "sha256": "8ba6baaae9bd14d5bfe4080dbe1ee3d87deb3e3c9f3c30b228988de980289b2c",
+      "files": 15
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v39/component-manifest.json",
+      "sha256": "d20819296678387c257dbd3d0261a0d9b889b58cd94b9796b5650601eb481518",
+      "files": 277
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v40/component-manifest.json",
+      "sha256": "a62172d3e5b142b98ccbbd72040c6b483175dcad826423e56c40332ddf282b20",
+      "files": 315
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v41/component-manifest.json",
+      "sha256": "508c1ba03ad7be8ecd4a5cb218d4c80eb8c75a2a7981b825e7efded7c23930f8",
+      "files": 323
+    }
+  ],
+  "evidence": {
+    "implementation/warlock-family-style-revisions-v2/qa/model-1791261116931614502/report.json": "3060bce98ccb6a47515ea43d428732c097bf6638327d49fd53f07e8d009f8de3",
+    "implementation/warlock-family-style-controls-v1/qa/test-1791261966808709561/report.json": "0abec4c34fc709cd1aea7e26b087c2fcb6625566d979e0f4063f5842d60d7729",
+    "implementation/warlock-family-style-source-v3/qa/build-1791261312896518756/report.json": "cae7ef07436316d9c4bc769f7288fe4ffc00512e5808f78ddf2aa91c98c395aa",
+    "implementation/warlock-client-provider-native-v38/qa/native-1791260728575460795/report.json": "1183a472cc55bc833bc5f8ed24c4761af7e49cca590325f6b83f05c45bc13bb2",
+    "implementation/warlock-client-provider-native-v39/qa/native-1791261513235004983/report.json": "235600f09c55857ec5eae163352cde5ced8d6ac6d5c44f8c005d4f7831a1d1f8",
+    "implementation/warlock-client-provider-native-v40/qa/native-1791261710782416002/report.json": "c421e1b337faa017ada9169d8efda904f822bb9704a37be27947006c36891631",
+    "implementation/warlock-client-provider-native-v41/qa/native-1791261901860161292/report.json": "ece2bf77c8e72ab8aa62fb7a86c2193d34b21938e59b2dd042c1198222905c75"
+  },
+  "nativeControls": 1636,
+  "normalOwnedExits": 150,
+  "actualNativeStyleChannelsQualified": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "next": "Qualify complete native style/render source inputs; integrate distinct style-aware crop capture and shared typed Elm. Original production preview13 and whole coherent release gates remain open."
+}

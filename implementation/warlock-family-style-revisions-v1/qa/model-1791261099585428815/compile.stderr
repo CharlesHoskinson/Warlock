@@ -1,0 +1,14 @@
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v1/qa/model-1791261099585428815/replay.cpp: In function ‘int main(int, char**)’:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v1/qa/model-1791261099585428815/replay.cpp:5:5: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+    5 |     if(argc!=2)return 2;std::ifstream input(argv[1]);preview::StyleRevision revision;uint64_t family,epoch;int tint,alpha,angle,color,count,complete;size_t states=0;
+      |     ^~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v1/qa/model-1791261099585428815/replay.cpp:5:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+    5 |     if(argc!=2)return 2;std::ifstream input(argv[1]);preview::StyleRevision revision;uint64_t family,epoch;int tint,alpha,angle,color,count,complete;size_t states=0;
+      |                         ^~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v1/qa/model-1791261099585428815/replay.cpp:10:9: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+   10 |         if(actual!=bool(complete) || revision.value()!=(complete?epoch:0))throw std::runtime_error("Actual style revision differs from selected Quint state "+std::to_string(states));++states;
+      |         ^~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v1/qa/model-1791261099585428815/replay.cpp:10:183: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   10 |         if(actual!=bool(complete) || revision.value()!=(complete?epoch:0))throw std::runtime_error("Actual style revision differs from selected Quint state "+std::to_string(states));++states;
+      |                                                                                                                                                                                       ^~
+cc1plus: all warnings being treated as errors

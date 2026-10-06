@@ -1,0 +1,47 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-6b53a71394844eab8fa4187f3ccdc84a.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v1/qa/model.py": "e7c250757dddf125b17b7818b095b83b605a013d2306e081f75869eafa21358f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v1/spec/style.qnt": "caa0b93a82e1f32d7a35f87bc64767249452eb204b8602ec7fef89e9209d050e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v1/native/replay.cpp": "b7a82bd2a22460f4035905ce6080da81baba0f507580325228abbc3ba6baebc6",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v1/SPEC.md": "ead941f3b51702f49b612cc26e4e700caba1b757e3e0122cdb85adc2aef1f7fb",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v1/native/style_revision.hpp": "ef728aba5aa7484a1d138e2250537e3b4c86ce0ad0aaa0ad99fbbd37bad7d68b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v1/native/source_epoch.hpp": "df64eec18b8bd62b0b21b73e3aabbc1a9db10f122af65e36f78a6147bd67860f"
+  },
+  "commands": [
+    {
+      "name": "compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v1/qa/model-1791261099585428815",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v1/qa/model-1791261099585428815/replay.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v1/qa/model-1791261099585428815/replay"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "scope": "Selected style-channel/membership/unavailable projection replayed through actual StyleRevision; native collection, full renderer coverage and crop/Elm fidelity remain separate.",
+  "error": "AssertionError('/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v1/qa/model-1791261099585428815/replay.cpp: In function \u2018int main(int, char**)\u2019:\\n/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v1/qa/model-1791261099585428815/replay.cpp:5:5: error: this \u2018if\u2019 clause does not guard... [-Werror=misleading-indentation]\\n    5 |     if(argc!=2)return 2;std::ifstream input(argv[1]);preview::StyleRevision revision;uint64_t family,epoch;int tint,alpha,angle,color,count,complete;size_t states=0;\\n      |     ^~\\n/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v1/qa/model-1791261099585428815/replay.cpp:5:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the \u2018if\u2019\\n    5 |     if(argc!=2)return 2;std::ifstream input(argv[1]);preview::StyleRevision revision;uint64_t family,epoch;int tint,alpha,angle,color,count,complete;size_t states=0;\\n      |                         ^~~\\n/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v1/qa/model-1791261099585428815/replay.cpp:10:9: error: this \u2018if\u2019 clause does not guard... [-Werror=misleading-indentation]\\n   10 |         if(actual!=bool(complete) || revision.value()!=(complete?epoch:0))throw std::runtime_error(\"Actual style revision differs from selected Quint state \"+std::to_string(states));++states;\\n      |         ^~\\n/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v1/qa/model-1791261099585428815/replay.cpp:10:183: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the \u2018if\u2019\\n   10 |         if(actual!=bool(complete) || revision.value()!=(complete?epoch:0))throw std::runtime_error(\"Actual style revision differs from selected Quint state \"+std::to_string(states));++states;\\n      |                                                                                                                                                                                       ^~\\ncc1plus: all warnings being treated as errors\\n')",
+  "artifacts": {
+    "model.py": "e7c250757dddf125b17b7818b095b83b605a013d2306e081f75869eafa21358f",
+    "style.qnt": "caa0b93a82e1f32d7a35f87bc64767249452eb204b8602ec7fef89e9209d050e",
+    "replay.cpp": "b7a82bd2a22460f4035905ce6080da81baba0f507580325228abbc3ba6baebc6",
+    "SPEC.md": "ead941f3b51702f49b612cc26e4e700caba1b757e3e0122cdb85adc2aef1f7fb",
+    "style_revision.hpp": "ef728aba5aa7484a1d138e2250537e3b4c86ce0ad0aaa0ad99fbbd37bad7d68b",
+    "source_epoch.hpp": "df64eec18b8bd62b0b21b73e3aabbc1a9db10f122af65e36f78a6147bd67860f",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "9751e5efcc2b2e0409c735fe7da53127b137e6844c50a70f6863d9efba776162"
+  }
+}

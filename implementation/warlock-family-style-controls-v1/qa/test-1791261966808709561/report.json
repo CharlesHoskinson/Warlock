@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-0f6ac3530b2a468989932ed038927870.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-controls-v1/qa/test.py": "3e337b2962b808dbf80da4863a42fc89bc1074814d17c8aa24f0f7e77da84492",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-controls-v1/SPEC.md": "5cdc1d83952aa2d7728091a978b4292e60019f0e7201d4e9494a8ea4bd0e2b16",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-controls-v1/native/controls.cpp": "462632959092515bab2d6ce33c55ed786345e11ea6f3a0a671852fceb25a5493",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v2/native/style_revision.hpp": "ef728aba5aa7484a1d138e2250537e3b4c86ce0ad0aaa0ad99fbbd37bad7d68b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v2/native/source_epoch.hpp": "df64eec18b8bd62b0b21b73e3aabbc1a9db10f122af65e36f78a6147bd67860f"
+  },
+  "commands": [
+    {
+      "stage": "compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-controls-v1/qa/test-1791261966808709561",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-controls-v1/qa/test-1791261966808709561/controls.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-controls-v1/qa/test-1791261966808709561/controls"
+      ],
+      "exitCode": 0
+    },
+    {
+      "stage": "run",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-controls-v1/qa/test-1791261966808709561/controls"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "evidence": {
+    "passed": true,
+    "checks": 140
+  },
+  "artifacts": {
+    "test.py": "3e337b2962b808dbf80da4863a42fc89bc1074814d17c8aa24f0f7e77da84492",
+    "SPEC.md": "5cdc1d83952aa2d7728091a978b4292e60019f0e7201d4e9494a8ea4bd0e2b16",
+    "controls.cpp": "462632959092515bab2d6ce33c55ed786345e11ea6f3a0a671852fceb25a5493",
+    "style_revision.hpp": "ef728aba5aa7484a1d138e2250537e3b4c86ce0ad0aaa0ad99fbbd37bad7d68b",
+    "source_epoch.hpp": "df64eec18b8bd62b0b21b73e3aabbc1a9db10f122af65e36f78a6147bd67860f",
+    "controls": "bfaccceb36a1ec1ff2989eba1456c2ecf6df257338097a81b165e8ef94dae3fe",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run.stdout": "7e54fc990e10dc898039549df333505c76c61c51b27a0a035a82131103485ade",
+    "run.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

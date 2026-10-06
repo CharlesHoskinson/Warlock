@@ -1,0 +1,7 @@
+# Native family style observation revision
+
+Extend source observations with exact current alpha components, workspace alpha, native dim/ANR tint, rounding/power/border size, border/shadow/glow fade and angle channels, animation selection flags, and six current/previous gradient RGBA plus actual shader vectors/angles. Family base content remains a separate input. Native collection is required; wire JSON or caller style values confer no authority. The observer compares immutable native snapshots and returns its own monotonic epoch; it is not a second desktop policy authority.
+
+The real native renderer uses dimPercent and notRespondingTint independently of effectiveAlpha, and native border/shadow/glow color transitions independently of the existing three appearance scalars. Preserve existing family/crop formats and meanings while adding a new style source domain. Unknown/unsupported decoration, blur/shader/transform/output/color-management/motion inputs remain explicit incomplete fidelity until their coverage is actually qualified. This component does not grant preview eligibility or full source/style/native/GUI acceptance.
+
+First qualify actual StyleRevision against explicitly selected Quint transitions and compiled controls; then implement the native collector on the owning core-crop1/plugin ABI, qualify current native dim/border/gradient changes without client commits, and integrate style context into the typed family capture/Elm lifecycle with original deadlines and physical retirement. Original preview13/full release gates stay open.
