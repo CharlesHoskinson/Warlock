@@ -1,0 +1,7 @@
+# Shared generated source design
+
+The host deliberately selects a generated-backdrop factory under its existing native qualification mode. Native scope/capture/FD4 data originate from that provider process's authenticated grant. Opaque canonical ARGB is source metadata; frontend callers never choose rendering color. The pure Elm presenter admits the source as a distinct sum-type case and applies the same complete family coverage guards as the original transparent family. Current native color revisions update facts within the same source plane while original frame handles/jobs remain immutable; switching source planes cannot reinterpret a retained image.
+
+Physical ownership remains mapping/FD close, exact exporter transfer release, producer retirement and broker terminal proof followed by retained ACK. A new lease cannot recapture until original physical and proof ownership is empty. Typed known native unavailability revokes URI authority and reaches the same Elm cleanup path; unknown errors remain unknown and grant no automatic replay.
+
+Renderer native85 all-body equality and actual shared WebKit displayed pixels are distinct evidence. Displayed image dimensions follow the existing grid160 and max-height120 CSS with preserved aspect ratio. Valid pixel counterexamples exit normally so their terminal predicate follows retained original native assertions and ordered cleanup. This controlled generated-color mode does not qualify arbitrary wallpaper/layer contributors, privacy provenance, general shader/CM/HDR/output/hardware or the complete release.
