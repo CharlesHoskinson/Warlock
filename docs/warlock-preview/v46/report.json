@@ -1,0 +1,148 @@
+{
+  "schema": 1,
+  "passed": true,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-e7b8114a6ec045c7bd1d6ac7eaa82df7.scope",
+    "coreLimit": 1
+  },
+  "components": [
+    {
+      "path": "implementation/warlock-core-family-crop-v8/component-manifest.json",
+      "sha256": "ac40a2622d249d8956274f1eacc5e9fc7c08a9158775fcda7b88a1d85864959a",
+      "files": 31
+    },
+    {
+      "path": "implementation/warlock-core-family-crop-v9/component-manifest.json",
+      "sha256": "e4a4479f48eaff0846786ebef64bfec86c7747a1a1db148a9e97f91676049137",
+      "files": 36
+    },
+    {
+      "path": "implementation/warlock-core-family-crop-v10/component-manifest.json",
+      "sha256": "a2b4831012af3ac189780c8e753d7702eaa62c78bb0c511c706e68c1f9dd2e1f",
+      "files": 37
+    },
+    {
+      "path": "implementation/warlock-core-family-crop-v11/component-manifest.json",
+      "sha256": "11e3bb7d92fedfaae5a080a316bf52b5066ca112dda347f4b67f1519c8dd2f7b",
+      "files": 793
+    },
+    {
+      "path": "implementation/warlock-core-family-crop-v12/component-manifest.json",
+      "sha256": "6504d0d032030c9999259fb2730b91347b9187d60baceec2e2e8bf0881f1b539",
+      "files": 818
+    },
+    {
+      "path": "implementation/warlock-family-style-crop-capture-v14/component-manifest.json",
+      "sha256": "907ec5d5bbedfb30980d3bc01e5b4a14a7cf61c73b070ca9fdfd243af0bfe951",
+      "files": 40
+    },
+    {
+      "path": "implementation/warlock-family-style-crop-capture-v15/component-manifest.json",
+      "sha256": "e5c01ecce078cb65c60eb34e5ab775f99fa9e7ccfc3dbaf2b353f7da2c0612dd",
+      "files": 41
+    },
+    {
+      "path": "implementation/warlock-family-style-crop-capture-v16/component-manifest.json",
+      "sha256": "9135a8294e15bde87fb2c8f0a248a7cfc9d2b5767694e7bee489f63951bbe80d",
+      "files": 1155
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v76/component-manifest.json",
+      "sha256": "5dd5f16807bfb212fe08c39a674c5c09afd75452493ff57b4d0689b2063d5020",
+      "files": 469
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v77/component-manifest.json",
+      "sha256": "4f0d93ff53adc1d0fcb5233d4370c9c395c2f10c4edf84c9bbf2232c34890f20",
+      "files": 469
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v78/component-manifest.json",
+      "sha256": "156f5d68033cd305f1b6a3639cc12d1aa2bf4b0c06d63c0d6da6e436780988bc",
+      "files": 478
+    },
+    {
+      "path": "openspec/changes/warlock-preview-screen-coordinates/component-manifest.json",
+      "sha256": "4c6fb2cabe78660a8875adb5ce70a923f5e10e3d10bed682994ded37785087bd",
+      "files": 12
+    }
+  ],
+  "evidence": {
+    "docs/warlock-preview/v45/report.json": "a2bd0c90e8bcca5b6ae2bb52ec24cb75edd31367da87c0e7bbd6ab4a97e0c32a",
+    "implementation/warlock-core-family-crop-v8/qa/plane-1791278219708947062/report.json": "29fbd1e928016008f215fa4cda9042f67832b52845c60f375dd933b2d7c6fe47",
+    "implementation/warlock-core-family-crop-v9/qa/plane-1791278286729492127/report.json": "4e3fcdddda7be419cedca1a225c8faf3226ba6b58b046fb8356cc38bae84dde9",
+    "implementation/warlock-core-family-crop-v10/qa/plane-1791278347581345634/report.json": "76460c93c26f167b5086cbc170450feaa84a6a83e91c4e9eee85062fd4290af2",
+    "implementation/warlock-core-family-crop-v11/qa/plane-1791278415328104459/report.json": "cf87c26a6218fb4ea04b00590cab58a9ec79b321ca2bb81f5d03d3b7a86b9cd1",
+    "implementation/warlock-core-family-crop-v11/build-1791278417278092074/report.json": "be2dd1987271aaf84a2fc42882db41ca184bec36a8ae949e930e1d6c183d77ff",
+    "implementation/warlock-core-family-crop-v12/qa/plane-1791278527761920928/report.json": "e7669561d5e7dc5debd66b5f89c7872ccb2591a1009221e7a48414fbc92ed9ff",
+    "implementation/warlock-core-family-crop-v12/build-1791278529949894522/report.json": "13f5916fc24a9bfee9745860c21ca8a69bd0029cdf906c223bd6f12717f537fb",
+    "implementation/warlock-family-style-crop-capture-v14/preparation-stop.json": "43dcf90c0810ad428654f224e7bebb45fcce0011b05c45084a3b65592593239b",
+    "implementation/warlock-family-style-crop-capture-v16/qa/build-1791278637962483618/report.json": "b63d0656d42a7e3f3a35aa064abe78b50db9d6407fcdd8ffd3399e28edc10840",
+    "implementation/warlock-client-provider-native-v76/qa/prepare-1791277744456431710/report.json": "151902fd63b30216f69fcc9d9d5ed1fb3b53bfe3ef70c01daab9cd606b1e9277",
+    "implementation/warlock-client-provider-native-v76/qa/native-1791277798549957384/report.json": "d6e2e9667eb1e3a3dc6e0ee9c624fdf14ea4babe48ba16bc66835f859ac1497c",
+    "implementation/warlock-client-provider-native-v77/qa/prepare-1791278737968438936/report.json": "df0254d7cf15b6bfe4e6fdb37995adb523fbed17f3182f3a1dc2af8610592cb6",
+    "implementation/warlock-client-provider-native-v77/qa/native-1791278782420352026/report.json": "6754ac3666cc7eead4e80d3bbaaf85b564943247807eb609bfa314d0c19f7147",
+    "implementation/warlock-client-provider-native-v78/qa/prepare-1791278916053401014/report.json": "7c22f85fe4814d5d9be1443b703e6a87406a31809f053387e73e87fcd7ca27e6",
+    "implementation/warlock-client-provider-native-v78/qa/native-1791278994447344491/report.json": "99983f5cdefe4b7c68c275f6520c3620b189848733bfabee7970543999b8d461",
+    "implementation/warlock-client-provider-native-v50/qa/native-1791265841870106110/report.json": "41b65aa20c9a774e8568815c2ccd02fed4064550d8a6f57c22fcf410bc62cf25",
+    "openspec/changes/warlock-preview-screen-coordinates/qa/validate-1791278737694584983/report.json": "3bb8569d6782cfcf457aa3c11a2d7f85d307d44dbb1276af5b8befa0ed17b26d",
+    "openspec/changes/warlock-preview-screen-coordinates/qa/validate-1791279226684915853/report.json": "ff4dc6be0c183407b91fdb1b95c5b54f4804187647557a856970b2a9699bfebc"
+  },
+  "nativeControls": 2217,
+  "retainedOriginalControls": 1783,
+  "retainedPriorNativeControls": 2211,
+  "addedIntermediatePollComparison": {
+    "styleAgainDimPendingNativeReadonlyScope": {
+      "native77": 1,
+      "native78": 2
+    },
+    "styleCropDimIntermediateReadonlyScope": {
+      "native77": 2,
+      "native78": 1
+    },
+    "styleDimPendingNativeReadonlyScope": {
+      "native77": 2,
+      "native78": 1
+    },
+    "styleRestoreIntermediateReadonlyScope": {
+      "native77": 2,
+      "native78": 0
+    }
+  },
+  "normalOwnedExits": 217,
+  "shaderWholeRootPixels": {
+    "passed": true,
+    "comparedRootPixels": 76800,
+    "changedFamilyPixels": 73728,
+    "changedOutputPixels": 73728,
+    "mismatchedBefore": 0,
+    "mismatchedAfter": 0,
+    "wrongAlphaPixels": 0,
+    "redPixels": 73728,
+    "unchangedBlueChildPixels": 3072,
+    "unexpectedFixturePixels": 0
+  },
+  "shaderWholeCoordinatePixels": {
+    "passed": true,
+    "comparedRootPixels": 76800,
+    "mismatchedRootPixels": 0,
+    "wrongAlphaPixels": 0,
+    "nativeRedRange": [
+      26,
+      127
+    ],
+    "nativeGreenRange": [
+      34,
+      136
+    ]
+  },
+  "nativeShaderGlobalCoordinateSampleQualified": true,
+  "nativeShaderOpaqueRootCoordinatesQualified": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "previewEligible": false,
+  "completeShaderFidelityQualified": false,
+  "backgroundPixelFidelityQualified": false,
+  "completeFamilyFidelityQualified": false,
+  "next": "Implement and qualify transparent family/decorations and global UV/neighborhood/contextual/color/output shader semantics, backdrop source privacy/ownership, measured GPU/driver resources and every original coherent GUI release gate."
+}

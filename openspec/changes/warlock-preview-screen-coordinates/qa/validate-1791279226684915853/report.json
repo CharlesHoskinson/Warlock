@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-7d720d97e3884e90897666bd402467de.scope",
+    "coreLimit": 1
+  },
+  "argv": [
+    "node",
+    "/home/hoskinson/.npm/_npx/b05ce0373733faa6/node_modules/@fission-ai/openspec/bin/openspec.js",
+    "validate",
+    "warlock-preview-screen-coordinates",
+    "--strict",
+    "--json",
+    "--no-interactive"
+  ],
+  "exitCode": 0,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-screen-coordinates/proposal.md": "49362001291812139f654d4fa352bb409397c6073918005e9f743e55963c9bb7",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-screen-coordinates/design.md": "0e4bde3867b9922c00abc4bb7302e1de04ef93200627ae4042f13ef9cc2bc37c",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-screen-coordinates/tasks.md": "973449b6fbc81b51f65050ed387eb72a42086ae4b41af567a92acb61b67f269b",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-screen-coordinates/qualification-77-78.md": "387c59a6e16235f33fae4b71f98a11dc1f36253f9d868beb6a9a7c855e757c7b",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-screen-coordinates/specs/elm-capture-motion/spec.md": "9165f686de1699f2fead2acd8324ef5d07e5356931386a34f99edf0756b055b6",
+    "/home/hoskinson/.npm/_npx/b05ce0373733faa6/node_modules/@fission-ai/openspec/bin/openspec.js": "ca136f0e9fd4951dcf93d8ed729ebc97b2d97d3980cd9dc9d42fc80e32e797c6",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-screen-coordinates/qa/validate.py": "05aa751fe55a70f9f2580d6c45e86c200f61e442c0cf97982657916473878f16"
+  },
+  "artifacts": {
+    "stdout.json": "d27adb7405e4e530d007bb97d43bc9f014cd40443b385705ccc8baf87f7e7dbf",
+    "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

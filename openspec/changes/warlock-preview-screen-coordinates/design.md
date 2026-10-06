@@ -1,0 +1,9 @@
+# Coordinate and storage ownership
+
+Render the authorized family into a private transparent full-output source, then apply the actual linked program into an independent output-sized destination. This retains native UV, texture dimensions and fragment framebuffer coordinates for the admitted normal/integer/contained output domain. No screen image or foreign window is copied. After draw completion release the source before allocating a cropped export, then blit the exact native crop and complete GPU work before destination retirement.
+
+The native read-only storage query and actual renderer use one value-only plan. Matching producer reserves max(two output planes, output destination plus crop, original crop/readback/PNG peak) under the existing byte/item limit and rechecks the exact plan/source/deadline before allocation. The same reservation remains attached to encoded ownership and retires through existing receipts. Nominal bytes exclude driver/compositor internals; real measurements remain mandatory.
+
+Nine explicitly selected Quint integer geometry/capacity scenarios replay every projected state against actual shaderPlanePlan and real producer Budget admission/exact bytes/RAII retirement. C++ separately covers NaN/infinity/fractional/zero/negative/oversized dimensions. This quotient covers nominal bounded integer admission; it does not model GL resources, prove native pixels or establish exhaustive/hardware acceptance.
+
+Existing limits and eligibility refusal remain while off-output, transformed/fractional/HDR/contextual/time/pointer/backdrop/neighborhood dependencies are unqualified. Those are remaining mandatory fidelity obligations; unavailable fallback cannot close them. Native76 independent coordinate sample and all original assertions must pass on the new owning core/plugin tuple, alongside accepted75 whole76800 identity/tint opaque-root comparison.

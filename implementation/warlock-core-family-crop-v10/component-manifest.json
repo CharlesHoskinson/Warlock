@@ -1,0 +1,238 @@
+{
+  "schema": 1,
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "files": {
+    "COORDINATE-DERIVATION.json": {
+      "kind": "file",
+      "sha256": "f87c58f6f8fc06a9e180d9d9deb64e24670d1be6df2b61f9b14317c739c782cf",
+      "size": 378,
+      "mode": "0o644"
+    },
+    "QUINT-NAME-DERIVATION.json": {
+      "kind": "file",
+      "sha256": "ff636b970658126aa44d9921e3c2337c21a8d0db9eb510ce01c7619a2f5450d2",
+      "size": 338,
+      "mode": "0o644"
+    },
+    "SPEC.md": {
+      "kind": "file",
+      "sha256": "d4de5169d03810cdca553a791bb1cfe26090ca08f71469d63e0aeee9527c7b64",
+      "size": 3094,
+      "mode": "0o644"
+    },
+    "TEST-FLAGS-DERIVATION.json": {
+      "kind": "file",
+      "sha256": "8a7e1c770fce9f3fe0ea0bc99f0443550f36244ad87e92da53572134e3d4a132",
+      "size": 363,
+      "mode": "0o644"
+    },
+    "candidate/src/render/FamilyCrop.inc": {
+      "kind": "file",
+      "sha256": "05fddad38ba7a78054e2c1535feec6169ccdb326f4566ea9dfd3fa00966f87cf",
+      "size": 12213,
+      "mode": "0o644"
+    },
+    "candidate/src/render/FamilySnapshot.inc": {
+      "kind": "file",
+      "sha256": "17c640c8156efc59781825a7e8426f8f168fb1fadf5b514e5fc57b700f4b1274",
+      "size": 4715,
+      "mode": "0o644"
+    },
+    "candidate/src/render/OpenGL.cpp": {
+      "kind": "file",
+      "sha256": "efd8a43a93482f72d9d708efa4fa0fef88c45effc6603500cb6430ab41b73e58",
+      "size": 128194,
+      "mode": "0o644"
+    },
+    "candidate/src/render/OpenGL.hpp": {
+      "kind": "file",
+      "sha256": "1fa6bccf9618d6aef35427534eb34248e0bbbe7ca20333ba22c774b660b2a16b",
+      "size": 16738,
+      "mode": "0o644"
+    },
+    "candidate/src/render/Renderer.cpp": {
+      "kind": "file",
+      "sha256": "738fafe581c34875d0944f34761424c4e80f5de276a6193ab466c331f19d19ed",
+      "size": 150602,
+      "mode": "0o644"
+    },
+    "candidate/src/render/Renderer.hpp": {
+      "kind": "file",
+      "sha256": "9d02dc7b36305e5f7a960b7d81fbb6da543bf1b7af6b415c91d6f67a4ccb6be9",
+      "size": 21992,
+      "mode": "0o644"
+    },
+    "candidate/src/render/warlock/family_crop.hpp": {
+      "kind": "file",
+      "sha256": "2f11c881fa627f80817ed1aff2c96f0349602907e7e4b4ea6f0b1abe95db5c8e",
+      "size": 1559,
+      "mode": "0o644"
+    },
+    "candidate/src/render/warlock/popup_tree.hpp": {
+      "kind": "file",
+      "sha256": "47988591ccb65b99139185b20d5c575e5d899d1066561da86b8919a68d269e35",
+      "size": 2199,
+      "mode": "0o644"
+    },
+    "candidate/src/render/warlock/preview_broker.hpp": {
+      "kind": "file",
+      "sha256": "b70ad3a81e495924be9f354d17439e6853aeb1cf6c733bd6cfb22fe14e45df80",
+      "size": 16339,
+      "mode": "0o644"
+    },
+    "candidate/src/render/warlock/preview_png.hpp": {
+      "kind": "file",
+      "sha256": "308007220baf1d7f2ad30569237ffaf7d6427d900ee1243811480402f188e670",
+      "size": 5592,
+      "mode": "0o644"
+    },
+    "candidate/src/render/warlock/preview_uri.hpp": {
+      "kind": "file",
+      "sha256": "fccf1cd38df5dede20511e5ef7bf453a64c973efb7270ba8dd940745cfd2c399",
+      "size": 2595,
+      "mode": "0o644"
+    },
+    "candidate/src/render/warlock/screen_shader.hpp": {
+      "kind": "file",
+      "sha256": "ded5273c57fdfc72dedb98ef119cd54ebf0a2da198405504f5ce1d1b446e0eb7",
+      "size": 522,
+      "mode": "0o644"
+    },
+    "candidate/src/render/warlock/shader_plane.hpp": {
+      "kind": "file",
+      "sha256": "ec7b348b74157bb7e72d1a1b9953cccdbdbc7bb3028e6aa4eef339a4a9a53e3c",
+      "size": 1233,
+      "mode": "0o644"
+    },
+    "candidate/src/render/warlock/source_epoch.hpp": {
+      "kind": "file",
+      "sha256": "df64eec18b8bd62b0b21b73e3aabbc1a9db10f122af65e36f78a6147bd67860f",
+      "size": 524,
+      "mode": "0o644"
+    },
+    "candidate/src/render/warlock/surface_tree.hpp": {
+      "kind": "file",
+      "sha256": "6b7d79e940229137a46043448348de97eb75cf2688177c4b4100f1329bae4045",
+      "size": 3675,
+      "mode": "0o644"
+    },
+    "candidate/src/render/warlock/tree_revision.hpp": {
+      "kind": "file",
+      "sha256": "e66275f37faabd7b939a4f628e22857b77cd598535e58bbf793c60bf5d4f3f46",
+      "size": 1042,
+      "mode": "0o644"
+    },
+    "qa/archive.py": {
+      "kind": "file",
+      "sha256": "7c697d2fe07f30040359d2ce19e0d3e51a31334696d30b6114b16e1fa17003f5",
+      "size": 1931,
+      "mode": "0o644"
+    },
+    "qa/build.py": {
+      "kind": "file",
+      "sha256": "941048406535bea0a032231f51e605c608cc381e2572771b7ba2d1338fe5c125",
+      "size": 8628,
+      "mode": "0o644"
+    },
+    "qa/plane-1791278347581345634/SPEC.md": {
+      "kind": "file",
+      "sha256": "d4de5169d03810cdca553a791bb1cfe26090ca08f71469d63e0aeee9527c7b64",
+      "size": 3094,
+      "mode": "0o644"
+    },
+    "qa/plane-1791278347581345634/compile.stderr": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/plane-1791278347581345634/compile.stdout": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/plane-1791278347581345634/plane-replay.cpp": {
+      "kind": "file",
+      "sha256": "4367bfbaa905c9fbb34300dd4afb8e488c64e90593d27123a70ab93ac43ad25f",
+      "size": 1986,
+      "mode": "0o644"
+    },
+    "qa/plane-1791278347581345634/plane.py": {
+      "kind": "file",
+      "sha256": "d9bb4e68ea663701af2a27e4ed79b781a4d275d7b7c5e5503f23a1c180005b4d",
+      "size": 3377,
+      "mode": "0o644"
+    },
+    "qa/plane-1791278347581345634/plane.qnt": {
+      "kind": "file",
+      "sha256": "bc59bdadd350903060112294be6a09f045234831319520cc738661747fb12e72",
+      "size": 1860,
+      "mode": "0o644"
+    },
+    "qa/plane-1791278347581345634/replay": {
+      "kind": "file",
+      "sha256": "d842dc495dac9af2e66f4db38ae5223cffebf95e6acf34615c61a0cd9a35361a",
+      "size": 364552,
+      "mode": "0o755"
+    },
+    "qa/plane-1791278347581345634/report.json": {
+      "kind": "file",
+      "sha256": "76460c93c26f167b5086cbc170450feaa84a6a83e91c4e9eee85062fd4290af2",
+      "size": 9158,
+      "mode": "0o644"
+    },
+    "qa/plane-1791278347581345634/shader_plane.hpp": {
+      "kind": "file",
+      "sha256": "ec7b348b74157bb7e72d1a1b9953cccdbdbc7bb3028e6aa4eef339a4a9a53e3c",
+      "size": 1233,
+      "mode": "0o644"
+    },
+    "qa/plane-1791278347581345634/typecheck.stderr": {
+      "kind": "file",
+      "sha256": "56218bebba871ca1a8030f91682fa02947c21070699fff65e813ed8a0f8239c4",
+      "size": 1973,
+      "mode": "0o644"
+    },
+    "qa/plane-1791278347581345634/typecheck.stdout": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/plane-replay.cpp": {
+      "kind": "file",
+      "sha256": "4367bfbaa905c9fbb34300dd4afb8e488c64e90593d27123a70ab93ac43ad25f",
+      "size": 1986,
+      "mode": "0o644"
+    },
+    "qa/plane.py": {
+      "kind": "file",
+      "sha256": "d9bb4e68ea663701af2a27e4ed79b781a4d275d7b7c5e5503f23a1c180005b4d",
+      "size": 3377,
+      "mode": "0o644"
+    },
+    "qa/plane.qnt": {
+      "kind": "file",
+      "sha256": "bc59bdadd350903060112294be6a09f045234831319520cc738661747fb12e72",
+      "size": 1860,
+      "mode": "0o644"
+    },
+    "qa/qualify.py": {
+      "kind": "file",
+      "sha256": "1d098469a1d7d2a5057535d5eaf4287e1fe1e311a80281d3b5721602476ffe94",
+      "size": 229,
+      "mode": "0o644"
+    }
+  },
+  "localBuildLinks": {},
+  "nativeShaderGlobalCoordinateSampleQualified": false,
+  "nativeShaderOpaqueRootCoordinatesQualified": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "previewEligible": false,
+  "completeShaderFidelityQualified": false,
+  "backgroundPixelFidelityQualified": false,
+  "completeFamilyFidelityQualified": false
+}

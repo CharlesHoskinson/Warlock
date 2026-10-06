@@ -1,0 +1,27 @@
+
+ Error [QNT000]: Expected [admitted] and [] to be the same
+Trying to unify entities ['admitted'] and []
+Trying to unify Read[_v494] & Update[_v495] and Temporal['admitted'] & Update['w', 'h', 'x', 'y', 'cw', 'ch', 'encoded', 'limit', 'valid', 'peak']
+Trying to unify (Read[_v494] & Update[_v495], Read[_v496] & Update[_v495]) => Read[_v497] & Update[_v495] and (Temporal['admitted'] & Update['w', 'h', 'x', 'y', 'cw', 'ch', 'encoded', 'limit', 'valid', 'peak'], Read['admitted', 'valid', 'peak', 'w', 'h', 'encoded', 'limit', 'x', 'y', 'cw', 'ch'] & Update['w', 'h', 'x', 'y', 'cw', 'ch', 'encoded', 'limit', 'valid', 'peak', 'admitted']) => _e85
+Trying to infer effect for operator application in then(init, checked)
+
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v10/qa/plane-1791278347581345634/plane.qnt:23:26
+  23:  run outputPlanePeakTest=init.then(checked)
+                               ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT200]: Using an action as an argument of `and` is only allowed in temporal definitions, but it is used in action `setPlan`. To combine actions, use `all { ... }` instead.
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v10/qa/plane-1791278347581345634/plane.qnt:19:107
+  19:   all {w'=ww,h'=hh,x'=xx,y'=yy,cw'=ccw,ch'=cch,encoded'=ee,limit'=ll,valid'=ok,peak'=(if(ok)value else 0),admitted'=ok and value<=ll}
+                                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT200]: action operators may only read and update state variables, but operator `init` performs temporal operations over variables 'admitted'. Use temporal instead.
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v10/qa/plane-1791278347581345634/plane.qnt:21:9
+  21:  action init=setPlan(800,600,73,73,334,254,1018118,8388608)
+              ^^^^
+
+error: typechecking failed
