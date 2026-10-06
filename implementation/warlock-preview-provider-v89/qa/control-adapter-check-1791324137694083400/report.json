@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "inputs": {
+    "assets/popup-adapter.js": "df9ff18d2c6d9c30e980aa807cd69d74e44214f8b0517c6fd3c2f8be8b3b7d23",
+    "qa/control-adapter-replay.js": "fe66a669e23803e88e97f7de46b18ff42feaa454480e5e7e9a48327c4e76f485",
+    "qa/control-adapter-check.py": "682fa28f70ff3785c73fdadf18409da14b8902d7b5d4a8efe585d0794389c9f6"
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "exitCode": 0,
+  "evidence": {
+    "passed": true,
+    "checks": 10,
+    "nativeAcceptance": false,
+    "fullReleaseAccepted": false,
+    "scope": "Actual popup adapter executed in a Node VM with mock DOM/ports; same-port cleanup-before-readiness order, singleton native rows, lossless ordinals and exhaustion; real WebKit/native delivery remains unqualified."
+  },
+  "artifacts": {
+    "replay.stdout": "f80b1af400405dc95410b0fae4f39f487692f6b0b1b49d07a4426aabc744a668",
+    "replay.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/assets/popup-adapter.js": "df9ff18d2c6d9c30e980aa807cd69d74e44214f8b0517c6fd3c2f8be8b3b7d23",
+    "inputs/qa/control-adapter-replay.js": "fe66a669e23803e88e97f7de46b18ff42feaa454480e5e7e9a48327c4e76f485",
+    "inputs/qa/control-adapter-check.py": "682fa28f70ff3785c73fdadf18409da14b8902d7b5d4a8efe585d0794389c9f6"
+  }
+}

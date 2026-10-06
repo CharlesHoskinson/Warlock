@@ -1,0 +1,16 @@
+
+  retirement_async_tests
+    1) completionBehindSiblingObservation failed after 1 test(s)
+
+  1 failed
+
+  1) completionBehindSiblingObservation:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v89/qa/retirement-refinement-check-1791323918549937291/global-sibling-gate/retirement_async_tests.qnt:3:33
+        3:  action check(ok:bool):bool=all{assert(ok and safety),s'=s}
+                                           ^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xd94c5 --match=completionBehindSiblingObservation to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 retirement_async_tests.qnt

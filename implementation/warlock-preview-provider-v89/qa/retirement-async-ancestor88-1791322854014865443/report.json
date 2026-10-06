@@ -1,0 +1,22 @@
+{
+  "passed": false,
+  "ancestorComponent": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/component-manifest.json",
+  "ancestorSHA256": "90925f111da69d556640cb727ff9d8dd7532db1346ac466d79d8e4534641b271",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v89/qa/retirement-async-replay.js": "7c09457ba1a62e8ca48e88c2f00ff03a57c4e95c8fd52340f8298c61005d8f68",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v89/qa/native-source-fixture.json": "1c0c3b87e773ace53adc79b9b7e8696b32167ee3ea698112b765a03c8e6c1ff1",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v88/qa/build-1791321836134246274/inputs/assets/preview-replay.js": "fb50b0f857a39c0526bebc39c8588142de48ea7b68f0c5af0aa741ce5ce307d5"
+  },
+  "scope": "Additional cross-actor counterexample against held GUI88 compiled package; does not alter its bounded33-control component evidence. New GUI89 source has not been compiled or accepted.",
+  "exitCode": 1,
+  "error": "AssertionError('AssertionError [ERR_ASSERTION]: Exact delayed completion must survive a newer sibling observation\\n    at check (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v89/qa/retirement-async-ancestor88-1791322854014865443/retirement-async-replay.js:6:28)\\n    at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v89/qa/retirement-async-ancestor88-1791322854014865443/retirement-async-replay.js:38:2\\n    at runNextTicks (node:internal/process/task_queues:65:5)\\n    at listOnTimeout (node:internal/timers:644:9)\\n    at process.processTimers (node:internal/timers:618:7)\\n')",
+  "artifacts": {
+    "retirement-async-replay.js": "7c09457ba1a62e8ca48e88c2f00ff03a57c4e95c8fd52340f8298c61005d8f68",
+    "native-source-fixture.json": "1c0c3b87e773ace53adc79b9b7e8696b32167ee3ea698112b765a03c8e6c1ff1",
+    "preview-replay.js": "fb50b0f857a39c0526bebc39c8588142de48ea7b68f0c5af0aa741ce5ce307d5",
+    "replay.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay.stderr": "e7fca746f85c3491fc51d326506ccb129e1a992277a085d45e8a7257946b6d5c"
+  }
+}

@@ -1,0 +1,497 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      begun: 0,
+      delivered: 0,
+      history: [],
+      inFlight: false,
+      offered: 0,
+      ordered: false
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      begun: 0,
+      delivered: 18446744073709551614,
+      history: ["Boundary"],
+      inFlight: false,
+      offered: 0,
+      ordered: true
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      begun: 1,
+      delivered: 18446744073709551614,
+      history: ["Boundary", "BeginMax"],
+      inFlight: true,
+      offered: 18446744073709551615,
+      ordered: true
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      begun: 1,
+      delivered: 18446744073709551614,
+      history: ["Boundary", "BeginMax", "Begin3"],
+      inFlight: true,
+      offered: 18446744073709551615,
+      ordered: true
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      begun: 1,
+      delivered: 18446744073709551614,
+      history: ["Boundary", "BeginMax", "Begin3", "BeginMax"],
+      inFlight: true,
+      offered: 18446744073709551615,
+      ordered: true
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      begun: 1,
+      delivered: 18446744073709551614,
+      history: ["Boundary", "BeginMax", "Begin3", "BeginMax", "Begin1"],
+      inFlight: true,
+      offered: 18446744073709551615,
+      ordered: true
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      begun: 1,
+      delivered: 18446744073709551614,
+      history:
+        ["Boundary", "BeginMax", "Begin3", "BeginMax", "Begin1", "Begin3"],
+      inFlight: true,
+      offered: 18446744073709551615,
+      ordered: true
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      begun: 1,
+      delivered: 18446744073709551614,
+      history:
+        [
+          "Boundary",
+          "BeginMax",
+          "Begin3",
+          "BeginMax",
+          "Begin1",
+          "Begin3",
+          "Wrap"
+        ],
+      inFlight: true,
+      offered: 18446744073709551615,
+      ordered: true
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      begun: 1,
+      delivered: 18446744073709551614,
+      history:
+        [
+          "Boundary",
+          "BeginMax",
+          "Begin3",
+          "BeginMax",
+          "Begin1",
+          "Begin3",
+          "Wrap",
+          "BeginMax"
+        ],
+      inFlight: true,
+      offered: 18446744073709551615,
+      ordered: true
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      begun: 1,
+      delivered: 18446744073709551614,
+      history:
+        [
+          "Boundary",
+          "BeginMax",
+          "Begin3",
+          "BeginMax",
+          "Begin1",
+          "Begin3",
+          "Wrap",
+          "BeginMax",
+          "Begin1"
+        ],
+      inFlight: true,
+      offered: 18446744073709551615,
+      ordered: true
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      begun: 1,
+      delivered: 18446744073709551615,
+      history:
+        [
+          "Boundary",
+          "BeginMax",
+          "Begin3",
+          "BeginMax",
+          "Begin1",
+          "Begin3",
+          "Wrap",
+          "BeginMax",
+          "Begin1",
+          "Finish"
+        ],
+      inFlight: false,
+      offered: 18446744073709551615,
+      ordered: true
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      begun: 1,
+      delivered: 18446744073709551615,
+      history:
+        [
+          "Boundary",
+          "BeginMax",
+          "Begin3",
+          "BeginMax",
+          "Begin1",
+          "Begin3",
+          "Wrap",
+          "BeginMax",
+          "Begin1",
+          "Finish",
+          "Begin3"
+        ],
+      inFlight: false,
+      offered: 18446744073709551615,
+      ordered: true
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      begun: 1,
+      delivered: 18446744073709551615,
+      history:
+        [
+          "Boundary",
+          "BeginMax",
+          "Begin3",
+          "BeginMax",
+          "Begin1",
+          "Begin3",
+          "Wrap",
+          "BeginMax",
+          "Begin1",
+          "Finish",
+          "Begin3",
+          "Begin1"
+        ],
+      inFlight: false,
+      offered: 18446744073709551615,
+      ordered: true
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      begun: 1,
+      delivered: 18446744073709551615,
+      history:
+        [
+          "Boundary",
+          "BeginMax",
+          "Begin3",
+          "BeginMax",
+          "Begin1",
+          "Begin3",
+          "Wrap",
+          "BeginMax",
+          "Begin1",
+          "Finish",
+          "Begin3",
+          "Begin1",
+          "BeginMax"
+        ],
+      inFlight: false,
+      offered: 18446744073709551615,
+      ordered: true
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      begun: 1,
+      delivered: 18446744073709551615,
+      history:
+        [
+          "Boundary",
+          "BeginMax",
+          "Begin3",
+          "BeginMax",
+          "Begin1",
+          "Begin3",
+          "Wrap",
+          "BeginMax",
+          "Begin1",
+          "Finish",
+          "Begin3",
+          "Begin1",
+          "BeginMax",
+          "BeginMax"
+        ],
+      inFlight: false,
+      offered: 18446744073709551615,
+      ordered: true
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      begun: 1,
+      delivered: 18446744073709551615,
+      history:
+        [
+          "Boundary",
+          "BeginMax",
+          "Begin3",
+          "BeginMax",
+          "Begin1",
+          "Begin3",
+          "Wrap",
+          "BeginMax",
+          "Begin1",
+          "Finish",
+          "Begin3",
+          "Begin1",
+          "BeginMax",
+          "BeginMax",
+          "Begin2"
+        ],
+      inFlight: false,
+      offered: 18446744073709551615,
+      ordered: true
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      begun: 1,
+      delivered: 18446744073709551615,
+      history:
+        [
+          "Boundary",
+          "BeginMax",
+          "Begin3",
+          "BeginMax",
+          "Begin1",
+          "Begin3",
+          "Wrap",
+          "BeginMax",
+          "Begin1",
+          "Finish",
+          "Begin3",
+          "Begin1",
+          "BeginMax",
+          "BeginMax",
+          "Begin2",
+          "Begin2"
+        ],
+      inFlight: false,
+      offered: 18446744073709551615,
+      ordered: true
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      begun: 1,
+      delivered: 18446744073709551615,
+      history:
+        [
+          "Boundary",
+          "BeginMax",
+          "Begin3",
+          "BeginMax",
+          "Begin1",
+          "Begin3",
+          "Wrap",
+          "BeginMax",
+          "Begin1",
+          "Finish",
+          "Begin3",
+          "Begin1",
+          "BeginMax",
+          "BeginMax",
+          "Begin2",
+          "Begin2",
+          "BeginMax"
+        ],
+      inFlight: false,
+      offered: 18446744073709551615,
+      ordered: true
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      begun: 1,
+      delivered: 18446744073709551615,
+      history:
+        [
+          "Boundary",
+          "BeginMax",
+          "Begin3",
+          "BeginMax",
+          "Begin1",
+          "Begin3",
+          "Wrap",
+          "BeginMax",
+          "Begin1",
+          "Finish",
+          "Begin3",
+          "Begin1",
+          "BeginMax",
+          "BeginMax",
+          "Begin2",
+          "Begin2",
+          "BeginMax",
+          "Begin2"
+        ],
+      inFlight: false,
+      offered: 18446744073709551615,
+      ordered: true
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      begun: 1,
+      delivered: 18446744073709551615,
+      history:
+        [
+          "Boundary",
+          "BeginMax",
+          "Begin3",
+          "BeginMax",
+          "Begin1",
+          "Begin3",
+          "Wrap",
+          "BeginMax",
+          "Begin1",
+          "Finish",
+          "Begin3",
+          "Begin1",
+          "BeginMax",
+          "BeginMax",
+          "Begin2",
+          "Begin2",
+          "BeginMax",
+          "Begin2",
+          "BeginMax"
+        ],
+      inFlight: false,
+      offered: 18446744073709551615,
+      ordered: true
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      begun: 1,
+      delivered: 18446744073709551615,
+      history:
+        [
+          "Boundary",
+          "BeginMax",
+          "Begin3",
+          "BeginMax",
+          "Begin1",
+          "Begin3",
+          "Wrap",
+          "BeginMax",
+          "Begin1",
+          "Finish",
+          "Begin3",
+          "Begin1",
+          "BeginMax",
+          "BeginMax",
+          "Begin2",
+          "Begin2",
+          "BeginMax",
+          "Begin2",
+          "BeginMax",
+          "Begin1"
+        ],
+      inFlight: false,
+      offered: 18446744073709551615,
+      ordered: true
+    }
+}
+
+[ok] No violation found (124ms at 806 traces/second).
+Trace length statistics: max=21, min=21, average=21.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

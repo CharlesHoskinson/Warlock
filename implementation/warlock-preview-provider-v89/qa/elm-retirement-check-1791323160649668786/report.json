@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v89/qa/elm-retirement-replay.js": "bbf2212ab04ce3983b43881fda6375a5b284f2c2d1208bacf1205f76fb129e77",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v89/qa/native-source-fixture.json": "1c0c3b87e773ace53adc79b9b7e8696b32167ee3ea698112b765a03c8e6c1ff1",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v89/qa/build-1791322926829988529/inputs/assets/preview-replay.js": "0cc06bfc2071b7ae54d3a92586c74c210661a5278701c8f3f4f010984524bfd4"
+  },
+  "scope": "Actual optimized immutable Elm retirement ownership/readiness/anti-replay; native resources and WebKit control continuity remain separate.",
+  "fullBuild": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v89/qa/build-1791322926829988529/report.json",
+    "sha256": "f744e67c897971b6b53b51362bb39f8b815a18e8a30a910accb8689c8987c4bb"
+  },
+  "exitCode": 0,
+  "evidence": {
+    "passed": true,
+    "checks": 33,
+    "nativeAcceptance": false,
+    "fullReleaseAccepted": false,
+    "scope": "Actual optimized full-GUI Elm reducer, retained historical packet and synthetic native retirement facts; no native physical cleanup or ordered WebKit barrier qualification"
+  },
+  "artifacts": {
+    "elm-retirement-replay.js": "bbf2212ab04ce3983b43881fda6375a5b284f2c2d1208bacf1205f76fb129e77",
+    "native-source-fixture.json": "1c0c3b87e773ace53adc79b9b7e8696b32167ee3ea698112b765a03c8e6c1ff1",
+    "preview-replay.js": "0cc06bfc2071b7ae54d3a92586c74c210661a5278701c8f3f4f010984524bfd4",
+    "replay.stdout": "5411322e9b0341d20052e5cfca88cea2cf7ded87381597073b22e1d32b993139",
+    "replay.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

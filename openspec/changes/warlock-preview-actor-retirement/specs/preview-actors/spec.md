@@ -146,3 +146,65 @@ domain; their independent observation sequence counters SHALL NOT be compared.
 - GIVEN an exhausted entry issuance frontier
 - WHEN a new actor is requested
 - THEN issuance refuses without wrap, floor reset or loss of existing cleanup.
+
+### Requirement: WLK-PREVIEW-RETIRE-004 — Retained completion delivery
+
+WHEN the original receiver is ready for a permanently retired actor, the native
+bridge SHALL validate that readiness against its retained exact observation and
+all obligations in WLK-PREVIEW-RETIRE-002. Before committing native removal, it
+SHALL reserve the complete typed final-delivery record without consuming another
+actor slot or abandoning an existing record. A final-delivery ordinal SHALL be
+positive, strictly increasing and independent of native observation/proof IDs.
+Overflow or unavailable record capacity SHALL preserve existing cleanup and
+refuse new issuance without wrap.
+
+WHILE a completion lacks an Elm processing acknowledgment, the bridge SHALL
+retain and retry its byte-identical final fact under the original receiver epoch
+and binding. The Elm owner SHALL acknowledge a new ordinal only after accepting
+that actor's exact completion; duplicate admitted ordinals SHALL produce only
+idempotent transport acknowledgment. Missing ordinals, foreign bindings and
+receiver replacement SHALL never advance the delivery prefix or discard retained
+completion. A transport acknowledgment SHALL NOT confer native resource cleanup,
+terminal Broker acknowledgment or permission to replay an effect. The bounded
+journal SHALL preserve queued completion on interrupted delivery and retain a
+compact nondecreasing acknowledged prefix after removing confirmed records.
+
+WHILE the journal retains an observation or an unacknowledged final completion,
+the imported native owner SHALL remain nonempty and refuse normal close. Physical
+drain alone SHALL NOT discard transport settlement. Final confirmation SHALL
+release only its own retained delivery record; the original physical and terminal
+Broker proof barriers SHALL remain independently required.
+
+#### Scenario: Completion lost after native removal
+- GIVEN validated native cleanup and a retained final-delivery record
+- WHEN the renderer does not receive the first transmission
+- THEN the same ordinal and byte-identical fact remain available for retry.
+
+#### Scenario: Processing acknowledgment lost
+- GIVEN Elm has processed the next exact completion
+- WHEN the original native receiver retries it after losing the acknowledgment
+- THEN Elm repeats the transport acknowledgment without recreating the actor or
+  emitting a cleanup effect.
+
+#### Scenario: Delivery gap or replacement
+- GIVEN a retained completion awaiting its next processing acknowledgment
+- WHEN an acknowledgment skips that ordinal or uses a replaced receiver
+- THEN the prefix and retained record remain unchanged.
+
+#### Scenario: Final record prepared before actor removal
+- GIVEN an exact ready actor and insufficient final-delivery capacity
+- WHEN native removal is attempted
+- THEN every original actor map and cleanup obligation remain available.
+
+#### Scenario: Shared journal stays bounded during turnover
+- GIVEN retained observations and unacknowledged completions
+- WHEN later actors are retired
+- THEN their combined journal occupancy remains within its declared bound and
+  earlier records, delivery ordinals and the acknowledgment prefix never reset.
+
+#### Scenario: Physical drain before final confirmation
+- GIVEN every physical job and terminal Broker proof has settled but the last
+  completion remains unacknowledged
+- WHEN normal native owner close is requested
+- THEN close is refused and the original completion remains retryable until its
+  exact processing acknowledgment arrives.

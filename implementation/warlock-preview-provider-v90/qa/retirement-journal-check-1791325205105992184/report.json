@@ -1,0 +1,153 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "actorTurnoverAccepted": false,
+  "fullReleaseAccepted": false,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/native/client_frame.hpp": "65d1ed6c416b34a43f2d4920001d2da049fb8995b3006475fab1651e97b9a855",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/native/client_import.hpp": "f2a405ce71bf0787e9b8e84d4b10cc47444f385b90ea8f2544972592bb4abc9c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/native/client_producer.hpp": "b93355d804613a68593bfd2447295287ac04c76427007c5772e6244b4c51d990",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/native/demand.hpp": "3b01ba43bc50719509323e98212cbaa49e33b00b5bdf80297da049ac41332ea2",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/native/imported_clients.hpp": "7c1369e9c211a6089e191ac5004fbfb8dd268c91925e1060779524b2ac751550",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/native/preview_broker.hpp": "9c57428130093f8d815b7851004f103897deca278bbe4196e2116bec85a323ed",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/native/preview_client.hpp": "e3db3313aa48370fe77323e2b87ef0745830ffa476d314d00eca2cd64a613657",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/native/preview_delivery.hpp": "20e1a275985c92b6771ee24c5e4ce6a485bd049c8b1cb84c3e47358131435f72",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/native/preview_fd.hpp": "60fa114f7f2eb819c7a09085ee737c23d21b31f0ba177d967ff99f1425272a60",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/native/preview_uri.hpp": "4f02a4035b24584e3be572bc983a059f8f73e20390c2e31afdde088f82161016",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/native/preview_wire.hpp": "2b02108a819e97106cbf38e420871bc4ee10656fd6f98905f25c30fd838d283d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/native/imported_lifecycle.hpp": "1d4efa4daa2753e43a822e3727dc78458941d72d03e4e01a1d041eb7f6bd9ded",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/native/family_source.hpp": "7e936e3f59b5075c364748384282c4e764d85444db2962a885a1ae5a0bf9bb35",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/native/family_style_crop_fd.hpp": "bf59599f5ceeb41381a1fd05fb045c52ec3cf47faf4706c38de8dd595f902a53",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/native/preview_png.hpp": "308007220baf1d7f2ad30569237ffaf7d6427d900ee1243811480402f188e670",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/native/family_frame.hpp": "20ce40ab0080c37e17345cb3d88334eb5dc926a79720ec6faffee8807ae5fe67",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/native/family_producer.hpp": "148240aaf174b3d0f27d8385cd3e93811e48dd8c39b3b65a691fc754c2eebe22",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/native/generated_backdrop_fd.hpp": "3f60c0cffed16e60ec90b8f8365ec3f278d5c8cb41db2ce5b85c4929d018337f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/native/preview_metadata.hpp": "1cf84f1094cd8ccca90fcc5c44bed4182716e256792bb542c771c8bc1ce9ad5e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/native/preview_icons.hpp": "6af2174049d623e824fdcf66ddd3a18d0b48a2c34c7159c1651dc0e4b53d8a32",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/native/imported_admission.hpp": "9cd619f5774d8fb40d712f6f073c00c8c337770e7d173413951fadf3dd321c78",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/native/imported_enrollment.hpp": "970d2e8027dfdbbbb599f3de7d5132b9e7e27e8e0509622e7ae3ad18eeef380e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/native/imported_feedback.hpp": "6760465caf1b6877aadb62776fa050f7a44848cd4a9061ce89fdbac96604b9aa",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/native/preview_retirement.hpp": "b8af8a43d3ca8eeebc8a0b24a9f99b846018db8e17bcb18ea31ffecfed595b0d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/native/imported_subjects.hpp": "03e7bfd41bf4ace363d2f95bb1526515c6c9f8bedc69dffdf71fbae13f56f5ff",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/native/retirement_journal.hpp": "4f0cc61b06c3ea837c8fe25b495b9603661f09fa7ebd5d0d0de85f8a2c545f00",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/qa/retirement-journal-checks.cpp": "effd29e6c9d77d25eb9f949d9c3af1f12fed5af6719de6f5da23f9b9a4c06bef",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/qa/retirement-journal-check.py": "2e0a2ef1e170d6aab82642241eba37e06e91893f174ecd787d88f782bf51a9c5",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v89/native/preview_retirement.hpp": "0014512e1ddfbe05375b2eb9c297077bdbc1873af48af4ba508c0121937111ea"
+  },
+  "commands": [
+    {
+      "name": "flags",
+      "argv": [
+        "pkg-config",
+        "--cflags",
+        "--libs",
+        "gio-unix-2.0",
+        "json-glib-1.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "ancestor-compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-O1",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-DANCESTOR_FLOOR",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v89/native",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/qa/retirement-journal-checks.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/qa/retirement-journal-check-1791325205105992184/ancestor-check",
+        "-I/usr/include/gio-unix-2.0",
+        "-I/usr/include/json-glib-1.0",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-ljson-glib-1.0",
+        "-lgio-2.0",
+        "-lgobject-2.0",
+        "-lglib-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "ancestor-zero-floor",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/qa/retirement-journal-check-1791325205105992184/ancestor-check"
+      ],
+      "exitCode": 1
+    },
+    {
+      "name": "compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-O1",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/native",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/qa/retirement-journal-checks.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/qa/retirement-journal-check-1791325205105992184/checks",
+        "-I/usr/include/gio-unix-2.0",
+        "-I/usr/include/json-glib-1.0",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-ljson-glib-1.0",
+        "-lgio-2.0",
+        "-lgobject-2.0",
+        "-lglib-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "controls",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v90/qa/retirement-journal-check-1791325205105992184/checks"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "scope": "Actual C++ native transport journal: synthetic exact observations/final facts, bounded retained delivery, readiness correlation and original epoch. No physical proof generation, original Broker/Elm coupling, WebKit delivery or native actor-turnover acceptance.",
+  "retainedAncestorZeroFloorFailure": {
+    "source": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v89/native/preview_retirement.hpp",
+    "sha256": "0014512e1ddfbe05375b2eb9c297077bdbc1873af48af4ba508c0121937111ea",
+    "reason": "Positive wire identity"
+  },
+  "evidence": {
+    "passed": true,
+    "checks": 1530,
+    "sequentialCompletions": 280,
+    "nativeAcceptance": false,
+    "actorTurnoverAccepted": false,
+    "fullReleaseAccepted": false
+  },
+  "artifacts": {
+    "flags.stdout": "bb4f11936581edc697d8b764f8b1b5acca5e3a689cd3b48dad6b16e5dce89a66",
+    "flags.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ancestor-check": "e68ddda5a33bff1decad15f549efa5a6035d72662b2d327c06b5cfdc0644b420",
+    "ancestor-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ancestor-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ancestor-zero-floor.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ancestor-zero-floor.stderr": "de21e4f7e6a9ae6041fd6e117da46b6103c326e9300eb38a7dfcd8d01c4e2067",
+    "checks": "5fe7ca764c57f2e237d2dc700df761bd7b6d99875e28f561b6671bab5da99c20",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls.stdout": "75b90412cc8471326bb5935216bd8752d09c8de818e7a1e9ab8b863dc4cd8da0",
+    "controls.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

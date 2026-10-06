@@ -1,0 +1,1072 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      commands: [],
+      cutoff: 0,
+      first: true,
+      fresh: false,
+      history: [],
+      knownFirst: true,
+      pendingFirst: false,
+      pendingSecond: false,
+      readyFirst: false,
+      readySecond: false,
+      second: true
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      commands: [],
+      cutoff: 0,
+      first: true,
+      fresh: false,
+      history: ["OldObservation"],
+      knownFirst: true,
+      pendingFirst: false,
+      pendingSecond: false,
+      readyFirst: false,
+      readySecond: false,
+      second: true
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      commands: [],
+      cutoff: 0,
+      first: true,
+      fresh: false,
+      history: ["OldObservation", "FinalFirst"],
+      knownFirst: true,
+      pendingFirst: false,
+      pendingSecond: false,
+      readyFirst: false,
+      readySecond: false,
+      second: true
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      commands: [],
+      cutoff: 0,
+      first: true,
+      fresh: false,
+      history: ["OldObservation", "FinalFirst", "OldObservation"],
+      knownFirst: true,
+      pendingFirst: false,
+      pendingSecond: false,
+      readyFirst: false,
+      readySecond: false,
+      second: true
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      commands: [],
+      cutoff: 0,
+      first: true,
+      fresh: false,
+      history:
+        ["OldObservation", "FinalFirst", "OldObservation", "PrematureFinal"],
+      knownFirst: true,
+      pendingFirst: false,
+      pendingSecond: false,
+      readyFirst: false,
+      readySecond: false,
+      second: true
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      commands: [],
+      cutoff: 0,
+      first: true,
+      fresh: false,
+      history:
+        [
+          "OldObservation",
+          "FinalFirst",
+          "OldObservation",
+          "PrematureFinal",
+          "ForeignFinal"
+        ],
+      knownFirst: true,
+      pendingFirst: false,
+      pendingSecond: false,
+      readyFirst: false,
+      readySecond: false,
+      second: true
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      commands: [],
+      cutoff: 0,
+      first: true,
+      fresh: false,
+      history:
+        [
+          "OldObservation",
+          "FinalFirst",
+          "OldObservation",
+          "PrematureFinal",
+          "ForeignFinal",
+          "FinalFirst"
+        ],
+      knownFirst: true,
+      pendingFirst: false,
+      pendingSecond: false,
+      readyFirst: false,
+      readySecond: false,
+      second: true
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      commands: [],
+      cutoff: 0,
+      first: true,
+      fresh: false,
+      history:
+        [
+          "OldObservation",
+          "FinalFirst",
+          "OldObservation",
+          "PrematureFinal",
+          "ForeignFinal",
+          "FinalFirst",
+          "PrematureFinal"
+        ],
+      knownFirst: true,
+      pendingFirst: false,
+      pendingSecond: false,
+      readyFirst: false,
+      readySecond: false,
+      second: true
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      commands: ["first:cancel"],
+      cutoff: 0,
+      first: true,
+      fresh: false,
+      history:
+        [
+          "OldObservation",
+          "FinalFirst",
+          "OldObservation",
+          "PrematureFinal",
+          "ForeignFinal",
+          "FinalFirst",
+          "PrematureFinal",
+          "ObserveFirst"
+        ],
+      knownFirst: true,
+      pendingFirst: true,
+      pendingSecond: false,
+      readyFirst: false,
+      readySecond: false,
+      second: true
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      commands: [],
+      cutoff: 0,
+      first: true,
+      fresh: false,
+      history:
+        [
+          "OldObservation",
+          "FinalFirst",
+          "OldObservation",
+          "PrematureFinal",
+          "ForeignFinal",
+          "FinalFirst",
+          "PrematureFinal",
+          "ObserveFirst",
+          "ObserveFirst"
+        ],
+      knownFirst: true,
+      pendingFirst: true,
+      pendingSecond: false,
+      readyFirst: false,
+      readySecond: false,
+      second: true
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      commands: [],
+      cutoff: 0,
+      first: true,
+      fresh: false,
+      history:
+        [
+          "OldObservation",
+          "FinalFirst",
+          "OldObservation",
+          "PrematureFinal",
+          "ForeignFinal",
+          "FinalFirst",
+          "PrematureFinal",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveFirst"
+        ],
+      knownFirst: true,
+      pendingFirst: true,
+      pendingSecond: false,
+      readyFirst: false,
+      readySecond: false,
+      second: true
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      commands: ["second:retire-ready"],
+      cutoff: 0,
+      first: true,
+      fresh: false,
+      history:
+        [
+          "OldObservation",
+          "FinalFirst",
+          "OldObservation",
+          "PrematureFinal",
+          "ForeignFinal",
+          "FinalFirst",
+          "PrematureFinal",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveSecond"
+        ],
+      knownFirst: true,
+      pendingFirst: true,
+      pendingSecond: true,
+      readyFirst: false,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      commands: [],
+      cutoff: 0,
+      first: true,
+      fresh: false,
+      history:
+        [
+          "OldObservation",
+          "FinalFirst",
+          "OldObservation",
+          "PrematureFinal",
+          "ForeignFinal",
+          "FinalFirst",
+          "PrematureFinal",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveSecond",
+          "ForeignFinal"
+        ],
+      knownFirst: true,
+      pendingFirst: true,
+      pendingSecond: true,
+      readyFirst: false,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      commands: [],
+      cutoff: 0,
+      first: true,
+      fresh: false,
+      history:
+        [
+          "OldObservation",
+          "FinalFirst",
+          "OldObservation",
+          "PrematureFinal",
+          "ForeignFinal",
+          "FinalFirst",
+          "PrematureFinal",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveSecond",
+          "ForeignFinal",
+          "ForeignFinal"
+        ],
+      knownFirst: true,
+      pendingFirst: true,
+      pendingSecond: true,
+      readyFirst: false,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      commands: ["first:acknowledge", "first:retire-ready"],
+      cutoff: 0,
+      first: true,
+      fresh: false,
+      history:
+        [
+          "OldObservation",
+          "FinalFirst",
+          "OldObservation",
+          "PrematureFinal",
+          "ForeignFinal",
+          "FinalFirst",
+          "PrematureFinal",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveSecond",
+          "ForeignFinal",
+          "ForeignFinal",
+          "TerminalFirst"
+        ],
+      knownFirst: false,
+      pendingFirst: true,
+      pendingSecond: true,
+      readyFirst: true,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      commands: [],
+      cutoff: 0,
+      first: true,
+      fresh: false,
+      history:
+        [
+          "OldObservation",
+          "FinalFirst",
+          "OldObservation",
+          "PrematureFinal",
+          "ForeignFinal",
+          "FinalFirst",
+          "PrematureFinal",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveSecond",
+          "ForeignFinal",
+          "ForeignFinal",
+          "TerminalFirst",
+          "DuplicateTerminal"
+        ],
+      knownFirst: false,
+      pendingFirst: true,
+      pendingSecond: true,
+      readyFirst: true,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      commands: [],
+      cutoff: 102,
+      first: false,
+      fresh: false,
+      history:
+        [
+          "OldObservation",
+          "FinalFirst",
+          "OldObservation",
+          "PrematureFinal",
+          "ForeignFinal",
+          "FinalFirst",
+          "PrematureFinal",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveSecond",
+          "ForeignFinal",
+          "ForeignFinal",
+          "TerminalFirst",
+          "DuplicateTerminal",
+          "FinalFirst"
+        ],
+      knownFirst: false,
+      pendingFirst: false,
+      pendingSecond: true,
+      readyFirst: false,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      commands: [],
+      cutoff: 102,
+      first: false,
+      fresh: false,
+      history:
+        [
+          "OldObservation",
+          "FinalFirst",
+          "OldObservation",
+          "PrematureFinal",
+          "ForeignFinal",
+          "FinalFirst",
+          "PrematureFinal",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveSecond",
+          "ForeignFinal",
+          "ForeignFinal",
+          "TerminalFirst",
+          "DuplicateTerminal",
+          "FinalFirst",
+          "DuplicateTerminal"
+        ],
+      knownFirst: false,
+      pendingFirst: false,
+      pendingSecond: true,
+      readyFirst: false,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      commands: [],
+      cutoff: 102,
+      first: false,
+      fresh: false,
+      history:
+        [
+          "OldObservation",
+          "FinalFirst",
+          "OldObservation",
+          "PrematureFinal",
+          "ForeignFinal",
+          "FinalFirst",
+          "PrematureFinal",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveSecond",
+          "ForeignFinal",
+          "ForeignFinal",
+          "TerminalFirst",
+          "DuplicateTerminal",
+          "FinalFirst",
+          "DuplicateTerminal",
+          "OldSeedFirst"
+        ],
+      knownFirst: false,
+      pendingFirst: false,
+      pendingSecond: true,
+      readyFirst: false,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      commands: [],
+      cutoff: 102,
+      first: false,
+      fresh: false,
+      history:
+        [
+          "OldObservation",
+          "FinalFirst",
+          "OldObservation",
+          "PrematureFinal",
+          "ForeignFinal",
+          "FinalFirst",
+          "PrematureFinal",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveSecond",
+          "ForeignFinal",
+          "ForeignFinal",
+          "TerminalFirst",
+          "DuplicateTerminal",
+          "FinalFirst",
+          "DuplicateTerminal",
+          "OldSeedFirst",
+          "FinalFirst"
+        ],
+      knownFirst: false,
+      pendingFirst: false,
+      pendingSecond: true,
+      readyFirst: false,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      commands: [],
+      cutoff: 102,
+      first: false,
+      fresh: false,
+      history:
+        [
+          "OldObservation",
+          "FinalFirst",
+          "OldObservation",
+          "PrematureFinal",
+          "ForeignFinal",
+          "FinalFirst",
+          "PrematureFinal",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveSecond",
+          "ForeignFinal",
+          "ForeignFinal",
+          "TerminalFirst",
+          "DuplicateTerminal",
+          "FinalFirst",
+          "DuplicateTerminal",
+          "OldSeedFirst",
+          "FinalFirst",
+          "FinalFirst"
+        ],
+      knownFirst: false,
+      pendingFirst: false,
+      pendingSecond: true,
+      readyFirst: false,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      commands: [],
+      cutoff: 102,
+      first: false,
+      fresh: true,
+      history:
+        [
+          "OldObservation",
+          "FinalFirst",
+          "OldObservation",
+          "PrematureFinal",
+          "ForeignFinal",
+          "FinalFirst",
+          "PrematureFinal",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveSecond",
+          "ForeignFinal",
+          "ForeignFinal",
+          "TerminalFirst",
+          "DuplicateTerminal",
+          "FinalFirst",
+          "DuplicateTerminal",
+          "OldSeedFirst",
+          "FinalFirst",
+          "FinalFirst",
+          "MidSeedFresh"
+        ],
+      knownFirst: false,
+      pendingFirst: false,
+      pendingSecond: true,
+      readyFirst: false,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      commands: [],
+      cutoff: 102,
+      first: false,
+      fresh: true,
+      history:
+        [
+          "OldObservation",
+          "FinalFirst",
+          "OldObservation",
+          "PrematureFinal",
+          "ForeignFinal",
+          "FinalFirst",
+          "PrematureFinal",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveSecond",
+          "ForeignFinal",
+          "ForeignFinal",
+          "TerminalFirst",
+          "DuplicateTerminal",
+          "FinalFirst",
+          "DuplicateTerminal",
+          "OldSeedFirst",
+          "FinalFirst",
+          "FinalFirst",
+          "MidSeedFresh",
+          "FinalFirst"
+        ],
+      knownFirst: false,
+      pendingFirst: false,
+      pendingSecond: true,
+      readyFirst: false,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      commands: [],
+      cutoff: 102,
+      first: false,
+      fresh: true,
+      history:
+        [
+          "OldObservation",
+          "FinalFirst",
+          "OldObservation",
+          "PrematureFinal",
+          "ForeignFinal",
+          "FinalFirst",
+          "PrematureFinal",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveSecond",
+          "ForeignFinal",
+          "ForeignFinal",
+          "TerminalFirst",
+          "DuplicateTerminal",
+          "FinalFirst",
+          "DuplicateTerminal",
+          "OldSeedFirst",
+          "FinalFirst",
+          "FinalFirst",
+          "MidSeedFresh",
+          "FinalFirst",
+          "ForeignFinal"
+        ],
+      knownFirst: false,
+      pendingFirst: false,
+      pendingSecond: true,
+      readyFirst: false,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      commands: [],
+      cutoff: 102,
+      first: false,
+      fresh: true,
+      history:
+        [
+          "OldObservation",
+          "FinalFirst",
+          "OldObservation",
+          "PrematureFinal",
+          "ForeignFinal",
+          "FinalFirst",
+          "PrematureFinal",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveSecond",
+          "ForeignFinal",
+          "ForeignFinal",
+          "TerminalFirst",
+          "DuplicateTerminal",
+          "FinalFirst",
+          "DuplicateTerminal",
+          "OldSeedFirst",
+          "FinalFirst",
+          "FinalFirst",
+          "MidSeedFresh",
+          "FinalFirst",
+          "ForeignFinal",
+          "ObserveSecond"
+        ],
+      knownFirst: false,
+      pendingFirst: false,
+      pendingSecond: true,
+      readyFirst: false,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      commands: [],
+      cutoff: 102,
+      first: false,
+      fresh: true,
+      history:
+        [
+          "OldObservation",
+          "FinalFirst",
+          "OldObservation",
+          "PrematureFinal",
+          "ForeignFinal",
+          "FinalFirst",
+          "PrematureFinal",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveSecond",
+          "ForeignFinal",
+          "ForeignFinal",
+          "TerminalFirst",
+          "DuplicateTerminal",
+          "FinalFirst",
+          "DuplicateTerminal",
+          "OldSeedFirst",
+          "FinalFirst",
+          "FinalFirst",
+          "MidSeedFresh",
+          "FinalFirst",
+          "ForeignFinal",
+          "ObserveSecond",
+          "ObserveFirst"
+        ],
+      knownFirst: false,
+      pendingFirst: false,
+      pendingSecond: true,
+      readyFirst: false,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      commands: [],
+      cutoff: 102,
+      first: false,
+      fresh: true,
+      history:
+        [
+          "OldObservation",
+          "FinalFirst",
+          "OldObservation",
+          "PrematureFinal",
+          "ForeignFinal",
+          "FinalFirst",
+          "PrematureFinal",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveSecond",
+          "ForeignFinal",
+          "ForeignFinal",
+          "TerminalFirst",
+          "DuplicateTerminal",
+          "FinalFirst",
+          "DuplicateTerminal",
+          "OldSeedFirst",
+          "FinalFirst",
+          "FinalFirst",
+          "MidSeedFresh",
+          "FinalFirst",
+          "ForeignFinal",
+          "ObserveSecond",
+          "ObserveFirst",
+          "ObserveFirst"
+        ],
+      knownFirst: false,
+      pendingFirst: false,
+      pendingSecond: true,
+      readyFirst: false,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      commands: [],
+      cutoff: 102,
+      first: false,
+      fresh: true,
+      history:
+        [
+          "OldObservation",
+          "FinalFirst",
+          "OldObservation",
+          "PrematureFinal",
+          "ForeignFinal",
+          "FinalFirst",
+          "PrematureFinal",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveSecond",
+          "ForeignFinal",
+          "ForeignFinal",
+          "TerminalFirst",
+          "DuplicateTerminal",
+          "FinalFirst",
+          "DuplicateTerminal",
+          "OldSeedFirst",
+          "FinalFirst",
+          "FinalFirst",
+          "MidSeedFresh",
+          "FinalFirst",
+          "ForeignFinal",
+          "ObserveSecond",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ForeignFinal"
+        ],
+      knownFirst: false,
+      pendingFirst: false,
+      pendingSecond: true,
+      readyFirst: false,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      commands: [],
+      cutoff: 102,
+      first: false,
+      fresh: true,
+      history:
+        [
+          "OldObservation",
+          "FinalFirst",
+          "OldObservation",
+          "PrematureFinal",
+          "ForeignFinal",
+          "FinalFirst",
+          "PrematureFinal",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveSecond",
+          "ForeignFinal",
+          "ForeignFinal",
+          "TerminalFirst",
+          "DuplicateTerminal",
+          "FinalFirst",
+          "DuplicateTerminal",
+          "OldSeedFirst",
+          "FinalFirst",
+          "FinalFirst",
+          "MidSeedFresh",
+          "FinalFirst",
+          "ForeignFinal",
+          "ObserveSecond",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ForeignFinal",
+          "ObserveSecond"
+        ],
+      knownFirst: false,
+      pendingFirst: false,
+      pendingSecond: true,
+      readyFirst: false,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      commands: [],
+      cutoff: 104,
+      first: false,
+      fresh: true,
+      history:
+        [
+          "OldObservation",
+          "FinalFirst",
+          "OldObservation",
+          "PrematureFinal",
+          "ForeignFinal",
+          "FinalFirst",
+          "PrematureFinal",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveSecond",
+          "ForeignFinal",
+          "ForeignFinal",
+          "TerminalFirst",
+          "DuplicateTerminal",
+          "FinalFirst",
+          "DuplicateTerminal",
+          "OldSeedFirst",
+          "FinalFirst",
+          "FinalFirst",
+          "MidSeedFresh",
+          "FinalFirst",
+          "ForeignFinal",
+          "ObserveSecond",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ForeignFinal",
+          "ObserveSecond",
+          "FinalSecond"
+        ],
+      knownFirst: false,
+      pendingFirst: false,
+      pendingSecond: false,
+      readyFirst: false,
+      readySecond: false,
+      second: false
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      commands: [],
+      cutoff: 104,
+      first: false,
+      fresh: true,
+      history:
+        [
+          "OldObservation",
+          "FinalFirst",
+          "OldObservation",
+          "PrematureFinal",
+          "ForeignFinal",
+          "FinalFirst",
+          "PrematureFinal",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ObserveSecond",
+          "ForeignFinal",
+          "ForeignFinal",
+          "TerminalFirst",
+          "DuplicateTerminal",
+          "FinalFirst",
+          "DuplicateTerminal",
+          "OldSeedFirst",
+          "FinalFirst",
+          "FinalFirst",
+          "MidSeedFresh",
+          "FinalFirst",
+          "ForeignFinal",
+          "ObserveSecond",
+          "ObserveFirst",
+          "ObserveFirst",
+          "ForeignFinal",
+          "ObserveSecond",
+          "FinalSecond",
+          "PrematureFinal"
+        ],
+      knownFirst: false,
+      pendingFirst: false,
+      pendingSecond: false,
+      readyFirst: false,
+      readySecond: false,
+      second: false
+    }
+}
+
+[ok] No violation found (347ms at 865 traces/second).
+Trace length statistics: max=31, min=31, average=31.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

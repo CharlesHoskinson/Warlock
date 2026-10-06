@@ -1,0 +1,14 @@
+
+  retirement_async_tests
+    ok completionBehindSiblingObservation passed 1 test(s)
+    ok completionBehindSiblingCompletion passed 1 test(s)
+    ok pendingJobCannotForget passed 1 test(s)
+    ok foreignCompletionNoAuthority passed 1 test(s)
+    ok ackBeforeReady passed 1 test(s)
+    ok replayedCompletionInert passed 1 test(s)
+    ok olderCompletionCannotRewindCutoff passed 1 test(s)
+    ok freshActorAfterReorderedCompletion passed 1 test(s)
+    ok olderObservationAfterSiblingCompletion passed 1 test(s)
+    ok observationBeforeOwnClockCannotClose passed 1 test(s)
+
+  10 passing (15ms)
