@@ -1,0 +1,17 @@
+
+  retirement_decoder_tests
+    ok freshNativeActive passed 1 test(s)
+    ok laterNativeRetired passed 1 test(s)
+    ok futureZeroFrontier passed 1 test(s)
+    ok foreignBindingRefused passed 1 test(s)
+    ok foreignClockRefused passed 1 test(s)
+    ok wrongRequestRefused passed 1 test(s)
+    ok wrongSubjectRefused passed 1 test(s)
+    ok replayCannotAdvanceCursor passed 1 test(s)
+    ok backwardClockCannotAdvanceCursor passed 1 test(s)
+    ok backwardFrontierCannotAdvanceCursor passed 1 test(s)
+    ok retiredAboveFrontierRefused passed 1 test(s)
+    ok futureBelowFrontierRefused passed 1 test(s)
+    ok unknownStateRefused passed 1 test(s)
+
+  13 passing (15ms)

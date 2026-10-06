@@ -28,10 +28,36 @@ counterexample are held. Fresh GUI91 adds a transport-record close barrier.
 Its actual C/socket pipeline passed14467 controls, including a zero-floor
 unissued actor and280 synthetic subjects with an exact retained neighbor;
 the standalone journal passed1530 controls and280 synthetic completions.
-The full build is undergoing qualification. Native final encoding has an explicit
+The full95 build passed and GUI91 is held. Native final encoding has an explicit
 retained ancestor counterexample for a valid zero request floor.
 
+GUI92 adds explicit original-binding retained-channel activation, strict typed
+completion wrappers, an immutable contiguous processing prefix and exact transport
+acknowledgment. Repeated activation cannot reset the prefix; an active channel
+refuses bare legacy completion. Forty-five compiled controls passed. Fourteen
+explicitly selected Quint scenarios and300 bounded invariant samples produced34
+coupled actual Elm traces and667 state/command comparisons. Three precise model
+mutants and three separately compiled Elm mutants are detected.
+
+The actual C/socket/native/Elm round trip passed18 frontend and30 C checks:
+original native request/cancellation, real terminal proof/ACK before readiness,
+lost final delivery, lost processing ACK, retained neighbor/counter and normal
+close only after final confirmation. This uses a synthetic authenticated native
+peer and untouched reservations. Earlier fixture compilation and repeated-request
+premise failures are retained. GUI92 full95 and all original12 regression suites
+passed. Native128 qualifies the current assets on unchanged core16/plugin18 with
+2466 checks,277 normal exits and full cleanup, preserving2458 original126 fixed
+controls and allocator/expiry oracles. Failed127 preflight metadata references
+remain held; it launched no native campaign.
+
+Fresh GUI93 retains validated readiness in the same native transport row while
+physical/proof/receiver barriers block aggregate removal. Its poll path rechecks
+the original barriers without another Elm readiness emission. Compilation and
+the actual retained-readiness C/native/Elm fixture are being qualified; this
+mutable source does not inherit completed acceptance.
+
 These are bounded qualifications. Native observation/readiness/final
-completion routing through Elm and the actual host, captured physical retirement
+completion routing through the actual WebKit host, reliable outgoing transport,
+captured physical retirement
 and real continuing native/Elm turnover beyond256 remain open. The original
 GUI release gates and ordinary capture eligibility remain unchanged.

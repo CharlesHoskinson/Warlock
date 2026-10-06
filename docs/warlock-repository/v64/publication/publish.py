@@ -1,0 +1,53 @@
+"""Publish only committed owner paths over the existing GitHub history."""
+import hashlib,json,os,pathlib,subprocess,tempfile,argparse
+REPO=pathlib.Path('/home/hoskinson/omarchy-windows-parity');MIRROR=pathlib.Path('/home/hoskinson/omarchy-windows-parity-github.git');OUT=pathlib.Path(__file__).resolve().parent
+parser=argparse.ArgumentParser();parser.add_argument('--source-commit',required=True);args=parser.parse_args()
+BASE='bc6dfc11c5efcf9447fb325d678a2e4b7aed4afa';BRANCH='refs/heads/feature/elm';COMMITS=[]
+def source(args,**kw):return subprocess.check_output(['git',*args],cwd=REPO,**kw)
+def mirror(args,**kw):return subprocess.check_output(['git','--git-dir='+str(MIRROR),*args],**kw)
+head=source(['rev-parse',args.source_commit],text=True).strip();paths=set();COMMITS=source(['rev-list','--reverse','50d42b2b6bdd0f11c19d071e2847f5fce46cb3bf..'+head],text=True).splitlines()
+for commit in COMMITS:paths.update(source(['diff-tree','--no-commit-id','--name-only','-r',commit],text=True).splitlines())
+allowed=('docs/warlock-preview/v91/', 'docs/warlock-repository/v63/publication/', 'docs/warlock-repository/v64/publication/', 'implementation/warlock-preview-provider-v91/', 'implementation/warlock-preview-provider-v92/', 'implementation/warlock-client-provider-native-v127/', 'implementation/warlock-client-provider-native-v128/', 'openspec/changes/warlock-preview-actor-retirement/tasks.md', 'openspec/changes/warlock-preview-actor-retirement/specs/preview-actors/spec.md')
+assert all(p.startswith(allowed) or (p.startswith('docs/elm-roadmap/delivery/build-loop-events/') and '--f6779148-8f5d-4bdf-8a0f-044184e486f2--' in p) for p in paths)
+actual=source(['ls-remote','github',BRANCH],text=True).split()[0];assert actual==BASE
+assert mirror(['rev-parse',BRANCH],text=True).strip()==BASE
+def tree_rows(call,commit,paths):
+ ordered=sorted(paths)
+ for offset in range(0,len(ordered),400):
+  yield from call(['ls-tree','-rz',commit,'--',*ordered[offset:offset+400]]).split(b'\0')
+rows=[]
+for line in tree_rows(source,head,paths):
+ if not line:continue
+ metadata,name=line.split(b'\t',1);mode,kind,oid=metadata.decode().split();assert kind=='blob';rows.append({'path':name.decode(),'mode':mode,'gitBlob':oid})
+assert {r['path'] for r in rows}==paths
+index_fd,index=tempfile.mkstemp(prefix='warlock-publish-index-');os.close(index_fd);os.unlink(index);env=dict(os.environ,GIT_INDEX_FILE=index)
+try:
+ mirror(['read-tree',BASE],env=env)
+ batch=subprocess.Popen(['git','cat-file','--batch'],cwd=REPO,stdin=subprocess.PIPE,stdout=subprocess.PIPE)
+ try:
+  for n,row in enumerate(rows,1):
+   batch.stdin.write((row['gitBlob']+'\n').encode());batch.stdin.flush();header=batch.stdout.readline().decode().split();assert header[:2]==[row['gitBlob'],'blob'];size=int(header[2]);assert size<100*1024*1024
+   content=batch.stdout.read(size);assert len(content)==size and batch.stdout.read(1)==b'\n';oid=mirror(['hash-object','-w','--stdin'],input=content).decode().strip();assert oid==row['gitBlob'];row['bytes']=size;row['sha256']=hashlib.sha256(content).hexdigest()
+   if n%500==0:print('Imported exact owner blobs',n,flush=True)
+ finally:
+  batch.stdin.close();assert batch.wait()==0
+ update=''.join(r['mode']+' '+r['gitBlob']+'\t'+r['path']+'\n' for r in rows).encode();mirror(['update-index','--index-info'],input=update,env=env)
+ tree=mirror(['write-tree'],env=env).decode().strip()
+ qualification=json.loads((REPO/'docs/warlock-preview/v91/report.json').read_text());assert qualification['passed'] and qualification['nativeChecks']==2466 and qualification['normalOwnedExits']==277 and qualification['prior126FixedOrderedControls']==2458 and qualification['retainedDeliveryScenarios']==14 and qualification['retainedDeliveryTraces']==34 and qualification['retainedDeliveryStates']==667 and qualification['unsafeRetainedDeliveryElmMutants']==3 and qualification['retainedNativeElmControls']==48 and not qualification['nativeAcceptance'] and not qualification['fullReleaseAccepted']
+ message='Qualify retained native completion processing in immutable Elm\n\nHeld GUI91 fixes loss of unconfirmed completion on close and zero-floor encoding: full95, Csocket14467 and standalone1530 controls. Current held GUI92/native128 on exact unchanged core16/plugin18 passes2466 checks/277 normal exits and full cleanup, preserving2458 original126 fixed controls and original allocator/expiry oracles. GUI92 full95/all original12/legacy retirement and control regressions pass. Explicit original-binding retained-channel activation, strict final wrappers, compact contiguous Elm processing prefix and transport ACK reject gap/foreign/premature/legacy downgrade and never reset. Forty-five compiled controls,14 selected Quint scenarios/34 actual optimized Elm traces/667 state-command comparisons, three exact model and three separately compiled Elm mutants pass. The actual C/socket/native/Elm round trip passes48 controls with original cancellation/proof ACK before readiness, lost final delivery and processing ACK, retained neighbor/counter, close barrier and normal exit. Synthetic native peer and untouched reservations are scoped separately from real WebKit/physical/native turnover. Preserve fixture failures and held127 preflight metadata failure without native launch. Mutable GUI93 readiness/poll work is excluded; additive contracts do not qualify it. Actual reliable outgoing host transport, WebKit retirement routing, captured resources, continuing >256 real windows, ordinary capture and all original GUI release gates remain open.\n'
+
+ published=mirror(['commit-tree',tree,'-p',BASE],input=message.encode()).decode().strip()
+ verified={}
+ for line in tree_rows(mirror,published,paths):
+  if not line:continue
+  metadata,name=line.split(b'\t',1);mode,kind,oid=metadata.decode().split();verified[name.decode()]=(mode,oid)
+ assert len(verified)==len(rows) and all(verified[r['path']]==(r['mode'],r['gitBlob']) for r in rows)
+ receipt={'schema':1,'repository':'https://github.com/CharlesHoskinson/Warlock','branch':'feature/elm','sourceCommits':COMMITS,'sourceCommit':head,'priorPublication':BASE,'publishedCommit':published,'ownedFiles':len(rows),'inventory':rows,'nativeAcceptance':False,'fullReleaseAccepted':False,'providerComponentImplemented':True,'pushCompleted':False}
+ (OUT/'prepared.json').write_text(json.dumps(receipt,indent=2)+'\n')
+ mirror(['update-ref',BRANCH,published,BASE]);result=subprocess.run(['git','--git-dir='+str(MIRROR),'-c','http.postBuffer=268435456','-c','http.version=HTTP/1.1','push','origin',BRANCH+':'+BRANCH],capture_output=True,text=True,timeout=180)
+ (OUT/'push.stdout').write_text(result.stdout);(OUT/'push.stderr').write_text(result.stderr);receipt['gitPushExitCode']=result.returncode
+ if result.returncode:raise RuntimeError('Push failed; retain prepared evidence and inspect remote without force')
+ observed=source(['ls-remote','github',BRANCH],text=True).split()[0];assert observed==published;receipt.update(pushCompleted=True,remoteObserved=observed)
+ (OUT/'delivery.json').write_text(json.dumps(receipt,indent=2)+'\n');print(json.dumps({'publishedCommit':published,'ownerFiles':len(rows),'remoteVerified':True}),flush=True)
+finally:
+ if os.path.exists(index):os.unlink(index)

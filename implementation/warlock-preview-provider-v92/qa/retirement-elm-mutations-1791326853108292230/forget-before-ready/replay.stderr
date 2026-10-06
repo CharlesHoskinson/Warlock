@@ -1,0 +1,22 @@
+AssertionError [ERR_ASSERTION]: named-pendingJobCannotForget-2.itf.json step 2 FinalFirst
++ actual - expected
+
+  {
+    commands: [],
++   first: false,
+-   first: true,
+    fresh: false,
++   knownFirst: false,
++   pendingFirst: false,
+-   knownFirst: true,
+-   pendingFirst: true,
+    pendingSecond: false,
+    readyFirst: false,
+    readySecond: false,
+    second: true
+  }
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v92/qa/retirement-refinement-replay.js:37:11
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)

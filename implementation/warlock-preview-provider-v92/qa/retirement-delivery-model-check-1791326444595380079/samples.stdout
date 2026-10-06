@@ -1,0 +1,1103 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      channel: false,
+      commands: [],
+      cutoff: 0,
+      first: true,
+      history: [],
+      knownFirst: true,
+      pendingFirst: false,
+      pendingSecond: false,
+      processed: 0,
+      readyFirst: false,
+      readySecond: false,
+      second: true
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      channel: false,
+      commands: ["second:retire-ready"],
+      cutoff: 0,
+      first: true,
+      history: ["ObserveSecond"],
+      knownFirst: true,
+      pendingFirst: false,
+      pendingSecond: true,
+      processed: 0,
+      readyFirst: false,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      channel: false,
+      commands: [],
+      cutoff: 0,
+      first: true,
+      history: ["ObserveSecond", "DeliverFirst2"],
+      knownFirst: true,
+      pendingFirst: false,
+      pendingSecond: true,
+      processed: 0,
+      readyFirst: false,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      channel: false,
+      commands: [],
+      cutoff: 0,
+      first: true,
+      history: ["ObserveSecond", "DeliverFirst2", "DeliverFirst2"],
+      knownFirst: true,
+      pendingFirst: false,
+      pendingSecond: true,
+      processed: 0,
+      readyFirst: false,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      channel: false,
+      commands: ["first:cancel"],
+      cutoff: 0,
+      first: true,
+      history:
+        ["ObserveSecond", "DeliverFirst2", "DeliverFirst2", "ObserveFirst"],
+      knownFirst: true,
+      pendingFirst: true,
+      pendingSecond: true,
+      processed: 0,
+      readyFirst: false,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      channel: false,
+      commands: [],
+      cutoff: 0,
+      first: true,
+      history:
+        [
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverFirst2",
+          "ObserveFirst",
+          "GapFirst3"
+        ],
+      knownFirst: true,
+      pendingFirst: true,
+      pendingSecond: true,
+      processed: 0,
+      readyFirst: false,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      channel: false,
+      commands: [],
+      cutoff: 0,
+      first: true,
+      history:
+        [
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverFirst2",
+          "ObserveFirst",
+          "GapFirst3",
+          "ObserveSecond"
+        ],
+      knownFirst: true,
+      pendingFirst: true,
+      pendingSecond: true,
+      processed: 0,
+      readyFirst: false,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      channel: false,
+      commands: [],
+      cutoff: 0,
+      first: true,
+      history:
+        [
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverFirst2",
+          "ObserveFirst",
+          "GapFirst3",
+          "ObserveSecond",
+          "ForeignFirst1"
+        ],
+      knownFirst: true,
+      pendingFirst: true,
+      pendingSecond: true,
+      processed: 0,
+      readyFirst: false,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      channel: false,
+      commands: [],
+      cutoff: 0,
+      first: true,
+      history:
+        [
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverFirst2",
+          "ObserveFirst",
+          "GapFirst3",
+          "ObserveSecond",
+          "ForeignFirst1",
+          "ObserveFirst"
+        ],
+      knownFirst: true,
+      pendingFirst: true,
+      pendingSecond: true,
+      processed: 0,
+      readyFirst: false,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      channel: false,
+      commands: [],
+      cutoff: 0,
+      first: true,
+      history:
+        [
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverFirst2",
+          "ObserveFirst",
+          "GapFirst3",
+          "ObserveSecond",
+          "ForeignFirst1",
+          "ObserveFirst",
+          "GapFirst3"
+        ],
+      knownFirst: true,
+      pendingFirst: true,
+      pendingSecond: true,
+      processed: 0,
+      readyFirst: false,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      channel: false,
+      commands: [],
+      cutoff: 0,
+      first: true,
+      history:
+        [
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverFirst2",
+          "ObserveFirst",
+          "GapFirst3",
+          "ObserveSecond",
+          "ForeignFirst1",
+          "ObserveFirst",
+          "GapFirst3",
+          "DeliverSecond2"
+        ],
+      knownFirst: true,
+      pendingFirst: true,
+      pendingSecond: true,
+      processed: 0,
+      readyFirst: false,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      channel: false,
+      commands: [],
+      cutoff: 0,
+      first: true,
+      history:
+        [
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverFirst2",
+          "ObserveFirst",
+          "GapFirst3",
+          "ObserveSecond",
+          "ForeignFirst1",
+          "ObserveFirst",
+          "GapFirst3",
+          "DeliverSecond2",
+          "DeliverSecond1"
+        ],
+      knownFirst: true,
+      pendingFirst: true,
+      pendingSecond: true,
+      processed: 0,
+      readyFirst: false,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      channel: false,
+      commands: [],
+      cutoff: 0,
+      first: true,
+      history:
+        [
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverFirst2",
+          "ObserveFirst",
+          "GapFirst3",
+          "ObserveSecond",
+          "ForeignFirst1",
+          "ObserveFirst",
+          "GapFirst3",
+          "DeliverSecond2",
+          "DeliverSecond1",
+          "Activate"
+        ],
+      knownFirst: true,
+      pendingFirst: true,
+      pendingSecond: true,
+      processed: 0,
+      readyFirst: false,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      channel: false,
+      commands: ["first:acknowledge", "first:retire-ready"],
+      cutoff: 0,
+      first: true,
+      history:
+        [
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverFirst2",
+          "ObserveFirst",
+          "GapFirst3",
+          "ObserveSecond",
+          "ForeignFirst1",
+          "ObserveFirst",
+          "GapFirst3",
+          "DeliverSecond2",
+          "DeliverSecond1",
+          "Activate",
+          "TerminalFirst"
+        ],
+      knownFirst: false,
+      pendingFirst: true,
+      pendingSecond: true,
+      processed: 0,
+      readyFirst: true,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      channel: false,
+      commands: [],
+      cutoff: 0,
+      first: true,
+      history:
+        [
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverFirst2",
+          "ObserveFirst",
+          "GapFirst3",
+          "ObserveSecond",
+          "ForeignFirst1",
+          "ObserveFirst",
+          "GapFirst3",
+          "DeliverSecond2",
+          "DeliverSecond1",
+          "Activate",
+          "TerminalFirst",
+          "DeliverFirst1"
+        ],
+      knownFirst: false,
+      pendingFirst: true,
+      pendingSecond: true,
+      processed: 0,
+      readyFirst: true,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      channel: false,
+      commands: [],
+      cutoff: 0,
+      first: true,
+      history:
+        [
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverFirst2",
+          "ObserveFirst",
+          "GapFirst3",
+          "ObserveSecond",
+          "ForeignFirst1",
+          "ObserveFirst",
+          "GapFirst3",
+          "DeliverSecond2",
+          "DeliverSecond1",
+          "Activate",
+          "TerminalFirst",
+          "DeliverFirst1",
+          "Replacement"
+        ],
+      knownFirst: false,
+      pendingFirst: true,
+      pendingSecond: true,
+      processed: 0,
+      readyFirst: true,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      channel: false,
+      commands: [],
+      cutoff: 0,
+      first: true,
+      history:
+        [
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverFirst2",
+          "ObserveFirst",
+          "GapFirst3",
+          "ObserveSecond",
+          "ForeignFirst1",
+          "ObserveFirst",
+          "GapFirst3",
+          "DeliverSecond2",
+          "DeliverSecond1",
+          "Activate",
+          "TerminalFirst",
+          "DeliverFirst1",
+          "Replacement",
+          "DeliverFirst1"
+        ],
+      knownFirst: false,
+      pendingFirst: true,
+      pendingSecond: true,
+      processed: 0,
+      readyFirst: true,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      channel: false,
+      commands: [],
+      cutoff: 0,
+      first: true,
+      history:
+        [
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverFirst2",
+          "ObserveFirst",
+          "GapFirst3",
+          "ObserveSecond",
+          "ForeignFirst1",
+          "ObserveFirst",
+          "GapFirst3",
+          "DeliverSecond2",
+          "DeliverSecond1",
+          "Activate",
+          "TerminalFirst",
+          "DeliverFirst1",
+          "Replacement",
+          "DeliverFirst1",
+          "ObserveSecond"
+        ],
+      knownFirst: false,
+      pendingFirst: true,
+      pendingSecond: true,
+      processed: 0,
+      readyFirst: true,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      channel: false,
+      commands: [],
+      cutoff: 0,
+      first: true,
+      history:
+        [
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverFirst2",
+          "ObserveFirst",
+          "GapFirst3",
+          "ObserveSecond",
+          "ForeignFirst1",
+          "ObserveFirst",
+          "GapFirst3",
+          "DeliverSecond2",
+          "DeliverSecond1",
+          "Activate",
+          "TerminalFirst",
+          "DeliverFirst1",
+          "Replacement",
+          "DeliverFirst1",
+          "ObserveSecond",
+          "DeliverFirst2"
+        ],
+      knownFirst: false,
+      pendingFirst: true,
+      pendingSecond: true,
+      processed: 0,
+      readyFirst: true,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      channel: false,
+      commands: [],
+      cutoff: 0,
+      first: true,
+      history:
+        [
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverFirst2",
+          "ObserveFirst",
+          "GapFirst3",
+          "ObserveSecond",
+          "ForeignFirst1",
+          "ObserveFirst",
+          "GapFirst3",
+          "DeliverSecond2",
+          "DeliverSecond1",
+          "Activate",
+          "TerminalFirst",
+          "DeliverFirst1",
+          "Replacement",
+          "DeliverFirst1",
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverSecond2"
+        ],
+      knownFirst: false,
+      pendingFirst: true,
+      pendingSecond: true,
+      processed: 0,
+      readyFirst: true,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      channel: false,
+      commands: [],
+      cutoff: 0,
+      first: true,
+      history:
+        [
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverFirst2",
+          "ObserveFirst",
+          "GapFirst3",
+          "ObserveSecond",
+          "ForeignFirst1",
+          "ObserveFirst",
+          "GapFirst3",
+          "DeliverSecond2",
+          "DeliverSecond1",
+          "Activate",
+          "TerminalFirst",
+          "DeliverFirst1",
+          "Replacement",
+          "DeliverFirst1",
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverSecond2",
+          "ForeignFirst1"
+        ],
+      knownFirst: false,
+      pendingFirst: true,
+      pendingSecond: true,
+      processed: 0,
+      readyFirst: true,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      channel: false,
+      commands: [],
+      cutoff: 0,
+      first: true,
+      history:
+        [
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverFirst2",
+          "ObserveFirst",
+          "GapFirst3",
+          "ObserveSecond",
+          "ForeignFirst1",
+          "ObserveFirst",
+          "GapFirst3",
+          "DeliverSecond2",
+          "DeliverSecond1",
+          "Activate",
+          "TerminalFirst",
+          "DeliverFirst1",
+          "Replacement",
+          "DeliverFirst1",
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverSecond2",
+          "ForeignFirst1",
+          "ForeignFirst1"
+        ],
+      knownFirst: false,
+      pendingFirst: true,
+      pendingSecond: true,
+      processed: 0,
+      readyFirst: true,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      channel: false,
+      commands: [],
+      cutoff: 0,
+      first: true,
+      history:
+        [
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverFirst2",
+          "ObserveFirst",
+          "GapFirst3",
+          "ObserveSecond",
+          "ForeignFirst1",
+          "ObserveFirst",
+          "GapFirst3",
+          "DeliverSecond2",
+          "DeliverSecond1",
+          "Activate",
+          "TerminalFirst",
+          "DeliverFirst1",
+          "Replacement",
+          "DeliverFirst1",
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverSecond2",
+          "ForeignFirst1",
+          "ForeignFirst1",
+          "DeliverSecond1"
+        ],
+      knownFirst: false,
+      pendingFirst: true,
+      pendingSecond: true,
+      processed: 0,
+      readyFirst: true,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      channel: false,
+      commands: [],
+      cutoff: 0,
+      first: true,
+      history:
+        [
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverFirst2",
+          "ObserveFirst",
+          "GapFirst3",
+          "ObserveSecond",
+          "ForeignFirst1",
+          "ObserveFirst",
+          "GapFirst3",
+          "DeliverSecond2",
+          "DeliverSecond1",
+          "Activate",
+          "TerminalFirst",
+          "DeliverFirst1",
+          "Replacement",
+          "DeliverFirst1",
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverSecond2",
+          "ForeignFirst1",
+          "ForeignFirst1",
+          "DeliverSecond1",
+          "ObserveSecond"
+        ],
+      knownFirst: false,
+      pendingFirst: true,
+      pendingSecond: true,
+      processed: 0,
+      readyFirst: true,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      channel: false,
+      commands: [],
+      cutoff: 0,
+      first: true,
+      history:
+        [
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverFirst2",
+          "ObserveFirst",
+          "GapFirst3",
+          "ObserveSecond",
+          "ForeignFirst1",
+          "ObserveFirst",
+          "GapFirst3",
+          "DeliverSecond2",
+          "DeliverSecond1",
+          "Activate",
+          "TerminalFirst",
+          "DeliverFirst1",
+          "Replacement",
+          "DeliverFirst1",
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverSecond2",
+          "ForeignFirst1",
+          "ForeignFirst1",
+          "DeliverSecond1",
+          "ObserveSecond",
+          "DeliverSecond1"
+        ],
+      knownFirst: false,
+      pendingFirst: true,
+      pendingSecond: true,
+      processed: 0,
+      readyFirst: true,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      channel: false,
+      commands: [],
+      cutoff: 0,
+      first: true,
+      history:
+        [
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverFirst2",
+          "ObserveFirst",
+          "GapFirst3",
+          "ObserveSecond",
+          "ForeignFirst1",
+          "ObserveFirst",
+          "GapFirst3",
+          "DeliverSecond2",
+          "DeliverSecond1",
+          "Activate",
+          "TerminalFirst",
+          "DeliverFirst1",
+          "Replacement",
+          "DeliverFirst1",
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverSecond2",
+          "ForeignFirst1",
+          "ForeignFirst1",
+          "DeliverSecond1",
+          "ObserveSecond",
+          "DeliverSecond1",
+          "DeliverSecond2"
+        ],
+      knownFirst: false,
+      pendingFirst: true,
+      pendingSecond: true,
+      processed: 0,
+      readyFirst: true,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      channel: false,
+      commands: [],
+      cutoff: 0,
+      first: true,
+      history:
+        [
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverFirst2",
+          "ObserveFirst",
+          "GapFirst3",
+          "ObserveSecond",
+          "ForeignFirst1",
+          "ObserveFirst",
+          "GapFirst3",
+          "DeliverSecond2",
+          "DeliverSecond1",
+          "Activate",
+          "TerminalFirst",
+          "DeliverFirst1",
+          "Replacement",
+          "DeliverFirst1",
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverSecond2",
+          "ForeignFirst1",
+          "ForeignFirst1",
+          "DeliverSecond1",
+          "ObserveSecond",
+          "DeliverSecond1",
+          "DeliverSecond2",
+          "DuplicateTerminal"
+        ],
+      knownFirst: false,
+      pendingFirst: true,
+      pendingSecond: true,
+      processed: 0,
+      readyFirst: true,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      channel: false,
+      commands: [],
+      cutoff: 0,
+      first: true,
+      history:
+        [
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverFirst2",
+          "ObserveFirst",
+          "GapFirst3",
+          "ObserveSecond",
+          "ForeignFirst1",
+          "ObserveFirst",
+          "GapFirst3",
+          "DeliverSecond2",
+          "DeliverSecond1",
+          "Activate",
+          "TerminalFirst",
+          "DeliverFirst1",
+          "Replacement",
+          "DeliverFirst1",
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverSecond2",
+          "ForeignFirst1",
+          "ForeignFirst1",
+          "DeliverSecond1",
+          "ObserveSecond",
+          "DeliverSecond1",
+          "DeliverSecond2",
+          "DuplicateTerminal",
+          "Replacement"
+        ],
+      knownFirst: false,
+      pendingFirst: true,
+      pendingSecond: true,
+      processed: 0,
+      readyFirst: true,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      channel: false,
+      commands: [],
+      cutoff: 0,
+      first: true,
+      history:
+        [
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverFirst2",
+          "ObserveFirst",
+          "GapFirst3",
+          "ObserveSecond",
+          "ForeignFirst1",
+          "ObserveFirst",
+          "GapFirst3",
+          "DeliverSecond2",
+          "DeliverSecond1",
+          "Activate",
+          "TerminalFirst",
+          "DeliverFirst1",
+          "Replacement",
+          "DeliverFirst1",
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverSecond2",
+          "ForeignFirst1",
+          "ForeignFirst1",
+          "DeliverSecond1",
+          "ObserveSecond",
+          "DeliverSecond1",
+          "DeliverSecond2",
+          "DuplicateTerminal",
+          "Replacement",
+          "DeliverSecond1"
+        ],
+      knownFirst: false,
+      pendingFirst: true,
+      pendingSecond: true,
+      processed: 0,
+      readyFirst: true,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      channel: false,
+      commands: [],
+      cutoff: 0,
+      first: true,
+      history:
+        [
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverFirst2",
+          "ObserveFirst",
+          "GapFirst3",
+          "ObserveSecond",
+          "ForeignFirst1",
+          "ObserveFirst",
+          "GapFirst3",
+          "DeliverSecond2",
+          "DeliverSecond1",
+          "Activate",
+          "TerminalFirst",
+          "DeliverFirst1",
+          "Replacement",
+          "DeliverFirst1",
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverSecond2",
+          "ForeignFirst1",
+          "ForeignFirst1",
+          "DeliverSecond1",
+          "ObserveSecond",
+          "DeliverSecond1",
+          "DeliverSecond2",
+          "DuplicateTerminal",
+          "Replacement",
+          "DeliverSecond1",
+          "DeliverFirst1"
+        ],
+      knownFirst: false,
+      pendingFirst: true,
+      pendingSecond: true,
+      processed: 0,
+      readyFirst: true,
+      readySecond: true,
+      second: true
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      channel: false,
+      commands: [],
+      cutoff: 102,
+      first: false,
+      history:
+        [
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverFirst2",
+          "ObserveFirst",
+          "GapFirst3",
+          "ObserveSecond",
+          "ForeignFirst1",
+          "ObserveFirst",
+          "GapFirst3",
+          "DeliverSecond2",
+          "DeliverSecond1",
+          "Activate",
+          "TerminalFirst",
+          "DeliverFirst1",
+          "Replacement",
+          "DeliverFirst1",
+          "ObserveSecond",
+          "DeliverFirst2",
+          "DeliverSecond2",
+          "ForeignFirst1",
+          "ForeignFirst1",
+          "DeliverSecond1",
+          "ObserveSecond",
+          "DeliverSecond1",
+          "DeliverSecond2",
+          "DuplicateTerminal",
+          "Replacement",
+          "DeliverSecond1",
+          "DeliverFirst1",
+          "LegacyFirst"
+        ],
+      knownFirst: false,
+      pendingFirst: false,
+      pendingSecond: true,
+      processed: 0,
+      readyFirst: false,
+      readySecond: true,
+      second: true
+    }
+}
+
+[ok] No violation found (395ms at 759 traces/second).
+Trace length statistics: max=31, min=31, average=31.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

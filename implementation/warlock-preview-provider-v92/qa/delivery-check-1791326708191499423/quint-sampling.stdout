@@ -1,0 +1,1097 @@
+An example execution:
+
+[State 0]
+{ s: { admitted: false, history: [], new: 0, old: 0, receiver: true } }
+
+[State 1]
+{
+  s: { admitted: false, history: ["CancelNew"], new: 1, old: 0, receiver: true }
+}
+
+[State 2]
+{
+  s:
+    {
+      admitted: false,
+      history: ["CancelNew", "CancelOld"],
+      new: 1,
+      old: 1,
+      receiver: true
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      admitted: false,
+      history: ["CancelNew", "CancelOld", "CloseOld"],
+      new: 1,
+      old: 2,
+      receiver: true
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      admitted: false,
+      history: ["CancelNew", "CancelOld", "CloseOld", "FenceOld"],
+      new: 1,
+      old: 3,
+      receiver: true
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      admitted: false,
+      history: ["CancelNew", "CancelOld", "CloseOld", "FenceOld", "CloseNew"],
+      new: 2,
+      old: 3,
+      receiver: true
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      admitted: false,
+      history:
+        [
+          "CancelNew",
+          "CancelOld",
+          "CloseOld",
+          "FenceOld",
+          "CloseNew",
+          "DestroyOld"
+        ],
+      new: 2,
+      old: 4,
+      receiver: true
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      admitted: false,
+      history:
+        [
+          "CancelNew",
+          "CancelOld",
+          "CloseOld",
+          "FenceOld",
+          "CloseNew",
+          "DestroyOld",
+          "FenceNew"
+        ],
+      new: 3,
+      old: 4,
+      receiver: true
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      admitted: false,
+      history:
+        [
+          "CancelNew",
+          "CancelOld",
+          "CloseOld",
+          "FenceOld",
+          "CloseNew",
+          "DestroyOld",
+          "FenceNew",
+          "WrongPopup"
+        ],
+      new: 3,
+      old: 4,
+      receiver: true
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      admitted: false,
+      history:
+        [
+          "CancelNew",
+          "CancelOld",
+          "CloseOld",
+          "FenceOld",
+          "CloseNew",
+          "DestroyOld",
+          "FenceNew",
+          "WrongPopup",
+          "DestroyNew"
+        ],
+      new: 4,
+      old: 4,
+      receiver: true
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      admitted: false,
+      history:
+        [
+          "CancelNew",
+          "CancelOld",
+          "CloseOld",
+          "FenceOld",
+          "CloseNew",
+          "DestroyOld",
+          "FenceNew",
+          "WrongPopup",
+          "DestroyNew",
+          "AckOld"
+        ],
+      new: 4,
+      old: 5,
+      receiver: true
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      admitted: false,
+      history:
+        [
+          "CancelNew",
+          "CancelOld",
+          "CloseOld",
+          "FenceOld",
+          "CloseNew",
+          "DestroyOld",
+          "FenceNew",
+          "WrongPopup",
+          "DestroyNew",
+          "AckOld",
+          "AckNew"
+        ],
+      new: 4,
+      old: 5,
+      receiver: true
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      admitted: true,
+      history:
+        [
+          "CancelNew",
+          "CancelOld",
+          "CloseOld",
+          "FenceOld",
+          "CloseNew",
+          "DestroyOld",
+          "FenceNew",
+          "WrongPopup",
+          "DestroyNew",
+          "AckOld",
+          "AckNew",
+          "Extend"
+        ],
+      new: 4,
+      old: 5,
+      receiver: true
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      admitted: true,
+      history:
+        [
+          "CancelNew",
+          "CancelOld",
+          "CloseOld",
+          "FenceOld",
+          "CloseNew",
+          "DestroyOld",
+          "FenceNew",
+          "WrongPopup",
+          "DestroyNew",
+          "AckOld",
+          "AckNew",
+          "Extend",
+          "Replace"
+        ],
+      new: 4,
+      old: 5,
+      receiver: false
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      admitted: true,
+      history:
+        [
+          "CancelNew",
+          "CancelOld",
+          "CloseOld",
+          "FenceOld",
+          "CloseNew",
+          "DestroyOld",
+          "FenceNew",
+          "WrongPopup",
+          "DestroyNew",
+          "AckOld",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew"
+        ],
+      new: 4,
+      old: 5,
+      receiver: false
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      admitted: true,
+      history:
+        [
+          "CancelNew",
+          "CancelOld",
+          "CloseOld",
+          "FenceOld",
+          "CloseNew",
+          "DestroyOld",
+          "FenceNew",
+          "WrongPopup",
+          "DestroyNew",
+          "AckOld",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Extend"
+        ],
+      new: 4,
+      old: 5,
+      receiver: false
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      admitted: true,
+      history:
+        [
+          "CancelNew",
+          "CancelOld",
+          "CloseOld",
+          "FenceOld",
+          "CloseNew",
+          "DestroyOld",
+          "FenceNew",
+          "WrongPopup",
+          "DestroyNew",
+          "AckOld",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Extend",
+          "Replace"
+        ],
+      new: 4,
+      old: 5,
+      receiver: false
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      admitted: true,
+      history:
+        [
+          "CancelNew",
+          "CancelOld",
+          "CloseOld",
+          "FenceOld",
+          "CloseNew",
+          "DestroyOld",
+          "FenceNew",
+          "WrongPopup",
+          "DestroyNew",
+          "AckOld",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew"
+        ],
+      new: 4,
+      old: 5,
+      receiver: false
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      admitted: true,
+      history:
+        [
+          "CancelNew",
+          "CancelOld",
+          "CloseOld",
+          "FenceOld",
+          "CloseNew",
+          "DestroyOld",
+          "FenceNew",
+          "WrongPopup",
+          "DestroyNew",
+          "AckOld",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Replace"
+        ],
+      new: 4,
+      old: 5,
+      receiver: false
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      admitted: true,
+      history:
+        [
+          "CancelNew",
+          "CancelOld",
+          "CloseOld",
+          "FenceOld",
+          "CloseNew",
+          "DestroyOld",
+          "FenceNew",
+          "WrongPopup",
+          "DestroyNew",
+          "AckOld",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Replace",
+          "AckNew"
+        ],
+      new: 4,
+      old: 5,
+      receiver: false
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      admitted: true,
+      history:
+        [
+          "CancelNew",
+          "CancelOld",
+          "CloseOld",
+          "FenceOld",
+          "CloseNew",
+          "DestroyOld",
+          "FenceNew",
+          "WrongPopup",
+          "DestroyNew",
+          "AckOld",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Replace",
+          "AckNew",
+          "AckNew"
+        ],
+      new: 4,
+      old: 5,
+      receiver: false
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      admitted: true,
+      history:
+        [
+          "CancelNew",
+          "CancelOld",
+          "CloseOld",
+          "FenceOld",
+          "CloseNew",
+          "DestroyOld",
+          "FenceNew",
+          "WrongPopup",
+          "DestroyNew",
+          "AckOld",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Replace",
+          "AckNew",
+          "AckNew",
+          "Extend"
+        ],
+      new: 4,
+      old: 5,
+      receiver: false
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      admitted: true,
+      history:
+        [
+          "CancelNew",
+          "CancelOld",
+          "CloseOld",
+          "FenceOld",
+          "CloseNew",
+          "DestroyOld",
+          "FenceNew",
+          "WrongPopup",
+          "DestroyNew",
+          "AckOld",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Replace",
+          "AckNew",
+          "AckNew",
+          "Extend",
+          "AckNew"
+        ],
+      new: 4,
+      old: 5,
+      receiver: false
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      admitted: true,
+      history:
+        [
+          "CancelNew",
+          "CancelOld",
+          "CloseOld",
+          "FenceOld",
+          "CloseNew",
+          "DestroyOld",
+          "FenceNew",
+          "WrongPopup",
+          "DestroyNew",
+          "AckOld",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Replace",
+          "AckNew",
+          "AckNew",
+          "Extend",
+          "AckNew",
+          "AckNew"
+        ],
+      new: 4,
+      old: 5,
+      receiver: false
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      admitted: true,
+      history:
+        [
+          "CancelNew",
+          "CancelOld",
+          "CloseOld",
+          "FenceOld",
+          "CloseNew",
+          "DestroyOld",
+          "FenceNew",
+          "WrongPopup",
+          "DestroyNew",
+          "AckOld",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Replace",
+          "AckNew",
+          "AckNew",
+          "Extend",
+          "AckNew",
+          "AckNew",
+          "AckNew"
+        ],
+      new: 4,
+      old: 5,
+      receiver: false
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      admitted: true,
+      history:
+        [
+          "CancelNew",
+          "CancelOld",
+          "CloseOld",
+          "FenceOld",
+          "CloseNew",
+          "DestroyOld",
+          "FenceNew",
+          "WrongPopup",
+          "DestroyNew",
+          "AckOld",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Replace",
+          "AckNew",
+          "AckNew",
+          "Extend",
+          "AckNew",
+          "AckNew",
+          "AckNew",
+          "Extend"
+        ],
+      new: 4,
+      old: 5,
+      receiver: false
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      admitted: true,
+      history:
+        [
+          "CancelNew",
+          "CancelOld",
+          "CloseOld",
+          "FenceOld",
+          "CloseNew",
+          "DestroyOld",
+          "FenceNew",
+          "WrongPopup",
+          "DestroyNew",
+          "AckOld",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Replace",
+          "AckNew",
+          "AckNew",
+          "Extend",
+          "AckNew",
+          "AckNew",
+          "AckNew",
+          "Extend",
+          "AckNew"
+        ],
+      new: 4,
+      old: 5,
+      receiver: false
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      admitted: true,
+      history:
+        [
+          "CancelNew",
+          "CancelOld",
+          "CloseOld",
+          "FenceOld",
+          "CloseNew",
+          "DestroyOld",
+          "FenceNew",
+          "WrongPopup",
+          "DestroyNew",
+          "AckOld",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Replace",
+          "AckNew",
+          "AckNew",
+          "Extend",
+          "AckNew",
+          "AckNew",
+          "AckNew",
+          "Extend",
+          "AckNew",
+          "Extend"
+        ],
+      new: 4,
+      old: 5,
+      receiver: false
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      admitted: true,
+      history:
+        [
+          "CancelNew",
+          "CancelOld",
+          "CloseOld",
+          "FenceOld",
+          "CloseNew",
+          "DestroyOld",
+          "FenceNew",
+          "WrongPopup",
+          "DestroyNew",
+          "AckOld",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Replace",
+          "AckNew",
+          "AckNew",
+          "Extend",
+          "AckNew",
+          "AckNew",
+          "AckNew",
+          "Extend",
+          "AckNew",
+          "Extend",
+          "AckNew"
+        ],
+      new: 4,
+      old: 5,
+      receiver: false
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      admitted: true,
+      history:
+        [
+          "CancelNew",
+          "CancelOld",
+          "CloseOld",
+          "FenceOld",
+          "CloseNew",
+          "DestroyOld",
+          "FenceNew",
+          "WrongPopup",
+          "DestroyNew",
+          "AckOld",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Replace",
+          "AckNew",
+          "AckNew",
+          "Extend",
+          "AckNew",
+          "AckNew",
+          "AckNew",
+          "Extend",
+          "AckNew",
+          "Extend",
+          "AckNew",
+          "AckNew"
+        ],
+      new: 4,
+      old: 5,
+      receiver: false
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      admitted: true,
+      history:
+        [
+          "CancelNew",
+          "CancelOld",
+          "CloseOld",
+          "FenceOld",
+          "CloseNew",
+          "DestroyOld",
+          "FenceNew",
+          "WrongPopup",
+          "DestroyNew",
+          "AckOld",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Replace",
+          "AckNew",
+          "AckNew",
+          "Extend",
+          "AckNew",
+          "AckNew",
+          "AckNew",
+          "Extend",
+          "AckNew",
+          "Extend",
+          "AckNew",
+          "AckNew",
+          "AckNew"
+        ],
+      new: 4,
+      old: 5,
+      receiver: false
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      admitted: true,
+      history:
+        [
+          "CancelNew",
+          "CancelOld",
+          "CloseOld",
+          "FenceOld",
+          "CloseNew",
+          "DestroyOld",
+          "FenceNew",
+          "WrongPopup",
+          "DestroyNew",
+          "AckOld",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Replace",
+          "AckNew",
+          "AckNew",
+          "Extend",
+          "AckNew",
+          "AckNew",
+          "AckNew",
+          "Extend",
+          "AckNew",
+          "Extend",
+          "AckNew",
+          "AckNew",
+          "AckNew",
+          "AckNew"
+        ],
+      new: 4,
+      old: 5,
+      receiver: false
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      admitted: true,
+      history:
+        [
+          "CancelNew",
+          "CancelOld",
+          "CloseOld",
+          "FenceOld",
+          "CloseNew",
+          "DestroyOld",
+          "FenceNew",
+          "WrongPopup",
+          "DestroyNew",
+          "AckOld",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Replace",
+          "AckNew",
+          "AckNew",
+          "Extend",
+          "AckNew",
+          "AckNew",
+          "AckNew",
+          "Extend",
+          "AckNew",
+          "Extend",
+          "AckNew",
+          "AckNew",
+          "AckNew",
+          "AckNew",
+          "AckNew"
+        ],
+      new: 4,
+      old: 5,
+      receiver: false
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      admitted: true,
+      history:
+        [
+          "CancelNew",
+          "CancelOld",
+          "CloseOld",
+          "FenceOld",
+          "CloseNew",
+          "DestroyOld",
+          "FenceNew",
+          "WrongPopup",
+          "DestroyNew",
+          "AckOld",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Replace",
+          "AckNew",
+          "AckNew",
+          "Extend",
+          "AckNew",
+          "AckNew",
+          "AckNew",
+          "Extend",
+          "AckNew",
+          "Extend",
+          "AckNew",
+          "AckNew",
+          "AckNew",
+          "AckNew",
+          "AckNew",
+          "AckNew"
+        ],
+      new: 4,
+      old: 5,
+      receiver: false
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      admitted: true,
+      history:
+        [
+          "CancelNew",
+          "CancelOld",
+          "CloseOld",
+          "FenceOld",
+          "CloseNew",
+          "DestroyOld",
+          "FenceNew",
+          "WrongPopup",
+          "DestroyNew",
+          "AckOld",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Replace",
+          "AckNew",
+          "AckNew",
+          "Extend",
+          "AckNew",
+          "AckNew",
+          "AckNew",
+          "Extend",
+          "AckNew",
+          "Extend",
+          "AckNew",
+          "AckNew",
+          "AckNew",
+          "AckNew",
+          "AckNew",
+          "AckNew",
+          "AckNew"
+        ],
+      new: 4,
+      old: 5,
+      receiver: false
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      admitted: true,
+      history:
+        [
+          "CancelNew",
+          "CancelOld",
+          "CloseOld",
+          "FenceOld",
+          "CloseNew",
+          "DestroyOld",
+          "FenceNew",
+          "WrongPopup",
+          "DestroyNew",
+          "AckOld",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Extend",
+          "Replace",
+          "AckNew",
+          "Replace",
+          "AckNew",
+          "AckNew",
+          "Extend",
+          "AckNew",
+          "AckNew",
+          "AckNew",
+          "Extend",
+          "AckNew",
+          "Extend",
+          "AckNew",
+          "AckNew",
+          "AckNew",
+          "AckNew",
+          "AckNew",
+          "AckNew",
+          "AckNew",
+          "AckNew"
+        ],
+      new: 4,
+      old: 5,
+      receiver: false
+    }
+}
+
+[ok] No violation found (427ms at 351 traces/second).
+Trace length statistics: max=36, min=36, average=36.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

@@ -149,6 +149,15 @@ domain; their independent observation sequence counters SHALL NOT be compared.
 
 ### Requirement: WLK-PREVIEW-RETIRE-004 — Retained completion delivery
 
+WHEN the trusted native owner activates retained retirement delivery under an
+already admitted exact binding before retirement begins, the Elm owner SHALL
+select that protocol for its presenter lifetime. Repeating activation SHALL NOT
+reset the processing prefix. Late activation, a different binding or receiver
+replacement SHALL NOT change an existing channel. WHILE retained delivery is
+active, bare legacy completion facts SHALL NOT remove actors or bypass processing
+acknowledgment. The new channel SHALL retain original settlement and shared
+cutoff rules, and SHALL NOT infer physical retirement from transport admission.
+
 WHEN the original receiver is ready for a permanently retired actor, the native
 bridge SHALL validate that readiness against its retained exact observation and
 all obligations in WLK-PREVIEW-RETIRE-002. Before committing native removal, it
@@ -175,10 +184,25 @@ drain alone SHALL NOT discard transport settlement. Final confirmation SHALL
 release only its own retained delivery record; the original physical and terminal
 Broker proof barriers SHALL remain independently required.
 
+WHEN exact original-binding Elm readiness is admitted while an original native
+physical, proof or receiver obligation prevents aggregate removal, the bridge
+SHALL retain that readiness in its existing observation row. Native polling SHALL
+recheck the unchanged original barriers and complete only after they clear,
+without requiring another Elm readiness emission, consuming another actor slot,
+resetting a counter or interpreting readiness as physical retirement authority.
+Readiness persistence and retry SHALL preserve the original receiver epoch and
+binding and SHALL NOT replay capture, release or terminal acknowledgment effects.
+
 #### Scenario: Completion lost after native removal
 - GIVEN validated native cleanup and a retained final-delivery record
 - WHEN the renderer does not receive the first transmission
 - THEN the same ordinal and byte-identical fact remain available for retry.
+
+#### Scenario: Retained channel cannot downgrade or reset
+- GIVEN an activated original-binding channel with a nonzero processing prefix
+- WHEN activation repeats, replacement is proposed, or a bare final fact arrives
+- THEN its prefix and retained owners remain unchanged, and no legacy completion
+  bypasses the retained acknowledgment protocol.
 
 #### Scenario: Processing acknowledgment lost
 - GIVEN Elm has processed the next exact completion
@@ -208,3 +232,10 @@ Broker proof barriers SHALL remain independently required.
 - WHEN normal native owner close is requested
 - THEN close is refused and the original completion remains retryable until its
   exact processing acknowledgment arrives.
+
+#### Scenario: Readiness waits for another native receiver
+- GIVEN settled Elm ownership and exact readiness under the original receiver,
+  while another actual native receiver still owns the actor
+- WHEN that receiver later retires its membership and native polling continues
+- THEN the retained original readiness permits rechecking aggregate removal
+  without another Elm control, and every physical and proof barrier still applies.

@@ -1,0 +1,21 @@
+AssertionError [ERR_ASSERTION]: named-retainedChannelRejectsLegacy-5.itf.json step 4 LegacyFirst
++ actual - expected
+
+  {
+    commands: [],
++   first: false,
+-   first: true,
+    knownFirst: false,
++   pendingFirst: false,
+-   pendingFirst: true,
+    pendingSecond: false,
++   readyFirst: false,
+-   readyFirst: true,
+    readySecond: false,
+    second: true
+  }
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v92/qa/retirement-delivery-refinement.js:39:11
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)

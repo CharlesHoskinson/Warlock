@@ -1,0 +1,22 @@
+AssertionError [ERR_ASSERTION]: named-completionBehindSiblingObservation-0.itf.json step 4 FinalFirst
++ actual - expected
+
+  {
+    commands: [],
++   first: true,
+-   first: false,
+    fresh: false,
+    knownFirst: false,
++   pendingFirst: true,
+-   pendingFirst: false,
+    pendingSecond: true,
++   readyFirst: true,
+-   readyFirst: false,
+    readySecond: true,
+    second: true
+  }
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v92/qa/retirement-refinement-replay.js:37:11
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)

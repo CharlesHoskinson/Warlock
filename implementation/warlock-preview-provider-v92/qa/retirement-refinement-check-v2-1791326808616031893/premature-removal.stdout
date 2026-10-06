@@ -1,0 +1,16 @@
+
+  retirement_async_tests
+    1) pendingJobCannotForget failed after 1 test(s)
+
+  1 failed
+
+  1) pendingJobCannotForget:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v92/qa/retirement-refinement-check-v2-1791326808616031893/premature-removal/retirement_async_tests_v2.qnt:3:33
+        3:  action check(ok:bool):bool=all{assert(ok and safety),s'=s}
+                                           ^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xd94c5 --match=pendingJobCannotForget to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 retirement_async_tests_v2.qnt

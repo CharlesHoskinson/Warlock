@@ -1,0 +1,16 @@
+
+  retirement_delivery_tests
+    1) lostProcessingAckRetriesOnlyAck failed after 1 test(s)
+
+  1 failed
+
+  1) lostProcessingAckRetriesOnlyAck:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v92/qa/retirement-delivery-model-check-1791326444595380079/lose-repeat-ack/retirement_delivery_tests.qnt:3:33
+        3:  action check(ok:bool):bool=all{assert(ok and safety),s'=s}
+                                           ^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xe09f5 --match=lostProcessingAckRetriesOnlyAck to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 retirement_delivery_tests.qnt

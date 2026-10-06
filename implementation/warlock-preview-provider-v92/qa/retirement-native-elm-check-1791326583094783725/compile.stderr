@@ -1,0 +1,26 @@
+native/retirement-elm-channel-test.cpp: In function ‘int main()’:
+native/retirement-elm-channel-test.cpp:73:25: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+   73 |                         if(std::string_view(events)!="[]")emitted=events;g_free(events);events=nullptr;
+      |                         ^~
+In file included from /usr/include/glib-2.0/glib/glist.h:34,
+                 from /usr/include/glib-2.0/glib/ghash.h:36,
+                 from /usr/include/glib-2.0/glib.h:52,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:30,
+                 from /usr/include/glib-2.0/glib-object.h:24,
+                 from /usr/include/glib-2.0/gio/gioenums.h:30,
+                 from /usr/include/glib-2.0/gio/giotypes.h:30,
+                 from /usr/include/glib-2.0/gio/gio.h:28,
+                 from native/preview_uri.hpp:3,
+                 from native/preview_fd.hpp:2,
+                 from native/preview_client.hpp:2,
+                 from native/preview_wire.hpp:2,
+                 from native/preview_retirement.hpp:2,
+                 from native/actor-retirement-channel-test-v2.cpp:1,
+                 from native/retirement-elm-channel-test.cpp:5:
+/usr/include/glib-2.0/glib/gmem.h:172:3: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  172 |   (__builtin_object_size ((mem), 0) != ((size_t) - 1)) ?                       \
+      |   ^
+native/retirement-elm-channel-test.cpp:73:74: note: in expansion of macro ‘g_free’
+   73 |                         if(std::string_view(events)!="[]")emitted=events;g_free(events);events=nullptr;
+      |                                                                          ^~~~~~
+cc1plus: all warnings being treated as errors

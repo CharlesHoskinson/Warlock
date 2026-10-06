@@ -1,0 +1,162 @@
+{
+  "passed": true,
+  "nativeManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v128/component-manifest.json",
+  "nativeManifestSHA256": "38b2f117b516c0103753e6a3300d7b2f3b6a66da50ba868a36814f29c5555679",
+  "nativeReport": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v128/qa/native-1791327194015518127/report.json",
+  "nativeModuleManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v18/component-manifest.json",
+  "nativeModuleManifestSHA256": "d0930e46fdc9faeab6f3f9a60f8b29dc925f16731d6d929df4912164b2af7c86",
+  "providerManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v92/component-manifest.json",
+  "providerManifestSHA256": "a644cb8923a4b333224eeed68707a3b7c7eaa8fe88669d8436c691512e14f556",
+  "nativeChecks": 2466,
+  "normalOwnedExits": 277,
+  "prior124FixedOrderedControls": 2456,
+  "prior118FixedOrderedControls": 2437,
+  "addressReuseComparison": {
+    "passed": true,
+    "fixedOrderedControls": 2437,
+    "prior": {
+      "attempts": 9,
+      "actualAttemptChecks": 26,
+      "originalExpiryUnchanged": true,
+      "allOwnedAttemptExitsNormal": true
+    },
+    "current": {
+      "attempts": 1,
+      "actualAttemptChecks": 2,
+      "originalExpiryUnchanged": true,
+      "allOwnedAttemptExitsNormal": true
+    },
+    "scope": "Conditional allocator trials each verified against their actual native evidence; unchanged fixed ordered oracles, physical/receipt/clock/pixel/deadline gates remain required."
+  },
+  "nativeRetirementStates": [
+    "Active",
+    "Future",
+    "Active",
+    "Retired",
+    "Active"
+  ],
+  "selectedClassifierScenarios": 8,
+  "classifierTraces": 20,
+  "classifierStates": 438,
+  "unsafeClassifierMutants": 2,
+  "unsafeComparisonMutants": 8,
+  "nativeIncarnationRetirementObservationBoundedQualified": true,
+  "typedNativeRetirementObservationBoundedQualified": true,
+  "typedNativeRetirementEvidence": {
+    "observations": [
+      {
+        "kind": "native-incarnation-retirement",
+        "binding": {
+          "lifetime": "14521997221183488765",
+          "session": "22",
+          "frontend": "1"
+        },
+        "subject": "4",
+        "request": "3",
+        "sequence": "4",
+        "clock": "14521997221183488765",
+        "now": "291514891498214",
+        "issuedThrough": "4",
+        "state": "Active"
+      },
+      {
+        "kind": "native-incarnation-retirement",
+        "binding": {
+          "lifetime": "14521997221183488765",
+          "session": "22",
+          "frontend": "1"
+        },
+        "subject": "2",
+        "request": "4",
+        "sequence": "5",
+        "clock": "14521997221183488765",
+        "now": "291514891737618",
+        "issuedThrough": "4",
+        "state": "Active"
+      },
+      {
+        "kind": "native-incarnation-retirement",
+        "binding": {
+          "lifetime": "14521997221183488765",
+          "session": "22",
+          "frontend": "1"
+        },
+        "subject": "4",
+        "request": "6",
+        "sequence": "6",
+        "clock": "14521997221183488765",
+        "now": "291514942716236",
+        "issuedThrough": "4",
+        "state": "Retired"
+      },
+      {
+        "kind": "native-incarnation-retirement",
+        "binding": {
+          "lifetime": "14521997221183488765",
+          "session": "22",
+          "frontend": "1"
+        },
+        "subject": "2",
+        "request": "7",
+        "sequence": "7",
+        "clock": "14521997221183488765",
+        "now": "291514942933256",
+        "issuedThrough": "4",
+        "state": "Active"
+      }
+    ],
+    "ready": {
+      "stage": "ready",
+      "checks": 16
+    },
+    "complete": {
+      "stage": "complete",
+      "passed": true,
+      "checks": 35,
+      "actorTurnoverAccepted": false,
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false
+    },
+    "normalExit": true,
+    "scope": "Real own native C/socket/bootstrap/ImportedClients observations and original untouched reservation/journal cleanup; no actor removal, pixels or whole GUI release acceptance."
+  },
+  "prior121FixedOrderedControls": 2450,
+  "prior122FixedOrderedControls": 2455,
+  "boundedCSerialRegistryQualified": true,
+  "lockControlRaceReport": "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v86/lock-control-check-1791319612925994989/report.json",
+  "retainedFailedNative123Report": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v123/qa/native-1791319359771305032/report.json",
+  "typedDecoderScenarios": 13,
+  "typedDecoderTraces": 25,
+  "typedDecoderStates": 439,
+  "unsafeDecoderMutants": 3,
+  "retirementCChecks": 96,
+  "elmRetirementControls": 33,
+  "controlPrefixScenarios": 7,
+  "controlPrefixTraces": 15,
+  "controlPrefixStates": 180,
+  "unsafeControlPrefixMutants": 3,
+  "controlAdapterControls": 10,
+  "syntheticActorRetirementChecks": 9068,
+  "syntheticSequentialSubjects": 280,
+  "nativeGuiControlTransportBoundedQualified": true,
+  "actorTurnoverAccepted": false,
+  "ordinaryEligibleCaptureAccepted": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "next": "Qualified heldGUI92/native128 on unchanged exactcore16/plugin18, preserving all original126 controls and allocator/expiry oracles. FreshGUI93 retains one-shot ready while native receiver/physical/proof gates block; compile and couple exact native polling without another Elm effect. Actual shared-host reliable outgoing control and retirement/completion routing, captured retirement, >256 real windows, ordinary capture and all original release gates remain open. Public63 bc6dfc11 verified; current bounded qualification awaits publication64.",
+  "prior125FixedOrderedControls": 2457,
+  "prior126FixedOrderedControls": 2458,
+  "asynchronousRetirementControls": 9,
+  "asynchronousRetirementScenarios": 10,
+  "asynchronousRetirementTraces": 30,
+  "asynchronousRetirementStates": 641,
+  "unsafeAsynchronousModelMutants": 3,
+  "unsafeAsynchronousElmMutants": 3,
+  "retainedDeliveryControls": 45,
+  "retainedDeliveryScenarios": 14,
+  "retainedDeliveryTraces": 34,
+  "retainedDeliveryStates": 667,
+  "unsafeRetainedDeliveryModelMutants": 3,
+  "unsafeRetainedDeliveryElmMutants": 3,
+  "retainedNativeElmControls": 48
+}

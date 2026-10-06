@@ -1,0 +1,15 @@
+AssertionError [ERR_ASSERTION]: named-olderCompletionCannotRewindCutoff-6.itf.json step 6 MidSeedFresh
++ actual - expected
+
+  {
+    commands: [],
+    first: false,
++   fresh: true,
+-   fresh: false,
+    knownFirst: false,
+    pendingFirst: false,
+    pendingSecond: false,
+    readyFirst: false,
+    readySecond: false,
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v92/qa/retirement-refinement-replay.js:37:11
