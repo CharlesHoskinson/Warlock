@@ -1,0 +1,8 @@
+{
+  "passed": false,
+  "runnerSHA256": "58e4f1379887abbfaf728e52a33da7fec9dee81d6b11bedc36aff770c2994505",
+  "reason": "Incorrect total poll count inference: diff removed one occurrence, but there were2 prior and1 new total occurrences. No native failure; first freeze comparison stopped before hold.",
+  "actualNative74IntermediatePolls": 2,
+  "actualNative75IntermediatePolls": 1,
+  "stablePriorControls": 2195
+}

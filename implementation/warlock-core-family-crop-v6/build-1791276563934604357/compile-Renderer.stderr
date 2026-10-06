@@ -1,0 +1,13 @@
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v6/build-1791276563934604357/owning-headers/src/render/Renderer.cpp:3136:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v6/build-1791276563934604357/owning-headers/src/render/FamilyCrop.inc: In member function ‘virtual std::vector<Hyprutils::Memory::CUniquePointer<IPassElement> > {anonymous}::WarlockAppliedShaderPass::draw()’:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v6/build-1791276563934604357/owning-headers/src/render/FamilyCrop.inc:13:22: error: ‘g_pHyprOpenGL’ was not declared in this scope; did you mean ‘Render::GL::g_pHyprOpenGL’?
+   13 |         completed_ = g_pHyprOpenGL->renderFamilyScreenShader(texture_, box_);
+      |                      ^~~~~~~~~~~~~
+      |                      Render::GL::g_pHyprOpenGL
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v6/build-1791276563934604357/owning-headers/src/render/Renderer.hpp:10,
+                 from /home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v6/build-1791276563934604357/owning-headers/src/render/Renderer.cpp:5:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v6/build-1791276563934604357/owning-headers/src/render/OpenGL.hpp:367:32: note: ‘Render::GL::g_pHyprOpenGL’ declared here
+  367 |     inline UP<CHyprOpenGLImpl> g_pHyprOpenGL;
+      |                                ^~~~~~~~~~~~~
+At global scope:
+cc1plus: note: unrecognized command-line option ‘-Wno-gnu-zero-variadic-macro-arguments’ may have been intended to silence earlier diagnostics

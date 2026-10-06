@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-b57112d84fb04e39b12a53c7615f9707.scope",
+    "coreLimit": 1
+  },
+  "argv": [
+    "node",
+    "/home/hoskinson/.npm/_npx/b05ce0373733faa6/node_modules/@fission-ai/openspec/bin/openspec.js",
+    "validate",
+    "warlock-preview-shader-rendering",
+    "--strict",
+    "--json",
+    "--no-interactive"
+  ],
+  "exitCode": 0,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-shader-rendering/proposal.md": "ef1d174c76f5a0174d5ed0898bc93383ae7b1f997a81a65dd0d2297078be3fa8",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-shader-rendering/design.md": "532ede34111142a8371b03d016a6cb62761edc190ffd5404cea2f4f8d37d1e76",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-shader-rendering/tasks.md": "073799ff7af7e1ae04199f22ac21439d75b8530f5e84d59a646908503f339a20",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-shader-rendering/qualification-74-75.md": "6f1f676b58bb2a749c9e7e1ac39e2130fff0d0b5d267a537f62ea933792012f8",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-shader-rendering/runtime-poll-identity-75.md": "719f290022d457b5608d63e9c62f5cce2704bafb49749886a74a9fe2d77a6f91",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-shader-rendering/runtime-poll-count-correction-75.md": "45a16aa6f671ce6dc109b93765cc32bdddf8d74f56a7a22ecbfbae0e31a4afb4",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-shader-rendering/specs/elm-capture-motion/spec.md": "07eedbb4dd69b9025827164acdac02fa678cf09c7fcc8b629e7856edad263f26",
+    "/home/hoskinson/.npm/_npx/b05ce0373733faa6/node_modules/@fission-ai/openspec/bin/openspec.js": "ca136f0e9fd4951dcf93d8ed729ebc97b2d97d3980cd9dc9d42fc80e32e797c6",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-shader-rendering/qa/validate.py": "8b63285feac84b11c5e750fcaa98480963e809dc20c083763d4f91741bd55d99"
+  },
+  "artifacts": {
+    "stdout.json": "f259802d41f4f189a2f04e0ea092c28c65c8b76257dfa547e6f7617a074c5bbe",
+    "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

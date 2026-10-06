@@ -1,0 +1,3 @@
+# Exact total intermediate observation counts
+
+The earlier runtime-poll-identity-75 note and first correction inferred total counts1/0 from a sequence diff that removed one occurrence. Actual retained raw reports contain two styleCropDimIntermediateReadonlyScope observations in74 (indices1607/1608), and one in75 (index1607). Preserve the earlier note and validation as history; this correction supersedes only those totals. Packet45 verifies all2195 stable prior assertion names in order, records raw poll counts2/1, and separately proves all1783 original assertions exactly. Preserve both failed freezer attempts. No native test failure, source change, predicate weakening or deadline change occurred.
