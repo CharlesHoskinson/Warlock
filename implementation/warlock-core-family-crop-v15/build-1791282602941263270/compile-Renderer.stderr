@@ -1,0 +1,41 @@
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v15/build-1791282602941263270/owning-headers/src/render/Renderer.cpp:80:35: error: ‘IFramebuffer’ was not declared in this scope; did you mean ‘Render::IFramebuffer’?
+   80 | static thread_local std::array<SP<IFramebuffer>, 2>* warlockOwnedBlurBuffers = nullptr;
+      |                                   ^~~~~~~~~~~~
+      |                                   Render::IFramebuffer
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v15/build-1791282602941263270/owning-headers/src/render/../output/../helpers/../desktop/view/Popup.hpp:14,
+                 from /home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v15/build-1791282602941263270/owning-headers/src/render/../output/../helpers/WLClasses.hpp:5,
+                 from /home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v15/build-1791282602941263270/owning-headers/src/render/../output/Monitor.hpp:8,
+                 from /home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v15/build-1791282602941263270/owning-headers/src/render/OpenGL.hpp:4,
+                 from /home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v15/build-1791282602941263270/owning-headers/src/render/Renderer.hpp:10,
+                 from /home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v15/build-1791282602941263270/owning-headers/src/render/Renderer.cpp:5:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v15/build-1791282602941263270/owning-headers/src/render/../output/../helpers/../desktop/view/../../render/Framebuffer.hpp:13:11: note: ‘Render::IFramebuffer’ declared here
+   13 |     class IFramebuffer {
+      |           ^~~~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v15/build-1791282602941263270/owning-headers/src/render/Renderer.cpp:80:47: error: template argument 1 is invalid
+   80 | static thread_local std::array<SP<IFramebuffer>, 2>* warlockOwnedBlurBuffers = nullptr;
+      |                                               ^
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v15/build-1791282602941263270/owning-headers/src/render/Renderer.cpp:80:51: error: template argument 1 is invalid
+   80 | static thread_local std::array<SP<IFramebuffer>, 2>* warlockOwnedBlurBuffers = nullptr;
+      |                                                   ^
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v15/build-1791282602941263270/owning-headers/src/render/Renderer.cpp:3140:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v15/build-1791282602941263270/owning-headers/src/render/FamilyCrop.inc: In member function ‘std::array<Hyprutils::Memory::CSharedPointer<Render::IFramebuffer>, 2>* Render::IHyprRenderer::familyBackdropBlurBuffers() const’:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v15/build-1791282602941263270/owning-headers/src/render/FamilyCrop.inc:139:63: error: ‘warlockOwnedBlurBuffers’ was not declared in this scope
+  139 |     return m_bRenderingSnapshot && warlockGeneratedBackdrop ? warlockOwnedBlurBuffers : nullptr;
+      |                                                               ^~~~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v15/build-1791282602941263270/owning-headers/src/render/FamilyCrop.inc: In member function ‘SP<Render::IFramebuffer> Render::IHyprRenderer::makeFamilyBackdropFB(PHLWINDOW, Hyprutils::Math::CBox*)’:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v15/build-1791282602941263270/owning-headers/src/render/FamilyCrop.inc:143:37: error: ‘warlockOwnedBlurBuffers’ was not declared in this scope
+  143 |     if (warlockGeneratedBackdrop || warlockOwnedBlurBuffers)
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v15/build-1791282602941263270/owning-headers/src/render/FamilyCrop.inc: In lambda function:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v15/build-1791282602941263270/owning-headers/src/render/FamilyCrop.inc:190:9: error: ‘warlockOwnedBlurBuffers’ was not declared in this scope
+  190 |         warlockOwnedBlurBuffers = nullptr;
+      |         ^~~~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v15/build-1791282602941263270/owning-headers/src/render/FamilyCrop.inc: In member function ‘SP<Render::IFramebuffer> Render::IHyprRenderer::makeFamilyCropFB(PHLWINDOW, Hyprutils::Math::CBox*)’:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v15/build-1791282602941263270/owning-headers/src/render/FamilyCrop.inc:232:9: error: ‘warlockOwnedBlurBuffers’ was not declared in this scope
+  232 |         warlockOwnedBlurBuffers = &ownedBlur;
+      |         ^~~~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v15/build-1791282602941263270/owning-headers/src/render/FamilyCrop.inc:265:5: error: ‘warlockOwnedBlurBuffers’ was not declared in this scope
+  265 |     warlockOwnedBlurBuffers = nullptr;
+      |     ^~~~~~~~~~~~~~~~~~~~~~~
+At global scope:
+cc1plus: note: unrecognized command-line option ‘-Wno-gnu-zero-variadic-macro-arguments’ may have been intended to silence earlier diagnostics

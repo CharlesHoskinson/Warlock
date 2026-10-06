@@ -1,0 +1,3 @@
+# Generated-backdrop FD4 ownership and strict decoding
+
+Compile actual collector17 generated_backdrop_fd.hpp mapping and retain original legacy150/style295 physical ownership controls. Exhaustively select all512 low-bit flag combinations, reject legacy versions0–3 and five nonopaque/overflow generated colors, and retain exact binding/crop/scale/CRC/sealed memfd identity. Malformed header must close transferred ownership before throwing; successful mapping closes map/FD before producer capacity releases. This direct compiled protocol qualification does not attest native-generated pixels, full GUI integration or full release.

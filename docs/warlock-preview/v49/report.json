@@ -1,0 +1,757 @@
+{
+  "schema": 1,
+  "passed": true,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-0d27e5a70229476394253ba937671abe.scope",
+    "coreLimit": 1
+  },
+  "components": [
+    {
+      "path": "implementation/warlock-client-provider-native-v84/component-manifest.json",
+      "sha256": "bd637a2fdb94ff30b73024ba58cd1fd2366ae16a3debca29f20602481dd5c587",
+      "files": 534
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v85/component-manifest.json",
+      "sha256": "7b13e7b0965e7ae7ce990a4721ce6ca05e6c7cd91e45859c8a076b8006019372",
+      "files": 543
+    },
+    {
+      "path": "implementation/warlock-core-family-crop-v13/component-manifest.json",
+      "sha256": "80706af5daff4e8e1a5e2554c8469658c55eeb6adbef118deb7579f334ec1bc0",
+      "files": 24
+    },
+    {
+      "path": "implementation/warlock-core-family-crop-v14/component-manifest.json",
+      "sha256": "5259f801d8506a464fd80d4c5ff18527246ca1a5c39e10a016392934fda4844f",
+      "files": 77
+    },
+    {
+      "path": "implementation/warlock-core-family-crop-v15/component-manifest.json",
+      "sha256": "02734de4a4ec176265cd5ddf803b9e5f40eec7fc2802c9edd7318ec4a8ae8da6",
+      "files": 842
+    },
+    {
+      "path": "implementation/warlock-core-family-crop-v16/component-manifest.json",
+      "sha256": "95992b14f822b6eb2947797533109ae21e27c6e96f00216a8db2b0d8603726f2",
+      "files": 866
+    },
+    {
+      "path": "implementation/warlock-family-style-revisions-v12/component-manifest.json",
+      "sha256": "ad6e75a917825522cb158ce264529e8ac2a9526e1d6dd6f1293725dfb3d04ce8",
+      "files": 224
+    },
+    {
+      "path": "implementation/warlock-family-style-crop-capture-v17/component-manifest.json",
+      "sha256": "dc8be10064811c0809e53a2fdf10e4c6f82150a2d60c6e3fa0f2c4976147b60c",
+      "files": 1154
+    },
+    {
+      "path": "implementation/warlock-generated-backdrop-fd-qualification-v1/component-manifest.json",
+      "sha256": "e48c7f4e4b594308ca5ea9bb999e8bd46ecf21d752fe63f4ce9e760fc6af9c7c",
+      "files": 50
+    },
+    {
+      "path": "openspec/changes/warlock-preview-owned-backdrop-blur/component-manifest.json",
+      "sha256": "f5e720b465487f0c07177f50441fa5f40a0d2d2b2767b64c6c5a86f76f502641",
+      "files": 9
+    }
+  ],
+  "evidence": {
+    "docs/warlock-preview/v48/report.json": "4f42389419f16d06fd19dafb552607001dce24df97f42935c6cbfe90e3864a2e",
+    "implementation/warlock-client-provider-native-v84/qa/prepare-1791282180638412022/report.json": "0a5efac312fb59068f8911a7b9fbfb93496628b7ec10649c483fbd9a5838ac4c",
+    "implementation/warlock-client-provider-native-v84/qa/native-1791282226837289402/report.json": "e95435193bbc0206cf976d93e9ef3e4e58bdba65072b44cbaefe9cdcd617d86c",
+    "implementation/warlock-client-provider-native-v85/qa/prepare-1791283163652798646/report.json": "9c048f8368a04e8d75076843f97e78143297b4f9cdda0caadfbbe11f77cafa1c",
+    "implementation/warlock-client-provider-native-v85/qa/native-1791283215107519312/report.json": "e89b75d3a790f8777073e5121bc2eb1974cf39b1e32be338e11479e6a602a4e1",
+    "implementation/warlock-core-family-crop-v13/PREPARATION-FAILURE.json": "4ad222615ccf439d4c4d641051d078da99d396f65c3d967d922c6f095a8cea41",
+    "implementation/warlock-core-family-crop-v14/PREPARATION-FAILURE.json": "95664e40aea10793524a2168674e811db3be17a1dc1de5de06b7e2c96af5d042",
+    "implementation/warlock-core-family-crop-v15/qa/plane-1791282598953195407/report.json": "935cc280d925d8e85966e63b7d6a4c0cd8a1186756bc93708a35d98dd63fda4a",
+    "implementation/warlock-core-family-crop-v15/qa/backdrop-1791282600976364856/report.json": "02f751ff9ce8ffd8ed5da278cc2004d9c48dfaad6151a2260c5f4c78a8b97060",
+    "implementation/warlock-core-family-crop-v15/build-1791282602941263270/report.json": "88cb9c7c12d7a22dfaf5887e7c8692f199bffbfc04c9c4c44938dfac2d49a155",
+    "implementation/warlock-core-family-crop-v16/qa/plane-1791282655767290509/report.json": "c41f522524eeb26eecae10e33b4b790a8c5d55201958d3be02c1f852654d6ce9",
+    "implementation/warlock-core-family-crop-v16/qa/backdrop-1791282657738857074/report.json": "ca9f238e246af248dce27a133c5dc20ba15f2d2ca7cd6a84b47cb4a511cc45dc",
+    "implementation/warlock-core-family-crop-v16/build-1791282659756472310/report.json": "8e82e05eb05bf5ce5cf4b6cdd71104ff2e261a3d66e28e7fc60df278cf27b8f5",
+    "implementation/warlock-family-style-revisions-v12/qa/test-1791282726169076226/report.json": "30871a7510e5c1bb13f37d7c7d36b688d6ed5eff6fa04489492b90346349596f",
+    "implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/report.json": "f47385dab94180ca91d3652253b47b1f7b4f23ffbd709835003c5525438c2fa5",
+    "implementation/warlock-family-style-crop-capture-v17/qa/build-1791282892228443042/report.json": "c8b400810f2a8aab0d956e02aba6bb541b3a181078462e79c1f2045b4ed367be",
+    "implementation/warlock-generated-backdrop-fd-qualification-v1/qa/test-1791283054289642342/report.json": "9e12a33efa4bb2451a34e35b40c3d9e2e4992ca7cdee8027278497c3c47df4c9",
+    "implementation/warlock-client-provider-native-v50/qa/native-1791265841870106110/report.json": "41b65aa20c9a774e8568815c2ccd02fed4064550d8a6f57c22fcf410bc62cf25",
+    "implementation/warlock-client-provider-native-v83/qa/native-1791281764693182620/report.json": "813f01495ee9939470c15d1da80b5802c418109e82fd0113bc96844b3f474fec",
+    "openspec/changes/warlock-preview-owned-backdrop-blur/qa/validate-1791283423552635759/report.json": "b4a3df4ca58d89114ce637a61b1099de6dbcb3a2903bbe802a3834fa5fdcbbfb"
+  },
+  "nativeControls": 2307,
+  "retainedOriginalControls": 1783,
+  "retainedPriorNativeControls": 2251,
+  "addedIntermediatePollComparison": {
+    "styleAgainDimPendingNativeReadonlyScope": {
+      "native83": 1,
+      "native85": 1
+    },
+    "styleCropDimIntermediateReadonlyScope": {
+      "native83": 1,
+      "native85": 1
+    },
+    "styleDimPendingNativeReadonlyScope": {
+      "native83": 2,
+      "native85": 2
+    },
+    "styleRestoreIntermediateReadonlyScope": {
+      "native83": 2,
+      "native85": 2
+    }
+  },
+  "normalOwnedExits": 239,
+  "shaderCompositedCropPixels": [
+    {
+      "name": "shader-identity-pixels",
+      "pixels": {
+        "passed": true,
+        "comparedCropPixels": 84836,
+        "mismatchedCompositedPixels": 0,
+        "opaqueFamilyPixels": 77924,
+        "partialAlphaFamilyPixels": 3416,
+        "transparentFamilyPixels": 3496,
+        "wrongNativeOutputAlphaPixels": 0,
+        "independentBackgroundRGBA": [
+          0,
+          0,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "name": "shader-tint-pixels",
+      "pixels": {
+        "passed": true,
+        "comparedCropPixels": 84836,
+        "mismatchedCompositedPixels": 0,
+        "opaqueFamilyPixels": 77924,
+        "partialAlphaFamilyPixels": 3416,
+        "transparentFamilyPixels": 3496,
+        "wrongNativeOutputAlphaPixels": 0,
+        "independentBackgroundRGBA": [
+          0,
+          0,
+          0,
+          255
+        ]
+      }
+    }
+  ],
+  "nativeGeneratedBackdropBlurBodyQualified": true,
+  "blurBodyEvidence": {
+    "before": {
+      "name": "blur-body-half-brightness",
+      "source": {
+        "protocolVersion": 3,
+        "kind": "preview-family-backdrop-crop-scope",
+        "binding": {
+          "lifetime": "9900697020923909236",
+          "session": "1",
+          "frontend": "1"
+        },
+        "requestId": "848",
+        "scope": {
+          "binding": {
+            "lifetime": "9900697020923909236",
+            "session": "1",
+            "frontend": "1"
+          },
+          "context": {
+            "lifetime": "9900697020923909236",
+            "incarnation": "2",
+            "output": "1",
+            "privacy": "5",
+            "rendering": "2",
+            "scene": "63",
+            "content": "51"
+          },
+          "observation": "2128",
+          "clock": "9900697020923909236",
+          "now": "247560021757289",
+          "present": true,
+          "sourceLive": true,
+          "locked": false,
+          "gpuReady": true
+        },
+        "maximumTransferBytes": "339968",
+        "previewEligible": false,
+        "scopeKind": "native-generated-backdrop-family-crop-unqualified",
+        "members": [
+          {
+            "incarnation": "2",
+            "parent": null,
+            "content": "28",
+            "renderOrder": 2,
+            "flags": 178,
+            "geometry": [
+              80.0,
+              80.0,
+              320.0,
+              240.0,
+              73.0,
+              73.0,
+              334.0,
+              254.0
+            ]
+          }
+        ],
+        "styles": [
+          {
+            "incarnation": "2",
+            "flags": 1344,
+            "channels": [
+              1,
+              0.5,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              2,
+              1,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0
+            ],
+            "gradients": [
+              {
+                "angle": 0,
+                "colors": 1
+              },
+              {
+                "angle": 0,
+                "colors": 1
+              },
+              {
+                "angle": 0,
+                "colors": 1
+              },
+              {
+                "angle": 0,
+                "colors": 0
+              },
+              {
+                "angle": 0,
+                "colors": 1
+              },
+              {
+                "angle": 0,
+                "colors": 1
+              }
+            ]
+          }
+        ],
+        "crop": {
+          "pixelX": "73",
+          "pixelY": "73",
+          "width": 334,
+          "height": 254,
+          "scale": 1
+        },
+        "generatedBackdrop": {
+          "kind": "native-opaque-generated-color",
+          "colorARGB": "4294967295"
+        }
+      },
+      "header": [
+        4993451094018633777,
+        4,
+        0,
+        9900697020923909236,
+        1,
+        1,
+        5001,
+        849,
+        2,
+        1,
+        247560031911814,
+        247560032441880,
+        334,
+        254,
+        339691,
+        339968,
+        4686706308271136911,
+        2512104711,
+        5,
+        2,
+        63,
+        51,
+        259,
+        247562021757289,
+        247565031911814,
+        73,
+        73,
+        4607182418800017408,
+        4294967295
+      ],
+      "familyPixels": {
+        "width": 334,
+        "height": 254,
+        "magenta": 0,
+        "yellow": 0,
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "cyan": 0,
+        "opaque": 84836,
+        "styledCyan": 0,
+        "styledCyanUniform": true,
+        "styledCyanRGBA": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "styledCyanBox": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rootRGBA": [
+          178,
+          95,
+          95,
+          255
+        ],
+        "interiorArea": 0,
+        "interiorMagenta": 0,
+        "interiorYellow": 0
+      },
+      "nativePixels": {
+        "width": 800,
+        "height": 600,
+        "magenta": 0,
+        "yellow": 0,
+        "green": 0,
+        "red": 76800,
+        "blue": 0,
+        "cyan": 0,
+        "opaque": 480000,
+        "styledCyan": 0,
+        "styledCyanUniform": true,
+        "styledCyanRGBA": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "styledCyanBox": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rootRGBA": [
+          178,
+          95,
+          95,
+          255
+        ],
+        "interiorArea": 0,
+        "interiorMagenta": 0,
+        "interiorYellow": 0
+      },
+      "equalRoot": true,
+      "previewEligible": false,
+      "hardwarePresentation": false
+    },
+    "after": {
+      "name": "blur-body-full-brightness",
+      "source": {
+        "protocolVersion": 3,
+        "kind": "preview-family-backdrop-crop-scope",
+        "binding": {
+          "lifetime": "9900697020923909236",
+          "session": "1",
+          "frontend": "1"
+        },
+        "requestId": "852",
+        "scope": {
+          "binding": {
+            "lifetime": "9900697020923909236",
+            "session": "1",
+            "frontend": "1"
+          },
+          "context": {
+            "lifetime": "9900697020923909236",
+            "incarnation": "2",
+            "output": "1",
+            "privacy": "5",
+            "rendering": "2",
+            "scene": "63",
+            "content": "52"
+          },
+          "observation": "2129",
+          "clock": "9900697020923909236",
+          "now": "247560101459770",
+          "present": true,
+          "sourceLive": true,
+          "locked": false,
+          "gpuReady": true
+        },
+        "maximumTransferBytes": "339968",
+        "previewEligible": false,
+        "scopeKind": "native-generated-backdrop-family-crop-unqualified",
+        "members": [
+          {
+            "incarnation": "2",
+            "parent": null,
+            "content": "28",
+            "renderOrder": 2,
+            "flags": 178,
+            "geometry": [
+              80.0,
+              80.0,
+              320.0,
+              240.0,
+              73.0,
+              73.0,
+              334.0,
+              254.0
+            ]
+          }
+        ],
+        "styles": [
+          {
+            "incarnation": "2",
+            "flags": 1344,
+            "channels": [
+              1,
+              0.5,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              2,
+              1,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0
+            ],
+            "gradients": [
+              {
+                "angle": 0,
+                "colors": 1
+              },
+              {
+                "angle": 0,
+                "colors": 1
+              },
+              {
+                "angle": 0,
+                "colors": 1
+              },
+              {
+                "angle": 0,
+                "colors": 0
+              },
+              {
+                "angle": 0,
+                "colors": 1
+              },
+              {
+                "angle": 0,
+                "colors": 1
+              }
+            ]
+          }
+        ],
+        "crop": {
+          "pixelX": "73",
+          "pixelY": "73",
+          "width": 334,
+          "height": 254,
+          "scale": 1
+        },
+        "generatedBackdrop": {
+          "kind": "native-opaque-generated-color",
+          "colorARGB": "4294967295"
+        }
+      },
+      "header": [
+        4993451094018633777,
+        4,
+        0,
+        9900697020923909236,
+        1,
+        1,
+        5001,
+        853,
+        2,
+        1,
+        247560111481036,
+        247560112276530,
+        334,
+        254,
+        339691,
+        339968,
+        9230438771828346789,
+        3443968154,
+        5,
+        2,
+        63,
+        52,
+        259,
+        247562101459770,
+        247565111481036,
+        73,
+        73,
+        4607182418800017408,
+        4294967295
+      ],
+      "familyPixels": {
+        "width": 334,
+        "height": 254,
+        "magenta": 0,
+        "yellow": 0,
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "cyan": 0,
+        "opaque": 84836,
+        "styledCyan": 0,
+        "styledCyanUniform": true,
+        "styledCyanRGBA": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "styledCyanBox": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rootRGBA": [
+          204,
+          127,
+          127,
+          255
+        ],
+        "interiorArea": 0,
+        "interiorMagenta": 0,
+        "interiorYellow": 0
+      },
+      "nativePixels": {
+        "width": 800,
+        "height": 600,
+        "magenta": 0,
+        "yellow": 0,
+        "green": 0,
+        "red": 76800,
+        "blue": 0,
+        "cyan": 0,
+        "opaque": 480000,
+        "styledCyan": 0,
+        "styledCyanUniform": true,
+        "styledCyanRGBA": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "styledCyanBox": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rootRGBA": [
+          204,
+          127,
+          127,
+          255
+        ],
+        "interiorArea": 0,
+        "interiorMagenta": 0,
+        "interiorYellow": 0
+      },
+      "equalRoot": true,
+      "previewEligible": false,
+      "hardwarePresentation": false
+    },
+    "configurationBeforeExperiment": {
+      "enabled": {
+        "option": "decoration:blur:enabled",
+        "bool": true,
+        "set": false
+      },
+      "size": {
+        "option": "decoration:blur:size",
+        "int": 8,
+        "set": false
+      },
+      "passes": {
+        "option": "decoration:blur:passes",
+        "int": 1,
+        "set": false
+      },
+      "new_optimizations": {
+        "option": "decoration:blur:new_optimizations",
+        "bool": true,
+        "set": false
+      },
+      "xray": {
+        "option": "decoration:blur:xray",
+        "bool": false,
+        "set": false
+      },
+      "ignore_opacity": {
+        "option": "decoration:blur:ignore_opacity",
+        "bool": true,
+        "set": false
+      },
+      "brightness": {
+        "option": "decoration:blur:brightness",
+        "float": 1.0,
+        "set": false
+      },
+      "contrast": {
+        "option": "decoration:blur:contrast",
+        "float": 0.8916,
+        "set": false
+      },
+      "vibrancy": {
+        "option": "decoration:blur:vibrancy",
+        "float": 0.1696,
+        "set": false
+      },
+      "vibrancy_darkness": {
+        "option": "decoration:blur:vibrancy_darkness",
+        "float": 0.0,
+        "set": false
+      },
+      "noise": {
+        "option": "decoration:blur:noise",
+        "float": 0.0117,
+        "set": false
+      }
+    },
+    "pixels": {
+      "passed": true,
+      "comparedBodyPixels": 76800,
+      "changedFamilyPixels": 76800,
+      "changedNativeOutputPixels": 76800,
+      "mismatchedRGBDeltaPixels": 0,
+      "wrongAlphaPixels": 0,
+      "independentUnchangedTintedWhiteBackdrop": true
+    },
+    "generatedBackdrop": "#ffffff",
+    "nativeBlurExplicitlyAllowed": true,
+    "previewEligible": false
+  },
+  "blurBodyExactPixels": [
+    {
+      "name": "blur-body-half-brightness",
+      "pixels": {
+        "passed": true,
+        "comparedRootPixels": 76800,
+        "mismatchedRootPixels": 0,
+        "wrongAlphaPixels": 0,
+        "nativeRedRange": [
+          89,
+          178
+        ],
+        "nativeGreenRange": [
+          47,
+          95
+        ]
+      }
+    },
+    {
+      "name": "blur-body-full-brightness",
+      "pixels": {
+        "passed": true,
+        "comparedRootPixels": 76800,
+        "mismatchedRootPixels": 0,
+        "wrongAlphaPixels": 0,
+        "nativeRedRange": [
+          102,
+          204
+        ],
+        "nativeGreenRange": [
+          63,
+          127
+        ]
+      }
+    }
+  ],
+  "nativeShaderHalfBodyOverBlackNoBlurQualified": true,
+  "shaderHalfBodyComparison": {
+    "passed": true,
+    "comparedRootPixels": 76800,
+    "mismatchedCompositedPixels": 0,
+    "wrongNativeAlphaPixels": 0,
+    "declaredHalfAlphaRootPixels": 73728,
+    "declaredComposedChildPixels": 3072,
+    "unexpectedBodyPixels": 0,
+    "independentBlackBackground": true
+  },
+  "shaderHalfCursorEvidence": {
+    "before": {
+      "x": 240,
+      "y": 200
+    },
+    "measurement": {
+      "x": 790,
+      "y": 590
+    },
+    "restored": {
+      "x": 240,
+      "y": 200
+    }
+  },
+  "nativeShaderWholeCropOverBlackQualified": true,
+  "shaderWholeRootPixels": {
+    "passed": true,
+    "comparedRootPixels": 76800,
+    "changedFamilyPixels": 73728,
+    "changedOutputPixels": 73728,
+    "mismatchedBefore": 0,
+    "mismatchedAfter": 0,
+    "wrongAlphaPixels": 0,
+    "redPixels": 73728,
+    "unchangedBlueChildPixels": 3072,
+    "unexpectedFixturePixels": 0
+  },
+  "shaderWholeCoordinatePixels": {
+    "passed": true,
+    "comparedRootPixels": 76800,
+    "mismatchedRootPixels": 0,
+    "wrongAlphaPixels": 0,
+    "nativeRedRange": [
+      26,
+      127
+    ],
+    "nativeGreenRange": [
+      34,
+      136
+    ]
+  },
+  "nativeShaderGlobalCoordinateSampleQualified": true,
+  "nativeShaderOpaqueRootCoordinatesQualified": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "previewEligible": false,
+  "completeShaderFidelityQualified": false,
+  "backgroundPixelFidelityQualified": false,
+  "completeFamilyFidelityQualified": false,
+  "next": "Qualify arbitrary authorized backdrop/blur source dependency/privacy and integrate applicable generated mode through the shared Elm/retained receipt path, general shader/contextual/color/HDR/transform/driver/resources/hardware and every original coherent GUI release gate."
+}

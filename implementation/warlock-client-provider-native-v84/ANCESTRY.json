@@ -1,0 +1,5 @@
+{
+  "parent": "implementation/warlock-client-provider-native-v51",
+  "failedNative": "qa/native-1791266300446781817/report.json",
+  "change": "Actual51 sampled append-in-progress log record; complete durable record parses valid and83 normal exits. New reader defers only unterminated trailing record while exact owned host is live; terminal malformed records remain failures. All oracle/deadlines unchanged."
+}

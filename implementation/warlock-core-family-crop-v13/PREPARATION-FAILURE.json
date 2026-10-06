@@ -1,0 +1,11 @@
+{
+  "passed": false,
+  "compiled": false,
+  "nativeLaunched": false,
+  "phase": "source derivative preparation",
+  "error": "AssertionError matching OpenGL scratch allocation source text",
+  "actualOwnerPrefix": "g_pHyprRenderer->m_renderData.pMonitor",
+  "cause": "asserted m_renderData.pMonitor spelling differs from actual owning source",
+  "partialCandidateHeld": false,
+  "next": "fresh14 preserves partial13 bytes and completes actual owner spelling"
+}

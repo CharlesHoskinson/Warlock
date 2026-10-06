@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-39e44660c2a74269b2a7dd3baa8b9984.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/test.py": "24f8173378cbd184f0e29f6032331f9d82575ce709c3c3282641ad9723732c54",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/SPEC.md": "17630ac52bdd988b40b49ba265521c97f305b79e8f7415fc90454456566f6b64",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/native/controls.cpp": "6555d5490bc8b388b0287a3dbc95f90613690d0d98ea53e840e7a79953a4d39c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/native/style_revision.hpp": "ec7666f36c8e5870c66829b22a9e1f473250e56edc4bc312705ef860986ce3d6",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/native/source_epoch.hpp": "df64eec18b8bd62b0b21b73e3aabbc1a9db10f122af65e36f78a6147bd67860f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/native/applied_shader.hpp": "8c698d151afba5b1651141547662346cadbfd938fa11d6515a27f92232374080"
+  },
+  "commands": [
+    {
+      "stage": "compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/test-1791282726169076226",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/test-1791282726169076226/controls.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/test-1791282726169076226/controls"
+      ],
+      "exitCode": 0
+    },
+    {
+      "stage": "run",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/test-1791282726169076226/controls"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "evidence": {
+    "passed": true,
+    "checks": 436
+  },
+  "artifacts": {
+    "test.py": "24f8173378cbd184f0e29f6032331f9d82575ce709c3c3282641ad9723732c54",
+    "SPEC.md": "17630ac52bdd988b40b49ba265521c97f305b79e8f7415fc90454456566f6b64",
+    "controls.cpp": "6555d5490bc8b388b0287a3dbc95f90613690d0d98ea53e840e7a79953a4d39c",
+    "style_revision.hpp": "ec7666f36c8e5870c66829b22a9e1f473250e56edc4bc312705ef860986ce3d6",
+    "source_epoch.hpp": "df64eec18b8bd62b0b21b73e3aabbc1a9db10f122af65e36f78a6147bd67860f",
+    "applied_shader.hpp": "8c698d151afba5b1651141547662346cadbfd938fa11d6515a27f92232374080",
+    "controls": "ce6bc6accff895924f08ba33283b52aee2f1e4d2ccdef4a8b1916eb3a5506c55",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run.stdout": "71e876358469869278a5da58e6c8e66fbca00377faa2a9597c00814507a6da42",
+    "run.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

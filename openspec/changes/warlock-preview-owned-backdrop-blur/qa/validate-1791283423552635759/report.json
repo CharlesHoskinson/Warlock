@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-c0acf257531d4f5f86ece3e8ca1848c5.scope",
+    "coreLimit": 1
+  },
+  "argv": [
+    "node",
+    "/home/hoskinson/.npm/_npx/b05ce0373733faa6/node_modules/@fission-ai/openspec/bin/openspec.js",
+    "validate",
+    "warlock-preview-owned-backdrop-blur",
+    "--strict",
+    "--json",
+    "--no-interactive"
+  ],
+  "exitCode": 0,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-owned-backdrop-blur/proposal.md": "cf95fce6ba590ec5a1fee9e27ffa97deee3d5727f615fb67ab97c724f46be813",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-owned-backdrop-blur/design.md": "14e7e3cde0094fdc9942ab93f41a546aa90b183bdbcf2317196b9b47098c36e3",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-owned-backdrop-blur/tasks.md": "4e26e7135ec512ba739fc891c9a50a7588dae16e20feb702856e8c1acecb4d44",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-owned-backdrop-blur/qualification-85.md": "e7a1168c46efe946bd45e29cd852ed842fcc884ea9c38f34c36caab9f5943918",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-owned-backdrop-blur/specs/elm-capture-motion/spec.md": "fd3264ca8605d88db78cea71d3a355b6da7dd0da879563af93f17b4320d26096",
+    "/home/hoskinson/.npm/_npx/b05ce0373733faa6/node_modules/@fission-ai/openspec/bin/openspec.js": "ca136f0e9fd4951dcf93d8ed729ebc97b2d97d3980cd9dc9d42fc80e32e797c6",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-owned-backdrop-blur/qa/validate.py": "4a34f8bc2d125876aeeeac3319d54d8207568a6a08de72ac284d0fdc823f5eac"
+  },
+  "artifacts": {
+    "stdout.json": "670fefd5d557c0dcd25383914143bd7e9dc10b75833037aba7f2c8696e26a851",
+    "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

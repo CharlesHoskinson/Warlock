@@ -1,0 +1,5 @@
+# Immutable generated-background source facts
+
+Preserve original model11 actual425 controls and41 explicitly selected Quint/native StyleRevision projection scenarios, all native surface/blur-region lifetimes, linked shader copied bytes and source epoch semantics. Add a value-owned optional uint32 native generated background color. A change, removal or recovery in the observed color advances the same immutable rendering source epoch; mutating caller storage after observation cannot mutate retained facts. Missing color grants no generated-backdrop authority. This native fact observer is not an additional GUI policy; one immutable Elm policy remains authoritative.
+
+Retain source-copy/stability/change/unavailable/recovery observations in selected Quint scenarios replayed through the actual modified StyleRevision. Actual core and plugin must independently sample/recheck the owner-thread native color, original scope/deadline and backdrop projection/admission before producing any new generated-backdrop transport. Full arbitrary backdrop dependencies/privacy, native rendering/GPU/hardware/coherent release remain separate and unaccepted.

@@ -1,0 +1,728 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-39e44660c2a74269b2a7dd3baa8b9984.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model.py": "52ea78f1b6256cc23f5ec96ba6c48413411cc9120cd3217ea3f9e9229189a7a3",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/spec/style.qnt": "e6ba6ae8158fef164e2179181afe66ec54e5436c47df4374c6c0d5789022254f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/native/replay.cpp": "76f736f330d81260849d43a946175876c22d1671cf858d7b618d8e9d1bfb091b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/SPEC.md": "17630ac52bdd988b40b49ba265521c97f305b79e8f7415fc90454456566f6b64",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/native/style_revision.hpp": "ec7666f36c8e5870c66829b22a9e1f473250e56edc4bc312705ef860986ce3d6",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/native/source_epoch.hpp": "df64eec18b8bd62b0b21b73e3aabbc1a9db10f122af65e36f78a6147bd67860f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/native/applied_shader.hpp": "8c698d151afba5b1651141547662346cadbfd938fa11d6515a27f92232374080"
+  },
+  "commands": [
+    {
+      "name": "compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/replay.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/replay"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/style.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/style.qnt",
+        "--main=style",
+        "--backend=typescript",
+        "--match=^(stableStyleTest|nativeDimStyleTest|nativeAlphaStyleTest|nativeBorderAngleTest|nativeGradientStyleTest|familyContentStyleTest|familyMembershipStyleTest|unavailableStyleTest|recoveredStyleTest|shadowConfigurationTest|glowConfigurationTest|blurConfigurationTest|stableConfigurationTest|configRecoveryTest|unavailableConfigurationTest|opaqueRuleTest|nearestRuleTest|stableRulesTest|unavailableRuleTest|recoveredRuleTest|backgroundEffectCreatedTest|backgroundRegionAppliedTest|stableBackgroundTest|backgroundDestroyedTest|unavailableBackgroundTest|recoveredBackgroundTest|childBackgroundCreatedTest|childBackgroundRegionTest|popupBackgroundCreatedTest|popupBackgroundRegionTest|stableNestedBackgroundTest|unavailableNestedBackgroundTest|recoveredNestedBackgroundTest|nativeSurfaceIdentityChangedTest|appliedShaderEnabledTest|appliedShaderFragmentChangedTest|appliedShaderVertexChangedTest|appliedShaderStableReloadTest|appliedShaderDisabledTest|appliedShaderUnavailableTest|appliedShaderRecoveredTest|generatedBackdropObservedTest|generatedBackdropChangedTest|generatedBackdropStableTest|generatedBackdropUnavailableTest|generatedBackdropRecoveredTest)$",
+        "--seed=730013",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "scope": "Selected style-channel/membership/unavailable projection replayed through actual StyleRevision; native collection, full renderer coverage and crop/Elm fidelity remain separate.",
+  "selectedNames": [
+    "stableStyleTest",
+    "nativeDimStyleTest",
+    "nativeAlphaStyleTest",
+    "nativeBorderAngleTest",
+    "nativeGradientStyleTest",
+    "familyContentStyleTest",
+    "familyMembershipStyleTest",
+    "unavailableStyleTest",
+    "recoveredStyleTest",
+    "shadowConfigurationTest",
+    "glowConfigurationTest",
+    "blurConfigurationTest",
+    "stableConfigurationTest",
+    "configRecoveryTest",
+    "unavailableConfigurationTest",
+    "opaqueRuleTest",
+    "nearestRuleTest",
+    "stableRulesTest",
+    "unavailableRuleTest",
+    "recoveredRuleTest",
+    "backgroundEffectCreatedTest",
+    "backgroundRegionAppliedTest",
+    "stableBackgroundTest",
+    "backgroundDestroyedTest",
+    "unavailableBackgroundTest",
+    "recoveredBackgroundTest",
+    "childBackgroundCreatedTest",
+    "childBackgroundRegionTest",
+    "popupBackgroundCreatedTest",
+    "popupBackgroundRegionTest",
+    "stableNestedBackgroundTest",
+    "unavailableNestedBackgroundTest",
+    "recoveredNestedBackgroundTest",
+    "nativeSurfaceIdentityChangedTest",
+    "appliedShaderEnabledTest",
+    "appliedShaderFragmentChangedTest",
+    "appliedShaderVertexChangedTest",
+    "appliedShaderStableReloadTest",
+    "appliedShaderDisabledTest",
+    "appliedShaderUnavailableTest",
+    "appliedShaderRecoveredTest",
+    "generatedBackdropObservedTest",
+    "generatedBackdropChangedTest",
+    "generatedBackdropStableTest",
+    "generatedBackdropUnavailableTest",
+    "generatedBackdropRecoveredTest"
+  ],
+  "traces": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-appliedShaderDisabledTest-43.itf.json": "5fcda50cc9526eba5510cb47f6d8335067a139c1797b8396959da32f9ec177ee",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-appliedShaderEnabledTest-39.itf.json": "64132b604294a7207984590e086489d79a8cc04450ae77bc6e56c95390f3461d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-appliedShaderFragmentChangedTest-40.itf.json": "fda66f17841bd0675812ce13cc92813945cb46d66b6cc812c5df4f6c0ffb0bc2",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-appliedShaderRecoveredTest-45.itf.json": "8d76712b6bdb6b799b796b7c098b011180522c5eb55b90a505c29f2625c0755b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-appliedShaderStableReloadTest-42.itf.json": "35c5512e7f6af16d8bdb42ad5f303c4bb690273be160e951b179a795880ccda6",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-appliedShaderUnavailableTest-44.itf.json": "3face9b89b1bf2657a180a62cc79ec0e47101734e1f3568b88e86aea4f37f98e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-appliedShaderVertexChangedTest-41.itf.json": "b00e18dc8624928ddfe2cd89f2f6c67b1cd55addafc02244c36226ff465c7e1a",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-backgroundDestroyedTest-23.itf.json": "9e1fbdfb33c516e13a3f0a1b513d45c2a148807eb0a739d7090580a289483256",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-backgroundEffectCreatedTest-20.itf.json": "ed04d9e73cdd331099027f93a47badbf3cffedc860780a3c2c95d4a150ecff56",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-backgroundRegionAppliedTest-21.itf.json": "6b4ea2f6912a0ba59c2db17f0dbffa337662e41c685935a27f2cab9941586da5",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-blurConfigurationTest-11.itf.json": "afe8f1c51ebb1cc4965de030511ef5b1ddfad377dfde8e80fc5519e308766b2f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-childBackgroundCreatedTest-26.itf.json": "3c7e8da5e120966797e00b0ee075cd9e4b2d4b942aeb5ec538987f0425012613",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-childBackgroundRegionTest-27.itf.json": "1b230ba6b33e569bf7234f8d6d5f47883d0b73e9f6d25384ddc049f277f0c9a0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-configRecoveryTest-13.itf.json": "c3d0f159fc76a7cbed371ce5f6670b3257361e9038e9f34ce42e4aa116a91c4a",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-familyContentStyleTest-5.itf.json": "e48b2b70e3dc86d6c631d3f781a6ff53b0ef46bfe020dd6a965292ec0c1b81db",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-familyMembershipStyleTest-6.itf.json": "dfc4a81c8e860fc28203e383ae019655a29f4e107393ac21ea2f9a9c1f8e8dc2",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-generatedBackdropChangedTest-35.itf.json": "4bd8320b57907b21f7d7bafa7294656d08d16f9eec73929026c1f783f814e45d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-generatedBackdropObservedTest-34.itf.json": "f641f9d0e7e4f77b8229448c9393fc4f6be1cfc61b520fc3ba6ef56ea71f1ec6",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-generatedBackdropRecoveredTest-38.itf.json": "99fcd07e1094272fc81fbf670c3052542f543fdd559fec5ed3fd27baaa0bbad9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-generatedBackdropStableTest-36.itf.json": "bcfa69a85947791b5f9b4ea352ddc4e1c03548127428c2a1ced4ec71a6f81485",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-generatedBackdropUnavailableTest-37.itf.json": "b487aac766bd10e6d1ee428ba7f5f6c5dd45422b8a88fadb242a3c67ad0df1a2",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-glowConfigurationTest-10.itf.json": "524cceb1424fa7bf46ec690f353e3b499030fd1a809bf365422f46957d093b3e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-nativeAlphaStyleTest-2.itf.json": "3bdc885f5ea6c0ce6be763d39a6867cf4008c63a94d30303c032229d163cacbf",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-nativeBorderAngleTest-3.itf.json": "ce525f65b1fdbf473149ba60c12c9b2a0b16bf7d41eda1c4be1453b9658c32f9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-nativeDimStyleTest-1.itf.json": "44418aef65353778cf7e9e478f83f214da8c48ca4a7fe79ed351f1af78ca04fc",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-nativeGradientStyleTest-4.itf.json": "579aea72e71f181513471c3a247d8ec16d26f58f9971c2224d4ad4ff061010d4",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-nativeSurfaceIdentityChangedTest-33.itf.json": "21b175c8eaf92032c2dc4b856cce5b6a37a0969bdfdfa94bfbdf7e422067cd78",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-nearestRuleTest-16.itf.json": "848b0d453d56e9ca464ac15046a7da8cacb5f3d5247278e4a702ef53827c9e29",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-opaqueRuleTest-15.itf.json": "9dd971372737761f31bf44ac20f8abaec97c6c9b1378507e6c8c2cd0bf57dd63",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-popupBackgroundCreatedTest-28.itf.json": "b52758309915b4142aab6b70848ed33f8222230030c0094c0ff0e56568973c19",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-popupBackgroundRegionTest-29.itf.json": "18a67b0970678151261531647555f106dfde1ba045893f1b15e36a0a59c63db3",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-recoveredBackgroundTest-25.itf.json": "926944a6d10cdb9f2fd29e4299bc896fc0bc751668b236e23b4bb279767e8bff",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-recoveredNestedBackgroundTest-32.itf.json": "7b5937f29dadf85264345f43702c0f3134ff33019de4166af8d84000aca858dd",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-recoveredRuleTest-19.itf.json": "7716187a4677ff8f6ada3a22ba8beab1e868d9387bdd0f055ce2a988f78405ec",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-recoveredStyleTest-8.itf.json": "b7f29caeb7090e34dab37b820c8d071769df6b18257297a6ba898b702d619a47",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-shadowConfigurationTest-9.itf.json": "67d4e28d110936bdcde1200d1fd7b9cb03072e4a21845de2ddf0bfea482cf94b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-stableBackgroundTest-22.itf.json": "3ed20b65366f97c18e5b7adf081a6aade01397b1082db7e6b38f8cda130a5632",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-stableConfigurationTest-12.itf.json": "b16186650fc0aa994b2a5985077a68af5f1bdfda82a7dbb449ac145fbc10f9ef",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-stableNestedBackgroundTest-30.itf.json": "3effaa19c5d1f15d71b998ceca494c39f1261f6ba7bdd9cef9ff2085ff3339c3",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-stableRulesTest-17.itf.json": "a441f200f7ee4170c2b05c8029bde071791232144b819ba51b12f646d753b728",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-stableStyleTest-0.itf.json": "dbe985c2b6a87cbff59a5c81f2537907414ed957eb10d42700a04f688c0af91e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-unavailableBackgroundTest-24.itf.json": "d58ce44bbe519d6d6f8e9b89138da613012dc4a87b65d1491063803fded37206",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-unavailableConfigurationTest-14.itf.json": "34968422a7c3f2246a9194538aa8228312debe8a47c4a6b984a4acfd793fe4b4",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-unavailableNestedBackgroundTest-31.itf.json": "c7cc971c718b4074854de75adb5af6f8b7c911dc1066d87ee3b61501aee32ffe",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-unavailableRuleTest-18.itf.json": "0b4b860469cddd1bbfb849be900c72b4b435212abc3f885f37c3b7067569e8dc",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-unavailableStyleTest-7.itf.json": "ab2d62929b27f262ec4257587b3c1e6e00e8110a0b1fcee98bb220bc10db7c0b"
+  },
+  "states": 181,
+  "implementationReplay": [
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-appliedShaderDisabledTest-43.itf.json",
+      "states": 4,
+      "result": {
+        "passed": true,
+        "states": 4
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-appliedShaderEnabledTest-39.itf.json",
+      "states": 3,
+      "result": {
+        "passed": true,
+        "states": 3
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-appliedShaderFragmentChangedTest-40.itf.json",
+      "states": 4,
+      "result": {
+        "passed": true,
+        "states": 4
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-appliedShaderRecoveredTest-45.itf.json",
+      "states": 6,
+      "result": {
+        "passed": true,
+        "states": 6
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-appliedShaderStableReloadTest-42.itf.json",
+      "states": 4,
+      "result": {
+        "passed": true,
+        "states": 4
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-appliedShaderUnavailableTest-44.itf.json",
+      "states": 5,
+      "result": {
+        "passed": true,
+        "states": 5
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-appliedShaderVertexChangedTest-41.itf.json",
+      "states": 4,
+      "result": {
+        "passed": true,
+        "states": 4
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-backgroundDestroyedTest-23.itf.json",
+      "states": 4,
+      "result": {
+        "passed": true,
+        "states": 4
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-backgroundEffectCreatedTest-20.itf.json",
+      "states": 3,
+      "result": {
+        "passed": true,
+        "states": 3
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-backgroundRegionAppliedTest-21.itf.json",
+      "states": 4,
+      "result": {
+        "passed": true,
+        "states": 4
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-blurConfigurationTest-11.itf.json",
+      "states": 3,
+      "result": {
+        "passed": true,
+        "states": 3
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-childBackgroundCreatedTest-26.itf.json",
+      "states": 3,
+      "result": {
+        "passed": true,
+        "states": 3
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-childBackgroundRegionTest-27.itf.json",
+      "states": 4,
+      "result": {
+        "passed": true,
+        "states": 4
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-configRecoveryTest-13.itf.json",
+      "states": 6,
+      "result": {
+        "passed": true,
+        "states": 6
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-familyContentStyleTest-5.itf.json",
+      "states": 3,
+      "result": {
+        "passed": true,
+        "states": 3
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-familyMembershipStyleTest-6.itf.json",
+      "states": 3,
+      "result": {
+        "passed": true,
+        "states": 3
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-generatedBackdropChangedTest-35.itf.json",
+      "states": 4,
+      "result": {
+        "passed": true,
+        "states": 4
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-generatedBackdropObservedTest-34.itf.json",
+      "states": 3,
+      "result": {
+        "passed": true,
+        "states": 3
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-generatedBackdropRecoveredTest-38.itf.json",
+      "states": 6,
+      "result": {
+        "passed": true,
+        "states": 6
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-generatedBackdropStableTest-36.itf.json",
+      "states": 4,
+      "result": {
+        "passed": true,
+        "states": 4
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-generatedBackdropUnavailableTest-37.itf.json",
+      "states": 4,
+      "result": {
+        "passed": true,
+        "states": 4
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-glowConfigurationTest-10.itf.json",
+      "states": 3,
+      "result": {
+        "passed": true,
+        "states": 3
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-nativeAlphaStyleTest-2.itf.json",
+      "states": 3,
+      "result": {
+        "passed": true,
+        "states": 3
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-nativeBorderAngleTest-3.itf.json",
+      "states": 3,
+      "result": {
+        "passed": true,
+        "states": 3
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-nativeDimStyleTest-1.itf.json",
+      "states": 3,
+      "result": {
+        "passed": true,
+        "states": 3
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-nativeGradientStyleTest-4.itf.json",
+      "states": 3,
+      "result": {
+        "passed": true,
+        "states": 3
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-nativeSurfaceIdentityChangedTest-33.itf.json",
+      "states": 3,
+      "result": {
+        "passed": true,
+        "states": 3
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-nearestRuleTest-16.itf.json",
+      "states": 3,
+      "result": {
+        "passed": true,
+        "states": 3
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-opaqueRuleTest-15.itf.json",
+      "states": 3,
+      "result": {
+        "passed": true,
+        "states": 3
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-popupBackgroundCreatedTest-28.itf.json",
+      "states": 3,
+      "result": {
+        "passed": true,
+        "states": 3
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-popupBackgroundRegionTest-29.itf.json",
+      "states": 4,
+      "result": {
+        "passed": true,
+        "states": 4
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-recoveredBackgroundTest-25.itf.json",
+      "states": 6,
+      "result": {
+        "passed": true,
+        "states": 6
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-recoveredNestedBackgroundTest-32.itf.json",
+      "states": 6,
+      "result": {
+        "passed": true,
+        "states": 6
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-recoveredRuleTest-19.itf.json",
+      "states": 6,
+      "result": {
+        "passed": true,
+        "states": 6
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-recoveredStyleTest-8.itf.json",
+      "states": 4,
+      "result": {
+        "passed": true,
+        "states": 4
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-shadowConfigurationTest-9.itf.json",
+      "states": 3,
+      "result": {
+        "passed": true,
+        "states": 3
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-stableBackgroundTest-22.itf.json",
+      "states": 4,
+      "result": {
+        "passed": true,
+        "states": 4
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-stableConfigurationTest-12.itf.json",
+      "states": 4,
+      "result": {
+        "passed": true,
+        "states": 4
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-stableNestedBackgroundTest-30.itf.json",
+      "states": 4,
+      "result": {
+        "passed": true,
+        "states": 4
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-stableRulesTest-17.itf.json",
+      "states": 4,
+      "result": {
+        "passed": true,
+        "states": 4
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-stableStyleTest-0.itf.json",
+      "states": 3,
+      "result": {
+        "passed": true,
+        "states": 3
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-unavailableBackgroundTest-24.itf.json",
+      "states": 4,
+      "result": {
+        "passed": true,
+        "states": 4
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-unavailableConfigurationTest-14.itf.json",
+      "states": 5,
+      "result": {
+        "passed": true,
+        "states": 5
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-unavailableNestedBackgroundTest-31.itf.json",
+      "states": 4,
+      "result": {
+        "passed": true,
+        "states": 4
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-unavailableRuleTest-18.itf.json",
+      "states": 5,
+      "result": {
+        "passed": true,
+        "states": 5
+      }
+    },
+    {
+      "trace": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-revisions-v12/qa/model-1791282728639271423/named-unavailableStyleTest-7.itf.json",
+      "states": 4,
+      "result": {
+        "passed": true,
+        "states": 4
+      }
+    }
+  ],
+  "artifacts": {
+    "model.py": "52ea78f1b6256cc23f5ec96ba6c48413411cc9120cd3217ea3f9e9229189a7a3",
+    "style.qnt": "e6ba6ae8158fef164e2179181afe66ec54e5436c47df4374c6c0d5789022254f",
+    "replay.cpp": "76f736f330d81260849d43a946175876c22d1671cf858d7b618d8e9d1bfb091b",
+    "SPEC.md": "17630ac52bdd988b40b49ba265521c97f305b79e8f7415fc90454456566f6b64",
+    "style_revision.hpp": "ec7666f36c8e5870c66829b22a9e1f473250e56edc4bc312705ef860986ce3d6",
+    "source_epoch.hpp": "df64eec18b8bd62b0b21b73e3aabbc1a9db10f122af65e36f78a6147bd67860f",
+    "applied_shader.hpp": "8c698d151afba5b1651141547662346cadbfd938fa11d6515a27f92232374080",
+    "replay": "60df2e434033c173a2080fdd553b1f9e31282029ed98932503bda293d3ec2f96",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-stableStyleTest-0.itf.json": "dbe985c2b6a87cbff59a5c81f2537907414ed957eb10d42700a04f688c0af91e",
+    "named-nativeDimStyleTest-1.itf.json": "44418aef65353778cf7e9e478f83f214da8c48ca4a7fe79ed351f1af78ca04fc",
+    "named-nativeAlphaStyleTest-2.itf.json": "3bdc885f5ea6c0ce6be763d39a6867cf4008c63a94d30303c032229d163cacbf",
+    "named-nativeBorderAngleTest-3.itf.json": "ce525f65b1fdbf473149ba60c12c9b2a0b16bf7d41eda1c4be1453b9658c32f9",
+    "named-nativeGradientStyleTest-4.itf.json": "579aea72e71f181513471c3a247d8ec16d26f58f9971c2224d4ad4ff061010d4",
+    "named-familyContentStyleTest-5.itf.json": "e48b2b70e3dc86d6c631d3f781a6ff53b0ef46bfe020dd6a965292ec0c1b81db",
+    "named-familyMembershipStyleTest-6.itf.json": "dfc4a81c8e860fc28203e383ae019655a29f4e107393ac21ea2f9a9c1f8e8dc2",
+    "named-unavailableStyleTest-7.itf.json": "ab2d62929b27f262ec4257587b3c1e6e00e8110a0b1fcee98bb220bc10db7c0b",
+    "named-recoveredStyleTest-8.itf.json": "b7f29caeb7090e34dab37b820c8d071769df6b18257297a6ba898b702d619a47",
+    "named-shadowConfigurationTest-9.itf.json": "67d4e28d110936bdcde1200d1fd7b9cb03072e4a21845de2ddf0bfea482cf94b",
+    "named-glowConfigurationTest-10.itf.json": "524cceb1424fa7bf46ec690f353e3b499030fd1a809bf365422f46957d093b3e",
+    "named-blurConfigurationTest-11.itf.json": "afe8f1c51ebb1cc4965de030511ef5b1ddfad377dfde8e80fc5519e308766b2f",
+    "named-stableConfigurationTest-12.itf.json": "b16186650fc0aa994b2a5985077a68af5f1bdfda82a7dbb449ac145fbc10f9ef",
+    "named-configRecoveryTest-13.itf.json": "c3d0f159fc76a7cbed371ce5f6670b3257361e9038e9f34ce42e4aa116a91c4a",
+    "named-unavailableConfigurationTest-14.itf.json": "34968422a7c3f2246a9194538aa8228312debe8a47c4a6b984a4acfd793fe4b4",
+    "named-opaqueRuleTest-15.itf.json": "9dd971372737761f31bf44ac20f8abaec97c6c9b1378507e6c8c2cd0bf57dd63",
+    "named-nearestRuleTest-16.itf.json": "848b0d453d56e9ca464ac15046a7da8cacb5f3d5247278e4a702ef53827c9e29",
+    "named-stableRulesTest-17.itf.json": "a441f200f7ee4170c2b05c8029bde071791232144b819ba51b12f646d753b728",
+    "named-unavailableRuleTest-18.itf.json": "0b4b860469cddd1bbfb849be900c72b4b435212abc3f885f37c3b7067569e8dc",
+    "named-recoveredRuleTest-19.itf.json": "7716187a4677ff8f6ada3a22ba8beab1e868d9387bdd0f055ce2a988f78405ec",
+    "named-backgroundEffectCreatedTest-20.itf.json": "ed04d9e73cdd331099027f93a47badbf3cffedc860780a3c2c95d4a150ecff56",
+    "named-backgroundRegionAppliedTest-21.itf.json": "6b4ea2f6912a0ba59c2db17f0dbffa337662e41c685935a27f2cab9941586da5",
+    "named-stableBackgroundTest-22.itf.json": "3ed20b65366f97c18e5b7adf081a6aade01397b1082db7e6b38f8cda130a5632",
+    "named-backgroundDestroyedTest-23.itf.json": "9e1fbdfb33c516e13a3f0a1b513d45c2a148807eb0a739d7090580a289483256",
+    "named-unavailableBackgroundTest-24.itf.json": "d58ce44bbe519d6d6f8e9b89138da613012dc4a87b65d1491063803fded37206",
+    "named-recoveredBackgroundTest-25.itf.json": "926944a6d10cdb9f2fd29e4299bc896fc0bc751668b236e23b4bb279767e8bff",
+    "named-childBackgroundCreatedTest-26.itf.json": "3c7e8da5e120966797e00b0ee075cd9e4b2d4b942aeb5ec538987f0425012613",
+    "named-childBackgroundRegionTest-27.itf.json": "1b230ba6b33e569bf7234f8d6d5f47883d0b73e9f6d25384ddc049f277f0c9a0",
+    "named-popupBackgroundCreatedTest-28.itf.json": "b52758309915b4142aab6b70848ed33f8222230030c0094c0ff0e56568973c19",
+    "named-popupBackgroundRegionTest-29.itf.json": "18a67b0970678151261531647555f106dfde1ba045893f1b15e36a0a59c63db3",
+    "named-stableNestedBackgroundTest-30.itf.json": "3effaa19c5d1f15d71b998ceca494c39f1261f6ba7bdd9cef9ff2085ff3339c3",
+    "named-unavailableNestedBackgroundTest-31.itf.json": "c7cc971c718b4074854de75adb5af6f8b7c911dc1066d87ee3b61501aee32ffe",
+    "named-recoveredNestedBackgroundTest-32.itf.json": "7b5937f29dadf85264345f43702c0f3134ff33019de4166af8d84000aca858dd",
+    "named-nativeSurfaceIdentityChangedTest-33.itf.json": "21b175c8eaf92032c2dc4b856cce5b6a37a0969bdfdfa94bfbdf7e422067cd78",
+    "named-generatedBackdropObservedTest-34.itf.json": "f641f9d0e7e4f77b8229448c9393fc4f6be1cfc61b520fc3ba6ef56ea71f1ec6",
+    "named-generatedBackdropChangedTest-35.itf.json": "4bd8320b57907b21f7d7bafa7294656d08d16f9eec73929026c1f783f814e45d",
+    "named-generatedBackdropStableTest-36.itf.json": "bcfa69a85947791b5f9b4ea352ddc4e1c03548127428c2a1ced4ec71a6f81485",
+    "named-generatedBackdropUnavailableTest-37.itf.json": "b487aac766bd10e6d1ee428ba7f5f6c5dd45422b8a88fadb242a3c67ad0df1a2",
+    "named-generatedBackdropRecoveredTest-38.itf.json": "99fcd07e1094272fc81fbf670c3052542f543fdd559fec5ed3fd27baaa0bbad9",
+    "named-appliedShaderEnabledTest-39.itf.json": "64132b604294a7207984590e086489d79a8cc04450ae77bc6e56c95390f3461d",
+    "named-appliedShaderFragmentChangedTest-40.itf.json": "fda66f17841bd0675812ce13cc92813945cb46d66b6cc812c5df4f6c0ffb0bc2",
+    "named-appliedShaderVertexChangedTest-41.itf.json": "b00e18dc8624928ddfe2cd89f2f6c67b1cd55addafc02244c36226ff465c7e1a",
+    "named-appliedShaderStableReloadTest-42.itf.json": "35c5512e7f6af16d8bdb42ad5f303c4bb690273be160e951b179a795880ccda6",
+    "named-appliedShaderDisabledTest-43.itf.json": "5fcda50cc9526eba5510cb47f6d8335067a139c1797b8396959da32f9ec177ee",
+    "named-appliedShaderUnavailableTest-44.itf.json": "3face9b89b1bf2657a180a62cc79ec0e47101734e1f3568b88e86aea4f37f98e",
+    "named-appliedShaderRecoveredTest-45.itf.json": "8d76712b6bdb6b799b796b7c098b011180522c5eb55b90a505c29f2625c0755b",
+    "selected.stdout": "458f1fbe214a280605308dafd5756bdecde87f24885129f4cb520df322d8b8ed",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-appliedShaderDisabledTest-43.itf.tsv": "83e745ebba1ff0ad1864c11762241d055fb98b082386d0a59a251b40048d8c88",
+    "named-appliedShaderDisabledTest-43.itf.stdout": "30d8dfe56eb2338a3b670c99c88a7bbd3187df3c7625d97c2f77aedf58752d27",
+    "named-appliedShaderDisabledTest-43.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-appliedShaderEnabledTest-39.itf.tsv": "203937ec2fcddecec7daf7a75579e8e579c208abf4e7e6e991197f37b82fe055",
+    "named-appliedShaderEnabledTest-39.itf.stdout": "9d81fe80ca7219722968e7a1be8bb6984ca8bdf1b41f3e86a040f3868d9afec5",
+    "named-appliedShaderEnabledTest-39.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-appliedShaderFragmentChangedTest-40.itf.tsv": "91d7955dc45bfd3c2c530a2e6d2ff9edb7844efe8040a6380226b848c601f0b5",
+    "named-appliedShaderFragmentChangedTest-40.itf.stdout": "30d8dfe56eb2338a3b670c99c88a7bbd3187df3c7625d97c2f77aedf58752d27",
+    "named-appliedShaderFragmentChangedTest-40.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-appliedShaderRecoveredTest-45.itf.tsv": "3ffd49b359edc355cd6bf27f40a790d1525ef9a02d174fd2ce8079fe6bca4d69",
+    "named-appliedShaderRecoveredTest-45.itf.stdout": "082ce759e37e7cbaacd0d573f56fba90959ea00855f177c8182036e15659b0c4",
+    "named-appliedShaderRecoveredTest-45.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-appliedShaderStableReloadTest-42.itf.tsv": "8254148048371783c3e738b782e1564bca36f32824793476d5353acd37397edf",
+    "named-appliedShaderStableReloadTest-42.itf.stdout": "30d8dfe56eb2338a3b670c99c88a7bbd3187df3c7625d97c2f77aedf58752d27",
+    "named-appliedShaderStableReloadTest-42.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-appliedShaderUnavailableTest-44.itf.tsv": "90994d476a031268f9f0c824fc393e7e1498bd3da24fc7b8c006e82d9fde746d",
+    "named-appliedShaderUnavailableTest-44.itf.stdout": "4b0acfcfc6aca6a5896da01c0631c86029825d9e442f7ff6daa961015ec8aeb3",
+    "named-appliedShaderUnavailableTest-44.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-appliedShaderVertexChangedTest-41.itf.tsv": "040f3e0124e7728502948730bf0faadafa893f6e48f7f150890593609a1c7230",
+    "named-appliedShaderVertexChangedTest-41.itf.stdout": "30d8dfe56eb2338a3b670c99c88a7bbd3187df3c7625d97c2f77aedf58752d27",
+    "named-appliedShaderVertexChangedTest-41.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-backgroundDestroyedTest-23.itf.tsv": "edae4d9cadcb69990318341b376fc7f717140f0a5cdea081a1b0d6b044b278c9",
+    "named-backgroundDestroyedTest-23.itf.stdout": "30d8dfe56eb2338a3b670c99c88a7bbd3187df3c7625d97c2f77aedf58752d27",
+    "named-backgroundDestroyedTest-23.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-backgroundEffectCreatedTest-20.itf.tsv": "7ee69e96498ef7e7924e9d5cffb3b074fc5cada737d6f29bc26c85a99ce061a3",
+    "named-backgroundEffectCreatedTest-20.itf.stdout": "9d81fe80ca7219722968e7a1be8bb6984ca8bdf1b41f3e86a040f3868d9afec5",
+    "named-backgroundEffectCreatedTest-20.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-backgroundRegionAppliedTest-21.itf.tsv": "fbc56a4496fb97d111d9c1e2b1ef9ba8f42a1bdea4be6d834bbdea28a80c0715",
+    "named-backgroundRegionAppliedTest-21.itf.stdout": "30d8dfe56eb2338a3b670c99c88a7bbd3187df3c7625d97c2f77aedf58752d27",
+    "named-backgroundRegionAppliedTest-21.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-blurConfigurationTest-11.itf.tsv": "85bcfe4360d9da40c04e8d7a5e53ff42b078d8be7a24f50226bf07c76964a832",
+    "named-blurConfigurationTest-11.itf.stdout": "9d81fe80ca7219722968e7a1be8bb6984ca8bdf1b41f3e86a040f3868d9afec5",
+    "named-blurConfigurationTest-11.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-childBackgroundCreatedTest-26.itf.tsv": "9c9fbdd80e552eb7441b3d328a169f7a78a54673cab7cafb95a38e8d9ce22b41",
+    "named-childBackgroundCreatedTest-26.itf.stdout": "9d81fe80ca7219722968e7a1be8bb6984ca8bdf1b41f3e86a040f3868d9afec5",
+    "named-childBackgroundCreatedTest-26.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-childBackgroundRegionTest-27.itf.tsv": "8057fe936256ba522c9d2901a643dc5e5bd5ba17c8952bee0738ab0e08584cf0",
+    "named-childBackgroundRegionTest-27.itf.stdout": "30d8dfe56eb2338a3b670c99c88a7bbd3187df3c7625d97c2f77aedf58752d27",
+    "named-childBackgroundRegionTest-27.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-configRecoveryTest-13.itf.tsv": "166fb58bbd5858600e72e8e4296e349c0b43d26a3a7e6fec9e6efd4c3f0b0393",
+    "named-configRecoveryTest-13.itf.stdout": "082ce759e37e7cbaacd0d573f56fba90959ea00855f177c8182036e15659b0c4",
+    "named-configRecoveryTest-13.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-familyContentStyleTest-5.itf.tsv": "6cf86a6b4cef2011214a7171bbb225165467239d97b968059da5f96a6f519ae0",
+    "named-familyContentStyleTest-5.itf.stdout": "9d81fe80ca7219722968e7a1be8bb6984ca8bdf1b41f3e86a040f3868d9afec5",
+    "named-familyContentStyleTest-5.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-familyMembershipStyleTest-6.itf.tsv": "105b45c31a7e2342a75f18fe8aa7903a4bfdcd86a5f75e9d75692e9b79ae5eeb",
+    "named-familyMembershipStyleTest-6.itf.stdout": "9d81fe80ca7219722968e7a1be8bb6984ca8bdf1b41f3e86a040f3868d9afec5",
+    "named-familyMembershipStyleTest-6.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-generatedBackdropChangedTest-35.itf.tsv": "d491c485ecea3dffcfcd8c1d2b3c00722c2ba2b466136add8ba1fdbe7fddc93a",
+    "named-generatedBackdropChangedTest-35.itf.stdout": "30d8dfe56eb2338a3b670c99c88a7bbd3187df3c7625d97c2f77aedf58752d27",
+    "named-generatedBackdropChangedTest-35.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-generatedBackdropObservedTest-34.itf.tsv": "e475ae59a3a48115fb1ec41bf91a7a85c985fa7e709a2eb233db912c0b125886",
+    "named-generatedBackdropObservedTest-34.itf.stdout": "9d81fe80ca7219722968e7a1be8bb6984ca8bdf1b41f3e86a040f3868d9afec5",
+    "named-generatedBackdropObservedTest-34.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-generatedBackdropRecoveredTest-38.itf.tsv": "48c9f5ead5fc1f030df6253a4d60923db642e19850941f04aeb7fd3e4dac26c8",
+    "named-generatedBackdropRecoveredTest-38.itf.stdout": "082ce759e37e7cbaacd0d573f56fba90959ea00855f177c8182036e15659b0c4",
+    "named-generatedBackdropRecoveredTest-38.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-generatedBackdropStableTest-36.itf.tsv": "502707016c6066cbf62b7dd119721f60f36cc15f354b3a5d1ec94cbd08df9fa7",
+    "named-generatedBackdropStableTest-36.itf.stdout": "30d8dfe56eb2338a3b670c99c88a7bbd3187df3c7625d97c2f77aedf58752d27",
+    "named-generatedBackdropStableTest-36.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-generatedBackdropUnavailableTest-37.itf.tsv": "a8c29969bf8b2d7eb38c6c17a917dfae35e71a2789de9eef7e95e3247344163c",
+    "named-generatedBackdropUnavailableTest-37.itf.stdout": "30d8dfe56eb2338a3b670c99c88a7bbd3187df3c7625d97c2f77aedf58752d27",
+    "named-generatedBackdropUnavailableTest-37.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-glowConfigurationTest-10.itf.tsv": "c6d5a4693d3335c77627c4650dd86087cbfd84454883265d1678e78b02c61564",
+    "named-glowConfigurationTest-10.itf.stdout": "9d81fe80ca7219722968e7a1be8bb6984ca8bdf1b41f3e86a040f3868d9afec5",
+    "named-glowConfigurationTest-10.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-nativeAlphaStyleTest-2.itf.tsv": "d3a26820cd5bbb12973b3265a3251c7cf9b337b31e6eb187805803dcfe529973",
+    "named-nativeAlphaStyleTest-2.itf.stdout": "9d81fe80ca7219722968e7a1be8bb6984ca8bdf1b41f3e86a040f3868d9afec5",
+    "named-nativeAlphaStyleTest-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-nativeBorderAngleTest-3.itf.tsv": "a9749dee352b28845fe04f94d0d6eea84dd80125969092780182c22588ef6b90",
+    "named-nativeBorderAngleTest-3.itf.stdout": "9d81fe80ca7219722968e7a1be8bb6984ca8bdf1b41f3e86a040f3868d9afec5",
+    "named-nativeBorderAngleTest-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-nativeDimStyleTest-1.itf.tsv": "b90086108f17a13d7a74b4602391c7be79c45be1489098cf99ada680b8aa4b94",
+    "named-nativeDimStyleTest-1.itf.stdout": "9d81fe80ca7219722968e7a1be8bb6984ca8bdf1b41f3e86a040f3868d9afec5",
+    "named-nativeDimStyleTest-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-nativeGradientStyleTest-4.itf.tsv": "829e10ba7a64e9ee9ce5e19b0cf2c73eb085a24ca49c9967f40fc9751381aead",
+    "named-nativeGradientStyleTest-4.itf.stdout": "9d81fe80ca7219722968e7a1be8bb6984ca8bdf1b41f3e86a040f3868d9afec5",
+    "named-nativeGradientStyleTest-4.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-nativeSurfaceIdentityChangedTest-33.itf.tsv": "04802b0552c67209d1a914b6b7302cda3fea71b042591ea27d40af72beae6894",
+    "named-nativeSurfaceIdentityChangedTest-33.itf.stdout": "9d81fe80ca7219722968e7a1be8bb6984ca8bdf1b41f3e86a040f3868d9afec5",
+    "named-nativeSurfaceIdentityChangedTest-33.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-nearestRuleTest-16.itf.tsv": "8213dd76d576fc2becfbae84d328008638363780582deebeaea7325e4a3efab1",
+    "named-nearestRuleTest-16.itf.stdout": "9d81fe80ca7219722968e7a1be8bb6984ca8bdf1b41f3e86a040f3868d9afec5",
+    "named-nearestRuleTest-16.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-opaqueRuleTest-15.itf.tsv": "78534bd491b463f93aeda30c8ebe04596eaee8f23c640cb5e89475c7fefba2c7",
+    "named-opaqueRuleTest-15.itf.stdout": "9d81fe80ca7219722968e7a1be8bb6984ca8bdf1b41f3e86a040f3868d9afec5",
+    "named-opaqueRuleTest-15.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-popupBackgroundCreatedTest-28.itf.tsv": "58bf183f454ccb2b607a475899723ef1da828d529fbe9a5e7f6bcffff18b0fc6",
+    "named-popupBackgroundCreatedTest-28.itf.stdout": "9d81fe80ca7219722968e7a1be8bb6984ca8bdf1b41f3e86a040f3868d9afec5",
+    "named-popupBackgroundCreatedTest-28.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-popupBackgroundRegionTest-29.itf.tsv": "dea2d95feb3e6ffc35455076c9ab19555d61ff8154b6cec5d3b2486f5bf59409",
+    "named-popupBackgroundRegionTest-29.itf.stdout": "30d8dfe56eb2338a3b670c99c88a7bbd3187df3c7625d97c2f77aedf58752d27",
+    "named-popupBackgroundRegionTest-29.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-recoveredBackgroundTest-25.itf.tsv": "907081836582144101410a57544219f4596a10b584cb84b86a1149a79af42985",
+    "named-recoveredBackgroundTest-25.itf.stdout": "082ce759e37e7cbaacd0d573f56fba90959ea00855f177c8182036e15659b0c4",
+    "named-recoveredBackgroundTest-25.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-recoveredNestedBackgroundTest-32.itf.tsv": "821ecab880495949822061f41be98dad03bc910ee5cd890fe5d5528d6e79f7e9",
+    "named-recoveredNestedBackgroundTest-32.itf.stdout": "082ce759e37e7cbaacd0d573f56fba90959ea00855f177c8182036e15659b0c4",
+    "named-recoveredNestedBackgroundTest-32.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-recoveredRuleTest-19.itf.tsv": "34b96f7a2550ddbf1a7afa4bf5e3fa93aa9497c0f98f9899c647b8cf5521fb26",
+    "named-recoveredRuleTest-19.itf.stdout": "082ce759e37e7cbaacd0d573f56fba90959ea00855f177c8182036e15659b0c4",
+    "named-recoveredRuleTest-19.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-recoveredStyleTest-8.itf.tsv": "cd5e37dced6fb76d6eb0c7dc7ef65298a05e20cb6f6422064ec559547b80db20",
+    "named-recoveredStyleTest-8.itf.stdout": "30d8dfe56eb2338a3b670c99c88a7bbd3187df3c7625d97c2f77aedf58752d27",
+    "named-recoveredStyleTest-8.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-shadowConfigurationTest-9.itf.tsv": "72181c9e6107f3c208ea6359bd52b82073278073f82f5572aaf56c24b6ad6a7f",
+    "named-shadowConfigurationTest-9.itf.stdout": "9d81fe80ca7219722968e7a1be8bb6984ca8bdf1b41f3e86a040f3868d9afec5",
+    "named-shadowConfigurationTest-9.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-stableBackgroundTest-22.itf.tsv": "5d765d86631bd4f390ba0704b66d71312aa1d3596d5b1c887b6a9acfb3a3a629",
+    "named-stableBackgroundTest-22.itf.stdout": "30d8dfe56eb2338a3b670c99c88a7bbd3187df3c7625d97c2f77aedf58752d27",
+    "named-stableBackgroundTest-22.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-stableConfigurationTest-12.itf.tsv": "6ee4bdf18486600fd360d38b26319fe1e7b500a211fb99bcdfcd9874ef66fda7",
+    "named-stableConfigurationTest-12.itf.stdout": "30d8dfe56eb2338a3b670c99c88a7bbd3187df3c7625d97c2f77aedf58752d27",
+    "named-stableConfigurationTest-12.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-stableNestedBackgroundTest-30.itf.tsv": "11b41d32f13db3bb28484e6faedd40d284370e0a164bafd98e2e42fb422f1120",
+    "named-stableNestedBackgroundTest-30.itf.stdout": "30d8dfe56eb2338a3b670c99c88a7bbd3187df3c7625d97c2f77aedf58752d27",
+    "named-stableNestedBackgroundTest-30.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-stableRulesTest-17.itf.tsv": "59c7e01986ceab11d567c4845dc9ad8f49fffe5a5a20f5474353af39f0379bf5",
+    "named-stableRulesTest-17.itf.stdout": "30d8dfe56eb2338a3b670c99c88a7bbd3187df3c7625d97c2f77aedf58752d27",
+    "named-stableRulesTest-17.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-stableStyleTest-0.itf.tsv": "e4be2e418a27cbcdf28ad62726db4e2b0533bc5daab591681d275aafe7f611a3",
+    "named-stableStyleTest-0.itf.stdout": "9d81fe80ca7219722968e7a1be8bb6984ca8bdf1b41f3e86a040f3868d9afec5",
+    "named-stableStyleTest-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-unavailableBackgroundTest-24.itf.tsv": "4f06fa7fb81cd54ea31a9f2212a63110308ebea2cb68088a91561b85a4261834",
+    "named-unavailableBackgroundTest-24.itf.stdout": "30d8dfe56eb2338a3b670c99c88a7bbd3187df3c7625d97c2f77aedf58752d27",
+    "named-unavailableBackgroundTest-24.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-unavailableConfigurationTest-14.itf.tsv": "af5535202fb1132b1c23e074a75bc00af7da26a62a118552b0966734323f0d93",
+    "named-unavailableConfigurationTest-14.itf.stdout": "4b0acfcfc6aca6a5896da01c0631c86029825d9e442f7ff6daa961015ec8aeb3",
+    "named-unavailableConfigurationTest-14.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-unavailableNestedBackgroundTest-31.itf.tsv": "4f06fa7fb81cd54ea31a9f2212a63110308ebea2cb68088a91561b85a4261834",
+    "named-unavailableNestedBackgroundTest-31.itf.stdout": "30d8dfe56eb2338a3b670c99c88a7bbd3187df3c7625d97c2f77aedf58752d27",
+    "named-unavailableNestedBackgroundTest-31.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-unavailableRuleTest-18.itf.tsv": "af5535202fb1132b1c23e074a75bc00af7da26a62a118552b0966734323f0d93",
+    "named-unavailableRuleTest-18.itf.stdout": "4b0acfcfc6aca6a5896da01c0631c86029825d9e442f7ff6daa961015ec8aeb3",
+    "named-unavailableRuleTest-18.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-unavailableStyleTest-7.itf.tsv": "4f06fa7fb81cd54ea31a9f2212a63110308ebea2cb68088a91561b85a4261834",
+    "named-unavailableStyleTest-7.itf.stdout": "30d8dfe56eb2338a3b670c99c88a7bbd3187df3c7625d97c2f77aedf58752d27",
+    "named-unavailableStyleTest-7.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
