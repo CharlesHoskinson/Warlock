@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "747a0f0fe5084d1d95da3637a032d2f2",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-06T17:23:47.457112+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/warlock-preview-provider-v69",
+  "nextWork": [
+    "PROGRESS full94 production68 passes; modelreview actual8/24traces/3mutants passes; preserve68 model builtin identifier and C fixture duplicatejournalattach failures. Fresh69 only reviewed model and explicitextendfixture; test actualC/Elm then owningnative. Alloriginalreleasegates remainactive."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/warlock-preview-provider-v68/component-manifest.json",
+      "sha256": "eaee016711f575b8056fdb01378af68250d99bd77b420c3b88c8fad9ae643231",
+      "size": 206431
+    },
+    {
+      "path": "docs/warlock-preview/v75/model-review/coupled-1791307363603549179/report.json",
+      "sha256": "f25181da034ee750e3daf7ad76a5da36d70d766c3bc895c11caeb8756a1ef763",
+      "size": 71878
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

@@ -1,0 +1,15 @@
+
+ Error [QNT101]: Built-in name 'next' is redefined in module 'resume'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v68/qa/resume-model-check-1791307125632673693/inputs/spec/resume.qnt:9:8
+  9:    val next={...st,deadline:cutoff,queries:st.queries+1}
+            ^^^^
+
+
+ Error [QNT101]: Built-in name 'next' is redefined in module 'resume'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v68/qa/resume-model-check-1791307125632673693/inputs/spec/resume.qnt:22:7
+  22:   val next=reduce(s,e);s'={...next,history:s.history.append(label(e))}
+            ^^^^
+
+error: parsing failed

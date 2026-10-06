@@ -1,0 +1,19 @@
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+... Skipped lines
+
+  [
+    {
+      job: {
+        binding: {
+          frontend: '9007199254740993',
+...
+        origin: '2',
++       request: '1'
+-       request: '2'
+      },
+      kind: 'acquire'
+    }
+  ]
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v69/qa/resume-check-1791307463719341328/inputs/qa/resume-enrollment-replay.js:29:10

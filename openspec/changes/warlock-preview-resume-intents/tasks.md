@@ -1,0 +1,5 @@
+- [ ] Compile changed full GUI and native bridge.
+- [ ] Execute explicitly selected Quint scenarios coupled to actual allocator.
+- [ ] Verify typed C retries and optimized Elm rejected-job settlement.
+- [ ] Qualify changed production on the serialized owning native ABI tuple.
+- [ ] Freeze evidence, publish only owned paths, and continue original release gates.

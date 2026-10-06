@@ -1,0 +1,8 @@
+native/resume-enrollment-test.cpp: In function ‘int main(int, char**)’:
+native/resume-enrollment-test.cpp:176:2: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+  176 |  if(mode!="reject")std::cout<<"{\"passed\":true,\"checks\":"<<passed<<",\"nativeAcceptance\":false,\"mode\":\""<<mode<<"\"}"<<std::endl;return 0;
+      |  ^~
+native/resume-enrollment-test.cpp:176:137: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  176 |  if(mode!="reject")std::cout<<"{\"passed\":true,\"checks\":"<<passed<<",\"nativeAcceptance\":false,\"mode\":\""<<mode<<"\"}"<<std::endl;return 0;
+      |                                                                                                                                         ^~~~~~
+cc1plus: all warnings being treated as errors
