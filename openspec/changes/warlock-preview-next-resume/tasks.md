@@ -1,0 +1,5 @@
+- [x] Implement explicit native/C/dynamic-host succession with bounded predecessor.
+- [x] Compile full current Elm/native GUI and retain original behavior controls.
+- [x] Run selected Quint/actual native ledger-Broker traces and C/socket/Elm controls.
+- [x] Qualify actual repeated picker leases/images/ownership on owning native ABI.
+- [ ] Freeze, commit and publish exact owned evidence; all original release gates remain.

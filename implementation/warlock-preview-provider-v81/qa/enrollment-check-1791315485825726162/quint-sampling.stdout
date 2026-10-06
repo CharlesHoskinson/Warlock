@@ -1,0 +1,1293 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 20,
+      free: false,
+      history: [],
+      issued: false,
+      members: 2,
+      now: 3,
+      receiver: true,
+      records: 2,
+      status: "Admitted"
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 20,
+      free: false,
+      history: ["ReplaceReceiver"],
+      issued: false,
+      members: 2,
+      now: 3,
+      receiver: false,
+      records: 2,
+      status: "ReceiverReplaced"
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 20,
+      free: false,
+      history: ["ReplaceReceiver", "ChangeStamp"],
+      issued: false,
+      members: 2,
+      now: 3,
+      receiver: false,
+      records: 2,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 20,
+      free: false,
+      history: ["ReplaceReceiver", "ChangeStamp", "Retry"],
+      issued: false,
+      members: 2,
+      now: 3,
+      receiver: false,
+      records: 2,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 20,
+      free: false,
+      history: ["ReplaceReceiver", "ChangeStamp", "Retry", "Expire"],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 2,
+      status: "ClockAdvanced"
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 20,
+      free: false,
+      history: ["ReplaceReceiver", "ChangeStamp", "Retry", "Expire", "Retry"],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 2,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 20,
+      free: false,
+      history:
+        [
+          "ReplaceReceiver",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign"
+        ],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 2,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Drain"
+        ],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 1,
+      status: "CapacityReturned"
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Drain",
+          "ChangeStamp"
+        ],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Drain",
+          "ChangeStamp",
+          "Expire"
+        ],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 1,
+      status: "ClockAdvanced"
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Drain",
+          "ChangeStamp",
+          "Expire",
+          "ChangeStamp"
+        ],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Drain",
+          "ChangeStamp",
+          "Expire",
+          "ChangeStamp",
+          "ChangeStamp"
+        ],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Drain",
+          "ChangeStamp",
+          "Expire",
+          "ChangeStamp",
+          "ChangeStamp",
+          "Retry"
+        ],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Drain",
+          "ChangeStamp",
+          "Expire",
+          "ChangeStamp",
+          "ChangeStamp",
+          "Retry",
+          "Foreign"
+        ],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Drain",
+          "ChangeStamp",
+          "Expire",
+          "ChangeStamp",
+          "ChangeStamp",
+          "Retry",
+          "Foreign",
+          "Expire"
+        ],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 1,
+      status: "ClockAdvanced"
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Drain",
+          "ChangeStamp",
+          "Expire",
+          "ChangeStamp",
+          "ChangeStamp",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "ChangeStamp"
+        ],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Drain",
+          "ChangeStamp",
+          "Expire",
+          "ChangeStamp",
+          "ChangeStamp",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "ChangeStamp",
+          "Retry"
+        ],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Drain",
+          "ChangeStamp",
+          "Expire",
+          "ChangeStamp",
+          "ChangeStamp",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "ChangeStamp",
+          "Retry",
+          "Expire"
+        ],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 1,
+      status: "ClockAdvanced"
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Drain",
+          "ChangeStamp",
+          "Expire",
+          "ChangeStamp",
+          "ChangeStamp",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Foreign"
+        ],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Drain",
+          "ChangeStamp",
+          "Expire",
+          "ChangeStamp",
+          "ChangeStamp",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Foreign",
+          "Renew"
+        ],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Drain",
+          "ChangeStamp",
+          "Expire",
+          "ChangeStamp",
+          "ChangeStamp",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Foreign",
+          "Renew",
+          "Retry"
+        ],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Drain",
+          "ChangeStamp",
+          "Expire",
+          "ChangeStamp",
+          "ChangeStamp",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Foreign",
+          "Renew",
+          "Retry",
+          "Retry"
+        ],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Drain",
+          "ChangeStamp",
+          "Expire",
+          "ChangeStamp",
+          "ChangeStamp",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Foreign",
+          "Renew",
+          "Retry",
+          "Retry",
+          "Foreign"
+        ],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Drain",
+          "ChangeStamp",
+          "Expire",
+          "ChangeStamp",
+          "ChangeStamp",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Foreign",
+          "Renew",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry"
+        ],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Drain",
+          "ChangeStamp",
+          "Expire",
+          "ChangeStamp",
+          "ChangeStamp",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Foreign",
+          "Renew",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry"
+        ],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Drain",
+          "ChangeStamp",
+          "Expire",
+          "ChangeStamp",
+          "ChangeStamp",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Foreign",
+          "Renew",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Renew"
+        ],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Drain",
+          "ChangeStamp",
+          "Expire",
+          "ChangeStamp",
+          "ChangeStamp",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Foreign",
+          "Renew",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Renew",
+          "Renew"
+        ],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Drain",
+          "ChangeStamp",
+          "Expire",
+          "ChangeStamp",
+          "ChangeStamp",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Foreign",
+          "Renew",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Renew",
+          "Renew",
+          "ChangeStamp"
+        ],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Drain",
+          "ChangeStamp",
+          "Expire",
+          "ChangeStamp",
+          "ChangeStamp",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Foreign",
+          "Renew",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Renew",
+          "Renew",
+          "ChangeStamp",
+          "Expire"
+        ],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 1,
+      status: "ClockAdvanced"
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Drain",
+          "ChangeStamp",
+          "Expire",
+          "ChangeStamp",
+          "ChangeStamp",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Foreign",
+          "Renew",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Renew",
+          "Renew",
+          "ChangeStamp",
+          "Expire",
+          "Retry"
+        ],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Drain",
+          "ChangeStamp",
+          "Expire",
+          "ChangeStamp",
+          "ChangeStamp",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Foreign",
+          "Renew",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Renew",
+          "Renew",
+          "ChangeStamp",
+          "Expire",
+          "Retry",
+          "Foreign"
+        ],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Drain",
+          "ChangeStamp",
+          "Expire",
+          "ChangeStamp",
+          "ChangeStamp",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Foreign",
+          "Renew",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Renew",
+          "Renew",
+          "ChangeStamp",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Foreign"
+        ],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Drain",
+          "ChangeStamp",
+          "Expire",
+          "ChangeStamp",
+          "ChangeStamp",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Foreign",
+          "Renew",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Renew",
+          "Renew",
+          "ChangeStamp",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Foreign",
+          "Retry"
+        ],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Drain",
+          "ChangeStamp",
+          "Expire",
+          "ChangeStamp",
+          "ChangeStamp",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Foreign",
+          "Renew",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Renew",
+          "Renew",
+          "ChangeStamp",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry"
+        ],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Drain",
+          "ChangeStamp",
+          "Expire",
+          "ChangeStamp",
+          "ChangeStamp",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Foreign",
+          "Renew",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Renew",
+          "Renew",
+          "ChangeStamp",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Expire"
+        ],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 1,
+      status: "ClockAdvanced"
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 20,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Drain",
+          "ChangeStamp",
+          "Expire",
+          "ChangeStamp",
+          "ChangeStamp",
+          "Retry",
+          "Foreign",
+          "Expire",
+          "ChangeStamp",
+          "Retry",
+          "Expire",
+          "Foreign",
+          "Renew",
+          "Retry",
+          "Retry",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Renew",
+          "Renew",
+          "ChangeStamp",
+          "Expire",
+          "Retry",
+          "Foreign",
+          "Foreign",
+          "Retry",
+          "Retry",
+          "Expire",
+          "Foreign"
+        ],
+      issued: false,
+      members: 2,
+      now: 21,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[ok] No violation found (358ms at 419 traces/second).
+Trace length statistics: max=36, min=36, average=36.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

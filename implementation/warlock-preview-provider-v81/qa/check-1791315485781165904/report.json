@@ -1,0 +1,794 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-27ae0a78967849f4bb45ff820e58b945.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "native/admission-test.c": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+    "native/client-command-test.cpp": "ef481b7030d6a41831895fca1a5cba7405d08e22b913fa2f0f6cadccf47c25ab",
+    "native/client-denial-test.cpp": "9c05385a9e1b9da4efe03c414b09d512ab4e3791a33c4ff55fde75e4e0c009f7",
+    "native/client-frame-test.cpp": "233d4520f3bd200cad1f1ea580e9a2eaaf382822b90aa262d4294f8a3bf68d7f",
+    "native/client-import-test.cpp": "c74f47f1e4233681ab63adf3a51396cfa7c8a7fc0769eba9e314ccc82471de4a",
+    "native/client-observation-test.cpp": "bc9a36f1d62669904d5b7003d7b299ad2ee3a836c8f13f381a6669915c74e336",
+    "native/client-producer.cpp": "9568ed8c6f67d7d7056d8c106bd3d9ba052106eb1ddff9299db0b9ad449b6210",
+    "native/client-producer.h": "01f005d7899b2f3b13216a702508adfa39b6cbcbde4f84b6fae1ebc2404462b9",
+    "native/client-resume-test.cpp": "c8dfcdc8564bb6bd8cf9284fe3d12d67c30ca9d5a510a58b935021567719ac2d",
+    "native/client-retained-presentation-test.cpp": "680fb60765c220e59974cda9a8af87c60b5935d48fa8e66671f3e74a0e1c0a2d",
+    "native/client_frame.hpp": "65d1ed6c416b34a43f2d4920001d2da049fb8995b3006475fab1651e97b9a855",
+    "native/client_import.hpp": "f2a405ce71bf0787e9b8e84d4b10cc47444f385b90ea8f2544972592bb4abc9c",
+    "native/client_producer.hpp": "b93355d804613a68593bfd2447295287ac04c76427007c5772e6244b4c51d990",
+    "native/context-keys-test.c": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+    "native/context-keys.h": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+    "native/demand.hpp": "b7721cb9e67b7845252918213b5560fdaaafcacff42eb52eaa37697a341a7dcc",
+    "native/geometry-carrier-test.c": "770835580c7a4a2e21e49a9c3da586ee3ae59e66a92320dd7bb12fa8e516d921",
+    "native/handoff-test.c": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+    "native/host-fault.h": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+    "native/host-journal.h": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+    "native/host.c": "981fa1963001d3cd88d74ea1651691a69965ef4cb3f34ef8656957800cc47194",
+    "native/imported_clients.hpp": "b37c59910ff401d195772320e389aa527260d6e8df6a76235727f482f90724a7",
+    "native/preview-integration.h": "ffacb4ed6abe6b8019f5bcb489b8abe69f28f863ca9079f29cd1c075a0a49e2a",
+    "native/preview-provider-bootstrap.cpp": "225056e844c4bbd2f6ae7f161a36b43f35e53b7bd8c0f909433511b726c7a5c3",
+    "native/preview-provider-bootstrap.h": "03a2192c7113c94f8cb1a109a366cd9b4e96f8c471b0e7707c122c10278b4cac",
+    "native/preview-uri-api.h": "7a02550a807102f6ebdad9c1570eb6a719a50b0ed422ff26add97dbd6408b002",
+    "native/preview-uri-webkit.cpp": "c8cc48442d8d098315b7ad64b71be267679bc361041dc6d2de405c657fa74ea2",
+    "native/preview_broker.hpp": "2954630241ad5e5dc1ee7ce770ef622cd7eff0c3b6d9c5feedc07fcdeec7e3a1",
+    "native/preview_client.hpp": "e3db3313aa48370fe77323e2b87ef0745830ffa476d314d00eca2cd64a613657",
+    "native/preview_delivery.hpp": "5b404be53ccb2c9da3208ffbab276f41e66e33fc30b434257aa19ab001883d5d",
+    "native/preview_fd.hpp": "60fa114f7f2eb819c7a09085ee737c23d21b31f0ba177d967ff99f1425272a60",
+    "native/preview_uri.cpp": "5217f84fed7dd6a4bc4a52a518cf60596394a2a5714c8810faf536fcfb519372",
+    "native/preview_uri.hpp": "274f76793ef115078c8b9ab553260a45ac64a3e226c97a4be069ae17b33849cc",
+    "native/preview_wire.hpp": "2b02108a819e97106cbf38e420871bc4ee10656fd6f98905f25c30fd838d283d",
+    "native/provider-delivery-test.cpp": "4e21203fd7acd32ede476df1137b6ea812cb26fa977d05296a884401adfd8fbe",
+    "native/provider-grant-test.cpp": "8f39b5828b946d5fba2f7df689578a50f79cf7daf2e0e8443ab87dfd7b89ac22",
+    "native/provider-ownership-test.cpp": "d79fe711a90d24ac96e8522a33a4dc3582989b40b692aec73109e365e3f44675",
+    "native/reconciliation-carrier-test.c": "38210317eff28d8a436e640e971f91df71ffcc3b17e82c27a60ee34f57d9f73d",
+    "native/recovery-presentation-test.c": "812bbab1640e12269bc195979cd319a96a505157ba8f5c637eebfd5561bc8e67",
+    "native/shared-context-test.c": "ed50c8ed6b0fee3db3818e2f38c8bb57985b388b26ee09a5624d32f1bfa258ee",
+    "native/shared-context.h": "e86f3ba7a4c76d7839ef8d67d14c7f9ea6b514afa2ac110fc7cebf2da2fd62ce",
+    "native/shared-host.c": "56918d9005071cffc5042dfc62113887739278b97d92c4ffb6b6ce76517af472",
+    "native/surface-test.c": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+    "native/surface.h": "2bdf2d9b3b34fa7193da90e58ac378e7a640ae91e7b02d46987e33c559209f0b",
+    "native/imported-clients.h": "84d25b95190c1bf23d0e1c75bfd6d2e4a06ae987cd4e3df2e0aaf5e00e7d2b93",
+    "native/imported-clients.cpp": "e1bc6c595726c8d3629a1b33e54c751ab489b14bf56f4dc2f4f5c9c908a21e6f",
+    "native/imported-clients-boundary-test.c": "04b444d7d4d0c8f7f945d6f5e9996cfe3f23455624f6b933359b7ac1ee9737da",
+    "native/imported_lifecycle.hpp": "1d4efa4daa2753e43a822e3727dc78458941d72d03e4e01a1d041eb7f6bd9ded",
+    "native/imported-lifecycle-test.cpp": "14e7969e5228d013b590f912605cdd846235de67e8e13a87e644d123136d6a2a",
+    "native/family_source.hpp": "7e936e3f59b5075c364748384282c4e764d85444db2962a885a1ae5a0bf9bb35",
+    "native/family-source-test.cpp": "25c2402f9b6e1c7692633a2b27b69a961284412cf802fb600ad3ff2f97380b9a",
+    "native/family_style_crop_fd.hpp": "bf59599f5ceeb41381a1fd05fb045c52ec3cf47faf4706c38de8dd595f902a53",
+    "native/preview_png.hpp": "308007220baf1d7f2ad30569237ffaf7d6427d900ee1243811480402f188e670",
+    "native/family-fd-test.cpp": "4129475daf2dbcc997ee804f6f2cc1ae97c373adddc891a95ec6cf043f98291d",
+    "native/family_frame.hpp": "20ce40ab0080c37e17345cb3d88334eb5dc926a79720ec6faffee8807ae5fe67",
+    "native/family_producer.hpp": "148240aaf174b3d0f27d8385cd3e93811e48dd8c39b3b65a691fc754c2eebe22",
+    "native/family-frame-test.cpp": "7f5421a78f071a081edb32b8db0402c0e8a855df150ecdeeba6298cf94ed840c",
+    "native/generated_backdrop_fd.hpp": "3f60c0cffed16e60ec90b8f8365ec3f278d5c8cb41db2ce5b85c4929d018337f",
+    "native/backdrop-fd-test.cpp": "74b2f71f21e823bc3445cd647f86d422071edbd483d2bd89d68b38ce6575f623",
+    "native/backdrop-frame-test.cpp": "687f19e3053f305777f16d854fc2dbf593f4a7131589d522c37de4acfa498fd6",
+    "native/backdrop-denial-test.cpp": "7388e88721724be5280b0df91e982af29bebc2f9a10563690ab5aef8c73bda86",
+    "native/qa-reader-control.h": "1a504ee3959b78c73a8f9613b6a6c4f9cc51bc198d1dbd3b6fe1fd352684ccf4",
+    "native/qa-reader-control-test.c": "6bd57d3be5b0f3d0e071993e93b188fd0b2a87ae91dada60120f8e9142a07ed5",
+    "native/preview_metadata.hpp": "1cf84f1094cd8ccca90fcc5c44bed4182716e256792bb542c771c8bc1ce9ad5e",
+    "native/preview_icons.hpp": "6af2174049d623e824fdcf66ddd3a18d0b48a2c34c7159c1651dc0e4b53d8a32",
+    "native/preview_icons.cpp": "48aa83cc63d4f1f08b9333372cb3f63e0a25bf880cc17567098079284ee79693",
+    "native/metadata-icon-test.cpp": "cff027f7a3d29668893aec03be50f5dbae49fb2295606a8e8baad34b64e028d7",
+    "native/window-catalog-test.cpp": "c9efe0d6f7f7db6abc38ab717d16d56a014a2804d39281a28bddd7eb030548a6",
+    "native/receiver-extension-test.cpp": "a35501610fadf7cc4935b970c87b683fa9a2216ee2eef3da8cc70afc652b8d59",
+    "native/delivery-extension-test.cpp": "4d9ccdff37c8818ec6f70b93393e94a46f1f1b3506606a692549cf24c38972c8",
+    "native/imported_admission.hpp": "26ff33e3e51f6df21f28114626f0f62fbd8f6e9e9447b89e1fb9c716d99227dd",
+    "native/imported-admission-test.cpp": "4440d17aea9172b547a66660cb30ebe27df821f627f9fae8861fcdd8d6858d6f",
+    "native/imported_enrollment.hpp": "970d2e8027dfdbbbb599f3de7d5132b9e7e27e8e0509622e7ae3ad18eeef380e",
+    "native/dynamic-enrollment-test.cpp": "bc8dd70ec9b8b5ce2f428cb82578389f9349d24b3ebdb423ccf725b5fd8c8278",
+    "native/rejected-enrollment-test.cpp": "f38a7da3423eb939f76c8882f2d2b057b9af865fd9cd3d96dbc9741918c99aad",
+    "native/resume-enrollment-test.cpp": "b14e33de4a2c1ff6b8e38737f66d8d6f906aba07e609a67750a5a7055434921d",
+    "native/imported_feedback.hpp": "6760465caf1b6877aadb62776fa050f7a44848cd4a9061ce89fdbac96604b9aa",
+    "native/local-feedback-test.cpp": "01b247fef9f6378db1616430fb7f04236e584085269542eaa05c4a6581612b29",
+    "native/next-intent-test.cpp": "6ad459d12146dbe18b6431b3ee863318c10d45a0806f63d9b5400812f20e80b9",
+    "native/next-resume-test.cpp": "f4f00450ca31f382b71af7b7158c40ee199439c9f8c23f3a4062075e190ab152",
+    "spec/demand.qnt": "a43b820819e160a0a57656916ec99faa0939c7d7541ca5efbf83223bd9ab5336",
+    "spec/tests.qnt": "5e9a8f45cc16df53a15a7614a044d6a617b05b1d97acee63ea75bb3059ce3560",
+    "spec/metadata.qnt": "869f4d1cdd5b0afb87dc5ff9a07c49941fd0b0fc9817468a411afa2e051141ed",
+    "spec/metadata_tests.qnt": "25af23b35954ac1816179a8a5746066d94d109801fe4d01a30eacc184a483194",
+    "spec/catalog.qnt": "4d91e8f8978fe8f385f20e796ae210788db6a833871d97d6c6dd652435153292",
+    "spec/catalog_tests.qnt": "b111978bbed36d2405069f4b33dbdc5cc7a4c09999039d20628e668df5ea220d",
+    "spec/delivery.qnt": "32226aee3149a88d4d43c8cdbc1f16b03136b8687b92534e64080fcadf6fa3d0",
+    "spec/delivery_tests.qnt": "17552d1d7e540effb9160c9de4ba84786594e881bf5e68a54dd7c70b878dacdb",
+    "spec/intent.qnt": "f1d726231e5530615c7420a82b8359157fdbaad39846ee188671832bb1f8dc9c",
+    "spec/intent_tests.qnt": "8a9bf3a18dffe24722de0c95312f9f06891a807fa9900c067adeccf67c48c6aa",
+    "spec/enrollment.qnt": "e2967f34c156c0995b4017991388599fe8f664a83c1c6f3c7f850ea45df943e3",
+    "spec/enrollment_tests.qnt": "62af1331d851eb6555f943932261a32caba384c294ce2b211accd7d481138fe3",
+    "spec/resume.qnt": "0b9556f592dcaa753a08c9a16b27c4ef8b267395ab84547ffb6b631af4d9561e",
+    "spec/resume_tests.qnt": "c21910526e8aaed976c06343f04b389feb808a7c3a54984671163e869863aae7",
+    "spec/receipt.qnt": "02efda728c18e4de61ab3f2b53de457309c8656ecd5cebf5249417a7a5a91e0c",
+    "spec/receipt_tests.qnt": "3bb487fbad51b2852fa8d3e077542216b06ba2c448daf7a863e05b268b92c052",
+    "spec/feedback.qnt": "3bb7b150427c6ae54284d377ff6e3804daa66f31659ef9b99cfa69337f723fb6",
+    "spec/feedback_tests.qnt": "0cabaf95612b57a4631793794e7e7b3ce258d4c6ae5bfc8804b9dc36cd12653f",
+    "spec/next_intent.qnt": "60bc69b5aeac23c8fedec1f9e01922d42932cca06efccecf41d6a94193f66570",
+    "spec/next_intent_tests.qnt": "a57715978fe9a6a3f4c7f30c58be8a3cfecc329a424e8a9ba2d40b0300731b27",
+    "spec/next_resume.qnt": "742275ca98db99be65de399fa85c89352bb23a786f26110bff9a2401c5847135",
+    "spec/next_resume_tests.qnt": "96c3fd17868227e0caded0f65f7a8ea0d45d9f56a39b6a6bab77e0f79e2becef",
+    "qa/checks.cpp": "d9d5fe80ea0470dd43176219200ea9b3ab4d7cb49a7d19b30cdfdd5e4a9ec0fe",
+    "qa/check.py": "64ddfc2ce1af5c12405eb6a2643e05175ab24dafad50d45187347861229b744d"
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "commands": [
+    {
+      "name": "compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-O1",
+        "-g",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/inputs/native",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/inputs/qa/checks.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/checks"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "compiled-controls",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/checks"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "quint-typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "tests.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "quint-named",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "tests.qnt",
+        "--main=demand_tests",
+        "--backend=typescript",
+        "--match=^(latestRevisionTest|pacingPreventsSpinTest|closeDoesNotRetireTest|closeDropsPendingTest|newLeaseReopenTest|finishNotRetirementTest|heldCapacityNotReusedTest|drainAllowsLatestTest|idleDoesNotCaptureTest|sameRevisionNotReplayedTest)$",
+        "--seed=710001",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "quint-sampling",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "demand.qnt",
+        "--main=demand",
+        "--backend=typescript",
+        "--invariant=safety",
+        "--seed=710002",
+        "--max-samples=300",
+        "--max-steps=40",
+        "--n-traces=12",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/sample-{seq}.itf.json"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "replay-named-closeDoesNotRetireTest-2.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/checks",
+        "--replay"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "replay-named-closeDropsPendingTest-3.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/checks",
+        "--replay"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "replay-named-drainAllowsLatestTest-7.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/checks",
+        "--replay"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "replay-named-finishNotRetirementTest-5.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/checks",
+        "--replay"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "replay-named-heldCapacityNotReusedTest-6.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/checks",
+        "--replay"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "replay-named-idleDoesNotCaptureTest-8.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/checks",
+        "--replay"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "replay-named-latestRevisionTest-0.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/checks",
+        "--replay"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "replay-named-newLeaseReopenTest-4.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/checks",
+        "--replay"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "replay-named-pacingPreventsSpinTest-1.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/checks",
+        "--replay"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "replay-named-sameRevisionNotReplayedTest-9.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/checks",
+        "--replay"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "replay-sample-0.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/checks",
+        "--replay"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "replay-sample-1.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/checks",
+        "--replay"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "replay-sample-10.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/checks",
+        "--replay"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "replay-sample-11.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/checks",
+        "--replay"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "replay-sample-2.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/checks",
+        "--replay"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "replay-sample-3.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/checks",
+        "--replay"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "replay-sample-4.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/checks",
+        "--replay"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "replay-sample-5.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/checks",
+        "--replay"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "replay-sample-6.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/checks",
+        "--replay"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "replay-sample-7.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/checks",
+        "--replay"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "replay-sample-8.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/checks",
+        "--replay"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "replay-sample-9.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/checks",
+        "--replay"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "pacing-compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-O1",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/pacing",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/inputs/qa/checks.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/pacing/checks"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "pacing-control",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/pacing/checks"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "closed-lease-compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-O1",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/closed-lease",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/inputs/qa/checks.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/closed-lease/checks"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "closed-lease-control",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/closed-lease/checks"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "producer-owner-compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-O1",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/producer-owner",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/inputs/qa/checks.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/producer-owner/checks"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "producer-owner-control",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v81/qa/check-1791315485781165904/producer-owner/checks"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    }
+  ],
+  "projection": "latest/captured/issuedLease,busy,broker activeItems,visible,native-now,last-start,lease and broker floor for one fixed native lifetime/domain/entry; exact scope/auth/fence/deadline/bytes outside abstraction covered separately, not complete concrete-field refinement",
+  "fixedFixture": {
+    "binding": [
+      1,
+      2,
+      3
+    ],
+    "incarnation": 4,
+    "output": 5,
+    "privacy": 6,
+    "rendering": 7,
+    "scene": 8,
+    "clock": 10,
+    "origin": 11,
+    "cost": 32,
+    "items": 2,
+    "bytes": 64,
+    "interval": 2,
+    "freshDeadline": "native now+100 for a NEW job; no old deadline renewed"
+  },
+  "toolSHA256": "bd6e9400f6358a8a69d80eb636eb62f59f993039868a7be9719f76ba74191b4e",
+  "compiledChecks": 36,
+  "selectedNames": [
+    "latestRevisionTest",
+    "pacingPreventsSpinTest",
+    "closeDoesNotRetireTest",
+    "closeDropsPendingTest",
+    "newLeaseReopenTest",
+    "finishNotRetirementTest",
+    "heldCapacityNotReusedTest",
+    "drainAllowsLatestTest",
+    "idleDoesNotCaptureTest",
+    "sameRevisionNotReplayedTest"
+  ],
+  "coupledTraces": [
+    {
+      "trace": "named-closeDoesNotRetireTest-2.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-closeDropsPendingTest-3.itf.json",
+      "statesCompared": 8
+    },
+    {
+      "trace": "named-drainAllowsLatestTest-7.itf.json",
+      "statesCompared": 13
+    },
+    {
+      "trace": "named-finishNotRetirementTest-5.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-heldCapacityNotReusedTest-6.itf.json",
+      "statesCompared": 12
+    },
+    {
+      "trace": "named-idleDoesNotCaptureTest-8.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-latestRevisionTest-0.itf.json",
+      "statesCompared": 8
+    },
+    {
+      "trace": "named-newLeaseReopenTest-4.itf.json",
+      "statesCompared": 9
+    },
+    {
+      "trace": "named-pacingPreventsSpinTest-1.itf.json",
+      "statesCompared": 7
+    },
+    {
+      "trace": "named-sameRevisionNotReplayedTest-9.itf.json",
+      "statesCompared": 6
+    },
+    {
+      "trace": "sample-0.itf.json",
+      "statesCompared": 41
+    },
+    {
+      "trace": "sample-1.itf.json",
+      "statesCompared": 41
+    },
+    {
+      "trace": "sample-10.itf.json",
+      "statesCompared": 41
+    },
+    {
+      "trace": "sample-11.itf.json",
+      "statesCompared": 41
+    },
+    {
+      "trace": "sample-2.itf.json",
+      "statesCompared": 41
+    },
+    {
+      "trace": "sample-3.itf.json",
+      "statesCompared": 41
+    },
+    {
+      "trace": "sample-4.itf.json",
+      "statesCompared": 41
+    },
+    {
+      "trace": "sample-5.itf.json",
+      "statesCompared": 41
+    },
+    {
+      "trace": "sample-6.itf.json",
+      "statesCompared": 41
+    },
+    {
+      "trace": "sample-7.itf.json",
+      "statesCompared": 41
+    },
+    {
+      "trace": "sample-8.itf.json",
+      "statesCompared": 41
+    },
+    {
+      "trace": "sample-9.itf.json",
+      "statesCompared": 41
+    }
+  ],
+  "unsafeMutantsDetected": 3,
+  "namedScenarios": 10,
+  "invariantSamples": 300,
+  "maxSteps": 40,
+  "artifacts": {
+    "checks": "b85856e2ac512d5251b349ad859d7d332ff1389142b24815659b4aaf78b1dc5d",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compiled-controls.stdout": "3ca2f23009703acdcad6eddeacda7bd122e4256d00b59c27c9b845cf07f24f2d",
+    "compiled-controls.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "quint-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "quint-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-latestRevisionTest-0.itf.json": "252c24ed5af4dc13070ba7b02fefd0e5598c4c9c30fa5b5db41bd3bb84008e17",
+    "named-pacingPreventsSpinTest-1.itf.json": "a0917d38d880a62e56d934ac1154c3321a3b13a5c7e236ad6b694e156124fd99",
+    "named-closeDoesNotRetireTest-2.itf.json": "f34e0dce4284ed89c62ddb83ceb05e568d2ccb5568ff8faa1867afcb8857531f",
+    "named-closeDropsPendingTest-3.itf.json": "83c15d13b0b42084e098b0fe21330d21a102bc06d55b675de1c0075e11c14173",
+    "named-newLeaseReopenTest-4.itf.json": "44346b566848f4f3a843c512482aad10a47252ef00b4e7e596a011fc761b8d51",
+    "named-finishNotRetirementTest-5.itf.json": "61b99f3e393b67bec52527c4ac4752083b7c64c7e6fe9b62df37f7aa1c9aeed4",
+    "named-heldCapacityNotReusedTest-6.itf.json": "8d3811c3eeee4d985bf6b7777929afcd4b27d605c4c8145958036b9d135db39d",
+    "named-drainAllowsLatestTest-7.itf.json": "80cb4f2b358fda6f8954144caa6101d2ac2a37bfdef70f40a1c94a874194f086",
+    "named-idleDoesNotCaptureTest-8.itf.json": "8b3a458005b092583071d9ebcf62b8022b74de8ba01b18fd6ff4f40b0877c14b",
+    "named-sameRevisionNotReplayedTest-9.itf.json": "346cfacd13deb2d89b2735a9e51977f48257dd7951d478d48b8ab7d56f2cbdfa",
+    "quint-named.stdout": "35851b1a9191a97375731356234a2ca5585f5ebb32235a42514c7cee256b5a17",
+    "quint-named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "7c6bd9b85b77cd507d58b650877c0119c289d3c29194c250c857b18335dd01dc",
+    "sample-1.itf.json": "4c4eda1881a0e440bd53b0eeda3c548cd2d74f8dfe49636368c12c29f9c46fc8",
+    "sample-2.itf.json": "46a1b581a7cd9869bce27592b5058ec37dfdb167d1cb8c8962ad590134679319",
+    "sample-3.itf.json": "501892f9e5e7f9381f684aa60a59be921f04b62b59a1cb24821b9db18b595b16",
+    "sample-4.itf.json": "047e364bc2c61276540e9c3820fd688b916e86fcb249254716031768e501890e",
+    "sample-5.itf.json": "398810a777f8943456cc60c61b403c663b42f7c8f572611241f43125b05825e5",
+    "sample-6.itf.json": "2703c59a21ea3923ac58284df376cde417f0dc0c1081b7c34210078c0b0f6826",
+    "sample-7.itf.json": "3b8b0584686edf34bf84c2a0a5e86adb9fa0e3b86d3dec724fab6da6ee828e93",
+    "sample-8.itf.json": "b38328d45202681ac1889baf604cc9e326d51ba6a952ecd66d20436d30254117",
+    "sample-9.itf.json": "411399be56d1e784b1b9035905528faa34c842cf7daa37eb36e77175d7af0ce0",
+    "sample-10.itf.json": "d6ce1b184506cc30b45397d433b6e55584e9835b3da127002f62f4a38c312db2",
+    "sample-11.itf.json": "2a4463b16d79b38d7b4c878901319f01bf80bd2da604afdfb51e1031c0130745",
+    "quint-sampling.stdout": "8132aa71c156ca97bfd3273228a9a6ab449f90c4850d88151ea1b437d66bd422",
+    "quint-sampling.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-closeDoesNotRetireTest-2.itf.stdout": "0969af907a508b842895aaaf7f441e9d26cca7aeba8711cd3d2b8c5ea65825af",
+    "replay-named-closeDoesNotRetireTest-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-closeDropsPendingTest-3.itf.stdout": "5ab32867466943dc19d3f452413a18ed46d519bd6b5d591bcf23d6552732f8c6",
+    "replay-named-closeDropsPendingTest-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-drainAllowsLatestTest-7.itf.stdout": "3ab8b2ecf87de831644716f06c2394b11f844914f6488d336353bde26a50111b",
+    "replay-named-drainAllowsLatestTest-7.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-finishNotRetirementTest-5.itf.stdout": "5ecd5310498de2746738e44dcb90cfe37e4ebf280894e6176c3e4d242752d9a7",
+    "replay-named-finishNotRetirementTest-5.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-heldCapacityNotReusedTest-6.itf.stdout": "9d892bbb2092f4c6ec441e2bf80ff6cd764bfde94a39276e674a48f180fc825e",
+    "replay-named-heldCapacityNotReusedTest-6.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-idleDoesNotCaptureTest-8.itf.stdout": "8e2d1db9e28cc93c862014696a7f05385b57db06842eb9c616313c9833546af4",
+    "replay-named-idleDoesNotCaptureTest-8.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-latestRevisionTest-0.itf.stdout": "13a3cc4b66692cfe340fc23f3689e6161b9b302b40022cb19db68c186af6a6db",
+    "replay-named-latestRevisionTest-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-newLeaseReopenTest-4.itf.stdout": "e622cbfca84616eb630960a93d1efe3bfcb1ed11881990b4fc63a84fc252bb80",
+    "replay-named-newLeaseReopenTest-4.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-pacingPreventsSpinTest-1.itf.stdout": "bd9f543c52ee96e125b986737eebc40654be3b79920ac1db1529e4f47ad5f320",
+    "replay-named-pacingPreventsSpinTest-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-sameRevisionNotReplayedTest-9.itf.stdout": "1afb896a157b85b931254b253a102eba69c65a48ce19772e198b0ee15e6bdd44",
+    "replay-named-sameRevisionNotReplayedTest-9.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-0.itf.stdout": "6fd90994ce6ba5de62ef247dbf360e4cdd06c2f7e70b2724e942f18fdd4dab98",
+    "replay-sample-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-1.itf.stdout": "67575bff34267fd73fd8bbb21bee1af728df630b47de96f8819730f53f9b511f",
+    "replay-sample-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-10.itf.stdout": "2aee8271434becdaf33428128299870da275a67deebf74d7a88b0294418c1c7e",
+    "replay-sample-10.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-11.itf.stdout": "918af480f044411b58fb9bf3380c8b4c289224d5c725e92b451e0748d6d8211c",
+    "replay-sample-11.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-2.itf.stdout": "7391544ff558192e5e9561f229ee8d66109ff974c85ddb0ec52aed12ef242c81",
+    "replay-sample-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-3.itf.stdout": "043cfce6ad93e2cc119a07adf0672711516e473a5e612cfd57abbe22d5f655da",
+    "replay-sample-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-4.itf.stdout": "551922d4fa0e3e7b1f9b6e1d49c6eae48834deaf318d562fdd717e2c24573759",
+    "replay-sample-4.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-5.itf.stdout": "79810fcc60a6f046ebd728ef5e60de98d82a02708de98636f74958351693dc7e",
+    "replay-sample-5.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-6.itf.stdout": "a814418e37877c517abd875b33a08bdea30cad7f469d571ffd5466aad599221b",
+    "replay-sample-6.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-7.itf.stdout": "2279a384430066fd892eb9e8890f0431ea2efad8765b9f1b2bde142b25ea7955",
+    "replay-sample-7.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-8.itf.stdout": "15d54ea6831fa19e4de20d2369a39b55d32a6c0254173cb58cc09fdcb3e625fd",
+    "replay-sample-8.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-9.itf.stdout": "40c933bece8a8c6d02aeba081decc9e0f77102a5db53c845dd4f6a2d9a69413f",
+    "replay-sample-9.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pacing-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pacing-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pacing-control.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pacing-control.stderr": "beb39402a46621ff5aa1e18b124cf52e2b53a6401bf124afe394dcce3e3b61a9",
+    "closed-lease-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "closed-lease-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "closed-lease-control.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "closed-lease-control.stderr": "3e07666ee6824fa602b3077a9e6cc4c71e4771a8fab246605db7ce2dee0fed14",
+    "producer-owner-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "producer-owner-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "producer-owner-control.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "producer-owner-control.stderr": "0e501469b6317e15a2cfe2952a7b32f499221af479753fe2b931d4260c974ac1",
+    "pacing/demand.hpp": "d30abb5e4829644cf8f6ebfbb516f460610c00f20899ad14c67dca640a6e00fe",
+    "pacing/preview_broker.hpp": "2954630241ad5e5dc1ee7ce770ef622cd7eff0c3b6d9c5feedc07fcdeec7e3a1",
+    "pacing/checks": "6d13bb52509fa43397a35cf8124f8633edec00d71d648eb2e722bc0177583b74",
+    "closed-lease/demand.hpp": "8387386842d7c99a7943ae60bf94863e1982efd0d5d76f53cfc1f321c07c7c4f",
+    "closed-lease/preview_broker.hpp": "2954630241ad5e5dc1ee7ce770ef622cd7eff0c3b6d9c5feedc07fcdeec7e3a1",
+    "closed-lease/checks": "295cdd9c3e4ecc45e6f4d6ba401babd902092ff196009f7cced197aa21aa1f23",
+    "producer-owner/demand.hpp": "0a46d0f9720cea9a79cd58a652e31566177887d78fe1cf7bbb2368802d69afd2",
+    "producer-owner/preview_broker.hpp": "2954630241ad5e5dc1ee7ce770ef622cd7eff0c3b6d9c5feedc07fcdeec7e3a1",
+    "producer-owner/checks": "6b3092d758d09954f768455b9a5c0112977624729732436cf4a4ae8909084ccc",
+    "inputs/native/admission-test.c": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+    "inputs/native/client-command-test.cpp": "ef481b7030d6a41831895fca1a5cba7405d08e22b913fa2f0f6cadccf47c25ab",
+    "inputs/native/client-denial-test.cpp": "9c05385a9e1b9da4efe03c414b09d512ab4e3791a33c4ff55fde75e4e0c009f7",
+    "inputs/native/client-frame-test.cpp": "233d4520f3bd200cad1f1ea580e9a2eaaf382822b90aa262d4294f8a3bf68d7f",
+    "inputs/native/client-import-test.cpp": "c74f47f1e4233681ab63adf3a51396cfa7c8a7fc0769eba9e314ccc82471de4a",
+    "inputs/native/client-observation-test.cpp": "bc9a36f1d62669904d5b7003d7b299ad2ee3a836c8f13f381a6669915c74e336",
+    "inputs/native/client-producer.cpp": "9568ed8c6f67d7d7056d8c106bd3d9ba052106eb1ddff9299db0b9ad449b6210",
+    "inputs/native/client-producer.h": "01f005d7899b2f3b13216a702508adfa39b6cbcbde4f84b6fae1ebc2404462b9",
+    "inputs/native/client-resume-test.cpp": "c8dfcdc8564bb6bd8cf9284fe3d12d67c30ca9d5a510a58b935021567719ac2d",
+    "inputs/native/client-retained-presentation-test.cpp": "680fb60765c220e59974cda9a8af87c60b5935d48fa8e66671f3e74a0e1c0a2d",
+    "inputs/native/client_frame.hpp": "65d1ed6c416b34a43f2d4920001d2da049fb8995b3006475fab1651e97b9a855",
+    "inputs/native/client_import.hpp": "f2a405ce71bf0787e9b8e84d4b10cc47444f385b90ea8f2544972592bb4abc9c",
+    "inputs/native/client_producer.hpp": "b93355d804613a68593bfd2447295287ac04c76427007c5772e6244b4c51d990",
+    "inputs/native/context-keys-test.c": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+    "inputs/native/context-keys.h": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+    "inputs/native/demand.hpp": "b7721cb9e67b7845252918213b5560fdaaafcacff42eb52eaa37697a341a7dcc",
+    "inputs/native/geometry-carrier-test.c": "770835580c7a4a2e21e49a9c3da586ee3ae59e66a92320dd7bb12fa8e516d921",
+    "inputs/native/handoff-test.c": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+    "inputs/native/host-fault.h": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+    "inputs/native/host-journal.h": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+    "inputs/native/host.c": "981fa1963001d3cd88d74ea1651691a69965ef4cb3f34ef8656957800cc47194",
+    "inputs/native/imported_clients.hpp": "b37c59910ff401d195772320e389aa527260d6e8df6a76235727f482f90724a7",
+    "inputs/native/preview-integration.h": "ffacb4ed6abe6b8019f5bcb489b8abe69f28f863ca9079f29cd1c075a0a49e2a",
+    "inputs/native/preview-provider-bootstrap.cpp": "225056e844c4bbd2f6ae7f161a36b43f35e53b7bd8c0f909433511b726c7a5c3",
+    "inputs/native/preview-provider-bootstrap.h": "03a2192c7113c94f8cb1a109a366cd9b4e96f8c471b0e7707c122c10278b4cac",
+    "inputs/native/preview-uri-api.h": "7a02550a807102f6ebdad9c1570eb6a719a50b0ed422ff26add97dbd6408b002",
+    "inputs/native/preview-uri-webkit.cpp": "c8cc48442d8d098315b7ad64b71be267679bc361041dc6d2de405c657fa74ea2",
+    "inputs/native/preview_broker.hpp": "2954630241ad5e5dc1ee7ce770ef622cd7eff0c3b6d9c5feedc07fcdeec7e3a1",
+    "inputs/native/preview_client.hpp": "e3db3313aa48370fe77323e2b87ef0745830ffa476d314d00eca2cd64a613657",
+    "inputs/native/preview_delivery.hpp": "5b404be53ccb2c9da3208ffbab276f41e66e33fc30b434257aa19ab001883d5d",
+    "inputs/native/preview_fd.hpp": "60fa114f7f2eb819c7a09085ee737c23d21b31f0ba177d967ff99f1425272a60",
+    "inputs/native/preview_uri.cpp": "5217f84fed7dd6a4bc4a52a518cf60596394a2a5714c8810faf536fcfb519372",
+    "inputs/native/preview_uri.hpp": "274f76793ef115078c8b9ab553260a45ac64a3e226c97a4be069ae17b33849cc",
+    "inputs/native/preview_wire.hpp": "2b02108a819e97106cbf38e420871bc4ee10656fd6f98905f25c30fd838d283d",
+    "inputs/native/provider-delivery-test.cpp": "4e21203fd7acd32ede476df1137b6ea812cb26fa977d05296a884401adfd8fbe",
+    "inputs/native/provider-grant-test.cpp": "8f39b5828b946d5fba2f7df689578a50f79cf7daf2e0e8443ab87dfd7b89ac22",
+    "inputs/native/provider-ownership-test.cpp": "d79fe711a90d24ac96e8522a33a4dc3582989b40b692aec73109e365e3f44675",
+    "inputs/native/reconciliation-carrier-test.c": "38210317eff28d8a436e640e971f91df71ffcc3b17e82c27a60ee34f57d9f73d",
+    "inputs/native/recovery-presentation-test.c": "812bbab1640e12269bc195979cd319a96a505157ba8f5c637eebfd5561bc8e67",
+    "inputs/native/shared-context-test.c": "ed50c8ed6b0fee3db3818e2f38c8bb57985b388b26ee09a5624d32f1bfa258ee",
+    "inputs/native/shared-context.h": "e86f3ba7a4c76d7839ef8d67d14c7f9ea6b514afa2ac110fc7cebf2da2fd62ce",
+    "inputs/native/shared-host.c": "56918d9005071cffc5042dfc62113887739278b97d92c4ffb6b6ce76517af472",
+    "inputs/native/surface-test.c": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+    "inputs/native/surface.h": "2bdf2d9b3b34fa7193da90e58ac378e7a640ae91e7b02d46987e33c559209f0b",
+    "inputs/native/imported-clients.h": "84d25b95190c1bf23d0e1c75bfd6d2e4a06ae987cd4e3df2e0aaf5e00e7d2b93",
+    "inputs/native/imported-clients.cpp": "e1bc6c595726c8d3629a1b33e54c751ab489b14bf56f4dc2f4f5c9c908a21e6f",
+    "inputs/native/imported-clients-boundary-test.c": "04b444d7d4d0c8f7f945d6f5e9996cfe3f23455624f6b933359b7ac1ee9737da",
+    "inputs/native/imported_lifecycle.hpp": "1d4efa4daa2753e43a822e3727dc78458941d72d03e4e01a1d041eb7f6bd9ded",
+    "inputs/native/imported-lifecycle-test.cpp": "14e7969e5228d013b590f912605cdd846235de67e8e13a87e644d123136d6a2a",
+    "inputs/native/family_source.hpp": "7e936e3f59b5075c364748384282c4e764d85444db2962a885a1ae5a0bf9bb35",
+    "inputs/native/family-source-test.cpp": "25c2402f9b6e1c7692633a2b27b69a961284412cf802fb600ad3ff2f97380b9a",
+    "inputs/native/family_style_crop_fd.hpp": "bf59599f5ceeb41381a1fd05fb045c52ec3cf47faf4706c38de8dd595f902a53",
+    "inputs/native/preview_png.hpp": "308007220baf1d7f2ad30569237ffaf7d6427d900ee1243811480402f188e670",
+    "inputs/native/family-fd-test.cpp": "4129475daf2dbcc997ee804f6f2cc1ae97c373adddc891a95ec6cf043f98291d",
+    "inputs/native/family_frame.hpp": "20ce40ab0080c37e17345cb3d88334eb5dc926a79720ec6faffee8807ae5fe67",
+    "inputs/native/family_producer.hpp": "148240aaf174b3d0f27d8385cd3e93811e48dd8c39b3b65a691fc754c2eebe22",
+    "inputs/native/family-frame-test.cpp": "7f5421a78f071a081edb32b8db0402c0e8a855df150ecdeeba6298cf94ed840c",
+    "inputs/native/generated_backdrop_fd.hpp": "3f60c0cffed16e60ec90b8f8365ec3f278d5c8cb41db2ce5b85c4929d018337f",
+    "inputs/native/backdrop-fd-test.cpp": "74b2f71f21e823bc3445cd647f86d422071edbd483d2bd89d68b38ce6575f623",
+    "inputs/native/backdrop-frame-test.cpp": "687f19e3053f305777f16d854fc2dbf593f4a7131589d522c37de4acfa498fd6",
+    "inputs/native/backdrop-denial-test.cpp": "7388e88721724be5280b0df91e982af29bebc2f9a10563690ab5aef8c73bda86",
+    "inputs/native/qa-reader-control.h": "1a504ee3959b78c73a8f9613b6a6c4f9cc51bc198d1dbd3b6fe1fd352684ccf4",
+    "inputs/native/qa-reader-control-test.c": "6bd57d3be5b0f3d0e071993e93b188fd0b2a87ae91dada60120f8e9142a07ed5",
+    "inputs/native/preview_metadata.hpp": "1cf84f1094cd8ccca90fcc5c44bed4182716e256792bb542c771c8bc1ce9ad5e",
+    "inputs/native/preview_icons.hpp": "6af2174049d623e824fdcf66ddd3a18d0b48a2c34c7159c1651dc0e4b53d8a32",
+    "inputs/native/preview_icons.cpp": "48aa83cc63d4f1f08b9333372cb3f63e0a25bf880cc17567098079284ee79693",
+    "inputs/native/metadata-icon-test.cpp": "cff027f7a3d29668893aec03be50f5dbae49fb2295606a8e8baad34b64e028d7",
+    "inputs/native/window-catalog-test.cpp": "c9efe0d6f7f7db6abc38ab717d16d56a014a2804d39281a28bddd7eb030548a6",
+    "inputs/native/receiver-extension-test.cpp": "a35501610fadf7cc4935b970c87b683fa9a2216ee2eef3da8cc70afc652b8d59",
+    "inputs/native/delivery-extension-test.cpp": "4d9ccdff37c8818ec6f70b93393e94a46f1f1b3506606a692549cf24c38972c8",
+    "inputs/native/imported_admission.hpp": "26ff33e3e51f6df21f28114626f0f62fbd8f6e9e9447b89e1fb9c716d99227dd",
+    "inputs/native/imported-admission-test.cpp": "4440d17aea9172b547a66660cb30ebe27df821f627f9fae8861fcdd8d6858d6f",
+    "inputs/native/imported_enrollment.hpp": "970d2e8027dfdbbbb599f3de7d5132b9e7e27e8e0509622e7ae3ad18eeef380e",
+    "inputs/native/dynamic-enrollment-test.cpp": "bc8dd70ec9b8b5ce2f428cb82578389f9349d24b3ebdb423ccf725b5fd8c8278",
+    "inputs/native/rejected-enrollment-test.cpp": "f38a7da3423eb939f76c8882f2d2b057b9af865fd9cd3d96dbc9741918c99aad",
+    "inputs/native/resume-enrollment-test.cpp": "b14e33de4a2c1ff6b8e38737f66d8d6f906aba07e609a67750a5a7055434921d",
+    "inputs/native/imported_feedback.hpp": "6760465caf1b6877aadb62776fa050f7a44848cd4a9061ce89fdbac96604b9aa",
+    "inputs/native/local-feedback-test.cpp": "01b247fef9f6378db1616430fb7f04236e584085269542eaa05c4a6581612b29",
+    "inputs/native/next-intent-test.cpp": "6ad459d12146dbe18b6431b3ee863318c10d45a0806f63d9b5400812f20e80b9",
+    "inputs/native/next-resume-test.cpp": "f4f00450ca31f382b71af7b7158c40ee199439c9f8c23f3a4062075e190ab152",
+    "inputs/spec/demand.qnt": "a43b820819e160a0a57656916ec99faa0939c7d7541ca5efbf83223bd9ab5336",
+    "inputs/spec/tests.qnt": "5e9a8f45cc16df53a15a7614a044d6a617b05b1d97acee63ea75bb3059ce3560",
+    "inputs/spec/metadata.qnt": "869f4d1cdd5b0afb87dc5ff9a07c49941fd0b0fc9817468a411afa2e051141ed",
+    "inputs/spec/metadata_tests.qnt": "25af23b35954ac1816179a8a5746066d94d109801fe4d01a30eacc184a483194",
+    "inputs/spec/catalog.qnt": "4d91e8f8978fe8f385f20e796ae210788db6a833871d97d6c6dd652435153292",
+    "inputs/spec/catalog_tests.qnt": "b111978bbed36d2405069f4b33dbdc5cc7a4c09999039d20628e668df5ea220d",
+    "inputs/spec/delivery.qnt": "32226aee3149a88d4d43c8cdbc1f16b03136b8687b92534e64080fcadf6fa3d0",
+    "inputs/spec/delivery_tests.qnt": "17552d1d7e540effb9160c9de4ba84786594e881bf5e68a54dd7c70b878dacdb",
+    "inputs/spec/intent.qnt": "f1d726231e5530615c7420a82b8359157fdbaad39846ee188671832bb1f8dc9c",
+    "inputs/spec/intent_tests.qnt": "8a9bf3a18dffe24722de0c95312f9f06891a807fa9900c067adeccf67c48c6aa",
+    "inputs/spec/enrollment.qnt": "e2967f34c156c0995b4017991388599fe8f664a83c1c6f3c7f850ea45df943e3",
+    "inputs/spec/enrollment_tests.qnt": "62af1331d851eb6555f943932261a32caba384c294ce2b211accd7d481138fe3",
+    "inputs/spec/resume.qnt": "0b9556f592dcaa753a08c9a16b27c4ef8b267395ab84547ffb6b631af4d9561e",
+    "inputs/spec/resume_tests.qnt": "c21910526e8aaed976c06343f04b389feb808a7c3a54984671163e869863aae7",
+    "inputs/spec/receipt.qnt": "02efda728c18e4de61ab3f2b53de457309c8656ecd5cebf5249417a7a5a91e0c",
+    "inputs/spec/receipt_tests.qnt": "3bb487fbad51b2852fa8d3e077542216b06ba2c448daf7a863e05b268b92c052",
+    "inputs/spec/feedback.qnt": "3bb7b150427c6ae54284d377ff6e3804daa66f31659ef9b99cfa69337f723fb6",
+    "inputs/spec/feedback_tests.qnt": "0cabaf95612b57a4631793794e7e7b3ce258d4c6ae5bfc8804b9dc36cd12653f",
+    "inputs/spec/next_intent.qnt": "60bc69b5aeac23c8fedec1f9e01922d42932cca06efccecf41d6a94193f66570",
+    "inputs/spec/next_intent_tests.qnt": "a57715978fe9a6a3f4c7f30c58be8a3cfecc329a424e8a9ba2d40b0300731b27",
+    "inputs/spec/next_resume.qnt": "742275ca98db99be65de399fa85c89352bb23a786f26110bff9a2401c5847135",
+    "inputs/spec/next_resume_tests.qnt": "96c3fd17868227e0caded0f65f7a8ea0d45d9f56a39b6a6bab77e0f79e2becef",
+    "inputs/qa/checks.cpp": "d9d5fe80ea0470dd43176219200ea9b3ab4d7cb49a7d19b30cdfdd5e4a9ec0fe",
+    "inputs/qa/check.py": "64ddfc2ce1af5c12405eb6a2643e05175ab24dafad50d45187347861229b744d"
+  }
+}

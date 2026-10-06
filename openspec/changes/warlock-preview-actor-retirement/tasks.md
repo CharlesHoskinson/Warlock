@@ -1,0 +1,6 @@
+- [ ] Implement and compile authenticated native retirement-state observation against the exact owning ABI.
+- [ ] Run explicitly selected Quint and coupled authority/decoder checks, including live, minimized, destroyed, future and foreign identities.
+- [ ] Replace dynamic C lifetime history with bounded active membership and nonreused entry serials.
+- [ ] Integrate atomic physical/journal/receiver/Coordinator/Broker/ledger retirement and exact Elm typed facts.
+- [ ] Qualify real native turnover beyond256 distinct windows with a retained live neighbor and replay controls.
+- [ ] Freeze and publish exact source/evidence; preserve all original GUI acceptance gates.

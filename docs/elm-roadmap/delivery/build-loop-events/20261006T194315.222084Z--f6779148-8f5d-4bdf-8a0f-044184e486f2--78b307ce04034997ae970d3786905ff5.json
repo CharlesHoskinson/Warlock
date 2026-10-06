@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "78b307ce04034997ae970d3786905ff5",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-06T19:43:15.222084+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/warlock-preview-provider-v81",
+  "nextWork": [
+    "PROGRESS GUI81 held: full95 and all eleven original regressions; new resume13/29/605states/3unsafeMutants/guards22/C50Elm30 passed. Native third lease117 next. All original release gates preserved."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/warlock-preview-provider-v81/component-manifest.json",
+      "sha256": "f3074f555a8c0f1fc438e8d848939c5de38aeacf544a9343a6649a1754764f68",
+      "size": 1049775
+    },
+    {
+      "path": "docs/warlock-preview/v82/component-report.json",
+      "sha256": "27f2ecdaef66271b5e83e4b5fa04ab4fa4151dfce7984a7cf65a8d398c36d5f0",
+      "size": 732
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

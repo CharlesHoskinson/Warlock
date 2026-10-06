@@ -1,0 +1,1358 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 0,
+      fault: false,
+      floor: 1,
+      free: false,
+      history: [],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: true,
+      records: 2,
+      status: "Ready"
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 0,
+      fault: false,
+      floor: 1,
+      free: false,
+      history: ["ReplaceReceiver"],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 2,
+      status: "ReceiverReplaced"
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: false,
+      history: ["ReplaceReceiver", "RejectNative"],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 2,
+      status: "Incoherent"
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history: ["ReplaceReceiver", "RejectNative", "Drain"],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "CapacityReturned"
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history: ["ReplaceReceiver", "RejectNative", "Drain", "Retry"],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history: ["ReplaceReceiver", "RejectNative", "Drain", "Retry", "Retry"],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history:
+        ["ReplaceReceiver", "RejectNative", "Drain", "Retry", "Retry", "Retry"],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "RejectNative",
+          "Drain",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry"
+        ],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "RejectNative",
+          "Drain",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry"
+        ],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "RejectNative",
+          "Drain",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry"
+        ],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "RejectNative",
+          "Drain",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry"
+        ],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "RejectNative",
+          "Drain",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry"
+        ],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "RejectNative",
+          "Drain",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry"
+        ],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "RejectNative",
+          "Drain",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry"
+        ],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "RejectNative",
+          "Drain",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry"
+        ],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "RejectNative",
+          "Drain",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry"
+        ],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "RejectNative",
+          "Drain",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry"
+        ],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "RejectNative",
+          "Drain",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry"
+        ],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "RejectNative",
+          "Drain",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry"
+        ],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "RejectNative",
+          "Drain",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry"
+        ],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "RejectNative",
+          "Drain",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry"
+        ],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "RejectNative",
+          "Drain",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry"
+        ],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "RejectNative",
+          "Drain",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry"
+        ],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "RejectNative",
+          "Drain",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry"
+        ],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "RejectNative",
+          "Drain",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry"
+        ],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "RejectNative",
+          "Drain",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry"
+        ],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "RejectNative",
+          "Drain",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry"
+        ],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "RejectNative",
+          "Drain",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry"
+        ],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "RejectNative",
+          "Drain",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry"
+        ],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "RejectNative",
+          "Drain",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry"
+        ],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "RejectNative",
+          "Drain",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry"
+        ],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "RejectNative",
+          "Drain",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry"
+        ],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "RejectNative",
+          "Drain",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry"
+        ],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "RejectNative",
+          "Drain",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry"
+        ],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "RejectNative",
+          "Drain",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry"
+        ],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 0,
+      fault: true,
+      floor: 1,
+      free: true,
+      history:
+        [
+          "ReplaceReceiver",
+          "RejectNative",
+          "Drain",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry",
+          "Retry"
+        ],
+      known: false,
+      now: 4,
+      queries: 0,
+      receiver: false,
+      records: 1,
+      status: "ReceiverRejected"
+    }
+}
+
+[ok] No violation found (406ms at 369 traces/second).
+Trace length statistics: max=36, min=3, average=24.69
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
