@@ -1,0 +1,13 @@
+{
+  "passed": false,
+  "phase": "staged-new-path-count",
+  "session": 26666,
+  "exitCode": 1,
+  "expectedHeldPaths": 3134,
+  "actualChangedPaths": 3132,
+  "alreadyCommittedUnchanged": [
+    "implementation/warlock-preview-provider-v24/ANCESTRY.json",
+    "implementation/warlock-preview-provider-v24/SPEC.md"
+  ],
+  "action": "Preserve failed script. Fresh v2 derives immutable lane paths from HEAD and verifies raw HEAD bytes for unchanged held paths. Existing staged paths are all owned; no unrelated worker changes staged."
+}

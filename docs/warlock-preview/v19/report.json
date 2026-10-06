@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "passed": true,
+  "components": [
+    {
+      "path": "implementation/warlock-imported-client-witness-v2/component-manifest.json",
+      "sha256": "964fc73fc7ee9f2dc3fbdeca9e8a3c82acc379c5668971bd7563196b3e17b5af",
+      "files": 59
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v18/component-manifest.json",
+      "sha256": "c067d4ee683bb3ea3b9ad93af4085cd00d464b747e97e4ccc9df72dfbd97f164",
+      "files": 219
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v24/component-manifest.json",
+      "sha256": "8faaf57b69ddf009149a05ab3083c99c0fc543f32b1f64886f11411ec5263a81",
+      "files": 536
+    }
+  ],
+  "evidence": {
+    "implementation/warlock-preview-provider-v24/qa/build-1791249799608128055/report.json": "0f7d3dec3bdfd4c343fb6fdaedf853037869913b2be6a80095f5df77fbc5da14",
+    "implementation/warlock-imported-client-witness-v2/qa/build-1791250041491716652/report.json": "a908cc895672f04c701ece469f0852dd5b25bb30792c232558ca319a69af82b9",
+    "implementation/warlock-client-provider-native-v18/qa/native-1791250150656075469/report.json": "a4c2327986f93e7cb0a6356bb5c5d1775107156ed54ea3b6bab5ce2ea76ab0df"
+  },
+  "boundedNativeCBridgeQualified": true,
+  "nativeControls": 905,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "next": "Actual full GUI two-entry picker admission, same compiled Elm demand/Release/ACK and retained source lifecycle; then all original release/family/hardware gates"
+}

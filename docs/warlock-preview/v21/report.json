@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "passed": true,
+  "components": [
+    {
+      "path": "implementation/warlock-client-provider-native-v19/component-manifest.json",
+      "sha256": "98f5c5ef84ebd2c0e553b72d71f68905d5331a51fdf369781f6f923898094ccc",
+      "files": 216
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v25/component-manifest.json",
+      "sha256": "d7b5149c5b8b7d3a3b6b28789a267a47c308904ac5b4112332525d1140cc2f3d",
+      "files": 536
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v20/component-manifest.json",
+      "sha256": "f64c89e904b457ea1d99cac846916605cac3a541ea00aac2d10b0ef792e7759d",
+      "files": 218
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v26/component-manifest.json",
+      "sha256": "e8de0b2b18d5a891d5f9ab1b41a381263e2daa0bb49fc693d0cb7394b89f0bea",
+      "files": 537
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v21/component-manifest.json",
+      "sha256": "3b71e5a0a5644086668c4f587740b6f54d825cd3e4c16f95262d166da1908ffe",
+      "files": 226
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v27/component-manifest.json",
+      "sha256": "2c65e9d56107bcb65e6e09a8837de5f690396b4997f552320389aa74db9e7d0b",
+      "files": 537
+    }
+  ],
+  "evidence": {
+    "docs/warlock-preview/v21/ack-regression-1791251659763044137/report.json": "f2001ac896553e84da628acd2790bb2172dc40eeb6e230f6aa1d91eabefadfd2",
+    "implementation/warlock-preview-provider-v25/qa/build-1791250573079751334/report.json": "5356d15a35cfeb1b34be47b644a35728ec1ca1691ef878cb1c9f5e8a3720733a",
+    "implementation/warlock-preview-provider-v26/qa/build-1791251250256670496/report.json": "f243f9c93e857443af8bdc4bb80ac14f5586f96ce4f99a2808fe7fa3556f6bd3",
+    "implementation/warlock-preview-provider-v27/qa/build-1791251518108045190/report.json": "8c49d18ca43926ab993804759579a93b96de6fd2dc73493c43f52fba1dfc7ad7",
+    "implementation/warlock-client-provider-native-v19/qa/native-1791251117798916374/report.json": "69e84fea9af9c5cd0e31191f986ab71dd036c6b71ab941f755c3616d098a6a06",
+    "implementation/warlock-client-provider-native-v20/qa/native-1791251375271193305/report.json": "6648b1e30bf0fafb49ef4b9781fd1f743bb068efb9dfb3cf7124a7c8c9e99c4a",
+    "implementation/warlock-client-provider-native-v21/qa/native-1791251678795868798/report.json": "3fb24afa2c7a3857bd9d0d5f6599da869547362db572d307d60d20ae4718667e"
+  },
+  "boundedNativeGUIQualified": true,
+  "nativeControls": 918,
+  "normalOwnedExits": 103,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "next": "Shared retained new-lease re-presentation, per-entry resumption and Unknown settlement; production family/decor/modal preview13, async hardware/S02/output and all original full release gates remain open"
+}

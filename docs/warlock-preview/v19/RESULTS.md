@@ -1,0 +1,5 @@
+# Shared imported C bridge
+
+Provider24 full Main/Bar/Popup/C/C++ build PASS55 commands,6 strict missing-owner C boundary controls and all100 prior import controls. Native18 PASS905 retains every904 prior assertion in order;100 normal owned process exits and clean private teardown on the same core/plugin/AQ tuple. The actual shared importer is now exercised through C enrollment, commands, URI/status/poll, refusal-preserving close and empty final close. Both real imported sources retain independent local physical ownership after native retirement; source-stop/lock/readers/terminal ACK oracles remain unchanged.
+
+The Native witness uses an explicit trusted receiver. It does not qualify actual GTK widget/input admission or two-entry GUI demand. Source eligibility stays false and client-only coverage stays exact. Whole release, original full-family preview13, hardware/fences/S02/output and all other mandatory gates remain open. Actual provider25 GUI integration is in progress in a fresh derivative; accepted and failed prior evidence is immutable.
