@@ -1,0 +1,309 @@
+
+ Error [QNT404]: Name 'match' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll.qnt:7:30
+  7:  pure def label(e:Event):str=match e{
+                                  ^^^^^
+
+
+ Error [QNT404]: Name 'safety' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:3:47
+  3:  action check(ok:bool):bool=all{assert(ok and safety),s'=s}
+                                                   ^^^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:4:18
+  4:  action two:bool=init.then(fire(Observe(1))).then(fire(Observe(2))).then(fire(Ready(1))).then(fire(Ready(2)))
+                      ^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:4:28
+  4:  action two:bool=init.then(fire(Observe(1))).then(fire(Observe(2))).then(fire(Ready(1))).then(fire(Ready(2)))
+                                ^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:4:51
+  4:  action two:bool=init.then(fire(Observe(1))).then(fire(Observe(2))).then(fire(Ready(1))).then(fire(Ready(2)))
+                                                       ^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:4:74
+  4:  action two:bool=init.then(fire(Observe(1))).then(fire(Observe(2))).then(fire(Ready(1))).then(fire(Ready(2)))
+                                                                              ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:4:95
+  4:  action two:bool=init.then(fire(Observe(1))).then(fire(Observe(2))).then(fire(Ready(1))).then(fire(Ready(2)))
+                                                                                                   ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:5:36
+  5:  run unacceptedObservationExcluded=init.then(fire(Observe(1))).then(fire(Poll)).then(check(s.selected==0 and s.after==0))
+                                        ^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:5:46
+  5:  run unacceptedObservationExcluded=init.then(fire(Observe(1))).then(fire(Poll)).then(check(s.selected==0 and s.after==0))
+                                                  ^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:5:69
+  5:  run unacceptedObservationExcluded=init.then(fire(Observe(1))).then(fire(Poll)).then(check(s.selected==0 and s.after==0))
+                                                                         ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:6:39
+  6:  run firstExactReadySelected=two.then(fire(Poll)).then(check(s.selected==1))
+                                           ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:7:49
+  7:  run blockedFirstDoesNotStarveNeighbor=two.then(fire(Poll)).then(fire(Poll)).then(check(s.selected==2))
+                                                     ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:7:66
+  7:  run blockedFirstDoesNotStarveNeighbor=two.then(fire(Poll)).then(fire(Poll)).then(check(s.selected==2))
+                                                                      ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:8:31
+  8:  run roundRobinWraps=two.then(fire(Poll)).then(fire(Poll)).then(fire(Poll)).then(check(s.selected==1))
+                                   ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:8:48
+  8:  run roundRobinWraps=two.then(fire(Poll)).then(fire(Poll)).then(fire(Poll)).then(check(s.selected==1))
+                                                    ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:8:65
+  8:  run roundRobinWraps=two.then(fire(Poll)).then(fire(Poll)).then(fire(Poll)).then(check(s.selected==1))
+                                                                     ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:9:36
+  9:  run completedRowExcluded=two.then(fire(Poll)).then(fire(Complete(2))).then(fire(Poll)).then(check(s.selected==1 and s.issued==1))
+                                        ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:9:53
+  9:  run completedRowExcluded=two.then(fire(Poll)).then(fire(Complete(2))).then(fire(Poll)).then(check(s.selected==1 and s.issued==1))
+                                                         ^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:9:77
+  9:  run completedRowExcluded=two.then(fire(Poll)).then(fire(Complete(2))).then(fire(Poll)).then(check(s.selected==1 and s.issued==1))
+                                                                                 ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:10:36
+  10:  run confirmedRowExcluded=two.then(fire(Poll)).then(fire(Complete(1))).then(fire(Ack)).then(fire(Poll)).then(check(s.selected==2 and s.acked==1))
+                                         ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:10:53
+  10:  run confirmedRowExcluded=two.then(fire(Poll)).then(fire(Complete(1))).then(fire(Ack)).then(fire(Poll)).then(check(s.selected==2 and s.acked==1))
+                                                          ^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:10:77
+  10:  run confirmedRowExcluded=two.then(fire(Poll)).then(fire(Complete(1))).then(fire(Ack)).then(fire(Poll)).then(check(s.selected==2 and s.acked==1))
+                                                                                  ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:10:93
+  10:  run confirmedRowExcluded=two.then(fire(Poll)).then(fire(Complete(1))).then(fire(Ack)).then(fire(Poll)).then(check(s.selected==2 and s.acked==1))
+                                                                                                  ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:11:29
+  11:  run emptyPollRetainsCursor=init.then(fire(Observe(3))).then(fire(Ready(3))).then(fire(Poll)).then(fire(Complete(3))).then(fire(Ack)).then(fire(Poll)).then(check(s.selected==0 and s.after==3 and s.acked==1))
+                                  ^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:11:39
+  11:  run emptyPollRetainsCursor=init.then(fire(Observe(3))).then(fire(Ready(3))).then(fire(Poll)).then(fire(Complete(3))).then(fire(Ack)).then(fire(Poll)).then(check(s.selected==0 and s.after==3 and s.acked==1))
+                                            ^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:11:62
+  11:  run emptyPollRetainsCursor=init.then(fire(Observe(3))).then(fire(Ready(3))).then(fire(Poll)).then(fire(Complete(3))).then(fire(Ack)).then(fire(Poll)).then(check(s.selected==0 and s.after==3 and s.acked==1))
+                                                                   ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:11:83
+  11:  run emptyPollRetainsCursor=init.then(fire(Observe(3))).then(fire(Ready(3))).then(fire(Poll)).then(fire(Complete(3))).then(fire(Ack)).then(fire(Poll)).then(check(s.selected==0 and s.after==3 and s.acked==1))
+                                                                                        ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:11:100
+  11:  run emptyPollRetainsCursor=init.then(fire(Observe(3))).then(fire(Ready(3))).then(fire(Poll)).then(fire(Complete(3))).then(fire(Ack)).then(fire(Poll)).then(check(s.selected==0 and s.after==3 and s.acked==1))
+                                                                                                         ^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:11:124
+  11:  run emptyPollRetainsCursor=init.then(fire(Observe(3))).then(fire(Ready(3))).then(fire(Poll)).then(fire(Complete(3))).then(fire(Ack)).then(fire(Poll)).then(check(s.selected==0 and s.after==3 and s.acked==1))
+                                                                                                                                 ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:11:140
+  11:  run emptyPollRetainsCursor=init.then(fire(Observe(3))).then(fire(Ready(3))).then(fire(Poll)).then(fire(Complete(3))).then(fire(Ack)).then(fire(Poll)).then(check(s.selected==0 and s.after==3 and s.acked==1))
+                                                                                                                                                 ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:12:41
+  12:  run foreignEpochDoesNotRotate=two.then(fire(Poll)).then(fire(WrongEpoch)).then(fire(Poll)).then(check(s.selected==2 and s.after==2))
+                                              ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:12:58
+  12:  run foreignEpochDoesNotRotate=two.then(fire(Poll)).then(fire(WrongEpoch)).then(fire(Poll)).then(check(s.selected==2 and s.after==2))
+                                                               ^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:12:81
+  12:  run foreignEpochDoesNotRotate=two.then(fire(Poll)).then(fire(WrongEpoch)).then(fire(Poll)).then(check(s.selected==2 and s.after==2))
+                                                                                      ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:13:39
+  13:  run lateReadyEntersRotation=two.then(fire(Poll)).then(fire(Observe(3))).then(fire(Ready(3))).then(fire(Poll)).then(fire(Poll)).then(check(s.selected==3))
+                                            ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:13:56
+  13:  run lateReadyEntersRotation=two.then(fire(Poll)).then(fire(Observe(3))).then(fire(Ready(3))).then(fire(Poll)).then(fire(Poll)).then(check(s.selected==3))
+                                                             ^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:13:79
+  13:  run lateReadyEntersRotation=two.then(fire(Poll)).then(fire(Observe(3))).then(fire(Ready(3))).then(fire(Poll)).then(fire(Poll)).then(check(s.selected==3))
+                                                                                    ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:13:100
+  13:  run lateReadyEntersRotation=two.then(fire(Poll)).then(fire(Observe(3))).then(fire(Ready(3))).then(fire(Poll)).then(fire(Poll)).then(check(s.selected==3))
+                                                                                                         ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:13:117
+  13:  run lateReadyEntersRotation=two.then(fire(Poll)).then(fire(Observe(3))).then(fire(Ready(3))).then(fire(Poll)).then(fire(Poll)).then(check(s.selected==3))
+                                                                                                                          ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:14:45
+  14:  run threeContinuousRowsAreVisited=two.then(fire(Observe(3))).then(fire(Ready(3))).then(fire(Poll)).then(check(s.selected==1)).then(fire(Poll)).then(check(s.selected==2)).then(fire(Poll)).then(check(s.selected==3)).then(fire(Poll)).then(check(s.selected==1))
+                                                  ^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:14:68
+  14:  run threeContinuousRowsAreVisited=two.then(fire(Observe(3))).then(fire(Ready(3))).then(fire(Poll)).then(check(s.selected==1)).then(fire(Poll)).then(check(s.selected==2)).then(fire(Poll)).then(check(s.selected==3)).then(fire(Poll)).then(check(s.selected==1))
+                                                                         ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:14:89
+  14:  run threeContinuousRowsAreVisited=two.then(fire(Observe(3))).then(fire(Ready(3))).then(fire(Poll)).then(check(s.selected==1)).then(fire(Poll)).then(check(s.selected==2)).then(fire(Poll)).then(check(s.selected==3)).then(fire(Poll)).then(check(s.selected==1))
+                                                                                              ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:14:133
+  14:  run threeContinuousRowsAreVisited=two.then(fire(Observe(3))).then(fire(Ready(3))).then(fire(Poll)).then(check(s.selected==1)).then(fire(Poll)).then(check(s.selected==2)).then(fire(Poll)).then(check(s.selected==3)).then(fire(Poll)).then(check(s.selected==1))
+                                                                                                                                          ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:14:177
+  14:  run threeContinuousRowsAreVisited=two.then(fire(Observe(3))).then(fire(Ready(3))).then(fire(Poll)).then(check(s.selected==1)).then(fire(Poll)).then(check(s.selected==2)).then(fire(Poll)).then(check(s.selected==3)).then(fire(Poll)).then(check(s.selected==1))
+                                                                                                                                                                                      ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v94/qa/retirement-poll-check-1791329068438629830/inputs/spec/retirement_poll_tests.qnt:14:221
+  14:  run threeContinuousRowsAreVisited=two.then(fire(Observe(3))).then(fire(Ready(3))).then(fire(Poll)).then(check(s.selected==1)).then(fire(Poll)).then(check(s.selected==2)).then(fire(Poll)).then(check(s.selected==3)).then(fire(Poll)).then(check(s.selected==1))
+                                                                                                                                                                                                                                  ^^^^^^^^^^
+
+error: parsing failed

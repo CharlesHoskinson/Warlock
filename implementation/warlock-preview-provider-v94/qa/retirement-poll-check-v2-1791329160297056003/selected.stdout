@@ -1,0 +1,14 @@
+
+  retirement_poll_tests
+    ok unacceptedObservationExcluded passed 1 test(s)
+    ok firstExactReadySelected passed 1 test(s)
+    ok blockedFirstDoesNotStarveNeighbor passed 1 test(s)
+    ok roundRobinWraps passed 1 test(s)
+    ok completedRowExcluded passed 1 test(s)
+    ok confirmedRowExcluded passed 1 test(s)
+    ok emptyPollRetainsCursor passed 1 test(s)
+    ok foreignEpochDoesNotRotate passed 1 test(s)
+    ok lateReadyEntersRotation passed 1 test(s)
+    ok threeContinuousRowsAreVisited passed 1 test(s)
+
+  10 passing (24ms)

@@ -239,3 +239,36 @@ binding and SHALL NOT replay capture, release or terminal acknowledgment effects
 - WHEN that receiver later retires its membership and native polling continues
 - THEN the retained original readiness permits rechecking aggregate removal
   without another Elm control, and every physical and proof barrier still applies.
+
+### Requirement: Bounded fair native readiness polling
+
+EARS WLK-PREVIEW-RETIRE-005: WHEN the original receiver polls readiness, the
+bridge SHALL select at most one pending accepted row per call and SHALL rotate
+through continuously pending rows without resetting original namespaces or
+completion prefixes. Selection SHALL retain the original canonical readiness
+correlation and exclude unaccepted observations and completed rows.
+
+EARS WLK-PREVIEW-RETIRE-006: WHILE local physical, producer, backend,
+terminal-proof or other receiver ownership prevents retirement, the bridge SHALL
+retain readiness without another synchronous native retirement query or partial
+erasure. WHEN those barriers clear, aggregate removal SHALL still require a
+fresh exact native Retired fact under the original binding and receiver. A
+structural per-call bound SHALL NOT establish measured S02 timing acceptance.
+
+#### Scenario: Blocked actor does not starve a neighbor
+- GIVEN two accepted readiness rows and a receiver barrier on the first
+- WHEN the original receiver polls twice
+- THEN the second eligible actor is considered, with at most one candidate per
+  call, and the first actor remains intact until its original barriers clear.
+
+#### Scenario: Foreign polling does not rotate ownership
+- GIVEN pending readiness and an established transport cursor
+- WHEN a foreign receiver or epoch attempts a poll
+- THEN no selection, namespace, readiness correlation or completion prefix moves.
+
+#### Scenario: Local terminal proof remains unacknowledged
+- GIVEN native Retired and a retained readiness row with an original terminal
+  proof that has not been acknowledged
+- WHEN polling occurs
+- THEN no new native retirement query or owner erasure occurs; after exact proof
+  acknowledgment, polling still requires a fresh native Retired fact.

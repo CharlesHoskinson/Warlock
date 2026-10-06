@@ -6,8 +6,8 @@
 - [ ] Freeze and publish exact source/evidence; preserve all original GUI acceptance gates.
 
 Native observation and bridge evidence: [current report](../../../docs/warlock-preview/v91/report.json).
-Core16/plugin18/current GUI89/native126 passed2465 checks and277 normal owned
-exits with complete cleanup and all2457 prior125 fixed controls. Full95 and all
+Core16/plugin18/current GUI92/native128 passed2466 checks and277 normal owned
+exits with complete cleanup and all2458 prior126 fixed controls. Full95 and all
 original12 regression suites passed. The strict decoder13/25/439states/three
 mutants and actual C/socket96 controls retain separate scope.
 
@@ -63,6 +63,19 @@ Quint-name and invalid fixture-clock failures are retained. Commit remains trust
 caller bookkeeping, with separate physical/proof/receiver checks. The full native
 qualified runtime remains GUI92/native128; GUI93's new poll API is not activated
 through the WebKit host. See its [component report](../../../docs/warlock-preview/v93/component-report.json).
+
+Held GUI94 bounds readiness polling to one candidate per call and rotates fairly.
+All original local physical/proof/receiver barriers precede the fresh native
+query. Its current full95 build and byte-identical Elm assets passed45 controls;
+the C/native/Elm round trip passed54. Fifty actual C/socket controls verify exact
+query counts, real receiver/terminal-proof barriers, blocked-first/eligible-neighbor
+fairness, exact original actor floor, processing ACK, byte-identical final retry
+and normal close. Ten explicitly selected Quint scenarios and200 bounded samples
+match22 actual compiled native traces/427 states; three compiled mutations fail
+their precise witnesses. The earlier model syntax failure remains held.
+Original9068 aggregate and14467 retained-channel controls passed with280 synthetic
+subjects. This structural bound does not establish measured timing acceptance or
+actual WebKit activation. See [the component report](../../../docs/warlock-preview/v93/component-report94.json).
 
 These are bounded qualifications. Native observation/readiness/final
 completion routing through the actual WebKit host, reliable outgoing transport,

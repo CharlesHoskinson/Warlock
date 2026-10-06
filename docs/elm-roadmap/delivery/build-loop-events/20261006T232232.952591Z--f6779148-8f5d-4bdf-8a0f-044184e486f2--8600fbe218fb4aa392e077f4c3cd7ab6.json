@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "8600fbe218fb4aa392e077f4c3cd7ab6",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-06T23:22:32.952591+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/warlock-preview-provider-v94",
+  "nextWork": [
+    "PROGRESS ownGUI94 fromheld93: bounded fair readiness polling, at most one candidate per call and no native IPC while original local physical/proof/receiver barriers remain. Explicit Quint/compiled native traces and actual socket/C receiver, terminal ACK, neighbor and loss controls required. Freeze no new S02 timing/resource budget; all original performance and full release gates remain. Next bounded reliable outgoing controls and actual WebKit host routing."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/warlock-preview-provider-v93/component-manifest.json",
+      "sha256": "02fd2147aab21d0eaee05c03fcee5507f2bbc453badb7cf68a003960d3094c76",
+      "size": 433327
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v94/ANCESTRY.json",
+      "sha256": "f724028d2b0fbd684c51c1bbeada458b611a5de47214624dfba00471c0fe990d",
+      "size": 498
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}
