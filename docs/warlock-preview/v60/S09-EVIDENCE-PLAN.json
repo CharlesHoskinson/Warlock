@@ -1,0 +1,206 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "sourceTuple": "GUI50/native97/core16/collector17/model12/fixture5/AQ155; exact optimized GUI50 demand and metadata models; same-view private offscreen bitmap, not hardware presentation",
+  "inputs": {
+    "backlog": {
+      "path": "docs/elm-roadmap/delivery/sprint-backlog.json",
+      "sha256": "0189e47a340f9c2328f9f9a8ac087f5f50c04eac0b15e486d666b2b4418066db"
+    },
+    "requirements": {
+      "path": "docs/elm-roadmap/requirements.json",
+      "sha256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b"
+    },
+    "native": {
+      "path": "implementation/warlock-client-provider-native-v88/qa/native-1791285595852446427/report.json",
+      "sha256": "b344b3a8c31b9b114e674d456f23dcf057187237a7cdde2c6deda7da72155368"
+    },
+    "provider": {
+      "path": "implementation/warlock-preview-provider-v36/component-manifest.json",
+      "sha256": "38d25a03a95d4e0f0e909e8cecf71b1477bc75091f7828fd1f154e5036d3e7d1"
+    },
+    "captureSpec": {
+      "path": "openspec/changes/elm-desktop-pivot/specs/elm-capture-motion/spec.md",
+      "sha256": "2992298f327f98adccf62ef306b9f9ba55efb9271e6c6af4e59dee820833be82"
+    },
+    "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v53/report.json": "b0455e5e09694fceb0df6102c6fa2ec1adba70609582fd22cc1d0e53fa351e6f",
+    "docs/warlock-preview/v55/report.json": "893f302b1b62e452410799cae368525903aecfabd8a67b6f827c7fd83d10b53f",
+    "docs/warlock-preview/v59/report.json": "5d4e3704ec4726b069e31de7016916c497a0dafd8a3b495828b0395dd913616f"
+  },
+  "originalRequirements": 9,
+  "originalScenarioCount": 13,
+  "scenarios": [
+    {
+      "requirementId": "ELM-ARC-019",
+      "scenarioId": "ELM-ARC-019 architecture-019",
+      "taskId": "P4-ELM-ARC-019",
+      "status": "partial-unaccepted",
+      "originalVerification": "Preserved scenario report with native or bridge trace showing: the valid retained frame remains available without JSON pixels; artifact hashes and matching scenario receipts included.",
+      "boundedPassingNativeControls": [
+        "backdropWebFD4PhysicalRetirementBeforeExactReceiptACK",
+        "backdropLossPhysicalFD4RetirementBeforeOriginalTerminalACK"
+      ],
+      "remainingEvidence": "Opaque URI and actual retained physical cleanup are proven in controlled qualification mode; ordinary multi-entry product enrollment and original scenario receipt still require coherent original fixture mapping."
+    },
+    {
+      "requirementId": "ELM-REN-003",
+      "scenarioId": "ELM-REN-003 ren-003",
+      "taskId": "P4-ELM-REN-003",
+      "status": "partial-unaccepted",
+      "originalVerification": "Source-stop trace plus independently sampled output pixels and release log.",
+      "boundedPassingNativeControls": [
+        "sharedHistoricalActualNativeSourceStopped",
+        "familyHistoricalOriginalURIAndPixelDimensions"
+      ],
+      "remainingEvidence": "Actual minimized source-stop/historical URI survives on the owning tuple; original scenario-specific independent displayed output and lease retirement must be mapped explicitly."
+    },
+    {
+      "requirementId": "ELM-REN-004",
+      "scenarioId": "ELM-REN-004 ren-004",
+      "taskId": "P4-ELM-REN-004",
+      "status": "partial-unaccepted",
+      "originalVerification": "Address-reuse fault test rejects old lease and releases its resources.",
+      "boundedPassingNativeControls": [
+        "reuseActuallyObservedEqualNativeAddressFreshIncarnation",
+        "reuseDeniedBeforeOriginalExpiry",
+        "reuseHeldAndFreshURIRefusedBeforeElmNativeEffects",
+        "reuseFullElmReplacementContainsNoOldPreviewPixels",
+        "reuseOriginalPhysicalRetirementBeforeTerminalACK",
+        "reuseNoOriginalIncarnationEnrollmentAsReplacement"
+      ],
+      "remainingEvidence": "Actual full GUI38/native92 same-address old/new incarnation, unexpired same-endpoint held/new URI denial before policy effects, independent actual WebKit old-pixel exclusion and original drain/ACK are proven. Ordinary product entry enrollment, complete original scenario receipt mapping and coherent S09 acceptance remain open."
+    },
+    {
+      "requirementId": "ELM-REN-005",
+      "scenarioId": "ELM-REN-005 ren-005",
+      "taskId": "P4-ELM-REN-005",
+      "status": "partial-unaccepted",
+      "originalVerification": "Trace schema and clock-correlation test identify each timestamp origin.",
+      "boundedPassingNativeControls": [
+        "backdropWebOriginalDeadlineAndCompleteFamilyFence"
+      ],
+      "remainingEvidence": "Actual native monotonic scope/job/completion metadata are present; encoded storage readiness and WebKit snapshots are not measured presentation receipts or a complete clock-correlation fixture."
+    },
+    {
+      "requirementId": "ELM-REN-014",
+      "scenarioId": "ELM-REN-014 ren-014",
+      "taskId": "P4-ELM-REN-014",
+      "status": "partial-unaccepted",
+      "originalVerification": "Decorated and out-of-base-popup pixel fixtures expose supported bounds.",
+      "boundedPassingNativeControls": [
+        "familyWebActualRootPopupOffscreenModalPixelsAndForeignExclusion",
+        "blurBodyEveryGeneratedCapturePixelMatchesIndependentNativeOutput"
+      ],
+      "remainingEvidence": "Actual controlled client/decorations/modal/popup and generated blur evidence is partial. Original five fidelity scenario receipts, arbitrary authorized backdrop/privacy and broader native source/output/shader coverage remain open; complete family fidelity/eligibility remain unqualified."
+    },
+    {
+      "requirementId": "ELM-REN-014",
+      "scenarioId": "ELM-REN-014 fidelity-client-content",
+      "taskId": "P4-ELM-REN-014",
+      "status": "partial-unaccepted",
+      "originalVerification": "Decorated and out-of-base-popup pixel fixtures expose supported bounds.",
+      "boundedPassingNativeControls": [
+        "familyWebActualRootPopupOffscreenModalPixelsAndForeignExclusion",
+        "blurBodyEveryGeneratedCapturePixelMatchesIndependentNativeOutput"
+      ],
+      "remainingEvidence": "Actual controlled client/decorations/modal/popup and generated blur evidence is partial. Original five fidelity scenario receipts, arbitrary authorized backdrop/privacy and broader native source/output/shader coverage remain open; complete family fidelity/eligibility remain unqualified."
+    },
+    {
+      "requirementId": "ELM-REN-014",
+      "scenarioId": "ELM-REN-014 fidelity-decorations",
+      "taskId": "P4-ELM-REN-014",
+      "status": "partial-unaccepted",
+      "originalVerification": "Decorated and out-of-base-popup pixel fixtures expose supported bounds.",
+      "boundedPassingNativeControls": [
+        "familyWebActualRootPopupOffscreenModalPixelsAndForeignExclusion",
+        "blurBodyEveryGeneratedCapturePixelMatchesIndependentNativeOutput"
+      ],
+      "remainingEvidence": "Actual controlled client/decorations/modal/popup and generated blur evidence is partial. Original five fidelity scenario receipts, arbitrary authorized backdrop/privacy and broader native source/output/shader coverage remain open; complete family fidelity/eligibility remain unqualified."
+    },
+    {
+      "requirementId": "ELM-REN-014",
+      "scenarioId": "ELM-REN-014 fidelity-modal-extents",
+      "taskId": "P4-ELM-REN-014",
+      "status": "partial-unaccepted",
+      "originalVerification": "Decorated and out-of-base-popup pixel fixtures expose supported bounds.",
+      "boundedPassingNativeControls": [
+        "familyWebActualRootPopupOffscreenModalPixelsAndForeignExclusion",
+        "blurBodyEveryGeneratedCapturePixelMatchesIndependentNativeOutput"
+      ],
+      "remainingEvidence": "Actual controlled client/decorations/modal/popup and generated blur evidence is partial. Original five fidelity scenario receipts, arbitrary authorized backdrop/privacy and broader native source/output/shader coverage remain open; complete family fidelity/eligibility remain unqualified."
+    },
+    {
+      "requirementId": "ELM-REN-014",
+      "scenarioId": "ELM-REN-014 fidelity-popup-extents",
+      "taskId": "P4-ELM-REN-014",
+      "status": "partial-unaccepted",
+      "originalVerification": "Decorated and out-of-base-popup pixel fixtures expose supported bounds.",
+      "boundedPassingNativeControls": [
+        "familyWebActualRootPopupOffscreenModalPixelsAndForeignExclusion",
+        "blurBodyEveryGeneratedCapturePixelMatchesIndependentNativeOutput"
+      ],
+      "remainingEvidence": "Actual controlled client/decorations/modal/popup and generated blur evidence is partial. Original five fidelity scenario receipts, arbitrary authorized backdrop/privacy and broader native source/output/shader coverage remain open; complete family fidelity/eligibility remain unqualified."
+    },
+    {
+      "requirementId": "ELM-REV-023",
+      "scenarioId": "ELM-REV-023 revision-023",
+      "taskId": "P4-ELM-REV-023",
+      "status": "partial-unaccepted",
+      "originalVerification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
+      "boundedPassingNativeControls": [
+        "backdropWebOriginalDeadlineAndCompleteFamilyFence",
+        "backdropLossPhysicalFD4RetirementBeforeOriginalTerminalACK"
+      ],
+      "remainingEvidence": "Actual encoded owned storage/family offer/fence/retirement are proven; original acquire fence/release-access scenario must distinguish native GPU completion from hardware presentation and independently stalled frontend access."
+    },
+    {
+      "requirementId": "ELM-UI-016",
+      "scenarioId": "ELM-UI-016 preview-states",
+      "taskId": "P4-ELM-UI-016",
+      "status": "partial-unaccepted",
+      "originalVerification": "Frozen threshold/policy plus independently observed named fixtures, native counters or user/AT records as applicable; hashes and failure outcomes retained.",
+      "boundedPassingNativeControls": [
+        "familyHistoricalActualSharedElmLabel",
+        "backdropWebSharedElmRetainsOriginalHistoricalImage"
+      ],
+      "remainingEvidence": "Actual live/historical/expired/denied paths exist; frozen product policy/thresholds and all original named state fixtures remain to be reconciled."
+    },
+    {
+      "requirementId": "ELM-UX-006",
+      "scenarioId": "ELM-UX-006 ux-006",
+      "taskId": "P4-ELM-UX-006",
+      "status": "partial-unaccepted",
+      "originalVerification": "Elm replay assertion and isolated native recording: entry remains present with historical preview label.",
+      "boundedPassingNativeControls": [
+        "familyHistoricalActualFirstClassMinimize",
+        "familyHistoricalActualSharedElmLabel"
+      ],
+      "remainingEvidence": "Actual first-class minimized entry and historical label are retained; original scenario receipt, source-state/freshness separation and normal product path are still needed."
+    },
+    {
+      "requirementId": "ELM-UX-007",
+      "scenarioId": "ELM-UX-007 ux-007",
+      "taskId": "P4-ELM-UX-007",
+      "status": "partial-unaccepted",
+      "originalVerification": "Elm replay assertion and isolated native recording: fallback shows correct title and icon with no unrelated pixels.",
+      "boundedPassingNativeControls": [
+        "backdropLossTypedDenialUsesExactOriginalJobWithoutFabricatedScope",
+        "fallbackActualTitleClassAndApplicationIconIdentity",
+        "fallbackOriginalActualNativeSourcePixelsPresent",
+        "fallbackActualUnavailableTitleAndResolvedIconInPopup",
+        "fallbackActualOwnApplicationIconExcludesOldAndForeignPixels",
+        "iconLockHeldAndNewActualEndpointDeniedBeforePolicy",
+        "iconLockActualElmConcealedBeforeProducerRetired",
+        "iconLockBitmapHasActualOpaqueSurfaceAndText",
+        "iconLockActualWebKitExcludesOldPreviewAndIconPixels",
+        "iconLockSeparatePhysicalIconRetirement"
+      ],
+      "remainingEvidence": "GUI50/native97 retains actual source-unavailable title/class/application48x48 icon fallback and adds real native lock held/new icon endpoint denial before policy, exact same Elm concealed preview title/icon during pending producer retirement, independently decoded same-view private offscreen WebKit snapshot with actual opaque background/text and zero old/foreign/icon pixels, original job/deadline/Release/native retirement/ACK. GUI45+ binding reset/theme invalidation passes component checks; actual native theme/rebinding and ordinary production multi-entry enrollment remain unqualified. Original scenario remains partial; hardware/native presentation applicability and coherent fullS09 release receipts remain open."
+    }
+  ],
+  "nativeCampaignCountNotScenarioAcceptance": 2386,
+  "nativeAcceptance": false,
+  "S09Accepted": false,
+  "fullReleaseAccepted": false,
+  "nextExecutableSlice": "Implement ordinary product entry enrollment from actual admitted picker/native incarnation facts, retaining own native grant, one Elm policy, bounded shared allocator, metadata/icons and original job/resource drain; qualify actual theme/rebinding where applicable. Preserve all13 original S09 mappings, restore38/recovery34/case34/two-second/cursor/receipt/drag52/input/popup/AT/IME/hardware/output/resources/journeys/reversible coherent deployment."
+}

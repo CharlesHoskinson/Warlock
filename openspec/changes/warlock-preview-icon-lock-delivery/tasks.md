@@ -1,0 +1,4 @@
+- [ ] Compile fresh GUI47 and retain exact demand/metadata model checks.
+- [ ] Run actual native95 held/new icon denial and pending concealed DOM/PNG, retaining failed94 and all prior2372/original1783.
+- [ ] Verify original delayed commits drain once, no fabricated ACK and normal lock/unlock/physical retirement.
+- [ ] Preserve full frozen242/417 and originalS09 thirteen release obligations.

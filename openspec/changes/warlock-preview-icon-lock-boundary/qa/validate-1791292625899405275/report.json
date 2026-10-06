@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-17e1581f2bec4a1a8c34f3d00e5e8884.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-icon-lock-boundary/specs/elm-capture-motion/spec.md": "31890b188b444a0f505416c367e32f2bf59fcc4ceddec51684f52f730d1a3d2c",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-icon-lock-boundary/qa/validate.py": "ca10ac5c670f168654ca05fa4ef5a3b97787c130dd7266c949d8eb85c812301a",
+    "/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/requirements.json": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+    "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v56/S09-EVIDENCE-PLAN.json": "4166fd0b3ebc1f2515a3cd9510f7b6030914cc74db59ee9d0a91ba358972a972",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-icon-lock-boundary/proposal.md": "588981de18aed29014e492aa7185d69f6ca996d85e88e0e1da1ee6fa460dab3a",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-icon-lock-boundary/design.md": "ac4afe9bbf035f7d9105c077e2ddab522d3774f6878a9803ef65982c850f6a7e",
+    "/home/hoskinson/omarchy-windows-parity/openspec/changes/warlock-preview-icon-lock-boundary/tasks.md": "f1be80e0819b70ea0dea3b7b3e80123d5e517e754292da0d92452a5ff6659e73"
+  },
+  "requirements": [
+    "WARLOCK-ICONLOCK-001",
+    "WARLOCK-ICONLOCK-002",
+    "WARLOCK-ICONLOCK-003",
+    "WARLOCK-ICONLOCK-004",
+    "WARLOCK-ICONLOCK-005"
+  ],
+  "scenarios": [
+    [
+      "WARLOCK-ICONLOCK-001",
+      "lock before policy processing"
+    ],
+    [
+      "WARLOCK-ICONLOCK-002",
+      "actual locked popup"
+    ],
+    [
+      "WARLOCK-ICONLOCK-003",
+      "malformed and bounded stimuli"
+    ],
+    [
+      "WARLOCK-ICONLOCK-004",
+      "new binding with lower revision"
+    ],
+    [
+      "WARLOCK-ICONLOCK-005",
+      "theme changes without title change"
+    ]
+  ],
+  "frozenBaseline": [
+    242,
+    417
+  ],
+  "originalS09ScenarioIds": 13,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

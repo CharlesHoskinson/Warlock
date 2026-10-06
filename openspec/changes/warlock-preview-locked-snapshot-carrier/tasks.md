@@ -1,0 +1,4 @@
+- [ ] Compile actual GUI49.
+- [ ] Qualify same actual WebKit DOM/PNG under actual private native lock and original pending retirement.
+- [ ] Verify one offscreen carrier creation/destruction after normal popup wrapper destruction; no new capture/grant/deadline.
+- [ ] Preserve failed94/95 and full original release obligations.

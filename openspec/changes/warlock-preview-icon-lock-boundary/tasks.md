@@ -1,0 +1,6 @@
+- [ ] Compile actual changed full GUI and private icon reader/control code.
+- [ ] Retain original demand/metadata compiled replays and explicitly selected coupled Quint tests.
+- [ ] Qualify actual native held/new icon lock refusal before delayed policy; actual locked DOM/PNG during original pending retirement; original ACK and icon physical close.
+- [ ] Retain all native93 original2372 stable identities and original1783 exact identities on the exact owning tuple.
+- [ ] Qualify native theme change/binding reset and ordinary enrollment separately.
+- [ ] Freeze evidence and preserve all original release inventories and gates.

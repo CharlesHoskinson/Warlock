@@ -1,0 +1,8 @@
+{
+  "passed": false,
+  "nativeLaunched": false,
+  "expectedMetadataChecks": 81,
+  "actualMetadataChecks": 82,
+  "reason": "Fresh rebind test adds its own prepared Acquire assertion plus seven checks: original74+8=82. No behavioral assertion changed; actual optimized replay passed.",
+  "runnerSHA256": "aa8e85e222e6f1872c617a65e75ce9474e317cc01299532b74abf8412b878c2e"
+}

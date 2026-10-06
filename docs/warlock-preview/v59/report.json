@@ -1,0 +1,389 @@
+{
+  "schema": 1,
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-84c0973840fd4642aed54f8480765e52.scope",
+    "coreLimit": 1
+  },
+  "components": [
+    {
+      "path": "implementation/warlock-preview-provider-v44/component-manifest.json",
+      "sha256": "df80d7e6706aa415d0754f84750832733c9bf2b8d74d57f001718dab18a8a639",
+      "files": 500
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v47/component-manifest.json",
+      "sha256": "2a231b1ffdf8ce5cb2a1b6f3bb678f1066f16ea1d8c5f5cd84536187e76dbed1",
+      "files": 511
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v45/component-manifest.json",
+      "sha256": "e2fca57854bbdace3d3b0a24a088e0ba0a494cb624d5f595d8f045355a100a12",
+      "files": 910
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v46/component-manifest.json",
+      "sha256": "52ee3c9d7f61a37a5926ea87f53cd31ef39fb40c3e9f5b61c99b8510c2c64762",
+      "files": 910
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v48/component-manifest.json",
+      "sha256": "9f6061e3bfb3b6b117d8d77ae5fc071040788247b0e928e9a20fb56c80dafb9e",
+      "files": 910
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v49/component-manifest.json",
+      "sha256": "ab7ce5148040ce5d65e3667f036890ba90b7c7aba8e7235f4ac7877dbc6b55cf",
+      "files": 910
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v50/component-manifest.json",
+      "sha256": "c1cbcb25fe3af89e72e6b64c5f3a0a7da005a395bb6aa24a432e24a1a329b41d",
+      "files": 910
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v94/component-manifest.json",
+      "sha256": "4cd24c55d41b0ef314cd7def84d9b106fd83d26b4e734fbd72af70b35cbdefaf",
+      "files": 284
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v95/component-manifest.json",
+      "sha256": "a6e794869410d4dcb85a5b6d03041237a1f1603771bb6c3c62fb101276c29342",
+      "files": 284
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v96/component-manifest.json",
+      "sha256": "8ed909f6b9457284a211f3c82d00134d99a86f2cf93e29bd841a5fff2839525e",
+      "files": 284
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v97/component-manifest.json",
+      "sha256": "8b7813e501dd2f565fe3e339996f314cbd0cfbb57c9c15e729921e9e96eb79fe",
+      "files": 598
+    },
+    {
+      "path": "openspec/changes/warlock-preview-icon-lock-boundary/component-manifest.json",
+      "sha256": "618798860a74b9f4f5bd1670cff85aafe6d7b21737bb79b59827efd5a5251e16",
+      "files": 6
+    },
+    {
+      "path": "openspec/changes/warlock-preview-icon-lock-delivery/component-manifest.json",
+      "sha256": "596438ea2454de6637e7df2d64ac218271c7261c05c63927a3e08ed5f2f61c3a",
+      "files": 6
+    },
+    {
+      "path": "openspec/changes/warlock-preview-locked-snapshot-carrier/component-manifest.json",
+      "sha256": "ab24365d556c3b6555057002481e4873f337855ddfeb13c56b46e7f61b788407",
+      "files": 6
+    }
+  ],
+  "evidence": {
+    "implementation/warlock-preview-provider-v44/qa/build-1791291251205616208/report.json": "c4e09b4359e32a66e4022fdf38e6cf89fe05f3430a28633534ee8738a09c03a5",
+    "implementation/warlock-preview-provider-v47/qa/build-1791292923542197329/report.json": "8d4b80b810dfe3e1278cdbd5cdf08276d8611751109bc171333b8b28f0c4ec86",
+    "implementation/warlock-preview-provider-v45/qa/build-1791291339236235099/report.json": "3e13568ddbb72b2bf0528d09162985e85bd5a9a69783c5056a37d7fffd8d8b4f",
+    "implementation/warlock-preview-provider-v45/qa/check-1791291534265867106/report.json": "ac7d3e135ae9c23d56b26cfeccd4786bb8209ca6c6085f5528b6efade80ae6ce",
+    "implementation/warlock-preview-provider-v45/qa/metadata-check-1791291534265989674/report.json": "ea82dd5027c06d8ba0dfc9012a5458c06ed5ef67a37152d62e68d16cd482c42d",
+    "implementation/warlock-preview-provider-v46/qa/build-1791292488577121926/report.json": "161210d1452967e5dd30f1596496f0551f840d921960f26e9233499c9cf46769",
+    "implementation/warlock-preview-provider-v46/qa/check-1791292636264560764/report.json": "e2744af56d4636ab34a5ebea4007cac4de4feed8bb677ef3607f2b202ced2b07",
+    "implementation/warlock-preview-provider-v46/qa/metadata-check-1791292636260178261/report.json": "da67c3815a8a25e74f9f46c8320aff116257618a15d054b32fec12fef427f97a",
+    "implementation/warlock-preview-provider-v48/qa/build-1791292987971533416/report.json": "22af1bfbbaed46358ec07be3658f1be2df1bb20aa9e8caa8e08450b93fa95a18",
+    "implementation/warlock-preview-provider-v48/qa/check-1791293158047927179/report.json": "df10045a41a4ac0d28748be3ac848298beccd8a7f2f2e7206b6254bec4618f21",
+    "implementation/warlock-preview-provider-v48/qa/metadata-check-1791293158048578731/report.json": "b3bd5e0fc1843a2ccecc5f5df101622f72d7f97e37f5d4e63367dd52f7db9d16",
+    "implementation/warlock-preview-provider-v49/qa/build-1791293455773310432/report.json": "c836b0ed522328f92546ca4a82dffa4b197923e4af8c4466bcf0153e0376082d",
+    "implementation/warlock-preview-provider-v49/qa/check-1791293614451381162/report.json": "7bca839ccb82e9090452406ecc1e305e2de82eac288f31e982150d3e12eaa32c",
+    "implementation/warlock-preview-provider-v49/qa/metadata-check-1791293614451701354/report.json": "3eca992a6534053cf0b3b7e1ad59619897759e75e5d409bb78059e533e9049aa",
+    "implementation/warlock-preview-provider-v50/qa/build-1791293889347971383/report.json": "2a93ab48a96198e50c8b8c8869c4308e994425b75515ad47e1089043163a6b42",
+    "implementation/warlock-preview-provider-v50/qa/check-1791294063046735468/report.json": "6a07722018c5272095ffa600a3d267df7b74ec1607899c04d15b9e894fe48367",
+    "implementation/warlock-preview-provider-v50/qa/metadata-check-1791294063045965116/report.json": "90f8e7bad91f3a35bf67ccc2df18d1a52a742d596eb0d8957c1c166c401a8a39",
+    "implementation/warlock-client-provider-native-v94/qa/native-1791292700182839883/report.json": "e8797273ec04406391406e5080d3715ffeb4312ac78b25c84a33128e5d0f2f11",
+    "implementation/warlock-client-provider-native-v94/qa/preflight.json": "eb3d0967ae75cec56ba3bd530f552c215e42795bb0ec06c44d54a9871df76e0b",
+    "implementation/warlock-client-provider-native-v94/qa/prepare-1791292670419966283/report.json": "2c6728b13011350185908457d623411ed3b7547dc29e7c0da71d78b62d210410",
+    "implementation/warlock-client-provider-native-v95/qa/native-1791293298760604738/report.json": "7afdd1a2fac3bb35e23a00457ea66ae2f6cd078b7ff386450a89c996c006e624",
+    "implementation/warlock-client-provider-native-v95/qa/preflight.json": "138158a3fd93a38dcb50b966348f7020d40db6922abc3440a83aaa81bf8c1600",
+    "implementation/warlock-client-provider-native-v95/qa/prepare-1791293275438316484/report.json": "b034bec9804e81f62214261160bef0de08b7a3375bb19307d92d47145a150316",
+    "implementation/warlock-client-provider-native-v96/qa/native-1791293710032725455/report.json": "f90ffe626c24cf00572f0cd876beb1abe9f5f8f2cb568f425553d510c4e729c7",
+    "implementation/warlock-client-provider-native-v96/qa/preflight.json": "36ab972491a196c4b93be3863c8d3dd42cca531d11c349434e6ecfa2f9ffb37c",
+    "implementation/warlock-client-provider-native-v96/qa/prepare-1791293661571411277/report.json": "ac79a9ef97590751260901e8714a145c3a4b7aff81860c3aab9ff641924d26bf",
+    "implementation/warlock-client-provider-native-v97/qa/prepare-1791294133699432470/report.json": "6bc996e1393d11098f58a56aa1994215069595e20d6f4d3effd1ba720610a162",
+    "implementation/warlock-client-provider-native-v97/qa/preflight.json": "4b47b7b59c8dd7196b1bda7e13e462af1a723337bba7370a81cd1e783edfb5ee",
+    "implementation/warlock-client-provider-native-v97/qa/native-1791294194977777522/report.json": "f6726ca6f4c9ebbc7c4e0d9a436a3efaa18db4e0797823a50bf920a1ffc4609b",
+    "openspec/changes/warlock-preview-icon-lock-boundary/qa/validate-1791292625899405275/report.json": "1a25b6329aacf0e8b02c2474310bc89d51d402ab00d25ca2678191c2b90412da",
+    "openspec/changes/warlock-preview-icon-lock-delivery/qa/validate-1791293021294162701/report.json": "be8932c63d5096433b0deb88974f4481cbdb40eb79eb6d2bf0141dd941f92d01",
+    "openspec/changes/warlock-preview-locked-snapshot-carrier/qa/validate-1791293496351397648/report.json": "39616bf94027e8673a46b66af74c974084cd23f8a202f1d1dc877d9c0ebe8d1a",
+    "docs/warlock-preview/v58/controller-check-v5-1791294063055598827/report.json": "a928b06fef816254d43ea7656fd9b2eaa2bc39bf5aca43faa5f318bec36ed1b3",
+    "docs/warlock-preview/v56/S09-EVIDENCE-PLAN.json": "4166fd0b3ebc1f2515a3cd9510f7b6030914cc74db59ee9d0a91ba358972a972"
+  },
+  "nativeControls": 2386,
+  "retainedOriginalControls": 1783,
+  "retainedNative93Controls": 2372,
+  "normalOwnedExits": 258,
+  "nativeIconLockBoundedQualified": true,
+  "iconLockEvidence": {
+    "scenarioIds": [
+      "WARLOCK-ICONLOCK-001",
+      "WARLOCK-ICONLOCK-002"
+    ],
+    "metadata": {
+      "kind": "metadata",
+      "identity": "family:2",
+      "binding": {
+        "lifetime": "13526648846597429580",
+        "session": "8",
+        "frontend": "1"
+      },
+      "subject": "2",
+      "revision": "3",
+      "title": "WARLOCK-CHILD-PROBE",
+      "application": "warlock-child-probe",
+      "iconKind": "application",
+      "icon": "3d0981ef0f5975a9e326c0dc83f107519a80116af63b1950e9d2b31a5bcc8a7c"
+    },
+    "originalFrame": {
+      "job": {
+        "binding": {
+          "lifetime": "13526648846597429580",
+          "session": "8",
+          "frontend": "1"
+        },
+        "context": {
+          "lifetime": "13526648846597429580",
+          "incarnation": "2",
+          "output": "1",
+          "privacy": "2",
+          "rendering": "2",
+          "scene": "3",
+          "content": "43"
+        },
+        "request": "1",
+        "origin": "1",
+        "clock": "13526648846597429580",
+        "deadline": "258482648993112"
+      },
+      "handle": "0000000000000000978c6e7aa96b562d266763036f78bbc20000000000000001",
+      "owned": true,
+      "signaled": false,
+      "fidelity": "client",
+      "coverage": [
+        "client"
+      ],
+      "expires": "258485682151866"
+    },
+    "readerReady": {
+      "uri": "elm-shell://icon/3d0981ef0f5975a9e326c0dc83f107519a80116af63b1950e9d2b31a5bcc8a7c",
+      "request": "1",
+      "bytes": 137,
+      "firstByte": 137,
+      "icons": {
+        "assets": 1,
+        "readers": 1,
+        "bytes": 137
+      },
+      "status": {
+        "job": {
+          "binding": {
+            "lifetime": "13526648846597429580",
+            "session": "8",
+            "frontend": "1"
+          },
+          "context": {
+            "lifetime": "13526648846597429580",
+            "incarnation": "2",
+            "output": "1",
+            "privacy": "2",
+            "rendering": "2",
+            "scene": "3",
+            "content": "43"
+          },
+          "request": "1",
+          "origin": "1",
+          "clock": "13526648846597429580",
+          "deadline": "258482648993112"
+        },
+        "charge": "311296",
+        "records": 1,
+        "mappedFDClosed": false,
+        "exportReleased": false,
+        "producerRetired": false,
+        "retirementPending": false
+      }
+    },
+    "readerProbe": {
+      "uri": "elm-shell://icon/3d0981ef0f5975a9e326c0dc83f107519a80116af63b1950e9d2b31a5bcc8a7c",
+      "request": "1",
+      "heldRead": -1,
+      "heldDenied": true,
+      "freshDenied": true,
+      "queuedCommands": 0,
+      "icons": {
+        "assets": 1,
+        "readers": 1,
+        "bytes": 137
+      },
+      "status": {
+        "job": {
+          "binding": {
+            "lifetime": "13526648846597429580",
+            "session": "8",
+            "frontend": "1"
+          },
+          "context": {
+            "lifetime": "13526648846597429580",
+            "incarnation": "2",
+            "output": "1",
+            "privacy": "2",
+            "rendering": "2",
+            "scene": "3",
+            "content": "43"
+          },
+          "request": "1",
+          "origin": "1",
+          "clock": "13526648846597429580",
+          "deadline": "258482648993112"
+        },
+        "charge": "311296",
+        "records": 1,
+        "mappedFDClosed": false,
+        "exportReleased": false,
+        "producerRetired": false,
+        "retirementPending": false
+      }
+    },
+    "readerReleased": {
+      "request": "1",
+      "icons": {
+        "assets": 1,
+        "readers": 0,
+        "bytes": 137
+      }
+    },
+    "concealedDOM": {
+      "fallbacks": [
+        {
+          "state": "unavailable",
+          "title": "Preview unavailable",
+          "icons": []
+        }
+      ],
+      "status": {
+        "job": {
+          "binding": {
+            "lifetime": "13526648846597429580",
+            "session": "8",
+            "frontend": "1"
+          },
+          "context": {
+            "lifetime": "13526648846597429580",
+            "incarnation": "2",
+            "output": "1",
+            "privacy": "2",
+            "rendering": "2",
+            "scene": "3",
+            "content": "43"
+          },
+          "request": "1",
+          "origin": "1",
+          "clock": "13526648846597429580",
+          "deadline": "258482648993112"
+        },
+        "charge": "311296",
+        "records": 1,
+        "mappedFDClosed": true,
+        "exportReleased": true,
+        "producerRetired": false,
+        "retirementPending": true
+      }
+    },
+    "beforePixels": {
+      "width": 700,
+      "height": 420,
+      "red": 18432,
+      "green": 0,
+      "blue": 0,
+      "yellow": 768,
+      "cyan": 0,
+      "opaque": 294000,
+      "points": {
+        "root": [
+          23,
+          32,
+          42,
+          255
+        ],
+        "old": [
+          23,
+          32,
+          42,
+          255
+        ],
+        "moved": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "nested": [
+          255,
+          0,
+          0,
+          255
+        ]
+      }
+    },
+    "afterPixels": {
+      "width": 700,
+      "height": 420,
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "yellow": 0,
+      "cyan": 0,
+      "opaque": 294000,
+      "points": {
+        "root": [
+          23,
+          32,
+          42,
+          255
+        ],
+        "old": [
+          23,
+          32,
+          42,
+          255
+        ],
+        "moved": [
+          38,
+          53,
+          68,
+          255
+        ],
+        "nested": [
+          83,
+          95,
+          107,
+          255
+        ]
+      }
+    },
+    "afterIconPixels": {
+      "width": 700,
+      "height": 420,
+      "ownApplicationIconPixels": 0,
+      "oldSourceExactNativePixels": 0,
+      "foreignGreenPixels": 0,
+      "opaqueBackgroundPixels": 167511,
+      "renderedLightTextPixels": 1141,
+      "hardwarePresentation": false
+    },
+    "iconAssetSHA256": "1e3103f39c92206c6c879eec10bccbda2e428ee397d39e456104a83acc315de2",
+    "desktopEntrySHA256": "171e00a059f66b9211c9dd7b0a8613f2b4d7b0a8e5522127e6ead3b65ad842af",
+    "actualNativeLock": true,
+    "hardwarePresentation": false,
+    "ordinaryProductEnrollmentQualified": false,
+    "fullReleaseAccepted": false
+  },
+  "nativeAcceptance": false,
+  "S09Accepted": false,
+  "fullReleaseAccepted": false,
+  "next": "Actual product re-enrollment/theme changes, ordinary multi-entry preview enrollment, all original S09 thirteen and restore/recovery/drag/input/hardware/output/AT/IME/resource/journey/reversible coherent deployment gates."
+}

@@ -1,0 +1,8 @@
+native/shared-host.c: In function ‘shared_receive_text’:
+native/shared-host.c:342:9: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+  342 |         if(!qa_delay_controller_commit(root,text))shared_commit(root,text);return;
+      |         ^~
+native/shared-host.c:342:76: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  342 |         if(!qa_delay_controller_commit(root,text))shared_commit(root,text);return;
+      |                                                                            ^~~~~~
+cc1: all warnings being treated as errors

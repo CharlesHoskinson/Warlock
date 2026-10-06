@@ -1,0 +1,47 @@
+AssertionError [ERR_ASSERTION]: Old binding cannot restore metadata after attach
++ actual - expected
+
+  {
++   commands: [],
+-   commands: [
+-     {
+-       commands: [
+-         {
+-           job: {
+-             binding: {
+-               frontend: '1',
+-               lifetime: '12618083744238620417',
+-               session: '2'
+-             },
+-             clock: '12618083744238620417',
+-             context: {
+-               content: '42',
+-               incarnation: '2',
+-               lifetime: '12618083744238620417',
+-               output: '1',
+-               privacy: '1',
+-               rendering: '2',
+-               scene: '1'
+-             },
+-             deadline: '203485677514126',
+-             origin: '1',
+-             request: '1'
+-           },
+-           kind: 'cancel'
+-         }
+-       ],
+-       identity: 'family:2'
+-     }
+-   ],
+    metadata: [
+      {
+        application: '',
+        hasIcon: false,
+        iconKind: 'unavailable',
+
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v44/qa/build-1791291251205616208/inputs/qa/metadata-replay.js:6:45)
+    at runControls (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v44/qa/build-1791291251205616208/inputs/qa/metadata-replay.js:31:96)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v44/qa/build-1791291251205616208/inputs/qa/metadata-replay.js:46:142
