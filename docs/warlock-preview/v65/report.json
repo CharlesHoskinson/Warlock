@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-2b77872eafc7461480706b1f6c11da73.scope",
+    "coreLimit": 1
+  },
+  "components": [
+    {
+      "path": "implementation/warlock-client-provider-native-v98/component-manifest.json",
+      "sha256": "328e495cd4264c5676d32f13db11f115a85bacd1da2289aca5532bcf851859bf",
+      "files": 272
+    }
+  ],
+  "failedNativeReport": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v98/qa/native-1791296772844398438/report.json",
+  "failedNativeReportSHA256": "d1262779dc680abf35f9235ac60f87043ca646177c4b9a06a3772bd6e92077e8",
+  "nativeControlsReached": 785,
+  "normalOwnedExits": 77,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "failure": "New ordinary picker did not open after pointer input during startup geometry publication change; actual visible output publication must be settled before one genuine input. Original six-second deadline retained. Source/capture grants were never fabricated; original process cleanup normal."
+}

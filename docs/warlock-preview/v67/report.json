@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-c7f0b7224f854425bd0e7cc44601d46f.scope",
+    "coreLimit": 1
+  },
+  "components": [
+    {
+      "path": "implementation/warlock-client-provider-native-v99/component-manifest.json",
+      "sha256": "15e0213caac31a0dbbd7aba32bb5452a34bbe4c712865cb50b77b6f3653c4ea7",
+      "files": 109
+    }
+  ],
+  "unusedPreparation": true,
+  "nativeLaunched": false,
+  "sourceCopyOrderingFailed": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "explanation": "The local copy tried to read native98 manifest before its protected holder ended.99 contained copied98 source and ran CPU preparation only, without the intended new ancestry/input patch. Both preparation and actual copy failure are retained;99 is unused and never qualifies anything. Fresh100 was assigned from terminal held98 and records the intended owner/parent/stimulus."
+}

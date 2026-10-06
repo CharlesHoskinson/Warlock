@@ -1,0 +1,43 @@
+AssertionError [ERR_ASSERTION]: Removal retains original exact frame Release
++ actual - expected
+
++ []
+- [
+-   {
+-     frame: {
+-       coverage: [
+-         'client'
+-       ],
+-       expires: '203488683636209',
+-       fidelity: 'client',
+-       handle: '00000000000000008a6d92e0eb9b27ba3d8d921fa81976a70000000000000001',
+-       job: {
+-         binding: {
+-           frontend: '1',
+-           lifetime: '12618083744238620417',
+-           session: '2'
+-         },
+-         clock: '12618083744238620417',
+-         context: {
+-           content: '42',
+-           incarnation: '2',
+-           lifetime: '12618083744238620417',
+-           output: '1',
+-           privacy: '1',
+-           rendering: '2',
+-           scene: '1'
+-         },
+-         deadline: '203485677514126',
+-         origin: '1',
+-         request: '1'
+-       },
+-       owned: true,
+-       signaled: true
+-     },
+-     kind: 'release'
+-   }
+- ]
+
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v53/qa/build-1791296360836340389/inputs/qa/catalog-replay.js:6:45)
+    at controls (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v53/qa/build-1791296360836340389/inputs/qa/catalog-replay.js:35:312)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v53/qa/build-1791296360836340389/inputs/qa/catalog-replay.js:57:142

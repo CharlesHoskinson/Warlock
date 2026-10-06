@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-5e149b183ca8429eb8e6ed4ce9a00c4e.scope",
+    "coreLimit": 1
+  },
+  "components": [
+    {
+      "path": "implementation/warlock-client-provider-native-v100/component-manifest.json",
+      "sha256": "f20d51cf98abd0e352dc5678e36f74a7b2347e75b0271b1f5689dc3ab011783d",
+      "files": 272
+    }
+  ],
+  "failedNativeReport": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v100/qa/native-1791297124348942705/report.json",
+  "failedNativeReportSHA256": "86d554fff5e808ccaf392866762483b2c1ee52c1ad11e68f20b8ebddd4edcc5f",
+  "nativeControlsReached": 785,
+  "normalOwnedExits": 77,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "failure": "New ordinary picker still did not open after settled geometry and visible output pairing. All reached785 controls and77 normal exits retain original six-second deadline. Next exercise real pointer leave/reenter before single click and inspect native target; no source/capture grant fabricated."
+}

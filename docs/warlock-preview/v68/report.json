@@ -1,0 +1,124 @@
+{
+  "schema": 1,
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-cbc4050ae97c415481d2c41ca3796ca8.scope",
+    "coreLimit": 1
+  },
+  "components": [
+    {
+      "path": "implementation/warlock-preview-provider-v52/component-manifest.json",
+      "sha256": "1bf55459a8b567ee4860e39d05b3400606ab5141384ee06d8c93751c8f8dd9e1",
+      "files": 506
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v53/component-manifest.json",
+      "sha256": "a9669f92739caf9545dc38976cb31eece2b30941ed9e9206d1a5a66dd0ec4e6d",
+      "files": 510
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v54/component-manifest.json",
+      "sha256": "3ba564d06a9699890631fa2615a661a804f0c305075021076e7094886f6cfe28",
+      "files": 993
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v98/component-manifest.json",
+      "sha256": "328e495cd4264c5676d32f13db11f115a85bacd1da2289aca5532bcf851859bf",
+      "files": 272
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v100/component-manifest.json",
+      "sha256": "f20d51cf98abd0e352dc5678e36f74a7b2347e75b0271b1f5689dc3ab011783d",
+      "files": 272
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v99/component-manifest.json",
+      "sha256": "15e0213caac31a0dbbd7aba32bb5452a34bbe4c712865cb50b77b6f3653c4ea7",
+      "files": 109
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v101/component-manifest.json",
+      "sha256": "c658cbe6086689c204c6ea674708839605ca77898a370b70c2e3bccaaf14d791",
+      "files": 602
+    },
+    {
+      "path": "openspec/changes/warlock-preview-product-enrollment/component-manifest.json",
+      "sha256": "c45e673baed90878d309321561030df84450df82326776bd73c772795bb28ea4",
+      "files": 6
+    }
+  ],
+  "evidence": {
+    "implementation/warlock-preview-provider-v52/qa/build-1791296204549053071/report.json": "f9f091793a912080a5fcc476316241d6a4268816d7b8a0cb65c21a98f78b2ebe",
+    "implementation/warlock-preview-provider-v53/qa/build-1791296360836340389/report.json": "aec9c740fd5ffd7c2e00878da4a96ea4712d79b210bdaa0c2d48852b51942fd7",
+    "implementation/warlock-preview-provider-v54/qa/catalog-check-1791296649476794847/report.json": "7e9fc3ef00b9b02c859fd2139bfa1d2ca8429d4c76d975e60fab08cc20646050",
+    "implementation/warlock-preview-provider-v54/qa/metadata-check-1791296649475782823/report.json": "1131b95053f2d3fbdc5d0056e92ad747ed2dc6e815aee9a279673d0a27f25a3e",
+    "implementation/warlock-preview-provider-v54/qa/check-1791296649475781393/report.json": "fd701f82560d8f5d6672032600fc67ae9a973830d796924dfce46d47e5fe5731",
+    "implementation/warlock-preview-provider-v54/qa/build-1791296443284060429/report.json": "4bdf5d8870d0d5fae0e202902b8250370272d90571300a18a420d462a5cfb044",
+    "implementation/warlock-client-provider-native-v98/qa/native-1791296772844398438/report.json": "d1262779dc680abf35f9235ac60f87043ca646177c4b9a06a3772bd6e92077e8",
+    "implementation/warlock-client-provider-native-v100/qa/native-1791297124348942705/report.json": "86d554fff5e808ccaf392866762483b2c1ee52c1ad11e68f20b8ebddd4edcc5f",
+    "implementation/warlock-client-provider-native-v101/qa/native-1791297316424141198/report.json": "1defaf1b1821fe1347efcd162ba08f1fc6322e40137cebb8a5a0dffa248e930c",
+    "implementation/warlock-client-provider-native-v101/qa/preflight.json": "c5f24f5d65a3879a9590c458254447aa733dbccd1c61befc77739b1dbc3b8e61",
+    "implementation/warlock-client-provider-native-v101/qa/prepare-1791297277873429136/report.json": "f3ff7468b6016f3fa900d23c185fb80aaa498f62425e5a183c5608d7aae78141",
+    "openspec/changes/warlock-preview-product-enrollment/qa/validate-1791295182643554599/report.json": "eca4bf61ce76a8304836f9d03146a88a9f823b52a1ec25e27a310a5b5db7cc3e",
+    "docs/warlock-preview/v60/S09-EVIDENCE-PLAN.json": "e3b9f35f045f2ff0317498f81d8bf156d8e89cf1de6898590b5c5a3cf4b4f63b"
+  },
+  "nativeControls": 2392,
+  "retainedOriginalControls": 1783,
+  "retainedNative97RawControls": 2386,
+  "retainedNative97StableControls": 2380,
+  "normalOwnedExits": 260,
+  "ordinaryMetadataOnlyEnrollmentBoundedQualified": true,
+  "ordinaryCatalogEvidence": {
+    "rendered": {
+      "kind": "surface-report",
+      "body": {
+        "publication": "9",
+        "lease": "1",
+        "buttons": [
+          {
+            "id": "picker-close:{\"lifetime\":\"16193685610105716932\",\"session\":\"6\",\"frontend\":\"1\"}:1:2:1",
+            "label": "Close",
+            "accessibleName": "Close window picker",
+            "disabled": false,
+            "x": 11,
+            "y": 64,
+            "width": 678,
+            "height": 36
+          },
+          {
+            "id": "picker:{\"lifetime\":\"16193685610105716932\",\"session\":\"6\",\"frontend\":\"1\"}:1:2:1:2",
+            "label": "Preview unavailablePreview unavailableActivate WARLOCK-CHILD-PROBEOpen",
+            "accessibleName": "Activate WARLOCK-CHILD-PROBE",
+            "disabled": false,
+            "x": 11,
+            "y": 103,
+            "width": 678,
+            "height": 94
+          },
+          {
+            "id": "picker:{\"lifetime\":\"16193685610105716932\",\"session\":\"6\",\"frontend\":\"1\"}:1:2:1:3",
+            "label": "Preview unavailablePreview unavailableActivate WARLOCK-CHILD-PROBEOpen",
+            "accessibleName": "Activate WARLOCK-CHILD-PROBE",
+            "disabled": false,
+            "x": 11,
+            "y": 200,
+            "width": 678,
+            "height": 94
+          }
+        ],
+        "focus": "picker:{\"lifetime\":\"16193685610105716932\",\"session\":\"6\",\"frontend\":\"1\"}:1:2:1:2",
+        "text": "Choose a window\nConnected\n\n\nClose\n\nPreview unavailable\nPreview unavailable\nActivate WARLOCK-CHILD-PROBE\nOpen\n\nPreview unavailable\nPreview unavailable\nActivate WARLOCK-CHILD-PROBE\nOpen"
+      }
+    },
+    "ownHostPID": 856452,
+    "fixedQualificationSubjects": false,
+    "nativeScopeCreated": false,
+    "nativeCaptureEligible": false,
+    "scope": "Actual normal host own authenticated catalog to ordinary picker and same Elm metadata-only unavailable entries; no native capture/resource/hardware/full-S09 acceptance."
+  },
+  "nativeCaptureEligible": false,
+  "nativeAcceptance": false,
+  "S09Accepted": false,
+  "fullReleaseAccepted": false,
+  "next": "Dynamic ordinary multi-entry eligible capture through one shared two-item/byte/readers allocator and actual owning native scope; retain old source resources/request floors/clocks/deadlines/terminal ACK. Actual theme/rebinding, complete original S09 thirteen and restore/recovery/drag/input/hardware/output/AT/IME/resource/journey/reversible coherent deployment remain open."
+}

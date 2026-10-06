@@ -1,0 +1,18 @@
+AssertionError [ERR_ASSERTION]: Closing stale metadata-only enrollment needs no fabricated lifecycle cleanup
++ actual - expected
+
++ [
++   {
++     active: true,
++     identity: 'family:2',
++     model: null
++   }
++ ]
+- []
+
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v52/qa/build-1791296204549053071/inputs/qa/catalog-replay.js:6:45)
+    at controls (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v52/qa/build-1791296204549053071/inputs/qa/catalog-replay.js:27:64)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v52/qa/build-1791296204549053071/inputs/qa/catalog-replay.js:56:142
