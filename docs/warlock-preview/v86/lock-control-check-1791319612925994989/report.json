@@ -1,0 +1,122 @@
+{
+  "passed": true,
+  "commands": [
+    {
+      "name": "flags",
+      "args": [
+        "pkg-config",
+        "--cflags",
+        "--libs",
+        "wayland-client"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "compile",
+      "args": [
+        "gcc",
+        "-std=c11",
+        "-O1",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-session-lock-fixture-v1/qa/lock-build-1791243868430702627/generated",
+        "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v86/lock-control-check-1791319612925994989/race.c",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-session-lock-fixture-v1/qa/lock-build-1791243868430702627/generated/session-lock-protocol.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v86/lock-control-check-1791319612925994989/checks",
+        "-lwayland-client",
+        "-lm",
+        "-lm"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replace-hold",
+      "args": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v86/lock_control.py",
+        "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v86/lock-control-check-1791319612925994989/replace-control",
+        "hold"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replace",
+      "args": [
+        "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v86/lock-control-check-1791319612925994989/checks",
+        "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v86/lock_control.py",
+        "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v86/lock-control-check-1791319612925994989/replace-control",
+        "replace"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "stable-hold",
+      "args": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v86/lock_control.py",
+        "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v86/lock-control-check-1791319612925994989/stable-control",
+        "hold"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "stable",
+      "args": [
+        "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v86/lock-control-check-1791319612925994989/checks",
+        "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v86/lock_control.py",
+        "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v86/lock-control-check-1791319612925994989/stable-control",
+        "stable"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-session-lock-fixture-v1/qa/lock-build-1791243868430702627/inputs/session-lock.c": "80d54a2fae07e9bf235d21b79ccb02407674240c1294602f9fbd703d4ac1e0c7",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-session-lock-fixture-v1/qa/lock-build-1791243868430702627/generated/session-lock-client.h": "f6a5730171b9541ca72755a5b150d5dce4cccbc015ec0b955c5f90949637b5c1",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-session-lock-fixture-v1/qa/lock-build-1791243868430702627/generated/session-lock-protocol.c": "97b67c96f7ae85fb7a25fa785f402531350504e746d23e14bf1cbf8fec595e1d",
+    "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v86/lock-control-race.c": "b81f18f960640bce639fcb38fa1dac489680bf376805984b05737a73ad8d233b",
+    "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v86/lock_control.py": "3a9bbbd99f2ef75da64af366ae84154885708ef9a6d5667fabcd7b3df76ee7fd",
+    "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v86/lock-control-check.py": "0d0cbd739a02eaf2172a9bad1e11524a6809ace1269fd5898b4ffd3217ac1f5b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-session-lock-fixture-v1/qa/lock-build-1791243868430702627/report.json": "f6ca87fc0843e1ba8267c9c0118d1777e9cc9ef8b25a2511a18262ea4763dbb2"
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "evidence": [
+    {
+      "passed": true,
+      "reproducedOriginalUnlinkedReaderRefusal": true,
+      "stableIdentityPublisherAccepted": false
+    },
+    {
+      "passed": true,
+      "reproducedOriginalUnlinkedReaderRefusal": false,
+      "stableIdentityPublisherAccepted": true
+    }
+  ],
+  "scope": "Actual unchanged C wants_unlock/fstat identity guard and real protected Python publisher, deterministic publication between open and fstat; no Wayland lock/GUI acceptance.",
+  "artifacts": {
+    "session-lock.c": "80d54a2fae07e9bf235d21b79ccb02407674240c1294602f9fbd703d4ac1e0c7",
+    "race.c": "b81f18f960640bce639fcb38fa1dac489680bf376805984b05737a73ad8d233b",
+    "flags.stdout": "daeb877303c6117ce9622ed510740569c724d685d27e3401d358afb0ab932236",
+    "flags.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "checks": "0bac0cd250003717f2de536e0021730c331a6fd2acf5df6b0497ff23ddc5964d",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replace-hold.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replace-hold.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replace-control": "a50ab289b4d533ae1417250187135abbe89d6e85858b08fe655a24cdf148657d",
+    "replace.stdout": "827a3a3cb2a5ce94d01ee5b5c7c4cc9c9fee2ef73d5939e55ac82a34be2b7aef",
+    "replace.stderr": "175ae7fb0d48e47b78a75fa412f77a8781c272d3c576bbbb53ae58ed02e9a4be",
+    "stable-control": "a50ab289b4d533ae1417250187135abbe89d6e85858b08fe655a24cdf148657d",
+    "stable-hold.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stable-hold.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stable.stdout": "1cebdc124f9fdad9825a664fa7cb36b376edad7ecca97c512e41eb73a4c35b88",
+    "stable.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

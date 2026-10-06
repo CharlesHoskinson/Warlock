@@ -1,0 +1,1329 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 20,
+      free: false,
+      history: [],
+      issued: false,
+      lease: 1,
+      now: 3,
+      previous: 0,
+      publication: 1,
+      records: 2,
+      status: "Admitted"
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 20,
+      free: false,
+      history: ["WrongClock"],
+      issued: false,
+      lease: 1,
+      now: 3,
+      previous: 0,
+      publication: 1,
+      records: 2,
+      status: "Conflict"
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 20,
+      free: false,
+      history: ["WrongClock", "OldStamp"],
+      issued: false,
+      lease: 1,
+      now: 3,
+      previous: 0,
+      publication: 1,
+      records: 2,
+      status: "Conflict"
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 20,
+      free: false,
+      history: ["WrongClock", "OldStamp", "Expire"],
+      issued: false,
+      lease: 1,
+      now: 21,
+      previous: 0,
+      publication: 1,
+      records: 2,
+      status: "ClockAdvanced"
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 20,
+      free: false,
+      history: ["WrongClock", "OldStamp", "Expire", "WrongClock"],
+      issued: false,
+      lease: 1,
+      now: 21,
+      previous: 0,
+      publication: 1,
+      records: 2,
+      status: "Conflict"
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 20,
+      free: false,
+      history: ["WrongClock", "OldStamp", "Expire", "WrongClock", "Renew"],
+      issued: false,
+      lease: 1,
+      now: 21,
+      previous: 0,
+      publication: 1,
+      records: 2,
+      status: "Conflict"
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 20,
+      free: false,
+      history:
+        [
+          "WrongClock",
+          "OldStamp",
+          "Expire",
+          "WrongClock",
+          "Renew",
+          "WrongClock"
+        ],
+      issued: false,
+      lease: 1,
+      now: 21,
+      previous: 0,
+      publication: 1,
+      records: 2,
+      status: "Conflict"
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 20,
+      free: false,
+      history:
+        [
+          "WrongClock",
+          "OldStamp",
+          "Expire",
+          "WrongClock",
+          "Renew",
+          "WrongClock",
+          "Renew"
+        ],
+      issued: false,
+      lease: 1,
+      now: 21,
+      previous: 0,
+      publication: 1,
+      records: 2,
+      status: "Conflict"
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 20,
+      free: false,
+      history:
+        [
+          "WrongClock",
+          "OldStamp",
+          "Expire",
+          "WrongClock",
+          "Renew",
+          "WrongClock",
+          "Renew",
+          "Renew"
+        ],
+      issued: false,
+      lease: 1,
+      now: 21,
+      previous: 0,
+      publication: 1,
+      records: 2,
+      status: "Conflict"
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 20,
+      free: false,
+      history:
+        [
+          "WrongClock",
+          "OldStamp",
+          "Expire",
+          "WrongClock",
+          "Renew",
+          "WrongClock",
+          "Renew",
+          "Renew",
+          "Expire"
+        ],
+      issued: false,
+      lease: 1,
+      now: 21,
+      previous: 0,
+      publication: 1,
+      records: 2,
+      status: "ClockAdvanced"
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 41,
+      free: false,
+      history:
+        [
+          "WrongClock",
+          "OldStamp",
+          "Expire",
+          "WrongClock",
+          "Renew",
+          "WrongClock",
+          "Renew",
+          "Renew",
+          "Expire",
+          "Advance"
+        ],
+      issued: false,
+      lease: 2,
+      now: 21,
+      previous: 20,
+      publication: 2,
+      records: 2,
+      status: "Admitted"
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 41,
+      free: false,
+      history:
+        [
+          "WrongClock",
+          "OldStamp",
+          "Expire",
+          "WrongClock",
+          "Renew",
+          "WrongClock",
+          "Renew",
+          "Renew",
+          "Expire",
+          "Advance",
+          "Foreign"
+        ],
+      issued: false,
+      lease: 2,
+      now: 21,
+      previous: 20,
+      publication: 2,
+      records: 2,
+      status: "Invalid"
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 41,
+      free: false,
+      history:
+        [
+          "WrongClock",
+          "OldStamp",
+          "Expire",
+          "WrongClock",
+          "Renew",
+          "WrongClock",
+          "Renew",
+          "Renew",
+          "Expire",
+          "Advance",
+          "Foreign",
+          "Renew"
+        ],
+      issued: false,
+      lease: 2,
+      now: 21,
+      previous: 20,
+      publication: 2,
+      records: 2,
+      status: "Conflict"
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 41,
+      free: false,
+      history:
+        [
+          "WrongClock",
+          "OldStamp",
+          "Expire",
+          "WrongClock",
+          "Renew",
+          "WrongClock",
+          "Renew",
+          "Renew",
+          "Expire",
+          "Advance",
+          "Foreign",
+          "Renew",
+          "Advance"
+        ],
+      issued: false,
+      lease: 2,
+      now: 21,
+      previous: 20,
+      publication: 2,
+      records: 2,
+      status: "Conflict"
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 41,
+      free: false,
+      history:
+        [
+          "WrongClock",
+          "OldStamp",
+          "Expire",
+          "WrongClock",
+          "Renew",
+          "WrongClock",
+          "Renew",
+          "Renew",
+          "Expire",
+          "Advance",
+          "Foreign",
+          "Renew",
+          "Advance",
+          "OldStamp"
+        ],
+      issued: false,
+      lease: 2,
+      now: 21,
+      previous: 20,
+      publication: 2,
+      records: 2,
+      status: "Conflict"
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 41,
+      free: false,
+      history:
+        [
+          "WrongClock",
+          "OldStamp",
+          "Expire",
+          "WrongClock",
+          "Renew",
+          "WrongClock",
+          "Renew",
+          "Renew",
+          "Expire",
+          "Advance",
+          "Foreign",
+          "Renew",
+          "Advance",
+          "OldStamp",
+          "Foreign"
+        ],
+      issued: false,
+      lease: 2,
+      now: 21,
+      previous: 20,
+      publication: 2,
+      records: 2,
+      status: "Invalid"
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 41,
+      free: false,
+      history:
+        [
+          "WrongClock",
+          "OldStamp",
+          "Expire",
+          "WrongClock",
+          "Renew",
+          "WrongClock",
+          "Renew",
+          "Renew",
+          "Expire",
+          "Advance",
+          "Foreign",
+          "Renew",
+          "Advance",
+          "OldStamp",
+          "Foreign",
+          "WrongClock"
+        ],
+      issued: false,
+      lease: 2,
+      now: 21,
+      previous: 20,
+      publication: 2,
+      records: 2,
+      status: "Conflict"
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 41,
+      free: false,
+      history:
+        [
+          "WrongClock",
+          "OldStamp",
+          "Expire",
+          "WrongClock",
+          "Renew",
+          "WrongClock",
+          "Renew",
+          "Renew",
+          "Expire",
+          "Advance",
+          "Foreign",
+          "Renew",
+          "Advance",
+          "OldStamp",
+          "Foreign",
+          "WrongClock",
+          "WrongClock"
+        ],
+      issued: false,
+      lease: 2,
+      now: 21,
+      previous: 20,
+      publication: 2,
+      records: 2,
+      status: "Conflict"
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 41,
+      free: false,
+      history:
+        [
+          "WrongClock",
+          "OldStamp",
+          "Expire",
+          "WrongClock",
+          "Renew",
+          "WrongClock",
+          "Renew",
+          "Renew",
+          "Expire",
+          "Advance",
+          "Foreign",
+          "Renew",
+          "Advance",
+          "OldStamp",
+          "Foreign",
+          "WrongClock",
+          "WrongClock",
+          "Advance"
+        ],
+      issued: false,
+      lease: 2,
+      now: 21,
+      previous: 20,
+      publication: 2,
+      records: 2,
+      status: "Conflict"
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      charge: 64,
+      deadline: 41,
+      free: false,
+      history:
+        [
+          "WrongClock",
+          "OldStamp",
+          "Expire",
+          "WrongClock",
+          "Renew",
+          "WrongClock",
+          "Renew",
+          "Renew",
+          "Expire",
+          "Advance",
+          "Foreign",
+          "Renew",
+          "Advance",
+          "OldStamp",
+          "Foreign",
+          "WrongClock",
+          "WrongClock",
+          "Advance",
+          "Expire"
+        ],
+      issued: false,
+      lease: 2,
+      now: 42,
+      previous: 20,
+      publication: 2,
+      records: 2,
+      status: "ClockAdvanced"
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 41,
+      free: true,
+      history:
+        [
+          "WrongClock",
+          "OldStamp",
+          "Expire",
+          "WrongClock",
+          "Renew",
+          "WrongClock",
+          "Renew",
+          "Renew",
+          "Expire",
+          "Advance",
+          "Foreign",
+          "Renew",
+          "Advance",
+          "OldStamp",
+          "Foreign",
+          "WrongClock",
+          "WrongClock",
+          "Advance",
+          "Expire",
+          "Drain"
+        ],
+      issued: false,
+      lease: 2,
+      now: 42,
+      previous: 20,
+      publication: 2,
+      records: 1,
+      status: "CapacityReturned"
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 41,
+      free: true,
+      history:
+        [
+          "WrongClock",
+          "OldStamp",
+          "Expire",
+          "WrongClock",
+          "Renew",
+          "WrongClock",
+          "Renew",
+          "Renew",
+          "Expire",
+          "Advance",
+          "Foreign",
+          "Renew",
+          "Advance",
+          "OldStamp",
+          "Foreign",
+          "WrongClock",
+          "WrongClock",
+          "Advance",
+          "Expire",
+          "Drain",
+          "OldStamp"
+        ],
+      issued: false,
+      lease: 2,
+      now: 42,
+      previous: 20,
+      publication: 2,
+      records: 1,
+      status: "Conflict"
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 41,
+      free: true,
+      history:
+        [
+          "WrongClock",
+          "OldStamp",
+          "Expire",
+          "WrongClock",
+          "Renew",
+          "WrongClock",
+          "Renew",
+          "Renew",
+          "Expire",
+          "Advance",
+          "Foreign",
+          "Renew",
+          "Advance",
+          "OldStamp",
+          "Foreign",
+          "WrongClock",
+          "WrongClock",
+          "Advance",
+          "Expire",
+          "Drain",
+          "OldStamp",
+          "Partial"
+        ],
+      issued: false,
+      lease: 2,
+      now: 42,
+      previous: 20,
+      publication: 2,
+      records: 1,
+      status: "Conflict"
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 41,
+      free: true,
+      history:
+        [
+          "WrongClock",
+          "OldStamp",
+          "Expire",
+          "WrongClock",
+          "Renew",
+          "WrongClock",
+          "Renew",
+          "Renew",
+          "Expire",
+          "Advance",
+          "Foreign",
+          "Renew",
+          "Advance",
+          "OldStamp",
+          "Foreign",
+          "WrongClock",
+          "WrongClock",
+          "Advance",
+          "Expire",
+          "Drain",
+          "OldStamp",
+          "Partial",
+          "Expire"
+        ],
+      issued: false,
+      lease: 2,
+      now: 42,
+      previous: 20,
+      publication: 2,
+      records: 1,
+      status: "ClockAdvanced"
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 41,
+      free: true,
+      history:
+        [
+          "WrongClock",
+          "OldStamp",
+          "Expire",
+          "WrongClock",
+          "Renew",
+          "WrongClock",
+          "Renew",
+          "Renew",
+          "Expire",
+          "Advance",
+          "Foreign",
+          "Renew",
+          "Advance",
+          "OldStamp",
+          "Foreign",
+          "WrongClock",
+          "WrongClock",
+          "Advance",
+          "Expire",
+          "Drain",
+          "OldStamp",
+          "Partial",
+          "Expire",
+          "OldStamp"
+        ],
+      issued: false,
+      lease: 2,
+      now: 42,
+      previous: 20,
+      publication: 2,
+      records: 1,
+      status: "Conflict"
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 62,
+      free: true,
+      history:
+        [
+          "WrongClock",
+          "OldStamp",
+          "Expire",
+          "WrongClock",
+          "Renew",
+          "WrongClock",
+          "Renew",
+          "Renew",
+          "Expire",
+          "Advance",
+          "Foreign",
+          "Renew",
+          "Advance",
+          "OldStamp",
+          "Foreign",
+          "WrongClock",
+          "WrongClock",
+          "Advance",
+          "Expire",
+          "Drain",
+          "OldStamp",
+          "Partial",
+          "Expire",
+          "OldStamp",
+          "Advance"
+        ],
+      issued: false,
+      lease: 3,
+      now: 42,
+      previous: 41,
+      publication: 3,
+      records: 1,
+      status: "Admitted"
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 62,
+      free: true,
+      history:
+        [
+          "WrongClock",
+          "OldStamp",
+          "Expire",
+          "WrongClock",
+          "Renew",
+          "WrongClock",
+          "Renew",
+          "Renew",
+          "Expire",
+          "Advance",
+          "Foreign",
+          "Renew",
+          "Advance",
+          "OldStamp",
+          "Foreign",
+          "WrongClock",
+          "WrongClock",
+          "Advance",
+          "Expire",
+          "Drain",
+          "OldStamp",
+          "Partial",
+          "Expire",
+          "OldStamp",
+          "Advance",
+          "Advance"
+        ],
+      issued: false,
+      lease: 3,
+      now: 42,
+      previous: 41,
+      publication: 3,
+      records: 1,
+      status: "Conflict"
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 62,
+      free: true,
+      history:
+        [
+          "WrongClock",
+          "OldStamp",
+          "Expire",
+          "WrongClock",
+          "Renew",
+          "WrongClock",
+          "Renew",
+          "Renew",
+          "Expire",
+          "Advance",
+          "Foreign",
+          "Renew",
+          "Advance",
+          "OldStamp",
+          "Foreign",
+          "WrongClock",
+          "WrongClock",
+          "Advance",
+          "Expire",
+          "Drain",
+          "OldStamp",
+          "Partial",
+          "Expire",
+          "OldStamp",
+          "Advance",
+          "Advance",
+          "Expire"
+        ],
+      issued: false,
+      lease: 3,
+      now: 63,
+      previous: 41,
+      publication: 3,
+      records: 1,
+      status: "ClockAdvanced"
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 62,
+      free: true,
+      history:
+        [
+          "WrongClock",
+          "OldStamp",
+          "Expire",
+          "WrongClock",
+          "Renew",
+          "WrongClock",
+          "Renew",
+          "Renew",
+          "Expire",
+          "Advance",
+          "Foreign",
+          "Renew",
+          "Advance",
+          "OldStamp",
+          "Foreign",
+          "WrongClock",
+          "WrongClock",
+          "Advance",
+          "Expire",
+          "Drain",
+          "OldStamp",
+          "Partial",
+          "Expire",
+          "OldStamp",
+          "Advance",
+          "Advance",
+          "Expire",
+          "WrongClock"
+        ],
+      issued: false,
+      lease: 3,
+      now: 63,
+      previous: 41,
+      publication: 3,
+      records: 1,
+      status: "Conflict"
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 62,
+      free: true,
+      history:
+        [
+          "WrongClock",
+          "OldStamp",
+          "Expire",
+          "WrongClock",
+          "Renew",
+          "WrongClock",
+          "Renew",
+          "Renew",
+          "Expire",
+          "Advance",
+          "Foreign",
+          "Renew",
+          "Advance",
+          "OldStamp",
+          "Foreign",
+          "WrongClock",
+          "WrongClock",
+          "Advance",
+          "Expire",
+          "Drain",
+          "OldStamp",
+          "Partial",
+          "Expire",
+          "OldStamp",
+          "Advance",
+          "Advance",
+          "Expire",
+          "WrongClock",
+          "OldStamp"
+        ],
+      issued: false,
+      lease: 3,
+      now: 63,
+      previous: 41,
+      publication: 3,
+      records: 1,
+      status: "Conflict"
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 62,
+      free: true,
+      history:
+        [
+          "WrongClock",
+          "OldStamp",
+          "Expire",
+          "WrongClock",
+          "Renew",
+          "WrongClock",
+          "Renew",
+          "Renew",
+          "Expire",
+          "Advance",
+          "Foreign",
+          "Renew",
+          "Advance",
+          "OldStamp",
+          "Foreign",
+          "WrongClock",
+          "WrongClock",
+          "Advance",
+          "Expire",
+          "Drain",
+          "OldStamp",
+          "Partial",
+          "Expire",
+          "OldStamp",
+          "Advance",
+          "Advance",
+          "Expire",
+          "WrongClock",
+          "OldStamp",
+          "OldStamp"
+        ],
+      issued: false,
+      lease: 3,
+      now: 63,
+      previous: 41,
+      publication: 3,
+      records: 1,
+      status: "Conflict"
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 83,
+      free: true,
+      history:
+        [
+          "WrongClock",
+          "OldStamp",
+          "Expire",
+          "WrongClock",
+          "Renew",
+          "WrongClock",
+          "Renew",
+          "Renew",
+          "Expire",
+          "Advance",
+          "Foreign",
+          "Renew",
+          "Advance",
+          "OldStamp",
+          "Foreign",
+          "WrongClock",
+          "WrongClock",
+          "Advance",
+          "Expire",
+          "Drain",
+          "OldStamp",
+          "Partial",
+          "Expire",
+          "OldStamp",
+          "Advance",
+          "Advance",
+          "Expire",
+          "WrongClock",
+          "OldStamp",
+          "OldStamp",
+          "Advance"
+        ],
+      issued: false,
+      lease: 4,
+      now: 63,
+      previous: 62,
+      publication: 4,
+      records: 1,
+      status: "Admitted"
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 83,
+      free: true,
+      history:
+        [
+          "WrongClock",
+          "OldStamp",
+          "Expire",
+          "WrongClock",
+          "Renew",
+          "WrongClock",
+          "Renew",
+          "Renew",
+          "Expire",
+          "Advance",
+          "Foreign",
+          "Renew",
+          "Advance",
+          "OldStamp",
+          "Foreign",
+          "WrongClock",
+          "WrongClock",
+          "Advance",
+          "Expire",
+          "Drain",
+          "OldStamp",
+          "Partial",
+          "Expire",
+          "OldStamp",
+          "Advance",
+          "Advance",
+          "Expire",
+          "WrongClock",
+          "OldStamp",
+          "OldStamp",
+          "Advance",
+          "Renew"
+        ],
+      issued: false,
+      lease: 4,
+      now: 63,
+      previous: 62,
+      publication: 4,
+      records: 1,
+      status: "Conflict"
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 83,
+      free: true,
+      history:
+        [
+          "WrongClock",
+          "OldStamp",
+          "Expire",
+          "WrongClock",
+          "Renew",
+          "WrongClock",
+          "Renew",
+          "Renew",
+          "Expire",
+          "Advance",
+          "Foreign",
+          "Renew",
+          "Advance",
+          "OldStamp",
+          "Foreign",
+          "WrongClock",
+          "WrongClock",
+          "Advance",
+          "Expire",
+          "Drain",
+          "OldStamp",
+          "Partial",
+          "Expire",
+          "OldStamp",
+          "Advance",
+          "Advance",
+          "Expire",
+          "WrongClock",
+          "OldStamp",
+          "OldStamp",
+          "Advance",
+          "Renew",
+          "Renew"
+        ],
+      issued: false,
+      lease: 4,
+      now: 63,
+      previous: 62,
+      publication: 4,
+      records: 1,
+      status: "Conflict"
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 83,
+      free: true,
+      history:
+        [
+          "WrongClock",
+          "OldStamp",
+          "Expire",
+          "WrongClock",
+          "Renew",
+          "WrongClock",
+          "Renew",
+          "Renew",
+          "Expire",
+          "Advance",
+          "Foreign",
+          "Renew",
+          "Advance",
+          "OldStamp",
+          "Foreign",
+          "WrongClock",
+          "WrongClock",
+          "Advance",
+          "Expire",
+          "Drain",
+          "OldStamp",
+          "Partial",
+          "Expire",
+          "OldStamp",
+          "Advance",
+          "Advance",
+          "Expire",
+          "WrongClock",
+          "OldStamp",
+          "OldStamp",
+          "Advance",
+          "Renew",
+          "Renew",
+          "Advance"
+        ],
+      issued: false,
+      lease: 4,
+      now: 63,
+      previous: 62,
+      publication: 4,
+      records: 1,
+      status: "Conflict"
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      charge: 32,
+      deadline: 83,
+      free: true,
+      history:
+        [
+          "WrongClock",
+          "OldStamp",
+          "Expire",
+          "WrongClock",
+          "Renew",
+          "WrongClock",
+          "Renew",
+          "Renew",
+          "Expire",
+          "Advance",
+          "Foreign",
+          "Renew",
+          "Advance",
+          "OldStamp",
+          "Foreign",
+          "WrongClock",
+          "WrongClock",
+          "Advance",
+          "Expire",
+          "Drain",
+          "OldStamp",
+          "Partial",
+          "Expire",
+          "OldStamp",
+          "Advance",
+          "Advance",
+          "Expire",
+          "WrongClock",
+          "OldStamp",
+          "OldStamp",
+          "Advance",
+          "Renew",
+          "Renew",
+          "Advance",
+          "OldStamp"
+        ],
+      issued: false,
+      lease: 4,
+      now: 63,
+      previous: 62,
+      publication: 4,
+      records: 1,
+      status: "Conflict"
+    }
+}
+
+[ok] No violation found (228ms at 658 traces/second).
+Trace length statistics: max=36, min=3, average=20.52
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

@@ -1,0 +1,750 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-b1acbb0cbe6b42bba64d059d2a61a57f.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "native/admission-test.c": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+    "native/client-command-test.cpp": "ef481b7030d6a41831895fca1a5cba7405d08e22b913fa2f0f6cadccf47c25ab",
+    "native/client-denial-test.cpp": "9c05385a9e1b9da4efe03c414b09d512ab4e3791a33c4ff55fde75e4e0c009f7",
+    "native/client-frame-test.cpp": "233d4520f3bd200cad1f1ea580e9a2eaaf382822b90aa262d4294f8a3bf68d7f",
+    "native/client-import-test.cpp": "c74f47f1e4233681ab63adf3a51396cfa7c8a7fc0769eba9e314ccc82471de4a",
+    "native/client-observation-test.cpp": "bc9a36f1d62669904d5b7003d7b299ad2ee3a836c8f13f381a6669915c74e336",
+    "native/client-producer.cpp": "9568ed8c6f67d7d7056d8c106bd3d9ba052106eb1ddff9299db0b9ad449b6210",
+    "native/client-producer.h": "01f005d7899b2f3b13216a702508adfa39b6cbcbde4f84b6fae1ebc2404462b9",
+    "native/client-resume-test.cpp": "c8dfcdc8564bb6bd8cf9284fe3d12d67c30ca9d5a510a58b935021567719ac2d",
+    "native/client-retained-presentation-test.cpp": "680fb60765c220e59974cda9a8af87c60b5935d48fa8e66671f3e74a0e1c0a2d",
+    "native/client_frame.hpp": "65d1ed6c416b34a43f2d4920001d2da049fb8995b3006475fab1651e97b9a855",
+    "native/client_import.hpp": "f2a405ce71bf0787e9b8e84d4b10cc47444f385b90ea8f2544972592bb4abc9c",
+    "native/client_producer.hpp": "b93355d804613a68593bfd2447295287ac04c76427007c5772e6244b4c51d990",
+    "native/context-keys-test.c": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+    "native/context-keys.h": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+    "native/demand.hpp": "b7721cb9e67b7845252918213b5560fdaaafcacff42eb52eaa37697a341a7dcc",
+    "native/geometry-carrier-test.c": "770835580c7a4a2e21e49a9c3da586ee3ae59e66a92320dd7bb12fa8e516d921",
+    "native/handoff-test.c": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+    "native/host-fault.h": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+    "native/host-journal.h": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+    "native/host.c": "981fa1963001d3cd88d74ea1651691a69965ef4cb3f34ef8656957800cc47194",
+    "native/imported_clients.hpp": "b5ee6b353638b4a6f6e8804fef2963858a3f99852297596167de8cacbb5abc1f",
+    "native/preview-integration.h": "ffacb4ed6abe6b8019f5bcb489b8abe69f28f863ca9079f29cd1c075a0a49e2a",
+    "native/preview-provider-bootstrap.cpp": "225056e844c4bbd2f6ae7f161a36b43f35e53b7bd8c0f909433511b726c7a5c3",
+    "native/preview-provider-bootstrap.h": "03a2192c7113c94f8cb1a109a366cd9b4e96f8c471b0e7707c122c10278b4cac",
+    "native/preview-uri-api.h": "7a02550a807102f6ebdad9c1570eb6a719a50b0ed422ff26add97dbd6408b002",
+    "native/preview-uri-webkit.cpp": "c8cc48442d8d098315b7ad64b71be267679bc361041dc6d2de405c657fa74ea2",
+    "native/preview_broker.hpp": "2954630241ad5e5dc1ee7ce770ef622cd7eff0c3b6d9c5feedc07fcdeec7e3a1",
+    "native/preview_client.hpp": "e3db3313aa48370fe77323e2b87ef0745830ffa476d314d00eca2cd64a613657",
+    "native/preview_delivery.hpp": "5b404be53ccb2c9da3208ffbab276f41e66e33fc30b434257aa19ab001883d5d",
+    "native/preview_fd.hpp": "60fa114f7f2eb819c7a09085ee737c23d21b31f0ba177d967ff99f1425272a60",
+    "native/preview_uri.cpp": "5217f84fed7dd6a4bc4a52a518cf60596394a2a5714c8810faf536fcfb519372",
+    "native/preview_uri.hpp": "274f76793ef115078c8b9ab553260a45ac64a3e226c97a4be069ae17b33849cc",
+    "native/preview_wire.hpp": "2b02108a819e97106cbf38e420871bc4ee10656fd6f98905f25c30fd838d283d",
+    "native/provider-delivery-test.cpp": "4e21203fd7acd32ede476df1137b6ea812cb26fa977d05296a884401adfd8fbe",
+    "native/provider-grant-test.cpp": "8f39b5828b946d5fba2f7df689578a50f79cf7daf2e0e8443ab87dfd7b89ac22",
+    "native/provider-ownership-test.cpp": "d79fe711a90d24ac96e8522a33a4dc3582989b40b692aec73109e365e3f44675",
+    "native/reconciliation-carrier-test.c": "38210317eff28d8a436e640e971f91df71ffcc3b17e82c27a60ee34f57d9f73d",
+    "native/recovery-presentation-test.c": "812bbab1640e12269bc195979cd319a96a505157ba8f5c637eebfd5561bc8e67",
+    "native/shared-context-test.c": "ed50c8ed6b0fee3db3818e2f38c8bb57985b388b26ee09a5624d32f1bfa258ee",
+    "native/shared-context.h": "e86f3ba7a4c76d7839ef8d67d14c7f9ea6b514afa2ac110fc7cebf2da2fd62ce",
+    "native/shared-host.c": "56918d9005071cffc5042dfc62113887739278b97d92c4ffb6b6ce76517af472",
+    "native/surface-test.c": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+    "native/surface.h": "2bdf2d9b3b34fa7193da90e58ac378e7a640ae91e7b02d46987e33c559209f0b",
+    "native/imported-clients.h": "26e2876eacc67c4f1f0ce7ecdd9285a0533ee8ce99661a411dc29eee8fb940bc",
+    "native/imported-clients.cpp": "52cefdc44e84db9e131a79c03d793786a550eb6efa79fdfb64df6e30ce6ce364",
+    "native/imported-clients-boundary-test.c": "04b444d7d4d0c8f7f945d6f5e9996cfe3f23455624f6b933359b7ac1ee9737da",
+    "native/imported_lifecycle.hpp": "1d4efa4daa2753e43a822e3727dc78458941d72d03e4e01a1d041eb7f6bd9ded",
+    "native/imported-lifecycle-test.cpp": "14e7969e5228d013b590f912605cdd846235de67e8e13a87e644d123136d6a2a",
+    "native/family_source.hpp": "7e936e3f59b5075c364748384282c4e764d85444db2962a885a1ae5a0bf9bb35",
+    "native/family-source-test.cpp": "25c2402f9b6e1c7692633a2b27b69a961284412cf802fb600ad3ff2f97380b9a",
+    "native/family_style_crop_fd.hpp": "bf59599f5ceeb41381a1fd05fb045c52ec3cf47faf4706c38de8dd595f902a53",
+    "native/preview_png.hpp": "308007220baf1d7f2ad30569237ffaf7d6427d900ee1243811480402f188e670",
+    "native/family-fd-test.cpp": "4129475daf2dbcc997ee804f6f2cc1ae97c373adddc891a95ec6cf043f98291d",
+    "native/family_frame.hpp": "20ce40ab0080c37e17345cb3d88334eb5dc926a79720ec6faffee8807ae5fe67",
+    "native/family_producer.hpp": "148240aaf174b3d0f27d8385cd3e93811e48dd8c39b3b65a691fc754c2eebe22",
+    "native/family-frame-test.cpp": "7f5421a78f071a081edb32b8db0402c0e8a855df150ecdeeba6298cf94ed840c",
+    "native/generated_backdrop_fd.hpp": "3f60c0cffed16e60ec90b8f8365ec3f278d5c8cb41db2ce5b85c4929d018337f",
+    "native/backdrop-fd-test.cpp": "74b2f71f21e823bc3445cd647f86d422071edbd483d2bd89d68b38ce6575f623",
+    "native/backdrop-frame-test.cpp": "687f19e3053f305777f16d854fc2dbf593f4a7131589d522c37de4acfa498fd6",
+    "native/backdrop-denial-test.cpp": "7388e88721724be5280b0df91e982af29bebc2f9a10563690ab5aef8c73bda86",
+    "native/qa-reader-control.h": "1a504ee3959b78c73a8f9613b6a6c4f9cc51bc198d1dbd3b6fe1fd352684ccf4",
+    "native/qa-reader-control-test.c": "6bd57d3be5b0f3d0e071993e93b188fd0b2a87ae91dada60120f8e9142a07ed5",
+    "native/preview_metadata.hpp": "1cf84f1094cd8ccca90fcc5c44bed4182716e256792bb542c771c8bc1ce9ad5e",
+    "native/preview_icons.hpp": "6af2174049d623e824fdcf66ddd3a18d0b48a2c34c7159c1651dc0e4b53d8a32",
+    "native/preview_icons.cpp": "48aa83cc63d4f1f08b9333372cb3f63e0a25bf880cc17567098079284ee79693",
+    "native/metadata-icon-test.cpp": "cff027f7a3d29668893aec03be50f5dbae49fb2295606a8e8baad34b64e028d7",
+    "native/window-catalog-test.cpp": "c9efe0d6f7f7db6abc38ab717d16d56a014a2804d39281a28bddd7eb030548a6",
+    "native/receiver-extension-test.cpp": "a35501610fadf7cc4935b970c87b683fa9a2216ee2eef3da8cc70afc652b8d59",
+    "native/delivery-extension-test.cpp": "4d9ccdff37c8818ec6f70b93393e94a46f1f1b3506606a692549cf24c38972c8",
+    "native/imported_admission.hpp": "26ff33e3e51f6df21f28114626f0f62fbd8f6e9e9447b89e1fb9c716d99227dd",
+    "native/imported-admission-test.cpp": "4440d17aea9172b547a66660cb30ebe27df821f627f9fae8861fcdd8d6858d6f",
+    "native/imported_enrollment.hpp": "970d2e8027dfdbbbb599f3de7d5132b9e7e27e8e0509622e7ae3ad18eeef380e",
+    "native/dynamic-enrollment-test.cpp": "bc8dd70ec9b8b5ce2f428cb82578389f9349d24b3ebdb423ccf725b5fd8c8278",
+    "native/rejected-enrollment-test.cpp": "f38a7da3423eb939f76c8882f2d2b057b9af865fd9cd3d96dbc9741918c99aad",
+    "native/resume-enrollment-test.cpp": "b14e33de4a2c1ff6b8e38737f66d8d6f906aba07e609a67750a5a7055434921d",
+    "native/imported_feedback.hpp": "6760465caf1b6877aadb62776fa050f7a44848cd4a9061ce89fdbac96604b9aa",
+    "native/local-feedback-test.cpp": "01b247fef9f6378db1616430fb7f04236e584085269542eaa05c4a6581612b29",
+    "native/next-intent-test.cpp": "6ad459d12146dbe18b6431b3ee863318c10d45a0806f63d9b5400812f20e80b9",
+    "native/next-resume-test.cpp": "f4f00450ca31f382b71af7b7158c40ee199439c9f8c23f3a4062075e190ab152",
+    "native/preview_retirement.hpp": "ed0820a8f01bc1eef65eefb73a550aed2e03b8ad9b11ef767fd8789c9c7d8cdc",
+    "native/retirement-observation-test.cpp": "2f60ee0cc71f4cc611f57ca3ffa3ef4a013233a0c9de13144b207729f0a478f8",
+    "native/imported_subjects.hpp": "29fac7427b2c96c18fd5d392481dcb8d14fc5a6c05cf72e874da1f80d7f54ce9",
+    "spec/intent.qnt": "f1d726231e5530615c7420a82b8359157fdbaad39846ee188671832bb1f8dc9c",
+    "spec/intent_tests.qnt": "8a9bf3a18dffe24722de0c95312f9f06891a807fa9900c067adeccf67c48c6aa",
+    "qa/intent-check.py": "c4bc7462d3efc9026393f0f44815fce4a09c095b03cd7575c59440c2a2f7dcea",
+    "qa/intent-checks.cpp": "83780f0c8033166ae71d615270513b9eb0a16a82be8accbdada2fb605ca14299"
+  },
+  "commands": [
+    {
+      "name": "compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-O1",
+        "-g",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v85/qa/intent-check-1791319139988119197/inputs/native",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v85/qa/intent-check-1791319139988119197/inputs/qa/intent-checks.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v85/qa/intent-check-1791319139988119197/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "quint-typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "intent_tests.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "quint-named",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "intent_tests.qnt",
+        "--main=intent_tests",
+        "--backend=typescript",
+        "--match=^(capacityHasNoJob|retryCannotRenew|expiredCapacityDoesNotRevive|realCapacityReturnsOriginalJob|changedStampRefused|foreignIntentRefused)$",
+        "--seed=611001",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v85/qa/intent-check-1791319139988119197/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "quint-sampling",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "intent.qnt",
+        "--main=intent",
+        "--backend=typescript",
+        "--invariant=safety",
+        "--seed=611002",
+        "--max-samples=150",
+        "--max-steps=35",
+        "--n-traces=10",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v85/qa/intent-check-1791319139988119197/sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-capacityHasNoJob-0.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v85/qa/intent-check-1791319139988119197/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-changedStampRefused-4.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v85/qa/intent-check-1791319139988119197/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-expiredCapacityDoesNotRevive-2.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v85/qa/intent-check-1791319139988119197/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-foreignIntentRefused-5.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v85/qa/intent-check-1791319139988119197/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-realCapacityReturnsOriginalJob-3.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v85/qa/intent-check-1791319139988119197/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-retryCannotRenew-1.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v85/qa/intent-check-1791319139988119197/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-0.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v85/qa/intent-check-1791319139988119197/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-1.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v85/qa/intent-check-1791319139988119197/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-2.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v85/qa/intent-check-1791319139988119197/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-3.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v85/qa/intent-check-1791319139988119197/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-4.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v85/qa/intent-check-1791319139988119197/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-5.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v85/qa/intent-check-1791319139988119197/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-6.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v85/qa/intent-check-1791319139988119197/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-7.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v85/qa/intent-check-1791319139988119197/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-8.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v85/qa/intent-check-1791319139988119197/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-9.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v85/qa/intent-check-1791319139988119197/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "changed-intent-compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-O1",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v85/qa/intent-check-1791319139988119197/changed-intent",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v85/qa/intent-check-1791319139988119197/inputs/qa/intent-checks.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v85/qa/intent-check-1791319139988119197/changed-intent/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "changed-intent-replay",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v85/qa/intent-check-1791319139988119197/changed-intent/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "expired-intent-compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-O1",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v85/qa/intent-check-1791319139988119197/expired-intent",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v85/qa/intent-check-1791319139988119197/inputs/qa/intent-checks.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v85/qa/intent-check-1791319139988119197/expired-intent/checks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "expired-intent-replay",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v85/qa/intent-check-1791319139988119197/expired-intent/checks"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "projection": "Actual ImportedIntentLedger original identity/deadline and native demand/Broker reservation state for three fixed own actors sharing two items. Native producer/clock fixture is synthetic; this is not real capture, Native transport, new ImportedClients concrete-field refinement, GIO or whole product evidence. Actual mapped-resource paths are qualified separately.",
+  "fixedFixture": {
+    "binding": [
+      1,
+      2,
+      3
+    ],
+    "incarnations": [
+      11,
+      12,
+      13
+    ],
+    "clock": 10,
+    "initialNativeNow": 3,
+    "originalDeadline": 20,
+    "firstTwoDeadlines": 100,
+    "items": 2,
+    "bytes": 64
+  },
+  "toolSHA256": "bd6e9400f6358a8a69d80eb636eb62f59f993039868a7be9719f76ba74191b4e",
+  "selectedNames": [
+    "capacityHasNoJob",
+    "retryCannotRenew",
+    "expiredCapacityDoesNotRevive",
+    "realCapacityReturnsOriginalJob",
+    "changedStampRefused",
+    "foreignIntentRefused"
+  ],
+  "coupledTraces": [
+    {
+      "trace": "named-capacityHasNoJob-0.itf.json",
+      "statesCompared": 1
+    },
+    {
+      "trace": "named-changedStampRefused-4.itf.json",
+      "statesCompared": 1
+    },
+    {
+      "trace": "named-expiredCapacityDoesNotRevive-2.itf.json",
+      "statesCompared": 4
+    },
+    {
+      "trace": "named-foreignIntentRefused-5.itf.json",
+      "statesCompared": 1
+    },
+    {
+      "trace": "named-realCapacityReturnsOriginalJob-3.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-retryCannotRenew-1.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "sample-0.itf.json",
+      "statesCompared": 35
+    },
+    {
+      "trace": "sample-1.itf.json",
+      "statesCompared": 35
+    },
+    {
+      "trace": "sample-2.itf.json",
+      "statesCompared": 35
+    },
+    {
+      "trace": "sample-3.itf.json",
+      "statesCompared": 35
+    },
+    {
+      "trace": "sample-4.itf.json",
+      "statesCompared": 35
+    },
+    {
+      "trace": "sample-5.itf.json",
+      "statesCompared": 35
+    },
+    {
+      "trace": "sample-6.itf.json",
+      "statesCompared": 35
+    },
+    {
+      "trace": "sample-7.itf.json",
+      "statesCompared": 35
+    },
+    {
+      "trace": "sample-8.itf.json",
+      "statesCompared": 35
+    },
+    {
+      "trace": "sample-9.itf.json",
+      "statesCompared": 35
+    }
+  ],
+  "mutants": [
+    {
+      "name": "changed-intent",
+      "trace": "named-retryCannotRenew-1.itf.json",
+      "differentObservableState": true
+    },
+    {
+      "name": "expired-intent",
+      "trace": "named-expiredCapacityDoesNotRevive-2.itf.json",
+      "differentObservableState": true
+    }
+  ],
+  "namedScenarios": 6,
+  "invariantSamples": 150,
+  "statesCompared": 363,
+  "unsafeMutantsDetected": 2,
+  "artifacts": {
+    "checks": "856aa6b7c4ba64a6481e29f5ab2626f4a74bb8f56fe0dca2b12b6463f86c3322",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "quint-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "quint-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-capacityHasNoJob-0.itf.json": "c0a60a8eb2c1db06e5b64334e2edb2bba87c5b574e36f8bba26652eb370523a6",
+    "named-retryCannotRenew-1.itf.json": "8cf122f05f7920ee7e6123f235d247eb449c76c0bc129ba2ebdf4245d8738d55",
+    "named-expiredCapacityDoesNotRevive-2.itf.json": "9cf4002c0eb0cd7e2ca6c2aecc211762d0cdc610db06f967d600b96c6b0e7b71",
+    "named-realCapacityReturnsOriginalJob-3.itf.json": "d05490a10c03589021a6594809c2cbf8b0e415eefee1e36d5df6ae9791bcfcf3",
+    "named-changedStampRefused-4.itf.json": "962759ebc6c00550ea971c9116b47b02455b4be06251a1623f31c090f09ed74e",
+    "named-foreignIntentRefused-5.itf.json": "2f723c2d29a2458364829dff7844bd3c78ae0cba3b51bcee94ea1c5160ccfeec",
+    "quint-named.stdout": "191b6d33cd5f9450fe41bf063a461f107fe0ec119818778a1fbd16c569054613",
+    "quint-named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "8c9d1b23aca6f52f251d723476a6457c6a8fd18041149efb0c453e622b829f89",
+    "sample-1.itf.json": "88e65d19a2e88b442646a225811833d9f81ee927429f17dc6101150593cdfa84",
+    "sample-2.itf.json": "65b0efa673668fdbf08ba50a2164466c935d1c52e31fcb0bb5c9598331300a3a",
+    "sample-3.itf.json": "6bfc7245cbd15cea4d983baf28c0d7964f1ce5df614c1533fcba732f5159c4c6",
+    "sample-4.itf.json": "aa9bee16dd2a296195308aa08f3406fca25b99dbd985ca2ed55650a798f10570",
+    "sample-5.itf.json": "777e62a22c57cf6bef78765303546760cba7afdcd8ce5dcbbe6db89b825f73cb",
+    "sample-6.itf.json": "270b32cccea386e34712f325023e465b6e59d0e539bf90592cb9e535aee472d0",
+    "sample-7.itf.json": "f8745666b466d513b1d94a4b9a22fd16c63b6588f306e152540d7447534ada8c",
+    "sample-8.itf.json": "2a0475d973a63d5b672c56cf8b01be6ee475875639090595945902585ce56921",
+    "sample-9.itf.json": "e3a62a4f215c4f206caaf74c9d1d2a7223fe87e0f3e434b46777ff9d2b260db4",
+    "quint-sampling.stdout": "6afa587a544753f3e7f233e2966d9cf019c5fb2ad05769d6960edd432b5fa64a",
+    "quint-sampling.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-capacityHasNoJob-0.itf.stdout": "9c8a6b7190715c8a37465c50a0e797f1575a2fb1f60103881ff4ed076df8da3a",
+    "replay-named-capacityHasNoJob-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-changedStampRefused-4.itf.stdout": "b28a17c11f7658f5033213a62e93aeb068b3e473e269c3613a4628f58a0dbe42",
+    "replay-named-changedStampRefused-4.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-expiredCapacityDoesNotRevive-2.itf.stdout": "b86b8b9c33cce83a40319fa753cb0f9128f430bea36ec7c94e4114ae875205fb",
+    "replay-named-expiredCapacityDoesNotRevive-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-foreignIntentRefused-5.itf.stdout": "eef663f5b8e26e857b6a5a07ffa209fd3a2606338f416b3fdd516d513cae9e8c",
+    "replay-named-foreignIntentRefused-5.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-realCapacityReturnsOriginalJob-3.itf.stdout": "1ba84f33edbad45e0a1fdc70c18b8503076ceb6003533b42510efd9d8a825117",
+    "replay-named-realCapacityReturnsOriginalJob-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-retryCannotRenew-1.itf.stdout": "db22d48a9178af901efa52a2bd39175c90263679a0f1fbe368c93ce39c7b852e",
+    "replay-named-retryCannotRenew-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-0.itf.stdout": "f7ace8a2b987a2806359e9da4801ba48bf65fba69d8b0caecaa12ddd6e64a582",
+    "replay-sample-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-1.itf.stdout": "7e6447d6ce9da9aa2d15ecc2984cc74eca8267f34870d090c5a774d12da9596c",
+    "replay-sample-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-2.itf.stdout": "e843b423ff8759280ff15a5aa1c3cf009e3e5752506bde24d7badfe99389401c",
+    "replay-sample-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-3.itf.stdout": "a11c24827126c6fe999c82b2fe056567e7d1cdae3486a17244ce8fd4ed3992c3",
+    "replay-sample-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-4.itf.stdout": "6c158327222b6aab7454b07fbf182e08eb159c97bd073091e9091c964cfc35b6",
+    "replay-sample-4.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-5.itf.stdout": "02335a1ffb70956191638e2391eae64881d7fe2baa6c3cdc691779a67435916f",
+    "replay-sample-5.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-6.itf.stdout": "b6f325cc6501139e4f465af192258d5b88d35ffc99f9f23642a1d5f147f28fb1",
+    "replay-sample-6.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-7.itf.stdout": "5e3c461a08b5a208156e36105177edd77ff744f51e1c29efbfe01312917856fe",
+    "replay-sample-7.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-8.itf.stdout": "e607b4c0f919fc8c7f7497a881e492a106bc0462c7c0c97f367c1d8eb9acfc9f",
+    "replay-sample-8.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-9.itf.stdout": "4d9878eafaf680e9cb2db2e0d2bd518a5aa938432f19840810a6f8a40230affd",
+    "replay-sample-9.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "changed-intent-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "changed-intent-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "changed-intent-replay.stdout": "6dc46e31db2889839daaa28d78adc3fdf7359e6a9fcf11b5cc06797438f88334",
+    "changed-intent-replay.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "expired-intent-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "expired-intent-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "expired-intent-replay.stdout": "a8141da8940505229c92986316ac152677102519a8b6b34a1dcd22a477107116",
+    "expired-intent-replay.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "changed-intent/admission-test.c": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+    "changed-intent/client-command-test.cpp": "ef481b7030d6a41831895fca1a5cba7405d08e22b913fa2f0f6cadccf47c25ab",
+    "changed-intent/client-denial-test.cpp": "9c05385a9e1b9da4efe03c414b09d512ab4e3791a33c4ff55fde75e4e0c009f7",
+    "changed-intent/client-frame-test.cpp": "233d4520f3bd200cad1f1ea580e9a2eaaf382822b90aa262d4294f8a3bf68d7f",
+    "changed-intent/client-import-test.cpp": "c74f47f1e4233681ab63adf3a51396cfa7c8a7fc0769eba9e314ccc82471de4a",
+    "changed-intent/client-observation-test.cpp": "bc9a36f1d62669904d5b7003d7b299ad2ee3a836c8f13f381a6669915c74e336",
+    "changed-intent/client-producer.cpp": "9568ed8c6f67d7d7056d8c106bd3d9ba052106eb1ddff9299db0b9ad449b6210",
+    "changed-intent/client-producer.h": "01f005d7899b2f3b13216a702508adfa39b6cbcbde4f84b6fae1ebc2404462b9",
+    "changed-intent/client-resume-test.cpp": "c8dfcdc8564bb6bd8cf9284fe3d12d67c30ca9d5a510a58b935021567719ac2d",
+    "changed-intent/client-retained-presentation-test.cpp": "680fb60765c220e59974cda9a8af87c60b5935d48fa8e66671f3e74a0e1c0a2d",
+    "changed-intent/client_frame.hpp": "65d1ed6c416b34a43f2d4920001d2da049fb8995b3006475fab1651e97b9a855",
+    "changed-intent/client_import.hpp": "f2a405ce71bf0787e9b8e84d4b10cc47444f385b90ea8f2544972592bb4abc9c",
+    "changed-intent/client_producer.hpp": "b93355d804613a68593bfd2447295287ac04c76427007c5772e6244b4c51d990",
+    "changed-intent/context-keys-test.c": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+    "changed-intent/context-keys.h": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+    "changed-intent/demand.hpp": "b7721cb9e67b7845252918213b5560fdaaafcacff42eb52eaa37697a341a7dcc",
+    "changed-intent/geometry-carrier-test.c": "770835580c7a4a2e21e49a9c3da586ee3ae59e66a92320dd7bb12fa8e516d921",
+    "changed-intent/handoff-test.c": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+    "changed-intent/host-fault.h": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+    "changed-intent/host-journal.h": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+    "changed-intent/host.c": "981fa1963001d3cd88d74ea1651691a69965ef4cb3f34ef8656957800cc47194",
+    "changed-intent/imported_clients.hpp": "b5ee6b353638b4a6f6e8804fef2963858a3f99852297596167de8cacbb5abc1f",
+    "changed-intent/preview-integration.h": "ffacb4ed6abe6b8019f5bcb489b8abe69f28f863ca9079f29cd1c075a0a49e2a",
+    "changed-intent/preview-provider-bootstrap.cpp": "225056e844c4bbd2f6ae7f161a36b43f35e53b7bd8c0f909433511b726c7a5c3",
+    "changed-intent/preview-provider-bootstrap.h": "03a2192c7113c94f8cb1a109a366cd9b4e96f8c471b0e7707c122c10278b4cac",
+    "changed-intent/preview-uri-api.h": "7a02550a807102f6ebdad9c1570eb6a719a50b0ed422ff26add97dbd6408b002",
+    "changed-intent/preview-uri-webkit.cpp": "c8cc48442d8d098315b7ad64b71be267679bc361041dc6d2de405c657fa74ea2",
+    "changed-intent/preview_broker.hpp": "2954630241ad5e5dc1ee7ce770ef622cd7eff0c3b6d9c5feedc07fcdeec7e3a1",
+    "changed-intent/preview_client.hpp": "e3db3313aa48370fe77323e2b87ef0745830ffa476d314d00eca2cd64a613657",
+    "changed-intent/preview_delivery.hpp": "5b404be53ccb2c9da3208ffbab276f41e66e33fc30b434257aa19ab001883d5d",
+    "changed-intent/preview_fd.hpp": "60fa114f7f2eb819c7a09085ee737c23d21b31f0ba177d967ff99f1425272a60",
+    "changed-intent/preview_uri.cpp": "5217f84fed7dd6a4bc4a52a518cf60596394a2a5714c8810faf536fcfb519372",
+    "changed-intent/preview_uri.hpp": "274f76793ef115078c8b9ab553260a45ac64a3e226c97a4be069ae17b33849cc",
+    "changed-intent/preview_wire.hpp": "2b02108a819e97106cbf38e420871bc4ee10656fd6f98905f25c30fd838d283d",
+    "changed-intent/provider-delivery-test.cpp": "4e21203fd7acd32ede476df1137b6ea812cb26fa977d05296a884401adfd8fbe",
+    "changed-intent/provider-grant-test.cpp": "8f39b5828b946d5fba2f7df689578a50f79cf7daf2e0e8443ab87dfd7b89ac22",
+    "changed-intent/provider-ownership-test.cpp": "d79fe711a90d24ac96e8522a33a4dc3582989b40b692aec73109e365e3f44675",
+    "changed-intent/reconciliation-carrier-test.c": "38210317eff28d8a436e640e971f91df71ffcc3b17e82c27a60ee34f57d9f73d",
+    "changed-intent/recovery-presentation-test.c": "812bbab1640e12269bc195979cd319a96a505157ba8f5c637eebfd5561bc8e67",
+    "changed-intent/shared-context-test.c": "ed50c8ed6b0fee3db3818e2f38c8bb57985b388b26ee09a5624d32f1bfa258ee",
+    "changed-intent/shared-context.h": "e86f3ba7a4c76d7839ef8d67d14c7f9ea6b514afa2ac110fc7cebf2da2fd62ce",
+    "changed-intent/shared-host.c": "56918d9005071cffc5042dfc62113887739278b97d92c4ffb6b6ce76517af472",
+    "changed-intent/surface-test.c": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+    "changed-intent/surface.h": "2bdf2d9b3b34fa7193da90e58ac378e7a640ae91e7b02d46987e33c559209f0b",
+    "changed-intent/imported-clients.h": "26e2876eacc67c4f1f0ce7ecdd9285a0533ee8ce99661a411dc29eee8fb940bc",
+    "changed-intent/imported-clients.cpp": "52cefdc44e84db9e131a79c03d793786a550eb6efa79fdfb64df6e30ce6ce364",
+    "changed-intent/imported-clients-boundary-test.c": "04b444d7d4d0c8f7f945d6f5e9996cfe3f23455624f6b933359b7ac1ee9737da",
+    "changed-intent/imported_lifecycle.hpp": "1d4efa4daa2753e43a822e3727dc78458941d72d03e4e01a1d041eb7f6bd9ded",
+    "changed-intent/imported-lifecycle-test.cpp": "14e7969e5228d013b590f912605cdd846235de67e8e13a87e644d123136d6a2a",
+    "changed-intent/family_source.hpp": "7e936e3f59b5075c364748384282c4e764d85444db2962a885a1ae5a0bf9bb35",
+    "changed-intent/family-source-test.cpp": "25c2402f9b6e1c7692633a2b27b69a961284412cf802fb600ad3ff2f97380b9a",
+    "changed-intent/family_style_crop_fd.hpp": "bf59599f5ceeb41381a1fd05fb045c52ec3cf47faf4706c38de8dd595f902a53",
+    "changed-intent/preview_png.hpp": "308007220baf1d7f2ad30569237ffaf7d6427d900ee1243811480402f188e670",
+    "changed-intent/family-fd-test.cpp": "4129475daf2dbcc997ee804f6f2cc1ae97c373adddc891a95ec6cf043f98291d",
+    "changed-intent/family_frame.hpp": "20ce40ab0080c37e17345cb3d88334eb5dc926a79720ec6faffee8807ae5fe67",
+    "changed-intent/family_producer.hpp": "148240aaf174b3d0f27d8385cd3e93811e48dd8c39b3b65a691fc754c2eebe22",
+    "changed-intent/family-frame-test.cpp": "7f5421a78f071a081edb32b8db0402c0e8a855df150ecdeeba6298cf94ed840c",
+    "changed-intent/generated_backdrop_fd.hpp": "3f60c0cffed16e60ec90b8f8365ec3f278d5c8cb41db2ce5b85c4929d018337f",
+    "changed-intent/backdrop-fd-test.cpp": "74b2f71f21e823bc3445cd647f86d422071edbd483d2bd89d68b38ce6575f623",
+    "changed-intent/backdrop-frame-test.cpp": "687f19e3053f305777f16d854fc2dbf593f4a7131589d522c37de4acfa498fd6",
+    "changed-intent/backdrop-denial-test.cpp": "7388e88721724be5280b0df91e982af29bebc2f9a10563690ab5aef8c73bda86",
+    "changed-intent/qa-reader-control.h": "1a504ee3959b78c73a8f9613b6a6c4f9cc51bc198d1dbd3b6fe1fd352684ccf4",
+    "changed-intent/qa-reader-control-test.c": "6bd57d3be5b0f3d0e071993e93b188fd0b2a87ae91dada60120f8e9142a07ed5",
+    "changed-intent/preview_metadata.hpp": "1cf84f1094cd8ccca90fcc5c44bed4182716e256792bb542c771c8bc1ce9ad5e",
+    "changed-intent/preview_icons.hpp": "6af2174049d623e824fdcf66ddd3a18d0b48a2c34c7159c1651dc0e4b53d8a32",
+    "changed-intent/preview_icons.cpp": "48aa83cc63d4f1f08b9333372cb3f63e0a25bf880cc17567098079284ee79693",
+    "changed-intent/metadata-icon-test.cpp": "cff027f7a3d29668893aec03be50f5dbae49fb2295606a8e8baad34b64e028d7",
+    "changed-intent/window-catalog-test.cpp": "c9efe0d6f7f7db6abc38ab717d16d56a014a2804d39281a28bddd7eb030548a6",
+    "changed-intent/receiver-extension-test.cpp": "a35501610fadf7cc4935b970c87b683fa9a2216ee2eef3da8cc70afc652b8d59",
+    "changed-intent/delivery-extension-test.cpp": "4d9ccdff37c8818ec6f70b93393e94a46f1f1b3506606a692549cf24c38972c8",
+    "changed-intent/imported_admission.hpp": "f7a65c95bc0bf98f9f576948371057521a16d9b14321363a96c4919c7de343ff",
+    "changed-intent/imported-admission-test.cpp": "4440d17aea9172b547a66660cb30ebe27df821f627f9fae8861fcdd8d6858d6f",
+    "changed-intent/imported_enrollment.hpp": "970d2e8027dfdbbbb599f3de7d5132b9e7e27e8e0509622e7ae3ad18eeef380e",
+    "changed-intent/dynamic-enrollment-test.cpp": "bc8dd70ec9b8b5ce2f428cb82578389f9349d24b3ebdb423ccf725b5fd8c8278",
+    "changed-intent/rejected-enrollment-test.cpp": "f38a7da3423eb939f76c8882f2d2b057b9af865fd9cd3d96dbc9741918c99aad",
+    "changed-intent/resume-enrollment-test.cpp": "b14e33de4a2c1ff6b8e38737f66d8d6f906aba07e609a67750a5a7055434921d",
+    "changed-intent/imported_feedback.hpp": "6760465caf1b6877aadb62776fa050f7a44848cd4a9061ce89fdbac96604b9aa",
+    "changed-intent/local-feedback-test.cpp": "01b247fef9f6378db1616430fb7f04236e584085269542eaa05c4a6581612b29",
+    "changed-intent/next-intent-test.cpp": "6ad459d12146dbe18b6431b3ee863318c10d45a0806f63d9b5400812f20e80b9",
+    "changed-intent/next-resume-test.cpp": "f4f00450ca31f382b71af7b7158c40ee199439c9f8c23f3a4062075e190ab152",
+    "changed-intent/preview_retirement.hpp": "ed0820a8f01bc1eef65eefb73a550aed2e03b8ad9b11ef767fd8789c9c7d8cdc",
+    "changed-intent/retirement-observation-test.cpp": "2f60ee0cc71f4cc611f57ca3ffa3ef4a013233a0c9de13144b207729f0a478f8",
+    "changed-intent/imported_subjects.hpp": "29fac7427b2c96c18fd5d392481dcb8d14fc5a6c05cf72e874da1f80d7f54ce9",
+    "changed-intent/checks": "d5980f82acd0be7198da48df286ca152a5d442d36f10456c734376f01327d02e",
+    "expired-intent/admission-test.c": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+    "expired-intent/client-command-test.cpp": "ef481b7030d6a41831895fca1a5cba7405d08e22b913fa2f0f6cadccf47c25ab",
+    "expired-intent/client-denial-test.cpp": "9c05385a9e1b9da4efe03c414b09d512ab4e3791a33c4ff55fde75e4e0c009f7",
+    "expired-intent/client-frame-test.cpp": "233d4520f3bd200cad1f1ea580e9a2eaaf382822b90aa262d4294f8a3bf68d7f",
+    "expired-intent/client-import-test.cpp": "c74f47f1e4233681ab63adf3a51396cfa7c8a7fc0769eba9e314ccc82471de4a",
+    "expired-intent/client-observation-test.cpp": "bc9a36f1d62669904d5b7003d7b299ad2ee3a836c8f13f381a6669915c74e336",
+    "expired-intent/client-producer.cpp": "9568ed8c6f67d7d7056d8c106bd3d9ba052106eb1ddff9299db0b9ad449b6210",
+    "expired-intent/client-producer.h": "01f005d7899b2f3b13216a702508adfa39b6cbcbde4f84b6fae1ebc2404462b9",
+    "expired-intent/client-resume-test.cpp": "c8dfcdc8564bb6bd8cf9284fe3d12d67c30ca9d5a510a58b935021567719ac2d",
+    "expired-intent/client-retained-presentation-test.cpp": "680fb60765c220e59974cda9a8af87c60b5935d48fa8e66671f3e74a0e1c0a2d",
+    "expired-intent/client_frame.hpp": "65d1ed6c416b34a43f2d4920001d2da049fb8995b3006475fab1651e97b9a855",
+    "expired-intent/client_import.hpp": "f2a405ce71bf0787e9b8e84d4b10cc47444f385b90ea8f2544972592bb4abc9c",
+    "expired-intent/client_producer.hpp": "b93355d804613a68593bfd2447295287ac04c76427007c5772e6244b4c51d990",
+    "expired-intent/context-keys-test.c": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+    "expired-intent/context-keys.h": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+    "expired-intent/demand.hpp": "b7721cb9e67b7845252918213b5560fdaaafcacff42eb52eaa37697a341a7dcc",
+    "expired-intent/geometry-carrier-test.c": "770835580c7a4a2e21e49a9c3da586ee3ae59e66a92320dd7bb12fa8e516d921",
+    "expired-intent/handoff-test.c": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+    "expired-intent/host-fault.h": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+    "expired-intent/host-journal.h": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+    "expired-intent/host.c": "981fa1963001d3cd88d74ea1651691a69965ef4cb3f34ef8656957800cc47194",
+    "expired-intent/imported_clients.hpp": "b5ee6b353638b4a6f6e8804fef2963858a3f99852297596167de8cacbb5abc1f",
+    "expired-intent/preview-integration.h": "ffacb4ed6abe6b8019f5bcb489b8abe69f28f863ca9079f29cd1c075a0a49e2a",
+    "expired-intent/preview-provider-bootstrap.cpp": "225056e844c4bbd2f6ae7f161a36b43f35e53b7bd8c0f909433511b726c7a5c3",
+    "expired-intent/preview-provider-bootstrap.h": "03a2192c7113c94f8cb1a109a366cd9b4e96f8c471b0e7707c122c10278b4cac",
+    "expired-intent/preview-uri-api.h": "7a02550a807102f6ebdad9c1570eb6a719a50b0ed422ff26add97dbd6408b002",
+    "expired-intent/preview-uri-webkit.cpp": "c8cc48442d8d098315b7ad64b71be267679bc361041dc6d2de405c657fa74ea2",
+    "expired-intent/preview_broker.hpp": "2954630241ad5e5dc1ee7ce770ef622cd7eff0c3b6d9c5feedc07fcdeec7e3a1",
+    "expired-intent/preview_client.hpp": "e3db3313aa48370fe77323e2b87ef0745830ffa476d314d00eca2cd64a613657",
+    "expired-intent/preview_delivery.hpp": "5b404be53ccb2c9da3208ffbab276f41e66e33fc30b434257aa19ab001883d5d",
+    "expired-intent/preview_fd.hpp": "60fa114f7f2eb819c7a09085ee737c23d21b31f0ba177d967ff99f1425272a60",
+    "expired-intent/preview_uri.cpp": "5217f84fed7dd6a4bc4a52a518cf60596394a2a5714c8810faf536fcfb519372",
+    "expired-intent/preview_uri.hpp": "274f76793ef115078c8b9ab553260a45ac64a3e226c97a4be069ae17b33849cc",
+    "expired-intent/preview_wire.hpp": "2b02108a819e97106cbf38e420871bc4ee10656fd6f98905f25c30fd838d283d",
+    "expired-intent/provider-delivery-test.cpp": "4e21203fd7acd32ede476df1137b6ea812cb26fa977d05296a884401adfd8fbe",
+    "expired-intent/provider-grant-test.cpp": "8f39b5828b946d5fba2f7df689578a50f79cf7daf2e0e8443ab87dfd7b89ac22",
+    "expired-intent/provider-ownership-test.cpp": "d79fe711a90d24ac96e8522a33a4dc3582989b40b692aec73109e365e3f44675",
+    "expired-intent/reconciliation-carrier-test.c": "38210317eff28d8a436e640e971f91df71ffcc3b17e82c27a60ee34f57d9f73d",
+    "expired-intent/recovery-presentation-test.c": "812bbab1640e12269bc195979cd319a96a505157ba8f5c637eebfd5561bc8e67",
+    "expired-intent/shared-context-test.c": "ed50c8ed6b0fee3db3818e2f38c8bb57985b388b26ee09a5624d32f1bfa258ee",
+    "expired-intent/shared-context.h": "e86f3ba7a4c76d7839ef8d67d14c7f9ea6b514afa2ac110fc7cebf2da2fd62ce",
+    "expired-intent/shared-host.c": "56918d9005071cffc5042dfc62113887739278b97d92c4ffb6b6ce76517af472",
+    "expired-intent/surface-test.c": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+    "expired-intent/surface.h": "2bdf2d9b3b34fa7193da90e58ac378e7a640ae91e7b02d46987e33c559209f0b",
+    "expired-intent/imported-clients.h": "26e2876eacc67c4f1f0ce7ecdd9285a0533ee8ce99661a411dc29eee8fb940bc",
+    "expired-intent/imported-clients.cpp": "52cefdc44e84db9e131a79c03d793786a550eb6efa79fdfb64df6e30ce6ce364",
+    "expired-intent/imported-clients-boundary-test.c": "04b444d7d4d0c8f7f945d6f5e9996cfe3f23455624f6b933359b7ac1ee9737da",
+    "expired-intent/imported_lifecycle.hpp": "1d4efa4daa2753e43a822e3727dc78458941d72d03e4e01a1d041eb7f6bd9ded",
+    "expired-intent/imported-lifecycle-test.cpp": "14e7969e5228d013b590f912605cdd846235de67e8e13a87e644d123136d6a2a",
+    "expired-intent/family_source.hpp": "7e936e3f59b5075c364748384282c4e764d85444db2962a885a1ae5a0bf9bb35",
+    "expired-intent/family-source-test.cpp": "25c2402f9b6e1c7692633a2b27b69a961284412cf802fb600ad3ff2f97380b9a",
+    "expired-intent/family_style_crop_fd.hpp": "bf59599f5ceeb41381a1fd05fb045c52ec3cf47faf4706c38de8dd595f902a53",
+    "expired-intent/preview_png.hpp": "308007220baf1d7f2ad30569237ffaf7d6427d900ee1243811480402f188e670",
+    "expired-intent/family-fd-test.cpp": "4129475daf2dbcc997ee804f6f2cc1ae97c373adddc891a95ec6cf043f98291d",
+    "expired-intent/family_frame.hpp": "20ce40ab0080c37e17345cb3d88334eb5dc926a79720ec6faffee8807ae5fe67",
+    "expired-intent/family_producer.hpp": "148240aaf174b3d0f27d8385cd3e93811e48dd8c39b3b65a691fc754c2eebe22",
+    "expired-intent/family-frame-test.cpp": "7f5421a78f071a081edb32b8db0402c0e8a855df150ecdeeba6298cf94ed840c",
+    "expired-intent/generated_backdrop_fd.hpp": "3f60c0cffed16e60ec90b8f8365ec3f278d5c8cb41db2ce5b85c4929d018337f",
+    "expired-intent/backdrop-fd-test.cpp": "74b2f71f21e823bc3445cd647f86d422071edbd483d2bd89d68b38ce6575f623",
+    "expired-intent/backdrop-frame-test.cpp": "687f19e3053f305777f16d854fc2dbf593f4a7131589d522c37de4acfa498fd6",
+    "expired-intent/backdrop-denial-test.cpp": "7388e88721724be5280b0df91e982af29bebc2f9a10563690ab5aef8c73bda86",
+    "expired-intent/qa-reader-control.h": "1a504ee3959b78c73a8f9613b6a6c4f9cc51bc198d1dbd3b6fe1fd352684ccf4",
+    "expired-intent/qa-reader-control-test.c": "6bd57d3be5b0f3d0e071993e93b188fd0b2a87ae91dada60120f8e9142a07ed5",
+    "expired-intent/preview_metadata.hpp": "1cf84f1094cd8ccca90fcc5c44bed4182716e256792bb542c771c8bc1ce9ad5e",
+    "expired-intent/preview_icons.hpp": "6af2174049d623e824fdcf66ddd3a18d0b48a2c34c7159c1651dc0e4b53d8a32",
+    "expired-intent/preview_icons.cpp": "48aa83cc63d4f1f08b9333372cb3f63e0a25bf880cc17567098079284ee79693",
+    "expired-intent/metadata-icon-test.cpp": "cff027f7a3d29668893aec03be50f5dbae49fb2295606a8e8baad34b64e028d7",
+    "expired-intent/window-catalog-test.cpp": "c9efe0d6f7f7db6abc38ab717d16d56a014a2804d39281a28bddd7eb030548a6",
+    "expired-intent/receiver-extension-test.cpp": "a35501610fadf7cc4935b970c87b683fa9a2216ee2eef3da8cc70afc652b8d59",
+    "expired-intent/delivery-extension-test.cpp": "4d9ccdff37c8818ec6f70b93393e94a46f1f1b3506606a692549cf24c38972c8",
+    "expired-intent/imported_admission.hpp": "f55d8101a4c4bf7880a5c0b98426000d7dfee10ecfbb2836a91c5a3e8bf0b8c5",
+    "expired-intent/imported-admission-test.cpp": "4440d17aea9172b547a66660cb30ebe27df821f627f9fae8861fcdd8d6858d6f",
+    "expired-intent/imported_enrollment.hpp": "970d2e8027dfdbbbb599f3de7d5132b9e7e27e8e0509622e7ae3ad18eeef380e",
+    "expired-intent/dynamic-enrollment-test.cpp": "bc8dd70ec9b8b5ce2f428cb82578389f9349d24b3ebdb423ccf725b5fd8c8278",
+    "expired-intent/rejected-enrollment-test.cpp": "f38a7da3423eb939f76c8882f2d2b057b9af865fd9cd3d96dbc9741918c99aad",
+    "expired-intent/resume-enrollment-test.cpp": "b14e33de4a2c1ff6b8e38737f66d8d6f906aba07e609a67750a5a7055434921d",
+    "expired-intent/imported_feedback.hpp": "6760465caf1b6877aadb62776fa050f7a44848cd4a9061ce89fdbac96604b9aa",
+    "expired-intent/local-feedback-test.cpp": "01b247fef9f6378db1616430fb7f04236e584085269542eaa05c4a6581612b29",
+    "expired-intent/next-intent-test.cpp": "6ad459d12146dbe18b6431b3ee863318c10d45a0806f63d9b5400812f20e80b9",
+    "expired-intent/next-resume-test.cpp": "f4f00450ca31f382b71af7b7158c40ee199439c9f8c23f3a4062075e190ab152",
+    "expired-intent/preview_retirement.hpp": "ed0820a8f01bc1eef65eefb73a550aed2e03b8ad9b11ef767fd8789c9c7d8cdc",
+    "expired-intent/retirement-observation-test.cpp": "2f60ee0cc71f4cc611f57ca3ffa3ef4a013233a0c9de13144b207729f0a478f8",
+    "expired-intent/imported_subjects.hpp": "29fac7427b2c96c18fd5d392481dcb8d14fc5a6c05cf72e874da1f80d7f54ce9",
+    "expired-intent/checks": "c9dd549d1d5ef30aa07ecbfb9b409d94d6755bf1ea70bcc753e06f9f23cb6cfd",
+    "inputs/native/admission-test.c": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+    "inputs/native/client-command-test.cpp": "ef481b7030d6a41831895fca1a5cba7405d08e22b913fa2f0f6cadccf47c25ab",
+    "inputs/native/client-denial-test.cpp": "9c05385a9e1b9da4efe03c414b09d512ab4e3791a33c4ff55fde75e4e0c009f7",
+    "inputs/native/client-frame-test.cpp": "233d4520f3bd200cad1f1ea580e9a2eaaf382822b90aa262d4294f8a3bf68d7f",
+    "inputs/native/client-import-test.cpp": "c74f47f1e4233681ab63adf3a51396cfa7c8a7fc0769eba9e314ccc82471de4a",
+    "inputs/native/client-observation-test.cpp": "bc9a36f1d62669904d5b7003d7b299ad2ee3a836c8f13f381a6669915c74e336",
+    "inputs/native/client-producer.cpp": "9568ed8c6f67d7d7056d8c106bd3d9ba052106eb1ddff9299db0b9ad449b6210",
+    "inputs/native/client-producer.h": "01f005d7899b2f3b13216a702508adfa39b6cbcbde4f84b6fae1ebc2404462b9",
+    "inputs/native/client-resume-test.cpp": "c8dfcdc8564bb6bd8cf9284fe3d12d67c30ca9d5a510a58b935021567719ac2d",
+    "inputs/native/client-retained-presentation-test.cpp": "680fb60765c220e59974cda9a8af87c60b5935d48fa8e66671f3e74a0e1c0a2d",
+    "inputs/native/client_frame.hpp": "65d1ed6c416b34a43f2d4920001d2da049fb8995b3006475fab1651e97b9a855",
+    "inputs/native/client_import.hpp": "f2a405ce71bf0787e9b8e84d4b10cc47444f385b90ea8f2544972592bb4abc9c",
+    "inputs/native/client_producer.hpp": "b93355d804613a68593bfd2447295287ac04c76427007c5772e6244b4c51d990",
+    "inputs/native/context-keys-test.c": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+    "inputs/native/context-keys.h": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+    "inputs/native/demand.hpp": "b7721cb9e67b7845252918213b5560fdaaafcacff42eb52eaa37697a341a7dcc",
+    "inputs/native/geometry-carrier-test.c": "770835580c7a4a2e21e49a9c3da586ee3ae59e66a92320dd7bb12fa8e516d921",
+    "inputs/native/handoff-test.c": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+    "inputs/native/host-fault.h": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+    "inputs/native/host-journal.h": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+    "inputs/native/host.c": "981fa1963001d3cd88d74ea1651691a69965ef4cb3f34ef8656957800cc47194",
+    "inputs/native/imported_clients.hpp": "b5ee6b353638b4a6f6e8804fef2963858a3f99852297596167de8cacbb5abc1f",
+    "inputs/native/preview-integration.h": "ffacb4ed6abe6b8019f5bcb489b8abe69f28f863ca9079f29cd1c075a0a49e2a",
+    "inputs/native/preview-provider-bootstrap.cpp": "225056e844c4bbd2f6ae7f161a36b43f35e53b7bd8c0f909433511b726c7a5c3",
+    "inputs/native/preview-provider-bootstrap.h": "03a2192c7113c94f8cb1a109a366cd9b4e96f8c471b0e7707c122c10278b4cac",
+    "inputs/native/preview-uri-api.h": "7a02550a807102f6ebdad9c1570eb6a719a50b0ed422ff26add97dbd6408b002",
+    "inputs/native/preview-uri-webkit.cpp": "c8cc48442d8d098315b7ad64b71be267679bc361041dc6d2de405c657fa74ea2",
+    "inputs/native/preview_broker.hpp": "2954630241ad5e5dc1ee7ce770ef622cd7eff0c3b6d9c5feedc07fcdeec7e3a1",
+    "inputs/native/preview_client.hpp": "e3db3313aa48370fe77323e2b87ef0745830ffa476d314d00eca2cd64a613657",
+    "inputs/native/preview_delivery.hpp": "5b404be53ccb2c9da3208ffbab276f41e66e33fc30b434257aa19ab001883d5d",
+    "inputs/native/preview_fd.hpp": "60fa114f7f2eb819c7a09085ee737c23d21b31f0ba177d967ff99f1425272a60",
+    "inputs/native/preview_uri.cpp": "5217f84fed7dd6a4bc4a52a518cf60596394a2a5714c8810faf536fcfb519372",
+    "inputs/native/preview_uri.hpp": "274f76793ef115078c8b9ab553260a45ac64a3e226c97a4be069ae17b33849cc",
+    "inputs/native/preview_wire.hpp": "2b02108a819e97106cbf38e420871bc4ee10656fd6f98905f25c30fd838d283d",
+    "inputs/native/provider-delivery-test.cpp": "4e21203fd7acd32ede476df1137b6ea812cb26fa977d05296a884401adfd8fbe",
+    "inputs/native/provider-grant-test.cpp": "8f39b5828b946d5fba2f7df689578a50f79cf7daf2e0e8443ab87dfd7b89ac22",
+    "inputs/native/provider-ownership-test.cpp": "d79fe711a90d24ac96e8522a33a4dc3582989b40b692aec73109e365e3f44675",
+    "inputs/native/reconciliation-carrier-test.c": "38210317eff28d8a436e640e971f91df71ffcc3b17e82c27a60ee34f57d9f73d",
+    "inputs/native/recovery-presentation-test.c": "812bbab1640e12269bc195979cd319a96a505157ba8f5c637eebfd5561bc8e67",
+    "inputs/native/shared-context-test.c": "ed50c8ed6b0fee3db3818e2f38c8bb57985b388b26ee09a5624d32f1bfa258ee",
+    "inputs/native/shared-context.h": "e86f3ba7a4c76d7839ef8d67d14c7f9ea6b514afa2ac110fc7cebf2da2fd62ce",
+    "inputs/native/shared-host.c": "56918d9005071cffc5042dfc62113887739278b97d92c4ffb6b6ce76517af472",
+    "inputs/native/surface-test.c": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+    "inputs/native/surface.h": "2bdf2d9b3b34fa7193da90e58ac378e7a640ae91e7b02d46987e33c559209f0b",
+    "inputs/native/imported-clients.h": "26e2876eacc67c4f1f0ce7ecdd9285a0533ee8ce99661a411dc29eee8fb940bc",
+    "inputs/native/imported-clients.cpp": "52cefdc44e84db9e131a79c03d793786a550eb6efa79fdfb64df6e30ce6ce364",
+    "inputs/native/imported-clients-boundary-test.c": "04b444d7d4d0c8f7f945d6f5e9996cfe3f23455624f6b933359b7ac1ee9737da",
+    "inputs/native/imported_lifecycle.hpp": "1d4efa4daa2753e43a822e3727dc78458941d72d03e4e01a1d041eb7f6bd9ded",
+    "inputs/native/imported-lifecycle-test.cpp": "14e7969e5228d013b590f912605cdd846235de67e8e13a87e644d123136d6a2a",
+    "inputs/native/family_source.hpp": "7e936e3f59b5075c364748384282c4e764d85444db2962a885a1ae5a0bf9bb35",
+    "inputs/native/family-source-test.cpp": "25c2402f9b6e1c7692633a2b27b69a961284412cf802fb600ad3ff2f97380b9a",
+    "inputs/native/family_style_crop_fd.hpp": "bf59599f5ceeb41381a1fd05fb045c52ec3cf47faf4706c38de8dd595f902a53",
+    "inputs/native/preview_png.hpp": "308007220baf1d7f2ad30569237ffaf7d6427d900ee1243811480402f188e670",
+    "inputs/native/family-fd-test.cpp": "4129475daf2dbcc997ee804f6f2cc1ae97c373adddc891a95ec6cf043f98291d",
+    "inputs/native/family_frame.hpp": "20ce40ab0080c37e17345cb3d88334eb5dc926a79720ec6faffee8807ae5fe67",
+    "inputs/native/family_producer.hpp": "148240aaf174b3d0f27d8385cd3e93811e48dd8c39b3b65a691fc754c2eebe22",
+    "inputs/native/family-frame-test.cpp": "7f5421a78f071a081edb32b8db0402c0e8a855df150ecdeeba6298cf94ed840c",
+    "inputs/native/generated_backdrop_fd.hpp": "3f60c0cffed16e60ec90b8f8365ec3f278d5c8cb41db2ce5b85c4929d018337f",
+    "inputs/native/backdrop-fd-test.cpp": "74b2f71f21e823bc3445cd647f86d422071edbd483d2bd89d68b38ce6575f623",
+    "inputs/native/backdrop-frame-test.cpp": "687f19e3053f305777f16d854fc2dbf593f4a7131589d522c37de4acfa498fd6",
+    "inputs/native/backdrop-denial-test.cpp": "7388e88721724be5280b0df91e982af29bebc2f9a10563690ab5aef8c73bda86",
+    "inputs/native/qa-reader-control.h": "1a504ee3959b78c73a8f9613b6a6c4f9cc51bc198d1dbd3b6fe1fd352684ccf4",
+    "inputs/native/qa-reader-control-test.c": "6bd57d3be5b0f3d0e071993e93b188fd0b2a87ae91dada60120f8e9142a07ed5",
+    "inputs/native/preview_metadata.hpp": "1cf84f1094cd8ccca90fcc5c44bed4182716e256792bb542c771c8bc1ce9ad5e",
+    "inputs/native/preview_icons.hpp": "6af2174049d623e824fdcf66ddd3a18d0b48a2c34c7159c1651dc0e4b53d8a32",
+    "inputs/native/preview_icons.cpp": "48aa83cc63d4f1f08b9333372cb3f63e0a25bf880cc17567098079284ee79693",
+    "inputs/native/metadata-icon-test.cpp": "cff027f7a3d29668893aec03be50f5dbae49fb2295606a8e8baad34b64e028d7",
+    "inputs/native/window-catalog-test.cpp": "c9efe0d6f7f7db6abc38ab717d16d56a014a2804d39281a28bddd7eb030548a6",
+    "inputs/native/receiver-extension-test.cpp": "a35501610fadf7cc4935b970c87b683fa9a2216ee2eef3da8cc70afc652b8d59",
+    "inputs/native/delivery-extension-test.cpp": "4d9ccdff37c8818ec6f70b93393e94a46f1f1b3506606a692549cf24c38972c8",
+    "inputs/native/imported_admission.hpp": "26ff33e3e51f6df21f28114626f0f62fbd8f6e9e9447b89e1fb9c716d99227dd",
+    "inputs/native/imported-admission-test.cpp": "4440d17aea9172b547a66660cb30ebe27df821f627f9fae8861fcdd8d6858d6f",
+    "inputs/native/imported_enrollment.hpp": "970d2e8027dfdbbbb599f3de7d5132b9e7e27e8e0509622e7ae3ad18eeef380e",
+    "inputs/native/dynamic-enrollment-test.cpp": "bc8dd70ec9b8b5ce2f428cb82578389f9349d24b3ebdb423ccf725b5fd8c8278",
+    "inputs/native/rejected-enrollment-test.cpp": "f38a7da3423eb939f76c8882f2d2b057b9af865fd9cd3d96dbc9741918c99aad",
+    "inputs/native/resume-enrollment-test.cpp": "b14e33de4a2c1ff6b8e38737f66d8d6f906aba07e609a67750a5a7055434921d",
+    "inputs/native/imported_feedback.hpp": "6760465caf1b6877aadb62776fa050f7a44848cd4a9061ce89fdbac96604b9aa",
+    "inputs/native/local-feedback-test.cpp": "01b247fef9f6378db1616430fb7f04236e584085269542eaa05c4a6581612b29",
+    "inputs/native/next-intent-test.cpp": "6ad459d12146dbe18b6431b3ee863318c10d45a0806f63d9b5400812f20e80b9",
+    "inputs/native/next-resume-test.cpp": "f4f00450ca31f382b71af7b7158c40ee199439c9f8c23f3a4062075e190ab152",
+    "inputs/native/preview_retirement.hpp": "ed0820a8f01bc1eef65eefb73a550aed2e03b8ad9b11ef767fd8789c9c7d8cdc",
+    "inputs/native/retirement-observation-test.cpp": "2f60ee0cc71f4cc611f57ca3ffa3ef4a013233a0c9de13144b207729f0a478f8",
+    "inputs/native/imported_subjects.hpp": "29fac7427b2c96c18fd5d392481dcb8d14fc5a6c05cf72e874da1f80d7f54ce9",
+    "inputs/spec/intent.qnt": "f1d726231e5530615c7420a82b8359157fdbaad39846ee188671832bb1f8dc9c",
+    "inputs/spec/intent_tests.qnt": "8a9bf3a18dffe24722de0c95312f9f06891a807fa9900c067adeccf67c48c6aa",
+    "inputs/qa/intent-check.py": "c4bc7462d3efc9026393f0f44815fce4a09c095b03cd7575c59440c2a2f7dcea",
+    "inputs/qa/intent-checks.cpp": "83780f0c8033166ae71d615270513b9eb0a16a82be8accbdada2fb605ca14299"
+  }
+}
