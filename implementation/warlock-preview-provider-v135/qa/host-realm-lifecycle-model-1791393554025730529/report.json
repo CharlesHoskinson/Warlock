@@ -1,0 +1,80 @@
+{
+  "passed": true,
+  "inputs": {
+    "spec/host_realm_lifecycle.qnt": "fb723b878670bd014e6e3a7e37d0d0aacb019d20acf23aff9c6207b1fc3248fa",
+    "spec/host_realm_lifecycle_tests.qnt": "78c2610fc4536825d116630e1063ebc942a0671b863666ba457f75fa15ccccce",
+    "qa/host-realm-lifecycle-model.py": "2261f3c8ef2936015005c4e7166090f153c943a3a12d4a989bdd0355c865cc36"
+  },
+  "quint": {
+    "path": "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+    "sha256": "bd6e9400f6358a8a69d80eb636eb62f59f993039868a7be9719f76ba74191b4e"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "host_realm_lifecycle_tests.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "host_realm_lifecycle_tests.qnt",
+        "--main=host_realm_lifecycle_tests",
+        "--backend=typescript",
+        "--match=^(closeCannotSettleDuty|sameContextCannotInitializeTwice|oldViewCannotReplaceBeforeClose|normalReopenKeepsPolicy|pendingIntentKeepsLease|pendingIntentRequiresFreshDOM|pendingIntentThenFreshAdmission|oldCallbackHasNoAuthority|unknownCannotRetireOrReplace)$",
+        "--seed=1310041",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v135/qa/host-realm-lifecycle-model-1791393554025730529/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "samples",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "host_realm_lifecycle.qnt",
+        "--main=host_realm_lifecycle",
+        "--backend=typescript",
+        "--invariant=safety",
+        "--seed=1310042",
+        "--max-samples=200",
+        "--max-steps=32",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v135/qa/host-realm-lifecycle-model-1791393554025730529/samples.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "scope": "Native host fixed-grant view/context and realm lifetime abstraction only; original independent physical, terminal, journal and confirmation Drain remains Native authority. Same policy/context replacement/pending intent/stale callback safety is model scope only. Named selection and invariant samples are model evidence, not actual GTK/WebKit, physical reveal or release acceptance.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "namedScenarios": 9,
+  "invariantSamples": 200,
+  "artifacts": {
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-closeCannotSettleDuty-0.itf.json": "3a34106b5abdd4e6acaa598b77b867c8bea06d5e118f5272af70e9c23bca6a81",
+    "named-sameContextCannotInitializeTwice-1.itf.json": "40be06bf8497317b0eb806a9e073c135d1f52a03a6341674234c4cf6f9aad8f0",
+    "named-oldViewCannotReplaceBeforeClose-2.itf.json": "b2296dbced6991b163c312426dc487701efe43a55bfa0a01c862623fbbe1877c",
+    "named-normalReopenKeepsPolicy-3.itf.json": "5c89fe0f2151bbe8408a1481331e1962ab66e10258132b81c03de9c2cea5577d",
+    "named-pendingIntentKeepsLease-4.itf.json": "d6641bbbfcaace702ebe9d3ca878ed50183246e6083a0e803fef20a27858a5ca",
+    "named-pendingIntentRequiresFreshDOM-5.itf.json": "53e93d585c3c23b68bbb0ced412f31adb309adae5d01bac17c3f008dd32d5904",
+    "named-pendingIntentThenFreshAdmission-6.itf.json": "fb276b80e1a01354cf43852f5fb56bf3a1ca2f073ced877f0de0824e38dd5622",
+    "named-oldCallbackHasNoAuthority-7.itf.json": "52cd43454bc36b04b392137a792400973a30be36aafd134c04dfa7dc363a9283",
+    "named-unknownCannotRetireOrReplace-8.itf.json": "e768836542018b55f44b0474fe914c75fccd07e50298d2f563c49af4da3cb4f0",
+    "selected.stdout": "89415014d0b5949724b28f92ebf0814ee7c49a14f9b3aff1f673a3f9d315f391",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "samples.itf.json": "ce323cafd214aa502b6df9aa3c660f0bb3d0a791c0c97d08b22a34fedd43cf09",
+    "samples.stdout": "cc7736abec96eb53ee53d016fcd911fb1f2f4cf835f5001598885d8e8351b544",
+    "samples.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/spec/host_realm_lifecycle.qnt": "fb723b878670bd014e6e3a7e37d0d0aacb019d20acf23aff9c6207b1fc3248fa",
+    "inputs/spec/host_realm_lifecycle_tests.qnt": "78c2610fc4536825d116630e1063ebc942a0671b863666ba457f75fa15ccccce",
+    "inputs/qa/host-realm-lifecycle-model.py": "2261f3c8ef2936015005c4e7166090f153c943a3a12d4a989bdd0355c865cc36"
+  }
+}

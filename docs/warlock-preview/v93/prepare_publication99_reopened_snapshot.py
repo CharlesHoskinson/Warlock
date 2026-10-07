@@ -1,0 +1,25 @@
+"""Prepare exact owned failure and actual rapid pending-intent fix publication."""
+import ast,json,pathlib,re,resource,sys
+sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
+require_qa_scope();assert resource.getrlimit(resource.RLIMIT_CORE)==(1,1)
+r=pathlib.Path('/home/hoskinson/omarchy-windows-parity');out=r/'docs/warlock-repository/v99/publication';assert not out.exists();out.mkdir(parents=True)
+base='999882f42faba9ba1e008d273dc9f14ea984473a';local='41af33e38dc5f991671ed5afdb18af81b542daa7';previous='5317904baf6303f73fc7c48574453a0e27a460a9';oldbase='8496ca6e461a1e6f4d17df21c19f4bdb6347f80c'
+components=[('warlock-preview-provider-v135',True),*[(f'warlock-client-provider-native-v{v}',True) for v in range(154,158)]];minimum=0
+for name,passed in components:
+ held=json.loads((r/'implementation'/name/'component-manifest.json').read_text());assert held['sourceHeld'] and held['passed']==passed;minimum+=len(held['files'])
+held=json.loads((r/'docs/warlock-preview/v93/component-report135.json').read_text());assert held['passed'] and held['actualOldResultAcrossReopenedRealmQualified'] and held['reopenedSnapshotNativeChecks']==35 and held['hostLifecycleQuintScenarios']==9 and held['fullBuildCommands']==119
+prior=r/'docs/warlock-repository/v98/publication'
+def put(name,s):ast.parse(s);(out/name).write_text(s)
+s=(prior/'publish.py').read_text().replace(oldbase,base).replace('5f9ed867f5bbb8ef19377051486a682ccb55be8f..',previous+'..')
+allowed=('docs/warlock-preview/v93/','docs/warlock-repository/v98/publication/','docs/warlock-repository/v99/publication/',*(f'implementation/{name}/' for name,_ in components),'openspec/changes/warlock-preview-actor-retirement/tasks.md','openspec/changes/warlock-preview-actor-retirement/specs/preview-actors/spec.md')
+a=s.index('allowed=');b=s.index('\nassert all',a);s=s[:a]+'allowed='+repr(allowed)+s[b:]
+a=s.index(' qualification=');b=s.index('\n published=',a)
+q=" qualification=json.loads((REPO/'docs/warlock-preview/v93/component-report135.json').read_text());assert qualification['passed'] and qualification['actualOldResultAcrossReopenedRealmQualified'] and qualification['actualNewRealmCapturedPixelsQualified'] and not qualification['actualOldSnapshotPixelsAccepted'] and qualification['reopenedSnapshotNativeChecks']==35 and qualification['reopenedSnapshotNormalOwnedExits']==13 and qualification['hostLifecycleQuintScenarios']==9 and qualification['hostLifecycleInvariantSamples']==200 and qualification['hostLifecycleCoupledStages']==7 and qualification['normalRouteNativeChecks']==29 and qualification['normalRouteNormalOwnedExits']==13 and qualification['delayedResultNativeChecks']==18 and qualification['delayedResultNormalOwnedExits']==8 and qualification['rapidPendingReaderNativeChecks']==51 and qualification['rapidPendingReaderNormalOwnedExits']==17 and qualification['fullBuildCommands']==119 and qualification['nativeGrantResets']==0 and not qualification['canceledOrFailedOldResultQualified'] and not qualification['physicalRevealQualified'] and not qualification['nativeAcceptance'] and not qualification['fullReleaseAccepted']"
+s=s[:a]+q+'\n message='+repr('Reject an old WebKit result after native realm reopening\n\n'+held['scope'])+'\n'+s[b:];put('publish.py',s)
+s=(prior/'record_delivery.py').read_text().replace('component-report132.json','component-report135.json');s,n=re.subn(r"d\['ownedFiles'\]>=\d+","d['ownedFiles']>="+str(minimum),s);assert n==1;a=s.index('e=loop.write_checkpoint(')
+s=s[:a]+"e=loop.write_checkpoint(r,'f6779148-8f5d-4bdf-8a0f-044184e486f2','implementation/warlock-preview-provider-v135',['PROGRESS PUBLIC99 '+d['publishedCommit']+' verified '+str(d['ownedFiles'])+' exact owned blobs. '+report['scope']+' Next actual canceled/failed old async result guards; original full release remains active.'],'progress',['docs/warlock-preview/v93/component-report135.json','implementation/warlock-preview-provider-v135/component-manifest.json','implementation/warlock-client-provider-native-v155/component-manifest.json','docs/warlock-repository/v99/publication/delivery.json']);print(e)\n";put('record_delivery.py',s)
+s=(prior/'commit_receipt.py').read_text().replace(oldbase,base).replace('Record public normal GUI close and reopen qualification','Record public old result across reopened realm qualification');s,n=re.subn(r"d\['ownedFiles'\]>=\d+","d['ownedFiles']>="+str(minimum),s);assert n==1;put('commit_receipt.py',s)
+s=(r/'docs/warlock-preview/v93/commit_gui134_sticky_retirement.py').read_text().replace('a92e3a4978f6c420cf612cb2b573e6b8188220df',local).replace('Finish retiring the old preview realm during rapid popup reopening','Reject an old WebKit result after native realm reopening')
+a=s.index('for name,passed in ');b=s.index(':\n root=',a);s=s[:a]+'for name,passed in '+repr(components)+s[b:]
+a=s.index('for base in [');b=s.index(':\n for p in',a);s=s[:a]+"for base in [r/'docs/warlock-preview/v93',r/'docs/warlock-repository/v99/publication']"+s[b:]
+p=r/'docs/warlock-preview/v93/commit_gui135_reopened_snapshot.py';assert not p.exists();ast.parse(s);p.write_text(s);print(out)

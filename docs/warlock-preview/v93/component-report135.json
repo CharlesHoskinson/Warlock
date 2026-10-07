@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "sourceHeld": true,
+  "passed": true,
+  "cpuBuildPassed": true,
+  "fullBuildCommands": 119,
+  "actualOldResultAcrossReopenedRealmQualified": true,
+  "actualOldSnapshotPixelsAccepted": false,
+  "actualNewRealmCapturedPixelsQualified": true,
+  "actualGUIRealmReopenQualified": true,
+  "actualPendingIntentReopenQualified": true,
+  "actualRapidPointerCloseReopenQualified": true,
+  "singlePreviewPolicy": true,
+  "nativeGrantResets": 0,
+  "navigationResets": 0,
+  "snapshotOrdinalResets": 0,
+  "normalControlledHostClosureQualified": true,
+  "privateSessionCleanupPassed": true,
+  "actualStaleSnapshotCallbackQualified": true,
+  "actualRetainedResultConsumedOnce": true,
+  "actualStaleSnapshotArtifactRejected": true,
+  "normalRouteNativeChecks": 29,
+  "normalRouteNormalOwnedExits": 13,
+  "reopenedSnapshotNativeChecks": 35,
+  "reopenedSnapshotNormalOwnedExits": 13,
+  "delayedResultNativeChecks": 18,
+  "delayedResultNormalOwnedExits": 8,
+  "rapidPendingReaderNativeChecks": 51,
+  "rapidPendingReaderNormalOwnedExits": 17,
+  "hostLifecycleQuintScenarios": 9,
+  "hostLifecycleInvariantSamples": 200,
+  "hostLifecycleCoupledStages": 7,
+  "physicalConcealmentQualified": false,
+  "physicalRevealQualified": false,
+  "hardwarePresentationQualified": false,
+  "fullWorkloadProgressQualified": false,
+  "measuredRSSQualified": false,
+  "reloadRecoveryQualified": false,
+  "canceledOrFailedOldResultQualified": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "GUI135 adds disabled-by-default QA retention of one real original WebKit result/strong old view across strict old C/Bootstrap close, renderer replacement and later same-policy/native epoch. It calls original finish once only after current new-view native projection acknowledgement; unchanged original view/epoch/navigation/projection guard rejects old request1 pixels/artifact. Actual Native15535 checks/13 normal exits/private cleanup prove epoch/navigation1->2/old view replaced, old result consumed once with zero old artifact, then new current source URI/red19200 request2 pixels, current image before/after actual opacity0 output region, both original strict native closes/same policy/binding/no reset. Original snapshot pixels remain rejected; new realm captured pixels qualify separately. Unchanged Native15429/13 normal, Native15618/8 closure-delayed result and Native15751/17 rapid real-reader regressions pass separately. Current full119, lifecycle Quint9named200samples and7 stages coupled to actual observations pass. Native issuer/single Elm policy/physical product/readers/original completion guard/sticky producer/deadlines unchanged. This actual retained-success-result schedule does not qualify canceled/failed result, all async timing/process/reload/Unknown recovery, ongoing conceal/reveal/hardware, pressure/workload/RSS, full S09 or release. Installed/drafts/foreign untouched.",
+  "reports": {
+    "build": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v135/qa/build-1791393409348643334/report.json",
+      "sha256": "cd32469df2beda959faae520108bf218164bd335d6ce2015c68deff03dba66ec"
+    },
+    "normalNative": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v154/qa/native-controlled-1791393698807056523/report.json",
+      "sha256": "98905f72b8dcf8844cc12863a9276633e36675f93e30d7b21bb6da5bd6db13e3"
+    },
+    "reopenedSnapshotNative": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v155/qa/native-controlled-1791393652577595224/report.json",
+      "sha256": "83e76e8f713b892df0704cb426783f04ae5a708e8cbefb0a388e33380e299711"
+    },
+    "delayedSnapshotNative": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v156/qa/native-controlled-1791393791965837724/report.json",
+      "sha256": "6f54cf02eb3c7ab1d1bb4ec9202a4f729829e395ddaa45a3702296f81ed1f7af"
+    },
+    "rapidPendingReaderNative": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v157/qa/native-controlled-1791393818391851338/report.json",
+      "sha256": "4dd78c8e3418aea138a08267b61bbb84d22bd28a2cb665a198b711ba3248c2b3"
+    },
+    "hostLifecycleQuint": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v135/qa/host-realm-lifecycle-model-1791393554025730529/report.json",
+      "sha256": "69d338edca6540bc8e93c3319e774c72c46f77378c38d37a4d785583927e6e7d"
+    },
+    "hostLifecycleCoupling": {
+      "path": "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v93/host-lifecycle-coupling-v135-1791393793343264013/report.json",
+      "sha256": "6733587e707d4054c9e91787f2692ef53fd1036c9b8f3e5aa7c2662238f3c460"
+    }
+  },
+  "heldParentManifest": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/component-manifest.json",
+    "sha256": "15651dd76f6194ac65b5b291c83b63869dcffc2210878d95855565b9c550c18b"
+  }
+}

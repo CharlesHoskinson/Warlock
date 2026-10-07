@@ -1,0 +1,13 @@
+
+  host_realm_lifecycle_tests
+    ok closeCannotSettleDuty passed 1 test(s)
+    ok sameContextCannotInitializeTwice passed 1 test(s)
+    ok oldViewCannotReplaceBeforeClose passed 1 test(s)
+    ok normalReopenKeepsPolicy passed 1 test(s)
+    ok pendingIntentKeepsLease passed 1 test(s)
+    ok pendingIntentRequiresFreshDOM passed 1 test(s)
+    ok pendingIntentThenFreshAdmission passed 1 test(s)
+    ok oldCallbackHasNoAuthority passed 1 test(s)
+    ok unknownCannotRetireOrReplace passed 1 test(s)
+
+  9 passing (21ms)

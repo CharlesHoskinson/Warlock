@@ -624,3 +624,17 @@ actual slow/rapid fixtures, not all timings. Next PUBLIC98 then original delayed
 async result across reopened context/epoch. Ongoing conceal/reveal/hardware,
 process/reload/Unknown, host pressure/full workload/RSS and original full release
 gates remain open. Installed desktop, drafts and five foreign changes untouched.
+
+GUI135 is held: one actual original WebKit result/strong old view survives strict
+old C/Bootstrap close and renderer replacement, then finishes once after the new
+same-policy epoch/current native projection. Original view/epoch/navigation/
+projection guard rejects old request1; current source URI/red19200 request2 pixels,
+image before/after opacity0 output and both strict closes pass Native15535/13.
+Unchanged normal15429/13, closure-delayed15618/8 and rapid15751/17 regressions
+pass with all normal exits/private cleanup; full119, Quint9/200 and7 coupled
+stages pass. Exact scope/hashes: component-report135.json. Only QA stimulus
+changes; original completion guard, Native/Elm policy/physical product/custody/
+sticky producer/deadlines remain unchanged. Next PUBLIC99 then actual canceled/
+failed old result; its error path precedes scope rejection and needs separate
+qualification. Ongoing physical reveal/hardware/pressure/reload/Unknown/full
+release remain open; installed/drafts/five foreign tracked edits preserved.

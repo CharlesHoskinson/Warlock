@@ -480,3 +480,15 @@ activation and all original full release gates remain open.
   Actual later popup/lease, original held/fresh read denial, one GIO close,
   independent strict retirement, same policy and fresh later renderer qualify
   only these fixture schedules; broader asynchronous/timing/recovery stays open.
+
+- [ ] Qualify CONTROL-043 one real old-view WebKit result across strict old close
+  and new same-policy epoch/current projection: original finish once, no stale
+  artifact/current authority, new current URI/pixels/ordinal and normal teardown.
+
+- [x] Freeze bounded CONTROL-043 retained successful original WebKit result across
+  strict old close/view replacement/new same-policy epoch: Native15535/13, one
+  original finish, rejected old artifact, current request2 URI/red pixels/closed
+  output/normal teardown. Full119, unchanged15429/13/15618/8/15751/17 and
+  Quint9/200/7 coupled stages pass. Canceled/failed results remain separate.
+- [ ] Qualify actual canceled/failed old WebKit result across renderer replacement
+  without current policy/job/grant failure or stale artifact authority.

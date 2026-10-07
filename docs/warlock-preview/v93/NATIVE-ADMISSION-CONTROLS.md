@@ -843,3 +843,15 @@ Reader6/200/8 coupled stages and producer8/200/4 failure-fix cases pass separate
 This qualifies the actual slow/rapid fixtures; broader timing/old-context async,
 physical ongoing conceal/reveal/hardware, process/reload/Unknown, resource and
 full release remain open. Empty physical jobs alone never settle a retained subject.
+
+CONTROL-043 original callback across a reopened realm (EARS):
+- WHEN one real original WebKit snapshot result outlives its strictly retired
+  renderer, the host SHALL keep that result and its original view/epoch/navigation/
+  projection scope, without grant resets, reconstruction or physical settlement.
+- WHEN a later same-policy realm receives its own current native projection,
+  explicit private QA MAY finish that original retained result once. The original
+  completion guard SHALL reject stale pixels/artifacts and SHALL NOT mutate the
+  current policy, native job, renderer grant or physical reveal state.
+- WHEN the current realm subsequently requests its own snapshot, the host SHALL
+  retain monotonic request chronology and validate its actual current source URI,
+  image pixels and scope. Original strict teardown/deadlines SHALL remain intact.

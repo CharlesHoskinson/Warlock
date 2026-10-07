@@ -1523,3 +1523,16 @@ original URI/GIO reader; it SHALL never manufacture a cleanup fact or reset gran
 - WHEN the host replaces the retired renderer child
 - THEN that popup window/lease/grab persist, fresh DOM admission precedes a later
   fixed grant, and current images, chronology, original normal exits and cleanup qualify separately
+
+### Requirement: Original async completion across a reopened renderer
+The host SHALL retain original result/view/epoch/navigation/projection custody
+until that result is consumed once, even when the old native realm strictly
+closes and its renderer is replaced. Stale completion SHALL have no current
+artifact, policy, grant, job settlement or reveal authority.
+
+#### Scenario: Old real snapshot finishes after current new-realm receipt
+- GIVEN one actual old WebKit result held across strict old native close
+- WHEN the new same-policy epoch acknowledges its own current native projection
+- THEN original finish executes once and original scope rejection accepts no old artifact
+- AND the later current source image/snapshot preserves request chronology and
+  original independent native teardown under unchanged deadlines

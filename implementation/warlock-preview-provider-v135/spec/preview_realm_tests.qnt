@@ -1,0 +1,20 @@
+module preview_realm_tests {
+ import preview_realm.* from "preview_realm"
+ action settle=fire(Reconcile).then(fire(Poll)).then(fire(AckJob)).then(fire(RetireActor)).then(fire(AckActor)).then(fire(ConfirmActor)).then(fire(Close))
+ run initialLegacy=init.then(fire(Legacy)).then(check(s.last==1 and s.through==0 and not(s.active)))
+ run activeCloseRefuses=init.then(fire(Open)).then(fire(Close)).then(check(s.active and s.records==1 and s.last== -1))
+ run concurrentClaimRefuses=init.then(fire(Open)).then(fire(ConcurrentOpen)).then(check(s.epoch==1 and s.through==1 and s.active and s.last== -1))
+ run activeLegacyRefuses=init.then(fire(Open)).then(fire(Legacy)).then(check(s.last== -1 and s.active))
+ run cancelledProofCloseRefuses=init.then(fire(Open)).then(fire(Reconcile)).then(fire(Poll)).then(fire(Close)).then(check(s.terminal and s.proofs==2 and s.active and s.last== -1))
+ run jobAckKeepsActor=init.then(fire(Open)).then(fire(Reconcile)).then(fire(Poll)).then(fire(AckJob)).then(fire(Close)).then(check(s.records==0 and s.actors==1 and s.active and s.last== -1))
+ run finalActorDeliveryKeepsClaim=init.then(fire(Open)).then(fire(Reconcile)).then(fire(Poll)).then(fire(AckJob)).then(fire(RetireActor)).then(fire(Close)).then(check(s.actors==0 and s.active and not(s.ready) and s.last== -1))
+ run processedUnconfirmedKeepsClaim=init.then(fire(Open)).then(fire(Reconcile)).then(fire(Poll)).then(fire(AckJob)).then(fire(RetireActor)).then(fire(AckActor)).then(fire(Close)).then(check(s.active and not(s.ready) and s.last== -1))
+ run confirmedDoesNotReleaseClaim=init.then(fire(Open)).then(fire(Reconcile)).then(fire(Poll)).then(fire(AckJob)).then(fire(RetireActor)).then(fire(AckActor)).then(fire(ConfirmActor)).then(check(s.ready and s.active))
+ run settledCloseReleasesClaim=init.then(fire(Open)).then(settle).then(check(not(s.active) and s.closed==1 and s.epoch==1))
+ run closedNeverDowngrades=init.then(fire(Open)).then(settle).then(fire(Legacy)).then(check(s.last== -1 and not(s.active)))
+ run replacementEpochPersists=init.then(fire(Open)).then(settle).then(fire(Open)).then(check(s.epoch==2 and s.active and s.records==1))
+ run failedConstructorConsumesEpoch=init.then(fire(Open)).then(settle).then(fire(FailedOpen)).then(fire(Open)).then(check(s.epoch==3 and s.active and s.records==1))
+ run repeatedFailuresNeverAlias=init.then(fire(Open)).then(settle).then(fire(FailedOpen)).then(fire(FailedOpen)).then(fire(Open)).then(check(s.epoch==4 and s.active))
+ run oldTicketCannotMutateReplacement=init.then(fire(Open)).then(settle).then(fire(Open)).then(fire(OldTicket)).then(check(s.last== -1 and s.phase==1 and s.proofs==0 and s.records==1))
+ run replacementClosesIndependently=init.then(fire(Open)).then(settle).then(fire(FailedOpen)).then(fire(Open)).then(fire(OldTicket)).then(settle).then(check(s.closed==2 and not(s.active) and s.epoch==3))
+}
