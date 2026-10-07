@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "sourceHeld": true,
+  "passed": true,
+  "evidenceIntegrityPassed": true,
+  "reports": {
+    "detachmentC": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v109/qa/live-window-detachment-c-check-1791350882253548095/report.json",
+      "sha256": "f949b747d75e86d91d9cdc91bd8fc505792f4b8e2cf531aac311c10c95cb86dc"
+    },
+    "detachmentFD": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v109/qa/live-window-detachment-fd-check-v2-1791351375606861560/report.json",
+      "sha256": "f9fec51104a15c597327ac4433fb3659fa987bed7612d7e0570793203ee7bc05"
+    },
+    "detachmentCohort": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v109/qa/live-window-detachment-cohort-check-v3-1791351736470262341/report.json",
+      "sha256": "f306d244eb09cb26b7f50d356274401087fae80dff979d95a0aa43eb19d996cb"
+    },
+    "detachmentModel": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v109/qa/live-window-detachment-model-check-v3-1791351656691953043/report.json",
+      "sha256": "f2a7b9291e313dae39009dc745e1e800495646e3a82d50779c18a3477065b9a1"
+    },
+    "regressions": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v109/qa/resource-regression-check-1791351448877528418/report.json",
+      "sha256": "90a529cfc56691864f81faf45cf9d4e0abb07553d9afcb7c84eb054c93e41a8f"
+    },
+    "build": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v109/qa/build-1791351448874490708/report.json",
+      "sha256": "bd431e14b3e0adeb2776f9c51ce46d4123508978f2c94afbe2e645c0bc868044"
+    }
+  },
+  "detachmentCChecks": 77,
+  "detachmentReaderChecks": 60,
+  "detachmentLostProducerResponseChecks": 64,
+  "detachmentPostTransferChecks": 51,
+  "detachmentResourceCompiledVariants": 2,
+  "detachmentCohortChecks": 66,
+  "detachmentScenarios": 21,
+  "detachmentTraces": 33,
+  "detachmentStates": 715,
+  "detachmentModelCompiledVariants": 5,
+  "actualReaderChecks": 49,
+  "actualPostTransferChecks": 40,
+  "controlledCChecks": 10190,
+  "fullBuildCommands": 95,
+  "unchangedElmParentManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v108/component-manifest.json",
+  "unchangedElmParentManifestSHA256": "3a07e8b9a6ea8756e72feb7cfe729b3e6ff171296d0820f8b2b3191fdedb605d",
+  "heldFailedReports": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v109/qa/live-window-detachment-cohort-check-1791351592794715169/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v109/qa/live-window-detachment-cohort-check-v2-1791351656691993990/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v109/qa/live-window-detachment-fd-check-1791351243493873378/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v109/qa/live-window-detachment-model-check-1791351416714674595/report.json"
+  ],
+  "webKitActivated": false,
+  "liveWindowDetachmentImplemented": true,
+  "actualWaylandWindowAcceptance": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "GUI109 implements a distinct scoped preview detachment while the native\napplication stays Active. It is an inactive CPU-qualified component; the shared\nWebKit host still uses the held legacy route. Actual native acceptance remains\nGUI92/native129/core16/plugin19, 2517 checks/278 normal owned exits/full cleanup.\n\nCanonical native reconciliation quarantines the original realm. Native-issued\nreadiness contains the original binding, receiver epoch, subject, C entry and\nissued frontier, and native request floor (including zero for an unissued actor).\nThe native journal retains accepted readiness while physical cleanup or original\nterminal-proof ACKs block removal. Readiness never supplies resource authority.\nOriginal backend/export/producer/mapping/reader barriers, receiver membership,\nCoordinator/Broker/intent/frame identity and confirmed job-control quotas all\nprecede aggregate map removal. The distinct scoped completion stays retained\nuntil its own final processing ACK and original independent control confirmation.\nStrict Bootstrap-aware close releases borrowed receipt delivery before destroying\nthe Endpoint and Native realm claim. The Native hello/session/frontend remains\nunchanged; no permanent retirement state is fabricated.\n\nCurrent evidence:\n- 77 actual C controls: same synthetic Active subject opens epoch1 then epoch2,\n  exact old ticket refuses, original Native grant remains stable, strict close\n  retains physical/proof/final processing/confirmation barriers.\n- 60 actual SCM_RIGHTS/GIO reader controls, 64 lost producer-response controls,\n  51 actual post-adoption allocation-failure controls; three normal owned exits.\n  A retained reader prevents physical FD/charge retirement after backend zero;\n  quarantine immediately denies reads; malformed producer response publishes no\n  completion and fresh observation repairs it without another capture/transfer.\n  Adopted allocation failure yields actual Released/Cancelled proofs. Accepted\n  early readiness cannot bypass any physical or final job ACK barrier. Exact\n  scoped completion bytes survive lost delivery. Two precise compiled unsafe\n  variants fail original resource assertions.\n- 66 actual cohort controls: two issued jobs and a capacity-refused unissued actor\n  with native zero request floor. Cold scoped detachment preserves both neighbors.\n  Original reconciliation processes exactly one job per poll. Permanent/scoped\n  ready journals process at most one candidate overall per poll and both complete\n  within two polls after original final job ACKs. Separate final processing is\n  required in each domain; both scoped actors remain native Active.\n- 21 explicitly selected Quint scenarios, 250 bounded invariant samples, 33 actual\n  compiled C traces, 715 observed state comparisons, five compiled unsafe variants.\n  Native claim, actual Bootstrap attachment, epoch, Broker actor/record/proof\n  counts, terminal state, distinct pending completion count, C empty predicate\n  and operation result are compared. Native binding and Active incarnation are\n  independently checked after every event. Phase/through/requested are protocol\n  history ghosts excluded from actual comparison. Constructor consumption and\n  uint64 exhaustion retain their separate held GUI107 evidence.\n- Current full95 host build and all four original resource/capture/ticket/FD\n  regression suites pass on current changed native source. Original controlled\n  metadata turnover remains 260 actors/1041 tickets/10190 checks. Elm/assets/\n  adapter remain byte-identical to held108/107/106; original compiled Elm evidence\n  retains that parent source.\n\nFour failed fixture reports remain: malformed producer-response expectation,\nrejected readiness mistakenly treated as issued by teardown, noncopyable Wire\nconstruction, and the cohort fixture's assumption of two jobs per bounded poll.\nFresh derivatives preserve original behavior oracles and deadlines. They explicitly\ncheck rejected output, actual readiness issuance, and one original job per poll.\nNo product guard or original deadline was weakened.\n\nNext: use a fresh derivative for safe WebKit URI endpoint lifetime/routing and\nfully typed incoming/outgoing realm wrappers. Activate the sender-epoch proposal\nAPI for all renderer purposes before adopting controlled owners; the compatible\nold proposal API is retained and the current shared host is unchanged. Native\nrenderer ticket outbox/retry/receipt confirmation, actual controlled Core capture,\n>256 real window/Elm turnover, replacement URI freshness, all original preview13,\nrestore38/recovery34/case34/two-second/cursor/drag52/hardware/output/AT/IME/budget/\njourney/coherent release/reversible deployment gates remain open. No installed\nconfiguration, main desktop or drafts changed.\n"
+}

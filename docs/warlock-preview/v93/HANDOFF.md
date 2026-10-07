@@ -69,7 +69,9 @@ byte-identical and its own compiled Elm ACK evidence stays at that parent source
 No current GUI107 native/Core/WebKit acceptance or live-window detachment follows.
 See component-report107.json and GUI107/REALM-HANDOFF.md for exact frozen hashes.
 
-GUI108 is held and inactive; publication76 is next. Its Bootstrap-aware strict
+GUI108 is held, inactive and public76 2d8f3fd9503e673afa0b1274de15d344e3891cc9,
+5006 exact owned blobs; source3a3bc903159bba35a46f5c1ef99a976083af37ef,
+receipt0fb366e1ce71f48fd47d32498a4ef40e7b2f039b. Its Bootstrap-aware strict
 C close validates exact Native transport/Endpoint/receiver epoch/creator thread
 and empty receipt membership while retaining all original cleanup barriers.
 Refused or foreign Bootstrap close preserves the original channel. Successful
@@ -83,8 +85,8 @@ already passed and the fresh runner records their exact count unchanged.
 No GUI108 actual Core/WebKit or live-window detachment acceptance follows.
 Exact evidence is in component-report108.json and GUI108/BOOTSTRAP-HANDOFF.md.
 
-Next exact owned publication76; then fresh GUI109 for distinct live-window
-preview-realm quiescence/detachment with typed scoped proof and frontend freshness.
+Next freeze/publication77 for GUI109 scoped C detachment; then fresh110 for
+safe WebKit URI endpoint lifetime/routing and typed frontend realm freshness.
 Keep all original physical, terminal ACK, processing and confirmation barriers.
 Current108 controlled
 factory/resource protocol still needs actual Core integration and shared-host
@@ -105,3 +107,12 @@ input/popup/hardware/output/AT/IME, numeric budgets, representative journeys,
 coherent regression and reversible deployment remain required. Only the host
 goal supplies automatic continuation. No component or publication completes
 that goal or changes the user's installed desktop.
+
+GUI109 current CPU qualification is detailed in GUI109/DETACHMENT-HANDOFF.md:
+77 same synthetic Active subject C controls;60 actual FD/GIO reader+64 lost
+producer response+51 post-adoption allocator controls;66 cold zero-floor/mixed
+permanent-scoped controls;21 selected Quint/33 actual C traces/715 state
+comparisons/250 samples/five compiled variants/current full95/original four
+resource/capture/ticket/FD regressions. Four fixture failures remain. Current
+shared-host controlled activation/actual Core/WebKit/Wayland-window detachment
+and replacement URI qualification/full release remain open.

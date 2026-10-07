@@ -1,0 +1,13 @@
+native/live-window-detachment-cohort-test.cpp: In lambda function:
+native/live-window-detachment-cohort-test.cpp:19:245: error: use of deleted function ‘preview::bridge::Wire::Wire(const preview::bridge::Wire&)’
+   19 |  auto ackActor=[&](uint64_t subject,bool scoped){Json completion("{\"rows\":"+pending(scoped)+"}");auto fact=row(completion);auto wire=Wire().text("kind",scoped?"detach-delivery-ack":"retire-delivery-ack").begin("binding").binding(binding).end();if(scoped)wire.counter("receiverEpoch",epoch);control(subject,wire.text("deliveryOrdinal",Json::text(fact,"deliveryOrdinal")).finish());};
+      |                                                                                                                                                                                                                                                     ^
+In file included from native/preview_retirement.hpp:2,
+                 from native/capture-intent-source-fixture.hpp:1,
+                 from native/live-window-detachment-cohort-test.cpp:1:
+native/preview_wire.hpp:24:5: note: declared here
+   24 |     Wire(const Wire&)=delete;Wire& operator=(const Wire&)=delete;
+      |     ^~~~
+native/live-window-detachment-cohort-test.cpp:19:245: note: use ‘-fdiagnostics-all-candidates’ to display considered candidates
+   19 |  auto ackActor=[&](uint64_t subject,bool scoped){Json completion("{\"rows\":"+pending(scoped)+"}");auto fact=row(completion);auto wire=Wire().text("kind",scoped?"detach-delivery-ack":"retire-delivery-ack").begin("binding").binding(binding).end();if(scoped)wire.counter("receiverEpoch",epoch);control(subject,wire.text("deliveryOrdinal",Json::text(fact,"deliveryOrdinal")).finish());};
+      |                                                                                                                                                                                                                                                     ^

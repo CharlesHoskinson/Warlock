@@ -1,0 +1,18 @@
+
+  capture_resources_tests
+    ok liveExportBlocksProducer passed 1 test(s)
+    ok lockPreservesOriginalProducer passed 1 test(s)
+    ok originalExportReleaseUnderLock passed 1 test(s)
+    ok lostReleaseAcknowledgmentRetainsUnknown passed 1 test(s)
+    ok freshObservationRepairsLostRelease passed 1 test(s)
+    ok releaseRetryIsIdempotent passed 1 test(s)
+    ok lostProducerAcknowledgmentRetainsUnknown passed 1 test(s)
+    ok freshObservationRepairsLostProducer passed 1 test(s)
+    ok failedResponseAllocationPreservesResources passed 1 test(s)
+    ok wrongTransferCannotReleaseLiveExport passed 1 test(s)
+    ok wrongSubjectCannotRetireProducer passed 1 test(s)
+    ok malformedReplyCannotAdvanceCursor passed 1 test(s)
+    ok oldTargetCannotEraseOtherCapture passed 1 test(s)
+    ok frontendConfirmationIsNoResourceProof passed 1 test(s)
+
+  14 passing (18ms)

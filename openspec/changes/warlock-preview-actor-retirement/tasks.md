@@ -5,7 +5,8 @@
 - [ ] Qualify real native turnover beyond256 distinct windows with a retained live neighbor and replay controls.
 - [x] Implement and CPU-qualify native-owned receiver epochs and exclusive claim closure across endpoint replacement (CONTROL-020), including a deterministic legacy stale-CAS race; current Core/WebKit and live-window detachment qualification remain open.
 - [x] Implement and CPU-qualify exact Bootstrap-aware strict C close and borrowed receipt reattachment (CONTROL-021), including refusal preservation, foreign ownership and local close after original synthetic native peer death; actual Core/WebKit integration remains open.
-- [ ] Implement distinct live-window binding-detachment proof, typed readiness/final processing/confirmation and fresh-realm event scoping while retaining the actual application window.
+- [x] Implement and CPU-qualify distinct scoped C binding-detachment readiness/completion/final processing/confirmation (CONTROL-022), retaining synthetic Native Active state, original physical/proof/receiver/control barriers and same-subject epoch replacement.
+- [ ] Integrate typed incoming/outgoing frontend realm wrappers, safe WebKit URI routing/lifetime and the native renderer ticket outbox; qualify scoped detachment and replacement on actual Core/Wayland windows.
 - [ ] Freeze and publish exact source/evidence; preserve all original GUI acceptance gates.
 
 Native observation and bridge evidence: [current report](../../../docs/warlock-preview/v91/report.json).
@@ -258,3 +259,14 @@ This does not claim kernel socket loss, native106 controlled factory/WebKit
 activation, live-window binding detachment or full-release acceptance. Original
 expired/revoked capture resource witnesses and current controlled integration
 remain explicit work. Component/native evidence and source hashes stay separate.
+
+GUI109 bounded inactive CPU qualification:77 same-Active-subject C controls;
+60 actual SCM_RIGHTS/GIO reader,64 lost producer response,51 post-adoption
+allocator controls;66 cold zero-floor/mixed permanent-scoped cohort controls;
+21 selected Quint scenarios/33 actual C traces/715 state comparisons/250 bounded
+samples/five compiled unsafe variants. Current full95 and all four original
+resource/capture/ticket/FD regressions pass. Four failed fixture reports remain
+with unchanged physical/proof/deadline oracles. Current shared-host Elm/assets
+remain byte-identical to held108/107/106; no controlled Core/WebKit activation
+or actual Wayland-window detachment/replacement URI qualification follows.
+See GUI109/DETACHMENT-HANDOFF.md and the exact component-report109 inventory.

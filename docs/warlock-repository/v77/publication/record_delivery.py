@@ -1,0 +1,10 @@
+import json,pathlib,resource,subprocess,sys
+sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
+require_qa_scope();assert resource.getrlimit(resource.RLIMIT_CORE)==(1,1)
+r=pathlib.Path('/home/hoskinson/omarchy-windows-parity');base=pathlib.Path(__file__).parent;d=json.loads((base/'delivery.json').read_text());assert d['pushCompleted'] and d['ownedFiles']>=7128
+v=json.loads(subprocess.check_output(['gh','repo','view','CharlesHoskinson/Warlock','--json','name,url,visibility'],text=True));assert v['visibility']=='PUBLIC';(base/'visibility.json').write_text(json.dumps(v,indent=2)+'\n')
+observed=subprocess.check_output(['gh','api','repos/CharlesHoskinson/Warlock/branches/feature%2Felm','--jq','.commit.sha'],text=True).strip();assert observed==d['publishedCommit']
+(base/'branch.json').write_text(json.dumps({'commit':observed,'verified':True},indent=2)+'\n')
+report=json.loads((r/'docs/warlock-preview/v93/component-report109.json').read_text())
+sys.path.insert(0,str(r/'implementation/elm-build-loop-v1'));import loop
+e=loop.write_checkpoint(r,'f6779148-8f5d-4bdf-8a0f-044184e486f2','implementation/warlock-preview-provider-v109',['PROGRESS PUBLIC77 '+d['publishedCommit']+' verified '+str(d['ownedFiles'])+' exact owned blobs. Held109 scoped detachment C77/resource60+64+51/cohort66/model21/33/715/five variants/current full95/original four regressions; four failures retained. Synthetic Native applications stay Active, original barriers unchanged. Inactive controlled path; actual Native129 GUI92/core16/plugin19 remains2517/278. Next fresh110 safe URI callback lifetime/routing and typed frontend realm wrapper/native renderer outbox before actual controlled Core/WebKit; original full release/deployment gates remain open. No installed changes.'],'progress',['docs/warlock-preview/v93/component-report109.json','implementation/warlock-preview-provider-v109/component-manifest.json','docs/warlock-repository/v77/publication/delivery.json']);print(e)

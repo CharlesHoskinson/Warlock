@@ -322,3 +322,27 @@ the original handle and owner. A subsequent owner SHALL attach a fresh receipt
 channel under its new native epoch without replacing the shared Native grant.
 These local lifetime facts SHALL remain available after Core death, and SHALL
 NOT certify live-window binding detachment or frontend processing.
+
+EARS CONTROL-022: While a native application incarnation remains Active, the
+preview provider SHALL support a distinct scoped binding-detachment transaction
+under its original native receiver epoch. Only its canonical native-issued
+reconciliation and detach-readiness controls SHALL authorize that transaction's
+input; readiness SHALL NOT establish physical cleanup. Actual backend/export/
+producer/local mapping/reader settlement, final terminal-proof acknowledgment,
+receiver/Coordinator/Broker/intent/frame ownership and original control quotas
+SHALL precede native aggregate removal. The provider SHALL mint a distinct typed
+preview-binding-detached completion under that original epoch, retaining it
+through exact frontend processing acknowledgment and independent confirmation
+before strict Bootstrap-aware realm close. Permanent incarnation-retirement
+facts and controls SHALL retain their existing semantics and SHALL NOT substitute
+for scoped detachment, or receive a fabricated Retired state. A new realm SHALL
+reenroll the same still-Active subject under fresh receiver/channel/opaque URI
+identity on the unchanged Native session/frontend. Every old event, ticket,
+completion and URI SHALL refuse against the new realm; no Unknown acquisition
+or shared-host operation SHALL be replayed or reset.
+
+CONTROL-022 scoped C path is implemented and CPU-qualified in inactive GUI109.
+The exact actual C/SCM_RIGHTS/GIO/model/cohort/current build/regression scope and
+four retained fixture failures are in GUI109/DETACHMENT-HANDOFF.md and
+component-report109.json. Typed frontend realm wrappers, safe WebKit URI
+lifetime/routing and actual controlled Core/Wayland qualification remain open.

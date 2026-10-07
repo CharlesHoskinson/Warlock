@@ -757,3 +757,45 @@ SHALL NOT imply live-window detachment or frontend processing.
 - WHEN a different native Bootstrap attempts to close it
 - THEN close refuses before mutation
 - AND the original owner remains closable through its exact Bootstrap.
+
+### Requirement: Scoped preview detachment preserves a live application
+
+EARS CONTROL-022: A native-controlled preview realm SHALL detach its scoped
+ownership while the native application incarnation remains Active. Distinct
+native-issued reconciliation/readiness and typed preview-binding-detached
+completion SHALL preserve every original physical/backend/reader/terminal ACK,
+aggregate membership, final-processing and independent-confirmation barrier.
+Readiness or a transport receipt SHALL NOT settle physical resources. Existing
+permanent incarnation-retirement facts SHALL remain unchanged and SHALL NOT be
+fabricated or substituted. Reenrollment of the same still-Active subject SHALL
+use a fresh native receiver epoch, channel and opaque URI domain on the unchanged
+Native session/frontend, rejecting old events/tickets/completions/URIs without
+replaying Unknown or resetting unrelated effects.
+
+#### Scenario: Close previews while the application remains alive
+- GIVEN an Active native application and its controlled preview owner
+- WHEN canonical reconciliation and distinct detachment readiness are dispatched
+- AND every original physical and terminal ACK barrier passes
+- THEN native aggregate preview membership is removed with a scoped detached completion
+- AND native incarnation state remains Active
+- AND strict realm close still waits for final processing and independent confirmation.
+
+#### Scenario: Physical cleanup blocks scoped detachment
+- GIVEN retained backend/export/producer/local mapping/reader or final proof ownership
+- WHEN detachment readiness is accepted or its ticket transport confirms
+- THEN actual aggregate membership remains retained
+- AND fair native polling may complete only after the original physical/proof barriers pass
+- AND no capture is replayed and no original deadline is renewed.
+
+#### Scenario: The live subject opens in a fresh realm
+- GIVEN a fully processed and independently confirmed scoped detachment
+- WHEN the original Bootstrap strictly closes that realm and reenrolls the same Active subject
+- THEN the Native binding/session/frontend and native window incarnation remain unchanged
+- AND receiver epoch, receipt channel and opaque broker URI identity are fresh
+- AND old scoped events/tickets/completions/URIs refuse before affecting the new owner.
+
+#### Scenario: Permanent and scoped retirement domains do not substitute
+- GIVEN a live subject with scoped detachment pending
+- WHEN a permanent-incarnation completion, readiness or acknowledgment is received
+- THEN it cannot advance the scoped detachment journal
+- AND scoped detachment never publishes a permanent Retired fact or closes the application.
