@@ -1,0 +1,425 @@
+An example execution:
+
+[State 0] { s: { accepted: false, history: [], legacy: false } }
+
+[State 1] { s: { accepted: false, history: ["BadHandle"], legacy: false } }
+
+[State 2]
+{ s: { accepted: false, history: ["BadHandle", "FlagType"], legacy: false } }
+
+[State 3]
+{
+  s:
+    {
+      accepted: false,
+      history: ["BadHandle", "FlagType", "NativeUnreadyFalse"],
+      legacy: false
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      accepted: false,
+      history: ["BadHandle", "FlagType", "NativeUnreadyFalse", "BadJob"],
+      legacy: false
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "BadHandle",
+          "FlagType",
+          "NativeUnreadyFalse",
+          "BadJob",
+          "BadIdentity"
+        ],
+      legacy: false
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "BadHandle",
+          "FlagType",
+          "NativeUnreadyFalse",
+          "BadJob",
+          "BadIdentity",
+          "BadHandle"
+        ],
+      legacy: false
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "BadHandle",
+          "FlagType",
+          "NativeUnreadyFalse",
+          "BadJob",
+          "BadIdentity",
+          "BadHandle",
+          "ExtraField"
+        ],
+      legacy: false
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "BadHandle",
+          "FlagType",
+          "NativeUnreadyFalse",
+          "BadJob",
+          "BadIdentity",
+          "BadHandle",
+          "ExtraField",
+          "BadIdentity"
+        ],
+      legacy: false
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "BadHandle",
+          "FlagType",
+          "NativeUnreadyFalse",
+          "BadJob",
+          "BadIdentity",
+          "BadHandle",
+          "ExtraField",
+          "BadIdentity",
+          "BadJob"
+        ],
+      legacy: false
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "BadHandle",
+          "FlagType",
+          "NativeUnreadyFalse",
+          "BadJob",
+          "BadIdentity",
+          "BadHandle",
+          "ExtraField",
+          "BadIdentity",
+          "BadJob",
+          "DuplicateFlag"
+        ],
+      legacy: false
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "BadHandle",
+          "FlagType",
+          "NativeUnreadyFalse",
+          "BadJob",
+          "BadIdentity",
+          "BadHandle",
+          "ExtraField",
+          "BadIdentity",
+          "BadJob",
+          "DuplicateFlag",
+          "MissingPacket"
+        ],
+      legacy: false
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "BadHandle",
+          "FlagType",
+          "NativeUnreadyFalse",
+          "BadJob",
+          "BadIdentity",
+          "BadHandle",
+          "ExtraField",
+          "BadIdentity",
+          "BadJob",
+          "DuplicateFlag",
+          "MissingPacket",
+          "DuplicateFlag"
+        ],
+      legacy: false
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "BadHandle",
+          "FlagType",
+          "NativeUnreadyFalse",
+          "BadJob",
+          "BadIdentity",
+          "BadHandle",
+          "ExtraField",
+          "BadIdentity",
+          "BadJob",
+          "DuplicateFlag",
+          "MissingPacket",
+          "DuplicateFlag",
+          "BadExpiry"
+        ],
+      legacy: false
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "BadHandle",
+          "FlagType",
+          "NativeUnreadyFalse",
+          "BadJob",
+          "BadIdentity",
+          "BadHandle",
+          "ExtraField",
+          "BadIdentity",
+          "BadJob",
+          "DuplicateFlag",
+          "MissingPacket",
+          "DuplicateFlag",
+          "BadExpiry",
+          "MissingPacket"
+        ],
+      legacy: false
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "BadHandle",
+          "FlagType",
+          "NativeUnreadyFalse",
+          "BadJob",
+          "BadIdentity",
+          "BadHandle",
+          "ExtraField",
+          "BadIdentity",
+          "BadJob",
+          "DuplicateFlag",
+          "MissingPacket",
+          "DuplicateFlag",
+          "BadExpiry",
+          "MissingPacket",
+          "BadExpiry"
+        ],
+      legacy: false
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "BadHandle",
+          "FlagType",
+          "NativeUnreadyFalse",
+          "BadJob",
+          "BadIdentity",
+          "BadHandle",
+          "ExtraField",
+          "BadIdentity",
+          "BadJob",
+          "DuplicateFlag",
+          "MissingPacket",
+          "DuplicateFlag",
+          "BadExpiry",
+          "MissingPacket",
+          "BadExpiry",
+          "ExtraField"
+        ],
+      legacy: false
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "BadHandle",
+          "FlagType",
+          "NativeUnreadyFalse",
+          "BadJob",
+          "BadIdentity",
+          "BadHandle",
+          "ExtraField",
+          "BadIdentity",
+          "BadJob",
+          "DuplicateFlag",
+          "MissingPacket",
+          "DuplicateFlag",
+          "BadExpiry",
+          "MissingPacket",
+          "BadExpiry",
+          "ExtraField",
+          "NativeUnreadyTrue"
+        ],
+      legacy: false
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      accepted: true,
+      history:
+        [
+          "BadHandle",
+          "FlagType",
+          "NativeUnreadyFalse",
+          "BadJob",
+          "BadIdentity",
+          "BadHandle",
+          "ExtraField",
+          "BadIdentity",
+          "BadJob",
+          "DuplicateFlag",
+          "MissingPacket",
+          "DuplicateFlag",
+          "BadExpiry",
+          "MissingPacket",
+          "BadExpiry",
+          "ExtraField",
+          "NativeUnreadyTrue",
+          "LateOffer"
+        ],
+      legacy: false
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "BadHandle",
+          "FlagType",
+          "NativeUnreadyFalse",
+          "BadJob",
+          "BadIdentity",
+          "BadHandle",
+          "ExtraField",
+          "BadIdentity",
+          "BadJob",
+          "DuplicateFlag",
+          "MissingPacket",
+          "DuplicateFlag",
+          "BadExpiry",
+          "MissingPacket",
+          "BadExpiry",
+          "ExtraField",
+          "NativeUnreadyTrue",
+          "LateOffer",
+          "Unowned"
+        ],
+      legacy: false
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "BadHandle",
+          "FlagType",
+          "NativeUnreadyFalse",
+          "BadJob",
+          "BadIdentity",
+          "BadHandle",
+          "ExtraField",
+          "BadIdentity",
+          "BadJob",
+          "DuplicateFlag",
+          "MissingPacket",
+          "DuplicateFlag",
+          "BadExpiry",
+          "MissingPacket",
+          "BadExpiry",
+          "ExtraField",
+          "NativeUnreadyTrue",
+          "LateOffer",
+          "Unowned",
+          "MissingPacket"
+        ],
+      legacy: false
+    }
+}
+
+[ok] No violation found (68ms at 1471 traces/second).
+Trace length statistics: max=21, min=21, average=21.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

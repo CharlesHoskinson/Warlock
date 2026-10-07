@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "eventId": "99a8917ee28a4d7692c8c08d0c821efb",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-07T00:17:52.223013+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/warlock-preview-provider-v98",
+  "nextWork": [
+    "PROGRESS ownGUI98: actual native receiver enrollment before jobs and guarded Coordinator/Broker job issuance with derived cleanup quotas. Native reserves capacity/remaining ordinal budget before physical admission, consumes only its own obligation quota, retains replay identity without new issuance and never uses reserved cleanup for speculative admission. Bank is transport bookkeeping, not physical proof or second policy. Derive actual ImportedClients job/actor/proof quotas and integrate issuer/outbox/admission afterward before WebKit activation. Held97 reservations11/23/397/4 and64 adversarial controls; publication68 complete. Preserve all original gates."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/warlock-preview-provider-v97/component-manifest.json",
+      "sha256": "340d45f39ccaabbf6ee3a3455c511820c120529203d8b4901beff22283dcc95c",
+      "size": 500164
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v98/ANCESTRY.json",
+      "sha256": "fe02d877efda9eaadc1782f64fc4788415e120ad335fbfffa693f25716873fda",
+      "size": 462
+    },
+    {
+      "path": "docs/warlock-preview/v93/OUTGOING-CONTROL-CONTRACT.md",
+      "sha256": "86fc561e270f5f23a8e6813763c0c03ce7390da423502e3846ef6e04bca6cedd",
+      "size": 4166
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

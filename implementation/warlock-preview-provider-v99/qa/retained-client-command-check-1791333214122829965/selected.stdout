@@ -1,0 +1,18 @@
+
+  retained_client_command_tests
+    ok readyOriginalPacket passed 1 test(s)
+    ok lateOriginalOfferCleanup passed 1 test(s)
+    ok frontendTrueCannotGrantNativeReadiness passed 1 test(s)
+    ok frontendFalseCannotGrantNativeReadiness passed 1 test(s)
+    ok unownedPacketRefused passed 1 test(s)
+    ok foreignJobRefused passed 1 test(s)
+    ok foreignHandleRefused passed 1 test(s)
+    ok rewrittenExpiryRefused passed 1 test(s)
+    ok rewrittenCoverageRefused passed 1 test(s)
+    ok malformedFlagRefused passed 1 test(s)
+    ok missingNativePacketRefused passed 1 test(s)
+    ok foreignIdentityRefused passed 1 test(s)
+    ok duplicateFlagRefused passed 1 test(s)
+    ok extraFieldRefused passed 1 test(s)
+
+  14 passing (8ms)

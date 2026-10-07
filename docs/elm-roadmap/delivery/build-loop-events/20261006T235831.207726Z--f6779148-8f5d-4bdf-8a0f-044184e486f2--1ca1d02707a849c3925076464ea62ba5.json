@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "eventId": "1ca1d02707a849c3925076464ea62ba5",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-06T23:58:31.207726+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/warlock-preview-provider-v97",
+  "nextWork": [
+    "PROGRESS ownGUI97: native preissuance cleanup ordinal reservation bank with bounded exact-wire tickets. Native reserves capacity/remaining ordinal budget before physical admission, consumes only its own obligation quota, retains replay identity without new issuance and never uses reserved cleanup for speculative admission. Bank is transport bookkeeping, not physical proof or second policy. Derive actual ImportedClients job/actor/proof quotas and integrate issuer/outbox/admission afterward before WebKit activation. Held96 native20/28/221/4,JS13/25/404/3,58roundtrip; publication68 underway. Preserve all original gates."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/warlock-preview-provider-v96/component-manifest.json",
+      "sha256": "b4e7c40c830519a488a92ce9c39a2cdbc6f2448c077cf0bc12d52d43e0663bf3",
+      "size": 192874
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v97/ANCESTRY.json",
+      "sha256": "52127a2a66aca921237663b9f32949c64c82e5ec0ee32ce4244cd1870d7acd7e",
+      "size": 467
+    },
+    {
+      "path": "docs/warlock-preview/v93/OUTGOING-CONTROL-CONTRACT.md",
+      "sha256": "86fc561e270f5f23a8e6813763c0c03ce7390da423502e3846ef6e04bca6cedd",
+      "size": 4166
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

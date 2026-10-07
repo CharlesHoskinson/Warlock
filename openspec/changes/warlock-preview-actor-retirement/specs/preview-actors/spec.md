@@ -344,3 +344,55 @@ reservations, final actor-delivery confirmation and all physical/proof barriers.
 - WHEN the native owner attempts normal close
 - THEN its transport confirmation barrier stays open and the original receipt
   remains available for retry, without another effect invocation.
+
+### Requirement: Receiver enrollment and cleanup credits before admission
+
+EARS WLK-PREVIEW-CONTROL-007: BEFORE the first job is issued, the native endpoint
+SHALL enroll its original receiver and assign an original epoch without borrowing
+a job or inventing an actor. Empty enrollment SHALL authorize no subject access.
+Later subject enrollment SHALL preserve that receiver and epoch.
+
+EARS WLK-PREVIEW-CONTROL-008: BEFORE original Coordinator/Broker actor or job
+issuance, the native guard SHALL reserve the verified cleanup quota. Insufficient
+credits SHALL preserve original intents, request floors, physical reservations
+and deadlines. Exceptions after issuance SHALL retain original credits for native
+reconciliation and SHALL NOT be interpreted as proof that issuance did not occur.
+
+#### Scenario: Initial receiver has no subjects
+- GIVEN a fresh native endpoint and a trusted original receiver
+- WHEN the receiver is enrolled before job issuance
+- THEN its epoch is assigned and its membership is empty, so it cannot read a URI;
+  later original native admission extends that receiver without resetting it.
+
+#### Scenario: Cleanup capacity prevents admission
+- GIVEN retained cleanup credits consume the available transport capacity
+- WHEN the original native receiver proposes another admission
+- THEN the guard refuses before remembering an intent or issuing a physical job,
+  preserving the original request floor and deadline.
+
+#### Scenario: Issuance fails after an original job was retained
+- GIVEN the guard reserved credits before calling the original native issuer
+- WHEN that issuer throws after retaining a job
+- THEN the credits remain for native reconciliation and no speculative rollback
+  erases the original obligation.
+
+### Requirement: Cleanup uses original native packet readiness
+
+EARS WLK-PREVIEW-CONTROL-009: WHEN a retained receiver releases an exact original
+job/token whose native packet is ready, the controlled decoder SHALL validate
+that native packet even if a delayed Offer still says signaled:false. Frontend
+flags SHALL NOT grant native readiness or physical/proof completion. Original
+wire bytes SHALL remain immutable for retries. Legacy strict decoding and its
+original negative controls SHALL remain unchanged.
+
+#### Scenario: Original Offer arrives after cancellation
+- GIVEN a ready original native packet and an actual URI reader retaining storage
+- WHEN Elm cancels before receiving its queued Offer, then releases its original
+  handle from the late Offer with signaled:false
+- THEN the controlled decoder validates the exact native job/token and native
+  readiness; native destruction still waits for reader and producer barriers.
+
+#### Scenario: Frontend claims readiness without a ready native packet
+- GIVEN the original native packet has not confirmed readiness
+- WHEN a renderer sends a cleanup packet with signaled:true
+- THEN the controlled decoder refuses that claim and no native barrier advances.

@@ -108,3 +108,40 @@ completion routing through the actual WebKit host, reliable outgoing transport,
 captured physical retirement
 and real continuing native/Elm turnover beyond256 remain open. The original
 GUI release gates and ordinary capture eligibility remain unchanged.
+
+Held GUI97 implements the inactive exclusive native reservation bank. Eleven
+explicitly selected Quint scenarios and200 bounded samples match23 compiled
+C++/C traces and397 states; four compiled native variants fail their witnesses.
+Sixty-four sanitizer-backed controls cover partial confirmation, exact bytes,
+foreign grants, malformed/envelope bounds, stale groups and final-ordinal retries.
+The original model type error and incorrectly sized fixture remain held.
+See [the component report](../../../docs/warlock-preview/v93/component-report97.json).
+Native receiver enrollment before jobs and guarded actual Coordinator/Broker
+admission are the next derivative. Typed-slot validation, actual renderer native
+assigned tickets, physical release barriers, receiver reconciliation and WebKit
+activation remain open.
+
+Held GUI98 adds native empty receiver enrollment and cleanup-credit guarding
+around the actual original Coordinator/Broker. Thirteen selected Quint scenarios
+and100 bounded samples match21 compiled traces/189 states; four unsafe compiled
+variants are detected. Capacity refusal precedes intent/scope/job issuance;
+post-issuance exceptions and missing returned jobs preserve pending credits.
+The separate actual optimized Elm/native/URI quota roundtrip exposed a late
+Offer cleanup rejection by the original decoder; that counterexample is held,
+and GUI98 is not claimed fully passed. See
+[its report](../../../docs/warlock-preview/v93/component-report98.json).
+
+Held GUI99 adds a separate controlled cleanup decoder using original native
+readiness, job and token. Original strict decoder source and all44 fixed
+regression assertions remain unchanged and pass. Fourteen selected Quint
+scenarios/22 compiled traces/174 comparisons detect four compiled variants.
+The actual optimized Elm/native Broker/real URI reader/control bank/prefix
+roundtrip passed69 controls, including two terminal proofs and25 repeated ACKs
+reusing the exact original ticket without another effect. Synthetic source facts
+and fixture header bytes do not qualify capture or a real native actor/host close;
+actor/reconciliation quota remains retained. Inherited admission guard source is
+byte-identical and verified. See
+[the component report](../../../docs/warlock-preview/v93/component-report99.json).
+Opt-in provider start/resume/ticket validation, physical release gates, original
+receiver reconciliation, renderer native-ticket outbox and actual WebKit
+activation remain the next integration work.
