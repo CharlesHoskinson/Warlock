@@ -1130,3 +1130,39 @@ preview/window lifecycle transitions and native effect/settlement authorities.
 - **THEN** native authentic delivery order, current projection custody, renderer reload,
   URI ownership and actual WebKit/Core/DOM behavior require separate acceptance
 - **AND** only one window/lifecycle policy may be activated
+
+### Requirement: Read committed visual data without advancing policy
+
+The system SHALL implement EARS CONTROL-031 while preserving the original policy,
+native ordinal issuer, effects and physical retirement authorities.
+
+#### Scenario: The creator reads the same committed projection twice
+- **GIVEN** an open controlled native-owned policy and a successful output
+- **WHEN** its original creator requests two visual copies
+- **THEN** both contain only the same six typed visual fields
+- **AND** no JavaScript invocation, model transition, command or ordinal occurs
+
+#### Scenario: A caller alters an owned visual copy
+- **GIVEN** a separately allocated copy of committed visual data
+- **WHEN** the caller mutates its bytes and requests another copy
+- **THEN** the new copy and original private policy output remain unchanged
+
+#### Scenario: Ordinary input is blocked after quarantine
+- **GIVEN** original deferred proposals and a committed concealed projection
+- **WHEN** ordinary input receives WOULD_BLOCK and the creator reads visuals
+- **THEN** the read returns exactly that last committed projection
+- **AND** refused input, known jobs and pending custody remain unsettled
+
+#### Scenario: The read has no valid authority
+- **GIVEN** a foreign caller, missing destination, absent or closed authority,
+  or inflight or uncertain processing
+- **WHEN** a visual copy is requested
+- **THEN** the owner refuses with no projection and the caller conceals
+- **AND** no refusal authorizes grant reset, worker reconstruction or settlement
+
+#### Scenario: A component copy is prepared for a renderer
+- **GIVEN** accepted bounded read-only copy evidence
+- **WHEN** host integration is prepared
+- **THEN** authenticated current delivery, order, renderer leases and reload
+  concealment require separate qualification before activation
+- **AND** actual WebKit/Core/DOM/URI and full release gates remain required

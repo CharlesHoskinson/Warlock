@@ -293,3 +293,19 @@ custody/retry before real WebKit/Core/URI/reload activation. Full desktop/contro
 concealment, uncertain live JSC/process recovery, delayed proposal expiry/revocation
 outcomes and all original full release gates remain separate. Native130 remains
 actual bounded legacy2518/278 on core16/plugin19/AQ155; installed/foreign paths stay.
+
+GUI117 PUBLIC86 99c357235f940af304314501ce76efe76cbd91c5/3186 exact owned blobs;
+source356ebb9de9a5c203f67c4fd40b614ecd22d39c76;
+receiptc226d97a29289e6edccbe784ab9591eee02bd31f.
+GUI118 held creator-owned readonly visual custody: unchanged original Elm policy/
+issuer/effects/physical product; no JS invocation or model/ordinal advance; detached
+caller-mutable copies. Original C/JSC/native207 plus90 visual and74 readonly
+comparisons/two epochs/unchanged grant/normal exits. Lifetime37+15/13 pre-grant
+faults/Quint14/26 actual C+JSC traces/430 states/200 samples/five compiled guards;
+backpressure48+28 with explicit synthetic ticket/terminal/close facts; full112
+retains112. CONTROL031/OpenSpec five scenarios. Next PUBLIC87 then native
+authenticated ordered current-projection channel and renderer lease/reload
+concealment, durable input/native-ticket custody/retry before actual WebKit/Core.
+Committed copies alone qualify no freshness, live uncertain worker recovery,
+delayed proposal outcome, actual DOM/URI/captured FD or full release. Native130
+legacy2518/278 remains actual baseline; installed desktop/foreign paths preserved.

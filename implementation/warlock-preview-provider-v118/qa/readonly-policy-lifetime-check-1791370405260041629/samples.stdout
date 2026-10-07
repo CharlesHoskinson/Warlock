@@ -1,0 +1,870 @@
+An example execution:
+
+[State 0]
+{ s: { closed: false, code: 0, controlled: false, held: true, history: [] } }
+
+[State 1]
+{
+  s:
+    {
+      closed: false,
+      code: 0,
+      controlled: false,
+      held: true,
+      history: ["TrustedClose"]
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      closed: false,
+      code: 0,
+      controlled: false,
+      held: false,
+      history: ["TrustedClose", "Destroy"]
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      controlled: false,
+      held: false,
+      history: ["TrustedClose", "Destroy", "Grant"]
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      controlled: false,
+      held: false,
+      history: ["TrustedClose", "Destroy", "Grant", "WrongThreadClose"]
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      controlled: false,
+      held: false,
+      history:
+        ["TrustedClose", "Destroy", "Grant", "WrongThreadClose", "ForeignRead"]
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      controlled: false,
+      held: false,
+      history:
+        [
+          "TrustedClose",
+          "Destroy",
+          "Grant",
+          "WrongThreadClose",
+          "ForeignRead",
+          "TrustedClose"
+        ]
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      controlled: false,
+      held: false,
+      history:
+        [
+          "TrustedClose",
+          "Destroy",
+          "Grant",
+          "WrongThreadClose",
+          "ForeignRead",
+          "TrustedClose",
+          "TrustedClose"
+        ]
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      controlled: false,
+      held: false,
+      history:
+        [
+          "TrustedClose",
+          "Destroy",
+          "Grant",
+          "WrongThreadClose",
+          "ForeignRead",
+          "TrustedClose",
+          "TrustedClose",
+          "Grant"
+        ]
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      controlled: false,
+      held: false,
+      history:
+        [
+          "TrustedClose",
+          "Destroy",
+          "Grant",
+          "WrongThreadClose",
+          "ForeignRead",
+          "TrustedClose",
+          "TrustedClose",
+          "Grant",
+          "Status"
+        ]
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      controlled: false,
+      held: false,
+      history:
+        [
+          "TrustedClose",
+          "Destroy",
+          "Grant",
+          "WrongThreadClose",
+          "ForeignRead",
+          "TrustedClose",
+          "TrustedClose",
+          "Grant",
+          "Status",
+          "Destroy"
+        ]
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      controlled: false,
+      held: false,
+      history:
+        [
+          "TrustedClose",
+          "Destroy",
+          "Grant",
+          "WrongThreadClose",
+          "ForeignRead",
+          "TrustedClose",
+          "TrustedClose",
+          "Grant",
+          "Status",
+          "Destroy",
+          "ForeignRead"
+        ]
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      controlled: false,
+      held: false,
+      history:
+        [
+          "TrustedClose",
+          "Destroy",
+          "Grant",
+          "WrongThreadClose",
+          "ForeignRead",
+          "TrustedClose",
+          "TrustedClose",
+          "Grant",
+          "Status",
+          "Destroy",
+          "ForeignRead",
+          "TrustedClose"
+        ]
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      controlled: false,
+      held: false,
+      history:
+        [
+          "TrustedClose",
+          "Destroy",
+          "Grant",
+          "WrongThreadClose",
+          "ForeignRead",
+          "TrustedClose",
+          "TrustedClose",
+          "Grant",
+          "Status",
+          "Destroy",
+          "ForeignRead",
+          "TrustedClose",
+          "Destroy"
+        ]
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      controlled: false,
+      held: false,
+      history:
+        [
+          "TrustedClose",
+          "Destroy",
+          "Grant",
+          "WrongThreadClose",
+          "ForeignRead",
+          "TrustedClose",
+          "TrustedClose",
+          "Grant",
+          "Status",
+          "Destroy",
+          "ForeignRead",
+          "TrustedClose",
+          "Destroy",
+          "ReadVisual"
+        ]
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      controlled: false,
+      held: false,
+      history:
+        [
+          "TrustedClose",
+          "Destroy",
+          "Grant",
+          "WrongThreadClose",
+          "ForeignRead",
+          "TrustedClose",
+          "TrustedClose",
+          "Grant",
+          "Status",
+          "Destroy",
+          "ForeignRead",
+          "TrustedClose",
+          "Destroy",
+          "ReadVisual",
+          "TrustedClose"
+        ]
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      controlled: false,
+      held: false,
+      history:
+        [
+          "TrustedClose",
+          "Destroy",
+          "Grant",
+          "WrongThreadClose",
+          "ForeignRead",
+          "TrustedClose",
+          "TrustedClose",
+          "Grant",
+          "Status",
+          "Destroy",
+          "ForeignRead",
+          "TrustedClose",
+          "Destroy",
+          "ReadVisual",
+          "TrustedClose",
+          "Status"
+        ]
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      controlled: false,
+      held: false,
+      history:
+        [
+          "TrustedClose",
+          "Destroy",
+          "Grant",
+          "WrongThreadClose",
+          "ForeignRead",
+          "TrustedClose",
+          "TrustedClose",
+          "Grant",
+          "Status",
+          "Destroy",
+          "ForeignRead",
+          "TrustedClose",
+          "Destroy",
+          "ReadVisual",
+          "TrustedClose",
+          "Status",
+          "Grant"
+        ]
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      controlled: false,
+      held: false,
+      history:
+        [
+          "TrustedClose",
+          "Destroy",
+          "Grant",
+          "WrongThreadClose",
+          "ForeignRead",
+          "TrustedClose",
+          "TrustedClose",
+          "Grant",
+          "Status",
+          "Destroy",
+          "ForeignRead",
+          "TrustedClose",
+          "Destroy",
+          "ReadVisual",
+          "TrustedClose",
+          "Status",
+          "Grant",
+          "Malformed"
+        ]
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      controlled: false,
+      held: false,
+      history:
+        [
+          "TrustedClose",
+          "Destroy",
+          "Grant",
+          "WrongThreadClose",
+          "ForeignRead",
+          "TrustedClose",
+          "TrustedClose",
+          "Grant",
+          "Status",
+          "Destroy",
+          "ForeignRead",
+          "TrustedClose",
+          "Destroy",
+          "ReadVisual",
+          "TrustedClose",
+          "Status",
+          "Grant",
+          "Malformed",
+          "Grant"
+        ]
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      controlled: false,
+      held: false,
+      history:
+        [
+          "TrustedClose",
+          "Destroy",
+          "Grant",
+          "WrongThreadClose",
+          "ForeignRead",
+          "TrustedClose",
+          "TrustedClose",
+          "Grant",
+          "Status",
+          "Destroy",
+          "ForeignRead",
+          "TrustedClose",
+          "Destroy",
+          "ReadVisual",
+          "TrustedClose",
+          "Status",
+          "Grant",
+          "Malformed",
+          "Grant",
+          "Malformed"
+        ]
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      controlled: false,
+      held: false,
+      history:
+        [
+          "TrustedClose",
+          "Destroy",
+          "Grant",
+          "WrongThreadClose",
+          "ForeignRead",
+          "TrustedClose",
+          "TrustedClose",
+          "Grant",
+          "Status",
+          "Destroy",
+          "ForeignRead",
+          "TrustedClose",
+          "Destroy",
+          "ReadVisual",
+          "TrustedClose",
+          "Status",
+          "Grant",
+          "Malformed",
+          "Grant",
+          "Malformed",
+          "TrustedClose"
+        ]
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      controlled: false,
+      held: false,
+      history:
+        [
+          "TrustedClose",
+          "Destroy",
+          "Grant",
+          "WrongThreadClose",
+          "ForeignRead",
+          "TrustedClose",
+          "TrustedClose",
+          "Grant",
+          "Status",
+          "Destroy",
+          "ForeignRead",
+          "TrustedClose",
+          "Destroy",
+          "ReadVisual",
+          "TrustedClose",
+          "Status",
+          "Grant",
+          "Malformed",
+          "Grant",
+          "Malformed",
+          "TrustedClose",
+          "WrongThreadClose"
+        ]
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      controlled: false,
+      held: false,
+      history:
+        [
+          "TrustedClose",
+          "Destroy",
+          "Grant",
+          "WrongThreadClose",
+          "ForeignRead",
+          "TrustedClose",
+          "TrustedClose",
+          "Grant",
+          "Status",
+          "Destroy",
+          "ForeignRead",
+          "TrustedClose",
+          "Destroy",
+          "ReadVisual",
+          "TrustedClose",
+          "Status",
+          "Grant",
+          "Malformed",
+          "Grant",
+          "Malformed",
+          "TrustedClose",
+          "WrongThreadClose",
+          "ReadVisual"
+        ]
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      controlled: false,
+      held: false,
+      history:
+        [
+          "TrustedClose",
+          "Destroy",
+          "Grant",
+          "WrongThreadClose",
+          "ForeignRead",
+          "TrustedClose",
+          "TrustedClose",
+          "Grant",
+          "Status",
+          "Destroy",
+          "ForeignRead",
+          "TrustedClose",
+          "Destroy",
+          "ReadVisual",
+          "TrustedClose",
+          "Status",
+          "Grant",
+          "Malformed",
+          "Grant",
+          "Malformed",
+          "TrustedClose",
+          "WrongThreadClose",
+          "ReadVisual",
+          "ForeignRead"
+        ]
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      controlled: false,
+      held: false,
+      history:
+        [
+          "TrustedClose",
+          "Destroy",
+          "Grant",
+          "WrongThreadClose",
+          "ForeignRead",
+          "TrustedClose",
+          "TrustedClose",
+          "Grant",
+          "Status",
+          "Destroy",
+          "ForeignRead",
+          "TrustedClose",
+          "Destroy",
+          "ReadVisual",
+          "TrustedClose",
+          "Status",
+          "Grant",
+          "Malformed",
+          "Grant",
+          "Malformed",
+          "TrustedClose",
+          "WrongThreadClose",
+          "ReadVisual",
+          "ForeignRead",
+          "Status"
+        ]
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      controlled: false,
+      held: false,
+      history:
+        [
+          "TrustedClose",
+          "Destroy",
+          "Grant",
+          "WrongThreadClose",
+          "ForeignRead",
+          "TrustedClose",
+          "TrustedClose",
+          "Grant",
+          "Status",
+          "Destroy",
+          "ForeignRead",
+          "TrustedClose",
+          "Destroy",
+          "ReadVisual",
+          "TrustedClose",
+          "Status",
+          "Grant",
+          "Malformed",
+          "Grant",
+          "Malformed",
+          "TrustedClose",
+          "WrongThreadClose",
+          "ReadVisual",
+          "ForeignRead",
+          "Status",
+          "TrustedClose"
+        ]
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      controlled: false,
+      held: false,
+      history:
+        [
+          "TrustedClose",
+          "Destroy",
+          "Grant",
+          "WrongThreadClose",
+          "ForeignRead",
+          "TrustedClose",
+          "TrustedClose",
+          "Grant",
+          "Status",
+          "Destroy",
+          "ForeignRead",
+          "TrustedClose",
+          "Destroy",
+          "ReadVisual",
+          "TrustedClose",
+          "Status",
+          "Grant",
+          "Malformed",
+          "Grant",
+          "Malformed",
+          "TrustedClose",
+          "WrongThreadClose",
+          "ReadVisual",
+          "ForeignRead",
+          "Status",
+          "TrustedClose",
+          "Malformed"
+        ]
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      controlled: false,
+      held: false,
+      history:
+        [
+          "TrustedClose",
+          "Destroy",
+          "Grant",
+          "WrongThreadClose",
+          "ForeignRead",
+          "TrustedClose",
+          "TrustedClose",
+          "Grant",
+          "Status",
+          "Destroy",
+          "ForeignRead",
+          "TrustedClose",
+          "Destroy",
+          "ReadVisual",
+          "TrustedClose",
+          "Status",
+          "Grant",
+          "Malformed",
+          "Grant",
+          "Malformed",
+          "TrustedClose",
+          "WrongThreadClose",
+          "ReadVisual",
+          "ForeignRead",
+          "Status",
+          "TrustedClose",
+          "Malformed",
+          "Destroy"
+        ]
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      controlled: false,
+      held: false,
+      history:
+        [
+          "TrustedClose",
+          "Destroy",
+          "Grant",
+          "WrongThreadClose",
+          "ForeignRead",
+          "TrustedClose",
+          "TrustedClose",
+          "Grant",
+          "Status",
+          "Destroy",
+          "ForeignRead",
+          "TrustedClose",
+          "Destroy",
+          "ReadVisual",
+          "TrustedClose",
+          "Status",
+          "Grant",
+          "Malformed",
+          "Grant",
+          "Malformed",
+          "TrustedClose",
+          "WrongThreadClose",
+          "ReadVisual",
+          "ForeignRead",
+          "Status",
+          "TrustedClose",
+          "Malformed",
+          "Destroy",
+          "Grant"
+        ]
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      controlled: false,
+      held: false,
+      history:
+        [
+          "TrustedClose",
+          "Destroy",
+          "Grant",
+          "WrongThreadClose",
+          "ForeignRead",
+          "TrustedClose",
+          "TrustedClose",
+          "Grant",
+          "Status",
+          "Destroy",
+          "ForeignRead",
+          "TrustedClose",
+          "Destroy",
+          "ReadVisual",
+          "TrustedClose",
+          "Status",
+          "Grant",
+          "Malformed",
+          "Grant",
+          "Malformed",
+          "TrustedClose",
+          "WrongThreadClose",
+          "ReadVisual",
+          "ForeignRead",
+          "Status",
+          "TrustedClose",
+          "Malformed",
+          "Destroy",
+          "Grant",
+          "Status"
+        ]
+    }
+}
+
+[ok] No violation found (181ms at 1105 traces/second).
+Trace length statistics: max=31, min=31, average=31.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

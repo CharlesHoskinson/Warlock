@@ -559,3 +559,24 @@ pixels, delivery ordering, resource budgets or full release acceptance. Before
 activation, native host custody SHALL deliver only the current typed visual
 projection through an authenticated original-domain channel with explicit
 ordering/reload/concealment barriers, preserving the single policy authority.
+
+EARS CONTROL-031: When the original native creator requests the current visual
+projection of an open controlled policy, the owner SHALL return a separately
+allocated copy of only the six typed visual fields from the latest successfully
+processed output. This read SHALL invoke no JavaScript, mutate no model, emit no
+command and allocate no native ordinal. Caller mutation or disposal of a copy
+SHALL leave the original private cache and every subsequent copy unchanged.
+
+When the caller is foreign, the output destination is missing, or authority is
+absent, closed, inflight or uncertain, the owner SHALL refuse with no projection.
+The caller SHALL conceal on refusal. While ordinary input is refused before
+processing by WOULD_BLOCK, the read SHALL retain the exact last committed visual
+projection, including its original quarantine concealment; it SHALL NOT imply
+that refused input was processed or release pending jobs, proposals or custody.
+
+When a read-only copy passes bounded component checks, the system SHALL NOT treat
+it as authenticated current delivery, a renderer lease, freshness, ordered
+replacement, actual DOM/URI/physical acceptance or permission to reconstruct an
+uncertain worker. Those host and renderer barriers SHALL remain required before
+activation. Native issuance, independent confirmation and physical retirement
+SHALL retain their original authorities and deadlines.

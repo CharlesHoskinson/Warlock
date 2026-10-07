@@ -373,3 +373,9 @@ exits; current lifetime37/13 faults/backpressure48/Quint8/20 actual C+JSC traces
 physical transitions remain unchanged. Three compile failures held. Actual DOM,
 current-projection delivery ordering/custody, controlled host/WebKit/Core/URI
 activation and all original full release gates remain open.
+
+- [x] Freeze CONTROL-031 creator-owned read-only visual copies, detached allocation,
+  authority refusal and exact reads under original ordinary input backpressure.
+  Preserve native issuer, policy/effect/physical gates and original checks.
+- [ ] Qualify actual native authenticated ordered projection delivery and renderer
+  leases/reload concealment; a committed copy alone provides no freshness proof.

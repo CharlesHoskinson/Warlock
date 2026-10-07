@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "sourceHeld": true,
+  "passed": true,
+  "evidenceIntegrityPassed": true,
+  "reports": {
+    "nativeElmOutbox": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v118/qa/readonly-visual-native-check-1791369815363217451/report.json",
+      "sha256": "72cafe4b856a1bd7b22603dc3b40fa2aa37941e60fdf54714641599704695f59"
+    },
+    "lifetime": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v118/qa/readonly-policy-lifetime-check-1791370405260041629/report.json",
+      "sha256": "2efc7ba97edd930a3c4d67b276eefd84747074bd185841eab309bd9aa6989bb2"
+    },
+    "backpressure": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v118/qa/readonly-policy-backpressure-check-1791370478900181453/report.json",
+      "sha256": "37f0d92c4e36aec3b122eacf646c03cd0f3138cb8a2a61b4215505fa2ce58bfe"
+    },
+    "build": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v118/qa/build-1791370489123176477/report.json",
+      "sha256": "793dc689602df113dde46348d9c96ea94c70571d440a76f1a0a9921b8a11f779"
+    }
+  },
+  "heldFailedReports": [],
+  "singlePreviewPolicy": true,
+  "parentElmPolicyUnchanged": true,
+  "parentNativeIssuerAndPhysicalProductUnchanged": true,
+  "parentAssetsAndAdaptersUnchanged": true,
+  "nativeOwnedJavaScriptCore": true,
+  "persistentPolicyContexts": 1,
+  "nativeElmOutboxChecks": 207,
+  "additiveVisualProjectionChecks": 90,
+  "readonlyProjectionChecks": 74,
+  "lifetimeBoundaryChecks": 37,
+  "readonlyBoundaryChecks": 15,
+  "constructorFaults": 13,
+  "lifetimeScenarios": 14,
+  "lifetimeTraces": 26,
+  "lifetimeStates": 430,
+  "lifetimeSamples": 200,
+  "lifetimeCompiledNativeVariantsDetected": 5,
+  "backpressureChecks": 48,
+  "backpressureReadonlyChecks": 28,
+  "backpressureFactsSynthetic": true,
+  "realmEpochs": 2,
+  "nativeGrantResets": 0,
+  "fullBuildCommands": 112,
+  "originalBuildCommands": 112,
+  "readonlyVisualCPUQualified": true,
+  "realHostPolicyActivated": false,
+  "actualRendererProjectionActivated": false,
+  "actualDOMQualified": false,
+  "projectionDeliveryOrderingQualified": false,
+  "realHostInputBackpressureQualified": false,
+  "nativeDelayedProposalLivenessQualified": false,
+  "uncertainLiveWorkerRecoveryQualified": false,
+  "fullElmRecoveryQualified": false,
+  "typedHostRoutingActivated": false,
+  "webKitActivated": false,
+  "actualWaylandWindowAcceptance": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "parentManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v117/component-manifest.json",
+  "parentManifestSHA256": "4cd06d8070029e0e4a0d6bd07013cc3db3fa95280acaece0ddaa067a48e71919",
+  "scope": "# Native read-only visual custody\n\nGUI118 adds a creator-owned getter returning a detached `g_malloc` string from\nthe last successfully processed private output. It copies only the six typed\nvisual fields. It calls no JavaScript and advances no policy, effect or ordinal.\nThe original policy implementation, native issuer and physical authority remain\nunchanged. A caller must free its copy and conceal on refusal.\n\nMissing owners/destinations refuse INVALID_INPUT; foreign threads refuse\nWRONG_THREAD; inflight or uncertain processing refuses PROCESSING_UNKNOWN;\nabsent or closed control authority refuses NO_VISUAL_AUTHORITY. Ordinary input\nbackpressure preserves the last committed projection. The getter neither accepts\nrefused inputs nor releases known jobs, proposals or physical resources.\n\nQualification retains the original207 native C/JSC controls plus90 visual\ncomparisons and adds74 read-only comparisons, with two native epochs, one\npersistent policy, two transport contexts and normal owned exits. Lifetime\nqualification retains37 original boundaries and13 pre-grant constructor faults,\nadds15 readonly boundaries, executes14 selected Quint scenarios and26 actual\nC/JSC traces/430 states with200 invariant samples, and detects five compiled\nnative guard variants. Caller-mutated copies do not alter subsequent reads.\nBackpressure retains48 original controls and adds28 exact visual comparisons;\nticket/terminal/close inputs in that fixture remain explicitly synthetic.\n\nThis is committed data custody, not a freshness or authenticated delivery channel.\nActual renderer leases, monotonic delivery, context/reload concealment, durable\nhost input/ticket custody, delayed proposal outcome/order and uncertain worker\nrecovery remain open. Actual WebKit/Core/DOM/URI/captured-resource acceptance and\nall original full release gates remain separate. The host route is inactive;\nNative130 GUI110 legacy2518/278 remains the actual bounded native baseline.\n"
+}
