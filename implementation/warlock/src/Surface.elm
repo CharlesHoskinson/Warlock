@@ -27,7 +27,7 @@ menuBlocked : Desktop.Model -> Bool
 menuBlocked model = MenuBridge.currentProvider model.windows.menus |> Maybe.map (Provider.incarnation >> familyBlocked model) |> Maybe.withDefault False
 
 recoveryNeeded : Desktop.Model -> Bool
-recoveryNeeded model = List.any (\transaction -> List.member transaction.status [Effects.Pending,Effects.Unknown]) model.windows.shell.effects.unresolved || (MenuBridge.menuSnapshot model.windows.menus).outstanding > 0
+recoveryNeeded model = List.any (\transaction -> List.member transaction.status [Effects.Pending,Effects.Unknown]) model.windows.shell.effects.unresolved || (model.windows.shell.effects.transaction |> Maybe.map (\transaction -> List.member transaction.status [Effects.Refused,Effects.Unknown]) |> Maybe.withDefault False) || (MenuBridge.menuSnapshot model.windows.menus).outstanding > 0
 
 recoveryControl : String -> Desktop.Model -> Control
 recoveryControl identity model =
@@ -140,7 +140,7 @@ windowNotice model =
             let (operation,label)=subject transaction
             in case transaction.status of
                 Effects.Pending -> operation ++ ": applying to " ++ label ++ "…"
-                Effects.Unknown -> operation ++ ": not confirmed for " ++ label ++ ". Check your windows; Refresh only reads status."
+                Effects.Unknown -> operation ++ ": not confirmed for " ++ label ++ (if model.windows.shell.phase==Shell.Detached then ". Reconnect to read window status; the action will not be repeated." else ". Check your windows; Refresh only reads status.")
                 Effects.Refused -> operation ++ ": refused for " ++ label ++ ". Refresh window status, then choose again."
                 Effects.Cancelled -> operation ++ ": cancelled for " ++ label ++ "."
                 Effects.Committed -> if recoveryNeeded model then reservationReason else Shell.status model.windows.shell

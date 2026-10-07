@@ -1,36 +1,33 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-07T21:44:44.466774+00:00",
+  "updatedUTC": "2026-10-07T22:02:24.269782+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "visible-window-feedback",
+    "id": "taskbar-focus-journey",
     "requirements": [
-      "ELM-UI-007"
+      "ELM-UI-004",
+      "ELM-UX-024"
     ],
     "scenarios": [
-      "restore-pending",
-      "restore-refused",
-      "restore-unknown"
+      "taskbar-group",
+      "ux-024"
     ],
-    "before": "Taskbar status is visually hidden; a generic recovery message masks Pending/Unknown.",
-    "after": "Window-action status is visible, distinct and persistent; Refresh remains observation-only.",
-    "state": "component-verified; native/AT verdict pending",
+    "before": "Popup dismissal has no accepted native focus-return journey; prior focus-related failures remain held.",
+    "after": "A taskbar picker/menu can be traversed and dismissed with focus returning to its eligible original recipient.",
+    "state": "investigating actual keyboard recipient before selecting the code fix",
     "paths": [
-      "src/Surface.elm",
-      "src/SurfaceRenderer.elm",
-      "assets/shell.css"
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/native/host.c"
     ],
     "verification": [
-      "typed-state projection and no new effects",
-      "actual compiled views in narrow/wide browser",
-      "native/AT original scenarios before acceptance"
-    ],
-    "evidence": "implementation/warlock/qa/evidence/window-feedback/manifest.json"
+      "actual native picker/menu traversal and Escape",
+      "native application keyboard recipient and no accidental window effect"
+    ]
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -45,5 +42,31 @@
   "releaseAccepted": false,
   "oldTrackerIsCurrent": false,
   "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle."
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
+    "id": "visible-window-feedback",
+    "requirements": [
+      "ELM-UI-007"
+    ],
+    "scenarios": [
+      "restore-pending",
+      "restore-refused",
+      "restore-unknown"
+    ],
+    "before": "Taskbar status is visually hidden; a generic recovery message masks Pending/Unknown.",
+    "after": "Window-action status is visible, distinct and persistent; Refresh remains observation-only.",
+    "state": "implemented; native pointer/status/recovery verified; original keyboard/context/AT verdict pending",
+    "paths": [
+      "src/Surface.elm",
+      "src/SurfaceRenderer.elm",
+      "assets/shell.css"
+    ],
+    "verification": [
+      "typed-state projection and no new effects",
+      "actual compiled views in narrow/wide browser",
+      "native/AT original scenarios before acceptance"
+    ],
+    "evidence": "implementation/warlock/qa/evidence/window-feedback/manifest.json",
+    "additionalEvidence": "implementation/warlock/qa/evidence/window-feedback-native/manifest.json"
+  }
 }

@@ -1,0 +1,306 @@
+[
+  {
+    "protocolVersion": 3,
+    "kind": "projection-request",
+    "binding": {
+      "lifetime": "16552051133890853640",
+      "session": "3",
+      "frontend": "1"
+    },
+    "requestId": "1"
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "geometry-attach",
+    "geometryProtocol": 2,
+    "binding": {
+      "lifetime": "16552051133890853640",
+      "session": "3",
+      "frontend": "1"
+    },
+    "requestId": "2"
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "geometry-facts-request",
+    "geometryProtocol": 2,
+    "binding": {
+      "lifetime": "16552051133890853640",
+      "session": "3",
+      "frontend": "1"
+    },
+    "requestId": "3",
+    "minimumWatermark": "0"
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "window-effect",
+    "effectProtocol": 1,
+    "binding": {
+      "lifetime": "16552051133890853640",
+      "session": "3",
+      "frontend": "1"
+    },
+    "intent": {
+      "request": "1",
+      "generation": "1",
+      "incarnation": "2",
+      "operation": "minimize",
+      "context": {
+        "lifetime": "16552051133890853640",
+        "epoch": "1",
+        "output": "1",
+        "revision": "1"
+      }
+    }
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "projection-request",
+    "binding": {
+      "lifetime": "16552051133890853640",
+      "session": "3",
+      "frontend": "1"
+    },
+    "requestId": "4"
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "geometry-facts-request",
+    "geometryProtocol": 2,
+    "binding": {
+      "lifetime": "16552051133890853640",
+      "session": "3",
+      "frontend": "1"
+    },
+    "requestId": "5",
+    "minimumWatermark": "1"
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "projection-request",
+    "binding": {
+      "lifetime": "16552051133890853640",
+      "session": "3",
+      "frontend": "1"
+    },
+    "requestId": "6"
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "geometry-facts-request",
+    "geometryProtocol": 2,
+    "binding": {
+      "lifetime": "16552051133890853640",
+      "session": "3",
+      "frontend": "1"
+    },
+    "requestId": "7",
+    "minimumWatermark": "2"
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "window-effect",
+    "effectProtocol": 1,
+    "binding": {
+      "lifetime": "16552051133890853640",
+      "session": "3",
+      "frontend": "1"
+    },
+    "intent": {
+      "request": "2",
+      "generation": "2",
+      "incarnation": "2",
+      "operation": "restore",
+      "context": {
+        "lifetime": "16552051133890853640",
+        "epoch": "1",
+        "output": "1",
+        "revision": "2"
+      }
+    }
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "projection-request",
+    "binding": {
+      "lifetime": "16552051133890853640",
+      "session": "3",
+      "frontend": "1"
+    },
+    "requestId": "8"
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "geometry-facts-request",
+    "geometryProtocol": 2,
+    "binding": {
+      "lifetime": "16552051133890853640",
+      "session": "3",
+      "frontend": "1"
+    },
+    "requestId": "9",
+    "minimumWatermark": "3"
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "projection-request",
+    "binding": {
+      "lifetime": "16552051133890853640",
+      "session": "3",
+      "frontend": "1"
+    },
+    "requestId": "10"
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "geometry-facts-request",
+    "geometryProtocol": 2,
+    "binding": {
+      "lifetime": "16552051133890853640",
+      "session": "3",
+      "frontend": "1"
+    },
+    "requestId": "11",
+    "minimumWatermark": "4"
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "projection-request",
+    "binding": {
+      "lifetime": "16552051133890853640",
+      "session": "3",
+      "frontend": "1"
+    },
+    "requestId": "12"
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "geometry-facts-request",
+    "geometryProtocol": 2,
+    "binding": {
+      "lifetime": "16552051133890853640",
+      "session": "3",
+      "frontend": "1"
+    },
+    "requestId": "13",
+    "minimumWatermark": "5"
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "window-effect",
+    "effectProtocol": 1,
+    "binding": {
+      "lifetime": "16552051133890853640",
+      "session": "3",
+      "frontend": "1"
+    },
+    "intent": {
+      "request": "3",
+      "generation": "3",
+      "incarnation": "2",
+      "operation": "restore",
+      "context": {
+        "lifetime": "16552051133890853640",
+        "epoch": "1",
+        "output": "1",
+        "revision": "4"
+      }
+    }
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "projection-request",
+    "binding": {
+      "lifetime": "16552051133890853640",
+      "session": "4",
+      "frontend": "1"
+    },
+    "requestId": "14"
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "reconciliation-ready",
+    "binding": {
+      "lifetime": "16552051133890853640",
+      "session": "4",
+      "frontend": "1"
+    },
+    "proofRequestId": "1",
+    "queriedBinding": {
+      "lifetime": "16552051133890853640",
+      "session": "3",
+      "frontend": "1"
+    }
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "projection-request",
+    "binding": {
+      "lifetime": "16552051133890853640",
+      "session": "4",
+      "frontend": "1"
+    },
+    "requestId": "15"
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "geometry-attach",
+    "geometryProtocol": 2,
+    "binding": {
+      "lifetime": "16552051133890853640",
+      "session": "4",
+      "frontend": "1"
+    },
+    "requestId": "16"
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "reconciliation-ready",
+    "binding": {
+      "lifetime": "16552051133890853640",
+      "session": "4",
+      "frontend": "1"
+    },
+    "proofRequestId": "1",
+    "queriedBinding": {
+      "lifetime": "16552051133890853640",
+      "session": "3",
+      "frontend": "1"
+    }
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "geometry-facts-request",
+    "geometryProtocol": 2,
+    "binding": {
+      "lifetime": "16552051133890853640",
+      "session": "4",
+      "frontend": "1"
+    },
+    "requestId": "17",
+    "minimumWatermark": "0"
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "projection-request",
+    "binding": {
+      "lifetime": "16552051133890853640",
+      "session": "4",
+      "frontend": "1"
+    },
+    "requestId": "18"
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "geometry-facts-request",
+    "geometryProtocol": 2,
+    "binding": {
+      "lifetime": "16552051133890853640",
+      "session": "4",
+      "frontend": "1"
+    },
+    "requestId": "19",
+    "minimumWatermark": "7"
+  }
+]

@@ -5912,6 +5912,7 @@ var $author$project$Surface$recoveryControl = F2(
 					$author$project$TaskbarShell$Native($author$project$Shell$Refresh)))
 		};
 	});
+var $author$project$Effects$Refused = 2;
 var $author$project$MenuBridge$menuSnapshot = function (_v0) {
 	var state = _v0;
 	return $author$project$Menu$snapshot(state.aU);
@@ -5926,7 +5927,19 @@ var $author$project$Surface$recoveryNeeded = function (model) {
 				_List_fromArray(
 					[0, 4]));
 		},
-		model.a.b.aD.d) || ($author$project$MenuBridge$menuSnapshot(model.a.O).dH > 0);
+		model.a.b.aD.d) || (A2(
+		$elm$core$Maybe$withDefault,
+		false,
+		A2(
+			$elm$core$Maybe$map,
+			function (transaction) {
+				return A2(
+					$elm$core$List$member,
+					transaction.k,
+					_List_fromArray(
+						[2, 4]));
+			},
+			model.a.b.aD.l)) || ($author$project$MenuBridge$menuSnapshot(model.a.O).dH > 0));
 };
 var $author$project$Shell$stampKey = function (_v0) {
 	var binding = _v0.a;
@@ -6442,7 +6455,6 @@ var $author$project$Surface$mode = function (model) {
 		$elm$core$Maybe$Nothing)) ? 'menu' : ((!_Utils_eq(model.a.R, $elm$core$Maybe$Nothing)) ? 'picker' : 'closed'));
 };
 var $author$project$Effects$Cancelled = 3;
-var $author$project$Effects$Refused = 2;
 var $author$project$Surface$reservationReason = 'Window action awaits native confirmation. Refresh status only reads observations; it does not retry the action.';
 var $author$project$Shell$status = function (model) {
 	if (model.br) {
@@ -6534,7 +6546,7 @@ var $author$project$Surface$windowNotice = function (model) {
 			case 0:
 				return operation + (': applying to ' + (label + '…'));
 			case 4:
-				return operation + (': not confirmed for ' + (label + '. Check your windows; Refresh only reads status.'));
+				return operation + (': not confirmed for ' + (label + ((!model.a.b.aK) ? '. Reconnect to read window status; the action will not be repeated.' : '. Check your windows; Refresh only reads status.')));
 			case 2:
 				return operation + (': refused for ' + (label + '. Refresh window status, then choose again.'));
 			case 3:

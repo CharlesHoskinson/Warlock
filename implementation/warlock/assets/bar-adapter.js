@@ -31,7 +31,9 @@ if (window.elmHostQA) {
       const r=button.getBoundingClientRect();return {id:button.id,label:button.textContent,accessibleName:button.getAttribute('aria-label'),disabled:button.disabled,x:r.x,y:r.y,width:r.width,height:r.height};
     });
     const node=document.querySelector('.surface-bar,.surface-bar');
-    const body={publication:node?.dataset.publication||null,lease:node?.dataset.lease||null,buttons,focus:document.activeElement?.id||'',text:document.body.innerText};
+    const status=document.querySelector('[role="status"]'),box=status?.getBoundingClientRect(),style=status&&getComputedStyle(status);
+    const feedback=status?{text:status.textContent,accessibleName:status.getAttribute('aria-label'),live:status.getAttribute('aria-live'),atomic:status.getAttribute('aria-atomic'),x:box.x,y:box.y,width:box.width,height:box.height,clip:style.clipPath,display:style.display}:null;
+    const body={publication:node?.dataset.publication||null,lease:node?.dataset.lease||null,buttons,feedback,focus:document.activeElement?.id||'',text:document.body.innerText};
     const current=JSON.stringify(body);if(current!==last){last=current;post({kind:'surface-report',body});}
   });
   document.addEventListener('scroll',observe,true);
