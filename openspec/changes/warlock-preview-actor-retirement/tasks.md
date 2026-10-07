@@ -426,3 +426,13 @@ activation and all original full release gates remain open.
   independent offscreen source pixels in GUI126/Native136 with all original16
   admission/drain checks retained; actual stale callback, physical frame/reveal,
   resource/performance and recovery/full release gates remain open.
+
+- [ ] Qualify CONTROL-038 original native popup paint/geometry callback ownership
+  and independent actual output-region concealment with an actual unsafe-curtain
+  control; preserve GTK-phase versus compositor/hardware/ongoing reveal boundaries.
+
+- [x] Freeze bounded CONTROL-038 native popup/GTK paint/current geometry observation
+  and actual output-region concealment detector: GUI127/Native138 positive29/13
+  plus actual unsafe GUI128/Native139 rejected by the unchanged native oracle.
+  Stale callbacks, ongoing transitions, physical reveal/hardware and recovery/full
+  release remain open; the unsafe variant is retained failure evidence only.

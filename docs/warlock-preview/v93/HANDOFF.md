@@ -480,3 +480,36 @@ pixels frozen, broader stale/physical/recovery gates remain open. PUBLIC93 then
 actual frame/physical concealment and stale asynchronous snapshot qualification.
 Original deadlines/strict close/Native/Core/Elm policy/physical authority unchanged;
 curtain remains closed and offscreen pixels grant no physical reveal authority.
+
+GUI126/Native136 PUBLIC93 6723ef8d72aea0ead4b3434f5fdff1825db93144/1910
+exact owned blobs; sourcea32af78b824c79f6e77214739dfcc1594a45c04d;
+receipt2e567bce2a3458bef1782e308ab19c1888b0071b, public branch verified.
+Native137 unchangedGUI126 adds original grim800x600 private output/current native
+image context before/after capture: original21 retained,26 checks/12 normal exits,
+private cleanup. Actual output shows blank native popup under opacity0; no physical
+concealment/frame/hardware claim. Native13792files held. Fresh GUI127 adds bounded
+original-popup/view/epoch/navigation/publication/lease/projection GTK after-paint
+callback with strong single observer and cancellation plus read-only GDK geometry.
+Full119 passed. Independent region decoder detects zero preview pixels in held
+native output and19200 red in held WebKit reference; this is decoder fixture
+evidence, not new native concealment. Native138 checked-live-region probe next,
+then actual unsafe-curtain control before bounded qualification. CONTROL-038
+EARS/OpenSpec preserves GTK-phase versus physical-presentation boundaries.
+
+GUI127/Native138 positive29checks/13 normal exits/private cleanup/full119 held:
+original native popup current projection/view scope logs actual GTKframe6,
+geometry50,48,700,420/opacity0. Independent actual output region58,96,684,364
+contains248976 opaque samples and zero preview colors while current pure WebKit
+reference has19200 red pixels. GUI1271791files/Native13893files held positive.
+Intentional unsafe GUI128 changes only native curtain helper0to1. Full119 passes;
+byte-identical Native139 oracle fails exactly its original closed-curtain assertion
+with19200 actual native preview pixels/opacity1 in the same region. Host exits1,
+original policy membership/ingress/deferred custody refuses strict close; all
+other11 owned processes exit0/private cleanup passes. Expected failure26checks,
+not accepted integration. GUI1281791files/Native13992files held; actual output
+inspected. Separate component-curtain-control-report qualifies only corresponding
+positive bounded region detector; immutable GUI127 manifest still records its
+earlier positive-only scope. CONTROL-038 bounded task checked, stale callbacks,
+ongoing transition concealment/frame/reveal/hardware/recovery/full release open.
+PUBLIC94 next, then fresh safe GUI129 from positiveGUI127 for actual delayed
+snapshot callback through closure, preserving original policy/native custody.

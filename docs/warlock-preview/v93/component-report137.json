@@ -1,0 +1,144 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "sourceHeld": true,
+  "passed": true,
+  "cpuBuildPassed": true,
+  "fullBuildCommands": 119,
+  "actualNativeGTKAdmissionObserved": true,
+  "actualPureRendererInitializationObserved": true,
+  "actualPureRendererInitializationQualified": true,
+  "actualCurrentProjectionDOMReceiptObserved": true,
+  "actualControlledAdmissionAndDrainQualified": true,
+  "normalControlledHostClosureQualified": true,
+  "privateSessionCleanupPassed": true,
+  "nativeChecks": 26,
+  "normalOwnedExits": 12,
+  "nativeGrantResets": 0,
+  "singlePreviewPolicy": true,
+  "originalNativePolicyIssuerPhysicalProductUnchanged": true,
+  "compiledPageAssetClosureQualified": true,
+  "physicalConcealmentQualified": false,
+  "physicalRevealQualified": false,
+  "actualCapturedPixelsQualified": true,
+  "actualScopedURIImageLoadObserved": true,
+  "actualOffscreenWebKitPixels": {
+    "width": 700,
+    "height": 420,
+    "red": 19200,
+    "green": 0,
+    "blue": 0,
+    "yellow": 0,
+    "cyan": 0,
+    "opaque": 294000,
+    "points": {
+      "root": [
+        23,
+        32,
+        42,
+        255
+      ],
+      "old": [
+        23,
+        32,
+        42,
+        255
+      ],
+      "moved": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "nested": [
+        255,
+        0,
+        0,
+        255
+      ]
+    }
+  },
+  "actualStaleSnapshotCallbackQualified": false,
+  "fullWorkloadProgressQualified": false,
+  "measuredRSSQualified": false,
+  "reloadRecoveryQualified": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "Actual unchanged GUI126 controlled pure-renderer pixels plus real private Wayland output observed while original native image/accepted resource/context stayed current before and after capture. All original21 image/admission/drain checks retained;26 checks/12 owned normal exits/private cleanup/original deadline6/core16/plugin19/AQ155. Original grim capture and independent PNG oracle produce800x600 output; actual snapshot shows the closed opacity curtain as a blank native popup. No reliable original popup-geometry/frame concealment oracle or negative control has yet been qualified. This observation does not establish physical concealment/reveal or hardware presentation. Original policy/native physical/journal/confirmation/strict close unchanged; all pressure/workload/RSS/recovery/full preview/release gates remain open.",
+  "reports": {
+    "build": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v126/qa/build-1791384223518189496/report.json",
+      "sha256": "cfd07b2bd3581b73fc378e6ba5d7de05a292311bae128b685393753e70de3244"
+    },
+    "controlledNative": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v137/qa/native-controlled-1791384978375197831/report.json",
+      "sha256": "c6f3a0e747abf76cba3013ef4d1648e37d6a10372b2f57d844f3feaafca46367"
+    }
+  },
+  "heldFailedPredecessors": [
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v122/component-manifest.json",
+      "sha256": "734fe4d52aa6d5e0f877ae93250f0cfbe7bfe2a65b2fef1531c4fe3d98f71a6a"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v132/component-manifest.json",
+      "sha256": "c7d497dd69be1c2beba0668a1cd47f0514041f82191246780c512e1ad7bd2c57"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v123/component-manifest.json",
+      "sha256": "c414763b2a3ea2e73f1b7772b3488ec36073b0666ea2d4f82bdb6696231bbba8"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v133/component-manifest.json",
+      "sha256": "662d3295d1a16cdb420d7737cf5241c6fc4f5024482b427d4360cabd6a80a4a0"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v124/component-manifest.json",
+      "sha256": "063ba4fa224a49cd33bf133b41fc8924d2af4cf72fd007e06e0ef2ab78c47949"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v134/component-manifest.json",
+      "sha256": "7760c7bcfd3ceee70070d341067aac008b0dff59d9bbd568d47ab4fd425db884"
+    }
+  ],
+  "actualPrivateWaylandOutputObserved": true,
+  "actualPrivateWaylandOutputPixels": {
+    "width": 800,
+    "height": 600,
+    "red": 248,
+    "green": 105545,
+    "blue": 0,
+    "yellow": 0,
+    "cyan": 0,
+    "opaque": 480000,
+    "points": {
+      "root": [
+        38,
+        53,
+        68,
+        255
+      ],
+      "old": [
+        38,
+        53,
+        68,
+        255
+      ],
+      "moved": [
+        246,
+        245,
+        244,
+        255
+      ],
+      "nested": [
+        246,
+        245,
+        244,
+        255
+      ]
+    }
+  },
+  "hardwarePresentationQualified": false,
+  "parentManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v136/component-manifest.json",
+  "parentManifestSHA256": "a2fd2c8b7f276a5af155ba3fb8a9eb33df2fad1f69cc2134d0f0f679cdcb0691"
+}

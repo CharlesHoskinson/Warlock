@@ -736,3 +736,16 @@ projection again before writing accepted pixel evidence. A stale observation
 SHALL be consumed without settling or replaying a policy/native effect. Actual
 image loading and independently decoded offscreen pixels SHALL remain distinct
 from physical frame/concealment/reveal authority; the curtain SHALL remain closed.
+
+EARS CONTROL-038: When recording a private native popup paint observation,
+native SHALL retain the original popup/view/frame-clock objects, epoch,
+navigation, publication, lease and projection for at most one pending callback.
+Supersession, frame invalidation, uncertainty and shutdown SHALL cancel that
+observer without altering policy/native effects or custody. The GTK after-paint
+callback SHALL revalidate those original objects and current acknowledged native
+projection before recording GDK geometry, actual opacity and GTK frame counter.
+GTK after-paint and GDK geometry SHALL NOT certify compositor or hardware
+presentation. A private output-region concealment claim SHALL require a current
+actual source-image reference, checked native region, independent output pixels
+and an actual unsafe-curtain control detected by the same oracle. That bounded
+claim SHALL NOT certify ongoing transition concealment, physical reveal or recovery.

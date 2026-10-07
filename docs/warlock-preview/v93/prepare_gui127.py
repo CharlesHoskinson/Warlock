@@ -1,0 +1,17 @@
+"""Own the actual controlled host derivative; held source stays immutable."""
+import hashlib,json,pathlib,resource,shutil,sys
+sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
+require_qa_scope();assert resource.getrlimit(resource.RLIMIT_CORE)==(1,1)
+repo=pathlib.Path('/home/hoskinson/omarchy-windows-parity');parent=repo/'implementation/warlock-preview-provider-v126';root=repo/'implementation/warlock-preview-provider-v127';sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+m=parent/'component-manifest.json';d=json.loads(m.read_text());assert d['sourceHeld'] and d['passed'] and d['normalControlledHostClosureQualified'] and d['cpuBuildPassed'] and d['actualNativeGTKAdmissionObserved'] and not root.exists()
+for rel,row in d['files'].items():assert sha(parent/rel)==row['sha256'],rel
+native=repo/'implementation/warlock-client-provider-native-v137/component-manifest.json';n=json.loads(native.read_text());assert n['sourceHeld'] and n['passed'] and n['normalControlledHostClosureQualified'] and n['privateSessionCleanupPassed']
+for rel,row in n['files'].items():assert sha(native.parent/rel)==row['sha256'],rel
+def ignore(path,names):
+ if pathlib.Path(path)==parent:return [x for x in names if x in {'component-manifest.json','ANCESTRY.json','__pycache__'}]
+ if pathlib.Path(path)==parent/'qa':return [x for x in names if (pathlib.Path(path)/x).is_dir() and x!='toolchain']
+ return [x for x in names if x in {'__pycache__','elm-stuff'}]
+shutil.copytree(parent,root,ignore=ignore)
+(root/'ANCESTRY.json').write_text(json.dumps({'owner':'f6779148-8f5d-4bdf-8a0f-044184e486f2','parent':str(parent),'parentManifestSHA256':sha(m),'nativeBaselineManifest':str(native),'nativeBaselineManifestSHA256':sha(native),'purpose':'Fresh derivative of held actual pure-renderer pixels GUI126 and native output observation Native137. Add private original popup/view/epoch/navigation/current-projection bound GTK after-paint and GDK popup geometry observations, with strong single pending callback ownership and cancellation. Geometry and GTK paint phase are not compositor presentation proof. Preserve actual URI loading/pixels, one native policy, original deadlines, native issuer/physical/journal/confirmation and strict close. Curtain remains opacity0. Next independent native popup-region concealment oracle and real unsafe-curtain control; no physical reveal or release qualification from this preparation.','nativeAcceptance':False,'fullReleaseAccepted':False},indent=2)+'\n')
+sys.path.insert(0,str(repo/'implementation/elm-build-loop-v1'));import loop
+print(loop.write_checkpoint(repo,'f6779148-8f5d-4bdf-8a0f-044184e486f2',str(root.relative_to(repo)),['PROGRESS ownGUI127 after held actual GUI126/Native136 pixels21checks10exits/PUBLIC93 and Native137 output26checks12exits. Add private original-popup/context/current-projection bound GTK after-paint/GDK geometry record with strong single pending callback ownership and cancellation; GTK phase is not compositor proof. Next full current build, actual Native138 output observation with checked native region, then real unsafe-curtain negative control before bounded concealment qualification. Original GTK/Native/Core/Elm policy/deadlines/effects/physical/journal/confirmation/strict close preserved; curtain0/reveal/recovery/full release open. Installed/drafts/foreign untouched.'],'progress',[str(m.relative_to(repo)),str(native.relative_to(repo)),str((root/'ANCESTRY.json').relative_to(repo))]))

@@ -1404,3 +1404,28 @@ authority to image reports or offscreen WebKit snapshots.
 - **WHEN** exact source colors and foreign-content exclusion pass
 - **THEN** that bounded rendered-image evidence is retained
 - **AND** physical frame/concealment/reveal and recovery/full release gates remain open
+
+### Requirement: Bind private GTK paint and output-region evidence to original native custody
+
+The system SHALL implement EARS CONTROL-038 while preserving the closed curtain
+and all original policy/native effect and closure authorities.
+
+#### Scenario: A current native projection schedules a paint observation
+- **WHEN** native attaches its private observer to the original popup frame clock
+- **THEN** at most one callback retains the original popup/view and projection scope
+- **AND** supersession, invalidation, uncertainty and shutdown release that observer
+
+#### Scenario: A stale paint callback runs
+- **WHEN** its original view, popup, epoch, navigation, publication, lease or projection differs
+- **THEN** it produces no accepted geometry/paint observation or reveal authority
+
+#### Scenario: Native observes the current GTK paint phase
+- **WHEN** all original object and current projection guards pass
+- **THEN** native records actual GDK geometry, opacity and GTK frame counter
+- **AND** that phase remains distinct from compositor and hardware presentation
+
+#### Scenario: A closed-curtain output region is reviewed
+- **GIVEN** a current actual source image and independently decoded private output region
+- **WHEN** the same oracle also detects an actual unsafe-curtain variant
+- **THEN** only that bounded region observation may be qualified
+- **AND** ongoing transition concealment, physical reveal and recovery remain open
