@@ -1,0 +1,16 @@
+{
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "failedLauncherScope": "02e62c65bb0c4f099635b922e9ee214b",
+  "script": "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v93/prepare_native175_cancelled_snapshot_normal.py",
+  "scriptSHA256": "7db5da85b57b9531ba27a8479366488d0ab61867570c286a27ef48b064b8454b",
+  "failedAssertion": "len(reports)==1",
+  "exitCode": 1,
+  "cause": "Packaging launched before dependent full build completed; no passing report existed.",
+  "nativeRootAbsentBeforeRetry": true,
+  "nativeLaunchedOnFailedAttempt": false,
+  "confirmedBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v140/qa/build-1791399202008242593/report.json",
+  "confirmedBuildSHA256": "73b9b3e95ce8a1cd912279a9151602a7ace51bf9602efd6afcc014683edc3e60",
+  "retryUsesUnchangedPackagingScript": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

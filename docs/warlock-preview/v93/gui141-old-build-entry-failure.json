@@ -1,0 +1,13 @@
+{
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "failedScope": "f8ab1731bffb4df9b057335dc2274947",
+  "report": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v141/qa/build-1791400298601984305/report.json",
+  "reportSHA256": "a5150c8cdc19c4565bb591368e9acd2e1f8f04ab88583d315f144ad015c2d910",
+  "linkerStderr": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v141/qa/build-1791400298601984305/host-build.stderr",
+  "linkerStderrSHA256": "91deeb1e7cb7e60f8bc7df7c650da3505d4f290ee3518ec7c20165fc5ffd18da",
+  "failure": "Historical qa/build.py lacks controlled policy/visual/router linker objects; changed C compilation passed.",
+  "correction": "Invoke unchanged inherited qa/build-controlled-host.py full119 entry point. No source/oracle/deadline changes.",
+  "nativeLaunchedFromFailedBuild": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

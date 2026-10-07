@@ -1,0 +1,80 @@
+{
+  "passed": true,
+  "inputs": {
+    "spec/known_renderer_reload.qnt": "6806ddc34e9f5b031f6014dfd0a126580398e35d6e1cd49b0e1b12745b020233",
+    "spec/known_renderer_reload_tests.qnt": "7e70b1e955ccbd3cef68125f35d31c86760fff8c615356ed32ed3e381686bf44",
+    "qa/known-renderer-reload-model.py": "a1ba5f3dd08e22b04df328e0f82714f55297f13418a7fca7e8f5733404dc149a"
+  },
+  "quint": {
+    "path": "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+    "sha256": "bd6e9400f6358a8a69d80eb636eb62f59f993039868a7be9719f76ba74191b4e"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "known_renderer_reload_tests.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "known_renderer_reload_tests.qnt",
+        "--main=known_renderer_reload_tests",
+        "--backend=typescript",
+        "--match=^(legacyReloadBecomesUncertain|reloadDoesNotSettleOriginalCustody|nativeSettlementPrecedesStrictReplacement|freshDOMPrecedesAdmission|laterEpochKeepsPolicyAndLease|staleCallbackHasNoAuthority|laterIntentCannotCancelDrain|unknownPreventsReplacement|currentFailureCannotRecoverAsSuccess)$",
+        "--seed=1410041",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v141/qa/known-renderer-reload-model-1791400298603411457/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "samples",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "known_renderer_reload.qnt",
+        "--main=known_renderer_reload",
+        "--backend=typescript",
+        "--invariant=safety",
+        "--seed=1410042",
+        "--max-samples=200",
+        "--max-steps=32",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v141/qa/known-renderer-reload-model-1791400298603411457/samples.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "scope": "Bounded known same-URI renderer reload abstraction: one original policy and popup lease, strict Native settlement/closure BEFORE renderer replacement and fresh DOM/fixed grant/later epoch, navigation/snapshot chronology, stale callback no authority, sticky retirement and Unknown/failure no reset/replay. NativeSettled is an independently required original physical/journal/confirmation witness, not inferred from UI or this model. Actual failed140/176 and same unchanged native oracle required; no full native refinement, arbitrary/process/uncertain recovery, original deadline/hardware/physical reveal/full release claim.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "namedScenarios": 9,
+  "invariantSamples": 200,
+  "artifacts": {
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-legacyReloadBecomesUncertain-0.itf.json": "c6c84c975ccf22ca7ffc3eb0f62c24ce22953f22723a41d4e8accd82166989a7",
+    "named-reloadDoesNotSettleOriginalCustody-1.itf.json": "9bfa3d695a6338bcbab7684dbe066ef4aae7a19949cfeca59cd2b8bb579267d0",
+    "named-nativeSettlementPrecedesStrictReplacement-2.itf.json": "65e59408bac7d523c7cd419d8aaac1aebadc16aaeac1661af88ff60a7f61779a",
+    "named-freshDOMPrecedesAdmission-3.itf.json": "54383888c02bcfb591c4a70ecec45ef0c2581710a0cdb57e873b390384524c4d",
+    "named-laterEpochKeepsPolicyAndLease-4.itf.json": "bf90b08e4c1144f43fd9d058fd0f078796c8d84522b3320a94b1c96686c8b611",
+    "named-staleCallbackHasNoAuthority-5.itf.json": "3aca44bcc1f0bc1cafc76ddff766df3a6e79fa5acc08b0e050260a93cdb7f60c",
+    "named-laterIntentCannotCancelDrain-6.itf.json": "c9bf2d50946aad6dcc1a95f518f69f77f6e25e7a4c6247932628235f0b480647",
+    "named-unknownPreventsReplacement-7.itf.json": "64f7559df8a04a17b033628a2f1a631c60723bad4c8bf916a32f454a4338ee5d",
+    "named-currentFailureCannotRecoverAsSuccess-8.itf.json": "386bff4e7349ac753eec75139bc94b6e42b170262259f74b5b893724d64e5f78",
+    "selected.stdout": "648806a24d23a941357b35ded4d6600d21d75931812aaa829ef607761e283e48",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "samples.itf.json": "02c2702f252995457744f0464ad22d98e708aaf6bc71fa81a32cfed74266c228",
+    "samples.stdout": "c56765a3d5edad1eb67a4cf8788c6e70d9523f916a530c6196211792500e1065",
+    "samples.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/spec/known_renderer_reload.qnt": "6806ddc34e9f5b031f6014dfd0a126580398e35d6e1cd49b0e1b12745b020233",
+    "inputs/spec/known_renderer_reload_tests.qnt": "7e70b1e955ccbd3cef68125f35d31c86760fff8c615356ed32ed3e381686bf44",
+    "inputs/qa/known-renderer-reload-model.py": "a1ba5f3dd08e22b04df328e0f82714f55297f13418a7fca7e8f5733404dc149a"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "06288d2a661a434fa2c4bd412a748bee",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-07T19:05:08.438347+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/warlock-preview-provider-v140",
+  "nextWork": [
+    "PROGRESS preserve premature packaging and nonexistent checkpoint-path failures before any source/native launch. Confirmed full119 hashes; invoke original unchanged Native175 packaging. Existing source slice used for checkpoint."
+  ],
+  "evidence": [
+    {
+      "path": "docs/warlock-preview/v93/native175-premature-packaging-failure.json",
+      "sha256": "fb67c8c85d7300701cc8adc5013872a217749c0d16d57fe7ef9bbb03b8ace662",
+      "size": 912
+    },
+    {
+      "path": "docs/warlock-preview/v93/native175-retry-checkpoint-failure.json",
+      "sha256": "d009b9be0af5c74f8b2f3e62c55fb517a9854d001178eddfa78d361d1d9eb1fd",
+      "size": 497
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

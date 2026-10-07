@@ -1,0 +1,59 @@
+/usr/bin/ld: /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v141/qa/build-1791400298601984305/preview-uri-webkit.cpp.o: in function `dispatch(void*, PreviewURIRouter*, _WebKitURISchemeRequest*)':
+preview-uri-webkit.cpp:(.text+0x130): undefined reference to `preview_uri_router_open'
+/usr/bin/ld: /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v141/qa/build-1791400298601984305/host.o: in function `controlled_flush':
+shared-host.c:(.text+0xe64): undefined reference to `warlock_policy_driver_presentation'
+/usr/bin/ld: shared-host.c:(.text+0xed5): undefined reference to `warlock_policy_driver_native'
+/usr/bin/ld: /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v141/qa/build-1791400298601984305/host.o: in function `controlled_report_status':
+shared-host.c:(.text+0x36ad): undefined reference to `warlock_policy_driver_inspect'
+/usr/bin/ld: /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v141/qa/build-1791400298601984305/host.o: in function `controlled_after_paint':
+shared-host.c:(.text+0x4a2f): undefined reference to `warlock_policy_driver_policy'
+/usr/bin/ld: shared-host.c:(.text+0x4a6d): undefined reference to `warlock_visual_channel_current'
+/usr/bin/ld: /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v141/qa/build-1791400298601984305/host.o: in function `imported_image_report':
+shared-host.c:(.text+0xbb55): undefined reference to `warlock_policy_driver_policy'
+/usr/bin/ld: shared-host.c:(.text+0xbbae): undefined reference to `warlock_visual_channel_current'
+/usr/bin/ld: /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v141/qa/build-1791400298601984305/host.o: in function `client_snapshot_complete':
+shared-host.c:(.text+0x11465): undefined reference to `warlock_visual_channel_invalidate'
+/usr/bin/ld: shared-host.c:(.text+0x114f9): undefined reference to `warlock_policy_driver_policy'
+/usr/bin/ld: shared-host.c:(.text+0x11519): undefined reference to `warlock_visual_channel_current'
+/usr/bin/ld: shared-host.c:(.text+0x11624): undefined reference to `warlock_policy_driver_quarantine'
+/usr/bin/ld: /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v141/qa/build-1791400298601984305/host.o: in function `controlled_load_changed':
+shared-host.c:(.text+0x11f71): undefined reference to `warlock_visual_channel_invalidate'
+/usr/bin/ld: shared-host.c:(.text+0x11f8d): undefined reference to `warlock_policy_driver_quarantine'
+/usr/bin/ld: /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v141/qa/build-1791400298601984305/host.o: in function `controlled_frame_notice':
+shared-host.c:(.text+0x120a8): undefined reference to `warlock_visual_channel_invalidate'
+/usr/bin/ld: shared-host.c:(.text+0x120fb): undefined reference to `warlock_policy_driver_quarantine'
+/usr/bin/ld: /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v141/qa/build-1791400298601984305/host.o: in function `shared_receive_text':
+shared-host.c:(.text+0x13a92): undefined reference to `warlock_policy_driver_policy'
+/usr/bin/ld: shared-host.c:(.text+0x13ab3): undefined reference to `warlock_visual_channel_ack'
+/usr/bin/ld: shared-host.c:(.text+0x13c4f): undefined reference to `warlock_policy_driver_policy'
+/usr/bin/ld: shared-host.c:(.text+0x13c72): undefined reference to `warlock_visual_channel_current'
+/usr/bin/ld: shared-host.c:(.text+0x15d73): undefined reference to `preview_uri_router_open'
+/usr/bin/ld: /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v141/qa/build-1791400298601984305/host.o: in function `controlled_tick':
+shared-host.c:(.text+0x17cde): undefined reference to `warlock_policy_driver_step'
+/usr/bin/ld: shared-host.c:(.text+0x17d89): undefined reference to `warlock_policy_driver_policy'
+/usr/bin/ld: shared-host.c:(.text+0x17dc1): undefined reference to `warlock_preview_policy_visual_projection'
+/usr/bin/ld: shared-host.c:(.text+0x17e17): undefined reference to `warlock_visual_channel_offer'
+/usr/bin/ld: shared-host.c:(.text+0x1831f): undefined reference to `warlock_policy_driver_reopen'
+/usr/bin/ld: shared-host.c:(.text+0x18335): undefined reference to `warlock_policy_driver_policy'
+/usr/bin/ld: shared-host.c:(.text+0x1854b): undefined reference to `warlock_policy_driver_policy'
+/usr/bin/ld: shared-host.c:(.text+0x18704): undefined reference to `preview_uri_router_open'
+/usr/bin/ld: shared-host.c:(.text+0x187e0): undefined reference to `warlock_policy_driver_retirement_ready'
+/usr/bin/ld: shared-host.c:(.text+0x18855): undefined reference to `warlock_visual_channel_detach'
+/usr/bin/ld: shared-host.c:(.text+0x1886c): undefined reference to `warlock_visual_channel_close'
+/usr/bin/ld: shared-host.c:(.text+0x1888c): undefined reference to `preview_uri_router_clear'
+/usr/bin/ld: shared-host.c:(.text+0x188c7): undefined reference to `warlock_policy_driver_retire'
+/usr/bin/ld: shared-host.c:(.text+0x18aff): undefined reference to `warlock_policy_driver_new'
+/usr/bin/ld: shared-host.c:(.text+0x18b80): undefined reference to `preview_uri_router_bind'
+/usr/bin/ld: shared-host.c:(.text+0x18b8d): undefined reference to `warlock_visual_channel_new'
+/usr/bin/ld: shared-host.c:(.text+0x18ba3): undefined reference to `warlock_policy_driver_policy'
+/usr/bin/ld: shared-host.c:(.text+0x18bca): undefined reference to `warlock_visual_channel_attach'
+/usr/bin/ld: /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v141/qa/build-1791400298601984305/host.o: in function `main':
+shared-host.c:(.text.startup+0xa22): undefined reference to `preview_uri_router_ref'
+/usr/bin/ld: shared-host.c:(.text.startup+0xa29): undefined reference to `preview_uri_router_unref'
+/usr/bin/ld: shared-host.c:(.text.startup+0x15e6): undefined reference to `warlock_visual_channel_detach'
+/usr/bin/ld: shared-host.c:(.text.startup+0x15fd): undefined reference to `warlock_visual_channel_close'
+/usr/bin/ld: shared-host.c:(.text.startup+0x161e): undefined reference to `preview_uri_router_clear'
+/usr/bin/ld: shared-host.c:(.text.startup+0x163a): undefined reference to `warlock_policy_driver_close'
+/usr/bin/ld: shared-host.c:(.text.startup+0x1690): undefined reference to `preview_uri_router_unref'
+/usr/bin/ld: shared-host.c:(.text.startup+0x1b38): undefined reference to `preview_uri_router_new'
+collect2: error: ld returned 1 exit status

@@ -721,3 +721,38 @@ are held; failed138/168 and earlier negative166 evidence remain unchanged.
 Next PUBLIC102 then real uncertain/process/reload recovery, original-clock
 expiry/revocation and pressure/liveness, ongoing physical conceal/reveal/hardware
 and full S09/release gates. Installed desktop/drafts/foreign edits are preserved.
+
+GUI140 and original Native176 hold the actual same-URI reload counterexample:
+real first snapshot/source red19200 and original WebKit reload/LOAD_STARTED
+navigation2 pass, but original host continuity fails with failure1 and uncertain
+strict teardown refusal. Normal17529/13/full119 pass. Native177 separately holds
+an observer filename assertion against the known first snapshot before request2;
+its early host termination causes strict teardown refusal/criticals. Fresh184
+accepts exactly request1 as pending while retaining request2, all source/current
+output/final strict close checks and original six-second observer. Earlier
+premature packaging, checkpoint-path, historical build-entry and coupling
+closed-command schema failures remain immutable with provenance receipts.
+
+GUI141 is held: known trusted current initialized same-URI LOAD_STARTED removes
+renderer authority and urgently quarantines the original realm, keeping original
+Native input/step/poll/receipts progressing. Original strict policy/physical/
+ticket/journal/confirmation closure and empty custody precede replacement in
+the SAME GTK popup/lease1. Fresh DOM/fixed-grant admission opens epoch2 on the
+identical policy/binding, navigation3 and original snapshot request2, without
+grant/policy/counter/clock reset or Unknown replay. Unexpected URI or uncertain/
+failing custody retains the fail-closed branch.
+
+Native18434/12 passes actual reload, first/current red19200 source pixels,
+current image before-after original grim opacity0 output, final strict close,
+all normal owned exits/private cleanup/no criticals. Original normal17829/13,
+canceled-old17936/13, current-error18022/host1 plus seven other normal,
+rapid18151/17, delayed18218/8 and old-success18335/13 pass separately. Full119,
+new reload Quint9 named/200 samples and7 actual projected stages pass. Exact
+source/build/evidence hashes: component-report-gui141-known-reload.json.
+CONTROL046 is bounded to this known real reload; arbitrary/repeated/uncertain/
+process schedules, durable Unknown recovery and original-clock pressure/expiry
+remain open. Native opacity0 stays mandatory; GTK paint is not Wayland/hardware
+presentation. Physical conceal/reveal/hardware, full workload/RSS, original
+full S09/release/integrated journeys/deployment remain open. Next PUBLIC103,
+then actual uncertain/process recovery and pressure/expiry/physical gates.
+Installed desktop/drafts/foreign edits remain preserved; full GUI goal active.

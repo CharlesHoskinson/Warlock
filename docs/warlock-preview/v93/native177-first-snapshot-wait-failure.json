@@ -1,0 +1,13 @@
+{
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "report": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v177/qa/native-controlled-1791400657088379890/report.json",
+  "reportSHA256": "8e1e86772c567fdb7aeb9f4b84f91aa33f545cab52dea30cecdf33d15b6a9374",
+  "runnerSHA256": "c9910dbc27ea70ef558cee1ef9f308a8cc7659b0221a470516bdace693364e6e",
+  "failed": true,
+  "reachedChecks": 23,
+  "allReachedControlsPassed": true,
+  "failure": "Observer prematurely asserts later snapshot filename against known original request1 log before request2 exists. Finally terminates host with current native custody, causing host1/strict teardown refusal/GLib criticals.",
+  "correction": "Fresh184 observer accepts exact known first record as pending, still requires request2 and actual source/current-output/final strict close/all normal owned exits under unchanged6 seconds. Original176/177 retained; no production changes.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

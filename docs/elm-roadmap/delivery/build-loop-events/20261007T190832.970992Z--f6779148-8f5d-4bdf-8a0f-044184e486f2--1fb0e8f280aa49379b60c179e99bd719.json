@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "eventId": "1fb0e8f280aa49379b60c179e99bd719",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-07T19:08:32.970992+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/warlock-preview-provider-v140",
+  "nextWork": [
+    "GUI140 retains original reload-as-uncertain failure and adds explicit private actual WebKit reload only after first original current snapshot/write. Normal175 unchanged29/13 and full119 pass. Actual reload176 reaches18 checks: original GTK/DOM/native issuance/first source red19200 and actual original-view LOAD_STARTED navigation1->2 pass; host continuity fails with original failure1/uncertain incomplete teardown/no replacement. Seven other normal owned exits/private cleanup pass. Failure retained, not normal closure or reload acceptance. Original Native issuer, Elm policy, physical custody, counters, grant and observer6 deadline unchanged. Next fresh141 known same-URI quarantine/strict original drain before fixed-grant replacement in same popup with later epoch and original policy. Uncertain/arbitrary/process/physical/hardware/full S09/release remain open."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/warlock-preview-provider-v140/component-manifest.json",
+      "sha256": "84f976cdfae04b83fd8b3925df67f49b76cfa87379edf7046b2e8dbec6b956f3",
+      "size": 403798
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v175/component-manifest.json",
+      "sha256": "72f96a7289a27ba6982234541d2b4771a795247a856932c96f18fdcf45b1fcf9",
+      "size": 22769
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v176/component-manifest.json",
+      "sha256": "d9ea931977019d5ab6675063746869d51b48a2b9da47941641ce513f2a2483e6",
+      "size": 20795
+    },
+    {
+      "path": "docs/warlock-preview/v93/component-report-gui140-renderer-reload.json",
+      "sha256": "9b1438a43397341f8398062aa7c3a8f156211e7c8600e09a20f585cd99985f88",
+      "size": 2734
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

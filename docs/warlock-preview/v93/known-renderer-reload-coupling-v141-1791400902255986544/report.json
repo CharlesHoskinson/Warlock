@@ -1,0 +1,144 @@
+{
+  "passed": true,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v176/qa/native-controlled-1791399990798608621/report.json": "32cf2821e6b926e6d7f458bb469b0b3ab5ae8b2ce5d90dc41b1c51ba09fad23e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v176/qa/preflight.json": "feab0b8ed25ea7e76dc2621cc9edc822485151a2b78416a65f57f3dcd986e0c8",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v176/qa/native-controlled-1791399990798608621/private-evidence/controlled-host.log": "e13b5490d1384691cc58a0c3faa0cac8406f95a6c6d4503bace04e9f099bcda7",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v184/qa/native-controlled-1791400778543732448/report.json": "a4254c30df95ee05fe9dd054deb6cc5e178702fd71dde3d7c3f4649db81e6045",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v184/qa/preflight.json": "17282e384e185887e8c6da066a3ec5b36373799a3541556092c3b7a15386e711",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v184/qa/native-controlled-1791400778543732448/private-evidence/controlled-host.log": "fd489264ce155722ede01a589b749779737ae594e4ade9a45d736a4a3bd42776",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v141/native/controlled-preview-host.h": "65618d5f27c9f346be38646203fa18b369caa04ee9a33a646d6b67d08f154564",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v141/spec/known_renderer_reload.qnt": "6806ddc34e9f5b031f6014dfd0a126580398e35d6e1cd49b0e1b12745b020233",
+    "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v93/couple_native184_known_reload_v2.py": "7d1538f90541d475fcdff7192f1c00f9c9c1587fa486aeffa65975d1d647aa0f"
+  },
+  "quint": {
+    "path": "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+    "sha256": "bd6e9400f6358a8a69d80eb636eb62f59f993039868a7be9719f76ba74191b4e"
+  },
+  "observations": [
+    {
+      "name": "actualLegacyUncertainReload",
+      "events": [],
+      "condition": "legacyReload(s).failed and legacyReload(s).unknown and legacyReload(s).owned",
+      "nativeObservation": "Native176 actual reload/host1/refused strict teardown"
+    },
+    {
+      "name": "actualKnownReloadQuarantine",
+      "events": [
+        "Reload"
+      ],
+      "condition": "s.closing and s.owned and not(s.initialized or s.failed)",
+      "nativeObservation": "Native184 actual navigation2/quarantine and epoch1 closing custody"
+    },
+    {
+      "name": "actualOriginalStrictClosedRealm",
+      "events": [
+        "Reload",
+        "NativeSettled",
+        "StrictRetire"
+      ],
+      "condition": "s.closed and not(s.owned or s.initialized)",
+      "nativeObservation": "Native184 independently verified strict Native close/empty custody"
+    },
+    {
+      "name": "actualSamePopupReplacement",
+      "events": [
+        "Reload",
+        "NativeSettled",
+        "StrictRetire",
+        "Replace"
+      ],
+      "condition": "s.replaced and s.closed and s.navigation==3 and s.lease==1",
+      "nativeObservation": "Native184 original context replacement inside same current GTK popup lease1"
+    },
+    {
+      "name": "actualFreshDOMLaterEpoch",
+      "events": [
+        "Reload",
+        "NativeSettled",
+        "StrictRetire",
+        "Replace",
+        "DOMReady",
+        "Admit"
+      ],
+      "condition": "s.epoch==2 and s.initialized and s.policy==1 and s.lease==1",
+      "nativeObservation": "Native184 fresh DOM/initializer and original later native epoch2 on identical policy/binding"
+    },
+    {
+      "name": "actualMonotonicSnapshot",
+      "events": [
+        "Reload",
+        "NativeSettled",
+        "StrictRetire",
+        "Replace",
+        "DOMReady",
+        "Admit",
+        "Capture"
+      ],
+      "condition": "s.snapshot==2 and s.navigation==3 and s.epoch==2",
+      "nativeObservation": "Native184 original first/source PNG and new request2/source red19200/current before-after opacity0 output"
+    },
+    {
+      "name": "actualFinalStrictClose",
+      "events": [
+        "Reload",
+        "NativeSettled",
+        "StrictRetire",
+        "Replace",
+        "DOMReady",
+        "Admit",
+        "Capture",
+        "Reload",
+        "NativeSettled",
+        "StrictRetire"
+      ],
+      "condition": "s.closed and not(s.owned or s.initialized) and s.epoch==2",
+      "nativeObservation": "Native184 actual pointer closes final popup and independently strict Native retirement/empty custody/normal exits/cleanup; abstract Reload projects visual quarantine only, not that pointer trigger"
+    }
+  ],
+  "commands": [
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "concrete_known_reload.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "concrete_known_reload.qnt",
+        "--main=concrete_known_reload",
+        "--backend=typescript",
+        "--match=^(actualLegacyUncertainReload|actualKnownReloadQuarantine|actualOriginalStrictClosedRealm|actualSamePopupReplacement|actualFreshDOMLaterEpoch|actualMonotonicSnapshot|actualFinalStrictClose)$",
+        "--seed=1410043",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v93/known-renderer-reload-coupling-v141-1791400902255986544/coupled-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "scope": "Seven bounded abstract stages projected from independently checked actual Native176 failure and unchanged Native184 reload oracle. Original-view real navigation2/quarantine/closing, independently original strict close/empty custody before same-popup renderer replacement/navigation3/fresh DOM/later epoch2 on same policy/binding/lease1, actual first/request2 pixels and final strict close/normal exits/private cleanup. NativeSettled projects independent native strict closure, never UI inference. Final abstract Reload projects actual pointer-close visual quarantine, not its trigger. Not full step refinement, arbitrary/process/uncertain reload recovery, hardware/reveal/full workload/full S09/release.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "coupledQuintChecks": 7,
+  "artifacts": {
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "coupled-actualLegacyUncertainReload-0.itf.json": "a57c3f7acd7bdbf838f59e4e6f5792d7492e8189d81bd8c36c30a0cb27aa98a5",
+    "coupled-actualKnownReloadQuarantine-1.itf.json": "d610cc63d5395ea33e12fcc4a74b07338148081201f03cd8ff3a436eb4fa200d",
+    "coupled-actualOriginalStrictClosedRealm-2.itf.json": "49c877baa4ab75935e9418006a0023104ca3e0d4b24109f7a8a72b64d642b300",
+    "coupled-actualSamePopupReplacement-3.itf.json": "91f009ee205b36b8b67f0ebdccfcb19a8ba0d74a8903bac5a831c923267d10a7",
+    "coupled-actualFreshDOMLaterEpoch-4.itf.json": "1b39aabb04517769b8481c06b4179e0c5c5f7516736b9a8056fe8b9870c6ebde",
+    "coupled-actualMonotonicSnapshot-5.itf.json": "b711c6bd443fb108ffddaec3ce8401391757f26c6b2e5d8b865e2e24f69dd4e1",
+    "coupled-actualFinalStrictClose-6.itf.json": "4ab8451e83c0b0b7933de5c321b7b0f0d86abdf917582a5961c21b231994ec70",
+    "selected.stdout": "cba36111f45366dc8fa9ca61205569ba893ea3658314d9d7ab577f3a804b7621",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/known_renderer_reload.qnt": "6806ddc34e9f5b031f6014dfd0a126580398e35d6e1cd49b0e1b12745b020233",
+    "inputs/concrete_known_reload.qnt": "c68d2bcd04a58a7a56c71a880ed8c117d5118f419f8121e6b33c1327972b9e06"
+  }
+}

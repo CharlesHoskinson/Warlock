@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "sourceHeld": true,
+  "passed": true,
+  "cpuBuildPassed": true,
+  "fullBuildCommands": 119,
+  "actualKnownRendererReloadQualified": true,
+  "actualSamePopupLeaseAcrossReloadQualified": true,
+  "actualSamePolicyRetained": true,
+  "actualOriginalNativeBindingRetained": true,
+  "reloadNativeChecks": 34,
+  "reloadNormalOwnedExits": 12,
+  "normalRouteNativeChecks": 29,
+  "normalRouteNormalOwnedExits": 13,
+  "cancelledOldResultNativeChecks": 36,
+  "cancelledOldResultNormalOwnedExits": 13,
+  "currentFailureNativeControls": 22,
+  "currentFailureExpectedExitCode": 1,
+  "currentFailureOtherNormalOwnedExits": 7,
+  "rapidPendingReaderNativeChecks": 51,
+  "rapidPendingReaderNormalOwnedExits": 17,
+  "delayedResultNativeChecks": 18,
+  "delayedResultNormalOwnedExits": 8,
+  "successfulOldResultNativeChecks": 35,
+  "successfulOldResultNormalOwnedExits": 13,
+  "reloadQuintScenarios": 9,
+  "reloadQuintInvariantSamples": 200,
+  "reloadCoupledStages": 7,
+  "originalReloadCounterexampleRetained": true,
+  "prematureSnapshotObserverFailureRetained": true,
+  "singlePreviewPolicy": true,
+  "nativeGrantResets": 0,
+  "navigationResets": 0,
+  "snapshotOrdinalResets": 0,
+  "privateSessionCleanupPassed": true,
+  "physicalConcealmentQualified": false,
+  "physicalRevealQualified": false,
+  "hardwarePresentationQualified": false,
+  "fullWorkloadProgressQualified": false,
+  "measuredRSSQualified": false,
+  "reloadRecoveryQualified": false,
+  "arbitraryNavigationRecoveryQualified": false,
+  "uncertainRecoveryQualified": false,
+  "processRecoveryQualified": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "reports": {
+    "native184": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v184/qa/native-controlled-1791400778543732448/report.json",
+      "sha256": "a4254c30df95ee05fe9dd054deb6cc5e178702fd71dde3d7c3f4649db81e6045",
+      "passed": true,
+      "checks": 34,
+      "ownedExits": 12
+    },
+    "native178": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v178/qa/native-controlled-1791400838324811043/report.json",
+      "sha256": "97bf2ea467d02b11ead99ab31324e58e5a793ef4e5a5d962d43c3a3d411dc8ff",
+      "passed": true,
+      "checks": 29,
+      "ownedExits": 13
+    },
+    "native179": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v179/qa/native-controlled-1791400898394917187/report.json",
+      "sha256": "6bd43b5c5737406d094b90d20e43536f68fabe3ce45596b8c539270f20190b43",
+      "passed": true,
+      "checks": 36,
+      "ownedExits": 13
+    },
+    "native180": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v180/qa/native-controlled-1791401075832404431/report.json",
+      "sha256": "7ec2d629d377557839b8bc2b631e34d616143f0a333d10913191153c18be537b",
+      "passed": true,
+      "checks": 22,
+      "ownedExits": 8
+    },
+    "native181": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v181/qa/native-controlled-1791401082582478349/report.json",
+      "sha256": "03589563649bdcad2513b17eb90e4fad107a013ea0306724ee33c261ffcb3745",
+      "passed": true,
+      "checks": 51,
+      "ownedExits": 17
+    },
+    "native182": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v182/qa/native-controlled-1791401124213835501/report.json",
+      "sha256": "4a16ef3a4aee2633107363aea01ef159fe9cf6add74bba0d46432d50611bacb4",
+      "passed": true,
+      "checks": 18,
+      "ownedExits": 8
+    },
+    "native183": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v183/qa/native-controlled-1791401130849789983/report.json",
+      "sha256": "31ee4997664fcf0f56a107bed072aba4c883c34a65684e9b1eda24dad9f256ae",
+      "passed": true,
+      "checks": 35,
+      "ownedExits": 13
+    },
+    "native177": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v177/qa/native-controlled-1791400657088379890/report.json",
+      "sha256": "8e1e86772c567fdb7aeb9f4b84f91aa33f545cab52dea30cecdf33d15b6a9374",
+      "passed": false,
+      "checks": 23,
+      "ownedExits": 8
+    },
+    "build": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v141/qa/build-1791400377375403008/report.json",
+      "sha256": "aac22d72eca70e92928a9652dc613e6c599447ade64ccc40af1c417848d4bf13",
+      "passed": true,
+      "commands": 119
+    },
+    "reloadQuint": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v141/qa/known-renderer-reload-model-1791400298603411457/report.json",
+      "sha256": "024ed53e984ff4d8d9d61e30857154ec79b6d36093adeb8371a26ed68b310b54",
+      "passed": true
+    },
+    "reloadCoupling": {
+      "path": "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v93/known-renderer-reload-coupling-v141-1791400902255986544/report.json",
+      "sha256": "302e460285d06088a930b55d109882ed04a9caa97929fed05b0e0c5fa75909dd",
+      "passed": true
+    }
+  },
+  "scope": "GUI141 repairs actual held140/Native176 reload-as-uncertain failure. Known trusted same-URI original initialized view LOAD_STARTED navigation2 invalidates visual authority and urgently quarantines same original realm without claiming native settlement. Original sticky Native input/step/poll/receipts and strict policy/physical/ticket/journal/confirmation close/empty custody precede fresh renderer context replacement inside SAME GTK popup lease1. Fresh DOM/fixed native grant admits later epoch2 on identical original policy/binding, navigation3 and original request2. Actual18434/12 proves real first and current source red19200, current image before-after original grim opacity0 region, final strict closure/all normal owned exits/private cleanup/no criticals. Native177 premature snapshot-wait assertion failure retained; fresh184 waits for request2 while accepting known request1 as pending, keeping original six-second deadline and every actual pixel/output/final strict close oracle. Original normal17829/13, canceled-old17936/13, current-failure18022/host1+seven other normal, rapid18151/17, delayed18218/8 and old-success18335/13 pass separately. Full119, new reload Quint9/200 and7 actual projected stages pass. Historical wrong-build-entry failure and coupling closed-command schema check failure retained. Only host known navigation handling changed; no issuer/Elm reducer/physical product/grant/nav/snapshot/clock/reset/replay changes. Unexpected/uncertain/failing ownership remains failclosed; actual arbitrary/unknown/process/repeated reload schedules, physical reveal/hardware/pressure/full workload/RSS, original full S09 and release remain open. Installed desktop/drafts/foreign preserved.",
+  "heldParentManifest": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v140/component-manifest.json",
+    "sha256": "84f976cdfae04b83fd8b3925df67f49b76cfa87379edf7046b2e8dbec6b956f3"
+  }
+}

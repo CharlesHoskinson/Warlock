@@ -1572,3 +1572,21 @@ cleared to obtain closure; strict retirement remains the native authority.
 - WHEN original native duties cannot be proved settled
 - THEN uncertainty remains explicit and no normal closure or recovery is claimed
 - AND no renderer disposal, reset, inferred process death or fabricated receipt settles those duties
+
+### Requirement: Known renderer reload preserves policy and strict native retirement
+Reloading an admitted renderer's trusted same URI SHALL preserve original
+native custody and policy. Only original strict native retirement SHALL admit
+a replacement renderer and later epoch; navigation or DOM reload SHALL never
+certify native settlement or reset a grant, policy, counter, deadline or Unknown.
+
+#### Scenario: Real same-popup WebKit reload with a known captured job
+- GIVEN the original current source image and first real snapshot are captured
+- WHEN the actual WebKit reload API causes original view navigation to advance
+- THEN the host conceals/invalidate that renderer and quarantines the original realm
+- AND original native receipts drive strict close before replacement in the same GTK popup/lease
+- AND fresh DOM/fixed-grant admission precedes a later native epoch on the same policy/binding
+- AND monotonic snapshot/nav chronology, current source pixels and final strict normal close qualify under the original deadline
+
+#### Scenario: Unexpected URI or uncertain native duties at reload
+- WHEN reload does not retain a trusted same URI or original native duties are uncertain
+- THEN original fail-closed uncertainty remains explicit with no inferred settlement, grant reset or replay

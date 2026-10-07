@@ -535,3 +535,20 @@ activation and all original full release gates remain open.
 - [ ] Qualify CONTROL-045 real uncertain native custody and process/reload fault
   recovery with original Unknown/retirement/no-replay/no-reset obligations;
   known current-cancellation drain does not close these broader gates.
+
+- [x] Implement/qualify CONTROL-046 actual known same-URI WebKit reload while a
+  captured job is owned: original strict retirement before fixed-grant renderer
+  replacement in same popup/lease, same policy/binding/later epoch, monotonic
+  navigation/snapshot/current pixels/final normal close, original deadlines and
+  separate normal/current-failure/old-callback/rapid/deferred controls.
+
+  Bounded GUI141/Native18434/12/full119/Quint9/200/7 actual projected stages:
+  strict old Native close before same-popup lease1 replacement/fresh DOM/later
+  epoch2 on identical policy/binding/navigation3/request2; source/current-output
+  opacity0/final strict closure/all normal exits/private cleanup/no criticals.
+  Separate normal/current-failure/old-error/rapid/delayed/success regressions pass.
+  Original140/176 failure and177 premature observer assertion remain held;
+  fresh184 waits for request2 under unchanged6 without rejecting known request1.
+- [ ] Qualify actual repeated/unexpected navigation, uncertain/process renderer
+  recovery and durable Unknown under original clocks/retirement/no-reset/no-replay
+  obligations. Known one-reload schedule does not close broader CONTROL-046.

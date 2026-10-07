@@ -914,3 +914,30 @@ old-canceled17136/13, old-success17235/13, rapid17351/17 and delayed17418/8
 pass separately; full119, new Quint8/200 and5 actual projected stages pass.
 Actual known current cancellation is qualified; uncertainty/process/reload,
 all async schedules, physical/hardware/pressure/full release remain open.
+
+CONTROL-046 actual known renderer reload (EARS): WHEN the current admitted
+renderer reloads its original trusted same URI while native duties remain known,
+the host SHALL conceal/invalidate that original renderer, keep its original
+policy/binding and monotonic navigation/snapshot custody, urgently quarantine
+its realm, and continue original native receipt/retirement progress. WHEN
+original strict native close completes, the host SHALL replace only that
+retired renderer, preserve the current GTK popup/lease, require fresh DOM and
+fixed-grant admission, and open a later native epoch on the same policy without
+resets or replay. Actual current source pixels and original final close SHALL
+qualify separately. IF the URI/native custody is unexpected or uncertain, the
+host SHALL retain fail-closed uncertainty; a load event SHALL NOT settle native
+duties. Original owning ABI/observer deadline and negative evidence remain.
+
+Bounded CONTROL-046 known renderer reload: GUI141 urgently quarantines after actual original
+WebKit LOAD_STARTED/navigation2 and keeps original native progress until strict
+close/empty custody BEFORE same-popup lease1 replacement/fresh DOM/fixed grant/
+later epoch2 on original policy/binding/navigation3/request2. Native18434/12
+proves first/current source red19200, original opacity0 grim region and final
+strict close/all normal exits/private cleanup/no criticals. Original normal178
+29/13, old-canceled17936/13, current-failure18022/host1 plus seven normal, rapid181
+51/17, delayed18218/8 and old-success18335/13 pass. Full119/new Quint9/200/7
+actual projections pass. Original140/176 failure and177 observer failure retained;
+fresh184 corrects only pending-first-record wait, preserving request2/deadline/
+pixel/output/strict close gates. This known schedule is qualified; arbitrary/
+repeated/uncertain/process reload, durable Unknown, physical/hardware/pressure/
+full S09/release remain open. No reset/replay/inferred native settlement.
