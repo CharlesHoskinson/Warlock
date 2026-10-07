@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "sourceHeld": true,
+  "passed": true,
+  "evidenceIntegrityPassed": true,
+  "reports": {
+    "roundtrip": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v111/qa/native-outbox-check-v4-1791354355501494232/report.json",
+      "sha256": "61a329976cc48fd77ac76e568122af092aacf9f3ff818c7cc6208f8e385a32c6"
+    },
+    "protocol": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v111/qa/native-outbox-protocol-check-1791354413823194560/report.json",
+      "sha256": "333ceb86c06295ff23fdb0efe38f8301331041a4095ef33cf0a9b2e39700b839"
+    },
+    "model": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v111/qa/native-outbox-model-check-1791354287844124126/report.json",
+      "sha256": "b901a22f8ddbd37a5de472f9eb39f3cc78f64452d9e24ca57f262cb1b828df20"
+    },
+    "build": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v111/qa/build-1791354437572311714/report.json",
+      "sha256": "b12cf29203b154b760f9de054577211c695990bb8eefa23a609e15a7359e6186"
+    }
+  },
+  "nativeTicketRoundtripChecks": 93,
+  "protocolChecks": 47,
+  "realmEpochs": 2,
+  "syntheticNativeRemainsActive": true,
+  "nativeOutboxScenarios": 14,
+  "nativeOutboxTraces": 26,
+  "nativeOutboxStates": 463,
+  "nativeOutboxSamples": 200,
+  "unsafeActualJSVariantsDetected": 6,
+  "fullBuildCommands": 97,
+  "originalBuildCommands": 96,
+  "unchangedProductParentManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v110/component-manifest.json",
+  "unchangedProductParentManifestSHA256": "902c1e5c1694895384c5c0c8fb4772530bed46960e3856101d1893880c19c20f",
+  "retainedLegacyNativeManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v130/component-manifest.json",
+  "retainedLegacyNativeManifestSHA256": "2e70b35a90b327ca5a6157b4f8bad97e9113c125546aa068f4ee15363527ff3c",
+  "retainedLegacyNativeChecks": 2518,
+  "retainedLegacyNativeNormalExits": 278,
+  "heldFailedReports": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v111/qa/native-outbox-check-1791354096560797189/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v111/qa/native-outbox-check-v2-1791354137047944191/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v111/qa/native-outbox-check-v3-1791354286661711509/report.json"
+  ],
+  "nativeIssuedRendererTransportImplemented": true,
+  "rendererReloadRecoveryQualified": false,
+  "typedHostRoutingActivated": false,
+  "webKitActivated": false,
+  "actualWaylandWindowAcceptance": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "GUI111 adds `assets/native-preview-control-outbox.js`, a transport for exact\nnative-issued tickets. It never constructs a control command or assigns an\nordinal. Native purpose reservation/admission, immutable ticket issuance and\nthe existing controlled dispatcher remain the only effect admission route.\n\nThe outbox checks the exact original Native binding, receiver epoch, canonical\nuint64 strings, native ticket/enclosed packet correspondence, original4096-byte\nUTF8 bound and reserved queue capacity. It retains contiguous issued tickets\nas immutable raw strings. Retry posts only the oldest packet. Changed bytes,\ngaps, foreign domains and invalid receipts cannot advance its frontier.\nRepeated proposal advisories never remove a pending row. A trusted matching\nhead receipt advances only transport delivery and prepares an exact independent\nconfirmation string. Confirmation retries remain possible after the data queue\nempties. Callback guards avoid recursive data posts; the next host poll supplies\nprogress. No transport method certifies effect, physical or Elm settlement.\n\nThe constructor describes an empty fresh realm. The host must retain native\nownership across renderer reload and recover its exact retained tickets and\nprefix before resuming. A JavaScript object cannot survive destruction of its\nWebKit context; the source comment about retaining an object across reload is\nan integration obligation, not implemented reload recovery. Recovery remains\nan explicit unchecked OpenSpec task. This file is not loaded by popup.html.\n\nCurrent qualification:\n\n- `qa/native-outbox-check-v4-1791354355501494232/report.json`:93 sanitizer-backed\n  actual controlled C/Bootstrap/Native authenticated socket/Broker/ReceiptDelivery\n  checks through the actual JS transport. Two same-subject realm epochs use one\n  unchanged Native grant. Application-boundary lost posts, receipts and\n  confirmations retain original bytes. Actual native modified-ticket refusal,\n  exact duplicate receipt, physical job retained after delivery/confirmation,\n  native polling/proofs, terminal ACK, distinct scoped readiness/completion/final\n  processing/independent confirmation and strict close all pass. Old epoch\n  ticket refuses against the actual replacement C owner. Synthetic Native\n  subject21 remains Active; native peer and fixture exit normally.\n- `qa/native-outbox-protocol-check-1791354413823194560/report.json`:47 adversarial\n  protocol controls cover full uint64 binding/epoch beyond JS safe integers,\n  malformed/foreign/gap/changed tickets, UTF8 byte bound, capacity, immutable\n  retention, stale receipts, independent compact prefix and synchronous\n  callback reentry. Maximum data-post depth is1. Issuer is a synthetic fixture.\n- `qa/native-outbox-model-check-1791354287844124126/report.json`:14 explicitly\n  selected Quint scenarios,200 bounded samples,26 actual JS traces and463 state\n  comparisons. Retained frontier/observed receipt/queue occupancy, exact ordered\n  data attempts, independent confirmation attempts and operation results are\n  compared. Native issue/history/failure controls are trace-driver inputs and\n  are not reported as a second application policy or actual native issuer.\n  Six executable JS variants fail exact observations: changed bytes accepted,\n  advisory drains row, future receipt, dropped-post forget, dropped-confirmation\n  forget and capacity ignored. Actual C issuance is qualified separately above.\n\nThree failed fixture reports remain immutable: an unused shared fixture helper\nfailed `-Werror`; a diagnostic status used positive-wire counters for zero\nvalues and exited with retained ownership; a test mistook an unconfirmed native\nproposal for independently confirmed delivery. Fresh fixture derivatives use\nthe helper, encode zero-valued diagnostic counts as decimal strings, and test\nthe native distinction before/after actual independent confirmation. No product\nguard, native purpose, physical/proof barrier or original deadline was relaxed.\n\nExisting product native/src/adapter/assets files are byte-identical to held110\nexcept the added inactive outbox. Held110 resource/capture/control/FD/scoped\ndetachment evidence retains that parent source identity. Native130 current110\nlegacy host qualification passes2518/278/full cleanup and is public79\n48451e88124dd0ae9aa8e69f25e25c7ba8e82e05. This GUI111 component does not activate\ncontrolled host/Core/WebKit routes or establish actual Wayland-window, renderer\nreload, ordinary capture eligibility or full release acceptance.\n"
+}

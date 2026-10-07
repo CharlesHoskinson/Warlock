@@ -282,3 +282,15 @@ C traces/320 state comparisons/200 samples pass. Full96 retains all original95
 commands plus the router translation unit; original four resource regressions
 pass on changed URI source. Actual WebKit callback registration, controlled
 renderer realm/outbox and Core/Wayland-window detachment remain open.
+
+- [x] Implement and CPU-qualify CONTROL-024 retained native-issued renderer tickets,
+      exact data retries, independent confirmation and synchronous callback progress.
+- [ ] Activate typed trusted native realm routing, recover retained native tickets
+      and prefix on renderer reload, and qualify actual WebKit/Core host behavior.
+
+GUI111 currently qualifies93 actual controlled C/native-issued JS roundtrip
+controls through two settled same-Active-subject realm epochs,47 adversarial
+protocol/reentry controls,14 selected Quint/26 actual JS traces/463 compared
+states/200 bounded samples/six executable guard variants. Three failed fixture
+reports remain. The current legacy host does not load the new module. Renderer
+reload recovery, typed host activation and actual WebKit/Core remain open.

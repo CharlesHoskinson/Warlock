@@ -369,3 +369,30 @@ C66/four sealed mappings/three guard variants/model16/24/320/200 samples/full96
 retaining original95/current resource and scoped-detachment regressions pass.
 Two model fixture failures retained; actual WebKit callback registration/
 controlled Core/Wayland-window/native renderer realm outbox remain open.
+
+EARS CONTROL-024: When a controlled renderer transports a native-issued preview
+ticket, it SHALL retain the exact original ticket bytes and Native binding,
+receiver epoch and ordinal in a bounded contiguous queue. Native SHALL remain
+the sole purpose-reservation and ordinal issuer. A dropped transmission or
+delivery receipt SHALL retry the original oldest ticket without reserializing
+its command or invoking a later ticket first. Changed bytes, foreign realms,
+noncanonical counters, gaps and excess capacity SHALL refuse before altering
+the transport frontier. A proposal's alreadyDelivered advisory SHALL NOT remove
+a queued ticket. Only the trusted original native delivery receipt for that
+head SHALL advance the observed receipt prefix. The renderer SHALL retain and
+retry an independent exact confirmation prefix even after its data queue is
+empty. Neither delivery nor independent confirmation SHALL assert physical or
+Elm effect settlement, renew a deadline, reset the Native grant or replay an
+Unknown effect. Synchronous receipts SHALL NOT recursively post the next data
+ticket; the next bounded host poll SHALL supply progress. Renderer reload SHALL
+recover the original native realm, retained tickets and confirmed prefix before
+resuming controls; constructing an empty outbox SHALL NOT certify recovery.
+
+CONTROL-024 transport is implemented and CPU-qualified in inactive GUI111:
+93 actual controlled C/Bootstrap/Native socket/Broker/native-issued JS roundtrip
+checks across two same-Active-subject epochs;47 adversarial/full uint64/UTF8/
+synchronous reentry controls;14 selected Quint/26 actual JS traces/463 state
+comparisons/200 bounded samples/six executable guard variants. Three failed
+roundtrip fixtures remain. Typed host routes, renderer reload recovery and
+actual WebKit/Core activation remain open. The legacy host does not load this
+new module. See GUI111/NATIVE-OUTBOX-HANDOFF.md for exact evidence scope.

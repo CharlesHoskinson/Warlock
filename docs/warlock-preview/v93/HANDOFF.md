@@ -144,3 +144,15 @@ sourcecf347c314d8856fbea327a79f5ef862d618c4840;
 receipt302730c0059575b5b29f79ebc290233c8f9f7e4f. Next public79 for Native130,
 then fresh GUI111 native-issued renderer ticket transport/typed realm and actual
 WebKit callback ownership/controlled Core. All full release gates remain open.
+
+Native130 is PUBLIC79 48451e88124dd0ae9aa8e69f25e25c7ba8e82e05,605 exact owned
+blobs; source0ac8ba2f19859b7b1429dc106b6c36e74ee2bce2;
+receiptf7b7039ef613ff455491f7ee516eb68c90aaea27.
+GUI111 adds inactive native-issued renderer transport:actual controlled C93,
+protocol47,Quint14/26 actual JS traces/463 states/200 samples/six executable
+variants. Full97 retains original96; three failed roundtrip fixtures retained.
+Parent110 existing product files byte-identical, evidence identities unchanged.
+See GUI111/NATIVE-OUTBOX-HANDOFF.md and component-report111.json for exact scope.
+Next PUBLIC80 then fresh GUI112 native retained ticket/prefix snapshot and
+renderer reload recovery, followed by typed host realm/WebKit/Core activation.
+No actual new controlled/native WebKit or full release acceptance follows.

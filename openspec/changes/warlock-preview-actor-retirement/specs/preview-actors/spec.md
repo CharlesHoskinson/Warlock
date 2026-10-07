@@ -828,3 +828,47 @@ original native URI/source/time/token/reader/physical barriers.
 - **WHEN** the C owner clears and releases its own reference
 - **THEN** the callback remains a valid object and refuses unavailable pixels
 - **AND** context destruction releases its independently owned reference
+
+### Requirement: Retained native-issued renderer control transport
+
+The system SHALL implement EARS CONTROL-024. Native owns purpose reservations,
+ordinals and immutable ticket bytes; the renderer owns only bounded transport
+retention, observed delivery and independent confirmation. Existing physical,
+terminal-proof, processing, Unknown and original deadline barriers remain.
+
+#### Scenario: Lost transmission and receipt retry exact native bytes
+- **GIVEN** an original native-issued ticket and a later queued ticket
+- **WHEN** transmission or its native delivery receipt is dropped
+- **THEN** the renderer retries the oldest exact wire without reserialization
+- **AND** the native dispatcher echoes its receipt without invoking the effect again
+- **AND** the later ticket waits for the original head receipt
+
+#### Scenario: A native proposal is not a delivery receipt
+- **GIVEN** a retained ticket and an alreadyDelivered proposal advisory
+- **WHEN** the renderer receives that proposal again
+- **THEN** it retains the pending row and retries the original oldest packet
+- **AND** changed bytes, gaps, foreign realms and invalid counters cannot advance it
+
+#### Scenario: Confirmation survives an empty data queue
+- **GIVEN** a trusted native receipt observed by the renderer
+- **WHEN** its independent confirmation transmission is dropped
+- **THEN** the exact compact confirmation prefix remains available for retry
+- **AND** delivery and confirmation alone do not settle the physical job
+
+#### Scenario: Synchronous receipt yields to the next host poll
+- **GIVEN** two original native-issued tickets retained in order
+- **WHEN** the first post synchronously delivers its native receipt
+- **THEN** the callback cannot recursively post the next data packet
+- **AND** the next bounded host transport poll advances the retained neighbor
+
+#### Scenario: Fresh realm rejects the old native ticket
+- **GIVEN** strict completed scoped detachment and independently confirmed controls
+- **WHEN** the same Active subject opens on the unchanged Native grant in a greater epoch
+- **THEN** the new outbox and actual native dispatcher reject old tickets and receipts
+- **AND** the renderer does not allocate ordinals or reset the shared Native grant
+
+#### Scenario: Renderer reload waits for original realm recovery
+- **GIVEN** a controlled realm with outstanding native tickets or a retained prefix
+- **WHEN** its renderer context reloads
+- **THEN** the host recovers those original tickets and prefix before resuming controls
+- **AND** an empty constructor does not establish recovery or permit replay of Unknown

@@ -1,0 +1,18 @@
+
+  native_control_outbox_tests
+    ok cannotInventNativeOrdinal passed 1 test(s)
+    ok exactNativeTicketRetry passed 1 test(s)
+    ok issuedNeighborCannotOvertake passed 1 test(s)
+    ok backpressureRetainsNativeIssuance passed 1 test(s)
+    ok droppedPostRetainsExactTicket passed 1 test(s)
+    ok deliveredAdvisoryCannotDrain passed 1 test(s)
+    ok changedIssuedBytesRefuse passed 1 test(s)
+    ok nativeOrdinalGapRefuses passed 1 test(s)
+    ok futureReceiptCannotRelease passed 1 test(s)
+    ok oldRealmReceiptCannotRelease passed 1 test(s)
+    ok exactHeadDeliveryAdvancesNeighbor passed 1 test(s)
+    ok lostConfirmationRetainedAfterQueueEmpty passed 1 test(s)
+    ok repeatedReceiptCannotAdvanceNeighbor passed 1 test(s)
+    ok receiptMakesRoomForRetainedNativeTicket passed 1 test(s)
+
+  14 passing (20ms)

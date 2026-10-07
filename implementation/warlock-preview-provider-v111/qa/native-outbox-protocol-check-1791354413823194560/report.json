@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "inputs": {
+    "assets/native-preview-control-outbox.js": "183253d5f781cf8527c4e58f31d44653e1b6fe8be58c0bdc89ae714ffb5e4484",
+    "qa/native-outbox-protocol.js": "764e40f16e7a380bd5b9f4e4817ba916cfafe83198f044d5e47c951bb6b28a15",
+    "qa/native-outbox-protocol-check.py": "68dae0e7964887d009ce9ac76adb2636b8a0729876c468702c32935b70eb6fd4"
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "evidence": {
+    "passed": true,
+    "checks": 47,
+    "fullUint64BindingAndEpoch": true,
+    "reentrantDepth": 1,
+    "nativeIssuerIsFixture": true,
+    "nativeAcceptance": false,
+    "fullReleaseAccepted": false
+  },
+  "artifacts": {
+    "checks.stdout": "1393739026696490c3984285b0960ea0a5cfc23bd76e431624518055a0de3be6",
+    "checks.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/assets/native-preview-control-outbox.js": "183253d5f781cf8527c4e58f31d44653e1b6fe8be58c0bdc89ae714ffb5e4484",
+    "inputs/qa/native-outbox-protocol.js": "764e40f16e7a380bd5b9f4e4817ba916cfafe83198f044d5e47c951bb6b28a15",
+    "inputs/qa/native-outbox-protocol-check.py": "68dae0e7964887d009ce9ac76adb2636b8a0729876c468702c32935b70eb6fd4"
+  }
+}
