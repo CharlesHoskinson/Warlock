@@ -396,3 +396,55 @@ original negative controls SHALL remain unchanged.
 - GIVEN the original native packet has not confirmed readiness
 - WHEN a renderer sends a cleanup packet with signaled:true
 - THEN the controlled decoder refuses that claim and no native barrier advances.
+
+EARS WLK-PREVIEW-CONTROL-010: WHEN ImportedClients opts into cleanup reservations,
+attachment SHALL require a fresh empty original receiver and exact owning Broker.
+Only one obligation manager SHALL own its issuer. Credits SHALL precede initial
+or new-stamp intent advancement and job issuance. Resume SHALL preserve original
+mapping/export/backend/proof and old-control confirmation barriers, then reserve
+before new intent advancement. Receiverless legacy start/resume SHALL refuse in
+controlled mode. Unknown issuance SHALL remain retained for reconciliation.
+
+#### Scenario: Native resume precedes final control confirmation
+- GIVEN old native physical and terminal proof obligations are drained, but an
+  issued old control ticket has not been confirmed by the original frontend
+- WHEN the original receiver requests resume
+- THEN resume is backpressured before a new source query or intent change; after
+  original confirmation, admission reserves new cleanup and preserves old floors.
+
+#### Scenario: Guard borrows another Broker
+- GIVEN a native receiver and a cleanup guard bound to a different native Broker
+- WHEN attachment or issuance attempts to use the original receiver's Broker
+- THEN the operation refuses before credits, intents, effects or floors move.
+
+EARS WLK-PREVIEW-CONTROL-011: WHEN the original controlled receiver proposes a job
+command, native SHALL validate its actual original job, packet or terminal proof,
+select a stable native purpose slot and issue an immutable native ordinal from
+that job's reserved quota. A previously issued exact body SHALL reuse its
+original ticket even after its effect removed the Broker record. Neither a
+proposal nor a ticket SHALL establish effect success or physical retirement.
+WHEN independent physical/proof barriers and original frontend confirmation
+permit releasing the job quota, native SHALL retain at most one confirmed
+predecessor per retained actor. An exact predecessor retry SHALL return only an
+already-delivered disposition and SHALL NOT authorize another invocation or
+consume a new ordinal. Foreign grants, changed bytes, invented sequences and
+unretained historical jobs SHALL NOT receive a fabricated delivered disposition.
+Reconciliation of unretained or Unknown outcomes remains a separate native gate.
+
+#### Scenario: Terminal ACK proposal repeats after its effect
+- GIVEN an original issued ACK whose native handler removed the Broker record
+- WHEN its exact command bytes are proposed again on the original receiver
+- THEN its original immutable ticket is returned without another ordinal;
+  the original delivery prefix still prevents another effect invocation.
+
+#### Scenario: Confirmed predecessor repeats after native resume
+- GIVEN independently settled physical/proof ownership and frontend confirmation,
+  followed by a newly admitted native job for the same actor
+- WHEN the exact confirmed predecessor command is proposed again
+- THEN only its original already-delivered identity is returned; its released
+  ticket cannot authorize an effect and the new job's namespace stays unchanged.
+
+#### Scenario: Renderer invents a terminal sequence
+- GIVEN no matching original native terminal proof
+- WHEN a renderer proposes a terminal acknowledgment
+- THEN native refuses before consuming reserved cleanup or issuing an ordinal.

@@ -1,0 +1,701 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      actors: 0,
+      charge: 0,
+      epoch: 1,
+      groups: 1,
+      history: [],
+      intents: 0,
+      jobs: 0,
+      last: 0,
+      low: false,
+      members: 0,
+      pending: false,
+      records: 0,
+      reserved: 1,
+      slots: 0,
+      through: 1
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      actors: 0,
+      charge: 0,
+      epoch: 1,
+      groups: 1,
+      history: ["EmptyRead"],
+      intents: 0,
+      jobs: 0,
+      last: 1,
+      low: false,
+      members: 0,
+      pending: false,
+      records: 0,
+      reserved: 1,
+      slots: 0,
+      through: 1
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      actors: 0,
+      charge: 0,
+      epoch: 1,
+      groups: 1,
+      history: ["EmptyRead", "ForeignBinding"],
+      intents: 0,
+      jobs: 0,
+      last: -1,
+      low: false,
+      members: 0,
+      pending: false,
+      records: 0,
+      reserved: 1,
+      slots: 0,
+      through: 1
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      actors: 0,
+      charge: 0,
+      epoch: 1,
+      groups: 1,
+      history: ["EmptyRead", "ForeignBinding", "ForeignBroker"],
+      intents: 0,
+      jobs: 0,
+      last: -1,
+      low: false,
+      members: 0,
+      pending: false,
+      records: 0,
+      reserved: 1,
+      slots: 0,
+      through: 1
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      actors: 0,
+      charge: 0,
+      epoch: 1,
+      groups: 1,
+      history:
+        ["EmptyRead", "ForeignBinding", "ForeignBroker", "ForeignReceiver"],
+      intents: 0,
+      jobs: 0,
+      last: -1,
+      low: false,
+      members: 0,
+      pending: false,
+      records: 0,
+      reserved: 1,
+      slots: 0,
+      through: 1
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      actors: 1,
+      charge: 0,
+      epoch: 1,
+      groups: 3,
+      history:
+        [
+          "EmptyRead",
+          "ForeignBinding",
+          "ForeignBroker",
+          "ForeignReceiver",
+          "Admit"
+        ],
+      intents: 1,
+      jobs: 1,
+      last: 1,
+      low: false,
+      members: 1,
+      pending: false,
+      records: 1,
+      reserved: 8,
+      slots: 1,
+      through: 1
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      actors: 1,
+      charge: 0,
+      epoch: 0,
+      groups: 3,
+      history:
+        [
+          "EmptyRead",
+          "ForeignBinding",
+          "ForeignBroker",
+          "ForeignReceiver",
+          "Admit",
+          "CloseView"
+        ],
+      intents: 1,
+      jobs: 1,
+      last: 1,
+      low: false,
+      members: 0,
+      pending: false,
+      records: 1,
+      reserved: 8,
+      slots: 1,
+      through: 1
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      actors: 1,
+      charge: 0,
+      epoch: 0,
+      groups: 3,
+      history:
+        [
+          "EmptyRead",
+          "ForeignBinding",
+          "ForeignBroker",
+          "ForeignReceiver",
+          "Admit",
+          "CloseView",
+          "EmptyRead"
+        ],
+      intents: 1,
+      jobs: 1,
+      last: 1,
+      low: false,
+      members: 0,
+      pending: false,
+      records: 1,
+      reserved: 8,
+      slots: 1,
+      through: 1
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      actors: 1,
+      charge: 0,
+      epoch: 0,
+      groups: 3,
+      history:
+        [
+          "EmptyRead",
+          "ForeignBinding",
+          "ForeignBroker",
+          "ForeignReceiver",
+          "Admit",
+          "CloseView",
+          "EmptyRead",
+          "ForeignBinding"
+        ],
+      intents: 1,
+      jobs: 1,
+      last: -1,
+      low: false,
+      members: 0,
+      pending: false,
+      records: 1,
+      reserved: 8,
+      slots: 1,
+      through: 1
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      actors: 1,
+      charge: 0,
+      epoch: 0,
+      groups: 3,
+      history:
+        [
+          "EmptyRead",
+          "ForeignBinding",
+          "ForeignBroker",
+          "ForeignReceiver",
+          "Admit",
+          "CloseView",
+          "EmptyRead",
+          "ForeignBinding",
+          "CloseView"
+        ],
+      intents: 1,
+      jobs: 1,
+      last: 1,
+      low: false,
+      members: 0,
+      pending: false,
+      records: 1,
+      reserved: 8,
+      slots: 1,
+      through: 1
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      actors: 1,
+      charge: 0,
+      epoch: 0,
+      groups: 3,
+      history:
+        [
+          "EmptyRead",
+          "ForeignBinding",
+          "ForeignBroker",
+          "ForeignReceiver",
+          "Admit",
+          "CloseView",
+          "EmptyRead",
+          "ForeignBinding",
+          "CloseView",
+          "ForeignBinding"
+        ],
+      intents: 1,
+      jobs: 1,
+      last: -1,
+      low: false,
+      members: 0,
+      pending: false,
+      records: 1,
+      reserved: 8,
+      slots: 1,
+      through: 1
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      actors: 1,
+      charge: 0,
+      epoch: 0,
+      groups: 3,
+      history:
+        [
+          "EmptyRead",
+          "ForeignBinding",
+          "ForeignBroker",
+          "ForeignReceiver",
+          "Admit",
+          "CloseView",
+          "EmptyRead",
+          "ForeignBinding",
+          "CloseView",
+          "ForeignBinding",
+          "ForeignBinding"
+        ],
+      intents: 1,
+      jobs: 1,
+      last: -1,
+      low: false,
+      members: 0,
+      pending: false,
+      records: 1,
+      reserved: 8,
+      slots: 1,
+      through: 1
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      actors: 1,
+      charge: 0,
+      epoch: 0,
+      groups: 3,
+      history:
+        [
+          "EmptyRead",
+          "ForeignBinding",
+          "ForeignBroker",
+          "ForeignReceiver",
+          "Admit",
+          "CloseView",
+          "EmptyRead",
+          "ForeignBinding",
+          "CloseView",
+          "ForeignBinding",
+          "ForeignBinding",
+          "ForeignReceiver"
+        ],
+      intents: 1,
+      jobs: 1,
+      last: -1,
+      low: false,
+      members: 0,
+      pending: false,
+      records: 1,
+      reserved: 8,
+      slots: 1,
+      through: 1
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      actors: 1,
+      charge: 0,
+      epoch: 0,
+      groups: 3,
+      history:
+        [
+          "EmptyRead",
+          "ForeignBinding",
+          "ForeignBroker",
+          "ForeignReceiver",
+          "Admit",
+          "CloseView",
+          "EmptyRead",
+          "ForeignBinding",
+          "CloseView",
+          "ForeignBinding",
+          "ForeignBinding",
+          "ForeignReceiver",
+          "Admit"
+        ],
+      intents: 1,
+      jobs: 1,
+      last: -1,
+      low: false,
+      members: 0,
+      pending: false,
+      records: 1,
+      reserved: 8,
+      slots: 1,
+      through: 1
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      actors: 1,
+      charge: 0,
+      epoch: 0,
+      groups: 3,
+      history:
+        [
+          "EmptyRead",
+          "ForeignBinding",
+          "ForeignBroker",
+          "ForeignReceiver",
+          "Admit",
+          "CloseView",
+          "EmptyRead",
+          "ForeignBinding",
+          "CloseView",
+          "ForeignBinding",
+          "ForeignBinding",
+          "ForeignReceiver",
+          "Admit",
+          "ForeignReceiver"
+        ],
+      intents: 1,
+      jobs: 1,
+      last: -1,
+      low: false,
+      members: 0,
+      pending: false,
+      records: 1,
+      reserved: 8,
+      slots: 1,
+      through: 1
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      actors: 1,
+      charge: 0,
+      epoch: 0,
+      groups: 3,
+      history:
+        [
+          "EmptyRead",
+          "ForeignBinding",
+          "ForeignBroker",
+          "ForeignReceiver",
+          "Admit",
+          "CloseView",
+          "EmptyRead",
+          "ForeignBinding",
+          "CloseView",
+          "ForeignBinding",
+          "ForeignBinding",
+          "ForeignReceiver",
+          "Admit",
+          "ForeignReceiver",
+          "ForeignBroker"
+        ],
+      intents: 1,
+      jobs: 1,
+      last: -1,
+      low: false,
+      members: 0,
+      pending: false,
+      records: 1,
+      reserved: 8,
+      slots: 1,
+      through: 1
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      actors: 1,
+      charge: 0,
+      epoch: 0,
+      groups: 3,
+      history:
+        [
+          "EmptyRead",
+          "ForeignBinding",
+          "ForeignBroker",
+          "ForeignReceiver",
+          "Admit",
+          "CloseView",
+          "EmptyRead",
+          "ForeignBinding",
+          "CloseView",
+          "ForeignBinding",
+          "ForeignBinding",
+          "ForeignReceiver",
+          "Admit",
+          "ForeignReceiver",
+          "ForeignBroker",
+          "CloseView"
+        ],
+      intents: 1,
+      jobs: 1,
+      last: 1,
+      low: false,
+      members: 0,
+      pending: false,
+      records: 1,
+      reserved: 8,
+      slots: 1,
+      through: 1
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      actors: 1,
+      charge: 0,
+      epoch: 0,
+      groups: 3,
+      history:
+        [
+          "EmptyRead",
+          "ForeignBinding",
+          "ForeignBroker",
+          "ForeignReceiver",
+          "Admit",
+          "CloseView",
+          "EmptyRead",
+          "ForeignBinding",
+          "CloseView",
+          "ForeignBinding",
+          "ForeignBinding",
+          "ForeignReceiver",
+          "Admit",
+          "ForeignReceiver",
+          "ForeignBroker",
+          "CloseView",
+          "EmptyRead"
+        ],
+      intents: 1,
+      jobs: 1,
+      last: 1,
+      low: false,
+      members: 0,
+      pending: false,
+      records: 1,
+      reserved: 8,
+      slots: 1,
+      through: 1
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      actors: 1,
+      charge: 0,
+      epoch: 0,
+      groups: 3,
+      history:
+        [
+          "EmptyRead",
+          "ForeignBinding",
+          "ForeignBroker",
+          "ForeignReceiver",
+          "Admit",
+          "CloseView",
+          "EmptyRead",
+          "ForeignBinding",
+          "CloseView",
+          "ForeignBinding",
+          "ForeignBinding",
+          "ForeignReceiver",
+          "Admit",
+          "ForeignReceiver",
+          "ForeignBroker",
+          "CloseView",
+          "EmptyRead",
+          "CloseView"
+        ],
+      intents: 1,
+      jobs: 1,
+      last: 1,
+      low: false,
+      members: 0,
+      pending: false,
+      records: 1,
+      reserved: 8,
+      slots: 1,
+      through: 1
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      actors: 1,
+      charge: 0,
+      epoch: 0,
+      groups: 3,
+      history:
+        [
+          "EmptyRead",
+          "ForeignBinding",
+          "ForeignBroker",
+          "ForeignReceiver",
+          "Admit",
+          "CloseView",
+          "EmptyRead",
+          "ForeignBinding",
+          "CloseView",
+          "ForeignBinding",
+          "ForeignBinding",
+          "ForeignReceiver",
+          "Admit",
+          "ForeignReceiver",
+          "ForeignBroker",
+          "CloseView",
+          "EmptyRead",
+          "CloseView",
+          "Retry"
+        ],
+      intents: 1,
+      jobs: 1,
+      last: -1,
+      low: false,
+      members: 0,
+      pending: false,
+      records: 1,
+      reserved: 8,
+      slots: 1,
+      through: 1
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      actors: 1,
+      charge: 0,
+      epoch: 0,
+      groups: 3,
+      history:
+        [
+          "EmptyRead",
+          "ForeignBinding",
+          "ForeignBroker",
+          "ForeignReceiver",
+          "Admit",
+          "CloseView",
+          "EmptyRead",
+          "ForeignBinding",
+          "CloseView",
+          "ForeignBinding",
+          "ForeignBinding",
+          "ForeignReceiver",
+          "Admit",
+          "ForeignReceiver",
+          "ForeignBroker",
+          "CloseView",
+          "EmptyRead",
+          "CloseView",
+          "Retry",
+          "ForeignEpoch"
+        ],
+      intents: 1,
+      jobs: 1,
+      last: -1,
+      low: false,
+      members: 0,
+      pending: false,
+      records: 1,
+      reserved: 8,
+      slots: 1,
+      through: 1
+    }
+}
+
+[ok] No violation found (144ms at 694 traces/second).
+Trace length statistics: max=21, min=21, average=21.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

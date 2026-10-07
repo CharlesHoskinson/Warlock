@@ -1,0 +1,220 @@
+native/imported-control-ticket-test.cpp: In function ‘int main()’:
+native/imported-control-ticket-test.cpp:16:31: error: ‘Job’ does not name a type
+   16 |         auto cancel=[&](const Job& original){return Wire().text("kind","cancel").begin("job").job(original).end().finish();};
+      |                               ^~~
+native/imported-control-ticket-test.cpp:16:125: error: expected ‘)’ before ‘;’ token
+   16 |         auto cancel=[&](const Job& original){return Wire().text("kind","cancel").begin("job").job(original).end().finish();};
+      |                        ~                                                                                                    ^
+      |                                                                                                                             )
+native/imported-control-ticket-test.cpp: In lambda function:
+native/imported-control-ticket-test.cpp:16:125: error: expected ‘{’ before ‘;’ token
+native/imported-control-ticket-test.cpp: In function ‘int main()’:
+native/imported-control-ticket-test.cpp:17:28: error: ‘Job’ does not name a type
+   17 |         auto ack=[&](const Job& original,uint64_t sequence){return Wire().text("kind","acknowledge").begin("job").job(original).end().counter("sequence",sequence).finish();};
+      |                            ^~~
+native/imported-control-ticket-test.cpp:17:174: error: expected ‘)’ before ‘;’ token
+   17 |         auto ack=[&](const Job& original,uint64_t sequence){return Wire().text("kind","acknowledge").begin("job").job(original).end().counter("sequence",sequence).finish();};
+      |                     ~                                                                                                                                                        ^
+      |                                                                                                                                                                              )
+native/imported-control-ticket-test.cpp: In lambda function:
+native/imported-control-ticket-test.cpp:17:174: error: expected ‘{’ before ‘;’ token
+native/imported-control-ticket-test.cpp: In lambda function:
+native/imported-control-ticket-test.cpp:23:87: error: no match for call to ‘(main()::<lambda(int)>) (const preview::Job&)’
+   23 |         deniedWithoutMutation([&]{value.proposeJobControl(foreign,1,"family:21",cancel(job));},"Actual wrong target receiver refused");
+      |                                                                                 ~~~~~~^~~~~
+  • there is 1 candidate
+    native/imported-control-ticket-test.cpp:16:23:
+       16 |         auto cancel=[&](const Job& original){return Wire().text("kind","cancel").begin("job").job(original).end().finish();};
+          |                       ^
+    • candidate 1: ‘main()::<lambda(int)>’
+      native/imported-control-ticket-test.cpp:16:21:
+         16 |         auto cancel=[&](const Job& original){return Wire().text("kind","cancel").begin("job").job(original).end().finish();};
+            |                     ^
+      • no known conversion for argument 1 from ‘const preview::Job’ to ‘int’
+native/imported-control-ticket-test.cpp: In lambda function:
+native/imported-control-ticket-test.cpp:25:87: error: no match for call to ‘(main()::<lambda(int)>) (const preview::Job&)’
+   25 |         deniedWithoutMutation([&]{value.proposeJobControl(foreign,1,"family:21",cancel(job));},"Actual stale frontend grant refused");
+      |                                                                                 ~~~~~~^~~~~
+  • there is 1 candidate
+    native/imported-control-ticket-test.cpp:16:23:
+       16 |         auto cancel=[&](const Job& original){return Wire().text("kind","cancel").begin("job").job(original).end().finish();};
+          |                       ^
+    • candidate 1: ‘main()::<lambda(int)>’
+      native/imported-control-ticket-test.cpp:16:21:
+         16 |         auto cancel=[&](const Job& original){return Wire().text("kind","cancel").begin("job").job(original).end().finish();};
+            |                     ^
+      • no known conversion for argument 1 from ‘const preview::Job’ to ‘int’
+native/imported-control-ticket-test.cpp: In lambda function:
+native/imported-control-ticket-test.cpp:27:49: error: no match for call to ‘(main()::<lambda(int)>) (preview::Job&)’
+   27 |         deniedWithoutMutation([&]{propose(cancel(other));},"Wrong original job cannot obtain reserved cleanup ticket");
+      |                                           ~~~~~~^~~~~~~
+  • there is 1 candidate
+    native/imported-control-ticket-test.cpp:16:23:
+       16 |         auto cancel=[&](const Job& original){return Wire().text("kind","cancel").begin("job").job(original).end().finish();};
+          |                       ^
+    • candidate 1: ‘main()::<lambda(int)>’
+      native/imported-control-ticket-test.cpp:16:21:
+         16 |         auto cancel=[&](const Job& original){return Wire().text("kind","cancel").begin("job").job(original).end().finish();};
+            |                     ^
+      • no known conversion for argument 1 from ‘preview::Job’ to ‘int’
+native/imported-control-ticket-test.cpp: In lambda function:
+native/imported-control-ticket-test.cpp:28:85: error: no match for call to ‘(main()::<lambda(int)>) (const preview::Job&)’
+   28 |         deniedWithoutMutation([&]{value.proposeJobControl(grant,1,"family:22",cancel(job));},"Foreign family cannot consume native credit");
+      |                                                                               ~~~~~~^~~~~
+  • there is 1 candidate
+    native/imported-control-ticket-test.cpp:16:23:
+       16 |         auto cancel=[&](const Job& original){return Wire().text("kind","cancel").begin("job").job(original).end().finish();};
+          |                       ^
+    • candidate 1: ‘main()::<lambda(int)>’
+      native/imported-control-ticket-test.cpp:16:21:
+         16 |         auto cancel=[&](const Job& original){return Wire().text("kind","cancel").begin("job").job(original).end().finish();};
+            |                     ^
+      • no known conversion for argument 1 from ‘const preview::Job’ to ‘int’
+native/imported-control-ticket-test.cpp: In lambda function:
+native/imported-control-ticket-test.cpp:30:46: error: no match for call to ‘(main()::<lambda(int)>) (const preview::Job&, int)’
+   30 |         deniedWithoutMutation([&]{propose(ack(job,1));},"Invented terminal proof refused before ordinal issuance");
+      |                                           ~~~^~~~~~~
+  • there is 1 candidate
+    native/imported-control-ticket-test.cpp:17:20:
+       17 |         auto ack=[&](const Job& original,uint64_t sequence){return Wire().text("kind","acknowledge").begin("job").job(original).end().counter("sequence",sequence).finish();};
+          |                    ^
+    • candidate 1: ‘main()::<lambda(int)>’
+      native/imported-control-ticket-test.cpp:17:18:
+         17 |         auto ack=[&](const Job& original,uint64_t sequence){return Wire().text("kind","acknowledge").begin("job").job(original).end().counter("sequence",sequence).finish();};
+            |                  ^
+      • candidate expects 1 argument, 2 provided
+native/imported-control-ticket-test.cpp: In function ‘int main()’:
+native/imported-control-ticket-test.cpp:32:35: error: no match for call to ‘(main()::<lambda(int)>) (const preview::Job&)’
+   32 |         auto ticket=propose(cancel(job));check(ticket && !ticket->alreadyDelivered && ticket->ticket.ordinal==1,"Native purpose selects original cancel slot and ordinal");
+      |                             ~~~~~~^~~~~
+  • there is 1 candidate
+    native/imported-control-ticket-test.cpp:16:23:
+       16 |         auto cancel=[&](const Job& original){return Wire().text("kind","cancel").begin("job").job(original).end().finish();};
+          |                       ^
+    • candidate 1: ‘main()::<lambda(int)>’
+      native/imported-control-ticket-test.cpp:16:21:
+         16 |         auto cancel=[&](const Job& original){return Wire().text("kind","cancel").begin("job").job(original).end().finish();};
+            |                     ^
+      • no known conversion for argument 1 from ‘const preview::Job’ to ‘int’
+native/imported-control-ticket-test.cpp:35:38: error: no match for call to ‘(main()::<lambda(int)>) (const preview::Job&)’
+   35 |         auto duplicate=propose(cancel(job));check(duplicate && !duplicate->alreadyDelivered && duplicate->ticket.wire==ticket->ticket.wire && bank.issued()==1,"Exact cancel proposal reuses original immutable ticket");
+      |                                ~~~~~~^~~~~
+  • there is 1 candidate
+    native/imported-control-ticket-test.cpp:16:23:
+       16 |         auto cancel=[&](const Job& original){return Wire().text("kind","cancel").begin("job").job(original).end().finish();};
+          |                       ^
+    • candidate 1: ‘main()::<lambda(int)>’
+      native/imported-control-ticket-test.cpp:16:21:
+         16 |         auto cancel=[&](const Job& original){return Wire().text("kind","cancel").begin("job").job(original).end().finish();};
+            |                     ^
+      • no known conversion for argument 1 from ‘const preview::Job’ to ‘int’
+native/imported-control-ticket-test.cpp:36:34: error: no match for call to ‘(main()::<lambda(int)>) (const preview::Job&)’
+   36 |         const auto changed=cancel(job)+" ";
+      |                            ~~~~~~^~~~~
+  • there is 1 candidate
+    native/imported-control-ticket-test.cpp:16:23:
+       16 |         auto cancel=[&](const Job& original){return Wire().text("kind","cancel").begin("job").job(original).end().finish();};
+          |                       ^
+    • candidate 1: ‘main()::<lambda(int)>’
+      native/imported-control-ticket-test.cpp:16:21:
+         16 |         auto cancel=[&](const Job& original){return Wire().text("kind","cancel").begin("job").job(original).end().finish();};
+            |                     ^
+      • no known conversion for argument 1 from ‘const preview::Job’ to ‘int’
+native/imported-control-ticket-test.cpp:40:49: error: no match for call to ‘(main()::<lambda(int)>) (const preview::Job&)’
+   40 |         check(value.command(1,"family:21",cancel(job))=="[]" && preview_control_delivery_complete(&channel,1),"Actual native cancel and producer refusal return separately from receipt");
+      |                                           ~~~~~~^~~~~
+  • there is 1 candidate
+    native/imported-control-ticket-test.cpp:16:23:
+       16 |         auto cancel=[&](const Job& original){return Wire().text("kind","cancel").begin("job").job(original).end().finish();};
+          |                       ^
+    • candidate 1: ‘main()::<lambda(int)>’
+      native/imported-control-ticket-test.cpp:16:21:
+         16 |         auto cancel=[&](const Job& original){return Wire().text("kind","cancel").begin("job").job(original).end().finish();};
+            |                     ^
+      • no known conversion for argument 1 from ‘const preview::Job’ to ‘int’
+native/imported-control-ticket-test.cpp:43:29: error: no match for call to ‘(main()::<lambda(int)>) (const preview::Job&, const uint64_t&)’
+   43 |         const auto final=ack(job,records[0].proofs.back().sequence.value);
+      |                          ~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  • there is 1 candidate
+    native/imported-control-ticket-test.cpp:17:20:
+       17 |         auto ack=[&](const Job& original,uint64_t sequence){return Wire().text("kind","acknowledge").begin("job").job(original).end().counter("sequence",sequence).finish();};
+          |                    ^
+    • candidate 1: ‘main()::<lambda(int)>’
+      native/imported-control-ticket-test.cpp:17:18:
+         17 |         auto ack=[&](const Job& original,uint64_t sequence){return Wire().text("kind","acknowledge").begin("job").job(original).end().counter("sequence",sequence).finish();};
+            |                  ^
+      • candidate expects 1 argument, 2 provided
+native/imported-control-ticket-test.cpp: In lambda function:
+native/imported-control-ticket-test.cpp:44:46: error: no match for call to ‘(main()::<lambda(int)>) (const preview::Job&, long unsigned int)’
+   44 |         deniedWithoutMutation([&]{propose(ack(job,records[0].proofs.back().sequence.value+1));},"Future terminal sequence cannot consume cleanup credit");
+      |                                           ~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  • there is 1 candidate
+    native/imported-control-ticket-test.cpp:17:20:
+       17 |         auto ack=[&](const Job& original,uint64_t sequence){return Wire().text("kind","acknowledge").begin("job").job(original).end().counter("sequence",sequence).finish();};
+          |                    ^
+    • candidate 1: ‘main()::<lambda(int)>’
+      native/imported-control-ticket-test.cpp:17:18:
+         17 |         auto ack=[&](const Job& original,uint64_t sequence){return Wire().text("kind","acknowledge").begin("job").job(original).end().counter("sequence",sequence).finish();};
+            |                  ^
+      • candidate expects 1 argument, 2 provided
+native/imported-control-ticket-test.cpp: In function ‘int main()’:
+native/imported-control-ticket-test.cpp:57:38: error: no match for call to ‘(main()::<lambda(int)>) (const preview::Job&)’
+   57 |         auto oldCancel=propose(cancel(job));check(oldCancel && oldCancel->alreadyDelivered && oldCancel->ticket.wire==ticket->ticket.wire,"Confirmed old cancel can only report original delivered identity");
+      |                                ~~~~~~^~~~~
+  • there is 1 candidate
+    native/imported-control-ticket-test.cpp:16:23:
+       16 |         auto cancel=[&](const Job& original){return Wire().text("kind","cancel").begin("job").job(original).end().finish();};
+          |                       ^
+    • candidate 1: ‘main()::<lambda(int)>’
+      native/imported-control-ticket-test.cpp:16:21:
+         16 |         auto cancel=[&](const Job& original){return Wire().text("kind","cancel").begin("job").job(original).end().finish();};
+            |                     ^
+      • no known conversion for argument 1 from ‘const preview::Job’ to ‘int’
+native/imported-control-ticket-test.cpp:61:81: error: no match for call to ‘(main()::<lambda(int)>) (const preview::Job&)’
+   61 |         const auto current=*resumed.native.job;auto currentCancel=propose(cancel(current));
+      |                                                                           ~~~~~~^~~~~~~~~
+  • there is 1 candidate
+    native/imported-control-ticket-test.cpp:16:23:
+       16 |         auto cancel=[&](const Job& original){return Wire().text("kind","cancel").begin("job").job(original).end().finish();};
+          |                       ^
+    • candidate 1: ‘main()::<lambda(int)>’
+      native/imported-control-ticket-test.cpp:16:21:
+         16 |         auto cancel=[&](const Job& original){return Wire().text("kind","cancel").begin("job").job(original).end().finish();};
+            |                     ^
+      • no known conversion for argument 1 from ‘const preview::Job’ to ‘int’
+native/imported-control-ticket-test.cpp:64:43: error: no match for call to ‘(main()::<lambda(int)>) (const preview::Job&)’
+   64 |         value.command(1,"family:21",cancel(current));check(preview_control_delivery_complete(&channel,3) && preview_control_delivery_confirm(&channel,grant,3),"Current original cancel receipt confirmation");
+      |                                     ~~~~~~^~~~~~~~~
+  • there is 1 candidate
+    native/imported-control-ticket-test.cpp:16:23:
+       16 |         auto cancel=[&](const Job& original){return Wire().text("kind","cancel").begin("job").job(original).end().finish();};
+          |                       ^
+    • candidate 1: ‘main()::<lambda(int)>’
+      native/imported-control-ticket-test.cpp:16:21:
+         16 |         auto cancel=[&](const Job& original){return Wire().text("kind","cancel").begin("job").job(original).end().finish();};
+            |                     ^
+      • no known conversion for argument 1 from ‘const preview::Job’ to ‘int’
+native/imported-control-ticket-test.cpp:65:114: error: no match for call to ‘(main()::<lambda(int)>) (const preview::Job&, const uint64_t&)’
+   65 |         const auto nextRecords=endpoint.native([](auto& broker){return broker.inspect();});const auto nextAck=ack(current,nextRecords[0].proofs.back().sequence.value);
+      |                                                                                                               ~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  • there is 1 candidate
+    native/imported-control-ticket-test.cpp:17:20:
+       17 |         auto ack=[&](const Job& original,uint64_t sequence){return Wire().text("kind","acknowledge").begin("job").job(original).end().counter("sequence",sequence).finish();};
+          |                    ^
+    • candidate 1: ‘main()::<lambda(int)>’
+      native/imported-control-ticket-test.cpp:17:18:
+         17 |         auto ack=[&](const Job& original,uint64_t sequence){return Wire().text("kind","acknowledge").begin("job").job(original).end().counter("sequence",sequence).finish();};
+            |                  ^
+      • candidate expects 1 argument, 2 provided
+native/imported-control-ticket-test.cpp:76:54: error: no match for call to ‘(main()::<lambda(int)>) (preview::Job&, const uint64_t&)’
+   76 |         check(delivery.acknowledge(77,"family:21",ack(*third.native.job,ended[0].proofs.back().sequence.value)),"Normal fixture terminal settlement without capture");
+      |                                                   ~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  • there is 1 candidate
+    native/imported-control-ticket-test.cpp:17:20:
+       17 |         auto ack=[&](const Job& original,uint64_t sequence){return Wire().text("kind","acknowledge").begin("job").job(original).end().counter("sequence",sequence).finish();};
+          |                    ^
+    • candidate 1: ‘main()::<lambda(int)>’
+      native/imported-control-ticket-test.cpp:17:18:
+         17 |         auto ack=[&](const Job& original,uint64_t sequence){return Wire().text("kind","acknowledge").begin("job").job(original).end().counter("sequence",sequence).finish();};
+            |                  ^
+      • candidate expects 1 argument, 2 provided

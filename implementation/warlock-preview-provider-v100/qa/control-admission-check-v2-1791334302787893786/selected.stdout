@@ -1,0 +1,19 @@
+
+  control_admission_tests
+    ok receiverEnrollmentPrecedesJob passed 1 test(s)
+    ok originalEpochSurvivesAdmission passed 1 test(s)
+    ok capacityRefusesBeforeNativeIntent passed 1 test(s)
+    ok foreignReceiverCannotAdmit passed 1 test(s)
+    ok foreignEpochCannotAdmit passed 1 test(s)
+    ok foreignBindingCannotAdmit passed 1 test(s)
+    ok exceptionKeepsUnknownCleanup passed 1 test(s)
+    ok missingReturnedJobCannotRollback passed 1 test(s)
+    ok unknownRetryCannotIssueAgain passed 1 test(s)
+    ok closedReceiverPreservesObligations passed 1 test(s)
+    ok repeatedEnrollmentCannotReset passed 1 test(s)
+    ok retainedCohortBoundPrecedesNinthJob passed 1 test(s)
+    ok replacementEpochCannotReplayOriginal passed 1 test(s)
+    ok foreignBrokerCannotIssue passed 1 test(s)
+    ok singleManagerOwnsOriginalQuota passed 1 test(s)
+
+  15 passing (17ms)

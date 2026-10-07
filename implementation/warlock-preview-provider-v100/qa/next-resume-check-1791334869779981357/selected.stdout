@@ -1,0 +1,17 @@
+
+  next_resume_tests
+    ok capacityKeepsOldRequest passed 1 test(s)
+    ok pendingCannotSucceed passed 1 test(s)
+    ok sameExpiredIntentCannotRenew passed 1 test(s)
+    ok explicitSuccessorKeepsFloor passed 1 test(s)
+    ok successorRetryKeepsCutoff passed 1 test(s)
+    ok capacityReturnsNextOriginalJob passed 1 test(s)
+    ok partialPublicationRefused passed 1 test(s)
+    ok partialLeaseRefused passed 1 test(s)
+    ok oldStampCannotReplaceSuccessor passed 1 test(s)
+    ok repeatedSuccessorsStayBounded passed 1 test(s)
+    ok receiverReplacementPreventsQuery passed 1 test(s)
+    ok genuineRejectedSuccessorStaysKnown passed 1 test(s)
+    ok missingPredecessorRejected passed 1 test(s)
+
+  13 passing (15ms)

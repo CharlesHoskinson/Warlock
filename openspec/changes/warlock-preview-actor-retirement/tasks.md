@@ -145,3 +145,27 @@ byte-identical and verified. See
 Opt-in provider start/resume/ticket validation, physical release gates, original
 receiver reconciliation, renderer native-ticket outbox and actual WebKit
 activation remain the next integration work.
+
+Held GUI100 attaches cleanup admission to actual opt-in ImportedClients start and
+resume. Forty authenticated synthetic socket controls pass, together with fifteen
+selected Quint scenarios/twenty-three native traces/191 comparisons and six
+compiled variants. Its full95-command host build and all twelve original
+regression suites pass. These are CPU/native-boundary checks, with unchanged
+original C factories/WebKit activation and no genuine capture or release claim.
+See [the component report](../../../docs/warlock-preview/v93/component-report100.json).
+GUI101 adds actual native job-purpose validation and bounded confirmed retry
+history; controlled C routing, physical/actor quota release, reconciliation,
+native-assigned renderer outbox and WebKit integration remain open.
+
+Held GUI101 qualifies the actual opt-in native purpose issuer:70 authenticated
+synthetic socket controls and15 selected Quint scenarios/23 coupled native
+traces/299 comparisons detect four compiled unsafe variants. Changed reservation
+and admission helpers pass their original coupled scenarios and variants again;
+the actual optimized Elm/native Broker/real URI quota roundtrip still passes69
+controls. Its full95-command host build passes. GUI100's twelve original suites
+are retained with unchanged scripts, Elm/assets and default C/shared-host flow,
+and are not claimed rerun for101. Original failed fixture compilation and the
+overbroad first freezer glob remain preserved. Controlled C factory/routing,
+physical and actor quota release, receiver reconciliation and renderer/WebKit
+activation remain required. See
+[the component report](../../../docs/warlock-preview/v93/component-report101.json).

@@ -1,0 +1,1384 @@
+{
+  "passed": true,
+  "inputs": {
+    "elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "qa/control-quota-check.py": "df83b58d5c4cdef84a7b6aae1cec245c656936761229abd49cd68476b4f6cdf6",
+    "qa/control-quota-roundtrip.js": "c9e47acdb9cf292100716745c52a32ff2e97ec8d4f33c622d252fb1a54cc4fd8",
+    "qa/native-source-fixture.json": "1c0c3b87e773ace53adc79b9b7e8696b32167ee3ea698112b765a03c8e6c1ff1",
+    "src/ActionProjection.elm": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996",
+    "src/Bar.elm": "a10abbe7d0542c642552d90cfa459b353a3843391ce47e06ba94b91afb0b6113",
+    "src/BatchReplay.elm": "6300d3c2e617de14b2fd70a40606ea8c94db435a93f0ae30bd19765f5cdce852",
+    "src/Binding.elm": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+    "src/CapturedAction.elm": "a3e22c7dd5643a1c0424ea1ae09e134bc8b19567de980e57095e08273604fb66",
+    "src/Catalog.elm": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+    "src/CatalogReplay.elm": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+    "src/Desktop.elm": "dd0f778c70bb0e53fb4f7d344f7995fd5bbce75a9002bace15b5d70ae1428df0",
+    "src/DesktopReplay.elm": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+    "src/Effects.elm": "c41a0732a640ca7727506193c654fd6e9c996e3b9e136ca58e911961233e9e4b",
+    "src/GeometryProjection.elm": "4aee2448599d3b94d3dd4762aa8d0c223b77e9d1a61898e70d6870151194d1d9",
+    "src/GeometrySizePolicy.elm": "46dda2de43642cd33997382e90813c8eeccde80745d79b7d5cd5fd425b062c43",
+    "src/Inspection.elm": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+    "src/Launch.elm": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6",
+    "src/LaunchReplay.elm": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+    "src/Main.elm": "2e9c042c5b2b068dbe582680ed37e6fa766b636d6d1a422297f843d135fb5405",
+    "src/Menu.elm": "c40fcfa24bf9d48044ccbe2c08df0abb7d8b94ee04111776234ecd88792ff4f0",
+    "src/MenuBridge.elm": "c8b83efc426e83d5b1ebde79aaa78b44e9c0150849d68d77477793c0e344ebe2",
+    "src/MenuSurfaceReplay.elm": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39",
+    "src/NativeActorRetirement.elm": "72302b23ea124f45879b176a959b3a5bbd80edbb986bfec631994051bcae31a6",
+    "src/NativeFamilyPreviewSource.elm": "9741ed19894062160b849564696bd497cea64a4af3ecc40357535f51ee845757",
+    "src/NativeFamilyPreviewSourceReplay.elm": "699c1348a7f646dc1eeb03257a3bd92372beacba4b689f8edd71c1b2702ffe99",
+    "src/NativeOutcome.elm": "fc9e824d315e0316b850fd36760c9f4ab4239eb97d1c4b3cc752144b70f98d89",
+    "src/NativePreviewSource.elm": "cf4c6a5b03d202c225658dfc6d753f21c7addc2e5325696d8cd734fd2a6aa844",
+    "src/NativePreviewSourceReplay.elm": "d6f26c64fd55fe4943968ff7b0d7774ede6b7c6c62f924b16e96a558fcf6edd8",
+    "src/NativeProvider.elm": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+    "src/OutputController.elm": "edc3e8d07788b6ae3eeae48b00b289fd69b55d358dc2860944dd83cf0f876bb9",
+    "src/OutputReplay.elm": "44f156b65f816400b75d928371fe5bdba675545eba805fee4793422d5b3f73ff",
+    "src/OutputSurfaceReplay.elm": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26",
+    "src/Popup.elm": "f202fd191161fdb0fe66b185d8218bd9a2473f7a0c3f2469fb85bb050d14a482",
+    "src/Presentation.elm": "e65c93507188186328c597d8b15e171fbb626ca89835f0f90476ad5aa5c4c48d",
+    "src/PresentationReplay.elm": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+    "src/PreviewCatalogReplay.elm": "eaf63404fda37b1111a77eb2a16f5ad4737e4c151290f036cee415add5e4e129",
+    "src/PreviewFeedbackReplay.elm": "c54391131b2416266eb25a19602dac0788ea63502d64090bf2be857bb0aceb34",
+    "src/PreviewIdentity.elm": "262240e59eed37d362f921a4e7e89d0bb23c8b0f84fb39f0fddc29faaa3de3b5",
+    "src/PreviewLifecycle.elm": "5481b82e1863732ded7db572d42566a40450d66fcedede78251e9491b715ab02",
+    "src/PreviewMetadataReplay.elm": "1efedf2492cb9c507be3a5aeb1ee6e371a22b6141aff5156359d6526149d5c3f",
+    "src/PreviewPresenter.elm": "ea7564bd31019cff0c9e03a596a0571604d8b22d32d5093f23fb9e9a2f4e4f3c",
+    "src/PreviewPresenterReplay.elm": "0eb03b99d5d5470936b51ea77de9b102b9742284020d01c469110388efdbc06e",
+    "src/Provider.elm": "328d8fd6349eb4151fe448081e8a418f98e7d31bbe467e4cd60d12ed23ae71d0",
+    "src/ReceiptRouter.elm": "ffcf85cf38de5665b35b3e2b6eb5a9f261360ec4b226b2fcefc0723cece1a011",
+    "src/ReconciliationFrame.elm": "b72ccb317751848506841c020f83c68e3d93eba3b6fb1c1a9b3d84283fec6676",
+    "src/ReconciliationTracking.elm": "84482d1bb84160e3bd9e026b2043635c35b76422d6e9066f703411f784b29bf9",
+    "src/Replay.elm": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+    "src/SharedRecoveryReplay.elm": "f44d52432e1c6c876207c273d8a013fd446b186b85a23d7bf5474943ef26ff8b",
+    "src/Shell.elm": "06867a8be89fa184ccf3da55724cc5245dec9ab6fa82c6edfd663f5296c99f9f",
+    "src/ShellReplay.elm": "be85fbef5dda8dd07093b578c4be204d8d92772147e1ffacf80368216b5ba8ca",
+    "src/Surface.elm": "64cd1e4c25caf057071d8478729598dcb4fb0547340303ca0590ed9c0edfb613",
+    "src/SurfaceController.elm": "41874fca4f1df7f5b8dfe2ccb9f08ac710c7134670a6b55d8aaa3b7442ae8fef",
+    "src/SurfaceRenderer.elm": "981991412bd57a6709bd6240e9b893c57779105f601bb6bc81594232ce98dab9",
+    "src/SurfaceReplay.elm": "476f94f33d9225035a479bd8ae8eb755ae8ac914c29ca533f62913fb378a603a",
+    "src/Taskbar.elm": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb",
+    "src/TaskbarReplay.elm": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+    "src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+    "src/TaskbarShellReplay.elm": "72ca534bb5adc6d0a02fd68ff9f287cb1815fcb0f68313ce7d0b3033d4ebf130",
+    "src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "src/UnsentOperation.elm": "46e315cc739e097805af3c9358f9ca27a807ef1119c733aa296687342c8238ea",
+    "native/admission-test.c": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+    "native/client-command-test.cpp": "ef481b7030d6a41831895fca1a5cba7405d08e22b913fa2f0f6cadccf47c25ab",
+    "native/client-denial-test.cpp": "9c05385a9e1b9da4efe03c414b09d512ab4e3791a33c4ff55fde75e4e0c009f7",
+    "native/client-frame-test.cpp": "233d4520f3bd200cad1f1ea580e9a2eaaf382822b90aa262d4294f8a3bf68d7f",
+    "native/client-import-test.cpp": "c74f47f1e4233681ab63adf3a51396cfa7c8a7fc0769eba9e314ccc82471de4a",
+    "native/client-observation-test.cpp": "bc9a36f1d62669904d5b7003d7b299ad2ee3a836c8f13f381a6669915c74e336",
+    "native/client-producer.cpp": "9568ed8c6f67d7d7056d8c106bd3d9ba052106eb1ddff9299db0b9ad449b6210",
+    "native/client-producer.h": "01f005d7899b2f3b13216a702508adfa39b6cbcbde4f84b6fae1ebc2404462b9",
+    "native/client-resume-test.cpp": "c8dfcdc8564bb6bd8cf9284fe3d12d67c30ca9d5a510a58b935021567719ac2d",
+    "native/client-retained-presentation-test.cpp": "680fb60765c220e59974cda9a8af87c60b5935d48fa8e66671f3e74a0e1c0a2d",
+    "native/client_frame.hpp": "65d1ed6c416b34a43f2d4920001d2da049fb8995b3006475fab1651e97b9a855",
+    "native/client_import.hpp": "f2a405ce71bf0787e9b8e84d4b10cc47444f385b90ea8f2544972592bb4abc9c",
+    "native/client_producer.hpp": "b93355d804613a68593bfd2447295287ac04c76427007c5772e6244b4c51d990",
+    "native/context-keys-test.c": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+    "native/context-keys.h": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+    "native/demand.hpp": "3b01ba43bc50719509323e98212cbaa49e33b00b5bdf80297da049ac41332ea2",
+    "native/geometry-carrier-test.c": "770835580c7a4a2e21e49a9c3da586ee3ae59e66a92320dd7bb12fa8e516d921",
+    "native/handoff-test.c": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+    "native/host-fault.h": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+    "native/host-journal.h": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+    "native/host.c": "9cf69e35d9603735748e0b59e27a007e1bc3ab7393a2c310f6d8765b667f6853",
+    "native/imported_clients.hpp": "b46bcf676ecde3c7fefa7ac07aad640f78ce87d5d1380c4979bee5eb5850fe84",
+    "native/preview-integration.h": "ffacb4ed6abe6b8019f5bcb489b8abe69f28f863ca9079f29cd1c075a0a49e2a",
+    "native/preview-provider-bootstrap.cpp": "a949ddd2222a033188277217d86fc383d89edc12dc9c1ec2981da4d103e43a6f",
+    "native/preview-provider-bootstrap.h": "7220bc8df0bc40da2f897e519cff5340bc0eee84582345572b6b5c290a714c35",
+    "native/preview-uri-api.h": "7a02550a807102f6ebdad9c1570eb6a719a50b0ed422ff26add97dbd6408b002",
+    "native/preview-uri-webkit.cpp": "c8cc48442d8d098315b7ad64b71be267679bc361041dc6d2de405c657fa74ea2",
+    "native/preview_broker.hpp": "9c57428130093f8d815b7851004f103897deca278bbe4196e2116bec85a323ed",
+    "native/preview_client.hpp": "e3db3313aa48370fe77323e2b87ef0745830ffa476d314d00eca2cd64a613657",
+    "native/preview_delivery.hpp": "20e1a275985c92b6771ee24c5e4ce6a485bd049c8b1cb84c3e47358131435f72",
+    "native/preview_fd.hpp": "60fa114f7f2eb819c7a09085ee737c23d21b31f0ba177d967ff99f1425272a60",
+    "native/preview_uri.cpp": "e163fba44ad561c5d5deaf38f3a91f75f486b3749e030e1e22007cd98cdf5b87",
+    "native/preview_uri.hpp": "ad7c76ca9b089ea854f19ef029bbf461c3bcfdf76c677dc3666ae21a5385620b",
+    "native/preview_wire.hpp": "2b02108a819e97106cbf38e420871bc4ee10656fd6f98905f25c30fd838d283d",
+    "native/provider-delivery-test.cpp": "4e21203fd7acd32ede476df1137b6ea812cb26fa977d05296a884401adfd8fbe",
+    "native/provider-grant-test.cpp": "8f39b5828b946d5fba2f7df689578a50f79cf7daf2e0e8443ab87dfd7b89ac22",
+    "native/provider-ownership-test.cpp": "d79fe711a90d24ac96e8522a33a4dc3582989b40b692aec73109e365e3f44675",
+    "native/reconciliation-carrier-test.c": "38210317eff28d8a436e640e971f91df71ffcc3b17e82c27a60ee34f57d9f73d",
+    "native/recovery-presentation-test.c": "812bbab1640e12269bc195979cd319a96a505157ba8f5c637eebfd5561bc8e67",
+    "native/shared-context-test.c": "ed50c8ed6b0fee3db3818e2f38c8bb57985b388b26ee09a5624d32f1bfa258ee",
+    "native/shared-context.h": "e86f3ba7a4c76d7839ef8d67d14c7f9ea6b514afa2ac110fc7cebf2da2fd62ce",
+    "native/shared-host.c": "c51abc5f6f3fc231431f7f3cffc53a0d102e988becff2e943adcb33aeb3cd3b4",
+    "native/surface-test.c": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+    "native/surface.h": "2bdf2d9b3b34fa7193da90e58ac378e7a640ae91e7b02d46987e33c559209f0b",
+    "native/imported-clients.h": "fc8b6e392899727aa30c3baefc8ffec1a2bf640272984e38d5b1e2b01ff78e18",
+    "native/imported-clients.cpp": "85e61a73a88dd66e24d402efa73c93eb904ee6b804dfa79d853c147c3c5fcd30",
+    "native/imported-clients-boundary-test.c": "04b444d7d4d0c8f7f945d6f5e9996cfe3f23455624f6b933359b7ac1ee9737da",
+    "native/imported_lifecycle.hpp": "1d4efa4daa2753e43a822e3727dc78458941d72d03e4e01a1d041eb7f6bd9ded",
+    "native/imported-lifecycle-test.cpp": "14e7969e5228d013b590f912605cdd846235de67e8e13a87e644d123136d6a2a",
+    "native/family_source.hpp": "7e936e3f59b5075c364748384282c4e764d85444db2962a885a1ae5a0bf9bb35",
+    "native/family-source-test.cpp": "25c2402f9b6e1c7692633a2b27b69a961284412cf802fb600ad3ff2f97380b9a",
+    "native/family_style_crop_fd.hpp": "bf59599f5ceeb41381a1fd05fb045c52ec3cf47faf4706c38de8dd595f902a53",
+    "native/preview_png.hpp": "308007220baf1d7f2ad30569237ffaf7d6427d900ee1243811480402f188e670",
+    "native/family-fd-test.cpp": "4129475daf2dbcc997ee804f6f2cc1ae97c373adddc891a95ec6cf043f98291d",
+    "native/family_frame.hpp": "20ce40ab0080c37e17345cb3d88334eb5dc926a79720ec6faffee8807ae5fe67",
+    "native/family_producer.hpp": "148240aaf174b3d0f27d8385cd3e93811e48dd8c39b3b65a691fc754c2eebe22",
+    "native/family-frame-test.cpp": "7f5421a78f071a081edb32b8db0402c0e8a855df150ecdeeba6298cf94ed840c",
+    "native/generated_backdrop_fd.hpp": "3f60c0cffed16e60ec90b8f8365ec3f278d5c8cb41db2ce5b85c4929d018337f",
+    "native/backdrop-fd-test.cpp": "74b2f71f21e823bc3445cd647f86d422071edbd483d2bd89d68b38ce6575f623",
+    "native/backdrop-frame-test.cpp": "687f19e3053f305777f16d854fc2dbf593f4a7131589d522c37de4acfa498fd6",
+    "native/backdrop-denial-test.cpp": "7388e88721724be5280b0df91e982af29bebc2f9a10563690ab5aef8c73bda86",
+    "native/qa-reader-control.h": "1a504ee3959b78c73a8f9613b6a6c4f9cc51bc198d1dbd3b6fe1fd352684ccf4",
+    "native/qa-reader-control-test.c": "6bd57d3be5b0f3d0e071993e93b188fd0b2a87ae91dada60120f8e9142a07ed5",
+    "native/preview_metadata.hpp": "1cf84f1094cd8ccca90fcc5c44bed4182716e256792bb542c771c8bc1ce9ad5e",
+    "native/preview_icons.hpp": "6af2174049d623e824fdcf66ddd3a18d0b48a2c34c7159c1651dc0e4b53d8a32",
+    "native/preview_icons.cpp": "48aa83cc63d4f1f08b9333372cb3f63e0a25bf880cc17567098079284ee79693",
+    "native/metadata-icon-test.cpp": "cff027f7a3d29668893aec03be50f5dbae49fb2295606a8e8baad34b64e028d7",
+    "native/window-catalog-test.cpp": "c9efe0d6f7f7db6abc38ab717d16d56a014a2804d39281a28bddd7eb030548a6",
+    "native/receiver-extension-test.cpp": "a35501610fadf7cc4935b970c87b683fa9a2216ee2eef3da8cc70afc652b8d59",
+    "native/delivery-extension-test.cpp": "4d9ccdff37c8818ec6f70b93393e94a46f1f1b3506606a692549cf24c38972c8",
+    "native/imported_admission.hpp": "9cd619f5774d8fb40d712f6f073c00c8c337770e7d173413951fadf3dd321c78",
+    "native/imported-admission-test.cpp": "4440d17aea9172b547a66660cb30ebe27df821f627f9fae8861fcdd8d6858d6f",
+    "native/imported_enrollment.hpp": "970d2e8027dfdbbbb599f3de7d5132b9e7e27e8e0509622e7ae3ad18eeef380e",
+    "native/dynamic-enrollment-test.cpp": "bc8dd70ec9b8b5ce2f428cb82578389f9349d24b3ebdb423ccf725b5fd8c8278",
+    "native/rejected-enrollment-test.cpp": "f38a7da3423eb939f76c8882f2d2b057b9af865fd9cd3d96dbc9741918c99aad",
+    "native/resume-enrollment-test.cpp": "b14e33de4a2c1ff6b8e38737f66d8d6f906aba07e609a67750a5a7055434921d",
+    "native/imported_feedback.hpp": "6760465caf1b6877aadb62776fa050f7a44848cd4a9061ce89fdbac96604b9aa",
+    "native/local-feedback-test.cpp": "01b247fef9f6378db1616430fb7f04236e584085269542eaa05c4a6581612b29",
+    "native/next-intent-test.cpp": "6ad459d12146dbe18b6431b3ee863318c10d45a0806f63d9b5400812f20e80b9",
+    "native/next-resume-test.cpp": "f4f00450ca31f382b71af7b7158c40ee199439c9f8c23f3a4062075e190ab152",
+    "native/preview_retirement.hpp": "b8af8a43d3ca8eeebc8a0b24a9f99b846018db8e17bcb18ea31ffecfed595b0d",
+    "native/retirement-observation-test.cpp": "2f60ee0cc71f4cc611f57ca3ffa3ef4a013233a0c9de13144b207729f0a478f8",
+    "native/imported_subjects.hpp": "03e7bfd41bf4ace363d2f95bb1526515c6c9f8bedc69dffdf71fbae13f56f5ff",
+    "native/actor-retirement-test.cpp": "69ddf372f47b537e4b35481ec9769e8417270a3c84ba8caef98fe3c00b78fea0",
+    "native/actor-retirement-test-v2.cpp": "08815578bdf33210f066e80f5506fd1a8a4e1afa8b89c69779a901d225dbf599",
+    "native/actor-retirement-test-v3.cpp": "25e47f56093b84682230628f46d20fb96b2727fa4190524ec3f64e9d08e8f867",
+    "native/preview-control.h": "eeb41047554ba5a84f75614a62c1de93e871b3099a12560584150d6c4b6540d8",
+    "native/retirement_journal.hpp": "d3a4eef6793cf1b92f365757e91624de28fea374a04a10d480f7168d49b62179",
+    "native/actor-retirement-channel-test-v1.cpp": "f0c1b35a04325b261217f93d182ee1871a091abff0c44e3688a8c9f17a729812",
+    "native/actor-retirement-channel-test-v2.cpp": "4160343a5ba5939114326e780108ea223a42ca28ac6fb7d4a833695d82e50a66",
+    "native/retirement-elm-channel-test.cpp": "38205ebfb02b67ad12a3d454947a0efc93e80f9b8b191143801ab83a4bb47e20",
+    "native/retirement-elm-channel-test-v2.cpp": "a7cd7cd427e5f8e7360156f0445993584c9602cc5cad466a72201bf6bfac5902",
+    "native/retirement-elm-channel-test-v3.cpp": "0166a6db252a7c2101a26425999f2f85955ddde9014795f241fd56359c5b0a81",
+    "native/retirement-elm-channel-test-v4.cpp": "5ec17c2cacb3ca3cd2dba94766260098485ecdc2f68585f7dee3f2b6ad7fa225",
+    "native/retirement-readiness-replay.cpp": "ed336bf6770a5bc130b1d84e8e99e19d0cbb67c5c5133a876c1746ff46e6fb23",
+    "native/retirement-readiness-replay-v2.cpp": "9f10b45ea7817e6018a00461dcce0e83549f8c054bc7cc3a524dade9c297328c",
+    "native/retirement-readiness-replay-v3.cpp": "b596126e85083244f576797735e54a632832af7de37b0a5c14aa2b38243a9859",
+    "native/retirement-poll-replay.cpp": "beefa85561dd03590f7d713d66520072def838907560fab86a348abcb5e773a0",
+    "native/retirement-fair-poll-test.cpp": "50e23ab69570050fc2814549e9146a6f58413ae4f9cd0d090db4c34ceba4f8a5",
+    "native/preview-control-delivery.h": "edbcf3127c6fadbdff1eb2c361b50d0e72902a9c9e2ce456b0fb64ac7f6653e3",
+    "native/control-outbox-fixture.cpp": "f9850811275c90b1a72973f70626106d76a59191a627ff307490b343802fa30e",
+    "native/control-confirmation-fixture.cpp": "9fbecc43b61202f6e36142a3e799df01b1a31bd32255a2f34b7496d7e75765a6",
+    "native/control_reservations.hpp": "38d174ea8d26516794737db7d09ee8a7615bcc097e294becc5392df07efef8c9",
+    "native/control-reservations-replay.cpp": "509e3695bfc46b37357ceb712045e9a03d6b7b2905953197c695944afcd7c268",
+    "native/control-reservations-test.cpp": "8006cbbcfe28784132308afc03b332bf964a5038f887fd6378bc18abe9065c05",
+    "native/control-reservations-test-v2.cpp": "ec9010611ac5fc5e8cad459cb2a2a815d34e8b0b88ce64fc3574cf03ade99fc5",
+    "native/imported_control_admission.hpp": "beca6cc09e20147131c63d3c24665781134d1ddcaf8a2fc21c617943c7b58f36",
+    "native/control-admission-replay.cpp": "d3d730789eee580df8ac35bfa8a949039905fded2139dfe30a80c022928db300",
+    "native/control-quota-fixture.cpp": "9c1bf07df9a17524aba4e817938df7418e7d5ab0d3e791d80fb2872e3a9751a6",
+    "native/retained_client_command.hpp": "f07d8b840865595084dd04f8bdaa5e4a89dbd9bee27223cbba5ad0de927aaf15",
+    "native/retained-client-command-replay.cpp": "d43b2f11f03d1b760c5f15c4b61b673a916eb9d8880513ee8cb2c03efc541cad",
+    "native/imported-control-guard-test.cpp": "2c157817565956b3a21bd97ef5cf84238cb6f45ef4ef7f20e4a420b28e88242e",
+    "native/control-admission-replay-v2.cpp": "d221e0630f48cae7b5211e2230817059b753054ece15e1f40d9ac7b58065df4c",
+    "native/imported-control-ticket-test.cpp": "1e7c317a6eafa7865713dcb0f5b45ff0168841177ead8c8c06f886f635123411",
+    "native/imported-control-ticket-test-v2.cpp": "918a5eca9ab7c5d215bc6f0b10994deb824b4865240f7213479ed684a42ebecd",
+    "native/job-control-replay.cpp": "d56f84788399d7eff263a6b4779f7109bf41c2e86c9c76d95220b9571fef21b5"
+  },
+  "commands": [
+    {
+      "name": "compile",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v101/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/elm",
+        "make",
+        "src/PreviewPresenterReplay.elm",
+        "--optimize",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v101/qa/control-quota-check-1791335390390979918/preview-replay.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "flags",
+      "argv": [
+        "pkg-config",
+        "--cflags",
+        "--libs",
+        "gio-unix-2.0",
+        "json-glib-1.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "native-compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-O1",
+        "-g",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-Inative",
+        "native/control-quota-fixture.cpp",
+        "native/preview_uri.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v101/qa/control-quota-check-1791335390390979918/checks",
+        "-I/usr/include/gio-unix-2.0",
+        "-I/usr/include/json-glib-1.0",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-ljson-glib-1.0",
+        "-lgio-2.0",
+        "-lgobject-2.0",
+        "-lglib-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "controls",
+      "argv": [
+        "node",
+        "qa/control-quota-roundtrip.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v101/qa/control-quota-check-1791335390390979918/preview-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v101/qa/control-quota-check-1791335390390979918/checks"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "elmToolchain": {
+    "passed": true,
+    "compiler": "qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/elm",
+    "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+    "elmHome": "qa/toolchain/elm-home",
+    "npmPackageVersion": "0.19.2-0",
+    "elmDependencies": {
+      "elm/browser": "1.0.2",
+      "elm/core": "1.0.5",
+      "elm/html": "1.0.0",
+      "elm/json": "1.1.3",
+      "elm/time": "1.0.0",
+      "elm/url": "1.0.0",
+      "elm/virtual-dom": "1.0.3"
+    },
+    "heldFiles": {
+      "qa/toolchain/npm-package/package.json": {
+        "sha256": "6ccd78bed686ecff3759eb9b7d134f9f2d3a456fd2bdcd3db1bf13251f5ef2d0",
+        "size": 113
+      },
+      "qa/toolchain/npm-package/package-lock.json": {
+        "sha256": "a2a339e6df901717a4fd0a4d88e1430e22d35bbe1641d339d5e4c477c93f22f0",
+        "size": 3046
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/registry.dat": {
+        "sha256": "dca90142c0f0936665c1ca208996cd18fdfc4d3524f3687a7609fd918414c42d",
+        "size": 148343
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/virtual-dom/1.0.3/elm.json": {
+        "sha256": "f00299c02b546533702cacd34ed0eef09bf2bbba138585bb86a79e6b0fd11a83",
+        "size": 433
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/virtual-dom/1.0.3/LICENSE": {
+        "sha256": "c63bca41c3a19de3b16ede979ca1dfeb2ce0db93a62f4555dbb61ae3ee777425",
+        "size": 1534
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/virtual-dom/1.0.3/README.md": {
+        "sha256": "bcfb2f4a8f0f49c7e7b65fe1ee5371fdb438ce3decfd3256d2e65d08a85d567b",
+        "size": 395
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/virtual-dom/1.0.3/docs.json": {
+        "sha256": "76a43b5769c6d68ecfc8f1a87b60bd2dd3e7586f78b7a846c3ed83708b1ff2ba",
+        "size": 11111
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/virtual-dom/1.0.3/artifacts.dat": {
+        "sha256": "d0d597d90653335aca5f8570077acaf0ff130692534be607318690344f0ce1a7",
+        "size": 42924
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/virtual-dom/1.0.3/src/VirtualDom.elm": {
+        "sha256": "85f06afbc5f418f69c424ecc9b61969cc460444f97987054fb14d2a944d3bba8",
+        "size": 11520
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/virtual-dom/1.0.3/src/Elm/Kernel/VirtualDom.js": {
+        "sha256": "9246c8591d9b511468e8257b60c8495020164a5fd58f21d523722775292095db",
+        "size": 32836
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/virtual-dom/1.0.3/src/Elm/Kernel/VirtualDom.server.js": {
+        "sha256": "68c145d1f3ae40618e023b4109edc3f474f12c83af9ad5a3cfa2232f7cfd0bd9",
+        "size": 3251
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0/elm.json": {
+        "sha256": "b2c089bbe199a8431fd53635a55fdc10e7ee4bb4a993064688f74812dc94dc5e",
+        "size": 467
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0/LICENSE": {
+        "sha256": "1c818d8c5f129ee90e6a855c9edd16d9c6bd25e2959b1aeaeb8626e7c539cc9b",
+        "size": 1490
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0/README.md": {
+        "sha256": "4e9c1ebc4cd9b938005e62762da092ea9882fca23700b4e271f67ec10e21b496",
+        "size": 2614
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0/docs.json": {
+        "sha256": "58d93cd2643a77f2499078ab935e3f082620bd4636f992b74b97a1b283556db6",
+        "size": 26378
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0/artifacts.dat": {
+        "sha256": "c0afb9601eb78a98cd9c2bbc94ec068a48c66d32591ef0f8a714abba23b873b8",
+        "size": 32898
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0/src/Url.elm": {
+        "sha256": "c1dad01869f5a4fe29406b3409508ec4754bf8125cc01ef5106b2e369c5c647c",
+        "size": 8045
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0/src/Url/Builder.elm": {
+        "sha256": "e4922467375bcedd187bbd811b5dfd49b7f9b6a08063b7ef411f2ad0aa6e8dad",
+        "size": 5543
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0/src/Url/Parser.elm": {
+        "sha256": "0a42ac79944c28778c0e32510cd089e7d80e6d202937238f829d4de2d942d028",
+        "size": 11658
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0/src/Url/Parser/Internal.elm": {
+        "sha256": "91cec106bc5eb47ae5b1ff86ac1589989785080805bc4e38dd187ec22dbbfc26",
+        "size": 144
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0/src/Url/Parser/Query.elm": {
+        "sha256": "2b14aab77b663bef2b9434fccc3ca6c102990b9cf87dea650ae8341a9325bf4e",
+        "size": 7271
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0/src/Elm/Kernel/Url.js": {
+        "sha256": "56250d3bec1cbc6c8974514ea56040043b237b058cb8cdad54a8b32e33676922",
+        "size": 268
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/time/1.0.0/elm.json": {
+        "sha256": "03445516f62e4a779b7267e25f053732f57bda580b871f99a3e53a7979b2dfa4",
+        "size": 343
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/time/1.0.0/LICENSE": {
+        "sha256": "a1c31dacffb1a470cb3aaf4844904114b9bc5ebf091e113b2d46bc4953c2c2ea",
+        "size": 1534
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/time/1.0.0/README.md": {
+        "sha256": "54e771f9408d791a73f7f10ff25779d64a4155b177c839d790ab4f62e5bc4556",
+        "size": 6933
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/time/1.0.0/docs.json": {
+        "sha256": "1a783589793e0258102e0951eb60edd2bf83db98c16c436cb5ae4c3bdfb2665b",
+        "size": 10008
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/time/1.0.0/artifacts.dat": {
+        "sha256": "5da15278ba51679734decb6f74203dbd9ab547c1f4d3e2a4a13f0a2779739c3c",
+        "size": 16584
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/time/1.0.0/src/Time.elm": {
+        "sha256": "e4c55a925c664c25b8ffcd1510c827793d670ec159dc18af3ebd7f642ee4e638",
+        "size": 15315
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/time/1.0.0/src/Elm/Kernel/Time.js": {
+        "sha256": "cc59eff642bd2dc98ffde4a99ed0c682821e09a4601c083338d442b15ccd5cb1",
+        "size": 1033
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/time/1.0.0/src/Elm/Kernel/Time.server.js": {
+        "sha256": "888d36edbd6d8fe5e69a3802c56f93a1341f0dcfa14e9be1ab10de3c188602c8",
+        "size": 301
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/json/1.1.3/elm.json": {
+        "sha256": "b6c2ce9de7bd7ed70de7a111e87c449ec3aa7819bf6c48953ce7221e776f7a3e",
+        "size": 371
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/json/1.1.3/LICENSE": {
+        "sha256": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad",
+        "size": 1534
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/json/1.1.3/README.md": {
+        "sha256": "5569c109a48d6746e5f767097b71e081a8637900ec4a44523c7e3bdc07281a67",
+        "size": 2471
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/json/1.1.3/docs.json": {
+        "sha256": "21863efbfc0af238b90089a03362fcc13539c7a930d8ab5438f3e7ec3a179c52",
+        "size": 22170
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/json/1.1.3/artifacts.dat": {
+        "sha256": "56975991a480f8294c3a8c2fee87b529872182aaeb49e94af4e5aaa5acb52acc",
+        "size": 27251
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/json/1.1.3/src/Json/Decode.elm": {
+        "sha256": "f68189c7da6b1fb23c08878296b0e55575480ac0632adfc6d7ba76f8617672ea",
+        "size": 19194
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/json/1.1.3/src/Json/Encode.elm": {
+        "sha256": "9cdf3d660f182aed97117205e72388e2bb0d0ad795b4749975fa2c639b808a2a",
+        "size": 4764
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/json/1.1.3/src/Elm/Kernel/Json.js": {
+        "sha256": "17d5536d6f22be1614a73837368e2a61439ebfa9dd0ff732880ee544baa41af2",
+        "size": 9592
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/html/1.0.0/elm.json": {
+        "sha256": "84dbb28e88ffbaf32e0e7ce11b8d14ccc97c0798b2d0945ed94668c12a0b9e25",
+        "size": 500
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/html/1.0.0/LICENSE": {
+        "sha256": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad",
+        "size": 1534
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/html/1.0.0/README.md": {
+        "sha256": "a2a02ab6786aea9bc3d8eb8378f02620d9b72fbb8c0e1af15bf118107c68ae46",
+        "size": 1508
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/html/1.0.0/docs.json": {
+        "sha256": "d4765c6dc9da2c5860277ae05caffbd97c49c300f8c26b83670c986e27ecd0aa",
+        "size": 51303
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/html/1.0.0/artifacts.dat": {
+        "sha256": "59605a1652ecc9c2fe612c5583c85882a2289c31304bff338f35d85302e31157",
+        "size": 75070
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/html/1.0.0/src/Html.elm": {
+        "sha256": "2e567c415bfeb2a743b0c6fee980383b3e378785247b3e930f77aa98e1dbb4d9",
+        "size": 21330
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/html/1.0.0/src/Html/Attributes.elm": {
+        "sha256": "b4ff344168f9199de2bfee5f8e3c1441c621692ddc99a5ce7e380f3014e6d367",
+        "size": 21659
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/html/1.0.0/src/Html/Events.elm": {
+        "sha256": "d633d86ecee6195d6bea6f7c8b49a5df3befecd8e9589745055dc5f30b0cef9e",
+        "size": 8544
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/html/1.0.0/src/Html/Keyed.elm": {
+        "sha256": "346e9fe65945ccedc250e5d5cc739fe3505dc9be37bcb93fd311527964b55ff7",
+        "size": 1181
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/html/1.0.0/src/Html/Lazy.elm": {
+        "sha256": "e6ec7de40a8c6318a055898a144e8cc56b2c9b32f7694be1bf223e98db6cd031",
+        "size": 2457
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/elm.json": {
+        "sha256": "db814e9f01c211e63d3b86e2546e924aaba8be2ee2b12299ab81456e9a268993",
+        "size": 817
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/LICENSE": {
+        "sha256": "431192066654a9060d29033714fa19eb6f7749031710957c55cf8b8d8bd246c3",
+        "size": 1467
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/README.md": {
+        "sha256": "194a0f3dcbd764305b73dd62679d4026bccad5f2992b0d145e38e75d9342b8d1",
+        "size": 1174
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/docs.json": {
+        "sha256": "5109354b63fd32313fafe6aeafb5e13640e54f29d888cbc0bee93aa7e61a7034",
+        "size": 99846
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/artifacts.dat": {
+        "sha256": "aff919cb770b4106652f7f3018cc6e6007c1ffde09f1cde3f37f0b86189143bf",
+        "size": 165900
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Array.elm": {
+        "sha256": "1f60be42ecfeaae7dab6e5f6887c49ecdc4089e4348b6f9694e095bd0f434eac",
+        "size": 30059
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Basics.elm": {
+        "sha256": "649e41513480066f951eef04931a1caea463d3b052cb4a86182c6fcd87e980f2",
+        "size": 23139
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Bitwise.elm": {
+        "sha256": "0b3c9aef28504672f08209b26e24390aa65ee8a7ae97e71ba84770ff56d25978",
+        "size": 2064
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Char.elm": {
+        "sha256": "90db4547054916b2e71b364e3253f50f551e03627ce7e8ae53d1fb1ae667e387",
+        "size": 5013
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Debug.elm": {
+        "sha256": "1407cfff0d9882dc4b6557c7b99f8bbb6f19dbf345ae919c87daf0ca979fd4fe",
+        "size": 3122
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Dict.elm": {
+        "sha256": "2afc5fcbc080b98903d9b05a98eb0efbf65265eb42ed076b2d442d9e4aca14e5",
+        "size": 16564
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/List.elm": {
+        "sha256": "79e513a52ab45ab98f3a5ad9c87779c2cb29519c5adcf91ab3b70fb5de234f41",
+        "size": 13279
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Maybe.elm": {
+        "sha256": "35aa285d930a4da6d918717209f230667ab127d357f69d6ea3dbab31e567f5aa",
+        "size": 5619
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Platform.elm": {
+        "sha256": "71d83575a51451379e81fc2712e925a5fc242286c5c971259ff1740274f7e527",
+        "size": 3059
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Process.elm": {
+        "sha256": "a6af86afca70423a8ec9092c34f5b4b4247cb25dc67074864cdcab8c895d0455",
+        "size": 3664
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Result.elm": {
+        "sha256": "1efa7ed54dfcfc31c35ffae770afc6b9b095e063b325d80f5e5550600ded746b",
+        "size": 6419
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Set.elm": {
+        "sha256": "765ce399f1ed4c92bb47fe0af07808875a2377fdc89f951d513b6f55e5744f85",
+        "size": 4459
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/String.elm": {
+        "sha256": "e7300d71211211e5e0b8b1b3bcd0d6407416a498bcfb682b26a8642fa965e4a0",
+        "size": 13527
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Task.elm": {
+        "sha256": "f546ccb07a58b26fcf791ed45a6236e80e45aaed00c29cbaeced5dcd6da034fa",
+        "size": 8764
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Tuple.elm": {
+        "sha256": "b970211ee185cf3184634702aa54f6ec33e2aafb8930caead713ee7929236b46",
+        "size": 2295
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/JsArray.elm": {
+        "sha256": "bfa0bc6ae1b5b5786f1224b9c0eb476380e9818af53523fdda4b0c30eb60a0d2",
+        "size": 4518
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Platform/Cmd.elm": {
+        "sha256": "015c3c2469abeb1cfcf757017d4448c0e453da972fb846f93a91768488e7dfd5",
+        "size": 2248
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Platform/Sub.elm": {
+        "sha256": "fdb296916f45f3ed0096959e5d727b32a05e7459ef5cc95f00e76951221499dd",
+        "size": 2404
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Basics.js": {
+        "sha256": "30364c4d72f08888cb16a5ecdd6f04bcf66e6a7d5902ece907c9c01f1ca4d55d",
+        "size": 1635
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Bitwise.js": {
+        "sha256": "41a1e83136e4a5222bd11dd372c508b33815fe45c8795fe4e8c78a5acfeb35d8",
+        "size": 473
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Char.js": {
+        "sha256": "b77e57164741ab7e5e1b78cdfdeffb125c665eb748ea5d5ac62318435b7105b7",
+        "size": 840
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Debug.js": {
+        "sha256": "8371e580481da98ca6ccaed2638053ffcee4bee04e2b5c8b86e2ea5c955fc462",
+        "size": 7416
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/JsArray.js": {
+        "sha256": "888aa1150c7ef8b485f835de1cebc5f69056d547155e624a8aa77a18bf102dd3",
+        "size": 2677
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/List.js": {
+        "sha256": "975268b3694443d66e3e68c4dac9a8bb20e6b84f324046b12222e51b64eaa687",
+        "size": 1863
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Platform.js": {
+        "sha256": "569148a4e6b9371214da1e54285a6a4bfdd1cb42220886f2392a46d8f84e5863",
+        "size": 10655
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Process.js": {
+        "sha256": "50554f94246d84921109584196c7c43f90775ff4256ce4df363b44f7794065da",
+        "size": 337
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Process.server.js": {
+        "sha256": "823d7abb8d78ea9f88488d9b1eeb2d2b049544f05d8223862e7cef76c1c1db34",
+        "size": 131
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Scheduler.js": {
+        "sha256": "bdc18efab541e63edd65173fd995e35edc0fefe182fdb46c914b56734e2dbe6a",
+        "size": 3141
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/String.js": {
+        "sha256": "037260f1df8da6007eb54f9464167ce59e9332b804013127a5e036f0919e266b",
+        "size": 5126
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Utils.js": {
+        "sha256": "cc6c6c94d8e8c0ba0041ab09fabf6235c2cc4ab220d54257e6c7c4ffa7876017",
+        "size": 3618
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/elm.json": {
+        "sha256": "f50e12cb6b89a97ef18dde0c64fa92aa78469c412c19d64ca1c56931a1fbc52f",
+        "size": 693
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/LICENSE": {
+        "sha256": "d33481c057f582207d41425b1b3ecb740291f9f9c86b21e9a045cd3bea0f6ac8",
+        "size": 1467
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/README.md": {
+        "sha256": "7f840d168653866570c8589d01eb07c964659a178d63deecbfed716e80098a33",
+        "size": 1507
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/docs.json": {
+        "sha256": "bc722e08b6ca01697a17302ae9d4ecb3ce706459025fafc444173f018432bf02",
+        "size": 30934
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/artifacts.dat": {
+        "sha256": "fe5b6fe79715147ffc845ce685b7090adedbd6de05934155779cb8f0594b1139",
+        "size": 199295
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Browser.elm": {
+        "sha256": "2722873214de2d381a02e037dd56f764c522c0b4ccbbfb3edccce69e0c3c32a5",
+        "size": 9064
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Browser/AnimationManager.elm": {
+        "sha256": "b5eec62b6f9e2e94f5f1b573228e332784580fddc5898c732c4f5c48f4a5a854",
+        "size": 2497
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Browser/Dom.elm": {
+        "sha256": "03bee2960770cea5b6ee2a208f33622432b8a1ae12e77412cf84b67a453ac2a7",
+        "size": 11815
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Browser/Events.elm": {
+        "sha256": "b72f8970ee085dab3c7e5504f661e21ed6cefaea21890899d9cd32ebc7f2bd4f",
+        "size": 8706
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Browser/Navigation.elm": {
+        "sha256": "329085431ef02615190706903d090364097ed3ddaf466370918af69379354706",
+        "size": 5770
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Debugger/Expando.elm": {
+        "sha256": "c93b00af7bf99c8929db06cdfaf7c6b26b955ac576e62ee4fe2c0be6e4f01a6b",
+        "size": 15442
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Debugger/History.elm": {
+        "sha256": "4ef4701403e4b960a902a12f20f5feb3ac8881850ba7a71ca6c50f363c60caa9",
+        "size": 11103
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Debugger/Main.elm": {
+        "sha256": "4513896c62d0ba2f3f27bae3cf39145af8e5ccf428abde16db782ed1c7db3b6a",
+        "size": 19871
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Debugger/Metadata.elm": {
+        "sha256": "733be27ac5b7651c55b62161f24c508c9a62cf69a481672f17a0c58068591cd8",
+        "size": 6980
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Debugger/Overlay.elm": {
+        "sha256": "cbb5380cc49af503a462d4e1c0112fe6d46653fc34d8948243f5782591094b47",
+        "size": 14130
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Debugger/Report.elm": {
+        "sha256": "2323bbd81acaaf3b6077d66fda4fd12a15b1d9c21e9571ab21f0b7c069a5d096",
+        "size": 1861
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Elm/Kernel/Browser.js": {
+        "sha256": "ae20f6a08a7926cc4f19290da136a4e39d9993076db91fa85f54d7d0f244eb0d",
+        "size": 10517
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Elm/Kernel/Browser.server.js": {
+        "sha256": "e5e2a7ad542e5b222ac71f989e3f29a43035b44e6fcc8a7af0341585a35c9ee5",
+        "size": 3239
+      },
+      "qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Elm/Kernel/Debugger.js": {
+        "sha256": "c74f81f8684fbafeba01b90273f575b3a66fcf317c129074b1244a07845f0c97",
+        "size": 14173
+      },
+      "qa/toolchain/npm-package/node_modules/.package-lock.json": {
+        "sha256": "0378d3369db72f70e9c3e6bfb78bf1d42680f23e6a812beebcab961ca7659c4a",
+        "size": 1226
+      },
+      "qa/toolchain/npm-package/node_modules/elm/binary.js": {
+        "sha256": "43e17364dd32cf7a3a8613cdd38e909604f9037b8bb43d54071ab0bf9b637e62",
+        "size": 3619
+      },
+      "qa/toolchain/npm-package/node_modules/elm/install.js": {
+        "sha256": "2ca03540f6b59935137e4eb2dd3f2d6374aa064f0d6f49f7421feb7b3534ac5d",
+        "size": 26
+      },
+      "qa/toolchain/npm-package/node_modules/elm/package.json": {
+        "sha256": "40261a256c19b122c95d519f1796e7d3d3b9ace02fa86fea040ec06dabf45600",
+        "size": 1067
+      },
+      "qa/toolchain/npm-package/node_modules/elm/README.md": {
+        "sha256": "3c75f66d0f37d00286b08fb971f93a4db772091ac3018c2fdd18bea900960a19",
+        "size": 2048
+      },
+      "qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/elm": {
+        "sha256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+        "size": 47976272
+      },
+      "qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/package.json": {
+        "sha256": "3781fc4d4589f36037bece84c62b8ea05c7fc751b35c2b1b52cd4fa71e15302d",
+        "size": 302
+      },
+      "qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/README.md": {
+        "sha256": "f30a5769af4ec6c2a46db6709ec0f370d24b0ae0abf5a69d5f17f3b65c10b2c3",
+        "size": 409
+      },
+      "qa/toolchain/npm-package/node_modules/elm/bin/elm": {
+        "sha256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+        "size": 47976272
+      }
+    },
+    "originalCacheFiles": {
+      "/home/hoskinson/.npm/_npx/84e76f4d63d5907c/package.json": {
+        "sha256": "6ccd78bed686ecff3759eb9b7d134f9f2d3a456fd2bdcd3db1bf13251f5ef2d0",
+        "size": 113
+      },
+      "/home/hoskinson/.npm/_npx/84e76f4d63d5907c/package-lock.json": {
+        "sha256": "a2a339e6df901717a4fd0a4d88e1430e22d35bbe1641d339d5e4c477c93f22f0",
+        "size": 3046
+      },
+      "/home/hoskinson/.npm/_npx/84e76f4d63d5907c/node_modules/.package-lock.json": {
+        "sha256": "0378d3369db72f70e9c3e6bfb78bf1d42680f23e6a812beebcab961ca7659c4a",
+        "size": 1226
+      },
+      "/home/hoskinson/.npm/_npx/84e76f4d63d5907c/node_modules/elm/binary.js": {
+        "sha256": "43e17364dd32cf7a3a8613cdd38e909604f9037b8bb43d54071ab0bf9b637e62",
+        "size": 3619
+      },
+      "/home/hoskinson/.npm/_npx/84e76f4d63d5907c/node_modules/elm/install.js": {
+        "sha256": "2ca03540f6b59935137e4eb2dd3f2d6374aa064f0d6f49f7421feb7b3534ac5d",
+        "size": 26
+      },
+      "/home/hoskinson/.npm/_npx/84e76f4d63d5907c/node_modules/elm/package.json": {
+        "sha256": "40261a256c19b122c95d519f1796e7d3d3b9ace02fa86fea040ec06dabf45600",
+        "size": 1067
+      },
+      "/home/hoskinson/.npm/_npx/84e76f4d63d5907c/node_modules/elm/README.md": {
+        "sha256": "3c75f66d0f37d00286b08fb971f93a4db772091ac3018c2fdd18bea900960a19",
+        "size": 2048
+      },
+      "/home/hoskinson/.npm/_npx/84e76f4d63d5907c/node_modules/elm/bin/elm": {
+        "sha256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+        "size": 47976272
+      },
+      "/home/hoskinson/.npm/_npx/84e76f4d63d5907c/node_modules/@elm_binaries/linux_x64/elm": {
+        "sha256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+        "size": 47976272
+      },
+      "/home/hoskinson/.npm/_npx/84e76f4d63d5907c/node_modules/@elm_binaries/linux_x64/package.json": {
+        "sha256": "3781fc4d4589f36037bece84c62b8ea05c7fc751b35c2b1b52cd4fa71e15302d",
+        "size": 302
+      },
+      "/home/hoskinson/.npm/_npx/84e76f4d63d5907c/node_modules/@elm_binaries/linux_x64/README.md": {
+        "sha256": "f30a5769af4ec6c2a46db6709ec0f370d24b0ae0abf5a69d5f17f3b65c10b2c3",
+        "size": 409
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/registry.dat": {
+        "sha256": "dca90142c0f0936665c1ca208996cd18fdfc4d3524f3687a7609fd918414c42d",
+        "size": 148343
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/browser/1.0.2/elm.json": {
+        "sha256": "f50e12cb6b89a97ef18dde0c64fa92aa78469c412c19d64ca1c56931a1fbc52f",
+        "size": 693
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/browser/1.0.2/LICENSE": {
+        "sha256": "d33481c057f582207d41425b1b3ecb740291f9f9c86b21e9a045cd3bea0f6ac8",
+        "size": 1467
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/browser/1.0.2/README.md": {
+        "sha256": "7f840d168653866570c8589d01eb07c964659a178d63deecbfed716e80098a33",
+        "size": 1507
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/browser/1.0.2/docs.json": {
+        "sha256": "bc722e08b6ca01697a17302ae9d4ecb3ce706459025fafc444173f018432bf02",
+        "size": 30934
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/browser/1.0.2/artifacts.dat": {
+        "sha256": "fe5b6fe79715147ffc845ce685b7090adedbd6de05934155779cb8f0594b1139",
+        "size": 199295
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/browser/1.0.2/src/Browser.elm": {
+        "sha256": "2722873214de2d381a02e037dd56f764c522c0b4ccbbfb3edccce69e0c3c32a5",
+        "size": 9064
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/browser/1.0.2/src/Browser/AnimationManager.elm": {
+        "sha256": "b5eec62b6f9e2e94f5f1b573228e332784580fddc5898c732c4f5c48f4a5a854",
+        "size": 2497
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/browser/1.0.2/src/Browser/Dom.elm": {
+        "sha256": "03bee2960770cea5b6ee2a208f33622432b8a1ae12e77412cf84b67a453ac2a7",
+        "size": 11815
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/browser/1.0.2/src/Browser/Events.elm": {
+        "sha256": "b72f8970ee085dab3c7e5504f661e21ed6cefaea21890899d9cd32ebc7f2bd4f",
+        "size": 8706
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/browser/1.0.2/src/Browser/Navigation.elm": {
+        "sha256": "329085431ef02615190706903d090364097ed3ddaf466370918af69379354706",
+        "size": 5770
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/browser/1.0.2/src/Debugger/Expando.elm": {
+        "sha256": "c93b00af7bf99c8929db06cdfaf7c6b26b955ac576e62ee4fe2c0be6e4f01a6b",
+        "size": 15442
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/browser/1.0.2/src/Debugger/History.elm": {
+        "sha256": "4ef4701403e4b960a902a12f20f5feb3ac8881850ba7a71ca6c50f363c60caa9",
+        "size": 11103
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/browser/1.0.2/src/Debugger/Main.elm": {
+        "sha256": "4513896c62d0ba2f3f27bae3cf39145af8e5ccf428abde16db782ed1c7db3b6a",
+        "size": 19871
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/browser/1.0.2/src/Debugger/Metadata.elm": {
+        "sha256": "733be27ac5b7651c55b62161f24c508c9a62cf69a481672f17a0c58068591cd8",
+        "size": 6980
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/browser/1.0.2/src/Debugger/Overlay.elm": {
+        "sha256": "cbb5380cc49af503a462d4e1c0112fe6d46653fc34d8948243f5782591094b47",
+        "size": 14130
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/browser/1.0.2/src/Debugger/Report.elm": {
+        "sha256": "2323bbd81acaaf3b6077d66fda4fd12a15b1d9c21e9571ab21f0b7c069a5d096",
+        "size": 1861
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/browser/1.0.2/src/Elm/Kernel/Browser.js": {
+        "sha256": "ae20f6a08a7926cc4f19290da136a4e39d9993076db91fa85f54d7d0f244eb0d",
+        "size": 10517
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/browser/1.0.2/src/Elm/Kernel/Browser.server.js": {
+        "sha256": "e5e2a7ad542e5b222ac71f989e3f29a43035b44e6fcc8a7af0341585a35c9ee5",
+        "size": 3239
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/browser/1.0.2/src/Elm/Kernel/Debugger.js": {
+        "sha256": "c74f81f8684fbafeba01b90273f575b3a66fcf317c129074b1244a07845f0c97",
+        "size": 14173
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/elm.json": {
+        "sha256": "db814e9f01c211e63d3b86e2546e924aaba8be2ee2b12299ab81456e9a268993",
+        "size": 817
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/LICENSE": {
+        "sha256": "431192066654a9060d29033714fa19eb6f7749031710957c55cf8b8d8bd246c3",
+        "size": 1467
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/README.md": {
+        "sha256": "194a0f3dcbd764305b73dd62679d4026bccad5f2992b0d145e38e75d9342b8d1",
+        "size": 1174
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/docs.json": {
+        "sha256": "5109354b63fd32313fafe6aeafb5e13640e54f29d888cbc0bee93aa7e61a7034",
+        "size": 99846
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/artifacts.dat": {
+        "sha256": "aff919cb770b4106652f7f3018cc6e6007c1ffde09f1cde3f37f0b86189143bf",
+        "size": 165900
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/src/Array.elm": {
+        "sha256": "1f60be42ecfeaae7dab6e5f6887c49ecdc4089e4348b6f9694e095bd0f434eac",
+        "size": 30059
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/src/Basics.elm": {
+        "sha256": "649e41513480066f951eef04931a1caea463d3b052cb4a86182c6fcd87e980f2",
+        "size": 23139
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/src/Bitwise.elm": {
+        "sha256": "0b3c9aef28504672f08209b26e24390aa65ee8a7ae97e71ba84770ff56d25978",
+        "size": 2064
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/src/Char.elm": {
+        "sha256": "90db4547054916b2e71b364e3253f50f551e03627ce7e8ae53d1fb1ae667e387",
+        "size": 5013
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/src/Debug.elm": {
+        "sha256": "1407cfff0d9882dc4b6557c7b99f8bbb6f19dbf345ae919c87daf0ca979fd4fe",
+        "size": 3122
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/src/Dict.elm": {
+        "sha256": "2afc5fcbc080b98903d9b05a98eb0efbf65265eb42ed076b2d442d9e4aca14e5",
+        "size": 16564
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/src/List.elm": {
+        "sha256": "79e513a52ab45ab98f3a5ad9c87779c2cb29519c5adcf91ab3b70fb5de234f41",
+        "size": 13279
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/src/Maybe.elm": {
+        "sha256": "35aa285d930a4da6d918717209f230667ab127d357f69d6ea3dbab31e567f5aa",
+        "size": 5619
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/src/Platform.elm": {
+        "sha256": "71d83575a51451379e81fc2712e925a5fc242286c5c971259ff1740274f7e527",
+        "size": 3059
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/src/Process.elm": {
+        "sha256": "a6af86afca70423a8ec9092c34f5b4b4247cb25dc67074864cdcab8c895d0455",
+        "size": 3664
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/src/Result.elm": {
+        "sha256": "1efa7ed54dfcfc31c35ffae770afc6b9b095e063b325d80f5e5550600ded746b",
+        "size": 6419
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/src/Set.elm": {
+        "sha256": "765ce399f1ed4c92bb47fe0af07808875a2377fdc89f951d513b6f55e5744f85",
+        "size": 4459
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/src/String.elm": {
+        "sha256": "e7300d71211211e5e0b8b1b3bcd0d6407416a498bcfb682b26a8642fa965e4a0",
+        "size": 13527
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/src/Task.elm": {
+        "sha256": "f546ccb07a58b26fcf791ed45a6236e80e45aaed00c29cbaeced5dcd6da034fa",
+        "size": 8764
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/src/Tuple.elm": {
+        "sha256": "b970211ee185cf3184634702aa54f6ec33e2aafb8930caead713ee7929236b46",
+        "size": 2295
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/src/Elm/JsArray.elm": {
+        "sha256": "bfa0bc6ae1b5b5786f1224b9c0eb476380e9818af53523fdda4b0c30eb60a0d2",
+        "size": 4518
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/src/Platform/Cmd.elm": {
+        "sha256": "015c3c2469abeb1cfcf757017d4448c0e453da972fb846f93a91768488e7dfd5",
+        "size": 2248
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/src/Platform/Sub.elm": {
+        "sha256": "fdb296916f45f3ed0096959e5d727b32a05e7459ef5cc95f00e76951221499dd",
+        "size": 2404
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Basics.js": {
+        "sha256": "30364c4d72f08888cb16a5ecdd6f04bcf66e6a7d5902ece907c9c01f1ca4d55d",
+        "size": 1635
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Bitwise.js": {
+        "sha256": "41a1e83136e4a5222bd11dd372c508b33815fe45c8795fe4e8c78a5acfeb35d8",
+        "size": 473
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Char.js": {
+        "sha256": "b77e57164741ab7e5e1b78cdfdeffb125c665eb748ea5d5ac62318435b7105b7",
+        "size": 840
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Debug.js": {
+        "sha256": "8371e580481da98ca6ccaed2638053ffcee4bee04e2b5c8b86e2ea5c955fc462",
+        "size": 7416
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/JsArray.js": {
+        "sha256": "888aa1150c7ef8b485f835de1cebc5f69056d547155e624a8aa77a18bf102dd3",
+        "size": 2677
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/List.js": {
+        "sha256": "975268b3694443d66e3e68c4dac9a8bb20e6b84f324046b12222e51b64eaa687",
+        "size": 1863
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Platform.js": {
+        "sha256": "569148a4e6b9371214da1e54285a6a4bfdd1cb42220886f2392a46d8f84e5863",
+        "size": 10655
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Process.js": {
+        "sha256": "50554f94246d84921109584196c7c43f90775ff4256ce4df363b44f7794065da",
+        "size": 337
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Process.server.js": {
+        "sha256": "823d7abb8d78ea9f88488d9b1eeb2d2b049544f05d8223862e7cef76c1c1db34",
+        "size": 131
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Scheduler.js": {
+        "sha256": "bdc18efab541e63edd65173fd995e35edc0fefe182fdb46c914b56734e2dbe6a",
+        "size": 3141
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/String.js": {
+        "sha256": "037260f1df8da6007eb54f9464167ce59e9332b804013127a5e036f0919e266b",
+        "size": 5126
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Utils.js": {
+        "sha256": "cc6c6c94d8e8c0ba0041ab09fabf6235c2cc4ab220d54257e6c7c4ffa7876017",
+        "size": 3618
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/html/1.0.0/elm.json": {
+        "sha256": "84dbb28e88ffbaf32e0e7ce11b8d14ccc97c0798b2d0945ed94668c12a0b9e25",
+        "size": 500
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/html/1.0.0/LICENSE": {
+        "sha256": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad",
+        "size": 1534
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/html/1.0.0/README.md": {
+        "sha256": "a2a02ab6786aea9bc3d8eb8378f02620d9b72fbb8c0e1af15bf118107c68ae46",
+        "size": 1508
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/html/1.0.0/docs.json": {
+        "sha256": "d4765c6dc9da2c5860277ae05caffbd97c49c300f8c26b83670c986e27ecd0aa",
+        "size": 51303
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/html/1.0.0/artifacts.dat": {
+        "sha256": "59605a1652ecc9c2fe612c5583c85882a2289c31304bff338f35d85302e31157",
+        "size": 75070
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/html/1.0.0/src/Html.elm": {
+        "sha256": "2e567c415bfeb2a743b0c6fee980383b3e378785247b3e930f77aa98e1dbb4d9",
+        "size": 21330
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/html/1.0.0/src/Html/Attributes.elm": {
+        "sha256": "b4ff344168f9199de2bfee5f8e3c1441c621692ddc99a5ce7e380f3014e6d367",
+        "size": 21659
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/html/1.0.0/src/Html/Events.elm": {
+        "sha256": "d633d86ecee6195d6bea6f7c8b49a5df3befecd8e9589745055dc5f30b0cef9e",
+        "size": 8544
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/html/1.0.0/src/Html/Keyed.elm": {
+        "sha256": "346e9fe65945ccedc250e5d5cc739fe3505dc9be37bcb93fd311527964b55ff7",
+        "size": 1181
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/html/1.0.0/src/Html/Lazy.elm": {
+        "sha256": "e6ec7de40a8c6318a055898a144e8cc56b2c9b32f7694be1bf223e98db6cd031",
+        "size": 2457
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/json/1.1.3/elm.json": {
+        "sha256": "b6c2ce9de7bd7ed70de7a111e87c449ec3aa7819bf6c48953ce7221e776f7a3e",
+        "size": 371
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/json/1.1.3/LICENSE": {
+        "sha256": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad",
+        "size": 1534
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/json/1.1.3/README.md": {
+        "sha256": "5569c109a48d6746e5f767097b71e081a8637900ec4a44523c7e3bdc07281a67",
+        "size": 2471
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/json/1.1.3/docs.json": {
+        "sha256": "21863efbfc0af238b90089a03362fcc13539c7a930d8ab5438f3e7ec3a179c52",
+        "size": 22170
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/json/1.1.3/artifacts.dat": {
+        "sha256": "56975991a480f8294c3a8c2fee87b529872182aaeb49e94af4e5aaa5acb52acc",
+        "size": 27251
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/json/1.1.3/src/Json/Decode.elm": {
+        "sha256": "f68189c7da6b1fb23c08878296b0e55575480ac0632adfc6d7ba76f8617672ea",
+        "size": 19194
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/json/1.1.3/src/Json/Encode.elm": {
+        "sha256": "9cdf3d660f182aed97117205e72388e2bb0d0ad795b4749975fa2c639b808a2a",
+        "size": 4764
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/json/1.1.3/src/Elm/Kernel/Json.js": {
+        "sha256": "17d5536d6f22be1614a73837368e2a61439ebfa9dd0ff732880ee544baa41af2",
+        "size": 9592
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/time/1.0.0/elm.json": {
+        "sha256": "03445516f62e4a779b7267e25f053732f57bda580b871f99a3e53a7979b2dfa4",
+        "size": 343
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/time/1.0.0/LICENSE": {
+        "sha256": "a1c31dacffb1a470cb3aaf4844904114b9bc5ebf091e113b2d46bc4953c2c2ea",
+        "size": 1534
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/time/1.0.0/README.md": {
+        "sha256": "54e771f9408d791a73f7f10ff25779d64a4155b177c839d790ab4f62e5bc4556",
+        "size": 6933
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/time/1.0.0/docs.json": {
+        "sha256": "1a783589793e0258102e0951eb60edd2bf83db98c16c436cb5ae4c3bdfb2665b",
+        "size": 10008
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/time/1.0.0/artifacts.dat": {
+        "sha256": "5da15278ba51679734decb6f74203dbd9ab547c1f4d3e2a4a13f0a2779739c3c",
+        "size": 16584
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/time/1.0.0/src/Time.elm": {
+        "sha256": "e4c55a925c664c25b8ffcd1510c827793d670ec159dc18af3ebd7f642ee4e638",
+        "size": 15315
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/time/1.0.0/src/Elm/Kernel/Time.js": {
+        "sha256": "cc59eff642bd2dc98ffde4a99ed0c682821e09a4601c083338d442b15ccd5cb1",
+        "size": 1033
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/time/1.0.0/src/Elm/Kernel/Time.server.js": {
+        "sha256": "888d36edbd6d8fe5e69a3802c56f93a1341f0dcfa14e9be1ab10de3c188602c8",
+        "size": 301
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/url/1.0.0/elm.json": {
+        "sha256": "b2c089bbe199a8431fd53635a55fdc10e7ee4bb4a993064688f74812dc94dc5e",
+        "size": 467
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/url/1.0.0/LICENSE": {
+        "sha256": "1c818d8c5f129ee90e6a855c9edd16d9c6bd25e2959b1aeaeb8626e7c539cc9b",
+        "size": 1490
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/url/1.0.0/README.md": {
+        "sha256": "4e9c1ebc4cd9b938005e62762da092ea9882fca23700b4e271f67ec10e21b496",
+        "size": 2614
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/url/1.0.0/docs.json": {
+        "sha256": "58d93cd2643a77f2499078ab935e3f082620bd4636f992b74b97a1b283556db6",
+        "size": 26378
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/url/1.0.0/artifacts.dat": {
+        "sha256": "c0afb9601eb78a98cd9c2bbc94ec068a48c66d32591ef0f8a714abba23b873b8",
+        "size": 32898
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/url/1.0.0/src/Url.elm": {
+        "sha256": "c1dad01869f5a4fe29406b3409508ec4754bf8125cc01ef5106b2e369c5c647c",
+        "size": 8045
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/url/1.0.0/src/Url/Builder.elm": {
+        "sha256": "e4922467375bcedd187bbd811b5dfd49b7f9b6a08063b7ef411f2ad0aa6e8dad",
+        "size": 5543
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/url/1.0.0/src/Url/Parser.elm": {
+        "sha256": "0a42ac79944c28778c0e32510cd089e7d80e6d202937238f829d4de2d942d028",
+        "size": 11658
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/url/1.0.0/src/Url/Parser/Internal.elm": {
+        "sha256": "91cec106bc5eb47ae5b1ff86ac1589989785080805bc4e38dd187ec22dbbfc26",
+        "size": 144
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/url/1.0.0/src/Url/Parser/Query.elm": {
+        "sha256": "2b14aab77b663bef2b9434fccc3ca6c102990b9cf87dea650ae8341a9325bf4e",
+        "size": 7271
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/url/1.0.0/src/Elm/Kernel/Url.js": {
+        "sha256": "56250d3bec1cbc6c8974514ea56040043b237b058cb8cdad54a8b32e33676922",
+        "size": 268
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/virtual-dom/1.0.3/elm.json": {
+        "sha256": "f00299c02b546533702cacd34ed0eef09bf2bbba138585bb86a79e6b0fd11a83",
+        "size": 433
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/virtual-dom/1.0.3/LICENSE": {
+        "sha256": "c63bca41c3a19de3b16ede979ca1dfeb2ce0db93a62f4555dbb61ae3ee777425",
+        "size": 1534
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/virtual-dom/1.0.3/README.md": {
+        "sha256": "bcfb2f4a8f0f49c7e7b65fe1ee5371fdb438ce3decfd3256d2e65d08a85d567b",
+        "size": 395
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/virtual-dom/1.0.3/docs.json": {
+        "sha256": "76a43b5769c6d68ecfc8f1a87b60bd2dd3e7586f78b7a846c3ed83708b1ff2ba",
+        "size": 11111
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/virtual-dom/1.0.3/artifacts.dat": {
+        "sha256": "d0d597d90653335aca5f8570077acaf0ff130692534be607318690344f0ce1a7",
+        "size": 42924
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/virtual-dom/1.0.3/src/VirtualDom.elm": {
+        "sha256": "85f06afbc5f418f69c424ecc9b61969cc460444f97987054fb14d2a944d3bba8",
+        "size": 11520
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/virtual-dom/1.0.3/src/Elm/Kernel/VirtualDom.js": {
+        "sha256": "9246c8591d9b511468e8257b60c8495020164a5fd58f21d523722775292095db",
+        "size": 32836
+      },
+      "/home/hoskinson/.elm/0.19.2/packages/elm/virtual-dom/1.0.3/src/Elm/Kernel/VirtualDom.server.js": {
+        "sha256": "68c145d1f3ae40618e023b4109edc3f474f12c83af9ad5a3cfa2232f7cfd0bd9",
+        "size": 3251
+      }
+    },
+    "claim": "Actual resolved cached ELF compiler/package files and exact seven Elm dependency/cache/registry bytes copied and pinned; no global configuration edit or retroactive640 provenance"
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "evidence": {
+    "passed": true,
+    "checks": 69,
+    "distinctJobControls": 4,
+    "repeatedAcknowledgments": 25,
+    "normalOwnedExit": true,
+    "nativeAcceptance": false,
+    "fullReleaseAccepted": false,
+    "scope": "Actual optimized immutable Elm and native Coordinator/Broker/URI reader/control reservation/dispatcher/receipt coupling with synthetic native observation and fixture PNG header bytes. Worst-case Acquire/Cancel/late Release/final ACK, two real terminal proofs, exact repeat tickets and separate final confirmation. Actor/reconciliation credits stay retained; no real capture, WebKit, actor retirement or host close acceptance."
+  },
+  "artifacts": {
+    "preview-replay.js": "481f6651b74609b33f7cf0dff5c5fb8eb2f704ab57364ca15b8a2accf63e24dc",
+    "compile.stdout": "425c6f7f3c167bb8926cfb7409a368e6c8df3787e05343c360c1b6833c8a42df",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "flags.stdout": "bb4f11936581edc697d8b764f8b1b5acca5e3a689cd3b48dad6b16e5dce89a66",
+    "flags.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "checks": "f9ca7b985f1ed66233df577219889b7f14b402f661c1304df5c85d877fa0f95e",
+    "native-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls.stdout": "473f94d1868a4497e24febfab6e185c9435f3f5d248e5d68c9c7c4a424f79ffa",
+    "controls.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "inputs/qa/control-quota-check.py": "df83b58d5c4cdef84a7b6aae1cec245c656936761229abd49cd68476b4f6cdf6",
+    "inputs/qa/control-quota-roundtrip.js": "c9e47acdb9cf292100716745c52a32ff2e97ec8d4f33c622d252fb1a54cc4fd8",
+    "inputs/qa/native-source-fixture.json": "1c0c3b87e773ace53adc79b9b7e8696b32167ee3ea698112b765a03c8e6c1ff1",
+    "inputs/src/ActionProjection.elm": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996",
+    "inputs/src/Bar.elm": "a10abbe7d0542c642552d90cfa459b353a3843391ce47e06ba94b91afb0b6113",
+    "inputs/src/BatchReplay.elm": "6300d3c2e617de14b2fd70a40606ea8c94db435a93f0ae30bd19765f5cdce852",
+    "inputs/src/Binding.elm": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+    "inputs/src/CapturedAction.elm": "a3e22c7dd5643a1c0424ea1ae09e134bc8b19567de980e57095e08273604fb66",
+    "inputs/src/Catalog.elm": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+    "inputs/src/CatalogReplay.elm": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+    "inputs/src/Desktop.elm": "dd0f778c70bb0e53fb4f7d344f7995fd5bbce75a9002bace15b5d70ae1428df0",
+    "inputs/src/DesktopReplay.elm": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+    "inputs/src/Effects.elm": "c41a0732a640ca7727506193c654fd6e9c996e3b9e136ca58e911961233e9e4b",
+    "inputs/src/GeometryProjection.elm": "4aee2448599d3b94d3dd4762aa8d0c223b77e9d1a61898e70d6870151194d1d9",
+    "inputs/src/GeometrySizePolicy.elm": "46dda2de43642cd33997382e90813c8eeccde80745d79b7d5cd5fd425b062c43",
+    "inputs/src/Inspection.elm": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+    "inputs/src/Launch.elm": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6",
+    "inputs/src/LaunchReplay.elm": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+    "inputs/src/Main.elm": "2e9c042c5b2b068dbe582680ed37e6fa766b636d6d1a422297f843d135fb5405",
+    "inputs/src/Menu.elm": "c40fcfa24bf9d48044ccbe2c08df0abb7d8b94ee04111776234ecd88792ff4f0",
+    "inputs/src/MenuBridge.elm": "c8b83efc426e83d5b1ebde79aaa78b44e9c0150849d68d77477793c0e344ebe2",
+    "inputs/src/MenuSurfaceReplay.elm": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39",
+    "inputs/src/NativeActorRetirement.elm": "72302b23ea124f45879b176a959b3a5bbd80edbb986bfec631994051bcae31a6",
+    "inputs/src/NativeFamilyPreviewSource.elm": "9741ed19894062160b849564696bd497cea64a4af3ecc40357535f51ee845757",
+    "inputs/src/NativeFamilyPreviewSourceReplay.elm": "699c1348a7f646dc1eeb03257a3bd92372beacba4b689f8edd71c1b2702ffe99",
+    "inputs/src/NativeOutcome.elm": "fc9e824d315e0316b850fd36760c9f4ab4239eb97d1c4b3cc752144b70f98d89",
+    "inputs/src/NativePreviewSource.elm": "cf4c6a5b03d202c225658dfc6d753f21c7addc2e5325696d8cd734fd2a6aa844",
+    "inputs/src/NativePreviewSourceReplay.elm": "d6f26c64fd55fe4943968ff7b0d7774ede6b7c6c62f924b16e96a558fcf6edd8",
+    "inputs/src/NativeProvider.elm": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+    "inputs/src/OutputController.elm": "edc3e8d07788b6ae3eeae48b00b289fd69b55d358dc2860944dd83cf0f876bb9",
+    "inputs/src/OutputReplay.elm": "44f156b65f816400b75d928371fe5bdba675545eba805fee4793422d5b3f73ff",
+    "inputs/src/OutputSurfaceReplay.elm": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26",
+    "inputs/src/Popup.elm": "f202fd191161fdb0fe66b185d8218bd9a2473f7a0c3f2469fb85bb050d14a482",
+    "inputs/src/Presentation.elm": "e65c93507188186328c597d8b15e171fbb626ca89835f0f90476ad5aa5c4c48d",
+    "inputs/src/PresentationReplay.elm": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+    "inputs/src/PreviewCatalogReplay.elm": "eaf63404fda37b1111a77eb2a16f5ad4737e4c151290f036cee415add5e4e129",
+    "inputs/src/PreviewFeedbackReplay.elm": "c54391131b2416266eb25a19602dac0788ea63502d64090bf2be857bb0aceb34",
+    "inputs/src/PreviewIdentity.elm": "262240e59eed37d362f921a4e7e89d0bb23c8b0f84fb39f0fddc29faaa3de3b5",
+    "inputs/src/PreviewLifecycle.elm": "5481b82e1863732ded7db572d42566a40450d66fcedede78251e9491b715ab02",
+    "inputs/src/PreviewMetadataReplay.elm": "1efedf2492cb9c507be3a5aeb1ee6e371a22b6141aff5156359d6526149d5c3f",
+    "inputs/src/PreviewPresenter.elm": "ea7564bd31019cff0c9e03a596a0571604d8b22d32d5093f23fb9e9a2f4e4f3c",
+    "inputs/src/PreviewPresenterReplay.elm": "0eb03b99d5d5470936b51ea77de9b102b9742284020d01c469110388efdbc06e",
+    "inputs/src/Provider.elm": "328d8fd6349eb4151fe448081e8a418f98e7d31bbe467e4cd60d12ed23ae71d0",
+    "inputs/src/ReceiptRouter.elm": "ffcf85cf38de5665b35b3e2b6eb5a9f261360ec4b226b2fcefc0723cece1a011",
+    "inputs/src/ReconciliationFrame.elm": "b72ccb317751848506841c020f83c68e3d93eba3b6fb1c1a9b3d84283fec6676",
+    "inputs/src/ReconciliationTracking.elm": "84482d1bb84160e3bd9e026b2043635c35b76422d6e9066f703411f784b29bf9",
+    "inputs/src/Replay.elm": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+    "inputs/src/SharedRecoveryReplay.elm": "f44d52432e1c6c876207c273d8a013fd446b186b85a23d7bf5474943ef26ff8b",
+    "inputs/src/Shell.elm": "06867a8be89fa184ccf3da55724cc5245dec9ab6fa82c6edfd663f5296c99f9f",
+    "inputs/src/ShellReplay.elm": "be85fbef5dda8dd07093b578c4be204d8d92772147e1ffacf80368216b5ba8ca",
+    "inputs/src/Surface.elm": "64cd1e4c25caf057071d8478729598dcb4fb0547340303ca0590ed9c0edfb613",
+    "inputs/src/SurfaceController.elm": "41874fca4f1df7f5b8dfe2ccb9f08ac710c7134670a6b55d8aaa3b7442ae8fef",
+    "inputs/src/SurfaceRenderer.elm": "981991412bd57a6709bd6240e9b893c57779105f601bb6bc81594232ce98dab9",
+    "inputs/src/SurfaceReplay.elm": "476f94f33d9225035a479bd8ae8eb755ae8ac914c29ca533f62913fb378a603a",
+    "inputs/src/Taskbar.elm": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb",
+    "inputs/src/TaskbarReplay.elm": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+    "inputs/src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+    "inputs/src/TaskbarShellReplay.elm": "72ca534bb5adc6d0a02fd68ff9f287cb1815fcb0f68313ce7d0b3033d4ebf130",
+    "inputs/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "inputs/src/UnsentOperation.elm": "46e315cc739e097805af3c9358f9ca27a807ef1119c733aa296687342c8238ea",
+    "inputs/native/admission-test.c": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+    "inputs/native/client-command-test.cpp": "ef481b7030d6a41831895fca1a5cba7405d08e22b913fa2f0f6cadccf47c25ab",
+    "inputs/native/client-denial-test.cpp": "9c05385a9e1b9da4efe03c414b09d512ab4e3791a33c4ff55fde75e4e0c009f7",
+    "inputs/native/client-frame-test.cpp": "233d4520f3bd200cad1f1ea580e9a2eaaf382822b90aa262d4294f8a3bf68d7f",
+    "inputs/native/client-import-test.cpp": "c74f47f1e4233681ab63adf3a51396cfa7c8a7fc0769eba9e314ccc82471de4a",
+    "inputs/native/client-observation-test.cpp": "bc9a36f1d62669904d5b7003d7b299ad2ee3a836c8f13f381a6669915c74e336",
+    "inputs/native/client-producer.cpp": "9568ed8c6f67d7d7056d8c106bd3d9ba052106eb1ddff9299db0b9ad449b6210",
+    "inputs/native/client-producer.h": "01f005d7899b2f3b13216a702508adfa39b6cbcbde4f84b6fae1ebc2404462b9",
+    "inputs/native/client-resume-test.cpp": "c8dfcdc8564bb6bd8cf9284fe3d12d67c30ca9d5a510a58b935021567719ac2d",
+    "inputs/native/client-retained-presentation-test.cpp": "680fb60765c220e59974cda9a8af87c60b5935d48fa8e66671f3e74a0e1c0a2d",
+    "inputs/native/client_frame.hpp": "65d1ed6c416b34a43f2d4920001d2da049fb8995b3006475fab1651e97b9a855",
+    "inputs/native/client_import.hpp": "f2a405ce71bf0787e9b8e84d4b10cc47444f385b90ea8f2544972592bb4abc9c",
+    "inputs/native/client_producer.hpp": "b93355d804613a68593bfd2447295287ac04c76427007c5772e6244b4c51d990",
+    "inputs/native/context-keys-test.c": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+    "inputs/native/context-keys.h": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+    "inputs/native/demand.hpp": "3b01ba43bc50719509323e98212cbaa49e33b00b5bdf80297da049ac41332ea2",
+    "inputs/native/geometry-carrier-test.c": "770835580c7a4a2e21e49a9c3da586ee3ae59e66a92320dd7bb12fa8e516d921",
+    "inputs/native/handoff-test.c": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+    "inputs/native/host-fault.h": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+    "inputs/native/host-journal.h": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+    "inputs/native/host.c": "9cf69e35d9603735748e0b59e27a007e1bc3ab7393a2c310f6d8765b667f6853",
+    "inputs/native/imported_clients.hpp": "b46bcf676ecde3c7fefa7ac07aad640f78ce87d5d1380c4979bee5eb5850fe84",
+    "inputs/native/preview-integration.h": "ffacb4ed6abe6b8019f5bcb489b8abe69f28f863ca9079f29cd1c075a0a49e2a",
+    "inputs/native/preview-provider-bootstrap.cpp": "a949ddd2222a033188277217d86fc383d89edc12dc9c1ec2981da4d103e43a6f",
+    "inputs/native/preview-provider-bootstrap.h": "7220bc8df0bc40da2f897e519cff5340bc0eee84582345572b6b5c290a714c35",
+    "inputs/native/preview-uri-api.h": "7a02550a807102f6ebdad9c1570eb6a719a50b0ed422ff26add97dbd6408b002",
+    "inputs/native/preview-uri-webkit.cpp": "c8cc48442d8d098315b7ad64b71be267679bc361041dc6d2de405c657fa74ea2",
+    "inputs/native/preview_broker.hpp": "9c57428130093f8d815b7851004f103897deca278bbe4196e2116bec85a323ed",
+    "inputs/native/preview_client.hpp": "e3db3313aa48370fe77323e2b87ef0745830ffa476d314d00eca2cd64a613657",
+    "inputs/native/preview_delivery.hpp": "20e1a275985c92b6771ee24c5e4ce6a485bd049c8b1cb84c3e47358131435f72",
+    "inputs/native/preview_fd.hpp": "60fa114f7f2eb819c7a09085ee737c23d21b31f0ba177d967ff99f1425272a60",
+    "inputs/native/preview_uri.cpp": "e163fba44ad561c5d5deaf38f3a91f75f486b3749e030e1e22007cd98cdf5b87",
+    "inputs/native/preview_uri.hpp": "ad7c76ca9b089ea854f19ef029bbf461c3bcfdf76c677dc3666ae21a5385620b",
+    "inputs/native/preview_wire.hpp": "2b02108a819e97106cbf38e420871bc4ee10656fd6f98905f25c30fd838d283d",
+    "inputs/native/provider-delivery-test.cpp": "4e21203fd7acd32ede476df1137b6ea812cb26fa977d05296a884401adfd8fbe",
+    "inputs/native/provider-grant-test.cpp": "8f39b5828b946d5fba2f7df689578a50f79cf7daf2e0e8443ab87dfd7b89ac22",
+    "inputs/native/provider-ownership-test.cpp": "d79fe711a90d24ac96e8522a33a4dc3582989b40b692aec73109e365e3f44675",
+    "inputs/native/reconciliation-carrier-test.c": "38210317eff28d8a436e640e971f91df71ffcc3b17e82c27a60ee34f57d9f73d",
+    "inputs/native/recovery-presentation-test.c": "812bbab1640e12269bc195979cd319a96a505157ba8f5c637eebfd5561bc8e67",
+    "inputs/native/shared-context-test.c": "ed50c8ed6b0fee3db3818e2f38c8bb57985b388b26ee09a5624d32f1bfa258ee",
+    "inputs/native/shared-context.h": "e86f3ba7a4c76d7839ef8d67d14c7f9ea6b514afa2ac110fc7cebf2da2fd62ce",
+    "inputs/native/shared-host.c": "c51abc5f6f3fc231431f7f3cffc53a0d102e988becff2e943adcb33aeb3cd3b4",
+    "inputs/native/surface-test.c": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+    "inputs/native/surface.h": "2bdf2d9b3b34fa7193da90e58ac378e7a640ae91e7b02d46987e33c559209f0b",
+    "inputs/native/imported-clients.h": "fc8b6e392899727aa30c3baefc8ffec1a2bf640272984e38d5b1e2b01ff78e18",
+    "inputs/native/imported-clients.cpp": "85e61a73a88dd66e24d402efa73c93eb904ee6b804dfa79d853c147c3c5fcd30",
+    "inputs/native/imported-clients-boundary-test.c": "04b444d7d4d0c8f7f945d6f5e9996cfe3f23455624f6b933359b7ac1ee9737da",
+    "inputs/native/imported_lifecycle.hpp": "1d4efa4daa2753e43a822e3727dc78458941d72d03e4e01a1d041eb7f6bd9ded",
+    "inputs/native/imported-lifecycle-test.cpp": "14e7969e5228d013b590f912605cdd846235de67e8e13a87e644d123136d6a2a",
+    "inputs/native/family_source.hpp": "7e936e3f59b5075c364748384282c4e764d85444db2962a885a1ae5a0bf9bb35",
+    "inputs/native/family-source-test.cpp": "25c2402f9b6e1c7692633a2b27b69a961284412cf802fb600ad3ff2f97380b9a",
+    "inputs/native/family_style_crop_fd.hpp": "bf59599f5ceeb41381a1fd05fb045c52ec3cf47faf4706c38de8dd595f902a53",
+    "inputs/native/preview_png.hpp": "308007220baf1d7f2ad30569237ffaf7d6427d900ee1243811480402f188e670",
+    "inputs/native/family-fd-test.cpp": "4129475daf2dbcc997ee804f6f2cc1ae97c373adddc891a95ec6cf043f98291d",
+    "inputs/native/family_frame.hpp": "20ce40ab0080c37e17345cb3d88334eb5dc926a79720ec6faffee8807ae5fe67",
+    "inputs/native/family_producer.hpp": "148240aaf174b3d0f27d8385cd3e93811e48dd8c39b3b65a691fc754c2eebe22",
+    "inputs/native/family-frame-test.cpp": "7f5421a78f071a081edb32b8db0402c0e8a855df150ecdeeba6298cf94ed840c",
+    "inputs/native/generated_backdrop_fd.hpp": "3f60c0cffed16e60ec90b8f8365ec3f278d5c8cb41db2ce5b85c4929d018337f",
+    "inputs/native/backdrop-fd-test.cpp": "74b2f71f21e823bc3445cd647f86d422071edbd483d2bd89d68b38ce6575f623",
+    "inputs/native/backdrop-frame-test.cpp": "687f19e3053f305777f16d854fc2dbf593f4a7131589d522c37de4acfa498fd6",
+    "inputs/native/backdrop-denial-test.cpp": "7388e88721724be5280b0df91e982af29bebc2f9a10563690ab5aef8c73bda86",
+    "inputs/native/qa-reader-control.h": "1a504ee3959b78c73a8f9613b6a6c4f9cc51bc198d1dbd3b6fe1fd352684ccf4",
+    "inputs/native/qa-reader-control-test.c": "6bd57d3be5b0f3d0e071993e93b188fd0b2a87ae91dada60120f8e9142a07ed5",
+    "inputs/native/preview_metadata.hpp": "1cf84f1094cd8ccca90fcc5c44bed4182716e256792bb542c771c8bc1ce9ad5e",
+    "inputs/native/preview_icons.hpp": "6af2174049d623e824fdcf66ddd3a18d0b48a2c34c7159c1651dc0e4b53d8a32",
+    "inputs/native/preview_icons.cpp": "48aa83cc63d4f1f08b9333372cb3f63e0a25bf880cc17567098079284ee79693",
+    "inputs/native/metadata-icon-test.cpp": "cff027f7a3d29668893aec03be50f5dbae49fb2295606a8e8baad34b64e028d7",
+    "inputs/native/window-catalog-test.cpp": "c9efe0d6f7f7db6abc38ab717d16d56a014a2804d39281a28bddd7eb030548a6",
+    "inputs/native/receiver-extension-test.cpp": "a35501610fadf7cc4935b970c87b683fa9a2216ee2eef3da8cc70afc652b8d59",
+    "inputs/native/delivery-extension-test.cpp": "4d9ccdff37c8818ec6f70b93393e94a46f1f1b3506606a692549cf24c38972c8",
+    "inputs/native/imported_admission.hpp": "9cd619f5774d8fb40d712f6f073c00c8c337770e7d173413951fadf3dd321c78",
+    "inputs/native/imported-admission-test.cpp": "4440d17aea9172b547a66660cb30ebe27df821f627f9fae8861fcdd8d6858d6f",
+    "inputs/native/imported_enrollment.hpp": "970d2e8027dfdbbbb599f3de7d5132b9e7e27e8e0509622e7ae3ad18eeef380e",
+    "inputs/native/dynamic-enrollment-test.cpp": "bc8dd70ec9b8b5ce2f428cb82578389f9349d24b3ebdb423ccf725b5fd8c8278",
+    "inputs/native/rejected-enrollment-test.cpp": "f38a7da3423eb939f76c8882f2d2b057b9af865fd9cd3d96dbc9741918c99aad",
+    "inputs/native/resume-enrollment-test.cpp": "b14e33de4a2c1ff6b8e38737f66d8d6f906aba07e609a67750a5a7055434921d",
+    "inputs/native/imported_feedback.hpp": "6760465caf1b6877aadb62776fa050f7a44848cd4a9061ce89fdbac96604b9aa",
+    "inputs/native/local-feedback-test.cpp": "01b247fef9f6378db1616430fb7f04236e584085269542eaa05c4a6581612b29",
+    "inputs/native/next-intent-test.cpp": "6ad459d12146dbe18b6431b3ee863318c10d45a0806f63d9b5400812f20e80b9",
+    "inputs/native/next-resume-test.cpp": "f4f00450ca31f382b71af7b7158c40ee199439c9f8c23f3a4062075e190ab152",
+    "inputs/native/preview_retirement.hpp": "b8af8a43d3ca8eeebc8a0b24a9f99b846018db8e17bcb18ea31ffecfed595b0d",
+    "inputs/native/retirement-observation-test.cpp": "2f60ee0cc71f4cc611f57ca3ffa3ef4a013233a0c9de13144b207729f0a478f8",
+    "inputs/native/imported_subjects.hpp": "03e7bfd41bf4ace363d2f95bb1526515c6c9f8bedc69dffdf71fbae13f56f5ff",
+    "inputs/native/actor-retirement-test.cpp": "69ddf372f47b537e4b35481ec9769e8417270a3c84ba8caef98fe3c00b78fea0",
+    "inputs/native/actor-retirement-test-v2.cpp": "08815578bdf33210f066e80f5506fd1a8a4e1afa8b89c69779a901d225dbf599",
+    "inputs/native/actor-retirement-test-v3.cpp": "25e47f56093b84682230628f46d20fb96b2727fa4190524ec3f64e9d08e8f867",
+    "inputs/native/preview-control.h": "eeb41047554ba5a84f75614a62c1de93e871b3099a12560584150d6c4b6540d8",
+    "inputs/native/retirement_journal.hpp": "d3a4eef6793cf1b92f365757e91624de28fea374a04a10d480f7168d49b62179",
+    "inputs/native/actor-retirement-channel-test-v1.cpp": "f0c1b35a04325b261217f93d182ee1871a091abff0c44e3688a8c9f17a729812",
+    "inputs/native/actor-retirement-channel-test-v2.cpp": "4160343a5ba5939114326e780108ea223a42ca28ac6fb7d4a833695d82e50a66",
+    "inputs/native/retirement-elm-channel-test.cpp": "38205ebfb02b67ad12a3d454947a0efc93e80f9b8b191143801ab83a4bb47e20",
+    "inputs/native/retirement-elm-channel-test-v2.cpp": "a7cd7cd427e5f8e7360156f0445993584c9602cc5cad466a72201bf6bfac5902",
+    "inputs/native/retirement-elm-channel-test-v3.cpp": "0166a6db252a7c2101a26425999f2f85955ddde9014795f241fd56359c5b0a81",
+    "inputs/native/retirement-elm-channel-test-v4.cpp": "5ec17c2cacb3ca3cd2dba94766260098485ecdc2f68585f7dee3f2b6ad7fa225",
+    "inputs/native/retirement-readiness-replay.cpp": "ed336bf6770a5bc130b1d84e8e99e19d0cbb67c5c5133a876c1746ff46e6fb23",
+    "inputs/native/retirement-readiness-replay-v2.cpp": "9f10b45ea7817e6018a00461dcce0e83549f8c054bc7cc3a524dade9c297328c",
+    "inputs/native/retirement-readiness-replay-v3.cpp": "b596126e85083244f576797735e54a632832af7de37b0a5c14aa2b38243a9859",
+    "inputs/native/retirement-poll-replay.cpp": "beefa85561dd03590f7d713d66520072def838907560fab86a348abcb5e773a0",
+    "inputs/native/retirement-fair-poll-test.cpp": "50e23ab69570050fc2814549e9146a6f58413ae4f9cd0d090db4c34ceba4f8a5",
+    "inputs/native/preview-control-delivery.h": "edbcf3127c6fadbdff1eb2c361b50d0e72902a9c9e2ce456b0fb64ac7f6653e3",
+    "inputs/native/control-outbox-fixture.cpp": "f9850811275c90b1a72973f70626106d76a59191a627ff307490b343802fa30e",
+    "inputs/native/control-confirmation-fixture.cpp": "9fbecc43b61202f6e36142a3e799df01b1a31bd32255a2f34b7496d7e75765a6",
+    "inputs/native/control_reservations.hpp": "38d174ea8d26516794737db7d09ee8a7615bcc097e294becc5392df07efef8c9",
+    "inputs/native/control-reservations-replay.cpp": "509e3695bfc46b37357ceb712045e9a03d6b7b2905953197c695944afcd7c268",
+    "inputs/native/control-reservations-test.cpp": "8006cbbcfe28784132308afc03b332bf964a5038f887fd6378bc18abe9065c05",
+    "inputs/native/control-reservations-test-v2.cpp": "ec9010611ac5fc5e8cad459cb2a2a815d34e8b0b88ce64fc3574cf03ade99fc5",
+    "inputs/native/imported_control_admission.hpp": "beca6cc09e20147131c63d3c24665781134d1ddcaf8a2fc21c617943c7b58f36",
+    "inputs/native/control-admission-replay.cpp": "d3d730789eee580df8ac35bfa8a949039905fded2139dfe30a80c022928db300",
+    "inputs/native/control-quota-fixture.cpp": "9c1bf07df9a17524aba4e817938df7418e7d5ab0d3e791d80fb2872e3a9751a6",
+    "inputs/native/retained_client_command.hpp": "f07d8b840865595084dd04f8bdaa5e4a89dbd9bee27223cbba5ad0de927aaf15",
+    "inputs/native/retained-client-command-replay.cpp": "d43b2f11f03d1b760c5f15c4b61b673a916eb9d8880513ee8cb2c03efc541cad",
+    "inputs/native/imported-control-guard-test.cpp": "2c157817565956b3a21bd97ef5cf84238cb6f45ef4ef7f20e4a420b28e88242e",
+    "inputs/native/control-admission-replay-v2.cpp": "d221e0630f48cae7b5211e2230817059b753054ece15e1f40d9ac7b58065df4c",
+    "inputs/native/imported-control-ticket-test.cpp": "1e7c317a6eafa7865713dcb0f5b45ff0168841177ead8c8c06f886f635123411",
+    "inputs/native/imported-control-ticket-test-v2.cpp": "918a5eca9ab7c5d215bc6f0b10994deb824b4865240f7213479ed684a42ebecd",
+    "inputs/native/job-control-replay.cpp": "d56f84788399d7eff263a6b4779f7109bf41c2e86c9c76d95220b9571fef21b5",
+    "inputs/elm-stuff/0.19.2/lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/elm-stuff/0.19.2/d.dat": "b9d96be0327ef6f8c151b4ddce4a9d4a9a3998b7df2856ec1259de4272e83fee",
+    "inputs/elm-stuff/0.19.2/i.dat": "e75b950b056ab768f666e5285ee2c87e911218c43a695676738667870e947c23",
+    "inputs/elm-stuff/0.19.2/o.dat": "7cd6af96bcda469315a586f85a1b009a471a11eb8348bdc7964ca22f91ab38d5",
+    "inputs/elm-stuff/0.19.2/UInt64.elmo": "a01a2537c09010d8dfec6caf3180fcb0780e4ac614952aee0ee71cfce292a611",
+    "inputs/elm-stuff/0.19.2/UInt64.elmi": "633cc78b3dd5fa14a5005c3dceef13f66737a32e0d4876476cdf8c54c086aec1",
+    "inputs/elm-stuff/0.19.2/PreviewIdentity.elmo": "fbcdc3476e38dfe51138422f77badecde71829125cb0485f9c883faf8c8eff69",
+    "inputs/elm-stuff/0.19.2/CapturedAction.elmo": "06497d4833608ef6bb16a5c49a9553ab2e5a3191a4bff0dd8343dc01209259ab",
+    "inputs/elm-stuff/0.19.2/PreviewIdentity.elmi": "57e031ff6c9d1733778699ab0d562c3c75e39bb5a436ecf985bca4b8c4516854",
+    "inputs/elm-stuff/0.19.2/CapturedAction.elmi": "480a0b81b1870f6a1dd057b1da9169eda58c72d88c72362e4d0c92090cb4b841",
+    "inputs/elm-stuff/0.19.2/SurfaceRenderer.elmo": "5a3c91934a0a5e88fc1346d5244fc96cc2f54a142cf613d18699f2649573707c",
+    "inputs/elm-stuff/0.19.2/SurfaceRenderer.elmi": "77aa58d948000fe3a12fa6f6ba279fce67df0b2da95f4483b9be5aeae0d1a760",
+    "inputs/elm-stuff/0.19.2/NativeActorRetirement.elmo": "c8228168acc4ceeec21c79e2bafa343f758fc7a4d5945961a11c090f7e4a509e",
+    "inputs/elm-stuff/0.19.2/NativeActorRetirement.elmi": "b5c549cf6d961e20da5a1741eeaf5285bd871f308b6d4baf3e7781d0582ce386",
+    "inputs/elm-stuff/0.19.2/Presentation.elmo": "f1188878ba9508dd98c8a9ec5c35154462d7dfda42f15efb589df43fff24bd55",
+    "inputs/elm-stuff/0.19.2/Presentation.elmi": "debfd4c822aaa4f2614754fb6d0db1d9696c8d81b4fc428bb61ce1fbdbe32399",
+    "inputs/elm-stuff/0.19.2/PreviewLifecycle.elmo": "4305862c15d7fc71ec7148f99a097dd73f862efb7febf9b80f34970b8a2863da",
+    "inputs/elm-stuff/0.19.2/PreviewLifecycle.elmi": "2c59ca52ac9af93b6b63ce158fc916fd9ee565c596fe94011bafb34c2e5181a7",
+    "inputs/elm-stuff/0.19.2/NativeFamilyPreviewSource.elmo": "ca70f41ce072212b550edf874ce8d285026d44a1b8eb154d6dd82e15d9eb0172",
+    "inputs/elm-stuff/0.19.2/NativeFamilyPreviewSource.elmi": "7f75f39c086d439977af67b72e22f401a39376fabcd83be53ee822390c25988e",
+    "inputs/elm-stuff/0.19.2/NativePreviewSource.elmo": "e260b157f11c23fa699e288f3e5ca922af03cedd2e97fdae28128450ddde9123",
+    "inputs/elm-stuff/0.19.2/NativePreviewSource.elmi": "39b1647a79242f7bfab5f919c100aba95376a05e2f09ea34be5879bb6dfe0ab0",
+    "inputs/elm-stuff/0.19.2/PreviewPresenter.elmo": "25600e02a98dda296d8388f9d95f91b237192efdfb69a6b7ec25ee21f7380b4f",
+    "inputs/elm-stuff/0.19.2/PreviewPresenter.elmi": "6ce2a530c920fa10a2be214346fa801be6186844209637c14968f756be712929",
+    "inputs/elm-stuff/0.19.2/PreviewPresenterReplay.elmo": "225302106c6be35aa2147ac368c9620332d2228c7733b6887f12a24fae54f1ba",
+    "inputs/elm-stuff/0.19.2/PreviewPresenterReplay.elmi": "bbf44e8a906f2791e6d256676a99f20bdac9df901dfaeff73a5a9cfeae2c8c91"
+  }
+}

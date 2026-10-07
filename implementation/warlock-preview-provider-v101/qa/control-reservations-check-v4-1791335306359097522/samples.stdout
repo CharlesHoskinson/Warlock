@@ -1,0 +1,1189 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      a: 0,
+      a1: 0,
+      a2: 0,
+      ar: 0,
+      b: 0,
+      b1: 0,
+      b2: 0,
+      br: 0,
+      confirmed: 0,
+      delivered: 0,
+      groups: 0,
+      history: [],
+      issued: 0,
+      last: 0,
+      lastOrdinal: 0
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      a: 0,
+      a1: 0,
+      a2: 0,
+      ar: 0,
+      b: 1,
+      b1: 0,
+      b2: 0,
+      br: 2,
+      confirmed: 0,
+      delivered: 0,
+      groups: 1,
+      history: ["ReserveB"],
+      issued: 0,
+      last: 1,
+      lastOrdinal: 0
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      a: 0,
+      a1: 0,
+      a2: 0,
+      ar: 0,
+      b: 1,
+      b1: 0,
+      b2: 0,
+      br: 2,
+      confirmed: 0,
+      delivered: 0,
+      groups: 1,
+      history: ["ReserveB", "SecondIssuer"],
+      issued: 0,
+      last: -1,
+      lastOrdinal: 0
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      a: 2,
+      a1: 0,
+      a2: 0,
+      ar: 2,
+      b: 1,
+      b1: 0,
+      b2: 0,
+      br: 2,
+      confirmed: 0,
+      delivered: 0,
+      groups: 2,
+      history: ["ReserveB", "SecondIssuer", "ReserveA"],
+      issued: 0,
+      last: 1,
+      lastOrdinal: 0
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      a: 0,
+      a1: 0,
+      a2: 0,
+      ar: 0,
+      b: 1,
+      b1: 0,
+      b2: 0,
+      br: 2,
+      confirmed: 0,
+      delivered: 0,
+      groups: 2,
+      history: ["ReserveB", "SecondIssuer", "ReserveA", "ReleaseA"],
+      issued: 0,
+      last: 1,
+      lastOrdinal: 0
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      a: 0,
+      a1: 0,
+      a2: 0,
+      ar: 0,
+      b: 1,
+      b1: 0,
+      b2: 0,
+      br: 2,
+      confirmed: 0,
+      delivered: 0,
+      groups: 2,
+      history:
+        ["ReserveB", "SecondIssuer", "ReserveA", "ReleaseA", "SecondIssuer"],
+      issued: 0,
+      last: -1,
+      lastOrdinal: 0
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      a: 0,
+      a1: 0,
+      a2: 0,
+      ar: 0,
+      b: 1,
+      b1: 1,
+      b2: 0,
+      br: 1,
+      confirmed: 0,
+      delivered: 0,
+      groups: 2,
+      history:
+        [
+          "ReserveB",
+          "SecondIssuer",
+          "ReserveA",
+          "ReleaseA",
+          "SecondIssuer",
+          "IssueB1"
+        ],
+      issued: 1,
+      last: 1,
+      lastOrdinal: 1
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      a: 0,
+      a1: 0,
+      a2: 0,
+      ar: 0,
+      b: 1,
+      b1: 1,
+      b2: 0,
+      br: 1,
+      confirmed: 0,
+      delivered: 0,
+      groups: 2,
+      history:
+        [
+          "ReserveB",
+          "SecondIssuer",
+          "ReserveA",
+          "ReleaseA",
+          "SecondIssuer",
+          "IssueB1",
+          "ForeignReserve"
+        ],
+      issued: 1,
+      last: -1,
+      lastOrdinal: 1
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      a: 0,
+      a1: 0,
+      a2: 0,
+      ar: 0,
+      b: 1,
+      b1: 1,
+      b2: 0,
+      br: 1,
+      confirmed: 0,
+      delivered: 0,
+      groups: 2,
+      history:
+        [
+          "ReserveB",
+          "SecondIssuer",
+          "ReserveA",
+          "ReleaseA",
+          "SecondIssuer",
+          "IssueB1",
+          "ForeignReserve",
+          "IssueB1"
+        ],
+      issued: 1,
+      last: 1,
+      lastOrdinal: 1
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      a: 0,
+      a1: 0,
+      a2: 0,
+      ar: 0,
+      b: 1,
+      b1: 1,
+      b2: 2,
+      br: 0,
+      confirmed: 0,
+      delivered: 0,
+      groups: 2,
+      history:
+        [
+          "ReserveB",
+          "SecondIssuer",
+          "ReserveA",
+          "ReleaseA",
+          "SecondIssuer",
+          "IssueB1",
+          "ForeignReserve",
+          "IssueB1",
+          "IssueB2"
+        ],
+      issued: 2,
+      last: 1,
+      lastOrdinal: 2
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      a: 0,
+      a1: 0,
+      a2: 0,
+      ar: 0,
+      b: 1,
+      b1: 1,
+      b2: 2,
+      br: 0,
+      confirmed: 2,
+      delivered: 2,
+      groups: 2,
+      history:
+        [
+          "ReserveB",
+          "SecondIssuer",
+          "ReserveA",
+          "ReleaseA",
+          "SecondIssuer",
+          "IssueB1",
+          "ForeignReserve",
+          "IssueB1",
+          "IssueB2",
+          "Deliver"
+        ],
+      issued: 2,
+      last: 1,
+      lastOrdinal: 2
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      a: 0,
+      a1: 0,
+      a2: 0,
+      ar: 0,
+      b: 1,
+      b1: 1,
+      b2: 2,
+      br: 0,
+      confirmed: 2,
+      delivered: 2,
+      groups: 2,
+      history:
+        [
+          "ReserveB",
+          "SecondIssuer",
+          "ReserveA",
+          "ReleaseA",
+          "SecondIssuer",
+          "IssueB1",
+          "ForeignReserve",
+          "IssueB1",
+          "IssueB2",
+          "Deliver",
+          "Deliver"
+        ],
+      issued: 2,
+      last: 1,
+      lastOrdinal: 2
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      a: 0,
+      a1: 0,
+      a2: 0,
+      ar: 0,
+      b: 1,
+      b1: 1,
+      b2: 2,
+      br: 0,
+      confirmed: 2,
+      delivered: 2,
+      groups: 2,
+      history:
+        [
+          "ReserveB",
+          "SecondIssuer",
+          "ReserveA",
+          "ReleaseA",
+          "SecondIssuer",
+          "IssueB1",
+          "ForeignReserve",
+          "IssueB1",
+          "IssueB2",
+          "Deliver",
+          "Deliver",
+          "IssueB1"
+        ],
+      issued: 2,
+      last: 1,
+      lastOrdinal: 1
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      a: 0,
+      a1: 0,
+      a2: 0,
+      ar: 0,
+      b: 1,
+      b1: 1,
+      b2: 2,
+      br: 0,
+      confirmed: 2,
+      delivered: 2,
+      groups: 2,
+      history:
+        [
+          "ReserveB",
+          "SecondIssuer",
+          "ReserveA",
+          "ReleaseA",
+          "SecondIssuer",
+          "IssueB1",
+          "ForeignReserve",
+          "IssueB1",
+          "IssueB2",
+          "Deliver",
+          "Deliver",
+          "IssueB1",
+          "Deliver"
+        ],
+      issued: 2,
+      last: 1,
+      lastOrdinal: 1
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      a: 0,
+      a1: 0,
+      a2: 0,
+      ar: 0,
+      b: 1,
+      b1: 1,
+      b2: 2,
+      br: 0,
+      confirmed: 2,
+      delivered: 2,
+      groups: 2,
+      history:
+        [
+          "ReserveB",
+          "SecondIssuer",
+          "ReserveA",
+          "ReleaseA",
+          "SecondIssuer",
+          "IssueB1",
+          "ForeignReserve",
+          "IssueB1",
+          "IssueB2",
+          "Deliver",
+          "Deliver",
+          "IssueB1",
+          "Deliver",
+          "Deliver"
+        ],
+      issued: 2,
+      last: 1,
+      lastOrdinal: 1
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      a: 0,
+      a1: 0,
+      a2: 0,
+      ar: 0,
+      b: 0,
+      b1: 0,
+      b2: 0,
+      br: 0,
+      confirmed: 2,
+      delivered: 2,
+      groups: 2,
+      history:
+        [
+          "ReserveB",
+          "SecondIssuer",
+          "ReserveA",
+          "ReleaseA",
+          "SecondIssuer",
+          "IssueB1",
+          "ForeignReserve",
+          "IssueB1",
+          "IssueB2",
+          "Deliver",
+          "Deliver",
+          "IssueB1",
+          "Deliver",
+          "Deliver",
+          "ReleaseB"
+        ],
+      issued: 2,
+      last: 1,
+      lastOrdinal: 1
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      a: 0,
+      a1: 0,
+      a2: 0,
+      ar: 0,
+      b: 0,
+      b1: 0,
+      b2: 0,
+      br: 0,
+      confirmed: 2,
+      delivered: 2,
+      groups: 2,
+      history:
+        [
+          "ReserveB",
+          "SecondIssuer",
+          "ReserveA",
+          "ReleaseA",
+          "SecondIssuer",
+          "IssueB1",
+          "ForeignReserve",
+          "IssueB1",
+          "IssueB2",
+          "Deliver",
+          "Deliver",
+          "IssueB1",
+          "Deliver",
+          "Deliver",
+          "ReleaseB",
+          "SecondIssuer"
+        ],
+      issued: 2,
+      last: -1,
+      lastOrdinal: 1
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      a: 0,
+      a1: 0,
+      a2: 0,
+      ar: 0,
+      b: 0,
+      b1: 0,
+      b2: 0,
+      br: 0,
+      confirmed: 2,
+      delivered: 2,
+      groups: 2,
+      history:
+        [
+          "ReserveB",
+          "SecondIssuer",
+          "ReserveA",
+          "ReleaseA",
+          "SecondIssuer",
+          "IssueB1",
+          "ForeignReserve",
+          "IssueB1",
+          "IssueB2",
+          "Deliver",
+          "Deliver",
+          "IssueB1",
+          "Deliver",
+          "Deliver",
+          "ReleaseB",
+          "SecondIssuer",
+          "SecondIssuer"
+        ],
+      issued: 2,
+      last: -1,
+      lastOrdinal: 1
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      a: 3,
+      a1: 0,
+      a2: 0,
+      ar: 2,
+      b: 0,
+      b1: 0,
+      b2: 0,
+      br: 0,
+      confirmed: 2,
+      delivered: 2,
+      groups: 3,
+      history:
+        [
+          "ReserveB",
+          "SecondIssuer",
+          "ReserveA",
+          "ReleaseA",
+          "SecondIssuer",
+          "IssueB1",
+          "ForeignReserve",
+          "IssueB1",
+          "IssueB2",
+          "Deliver",
+          "Deliver",
+          "IssueB1",
+          "Deliver",
+          "Deliver",
+          "ReleaseB",
+          "SecondIssuer",
+          "SecondIssuer",
+          "ReserveA"
+        ],
+      issued: 2,
+      last: 1,
+      lastOrdinal: 1
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      a: 3,
+      a1: 0,
+      a2: 0,
+      ar: 2,
+      b: 0,
+      b1: 0,
+      b2: 0,
+      br: 0,
+      confirmed: 2,
+      delivered: 2,
+      groups: 3,
+      history:
+        [
+          "ReserveB",
+          "SecondIssuer",
+          "ReserveA",
+          "ReleaseA",
+          "SecondIssuer",
+          "IssueB1",
+          "ForeignReserve",
+          "IssueB1",
+          "IssueB2",
+          "Deliver",
+          "Deliver",
+          "IssueB1",
+          "Deliver",
+          "Deliver",
+          "ReleaseB",
+          "SecondIssuer",
+          "SecondIssuer",
+          "ReserveA",
+          "ForeignReserve"
+        ],
+      issued: 2,
+      last: -1,
+      lastOrdinal: 1
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      a: 3,
+      a1: 0,
+      a2: 0,
+      ar: 2,
+      b: 0,
+      b1: 0,
+      b2: 0,
+      br: 0,
+      confirmed: 2,
+      delivered: 2,
+      groups: 3,
+      history:
+        [
+          "ReserveB",
+          "SecondIssuer",
+          "ReserveA",
+          "ReleaseA",
+          "SecondIssuer",
+          "IssueB1",
+          "ForeignReserve",
+          "IssueB1",
+          "IssueB2",
+          "Deliver",
+          "Deliver",
+          "IssueB1",
+          "Deliver",
+          "Deliver",
+          "ReleaseB",
+          "SecondIssuer",
+          "SecondIssuer",
+          "ReserveA",
+          "ForeignReserve",
+          "Deliver"
+        ],
+      issued: 2,
+      last: 1,
+      lastOrdinal: 1
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      a: 0,
+      a1: 0,
+      a2: 0,
+      ar: 0,
+      b: 0,
+      b1: 0,
+      b2: 0,
+      br: 0,
+      confirmed: 2,
+      delivered: 2,
+      groups: 3,
+      history:
+        [
+          "ReserveB",
+          "SecondIssuer",
+          "ReserveA",
+          "ReleaseA",
+          "SecondIssuer",
+          "IssueB1",
+          "ForeignReserve",
+          "IssueB1",
+          "IssueB2",
+          "Deliver",
+          "Deliver",
+          "IssueB1",
+          "Deliver",
+          "Deliver",
+          "ReleaseB",
+          "SecondIssuer",
+          "SecondIssuer",
+          "ReserveA",
+          "ForeignReserve",
+          "Deliver",
+          "ReleaseA"
+        ],
+      issued: 2,
+      last: 1,
+      lastOrdinal: 1
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      a: 0,
+      a1: 0,
+      a2: 0,
+      ar: 0,
+      b: 0,
+      b1: 0,
+      b2: 0,
+      br: 0,
+      confirmed: 2,
+      delivered: 2,
+      groups: 3,
+      history:
+        [
+          "ReserveB",
+          "SecondIssuer",
+          "ReserveA",
+          "ReleaseA",
+          "SecondIssuer",
+          "IssueB1",
+          "ForeignReserve",
+          "IssueB1",
+          "IssueB2",
+          "Deliver",
+          "Deliver",
+          "IssueB1",
+          "Deliver",
+          "Deliver",
+          "ReleaseB",
+          "SecondIssuer",
+          "SecondIssuer",
+          "ReserveA",
+          "ForeignReserve",
+          "Deliver",
+          "ReleaseA",
+          "ForeignReserve"
+        ],
+      issued: 2,
+      last: -1,
+      lastOrdinal: 1
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      a: 0,
+      a1: 0,
+      a2: 0,
+      ar: 0,
+      b: 0,
+      b1: 0,
+      b2: 0,
+      br: 0,
+      confirmed: 2,
+      delivered: 2,
+      groups: 3,
+      history:
+        [
+          "ReserveB",
+          "SecondIssuer",
+          "ReserveA",
+          "ReleaseA",
+          "SecondIssuer",
+          "IssueB1",
+          "ForeignReserve",
+          "IssueB1",
+          "IssueB2",
+          "Deliver",
+          "Deliver",
+          "IssueB1",
+          "Deliver",
+          "Deliver",
+          "ReleaseB",
+          "SecondIssuer",
+          "SecondIssuer",
+          "ReserveA",
+          "ForeignReserve",
+          "Deliver",
+          "ReleaseA",
+          "ForeignReserve",
+          "ForeignReserve"
+        ],
+      issued: 2,
+      last: -1,
+      lastOrdinal: 1
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      a: 0,
+      a1: 0,
+      a2: 0,
+      ar: 0,
+      b: 0,
+      b1: 0,
+      b2: 0,
+      br: 0,
+      confirmed: 2,
+      delivered: 2,
+      groups: 3,
+      history:
+        [
+          "ReserveB",
+          "SecondIssuer",
+          "ReserveA",
+          "ReleaseA",
+          "SecondIssuer",
+          "IssueB1",
+          "ForeignReserve",
+          "IssueB1",
+          "IssueB2",
+          "Deliver",
+          "Deliver",
+          "IssueB1",
+          "Deliver",
+          "Deliver",
+          "ReleaseB",
+          "SecondIssuer",
+          "SecondIssuer",
+          "ReserveA",
+          "ForeignReserve",
+          "Deliver",
+          "ReleaseA",
+          "ForeignReserve",
+          "ForeignReserve",
+          "SecondIssuer"
+        ],
+      issued: 2,
+      last: -1,
+      lastOrdinal: 1
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      a: 4,
+      a1: 0,
+      a2: 0,
+      ar: 2,
+      b: 0,
+      b1: 0,
+      b2: 0,
+      br: 0,
+      confirmed: 2,
+      delivered: 2,
+      groups: 4,
+      history:
+        [
+          "ReserveB",
+          "SecondIssuer",
+          "ReserveA",
+          "ReleaseA",
+          "SecondIssuer",
+          "IssueB1",
+          "ForeignReserve",
+          "IssueB1",
+          "IssueB2",
+          "Deliver",
+          "Deliver",
+          "IssueB1",
+          "Deliver",
+          "Deliver",
+          "ReleaseB",
+          "SecondIssuer",
+          "SecondIssuer",
+          "ReserveA",
+          "ForeignReserve",
+          "Deliver",
+          "ReleaseA",
+          "ForeignReserve",
+          "ForeignReserve",
+          "SecondIssuer",
+          "ReserveA"
+        ],
+      issued: 2,
+      last: 1,
+      lastOrdinal: 1
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      a: 0,
+      a1: 0,
+      a2: 0,
+      ar: 0,
+      b: 0,
+      b1: 0,
+      b2: 0,
+      br: 0,
+      confirmed: 2,
+      delivered: 2,
+      groups: 4,
+      history:
+        [
+          "ReserveB",
+          "SecondIssuer",
+          "ReserveA",
+          "ReleaseA",
+          "SecondIssuer",
+          "IssueB1",
+          "ForeignReserve",
+          "IssueB1",
+          "IssueB2",
+          "Deliver",
+          "Deliver",
+          "IssueB1",
+          "Deliver",
+          "Deliver",
+          "ReleaseB",
+          "SecondIssuer",
+          "SecondIssuer",
+          "ReserveA",
+          "ForeignReserve",
+          "Deliver",
+          "ReleaseA",
+          "ForeignReserve",
+          "ForeignReserve",
+          "SecondIssuer",
+          "ReserveA",
+          "ReleaseA"
+        ],
+      issued: 2,
+      last: 1,
+      lastOrdinal: 1
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      a: 0,
+      a1: 0,
+      a2: 0,
+      ar: 0,
+      b: 0,
+      b1: 0,
+      b2: 0,
+      br: 0,
+      confirmed: 2,
+      delivered: 2,
+      groups: 4,
+      history:
+        [
+          "ReserveB",
+          "SecondIssuer",
+          "ReserveA",
+          "ReleaseA",
+          "SecondIssuer",
+          "IssueB1",
+          "ForeignReserve",
+          "IssueB1",
+          "IssueB2",
+          "Deliver",
+          "Deliver",
+          "IssueB1",
+          "Deliver",
+          "Deliver",
+          "ReleaseB",
+          "SecondIssuer",
+          "SecondIssuer",
+          "ReserveA",
+          "ForeignReserve",
+          "Deliver",
+          "ReleaseA",
+          "ForeignReserve",
+          "ForeignReserve",
+          "SecondIssuer",
+          "ReserveA",
+          "ReleaseA",
+          "ForeignReserve"
+        ],
+      issued: 2,
+      last: -1,
+      lastOrdinal: 1
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      a: 0,
+      a1: 0,
+      a2: 0,
+      ar: 0,
+      b: 0,
+      b1: 0,
+      b2: 0,
+      br: 0,
+      confirmed: 2,
+      delivered: 2,
+      groups: 4,
+      history:
+        [
+          "ReserveB",
+          "SecondIssuer",
+          "ReserveA",
+          "ReleaseA",
+          "SecondIssuer",
+          "IssueB1",
+          "ForeignReserve",
+          "IssueB1",
+          "IssueB2",
+          "Deliver",
+          "Deliver",
+          "IssueB1",
+          "Deliver",
+          "Deliver",
+          "ReleaseB",
+          "SecondIssuer",
+          "SecondIssuer",
+          "ReserveA",
+          "ForeignReserve",
+          "Deliver",
+          "ReleaseA",
+          "ForeignReserve",
+          "ForeignReserve",
+          "SecondIssuer",
+          "ReserveA",
+          "ReleaseA",
+          "ForeignReserve",
+          "SecondIssuer"
+        ],
+      issued: 2,
+      last: -1,
+      lastOrdinal: 1
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      a: 0,
+      a1: 0,
+      a2: 0,
+      ar: 0,
+      b: 0,
+      b1: 0,
+      b2: 0,
+      br: 0,
+      confirmed: 2,
+      delivered: 2,
+      groups: 4,
+      history:
+        [
+          "ReserveB",
+          "SecondIssuer",
+          "ReserveA",
+          "ReleaseA",
+          "SecondIssuer",
+          "IssueB1",
+          "ForeignReserve",
+          "IssueB1",
+          "IssueB2",
+          "Deliver",
+          "Deliver",
+          "IssueB1",
+          "Deliver",
+          "Deliver",
+          "ReleaseB",
+          "SecondIssuer",
+          "SecondIssuer",
+          "ReserveA",
+          "ForeignReserve",
+          "Deliver",
+          "ReleaseA",
+          "ForeignReserve",
+          "ForeignReserve",
+          "SecondIssuer",
+          "ReserveA",
+          "ReleaseA",
+          "ForeignReserve",
+          "SecondIssuer",
+          "SecondIssuer"
+        ],
+      issued: 2,
+      last: -1,
+      lastOrdinal: 1
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      a: 0,
+      a1: 0,
+      a2: 0,
+      ar: 0,
+      b: 0,
+      b1: 0,
+      b2: 0,
+      br: 0,
+      confirmed: 2,
+      delivered: 2,
+      groups: 4,
+      history:
+        [
+          "ReserveB",
+          "SecondIssuer",
+          "ReserveA",
+          "ReleaseA",
+          "SecondIssuer",
+          "IssueB1",
+          "ForeignReserve",
+          "IssueB1",
+          "IssueB2",
+          "Deliver",
+          "Deliver",
+          "IssueB1",
+          "Deliver",
+          "Deliver",
+          "ReleaseB",
+          "SecondIssuer",
+          "SecondIssuer",
+          "ReserveA",
+          "ForeignReserve",
+          "Deliver",
+          "ReleaseA",
+          "ForeignReserve",
+          "ForeignReserve",
+          "SecondIssuer",
+          "ReserveA",
+          "ReleaseA",
+          "ForeignReserve",
+          "SecondIssuer",
+          "SecondIssuer",
+          "SecondIssuer"
+        ],
+      issued: 2,
+      last: -1,
+      lastOrdinal: 1
+    }
+}
+
+[ok] No violation found (436ms at 459 traces/second).
+Trace length statistics: max=31, min=31, average=31.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

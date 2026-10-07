@@ -1,0 +1,10 @@
+import json,pathlib,resource,subprocess,sys
+sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
+require_qa_scope();assert resource.getrlimit(resource.RLIMIT_CORE)==(1,1)
+r=pathlib.Path('/home/hoskinson/omarchy-windows-parity');base=pathlib.Path(__file__).parent;d=json.loads((base/'delivery.json').read_text());assert d['pushCompleted'] and d['ownedFiles']>=11485
+v=json.loads(subprocess.check_output(['gh','repo','view','CharlesHoskinson/Warlock','--json','name,url,visibility'],text=True));assert v['visibility']=='PUBLIC';(base/'visibility.json').write_text(json.dumps(v,indent=2)+'\n')
+observed=subprocess.check_output(['gh','api','repos/CharlesHoskinson/Warlock/branches/feature%2Felm','--jq','.commit.sha'],text=True).strip();assert observed==d['publishedCommit']
+(base/'branch.json').write_text(json.dumps({'commit':observed,'verified':True},indent=2)+'\n')
+report=json.loads((r/'docs/warlock-preview/v93/component-report101.json').read_text())
+sys.path.insert(0,str(r/'implementation/elm-build-loop-v1'));import loop
+e=loop.write_checkpoint(r,'f6779148-8f5d-4bdf-8a0f-044184e486f2','implementation/warlock-preview-provider-v101',['PROGRESS PUBLIC70 '+d['publishedCommit']+' verified '+str(d['ownedFiles'])+' exact owned blobs. Held100 actual admission40 socket controls,15/23/191/six,95build,12 original suites. Held101 native purpose issuer70socket controls,15/23/299/four variants,bounded confirmed predecessor; reservation/admission requalified;69compiledElm/nativeURI controls;95build. GUI10012suites retained unchanged,notrerun101. Failed fixture compile retained. NoWebKit/capture/realactor-hostclose/fullGUI claim. Next actualphysical/actor quota release,Cprovider/routing,reconciliation,native-assigned renderer outbox. QualifiedGUI92/native128/core16/plugin18 and alloriginalgates unchanged.'],'progress',['docs/warlock-preview/v93/component-report101.json','implementation/warlock-preview-provider-v101/component-manifest.json','docs/warlock-repository/v70/publication/delivery.json']);print(e)

@@ -66,3 +66,48 @@ original decoder rejects it despite the actual native packet being ready. An
 actual held URI reader prevents terminal proof before Release. This is coupled
 CPU evidence with fixture bytes and synthetic source facts, not a deployed GUI
 or genuine capture failure. Fresh GUI99 implements retained-path validation.
+
+EARS CONTROL-010: WHEN native ImportedClients opts into cleanup reservations,
+attachment SHALL require an empty original receiver and no prior intent, actor,
+job or policy reset. The guard SHALL bind the exact owning Broker and permit
+only one obligation manager for that issuer. Initial/new-stamp admission SHALL
+reserve before advancing an intent or issuing a job. Resume SHALL first preserve
+original mapping/export/backend/proof barriers and frontend delivery confirmation
+for the old control job, then reserve before creating or advancing the new resume
+intent. Receiverless legacy start/resume entry points SHALL be refused in the
+controlled mode. Unknown issuance SHALL remain pending for reconciliation.
+
+GUI100 wires this opt-in guard to the actual ImportedClients start/resume paths.
+No C factory or WebKit code activates it yet. Controlled C ticket validation,
+confirmed-command tombstones for old repeated ACKs, physical/actor quota release,
+receiver replacement and renderer/native-ticket outbox remain required before
+activation. Budget exhaustion must not rewrite an original cutoff or retry a
+physical capture. Old fixed assertions remain separate and unchanged.
+
+GUI100 is held with forty actual authenticated-socket admission controls,
+fifteen selected Quint scenarios, twenty-three coupled native traces and191
+comparisons, six compiled unsafe variants, the95-command full-host build and all
+twelve original regression suites passing. This qualifies the opt-in C++ path;
+the original C factories and shared-host WebKit flow remain unchanged.
+
+EARS CONTROL-011: WHEN the original receiver proposes a job command, native SHALL
+validate its actual job, packet or terminal proof before selecting the stable
+native purpose slot and issuing a reserved immutable ticket. Exact retries SHALL
+reuse original issuance even after the effect removes its Broker record. After
+independent physical/proof settlement and original frontend confirmation permit
+job-credit release, at most one confirmed predecessor per retained actor SHALL
+remain. Exact predecessor retries SHALL report only already-delivered identity,
+without another invocation grant or ordinal. Foreign receivers, changed bytes,
+invented proof sequences and older unretained jobs SHALL NOT obtain a fabricated
+delivered disposition. Unknown and unretained outcomes require separate native
+reconciliation; transport confirmation never certifies effect success.
+
+GUI101 implements this purpose issuer in the actual opt-in ImportedClients path.
+Validation precedes new issuance under the original Endpoint/Broker lock. Stable
+slots are Acquire1, Cancel2, Release3 and the two actual terminal proof ACKs4/5.
+The predecessor snapshot is allocated before the confirmed old quota is erased;
+an allocation failure cannot advance admission. The predecessor remains bounded
+by retained native actor ownership and is replaced only after the next job's
+independent settlement. It carries no live bank ticket or native cleanup proof.
+Controlled C factory, actual capture, actor/quota final release, reconciliation,
+native-assigned renderer transport and WebKit activation remain required.
