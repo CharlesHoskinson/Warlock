@@ -1,0 +1,205 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "sourceHeld": true,
+  "passed": true,
+  "evidenceIntegrityPassed": true,
+  "reports": {
+    "boundaries": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/scoped-presenter-check-v3-1791358090496396801/report.json",
+      "sha256": "26959a5f026c2b0384422304a5e0bebcffabf0c9e0dda1a79aa0107e10e78d9b"
+    },
+    "nativeElmOutbox": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/scoped-presenter-native-check-v4-1791358090496614068/report.json",
+      "sha256": "70fbd4bb02deefa244205ded8af6bdc239d890bfb868aba014f5d47ffb44b728"
+    },
+    "model": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/scoped-elm-model-check-v2-1791358090497978778/report.json",
+      "sha256": "765c2c60f2584276d959ad199403f48ba6f72c6fe9870e2b8d366b47d5aec4de"
+    },
+    "coldCohort": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/scoped-cold-cohort-check-v2-1791358252987480139/report.json",
+      "sha256": "d5b85e82c65d3b8a3718eea57d7d933709429e474f18274f404b752232b3a9c5"
+    },
+    "permanent": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-check-v2-1791358117552830188/report.json",
+      "sha256": "3c6234ab185d1089975e3c3c3c3b0c8ef0660aba4a5785d21f4c48b4fb473067"
+    },
+    "permanentNative": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-native-elm-check-v5-1791358194455481744/report.json",
+      "sha256": "008dd8fcf0f7847d7776def53cbab9b221b343d156ef8e250cfc45061930950e"
+    },
+    "permanentModel": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/report.json",
+      "sha256": "30e0a96600c5488eaf0ce16059934875b84c3abc1dd8c39ae21f0b86d45fa10f"
+    },
+    "build": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/build-1791358252985183504/report.json",
+      "sha256": "5593427758b5ed7e29856c1ed00cd6d59617066b9be33f56a4672f4ce24fe281"
+    }
+  },
+  "historicalPhaseReports": [
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/build-1791357844765719233/report.json",
+      "sha256": "c46af37172def021dff8b67d49a6342f9e4449e50ce995c9dadbd4e981e3f2d1",
+      "passed": true,
+      "qualifiesFinalPresenter": false,
+      "scope": "Immutable original phase source snapshot; not final source qualification."
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/build-1791358194455271738/report.json",
+      "sha256": "ef65d442a2790328cf978a9051c6db450c9050a1c8cee2e4cde51eb9875d11c4",
+      "passed": false,
+      "qualifiesFinalPresenter": false,
+      "scope": "Immutable original phase source snapshot; not final source qualification."
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-check-1791357546839549763/report.json",
+      "sha256": "c502d971f120c27c7098606299f2a4937e8f68d76c8426248633aa291a931d72",
+      "passed": true,
+      "qualifiesFinalPresenter": false,
+      "scope": "Immutable original phase source snapshot; not final source qualification."
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-1791357844767608261/report.json",
+      "sha256": "0cc6e8e8cc3fdd66efda32ed54a0e9f8fc7134990e198394b54befa7f55bba5e",
+      "passed": true,
+      "qualifiesFinalPresenter": false,
+      "scope": "Immutable original phase source snapshot; not final source qualification."
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-model-startup-failure-1791358230842684035/report.json",
+      "sha256": "a11b73a5073e221c7b0025b85008448e0eb8450bc7d56a5b26f8822ecf56a865",
+      "passed": false,
+      "qualifiesFinalPresenter": false,
+      "scope": "Immutable original phase source snapshot; not final source qualification."
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-native-elm-check-v4-1791357844770211890/report.json",
+      "sha256": "283a2c1c649853cdedeb35917e393319ddb6b81a54dd9227b1c6509701038c63",
+      "passed": true,
+      "qualifiesFinalPresenter": false,
+      "scope": "Immutable original phase source snapshot; not final source qualification."
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/scoped-cold-cohort-check-1791358180387794249/report.json",
+      "sha256": "563e4883cdd6ae5271bab7d8f3261fb0275815a48ce6a21bbb4394d20f23ea2a",
+      "passed": false,
+      "qualifiesFinalPresenter": false,
+      "scope": "Immutable original phase source snapshot; not final source qualification."
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/scoped-elm-model-check-1791357818856894609/report.json",
+      "sha256": "7713421df5ba655b099e7a22f4efbc9b1b7253480265c6b8cb6055bdace50e47",
+      "passed": false,
+      "qualifiesFinalPresenter": false,
+      "scope": "Immutable original phase source snapshot; not final source qualification."
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/scoped-elm-model-check-v2-1791357890139697746/report.json",
+      "sha256": "400a02ff387314be143fb3a8ca7f055ace465ea226f4d338b22091bf9b690c79",
+      "passed": true,
+      "qualifiesFinalPresenter": false,
+      "scope": "Immutable original phase source snapshot; not final source qualification."
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/scoped-presenter-check-1791357120723723763/report.json",
+      "sha256": "bf7e3ae6da66697f8e3b51e4e9b6b0dd23d8aa4beebb843d11140ed272bf5d84",
+      "passed": true,
+      "qualifiesFinalPresenter": false,
+      "scope": "Immutable original phase source snapshot; not final source qualification."
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/scoped-presenter-check-v2-1791357546840947096/report.json",
+      "sha256": "3f176f66c2fc78edc82b2e9b6070eb2e83d8b756b7ebf4ecf46df2f995fcc661",
+      "passed": true,
+      "qualifiesFinalPresenter": false,
+      "scope": "Immutable original phase source snapshot; not final source qualification."
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/scoped-presenter-check-v3-1791358014198876915/report.json",
+      "sha256": "50ea2928f9843def84ac04bf9c66bd9560a206f19b7af0a26c124aeb5bfee1b1",
+      "passed": false,
+      "qualifiesFinalPresenter": false,
+      "scope": "Immutable original phase source snapshot; not final source qualification."
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/scoped-presenter-native-check-1791357546839828306/report.json",
+      "sha256": "5b25e49b68178207111b2113a0b9e002554979258ee2ac4d1d793bfef00e65c4",
+      "passed": false,
+      "qualifiesFinalPresenter": false,
+      "scope": "Immutable original phase source snapshot; not final source qualification."
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/scoped-presenter-native-check-v2-1791357644305743824/report.json",
+      "sha256": "e05e4277818a4247a06d120c1434977b31c6ba3c5c1633f5213ad65c97c894e9",
+      "passed": false,
+      "qualifiesFinalPresenter": false,
+      "scope": "Immutable original phase source snapshot; not final source qualification."
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/scoped-presenter-native-check-v3-1791357817645339571/report.json",
+      "sha256": "ed09e270ebab0831e6ded5dc5a8a75dde4b382f57df76be81c914d513ffa6449",
+      "passed": false,
+      "qualifiesFinalPresenter": false,
+      "scope": "Immutable original phase source snapshot; not final source qualification."
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/scoped-presenter-native-check-v4-1791357890137766224/report.json",
+      "sha256": "1de9ade3575b20a30dee685e2e436aa3b302b9b29f70c564f535c512a3a67f96",
+      "passed": true,
+      "qualifiesFinalPresenter": false,
+      "scope": "Immutable original phase source snapshot; not final source qualification."
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/typed-realm-decoder-check-1791356438861124001/report.json",
+      "sha256": "96a832013c75b3e249254019bbcbf485099fe46f7377b82b2e454fd6bbf05565",
+      "passed": true,
+      "qualifiesFinalPresenter": false,
+      "scope": "Immutable original phase source snapshot; not final source qualification."
+    }
+  ],
+  "heldFailedReports": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/build-1791358194455271738/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-model-startup-failure-1791358230842684035/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/scoped-cold-cohort-check-1791358180387794249/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/scoped-elm-model-check-1791357818856894609/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/scoped-presenter-check-v3-1791358014198876915/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/scoped-presenter-native-check-1791357546839828306/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/scoped-presenter-native-check-v2-1791357644305743824/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/scoped-presenter-native-check-v3-1791357817645339571/report.json"
+  ],
+  "singlePreviewPolicy": true,
+  "typedRealmBoundariesImplemented": true,
+  "scopedElmDetachmentImplemented": true,
+  "boundaryChecks": 44,
+  "nativeElmOutboxChecks": 175,
+  "realmEpochs": 2,
+  "nativeGrantResets": 0,
+  "scopedScenarios": 20,
+  "scopedTraces": 32,
+  "scopedStates": 469,
+  "scopedSamples": 200,
+  "unsafeCompiledElmVariantsDetected": 6,
+  "coldMetadataEntries": 256,
+  "coldCohortChecks": 1549,
+  "permanentElmChecks": 45,
+  "permanentRoundtripChecks": 20,
+  "permanentCChecks": 34,
+  "permanentScenarios": 14,
+  "permanentTraces": 34,
+  "permanentStates": 667,
+  "fullBuildCommands": 103,
+  "originalBuildCommands": 98,
+  "parentNativeProductUnchanged": true,
+  "parentAdapterAndLegacyAssetsUnchanged": true,
+  "parentManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/component-manifest.json",
+  "parentManifestSHA256": "7f932033451b6d85832e8b5033dc84ff65e0a4652e5bd214ef123ea57356db50",
+  "fullElmRecoveryQualified": false,
+  "typedHostRoutingActivated": false,
+  "webKitActivated": false,
+  "actualWaylandWindowAcceptance": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "GUI113 extends the existing immutable PreviewPresenter with a native controlled\nrealm and scoped preview detachment. It creates no second policy. The existing\nlegacy host routes and permanent retirement path remain usable. Controlled\nPopup/shared-host/WebKit/Core routes are still inactive; full release is open.\n\nNativePreviewRealm decodes a bounded native grant and a closed realm envelope\nwith lossless positive UInt64 identities. Incoming events require the original\nbinding/receiver epoch. The Presenter additionally validates every inner source,\ncatalog, lifecycle, metadata and retirement binding. Bare legacy input refuses\nonce a controlled grant is enrolled. Outgoing proposals retain the same native\nrealm and carry no renderer-issued ordinal. Binding reconciliation uses the\nactual canonical binding:lifetime:session:frontend identity, which the C owner\nchecks before issuing a ticket. NativePreviewDetachment decodes exact native\nseeds and retained final deliveries; zero request floors are valid for cold\nmembers. Neither decoder contains a permanent Native Retired observation.\n\nTrusted quarantine immediately revokes demand/display in every lifecycle while\nretaining original known jobs, packet retirement and cold metadata entries. A\nnative scoped seed must match the same binding/epoch/member and original Elm\nrequest floor. Terminal ACKs remain in original order before distinct readiness.\nThe member remains until an exact contiguous final delivery matches retained\nreadiness and lifecycle settlement. The bounded 256-member completed map allows\nan exact older duplicate to re-ACK; changed old facts and gaps refuse. Ordinary\nUI/catalog closure cannot discard cold scoped obligations. After strict native\nclose of the empty realm, a greater native epoch can enroll the still Active\nsubject on the same Native grant. Permanent observed/settled chronology and\nglobal catalog chronology remain retained; only the completed realm's delivery\nprefix and completed scoped map change. closeRealm is a trusted native-close\nnotification, not an independent physical-close detector or a renderer action.\n\nCurrent qualification is recorded by component-manifest.json and\ndocs/warlock-preview/v93/component-report113.json after the full build completes:\n\n- 44 optimized Elm controls: old/bare/foreign realm input, inner source/catalog/\n  lifecycle binding refusal, exact floor, known-job retention, original terminal\n  ACK before readiness, final prefix/duplicate/changed fact, strict replacement.\n- 175 sanitizer-backed C/optimized Elm/JS outbox checks: actual Bootstrap and\n  authenticated synthetic native peer, actual original capture refusal and\n  retained Unknown reservation, actual purpose issuance/dispatch, lost delivery\n  receipt with fresh JS transport recovery while the Elm policy is retained,\n  final-delivery/processing-ACK/independent-confirmation loss, strict C close and\n  two same-Active-subject epochs on one unchanged Native grant. Both owned\n  fixture and synthetic peer exit normally. The refused capture has no adopted\n  mapping; this does not replace real captured FD/reader/fence qualification.\n- 20 explicitly selected Quint scenarios, 32 actual optimized Elm traces, 469\n  state comparisons and 200 bounded samples. Six actual compiled Elm variants\n  fail their unchanged original observable witnesses. Every trace compares\n  epoch, retained member, known-job presence, demand, closing/closed flags,\n  processing prefix and ordered command kinds; reconciliation identity and\n  terminal ACK job/sequence are also compared. Model floor/seeded/readiness/\n  terminalSeen are protocol ghost state exercised through admission, refusal\n  and commands. The projection covers this scoped protocol slice, not every\n  field of the full resource/lifecycle model. Facts are synthetic stimuli; the\n  actual C roundtrip is a separate witness, not an exhaustive native proof.\n- 1549 current optimized Elm cold-cohort controls over 256 metadata-only members:\n  atomic 257-row refusal, no fabricated jobs, retained UI closure, zero floors,\n  readiness per member, exact ordered final ACKs, retained old duplicate and\n  re-enrollment only under new UI publication/greater closed native realm.\n  This is not >256 actual native/Wayland-window acceptance.\n- Existing permanent retirement: original 45 compiled Elm controls, 20 actual\n  Elm/C roundtrip checks plus 34 C checks/two normal owned exits, and original\n  14 selected Quint scenarios/34 compiled traces/667 state comparisons/300\n  samples/three model guard variants. Original sources, oracles and identities\n  stay unchanged; new runners compile the current Presenter source.\n- Full current 103-command host build retains every original GUI112 98 command\n  in order, with scoped replay, typed decoder replay and cold-cohort additions.\n  The actual optimized Main/Bar/Popup package is recorded separately from\n  inherited precompiled source assets. Native product code, adapters and legacy\n  assets remain byte-identical to held112. Parent112's own resource/scoped/C/FD\n  regressions retain their original source/evidence identities.\n\nEarlier accepted phases and failed attempts remain immutable. First C fixture\nomitted the resource protocol required after actual acquisition refusal; next\nderivative omitted its plugin header; next omitted a lambda capture. Fresh\nfixture uses the original held plugin resource header and fixes only test\nplumbing. The first scoped model incorrectly expected a Cancelled receipt before\nany cancellation to settle an acquiring job; v2 models that original causal\nguard and its already-settled case performs quarantine/cancellation first.\nAn adversarial current-wrapper/foreign-inner-source counterexample then exposed\na product omission; the current Presenter now checks inner realm ownership.\nA generated old-regression runner referenced a repeated v2 filename and failed\nbefore any proof command; its startup transcript is retained, v3 corrects the\nfilename. The first cold fixture reused an obsolete UI publication at reopen;\nits standalone and full-build failures remain. Fresh v2 uses a greater original\npresentation publication/lease, retaining the same catalog chronology and\nunchanged re-enrollment assertion. Historical phase reports qualify their own\nsnapshots, not the final Presenter source.\n\nNext: activate typed retained realm channels and native-issued recovered outbox\nin the actual shared host; integrate stable WebKit URI router/context ownership\nand qualify real Core/Wayland live-window detachment and receiver replacement.\nActual WebKit context loss also loses the Elm policy unless a separate retained\npolicy mechanism is implemented and qualified. Never reconstruct Unknown work\nfrom a transport prefix or reset Native hello/grant to clear preview state.\nNative130 GUI110 legacy/core16/plugin19/AQ155 remains the actual native baseline\nat 2518 checks/278 normal owned exits/full cleanup. S09 eligible capture, real\nFD/render/fence/readers inside actor transactions, >256 actual native/Elm windows,\nexpired/revoked resource witnesses, restore38/recovery34/case34/original two-second\nand cursor contracts, drag52, input/popup/output/hardware/AT/IME/performance and\nrepresentative journeys/coherent release/reversible deployment remain open.\nNo installed desktop, main compositor or user draft was changed.\n"
+}

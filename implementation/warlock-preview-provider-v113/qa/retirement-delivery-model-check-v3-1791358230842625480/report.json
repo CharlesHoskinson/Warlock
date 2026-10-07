@@ -1,0 +1,380 @@
+{
+  "passed": true,
+  "inputs": {
+    "spec/retirement_delivery.qnt": "649b0c184c9d9652ca9ea7208cc32d5e209ce8cf0b58f4de80ba77ddc9d5106a",
+    "spec/retirement_delivery_tests.qnt": "c944b1c0a2f9ff6e129cceefbc6d5173dce30400d003a83e158e76ba14a19267",
+    "qa/retirement-delivery-refinement.js": "4013ecd9054e0bc3c1d612a5efefc8ad73970fe92bb7104ccc7c3a0b2926c52d",
+    "qa/native-source-fixture.json": "1c0c3b87e773ace53adc79b9b7e8696b32167ee3ea698112b765a03c8e6c1ff1",
+    "qa/retirement-delivery-model-check-v3.py": "090b89f2fa62da3d5e1a4f5b357335402a025cb7b96546da1f1500b89f61f3eb"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "retirement_delivery_tests.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "retirement_delivery_tests.qnt",
+        "--main=retirement_delivery_tests",
+        "--backend=typescript",
+        "--match=^(pendingCompletionCannotForget|gapCannotRemoveReadyActor|nextCompletionEmitsProcessingAck|lostProcessingAckRetriesOnlyAck|repeatedActivationCannotReset|retainedChannelRejectsLegacy|foreignDeliveryCannotAdvance|olderNativeFactAtLaterOrdinal|duplicateAfterSiblingCompletion|replacementCannotReset|lateActivationPreservesLegacy|cleanupAckPrecedesReadiness|duplicateTerminalAfterReadyInert|oldSeedCannotRecreate)$",
+        "--seed=920051",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "samples",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "retirement_delivery.qnt",
+        "--main=retirement_delivery",
+        "--backend=typescript",
+        "--invariant=safety",
+        "--seed=920052",
+        "--max-samples=300",
+        "--max-steps=30",
+        "--n-traces=20",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "compiled-replay",
+      "argv": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/inputs/qa/retirement-delivery-refinement.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/preview-replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/inputs/qa/native-source-fixture.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/named-cleanupAckPrecedesReadiness-11.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/named-duplicateAfterSiblingCompletion-8.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/named-duplicateTerminalAfterReadyInert-12.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/named-foreignDeliveryCannotAdvance-6.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/named-gapCannotRemoveReadyActor-1.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/named-lateActivationPreservesLegacy-10.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/named-lostProcessingAckRetriesOnlyAck-3.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/named-nextCompletionEmitsProcessingAck-2.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/named-oldSeedCannotRecreate-13.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/named-olderNativeFactAtLaterOrdinal-7.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/named-pendingCompletionCannotForget-0.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/named-repeatedActivationCannotReset-4.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/named-replacementCannotReset-9.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/named-retainedChannelRejectsLegacy-5.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/sample-0.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/sample-1.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/sample-10.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/sample-11.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/sample-12.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/sample-13.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/sample-14.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/sample-15.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/sample-16.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/sample-17.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/sample-18.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/sample-19.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/sample-2.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/sample-3.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/sample-4.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/sample-5.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/sample-6.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/sample-7.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/sample-8.itf.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/sample-9.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "skip-delivery-gap-typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "retirement_delivery_tests.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "lose-repeat-ack-typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "retirement_delivery_tests.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "legacy-downgrade-typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "retirement_delivery_tests.qnt"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "compiledControls": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-check-v2-1791358117552830188/report.json",
+    "sha256": "3c6234ab185d1089975e3c3c3c3b0c8ef0660aba4a5785d21f4c48b4fb473067",
+    "compiledElmSHA256": "c5cbecb4c081634c14251b5e41c918a7ebfe80ce4441e325b1501f7b7e6e19c0"
+  },
+  "selectedNames": [
+    "pendingCompletionCannotForget",
+    "gapCannotRemoveReadyActor",
+    "nextCompletionEmitsProcessingAck",
+    "lostProcessingAckRetriesOnlyAck",
+    "repeatedActivationCannotReset",
+    "retainedChannelRejectsLegacy",
+    "foreignDeliveryCannotAdvance",
+    "olderNativeFactAtLaterOrdinal",
+    "duplicateAfterSiblingCompletion",
+    "replacementCannotReset",
+    "lateActivationPreservesLegacy",
+    "cleanupAckPrecedesReadiness",
+    "duplicateTerminalAfterReadyInert",
+    "oldSeedCannotRecreate"
+  ],
+  "namedScenarios": 14,
+  "invariantSamples": 300,
+  "evidence": {
+    "passed": true,
+    "statesCompared": 667,
+    "coupledTraces": [
+      {
+        "trace": "named-cleanupAckPrecedesReadiness-11.itf.json",
+        "statesCompared": 3
+      },
+      {
+        "trace": "named-duplicateAfterSiblingCompletion-8.itf.json",
+        "statesCompared": 7
+      },
+      {
+        "trace": "named-duplicateTerminalAfterReadyInert-12.itf.json",
+        "statesCompared": 4
+      },
+      {
+        "trace": "named-foreignDeliveryCannotAdvance-6.itf.json",
+        "statesCompared": 4
+      },
+      {
+        "trace": "named-gapCannotRemoveReadyActor-1.itf.json",
+        "statesCompared": 4
+      },
+      {
+        "trace": "named-lateActivationPreservesLegacy-10.itf.json",
+        "statesCompared": 5
+      },
+      {
+        "trace": "named-lostProcessingAckRetriesOnlyAck-3.itf.json",
+        "statesCompared": 5
+      },
+      {
+        "trace": "named-nextCompletionEmitsProcessingAck-2.itf.json",
+        "statesCompared": 4
+      },
+      {
+        "trace": "named-oldSeedCannotRecreate-13.itf.json",
+        "statesCompared": 5
+      },
+      {
+        "trace": "named-olderNativeFactAtLaterOrdinal-7.itf.json",
+        "statesCompared": 6
+      },
+      {
+        "trace": "named-pendingCompletionCannotForget-0.itf.json",
+        "statesCompared": 3
+      },
+      {
+        "trace": "named-repeatedActivationCannotReset-4.itf.json",
+        "statesCompared": 7
+      },
+      {
+        "trace": "named-replacementCannotReset-9.itf.json",
+        "statesCompared": 6
+      },
+      {
+        "trace": "named-retainedChannelRejectsLegacy-5.itf.json",
+        "statesCompared": 4
+      },
+      {
+        "trace": "sample-0.itf.json",
+        "statesCompared": 30
+      },
+      {
+        "trace": "sample-1.itf.json",
+        "statesCompared": 30
+      },
+      {
+        "trace": "sample-10.itf.json",
+        "statesCompared": 30
+      },
+      {
+        "trace": "sample-11.itf.json",
+        "statesCompared": 30
+      },
+      {
+        "trace": "sample-12.itf.json",
+        "statesCompared": 30
+      },
+      {
+        "trace": "sample-13.itf.json",
+        "statesCompared": 30
+      },
+      {
+        "trace": "sample-14.itf.json",
+        "statesCompared": 30
+      },
+      {
+        "trace": "sample-15.itf.json",
+        "statesCompared": 30
+      },
+      {
+        "trace": "sample-16.itf.json",
+        "statesCompared": 30
+      },
+      {
+        "trace": "sample-17.itf.json",
+        "statesCompared": 30
+      },
+      {
+        "trace": "sample-18.itf.json",
+        "statesCompared": 30
+      },
+      {
+        "trace": "sample-19.itf.json",
+        "statesCompared": 30
+      },
+      {
+        "trace": "sample-2.itf.json",
+        "statesCompared": 30
+      },
+      {
+        "trace": "sample-3.itf.json",
+        "statesCompared": 30
+      },
+      {
+        "trace": "sample-4.itf.json",
+        "statesCompared": 30
+      },
+      {
+        "trace": "sample-5.itf.json",
+        "statesCompared": 30
+      },
+      {
+        "trace": "sample-6.itf.json",
+        "statesCompared": 30
+      },
+      {
+        "trace": "sample-7.itf.json",
+        "statesCompared": 30
+      },
+      {
+        "trace": "sample-8.itf.json",
+        "statesCompared": 30
+      },
+      {
+        "trace": "sample-9.itf.json",
+        "statesCompared": 30
+      }
+    ],
+    "nativeAcceptance": false,
+    "fullReleaseAccepted": false,
+    "scope": "Actual compiled Elm actor/lifecycle projection and exact ordered processing-ACK payloads coupled to Quint. Prefix/channel are exercised through outcomes, not reported as directly observed internal fields. Synthetic facts; native/WebKit/physical qualification remains separate."
+  },
+  "unsafeModelMutantsDetected": 3,
+  "mutants": [
+    {
+      "name": "skip-delivery-gap",
+      "witness": "gapCannotRemoveReadyActor",
+      "namedAssertionFailure": true
+    },
+    {
+      "name": "lose-repeat-ack",
+      "witness": "lostProcessingAckRetriesOnlyAck",
+      "namedAssertionFailure": true
+    },
+    {
+      "name": "legacy-downgrade",
+      "witness": "retainedChannelRejectsLegacy",
+      "namedAssertionFailure": true
+    }
+  ],
+  "artifacts": {
+    "preview-replay.js": "c5cbecb4c081634c14251b5e41c918a7ebfe80ce4441e325b1501f7b7e6e19c0",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-pendingCompletionCannotForget-0.itf.json": "0cac83ff8bb842922746e60d389ab5d419181e4857b67c5d18340aad16a71ba6",
+    "named-gapCannotRemoveReadyActor-1.itf.json": "dc253090b972d7b1c072d0372b0ff908f6c19d7976f299db245e6909972ff1a7",
+    "named-nextCompletionEmitsProcessingAck-2.itf.json": "0bf7c66b8b589be0052a8f6a91313582f9d857404c5427912b7f9d447fcc02ac",
+    "named-lostProcessingAckRetriesOnlyAck-3.itf.json": "bdb60061f1f42e2862b37b20c455e64e07368d934c6cd10dfd3b0d4681e59c72",
+    "named-repeatedActivationCannotReset-4.itf.json": "82c7a7abd42a0962285fa70d2ca0109f4452d4a8ef26a4f24275e6e84caa9017",
+    "named-retainedChannelRejectsLegacy-5.itf.json": "cdc2aaf8e841cb209fcedbcee47e3bacf23452ac27f6187b4faa1c4ed7e390bf",
+    "named-foreignDeliveryCannotAdvance-6.itf.json": "b03860593c61b0d44bbecbdbc60f7b3b4577e5087a9432c2db1fd40220198ec6",
+    "named-olderNativeFactAtLaterOrdinal-7.itf.json": "1fda3a35758c38fc76a7445c6469692efdb793238da33b88728fef6beedfa825",
+    "named-duplicateAfterSiblingCompletion-8.itf.json": "332e6f18e422982281797279087b431d1c406f4957a823e97ffbc7e910a251f4",
+    "named-replacementCannotReset-9.itf.json": "5e991883da4c4c3a1f0f8bb6c69a7dfa2ff5f95562a6da63c654064a1b598175",
+    "named-lateActivationPreservesLegacy-10.itf.json": "05e6137c770c3961220bf8fe7c2d7cafff5565171a11efc29310e8ef5aafd526",
+    "named-cleanupAckPrecedesReadiness-11.itf.json": "9dc53d311fd189bf172bcf0d910a0d13039997324ee125cf16ef889e2fe2f13e",
+    "named-duplicateTerminalAfterReadyInert-12.itf.json": "c76b9857dce26e93162d4dfa4ef419bd5c22b2bbb723ba5b729f1a03e38fb2ee",
+    "named-oldSeedCannotRecreate-13.itf.json": "53bfc731c26507262d35ff57ae081249004b33549ecdb6f9e5e6d7f585acda4d",
+    "selected.stdout": "c65de316c5d8264849d6b2b36d5ae1508035f8fad04c73af70c5be5504ea560a",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "17e96710ff44d32e66ab7406c829b1237d1fec70301d992137b5db5cc03eef2e",
+    "sample-1.itf.json": "21ac5919843ca4796062ba5b1203f8fea1ce06f05bb11a3cce1a7b4fcdf5784e",
+    "sample-2.itf.json": "a062f403498342ce6b7fa94c1460f2d251261c1ccc8bf931bef2b1d059af1e2b",
+    "sample-3.itf.json": "74ebe7f7d7b9691a58f7d10ac54bc02b07e6dbb7b799d27e6bc3350b7eb672be",
+    "sample-4.itf.json": "1cf548ff72a5f75b3c6e9a44efb03c2f358fb1d5cf3bf49bb76dbe6bcb0226aa",
+    "sample-5.itf.json": "a630523721cbcd886e9a6a9c7ef190ea81c41505a0462cca88a4247eb1bd0d1e",
+    "sample-6.itf.json": "16552b12f8d572989423f7adf735f8747cdd9c56cb1c2271566f7ce97ca5c82f",
+    "sample-7.itf.json": "1786833dd6a45be12308b94bcf078a4b23e34f0ddf60131669520576980a7006",
+    "sample-8.itf.json": "6aa68b6d228017233af2b627fd6e88b7f1872f2ab76bfd102447c6a23aab2c9a",
+    "sample-9.itf.json": "b9f9f3e96a348cfe67f1e8c169eef42b6fa359a930de70c2c17944d6b488c277",
+    "sample-10.itf.json": "d91e8c95c86bf4e5ba2f6bcccbb56a946899dffe4cc566e2d15122ff91456529",
+    "sample-11.itf.json": "58f10eca9dd2184b131ccac295efde4ec69dd4abb5464c625b41b70917cd761a",
+    "sample-12.itf.json": "47e340c0b7770acfbfefa17be987933924367d4c50062612821854a89667baae",
+    "sample-13.itf.json": "447aa655d6e9155bdf5c0e194b4a7dfbb41abc1f801384ad0aca3837e8aafa4b",
+    "sample-14.itf.json": "9d64a28489b1313515cc979de859545b473e97ed23cc6eeac2c1bd9563633f08",
+    "sample-15.itf.json": "1f081a796f2abe9b196238620573889e9e63e65caa144b389754ed05b3ca015c",
+    "sample-16.itf.json": "73e9b03e4d1554124e02e9a510266fe225aee1fed5f7ea68506efbd49655212e",
+    "sample-17.itf.json": "595b4da2df6ccf52e6398ba578ea12b039b8d8d06225d46cfa11f23e593f906f",
+    "sample-18.itf.json": "9f60462c625bd44bb0ded796ff6d73df415652bd458ecb647245b91c5a911864",
+    "sample-19.itf.json": "6f3aabfc6398b4668cc4abaa2ddb2f000a7c97b254ba063d8fd71063cd4e9614",
+    "samples.stdout": "9dd5cabd0dc9d1a9a967d0bb0aff923848c0aa4b87af8b3cec958c3759413e6b",
+    "samples.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compiled-replay.stdout": "d89e259d779150f72648f57b6a6972658a289d14903af8aa3aa5d56f7305e9b1",
+    "compiled-replay.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "skip-delivery-gap-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "skip-delivery-gap-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "skip-delivery-gap.stdout": "fdf08fb91652b1fc50bf49b870e519738af9e124d3a40a3feb913e019cdc1a5d",
+    "skip-delivery-gap.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "lose-repeat-ack-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lose-repeat-ack-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lose-repeat-ack.stdout": "f4bff36d401e6c584078d66f9ae386ef6c03b10619c0bf00df342464d3d39ee0",
+    "lose-repeat-ack.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "legacy-downgrade-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "legacy-downgrade-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "legacy-downgrade.stdout": "80d055fdfd1741295318de5b98ce3605a4ffd4df91f1120a1a5d6351e7a981b0",
+    "legacy-downgrade.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "skip-delivery-gap/retirement_delivery.qnt": "8ca6eda2298565c67d7ee3a7bee491d4ba785617818ce539f56544d7a130d2b4",
+    "skip-delivery-gap/retirement_delivery_tests.qnt": "c944b1c0a2f9ff6e129cceefbc6d5173dce30400d003a83e158e76ba14a19267",
+    "lose-repeat-ack/retirement_delivery.qnt": "34a3a99c2d021ed7010396dfeb06ad07f8e6c0e9b714af8d658fa52fdd36e7b5",
+    "lose-repeat-ack/retirement_delivery_tests.qnt": "c944b1c0a2f9ff6e129cceefbc6d5173dce30400d003a83e158e76ba14a19267",
+    "legacy-downgrade/retirement_delivery.qnt": "3639ad2b10f100eb0d1f0cf8d779bffb844e5b1a727e6c3b140aebb7674d2a59",
+    "legacy-downgrade/retirement_delivery_tests.qnt": "c944b1c0a2f9ff6e129cceefbc6d5173dce30400d003a83e158e76ba14a19267",
+    "inputs/spec/retirement_delivery.qnt": "649b0c184c9d9652ca9ea7208cc32d5e209ce8cf0b58f4de80ba77ddc9d5106a",
+    "inputs/spec/retirement_delivery_tests.qnt": "c944b1c0a2f9ff6e129cceefbc6d5173dce30400d003a83e158e76ba14a19267",
+    "inputs/qa/retirement-delivery-refinement.js": "4013ecd9054e0bc3c1d612a5efefc8ad73970fe92bb7104ccc7c3a0b2926c52d",
+    "inputs/qa/native-source-fixture.json": "1c0c3b87e773ace53adc79b9b7e8696b32167ee3ea698112b765a03c8e6c1ff1",
+    "inputs/qa/retirement-delivery-model-check-v3.py": "090b89f2fa62da3d5e1a4f5b357335402a025cb7b96546da1f1500b89f61f3eb"
+  }
+}

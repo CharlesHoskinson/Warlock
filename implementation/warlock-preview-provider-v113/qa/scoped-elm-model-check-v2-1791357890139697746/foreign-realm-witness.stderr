@@ -1,0 +1,23 @@
+AssertionError [ERR_ASSERTION]: named-oldRealmCannotSupplyTerminal-13.itf.json step 2 ForeignTerminal
++ actual - expected
+
+  {
+    closed: false,
+    closing: true,
++   commands: [
++     'acknowledge',
++     'detach-ready'
++   ],
+-   commands: [],
+    demand: false,
+    epoch: 1,
+    held: true,
++   known: false,
+-   known: true,
+    processed: 0
+  }
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/scoped-elm-model-check-v2-1791357890139697746/foreign-realm/qa/scoped-elm-refinement.js:49:11
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)

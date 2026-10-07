@@ -415,3 +415,30 @@ CONTROL-025 code is implemented in inactive GUI112; current C129/JS recovery
 and model24/36/498/200 samples/nine executable JS variants/full98/original four
 resource regressions pass. Three compiled native guard variants and all four
 current scoped-detachment regressions also pass. Actual typed host/WebKit/Core activation remains open.
+
+EARS CONTROL-026: While a native controlled preview realm is enrolled, the single
+Elm PreviewPresenter SHALL admit only exact envelopes for that original Native
+binding and receiver epoch, and SHALL validate the same binding inside source,
+catalog, lifecycle, metadata and retirement inputs before mutation. Bare legacy
+inputs SHALL NOT enter a controlled policy. When that realm is quarantined,
+Elm SHALL revoke display and demand immediately while retaining known jobs,
+physical-resource obligations, cold metadata members and original request
+counters. Binding reconciliation SHALL use the exact native canonical identity
+before cleanup proposals; native SHALL issue every ticket and ordinal. When
+the original scoped seed arrives, Elm SHALL match its binding, epoch, subject,
+entry and request floor without inventing permanent Native retirement. Only
+after the original lifecycle settles SHALL Elm emit terminal ACKs followed by
+one distinct scoped readiness command. Only a contiguous final delivery that
+exactly matches retained readiness and settlement SHALL remove that member.
+An exact retained duplicate SHALL re-ACK transport only; changed facts and gaps
+SHALL refuse. A greater receiver epoch SHALL require trusted native close of
+the empty original realm and SHALL preserve permanent retirement chronology,
+Native grant and unrelated shared-host state. Ordinary UI closure, transport
+delivery, independent confirmation and JavaScript recovery SHALL NOT fabricate
+that close or recover a missing Elm policy model.
+
+CONTROL-026 is held in GUI113: current Elm44/native C+Elm+outbox175/two
+Active-subject epochs on unchanged Native grant; Quint20/32/469/six compiled
+variants; cold256/1549; original permanent45/native20+C34/model14/34/667;
+full103 retains98. Eight failed attempts and earlier phase snapshots remain.
+Actual controlled shared-host/WebKit/Core activation and full Elm recovery open.

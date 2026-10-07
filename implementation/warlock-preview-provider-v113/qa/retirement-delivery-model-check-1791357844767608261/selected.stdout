@@ -1,0 +1,18 @@
+
+  retirement_delivery_tests
+    ok pendingCompletionCannotForget passed 1 test(s)
+    ok gapCannotRemoveReadyActor passed 1 test(s)
+    ok nextCompletionEmitsProcessingAck passed 1 test(s)
+    ok lostProcessingAckRetriesOnlyAck passed 1 test(s)
+    ok repeatedActivationCannotReset passed 1 test(s)
+    ok retainedChannelRejectsLegacy passed 1 test(s)
+    ok foreignDeliveryCannotAdvance passed 1 test(s)
+    ok olderNativeFactAtLaterOrdinal passed 1 test(s)
+    ok duplicateAfterSiblingCompletion passed 1 test(s)
+    ok replacementCannotReset passed 1 test(s)
+    ok lateActivationPreservesLegacy passed 1 test(s)
+    ok cleanupAckPrecedesReadiness passed 1 test(s)
+    ok duplicateTerminalAfterReadyInert passed 1 test(s)
+    ok oldSeedCannotRecreate passed 1 test(s)
+
+  14 passing (20ms)

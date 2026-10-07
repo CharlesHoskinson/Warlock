@@ -1,0 +1,1118 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      closed: false,
+      closing: false,
+      commands: [],
+      demand: true,
+      epoch: 1,
+      floor: 1,
+      held: true,
+      history: [],
+      known: true,
+      processed: 0,
+      ready: false,
+      seeded: false,
+      terminalSeen: false
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      closed: false,
+      closing: false,
+      commands: [],
+      demand: true,
+      epoch: 1,
+      floor: 1,
+      held: true,
+      history: ["NextGrant"],
+      known: true,
+      processed: 0,
+      ready: false,
+      seeded: false,
+      terminalSeen: false
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      closed: false,
+      closing: false,
+      commands: [],
+      demand: true,
+      epoch: 1,
+      floor: 1,
+      held: true,
+      history: ["NextGrant", "Complete"],
+      known: true,
+      processed: 0,
+      ready: false,
+      seeded: false,
+      terminalSeen: false
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      closed: false,
+      closing: false,
+      commands: [],
+      demand: true,
+      epoch: 1,
+      floor: 1,
+      held: true,
+      history: ["NextGrant", "Complete", "Source"],
+      known: true,
+      processed: 0,
+      ready: false,
+      seeded: false,
+      terminalSeen: false
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: ["cancel"],
+      demand: false,
+      epoch: 1,
+      floor: 1,
+      held: true,
+      history: ["NextGrant", "Complete", "Source", "Seed"],
+      known: true,
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      demand: false,
+      epoch: 1,
+      floor: 1,
+      held: true,
+      history: ["NextGrant", "Complete", "Source", "Seed", "Seed"],
+      known: true,
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      demand: false,
+      epoch: 1,
+      floor: 1,
+      held: true,
+      history: ["NextGrant", "Complete", "Source", "Seed", "Seed", "Complete"],
+      known: true,
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      demand: false,
+      epoch: 1,
+      floor: 1,
+      held: true,
+      history:
+        [
+          "NextGrant",
+          "Complete",
+          "Source",
+          "Seed",
+          "Seed",
+          "Complete",
+          "ChangedComplete"
+        ],
+      known: true,
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      demand: false,
+      epoch: 1,
+      floor: 1,
+      held: true,
+      history:
+        [
+          "NextGrant",
+          "Complete",
+          "Source",
+          "Seed",
+          "Seed",
+          "Complete",
+          "ChangedComplete",
+          "Source"
+        ],
+      known: true,
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      demand: false,
+      epoch: 1,
+      floor: 1,
+      held: true,
+      history:
+        [
+          "NextGrant",
+          "Complete",
+          "Source",
+          "Seed",
+          "Seed",
+          "Complete",
+          "ChangedComplete",
+          "Source",
+          "WrongFloor"
+        ],
+      known: true,
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      demand: false,
+      epoch: 1,
+      floor: 1,
+      held: true,
+      history:
+        [
+          "NextGrant",
+          "Complete",
+          "Source",
+          "Seed",
+          "Seed",
+          "Complete",
+          "ChangedComplete",
+          "Source",
+          "WrongFloor",
+          "WrongEntry"
+        ],
+      known: true,
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      demand: false,
+      epoch: 1,
+      floor: 1,
+      held: true,
+      history:
+        [
+          "NextGrant",
+          "Complete",
+          "Source",
+          "Seed",
+          "Seed",
+          "Complete",
+          "ChangedComplete",
+          "Source",
+          "WrongFloor",
+          "WrongEntry",
+          "ForeignTerminal"
+        ],
+      known: true,
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      demand: false,
+      epoch: 1,
+      floor: 1,
+      held: true,
+      history:
+        [
+          "NextGrant",
+          "Complete",
+          "Source",
+          "Seed",
+          "Seed",
+          "Complete",
+          "ChangedComplete",
+          "Source",
+          "WrongFloor",
+          "WrongEntry",
+          "ForeignTerminal",
+          "Complete"
+        ],
+      known: true,
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      demand: false,
+      epoch: 1,
+      floor: 1,
+      held: true,
+      history:
+        [
+          "NextGrant",
+          "Complete",
+          "Source",
+          "Seed",
+          "Seed",
+          "Complete",
+          "ChangedComplete",
+          "Source",
+          "WrongFloor",
+          "WrongEntry",
+          "ForeignTerminal",
+          "Complete",
+          "ChangedComplete"
+        ],
+      known: true,
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      demand: false,
+      epoch: 1,
+      floor: 1,
+      held: true,
+      history:
+        [
+          "NextGrant",
+          "Complete",
+          "Source",
+          "Seed",
+          "Seed",
+          "Complete",
+          "ChangedComplete",
+          "Source",
+          "WrongFloor",
+          "WrongEntry",
+          "ForeignTerminal",
+          "Complete",
+          "ChangedComplete",
+          "Request"
+        ],
+      known: true,
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      demand: false,
+      epoch: 1,
+      floor: 1,
+      held: true,
+      history:
+        [
+          "NextGrant",
+          "Complete",
+          "Source",
+          "Seed",
+          "Seed",
+          "Complete",
+          "ChangedComplete",
+          "Source",
+          "WrongFloor",
+          "WrongEntry",
+          "ForeignTerminal",
+          "Complete",
+          "ChangedComplete",
+          "Request",
+          "Seed"
+        ],
+      known: true,
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      demand: false,
+      epoch: 1,
+      floor: 1,
+      held: true,
+      history:
+        [
+          "NextGrant",
+          "Complete",
+          "Source",
+          "Seed",
+          "Seed",
+          "Complete",
+          "ChangedComplete",
+          "Source",
+          "WrongFloor",
+          "WrongEntry",
+          "ForeignTerminal",
+          "Complete",
+          "ChangedComplete",
+          "Request",
+          "Seed",
+          "NextGrant"
+        ],
+      known: true,
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      demand: false,
+      epoch: 1,
+      floor: 1,
+      held: true,
+      history:
+        [
+          "NextGrant",
+          "Complete",
+          "Source",
+          "Seed",
+          "Seed",
+          "Complete",
+          "ChangedComplete",
+          "Source",
+          "WrongFloor",
+          "WrongEntry",
+          "ForeignTerminal",
+          "Complete",
+          "ChangedComplete",
+          "Request",
+          "Seed",
+          "NextGrant",
+          "Source"
+        ],
+      known: true,
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: ["acknowledge", "detach-ready"],
+      demand: false,
+      epoch: 1,
+      floor: 1,
+      held: true,
+      history:
+        [
+          "NextGrant",
+          "Complete",
+          "Source",
+          "Seed",
+          "Seed",
+          "Complete",
+          "ChangedComplete",
+          "Source",
+          "WrongFloor",
+          "WrongEntry",
+          "ForeignTerminal",
+          "Complete",
+          "ChangedComplete",
+          "Request",
+          "Seed",
+          "NextGrant",
+          "Source",
+          "Terminal"
+        ],
+      known: false,
+      processed: 0,
+      ready: true,
+      seeded: true,
+      terminalSeen: true
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      demand: false,
+      epoch: 1,
+      floor: 1,
+      held: true,
+      history:
+        [
+          "NextGrant",
+          "Complete",
+          "Source",
+          "Seed",
+          "Seed",
+          "Complete",
+          "ChangedComplete",
+          "Source",
+          "WrongFloor",
+          "WrongEntry",
+          "ForeignTerminal",
+          "Complete",
+          "ChangedComplete",
+          "Request",
+          "Seed",
+          "NextGrant",
+          "Source",
+          "Terminal",
+          "WrongFloor"
+        ],
+      known: false,
+      processed: 0,
+      ready: true,
+      seeded: true,
+      terminalSeen: true
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: ["detach-delivery-ack"],
+      demand: false,
+      epoch: 1,
+      floor: 1,
+      held: false,
+      history:
+        [
+          "NextGrant",
+          "Complete",
+          "Source",
+          "Seed",
+          "Seed",
+          "Complete",
+          "ChangedComplete",
+          "Source",
+          "WrongFloor",
+          "WrongEntry",
+          "ForeignTerminal",
+          "Complete",
+          "ChangedComplete",
+          "Request",
+          "Seed",
+          "NextGrant",
+          "Source",
+          "Terminal",
+          "WrongFloor",
+          "Complete"
+        ],
+      known: false,
+      processed: 1,
+      ready: true,
+      seeded: true,
+      terminalSeen: true
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      demand: false,
+      epoch: 1,
+      floor: 1,
+      held: false,
+      history:
+        [
+          "NextGrant",
+          "Complete",
+          "Source",
+          "Seed",
+          "Seed",
+          "Complete",
+          "ChangedComplete",
+          "Source",
+          "WrongFloor",
+          "WrongEntry",
+          "ForeignTerminal",
+          "Complete",
+          "ChangedComplete",
+          "Request",
+          "Seed",
+          "NextGrant",
+          "Source",
+          "Terminal",
+          "WrongFloor",
+          "Complete",
+          "WrongEntry"
+        ],
+      known: false,
+      processed: 1,
+      ready: true,
+      seeded: true,
+      terminalSeen: true
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      demand: false,
+      epoch: 1,
+      floor: 1,
+      held: false,
+      history:
+        [
+          "NextGrant",
+          "Complete",
+          "Source",
+          "Seed",
+          "Seed",
+          "Complete",
+          "ChangedComplete",
+          "Source",
+          "WrongFloor",
+          "WrongEntry",
+          "ForeignTerminal",
+          "Complete",
+          "ChangedComplete",
+          "Request",
+          "Seed",
+          "NextGrant",
+          "Source",
+          "Terminal",
+          "WrongFloor",
+          "Complete",
+          "WrongEntry",
+          "ChangedComplete"
+        ],
+      known: false,
+      processed: 1,
+      ready: true,
+      seeded: true,
+      terminalSeen: true
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      demand: false,
+      epoch: 1,
+      floor: 1,
+      held: false,
+      history:
+        [
+          "NextGrant",
+          "Complete",
+          "Source",
+          "Seed",
+          "Seed",
+          "Complete",
+          "ChangedComplete",
+          "Source",
+          "WrongFloor",
+          "WrongEntry",
+          "ForeignTerminal",
+          "Complete",
+          "ChangedComplete",
+          "Request",
+          "Seed",
+          "NextGrant",
+          "Source",
+          "Terminal",
+          "WrongFloor",
+          "Complete",
+          "WrongEntry",
+          "ChangedComplete",
+          "Gap"
+        ],
+      known: false,
+      processed: 1,
+      ready: true,
+      seeded: true,
+      terminalSeen: true
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      demand: false,
+      epoch: 1,
+      floor: 1,
+      held: false,
+      history:
+        [
+          "NextGrant",
+          "Complete",
+          "Source",
+          "Seed",
+          "Seed",
+          "Complete",
+          "ChangedComplete",
+          "Source",
+          "WrongFloor",
+          "WrongEntry",
+          "ForeignTerminal",
+          "Complete",
+          "ChangedComplete",
+          "Request",
+          "Seed",
+          "NextGrant",
+          "Source",
+          "Terminal",
+          "WrongFloor",
+          "Complete",
+          "WrongEntry",
+          "ChangedComplete",
+          "Gap",
+          "BareSource"
+        ],
+      known: false,
+      processed: 1,
+      ready: true,
+      seeded: true,
+      terminalSeen: true
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      demand: false,
+      epoch: 1,
+      floor: 1,
+      held: false,
+      history:
+        [
+          "NextGrant",
+          "Complete",
+          "Source",
+          "Seed",
+          "Seed",
+          "Complete",
+          "ChangedComplete",
+          "Source",
+          "WrongFloor",
+          "WrongEntry",
+          "ForeignTerminal",
+          "Complete",
+          "ChangedComplete",
+          "Request",
+          "Seed",
+          "NextGrant",
+          "Source",
+          "Terminal",
+          "WrongFloor",
+          "Complete",
+          "WrongEntry",
+          "ChangedComplete",
+          "Gap",
+          "BareSource",
+          "Terminal"
+        ],
+      known: false,
+      processed: 1,
+      ready: true,
+      seeded: true,
+      terminalSeen: true
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      demand: false,
+      epoch: 1,
+      floor: 1,
+      held: false,
+      history:
+        [
+          "NextGrant",
+          "Complete",
+          "Source",
+          "Seed",
+          "Seed",
+          "Complete",
+          "ChangedComplete",
+          "Source",
+          "WrongFloor",
+          "WrongEntry",
+          "ForeignTerminal",
+          "Complete",
+          "ChangedComplete",
+          "Request",
+          "Seed",
+          "NextGrant",
+          "Source",
+          "Terminal",
+          "WrongFloor",
+          "Complete",
+          "WrongEntry",
+          "ChangedComplete",
+          "Gap",
+          "BareSource",
+          "Terminal",
+          "ForeignClose"
+        ],
+      known: false,
+      processed: 1,
+      ready: true,
+      seeded: true,
+      terminalSeen: true
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      demand: false,
+      epoch: 1,
+      floor: 1,
+      held: false,
+      history:
+        [
+          "NextGrant",
+          "Complete",
+          "Source",
+          "Seed",
+          "Seed",
+          "Complete",
+          "ChangedComplete",
+          "Source",
+          "WrongFloor",
+          "WrongEntry",
+          "ForeignTerminal",
+          "Complete",
+          "ChangedComplete",
+          "Request",
+          "Seed",
+          "NextGrant",
+          "Source",
+          "Terminal",
+          "WrongFloor",
+          "Complete",
+          "WrongEntry",
+          "ChangedComplete",
+          "Gap",
+          "BareSource",
+          "Terminal",
+          "ForeignClose",
+          "OldSource"
+        ],
+      known: false,
+      processed: 1,
+      ready: true,
+      seeded: true,
+      terminalSeen: true
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      closed: true,
+      closing: true,
+      commands: [],
+      demand: false,
+      epoch: 1,
+      floor: 1,
+      held: false,
+      history:
+        [
+          "NextGrant",
+          "Complete",
+          "Source",
+          "Seed",
+          "Seed",
+          "Complete",
+          "ChangedComplete",
+          "Source",
+          "WrongFloor",
+          "WrongEntry",
+          "ForeignTerminal",
+          "Complete",
+          "ChangedComplete",
+          "Request",
+          "Seed",
+          "NextGrant",
+          "Source",
+          "Terminal",
+          "WrongFloor",
+          "Complete",
+          "WrongEntry",
+          "ChangedComplete",
+          "Gap",
+          "BareSource",
+          "Terminal",
+          "ForeignClose",
+          "OldSource",
+          "Close"
+        ],
+      known: false,
+      processed: 1,
+      ready: true,
+      seeded: true,
+      terminalSeen: true
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      closed: true,
+      closing: true,
+      commands: [],
+      demand: false,
+      epoch: 1,
+      floor: 1,
+      held: false,
+      history:
+        [
+          "NextGrant",
+          "Complete",
+          "Source",
+          "Seed",
+          "Seed",
+          "Complete",
+          "ChangedComplete",
+          "Source",
+          "WrongFloor",
+          "WrongEntry",
+          "ForeignTerminal",
+          "Complete",
+          "ChangedComplete",
+          "Request",
+          "Seed",
+          "NextGrant",
+          "Source",
+          "Terminal",
+          "WrongFloor",
+          "Complete",
+          "WrongEntry",
+          "ChangedComplete",
+          "Gap",
+          "BareSource",
+          "Terminal",
+          "ForeignClose",
+          "OldSource",
+          "Close",
+          "Quarantine"
+        ],
+      known: false,
+      processed: 1,
+      ready: true,
+      seeded: true,
+      terminalSeen: true
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      closed: true,
+      closing: true,
+      commands: [],
+      demand: false,
+      epoch: 1,
+      floor: 1,
+      held: false,
+      history:
+        [
+          "NextGrant",
+          "Complete",
+          "Source",
+          "Seed",
+          "Seed",
+          "Complete",
+          "ChangedComplete",
+          "Source",
+          "WrongFloor",
+          "WrongEntry",
+          "ForeignTerminal",
+          "Complete",
+          "ChangedComplete",
+          "Request",
+          "Seed",
+          "NextGrant",
+          "Source",
+          "Terminal",
+          "WrongFloor",
+          "Complete",
+          "WrongEntry",
+          "ChangedComplete",
+          "Gap",
+          "BareSource",
+          "Terminal",
+          "ForeignClose",
+          "OldSource",
+          "Close",
+          "Quarantine",
+          "Terminal"
+        ],
+      known: false,
+      processed: 1,
+      ready: true,
+      seeded: true,
+      terminalSeen: true
+    }
+}
+
+[ok] No violation found (350ms at 571 traces/second).
+Trace length statistics: max=31, min=31, average=31.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v2.py", line 10, in <module>
+    report={'passed':False,'inputs':{rel:sha(root/rel) for rel in names},'commands':[],'nativeAcceptance':False,'fullReleaseAccepted':False}
+                                         ~~~^^^^^^^^^^
+  File "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v2.py", line 7, in <lambda>
+    sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+                                ~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 777, in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v2-v2.py'

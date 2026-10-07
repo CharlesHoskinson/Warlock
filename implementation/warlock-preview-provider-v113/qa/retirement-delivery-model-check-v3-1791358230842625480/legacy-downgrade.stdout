@@ -1,0 +1,16 @@
+
+  retirement_delivery_tests
+    1) retainedChannelRejectsLegacy failed after 1 test(s)
+
+  1 failed
+
+  1) retainedChannelRejectsLegacy:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/retirement-delivery-model-check-v3-1791358230842625480/legacy-downgrade/retirement_delivery_tests.qnt:3:33
+        3:  action check(ok:bool):bool=all{assert(ok and safety),s'=s}
+                                           ^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xe09f5 --match=retainedChannelRejectsLegacy to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 retirement_delivery_tests.qnt

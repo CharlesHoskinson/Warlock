@@ -1,0 +1,10 @@
+native/scoped-presenter-native-fixture-v2.cpp: In lambda function:
+native/scoped-presenter-native-fixture-v2.cpp:33:206: error: ‘server’ is not captured [-Wtemplate-body]
+   33 |    result=endpoint->native([](auto& broker){auto rows=broker.inspect();Wire w;w.text("records",std::to_string(rows.size())).text("charge",std::to_string(broker.charge()));uint64_t captures=0;std::ifstream(server.root/"capture-count")>>captures;w.text("captures",std::to_string(captures));if(!rows.empty()){auto& row=rows.front();w.begin("job").job(row.job).end().boolean("terminal",row.terminal).text("proofs",std::to_string(row.proofs.size()));if(!row.proofs.empty())w.counter("sequence",row.proofs.back().sequence.value);}return w.finish();});ok=true;
+      |                                                                                                                                                                                                              ^~~~~~
+native/scoped-presenter-native-fixture-v2.cpp:33:29: note: the lambda has no capture-default
+   33 |    result=endpoint->native([](auto& broker){auto rows=broker.inspect();Wire w;w.text("records",std::to_string(rows.size())).text("charge",std::to_string(broker.charge()));uint64_t captures=0;std::ifstream(server.root/"capture-count")>>captures;w.text("captures",std::to_string(captures));if(!rows.empty()){auto& row=rows.front();w.begin("job").job(row.job).end().boolean("terminal",row.terminal).text("proofs",std::to_string(row.proofs.size()));if(!row.proofs.empty())w.counter("sequence",row.proofs.back().sequence.value);}return w.finish();});ok=true;
+      |                             ^
+native/scoped-presenter-native-fixture-v2.cpp:5:9: note: ‘Server server’ declared here
+    5 |  Server server("capture-refused");GError* error=nullptr;
+      |         ^~~~~~

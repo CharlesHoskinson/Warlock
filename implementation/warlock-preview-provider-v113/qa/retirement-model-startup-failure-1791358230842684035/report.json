@@ -1,0 +1,17 @@
+{
+  "passed": false,
+  "recordingPassed": true,
+  "inputs": {
+    "qa/retirement-delivery-model-check-v2.py": "06edf75fbd8308f3db4c73c9d9a52a3a22ccd475d2f2ea39dfa91473a11cecbc",
+    "qa/retirement-model-startup-audit.py": "3181424f424321b3721403166e6f5f71c6855d6d94c8ae90260b941c6aa68ec0"
+  },
+  "artifacts": {
+    "startup.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "startup.stderr": "22de884253cd7d3df8d0111781d759d58ffcac5226aac61881e4e2202703083d"
+  },
+  "startupExitCode": 1,
+  "commandsExecuted": 0,
+  "error": "Generated runner referenced nonexistent repeated v2 filename. No proof command executed. Fresh v3 corrects only runner filename.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

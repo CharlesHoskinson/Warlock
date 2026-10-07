@@ -903,3 +903,49 @@ native realm, purpose reservations, prefixes and physical/Unknown obligations.
 - **THEN** it may retry the compact independent confirmation without replaying old data
 - **AND** it does not claim to have retained a past wire or recovered the Elm model
 - **AND** actual typed host and WebKit reload acceptance still requires separate evidence
+
+### Requirement: One typed Elm policy for native preview realm detachment
+
+The system SHALL implement EARS CONTROL-026 in the existing PreviewPresenter.
+Scoped preview membership completion is distinct from permanent Native retirement.
+
+#### Scenario: A current outer wrapper contains a foreign inner binding
+- **GIVEN** an enrolled controlled realm and an otherwise valid native envelope
+- **WHEN** its source, catalog or lifecycle carries another Native binding
+- **THEN** the policy refuses before enrollment, retargeting or command emission
+- **AND** all original member state and counters remain unchanged
+
+#### Scenario: Scoped close retains unresolved original jobs
+- **GIVEN** an original known job or cold metadata member in the controlled realm
+- **WHEN** the exact native scoped seed or trusted quarantine arrives
+- **THEN** display and new demand stop while original obligations remain retained
+- **AND** no permanent Retired fact is fabricated
+- **AND** exact terminal ACKs precede scoped readiness in the emitted command list
+
+#### Scenario: Lost final delivery and processing acknowledgement
+- **GIVEN** original settled lifecycle state and matching scoped readiness
+- **WHEN** the final scoped delivery or its processing ACK is lost
+- **THEN** the retained native delivery removes the member only at its contiguous prefix
+- **AND** an exact duplicate re-emits only the original processing ACK
+- **AND** changed entries, floors, facts or delivery gaps cannot advance that prefix
+
+#### Scenario: A same live subject opens under a greater realm
+- **GIVEN** completed scoped membership, independent confirmation and strict native close
+- **WHEN** native supplies a greater receiver epoch on the unchanged Native grant
+- **THEN** the same single policy can enroll the still Active subject in that realm
+- **AND** old envelopes, tickets and receipts remain refused
+- **AND** permanent retirement chronology and unrelated shared-host state are preserved
+
+#### Scenario: Cold members have zero request floors
+- **GIVEN** a bounded metadata-only native catalog with no fabricated capture jobs
+- **WHEN** its realm is quarantined and the original zero-floor seeds arrive
+- **THEN** UI closure retains each member until its own scoped completion
+- **AND** one readiness and ordered processing ACK applies to each original member
+- **AND** a new UI publication and greater closed realm can re-enroll the live members
+
+#### Scenario: Transport context recovery retains the existing Elm policy
+- **GIVEN** one retained Elm policy and an unconfirmed native-issued control ticket
+- **WHEN** the JavaScript transport context is recreated
+- **THEN** original native inventory restores transport without resetting that policy
+- **AND** ticket retry returns original delivery evidence without replaying acquisition
+- **AND** this does not qualify recovery of an Elm model lost with an actual WebKit context

@@ -1,0 +1,49 @@
+AssertionError [ERR_ASSERTION]: Current wrapper cannot admit a foreign inner source binding
++ actual - expected
+
++ [
++   {
++     active: true,
++     identity: 'family:2',
++     model: {
++       accepted: null,
++       cancelling: [],
++       candidate: null,
++       demand: true,
++       image: null,
++       job: null,
++       known: [],
++       nextRequest: '1',
++       ready: true,
++       retiring: [],
++       scope: {
++         binding: {
++           frontend: '9',
++           lifetime: '12618083744238620417',
++           session: '2'
++         },
++         clock: '12618083744238620417',
++         context: {
++           content: '42',
++           incarnation: '2',
++           lifetime: '12618083744238620417',
++           output: '1',
++           privacy: '1',
++           rendering: '2',
++           scene: '1'
++         },
++         gpuReady: true,
++         locked: false,
++         now: '203483677058877',
++         observation: '75',
++         present: true,
++         sourceLive: true
++       },
++       state: 'unavailable'
++     }
++   }
++ ]
+- []
+
+    at same (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/scoped-presenter-check-v3-1791358014198876915/inputs/qa/scoped-presenter-checks-v3.js:6:71)
+    at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/scoped-presenter-check-v3-1791358014198876915/inputs/qa/scoped-presenter-checks-v3.js:18:68

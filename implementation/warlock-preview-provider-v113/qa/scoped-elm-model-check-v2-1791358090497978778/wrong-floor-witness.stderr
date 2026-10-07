@@ -1,0 +1,23 @@
+AssertionError [ERR_ASSERTION]: named-wrongFloorCannotRevoke-0.itf.json step 1 WrongFloor
++ actual - expected
+
+  {
+    closed: false,
++   closing: true,
++   commands: [
++     'cancel'
++   ],
++   demand: false,
+-   closing: false,
+-   commands: [],
+-   demand: true,
+    epoch: 1,
+    held: true,
+    known: true,
+    processed: 0
+  }
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/qa/scoped-elm-model-check-v2-1791358090497978778/wrong-floor/qa/scoped-elm-refinement.js:49:11
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)

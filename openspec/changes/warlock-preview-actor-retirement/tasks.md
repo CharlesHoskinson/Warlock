@@ -306,3 +306,9 @@ samples/nine executable JS variants and full98 retaining original97. All four
 original resource regressions pass on changed native bank/C source. All four current scoped detachment
 regressions and three compiled native recovery variants now pass.
 No actual WebKit context loss, Core/window acceptance or full release follows.
+
+- [x] Freeze CONTROL-026 typed realm/scoped detachment in the single Elm policy,
+      with current compiled native/Elm/outbox coupling, cold metadata cohort,
+      explicit Quint scenarios and unchanged permanent-retirement regressions.
+- [ ] Activate trusted realm routes in the real shared host and qualify actual
+      WebKit/Core/Wayland-window detachment, replacement and full Elm recovery.

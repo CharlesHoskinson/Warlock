@@ -174,3 +174,24 @@ remain open. See GUI112/RECOVERY-HANDOFF.md/component-report112.json for scope.
 Next PUBLIC81 and fresh GUI113 trusted typed host realm wrappers/retained policy
 routing or actual WebKit router callback/ref lifetime. Native130 current GUI110
 legacy/core16/plugin19/AQ155 remains2518/278/full cleanup. No installed changes.
+
+GUI112 PUBLIC81 a03d4953d8ed1ab2f500ababc1dbdc5a0c367ce8/8395 owned blobs;
+source0da2d5bf6c4565345cd150c30d7225f6065dab11;
+receipt5ca2631493281c0adcc21e07b798ac4506a00bac.
+GUI113 is now held: typed native realm/scoped detachment in the single existing
+Elm Presenter, with outer and inner binding/epoch validation, canonical native
+reconciliation identity, retained known/cold obligations, exact readiness/final
+prefix/retry and same Active subject replacement on unchanged Native grant.
+Current Elm44/native C+Elm+outbox175/two epochs/normal exits; Quint20/32 actual
+optimized Elm traces/469 states/200 samples/six compiled variants; cold256/1549;
+original permanent45/native20+C34/model14/34/667/three model variants; full103
+retains98. Eight failed attempts and older phases held at their own original
+snapshots, not final source acceptance. Freezer's initial historical/current
+classification failure retained separately. See component-report113.json and
+GUI113/SCOPED-ELM-HANDOFF.md. CONTROL026/OpenSpec six scenarios qualified at
+CPU slice; actual typed shared-host/WebKit/Core/Wayland activation and full Elm
+context recovery remain open. Native130 currentGUI110 legacy/core16/plugin19/
+AQ1552518/278/full cleanup remains actual native baseline. Next PUBLIC82 then
+GUI114 real typed host/retained transport/URI router activation or native current
+legacy tuple requalification. All original full-release gates remain; no installed
+desktop or draft changes. Five foreign tracked changes preserved.
