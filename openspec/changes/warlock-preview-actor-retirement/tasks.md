@@ -507,3 +507,20 @@ activation and all original full release gates remain open.
 - [ ] Qualify CONTROL-044 actual matching-current WebKit cancellation/failure
   through original failure reporting and strict native custody, with real
   WebKit/GIO result and no forged settlement or success classification.
+
+- [ ] Implement/qualify CONTROL-045 actual current-renderer failure drain through
+  original native observations/receipts and strict retirement before failure1
+  exit, retaining real current-cancellation/normal/old-error controls, original
+  deadlines and explicit Unknown without grants/counter resets or fabricated settlement.
+
+- [x] Freeze bounded CONTROL-044 current matching cancellation in GUI138:
+  Native16622 negative controls prove original real current WebKit cancellation,
+  finish once/post-original-scope-guard failure1/no artifact and strict custody
+  refusal; seven other normal exits/private cleanup. Normal16529/13 and
+  canceled-old16736/13/full119/current Quint4 actual projections pass; unchanged
+  abstract10/200 retained. Negative host1 is not normal closure or recovery.
+- [x] Preserve CONTROL-045 actual failed current-error drain oracle Native168:
+  current failure/finish/no-artifact controls pass, required strict native
+  close-before-failure-exit fails with current duties/not-closed/incomplete
+  teardown;21 checks/seven other normal/private cleanup. GUI138 source held
+  unqualified for failure drain; real native drain implementation remains open.

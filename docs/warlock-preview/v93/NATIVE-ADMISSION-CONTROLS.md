@@ -877,3 +877,27 @@ all normal exits/private cleanup; full119, Quint10/200 and4 actual failure-fix-
 success projected cases pass. Matching-current error handling is unchanged
 source, but actual current matching failure is an open native gate. This does
 not qualify all async schedules, physical reveal/hardware/recovery or release.
+
+CONTROL-045 current-renderer failure drain (EARS): WHEN a current renderer
+operation fails while original native duties remain, the host SHALL retain the
+failure outcome, conceal/invalidate that renderer, stop new work in its scope,
+and keep original policy/input/ticket/physical/journal/confirmation custody until
+independent native observations allow original strict retirement. WHEN that
+retirement completes, the host SHALL exit with the original failure outcome;
+it SHALL NOT report success, replay Unknown, reset grants/epochs/counters, or
+infer settlement from renderer disposal or process exit. IF original native
+custody is uncertain, the host SHALL keep that uncertainty explicit and SHALL
+NOT claim normal closure. Actual current-error drain SHALL qualify under the
+original six-second observer and owning source/ABI; original fail-closed
+negative, normal and stale-old-error controls SHALL remain separate evidence.
+
+Bounded GUI138 current-error evidence: Native16622 negative controls prove a
+real current WebKit/GIO cancellation consumed once, original matching-scope
+failure1/no artifact and strict close refusal while original accepted/known
+duties remain; seven other normal exits/private cleanup. It does not prove
+custody after process death or graceful failure drain. Separate Native16821
+checks fails mandatory close-before-failure-exit: current realm not closed,
+retained models and incomplete teardown. Original normal16529/13, old-canceled
+16736/13 and full119 pass; four current actual Quint projections pass and the
+unchanged abstract10/200 is retained. Source138 remains unqualified for mandatory
+failure drain; CONTROL045 stays open with unchanged168 oracle for fresh139.

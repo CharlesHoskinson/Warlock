@@ -1553,3 +1553,22 @@ owned result/error cleanup SHALL preserve all Native custody and original gates.
 - WHEN a current matching async result returns failure
 - THEN original fail-closed reporting and retained Native custody remain in force
 - AND stale-error disposal is not used to hide that current failure
+
+### Requirement: Current renderer failure retains an ordered native drain
+The host SHALL preserve the original failure outcome while keeping original
+native custody and retirement progress alive. Concealment or process exit SHALL
+NOT certify settlement. Unknown duties SHALL never be automatically replayed or
+cleared to obtain closure; strict retirement remains the native authority.
+
+#### Scenario: Current snapshot failure while a captured job is owned
+- GIVEN a real matching-current WebKit cancellation and an original owned native job
+- WHEN original fail-closed reporting begins
+- THEN the renderer is concealed and receives no new work, while original native
+  observations and receipts drive its existing duties to strict retirement
+- AND the host exits with failure only after the original custody is actually drained
+- AND the original observer deadline, single policy and native authority remain intact
+
+#### Scenario: Current failure with uncertain native custody
+- WHEN original native duties cannot be proved settled
+- THEN uncertainty remains explicit and no normal closure or recovery is claimed
+- AND no renderer disposal, reset, inferred process death or fabricated receipt settles those duties

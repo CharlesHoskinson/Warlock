@@ -668,3 +668,31 @@ Next PUBLIC100 then that actual current-error control and remaining async/
 projection/navigation/process/reload/Unknown, physical conceal/reveal/hardware,
 pressure/full workload/RSS and full-release gates. Installed desktop, drafts and
 foreign tracked edits remain untouched.
+
+GUI138 is held as a current-error qualification and failed mandatory drain
+candidate. New disabled-by-default private flag supplies a real canceled
+GCancellable to the original current WebKit snapshot without old-result hold.
+Readonly logging follows the existing scope guard; original failure path and
+single policy/native issuer/physical products are unchanged. Native16622
+negative controls prove same current view/epoch1, actual cancellation/finish
+once, original failure1/no artifact and strict teardown refusal; seven other
+owned processes exit0/private cleanup. This is negative evidence, not normal
+closure, custody persistence after process death, or recovery. Native16529/13
+normal and16736/13 canceled-old positive regressions and full119 pass. Current
+Quint4 cases couple actual legacy-old/current-old/current-failure/current-success
+outcomes; unchanged abstract10/200 is retained by exact hashes, not rerun.
+
+Separate Native16821-check mandatory drain oracle fails: original current
+failure/finish/artifact controls pass, but the last realm is not closed, original
+models/jobs remain and strict native teardown is incomplete before host1 exit.
+Seven other normal exits/private cleanup pass; GLib/GObject fault-teardown
+criticals remain recorded. No fault-drain or healthy release acceptance follows.
+Exact source/build/reports: component-report-gui138-current-failure.json; all
+source/positive/negative/failed packets are frozen separately. Next PUBLIC101,
+then fresh GUI139 failure quarantine/concealment while continued original native
+observations and receipts drive strict close BEFORE preserving failure1 exit.
+Use unchanged Native168 drain oracle and separate original normal/old-error
+regressions; no grants/counter resets, fabricated receipts, inferred process-
+death settlement, replay of Unknown or original deadline changes. CONTROL045
+EARS/OpenSpec is open. Full physical/hardware/pressure/recovery/S09/release gates
+remain; installed desktop, drafts and foreign tracked edits are preserved.
