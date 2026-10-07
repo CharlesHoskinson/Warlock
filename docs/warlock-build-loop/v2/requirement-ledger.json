@@ -4194,9 +4194,15 @@
         {
           "name": "taskbar-zero",
           "oracle": "one launch request is issued",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/persistent-pins/manifest.json",
+              "sha256": "19bbb3b496b2d9acb0df551907009a14064f7ca93389d576a266cacb6c705387",
+              "scope": "Compiled Elm pin/reorder/current receipt and restart replay; actual keyboard pin/reorder with atomic private storage; whole shell restart preserves exact Editor/Files order, native taskbar text pixels; pointer zero-window Editor activation submits one identity-bound GIO launch."
+            }
+          ],
+          "missingObservation": "Independent original-scenario reviewer disposition.; Native primary keyboard activation of a zero-window taskbar pin and applicable assistive-technology coverage for UI-004.; Physical presentation of launcher/pin/reorder popup controls: this run captures the restarted taskbar only; the retained earlier launcher popup is black."
         },
         {
           "name": "taskbar-inactive",
@@ -5185,14 +5191,20 @@
       "owner": "Elm presentation lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "in-progress",
       "scenarios": [
         {
           "name": "ux-004",
           "oracle": "both identities retain the chosen relative order",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/persistent-pins/manifest.json",
+              "sha256": "19bbb3b496b2d9acb0df551907009a14064f7ca93389d576a266cacb6c705387",
+              "scope": "Compiled Elm pin/reorder/current receipt and restart replay; actual keyboard pin/reorder with atomic private storage; whole shell restart preserves exact Editor/Files order, native taskbar text pixels; pointer zero-window Editor activation submits one identity-bound GIO launch."
+            }
+          ],
+          "missingObservation": "Independent original-scenario reviewer disposition.; Physical presentation of launcher/pin/reorder popup controls: this run captures the restarted taskbar only; the retained earlier launcher popup is black."
         }
       ]
     },
@@ -5918,5 +5930,6 @@
         }
       ]
     }
-  ]
+  ],
+  "updatedUTC": "2026-10-07T23:29:55.138296+00:00"
 }

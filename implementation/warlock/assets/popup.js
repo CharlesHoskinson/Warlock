@@ -5331,11 +5331,11 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 			A2(
 				$elm$json$Json$Decode$field,
 				'bar',
-				$author$project$SurfaceRenderer$controls(259)),
+				$author$project$SurfaceRenderer$controls(291)),
 			A2(
 				$elm$json$Json$Decode$field,
 				'popup',
-				$author$project$SurfaceRenderer$controls(2051))));
+				$author$project$SurfaceRenderer$controls(2150))));
 	return A2(
 		$elm$core$Result$andThen,
 		function (record) {

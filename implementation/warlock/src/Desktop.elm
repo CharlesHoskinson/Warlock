@@ -1,6 +1,7 @@
-module Desktop exposing (Effect(..), ChoiceToken, choiceToken, Model, Msg(..), initial, update, ViewStamp, capture, key, canProveCatalogUnsent)
+module Desktop exposing (Effect(..), ChoiceToken, choiceToken, Model, Msg(..), initial, update, ViewStamp, capture, key, canProveCatalogUnsent, pinnedGroup, pinGroups, pinIdentities)
 
 import Menu
+import Pins
 import MenuBridge
 import NativeProvider
 import Provider
@@ -25,6 +26,7 @@ type alias Model =
     , ownerExhausted : Bool
     , launch : Launch.Model
     , applications : Maybe Catalog.Snapshot
+    , pins : Pins.Model
     , query : String
     , open : Bool
     , request : Counter
@@ -53,6 +55,8 @@ type Msg
     | OpenApplications ViewStamp
     | CloseApplications ViewStamp
     | SearchQuery ViewStamp String
+    | TogglePin ViewStamp String
+    | MovePin ViewStamp String Int
     | CatalogUnsent Binding.Binding Counter
     | Start Launch.Selection
     | Deadline Launch.PendingToken
@@ -69,7 +73,7 @@ type Effect
 
 initial : Model
 initial =
-    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", open = False, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
+    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, open = False, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
 
 canProveCatalogUnsent : Binding.Binding -> Counter -> Model -> Bool
 canProveCatalogUnsent binding request model =
@@ -109,6 +113,8 @@ windowBase message model =
         (windows, effects) = TaskbarShell.update message model.windows
         disconnected = windows.shell.phase == Shell.Detached
         changed = windows.shell.binding /= model.windows.shell.binding
+        pins = if disconnected || changed then Pins.initial else model.pins
+        read = if changed && not disconnected then windows.shell.binding |> Maybe.andThen (\binding -> UInt64.next model.request |> Maybe.map (\request -> (binding,request))) else Nothing
         launch =
             if disconnected then Launch.disconnect model.launch
             else if changed then windows.shell.binding |> Maybe.map (\binding -> Launch.bind (host binding) model.launch) |> Maybe.withDefault (Launch.disconnect model.launch)
@@ -119,10 +125,12 @@ windowBase message model =
         , returnFocus = if disconnected || changed then Nothing else model.returnFocus
         , menuOrigin = if disconnected || changed || (MenuBridge.menuSnapshot windows.menus).menu==Nothing then Nothing else model.menuOrigin
         , choiceNotice = if disconnected || changed then "" else model.choiceNotice
+        , pins = pins
+        , request = read |> Maybe.map Tuple.second |> Maybe.withDefault model.request
         , applications = if disconnected || changed then Nothing else model.applications
-        , expected = if disconnected || changed then Nothing else model.expected
+        , expected = if disconnected || changed then read |> Maybe.map Tuple.second else model.expected
         , catalogFailure = if disconnected || changed then Nothing else model.catalogFailure
-      }, List.map WindowEffect effects ++
+      }, (read |> Maybe.map (\(binding,request) -> [catalogRequest binding request]) |> Maybe.withDefault []) ++ List.map WindowEffect effects ++
         (case (model.windows.picker,windows.picker,message) of
             (prior,Just picker,_) ->
                 if (prior |> Maybe.map .generation)==Just picker.generation then [] else
@@ -271,14 +279,25 @@ update message model =
         Incoming raw ->
             case D.decodeValue (D.field "kind" D.string) raw of
                 Ok "application-catalog" ->
-                    let decoder = strict ["protocolVersion","kind","binding","requestId","snapshot"] (D.map4 (\_ binding request snapshot -> (binding,request,snapshot)) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "snapshot" D.value))
+                    let decoder = D.keyValuePairs D.value |> D.andThen (\pairs ->
+                            let fields=List.map Tuple.first pairs
+                                legacy=not (List.member "preferences" fields)
+                            in strict (["protocolVersion","kind","binding","requestId","snapshot"] ++ (if legacy then [] else ["preferences"])) (D.map5 (\_ binding request snapshot pins -> {binding=binding,request=request,snapshot=snapshot,pins=pins}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "snapshot" D.value) (if legacy then D.succeed Nothing else D.field "preferences" (D.nullable Pins.decoder))))
                     in case D.decodeValue decoder raw of
-                        Ok (binding,request,snapshot) ->
-                            if model.windows.shell.phase /= Shell.Detached && model.windows.shell.binding == Just binding && model.expected == Just request then
-                                let next = advance {model | launch = Launch.catalog snapshot model.launch, applications = Catalog.decode snapshot |> Result.toMaybe, expected = Nothing, catalogFailure = Nothing}
+                        Ok receipt ->
+                            if model.windows.shell.phase /= Shell.Detached && model.windows.shell.binding == Just receipt.binding && model.expected == Just receipt.request then
+                                let next = advance {model | launch = Launch.catalog receipt.snapshot model.launch, applications = Catalog.decode receipt.snapshot |> Result.toMaybe, pins = Pins.observe receipt.pins model.pins, expected = Nothing, catalogFailure = Nothing}
                                     target = "launcher-search"
                                 in (next,if next.open then [Focus target] else [])
                             else (model,[])
+                        Err _ -> (model,[])
+                Ok "taskbar-pins-outcome" ->
+                    let decoder = strict ["protocolVersion","kind","binding","requestId","status","preferences"] (D.map5 (\_ binding request status pins -> {binding=binding,request=request,status=status,pins=pins}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "status" D.string) (D.field "preferences" (D.nullable Pins.decoder)))
+                    in case D.decodeValue decoder raw of
+                        Ok receipt ->
+                            if model.windows.shell.phase==Shell.Detached || model.windows.shell.binding/=Just receipt.binding || not (List.member receipt.status ["Saved","Refused","Unknown"]) then (model,[]) else
+                                let pins = Pins.receive receipt.request receipt.status receipt.pins model.pins
+                                in ({model | pins=pins},if model.open && pins/=model.pins then [Focus "launcher-search"] else [])
                         Err _ -> (model,[])
                 Ok "application-launch-outcome" ->
                     let decoder = strict ["protocolVersion","kind","binding","outcome"] (D.map3 (\_ binding outcome -> (binding,outcome)) version (D.field "binding" Binding.decoder) (D.field "outcome" D.value))
@@ -303,7 +322,7 @@ update message model =
             in case (model.windows.shell.binding, UInt64.next model.request) of
                 (Just binding,Just request) ->
                     if model.windows.shell.phase == Shell.Detached || retired.presentation == Nothing then (retired,[]) else
-                        ({retired | request = request, expected = Just request},[Send (E.object [("protocolVersion",E.int 3),("kind",E.string "catalog-request"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request))]),Focus "launcher-search"])
+                        ({retired | request = request, expected = Just request},[catalogRequest binding request,Focus "launcher-search"])
                 _ -> (retired,[])
         CatalogUnsent binding request ->
             if not (canProveCatalogUnsent binding request model) then (model,[]) else
@@ -315,6 +334,12 @@ update message model =
         SearchQuery stamp query ->
             if capture model /= Just stamp || not model.open || query==model.query || String.length query > 256 || String.any (\c -> Char.toCode c < 32 || Char.toCode c == 127) query then (model,[]) else
                 (advance {model | query=query},[])
+        TogglePin stamp identity ->
+            if capture model/=Just stamp || not model.open || not (Pins.writable model.pins) || (not (List.member identity (pinIdentities model)) && (model.applications |> Maybe.andThen (Catalog.lookup identity))==Nothing) then (model,[]) else
+                savePins (Pins.toggle identity (pinIdentities model)) model
+        MovePin stamp identity direction ->
+            if capture model/=Just stamp || not model.open || not (Pins.writable model.pins) then (model,[]) else
+                savePins (Pins.move identity direction (pinIdentities model)) model
         Start selection ->
             if MenuBridge.preparedSnapshot model.windows.menus/=Nothing then (model,[]) else
             let (launch,intent) = Launch.start selection model.launch
@@ -324,3 +349,35 @@ update message model =
                 _ -> ({model | launch = launch},[])
         Deadline token -> ({model | launch = Launch.timeout token model.launch},[])
         Acknowledge token -> ({model | launch = Launch.acknowledgeUnknown token model.launch},[])
+
+
+catalogRequest : Binding.Binding -> Counter -> Effect
+catalogRequest binding request = Send (E.object [("protocolVersion",E.int 3),("kind",E.string "catalog-request"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request))])
+
+pinIdentities : Model -> List String
+pinIdentities model = model.pins.snapshot |> Maybe.map .identities |> Maybe.withDefault []
+
+savePins : List String -> Model -> (Model,List Effect)
+savePins values model =
+    case (model.windows.shell.binding,UInt64.next model.request) of
+        (Just binding,Just request) ->
+            let (pins,proposal)=Pins.propose request values model.pins
+                wire p=E.object [("protocolVersion",E.int 3),("kind",E.string "taskbar-pins-write"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request)),("proposal",p)]
+            in case proposal of
+                Just p ->
+                    if Pins.bytes (E.encode 0 (wire p))>4095 then ({model|pins={pins|pending=Nothing,notice="Pin order is too large to save."}},[]) else
+                        (advance {model|pins=pins,request=request},[Send (wire p)])
+                Nothing -> (model,[])
+        _ -> (model,[])
+
+pinnedGroup : String -> Model -> Maybe Taskbar.Group
+pinnedGroup identity model =
+    case pinGroups identity model of
+        [group] -> Just group
+        _ -> Nothing
+
+pinGroups : String -> Model -> List Taskbar.Group
+pinGroups identity model =
+    case model.applications |> Maybe.andThen (Catalog.lookup identity) of
+        Nothing -> []
+        Just entry -> TaskbarShell.groups model.windows |> List.filter (\group -> List.any (\family -> family.application==identity || (not (String.isEmpty entry.wmclass) && family.application==entry.wmclass)) group.families)

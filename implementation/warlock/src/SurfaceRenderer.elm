@@ -27,7 +27,7 @@ decode : D.Value -> Result String Snapshot
 decode raw =
     let decoder = strict ["surfaceProtocol","publication","lease","mode","status","bar","popup"]
             (D.map7 (\version shown scoped current notice bar popup -> {version=version,shown=shown,scoped=scoped,current=current,notice=notice,bar=bar,popup=popup})
-                (D.field "surfaceProtocol" D.int) (D.field "publication" UInt64.decoder) (D.field "lease" UInt64.decoder) (D.field "mode" (bounded 16)) (D.field "status" (bounded 1024)) (D.field "bar" (controls 259)) (D.field "popup" (controls 2051)))
+                (D.field "surfaceProtocol" D.int) (D.field "publication" UInt64.decoder) (D.field "lease" UInt64.decoder) (D.field "mode" (bounded 16)) (D.field "status" (bounded 1024)) (D.field "bar" (controls 291)) (D.field "popup" (controls 2150)))
     in D.decodeValue decoder raw |> Result.mapError D.errorToString |> Result.andThen (\record ->
         let all = record.bar ++ record.popup
             identities = List.map .identity all

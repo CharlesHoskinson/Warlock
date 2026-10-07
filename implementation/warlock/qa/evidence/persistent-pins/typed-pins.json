@@ -1,0 +1,51 @@
+{
+  "checks": {
+    "pinWritesOnce": true,
+    "doesNotClaimSaveBeforeReceipt": true,
+    "pinOrderConfirmed": true,
+    "reorderConfirmed": true,
+    "restartPreservesExactIdentitiesAndOrder": true,
+    "staleActionRejected": true,
+    "staleReceiptRejected": true,
+    "missingEntryCannotBePinned": true,
+    "boundaryReorderNoWrite": true,
+    "zeroWindowPinLaunchesOnce": true,
+    "unknownReceiptNeverWrites": true,
+    "currentPinReceiptRestoresSearchFocus": true,
+    "unknownReceiptKeepsRecoveryReachable": true
+  },
+  "restartedFrame": {
+    "surfaceProtocol": 2,
+    "publication": "1",
+    "lease": "1",
+    "mode": "closed",
+    "status": "Connecting…",
+    "bar": [
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:pin:warlock-editor",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:pin:warlock-editor",
+        "label": "Editor",
+        "ariaLabel": "Open Editor",
+        "detail": "Pinned launcher",
+        "enabled": true
+      },
+      {
+        "id": "bar:pin:warlock-files",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:pin:warlock-files",
+        "label": "Files",
+        "ariaLabel": "Open Files",
+        "detail": "Pinned launcher",
+        "enabled": true
+      }
+    ],
+    "popup": []
+  }
+}

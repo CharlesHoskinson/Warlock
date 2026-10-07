@@ -228,6 +228,19 @@ static const char *request_kind(JsonNode *root) {
     gboolean snapshot=g_str_equal(value,"projection-request") || g_str_equal(value,"catalog-request");
     gboolean launch=g_str_equal(value,"application-launch");
     gboolean effect=g_str_equal(value,"window-effect");
+    if (g_str_equal(value,"taskbar-pins-write")) {
+        const char *const fields[]={"protocolVersion","kind","binding","requestId","proposal"},*const proposal_fields[]={"revision","identities"};
+        guint64 request,revision;JsonNode *proposal=json_object_get_member(obj,"proposal");
+        if (!surface_fields(obj,fields,5) || !JSON_NODE_HOLDS_OBJECT(json_object_get_member(obj,"binding")) || !surface_uint(json_object_get_member(obj,"requestId"),&request) || !request || !proposal || !JSON_NODE_HOLDS_OBJECT(proposal)) return NULL;
+        JsonObject *p=json_node_get_object(proposal);JsonNode *ids=json_object_get_member(p,"identities");
+        if (!surface_fields(p,proposal_fields,2) || !surface_uint(json_object_get_member(p,"revision"),&revision) || !revision || !ids || !JSON_NODE_HOLDS_ARRAY(ids)) return NULL;
+        JsonArray *rows=json_node_get_array(ids);if(json_array_get_length(rows)>32)return NULL;
+        for(guint i=0;i<json_array_get_length(rows);i++) {
+            JsonNode *id=json_array_get_element(rows,i);if(!surface_text(id,256,FALSE))return NULL;
+            for(guint j=0;j<i;j++)if(json_node_equal(id,json_array_get_element(rows,j)))return NULL;
+        }
+        return value;
+    }
     if (g_str_equal(value,"reconciliation-ready")) {
         const char *const fields[]={"protocolVersion","kind","binding","proofRequestId","queriedBinding"};
         if (!surface_fields(obj,fields,5) || !JSON_NODE_HOLDS_OBJECT(json_object_get_member(obj,"binding")) ||
@@ -359,7 +372,7 @@ static void receive(WebKitUserContentManager *manager,WebKitJavascriptResult *re
     if (qa_exit && (g_str_equal(kind,"window-effect") || g_str_equal(kind,"application-launch") || g_str_equal(kind,"host-reconnect"))) { g_print("frontend-request: %s\n",text);fflush(stdout); }
     if (g_str_equal(kind,"host-ready")) backend_start();
     else if (g_str_equal(kind,"host-reconnect")) backend_restart();
-    else if ((observation_kind(kind) || g_str_equal(kind,"projection-request") || g_str_equal(kind,"window-effect") || g_str_equal(kind,"catalog-request") || g_str_equal(kind,"application-launch"))) {
+    else if ((observation_kind(kind) || g_str_equal(kind,"projection-request") || g_str_equal(kind,"window-effect") || g_str_equal(kind,"catalog-request") || g_str_equal(kind,"taskbar-pins-write") || g_str_equal(kind,"application-launch"))) {
         if (!backend_ready || shutting_down) return;
         if (g_queue_get_length(&requests)>=16) { failed=TRUE;backend_ready=FALSE;deliver("{\"kind\":\"host-disconnected\"}");gtk_main_quit();return; }
         g_queue_push_tail(&requests,g_strconcat(text,"\n",NULL));write_next();
@@ -586,7 +599,7 @@ static gboolean surface_preflight(SurfaceGate *gate,JsonNode *root,guint queued,
     for (guint i=0;i<count;i++) {
         JsonNode *item=json_array_get_element(req,i);const char *rk=request_kind(item);
         g_autofree char *wire=json_to_string(item,FALSE);
-        if (!rk || strlen(wire)>4096 || (!observation_kind(rk) && !g_str_equal(rk,"projection-request") && !g_str_equal(rk,"catalog-request") && !g_str_equal(rk,"application-launch") && !g_str_equal(rk,"window-effect") && !g_str_equal(rk,"host-reconnect")) || (open && (g_str_equal(rk,"application-launch") || g_str_equal(rk,"window-effect")))) return FALSE;
+        if (!rk || strlen(wire)>4096 || (!observation_kind(rk) && !g_str_equal(rk,"projection-request") && !g_str_equal(rk,"catalog-request") && !g_str_equal(rk,"taskbar-pins-write") && !g_str_equal(rk,"application-launch") && !g_str_equal(rk,"window-effect") && !g_str_equal(rk,"host-reconnect")) || (open && (g_str_equal(rk,"application-launch") || g_str_equal(rk,"window-effect")))) return FALSE;
         if (g_str_equal(rk,"host-reconnect") && count!=1) return FALSE;
         if (!ready && !g_str_equal(rk,"host-reconnect")) return FALSE;
     }
@@ -678,6 +691,9 @@ static void test_bridge_bounds(void) {
 static void test_requests(void) {
     const char *good[]={"{\"protocolVersion\":3,\"kind\":\"host-ready\"}","{\"protocolVersion\":3,\"kind\":\"projection-request\",\"binding\":{},\"requestId\":\"1\"}"};
     const char *bad[]={"[]","{}","{\"protocolVersion\":1,\"kind\":\"host-ready\"}","{\"protocolVersion\":3,\"kind\":\"execute\"}","{\"protocolVersion\":3,\"kind\":\"host-ready\",\"path\":\"/etc/passwd\"}","{\"protocolVersion\":3,\"kind\":\"snapshot-request\"}"};
+    const char *pins_good="{\"protocolVersion\":3,\"kind\":\"taskbar-pins-write\",\"binding\":{},\"requestId\":\"1\",\"proposal\":{\"revision\":\"1\",\"identities\":[\"files\",\"editor\"]}}";
+    g_autoptr(JsonParser) pins_parser=json_parser_new();g_assert_true(json_parser_load_from_data(pins_parser,pins_good,-1,NULL));g_assert_nonnull(request_kind(json_parser_get_root(pins_parser)));
+    JsonObject *pins_proposal=json_object_get_object_member(json_node_get_object(json_parser_get_root(pins_parser)),"proposal");json_object_set_string_member(pins_proposal,"path","/tmp/foreign");g_assert_null(request_kind(json_parser_get_root(pins_parser)));json_object_remove_member(pins_proposal,"path");json_array_add_string_element(json_object_get_array_member(pins_proposal,"identities"),"files");g_assert_null(request_kind(json_parser_get_root(pins_parser)));
     for (guint i=0;i<G_N_ELEMENTS(good);i++) { g_autoptr(JsonParser) p=json_parser_new();g_assert_true(json_parser_load_from_data(p,good[i],-1,NULL));g_assert_nonnull(request_kind(json_parser_get_root(p))); }
     for (guint i=0;i<G_N_ELEMENTS(bad);i++) { g_autoptr(JsonParser) p=json_parser_new();g_assert_true(json_parser_load_from_data(p,bad[i],-1,NULL));g_assert_null(request_kind(json_parser_get_root(p))); }
 }

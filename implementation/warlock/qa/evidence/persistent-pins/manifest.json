@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-UI-004",
+    "ELM-UX-004"
+  ],
+  "scenarios": [
+    "taskbar-zero",
+    "ux-004"
+  ],
+  "scope": "Compiled Elm pin/reorder/current receipt and restart replay; actual keyboard pin/reorder with atomic private storage; whole shell restart preserves exact Editor/Files order, native taskbar text pixels; pointer zero-window Editor activation submits one identity-bound GIO launch.",
+  "evidence": {
+    "component-report.json": "c73386f9f492e25182609a04eaae85604c35afd105430eddd603ebfcc2b2b1f8",
+    "native-report.json": "fafd72cc7932312e036ea5d3d574c9e1d5d16f3e14d9b3e451317d7df8feb2ec",
+    "retained-focus-failure.json": "1877356e00b87d1f969d8ea7328a1b86ddf55455109172aaa00bfe574a1cd120",
+    "typed-pins.json": "480840848ece26f0182c51628be7848b754d85cf12f6fdf59d60edcf2c774a84",
+    "pins-after-restart.png": "8cf415dedd998bda6570abaa9684a854a1a2dbd8d8acc9efc8703ffe583c29cd"
+  },
+  "nativePinJourneyObserved": true,
+  "nativeRestartOrderObserved": true,
+  "nativeTaskbarTextObserved": true,
+  "nativeZeroWindowPointerLaunchObserved": true,
+  "nativeKeyboardZeroWindowLaunchObserved": false,
+  "popupPresentationAccepted": false,
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "fullReleaseAccepted": false,
+  "cleanupPassed": true,
+  "runnerSHA256": "9022f4805b2b1708c339ac53ef10f55b2d84acfe29ad10d719ba284e7459a2e0",
+  "sourceRevisionBeforeSlice": "e46a4482b77d50bc70f33b57576feb7db2c767fb",
+  "changedProduction": [
+    "src/Pins.elm",
+    "src/Desktop.elm",
+    "src/Surface.elm",
+    "src/SurfaceRenderer.elm",
+    "adapter/taskbar_preferences.py",
+    "adapter/catalog_transport.py",
+    "adapter/daemon.py",
+    "native/host.c",
+    "native/surface.h"
+  ],
+  "failureDisposition": "First native run saved Files once, then exposed lost keyboard focus after replacing its Pin control. Matching pin receipts now return focus to search; stale receipts remain inert and Unknown retains pending without another write. Rebuilt compiled replay and native journey pass. The earlier compile/typed failures remain under ignored qa/runs.",
+  "missingObservations": [
+    "Independent original-scenario reviewer disposition.",
+    "Native primary keyboard activation of a zero-window taskbar pin and applicable assistive-technology coverage for UI-004.",
+    "Physical presentation of launcher/pin/reorder popup controls: this run captures the restarted taskbar only; the retained earlier launcher popup is black.",
+    "Broader UI-004 primary table cases and release gates remain separate."
+  ]
+}

@@ -1,9 +1,10 @@
 """Focused compiled launcher/search integration, protected CPU scope only."""
 import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures
+PINS=sys.argv[1:]==['--pins'];assert not sys.argv[1:] or PINS
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143'
 sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
 scope=require_qa_scope();sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
-OUT=ROOT/'qa/runs'/('search-'+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
+OUT=ROOT/'qa/runs'/(('pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
 for folder in ['src','native','adapter','assets','qa']:
  (INPUT/folder).mkdir()
  for p in (ROOT/folder).iterdir():
@@ -16,10 +17,15 @@ def run(name,args):
  if p.returncode:raise RuntimeError(p.stderr or p.stdout)
  return p.stdout
 try:
+ if PINS:report.update(requirements=['ELM-UI-004','ELM-UX-004'],scope='Compiled identity pins/reorder, private atomic native persistence, current integrated host; native restart/pixels acceptance pending')
  for name,target in [('Main','elm'),('Bar','bar'),('Popup','popup')]:run('compile-'+name,[str(HELD/pinned['compiler']),'make','src/'+name+'.elm','--optimize','--output=assets/'+target+'.js'])
  run('compile-search',[str(HELD/pinned['compiler']),'make','qa/SearchReplay.elm','--optimize','--output=assets/search.js'])
  replay=(INPUT/'qa/feedback-replay.js').read_text().replace('Elm.FeedbackReplay','Elm.SearchReplay');(INPUT/'qa/search-replay.js').write_text(replay)
  run('typed-search',['node','qa/search-replay.js','assets/search.js',str(OUT/'search.json')]);r=json.loads((OUT/'search.json').read_text());assert r['rank']==['z-exact','a-prefix','b-token'] and r['keyword']==['z-exact'] and r['generic']==['b-token','z-exact'] and r['unicode']==['c-unicode'];assert r['refreshClearsSettledRefusal'] and r['refreshPreservesUnknown'];assert r['queryEditHasNoEffects'] and r['staleQueryRejected'] and 'No matching' in r['noMatchStatus'] and r['queryRetained']=='nonexistent';report['typedSearch']=r
+ if PINS:
+  run('compile-pins',[str(HELD/pinned['compiler']),'make','qa/PinsReplay.elm','--optimize','--output=assets/pins.js'])
+  (INPUT/'qa/pins-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.PinsReplay'));run('typed-pins',['node','qa/pins-replay.js','assets/pins.js',str(OUT/'pins.json')]);report['typedPins']=json.loads((OUT/'pins.json').read_text());assert all(report['typedPins']['checks'].values());run('pin-storage',['/usr/bin/python3','-B','qa/check-pin-storage.py'])
+  run('pin-model-typecheck',['quint','typecheck','qa/pins.qnt']);run('pin-model-named',['quint','test','qa/pins.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79019']);run('pin-model-invariants',['quint','run','qa/pins.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79020'])
  flags=shlex.split(subprocess.check_output(['pkg-config','--cflags','--libs','gtk+-3.0','webkit2gtk-4.1','gtk-layer-shell-0','json-glib-1.0','gio-unix-2.0'],text=True))
  run('focus-model-typecheck',['quint','typecheck','qa/focus-publication.qnt'])
  run('focus-model-named',['quint','test','qa/focus-publication.qnt','--backend=typescript','--match=^(pendingSurvivesPublicationTest|issuedNeverReplayedTest|replacementCannotReceiveOldFocusTest|closeCannotReviveFocusTest|staleAckCannotIssueFocusTest)$','--max-samples=1','--seed=79017'])
@@ -27,9 +33,14 @@ try:
  run('surface-admission-build',['cc','-std=c11','-O2','-Wall','-Wextra','-Werror','native/surface-test.c','-o',str(OUT/'surface-tests'),*flags]);run('surface-admission',[str(OUT/'surface-tests')])
  run('host-compile',['cc','-std=c11','-O2','-Wall','-Wextra','-Werror','-Wno-deprecated-declarations','-MD','-MF',str(OUT/'host.d'),'-c','native/shared-host.c','-o',str(OUT/'host.o'),*flags])
  units=['preview_uri.cpp','preview_icons.cpp','preview-uri-webkit.cpp','preview-provider-bootstrap.cpp','client-producer.cpp','imported-clients.cpp','preview-uri-router.cpp','elm-preview-policy.cpp','preview-visual-channel.cpp','preview-policy-driver.cpp']
- with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:
-  futures=[pool.submit(run,name+'-compile',['g++','-std=c++20','-O2','-Wall','-Wextra','-Werror','-Wno-deprecated-declarations','-c','native/'+name,'-o',str(OUT/(name+'.o')),*flags]) for name in units]
-  for future in futures:future.result()
+ if PINS:
+  previous=json.loads((ROOT/'qa/current-search-build.json').read_text());prior_path=REPO/previous['report'];assert sha(prior_path)==previous['reportSHA256'];prior=json.loads(prior_path.read_text());assert prior['passed'] and sha(prior_path.parent/'elm-host')==prior['binarySHA256'];report['reusedNativeObjects']={}
+  for name in units:
+   assert sha(INPUT/'native'/name)==prior['inputs']['native/'+name];obj=prior_path.parent/(name+'.o');report['reusedNativeObjects'][name]={'sha256':sha(obj),'sourceSHA256':sha(INPUT/'native'/name),'build':str(prior_path)};shutil.copyfile(obj,OUT/(name+'.o'))
+ else:
+  with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:
+   futures=[pool.submit(run,name+'-compile',['g++','-std=c++20','-O2','-Wall','-Wextra','-Werror','-Wno-deprecated-declarations','-c','native/'+name,'-o',str(OUT/(name+'.o')),*flags]) for name in units]
+   for future in futures:future.result()
  run('host-link',['g++',str(OUT/'host.o'),*[str(OUT/(name+'.o')) for name in units],'-o',str(OUT/'elm-host'),*flags]);report['binarySHA256']=sha(OUT/'elm-host')
  run('host-self-tests',[str(OUT/'elm-host'),'--self-test']);assert all(sha(ROOT/p)==h for p,h in inputs.items());toolchain.verify();report['compiledAssets']={n:sha(INPUT/'assets'/n) for n in ['elm.js','bar.js','popup.js']};report['passed']=True
 except Exception as error:report['error']=repr(error)

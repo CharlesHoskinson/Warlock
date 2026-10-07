@@ -82,7 +82,7 @@ def handle_request(client,catalog,request,recovery,reconciliation):
  kind=request.get('kind')
  if kind=='reconciliation-ready':
   reconciliation.proof_ready(request);return
- if kind in {'catalog-request','application-launch'}:
+ if kind in {'catalog-request','application-launch','taskbar-pins-write'}:
   send(catalog.handle(request));return
  if kind=='window-effect':
   exact(request,['protocolVersion','kind','effectProtocol','binding','intent'])

@@ -1,6 +1,7 @@
 module Surface exposing (Control, controls, mode, packet, resolve)
 
 import Menu
+import Pins
 import MenuBridge
 import Provider
 import Catalog
@@ -53,11 +54,19 @@ controls model =
             entryControl entry =
                 let choice = if ready then Launch.select (Catalog.id entry.identity) model.launch |> Maybe.map Desktop.Start else Nothing
                 in {id="entry:" ++ Catalog.id entry.identity,domId=Desktop.key model ("entry:" ++ Catalog.id entry.identity),label="Open " ++ entry.name,ariaLabel="Open " ++ entry.name,detail="",enabled=choice/=Nothing,message=choice}
+            pinIds = Desktop.pinIdentities model
+            pinAction suffix label detail allowed message = {id=suffix,domId=Desktop.key model suffix,label=label,ariaLabel=label,detail=detail,enabled=Pins.writable model.pins && allowed,message=if Pins.writable model.pins && allowed then scoped message else Nothing}
+            pinFirst = entries |> List.head |> Maybe.andThen (\entry -> if List.member (Catalog.id entry.identity) pinIds then Nothing else Just (pinAction ("pin:" ++ Catalog.id entry.identity) ("Pin " ++ entry.name) "Add to taskbar" True (\stamp -> Desktop.TogglePin stamp (Catalog.id entry.identity)))) |> Maybe.map List.singleton |> Maybe.withDefault []
+            pinRows index identity =
+                let label=model.applications |> Maybe.andThen (Catalog.lookup identity) |> Maybe.map .name |> Maybe.withDefault identity
+                in [pinAction ("unpin:" ++ identity) ("Unpin " ++ label) "Pinned application" True (\stamp -> Desktop.TogglePin stamp identity)
+                   ,pinAction ("pin-left:" ++ identity) ("Move " ++ label ++ " left") "Pin order" (index>0) (\stamp -> Desktop.MovePin stamp identity -1)
+                   ,pinAction ("pin-right:" ++ identity) ("Move " ++ label ++ " right") "Pin order" (index<List.length pinIds-1) (\stamp -> Desktop.MovePin stamp identity 1)]
             acknowledge = Launch.uncertain model.launch |> Maybe.map (\token -> {id="control:acknowledge",domId=Desktop.key model "control:acknowledge",label="I checked; allow another launch",ariaLabel="I checked; allow another launch",detail="",enabled=True,message=Just (Desktop.Acknowledge token)}) |> Maybe.map List.singleton |> Maybe.withDefault []
         in [ {id="control:search",domId="launcher-search",label=model.query,ariaLabel="Search applications",detail="",enabled=True,message=scoped (\stamp -> Desktop.SearchQuery stamp model.query)}
            , {id="control:close",domId=Desktop.key model "control:close",label="Windows",ariaLabel="Close applications and return to windows",detail="",enabled=True,message=scoped Desktop.CloseApplications}
            , {id="control:refresh",domId=Desktop.key model "control:refresh",label="Refresh",ariaLabel="Refresh applications",detail="",enabled=True,message=scoped Desktop.OpenApplications}
-           ] ++ acknowledge ++ List.map entryControl entries
+           ] ++ acknowledge ++ pinFirst ++ List.concat (List.indexedMap pinRows pinIds) ++ List.map entryControl entries
     else if (MenuBridge.menuSnapshot model.windows.menus).menu/=Nothing then
         case (MenuBridge.menuSnapshot model.windows.menus).menu of
             Nothing -> []
@@ -97,9 +106,26 @@ barControls model =
                     _ -> "Unavailable "
                 label = group.families |> List.head |> Maybe.map .label |> Maybe.withDefault "Windows"
             in {id="bar:group:" ++ group.key,domId=scoped |> Maybe.map (\stamp -> "group:" ++ Shell.stampKey stamp ++ ":" ++ group.key) |> Maybe.withDefault "detached-group",label=label,ariaLabel=operation ++ label ++ (if blocked then "; awaiting native confirmation" else ""),detail=if blocked then "Awaiting native confirmation" else String.fromInt (List.length group.families),enabled=ready,message=if ready then scoped |> Maybe.map (\stamp -> Desktop.Window (TaskbarShell.Primary stamp group.key)) else Nothing}
+        pinIds = Desktop.pinIdentities model
+        owners group = pinIds |> List.filter (\identity -> Desktop.pinnedGroup identity model |> Maybe.map (\matched -> matched.key==group.key) |> Maybe.withDefault False)
+        pinControl identity =
+            let entry=model.applications |> Maybe.andThen (Catalog.lookup identity)
+                label=entry |> Maybe.map .name |> Maybe.withDefault identity
+                choice=if Shell.available model.windows.shell then Launch.select identity model.launch |> Maybe.map Desktop.Start else Nothing
+                disabled reason={id="bar:pin:" ++ identity,domId=Desktop.key model ("pin:" ++ identity),label=label,ariaLabel=reason ++ label,detail=reason,enabled=False,message=Nothing}
+            in case Desktop.pinnedGroup identity model of
+                Just group ->
+                    if List.length (owners group)==1 then
+                        let control=groupControl group
+                        in {control|id="bar:pin:" ++ identity,label=label,detail="Pinned; " ++ control.detail}
+                    else disabled "Ambiguous application identity: "
+                Nothing ->
+                    if entry==Nothing then disabled "Unavailable application: " else if not (List.isEmpty (Desktop.pinGroups identity model)) then disabled "Ambiguous application identity: " else
+                        {id="bar:pin:" ++ identity,domId=Desktop.key model ("pin:" ++ identity),label=label,ariaLabel="Open " ++ label,detail="Pinned launcher",enabled=choice/=Nothing,message=choice}
+        ordinaryGroups=TaskbarShell.groups model.windows |> List.filter (\group -> List.length (owners group)/=1)
         reconnect = {id="bar:reconnect",domId="reconnect",label="Reconnect",ariaLabel="Reconnect to the window system",detail="",enabled=not model.windows.shell.reconnecting,message=Just (Desktop.Window (TaskbarShell.Native Shell.Reconnect))}
         retry = {id="bar:refresh-windows",domId=Desktop.key model "refresh-windows",label="Refresh windows",ariaLabel="Refresh windows",detail="",enabled=model.choice==Nothing,message=Just Desktop.RetryWindows}
-    in (if model.windows.shell.phase==Shell.Detached then reconnect else application) :: List.map groupControl (TaskbarShell.groups model.windows) ++ (if not (String.isEmpty model.choiceNotice) && model.windows.shell.phase/=Shell.Detached then [retry] else []) ++ (if recoveryNeeded model && model.windows.shell.phase/=Shell.Detached then [recoveryControl "bar:recovery-refresh" model] else [])
+    in (if model.windows.shell.phase==Shell.Detached then reconnect else application) :: List.map pinControl pinIds ++ List.map groupControl ordinaryGroups ++ (if not (String.isEmpty model.choiceNotice) && model.windows.shell.phase/=Shell.Detached then [retry] else []) ++ (if recoveryNeeded model && model.windows.shell.phase/=Shell.Detached then [recoveryControl "bar:recovery-refresh" model] else [])
 
 notice : Desktop.Model -> String
 notice model =
@@ -111,6 +137,7 @@ notice model =
             _ -> if menuBlocked model then reservationReason else "Window actions"
     else if model.choice/=Nothing then "Updating your window choice…" else if not (String.isEmpty model.choiceNotice) then model.choiceNotice else
     if not model.open && (model.windows.shell.effects.transaction |> Maybe.map (\transaction -> List.member transaction.status [Effects.Pending,Effects.Unknown,Effects.Refused,Effects.Cancelled]) |> Maybe.withDefault False) then windowNotice model else
+    if not (String.isEmpty model.pins.notice) && model.pins.notice/="Pin order saved." then model.pins.notice else
     case Launch.status model.launch of
         "Pending" -> "Opening application…"
         "Unknown" -> "The launch could not be confirmed. Check your windows before opening it again."

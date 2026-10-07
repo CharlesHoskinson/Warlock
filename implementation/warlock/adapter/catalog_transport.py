@@ -6,13 +6,14 @@ No application readiness or launcher activation-token qualification is implied.
 import json,os
 from pathlib import Path
 from catalog_authority import Authority,Refused as CatalogRefused
+from taskbar_preferences import Store
 from endpoint import Refused,binding,canonical,exact
 
 MAX_OUTPUT=1048576
 
 class CatalogTransport:
  def __init__(self,client,roots=None):
-  self.client=client
+  self.client=client;self.preferences=Store()
   if roots is None:
    roots={'dataHome':os.environ.get('XDG_DATA_HOME',str(Path.home()/'.local/share')),'dataDirs':os.environ.get('XDG_DATA_DIRS','/usr/local/share:/usr/share').split(':'),'cacheDir':str(Path(os.environ.get('XDG_CACHE_HOME',str(Path.home()/'.cache')))/'elm-desktop/catalog')}
   exact(roots,['dataHome','dataDirs','cacheDir'])
@@ -28,6 +29,8 @@ class CatalogTransport:
   if kind=='catalog-request':
    exact(request,['protocolVersion','kind','binding','requestId']);canonical(request['requestId']);self.verify(request)
    frame={'protocolVersion':3,'kind':'application-catalog','binding':self.client.bound,'requestId':request['requestId']}
+   try:frame['preferences']=self.preferences.read()
+   except (OSError,ValueError):frame['preferences']=None
    try:
     frame['snapshot']=self.authority.snapshot()
     if len(json.dumps(frame,separators=(',',':'),ensure_ascii=True).encode())>MAX_OUTPUT:raise CatalogRefused('Catalog envelope capacity')
@@ -36,6 +39,12 @@ class CatalogTransport:
     frame['snapshot']=None
    self.verify(request)
    return frame
+  if kind=='taskbar-pins-write':
+   exact(request,['protocolVersion','kind','binding','requestId','proposal']);canonical(request['requestId']);self.verify(request)
+   try:status,pins=self.preferences.save(request['proposal'])
+   except (OSError,ValueError):status,pins='Refused',None
+   self.verify(request)
+   return {'protocolVersion':3,'kind':'taskbar-pins-outcome','binding':self.client.bound,'requestId':request['requestId'],'status':status,'preferences':pins}
   if kind=='application-launch':
    exact(request,['protocolVersion','kind','binding','intent']);self.verify(request)
    outcome=self.authority.launch(request['intent'])

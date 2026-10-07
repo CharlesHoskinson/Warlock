@@ -45,7 +45,7 @@ static gboolean surface_frame(JsonNode *node,guint64 *pub,guint64 *lease,gboolea
     *open=!g_str_equal(mode,"closed");
     if (*open && (!*lease || (!g_str_equal(mode,"picker") && !g_str_equal(mode,"applications") && !g_str_equal(mode,"menu")))) return FALSE;
     g_autoptr(GHashTable) ids=g_hash_table_new(g_str_hash,g_str_equal),doms=g_hash_table_new(g_str_hash,g_str_equal);
-    if (!surface_controls(json_object_get_member(o,"bar"),259,ids,doms) || !surface_controls(json_object_get_member(o,"popup"),2051,ids,doms)) return FALSE;
+    if (!surface_controls(json_object_get_member(o,"bar"),291,ids,doms) || !surface_controls(json_object_get_member(o,"popup"),2150,ids,doms)) return FALSE;
     return *open || json_array_get_length(json_object_get_array_member(o,"popup"))==0;
 }
 static gboolean surface_admit(SurfaceGate *gate,JsonNode *frame,guint64 *pub,guint64 *lease,gboolean *open) {
