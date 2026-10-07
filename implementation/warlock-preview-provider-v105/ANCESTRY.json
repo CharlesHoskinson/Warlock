@@ -1,0 +1,8 @@
+{
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "parent": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v104",
+  "parentManifestSHA256": "137142652c655aaccf37508f5bd7a0409e88213b7610c891a107366e3726261e",
+  "purpose": "Actual original native capture/export resource observation and scoped idempotent cleanup, including lost export-release acknowledgment, lock/expiry/revocation and pre-mapping capture Unknown. Original capture intent/counter/context/deadline remain retained; original local FD/readers/Broker proofs and control confirmation independently gate reclamation. Never recapture Unknown or retire another capture/window incarnation. Core16 remains owning ABI; new plugin19 and GUI105 are inactive until qualification.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

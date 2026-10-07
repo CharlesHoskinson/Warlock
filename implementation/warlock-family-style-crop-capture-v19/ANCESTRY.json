@@ -1,0 +1,8 @@
+{
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "parent": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v18",
+  "parentManifestSHA256": "d0930e46fdc9faeab6f3f9a60f8b29dc925f16731d6d929df4912164b2af7c86",
+  "purpose": "Actual original native capture/export resource observation and scoped idempotent cleanup, including lost export-release acknowledgment, lock/expiry/revocation and pre-mapping capture Unknown. Original capture intent/counter/context/deadline remain retained; original local FD/readers/Broker proofs and control confirmation independently gate reclamation. Never recapture Unknown or retire another capture/window incarnation. Core16 remains owning ABI; new plugin19 and GUI105 are inactive until qualification.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

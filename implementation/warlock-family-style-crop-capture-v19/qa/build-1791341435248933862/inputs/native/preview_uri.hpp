@@ -1,0 +1,65 @@
+#pragma once
+#include "preview_broker.hpp"
+#include <gio/gio.h>
+#include <functional>
+#include <mutex>
+#include <set>
+#include <span>
+#include <string_view>
+
+namespace preview::uri {
+// Native producer-owned encoded bytes. The producer's full allocation must be
+// accounted by charge(), including any retained backing storage. JSON cannot
+// construct this type or establish completion of either native fence.
+struct Payload : Buffer {
+    virtual std::span<const uint8_t> png() const noexcept=0;
+};
+struct View {
+    Binding binding;
+    std::set<uint64_t> entries;
+    uint64_t epoch{};
+};
+struct NativeTime { Id<Clock> clock; uint64_t now; };
+using ClockSource=std::function<std::optional<NativeTime>(uint64_t)>;
+struct Shared {
+    std::mutex lock;
+    Broker broker;
+    std::map<uint64_t,View> views;
+    uint64_t nextView{1};
+    bool viewExhausted{};
+    size_t readers{},maxReaders,maxViews;
+    ClockSource time;
+    explicit Shared(Limits limits,size_t readers,size_t views,ClockSource clock):broker(limits),maxReaders(readers),maxViews(views),time(std::move(clock)) {
+        if(!readers || !views || !time) throw std::invalid_argument("Positive URI limits and native clock source");
+    }
+};
+struct Reader {
+    std::shared_ptr<Shared> state;
+    std::shared_ptr<const Payload> payload;
+    uint64_t view{},epoch{},entry{};
+    Binding binding;
+    Token token;
+    size_t offset{};
+};
+std::string encode(const Token&);
+// Exact lower-case opaque64 token, including the broker's nonce. No percent
+// decoding, query strings, file paths, decimal token aliases or host aliases.
+std::optional<Token> decode(std::string_view);
+GInputStream* stream(std::unique_ptr<Reader>);
+class Endpoint {
+    std::shared_ptr<Shared> state_;
+public:
+    Endpoint(Limits limits,size_t readers,size_t views,ClockSource clock):state_(std::make_shared<Shared>(limits,readers,views,std::move(clock))){}
+    // Trusted native API only, serialized with reads. The production caller
+    // must enroll source facts from the owning compositor and supervised bridge.
+    template<class F> auto native(F&& f) {
+        std::lock_guard guard(state_->lock);
+        return std::invoke(std::forward<F>(f),state_->broker);
+    }
+    // ID is an enrolled native WebKitWebView identity, never a wire field.
+    bool registerView(uint64_t id,const Binding& binding,std::set<uint64_t> entries);
+    void unregisterView(uint64_t id);
+    GInputStream* open(uint64_t view,std::string_view uri,gsize* length,GError** error);
+    size_t readers() const { std::lock_guard guard(state_->lock); return state_->readers; }
+};
+}

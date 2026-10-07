@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "sourceHeld": true,
+  "passed": true,
+  "capturePreservationReport": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v104/qa/capture-preservation-check-1791339575151451016/report.json",
+  "captureIntentControls": 51,
+  "captureFailureModes": 3,
+  "localAllocationControls": 22,
+  "localAllocationCases": 4,
+  "captureAllocationCompiledVariants": 3,
+  "captureModelReport": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v104/qa/capture-intent-model-check-v2-1791339993410015328/report.json",
+  "captureScenarios": 14,
+  "captureTraces": 66,
+  "captureStates": 816,
+  "captureCompiledVariants": 3,
+  "controlledCReport": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v104/qa/imported-controlled-c-check-v3-1791339850526772732/report.json",
+  "controlledCChecks": 10190,
+  "controlledCMetadataActors": 260,
+  "controlledCNativeIssuedPrefix": 1041,
+  "fullBuildReport": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v104/qa/build-1791339850529482286/report.json",
+  "fullBuildCommands": 95,
+  "retainedParentComponentReport": "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v93/component-report103.json",
+  "originalRegressionSuitesRerunHere": false,
+  "heldFailedReports": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v104/qa/capture-intent-model-check-1791339850526774151/report.json"
+  ],
+  "webKitActivated": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "Actual native capture intent preserves original request/binding/context/raw command/deadline before invocation. Actual export/backend ownership is recorded before fallible local mapping/adoption. A mapping pointer is published only after real Broker adoption, including post-transfer result allocation exceptions; refused/pre-transfer storage remains caller owned without dangling retained pointer.51 actual authenticated synthetic socket controls cover capture refusal, malformed completion and unavailable FD transport, preserving unresolved original charge and refusing acquisition replay.22 actual sealed local FD/Broker controls cover success/refusal and allocator exceptions before/after transfer, original mapping/FD/terminal-proof ACK drain.Three compiled unsafe variants fail these assertions.14 explicitly selected capture Quint scenarios/66 actual native traces across three modes/816 observable states;three compiled variants differ on original traces.10190 controlled C checks/260 metadata actors/1041 uninterrupted tickets and95 full-host build/check commands pass again. GUI103 actor/job/reservation/admission/69Elm-nativeURI and12 original suites remain held at that source,not claimed rerun104. Initial replay fixture unused-function compile failure retained. No real compositor capture pixels/FD/backend reconciliation/Unknown settlement/live-window binding detachment/WebKit/native GUI or full release acceptance. Qualified runtime GUI92/native128/core16/plugin18 and original deadlines/release gates remain unchanged."
+}

@@ -1,0 +1,1660 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      cursor: 0,
+      exported: true,
+      history: [],
+      last: 0,
+      locked: false,
+      other: false,
+      producer: true,
+      seenExport: true,
+      seenProducer: 4096,
+      sequence: 0,
+      status: 0,
+      unknown: true
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      cursor: 0,
+      exported: true,
+      history: ["Confirm"],
+      last: 0,
+      locked: false,
+      other: false,
+      producer: true,
+      seenExport: true,
+      seenProducer: 4096,
+      sequence: 0,
+      status: 0,
+      unknown: true
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      cursor: 0,
+      exported: false,
+      history: ["Confirm", "LostRelease"],
+      last: 2,
+      locked: false,
+      other: false,
+      producer: true,
+      seenExport: true,
+      seenProducer: 4096,
+      sequence: 1,
+      status: 0,
+      unknown: true
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      cursor: 0,
+      exported: false,
+      history: ["Confirm", "LostRelease", "BadReply"],
+      last: 2,
+      locked: false,
+      other: false,
+      producer: true,
+      seenExport: true,
+      seenProducer: 4096,
+      sequence: 2,
+      status: 0,
+      unknown: true
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      cursor: 0,
+      exported: false,
+      history: ["Confirm", "LostRelease", "BadReply", "BadSubject"],
+      last: -1,
+      locked: false,
+      other: false,
+      producer: true,
+      seenExport: true,
+      seenProducer: 4096,
+      sequence: 2,
+      status: 0,
+      unknown: true
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      cursor: 0,
+      exported: false,
+      history: ["Confirm", "LostRelease", "BadReply", "BadSubject", "Lock"],
+      last: 0,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: true,
+      seenProducer: 4096,
+      sequence: 2,
+      status: 0,
+      unknown: true
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      cursor: 0,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire"
+        ],
+      last: 2,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: true,
+      seenProducer: 4096,
+      sequence: 3,
+      status: 0,
+      unknown: true
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      cursor: 0,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock"
+        ],
+      last: 0,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: true,
+      seenProducer: 4096,
+      sequence: 3,
+      status: 0,
+      unknown: true
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      cursor: 4,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe"
+        ],
+      last: 1,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 4,
+      status: 0,
+      unknown: false
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      cursor: 4,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire"
+        ],
+      last: 2,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 5,
+      status: 0,
+      unknown: true
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      cursor: 4,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject"
+        ],
+      last: -1,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 5,
+      status: 0,
+      unknown: true
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      cursor: 4,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject",
+          "BadReply"
+        ],
+      last: 2,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 6,
+      status: 0,
+      unknown: true
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      cursor: 4,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject",
+          "BadReply",
+          "LostRelease"
+        ],
+      last: 2,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 7,
+      status: 0,
+      unknown: true
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      cursor: 8,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject",
+          "BadReply",
+          "LostRelease",
+          "BadTransfer"
+        ],
+      last: 1,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 8,
+      status: 1,
+      unknown: false
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      cursor: 8,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject",
+          "BadReply",
+          "LostRelease",
+          "BadTransfer",
+          "LostRelease"
+        ],
+      last: 2,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 9,
+      status: 1,
+      unknown: true
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      cursor: 8,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject",
+          "BadReply",
+          "LostRelease",
+          "BadTransfer",
+          "LostRelease",
+          "BadSubject"
+        ],
+      last: -1,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 9,
+      status: 1,
+      unknown: true
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      cursor: 8,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject",
+          "BadReply",
+          "LostRelease",
+          "BadTransfer",
+          "LostRelease",
+          "BadSubject",
+          "LostRetire"
+        ],
+      last: 2,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 10,
+      status: 1,
+      unknown: true
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      cursor: 11,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject",
+          "BadReply",
+          "LostRelease",
+          "BadTransfer",
+          "LostRelease",
+          "BadSubject",
+          "LostRetire",
+          "Observe"
+        ],
+      last: 1,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 11,
+      status: 0,
+      unknown: false
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      cursor: 12,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject",
+          "BadReply",
+          "LostRelease",
+          "BadTransfer",
+          "LostRelease",
+          "BadSubject",
+          "LostRetire",
+          "Observe",
+          "Retire"
+        ],
+      last: 1,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 12,
+      status: 3,
+      unknown: false
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      cursor: 12,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject",
+          "BadReply",
+          "LostRelease",
+          "BadTransfer",
+          "LostRelease",
+          "BadSubject",
+          "LostRetire",
+          "Observe",
+          "Retire",
+          "Lock"
+        ],
+      last: 0,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 12,
+      status: 3,
+      unknown: false
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      cursor: 13,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject",
+          "BadReply",
+          "LostRelease",
+          "BadTransfer",
+          "LostRelease",
+          "BadSubject",
+          "LostRetire",
+          "Observe",
+          "Retire",
+          "Lock",
+          "Observe"
+        ],
+      last: 1,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 13,
+      status: 0,
+      unknown: false
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      cursor: 13,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject",
+          "BadReply",
+          "LostRelease",
+          "BadTransfer",
+          "LostRelease",
+          "BadSubject",
+          "LostRetire",
+          "Observe",
+          "Retire",
+          "Lock",
+          "Observe",
+          "LostRetire"
+        ],
+      last: 2,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 14,
+      status: 0,
+      unknown: true
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      cursor: 15,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject",
+          "BadReply",
+          "LostRelease",
+          "BadTransfer",
+          "LostRelease",
+          "BadSubject",
+          "LostRetire",
+          "Observe",
+          "Retire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "Retire"
+        ],
+      last: 1,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 15,
+      status: 3,
+      unknown: false
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      cursor: 16,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject",
+          "BadReply",
+          "LostRelease",
+          "BadTransfer",
+          "LostRelease",
+          "BadSubject",
+          "LostRetire",
+          "Observe",
+          "Retire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "Retire",
+          "Observe"
+        ],
+      last: 1,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 16,
+      status: 0,
+      unknown: false
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      cursor: 17,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject",
+          "BadReply",
+          "LostRelease",
+          "BadTransfer",
+          "LostRelease",
+          "BadSubject",
+          "LostRetire",
+          "Observe",
+          "Retire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "Retire",
+          "Observe",
+          "BadTransfer"
+        ],
+      last: 1,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 17,
+      status: 1,
+      unknown: false
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      cursor: 18,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject",
+          "BadReply",
+          "LostRelease",
+          "BadTransfer",
+          "LostRelease",
+          "BadSubject",
+          "LostRetire",
+          "Observe",
+          "Retire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "Retire",
+          "Observe",
+          "BadTransfer",
+          "Observe"
+        ],
+      last: 1,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 18,
+      status: 0,
+      unknown: false
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      cursor: 18,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject",
+          "BadReply",
+          "LostRelease",
+          "BadTransfer",
+          "LostRelease",
+          "BadSubject",
+          "LostRetire",
+          "Observe",
+          "Retire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "Retire",
+          "Observe",
+          "BadTransfer",
+          "Observe",
+          "FailPrepare"
+        ],
+      last: -1,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 18,
+      status: 0,
+      unknown: false
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      cursor: 18,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject",
+          "BadReply",
+          "LostRelease",
+          "BadTransfer",
+          "LostRelease",
+          "BadSubject",
+          "LostRetire",
+          "Observe",
+          "Retire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "Retire",
+          "Observe",
+          "BadTransfer",
+          "Observe",
+          "FailPrepare",
+          "LostRetire"
+        ],
+      last: 2,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 19,
+      status: 0,
+      unknown: true
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      cursor: 18,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject",
+          "BadReply",
+          "LostRelease",
+          "BadTransfer",
+          "LostRelease",
+          "BadSubject",
+          "LostRetire",
+          "Observe",
+          "Retire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "Retire",
+          "Observe",
+          "BadTransfer",
+          "Observe",
+          "FailPrepare",
+          "LostRetire",
+          "Confirm"
+        ],
+      last: 0,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 19,
+      status: 0,
+      unknown: true
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      cursor: 18,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject",
+          "BadReply",
+          "LostRelease",
+          "BadTransfer",
+          "LostRelease",
+          "BadSubject",
+          "LostRetire",
+          "Observe",
+          "Retire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "Retire",
+          "Observe",
+          "BadTransfer",
+          "Observe",
+          "FailPrepare",
+          "LostRetire",
+          "Confirm",
+          "Confirm"
+        ],
+      last: 0,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 19,
+      status: 0,
+      unknown: true
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      cursor: 20,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject",
+          "BadReply",
+          "LostRelease",
+          "BadTransfer",
+          "LostRelease",
+          "BadSubject",
+          "LostRetire",
+          "Observe",
+          "Retire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "Retire",
+          "Observe",
+          "BadTransfer",
+          "Observe",
+          "FailPrepare",
+          "LostRetire",
+          "Confirm",
+          "Confirm",
+          "BadTransfer"
+        ],
+      last: 1,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 20,
+      status: 1,
+      unknown: false
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      cursor: 20,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject",
+          "BadReply",
+          "LostRelease",
+          "BadTransfer",
+          "LostRelease",
+          "BadSubject",
+          "LostRetire",
+          "Observe",
+          "Retire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "Retire",
+          "Observe",
+          "BadTransfer",
+          "Observe",
+          "FailPrepare",
+          "LostRetire",
+          "Confirm",
+          "Confirm",
+          "BadTransfer",
+          "LostRelease"
+        ],
+      last: 2,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 21,
+      status: 1,
+      unknown: true
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      cursor: 22,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject",
+          "BadReply",
+          "LostRelease",
+          "BadTransfer",
+          "LostRelease",
+          "BadSubject",
+          "LostRetire",
+          "Observe",
+          "Retire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "Retire",
+          "Observe",
+          "BadTransfer",
+          "Observe",
+          "FailPrepare",
+          "LostRetire",
+          "Confirm",
+          "Confirm",
+          "BadTransfer",
+          "LostRelease",
+          "Observe"
+        ],
+      last: 1,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 22,
+      status: 0,
+      unknown: false
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      cursor: 22,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject",
+          "BadReply",
+          "LostRelease",
+          "BadTransfer",
+          "LostRelease",
+          "BadSubject",
+          "LostRetire",
+          "Observe",
+          "Retire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "Retire",
+          "Observe",
+          "BadTransfer",
+          "Observe",
+          "FailPrepare",
+          "LostRetire",
+          "Confirm",
+          "Confirm",
+          "BadTransfer",
+          "LostRelease",
+          "Observe",
+          "BadReply"
+        ],
+      last: 2,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 23,
+      status: 0,
+      unknown: true
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      cursor: 24,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject",
+          "BadReply",
+          "LostRelease",
+          "BadTransfer",
+          "LostRelease",
+          "BadSubject",
+          "LostRetire",
+          "Observe",
+          "Retire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "Retire",
+          "Observe",
+          "BadTransfer",
+          "Observe",
+          "FailPrepare",
+          "LostRetire",
+          "Confirm",
+          "Confirm",
+          "BadTransfer",
+          "LostRelease",
+          "Observe",
+          "BadReply",
+          "Release"
+        ],
+      last: 1,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 24,
+      status: 1,
+      unknown: false
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      cursor: 25,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject",
+          "BadReply",
+          "LostRelease",
+          "BadTransfer",
+          "LostRelease",
+          "BadSubject",
+          "LostRetire",
+          "Observe",
+          "Retire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "Retire",
+          "Observe",
+          "BadTransfer",
+          "Observe",
+          "FailPrepare",
+          "LostRetire",
+          "Confirm",
+          "Confirm",
+          "BadTransfer",
+          "LostRelease",
+          "Observe",
+          "BadReply",
+          "Release",
+          "Retire"
+        ],
+      last: 1,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 25,
+      status: 3,
+      unknown: false
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      cursor: 25,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject",
+          "BadReply",
+          "LostRelease",
+          "BadTransfer",
+          "LostRelease",
+          "BadSubject",
+          "LostRetire",
+          "Observe",
+          "Retire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "Retire",
+          "Observe",
+          "BadTransfer",
+          "Observe",
+          "FailPrepare",
+          "LostRetire",
+          "Confirm",
+          "Confirm",
+          "BadTransfer",
+          "LostRelease",
+          "Observe",
+          "BadReply",
+          "Release",
+          "Retire",
+          "BadSubject"
+        ],
+      last: -1,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 25,
+      status: 3,
+      unknown: false
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      cursor: 26,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject",
+          "BadReply",
+          "LostRelease",
+          "BadTransfer",
+          "LostRelease",
+          "BadSubject",
+          "LostRetire",
+          "Observe",
+          "Retire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "Retire",
+          "Observe",
+          "BadTransfer",
+          "Observe",
+          "FailPrepare",
+          "LostRetire",
+          "Confirm",
+          "Confirm",
+          "BadTransfer",
+          "LostRelease",
+          "Observe",
+          "BadReply",
+          "Release",
+          "Retire",
+          "BadSubject",
+          "Observe"
+        ],
+      last: 1,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 26,
+      status: 0,
+      unknown: false
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      cursor: 26,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject",
+          "BadReply",
+          "LostRelease",
+          "BadTransfer",
+          "LostRelease",
+          "BadSubject",
+          "LostRetire",
+          "Observe",
+          "Retire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "Retire",
+          "Observe",
+          "BadTransfer",
+          "Observe",
+          "FailPrepare",
+          "LostRetire",
+          "Confirm",
+          "Confirm",
+          "BadTransfer",
+          "LostRelease",
+          "Observe",
+          "BadReply",
+          "Release",
+          "Retire",
+          "BadSubject",
+          "Observe",
+          "Confirm"
+        ],
+      last: 0,
+      locked: true,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 26,
+      status: 0,
+      unknown: false
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      cursor: 26,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject",
+          "BadReply",
+          "LostRelease",
+          "BadTransfer",
+          "LostRelease",
+          "BadSubject",
+          "LostRetire",
+          "Observe",
+          "Retire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "Retire",
+          "Observe",
+          "BadTransfer",
+          "Observe",
+          "FailPrepare",
+          "LostRetire",
+          "Confirm",
+          "Confirm",
+          "BadTransfer",
+          "LostRelease",
+          "Observe",
+          "BadReply",
+          "Release",
+          "Retire",
+          "BadSubject",
+          "Observe",
+          "Confirm",
+          "Unlock"
+        ],
+      last: 0,
+      locked: false,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 26,
+      status: 0,
+      unknown: false
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      cursor: 26,
+      exported: false,
+      history:
+        [
+          "Confirm",
+          "LostRelease",
+          "BadReply",
+          "BadSubject",
+          "Lock",
+          "LostRetire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "BadSubject",
+          "BadReply",
+          "LostRelease",
+          "BadTransfer",
+          "LostRelease",
+          "BadSubject",
+          "LostRetire",
+          "Observe",
+          "Retire",
+          "Lock",
+          "Observe",
+          "LostRetire",
+          "Retire",
+          "Observe",
+          "BadTransfer",
+          "Observe",
+          "FailPrepare",
+          "LostRetire",
+          "Confirm",
+          "Confirm",
+          "BadTransfer",
+          "LostRelease",
+          "Observe",
+          "BadReply",
+          "Release",
+          "Retire",
+          "BadSubject",
+          "Observe",
+          "Confirm",
+          "Unlock",
+          "FailPrepare"
+        ],
+      last: -1,
+      locked: false,
+      other: false,
+      producer: true,
+      seenExport: false,
+      seenProducer: 4096,
+      sequence: 26,
+      status: 0,
+      unknown: false
+    }
+}
+
+[ok] No violation found (585ms at 342 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

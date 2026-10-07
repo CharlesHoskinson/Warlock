@@ -1,0 +1,5 @@
+In file included from native/capture-intent-replay.cpp:1:
+native/capture-intent-source-fixture.hpp:17:13: error: ‘void check(bool, const char*)’ defined but not used [-Werror=unused-function]
+   17 | static void check(bool value,const char* name) {require(value,name);++passed;}
+      |             ^~~~~
+cc1plus: all warnings being treated as errors

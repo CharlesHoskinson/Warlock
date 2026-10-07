@@ -202,3 +202,30 @@ No real capture, WebKit activation or live-window binding detachment is accepted
 Next: explicit preview binding quiescence/detachment, native reconciliation and
 capture Unknown settlement, then native-assigned renderer tickets and WebKit.
 The qualified runtime and every original full-release gate remain unchanged.
+
+GUI104 preserves original capture intent before invocation and exact backend
+export ownership before mapping/adoption can fail.51 actual authenticated socket
+controls cover three capture/FD failure modes;22 actual sealed-FD/Broker adoption
+controls cover success/refusal and allocation exceptions before/after transfer.
+Three compiled variants fail these original assertions.14 explicitly selected
+capture Quint scenarios and66 compiled native traces across all three modes
+match, and three compiled unsafe variants differ on their original state oracle.
+The controlled C260-actor/1041-ticket check and95-command full-host build pass
+again. Prior GUI103 model/URI/12-suite evidence remains held at its source and is
+not claimed rerun for104. The initial unused inherited fixture check compile
+failure remains preserved. Actual native backend cleanup-state/reconciliation,
+Unknown settlement, live-window binding detachment and WebKit activation remain
+open; retaining intent does not establish resource retirement.
+
+GUI105/plugin19 are held at CPU resource-reconciliation scope:477 actual C/socket
+checks/six cases,35 decoder controls/four compiled variants;resource model14
+selected scenarios/22 compiled traces/349 states/three variants;21 engine checks
+close two actual export descriptors/three variants. Original capture14/66/816/
+three, controlled C10190/260actors/1041tickets and full95 commands pass again.
+Plugin19 compiles on exact core16 ABI. Initial selector and freezer failures are
+retained. The final freezer validates exact build-local owning-header aliases
+and regular source/build/evidence hashes. GUI103's12 suites and GUI104's local
+allocation controls remain at their held scopes. Next actual adopted-FD/readers
+and post-transfer exception reconciliation, original native Core resource/capture
+witnesses, live-window binding detachment and native-assigned renderer tickets
+before WebKit activation. The qualified runtime and release gates are unchanged.

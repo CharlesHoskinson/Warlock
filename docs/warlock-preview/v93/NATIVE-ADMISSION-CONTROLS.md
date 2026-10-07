@@ -184,3 +184,60 @@ bootstrap/Coordinator/Broker/journal evidence, with no real windows or capture.
 The first C fixture incorrectly compared two calls to the advancing `next()`
 allocator as equal. Its failed report is retained; the fresh fixture corrects
 only the allocator arithmetic, with production source unchanged.
+
+EARS CONTROL-015: BEFORE capture invocation, native SHALL retain the original
+immutable request/binding/context/raw command/deadline. Capture or FD-transport
+failure SHALL preserve that intent without acquisition replay or false cleanup.
+Exact backend export ownership SHALL precede fallible local mapping/adoption.
+Only actual Broker adoption SHALL publish its mapping pointer, including an
+exception after transfer; refusal/pre-transfer exception SHALL publish no pointer.
+Original native reconciliation and local-resource proofs remain mandatory.
+
+GUI104 records a bounded immutable native capture intent before effect invocation
+and retains it across refusal, malformed completion and unavailable FD transport.
+These three actual authenticated-socket cases preserve original Broker charge,
+refuse capture replay and retain exact request bytes/context/deadline. Mapping
+adoption now retains only actual Broker storage, including a receipt-allocation
+exception after transfer. Four actual sealed-FD/Broker controls cover success,
+refusal, pre-transfer allocation failure and post-transfer receipt allocation
+failure; original local mapping/FD and terminal proof/ACK drain still apply.
+Three unsafe native variants compile and fail original assertions. This retains
+the information needed for reconciliation; it does not yet provide a native
+backend cleanup-state protocol, settle Unknown captures, activate WebKit or
+qualify real compositor capture or live-window binding detachment.
+
+EARS CONTROL-016: Original native capture/export uncertainty SHALL be resolved by
+authenticated exact request/subject/binding resource observation and scoped
+idempotent cleanup, never acquisition replay. Export and producer obligations
+remain independently observable under lock/revocation/expiry; another current
+capture SHALL remain untouched. Producer lock barriers remain mandatory. Native
+reply construction SHALL precede resource mutation, and a lost reply SHALL be
+resolved by fresh observation. Backend zero cannot erase independent local FD,
+mapping/readers, Broker proof, frontend processing or incarnation obligations.
+
+GUI105 and owning-core16/plugin19 are fresh inactive sources for this protocol.
+The fully qualified runtime remains GUI92/native128/core16/plugin18. GUI104 is
+held at capture intent/adoption component scope (51+22 controls,14 capture
+scenarios/66 traces/816 states/three variants, controlled C10190/260/1041 and full95).
+The actual native resource engine and wire encoder, typed GUI decoder and
+controlled C reconciliation path are implemented. Six actual authenticated
+synthetic socket cases cover refusal/malformed capture/unavailable FD and lost
+export/producer responses. Backend zero is checked before unoffered Broker
+settlement; locked producers and malformed observations retain the original
+charge. An issued ticket alone grants no cleanup. The final actors still need
+actual permanent native incarnation facts, original proof ACK, final delivery
+processing and independent control confirmation. These are CPU component
+witnesses, not real compositor capture or imported-FD acceptance.
+
+EARS CONTROL-017: Multiple original family Reconcile commands for one native
+binding SHALL reuse one canonical native-issued reserved ticket. Only its
+actual dispatch under the original native receiver and borrowed receipt
+Endpoint SHALL quarantine that binding. Native polling SHALL re-observe and
+settle original scoped resources without replaying acquisition; it SHALL
+advance the fair entry cursor before a fallible operation, process at most one
+original job and three resource operations per reconciliation poll, and retain
+all independent local mapping/readers, terminal proof, actor and confirmation
+barriers. Quarantine SHALL refuse new source admission and acquisition. Native
+backend zero SHALL NOT be treated as permanent window incarnation retirement
+or complete binding detachment. No measured UI performance acceptance follows
+from the polling bound.

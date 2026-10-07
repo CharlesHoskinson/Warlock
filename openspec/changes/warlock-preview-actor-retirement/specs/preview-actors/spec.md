@@ -539,3 +539,90 @@ remain distinct from permanent incarnation retirement and transport confirmation
   Completed-actor binding closure requires original all-map actor retirement,
   final processing, every issued ticket confirmation and quota release.
   Live-window binding detachment remains an independent unmet contract.
+
+EARS WLK-PREVIEW-CONTROL-015: BEFORE native invokes a capture effect, its owner
+SHALL retain the original immutable request, binding, context, command bytes and
+deadline. A capture-response or FD-transport exception SHALL preserve this intent
+and SHALL NOT authorize acquisition replay, deadline extension or final cleanup
+proofs. Exact export/backend ownership SHALL be retained before local mapping or
+adoption can fail. A mapping pointer SHALL be published only after actual Broker
+adoption; an exception after adoption SHALL retain that pointer, while refusal or
+a pre-transfer exception SHALL leave caller-owned storage unrepresented by it.
+Actual reconciliation SHALL require independent original native resource proofs.
+
+#### Scenario: Capture response or FD transport fails
+- GIVEN an original native-purpose acquisition ticket and native job
+- WHEN its capture response is refused or malformed, or its FD transport fails
+- THEN the exact original native intent survives, transport retry invokes no
+  second capture, and cancellation/polling retain unresolved charge and ownership
+  until actual original backend and local-resource proofs are available.
+
+#### Scenario: Local mapping adoption returns or throws
+- GIVEN an exact native export and a caller-owned sealed local mapping
+- WHEN Broker adoption refuses or throws before transfer
+- THEN no retained mapping pointer is published and caller storage remains owned.
+- WHEN adoption transfers storage but receipt allocation throws
+- THEN the actual Broker mapping remains retained for original reader/FD/proof
+  drain, without inventing successful offer delivery or erasing the reservation.
+
+EARS WLK-PREVIEW-CONTROL-016: WHEN original capture or export settlement is
+uncertain, native SHALL observe the exact original capture request and subject
+under the authenticated original caller binding. Export presence and producer
+presence SHALL be reported independently, including after lock, revocation and
+expiry. Scoped cleanup SHALL release only the matching original export or
+producer, SHALL preserve a different current capture, and SHALL be idempotent
+when the target is already absent. Original producer retirement SHALL remain
+pending under the existing lock policy. Reply preparation failure SHALL occur
+before resource mutation; lost reply SHALL be resolved through fresh original
+native observation. Backend zero SHALL NOT establish local mapping/FD/reader,
+Broker terminal proof, frontend processing or window incarnation retirement.
+Malformed, foreign, regressing or exhausted evidence SHALL retain Unknown.
+
+#### Scenario: Export release succeeded but its acknowledgment was lost
+- GIVEN the exact original exported capture and retained local storage
+- WHEN native export release commits but the reply is lost
+- THEN fresh authenticated original resource observation can confirm export
+  absence without acquiring another image, repeating the original capture or
+  treating local mapping/readers as closed.
+
+#### Scenario: Original capture is absent and another capture is current
+- GIVEN a matching caller binding and a different current capture
+- WHEN original target resource observation or cleanup is requested
+- THEN only original target absence is certified; the current capture remains
+  owned with its original export and producer reservations.
+
+#### Scenario: Resource is revoked, expired or locked
+- GIVEN an original producer/export obligation whose pixels are no longer usable
+- WHEN native resource settlement is queried
+- THEN resource identity and ownership remain observable independently of pixel
+  eligibility, export release can follow original policy, and a locked original
+  producer remains pending until its original retirement barrier is satisfied.
+### Requirement: Canonical binding reconciliation preserves original obligations
+
+EARS CONTROL-017: When original retained families request Reconcile for the same
+native binding, the provider SHALL issue the same canonical reserved native
+ticket. Actual dispatch on the owning native receiver and borrowed receipt
+Endpoint SHALL quarantine source admission. A bounded fair native poll SHALL
+re-observe and settle original scoped resources without acquisition replay.
+Independent local storage/readers, terminal proofs, incarnation facts, final
+processing and transport confirmation SHALL remain required.
+
+#### Scenario: Different families share one native reconciliation purpose
+- GIVEN two original retained native family actors on one receiver and binding
+- WHEN their typed Reconcile proposals carry that exact binding
+- THEN Native returns the same ordinal and immutable canonical ticket
+- AND issuance or receipt confirmation alone cannot grant resource settlement.
+
+#### Scenario: A pending capture cannot starve independent cleanup
+- GIVEN one attempted capture whose producer is locked or whose response was lost
+- AND another original unattempted job on the same binding
+- WHEN the original reconciliation ticket has actually dispatched
+- THEN the native poll advances its entry cursor before the fallible operation
+- AND the next poll can settle the independent unattempted reservation
+- AND no original acquisition is replayed or clock/deadline reset.
+
+#### Scenario: A foreign borrowed receipt capability cannot enter cleanup
+- GIVEN the original dispatched reconciliation ticket
+- WHEN polling supplies a receipt capability from a different native Endpoint
+- THEN the provider refuses before querying or mutating original resources
+- AND the original charges, observations and terminal proofs remain unchanged.
