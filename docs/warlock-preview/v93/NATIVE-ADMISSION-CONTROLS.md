@@ -725,3 +725,14 @@ the admission output native-preview-admission.js. A missing/misnamed referenced
 asset SHALL fail preflight before actual controlled native admission. Passing
 packaging SHALL NOT establish WebKit execution, actual frame/reveal, recovery or
 native/full release acceptance; their original gates SHALL remain required.
+
+EARS CONTROL-037: When the QA-only pure renderer reports a loaded preview image,
+native SHALL require the original popup manager, active controlled driver and
+current acknowledged native projection before admitting the original URI/size
+observer and private WebKit snapshot. The snapshot attempt SHALL retain its
+original projection bytes, native epoch and navigation identity. When the
+asynchronous snapshot finishes, native SHALL check the original view and current
+projection again before writing accepted pixel evidence. A stale observation
+SHALL be consumed without settling or replaying a policy/native effect. Actual
+image loading and independently decoded offscreen pixels SHALL remain distinct
+from physical frame/concealment/reveal authority; the curtain SHALL remain closed.

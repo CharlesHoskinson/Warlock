@@ -456,3 +456,27 @@ qualification stays open. PUBLIC92 preparation retains failures and current succ
 Next actual captured-image pure renderer/WebKit URI/frame and physical qualification;
 curtain remains closed, physical reveal/pixels/workload/RSS/recovery/full S09 preview13
 and full release remain unqualified. Legacy Native1312518/278 remains separate.
+
+GUI125/Native135 PUBLIC92 76e246bc803755b2a0c15bfac249c147dba5a9fa/9349
+exact owned blobs; source2caa20036f23d3da9960a2771764a8d5560b5233;
+receiptc1ef4a20a938a62bf771070e49cbd42747005f56, public branch verified.
+Fresh GUI126 adds private pure-renderer loaded-image observation, native-current
+channel admission and async snapshot view/epoch/navigation/projection revalidation.
+Old non-QA adapter generation/mount/DOM controls pass on changed adapter. Full119
+build then serial Native136 actual URI/image/pixels using original independent
+pixel oracle and existing foreign-green fixture, retaining original16 admission/
+drain checks and deadline6. CONTROL-037 EARS/OpenSpec records evidence boundaries.
+Curtain stays closed; frame/reveal/workload/RSS/recovery/full preview/release open.
+
+GUI126/Native136 bounded actual URI/image/offscreen pixels accepted: original16
+checks retained,21 checks/10 normal owned exits/private cleanup. Pure WebKit
+renderer loads original scoped native URI/320x240 actual Core client image at
+160x120; original independent PNG oracle counts19200 red/zero green and blue,
+with unrelated green GTK peer mapped. Actual700x420 snapshot inspected. Native
+request and completion current projection/view/epoch/navigation guards implemented;
+actual stale-callback fault remains unqualified. Full119/current original synthetic
+adapter controls pass. GUI1261797files/Native13687files held. CONTROL-037 bounded
+pixels frozen, broader stale/physical/recovery gates remain open. PUBLIC93 then
+actual frame/physical concealment and stale asynchronous snapshot qualification.
+Original deadlines/strict close/Native/Core/Elm policy/physical authority unchanged;
+curtain remains closed and offscreen pixels grant no physical reveal authority.

@@ -417,3 +417,12 @@ activation and all original full release gates remain open.
   one-time pure WebKit renderer/current DOM receipt and strict normal drain/teardown
   in GUI125/Native135; retain failures. Physical frame/reveal, pressure/performance,
   reload/uncertain recovery and full controlled-route qualification remain open.
+
+- [ ] Qualify CONTROL-037 actual pure-renderer native URI loading and independent
+  offscreen pixel evidence with current projection/context checks at snapshot
+  request and completion; retain all original admission/drain checks and deadlines.
+
+- [x] Freeze bounded CONTROL-037 actual pure-renderer original URI/image load and
+  independent offscreen source pixels in GUI126/Native136 with all original16
+  admission/drain checks retained; actual stale callback, physical frame/reveal,
+  resource/performance and recovery/full release gates remain open.

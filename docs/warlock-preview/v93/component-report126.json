@@ -1,0 +1,104 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "sourceHeld": true,
+  "passed": true,
+  "cpuBuildPassed": true,
+  "fullBuildCommands": 119,
+  "actualNativeGTKAdmissionObserved": true,
+  "actualPureRendererInitializationObserved": true,
+  "actualPureRendererInitializationQualified": true,
+  "actualCurrentProjectionDOMReceiptObserved": true,
+  "actualControlledAdmissionAndDrainQualified": true,
+  "normalControlledHostClosureQualified": true,
+  "privateSessionCleanupPassed": true,
+  "nativeChecks": 21,
+  "normalOwnedExits": 10,
+  "nativeGrantResets": 0,
+  "singlePreviewPolicy": true,
+  "originalNativePolicyIssuerPhysicalProductUnchanged": true,
+  "compiledPageAssetClosureQualified": true,
+  "physicalConcealmentQualified": false,
+  "physicalRevealQualified": false,
+  "actualCapturedPixelsQualified": true,
+  "actualScopedURIImageLoadObserved": true,
+  "actualOffscreenWebKitPixels": {
+    "width": 700,
+    "height": 420,
+    "red": 19200,
+    "green": 0,
+    "blue": 0,
+    "yellow": 0,
+    "cyan": 0,
+    "opaque": 294000,
+    "points": {
+      "root": [
+        23,
+        32,
+        42,
+        255
+      ],
+      "old": [
+        23,
+        32,
+        42,
+        255
+      ],
+      "moved": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "nested": [
+        255,
+        0,
+        0,
+        255
+      ]
+    }
+  },
+  "actualStaleSnapshotCallbackQualified": false,
+  "fullWorkloadProgressQualified": false,
+  "measuredRSSQualified": false,
+  "reloadRecoveryQualified": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "Actual QA-only pure WebKit renderer loads the original scoped native URI and displays an original 320x240 real Core client capture at160x120. Original independent pixel oracle finds19200 red/zero green/zero blue pixels while an unrelated green peer is mapped. All original16 admission/drain checks retained;21 checks/10 owned normal exits/private cleanup on unchanged core16/plugin19/AQ155 and original six-second scenario. Snapshot admission and completion check original current native projection/view/epoch/navigation; actual stale-callback fault qualification remains open. One persistent original native Elm policy, original physical/journal/confirmation and strict close unchanged. Full119 and current synthetic adapter generation/mount controls pass. Physical curtain remains closed: offscreen pixels do not qualify Wayland physical frame/concealment/reveal, workload/pressure/RSS, reload/uncertain recovery, full S09 preview13 or full release.",
+  "reports": {
+    "build": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v126/qa/build-1791384223518189496/report.json",
+      "sha256": "cfd07b2bd3581b73fc378e6ba5d7de05a292311bae128b685393753e70de3244"
+    },
+    "controlledNative": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v136/qa/native-controlled-1791384474361345554/report.json",
+      "sha256": "b125b3d28e8a2de0249d6810876a2c9dad2b2bfa7c2c065928f2367828447690"
+    }
+  },
+  "heldFailedPredecessors": [
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v122/component-manifest.json",
+      "sha256": "734fe4d52aa6d5e0f877ae93250f0cfbe7bfe2a65b2fef1531c4fe3d98f71a6a"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v132/component-manifest.json",
+      "sha256": "c7d497dd69be1c2beba0668a1cd47f0514041f82191246780c512e1ad7bd2c57"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v123/component-manifest.json",
+      "sha256": "c414763b2a3ea2e73f1b7772b3488ec36073b0666ea2d4f82bdb6696231bbba8"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v133/component-manifest.json",
+      "sha256": "662d3295d1a16cdb420d7737cf5241c6fc4f5024482b427d4360cabd6a80a4a0"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v124/component-manifest.json",
+      "sha256": "063ba4fa224a49cd33bf133b41fc8924d2af4cf72fd007e06e0ef2ab78c47949"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v134/component-manifest.json",
+      "sha256": "7760c7bcfd3ceee70070d341067aac008b0dff59d9bbd568d47ab4fd425db884"
+    }
+  ]
+}

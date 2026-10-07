@@ -1384,3 +1384,23 @@ package and the owning scheme's closed local allowlist.
 - **WHEN** all bundled page scripts/styles exist within the original size and name bounds
 - **THEN** their exact filenames and package hashes are retained
 - **AND** WebKit execution, original GTK/frame/reveal/closure and recovery gates remain separate
+
+### Requirement: Bind private captured-image evidence to the current native projection
+
+The system SHALL implement EARS CONTROL-037 without granting physical reveal
+authority to image reports or offscreen WebKit snapshots.
+
+#### Scenario: A pure renderer reports its loaded image
+- **WHEN** original popup context and acknowledged native projection are current
+- **THEN** native validates the original native-issued URI and bounded image dimensions
+- **AND** a private snapshot retains the original projection, epoch and navigation
+
+#### Scenario: A projection changes while a snapshot is pending
+- **WHEN** its asynchronous callback has a stale view, epoch, navigation or projection
+- **THEN** its pixel observation is rejected before accepted evidence is written
+- **AND** original policy, physical resources and journals remain under their original authorities
+
+#### Scenario: An independent oracle decodes actual offscreen preview pixels
+- **WHEN** exact source colors and foreign-content exclusion pass
+- **THEN** that bounded rendered-image evidence is retained
+- **AND** physical frame/concealment/reveal and recovery/full release gates remain open
