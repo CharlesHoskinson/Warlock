@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "sourceHeld": true,
+  "passed": true,
+  "evidenceIntegrityPassed": true,
+  "reports": {
+    "uriC": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v110/qa/uri-capability-check-v2-1791352413696078806/report.json",
+      "sha256": "20eb41888244d6f046827ac6de39261fbdef643db2f4ba6d13df073bed4d2b5c"
+    },
+    "uriModel": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v110/qa/uri-capability-model-check-v3-1791352627821797315/report.json",
+      "sha256": "d1cb4ea4a3e4e233ef41ac4ff3c9b6aca65882b686cbab85fd4b69f38ed1ca4d"
+    },
+    "detachmentRegressions": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v110/qa/detachment-regression-check-1791352666619047920/report.json",
+      "sha256": "7b4225e6053fa28198f54ca55e79fc204e2742b352b1ed02ee017219310b8595"
+    },
+    "regressions": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v110/qa/resource-regression-check-1791352326012043309/report.json",
+      "sha256": "2bdeb4838a107d4f1c68746854ab227313ede043cd5c920541fd5bb172294e7a"
+    },
+    "build": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v110/qa/build-1791352326010757688/report.json",
+      "sha256": "28fdc33f3a7a6ed1b675a565c90fa0b1cbba82b53f3cd040b9e10a392027085d"
+    }
+  },
+  "uriCChecks": 66,
+  "uriActualSealedFDs": 4,
+  "uriCCompiledVariants": 3,
+  "uriScenarios": 16,
+  "uriTraces": 24,
+  "uriStates": 320,
+  "uriInvariantSamples": 200,
+  "currentDetachmentCChecks": 77,
+  "currentDetachmentReaderChecks": 60,
+  "currentDetachmentLostProducerResponseChecks": 64,
+  "currentDetachmentPostTransferChecks": 51,
+  "currentDetachmentCohortChecks": 66,
+  "currentDetachmentScenarios": 21,
+  "currentDetachmentTraces": 33,
+  "currentDetachmentStates": 715,
+  "actualReaderChecks": 49,
+  "actualPostTransferChecks": 40,
+  "controlledCChecks": 10190,
+  "fullBuildCommands": 96,
+  "originalBuildCommands": 95,
+  "unchangedElmParentManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v109/component-manifest.json",
+  "unchangedElmParentManifestSHA256": "7303bb51bfdfa76493d9071441435851b69d706ecaa102927fb7286b8bd2b6fb",
+  "heldFailedReports": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v110/qa/uri-capability-model-check-1791352515950079277/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v110/qa/uri-capability-model-check-v2-1791352570746205094/report.json"
+  ],
+  "lifetimeSafeURIRouterImplemented": true,
+  "newWebKitDispatcherCompiled": true,
+  "actualWebKitCallbackOwnershipQualified": false,
+  "webKitActivated": false,
+  "liveWindowDetachmentImplemented": true,
+  "actualWaylandWindowAcceptance": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "GUI110 implements native lifetime-safe URI read capabilities and a stable\nreference-counted C router. The new WebKit dispatcher compiles and is inactive;\nthe existing shared-host legacy installation/activation remains unchanged.\n\nA capability holds weak references to the original Shared state and a distinct\nEndpoint lifetime, plus its exact Native binding, receiver identity and epoch.\nEach open validates that domain under the original Shared mutex before creating\na reader. The Endpoint destructor revokes its lifetime under that same mutex.\nExisting readers retain physical Shared/mapping storage, but their own lifetime\nand receiver guards refuse bytes after destruction or replacement. Original\nBroker token/nonce, native time/source/privacy, expiry, reader capacity and\nphysical/proof barriers remain in the common original open implementation.\nCapabilities and router references cannot pin physical storage by themselves.\n\nThe C router retains its creator GThread identity, original binding and monotonic\nrealm frontier. Same exact live capability binding is idempotent. Clear retains\nhistory; same/old or foreign realm binding refuses before changing the route.\nA trusted greater epoch can bind a new capability. The context can hold its own\natomic reference independently of the native owner's reference; clear and owner\nunref leave a valid denying callback object. Actual WebKit registration must\nretain that independent reference and release it in its context destroy notify.\nNo raw Endpoint is needed by the new dispatcher. Current legacy handler remains\ncompatible and keeps its original clear/unregister-before-destruction contract.\n\nCurrent evidence:\n- 66 sanitizer-backed actual C router/read capability/Endpoint/Broker/GIO checks.\n  Four real sealed memfd mappings close. Tests exercise stale receiver/URI,\n  same-Shared receiver replacement, foreign Native binding and creator thread,\n  Endpoint destruction with retained reader, byte revocation before physical\n  close, expiry, router clear/frontier and independent callback reference.\n  Three separately compiled unsafe variants fail exact original assertions:\n  ignoring captured receiver epoch, resetting router frontier on clear, allowing\n  existing reader bytes after Endpoint destruction. These are direct synthetic\n  native scope/signature-byte fixtures, not actual compositor capture/WebKit.\n- 16 explicitly selected Quint scenarios, 200 bounded invariant samples,\n  24 actual compiled C traces and 320 state comparisons. Actual endpoint\n  existence/receiver epoch, current callback open outcome, existing reader/epoch,\n  returned byte count/EOF position, real FD ownership, expiry, owner-reference\n  presence and operation result are compared after every event. Router route/\n  through are protocol ghosts excluded from comparison. Every successful trace\n  clears references and closes its actual mapped descriptors.\n- The full host build passes96 commands: every original95 plus the new router\n  translation unit. All original resource/capture/ticket/FD regressions pass\n  against current changed URI source. Scoped detachment C77/resource60+64+51/cohort66/model21/33/715\n  regressions also pass on this current changed URI source, retaining the two\n  resource guard variants and five model guard variants.\n\nTwo failed model fixtures remain: the initial runner required a missing separate\nnamed-test file, and its fresh replacement encountered nested main renaming and\nan unqualified Wire name. Fresh immutable model/fixture derivatives retain those\nfailures and add explicit returned-byte/EOF comparisons. No product guard,\noriginal assertion or deadline was relaxed.\n\nActual native baseline remains GUI92/native129/core16/plugin19,2517 checks/278\nnormal owned exits/full cleanup. GUI110 controlled path and its new router are\nnot activated in that baseline. Next qualify current compiled GUI110 legacy\nroutes on the same owning native tuple, then actual WebKit context callback\nownership/replacement with typed incoming/outgoing realm wrappers and retained\nnative renderer ticket outbox. Scoped Core/Wayland-window detachment/capture,\n>256 real windows/Elm neighbors and all original preview13/restore38/recovery34/\ncase34/two-second/cursor/drag52/input/popup/hardware/output/AT/IME/budget/journey/\ncoherent release/reversible deployment gates remain. No installed config, main\ndesktop or drafts changed.\n"
+}

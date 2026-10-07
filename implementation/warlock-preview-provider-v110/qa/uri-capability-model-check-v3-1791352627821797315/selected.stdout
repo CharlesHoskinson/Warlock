@@ -1,0 +1,20 @@
+
+  uri_callback_lifetime_tests
+    ok currentOpenReads passed 1 test(s)
+    ok destroyedOwnerDeniesOpen passed 1 test(s)
+    ok heldReaderRetainsPhysicalStorage passed 1 test(s)
+    ok destructionRevokesExistingReader passed 1 test(s)
+    ok lastReaderCloseReleasesStorage passed 1 test(s)
+    ok replacementDeniesOldCapability passed 1 test(s)
+    ok replacementRevokesExistingReader passed 1 test(s)
+    ok trustedReplacementRebindRestoresRoute passed 1 test(s)
+    ok idempotentBindKeepsCurrentRealm passed 1 test(s)
+    ok clearRetainsMonotonicFrontier passed 1 test(s)
+    ok clearKeepsExistingReaderAuthority passed 1 test(s)
+    ok freshRealmAfterDestroyedOwner passed 1 test(s)
+    ok expiryDeniesNewRead passed 1 test(s)
+    ok expiryRetainsExistingStorage passed 1 test(s)
+    ok foreignBindingKeepsOriginalRoute passed 1 test(s)
+    ok contextReferenceSurvivesOwnerDrop passed 1 test(s)
+
+  16 passing (15ms)

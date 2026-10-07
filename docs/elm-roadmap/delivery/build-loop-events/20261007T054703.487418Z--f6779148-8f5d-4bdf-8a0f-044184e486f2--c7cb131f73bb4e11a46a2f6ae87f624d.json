@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "c7cb131f73bb4e11a46a2f6ae87f624d",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-07T05:47:03.487418+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/warlock-preview-provider-v110",
+  "nextWork": [
+    "PROGRESS own freshGUI110 after held109. Implement safe weak native read capability capturing exact Endpoint lifetime/binding/receiver/epoch under original Shared lock; stale callbacks deny after destruction/replacement even if physical readers retain storage. Stable trusted WebKit router must not hold raw Endpoint across controlled close. Preserve original Broker/native-time/nonce/reader/physical barriers; shared-host activation remains separate. Native GUI92/native129/core16/plugin19 remains2517/278/full cleanup. No installed/main desktop/draft changes."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/warlock-preview-provider-v109/component-manifest.json",
+      "sha256": "7303bb51bfdfa76493d9071441435851b69d706ecaa102927fb7286b8bd2b6fb",
+      "size": 1897998
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v110/ANCESTRY.json",
+      "sha256": "eefa1f0d2b54c507c87a2fc0efa7aeddc335ab4647c77fea8f2493b36326602a",
+      "size": 967
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

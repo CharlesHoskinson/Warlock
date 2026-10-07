@@ -1,0 +1,23 @@
+In file included from native/uri-capability-replay-v2.cpp:2:
+native/uri-capability-test.cpp:1:9: error: ‘main’ redefined [-Werror]
+    1 | #define main retained_provider_ownership_main
+      |         ^~~~
+native/uri-capability-replay-v2.cpp:1:9: note: this is the location of the previous definition
+    1 | #define main retained_uri_capability_main
+      |         ^~~~
+native/uri-capability-replay-v2.cpp:5:5: error: redefinition of ‘int main()’
+    5 | int main(){try{
+      |     ^~~~
+native/uri-capability-test.cpp:23:5: note: ‘int main()’ previously defined here
+   23 | int main(){try{
+      |     ^~~~
+native/uri-capability-replay-v2.cpp: In function ‘int main()’:
+native/uri-capability-replay-v2.cpp:27:14: error: ‘Wire’ was not declared in this scope; did you mean ‘preview::bridge::Wire’?
+   27 |   std::cout<<Wire().boolean("live",bool(realm->endpoint)).integer("epoch",epoch).boolean("expired",*realm->now>=50).boolean("reader",reader).integer("readerEpoch",readerEpoch).integer("offset",offset).boolean("physical",physical).boolean("allowed",allowed).boolean("owner",owner).integer("last",last).finish()<<'\n';
+      |              ^~~~
+      |              preview::bridge::Wire
+In file included from native/uri-capability-replay-v2.cpp:4:
+native/preview_wire.hpp:19:7: note: ‘preview::bridge::Wire’ declared here
+   19 | class Wire {
+      |       ^~~~
+cc1plus: all warnings being treated as errors

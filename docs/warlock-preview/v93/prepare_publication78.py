@@ -1,0 +1,27 @@
+"""Prepare exact held GUI109 scoped live-application preview detachment delivery."""
+import ast,json,pathlib,re,resource,sys
+sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
+require_qa_scope();assert resource.getrlimit(resource.RLIMIT_CORE)==(1,1)
+r=pathlib.Path('/home/hoskinson/omarchy-windows-parity');out=r/'docs/warlock-repository/v78/publication';assert not out.exists();out.mkdir(parents=True)
+base='33f0afa16104467c36dc8aea9a75d028a0d55aef';local='435d99e329de62444bdb22a6413d0cc0b0391d36';previous='25efdc897243360a0e4878036b1768418902f2b6'
+proof=json.loads((r/'docs/warlock-preview/v93/component-report110.json').read_text());assert proof['sourceHeld'] and proof['passed'] and proof['uriCChecks']==66 and proof['uriTraces']==24 and proof['uriStates']==320 and proof['fullBuildCommands']==96
+minimum=len(json.loads((r/'implementation/warlock-preview-provider-v110/component-manifest.json').read_text())['files']);prior=r/'docs/warlock-repository/v77/publication'
+def put(name,s):ast.parse(s);(out/name).write_text(s)
+s=(prior/'publish.py').read_text().replace("BASE='2d8f3fd9503e673afa0b1274de15d344e3891cc9'","BASE='"+base+"'").replace('3a3bc903159bba35a46f5c1ef99a976083af37ef..',previous+'..')
+allowed=('docs/warlock-preview/v93/','docs/warlock-repository/v77/publication/','docs/warlock-repository/v78/publication/','implementation/warlock-preview-provider-v110/','openspec/changes/warlock-preview-actor-retirement/tasks.md','openspec/changes/warlock-preview-actor-retirement/specs/preview-actors/spec.md')
+a=s.index('allowed=');b=s.index('\nassert all',a);s=s[:a]+'allowed='+repr(allowed)+s[b:]
+a=s.index(' qualification=');b=s.index('\n published=',a)
+q=" qualification=json.loads((REPO/'docs/warlock-preview/v93/component-report110.json').read_text());assert qualification['sourceHeld'] and qualification['passed'] and qualification['uriCChecks']==66 and qualification['uriActualSealedFDs']==4 and qualification['uriCCompiledVariants']==3 and qualification['uriScenarios']==16 and qualification['uriTraces']==24 and qualification['uriStates']==320 and qualification['uriInvariantSamples']==200 and qualification['currentDetachmentCChecks']==77 and qualification['currentDetachmentStates']==715 and qualification['fullBuildCommands']==96 and len(qualification['heldFailedReports'])==2 and not qualification['nativeAcceptance'] and not qualification['fullReleaseAccepted']"
+
+message='Guard native URI callbacks with exact Endpoint lifetime and receiver epoch\n\n'+proof['scope']
+s=s[:a]+q+'\n message='+repr(message)+'\n'+s[b:];put('publish.py',s)
+s=(prior/'record_delivery.py').read_text().replace('warlock-repository/v77','warlock-repository/v78').replace('component-report108.json','component-report110.json');s,n=re.subn(r"d\['ownedFiles'\]>=\d+","d['ownedFiles']>="+str(minimum),s);assert n==1
+a=s.index('e=loop.write_checkpoint(')
+s=s[:a]+"e=loop.write_checkpoint(r,'f6779148-8f5d-4bdf-8a0f-044184e486f2','implementation/warlock-preview-provider-v110',['PROGRESS PUBLIC78 '+d['publishedCommit']+' verified '+str(d['ownedFiles'])+' exact owned blobs. Held109 scoped detachment URI C66/four real sealed mapped FDs/three compiled variants/model16/24/320/200 samples/full96 preserving original95/current four resource and four scoped-detachment regressions; two model fixture failures retained. Synthetic Native applications stay Active, original barriers unchanged. Inactive controlled path; actual Native129 GUI92/core16/plugin19 remains2517/278. Next Native130 current GUI110 legacy route requalification on core16/plugin19 preserving every original129/128/126 control, then actual WebKit callback registration/typed realm/native outbox/controlled Core; original full release/deployment gates remain open. No installed changes.'],'progress',['docs/warlock-preview/v93/component-report110.json','implementation/warlock-preview-provider-v110/component-manifest.json','docs/warlock-repository/v78/publication/delivery.json']);print(e)\n";put('record_delivery.py',s)
+s=(prior/'commit_receipt.py').read_text().replace('2d8f3fd9503e673afa0b1274de15d344e3891cc9',base).replace('Record public scoped preview detachment qualification','Record public native URI callback lifetime qualification');s,n=re.subn(r"d\['ownedFiles'\]>=\d+","d['ownedFiles']>="+str(minimum),s);assert n==1;put('commit_receipt.py',s)
+s=(r/'docs/warlock-preview/v93/commit109.py').read_text().replace('0fb366e1ce71f48fd47d32498a4ef40e7b2f039b',local).replace("[('warlock-preview-provider-v109',True)]","[('warlock-preview-provider-v110',True)]").replace('warlock-repository/v76/publication','warlock-repository/v78/publication').replace('Detach scoped preview ownership while the native application stays Active','Guard native URI callbacks with exact Endpoint lifetime and receiver epoch')
+ast.parse(s);p=r/'docs/warlock-preview/v93/commit110.py';assert not p.exists();p.write_text(s);print(out)
+
+# Reconcile exact target paths after inherited script construction.
+p=r/'docs/warlock-preview/v93/commit110.py';p.write_text(p.read_text().replace("r/'docs/warlock-repository/v77/publication'", "r/'docs/warlock-repository/v78/publication'"))
+p=out/'record_delivery.py';p.write_text(p.read_text().replace("component-report109.json","component-report110.json").replace("Held109 scoped detachment URI","Held110 lifetime-safe URI").replace("Synthetic Native applications stay Active, original barriers unchanged.","Current scoped detachment regressions retain synthetic Native Active facts and original barriers."))

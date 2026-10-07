@@ -1,0 +1,34 @@
+Clear refuses old current realm rebind
+
+=================================================================
+==4143960==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 136 byte(s) in 1 object(s) allocated from:
+    #0 0x7fdf6752d2a1 in operator new(unsigned long) (/usr/lib/libasan.so.8+0x12d2a1) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+    #1 0x5650e9682dfb in preview_uri_router_new (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v110/qa/uri-capability-check-v2-1791352413696078806/reset-router-frontier-on-clear/checks+0x241dfb) (BuildId: dc86139a8cdd17003da400a3694c28692fc519f9)
+    #2 0x5650e95f9ae9 in main (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v110/qa/uri-capability-check-v2-1791352413696078806/reset-router-frontier-on-clear/checks+0x1b8ae9) (BuildId: dc86139a8cdd17003da400a3694c28692fc519f9)
+    #3 0x7fdf66027780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #4 0x7fdf660278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #5 0x5650e95e8824 in _start (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v110/qa/uri-capability-check-v2-1791352413696078806/reset-router-frontier-on-clear/checks+0x1a7824) (BuildId: dc86139a8cdd17003da400a3694c28692fc519f9)
+
+Indirect leak of 368 byte(s) in 1 object(s) allocated from:
+    #0 0x7fdf6752d2a1 in operator new(unsigned long) (/usr/lib/libasan.so.8+0x12d2a1) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+    #1 0x5650e962c877 in preview::uri::Endpoint::Endpoint(preview::Limits, unsigned long, unsigned long, std::function<std::optional<preview::uri::NativeTime> (unsigned long)>) (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v110/qa/uri-capability-check-v2-1791352413696078806/reset-router-frontier-on-clear/checks+0x1eb877) (BuildId: dc86139a8cdd17003da400a3694c28692fc519f9)
+    #2 0x5650e962e799 in std::__detail::_MakeUniq<preview::uri::Endpoint>::__single_object std::make_unique<preview::uri::Endpoint, preview::Limits, int, int, ImageRealm::ImageRealm(unsigned long, unsigned long)::{lambda(unsigned long)#1}>(preview::Limits&&, int&&, int&&, ImageRealm::ImageRealm(unsigned long, unsigned long)::{lambda(unsigned long)#1}&&) (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v110/qa/uri-capability-check-v2-1791352413696078806/reset-router-frontier-on-clear/checks+0x1ed799) (BuildId: dc86139a8cdd17003da400a3694c28692fc519f9)
+    #3 0x5650e967607c in ImageRealm::ImageRealm(unsigned long, unsigned long) (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v110/qa/uri-capability-check-v2-1791352413696078806/reset-router-frontier-on-clear/checks+0x23507c) (BuildId: dc86139a8cdd17003da400a3694c28692fc519f9)
+    #4 0x5650e95fc2ea in main (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v110/qa/uri-capability-check-v2-1791352413696078806/reset-router-frontier-on-clear/checks+0x1bb2ea) (BuildId: dc86139a8cdd17003da400a3694c28692fc519f9)
+    #5 0x7fdf66027780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #6 0x7fdf660278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #7 0x5650e95e8824 in _start (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v110/qa/uri-capability-check-v2-1791352413696078806/reset-router-frontier-on-clear/checks+0x1a7824) (BuildId: dc86139a8cdd17003da400a3694c28692fc519f9)
+
+Indirect leak of 24 byte(s) in 1 object(s) allocated from:
+    #0 0x7fdf6752d2a1 in operator new(unsigned long) (/usr/lib/libasan.so.8+0x12d2a1) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+    #1 0x5650e962d5a9 in preview::uri::Endpoint::Endpoint(preview::Limits, unsigned long, unsigned long, std::function<std::optional<preview::uri::NativeTime> (unsigned long)>) (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v110/qa/uri-capability-check-v2-1791352413696078806/reset-router-frontier-on-clear/checks+0x1ec5a9) (BuildId: dc86139a8cdd17003da400a3694c28692fc519f9)
+    #2 0x5650e962e799 in std::__detail::_MakeUniq<preview::uri::Endpoint>::__single_object std::make_unique<preview::uri::Endpoint, preview::Limits, int, int, ImageRealm::ImageRealm(unsigned long, unsigned long)::{lambda(unsigned long)#1}>(preview::Limits&&, int&&, int&&, ImageRealm::ImageRealm(unsigned long, unsigned long)::{lambda(unsigned long)#1}&&) (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v110/qa/uri-capability-check-v2-1791352413696078806/reset-router-frontier-on-clear/checks+0x1ed799) (BuildId: dc86139a8cdd17003da400a3694c28692fc519f9)
+    #3 0x5650e967607c in ImageRealm::ImageRealm(unsigned long, unsigned long) (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v110/qa/uri-capability-check-v2-1791352413696078806/reset-router-frontier-on-clear/checks+0x23507c) (BuildId: dc86139a8cdd17003da400a3694c28692fc519f9)
+    #4 0x5650e95fc2ea in main (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v110/qa/uri-capability-check-v2-1791352413696078806/reset-router-frontier-on-clear/checks+0x1bb2ea) (BuildId: dc86139a8cdd17003da400a3694c28692fc519f9)
+    #5 0x7fdf66027780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #6 0x7fdf660278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #7 0x5650e95e8824 in _start (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v110/qa/uri-capability-check-v2-1791352413696078806/reset-router-frontier-on-clear/checks+0x1a7824) (BuildId: dc86139a8cdd17003da400a3694c28692fc519f9)
+
+SUMMARY: AddressSanitizer: 528 byte(s) leaked in 3 allocation(s).

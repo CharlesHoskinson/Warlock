@@ -799,3 +799,32 @@ replaying Unknown or resetting unrelated effects.
 - WHEN a permanent-incarnation completion, readiness or acknowledgment is received
 - THEN it cannot advance the scoped detachment journal
 - AND scoped detachment never publishes a permanent Retired fact or closes the application.
+
+### Requirement: Lifetime-safe URI callbacks across preview realm replacement
+The system SHALL implement CONTROL-023 through native lifetime-safe read
+capabilities and a reference-counted stable URI router. It SHALL preserve all
+original native URI/source/time/token/reader/physical barriers.
+
+#### Scenario: Endpoint disappears while a callback and reader survive
+- **GIVEN** an original native read capability and an existing physical reader
+- **WHEN** its Endpoint is destroyed while the reader retains storage
+- **THEN** new callback reads refuse before allocating another reader
+- **AND** existing reader storage remains owned until its actual close
+
+#### Scenario: Receiver replacement retains an obsolete callback
+- **GIVEN** a callback bound to one exact native receiver epoch
+- **WHEN** that receiver is removed and re-enrolled under a greater epoch
+- **THEN** the old capability refuses even on the same Shared state and view ID
+- **AND** only a fresh trusted capability may request current pixels
+
+#### Scenario: Router clear does not reset authority history
+- **GIVEN** a native router bound to a controlled Native binding and realm
+- **WHEN** native code clears that route and proposes an old or foreign realm
+- **THEN** the router refuses without changing its monotonic frontier
+- **AND** creator-thread rebind to a greater epoch retains original Native binding
+
+#### Scenario: WebKit context retains callback lifetime
+- **GIVEN** a WebKit context that owns a native router reference
+- **WHEN** the C owner clears and releases its own reference
+- **THEN** the callback remains a valid object and refuses unavailable pixels
+- **AND** context destruction releases its independently owned reference

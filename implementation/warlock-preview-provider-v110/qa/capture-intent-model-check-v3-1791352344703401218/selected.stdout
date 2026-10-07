@@ -1,0 +1,18 @@
+
+  capture_intent_tests
+    ok originalIntentSurvivesCaptureError passed 1 test(s)
+    ok cancelledUnknownKeepsExactOriginalWire passed 1 test(s)
+    ok rawRetryCannotCaptureAgain passed 1 test(s)
+    ok cancellationBeforeCaptureHasFinalProof passed 1 test(s)
+    ok cancellationAfterUnknownRetainsCharge passed 1 test(s)
+    ok controlConfirmationIsNoPhysicalProof passed 1 test(s)
+    ok originalTicketRetryDoesNotReplayCapture passed 1 test(s)
+    ok oldTicketAfterCancelCannotReinvoke passed 1 test(s)
+    ok wrongOriginalJobCannotIssueTicket passed 1 test(s)
+    ok foreignReceiverCannotAcquire passed 1 test(s)
+    ok pollingCannotInventUnknownCleanup passed 1 test(s)
+    ok bindingCloseRetainsUnknownAttempt passed 1 test(s)
+    ok originalDeadlineNeverExtended passed 1 test(s)
+    ok confirmedPrefixNeverResetsOriginalCapture passed 1 test(s)
+
+  14 passing (15ms)

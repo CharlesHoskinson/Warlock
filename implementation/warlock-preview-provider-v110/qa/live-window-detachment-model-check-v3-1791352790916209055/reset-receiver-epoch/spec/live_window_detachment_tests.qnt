@@ -1,0 +1,26 @@
+module live_window_detachment_tests {
+ import live_window_detachment.* from "live_window_detachment"
+ action check(ok:bool):bool=all{assert(ok and safety),s'=s}
+ action settle=fire(Reconcile).then(fire(Poll)).then(fire(AckJob)).then(fire(DetachReady)).then(fire(AckActor)).then(fire(ConfirmActor)).then(fire(Close))
+ run initialLegacy=init.then(fire(Legacy)).then(check(s.last==1 and s.through==0 and not(s.active)))
+ run activeCloseRefuses=init.then(fire(Open)).then(fire(Close)).then(check(s.active and s.records==1 and s.last== -1))
+ run concurrentClaimRefuses=init.then(fire(Open)).then(fire(ConcurrentOpen)).then(check(s.epoch==1 and s.through==1 and s.active and s.last== -1))
+ run activeLegacyRefuses=init.then(fire(Open)).then(fire(Legacy)).then(check(s.last== -1 and s.active))
+ run cancelledProofCloseRefuses=init.then(fire(Open)).then(fire(Reconcile)).then(fire(Poll)).then(fire(Close)).then(check(s.terminal and s.proofs==2 and s.active and s.last== -1))
+ run jobAckKeepsActor=init.then(fire(Open)).then(fire(Reconcile)).then(fire(Poll)).then(fire(AckJob)).then(fire(Close)).then(check(s.records==0 and s.actors==1 and s.active and s.last== -1))
+ run finalActorDeliveryKeepsClaim=init.then(fire(Open)).then(fire(Reconcile)).then(fire(Poll)).then(fire(AckJob)).then(fire(DetachReady)).then(fire(Close)).then(check(s.actors==0 and s.active and not(s.ready) and s.last== -1))
+ run processedUnconfirmedKeepsClaim=init.then(fire(Open)).then(fire(Reconcile)).then(fire(Poll)).then(fire(AckJob)).then(fire(DetachReady)).then(fire(AckActor)).then(fire(Close)).then(check(s.active and not(s.ready) and s.last== -1))
+ run confirmedDoesNotReleaseClaim=init.then(fire(Open)).then(fire(Reconcile)).then(fire(Poll)).then(fire(AckJob)).then(fire(DetachReady)).then(fire(AckActor)).then(fire(ConfirmActor)).then(check(s.ready and s.active))
+ run settledCloseReleasesClaim=init.then(fire(Open)).then(settle).then(check(not(s.active) and s.closed==1 and s.epoch==1))
+ run closedNeverDowngrades=init.then(fire(Open)).then(settle).then(fire(Legacy)).then(check(s.last== -1 and not(s.active)))
+ run replacementEpochPersists=init.then(fire(Open)).then(settle).then(fire(Open)).then(check(s.epoch==2 and s.active and s.records==1))
+ run oldTicketCannotMutateReplacement=init.then(fire(Open)).then(settle).then(fire(Open)).then(fire(OldTicket)).then(check(s.last== -1 and s.phase==1 and s.proofs==0 and s.records==1))
+ run foreignCloseRetainsOriginal=init.then(fire(Open)).then(fire(Reconcile)).then(fire(Poll)).then(fire(AckJob)).then(fire(DetachReady)).then(fire(AckActor)).then(fire(ConfirmActor)).then(fire(ForeignClose)).then(check(s.ready and s.active and s.attached and s.last== -1))
+ run earlyReadyRefuses=init.then(fire(Open)).then(fire(DetachReady)).then(check(s.last== -1 and not(s.requested) and s.phase==1))
+ run pendingReadyRetainsOriginalJob=init.then(fire(Open)).then(fire(Reconcile)).then(fire(DetachReady)).then(fire(PollReady)).then(check(s.requested and s.actors==1 and s.records==1 and s.completion==0))
+ run terminalReadyCannotBypassFinalJobAck=init.then(fire(Open)).then(fire(Reconcile)).then(fire(Poll)).then(fire(DetachReady)).then(fire(PollReady)).then(check(s.terminal and s.actors==1 and s.completion==0))
+ run retainedReadyCompletesAfterJobAck=init.then(fire(Open)).then(fire(Reconcile)).then(fire(DetachReady)).then(fire(Poll)).then(fire(AckJob)).then(fire(PollReady)).then(check(s.actors==0 and s.completion==1 and s.phase==5))
+ run permanentAckCannotSettleScopedCompletion=init.then(fire(Open)).then(fire(Reconcile)).then(fire(Poll)).then(fire(AckJob)).then(fire(DetachReady)).then(fire(WrongFinalAck)).then(check(s.completion==1 and s.last== -1 and not(s.ready)))
+ run zeroSenderEpochRefuses=init.then(fire(Open)).then(fire(ZeroProposal)).then(check(s.phase==1 and s.last== -1 and s.records==1))
+ run oldSenderEpochCannotQuarantineReplacement=init.then(fire(Open)).then(settle).then(fire(Open)).then(fire(OldProposal)).then(check(s.phase==1 and s.last== -1 and s.records==1 and s.actors==1))
+}

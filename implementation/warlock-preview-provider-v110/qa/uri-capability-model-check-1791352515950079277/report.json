@@ -1,0 +1,12 @@
+{
+  "passed": false,
+  "inputs": {
+    "qa/uri-capability-model-check.py": "5b52da18213cdaa5a5dcddc970066bf2b5cfde03fba2e760003d78a0a7364320",
+    "spec/uri_callback_lifetime.qnt": "fd8a111c74c7fd62e80764dbb77c343786c91d2f3b817d5d376916404ba7bb25",
+    "native/uri-capability-replay.cpp": "c2c2371474166feba90b3546725ecef2a8e975be2e4eef6d635aa9e53bda30f6"
+  },
+  "commands": [],
+  "error": "Protected initial model runner failed before snapshot/compile: required spec/uri_callback_lifetime_tests.qnt did not exist; original file contained both modules. Fresh v2 uses separate immutable model/tests paths. No C/model execution or product acceptance occurred.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

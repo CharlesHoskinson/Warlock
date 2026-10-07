@@ -1,0 +1,1394 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      allowed: true,
+      epoch: 1,
+      expired: false,
+      history: [],
+      last: 0,
+      live: true,
+      offset: 0,
+      owner: true,
+      physical: true,
+      reader: false,
+      readerEpoch: 0,
+      route: 1,
+      through: 1
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      allowed: true,
+      epoch: 1,
+      expired: false,
+      history: ["Open"],
+      last: 1,
+      live: true,
+      offset: 0,
+      owner: true,
+      physical: true,
+      reader: true,
+      readerEpoch: 1,
+      route: 1,
+      through: 1
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      allowed: true,
+      epoch: 1,
+      expired: false,
+      history: ["Open", "ForeignBind"],
+      last: -1,
+      live: true,
+      offset: 0,
+      owner: true,
+      physical: true,
+      reader: true,
+      readerEpoch: 1,
+      route: 1,
+      through: 1
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      allowed: true,
+      epoch: 1,
+      expired: false,
+      history: ["Open", "ForeignBind", "DropOwner"],
+      last: 1,
+      live: true,
+      offset: 0,
+      owner: false,
+      physical: true,
+      reader: true,
+      readerEpoch: 1,
+      route: 1,
+      through: 1
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      allowed: true,
+      epoch: 1,
+      expired: false,
+      history: ["Open", "ForeignBind", "DropOwner", "Read"],
+      last: 1,
+      live: true,
+      offset: 1,
+      owner: false,
+      physical: true,
+      reader: true,
+      readerEpoch: 1,
+      route: 1,
+      through: 1
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      allowed: true,
+      epoch: 1,
+      expired: false,
+      history: ["Open", "ForeignBind", "DropOwner", "Read", "ForeignBind"],
+      last: -1,
+      live: true,
+      offset: 1,
+      owner: false,
+      physical: true,
+      reader: true,
+      readerEpoch: 1,
+      route: 1,
+      through: 1
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      allowed: true,
+      epoch: 1,
+      expired: false,
+      history:
+        ["Open", "ForeignBind", "DropOwner", "Read", "ForeignBind", "Read"],
+      last: 1,
+      live: true,
+      offset: 2,
+      owner: false,
+      physical: true,
+      reader: true,
+      readerEpoch: 1,
+      route: 1,
+      through: 1
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      allowed: true,
+      epoch: 1,
+      expired: false,
+      history:
+        [
+          "Open",
+          "ForeignBind",
+          "DropOwner",
+          "Read",
+          "ForeignBind",
+          "Read",
+          "Read"
+        ],
+      last: 1,
+      live: true,
+      offset: 3,
+      owner: false,
+      physical: true,
+      reader: true,
+      readerEpoch: 1,
+      route: 1,
+      through: 1
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      allowed: true,
+      epoch: 1,
+      expired: false,
+      history:
+        [
+          "Open",
+          "ForeignBind",
+          "DropOwner",
+          "Read",
+          "ForeignBind",
+          "Read",
+          "Read",
+          "Read"
+        ],
+      last: 1,
+      live: true,
+      offset: 4,
+      owner: false,
+      physical: true,
+      reader: true,
+      readerEpoch: 1,
+      route: 1,
+      through: 1
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      allowed: false,
+      epoch: 1,
+      expired: false,
+      history:
+        [
+          "Open",
+          "ForeignBind",
+          "DropOwner",
+          "Read",
+          "ForeignBind",
+          "Read",
+          "Read",
+          "Read",
+          "Clear"
+        ],
+      last: 1,
+      live: true,
+      offset: 4,
+      owner: false,
+      physical: true,
+      reader: true,
+      readerEpoch: 1,
+      route: 0,
+      through: 1
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      allowed: false,
+      epoch: 1,
+      expired: false,
+      history:
+        [
+          "Open",
+          "ForeignBind",
+          "DropOwner",
+          "Read",
+          "ForeignBind",
+          "Read",
+          "Read",
+          "Read",
+          "Clear",
+          "Bind"
+        ],
+      last: -1,
+      live: true,
+      offset: 4,
+      owner: false,
+      physical: true,
+      reader: true,
+      readerEpoch: 1,
+      route: 0,
+      through: 1
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      allowed: false,
+      epoch: 1,
+      expired: false,
+      history:
+        [
+          "Open",
+          "ForeignBind",
+          "DropOwner",
+          "Read",
+          "ForeignBind",
+          "Read",
+          "Read",
+          "Read",
+          "Clear",
+          "Bind",
+          "CloseReader"
+        ],
+      last: 1,
+      live: true,
+      offset: 0,
+      owner: false,
+      physical: true,
+      reader: false,
+      readerEpoch: 0,
+      route: 0,
+      through: 1
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      allowed: false,
+      epoch: 1,
+      expired: false,
+      history:
+        [
+          "Open",
+          "ForeignBind",
+          "DropOwner",
+          "Read",
+          "ForeignBind",
+          "Read",
+          "Read",
+          "Read",
+          "Clear",
+          "Bind",
+          "CloseReader",
+          "Open"
+        ],
+      last: -1,
+      live: true,
+      offset: 0,
+      owner: false,
+      physical: true,
+      reader: false,
+      readerEpoch: 0,
+      route: 0,
+      through: 1
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      allowed: false,
+      epoch: 1,
+      expired: true,
+      history:
+        [
+          "Open",
+          "ForeignBind",
+          "DropOwner",
+          "Read",
+          "ForeignBind",
+          "Read",
+          "Read",
+          "Read",
+          "Clear",
+          "Bind",
+          "CloseReader",
+          "Open",
+          "Expire"
+        ],
+      last: 1,
+      live: true,
+      offset: 0,
+      owner: false,
+      physical: true,
+      reader: false,
+      readerEpoch: 0,
+      route: 0,
+      through: 1
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      allowed: false,
+      epoch: 1,
+      expired: true,
+      history:
+        [
+          "Open",
+          "ForeignBind",
+          "DropOwner",
+          "Read",
+          "ForeignBind",
+          "Read",
+          "Read",
+          "Read",
+          "Clear",
+          "Bind",
+          "CloseReader",
+          "Open",
+          "Expire",
+          "ForeignBind"
+        ],
+      last: -1,
+      live: true,
+      offset: 0,
+      owner: false,
+      physical: true,
+      reader: false,
+      readerEpoch: 0,
+      route: 0,
+      through: 1
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      allowed: false,
+      epoch: 1,
+      expired: true,
+      history:
+        [
+          "Open",
+          "ForeignBind",
+          "DropOwner",
+          "Read",
+          "ForeignBind",
+          "Read",
+          "Read",
+          "Read",
+          "Clear",
+          "Bind",
+          "CloseReader",
+          "Open",
+          "Expire",
+          "ForeignBind",
+          "Expire"
+        ],
+      last: 1,
+      live: true,
+      offset: 0,
+      owner: false,
+      physical: true,
+      reader: false,
+      readerEpoch: 0,
+      route: 0,
+      through: 1
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      allowed: false,
+      epoch: 1,
+      expired: true,
+      history:
+        [
+          "Open",
+          "ForeignBind",
+          "DropOwner",
+          "Read",
+          "ForeignBind",
+          "Read",
+          "Read",
+          "Read",
+          "Clear",
+          "Bind",
+          "CloseReader",
+          "Open",
+          "Expire",
+          "ForeignBind",
+          "Expire",
+          "DestroyEndpoint"
+        ],
+      last: 1,
+      live: false,
+      offset: 0,
+      owner: false,
+      physical: false,
+      reader: false,
+      readerEpoch: 0,
+      route: 0,
+      through: 1
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      allowed: false,
+      epoch: 1,
+      expired: true,
+      history:
+        [
+          "Open",
+          "ForeignBind",
+          "DropOwner",
+          "Read",
+          "ForeignBind",
+          "Read",
+          "Read",
+          "Read",
+          "Clear",
+          "Bind",
+          "CloseReader",
+          "Open",
+          "Expire",
+          "ForeignBind",
+          "Expire",
+          "DestroyEndpoint",
+          "Clear"
+        ],
+      last: 1,
+      live: false,
+      offset: 0,
+      owner: false,
+      physical: false,
+      reader: false,
+      readerEpoch: 0,
+      route: 0,
+      through: 1
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      allowed: false,
+      epoch: 1,
+      expired: true,
+      history:
+        [
+          "Open",
+          "ForeignBind",
+          "DropOwner",
+          "Read",
+          "ForeignBind",
+          "Read",
+          "Read",
+          "Read",
+          "Clear",
+          "Bind",
+          "CloseReader",
+          "Open",
+          "Expire",
+          "ForeignBind",
+          "Expire",
+          "DestroyEndpoint",
+          "Clear",
+          "Clear"
+        ],
+      last: 1,
+      live: false,
+      offset: 0,
+      owner: false,
+      physical: false,
+      reader: false,
+      readerEpoch: 0,
+      route: 0,
+      through: 1
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      allowed: false,
+      epoch: 1,
+      expired: true,
+      history:
+        [
+          "Open",
+          "ForeignBind",
+          "DropOwner",
+          "Read",
+          "ForeignBind",
+          "Read",
+          "Read",
+          "Read",
+          "Clear",
+          "Bind",
+          "CloseReader",
+          "Open",
+          "Expire",
+          "ForeignBind",
+          "Expire",
+          "DestroyEndpoint",
+          "Clear",
+          "Clear",
+          "Clear"
+        ],
+      last: 1,
+      live: false,
+      offset: 0,
+      owner: false,
+      physical: false,
+      reader: false,
+      readerEpoch: 0,
+      route: 0,
+      through: 1
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      allowed: false,
+      epoch: 1,
+      expired: true,
+      history:
+        [
+          "Open",
+          "ForeignBind",
+          "DropOwner",
+          "Read",
+          "ForeignBind",
+          "Read",
+          "Read",
+          "Read",
+          "Clear",
+          "Bind",
+          "CloseReader",
+          "Open",
+          "Expire",
+          "ForeignBind",
+          "Expire",
+          "DestroyEndpoint",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Open"
+        ],
+      last: -1,
+      live: false,
+      offset: 0,
+      owner: false,
+      physical: false,
+      reader: false,
+      readerEpoch: 0,
+      route: 0,
+      through: 1
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      allowed: false,
+      epoch: 1,
+      expired: true,
+      history:
+        [
+          "Open",
+          "ForeignBind",
+          "DropOwner",
+          "Read",
+          "ForeignBind",
+          "Read",
+          "Read",
+          "Read",
+          "Clear",
+          "Bind",
+          "CloseReader",
+          "Open",
+          "Expire",
+          "ForeignBind",
+          "Expire",
+          "DestroyEndpoint",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Open",
+          "Clear"
+        ],
+      last: 1,
+      live: false,
+      offset: 0,
+      owner: false,
+      physical: false,
+      reader: false,
+      readerEpoch: 0,
+      route: 0,
+      through: 1
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      allowed: false,
+      epoch: 1,
+      expired: true,
+      history:
+        [
+          "Open",
+          "ForeignBind",
+          "DropOwner",
+          "Read",
+          "ForeignBind",
+          "Read",
+          "Read",
+          "Read",
+          "Clear",
+          "Bind",
+          "CloseReader",
+          "Open",
+          "Expire",
+          "ForeignBind",
+          "Expire",
+          "DestroyEndpoint",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Open",
+          "Clear",
+          "ForeignBind"
+        ],
+      last: -1,
+      live: false,
+      offset: 0,
+      owner: false,
+      physical: false,
+      reader: false,
+      readerEpoch: 0,
+      route: 0,
+      through: 1
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      allowed: false,
+      epoch: 1,
+      expired: true,
+      history:
+        [
+          "Open",
+          "ForeignBind",
+          "DropOwner",
+          "Read",
+          "ForeignBind",
+          "Read",
+          "Read",
+          "Read",
+          "Clear",
+          "Bind",
+          "CloseReader",
+          "Open",
+          "Expire",
+          "ForeignBind",
+          "Expire",
+          "DestroyEndpoint",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Open",
+          "Clear",
+          "ForeignBind",
+          "Open"
+        ],
+      last: -1,
+      live: false,
+      offset: 0,
+      owner: false,
+      physical: false,
+      reader: false,
+      readerEpoch: 0,
+      route: 0,
+      through: 1
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      allowed: false,
+      epoch: 1,
+      expired: true,
+      history:
+        [
+          "Open",
+          "ForeignBind",
+          "DropOwner",
+          "Read",
+          "ForeignBind",
+          "Read",
+          "Read",
+          "Read",
+          "Clear",
+          "Bind",
+          "CloseReader",
+          "Open",
+          "Expire",
+          "ForeignBind",
+          "Expire",
+          "DestroyEndpoint",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Open",
+          "Clear",
+          "ForeignBind",
+          "Open",
+          "Clear"
+        ],
+      last: 1,
+      live: false,
+      offset: 0,
+      owner: false,
+      physical: false,
+      reader: false,
+      readerEpoch: 0,
+      route: 0,
+      through: 1
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      allowed: false,
+      epoch: 1,
+      expired: true,
+      history:
+        [
+          "Open",
+          "ForeignBind",
+          "DropOwner",
+          "Read",
+          "ForeignBind",
+          "Read",
+          "Read",
+          "Read",
+          "Clear",
+          "Bind",
+          "CloseReader",
+          "Open",
+          "Expire",
+          "ForeignBind",
+          "Expire",
+          "DestroyEndpoint",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Open",
+          "Clear",
+          "ForeignBind",
+          "Open",
+          "Clear",
+          "Clear"
+        ],
+      last: 1,
+      live: false,
+      offset: 0,
+      owner: false,
+      physical: false,
+      reader: false,
+      readerEpoch: 0,
+      route: 0,
+      through: 1
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      allowed: false,
+      epoch: 1,
+      expired: true,
+      history:
+        [
+          "Open",
+          "ForeignBind",
+          "DropOwner",
+          "Read",
+          "ForeignBind",
+          "Read",
+          "Read",
+          "Read",
+          "Clear",
+          "Bind",
+          "CloseReader",
+          "Open",
+          "Expire",
+          "ForeignBind",
+          "Expire",
+          "DestroyEndpoint",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Open",
+          "Clear",
+          "ForeignBind",
+          "Open",
+          "Clear",
+          "Clear",
+          "Clear"
+        ],
+      last: 1,
+      live: false,
+      offset: 0,
+      owner: false,
+      physical: false,
+      reader: false,
+      readerEpoch: 0,
+      route: 0,
+      through: 1
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      allowed: false,
+      epoch: 1,
+      expired: true,
+      history:
+        [
+          "Open",
+          "ForeignBind",
+          "DropOwner",
+          "Read",
+          "ForeignBind",
+          "Read",
+          "Read",
+          "Read",
+          "Clear",
+          "Bind",
+          "CloseReader",
+          "Open",
+          "Expire",
+          "ForeignBind",
+          "Expire",
+          "DestroyEndpoint",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Open",
+          "Clear",
+          "ForeignBind",
+          "Open",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Clear"
+        ],
+      last: 1,
+      live: false,
+      offset: 0,
+      owner: false,
+      physical: false,
+      reader: false,
+      readerEpoch: 0,
+      route: 0,
+      through: 1
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      allowed: false,
+      epoch: 1,
+      expired: true,
+      history:
+        [
+          "Open",
+          "ForeignBind",
+          "DropOwner",
+          "Read",
+          "ForeignBind",
+          "Read",
+          "Read",
+          "Read",
+          "Clear",
+          "Bind",
+          "CloseReader",
+          "Open",
+          "Expire",
+          "ForeignBind",
+          "Expire",
+          "DestroyEndpoint",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Open",
+          "Clear",
+          "ForeignBind",
+          "Open",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Open"
+        ],
+      last: -1,
+      live: false,
+      offset: 0,
+      owner: false,
+      physical: false,
+      reader: false,
+      readerEpoch: 0,
+      route: 0,
+      through: 1
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      allowed: false,
+      epoch: 1,
+      expired: true,
+      history:
+        [
+          "Open",
+          "ForeignBind",
+          "DropOwner",
+          "Read",
+          "ForeignBind",
+          "Read",
+          "Read",
+          "Read",
+          "Clear",
+          "Bind",
+          "CloseReader",
+          "Open",
+          "Expire",
+          "ForeignBind",
+          "Expire",
+          "DestroyEndpoint",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Open",
+          "Clear",
+          "ForeignBind",
+          "Open",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Open",
+          "Clear"
+        ],
+      last: 1,
+      live: false,
+      offset: 0,
+      owner: false,
+      physical: false,
+      reader: false,
+      readerEpoch: 0,
+      route: 0,
+      through: 1
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      allowed: false,
+      epoch: 1,
+      expired: true,
+      history:
+        [
+          "Open",
+          "ForeignBind",
+          "DropOwner",
+          "Read",
+          "ForeignBind",
+          "Read",
+          "Read",
+          "Read",
+          "Clear",
+          "Bind",
+          "CloseReader",
+          "Open",
+          "Expire",
+          "ForeignBind",
+          "Expire",
+          "DestroyEndpoint",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Open",
+          "Clear",
+          "ForeignBind",
+          "Open",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Open",
+          "Clear",
+          "Open"
+        ],
+      last: -1,
+      live: false,
+      offset: 0,
+      owner: false,
+      physical: false,
+      reader: false,
+      readerEpoch: 0,
+      route: 0,
+      through: 1
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      allowed: false,
+      epoch: 1,
+      expired: true,
+      history:
+        [
+          "Open",
+          "ForeignBind",
+          "DropOwner",
+          "Read",
+          "ForeignBind",
+          "Read",
+          "Read",
+          "Read",
+          "Clear",
+          "Bind",
+          "CloseReader",
+          "Open",
+          "Expire",
+          "ForeignBind",
+          "Expire",
+          "DestroyEndpoint",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Open",
+          "Clear",
+          "ForeignBind",
+          "Open",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Open",
+          "Clear",
+          "Open",
+          "Open"
+        ],
+      last: -1,
+      live: false,
+      offset: 0,
+      owner: false,
+      physical: false,
+      reader: false,
+      readerEpoch: 0,
+      route: 0,
+      through: 1
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      allowed: false,
+      epoch: 1,
+      expired: true,
+      history:
+        [
+          "Open",
+          "ForeignBind",
+          "DropOwner",
+          "Read",
+          "ForeignBind",
+          "Read",
+          "Read",
+          "Read",
+          "Clear",
+          "Bind",
+          "CloseReader",
+          "Open",
+          "Expire",
+          "ForeignBind",
+          "Expire",
+          "DestroyEndpoint",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Open",
+          "Clear",
+          "ForeignBind",
+          "Open",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Open",
+          "Clear",
+          "Open",
+          "Open",
+          "Open"
+        ],
+      last: -1,
+      live: false,
+      offset: 0,
+      owner: false,
+      physical: false,
+      reader: false,
+      readerEpoch: 0,
+      route: 0,
+      through: 1
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      allowed: false,
+      epoch: 1,
+      expired: true,
+      history:
+        [
+          "Open",
+          "ForeignBind",
+          "DropOwner",
+          "Read",
+          "ForeignBind",
+          "Read",
+          "Read",
+          "Read",
+          "Clear",
+          "Bind",
+          "CloseReader",
+          "Open",
+          "Expire",
+          "ForeignBind",
+          "Expire",
+          "DestroyEndpoint",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Open",
+          "Clear",
+          "ForeignBind",
+          "Open",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Open",
+          "Clear",
+          "Open",
+          "Open",
+          "Open",
+          "ForeignBind"
+        ],
+      last: -1,
+      live: false,
+      offset: 0,
+      owner: false,
+      physical: false,
+      reader: false,
+      readerEpoch: 0,
+      route: 0,
+      through: 1
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      allowed: false,
+      epoch: 1,
+      expired: true,
+      history:
+        [
+          "Open",
+          "ForeignBind",
+          "DropOwner",
+          "Read",
+          "ForeignBind",
+          "Read",
+          "Read",
+          "Read",
+          "Clear",
+          "Bind",
+          "CloseReader",
+          "Open",
+          "Expire",
+          "ForeignBind",
+          "Expire",
+          "DestroyEndpoint",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Open",
+          "Clear",
+          "ForeignBind",
+          "Open",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Open",
+          "Clear",
+          "Open",
+          "Open",
+          "Open",
+          "ForeignBind",
+          "Open"
+        ],
+      last: -1,
+      live: false,
+      offset: 0,
+      owner: false,
+      physical: false,
+      reader: false,
+      readerEpoch: 0,
+      route: 0,
+      through: 1
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      allowed: false,
+      epoch: 1,
+      expired: true,
+      history:
+        [
+          "Open",
+          "ForeignBind",
+          "DropOwner",
+          "Read",
+          "ForeignBind",
+          "Read",
+          "Read",
+          "Read",
+          "Clear",
+          "Bind",
+          "CloseReader",
+          "Open",
+          "Expire",
+          "ForeignBind",
+          "Expire",
+          "DestroyEndpoint",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Open",
+          "Clear",
+          "ForeignBind",
+          "Open",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Open",
+          "Clear",
+          "Open",
+          "Open",
+          "Open",
+          "ForeignBind",
+          "Open",
+          "ForeignBind"
+        ],
+      last: -1,
+      live: false,
+      offset: 0,
+      owner: false,
+      physical: false,
+      reader: false,
+      readerEpoch: 0,
+      route: 0,
+      through: 1
+    }
+}
+
+[ok] No violation found (413ms at 484 traces/second).
+Trace length statistics: max=36, min=36, average=36.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

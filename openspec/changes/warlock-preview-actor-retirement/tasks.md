@@ -270,3 +270,15 @@ with unchanged physical/proof/deadline oracles. Current shared-host Elm/assets
 remain byte-identical to held108/107/106; no controlled Core/WebKit activation
 or actual Wayland-window detachment/replacement URI qualification follows.
 See GUI109/DETACHMENT-HANDOFF.md and the exact component-report109 inventory.
+
+- [x] Implement and CPU-qualify CONTROL-023 native read capability destruction,
+      receiver replacement and stable monotonic reference-counted URI routing.
+- [ ] Qualify actual WebKit callback ownership, late requests and controlled
+      same-Active-window realm replacement on the owning native/Core tuple.
+
+GUI110 new native URI capability/router is inactive. C66 controls/four real
+sealed mappings/three compiled guard variants and16 selected Quint/24 actual
+C traces/320 state comparisons/200 samples pass. Full96 retains all original95
+commands plus the router translation unit; original four resource regressions
+pass on changed URI source. Actual WebKit callback registration, controlled
+renderer realm/outbox and Core/Wayland-window detachment remain open.

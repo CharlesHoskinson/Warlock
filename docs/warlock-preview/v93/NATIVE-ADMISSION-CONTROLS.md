@@ -346,3 +346,26 @@ The exact actual C/SCM_RIGHTS/GIO/model/cohort/current build/regression scope an
 four retained fixture failures are in GUI109/DETACHMENT-HANDOFF.md and
 component-report109.json. Typed frontend realm wrappers, safe WebKit URI
 lifetime/routing and actual controlled Core/Wayland qualification remain open.
+
+EARS CONTROL-023: When a native WebKit preview route outlives a controlled
+Endpoint or its receiver realm, each callback SHALL use a lifetime-safe native
+read capability bound to the original Shared state, Endpoint lifetime, Native
+binding, receiver identity and epoch. The capability SHALL reject retired,
+replaced, foreign or destroyed owners before allocating a reader, including
+when existing readers retain original storage. Endpoint destruction SHALL
+revoke that lifetime under the same mutex as native reads; retaining a callback
+SHALL NOT retain or fabricate application/producer authority. A stable native
+router SHALL retain its original binding and monotonic realm frontier through
+clear/rebind, refuse stale epochs and require its creator thread for mutation.
+WebKit context callback ownership SHALL retain the router independently of the
+C owner's reference and release it on context destruction. Existing URI nonce,
+native time/privacy/source authorization, read limits and physical/proof/reader
+cleanup barriers SHALL remain mandatory. These routing lifetime facts SHALL
+NOT certify actual WebKit/Core capture or authorize replay of Unknown effects.
+
+CONTROL-023 native read capability/stable reference-counted router/new WebKit
+dispatcher are implemented and CPU-qualified, compiled but inactive in GUI110.
+C66/four sealed mappings/three guard variants/model16/24/320/200 samples/full96
+retaining original95/current resource and scoped-detachment regressions pass.
+Two model fixture failures retained; actual WebKit callback registration/
+controlled Core/Wayland-window/native renderer realm outbox remain open.

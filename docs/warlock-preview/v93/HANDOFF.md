@@ -85,8 +85,12 @@ already passed and the fresh runner records their exact count unchanged.
 No GUI108 actual Core/WebKit or live-window detachment acceptance follows.
 Exact evidence is in component-report108.json and GUI108/BOOTSTRAP-HANDOFF.md.
 
-Next freeze/publication77 for GUI109 scoped C detachment; then fresh110 for
-safe WebKit URI endpoint lifetime/routing and typed frontend realm freshness.
+GUI109 is held and public77 33f0afa16104467c36dc8aea9a75d028a0d55aef,
+7151 exact owned blobs; source25efdc897243360a0e4878036b1768418902f2b6,
+receipt435d99e329de62444bdb22a6413d0cc0b0391d36.
+Next freeze/publication78 for GUI110 safe URI callback lifetime, then fresh
+Native130 requalification of current GUI110 legacy routes on core16/plugin19
+with every original129/128/126 control/allocator/expiry/deadline/cleanup retained.
 Keep all original physical, terminal ACK, processing and confirmation barriers.
 Current108 controlled
 factory/resource protocol still needs actual Core integration and shared-host
@@ -116,3 +120,13 @@ comparisons/250 samples/five compiled variants/current full95/original four
 resource/capture/ticket/FD regressions. Four fixture failures remain. Current
 shared-host controlled activation/actual Core/WebKit/Wayland-window detachment
 and replacement URI qualification/full release remain open.
+
+GUI110 lifetime-safe URI capability/router/new dispatcher implemented, compiled
+and inactive:66 actual C/GIO/four real sealed FD mapping controls/three compiled
+guard variants;16 selected Quint/24 actual C traces/320 state comparisons/200
+samples. Full96 retains every original95 plus router compilation. All four
+original resource/capture/ticket/FD and all four current scoped detachment
+regressions pass on changed URI source. Two failed model fixtures retained.
+See GUI110/URI-LIFETIME-HANDOFF.md and component-report110.json. New actual
+WebKit context/router registration and controlled realm/frontend native outbox
+activation remain open. Current actual native baseline still GUI92/native129.
