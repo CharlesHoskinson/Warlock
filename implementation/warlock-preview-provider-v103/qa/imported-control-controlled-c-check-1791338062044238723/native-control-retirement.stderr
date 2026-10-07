@@ -1,0 +1,45 @@
+Live legacy owner blocks controlled namespace before native effects
+
+=================================================================
+==3299768==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 16 byte(s) in 1 object(s) allocated from:
+    #0 0x7f15bbf2d2a1 in operator new(unsigned long) (/usr/lib/libasan.so.8+0x12d2a1) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+    #1 0x55f93f0d43c9 in warlock_preview_bootstrap_open (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v103/qa/imported-control-controlled-c-check-1791338062044238723/checks+0x7b33c9) (BuildId: 42b2172f37b42d928833da3e197420e749e0b6af)
+    #2 0x55f93eea2d24 in main (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v103/qa/imported-control-controlled-c-check-1791338062044238723/checks+0x581d24) (BuildId: 42b2172f37b42d928833da3e197420e749e0b6af)
+    #3 0x7f15baa27780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #4 0x7f15baa278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #5 0x55f93ee94f84 in _start (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v103/qa/imported-control-controlled-c-check-1791338062044238723/checks+0x573f84) (BuildId: 42b2172f37b42d928833da3e197420e749e0b6af)
+
+Indirect leak of 808 byte(s) in 1 object(s) allocated from:
+    #0 0x7f15bbf2d2a1 in operator new(unsigned long) (/usr/lib/libasan.so.8+0x12d2a1) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+    #1 0x55f93f0eae6a in std::__detail::_MakeUniq<preview::bridge::Native>::__single_object std::make_unique<preview::bridge::Native, int, unsigned long, char const*, char const*, char const*>(int&&, unsigned long&&, char const*&&, char const*&&, char const*&&) (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v103/qa/imported-control-controlled-c-check-1791338062044238723/checks+0x7c9e6a) (BuildId: 42b2172f37b42d928833da3e197420e749e0b6af)
+    #2 0x55f93f0d4855 in warlock_preview_bootstrap_open (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v103/qa/imported-control-controlled-c-check-1791338062044238723/checks+0x7b3855) (BuildId: 42b2172f37b42d928833da3e197420e749e0b6af)
+    #3 0x55f93eea2d24 in main (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v103/qa/imported-control-controlled-c-check-1791338062044238723/checks+0x581d24) (BuildId: 42b2172f37b42d928833da3e197420e749e0b6af)
+    #4 0x7f15baa27780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #5 0x7f15baa278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #6 0x55f93ee94f84 in _start (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v103/qa/imported-control-controlled-c-check-1791338062044238723/checks+0x573f84) (BuildId: 42b2172f37b42d928833da3e197420e749e0b6af)
+
+Indirect leak of 65 byte(s) in 1 object(s) allocated from:
+    #0 0x7f15bbf2d2a1 in operator new(unsigned long) (/usr/lib/libasan.so.8+0x12d2a1) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+    #1 0x7f15bb76e060 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/usr/lib/libstdc++.so.6+0x16e060) (BuildId: 5b8d3de442de987b24d0e3679533068f2ae62497)
+    #2 0x55f93f0e7a80 in preview::bridge::Native::Native(int, unsigned long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v103/qa/imported-control-controlled-c-check-1791338062044238723/checks+0x7c6a80) (BuildId: 42b2172f37b42d928833da3e197420e749e0b6af)
+    #3 0x55f93f0eb06a in std::__detail::_MakeUniq<preview::bridge::Native>::__single_object std::make_unique<preview::bridge::Native, int, unsigned long, char const*, char const*, char const*>(int&&, unsigned long&&, char const*&&, char const*&&, char const*&&) (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v103/qa/imported-control-controlled-c-check-1791338062044238723/checks+0x7ca06a) (BuildId: 42b2172f37b42d928833da3e197420e749e0b6af)
+    #4 0x55f93f0d4855 in warlock_preview_bootstrap_open (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v103/qa/imported-control-controlled-c-check-1791338062044238723/checks+0x7b3855) (BuildId: 42b2172f37b42d928833da3e197420e749e0b6af)
+    #5 0x55f93eea2d24 in main (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v103/qa/imported-control-controlled-c-check-1791338062044238723/checks+0x581d24) (BuildId: 42b2172f37b42d928833da3e197420e749e0b6af)
+    #6 0x7f15baa27780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #7 0x7f15baa278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #8 0x55f93ee94f84 in _start (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v103/qa/imported-control-controlled-c-check-1791338062044238723/checks+0x573f84) (BuildId: 42b2172f37b42d928833da3e197420e749e0b6af)
+
+Indirect leak of 21 byte(s) in 1 object(s) allocated from:
+    #0 0x7f15bbf2d2a1 in operator new(unsigned long) (/usr/lib/libasan.so.8+0x12d2a1) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+    #1 0x55f93eec0df2 in void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v103/qa/imported-control-controlled-c-check-1791338062044238723/checks+0x59fdf2) (BuildId: 42b2172f37b42d928833da3e197420e749e0b6af)
+    #2 0x55f93eec14b4 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v103/qa/imported-control-controlled-c-check-1791338062044238723/checks+0x5a04b4) (BuildId: 42b2172f37b42d928833da3e197420e749e0b6af)
+    #3 0x55f93f0eafb1 in std::__detail::_MakeUniq<preview::bridge::Native>::__single_object std::make_unique<preview::bridge::Native, int, unsigned long, char const*, char const*, char const*>(int&&, unsigned long&&, char const*&&, char const*&&, char const*&&) (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v103/qa/imported-control-controlled-c-check-1791338062044238723/checks+0x7c9fb1) (BuildId: 42b2172f37b42d928833da3e197420e749e0b6af)
+    #4 0x55f93f0d4855 in warlock_preview_bootstrap_open (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v103/qa/imported-control-controlled-c-check-1791338062044238723/checks+0x7b3855) (BuildId: 42b2172f37b42d928833da3e197420e749e0b6af)
+    #5 0x55f93eea2d24 in main (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v103/qa/imported-control-controlled-c-check-1791338062044238723/checks+0x581d24) (BuildId: 42b2172f37b42d928833da3e197420e749e0b6af)
+    #6 0x7f15baa27780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #7 0x7f15baa278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #8 0x55f93ee94f84 in _start (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v103/qa/imported-control-controlled-c-check-1791338062044238723/checks+0x573f84) (BuildId: 42b2172f37b42d928833da3e197420e749e0b6af)
+
+SUMMARY: AddressSanitizer: 910 byte(s) leaked in 4 allocation(s).

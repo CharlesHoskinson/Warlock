@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "sourceHeld": true,
+  "passed": true,
+  "nativeActorQuotaReport": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v102/qa/imported-control-retirement-check-v2-1791336099525832615/report.json",
+  "nativeActorModelReport": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v102/qa/actor-control-check-v2-1791336574474154721/report.json",
+  "nativeActorScenarios": 15,
+  "nativeActorTraces": 23,
+  "nativeActorStates": 316,
+  "nativeActorCompiledVariants": 4,
+  "nativeActorMetadataControls": 7809,
+  "metadataActorsTurnedOver": 260,
+  "uninterruptedNativeIssuedPrefix": 1040,
+  "nativeJobModelReport": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v102/qa/job-control-check-1791336366078665606/report.json",
+  "reservationReport": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v102/qa/control-reservations-check-v4-1791336525715477962/report.json",
+  "admissionReport": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v102/qa/control-admission-check-v4-1791336366076879179/report.json",
+  "nativeQuotaReport": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v102/qa/control-quota-check-1791336672840883460/report.json",
+  "compiledElmNativeQuotaControls": 69,
+  "fullBuildReport": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v102/qa/build-1791336366080599241/report.json",
+  "fullBuildCommands": 95,
+  "heldFailedReports": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v102/qa/imported-control-retirement-check-1791336045708709272/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v102/qa/actor-control-check-1791336318488735919/report.json"
+  ],
+  "webKitActivated": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "Actual opt-in native all-map retirement preserves original physical/proof/receiver barriers plus old job control confirmation before fresh permanent query. Native-dispatched readiness and currently invoking exact final ACK guard effects. Actual final processing plus original frontend confirmation independently precede actor credit reclamation; confirmed Unknown final handlers retain journal/credits and cannot be reinvoked by ticket retry.7809 controls across260 metadata actors,one original epoch and1040 uninterrupted issued tickets.15 selected actor Quint scenarios/23 compiled native traces/316 states/four compiled variants; job15/23/299/four,bank11/23/397/four+64controls,admission15/23/191/six all requalified;69 optimized Elm/nativeBroker/realURI controls;95 full-host build. Synthetic authenticated socket/native metadata, no real windows/captured FD/backend lock/compiled Elm retirement/WebKit or real actor-host close acceptance. Initial quota-count fixture failure and mutation-unused-parameter compile failure retained. Completed-actor binding-close helper requires permanent native retirement; live-window binding detachment is a separate open contract. C factory/routing,reconciliation,native-assigned renderer outbox/WebKit,capture/full release gates remain. Qualified runtime GUI92/native128/core16/plugin18 unchanged."
+}

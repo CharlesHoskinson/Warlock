@@ -448,3 +448,94 @@ Reconciliation of unretained or Unknown outcomes remains a separate native gate.
 - GIVEN no matching original native terminal proof
 - WHEN a renderer proposes a terminal acknowledgment
 - THEN native refuses before consuming reserved cleanup or issuing an ordinal.
+
+EARS WLK-PREVIEW-CONTROL-012: WHEN controlled native actor retirement proceeds,
+the original mapping/export/backend/reader/proof and other-receiver barriers
+SHALL precede job-credit release. Original job control confirmation SHALL precede
+the fresh permanent native retirement query. The existing all-map transaction
+SHALL mark control actor retirement without a separate fallible post-commit
+operation. Readiness SHALL reference an exact native-issued dispatched ticket;
+final processing ACK SHALL reference an exact original completion and a currently
+invoking native ticket. Actor credits SHALL remain until both the final native
+processing effect and original frontend confirmation have occurred. A confirmed
+Unknown final effect SHALL retain the journal and actor credits, SHALL prevent
+binding close and SHALL NOT be reinvoked by a transport retry. Completed actor
+credit collection SHALL preserve original entry/ordinal/receiver frontiers.
+The completed-actor binding-close helper SHALL require all original obligations
+and delivery barriers; it SHALL NOT substitute for live-actor binding detachment
+or permit a new issuer under the retired original grant.
+
+#### Scenario: Final handler returns Unknown and delivery is confirmed
+- GIVEN a native-retired actor and its original final processing ticket
+- WHEN the dispatcher returns with an Unknown effect and the original frontend
+  confirms that delivery receipt
+- THEN the native journal and actor cleanup credits remain, binding close refuses,
+  and exact ticket retries repeat delivery metadata without another invocation.
+
+#### Scenario: Native job is settled but its control ACK is unconfirmed
+- GIVEN original physical and terminal proof settlement and exact dispatched
+  readiness, but no frontend confirmation of the old job's control ACK
+- WHEN native actor removal is attempted
+- THEN no fresh permanent-retirement query or all-map removal occurs; after
+  confirmation the original retained readiness can proceed through native polling.
+
+#### Scenario: Completed actors continue through bounded cleanup capacity
+- GIVEN each preceding actor completed its original retirement/final processing
+  and frontend confirmation
+- WHEN new native actors reuse reclaimed transport capacity
+- THEN original receiver epoch, entry issuance and command ordinals continue
+  monotonically; previously closed serials never become eligible again.
+
+EARS WLK-PREVIEW-CONTROL-013: WHEN native accepts exact original retirement
+readiness, it SHALL retain the immutable accepted command bytes before publishing
+acceptance and SHALL use those bytes for subsequent native polling. Equivalent
+JSON formatting SHALL NOT reconstruct or replace an existing ticket identity.
+The retained readiness SHALL stay bounded and correlated with its original
+receiver, actor and observation. Retries SHALL continue to use the original
+physical/proof and frontend confirmation barriers.
+
+#### Scenario: Readiness carries valid whitespace and retirement is delayed
+- GIVEN a valid original native-issued readiness command with preserved whitespace
+  and an unconfirmed preceding job-control ACK
+- WHEN native retains readiness, then later receives original ACK confirmation
+- THEN polling uses the exact accepted bytes and can complete original retirement
+  without reconstructing JSON or assigning another ticket.
+
+EARS WLK-PREVIEW-CONTROL-014: WHEN a controlled C provider opens, it SHALL claim
+one namespace on the original native transport only after live legacy preview
+providers are absent, enroll its actual receiver before admission and derive its
+epoch from the owning endpoint. Reload SHALL retain that owner and its namespace.
+Legacy C controls SHALL refuse a controlled owner. The native C dispatcher SHALL
+invoke only an original native-owned immutable ticket under its actual target,
+binding and epoch, preserve contiguous at-most-once delivery, and return delivery
+metadata independently of effect success. An Unknown handler outcome SHALL
+preserve both its delivery receipt and original obligations. The actual source
+grant-retirement protocol, live-binding detachment and native reconciliation SHALL
+remain distinct from permanent incarnation retirement and transport confirmation.
+
+#### Scenario: Raw C controls enter a controlled namespace
+- GIVEN one controlled owner on the original transport and receipt endpoint
+- WHEN a legacy command, retirement control or bootstrap proof ACK is submitted
+- THEN it is refused before effect invocation; a second controlled or legacy
+  provider cannot borrow that namespace or reset its receiver epoch.
+
+#### Scenario: An issued command fails during native dispatch
+- GIVEN an exact native-owned next ticket for the original receiver
+- WHEN its handler returns an error
+- THEN the original dispatcher-return receipt remains available, the outstanding
+  effect obligations remain owned, and retry can only echo that receipt.
+
+#### Scenario: Original core exits after returning the latest ticket
+- GIVEN the latest exact native ticket already returned
+- WHEN the original core exits normally before frontend confirmation
+- THEN cached receipt access, exact latest-ticket echo and original prefix
+  confirmation remain available without another core query or handler invocation.
+  New effects require a live original core; confirmation alone grants no cleanup.
+
+#### Scenario: Broker records drain while actor cleanup remains
+- GIVEN terminal proofs have drained the actual Broker records
+- WHEN the actor still owns a frame, retirement completion or unconfirmed control
+- THEN the controlled provider is not empty and close retains the owner.
+  Completed-actor binding closure requires original all-map actor retirement,
+  final processing, every issued ticket confirmation and quota release.
+  Live-window binding detachment remains an independent unmet contract.

@@ -1,0 +1,15 @@
+In file included from native/imported_clients.hpp:8,
+                 from native/actor-retirement-channel-test-v2.cpp:2,
+                 from native/imported-control-readiness-bytes-test.cpp:2:
+native/retirement_journal.hpp: In member function ‘bool preview::bridge::RetirementJournal::retain(uint64_t, uint64_t, uint64_t, const preview::bridge::IncarnationRetirement&)’:
+native/retirement_journal.hpp:82:65: error: missing initializer for member ‘preview::bridge::RetirementJournal::Row::acceptedReady’ [-Werror=missing-field-initializers]
+   82 |         rows_.emplace(entry,Row{observation,{},0,std::move(wire)});
+      |                                                                 ^
+cc1plus: all warnings being treated as errors
+In file included from native/imported_clients.hpp:8,
+                 from native/imported-clients.cpp:2:
+native/retirement_journal.hpp: In member function ‘bool preview::bridge::RetirementJournal::retain(uint64_t, uint64_t, uint64_t, const preview::bridge::IncarnationRetirement&)’:
+native/retirement_journal.hpp:82:65: error: missing initializer for member ‘preview::bridge::RetirementJournal::Row::acceptedReady’ [-Werror=missing-field-initializers]
+   82 |         rows_.emplace(entry,Row{observation,{},0,std::move(wire)});
+      |                                                                 ^
+cc1plus: all warnings being treated as errors

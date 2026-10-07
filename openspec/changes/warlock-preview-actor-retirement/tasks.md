@@ -169,3 +169,36 @@ overbroad first freezer glob remain preserved. Controlled C factory/routing,
 physical and actor quota release, receiver reconciliation and renderer/WebKit
 activation remain required. See
 [the component report](../../../docs/warlock-preview/v93/component-report101.json).
+
+Held GUI102 qualifies the opt-in native quota retirement path with7809 controls
+across260 metadata actors and1040 uninterrupted native-issued tickets. Its actor
+Quint model executes15 selected scenarios/23 coupled native traces/316 states,
+detecting four compiled unsafe variants, including a confirmed Unknown final
+effect that must retain its journal and credits. Original job, reservation and
+admission coupled checks pass again, as do69 optimized Elm/native Broker/real URI
+controls and the95-command full-host build. These use an authenticated synthetic
+Native source, with no real windows/captured FD/backend lock/Elm retirement route
+or WebKit; real turnover and host close remain open. Initial fixture credit-count
+failure and the first mutation's unused-parameter compile failure are retained.
+The strict completed-actor close helper does not qualify detachment with live
+native windows. Controlled C factory/ticket routing, explicit live-binding
+detachment, original receiver reconciliation and renderer/WebKit activation are
+the next work. See
+[the component report](../../../docs/warlock-preview/v93/component-report102.json).
+
+GUI103 completes the opt-in controlled C factory and ticket routing at component
+scope.10190 controls across260 metadata actors/1041 uninterrupted native tickets
+pass through the actual C bootstrap/socket/provider/Coordinator/Broker/journal.
+The corrected C fixture validates raw bypass refusal, original ticket ownership,
+exact failed-handler receipt retries, confirmation, completed-actor close and
+cached receipt access after synthetic core exit. Readiness polling preserves
+original raw bytes through the separate7809-control whitespace witness. Five
+unsafe C variants compile and fail their actual fixture assertions; an earlier
+server failure is retained without being counted. Actor15/23/316/four, job15/23/299/
+four, reservation11/23/397/four plus64 adversarial controls and admission15/23/191/
+six pass again.69 optimized Elm/native Broker/real URI controls,95 full-host
+commands and all12 unchanged original regression suites pass on this source.
+No real capture, WebKit activation or live-window binding detachment is accepted.
+Next: explicit preview binding quiescence/detachment, native reconciliation and
+capture Unknown settlement, then native-assigned renderer tickets and WebKit.
+The qualified runtime and every original full-release gate remain unchanged.

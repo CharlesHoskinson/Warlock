@@ -111,3 +111,76 @@ by retained native actor ownership and is replaced only after the next job's
 independent settlement. It carries no live bank ticket or native cleanup proof.
 Controlled C factory, actual capture, actor/quota final release, reconciliation,
 native-assigned renderer transport and WebKit activation remain required.
+
+EARS CONTROL-012: WHEN the actual controlled actor retires, independent original
+physical/proof/other-receiver barriers SHALL precede job-credit release, and
+original old-control confirmation SHALL precede a fresh permanent native query.
+The existing all-map transaction SHALL mark control actor retirement without a
+new fallible post-commit operation. Native-issued dispatched readiness and an
+exact currently invoking final ACK ticket SHALL guard their respective effects.
+Actor credits SHALL remain until actual final processing and original frontend
+confirmation both occur. Confirmed Unknown effects SHALL retain original native
+journal/actor credits, refuse binding close and receive no effect reinvocation
+from transport retry. Collection SHALL preserve all original issuance frontiers.
+
+GUI102 implements these additional barriers in the actual opt-in aggregate
+retirement path. The260-actor check uses an authenticated synthetic Native socket
+and actual metadata actors, Coordinator/Broker, receiver, journal and C prefix.
+It uses no real windows, captured FD, backend lock or compiled Elm/WebKit route;
+it does not close the real native/Elm turnover or host shutdown release gate.
+The strict completed-actor binding-close helper applies after permanent native
+retirement and confirmation. Closing a presentation or detaching a binding with
+live native windows requires a separate explicit native namespace-detachment
+contract and must not infer permanent incarnation retirement. Controlled C
+factory/routing, this live-binding detachment, reconciliation, renderer tickets
+and WebKit activation remain required.
+
+EARS CONTROL-013: WHEN native accepts exact retirement readiness, it SHALL retain
+its immutable original bytes before publishing acceptance and SHALL use those
+bytes during later native polling. Semantically equivalent JSON formatting SHALL
+NOT replace an original issued ticket. Retained bytes SHALL remain bounded and
+correlated with the original receiver/actor/observation; all physical/proof and
+frontend-confirmation barriers still apply.
+
+GUI103's original whitespace witness fails because the old journal reconstructed
+readiness during polling, invalidating the exact native ticket. The failed
+authenticated-socket fixture is retained. The fresh journal stores the accepted
+raw readiness before setting its accepted flag and later copies that same wire.
+The first fix compile exposed an uninitialized aggregate member under-Werror;
+that failed compile is retained and the member now has an explicit empty default.
+
+EARS CONTROL-014: WHEN the controlled C provider opens, it SHALL claim one native
+preview namespace without a live legacy preview provider, enroll the actual
+receiver before initial admission and derive its original endpoint epoch.
+Reload SHALL retain the same owner rather than reset the old namespace. Legacy
+raw C controls SHALL refuse controlled owners. The C dispatcher SHALL invoke only
+native-issued original immutable tickets and preserve contiguous at-most-once
+delivery under the actual receiver/binding/epoch. A returned delivery receipt
+SHALL certify only dispatcher return; an Unknown outcome SHALL retain both that
+receipt and original obligations. Live-binding detachment, actual native grant
+retirement/reconciliation and renderer/WebKit activation remain separate gates.
+
+GUI103 now provides an explicit controlled C factory and native purpose proposal,
+dispatch, receipt and confirmation APIs. The actual Native transport records one
+controlled namespace; live legacy C owners hold leases, and controlled opening
+requires their absence. Raw imported commands, retirement controls and bootstrap
+proof ACKs refuse the controlled namespace. The dispatcher validates the actual
+creator thread, receiver, borrowed same Endpoint receipt capability, original
+binding/epoch, native-owned exact ticket and contiguous prefix before invocation.
+The exact latest returned ticket may echo its cached receipt after core exit;
+receipt confirmation uses the original cached grant and cannot invoke effects.
+An error after invocation records dispatcher return while retaining Unknown
+obligations. The controlled empty/close path independently checks original actor
+maps, journal, reservations and every issued ticket confirmation. It closes only
+the completed-actor binding; live-window detachment remains open.
+
+The actual controlled C fixture passes260 metadata actors/1041 uninterrupted
+native tickets, including a nonfinal proof ACK handler refusal that retains the
+Broker record, exact retries, confirmed predecessor suppression, raw bypass and
+foreign/gap refusal, final ACK after C subject erasure, actor quota reclamation
+only after final confirmation, and cached receipt/confirmation after actual
+synthetic core normal exit. This is authenticated synthetic Native socket/C
+bootstrap/Coordinator/Broker/journal evidence, with no real windows or capture.
+The first C fixture incorrectly compared two calls to the advancing `next()`
+allocator as equal. Its failed report is retained; the fresh fixture corrects
+only the allocator arithmetic, with production source unchanged.

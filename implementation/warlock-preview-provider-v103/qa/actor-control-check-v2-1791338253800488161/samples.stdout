@@ -1,0 +1,1313 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      accepted: false,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 1,
+      delivered: 2,
+      final: false,
+      frames: 1,
+      history: [],
+      issued: 2,
+      jobs: 1,
+      journal: 1,
+      last: 0,
+      previous: 0,
+      ready: false,
+      removed: false,
+      reserved: 6,
+      tickets: 2,
+      unknown: false
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      accepted: false,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 1,
+      delivered: 2,
+      final: false,
+      frames: 1,
+      history: ["Ready"],
+      issued: 3,
+      jobs: 1,
+      journal: 1,
+      last: 1,
+      previous: 0,
+      ready: true,
+      removed: false,
+      reserved: 5,
+      tickets: 3,
+      unknown: false
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      accepted: false,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 1,
+      delivered: 2,
+      final: false,
+      frames: 1,
+      history: ["Ready", "ForeignReceiver"],
+      issued: 3,
+      jobs: 1,
+      journal: 1,
+      last: -1,
+      previous: 0,
+      ready: true,
+      removed: false,
+      reserved: 5,
+      tickets: 3,
+      unknown: false
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      accepted: true,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 1,
+      delivered: 3,
+      final: false,
+      frames: 1,
+      history: ["Ready", "ForeignReceiver", "DeliverReady"],
+      issued: 3,
+      jobs: 1,
+      journal: 1,
+      last: 1,
+      previous: 0,
+      ready: true,
+      removed: false,
+      reserved: 5,
+      tickets: 3,
+      unknown: false
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      accepted: true,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 3,
+      delivered: 3,
+      final: false,
+      frames: 1,
+      history: ["Ready", "ForeignReceiver", "DeliverReady", "ConfirmAll"],
+      issued: 3,
+      jobs: 1,
+      journal: 1,
+      last: 1,
+      previous: 0,
+      ready: true,
+      removed: false,
+      reserved: 5,
+      tickets: 3,
+      unknown: false
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      accepted: true,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 3,
+      delivered: 3,
+      final: false,
+      frames: 1,
+      history:
+        ["Ready", "ForeignReceiver", "DeliverReady", "ConfirmAll", "RawFinal"],
+      issued: 3,
+      jobs: 1,
+      journal: 1,
+      last: -1,
+      previous: 0,
+      ready: true,
+      removed: false,
+      reserved: 5,
+      tickets: 3,
+      unknown: false
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      accepted: true,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 3,
+      delivered: 3,
+      final: false,
+      frames: 1,
+      history:
+        [
+          "Ready",
+          "ForeignReceiver",
+          "DeliverReady",
+          "ConfirmAll",
+          "RawFinal",
+          "Collect"
+        ],
+      issued: 3,
+      jobs: 1,
+      journal: 1,
+      last: 0,
+      previous: 0,
+      ready: true,
+      removed: false,
+      reserved: 5,
+      tickets: 3,
+      unknown: false
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      accepted: true,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 3,
+      delivered: 3,
+      final: false,
+      frames: 1,
+      history:
+        [
+          "Ready",
+          "ForeignReceiver",
+          "DeliverReady",
+          "ConfirmAll",
+          "RawFinal",
+          "Collect",
+          "ConfirmAll"
+        ],
+      issued: 3,
+      jobs: 1,
+      journal: 1,
+      last: 1,
+      previous: 0,
+      ready: true,
+      removed: false,
+      reserved: 5,
+      tickets: 3,
+      unknown: false
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      accepted: true,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 3,
+      delivered: 3,
+      final: false,
+      frames: 1,
+      history:
+        [
+          "Ready",
+          "ForeignReceiver",
+          "DeliverReady",
+          "ConfirmAll",
+          "RawFinal",
+          "Collect",
+          "ConfirmAll",
+          "DeliverFinal"
+        ],
+      issued: 3,
+      jobs: 1,
+      journal: 1,
+      last: 0,
+      previous: 0,
+      ready: true,
+      removed: false,
+      reserved: 5,
+      tickets: 3,
+      unknown: false
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      accepted: true,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 3,
+      delivered: 3,
+      final: false,
+      frames: 1,
+      history:
+        [
+          "Ready",
+          "ForeignReceiver",
+          "DeliverReady",
+          "ConfirmAll",
+          "RawFinal",
+          "Collect",
+          "ConfirmAll",
+          "DeliverFinal",
+          "RawFinal"
+        ],
+      issued: 3,
+      jobs: 1,
+      journal: 1,
+      last: -1,
+      previous: 0,
+      ready: true,
+      removed: false,
+      reserved: 5,
+      tickets: 3,
+      unknown: false
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      accepted: true,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 3,
+      delivered: 3,
+      final: false,
+      frames: 0,
+      history:
+        [
+          "Ready",
+          "ForeignReceiver",
+          "DeliverReady",
+          "ConfirmAll",
+          "RawFinal",
+          "Collect",
+          "ConfirmAll",
+          "DeliverFinal",
+          "RawFinal",
+          "Poll"
+        ],
+      issued: 3,
+      jobs: 0,
+      journal: 1,
+      last: 1,
+      previous: 1,
+      ready: true,
+      removed: true,
+      reserved: 2,
+      tickets: 1,
+      unknown: false
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      accepted: true,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 3,
+      delivered: 3,
+      final: true,
+      frames: 0,
+      history:
+        [
+          "Ready",
+          "ForeignReceiver",
+          "DeliverReady",
+          "ConfirmAll",
+          "RawFinal",
+          "Collect",
+          "ConfirmAll",
+          "DeliverFinal",
+          "RawFinal",
+          "Poll",
+          "FinalAck"
+        ],
+      issued: 4,
+      jobs: 0,
+      journal: 1,
+      last: 1,
+      previous: 1,
+      ready: true,
+      removed: true,
+      reserved: 1,
+      tickets: 2,
+      unknown: false
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      accepted: true,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 3,
+      delivered: 3,
+      final: true,
+      frames: 0,
+      history:
+        [
+          "Ready",
+          "ForeignReceiver",
+          "DeliverReady",
+          "ConfirmAll",
+          "RawFinal",
+          "Collect",
+          "ConfirmAll",
+          "DeliverFinal",
+          "RawFinal",
+          "Poll",
+          "FinalAck",
+          "ConfirmAll"
+        ],
+      issued: 4,
+      jobs: 0,
+      journal: 1,
+      last: 1,
+      previous: 1,
+      ready: true,
+      removed: true,
+      reserved: 1,
+      tickets: 2,
+      unknown: false
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      accepted: true,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 3,
+      delivered: 3,
+      final: true,
+      frames: 0,
+      history:
+        [
+          "Ready",
+          "ForeignReceiver",
+          "DeliverReady",
+          "ConfirmAll",
+          "RawFinal",
+          "Collect",
+          "ConfirmAll",
+          "DeliverFinal",
+          "RawFinal",
+          "Poll",
+          "FinalAck",
+          "ConfirmAll",
+          "Close"
+        ],
+      issued: 4,
+      jobs: 0,
+      journal: 1,
+      last: 0,
+      previous: 1,
+      ready: true,
+      removed: true,
+      reserved: 1,
+      tickets: 2,
+      unknown: false
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      accepted: true,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 3,
+      delivered: 3,
+      final: true,
+      frames: 0,
+      history:
+        [
+          "Ready",
+          "ForeignReceiver",
+          "DeliverReady",
+          "ConfirmAll",
+          "RawFinal",
+          "Collect",
+          "ConfirmAll",
+          "DeliverFinal",
+          "RawFinal",
+          "Poll",
+          "FinalAck",
+          "ConfirmAll",
+          "Close",
+          "Close"
+        ],
+      issued: 4,
+      jobs: 0,
+      journal: 1,
+      last: 0,
+      previous: 1,
+      ready: true,
+      removed: true,
+      reserved: 1,
+      tickets: 2,
+      unknown: false
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      accepted: true,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 3,
+      delivered: 3,
+      final: true,
+      frames: 0,
+      history:
+        [
+          "Ready",
+          "ForeignReceiver",
+          "DeliverReady",
+          "ConfirmAll",
+          "RawFinal",
+          "Collect",
+          "ConfirmAll",
+          "DeliverFinal",
+          "RawFinal",
+          "Poll",
+          "FinalAck",
+          "ConfirmAll",
+          "Close",
+          "Close",
+          "ForeignReceiver"
+        ],
+      issued: 4,
+      jobs: 0,
+      journal: 1,
+      last: -1,
+      previous: 1,
+      ready: true,
+      removed: true,
+      reserved: 1,
+      tickets: 2,
+      unknown: false
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      accepted: true,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 3,
+      delivered: 3,
+      final: true,
+      frames: 0,
+      history:
+        [
+          "Ready",
+          "ForeignReceiver",
+          "DeliverReady",
+          "ConfirmAll",
+          "RawFinal",
+          "Collect",
+          "ConfirmAll",
+          "DeliverFinal",
+          "RawFinal",
+          "Poll",
+          "FinalAck",
+          "ConfirmAll",
+          "Close",
+          "Close",
+          "ForeignReceiver",
+          "ConfirmAll"
+        ],
+      issued: 4,
+      jobs: 0,
+      journal: 1,
+      last: 1,
+      previous: 1,
+      ready: true,
+      removed: true,
+      reserved: 1,
+      tickets: 2,
+      unknown: false
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      accepted: true,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 3,
+      delivered: 3,
+      final: true,
+      frames: 0,
+      history:
+        [
+          "Ready",
+          "ForeignReceiver",
+          "DeliverReady",
+          "ConfirmAll",
+          "RawFinal",
+          "Collect",
+          "ConfirmAll",
+          "DeliverFinal",
+          "RawFinal",
+          "Poll",
+          "FinalAck",
+          "ConfirmAll",
+          "Close",
+          "Close",
+          "ForeignReceiver",
+          "ConfirmAll",
+          "FutureFinal"
+        ],
+      issued: 4,
+      jobs: 0,
+      journal: 1,
+      last: -1,
+      previous: 1,
+      ready: true,
+      removed: true,
+      reserved: 1,
+      tickets: 2,
+      unknown: false
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      accepted: true,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 3,
+      delivered: 3,
+      final: true,
+      frames: 0,
+      history:
+        [
+          "Ready",
+          "ForeignReceiver",
+          "DeliverReady",
+          "ConfirmAll",
+          "RawFinal",
+          "Collect",
+          "ConfirmAll",
+          "DeliverFinal",
+          "RawFinal",
+          "Poll",
+          "FinalAck",
+          "ConfirmAll",
+          "Close",
+          "Close",
+          "ForeignReceiver",
+          "ConfirmAll",
+          "FutureFinal",
+          "ConfirmJob"
+        ],
+      issued: 4,
+      jobs: 0,
+      journal: 1,
+      last: 1,
+      previous: 1,
+      ready: true,
+      removed: true,
+      reserved: 1,
+      tickets: 2,
+      unknown: false
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      accepted: true,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 3,
+      delivered: 3,
+      final: true,
+      frames: 0,
+      history:
+        [
+          "Ready",
+          "ForeignReceiver",
+          "DeliverReady",
+          "ConfirmAll",
+          "RawFinal",
+          "Collect",
+          "ConfirmAll",
+          "DeliverFinal",
+          "RawFinal",
+          "Poll",
+          "FinalAck",
+          "ConfirmAll",
+          "Close",
+          "Close",
+          "ForeignReceiver",
+          "ConfirmAll",
+          "FutureFinal",
+          "ConfirmJob",
+          "Collect"
+        ],
+      issued: 4,
+      jobs: 0,
+      journal: 1,
+      last: 0,
+      previous: 1,
+      ready: true,
+      removed: true,
+      reserved: 1,
+      tickets: 2,
+      unknown: false
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      accepted: true,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 3,
+      delivered: 3,
+      final: true,
+      frames: 0,
+      history:
+        [
+          "Ready",
+          "ForeignReceiver",
+          "DeliverReady",
+          "ConfirmAll",
+          "RawFinal",
+          "Collect",
+          "ConfirmAll",
+          "DeliverFinal",
+          "RawFinal",
+          "Poll",
+          "FinalAck",
+          "ConfirmAll",
+          "Close",
+          "Close",
+          "ForeignReceiver",
+          "ConfirmAll",
+          "FutureFinal",
+          "ConfirmJob",
+          "Collect",
+          "WrongObservation"
+        ],
+      issued: 4,
+      jobs: 0,
+      journal: 1,
+      last: -1,
+      previous: 1,
+      ready: true,
+      removed: true,
+      reserved: 1,
+      tickets: 2,
+      unknown: false
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      accepted: true,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 3,
+      delivered: 3,
+      final: true,
+      frames: 0,
+      history:
+        [
+          "Ready",
+          "ForeignReceiver",
+          "DeliverReady",
+          "ConfirmAll",
+          "RawFinal",
+          "Collect",
+          "ConfirmAll",
+          "DeliverFinal",
+          "RawFinal",
+          "Poll",
+          "FinalAck",
+          "ConfirmAll",
+          "Close",
+          "Close",
+          "ForeignReceiver",
+          "ConfirmAll",
+          "FutureFinal",
+          "ConfirmJob",
+          "Collect",
+          "WrongObservation",
+          "Poll"
+        ],
+      issued: 4,
+      jobs: 0,
+      journal: 1,
+      last: 1,
+      previous: 1,
+      ready: true,
+      removed: true,
+      reserved: 1,
+      tickets: 2,
+      unknown: false
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      accepted: true,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 3,
+      delivered: 3,
+      final: true,
+      frames: 0,
+      history:
+        [
+          "Ready",
+          "ForeignReceiver",
+          "DeliverReady",
+          "ConfirmAll",
+          "RawFinal",
+          "Collect",
+          "ConfirmAll",
+          "DeliverFinal",
+          "RawFinal",
+          "Poll",
+          "FinalAck",
+          "ConfirmAll",
+          "Close",
+          "Close",
+          "ForeignReceiver",
+          "ConfirmAll",
+          "FutureFinal",
+          "ConfirmJob",
+          "Collect",
+          "WrongObservation",
+          "Poll",
+          "RawFinal"
+        ],
+      issued: 4,
+      jobs: 0,
+      journal: 1,
+      last: -1,
+      previous: 1,
+      ready: true,
+      removed: true,
+      reserved: 1,
+      tickets: 2,
+      unknown: false
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      accepted: true,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 3,
+      delivered: 4,
+      final: true,
+      frames: 0,
+      history:
+        [
+          "Ready",
+          "ForeignReceiver",
+          "DeliverReady",
+          "ConfirmAll",
+          "RawFinal",
+          "Collect",
+          "ConfirmAll",
+          "DeliverFinal",
+          "RawFinal",
+          "Poll",
+          "FinalAck",
+          "ConfirmAll",
+          "Close",
+          "Close",
+          "ForeignReceiver",
+          "ConfirmAll",
+          "FutureFinal",
+          "ConfirmJob",
+          "Collect",
+          "WrongObservation",
+          "Poll",
+          "RawFinal",
+          "UnknownFinal"
+        ],
+      issued: 4,
+      jobs: 0,
+      journal: 1,
+      last: 1,
+      previous: 1,
+      ready: true,
+      removed: true,
+      reserved: 1,
+      tickets: 2,
+      unknown: true
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      accepted: true,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 3,
+      delivered: 4,
+      final: true,
+      frames: 0,
+      history:
+        [
+          "Ready",
+          "ForeignReceiver",
+          "DeliverReady",
+          "ConfirmAll",
+          "RawFinal",
+          "Collect",
+          "ConfirmAll",
+          "DeliverFinal",
+          "RawFinal",
+          "Poll",
+          "FinalAck",
+          "ConfirmAll",
+          "Close",
+          "Close",
+          "ForeignReceiver",
+          "ConfirmAll",
+          "FutureFinal",
+          "ConfirmJob",
+          "Collect",
+          "WrongObservation",
+          "Poll",
+          "RawFinal",
+          "UnknownFinal",
+          "DeliverReady"
+        ],
+      issued: 4,
+      jobs: 0,
+      journal: 1,
+      last: 0,
+      previous: 1,
+      ready: true,
+      removed: true,
+      reserved: 1,
+      tickets: 2,
+      unknown: true
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      accepted: true,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 4,
+      delivered: 4,
+      final: true,
+      frames: 0,
+      history:
+        [
+          "Ready",
+          "ForeignReceiver",
+          "DeliverReady",
+          "ConfirmAll",
+          "RawFinal",
+          "Collect",
+          "ConfirmAll",
+          "DeliverFinal",
+          "RawFinal",
+          "Poll",
+          "FinalAck",
+          "ConfirmAll",
+          "Close",
+          "Close",
+          "ForeignReceiver",
+          "ConfirmAll",
+          "FutureFinal",
+          "ConfirmJob",
+          "Collect",
+          "WrongObservation",
+          "Poll",
+          "RawFinal",
+          "UnknownFinal",
+          "DeliverReady",
+          "ConfirmAll"
+        ],
+      issued: 4,
+      jobs: 0,
+      journal: 1,
+      last: 1,
+      previous: 1,
+      ready: true,
+      removed: true,
+      reserved: 1,
+      tickets: 2,
+      unknown: true
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      accepted: true,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 4,
+      delivered: 4,
+      final: true,
+      frames: 0,
+      history:
+        [
+          "Ready",
+          "ForeignReceiver",
+          "DeliverReady",
+          "ConfirmAll",
+          "RawFinal",
+          "Collect",
+          "ConfirmAll",
+          "DeliverFinal",
+          "RawFinal",
+          "Poll",
+          "FinalAck",
+          "ConfirmAll",
+          "Close",
+          "Close",
+          "ForeignReceiver",
+          "ConfirmAll",
+          "FutureFinal",
+          "ConfirmJob",
+          "Collect",
+          "WrongObservation",
+          "Poll",
+          "RawFinal",
+          "UnknownFinal",
+          "DeliverReady",
+          "ConfirmAll",
+          "RawFinal"
+        ],
+      issued: 4,
+      jobs: 0,
+      journal: 1,
+      last: -1,
+      previous: 1,
+      ready: true,
+      removed: true,
+      reserved: 1,
+      tickets: 2,
+      unknown: true
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      accepted: true,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 4,
+      delivered: 4,
+      final: true,
+      frames: 0,
+      history:
+        [
+          "Ready",
+          "ForeignReceiver",
+          "DeliverReady",
+          "ConfirmAll",
+          "RawFinal",
+          "Collect",
+          "ConfirmAll",
+          "DeliverFinal",
+          "RawFinal",
+          "Poll",
+          "FinalAck",
+          "ConfirmAll",
+          "Close",
+          "Close",
+          "ForeignReceiver",
+          "ConfirmAll",
+          "FutureFinal",
+          "ConfirmJob",
+          "Collect",
+          "WrongObservation",
+          "Poll",
+          "RawFinal",
+          "UnknownFinal",
+          "DeliverReady",
+          "ConfirmAll",
+          "RawFinal",
+          "RawFinal"
+        ],
+      issued: 4,
+      jobs: 0,
+      journal: 1,
+      last: -1,
+      previous: 1,
+      ready: true,
+      removed: true,
+      reserved: 1,
+      tickets: 2,
+      unknown: true
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      accepted: true,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 4,
+      delivered: 4,
+      final: true,
+      frames: 0,
+      history:
+        [
+          "Ready",
+          "ForeignReceiver",
+          "DeliverReady",
+          "ConfirmAll",
+          "RawFinal",
+          "Collect",
+          "ConfirmAll",
+          "DeliverFinal",
+          "RawFinal",
+          "Poll",
+          "FinalAck",
+          "ConfirmAll",
+          "Close",
+          "Close",
+          "ForeignReceiver",
+          "ConfirmAll",
+          "FutureFinal",
+          "ConfirmJob",
+          "Collect",
+          "WrongObservation",
+          "Poll",
+          "RawFinal",
+          "UnknownFinal",
+          "DeliverReady",
+          "ConfirmAll",
+          "RawFinal",
+          "RawFinal",
+          "Close"
+        ],
+      issued: 4,
+      jobs: 0,
+      journal: 1,
+      last: 0,
+      previous: 1,
+      ready: true,
+      removed: true,
+      reserved: 1,
+      tickets: 2,
+      unknown: true
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      accepted: true,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 4,
+      delivered: 4,
+      final: true,
+      frames: 0,
+      history:
+        [
+          "Ready",
+          "ForeignReceiver",
+          "DeliverReady",
+          "ConfirmAll",
+          "RawFinal",
+          "Collect",
+          "ConfirmAll",
+          "DeliverFinal",
+          "RawFinal",
+          "Poll",
+          "FinalAck",
+          "ConfirmAll",
+          "Close",
+          "Close",
+          "ForeignReceiver",
+          "ConfirmAll",
+          "FutureFinal",
+          "ConfirmJob",
+          "Collect",
+          "WrongObservation",
+          "Poll",
+          "RawFinal",
+          "UnknownFinal",
+          "DeliverReady",
+          "ConfirmAll",
+          "RawFinal",
+          "RawFinal",
+          "Close",
+          "Collect"
+        ],
+      issued: 4,
+      jobs: 0,
+      journal: 1,
+      last: 0,
+      previous: 1,
+      ready: true,
+      removed: true,
+      reserved: 1,
+      tickets: 2,
+      unknown: true
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      accepted: true,
+      acked: false,
+      actor: true,
+      closed: false,
+      confirmed: 4,
+      delivered: 4,
+      final: true,
+      frames: 0,
+      history:
+        [
+          "Ready",
+          "ForeignReceiver",
+          "DeliverReady",
+          "ConfirmAll",
+          "RawFinal",
+          "Collect",
+          "ConfirmAll",
+          "DeliverFinal",
+          "RawFinal",
+          "Poll",
+          "FinalAck",
+          "ConfirmAll",
+          "Close",
+          "Close",
+          "ForeignReceiver",
+          "ConfirmAll",
+          "FutureFinal",
+          "ConfirmJob",
+          "Collect",
+          "WrongObservation",
+          "Poll",
+          "RawFinal",
+          "UnknownFinal",
+          "DeliverReady",
+          "ConfirmAll",
+          "RawFinal",
+          "RawFinal",
+          "Close",
+          "Collect",
+          "DeliverFinal"
+        ],
+      issued: 4,
+      jobs: 0,
+      journal: 1,
+      last: 2,
+      previous: 1,
+      ready: true,
+      removed: true,
+      reserved: 1,
+      tickets: 2,
+      unknown: true
+    }
+}
+
+[ok] No violation found (229ms at 437 traces/second).
+Trace length statistics: max=31, min=31, average=31.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

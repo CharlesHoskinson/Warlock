@@ -1,0 +1,117 @@
+In file included from native/actor-retirement-channel-test-v2.cpp:2,
+                 from native/actor-control-replay.cpp:2:
+native/imported_clients.hpp: In instantiation of ‘preview::bridge::ImportedClients::acknowledgeRetirementDelivery(uint64_t, uint64_t, const preview::bridge::ReceiptDelivery&, preview::bridge::RetirementJournal&, std::string_view)::<lambda(auto:52&, const preview::uri::View*, const auto:53&)> [with auto:52 = preview::demand::Coordinator; auto:53 = std::map<long unsigned int, preview::uri::View>]’:
+/usr/include/c++/16/type_traits:2890:26:   required by substitution of ‘template<class _Fn, class ... _Args> static std::__result_of_success<decltype (declval<_Fn>()((declval<_Args>)()...)), std::__invoke_other> std::__result_of_other_impl::_S_test(int) [with _Fn = preview::bridge::ImportedClients::acknowledgeRetirementDelivery(uint64_t, uint64_t, const preview::bridge::ReceiptDelivery&, preview::bridge::RetirementJournal&, std::string_view)::<lambda(auto:52&, const preview::uri::View*, const auto:53&)>; _Args = {preview::demand::Coordinator&, preview::uri::View*&, const std::map<long unsigned int, preview::uri::View, std::less<long unsigned int>, std::allocator<std::pair<const long unsigned int, preview::uri::View> > >&}]’
+ 2890 |       std::declval<_Fn>()(std::declval<_Args>()...)
+      |       ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/16/type_traits:2901:60:   required from ‘struct std::__result_of_impl<false, false, preview::bridge::ImportedClients::acknowledgeRetirementDelivery(uint64_t, uint64_t, const preview::bridge::ReceiptDelivery&, preview::bridge::RetirementJournal&, std::string_view)::<lambda(auto:52&, const preview::uri::View*, const auto:53&)>, preview::demand::Coordinator&, preview::uri::View*&, const std::map<long unsigned int, preview::uri::View, std::less<long unsigned int>, std::allocator<std::pair<const long unsigned int, preview::uri::View> > >&>’
+ 2901 |       using type = decltype(_S_test<_Functor, _ArgTypes...>(0));
+      |                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/usr/include/c++/16/type_traits:2906:12:   required from ‘struct std::__invoke_result<preview::bridge::ImportedClients::acknowledgeRetirementDelivery(uint64_t, uint64_t, const preview::bridge::ReceiptDelivery&, preview::bridge::RetirementJournal&, std::string_view)::<lambda(auto:52&, const preview::uri::View*, const auto:53&)>, preview::demand::Coordinator&, preview::uri::View*&, const std::map<long unsigned int, preview::uri::View, std::less<long unsigned int>, std::allocator<std::pair<const long unsigned int, preview::uri::View> > >&>’
+ 2906 |     struct __invoke_result
+      |            ^~~~~~~~~~~~~~~
+/usr/include/c++/16/type_traits:3401:12:   required from ‘struct std::invoke_result<preview::bridge::ImportedClients::acknowledgeRetirementDelivery(uint64_t, uint64_t, const preview::bridge::ReceiptDelivery&, preview::bridge::RetirementJournal&, std::string_view)::<lambda(auto:52&, const preview::uri::View*, const auto:53&)>, preview::demand::Coordinator&, preview::uri::View*&, const std::map<long unsigned int, preview::uri::View, std::less<long unsigned int>, std::allocator<std::pair<const long unsigned int, preview::uri::View> > >&>’
+ 3401 |     struct invoke_result
+      |            ^~~~~~~~~~~~~
+/usr/include/c++/16/type_traits:3413:11:   required by substitution of ‘template<class _Fn, class ... _Args> using std::invoke_result_t = typename std::invoke_result::type [with _Fn = preview::bridge::ImportedClients::acknowledgeRetirementDelivery(uint64_t, uint64_t, const preview::bridge::ReceiptDelivery&, preview::bridge::RetirementJournal&, std::string_view)::<lambda(auto:52&, const preview::uri::View*, const auto:53&)>; _Args = {preview::demand::Coordinator&, preview::uri::View*&, const std::map<long unsigned int, preview::uri::View, std::less<long unsigned int>, std::allocator<std::pair<const long unsigned int, preview::uri::View> > >&}]’
+ 3413 |     using invoke_result_t = typename invoke_result<_Fn, _Args...>::type;
+      |           ^~~~~~~~~~~~~~~
+/usr/include/c++/16/functional:123:5:   required by substitution of ‘template<class _Callable, class ... _Args> constexpr std::invoke_result_t<_Fn, _Args ...> std::invoke(_Callable&&, _Args&& ...) [with _Callable = preview::bridge::ImportedClients::acknowledgeRetirementDelivery(uint64_t, uint64_t, const preview::bridge::ReceiptDelivery&, preview::bridge::RetirementJournal&, std::string_view)::<lambda(auto:52&, const preview::uri::View*, const auto:53&)>; _Args = {preview::demand::Coordinator&, preview::uri::View*&, const std::map<long unsigned int, preview::uri::View, std::less<long unsigned int>, std::allocator<std::pair<const long unsigned int, preview::uri::View> > >&}]’
+  123 |     invoke(_Callable&& __fn, _Args&&... __args)
+      |     ^~~~~~
+native/preview_uri.hpp:100:27:   required from ‘auto preview::uri::Endpoint::nativeRetirementView(uint64_t, F&&) [with F = preview::bridge::ImportedClients::acknowledgeRetirementDelivery(uint64_t, uint64_t, const preview::bridge::ReceiptDelivery&, preview::bridge::RetirementJournal&, std::string_view)::<lambda(auto:52&, const preview::uri::View*, const auto:53&)>; uint64_t = long unsigned int]’
+  100 |         return std::invoke(std::forward<F>(f),*state_->demand,view,std::as_const(state_->views));
+      |                ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+native/imported_clients.hpp:402:46:   required from here
+  402 |         return endpoint_.nativeRetirementView(popup,[&](auto& queue,const uri::View* view,const auto&) {
+      |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  403 |             require(importedReceiver(view,authority_->native.binding(),epoch) && &delivery.endpoint_==&endpoint_,
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  404 |                 "Original own receiver before retirement processing acknowledgment");
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  405 |             delivery.view(popup,view);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~        
+  406 |             if(!controlAdmission_)return journal.acknowledge(popup,epoch,raw);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  407 |             const auto final=journal.completionForAcknowledgment(popup,epoch,raw);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  408 |             require(final && controlAdmission_->canAcknowledgeActor(final->entry,final->native.subject),
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  409 |                 "Actual original retired actor before final acknowledgment effect");
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  410 |             auto body=Wire().text("identity","family:"+std::to_string(final->native.subject.value)).finish();body.pop_back();
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  411 |             body+=",\"commands\":["+std::string(raw)+"]}";
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  412 |             require(true,
+      |             ~~~~~~~~~~~~~                     
+  413 |                 "Original native final ACK currently invoking before processing-prefix mutation");
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  414 |             if(!journal.acknowledge(popup,epoch,raw))return false;
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  415 |             controlAdmission_->commitActorAcknowledgment(final->entry);return true;
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  416 |         });
+      |         ~~                                    
+native/imported_clients.hpp:402:63: error: unused parameter ‘queue’ [-Werror=unused-parameter]
+  402 |         return endpoint_.nativeRetirementView(popup,[&](auto& queue,const uri::View* view,const auto&) {
+      |                                                         ~~~~~~^~~~~
+cc1plus: all warnings being treated as errors
+In file included from native/imported-clients.cpp:2:
+native/imported_clients.hpp: In instantiation of ‘preview::bridge::ImportedClients::acknowledgeRetirementDelivery(uint64_t, uint64_t, const preview::bridge::ReceiptDelivery&, preview::bridge::RetirementJournal&, std::string_view)::<lambda(auto:52&, const preview::uri::View*, const auto:53&)> [with auto:52 = preview::demand::Coordinator; auto:53 = std::map<long unsigned int, preview::uri::View>]’:
+/usr/include/c++/16/type_traits:2890:26:   required by substitution of ‘template<class _Fn, class ... _Args> static std::__result_of_success<decltype (declval<_Fn>()((declval<_Args>)()...)), std::__invoke_other> std::__result_of_other_impl::_S_test(int) [with _Fn = preview::bridge::ImportedClients::acknowledgeRetirementDelivery(uint64_t, uint64_t, const preview::bridge::ReceiptDelivery&, preview::bridge::RetirementJournal&, std::string_view)::<lambda(auto:52&, const preview::uri::View*, const auto:53&)>; _Args = {preview::demand::Coordinator&, preview::uri::View*&, const std::map<long unsigned int, preview::uri::View, std::less<long unsigned int>, std::allocator<std::pair<const long unsigned int, preview::uri::View> > >&}]’
+ 2890 |       std::declval<_Fn>()(std::declval<_Args>()...)
+      |       ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/16/type_traits:2901:60:   required from ‘struct std::__result_of_impl<false, false, preview::bridge::ImportedClients::acknowledgeRetirementDelivery(uint64_t, uint64_t, const preview::bridge::ReceiptDelivery&, preview::bridge::RetirementJournal&, std::string_view)::<lambda(auto:52&, const preview::uri::View*, const auto:53&)>, preview::demand::Coordinator&, preview::uri::View*&, const std::map<long unsigned int, preview::uri::View, std::less<long unsigned int>, std::allocator<std::pair<const long unsigned int, preview::uri::View> > >&>’
+ 2901 |       using type = decltype(_S_test<_Functor, _ArgTypes...>(0));
+      |                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/usr/include/c++/16/type_traits:2906:12:   required from ‘struct std::__invoke_result<preview::bridge::ImportedClients::acknowledgeRetirementDelivery(uint64_t, uint64_t, const preview::bridge::ReceiptDelivery&, preview::bridge::RetirementJournal&, std::string_view)::<lambda(auto:52&, const preview::uri::View*, const auto:53&)>, preview::demand::Coordinator&, preview::uri::View*&, const std::map<long unsigned int, preview::uri::View, std::less<long unsigned int>, std::allocator<std::pair<const long unsigned int, preview::uri::View> > >&>’
+ 2906 |     struct __invoke_result
+      |            ^~~~~~~~~~~~~~~
+/usr/include/c++/16/type_traits:3401:12:   required from ‘struct std::invoke_result<preview::bridge::ImportedClients::acknowledgeRetirementDelivery(uint64_t, uint64_t, const preview::bridge::ReceiptDelivery&, preview::bridge::RetirementJournal&, std::string_view)::<lambda(auto:52&, const preview::uri::View*, const auto:53&)>, preview::demand::Coordinator&, preview::uri::View*&, const std::map<long unsigned int, preview::uri::View, std::less<long unsigned int>, std::allocator<std::pair<const long unsigned int, preview::uri::View> > >&>’
+ 3401 |     struct invoke_result
+      |            ^~~~~~~~~~~~~
+/usr/include/c++/16/type_traits:3413:11:   required by substitution of ‘template<class _Fn, class ... _Args> using std::invoke_result_t = typename std::invoke_result::type [with _Fn = preview::bridge::ImportedClients::acknowledgeRetirementDelivery(uint64_t, uint64_t, const preview::bridge::ReceiptDelivery&, preview::bridge::RetirementJournal&, std::string_view)::<lambda(auto:52&, const preview::uri::View*, const auto:53&)>; _Args = {preview::demand::Coordinator&, preview::uri::View*&, const std::map<long unsigned int, preview::uri::View, std::less<long unsigned int>, std::allocator<std::pair<const long unsigned int, preview::uri::View> > >&}]’
+ 3413 |     using invoke_result_t = typename invoke_result<_Fn, _Args...>::type;
+      |           ^~~~~~~~~~~~~~~
+/usr/include/c++/16/functional:123:5:   required by substitution of ‘template<class _Callable, class ... _Args> constexpr std::invoke_result_t<_Fn, _Args ...> std::invoke(_Callable&&, _Args&& ...) [with _Callable = preview::bridge::ImportedClients::acknowledgeRetirementDelivery(uint64_t, uint64_t, const preview::bridge::ReceiptDelivery&, preview::bridge::RetirementJournal&, std::string_view)::<lambda(auto:52&, const preview::uri::View*, const auto:53&)>; _Args = {preview::demand::Coordinator&, preview::uri::View*&, const std::map<long unsigned int, preview::uri::View, std::less<long unsigned int>, std::allocator<std::pair<const long unsigned int, preview::uri::View> > >&}]’
+  123 |     invoke(_Callable&& __fn, _Args&&... __args)
+      |     ^~~~~~
+native/preview_uri.hpp:100:27:   required from ‘auto preview::uri::Endpoint::nativeRetirementView(uint64_t, F&&) [with F = preview::bridge::ImportedClients::acknowledgeRetirementDelivery(uint64_t, uint64_t, const preview::bridge::ReceiptDelivery&, preview::bridge::RetirementJournal&, std::string_view)::<lambda(auto:52&, const preview::uri::View*, const auto:53&)>; uint64_t = long unsigned int]’
+  100 |         return std::invoke(std::forward<F>(f),*state_->demand,view,std::as_const(state_->views));
+      |                ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+native/imported_clients.hpp:402:46:   required from here
+  402 |         return endpoint_.nativeRetirementView(popup,[&](auto& queue,const uri::View* view,const auto&) {
+      |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  403 |             require(importedReceiver(view,authority_->native.binding(),epoch) && &delivery.endpoint_==&endpoint_,
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  404 |                 "Original own receiver before retirement processing acknowledgment");
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  405 |             delivery.view(popup,view);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~        
+  406 |             if(!controlAdmission_)return journal.acknowledge(popup,epoch,raw);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  407 |             const auto final=journal.completionForAcknowledgment(popup,epoch,raw);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  408 |             require(final && controlAdmission_->canAcknowledgeActor(final->entry,final->native.subject),
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  409 |                 "Actual original retired actor before final acknowledgment effect");
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  410 |             auto body=Wire().text("identity","family:"+std::to_string(final->native.subject.value)).finish();body.pop_back();
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  411 |             body+=",\"commands\":["+std::string(raw)+"]}";
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  412 |             require(true,
+      |             ~~~~~~~~~~~~~                     
+  413 |                 "Original native final ACK currently invoking before processing-prefix mutation");
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  414 |             if(!journal.acknowledge(popup,epoch,raw))return false;
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  415 |             controlAdmission_->commitActorAcknowledgment(final->entry);return true;
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  416 |         });
+      |         ~~                                    
+native/imported_clients.hpp:402:63: error: unused parameter ‘queue’ [-Werror=unused-parameter]
+  402 |         return endpoint_.nativeRetirementView(popup,[&](auto& queue,const uri::View* view,const auto&) {
+      |                                                         ~~~~~~^~~~~
+cc1plus: all warnings being treated as errors

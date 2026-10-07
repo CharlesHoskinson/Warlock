@@ -1,0 +1,15 @@
+
+  control_reservations_tests
+    ok cleanupReservationPrecedesIssuance passed 1 test(s)
+    ok fullReservedCapacityRefusesSpeculation passed 1 test(s)
+    ok reservedOrdinalTailProtectsCleanup passed 1 test(s)
+    ok sameSlotRetryKeepsOriginalOrdinal passed 1 test(s)
+    ok changedSlotCannotReissue passed 1 test(s)
+    ok unconfirmedTicketKeepsReservation passed 1 test(s)
+    ok confirmedReleaseNeverResetsIssuer passed 1 test(s)
+    ok oldReservationCannotResurrect passed 1 test(s)
+    ok foreignGrantCannotReserve passed 1 test(s)
+    ok unusedQuotaRollsBackBeforePhysicalAdmission passed 1 test(s)
+    ok singleIssuerOwnsOriginalNamespace passed 1 test(s)
+
+  11 passing (19ms)

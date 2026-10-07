@@ -1,0 +1,19 @@
+
+  actor_control_tests
+    ok rawReadinessCannotQueryOrMutate passed 1 test(s)
+    ok nativeReadinessBeforePhysicalEffect passed 1 test(s)
+    ok oldAckConfirmationPrecedesRemoval passed 1 test(s)
+    ok actualAggregateReclaimsOnlyJobCredits passed 1 test(s)
+    ok rawFinalAckCannotMutatePrefix passed 1 test(s)
+    ok finalEffectBeforeActorCreditRelease passed 1 test(s)
+    ok finalConfirmationBeforeActorCreditRelease passed 1 test(s)
+    ok confirmedFinalReclaimsActorCredits passed 1 test(s)
+    ok bindingCloseWaitsForActorDelivery passed 1 test(s)
+    ok allIndependentBarriersPermitClose passed 1 test(s)
+    ok confirmedUnknownEffectKeepsActor passed 1 test(s)
+    ok duplicateUnknownTicketCannotReinvoke passed 1 test(s)
+    ok wrongObservationHasNoActorCredit passed 1 test(s)
+    ok futureFinalAckHasNoActorCredit passed 1 test(s)
+    ok foreignActorReceiverHasNoCredit passed 1 test(s)
+
+  15 passing (22ms)

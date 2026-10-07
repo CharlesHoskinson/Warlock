@@ -1,0 +1,19 @@
+
+  job_control_tests
+    ok typedNativePurposePrecedesEffect passed 1 test(s)
+    ok exactProposalKeepsOriginalTicket passed 1 test(s)
+    ok inventedProofHasNoTicket passed 1 test(s)
+    ok originalTerminalProofChoosesAckSlot passed 1 test(s)
+    ok postEffectAckRetryRetainsOriginal passed 1 test(s)
+    ok duplicateTicketCannotInvokeAgain passed 1 test(s)
+    ok unconfirmedAckCannotReleaseCredits passed 1 test(s)
+    ok confirmedResumeKeepsNamespace passed 1 test(s)
+    ok exactConfirmedPredecessorIsDelivered passed 1 test(s)
+    ok changedConfirmedBodyCannotSuppress passed 1 test(s)
+    ok wrongOriginalJobHasNoCredit passed 1 test(s)
+    ok wrongFamilyHasNoCredit passed 1 test(s)
+    ok foreignReceiverHasNoCredit passed 1 test(s)
+    ok malformedCommandHasNoCredit passed 1 test(s)
+    ok predecessorStorageRemainsBounded passed 1 test(s)
+
+  15 passing (26ms)
