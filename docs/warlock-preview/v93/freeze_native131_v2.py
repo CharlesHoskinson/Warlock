@@ -1,0 +1,148 @@
+"""Freeze current GUI110 legacy native runtime and exact retained original controls."""
+import hashlib, importlib.util, json, pathlib, re, resource, stat, sys
+sys.path.insert(0,'/home/hoskinson/window-integration-qa')
+from qa_launch import require_qa_scope
+require_qa_scope()
+assert resource.getrlimit(resource.RLIMIT_CORE)==(1,1)
+repo=pathlib.Path('/home/hoskinson/omarchy-windows-parity')
+root=repo/'implementation/warlock-client-provider-native-v131'
+sha=lambda path:hashlib.sha256(path.read_bytes()).hexdigest()
+path=next(root.glob('qa/native-*/report.json'));proof=json.loads(path.read_text())
+assert proof['passed'] and proof['cleanupPassed'] and all(row['passed'] for row in proof['checks'])
+assert all(row['exitCode']==0 for row in proof['ownedExitCodes'])
+for name,value in proof['artifacts'].items():assert sha(path.parent/name)==value,name
+preflight=json.loads((root/'qa/preflight.json').read_text());assert preflight['passed']
+for name,value in preflight['inputs'].items():assert sha(pathlib.Path(name))==value,name
+spec=importlib.util.spec_from_file_location('reuse_comparison',root/'qa/reuse_comparison.py');audit=importlib.util.module_from_spec(spec);spec.loader.exec_module(audit)
+readonly={'styleDimPendingNativeReadonlyScope','styleAgainDimPendingNativeReadonlyScope','styleRestoreIntermediateReadonlyScope','styleCropDimIntermediateReadonlyScope'}
+def stable(rows):return [re.sub(r'^opacityPrivateForeignWindowMoved-0x[0-9a-f]+$','opacityPrivateForeignWindowMoved-<native-address>',row['name']) for row in rows if row['name'] not in readonly]
+previous=json.loads(pathlib.Path(preflight['retainedNative118Report']).read_text());comparison=audit.compare(previous,proof,stable)
+assert comparison==proof['addressReuseComparisonEvidence'] and comparison['fixedOrderedControls']==2437
+observations=proof['incarnationRetirementNativeEvidence']['observations']
+assert proof['nativeIncarnationRetirementObservationBoundedQualified']
+assert [row['state'] for row in observations]==['Active','Future','Active','Retired','Active']
+owner=observations[0]['binding'];lastSequence=lastNow=lastFrontier=0
+for row in observations:
+ assert row['binding']==owner and row['clock']==owner['lifetime'] and row['protocolVersion']==3 and row['retirementProtocol']==1
+ assert int(row['sequence'])>lastSequence and int(row['now'])>=lastNow and int(row['issuedThrough'])>=lastFrontier
+ assert (int(row['subjectIncarnation'])>int(row['issuedThrough']))==(row['state']=='Future')
+ lastSequence,lastNow,lastFrontier=map(int,[row['sequence'],row['now'],row['issuedThrough']])
+evidence=proof['incarnationRetirementNativeEvidence']
+assert evidence['foreign']=={'protocolVersion':3,'kind':'refused','reason':'binding-mismatch'}
+assert evidence['zero']['kind']=='refused' and not evidence['physicalRetirementAccepted'] and not evidence['actorTurnoverAccepted']
+for name in ['stoppedActualFirstClassMinimized','receiverGrowthThirdSourceNormalExit','allPriorNative116StableOrderedAssertionsRetained','allPriorNative118FixedOrderedAndActualRetryAssertionsRetained']:
+ assert any(row['name']==name and row['passed'] for row in proof['checks']),name
+nativeManifest=pathlib.Path(preflight['incarnationRetirementManifest']);nativeHeld=json.loads(nativeManifest.read_text());assert nativeHeld['passed'] and nativeHeld['sourceHeld']
+for name,row in nativeHeld['files'].items():assert sha(nativeManifest.parent/name)==row['sha256'],name
+provider=repo/'implementation/warlock-preview-provider-v92/component-manifest.json';gui=json.loads(provider.read_text());assert gui['passed'] and gui['sourceHeld']
+for name,row in gui['files'].items():assert sha(provider.parent/name)==row['sha256'],name
+typed=proof['typedNativeRetirementEvidence'];assert proof['typedNativeRetirementObservationBoundedQualified'] and typed['normalExit'] and typed['complete']['passed'] and not typed['complete']['actorTurnoverAccepted']
+facts=typed['observations'];assert [row['state'] for row in facts]==['Active','Active','Retired','Active']
+assert facts[0]['subject']==facts[2]['subject'] and facts[1]['subject']==facts[3]['subject'] and facts[0]['subject']!=facts[1]['subject']
+assert all(row['kind']=='native-incarnation-retirement' and row['binding']==facts[0]['binding'] and row['clock']==facts[0]['binding']['lifetime'] for row in facts)
+assert all(int(b['sequence'])>int(a['sequence']) and int(b['now'])>=int(a['now']) and int(b['issuedThrough'])>=int(a['issuedThrough']) for a,b in zip(facts,facts[1:]))
+assert all(int(row['subject'])<=int(row['issuedThrough']) for row in facts)
+prior121=json.loads(pathlib.Path(preflight['retainedNative121Report']).read_text());comparison121=audit.compare(prior121,proof,stable)
+assert any(row['name']=='allPriorNative121FixedOrderedAndActualRetryAssertionsRetained' and row['passed'] and row['evidence']==comparison121 for row in proof['checks'])
+for field in ['retirementDecoderReport','retirementCReport']:
+ current=pathlib.Path(gui[field]);checked=json.loads(current.read_text());assert checked['passed']
+ for rel,value in checked['inputs'].items():assert sha(provider.parent/rel)==value,rel
+ for rel,value in checked['artifacts'].items():assert sha(current.parent/rel)==value,rel
+prior122=json.loads(pathlib.Path(preflight['retainedNative122Report']).read_text());comparison122=audit.compare(prior122,proof,stable)
+assert any(row['name']=='allPriorNative122FixedOrderedAndActualRetryAssertionsRetained' and row['passed'] and row['evidence']==comparison122 for row in proof['checks'])
+lockRace=pathlib.Path(preflight['lockControlRaceReport']);race=json.loads(lockRace.read_text());assert race['passed'] and race['evidence'][0]['reproducedOriginalUnlinkedReaderRefusal'] and race['evidence'][1]['stableIdentityPublisherAccepted']
+for name,value in race['inputs'].items():assert sha(pathlib.Path(name))==value,name
+for name,value in race['artifacts'].items():assert sha(lockRace.parent/name)==value,name
+failed123=pathlib.Path(preflight['retainedFailedLockControlRace']);failure=json.loads(failed123.read_text());assert not failure['passed'] and failure['cleanupPassed'] and [row['name'] for row in failure['checks'] if not row['passed']]==['guiSessionLockFixtureNormalExitAfterUnlock']
+assert [(row['name'],row['exitCode']) for row in failure['ownedExitCodes'] if row['exitCode']!=0]==[('gui-lock',1)]
+prior124=json.loads(pathlib.Path(preflight['retainedNative124Report']).read_text());comparison124=audit.compare(prior124,proof,stable)
+assert comparison124['fixedOrderedControls']==2456
+assert any(row['name']=='allPriorNative124FixedOrderedAndActualRetryAssertionsRetained' and row['passed'] and row['evidence']==comparison124 for row in proof['checks'])
+for field in ['actorRetirementReport','elmRetirementReport','controlPrefixReport','controlAdapterReport']:
+ evidence=pathlib.Path(gui[field]);checked=json.loads(evidence.read_text());assert checked['passed']
+ for rel,value in checked['inputs'].items():
+  file=pathlib.Path(rel);file=file if file.is_absolute() else provider.parent/file;assert sha(file)==value,rel
+ for rel,value in checked['artifacts'].items():assert sha(evidence.parent/rel)==value,rel
+prior126=json.loads(pathlib.Path(preflight['retainedNative126Report']).read_text());comparison126=audit.compare(prior126,proof,stable)
+assert comparison126['fixedOrderedControls']==2458
+assert any(row['name']=='allPriorNative126FixedOrderedAndActualRetryAssertionsRetained' and row['passed'] and row['evidence']==comparison126 for row in proof['checks'])
+# Original optional read-only polling can repeat while awaiting the same fixed
+# transition. Audit actual polling rows rather than inventing a raw nominal count.
+polls=[row for row in proof['checks'] if row['name'] in readonly]
+assert {row['name'] for row in polls}==readonly and all(row['passed'] for row in polls)
+assert len(proof['checks'])==2511+comparison126['current']['actualAttemptChecks']+len(polls)
+assert len(proof['ownedExitCodes'])==278+comparison126['current']['attempts']-1
+prior125=json.loads(pathlib.Path(preflight['retainedNative125Report']).read_text());comparison125=audit.compare(prior125,proof,stable)
+assert comparison125['fixedOrderedControls']==2457
+assert any(row['name']=='allPriorNative125FixedOrderedAndActualRetryAssertionsRetained' and row['passed'] and row['evidence']==comparison125 for row in proof['checks'])
+for field in ['asynchronousRetirementReport','asynchronousRefinementReport','asynchronousElmMutantReport']:
+ evidence=pathlib.Path(preflight[field]);checked=json.loads(evidence.read_text());assert checked['passed']
+ for rel,value in checked['inputs'].items():
+  file=pathlib.Path(rel);file=file if file.is_absolute() else provider.parent/file;assert sha(file)==value,rel
+ for rel,value in checked['artifacts'].items():assert sha(evidence.parent/rel)==value,rel
+for field in ['retainedDeliveryReport','retainedDeliveryModelReport','retainedDeliveryElmMutantsReport','retainedDeliveryNativeElmReport']:
+ evidence=pathlib.Path(gui[field]);checked=json.loads(evidence.read_text());assert checked['passed']
+ for rel,value in checked['inputs'].items():
+  file=pathlib.Path(rel);file=file if file.is_absolute() else provider.parent/file;assert sha(file)==value,rel
+ for rel,value in checked.get('artifacts',{}).items():assert sha(evidence.parent/rel)==value,rel
+
+
+prior128=json.loads(pathlib.Path(preflight['retainedNative128Report']).read_text());comparison128=audit.compare(prior128,proof,stable)
+assert comparison128==proof['priorNative128Retention'] and comparison128['fixedOrderedControls']==2459
+assert any(row['name']=='allPriorNative128FixedOrderedAndActualRetryAssertionsRetained' and row['passed'] for row in proof['checks'])
+resources=proof['actualCaptureResourceEvidence'];assert resources['passed'] and resources['actualCoreRegistryAndResources'] and resources['actualSessionLock'] and resources['retainedImportedFDIndependent'] and resources['applicationBoundaryACKLossOnly']
+assert len(resources['captures'])==2 and len(resources['snapshots'])==11 and len(resources['applicationDroppedReplies'])==2 and resources['localDescriptorsClosed']==2
+assert len([row for row in proof['checks'] if row['name'].startswith('resource')])==49
+for sample in resources['captures']:
+ scope=sample['scope'];header=sample['header'];assert header[23]==int(scope['now'])+2000000000 and header[10]<header[23] and header[22]==11
+assert all(row['binding']==resources['snapshots'][0]['binding'] and row['clock']==row['binding']['lifetime'] for row in resources['snapshots'])
+assert all(int(b['sequence'])>int(a['sequence']) and int(b['now'])>=int(a['now']) for a,b in zip(resources['snapshots'],resources['snapshots'][1:]))
+nativeManifest=pathlib.Path(preflight['resourceModuleManifest']);current=json.loads(nativeManifest.read_text());assert current['sourceHeld'] and current['passed']
+for rel,row in current['files'].items():assert sha(nativeManifest.parent/rel)==row['sha256'],rel
+for rel,alias in current['directoryAliases'].items():assert (nativeManifest.parent/rel).is_symlink() and str((nativeManifest.parent/rel).resolve())==alias
+descriptor=json.loads((root/'native-build-report.json').read_text());assert preflight['pair']==proof['pair'] and preflight['pair']['plugin']==descriptor['plugin'] and sha(pathlib.Path(descriptor['plugin']['path']))==descriptor['plugin']['sha256']
+
+prior129=json.loads(pathlib.Path(preflight['retainedNative129Report']).read_text());comparison129=audit.compare(prior129,proof,stable)
+assert comparison129==proof['priorNative129Retention'] and comparison129['fixedOrderedControls']==2509
+assert any(row['name']=='allPriorNative129FixedOrderedAndActualRetryAssertionsRetained' and row['passed'] and row['evidence']==comparison129 for row in proof['checks'])
+prior130=json.loads(pathlib.Path(preflight['retainedNative130Report']).read_text());comparison130=audit.compare(prior130,proof,stable)
+assert comparison130==proof['priorNative130Retention'] and comparison130['fixedOrderedControls']==2510
+assert any(row['name']=='allPriorNative130FixedOrderedAndActualRetryAssertionsRetained' and row['passed'] and row['evidence']==comparison130 for row in proof['checks'])
+assert proof['currentGUI119LegacyRuntimeQualified'] and not proof['nativePersistentPolicyActivated'] and not proof['nativeVisualChannelActivated'] and not proof['pureRendererActivated']
+assert proof['currentGUI110LegacyRuntimeQualified'] and not proof['newURIRouterActivated'] and not proof['newControlledFactoryActivated']
+currentProvider=pathlib.Path(preflight['currentProviderManifest']);currentGUI=json.loads(currentProvider.read_text());assert currentGUI['sourceHeld'] and currentGUI['passed']
+for rel,row in currentGUI['files'].items():assert sha(currentProvider.parent/rel)==row['sha256'] and (currentProvider.parent/rel).stat().st_size==row['size'],rel
+currentBuild=pathlib.Path(preflight['currentProviderBuild']);build=json.loads(currentBuild.read_text());assert build['passed']
+assert str(currentBuild.parent/'elm-host')==preflight['fullHostBinary'] and str(currentBuild.parent/'inputs/assets')==preflight['fullHostAssets'] and str(currentBuild.parent/'inputs/adapter/daemon.py')==preflight['fullHostBackend']
+for failed in root.glob('qa/prepare-current-provider*/report.json'):
+ f=json.loads(failed.read_text())
+ if not f['passed']:assert not f.get('nativeLaunched',False)
+
+files={}
+for source in sorted(root.rglob('*')):
+ rel=source.relative_to(root)
+ if '__pycache__' in rel.parts:continue
+ assert not source.is_symlink(),source
+ if source.is_file():files[str(rel)]={'kind':'file','sha256':sha(source),'size':source.stat().st_size,'mode':oct(stat.S_IMODE(source.stat().st_mode))}
+manifest=root/'component-manifest.json';assert not manifest.exists()
+manifest.write_text(json.dumps({'schema':1,'owner':'f6779148-8f5d-4bdf-8a0f-044184e486f2','sourceHeld':True,'passed':True,'evidenceIntegrityPassed':True,'files':files,
+ 'nativeReport':str(path),'nativeReportSHA256':sha(path),'nativeModuleManifest':str(nativeManifest),'nativeModuleManifestSHA256':sha(nativeManifest),
+ 'currentProviderManifest':str(currentProvider),'currentProviderManifestSHA256':sha(currentProvider),'currentProviderBuild':str(currentBuild),'currentProviderBuildSHA256':sha(currentBuild),'currentGUI110LegacyRuntimeQualified':True,'currentGUI119LegacyRuntimeQualified':True,'nativePersistentPolicyActivated':False,'nativeVisualChannelActivated':False,'pureRendererActivated':False,'prior130FixedOrderedControls':comparison130['fixedOrderedControls'],'newURIRouterActivated':False,'newControlledFactoryActivated':False,'prior129FixedOrderedControls':comparison129['fixedOrderedControls'],
+ 'providerManifest':str(provider),'providerManifestSHA256':sha(provider),'nativeChecks':len(proof['checks']),'normalOwnedExits':len(proof['ownedExitCodes']),
+ 'prior124FixedOrderedControls':comparison124['fixedOrderedControls'],'prior118FixedOrderedControls':2437,'nativeIncarnationRetirementObservationBoundedQualified':True,
+ 'typedNativeRetirementObservationBoundedQualified':True,'prior121FixedOrderedControls':comparison121['fixedOrderedControls'],'prior122FixedOrderedControls':comparison122['fixedOrderedControls'],'boundedCSerialRegistryQualified':True,'lockControlRaceReport':str(lockRace),'retainedFailedNative123Report':str(failed123),'typedNativeRetirementEvidence':typed,'prior128FixedOrderedControls':comparison128['fixedOrderedControls'],'captureResourceControls':49,'captureResourceSnapshots':11,'actualImportedDescriptorsClosed':2,'captureResourceEvidence':resources,'scope':preflight['scope'],'legacyProviderRuntime':preflight['legacyProviderRuntime'],'nativeAcceptance':False,'fullReleaseAccepted':False},indent=2)+'\n')
+report={'passed':True,'nativeManifest':str(manifest),'nativeManifestSHA256':sha(manifest),'nativeReport':str(path),
+ 'nativeModuleManifest':str(nativeManifest),'nativeModuleManifestSHA256':sha(nativeManifest),'providerManifest':str(provider),'providerManifestSHA256':sha(provider),
+ 'nativeChecks':len(proof['checks']),'normalOwnedExits':len(proof['ownedExitCodes']),'prior124FixedOrderedControls':comparison124['fixedOrderedControls'],'prior118FixedOrderedControls':2437,'addressReuseComparison':comparison,
+ 'nativeRetirementStates':['Active','Future','Active','Retired','Active'],'selectedClassifierScenarios':8,'classifierTraces':20,'classifierStates':438,'unsafeClassifierMutants':2,'unsafeComparisonMutants':8,
+ 'nativeIncarnationRetirementObservationBoundedQualified':True,'typedNativeRetirementObservationBoundedQualified':True,'typedNativeRetirementEvidence':typed,'prior121FixedOrderedControls':comparison121['fixedOrderedControls'],'prior122FixedOrderedControls':comparison122['fixedOrderedControls'],'boundedCSerialRegistryQualified':True,'lockControlRaceReport':str(lockRace),'retainedFailedNative123Report':str(failed123),'typedDecoderScenarios':13,'typedDecoderTraces':25,'typedDecoderStates':439,'unsafeDecoderMutants':3,'retirementCChecks':96,'elmRetirementControls':33,'controlPrefixScenarios':7,'controlPrefixTraces':15,'controlPrefixStates':180,'unsafeControlPrefixMutants':3,'controlAdapterControls':10,'syntheticActorRetirementChecks':9068,'syntheticSequentialSubjects':280,'nativeGuiControlTransportBoundedQualified':True,'actorTurnoverAccepted':False,'ordinaryEligibleCaptureAccepted':False,
+ 'nativeAcceptance':False,'fullReleaseAccepted':False,
+ 'next':'Publish exact held GUI86/failedGUI87/GUI88/native125 source and evidence, PUBLIC61 receipt72ee067 and additive control/retirement contracts. Fresh GUI89 addresses delayed cross-actor completion without a global delivery order, then trusted native observation/readiness/completion routing and retained completion delivery. Actual continuing native/Elm turnover beyond256, ordinary capture and every original full release gate remain.'}
+report.update(prior126FixedOrderedControls=comparison126['fixedOrderedControls'],prior128FixedOrderedControls=comparison128['fixedOrderedControls'],captureResourceControls=49,captureResourceSnapshots=11,actualImportedDescriptorsClosed=2,captureResourceEvidence=resources,scope=preflight['scope'],legacyProviderRuntime=preflight['legacyProviderRuntime'],next='Qualified bounded GUI92/native129/core16/plugin19 retains all original128/126 fixed controls, actual allocator/expiry oracles and normal exits. Actual Core resource registry/capture/FD/lock metadata witnesses now pass. Held106 control/reader/adoption/Elm changes remain inactive CPU component evidence. Next native106 integration, distinct live-window binding detachment and renderer native outbox/WebKit; all original full release gates remain open.')
+report.update(currentProviderManifest=str(currentProvider),currentProviderManifestSHA256=sha(currentProvider),currentProviderBuild=str(currentBuild),currentProviderBuildSHA256=sha(currentBuild),currentGUI110LegacyRuntimeQualified=True,newURIRouterActivated=False,newControlledFactoryActivated=False,prior129FixedOrderedControls=comparison129['fixedOrderedControls'],next='Publish exact Native130 current GUI110 legacy runtime qualification; then typed realm/native-issued outbox and actual WebKit callback ownership/controlled Core integration. Original release gates remain open.')
+report.update(currentGUI119LegacyRuntimeQualified=True,nativePersistentPolicyActivated=False,nativeVisualChannelActivated=False,pureRendererActivated=False,prior130FixedOrderedControls=comparison130['fixedOrderedControls'],next='Publish Native131 current GUI119 legacy coherence qualification; then actual controlled persistent policy/renderer host with durable input/native-ticket custody/retry and WebKit callback/frame/concealment/URI barriers. Original full release gates remain open.')
+(repo/'docs/warlock-preview/v93/native-report131.json').write_text(json.dumps(report,indent=2)+'\n')
+sys.path.insert(0,str(repo/'implementation/elm-build-loop-v1'));import loop
+print(loop.write_checkpoint(repo,'f6779148-8f5d-4bdf-8a0f-044184e486f2',str(root.relative_to(repo)),
+ ['PROGRESS heldNative131 current GUI119 compiled legacy runtime/core16/plugin19/AQ155. Native original130 fixed controls plus actual allocator attempts/original expiry/deadlines/pixels/normal teardown retained, current shared visual helpers qualify actual legacy host/DOM only. All original49 Core resource/FD/lock witnesses/11 scoped snapshots/two independent FD closures remain. GUI92 standalone probes remain original identity. New persistent JSC policy/channel/pure renderer/controlled factory/URI routes inactive and not qualified. Next publication and actual controlled host input/native ticket custody/retry, WebKit actual context/async frame/physical concealment/URI barriers. Uncertain worker/revoked delayed proposal and all original full release gates remain; no installed changes.'],
+ 'progress',[str(manifest.relative_to(repo)),'docs/warlock-preview/v93/native-report131.json']))

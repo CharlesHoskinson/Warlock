@@ -328,3 +328,22 @@ custody/retry remain open. Next PUBLIC88, Native131 coherent legacy source tuple
 and actual controlled host/renderer barriers. Native130 legacy2518/278 remains
 actual native baseline; uncertain live worker/revoked delayed proposals and all
 original full release gates stay open. No installed/main desktop changes.
+
+GUI119 PUBLIC88 2b6f8fb433eccb956449be3a6d4c0508d2dfb743/2524 exact owned blobs;
+source73e6fb1bee3133084da6ae4871d9a9ef9664195b;
+receipta9994a5ebca127298d7b450b18dcf745eaa00402.
+Native131 held current GUI119 compiled legacy host/assets/backend on exact
+core16/plugin19/AQ155. Native2518 checks/278 normal owned exits/full cleanup;
+all2510 original130 fixed ordered controls and original actual allocator/expiry/
+pixel/deadline/receipt/teardown retained. Resource49/scoped snapshots11/independent
+FD closures2 still pass. Current shared visual helpers are exercised through
+legacy real WebKit/DOM; the new persistent JSC policy/channel/pure renderer and
+controlled factory/scoped URI routes remain inactive and unqualified by this
+campaign. 584 manifest files. One freezer count-audit failure remains: it assumed
+six optional read-only polls, while this run needed five. Fresh freezer v2 audits
+all original fixed controls, each actual allocator trial and every real polling
+row without changing the native campaign, scenarios, oracles or deadlines.
+Next publish Native131 coherence then actual controlled host input/native ticket
+custody/retry and WebKit callback/lease/async frame/physical concealment/URI barriers.
+Uncertain live policy/process recovery, delayed never-issued proposal expiry/
+revocation outcome/order, >256 actual windows and all full release gates stay open.

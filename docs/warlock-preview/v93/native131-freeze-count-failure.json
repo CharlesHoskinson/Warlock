@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "passed": false,
+  "nativeCampaignPassed": true,
+  "freezer": "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v93/freeze_native131.py",
+  "freezerSHA256": "ceae6e986bfed9b3358f4c91bbe3016875f261b76411cbe3710226157cc79806",
+  "nativeReport": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v131/qa/native-1791372073397009046/report.json",
+  "nativeReportSHA256": "d44774779b2d2cffc0b712534672fb5c033dab4b1a841a864f0399bc52446f02",
+  "failedAssertion": "Nominal raw check total2519 assumed six optional readonly polls from native130; current original campaign has five, while every fixed control and actual allocator/deadline/normal-exit assertion passes.",
+  "originalFixedControlsRetained": 2510,
+  "newFixedRetentionControl": 1,
+  "actualAttemptControls": 2,
+  "actualOptionalReadonlyPolls": 5,
+  "rawChecks": 2518,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}
