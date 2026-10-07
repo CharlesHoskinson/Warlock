@@ -130,3 +130,17 @@ regressions pass on changed URI source. Two failed model fixtures retained.
 See GUI110/URI-LIFETIME-HANDOFF.md and component-report110.json. New actual
 WebKit context/router registration and controlled realm/frontend native outbox
 activation remain open. Current actual native baseline still GUI92/native129.
+
+Native130 current compiled GUI110 legacy host/assets/backend is held:2518 checks,
+278 normal owned exits/full cleanup on exact core16/plugin19/AQ155. Original129
+2509,1282459 and1262458 fixed ordered controls retained with actual allocator
+attempts/original expiry/deadlines.49 Core resource witnesses/11 scoped snapshots/
+two independent imported local FD closures retained. GUI92 standalone historical
+probes remain original identities. New URI router/controlled factory/scoped path
+remain inactive. Native130 supersedes the old GUI92-only runtime baseline for
+legacy routes; see native-report130.json and exact component manifest.
+GUI110 public78 is4ffd7371e6f172b3f5fe19abc6345ddd55abc8c1,7195 exact owned blobs;
+sourcecf347c314d8856fbea327a79f5ef862d618c4840;
+receipt302730c0059575b5b29f79ebc290233c8f9f7e4f. Next public79 for Native130,
+then fresh GUI111 native-issued renderer ticket transport/typed realm and actual
+WebKit callback ownership/controlled Core. All full release gates remain open.
