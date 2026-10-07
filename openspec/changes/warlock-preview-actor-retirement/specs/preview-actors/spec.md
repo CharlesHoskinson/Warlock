@@ -1449,3 +1449,31 @@ without changing normal policy/native effects, deadlines or closure gates.
 - **WHEN** native shutdown releases that actual result
 - **THEN** the current-context guard and original strict native/policy close remain mandatory
 - **AND** observation cleanup cannot certify outstanding effects or unknown recovery
+# Requirement: Preserve the single persistent policy across normally retired native realms
+
+The system SHALL implement EARS CONTROL-040 using original strict C/Bootstrap
+closure and Native epoch issuance. Realm replacement SHALL preserve the same
+Elm policy owner and permanent incarnation-retirement chronology.
+
+#### Scenario: Native realm retirement still has outstanding custody
+- **WHEN** policy/input/deferred/ticket/returned-event/confirmation/physical/journal duties remain
+- **THEN** normal retirement and realm replacement are refused with that exact custody retained
+
+#### Scenario: A normally closed native realm is reopened
+- **GIVEN** original strict native closure and a later empty issued epoch on the same binding
+- **WHEN** native rebinds the driver
+- **THEN** the exact same persistent Elm policy transfers to the sole new driver
+- **AND** only its drained old grant-bound transport is replaced
+
+#### Scenario: A stale epoch or foreign binding requests replacement
+- **WHEN** it differs from the original same-binding later Native grant
+- **THEN** it is refused before policy processing and original policy custody remains unchanged
+
+#### Scenario: A permanently retired window is replayed in a later realm
+- **WHEN** original retired-window source facts enter the later envelope
+- **THEN** the persistent retirement chronology refuses resurrection and new acquisition
+
+#### Scenario: The GUI reopens its renderer
+- **WHEN** the host opens a later native preview realm
+- **THEN** the original fixed-grant renderer/context and strict object lifetime gates still apply
+- **AND** actual GTK/WebKit qualification is required separately from C/JSC traces

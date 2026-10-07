@@ -762,3 +762,19 @@ pixel artifact or settlement. Original policy/input/ticket/physical/journal/
 confirmation obligations and strict close SHALL remain independently mandatory.
 This bounded actual-result probe SHALL NOT establish renderer reload, process
 loss, uncertain effect recovery, physical reveal or complete stale-callback coverage.
+# CONTROL-040: one policy across normally retired native realms
+
+When the original native realm has drained every policy model, retained input,
+deferred intent, native ticket, returned event, independent confirmation, physical
+resource and retirement/detachment journal obligation, the host shall retire that
+realm through its original strict C/Bootstrap close while retaining the same Elm
+policy owner. While any such duty or unknown outcome remains, it shall refuse
+normal realm replacement and retain the original custody.
+
+When the original Native issues a later receiver epoch on the same binding after
+that strict close, the driver shall admit only the exact empty issued namespace,
+transfer the same persistent Elm policy, preserve permanent retirement history,
+and create only a new grant-bound transport outbox. It shall reject stale epochs,
+foreign bindings and replacement of an open realm before policy processing.
+Reusing a renderer requires its separately qualified original-context lifecycle;
+CPU/C/JSC traces do not qualify actual GTK/WebKit close/reopen or physical reveal.

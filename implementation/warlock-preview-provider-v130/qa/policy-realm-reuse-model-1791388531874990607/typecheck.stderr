@@ -1,0 +1,15 @@
+
+ Error [QNT000]: mismatched input '=' expecting ':'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v130/qa/policy-realm-reuse-model-1791388531874990607/inputs/spec/policy_realm_reuse_tests.qnt:3:23
+  3:  action check(ok:bool)=all{assert(ok and safety),s'=s}
+                           ^
+
+
+ Error [QNT000]: extraneous input 'action' expecting {<EOF>, 'module', DOCCOMMENT}
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v130/qa/policy-realm-reuse-model-1791388531874990607/inputs/spec/policy_realm_reuse_tests.qnt:4:2
+  4:  action settle=fire(Acquire).then(fire(Issue)).then(fire(Dispatch)).then(fire(Confirm)).then(fire(Terminal))
+      ^^^^^^
+
+error: parsing failed

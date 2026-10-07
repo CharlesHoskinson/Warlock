@@ -1,0 +1,79 @@
+{
+  "passed": true,
+  "inputs": {
+    "spec/policy_realm_reuse_v3.qnt": "4bcdbbf0edda92b512e30337311982b1bb9ad58e8cfa675387e1cb574221229e",
+    "spec/policy_realm_reuse_tests_v3.qnt": "79937c1dfab801281545e8262356c45e186d48eda8bf2594b285b614b46e901c",
+    "qa/policy-realm-reuse-model-check-v3.py": "b5c51a64b89b81ab0bbc0d2ccbeef5aa2b09e3d103a0bc343f02f1cb48828e91"
+  },
+  "quint": {
+    "path": "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+    "sha256": "bd6e9400f6358a8a69d80eb636eb62f59f993039868a7be9719f76ba74191b4e"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "policy_realm_reuse_tests_v3.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "policy_realm_reuse_tests_v3.qnt",
+        "--main=policy_realm_reuse_tests_v3",
+        "--backend=typescript",
+        "--match=^(inputCustodyPreventsRetirement|physicalDutyPreventsReplacement|independentConfirmationRemainsMandatory|strictClosePreservesPolicy|laterEpochReusesPolicy|permanentChronologySurvivesReplacement|staleAndForeignCannotTransfer|unknownCannotRetireOrReopen)$",
+        "--seed=1300040",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v130/qa/policy-realm-reuse-model-v3-1791388629094979843/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "samples",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "policy_realm_reuse_v3.qnt",
+        "--main=policy_realm_reuse_v3",
+        "--backend=typescript",
+        "--invariant=safety",
+        "--seed=1300041",
+        "--max-samples=200",
+        "--max-steps=32",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v130/qa/policy-realm-reuse-model-v3-1791388629094979843/samples.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "scope": "Native driver realm custody abstraction only; original independent physical, terminal, journal and native permanent-retirement facts remain external authorities. Named selection and invariant samples are model evidence, not actual GTK/WebKit, physical reveal or release acceptance.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "namedScenarios": 8,
+  "invariantSamples": 200,
+  "artifacts": {
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-inputCustodyPreventsRetirement-0.itf.json": "8c87101ac1dc4b1d59c39c581320e04967b7aecf93a887c49f6e45fedb02d8e6",
+    "named-physicalDutyPreventsReplacement-1.itf.json": "eaaedcc3722b437b6dc52d7bc1b20a53f1cbce4b1c7f430bbc98ba55bab405b3",
+    "named-independentConfirmationRemainsMandatory-2.itf.json": "4249cdfe568461362b2df2c82837e4e5a87c6c280c84dcf082a1d978116546ba",
+    "named-strictClosePreservesPolicy-3.itf.json": "0ce252103444e7d5533b9c76c859e7470c7b2c8473528639e1c779f5cb22e049",
+    "named-laterEpochReusesPolicy-4.itf.json": "c4fd40824029c841c08e54ad7902efc25a38cebadc82d0214d57f9d69713684f",
+    "named-permanentChronologySurvivesReplacement-5.itf.json": "bb7ce84565b4a1c0862abc60895bd0c387d41cd98871638adb487e19489b6c6f",
+    "named-staleAndForeignCannotTransfer-6.itf.json": "7e6202eafb07bf9ee6f949fd835615fa7adbbb87d5f75c78a6ff01f2ef9cf806",
+    "named-unknownCannotRetireOrReopen-7.itf.json": "8c0d739af18f61a2b1585c4decfe54ded00ee0d3935ac2b49aea2cace3a34f2a",
+    "selected.stdout": "4e8563c75338516b1cf118fcef20c7af304cb7ff26ff7b667c52e2af8eb207d4",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "samples.itf.json": "f1579fda94c9ff4425f8f20359f6684311bd5149fbf357d06580e48e389e9cc0",
+    "samples.stdout": "a8e934225bc2034150bfa0761fe3610c727855ddc74472b7c0ecb3e8e7a1c21a",
+    "samples.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/spec/policy_realm_reuse_v3.qnt": "4bcdbbf0edda92b512e30337311982b1bb9ad58e8cfa675387e1cb574221229e",
+    "inputs/spec/policy_realm_reuse_tests_v3.qnt": "79937c1dfab801281545e8262356c45e186d48eda8bf2594b285b614b46e901c",
+    "inputs/qa/policy-realm-reuse-model-check-v3.py": "b5c51a64b89b81ab0bbc0d2ccbeef5aa2b09e3d103a0bc343f02f1cb48828e91"
+  }
+}

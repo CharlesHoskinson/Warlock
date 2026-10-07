@@ -1,0 +1,35 @@
+/usr/bin/ld: /tmp/ccu8HER5.o: in function `controlled_flush':
+shared-context-test.c:(.text+0x1084): undefined reference to `warlock_policy_driver_presentation'
+/usr/bin/ld: shared-context-test.c:(.text+0x10f5): undefined reference to `warlock_policy_driver_native'
+/usr/bin/ld: /tmp/ccu8HER5.o: in function `controlled_after_paint':
+shared-context-test.c:(.text+0x2bdf): undefined reference to `warlock_policy_driver_policy'
+/usr/bin/ld: shared-context-test.c:(.text+0x2c1d): undefined reference to `warlock_visual_channel_current'
+/usr/bin/ld: /tmp/ccu8HER5.o: in function `imported_image_report.isra.0':
+shared-context-test.c:(.text+0xbaa0): undefined reference to `warlock_policy_driver_policy'
+/usr/bin/ld: shared-context-test.c:(.text+0xbaf9): undefined reference to `warlock_visual_channel_current'
+/usr/bin/ld: /tmp/ccu8HER5.o: in function `client_snapshot_complete':
+shared-context-test.c:(.text+0x117d9): undefined reference to `warlock_policy_driver_policy'
+/usr/bin/ld: shared-context-test.c:(.text+0x117f9): undefined reference to `warlock_visual_channel_current'
+/usr/bin/ld: /tmp/ccu8HER5.o: in function `controlled_frame_notice':
+shared-context-test.c:(.text+0x12128): undefined reference to `warlock_visual_channel_invalidate'
+/usr/bin/ld: shared-context-test.c:(.text+0x121a0): undefined reference to `warlock_policy_driver_quarantine'
+/usr/bin/ld: /tmp/ccu8HER5.o: in function `shared_receive_text':
+shared-context-test.c:(.text+0x13e6f): undefined reference to `warlock_policy_driver_policy'
+/usr/bin/ld: shared-context-test.c:(.text+0x13e95): undefined reference to `warlock_visual_channel_ack'
+/usr/bin/ld: shared-context-test.c:(.text+0x1402f): undefined reference to `warlock_policy_driver_policy'
+/usr/bin/ld: shared-context-test.c:(.text+0x14056): undefined reference to `warlock_visual_channel_current'
+/usr/bin/ld: /tmp/ccu8HER5.o: in function `controlled_tick':
+shared-context-test.c:(.text+0x17688): undefined reference to `warlock_policy_driver_step'
+/usr/bin/ld: shared-context-test.c:(.text+0x177d5): undefined reference to `warlock_policy_driver_inspect'
+/usr/bin/ld: shared-context-test.c:(.text+0x17a5b): undefined reference to `warlock_policy_driver_policy'
+/usr/bin/ld: shared-context-test.c:(.text+0x17a89): undefined reference to `warlock_preview_policy_visual_projection'
+/usr/bin/ld: shared-context-test.c:(.text+0x17acd): undefined reference to `warlock_visual_channel_offer'
+/usr/bin/ld: shared-context-test.c:(.text+0x181f5): undefined reference to `warlock_policy_driver_new'
+/usr/bin/ld: shared-context-test.c:(.text+0x18255): undefined reference to `warlock_visual_channel_new'
+/usr/bin/ld: shared-context-test.c:(.text+0x1826b): undefined reference to `warlock_policy_driver_policy'
+/usr/bin/ld: shared-context-test.c:(.text+0x18292): undefined reference to `warlock_visual_channel_attach'
+/usr/bin/ld: /tmp/ccu8HER5.o: in function `archived_shared_main':
+shared-context-test.c:(.text+0x1be39): undefined reference to `warlock_visual_channel_detach'
+/usr/bin/ld: shared-context-test.c:(.text+0x1be50): undefined reference to `warlock_visual_channel_close'
+/usr/bin/ld: shared-context-test.c:(.text+0x1be8d): undefined reference to `warlock_policy_driver_close'
+collect2: error: ld returned 1 exit status

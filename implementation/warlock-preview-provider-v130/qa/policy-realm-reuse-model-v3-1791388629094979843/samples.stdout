@@ -1,0 +1,1193 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      closed: false,
+      code: 0,
+      confirmation: false,
+      duty: false,
+      epoch: 1,
+      history: [],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: false,
+      ticket: false,
+      uncertain: false
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      confirmation: false,
+      duty: false,
+      epoch: 1,
+      history: ["OldEpoch"],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: false,
+      ticket: false,
+      uncertain: false
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      closed: false,
+      code: 0,
+      confirmation: false,
+      duty: false,
+      epoch: 1,
+      history: ["OldEpoch", "Retain"],
+      inputs: 1,
+      permanent: false,
+      policy: 1,
+      proposal: false,
+      ticket: false,
+      uncertain: false
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      closed: false,
+      code: 0,
+      confirmation: false,
+      duty: true,
+      epoch: 1,
+      history: ["OldEpoch", "Retain", "Acquire"],
+      inputs: 1,
+      permanent: false,
+      policy: 1,
+      proposal: true,
+      ticket: false,
+      uncertain: false
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      closed: false,
+      code: 0,
+      confirmation: false,
+      duty: true,
+      epoch: 1,
+      history: ["OldEpoch", "Retain", "Acquire", "Process"],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: true,
+      ticket: false,
+      uncertain: false
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      confirmation: false,
+      duty: true,
+      epoch: 1,
+      history: ["OldEpoch", "Retain", "Acquire", "Process", "OldEpoch"],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: true,
+      ticket: false,
+      uncertain: false
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      confirmation: false,
+      duty: true,
+      epoch: 1,
+      history:
+        ["OldEpoch", "Retain", "Acquire", "Process", "OldEpoch", "Confirm"],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: true,
+      ticket: false,
+      uncertain: false
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      confirmation: false,
+      duty: true,
+      epoch: 1,
+      history:
+        [
+          "OldEpoch",
+          "Retain",
+          "Acquire",
+          "Process",
+          "OldEpoch",
+          "Confirm",
+          "Acquire"
+        ],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: true,
+      ticket: false,
+      uncertain: false
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      confirmation: false,
+      duty: true,
+      epoch: 1,
+      history:
+        [
+          "OldEpoch",
+          "Retain",
+          "Acquire",
+          "Process",
+          "OldEpoch",
+          "Confirm",
+          "Acquire",
+          "Acquire"
+        ],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: true,
+      ticket: false,
+      uncertain: false
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      confirmation: false,
+      duty: true,
+      epoch: 1,
+      history:
+        [
+          "OldEpoch",
+          "Retain",
+          "Acquire",
+          "Process",
+          "OldEpoch",
+          "Confirm",
+          "Acquire",
+          "Acquire",
+          "Retire"
+        ],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: true,
+      ticket: false,
+      uncertain: false
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      confirmation: false,
+      duty: true,
+      epoch: 1,
+      history:
+        [
+          "OldEpoch",
+          "Retain",
+          "Acquire",
+          "Process",
+          "OldEpoch",
+          "Confirm",
+          "Acquire",
+          "Acquire",
+          "Retire",
+          "Dispatch"
+        ],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: true,
+      ticket: false,
+      uncertain: false
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      confirmation: false,
+      duty: true,
+      epoch: 1,
+      history:
+        [
+          "OldEpoch",
+          "Retain",
+          "Acquire",
+          "Process",
+          "OldEpoch",
+          "Confirm",
+          "Acquire",
+          "Acquire",
+          "Retire",
+          "Dispatch",
+          "Acquire"
+        ],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: true,
+      ticket: false,
+      uncertain: false
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      confirmation: false,
+      duty: true,
+      epoch: 1,
+      history:
+        [
+          "OldEpoch",
+          "Retain",
+          "Acquire",
+          "Process",
+          "OldEpoch",
+          "Confirm",
+          "Acquire",
+          "Acquire",
+          "Retire",
+          "Dispatch",
+          "Acquire",
+          "Terminal"
+        ],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: true,
+      ticket: false,
+      uncertain: false
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      closed: false,
+      code: 0,
+      confirmation: false,
+      duty: true,
+      epoch: 1,
+      history:
+        [
+          "OldEpoch",
+          "Retain",
+          "Acquire",
+          "Process",
+          "OldEpoch",
+          "Confirm",
+          "Acquire",
+          "Acquire",
+          "Retire",
+          "Dispatch",
+          "Acquire",
+          "Terminal",
+          "Issue"
+        ],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: false,
+      ticket: true,
+      uncertain: false
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      confirmation: false,
+      duty: true,
+      epoch: 1,
+      history:
+        [
+          "OldEpoch",
+          "Retain",
+          "Acquire",
+          "Process",
+          "OldEpoch",
+          "Confirm",
+          "Acquire",
+          "Acquire",
+          "Retire",
+          "Dispatch",
+          "Acquire",
+          "Terminal",
+          "Issue",
+          "Confirm"
+        ],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: false,
+      ticket: true,
+      uncertain: false
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      confirmation: false,
+      duty: true,
+      epoch: 1,
+      history:
+        [
+          "OldEpoch",
+          "Retain",
+          "Acquire",
+          "Process",
+          "OldEpoch",
+          "Confirm",
+          "Acquire",
+          "Acquire",
+          "Retire",
+          "Dispatch",
+          "Acquire",
+          "Terminal",
+          "Issue",
+          "Confirm",
+          "ForeignBinding"
+        ],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: false,
+      ticket: true,
+      uncertain: false
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      confirmation: false,
+      duty: true,
+      epoch: 1,
+      history:
+        [
+          "OldEpoch",
+          "Retain",
+          "Acquire",
+          "Process",
+          "OldEpoch",
+          "Confirm",
+          "Acquire",
+          "Acquire",
+          "Retire",
+          "Dispatch",
+          "Acquire",
+          "Terminal",
+          "Issue",
+          "Confirm",
+          "ForeignBinding",
+          "Terminal"
+        ],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: false,
+      ticket: true,
+      uncertain: false
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      closed: false,
+      code: 0,
+      confirmation: false,
+      duty: true,
+      epoch: 1,
+      history:
+        [
+          "OldEpoch",
+          "Retain",
+          "Acquire",
+          "Process",
+          "OldEpoch",
+          "Confirm",
+          "Acquire",
+          "Acquire",
+          "Retire",
+          "Dispatch",
+          "Acquire",
+          "Terminal",
+          "Issue",
+          "Confirm",
+          "ForeignBinding",
+          "Terminal",
+          "Unknown"
+        ],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: false,
+      ticket: true,
+      uncertain: true
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      confirmation: false,
+      duty: true,
+      epoch: 1,
+      history:
+        [
+          "OldEpoch",
+          "Retain",
+          "Acquire",
+          "Process",
+          "OldEpoch",
+          "Confirm",
+          "Acquire",
+          "Acquire",
+          "Retire",
+          "Dispatch",
+          "Acquire",
+          "Terminal",
+          "Issue",
+          "Confirm",
+          "ForeignBinding",
+          "Terminal",
+          "Unknown",
+          "OldEpoch"
+        ],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: false,
+      ticket: true,
+      uncertain: true
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      confirmation: false,
+      duty: true,
+      epoch: 1,
+      history:
+        [
+          "OldEpoch",
+          "Retain",
+          "Acquire",
+          "Process",
+          "OldEpoch",
+          "Confirm",
+          "Acquire",
+          "Acquire",
+          "Retire",
+          "Dispatch",
+          "Acquire",
+          "Terminal",
+          "Issue",
+          "Confirm",
+          "ForeignBinding",
+          "Terminal",
+          "Unknown",
+          "OldEpoch",
+          "Issue"
+        ],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: false,
+      ticket: true,
+      uncertain: true
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      confirmation: false,
+      duty: true,
+      epoch: 1,
+      history:
+        [
+          "OldEpoch",
+          "Retain",
+          "Acquire",
+          "Process",
+          "OldEpoch",
+          "Confirm",
+          "Acquire",
+          "Acquire",
+          "Retire",
+          "Dispatch",
+          "Acquire",
+          "Terminal",
+          "Issue",
+          "Confirm",
+          "ForeignBinding",
+          "Terminal",
+          "Unknown",
+          "OldEpoch",
+          "Issue",
+          "Dispatch"
+        ],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: false,
+      ticket: true,
+      uncertain: true
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      confirmation: false,
+      duty: true,
+      epoch: 1,
+      history:
+        [
+          "OldEpoch",
+          "Retain",
+          "Acquire",
+          "Process",
+          "OldEpoch",
+          "Confirm",
+          "Acquire",
+          "Acquire",
+          "Retire",
+          "Dispatch",
+          "Acquire",
+          "Terminal",
+          "Issue",
+          "Confirm",
+          "ForeignBinding",
+          "Terminal",
+          "Unknown",
+          "OldEpoch",
+          "Issue",
+          "Dispatch",
+          "Retain"
+        ],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: false,
+      ticket: true,
+      uncertain: true
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      confirmation: false,
+      duty: true,
+      epoch: 1,
+      history:
+        [
+          "OldEpoch",
+          "Retain",
+          "Acquire",
+          "Process",
+          "OldEpoch",
+          "Confirm",
+          "Acquire",
+          "Acquire",
+          "Retire",
+          "Dispatch",
+          "Acquire",
+          "Terminal",
+          "Issue",
+          "Confirm",
+          "ForeignBinding",
+          "Terminal",
+          "Unknown",
+          "OldEpoch",
+          "Issue",
+          "Dispatch",
+          "Retain",
+          "Permanent"
+        ],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: false,
+      ticket: true,
+      uncertain: true
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      confirmation: false,
+      duty: true,
+      epoch: 1,
+      history:
+        [
+          "OldEpoch",
+          "Retain",
+          "Acquire",
+          "Process",
+          "OldEpoch",
+          "Confirm",
+          "Acquire",
+          "Acquire",
+          "Retire",
+          "Dispatch",
+          "Acquire",
+          "Terminal",
+          "Issue",
+          "Confirm",
+          "ForeignBinding",
+          "Terminal",
+          "Unknown",
+          "OldEpoch",
+          "Issue",
+          "Dispatch",
+          "Retain",
+          "Permanent",
+          "Confirm"
+        ],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: false,
+      ticket: true,
+      uncertain: true
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      confirmation: false,
+      duty: true,
+      epoch: 1,
+      history:
+        [
+          "OldEpoch",
+          "Retain",
+          "Acquire",
+          "Process",
+          "OldEpoch",
+          "Confirm",
+          "Acquire",
+          "Acquire",
+          "Retire",
+          "Dispatch",
+          "Acquire",
+          "Terminal",
+          "Issue",
+          "Confirm",
+          "ForeignBinding",
+          "Terminal",
+          "Unknown",
+          "OldEpoch",
+          "Issue",
+          "Dispatch",
+          "Retain",
+          "Permanent",
+          "Confirm",
+          "Issue"
+        ],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: false,
+      ticket: true,
+      uncertain: true
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      confirmation: false,
+      duty: true,
+      epoch: 1,
+      history:
+        [
+          "OldEpoch",
+          "Retain",
+          "Acquire",
+          "Process",
+          "OldEpoch",
+          "Confirm",
+          "Acquire",
+          "Acquire",
+          "Retire",
+          "Dispatch",
+          "Acquire",
+          "Terminal",
+          "Issue",
+          "Confirm",
+          "ForeignBinding",
+          "Terminal",
+          "Unknown",
+          "OldEpoch",
+          "Issue",
+          "Dispatch",
+          "Retain",
+          "Permanent",
+          "Confirm",
+          "Issue",
+          "Retain"
+        ],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: false,
+      ticket: true,
+      uncertain: true
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      confirmation: false,
+      duty: true,
+      epoch: 1,
+      history:
+        [
+          "OldEpoch",
+          "Retain",
+          "Acquire",
+          "Process",
+          "OldEpoch",
+          "Confirm",
+          "Acquire",
+          "Acquire",
+          "Retire",
+          "Dispatch",
+          "Acquire",
+          "Terminal",
+          "Issue",
+          "Confirm",
+          "ForeignBinding",
+          "Terminal",
+          "Unknown",
+          "OldEpoch",
+          "Issue",
+          "Dispatch",
+          "Retain",
+          "Permanent",
+          "Confirm",
+          "Issue",
+          "Retain",
+          "Acquire"
+        ],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: false,
+      ticket: true,
+      uncertain: true
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      confirmation: false,
+      duty: true,
+      epoch: 1,
+      history:
+        [
+          "OldEpoch",
+          "Retain",
+          "Acquire",
+          "Process",
+          "OldEpoch",
+          "Confirm",
+          "Acquire",
+          "Acquire",
+          "Retire",
+          "Dispatch",
+          "Acquire",
+          "Terminal",
+          "Issue",
+          "Confirm",
+          "ForeignBinding",
+          "Terminal",
+          "Unknown",
+          "OldEpoch",
+          "Issue",
+          "Dispatch",
+          "Retain",
+          "Permanent",
+          "Confirm",
+          "Issue",
+          "Retain",
+          "Acquire",
+          "Unknown"
+        ],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: false,
+      ticket: true,
+      uncertain: true
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      confirmation: false,
+      duty: true,
+      epoch: 1,
+      history:
+        [
+          "OldEpoch",
+          "Retain",
+          "Acquire",
+          "Process",
+          "OldEpoch",
+          "Confirm",
+          "Acquire",
+          "Acquire",
+          "Retire",
+          "Dispatch",
+          "Acquire",
+          "Terminal",
+          "Issue",
+          "Confirm",
+          "ForeignBinding",
+          "Terminal",
+          "Unknown",
+          "OldEpoch",
+          "Issue",
+          "Dispatch",
+          "Retain",
+          "Permanent",
+          "Confirm",
+          "Issue",
+          "Retain",
+          "Acquire",
+          "Unknown",
+          "Permanent"
+        ],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: false,
+      ticket: true,
+      uncertain: true
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      confirmation: false,
+      duty: true,
+      epoch: 1,
+      history:
+        [
+          "OldEpoch",
+          "Retain",
+          "Acquire",
+          "Process",
+          "OldEpoch",
+          "Confirm",
+          "Acquire",
+          "Acquire",
+          "Retire",
+          "Dispatch",
+          "Acquire",
+          "Terminal",
+          "Issue",
+          "Confirm",
+          "ForeignBinding",
+          "Terminal",
+          "Unknown",
+          "OldEpoch",
+          "Issue",
+          "Dispatch",
+          "Retain",
+          "Permanent",
+          "Confirm",
+          "Issue",
+          "Retain",
+          "Acquire",
+          "Unknown",
+          "Permanent",
+          "Issue"
+        ],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: false,
+      ticket: true,
+      uncertain: true
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      confirmation: false,
+      duty: true,
+      epoch: 1,
+      history:
+        [
+          "OldEpoch",
+          "Retain",
+          "Acquire",
+          "Process",
+          "OldEpoch",
+          "Confirm",
+          "Acquire",
+          "Acquire",
+          "Retire",
+          "Dispatch",
+          "Acquire",
+          "Terminal",
+          "Issue",
+          "Confirm",
+          "ForeignBinding",
+          "Terminal",
+          "Unknown",
+          "OldEpoch",
+          "Issue",
+          "Dispatch",
+          "Retain",
+          "Permanent",
+          "Confirm",
+          "Issue",
+          "Retain",
+          "Acquire",
+          "Unknown",
+          "Permanent",
+          "Issue",
+          "Dispatch"
+        ],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: false,
+      ticket: true,
+      uncertain: true
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      confirmation: false,
+      duty: true,
+      epoch: 1,
+      history:
+        [
+          "OldEpoch",
+          "Retain",
+          "Acquire",
+          "Process",
+          "OldEpoch",
+          "Confirm",
+          "Acquire",
+          "Acquire",
+          "Retire",
+          "Dispatch",
+          "Acquire",
+          "Terminal",
+          "Issue",
+          "Confirm",
+          "ForeignBinding",
+          "Terminal",
+          "Unknown",
+          "OldEpoch",
+          "Issue",
+          "Dispatch",
+          "Retain",
+          "Permanent",
+          "Confirm",
+          "Issue",
+          "Retain",
+          "Acquire",
+          "Unknown",
+          "Permanent",
+          "Issue",
+          "Dispatch",
+          "Confirm"
+        ],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: false,
+      ticket: true,
+      uncertain: true
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      closed: false,
+      code: 1,
+      confirmation: false,
+      duty: true,
+      epoch: 1,
+      history:
+        [
+          "OldEpoch",
+          "Retain",
+          "Acquire",
+          "Process",
+          "OldEpoch",
+          "Confirm",
+          "Acquire",
+          "Acquire",
+          "Retire",
+          "Dispatch",
+          "Acquire",
+          "Terminal",
+          "Issue",
+          "Confirm",
+          "ForeignBinding",
+          "Terminal",
+          "Unknown",
+          "OldEpoch",
+          "Issue",
+          "Dispatch",
+          "Retain",
+          "Permanent",
+          "Confirm",
+          "Issue",
+          "Retain",
+          "Acquire",
+          "Unknown",
+          "Permanent",
+          "Issue",
+          "Dispatch",
+          "Confirm",
+          "Terminal"
+        ],
+      inputs: 0,
+      permanent: false,
+      policy: 1,
+      proposal: false,
+      ticket: true,
+      uncertain: true
+    }
+}
+
+[ok] No violation found (309ms at 647 traces/second).
+Trace length statistics: max=33, min=33, average=33.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

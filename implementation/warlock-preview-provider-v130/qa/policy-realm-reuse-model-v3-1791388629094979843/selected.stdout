@@ -1,0 +1,12 @@
+
+  policy_realm_reuse_tests_v3
+    ok inputCustodyPreventsRetirement passed 1 test(s)
+    ok physicalDutyPreventsReplacement passed 1 test(s)
+    ok independentConfirmationRemainsMandatory passed 1 test(s)
+    ok strictClosePreservesPolicy passed 1 test(s)
+    ok laterEpochReusesPolicy passed 1 test(s)
+    ok permanentChronologySurvivesReplacement passed 1 test(s)
+    ok staleAndForeignCannotTransfer passed 1 test(s)
+    ok unknownCannotRetireOrReopen passed 1 test(s)
+
+  8 passing (17ms)

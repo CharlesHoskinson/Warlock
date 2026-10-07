@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "inputs": {
+    "native/preview-policy-driver.cpp": "4cb727de2343848684fa4a8ca6a9f9c6c58c8fa9dcb3abf7bac108cb590dbbd2",
+    "native/preview-policy-driver.h": "5405ef4ca97dafd30970e39771855d2858083586ae72f0f19beef769badd5e97",
+    "native/elm-preview-policy.h": "9f72dcb82e04e4a663c1481dd4f55f5d40fb0fa018356aa4ab0e163af0eda9cb",
+    "native/imported-clients.h": "cc719de38edeaa9f9b9f60f079080ab233fd39f2bc20487109bdcf2a044b72ca",
+    "native/preview-provider-bootstrap.h": "7220bc8df0bc40da2f897e519cff5340bc0eee84582345572b6b5c290a714c35",
+    "qa/driver-compile.py": "25d47c4594000cf3301f7970fae50bf4a5037ce2c7f38b7ae137a3d7af7851d3"
+  },
+  "commands": [
+    {
+      "name": "flags",
+      "argv": [
+        "pkg-config",
+        "--cflags",
+        "--libs",
+        "gio-2.0",
+        "json-glib-1.0",
+        "javascriptcoregtk-4.1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "driver-compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-O1",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-Inative",
+        "-c",
+        "native/preview-policy-driver.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v130/qa/driver-compile-1791388092432414386/driver.o",
+        "-I/usr/include/json-glib-1.0",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/webkitgtk-4.1",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-ljson-glib-1.0",
+        "-lgio-2.0",
+        "-ljavascriptcoregtk-4.1",
+        "-lgobject-2.0",
+        "-lglib-2.0"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "artifacts": {
+    "flags.stdout": "fddcc7b444bd95f52509670da1ae67e8ff5bf8beebdd67e64bf8936e8c4272df",
+    "flags.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "driver.o": "a2d0cc0db46d14e37ab0639930cc3ee8ca9445bf4d33f25636a395f086176f03",
+    "driver-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "driver-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/native/preview-policy-driver.cpp": "4cb727de2343848684fa4a8ca6a9f9c6c58c8fa9dcb3abf7bac108cb590dbbd2",
+    "inputs/native/preview-policy-driver.h": "5405ef4ca97dafd30970e39771855d2858083586ae72f0f19beef769badd5e97",
+    "inputs/native/elm-preview-policy.h": "9f72dcb82e04e4a663c1481dd4f55f5d40fb0fa018356aa4ab0e163af0eda9cb",
+    "inputs/native/imported-clients.h": "cc719de38edeaa9f9b9f60f079080ab233fd39f2bc20487109bdcf2a044b72ca",
+    "inputs/native/preview-provider-bootstrap.h": "7220bc8df0bc40da2f897e519cff5340bc0eee84582345572b6b5c290a714c35",
+    "inputs/qa/driver-compile.py": "25d47c4594000cf3301f7970fae50bf4a5037ce2c7f38b7ae137a3d7af7851d3"
+  }
+}

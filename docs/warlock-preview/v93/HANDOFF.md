@@ -546,3 +546,38 @@ commit129.py is an existing held historical Native129 script. Preserve it and
 the partial publication scripts. Fresh prepare_publication95_v2.py uses unique
 commit_gui129_controlled.py and publication-v2 output, retaining the failed
 preparation as provenance. No held source or original deadline is replaced.
+
+PUBLIC95 c59722eb3c501552914859d58f8c5c70bdd8c21c/2001 exact owned blobs,
+source6be2b7fce8c20cc5fcb577f50959e3039c4cc1de,
+receipt5e59bb47962d5716b0fbc46271eebe3ec3fd03b4, PUBLIC/feature/elm verified.
+Fresh owned GUI130 changes only native driver implementation/header from held129:
+strict original C/Bootstrap realm retirement can retain the same Elm owner;
+later same-binding original Native epoch and empty issued namespace transfers
+that exact owner to a new grant-bound outbox. Registry releases only the already
+closed original C owner; permanent retirement chronology survives. Unknown and
+all original input/ticket/physical/journal/confirmation custody still refuse close.
+Actual C/JSC143-check two-realm sealed-FD/synthetic-peer trace proves same policy
+pointer/binding, refusal before transfer, permanent retired21 replay rejection,
+new actual Active22 capture, strict final normal owner/peer close/no grant reset.
+Original2261 driver checks+9 pre-grant faults pass; Quint8 selected/200 samples
+plus6 custody-stage checks coupled to11 actual observations pass. First model
+syntax/typecheck failures and original fixture failures remain held evidence.
+Direct permanent-retirement fixture fails because the synthetic FD peer rejects
+binary release after its export already closed. Accepted two-realm probe uses
+original popup quarantine/reconciliation before later actual permanent retirement;
+direct-retirement path remains unqualified and this sequence is stated explicitly.
+Accidentally selecting inherited build-policy-driver.py reached context link
+failure; retain it. Current build-controlled-host.py full119 passes with original
+link closure. Actual Native142 unchanged29-control paint/image/output/curtain/
+drain oracle passes with13 normal owned exits/private cleanup. Separate delayed
+Native143 uses original18-control probe next. The new rebind API is not wired to
+actual normal GUI close/reopen; fixed-grant renderer/context lifecycle remains
+next after freeze/PUBLIC96. Physical reveal/reload/process/uncertain recovery/
+full workload/RSS/full preview/release remain open; installed/drafts/foreign intact.
+
+GUI1303848files/Native14293files/Native14384files held. Separate actual delayed
+Native14318checks/8 normal exits/private cleanup passes; normal14229/13 and
+current full119 retained. Reports distinguish unchanged host regressions from
+the separately qualified C/JSC143-check two-realm foundation. CONTROL040 bounded
+task checked; actual GUI rebind/reopen and direct-retirement path stay open.
+PUBLIC96 publication preparation next, then fresh native renderer/context lifecycle.

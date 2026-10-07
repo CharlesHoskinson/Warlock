@@ -1,0 +1,34 @@
+{
+  "passed": false,
+  "inputs": {
+    "spec/policy_realm_reuse_v2.qnt": "039d30f17e706fb43685baabd91f95b64242c9e53a8bbc29fc87dd3599f55ce9",
+    "spec/policy_realm_reuse_tests_v2.qnt": "2b460c396515d3710fce6bdc3120772924f89b4e93ca4e62aa709e19e21e26f0",
+    "qa/policy-realm-reuse-model-check-v2.py": "ebeb59e676504a456dcdf8e8a87e5db3ebdac8f211659eaebd5f1a4d909ed6e9"
+  },
+  "quint": {
+    "path": "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+    "sha256": "bd6e9400f6358a8a69d80eb636eb62f59f993039868a7be9719f76ba74191b4e"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "policy_realm_reuse_tests_v2.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "scope": "Native driver realm custody abstraction only; original independent physical, terminal, journal and native permanent-retirement facts remain external authorities. Named selection and invariant samples are model evidence, not actual GTK/WebKit, physical reveal or release acceptance.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "error": "AssertionError(\"\\n Error [QNT101]: Built-in name 'next' is redefined in module 'policy_realm_reuse_v2'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v130/qa/policy-realm-reuse-model-v2-1791388582531783972/inputs/spec/policy_realm_reuse_v2.qnt:27:33\\n  27:  action fire(e:Event):bool={val next=reduce(s,e);s'={...next,history:s.history.append(label(e))}}\\n                                      ^^^^\\n\\nerror: parsing failed\\n\")",
+  "artifacts": {
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "f73daca8b5235bf499b526bbaa1511b015cd4753e4c14e21f56c80a59b002e95",
+    "inputs/spec/policy_realm_reuse_v2.qnt": "039d30f17e706fb43685baabd91f95b64242c9e53a8bbc29fc87dd3599f55ce9",
+    "inputs/spec/policy_realm_reuse_tests_v2.qnt": "2b460c396515d3710fce6bdc3120772924f89b4e93ca4e62aa709e19e21e26f0",
+    "inputs/qa/policy-realm-reuse-model-check-v2.py": "ebeb59e676504a456dcdf8e8a87e5db3ebdac8f211659eaebd5f1a4d909ed6e9"
+  }
+}

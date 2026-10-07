@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v130/spec/policy_realm_reuse_v3.qnt": "4bcdbbf0edda92b512e30337311982b1bb9ad58e8cfa675387e1cb574221229e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v130/qa/policy-driver-realm-reuse-check-v5-1791388803876321382/report.json": "f2c1c6c3e8ecb62219aac4cba8e7bd9e5bf883b1427a56161be0d92b8b1d2b2a",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v130/qa/policy-driver-realm-reuse-check-v5-1791388803876321382/steps.json": "771c566e164d1ea95c88d4826f89776908adf261e55f8602b99b19a6f9adbdec"
+  },
+  "quint": {
+    "path": "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+    "sha256": "bd6e9400f6358a8a69d80eb636eb62f59f993039868a7be9719f76ba74191b4e"
+  },
+  "command": [
+    "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+    "test",
+    "coupled.qnt",
+    "--main=coupled_realm_reuse",
+    "--backend=typescript",
+    "--match=^actualTwoRealmCustody$",
+    "--seed=1300042",
+    "--max-samples=1",
+    "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v130/qa/policy-realm-reuse-coupling-1791388999135608451/coupled-{test}-{seq}.itf.json"
+  ],
+  "exitCode": 0,
+  "observedStates": 11,
+  "coupledQuintChecks": 6,
+  "scope": "Actual C/JSC driver custody observations projected to bounded realm lifecycle stages. Explicit effect stages are abstract summaries, not every individual ticket or full lifecycle refinement. Actual C readiness, permanent Retired fact, same policy pointer/binding and strict normal peer close remain independent evidence. Popup quarantine precedes permanent retirement. No GTK/WebKit reopen, direct-retirement, frame/reveal or release qualification.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "artifacts": {
+    "policy_realm_reuse_v3.qnt": "4bcdbbf0edda92b512e30337311982b1bb9ad58e8cfa675387e1cb574221229e",
+    "coupled.qnt": "40bd1d099907e91e72707c4c8031b7eb35df452ef3efc83cf6adeb0719fd3983",
+    "coupled-actualTwoRealmCustody-0.itf.json": "ffd0bdf5f9730f30c0094d6ffc7c2c00326c598dda5f6523841c27545abc6ad7",
+    "quint.stdout": "0c3f049be6109013996950d311ad107193f76790a740ddfb6349bcd3d9363534",
+    "quint.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

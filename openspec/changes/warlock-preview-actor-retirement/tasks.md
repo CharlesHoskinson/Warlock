@@ -440,3 +440,16 @@ activation and all original full release gates remain open.
 - [x] Qualify CONTROL-039 actual delayed WebKit result through original popup closure:
   one real retained result, original finish once, no stale accepted pixels, original
   native policy/custody drain and unchanged normal route/deadlines/strict teardown.
+- [ ] Implement and qualify CONTROL-040 strict native realm retirement/rebinding
+  through the same persistent Elm policy, later original same-binding epoch,
+  permanent retired-incarnation chronology and retained refusal custody.
+- [ ] Qualify actual controlled GUI close/reopen with the fixed-grant WebKit
+  context lifetime, original Native/policy/physical/journal/confirmation gates,
+  original deadlines and existing image/frame/closed-curtain regression.
+
+- [x] Freeze bounded CONTROL-040 GUI130 C/JSC two-realm same-policy/Native-binding
+  reuse after original popup quarantine and later permanent incarnation retirement:
+  original2261+9, new143, Quint8named/200samples and6 stages coupled to11 actual
+  observations. Current full119 and actual unchanged Native14229/13 and delayed
+  Native14318/8 regressions/cleanups pass. Actual GUI rebind/reopen remains open;
+  direct-retirement fixture failure is retained and unqualified.

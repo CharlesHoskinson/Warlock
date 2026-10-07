@@ -1,0 +1,27 @@
+{
+  "passed": false,
+  "priorReport": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v130/qa/policy-driver-realm-reuse-check-v3-1791388582531783144/report.json",
+    "sha256": "8f32cd20446401a26c7030acd7bdf468340021b055564432f129094953174343"
+  },
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v130/qa/policy-driver-realm-reuse-roundtrip-v2.js": "602ebd848201f6671700c01aa03b3611fb45555678eeb91be08070ca14d1f861"
+  },
+  "command": [
+    "node",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v130/qa/policy-driver-realm-reuse-diagnostic-v4-1791388742152529822/roundtrip.js",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v130/qa/policy-driver-realm-reuse-check-v3-1791388582531783144/driver",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v130/qa/policy-driver-realm-reuse-check-v3-1791388582531783144/policy.js",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v130/qa/policy-driver-realm-reuse-check-v3-1791388582531783144/inputs/assets/native-preview-control-outbox.js"
+  ],
+  "exitCode": 1,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "artifacts": {
+    "roundtrip.js": "602ebd848201f6671700c01aa03b3611fb45555678eeb91be08070ca14d1f861",
+    "failed-steps.json": "790d06ac83e8c253f4fad9c412ed3c1f04b5f95a47ba81193d62df874f26b4a7",
+    "peer.stderr": "d39fd0e9680aabdde3c898e00658e0bbb783b7c2a2bf351a9944bcf511cda14e",
+    "roundtrip.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "roundtrip.stderr": "e3871b74b394a7ea45c014ca1b823bed265c831e639996ab7ba280ae01f672ce"
+  }
+}

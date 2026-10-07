@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "priorReport": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v130/qa/policy-driver-realm-reuse-check-v3-1791388582531783144/report.json",
+    "sha256": "8f32cd20446401a26c7030acd7bdf468340021b055564432f129094953174343"
+  },
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v130/qa/policy-driver-realm-reuse-roundtrip-v3.js": "6e7f1e3210a81c6ebfa7422c7e639d115d8ec53296392a0fdd4462a85c35da5c"
+  },
+  "command": [
+    "node",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v130/qa/policy-driver-realm-reuse-check-v5-1791388803876321382/roundtrip.js",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v130/qa/policy-driver-realm-reuse-check-v3-1791388582531783144/driver",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v130/qa/policy-driver-realm-reuse-check-v3-1791388582531783144/policy.js",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v130/qa/policy-driver-realm-reuse-check-v3-1791388582531783144/inputs/assets/native-preview-control-outbox.js"
+  ],
+  "exitCode": 0,
+  "scope": "Original popup quarantine/reconciliation precedes actual permanent native incarnation retirement; same persistent policy later rejects retired-source resurrection and stale epoch. Actual C/JSC/FD only, not GTK/WebKit reopen or direct-retirement path acceptance.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "evidence": {
+    "passed": true,
+    "checks": 143,
+    "nativePolicyInstances": 1,
+    "nativeTransportInstances": 2,
+    "rendererWindowPolicies": 0,
+    "actualControlledC": true,
+    "actualSyntheticCapturedFD": true,
+    "normalOwnedExit": true,
+    "normalOwnedPeerExit": true,
+    "nativeGrantResets": 0,
+    "originalBindingPreserved": true,
+    "originalPolicyPointerPreserved": true,
+    "permanentRetiredSubjectCannotResurrect": true,
+    "actualWebKit": false,
+    "nativeAcceptance": false,
+    "fullReleaseAccepted": false
+  },
+  "artifacts": {
+    "roundtrip.js": "6e7f1e3210a81c6ebfa7422c7e639d115d8ec53296392a0fdd4462a85c35da5c",
+    "steps.json": "771c566e164d1ea95c88d4826f89776908adf261e55f8602b99b19a6f9adbdec",
+    "roundtrip.stdout": "9cd0a1d484aba1c16349deec1ad4214459aac1ade9f2c585c8a7b87f15137962",
+    "roundtrip.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

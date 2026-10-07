@@ -1,0 +1,8 @@
+
+ Error [QNT101]: Built-in name 'next' is redefined in module 'policy_realm_reuse_v2'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v130/qa/policy-realm-reuse-model-v2-1791388582531783972/inputs/spec/policy_realm_reuse_v2.qnt:27:33
+  27:  action fire(e:Event):bool={val next=reduce(s,e);s'={...next,history:s.history.append(label(e))}}
+                                      ^^^^
+
+error: parsing failed

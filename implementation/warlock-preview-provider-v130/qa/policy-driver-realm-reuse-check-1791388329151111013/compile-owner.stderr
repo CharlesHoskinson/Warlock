@@ -1,0 +1,8 @@
+native/policy-driver-realm-reuse-fixture.cpp: In function ‘int main(int, char**)’:
+native/policy-driver-realm-reuse-fixture.cpp:55:13: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+   55 |             if(delivery)ok=warlock_imported_clients_retirement_pending(imported,delivery,popup,&text,&error);if(text){result=text;g_free(text);}
+      |             ^~
+native/policy-driver-realm-reuse-fixture.cpp:55:110: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   55 |             if(delivery)ok=warlock_imported_clients_retirement_pending(imported,delivery,popup,&text,&error);if(text){result=text;g_free(text);}
+      |                                                                                                              ^~
+cc1plus: all warnings being treated as errors

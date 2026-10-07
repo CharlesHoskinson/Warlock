@@ -1,0 +1,534 @@
+[
+  {
+    "input": {
+      "op": "presentation",
+      "value": "{\"surfaceProtocol\":2,\"publication\":\"1\",\"lease\":\"1\",\"mode\":\"picker\",\"status\":\"\",\"bar\":[],\"popup\":[{\"id\":\"family:21\",\"domId\":\"window-21\",\"label\":\"Window\",\"ariaLabel\":\"Window\",\"detail\":\"\",\"enabled\":true}]}"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "native",
+      "epoch": "1",
+      "events": "[{\"kind\":\"source-seed\",\"publication\":\"1\",\"lease\":\"1\",\"identity\":\"family:21\",\"title\":\"Client content\",\"application\":\"Native client\",\"source\":{\"protocolVersion\":3,\"kind\":\"preview-client-scope\",\"binding\":{\"lifetime\":\"18446744073709551615\",\"session\":\"1999485\",\"frontend\":\"9007199254740993\"},\"requestId\":\"1\",\"scope\":{\"binding\":{\"lifetime\":\"18446744073709551615\",\"session\":\"1999485\",\"frontend\":\"9007199254740993\"},\"context\":{\"lifetime\":\"18446744073709551615\",\"incarnation\":\"21\",\"output\":\"9007199254740993\",\"privacy\":\"2\",\"rendering\":\"3\",\"scene\":\"4\",\"content\":\"5\"},\"observation\":\"1\",\"clock\":\"18446744073709551615\",\"now\":\"9007199255740993\",\"present\":true,\"sourceLive\":true,\"locked\":false,\"gpuReady\":true},\"maximumTransferBytes\":\"4096\",\"previewEligible\":false,\"scopeKind\":\"isolated-root-client-unqualified\"}},{\"kind\":\"event\",\"identity\":\"family:21\",\"event\":{\"kind\":\"request\",\"trigger\":{\"binding\":{\"lifetime\":\"18446744073709551615\",\"session\":\"1999485\",\"frontend\":\"9007199254740993\"},\"context\":{\"lifetime\":\"18446744073709551615\",\"incarnation\":\"21\",\"output\":\"9007199254740993\",\"privacy\":\"2\",\"rendering\":\"3\",\"scene\":\"4\",\"content\":\"5\"},\"origin\":\"1\",\"clock\":\"18446744073709551615\",\"deadline\":\"9007201255740993\"}}}]"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "inspect"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": {
+        "retainedInputs": 0,
+        "retainedInputBytes": 0,
+        "ticketUnnotified": false,
+        "postedTickets": 0,
+        "confirmations": 0,
+        "returnedEventsRetained": false,
+        "returnedEventBatches": 0,
+        "returnedEventBytes": 0,
+        "nativeEffectError": "",
+        "returnedBatchCapacity": 3195,
+        "returnedByteCapacity": 26173440,
+        "dispatchOutputReservation": 8192,
+        "transport": {
+          "nativeIssuedThrough": "1",
+          "deliveredThrough": "1",
+          "pending": 0,
+          "capacity": 1065
+        },
+        "privatePolicy": {
+          "models": [
+            {
+              "identity": "family:21",
+              "active": true,
+              "model": {
+                "scope": {
+                  "binding": {
+                    "lifetime": "18446744073709551615",
+                    "session": "1999485",
+                    "frontend": "9007199254740993"
+                  },
+                  "context": {
+                    "lifetime": "18446744073709551615",
+                    "incarnation": "21",
+                    "output": "9007199254740993",
+                    "privacy": "2",
+                    "rendering": "3",
+                    "scene": "4",
+                    "content": "5"
+                  },
+                  "observation": "1",
+                  "clock": "18446744073709551615",
+                  "now": "9007199255740993",
+                  "present": true,
+                  "sourceLive": true,
+                  "locked": false,
+                  "gpuReady": true
+                },
+                "demand": true,
+                "ready": true,
+                "nextRequest": "2",
+                "job": null,
+                "candidate": null,
+                "accepted": {
+                  "job": {
+                    "binding": {
+                      "lifetime": "18446744073709551615",
+                      "session": "1999485",
+                      "frontend": "9007199254740993"
+                    },
+                    "context": {
+                      "lifetime": "18446744073709551615",
+                      "incarnation": "21",
+                      "output": "9007199254740993",
+                      "privacy": "2",
+                      "rendering": "3",
+                      "scene": "4",
+                      "content": "5"
+                    },
+                    "request": "1",
+                    "origin": "1",
+                    "clock": "18446744073709551615",
+                    "deadline": "9007201255740993"
+                  },
+                  "handle": "0000000000000000e5b9417b7b092d6cd52f64a0672892e00000000000000001",
+                  "owned": true,
+                  "signaled": true,
+                  "fidelity": "client",
+                  "coverage": [
+                    "client"
+                  ],
+                  "expires": "9007201256740993"
+                },
+                "known": [
+                  {
+                    "binding": {
+                      "lifetime": "18446744073709551615",
+                      "session": "1999485",
+                      "frontend": "9007199254740993"
+                    },
+                    "context": {
+                      "lifetime": "18446744073709551615",
+                      "incarnation": "21",
+                      "output": "9007199254740993",
+                      "privacy": "2",
+                      "rendering": "3",
+                      "scene": "4",
+                      "content": "5"
+                    },
+                    "request": "1",
+                    "origin": "1",
+                    "clock": "18446744073709551615",
+                    "deadline": "9007201255740993"
+                  }
+                ],
+                "cancelling": [],
+                "retiring": [],
+                "state": "live",
+                "image": "elm-shell://preview/0000000000000000e5b9417b7b092d6cd52f64a0672892e00000000000000001"
+              }
+            }
+          ],
+          "commands": {
+            "previewProtocol": 3,
+            "kind": "preview-proposals",
+            "binding": {
+              "lifetime": "18446744073709551615",
+              "session": "1999485",
+              "frontend": "9007199254740993"
+            },
+            "receiverEpoch": "1",
+            "entries": []
+          },
+          "realm": {
+            "controlled": true,
+            "closing": false,
+            "closed": false,
+            "processed": "0",
+            "retained": 1,
+            "completed": 0,
+            "epoch": "1",
+            "ingress": {
+              "pending": 0,
+              "capacity": 1065,
+              "intents": []
+            },
+            "deferred": 0,
+            "deferredIntents": [],
+            "inputBlocked": false
+          },
+          "metadata": [
+            {
+              "identity": "family:21",
+              "title": "Client content",
+              "application": "Native client",
+              "revision": null,
+              "iconKind": "unavailable",
+              "hasIcon": false,
+              "visible": true
+            }
+          ],
+          "enrollment": [
+            {
+              "identity": "family:21",
+              "nativeScoped": true,
+              "minimized": null
+            }
+          ],
+          "feedback": [
+            {
+              "identity": "family:21",
+              "floor": "1",
+              "outcome": null,
+              "label": null,
+              "deadline": null
+            }
+          ],
+          "visuals": {
+            "visualProtocol": 1,
+            "kind": "native-preview-visual",
+            "binding": {
+              "lifetime": "18446744073709551615",
+              "session": "1999485",
+              "frontend": "9007199254740993"
+            },
+            "receiverEpoch": "1",
+            "surface": {
+              "surfaceProtocol": 2,
+              "publication": "1",
+              "lease": "1",
+              "mode": "picker",
+              "status": "",
+              "bar": [],
+              "popup": [
+                {
+                  "id": "family:21",
+                  "domId": "window-21",
+                  "label": "Window",
+                  "ariaLabel": "Window",
+                  "detail": "",
+                  "enabled": true
+                }
+              ]
+            },
+            "previews": [
+              {
+                "identity": "family:21",
+                "visual": {
+                  "kind": "lifecycle",
+                  "state": "live",
+                  "title": null,
+                  "icon": null,
+                  "frame": "0000000000000000e5b9417b7b092d6cd52f64a0672892e00000000000000001",
+                  "fidelity": "client"
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "readiness"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": {
+        "ready": false
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "retire-probe"
+    },
+    "result": {
+      "ok": false,
+      "refused": true,
+      "code": 0,
+      "progressed": false,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "reopen-probe"
+    },
+    "result": {
+      "ok": false,
+      "refused": true,
+      "code": 0,
+      "progressed": false,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "retired-subject"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": [
+        {
+          "kind": "native-incarnation-retirement",
+          "binding": {
+            "lifetime": "18446744073709551615",
+            "session": "1999485",
+            "frontend": "9007199254740993"
+          },
+          "subject": "21",
+          "request": "5",
+          "sequence": "5",
+          "clock": "18446744073709551615",
+          "now": "9007199259740993",
+          "issuedThrough": "100000",
+          "state": "Retired"
+        }
+      ]
+    }
+  },
+  {
+    "input": {
+      "op": "native",
+      "epoch": "1",
+      "events": "[{\"kind\":\"native-incarnation-retirement\",\"binding\":{\"lifetime\":\"18446744073709551615\",\"session\":\"1999485\",\"frontend\":\"9007199254740993\"},\"subject\":\"21\",\"request\":\"5\",\"sequence\":\"5\",\"clock\":\"18446744073709551615\",\"now\":\"9007199259740993\",\"issuedThrough\":\"100000\",\"state\":\"Retired\"}]"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "poll"
+    },
+    "result": {
+      "ok": false,
+      "refused": true,
+      "code": 0,
+      "progressed": false,
+      "result": null
+    }
+  }
+]

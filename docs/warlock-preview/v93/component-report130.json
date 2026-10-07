@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "sourceHeld": true,
+  "passed": true,
+  "cpuBuildPassed": true,
+  "fullBuildCommands": 119,
+  "cpuCPolicyRealmReuseQualified": true,
+  "actualGUIRealmReopenQualified": false,
+  "nativeRealmRebindingActivated": false,
+  "permanentRetirementAfterQuarantineQualified": true,
+  "directPermanentRetirementQualified": false,
+  "singlePreviewPolicy": true,
+  "nativeGrantResets": 0,
+  "originalDriverChecks": 2261,
+  "preGrantConstructorChecks": 9,
+  "realmReuseCChecks": 143,
+  "realmReuseQuintScenarios": 8,
+  "realmReuseInvariantSamples": 200,
+  "realmReuseConcreteObservedStates": 11,
+  "realmReuseCoupledQuintChecks": 6,
+  "normalControlledHostClosureQualified": true,
+  "privateSessionCleanupPassed": true,
+  "actualNativeGTKAdmissionObserved": true,
+  "actualPureRendererInitializationObserved": true,
+  "actualCurrentProjectionDOMReceiptObserved": true,
+  "compiledPageAssetClosureQualified": true,
+  "actualStaleSnapshotCallbackQualified": true,
+  "actualRetainedResultConsumedOnce": true,
+  "actualStaleSnapshotArtifactRejected": true,
+  "normalRouteNativeChecks": 29,
+  "normalRouteNormalOwnedExits": 13,
+  "delayedResultNativeChecks": 18,
+  "delayedResultNormalOwnedExits": 8,
+  "physicalConcealmentQualified": false,
+  "physicalRevealQualified": false,
+  "hardwarePresentationQualified": false,
+  "fullWorkloadProgressQualified": false,
+  "measuredRSSQualified": false,
+  "reloadRecoveryQualified": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "GUI130 adds strict original native realm retirement and later same-binding/empty-issued-namespace rebinding while transferring the exact same persistent Elm policy. Actual C/JSC143-check two-realm authenticated synthetic peer/sealed-FD trace preserves original binding/policy pointer, refuses open/early/stale/foreign/outbox failures, and rejects permanent Retired21 resurrection before capturing/draining Active22. Original popup quarantine/reconciliation precedes permanent retirement; direct-retirement fixture failure is retained, not qualified. Original2261 driver checks plus9 constructor faults, eight named Quint/200 samples and six custody-stage checks coupled to11 concrete observations pass. Current full119 and separate actual Native14229checks13normalexits plus delayedNative14318checks8normalexits pass with both private cleanups. Host does not yet activate new realm rebinding or replace the fixed-grant renderer context. Actual GUI close/reopen, broader stale callbacks, direct-retirement, reload/process/uncertain recovery, ongoing physical conceal/reveal/hardware, pressure/workload/RSS/full preview/release remain open. Safe opacity0, native issuer/Elm policy/physical product/original deadlines unchanged; no grant reset.",
+  "reports": {
+    "build": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v130/qa/build-1791388742150430190/report.json",
+      "sha256": "8cb5f28eae4cc02b794ed40cd3ed4719a0135f2bf5dc4f8d2224d0e298b8da7b"
+    },
+    "controlledNative": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v142/qa/native-controlled-1791389049702826546/report.json",
+      "sha256": "e30d44efd1d3f8c03e8ea33ea6453f4980af575ffb257de7cc6be3adf8b1abe9"
+    },
+    "delayedSnapshotNative": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v143/qa/native-controlled-1791389180241913100/report.json",
+      "sha256": "d82229be5858b29c165d2e0e77ce2927b9f9a27faa21b88ba80e20562a01da93"
+    },
+    "originalDriver": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v130/qa/policy-driver-positive-check-1791388484302066275/report.json",
+      "sha256": "8686002c8969fed14b0663effcd3eefe3704cfea3e0fb3b276b0d4f1ec5c884f"
+    },
+    "realmReuseC": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v130/qa/policy-driver-realm-reuse-check-v5-1791388803876321382/report.json",
+      "sha256": "f2c1c6c3e8ecb62219aac4cba8e7bd9e5bf883b1427a56161be0d92b8b1d2b2a"
+    },
+    "realmReuseCompiledFixture": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v130/qa/policy-driver-realm-reuse-check-v3-1791388582531783144/report.json",
+      "sha256": "8f32cd20446401a26c7030acd7bdf468340021b055564432f129094953174343"
+    },
+    "realmReuseQuint": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v130/qa/policy-realm-reuse-model-v3-1791388629094979843/report.json",
+      "sha256": "29a37ed040521269527ebf3d0e37c6fe09febb8ff0a78a451a73062db0ecee04"
+    },
+    "realmReuseCoupling": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v130/qa/policy-realm-reuse-coupling-1791388999135608451/report.json",
+      "sha256": "42b416339a99b39db762e6fce9aed516845738f83b087d4a3b70f7e14f4d7eb1"
+    }
+  },
+  "heldParentManifest": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v129/component-manifest.json",
+    "sha256": "88bd10a58142625861783c9da9189ef3eb42e943767bab3b5e98337cde6f9ff9"
+  }
+}
