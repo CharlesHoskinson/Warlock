@@ -1,45 +1,59 @@
 The active host goal continues the full Warlock GUI release under repository
-AGENTS.md and docs/warlock-build-loop/v1/INSTRUCTIONS.md. No release gate is closed
-by these component counts. Preserve the main desktop, drafts and five foreign
-tracked changes. There are no native GUI or CPU checks still running at this
-checkpoint; verify processes again when resuming.
+AGENTS.md and docs/warlock-build-loop/v1/INSTRUCTIONS.md. Preserve the main
+desktop, drafts and five foreign tracked changes. Source owner is
+f6779148-8f5d-4bdf-8a0f-044184e486f2. No native GUI campaign or CPU check is still
+running at this checkpoint; verify actual processes on continuation.
 
-The current fully qualified tuple is GUI92/native128/core16/plugin18. Native128
-passed2466 checks with277 normal exits and full cleanup, preserving2458 fixed
-original126 controls and actual allocator/expiry assertions. GUI92 full95,
-original12 regressions and retained Elm processing-prefix qualification are held.
-Publication64 is public branch3cd4db6f232d185d8655de3b76106b2229da7272; its local
-receipt is be920333162ceabea225bde044f1b1457fa250a0.
+The current fully qualified bounded tuple remains GUI92/native128/core16/plugin18:
+2466 checks/277 normal owned exits with original fixed126 controls and allocator/
+expiry assertions. These counts do not establish full GUI release acceptance.
 
-GUI93 is held at bounded component scope. It retains exact readiness in the
-same bounded native observation row and polls original barriers without another
-Elm control. Full95 and byte-identical Elm assets passed. The actual C/socket,
-native classes and compiled Elm test passed54 controls through a real second
-native receiver barrier, loss of final delivery and processing ACK, exact live
-neighbor/counter and close only after confirmation. Eight selected Quint
-scenarios/200 sampled30-step runs match20 compiled native journal traces and384
-states; three compiled native guard mutations fail their exact witnesses.
-The journal is transport bookkeeping. Native aggregate removal still requires
-every original physical, producer, backend, terminal-proof and receiver barrier.
-Quint's reserved-name fixture failure and an invalid fake-clock record remain
-held, as do earlier round-trip fixture failures in parent92.
+GUI104 capture intent/adoption and GUI105/plugin19 scoped resource protocol are
+held and public through publication72 b4a72a5ce672dd05647c256ab5ef4b60aad5eddb,
+10115 exact owned blobs. Local source1387ee79b973310c060e68e20b6e2ec2ac0d9aa8;
+receipt972f7a1f0c44da9fd6f28b1e0cfeb17f91cf2101.
 
-Next own a fresh host/transport derivative. The actual shared-host imported
-dispatcher still routes retirement readiness and processing ACK into its old
-generic command decoder; its poll path does not activate the retained channel,
-emit typed retirement observations or retry final records. Add those paths under
-the original trusted receiver and native binding, never a second policy model.
-Retain the exact current counter/epoch domains; do not reset on reload or reuse
-old grants. Outgoing JS controls remain one-shot despite the native contiguous
-prefix, so a lost readiness/control can strand ownership. Freeze a bounded
-delivery/retry/processing-ACK and cleanup-reservation contract before activating
-the protocol; retries must never replay Unknown effects or grant physical cleanup.
-Review native polling fairness and the original operation budgets before product
-evaluation. Do not treat unmeasured loop bounds as UI/performance acceptance.
+GUI106 is now held, inactive and ready for owned publication73. It shares one
+actual Native binding quarantine with URI authorization: reconciliation dispatch
+revokes existing/new reads before polling, while active readers retain physical
+storage. Native backend zero cannot close the imported mapping until actual
+reader drain and producer/local barriers. A real allocation exception after
+Broker storage adoption retains custody and yields Released/Cancelled proof,
+never a fabricated producer refusal. Confirmed binding purpose reproposals keep
+original ticket bytes/ordinal and report alreadyDelivered after later controls.
+Unconfirmed receipt retry remains separate from physical settlement.
 
-Actual captured FD/mapping/export/URI-reader/backend retirement with this actor
-transaction, continuing >256 real windows through native and Elm, ordinary
-eligible capture/S09preview13, restore38/recovery34/case34/original two-second
-budgets, drag52, input/popup/renderer/hardware/output/AT/IME, numeric budgets,
-journeys, coherent integration and reversible deployment remain required.
-Only the host goal supplies automatic continuation; checkpoints do not arm it.
+Current106 evidence:49 actual imported-FD/GIO reader+40 post-transfer allocator
+checks/two compiled variants;24 optimized Elm/native terminal ACK controls/two
+normal exits;14 explicitly selected local Quint scenarios/22 actual compiled
+C/SCM_RIGHTS/GIO traces/373 states/three variants. Original resource477 C/six
+cases+35 decoder/four variants,resource14/22/349/three,capture14/66/816/three,
+controlled C10190/260 metadata actors/1041 tickets and95 full-host commands pass.
+First two local replay fixture failures and pre-confirmation-fix evidence remain
+held. Exact current paths/hashes are in component-report106.json and the
+component manifest. Plugin19 remains held on exact core16 ABI; no Core resource
+API/capture-pixel/WebKit/native GUI acceptance follows from these CPU witnesses.
+
+Next commit/publish only owned106/docs/OpenSpec/checkpoints, verify public73,
+then own a fresh native129 qualification of actual Core19 resource API on the
+exact source/ABI pair. Preserve all original128/126 native identities, fixture
+pixel oracles, source counters, deadlines, normal exits and ordered teardown.
+Fresh preflight must distinguish current106 full-host and control evidence from
+retained GUI92 model/source reports; never relabel retained reports current.
+Qualify actual registry/authenticated scoped capture/export/producer cleanup,
+locked producer/lost ACK recovery and independent imported local FD ownership.
+
+Explicit live-window preview-binding detachment remains distinct from permanent
+Native incarnation retirement. Never reset the whole Native hello/grant to clear
+preview Unknown: it erases capture state, advances frontend and resets unrelated
+shared-host effect ledgers. The current shared host has not activated the new
+controlled C factory/reconciliation/retirement path. Native renderer ticket
+outbox, typed retained delivery/retry and WebKit activation remain required.
+
+Actual captured FD/render/fence/drain in actor transactions, >256 real native/Elm
+windows and neighbors/URIs/exhaustion, ordinary eligible capture/S09preview13,
+restore38/recovery34/case34/original two-second/cursor obligations, drag52,
+input/popup/hardware/output/AT/IME, numeric budgets, representative journeys,
+coherent regression and reversible deployment remain required. Only the host
+goal supplies automatic continuation. No component or publication completes
+that goal or changes the user's installed desktop.

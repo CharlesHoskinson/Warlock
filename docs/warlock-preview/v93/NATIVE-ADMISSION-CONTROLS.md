@@ -241,3 +241,35 @@ barriers. Quarantine SHALL refuse new source admission and acquisition. Native
 backend zero SHALL NOT be treated as permanent window incarnation retirement
 or complete binding detachment. No measured UI performance acceptance follows
 from the polling bound.
+
+EARS CONTROL-018: Upon actual original binding reconciliation dispatch, the
+single native quarantine state SHALL revoke existing and newly opened preview
+URI read authorization immediately, before the first physical cleanup poll.
+An existing reader SHALL retain its original storage reference until actual
+close; permission denial SHALL NOT establish FD/mapping closure or final proof.
+Native backend zero SHALL preserve original local mapping and charge while any
+reader owns the buffer. A capture whose actual Broker adoption committed before
+result allocation failed SHALL retain that exact mapping/packet, independently
+complete its producer/reader/backend barriers and produce its actual Released
+and Cancelled proofs, never fabricate an unadopted producer refusal.
+
+Fresh GUI106 owns these actual SCM_RIGHTS/imported mapping/GIO-reader witnesses
+and the original post-transfer allocator failure. Held GUI105/plugin19 remain
+unchanged. Public72 is verified b4a72a5ce672dd05647c256ab5ef4b60aad5eddb
+(10115 exact owned blobs); local source1387ee79b973310c060e68e20b6e2ec2ac0d9aa8
+and receipt972f7a1f0c44da9fd6f28b1e0cfeb17f91cf2101. GUI106 is mutable and
+inactive; no native compositor capture, WebKit or release qualification yet.
+
+EARS CONTROL-019: When an original reconciliation purpose has been independently
+confirmed, any exact reproposal for that binding SHALL return the same native
+ticket bytes and ordinal with alreadyDelivered true, including after later job
+or actor controls. A delivered but unconfirmed purpose SHALL remain eligible
+for original receipt retry. Neither flag nor confirmation SHALL settle any
+physical/backend/local/actor obligation or replay reconciliation or capture.
+
+GUI106 fixes the binding purpose's confirmed-retry result. The first two coupled
+local-resource fixture runs are retained: their teardown reproposed a confirmed
+old purpose after final job ACK and encountered the original contiguous-prefix
+rejection. The fresh fixture suppresses confirmed proposals, and the additional
+trace tests exact reproposal after final ACK. No original ticket, prefix,
+deadline or physical retirement guard is weakened.

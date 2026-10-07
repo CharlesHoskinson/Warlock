@@ -229,3 +229,17 @@ allocation controls remain at their held scopes. Next actual adopted-FD/readers
 and post-transfer exception reconciliation, original native Core resource/capture
 witnesses, live-window binding detachment and native-assigned renderer tickets
 before WebKit activation. The qualified runtime and release gates are unchanged.
+
+GUI106 adds actual authenticated SCM_RIGHTS/imported FD/GIO reader and committed
+post-transfer exception reconciliation.49 reader+40 allocator controls/two
+compiled variants,24 optimized Elm/native final ACK controls/two normal exits,
+14 selected local Quint scenarios/22 compiled C/GIO traces/373 states/three
+variants pass. Immediate read revocation shares one native quarantine and does
+not discharge retained storage. Confirmed reconciliation reproposals preserve
+original bytes/ordinal and suppress stale dispatch after newer controls.
+Current original resource477+35/four variants,resource14/22/349/three,
+capture14/66/816/three,controlled C10190/260/1041 and full95 pass again.
+The first two local replay fixture failures remain held. Core19 is held at its
+exact core16 source/build ABI; actual Core registry/capture resource protocol,
+live-window binding detachment, renderer native outbox/WebKit and all original
+full-release gates remain open. No source or component pass closes those gates.

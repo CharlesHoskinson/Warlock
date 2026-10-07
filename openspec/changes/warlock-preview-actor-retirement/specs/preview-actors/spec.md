@@ -626,3 +626,59 @@ processing and transport confirmation SHALL remain required.
 - WHEN polling supplies a receipt capability from a different native Endpoint
 - THEN the provider refuses before querying or mutating original resources
 - AND the original charges, observations and terminal proofs remain unchanged.
+
+### Requirement: Immediate read revocation preserves physical imported storage
+
+EARS CONTROL-018: When the actual original binding reconciliation ticket
+dispatches, the single native quarantine state SHALL revoke existing and new
+URI read authorization before physical polling. Actual readers SHALL retain
+their original storage references until close. Backend zero and read denial
+SHALL NOT close local mappings or establish terminal proofs. A committed Broker
+adoption followed by result allocation failure SHALL retain the original
+mapping/packet and settle its actual producer/backend/reader barriers, producing
+Released and Cancelled proofs without classifying adopted storage as refused.
+
+#### Scenario: Existing reader loses authorization before cleanup begins
+- GIVEN an actual imported sealed capture FD and an active GIO reader
+- WHEN the original binding reconciliation ticket actually dispatches
+- THEN the next read refuses before the first physical cleanup poll
+- AND the reader, local FD/mapping and original Broker charge remain owned.
+
+#### Scenario: Native backend zero is independent of reader completion
+- GIVEN the scoped native producer and export are authoritatively absent
+- AND an actual reader still owns the original imported mapping
+- WHEN native reconciliation polls that job
+- THEN local storage and its original charge remain retained
+- AND only actual reader drain followed by local mapping/FD close can create
+  the original physical terminal proof, whose final acknowledgment remains required.
+
+#### Scenario: Result allocation fails after native buffer adoption
+- GIVEN the actual Broker has adopted the original sealed mapping and packet
+- WHEN its result allocation throws before the C handler reports an offer
+- THEN the original mapping pointer and capture intent remain retained
+- AND reconciliation never replays capture or fabricates an unadopted refusal
+- AND original local/backend/producer/reader barriers produce actual Released
+  and Cancelled proofs before original acknowledgment and actor/control closure.
+
+### Requirement: Confirmed binding purposes suppress stale dispatch
+
+EARS CONTROL-019: When an original binding reconciliation purpose is confirmed,
+an exact reproposal SHALL return its original immutable ticket and ordinal with
+alreadyDelivered true, including after later job or actor controls. A delivered
+but unconfirmed purpose SHALL remain eligible for original receipt retry.
+Confirmation SHALL NOT settle resources or authorize repeated acquisition.
+
+#### Scenario: Reconciliation is reproposed after final job acknowledgement
+- GIVEN the original reconciliation ticket and independent confirmation
+- AND a later final job proof acknowledgement has dispatched and been confirmed
+- WHEN a retained family reproposes reconciliation for that exact binding
+- THEN the native bank returns the original bytes and ordinal as alreadyDelivered
+- AND the caller suppresses stale dispatch without issuing another ticket
+- AND original capture and FD transfer counters remain unchanged.
+
+#### Scenario: Handler return has not yet been confirmed
+- GIVEN the original reconciliation ticket has dispatched without confirmation
+- WHEN a retained family reproposes the same binding purpose
+- THEN the original ticket remains available for receipt retry
+- AND the retry echoes its original receipt without repeating the handler
+- AND polling still requires every original physical retirement barrier.

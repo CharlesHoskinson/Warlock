@@ -1,0 +1,2010 @@
+{
+  "passed": true,
+  "inputs": {
+    "native/admission-test.c": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+    "native/client-command-test.cpp": "ef481b7030d6a41831895fca1a5cba7405d08e22b913fa2f0f6cadccf47c25ab",
+    "native/client-denial-test.cpp": "9c05385a9e1b9da4efe03c414b09d512ab4e3791a33c4ff55fde75e4e0c009f7",
+    "native/client-frame-test.cpp": "233d4520f3bd200cad1f1ea580e9a2eaaf382822b90aa262d4294f8a3bf68d7f",
+    "native/client-import-test.cpp": "c74f47f1e4233681ab63adf3a51396cfa7c8a7fc0769eba9e314ccc82471de4a",
+    "native/client-observation-test.cpp": "bc9a36f1d62669904d5b7003d7b299ad2ee3a836c8f13f381a6669915c74e336",
+    "native/client-producer.cpp": "10ecbba50bf656d5cfb4c4e1fd978937ac5da853f194d106d772431db2e367d1",
+    "native/client-producer.h": "01f005d7899b2f3b13216a702508adfa39b6cbcbde4f84b6fae1ebc2404462b9",
+    "native/client-resume-test.cpp": "c8dfcdc8564bb6bd8cf9284fe3d12d67c30ca9d5a510a58b935021567719ac2d",
+    "native/client-retained-presentation-test.cpp": "680fb60765c220e59974cda9a8af87c60b5935d48fa8e66671f3e74a0e1c0a2d",
+    "native/client_frame.hpp": "ed5d8d15bcb132ea77b81f36aab49249acfb4b0409a6954b95aa4300eda57681",
+    "native/client_import.hpp": "c62c4a591dfb7f551d17987a16f2a317e67a974f83ceffa2dcf6f2529ccd1211",
+    "native/client_producer.hpp": "b93355d804613a68593bfd2447295287ac04c76427007c5772e6244b4c51d990",
+    "native/context-keys-test.c": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+    "native/context-keys.h": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+    "native/demand.hpp": "3b01ba43bc50719509323e98212cbaa49e33b00b5bdf80297da049ac41332ea2",
+    "native/geometry-carrier-test.c": "770835580c7a4a2e21e49a9c3da586ee3ae59e66a92320dd7bb12fa8e516d921",
+    "native/handoff-test.c": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+    "native/host-fault.h": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+    "native/host-journal.h": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+    "native/host.c": "9cf69e35d9603735748e0b59e27a007e1bc3ab7393a2c310f6d8765b667f6853",
+    "native/imported_clients.hpp": "550b9bc5f485be53a26d7acfe3bd996be6db9d66f4c3241cc171f568970804c8",
+    "native/preview-integration.h": "ffacb4ed6abe6b8019f5bcb489b8abe69f28f863ca9079f29cd1c075a0a49e2a",
+    "native/preview-provider-bootstrap.cpp": "f835e2203e1e73860c7e10a15f2573d453888f5043c3255524528265033bc570",
+    "native/preview-provider-bootstrap.h": "7220bc8df0bc40da2f897e519cff5340bc0eee84582345572b6b5c290a714c35",
+    "native/preview-uri-api.h": "7a02550a807102f6ebdad9c1570eb6a719a50b0ed422ff26add97dbd6408b002",
+    "native/preview-uri-webkit.cpp": "c8cc48442d8d098315b7ad64b71be267679bc361041dc6d2de405c657fa74ea2",
+    "native/preview_broker.hpp": "9c57428130093f8d815b7851004f103897deca278bbe4196e2116bec85a323ed",
+    "native/preview_client.hpp": "afc6c49d6818856496138f8c46e387b33b5894a4ea86cfb3b5d7157a287988ed",
+    "native/preview_delivery.hpp": "20e1a275985c92b6771ee24c5e4ce6a485bd049c8b1cb84c3e47358131435f72",
+    "native/preview_fd.hpp": "60fa114f7f2eb819c7a09085ee737c23d21b31f0ba177d967ff99f1425272a60",
+    "native/preview_uri.cpp": "e163fba44ad561c5d5deaf38f3a91f75f486b3749e030e1e22007cd98cdf5b87",
+    "native/preview_uri.hpp": "ad7c76ca9b089ea854f19ef029bbf461c3bcfdf76c677dc3666ae21a5385620b",
+    "native/preview_wire.hpp": "2b02108a819e97106cbf38e420871bc4ee10656fd6f98905f25c30fd838d283d",
+    "native/provider-delivery-test.cpp": "4e21203fd7acd32ede476df1137b6ea812cb26fa977d05296a884401adfd8fbe",
+    "native/provider-grant-test.cpp": "8f39b5828b946d5fba2f7df689578a50f79cf7daf2e0e8443ab87dfd7b89ac22",
+    "native/provider-ownership-test.cpp": "d79fe711a90d24ac96e8522a33a4dc3582989b40b692aec73109e365e3f44675",
+    "native/reconciliation-carrier-test.c": "38210317eff28d8a436e640e971f91df71ffcc3b17e82c27a60ee34f57d9f73d",
+    "native/recovery-presentation-test.c": "812bbab1640e12269bc195979cd319a96a505157ba8f5c637eebfd5561bc8e67",
+    "native/shared-context-test.c": "ed50c8ed6b0fee3db3818e2f38c8bb57985b388b26ee09a5624d32f1bfa258ee",
+    "native/shared-context.h": "e86f3ba7a4c76d7839ef8d67d14c7f9ea6b514afa2ac110fc7cebf2da2fd62ce",
+    "native/shared-host.c": "c51abc5f6f3fc231431f7f3cffc53a0d102e988becff2e943adcb33aeb3cd3b4",
+    "native/surface-test.c": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+    "native/surface.h": "2bdf2d9b3b34fa7193da90e58ac378e7a640ae91e7b02d46987e33c559209f0b",
+    "native/imported-clients.h": "4bed85a93cf9f2ba4c771ab552b5d63008277a3f77639508c5f394b2b90231ee",
+    "native/imported-clients.cpp": "0bb1996b1ec2f2c25d796c6acbb1e642b2cf5170b73437dfc715ea4ab521c1ef",
+    "native/imported-clients-boundary-test.c": "04b444d7d4d0c8f7f945d6f5e9996cfe3f23455624f6b933359b7ac1ee9737da",
+    "native/imported_lifecycle.hpp": "1d4efa4daa2753e43a822e3727dc78458941d72d03e4e01a1d041eb7f6bd9ded",
+    "native/imported-lifecycle-test.cpp": "14e7969e5228d013b590f912605cdd846235de67e8e13a87e644d123136d6a2a",
+    "native/family_source.hpp": "7e936e3f59b5075c364748384282c4e764d85444db2962a885a1ae5a0bf9bb35",
+    "native/family-source-test.cpp": "25c2402f9b6e1c7692633a2b27b69a961284412cf802fb600ad3ff2f97380b9a",
+    "native/family_style_crop_fd.hpp": "bf59599f5ceeb41381a1fd05fb045c52ec3cf47faf4706c38de8dd595f902a53",
+    "native/preview_png.hpp": "308007220baf1d7f2ad30569237ffaf7d6427d900ee1243811480402f188e670",
+    "native/family-fd-test.cpp": "4129475daf2dbcc997ee804f6f2cc1ae97c373adddc891a95ec6cf043f98291d",
+    "native/family_frame.hpp": "20ce40ab0080c37e17345cb3d88334eb5dc926a79720ec6faffee8807ae5fe67",
+    "native/family_producer.hpp": "148240aaf174b3d0f27d8385cd3e93811e48dd8c39b3b65a691fc754c2eebe22",
+    "native/family-frame-test.cpp": "7f5421a78f071a081edb32b8db0402c0e8a855df150ecdeeba6298cf94ed840c",
+    "native/generated_backdrop_fd.hpp": "3f60c0cffed16e60ec90b8f8365ec3f278d5c8cb41db2ce5b85c4929d018337f",
+    "native/backdrop-fd-test.cpp": "74b2f71f21e823bc3445cd647f86d422071edbd483d2bd89d68b38ce6575f623",
+    "native/backdrop-frame-test.cpp": "687f19e3053f305777f16d854fc2dbf593f4a7131589d522c37de4acfa498fd6",
+    "native/backdrop-denial-test.cpp": "7388e88721724be5280b0df91e982af29bebc2f9a10563690ab5aef8c73bda86",
+    "native/qa-reader-control.h": "1a504ee3959b78c73a8f9613b6a6c4f9cc51bc198d1dbd3b6fe1fd352684ccf4",
+    "native/qa-reader-control-test.c": "6bd57d3be5b0f3d0e071993e93b188fd0b2a87ae91dada60120f8e9142a07ed5",
+    "native/preview_metadata.hpp": "1cf84f1094cd8ccca90fcc5c44bed4182716e256792bb542c771c8bc1ce9ad5e",
+    "native/preview_icons.hpp": "6af2174049d623e824fdcf66ddd3a18d0b48a2c34c7159c1651dc0e4b53d8a32",
+    "native/preview_icons.cpp": "48aa83cc63d4f1f08b9333372cb3f63e0a25bf880cc17567098079284ee79693",
+    "native/metadata-icon-test.cpp": "cff027f7a3d29668893aec03be50f5dbae49fb2295606a8e8baad34b64e028d7",
+    "native/window-catalog-test.cpp": "c9efe0d6f7f7db6abc38ab717d16d56a014a2804d39281a28bddd7eb030548a6",
+    "native/receiver-extension-test.cpp": "a35501610fadf7cc4935b970c87b683fa9a2216ee2eef3da8cc70afc652b8d59",
+    "native/delivery-extension-test.cpp": "4d9ccdff37c8818ec6f70b93393e94a46f1f1b3506606a692549cf24c38972c8",
+    "native/imported_admission.hpp": "9cd619f5774d8fb40d712f6f073c00c8c337770e7d173413951fadf3dd321c78",
+    "native/imported-admission-test.cpp": "4440d17aea9172b547a66660cb30ebe27df821f627f9fae8861fcdd8d6858d6f",
+    "native/imported_enrollment.hpp": "970d2e8027dfdbbbb599f3de7d5132b9e7e27e8e0509622e7ae3ad18eeef380e",
+    "native/dynamic-enrollment-test.cpp": "bc8dd70ec9b8b5ce2f428cb82578389f9349d24b3ebdb423ccf725b5fd8c8278",
+    "native/rejected-enrollment-test.cpp": "f38a7da3423eb939f76c8882f2d2b057b9af865fd9cd3d96dbc9741918c99aad",
+    "native/resume-enrollment-test.cpp": "b14e33de4a2c1ff6b8e38737f66d8d6f906aba07e609a67750a5a7055434921d",
+    "native/imported_feedback.hpp": "6760465caf1b6877aadb62776fa050f7a44848cd4a9061ce89fdbac96604b9aa",
+    "native/local-feedback-test.cpp": "01b247fef9f6378db1616430fb7f04236e584085269542eaa05c4a6581612b29",
+    "native/next-intent-test.cpp": "6ad459d12146dbe18b6431b3ee863318c10d45a0806f63d9b5400812f20e80b9",
+    "native/next-resume-test.cpp": "f4f00450ca31f382b71af7b7158c40ee199439c9f8c23f3a4062075e190ab152",
+    "native/preview_retirement.hpp": "b8af8a43d3ca8eeebc8a0b24a9f99b846018db8e17bcb18ea31ffecfed595b0d",
+    "native/retirement-observation-test.cpp": "2f60ee0cc71f4cc611f57ca3ffa3ef4a013233a0c9de13144b207729f0a478f8",
+    "native/imported_subjects.hpp": "03e7bfd41bf4ace363d2f95bb1526515c6c9f8bedc69dffdf71fbae13f56f5ff",
+    "native/actor-retirement-test.cpp": "69ddf372f47b537e4b35481ec9769e8417270a3c84ba8caef98fe3c00b78fea0",
+    "native/actor-retirement-test-v2.cpp": "08815578bdf33210f066e80f5506fd1a8a4e1afa8b89c69779a901d225dbf599",
+    "native/actor-retirement-test-v3.cpp": "25e47f56093b84682230628f46d20fb96b2727fa4190524ec3f64e9d08e8f867",
+    "native/preview-control.h": "eeb41047554ba5a84f75614a62c1de93e871b3099a12560584150d6c4b6540d8",
+    "native/retirement_journal.hpp": "6c09930b399351a9c8a73e45009daa8ea1ee0b3adb12ba4f1121f95a12ec6913",
+    "native/actor-retirement-channel-test-v1.cpp": "f0c1b35a04325b261217f93d182ee1871a091abff0c44e3688a8c9f17a729812",
+    "native/actor-retirement-channel-test-v2.cpp": "4160343a5ba5939114326e780108ea223a42ca28ac6fb7d4a833695d82e50a66",
+    "native/retirement-elm-channel-test.cpp": "38205ebfb02b67ad12a3d454947a0efc93e80f9b8b191143801ab83a4bb47e20",
+    "native/retirement-elm-channel-test-v2.cpp": "a7cd7cd427e5f8e7360156f0445993584c9602cc5cad466a72201bf6bfac5902",
+    "native/retirement-elm-channel-test-v3.cpp": "0166a6db252a7c2101a26425999f2f85955ddde9014795f241fd56359c5b0a81",
+    "native/retirement-elm-channel-test-v4.cpp": "5ec17c2cacb3ca3cd2dba94766260098485ecdc2f68585f7dee3f2b6ad7fa225",
+    "native/retirement-readiness-replay.cpp": "ed336bf6770a5bc130b1d84e8e99e19d0cbb67c5c5133a876c1746ff46e6fb23",
+    "native/retirement-readiness-replay-v2.cpp": "9f10b45ea7817e6018a00461dcce0e83549f8c054bc7cc3a524dade9c297328c",
+    "native/retirement-readiness-replay-v3.cpp": "b596126e85083244f576797735e54a632832af7de37b0a5c14aa2b38243a9859",
+    "native/retirement-poll-replay.cpp": "beefa85561dd03590f7d713d66520072def838907560fab86a348abcb5e773a0",
+    "native/retirement-fair-poll-test.cpp": "50e23ab69570050fc2814549e9146a6f58413ae4f9cd0d090db4c34ceba4f8a5",
+    "native/preview-control-delivery.h": "edbcf3127c6fadbdff1eb2c361b50d0e72902a9c9e2ce456b0fb64ac7f6653e3",
+    "native/control-outbox-fixture.cpp": "f9850811275c90b1a72973f70626106d76a59191a627ff307490b343802fa30e",
+    "native/control-confirmation-fixture.cpp": "9fbecc43b61202f6e36142a3e799df01b1a31bd32255a2f34b7496d7e75765a6",
+    "native/control_reservations.hpp": "5bcaa15a546e7341d7d24c642d25e67361a654a84d600bed984ae4d1a193bc25",
+    "native/control-reservations-replay.cpp": "509e3695bfc46b37357ceb712045e9a03d6b7b2905953197c695944afcd7c268",
+    "native/control-reservations-test.cpp": "8006cbbcfe28784132308afc03b332bf964a5038f887fd6378bc18abe9065c05",
+    "native/control-reservations-test-v2.cpp": "ec9010611ac5fc5e8cad459cb2a2a815d34e8b0b88ce64fc3574cf03ade99fc5",
+    "native/imported_control_admission.hpp": "d5bf0ba8b3ec116ca2e1cec808f139a6cdd99a72f63568487ada9204f2ab425d",
+    "native/control-admission-replay.cpp": "d3d730789eee580df8ac35bfa8a949039905fded2139dfe30a80c022928db300",
+    "native/control-quota-fixture.cpp": "9c1bf07df9a17524aba4e817938df7418e7d5ab0d3e791d80fb2872e3a9751a6",
+    "native/retained_client_command.hpp": "f07d8b840865595084dd04f8bdaa5e4a89dbd9bee27223cbba5ad0de927aaf15",
+    "native/retained-client-command-replay.cpp": "d43b2f11f03d1b760c5f15c4b61b673a916eb9d8880513ee8cb2c03efc541cad",
+    "native/imported-control-guard-test.cpp": "2c157817565956b3a21bd97ef5cf84238cb6f45ef4ef7f20e4a420b28e88242e",
+    "native/control-admission-replay-v2.cpp": "d221e0630f48cae7b5211e2230817059b753054ece15e1f40d9ac7b58065df4c",
+    "native/imported-control-ticket-test.cpp": "1e7c317a6eafa7865713dcb0f5b45ff0168841177ead8c8c06f886f635123411",
+    "native/imported-control-ticket-test-v2.cpp": "918a5eca9ab7c5d215bc6f0b10994deb824b4865240f7213479ed684a42ebecd",
+    "native/job-control-replay.cpp": "d56f84788399d7eff263a6b4779f7109bf41c2e86c9c76d95220b9571fef21b5",
+    "native/imported-control-retirement-test.cpp": "ba5d0c4b41a32acbda7a35bef05f4ba2a6ea7e9be79ffac6c1daa6f61f69f904",
+    "native/imported-control-retirement-test-v2.cpp": "0aef0648c3d4a1c53829598351133a1dceda1a25d93b72243c3a8a35eda2bc1c",
+    "native/actor-control-replay.cpp": "337b7e2892ec373a33b2c45bd855aa8b00c97ed88661aafe9aa66e78be3fe409",
+    "native/imported-control-readiness-bytes-test.cpp": "db0a23bd14b32857ce9b2cc15656317815824f382d54c269240f72e87de59653",
+    "native/imported-controlled-c-test.cpp": "b3e2bea1bc545e3b9bee4bba85761a4fc8d0606ab8dd4bc1c163e7e6ff109fe2",
+    "native/imported-controlled-c-test-v2.cpp": "b638f3dc10735ed5d187709d24fef04c84804dc90bdf91b50846e3b9390eea23",
+    "native/imported-controlled-c-test-v3.cpp": "c5b52a66337bfae25483251b3e91b1f98a90eca8ba4b152d6539cd24b78c56e2",
+    "native/capture-intent-test.cpp": "d0bb0eb54701d28ceaf989b681c8dc7138fa1137d82985661104ab9aec5295d5",
+    "native/imported-allocation-test.cpp": "c621bf4eb3af2cb9f4dfaed86745f682de465c36815e71ea9020490e1027b781",
+    "native/capture-intent-source-fixture.hpp": "b5340c2ad8541e41325929cf0fc97f53e3961739308f5b2319b3f08be6b6b63a",
+    "native/capture-intent-replay.cpp": "4cd94eb2cdb4a838c6b49a3fdc72c923d703e6060cea44861e7abb1b5951b170",
+    "native/capture-intent-replay-v2.cpp": "41701749fe08424220d4c3292c127df836949c673c8572f6cbb0cd10d78dfa12",
+    "native/client_resources.hpp": "89a466bc3d3503e3d47063eda8ce1aa8ae3cab1ae61d820002d5aaa2a4712696",
+    "native/capture-resource-source-fixture.hpp": "e036e80397869f486bb0b533d9acda24f6acd0ec7169f3d0e77173ba504ae14f",
+    "native/capture-resource-c-test.cpp": "f90cd514d4c670655c134e858d5896e9b1f7878473ea7790bca8d69aa25a13ad",
+    "native/capture-resource-decoder-test.cpp": "ef03ae536987d83ca0f39c69638dc50ac02273edef5a6da08058b9a95c981800",
+    "native/capture-resource-c-test-v2.cpp": "52928c4d2d858fc9a13bbad85c23c95b742869c4f715992f0a59be546f981fac",
+    "native/capture-resource-replay.cpp": "169d102b0602af1186f9bb1f20283e76851fb4f2de56e592aa4c9d4f6bcdd83d",
+    "native/capture-resource-fd-source-fixture.hpp": "88f8f0062bc4a26d237034752d1b2edbc3214e70878838a068de44f627de774c",
+    "native/capture-resource-fd-test.cpp": "0b2f8214f82a95f463dd6044d546a0f4443fbe95ddb13b8b986d6e42eb799346",
+    "native/imported-resource-replay.cpp": "8c998821656f06803b0baeee825448598e8938e63e88b05ca25ac4259310dcdf",
+    "native/imported-resource-replay-v2.cpp": "64fa1274a65addcfe1c2059933d20887e49337796e630e6f44d5ba15e48af29f",
+    "native/capture-resource-elm-test.cpp": "6657648c496327b7096ca6e23eea5f3cf708c04cf1118c8fedc815006bc9641d",
+    "spec/capture_intent.qnt": "377371b7d277937e81ee9925cf479b920ba24d1b49e0ae04f806a0d234f73603",
+    "spec/capture_intent_tests.qnt": "57f9edffb84c265b52d2fc8114f96b8d9b4725f28d2cb576e36e06c2656b3b0d",
+    "qa/capture-intent-model-check-v3.py": "b7b734197f211d75cde278f4de9a95b4430405d8954e30ea03882fd006d05b7a"
+  },
+  "commands": [
+    {
+      "name": "flags",
+      "argv": [
+        "pkg-config",
+        "--cflags",
+        "--libs",
+        "gio-unix-2.0",
+        "json-glib-1.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-O1",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-Inative",
+        "native/capture-intent-replay-v2.cpp",
+        "native/imported-clients.cpp",
+        "native/preview-provider-bootstrap.cpp",
+        "native/preview_uri.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "-I/usr/include/gio-unix-2.0",
+        "-I/usr/include/json-glib-1.0",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-ljson-glib-1.0",
+        "-lgio-2.0",
+        "-lgobject-2.0",
+        "-lglib-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "capture_intent_tests.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "capture_intent_tests.qnt",
+        "--main=capture_intent_tests",
+        "--backend=typescript",
+        "--match=^(originalIntentSurvivesCaptureError|cancelledUnknownKeepsExactOriginalWire|rawRetryCannotCaptureAgain|cancellationBeforeCaptureHasFinalProof|cancellationAfterUnknownRetainsCharge|controlConfirmationIsNoPhysicalProof|originalTicketRetryDoesNotReplayCapture|oldTicketAfterCancelCannotReinvoke|wrongOriginalJobCannotIssueTicket|foreignReceiverCannotAcquire|pollingCannotInventUnknownCleanup|bindingCloseRetainsUnknownAttempt|originalDeadlineNeverExtended|confirmedPrefixNeverResetsOriginalCapture)$",
+        "--seed=1040031",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "samples",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "capture_intent.qnt",
+        "--main=capture_intent",
+        "--backend=typescript",
+        "--invariant=safety",
+        "--seed=1040032",
+        "--max-samples=100",
+        "--max-steps=30",
+        "--n-traces=8",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-refused-named-bindingCloseRetainsUnknownAttempt-11.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-refused"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-malformed-named-bindingCloseRetainsUnknownAttempt-11.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-malformed"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-fd-missing-named-bindingCloseRetainsUnknownAttempt-11.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-fd-missing"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-refused-named-cancellationAfterUnknownRetainsCharge-4.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-refused"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-malformed-named-cancellationAfterUnknownRetainsCharge-4.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-malformed"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-fd-missing-named-cancellationAfterUnknownRetainsCharge-4.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-fd-missing"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-refused-named-cancellationBeforeCaptureHasFinalProof-3.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-refused"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-malformed-named-cancellationBeforeCaptureHasFinalProof-3.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-malformed"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-fd-missing-named-cancellationBeforeCaptureHasFinalProof-3.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-fd-missing"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-refused-named-cancelledUnknownKeepsExactOriginalWire-1.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-refused"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-malformed-named-cancelledUnknownKeepsExactOriginalWire-1.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-malformed"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-fd-missing-named-cancelledUnknownKeepsExactOriginalWire-1.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-fd-missing"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-refused-named-confirmedPrefixNeverResetsOriginalCapture-13.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-refused"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-malformed-named-confirmedPrefixNeverResetsOriginalCapture-13.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-malformed"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-fd-missing-named-confirmedPrefixNeverResetsOriginalCapture-13.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-fd-missing"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-refused-named-controlConfirmationIsNoPhysicalProof-5.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-refused"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-malformed-named-controlConfirmationIsNoPhysicalProof-5.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-malformed"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-fd-missing-named-controlConfirmationIsNoPhysicalProof-5.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-fd-missing"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-refused-named-foreignReceiverCannotAcquire-9.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-refused"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-malformed-named-foreignReceiverCannotAcquire-9.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-malformed"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-fd-missing-named-foreignReceiverCannotAcquire-9.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-fd-missing"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-refused-named-oldTicketAfterCancelCannotReinvoke-7.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-refused"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-malformed-named-oldTicketAfterCancelCannotReinvoke-7.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-malformed"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-fd-missing-named-oldTicketAfterCancelCannotReinvoke-7.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-fd-missing"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-refused-named-originalDeadlineNeverExtended-12.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-refused"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-malformed-named-originalDeadlineNeverExtended-12.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-malformed"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-fd-missing-named-originalDeadlineNeverExtended-12.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-fd-missing"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-refused-named-originalIntentSurvivesCaptureError-0.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-refused"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-malformed-named-originalIntentSurvivesCaptureError-0.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-malformed"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-fd-missing-named-originalIntentSurvivesCaptureError-0.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-fd-missing"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-refused-named-originalTicketRetryDoesNotReplayCapture-6.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-refused"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-malformed-named-originalTicketRetryDoesNotReplayCapture-6.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-malformed"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-fd-missing-named-originalTicketRetryDoesNotReplayCapture-6.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-fd-missing"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-refused-named-pollingCannotInventUnknownCleanup-10.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-refused"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-malformed-named-pollingCannotInventUnknownCleanup-10.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-malformed"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-fd-missing-named-pollingCannotInventUnknownCleanup-10.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-fd-missing"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-refused-named-rawRetryCannotCaptureAgain-2.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-refused"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-malformed-named-rawRetryCannotCaptureAgain-2.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-malformed"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-fd-missing-named-rawRetryCannotCaptureAgain-2.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-fd-missing"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-refused-named-wrongOriginalJobCannotIssueTicket-8.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-refused"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-malformed-named-wrongOriginalJobCannotIssueTicket-8.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-malformed"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-fd-missing-named-wrongOriginalJobCannotIssueTicket-8.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-fd-missing"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-refused-sample-0.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-refused"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-malformed-sample-0.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-malformed"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-fd-missing-sample-0.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-fd-missing"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-refused-sample-1.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-refused"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-malformed-sample-1.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-malformed"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-fd-missing-sample-1.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-fd-missing"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-refused-sample-2.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-refused"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-malformed-sample-2.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-malformed"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-fd-missing-sample-2.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-fd-missing"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-refused-sample-3.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-refused"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-malformed-sample-3.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-malformed"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-fd-missing-sample-3.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-fd-missing"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-refused-sample-4.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-refused"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-malformed-sample-4.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-malformed"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-fd-missing-sample-4.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-fd-missing"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-refused-sample-5.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-refused"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-malformed-sample-5.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-malformed"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-fd-missing-sample-5.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-fd-missing"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-refused-sample-6.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-refused"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-malformed-sample-6.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-malformed"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-fd-missing-sample-6.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-fd-missing"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-refused-sample-7.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-refused"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-malformed-sample-7.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-malformed"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-capture-fd-missing-sample-7.itf",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/checks",
+        "capture-fd-missing"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "forget-original-intent-compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-O1",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-Inative",
+        "native/capture-intent-replay-v2.cpp",
+        "native/imported-clients.cpp",
+        "native/preview-provider-bootstrap.cpp",
+        "native/preview_uri.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/forget-original-intent/checks",
+        "-I/usr/include/gio-unix-2.0",
+        "-I/usr/include/json-glib-1.0",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-ljson-glib-1.0",
+        "-lgio-2.0",
+        "-lgobject-2.0",
+        "-lglib-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "forget-original-intent-replay",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/forget-original-intent/checks",
+        "capture-refused"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "repeat-unknown-native-capture-compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-O1",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-Inative",
+        "native/capture-intent-replay-v2.cpp",
+        "native/imported-clients.cpp",
+        "native/preview-provider-bootstrap.cpp",
+        "native/preview_uri.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/repeat-unknown-native-capture/checks",
+        "-I/usr/include/gio-unix-2.0",
+        "-I/usr/include/json-glib-1.0",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-ljson-glib-1.0",
+        "-lgio-2.0",
+        "-lgobject-2.0",
+        "-lglib-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "repeat-unknown-native-capture-replay",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/repeat-unknown-native-capture/checks",
+        "capture-refused"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "mark-invocation-only-after-reply-compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-O1",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-Inative",
+        "native/capture-intent-replay-v2.cpp",
+        "native/imported-clients.cpp",
+        "native/preview-provider-bootstrap.cpp",
+        "native/preview_uri.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/mark-invocation-only-after-reply/checks",
+        "-I/usr/include/gio-unix-2.0",
+        "-I/usr/include/json-glib-1.0",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-ljson-glib-1.0",
+        "-lgio-2.0",
+        "-lgobject-2.0",
+        "-lglib-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "mark-invocation-only-after-reply-replay",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/qa/capture-intent-model-check-v3-1791344495777827063/mark-invocation-only-after-reply/checks",
+        "capture-refused"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "Actual native capture intent and controlled ticket prefix compared with14 explicitly selected Quint scenarios and sampled traces in three authenticated synthetic socket failure modes: capture refusal, malformed completion and unavailable FD transport. Original exact wire/context/deadline persist; no Unknown replay or false charge/proof/binding closure. Three unsafe native variants must compile and differ on original trace states. No actual capture pixels/FD/backend reconciliation/WebKit/native GUI or full release acceptance.",
+  "selectedNames": [
+    "originalIntentSurvivesCaptureError",
+    "cancelledUnknownKeepsExactOriginalWire",
+    "rawRetryCannotCaptureAgain",
+    "cancellationBeforeCaptureHasFinalProof",
+    "cancellationAfterUnknownRetainsCharge",
+    "controlConfirmationIsNoPhysicalProof",
+    "originalTicketRetryDoesNotReplayCapture",
+    "oldTicketAfterCancelCannotReinvoke",
+    "wrongOriginalJobCannotIssueTicket",
+    "foreignReceiverCannotAcquire",
+    "pollingCannotInventUnknownCleanup",
+    "bindingCloseRetainsUnknownAttempt",
+    "originalDeadlineNeverExtended",
+    "confirmedPrefixNeverResetsOriginalCapture"
+  ],
+  "namedScenarios": 14,
+  "invariantSamples": 100,
+  "coupledTraces": [
+    {
+      "trace": "named-bindingCloseRetainsUnknownAttempt-11.itf.json",
+      "mode": "capture-refused",
+      "statesCompared": 4
+    },
+    {
+      "trace": "named-bindingCloseRetainsUnknownAttempt-11.itf.json",
+      "mode": "capture-malformed",
+      "statesCompared": 4
+    },
+    {
+      "trace": "named-bindingCloseRetainsUnknownAttempt-11.itf.json",
+      "mode": "capture-fd-missing",
+      "statesCompared": 4
+    },
+    {
+      "trace": "named-cancellationAfterUnknownRetainsCharge-4.itf.json",
+      "mode": "capture-refused",
+      "statesCompared": 2
+    },
+    {
+      "trace": "named-cancellationAfterUnknownRetainsCharge-4.itf.json",
+      "mode": "capture-malformed",
+      "statesCompared": 2
+    },
+    {
+      "trace": "named-cancellationAfterUnknownRetainsCharge-4.itf.json",
+      "mode": "capture-fd-missing",
+      "statesCompared": 2
+    },
+    {
+      "trace": "named-cancellationBeforeCaptureHasFinalProof-3.itf.json",
+      "mode": "capture-refused",
+      "statesCompared": 2
+    },
+    {
+      "trace": "named-cancellationBeforeCaptureHasFinalProof-3.itf.json",
+      "mode": "capture-malformed",
+      "statesCompared": 2
+    },
+    {
+      "trace": "named-cancellationBeforeCaptureHasFinalProof-3.itf.json",
+      "mode": "capture-fd-missing",
+      "statesCompared": 2
+    },
+    {
+      "trace": "named-cancelledUnknownKeepsExactOriginalWire-1.itf.json",
+      "mode": "capture-refused",
+      "statesCompared": 2
+    },
+    {
+      "trace": "named-cancelledUnknownKeepsExactOriginalWire-1.itf.json",
+      "mode": "capture-malformed",
+      "statesCompared": 2
+    },
+    {
+      "trace": "named-cancelledUnknownKeepsExactOriginalWire-1.itf.json",
+      "mode": "capture-fd-missing",
+      "statesCompared": 2
+    },
+    {
+      "trace": "named-confirmedPrefixNeverResetsOriginalCapture-13.itf.json",
+      "mode": "capture-refused",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-confirmedPrefixNeverResetsOriginalCapture-13.itf.json",
+      "mode": "capture-malformed",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-confirmedPrefixNeverResetsOriginalCapture-13.itf.json",
+      "mode": "capture-fd-missing",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-controlConfirmationIsNoPhysicalProof-5.itf.json",
+      "mode": "capture-refused",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-controlConfirmationIsNoPhysicalProof-5.itf.json",
+      "mode": "capture-malformed",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-controlConfirmationIsNoPhysicalProof-5.itf.json",
+      "mode": "capture-fd-missing",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-foreignReceiverCannotAcquire-9.itf.json",
+      "mode": "capture-refused",
+      "statesCompared": 1
+    },
+    {
+      "trace": "named-foreignReceiverCannotAcquire-9.itf.json",
+      "mode": "capture-malformed",
+      "statesCompared": 1
+    },
+    {
+      "trace": "named-foreignReceiverCannotAcquire-9.itf.json",
+      "mode": "capture-fd-missing",
+      "statesCompared": 1
+    },
+    {
+      "trace": "named-oldTicketAfterCancelCannotReinvoke-7.itf.json",
+      "mode": "capture-refused",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-oldTicketAfterCancelCannotReinvoke-7.itf.json",
+      "mode": "capture-malformed",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-oldTicketAfterCancelCannotReinvoke-7.itf.json",
+      "mode": "capture-fd-missing",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-originalDeadlineNeverExtended-12.itf.json",
+      "mode": "capture-refused",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-originalDeadlineNeverExtended-12.itf.json",
+      "mode": "capture-malformed",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-originalDeadlineNeverExtended-12.itf.json",
+      "mode": "capture-fd-missing",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-originalIntentSurvivesCaptureError-0.itf.json",
+      "mode": "capture-refused",
+      "statesCompared": 1
+    },
+    {
+      "trace": "named-originalIntentSurvivesCaptureError-0.itf.json",
+      "mode": "capture-malformed",
+      "statesCompared": 1
+    },
+    {
+      "trace": "named-originalIntentSurvivesCaptureError-0.itf.json",
+      "mode": "capture-fd-missing",
+      "statesCompared": 1
+    },
+    {
+      "trace": "named-originalTicketRetryDoesNotReplayCapture-6.itf.json",
+      "mode": "capture-refused",
+      "statesCompared": 2
+    },
+    {
+      "trace": "named-originalTicketRetryDoesNotReplayCapture-6.itf.json",
+      "mode": "capture-malformed",
+      "statesCompared": 2
+    },
+    {
+      "trace": "named-originalTicketRetryDoesNotReplayCapture-6.itf.json",
+      "mode": "capture-fd-missing",
+      "statesCompared": 2
+    },
+    {
+      "trace": "named-pollingCannotInventUnknownCleanup-10.itf.json",
+      "mode": "capture-refused",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-pollingCannotInventUnknownCleanup-10.itf.json",
+      "mode": "capture-malformed",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-pollingCannotInventUnknownCleanup-10.itf.json",
+      "mode": "capture-fd-missing",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-rawRetryCannotCaptureAgain-2.itf.json",
+      "mode": "capture-refused",
+      "statesCompared": 2
+    },
+    {
+      "trace": "named-rawRetryCannotCaptureAgain-2.itf.json",
+      "mode": "capture-malformed",
+      "statesCompared": 2
+    },
+    {
+      "trace": "named-rawRetryCannotCaptureAgain-2.itf.json",
+      "mode": "capture-fd-missing",
+      "statesCompared": 2
+    },
+    {
+      "trace": "named-wrongOriginalJobCannotIssueTicket-8.itf.json",
+      "mode": "capture-refused",
+      "statesCompared": 1
+    },
+    {
+      "trace": "named-wrongOriginalJobCannotIssueTicket-8.itf.json",
+      "mode": "capture-malformed",
+      "statesCompared": 1
+    },
+    {
+      "trace": "named-wrongOriginalJobCannotIssueTicket-8.itf.json",
+      "mode": "capture-fd-missing",
+      "statesCompared": 1
+    },
+    {
+      "trace": "sample-0.itf.json",
+      "mode": "capture-refused",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-0.itf.json",
+      "mode": "capture-malformed",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-0.itf.json",
+      "mode": "capture-fd-missing",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-1.itf.json",
+      "mode": "capture-refused",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-1.itf.json",
+      "mode": "capture-malformed",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-1.itf.json",
+      "mode": "capture-fd-missing",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-2.itf.json",
+      "mode": "capture-refused",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-2.itf.json",
+      "mode": "capture-malformed",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-2.itf.json",
+      "mode": "capture-fd-missing",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-3.itf.json",
+      "mode": "capture-refused",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-3.itf.json",
+      "mode": "capture-malformed",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-3.itf.json",
+      "mode": "capture-fd-missing",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-4.itf.json",
+      "mode": "capture-refused",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-4.itf.json",
+      "mode": "capture-malformed",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-4.itf.json",
+      "mode": "capture-fd-missing",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-5.itf.json",
+      "mode": "capture-refused",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-5.itf.json",
+      "mode": "capture-malformed",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-5.itf.json",
+      "mode": "capture-fd-missing",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-6.itf.json",
+      "mode": "capture-refused",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-6.itf.json",
+      "mode": "capture-malformed",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-6.itf.json",
+      "mode": "capture-fd-missing",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-7.itf.json",
+      "mode": "capture-refused",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-7.itf.json",
+      "mode": "capture-malformed",
+      "statesCompared": 30
+    },
+    {
+      "trace": "sample-7.itf.json",
+      "mode": "capture-fd-missing",
+      "statesCompared": 30
+    }
+  ],
+  "statesCompared": 816,
+  "unsafeMutantsDetected": 3,
+  "mutants": [
+    {
+      "name": "forget-original-intent",
+      "compiled": true,
+      "witness": "named-originalIntentSurvivesCaptureError-0.itf.json",
+      "differentObservableState": true
+    },
+    {
+      "name": "repeat-unknown-native-capture",
+      "compiled": true,
+      "witness": "named-rawRetryCannotCaptureAgain-2.itf.json",
+      "differentObservableState": true
+    },
+    {
+      "name": "mark-invocation-only-after-reply",
+      "compiled": true,
+      "witness": "named-cancellationAfterUnknownRetainsCharge-4.itf.json",
+      "differentObservableState": true
+    }
+  ],
+  "artifacts": {
+    "flags.stdout": "bb4f11936581edc697d8b764f8b1b5acca5e3a689cd3b48dad6b16e5dce89a66",
+    "flags.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "checks": "dd36bb73aa1d72996b55a5753ab8d72bab0b57b54fa6d50ad48da6227548c3d1",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-originalIntentSurvivesCaptureError-0.itf.json": "75f2f7ecab4365f367219742fc2bef13d59ccde4b4a02c4f7976d462dbdd3d57",
+    "named-cancelledUnknownKeepsExactOriginalWire-1.itf.json": "62a507f87d3585ca7d8384a257e4e9930bfaef3f3ce8fb5116ec9d3ec62a1e7f",
+    "named-rawRetryCannotCaptureAgain-2.itf.json": "e936177e7d1d1d9283ad064e5ca0225f23967c22536a2a7288758fd78f136bba",
+    "named-cancellationBeforeCaptureHasFinalProof-3.itf.json": "4dca9098661588a86f5b5695ec6dd48c19c8f489205df7d213e4b5f6b6af1359",
+    "named-cancellationAfterUnknownRetainsCharge-4.itf.json": "b87b58050c0751736fc219cabc3a6f72115c25e689dde577bbec259b385c9d0a",
+    "named-controlConfirmationIsNoPhysicalProof-5.itf.json": "c4a5ffd8cc6ee98c0c54c03a19927f9dd2320d3a62909a1fc676b0f3cba00233",
+    "named-originalTicketRetryDoesNotReplayCapture-6.itf.json": "0bfff669e0bd00701267ab0be55ef0facc67a902cd43d43cdf7f8f4d5493eef6",
+    "named-oldTicketAfterCancelCannotReinvoke-7.itf.json": "9b523c8ea29a7ccd1953c440314008a14274c7dcd66f2e75bb61485238840d3b",
+    "named-wrongOriginalJobCannotIssueTicket-8.itf.json": "527d2b751dcf8b7b8ec6cd9cbfc8c020bfddf54e3d423cfd71a2b171e2ef5b53",
+    "named-foreignReceiverCannotAcquire-9.itf.json": "c540c8f1e6515c620163c0a760cf00e38023f602124b4ab9d2e3b8ef4cf328a8",
+    "named-pollingCannotInventUnknownCleanup-10.itf.json": "c26ddbbcfe2c9f9b638b1b7575d309a4cb1651c40c11429a7bf7251f920a91d1",
+    "named-bindingCloseRetainsUnknownAttempt-11.itf.json": "10bea9afa905d5953ed3aefe184cb6894c463e51528d40954d356b62fee926af",
+    "named-originalDeadlineNeverExtended-12.itf.json": "46bc64f8165cead1d062ccf06ba4af2b01d339132d70ddab5de938c26a7ad4df",
+    "named-confirmedPrefixNeverResetsOriginalCapture-13.itf.json": "47731953649af968ee80997a6af967823643e9d5f7b3d3f0319b6ccf29ef303f",
+    "selected.stdout": "2aafbffa83de791a9d17451e00cc2a49495cb5edb33dabca43ecacbb2ebc7b7b",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "537c14ec17f059877c36605a729408984e098c2fd1e7c0b3b35d29c9fdb36611",
+    "sample-1.itf.json": "8e76a31e8f3aa4d046233a7a6ea835fb4dc08420ab862da48abd344917017a83",
+    "sample-2.itf.json": "febf2f8caa3ec04e319d2ed666ae0950e228cd7ef3b41bdee84abbddc3196746",
+    "sample-3.itf.json": "fdf5768ffa2a887a35397f281b15294ce7c518fb3bf345c6c43ffddaabc48b89",
+    "sample-4.itf.json": "a33ee5f985095b6ddeb1d393130efd56c687cafd26994fa23f88b7f442aef9e6",
+    "sample-5.itf.json": "a2fce88930c1ccf56810aca107b92c267219a6b2d08b609168be67e7b68bc224",
+    "sample-6.itf.json": "3a8e2ee3a03b1b1d8704f6fe1360886c30c0360f9212e372f8f6cccefc4b381a",
+    "sample-7.itf.json": "f9e6d4e6a78c5ed45dec7db34f521bf05bfd15e51b0ec31465de0dc9c653c4e5",
+    "samples.stdout": "dd3d743aa8feb071100c4100f5ec00ebab55b43aef6f2195eaceda068be590ac",
+    "samples.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-refused-named-bindingCloseRetainsUnknownAttempt-11.itf.stdout": "7894d4fa3b311e465f55c96195a55905a7bb4eb6b14fcf0809e30db36e0edb5e",
+    "replay-capture-refused-named-bindingCloseRetainsUnknownAttempt-11.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-malformed-named-bindingCloseRetainsUnknownAttempt-11.itf.stdout": "7894d4fa3b311e465f55c96195a55905a7bb4eb6b14fcf0809e30db36e0edb5e",
+    "replay-capture-malformed-named-bindingCloseRetainsUnknownAttempt-11.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-fd-missing-named-bindingCloseRetainsUnknownAttempt-11.itf.stdout": "7894d4fa3b311e465f55c96195a55905a7bb4eb6b14fcf0809e30db36e0edb5e",
+    "replay-capture-fd-missing-named-bindingCloseRetainsUnknownAttempt-11.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-refused-named-cancellationAfterUnknownRetainsCharge-4.itf.stdout": "08316216c94d7982379905813bb8937476b39bab30c98ca49b0221ac2b570d2c",
+    "replay-capture-refused-named-cancellationAfterUnknownRetainsCharge-4.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-malformed-named-cancellationAfterUnknownRetainsCharge-4.itf.stdout": "08316216c94d7982379905813bb8937476b39bab30c98ca49b0221ac2b570d2c",
+    "replay-capture-malformed-named-cancellationAfterUnknownRetainsCharge-4.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-fd-missing-named-cancellationAfterUnknownRetainsCharge-4.itf.stdout": "08316216c94d7982379905813bb8937476b39bab30c98ca49b0221ac2b570d2c",
+    "replay-capture-fd-missing-named-cancellationAfterUnknownRetainsCharge-4.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-refused-named-cancellationBeforeCaptureHasFinalProof-3.itf.stdout": "2575cda326ceee95b2e0ca452d2f42e4e6a7f1eed2f1fd476a8c1d76ec712a62",
+    "replay-capture-refused-named-cancellationBeforeCaptureHasFinalProof-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-malformed-named-cancellationBeforeCaptureHasFinalProof-3.itf.stdout": "2575cda326ceee95b2e0ca452d2f42e4e6a7f1eed2f1fd476a8c1d76ec712a62",
+    "replay-capture-malformed-named-cancellationBeforeCaptureHasFinalProof-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-fd-missing-named-cancellationBeforeCaptureHasFinalProof-3.itf.stdout": "2575cda326ceee95b2e0ca452d2f42e4e6a7f1eed2f1fd476a8c1d76ec712a62",
+    "replay-capture-fd-missing-named-cancellationBeforeCaptureHasFinalProof-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-refused-named-cancelledUnknownKeepsExactOriginalWire-1.itf.stdout": "08316216c94d7982379905813bb8937476b39bab30c98ca49b0221ac2b570d2c",
+    "replay-capture-refused-named-cancelledUnknownKeepsExactOriginalWire-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-malformed-named-cancelledUnknownKeepsExactOriginalWire-1.itf.stdout": "08316216c94d7982379905813bb8937476b39bab30c98ca49b0221ac2b570d2c",
+    "replay-capture-malformed-named-cancelledUnknownKeepsExactOriginalWire-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-fd-missing-named-cancelledUnknownKeepsExactOriginalWire-1.itf.stdout": "08316216c94d7982379905813bb8937476b39bab30c98ca49b0221ac2b570d2c",
+    "replay-capture-fd-missing-named-cancelledUnknownKeepsExactOriginalWire-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-refused-named-confirmedPrefixNeverResetsOriginalCapture-13.itf.stdout": "036bc51d1e88e8b523040fc6fd83b450fa3af6780fa2fb1c157f510f740d7063",
+    "replay-capture-refused-named-confirmedPrefixNeverResetsOriginalCapture-13.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-malformed-named-confirmedPrefixNeverResetsOriginalCapture-13.itf.stdout": "036bc51d1e88e8b523040fc6fd83b450fa3af6780fa2fb1c157f510f740d7063",
+    "replay-capture-malformed-named-confirmedPrefixNeverResetsOriginalCapture-13.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-fd-missing-named-confirmedPrefixNeverResetsOriginalCapture-13.itf.stdout": "036bc51d1e88e8b523040fc6fd83b450fa3af6780fa2fb1c157f510f740d7063",
+    "replay-capture-fd-missing-named-confirmedPrefixNeverResetsOriginalCapture-13.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-refused-named-controlConfirmationIsNoPhysicalProof-5.itf.stdout": "7ebbace4eda50421b217d8643eae601d2fe36e26d71c14b63eb3ba4ea1110c76",
+    "replay-capture-refused-named-controlConfirmationIsNoPhysicalProof-5.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-malformed-named-controlConfirmationIsNoPhysicalProof-5.itf.stdout": "7ebbace4eda50421b217d8643eae601d2fe36e26d71c14b63eb3ba4ea1110c76",
+    "replay-capture-malformed-named-controlConfirmationIsNoPhysicalProof-5.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-fd-missing-named-controlConfirmationIsNoPhysicalProof-5.itf.stdout": "7ebbace4eda50421b217d8643eae601d2fe36e26d71c14b63eb3ba4ea1110c76",
+    "replay-capture-fd-missing-named-controlConfirmationIsNoPhysicalProof-5.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-refused-named-foreignReceiverCannotAcquire-9.itf.stdout": "114c38a48dc433f654daf9bc5286d2fe5b3e83ec7ab8a28b0603d45bf3ea4dde",
+    "replay-capture-refused-named-foreignReceiverCannotAcquire-9.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-malformed-named-foreignReceiverCannotAcquire-9.itf.stdout": "114c38a48dc433f654daf9bc5286d2fe5b3e83ec7ab8a28b0603d45bf3ea4dde",
+    "replay-capture-malformed-named-foreignReceiverCannotAcquire-9.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-fd-missing-named-foreignReceiverCannotAcquire-9.itf.stdout": "114c38a48dc433f654daf9bc5286d2fe5b3e83ec7ab8a28b0603d45bf3ea4dde",
+    "replay-capture-fd-missing-named-foreignReceiverCannotAcquire-9.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-refused-named-oldTicketAfterCancelCannotReinvoke-7.itf.stdout": "a15e94649fc342ffb3fbc774ee1adfec3a898f036f6efe3d4de51e155c266f09",
+    "replay-capture-refused-named-oldTicketAfterCancelCannotReinvoke-7.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-malformed-named-oldTicketAfterCancelCannotReinvoke-7.itf.stdout": "a15e94649fc342ffb3fbc774ee1adfec3a898f036f6efe3d4de51e155c266f09",
+    "replay-capture-malformed-named-oldTicketAfterCancelCannotReinvoke-7.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-fd-missing-named-oldTicketAfterCancelCannotReinvoke-7.itf.stdout": "a15e94649fc342ffb3fbc774ee1adfec3a898f036f6efe3d4de51e155c266f09",
+    "replay-capture-fd-missing-named-oldTicketAfterCancelCannotReinvoke-7.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-refused-named-originalDeadlineNeverExtended-12.itf.stdout": "13bfb910b33719f25dc58bf97aac40c969bffe7b366f3103eb9cb252bd2df280",
+    "replay-capture-refused-named-originalDeadlineNeverExtended-12.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-malformed-named-originalDeadlineNeverExtended-12.itf.stdout": "13bfb910b33719f25dc58bf97aac40c969bffe7b366f3103eb9cb252bd2df280",
+    "replay-capture-malformed-named-originalDeadlineNeverExtended-12.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-fd-missing-named-originalDeadlineNeverExtended-12.itf.stdout": "13bfb910b33719f25dc58bf97aac40c969bffe7b366f3103eb9cb252bd2df280",
+    "replay-capture-fd-missing-named-originalDeadlineNeverExtended-12.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-refused-named-originalIntentSurvivesCaptureError-0.itf.stdout": "a914c90f867988042f29309d9ab25ab06b3913898a973dd8037280d9e4ff4ed4",
+    "replay-capture-refused-named-originalIntentSurvivesCaptureError-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-malformed-named-originalIntentSurvivesCaptureError-0.itf.stdout": "a914c90f867988042f29309d9ab25ab06b3913898a973dd8037280d9e4ff4ed4",
+    "replay-capture-malformed-named-originalIntentSurvivesCaptureError-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-fd-missing-named-originalIntentSurvivesCaptureError-0.itf.stdout": "a914c90f867988042f29309d9ab25ab06b3913898a973dd8037280d9e4ff4ed4",
+    "replay-capture-fd-missing-named-originalIntentSurvivesCaptureError-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-refused-named-originalTicketRetryDoesNotReplayCapture-6.itf.stdout": "e228201c7200af4893f51f8c03be293be26cfad6372a255f0a5c364e8762613b",
+    "replay-capture-refused-named-originalTicketRetryDoesNotReplayCapture-6.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-malformed-named-originalTicketRetryDoesNotReplayCapture-6.itf.stdout": "e228201c7200af4893f51f8c03be293be26cfad6372a255f0a5c364e8762613b",
+    "replay-capture-malformed-named-originalTicketRetryDoesNotReplayCapture-6.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-fd-missing-named-originalTicketRetryDoesNotReplayCapture-6.itf.stdout": "e228201c7200af4893f51f8c03be293be26cfad6372a255f0a5c364e8762613b",
+    "replay-capture-fd-missing-named-originalTicketRetryDoesNotReplayCapture-6.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-refused-named-pollingCannotInventUnknownCleanup-10.itf.stdout": "a15e94649fc342ffb3fbc774ee1adfec3a898f036f6efe3d4de51e155c266f09",
+    "replay-capture-refused-named-pollingCannotInventUnknownCleanup-10.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-malformed-named-pollingCannotInventUnknownCleanup-10.itf.stdout": "a15e94649fc342ffb3fbc774ee1adfec3a898f036f6efe3d4de51e155c266f09",
+    "replay-capture-malformed-named-pollingCannotInventUnknownCleanup-10.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-fd-missing-named-pollingCannotInventUnknownCleanup-10.itf.stdout": "a15e94649fc342ffb3fbc774ee1adfec3a898f036f6efe3d4de51e155c266f09",
+    "replay-capture-fd-missing-named-pollingCannotInventUnknownCleanup-10.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-refused-named-rawRetryCannotCaptureAgain-2.itf.stdout": "266c8f5a9dac29e4aaeef67372340890aead4f5b292b1df5c28825e7a440a192",
+    "replay-capture-refused-named-rawRetryCannotCaptureAgain-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-malformed-named-rawRetryCannotCaptureAgain-2.itf.stdout": "266c8f5a9dac29e4aaeef67372340890aead4f5b292b1df5c28825e7a440a192",
+    "replay-capture-malformed-named-rawRetryCannotCaptureAgain-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-fd-missing-named-rawRetryCannotCaptureAgain-2.itf.stdout": "266c8f5a9dac29e4aaeef67372340890aead4f5b292b1df5c28825e7a440a192",
+    "replay-capture-fd-missing-named-rawRetryCannotCaptureAgain-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-refused-named-wrongOriginalJobCannotIssueTicket-8.itf.stdout": "114c38a48dc433f654daf9bc5286d2fe5b3e83ec7ab8a28b0603d45bf3ea4dde",
+    "replay-capture-refused-named-wrongOriginalJobCannotIssueTicket-8.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-malformed-named-wrongOriginalJobCannotIssueTicket-8.itf.stdout": "114c38a48dc433f654daf9bc5286d2fe5b3e83ec7ab8a28b0603d45bf3ea4dde",
+    "replay-capture-malformed-named-wrongOriginalJobCannotIssueTicket-8.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-fd-missing-named-wrongOriginalJobCannotIssueTicket-8.itf.stdout": "114c38a48dc433f654daf9bc5286d2fe5b3e83ec7ab8a28b0603d45bf3ea4dde",
+    "replay-capture-fd-missing-named-wrongOriginalJobCannotIssueTicket-8.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-refused-sample-0.itf.stdout": "de7bb74fd50361312f0a589cf5d4d6b5837b867f956b28cc2d1ef43aa0f5b0c9",
+    "replay-capture-refused-sample-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-malformed-sample-0.itf.stdout": "de7bb74fd50361312f0a589cf5d4d6b5837b867f956b28cc2d1ef43aa0f5b0c9",
+    "replay-capture-malformed-sample-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-fd-missing-sample-0.itf.stdout": "de7bb74fd50361312f0a589cf5d4d6b5837b867f956b28cc2d1ef43aa0f5b0c9",
+    "replay-capture-fd-missing-sample-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-refused-sample-1.itf.stdout": "1f4dda476a0ca098f3b363d2707e99b4127b40953baaa19fde0ef556fb0a4281",
+    "replay-capture-refused-sample-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-malformed-sample-1.itf.stdout": "1f4dda476a0ca098f3b363d2707e99b4127b40953baaa19fde0ef556fb0a4281",
+    "replay-capture-malformed-sample-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-fd-missing-sample-1.itf.stdout": "1f4dda476a0ca098f3b363d2707e99b4127b40953baaa19fde0ef556fb0a4281",
+    "replay-capture-fd-missing-sample-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-refused-sample-2.itf.stdout": "ffd4bcdb138673c813cf86a9da2540f254c3d676f178c1ca2368e7a7bc468989",
+    "replay-capture-refused-sample-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-malformed-sample-2.itf.stdout": "ffd4bcdb138673c813cf86a9da2540f254c3d676f178c1ca2368e7a7bc468989",
+    "replay-capture-malformed-sample-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-fd-missing-sample-2.itf.stdout": "ffd4bcdb138673c813cf86a9da2540f254c3d676f178c1ca2368e7a7bc468989",
+    "replay-capture-fd-missing-sample-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-refused-sample-3.itf.stdout": "7f60f7ff372948e01c515e48f6a0564f9d21935e9c5e4ea744d98a664303d1e1",
+    "replay-capture-refused-sample-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-malformed-sample-3.itf.stdout": "7f60f7ff372948e01c515e48f6a0564f9d21935e9c5e4ea744d98a664303d1e1",
+    "replay-capture-malformed-sample-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-fd-missing-sample-3.itf.stdout": "7f60f7ff372948e01c515e48f6a0564f9d21935e9c5e4ea744d98a664303d1e1",
+    "replay-capture-fd-missing-sample-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-refused-sample-4.itf.stdout": "d8333079532b3a2f34d6de918e4aa87f6aaea1e10e84112cf483ec31f643e078",
+    "replay-capture-refused-sample-4.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-malformed-sample-4.itf.stdout": "d8333079532b3a2f34d6de918e4aa87f6aaea1e10e84112cf483ec31f643e078",
+    "replay-capture-malformed-sample-4.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-fd-missing-sample-4.itf.stdout": "d8333079532b3a2f34d6de918e4aa87f6aaea1e10e84112cf483ec31f643e078",
+    "replay-capture-fd-missing-sample-4.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-refused-sample-5.itf.stdout": "1586d542933acd11a631f08d0aeb13c03f8a26034646be1179ca9e0fd3076425",
+    "replay-capture-refused-sample-5.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-malformed-sample-5.itf.stdout": "1586d542933acd11a631f08d0aeb13c03f8a26034646be1179ca9e0fd3076425",
+    "replay-capture-malformed-sample-5.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-fd-missing-sample-5.itf.stdout": "1586d542933acd11a631f08d0aeb13c03f8a26034646be1179ca9e0fd3076425",
+    "replay-capture-fd-missing-sample-5.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-refused-sample-6.itf.stdout": "292af51a763db9b9587777c7e13e4e718e1837111a817b3a34e56bebf4cec2f7",
+    "replay-capture-refused-sample-6.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-malformed-sample-6.itf.stdout": "292af51a763db9b9587777c7e13e4e718e1837111a817b3a34e56bebf4cec2f7",
+    "replay-capture-malformed-sample-6.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-fd-missing-sample-6.itf.stdout": "292af51a763db9b9587777c7e13e4e718e1837111a817b3a34e56bebf4cec2f7",
+    "replay-capture-fd-missing-sample-6.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-refused-sample-7.itf.stdout": "7cf64b698e38a6b05e358dcb302129065ae0a1ad48b818050d83e936bf35cd35",
+    "replay-capture-refused-sample-7.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-malformed-sample-7.itf.stdout": "7cf64b698e38a6b05e358dcb302129065ae0a1ad48b818050d83e936bf35cd35",
+    "replay-capture-malformed-sample-7.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-capture-fd-missing-sample-7.itf.stdout": "7cf64b698e38a6b05e358dcb302129065ae0a1ad48b818050d83e936bf35cd35",
+    "replay-capture-fd-missing-sample-7.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "forget-original-intent-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "forget-original-intent-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "forget-original-intent-replay.stdout": "a0a98d76372d19f4ce358a006b36c2bb3a2cd315d08b1150efc5fd4bf7b5d4a1",
+    "forget-original-intent-replay.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "repeat-unknown-native-capture-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "repeat-unknown-native-capture-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "repeat-unknown-native-capture-replay.stdout": "dad4f3c844f2db7c6861cb482c357bde0addfbc82864c1efafca7469d1f0a3c0",
+    "repeat-unknown-native-capture-replay.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mark-invocation-only-after-reply-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mark-invocation-only-after-reply-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mark-invocation-only-after-reply-replay.stdout": "381941e7e3d0cb88b460a6d94acf6290435e522b5da46bb8d8703209f1e29553",
+    "mark-invocation-only-after-reply-replay.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "forget-original-intent/checks": "4cee0ca485f582a91ca1388bd771b521b7037dc5b4007ef834f7c105bc44120d",
+    "repeat-unknown-native-capture/checks": "0f23ef59dd543c43c738e107f9eb486082a594b7e9a4dbcdd5475694014dae61",
+    "mark-invocation-only-after-reply/checks": "82cf60eff5bf6e9aaca124fa1e35b0ab62d6f47a2a13ebb9dd2cdf9aafb15243",
+    "mark-invocation-only-after-reply/native/admission-test.c": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+    "mark-invocation-only-after-reply/native/client-command-test.cpp": "ef481b7030d6a41831895fca1a5cba7405d08e22b913fa2f0f6cadccf47c25ab",
+    "mark-invocation-only-after-reply/native/client-denial-test.cpp": "9c05385a9e1b9da4efe03c414b09d512ab4e3791a33c4ff55fde75e4e0c009f7",
+    "mark-invocation-only-after-reply/native/client-frame-test.cpp": "233d4520f3bd200cad1f1ea580e9a2eaaf382822b90aa262d4294f8a3bf68d7f",
+    "mark-invocation-only-after-reply/native/client-import-test.cpp": "c74f47f1e4233681ab63adf3a51396cfa7c8a7fc0769eba9e314ccc82471de4a",
+    "mark-invocation-only-after-reply/native/client-observation-test.cpp": "bc9a36f1d62669904d5b7003d7b299ad2ee3a836c8f13f381a6669915c74e336",
+    "mark-invocation-only-after-reply/native/client-producer.cpp": "10ecbba50bf656d5cfb4c4e1fd978937ac5da853f194d106d772431db2e367d1",
+    "mark-invocation-only-after-reply/native/client-producer.h": "01f005d7899b2f3b13216a702508adfa39b6cbcbde4f84b6fae1ebc2404462b9",
+    "mark-invocation-only-after-reply/native/client-resume-test.cpp": "c8dfcdc8564bb6bd8cf9284fe3d12d67c30ca9d5a510a58b935021567719ac2d",
+    "mark-invocation-only-after-reply/native/client-retained-presentation-test.cpp": "680fb60765c220e59974cda9a8af87c60b5935d48fa8e66671f3e74a0e1c0a2d",
+    "mark-invocation-only-after-reply/native/client_frame.hpp": "ed5d8d15bcb132ea77b81f36aab49249acfb4b0409a6954b95aa4300eda57681",
+    "mark-invocation-only-after-reply/native/client_import.hpp": "c62c4a591dfb7f551d17987a16f2a317e67a974f83ceffa2dcf6f2529ccd1211",
+    "mark-invocation-only-after-reply/native/client_producer.hpp": "b93355d804613a68593bfd2447295287ac04c76427007c5772e6244b4c51d990",
+    "mark-invocation-only-after-reply/native/context-keys-test.c": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+    "mark-invocation-only-after-reply/native/context-keys.h": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+    "mark-invocation-only-after-reply/native/demand.hpp": "3b01ba43bc50719509323e98212cbaa49e33b00b5bdf80297da049ac41332ea2",
+    "mark-invocation-only-after-reply/native/geometry-carrier-test.c": "770835580c7a4a2e21e49a9c3da586ee3ae59e66a92320dd7bb12fa8e516d921",
+    "mark-invocation-only-after-reply/native/handoff-test.c": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+    "mark-invocation-only-after-reply/native/host-fault.h": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+    "mark-invocation-only-after-reply/native/host-journal.h": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+    "mark-invocation-only-after-reply/native/host.c": "9cf69e35d9603735748e0b59e27a007e1bc3ab7393a2c310f6d8765b667f6853",
+    "mark-invocation-only-after-reply/native/imported_clients.hpp": "922ffe9d1020f9c0418eb0fadcd7993bc1b65e41928b12788820ab586a628f6e",
+    "mark-invocation-only-after-reply/native/preview-integration.h": "ffacb4ed6abe6b8019f5bcb489b8abe69f28f863ca9079f29cd1c075a0a49e2a",
+    "mark-invocation-only-after-reply/native/preview-provider-bootstrap.cpp": "f835e2203e1e73860c7e10a15f2573d453888f5043c3255524528265033bc570",
+    "mark-invocation-only-after-reply/native/preview-provider-bootstrap.h": "7220bc8df0bc40da2f897e519cff5340bc0eee84582345572b6b5c290a714c35",
+    "mark-invocation-only-after-reply/native/preview-uri-api.h": "7a02550a807102f6ebdad9c1570eb6a719a50b0ed422ff26add97dbd6408b002",
+    "mark-invocation-only-after-reply/native/preview-uri-webkit.cpp": "c8cc48442d8d098315b7ad64b71be267679bc361041dc6d2de405c657fa74ea2",
+    "mark-invocation-only-after-reply/native/preview_broker.hpp": "9c57428130093f8d815b7851004f103897deca278bbe4196e2116bec85a323ed",
+    "mark-invocation-only-after-reply/native/preview_client.hpp": "afc6c49d6818856496138f8c46e387b33b5894a4ea86cfb3b5d7157a287988ed",
+    "mark-invocation-only-after-reply/native/preview_delivery.hpp": "20e1a275985c92b6771ee24c5e4ce6a485bd049c8b1cb84c3e47358131435f72",
+    "mark-invocation-only-after-reply/native/preview_fd.hpp": "60fa114f7f2eb819c7a09085ee737c23d21b31f0ba177d967ff99f1425272a60",
+    "mark-invocation-only-after-reply/native/preview_uri.cpp": "e163fba44ad561c5d5deaf38f3a91f75f486b3749e030e1e22007cd98cdf5b87",
+    "mark-invocation-only-after-reply/native/preview_uri.hpp": "ad7c76ca9b089ea854f19ef029bbf461c3bcfdf76c677dc3666ae21a5385620b",
+    "mark-invocation-only-after-reply/native/preview_wire.hpp": "2b02108a819e97106cbf38e420871bc4ee10656fd6f98905f25c30fd838d283d",
+    "mark-invocation-only-after-reply/native/provider-delivery-test.cpp": "4e21203fd7acd32ede476df1137b6ea812cb26fa977d05296a884401adfd8fbe",
+    "mark-invocation-only-after-reply/native/provider-grant-test.cpp": "8f39b5828b946d5fba2f7df689578a50f79cf7daf2e0e8443ab87dfd7b89ac22",
+    "mark-invocation-only-after-reply/native/provider-ownership-test.cpp": "d79fe711a90d24ac96e8522a33a4dc3582989b40b692aec73109e365e3f44675",
+    "mark-invocation-only-after-reply/native/reconciliation-carrier-test.c": "38210317eff28d8a436e640e971f91df71ffcc3b17e82c27a60ee34f57d9f73d",
+    "mark-invocation-only-after-reply/native/recovery-presentation-test.c": "812bbab1640e12269bc195979cd319a96a505157ba8f5c637eebfd5561bc8e67",
+    "mark-invocation-only-after-reply/native/shared-context-test.c": "ed50c8ed6b0fee3db3818e2f38c8bb57985b388b26ee09a5624d32f1bfa258ee",
+    "mark-invocation-only-after-reply/native/shared-context.h": "e86f3ba7a4c76d7839ef8d67d14c7f9ea6b514afa2ac110fc7cebf2da2fd62ce",
+    "mark-invocation-only-after-reply/native/shared-host.c": "c51abc5f6f3fc231431f7f3cffc53a0d102e988becff2e943adcb33aeb3cd3b4",
+    "mark-invocation-only-after-reply/native/surface-test.c": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+    "mark-invocation-only-after-reply/native/surface.h": "2bdf2d9b3b34fa7193da90e58ac378e7a640ae91e7b02d46987e33c559209f0b",
+    "mark-invocation-only-after-reply/native/imported-clients.h": "4bed85a93cf9f2ba4c771ab552b5d63008277a3f77639508c5f394b2b90231ee",
+    "mark-invocation-only-after-reply/native/imported-clients.cpp": "0bb1996b1ec2f2c25d796c6acbb1e642b2cf5170b73437dfc715ea4ab521c1ef",
+    "mark-invocation-only-after-reply/native/imported-clients-boundary-test.c": "04b444d7d4d0c8f7f945d6f5e9996cfe3f23455624f6b933359b7ac1ee9737da",
+    "mark-invocation-only-after-reply/native/imported_lifecycle.hpp": "1d4efa4daa2753e43a822e3727dc78458941d72d03e4e01a1d041eb7f6bd9ded",
+    "mark-invocation-only-after-reply/native/imported-lifecycle-test.cpp": "14e7969e5228d013b590f912605cdd846235de67e8e13a87e644d123136d6a2a",
+    "mark-invocation-only-after-reply/native/family_source.hpp": "7e936e3f59b5075c364748384282c4e764d85444db2962a885a1ae5a0bf9bb35",
+    "mark-invocation-only-after-reply/native/family-source-test.cpp": "25c2402f9b6e1c7692633a2b27b69a961284412cf802fb600ad3ff2f97380b9a",
+    "mark-invocation-only-after-reply/native/family_style_crop_fd.hpp": "bf59599f5ceeb41381a1fd05fb045c52ec3cf47faf4706c38de8dd595f902a53",
+    "mark-invocation-only-after-reply/native/preview_png.hpp": "308007220baf1d7f2ad30569237ffaf7d6427d900ee1243811480402f188e670",
+    "mark-invocation-only-after-reply/native/family-fd-test.cpp": "4129475daf2dbcc997ee804f6f2cc1ae97c373adddc891a95ec6cf043f98291d",
+    "mark-invocation-only-after-reply/native/family_frame.hpp": "20ce40ab0080c37e17345cb3d88334eb5dc926a79720ec6faffee8807ae5fe67",
+    "mark-invocation-only-after-reply/native/family_producer.hpp": "148240aaf174b3d0f27d8385cd3e93811e48dd8c39b3b65a691fc754c2eebe22",
+    "mark-invocation-only-after-reply/native/family-frame-test.cpp": "7f5421a78f071a081edb32b8db0402c0e8a855df150ecdeeba6298cf94ed840c",
+    "mark-invocation-only-after-reply/native/generated_backdrop_fd.hpp": "3f60c0cffed16e60ec90b8f8365ec3f278d5c8cb41db2ce5b85c4929d018337f",
+    "mark-invocation-only-after-reply/native/backdrop-fd-test.cpp": "74b2f71f21e823bc3445cd647f86d422071edbd483d2bd89d68b38ce6575f623",
+    "mark-invocation-only-after-reply/native/backdrop-frame-test.cpp": "687f19e3053f305777f16d854fc2dbf593f4a7131589d522c37de4acfa498fd6",
+    "mark-invocation-only-after-reply/native/backdrop-denial-test.cpp": "7388e88721724be5280b0df91e982af29bebc2f9a10563690ab5aef8c73bda86",
+    "mark-invocation-only-after-reply/native/qa-reader-control.h": "1a504ee3959b78c73a8f9613b6a6c4f9cc51bc198d1dbd3b6fe1fd352684ccf4",
+    "mark-invocation-only-after-reply/native/qa-reader-control-test.c": "6bd57d3be5b0f3d0e071993e93b188fd0b2a87ae91dada60120f8e9142a07ed5",
+    "mark-invocation-only-after-reply/native/preview_metadata.hpp": "1cf84f1094cd8ccca90fcc5c44bed4182716e256792bb542c771c8bc1ce9ad5e",
+    "mark-invocation-only-after-reply/native/preview_icons.hpp": "6af2174049d623e824fdcf66ddd3a18d0b48a2c34c7159c1651dc0e4b53d8a32",
+    "mark-invocation-only-after-reply/native/preview_icons.cpp": "48aa83cc63d4f1f08b9333372cb3f63e0a25bf880cc17567098079284ee79693",
+    "mark-invocation-only-after-reply/native/metadata-icon-test.cpp": "cff027f7a3d29668893aec03be50f5dbae49fb2295606a8e8baad34b64e028d7",
+    "mark-invocation-only-after-reply/native/window-catalog-test.cpp": "c9efe0d6f7f7db6abc38ab717d16d56a014a2804d39281a28bddd7eb030548a6",
+    "mark-invocation-only-after-reply/native/receiver-extension-test.cpp": "a35501610fadf7cc4935b970c87b683fa9a2216ee2eef3da8cc70afc652b8d59",
+    "mark-invocation-only-after-reply/native/delivery-extension-test.cpp": "4d9ccdff37c8818ec6f70b93393e94a46f1f1b3506606a692549cf24c38972c8",
+    "mark-invocation-only-after-reply/native/imported_admission.hpp": "9cd619f5774d8fb40d712f6f073c00c8c337770e7d173413951fadf3dd321c78",
+    "mark-invocation-only-after-reply/native/imported-admission-test.cpp": "4440d17aea9172b547a66660cb30ebe27df821f627f9fae8861fcdd8d6858d6f",
+    "mark-invocation-only-after-reply/native/imported_enrollment.hpp": "970d2e8027dfdbbbb599f3de7d5132b9e7e27e8e0509622e7ae3ad18eeef380e",
+    "mark-invocation-only-after-reply/native/dynamic-enrollment-test.cpp": "bc8dd70ec9b8b5ce2f428cb82578389f9349d24b3ebdb423ccf725b5fd8c8278",
+    "mark-invocation-only-after-reply/native/rejected-enrollment-test.cpp": "f38a7da3423eb939f76c8882f2d2b057b9af865fd9cd3d96dbc9741918c99aad",
+    "mark-invocation-only-after-reply/native/resume-enrollment-test.cpp": "b14e33de4a2c1ff6b8e38737f66d8d6f906aba07e609a67750a5a7055434921d",
+    "mark-invocation-only-after-reply/native/imported_feedback.hpp": "6760465caf1b6877aadb62776fa050f7a44848cd4a9061ce89fdbac96604b9aa",
+    "mark-invocation-only-after-reply/native/local-feedback-test.cpp": "01b247fef9f6378db1616430fb7f04236e584085269542eaa05c4a6581612b29",
+    "mark-invocation-only-after-reply/native/next-intent-test.cpp": "6ad459d12146dbe18b6431b3ee863318c10d45a0806f63d9b5400812f20e80b9",
+    "mark-invocation-only-after-reply/native/next-resume-test.cpp": "f4f00450ca31f382b71af7b7158c40ee199439c9f8c23f3a4062075e190ab152",
+    "mark-invocation-only-after-reply/native/preview_retirement.hpp": "b8af8a43d3ca8eeebc8a0b24a9f99b846018db8e17bcb18ea31ffecfed595b0d",
+    "mark-invocation-only-after-reply/native/retirement-observation-test.cpp": "2f60ee0cc71f4cc611f57ca3ffa3ef4a013233a0c9de13144b207729f0a478f8",
+    "mark-invocation-only-after-reply/native/imported_subjects.hpp": "03e7bfd41bf4ace363d2f95bb1526515c6c9f8bedc69dffdf71fbae13f56f5ff",
+    "mark-invocation-only-after-reply/native/actor-retirement-test.cpp": "69ddf372f47b537e4b35481ec9769e8417270a3c84ba8caef98fe3c00b78fea0",
+    "mark-invocation-only-after-reply/native/actor-retirement-test-v2.cpp": "08815578bdf33210f066e80f5506fd1a8a4e1afa8b89c69779a901d225dbf599",
+    "mark-invocation-only-after-reply/native/actor-retirement-test-v3.cpp": "25e47f56093b84682230628f46d20fb96b2727fa4190524ec3f64e9d08e8f867",
+    "mark-invocation-only-after-reply/native/preview-control.h": "eeb41047554ba5a84f75614a62c1de93e871b3099a12560584150d6c4b6540d8",
+    "mark-invocation-only-after-reply/native/retirement_journal.hpp": "6c09930b399351a9c8a73e45009daa8ea1ee0b3adb12ba4f1121f95a12ec6913",
+    "mark-invocation-only-after-reply/native/actor-retirement-channel-test-v1.cpp": "f0c1b35a04325b261217f93d182ee1871a091abff0c44e3688a8c9f17a729812",
+    "mark-invocation-only-after-reply/native/actor-retirement-channel-test-v2.cpp": "4160343a5ba5939114326e780108ea223a42ca28ac6fb7d4a833695d82e50a66",
+    "mark-invocation-only-after-reply/native/retirement-elm-channel-test.cpp": "38205ebfb02b67ad12a3d454947a0efc93e80f9b8b191143801ab83a4bb47e20",
+    "mark-invocation-only-after-reply/native/retirement-elm-channel-test-v2.cpp": "a7cd7cd427e5f8e7360156f0445993584c9602cc5cad466a72201bf6bfac5902",
+    "mark-invocation-only-after-reply/native/retirement-elm-channel-test-v3.cpp": "0166a6db252a7c2101a26425999f2f85955ddde9014795f241fd56359c5b0a81",
+    "mark-invocation-only-after-reply/native/retirement-elm-channel-test-v4.cpp": "5ec17c2cacb3ca3cd2dba94766260098485ecdc2f68585f7dee3f2b6ad7fa225",
+    "mark-invocation-only-after-reply/native/retirement-readiness-replay.cpp": "ed336bf6770a5bc130b1d84e8e99e19d0cbb67c5c5133a876c1746ff46e6fb23",
+    "mark-invocation-only-after-reply/native/retirement-readiness-replay-v2.cpp": "9f10b45ea7817e6018a00461dcce0e83549f8c054bc7cc3a524dade9c297328c",
+    "mark-invocation-only-after-reply/native/retirement-readiness-replay-v3.cpp": "b596126e85083244f576797735e54a632832af7de37b0a5c14aa2b38243a9859",
+    "mark-invocation-only-after-reply/native/retirement-poll-replay.cpp": "beefa85561dd03590f7d713d66520072def838907560fab86a348abcb5e773a0",
+    "mark-invocation-only-after-reply/native/retirement-fair-poll-test.cpp": "50e23ab69570050fc2814549e9146a6f58413ae4f9cd0d090db4c34ceba4f8a5",
+    "mark-invocation-only-after-reply/native/preview-control-delivery.h": "edbcf3127c6fadbdff1eb2c361b50d0e72902a9c9e2ce456b0fb64ac7f6653e3",
+    "mark-invocation-only-after-reply/native/control-outbox-fixture.cpp": "f9850811275c90b1a72973f70626106d76a59191a627ff307490b343802fa30e",
+    "mark-invocation-only-after-reply/native/control-confirmation-fixture.cpp": "9fbecc43b61202f6e36142a3e799df01b1a31bd32255a2f34b7496d7e75765a6",
+    "mark-invocation-only-after-reply/native/control_reservations.hpp": "5bcaa15a546e7341d7d24c642d25e67361a654a84d600bed984ae4d1a193bc25",
+    "mark-invocation-only-after-reply/native/control-reservations-replay.cpp": "509e3695bfc46b37357ceb712045e9a03d6b7b2905953197c695944afcd7c268",
+    "mark-invocation-only-after-reply/native/control-reservations-test.cpp": "8006cbbcfe28784132308afc03b332bf964a5038f887fd6378bc18abe9065c05",
+    "mark-invocation-only-after-reply/native/control-reservations-test-v2.cpp": "ec9010611ac5fc5e8cad459cb2a2a815d34e8b0b88ce64fc3574cf03ade99fc5",
+    "mark-invocation-only-after-reply/native/imported_control_admission.hpp": "d5bf0ba8b3ec116ca2e1cec808f139a6cdd99a72f63568487ada9204f2ab425d",
+    "mark-invocation-only-after-reply/native/control-admission-replay.cpp": "d3d730789eee580df8ac35bfa8a949039905fded2139dfe30a80c022928db300",
+    "mark-invocation-only-after-reply/native/control-quota-fixture.cpp": "9c1bf07df9a17524aba4e817938df7418e7d5ab0d3e791d80fb2872e3a9751a6",
+    "mark-invocation-only-after-reply/native/retained_client_command.hpp": "f07d8b840865595084dd04f8bdaa5e4a89dbd9bee27223cbba5ad0de927aaf15",
+    "mark-invocation-only-after-reply/native/retained-client-command-replay.cpp": "d43b2f11f03d1b760c5f15c4b61b673a916eb9d8880513ee8cb2c03efc541cad",
+    "mark-invocation-only-after-reply/native/imported-control-guard-test.cpp": "2c157817565956b3a21bd97ef5cf84238cb6f45ef4ef7f20e4a420b28e88242e",
+    "mark-invocation-only-after-reply/native/control-admission-replay-v2.cpp": "d221e0630f48cae7b5211e2230817059b753054ece15e1f40d9ac7b58065df4c",
+    "mark-invocation-only-after-reply/native/imported-control-ticket-test.cpp": "1e7c317a6eafa7865713dcb0f5b45ff0168841177ead8c8c06f886f635123411",
+    "mark-invocation-only-after-reply/native/imported-control-ticket-test-v2.cpp": "918a5eca9ab7c5d215bc6f0b10994deb824b4865240f7213479ed684a42ebecd",
+    "mark-invocation-only-after-reply/native/job-control-replay.cpp": "d56f84788399d7eff263a6b4779f7109bf41c2e86c9c76d95220b9571fef21b5",
+    "mark-invocation-only-after-reply/native/imported-control-retirement-test.cpp": "ba5d0c4b41a32acbda7a35bef05f4ba2a6ea7e9be79ffac6c1daa6f61f69f904",
+    "mark-invocation-only-after-reply/native/imported-control-retirement-test-v2.cpp": "0aef0648c3d4a1c53829598351133a1dceda1a25d93b72243c3a8a35eda2bc1c",
+    "mark-invocation-only-after-reply/native/actor-control-replay.cpp": "337b7e2892ec373a33b2c45bd855aa8b00c97ed88661aafe9aa66e78be3fe409",
+    "mark-invocation-only-after-reply/native/imported-control-readiness-bytes-test.cpp": "db0a23bd14b32857ce9b2cc15656317815824f382d54c269240f72e87de59653",
+    "mark-invocation-only-after-reply/native/imported-controlled-c-test.cpp": "b3e2bea1bc545e3b9bee4bba85761a4fc8d0606ab8dd4bc1c163e7e6ff109fe2",
+    "mark-invocation-only-after-reply/native/imported-controlled-c-test-v2.cpp": "b638f3dc10735ed5d187709d24fef04c84804dc90bdf91b50846e3b9390eea23",
+    "mark-invocation-only-after-reply/native/imported-controlled-c-test-v3.cpp": "c5b52a66337bfae25483251b3e91b1f98a90eca8ba4b152d6539cd24b78c56e2",
+    "mark-invocation-only-after-reply/native/capture-intent-test.cpp": "d0bb0eb54701d28ceaf989b681c8dc7138fa1137d82985661104ab9aec5295d5",
+    "mark-invocation-only-after-reply/native/imported-allocation-test.cpp": "c621bf4eb3af2cb9f4dfaed86745f682de465c36815e71ea9020490e1027b781",
+    "mark-invocation-only-after-reply/native/capture-intent-source-fixture.hpp": "b5340c2ad8541e41325929cf0fc97f53e3961739308f5b2319b3f08be6b6b63a",
+    "mark-invocation-only-after-reply/native/capture-intent-replay.cpp": "4cd94eb2cdb4a838c6b49a3fdc72c923d703e6060cea44861e7abb1b5951b170",
+    "mark-invocation-only-after-reply/native/capture-intent-replay-v2.cpp": "41701749fe08424220d4c3292c127df836949c673c8572f6cbb0cd10d78dfa12",
+    "mark-invocation-only-after-reply/native/client_resources.hpp": "89a466bc3d3503e3d47063eda8ce1aa8ae3cab1ae61d820002d5aaa2a4712696",
+    "mark-invocation-only-after-reply/native/capture-resource-source-fixture.hpp": "e036e80397869f486bb0b533d9acda24f6acd0ec7169f3d0e77173ba504ae14f",
+    "mark-invocation-only-after-reply/native/capture-resource-c-test.cpp": "f90cd514d4c670655c134e858d5896e9b1f7878473ea7790bca8d69aa25a13ad",
+    "mark-invocation-only-after-reply/native/capture-resource-decoder-test.cpp": "ef03ae536987d83ca0f39c69638dc50ac02273edef5a6da08058b9a95c981800",
+    "mark-invocation-only-after-reply/native/capture-resource-c-test-v2.cpp": "52928c4d2d858fc9a13bbad85c23c95b742869c4f715992f0a59be546f981fac",
+    "mark-invocation-only-after-reply/native/capture-resource-replay.cpp": "169d102b0602af1186f9bb1f20283e76851fb4f2de56e592aa4c9d4f6bcdd83d",
+    "mark-invocation-only-after-reply/native/capture-resource-fd-source-fixture.hpp": "88f8f0062bc4a26d237034752d1b2edbc3214e70878838a068de44f627de774c",
+    "mark-invocation-only-after-reply/native/capture-resource-fd-test.cpp": "0b2f8214f82a95f463dd6044d546a0f4443fbe95ddb13b8b986d6e42eb799346",
+    "mark-invocation-only-after-reply/native/imported-resource-replay.cpp": "8c998821656f06803b0baeee825448598e8938e63e88b05ca25ac4259310dcdf",
+    "mark-invocation-only-after-reply/native/imported-resource-replay-v2.cpp": "64fa1274a65addcfe1c2059933d20887e49337796e630e6f44d5ba15e48af29f",
+    "mark-invocation-only-after-reply/native/capture-resource-elm-test.cpp": "6657648c496327b7096ca6e23eea5f3cf708c04cf1118c8fedc815006bc9641d",
+    "mark-invocation-only-after-reply/spec/capture_intent.qnt": "377371b7d277937e81ee9925cf479b920ba24d1b49e0ae04f806a0d234f73603",
+    "mark-invocation-only-after-reply/spec/capture_intent_tests.qnt": "57f9edffb84c265b52d2fc8114f96b8d9b4725f28d2cb576e36e06c2656b3b0d",
+    "mark-invocation-only-after-reply/qa/capture-intent-model-check-v3.py": "b7b734197f211d75cde278f4de9a95b4430405d8954e30ea03882fd006d05b7a",
+    "repeat-unknown-native-capture/native/admission-test.c": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+    "repeat-unknown-native-capture/native/client-command-test.cpp": "ef481b7030d6a41831895fca1a5cba7405d08e22b913fa2f0f6cadccf47c25ab",
+    "repeat-unknown-native-capture/native/client-denial-test.cpp": "9c05385a9e1b9da4efe03c414b09d512ab4e3791a33c4ff55fde75e4e0c009f7",
+    "repeat-unknown-native-capture/native/client-frame-test.cpp": "233d4520f3bd200cad1f1ea580e9a2eaaf382822b90aa262d4294f8a3bf68d7f",
+    "repeat-unknown-native-capture/native/client-import-test.cpp": "c74f47f1e4233681ab63adf3a51396cfa7c8a7fc0769eba9e314ccc82471de4a",
+    "repeat-unknown-native-capture/native/client-observation-test.cpp": "bc9a36f1d62669904d5b7003d7b299ad2ee3a836c8f13f381a6669915c74e336",
+    "repeat-unknown-native-capture/native/client-producer.cpp": "10ecbba50bf656d5cfb4c4e1fd978937ac5da853f194d106d772431db2e367d1",
+    "repeat-unknown-native-capture/native/client-producer.h": "01f005d7899b2f3b13216a702508adfa39b6cbcbde4f84b6fae1ebc2404462b9",
+    "repeat-unknown-native-capture/native/client-resume-test.cpp": "c8dfcdc8564bb6bd8cf9284fe3d12d67c30ca9d5a510a58b935021567719ac2d",
+    "repeat-unknown-native-capture/native/client-retained-presentation-test.cpp": "680fb60765c220e59974cda9a8af87c60b5935d48fa8e66671f3e74a0e1c0a2d",
+    "repeat-unknown-native-capture/native/client_frame.hpp": "ed5d8d15bcb132ea77b81f36aab49249acfb4b0409a6954b95aa4300eda57681",
+    "repeat-unknown-native-capture/native/client_import.hpp": "c62c4a591dfb7f551d17987a16f2a317e67a974f83ceffa2dcf6f2529ccd1211",
+    "repeat-unknown-native-capture/native/client_producer.hpp": "b93355d804613a68593bfd2447295287ac04c76427007c5772e6244b4c51d990",
+    "repeat-unknown-native-capture/native/context-keys-test.c": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+    "repeat-unknown-native-capture/native/context-keys.h": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+    "repeat-unknown-native-capture/native/demand.hpp": "3b01ba43bc50719509323e98212cbaa49e33b00b5bdf80297da049ac41332ea2",
+    "repeat-unknown-native-capture/native/geometry-carrier-test.c": "770835580c7a4a2e21e49a9c3da586ee3ae59e66a92320dd7bb12fa8e516d921",
+    "repeat-unknown-native-capture/native/handoff-test.c": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+    "repeat-unknown-native-capture/native/host-fault.h": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+    "repeat-unknown-native-capture/native/host-journal.h": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+    "repeat-unknown-native-capture/native/host.c": "9cf69e35d9603735748e0b59e27a007e1bc3ab7393a2c310f6d8765b667f6853",
+    "repeat-unknown-native-capture/native/imported_clients.hpp": "5fada963c600c8c984048d6cc79a9a1c44a40dbe1d58563d211ee5adbcefecbb",
+    "repeat-unknown-native-capture/native/preview-integration.h": "ffacb4ed6abe6b8019f5bcb489b8abe69f28f863ca9079f29cd1c075a0a49e2a",
+    "repeat-unknown-native-capture/native/preview-provider-bootstrap.cpp": "f835e2203e1e73860c7e10a15f2573d453888f5043c3255524528265033bc570",
+    "repeat-unknown-native-capture/native/preview-provider-bootstrap.h": "7220bc8df0bc40da2f897e519cff5340bc0eee84582345572b6b5c290a714c35",
+    "repeat-unknown-native-capture/native/preview-uri-api.h": "7a02550a807102f6ebdad9c1570eb6a719a50b0ed422ff26add97dbd6408b002",
+    "repeat-unknown-native-capture/native/preview-uri-webkit.cpp": "c8cc48442d8d098315b7ad64b71be267679bc361041dc6d2de405c657fa74ea2",
+    "repeat-unknown-native-capture/native/preview_broker.hpp": "9c57428130093f8d815b7851004f103897deca278bbe4196e2116bec85a323ed",
+    "repeat-unknown-native-capture/native/preview_client.hpp": "afc6c49d6818856496138f8c46e387b33b5894a4ea86cfb3b5d7157a287988ed",
+    "repeat-unknown-native-capture/native/preview_delivery.hpp": "20e1a275985c92b6771ee24c5e4ce6a485bd049c8b1cb84c3e47358131435f72",
+    "repeat-unknown-native-capture/native/preview_fd.hpp": "60fa114f7f2eb819c7a09085ee737c23d21b31f0ba177d967ff99f1425272a60",
+    "repeat-unknown-native-capture/native/preview_uri.cpp": "e163fba44ad561c5d5deaf38f3a91f75f486b3749e030e1e22007cd98cdf5b87",
+    "repeat-unknown-native-capture/native/preview_uri.hpp": "ad7c76ca9b089ea854f19ef029bbf461c3bcfdf76c677dc3666ae21a5385620b",
+    "repeat-unknown-native-capture/native/preview_wire.hpp": "2b02108a819e97106cbf38e420871bc4ee10656fd6f98905f25c30fd838d283d",
+    "repeat-unknown-native-capture/native/provider-delivery-test.cpp": "4e21203fd7acd32ede476df1137b6ea812cb26fa977d05296a884401adfd8fbe",
+    "repeat-unknown-native-capture/native/provider-grant-test.cpp": "8f39b5828b946d5fba2f7df689578a50f79cf7daf2e0e8443ab87dfd7b89ac22",
+    "repeat-unknown-native-capture/native/provider-ownership-test.cpp": "d79fe711a90d24ac96e8522a33a4dc3582989b40b692aec73109e365e3f44675",
+    "repeat-unknown-native-capture/native/reconciliation-carrier-test.c": "38210317eff28d8a436e640e971f91df71ffcc3b17e82c27a60ee34f57d9f73d",
+    "repeat-unknown-native-capture/native/recovery-presentation-test.c": "812bbab1640e12269bc195979cd319a96a505157ba8f5c637eebfd5561bc8e67",
+    "repeat-unknown-native-capture/native/shared-context-test.c": "ed50c8ed6b0fee3db3818e2f38c8bb57985b388b26ee09a5624d32f1bfa258ee",
+    "repeat-unknown-native-capture/native/shared-context.h": "e86f3ba7a4c76d7839ef8d67d14c7f9ea6b514afa2ac110fc7cebf2da2fd62ce",
+    "repeat-unknown-native-capture/native/shared-host.c": "c51abc5f6f3fc231431f7f3cffc53a0d102e988becff2e943adcb33aeb3cd3b4",
+    "repeat-unknown-native-capture/native/surface-test.c": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+    "repeat-unknown-native-capture/native/surface.h": "2bdf2d9b3b34fa7193da90e58ac378e7a640ae91e7b02d46987e33c559209f0b",
+    "repeat-unknown-native-capture/native/imported-clients.h": "4bed85a93cf9f2ba4c771ab552b5d63008277a3f77639508c5f394b2b90231ee",
+    "repeat-unknown-native-capture/native/imported-clients.cpp": "0bb1996b1ec2f2c25d796c6acbb1e642b2cf5170b73437dfc715ea4ab521c1ef",
+    "repeat-unknown-native-capture/native/imported-clients-boundary-test.c": "04b444d7d4d0c8f7f945d6f5e9996cfe3f23455624f6b933359b7ac1ee9737da",
+    "repeat-unknown-native-capture/native/imported_lifecycle.hpp": "1d4efa4daa2753e43a822e3727dc78458941d72d03e4e01a1d041eb7f6bd9ded",
+    "repeat-unknown-native-capture/native/imported-lifecycle-test.cpp": "14e7969e5228d013b590f912605cdd846235de67e8e13a87e644d123136d6a2a",
+    "repeat-unknown-native-capture/native/family_source.hpp": "7e936e3f59b5075c364748384282c4e764d85444db2962a885a1ae5a0bf9bb35",
+    "repeat-unknown-native-capture/native/family-source-test.cpp": "25c2402f9b6e1c7692633a2b27b69a961284412cf802fb600ad3ff2f97380b9a",
+    "repeat-unknown-native-capture/native/family_style_crop_fd.hpp": "bf59599f5ceeb41381a1fd05fb045c52ec3cf47faf4706c38de8dd595f902a53",
+    "repeat-unknown-native-capture/native/preview_png.hpp": "308007220baf1d7f2ad30569237ffaf7d6427d900ee1243811480402f188e670",
+    "repeat-unknown-native-capture/native/family-fd-test.cpp": "4129475daf2dbcc997ee804f6f2cc1ae97c373adddc891a95ec6cf043f98291d",
+    "repeat-unknown-native-capture/native/family_frame.hpp": "20ce40ab0080c37e17345cb3d88334eb5dc926a79720ec6faffee8807ae5fe67",
+    "repeat-unknown-native-capture/native/family_producer.hpp": "148240aaf174b3d0f27d8385cd3e93811e48dd8c39b3b65a691fc754c2eebe22",
+    "repeat-unknown-native-capture/native/family-frame-test.cpp": "7f5421a78f071a081edb32b8db0402c0e8a855df150ecdeeba6298cf94ed840c",
+    "repeat-unknown-native-capture/native/generated_backdrop_fd.hpp": "3f60c0cffed16e60ec90b8f8365ec3f278d5c8cb41db2ce5b85c4929d018337f",
+    "repeat-unknown-native-capture/native/backdrop-fd-test.cpp": "74b2f71f21e823bc3445cd647f86d422071edbd483d2bd89d68b38ce6575f623",
+    "repeat-unknown-native-capture/native/backdrop-frame-test.cpp": "687f19e3053f305777f16d854fc2dbf593f4a7131589d522c37de4acfa498fd6",
+    "repeat-unknown-native-capture/native/backdrop-denial-test.cpp": "7388e88721724be5280b0df91e982af29bebc2f9a10563690ab5aef8c73bda86",
+    "repeat-unknown-native-capture/native/qa-reader-control.h": "1a504ee3959b78c73a8f9613b6a6c4f9cc51bc198d1dbd3b6fe1fd352684ccf4",
+    "repeat-unknown-native-capture/native/qa-reader-control-test.c": "6bd57d3be5b0f3d0e071993e93b188fd0b2a87ae91dada60120f8e9142a07ed5",
+    "repeat-unknown-native-capture/native/preview_metadata.hpp": "1cf84f1094cd8ccca90fcc5c44bed4182716e256792bb542c771c8bc1ce9ad5e",
+    "repeat-unknown-native-capture/native/preview_icons.hpp": "6af2174049d623e824fdcf66ddd3a18d0b48a2c34c7159c1651dc0e4b53d8a32",
+    "repeat-unknown-native-capture/native/preview_icons.cpp": "48aa83cc63d4f1f08b9333372cb3f63e0a25bf880cc17567098079284ee79693",
+    "repeat-unknown-native-capture/native/metadata-icon-test.cpp": "cff027f7a3d29668893aec03be50f5dbae49fb2295606a8e8baad34b64e028d7",
+    "repeat-unknown-native-capture/native/window-catalog-test.cpp": "c9efe0d6f7f7db6abc38ab717d16d56a014a2804d39281a28bddd7eb030548a6",
+    "repeat-unknown-native-capture/native/receiver-extension-test.cpp": "a35501610fadf7cc4935b970c87b683fa9a2216ee2eef3da8cc70afc652b8d59",
+    "repeat-unknown-native-capture/native/delivery-extension-test.cpp": "4d9ccdff37c8818ec6f70b93393e94a46f1f1b3506606a692549cf24c38972c8",
+    "repeat-unknown-native-capture/native/imported_admission.hpp": "9cd619f5774d8fb40d712f6f073c00c8c337770e7d173413951fadf3dd321c78",
+    "repeat-unknown-native-capture/native/imported-admission-test.cpp": "4440d17aea9172b547a66660cb30ebe27df821f627f9fae8861fcdd8d6858d6f",
+    "repeat-unknown-native-capture/native/imported_enrollment.hpp": "970d2e8027dfdbbbb599f3de7d5132b9e7e27e8e0509622e7ae3ad18eeef380e",
+    "repeat-unknown-native-capture/native/dynamic-enrollment-test.cpp": "bc8dd70ec9b8b5ce2f428cb82578389f9349d24b3ebdb423ccf725b5fd8c8278",
+    "repeat-unknown-native-capture/native/rejected-enrollment-test.cpp": "f38a7da3423eb939f76c8882f2d2b057b9af865fd9cd3d96dbc9741918c99aad",
+    "repeat-unknown-native-capture/native/resume-enrollment-test.cpp": "b14e33de4a2c1ff6b8e38737f66d8d6f906aba07e609a67750a5a7055434921d",
+    "repeat-unknown-native-capture/native/imported_feedback.hpp": "6760465caf1b6877aadb62776fa050f7a44848cd4a9061ce89fdbac96604b9aa",
+    "repeat-unknown-native-capture/native/local-feedback-test.cpp": "01b247fef9f6378db1616430fb7f04236e584085269542eaa05c4a6581612b29",
+    "repeat-unknown-native-capture/native/next-intent-test.cpp": "6ad459d12146dbe18b6431b3ee863318c10d45a0806f63d9b5400812f20e80b9",
+    "repeat-unknown-native-capture/native/next-resume-test.cpp": "f4f00450ca31f382b71af7b7158c40ee199439c9f8c23f3a4062075e190ab152",
+    "repeat-unknown-native-capture/native/preview_retirement.hpp": "b8af8a43d3ca8eeebc8a0b24a9f99b846018db8e17bcb18ea31ffecfed595b0d",
+    "repeat-unknown-native-capture/native/retirement-observation-test.cpp": "2f60ee0cc71f4cc611f57ca3ffa3ef4a013233a0c9de13144b207729f0a478f8",
+    "repeat-unknown-native-capture/native/imported_subjects.hpp": "03e7bfd41bf4ace363d2f95bb1526515c6c9f8bedc69dffdf71fbae13f56f5ff",
+    "repeat-unknown-native-capture/native/actor-retirement-test.cpp": "69ddf372f47b537e4b35481ec9769e8417270a3c84ba8caef98fe3c00b78fea0",
+    "repeat-unknown-native-capture/native/actor-retirement-test-v2.cpp": "08815578bdf33210f066e80f5506fd1a8a4e1afa8b89c69779a901d225dbf599",
+    "repeat-unknown-native-capture/native/actor-retirement-test-v3.cpp": "25e47f56093b84682230628f46d20fb96b2727fa4190524ec3f64e9d08e8f867",
+    "repeat-unknown-native-capture/native/preview-control.h": "eeb41047554ba5a84f75614a62c1de93e871b3099a12560584150d6c4b6540d8",
+    "repeat-unknown-native-capture/native/retirement_journal.hpp": "6c09930b399351a9c8a73e45009daa8ea1ee0b3adb12ba4f1121f95a12ec6913",
+    "repeat-unknown-native-capture/native/actor-retirement-channel-test-v1.cpp": "f0c1b35a04325b261217f93d182ee1871a091abff0c44e3688a8c9f17a729812",
+    "repeat-unknown-native-capture/native/actor-retirement-channel-test-v2.cpp": "4160343a5ba5939114326e780108ea223a42ca28ac6fb7d4a833695d82e50a66",
+    "repeat-unknown-native-capture/native/retirement-elm-channel-test.cpp": "38205ebfb02b67ad12a3d454947a0efc93e80f9b8b191143801ab83a4bb47e20",
+    "repeat-unknown-native-capture/native/retirement-elm-channel-test-v2.cpp": "a7cd7cd427e5f8e7360156f0445993584c9602cc5cad466a72201bf6bfac5902",
+    "repeat-unknown-native-capture/native/retirement-elm-channel-test-v3.cpp": "0166a6db252a7c2101a26425999f2f85955ddde9014795f241fd56359c5b0a81",
+    "repeat-unknown-native-capture/native/retirement-elm-channel-test-v4.cpp": "5ec17c2cacb3ca3cd2dba94766260098485ecdc2f68585f7dee3f2b6ad7fa225",
+    "repeat-unknown-native-capture/native/retirement-readiness-replay.cpp": "ed336bf6770a5bc130b1d84e8e99e19d0cbb67c5c5133a876c1746ff46e6fb23",
+    "repeat-unknown-native-capture/native/retirement-readiness-replay-v2.cpp": "9f10b45ea7817e6018a00461dcce0e83549f8c054bc7cc3a524dade9c297328c",
+    "repeat-unknown-native-capture/native/retirement-readiness-replay-v3.cpp": "b596126e85083244f576797735e54a632832af7de37b0a5c14aa2b38243a9859",
+    "repeat-unknown-native-capture/native/retirement-poll-replay.cpp": "beefa85561dd03590f7d713d66520072def838907560fab86a348abcb5e773a0",
+    "repeat-unknown-native-capture/native/retirement-fair-poll-test.cpp": "50e23ab69570050fc2814549e9146a6f58413ae4f9cd0d090db4c34ceba4f8a5",
+    "repeat-unknown-native-capture/native/preview-control-delivery.h": "edbcf3127c6fadbdff1eb2c361b50d0e72902a9c9e2ce456b0fb64ac7f6653e3",
+    "repeat-unknown-native-capture/native/control-outbox-fixture.cpp": "f9850811275c90b1a72973f70626106d76a59191a627ff307490b343802fa30e",
+    "repeat-unknown-native-capture/native/control-confirmation-fixture.cpp": "9fbecc43b61202f6e36142a3e799df01b1a31bd32255a2f34b7496d7e75765a6",
+    "repeat-unknown-native-capture/native/control_reservations.hpp": "5bcaa15a546e7341d7d24c642d25e67361a654a84d600bed984ae4d1a193bc25",
+    "repeat-unknown-native-capture/native/control-reservations-replay.cpp": "509e3695bfc46b37357ceb712045e9a03d6b7b2905953197c695944afcd7c268",
+    "repeat-unknown-native-capture/native/control-reservations-test.cpp": "8006cbbcfe28784132308afc03b332bf964a5038f887fd6378bc18abe9065c05",
+    "repeat-unknown-native-capture/native/control-reservations-test-v2.cpp": "ec9010611ac5fc5e8cad459cb2a2a815d34e8b0b88ce64fc3574cf03ade99fc5",
+    "repeat-unknown-native-capture/native/imported_control_admission.hpp": "d5bf0ba8b3ec116ca2e1cec808f139a6cdd99a72f63568487ada9204f2ab425d",
+    "repeat-unknown-native-capture/native/control-admission-replay.cpp": "d3d730789eee580df8ac35bfa8a949039905fded2139dfe30a80c022928db300",
+    "repeat-unknown-native-capture/native/control-quota-fixture.cpp": "9c1bf07df9a17524aba4e817938df7418e7d5ab0d3e791d80fb2872e3a9751a6",
+    "repeat-unknown-native-capture/native/retained_client_command.hpp": "f07d8b840865595084dd04f8bdaa5e4a89dbd9bee27223cbba5ad0de927aaf15",
+    "repeat-unknown-native-capture/native/retained-client-command-replay.cpp": "d43b2f11f03d1b760c5f15c4b61b673a916eb9d8880513ee8cb2c03efc541cad",
+    "repeat-unknown-native-capture/native/imported-control-guard-test.cpp": "2c157817565956b3a21bd97ef5cf84238cb6f45ef4ef7f20e4a420b28e88242e",
+    "repeat-unknown-native-capture/native/control-admission-replay-v2.cpp": "d221e0630f48cae7b5211e2230817059b753054ece15e1f40d9ac7b58065df4c",
+    "repeat-unknown-native-capture/native/imported-control-ticket-test.cpp": "1e7c317a6eafa7865713dcb0f5b45ff0168841177ead8c8c06f886f635123411",
+    "repeat-unknown-native-capture/native/imported-control-ticket-test-v2.cpp": "918a5eca9ab7c5d215bc6f0b10994deb824b4865240f7213479ed684a42ebecd",
+    "repeat-unknown-native-capture/native/job-control-replay.cpp": "d56f84788399d7eff263a6b4779f7109bf41c2e86c9c76d95220b9571fef21b5",
+    "repeat-unknown-native-capture/native/imported-control-retirement-test.cpp": "ba5d0c4b41a32acbda7a35bef05f4ba2a6ea7e9be79ffac6c1daa6f61f69f904",
+    "repeat-unknown-native-capture/native/imported-control-retirement-test-v2.cpp": "0aef0648c3d4a1c53829598351133a1dceda1a25d93b72243c3a8a35eda2bc1c",
+    "repeat-unknown-native-capture/native/actor-control-replay.cpp": "337b7e2892ec373a33b2c45bd855aa8b00c97ed88661aafe9aa66e78be3fe409",
+    "repeat-unknown-native-capture/native/imported-control-readiness-bytes-test.cpp": "db0a23bd14b32857ce9b2cc15656317815824f382d54c269240f72e87de59653",
+    "repeat-unknown-native-capture/native/imported-controlled-c-test.cpp": "b3e2bea1bc545e3b9bee4bba85761a4fc8d0606ab8dd4bc1c163e7e6ff109fe2",
+    "repeat-unknown-native-capture/native/imported-controlled-c-test-v2.cpp": "b638f3dc10735ed5d187709d24fef04c84804dc90bdf91b50846e3b9390eea23",
+    "repeat-unknown-native-capture/native/imported-controlled-c-test-v3.cpp": "c5b52a66337bfae25483251b3e91b1f98a90eca8ba4b152d6539cd24b78c56e2",
+    "repeat-unknown-native-capture/native/capture-intent-test.cpp": "d0bb0eb54701d28ceaf989b681c8dc7138fa1137d82985661104ab9aec5295d5",
+    "repeat-unknown-native-capture/native/imported-allocation-test.cpp": "c621bf4eb3af2cb9f4dfaed86745f682de465c36815e71ea9020490e1027b781",
+    "repeat-unknown-native-capture/native/capture-intent-source-fixture.hpp": "b5340c2ad8541e41325929cf0fc97f53e3961739308f5b2319b3f08be6b6b63a",
+    "repeat-unknown-native-capture/native/capture-intent-replay.cpp": "4cd94eb2cdb4a838c6b49a3fdc72c923d703e6060cea44861e7abb1b5951b170",
+    "repeat-unknown-native-capture/native/capture-intent-replay-v2.cpp": "41701749fe08424220d4c3292c127df836949c673c8572f6cbb0cd10d78dfa12",
+    "repeat-unknown-native-capture/native/client_resources.hpp": "89a466bc3d3503e3d47063eda8ce1aa8ae3cab1ae61d820002d5aaa2a4712696",
+    "repeat-unknown-native-capture/native/capture-resource-source-fixture.hpp": "e036e80397869f486bb0b533d9acda24f6acd0ec7169f3d0e77173ba504ae14f",
+    "repeat-unknown-native-capture/native/capture-resource-c-test.cpp": "f90cd514d4c670655c134e858d5896e9b1f7878473ea7790bca8d69aa25a13ad",
+    "repeat-unknown-native-capture/native/capture-resource-decoder-test.cpp": "ef03ae536987d83ca0f39c69638dc50ac02273edef5a6da08058b9a95c981800",
+    "repeat-unknown-native-capture/native/capture-resource-c-test-v2.cpp": "52928c4d2d858fc9a13bbad85c23c95b742869c4f715992f0a59be546f981fac",
+    "repeat-unknown-native-capture/native/capture-resource-replay.cpp": "169d102b0602af1186f9bb1f20283e76851fb4f2de56e592aa4c9d4f6bcdd83d",
+    "repeat-unknown-native-capture/native/capture-resource-fd-source-fixture.hpp": "88f8f0062bc4a26d237034752d1b2edbc3214e70878838a068de44f627de774c",
+    "repeat-unknown-native-capture/native/capture-resource-fd-test.cpp": "0b2f8214f82a95f463dd6044d546a0f4443fbe95ddb13b8b986d6e42eb799346",
+    "repeat-unknown-native-capture/native/imported-resource-replay.cpp": "8c998821656f06803b0baeee825448598e8938e63e88b05ca25ac4259310dcdf",
+    "repeat-unknown-native-capture/native/imported-resource-replay-v2.cpp": "64fa1274a65addcfe1c2059933d20887e49337796e630e6f44d5ba15e48af29f",
+    "repeat-unknown-native-capture/native/capture-resource-elm-test.cpp": "6657648c496327b7096ca6e23eea5f3cf708c04cf1118c8fedc815006bc9641d",
+    "repeat-unknown-native-capture/spec/capture_intent.qnt": "377371b7d277937e81ee9925cf479b920ba24d1b49e0ae04f806a0d234f73603",
+    "repeat-unknown-native-capture/spec/capture_intent_tests.qnt": "57f9edffb84c265b52d2fc8114f96b8d9b4725f28d2cb576e36e06c2656b3b0d",
+    "repeat-unknown-native-capture/qa/capture-intent-model-check-v3.py": "b7b734197f211d75cde278f4de9a95b4430405d8954e30ea03882fd006d05b7a",
+    "forget-original-intent/native/admission-test.c": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+    "forget-original-intent/native/client-command-test.cpp": "ef481b7030d6a41831895fca1a5cba7405d08e22b913fa2f0f6cadccf47c25ab",
+    "forget-original-intent/native/client-denial-test.cpp": "9c05385a9e1b9da4efe03c414b09d512ab4e3791a33c4ff55fde75e4e0c009f7",
+    "forget-original-intent/native/client-frame-test.cpp": "233d4520f3bd200cad1f1ea580e9a2eaaf382822b90aa262d4294f8a3bf68d7f",
+    "forget-original-intent/native/client-import-test.cpp": "c74f47f1e4233681ab63adf3a51396cfa7c8a7fc0769eba9e314ccc82471de4a",
+    "forget-original-intent/native/client-observation-test.cpp": "bc9a36f1d62669904d5b7003d7b299ad2ee3a836c8f13f381a6669915c74e336",
+    "forget-original-intent/native/client-producer.cpp": "10ecbba50bf656d5cfb4c4e1fd978937ac5da853f194d106d772431db2e367d1",
+    "forget-original-intent/native/client-producer.h": "01f005d7899b2f3b13216a702508adfa39b6cbcbde4f84b6fae1ebc2404462b9",
+    "forget-original-intent/native/client-resume-test.cpp": "c8dfcdc8564bb6bd8cf9284fe3d12d67c30ca9d5a510a58b935021567719ac2d",
+    "forget-original-intent/native/client-retained-presentation-test.cpp": "680fb60765c220e59974cda9a8af87c60b5935d48fa8e66671f3e74a0e1c0a2d",
+    "forget-original-intent/native/client_frame.hpp": "ed5d8d15bcb132ea77b81f36aab49249acfb4b0409a6954b95aa4300eda57681",
+    "forget-original-intent/native/client_import.hpp": "c62c4a591dfb7f551d17987a16f2a317e67a974f83ceffa2dcf6f2529ccd1211",
+    "forget-original-intent/native/client_producer.hpp": "b93355d804613a68593bfd2447295287ac04c76427007c5772e6244b4c51d990",
+    "forget-original-intent/native/context-keys-test.c": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+    "forget-original-intent/native/context-keys.h": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+    "forget-original-intent/native/demand.hpp": "3b01ba43bc50719509323e98212cbaa49e33b00b5bdf80297da049ac41332ea2",
+    "forget-original-intent/native/geometry-carrier-test.c": "770835580c7a4a2e21e49a9c3da586ee3ae59e66a92320dd7bb12fa8e516d921",
+    "forget-original-intent/native/handoff-test.c": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+    "forget-original-intent/native/host-fault.h": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+    "forget-original-intent/native/host-journal.h": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+    "forget-original-intent/native/host.c": "9cf69e35d9603735748e0b59e27a007e1bc3ab7393a2c310f6d8765b667f6853",
+    "forget-original-intent/native/imported_clients.hpp": "529e8da6ace32c891b267cafcb3285fa245c989a7081def36b3bc1603109612e",
+    "forget-original-intent/native/preview-integration.h": "ffacb4ed6abe6b8019f5bcb489b8abe69f28f863ca9079f29cd1c075a0a49e2a",
+    "forget-original-intent/native/preview-provider-bootstrap.cpp": "f835e2203e1e73860c7e10a15f2573d453888f5043c3255524528265033bc570",
+    "forget-original-intent/native/preview-provider-bootstrap.h": "7220bc8df0bc40da2f897e519cff5340bc0eee84582345572b6b5c290a714c35",
+    "forget-original-intent/native/preview-uri-api.h": "7a02550a807102f6ebdad9c1570eb6a719a50b0ed422ff26add97dbd6408b002",
+    "forget-original-intent/native/preview-uri-webkit.cpp": "c8cc48442d8d098315b7ad64b71be267679bc361041dc6d2de405c657fa74ea2",
+    "forget-original-intent/native/preview_broker.hpp": "9c57428130093f8d815b7851004f103897deca278bbe4196e2116bec85a323ed",
+    "forget-original-intent/native/preview_client.hpp": "afc6c49d6818856496138f8c46e387b33b5894a4ea86cfb3b5d7157a287988ed",
+    "forget-original-intent/native/preview_delivery.hpp": "20e1a275985c92b6771ee24c5e4ce6a485bd049c8b1cb84c3e47358131435f72",
+    "forget-original-intent/native/preview_fd.hpp": "60fa114f7f2eb819c7a09085ee737c23d21b31f0ba177d967ff99f1425272a60",
+    "forget-original-intent/native/preview_uri.cpp": "e163fba44ad561c5d5deaf38f3a91f75f486b3749e030e1e22007cd98cdf5b87",
+    "forget-original-intent/native/preview_uri.hpp": "ad7c76ca9b089ea854f19ef029bbf461c3bcfdf76c677dc3666ae21a5385620b",
+    "forget-original-intent/native/preview_wire.hpp": "2b02108a819e97106cbf38e420871bc4ee10656fd6f98905f25c30fd838d283d",
+    "forget-original-intent/native/provider-delivery-test.cpp": "4e21203fd7acd32ede476df1137b6ea812cb26fa977d05296a884401adfd8fbe",
+    "forget-original-intent/native/provider-grant-test.cpp": "8f39b5828b946d5fba2f7df689578a50f79cf7daf2e0e8443ab87dfd7b89ac22",
+    "forget-original-intent/native/provider-ownership-test.cpp": "d79fe711a90d24ac96e8522a33a4dc3582989b40b692aec73109e365e3f44675",
+    "forget-original-intent/native/reconciliation-carrier-test.c": "38210317eff28d8a436e640e971f91df71ffcc3b17e82c27a60ee34f57d9f73d",
+    "forget-original-intent/native/recovery-presentation-test.c": "812bbab1640e12269bc195979cd319a96a505157ba8f5c637eebfd5561bc8e67",
+    "forget-original-intent/native/shared-context-test.c": "ed50c8ed6b0fee3db3818e2f38c8bb57985b388b26ee09a5624d32f1bfa258ee",
+    "forget-original-intent/native/shared-context.h": "e86f3ba7a4c76d7839ef8d67d14c7f9ea6b514afa2ac110fc7cebf2da2fd62ce",
+    "forget-original-intent/native/shared-host.c": "c51abc5f6f3fc231431f7f3cffc53a0d102e988becff2e943adcb33aeb3cd3b4",
+    "forget-original-intent/native/surface-test.c": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+    "forget-original-intent/native/surface.h": "2bdf2d9b3b34fa7193da90e58ac378e7a640ae91e7b02d46987e33c559209f0b",
+    "forget-original-intent/native/imported-clients.h": "4bed85a93cf9f2ba4c771ab552b5d63008277a3f77639508c5f394b2b90231ee",
+    "forget-original-intent/native/imported-clients.cpp": "0bb1996b1ec2f2c25d796c6acbb1e642b2cf5170b73437dfc715ea4ab521c1ef",
+    "forget-original-intent/native/imported-clients-boundary-test.c": "04b444d7d4d0c8f7f945d6f5e9996cfe3f23455624f6b933359b7ac1ee9737da",
+    "forget-original-intent/native/imported_lifecycle.hpp": "1d4efa4daa2753e43a822e3727dc78458941d72d03e4e01a1d041eb7f6bd9ded",
+    "forget-original-intent/native/imported-lifecycle-test.cpp": "14e7969e5228d013b590f912605cdd846235de67e8e13a87e644d123136d6a2a",
+    "forget-original-intent/native/family_source.hpp": "7e936e3f59b5075c364748384282c4e764d85444db2962a885a1ae5a0bf9bb35",
+    "forget-original-intent/native/family-source-test.cpp": "25c2402f9b6e1c7692633a2b27b69a961284412cf802fb600ad3ff2f97380b9a",
+    "forget-original-intent/native/family_style_crop_fd.hpp": "bf59599f5ceeb41381a1fd05fb045c52ec3cf47faf4706c38de8dd595f902a53",
+    "forget-original-intent/native/preview_png.hpp": "308007220baf1d7f2ad30569237ffaf7d6427d900ee1243811480402f188e670",
+    "forget-original-intent/native/family-fd-test.cpp": "4129475daf2dbcc997ee804f6f2cc1ae97c373adddc891a95ec6cf043f98291d",
+    "forget-original-intent/native/family_frame.hpp": "20ce40ab0080c37e17345cb3d88334eb5dc926a79720ec6faffee8807ae5fe67",
+    "forget-original-intent/native/family_producer.hpp": "148240aaf174b3d0f27d8385cd3e93811e48dd8c39b3b65a691fc754c2eebe22",
+    "forget-original-intent/native/family-frame-test.cpp": "7f5421a78f071a081edb32b8db0402c0e8a855df150ecdeeba6298cf94ed840c",
+    "forget-original-intent/native/generated_backdrop_fd.hpp": "3f60c0cffed16e60ec90b8f8365ec3f278d5c8cb41db2ce5b85c4929d018337f",
+    "forget-original-intent/native/backdrop-fd-test.cpp": "74b2f71f21e823bc3445cd647f86d422071edbd483d2bd89d68b38ce6575f623",
+    "forget-original-intent/native/backdrop-frame-test.cpp": "687f19e3053f305777f16d854fc2dbf593f4a7131589d522c37de4acfa498fd6",
+    "forget-original-intent/native/backdrop-denial-test.cpp": "7388e88721724be5280b0df91e982af29bebc2f9a10563690ab5aef8c73bda86",
+    "forget-original-intent/native/qa-reader-control.h": "1a504ee3959b78c73a8f9613b6a6c4f9cc51bc198d1dbd3b6fe1fd352684ccf4",
+    "forget-original-intent/native/qa-reader-control-test.c": "6bd57d3be5b0f3d0e071993e93b188fd0b2a87ae91dada60120f8e9142a07ed5",
+    "forget-original-intent/native/preview_metadata.hpp": "1cf84f1094cd8ccca90fcc5c44bed4182716e256792bb542c771c8bc1ce9ad5e",
+    "forget-original-intent/native/preview_icons.hpp": "6af2174049d623e824fdcf66ddd3a18d0b48a2c34c7159c1651dc0e4b53d8a32",
+    "forget-original-intent/native/preview_icons.cpp": "48aa83cc63d4f1f08b9333372cb3f63e0a25bf880cc17567098079284ee79693",
+    "forget-original-intent/native/metadata-icon-test.cpp": "cff027f7a3d29668893aec03be50f5dbae49fb2295606a8e8baad34b64e028d7",
+    "forget-original-intent/native/window-catalog-test.cpp": "c9efe0d6f7f7db6abc38ab717d16d56a014a2804d39281a28bddd7eb030548a6",
+    "forget-original-intent/native/receiver-extension-test.cpp": "a35501610fadf7cc4935b970c87b683fa9a2216ee2eef3da8cc70afc652b8d59",
+    "forget-original-intent/native/delivery-extension-test.cpp": "4d9ccdff37c8818ec6f70b93393e94a46f1f1b3506606a692549cf24c38972c8",
+    "forget-original-intent/native/imported_admission.hpp": "9cd619f5774d8fb40d712f6f073c00c8c337770e7d173413951fadf3dd321c78",
+    "forget-original-intent/native/imported-admission-test.cpp": "4440d17aea9172b547a66660cb30ebe27df821f627f9fae8861fcdd8d6858d6f",
+    "forget-original-intent/native/imported_enrollment.hpp": "970d2e8027dfdbbbb599f3de7d5132b9e7e27e8e0509622e7ae3ad18eeef380e",
+    "forget-original-intent/native/dynamic-enrollment-test.cpp": "bc8dd70ec9b8b5ce2f428cb82578389f9349d24b3ebdb423ccf725b5fd8c8278",
+    "forget-original-intent/native/rejected-enrollment-test.cpp": "f38a7da3423eb939f76c8882f2d2b057b9af865fd9cd3d96dbc9741918c99aad",
+    "forget-original-intent/native/resume-enrollment-test.cpp": "b14e33de4a2c1ff6b8e38737f66d8d6f906aba07e609a67750a5a7055434921d",
+    "forget-original-intent/native/imported_feedback.hpp": "6760465caf1b6877aadb62776fa050f7a44848cd4a9061ce89fdbac96604b9aa",
+    "forget-original-intent/native/local-feedback-test.cpp": "01b247fef9f6378db1616430fb7f04236e584085269542eaa05c4a6581612b29",
+    "forget-original-intent/native/next-intent-test.cpp": "6ad459d12146dbe18b6431b3ee863318c10d45a0806f63d9b5400812f20e80b9",
+    "forget-original-intent/native/next-resume-test.cpp": "f4f00450ca31f382b71af7b7158c40ee199439c9f8c23f3a4062075e190ab152",
+    "forget-original-intent/native/preview_retirement.hpp": "b8af8a43d3ca8eeebc8a0b24a9f99b846018db8e17bcb18ea31ffecfed595b0d",
+    "forget-original-intent/native/retirement-observation-test.cpp": "2f60ee0cc71f4cc611f57ca3ffa3ef4a013233a0c9de13144b207729f0a478f8",
+    "forget-original-intent/native/imported_subjects.hpp": "03e7bfd41bf4ace363d2f95bb1526515c6c9f8bedc69dffdf71fbae13f56f5ff",
+    "forget-original-intent/native/actor-retirement-test.cpp": "69ddf372f47b537e4b35481ec9769e8417270a3c84ba8caef98fe3c00b78fea0",
+    "forget-original-intent/native/actor-retirement-test-v2.cpp": "08815578bdf33210f066e80f5506fd1a8a4e1afa8b89c69779a901d225dbf599",
+    "forget-original-intent/native/actor-retirement-test-v3.cpp": "25e47f56093b84682230628f46d20fb96b2727fa4190524ec3f64e9d08e8f867",
+    "forget-original-intent/native/preview-control.h": "eeb41047554ba5a84f75614a62c1de93e871b3099a12560584150d6c4b6540d8",
+    "forget-original-intent/native/retirement_journal.hpp": "6c09930b399351a9c8a73e45009daa8ea1ee0b3adb12ba4f1121f95a12ec6913",
+    "forget-original-intent/native/actor-retirement-channel-test-v1.cpp": "f0c1b35a04325b261217f93d182ee1871a091abff0c44e3688a8c9f17a729812",
+    "forget-original-intent/native/actor-retirement-channel-test-v2.cpp": "4160343a5ba5939114326e780108ea223a42ca28ac6fb7d4a833695d82e50a66",
+    "forget-original-intent/native/retirement-elm-channel-test.cpp": "38205ebfb02b67ad12a3d454947a0efc93e80f9b8b191143801ab83a4bb47e20",
+    "forget-original-intent/native/retirement-elm-channel-test-v2.cpp": "a7cd7cd427e5f8e7360156f0445993584c9602cc5cad466a72201bf6bfac5902",
+    "forget-original-intent/native/retirement-elm-channel-test-v3.cpp": "0166a6db252a7c2101a26425999f2f85955ddde9014795f241fd56359c5b0a81",
+    "forget-original-intent/native/retirement-elm-channel-test-v4.cpp": "5ec17c2cacb3ca3cd2dba94766260098485ecdc2f68585f7dee3f2b6ad7fa225",
+    "forget-original-intent/native/retirement-readiness-replay.cpp": "ed336bf6770a5bc130b1d84e8e99e19d0cbb67c5c5133a876c1746ff46e6fb23",
+    "forget-original-intent/native/retirement-readiness-replay-v2.cpp": "9f10b45ea7817e6018a00461dcce0e83549f8c054bc7cc3a524dade9c297328c",
+    "forget-original-intent/native/retirement-readiness-replay-v3.cpp": "b596126e85083244f576797735e54a632832af7de37b0a5c14aa2b38243a9859",
+    "forget-original-intent/native/retirement-poll-replay.cpp": "beefa85561dd03590f7d713d66520072def838907560fab86a348abcb5e773a0",
+    "forget-original-intent/native/retirement-fair-poll-test.cpp": "50e23ab69570050fc2814549e9146a6f58413ae4f9cd0d090db4c34ceba4f8a5",
+    "forget-original-intent/native/preview-control-delivery.h": "edbcf3127c6fadbdff1eb2c361b50d0e72902a9c9e2ce456b0fb64ac7f6653e3",
+    "forget-original-intent/native/control-outbox-fixture.cpp": "f9850811275c90b1a72973f70626106d76a59191a627ff307490b343802fa30e",
+    "forget-original-intent/native/control-confirmation-fixture.cpp": "9fbecc43b61202f6e36142a3e799df01b1a31bd32255a2f34b7496d7e75765a6",
+    "forget-original-intent/native/control_reservations.hpp": "5bcaa15a546e7341d7d24c642d25e67361a654a84d600bed984ae4d1a193bc25",
+    "forget-original-intent/native/control-reservations-replay.cpp": "509e3695bfc46b37357ceb712045e9a03d6b7b2905953197c695944afcd7c268",
+    "forget-original-intent/native/control-reservations-test.cpp": "8006cbbcfe28784132308afc03b332bf964a5038f887fd6378bc18abe9065c05",
+    "forget-original-intent/native/control-reservations-test-v2.cpp": "ec9010611ac5fc5e8cad459cb2a2a815d34e8b0b88ce64fc3574cf03ade99fc5",
+    "forget-original-intent/native/imported_control_admission.hpp": "d5bf0ba8b3ec116ca2e1cec808f139a6cdd99a72f63568487ada9204f2ab425d",
+    "forget-original-intent/native/control-admission-replay.cpp": "d3d730789eee580df8ac35bfa8a949039905fded2139dfe30a80c022928db300",
+    "forget-original-intent/native/control-quota-fixture.cpp": "9c1bf07df9a17524aba4e817938df7418e7d5ab0d3e791d80fb2872e3a9751a6",
+    "forget-original-intent/native/retained_client_command.hpp": "f07d8b840865595084dd04f8bdaa5e4a89dbd9bee27223cbba5ad0de927aaf15",
+    "forget-original-intent/native/retained-client-command-replay.cpp": "d43b2f11f03d1b760c5f15c4b61b673a916eb9d8880513ee8cb2c03efc541cad",
+    "forget-original-intent/native/imported-control-guard-test.cpp": "2c157817565956b3a21bd97ef5cf84238cb6f45ef4ef7f20e4a420b28e88242e",
+    "forget-original-intent/native/control-admission-replay-v2.cpp": "d221e0630f48cae7b5211e2230817059b753054ece15e1f40d9ac7b58065df4c",
+    "forget-original-intent/native/imported-control-ticket-test.cpp": "1e7c317a6eafa7865713dcb0f5b45ff0168841177ead8c8c06f886f635123411",
+    "forget-original-intent/native/imported-control-ticket-test-v2.cpp": "918a5eca9ab7c5d215bc6f0b10994deb824b4865240f7213479ed684a42ebecd",
+    "forget-original-intent/native/job-control-replay.cpp": "d56f84788399d7eff263a6b4779f7109bf41c2e86c9c76d95220b9571fef21b5",
+    "forget-original-intent/native/imported-control-retirement-test.cpp": "ba5d0c4b41a32acbda7a35bef05f4ba2a6ea7e9be79ffac6c1daa6f61f69f904",
+    "forget-original-intent/native/imported-control-retirement-test-v2.cpp": "0aef0648c3d4a1c53829598351133a1dceda1a25d93b72243c3a8a35eda2bc1c",
+    "forget-original-intent/native/actor-control-replay.cpp": "337b7e2892ec373a33b2c45bd855aa8b00c97ed88661aafe9aa66e78be3fe409",
+    "forget-original-intent/native/imported-control-readiness-bytes-test.cpp": "db0a23bd14b32857ce9b2cc15656317815824f382d54c269240f72e87de59653",
+    "forget-original-intent/native/imported-controlled-c-test.cpp": "b3e2bea1bc545e3b9bee4bba85761a4fc8d0606ab8dd4bc1c163e7e6ff109fe2",
+    "forget-original-intent/native/imported-controlled-c-test-v2.cpp": "b638f3dc10735ed5d187709d24fef04c84804dc90bdf91b50846e3b9390eea23",
+    "forget-original-intent/native/imported-controlled-c-test-v3.cpp": "c5b52a66337bfae25483251b3e91b1f98a90eca8ba4b152d6539cd24b78c56e2",
+    "forget-original-intent/native/capture-intent-test.cpp": "d0bb0eb54701d28ceaf989b681c8dc7138fa1137d82985661104ab9aec5295d5",
+    "forget-original-intent/native/imported-allocation-test.cpp": "c621bf4eb3af2cb9f4dfaed86745f682de465c36815e71ea9020490e1027b781",
+    "forget-original-intent/native/capture-intent-source-fixture.hpp": "b5340c2ad8541e41325929cf0fc97f53e3961739308f5b2319b3f08be6b6b63a",
+    "forget-original-intent/native/capture-intent-replay.cpp": "4cd94eb2cdb4a838c6b49a3fdc72c923d703e6060cea44861e7abb1b5951b170",
+    "forget-original-intent/native/capture-intent-replay-v2.cpp": "41701749fe08424220d4c3292c127df836949c673c8572f6cbb0cd10d78dfa12",
+    "forget-original-intent/native/client_resources.hpp": "89a466bc3d3503e3d47063eda8ce1aa8ae3cab1ae61d820002d5aaa2a4712696",
+    "forget-original-intent/native/capture-resource-source-fixture.hpp": "e036e80397869f486bb0b533d9acda24f6acd0ec7169f3d0e77173ba504ae14f",
+    "forget-original-intent/native/capture-resource-c-test.cpp": "f90cd514d4c670655c134e858d5896e9b1f7878473ea7790bca8d69aa25a13ad",
+    "forget-original-intent/native/capture-resource-decoder-test.cpp": "ef03ae536987d83ca0f39c69638dc50ac02273edef5a6da08058b9a95c981800",
+    "forget-original-intent/native/capture-resource-c-test-v2.cpp": "52928c4d2d858fc9a13bbad85c23c95b742869c4f715992f0a59be546f981fac",
+    "forget-original-intent/native/capture-resource-replay.cpp": "169d102b0602af1186f9bb1f20283e76851fb4f2de56e592aa4c9d4f6bcdd83d",
+    "forget-original-intent/native/capture-resource-fd-source-fixture.hpp": "88f8f0062bc4a26d237034752d1b2edbc3214e70878838a068de44f627de774c",
+    "forget-original-intent/native/capture-resource-fd-test.cpp": "0b2f8214f82a95f463dd6044d546a0f4443fbe95ddb13b8b986d6e42eb799346",
+    "forget-original-intent/native/imported-resource-replay.cpp": "8c998821656f06803b0baeee825448598e8938e63e88b05ca25ac4259310dcdf",
+    "forget-original-intent/native/imported-resource-replay-v2.cpp": "64fa1274a65addcfe1c2059933d20887e49337796e630e6f44d5ba15e48af29f",
+    "forget-original-intent/native/capture-resource-elm-test.cpp": "6657648c496327b7096ca6e23eea5f3cf708c04cf1118c8fedc815006bc9641d",
+    "forget-original-intent/spec/capture_intent.qnt": "377371b7d277937e81ee9925cf479b920ba24d1b49e0ae04f806a0d234f73603",
+    "forget-original-intent/spec/capture_intent_tests.qnt": "57f9edffb84c265b52d2fc8114f96b8d9b4725f28d2cb576e36e06c2656b3b0d",
+    "forget-original-intent/qa/capture-intent-model-check-v3.py": "b7b734197f211d75cde278f4de9a95b4430405d8954e30ea03882fd006d05b7a",
+    "inputs/native/admission-test.c": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+    "inputs/native/client-command-test.cpp": "ef481b7030d6a41831895fca1a5cba7405d08e22b913fa2f0f6cadccf47c25ab",
+    "inputs/native/client-denial-test.cpp": "9c05385a9e1b9da4efe03c414b09d512ab4e3791a33c4ff55fde75e4e0c009f7",
+    "inputs/native/client-frame-test.cpp": "233d4520f3bd200cad1f1ea580e9a2eaaf382822b90aa262d4294f8a3bf68d7f",
+    "inputs/native/client-import-test.cpp": "c74f47f1e4233681ab63adf3a51396cfa7c8a7fc0769eba9e314ccc82471de4a",
+    "inputs/native/client-observation-test.cpp": "bc9a36f1d62669904d5b7003d7b299ad2ee3a836c8f13f381a6669915c74e336",
+    "inputs/native/client-producer.cpp": "10ecbba50bf656d5cfb4c4e1fd978937ac5da853f194d106d772431db2e367d1",
+    "inputs/native/client-producer.h": "01f005d7899b2f3b13216a702508adfa39b6cbcbde4f84b6fae1ebc2404462b9",
+    "inputs/native/client-resume-test.cpp": "c8dfcdc8564bb6bd8cf9284fe3d12d67c30ca9d5a510a58b935021567719ac2d",
+    "inputs/native/client-retained-presentation-test.cpp": "680fb60765c220e59974cda9a8af87c60b5935d48fa8e66671f3e74a0e1c0a2d",
+    "inputs/native/client_frame.hpp": "ed5d8d15bcb132ea77b81f36aab49249acfb4b0409a6954b95aa4300eda57681",
+    "inputs/native/client_import.hpp": "c62c4a591dfb7f551d17987a16f2a317e67a974f83ceffa2dcf6f2529ccd1211",
+    "inputs/native/client_producer.hpp": "b93355d804613a68593bfd2447295287ac04c76427007c5772e6244b4c51d990",
+    "inputs/native/context-keys-test.c": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+    "inputs/native/context-keys.h": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+    "inputs/native/demand.hpp": "3b01ba43bc50719509323e98212cbaa49e33b00b5bdf80297da049ac41332ea2",
+    "inputs/native/geometry-carrier-test.c": "770835580c7a4a2e21e49a9c3da586ee3ae59e66a92320dd7bb12fa8e516d921",
+    "inputs/native/handoff-test.c": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+    "inputs/native/host-fault.h": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+    "inputs/native/host-journal.h": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+    "inputs/native/host.c": "9cf69e35d9603735748e0b59e27a007e1bc3ab7393a2c310f6d8765b667f6853",
+    "inputs/native/imported_clients.hpp": "550b9bc5f485be53a26d7acfe3bd996be6db9d66f4c3241cc171f568970804c8",
+    "inputs/native/preview-integration.h": "ffacb4ed6abe6b8019f5bcb489b8abe69f28f863ca9079f29cd1c075a0a49e2a",
+    "inputs/native/preview-provider-bootstrap.cpp": "f835e2203e1e73860c7e10a15f2573d453888f5043c3255524528265033bc570",
+    "inputs/native/preview-provider-bootstrap.h": "7220bc8df0bc40da2f897e519cff5340bc0eee84582345572b6b5c290a714c35",
+    "inputs/native/preview-uri-api.h": "7a02550a807102f6ebdad9c1570eb6a719a50b0ed422ff26add97dbd6408b002",
+    "inputs/native/preview-uri-webkit.cpp": "c8cc48442d8d098315b7ad64b71be267679bc361041dc6d2de405c657fa74ea2",
+    "inputs/native/preview_broker.hpp": "9c57428130093f8d815b7851004f103897deca278bbe4196e2116bec85a323ed",
+    "inputs/native/preview_client.hpp": "afc6c49d6818856496138f8c46e387b33b5894a4ea86cfb3b5d7157a287988ed",
+    "inputs/native/preview_delivery.hpp": "20e1a275985c92b6771ee24c5e4ce6a485bd049c8b1cb84c3e47358131435f72",
+    "inputs/native/preview_fd.hpp": "60fa114f7f2eb819c7a09085ee737c23d21b31f0ba177d967ff99f1425272a60",
+    "inputs/native/preview_uri.cpp": "e163fba44ad561c5d5deaf38f3a91f75f486b3749e030e1e22007cd98cdf5b87",
+    "inputs/native/preview_uri.hpp": "ad7c76ca9b089ea854f19ef029bbf461c3bcfdf76c677dc3666ae21a5385620b",
+    "inputs/native/preview_wire.hpp": "2b02108a819e97106cbf38e420871bc4ee10656fd6f98905f25c30fd838d283d",
+    "inputs/native/provider-delivery-test.cpp": "4e21203fd7acd32ede476df1137b6ea812cb26fa977d05296a884401adfd8fbe",
+    "inputs/native/provider-grant-test.cpp": "8f39b5828b946d5fba2f7df689578a50f79cf7daf2e0e8443ab87dfd7b89ac22",
+    "inputs/native/provider-ownership-test.cpp": "d79fe711a90d24ac96e8522a33a4dc3582989b40b692aec73109e365e3f44675",
+    "inputs/native/reconciliation-carrier-test.c": "38210317eff28d8a436e640e971f91df71ffcc3b17e82c27a60ee34f57d9f73d",
+    "inputs/native/recovery-presentation-test.c": "812bbab1640e12269bc195979cd319a96a505157ba8f5c637eebfd5561bc8e67",
+    "inputs/native/shared-context-test.c": "ed50c8ed6b0fee3db3818e2f38c8bb57985b388b26ee09a5624d32f1bfa258ee",
+    "inputs/native/shared-context.h": "e86f3ba7a4c76d7839ef8d67d14c7f9ea6b514afa2ac110fc7cebf2da2fd62ce",
+    "inputs/native/shared-host.c": "c51abc5f6f3fc231431f7f3cffc53a0d102e988becff2e943adcb33aeb3cd3b4",
+    "inputs/native/surface-test.c": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+    "inputs/native/surface.h": "2bdf2d9b3b34fa7193da90e58ac378e7a640ae91e7b02d46987e33c559209f0b",
+    "inputs/native/imported-clients.h": "4bed85a93cf9f2ba4c771ab552b5d63008277a3f77639508c5f394b2b90231ee",
+    "inputs/native/imported-clients.cpp": "0bb1996b1ec2f2c25d796c6acbb1e642b2cf5170b73437dfc715ea4ab521c1ef",
+    "inputs/native/imported-clients-boundary-test.c": "04b444d7d4d0c8f7f945d6f5e9996cfe3f23455624f6b933359b7ac1ee9737da",
+    "inputs/native/imported_lifecycle.hpp": "1d4efa4daa2753e43a822e3727dc78458941d72d03e4e01a1d041eb7f6bd9ded",
+    "inputs/native/imported-lifecycle-test.cpp": "14e7969e5228d013b590f912605cdd846235de67e8e13a87e644d123136d6a2a",
+    "inputs/native/family_source.hpp": "7e936e3f59b5075c364748384282c4e764d85444db2962a885a1ae5a0bf9bb35",
+    "inputs/native/family-source-test.cpp": "25c2402f9b6e1c7692633a2b27b69a961284412cf802fb600ad3ff2f97380b9a",
+    "inputs/native/family_style_crop_fd.hpp": "bf59599f5ceeb41381a1fd05fb045c52ec3cf47faf4706c38de8dd595f902a53",
+    "inputs/native/preview_png.hpp": "308007220baf1d7f2ad30569237ffaf7d6427d900ee1243811480402f188e670",
+    "inputs/native/family-fd-test.cpp": "4129475daf2dbcc997ee804f6f2cc1ae97c373adddc891a95ec6cf043f98291d",
+    "inputs/native/family_frame.hpp": "20ce40ab0080c37e17345cb3d88334eb5dc926a79720ec6faffee8807ae5fe67",
+    "inputs/native/family_producer.hpp": "148240aaf174b3d0f27d8385cd3e93811e48dd8c39b3b65a691fc754c2eebe22",
+    "inputs/native/family-frame-test.cpp": "7f5421a78f071a081edb32b8db0402c0e8a855df150ecdeeba6298cf94ed840c",
+    "inputs/native/generated_backdrop_fd.hpp": "3f60c0cffed16e60ec90b8f8365ec3f278d5c8cb41db2ce5b85c4929d018337f",
+    "inputs/native/backdrop-fd-test.cpp": "74b2f71f21e823bc3445cd647f86d422071edbd483d2bd89d68b38ce6575f623",
+    "inputs/native/backdrop-frame-test.cpp": "687f19e3053f305777f16d854fc2dbf593f4a7131589d522c37de4acfa498fd6",
+    "inputs/native/backdrop-denial-test.cpp": "7388e88721724be5280b0df91e982af29bebc2f9a10563690ab5aef8c73bda86",
+    "inputs/native/qa-reader-control.h": "1a504ee3959b78c73a8f9613b6a6c4f9cc51bc198d1dbd3b6fe1fd352684ccf4",
+    "inputs/native/qa-reader-control-test.c": "6bd57d3be5b0f3d0e071993e93b188fd0b2a87ae91dada60120f8e9142a07ed5",
+    "inputs/native/preview_metadata.hpp": "1cf84f1094cd8ccca90fcc5c44bed4182716e256792bb542c771c8bc1ce9ad5e",
+    "inputs/native/preview_icons.hpp": "6af2174049d623e824fdcf66ddd3a18d0b48a2c34c7159c1651dc0e4b53d8a32",
+    "inputs/native/preview_icons.cpp": "48aa83cc63d4f1f08b9333372cb3f63e0a25bf880cc17567098079284ee79693",
+    "inputs/native/metadata-icon-test.cpp": "cff027f7a3d29668893aec03be50f5dbae49fb2295606a8e8baad34b64e028d7",
+    "inputs/native/window-catalog-test.cpp": "c9efe0d6f7f7db6abc38ab717d16d56a014a2804d39281a28bddd7eb030548a6",
+    "inputs/native/receiver-extension-test.cpp": "a35501610fadf7cc4935b970c87b683fa9a2216ee2eef3da8cc70afc652b8d59",
+    "inputs/native/delivery-extension-test.cpp": "4d9ccdff37c8818ec6f70b93393e94a46f1f1b3506606a692549cf24c38972c8",
+    "inputs/native/imported_admission.hpp": "9cd619f5774d8fb40d712f6f073c00c8c337770e7d173413951fadf3dd321c78",
+    "inputs/native/imported-admission-test.cpp": "4440d17aea9172b547a66660cb30ebe27df821f627f9fae8861fcdd8d6858d6f",
+    "inputs/native/imported_enrollment.hpp": "970d2e8027dfdbbbb599f3de7d5132b9e7e27e8e0509622e7ae3ad18eeef380e",
+    "inputs/native/dynamic-enrollment-test.cpp": "bc8dd70ec9b8b5ce2f428cb82578389f9349d24b3ebdb423ccf725b5fd8c8278",
+    "inputs/native/rejected-enrollment-test.cpp": "f38a7da3423eb939f76c8882f2d2b057b9af865fd9cd3d96dbc9741918c99aad",
+    "inputs/native/resume-enrollment-test.cpp": "b14e33de4a2c1ff6b8e38737f66d8d6f906aba07e609a67750a5a7055434921d",
+    "inputs/native/imported_feedback.hpp": "6760465caf1b6877aadb62776fa050f7a44848cd4a9061ce89fdbac96604b9aa",
+    "inputs/native/local-feedback-test.cpp": "01b247fef9f6378db1616430fb7f04236e584085269542eaa05c4a6581612b29",
+    "inputs/native/next-intent-test.cpp": "6ad459d12146dbe18b6431b3ee863318c10d45a0806f63d9b5400812f20e80b9",
+    "inputs/native/next-resume-test.cpp": "f4f00450ca31f382b71af7b7158c40ee199439c9f8c23f3a4062075e190ab152",
+    "inputs/native/preview_retirement.hpp": "b8af8a43d3ca8eeebc8a0b24a9f99b846018db8e17bcb18ea31ffecfed595b0d",
+    "inputs/native/retirement-observation-test.cpp": "2f60ee0cc71f4cc611f57ca3ffa3ef4a013233a0c9de13144b207729f0a478f8",
+    "inputs/native/imported_subjects.hpp": "03e7bfd41bf4ace363d2f95bb1526515c6c9f8bedc69dffdf71fbae13f56f5ff",
+    "inputs/native/actor-retirement-test.cpp": "69ddf372f47b537e4b35481ec9769e8417270a3c84ba8caef98fe3c00b78fea0",
+    "inputs/native/actor-retirement-test-v2.cpp": "08815578bdf33210f066e80f5506fd1a8a4e1afa8b89c69779a901d225dbf599",
+    "inputs/native/actor-retirement-test-v3.cpp": "25e47f56093b84682230628f46d20fb96b2727fa4190524ec3f64e9d08e8f867",
+    "inputs/native/preview-control.h": "eeb41047554ba5a84f75614a62c1de93e871b3099a12560584150d6c4b6540d8",
+    "inputs/native/retirement_journal.hpp": "6c09930b399351a9c8a73e45009daa8ea1ee0b3adb12ba4f1121f95a12ec6913",
+    "inputs/native/actor-retirement-channel-test-v1.cpp": "f0c1b35a04325b261217f93d182ee1871a091abff0c44e3688a8c9f17a729812",
+    "inputs/native/actor-retirement-channel-test-v2.cpp": "4160343a5ba5939114326e780108ea223a42ca28ac6fb7d4a833695d82e50a66",
+    "inputs/native/retirement-elm-channel-test.cpp": "38205ebfb02b67ad12a3d454947a0efc93e80f9b8b191143801ab83a4bb47e20",
+    "inputs/native/retirement-elm-channel-test-v2.cpp": "a7cd7cd427e5f8e7360156f0445993584c9602cc5cad466a72201bf6bfac5902",
+    "inputs/native/retirement-elm-channel-test-v3.cpp": "0166a6db252a7c2101a26425999f2f85955ddde9014795f241fd56359c5b0a81",
+    "inputs/native/retirement-elm-channel-test-v4.cpp": "5ec17c2cacb3ca3cd2dba94766260098485ecdc2f68585f7dee3f2b6ad7fa225",
+    "inputs/native/retirement-readiness-replay.cpp": "ed336bf6770a5bc130b1d84e8e99e19d0cbb67c5c5133a876c1746ff46e6fb23",
+    "inputs/native/retirement-readiness-replay-v2.cpp": "9f10b45ea7817e6018a00461dcce0e83549f8c054bc7cc3a524dade9c297328c",
+    "inputs/native/retirement-readiness-replay-v3.cpp": "b596126e85083244f576797735e54a632832af7de37b0a5c14aa2b38243a9859",
+    "inputs/native/retirement-poll-replay.cpp": "beefa85561dd03590f7d713d66520072def838907560fab86a348abcb5e773a0",
+    "inputs/native/retirement-fair-poll-test.cpp": "50e23ab69570050fc2814549e9146a6f58413ae4f9cd0d090db4c34ceba4f8a5",
+    "inputs/native/preview-control-delivery.h": "edbcf3127c6fadbdff1eb2c361b50d0e72902a9c9e2ce456b0fb64ac7f6653e3",
+    "inputs/native/control-outbox-fixture.cpp": "f9850811275c90b1a72973f70626106d76a59191a627ff307490b343802fa30e",
+    "inputs/native/control-confirmation-fixture.cpp": "9fbecc43b61202f6e36142a3e799df01b1a31bd32255a2f34b7496d7e75765a6",
+    "inputs/native/control_reservations.hpp": "5bcaa15a546e7341d7d24c642d25e67361a654a84d600bed984ae4d1a193bc25",
+    "inputs/native/control-reservations-replay.cpp": "509e3695bfc46b37357ceb712045e9a03d6b7b2905953197c695944afcd7c268",
+    "inputs/native/control-reservations-test.cpp": "8006cbbcfe28784132308afc03b332bf964a5038f887fd6378bc18abe9065c05",
+    "inputs/native/control-reservations-test-v2.cpp": "ec9010611ac5fc5e8cad459cb2a2a815d34e8b0b88ce64fc3574cf03ade99fc5",
+    "inputs/native/imported_control_admission.hpp": "d5bf0ba8b3ec116ca2e1cec808f139a6cdd99a72f63568487ada9204f2ab425d",
+    "inputs/native/control-admission-replay.cpp": "d3d730789eee580df8ac35bfa8a949039905fded2139dfe30a80c022928db300",
+    "inputs/native/control-quota-fixture.cpp": "9c1bf07df9a17524aba4e817938df7418e7d5ab0d3e791d80fb2872e3a9751a6",
+    "inputs/native/retained_client_command.hpp": "f07d8b840865595084dd04f8bdaa5e4a89dbd9bee27223cbba5ad0de927aaf15",
+    "inputs/native/retained-client-command-replay.cpp": "d43b2f11f03d1b760c5f15c4b61b673a916eb9d8880513ee8cb2c03efc541cad",
+    "inputs/native/imported-control-guard-test.cpp": "2c157817565956b3a21bd97ef5cf84238cb6f45ef4ef7f20e4a420b28e88242e",
+    "inputs/native/control-admission-replay-v2.cpp": "d221e0630f48cae7b5211e2230817059b753054ece15e1f40d9ac7b58065df4c",
+    "inputs/native/imported-control-ticket-test.cpp": "1e7c317a6eafa7865713dcb0f5b45ff0168841177ead8c8c06f886f635123411",
+    "inputs/native/imported-control-ticket-test-v2.cpp": "918a5eca9ab7c5d215bc6f0b10994deb824b4865240f7213479ed684a42ebecd",
+    "inputs/native/job-control-replay.cpp": "d56f84788399d7eff263a6b4779f7109bf41c2e86c9c76d95220b9571fef21b5",
+    "inputs/native/imported-control-retirement-test.cpp": "ba5d0c4b41a32acbda7a35bef05f4ba2a6ea7e9be79ffac6c1daa6f61f69f904",
+    "inputs/native/imported-control-retirement-test-v2.cpp": "0aef0648c3d4a1c53829598351133a1dceda1a25d93b72243c3a8a35eda2bc1c",
+    "inputs/native/actor-control-replay.cpp": "337b7e2892ec373a33b2c45bd855aa8b00c97ed88661aafe9aa66e78be3fe409",
+    "inputs/native/imported-control-readiness-bytes-test.cpp": "db0a23bd14b32857ce9b2cc15656317815824f382d54c269240f72e87de59653",
+    "inputs/native/imported-controlled-c-test.cpp": "b3e2bea1bc545e3b9bee4bba85761a4fc8d0606ab8dd4bc1c163e7e6ff109fe2",
+    "inputs/native/imported-controlled-c-test-v2.cpp": "b638f3dc10735ed5d187709d24fef04c84804dc90bdf91b50846e3b9390eea23",
+    "inputs/native/imported-controlled-c-test-v3.cpp": "c5b52a66337bfae25483251b3e91b1f98a90eca8ba4b152d6539cd24b78c56e2",
+    "inputs/native/capture-intent-test.cpp": "d0bb0eb54701d28ceaf989b681c8dc7138fa1137d82985661104ab9aec5295d5",
+    "inputs/native/imported-allocation-test.cpp": "c621bf4eb3af2cb9f4dfaed86745f682de465c36815e71ea9020490e1027b781",
+    "inputs/native/capture-intent-source-fixture.hpp": "b5340c2ad8541e41325929cf0fc97f53e3961739308f5b2319b3f08be6b6b63a",
+    "inputs/native/capture-intent-replay.cpp": "4cd94eb2cdb4a838c6b49a3fdc72c923d703e6060cea44861e7abb1b5951b170",
+    "inputs/native/capture-intent-replay-v2.cpp": "41701749fe08424220d4c3292c127df836949c673c8572f6cbb0cd10d78dfa12",
+    "inputs/native/client_resources.hpp": "89a466bc3d3503e3d47063eda8ce1aa8ae3cab1ae61d820002d5aaa2a4712696",
+    "inputs/native/capture-resource-source-fixture.hpp": "e036e80397869f486bb0b533d9acda24f6acd0ec7169f3d0e77173ba504ae14f",
+    "inputs/native/capture-resource-c-test.cpp": "f90cd514d4c670655c134e858d5896e9b1f7878473ea7790bca8d69aa25a13ad",
+    "inputs/native/capture-resource-decoder-test.cpp": "ef03ae536987d83ca0f39c69638dc50ac02273edef5a6da08058b9a95c981800",
+    "inputs/native/capture-resource-c-test-v2.cpp": "52928c4d2d858fc9a13bbad85c23c95b742869c4f715992f0a59be546f981fac",
+    "inputs/native/capture-resource-replay.cpp": "169d102b0602af1186f9bb1f20283e76851fb4f2de56e592aa4c9d4f6bcdd83d",
+    "inputs/native/capture-resource-fd-source-fixture.hpp": "88f8f0062bc4a26d237034752d1b2edbc3214e70878838a068de44f627de774c",
+    "inputs/native/capture-resource-fd-test.cpp": "0b2f8214f82a95f463dd6044d546a0f4443fbe95ddb13b8b986d6e42eb799346",
+    "inputs/native/imported-resource-replay.cpp": "8c998821656f06803b0baeee825448598e8938e63e88b05ca25ac4259310dcdf",
+    "inputs/native/imported-resource-replay-v2.cpp": "64fa1274a65addcfe1c2059933d20887e49337796e630e6f44d5ba15e48af29f",
+    "inputs/native/capture-resource-elm-test.cpp": "6657648c496327b7096ca6e23eea5f3cf708c04cf1118c8fedc815006bc9641d",
+    "inputs/spec/capture_intent.qnt": "377371b7d277937e81ee9925cf479b920ba24d1b49e0ae04f806a0d234f73603",
+    "inputs/spec/capture_intent_tests.qnt": "57f9edffb84c265b52d2fc8114f96b8d9b4725f28d2cb576e36e06c2656b3b0d",
+    "inputs/qa/capture-intent-model-check-v3.py": "b7b734197f211d75cde278f4de9a95b4430405d8954e30ea03882fd006d05b7a"
+  }
+}
