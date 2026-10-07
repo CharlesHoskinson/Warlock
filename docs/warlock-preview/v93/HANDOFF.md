@@ -392,3 +392,67 @@ admission, one-time native renderer grant, producer batch retention/poll pause,
 WebKit callback context/lease, async DOM/frame/physical concealment and URI ownership.
 Uncertain live/process recovery, delayed never-issued proposal outcomes and full
 release S01–S16/right-click gates remain open. Installed/drafts/foreign untouched.
+
+GUI121 PUBLIC91 2117a5147b7170ddc9b7cc0d6fe430f8a2698d4f/5598 exact owned blobs;
+source41abd7627988bf0f98dd692a0a69c82b09a40257;
+receipt03a2f8559c538267d227518b71db90cbf27e4abf.
+GUI122 implemented QA-only actual controlled host: presentation-only placeholder,
+original GTK admission then native controlled factory/single JSC driver, fixed
+pure renderer grant, native context-owned URI router, navigation fail-closed,
+queued producer retention and driver progress before retry/polling. Native curtain
+remains opacity0 with no decoder/RAF reveal authority. Full118 passed. Compiled
+host input-pressure fixture2264/constructor9/normal synthetic FD peer closure;
+first runner failed a nominal count2263 after actual oracle2264 passed, retained.
+Synthetic adapter generation/DOM tests passed, scoped to synthetic observations.
+Actual Native132 on exact core16/plugin19/AQ155 reached GTK/factory/driver admission
+then failed pure initializer: Elm replaces its mount node, removing app id.
+Original observation6 and strict close unchanged; host exited1, all other six
+owned processes exited0 and private runtime cleanup passed. GUI1223295files and
+Native13283files held as failed integrations, not accepted release sources.
+Fresh GUI123 fixes persistent outer native-owned app container with independent
+placeholder/renderer child mounts and forbids legacy imported wake on controlled
+route. Improved adapter test simulates real Elm mount replacement and passes.
+Current full118 build and serial Native133 same actual scenario are next. CONTROL035
+EARS/eight OpenSpec scenarios and real frame/reveal/normal closure/recovery tasks
+remain open. All original release/input/performance/AT/IME/hardware/restore/drag
+and scope/unknown/proposal outcome duties remain; no installed/draft/foreign changes.
+
+GUI123 full118/current compiled host pressure2264/constructor9/normal synthetic
+FD peer closure and improved synthetic adapter checks passed. Actual Native133
+again reached original GTK/factory/native driver admission; outer mount fix worked,
+but pure initializer failed because HTML/allowlist requested native-preview-renderer.js
+while original compiler produces native-visual-renderer.js. Original observation6
+and strict close unchanged; host exited1, private cleanup/all other exits normal.
+GUI1232088files/Native13383files held as failed integration. One copied checkpoint
+mistakenly repeated prior mount cause; fresh GUI124 checkpoint corrects it, immutable
+logs and manifest scope already record the correct missing-asset cause.
+Fresh GUI124 fixes original compiled renderer filename and adds exact bundled-page
+script/style/owning allowlist closure before native launch. Current119-command
+build then serial Native134 original scenario next. No actual renderer/frame/reveal/
+normal controlled closure or full release acceptance follows these failed probes.
+
+GUI124 full119 and compiled page closure passed. Actual Native134 initialized the
+pure WebKit renderer once and accepted a current-projection DOM receipt; original
+Core capture and native physical release were observed. Teardown failed when the
+host queried an identity after original scoped C detachment removed its mapping.
+GUI1241791files/Native13484files held as failed integration; original deadline6,
+strict close and private cleanup preserved. Fresh GUI125 reads original native
+actor inventory to stop identity-dependent polling/seeding while continuing the
+original terminal/retirement/detachment journals. Mapping absence does not settle
+policy/input/ticket/confirmation/physical custody. Current full119 build and
+serial Native135 unchanged scenario next; physical curtain/reveal/recovery and
+full S01–S16 release remain open.
+
+GUI125/Native135 accepted bounded actual controlled admission and strict teardown:
+16 original checks/eight owned normal exits/private cleanup. Native factory follows
+original GTK admission; one persistent Elm policy and one-time pure WebKit renderer
+execute, current DOM receipt passes, original input/ticket/independent-confirmation
+and pending journal custody drains to strict normal close under deadline6. Original
+native actor inventory stops identity queries after scoped mapping removal without
+settling policy from absence. Full119/page asset closure passed; GUI1251791files/
+Native13584files held. All three failed integrations remain held. CONTROL-036
+packaging and bounded CONTROL-035 admission/drain frozen; full controlled-route
+qualification stays open. PUBLIC92 preparation retains failures and current success.
+Next actual captured-image pure renderer/WebKit URI/frame and physical qualification;
+curtain remains closed, physical reveal/pixels/workload/RSS/recovery/full S09 preview13
+and full release remain unqualified. Legacy Native1312518/278 remains separate.

@@ -399,3 +399,21 @@ activation and all original full release gates remain open.
   model coupling and current coherent build while retaining original gates.
 - [ ] Qualify actual paused host producer scheduling and full-workload progress/
   memory/performance; first-ticket or stricter-gate evidence does not establish it.
+
+
+- [ ] Implement and qualify CONTROL-035 actual controlled GTK/WebKit host custody:
+  presentation-only admission, one native policy/fixed renderer grant, producer
+  retention/poll pausing, context URI ownership and stale navigation barriers.
+- [ ] Qualify actual DOM/frame/Wayland concealment and reveal before opening the
+  controlled native curtain; decoder or RAF receipts alone do not permit it.
+- [ ] Qualify controlled route normal teardown and reload/uncertain recovery with
+  original physical/journal/independent-confirmation gates and unchanged deadlines.
+
+
+- [x] Freeze CONTROL-036 exact compiled page script/style/owning allowlist closure
+  and retain missing-asset failure history; packaging does not qualify WebKit/frame.
+
+- [x] Freeze bounded CONTROL-035 actual original GTK admission, single native policy,
+  one-time pure WebKit renderer/current DOM receipt and strict normal drain/teardown
+  in GUI125/Native135; retain failures. Physical frame/reveal, pressure/performance,
+  reload/uncertain recovery and full controlled-route qualification remain open.

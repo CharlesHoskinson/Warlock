@@ -1308,3 +1308,79 @@ producer contract, preserving original policy, issuer, physical and closure gate
 - **WHEN** component output custody is reviewed
 - **THEN** actual output exhaustion, workload progress, RSS/performance and paused host producers remain separate gates
 - **AND** actual GUI/WebKit/frame/concealment/URI and full release acceptance remain open
+
+
+### Requirement: Connect the native policy through actual controlled GTK/WebKit custody
+
+The system SHALL implement EARS CONTROL-035 with original native admission and
+closure authorities. The QA-only route keeps its curtain closed until actual
+physical reveal is separately qualified.
+
+#### Scenario: Native GTK admission is not yet complete
+- **WHEN** current publication/lease/configuration/grab/application proof is absent
+- **THEN** only the presentation-only placeholder runs
+- **AND** no controlled native owner, grant or second window policy is created
+
+#### Scenario: Original GTK admission establishes the controlled route
+- **GIVEN** actual current native subject and admitted GTK publication/lease
+- **WHEN** the owning host opens the controlled factory
+- **THEN** one persistent native Elm policy retains the original grant and inputs
+- **AND** the native channel supplies a fixed one-time pure renderer initialization
+
+#### Scenario: Producer input is refused under pressure
+- **WHEN** exact host input cannot enter the driver
+- **THEN** the original bytes remain retained and another producer poll is paused
+- **AND** original driver work continues draining so pressure can clear
+
+#### Scenario: A new surface commit would exceed host presentation custody
+- **WHEN** native preflight cannot reserve the exact frame before effects
+- **THEN** the original commit remains preflight-unsent with its original disposition
+- **AND** no accepted current GTK frame is silently dropped
+
+#### Scenario: A navigation invalidates an asynchronous renderer initialization
+- **WHEN** the original view navigates after live native policy admission
+- **THEN** native conceals and retains the original live policy and obligations
+- **AND** an old navigation callback cannot initialize or reconstruct the receiver
+
+#### Scenario: A renderer acknowledges decoded and applied display bytes
+- **GIVEN** the original manager/view and exact latest native visual receipt
+- **WHEN** DOM/RAF and native current-projection checks pass
+- **THEN** that receipt remains distinct from physical Wayland frame acceptance
+- **AND** the unqualified controlled route keeps its native opacity curtain closed
+
+#### Scenario: Actual WebKit context routes a preview URI
+- **WHEN** the original receiver requests its native-issued preview capability
+- **THEN** the context-owned router checks the native endpoint/receiver/epoch
+- **AND** stream closure cannot settle original physical or journal obligations
+
+#### Scenario: Shutdown encounters live uncertain or undrained host custody
+- **WHEN** normal shutdown is requested
+- **THEN** the original driver/native closure refuses and retains obligations
+- **AND** the run reports failure without a grant reset or normal-exit claim
+
+#### Scenario: Original scoped detachment removes the native subject mapping
+- **GIVEN** the original native actor inventory reports no controlled subject
+- **WHEN** the host schedules its next producer action
+- **THEN** identity-based polls and detachment seeds stop
+- **AND** original pending terminal, retirement and detachment delivery continues
+- **AND** mapping absence does not settle policy, input, ticket, confirmation or physical custody
+
+
+### Requirement: Close the actual compiled page asset package before native admission
+
+The system SHALL implement EARS CONTROL-036 using the actual compiled asset
+package and the owning scheme's closed local allowlist.
+
+#### Scenario: A controlled page names an unbuilt renderer script
+- **WHEN** a page reference has no regular file in the exact compiled package
+- **THEN** packaging preflight fails before native host qualification
+- **AND** a successful compiler command alone cannot establish page readiness
+
+#### Scenario: A page references an asset outside the owning allowlist
+- **WHEN** a script or stylesheet name is absent from the actual owning scheme table
+- **THEN** packaging preflight fails without widening arbitrary URI admission
+
+#### Scenario: Compiled page references are complete
+- **WHEN** all bundled page scripts/styles exist within the original size and name bounds
+- **THEN** their exact filenames and package hashes are retained
+- **AND** WebKit execution, original GTK/frame/reveal/closure and recovery gates remain separate

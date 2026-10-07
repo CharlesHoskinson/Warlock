@@ -1,0 +1,23 @@
+"""Hold the actual failed Elm mount-node integration before a fresh derivative."""
+import hashlib,json,pathlib,resource,stat,sys
+sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
+require_qa_scope();assert resource.getrlimit(resource.RLIMIT_CORE)==(1,1)
+repo=pathlib.Path('/home/hoskinson/omarchy-windows-parity');gui=repo/'implementation/warlock-preview-provider-v124';native=repo/'implementation/warlock-client-provider-native-v134';sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
+report=native/'qa/native-controlled-1791382629466996830/report.json';d=json.loads(report.read_text());assert not d['passed'] and not d['nativeAcceptance'] and not d['fullReleaseAccepted'] and d['cleanupPassed'] and any(row['name']=='controlled-host' and row['exitCode']==1 for row in d['ownedExitCodes'])
+pre=json.loads((native/'qa/preflight.json').read_text());assert pre['passed']
+for p,h in pre['inputs'].items():assert sha(p)==h,p
+for rel,h in d['artifacts'].items():assert sha(report.parent/rel)==h,rel
+build=pathlib.Path(pre['controlledHostBuild']);b=json.loads(build.read_text());assert b['passed'] and len(b['commands'])==119 and all(x['exitCode']==0 for x in b['commands'])
+for n,h in b['inputs'].items():assert sha(gui/n)==h,n
+for n,h in b['artifacts'].items():assert sha(build.parent/n)==h,n
+scope='Actual GTK/native factory/single policy driver/pure WebKit renderer initialized once and exact current-projection DOM receipt passed. Original real Core capture, URI-valued policy state and native physical release observed. After original scoped actor detachment removed the C subject mapping, host incorrectly performed identity-dependent polling rather than continuing retained completion delivery. Foreign imported family identity stopped the host with its exact outstanding input retained; original observation6 and strict close unchanged, host exited1/private cleanup passed. Full119 including packaged HTML assets passed. Next fresh GUI125 uses original native actor-count inventory to stop identity-dependent polling after scoped removal while continuing original terminal/journal/completion delivery. No absence-as-settlement, grant reset or normal controlled closure/reveal/recovery/full release acceptance.'
+for root in [gui,native]:
+ files={}
+ for p in sorted(root.rglob('*')):
+  rel=p.relative_to(root)
+  if any(x in {'elm-stuff','mutable-elm-home','elm-home','__pycache__'} for x in rel.parts) and 'toolchain' not in rel.parts:continue
+  assert not p.is_symlink(),p
+  if p.is_file():files[str(rel)]={'kind':'file','sha256':sha(p),'size':p.stat().st_size,'mode':oct(stat.S_IMODE(p.stat().st_mode))}
+ out=root/'component-manifest.json';assert not out.exists();out.write_text(json.dumps({'schema':1,'owner':'f6779148-8f5d-4bdf-8a0f-044184e486f2','sourceHeld':True,'passed':False,'cpuBuildPassed':True,'fullBuildCommands':119,'failedNativeReport':str(report),'failedNativeReportSHA256':sha(report),'privateSessionCleanupPassed':True,'actualNativeGTKAdmissionObserved':True,'actualPureRendererInitializationObserved':True,'actualCurrentProjectionDOMReceiptObserved':True,'actualPureRendererInitializationQualified':False,'normalControlledHostClosureQualified':False,'nativeAcceptance':False,'fullReleaseAccepted':False,'scope':scope,'files':files},indent=2)+'\n');print(root.name,len(files))
+sys.path.insert(0,str(repo/'implementation/elm-build-loop-v1'));import loop
+print(loop.write_checkpoint(repo,'f6779148-8f5d-4bdf-8a0f-044184e486f2',str(gui.relative_to(repo)),['PROGRESS held failedGUI124/Native134 actual GTK/factory/single driver/pure WebKit renderer initialization and current projection DOM receipt now pass. Original real Core client capture/URI policy state and original physical release observed, but continued identity polling after original scoped C actor removal fails Foreign imported family identity while a completion/input remains retained. Host exits1/private cleanup passes; original deadline6/strict close unchanged. Full119 with exact packaged page asset closure passed. Next ownGUI125 use original readonly actor counts to avoid identity-dependent poll/seed after scoped map removal while continuing original terminal/journal/completion delivery; absence never settles Elm/native obligations. Normal controlled closure, physical reveal/recovery/full release remain unqualified. Original Native1312518/278 baseline/installed/drafts/foreign preserved.'],'progress',[str((gui/'component-manifest.json').relative_to(repo)),str((native/'component-manifest.json').relative_to(repo)),str(report.relative_to(repo))]))

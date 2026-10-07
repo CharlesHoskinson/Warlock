@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "inputs": {
+    "assets/controlled-popup-adapter.js": "2b38e39269152ead8f489dd34b27225ddd071cafb708adce6ffd07c0c0e6b4b2",
+    "qa/controlled-adapter-check.js": "f4f3a3d214d91866ecbd4c9ee0c303ddb449c970748f725f721773b223d3475f",
+    "qa/controlled-adapter-check.py": "d751da97a025c6e2b7027a9ec4a5b3d0fab1f0e072bd4d5532d0f865f87d8be4"
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "Actual adapter JavaScript under synthetic ports/DOM/RAF observations: one-time flags, no browser window policy, stale initialization/visual generations and original DOM publication/lease gates. Not actual Elm receiver/WebKit/physical frame or GUI acceptance.",
+  "evidence": {
+    "passed": true,
+    "checks": 18,
+    "rendererInitializations": 1,
+    "browserWindowPolicies": 0,
+    "syntheticPortsAndDOM": true,
+    "actualElmReceiver": false,
+    "actualWebKit": false,
+    "physicalRevealQualified": false,
+    "nativeAcceptance": false,
+    "fullReleaseAccepted": false
+  },
+  "artifacts": {
+    "stdout": "c5062040a2226788058697ad3dcc520567ebdf00a8ae4751a49455ee8ab2c3bd",
+    "stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/assets/controlled-popup-adapter.js": "2b38e39269152ead8f489dd34b27225ddd071cafb708adce6ffd07c0c0e6b4b2",
+    "inputs/qa/controlled-adapter-check.js": "f4f3a3d214d91866ecbd4c9ee0c303ddb449c970748f725f721773b223d3475f",
+    "inputs/qa/controlled-adapter-check.py": "d751da97a025c6e2b7027a9ec4a5b3d0fab1f0e072bd4d5532d0f865f87d8be4"
+  }
+}

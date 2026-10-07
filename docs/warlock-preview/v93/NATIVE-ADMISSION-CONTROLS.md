@@ -676,3 +676,52 @@ output queue exhaustion, full-workload progress, measured memory/performance,
 actual paused host producer scheduling or native GUI acceptance. Those gates,
 actual WebKit callback/frame/physical concealment/URI, uncertain live/process
 recovery and original delayed proposal outcome obligations SHALL remain required.
+
+
+EARS CONTROL-035: While the QA-only controlled GTK/WebKit host is active, the
+system SHALL create its native controlled owner and single persistent policy
+only after original current GTK/publication/lease admission. Before that admission,
+the renderer SHALL contain only validated presentation custody and surface actions,
+with no preview lifecycle/window policy or native control ordinal allocator.
+
+When the native visual channel issues a renderer grant, native SHALL initialize
+the pure receiver once with that fixed grant. Later projection packets SHALL NOT
+establish/reset a grant or initialize another receiver. Native SHALL bind callback
+admission to the original manager/view and current navigation identity, epoch and
+visual lease/sequence. Navigation uncertainty SHALL conceal and retain the original
+live policy/native obligations without constructing a replacement policy.
+
+When host input custody or the driver refuses ordinary input with WOULD_BLOCK,
+the host SHALL retain the exact original producer bytes, continue draining original
+driver work, and refrain from another producer poll until admission. New surface
+commits SHALL reserve host presentation custody before native effects/admission;
+preflight refusal SHALL preserve the original unsent-disposition contract.
+Unexpected output-contract violations SHALL retain exact exceptional custody as
+Unknown rather than discard bytes or claim normal bounded progress.
+
+When original scoped C detachment removes the controlled subject mapping, the
+host SHALL read the original native actor inventory before identity-dependent
+polling or detachment seeding. The host SHALL stop those identity queries while
+continuing original pending terminal, retirement and detachment delivery. Mapping
+absence SHALL NOT settle Elm state, retained inputs, tickets, confirmations or
+physical obligations, and SHALL NOT authorize resetting or closing the realm.
+
+While DOM/frame/Wayland reveal acceptance remains unqualified, the controlled QA
+route SHALL keep its native opacity curtain closed. A decoder/RAF receipt SHALL
+NOT reopen that curtain or claim physical concealment/reveal qualification.
+The actual WebKit context SHALL retain its own scoped URI router reference; only
+native SHALL bind the original endpoint, receiver and epoch. Streams/transport
+receipts SHALL NOT substitute for original physical/terminal/independent-confirmation
+closure. Shutdown SHALL retain uncertain or undrained custody and report failure.
+All actual frame/input/resource/recovery/full release gates SHALL remain required.
+
+
+EARS CONTROL-036: When preparing the exact compiled GUI asset package, QA SHALL
+verify every bundled HTML script and stylesheet reference is a closed local name,
+exists as a regular nonsymlink file of the original permitted size, and belongs
+to the actual owning scheme allowlist. The controlled page SHALL reference the
+original compiled NativePreviewRenderer output, native-visual-renderer.js, and
+the admission output native-preview-admission.js. A missing/misnamed referenced
+asset SHALL fail preflight before actual controlled native admission. Passing
+packaging SHALL NOT establish WebKit execution, actual frame/reveal, recovery or
+native/full release acceptance; their original gates SHALL remain required.

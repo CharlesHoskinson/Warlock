@@ -1,0 +1,25 @@
+"""Prepare owned controlled-host publication with all failed integration history."""
+import ast,json,pathlib,re,resource,sys
+sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
+require_qa_scope();assert resource.getrlimit(resource.RLIMIT_CORE)==(1,1)
+r=pathlib.Path('/home/hoskinson/omarchy-windows-parity');out=r/'docs/warlock-repository/v92/publication';assert not out.exists();out.mkdir(parents=True)
+base='2117a5147b7170ddc9b7cc0d6fe430f8a2698d4f';local='03a2f8559c538267d227518b71db90cbf27e4abf';previous='41abd7627988bf0f98dd692a0a69c82b09a40257'
+components=[(f'warlock-preview-provider-v{g}',g==125) for g in range(122,126)]+[(f'warlock-client-provider-native-v{n}',n==135) for n in range(132,136)]
+minimum=0
+for name,passed in components:
+ held=json.loads((r/'implementation'/name/'component-manifest.json').read_text());assert held['sourceHeld'] and held['passed']==passed;minimum+=len(held['files'])
+held=json.loads((r/'docs/warlock-preview/v93/component-report125.json').read_text());assert held['passed'] and held['actualControlledAdmissionAndDrainQualified'] and held['nativeChecks']==16 and held['normalOwnedExits']==8 and not held['physicalRevealQualified'] and not held['nativeAcceptance']
+prior=r/'docs/warlock-repository/v91/publication'
+def put(name,s):ast.parse(s);(out/name).write_text(s)
+s=(prior/'publish.py').read_text().replace("BASE='78170391db233cbfd6b43d6361622bf742cb79dd'","BASE='"+base+"'").replace('43498757f42a4fa785d2ff7d04a35e8de8f6ffd7..',previous+'..')
+allowed=('docs/warlock-preview/v93/','docs/warlock-repository/v91/publication/','docs/warlock-repository/v92/publication/',*(f'implementation/{name}/' for name,_ in components),'openspec/changes/warlock-preview-actor-retirement/tasks.md','openspec/changes/warlock-preview-actor-retirement/specs/preview-actors/spec.md')
+a=s.index('allowed=');b=s.index('\nassert all',a);s=s[:a]+'allowed='+repr(allowed)+s[b:]
+a=s.index(' qualification=');b=s.index('\n published=',a)
+q=" qualification=json.loads((REPO/'docs/warlock-preview/v93/component-report125.json').read_text());assert qualification['passed'] and qualification['actualControlledAdmissionAndDrainQualified'] and qualification['normalControlledHostClosureQualified'] and qualification['nativeChecks']==16 and qualification['normalOwnedExits']==8 and qualification['fullBuildCommands']==119 and qualification['nativeGrantResets']==0 and qualification['compiledPageAssetClosureQualified'] and not qualification['physicalRevealQualified'] and not qualification['nativeAcceptance'] and not qualification['fullReleaseAccepted']"
+s=s[:a]+q+'\n message='+repr('Connect the controlled native Elm policy and qualify strict host teardown\n\n'+held['scope'])+'\n'+s[b:];put('publish.py',s)
+s=(prior/'record_delivery.py').read_text().replace('component-report121.json','component-report125.json');s,n=re.subn(r"d\['ownedFiles'\]>=\d+","d['ownedFiles']>="+str(minimum),s);assert n==1
+a=s.index('e=loop.write_checkpoint(');s=s[:a]+"e=loop.write_checkpoint(r,'f6779148-8f5d-4bdf-8a0f-044184e486f2','implementation/warlock-preview-provider-v125',['PROGRESS PUBLIC92 '+d['publishedCommit']+' verified '+str(d['ownedFiles'])+' exact owned blobs. GUI125/Native135 bounded actual controlled GTK/single native Elm policy/one-time pure WebKit renderer/current DOM receipt/original journal and independent confirmation/strict normal teardown16checks8exits. Full119/page asset closure pass; original deadline6/core16/plugin19/AQ155 unchanged. Failed122/132,123/133,124/134 held. Physical curtain remains closed; actual pixels/physical frame/reveal/pressure/workload/RSS/reload/uncertain recovery/full S09 preview13 and release gates remain open. Next actual captured-image pure renderer/WebKit URI and physical frame qualification. Legacy Native1312518/278 remains separate. Installed/drafts/foreign preserved.'],'progress',['docs/warlock-preview/v93/component-report125.json','implementation/warlock-preview-provider-v125/component-manifest.json','implementation/warlock-client-provider-native-v135/component-manifest.json','docs/warlock-repository/v92/publication/delivery.json']);print(e)\n";put('record_delivery.py',s)
+s=(prior/'commit_receipt.py').read_text().replace('78170391db233cbfd6b43d6361622bf742cb79dd',base).replace('Record public native output custody qualification','Record public controlled native host qualification');s,n=re.subn(r"d\['ownedFiles'\]>=\d+","d['ownedFiles']>="+str(minimum),s);assert n==1;put('commit_receipt.py',s)
+s=(r/'docs/warlock-preview/v93/commit121.py').read_text().replace('f269ef107f669e8d453136009d7fb3564f943301',local).replace('warlock-repository/v91/publication','warlock-repository/v92/publication').replace('Reserve retained native output before effects and prioritize admitted events','Connect the controlled native Elm policy and qualify strict host teardown')
+s=s.replace("[('warlock-preview-provider-v121',True)]",repr(components));assert repr(components) in s
+p=r/'docs/warlock-preview/v93/commit125.py';assert not p.exists();ast.parse(s);p.write_text(s);print(out)
