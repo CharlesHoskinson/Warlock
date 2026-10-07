@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "sourceHeld": true,
+  "passed": true,
+  "evidenceIntegrityPassed": true,
+  "reports": {
+    "recovery": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/native-outbox-recovery-check-v3-1791355285169842681/report.json",
+      "sha256": "e8b3b0b1d136c7ba8f82064d93e11423ac8853b5d2b30749a3202f5aa2aaa172"
+    },
+    "model": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-v3-1791355359626645528/report.json",
+      "sha256": "da0e716806f9c457950b71dc5e8a2d9637d05bbdb7e338f84aa1a6b4e9b63f14"
+    },
+    "nativeVariants": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovery-native-variants-v2-1791355389638849943/report.json",
+      "sha256": "dbfb81ef430dbf6b2f3193c199195182b6533d4de85fceb68ffaebcb0eb9ea7a"
+    },
+    "build": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/build-1791355033265613007/report.json",
+      "sha256": "978063ae4bc1df40ba5059fde839cf934f24ae9cdf31662f3d8f97083a4a7a5d"
+    },
+    "resourceRegressions": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/resource-regression-check-1791355033267391725/report.json",
+      "sha256": "8e09aeb57047531fb28b9e7a435a0387ea09a5bdcce52a718220c12758ab2386"
+    },
+    "scopedRegressions": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/detachment-regression-check-1791355445750281534/report.json",
+      "sha256": "ae442e9ffc19adfcab4d32d3b5e8f0e71c2cab5c19277b463c5ad4ecf70a46df"
+    }
+  },
+  "nativeRecoveryChecks": 129,
+  "freshJSContexts": 2,
+  "realmEpochs": 2,
+  "syntheticNativeRemainsActive": true,
+  "recoveryScenarios": 24,
+  "recoveryTraces": 36,
+  "recoveryStates": 498,
+  "recoverySamples": 200,
+  "unsafeActualJSVariantsDetected": 9,
+  "unsafeCompiledNativeVariantsDetected": 3,
+  "fullBuildCommands": 98,
+  "originalBuildCommands": 97,
+  "currentResourceRegressionSuites": 4,
+  "currentScopedRegressionSuites": 4,
+  "parentManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v111/component-manifest.json",
+  "parentManifestSHA256": "acfbca1b88420997d80756ecebd781b1d64cd529e277c78ce054e7c518ad08e4",
+  "heldFailedReports": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/native-outbox-recovery-check-v2-1791355109573744834/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovery-native-variants-1791355336169550911/report.json"
+  ],
+  "readonlyNativeRealmRecoveryImplemented": true,
+  "freshJSContextRecoveryQualified": true,
+  "actualWebKitContextReloadQualified": false,
+  "fullElmRecoveryQualified": false,
+  "typedHostRoutingActivated": false,
+  "webKitActivated": false,
+  "actualWaylandWindowAcceptance": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "GUI112 adds readonly recovery of the original controlled native realm after\nJavaScript context loss. It retains the Native binding, receiver epoch, issued,\ndelivered and independently confirmed prefixes, immutable original tickets and\nall purpose/physical/proof/Unknown obligations. It never replaces the Native\ngrant, creates an ordinal or invokes a control while inventorying recovery.\n\nControlReservations::recover returns at most one original unconfirmed ticket\nand native prefixes without mutation. The C begin API validates creator thread,\noriginal popup and sender epoch and starts at the native confirmed prefix. Each\nnext page requires the same captured issued/delivered/confirmed frontiers and\noriginal epoch, rejecting changed progress before inventory. Pages are bounded\nto16384 bytes with one original4096-byte ticket; no aggregate unbounded message\nor new recovery counter is used. In-flight dispatch and positions outside the\ncurrent confirmed-to-issued interval refuse. An exhausted issued frontier never\nwraps because its next increment is conditional on after<issued.\n\nThe new recovered-native-preview-control-outbox.js constructor checks complete,\ncontiguous, consistently bound pages and every original ticket before returning\nan object. It prepares original confirmed state and queues only native tickets\nabove it. Construction emits neither data nor confirmation; the host's next\nbounded poll retries the original oldest wire. Native delivered-but-unconfirmed\ntickets remain queued and repeat only their original receipt. Complete confirmed\nprefix can rehydrate without replaying data. Every transport confirmation remains\nseparate from application/Elm or physical settlement. A new JavaScript context\ncannot recover the missing Elm model or replay Unknown effects from this page\ninventory alone. The exact Native grant and native realm remain owned throughout.\n\nCurrent evidence:\n- qa/native-outbox-recovery-check-v3-1791355285169842681/report.json passes129\n  actual sanitizer-backed controlled C/Bootstrap/Native authenticated socket/\n  Broker/ReceiptDelivery and JS checks. Two isolated new JS VMs recover original\n  native prefixes/tickets; a native-issued pending neighbor survives lost context,\n  first native receipt and confirmation loss remain separate, two same-Active-\n  subject epochs strictly close on the unchanged Native grant. Inconsistent or\n  incomplete pages emit no data; original C refuses stale prefix and foreign\n  epoch. Peers and fixture exit normally. These are synthetic native applications\n  and JavaScript VM recreation, not actual Core/Wayland/WebKit context reload.\n- qa/recovered-pages-model-check-v3-1791355359626645528/report.json passes24\n  selected Quint scenarios/36 actual JS traces/498 state comparisons/200 bounded\n  samples. Frontiers, queue occupancy, ordered data/confirmation attempts and\n  operation outcomes are compared; constructor callbacks are separately observed\n  before the new object is installed. Native issuance is a trace fixture. The\n  lastKnown flag tracks whether this fresh JS context actually retained the last\n  delivered wire, distinct from native confirmation recovery. Nine executable\n  variants fail exact observations, including early constructor post, mixed\n  recovery prefix and wrong page position in addition to the original six.\n- Current98-command full host build retains every original97 plus recovered\n  outbox syntax. All four original resource/capture/ticket/FD regressions pass\n  against the changed current native bank/C source. All four current scoped-detachment\n  regressions also pass:original C77/FD60+64+51/cohort66/model21/33/715/five guard\n  variants, retaining normal exits and original physical/proof barriers.\n- qa/recovery-native-variants-v2-1791355389638849943/report.json compiles three\n  native variants; each fails its unchanged named actual C/JS witness:allowing\n  stale captured confirmed prefix, foreign epoch and changed recovered bytes.\n\nThree failed fixtures are retained: the two-ticket driver incorrectly attributed\nactual cancellation cleanup to confirmation; its fresh derivative checks the\nunchanged physical assertion before that independently invoked cancellation.\nThe first recovery model assumed a new context retained a past wire it had never\nseen; its fresh model tracks that distinct state and compares actual results.\nThe first unsafe native variant did not compile after removing a parameter use;\na fresh variant retains that use while weakening the corresponding guard. No\nproduct guard or original physical assertion/deadline was relaxed.\n\nExisting Elm policy/src/adapter and legacy host routes stay unchanged. Neither\nnew outbox is activated by popup.html. Actual WebKit callback/ref ownership,\ntyped incoming/outgoing host realm channels, full Elm recovery and controlled\nCore/capture/FD/Wayland-window integration remain required. Native130 current\nGUI110 legacy/core16/plugin19/AQ155 remains2518/278/full cleanup. GUI111 is public80\n620566103509a1469c6d75401f753dc32a4bcb3c; source\n d8a51e4141fe3d7d7eb033002fdf37594f23060c, receipt\n d029415cf596ad30892b1fe3e8ed851fa3bf89d7. Full release remains incomplete.\n"
+}

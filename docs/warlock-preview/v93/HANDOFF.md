@@ -156,3 +156,21 @@ See GUI111/NATIVE-OUTBOX-HANDOFF.md and component-report111.json for exact scope
 Next PUBLIC80 then fresh GUI112 native retained ticket/prefix snapshot and
 renderer reload recovery, followed by typed host realm/WebKit/Core activation.
 No actual new controlled/native WebKit or full release acceptance follows.
+
+GUI111 PUBLIC80 620566103509a1469c6d75401f753dc32a4bcb3c,2235 exact owned blobs;
+source d8a51e4141fe3d7d7eb033002fdf37594f23060c;
+receipt d029415cf596ad30892b1fe3e8ed851fa3bf89d7.
+GUI112 readonly original native realm recovery passes current C129/two recreated
+JS VMs/two same-Active-subject epochs/unchanged Native grant. Native-issued
+neighbor survives context loss. Complete consistent single-ticket pages before
+post, captured native frontiers/epoch/original-wire guards. Quint24/36 actualJS
+traces/498 states/200 samples/nine JS variants; three compiled native variants;
+full98 retains original97; all four current resource and four scoped detachment
+regressions pass. Three failed fixtures retained. The distinction between native
+confirmed prefix and a fresh context's actual retained last wire stays explicit.
+Actual WebKit context reload, retained Elm policy recovery, typed host realms,
+controlled Core/Wayland-window activation and all original full-release gates
+remain open. See GUI112/RECOVERY-HANDOFF.md/component-report112.json for scope.
+Next PUBLIC81 and fresh GUI113 trusted typed host realm wrappers/retained policy
+routing or actual WebKit router callback/ref lifetime. Native130 current GUI110
+legacy/core16/plugin19/AQ155 remains2518/278/full cleanup. No installed changes.

@@ -1,0 +1,9 @@
+AssertionError [ERR_ASSERTION]: Actual native recovery original bytes
++ actual - expected
+
++ '{"previewProtocol":3,"kind":"preview-commands","binding":{"lifetime":"18446744073709551615","session":"132094","frontend":"9007199254740993"},"receiverEpoch":"1","controlOrdinal":"1","entries":[{"identity":"binding:18446744073709551615:132094:9007199254740993","commands":[{"kind":"reconcile","binding":{"lifetime":"18446744073709551615","session":"132094","frontend":"9007199254740993"}}]}]} '
+- '{"previewProtocol":3,"kind":"preview-commands","binding":{"lifetime":"18446744073709551615","session":"132094","frontend":"9007199254740993"},"receiverEpoch":"1","controlOrdinal":"1","entries":[{"identity":"binding:18446744073709551615:132094:9007199254740993","commands":[{"kind":"reconcile","binding":{"lifetime":"18446744073709551615","session":"132094","frontend":"9007199254740993"}}]}]}'
+
+    at same (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovery-native-variants-v2-1791355389638849943/change-recovered-native-bytes/qa/native-outbox-recovery-roundtrip-v3.js:11:110)
+    at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovery-native-variants-v2-1791355389638849943/change-recovered-native-bytes/qa/native-outbox-recovery-roundtrip-v3.js:27:132
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)

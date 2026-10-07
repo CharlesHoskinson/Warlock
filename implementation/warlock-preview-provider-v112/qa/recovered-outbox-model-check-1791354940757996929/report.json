@@ -1,0 +1,674 @@
+{
+  "passed": true,
+  "inputs": {
+    "assets/recovered-native-preview-control-outbox.js": "4d5b641f57080b921789ed7c8f33f0c0303aa286bb444730d6054a53474f0297",
+    "qa/recovered-outbox-replay.js": "25b584ef0f9ec1d92e54e86a953016fef3b789183eb847c17595932314aef48d",
+    "qa/recovered-outbox-model-check.py": "acbc556d600edd3ba60edbc13d7855283f0b8d8a14799fd757e42a726c85ab51",
+    "spec/native_control_outbox.qnt": "a1c9750c6ba0a82ffbd21867395b86777026d0d1512b1571d66102f38a3ed73a",
+    "spec/native_control_outbox_tests.qnt": "ea535928047d73ab3d2f5ce4a667cb3351f038cc2f57417624f4846b565a5b96"
+  },
+  "commands": [
+    {
+      "name": "syntax",
+      "argv": [
+        "node",
+        "--check",
+        "assets/recovered-native-preview-control-outbox.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "native_control_outbox_tests.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "native_control_outbox_tests.qnt",
+        "--main=native_control_outbox_tests",
+        "--backend=typescript",
+        "--match=^(cannotInventNativeOrdinal|exactNativeTicketRetry|issuedNeighborCannotOvertake|backpressureRetainsNativeIssuance|droppedPostRetainsExactTicket|deliveredAdvisoryCannotDrain|changedIssuedBytesRefuse|nativeOrdinalGapRefuses|futureReceiptCannotRelease|oldRealmReceiptCannotRelease|exactHeadDeliveryAdvancesNeighbor|lostConfirmationRetainedAfterQueueEmpty|repeatedReceiptCannotAdvanceNeighbor|receiptMakesRoomForRetainedNativeTicket)$",
+        "--seed=1110061",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-outbox-model-check-1791354940757996929/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "samples",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "native_control_outbox.qnt",
+        "--main=native_control_outbox",
+        "--backend=typescript",
+        "--invariant=safety",
+        "--seed=1110062",
+        "--max-samples=200",
+        "--max-steps=30",
+        "--n-traces=12",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-outbox-model-check-1791354940757996929/sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-backpressureRetainsNativeIssuance-3.itf",
+      "argv": [
+        "node",
+        "qa/recovered-outbox-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-outbox-model-check-1791354940757996929/named-backpressureRetainsNativeIssuance-3.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-cannotInventNativeOrdinal-0.itf",
+      "argv": [
+        "node",
+        "qa/recovered-outbox-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-outbox-model-check-1791354940757996929/named-cannotInventNativeOrdinal-0.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-changedIssuedBytesRefuse-6.itf",
+      "argv": [
+        "node",
+        "qa/recovered-outbox-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-outbox-model-check-1791354940757996929/named-changedIssuedBytesRefuse-6.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-deliveredAdvisoryCannotDrain-5.itf",
+      "argv": [
+        "node",
+        "qa/recovered-outbox-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-outbox-model-check-1791354940757996929/named-deliveredAdvisoryCannotDrain-5.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-droppedPostRetainsExactTicket-4.itf",
+      "argv": [
+        "node",
+        "qa/recovered-outbox-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-outbox-model-check-1791354940757996929/named-droppedPostRetainsExactTicket-4.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-exactHeadDeliveryAdvancesNeighbor-10.itf",
+      "argv": [
+        "node",
+        "qa/recovered-outbox-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-outbox-model-check-1791354940757996929/named-exactHeadDeliveryAdvancesNeighbor-10.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-exactNativeTicketRetry-1.itf",
+      "argv": [
+        "node",
+        "qa/recovered-outbox-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-outbox-model-check-1791354940757996929/named-exactNativeTicketRetry-1.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-futureReceiptCannotRelease-8.itf",
+      "argv": [
+        "node",
+        "qa/recovered-outbox-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-outbox-model-check-1791354940757996929/named-futureReceiptCannotRelease-8.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-issuedNeighborCannotOvertake-2.itf",
+      "argv": [
+        "node",
+        "qa/recovered-outbox-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-outbox-model-check-1791354940757996929/named-issuedNeighborCannotOvertake-2.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-lostConfirmationRetainedAfterQueueEmpty-11.itf",
+      "argv": [
+        "node",
+        "qa/recovered-outbox-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-outbox-model-check-1791354940757996929/named-lostConfirmationRetainedAfterQueueEmpty-11.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-nativeOrdinalGapRefuses-7.itf",
+      "argv": [
+        "node",
+        "qa/recovered-outbox-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-outbox-model-check-1791354940757996929/named-nativeOrdinalGapRefuses-7.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-oldRealmReceiptCannotRelease-9.itf",
+      "argv": [
+        "node",
+        "qa/recovered-outbox-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-outbox-model-check-1791354940757996929/named-oldRealmReceiptCannotRelease-9.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-receiptMakesRoomForRetainedNativeTicket-13.itf",
+      "argv": [
+        "node",
+        "qa/recovered-outbox-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-outbox-model-check-1791354940757996929/named-receiptMakesRoomForRetainedNativeTicket-13.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-repeatedReceiptCannotAdvanceNeighbor-12.itf",
+      "argv": [
+        "node",
+        "qa/recovered-outbox-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-outbox-model-check-1791354940757996929/named-repeatedReceiptCannotAdvanceNeighbor-12.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-0.itf",
+      "argv": [
+        "node",
+        "qa/recovered-outbox-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-outbox-model-check-1791354940757996929/sample-0.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-1.itf",
+      "argv": [
+        "node",
+        "qa/recovered-outbox-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-outbox-model-check-1791354940757996929/sample-1.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-10.itf",
+      "argv": [
+        "node",
+        "qa/recovered-outbox-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-outbox-model-check-1791354940757996929/sample-10.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-11.itf",
+      "argv": [
+        "node",
+        "qa/recovered-outbox-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-outbox-model-check-1791354940757996929/sample-11.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-2.itf",
+      "argv": [
+        "node",
+        "qa/recovered-outbox-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-outbox-model-check-1791354940757996929/sample-2.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-3.itf",
+      "argv": [
+        "node",
+        "qa/recovered-outbox-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-outbox-model-check-1791354940757996929/sample-3.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-4.itf",
+      "argv": [
+        "node",
+        "qa/recovered-outbox-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-outbox-model-check-1791354940757996929/sample-4.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-5.itf",
+      "argv": [
+        "node",
+        "qa/recovered-outbox-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-outbox-model-check-1791354940757996929/sample-5.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-6.itf",
+      "argv": [
+        "node",
+        "qa/recovered-outbox-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-outbox-model-check-1791354940757996929/sample-6.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-7.itf",
+      "argv": [
+        "node",
+        "qa/recovered-outbox-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-outbox-model-check-1791354940757996929/sample-7.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-8.itf",
+      "argv": [
+        "node",
+        "qa/recovered-outbox-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-outbox-model-check-1791354940757996929/sample-8.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-9.itf",
+      "argv": [
+        "node",
+        "qa/recovered-outbox-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-outbox-model-check-1791354940757996929/sample-9.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "changed-issued-bytes-syntax",
+      "argv": [
+        "node",
+        "--check",
+        "assets/recovered-native-preview-control-outbox.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "advisory-drains-row-syntax",
+      "argv": [
+        "node",
+        "--check",
+        "assets/recovered-native-preview-control-outbox.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "future-receipt-syntax",
+      "argv": [
+        "node",
+        "--check",
+        "assets/recovered-native-preview-control-outbox.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "forget-dropped-post-syntax",
+      "argv": [
+        "node",
+        "--check",
+        "assets/recovered-native-preview-control-outbox.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "forget-dropped-confirmation-syntax",
+      "argv": [
+        "node",
+        "--check",
+        "assets/recovered-native-preview-control-outbox.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "ignore-capacity-syntax",
+      "argv": [
+        "node",
+        "--check",
+        "assets/recovered-native-preview-control-outbox.js"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "Actual JS retained native-ticket frontier/receipt prefix, queue occupancy, exact wire retry, ordered data and independent confirmation attempts/results against explicitly selected Quint traces. Native issuance is a synthetic trace input; actual controlled C issuer qualified separately. No WebKit/real compositor activation or effect/physical acceptance.",
+  "namedScenarios": 14,
+  "invariantSamples": 200,
+  "coupledTraces": [
+    {
+      "trace": "named-backpressureRetainsNativeIssuance-3.itf.json",
+      "statesCompared": 8
+    },
+    {
+      "trace": "named-cannotInventNativeOrdinal-0.itf.json",
+      "statesCompared": 3
+    },
+    {
+      "trace": "named-changedIssuedBytesRefuse-6.itf.json",
+      "statesCompared": 5
+    },
+    {
+      "trace": "named-deliveredAdvisoryCannotDrain-5.itf.json",
+      "statesCompared": 5
+    },
+    {
+      "trace": "named-droppedPostRetainsExactTicket-4.itf.json",
+      "statesCompared": 9
+    },
+    {
+      "trace": "named-exactHeadDeliveryAdvancesNeighbor-10.itf.json",
+      "statesCompared": 7
+    },
+    {
+      "trace": "named-exactNativeTicketRetry-1.itf.json",
+      "statesCompared": 5
+    },
+    {
+      "trace": "named-futureReceiptCannotRelease-8.itf.json",
+      "statesCompared": 5
+    },
+    {
+      "trace": "named-issuedNeighborCannotOvertake-2.itf.json",
+      "statesCompared": 6
+    },
+    {
+      "trace": "named-lostConfirmationRetainedAfterQueueEmpty-11.itf.json",
+      "statesCompared": 10
+    },
+    {
+      "trace": "named-nativeOrdinalGapRefuses-7.itf.json",
+      "statesCompared": 4
+    },
+    {
+      "trace": "named-oldRealmReceiptCannotRelease-9.itf.json",
+      "statesCompared": 6
+    },
+    {
+      "trace": "named-receiptMakesRoomForRetainedNativeTicket-13.itf.json",
+      "statesCompared": 10
+    },
+    {
+      "trace": "named-repeatedReceiptCannotAdvanceNeighbor-12.itf.json",
+      "statesCompared": 8
+    },
+    {
+      "trace": "sample-0.itf.json",
+      "statesCompared": 31
+    },
+    {
+      "trace": "sample-1.itf.json",
+      "statesCompared": 31
+    },
+    {
+      "trace": "sample-10.itf.json",
+      "statesCompared": 31
+    },
+    {
+      "trace": "sample-11.itf.json",
+      "statesCompared": 31
+    },
+    {
+      "trace": "sample-2.itf.json",
+      "statesCompared": 31
+    },
+    {
+      "trace": "sample-3.itf.json",
+      "statesCompared": 31
+    },
+    {
+      "trace": "sample-4.itf.json",
+      "statesCompared": 31
+    },
+    {
+      "trace": "sample-5.itf.json",
+      "statesCompared": 31
+    },
+    {
+      "trace": "sample-6.itf.json",
+      "statesCompared": 31
+    },
+    {
+      "trace": "sample-7.itf.json",
+      "statesCompared": 31
+    },
+    {
+      "trace": "sample-8.itf.json",
+      "statesCompared": 31
+    },
+    {
+      "trace": "sample-9.itf.json",
+      "statesCompared": 31
+    }
+  ],
+  "statesCompared": 463,
+  "unsafeActualJSVariantsDetected": 6,
+  "mutants": [
+    {
+      "name": "changed-issued-bytes",
+      "syntaxPassed": true,
+      "witness": "changedIssuedBytesRefuse",
+      "namedObservableMismatch": true
+    },
+    {
+      "name": "advisory-drains-row",
+      "syntaxPassed": true,
+      "witness": "deliveredAdvisoryCannotDrain",
+      "namedObservableMismatch": true
+    },
+    {
+      "name": "future-receipt",
+      "syntaxPassed": true,
+      "witness": "futureReceiptCannotRelease",
+      "namedObservableMismatch": true
+    },
+    {
+      "name": "forget-dropped-post",
+      "syntaxPassed": true,
+      "witness": "droppedPostRetainsExactTicket",
+      "namedObservableMismatch": true
+    },
+    {
+      "name": "forget-dropped-confirmation",
+      "syntaxPassed": true,
+      "witness": "lostConfirmationRetainedAfterQueueEmpty",
+      "namedObservableMismatch": true
+    },
+    {
+      "name": "ignore-capacity",
+      "syntaxPassed": true,
+      "witness": "backpressureRetainsNativeIssuance",
+      "namedObservableMismatch": true
+    }
+  ],
+  "artifacts": {
+    "syntax.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "syntax.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-cannotInventNativeOrdinal-0.itf.json": "7b94e85259785da10562d110e56b3c000a9861a3531b22be40ced281ccb43dbf",
+    "named-exactNativeTicketRetry-1.itf.json": "9e39e158a0037ffb2fc7a035a6c27fc9a882e811e435984c7742ba8ccf091c10",
+    "named-issuedNeighborCannotOvertake-2.itf.json": "2610d85d77e6a683c29bf67662eabce5ab94e6e954f04dbf4b025fd389f214b1",
+    "named-backpressureRetainsNativeIssuance-3.itf.json": "2a2dd58e9929ae37f21195434308f7dfff6aaff237f235a49599d77f0f155504",
+    "named-droppedPostRetainsExactTicket-4.itf.json": "0e4e87e1ae624d80ed414ed18e42d023440003f50f0e713d97c40e2ec028ab67",
+    "named-deliveredAdvisoryCannotDrain-5.itf.json": "9d2f6b8ae9f56d6b0ccb8a4934cce84d346d98a74ff33b5542f2169727601fcc",
+    "named-changedIssuedBytesRefuse-6.itf.json": "930458232a3c341156ab5729cc995744cbd7c289c31313be4d881a66e8983dfa",
+    "named-nativeOrdinalGapRefuses-7.itf.json": "8c1d5ac4c333d7dd94d66c61b13902b7f6adc2e5529a4dbb92051bf93c5139cd",
+    "named-futureReceiptCannotRelease-8.itf.json": "a4caba0099ec3f2988be82a73e5ba019ba99be620f787239b470ec43bde751bd",
+    "named-oldRealmReceiptCannotRelease-9.itf.json": "918e84aec94d2bf4cb4ee3eec609ee8da88e9fc878b2d6ebac489c3679350cf6",
+    "named-exactHeadDeliveryAdvancesNeighbor-10.itf.json": "58e7b51edf5b5c8e3771cf3644ee9d401f25a5aa95211c82843f4aea72785511",
+    "named-lostConfirmationRetainedAfterQueueEmpty-11.itf.json": "3ba4f5056c000e6d84189bc808edb223521199243227074612b26022e47c13a1",
+    "named-repeatedReceiptCannotAdvanceNeighbor-12.itf.json": "5f44f686dfd7ba7f0d19d87695c23453e8d5cc06d323f5d84fe22a266b0b312d",
+    "named-receiptMakesRoomForRetainedNativeTicket-13.itf.json": "27a922294eca9b86dbaf55f28094645fd2829b92ac86462f8754f37364902393",
+    "selected.stdout": "07244eaf1d832e2345bda00f41ce4c202844e8e1f2869f9688940a3918ec5296",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "fa411d3ab37e62bff6914d6449a1e8ee0b91311d18db052dcb73410be87cc9fa",
+    "sample-1.itf.json": "f1adcfb701f4335414e5d55dc52c9ce8b4e8cc12673bee647a74234c3ca7c2f9",
+    "sample-2.itf.json": "ad4e550fddf4465086de899b0f1af081629211be20bda33b738ca58d6de478a9",
+    "sample-3.itf.json": "780f6e97c04253c3a85f5d38a1fbe641665b6ccec46c2171131bf6bdf64269e7",
+    "sample-4.itf.json": "587076f340dadf11cb7500414181f18f1db86d9101124786c65b05b0e88f944b",
+    "sample-5.itf.json": "d1e13bcc48852e9b3defec2a6a68120950298111fec785ecfd198f30e6af05d0",
+    "sample-6.itf.json": "4058e1f6402939e9846892fa06fa06996bac99167dc3153e8c3d7721aa0219cf",
+    "sample-7.itf.json": "d056652d5b9c6ace75964ae963654d24bd986534f4f4cb448ebe7542671d1214",
+    "sample-8.itf.json": "b41b35153e10d3fc8eb657c88c1877d7ef253fae58bb1d115d32ea60ff30a618",
+    "sample-9.itf.json": "55aebcbdf97426a8fc454b04ca6b4e7d2070bc7b18fed555cf4a83449e78dfe3",
+    "sample-10.itf.json": "d2a6bf4ee6e23de65ca028216b523366c68655e6660178acd03e481790fd0646",
+    "sample-11.itf.json": "ddea243edfa07e4d6f5c06f518173a6087a86d576b33e71554ddbd627e6371ec",
+    "samples.stdout": "0bf20d07dd8a8d7007d0ac89be049516aa59139660db963abf3f60da6eae5fe6",
+    "samples.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-backpressureRetainsNativeIssuance-3.itf.stdout": "38d6d52baa7190a8b3c7cad9356bbc895bf9b22a154ec4246e5e8c27a6d586e0",
+    "replay-named-backpressureRetainsNativeIssuance-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-cannotInventNativeOrdinal-0.itf.stdout": "8a555b16b975966adc6906ce6f4bc35e2f072952059ca632ba8d9c5a2bd2e8c6",
+    "replay-named-cannotInventNativeOrdinal-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-changedIssuedBytesRefuse-6.itf.stdout": "f55c2a19975e4321f94d708901b9a0585b4763436a04df88af450129f7e36a74",
+    "replay-named-changedIssuedBytesRefuse-6.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-deliveredAdvisoryCannotDrain-5.itf.stdout": "f55c2a19975e4321f94d708901b9a0585b4763436a04df88af450129f7e36a74",
+    "replay-named-deliveredAdvisoryCannotDrain-5.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-droppedPostRetainsExactTicket-4.itf.stdout": "45494d8c800c6e9417dd9d408fcdcbb2bb2bc89db06dad8e268dc60b1e004de1",
+    "replay-named-droppedPostRetainsExactTicket-4.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-exactHeadDeliveryAdvancesNeighbor-10.itf.stdout": "a32abdbdea9b13dfeecdd313579bba3148bf39ad61e551f11e16626a634ea79c",
+    "replay-named-exactHeadDeliveryAdvancesNeighbor-10.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-exactNativeTicketRetry-1.itf.stdout": "f55c2a19975e4321f94d708901b9a0585b4763436a04df88af450129f7e36a74",
+    "replay-named-exactNativeTicketRetry-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-futureReceiptCannotRelease-8.itf.stdout": "f55c2a19975e4321f94d708901b9a0585b4763436a04df88af450129f7e36a74",
+    "replay-named-futureReceiptCannotRelease-8.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-issuedNeighborCannotOvertake-2.itf.stdout": "ffaef376b4d9de07309be98a75deb45fa2a6566e06022b29416c5d980d7f0f9f",
+    "replay-named-issuedNeighborCannotOvertake-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-lostConfirmationRetainedAfterQueueEmpty-11.itf.stdout": "384f4570ebf8858920bfd11d828b3dc22273e6d529693e7d21fe5dbdcf05d32f",
+    "replay-named-lostConfirmationRetainedAfterQueueEmpty-11.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-nativeOrdinalGapRefuses-7.itf.stdout": "7fa7bfce4421d7334fe8c7578acf769d4921e01bdfc769ef0eefa4fc12d0c8d8",
+    "replay-named-nativeOrdinalGapRefuses-7.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-oldRealmReceiptCannotRelease-9.itf.stdout": "ffaef376b4d9de07309be98a75deb45fa2a6566e06022b29416c5d980d7f0f9f",
+    "replay-named-oldRealmReceiptCannotRelease-9.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-receiptMakesRoomForRetainedNativeTicket-13.itf.stdout": "384f4570ebf8858920bfd11d828b3dc22273e6d529693e7d21fe5dbdcf05d32f",
+    "replay-named-receiptMakesRoomForRetainedNativeTicket-13.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-repeatedReceiptCannotAdvanceNeighbor-12.itf.stdout": "38d6d52baa7190a8b3c7cad9356bbc895bf9b22a154ec4246e5e8c27a6d586e0",
+    "replay-named-repeatedReceiptCannotAdvanceNeighbor-12.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-0.itf.stdout": "4ba6bbfeebdd2aba8591af329020fa056b3084e8fc94537a0f90424ed8cae5fe",
+    "replay-sample-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-1.itf.stdout": "4ba6bbfeebdd2aba8591af329020fa056b3084e8fc94537a0f90424ed8cae5fe",
+    "replay-sample-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-10.itf.stdout": "4ba6bbfeebdd2aba8591af329020fa056b3084e8fc94537a0f90424ed8cae5fe",
+    "replay-sample-10.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-11.itf.stdout": "4ba6bbfeebdd2aba8591af329020fa056b3084e8fc94537a0f90424ed8cae5fe",
+    "replay-sample-11.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-2.itf.stdout": "4ba6bbfeebdd2aba8591af329020fa056b3084e8fc94537a0f90424ed8cae5fe",
+    "replay-sample-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-3.itf.stdout": "4ba6bbfeebdd2aba8591af329020fa056b3084e8fc94537a0f90424ed8cae5fe",
+    "replay-sample-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-4.itf.stdout": "4ba6bbfeebdd2aba8591af329020fa056b3084e8fc94537a0f90424ed8cae5fe",
+    "replay-sample-4.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-5.itf.stdout": "4ba6bbfeebdd2aba8591af329020fa056b3084e8fc94537a0f90424ed8cae5fe",
+    "replay-sample-5.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-6.itf.stdout": "4ba6bbfeebdd2aba8591af329020fa056b3084e8fc94537a0f90424ed8cae5fe",
+    "replay-sample-6.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-7.itf.stdout": "4ba6bbfeebdd2aba8591af329020fa056b3084e8fc94537a0f90424ed8cae5fe",
+    "replay-sample-7.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-8.itf.stdout": "4ba6bbfeebdd2aba8591af329020fa056b3084e8fc94537a0f90424ed8cae5fe",
+    "replay-sample-8.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-9.itf.stdout": "4ba6bbfeebdd2aba8591af329020fa056b3084e8fc94537a0f90424ed8cae5fe",
+    "replay-sample-9.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "changed-issued-bytes-syntax.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "changed-issued-bytes-syntax.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "advisory-drains-row-syntax.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "advisory-drains-row-syntax.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "future-receipt-syntax.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "future-receipt-syntax.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "forget-dropped-post-syntax.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "forget-dropped-post-syntax.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "forget-dropped-confirmation-syntax.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "forget-dropped-confirmation-syntax.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ignore-capacity-syntax.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ignore-capacity-syntax.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "changed-issued-bytes/replay.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "changed-issued-bytes/replay.stderr": "c0733e1cdadcd22ca5a418fb4a73705a5191b0d9d7f83d3ee1745168bd779a34",
+    "advisory-drains-row/replay.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "advisory-drains-row/replay.stderr": "7b6e43e14640b44cd8d49604dd08a376dae3125c0f8b3f4e446a805e3a8c3429",
+    "future-receipt/replay.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "future-receipt/replay.stderr": "cbac433befc1ac468e8e7fd3e6d7ba6eb8bcdfa30de1ef9207cb59f999e019c8",
+    "forget-dropped-post/replay.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "forget-dropped-post/replay.stderr": "34ea155c86578f43943d649be104633d07a2240caf271d1a9bbede7e7eb21a91",
+    "forget-dropped-confirmation/replay.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "forget-dropped-confirmation/replay.stderr": "8a3614a053698cee2e443d90264729c8cb08cc27f28afc69dff5e43eaecea8f7",
+    "ignore-capacity/replay.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ignore-capacity/replay.stderr": "c42b30b56083f37750b04e32ef1648329b653b74f4cfdc40273682f995476ca0",
+    "ignore-capacity/assets/recovered-native-preview-control-outbox.js": "99789d1d7bf12baf1ad170df96f5ad6ad32b16129d5e91cf11a426a32d64583f",
+    "ignore-capacity/qa/recovered-outbox-replay.js": "25b584ef0f9ec1d92e54e86a953016fef3b789183eb847c17595932314aef48d",
+    "ignore-capacity/qa/recovered-outbox-model-check.py": "acbc556d600edd3ba60edbc13d7855283f0b8d8a14799fd757e42a726c85ab51",
+    "ignore-capacity/spec/native_control_outbox.qnt": "a1c9750c6ba0a82ffbd21867395b86777026d0d1512b1571d66102f38a3ed73a",
+    "ignore-capacity/spec/native_control_outbox_tests.qnt": "ea535928047d73ab3d2f5ce4a667cb3351f038cc2f57417624f4846b565a5b96",
+    "forget-dropped-confirmation/assets/recovered-native-preview-control-outbox.js": "3079029f5c1b984880c4286691f9d04a2bcfe7c47a1892e9c5850f7ab23d1068",
+    "forget-dropped-confirmation/qa/recovered-outbox-replay.js": "25b584ef0f9ec1d92e54e86a953016fef3b789183eb847c17595932314aef48d",
+    "forget-dropped-confirmation/qa/recovered-outbox-model-check.py": "acbc556d600edd3ba60edbc13d7855283f0b8d8a14799fd757e42a726c85ab51",
+    "forget-dropped-confirmation/spec/native_control_outbox.qnt": "a1c9750c6ba0a82ffbd21867395b86777026d0d1512b1571d66102f38a3ed73a",
+    "forget-dropped-confirmation/spec/native_control_outbox_tests.qnt": "ea535928047d73ab3d2f5ce4a667cb3351f038cc2f57417624f4846b565a5b96",
+    "forget-dropped-post/assets/recovered-native-preview-control-outbox.js": "e119153aeb48e4c6917e0e081658187bc5ab512205fbf20c9117b6a19b3d04ae",
+    "forget-dropped-post/qa/recovered-outbox-replay.js": "25b584ef0f9ec1d92e54e86a953016fef3b789183eb847c17595932314aef48d",
+    "forget-dropped-post/qa/recovered-outbox-model-check.py": "acbc556d600edd3ba60edbc13d7855283f0b8d8a14799fd757e42a726c85ab51",
+    "forget-dropped-post/spec/native_control_outbox.qnt": "a1c9750c6ba0a82ffbd21867395b86777026d0d1512b1571d66102f38a3ed73a",
+    "forget-dropped-post/spec/native_control_outbox_tests.qnt": "ea535928047d73ab3d2f5ce4a667cb3351f038cc2f57417624f4846b565a5b96",
+    "future-receipt/assets/recovered-native-preview-control-outbox.js": "1a2891b3dbc3432b53bf149e8d6644d8cc0da09043462337626c8028c20239c6",
+    "future-receipt/qa/recovered-outbox-replay.js": "25b584ef0f9ec1d92e54e86a953016fef3b789183eb847c17595932314aef48d",
+    "future-receipt/qa/recovered-outbox-model-check.py": "acbc556d600edd3ba60edbc13d7855283f0b8d8a14799fd757e42a726c85ab51",
+    "future-receipt/spec/native_control_outbox.qnt": "a1c9750c6ba0a82ffbd21867395b86777026d0d1512b1571d66102f38a3ed73a",
+    "future-receipt/spec/native_control_outbox_tests.qnt": "ea535928047d73ab3d2f5ce4a667cb3351f038cc2f57417624f4846b565a5b96",
+    "advisory-drains-row/assets/recovered-native-preview-control-outbox.js": "5c769ead33924edfa8c0015ccdbbac3bc879bcff7688f6bf1d794bd564fbad1c",
+    "advisory-drains-row/qa/recovered-outbox-replay.js": "25b584ef0f9ec1d92e54e86a953016fef3b789183eb847c17595932314aef48d",
+    "advisory-drains-row/qa/recovered-outbox-model-check.py": "acbc556d600edd3ba60edbc13d7855283f0b8d8a14799fd757e42a726c85ab51",
+    "advisory-drains-row/spec/native_control_outbox.qnt": "a1c9750c6ba0a82ffbd21867395b86777026d0d1512b1571d66102f38a3ed73a",
+    "advisory-drains-row/spec/native_control_outbox_tests.qnt": "ea535928047d73ab3d2f5ce4a667cb3351f038cc2f57417624f4846b565a5b96",
+    "changed-issued-bytes/assets/recovered-native-preview-control-outbox.js": "064879886d6ae37382dd3dca70783230dc9eb5a4781628773d202ed63019943f",
+    "changed-issued-bytes/qa/recovered-outbox-replay.js": "25b584ef0f9ec1d92e54e86a953016fef3b789183eb847c17595932314aef48d",
+    "changed-issued-bytes/qa/recovered-outbox-model-check.py": "acbc556d600edd3ba60edbc13d7855283f0b8d8a14799fd757e42a726c85ab51",
+    "changed-issued-bytes/spec/native_control_outbox.qnt": "a1c9750c6ba0a82ffbd21867395b86777026d0d1512b1571d66102f38a3ed73a",
+    "changed-issued-bytes/spec/native_control_outbox_tests.qnt": "ea535928047d73ab3d2f5ce4a667cb3351f038cc2f57417624f4846b565a5b96",
+    "inputs/assets/recovered-native-preview-control-outbox.js": "4d5b641f57080b921789ed7c8f33f0c0303aa286bb444730d6054a53474f0297",
+    "inputs/qa/recovered-outbox-replay.js": "25b584ef0f9ec1d92e54e86a953016fef3b789183eb847c17595932314aef48d",
+    "inputs/qa/recovered-outbox-model-check.py": "acbc556d600edd3ba60edbc13d7855283f0b8d8a14799fd757e42a726c85ab51",
+    "inputs/spec/native_control_outbox.qnt": "a1c9750c6ba0a82ffbd21867395b86777026d0d1512b1571d66102f38a3ed73a",
+    "inputs/spec/native_control_outbox_tests.qnt": "ea535928047d73ab3d2f5ce4a667cb3351f038cc2f57417624f4846b565a5b96"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "a321e4aa7e914f5cb727b62cd4f1e64c",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-07T06:32:20.470211+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/warlock-preview-provider-v112",
+  "nextWork": [
+    "PROGRESS own freshGUI112 from held111. Implement readonly bounded native ticket/prefix recovery and fresh JS context rehydration on original native realm. Preserve original Native binding/epoch/issued/delivered/confirmed/native purpose quota/physical/Unknown barriers; no new issuance or reset. Pages contain at most one original ticket and refuse stale prefix/foreign epoch; complete consistency before first post. GUI111 C93/protocol47/Quint14/26/463/six/full97 held; publication80 running. Native130 current110 legacy2518/278/full cleanup remains PUBLIC79. Actual WebKit/Core host integration/full release remain open; no installed changes."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/warlock-preview-provider-v111/component-manifest.json",
+      "sha256": "acfbca1b88420997d80756ecebd781b1d64cd529e277c78ce054e7c518ad08e4",
+      "size": 511993
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v112/ANCESTRY.json",
+      "sha256": "98477a571f6951418430dc692d0d985ad59707e0d84b86dd30523ecdf40f60d7",
+      "size": 774
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

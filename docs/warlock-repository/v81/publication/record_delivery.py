@@ -1,0 +1,10 @@
+import json,pathlib,resource,subprocess,sys
+sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
+require_qa_scope();assert resource.getrlimit(resource.RLIMIT_CORE)==(1,1)
+r=pathlib.Path('/home/hoskinson/omarchy-windows-parity');base=pathlib.Path(__file__).parent;d=json.loads((base/'delivery.json').read_text());assert d['pushCompleted'] and d['ownedFiles']>=8373
+v=json.loads(subprocess.check_output(['gh','repo','view','CharlesHoskinson/Warlock','--json','name,url,visibility'],text=True));assert v['visibility']=='PUBLIC';(base/'visibility.json').write_text(json.dumps(v,indent=2)+'\n')
+observed=subprocess.check_output(['gh','api','repos/CharlesHoskinson/Warlock/branches/feature%2Felm','--jq','.commit.sha'],text=True).strip();assert observed==d['publishedCommit']
+(base/'branch.json').write_text(json.dumps({'commit':observed,'verified':True},indent=2)+'\n')
+report=json.loads((r/'docs/warlock-preview/v93/component-report112.json').read_text())
+sys.path.insert(0,str(r/'implementation/elm-build-loop-v1'));import loop
+e=loop.write_checkpoint(r,'f6779148-8f5d-4bdf-8a0f-044184e486f2','implementation/warlock-preview-provider-v112',['PROGRESS PUBLIC81 '+d['publishedCommit']+' verified '+str(d['ownedFiles'])+' exact owned blobs. GUI112 inactive readonly native realm recovery C129/two recreated JS contexts/two Active-subject epochs/unchanged Native grant/model24/36 actualJS traces/498 states/200 samples/nine JS and three native variants/full98 retains97/current four resource and four scoped regressions. Three failures retained. Native130 current110 legacy2518/278/full cleanup remains bounded baseline. Next typed realm/retained Elm recovery and actual WebKit callback/context/Core activation. Original full release gates open; no installed changes.'],'progress',['docs/warlock-preview/v93/component-report112.json','implementation/warlock-preview-provider-v112/component-manifest.json','docs/warlock-repository/v81/publication/delivery.json']);print(e)

@@ -294,3 +294,15 @@ protocol/reentry controls,14 selected Quint/26 actual JS traces/463 compared
 states/200 bounded samples/six executable guard variants. Three failed fixture
 reports remain. The current legacy host does not load the new module. Renderer
 reload recovery, typed host activation and actual WebKit/Core remain open.
+
+- [x] Freeze CONTROL-025 readonly bounded original native ticket/prefix recovery
+      with current native guards, coupled model and scoped detachment regressions.
+- [ ] Integrate recovered transport with the retained Elm policy and typed host
+      realm channels, then qualify actual WebKit context loss/reload on Core.
+
+GUI112 recovery currently passes actual controlled C129/two recreated JS VMs/
+two same-Active-subject epochs;24 selected Quint/36 JS traces/498 states/200
+samples/nine executable JS variants and full98 retaining original97. All four
+original resource regressions pass on changed native bank/C source. All four current scoped detachment
+regressions and three compiled native recovery variants now pass.
+No actual WebKit context loss, Core/window acceptance or full release follows.

@@ -872,3 +872,34 @@ terminal-proof, processing, Unknown and original deadline barriers remain.
 - **WHEN** its renderer context reloads
 - **THEN** the host recovers those original tickets and prefix before resuming controls
 - **AND** an empty constructor does not establish recovery or permit replay of Unknown
+
+### Requirement: Readonly native realm recovery after renderer context loss
+
+The system SHALL implement EARS CONTROL-025. Recovery preserves the original
+native realm, purpose reservations, prefixes and physical/Unknown obligations.
+
+#### Scenario: Native retains an unconfirmed issued neighbor
+- **GIVEN** an original dispatched ticket and another native-issued pending ticket
+- **WHEN** the renderer context is lost before receipt observation or confirmation
+- **THEN** readonly recovery pages retain both original ticket bytes and native prefixes
+- **AND** a new context retries the oldest original packet before its neighbor
+- **AND** native issuance and the Native grant remain unchanged
+
+#### Scenario: Inventory changes while pages are collected
+- **GIVEN** captured issued, delivered and confirmed native frontiers
+- **WHEN** any captured frontier changes before the next page
+- **THEN** the native owner refuses that inconsistent page
+- **AND** inventory itself does not invoke an effect or change a reservation
+
+#### Scenario: Incomplete recovery cannot post or confirm
+- **GIVEN** incomplete, mixed, foreign, noncontiguous or misplaced recovery pages
+- **WHEN** a new renderer transport context validates that inventory
+- **THEN** construction refuses without a data or confirmation callback
+- **AND** the original native owner and obligations remain retained
+
+#### Scenario: Confirmed recovery preserves the distinction from a past wire
+- **GIVEN** a native confirmed prefix and no old JavaScript object
+- **WHEN** a new transport context recovers that original prefix
+- **THEN** it may retry the compact independent confirmation without replaying old data
+- **AND** it does not claim to have retained a past wire or recovered the Elm model
+- **AND** actual typed host and WebKit reload acceptance still requires separate evidence

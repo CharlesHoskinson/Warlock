@@ -396,3 +396,22 @@ comparisons/200 bounded samples/six executable guard variants. Three failed
 roundtrip fixtures remain. Typed host routes, renderer reload recovery and
 actual WebKit/Core activation remain open. The legacy host does not load this
 new module. See GUI111/NATIVE-OUTBOX-HANDOFF.md for exact evidence scope.
+
+EARS CONTROL-025: When a controlled renderer loses its JavaScript context, the
+native owner SHALL retain the original realm and expose readonly bounded pages
+of its independently confirmed, delivered and issued prefixes and exact native
+tickets. Each page SHALL contain at most one original ticket and16384 bytes.
+Recovery SHALL refuse foreign sender epochs, in-flight dispatch, invalid page
+positions or changed captured prefixes before modifying any transport, purpose
+or physical ownership. A new transport context SHALL validate complete,
+contiguous, consistently bound pages before emitting data or confirmation. Its
+first bounded host poll SHALL retry only the oldest original unconfirmed native
+ticket. Recovery SHALL NOT issue an ordinal, replace a Native grant, refresh an
+original deadline, settle an effect from delivery or replay Unknown. Recovering
+a confirmed prefix SHALL remain distinct from having retained its past wire,
+recovering the Elm policy model and qualifying an actual WebKit context reload.
+
+CONTROL-025 code is implemented in inactive GUI112; current C129/JS recovery
+and model24/36/498/200 samples/nine executable JS variants/full98/original four
+resource regressions pass. Three compiled native guard variants and all four
+current scoped-detachment regressions also pass. Actual typed host/WebKit/Core activation remains open.

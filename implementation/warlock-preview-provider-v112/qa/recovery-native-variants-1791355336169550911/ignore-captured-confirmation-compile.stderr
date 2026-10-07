@@ -1,0 +1,5 @@
+native/imported-clients.cpp: In function ‘gboolean warlock_imported_clients_control_recovery_next(WarlockImportedClients*, gpointer, guint64, guint64, guint64, guint64, guint64, char**, GError**)’:
+native/imported-clients.cpp:193:175: error: unused parameter ‘confirmed’ [-Werror=unused-parameter]
+  193 | extern "C" gboolean warlock_imported_clients_control_recovery_next(WarlockImportedClients* owner,gpointer popup,guint64 sender_epoch,guint64 issued,guint64 delivered,guint64 confirmed,guint64 after,char** page,GError** error){
+      |                                                                                                                                                                       ~~~~~~~~^~~~~~~~~
+cc1plus: all warnings being treated as errors

@@ -1,0 +1,489 @@
+{
+  "passed": false,
+  "inputs": {
+    "assets/recovered-native-preview-control-outbox.js": "4d5b641f57080b921789ed7c8f33f0c0303aa286bb444730d6054a53474f0297",
+    "qa/recovered-pages-replay.js": "2564c5e859347827e295e550614d64a73350fb38961e9b43c295cc82e1e1c633",
+    "qa/recovered-pages-model-check.py": "464ecb7adf1e3a6c19e579b6256322a4da90bc18ea6f0945d762da8df2a16219",
+    "spec/recovered_control_pages.qnt": "a9ba69b873f5b7905800eec7ed278e6d4ec1f502049c7c73ead72edd67824d06",
+    "spec/recovered_control_pages_tests.qnt": "280b16bd0231aa1ee82abd8d4aae79609e1843bc5fcc5ff075c814136bc36289"
+  },
+  "commands": [
+    {
+      "name": "syntax",
+      "argv": [
+        "node",
+        "--check",
+        "assets/recovered-native-preview-control-outbox.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "recovered_control_pages_tests.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "recovered_control_pages_tests.qnt",
+        "--main=recovered_control_pages_tests",
+        "--backend=typescript",
+        "--match=^(cannotInventNativeOrdinal|exactNativeTicketRetry|issuedNeighborCannotOvertake|backpressureRetainsNativeIssuance|droppedPostRetainsExactTicket|deliveredAdvisoryCannotDrain|changedIssuedBytesRefuse|nativeOrdinalGapRefuses|futureReceiptCannotRelease|oldRealmReceiptCannotRelease|exactHeadDeliveryAdvancesNeighbor|lostConfirmationRetainedAfterQueueEmpty|repeatedReceiptCannotAdvanceNeighbor|receiptMakesRoomForRetainedNativeTicket|coldRecoveryDoesNotPost|warmRecoveryRetainsNativePrefix|emptyRecoveryRetainsConfirmation|incompleteRecoveryDoesNotPost|mixedRecoveryPrefixDoesNotPost|wrongRecoveryPositionDoesNotPost|recoveryTicketGapDoesNotPost|foreignRecoveryEpochDoesNotPost|recoveredNeighborCannotOvertake|recoveredReceiptAdvancesOnlyHead)$",
+        "--seed=1120061",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "samples",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "recovered_control_pages.qnt",
+        "--main=recovered_control_pages",
+        "--backend=typescript",
+        "--invariant=safety",
+        "--seed=1120062",
+        "--max-samples=200",
+        "--max-steps=30",
+        "--n-traces=12",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-backpressureRetainsNativeIssuance-3.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/named-backpressureRetainsNativeIssuance-3.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-cannotInventNativeOrdinal-0.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/named-cannotInventNativeOrdinal-0.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-changedIssuedBytesRefuse-6.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/named-changedIssuedBytesRefuse-6.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-coldRecoveryDoesNotPost-14.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/named-coldRecoveryDoesNotPost-14.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-deliveredAdvisoryCannotDrain-5.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/named-deliveredAdvisoryCannotDrain-5.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-droppedPostRetainsExactTicket-4.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/named-droppedPostRetainsExactTicket-4.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-emptyRecoveryRetainsConfirmation-16.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/named-emptyRecoveryRetainsConfirmation-16.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-exactHeadDeliveryAdvancesNeighbor-10.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/named-exactHeadDeliveryAdvancesNeighbor-10.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-exactNativeTicketRetry-1.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/named-exactNativeTicketRetry-1.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-foreignRecoveryEpochDoesNotPost-21.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/named-foreignRecoveryEpochDoesNotPost-21.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-futureReceiptCannotRelease-8.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/named-futureReceiptCannotRelease-8.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-incompleteRecoveryDoesNotPost-17.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/named-incompleteRecoveryDoesNotPost-17.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-issuedNeighborCannotOvertake-2.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/named-issuedNeighborCannotOvertake-2.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-lostConfirmationRetainedAfterQueueEmpty-11.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/named-lostConfirmationRetainedAfterQueueEmpty-11.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-mixedRecoveryPrefixDoesNotPost-18.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/named-mixedRecoveryPrefixDoesNotPost-18.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-nativeOrdinalGapRefuses-7.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/named-nativeOrdinalGapRefuses-7.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-oldRealmReceiptCannotRelease-9.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/named-oldRealmReceiptCannotRelease-9.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-receiptMakesRoomForRetainedNativeTicket-13.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/named-receiptMakesRoomForRetainedNativeTicket-13.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-recoveredNeighborCannotOvertake-22.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/named-recoveredNeighborCannotOvertake-22.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-recoveredReceiptAdvancesOnlyHead-23.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/named-recoveredReceiptAdvancesOnlyHead-23.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-recoveryTicketGapDoesNotPost-20.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/named-recoveryTicketGapDoesNotPost-20.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-repeatedReceiptCannotAdvanceNeighbor-12.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/named-repeatedReceiptCannotAdvanceNeighbor-12.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-warmRecoveryRetainsNativePrefix-15.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/named-warmRecoveryRetainsNativePrefix-15.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-named-wrongRecoveryPositionDoesNotPost-19.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/named-wrongRecoveryPositionDoesNotPost-19.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-0.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/sample-0.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-1.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/sample-1.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-10.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/sample-10.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-11.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/sample-11.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-2.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/sample-2.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-3.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/sample-3.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-sample-4.itf",
+      "argv": [
+        "node",
+        "qa/recovered-pages-replay.js",
+        "assets/recovered-native-preview-control-outbox.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/sample-4.itf.json"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "Actual JS retained native-ticket frontier/receipt prefix, queue occupancy, exact wire retry, ordered data and independent confirmation attempts/results against explicitly selected Quint traces. Native issuance is a synthetic trace input; actual controlled C issuer qualified separately. No WebKit/real compositor activation or effect/physical acceptance.",
+  "error": "AssertionError(\"node:internal/assert/utils:146\\n  throw error;\\n  ^\\n\\nAssertionError [ERR_ASSERTION]: Independent retained confirmation attempts\\n+ actual - expected\\n\\n+ []\\n- [\\n-   2n\\n- ]\\n\\n    at Object.<anonymous> (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v112/qa/recovered-pages-model-check-1791355206867016667/inputs/qa/recovered-pages-replay.js:47:383)\\n    at Module._compile (node:internal/modules/cjs/loader:1956:14)\\n    at Object..js (node:internal/modules/cjs/loader:2096:10)\\n    at Module.load (node:internal/modules/cjs/loader:1678:32)\\n    at Module._load (node:internal/modules/cjs/loader:1470:12)\\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\\n    at node:internal/main/run_main_module:33:47 {\\n  generatedMessage: false,\\n  code: 'ERR_ASSERTION',\\n  actual: [],\\n  expected: [ 2n ],\\n  operator: 'deepStrictEqual',\\n  diff: 'simple'\\n}\\n\\nNode.js v26.10.0\\n\")",
+  "artifacts": {
+    "syntax.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "syntax.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-cannotInventNativeOrdinal-0.itf.json": "d900afee69ac3258d74214ccb70444317dff75b3be90882fd4f7810879bf35aa",
+    "named-exactNativeTicketRetry-1.itf.json": "49959edac97beeb5609f56b6c38bfeb234e3b405cfd04629cf6370c8ecfc2500",
+    "named-issuedNeighborCannotOvertake-2.itf.json": "b9a2e066de433ebb77ca2d6bc110f8dc52faa283391e3cb051f1c6eaef7d7e0b",
+    "named-backpressureRetainsNativeIssuance-3.itf.json": "506f0599dd9c3c2803da30a172b69211ce4ded43f2591567c5a4d7d02adf21b2",
+    "named-droppedPostRetainsExactTicket-4.itf.json": "7485099d89806a32162cd6c0a576bd873b73d9fa8aee10868a7d47eb8ec9e8c1",
+    "named-deliveredAdvisoryCannotDrain-5.itf.json": "46cac7e5f38502f2e726d9d9d37827b94b4c7d81a6449e3a7a1b2ea6f06be970",
+    "named-changedIssuedBytesRefuse-6.itf.json": "5ef5cc5cc7535ef323595bfd93ff77eafd659c287d370e8b0e39a70046899262",
+    "named-nativeOrdinalGapRefuses-7.itf.json": "3d916da5974914b54525f18e79950af1d477a3492ece378f465bdeaa32cd203f",
+    "named-futureReceiptCannotRelease-8.itf.json": "7a363c24f1e78c5d4edadb3cad256764a791a926edf8c28c1e478ae748763f63",
+    "named-oldRealmReceiptCannotRelease-9.itf.json": "929e0d978b4fe6802f2272fddc7d8e90cf186e586f5904fff036c476387dd0d9",
+    "named-exactHeadDeliveryAdvancesNeighbor-10.itf.json": "778f6412b04a2777b1f6928c75f2cbbae39ac2b19dfa7d684fed144741218209",
+    "named-lostConfirmationRetainedAfterQueueEmpty-11.itf.json": "d58a674a03859b56d2d5ffafbf778024ce5168c8fd8dcc587c62ab5aaf8b7b2b",
+    "named-repeatedReceiptCannotAdvanceNeighbor-12.itf.json": "dc1ebec5b22f8d04a8ffd6a1f34b34e706fa79faf25f0bd2c6689a3a0109172d",
+    "named-receiptMakesRoomForRetainedNativeTicket-13.itf.json": "8176c07efeffcf04358d0ccbf457af71ad2177b8ea3bd909711fd7ca4daf73cb",
+    "named-coldRecoveryDoesNotPost-14.itf.json": "3ec17337676cab19f503ccb21cfc5d6451a68ce32b1c434f048a708426a97ec3",
+    "named-warmRecoveryRetainsNativePrefix-15.itf.json": "28d87c32c7c8dde3a6821a33ffb4ee2dcc36e0454c75feb9cf0058fdfb4a90c7",
+    "named-emptyRecoveryRetainsConfirmation-16.itf.json": "8c485095772896da8e475900c8ec36c307a519d6b510bc0c76467c097b23d1f3",
+    "named-incompleteRecoveryDoesNotPost-17.itf.json": "a7e5393d06e37b9d9d73adc1332eb81bcce8e4ddebb2984a3790c50b332873a0",
+    "named-mixedRecoveryPrefixDoesNotPost-18.itf.json": "e2cf6417e830d9892555642f2b21996595ff5ab87d3cfc05e84b1aa2cc829f0c",
+    "named-wrongRecoveryPositionDoesNotPost-19.itf.json": "3dfc7b62a44b292e9352ef35981324e09aaa8d992dc412b633dd37d1dcb47200",
+    "named-recoveryTicketGapDoesNotPost-20.itf.json": "3666293ac536b69f07f2b1b592b3444773df3d8cdbc5d40401bdefcb986e639f",
+    "named-foreignRecoveryEpochDoesNotPost-21.itf.json": "e12e2e3c6fde5256866dbfd84bdee8687d25086dad5e06ac3c9020c4f6286988",
+    "named-recoveredNeighborCannotOvertake-22.itf.json": "6cdd206dfda74d6061a870f4ca41e6f93680e533bfaa9e0ffc260246a2305bd8",
+    "named-recoveredReceiptAdvancesOnlyHead-23.itf.json": "41ea66adc93ecabd1273c7f6c83d1b2ebdc596d502b19a8a51a8a0084e6c560d",
+    "selected.stdout": "eed322c18b907f7accf12214e42d3e146a2cacea23eacc92218f371e832f4947",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "4940aba059fad5d0f06e64d56529b95cabc58e1ffce59e13d3ecfb6b6b910074",
+    "sample-1.itf.json": "163cf2e7936354aca725ef773d3fadb98fa6286faf2953b68e9bf81f6f65a5e5",
+    "sample-2.itf.json": "a1c56a7c67f5e4c0c86ff59ec3eb96b2e1f53514d800e2d182431f7d2ac847f3",
+    "sample-3.itf.json": "f7f7a0b2a0d8a55a790406ddccda8281d7ea5516275bc3de8c3c57e2b4afc193",
+    "sample-4.itf.json": "2b4347792546513f3217173208a20f4080e7889ea7e40525a6cb009ac250fe66",
+    "sample-5.itf.json": "d512dc75077b5017cb71f22a5b0197a9081b4d0843bfb30c6d59ae3f5a125a89",
+    "sample-6.itf.json": "9b93f53be00e6c9d35cd6bf4073cedcff288aa0213c3208f40c0c549fa6e8ce7",
+    "sample-7.itf.json": "4c1b8ef8e8561bf7b8fc9736bcfa28013a1416e032f5ce92143bb35c7d166ed5",
+    "sample-8.itf.json": "47a7dd752c164f5ead1b5f3568d6bb63deb02701a52018b8e4a7ed559b74ecce",
+    "sample-9.itf.json": "06767addc68f6de6a8963c109d2064bd66255e15ff515e2b928153fcff8d4107",
+    "sample-10.itf.json": "25606d6516cc77e5e09e63c17ad34919500a2be75972525e53bd62a562692dc2",
+    "sample-11.itf.json": "e59273108dca32a387175266ec6d536e29c8a06df9fdc5185fef79a84183eb17",
+    "samples.stdout": "9f90f5d03c55641b615767daf8f2ee6f1581cb817abf6e2e3593bac68234b011",
+    "samples.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-backpressureRetainsNativeIssuance-3.itf.stdout": "38d6d52baa7190a8b3c7cad9356bbc895bf9b22a154ec4246e5e8c27a6d586e0",
+    "replay-named-backpressureRetainsNativeIssuance-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-cannotInventNativeOrdinal-0.itf.stdout": "8a555b16b975966adc6906ce6f4bc35e2f072952059ca632ba8d9c5a2bd2e8c6",
+    "replay-named-cannotInventNativeOrdinal-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-changedIssuedBytesRefuse-6.itf.stdout": "f55c2a19975e4321f94d708901b9a0585b4763436a04df88af450129f7e36a74",
+    "replay-named-changedIssuedBytesRefuse-6.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-coldRecoveryDoesNotPost-14.itf.stdout": "8a555b16b975966adc6906ce6f4bc35e2f072952059ca632ba8d9c5a2bd2e8c6",
+    "replay-named-coldRecoveryDoesNotPost-14.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-deliveredAdvisoryCannotDrain-5.itf.stdout": "f55c2a19975e4321f94d708901b9a0585b4763436a04df88af450129f7e36a74",
+    "replay-named-deliveredAdvisoryCannotDrain-5.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-droppedPostRetainsExactTicket-4.itf.stdout": "45494d8c800c6e9417dd9d408fcdcbb2bb2bc89db06dad8e268dc60b1e004de1",
+    "replay-named-droppedPostRetainsExactTicket-4.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-emptyRecoveryRetainsConfirmation-16.itf.stdout": "7fa7bfce4421d7334fe8c7578acf769d4921e01bdfc769ef0eefa4fc12d0c8d8",
+    "replay-named-emptyRecoveryRetainsConfirmation-16.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-exactHeadDeliveryAdvancesNeighbor-10.itf.stdout": "a32abdbdea9b13dfeecdd313579bba3148bf39ad61e551f11e16626a634ea79c",
+    "replay-named-exactHeadDeliveryAdvancesNeighbor-10.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-exactNativeTicketRetry-1.itf.stdout": "f55c2a19975e4321f94d708901b9a0585b4763436a04df88af450129f7e36a74",
+    "replay-named-exactNativeTicketRetry-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-foreignRecoveryEpochDoesNotPost-21.itf.stdout": "8a555b16b975966adc6906ce6f4bc35e2f072952059ca632ba8d9c5a2bd2e8c6",
+    "replay-named-foreignRecoveryEpochDoesNotPost-21.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-futureReceiptCannotRelease-8.itf.stdout": "f55c2a19975e4321f94d708901b9a0585b4763436a04df88af450129f7e36a74",
+    "replay-named-futureReceiptCannotRelease-8.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-incompleteRecoveryDoesNotPost-17.itf.stdout": "8a555b16b975966adc6906ce6f4bc35e2f072952059ca632ba8d9c5a2bd2e8c6",
+    "replay-named-incompleteRecoveryDoesNotPost-17.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-issuedNeighborCannotOvertake-2.itf.stdout": "ffaef376b4d9de07309be98a75deb45fa2a6566e06022b29416c5d980d7f0f9f",
+    "replay-named-issuedNeighborCannotOvertake-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-lostConfirmationRetainedAfterQueueEmpty-11.itf.stdout": "384f4570ebf8858920bfd11d828b3dc22273e6d529693e7d21fe5dbdcf05d32f",
+    "replay-named-lostConfirmationRetainedAfterQueueEmpty-11.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-mixedRecoveryPrefixDoesNotPost-18.itf.stdout": "8a555b16b975966adc6906ce6f4bc35e2f072952059ca632ba8d9c5a2bd2e8c6",
+    "replay-named-mixedRecoveryPrefixDoesNotPost-18.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-nativeOrdinalGapRefuses-7.itf.stdout": "7fa7bfce4421d7334fe8c7578acf769d4921e01bdfc769ef0eefa4fc12d0c8d8",
+    "replay-named-nativeOrdinalGapRefuses-7.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-oldRealmReceiptCannotRelease-9.itf.stdout": "ffaef376b4d9de07309be98a75deb45fa2a6566e06022b29416c5d980d7f0f9f",
+    "replay-named-oldRealmReceiptCannotRelease-9.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-receiptMakesRoomForRetainedNativeTicket-13.itf.stdout": "384f4570ebf8858920bfd11d828b3dc22273e6d529693e7d21fe5dbdcf05d32f",
+    "replay-named-receiptMakesRoomForRetainedNativeTicket-13.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-recoveredNeighborCannotOvertake-22.itf.stdout": "7fa7bfce4421d7334fe8c7578acf769d4921e01bdfc769ef0eefa4fc12d0c8d8",
+    "replay-named-recoveredNeighborCannotOvertake-22.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-recoveredReceiptAdvancesOnlyHead-23.itf.stdout": "f55c2a19975e4321f94d708901b9a0585b4763436a04df88af450129f7e36a74",
+    "replay-named-recoveredReceiptAdvancesOnlyHead-23.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-recoveryTicketGapDoesNotPost-20.itf.stdout": "8a555b16b975966adc6906ce6f4bc35e2f072952059ca632ba8d9c5a2bd2e8c6",
+    "replay-named-recoveryTicketGapDoesNotPost-20.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-repeatedReceiptCannotAdvanceNeighbor-12.itf.stdout": "38d6d52baa7190a8b3c7cad9356bbc895bf9b22a154ec4246e5e8c27a6d586e0",
+    "replay-named-repeatedReceiptCannotAdvanceNeighbor-12.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-warmRecoveryRetainsNativePrefix-15.itf.stdout": "7fa7bfce4421d7334fe8c7578acf769d4921e01bdfc769ef0eefa4fc12d0c8d8",
+    "replay-named-warmRecoveryRetainsNativePrefix-15.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-named-wrongRecoveryPositionDoesNotPost-19.itf.stdout": "8a555b16b975966adc6906ce6f4bc35e2f072952059ca632ba8d9c5a2bd2e8c6",
+    "replay-named-wrongRecoveryPositionDoesNotPost-19.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-0.itf.stdout": "4ba6bbfeebdd2aba8591af329020fa056b3084e8fc94537a0f90424ed8cae5fe",
+    "replay-sample-0.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-1.itf.stdout": "4ba6bbfeebdd2aba8591af329020fa056b3084e8fc94537a0f90424ed8cae5fe",
+    "replay-sample-1.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-10.itf.stdout": "4ba6bbfeebdd2aba8591af329020fa056b3084e8fc94537a0f90424ed8cae5fe",
+    "replay-sample-10.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-11.itf.stdout": "4ba6bbfeebdd2aba8591af329020fa056b3084e8fc94537a0f90424ed8cae5fe",
+    "replay-sample-11.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-2.itf.stdout": "4ba6bbfeebdd2aba8591af329020fa056b3084e8fc94537a0f90424ed8cae5fe",
+    "replay-sample-2.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-3.itf.stdout": "4ba6bbfeebdd2aba8591af329020fa056b3084e8fc94537a0f90424ed8cae5fe",
+    "replay-sample-3.itf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-4.itf.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-sample-4.itf.stderr": "5176dceae0f07994e7e4c47f577f89a908929acea275287e206ceacb14950108",
+    "inputs/assets/recovered-native-preview-control-outbox.js": "4d5b641f57080b921789ed7c8f33f0c0303aa286bb444730d6054a53474f0297",
+    "inputs/qa/recovered-pages-replay.js": "2564c5e859347827e295e550614d64a73350fb38961e9b43c295cc82e1e1c633",
+    "inputs/qa/recovered-pages-model-check.py": "464ecb7adf1e3a6c19e579b6256322a4da90bc18ea6f0945d762da8df2a16219",
+    "inputs/spec/recovered_control_pages.qnt": "a9ba69b873f5b7905800eec7ed278e6d4ec1f502049c7c73ead72edd67824d06",
+    "inputs/spec/recovered_control_pages_tests.qnt": "280b16bd0231aa1ee82abd8d4aae79609e1843bc5fcc5ff075c814136bc36289"
+  }
+}
