@@ -971,3 +971,38 @@ controls are refused by source; actual uncertain recovery, whole-host restart/
 window-command journal/durable Unknown/all delivery-error or process schedules
 remain open. No native settlement from process death/reset/replay; physical/
 hardware/pressure/full S09/release remain open.
+
+## CONTROL-048: Window-command receipt loss across explicit whole-host restart
+
+WHEN the actual native window effect commits but its original broker is
+interrupted before durable settlement and frontend delivery, the host SHALL
+retain the exact pending admission and show Unknown. WHEN the user explicitly
+selects the native Restart control after renderer failure, the sealed supervisor
+SHALL replace only the shell host, with a fresh binding on the same compositor
+lifetime. The replacement SHALL receive the exact original record normalized
+to Unknown under its fresh binding, retain Unknown without automatic replay, and obtain a coherent
+current scene before a new explicit command. The new command SHALL use current
+native state and advance request/generation identities. Application identity,
+geometry, actual pixels, keyboard recipients, original deadlines and verified
+cohort cleanup SHALL remain independently observed.
+
+WHEN a native retirement proof and accepted post-proof reads release the old
+reservation, the ledger SHALL preserve the exact historical Unknown and its
+original identity. Releasing capacity SHALL NOT certify an effect outcome;
+a newer explicit command SHALL NOT rewrite that historical record.
+
+This main window-command route is a prerequisite. It does not establish the
+combined controlled-preview native drain plus durable command recovery route,
+uncertain preview retirement, original restore timing, or full release acceptance.
+
+Bounded CONTROL-048: Native198 restore/lost63 controls/19 normal short-lived
+helpers,199 minimize/lost61/18,200 restore/before-write63/19 and201 minimize/
+before-write61/18 pass on current GUI143/core16/plugin19/AQ155. Actual keyed
+Pending admission, independent native/application pixels/keyboard, broker fault,
+Unknown, renderer fault, real native GTK Restart/exit3/fresh same-lifetime binding,
+no replay/coherent current scene/advanced explicit command and immutable historical
+Unknown with real native retirement/post-proof read evidence are observed.
+Checked fixture/supervisor/helper exits and empty owned shell scope/private cleanup
+pass; intentional killed broker/renderers and host3/1 remain explicit negative
+outcomes. Original119 build/source/ABI reverified; failed195/196/197 retained.
+Combined controlled-preview restart and broader native/release gates remain open.

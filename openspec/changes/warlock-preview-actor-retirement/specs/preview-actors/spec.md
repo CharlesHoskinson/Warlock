@@ -1608,3 +1608,37 @@ prevent normal retirement/restart; process disappearance SHALL NOT infer settlem
 #### Scenario: Uncertain native duties at shared process failure
 - WHEN original native custody is uncertain at renderer termination
 - THEN strict retirement and restart remain refused and Unknown is retained without automatic replay
+
+### Requirement: Explicit whole-host restart preserves uncertain window commands
+The host SHALL retain original durable window-command admission and Unknown
+when a committed native effect loses its settlement receipt. An explicit native
+Restart SHALL replace only the shell through its sealed supervisor. A fresh
+binding SHALL carry the original pending record without automatic resubmission;
+only a coherent current scene and a new explicit intent may admit another effect.
+
+#### Scenario: Actual restore commits before its broker receipt is lost
+- GIVEN a real pointer-driven committed minimize and a subsequent real restore
+- WHEN the broker stops after native restore commit and before settlement/delivery
+- THEN actual application pixels and keyboard focus show the restored window
+- AND original exact keyed durable admission remains Pending while the GUI shows Unknown
+- AND original deadlines and compositor/application identities remain unchanged
+
+#### Scenario: Native Restart retains the original unknown intent
+- GIVEN renderer failure with that original pending window admission
+- WHEN the user selects the actual native Restart control
+- THEN the original host exits with explicit restart code and the sealed supervisor starts a fresh host
+- AND the same compositor lifetime and application incarnations persist
+- AND the new binding carries the exact original record normalized to Unknown with no automatic replay
+- AND a coherent scene precedes a new pointer command with advanced request/generation and current native state
+- AND verified shell-cohort cleanup and independently waited helper exits remain required
+
+#### Scenario: Reservation retirement retains historical outcome uncertainty
+- WHEN a native binding-retirement proof and accepted post-proof reads release the original reservation
+- THEN the ledger durably retains that original Unknown record and its retirement evidence
+- AND capacity release does not certify an effect outcome or authorize replay
+- AND a newer explicit command cannot rewrite the original historical Unknown
+
+#### Scenario: Controlled preview recovery needs separate combined qualification
+- GIVEN the main window-command restart scenario passes without an active controlled preview realm
+- THEN combined preview retirement and window-command recovery remains unqualified
+- AND no evidence from process disappearance substitutes for original native preview settlement

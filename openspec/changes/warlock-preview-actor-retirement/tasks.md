@@ -568,3 +568,20 @@ activation and all original full release gates remain open.
 - [ ] Implement/qualify whole-host restart with original window-command journal,
   pending outcomes and durable Unknown preserved; known preview drain before GTK
   recovery does not establish successful shared-host restart or healthy release.
+- [x] Qualify CONTROL-048 main window-command lost-receipt whole-host Restart on
+  current GUI143/core16/plugin19/AQ155 with original Pending/Unknown/no replay,
+  coherent fresh binding, advanced explicit identity, actual pixels/keyboard,
+  unchanged deadlines, registered helper exits and empty shell-cohort cleanup.
+
+  Bounded198 restore/lost63 controls/19 normal short-lived helpers,199 minimize/
+  lost61/18,200 restore/before-write63/19 and201 minimize/before-write61/18 pass.
+  Exact original Pending -> recovered Unknown, actual native commit or actual
+  unread boundary, real native Restart/exit3/fresh same-lifetime host, no replay,
+  coherent current scene/new advanced intent and immutable historical Unknown
+  after authenticated retirement/post-proof accepted reads. Real pixels/keyboard,
+  checked fixture/supervisor/helpers, empty scope/private cleanup pass. Original
+  119-command build/tuple reverified; failed195/196/197 retained. No active
+  controlled-preview realm or production source change in this main-route proof.
+- [ ] Qualify combined controlled-preview strict retirement and original durable
+  window-command recovery in one actual whole-host restart scenario; separate
+  CONTROL-047 and CONTROL-048 results do not close this integration gate.

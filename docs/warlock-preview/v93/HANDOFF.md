@@ -793,3 +793,38 @@ pressure/expiry/full workload/RSS/full S09/release/AT/IME/journeys/deployment ga
 remain. Next PUBLIC104 then actual uncertainty and durable Unknown/window-command/
 whole-host restart work. Installed desktop/drafts/foreign edits are preserved;
 the full GUI goal remains active.
+
+CONTROL-048 main window-command recovery is held on the current GUI143/core16/
+plugin19/AQ155 tuple. Native198 restore/lost receipt63 controls/19 waited-normal
+short-lived helpers,199 minimize/lost61/18,200 restore/before-write63/19 and201
+minimize/before-write61/18 pass. Real pointer commands, original keyed Pending
+admission, actual application pixels/keyboard, lost broker receipt/Unknown,
+actual renderer failure and native GTK Restart/exit3 reach a fresh host through
+the same sealed supervisor. Compositor lifetime/application identities/geometry
+persist, recovered exact original Unknown is never automatically replayed,
+coherent current state precedes an explicit advanced request/generation.
+
+Actual native old-binding retirement plus accepted post-proof reads releases
+reservation capacity while retaining exact durable historical Unknown, unchanged
+after the newer effect. Second fallback cancellation exits failure1 without
+force or a third host; fixture/supervisor/helpers have their checked normal exits,
+owned shell scope is empty and private-session cleanup passes. Expected killed
+broker/renderers and explicit host restart/failure outcomes are negative fault
+stimuli, not claims of all-process normal exit. No production source changed;
+the current119-command build and source/ABI inventory were reverified.
+
+Failed1953-check textual-start config refusal,1965-check helper-path TypeError
+and19737-check obsolete Pending expectation after actual successful Restart
+remain held. Fresh196 uses the current required integer start identity;197 fixes
+only registered helper path composition;198 requires exact normalized Unknown
+and additionally verifies durable native retirement history. Original deadlines
+and all inherited scenario identities/pixel/keyboard/no-replay checks remain.
+Hashes and scoped evidence: component-report-window-restart-198-201.json.
+
+The combined controlled-preview retirement plus window-command whole-host restart
+is still required; this main command route had no active controlled preview realm.
+Native preview uncertainty/all async failure schedules, original-clock pressure/
+expiry, physical/hardware presentation, workload/RSS, original restore timing,
+full S09/release/AT/IME/journeys/deployment stay open. Next PUBLIC105, then combined
+controlled-preview/command recovery on the same tuple. Installed desktop/drafts/
+foreign edits preserved; full GUI goal active.

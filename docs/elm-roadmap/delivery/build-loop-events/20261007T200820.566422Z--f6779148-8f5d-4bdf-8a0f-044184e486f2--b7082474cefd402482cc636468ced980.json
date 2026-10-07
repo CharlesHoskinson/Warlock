@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "b7082474cefd402482cc636468ced980",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-07T20:08:20.566422+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/warlock-client-provider-native-v198",
+  "nextWork": [
+    "Native197 retained37-check failure at obsolete Pending expectation after real committed restore/lost receipt/native Restart/fresh same-lifetime binding. Current contract normalizes exact original record to Unknown; Native198 requires exact Unknown plus actual native retirement/post-proof reads and unchanged historical Unknown after newer explicit command. Original before-restart Pending/pixels/keyboard/identities/deadlines retained. Combined controlled-preview restart/full release open."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/warlock-client-provider-native-v198/qa/preflight.json",
+      "sha256": "ac462aa80a25339096de603523f05b8c17b84adc99994e5578a19d5d1ffc650c",
+      "size": 7710179
+    },
+    {
+      "path": "implementation/warlock-client-provider-native-v197/qa/native-1791403580402133774/report.json",
+      "sha256": "1479788c0b9dc243224cb6d2d240116dc94beb73e56d45f2f9510218bb5462bb",
+      "size": 273273
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}
