@@ -51,7 +51,9 @@ cannot erase another current capture, and foreign binding/subject/transfer
 refuse without resource/counter mutation. Every original native128/126 ordered
 fixed assertion, actual allocator/expiry check and teardown remains retained.
 
-GUI107 is held and inactive; publication75 is next. Native-owned monotonic
+GUI107 is held, inactive and public75 c1f44a4fd9b68aa669a08a6231e9477dc5174399,
+10636 exact owned blobs; sourcee8ff9b88cce51ddf86850df830802d708e874829,
+receipt800184195e3c86704676192df38a327ac22c6dad. Native-owned monotonic
 receiver epochs survive Endpoint replacement, failed construction consumes its
 epoch, and old exact same-binding tickets refuse before replacement handlers.
 Original strict physical/proof/actor/processing/independent-confirmation close
@@ -67,10 +69,24 @@ byte-identical and its own compiled Elm ACK evidence stays at that parent source
 No current GUI107 native/Core/WebKit acceptance or live-window detachment follows.
 See component-report107.json and GUI107/REALM-HANDOFF.md for exact frozen hashes.
 
-Next exact owned publication75; then fresh GUI108 for explicit live-window
-preview-realm quiescence/detachment and safe Bootstrap borrowed-receipt reattachment.
+GUI108 is held and inactive; publication76 is next. Its Bootstrap-aware strict
+C close validates exact Native transport/Endpoint/receiver epoch/creator thread
+and empty receipt membership while retaining all original cleanup barriers.
+Refused or foreign Bootstrap close preserves the original channel. Successful
+native claim completion releases borrowed delivery before Endpoint destruction;
+later lookup/poll refuses safely, and a fresh owner attaches a new channel on
+the same Native binding. C97 replacement+47 actual synthetic native-peer-death
+close controls/one precise variant,17 selected Quint/29 actual C traces/719
+states/three variants/current full95/original resource/capture/ticket/FD
+regressions pass. A count-premise failure remains; all97 actual C assertions
+already passed and the fresh runner records their exact count unchanged.
+No GUI108 actual Core/WebKit or live-window detachment acceptance follows.
+Exact evidence is in component-report108.json and GUI108/BOOTSTRAP-HANDOFF.md.
+
+Next exact owned publication76; then fresh GUI109 for distinct live-window
+preview-realm quiescence/detachment with typed scoped proof and frontend freshness.
 Keep all original physical, terminal ACK, processing and confirmation barriers.
-Current107 controlled
+Current108 controlled
 factory/resource protocol still needs actual Core integration and shared-host
 renderer/native outbox/WebKit activation. Resource observation under original
 expired captures and explicit revocation must retain their own native witnesses.

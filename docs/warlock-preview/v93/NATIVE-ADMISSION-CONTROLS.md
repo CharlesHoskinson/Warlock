@@ -310,3 +310,15 @@ Native129/public74 remains the actual GUI92/Core16/plugin19 bounded tuple,
 2517 checks/278 normal exits; it does not qualify current107 controlled C/WebKit
 activation. Full release, live-window detach, Bootstrap reattachment and typed
 frontend realm delivery remain open. Publication75 is the next owned delivery.
+
+EARS CONTROL-021: When a controlled C owner closes through its original owning
+Bootstrap, native code SHALL validate that Bootstrap's exact transport,
+Endpoint, receiver epoch, creator thread and empty borrowed receipt membership
+before mutation. Every original physical/proof/actor/final-processing and
+independent-confirmation close barrier SHALL still pass. Only after successful
+native claim completion SHALL the Bootstrap release its borrowed delivery
+before Endpoint destruction. Refused close or a foreign Bootstrap SHALL retain
+the original handle and owner. A subsequent owner SHALL attach a fresh receipt
+channel under its new native epoch without replacing the shared Native grant.
+These local lifetime facts SHALL remain available after Core death, and SHALL
+NOT certify live-window binding detachment or frontend processing.

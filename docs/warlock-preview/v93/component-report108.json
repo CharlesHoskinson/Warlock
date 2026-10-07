@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "sourceHeld": true,
+  "passed": true,
+  "evidenceIntegrityPassed": true,
+  "reports": {
+    "bootstrapC": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v108/qa/preview-bootstrap-realm-c-check-v3-1791349134483568823/report.json",
+      "sha256": "a901a053199984994fec8e18e7aa03a0985dd6c599481c7987ff5586d8dac1bb"
+    },
+    "bootstrapModel": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v108/qa/preview-bootstrap-realm-model-check-1791348751768644082/report.json",
+      "sha256": "7e715493d9dae7f02e20d31fcf6c727b399874f809d6161b6e9d3df20fff5ca6"
+    },
+    "regressions": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v108/qa/resource-regression-check-1791348832594392628/report.json",
+      "sha256": "7da497a6d19c9743a5f70f74d00aa4b75db1101617a4cbdc4e314f542c8ad074"
+    },
+    "build": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v108/qa/build-1791348751766992210/report.json",
+      "sha256": "385860ef01bf41c032e6711f68ba8c6c978d6380385b241a856ea9a01b63589f"
+    }
+  },
+  "bootstrapCChecks": 97,
+  "bootstrapCoreDeathChecks": 47,
+  "bootstrapCCompiledVariants": 1,
+  "bootstrapScenarios": 17,
+  "bootstrapTraces": 29,
+  "bootstrapStates": 719,
+  "bootstrapModelCompiledVariants": 3,
+  "actualReaderChecks": 49,
+  "actualPostTransferChecks": 40,
+  "controlledCChecks": 10190,
+  "fullBuildCommands": 95,
+  "unchangedElmParentManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/component-manifest.json",
+  "unchangedElmParentManifestSHA256": "9da5d28b31f5af03d28b9e89737d0aa10c777e68819e8bc57b0af2e5a521a7bb",
+  "heldFailedReports": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v108/qa/preview-bootstrap-realm-c-check-1791348677133399298/report.json"
+  ],
+  "webKitActivated": false,
+  "liveWindowDetachmentImplemented": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "Inactive CPU component: exact Bootstrap-aware strict C owner closure validates original Native transport/Endpoint/receiver epoch/creator thread/empty borrowed receipt membership, retains original physical/proof/actor/final-processing/independent-confirmation barriers, completes Native claim then releases delivery before Endpoint destruction. Refused/foreign Bootstrap close preserves original owner/channel; safe lookup/poll refusal and fresh channel reattachment retain the same Native binding. Actual C97 live replacement controls and separate47 actual synthetic native-peer-death close controls/two independent owned peer exits per case/one precise compiled variant;17 selected Quint/29 actual C traces/719 states/three variants. Current95 full-host commands and original49 reader+40 post-transfer allocation/resource14/22/349/capture14/66/816/C10190/260 actors/1041 tickets pass. One count-premise failure retained; fixture behavior unchanged. Elm/assets byte-identical to held107/106; original compiled Elm/native ACK/local reader/model evidence retains its parent source. Actual native GUI92/native129/core16/plugin19 remains2517/278. No live-window detachment/current controlled Core/WebKit or full release acceptance."
+}

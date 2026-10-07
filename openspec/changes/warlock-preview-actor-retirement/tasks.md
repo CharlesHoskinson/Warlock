@@ -4,6 +4,8 @@
 - [ ] Integrate atomic physical/journal/receiver/Coordinator/Broker/ledger retirement and exact Elm typed facts.
 - [ ] Qualify real native turnover beyond256 distinct windows with a retained live neighbor and replay controls.
 - [x] Implement and CPU-qualify native-owned receiver epochs and exclusive claim closure across endpoint replacement (CONTROL-020), including a deterministic legacy stale-CAS race; current Core/WebKit and live-window detachment qualification remain open.
+- [x] Implement and CPU-qualify exact Bootstrap-aware strict C close and borrowed receipt reattachment (CONTROL-021), including refusal preservation, foreign ownership and local close after original synthetic native peer death; actual Core/WebKit integration remains open.
+- [ ] Implement distinct live-window binding-detachment proof, typed readiness/final processing/confirmation and fresh-realm event scoping while retaining the actual application window.
 - [ ] Freeze and publish exact source/evidence; preserve all original GUI acceptance gates.
 
 Native observation and bridge evidence: [current report](../../../docs/warlock-preview/v91/report.json).

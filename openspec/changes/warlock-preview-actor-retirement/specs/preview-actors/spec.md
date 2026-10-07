@@ -727,3 +727,33 @@ or completed live-window detachment.
 - AND the delayed legacy claim resumes its compare/exchange
 - THEN that stale claim refuses against persistent controlled namespace state
 - AND a fresh controlled owner still opens without changing the shared Native binding.
+
+### Requirement: Bootstrap receipt ownership follows strict C lifetime
+
+EARS CONTROL-021: The exact owning native Bootstrap SHALL release its borrowed
+receipt delivery only after original strict C cleanup and native claim completion,
+and before Endpoint destruction. Native preflight SHALL validate transport,
+Endpoint, receiver epoch, creator thread and empty receipt membership. Refused
+or foreign-owner close SHALL retain the original owner and delivery. Replacement
+SHALL attach a fresh delivery under a greater native epoch on the unchanged
+shared Native binding. Local release SHALL remain possible after Core death and
+SHALL NOT imply live-window detachment or frontend processing.
+
+#### Scenario: Refused close retains the borrowed channel
+- GIVEN an outstanding original cleanup, processing or confirmation barrier
+- WHEN the Bootstrap-aware C close refuses
+- THEN the original borrowed delivery remains available to drain that barrier
+- AND a replacement channel cannot replace it.
+
+#### Scenario: Exact settled close releases before Endpoint destruction
+- GIVEN all original strict close barriers have passed
+- WHEN the exact owning Bootstrap closes that C owner
+- THEN its delivery is released before the Endpoint is destroyed
+- AND delivery lookup and polling refuse safely until a fresh owner attaches
+- AND the new channel uses the new native epoch on the unchanged Native grant.
+
+#### Scenario: A foreign Bootstrap cannot release the original channel
+- GIVEN a fully settled controlled C owner and its original borrowed delivery
+- WHEN a different native Bootstrap attempts to close it
+- THEN close refuses before mutation
+- AND the original owner remains closable through its exact Bootstrap.
