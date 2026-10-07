@@ -513,3 +513,36 @@ earlier positive-only scope. CONTROL-038 bounded task checked, stale callbacks,
 ongoing transition concealment/frame/reveal/hardware/recovery/full release open.
 PUBLIC94 next, then fresh safe GUI129 from positiveGUI127 for actual delayed
 snapshot callback through closure, preserving original policy/native custody.
+
+GUI127/Native138 plus actual rejected128/139 PUBLIC94
+fc3c916778d144785c6fc3e64617c310e5f80e5d/3917 exact owned blobs;
+sourced9e69b01f644a664208f24e4bb8120d2e8acc716;
+receipt99f4be9d2868d47d998a4f65f13731fb1a075be0, public branch verified.
+Fresh SAFE GUI129 from positiveGUI127 preserves opacity0 and adds an explicit
+private one-shot actual WebKit GAsyncResult/view/original completion scope slot.
+Existing pending disposition stays until original result is finished once after
+native invalidation/shutdown. Existing snapshot guards reject stale pixels;
+no effect settlement/deadline/grant reset. Full119 passed. Normal Native140
+original29 controls first, then distinct Native141 actual delayed result through
+closure with original16 admission/drain identities/deadline6. CONTROL-039
+EARS/OpenSpec tracks bounded evidence. Physical reveal/reload/process/uncertain
+recovery/full stale callback coverage/full preview and release remain open.
+
+SAFE GUI129 current full119 and both actual native runs are frozen separately:
+GUI1291791 files; normal Native14093 files,29 checks/13 normal owned exits;
+fault Native14184 files,18 checks/8 normal owned exits. Both original private
+cleanups pass. Normal140 preserves image/output/paint/closed-region regression.
+Fault141 retains the actual WebKit GAsyncResult/view/original completion scope,
+closes the original popup, finishes that same result once, rejects the stale
+projection without a pixel artifact, then drains original Native/policy/input/
+ticket/physical/journal/independent-confirmation duties through strict close.
+The fault invocation does not itself establish physical pixel concealment;
+component-report129 records both distinct report paths and counts. CONTROL-039
+bounded late-after-close callback qualified; broader stale/reopen/reload/process/
+uncertain recovery/physical reveal/full release remain open.
+
+First PUBLIC95 preparation failed before source commit or publication because
+commit129.py is an existing held historical Native129 script. Preserve it and
+the partial publication scripts. Fresh prepare_publication95_v2.py uses unique
+commit_gui129_controlled.py and publication-v2 output, retaining the failed
+preparation as provenance. No held source or original deadline is replaced.

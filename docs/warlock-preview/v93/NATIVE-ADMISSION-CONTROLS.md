@@ -749,3 +749,16 @@ presentation. A private output-region concealment claim SHALL require a current
 actual source-image reference, checked native region, independent output pixels
 and an actual unsafe-curtain control detected by the same oracle. That bounded
 claim SHALL NOT certify ongoing transition concealment, physical reveal or recovery.
+
+EARS CONTROL-039: When explicit private controlled QA delays a WebKit snapshot
+completion, the host SHALL retain at most one actual original result, original
+view and completion scope, and SHALL retain the existing pending disposition.
+The one-shot stimulus SHALL NOT reset on ordinary input, finish early, fabricate
+replacement pixels, alter policy/native effects or renew an original deadline.
+After actual native projection invalidation or shutdown, the host SHALL finish
+that same original result once, apply the existing current-context/projection
+guards and release its references. Stale completion SHALL publish no accepted
+pixel artifact or settlement. Original policy/input/ticket/physical/journal/
+confirmation obligations and strict close SHALL remain independently mandatory.
+This bounded actual-result probe SHALL NOT establish renderer reload, process
+loss, uncertain effect recovery, physical reveal or complete stale-callback coverage.

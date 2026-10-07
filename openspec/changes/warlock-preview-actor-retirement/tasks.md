@@ -436,3 +436,7 @@ activation and all original full release gates remain open.
   plus actual unsafe GUI128/Native139 rejected by the unchanged native oracle.
   Stale callbacks, ongoing transitions, physical reveal/hardware and recovery/full
   release remain open; the unsafe variant is retained failure evidence only.
+
+- [x] Qualify CONTROL-039 actual delayed WebKit result through original popup closure:
+  one real retained result, original finish once, no stale accepted pixels, original
+  native policy/custody drain and unchanged normal route/deadlines/strict teardown.

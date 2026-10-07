@@ -1429,3 +1429,23 @@ and all original policy/native effect and closure authorities.
 - **WHEN** the same oracle also detects an actual unsafe-curtain variant
 - **THEN** only that bounded region observation may be qualified
 - **AND** ongoing transition concealment, physical reveal and recovery remain open
+
+### Requirement: Retain an actual delayed WebKit result through original invalidation
+
+The system SHALL implement EARS CONTROL-039 as an explicit private QA stimulus
+without changing normal policy/native effects, deadlines or closure gates.
+
+#### Scenario: A real snapshot completion is deliberately delayed
+- **WHEN** the one-shot controlled QA stimulus receives the original WebKit result
+- **THEN** one retained slot holds its actual result/view/completion scope
+- **AND** no finish, accepted artifact, effect settlement or deadline renewal occurs
+
+#### Scenario: Actual popup closure invalidates the retained projection
+- **WHEN** the original native channel is invalidated
+- **THEN** the same result is finished once and its stale scope is rejected
+- **AND** its references drain without publishing stale pixels or erasing native obligations
+
+#### Scenario: Normal shutdown encounters the retained observation
+- **WHEN** native shutdown releases that actual result
+- **THEN** the current-context guard and original strict native/policy close remain mandatory
+- **AND** observation cleanup cannot certify outstanding effects or unknown recovery
