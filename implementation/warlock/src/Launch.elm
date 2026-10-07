@@ -77,7 +77,12 @@ bind host ((Model model) as current) =
 
 catalog : D.Value -> Model -> Model
 catalog raw (Model model) =
-    advance (Model { model | snapshot = Catalog.decode raw |> Result.toMaybe })
+    let snapshot = Catalog.decode raw |> Result.toMaybe
+        phase = case (snapshot,model.phase) of
+            (Just _,Settled _ Refused) -> Idle
+            (Just _,Settled _ Submitted) -> Idle
+            _ -> model.phase
+    in advance (Model { model | snapshot = snapshot, phase = phase })
 
 
 select : String -> Model -> Maybe Selection

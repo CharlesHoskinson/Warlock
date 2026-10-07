@@ -519,11 +519,11 @@ function _Debug_crash_UNUSED(identifier, fact1, fact2, fact3, fact4)
 
 function _Debug_regionToString(region)
 {
-	if (region._.H === region.ae.H)
+	if (region.Z.I === region.ae.I)
 	{
-		return 'on line ' + region._.H;
+		return 'on line ' + region.Z.I;
 	}
-	return 'on lines ' + region._.H + ' through ' + region.ae.H;
+	return 'on lines ' + region.Z.I + ' through ' + region.ae.I;
 }
 
 
@@ -2719,9 +2719,9 @@ var _VirtualDom_mapEventTuple = F2(function(func, tuple)
 var _VirtualDom_mapEventRecord = F2(function(func, record)
 {
 	return {
-		r: func(record.r),
-		aa: record.aa,
-		W: record.W
+		q: func(record.q),
+		_: record._,
+		V: record.V
 	}
 });
 
@@ -2989,11 +2989,11 @@ function _VirtualDom_makeCallback(eventNode, initialHandler)
 		// 3 = Custom
 
 		var value = result.a;
-		var message = !tag ? value : tag < 3 ? value.a : value.r;
-		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.aa;
+		var message = !tag ? value : tag < 3 ? value.a : value.q;
+		var stopPropagation = tag == 1 ? value.b : tag == 3 && value._;
 		var currentEventNode = (
 			stopPropagation && event.stopPropagation(),
-			(tag == 2 ? value.b : tag == 3 && value.W) && event.preventDefault(),
+			(tag == 2 ? value.b : tag == 3 && value.V) && event.preventDefault(),
 			eventNode
 		);
 		var tagger;
@@ -3983,7 +3983,7 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 		impl.aV,
 		impl.aT,
 		function(sendToApp, initialModel) {
-			var divertHrefToApp = impl.Y && impl.Y(sendToApp)
+			var divertHrefToApp = impl.X && impl.X(sendToApp)
 			var view = impl.aW;
 			var title = _VirtualDom_doc.title;
 			var bodyNode = _VirtualDom_doc.body;
@@ -4058,7 +4058,7 @@ function _Browser_application(impl)
 	var key = function() { key.a(onUrlChange(_Browser_getUrl())); };
 
 	return _Browser_document({
-		Y: function(sendToApp)
+		X: function(sendToApp)
 		{
 			key.a = sendToApp;
 			_Browser_window.addEventListener('popstate', key);
@@ -4927,7 +4927,7 @@ var $author$project$SurfaceRenderer$bounded = function (limit) {
 };
 var $author$project$SurfaceRenderer$Control = F6(
 	function (identity, domId, label, ariaLabel, detail, enabled) {
-		return {Q: ariaLabel, N: detail, F: domId, G: enabled, A: identity, R: label};
+		return {N: ariaLabel, O: detail, A: domId, u: enabled, C: identity, D: label};
 	});
 var $elm$json$Json$Decode$bool = _Json_decodeBool;
 var $elm$json$Json$Decode$field = _Json_decodeField;
@@ -5260,7 +5260,7 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 			$elm$json$Json$Decode$map7,
 			F7(
 				function (version, shown, scoped, current, notice, bar, popup) {
-					return {m: bar, E: current, al: notice, l: popup, X: scoped, Z: shown, az: version};
+					return {n: bar, H: current, al: notice, g: popup, W: scoped, Y: shown, az: version};
 				}),
 			A2($elm$json$Json$Decode$field, 'surfaceProtocol', $elm$json$Json$Decode$int),
 			A2($elm$json$Json$Decode$field, 'publication', $author$project$UInt64$decoder),
@@ -5290,30 +5290,30 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 					$elm$core$Set$size(
 						$elm$core$Set$fromList(names)));
 			};
-			var all = _Utils_ap(record.m, record.l);
+			var all = _Utils_ap(record.n, record.g);
 			var identities = A2(
 				$elm$core$List$map,
 				function ($) {
-					return $.A;
+					return $.C;
 				},
 				all);
-			return ((record.az !== 2) || (_Utils_eq(record.Z, $author$project$UInt64$zero) || ((!A2(
+			return ((record.az !== 2) || (_Utils_eq(record.Y, $author$project$UInt64$zero) || ((!A2(
 				$elm$core$List$member,
-				record.E,
+				record.H,
 				_List_fromArray(
-					['closed', 'picker', 'applications', 'menu']))) || (((record.E !== 'closed') && _Utils_eq(record.X, $author$project$UInt64$zero)) || (((record.E === 'closed') && (!$elm$core$List$isEmpty(record.l))) || ((!unique(identities)) || ((!unique(
+					['closed', 'picker', 'applications', 'menu']))) || (((record.H !== 'closed') && _Utils_eq(record.W, $author$project$UInt64$zero)) || (((record.H === 'closed') && (!$elm$core$List$isEmpty(record.g))) || ((!unique(identities)) || ((!unique(
 				A2(
 					$elm$core$List$map,
 					function ($) {
-						return $.F;
+						return $.A;
 					},
 					all))) || A2(
 				$elm$core$List$any,
 				function (control) {
-					return $elm$core$String$isEmpty(control.A) || $elm$core$String$isEmpty(control.F);
+					return $elm$core$String$isEmpty(control.C) || $elm$core$String$isEmpty(control.A);
 				},
 				all)))))))) ? $elm$core$Result$Err('Invalid presentation scope/identities') : $elm$core$Result$Ok(
-				{m: record.m, T: record.X, n: record.E, l: record.l, O: record.Z, t: record.al});
+				{n: record.n, S: record.W, k: record.H, g: record.g, P: record.Y, s: record.al});
 		},
 		A2(
 			$elm$core$Result$mapError,
@@ -5322,11 +5322,11 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 };
 var $author$project$SurfaceRenderer$lease = function (_v0) {
 	var snapshot = _v0;
-	return snapshot.T;
+	return snapshot.S;
 };
 var $author$project$SurfaceRenderer$publication = function (_v0) {
 	var snapshot = _v0;
-	return snapshot.O;
+	return snapshot.P;
 };
 var $author$project$Presentation$accept = F2(
 	function (raw, prior) {
@@ -5335,19 +5335,19 @@ var $author$project$Presentation$accept = F2(
 		if (_v0.$ === 1) {
 			return _Utils_update(
 				model,
-				{I: $elm$core$Maybe$Nothing});
+				{y: $elm$core$Maybe$Nothing});
 		} else {
 			var snapshot = _v0.a;
 			return ((A2(
 				$author$project$UInt64$compare,
 				$author$project$SurfaceRenderer$publication(snapshot),
-				model.S) !== 2) || (!A2(
+				model.R) !== 2) || (!A2(
 				$author$project$UInt64$compare,
 				$author$project$SurfaceRenderer$lease(snapshot),
-				model.T))) ? prior : {
-				S: $author$project$SurfaceRenderer$publication(snapshot),
-				T: $author$project$SurfaceRenderer$lease(snapshot),
-				I: $elm$core$Maybe$Just(snapshot)
+				model.S))) ? prior : {
+				R: $author$project$SurfaceRenderer$publication(snapshot),
+				S: $author$project$SurfaceRenderer$lease(snapshot),
+				y: $elm$core$Maybe$Just(snapshot)
 			};
 		}
 	});
@@ -5355,7 +5355,7 @@ var $author$project$Bar$actions = _Platform_outgoingPort('actions', $elm$core$Ba
 var $elm$core$Platform$Sub$batch = _Platform_batch;
 var $author$project$Presentation$current = function (_v0) {
 	var model = _v0;
-	return model.I;
+	return model.y;
 };
 var $author$project$CapturedAction$CapturedAction = $elm$core$Basics$identity;
 var $author$project$CapturedAction$decode = function (raw) {
@@ -5373,16 +5373,16 @@ var $author$project$CapturedAction$decode = function (raw) {
 					var version = _v0.a;
 					var kind = _v0.b;
 					var value = _v0.c;
-					return ((version === 2) && ((kind === 'surface-action') && ((!_Utils_eq(value.O, $author$project$UInt64$zero)) && (A2(
+					return ((version === 2) && ((kind === 'surface-action') && ((!_Utils_eq(value.P, $author$project$UInt64$zero)) && (A2(
 						$elm$core$List$member,
-						value.P,
+						value.Q,
 						_List_fromArray(
-							['bar', 'popup'])) && ((!$elm$core$String$isEmpty(value.A)) && (($elm$core$String$length(value.A) <= 512) && (!A2(
+							['bar', 'popup'])) && ((!$elm$core$String$isEmpty(value.C)) && (($elm$core$String$length(value.C) <= 512) && (!A2(
 						$elm$core$String$any,
 						function (c) {
 							return $elm$core$Char$toCode(c) < 32;
 						},
-						value.A)))))))) ? $elm$json$Json$Decode$succeed(value) : $elm$json$Json$Decode$fail('Action scope');
+						value.C)))))))) ? $elm$json$Json$Decode$succeed(value) : $elm$json$Json$Decode$fail('Action scope');
 				},
 				A7(
 					$elm$json$Json$Decode$map6,
@@ -5391,7 +5391,7 @@ var $author$project$CapturedAction$decode = function (raw) {
 							return _Utils_Tuple3(
 								version,
 								kind,
-								{A: name, T: scoped, O: shown, P: role});
+								{C: name, S: scoped, P: shown, Q: role});
 						}),
 					A2($elm$json$Json$Decode$field, 'surfaceProtocol', $elm$json$Json$Decode$int),
 					A2($elm$json$Json$Decode$field, 'kind', $elm$json$Json$Decode$string),
@@ -5409,9 +5409,9 @@ var $author$project$SurfaceRenderer$enabled = F3(
 		return A2(
 			$elm$core$List$any,
 			function (control) {
-				return _Utils_eq(control.A, identity) && control.G;
+				return _Utils_eq(control.C, identity) && control.u;
 			},
-			popup ? snapshot.l : snapshot.m);
+			popup ? snapshot.g : snapshot.n);
 	});
 var $elm$json$Json$Encode$int = _Json_wrap;
 var $elm$json$Json$Encode$object = function (pairs) {
@@ -5439,7 +5439,7 @@ var $author$project$CapturedAction$encode = function (_v0) {
 			[
 				_Utils_Tuple2(
 				'surface',
-				$elm$json$Json$Encode$string(value.P)),
+				$elm$json$Json$Encode$string(value.Q)),
 				_Utils_Tuple2(
 				'surfaceProtocol',
 				$elm$json$Json$Encode$int(2)),
@@ -5449,37 +5449,37 @@ var $author$project$CapturedAction$encode = function (_v0) {
 				_Utils_Tuple2(
 				'publication',
 				$elm$json$Json$Encode$string(
-					$author$project$UInt64$string(value.O))),
+					$author$project$UInt64$string(value.P))),
 				_Utils_Tuple2(
 				'lease',
 				$elm$json$Json$Encode$string(
-					$author$project$UInt64$string(value.T))),
+					$author$project$UInt64$string(value.S))),
 				_Utils_Tuple2(
 				'id',
-				$elm$json$Json$Encode$string(value.A))
+				$elm$json$Json$Encode$string(value.C))
 			]));
 };
 var $author$project$CapturedAction$identity = function (_v0) {
 	var value = _v0;
-	return value.A;
+	return value.C;
 };
 var $author$project$CapturedAction$lease = function (_v0) {
 	var value = _v0;
-	return value.T;
+	return value.S;
 };
 var $author$project$CapturedAction$publication = function (_v0) {
 	var value = _v0;
-	return value.O;
+	return value.P;
 };
 var $author$project$CapturedAction$surface = function (_v0) {
 	var value = _v0;
-	return value.P;
+	return value.Q;
 };
 var $author$project$Presentation$dispatch = F3(
 	function (popup, raw, _v0) {
 		var model = _v0;
 		var _v1 = _Utils_Tuple2(
-			model.I,
+			model.y,
 			$author$project$CapturedAction$decode(raw));
 		if ((!_v1.a.$) && (!_v1.b.$)) {
 			var snapshot = _v1.a.a;
@@ -5730,7 +5730,7 @@ var $elm$core$Task$perform = F2(
 			A2($elm$core$Task$map, toMessage, task));
 	});
 var $elm$browser$Browser$element = _Browser_element;
-var $author$project$Presentation$initial = {S: $author$project$UInt64$zero, T: $author$project$UInt64$zero, I: $elm$core$Maybe$Nothing};
+var $author$project$Presentation$initial = {R: $author$project$UInt64$zero, S: $author$project$UInt64$zero, y: $elm$core$Maybe$Nothing};
 var $elm$core$Maybe$map = F2(
 	function (f, maybe) {
 		if (!maybe.$) {
@@ -5747,6 +5747,10 @@ var $author$project$Bar$presentation = _Platform_incomingPort('presentation', $e
 var $author$project$Bar$requestAction = _Platform_incomingPort('requestAction', $elm$json$Json$Decode$value);
 var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
 var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
+var $elm$json$Json$Decode$at = F2(
+	function (fields, decoder) {
+		return A3($elm$core$List$foldr, $elm$json$Json$Decode$field, decoder, fields);
+	});
 var $elm$virtual_dom$VirtualDom$attribute = F2(
 	function (key, value) {
 		return A2(
@@ -5776,76 +5780,165 @@ var $elm$html$Html$Attributes$disabled = $elm$html$Html$Attributes$boolProperty(
 var $elm$html$Html$div = _VirtualDom_node('div');
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
 var $elm$html$Html$Attributes$id = $elm$html$Html$Attributes$stringProperty('id');
+var $elm$html$Html$input = _VirtualDom_node('input');
 var $elm$virtual_dom$VirtualDom$keyedNode = function (tag) {
 	return _VirtualDom_keyedNode(
 		_VirtualDom_noScript(tag));
 };
 var $elm$html$Html$Keyed$node = $elm$virtual_dom$VirtualDom$keyedNode;
+var $elm$virtual_dom$VirtualDom$Normal = function (a) {
+	return {$: 0, a: a};
+};
+var $elm$virtual_dom$VirtualDom$on = _VirtualDom_on;
+var $elm$html$Html$Events$on = F2(
+	function (event, decoder) {
+		return A2(
+			$elm$virtual_dom$VirtualDom$on,
+			event,
+			$elm$virtual_dom$VirtualDom$Normal(decoder));
+	});
+var $elm$json$Json$Decode$oneOf = _Json_oneOf;
 var $elm$html$Html$p = _VirtualDom_node('p');
+var $elm$html$Html$Attributes$placeholder = $elm$html$Html$Attributes$stringProperty('placeholder');
 var $elm$html$Html$span = _VirtualDom_node('span');
 var $elm$html$Html$Attributes$title = $elm$html$Html$Attributes$stringProperty('title');
+var $elm$html$Html$Attributes$type_ = $elm$html$Html$Attributes$stringProperty('type');
+var $elm$html$Html$Attributes$value = $elm$html$Html$Attributes$stringProperty('value');
 var $author$project$SurfaceRenderer$viewWithPreview = F4(
 	function (preview, popup, send, current) {
 		var snapshot = current;
 		var control = function (item) {
-			var kind = A2($elm$core$String$startsWith, 'bar:group:', item.A) ? 'control-group' : ((item.A === 'bar:recovery-refresh') ? 'control-recovery' : 'control-utility');
-			return A2(
-				$elm$html$Html$button,
-				_List_fromArray(
-					[
-						$elm$html$Html$Attributes$class(kind),
-						$elm$html$Html$Attributes$id(item.F),
-						A2($elm$html$Html$Attributes$attribute, 'aria-label', item.Q),
-						$elm$html$Html$Attributes$disabled(!item.G),
-						A2($elm$html$Html$Attributes$attribute, 'data-surface-control', item.A),
+			var kind = A2($elm$core$String$startsWith, 'bar:group:', item.C) ? 'control-group' : ((item.C === 'bar:recovery-refresh') ? 'control-recovery' : 'control-utility');
+			if (popup && ((snapshot.k === 'applications') && (item.C === 'control:search'))) {
+				var event = A2(
+					$elm$json$Json$Decode$andThen,
+					function (_v0) {
+						var query = _v0.a;
+						var composing = _v0.b;
+						return $elm$json$Json$Decode$succeed(
+							send(
+								$elm$json$Json$Encode$object(
+									_List_fromArray(
+										[
+											_Utils_Tuple2(
+											'surfaceProtocol',
+											$elm$json$Json$Encode$int(2)),
+											_Utils_Tuple2(
+											'kind',
+											$elm$json$Json$Encode$string(
+												composing ? 'surface-preedit' : 'surface-query')),
+											_Utils_Tuple2(
+											'surface',
+											$elm$json$Json$Encode$string('popup')),
+											_Utils_Tuple2(
+											'publication',
+											$elm$json$Json$Encode$string(
+												$author$project$UInt64$string(snapshot.P))),
+											_Utils_Tuple2(
+											'lease',
+											$elm$json$Json$Encode$string(
+												$author$project$UInt64$string(snapshot.S))),
+											_Utils_Tuple2(
+											'id',
+											$elm$json$Json$Encode$string(item.C)),
+											_Utils_Tuple2(
+											'query',
+											$elm$json$Json$Encode$string(query))
+										]))));
+					},
+					A3(
+						$elm$json$Json$Decode$map2,
+						F2(
+							function (query, composing) {
+								return _Utils_Tuple2(query, composing);
+							}),
 						A2(
-						$elm$html$Html$Attributes$attribute,
-						'role',
-						(popup && (snapshot.n === 'menu')) ? 'menuitem' : 'button'),
-						A2(
-						$elm$html$Html$Attributes$attribute,
-						'aria-current',
-						(popup && ((snapshot.n === 'menu') && (item.N === 'Selected'))) ? 'true' : 'false')
-					]),
-				_List_fromArray(
-					[
-						preview(item.A),
-						A2(
-						$elm$html$Html$span,
-						_List_fromArray(
-							[
-								$elm$html$Html$Attributes$class('control-label')
-							]),
-						_List_fromArray(
-							[
-								$elm$html$Html$text(item.R)
-							])),
-						A2(
-						$elm$html$Html$span,
-						_List_fromArray(
-							[
-								$elm$html$Html$Attributes$class('control-detail')
-							]),
-						_List_fromArray(
-							[
-								$elm$html$Html$text(item.N)
-							]))
-					]));
+							$elm$json$Json$Decode$at,
+							_List_fromArray(
+								['target', 'value']),
+							$elm$json$Json$Decode$string),
+						$elm$json$Json$Decode$oneOf(
+							_List_fromArray(
+								[
+									A2($elm$json$Json$Decode$field, 'isComposing', $elm$json$Json$Decode$bool),
+									$elm$json$Json$Decode$succeed(false)
+								]))));
+				return A2(
+					$elm$html$Html$input,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('launcher-search'),
+							$elm$html$Html$Attributes$id(item.A),
+							$elm$html$Html$Attributes$type_('search'),
+							$elm$html$Html$Attributes$placeholder('Search applications'),
+							$elm$html$Html$Attributes$value(item.D),
+							A2($elm$html$Html$Attributes$attribute, 'aria-label', item.N),
+							A2($elm$html$Html$Attributes$attribute, 'data-surface-field', item.C),
+							A2($elm$html$Html$Attributes$attribute, 'autocomplete', 'off'),
+							$elm$html$Html$Attributes$disabled(!item.u),
+							A2($elm$html$Html$Events$on, 'input', event),
+							A2($elm$html$Html$Events$on, 'compositionend', event)
+						]),
+					_List_Nil);
+			} else {
+				return A2(
+					$elm$html$Html$button,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class(kind),
+							$elm$html$Html$Attributes$id(item.A),
+							A2($elm$html$Html$Attributes$attribute, 'aria-label', item.N),
+							$elm$html$Html$Attributes$disabled(!item.u),
+							A2($elm$html$Html$Attributes$attribute, 'data-surface-control', item.C),
+							A2(
+							$elm$html$Html$Attributes$attribute,
+							'role',
+							(popup && (snapshot.k === 'menu')) ? 'menuitem' : 'button'),
+							A2(
+							$elm$html$Html$Attributes$attribute,
+							'aria-current',
+							(popup && ((snapshot.k === 'menu') && (item.O === 'Selected'))) ? 'true' : 'false')
+						]),
+					_List_fromArray(
+						[
+							preview(item.C),
+							A2(
+							$elm$html$Html$span,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('control-label')
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text(item.D)
+								])),
+							A2(
+							$elm$html$Html$span,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('control-detail')
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text(item.O)
+								]))
+						]));
+			}
 		};
 		return popup ? A2(
 			$elm$html$Html$div,
 			_List_fromArray(
 				[
 					$elm$html$Html$Attributes$class('surface-popup'),
-					A2($elm$html$Html$Attributes$attribute, 'data-mode', snapshot.n),
+					A2($elm$html$Html$Attributes$attribute, 'data-mode', snapshot.k),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-publication',
-					$author$project$UInt64$string(snapshot.O)),
+					$author$project$UInt64$string(snapshot.P)),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-lease',
-					$author$project$UInt64$string(snapshot.T))
+					$author$project$UInt64$string(snapshot.S))
 				]),
 			_List_fromArray(
 				[
@@ -5855,7 +5948,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 					_List_fromArray(
 						[
 							$elm$html$Html$text(
-							(snapshot.n === 'applications') ? 'Applications' : ((snapshot.n === 'menu') ? 'Window actions' : 'Choose a window'))
+							(snapshot.k === 'applications') ? 'Applications' : ((snapshot.k === 'menu') ? 'Window actions' : 'Choose a window'))
 						])),
 					A2(
 					$elm$html$Html$p,
@@ -5866,7 +5959,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 						]),
 					_List_fromArray(
 						[
-							$elm$html$Html$text(snapshot.t)
+							$elm$html$Html$text(snapshot.s)
 						])),
 					A2(
 					$elm$html$Html$div,
@@ -5876,9 +5969,9 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 							A2(
 							$elm$html$Html$Attributes$attribute,
 							'role',
-							(snapshot.n === 'menu') ? 'menu' : 'group')
+							(snapshot.k === 'menu') ? 'menu' : 'group')
 						]),
-					A2($elm$core$List$map, control, snapshot.l))
+					A2($elm$core$List$map, control, snapshot.g))
 				])) : A3(
 			$elm$html$Html$Keyed$node,
 			'div',
@@ -5888,11 +5981,11 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-publication',
-					$author$project$UInt64$string(snapshot.O)),
+					$author$project$UInt64$string(snapshot.P)),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-lease',
-					$author$project$UInt64$string(snapshot.T))
+					$author$project$UInt64$string(snapshot.S))
 				]),
 			_List_fromArray(
 				[
@@ -5909,10 +6002,10 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 							$elm$core$List$map,
 							function (item) {
 								return _Utils_Tuple2(
-									'control:' + item.A,
+									'control:' + item.C,
 									control(item));
 							},
-							snapshot.m))),
+							snapshot.n))),
 					_Utils_Tuple2(
 					'status',
 					A2(
@@ -5920,16 +6013,16 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 						_List_fromArray(
 							[
 								$elm$html$Html$Attributes$class(
-								($elm$core$String$isEmpty(snapshot.t) || (snapshot.t === 'Ready')) ? 'surface-status surface-status-idle' : 'surface-status'),
+								($elm$core$String$isEmpty(snapshot.s) || (snapshot.s === 'Ready')) ? 'surface-status surface-status-idle' : 'surface-status'),
 								A2($elm$html$Html$Attributes$attribute, 'role', 'status'),
 								A2($elm$html$Html$Attributes$attribute, 'aria-live', 'polite'),
 								A2($elm$html$Html$Attributes$attribute, 'aria-atomic', 'true'),
-								A2($elm$html$Html$Attributes$attribute, 'aria-label', snapshot.t),
-								$elm$html$Html$Attributes$title(snapshot.t)
+								A2($elm$html$Html$Attributes$attribute, 'aria-label', snapshot.s),
+								$elm$html$Html$Attributes$title(snapshot.s)
 							]),
 						_List_fromArray(
 							[
-								$elm$html$Html$text(snapshot.t)
+								$elm$html$Html$text(snapshot.s)
 							])))
 				]));
 	});

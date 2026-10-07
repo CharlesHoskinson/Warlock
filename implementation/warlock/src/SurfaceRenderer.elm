@@ -1,7 +1,8 @@
-module SurfaceRenderer exposing (enabled, Snapshot, decode, encode, controlIdentities, publication, lease, mode, view, viewWithPreview, action)
+module SurfaceRenderer exposing (enabled, Snapshot, decode, encode, controlIdentities, publication, lease, mode, view, viewWithPreview, action, queryValue, pendingQuery)
 
-import Html exposing (Html, button, div, h1, p, span, text)
-import Html.Attributes exposing (attribute, class, disabled, id, title)
+import Html exposing (Html, button, div, h1, input, p, span, text)
+import Html.Attributes exposing (attribute, class, disabled, id, title, type_, value, placeholder)
+import Html.Events exposing (on)
 import Html.Keyed as Keyed
 import Json.Decode as D
 import Json.Encode as E
@@ -51,6 +52,12 @@ lease (Snapshot snapshot) = snapshot.lease
 mode : Snapshot -> String
 mode (Snapshot snapshot) = snapshot.mode
 
+queryValue : Snapshot -> Maybe String
+queryValue (Snapshot snapshot) = snapshot.popup |> List.filter (\item -> item.identity=="control:search") |> List.head |> Maybe.map .label
+
+pendingQuery : String -> Snapshot -> Snapshot
+pendingQuery query (Snapshot snapshot) = Snapshot {snapshot | popup=List.map (\item -> if item.identity=="control:search" then {item | label=query} else if String.startsWith "entry:" item.identity then {item | enabled=False} else item) snapshot.popup}
+
 enabled : Bool -> String -> Snapshot -> Bool
 enabled popup identity (Snapshot snapshot) = List.any (\control -> control.identity==identity && control.enabled) (if popup then snapshot.popup else snapshot.bar)
 
@@ -67,7 +74,10 @@ viewWithPreview : (String -> Html msg) -> Bool -> (E.Value -> msg) -> Snapshot -
 viewWithPreview preview popup send ((Snapshot snapshot) as current) =
     let control item =
             let kind = if String.startsWith "bar:group:" item.identity then "control-group" else if item.identity=="bar:recovery-refresh" then "control-recovery" else "control-utility"
-            in button [class kind,id item.domId,attribute "aria-label" item.ariaLabel,disabled (not item.enabled),attribute "data-surface-control" item.identity,attribute "role" (if popup && snapshot.mode=="menu" then "menuitem" else "button"),attribute "aria-current" (if popup && snapshot.mode=="menu" && item.detail=="Selected" then "true" else "false")] [preview item.identity,span [class "control-label"] [text item.label],span [class "control-detail"] [text item.detail]]
+            in if popup && snapshot.mode=="applications" && item.identity=="control:search" then
+                let event = D.map2 (\query composing -> (query,composing)) (D.at ["target","value"] D.string) (D.oneOf [D.field "isComposing" D.bool,D.succeed False]) |> D.andThen (\(query,composing) -> D.succeed (send (E.object [("surfaceProtocol",E.int 2),("kind",E.string (if composing then "surface-preedit" else "surface-query")),("surface",E.string "popup"),("publication",E.string (UInt64.string snapshot.publication)),("lease",E.string (UInt64.string snapshot.lease)),("id",E.string item.identity),("query",E.string query)])))
+                in input [class "launcher-search",id item.domId,type_ "search",placeholder "Search applications",value item.label,attribute "aria-label" item.ariaLabel,attribute "data-surface-field" item.identity,attribute "autocomplete" "off",disabled (not item.enabled),on "input" event,on "compositionend" event] []
+            else button [class kind,id item.domId,attribute "aria-label" item.ariaLabel,disabled (not item.enabled),attribute "data-surface-control" item.identity,attribute "role" (if popup && snapshot.mode=="menu" then "menuitem" else "button"),attribute "aria-current" (if popup && snapshot.mode=="menu" && item.detail=="Selected" then "true" else "false")] [preview item.identity,span [class "control-label"] [text item.label],span [class "control-detail"] [text item.detail]]
     in if popup then div [class "surface-popup",attribute "data-mode" snapshot.mode,attribute "data-publication" (UInt64.string snapshot.publication),attribute "data-lease" (UInt64.string snapshot.lease)] [h1 [] [text (if snapshot.mode=="applications" then "Applications" else if snapshot.mode=="menu" then "Window actions" else "Choose a window")],p [attribute "role" "status",attribute "aria-live" "polite"] [text snapshot.status],div [class "surface-controls",attribute "role" (if snapshot.mode=="menu" then "menu" else "group")] (List.map control snapshot.popup)]
        else Keyed.node "div" [class "surface-bar",attribute "data-publication" (UInt64.string snapshot.publication),attribute "data-lease" (UInt64.string snapshot.lease)]
             [("actions",Keyed.node "div" [class "surface-actions"] (List.map (\item -> ("control:" ++ item.identity,control item)) snapshot.bar))

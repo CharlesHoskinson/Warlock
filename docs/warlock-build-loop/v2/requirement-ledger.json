@@ -4189,7 +4189,7 @@
       "owner": "Elm presentation lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "in-progress",
       "scenarios": [
         {
           "name": "taskbar-zero",
@@ -4222,9 +4222,15 @@
         {
           "name": "taskbar-group",
           "oracle": "a group picker opens without new launch and selecting a member visibly activates it",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/taskbar-focus/manifest.json",
+              "sha256": "43cce95bfad5a33a3ba43ede35c9bd8134f75db974efcedf0676183999d7103c",
+              "scope": "Native two-member picker, complete forward/reverse Tab wrap, Escape restores actual original application keyboard recipient without effect, pointer member selection activates its exact incarnation. Original menu/three-member/AT obligations remain pending."
+            }
+          ],
+          "missingObservation": "Original exact native pointer/keyboard activation coverage and applicable AT; remaining primary-action cases. Menu/UX-024 is not qualified by this picker run."
         },
         {
           "name": "taskbar-refusal",
@@ -4243,14 +4249,21 @@
       "owner": "Desktop experience lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "in-progress",
       "scenarios": [
         {
           "name": "search-no-match",
           "oracle": "no-match message and query remain reachable without launch",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/launcher-search/manifest.json",
+              "sha256": "c36810d3418807d241e9cc36b3d8a1b78796737135c5c7bcd05123dd631d9d43",
+              "scope": "Compiled current-query/ranking and scoped admission; actual native typing, one identity-bound Enter request, refused stale catalog, preserved query/focus and observation-only refresh/no replacement. Popup pixels are black; native visual/AT/IME acceptance is withheld."
+            }
+          ],
+          "missingObservation": "Actual query/focus/no effect and no-match DOM pass; popup pixels are black. Physical presentation, applicable AT and independent verdict remain.",
+          "reviewerDisposition": "Owner records partial observations; independent acceptance pending."
         },
         {
           "name": "search-unavailable",
@@ -4262,23 +4275,44 @@
         {
           "name": "search-race",
           "oracle": "only current-generation results and selection can dispatch",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/launcher-search/manifest.json",
+              "sha256": "c36810d3418807d241e9cc36b3d8a1b78796737135c5c7bcd05123dd631d9d43",
+              "scope": "Compiled current-query/ranking and scoped admission; actual native typing, one identity-bound Enter request, refused stale catalog, preserved query/focus and observation-only refresh/no replacement. Popup pixels are black; native visual/AT/IME acceptance is withheld."
+            }
+          ],
+          "missingObservation": "Typed stale-query and native stale-publication/lease admission reject; exact original query-change while old refresh completes native schedule and visual/AT verdict remain.",
+          "reviewerDisposition": "Owner records partial observations; independent acceptance pending."
         },
         {
           "name": "search-removed",
           "oracle": "no replacement entry launches and selection reconciles",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/launcher-search/manifest.json",
+              "sha256": "c36810d3418807d241e9cc36b3d8a1b78796737135c5c7bcd05123dd631d9d43",
+              "scope": "Compiled current-query/ranking and scoped admission; actual native typing, one identity-bound Enter request, refused stale catalog, preserved query/focus and observation-only refresh/no replacement. Popup pixels are black; native visual/AT/IME acceptance is withheld."
+            }
+          ],
+          "missingObservation": "Native catalog identity removal before Enter produces one refusal, never a replacement; Refresh reconciles to no-match. Physical popup presentation and independent verdict remain.",
+          "reviewerDisposition": "Owner records partial observations; independent acceptance pending."
         },
         {
           "name": "search-refused",
           "oracle": "query and focus remain with accessible refusal and retry",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/launcher-search/manifest.json",
+              "sha256": "c36810d3418807d241e9cc36b3d8a1b78796737135c5c7bcd05123dd631d9d43",
+              "scope": "Compiled current-query/ranking and scoped admission; actual native typing, one identity-bound Enter request, refused stale catalog, preserved query/focus and observation-only refresh/no replacement. Popup pixels are black; native visual/AT/IME acceptance is withheld."
+            }
+          ],
+          "missingObservation": "Actual native refusal preserves query and keyboard focus; Refresh is read-only. Refusal text in DOM/bar passes, but popup pixels are black and AT/IME qualification remains.",
+          "reviewerDisposition": "Owner records partial observations; independent acceptance pending."
         }
       ]
     },
@@ -5724,7 +5758,7 @@
       "owner": "Desktop experience lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "in-progress",
       "scenarios": [
         {
           "name": "launcher-accepted",
@@ -5736,9 +5770,16 @@
         {
           "name": "launcher-refused",
           "oracle": "one request is refused and the UI shows that refusal without a duplicate launch",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/launcher-search/manifest.json",
+              "sha256": "c36810d3418807d241e9cc36b3d8a1b78796737135c5c7bcd05123dd631d9d43",
+              "scope": "Compiled current-query/ranking and scoped admission; actual native typing, one identity-bound Enter request, refused stale catalog, preserved query/focus and observation-only refresh/no replacement. Popup pixels are black; native visual/AT/IME acceptance is withheld."
+            }
+          ],
+          "missingObservation": "Exactly one identity-bound request is natively refused; DOM/bar refusal and no duplicate pass. Refusal popup physical presentation and independent original verdict remain.",
+          "reviewerDisposition": "Owner records partial observations; independent acceptance pending."
         }
       ]
     },

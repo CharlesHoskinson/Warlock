@@ -627,6 +627,11 @@ static SurfaceDisposition surface_receive(WebKitUserContentManager *manager,cons
         return SURFACE_UNCERTAIN;
     }
     guint count=json_array_get_length(req);
+    /* Preserve an undelivered focus request through observation-only frames on
+     * the same popup lease, only while every exact DOM target survives enabled.
+     * Already-issued focus is never replayed; owner changes retire the popup. */
+    JsonNode *retained_focus=NULL;
+    if (popup_active && open && lease==surface_gate.lease && pending_focus && !json_array_get_length(json_node_get_array(fn)) && surface_snapshot && g_str_equal(json_object_get_string_member(json_node_get_object(frame),"mode"),json_object_get_string_member(json_node_get_object(surface_snapshot),"mode")) && surface_focus_targets_present(pending_focus,frame)) {retained_focus=pending_focus;pending_focus=NULL;}
     if (popup_active && (!open || lease!=surface_gate.lease)) popup_hide();
     surface_gate.publication=publication;surface_gate.lease=lease;
     if (surface_snapshot) json_node_unref(surface_snapshot);
@@ -636,6 +641,7 @@ static SurfaceDisposition surface_receive(WebKitUserContentManager *manager,cons
     if (pending_focus) {json_node_unref(pending_focus);pending_focus=NULL;}
     if (issued_focus) {json_node_unref(issued_focus);issued_focus=NULL;}
     if (open && json_array_get_length(json_node_get_array(fn))) pending_focus=json_node_copy(fn);
+    else pending_focus=retained_focus;
     surface_present();
     /* Preflight excludes all effects/launches while open. No request from this
      * original invocation has entered the backend queue at this boundary. */

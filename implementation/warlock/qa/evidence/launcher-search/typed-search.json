@@ -1,0 +1,90 @@
+{
+  "refreshClearsSettledRefusal": true,
+  "refreshPreservesUnknown": true,
+  "rank": [
+    "z-exact",
+    "a-prefix",
+    "b-token"
+  ],
+  "keyword": [
+    "z-exact"
+  ],
+  "generic": [
+    "b-token",
+    "z-exact"
+  ],
+  "unicode": [
+    "c-unicode"
+  ],
+  "queryEditHasNoEffects": true,
+  "staleQueryRejected": true,
+  "noMatchStatus": "No matching applications. Change your search or Refresh.",
+  "queryRetained": "nonexistent",
+  "frame": {
+    "surfaceProtocol": 2,
+    "publication": "1",
+    "lease": "1",
+    "mode": "applications",
+    "status": "Choose a matching application.",
+    "bar": [
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true
+      }
+    ],
+    "popup": [
+      {
+        "id": "control:search",
+        "domId": "launcher-search",
+        "label": "files",
+        "ariaLabel": "Search applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "control:close",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:control:close",
+        "label": "Windows",
+        "ariaLabel": "Close applications and return to windows",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "control:refresh",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:control:refresh",
+        "label": "Refresh",
+        "ariaLabel": "Refresh applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "entry:z-exact",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:entry:z-exact",
+        "label": "Open Files",
+        "ariaLabel": "Open Files",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "entry:a-prefix",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:entry:a-prefix",
+        "label": "Open Files Plus",
+        "ariaLabel": "Open Files Plus",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "entry:b-token",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:entry:b-token",
+        "label": "Open Explorer",
+        "ariaLabel": "Open Explorer",
+        "detail": "",
+        "enabled": true
+      }
+    ]
+  }
+}

@@ -1,4 +1,4 @@
-module Presentation exposing (Model, initial, accept, current, dispatch)
+module Presentation exposing (Model, initial, accept, current, dispatch, query, editQuery)
 
 import Json.Decode as D
 import Json.Encode as E
@@ -27,4 +27,19 @@ dispatch popup raw (Model model) =
     case (model.snapshot,CapturedAction.decode raw) of
         (Just snapshot,Ok event) ->
             if CapturedAction.publication event==SurfaceRenderer.publication snapshot && CapturedAction.lease event==SurfaceRenderer.lease snapshot && CapturedAction.surface event==(if popup then "popup" else "bar") && SurfaceRenderer.enabled popup (CapturedAction.identity event) snapshot then Just (CapturedAction.encode event) else Nothing
+        _ -> Nothing
+
+query : String -> Model -> Maybe E.Value
+query value (Model model) =
+    if String.length value>256 || String.any (\c -> Char.toCode c<32 || Char.toCode c==127) value then Nothing else
+    model.snapshot |> Maybe.andThen (\snapshot ->
+        if SurfaceRenderer.mode snapshot/="applications" || not (SurfaceRenderer.enabled True "control:search" snapshot) then Nothing else
+        Just (E.object [("surfaceProtocol",E.int 2),("kind",E.string "surface-query"),("surface",E.string "popup"),("publication",E.string (UInt64.string (SurfaceRenderer.publication snapshot))),("lease",E.string (UInt64.string (SurfaceRenderer.lease snapshot))),("id",E.string "control:search"),("query",E.string value)]))
+
+editQuery : D.Value -> Model -> Maybe (String,E.Value)
+editQuery raw ((Model model) as currentModel) =
+    let decoder = D.map5 (\version surface publication lease value -> {version=version,surface=surface,publication=publication,lease=lease,value=value}) (D.field "surfaceProtocol" D.int) (D.field "surface" D.string) (D.field "publication" UInt64.decoder) (D.field "lease" UInt64.decoder) (D.field "query" D.string)
+    in case (D.decodeValue decoder raw,model.snapshot) of
+        (Ok event,Just snapshot) ->
+            if event.version/=2 || event.surface/="popup" || event.publication/=SurfaceRenderer.publication snapshot || event.lease/=SurfaceRenderer.lease snapshot || D.decodeValue (D.field "id" D.string) raw/=Ok "control:search" then Nothing else query event.value currentModel |> Maybe.map (\wire -> (event.value,wire))
         _ -> Nothing

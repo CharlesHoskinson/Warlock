@@ -96,6 +96,24 @@
     !event.ctrlKey&&!event.altKey&&!event.metaKey&&!event.shiftKey;
   const activationKey=event=>event.key==='Enter'||event.key===' ';
   document.addEventListener('keydown',event=>{
+    if(event.key==='Enter'&&event.target?.dataset?.surfaceField==='control:search'){
+      if(!qualified(event))return;
+      const root=owner(event.target);
+      const first=[...root.querySelectorAll('[data-surface-control]')].find(item=>item.dataset.surfaceControl.startsWith('entry:')&&!item.disabled);
+      block(event);if(first){first.focus();begin(first,Object.freeze({kind:'keyboard',key:'Enter',code:'Enter'}));if(pending&&current(pending.stamp))invoke(pending);}
+      return;
+    }
+    if(event.key==='Tab'){
+      const root=event.target?.closest?.('.surface-popup');
+      if(!root||root.dataset.mode==='menu'||event.repeat||event.isComposing||
+        event.defaultPrevented||event.ctrlKey||event.altKey||event.metaKey)return;
+      const items=[...root.querySelectorAll('[data-surface-control]:not(:disabled),[data-surface-field]:not(:disabled)')];
+      if(!items.length)return;
+      const current=items.indexOf(document.activeElement);
+      const next=items[(current+(event.shiftKey?-1:1)+items.length)%items.length];
+      block(event);next.focus();next.scrollIntoView({block:'nearest',inline:'nearest'});
+      return;
+    }
     if(event.key==='Escape'){
       pairing=null;
       const root=event.target?.closest?.('.surface-popup');

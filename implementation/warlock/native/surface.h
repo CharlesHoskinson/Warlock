@@ -61,3 +61,29 @@ static gboolean surface_action(SurfaceGate *gate,JsonNode *node,JsonNode *frame,
     for (guint i=0;i<json_array_get_length(items);i++) {JsonObject *item=json_array_get_object_element(items,i);if (g_str_equal(json_object_get_string_member(o,"id"),json_object_get_string_member(item,"id")) && json_object_get_boolean_member(item,"enabled")) return TRUE;}
     return FALSE;
 }
+/* A bounded field edit carries no window or launch authority. It still belongs
+ * to the current enabled field, owning popup publication and live lease. */
+static gboolean surface_query(SurfaceGate *gate,JsonNode *node,JsonNode *frame,gboolean popup) {
+    if (!popup || !node || !frame || !JSON_NODE_HOLDS_OBJECT(node)) return FALSE;
+    JsonObject *o=json_node_get_object(node);
+    const char *const fields[]={"surfaceProtocol","kind","surface","publication","lease","id","query"};
+    if (!surface_fields(o,fields,7) || !surface_text(json_object_get_member(o,"kind"),32,FALSE) || !g_str_equal(json_object_get_string_member(o,"kind"),"surface-query") || !surface_text(json_object_get_member(o,"id"),512,FALSE) || !g_str_equal(json_object_get_string_member(o,"id"),"control:search") || !surface_text(json_object_get_member(o,"query"),256,TRUE) || !g_str_equal(json_object_get_string_member(json_node_get_object(frame),"mode"),"applications")) return FALSE;
+    JsonObject *action=json_object_new();
+    for (guint i=0;i<6;i++) json_object_set_member(action,fields[i],json_node_copy(json_object_get_member(o,fields[i])));
+    json_object_set_string_member(action,"kind","surface-action");
+    JsonNode *copy=json_node_new(JSON_NODE_OBJECT);json_node_take_object(copy,action);
+    gboolean accepted=surface_action(gate,copy,frame,TRUE);json_node_unref(copy);return accepted;
+}
+static gboolean surface_focus_targets_present(JsonNode *targets,JsonNode *frame) {
+    JsonArray *wanted=json_node_get_array(targets),*controls=json_object_get_array_member(json_node_get_object(frame),"popup");
+    if (!json_array_get_length(wanted)) return FALSE;
+    for (guint i=0;i<json_array_get_length(wanted);i++) {
+        const char *target=json_array_get_string_element(wanted,i);gboolean found=FALSE;
+        for (guint j=0;j<json_array_get_length(controls);j++) {
+            JsonObject *control=json_array_get_object_element(controls,j);
+            if (json_object_get_boolean_member(control,"enabled") && g_str_equal(target,json_object_get_string_member(control,"domId"))) found=TRUE;
+        }
+        if (!found) return FALSE;
+    }
+    return TRUE;
+}

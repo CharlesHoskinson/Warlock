@@ -30,16 +30,19 @@ class Authority:
   prints={};rows=[]
   for identity,entry in sorted(entries.items()):
    text(identity,256);text(entry['name'],512,True);text(entry['icon'],512,True)
+   text(entry['genericName'],512,True)
+   if len(entry['keywords'])>64:raise Refused('Keyword capacity')
+   for word in entry['keywords']:text(word,128,True)
    if entry['wmclass']:text(entry['wmclass'],512)
    prints[identity]=fingerprint(entry)
-   rows.append({'id':identity,'name':entry['name'],'iconHint':entry['icon'],'wmclass':entry['wmclass']})
+   rows.append({'id':identity,'name':entry['name'],'iconHint':entry['icon'],'wmclass':entry['wmclass'],'genericName':entry['genericName'],'keywords':entry['keywords']})
   # Include native-only Exec/path/action/terminal bytes and file identity.
   signature=hashlib.sha256(json.dumps(prints,sort_keys=True).encode()).hexdigest()
   generation=self.generation
   if signature!=self.signature:
    if generation==MAX_COUNTER:raise Refused('Catalog generation exhausted')
    generation+=1
-  snapshot={'catalogProtocol':1,'lifetime':self.lifetime,'generation':str(generation),'entries':rows}
+  snapshot={'catalogProtocol':2,'lifetime':self.lifetime,'generation':str(generation),'entries':rows}
   if len(json.dumps(snapshot,ensure_ascii=True,separators=(',',':')).encode())>MAX_SNAPSHOT_BYTES:raise Refused('Prototype catalog byte capacity')
   self.generation=generation;self.signature=signature
   self.entries=entries;self.fingerprints=prints;self.available=True

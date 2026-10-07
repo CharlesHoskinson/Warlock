@@ -20,3 +20,5 @@
 @media(forced-colors:active){.bar .surface-bar>.surface-status{background:Canvas;color:CanvasText;border-color:Highlight}}
 
 .bar .surface-actions{display:flex;align-items:center;flex:1 1 auto;min-width:0;height:48px;overflow-x:auto;overflow-y:hidden;flex-wrap:nowrap}
+.launcher-search { box-sizing:border-box; width:100%; min-height:40px; padding:8px 12px; color:#f0f5fa; background:#17232f; border:1px solid #7f9caf; border-radius:4px; font:inherit; }
+.launcher-search:focus-visible { outline:2px solid #86c8ff; outline-offset:2px; }

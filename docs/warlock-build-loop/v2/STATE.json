@@ -1,32 +1,33 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-07T22:02:24.269782+00:00",
+  "updatedUTC": "2026-10-07T22:44:04.634004+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "taskbar-focus-journey",
+    "id": "persistent-catalog-pins",
     "requirements": [
       "ELM-UI-004",
-      "ELM-UX-024"
+      "ELM-UX-004"
     ],
     "scenarios": [
-      "taskbar-group",
-      "ux-024"
+      "taskbar-zero",
+      "ux-004"
     ],
-    "before": "Popup dismissal has no accepted native focus-return journey; prior focus-related failures remain held.",
-    "after": "A taskbar picker/menu can be traversed and dismissed with focus returning to its eligible original recipient.",
-    "state": "investigating actual keyboard recipient before selecting the code fix",
+    "before": "Catalog launchers and chosen pin order do not persist in the integrated candidate.",
+    "after": "Users can pin and reorder desktop identities, retain relative order after shell restart, and launch a pinned zero-window identity once.",
+    "state": "selected; implementation follows the search publication",
     "paths": [
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/native/host.c"
+      "src/Desktop.elm",
+      "src/Surface.elm",
+      "adapter/daemon.py"
     ],
     "verification": [
-      "actual native picker/menu traversal and Escape",
-      "native application keyboard recipient and no accidental window effect"
+      "Typed pin/reorder and catalog reconciliation replay",
+      "Isolated native restart/order and zero-window identity-bound launch recording"
     ]
   },
   "nextSlices": [
@@ -44,29 +45,118 @@
   "last24hTokenUsage": "unavailable; old goal figure was cumulative",
   "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
   "previousSlice": {
-    "id": "visible-window-feedback",
+    "id": "launcher-search",
     "requirements": [
-      "ELM-UI-007"
+      "ELM-UI-005",
+      "ELM-UX-029"
     ],
     "scenarios": [
-      "restore-pending",
-      "restore-refused",
-      "restore-unknown"
+      "search-no-match",
+      "search-race",
+      "search-removed",
+      "search-refused",
+      "launcher-refused"
     ],
-    "before": "Taskbar status is visually hidden; a generic recovery message masks Pending/Unknown.",
-    "after": "Window-action status is visible, distinct and persistent; Refresh remains observation-only.",
-    "state": "implemented; native pointer/status/recovery verified; original keyboard/context/AT verdict pending",
+    "before": "Applications is an unfiltered catalog; there is no editable search query.",
+    "after": "Typing filters and ranks current catalog results; current query owns selection and survives refusal; Enter sends one identity-bound launch.",
+    "state": "implemented; compiled and native behavior verified; black popup physical presentation remains open",
     "paths": [
+      "src/Desktop.elm",
       "src/Surface.elm",
       "src/SurfaceRenderer.elm",
-      "assets/shell.css"
+      "src/Catalog.elm",
+      "native/surface.h",
+      "adapter/taskbar_catalog.py"
     ],
     "verification": [
-      "typed-state projection and no new effects",
-      "actual compiled views in narrow/wide browser",
-      "native/AT original scenarios before acceptance"
+      "compile changed targets and native admission",
+      "current/stale query and current catalog replay",
+      "actual native query/keyboard launch and refusal when ready"
     ],
-    "evidence": "implementation/warlock/qa/evidence/window-feedback/manifest.json",
-    "additionalEvidence": "implementation/warlock/qa/evidence/window-feedback-native/manifest.json"
-  }
+    "evidence": "implementation/warlock/qa/evidence/launcher-search/manifest.json",
+    "missingObservation": "Capture is after Refresh and no-match, despite its original search-refused.png filename. The bar paints the no-match status; the 700x420 applications popup is solid black. DOM, focus acknowledgement and successful input do not prove visible controls. Controlled preview mode was not requested; do not attribute this to or lift the preview curtain without evidence."
+  },
+  "recentSlices": [
+    {
+      "id": "visible-window-feedback",
+      "requirements": [
+        "ELM-UI-007"
+      ],
+      "scenarios": [
+        "restore-pending",
+        "restore-refused",
+        "restore-unknown"
+      ],
+      "before": "Taskbar status is visually hidden; a generic recovery message masks Pending/Unknown.",
+      "after": "Window-action status is visible, distinct and persistent; Refresh remains observation-only.",
+      "state": "implemented; native pointer/status/recovery verified; original keyboard/context/AT verdict pending",
+      "paths": [
+        "src/Surface.elm",
+        "src/SurfaceRenderer.elm",
+        "assets/shell.css"
+      ],
+      "verification": [
+        "typed-state projection and no new effects",
+        "actual compiled views in narrow/wide browser",
+        "native/AT original scenarios before acceptance"
+      ],
+      "evidence": "implementation/warlock/qa/evidence/window-feedback/manifest.json",
+      "additionalEvidence": "implementation/warlock/qa/evidence/window-feedback-native/manifest.json"
+    },
+    {
+      "id": "taskbar-focus-journey",
+      "requirements": [
+        "ELM-UI-004",
+        "ELM-UX-024"
+      ],
+      "scenarios": [
+        "taskbar-group",
+        "ux-024"
+      ],
+      "before": "Popup dismissal has no accepted native focus-return journey; prior focus-related failures remain held.",
+      "after": "A taskbar picker/menu can be traversed and dismissed with focus returning to its eligible original recipient.",
+      "state": "native picker traversal and original recipient observed; original menu/AT verdict pending",
+      "paths": [
+        "implementation/warlock/src/Desktop.elm",
+        "implementation/warlock/native/host.c"
+      ],
+      "verification": [
+        "actual native picker/menu traversal and Escape",
+        "native application keyboard recipient and no accidental window effect"
+      ],
+      "evidence": "implementation/warlock/qa/evidence/taskbar-focus/manifest.json"
+    },
+    {
+      "id": "launcher-search",
+      "requirements": [
+        "ELM-UI-005",
+        "ELM-UX-029"
+      ],
+      "scenarios": [
+        "search-no-match",
+        "search-race",
+        "search-removed",
+        "search-refused",
+        "launcher-refused"
+      ],
+      "before": "Applications is an unfiltered catalog; there is no editable search query.",
+      "after": "Typing filters and ranks current catalog results; current query owns selection and survives refusal; Enter sends one identity-bound launch.",
+      "state": "implemented; compiled and native behavior verified; black popup physical presentation remains open",
+      "paths": [
+        "src/Desktop.elm",
+        "src/Surface.elm",
+        "src/SurfaceRenderer.elm",
+        "src/Catalog.elm",
+        "native/surface.h",
+        "adapter/taskbar_catalog.py"
+      ],
+      "verification": [
+        "compile changed targets and native admission",
+        "current/stale query and current catalog replay",
+        "actual native query/keyboard launch and refusal when ready"
+      ],
+      "evidence": "implementation/warlock/qa/evidence/launcher-search/manifest.json",
+      "missingObservation": "Capture is after Refresh and no-match, despite its original search-refused.png filename. The bar paints the no-match status; the 700x420 applications popup is solid black. DOM, focus acknowledgement and successful input do not prove visible controls. Controlled preview mode was not requested; do not attribute this to or lift the preview curtain without evidence."
+    }
+  ]
 }

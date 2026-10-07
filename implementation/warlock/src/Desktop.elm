@@ -25,6 +25,7 @@ type alias Model =
     , ownerExhausted : Bool
     , launch : Launch.Model
     , applications : Maybe Catalog.Snapshot
+    , query : String
     , open : Bool
     , request : Counter
     , presentation : Maybe Counter
@@ -51,6 +52,7 @@ type Msg
     | Incoming D.Value
     | OpenApplications ViewStamp
     | CloseApplications ViewStamp
+    | SearchQuery ViewStamp String
     | CatalogUnsent Binding.Binding Counter
     | Start Launch.Selection
     | Deadline Launch.PendingToken
@@ -67,7 +69,7 @@ type Effect
 
 initial : Model
 initial =
-    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, open = False, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
+    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", open = False, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
 
 canProveCatalogUnsent : Binding.Binding -> Counter -> Model -> Bool
 canProveCatalogUnsent binding request model =
@@ -274,7 +276,7 @@ update message model =
                         Ok (binding,request,snapshot) ->
                             if model.windows.shell.phase /= Shell.Detached && model.windows.shell.binding == Just binding && model.expected == Just request then
                                 let next = advance {model | launch = Launch.catalog snapshot model.launch, applications = Catalog.decode snapshot |> Result.toMaybe, expected = Nothing, catalogFailure = Nothing}
-                                    target = (if List.member (Launch.status next.launch) ["Pending","Unknown"] then Nothing else next.applications) |> Maybe.map Catalog.entries |> Maybe.withDefault [] |> List.head |> Maybe.map (\entry -> key next ("entry:" ++ Catalog.id entry.identity)) |> Maybe.withDefault (key next "control:close")
+                                    target = "launcher-search"
                                 in (next,if next.open then [Focus target] else [])
                             else (model,[])
                         Err _ -> (model,[])
@@ -283,7 +285,10 @@ update message model =
                     in case D.decodeValue decoder raw of
                         Ok (binding,outcome) ->
                             if model.windows.shell.phase /= Shell.Detached && model.windows.shell.binding == Just binding then
-                                ({model | launch = Launch.receive (host binding) outcome model.launch},[])
+                                let launch = Launch.receive (host binding) outcome model.launch
+                                    refused = Launch.status model.launch=="Pending" && Launch.status launch=="Refused"
+                                    next = {model | launch = launch, open = if refused then True else model.open && Launch.status launch /= "Submitted"}
+                                in (next,if refused then [Focus "launcher-search"] else [])
                             else (model,[])
                         Err _ -> (model,[])
                 _ -> window (TaskbarShell.Native (Shell.Incoming raw)) model
@@ -298,7 +303,7 @@ update message model =
             in case (model.windows.shell.binding, UInt64.next model.request) of
                 (Just binding,Just request) ->
                     if model.windows.shell.phase == Shell.Detached || retired.presentation == Nothing then (retired,[]) else
-                        ({retired | request = request, expected = Just request},[Send (E.object [("protocolVersion",E.int 3),("kind",E.string "catalog-request"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request))]),Focus (key retired "control:close")])
+                        ({retired | request = request, expected = Just request},[Send (E.object [("protocolVersion",E.int 3),("kind",E.string "catalog-request"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request))]),Focus "launcher-search"])
                 _ -> (retired,[])
         CatalogUnsent binding request ->
             if not (canProveCatalogUnsent binding request model) then (model,[]) else
@@ -307,6 +312,9 @@ update message model =
             if capture model /= Just stamp || not model.open then (model,[]) else
                 let next = advance {model | open = False, expected = Nothing}
                 in (next,[Focus (key next "control:opener")])
+        SearchQuery stamp query ->
+            if capture model /= Just stamp || not model.open || query==model.query || String.length query > 256 || String.any (\c -> Char.toCode c < 32 || Char.toCode c == 127) query then (model,[]) else
+                (advance {model | query=query},[])
         Start selection ->
             if MenuBridge.preparedSnapshot model.windows.menus/=Nothing then (model,[]) else
             let (launch,intent) = Launch.start selection model.launch

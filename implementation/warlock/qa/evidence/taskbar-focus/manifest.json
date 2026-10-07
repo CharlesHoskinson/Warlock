@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-UI-004",
+    "ELM-UX-024"
+  ],
+  "scope": "Native two-member picker, complete forward/reverse Tab wrap, Escape restores actual original application keyboard recipient without effect, pointer member selection activates its exact incarnation. Original menu/three-member/AT obligations remain pending.",
+  "evidence": {
+    "native-report.json": "073c73458b884e1120127b47450dea00ce35026dd4094f2d6d20a26cf37cb9af",
+    "retained-fixture-failure.json": "d92bee1ef6621a0c59405fda0b7f794b2cb0a3bdc078a6a244a410a93bcca137"
+  },
+  "nativeJourneyObserved": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "runnerSHA256": "f8c97b52ee783b9d70b6db6faf99789109d7ea49577d1b07b3f00a77166994e7",
+  "sourceRevisionBeforeFix": "42609aa",
+  "changedProduction": [
+    "assets/activation.js"
+  ],
+  "failureDisposition": "Initial fixture assumed group title was the first target; actual stable grouping used its earliest incarnation, with a different label. Fixture corrected; no policy changes."
+}

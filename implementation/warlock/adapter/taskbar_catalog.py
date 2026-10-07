@@ -10,8 +10,22 @@ from pathlib import Path
 import stat
 import tempfile
 
-SCHEMA = 1
-_FIELDS = {'id', 'name', 'icon', 'path', 'exec', 'wmclass', 'mime', 'terminal', 'actions'}
+SCHEMA = 2
+_FIELDS = {'id', 'name', 'genericName', 'keywords', 'icon', 'path', 'exec', 'wmclass', 'mime', 'terminal', 'actions'}
+
+def _message_locale():
+    return next((os.environ[k] for k in ('LC_ALL','LC_MESSAGES','LANG') if os.environ.get(k)), 'C')
+
+def _localized(section, key, default=''):
+    raw = _message_locale()
+    base, separator, modifier = raw.partition('@')
+    base = base.split('.',1)[0]
+    language = base.split('_',1)[0]
+    candidates = [base+'@'+modifier,base,language+'@'+modifier,language] if separator else [base,language]
+    for candidate in dict.fromkeys(candidates):
+        value = section.get(key+'['+candidate+']')
+        if value is not None:return value
+    return section.get(key,default)
 
 
 def _roots(data_home, data_dirs):
@@ -93,7 +107,7 @@ def _parse(groups):
                     name = 'Desktop Action ' + action
                     if action and name in parser and parser[name].get('Exec'):
                         actions.append({'id': action, 'name': parser[name].get('Name', action), 'exec': parser[name]['Exec']})
-                result[key] = {'id': key, 'name': section.get('Name', key), 'icon': section.get('Icon', 'application-x-executable'), 'path': str(path), 'exec': section['Exec'], 'wmclass': section.get('StartupWMClass', ''), 'mime': section.get('MimeType', '').split(';'), 'terminal': section.get('Terminal', '').lower() == 'true', 'actions': actions}
+                result[key] = {'id': key, 'name': _localized(section,'Name',key), 'genericName': _localized(section,'GenericName'), 'keywords': [word for word in _localized(section,'Keywords').split(';') if word], 'icon': section.get('Icon', 'application-x-executable'), 'path': str(path), 'exec': section['Exec'], 'wmclass': section.get('StartupWMClass', ''), 'mime': section.get('MimeType', '').split(';'), 'terminal': section.get('Terminal', '').lower() == 'true', 'actions': actions}
             except (OSError, configparser.Error, KeyError, UnicodeError):
                 complete = False
     return {k: v for k, v in result.items() if v}, complete
@@ -110,7 +124,7 @@ def _valid_catalog(value):
     for key, entry in value.items():
         if not isinstance(key, str) or not isinstance(entry, dict) or set(entry) != _FIELDS or entry['id'] != key:
             return False
-        if any(not isinstance(entry[field], str) for field in ('id', 'name', 'icon', 'path', 'exec', 'wmclass')):
+        if any(not isinstance(entry[field], str) for field in ('id', 'name', 'genericName', 'icon', 'path', 'exec', 'wmclass')) or not isinstance(entry['keywords'],list) or any(not isinstance(word,str) for word in entry['keywords']):
             return False
         if not isinstance(entry['terminal'], bool) or not isinstance(entry['mime'], list) or any(not isinstance(item, str) for item in entry['mime']):
             return False
@@ -173,7 +187,7 @@ def load_catalog(data_home=None, data_dirs=None, cache_dir=None):
     """
     roots = _roots(data_home, data_dirs)
     directory = Path(cache_dir) if cache_dir is not None else Path(os.environ.get('XDG_CACHE_HOME', Path.home() / '.cache')) / 'omarchy-windows-parity/taskbar-catalog'
-    key = [str(root) for root in roots]
+    key = [str(root) for root in roots] + ['LC_MESSAGES='+_message_locale()]
     try:
         before, groups = _inventory(roots)
     except OSError:

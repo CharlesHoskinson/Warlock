@@ -31,7 +31,8 @@ if (window.elmHostQA) {
       const r=button.getBoundingClientRect();return {id:button.id,label:button.textContent,accessibleName:button.getAttribute('aria-label'),disabled:button.disabled,x:r.x,y:r.y,width:r.width,height:r.height};
     });
     const node=document.querySelector('.surface-bar,.surface-popup');
-    const body={publication:node?.dataset.publication||null,lease:node?.dataset.lease||null,buttons,focus:document.activeElement?.id||'',text:document.body.innerText};
+    const fields=[...document.querySelectorAll('[data-surface-field]')].map(field=>({id:field.id,value:field.value,accessibleName:field.getAttribute('aria-label'),disabled:field.disabled}));
+    const body={publication:node?.dataset.publication||null,lease:node?.dataset.lease||null,buttons,fields,focus:document.activeElement?.id||'',text:document.body.innerText};
     const current=JSON.stringify(body);if(current!==last){last=current;post({kind:'surface-report',body});}
   });
   document.addEventListener('scroll',observe,true);

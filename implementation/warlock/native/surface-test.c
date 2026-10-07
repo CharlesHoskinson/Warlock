@@ -29,4 +29,14 @@ static void test_schema(void) {
     JsonObject *button=json_array_get_object_element(json_object_get_array_member(o,"popup"),0);json_object_set_string_member(button,"id","bar:applications");g_assert_false(surface_frame(f,&p,&l,&open));json_object_set_string_member(button,"id","control:close");json_object_set_string_member(button,"domId","opener");g_assert_false(surface_frame(f,&p,&l,&open));json_node_unref(f);
     f=frame("1","0","applications");g_assert_false(surface_frame(f,&p,&l,&open));json_node_unref(f);f=frame("0","1","closed");g_assert_false(surface_frame(f,&p,&l,&open));json_node_unref(f);
 }
-int main(int argc,char **argv) {g_test_init(&argc,&argv,NULL);g_test_add_func("/surface/canonical-uint64",test_counter);g_test_add_func("/surface/publication-close-barrier",test_barrier);g_test_add_func("/surface/actual-manager-origin",test_origin);g_test_add_func("/surface/strict-frame",test_schema);return g_test_run();}
+static void test_query(void) {
+    SurfaceGate gate={5,2,1};JsonNode *f=frame("5","2","applications");
+    JsonObject *field=json_array_get_object_element(json_object_get_array_member(json_node_get_object(f),"popup"),0);json_object_set_string_member(field,"id","control:search");
+    JsonNode *q=parse("{\"surfaceProtocol\":2,\"kind\":\"surface-query\",\"surface\":\"popup\",\"publication\":\"5\",\"lease\":\"2\",\"id\":\"control:search\",\"query\":\"Files\"}");
+    g_assert_true(surface_query(&gate,q,f,TRUE));g_assert_false(surface_query(&gate,q,f,FALSE));g_assert_false(surface_action(&gate,q,f,TRUE));
+    JsonNode *targets=parse("[\"close\"]");g_assert_true(surface_focus_targets_present(targets,f));json_object_set_string_member(field,"domId","replacement");g_assert_false(surface_focus_targets_present(targets,f));json_object_set_string_member(field,"domId","close");json_object_set_boolean_member(field,"enabled",FALSE);g_assert_false(surface_focus_targets_present(targets,f));json_object_set_boolean_member(field,"enabled",TRUE);json_node_unref(targets);
+    gate.publication++;g_assert_false(surface_query(&gate,q,f,TRUE));gate.publication--;gate.closed=2;g_assert_false(surface_query(&gate,q,f,TRUE));gate.closed=1;
+    json_object_set_boolean_member(field,"enabled",FALSE);g_assert_false(surface_query(&gate,q,f,TRUE));json_object_set_boolean_member(field,"enabled",TRUE);
+    JsonObject *o=json_node_get_object(q);json_object_set_string_member(o,"Exec","forbidden");g_assert_false(surface_query(&gate,q,f,TRUE));json_node_unref(q);json_node_unref(f);
+}
+int main(int argc,char **argv) {g_test_init(&argc,&argv,NULL);g_test_add_func("/surface/canonical-uint64",test_counter);g_test_add_func("/surface/publication-close-barrier",test_barrier);g_test_add_func("/surface/actual-manager-origin",test_origin);g_test_add_func("/surface/strict-frame",test_schema);g_test_add_func("/surface/query-is-not-action-authority",test_query);return g_test_run();}

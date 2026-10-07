@@ -24,19 +24,32 @@ port nativePreviewIssued : (D.Value -> msg) -> Sub msg
 port nativePreviewRetry : (D.Value -> msg) -> Sub msg
 
 type Msg = Present D.Value | Action E.Value | NativePreview D.Value | NativeGrant D.Value | NativeQuarantine D.Value | NativeClosed D.Value | NativeIssued D.Value | NativeRetry D.Value
-type alias Model = { presentation : Presentation.Model, previews : Preview.Model }
+type alias Model = { presentation : Presentation.Model, previews : Preview.Model, pendingQuery : Maybe String, composing : Bool }
 
 main : Program () Model Msg
 main = Browser.element
-    { init=\_ -> ({presentation=Presentation.initial,previews=Preview.initial},Cmd.none)
+    { init=\_ -> ({presentation=Presentation.initial,previews=Preview.initial,pendingQuery=Nothing,composing=False},Cmd.none)
     , subscriptions=\_ -> Sub.batch [presentation Present,requestAction Action,nativePreviews NativePreview,nativePreviewGrants NativeGrant,nativePreviewQuarantine NativeQuarantine,nativePreviewClosed NativeClosed,nativePreviewIssued NativeIssued,nativePreviewRetry NativeRetry]
-    , view=\model -> Presentation.current model.presentation |> Maybe.map (\snapshot -> SurfaceRenderer.viewWithPreview (\identity -> Preview.image snapshot identity model.previews) True Action snapshot) |> Maybe.withDefault (text "")
+    , view=\model -> Presentation.current model.presentation |> Maybe.map (\snapshot -> SurfaceRenderer.viewWithPreview (\identity -> Preview.image snapshot identity model.previews) True Action (model.pendingQuery |> Maybe.map (\query -> SurfaceRenderer.pendingQuery query snapshot) |> Maybe.withDefault snapshot)) |> Maybe.withDefault (text "")
     , update=\message model -> case message of
-        Action value -> (model,Presentation.dispatch True value model.presentation |> Maybe.map actions |> Maybe.withDefault Cmd.none)
+        Action value ->
+            if D.decodeValue (D.field "kind" D.string) value |> Result.map (\kind -> List.member kind ["surface-query","surface-preedit"]) |> Result.withDefault False then
+                case Presentation.editQuery value model.presentation of
+                    Just (query,wire) ->
+                        let composing = D.decodeValue (D.field "kind" D.string) value==Ok "surface-preedit"
+                        in ({model | pendingQuery=Just query,composing=composing},if composing then Cmd.none else actions wire)
+                    Nothing -> (model,Cmd.none)
+            else if (model.pendingQuery/=Nothing || model.composing) && (D.decodeValue (D.field "id" D.string) value |> Result.map (String.startsWith "entry:") |> Result.withDefault False) then (model,Cmd.none)
+            else (model,Presentation.dispatch True value model.presentation |> Maybe.map actions |> Maybe.withDefault Cmd.none)
         Present raw ->
             let acceptedPresentation = Presentation.accept raw model.presentation
                 (previews,commands) = Preview.present (Presentation.current acceptedPresentation) model.previews
-            in ({presentation=acceptedPresentation,previews=previews},previewCommands commands)
+                pending = model.pendingQuery |> Maybe.andThen (\query -> case Presentation.current acceptedPresentation of
+                    Just snapshot -> if SurfaceRenderer.mode snapshot=="applications" && SurfaceRenderer.queryValue snapshot/=Just query then Just query else Nothing
+                    Nothing -> Nothing)
+                composing = model.composing && (Presentation.current acceptedPresentation |> Maybe.map (\snapshot -> SurfaceRenderer.mode snapshot=="applications") |> Maybe.withDefault False)
+                queryCommand = if composing then Cmd.none else pending |> Maybe.andThen (\query -> Presentation.query query acceptedPresentation) |> Maybe.map actions |> Maybe.withDefault Cmd.none
+            in ({presentation=acceptedPresentation,previews=previews,pendingQuery=pending,composing=composing},Cmd.batch [previewCommands commands,queryCommand])
         NativePreview raw ->
             let (previews,commands) =
                     case D.decodeValue Realm.envelopeDecoder raw of

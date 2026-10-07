@@ -48,13 +48,14 @@ controls model =
     if model.open then
         let
             scoped build = Desktop.capture model |> Maybe.map build
-            entries = model.applications |> Maybe.map Catalog.entries |> Maybe.withDefault []
+            entries = model.applications |> Maybe.map (Catalog.search model.query) |> Maybe.withDefault []
             ready = not (List.member (Launch.status model.launch) ["Pending","Unknown"])
             entryControl entry =
                 let choice = if ready then Launch.select (Catalog.id entry.identity) model.launch |> Maybe.map Desktop.Start else Nothing
                 in {id="entry:" ++ Catalog.id entry.identity,domId=Desktop.key model ("entry:" ++ Catalog.id entry.identity),label="Open " ++ entry.name,ariaLabel="Open " ++ entry.name,detail="",enabled=choice/=Nothing,message=choice}
             acknowledge = Launch.uncertain model.launch |> Maybe.map (\token -> {id="control:acknowledge",domId=Desktop.key model "control:acknowledge",label="I checked; allow another launch",ariaLabel="I checked; allow another launch",detail="",enabled=True,message=Just (Desktop.Acknowledge token)}) |> Maybe.map List.singleton |> Maybe.withDefault []
-        in [ {id="control:close",domId=Desktop.key model "control:close",label="Windows",ariaLabel="Close applications and return to windows",detail="",enabled=True,message=scoped Desktop.CloseApplications}
+        in [ {id="control:search",domId="launcher-search",label=model.query,ariaLabel="Search applications",detail="",enabled=True,message=scoped (\stamp -> Desktop.SearchQuery stamp model.query)}
+           , {id="control:close",domId=Desktop.key model "control:close",label="Windows",ariaLabel="Close applications and return to windows",detail="",enabled=True,message=scoped Desktop.CloseApplications}
            , {id="control:refresh",domId=Desktop.key model "control:refresh",label="Refresh",ariaLabel="Refresh applications",detail="",enabled=True,message=scoped Desktop.OpenApplications}
            ] ++ acknowledge ++ List.map entryControl entries
     else if (MenuBridge.menuSnapshot model.windows.menus).menu/=Nothing then
@@ -114,10 +115,10 @@ notice model =
         "Pending" -> "Opening application…"
         "Unknown" -> "The launch could not be confirmed. Check your windows before opening it again."
         "Submitted" -> "Launch submitted."
-        "Refused" -> "The application changed or could not be launched. Refresh and choose again."
+        "Refused" -> "Launch refused. Refresh applications and choose again."
         _ -> if model.catalogFailure/=Nothing then
                 if recoveryNeeded model && model.windows.shell.phase/=Shell.Detached then reservationReason else "Applications were not opened. Choose Applications again."
-            else if model.open then (if model.expected/=Nothing then "Loading applications…" else if model.applications==Nothing then "Application list unavailable. Refresh to try again." else "Choose an application.") else windowNotice model
+            else if model.open then (if model.expected/=Nothing then "Loading applications…" else if model.applications==Nothing then "Application list unavailable. Refresh to try again." else if model.applications |> Maybe.map (Catalog.search model.query >> List.isEmpty) |> Maybe.withDefault False then "No matching applications. Change your search or Refresh." else if String.isEmpty (String.trim model.query) then "Type to search applications." else "Choose a matching application.") else windowNotice model
 
 windowNotice : Desktop.Model -> String
 windowNotice model =
@@ -169,6 +170,7 @@ resolve publication lease raw model =
         scopes child = D.map4 (\version shown scoped role -> (version==2 && shown==publication && scoped==lease,role)) (D.field "surfaceProtocol" D.int) (D.field "publication" UInt64.decoder) (D.field "lease" UInt64.decoder) (D.field "surface" D.string) |> D.andThen (\(valid,role) -> if valid then child role else D.fail "Stale surface event")
         context = strict ["surfaceProtocol","kind","surface","publication","lease","id","trigger","x","y"] (scopes (\role -> D.map4 (\identity trigger x y -> (role,identity,trigger)) (D.field "id" D.string) (D.field "trigger" D.string) (D.field "x" D.int) (D.field "y" D.int)))
         navigation = strict ["surfaceProtocol","kind","surface","publication","lease","key"] (scopes (\role -> if role=="popup" && mode model=="menu" then D.field "key" D.string else D.fail "No menu"))
+        query = strict ["surfaceProtocol","kind","surface","publication","lease","id","query"] (scopes (\role -> if role=="popup" && model.open then D.map2 Tuple.pair (D.field "id" D.string) (D.field "query" D.string) else D.fail "No applications"))
         menuMessage key =
             (MenuBridge.menuSnapshot model.windows.menus).menu |> Maybe.andThen (\menu ->
                 let send = Just << Desktop.Window << TaskbarShell.MenuEvent
@@ -183,6 +185,7 @@ resolve publication lease raw model =
                     _ -> Nothing)
     in case D.decodeValue (D.field "kind" D.string) raw of
         Ok "surface-action" -> resolveAction publication lease raw model
+        Ok "surface-query" -> D.decodeValue query raw |> Result.toMaybe |> Maybe.andThen (\(identity,value) -> if identity/="control:search" then Nothing else Desktop.capture model |> Maybe.map (\stamp -> Desktop.SearchQuery stamp value))
         Ok "surface-menu-navigation" -> D.decodeValue navigation raw |> Result.toMaybe |> Maybe.andThen menuMessage
         Ok "surface-context" ->
             D.decodeValue context raw |> Result.toMaybe |> Maybe.andThen (\(role,identity,trigger) ->

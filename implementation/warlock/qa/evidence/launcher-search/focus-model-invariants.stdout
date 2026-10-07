@@ -1,0 +1,343 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      closed: 0,
+      delivered: Set(),
+      intent: 1,
+      issued: false,
+      lease: 1,
+      pending: true,
+      pub: 1,
+      valid: true,
+      violations: 0
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      closed: 0,
+      delivered: Set(),
+      intent: 2,
+      issued: false,
+      lease: 2,
+      pending: true,
+      pub: 2,
+      valid: true,
+      violations: 0
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      closed: 0,
+      delivered: Set(2),
+      intent: 2,
+      issued: true,
+      lease: 2,
+      pending: false,
+      pub: 2,
+      valid: true,
+      violations: 0
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      closed: 0,
+      delivered: Set(2),
+      intent: 2,
+      issued: false,
+      lease: 2,
+      pending: false,
+      pub: 3,
+      valid: false,
+      violations: 0
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      closed: 0,
+      delivered: Set(2),
+      intent: 2,
+      issued: false,
+      lease: 2,
+      pending: false,
+      pub: 3,
+      valid: false,
+      violations: 0
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      closed: 0,
+      delivered: Set(2),
+      intent: 2,
+      issued: false,
+      lease: 2,
+      pending: false,
+      pub: 4,
+      valid: false,
+      violations: 0
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      closed: 0,
+      delivered: Set(2),
+      intent: 3,
+      issued: false,
+      lease: 3,
+      pending: true,
+      pub: 5,
+      valid: true,
+      violations: 0
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      closed: 0,
+      delivered: Set(2),
+      intent: 3,
+      issued: false,
+      lease: 3,
+      pending: false,
+      pub: 6,
+      valid: false,
+      violations: 0
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      closed: 0,
+      delivered: Set(2),
+      intent: 3,
+      issued: false,
+      lease: 3,
+      pending: false,
+      pub: 6,
+      valid: false,
+      violations: 0
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      closed: 0,
+      delivered: Set(2),
+      intent: 3,
+      issued: false,
+      lease: 3,
+      pending: false,
+      pub: 7,
+      valid: false,
+      violations: 0
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      closed: 0,
+      delivered: Set(2),
+      intent: 3,
+      issued: false,
+      lease: 3,
+      pending: false,
+      pub: 8,
+      valid: false,
+      violations: 0
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      closed: 0,
+      delivered: Set(2),
+      intent: 3,
+      issued: false,
+      lease: 3,
+      pending: false,
+      pub: 9,
+      valid: false,
+      violations: 0
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      closed: 0,
+      delivered: Set(2),
+      intent: 4,
+      issued: false,
+      lease: 4,
+      pending: true,
+      pub: 10,
+      valid: true,
+      violations: 0
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      closed: 0,
+      delivered: Set(2),
+      intent: 4,
+      issued: false,
+      lease: 4,
+      pending: true,
+      pub: 10,
+      valid: true,
+      violations: 0
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      closed: 0,
+      delivered: Set(2, 4),
+      intent: 4,
+      issued: true,
+      lease: 4,
+      pending: false,
+      pub: 10,
+      valid: true,
+      violations: 0
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      closed: 0,
+      delivered: Set(2, 4),
+      intent: 5,
+      issued: false,
+      lease: 5,
+      pending: true,
+      pub: 11,
+      valid: true,
+      violations: 0
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      closed: 0,
+      delivered: Set(2, 4),
+      intent: 5,
+      issued: false,
+      lease: 5,
+      pending: true,
+      pub: 11,
+      valid: true,
+      violations: 0
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      closed: 0,
+      delivered: Set(2, 4),
+      intent: 6,
+      issued: false,
+      lease: 6,
+      pending: true,
+      pub: 12,
+      valid: true,
+      violations: 0
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      closed: 0,
+      delivered: Set(2, 4),
+      intent: 6,
+      issued: false,
+      lease: 6,
+      pending: true,
+      pub: 13,
+      valid: true,
+      violations: 0
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      closed: 6,
+      delivered: Set(2, 4),
+      intent: 6,
+      issued: false,
+      lease: 6,
+      pending: false,
+      pub: 14,
+      valid: true,
+      violations: 0
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      closed: 6,
+      delivered: Set(2, 4),
+      intent: 6,
+      issued: false,
+      lease: 6,
+      pending: false,
+      pub: 15,
+      valid: true,
+      violations: 0
+    }
+}
+
+[ok] No violation found (94ms at 1064 traces/second).
+Trace length statistics: max=21, min=21, average=21.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x134aa --backend=typescript to reproduce.
