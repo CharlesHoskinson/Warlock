@@ -901,3 +901,16 @@ retained models and incomplete teardown. Original normal16529/13, old-canceled
 16736/13 and full119 pass; four current actual Quint projections pass and the
 unchanged abstract10/200 is retained. Source138 remains unqualified for mandatory
 failure drain; CONTROL045 stays open with unchanged168 oracle for fresh139.
+
+Bounded CONTROL-045 known-duty drain: GUI139 retains current failure/opacity0
+curtain, invalidates visual and uses original urgent native quarantine. Existing
+sticky retiring producer/input/step/poll/receipt progress continues to original
+strict policy/physical/ticket/journal/confirmation close; only then failure1 exit
+without replacement/new realm/reset/inferred settlement. Exact original168
+oracle now16922/seven other normal/private cleanup proves actual real current
+cancellation once/no artifact/closed empty custody/failure1 after retirement,
+with no incomplete teardown or GLib/GObject criticals. Original normal17029/13,
+old-canceled17136/13, old-success17235/13, rapid17351/17 and delayed17418/8
+pass separately; full119, new Quint8/200 and5 actual projected stages pass.
+Actual known current cancellation is qualified; uncertainty/process/reload,
+all async schedules, physical/hardware/pressure/full release remain open.

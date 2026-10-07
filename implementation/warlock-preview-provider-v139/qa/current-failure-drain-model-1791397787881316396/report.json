@@ -1,0 +1,79 @@
+{
+  "passed": true,
+  "inputs": {
+    "spec/current_failure_drain.qnt": "555bb08d8f3bca1bfdef77074b4045de0512c6f5e14d161780ad1c29e5d446d0",
+    "spec/current_failure_drain_tests.qnt": "4a52ecc4bd8cb27140b7fde9a91ffb9e0b99a05be19d7ede459ed91304f59d3a",
+    "qa/current-failure-drain-model.py": "1f9bdc12de923e1926111b4e5774d7cba68ed7e970205aec38c5e64e8c4c2129"
+  },
+  "quint": {
+    "path": "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+    "sha256": "bd6e9400f6358a8a69d80eb636eb62f59f993039868a7be9719f76ba74191b4e"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "current_failure_drain_tests.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "current_failure_drain_tests.qnt",
+        "--main=current_failure_drain_tests",
+        "--backend=typescript",
+        "--match=^(originalEarlyExitLeavesCustody|currentFailureRetainsCustody|nativeReceiptsPrecedeStrictCloseAndExit|laterIntentCannotCancelFailure|rendererDisposalCannotSettle|unknownNeverNormalExit|staleOldErrorDoesNotFailCurrent|noGrantOrPolicyReset)$",
+        "--seed=1390041",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v139/qa/current-failure-drain-model-1791397787881316396/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "samples",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "current_failure_drain.qnt",
+        "--main=current_failure_drain",
+        "--backend=typescript",
+        "--invariant=safety",
+        "--seed=1390042",
+        "--max-samples=200",
+        "--max-steps=32",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v139/qa/current-failure-drain-model-1791397787881316396/samples.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "scope": "Current failure drain abstraction only: failure/owned custody/quarantine, independent native settlement, strict close before failure exit, later intent no cancellation/reset, stale error no authority and explicit Unknown. NativeSettled represents separately required original physical/journal/confirmation witnesses, never a UI inferred result. This model does not prove actual native source/receipts/liveness/deadlines, graceful recovery, physical reveal or release; actual Native168 failure and fresh native fix oracle qualify separately.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "namedScenarios": 8,
+  "invariantSamples": 200,
+  "artifacts": {
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-originalEarlyExitLeavesCustody-0.itf.json": "7817302f568567f174129f34c2ec1f3d7ebe54f3857adbb267f549f9d6a4b7ff",
+    "named-currentFailureRetainsCustody-1.itf.json": "807d26cb8ca14a02610ed77c00f513fd2873f99475394e42a55a654ce95851a1",
+    "named-nativeReceiptsPrecedeStrictCloseAndExit-2.itf.json": "1b2287f1c90f9402ed68f24a8db9cc084cfa33cd363e05181d59cc750419a0a5",
+    "named-laterIntentCannotCancelFailure-3.itf.json": "147a2be319f8883bd9dcf86395f2491329101021939562a690720d839d52743a",
+    "named-rendererDisposalCannotSettle-4.itf.json": "3f9be96f9c95a4270026c9b65b449401c31ef39b0d08910a58935155e4f68618",
+    "named-unknownNeverNormalExit-5.itf.json": "e52ffe2312dd9dec9db4f6e06b1df2d6afddd41055cde7b8bd084c7674c4a9dd",
+    "named-staleOldErrorDoesNotFailCurrent-6.itf.json": "3912cb7218a5f651cec60aa0145625aa40dfc5378c7a2be2d43189eb08544cd9",
+    "named-noGrantOrPolicyReset-7.itf.json": "be428797bd0ecd758c68f0e0b8f98787c3713e338ba617bad77fa6338cc0603b",
+    "selected.stdout": "499ed7a9692750f18fde6784d8ec1e28caddf5ffc5967b9ba0b8255bdaaff2fb",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "samples.itf.json": "cb206f2b723e413633afb0093964ecc7cf50fdaa0b746730ab065a580cd9fad8",
+    "samples.stdout": "df0c5a04e8e6cae9bef478062b26b7931d1b67b2bbc2a9a2f9c8651d1997e6e8",
+    "samples.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/spec/current_failure_drain.qnt": "555bb08d8f3bca1bfdef77074b4045de0512c6f5e14d161780ad1c29e5d446d0",
+    "inputs/spec/current_failure_drain_tests.qnt": "4a52ecc4bd8cb27140b7fde9a91ffb9e0b99a05be19d7ede459ed91304f59d3a",
+    "inputs/qa/current-failure-drain-model.py": "1f9bdc12de923e1926111b4e5774d7cba68ed7e970205aec38c5e64e8c4c2129"
+  }
+}

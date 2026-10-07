@@ -1,0 +1,7 @@
+{
+  "parent": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v81",
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "report": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v81/qa/native-1791281075067620039/report.json",
+  "reportSHA256": "76b8ca01709642a89fdb94f2faf00fb45f5ff343a4407de2b055fe0a0e1f1661",
+  "change": "Fresh82 retains81 terminal failure: all original1783 assertions, all normal exits, clean teardown;253 pixels disagree where the native screenshot visibly contains the pointer. Actual native focus warps it back into the body after the earlier opacity fixture moved it out. Before any new scoped job, save actual native cursor coordinates, move to790/590 and verify compositor-reported position outside body. Restore and verify the saved coordinates after half-alpha measurement before remaining original shader/GUI controls. Do not change any alpha/color/composite pixel predicate, ignore cursor pixels, retry a capture or extend deadlines. Protected preparation recompiles the same oracle and reproduces81 exact253 failed pixels from retained images. Original cursor controls remain required; main desktop is unchanged."
+}

@@ -1,0 +1,110 @@
+{
+  "passed": true,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v168/qa/native-controlled-1791397206950434420/report.json": "9cce2eb2a200088f293ac886866f5993e592751488d16e95b267fa86321d06b6",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v168/qa/preflight.json": "84542f84543474388848a31912c9ea5ffe0336e6f1740d20f791cf3f46c6a18a",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v168/qa/native-controlled-1791397206950434420/private-evidence/controlled-host.log": "7bfd29b3b573d1164374bb64db2cc1019a0cfacfb21472301766f10346e317ec",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v169/qa/native-controlled-1791398027273749403/report.json": "fbafbcebe6e73dc215f92078d79c0053e8caec371b375bea08228541b16bff86",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v169/qa/preflight.json": "b1318d26605390d8b22e2dbba965af5c3a1c71895a9432f23b1f627f3133362b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v169/qa/native-controlled-1791398027273749403/private-evidence/controlled-host.log": "d258aac920673ab30ff612c6a4939e8e2b8d95cbfdc67bc1ba76eb977cc4c5f9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v139/native/controlled-preview-host.h": "b0707a964943b390dcf06087a531e85f940e3ed04ef2ef5d8d9e6ec24b80ba6d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v139/native/shared-host.c": "849bc42cb918e9786693cf3a436c41cb1ecc5c412fd0b4497c7ae28eaea7a29d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v139/spec/current_failure_drain.qnt": "555bb08d8f3bca1bfdef77074b4045de0512c6f5e14d161780ad1c29e5d446d0",
+    "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v93/couple_native169_current_failure_drain.py": "560ba7d4c0755eb1a0864d8a79385b688e9d5f4828322bfec58bfedaef6ca9dd"
+  },
+  "quint": {
+    "path": "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+    "sha256": "bd6e9400f6358a8a69d80eb636eb62f59f993039868a7be9719f76ba74191b4e"
+  },
+  "observations": [
+    {
+      "name": "actualOriginalEarlyExitViolatesCustody",
+      "events": [
+        "Fault"
+      ],
+      "nativeObservation": "Native168 failed strict-drain oracle/known duties at exit",
+      "condition": "not(safe(earlyExit(s)))"
+    },
+    {
+      "name": "actualCurrentFailureQuarantinesOwnedScope",
+      "events": [
+        "Fault"
+      ],
+      "nativeObservation": "Native169 actual current cancellation/quarantine/known or retiring duties",
+      "condition": "s.failed and s.closing and s.owned and not(s.exited)"
+    },
+    {
+      "name": "actualLaterNativeRetirementSettlesCustody",
+      "events": [
+        "Fault",
+        "NativeSettled"
+      ],
+      "nativeObservation": "Native169 separately verified original strict Native/physical/journal/confirmation close projects independent settlement",
+      "condition": "s.failed and not(s.owned) and not(s.closed or s.exited)"
+    },
+    {
+      "name": "actualOriginalStrictClose",
+      "events": [
+        "Fault",
+        "NativeSettled",
+        "StrictRetire"
+      ],
+      "nativeObservation": "Native169 original native retire/closed policy report/empty custody",
+      "condition": "s.failed and s.closed and not(s.owned or s.exited)"
+    },
+    {
+      "name": "actualFailureExitAfterStrictClose",
+      "events": [
+        "Fault",
+        "NativeSettled",
+        "StrictRetire",
+        "Exit"
+      ],
+      "nativeObservation": "Native169 original failure1 after strict closed state/seven other normal exits/private cleanup",
+      "condition": "s.failed and s.closed and s.exited and not(s.owned)"
+    }
+  ],
+  "commands": [
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "concrete_current_failure_drain.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "concrete_current_failure_drain.qnt",
+        "--main=concrete_current_failure_drain",
+        "--backend=typescript",
+        "--match=^(actualOriginalEarlyExitViolatesCustody|actualCurrentFailureQuarantinesOwnedScope|actualLaterNativeRetirementSettlesCustody|actualOriginalStrictClose|actualFailureExitAfterStrictClose)$",
+        "--seed=1390043",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v93/current-failure-drain-coupling-v139-1791398205900069683/coupled-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "scope": "Five bounded abstract stages coupled to actual same immutable Native168 failed and Native169 fixed current WebKit cancellation/drain oracle. Actual current owning/closing/strict closed policy states, original real finish/error/failure1 chronology, original strict Native closure and private cleanup are separately checked. NativeSettled projects that independently verified strict physical/journal/confirmation gate; this is not a complete step refinement or proof of all native transitions/schedules, uncertain/process/reload recovery, future async classes, physical reveal/hardware/workload or release. Failure1 remains failure, never normal exit. No source/ABI/deadline/issuer/single policy/grant resets.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "coupledQuintChecks": 5,
+  "artifacts": {
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "coupled-actualOriginalEarlyExitViolatesCustody-0.itf.json": "a719aa487431da120327fb149ab2fe927f2742dd1a12d34fe5c751824cdf5b6e",
+    "coupled-actualCurrentFailureQuarantinesOwnedScope-1.itf.json": "23df0c76a404b8321738f514462c3e7eefa57b4ed4552592692635b85ab9f47b",
+    "coupled-actualLaterNativeRetirementSettlesCustody-2.itf.json": "e95fc0abc2be7aee60fc9f48d19dc9fbdddcd5361bc3ec2f0b8e160847dde3b3",
+    "coupled-actualOriginalStrictClose-3.itf.json": "5b19922a8f50b0f91596cc931dc1a5a66fed2ad93dc665e29c5a1289b83a9189",
+    "coupled-actualFailureExitAfterStrictClose-4.itf.json": "75f0a5018fa4f6ad8ba7baf5eb0e7ea78d90293678e8870064504ec058fd5e6b",
+    "selected.stdout": "ab0e887d6fc570693496d939624300ef5fe9b5e11e26caca91c7b750e62f3873",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/current_failure_drain.qnt": "555bb08d8f3bca1bfdef77074b4045de0512c6f5e14d161780ad1c29e5d446d0",
+    "inputs/concrete_current_failure_drain.qnt": "f0b1643d546173d06111132da494f3ae77904125922eba4d6afd5a4f0d91a0fa"
+  }
+}

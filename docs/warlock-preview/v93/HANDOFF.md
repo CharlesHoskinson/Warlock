@@ -696,3 +696,28 @@ regressions; no grants/counter resets, fabricated receipts, inferred process-
 death settlement, replay of Unknown or original deadline changes. CONTROL045
 EARS/OpenSpec is open. Full physical/hardware/pressure/recovery/S09/release gates
 remain; installed desktop, drafts and foreign tracked edits are preserved.
+
+GUI139 is held: a matching controlled snapshot failure now keeps the original
+failure outcome and opacity0 curtain, invalidates its visual, and urgently
+quarantines the existing same-policy realm. Sticky original retirement and the
+original input/step/poll/receipt loop continue until original strict native
+policy/physical/ticket/journal/confirmation close. Only then does the host exit
+with failure1; no renderer replacement, new realm, reset or inferred settlement.
+Native uncertainty retains original fail-closed refusal. Native issuer/Elm
+reducer/physical product/original gates/deadlines are unchanged.
+
+The exact unchanged failed Native168 oracle now passes16922 controls: actual
+current WebKit cancellation/finish once/no artifact, owning->closing->strict
+closed empty custody, original failure1 after retirement, seven other normal
+exits/private cleanup and no incomplete-teardown/GLib-GObject criticals.
+This is orderly known-duty drain while retaining failure, not a normal host
+success or full uncertain/process recovery. Original normal17029/13,
+canceled-old17136/13, old-success17235/13, rapid real-reader17351/17 and
+closure-delayed17418/8 all pass with normal owned exits/private cleanup.
+Current full119, new failure-drain Quint8 named/200 samples and5 stages projected
+from actual failed/fixed native evidence pass. Exact hashes/scope are in
+component-report-gui139-current-drain.json. All seven source/native manifests
+are held; failed138/168 and earlier negative166 evidence remain unchanged.
+Next PUBLIC102 then real uncertain/process/reload recovery, original-clock
+expiry/revocation and pressure/liveness, ongoing physical conceal/reveal/hardware
+and full S09/release gates. Installed desktop/drafts/foreign edits are preserved.

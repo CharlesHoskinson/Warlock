@@ -524,3 +524,14 @@ activation and all original full release gates remain open.
   close-before-failure-exit fails with current duties/not-closed/incomplete
   teardown;21 checks/seven other normal/private cleanup. GUI138 source held
   unqualified for failure drain; real native drain implementation remains open.
+
+- [x] Freeze bounded CONTROL-045 known current snapshot failure drain in GUI139:
+  original current failure outcome/curtain/visual invalidation/urgent quarantine,
+  sticky original retirement and native input/step/poll/receipts to original
+  strict closed empty custody, then failure1 exit without replacement/reset.
+  Exact168 oracle now16922/seven other normal/private cleanup/no criticals;
+  original normal17029/13, canceled-old17136/13, old-success17235/13,
+  rapid17351/17, delayed17418/8/full119/Quint8/200/5 actual projected stages pass.
+- [ ] Qualify CONTROL-045 real uncertain native custody and process/reload fault
+  recovery with original Unknown/retirement/no-replay/no-reset obligations;
+  known current-cancellation drain does not close these broader gates.
