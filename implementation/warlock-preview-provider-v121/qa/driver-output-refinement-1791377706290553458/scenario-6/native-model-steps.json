@@ -1,0 +1,2600 @@
+[
+  {
+    "input": {
+      "op": "presentation",
+      "value": "{\"surfaceProtocol\":2,\"publication\":\"1\",\"lease\":\"1\",\"mode\":\"picker\",\"status\":\"\",\"bar\":[],\"popup\":[{\"id\":\"family:21\",\"domId\":\"window-21\",\"label\":\"Window\",\"ariaLabel\":\"Window\",\"detail\":\"\",\"enabled\":true}]}"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "native",
+      "epoch": "1",
+      "events": "[{\"kind\":\"source-seed\",\"publication\":\"1\",\"lease\":\"1\",\"identity\":\"family:21\",\"title\":\"Client content\",\"application\":\"Native client\",\"source\":{\"protocolVersion\":3,\"kind\":\"preview-client-scope\",\"binding\":{\"lifetime\":\"18446744073709551615\",\"session\":\"1389465\",\"frontend\":\"9007199254740993\"},\"requestId\":\"1\",\"scope\":{\"binding\":{\"lifetime\":\"18446744073709551615\",\"session\":\"1389465\",\"frontend\":\"9007199254740993\"},\"context\":{\"lifetime\":\"18446744073709551615\",\"incarnation\":\"21\",\"output\":\"9007199254740993\",\"privacy\":\"2\",\"rendering\":\"3\",\"scene\":\"4\",\"content\":\"5\"},\"observation\":\"1\",\"clock\":\"18446744073709551615\",\"now\":\"9007199255740993\",\"present\":true,\"sourceLive\":true,\"locked\":false,\"gpuReady\":true},\"maximumTransferBytes\":\"4096\",\"previewEligible\":false,\"scopeKind\":\"isolated-root-client-unqualified\"}},{\"kind\":\"event\",\"identity\":\"family:21\",\"event\":{\"kind\":\"request\",\"trigger\":{\"binding\":{\"lifetime\":\"18446744073709551615\",\"session\":\"1389465\",\"frontend\":\"9007199254740993\"},\"context\":{\"lifetime\":\"18446744073709551615\",\"incarnation\":\"21\",\"output\":\"9007199254740993\",\"privacy\":\"2\",\"rendering\":\"3\",\"scene\":\"4\",\"content\":\"5\"},\"origin\":\"1\",\"clock\":\"18446744073709551615\",\"deadline\":\"9007201255740993\"}}}]"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "inspect"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": {
+        "retainedInputs": 0,
+        "retainedInputBytes": 0,
+        "ticketUnnotified": false,
+        "postedTickets": 0,
+        "confirmations": 0,
+        "returnedEventsRetained": false,
+        "returnedEventBatches": 0,
+        "returnedEventBytes": 0,
+        "nativeEffectError": "",
+        "returnedBatchCapacity": 3195,
+        "returnedByteCapacity": 26173440,
+        "dispatchOutputReservation": 8192,
+        "transport": {
+          "nativeIssuedThrough": "0",
+          "deliveredThrough": "0",
+          "pending": 0,
+          "capacity": 1065
+        },
+        "privatePolicy": {
+          "models": [
+            {
+              "identity": "family:21",
+              "active": true,
+              "model": {
+                "scope": {
+                  "binding": {
+                    "lifetime": "18446744073709551615",
+                    "session": "1389465",
+                    "frontend": "9007199254740993"
+                  },
+                  "context": {
+                    "lifetime": "18446744073709551615",
+                    "incarnation": "21",
+                    "output": "9007199254740993",
+                    "privacy": "2",
+                    "rendering": "3",
+                    "scene": "4",
+                    "content": "5"
+                  },
+                  "observation": "1",
+                  "clock": "18446744073709551615",
+                  "now": "9007199255740993",
+                  "present": true,
+                  "sourceLive": true,
+                  "locked": false,
+                  "gpuReady": true
+                },
+                "demand": true,
+                "ready": true,
+                "nextRequest": "2",
+                "job": {
+                  "binding": {
+                    "lifetime": "18446744073709551615",
+                    "session": "1389465",
+                    "frontend": "9007199254740993"
+                  },
+                  "context": {
+                    "lifetime": "18446744073709551615",
+                    "incarnation": "21",
+                    "output": "9007199254740993",
+                    "privacy": "2",
+                    "rendering": "3",
+                    "scene": "4",
+                    "content": "5"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "18446744073709551615",
+                  "deadline": "9007201255740993"
+                },
+                "candidate": null,
+                "accepted": null,
+                "known": [
+                  {
+                    "binding": {
+                      "lifetime": "18446744073709551615",
+                      "session": "1389465",
+                      "frontend": "9007199254740993"
+                    },
+                    "context": {
+                      "lifetime": "18446744073709551615",
+                      "incarnation": "21",
+                      "output": "9007199254740993",
+                      "privacy": "2",
+                      "rendering": "3",
+                      "scene": "4",
+                      "content": "5"
+                    },
+                    "request": "1",
+                    "origin": "1",
+                    "clock": "18446744073709551615",
+                    "deadline": "9007201255740993"
+                  }
+                ],
+                "cancelling": [],
+                "retiring": [],
+                "state": "loading",
+                "image": null
+              }
+            }
+          ],
+          "commands": {
+            "previewProtocol": 3,
+            "kind": "preview-proposals",
+            "binding": {
+              "lifetime": "18446744073709551615",
+              "session": "1389465",
+              "frontend": "9007199254740993"
+            },
+            "receiverEpoch": "1",
+            "entries": [
+              {
+                "identity": "family:21",
+                "commands": [
+                  {
+                    "kind": "acquire",
+                    "job": {
+                      "binding": {
+                        "lifetime": "18446744073709551615",
+                        "session": "1389465",
+                        "frontend": "9007199254740993"
+                      },
+                      "context": {
+                        "lifetime": "18446744073709551615",
+                        "incarnation": "21",
+                        "output": "9007199254740993",
+                        "privacy": "2",
+                        "rendering": "3",
+                        "scene": "4",
+                        "content": "5"
+                      },
+                      "request": "1",
+                      "origin": "1",
+                      "clock": "18446744073709551615",
+                      "deadline": "9007201255740993"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "realm": {
+            "controlled": true,
+            "closing": false,
+            "closed": false,
+            "processed": "0",
+            "retained": 1,
+            "completed": 0,
+            "epoch": "1",
+            "ingress": {
+              "pending": 1,
+              "capacity": 1065,
+              "intents": [
+                {
+                  "identity": "family:21",
+                  "commands": [
+                    {
+                      "kind": "acquire",
+                      "job": {
+                        "binding": {
+                          "lifetime": "18446744073709551615",
+                          "session": "1389465",
+                          "frontend": "9007199254740993"
+                        },
+                        "context": {
+                          "lifetime": "18446744073709551615",
+                          "incarnation": "21",
+                          "output": "9007199254740993",
+                          "privacy": "2",
+                          "rendering": "3",
+                          "scene": "4",
+                          "content": "5"
+                        },
+                        "request": "1",
+                        "origin": "1",
+                        "clock": "18446744073709551615",
+                        "deadline": "9007201255740993"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "deferred": 0,
+            "deferredIntents": [],
+            "inputBlocked": false
+          },
+          "metadata": [
+            {
+              "identity": "family:21",
+              "title": "Client content",
+              "application": "Native client",
+              "revision": null,
+              "iconKind": "unavailable",
+              "hasIcon": false,
+              "visible": true
+            }
+          ],
+          "enrollment": [
+            {
+              "identity": "family:21",
+              "nativeScoped": true,
+              "minimized": null
+            }
+          ],
+          "feedback": [
+            {
+              "identity": "family:21",
+              "floor": "1",
+              "outcome": null,
+              "label": null,
+              "deadline": null
+            }
+          ],
+          "visuals": {
+            "visualProtocol": 1,
+            "kind": "native-preview-visual",
+            "binding": {
+              "lifetime": "18446744073709551615",
+              "session": "1389465",
+              "frontend": "9007199254740993"
+            },
+            "receiverEpoch": "1",
+            "surface": {
+              "surfaceProtocol": 2,
+              "publication": "1",
+              "lease": "1",
+              "mode": "picker",
+              "status": "",
+              "bar": [],
+              "popup": [
+                {
+                  "id": "family:21",
+                  "domId": "window-21",
+                  "label": "Window",
+                  "ariaLabel": "Window",
+                  "detail": "",
+                  "enabled": true
+                }
+              ]
+            },
+            "previews": [
+              {
+                "identity": "family:21",
+                "visual": {
+                  "kind": "lifecycle",
+                  "state": "loading",
+                  "title": "Client content",
+                  "icon": null,
+                  "frame": null,
+                  "fidelity": null
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "recovery"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": {
+        "previewProtocol": 3,
+        "kind": "preview-control-recovery",
+        "binding": {
+          "lifetime": "18446744073709551615",
+          "session": "1389465",
+          "frontend": "9007199254740993"
+        },
+        "receiverEpoch": "1",
+        "capacity": 1065,
+        "issuedThrough": "0",
+        "deliveredThrough": "0",
+        "confirmedThrough": "0",
+        "afterOrdinal": "0",
+        "ticket": null
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "native-status"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": {
+        "records": "1",
+        "charge": "4096",
+        "captures": "0",
+        "job": {
+          "binding": {
+            "lifetime": "18446744073709551615",
+            "session": "1389465",
+            "frontend": "9007199254740993"
+          },
+          "context": {
+            "lifetime": "18446744073709551615",
+            "incarnation": "21",
+            "output": "9007199254740993",
+            "privacy": "2",
+            "rendering": "3",
+            "scene": "4",
+            "content": "5"
+          },
+          "request": "1",
+          "origin": "1",
+          "clock": "18446744073709551615",
+          "deadline": "9007201255740993"
+        },
+        "terminal": false
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "output-state"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": false
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "inspect"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": {
+        "retainedInputs": 0,
+        "retainedInputBytes": 0,
+        "ticketUnnotified": true,
+        "postedTickets": 1,
+        "confirmations": 0,
+        "returnedEventsRetained": false,
+        "returnedEventBatches": 0,
+        "returnedEventBytes": 0,
+        "nativeEffectError": "",
+        "returnedBatchCapacity": 3195,
+        "returnedByteCapacity": 26173440,
+        "dispatchOutputReservation": 8192,
+        "transport": {
+          "nativeIssuedThrough": "1",
+          "deliveredThrough": "0",
+          "pending": 1,
+          "capacity": 1065
+        },
+        "privatePolicy": {
+          "models": [
+            {
+              "identity": "family:21",
+              "active": true,
+              "model": {
+                "scope": {
+                  "binding": {
+                    "lifetime": "18446744073709551615",
+                    "session": "1389465",
+                    "frontend": "9007199254740993"
+                  },
+                  "context": {
+                    "lifetime": "18446744073709551615",
+                    "incarnation": "21",
+                    "output": "9007199254740993",
+                    "privacy": "2",
+                    "rendering": "3",
+                    "scene": "4",
+                    "content": "5"
+                  },
+                  "observation": "1",
+                  "clock": "18446744073709551615",
+                  "now": "9007199255740993",
+                  "present": true,
+                  "sourceLive": true,
+                  "locked": false,
+                  "gpuReady": true
+                },
+                "demand": true,
+                "ready": true,
+                "nextRequest": "2",
+                "job": {
+                  "binding": {
+                    "lifetime": "18446744073709551615",
+                    "session": "1389465",
+                    "frontend": "9007199254740993"
+                  },
+                  "context": {
+                    "lifetime": "18446744073709551615",
+                    "incarnation": "21",
+                    "output": "9007199254740993",
+                    "privacy": "2",
+                    "rendering": "3",
+                    "scene": "4",
+                    "content": "5"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "18446744073709551615",
+                  "deadline": "9007201255740993"
+                },
+                "candidate": null,
+                "accepted": null,
+                "known": [
+                  {
+                    "binding": {
+                      "lifetime": "18446744073709551615",
+                      "session": "1389465",
+                      "frontend": "9007199254740993"
+                    },
+                    "context": {
+                      "lifetime": "18446744073709551615",
+                      "incarnation": "21",
+                      "output": "9007199254740993",
+                      "privacy": "2",
+                      "rendering": "3",
+                      "scene": "4",
+                      "content": "5"
+                    },
+                    "request": "1",
+                    "origin": "1",
+                    "clock": "18446744073709551615",
+                    "deadline": "9007201255740993"
+                  }
+                ],
+                "cancelling": [],
+                "retiring": [],
+                "state": "loading",
+                "image": null
+              }
+            }
+          ],
+          "commands": {
+            "previewProtocol": 3,
+            "kind": "preview-proposals",
+            "binding": {
+              "lifetime": "18446744073709551615",
+              "session": "1389465",
+              "frontend": "9007199254740993"
+            },
+            "receiverEpoch": "1",
+            "entries": [
+              {
+                "identity": "family:21",
+                "commands": [
+                  {
+                    "kind": "acquire",
+                    "job": {
+                      "binding": {
+                        "lifetime": "18446744073709551615",
+                        "session": "1389465",
+                        "frontend": "9007199254740993"
+                      },
+                      "context": {
+                        "lifetime": "18446744073709551615",
+                        "incarnation": "21",
+                        "output": "9007199254740993",
+                        "privacy": "2",
+                        "rendering": "3",
+                        "scene": "4",
+                        "content": "5"
+                      },
+                      "request": "1",
+                      "origin": "1",
+                      "clock": "18446744073709551615",
+                      "deadline": "9007201255740993"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "realm": {
+            "controlled": true,
+            "closing": false,
+            "closed": false,
+            "processed": "0",
+            "retained": 1,
+            "completed": 0,
+            "epoch": "1",
+            "ingress": {
+              "pending": 1,
+              "capacity": 1065,
+              "intents": [
+                {
+                  "identity": "family:21",
+                  "commands": [
+                    {
+                      "kind": "acquire",
+                      "job": {
+                        "binding": {
+                          "lifetime": "18446744073709551615",
+                          "session": "1389465",
+                          "frontend": "9007199254740993"
+                        },
+                        "context": {
+                          "lifetime": "18446744073709551615",
+                          "incarnation": "21",
+                          "output": "9007199254740993",
+                          "privacy": "2",
+                          "rendering": "3",
+                          "scene": "4",
+                          "content": "5"
+                        },
+                        "request": "1",
+                        "origin": "1",
+                        "clock": "18446744073709551615",
+                        "deadline": "9007201255740993"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "deferred": 0,
+            "deferredIntents": [],
+            "inputBlocked": false
+          },
+          "metadata": [
+            {
+              "identity": "family:21",
+              "title": "Client content",
+              "application": "Native client",
+              "revision": null,
+              "iconKind": "unavailable",
+              "hasIcon": false,
+              "visible": true
+            }
+          ],
+          "enrollment": [
+            {
+              "identity": "family:21",
+              "nativeScoped": true,
+              "minimized": null
+            }
+          ],
+          "feedback": [
+            {
+              "identity": "family:21",
+              "floor": "1",
+              "outcome": null,
+              "label": null,
+              "deadline": null
+            }
+          ],
+          "visuals": {
+            "visualProtocol": 1,
+            "kind": "native-preview-visual",
+            "binding": {
+              "lifetime": "18446744073709551615",
+              "session": "1389465",
+              "frontend": "9007199254740993"
+            },
+            "receiverEpoch": "1",
+            "surface": {
+              "surfaceProtocol": 2,
+              "publication": "1",
+              "lease": "1",
+              "mode": "picker",
+              "status": "",
+              "bar": [],
+              "popup": [
+                {
+                  "id": "family:21",
+                  "domId": "window-21",
+                  "label": "Window",
+                  "ariaLabel": "Window",
+                  "detail": "",
+                  "enabled": true
+                }
+              ]
+            },
+            "previews": [
+              {
+                "identity": "family:21",
+                "visual": {
+                  "kind": "lifecycle",
+                  "state": "loading",
+                  "title": "Client content",
+                  "icon": null,
+                  "frame": null,
+                  "fidelity": null
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "recovery"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": {
+        "previewProtocol": 3,
+        "kind": "preview-control-recovery",
+        "binding": {
+          "lifetime": "18446744073709551615",
+          "session": "1389465",
+          "frontend": "9007199254740993"
+        },
+        "receiverEpoch": "1",
+        "capacity": 1065,
+        "issuedThrough": "1",
+        "deliveredThrough": "0",
+        "confirmedThrough": "0",
+        "afterOrdinal": "0",
+        "ticket": {
+          "previewProtocol": 3,
+          "kind": "preview-control-ticket",
+          "binding": {
+            "lifetime": "18446744073709551615",
+            "session": "1389465",
+            "frontend": "9007199254740993"
+          },
+          "receiverEpoch": "1",
+          "controlOrdinal": "1",
+          "alreadyDelivered": false,
+          "wire": "{\"previewProtocol\":3,\"kind\":\"preview-commands\",\"binding\":{\"lifetime\":\"18446744073709551615\",\"session\":\"1389465\",\"frontend\":\"9007199254740993\"},\"receiverEpoch\":\"1\",\"controlOrdinal\":\"1\",\"entries\":[{\"identity\":\"family:21\",\"commands\":[{\"kind\":\"acquire\",\"job\":{\"binding\":{\"lifetime\":\"18446744073709551615\",\"session\":\"1389465\",\"frontend\":\"9007199254740993\"},\"context\":{\"lifetime\":\"18446744073709551615\",\"incarnation\":\"21\",\"output\":\"9007199254740993\",\"privacy\":\"2\",\"rendering\":\"3\",\"scene\":\"4\",\"content\":\"5\"},\"request\":\"1\",\"origin\":\"1\",\"clock\":\"18446744073709551615\",\"deadline\":\"9007201255740993\"}}]}]}"
+        }
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "native-status"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": {
+        "records": "1",
+        "charge": "4096",
+        "captures": "0",
+        "job": {
+          "binding": {
+            "lifetime": "18446744073709551615",
+            "session": "1389465",
+            "frontend": "9007199254740993"
+          },
+          "context": {
+            "lifetime": "18446744073709551615",
+            "incarnation": "21",
+            "output": "9007199254740993",
+            "privacy": "2",
+            "rendering": "3",
+            "scene": "4",
+            "content": "5"
+          },
+          "request": "1",
+          "origin": "1",
+          "clock": "18446744073709551615",
+          "deadline": "9007201255740993"
+        },
+        "terminal": false
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "output-state"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": false
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "inspect"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": {
+        "retainedInputs": 0,
+        "retainedInputBytes": 0,
+        "ticketUnnotified": false,
+        "postedTickets": 1,
+        "confirmations": 0,
+        "returnedEventsRetained": false,
+        "returnedEventBatches": 0,
+        "returnedEventBytes": 0,
+        "nativeEffectError": "",
+        "returnedBatchCapacity": 3195,
+        "returnedByteCapacity": 26173440,
+        "dispatchOutputReservation": 8192,
+        "transport": {
+          "nativeIssuedThrough": "1",
+          "deliveredThrough": "0",
+          "pending": 1,
+          "capacity": 1065
+        },
+        "privatePolicy": {
+          "models": [
+            {
+              "identity": "family:21",
+              "active": true,
+              "model": {
+                "scope": {
+                  "binding": {
+                    "lifetime": "18446744073709551615",
+                    "session": "1389465",
+                    "frontend": "9007199254740993"
+                  },
+                  "context": {
+                    "lifetime": "18446744073709551615",
+                    "incarnation": "21",
+                    "output": "9007199254740993",
+                    "privacy": "2",
+                    "rendering": "3",
+                    "scene": "4",
+                    "content": "5"
+                  },
+                  "observation": "1",
+                  "clock": "18446744073709551615",
+                  "now": "9007199255740993",
+                  "present": true,
+                  "sourceLive": true,
+                  "locked": false,
+                  "gpuReady": true
+                },
+                "demand": true,
+                "ready": true,
+                "nextRequest": "2",
+                "job": {
+                  "binding": {
+                    "lifetime": "18446744073709551615",
+                    "session": "1389465",
+                    "frontend": "9007199254740993"
+                  },
+                  "context": {
+                    "lifetime": "18446744073709551615",
+                    "incarnation": "21",
+                    "output": "9007199254740993",
+                    "privacy": "2",
+                    "rendering": "3",
+                    "scene": "4",
+                    "content": "5"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "18446744073709551615",
+                  "deadline": "9007201255740993"
+                },
+                "candidate": null,
+                "accepted": null,
+                "known": [
+                  {
+                    "binding": {
+                      "lifetime": "18446744073709551615",
+                      "session": "1389465",
+                      "frontend": "9007199254740993"
+                    },
+                    "context": {
+                      "lifetime": "18446744073709551615",
+                      "incarnation": "21",
+                      "output": "9007199254740993",
+                      "privacy": "2",
+                      "rendering": "3",
+                      "scene": "4",
+                      "content": "5"
+                    },
+                    "request": "1",
+                    "origin": "1",
+                    "clock": "18446744073709551615",
+                    "deadline": "9007201255740993"
+                  }
+                ],
+                "cancelling": [],
+                "retiring": [],
+                "state": "loading",
+                "image": null
+              }
+            }
+          ],
+          "commands": [],
+          "realm": {
+            "controlled": true,
+            "closing": false,
+            "closed": false,
+            "processed": "0",
+            "retained": 1,
+            "completed": 0,
+            "epoch": "1",
+            "ingress": {
+              "pending": 0,
+              "capacity": 1065,
+              "intents": []
+            },
+            "deferred": 0,
+            "deferredIntents": [],
+            "inputBlocked": false
+          },
+          "metadata": [
+            {
+              "identity": "family:21",
+              "title": "Client content",
+              "application": "Native client",
+              "revision": null,
+              "iconKind": "unavailable",
+              "hasIcon": false,
+              "visible": true
+            }
+          ],
+          "enrollment": [
+            {
+              "identity": "family:21",
+              "nativeScoped": true,
+              "minimized": null
+            }
+          ],
+          "feedback": [
+            {
+              "identity": "family:21",
+              "floor": "1",
+              "outcome": null,
+              "label": null,
+              "deadline": null
+            }
+          ],
+          "visuals": {
+            "visualProtocol": 1,
+            "kind": "native-preview-visual",
+            "binding": {
+              "lifetime": "18446744073709551615",
+              "session": "1389465",
+              "frontend": "9007199254740993"
+            },
+            "receiverEpoch": "1",
+            "surface": {
+              "surfaceProtocol": 2,
+              "publication": "1",
+              "lease": "1",
+              "mode": "picker",
+              "status": "",
+              "bar": [],
+              "popup": [
+                {
+                  "id": "family:21",
+                  "domId": "window-21",
+                  "label": "Window",
+                  "ariaLabel": "Window",
+                  "detail": "",
+                  "enabled": true
+                }
+              ]
+            },
+            "previews": [
+              {
+                "identity": "family:21",
+                "visual": {
+                  "kind": "lifecycle",
+                  "state": "loading",
+                  "title": "Client content",
+                  "icon": null,
+                  "frame": null,
+                  "fidelity": null
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "recovery"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": {
+        "previewProtocol": 3,
+        "kind": "preview-control-recovery",
+        "binding": {
+          "lifetime": "18446744073709551615",
+          "session": "1389465",
+          "frontend": "9007199254740993"
+        },
+        "receiverEpoch": "1",
+        "capacity": 1065,
+        "issuedThrough": "1",
+        "deliveredThrough": "0",
+        "confirmedThrough": "0",
+        "afterOrdinal": "0",
+        "ticket": {
+          "previewProtocol": 3,
+          "kind": "preview-control-ticket",
+          "binding": {
+            "lifetime": "18446744073709551615",
+            "session": "1389465",
+            "frontend": "9007199254740993"
+          },
+          "receiverEpoch": "1",
+          "controlOrdinal": "1",
+          "alreadyDelivered": false,
+          "wire": "{\"previewProtocol\":3,\"kind\":\"preview-commands\",\"binding\":{\"lifetime\":\"18446744073709551615\",\"session\":\"1389465\",\"frontend\":\"9007199254740993\"},\"receiverEpoch\":\"1\",\"controlOrdinal\":\"1\",\"entries\":[{\"identity\":\"family:21\",\"commands\":[{\"kind\":\"acquire\",\"job\":{\"binding\":{\"lifetime\":\"18446744073709551615\",\"session\":\"1389465\",\"frontend\":\"9007199254740993\"},\"context\":{\"lifetime\":\"18446744073709551615\",\"incarnation\":\"21\",\"output\":\"9007199254740993\",\"privacy\":\"2\",\"rendering\":\"3\",\"scene\":\"4\",\"content\":\"5\"},\"request\":\"1\",\"origin\":\"1\",\"clock\":\"18446744073709551615\",\"deadline\":\"9007201255740993\"}}]}]}"
+        }
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "native-status"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": {
+        "records": "1",
+        "charge": "4096",
+        "captures": "0",
+        "job": {
+          "binding": {
+            "lifetime": "18446744073709551615",
+            "session": "1389465",
+            "frontend": "9007199254740993"
+          },
+          "context": {
+            "lifetime": "18446744073709551615",
+            "incarnation": "21",
+            "output": "9007199254740993",
+            "privacy": "2",
+            "rendering": "3",
+            "scene": "4",
+            "content": "5"
+          },
+          "request": "1",
+          "origin": "1",
+          "clock": "18446744073709551615",
+          "deadline": "9007201255740993"
+        },
+        "terminal": false
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "output-state"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": false
+    }
+  },
+  {
+    "input": {
+      "op": "output-held",
+      "value": true
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "inspect"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": {
+        "retainedInputs": 0,
+        "retainedInputBytes": 0,
+        "ticketUnnotified": false,
+        "postedTickets": 1,
+        "confirmations": 0,
+        "returnedEventsRetained": false,
+        "returnedEventBatches": 0,
+        "returnedEventBytes": 0,
+        "nativeEffectError": "",
+        "returnedBatchCapacity": 3195,
+        "returnedByteCapacity": 26173440,
+        "dispatchOutputReservation": 8192,
+        "transport": {
+          "nativeIssuedThrough": "1",
+          "deliveredThrough": "0",
+          "pending": 1,
+          "capacity": 1065
+        },
+        "privatePolicy": {
+          "models": [
+            {
+              "identity": "family:21",
+              "active": true,
+              "model": {
+                "scope": {
+                  "binding": {
+                    "lifetime": "18446744073709551615",
+                    "session": "1389465",
+                    "frontend": "9007199254740993"
+                  },
+                  "context": {
+                    "lifetime": "18446744073709551615",
+                    "incarnation": "21",
+                    "output": "9007199254740993",
+                    "privacy": "2",
+                    "rendering": "3",
+                    "scene": "4",
+                    "content": "5"
+                  },
+                  "observation": "1",
+                  "clock": "18446744073709551615",
+                  "now": "9007199255740993",
+                  "present": true,
+                  "sourceLive": true,
+                  "locked": false,
+                  "gpuReady": true
+                },
+                "demand": true,
+                "ready": true,
+                "nextRequest": "2",
+                "job": {
+                  "binding": {
+                    "lifetime": "18446744073709551615",
+                    "session": "1389465",
+                    "frontend": "9007199254740993"
+                  },
+                  "context": {
+                    "lifetime": "18446744073709551615",
+                    "incarnation": "21",
+                    "output": "9007199254740993",
+                    "privacy": "2",
+                    "rendering": "3",
+                    "scene": "4",
+                    "content": "5"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "18446744073709551615",
+                  "deadline": "9007201255740993"
+                },
+                "candidate": null,
+                "accepted": null,
+                "known": [
+                  {
+                    "binding": {
+                      "lifetime": "18446744073709551615",
+                      "session": "1389465",
+                      "frontend": "9007199254740993"
+                    },
+                    "context": {
+                      "lifetime": "18446744073709551615",
+                      "incarnation": "21",
+                      "output": "9007199254740993",
+                      "privacy": "2",
+                      "rendering": "3",
+                      "scene": "4",
+                      "content": "5"
+                    },
+                    "request": "1",
+                    "origin": "1",
+                    "clock": "18446744073709551615",
+                    "deadline": "9007201255740993"
+                  }
+                ],
+                "cancelling": [],
+                "retiring": [],
+                "state": "loading",
+                "image": null
+              }
+            }
+          ],
+          "commands": [],
+          "realm": {
+            "controlled": true,
+            "closing": false,
+            "closed": false,
+            "processed": "0",
+            "retained": 1,
+            "completed": 0,
+            "epoch": "1",
+            "ingress": {
+              "pending": 0,
+              "capacity": 1065,
+              "intents": []
+            },
+            "deferred": 0,
+            "deferredIntents": [],
+            "inputBlocked": false
+          },
+          "metadata": [
+            {
+              "identity": "family:21",
+              "title": "Client content",
+              "application": "Native client",
+              "revision": null,
+              "iconKind": "unavailable",
+              "hasIcon": false,
+              "visible": true
+            }
+          ],
+          "enrollment": [
+            {
+              "identity": "family:21",
+              "nativeScoped": true,
+              "minimized": null
+            }
+          ],
+          "feedback": [
+            {
+              "identity": "family:21",
+              "floor": "1",
+              "outcome": null,
+              "label": null,
+              "deadline": null
+            }
+          ],
+          "visuals": {
+            "visualProtocol": 1,
+            "kind": "native-preview-visual",
+            "binding": {
+              "lifetime": "18446744073709551615",
+              "session": "1389465",
+              "frontend": "9007199254740993"
+            },
+            "receiverEpoch": "1",
+            "surface": {
+              "surfaceProtocol": 2,
+              "publication": "1",
+              "lease": "1",
+              "mode": "picker",
+              "status": "",
+              "bar": [],
+              "popup": [
+                {
+                  "id": "family:21",
+                  "domId": "window-21",
+                  "label": "Window",
+                  "ariaLabel": "Window",
+                  "detail": "",
+                  "enabled": true
+                }
+              ]
+            },
+            "previews": [
+              {
+                "identity": "family:21",
+                "visual": {
+                  "kind": "lifecycle",
+                  "state": "loading",
+                  "title": "Client content",
+                  "icon": null,
+                  "frame": null,
+                  "fidelity": null
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "recovery"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": {
+        "previewProtocol": 3,
+        "kind": "preview-control-recovery",
+        "binding": {
+          "lifetime": "18446744073709551615",
+          "session": "1389465",
+          "frontend": "9007199254740993"
+        },
+        "receiverEpoch": "1",
+        "capacity": 1065,
+        "issuedThrough": "1",
+        "deliveredThrough": "0",
+        "confirmedThrough": "0",
+        "afterOrdinal": "0",
+        "ticket": {
+          "previewProtocol": 3,
+          "kind": "preview-control-ticket",
+          "binding": {
+            "lifetime": "18446744073709551615",
+            "session": "1389465",
+            "frontend": "9007199254740993"
+          },
+          "receiverEpoch": "1",
+          "controlOrdinal": "1",
+          "alreadyDelivered": false,
+          "wire": "{\"previewProtocol\":3,\"kind\":\"preview-commands\",\"binding\":{\"lifetime\":\"18446744073709551615\",\"session\":\"1389465\",\"frontend\":\"9007199254740993\"},\"receiverEpoch\":\"1\",\"controlOrdinal\":\"1\",\"entries\":[{\"identity\":\"family:21\",\"commands\":[{\"kind\":\"acquire\",\"job\":{\"binding\":{\"lifetime\":\"18446744073709551615\",\"session\":\"1389465\",\"frontend\":\"9007199254740993\"},\"context\":{\"lifetime\":\"18446744073709551615\",\"incarnation\":\"21\",\"output\":\"9007199254740993\",\"privacy\":\"2\",\"rendering\":\"3\",\"scene\":\"4\",\"content\":\"5\"},\"request\":\"1\",\"origin\":\"1\",\"clock\":\"18446744073709551615\",\"deadline\":\"9007201255740993\"}}]}]}"
+        }
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "native-status"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": {
+        "records": "1",
+        "charge": "4096",
+        "captures": "0",
+        "job": {
+          "binding": {
+            "lifetime": "18446744073709551615",
+            "session": "1389465",
+            "frontend": "9007199254740993"
+          },
+          "context": {
+            "lifetime": "18446744073709551615",
+            "incarnation": "21",
+            "output": "9007199254740993",
+            "privacy": "2",
+            "rendering": "3",
+            "scene": "4",
+            "content": "5"
+          },
+          "request": "1",
+          "origin": "1",
+          "clock": "18446744073709551615",
+          "deadline": "9007201255740993"
+        },
+        "terminal": false
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "output-state"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": true
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": false,
+      "refused": true,
+      "code": 27,
+      "progressed": false,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "inspect"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": {
+        "retainedInputs": 0,
+        "retainedInputBytes": 0,
+        "ticketUnnotified": false,
+        "postedTickets": 1,
+        "confirmations": 0,
+        "returnedEventsRetained": false,
+        "returnedEventBatches": 0,
+        "returnedEventBytes": 0,
+        "nativeEffectError": "",
+        "returnedBatchCapacity": 3195,
+        "returnedByteCapacity": 26173440,
+        "dispatchOutputReservation": 8192,
+        "transport": {
+          "nativeIssuedThrough": "1",
+          "deliveredThrough": "0",
+          "pending": 1,
+          "capacity": 1065
+        },
+        "privatePolicy": {
+          "models": [
+            {
+              "identity": "family:21",
+              "active": true,
+              "model": {
+                "scope": {
+                  "binding": {
+                    "lifetime": "18446744073709551615",
+                    "session": "1389465",
+                    "frontend": "9007199254740993"
+                  },
+                  "context": {
+                    "lifetime": "18446744073709551615",
+                    "incarnation": "21",
+                    "output": "9007199254740993",
+                    "privacy": "2",
+                    "rendering": "3",
+                    "scene": "4",
+                    "content": "5"
+                  },
+                  "observation": "1",
+                  "clock": "18446744073709551615",
+                  "now": "9007199255740993",
+                  "present": true,
+                  "sourceLive": true,
+                  "locked": false,
+                  "gpuReady": true
+                },
+                "demand": true,
+                "ready": true,
+                "nextRequest": "2",
+                "job": {
+                  "binding": {
+                    "lifetime": "18446744073709551615",
+                    "session": "1389465",
+                    "frontend": "9007199254740993"
+                  },
+                  "context": {
+                    "lifetime": "18446744073709551615",
+                    "incarnation": "21",
+                    "output": "9007199254740993",
+                    "privacy": "2",
+                    "rendering": "3",
+                    "scene": "4",
+                    "content": "5"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "18446744073709551615",
+                  "deadline": "9007201255740993"
+                },
+                "candidate": null,
+                "accepted": null,
+                "known": [
+                  {
+                    "binding": {
+                      "lifetime": "18446744073709551615",
+                      "session": "1389465",
+                      "frontend": "9007199254740993"
+                    },
+                    "context": {
+                      "lifetime": "18446744073709551615",
+                      "incarnation": "21",
+                      "output": "9007199254740993",
+                      "privacy": "2",
+                      "rendering": "3",
+                      "scene": "4",
+                      "content": "5"
+                    },
+                    "request": "1",
+                    "origin": "1",
+                    "clock": "18446744073709551615",
+                    "deadline": "9007201255740993"
+                  }
+                ],
+                "cancelling": [],
+                "retiring": [],
+                "state": "loading",
+                "image": null
+              }
+            }
+          ],
+          "commands": [],
+          "realm": {
+            "controlled": true,
+            "closing": false,
+            "closed": false,
+            "processed": "0",
+            "retained": 1,
+            "completed": 0,
+            "epoch": "1",
+            "ingress": {
+              "pending": 0,
+              "capacity": 1065,
+              "intents": []
+            },
+            "deferred": 0,
+            "deferredIntents": [],
+            "inputBlocked": false
+          },
+          "metadata": [
+            {
+              "identity": "family:21",
+              "title": "Client content",
+              "application": "Native client",
+              "revision": null,
+              "iconKind": "unavailable",
+              "hasIcon": false,
+              "visible": true
+            }
+          ],
+          "enrollment": [
+            {
+              "identity": "family:21",
+              "nativeScoped": true,
+              "minimized": null
+            }
+          ],
+          "feedback": [
+            {
+              "identity": "family:21",
+              "floor": "1",
+              "outcome": null,
+              "label": null,
+              "deadline": null
+            }
+          ],
+          "visuals": {
+            "visualProtocol": 1,
+            "kind": "native-preview-visual",
+            "binding": {
+              "lifetime": "18446744073709551615",
+              "session": "1389465",
+              "frontend": "9007199254740993"
+            },
+            "receiverEpoch": "1",
+            "surface": {
+              "surfaceProtocol": 2,
+              "publication": "1",
+              "lease": "1",
+              "mode": "picker",
+              "status": "",
+              "bar": [],
+              "popup": [
+                {
+                  "id": "family:21",
+                  "domId": "window-21",
+                  "label": "Window",
+                  "ariaLabel": "Window",
+                  "detail": "",
+                  "enabled": true
+                }
+              ]
+            },
+            "previews": [
+              {
+                "identity": "family:21",
+                "visual": {
+                  "kind": "lifecycle",
+                  "state": "loading",
+                  "title": "Client content",
+                  "icon": null,
+                  "frame": null,
+                  "fidelity": null
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "recovery"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": {
+        "previewProtocol": 3,
+        "kind": "preview-control-recovery",
+        "binding": {
+          "lifetime": "18446744073709551615",
+          "session": "1389465",
+          "frontend": "9007199254740993"
+        },
+        "receiverEpoch": "1",
+        "capacity": 1065,
+        "issuedThrough": "1",
+        "deliveredThrough": "0",
+        "confirmedThrough": "0",
+        "afterOrdinal": "0",
+        "ticket": {
+          "previewProtocol": 3,
+          "kind": "preview-control-ticket",
+          "binding": {
+            "lifetime": "18446744073709551615",
+            "session": "1389465",
+            "frontend": "9007199254740993"
+          },
+          "receiverEpoch": "1",
+          "controlOrdinal": "1",
+          "alreadyDelivered": false,
+          "wire": "{\"previewProtocol\":3,\"kind\":\"preview-commands\",\"binding\":{\"lifetime\":\"18446744073709551615\",\"session\":\"1389465\",\"frontend\":\"9007199254740993\"},\"receiverEpoch\":\"1\",\"controlOrdinal\":\"1\",\"entries\":[{\"identity\":\"family:21\",\"commands\":[{\"kind\":\"acquire\",\"job\":{\"binding\":{\"lifetime\":\"18446744073709551615\",\"session\":\"1389465\",\"frontend\":\"9007199254740993\"},\"context\":{\"lifetime\":\"18446744073709551615\",\"incarnation\":\"21\",\"output\":\"9007199254740993\",\"privacy\":\"2\",\"rendering\":\"3\",\"scene\":\"4\",\"content\":\"5\"},\"request\":\"1\",\"origin\":\"1\",\"clock\":\"18446744073709551615\",\"deadline\":\"9007201255740993\"}}]}]}"
+        }
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "native-status"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": {
+        "records": "1",
+        "charge": "4096",
+        "captures": "0",
+        "job": {
+          "binding": {
+            "lifetime": "18446744073709551615",
+            "session": "1389465",
+            "frontend": "9007199254740993"
+          },
+          "context": {
+            "lifetime": "18446744073709551615",
+            "incarnation": "21",
+            "output": "9007199254740993",
+            "privacy": "2",
+            "rendering": "3",
+            "scene": "4",
+            "content": "5"
+          },
+          "request": "1",
+          "origin": "1",
+          "clock": "18446744073709551615",
+          "deadline": "9007201255740993"
+        },
+        "terminal": false
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "output-state"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": true
+    }
+  },
+  {
+    "input": {
+      "op": "inspect"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": {
+        "retainedInputs": 0,
+        "retainedInputBytes": 0,
+        "ticketUnnotified": false,
+        "postedTickets": 1,
+        "confirmations": 0,
+        "returnedEventsRetained": false,
+        "returnedEventBatches": 0,
+        "returnedEventBytes": 0,
+        "nativeEffectError": "",
+        "returnedBatchCapacity": 3195,
+        "returnedByteCapacity": 26173440,
+        "dispatchOutputReservation": 8192,
+        "transport": {
+          "nativeIssuedThrough": "1",
+          "deliveredThrough": "0",
+          "pending": 1,
+          "capacity": 1065
+        },
+        "privatePolicy": {
+          "models": [
+            {
+              "identity": "family:21",
+              "active": true,
+              "model": {
+                "scope": {
+                  "binding": {
+                    "lifetime": "18446744073709551615",
+                    "session": "1389465",
+                    "frontend": "9007199254740993"
+                  },
+                  "context": {
+                    "lifetime": "18446744073709551615",
+                    "incarnation": "21",
+                    "output": "9007199254740993",
+                    "privacy": "2",
+                    "rendering": "3",
+                    "scene": "4",
+                    "content": "5"
+                  },
+                  "observation": "1",
+                  "clock": "18446744073709551615",
+                  "now": "9007199255740993",
+                  "present": true,
+                  "sourceLive": true,
+                  "locked": false,
+                  "gpuReady": true
+                },
+                "demand": true,
+                "ready": true,
+                "nextRequest": "2",
+                "job": {
+                  "binding": {
+                    "lifetime": "18446744073709551615",
+                    "session": "1389465",
+                    "frontend": "9007199254740993"
+                  },
+                  "context": {
+                    "lifetime": "18446744073709551615",
+                    "incarnation": "21",
+                    "output": "9007199254740993",
+                    "privacy": "2",
+                    "rendering": "3",
+                    "scene": "4",
+                    "content": "5"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "18446744073709551615",
+                  "deadline": "9007201255740993"
+                },
+                "candidate": null,
+                "accepted": null,
+                "known": [
+                  {
+                    "binding": {
+                      "lifetime": "18446744073709551615",
+                      "session": "1389465",
+                      "frontend": "9007199254740993"
+                    },
+                    "context": {
+                      "lifetime": "18446744073709551615",
+                      "incarnation": "21",
+                      "output": "9007199254740993",
+                      "privacy": "2",
+                      "rendering": "3",
+                      "scene": "4",
+                      "content": "5"
+                    },
+                    "request": "1",
+                    "origin": "1",
+                    "clock": "18446744073709551615",
+                    "deadline": "9007201255740993"
+                  }
+                ],
+                "cancelling": [],
+                "retiring": [],
+                "state": "loading",
+                "image": null
+              }
+            }
+          ],
+          "commands": [],
+          "realm": {
+            "controlled": true,
+            "closing": false,
+            "closed": false,
+            "processed": "0",
+            "retained": 1,
+            "completed": 0,
+            "epoch": "1",
+            "ingress": {
+              "pending": 0,
+              "capacity": 1065,
+              "intents": []
+            },
+            "deferred": 0,
+            "deferredIntents": [],
+            "inputBlocked": false
+          },
+          "metadata": [
+            {
+              "identity": "family:21",
+              "title": "Client content",
+              "application": "Native client",
+              "revision": null,
+              "iconKind": "unavailable",
+              "hasIcon": false,
+              "visible": true
+            }
+          ],
+          "enrollment": [
+            {
+              "identity": "family:21",
+              "nativeScoped": true,
+              "minimized": null
+            }
+          ],
+          "feedback": [
+            {
+              "identity": "family:21",
+              "floor": "1",
+              "outcome": null,
+              "label": null,
+              "deadline": null
+            }
+          ],
+          "visuals": {
+            "visualProtocol": 1,
+            "kind": "native-preview-visual",
+            "binding": {
+              "lifetime": "18446744073709551615",
+              "session": "1389465",
+              "frontend": "9007199254740993"
+            },
+            "receiverEpoch": "1",
+            "surface": {
+              "surfaceProtocol": 2,
+              "publication": "1",
+              "lease": "1",
+              "mode": "picker",
+              "status": "",
+              "bar": [],
+              "popup": [
+                {
+                  "id": "family:21",
+                  "domId": "window-21",
+                  "label": "Window",
+                  "ariaLabel": "Window",
+                  "detail": "",
+                  "enabled": true
+                }
+              ]
+            },
+            "previews": [
+              {
+                "identity": "family:21",
+                "visual": {
+                  "kind": "lifecycle",
+                  "state": "loading",
+                  "title": "Client content",
+                  "icon": null,
+                  "frame": null,
+                  "fidelity": null
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "recovery"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": {
+        "previewProtocol": 3,
+        "kind": "preview-control-recovery",
+        "binding": {
+          "lifetime": "18446744073709551615",
+          "session": "1389465",
+          "frontend": "9007199254740993"
+        },
+        "receiverEpoch": "1",
+        "capacity": 1065,
+        "issuedThrough": "1",
+        "deliveredThrough": "0",
+        "confirmedThrough": "0",
+        "afterOrdinal": "0",
+        "ticket": {
+          "previewProtocol": 3,
+          "kind": "preview-control-ticket",
+          "binding": {
+            "lifetime": "18446744073709551615",
+            "session": "1389465",
+            "frontend": "9007199254740993"
+          },
+          "receiverEpoch": "1",
+          "controlOrdinal": "1",
+          "alreadyDelivered": false,
+          "wire": "{\"previewProtocol\":3,\"kind\":\"preview-commands\",\"binding\":{\"lifetime\":\"18446744073709551615\",\"session\":\"1389465\",\"frontend\":\"9007199254740993\"},\"receiverEpoch\":\"1\",\"controlOrdinal\":\"1\",\"entries\":[{\"identity\":\"family:21\",\"commands\":[{\"kind\":\"acquire\",\"job\":{\"binding\":{\"lifetime\":\"18446744073709551615\",\"session\":\"1389465\",\"frontend\":\"9007199254740993\"},\"context\":{\"lifetime\":\"18446744073709551615\",\"incarnation\":\"21\",\"output\":\"9007199254740993\",\"privacy\":\"2\",\"rendering\":\"3\",\"scene\":\"4\",\"content\":\"5\"},\"request\":\"1\",\"origin\":\"1\",\"clock\":\"18446744073709551615\",\"deadline\":\"9007201255740993\"}}]}]}"
+        }
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "native-status"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": {
+        "records": "1",
+        "charge": "4096",
+        "captures": "0",
+        "job": {
+          "binding": {
+            "lifetime": "18446744073709551615",
+            "session": "1389465",
+            "frontend": "9007199254740993"
+          },
+          "context": {
+            "lifetime": "18446744073709551615",
+            "incarnation": "21",
+            "output": "9007199254740993",
+            "privacy": "2",
+            "rendering": "3",
+            "scene": "4",
+            "content": "5"
+          },
+          "request": "1",
+          "origin": "1",
+          "clock": "18446744073709551615",
+          "deadline": "9007201255740993"
+        },
+        "terminal": false
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "output-state"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": true
+    }
+  },
+  {
+    "input": {
+      "op": "output-held",
+      "value": false
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "quarantine",
+      "epoch": "1"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "poll"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": []
+    }
+  },
+  {
+    "input": {
+      "op": "seed"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": {
+        "detachProtocol": 1,
+        "kind": "native-preview-detach-seed",
+        "identity": "family:21",
+        "binding": {
+          "lifetime": "18446744073709551615",
+          "session": "1389465",
+          "frontend": "9007199254740993"
+        },
+        "receiverEpoch": "1",
+        "subject": "21",
+        "entry": "1",
+        "entryIssuedThrough": "1",
+        "requestFloor": "1"
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "native",
+      "epoch": "1",
+      "events": "[{\"detachProtocol\":1,\"kind\":\"native-preview-detach-seed\",\"identity\":\"family:21\",\"binding\":{\"lifetime\":\"18446744073709551615\",\"session\":\"1389465\",\"frontend\":\"9007199254740993\"},\"receiverEpoch\":\"1\",\"subject\":\"21\",\"entry\":\"1\",\"entryIssuedThrough\":\"1\",\"requestFloor\":\"1\"}]"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "terminal"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": [
+        {
+          "kind": "event",
+          "identity": "family:21",
+          "event": {
+            "kind": "receipt",
+            "sequence": "1",
+            "event": {
+              "kind": "refused",
+              "job": {
+                "binding": {
+                  "lifetime": "18446744073709551615",
+                  "session": "1389465",
+                  "frontend": "9007199254740993"
+                },
+                "context": {
+                  "lifetime": "18446744073709551615",
+                  "incarnation": "21",
+                  "output": "9007199254740993",
+                  "privacy": "2",
+                  "rendering": "3",
+                  "scene": "4",
+                  "content": "5"
+                },
+                "request": "1",
+                "origin": "1",
+                "clock": "18446744073709551615",
+                "deadline": "9007201255740993"
+              }
+            }
+          }
+        },
+        {
+          "kind": "event",
+          "identity": "family:21",
+          "event": {
+            "kind": "receipt",
+            "sequence": "2",
+            "event": {
+              "kind": "cancelled",
+              "job": {
+                "binding": {
+                  "lifetime": "18446744073709551615",
+                  "session": "1389465",
+                  "frontend": "9007199254740993"
+                },
+                "context": {
+                  "lifetime": "18446744073709551615",
+                  "incarnation": "21",
+                  "output": "9007199254740993",
+                  "privacy": "2",
+                  "rendering": "3",
+                  "scene": "4",
+                  "content": "5"
+                },
+                "request": "1",
+                "origin": "1",
+                "clock": "18446744073709551615",
+                "deadline": "9007201255740993"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": {
+      "op": "pending"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": []
+    }
+  },
+  {
+    "input": {
+      "op": "native",
+      "epoch": "1",
+      "events": "[{\"kind\":\"event\",\"identity\":\"family:21\",\"event\":{\"kind\":\"receipt\",\"sequence\":\"1\",\"event\":{\"kind\":\"refused\",\"job\":{\"binding\":{\"lifetime\":\"18446744073709551615\",\"session\":\"1389465\",\"frontend\":\"9007199254740993\"},\"context\":{\"lifetime\":\"18446744073709551615\",\"incarnation\":\"21\",\"output\":\"9007199254740993\",\"privacy\":\"2\",\"rendering\":\"3\",\"scene\":\"4\",\"content\":\"5\"},\"request\":\"1\",\"origin\":\"1\",\"clock\":\"18446744073709551615\",\"deadline\":\"9007201255740993\"}}}},{\"kind\":\"event\",\"identity\":\"family:21\",\"event\":{\"kind\":\"receipt\",\"sequence\":\"2\",\"event\":{\"kind\":\"cancelled\",\"job\":{\"binding\":{\"lifetime\":\"18446744073709551615\",\"session\":\"1389465\",\"frontend\":\"9007199254740993\"},\"context\":{\"lifetime\":\"18446744073709551615\",\"incarnation\":\"21\",\"output\":\"9007199254740993\",\"privacy\":\"2\",\"rendering\":\"3\",\"scene\":\"4\",\"content\":\"5\"},\"request\":\"1\",\"origin\":\"1\",\"clock\":\"18446744073709551615\",\"deadline\":\"9007201255740993\"}}}}]"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": true,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "step"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "inspect"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": {
+        "retainedInputs": 0,
+        "retainedInputBytes": 0,
+        "ticketUnnotified": false,
+        "postedTickets": 0,
+        "confirmations": 0,
+        "returnedEventsRetained": false,
+        "returnedEventBatches": 0,
+        "returnedEventBytes": 0,
+        "nativeEffectError": "Native exact field count",
+        "returnedBatchCapacity": 3195,
+        "returnedByteCapacity": 26173440,
+        "dispatchOutputReservation": 8192,
+        "transport": {
+          "nativeIssuedThrough": "6",
+          "deliveredThrough": "6",
+          "pending": 0,
+          "capacity": 1065
+        },
+        "privatePolicy": {
+          "models": [],
+          "commands": [],
+          "realm": {
+            "controlled": true,
+            "closing": true,
+            "closed": false,
+            "processed": "1",
+            "retained": 0,
+            "completed": 1,
+            "epoch": "1",
+            "ingress": {
+              "pending": 0,
+              "capacity": 1065,
+              "intents": []
+            },
+            "deferred": 0,
+            "deferredIntents": [],
+            "inputBlocked": false
+          },
+          "metadata": [],
+          "enrollment": [],
+          "feedback": [],
+          "visuals": {
+            "visualProtocol": 1,
+            "kind": "native-preview-visual",
+            "binding": {
+              "lifetime": "18446744073709551615",
+              "session": "1389465",
+              "frontend": "9007199254740993"
+            },
+            "receiverEpoch": "1",
+            "surface": {
+              "surfaceProtocol": 2,
+              "publication": "1",
+              "lease": "1",
+              "mode": "picker",
+              "status": "",
+              "bar": [],
+              "popup": [
+                {
+                  "id": "family:21",
+                  "domId": "window-21",
+                  "label": "Window",
+                  "ariaLabel": "Window",
+                  "detail": "",
+                  "enabled": true
+                }
+              ]
+            },
+            "previews": [
+              {
+                "identity": "family:21",
+                "visual": {
+                  "kind": "hidden"
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "finish"
+    },
+    "result": {
+      "finished": true,
+      "normalOwnedPeerExit": true,
+      "nativeGrantResets": 0
+    }
+  }
+]

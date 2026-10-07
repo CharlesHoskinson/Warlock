@@ -1,0 +1,12 @@
+
+  driver_output_gate_tests
+    ok ticketCustodyPrecedesNotification passed 1 test(s)
+    ok notificationPrecedesDispatch passed 1 test(s)
+    ok reservationRefusesBeforeEffect passed 1 test(s)
+    ok quarantineBypassesOutputPressure passed 1 test(s)
+    ok releasedReservationUsesOriginalTicket passed 1 test(s)
+    ok confirmationCannotSettlePhysicalDuty passed 1 test(s)
+    ok repeatedPressureNeverInvokes passed 1 test(s)
+    ok foreignThreadCannotConsumeHeldTicket passed 1 test(s)
+
+  8 passing (11ms)

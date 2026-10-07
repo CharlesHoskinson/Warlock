@@ -646,3 +646,33 @@ Private diagnostics SHALL remain native/QA only. Before GUI activation, retained
 native output bounds, producer scheduling, original delayed proposal outcomes,
 actual WebKit identity/frame/concealment/URI and all original release gates SHALL
 remain independently required; CPU driver checks SHALL NOT establish them.
+
+EARS CONTROL-034: When the original native driver is about to dispatch a retained
+ticket, it SHALL reserve one batch and 8192 returned wire bytes before invoking
+any native effect. Under the held original producer contract, a dispatch SHALL
+return at most two fixed typed frame events or one fixed journal completion;
+UInt64 fields and the 64-character token SHALL retain their original encodings.
+Normal returned custody SHALL be bounded by 3195 batches and 26173440 wire bytes.
+Insufficient reservation SHALL report WOULD_BLOCK with the exact original ticket,
+policy, queued inputs, outbox and native effect counters unchanged.
+
+When original returned events are retained and the original policy's deferred
+gate admits input, the driver SHALL process those events before dispatching more
+output-producing work. Each successful action SHALL remove only its consumed
+event; refusal SHALL retain it. Original issuance-notification and independent
+confirmation priorities SHALL remain intact. Urgent native quarantine SHALL stay
+available through output pressure and SHALL NOT discard held tickets, events or
+known/Unknown physical obligations.
+
+If an original producer violates its held output contract, the driver SHALL
+retain its exact original outcome, ticket and receipt as live uncertainty before
+refusing further normal work. It SHALL NOT truncate/drop that outcome, reset a
+grant or claim normal bounded success. This exceptional recovery duty SHALL remain
+separate from the normal custody bound and measured workload/RSS acceptance.
+
+When maximum-field serializer checks, a labeled stricter compiled reservation
+gate or first-ticket model traces pass, that evidence SHALL NOT imply actual
+output queue exhaustion, full-workload progress, measured memory/performance,
+actual paused host producer scheduling or native GUI acceptance. Those gates,
+actual WebKit callback/frame/physical concealment/URI, uncertain live/process
+recovery and original delayed proposal outcome obligations SHALL remain required.

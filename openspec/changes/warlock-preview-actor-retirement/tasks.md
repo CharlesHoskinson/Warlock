@@ -393,3 +393,9 @@ activation and all original full release gates remain open.
   activating the driver in the actual WebKit/Core host.
 - [ ] Qualify live uncertain driver/process recovery and original delayed proposal
   expiry/revocation outcomes without reconstructing policy or resetting a grant.
+
+- [x] Freeze CONTROL-034 normal returned-output reservation, maximum-field original
+  serializers, admitted-output priority, labeled compiled pressure/first-ticket
+  model coupling and current coherent build while retaining original gates.
+- [ ] Qualify actual paused host producer scheduling and full-workload progress/
+  memory/performance; first-ticket or stricter-gate evidence does not establish it.

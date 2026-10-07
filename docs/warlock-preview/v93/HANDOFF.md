@@ -372,3 +372,23 @@ host/pure renderer WebKit identity/leases/async frame/physical concealment/URI.
 Process-owned custody is not a process-loss journal. Uncertain live worker/process
 recovery, delayed never-issued proposal outcome/order, all actual GUI and full
 release gates stay open. Installed desktop/drafts/five foreign paths preserved.
+
+GUI121 held bounded normal returned-output custody under original producer contract:
+reserve8192 before effects; at most3195 batches/26173440 normal wire bytes; original
+returned events precede new effects when unchanged deferred gate permits. Exact
+tickets survive WOULD_BLOCK, quarantine bypasses pressure. Original serializers20
+at maximum fields bound1544 bytes; journal ordinal digits included analytically.
+Actual Native/C/JSC synthetic sealed FD2261, late-quarantined offer/fence2269,
+stricter compiled pressure2270/constructor9/strict normal exits/no grant reset.
+Quint selected first-ticket8/200 samples/eight actual traces/48 compared states,
+two compiled guards detect reservation/priority removal; full116 retains116.
+5570 files held. Two failures retained: JSON-only positive peer missing FD socket
+and guard runner expecting wrong assertion text after correct oracle rejection.
+CONTROL034/EARS/OpenSpec bounded freeze checked; full-workload progress/RSS/actual
+output exhaustion and paused host producer qualification remain open. Actual legacy
+Native131GUI119/core16/plugin19/AQ1552518/278 remains current; driver/pure renderer
+not activated. Next PUBLIC91 then GUI122 actual controlled host with original GTK
+admission, one-time native renderer grant, producer batch retention/poll pause,
+WebKit callback context/lease, async DOM/frame/physical concealment and URI ownership.
+Uncertain live/process recovery, delayed never-issued proposal outcomes and full
+release S01–S16/right-click gates remain open. Installed/drafts/foreign untouched.

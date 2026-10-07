@@ -1,0 +1,124 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "sourceHeld": true,
+  "passed": true,
+  "evidenceIntegrityPassed": true,
+  "reports": {
+    "positive": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v121/qa/policy-driver-positive-check-1791377817582621047/report.json",
+      "sha256": "66dc53fc595ca8b999e1dc4a8f26836dcf4faef11a975eded136a59a20ba54eb"
+    },
+    "quarantined": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v121/qa/policy-driver-quarantined-output-check-1791378292903443577/report.json",
+      "sha256": "dadaac48bc3473b1499c392ca263bf3b9325c7f35a5d68ba23aab9ff7a12e34e"
+    },
+    "pressure": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v121/qa/policy-driver-output-gate-check-1791377264204546838/report.json",
+      "sha256": "6feb87ded76c043a3f2d5d7eca0bdcb229fc1e696e683a8ca11cbd359b580db9"
+    },
+    "bounds": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v121/qa/dispatch-output-bounds-1791377817582289124/report.json",
+      "sha256": "ee7950ca1a23a3eb3e936f1d0030ef05d80286212f5c3fb81fa5a70efc1de3d2"
+    },
+    "refinement": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v121/qa/driver-output-refinement-1791377706290553458/report.json",
+      "sha256": "921cc95c8eae04fa7620596f762736f2544797b48f314d2af9c0b3d0fbefb246"
+    },
+    "build": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v121/qa/build-1791377817594411281/report.json",
+      "sha256": "e522ca12a85191aa8f5ea9ad2d0a7ca1b8bd9b45d1be0dac61685fa571546390"
+    },
+    "guards": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v121/qa/output-custody-guards-1791378733924757053/report.json",
+      "sha256": "0a9f9481ca2636da28c4a749e430f436c308fd41a602865e4bb4099c2e4e65f2"
+    }
+  },
+  "historicalReports": [
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v121/qa/dispatch-output-bounds-1791376346053256741/report.json",
+      "sha256": "9387667a91fcb3e7ebf9fb758ad60d2a4c512302168b10f97b91f88379552947",
+      "passed": true
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v121/qa/output-custody-guards-1791378693672450352/report.json",
+      "sha256": "f97751d067481beea4a9eeed727208326fac19149f42062c4f13542979a65304",
+      "passed": false
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v121/qa/policy-driver-check-1791375841390958432/report.json",
+      "sha256": "392482bc1eef4a1d3aa500e6650f91dec30ea538df8c1fe7fbcc989721fd6428",
+      "passed": true
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v121/qa/policy-driver-positive-check-1791376213047795437/report.json",
+      "sha256": "3c979dff9205ff8ff8c32abe31da4da90afca72a0f82aba19607cb0fde1c9a32",
+      "passed": false
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v121/qa/policy-driver-positive-check-1791376405615625006/report.json",
+      "sha256": "5fc1e16726e9a582e666fa7af6a5bcc3c36945662d2abdf5a553d4548b753c99",
+      "passed": true
+    }
+  ],
+  "heldFailedReports": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v121/qa/output-custody-guards-1791378693672450352/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v121/qa/policy-driver-positive-check-1791376213047795437/report.json"
+  ],
+  "singlePreviewPolicy": true,
+  "parentElmPolicyUnchanged": true,
+  "parentNativeIssuerAndPhysicalProductUnchanged": true,
+  "parentAssetsAndAdaptersUnchanged": true,
+  "nativeOwnedJavaScriptCore": true,
+  "persistentPolicyContexts": 1,
+  "nativePolicyDriverCPUQualified": true,
+  "positiveChecks": 2261,
+  "lateQuarantinedOutputChecks": 2269,
+  "pressureChecks": 2270,
+  "preGrantFaultChecks": 9,
+  "ordinaryInputCapacity": 1065,
+  "ordinaryInputByteLimit": 16777216,
+  "normalOutputBatchCapacity": 3195,
+  "normalOutputByteCapacity": 26173440,
+  "dispatchOutputReservation": 8192,
+  "maximumFieldSerializerChecks": 20,
+  "maximumBoundedOriginalBatchBytes": 1544,
+  "normalOutputReservationUnderHeldProducerContractQualified": true,
+  "lateOutputQuarantineCPUQualified": true,
+  "driverScenarios": 8,
+  "driverSamples": 200,
+  "coupledTraces": 8,
+  "observableStatesCompared": 48,
+  "compiledNativeVariantsDetected": 2,
+  "rendererWindowPolicies": 0,
+  "nativeGrantResets": 0,
+  "fullBuildCommands": 116,
+  "originalBuildCommands": 116,
+  "nativeTicketCustodyCPUQualified": true,
+  "independentNativeConfirmationCPUQualified": true,
+  "nativeOutputQueueResourceBoundQualified": false,
+  "actualOutputQueueExhaustionQualified": false,
+  "fullWorkloadProgressQualified": false,
+  "measuredRSSQualified": false,
+  "realHostPolicyActivated": false,
+  "actualRendererProjectionActivated": false,
+  "actualDOMQualified": false,
+  "actualWebKitContextAuthenticationQualified": false,
+  "physicalConcealmentQualified": false,
+  "ongoingProjectionFreshnessQualified": false,
+  "realHostInputBackpressureQualified": false,
+  "nativeDelayedProposalLivenessQualified": false,
+  "uncertainLiveWorkerRecoveryQualified": false,
+  "processLossInputJournalQualified": false,
+  "fullElmRecoveryQualified": false,
+  "typedHostRoutingActivated": false,
+  "webKitActivated": false,
+  "actualWaylandWindowAcceptance": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "parentManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v120/component-manifest.json",
+  "parentManifestSHA256": "b492884855c425cb35ebb0b0fd85680063563a5c00804b25678bcaba9917d66d",
+  "nativeBaselineManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v131/component-manifest.json",
+  "nativeBaselineManifestSHA256": "5ff11f972a317f1475776a453409197ce5e13b9210a8f049b0e1c8213234a309",
+  "scope": "# Normal native output custody\n\nGUI121 reserves one batch and 8192 bytes before original native effect dispatch.\nNormal returned custody is capped at 3195 batches/26173440 wire bytes under the\nheld original C producer contract. An exact ticket remains retained on WOULD_BLOCK.\nOriginal returned events are admitted before further effect output whenever the\nunchanged original deferred-input gate permits it. Issued-ticket notification and\nindependent native confirmation retain their original precedence and authorities.\n\nOriginal dispatch paths return two fixed offer/fence events on acquisition,\none next original scoped/permanent completion on retirement/detachment/final ACK,\nand no event on reconcile, physical cancel/release or terminal ACK. Maximum-field\ntests run original serializers/journals with UInt64 maximums and the fixed\n64-character token. Their journal ordinal calculation includes the maximum 20\ndecimal digits analytically. This is source/serializer evidence, not actual Core.\n\nThe positive actual Native/C/JSC roundtrip uses the existing FD-capable authenticated\nsynthetic peer: a sealed SCM_RIGHTS image is mapped by original C, two original\nevents are retained, then separately admitted to the single policy drawable state.\nThis is an actual synthetic-provider FD, not actual Core/window/pixel/DOM evidence.\nThe first failed positive run used a JSON-only peer without an image socket; that\noriginal failure and its source closure are retained. The refusal oracle remains.\n\nA labeled compiled stricter reservation gate exercises refusal before any effect,\nexact ticket retention, quarantine through that pressure and release of the same\nticket once. Its numerical boundaries use the actual compiled reservation predicate.\nIt does not fill the real output queue. Eight explicitly selected Quint first-ticket\nscenarios and 200 samples compare actual Native/C issuance/delivery/confirmation,\ncapture counts/charge/terminal status and original JSC demand/known duties. Every\nselected trace drains original obligations and closes normally. That scoped model\ndoes not prove the full lifecycle or full-workload resource/progress behavior.\n\nUnexpected original producer-contract violations retain exact outcome/ticket/\nreceipt custody as live Unknown. They are not truncated, reset or called normal\nbounded success. Live uncertain recovery and process-loss journaling remain open.\n\nThe current full legacy host links this driver but does not create it or activate\nthe pure renderer. Original issuer/effects/physical product, Elm policy and existing\nassets/adapters remain unchanged. Native131 is the actual GUI119 legacy/core16/\nplugin19/AQ155 baseline 2518/278. No installed/main-desktop/draft/foreign changes.\n\nNext actual controlled host integration: fixed native renderer initialization after\noriginal GTK admission, retained producer batches and paused polling, WebKit callback\ncontext/lease authentication, async DOM/frame and physical concealment barriers,\nand original URI reader ownership. Full-workload progress/RSS/pacing, delayed\nnever-issued proposal outcomes, uncertain live/process recovery and all original\nfull release S01\u2013S16/right-click gates remain required.\n\nThe late-output roundtrip2269 quarantines before admitting retained offer/fence.\nBoth remain concealed and original physical/journal/confirmation duties drain to\nnormal closure. Two unsafe compiled derivatives remove reservation or output\npriority; unchanged original oracles must reject them without a normal-close claim.\nThe first guard runner expected the wrong assertion text after the correct native\nassertion fired; that failed runner and source snapshot remain retained.\n"
+}

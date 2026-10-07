@@ -1,0 +1,1151 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 0,
+      delivered: 0,
+      demand: true,
+      effects: 0,
+      held: false,
+      history: [],
+      issued: 0,
+      known: true,
+      notified: 0,
+      refused: false
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 0,
+      delivered: 0,
+      demand: true,
+      effects: 0,
+      held: true,
+      history: ["Held"],
+      issued: 0,
+      known: true,
+      notified: 0,
+      refused: false
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 0,
+      delivered: 0,
+      demand: true,
+      effects: 0,
+      held: true,
+      history: ["Held", "Held"],
+      issued: 0,
+      known: true,
+      notified: 0,
+      refused: false
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 0,
+      delivered: 0,
+      demand: false,
+      effects: 0,
+      held: true,
+      history: ["Held", "Held", "Quarantine"],
+      issued: 0,
+      known: true,
+      notified: 0,
+      refused: false
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 0,
+      delivered: 0,
+      demand: false,
+      effects: 0,
+      held: true,
+      history: ["Held", "Held", "Quarantine", "Step"],
+      issued: 1,
+      known: true,
+      notified: 0,
+      refused: false
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 0,
+      delivered: 0,
+      demand: false,
+      effects: 0,
+      held: false,
+      history: ["Held", "Held", "Quarantine", "Step", "Open"],
+      issued: 1,
+      known: true,
+      notified: 0,
+      refused: false
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 0,
+      delivered: 0,
+      demand: false,
+      effects: 0,
+      held: false,
+      history: ["Held", "Held", "Quarantine", "Step", "Open", "Step"],
+      issued: 1,
+      known: true,
+      notified: 1,
+      refused: false
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 0,
+      delivered: 0,
+      demand: false,
+      effects: 0,
+      held: false,
+      history:
+        ["Held", "Held", "Quarantine", "Step", "Open", "Step", "Quarantine"],
+      issued: 1,
+      known: true,
+      notified: 1,
+      refused: false
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 0,
+      delivered: 0,
+      demand: false,
+      effects: 0,
+      held: false,
+      history:
+        [
+          "Held",
+          "Held",
+          "Quarantine",
+          "Step",
+          "Open",
+          "Step",
+          "Quarantine",
+          "Open"
+        ],
+      issued: 1,
+      known: true,
+      notified: 1,
+      refused: false
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 0,
+      delivered: 0,
+      demand: false,
+      effects: 0,
+      held: false,
+      history:
+        [
+          "Held",
+          "Held",
+          "Quarantine",
+          "Step",
+          "Open",
+          "Step",
+          "Quarantine",
+          "Open",
+          "Open"
+        ],
+      issued: 1,
+      known: true,
+      notified: 1,
+      refused: false
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 0,
+      delivered: 0,
+      demand: false,
+      effects: 0,
+      held: true,
+      history:
+        [
+          "Held",
+          "Held",
+          "Quarantine",
+          "Step",
+          "Open",
+          "Step",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Held"
+        ],
+      issued: 1,
+      known: true,
+      notified: 1,
+      refused: false
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 0,
+      delivered: 0,
+      demand: false,
+      effects: 0,
+      held: true,
+      history:
+        [
+          "Held",
+          "Held",
+          "Quarantine",
+          "Step",
+          "Open",
+          "Step",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Held",
+          "Quarantine"
+        ],
+      issued: 1,
+      known: true,
+      notified: 1,
+      refused: false
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 0,
+      delivered: 0,
+      demand: false,
+      effects: 0,
+      held: false,
+      history:
+        [
+          "Held",
+          "Held",
+          "Quarantine",
+          "Step",
+          "Open",
+          "Step",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Held",
+          "Quarantine",
+          "Open"
+        ],
+      issued: 1,
+      known: true,
+      notified: 1,
+      refused: false
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 0,
+      delivered: 0,
+      demand: false,
+      effects: 0,
+      held: false,
+      history:
+        [
+          "Held",
+          "Held",
+          "Quarantine",
+          "Step",
+          "Open",
+          "Step",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Held",
+          "Quarantine",
+          "Open",
+          "Open"
+        ],
+      issued: 1,
+      known: true,
+      notified: 1,
+      refused: false
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 0,
+      delivered: 0,
+      demand: false,
+      effects: 0,
+      held: false,
+      history:
+        [
+          "Held",
+          "Held",
+          "Quarantine",
+          "Step",
+          "Open",
+          "Step",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Held",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Foreign"
+        ],
+      issued: 1,
+      known: true,
+      notified: 1,
+      refused: true
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 0,
+      delivered: 0,
+      demand: false,
+      effects: 0,
+      held: false,
+      history:
+        [
+          "Held",
+          "Held",
+          "Quarantine",
+          "Step",
+          "Open",
+          "Step",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Held",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Foreign",
+          "Quarantine"
+        ],
+      issued: 1,
+      known: true,
+      notified: 1,
+      refused: false
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 0,
+      delivered: 0,
+      demand: false,
+      effects: 0,
+      held: false,
+      history:
+        [
+          "Held",
+          "Held",
+          "Quarantine",
+          "Step",
+          "Open",
+          "Step",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Held",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Foreign",
+          "Quarantine",
+          "Quarantine"
+        ],
+      issued: 1,
+      known: true,
+      notified: 1,
+      refused: false
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 0,
+      delivered: 1,
+      demand: false,
+      effects: 1,
+      held: false,
+      history:
+        [
+          "Held",
+          "Held",
+          "Quarantine",
+          "Step",
+          "Open",
+          "Step",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Held",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Foreign",
+          "Quarantine",
+          "Quarantine",
+          "Step"
+        ],
+      issued: 1,
+      known: true,
+      notified: 1,
+      refused: false
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 0,
+      delivered: 1,
+      demand: false,
+      effects: 1,
+      held: true,
+      history:
+        [
+          "Held",
+          "Held",
+          "Quarantine",
+          "Step",
+          "Open",
+          "Step",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Held",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Foreign",
+          "Quarantine",
+          "Quarantine",
+          "Step",
+          "Held"
+        ],
+      issued: 1,
+      known: true,
+      notified: 1,
+      refused: false
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 0,
+      delivered: 1,
+      demand: false,
+      effects: 1,
+      held: true,
+      history:
+        [
+          "Held",
+          "Held",
+          "Quarantine",
+          "Step",
+          "Open",
+          "Step",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Held",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Foreign",
+          "Quarantine",
+          "Quarantine",
+          "Step",
+          "Held",
+          "Held"
+        ],
+      issued: 1,
+      known: true,
+      notified: 1,
+      refused: false
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 0,
+      delivered: 1,
+      demand: false,
+      effects: 1,
+      held: true,
+      history:
+        [
+          "Held",
+          "Held",
+          "Quarantine",
+          "Step",
+          "Open",
+          "Step",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Held",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Foreign",
+          "Quarantine",
+          "Quarantine",
+          "Step",
+          "Held",
+          "Held",
+          "Foreign"
+        ],
+      issued: 1,
+      known: true,
+      notified: 1,
+      refused: true
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 0,
+      delivered: 1,
+      demand: false,
+      effects: 1,
+      held: false,
+      history:
+        [
+          "Held",
+          "Held",
+          "Quarantine",
+          "Step",
+          "Open",
+          "Step",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Held",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Foreign",
+          "Quarantine",
+          "Quarantine",
+          "Step",
+          "Held",
+          "Held",
+          "Foreign",
+          "Open"
+        ],
+      issued: 1,
+      known: true,
+      notified: 1,
+      refused: false
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 0,
+      delivered: 1,
+      demand: false,
+      effects: 1,
+      held: false,
+      history:
+        [
+          "Held",
+          "Held",
+          "Quarantine",
+          "Step",
+          "Open",
+          "Step",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Held",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Foreign",
+          "Quarantine",
+          "Quarantine",
+          "Step",
+          "Held",
+          "Held",
+          "Foreign",
+          "Open",
+          "Quarantine"
+        ],
+      issued: 1,
+      known: true,
+      notified: 1,
+      refused: false
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 0,
+      delivered: 1,
+      demand: false,
+      effects: 1,
+      held: false,
+      history:
+        [
+          "Held",
+          "Held",
+          "Quarantine",
+          "Step",
+          "Open",
+          "Step",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Held",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Foreign",
+          "Quarantine",
+          "Quarantine",
+          "Step",
+          "Held",
+          "Held",
+          "Foreign",
+          "Open",
+          "Quarantine",
+          "Open"
+        ],
+      issued: 1,
+      known: true,
+      notified: 1,
+      refused: false
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 1,
+      delivered: 1,
+      demand: false,
+      effects: 1,
+      held: false,
+      history:
+        [
+          "Held",
+          "Held",
+          "Quarantine",
+          "Step",
+          "Open",
+          "Step",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Held",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Foreign",
+          "Quarantine",
+          "Quarantine",
+          "Step",
+          "Held",
+          "Held",
+          "Foreign",
+          "Open",
+          "Quarantine",
+          "Open",
+          "Step"
+        ],
+      issued: 1,
+      known: true,
+      notified: 1,
+      refused: false
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 1,
+      delivered: 1,
+      demand: false,
+      effects: 1,
+      held: false,
+      history:
+        [
+          "Held",
+          "Held",
+          "Quarantine",
+          "Step",
+          "Open",
+          "Step",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Held",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Foreign",
+          "Quarantine",
+          "Quarantine",
+          "Step",
+          "Held",
+          "Held",
+          "Foreign",
+          "Open",
+          "Quarantine",
+          "Open",
+          "Step",
+          "Foreign"
+        ],
+      issued: 1,
+      known: true,
+      notified: 1,
+      refused: true
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 1,
+      delivered: 1,
+      demand: false,
+      effects: 1,
+      held: false,
+      history:
+        [
+          "Held",
+          "Held",
+          "Quarantine",
+          "Step",
+          "Open",
+          "Step",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Held",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Foreign",
+          "Quarantine",
+          "Quarantine",
+          "Step",
+          "Held",
+          "Held",
+          "Foreign",
+          "Open",
+          "Quarantine",
+          "Open",
+          "Step",
+          "Foreign",
+          "Foreign"
+        ],
+      issued: 1,
+      known: true,
+      notified: 1,
+      refused: true
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 1,
+      delivered: 1,
+      demand: false,
+      effects: 1,
+      held: true,
+      history:
+        [
+          "Held",
+          "Held",
+          "Quarantine",
+          "Step",
+          "Open",
+          "Step",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Held",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Foreign",
+          "Quarantine",
+          "Quarantine",
+          "Step",
+          "Held",
+          "Held",
+          "Foreign",
+          "Open",
+          "Quarantine",
+          "Open",
+          "Step",
+          "Foreign",
+          "Foreign",
+          "Held"
+        ],
+      issued: 1,
+      known: true,
+      notified: 1,
+      refused: false
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 1,
+      delivered: 1,
+      demand: false,
+      effects: 1,
+      held: true,
+      history:
+        [
+          "Held",
+          "Held",
+          "Quarantine",
+          "Step",
+          "Open",
+          "Step",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Held",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Foreign",
+          "Quarantine",
+          "Quarantine",
+          "Step",
+          "Held",
+          "Held",
+          "Foreign",
+          "Open",
+          "Quarantine",
+          "Open",
+          "Step",
+          "Foreign",
+          "Foreign",
+          "Held",
+          "Quarantine"
+        ],
+      issued: 1,
+      known: true,
+      notified: 1,
+      refused: false
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 1,
+      delivered: 1,
+      demand: false,
+      effects: 1,
+      held: false,
+      history:
+        [
+          "Held",
+          "Held",
+          "Quarantine",
+          "Step",
+          "Open",
+          "Step",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Held",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Foreign",
+          "Quarantine",
+          "Quarantine",
+          "Step",
+          "Held",
+          "Held",
+          "Foreign",
+          "Open",
+          "Quarantine",
+          "Open",
+          "Step",
+          "Foreign",
+          "Foreign",
+          "Held",
+          "Quarantine",
+          "Open"
+        ],
+      issued: 1,
+      known: true,
+      notified: 1,
+      refused: false
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 1,
+      delivered: 1,
+      demand: false,
+      effects: 1,
+      held: false,
+      history:
+        [
+          "Held",
+          "Held",
+          "Quarantine",
+          "Step",
+          "Open",
+          "Step",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Held",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Foreign",
+          "Quarantine",
+          "Quarantine",
+          "Step",
+          "Held",
+          "Held",
+          "Foreign",
+          "Open",
+          "Quarantine",
+          "Open",
+          "Step",
+          "Foreign",
+          "Foreign",
+          "Held",
+          "Quarantine",
+          "Open",
+          "Foreign"
+        ],
+      issued: 1,
+      known: true,
+      notified: 1,
+      refused: true
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 1,
+      delivered: 1,
+      demand: false,
+      effects: 1,
+      held: false,
+      history:
+        [
+          "Held",
+          "Held",
+          "Quarantine",
+          "Step",
+          "Open",
+          "Step",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Held",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Foreign",
+          "Quarantine",
+          "Quarantine",
+          "Step",
+          "Held",
+          "Held",
+          "Foreign",
+          "Open",
+          "Quarantine",
+          "Open",
+          "Step",
+          "Foreign",
+          "Foreign",
+          "Held",
+          "Quarantine",
+          "Open",
+          "Foreign",
+          "Foreign"
+        ],
+      issued: 1,
+      known: true,
+      notified: 1,
+      refused: true
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      code: 0,
+      confirmed: 1,
+      delivered: 1,
+      demand: false,
+      effects: 1,
+      held: false,
+      history:
+        [
+          "Held",
+          "Held",
+          "Quarantine",
+          "Step",
+          "Open",
+          "Step",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Held",
+          "Quarantine",
+          "Open",
+          "Open",
+          "Foreign",
+          "Quarantine",
+          "Quarantine",
+          "Step",
+          "Held",
+          "Held",
+          "Foreign",
+          "Open",
+          "Quarantine",
+          "Open",
+          "Step",
+          "Foreign",
+          "Foreign",
+          "Held",
+          "Quarantine",
+          "Open",
+          "Foreign",
+          "Foreign",
+          "Open"
+        ],
+      issued: 1,
+      known: true,
+      notified: 1,
+      refused: false
+    }
+}
+
+[ok] No violation found (276ms at 725 traces/second).
+Trace length statistics: max=33, min=33, average=33.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

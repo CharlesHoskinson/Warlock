@@ -1260,3 +1260,51 @@ driver custody SHALL survive renderer replacement within the owning process.
 - **THEN** output bounds, paused producer scheduling, WebKit callback identity,
   async frame/concealment/URI and delayed proposal outcome gates remain required
 - **AND** in-process custody does not establish process-loss recovery or full release
+
+### Requirement: Reserve bounded original native output custody before effects
+
+The system SHALL implement EARS CONTROL-034 under the held original native
+producer contract, preserving original policy, issuer, physical and closure gates.
+
+#### Scenario: Original dispatch produces maximum-field wire data
+- **GIVEN** maximum UInt64 fields and the original fixed 64-character token
+- **WHEN** original C serializers produce a two-frame batch or next journal completion
+- **THEN** that fixed output fits the 8192-byte pre-effect reservation
+- **AND** journal completion dispatch returns only its next retained wire
+
+#### Scenario: Output capacity is unavailable before dispatch
+- **GIVEN** an original native ticket already notified to the policy
+- **WHEN** another batch or 8192 bytes cannot be reserved
+- **THEN** WOULD_BLOCK retains the exact original ticket and existing custody
+- **AND** no original native capture or effect counter advances
+
+#### Scenario: Quarantine arrives through output pressure
+- **GIVEN** an original held ticket and unavailable output reservation
+- **WHEN** the original creator quarantines the same native epoch
+- **THEN** the single policy revokes demand while retaining known physical duties
+- **AND** the ticket remains exact and no effect runs until capacity is available
+
+#### Scenario: Capacity becomes available for the held ticket
+- **GIVEN** refusal occurred before native dispatch
+- **WHEN** the reservation becomes available
+- **THEN** the original ticket proceeds once through the original C dispatcher
+- **AND** its data receipt and independent confirmation do not settle physical duties
+
+#### Scenario: An offer and fence await policy admission
+- **GIVEN** an original C acquisition returned two original frame events
+- **WHEN** the unchanged policy's deferred gate permits input
+- **THEN** one action processes the offer and another processes the fence
+- **AND** those admitted events precede further output-producing dispatch
+- **AND** processing them performs no additional native effect
+
+#### Scenario: A producer violates its fixed output contract
+- **GIVEN** native dispatch returned an unexpected original outcome
+- **WHEN** its size or shape violates the held producer contract
+- **THEN** exact events, ticket and receipt remain in live uncertain custody
+- **AND** no truncation, grant reset or normal bounded success is claimed
+
+#### Scenario: A bounded first-ticket pressure trace is qualified
+- **GIVEN** maximum-field checks and selected C/JSC/model traces
+- **WHEN** component output custody is reviewed
+- **THEN** actual output exhaustion, workload progress, RSS/performance and paused host producers remain separate gates
+- **AND** actual GUI/WebKit/frame/concealment/URI and full release acceptance remain open
