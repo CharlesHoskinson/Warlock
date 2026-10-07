@@ -243,3 +243,15 @@ The first two local replay fixture failures remain held. Core19 is held at its
 exact core16 source/build ABI; actual Core registry/capture resource protocol,
 live-window binding detachment, renderer native outbox/WebKit and all original
 full-release gates remain open. No source or component pass closes those gates.
+
+Native129/core16/plugin19 with retained GUI92 legacy runtime is held at bounded
+native qualification:2517 checks/278 normal exits/full cleanup,2459 original128
+and2458 original126 fixed controls plus original allocator/expiry assertions.
+The additive actual Core resource phase passes49 controls/11 scoped snapshots
+and closes two imported sealed SCM_RIGHTS descriptors independently from backend
+zero. Real private lock, original target/foreign binding/subject/transfer guards,
+application-dropped ACK recovery and another current capture are exercised.
+This does not claim kernel socket loss, native106 controlled factory/WebKit
+activation, live-window binding detachment or full-release acceptance. Original
+expired/revoked capture resource witnesses and current controlled integration
+remain explicit work. Component/native evidence and source hashes stay separate.

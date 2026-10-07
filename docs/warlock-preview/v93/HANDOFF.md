@@ -4,16 +4,21 @@ desktop, drafts and five foreign tracked changes. Source owner is
 f6779148-8f5d-4bdf-8a0f-044184e486f2. No native GUI campaign or CPU check is still
 running at this checkpoint; verify actual processes on continuation.
 
-The current fully qualified bounded tuple remains GUI92/native128/core16/plugin18:
-2466 checks/277 normal owned exits with original fixed126 controls and allocator/
-expiry assertions. These counts do not establish full GUI release acceptance.
+The current fully qualified bounded tuple is GUI92/native129/core16/plugin19:
+2517 checks/278 normal owned exits/full cleanup retain2459 original128 and2458
+original126 fixed controls plus actual allocator attempts within original expiry.
+This uses the unchanged held GUI92 legacy runtime/probes, with the actual new
+Core19 resource API. It does not establish GUI106 or full release acceptance.
 
 GUI104 capture intent/adoption and GUI105/plugin19 scoped resource protocol are
 held and public through publication72 b4a72a5ce672dd05647c256ab5ef4b60aad5eddb,
 10115 exact owned blobs. Local source1387ee79b973310c060e68e20b6e2ec2ac0d9aa8;
 receipt972f7a1f0c44da9fd6f28b1e0cfeb17f91cf2101.
 
-GUI106 is now held, inactive and ready for owned publication73. It shares one
+GUI106 is held, inactive and public through publication73
+daed06a2a125f729eb5e9ec3ddf585d160031247,6490 exact owned blobs.
+Local source9a47a8668676458f6eaf01116a654a690c910806;
+receipt448b229ee11a4bb2299e7099e7306c45e5865108. It shares one
 actual Native binding quarantine with URI authorization: reconciliation dispatch
 revokes existing/new reads before polling, while active readers retain physical
 storage. Native backend zero cannot close the imported mapping until actual
@@ -34,14 +39,25 @@ held. Exact current paths/hashes are in component-report106.json and the
 component manifest. Plugin19 remains held on exact core16 ABI; no Core resource
 API/capture-pixel/WebKit/native GUI acceptance follows from these CPU witnesses.
 
-Next commit/publish only owned106/docs/OpenSpec/checkpoints, verify public73,
-then own a fresh native129 qualification of actual Core19 resource API on the
-exact source/ABI pair. Preserve all original128/126 native identities, fixture
-pixel oracles, source counters, deadlines, normal exits and ordered teardown.
-Fresh preflight must distinguish current106 full-host and control evidence from
-retained GUI92 model/source reports; never relabel retained reports current.
-Qualify actual registry/authenticated scoped capture/export/producer cleanup,
-locked producer/lost ACK recovery and independent imported local FD ownership.
+Native129 is held and ready for publication74.49 new actual Core registry/scoped
+capture/resource/SCM_RIGHTS/private-lock controls pass, with11 scoped snapshots
+and two independent imported local FD closures. Fresh observation repairs
+application-boundary dropped release/producer responses; this does not claim
+kernel socket loss. A locked producer remains pending, an old capture target
+cannot erase another current capture, and foreign binding/subject/transfer
+refuse without resource/counter mutation. Every original native128/126 ordered
+fixed assertion, actual allocator/expiry check and teardown remains retained.
+
+Next exact owned publication74; then fresh GUI107 for explicit live-window
+preview-realm quiescence/detachment with native receiver freshness. The original
+Native transport permits only one controlled preview claim and currently keeps
+it for that transport's lifetime. Releasing/reopening preview ownership will
+need a native serial that survives endpoint replacement, old-event/ticket
+rejection and distinct typed detachment proof. Keep all original physical,
+terminal ACK, processing and confirmation barriers. Current106 controlled
+factory/resource protocol still needs actual Core integration and shared-host
+renderer/native outbox/WebKit activation. Resource observation under original
+expired captures and explicit revocation must retain their own native witnesses.
 
 Explicit live-window preview-binding detachment remains distinct from permanent
 Native incarnation retirement. Never reset the whole Native hello/grant to clear

@@ -1,0 +1,10 @@
+import json,pathlib,resource,subprocess,sys
+sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
+require_qa_scope();assert resource.getrlimit(resource.RLIMIT_CORE)==(1,1)
+r=pathlib.Path('/home/hoskinson/omarchy-windows-parity');base=pathlib.Path(__file__).parent;d=json.loads((base/'delivery.json').read_text());assert d['pushCompleted'] and d['ownedFiles']>=580
+v=json.loads(subprocess.check_output(['gh','repo','view','CharlesHoskinson/Warlock','--json','name,url,visibility'],text=True));assert v['visibility']=='PUBLIC';(base/'visibility.json').write_text(json.dumps(v,indent=2)+'\n')
+observed=subprocess.check_output(['gh','api','repos/CharlesHoskinson/Warlock/branches/feature%2Felm','--jq','.commit.sha'],text=True).strip();assert observed==d['publishedCommit']
+(base/'branch.json').write_text(json.dumps({'commit':observed,'verified':True},indent=2)+'\n')
+report=json.loads((r/'docs/warlock-preview/v93/native-report129.json').read_text())
+sys.path.insert(0,str(r/'implementation/elm-build-loop-v1'));import loop
+e=loop.write_checkpoint(r,'f6779148-8f5d-4bdf-8a0f-044184e486f2','implementation/warlock-client-provider-native-v129',['PROGRESS PUBLIC74 '+d['publishedCommit']+' verified '+str(d['ownedFiles'])+' exact owned blobs. HeldNative129 on exactcore16/plugin19,retainedGUI92 legacy runtime:2517 checks/278 normal exits/full cleanup,2459 original128 and2458 original126 fixed controls plus original allocator/expiry;actual49 resource/registry/capture/lock/SCM_RIGHTS controls,11 snapshots/two local FD closures. Held106 local C/GIO/adoption/Elm/full95 inactive CPU source remains public73. Next distinct live-window preview-binding detachment/native receiver freshness, current controlled path/renderer native outbox/WebKit integration. All original full-release gates remain open; no installed changes.'],'progress',['docs/warlock-preview/v93/native-report129.json','implementation/warlock-client-provider-native-v129/component-manifest.json','docs/warlock-repository/v74/publication/delivery.json']);print(e)
