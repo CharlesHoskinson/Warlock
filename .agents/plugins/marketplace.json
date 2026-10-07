@@ -1,0 +1,10 @@
+{
+  "name": "warlock",
+  "interface": {"displayName": "Warlock contributors"},
+  "plugins": [{
+    "name": "warlock-contributor",
+    "source": {"source": "local", "path": "./plugins/warlock-contributor"},
+    "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+    "category": "Productivity"
+  }]
+}

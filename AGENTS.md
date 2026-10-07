@@ -8,6 +8,10 @@ CPU tests and Quint model results are separate claims.
   scenario identities and source hashes. Existing versioned components are frozen.
   Develop incrementally in `implementation/warlock/`; Git records its revisions.
   Do not copy a whole source tree for each fix or evidence update.
+- Every product implementation-loop continuation begins and ends with
+  `python3 -B docs/warlock-build-loop/v2/loop.py check`. Use the shared
+  [Warlock contributor plugin](plugins/warlock-contributor/README.md) to scaffold
+  an original-scenario slice first. Its compliance result is not GUI acceptance.
 - Original absolute paths are retained. Never load a plugin against a compositor
   whose owning ABI differs from the recorded pair.
 - Native GUI campaigns run serially through the protected `qa_run.py` launcher;
@@ -19,7 +23,7 @@ CPU tests and Quint model results are separate claims.
   `docs/warlock-build-loop/v2/STATE.json` and `requirement-ledger.json` are the
   current delivery records. Older integration records are historical lanes;
   preserve their owners' edits. New native GUI
-  campaigns must use `python3 -B implementation/elm-build-loop-v1/loop.py native
+  campaigns must use `python3 -B docs/warlock-build-loop/v2/loop.py native
   --runner /absolute/reviewed/runner.py`, which holds the shared native lock and
   invokes the unchanged protected launcher. CPU QA continues through `qa_run.py`.
 - The additional Warlock design-language work follows

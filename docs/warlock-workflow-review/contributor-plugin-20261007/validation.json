@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "verifiedUTC": "2026-10-07T23:18:49.286955+00:00",
+  "checks": [
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 -B /home/hoskinson/window-integration-qa/qa_run.py -- /usr/bin/python3 -B -m unittest discover -s plugins/warlock-contributor/qa -p test_*.py -v",
+      "exitCode": 0,
+      "tests": 58,
+      "seconds": 8.019,
+      "protectedInvocation": "7c86b65852cd4712b0449750f318ba88"
+    },
+    {
+      "command": "claude plugin validate ./plugins/warlock-contributor",
+      "exitCode": 0
+    },
+    {
+      "command": "grok plugin validate ./plugins/warlock-contributor",
+      "exitCode": 0
+    },
+    {
+      "command": "skill-creator quick_validate.py plugins/warlock-contributor/skills/warlock-contribute",
+      "exitCode": 0
+    },
+    {
+      "command": "python3 -B plugins/warlock-contributor/scripts/warlock.py --json check --project-only",
+      "exitCode": 0
+    }
+  ],
+  "hashes": {
+    ".agents/plugins/marketplace.json": "afbf013f3ba1044e804d8c219e61c65d8211ebfbb02f06d7dccad19a1baef909",
+    ".claude-plugin/marketplace.json": "65cabf2bf2008b70321fe9000df52fd438c9eb70699cb1066f179ceea491b86e",
+    "docs/warlock-build-loop/v2/loop.py": "4845e2bcac5c0867efa49a36d71b2236f63d4131e507bc1eb085e358e5755b24",
+    "plugins/warlock-contributor/.claude-plugin/plugin.json": "6549d3a1f141a1d08cb62b88415f697ebc2f444b54ec06d602f50f0fd0abe09c",
+    "plugins/warlock-contributor/.codex-plugin/plugin.json": "a764ba52a122eec430df4eb007d438af97121bd9d2fa534047f24822f9ff57e1",
+    "plugins/warlock-contributor/AGENTS.md": "b943bccd68556fc1fe7429ecc7879175914b56bdb548316d49fd1628a931bb1a",
+    "plugins/warlock-contributor/README.md": "3cf15835022c1b9bc43b60abe0fee02e6cff91e17e4cbec5e3e9cc72154cb7a1",
+    "plugins/warlock-contributor/hooks/codex.json": "b012c42df20c797ea832b3436b3e38989e73975d01fedd4a1c951932a71d14d5",
+    "plugins/warlock-contributor/hooks/hooks.json": "d006332032d84287e34a267f064f35143f8c22f56a965292e17639143909ea1a",
+    "plugins/warlock-contributor/qa/test_hosts.py": "c85ee5f290c60840e87c5e8c16da07f3a719027c21b5d2336027f14d642cb26a",
+    "plugins/warlock-contributor/qa/test_loop.py": "e37c8354297c39018393194274ac9ccd656125b45f8e6e9fdbf837f95bc4624f",
+    "plugins/warlock-contributor/qa/test_warlock.py": "9b329ac1fff8a2af3afd04c7d8cb220c1d5b07dbebcc80faee1e3ae7fd961c8b",
+    "plugins/warlock-contributor/references/contract.json": "c9719e1f13faa386c0db0ea7d6a69ff64dca86a28c39a06b15df85b5b74c700b",
+    "plugins/warlock-contributor/references/workflow.md": "176092bbfb4b261ebcf52c45d44c6758b7527a86ccf085ddd36740a5ca9214cf",
+    "plugins/warlock-contributor/scripts/session_hook.py": "15b4b88506d38deeff07415786fa58d50e665cc487c0dd7e5dca31950c0297e2",
+    "plugins/warlock-contributor/scripts/warlock.py": "9d43c0986758fa2fe68f2820026ed120924ea9989b7faaf374b8ee85236b3c84",
+    "plugins/warlock-contributor/skills/warlock-contribute/SKILL.md": "b0f4adcdec03e6445671648aaf435a8dd9603fa15406fd3bf4a4ec5402fadab4",
+    "plugins/warlock-contributor/references/warlock-contributions.yml": "1fbe848bd23058294eb9e4ca08eda7499c33ea53e94de99948db3306cffe26ad"
+  },
+  "scope": "Offline contribution structure, host command behavior and loop delegation only. No native GUI, AT/IME acceptance or host installation claimed. GitHub rejected workflow publication due to missing workflow scope; reviewed CI template supplied but not active.",
+  "preservation": {
+    "preexistingForeignFiles": 5,
+    "pinsSourceDraftFiles": 370
+  },
+  "workflowPublication": {
+    "attempted": true,
+    "rejected": true,
+    "reason": "Existing GitHub OAuth credential lacks workflow scope. No authentication change attempted.",
+    "template": "plugins/warlock-contributor/references/warlock-contributions.yml"
+  }
+}

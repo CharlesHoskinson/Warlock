@@ -1,0 +1,16 @@
+{
+  "name": "warlock",
+  "owner": {
+    "name": "Warlock contributors"
+  },
+  "plugins": [
+    {
+      "name": "warlock-contributor",
+      "source": "./plugins/warlock-contributor",
+      "description": "Scaffold, implement and review Warlock contributions against original EARS scenarios."
+    }
+  ],
+  "metadata": {
+    "description": "Warlock implementation scaffolding and contribution standards."
+  }
+}

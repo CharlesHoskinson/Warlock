@@ -15,6 +15,12 @@ Completion requires applicable original scenario oracles, one reproducible sourc
 - Preserve the five already-dirty files and other workers' paths. A stale lane label does not prove a worker is running. Compare relevant old-lineage modules before adopting them; do not merge older prototypes wholesale or change ABI identity by name alone.
 - Warlock philosophy, design-language and FRP adoption plans remain product constraints. Their W/CONTROL/DL tickets are supporting work, not substitutes for original requirement closure.
 
+## Mandatory contributor plugin
+
+At the beginning and end of every product implementation continuation, run `python3 -B docs/warlock-build-loop/v2/loop.py check`. This invokes the shared offline plugin with `--require-record`; a missing participant record cannot silently skip the contract. Scaffold the selected slice with `plugins/warlock-contributor/scripts/warlock.py start --owner <owner>`. Preserve old records and select a new `--record` when moving slices. Explicitly adopt only your own declared dirty source paths with an ownership note. Read [the contributor guide](../../../CONTRIBUTING.md) and [plugin contract](../../../plugins/warlock-contributor/references/contract.json) for the CLI and evidence fields.
+
+The plugin applies the AAR's source ownership, original scenario identities, evidence freshness, proportional checks and no-progress rules. It neither executes builds nor accepts a GUI oracle. Explicit user-requested plugin/support work calls `python3 -B plugins/warlock-contributor/scripts/warlock.py check --project-only` before and after with proportionate checks; it needs no fabricated GUI slice and cannot count as original GUI closure. Host hooks are advisory and host trust/discovery limits do not replace mandatory calls. This repository's loop uses the plugin even without installing an AI-client extension.
+
 ## One implementation cycle
 
 1. **Select one product slice (WIP=1).** Record 1–3 original IDs, exact original scenario names, before/after user behavior, source paths, owner and the smallest decisive verification. Native execution is also WIP=1. Parallel help, if authorized, addresses this slice only.
@@ -56,7 +62,7 @@ Preserve exact owning core/plugin ABI, source/toolchain identity, original deadl
 Native GUI campaigns run serially:
 
 ```sh
-python3 -B implementation/elm-build-loop-v1/loop.py native --runner /absolute/reviewed/runner.py
+python3 -B docs/warlock-build-loop/v2/loop.py native --runner /absolute/reviewed/runner.py
 ```
 
 CPU/browser QA uses the unchanged protected launcher:

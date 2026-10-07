@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "baseline": {
+    "path": "docs/elm-roadmap/requirements.json",
+    "sha256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+    "requirements": 242,
+    "scenarios": 417
+  },
+  "candidate": "implementation/warlock",
+  "defaultRecord": ".warlock-contributor/slice.json",
+  "commands": [
+    "status",
+    "start",
+    "check",
+    "record",
+    "inspect"
+  ],
+  "exitCodes": {
+    "0": "structural checks pass (advisories may remain)",
+    "1": "structural policy violation",
+    "2": "invalid inputs or unavailable files"
+  },
+  "claimFields": [
+    "requirement",
+    "scenario",
+    "oracle",
+    "verificationScope",
+    "scope",
+    "evidence",
+    "sourceHashes",
+    "reviewer",
+    "disposition",
+    "missingObservations"
+  ],
+  "acceptance": "External only. Hashes, schemas and model assertions cannot certify native, physical, AT/IME or requirement acceptance.",
+  "noProgress": {
+    "qualificationOnlyIterations": 2,
+    "minutes": 45,
+    "action": "end this investigation and select another bounded mandatory slice; do not globally block work"
+  },
+  "acceptedClaimFields": {
+    "reviewer": {
+      "name": "external reviewer identity",
+      "independent": true,
+      "disposition": "external review result"
+    },
+    "sourceTuple": [
+      "sourceRevision",
+      "core",
+      "plugin",
+      "toolchain"
+    ]
+  },
+  "optionalCheckArgument": "--base-ref REF checks archival implementation changes in a Git diff",
+  "checkRequireRecord": "--require-record fails without participant slice; mandatory implementation continuations use this flag",
+  "claimTypes": {
+    "requirement": "string original ID",
+    "scenario": "string exact original name",
+    "oracle": "string original then text",
+    "verificationScope": "string original verification text",
+    "scope": "nonempty string describing actual evidence scope (no oracle certified)",
+    "evidence": "nonempty array of {path: repository-relative nonsymlink file, sha256: 64-character hash}",
+    "sourceHashes": "object mapping every selected path to current SHA256 string",
+    "reviewer": "nonempty string unless accepted; then independent reviewer object",
+    "disposition": [
+      "unadjudicated",
+      "missing",
+      "implemented-unverified",
+      "partial",
+      "failed",
+      "blocked",
+      "accepted"
+    ],
+    "missingObservations": "array of strings",
+    "sourceTuple": "required for accepted: object with nonempty sourceRevision/core/plugin/toolchain identity values"
+  },
+  "dirtyAdoption": {
+    "arguments": "start --adopt-dirty implementation/warlock/DECLARED_PATH --ownership-note AUTHORIZATION (repeat --adopt-dirty per path)",
+    "meaning": "Explicit contributor ownership assertion; only declared currently dirty product paths can be adopted. Other dirty paths remain protected. Never infer ownership from a selected path."
+  },
+  "inspect": "inspect --requirement ID (repeat1\u20133) returns authoritative original requirement, exact scenarios/oracles, current ledger row and source pointers",
+  "progressMeaning": "Only changed authored .elm/.c/.h/.py/.css/.svg files under candidate src/native/adapter/assets count as production-fix; QA, generated JS, docs and other artifact changes do not.",
+  "historicalEvidence": "record preserves prior immutable claims but marks historicalAfterSourceChange on relevant source changes; their evidence remains intact and current acceptance is explicitly invalidated. A fresh stale current claim still fails check.",
+  "selfAttestation": "Local records are contributor self-attestations and may be edited. Derived progress, hashes and structural checks detect listed inconsistencies; they cannot establish independent ownership, actual observation, reviewer identity or certified acceptance.",
+  "duplicateVerdicts": "Same requirement/scenario/disposition/scope/missing-observations verdict does not count again as meaningful progress, even with new evidence hashes/timestamps.",
+  "acceptedRestrictions": "No missing observations; reviewer differs from owner; evidence is neither selected product source nor Git-ignored scratch. Partial/blocked verdict requires missing observation. Accepted sourceRevision must resolve to an existing repository commit.",
+  "projectOnly": "check --project-only bypasses participant records; incompatible with --require-record. --base-ref archive diff checked with or without record, with rename endpoints preserved.",
+  "checkerIdentity": "Default root discovered from cwd ancestors; executed checker bytes must match repository-owned checker. checkerSha256 accompanies every result.",
+  "recordWrites": "POSIX exclusive lock serializes start/record. Start uses atomic exclusive creation; record uses atomic fsynced replacement. Git environment routing/index variables scrubbed."
+}

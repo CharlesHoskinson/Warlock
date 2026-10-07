@@ -1,0 +1,35 @@
+name: Warlock contribution policy
+on:
+  pull_request:
+  push:
+    branches: [main, feature/elm]
+permissions:
+  contents: read
+jobs:
+  contribution-policy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /plugins/warlock-contributor/
+            /docs/elm-roadmap/requirements.json
+            /docs/warlock-build-loop/v2/*.json
+            /docs/warlock-build-loop/v2/loop.py
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Frozen original requirement and ledger integrity
+        run: python3 -B plugins/warlock-contributor/scripts/warlock.py --json check
+      - name: Preserve archived implementation in pull requests
+        if: github.event_name == 'pull_request'
+        env:
+          CONTRIBUTION_BASE: ${{ github.event.pull_request.base.sha }}
+        run: |
+          git fetch --filter=blob:none --depth=1 origin "$CONTRIBUTION_BASE"
+          python3 -B plugins/warlock-contributor/scripts/warlock.py --json check --base-ref "$CONTRIBUTION_BASE"
+      - name: Offline plugin policy and host-adapter tests
+        run: python3 -B -m unittest discover -s plugins/warlock-contributor/qa -p 'test_*.py' -v

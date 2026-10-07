@@ -1,0 +1,19 @@
+# Contributing to Warlock
+
+Use the [Warlock contributor plugin](plugins/warlock-contributor/README.md) for Claude Code, Codex or Grok. Its shared offline checker also works without an AI client. Read repository `AGENTS.md`, the [current loop contract](docs/warlock-build-loop/v2/INSTRUCTIONS.md) and the [AAR](docs/warlock-workflow-review/20261007/AAR.md) before product work. Original EARS and OpenSpecs determine behavior; a plugin pass is structural compliance, never GUI acceptance.
+
+From the repository root:
+
+```sh
+python3 -B plugins/warlock-contributor/scripts/warlock.py status
+python3 -B plugins/warlock-contributor/scripts/warlock.py start --owner your-name
+python3 -B docs/warlock-build-loop/v2/loop.py check
+```
+
+The default scaffold uses the selected slice in `STATE.json`. For another task, supply a small JSON slice through `start --slice-file`: 1–3 original requirement IDs, exact scenario names, before/after behavior, candidate source paths and decisive verification. Preserve the old record and use a different `--record` when moving slices. Declare all files you intend to edit before work. Resumed drafts require explicit per-path `--adopt-dirty` and an ownership note; other contributors' dirty files remain protected. Scratch records are ignored.
+
+Implement in `implementation/warlock/`, integrating with its actual model/update/view and narrow native authority. Read only applicable architecture/design-language/FRP and OpenSpec constraints. Preserve original deadlines, Unknown/no-replay, ABI pairing and drafts. Build changed targets and run the decisive behavior plus relevant negative/lifecycle case. Native campaigns use `docs/warlock-build-loop/v2/loop.py native --runner /absolute/runner.py`; it checks the contribution first and afterward, then delegates to the unchanged serialized protected native coordinator. CPU QA retains the original `qa_run.py` launcher.
+
+Record observed source changes or exact scenario verdicts through the plugin's `record` command. State what a user can do, what actually failed and which physical/native/keyboard/AT/IME obligations remain. Update the original ledger only when the original oracle is satisfied and independently reviewed. Publication, check counts and administrative closures are not GUI features. At two qualification-only iterations or 45 minutes without a production fix/original verdict, record the missing observation and choose another mandatory product slice.
+
+Documentation, plugin development and other explicitly requested supporting work use proportional validation; use `python3 -B plugins/warlock-contributor/scripts/warlock.py check --project-only` before and after; they do not require a fabricated GUI completion. The optional CI template checks frozen original identities and archival-path changes, then runs the cheap plugin policy tests. It does not run GUI sessions or certify a release.

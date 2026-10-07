@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "createdUTC": "2026-10-07T23:18:16.137522+00:00",
+  "participants": [
+    {
+      "id": "plugin_core",
+      "modelRequested": "gpt-6.1-sol",
+      "modelObserved": "gpt-6.1-sol",
+      "role": "implementation",
+      "area": "shared offline checker and contract",
+      "status": "completed"
+    },
+    {
+      "id": "plugin_packaging",
+      "modelRequested": "gpt-6.1-sol",
+      "modelObserved": "gpt-6.1-sol",
+      "role": "implementation",
+      "area": "portable manifests, skill, hook adapters and instructions",
+      "status": "completed"
+    },
+    {
+      "id": "plugin_tests",
+      "modelRequested": "gpt-6.1-sol",
+      "modelObserved": "gpt-6.1-sol",
+      "role": "implementation and adversarial tests",
+      "area": "isolated policy fixtures and negative tests",
+      "status": "completed",
+      "report": "sol_tests.md"
+    },
+    {
+      "id": "opus_discipline",
+      "modelRequested": "claude-opus-5-5",
+      "modelObserved": "claude-opus-5-5",
+      "effort": "high",
+      "status": "terminal",
+      "startedUTC": "2026-10-07T23:02:52.564274+00:00",
+      "finishedUTC": "2026-10-07T23:06:12.810284+00:00",
+      "exitCode": 0,
+      "reviewSHA256": "4d55d1761f56a48e3d355a5f24d3a7a464c6972ea78aed9f1fc4061e20ea6c8a",
+      "role": "independent read-only review",
+      "report": "opus_discipline.md"
+    },
+    {
+      "id": "opus_hosts",
+      "modelRequested": "claude-opus-5-5",
+      "modelObserved": "claude-opus-5-5",
+      "effort": "high",
+      "status": "terminal",
+      "startedUTC": "2026-10-07T23:06:12.811169+00:00",
+      "finishedUTC": "2026-10-07T23:10:22.691744+00:00",
+      "exitCode": 0,
+      "reviewSHA256": "f985d4132ecaae42a93c8be6f7c150236dbb838bb1979701f983e54f3be95713",
+      "role": "independent read-only review",
+      "report": "opus_hosts.md"
+    },
+    {
+      "id": "opus_adversarial",
+      "modelRequested": "claude-opus-5-5",
+      "modelObserved": "claude-opus-5-5",
+      "effort": "high",
+      "status": "terminal",
+      "startedUTC": "2026-10-07T23:10:22.692778+00:00",
+      "finishedUTC": "2026-10-07T23:14:04.149515+00:00",
+      "exitCode": 0,
+      "reviewSHA256": "ba7f187b4fbaf12a77b65bda568944c7261d7478e8bb7a737ca4bdfd110569b7",
+      "role": "independent read-only review",
+      "report": "opus_adversarial.md"
+    }
+  ],
+  "coordination": "Three GPT 6.1 sol builders, three exact Opus 5.5 high read-only reviewers, root integration. Limited concurrency; no claim that all six ran simultaneously.",
+  "reviewBoundary": "Reviews inspected evolving source. Reports are preserved; root and builders applied fixes afterward. Final tests qualify the final bytes, not a claim that reviewers reran them.",
+  "reports": {
+    "opus_discipline.md": "4d55d1761f56a48e3d355a5f24d3a7a464c6972ea78aed9f1fc4061e20ea6c8a",
+    "opus_hosts.md": "f985d4132ecaae42a93c8be6f7c150236dbb838bb1979701f983e54f3be95713",
+    "opus_adversarial.md": "ba7f187b4fbaf12a77b65bda568944c7261d7478e8bb7a737ca4bdfd110569b7",
+    "sol_tests.md": "deb1ce7aaf9dff0ebc90d9f3e1ecf87b2c3576562259fea2e61b4b86563dae16"
+  }
+}

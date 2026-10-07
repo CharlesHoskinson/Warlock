@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-07T22:44:04.634004+00:00",
+  "updatedUTC": "2026-10-07T23:16:31.289229+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
@@ -19,11 +19,24 @@
     ],
     "before": "Catalog launchers and chosen pin order do not persist in the integrated candidate.",
     "after": "Users can pin and reorder desktop identities, retain relative order after shell restart, and launch a pinned zero-window identity once.",
-    "state": "selected; implementation follows the search publication",
+    "state": "implementation draft preserved during explicitly requested contributor-plugin work; typed receipt decoding is the next fix",
     "paths": [
+      "src/Pins.elm",
       "src/Desktop.elm",
       "src/Surface.elm",
-      "adapter/daemon.py"
+      "src/SurfaceRenderer.elm",
+      "adapter/taskbar_preferences.py",
+      "adapter/catalog_transport.py",
+      "adapter/daemon.py",
+      "native/host.c",
+      "native/surface.h",
+      "qa/check-search.py",
+      "qa/check-pin-storage.py",
+      "qa/PinsReplay.elm",
+      "qa/pins.qnt",
+      "assets/elm.js",
+      "assets/bar.js",
+      "assets/popup.js"
     ],
     "verification": [
       "Typed pin/reorder and catalog reconciliation replay",
