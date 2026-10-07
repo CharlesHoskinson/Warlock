@@ -492,3 +492,18 @@ activation and all original full release gates remain open.
   Quint9/200/7 coupled stages pass. Canceled/failed results remain separate.
 - [ ] Qualify actual canceled/failed old WebKit result across renderer replacement
   without current policy/job/grant failure or stale artifact authority.
+
+- [ ] Implement/qualify CONTROL-044 actual canceled old WebKit result disposition
+  before current failure reporting, preserving original current-error fail-closed
+  behavior, normal/source pixel/reopened success/rapid and closure-delayed controls.
+
+- [x] Freeze bounded CONTROL-044 actual old cancellation disposition in GUI137:
+  failed136/159 held; existing scope guard precedes error reporting, original
+  finish once and old image/error disposal only. Exact159 oracle now16136/13,
+  original normal16029/13, old-success16235/13, delayed16318/8 and rapid16451/17
+  pass with normal owned exits/private cleanup; full119/Quint10/200/4 actual
+  failure-fix-success projected cases pass. Matching-current error source branch
+  is unchanged; actual matching-current native failure remains open.
+- [ ] Qualify CONTROL-044 actual matching-current WebKit cancellation/failure
+  through original failure reporting and strict native custody, with real
+  WebKit/GIO result and no forged settlement or success classification.

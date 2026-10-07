@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "sourceHeld": true,
+  "passed": false,
+  "cpuBuildPassed": true,
+  "fullBuildCommands": 119,
+  "actualCancelledOldResultCounterexample": true,
+  "canceledOrFailedOldResultQualified": false,
+  "normalControlledHostClosureQualified": true,
+  "privateSessionCleanupPassed": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "Held GUI136 counterexample. Disabled-by-default actual canceled GCancellable supplied to original WebKit snapshot; actual original result/strong old view retained through strict old native close, new view and later same-policy epoch/current native projection. Original finish exactly once reports image0/G_IO_ERROR_CANCELLED, oldEpoch1/current2/replacedView1. Original completion reports error BEFORE current-scope check, shutting down current GUI: Native159 fails unchanged stale-refusal oracle, host1 and original strict teardown retains current native custody; eight other owned processes normal/private cleanup. Native158 original29/13 normal regression and full119 pass separately. Quint10/200 describes defect and proposed guard, not native acceptance. Current source not accepted. Physical curtain0, issuer/single Elm policy/physical product/strict close/deadlines unchanged. Next fresh GUI137 moves existing scope guard before current error reporting and safely disposes only original old image/error; actual unchanged canceled-result oracle and original normal/success/delayed/rapid regressions required. Full release remains open.",
+  "reports": {
+    "build": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v136/qa/build-1791394502333725198/report.json",
+      "sha256": "8d8de7042b63a46d7cefed0dd57ab75e884ed44bd00aea40e4273d97ccab226b"
+    },
+    "normalNative": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v158/qa/native-controlled-1791395051050241863/report.json",
+      "sha256": "56430d5ff463b413fc72ba84fda8838305917b2842ffd6417c83f11488863f64"
+    },
+    "cancelledOldResultCounterexample": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v159/qa/native-controlled-1791395089449195313/report.json",
+      "sha256": "83ac870af80fbea5ef502e55fc29b145d646805335df9d30039e929fd4be9a3f"
+    },
+    "asyncErrorScopeQuint": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v136/qa/async-error-scope-model-1791394664127010965/report.json",
+      "sha256": "3aa033776d38d5a15ffba598d7445c32098c632fa769b65ea7edc1c8cb68739d"
+    }
+  },
+  "heldParentManifest": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v135/component-manifest.json",
+    "sha256": "4ecce81324727e25a6dd2b8fdc8b70290b70dfeceeb1d0fac70401162e981f10"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "b3dd1109406b412a894bb8cd635aeac2",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-07T18:02:08.094424+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/warlock-preview-provider-v137",
+  "nextWork": [
+    "PROGRESS heldGUI137 final audit of all six unchanged source/build/native manifests after report-name collision, historical Native137 preserved. Real canceled old result fixed: unchanged Native16136/13, normal16029/13/success16235/13/delayed16318/8/rapid16451/17/full119/Quint10/200/4 actual projected cases. Matching current error source unchanged but real current-error native gate still open. Next PUBLIC100 then that control and remaining async/physical/recovery/release gates. Installed drafts foreign preserved."
+  ],
+  "evidence": [
+    {
+      "path": "docs/warlock-preview/v93/component-report-gui137-stale-error.json",
+      "sha256": "adca3e1acb24dd154f4c4ca01c6726d453cb3c7e26a913e74d419f06df95a0f0",
+      "size": 6264
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v137/component-manifest.json",
+      "sha256": "d98a2164e9b32a9f85e50dcf6aef31a10c2ae764ec5d1747a110f7e3f01e3eb3",
+      "size": 411061
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

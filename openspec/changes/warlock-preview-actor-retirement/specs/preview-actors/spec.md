@@ -1536,3 +1536,20 @@ artifact, policy, grant, job settlement or reveal authority.
 - THEN original finish executes once and original scope rejection accepts no old artifact
 - AND the later current source image/snapshot preserves request chronology and
   original independent native teardown under unchanged deadlines
+
+### Requirement: Error ownership follows original async scope
+Stale original async errors SHALL have no failure authority in a later renderer
+realm. Original finish SHALL consume its result once before scope disposition;
+owned result/error cleanup SHALL preserve all Native custody and original gates.
+
+#### Scenario: Canceled old snapshot arrives in new realm
+- GIVEN an actual canceled WebKit result retained with its original old view
+- WHEN the old native realm strictly closes and a current replacement acknowledges
+  its later same-policy epoch projection
+- THEN original finish reports its actual error once and old scope disposes it
+- AND the current source image/new snapshot and strict normal close remain usable
+
+#### Scenario: Current matching snapshot fails
+- WHEN a current matching async result returns failure
+- THEN original fail-closed reporting and retained Native custody remain in force
+- AND stale-error disposal is not used to hide that current failure

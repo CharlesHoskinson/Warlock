@@ -1,0 +1,34 @@
+"""Execute each named realm reuse scenario explicitly, preserving model scope."""
+import hashlib,json,pathlib,re,resource,shutil,subprocess,sys,time
+sys.path.insert(0,'/home/hoskinson/window-integration-qa')
+from qa_launch import require_qa_scope
+require_qa_scope();assert resource.getrlimit(resource.RLIMIT_CORE)==(1,1)
+r=pathlib.Path(__file__).resolve().parents[1]
+out=r/'qa'/('async-error-scope-model-'+str(time.time_ns()));out.mkdir()
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+tool=pathlib.Path('/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint')
+names=['spec/async_error_scope.qnt','spec/async_error_scope_tests.qnt','qa/async-error-scope-model.py']
+d={'passed':False,'inputs':{n:sha(r/n) for n in names},'quint':{'path':str(tool),'sha256':sha(tool)},'commands':[],'scope':'Original async result scope/error disposition abstraction only, including legacy error-before-scope counterexample and proposed scope-before-current-error handling; original independent physical, terminal, journal and confirmation Drain remains Native authority. Same policy/context replacement/pending intent/stale callback safety is model scope only. Named selection and invariant samples are model evidence, not actual GTK/WebKit, physical reveal or release acceptance.','nativeAcceptance':False,'fullReleaseAccepted':False}
+def run(name,args):
+ p=subprocess.run(args,cwd=out/'inputs/spec',capture_output=True,text=True,timeout=180)
+ (out/(name+'.stdout')).write_text(p.stdout);(out/(name+'.stderr')).write_text(p.stderr)
+ d['commands'].append({'name':name,'argv':args,'exitCode':p.returncode});print(name,p.returncode,flush=True)
+ assert p.returncode==0,p.stderr or p.stdout
+try:
+ for n in names:
+  target=out/'inputs'/n;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(r/n,target)
+ selected=re.findall(r'run (\w+)\s*=',(r/names[1]).read_text());assert len(selected)==10
+ run('typecheck',[str(tool),'typecheck','async_error_scope_tests.qnt'])
+ run('selected',[str(tool),'test','async_error_scope_tests.qnt','--main=async_error_scope_tests','--backend=typescript','--match=^('+'|'.join(selected)+')$','--seed=1360041','--max-samples=1','--out-itf='+str(out/'named-{test}-{seq}.itf.json')])
+ assert len(list(out.glob('named-*.itf.json')))==10
+ run('samples',[str(tool),'run','async_error_scope.qnt','--main=async_error_scope','--backend=typescript','--invariant=safety','--seed=1360042','--max-samples=200','--max-steps=32','--out-itf='+str(out/'samples.itf.json')])
+ assert all(sha(r/n)==h for n,h in d['inputs'].items()) and sha(tool)==d['quint']['sha256']
+ d.update(passed=True,namedScenarios=10,invariantSamples=200)
+except Exception as error:d['error']=repr(error)
+d['artifacts']={str(p.relative_to(out)):sha(p) for p in out.rglob('*') if p.is_file()}
+(out/'report.json').write_text(json.dumps(d,indent=2)+'\n')
+print(json.dumps({'passed':d['passed'],'report':str(out/'report.json'),'error':str(d.get('error',''))[:2200]}),flush=True)
+raise SystemExit(not d['passed'])
+
+
+

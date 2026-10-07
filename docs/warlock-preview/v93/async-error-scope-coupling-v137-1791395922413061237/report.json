@@ -1,0 +1,132 @@
+{
+  "passed": true,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v159/qa/native-controlled-1791395089449195313/report.json": "83ac870af80fbea5ef502e55fc29b145d646805335df9d30039e929fd4be9a3f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v159/qa/preflight.json": "ce0291f4dfb85016b36bb20a89b71b165d63a41ae9269e3b7498f4a1f2af0163",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v159/qa/native-controlled-1791395089449195313/private-evidence/controlled-host.log": "b2a516673c4e3c09d5e9f1dde2bbf6a159c037ca64ac7d3b23d53bd40047849b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v160/qa/native-controlled-1791395616215815715/report.json": "7a2a648c6466fcb31f3c1dfffee590f45e2ea31cd728ca05df987afe7379a30d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v160/qa/preflight.json": "94fae8c87cad4335ec053a182a8e6ecc113e39dd73e897065593ea568497a58e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v160/qa/native-controlled-1791395616215815715/private-evidence/controlled-host.log": "78941c4c9715c774719814cecab3657999d456352455071217d2dfe26bd54498",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v161/qa/native-controlled-1791395768921918538/report.json": "f6dbe91259def8e9133d99b6789c9c95da85ffabbcf8253fa11046834ab25837",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v161/qa/preflight.json": "b580fd31524594606c4b38506db8b104d391be8f565f08d015e4b2eb6ee09607",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v161/qa/native-controlled-1791395768921918538/private-evidence/controlled-host.log": "7e5b6559b23e8744f03ea1b9dafa10874f40ee619ff61de10945b49a5b481a23",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v162/qa/native-controlled-1791395805039291748/report.json": "27379ba2be55621b8c54527682369382900454a8ae25babb3b491d716e210dfc",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v162/qa/preflight.json": "33c0bc46fb94e4052fb43bf8dc7b80007707484f7838231934d084b08e526089",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v162/qa/native-controlled-1791395805039291748/private-evidence/controlled-host.log": "c7d5c85b41bc4c3c84535d3508c33d4b20e602bed16880cec62d562d5795b618",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v136/native/shared-host.c": "ecd10c4330af473d3c2e822a9d6f46d4651d1694e73413ab4a6c70a0b34f05af",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v137/native/shared-host.c": "5bbbb320c4efda2e7849f544b7ad699d7cf37ff168bc8b5d65ec723ebc756d7d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v137/native/controlled-preview-host.h": "e763ac01a80c36ecff56adbf494fcc155b3946c74bbabf79677199d13f715364",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v137/spec/async_error_scope.qnt": "f4c684c9fb16b59c72a6d494493791726f70d13e3ecf8dcea1412c29f24952e4",
+    "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v93/couple_native161_async_error_scope.py": "59815dd0934b970a97d7b70f5042870ab7bd720f918fa6adb9e3c331dac6819b"
+  },
+  "quint": {
+    "path": "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+    "sha256": "bd6e9400f6358a8a69d80eb636eb62f59f993039868a7be9719f76ba74191b4e"
+  },
+  "observations": [
+    {
+      "name": "actualLegacyOldCancellation",
+      "origin": "Native159 actual canceled old result and host1",
+      "success": false,
+      "scope": "oldScope",
+      "guardFirst": false,
+      "expected": {
+        "failed": true,
+        "stale": false,
+        "artifact": false,
+        "finished": true,
+        "nativeOwned": true,
+        "policy": 1
+      }
+    },
+    {
+      "name": "actualFixedOldCancellation",
+      "origin": "Native161 same real canceled result/original oracle passes, current new request2 pixels/native closure",
+      "success": false,
+      "scope": "oldScope",
+      "guardFirst": true,
+      "expected": {
+        "failed": false,
+        "stale": true,
+        "artifact": false,
+        "finished": true,
+        "nativeOwned": true,
+        "policy": 1
+      }
+    },
+    {
+      "name": "actualFixedOldSuccess",
+      "origin": "Native162 original successful held result remains refused",
+      "success": true,
+      "scope": "oldScope",
+      "guardFirst": true,
+      "expected": {
+        "failed": false,
+        "stale": true,
+        "artifact": false,
+        "finished": true,
+        "nativeOwned": true,
+        "policy": 1
+      }
+    },
+    {
+      "name": "actualCurrentSuccess",
+      "origin": "Native160 original current snapshot and actual source pixels",
+      "success": true,
+      "scope": "currentScope",
+      "guardFirst": true,
+      "expected": {
+        "failed": false,
+        "stale": false,
+        "artifact": true,
+        "finished": true,
+        "nativeOwned": true,
+        "policy": 1
+      }
+    }
+  ],
+  "commands": [
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "concrete_async_error_scope.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "concrete_async_error_scope.qnt",
+        "--main=concrete_async_error_scope",
+        "--backend=typescript",
+        "--match=^(actualLegacyOldCancellation|actualFixedOldCancellation|actualFixedOldSuccess|actualCurrentSuccess)$",
+        "--seed=1370043",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v93/async-error-scope-coupling-v137-1791395922413061237/coupled-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "scope": "Four bounded actual callback outcomes projected into explicitly selected Quint cases: held Native159 old cancellation shutdown, same exact Native161 cancellation oracle after source guard ordering fix, Native162 old success rejection, Native160 normal current success. Source order/original finish once/current error branch and actual strict native closure verified separately. The model nativeOwned flag projects unchanged authority, not every native resource transition. Current matching failure is only a model and unchanged source-branch witness here; no actual matching-current cancellation qualification follows. Does not prove all asynchronous schedules, process/reload/Unknown recovery, physical reveal/hardware or full release.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "coupledQuintChecks": 4,
+  "actualNative159ReportSHA256": "83ac870af80fbea5ef502e55fc29b145d646805335df9d30039e929fd4be9a3f",
+  "actualNative161ReportSHA256": "f6dbe91259def8e9133d99b6789c9c95da85ffabbcf8253fa11046834ab25837",
+  "artifacts": {
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "coupled-actualLegacyOldCancellation-0.itf.json": "fb1ef114099e7bff4b362b3b35bd980a00d824c3a542fe442cbc24eeaedb319e",
+    "coupled-actualFixedOldCancellation-1.itf.json": "569c42e148642d8053063724b90f2432b08d617765f327c6f68cc23698d67371",
+    "coupled-actualFixedOldSuccess-2.itf.json": "0cb386f5ad3cfbd418560043883182f41fcd122c0a7b303d1f9ea783cffdd8ae",
+    "coupled-actualCurrentSuccess-3.itf.json": "24b39c1b586f7c08e0f562bf27c1a180d9580f5f9c6ca86b9964fb694e01a5e9",
+    "selected.stdout": "58766403e7e8090f0fc03fe4d24c09f163b2e62129fcb06c817e41c6994d5f64",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/async_error_scope.qnt": "f4c684c9fb16b59c72a6d494493791726f70d13e3ecf8dcea1412c29f24952e4",
+    "inputs/concrete_async_error_scope.qnt": "60c37dddd0486709c5a3e3de13072691063ee6c3fc6a7ae4b28251eb4c708164"
+  }
+}

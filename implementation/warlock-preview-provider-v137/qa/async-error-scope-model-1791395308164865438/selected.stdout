@@ -1,0 +1,14 @@
+
+  async_error_scope_tests
+    ok legacyOldErrorPoisonsCurrent passed 1 test(s)
+    ok oldErrorCannotFailCurrent passed 1 test(s)
+    ok oldSuccessStillRejected passed 1 test(s)
+    ok currentFailureStillFailsClosed passed 1 test(s)
+    ok currentSuccessCanWrite passed 1 test(s)
+    ok replacedViewRejectsError passed 1 test(s)
+    ok laterEpochRejectsError passed 1 test(s)
+    ok laterNavigationRejectsError passed 1 test(s)
+    ok newProjectionRejectsError passed 1 test(s)
+    ok noDuplicateCompletionAuthority passed 1 test(s)
+
+  10 passing (11ms)

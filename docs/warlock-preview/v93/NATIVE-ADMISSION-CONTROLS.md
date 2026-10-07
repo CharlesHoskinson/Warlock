@@ -855,3 +855,25 @@ CONTROL-043 original callback across a reopened realm (EARS):
 - WHEN the current realm subsequently requests its own snapshot, the host SHALL
   retain monotonic request chronology and validate its actual current source URI,
   image pixels and scope. Original strict teardown/deadlines SHALL remain intact.
+
+CONTROL-044 canceled/failed old completion (EARS): WHEN an original async result
+is consumed after its view/epoch/navigation/projection is no longer current, the
+host SHALL dispose of that original result and any owned error without failing
+the current realm, accepting old artifacts, or changing Native policy/jobs/grants.
+WHEN the result still matches the current scope and reports a failure, the host
+SHALL retain original fail-closed error/custody behavior; stale rejection SHALL
+NOT turn current failure into success. Real canceled GCancellable/WebKit results
+and unchanged normal/reopened-success/rapid/deferred closure oracles SHALL qualify
+separately under original source/ABI identity and deadlines.
+
+Bounded CONTROL-044 evidence: held GUI136/Native159 actual canceled old result
+shuts down the reopened GUI before the scope guard (original failed stale-refusal
+oracle, host1, strict current custody retained/private cleanup). Fresh GUI137
+moves the original guard before error reporting; the exact same cancellation
+oracle Native16136/13 passes, old result consumed once/no artifact/current
+shutdown, current request2 pixels and both strict closes. Original normal16029/13,
+successful old result16235/13, delayed16318/8 and rapid16451/17 pass separately,
+all normal exits/private cleanup; full119, Quint10/200 and4 actual failure-fix-
+success projected cases pass. Matching-current error handling is unchanged
+source, but actual current matching failure is an open native gate. This does
+not qualify all async schedules, physical reveal/hardware/recovery or release.

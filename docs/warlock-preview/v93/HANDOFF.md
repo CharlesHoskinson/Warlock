@@ -638,3 +638,33 @@ sticky producer/deadlines remain unchanged. Next PUBLIC99 then actual canceled/
 failed old result; its error path precedes scope rejection and needs separate
 qualification. Ongoing physical reveal/hardware/pressure/reload/Unknown/full
 release remain open; installed/drafts/five foreign tracked edits preserved.
+
+GUI136 is held as the actual canceled-old-result counterexample: original WebKit
+finish returns image0/G_IO_ERROR_CANCELLED exactly once after strict old native
+close/view replacement/new same-policy epoch2. Reporting that old error before
+the scope guard kills the reopened GUI. Native159 reaches23 checks, fails the
+original stale-refusal check, host exits1, eight other owned processes exit0 and
+private cleanup succeeds. Original strict teardown retains current native duties;
+the failed source is unqualified. Normal15829/13, full119 and error-scope
+Quint10/200 pass separately. Exact retained evidence: component-report136.json.
+
+GUI137 is held: original finish still consumes once; the existing original
+view/epoch/navigation/projection/current-channel guard now precedes error
+reporting. A stale result destroys only its own image if present and clears its
+own error, leaving current policy/jobs/grants/physical obligations unchanged.
+The byte-identical original cancellation oracle now passes Native16136/13:
+actual old canceled result rejected, no old artifact/current shutdown, current
+request2 red19200 source pixels/current image before-after opacity0 output and
+both strict closes. Original normal16029/13, old-success16235/13,
+closure-delayed16318/8 and rapid real-reader16451/17 pass with normal owned exits
+and private cleanup. Full119, error-scope Quint10/200 and4 actual failed/fixed/
+success projections pass. Exact scope/hashes: component-report-gui137-stale-error.json.
+Matching-current error handling remains the original source branch; actual
+matching-current cancellation is an OPEN native gate, not established by the
+model or old-result rejection. The first freezer preserved a historical Native137
+report-name collision after writing six intact manifests; unique-report final
+audit retains all evidence without rerunning or changing source/oracles.
+Next PUBLIC100 then that actual current-error control and remaining async/
+projection/navigation/process/reload/Unknown, physical conceal/reveal/hardware,
+pressure/full workload/RSS and full-release gates. Installed desktop, drafts and
+foreign tracked edits remain untouched.

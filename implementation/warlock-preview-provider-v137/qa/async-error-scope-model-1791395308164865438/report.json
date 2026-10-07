@@ -1,0 +1,81 @@
+{
+  "passed": true,
+  "inputs": {
+    "spec/async_error_scope.qnt": "f4c684c9fb16b59c72a6d494493791726f70d13e3ecf8dcea1412c29f24952e4",
+    "spec/async_error_scope_tests.qnt": "499846d55f37a8454f07683faa59fdf0bc5c73f30e7db1dbeab7f35d5e3401ac",
+    "qa/async-error-scope-model.py": "7474fa3fa2f4147cf264aa2c0248bd5679d8334239633416c7591a2cfddf6550"
+  },
+  "quint": {
+    "path": "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+    "sha256": "bd6e9400f6358a8a69d80eb636eb62f59f993039868a7be9719f76ba74191b4e"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "async_error_scope_tests.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "async_error_scope_tests.qnt",
+        "--main=async_error_scope_tests",
+        "--backend=typescript",
+        "--match=^(legacyOldErrorPoisonsCurrent|oldErrorCannotFailCurrent|oldSuccessStillRejected|currentFailureStillFailsClosed|currentSuccessCanWrite|replacedViewRejectsError|laterEpochRejectsError|laterNavigationRejectsError|newProjectionRejectsError|noDuplicateCompletionAuthority)$",
+        "--seed=1360041",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v137/qa/async-error-scope-model-1791395308164865438/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "samples",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "async_error_scope.qnt",
+        "--main=async_error_scope",
+        "--backend=typescript",
+        "--invariant=safety",
+        "--seed=1360042",
+        "--max-samples=200",
+        "--max-steps=32",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v137/qa/async-error-scope-model-1791395308164865438/samples.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "scope": "Original async result scope/error disposition abstraction only, including legacy error-before-scope counterexample and proposed scope-before-current-error handling; original independent physical, terminal, journal and confirmation Drain remains Native authority. Same policy/context replacement/pending intent/stale callback safety is model scope only. Named selection and invariant samples are model evidence, not actual GTK/WebKit, physical reveal or release acceptance.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "namedScenarios": 10,
+  "invariantSamples": 200,
+  "artifacts": {
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-legacyOldErrorPoisonsCurrent-0.itf.json": "b7db5f61f1c3efd6564862d00a99306b0e668a0f374d30ed42098c6f303c377c",
+    "named-oldErrorCannotFailCurrent-1.itf.json": "a7336d0f7827be2f4b6ccd33bae5680b233e9942b3ac4d54b6235388c827ee00",
+    "named-oldSuccessStillRejected-2.itf.json": "a7336d0f7827be2f4b6ccd33bae5680b233e9942b3ac4d54b6235388c827ee00",
+    "named-currentFailureStillFailsClosed-3.itf.json": "32b8bd3e510248ca519d19290c90e38c055952094685a7576e5bcef87e7dec03",
+    "named-currentSuccessCanWrite-4.itf.json": "88f39e8cc4d8a1b179b8a00fe48488af31df5bc6786d250339e16cd5dded7466",
+    "named-replacedViewRejectsError-5.itf.json": "e8e97e77c3524f65b78dfd49fea2beccd32267b84cb5d9a6106977c98464f807",
+    "named-laterEpochRejectsError-6.itf.json": "e8e97e77c3524f65b78dfd49fea2beccd32267b84cb5d9a6106977c98464f807",
+    "named-laterNavigationRejectsError-7.itf.json": "5985434b6eb7563b68de09dd0c8027decd1031408782d3e71bba765ff154de2a",
+    "named-newProjectionRejectsError-8.itf.json": "5985434b6eb7563b68de09dd0c8027decd1031408782d3e71bba765ff154de2a",
+    "named-noDuplicateCompletionAuthority-9.itf.json": "bca19b650d523417eb38beec83d64dbfa06d6ce7744d282f2f1a6b7a932ada3d",
+    "selected.stdout": "9b547611a52aac7251cbee1128794c76cd1e00c14e3d6d24cb2039a673f04c8c",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "samples.itf.json": "20fed9b200a81393f66019f35235771fe81b5e1de8bef26476a7a82edd360ce8",
+    "samples.stdout": "f1fa655f8aa02e71ec123cb065c1b987dab1a87b3e6ddf4ea20cd0518513a5b2",
+    "samples.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/spec/async_error_scope.qnt": "f4c684c9fb16b59c72a6d494493791726f70d13e3ecf8dcea1412c29f24952e4",
+    "inputs/spec/async_error_scope_tests.qnt": "499846d55f37a8454f07683faa59fdf0bc5c73f30e7db1dbeab7f35d5e3401ac",
+    "inputs/qa/async-error-scope-model.py": "7474fa3fa2f4147cf264aa2c0248bd5679d8334239633416c7591a2cfddf6550"
+  }
+}

@@ -1,0 +1,27 @@
+"""Fresh real GCancellable snapshot stimulus; retain original completion ordering."""
+import hashlib,json,pathlib,resource,shutil,sys
+sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
+require_qa_scope();assert resource.getrlimit(resource.RLIMIT_CORE)==(1,1)
+r=pathlib.Path('/home/hoskinson/omarchy-windows-parity');parent=r/'implementation/warlock-preview-provider-v135';root=r/'implementation/warlock-preview-provider-v136';sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();m=parent/'component-manifest.json';d=json.loads(m.read_text());assert d['sourceHeld'] and d['passed'] and d['actualOldResultAcrossReopenedRealmQualified'] and not root.exists()
+for n,row in d['files'].items():assert sha(parent/n)==row['sha256'],n
+
+def ignore(path,names):
+ if pathlib.Path(path)==parent:return [n for n in names if n in {'component-manifest.json','ANCESTRY.json','__pycache__'}]
+ if pathlib.Path(path)==parent/'qa':return [n for n in names if (pathlib.Path(path)/n).is_dir() and n!='toolchain']
+ return [n for n in names if n in {'__pycache__','elm-stuff'}]
+shutil.copytree(parent,root,ignore=ignore)
+p=root/'native/shared-host.c';s=p.read_text();needle='static gboolean qa_controlled_reopened_snapshot;';assert s.count(needle)==1;s=s.replace(needle,needle+'\nstatic gboolean qa_controlled_cancelled_snapshot;\nstatic guint64 controlled_current_epoch(void);')
+needle='        else if (g_str_equal(argv[i],"--qa-preview-reopened-snapshot")) {qa_controlled_delayed_snapshot=TRUE;qa_controlled_reopened_snapshot=TRUE;}';assert s.count(needle)==1;s=s.replace(needle,needle+'\n        else if (g_str_equal(argv[i],"--qa-preview-cancelled-reopened-snapshot")) {qa_controlled_delayed_snapshot=TRUE;qa_controlled_reopened_snapshot=TRUE;qa_controlled_cancelled_snapshot=TRUE;}')
+needle='    cairo_surface_t *image=webkit_web_view_get_snapshot_finish(WEBKIT_WEB_VIEW(object),result,&error);';assert s.count(needle)==1;s=s.replace(needle,needle+'\n    if(qa_controlled_cancelled_snapshot && snapshot->controlled_visual && snapshot->request==1) {\n        g_print("controlled-native-snapshot-finish-outcome: image=%d cancelled=%d retainedEpoch=%" G_GUINT64_FORMAT " currentEpoch=%" G_GUINT64_FORMAT " replacedView=%d originalFinishCalls=1 nativeSettlement=0\\n",image!=NULL,g_error_matches(error,G_IO_ERROR,G_IO_ERROR_CANCELLED),snapshot->controlled_epoch,controlled_current_epoch(),object!=G_OBJECT(popup_view));fflush(stdout);\n    }')
+a=s.index('static gboolean imported_image_report(JsonObject *object) {');b=s.index('/* json_node_copy',a);part=s[a:b];needle='        webkit_web_view_get_snapshot(popup_view,WEBKIT_SNAPSHOT_REGION_VISIBLE,WEBKIT_SNAPSHOT_OPTIONS_NONE,NULL,client_snapshot_complete,snapshot);';assert part.count(needle)==1;part=part.replace(needle,'''        if(qa_controlled_cancelled_snapshot && snapshot->request==1) {
+            /* Explicit QA only: an actual canceled GCancellable is supplied to
+             * the original WebKit async operation. Never construct a result or
+             * completion/error/native fact. Original finish consumes its result. */
+            g_autoptr(GCancellable) cancellation=g_cancellable_new();g_cancellable_cancel(cancellation);
+            g_print("controlled-native-snapshot-cancel-request: request=1 actualCancellable=%d realWebKit=1 nativeSettlement=0\\n",g_cancellable_is_cancelled(cancellation));fflush(stdout);
+            webkit_web_view_get_snapshot(popup_view,WEBKIT_SNAPSHOT_REGION_VISIBLE,WEBKIT_SNAPSHOT_OPTIONS_NONE,cancellation,client_snapshot_complete,snapshot);
+        } else webkit_web_view_get_snapshot(popup_view,WEBKIT_SNAPSHOT_REGION_VISIBLE,WEBKIT_SNAPSHOT_OPTIONS_NONE,NULL,client_snapshot_complete,snapshot);''');s=s[:a]+part+s[b:];p.write_text(s)
+p=root/'native/controlled-preview-host.h';s=p.read_text().replace('static guint64 controlled_epoch;','static guint64 controlled_epoch;\nstatic guint64 controlled_current_epoch(void) {return controlled_epoch;}');p.write_text(s)
+(root/'ANCESTRY.json').write_text(json.dumps({'owner':'f6779148-8f5d-4bdf-8a0f-044184e486f2','parent':str(parent),'parentManifestSHA256':sha(m),'scope':'Fresh GUI136 adds disabled-by-default explicit real GCancellable on original WebKit first snapshot, with original retained result/view across strict old close/new epoch. Original finish/error-before-scope ordering remains unchanged to expose actual stale-error behavior. Readonly actual cancellation outcome logging supplies no Native fact/grant/error fabrication/settlement. Full119 and same reopened-result oracle with extra canceled-outcome checks next; original deadlines/issuer/policy/physical product/sticky producer guards remain.','nativeAcceptance':False,'fullReleaseAccepted':False},indent=2)+'\n')
+sys.path.insert(0,str(r/'implementation/elm-build-loop-v1'));import loop
+print(loop.write_checkpoint(r,'f6779148-8f5d-4bdf-8a0f-044184e486f2',str(root.relative_to(r)),['PROGRESS ownGUI136 actual original WebKit request with real canceled GCancellable, retain its real GAsyncResult/strong view through strict old close/new same-policy epoch. Original finish/error-before-scope branch unchanged to expose stale failure, readonly actual cancellation outcome/no manufactured result/error/native fact. Full119 then current normal and real canceled-old-result original35-control derivative; no grant/deadline/reset/Native custody change, full release remains open.'],'progress',[str((root/'ANCESTRY.json').relative_to(r))]))

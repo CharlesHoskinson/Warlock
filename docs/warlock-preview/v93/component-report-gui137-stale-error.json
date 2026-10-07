@@ -1,0 +1,91 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "sourceHeld": true,
+  "passed": true,
+  "cpuBuildPassed": true,
+  "fullBuildCommands": 119,
+  "actualCancelledOldResultQualified": true,
+  "actualOldResultAcrossReopenedRealmQualified": true,
+  "actualOldSnapshotPixelsAccepted": false,
+  "actualNewRealmCapturedPixelsQualified": true,
+  "actualGUIRealmReopenQualified": true,
+  "actualPendingIntentReopenQualified": true,
+  "actualRapidPointerCloseReopenQualified": true,
+  "singlePreviewPolicy": true,
+  "nativeGrantResets": 0,
+  "navigationResets": 0,
+  "snapshotOrdinalResets": 0,
+  "normalControlledHostClosureQualified": true,
+  "privateSessionCleanupPassed": true,
+  "actualStaleSnapshotCallbackQualified": true,
+  "actualRetainedResultConsumedOnce": true,
+  "actualStaleSnapshotArtifactRejected": true,
+  "normalRouteNativeChecks": 29,
+  "normalRouteNormalOwnedExits": 13,
+  "cancelledReopenedSnapshotNativeChecks": 36,
+  "cancelledReopenedSnapshotNormalOwnedExits": 13,
+  "successfulReopenedSnapshotNativeChecks": 35,
+  "successfulReopenedSnapshotNormalOwnedExits": 13,
+  "delayedResultNativeChecks": 18,
+  "delayedResultNormalOwnedExits": 8,
+  "rapidPendingReaderNativeChecks": 51,
+  "rapidPendingReaderNormalOwnedExits": 17,
+  "asyncErrorScopeQuintScenarios": 10,
+  "asyncErrorScopeInvariantSamples": 200,
+  "asyncErrorScopeCoupledCases": 4,
+  "physicalConcealmentQualified": false,
+  "physicalRevealQualified": false,
+  "hardwarePresentationQualified": false,
+  "fullWorkloadProgressQualified": false,
+  "measuredRSSQualified": false,
+  "reloadRecoveryQualified": false,
+  "currentMatchingErrorNativeQualified": false,
+  "allCancelledOrFailedOldResultsQualified": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "GUI137 repairs held GUI136/Native159 actual old cancellation shutting down reopened GUI. Original WebKit finish consumes the real result once, then existing view/epoch/navigation/projection/current-channel guard rejects stale results before current error handling. NULL-image-safe disposal clears only old image/error, without current policy/job/grant/physical settlement. Matching-current error branch remains byte-identical; actual matching-current cancellation remains a separate open native gate. Same byte-identical Native159 cancellation oracle now Native16136/13 passes: actual original G_IO_ERROR_CANCELLED/image0 after old strict close/replaced view/new epoch2, one finish, no old artifact/current failure; current request2 actual source red19200/current original image before-after opacity0 output and both strict closes/same policy/binding/no resets. Unchanged normal16029/13, successful old result16235/13, delayed16318/8, rapid real reader16451/17 all pass with normal owned exits/private cleanup. Full119, error-scope Quint10/200 and4 actual failure/fix/success projected cases pass. No native issuer/single Elm policy/physical product/sticky producer/deadline changes. Qualification covers these actual old-cancellation/success schedules, not all async scopes, current failure, process/reload/Unknown recovery, physical conceal/reveal/hardware, pressure/workload/RSS, full S09 or release. Installed/drafts/foreign untouched.",
+  "reports": {
+    "build": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v137/qa/build-1791395308163320078/report.json",
+      "sha256": "89680624aba211ec471f42f01e71bfdefb927faa78b301bf2f2900523ac1df82"
+    },
+    "normalNative": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v160/qa/native-controlled-1791395616215815715/report.json",
+      "sha256": "7a2a648c6466fcb31f3c1dfffee590f45e2ea31cd728ca05df987afe7379a30d"
+    },
+    "cancelledReopenedSnapshotNative": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v161/qa/native-controlled-1791395768921918538/report.json",
+      "sha256": "f6dbe91259def8e9133d99b6789c9c95da85ffabbcf8253fa11046834ab25837"
+    },
+    "successfulReopenedSnapshotNative": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v162/qa/native-controlled-1791395805039291748/report.json",
+      "sha256": "27379ba2be55621b8c54527682369382900454a8ae25babb3b491d716e210dfc"
+    },
+    "delayedSnapshotNative": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v163/qa/native-controlled-1791395915322680636/report.json",
+      "sha256": "e3a66f2f5b11e5018cad11f4a1529888bd97ab1e1b906bd35df53b258a4a1985"
+    },
+    "rapidPendingReaderNative": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v164/qa/native-controlled-1791395960837455947/report.json",
+      "sha256": "9a811d81b1232a8b5e80bdf1af9f37386ba67a1082211306638555f24bf66cd9"
+    },
+    "asyncErrorScopeQuint": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v137/qa/async-error-scope-model-1791395308164865438/report.json",
+      "sha256": "c19da31def6a82646b05b42d2279675a9f6eea968cc165fbc267d3033e875ddb"
+    },
+    "asyncErrorScopeCoupling": {
+      "path": "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v93/async-error-scope-coupling-v137-1791395922413061237/report.json",
+      "sha256": "a40d31005aaebad395f95d0db418450ab4d74518f6080e1b9b67677396a4a68d"
+    }
+  },
+  "heldParentManifest": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v136/component-manifest.json",
+    "sha256": "a8fe9a128151955812ae01e3fffd521bb5a91c9d76432a89becc04be78d89c15"
+  },
+  "freezeFinalization": {
+    "reason": "Initial freezer validated all source/build/model/native evidence and wrote all six immutable manifests, then stopped rather than overwrite pre-existing historical Native137 report. Unique GUI report finalizes those unchanged manifests; no source/probe/oracle/deadline/test rerun or historical evidence modification.",
+    "historicalReport": "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v93/component-report137.json",
+    "historicalReportSHA256": "94670ad469aff3df6fb2911d9467eb7b359fde799d9185d1fae51d7eab8d79b0"
+  }
+}
