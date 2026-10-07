@@ -1501,3 +1501,25 @@ admission authority, preserving every outstanding duty and permanent policy fact
 - **WHEN** its snapshot completes with the original epoch/view/navigation/projection still current
 - **THEN** it publishes only a fresh monotonically numbered artifact
 - **AND** private pixels and DOM/GTK observations grant no physical reveal authority
+
+### Requirement: Original physical reader survives a later popup intent
+The controlled host SHALL retain sticky original quarantine and all closing realm
+obligations even if a later native popup is ready. Explicit QA may retain a real
+original URI/GIO reader; it SHALL never manufacture a cleanup fact or reset grants.
+
+#### Scenario: New intent while an old original reader is held
+- GIVEN a current original preview image with a real retained native-authorized reader
+- WHEN the popup closes and a later actual popup intent is configured
+- THEN original held and fresh URI reads are revoked, old strict close remains blocked,
+  and detachment/receipt producers continue against the closing realm's original scope
+
+#### Scenario: One reader close and independent native settlement
+- WHEN the private monotonic stimulus closes the actual original reader once
+- THEN all original policy, physical, journal and confirmation gates still precede
+  retirement and replacement, and no newer intent cancels old custody
+
+#### Scenario: Retired renderer replacement inside the later popup
+- GIVEN the old native realm is strictly closed and the later popup owns its GTK lease
+- WHEN the host replaces the retired renderer child
+- THEN that popup window/lease/grab persist, fresh DOM admission precedes a later
+  fixed grant, and current images, chronology, original normal exits and cleanup qualify separately

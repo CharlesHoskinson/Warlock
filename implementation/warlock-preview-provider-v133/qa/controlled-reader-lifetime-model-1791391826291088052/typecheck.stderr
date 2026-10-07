@@ -1,0 +1,15 @@
+
+ Error [QNT000]: mismatched input '=' expecting ':'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-1791391826291088052/inputs/spec/controlled_reader_lifetime_tests.qnt:3:23
+  3:  action check(ok:bool)=all{assert(ok and readerSafety),s'=s,reader'=reader,probed'=probed,closes'=closes}
+                           ^
+
+
+ Error [QNT000]: extraneous input 'run' expecting {<EOF>, 'module', DOCCOMMENT}
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-1791391826291088052/inputs/spec/controlled_reader_lifetime_tests.qnt:4:2
+  4:  run closeCannotSettleReader=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(Drain)).then(event(Retire)).then(check(reader==HeldRevoked and s.duty and s.native and not(s.retired)))
+      ^^^
+
+error: parsing failed

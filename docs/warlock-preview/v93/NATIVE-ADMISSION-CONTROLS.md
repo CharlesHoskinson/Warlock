@@ -811,3 +811,35 @@ Native14618/8 delayed-result regressions, full119, Quint9/200 and six coupled
 lifecycle stages pass separately. Pending-intent replacement, old callbacks
 across the new epoch, permanent-retirement GUI interactions, ongoing physical
 conceal/reveal/hardware, recovery and full release remain unqualified.
+
+CONTROL-042 real retained-reader pending-intent qualification (EARS):
+- WHEN explicit private QA requests an original preview reader, the host SHALL
+  open only the current original Native-authorized URI with its original router,
+  view and receiver epoch, and retain that actual GIO reader until explicit
+  monotonic probe/release. A QA stimulus SHALL NOT supply Native facts or settle
+  jobs, journals, confirmations or grants.
+- WHILE a previous realm retains an actual physical reader, a later popup intent
+  SHALL NOT cancel sticky quarantine, reacquire that realm, replace its renderer
+  or satisfy strict Native retirement. Current popup demand SHALL NOT overwrite
+  the closing realm's original custody or stop required detachment observations.
+- WHEN the original reader is revoked, both retained and fresh reads SHALL fail
+  through their original authorization guards. One original GIO close SHALL
+  release only that reader; all original policy/physical/journal/confirmation
+  obligations SHALL still drain independently before realm retirement.
+- WHEN strict old realm close precedes replacement while the later popup is
+  already configured, the host SHALL preserve that exact GTK window, lease and
+  grab, replace its retired renderer child, and require fresh DOM admission before
+  issuing the later native epoch's one-shot renderer grant. Native/current image,
+  pixels, callback chronology, closed-curtain output and normal teardown SHALL
+  retain original oracles, source/ABI identity and deadlines.
+
+CONTROL-042 bounded current qualification: GUI134 preserves the exact rapid149
+original-deadline failure, then fixes only sticky original poll/detachment producer
+scope. Current rapid15251/17, slower15151/18, unchanged normal15029/13 and
+delayed15318/8 pass. Actual original GIO reader/owned Retiring job spans a later
+GTK popup; original held/fresh reads deny, one reader close precedes independent
+strict Native retirement and replacement inside the same later popup lease.
+Reader6/200/8 coupled stages and producer8/200/4 failure-fix cases pass separately.
+This qualifies the actual slow/rapid fixtures; broader timing/old-context async,
+physical ongoing conceal/reveal/hardware, process/reload/Unknown, resource and
+full release remain open. Empty physical jobs alone never settle a retained subject.

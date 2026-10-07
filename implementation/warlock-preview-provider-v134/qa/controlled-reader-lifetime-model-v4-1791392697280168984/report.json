@@ -1,0 +1,81 @@
+{
+  "passed": true,
+  "inputs": {
+    "spec/controlled_reader_lifetime_v4.qnt": "b5c047aac2a9088bbba910b1e5b29629bd1e9298f48f8724f894e1b5278eef49",
+    "spec/controlled_reader_lifetime_tests_v4.qnt": "fa0c326421839317026fd94c35d4aeef99d9196a0120afa6fa692a5e2676d7a6",
+    "qa/controlled-reader-lifetime-model-v4.py": "fcfbf43752852c6b9c0b372fdcdaddf5fe1f9c77ffbd6188efa38eddd08e9be7",
+    "spec/host_realm_lifecycle.qnt": "fb723b878670bd014e6e3a7e37d0d0aacb019d20acf23aff9c6207b1fc3248fa"
+  },
+  "quint": {
+    "path": "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+    "sha256": "bd6e9400f6358a8a69d80eb636eb62f59f993039868a7be9719f76ba74191b4e"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "controlled_reader_lifetime_tests_v4.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "controlled_reader_lifetime_tests_v4.qnt",
+        "--main=controlled_reader_lifetime_tests_v4",
+        "--backend=typescript",
+        "--match=^(closeCannotSettleReader|pendingIntentKeepsOldDuty|unprobedReaderCannotRelease|oneReleaseCannotSettleNative|pendingIntentAfterIndependentDrain|unknownKeepsOriginalCustody)$",
+        "--seed=1330041",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/controlled-reader-lifetime-model-v4-1791392697280168984/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "samples",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "controlled_reader_lifetime_v4.qnt",
+        "--main=controlled_reader_lifetime_v4",
+        "--backend=typescript",
+        "--init=initReader",
+        "--step=readerStep",
+        "--invariant=readerSafety",
+        "--seed=1330042",
+        "--max-samples=200",
+        "--max-steps=32",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/controlled-reader-lifetime-model-v4-1791392697280168984/samples.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "scope": "Original real URI/GIO reader hold/revocation/one close and independent Native Drain abstraction only; original independent physical, terminal, journal and confirmation Drain remains Native authority. Same policy/context replacement/pending intent/stale callback safety is model scope only. Named selection and invariant samples are model evidence, not actual GTK/WebKit, physical reveal or release acceptance.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "namedScenarios": 6,
+  "invariantSamples": 200,
+  "artifacts": {
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-closeCannotSettleReader-0.itf.json": "b298b5bbfd0958fe1d05d661fc560cbc6e38e1c43b01059ed120c1794364b882",
+    "named-pendingIntentKeepsOldDuty-1.itf.json": "0d3cac461c7faeeca95e65560f5428c4d70633e818b7e7c80151016ccbe03c7c",
+    "named-unprobedReaderCannotRelease-2.itf.json": "aeff060c535e2d78dad0f578f604475ed286c8a36fb50d04a477c5065eccd173",
+    "named-oneReleaseCannotSettleNative-3.itf.json": "b43e48a01aace92ed09dcbb2fd102c11f87264eef9d9765168f0e2726f422478",
+    "named-pendingIntentAfterIndependentDrain-4.itf.json": "e731fb0e9f4805ed22d2ea10b9aff9768fe8ad77369e6823c9e0055ce54d069a",
+    "named-unknownKeepsOriginalCustody-5.itf.json": "8c4528cebfcbb7f7a71546fd81f26330169ed36c7338fc12051ef99bff3e41f0",
+    "selected.stdout": "4095e08d0f7facd403881b6255294113a1aedad1f5d635078bcd7a0adc4350f3",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "samples.itf.json": "c4a34f6137c3fe265f0176254a9786487df03dc6a0346edd0a64c9cb2cd80058",
+    "samples.stdout": "c8d48f1678c04a210b9e76a680d3da9f98f53ecd81c23bfbae5a817e3261e529",
+    "samples.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/spec/controlled_reader_lifetime_v4.qnt": "b5c047aac2a9088bbba910b1e5b29629bd1e9298f48f8724f894e1b5278eef49",
+    "inputs/spec/controlled_reader_lifetime_tests_v4.qnt": "fa0c326421839317026fd94c35d4aeef99d9196a0120afa6fa692a5e2676d7a6",
+    "inputs/spec/host_realm_lifecycle.qnt": "fb723b878670bd014e6e3a7e37d0d0aacb019d20acf23aff9c6207b1fc3248fa",
+    "inputs/qa/controlled-reader-lifetime-model-v4.py": "fcfbf43752852c6b9c0b372fdcdaddf5fe1f9c77ffbd6188efa38eddd08e9be7"
+  }
+}

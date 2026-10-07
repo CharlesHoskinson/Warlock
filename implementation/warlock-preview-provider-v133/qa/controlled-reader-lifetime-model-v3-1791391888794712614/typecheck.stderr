@@ -1,0 +1,20 @@
+
+ Error [QNT000]: Expected [s,probed,closes,reader] and [s,reader,closes] to be the same
+Trying to unify entities ['s', 'probed', 'closes', 'reader'] and ['s', 'reader', 'closes']
+Trying to unify Read[_v1194] & Temporal[_v1195] & Update['s', 'probed', 'closes', 'reader'] and Read['s', 'reader', 'closes', 'probed'] & Temporal['probed'] & Update['s', 'reader', 'closes']
+Trying to unify (Read[_v1191] & Temporal[_v1192] & Update[_v1193], Read[_v1194] & Temporal[_v1195] & Update[_v1193], Read[_v1196] & Temporal[_v1197] & Update[_v1193], Read[_v1198] & Temporal[_v1199] & Update[_v1193]) => Read[_v1191, _v1194, _v1196, _v1198] & Temporal[_v1192, _v1195, _v1197, _v1199] & Update[_v1193] and (Read['s', 'probed', 'closes', 'reader'] & Update['s', 'probed', 'closes', 'reader'], Read['s', 'reader', 'closes', 'probed'] & Temporal['probed'] & Update['s', 'reader', 'closes'], Read['s', 'probed', 'reader', 'closes'] & Update['s', 'probed', 'reader', 'closes'], Read['reader', 's', 'probed', 'closes'] & Update['reader', 'probed', 'closes', 's']) => _e295
+Trying to infer effect for operator application in actionAny(hold, probe, release, nondet e = oneOf(Set(OpenIntent, DOMReady, Admit, Initialize, Apply, ClosePopup, Drain, Retire, Replace, StaleCallback, Unknown)) { event(e) })
+
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v3-1791391888794712614/inputs/spec/controlled_reader_lifetime_v3.qnt:23:20
+  23:  action readerStep=any{hold,probe,release,{nondet e=Set(OpenIntent,DOMReady,Admit,Initialize,Apply,ClosePopup,Drain,Retire,Replace,StaleCallback,Unknown).oneOf();event(e)}}
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT200]: Using an action as an argument of `or` is only allowed in temporal definitions, but it is used in action `probe`. For alternative actions, use `any { ... }` instead.
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v3-1791391888794712614/inputs/spec/controlled_reader_lifetime_v3.qnt:17:54
+  17:  action probe=all{s'=s,reader'=reader,closes'=closes,probed'=(reader==HeldRevoked and not(s.uncertain)) or probed}
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: typechecking failed

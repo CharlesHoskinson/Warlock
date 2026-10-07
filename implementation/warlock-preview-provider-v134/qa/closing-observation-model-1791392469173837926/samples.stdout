@@ -1,0 +1,534 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      closing: false,
+      detached: false,
+      jobs: true,
+      nativeEmpty: false,
+      observed: false,
+      pollStamp: 1,
+      popup: true,
+      reader: true,
+      unknown: false
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: true,
+      nativeEmpty: false,
+      observed: false,
+      pollStamp: 1,
+      popup: false,
+      reader: true,
+      unknown: false
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: true,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: false,
+      reader: true,
+      unknown: false
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: true,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: false,
+      reader: true,
+      unknown: true
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: true,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: true,
+      reader: true,
+      unknown: true
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: true,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: true,
+      reader: true,
+      unknown: true
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: true,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: true,
+      reader: true,
+      unknown: true
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: true,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: true,
+      reader: true,
+      unknown: true
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: true,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: true,
+      reader: true,
+      unknown: true
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: true,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: true,
+      reader: true,
+      unknown: true
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: true,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: false,
+      reader: true,
+      unknown: true
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: true,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: false,
+      reader: true,
+      unknown: true
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: true,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: true,
+      reader: true,
+      unknown: true
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: true,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: true,
+      reader: true,
+      unknown: true
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: true,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: true,
+      reader: true,
+      unknown: true
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: true,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: true,
+      reader: true,
+      unknown: true
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: true,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: true,
+      reader: false,
+      unknown: true
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: true,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: true,
+      reader: false,
+      unknown: true
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: false,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: true,
+      reader: false,
+      unknown: true
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: false,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: true,
+      reader: false,
+      unknown: true
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: false,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: true,
+      reader: false,
+      unknown: true
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: false,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: true,
+      reader: false,
+      unknown: true
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: false,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: true,
+      reader: false,
+      unknown: true
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: false,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: true,
+      reader: false,
+      unknown: true
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: false,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: true,
+      reader: false,
+      unknown: true
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: false,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: true,
+      reader: false,
+      unknown: true
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: false,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: true,
+      reader: false,
+      unknown: true
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: false,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: true,
+      reader: false,
+      unknown: true
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: false,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: true,
+      reader: false,
+      unknown: true
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: false,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: true,
+      reader: false,
+      unknown: true
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: false,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: true,
+      reader: false,
+      unknown: true
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: false,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: true,
+      reader: false,
+      unknown: true
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      closing: true,
+      detached: false,
+      jobs: false,
+      nativeEmpty: false,
+      observed: true,
+      pollStamp: 0,
+      popup: true,
+      reader: false,
+      unknown: true
+    }
+}
+
+[ok] No violation found (177ms at 1130 traces/second).
+Trace length statistics: max=33, min=33, average=33.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

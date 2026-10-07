@@ -1,0 +1,210 @@
+{
+  "passed": true,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v148/qa/native-controlled-1791392056930297973/report.json": "ecd2e0664cfb9cca21ce0f7cdfaafe7447818d5196258aab4f37c602c7a9ec89",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v148/qa/preflight.json": "659fdbca1aa8fb520a49e9fcae67a0505207d1b4e25ee0eb35a8776259e12bd6",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v148/qa/native-controlled-1791392056930297973/private-evidence/controlled-host.log": "902428117daa1fb39e067f0ebf4eb8eb84b3a84ef2bd98157b575e88715ae1b3",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/native/controlled-preview-host.h": "2b30ccb8c441bcff74c85e85db8afadc5575ce102eff62f86a9120ec48bfc098",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/spec/host_realm_lifecycle.qnt": "fb723b878670bd014e6e3a7e37d0d0aacb019d20acf23aff9c6207b1fc3248fa",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/spec/controlled_reader_lifetime_v4.qnt": "b5c047aac2a9088bbba910b1e5b29629bd1e9298f48f8724f894e1b5278eef49",
+    "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v93/couple_native148_retained_reader.py": "29a7770d319d5fc21f979da65d137685124b27cbed893578fd32706b2029f15d"
+  },
+  "quint": {
+    "path": "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+    "sha256": "bd6e9400f6358a8a69d80eb636eb62f59f993039868a7be9719f76ba74191b4e"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "concrete_retained_reader.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "concrete_retained_reader.qnt",
+        "--main=concrete_retained_reader",
+        "--backend=typescript",
+        "--match=^(heldOriginal|closingReader|revokedReads|pendingPopup|oneOriginalClose|independentStrictClose|samePopupReplacement|freshLaterEpoch)$",
+        "--seed=1480042",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v93/retained-reader-coupling-1791392276670612231/coupled-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "observations": [
+    {
+      "name": "heldOriginal",
+      "nativeObservation": "controlled-native-reader-held: epoch=1 actualGIO=1 firstByte=137 ",
+      "expected": "reader==HeldCurrent and s.epoch==1 and s.context==1 and s.duty and closes==0",
+      "operations": [
+        "event(OpenIntent)",
+        "event(DOMReady)",
+        "event(Admit)",
+        "event(Initialize)",
+        "event(Apply)",
+        "hold"
+      ]
+    },
+    {
+      "name": "closingReader",
+      "nativeObservation": "controlledHeldReaderBlocksEarlyNativeRetirement",
+      "expected": "reader==HeldRevoked and s.closing and s.duty and s.native and not(s.current)",
+      "operations": [
+        "event(OpenIntent)",
+        "event(DOMReady)",
+        "event(Admit)",
+        "event(Initialize)",
+        "event(Apply)",
+        "hold",
+        "event(ClosePopup)"
+      ]
+    },
+    {
+      "name": "revokedReads",
+      "nativeObservation": "controlled-native-reader-probed: epoch=1 heldRead=-1 heldDenied=1 freshDenied=1 actualGIO=1 physicalSettlement=0",
+      "expected": "reader==HeldRevoked and probed and closes==0 and s.duty",
+      "operations": [
+        "event(OpenIntent)",
+        "event(DOMReady)",
+        "event(Admit)",
+        "event(Initialize)",
+        "event(Apply)",
+        "hold",
+        "event(ClosePopup)",
+        "probe"
+      ]
+    },
+    {
+      "name": "pendingPopup",
+      "nativeObservation": "controlledActualLaterGTKPopupKeepsOldReaderDuty",
+      "expected": "s.popup and s.lease==2 and s.epoch==1 and s.context==1 and s.duty and s.closing",
+      "operations": [
+        "event(OpenIntent)",
+        "event(DOMReady)",
+        "event(Admit)",
+        "event(Initialize)",
+        "event(Apply)",
+        "hold",
+        "event(ClosePopup)",
+        "probe",
+        "event(OpenIntent)",
+        "event(DOMReady)"
+      ]
+    },
+    {
+      "name": "oneOriginalClose",
+      "nativeObservation": "controlled-native-reader-released: epoch=1 originalCloseCalls=1 nativeGrantReset=0",
+      "expected": "reader==Released and closes==1 and s.duty and s.native",
+      "operations": [
+        "event(OpenIntent)",
+        "event(DOMReady)",
+        "event(Admit)",
+        "event(Initialize)",
+        "event(Apply)",
+        "hold",
+        "event(ClosePopup)",
+        "probe",
+        "event(OpenIntent)",
+        "event(DOMReady)",
+        "release"
+      ]
+    },
+    {
+      "name": "independentStrictClose",
+      "nativeObservation": "controlledFirstRealmStrictlyClosedBeforeFreshRenderer",
+      "expected": "not(s.duty) and not(s.native) and s.retired and s.epoch==1",
+      "operations": [
+        "event(OpenIntent)",
+        "event(DOMReady)",
+        "event(Admit)",
+        "event(Initialize)",
+        "event(Apply)",
+        "hold",
+        "event(ClosePopup)",
+        "probe",
+        "event(OpenIntent)",
+        "event(DOMReady)",
+        "release",
+        "event(Drain)",
+        "event(Retire)"
+      ]
+    },
+    {
+      "name": "samePopupReplacement",
+      "nativeObservation": "controlled-native-replacement-admission: retiredEpoch=1 pendingPopup=1 ",
+      "expected": "s.popup and s.lease==2 and s.context==2 and not(s.dom) and s.policy==1",
+      "operations": [
+        "event(OpenIntent)",
+        "event(DOMReady)",
+        "event(Admit)",
+        "event(Initialize)",
+        "event(Apply)",
+        "hold",
+        "event(ClosePopup)",
+        "probe",
+        "event(OpenIntent)",
+        "event(DOMReady)",
+        "release",
+        "event(Drain)",
+        "event(Retire)",
+        "event(Replace)"
+      ]
+    },
+    {
+      "name": "freshLaterEpoch",
+      "nativeObservation": "controlledReopenOriginalBindingLaterNativeEpoch",
+      "expected": "s.current and s.epoch==2 and s.context==2 and s.lease==2 and closes==1 and s.policy==1",
+      "operations": [
+        "event(OpenIntent)",
+        "event(DOMReady)",
+        "event(Admit)",
+        "event(Initialize)",
+        "event(Apply)",
+        "hold",
+        "event(ClosePopup)",
+        "probe",
+        "event(OpenIntent)",
+        "event(DOMReady)",
+        "release",
+        "event(Drain)",
+        "event(Retire)",
+        "event(Replace)",
+        "event(DOMReady)",
+        "event(Admit)",
+        "event(Initialize)",
+        "event(Apply)"
+      ]
+    }
+  ],
+  "scope": "Eight retained-reader/pending-popup lifecycle abstraction stages coupled to actual Native148 real original URI/GIO read, revoked held/fresh reads, original owned Retiring job, current later GTK popup, one actual reader close, original independent strict Native close, same policy/binding and current second image/output. Reader close is not Native settlement; model Drain projects separately verified original C/physical/journal/confirmation closure. No complete transition refinement, rapid scheduling variant, physical reveal/hardware, recovery or full release claim.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "coupledQuintChecks": 8,
+  "observedLifecycleStages": 8,
+  "actualNativeReportSHA256": "ecd2e0664cfb9cca21ce0f7cdfaafe7447818d5196258aab4f37c602c7a9ec89",
+  "artifacts": {
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "coupled-heldOriginal-0.itf.json": "cf2ebd893f74b0b36d3ab46a371fdfe7822c640b1ca156b72a40523fac639353",
+    "coupled-closingReader-1.itf.json": "f9b425d1d372a5b3a16f11000e29876b7049a93ecc5a0c498d92215d0a7ddefd",
+    "coupled-revokedReads-2.itf.json": "62eb18d303ef67a5ac0522e3974c5718c71d2d143a0b56dba213539ed6621cd6",
+    "coupled-pendingPopup-3.itf.json": "41f65f339418246718986acb2952a6142b88155420aeebcf995ede0de503a4ac",
+    "coupled-oneOriginalClose-4.itf.json": "17f4cb0c7c147c59b713adfb9b56c2a1302296f99c79165a4333661b3a38f315",
+    "coupled-independentStrictClose-5.itf.json": "2bc9237f6ec02719d633381714022d60731896b51272c31fe83e4e9a4087f3f5",
+    "coupled-samePopupReplacement-6.itf.json": "4783248d804f133b51350b469a69106f2e2837aa9a220a4a8328685c67dc916d",
+    "coupled-freshLaterEpoch-7.itf.json": "661d6e5311d55ca462c0e0d082bfbdbcccafb2d532751e7c4b76841a1071c151",
+    "selected.stdout": "86c3537fc6e06fc9c74ff2b91a400cdf5d922cb0e92b6493993896ad56e7bfcc",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/host_realm_lifecycle.qnt": "fb723b878670bd014e6e3a7e37d0d0aacb019d20acf23aff9c6207b1fc3248fa",
+    "inputs/controlled_reader_lifetime_v4.qnt": "b5c047aac2a9088bbba910b1e5b29629bd1e9298f48f8724f894e1b5278eef49",
+    "inputs/concrete_retained_reader.qnt": "2b8eac0ca738733f54fd487b6b8c63c55b255b0a01cedbb84a20a8db6a7f5d78"
+  }
+}

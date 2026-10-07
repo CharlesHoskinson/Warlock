@@ -1,0 +1,36 @@
+{
+  "passed": false,
+  "inputs": {
+    "spec/controlled_reader_lifetime_v3.qnt": "ace943a239363ebf99381e83778f38dbbaa1286b0d0ff7565fee825646f14321",
+    "spec/controlled_reader_lifetime_tests_v3.qnt": "baee1d382371d0d6587ac9e2187bd81841de30f08b4c13569b6e39381083fcf2",
+    "qa/controlled-reader-lifetime-model-v3.py": "c4da8d9b6790953817c290f7a635f269f2d102e89f4e2df811357d0ba98fc728",
+    "spec/host_realm_lifecycle.qnt": "fb723b878670bd014e6e3a7e37d0d0aacb019d20acf23aff9c6207b1fc3248fa"
+  },
+  "quint": {
+    "path": "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+    "sha256": "bd6e9400f6358a8a69d80eb636eb62f59f993039868a7be9719f76ba74191b4e"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "controlled_reader_lifetime_tests_v3.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "scope": "Original real URI/GIO reader hold/revocation/one close and independent Native Drain abstraction only; original independent physical, terminal, journal and confirmation Drain remains Native authority. Same policy/context replacement/pending intent/stale callback safety is model scope only. Named selection and invariant samples are model evidence, not actual GTK/WebKit, physical reveal or release acceptance.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "error": "AssertionError(\"\\n Error [QNT000]: Expected [s,probed,closes,reader] and [s,reader,closes] to be the same\\nTrying to unify entities ['s', 'probed', 'closes', 'reader'] and ['s', 'reader', 'closes']\\nTrying to unify Read[_v1194] & Temporal[_v1195] & Update['s', 'probed', 'closes', 'reader'] and Read['s', 'reader', 'closes', 'probed'] & Temporal['probed'] & Update['s', 'reader', 'closes']\\nTrying to unify (Read[_v1191] & Temporal[_v1192] & Update[_v1193], Read[_v1194] & Temporal[_v1195] & Update[_v1193], Read[_v1196] & Temporal[_v1197] & Update[_v1193], Read[_v1198] & Temporal[_v1199] & Update[_v1193]) => Read[_v1191, _v1194, _v1196, _v1198] & Temporal[_v1192, _v1195, _v1197, _v1199] & Update[_v1193] and (Read['s', 'probed', 'closes', 'reader'] & Update['s', 'probed', 'closes', 'reader'], Read['s', 'reader', 'closes', 'probed'] & Temporal['probed'] & Update['s', 'reader', 'closes'], Read['s', 'probed', 'reader', 'closes'] & Update['s', 'probed', 'reader', 'closes'], Read['reader', 's', 'probed', 'closes'] & Update['reader', 'probed', 'closes', 's']) => _e295\\nTrying to infer effect for operator application in actionAny(hold, probe, release, nondet e = oneOf(Set(OpenIntent, DOMReady, Admit, Initialize, Apply, ClosePopup, Drain, Retire, Replace, StaleCallback, Unknown)) { event(e) })\\n\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v3-1791391888794712614/inputs/spec/controlled_reader_lifetime_v3.qnt:23:20\\n  23:  action readerStep=any{hold,probe,release,{nondet e=Set(OpenIntent,DOMReady,Admit,Initialize,Apply,ClosePopup,Drain,Retire,Replace,StaleCallback,Unknown).oneOf();event(e)}}\\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n\\n\\n Error [QNT200]: Using an action as an argument of `or` is only allowed in temporal definitions, but it is used in action `probe`. For alternative actions, use `any { ... }` instead.\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v3-1791391888794712614/inputs/spec/controlled_reader_lifetime_v3.qnt:17:54\\n  17:  action probe=all{s'=s,reader'=reader,closes'=closes,probed'=(reader==HeldRevoked and not(s.uncertain)) or probed}\\n                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n\\nerror: typechecking failed\\n\")",
+  "artifacts": {
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "52fa4f45ee1de50b8beacac4e4265e232b7cb60fd282f5ce154de31ec6e6e0e3",
+    "inputs/spec/controlled_reader_lifetime_v3.qnt": "ace943a239363ebf99381e83778f38dbbaa1286b0d0ff7565fee825646f14321",
+    "inputs/spec/controlled_reader_lifetime_tests_v3.qnt": "baee1d382371d0d6587ac9e2187bd81841de30f08b4c13569b6e39381083fcf2",
+    "inputs/spec/host_realm_lifecycle.qnt": "fb723b878670bd014e6e3a7e37d0d0aacb019d20acf23aff9c6207b1fc3248fa",
+    "inputs/qa/controlled-reader-lifetime-model-v3.py": "c4da8d9b6790953817c290f7a635f269f2d102e89f4e2df811357d0ba98fc728"
+  }
+}

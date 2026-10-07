@@ -1,0 +1,344 @@
+
+ Error [QNT101]: Conflicting definitions found for name 'step' in module 'controlled_reader_lifetime_v2'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/host_realm_lifecycle.qnt:26:9
+  26:  action step={nondet e=Set(OpenIntent,DOMReady,Admit,Initialize,Apply,ClosePopup,Drain,Retire,Replace,StaleCallback,Unknown).oneOf();fire(e)}
+              ^^^^
+
+
+ Error [QNT101]: Conflicting definitions found for name 'step' in module 'controlled_reader_lifetime_v2'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_v2.qnt:23:9
+  23:  action step=any{hold,probe,release,{nondet e=Set(OpenIntent,DOMReady,Admit,Initialize,Apply,ClosePopup,Drain,Retire,Replace,StaleCallback,Unknown).oneOf();event(e)}}
+              ^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:3:61
+  3:  action check(ok:bool):bool=all{assert(ok and readerSafety),s'=s,reader'=reader,probed'=probed,closes'=closes}
+                                                                 ^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:3:64
+  3:  action check(ok:bool):bool=all{assert(ok and readerSafety),s'=s,reader'=reader,probed'=probed,closes'=closes}
+                                                                    ^
+
+
+ Error [QNT404]: Name 'ClosePopup' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:4:78
+  4:  run closeCannotSettleReader=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(Drain)).then(event(Retire)).then(check(reader==HeldRevoked and s.duty and s.native and not(s.retired)))
+                                                                                  ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Drain' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:4:102
+  4:  run closeCannotSettleReader=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(Drain)).then(event(Retire)).then(check(reader==HeldRevoked and s.duty and s.native and not(s.retired)))
+                                                                                                          ^^^^^
+
+
+ Error [QNT404]: Name 'Retire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:4:121
+  4:  run closeCannotSettleReader=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(Drain)).then(event(Retire)).then(check(reader==HeldRevoked and s.duty and s.native and not(s.retired)))
+                                                                                                                             ^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:4:165
+  4:  run closeCannotSettleReader=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(Drain)).then(event(Retire)).then(check(reader==HeldRevoked and s.duty and s.native and not(s.retired)))
+                                                                                                                                                                         ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:4:176
+  4:  run closeCannotSettleReader=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(Drain)).then(event(Retire)).then(check(reader==HeldRevoked and s.duty and s.native and not(s.retired)))
+                                                                                                                                                                                    ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:4:193
+  4:  run closeCannotSettleReader=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(Drain)).then(event(Retire)).then(check(reader==HeldRevoked and s.duty and s.native and not(s.retired)))
+                                                                                                                                                                                                     ^
+
+
+ Error [QNT404]: Name 'ClosePopup' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:5:80
+  5:  run pendingIntentKeepsOldDuty=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(OpenIntent)).then(event(DOMReady)).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(check(reader==HeldRevoked and s.popup and s.lease==2 and s.context==1 and s.epoch==1 and s.duty))
+                                                                                    ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'OpenIntent' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:5:104
+  5:  run pendingIntentKeepsOldDuty=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(OpenIntent)).then(event(DOMReady)).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(check(reader==HeldRevoked and s.popup and s.lease==2 and s.context==1 and s.epoch==1 and s.duty))
+                                                                                                            ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'DOMReady' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:5:128
+  5:  run pendingIntentKeepsOldDuty=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(OpenIntent)).then(event(DOMReady)).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(check(reader==HeldRevoked and s.popup and s.lease==2 and s.context==1 and s.epoch==1 and s.duty))
+                                                                                                                                    ^^^^^^^^
+
+
+ Error [QNT404]: Name 'Drain' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:5:150
+  5:  run pendingIntentKeepsOldDuty=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(OpenIntent)).then(event(DOMReady)).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(check(reader==HeldRevoked and s.popup and s.lease==2 and s.context==1 and s.epoch==1 and s.duty))
+                                                                                                                                                          ^^^^^
+
+
+ Error [QNT404]: Name 'Retire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:5:169
+  5:  run pendingIntentKeepsOldDuty=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(OpenIntent)).then(event(DOMReady)).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(check(reader==HeldRevoked and s.popup and s.lease==2 and s.context==1 and s.epoch==1 and s.duty))
+                                                                                                                                                                             ^^^^^^
+
+
+ Error [QNT404]: Name 'Replace' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:5:189
+  5:  run pendingIntentKeepsOldDuty=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(OpenIntent)).then(event(DOMReady)).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(check(reader==HeldRevoked and s.popup and s.lease==2 and s.context==1 and s.epoch==1 and s.duty))
+                                                                                                                                                                                                 ^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:5:234
+  5:  run pendingIntentKeepsOldDuty=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(OpenIntent)).then(event(DOMReady)).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(check(reader==HeldRevoked and s.popup and s.lease==2 and s.context==1 and s.epoch==1 and s.duty))
+                                                                                                                                                                                                                                              ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:5:246
+  5:  run pendingIntentKeepsOldDuty=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(OpenIntent)).then(event(DOMReady)).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(check(reader==HeldRevoked and s.popup and s.lease==2 and s.context==1 and s.epoch==1 and s.duty))
+                                                                                                                                                                                                                                                          ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:5:261
+  5:  run pendingIntentKeepsOldDuty=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(OpenIntent)).then(event(DOMReady)).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(check(reader==HeldRevoked and s.popup and s.lease==2 and s.context==1 and s.epoch==1 and s.duty))
+                                                                                                                                                                                                                                                                         ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:5:278
+  5:  run pendingIntentKeepsOldDuty=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(OpenIntent)).then(event(DOMReady)).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(check(reader==HeldRevoked and s.popup and s.lease==2 and s.context==1 and s.epoch==1 and s.duty))
+                                                                                                                                                                                                                                                                                          ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:5:293
+  5:  run pendingIntentKeepsOldDuty=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(OpenIntent)).then(event(DOMReady)).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(check(reader==HeldRevoked and s.popup and s.lease==2 and s.context==1 and s.epoch==1 and s.duty))
+                                                                                                                                                                                                                                                                                                         ^
+
+
+ Error [QNT404]: Name 'ClosePopup' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:6:82
+  6:  run unprobedReaderCannotRelease=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(release).then(check(reader==HeldRevoked and closes==0 and s.duty))
+                                                                                      ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:6:158
+  6:  run unprobedReaderCannotRelease=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(release).then(check(reader==HeldRevoked and closes==0 and s.duty))
+                                                                                                                                                                  ^
+
+
+ Error [QNT404]: Name 'ClosePopup' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:7:83
+  7:  run oneReleaseCannotSettleNative=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(probe).then(release).then(release).then(check(reader==Released and closes==1 and s.duty and s.native))
+                                                                                       ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:7:182
+  7:  run oneReleaseCannotSettleNative=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(probe).then(release).then(release).then(check(reader==Released and closes==1 and s.duty and s.native))
+                                                                                                                                                                                          ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:7:193
+  7:  run oneReleaseCannotSettleNative=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(probe).then(release).then(release).then(check(reader==Released and closes==1 and s.duty and s.native))
+                                                                                                                                                                                                     ^
+
+
+ Error [QNT404]: Name 'ClosePopup' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:8:89
+  8:  run pendingIntentAfterIndependentDrain=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(OpenIntent)).then(probe).then(release).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(event(DOMReady)).then(event(Admit)).then(event(Initialize)).then(event(Apply)).then(check(reader==Released and closes==1 and s.context==2 and s.epoch==2 and s.lease==2 and s.current and s.policy==1))
+                                                                                             ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'OpenIntent' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:8:113
+  8:  run pendingIntentAfterIndependentDrain=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(OpenIntent)).then(probe).then(release).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(event(DOMReady)).then(event(Admit)).then(event(Initialize)).then(event(Apply)).then(check(reader==Released and closes==1 and s.context==2 and s.epoch==2 and s.lease==2 and s.current and s.policy==1))
+                                                                                                                     ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Drain' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:8:163
+  8:  run pendingIntentAfterIndependentDrain=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(OpenIntent)).then(probe).then(release).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(event(DOMReady)).then(event(Admit)).then(event(Initialize)).then(event(Apply)).then(check(reader==Released and closes==1 and s.context==2 and s.epoch==2 and s.lease==2 and s.current and s.policy==1))
+                                                                                                                                                                       ^^^^^
+
+
+ Error [QNT404]: Name 'Retire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:8:182
+  8:  run pendingIntentAfterIndependentDrain=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(OpenIntent)).then(probe).then(release).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(event(DOMReady)).then(event(Admit)).then(event(Initialize)).then(event(Apply)).then(check(reader==Released and closes==1 and s.context==2 and s.epoch==2 and s.lease==2 and s.current and s.policy==1))
+                                                                                                                                                                                          ^^^^^^
+
+
+ Error [QNT404]: Name 'Replace' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:8:202
+  8:  run pendingIntentAfterIndependentDrain=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(OpenIntent)).then(probe).then(release).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(event(DOMReady)).then(event(Admit)).then(event(Initialize)).then(event(Apply)).then(check(reader==Released and closes==1 and s.context==2 and s.epoch==2 and s.lease==2 and s.current and s.policy==1))
+                                                                                                                                                                                                              ^^^^^^^
+
+
+ Error [QNT404]: Name 'DOMReady' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:8:223
+  8:  run pendingIntentAfterIndependentDrain=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(OpenIntent)).then(probe).then(release).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(event(DOMReady)).then(event(Admit)).then(event(Initialize)).then(event(Apply)).then(check(reader==Released and closes==1 and s.context==2 and s.epoch==2 and s.lease==2 and s.current and s.policy==1))
+                                                                                                                                                                                                                                   ^^^^^^^^
+
+
+ Error [QNT404]: Name 'Admit' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:8:245
+  8:  run pendingIntentAfterIndependentDrain=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(OpenIntent)).then(probe).then(release).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(event(DOMReady)).then(event(Admit)).then(event(Initialize)).then(event(Apply)).then(check(reader==Released and closes==1 and s.context==2 and s.epoch==2 and s.lease==2 and s.current and s.policy==1))
+                                                                                                                                                                                                                                                         ^^^^^
+
+
+ Error [QNT404]: Name 'Initialize' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:8:264
+  8:  run pendingIntentAfterIndependentDrain=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(OpenIntent)).then(probe).then(release).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(event(DOMReady)).then(event(Admit)).then(event(Initialize)).then(event(Apply)).then(check(reader==Released and closes==1 and s.context==2 and s.epoch==2 and s.lease==2 and s.current and s.policy==1))
+                                                                                                                                                                                                                                                                            ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Apply' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:8:288
+  8:  run pendingIntentAfterIndependentDrain=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(OpenIntent)).then(probe).then(release).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(event(DOMReady)).then(event(Admit)).then(event(Initialize)).then(event(Apply)).then(check(reader==Released and closes==1 and s.context==2 and s.epoch==2 and s.lease==2 and s.current and s.policy==1))
+                                                                                                                                                                                                                                                                                                    ^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:8:342
+  8:  run pendingIntentAfterIndependentDrain=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(OpenIntent)).then(probe).then(release).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(event(DOMReady)).then(event(Admit)).then(event(Initialize)).then(event(Apply)).then(check(reader==Released and closes==1 and s.context==2 and s.epoch==2 and s.lease==2 and s.current and s.policy==1))
+                                                                                                                                                                                                                                                                                                                                                          ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:8:359
+  8:  run pendingIntentAfterIndependentDrain=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(OpenIntent)).then(probe).then(release).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(event(DOMReady)).then(event(Admit)).then(event(Initialize)).then(event(Apply)).then(check(reader==Released and closes==1 and s.context==2 and s.epoch==2 and s.lease==2 and s.current and s.policy==1))
+                                                                                                                                                                                                                                                                                                                                                                           ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:8:374
+  8:  run pendingIntentAfterIndependentDrain=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(OpenIntent)).then(probe).then(release).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(event(DOMReady)).then(event(Admit)).then(event(Initialize)).then(event(Apply)).then(check(reader==Released and closes==1 and s.context==2 and s.epoch==2 and s.lease==2 and s.current and s.policy==1))
+                                                                                                                                                                                                                                                                                                                                                                                          ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:8:389
+  8:  run pendingIntentAfterIndependentDrain=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(OpenIntent)).then(probe).then(release).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(event(DOMReady)).then(event(Admit)).then(event(Initialize)).then(event(Apply)).then(check(reader==Released and closes==1 and s.context==2 and s.epoch==2 and s.lease==2 and s.current and s.policy==1))
+                                                                                                                                                                                                                                                                                                                                                                                                         ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:8:403
+  8:  run pendingIntentAfterIndependentDrain=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(OpenIntent)).then(probe).then(release).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(event(DOMReady)).then(event(Admit)).then(event(Initialize)).then(event(Apply)).then(check(reader==Released and closes==1 and s.context==2 and s.epoch==2 and s.lease==2 and s.current and s.policy==1))
+                                                                                                                                                                                                                                                                                                                                                                                                                       ^
+
+
+ Error [QNT404]: Name 'ClosePopup' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:9:82
+  9:  run unknownKeepsOriginalCustody=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(Unknown)).then(probe).then(release).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(check(reader==HeldRevoked and s.duty and s.native and s.context==1 and s.uncertain and closes==0))
+                                                                                      ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Unknown' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:9:106
+  9:  run unknownKeepsOriginalCustody=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(Unknown)).then(probe).then(release).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(check(reader==HeldRevoked and s.duty and s.native and s.context==1 and s.uncertain and closes==0))
+                                                                                                              ^^^^^^^
+
+
+ Error [QNT404]: Name 'Drain' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:9:153
+  9:  run unknownKeepsOriginalCustody=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(Unknown)).then(probe).then(release).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(check(reader==HeldRevoked and s.duty and s.native and s.context==1 and s.uncertain and closes==0))
+                                                                                                                                                             ^^^^^
+
+
+ Error [QNT404]: Name 'Retire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:9:172
+  9:  run unknownKeepsOriginalCustody=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(Unknown)).then(probe).then(release).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(check(reader==HeldRevoked and s.duty and s.native and s.context==1 and s.uncertain and closes==0))
+                                                                                                                                                                                ^^^^^^
+
+
+ Error [QNT404]: Name 'Replace' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:9:192
+  9:  run unknownKeepsOriginalCustody=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(Unknown)).then(probe).then(release).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(check(reader==HeldRevoked and s.duty and s.native and s.context==1 and s.uncertain and closes==0))
+                                                                                                                                                                                                    ^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:9:237
+  9:  run unknownKeepsOriginalCustody=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(Unknown)).then(probe).then(release).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(check(reader==HeldRevoked and s.duty and s.native and s.context==1 and s.uncertain and closes==0))
+                                                                                                                                                                                                                                                 ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:9:248
+  9:  run unknownKeepsOriginalCustody=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(Unknown)).then(probe).then(release).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(check(reader==HeldRevoked and s.duty and s.native and s.context==1 and s.uncertain and closes==0))
+                                                                                                                                                                                                                                                            ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:9:261
+  9:  run unknownKeepsOriginalCustody=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(Unknown)).then(probe).then(release).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(check(reader==HeldRevoked and s.duty and s.native and s.context==1 and s.uncertain and closes==0))
+                                                                                                                                                                                                                                                                         ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v2-1791391865438484067/inputs/spec/controlled_reader_lifetime_tests_v2.qnt:9:278
+  9:  run unknownKeepsOriginalCustody=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(Unknown)).then(probe).then(release).then(event(Drain)).then(event(Retire)).then(event(Replace)).then(check(reader==HeldRevoked and s.duty and s.native and s.context==1 and s.uncertain and closes==0))
+                                                                                                                                                                                                                                                                                          ^
+
+error: parsing failed

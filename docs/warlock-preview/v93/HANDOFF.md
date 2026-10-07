@@ -599,3 +599,28 @@ Next PUBLIC97 then fresh actual pending-intent/stale-context probe. Ongoing
 conceal/reveal/hardware, process/reload/Unknown, pressure/workload/RSS, full S09
 and all original release gates remain open. Installed desktop/drafts and five
 foreign tracked changes remain untouched.
+
+GUI133 retained the exact real-reader qualification and exposed a rapid-input
+bug. Slow pending intent14851/18 and normal14729/13 passed, but rapid149 timed
+out at the original six-second old-epoch drain: the real reader had closed,
+physical job records/charges were zero, yet the closing subject stayed retained
+because a later ready popup stopped original detachment observations. Host exited1
+under the original strict guard; other12 processes and private cleanup were normal.
+Source/model/native failure are held, never reclassified as broad acceptance.
+
+GUI134 fixes only two old-realm producer gates: sticky retiring scope keeps poll
+stamps non-current and continues detachment observations despite a later popup.
+Current full119, unchanged normal Native15029/13, slower pending15151/18, same
+rapid oracle15251/17 and unchanged delayed15318/8 all pass with normal exits and
+private cleanup. An actual original GIO reader/owned Retiring job spans the later
+GTK popup; held/fresh reads revoke, one reader close precedes original independent
+strict retirement, and replacement retains the later popup lease while fresh DOM
+admission creates epoch2 on the same policy/binding. Both source URI/red19200
+images, monotonic navigation/lease/request and opacity0 output regions pass.
+Reader Quint6/200 with8 coupled stages; producer Quint8/200 with4 cases coupled
+to actual failed/passed Native evidence and exact two-gate source diff. Scope and
+hashes are in component-report134.json; pending scheduling coverage is these
+actual slow/rapid fixtures, not all timings. Next PUBLIC98 then original delayed
+async result across reopened context/epoch. Ongoing conceal/reveal/hardware,
+process/reload/Unknown, host pressure/full workload/RSS and original full release
+gates remain open. Installed desktop, drafts and five foreign changes untouched.

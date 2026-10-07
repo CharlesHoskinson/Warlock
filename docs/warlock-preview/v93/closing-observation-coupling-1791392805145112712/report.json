@@ -1,0 +1,689 @@
+{
+  "passed": true,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v149/qa/native-controlled-1791392197405070173/report.json": "599ced40d044e62d011bd0c31e1522cc360e1603113c7a4f4f85a63bb4f7f22f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v152/qa/native-controlled-1791392639922210281/report.json": "457d569f6a110f0111e0e775591a9c78eeea05ca78137153e4e17ee200a18742",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v149/qa/native-controlled-1791392197405070173/private-evidence/controlled-host.log": "5e2674f68d6727a140b3d6af3b9b96f686b3832375d89005d41136fc3fe0efcf",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/native/controlled-preview-host.h": "2b30ccb8c441bcff74c85e85db8afadc5575ce102eff62f86a9120ec48bfc098",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/native/controlled-preview-host.h": "ba6606da177e71ac6dc0fd31e544bfd8df7afb926849fea015644f49ec921f10",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/spec/closing_observation_v3.qnt": "19cf90307600d42d4b6dd7c0bcc73aa38e72c619c173ce9957736c21a005695e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/spec/closing_observation_tests_v3.qnt": "e8220fba8b49929ba218e84162a9b081a3f0c6b73034ecc741bdbbcaf3249a71",
+    "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v93/couple_native152_closing_observation.py": "c5d284f252b3cfa7e59de658b20f123044f48d116072afb4d3af3574665d1a94"
+  },
+  "quint": {
+    "path": "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+    "sha256": "bd6e9400f6358a8a69d80eb636eb62f59f993039868a7be9719f76ba74191b4e"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "closing_observation_tests_v3.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "closing_observation_tests_v3.qnt",
+        "--main=closing_observation_tests_v3",
+        "--backend=typescript",
+        "--match=^(rapidLegacyCounterexample|stickyPendingObservation|heldReaderStillBlocks|emptyJobListIsNotRetirement)$",
+        "--seed=1520042",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v93/closing-observation-coupling-1791392805145112712/coupled-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "nativeObservations": {
+    "failedPhysicallyEmptyButSubjectRetained": {
+      "retainedInputs": 0,
+      "retainedInputBytes": 0,
+      "ticketUnnotified": false,
+      "postedTickets": 0,
+      "confirmations": 0,
+      "returnedEventsRetained": false,
+      "returnedEventBatches": 0,
+      "returnedEventBytes": 0,
+      "nativeEffectError": "",
+      "returnedBatchCapacity": 3195,
+      "returnedByteCapacity": 26173440,
+      "dispatchOutputReservation": 8192,
+      "transport": {
+        "nativeIssuedThrough": "4",
+        "deliveredThrough": "4",
+        "pending": 0,
+        "capacity": 1065
+      },
+      "privatePolicy": {
+        "models": [
+          {
+            "identity": "family:2",
+            "active": false,
+            "model": {
+              "scope": {
+                "binding": {
+                  "lifetime": "9668293460734771866",
+                  "session": "2",
+                  "frontend": "1"
+                },
+                "context": {
+                  "lifetime": "9668293460734771866",
+                  "incarnation": "2",
+                  "output": "1",
+                  "privacy": "1",
+                  "rendering": "2",
+                  "scene": "3",
+                  "content": "2"
+                },
+                "observation": "1",
+                "clock": "9668293460734771866",
+                "now": "356466878462392",
+                "present": true,
+                "sourceLive": true,
+                "locked": false,
+                "gpuReady": true
+              },
+              "demand": false,
+              "ready": true,
+              "nextRequest": "2",
+              "job": null,
+              "candidate": null,
+              "accepted": null,
+              "known": [],
+              "cancelling": [],
+              "retiring": [],
+              "state": "unavailable",
+              "image": null
+            }
+          }
+        ],
+        "commands": [],
+        "realm": {
+          "controlled": true,
+          "closing": true,
+          "closed": false,
+          "processed": "0",
+          "retained": 1,
+          "completed": 0,
+          "epoch": "1",
+          "ingress": {
+            "pending": 0,
+            "capacity": 1065,
+            "intents": []
+          },
+          "deferred": 0,
+          "deferredIntents": [],
+          "inputBlocked": false
+        },
+        "metadata": [
+          {
+            "identity": "family:2",
+            "title": "Client content",
+            "application": "Native client",
+            "revision": null,
+            "iconKind": "unavailable",
+            "hasIcon": false,
+            "visible": true
+          }
+        ],
+        "enrollment": [
+          {
+            "identity": "family:2",
+            "nativeScoped": true,
+            "minimized": null
+          }
+        ],
+        "feedback": [
+          {
+            "identity": "family:2",
+            "floor": "1",
+            "outcome": null,
+            "label": null,
+            "deadline": null
+          }
+        ],
+        "visuals": {
+          "visualProtocol": 1,
+          "kind": "native-preview-visual",
+          "binding": {
+            "lifetime": "9668293460734771866",
+            "session": "2",
+            "frontend": "1"
+          },
+          "receiverEpoch": "1",
+          "surface": {
+            "surfaceProtocol": 2,
+            "publication": "16",
+            "lease": "2",
+            "mode": "picker",
+            "status": "Connected",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"9668293460734771866\",\"session\":\"3\",\"frontend\":\"1\"}:3:control:opener",
+                "label": "Applications",
+                "ariaLabel": "Open applications",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "bar:group:application:GTK Application",
+                "domId": "group:{\"lifetime\":\"9668293460734771866\",\"session\":\"3\",\"frontend\":\"1\"}:1:3:application:GTK Application",
+                "label": "ELM-ACTIVATION-PEER",
+                "ariaLabel": "Minimize ELM-ACTIVATION-PEER",
+                "detail": "1",
+                "enabled": true
+              },
+              {
+                "id": "bar:group:application:warlock-child-probe",
+                "domId": "group:{\"lifetime\":\"9668293460734771866\",\"session\":\"3\",\"frontend\":\"1\"}:1:3:application:warlock-child-probe",
+                "label": "WARLOCK-CHILD-PROBE",
+                "ariaLabel": "Choose a window from WARLOCK-CHILD-PROBE",
+                "detail": "2",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "picker-close:{\"lifetime\":\"9668293460734771866\",\"session\":\"3\",\"frontend\":\"1\"}:1:3:2",
+                "label": "Close",
+                "ariaLabel": "Close window picker",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "family:2",
+                "domId": "picker:{\"lifetime\":\"9668293460734771866\",\"session\":\"3\",\"frontend\":\"1\"}:1:3:2:2",
+                "label": "Activate WARLOCK-CHILD-PROBE",
+                "ariaLabel": "Activate WARLOCK-CHILD-PROBE",
+                "detail": "Open",
+                "enabled": true
+              },
+              {
+                "id": "family:3",
+                "domId": "picker:{\"lifetime\":\"9668293460734771866\",\"session\":\"3\",\"frontend\":\"1\"}:1:3:2:3",
+                "label": "Activate WARLOCK-CHILD-PROBE",
+                "ariaLabel": "Activate WARLOCK-CHILD-PROBE",
+                "detail": "Open",
+                "enabled": true
+              }
+            ]
+          },
+          "previews": [
+            {
+              "identity": "control:close",
+              "visual": {
+                "kind": "hidden"
+              }
+            },
+            {
+              "identity": "family:2",
+              "visual": {
+                "kind": "hidden"
+              }
+            },
+            {
+              "identity": "family:3",
+              "visual": {
+                "kind": "hidden"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "failedOriginalResourceZero": [
+      {
+        "job": {
+          "binding": {
+            "lifetime": "9668293460734771866",
+            "session": "2",
+            "frontend": "1"
+          },
+          "context": {
+            "lifetime": "9668293460734771866",
+            "incarnation": "2",
+            "output": "1",
+            "privacy": "1",
+            "rendering": "2",
+            "scene": "3",
+            "content": "2"
+          },
+          "request": "1",
+          "origin": "1",
+          "clock": "9668293460734771866",
+          "deadline": "356468878462392"
+        },
+        "charge": "0",
+        "records": 0,
+        "mappedFDClosed": true,
+        "exportReleased": true,
+        "producerRetired": true,
+        "retirementPending": false
+      }
+    ],
+    "currentPendingOriginalOwnedJob": {
+      "retainedInputs": 0,
+      "retainedInputBytes": 0,
+      "ticketUnnotified": false,
+      "postedTickets": 0,
+      "confirmations": 0,
+      "returnedEventsRetained": false,
+      "returnedEventBatches": 0,
+      "returnedEventBytes": 0,
+      "nativeEffectError": "",
+      "returnedBatchCapacity": 3195,
+      "returnedByteCapacity": 26173440,
+      "dispatchOutputReservation": 8192,
+      "transport": {
+        "nativeIssuedThrough": "3",
+        "deliveredThrough": "3",
+        "pending": 0,
+        "capacity": 1065
+      },
+      "privatePolicy": {
+        "models": [
+          {
+            "identity": "family:2",
+            "active": false,
+            "model": {
+              "scope": {
+                "binding": {
+                  "lifetime": "11927339687443813296",
+                  "session": "2",
+                  "frontend": "1"
+                },
+                "context": {
+                  "lifetime": "11927339687443813296",
+                  "incarnation": "2",
+                  "output": "1",
+                  "privacy": "1",
+                  "rendering": "2",
+                  "scene": "3",
+                  "content": "2"
+                },
+                "observation": "1",
+                "clock": "11927339687443813296",
+                "now": "356909166030207",
+                "present": true,
+                "sourceLive": true,
+                "locked": false,
+                "gpuReady": true
+              },
+              "demand": false,
+              "ready": true,
+              "nextRequest": "2",
+              "job": null,
+              "candidate": null,
+              "accepted": null,
+              "known": [
+                {
+                  "binding": {
+                    "lifetime": "11927339687443813296",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "context": {
+                    "lifetime": "11927339687443813296",
+                    "incarnation": "2",
+                    "output": "1",
+                    "privacy": "1",
+                    "rendering": "2",
+                    "scene": "3",
+                    "content": "2"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "11927339687443813296",
+                  "deadline": "356911166030207"
+                }
+              ],
+              "cancelling": [],
+              "retiring": [
+                {
+                  "job": {
+                    "binding": {
+                      "lifetime": "11927339687443813296",
+                      "session": "2",
+                      "frontend": "1"
+                    },
+                    "context": {
+                      "lifetime": "11927339687443813296",
+                      "incarnation": "2",
+                      "output": "1",
+                      "privacy": "1",
+                      "rendering": "2",
+                      "scene": "3",
+                      "content": "2"
+                    },
+                    "request": "1",
+                    "origin": "1",
+                    "clock": "11927339687443813296",
+                    "deadline": "356911166030207"
+                  },
+                  "handle": "0000000000000000feef86a1305ee6c7aab27891301a091f0000000000000001",
+                  "owned": true,
+                  "signaled": true,
+                  "fidelity": "client",
+                  "coverage": [
+                    "client"
+                  ],
+                  "expires": "356914228280591"
+                }
+              ],
+              "state": "unavailable",
+              "image": null
+            }
+          }
+        ],
+        "commands": {
+          "previewProtocol": 3,
+          "kind": "preview-proposals",
+          "binding": {
+            "lifetime": "11927339687443813296",
+            "session": "2",
+            "frontend": "1"
+          },
+          "receiverEpoch": "1",
+          "entries": []
+        },
+        "realm": {
+          "controlled": true,
+          "closing": true,
+          "closed": false,
+          "processed": "0",
+          "retained": 1,
+          "completed": 0,
+          "epoch": "1",
+          "ingress": {
+            "pending": 0,
+            "capacity": 1065,
+            "intents": []
+          },
+          "deferred": 0,
+          "deferredIntents": [],
+          "inputBlocked": false
+        },
+        "metadata": [
+          {
+            "identity": "family:2",
+            "title": "Client content",
+            "application": "Native client",
+            "revision": null,
+            "iconKind": "unavailable",
+            "hasIcon": false,
+            "visible": true
+          }
+        ],
+        "enrollment": [
+          {
+            "identity": "family:2",
+            "nativeScoped": true,
+            "minimized": null
+          }
+        ],
+        "feedback": [
+          {
+            "identity": "family:2",
+            "floor": "1",
+            "outcome": null,
+            "label": null,
+            "deadline": null
+          }
+        ],
+        "visuals": {
+          "visualProtocol": 1,
+          "kind": "native-preview-visual",
+          "binding": {
+            "lifetime": "11927339687443813296",
+            "session": "2",
+            "frontend": "1"
+          },
+          "receiverEpoch": "1",
+          "surface": {
+            "surfaceProtocol": 2,
+            "publication": "16",
+            "lease": "2",
+            "mode": "picker",
+            "status": "Connected",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"11927339687443813296\",\"session\":\"3\",\"frontend\":\"1\"}:3:control:opener",
+                "label": "Applications",
+                "ariaLabel": "Open applications",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "bar:group:application:GTK Application",
+                "domId": "group:{\"lifetime\":\"11927339687443813296\",\"session\":\"3\",\"frontend\":\"1\"}:1:3:application:GTK Application",
+                "label": "ELM-ACTIVATION-PEER",
+                "ariaLabel": "Minimize ELM-ACTIVATION-PEER",
+                "detail": "1",
+                "enabled": true
+              },
+              {
+                "id": "bar:group:application:warlock-child-probe",
+                "domId": "group:{\"lifetime\":\"11927339687443813296\",\"session\":\"3\",\"frontend\":\"1\"}:1:3:application:warlock-child-probe",
+                "label": "WARLOCK-CHILD-PROBE",
+                "ariaLabel": "Choose a window from WARLOCK-CHILD-PROBE",
+                "detail": "2",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "picker-close:{\"lifetime\":\"11927339687443813296\",\"session\":\"3\",\"frontend\":\"1\"}:1:3:2",
+                "label": "Close",
+                "ariaLabel": "Close window picker",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "family:2",
+                "domId": "picker:{\"lifetime\":\"11927339687443813296\",\"session\":\"3\",\"frontend\":\"1\"}:1:3:2:2",
+                "label": "Activate WARLOCK-CHILD-PROBE",
+                "ariaLabel": "Activate WARLOCK-CHILD-PROBE",
+                "detail": "Open",
+                "enabled": true
+              },
+              {
+                "id": "family:3",
+                "domId": "picker:{\"lifetime\":\"11927339687443813296\",\"session\":\"3\",\"frontend\":\"1\"}:1:3:2:3",
+                "label": "Activate WARLOCK-CHILD-PROBE",
+                "ariaLabel": "Activate WARLOCK-CHILD-PROBE",
+                "detail": "Open",
+                "enabled": true
+              }
+            ]
+          },
+          "previews": [
+            {
+              "identity": "control:close",
+              "visual": {
+                "kind": "hidden"
+              }
+            },
+            {
+              "identity": "family:2",
+              "visual": {
+                "kind": "hidden"
+              }
+            },
+            {
+              "identity": "family:3",
+              "visual": {
+                "kind": "hidden"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "currentStrictOldRealmClosed": {
+      "retainedInputs": 0,
+      "retainedInputBytes": 0,
+      "ticketUnnotified": false,
+      "postedTickets": 0,
+      "confirmations": 0,
+      "returnedEventsRetained": false,
+      "returnedEventBatches": 0,
+      "returnedEventBytes": 0,
+      "nativeEffectError": "",
+      "returnedBatchCapacity": 3195,
+      "returnedByteCapacity": 26173440,
+      "dispatchOutputReservation": 8192,
+      "transport": {
+        "nativeIssuedThrough": "6",
+        "deliveredThrough": "6",
+        "pending": 0,
+        "capacity": 1065
+      },
+      "privatePolicy": {
+        "models": [],
+        "commands": [],
+        "realm": {
+          "controlled": true,
+          "closing": true,
+          "closed": true,
+          "processed": "1",
+          "retained": 0,
+          "completed": 1,
+          "epoch": "1",
+          "ingress": {
+            "pending": 0,
+            "capacity": 1065,
+            "intents": []
+          },
+          "deferred": 0,
+          "deferredIntents": [],
+          "inputBlocked": false
+        },
+        "metadata": [],
+        "enrollment": [],
+        "feedback": [],
+        "visuals": {
+          "visualProtocol": 1,
+          "kind": "native-preview-visual",
+          "binding": {
+            "lifetime": "11927339687443813296",
+            "session": "2",
+            "frontend": "1"
+          },
+          "receiverEpoch": "1",
+          "surface": {
+            "surfaceProtocol": 2,
+            "publication": "16",
+            "lease": "2",
+            "mode": "picker",
+            "status": "Connected",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"11927339687443813296\",\"session\":\"3\",\"frontend\":\"1\"}:3:control:opener",
+                "label": "Applications",
+                "ariaLabel": "Open applications",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "bar:group:application:GTK Application",
+                "domId": "group:{\"lifetime\":\"11927339687443813296\",\"session\":\"3\",\"frontend\":\"1\"}:1:3:application:GTK Application",
+                "label": "ELM-ACTIVATION-PEER",
+                "ariaLabel": "Minimize ELM-ACTIVATION-PEER",
+                "detail": "1",
+                "enabled": true
+              },
+              {
+                "id": "bar:group:application:warlock-child-probe",
+                "domId": "group:{\"lifetime\":\"11927339687443813296\",\"session\":\"3\",\"frontend\":\"1\"}:1:3:application:warlock-child-probe",
+                "label": "WARLOCK-CHILD-PROBE",
+                "ariaLabel": "Choose a window from WARLOCK-CHILD-PROBE",
+                "detail": "2",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "picker-close:{\"lifetime\":\"11927339687443813296\",\"session\":\"3\",\"frontend\":\"1\"}:1:3:2",
+                "label": "Close",
+                "ariaLabel": "Close window picker",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "family:2",
+                "domId": "picker:{\"lifetime\":\"11927339687443813296\",\"session\":\"3\",\"frontend\":\"1\"}:1:3:2:2",
+                "label": "Activate WARLOCK-CHILD-PROBE",
+                "ariaLabel": "Activate WARLOCK-CHILD-PROBE",
+                "detail": "Open",
+                "enabled": true
+              },
+              {
+                "id": "family:3",
+                "domId": "picker:{\"lifetime\":\"11927339687443813296\",\"session\":\"3\",\"frontend\":\"1\"}:1:3:2:3",
+                "label": "Activate WARLOCK-CHILD-PROBE",
+                "ariaLabel": "Activate WARLOCK-CHILD-PROBE",
+                "detail": "Open",
+                "enabled": true
+              }
+            ]
+          },
+          "previews": [
+            {
+              "identity": "control:close",
+              "visual": {
+                "kind": "hidden"
+              }
+            },
+            {
+              "identity": "family:2",
+              "visual": {
+                "kind": "hidden"
+              }
+            },
+            {
+              "identity": "family:3",
+              "visual": {
+                "kind": "hidden"
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "selected": [
+    "rapidLegacyCounterexample",
+    "stickyPendingObservation",
+    "heldReaderStillBlocks",
+    "emptyJobListIsNotRetirement"
+  ],
+  "scope": "Four producer-scheduling model cases coupled to actual unchanged-oracle Native149 deadline failure and Native15251/17 success, original resource-zero/subject-retained state, current real-reader/owned Retiring job/new popup and strict independent native close. Exact source comparison limits production fix to two sticky old-realm producer gates. dutiesSettled describes independent physical/journal/confirmation obligations BEFORE subject detachment, not Native owner empty or retirement. No complete implementation refinement, fair-scheduling proof, all rapid timings, ongoing physical reveal/hardware or full release acceptance.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "coupledQuintChecks": 4,
+  "actualFailureAndFixQualified": true,
+  "artifacts": {
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "coupled-rapidLegacyCounterexample-0.itf.json": "7582c67ecc94fecdc1701404f028bf7adb4b6143b98ed3364214c208ed86c576",
+    "coupled-stickyPendingObservation-1.itf.json": "9b6727025b6ca8490d550b9d3997855c9bb185d4e15fe9057c2560759e97643d",
+    "coupled-heldReaderStillBlocks-2.itf.json": "273d4653665f9429c8c8bea3a65631b78e981d17794da0b649abed666aebd0f6",
+    "coupled-emptyJobListIsNotRetirement-3.itf.json": "76713c2769476445a86383c8b9daff1b83245f35a7ed34d2b83da8dd00cee070",
+    "selected.stdout": "db896b2b3c24c48bbcfc85afc4a203edaff5504f7958cbef52b91095606bd6a6",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/closing_observation_v3.qnt": "19cf90307600d42d4b6dd7c0bcc73aa38e72c619c173ce9957736c21a005695e",
+    "inputs/closing_observation_tests_v3.qnt": "e8220fba8b49929ba218e84162a9b081a3f0c6b73034ecc741bdbbcaf3249a71"
+  }
+}

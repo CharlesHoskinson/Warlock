@@ -1,0 +1,1024 @@
+An example execution:
+
+[State 0]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 0,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history: [],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 1]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 0,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history: [],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 2]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 0,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history: [],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 3]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history: ["Admit"],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 4]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history: ["Admit"],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 5]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history: ["Admit"],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 6]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history: ["Admit", "Initialize"],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 7]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history: ["Admit", "Initialize", "Apply"],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 8]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history: ["Admit", "Initialize", "Apply", "Initialize"],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 9]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history: ["Admit", "Initialize", "Apply", "Initialize"],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 10]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history: ["Admit", "Initialize", "Apply", "Initialize"],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 11]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history: ["Admit", "Initialize", "Apply", "Initialize"],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 12]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history: ["Admit", "Initialize", "Apply", "Initialize"],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 13]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 0,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history: ["Admit", "Initialize", "Apply", "Initialize", "OpenIntent"],
+      initialized: false,
+      lease: 1,
+      native: false,
+      policy: 1,
+      popup: true,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 14]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 0,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history: ["Admit", "Initialize", "Apply", "Initialize", "OpenIntent"],
+      initialized: false,
+      lease: 1,
+      native: false,
+      policy: 1,
+      popup: true,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 15]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 0,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history: ["Admit", "Initialize", "Apply", "Initialize", "OpenIntent"],
+      initialized: false,
+      lease: 1,
+      native: false,
+      policy: 1,
+      popup: true,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 16]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 0,
+      context: 1,
+      current: false,
+      dom: true,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Admit",
+          "Initialize",
+          "Apply",
+          "Initialize",
+          "OpenIntent",
+          "DOMReady"
+        ],
+      initialized: false,
+      lease: 1,
+      native: false,
+      policy: 1,
+      popup: true,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 17]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 0,
+      context: 1,
+      current: false,
+      dom: true,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Admit",
+          "Initialize",
+          "Apply",
+          "Initialize",
+          "OpenIntent",
+          "DOMReady"
+        ],
+      initialized: false,
+      lease: 1,
+      native: false,
+      policy: 1,
+      popup: true,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 18]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 0,
+      context: 1,
+      current: false,
+      dom: true,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Admit",
+          "Initialize",
+          "Apply",
+          "Initialize",
+          "OpenIntent",
+          "DOMReady"
+        ],
+      initialized: false,
+      lease: 1,
+      native: false,
+      policy: 1,
+      popup: true,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 19]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 0,
+      context: 1,
+      current: false,
+      dom: true,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Admit",
+          "Initialize",
+          "Apply",
+          "Initialize",
+          "OpenIntent",
+          "DOMReady"
+        ],
+      initialized: false,
+      lease: 1,
+      native: false,
+      policy: 1,
+      popup: true,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 20]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 0,
+      context: 1,
+      current: false,
+      dom: true,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Admit",
+          "Initialize",
+          "Apply",
+          "Initialize",
+          "OpenIntent",
+          "DOMReady"
+        ],
+      initialized: false,
+      lease: 1,
+      native: false,
+      policy: 1,
+      popup: true,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 21]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 0,
+      context: 1,
+      current: false,
+      dom: true,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Admit",
+          "Initialize",
+          "Apply",
+          "Initialize",
+          "OpenIntent",
+          "DOMReady"
+        ],
+      initialized: false,
+      lease: 1,
+      native: false,
+      policy: 1,
+      popup: true,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 22]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 0,
+      context: 1,
+      current: false,
+      dom: true,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Admit",
+          "Initialize",
+          "Apply",
+          "Initialize",
+          "OpenIntent",
+          "DOMReady"
+        ],
+      initialized: false,
+      lease: 1,
+      native: false,
+      policy: 1,
+      popup: true,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 23]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 0,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Admit",
+          "Initialize",
+          "Apply",
+          "Initialize",
+          "OpenIntent",
+          "DOMReady",
+          "ClosePopup"
+        ],
+      initialized: false,
+      lease: 1,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 24]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 0,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Admit",
+          "Initialize",
+          "Apply",
+          "Initialize",
+          "OpenIntent",
+          "DOMReady",
+          "ClosePopup",
+          "ClosePopup"
+        ],
+      initialized: false,
+      lease: 1,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 25]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 0,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Admit",
+          "Initialize",
+          "Apply",
+          "Initialize",
+          "OpenIntent",
+          "DOMReady",
+          "ClosePopup",
+          "ClosePopup"
+        ],
+      initialized: false,
+      lease: 1,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 26]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 0,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Admit",
+          "Initialize",
+          "Apply",
+          "Initialize",
+          "OpenIntent",
+          "DOMReady",
+          "ClosePopup",
+          "ClosePopup"
+        ],
+      initialized: false,
+      lease: 1,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 27]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 0,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Admit",
+          "Initialize",
+          "Apply",
+          "Initialize",
+          "OpenIntent",
+          "DOMReady",
+          "ClosePopup",
+          "ClosePopup"
+        ],
+      initialized: false,
+      lease: 1,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 28]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 0,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Admit",
+          "Initialize",
+          "Apply",
+          "Initialize",
+          "OpenIntent",
+          "DOMReady",
+          "ClosePopup",
+          "ClosePopup"
+        ],
+      initialized: false,
+      lease: 1,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 29]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 0,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Admit",
+          "Initialize",
+          "Apply",
+          "Initialize",
+          "OpenIntent",
+          "DOMReady",
+          "ClosePopup",
+          "ClosePopup",
+          "OpenIntent"
+        ],
+      initialized: false,
+      lease: 2,
+      native: false,
+      policy: 1,
+      popup: true,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 30]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 0,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Admit",
+          "Initialize",
+          "Apply",
+          "Initialize",
+          "OpenIntent",
+          "DOMReady",
+          "ClosePopup",
+          "ClosePopup",
+          "OpenIntent"
+        ],
+      initialized: false,
+      lease: 2,
+      native: false,
+      policy: 1,
+      popup: true,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 31]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 0,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Admit",
+          "Initialize",
+          "Apply",
+          "Initialize",
+          "OpenIntent",
+          "DOMReady",
+          "ClosePopup",
+          "ClosePopup",
+          "OpenIntent"
+        ],
+      initialized: false,
+      lease: 2,
+      native: false,
+      policy: 1,
+      popup: true,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 32]
+{
+  closes: 0,
+  probed: false,
+  reader: Absent,
+  s:
+    {
+      closing: false,
+      code: 0,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Admit",
+          "Initialize",
+          "Apply",
+          "Initialize",
+          "OpenIntent",
+          "DOMReady",
+          "ClosePopup",
+          "ClosePopup",
+          "OpenIntent",
+          "OpenIntent"
+        ],
+      initialized: false,
+      lease: 3,
+      native: false,
+      policy: 1,
+      popup: true,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[ok] No violation found (256ms at 781 traces/second).
+Trace length statistics: max=33, min=33, average=33.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

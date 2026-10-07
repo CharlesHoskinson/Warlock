@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "sourceHeld": true,
+  "passed": false,
+  "cpuBuildPassed": true,
+  "fullBuildCommands": 119,
+  "actualNormalRouteRegressionPassed": true,
+  "actualDelayedPendingIntentQualified": true,
+  "actualPendingIntentReopenQualified": false,
+  "actualRapidPointerCloseReopenQualified": false,
+  "rapidOriginalDeadlineFailed": true,
+  "privateSessionCleanupPassed": true,
+  "nativeGrantResets": 0,
+  "singlePreviewPolicy": true,
+  "readerQuintScenarios": 6,
+  "readerInvariantSamples": 200,
+  "readerCoupledStages": 8,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "GUI133 adds disabled-by-default QA-only real original Native-authorized URI/GIO reader hold/probe/one release, no original runtime policy/issuer/producer changes. Full119/original Native14729/13 normal passes. Later pending popup after detachment observations have already started passes Native14851/18 plus private cleanup: owned original Retiring job/denied held-fresh reads/one reader close/same later GTK popup/fresh same-policy epoch/source pixels/output. Reader Quint6named/200samples and8 coupled stages pass separately; three earlier model syntax/type failures remain held. Actual rapid Native149 uses same source and 10/8/8/10ms input phases; original6s old-epoch drain fails despite actual reader release and original known/retiring jobs becoming empty. Old closing realm retains its subject and never gets detached because producer scheduling depends on the later popup readiness. Host exits1 with original strict retirement guard; all12 other owned processes normal/private cleanup pass. Broad pending-intent/rapid lifecycle is not accepted. Preserve this exact counterexample and every oracle/deadline. Fresh GUI134 fixes only producer scope by preserving sticky closing realm observation/poll stamps independent of new popup intent. No native grant or policy reset/physical gate weakening; installed desktop/drafts untouched.",
+  "reports": {
+    "build": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/build-1791391719614762189/report.json",
+      "sha256": "b7f564be24f3c8b26e3bd595be7d3d59dcee78322ba9d613f31ea1c48376d35d"
+    },
+    "native147": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v147/qa/native-controlled-1791392013985692477/report.json",
+      "sha256": "380cf8d449b74bb35edfa3f09fe802ace381df855d5ca3d1e02b3e174775ff35",
+      "passed": true
+    },
+    "native148": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v148/qa/native-controlled-1791392056930297973/report.json",
+      "sha256": "ecd2e0664cfb9cca21ce0f7cdfaafe7447818d5196258aab4f37c602c7a9ec89",
+      "passed": true
+    },
+    "native149": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v149/qa/native-controlled-1791392197405070173/report.json",
+      "sha256": "599ced40d044e62d011bd0c31e1522cc360e1603113c7a4f4f85a63bb4f7f22f",
+      "passed": false
+    },
+    "readerModel": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-v4-1791391901913726501/report.json",
+      "sha256": "550abb9f4fd91c11b14b51996e611ba8e0c8cff8fd0a7cdeeea07b5fee7fee27"
+    },
+    "readerCoupling": {
+      "path": "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v93/retained-reader-coupling-1791392276670612231/report.json",
+      "sha256": "6c8a9dc3e69e82294cc86d43c6cafa87a88efa964b2440fc924d455c64d6f287"
+    }
+  }
+}

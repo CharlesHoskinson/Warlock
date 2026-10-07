@@ -1,0 +1,93 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "sourceHeld": true,
+  "passed": true,
+  "cpuBuildPassed": true,
+  "fullBuildCommands": 119,
+  "actualGUIRealmReopenQualified": true,
+  "actualPendingIntentReopenQualified": true,
+  "actualRapidPointerCloseReopenQualified": true,
+  "stickyClosingRealmProducerQualified": true,
+  "nativeRealmRebindingActivated": true,
+  "actualNormalGUIReopenCycles": 2,
+  "singlePreviewPolicy": true,
+  "nativeGrantResets": 0,
+  "navigationResets": 0,
+  "snapshotOrdinalResets": 0,
+  "normalControlledHostClosureQualified": true,
+  "privateSessionCleanupPassed": true,
+  "actualStaleSnapshotCallbackQualified": true,
+  "actualRetainedResultConsumedOnce": true,
+  "actualStaleSnapshotArtifactRejected": true,
+  "normalRouteNativeChecks": 29,
+  "normalRouteNormalOwnedExits": 13,
+  "pendingReaderNativeChecks": 51,
+  "pendingReaderNormalOwnedExits": 18,
+  "rapidPendingReaderNativeChecks": 51,
+  "rapidPendingReaderNormalOwnedExits": 17,
+  "delayedResultNativeChecks": 18,
+  "delayedResultNormalOwnedExits": 8,
+  "readerQuintScenarios": 6,
+  "readerInvariantSamples": 200,
+  "readerCoupledStages": 8,
+  "closingProducerQuintScenarios": 8,
+  "closingProducerInvariantSamples": 200,
+  "closingProducerCoupledChecks": 4,
+  "physicalConcealmentQualified": false,
+  "physicalRevealQualified": false,
+  "hardwarePresentationQualified": false,
+  "fullWorkloadProgressQualified": false,
+  "measuredRSSQualified": false,
+  "reloadRecoveryQualified": false,
+  "directPermanentRetirementQualified": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "GUI134 fixes the actual Native149 rapid pending-intent deadlock with two sticky old-realm producer guards only: poll original closing scope with no current presentation stamps and continue original detachment observations even when a later popup is ready. Native issuer/single persistent Elm policy/physical/journal/independent confirmation/router/readers/deadlines unchanged. Disabled-by-default QA-only original URI/GIO reader from held133 keeps a real owned Retiring job alive across old popup closure/later actual GTK configuration; old held/fresh reads revoke, one original reader close precedes independent strict Native close, then the retired renderer is replaced inside the same later GTK popup lease/grab and fresh DOM admission creates later same-binding epoch/pure fixed-grant renderer. Original failed rapid14933/12 normal others/host1/clean private teardown and original6s counterexample remain held. Same byte-identical rapid oracle on current Native152 passes51/17 normal exits/private cleanup, two current source URI/red19200 images, monotonic epoch/navigation/lease/request1->2, current opacity0 closed-curtain output and both strict closes. Slower Native15151/18, unchanged Native15029/13 normal and delayed Native15318/8 real-result regressions/cleanups pass separately. Current full119, reader Quint6named200samples/8 coupled stages and closing producer Quint8named200samples/4 cases coupled to actual failed/passed Native traces/source gates pass. Pending-intent/rapid coverage is these actual fixture schedules, not all timings. Broader old-context async/process/reload/Unknown, ongoing conceal/reveal/hardware, pressure/workload/RSS, original full S09/release remain open; no installed desktop/draft changes or grant reset.",
+  "reports": {
+    "build": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/build-1791392409470546333/report.json",
+      "sha256": "305b06704754ea5eba5dec2c8d513794b71a0a2344a3042a4a06e8c7e330bb7e"
+    },
+    "normalNative": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v150/qa/native-controlled-1791392679458882510/report.json",
+      "sha256": "786bc3edcca64f910c5d7322eb29d446e9e489d0558e213c824f3f20b92ef3b2"
+    },
+    "pendingReaderNative": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v151/qa/native-controlled-1791392731762045984/report.json",
+      "sha256": "7a5439dd7486f1db1244a747cdca852fb24be1d48e149143185ab309a04e8e9f"
+    },
+    "rapidPendingReaderNative": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v152/qa/native-controlled-1791392639922210281/report.json",
+      "sha256": "457d569f6a110f0111e0e775591a9c78eeea05ca78137153e4e17ee200a18742"
+    },
+    "delayedSnapshotNative": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v153/qa/native-controlled-1791392812949516630/report.json",
+      "sha256": "a548235a0f0b7195388d3c3d8352c3e68a451f9e967b3c345f12f1cd35aa5a03"
+    },
+    "readerQuint": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/controlled-reader-lifetime-model-v4-1791392697280168984/report.json",
+      "sha256": "03200ca20a6eefc8e5bea5602bca10256126edefec6e877ce3b5d8426c0439f7"
+    },
+    "closingProducerQuint": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v3-1791392607224943076/report.json",
+      "sha256": "3d4213199472bb5c0d476b15f5cc500793642f2d76d3cf4d43dd2f748b2480dc"
+    },
+    "readerCoupling": {
+      "path": "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v93/retained-reader-coupling-v134-1791392814623536018/report.json",
+      "sha256": "3c4bb5eef31c13fce6123e6dc685433be44ef403c7b020ad5dd156842c6b6b91"
+    },
+    "closingProducerCoupling": {
+      "path": "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v93/closing-observation-coupling-1791392805145112712/report.json",
+      "sha256": "527bad452180abee0826cee6355e05918f8c7c59dcf7d7c447a1862120cdac47"
+    }
+  },
+  "heldFailedParentManifest": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/component-manifest.json",
+    "sha256": "9abf4b236508d9aedc0a907ff19aedff7493fe2ffe01205a16fb85f33426388f"
+  },
+  "heldAcceptedFoundationManifest": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v132/component-manifest.json",
+    "sha256": "75adcf44ff10ac5fa75e617e8393716983f53fbea63561e84f717fc4302a205e"
+  }
+}

@@ -1,0 +1,519 @@
+
+ Error [QNT013]: import ... from './closing_observation': could not load
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:2:2
+  2:  import closing_observation_v2.* from "./closing_observation"
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT405]: Module 'closing_observation_v2' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:2:2
+  2:  import closing_observation_v2.* from "./closing_observation"
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'safety' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:3:47
+  3:  action check(ok:bool):bool=all{assert(ok and safety),s'=s}
+                                                   ^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:3:55
+  3:  action check(ok:bool):bool=all{assert(ok and safety),s'=s}
+                                                           ^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:3:58
+  3:  action check(ok:bool):bool=all{assert(ok and safety),s'=s}
+                                                              ^
+
+
+ Error [QNT404]: Name 'release' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:4:17
+  4:  action drained=release.then(physicalDone).then(independentDrain)
+                     ^^^^^^^
+
+
+ Error [QNT404]: Name 'physicalDone' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:4:30
+  4:  action drained=release.then(physicalDone).then(independentDrain)
+                                  ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'independentDrain' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:4:49
+  4:  action drained=release.then(physicalDone).then(independentDrain)
+                                                     ^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:5:32
+  5:  run rapidLegacyCounterexample=init.then(close).then(reopen).then(drained).then(pulse(false)).then(pulse(false)).then(check(s.dutiesSettled and s.closing and not(s.detached) and not(s.observed) and s.pollStamp==1))
+                                    ^^^^
+
+
+ Error [QNT404]: Name 'close' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:5:42
+  5:  run rapidLegacyCounterexample=init.then(close).then(reopen).then(drained).then(pulse(false)).then(pulse(false)).then(check(s.dutiesSettled and s.closing and not(s.detached) and not(s.observed) and s.pollStamp==1))
+                                              ^^^^^
+
+
+ Error [QNT404]: Name 'reopen' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:5:54
+  5:  run rapidLegacyCounterexample=init.then(close).then(reopen).then(drained).then(pulse(false)).then(pulse(false)).then(check(s.dutiesSettled and s.closing and not(s.detached) and not(s.observed) and s.pollStamp==1))
+                                                          ^^^^^^
+
+
+ Error [QNT404]: Name 'pulse' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:5:81
+  5:  run rapidLegacyCounterexample=init.then(close).then(reopen).then(drained).then(pulse(false)).then(pulse(false)).then(check(s.dutiesSettled and s.closing and not(s.detached) and not(s.observed) and s.pollStamp==1))
+                                                                                     ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'pulse' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:5:100
+  5:  run rapidLegacyCounterexample=init.then(close).then(reopen).then(drained).then(pulse(false)).then(pulse(false)).then(check(s.dutiesSettled and s.closing and not(s.detached) and not(s.observed) and s.pollStamp==1))
+                                                                                                        ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:5:125
+  5:  run rapidLegacyCounterexample=init.then(close).then(reopen).then(drained).then(pulse(false)).then(pulse(false)).then(check(s.dutiesSettled and s.closing and not(s.detached) and not(s.observed) and s.pollStamp==1))
+                                                                                                                                 ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:5:145
+  5:  run rapidLegacyCounterexample=init.then(close).then(reopen).then(drained).then(pulse(false)).then(pulse(false)).then(check(s.dutiesSettled and s.closing and not(s.detached) and not(s.observed) and s.pollStamp==1))
+                                                                                                                                                     ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:5:163
+  5:  run rapidLegacyCounterexample=init.then(close).then(reopen).then(drained).then(pulse(false)).then(pulse(false)).then(check(s.dutiesSettled and s.closing and not(s.detached) and not(s.observed) and s.pollStamp==1))
+                                                                                                                                                                       ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:5:183
+  5:  run rapidLegacyCounterexample=init.then(close).then(reopen).then(drained).then(pulse(false)).then(pulse(false)).then(check(s.dutiesSettled and s.closing and not(s.detached) and not(s.observed) and s.pollStamp==1))
+                                                                                                                                                                                           ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:5:199
+  5:  run rapidLegacyCounterexample=init.then(close).then(reopen).then(drained).then(pulse(false)).then(pulse(false)).then(check(s.dutiesSettled and s.closing and not(s.detached) and not(s.observed) and s.pollStamp==1))
+                                                                                                                                                                                                           ^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:6:31
+  6:  run stickyPendingObservation=init.then(close).then(reopen).then(drained).then(pulse(true)).then(check(s.detached and s.observed and s.pollStamp==0))
+                                   ^^^^
+
+
+ Error [QNT404]: Name 'close' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:6:41
+  6:  run stickyPendingObservation=init.then(close).then(reopen).then(drained).then(pulse(true)).then(check(s.detached and s.observed and s.pollStamp==0))
+                                             ^^^^^
+
+
+ Error [QNT404]: Name 'reopen' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:6:53
+  6:  run stickyPendingObservation=init.then(close).then(reopen).then(drained).then(pulse(true)).then(check(s.detached and s.observed and s.pollStamp==0))
+                                                         ^^^^^^
+
+
+ Error [QNT404]: Name 'pulse' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:6:80
+  6:  run stickyPendingObservation=init.then(close).then(reopen).then(drained).then(pulse(true)).then(check(s.detached and s.observed and s.pollStamp==0))
+                                                                                    ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:6:104
+  6:  run stickyPendingObservation=init.then(close).then(reopen).then(drained).then(pulse(true)).then(check(s.detached and s.observed and s.pollStamp==0))
+                                                                                                            ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:6:119
+  6:  run stickyPendingObservation=init.then(close).then(reopen).then(drained).then(pulse(true)).then(check(s.detached and s.observed and s.pollStamp==0))
+                                                                                                                           ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:6:134
+  6:  run stickyPendingObservation=init.then(close).then(reopen).then(drained).then(pulse(true)).then(check(s.detached and s.observed and s.pollStamp==0))
+                                                                                                                                          ^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:7:37
+  7:  run originalClosedPopupObservation=init.then(close).then(drained).then(pulse(false)).then(check(s.detached and s.pollStamp==0))
+                                         ^^^^
+
+
+ Error [QNT404]: Name 'close' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:7:47
+  7:  run originalClosedPopupObservation=init.then(close).then(drained).then(pulse(false)).then(check(s.detached and s.pollStamp==0))
+                                                   ^^^^^
+
+
+ Error [QNT404]: Name 'pulse' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:7:73
+  7:  run originalClosedPopupObservation=init.then(close).then(drained).then(pulse(false)).then(check(s.detached and s.pollStamp==0))
+                                                                             ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:7:98
+  7:  run originalClosedPopupObservation=init.then(close).then(drained).then(pulse(false)).then(check(s.detached and s.pollStamp==0))
+                                                                                                      ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:7:113
+  7:  run originalClosedPopupObservation=init.then(close).then(drained).then(pulse(false)).then(check(s.detached and s.pollStamp==0))
+                                                                                                                     ^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:8:28
+  8:  run heldReaderStillBlocks=init.then(close).then(reopen).then(physicalDone).then(independentDrain).then(pulse(true)).then(check(s.reader and s.jobs and not(s.dutiesSettled) and not(s.detached)))
+                                ^^^^
+
+
+ Error [QNT404]: Name 'close' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:8:38
+  8:  run heldReaderStillBlocks=init.then(close).then(reopen).then(physicalDone).then(independentDrain).then(pulse(true)).then(check(s.reader and s.jobs and not(s.dutiesSettled) and not(s.detached)))
+                                          ^^^^^
+
+
+ Error [QNT404]: Name 'reopen' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:8:50
+  8:  run heldReaderStillBlocks=init.then(close).then(reopen).then(physicalDone).then(independentDrain).then(pulse(true)).then(check(s.reader and s.jobs and not(s.dutiesSettled) and not(s.detached)))
+                                                      ^^^^^^
+
+
+ Error [QNT404]: Name 'physicalDone' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:8:63
+  8:  run heldReaderStillBlocks=init.then(close).then(reopen).then(physicalDone).then(independentDrain).then(pulse(true)).then(check(s.reader and s.jobs and not(s.dutiesSettled) and not(s.detached)))
+                                                                   ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'independentDrain' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:8:82
+  8:  run heldReaderStillBlocks=init.then(close).then(reopen).then(physicalDone).then(independentDrain).then(pulse(true)).then(check(s.reader and s.jobs and not(s.dutiesSettled) and not(s.detached)))
+                                                                                      ^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'pulse' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:8:105
+  8:  run heldReaderStillBlocks=init.then(close).then(reopen).then(physicalDone).then(independentDrain).then(pulse(true)).then(check(s.reader and s.jobs and not(s.dutiesSettled) and not(s.detached)))
+                                                                                                             ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:8:129
+  8:  run heldReaderStillBlocks=init.then(close).then(reopen).then(physicalDone).then(independentDrain).then(pulse(true)).then(check(s.reader and s.jobs and not(s.dutiesSettled) and not(s.detached)))
+                                                                                                                                     ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:8:142
+  8:  run heldReaderStillBlocks=init.then(close).then(reopen).then(physicalDone).then(independentDrain).then(pulse(true)).then(check(s.reader and s.jobs and not(s.dutiesSettled) and not(s.detached)))
+                                                                                                                                                  ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:8:157
+  8:  run heldReaderStillBlocks=init.then(close).then(reopen).then(physicalDone).then(independentDrain).then(pulse(true)).then(check(s.reader and s.jobs and not(s.dutiesSettled) and not(s.detached)))
+                                                                                                                                                                 ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:8:182
+  8:  run heldReaderStillBlocks=init.then(close).then(reopen).then(physicalDone).then(independentDrain).then(pulse(true)).then(check(s.reader and s.jobs and not(s.dutiesSettled) and not(s.detached)))
+                                                                                                                                                                                          ^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:9:39
+  9:  run readerCloseIsNotNativeSettlement=init.then(close).then(reopen).then(release).then(pulse(true)).then(check(not(s.reader) and s.jobs and not(s.dutiesSettled) and not(s.detached)))
+                                           ^^^^
+
+
+ Error [QNT404]: Name 'close' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:9:49
+  9:  run readerCloseIsNotNativeSettlement=init.then(close).then(reopen).then(release).then(pulse(true)).then(check(not(s.reader) and s.jobs and not(s.dutiesSettled) and not(s.detached)))
+                                                     ^^^^^
+
+
+ Error [QNT404]: Name 'reopen' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:9:61
+  9:  run readerCloseIsNotNativeSettlement=init.then(close).then(reopen).then(release).then(pulse(true)).then(check(not(s.reader) and s.jobs and not(s.dutiesSettled) and not(s.detached)))
+                                                                 ^^^^^^
+
+
+ Error [QNT404]: Name 'release' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:9:74
+  9:  run readerCloseIsNotNativeSettlement=init.then(close).then(reopen).then(release).then(pulse(true)).then(check(not(s.reader) and s.jobs and not(s.dutiesSettled) and not(s.detached)))
+                                                                              ^^^^^^^
+
+
+ Error [QNT404]: Name 'pulse' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:9:88
+  9:  run readerCloseIsNotNativeSettlement=init.then(close).then(reopen).then(release).then(pulse(true)).then(check(not(s.reader) and s.jobs and not(s.dutiesSettled) and not(s.detached)))
+                                                                                            ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:9:116
+  9:  run readerCloseIsNotNativeSettlement=init.then(close).then(reopen).then(release).then(pulse(true)).then(check(not(s.reader) and s.jobs and not(s.dutiesSettled) and not(s.detached)))
+                                                                                                                        ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:9:130
+  9:  run readerCloseIsNotNativeSettlement=init.then(close).then(reopen).then(release).then(pulse(true)).then(check(not(s.reader) and s.jobs and not(s.dutiesSettled) and not(s.detached)))
+                                                                                                                                      ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:9:145
+  9:  run readerCloseIsNotNativeSettlement=init.then(close).then(reopen).then(release).then(pulse(true)).then(check(not(s.reader) and s.jobs and not(s.dutiesSettled) and not(s.detached)))
+                                                                                                                                                     ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:9:170
+  9:  run readerCloseIsNotNativeSettlement=init.then(close).then(reopen).then(release).then(pulse(true)).then(check(not(s.reader) and s.jobs and not(s.dutiesSettled) and not(s.detached)))
+                                                                                                                                                                              ^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:10:34
+  10:  run emptyJobListIsNotRetirement=init.then(close).then(reopen).then(release).then(physicalDone).then(pulse(true)).then(check(not(s.jobs) and not(s.dutiesSettled) and not(s.detached)))
+                                       ^^^^
+
+
+ Error [QNT404]: Name 'close' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:10:44
+  10:  run emptyJobListIsNotRetirement=init.then(close).then(reopen).then(release).then(physicalDone).then(pulse(true)).then(check(not(s.jobs) and not(s.dutiesSettled) and not(s.detached)))
+                                                 ^^^^^
+
+
+ Error [QNT404]: Name 'reopen' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:10:56
+  10:  run emptyJobListIsNotRetirement=init.then(close).then(reopen).then(release).then(physicalDone).then(pulse(true)).then(check(not(s.jobs) and not(s.dutiesSettled) and not(s.detached)))
+                                                             ^^^^^^
+
+
+ Error [QNT404]: Name 'release' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:10:69
+  10:  run emptyJobListIsNotRetirement=init.then(close).then(reopen).then(release).then(physicalDone).then(pulse(true)).then(check(not(s.jobs) and not(s.dutiesSettled) and not(s.detached)))
+                                                                          ^^^^^^^
+
+
+ Error [QNT404]: Name 'physicalDone' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:10:83
+  10:  run emptyJobListIsNotRetirement=init.then(close).then(reopen).then(release).then(physicalDone).then(pulse(true)).then(check(not(s.jobs) and not(s.dutiesSettled) and not(s.detached)))
+                                                                                        ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'pulse' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:10:102
+  10:  run emptyJobListIsNotRetirement=init.then(close).then(reopen).then(release).then(physicalDone).then(pulse(true)).then(check(not(s.jobs) and not(s.dutiesSettled) and not(s.detached)))
+                                                                                                           ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:10:130
+  10:  run emptyJobListIsNotRetirement=init.then(close).then(reopen).then(release).then(physicalDone).then(pulse(true)).then(check(not(s.jobs) and not(s.dutiesSettled) and not(s.detached)))
+                                                                                                                                       ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:10:146
+  10:  run emptyJobListIsNotRetirement=init.then(close).then(reopen).then(release).then(physicalDone).then(pulse(true)).then(check(not(s.jobs) and not(s.dutiesSettled) and not(s.detached)))
+                                                                                                                                                       ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:10:171
+  10:  run emptyJobListIsNotRetirement=init.then(close).then(reopen).then(release).then(physicalDone).then(pulse(true)).then(check(not(s.jobs) and not(s.dutiesSettled) and not(s.detached)))
+                                                                                                                                                                                ^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:11:31
+  11:  run unknownKeepsOriginalDuty=init.then(close).then(reopen).then(fault).then(drained).then(pulse(true)).then(check(s.unknown and not(s.dutiesSettled) and not(s.detached)))
+                                    ^^^^
+
+
+ Error [QNT404]: Name 'close' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:11:41
+  11:  run unknownKeepsOriginalDuty=init.then(close).then(reopen).then(fault).then(drained).then(pulse(true)).then(check(s.unknown and not(s.dutiesSettled) and not(s.detached)))
+                                              ^^^^^
+
+
+ Error [QNT404]: Name 'reopen' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:11:53
+  11:  run unknownKeepsOriginalDuty=init.then(close).then(reopen).then(fault).then(drained).then(pulse(true)).then(check(s.unknown and not(s.dutiesSettled) and not(s.detached)))
+                                                          ^^^^^^
+
+
+ Error [QNT404]: Name 'fault' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:11:66
+  11:  run unknownKeepsOriginalDuty=init.then(close).then(reopen).then(fault).then(drained).then(pulse(true)).then(check(s.unknown and not(s.dutiesSettled) and not(s.detached)))
+                                                                       ^^^^^
+
+
+ Error [QNT404]: Name 'pulse' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:11:92
+  11:  run unknownKeepsOriginalDuty=init.then(close).then(reopen).then(fault).then(drained).then(pulse(true)).then(check(s.unknown and not(s.dutiesSettled) and not(s.detached)))
+                                                                                                 ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:11:116
+  11:  run unknownKeepsOriginalDuty=init.then(close).then(reopen).then(fault).then(drained).then(pulse(true)).then(check(s.unknown and not(s.dutiesSettled) and not(s.detached)))
+                                                                                                                         ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:11:134
+  11:  run unknownKeepsOriginalDuty=init.then(close).then(reopen).then(fault).then(drained).then(pulse(true)).then(check(s.unknown and not(s.dutiesSettled) and not(s.detached)))
+                                                                                                                                           ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:11:159
+  11:  run unknownKeepsOriginalDuty=init.then(close).then(reopen).then(fault).then(drained).then(pulse(true)).then(check(s.unknown and not(s.dutiesSettled) and not(s.detached)))
+                                                                                                                                                                    ^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:12:44
+  12:  run laterIntentCannotRestoreClosingStamps=init.then(close).then(pulse(true)).then(reopen).then(pulse(true)).then(check(s.closing and s.pollStamp==0 and s.observed))
+                                                 ^^^^
+
+
+ Error [QNT404]: Name 'close' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:12:54
+  12:  run laterIntentCannotRestoreClosingStamps=init.then(close).then(pulse(true)).then(reopen).then(pulse(true)).then(check(s.closing and s.pollStamp==0 and s.observed))
+                                                           ^^^^^
+
+
+ Error [QNT404]: Name 'pulse' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:12:66
+  12:  run laterIntentCannotRestoreClosingStamps=init.then(close).then(pulse(true)).then(reopen).then(pulse(true)).then(check(s.closing and s.pollStamp==0 and s.observed))
+                                                                       ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'reopen' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:12:84
+  12:  run laterIntentCannotRestoreClosingStamps=init.then(close).then(pulse(true)).then(reopen).then(pulse(true)).then(check(s.closing and s.pollStamp==0 and s.observed))
+                                                                                         ^^^^^^
+
+
+ Error [QNT404]: Name 'pulse' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:12:97
+  12:  run laterIntentCannotRestoreClosingStamps=init.then(close).then(pulse(true)).then(reopen).then(pulse(true)).then(check(s.closing and s.pollStamp==0 and s.observed))
+                                                                                                      ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:12:121
+  12:  run laterIntentCannotRestoreClosingStamps=init.then(close).then(pulse(true)).then(reopen).then(pulse(true)).then(check(s.closing and s.pollStamp==0 and s.observed))
+                                                                                                                              ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:12:135
+  12:  run laterIntentCannotRestoreClosingStamps=init.then(close).then(pulse(true)).then(reopen).then(pulse(true)).then(check(s.closing and s.pollStamp==0 and s.observed))
+                                                                                                                                            ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-v2-1791392591016465279/inputs/spec/closing_observation_tests_v2.qnt:12:154
+  12:  run laterIntentCannotRestoreClosingStamps=init.then(close).then(pulse(true)).then(reopen).then(pulse(true)).then(check(s.closing and s.pollStamp==0 and s.observed))
+                                                                                                                                                               ^
+
+error: parsing failed

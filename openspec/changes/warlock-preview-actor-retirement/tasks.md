@@ -467,3 +467,16 @@ activation and all original full release gates remain open.
   lease/grab preservation while old realm custody drains; code/model is partial.
 - [ ] Qualify old-context asynchronous completions across a reopened GUI realm
   without current artifact, projection, job or physical-settlement authority.
+
+- [ ] Qualify CONTROL-042 real original URI/GIO reader across popup close/new intent:
+  held/fresh revocation, retained native duty, one reader close, sticky original
+  producer scope, independent strict settlement and replacement in the same popup.
+
+- [x] Freeze bounded CONTROL-041/042 real-reader pending-intent and rapid input
+  qualification in GUI134: original149 six-second detachment failure held;
+  two sticky producer gates fix the same rapid oracle15251/17, slower15151/18,
+  unchanged normal15029/13 and delayed15318/8 with original normal cleanup.
+  Reader Quint6/200/8 coupled stages and producer8/200/4 failure-fix cases pass.
+  Actual later popup/lease, original held/fresh read denial, one GIO close,
+  independent strict retirement, same policy and fresh later renderer qualify
+  only these fixture schedules; broader asynchronous/timing/recovery stays open.

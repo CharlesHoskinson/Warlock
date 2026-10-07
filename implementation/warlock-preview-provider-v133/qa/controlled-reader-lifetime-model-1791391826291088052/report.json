@@ -1,0 +1,36 @@
+{
+  "passed": false,
+  "inputs": {
+    "spec/controlled_reader_lifetime.qnt": "682de8fdb9415f9c13c1ecbecbc845f82b0b19cee605b8556f0310e2b6d0a6e6",
+    "spec/controlled_reader_lifetime_tests.qnt": "e3a41e81389b526b9558b7488151ebc6f90908775dc131cb5a6fe21989e0f846",
+    "qa/controlled-reader-lifetime-model.py": "6ca5f546e4393b22460276f36a2838fc6df5eb225c061c388dcb5ee0016b16fe",
+    "spec/host_realm_lifecycle.qnt": "fb723b878670bd014e6e3a7e37d0d0aacb019d20acf23aff9c6207b1fc3248fa"
+  },
+  "quint": {
+    "path": "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+    "sha256": "bd6e9400f6358a8a69d80eb636eb62f59f993039868a7be9719f76ba74191b4e"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "controlled_reader_lifetime_tests.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "scope": "Original real URI/GIO reader hold/revocation/one close and independent Native Drain abstraction only; original independent physical, terminal, journal and confirmation Drain remains Native authority. Same policy/context replacement/pending intent/stale callback safety is model scope only. Named selection and invariant samples are model evidence, not actual GTK/WebKit, physical reveal or release acceptance.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "error": "AssertionError(\"\\n Error [QNT000]: mismatched input '=' expecting ':'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-1791391826291088052/inputs/spec/controlled_reader_lifetime_tests.qnt:3:23\\n  3:  action check(ok:bool)=all{assert(ok and readerSafety),s'=s,reader'=reader,probed'=probed,closes'=closes}\\n                           ^\\n\\n\\n Error [QNT000]: extraneous input 'run' expecting {<EOF>, 'module', DOCCOMMENT}\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v133/qa/controlled-reader-lifetime-model-1791391826291088052/inputs/spec/controlled_reader_lifetime_tests.qnt:4:2\\n  4:  run closeCannotSettleReader=initReader.then(admitted).then(hold).then(event(ClosePopup)).then(event(Drain)).then(event(Retire)).then(check(reader==HeldRevoked and s.duty and s.native and not(s.retired)))\\n      ^^^\\n\\nerror: parsing failed\\n\")",
+  "artifacts": {
+    "typecheck.stdout": "786ebbd37271efae0665877b6d32bec588a45fba031a54fc4ee1781728c37ae9",
+    "typecheck.stderr": "9605592f918514b4d5f976d097b3b61d511cdb29ed2b8aa2cd7babe9c4830658",
+    "inputs/spec/controlled_reader_lifetime.qnt": "682de8fdb9415f9c13c1ecbecbc845f82b0b19cee605b8556f0310e2b6d0a6e6",
+    "inputs/spec/controlled_reader_lifetime_tests.qnt": "e3a41e81389b526b9558b7488151ebc6f90908775dc131cb5a6fe21989e0f846",
+    "inputs/spec/host_realm_lifecycle.qnt": "fb723b878670bd014e6e3a7e37d0d0aacb019d20acf23aff9c6207b1fc3248fa",
+    "inputs/qa/controlled-reader-lifetime-model.py": "6ca5f546e4393b22460276f36a2838fc6df5eb225c061c388dcb5ee0016b16fe"
+  }
+}

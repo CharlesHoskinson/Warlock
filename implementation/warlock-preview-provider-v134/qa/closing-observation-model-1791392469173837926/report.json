@@ -1,0 +1,79 @@
+{
+  "passed": true,
+  "inputs": {
+    "spec/closing_observation.qnt": "92d2d5763ace648b118a89c09548a11671cd04c7b58ef75b0894fdae36574702",
+    "spec/closing_observation_tests.qnt": "4482caa203e2c8fef33537bac692c9446fe789fe1032b75c40ba37790723749c",
+    "qa/closing-observation-model.py": "bdb1fede2f018fc4e8475dbf23e2bba9c9d1c299dd6671dac65d4daef04b2b5a"
+  },
+  "quint": {
+    "path": "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+    "sha256": "bd6e9400f6358a8a69d80eb636eb62f59f993039868a7be9719f76ba74191b4e"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "closing_observation_tests.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "closing_observation_tests.qnt",
+        "--main=closing_observation_tests",
+        "--backend=typescript",
+        "--match=^(rapidLegacyCounterexample|stickyPendingObservation|originalClosedPopupObservation|heldReaderStillBlocks|readerCloseIsNotNativeSettlement|emptyJobListIsNotRetirement|unknownKeepsOriginalDuty|laterIntentCannotRestoreClosingStamps)$",
+        "--seed=1340041",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-1791392469173837926/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "samples",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "closing_observation.qnt",
+        "--main=closing_observation",
+        "--backend=typescript",
+        "--invariant=safety",
+        "--seed=1340042",
+        "--max-samples=200",
+        "--max-steps=32",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v134/qa/closing-observation-model-1791392469173837926/samples.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "scope": "Sticky closing-realm producer observation/poll stamps and independent NativeEmpty scheduling abstraction only; original independent physical, terminal, journal and confirmation Drain remains Native authority. Same policy/context replacement/pending intent/stale callback safety is model scope only. Named selection and invariant samples are model evidence, not actual GTK/WebKit, physical reveal or release acceptance.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "namedScenarios": 8,
+  "invariantSamples": 200,
+  "artifacts": {
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-rapidLegacyCounterexample-0.itf.json": "884151f0f4e515d257dc693e948c3742436c02ca17b587dafa413ed32f3c3320",
+    "named-stickyPendingObservation-1.itf.json": "ad480ff3ade23b142bdd31f7727c6d891e402bb621501b44b39e619fa7f63b8a",
+    "named-originalClosedPopupObservation-2.itf.json": "3bed1cbdb1cc5df52dc40f090653845cf3fa909da40748546e31b19637d987eb",
+    "named-heldReaderStillBlocks-3.itf.json": "9241a23a101645cf5f50d3cf91e64be7da538849ef8dbc2b43ac2662b397e1c1",
+    "named-readerCloseIsNotNativeSettlement-4.itf.json": "a63eebacf094b142946d1979d315a465128a1902781126d6be8e6eacea6e6458",
+    "named-emptyJobListIsNotRetirement-5.itf.json": "aebdb536ac352f7022ad1de9a72ac3d52de903640e3b2bd532a31a6ad788cb7b",
+    "named-unknownKeepsOriginalDuty-6.itf.json": "22ecda30094367e6343fca3ce5c717b7633bc06d84e02105d64ff9d3e6fe15dd",
+    "named-laterIntentCannotRestoreClosingStamps-7.itf.json": "031f41cb506bee26783ca174f21b7b5ea33f9071e92f559fd07b56ce0f496b25",
+    "selected.stdout": "75f586deaac62693e45b0ed468868c96dd608c9bc32a4f8956b2a1483ecf17fb",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "samples.itf.json": "27a17ffd5f01c88b70f37cf7ddf543533ecd8d18a44657122d72f86c2de2d66a",
+    "samples.stdout": "a0987302ea62a46caeb22ea0fba820c63fc83fe183620817d2f614139691f971",
+    "samples.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/spec/closing_observation.qnt": "92d2d5763ace648b118a89c09548a11671cd04c7b58ef75b0894fdae36574702",
+    "inputs/spec/closing_observation_tests.qnt": "4482caa203e2c8fef33537bac692c9446fe789fe1032b75c40ba37790723749c",
+    "inputs/qa/closing-observation-model.py": "bdb1fede2f018fc4e8475dbf23e2bba9c9d1c299dd6671dac65d4daef04b2b5a"
+  }
+}
