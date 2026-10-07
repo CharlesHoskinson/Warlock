@@ -1,0 +1,3469 @@
+{
+  "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+  "activeSlice": "implementation/elm-recovery-delivery-general-reviewed-v656",
+  "status": "Active: criticalFRPW01 batch/topology race andW07 pressedidentity prioritized; narrow690layout passed, nativeAT697stillfails; actual708GTKcontrolpassed butWebKitfixtures invalidbeforecollector. Prepared700 source-reviewed limitedsameLife/scopes, complete productionS15/release stillopen.",
+  "requirementsInProgress": [
+    "ELM-ARC-002",
+    "ELM-ARC-003",
+    "ELM-ARC-004",
+    "ELM-ARC-021",
+    "ELM-ARC-022",
+    "ELM-TEA-001",
+    "ELM-TEA-002",
+    "ELM-TEA-005",
+    "ELM-ARC-010",
+    "ELM-REV-008",
+    "ELM-ARC-026",
+    "ELM-DEL-010",
+    "ELM-DEL-026",
+    "ELM-GPU-001",
+    "ELM-GPU-002",
+    "ELM-GPU-004",
+    "ELM-QA-024",
+    "ELM-LAY-001",
+    "ELM-ARC-005",
+    "ELM-ARC-006",
+    "ELM-ARC-007",
+    "ELM-REN-006",
+    "ELM-REV-016",
+    "ELM-UI-001",
+    "ELM-GNO-002",
+    "ELM-GNO-004",
+    "ELM-DEL-018",
+    "ELM-GNO-006"
+  ],
+  "completedRequirementIds": [],
+  "observedResults": {
+    "elmChecks": 14,
+    "nativeHostTestGroups": 2,
+    "nativeSurfaceCases": [
+      "xdg",
+      "layer"
+    ],
+    "architectureQuintNamedTests": 29,
+    "architectureSampledTraces": 3000,
+    "observerV2": {
+      "elmReplayCases": 252,
+      "losslessCounterChecks": 110,
+      "quintNamedTests": 12,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "quintToElmReplayTraces": 13,
+      "quintToElmReplayTransitions": 81,
+      "compiledUnsafeMutantsDetected": 6,
+      "evidence": "implementation/elm-observer-v2/qa/slice-manifest.json"
+    },
+    "authorityV3": {
+      "nativeCases": 26,
+      "appliedElmReplayCases": 252,
+      "counterChecks": 110,
+      "quintNamedTests": 12,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "actualITFReplayTraces": 13,
+      "actualITFReplayTransitions": 83,
+      "actualNativeElmReplayTransitions": 35,
+      "evidence": "implementation/elm-authority-v3/qa/slice-manifest.json",
+      "nativeEffectCapabilities": false,
+      "minimizedStateCapability": false
+    },
+    "webviewV4": {
+      "eventDrivenUnmapRemap": {
+        "passed": true,
+        "oldIncarnation": "1",
+        "newIncarnation": "2"
+      },
+      "normalHostAndBackendExit": true,
+      "webglReadbackPassed": true,
+      "canvasPresentedPassed": true,
+      "hardwareGraphicsAvailableObserved": true,
+      "webgpuExposed": false,
+      "nativeGraphicsInfo": {
+        "GL_RENDERER": [
+          "Mesa Intel(R) Graphics (ARL)",
+          "Mesa Intel(R) Graphics (ARL)"
+        ],
+        "GL_VENDOR": [
+          "Intel",
+          "Intel"
+        ],
+        "DRM Render Node": [
+          "/dev/dri/renderD129"
+        ],
+        "2D canvas": [
+          "Accelerated"
+        ],
+        "Renderer": [
+          "DMABuf (Supported buffers: Hardware, Shared Memory)"
+        ]
+      },
+      "evidence": "implementation/elm-webview-v4/qa/slice-manifest.json",
+      "scope": "Event-driven native-to-Elm DOM and isolated Intel/Mesa hardware graphics availability; all full implementation/release gates remain open"
+    },
+    "baselineV5": {
+      "restoreChecks": 38,
+      "faultClosedPeerChecks": 34,
+      "faultCompatibleChecks": 33,
+      "heldCases": 52,
+      "pinDefinitions": 24,
+      "preservedSourceFiles": 1070,
+      "ledgerSHA256": "78ae06239b4ff49c37cc267c61497703b7cc09df58fa7b7f2d90b19c4a2b89ac",
+      "protectedVerificationPassed": true,
+      "nativeAcceptance": false,
+      "evidence": "implementation/elm-baseline-v5/ledger.json"
+    },
+    "sceneV6": {
+      "elmFixtureCases": 4117,
+      "quintNamedTests": 6,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "actualITFReplayTraces": 7,
+      "actualITFReplayStates": 59,
+      "compiledUnsafeMutantsDetected": 2,
+      "nativeAcceptance": false,
+      "evidence": "implementation/elm-scene-v6/qa/run-1791052752897124970/report.json"
+    },
+    "sceneFactsV7": {
+      "nativeDiagnosticCases": 32,
+      "productSceneEligibilitySatisfied": false,
+      "finding": "Inactive special workspace retained fullscreen flags while owning-monitor renderer predicate returned true",
+      "evidence": "implementation/elm-scene-facts-v7/diagnosis.json"
+    },
+    "sceneCoreV8": {
+      "nativeDiagnosticCases": 33,
+      "rendererDependenciesRechecked": 870,
+      "pluginDependenciesRechecked": 938,
+      "coreSHA256": "710396d5c6480a7ff8f424840d81811d3e10df269f920d7c745b6495470fde76",
+      "inactiveOwnMonitorPredicateRepaired": true,
+      "predicateAcceptanceOnly": true,
+      "productSceneAcceptance": false,
+      "evidence": "implementation/elm-scene-core-v8/qa/slice-manifest.json"
+    },
+    "modalFocusV10": {
+      "nativeDiagnosticCases": 33,
+      "nativePixelPointerKeyboardCases": 19,
+      "coreSHA256": "75548c72f43554a0c351f3a43b4d928238571282b975b7c3c11802a2779cd546",
+      "actualModalKeyboardDelivery": true,
+      "actualIndependentPeerKeyboardDelivery": true,
+      "quiescentSingleOutputOnly": true,
+      "productSceneAcceptance": false,
+      "evidence": "implementation/elm-native-scene-v9/qa/native-1791056292999426300/report.json",
+      "coreEvidence": "implementation/elm-modal-focus-v10/qa/slice-manifest.json"
+    },
+    "modalLifecycleV11": {
+      "nativeCases": 23,
+      "modalRetirementHeldReleaseSuppressed": true,
+      "helperNormalExit": true,
+      "privateCleanupPassed": true,
+      "evidence": "implementation/elm-modal-lifecycle-v11/qa/slice-manifest.json",
+      "scope": "Single-output native quiescent and one held-release retirement interleaving; no complete scene, device or session acceptance"
+    },
+    "windowEffectsV12": {
+      "compiledElmChecks": 201,
+      "quintNamedTests": 9,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "actualITFActionJournalTraces": 10,
+      "actualITFStatesCompared": 60,
+      "compiledUnsafeMutantsDetected": 2,
+      "nativeEffectsImplemented": false,
+      "nativeMinimizedStateImplemented": false,
+      "evidence": "implementation/elm-window-effects-v12/qa/slice-manifest.json",
+      "scope": "Pure compiled intent/receipt transactions only; native authority remains read-only"
+    },
+    "nativeMinimizeV13": {
+      "nativeMinimizedStateImplemented": true,
+      "experimentalNativeEffectsImplemented": true,
+      "liveDesktopDeployed": false,
+      "positiveNativeCases": 54,
+      "failedLateChildLifecycleCase": true,
+      "quintNamedScenarios": 9,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "canonicalSceneCapability": false,
+      "coreSHA256": "2be14de3fd1cddd12e40919bf7a97d95d2799df2b9df48a632b2b654d015c51e",
+      "featureAccepted": false,
+      "evidence": "implementation/elm-native-minimize-v13/qa/slice-manifest.json",
+      "failure": "implementation/elm-native-minimize-v13/known-failures.json"
+    },
+    "minimizeLifecycleV14": {
+      "nativeCases": 60,
+      "originalNative54IdentitiesPreserved": true,
+      "newChildPixelPointerKeyboardExclusion": true,
+      "ambiguousRestoreRefusedWithoutSceneMutation": true,
+      "semanticIntentRetryDeduplicated": true,
+      "quintNamedScenarios": 13,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "canonicalSceneCapability": false,
+      "completeFeatureAccepted": false,
+      "evidence": "implementation/elm-minimize-lifecycle-v14/qa/slice-manifest.json",
+      "coreSHA256": "51f997640d0f354bcab21446403030a6bfe23ccecadbf17162a156fd5678023b"
+    },
+    "seatEffectsV15": {
+      "nativeCases": 63,
+      "livePopupGrabRefusal": true,
+      "actualSeatKeyboardSurfacePostconditions": true,
+      "evidence": "implementation/elm-seat-effects-v15/qa/slice-manifest.json",
+      "wholeFeatureAccepted": false
+    },
+    "guiEffectsV16": {
+      "nativeCases": 9,
+      "compiledReplayChecks": 20,
+      "actualPointerElmNativeEffectDOM": true,
+      "canonicalSceneCapability": false,
+      "evidence": "implementation/elm-gui-effects-v16/qa/slice-manifest.json",
+      "wholeFeatureAccepted": false,
+      "preservedFailure": "First packet mislabeled passed despite cleanup exception; explicitly rejected in README and excluded from accepted manifest."
+    },
+    "guiRecoveryV17": {
+      "effectReplayChecks": 20,
+      "shellReplayChecks": 27,
+      "quintNamedRuns": 8,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "actualITFReplayTraces": 9,
+      "actualITFReplayTransitions": 75,
+      "nativeChecks": 21,
+      "actualBrokerPendingInterruptionAndReconnect": true,
+      "staleNativeBindingRefused": true,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-gui-recovery-v17/qa/slice-manifest.json",
+      "unproven": [
+        "renderer restart",
+        "authority restart",
+        "canonical scene",
+        "full UI/UX/AT/IME/GPU and release"
+      ]
+    },
+    "renderTraceV18": {
+      "ordinaryNativeChecks": 63,
+      "fullRedrawDiagnosticChecks": 78,
+      "elmDecoderChecks": 22,
+      "actualNativePacketsDecoded": 12,
+      "quintNamedRuns": 8,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-render-trace-v18/qa/slice-manifest.json",
+      "findings": [
+        "Repeated Peer/MAX/Peer dispatches when Peer is on top; pinned Peer has an additional pass.",
+        "Window vector order cannot represent all surface dispatches.",
+        "Draw-time identities, masks, dependency/presentation coherence and all input routes remain unqualified."
+      ]
+    },
+    "drawIdentityV19": {
+      "ordinaryNativeChecks": 63,
+      "fullRedrawIdentityChecks": 81,
+      "elmDecoderChecks": 26,
+      "actualNativePacketsDecoded": 16,
+      "quintNamedRuns": 6,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "abstractUnsafeVariantDetected": true,
+      "actualRetainedFrameUnmapRemap": true,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-draw-identity-v19/qa/slice-manifest.json"
+    },
+    "surfaceFactsV20": {
+      "ordinaryNativeChecks": 63,
+      "fullRedrawDiagnosticChecks": 84,
+      "elmDecoderChecks": 28,
+      "actualNativePacketsDecoded": 18,
+      "quintNamedRuns": 6,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "abstractUnsafeVariantDetected": true,
+      "retainedGeometryImmutableAfterResize": true,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-surface-facts-v20/qa/slice-manifest.json"
+    },
+    "traceValidationV21": {
+      "elmDecoderChecks": 121,
+      "historicalNativePacketsDecoded": 18,
+      "newNativeCampaign": false,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-trace-validation-v21/qa/slice-manifest.json"
+    },
+    "inputMaskV23": {
+      "ordinaryNativeChecks": 63,
+      "ownerInputHoleDiagnosticChecks": 94,
+      "maxInputHoleDiagnosticChecks": 97,
+      "typedActualPacketChecks": 44,
+      "actualPointerKeyboardInputHolePassThrough": true,
+      "originalFailuresPreserved": true,
+      "newQuintRun": false,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-input-hit-v23/qa/slice-manifest.json"
+    },
+    "outputMappingV26": {
+      "outputMoveScale180NativeChecks": 111,
+      "all8TransformNativeChecks": 168,
+      "typedActualPacketChecks": 109,
+      "actualLogicalInputHolePointerKeyboardRouting": true,
+      "retainedConfigurationImmutable": true,
+      "preservedCaptureCoordinateFailure": true,
+      "newQuintRun": false,
+      "rawScanoutOrPresentationProof": false,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-output-transforms-v26/qa/slice-manifest.json"
+    },
+    "windowActivationV28": {
+      "ordinaryNativeChecks": 80,
+      "diagnosticNativeChecks": 111,
+      "compiledChecks": 64,
+      "quintNamedRuns": 10,
+      "quintInvariantSamples": 1000,
+      "abstractUnsafeSeatVariantDetected": true,
+      "nativeActivationModalAndSeatPreflight": true,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-activation-protocol-v28/qa/slice-manifest.json"
+    },
+    "guiActivationV32": {
+      "nativeChecks": 27,
+      "compiledOriginalChecks": 47,
+      "inheritedActivationChecks": 17,
+      "actualPointerElmActivationKeyboardDelivery": true,
+      "stableDisplayedWindowOrder": true,
+      "exactJournalNoReplayAcrossReconnect": true,
+      "failedAttemptsPreserved": true,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-gui-activation-journal-v32/qa/slice-manifest.json"
+    },
+    "taskbarProjectionV33": {
+      "compiledRetainedChecks": 64,
+      "displayedScopeChecks": 14,
+      "familyDecisionChecks": 87,
+      "endpointJoinChecks": 26,
+      "quintNamedRuns": 12,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "nativePluginCompiled": true,
+      "nativeCampaignRun": false,
+      "integratedTaskbarUI": false,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-taskbar-projection-v33/qa/slice-manifest.json"
+    },
+    "taskbarNativeV34": {
+      "ordinaryNativeChecks": 100,
+      "diagnosticNativeChecks": 131,
+      "retainedOriginalAssertionIdentities": true,
+      "actualNativePackets": 20,
+      "compiledActualPacketChecks": 120,
+      "cleanupPassed": true,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-taskbar-native-v34/qa/slice-manifest.json"
+    },
+    "taskbarUIV35": {
+      "compiledRetainedAndScopedChecks": 78,
+      "compiledPickerChecks": 20,
+      "optimizedMainCompiled": true,
+      "nativeHostBuildAndSelfTestsPassed": true,
+      "groupedMainViewImplemented": true,
+      "pickerGenerationGuards": true,
+      "nativeGUICampaignRun": false,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-taskbar-ui-v35/qa/slice-manifest.json"
+    },
+    "taskbarFocusV38": {
+      "compiledRetainedAndScopedChecks": 78,
+      "compiledPickerChecks": 20,
+      "quintNamedRuns": 8,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "optimizedHostBuildAndSelfTests": true,
+      "identityBoundDOMFocus": true,
+      "composingEscapeIgnoredInSource": true,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-taskbar-focus-v38/qa/slice-manifest.json"
+    },
+    "taskbarKeyboardV39": {
+      "nativeChecks": 48,
+      "actualEscapeAndOpenerFocus": true,
+      "actualTabEnterSelectionAndKeyboardDelivery": true,
+      "actualPointerCloseReachable": true,
+      "actualGroupedActivationAndSingleMinimizeRestore": true,
+      "exactJournalNoReplayRecovery": true,
+      "normalHostBackendExit": true,
+      "cleanupPassed": true,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-taskbar-keyboard-v39/qa/slice-manifest.json"
+    },
+    "taskbarFamilyPickerV40": {
+      "nativeChecks": 61,
+      "actualPickerRestoresMinimizedFamily": true,
+      "actualModalChildCollapse": true,
+      "actualRootSelectionModalKeyboardDelivery": true,
+      "retainedKeyboardPointerRecoveryCases": true,
+      "normalHostBackendExit": true,
+      "cleanupPassed": true,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-taskbar-family-picker-v40/qa/slice-manifest.json"
+    },
+    "taskbarReflowV42": {
+      "compiledRetainedAndScopedChecks": 78,
+      "compiledPickerChecks": 20,
+      "optimizedHostBuildAndSelfTests": true,
+      "pickerNamesAndStateSeparated": true,
+      "effectInvalidationProtocol": 1,
+      "longLabelOverflowAccepted": false,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-taskbar-reflow-v42/qa/slice-manifest.json"
+    },
+    "externalStateGUIV44": {
+      "nativeChecks": 71,
+      "externalUnfocusedStateAutomaticallyReconciled": true,
+      "stalePickerRetiredWithoutFrontendEffect": true,
+      "explicitRestoreRemainsUsable": true,
+      "retainedKeyboardModalMinimizedRecoveryCases": true,
+      "normalHostBackendExit": true,
+      "cleanupPassed": true,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-external-state-gui-v44/qa/slice-manifest.json"
+    },
+    "invalidationRegressionV45": {
+      "ordinaryNativeChecks": 100,
+      "diagnosticNativeChecks": 131,
+      "originalAssertionIdentityOrderPreserved": true,
+      "quintNamedRuns": 8,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "cleanupPassed": true,
+      "nativeUnknownInjectionAccepted": false,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-invalidation-native-v45/qa/slice-manifest.json"
+    },
+    "pickerViewportV53": {
+      "optimizedMainHostCompiled": true,
+      "hostSelfTestGroups": 3,
+      "qaControlBoundAssertions": 8,
+      "productionControlBoundBytes": 4096,
+      "qaReportBoundBytes": 1048576,
+      "compiledChecksInheritedByExactInputs": 78,
+      "pickerChecksInheritedByExactInputs": 20,
+      "visibleCaptionLines": 2,
+      "fullAccessibleNameAndTooltipInSource": true,
+      "definiteParentHeight": true,
+      "newQuintRun": false,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-picker-parent-height-v53/qa/slice-manifest.json"
+    },
+    "pickerOverflowNativeV54": {
+      "nativeChecks": 91,
+      "retainedOriginalGUIChecks": 71,
+      "documentRoots": 9,
+      "longTitleExtraRoots": 8,
+      "keyboardRevealReceipts": 8,
+      "exactClipBoundsPassed": true,
+      "closeReachable": true,
+      "lastLongDocumentActualKeyboardRecipient": true,
+      "originalDeadlinePreserved": true,
+      "geometryToleranceAdded": false,
+      "normalHostBackendExit": true,
+      "cleanupPassed": true,
+      "hostViewport": [
+        800,
+        420
+      ],
+      "defaultTextPixels": 16,
+      "textEnlargementAccepted": false,
+      "smallOutputAccepted": false,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-picker-parent-native-v54/qa/slice-manifest.json"
+    },
+    "catalogLaunchV55": {
+      "legacyParserByteIdentical": true,
+      "legacyParserTests": 24,
+      "compiledElmChecks": 23,
+      "isolatedNativeChecks": 22,
+      "realGIORecorderSubmission": true,
+      "quintNamedRuns": 8,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "wholeFeatureAccepted": false,
+      "guiIntegrationAccepted": false,
+      "applicationReadinessAccepted": false,
+      "evidence": "implementation/elm-catalog-launch-v55/qa/slice-manifest.json"
+    },
+    "launchControllerV56": {
+      "compiledElmChecks": 33,
+      "actualNativeReceiptReplay": true,
+      "opaqueSelectionAndOperationTokens": true,
+      "quintNamedRuns": 8,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "wholeFeatureAccepted": false,
+      "guiIntegrationAccepted": false,
+      "nativeUnknownInjectionAccepted": false,
+      "evidence": "implementation/elm-launch-controller-v56/qa/slice-manifest.json"
+    },
+    "launchHostV57": {
+      "optimizedMainHostCompiled": true,
+      "retainedEffectChecks": 20,
+      "retainedShellChecks": 27,
+      "desktopEnvelopeChecks": 16,
+      "injectedTransportChecks": 17,
+      "launchControllerChecksInheritedByExactInputs": 33,
+      "newQuintRun": false,
+      "productionControlBoundBytes": 4096,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-launch-host-v57/qa/slice-manifest.json"
+    },
+    "launchNativeV58": {
+      "originalNativeChecks": 91,
+      "originalAssertionIdentitiesAndOrderPreserved": true,
+      "ownedLauncherNativeChecks": 17,
+      "actualGTKApplicationMapped": true,
+      "actualGIOArgumentsAndOriginalFilename": true,
+      "actualChildExitCode": 0,
+      "normalHostBackendExit": true,
+      "cleanupPassed": true,
+      "productionSurfaceRolesAccepted": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-launch-native-v58/qa/slice-manifest.json"
+    },
+    "launcherFocusV59": {
+      "compiledDesktopChecks": 24,
+      "retainedEffectChecks": 20,
+      "retainedShellChecks": 27,
+      "quintNamedRuns": 8,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "opaqueViewCallbacks": true,
+      "scopedNamespacedDOMFocus": true,
+      "lateClosedCatalogReplyRetired": true,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-launcher-focus-v59/qa/slice-manifest.json"
+    },
+    "launcherKeyboardV60": {
+      "retainedOriginalNativeChecks": 91,
+      "retainedPointerLauncherChecks": 17,
+      "keyboardLauncherChecks": 26,
+      "priorAssertionIdentitiesAndOrderPreserved": true,
+      "actualEscapeOpenerEnterRefreshFocus": true,
+      "actualEnterGIOGTKLaunch": true,
+      "actualLaunchedChildExitCode": 0,
+      "normalHostBackendExit": true,
+      "cleanupPassed": true,
+      "nativeComposingIMEAccepted": false,
+      "productionSurfaceRolesAccepted": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-launcher-keyboard-v60/qa/slice-manifest.json"
+    },
+    "nativePopoverV61V62": {
+      "buildPassed": true,
+      "retainedEffectChecks": 20,
+      "retainedShellChecks": 27,
+      "nativeWorkarea48Observed": true,
+      "nativeRunsAccepted": 0,
+      "nativeFailuresPreserved": 2,
+      "actualRole": "wl_subsurface",
+      "observedRelativePosition": [
+        35,
+        -449
+      ],
+      "requiredXDgPopupRoleObserved": false,
+      "candidateDisposition": "no-go for GTK3 GtkPopover container only",
+      "c00DispositionChanged": false,
+      "mainDesktopActions": false,
+      "cleanupPassed": true,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-native-popover-qa-v62/qa/slice-manifest.json"
+    },
+    "nativePopupV63V66": {
+      "buildPassed": true,
+      "retainedEffectChecks": 20,
+      "retainedShellChecks": 27,
+      "nativeFailurePreserved": true,
+      "nativeRole": "xdg_popup",
+      "nativeLayerParentObserved": true,
+      "nativeSeatGrabObserved": true,
+      "nativeConfigure": [
+        50,
+        48,
+        700,
+        420
+      ],
+      "nativeBarExclusive": 48,
+      "nativeBarKeyboardMode": "none",
+      "nativeChecks": 19,
+      "nativeOutsideDismissal": true,
+      "applicationPointerAndKeyAfterDismissal": true,
+      "oneBindingReopen": true,
+      "nativeEscapeDismissal": true,
+      "normalHostBackendExit": true,
+      "cleanupPassed": true,
+      "newQuintRun": false,
+      "productionElmBarAccepted": false,
+      "nativeATIMEAccepted": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-native-popup-lifetime-qa-v66/qa/slice-manifest.json"
+    },
+    "sharedSurfaceControllerV67": {
+      "compiledControllerChecks": 31,
+      "compiledPresentationChecks": 12,
+      "optimizedPopupCompile": true,
+      "quintNamedRuns": 9,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "nativeDualViewAccepted": false,
+      "nativeCloseBarrierImplemented": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-surface-controller-v67/qa/slice-manifest.json"
+    },
+    "dualViewSurfaceV70V72": {
+      "optimizedMainAndPopupBuild": true,
+      "compiledControllerChecks": 31,
+      "compiledPresentationChecks": 12,
+      "retainedEffectChecks": 20,
+      "retainedShellChecks": 27,
+      "nativeCAdmissionTestGroups": 4,
+      "nativeSurfaceChecks": 20,
+      "nativeSurfaceAndLaunchChecks": 32,
+      "earlierSurfaceChecksRetained": true,
+      "nativeRole": "xdg_popup",
+      "nativeConfigure": [
+        50,
+        48,
+        700,
+        420
+      ],
+      "barExclusive48": true,
+      "singleDesktopModel": true,
+      "actualOutsideDismissApplicationPointerAndKeyboard": true,
+      "actualElmEscapeReopen": true,
+      "actualGrabRetirementBeforeLaunchForward": true,
+      "actualOwnedGTKLaunchArgumentsReceipt": true,
+      "actualChildExitCode": 0,
+      "normalHostBackendExit": true,
+      "cleanupPassed": true,
+      "nativeFaultRefinementAccepted": false,
+      "nativeATIMEAccepted": false,
+      "fullRegressionAccepted": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-surface-launch-qa-v72/qa/slice-manifest.json"
+    },
+    "nativePopupAcknowledgementsV77V78": {
+      "optimizedMainAndPopupBuild": true,
+      "compiledControllerChecks": 31,
+      "compiledPresentationChecks": 12,
+      "retainedEffectChecks": 20,
+      "retainedShellChecks": 27,
+      "actualHostCTestGroups": 6,
+      "actualSurfaceCTestGroups": 4,
+      "quintNamedRuns": 9,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "nativeChecks": 36,
+      "priorNative32IdentitiesRetained": true,
+      "scopedConfigureRenderFocusAcknowledgements": true,
+      "exactOwningPopupConfigureAckBeforeFocus": true,
+      "nativeDefaultConfigure": [
+        50,
+        48,
+        700,
+        420
+      ],
+      "actualFocusAcknowledgedOnLeases": 3,
+      "leaseScopedNativeCallbacks": true,
+      "nativeCPreflightFaultTests": true,
+      "realGtkWebKitFaultInjectionAccepted": false,
+      "automaticModelBasedCRefinement": false,
+      "normalHostBackendExit": true,
+      "actualOwnedLaunchChildExitCode": 0,
+      "cleanupPassed": true,
+      "nativeATIMEAccepted": false,
+      "fullWindowRegressionAccepted": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-surface-ack-qa-v78/qa/slice-manifest.json"
+    },
+    "explicitSurfaceRecoveryV80V82": {
+      "surfaceProtocol": 2,
+      "compiledControllerChecks": 41,
+      "compiledPresentationChecks": 12,
+      "retainedEffectChecks": 20,
+      "retainedShellChecks": 27,
+      "actualHostCTestGroups": 6,
+      "actualSurfaceCTestGroups": 4,
+      "nativeChecks": 42,
+      "priorNative36IdentitiesRetained": true,
+      "actualIdleBackendFault": true,
+      "actualExplicitReconnect": true,
+      "actualFreshBinding": true,
+      "actualNoWindowActionReplay": true,
+      "actualOperationAccessibleNames": true,
+      "actualOwnedLaunchChildExitCode": 0,
+      "replacementBackendAndHostNormalExit": true,
+      "oldBackendIntentionallyTerminated": true,
+      "cleanupPassed": true,
+      "pendingUnknownRecoveryAccepted": false,
+      "nativeATIMEAccepted": false,
+      "full91RegressionAccepted": false,
+      "newQuintRun": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-surface-recovery-qa-v81/qa/slice-manifest.json"
+    },
+    "dualViewRegressionV93": {
+      "evidence": "implementation/elm-surface-regression-qa-v93/qa/slice-manifest.json",
+      "nativeChecks": 92,
+      "originalNativeChecks": 91,
+      "addedFocusedGrabRefusalChecks": 1,
+      "compiledControllerChecks": 49,
+      "compiledPresenterChecks": 12,
+      "quintNamedScenarios": 17,
+      "quintInvariantSamples": 2000,
+      "cleanupPassed": true,
+      "originalCheckAndWaitASTPreserved": true,
+      "scope": "Private dual-view Elm/native regression only; complete requirements/sprints/release remain open",
+      "failedLineage": "V83 optimized Main shadowing; V86 stale post-close dependency; V88 blanket seat-grab refusal; V90 source preflight; V91 request reuse; V92 same-PID binding replacement; V94 Quint syntax. All preserved."
+    },
+    "choiceFocusV103": {
+      "evidence": "implementation/elm-choice-focus-qa-v103/qa/slice-manifest.json",
+      "nativeChecks": 99,
+      "originalNativeChecks": 91,
+      "compiledControllerChecks": 64,
+      "compiledPresenterChecks": 12,
+      "quintNamedScenarios": 21,
+      "quintInvariantSamples": 2000,
+      "realChoiceTimeoutSeconds": 2.202003597005387,
+      "cleanupPassed": true,
+      "originalOracleAndDeadlineHelpersASTPreserved": true,
+      "scope": "Single-output private timeout/fresh facts/DOM focus only; full desktop/release open",
+      "failedLineage": "V96/V97 Elm parser failures; V100 real post-close focus regression preserved. V102 fresh facts focus handoff fixed; V103 full99 pass."
+    },
+    "outputFocusV110": {
+      "evidence": "implementation/elm-output-focus-qa-v110/qa/slice-manifest.json",
+      "nativeChecks": 105,
+      "originalNativeChecks": 91,
+      "compiledControllerChecks": 67,
+      "compiledPresenterChecks": 12,
+      "quintNamedScenarios": 9,
+      "quintInvariantSamples": 1000,
+      "actualNestedOutputs": [
+        "WAYLAND-1",
+        "QA-SECOND"
+      ],
+      "outputGenerationChange": [
+        "1",
+        "2"
+      ],
+      "matchingDOMPublication": "117",
+      "cancelledFocus": "",
+      "cleanupPassed": true,
+      "scope": "Actual nested output addition/removal and topology-scoped DOM focus only; per-display shell, physical displays, full output UX/release remain open",
+      "failedLineage": "V109 preserved: successful second output creation then incorrect QA envelope lookup; V110 corrects lookup and strengthens exact DOM/publication check."
+    },
+    "outputOwnerV119": {
+      "evidence": "implementation/elm-output-padding-qa-v119/qa/slice-manifest.json",
+      "nativeChecks": 114,
+      "originalNativeChecks": 91,
+      "retainedCompiledControllerChecks": 67,
+      "retainedCompiledPresenterChecks": 12,
+      "newNativeHostTestGroups": 8,
+      "surfaceTestGroups": 4,
+      "quintNamedScenarios": 4,
+      "quintInvariantSamples": 1000,
+      "asymmetricPrivateOutputs": {
+        "WAYLAND-1": [
+          800,
+          600
+        ],
+        "QA-SECOND": [
+          640,
+          480
+        ]
+      },
+      "eachBarReservationTop": 48,
+      "secondaryPopupConfigure": [
+        4,
+        48,
+        632,
+        420
+      ],
+      "ownerRemovalHostExit": 0,
+      "ownerRemovalBackendExit": 0,
+      "otherHostPreserved": true,
+      "cleanupPassed": true,
+      "scope": "Native object ownership and per-output host component in two private fixture processes; final shared-controller multi-output architecture and hardware UX remain open",
+      "failedLineage": "V111 Quint set type error; V113 oversized popup; V115 bounded size still outside compositor padded rectangle; V117 wrapper-only change ineffective. V118 admitted geometry honors actual owning compositor padding; V119 full114 passes."
+    },
+    "outputReflowV140": {
+      "evidence": "implementation/elm-output-production-qa-v140/qa/slice-manifest.json",
+      "nativeChecks": 127,
+      "originalNativeChecks": 91,
+      "compiledControllerChecks": 70,
+      "compiledPresenterChecks": 12,
+      "nativeHostTestGroups": 8,
+      "nativeSurfaceTestGroups": 4,
+      "quintNamedScenarios": 8,
+      "quintInvariantSamples": 1000,
+      "liveResizeLogical": [
+        480,
+        320
+      ],
+      "scaleTwoBufferPixels": [
+        960,
+        640
+      ],
+      "rotatedLogical": [
+        320,
+        480
+      ],
+      "rotatedPopupConfigure": [
+        4,
+        48,
+        312,
+        420
+      ],
+      "eachBarReservationTop": 48,
+      "freshLeaseAfterPhysicalRetirement": true,
+      "nativeKeyboardFocusRequired": true,
+      "cleanupPassed": true,
+      "scope": "Private component acceptance; final shared Elm controller, physical displays, AT/IME, hardware budgets and release remain open",
+      "failedLineage": "V120 mapped geometry stale; V122 in-place GTK reposition ineffective; V124 reused retired lease; V130 native focus race. V133/V135/V137 rotation blocked after parent fullscreen geometry violation; V138 read-only rule diagnostic and V139 larger parent establish transform1. V140 unchanged production plugin passes127 without geometry protocol error."
+    },
+    "sharedOutputControllerV145": {
+      "evidence": "implementation/elm-output-controller-v145/qa/component-manifest.json",
+      "sharedControllerChecks": 37,
+      "inheritedControllerChecks": 58,
+      "inheritedPresenterChecks": 12,
+      "quintNamedScenarios": 10,
+      "quintInvariantSamples": 1000,
+      "nativeAcceptance": false,
+      "launchableSharedHost": false,
+      "scope": "One pure Elm controller, read-only per-output Bar, monotonic native-issued capabilities, popup/focus owner, removed/replaced scope rejection. Native multi-view host remains pending."
+    },
+    "sharedOutputHostV151": {
+      "evidence": "implementation/elm-output-shared-qa-v151/qa/slice-manifest.json",
+      "nativeChecks": 135,
+      "originalNativeChecks": 91,
+      "sharedControllerChecks": 37,
+      "inheritedControllerChecks": 58,
+      "inheritedPresenterChecks": 12,
+      "nativeHostTestGroups": 11,
+      "nativeSurfaceTestGroups": 4,
+      "quintNamedScenarios": 10,
+      "quintInvariantSamples": 1000,
+      "actualSingleController": true,
+      "observedBackendProcesses": 1,
+      "scopeIDs": [
+        1,
+        2,
+        3
+      ],
+      "hostOwnsBothBars": true,
+      "hotplugPreservesBackendAndAuthorityBinding": true,
+      "replugGetsFreshNativeCapability": true,
+      "cleanupPassed": true,
+      "scope": "Private native shared-output host/window/input/fault component. Complete menu, zero-output recovery, full scene, AT/IME, actual hardware budgets and release remain open.",
+      "failedLineage": "V146 compile/cleanup initialization failures; V148 scope test aborts on JSON-node type. V149/V147 native127 passes. V150 duplicate-field admission and V151 actual one-backend/replug observations pass135."
+    },
+    "sharedHostGraphicsV157": {
+      "evidence": "implementation/elm-shared-gpu-qa-v157/qa/slice-manifest.json",
+      "nativeChecks": 142,
+      "originalNativeChecks": 91,
+      "sharedControllerChecks": 37,
+      "inheritedControllerChecks": 58,
+      "inheritedPresenterChecks": 12,
+      "nativeHostTestGroups": 11,
+      "nativeSurfaceTestGroups": 4,
+      "quintNamedScenarios": 10,
+      "quintInvariantSamples": 1000,
+      "shaderReadback": [
+        17,
+        193,
+        71,
+        255
+      ],
+      "nativeDisplayedPixel": [
+        17,
+        193,
+        71
+      ],
+      "nativeRenderer": "Mesa Intel(R) Graphics (ARL)",
+      "renderNode": "/dev/dri/renderD129",
+      "engine": "WebKitGTK 2.52.6",
+      "secureContext": true,
+      "webgpuExposed": false,
+      "webgpuVerdict": "Unavailable for current browser host; no device/WGSL execution accepted",
+      "webExposedRenderer": "Apple GPU (not used for hardware identification)",
+      "performanceBudgetsAccepted": false,
+      "cleanupPassed": true,
+      "scope": "Bounded shared-host shader execution/display and native hardware diagnostics. Full GPU/host-selection/performance/hybrid/device-loss/release gates remain open."
+    },
+    "sharedHostCalibrationV160": {
+      "nativeChecks": 26,
+      "popupCycles": 20,
+      "resourceSampleCount": 31,
+      "metrics": {
+        "idleCpuPercentOneCore": 0.39073202890525754,
+        "processCount": {
+          "count": 6,
+          "p50": 21,
+          "p95": 21,
+          "p99": 21
+        },
+        "helperToDOMReceiptMs": {
+          "samples": [
+            86.020759,
+            87.134907,
+            89.884379,
+            92.049962,
+            94.040765,
+            94.515298,
+            92.617996,
+            97.892725,
+            95.034075,
+            99.378226,
+            100.874967,
+            98.457956,
+            104.103511,
+            57.520285,
+            107.673699,
+            61.396335,
+            108.802364,
+            59.783529,
+            63.470271,
+            65.652371
+          ],
+          "count": 20,
+          "p50": 92.617996,
+          "p95": 107.673699,
+          "p99": 108.802364,
+          "definition": "Python monotonic before pointer helper spawn to exact-publication focused DOM receipt; includes helper/poll/log parsing overhead, not native presentation latency"
+        },
+        "initialPssKiB": 305238,
+        "finalPssKiB": 332913,
+        "initialPrivateKiB": 228600,
+        "finalPrivateKiB": 245756,
+        "allSamples": {
+          "elapsedSeconds": 17.700854673,
+          "survivingIdentityCpuPercentOneCore": 5.084500249430414,
+          "endpointIdentitySetsMatch": true,
+          "wholeIntervalCpuCoverageComplete": false,
+          "rssKiB": {
+            "count": 31,
+            "p50": 795244,
+            "p95": 799372,
+            "p99": 799700
+          },
+          "processCount": {
+            "count": 31,
+            "p50": 21,
+            "p95": 21,
+            "p99": 21
+          },
+          "rssGrowthKiB": 50344,
+          "pssComplete": true
+        }
+      },
+      "limitations": [
+        "QA DOM and Wayland protocol tracing enabled; overhead unmeasured",
+        "Helper-to-DOM time includes spawning/polling/parsing and is not native presentation latency",
+        "PPID process tree excludes detached/reparented workers and fixture/compositor; RSS double counts shared pages",
+        "Endpoint CPU identity equality cannot exclude transient workers between samples",
+        "20 cycles, one warm output and 2 controlled application windows; no cold/dense/hardware-display/long-soak acceptance"
+      ],
+      "performanceBudgetsAccepted": false,
+      "cleanupPassed": true,
+      "evidence": "implementation/elm-shared-measure-v160/qa/slice-manifest.json"
+    },
+    "sharedHostWarmupV161": {
+      "evidence": "implementation/elm-shared-soak-v161/qa/slice-manifest.json",
+      "nativeChecks": 111,
+      "popupCycles": 105,
+      "measuredCycles": 100,
+      "resourceSamples": 115,
+      "privateGrowthKiB": 10116,
+      "performanceBudgetsAccepted": false
+    },
+    "relatedViewV163": {
+      "nativeChecks": 137,
+      "originalNativeChecks": 91,
+      "observedBackendProcesses": 1,
+      "observedRendererProcesses": 1,
+      "singleOutputProcessCount": 9,
+      "dualOutputProcessCount": 9,
+      "cleanupPassed": true,
+      "evidence": "implementation/elm-related-qa-v163/qa/slice-manifest.json"
+    },
+    "relatedViewV164": {
+      "evidence": "implementation/elm-related-soak-v164/qa/slice-manifest.json",
+      "nativeChecks": 111,
+      "popupCycles": 105,
+      "measuredCycles": 100,
+      "resourceSamples": 115,
+      "comparison": {
+        "status": "descriptive two-run instrumented comparison; no approved performance-budget acceptance",
+        "workload": "five warm-up cycles/three idle seconds/100 measured popup cycles/five final idle seconds; one800x600 output/two controlled application windows",
+        "metrics": {
+          "elm-shared-soak-v161": {
+            "report": "implementation/elm-shared-soak-v161/qa/native-1791092669085834129/report.json",
+            "processCount": 21,
+            "baselinePssKiB": 283708,
+            "finalPssKiB": 293830,
+            "baselinePrivateKiB": 192296,
+            "finalPrivateKiB": 202412,
+            "postWarmupGrowthKiB": {
+              "rssKiB": 9788,
+              "knownPssKiB": 10122,
+              "knownPrivateKiB": 10116
+            },
+            "helperToDOMReceiptMs": {
+              "count": 100,
+              "p50": 135.648661,
+              "p95": 255.837546,
+              "p99": 338.210608
+            },
+            "postWarmupElapsedSeconds": 55.345923181
+          },
+          "elm-related-soak-v164": {
+            "report": "implementation/elm-related-soak-v164/qa/native-1791092969651719919/report.json",
+            "processCount": 9,
+            "baselinePssKiB": 247677,
+            "finalPssKiB": 258498,
+            "baselinePrivateKiB": 200344,
+            "finalPrivateKiB": 210676,
+            "postWarmupGrowthKiB": {
+              "rssKiB": 11864,
+              "knownPssKiB": 10821,
+              "knownPrivateKiB": 10332
+            },
+            "helperToDOMReceiptMs": {
+              "count": 100,
+              "p50": 111.845716,
+              "p95": 179.204261,
+              "p99": 191.859598
+            },
+            "postWarmupElapsedSeconds": 47.187131014
+          }
+        },
+        "limitations": [
+          "Single run per candidate; timings include increasing trace-log parse overhead",
+          "Run durations differ; timing is helper-to-DOM, not native presentation",
+          "Private memory growth similar; process sharing does not establish boundedness",
+          "Existing current-shell comparison, production instrumentation overhead and long-soak gates stay open"
+        ],
+        "performanceBudgetsAccepted": false
+      },
+      "performanceBudgetsAccepted": false
+    },
+    "relatedGPUV166": {
+      "evidence": "implementation/elm-related-gpu-qa-v166/qa/slice-manifest.json",
+      "nativeChecks": 142,
+      "originalNativeChecks": 91,
+      "shaderReadback": [
+        17,
+        193,
+        71,
+        255
+      ],
+      "nativeDisplayedPixel": [
+        17,
+        193,
+        71
+      ],
+      "nativeRenderer": "Mesa Intel(R) Graphics (ARL)",
+      "webgpu": "unavailable in secure origin",
+      "scope": "Native related-view shared-renderer shader readback/display and Mesa Intel engine diagnostics, browser WebGPU unavailable; budgets/full graphics/device/AT/IME/menu/release qualification remain open"
+    },
+    "nativeRecoveryV171": {
+      "nativeChecks": 137,
+      "originalNativeChecks": 91,
+      "focusedRecoveryChecks": 31,
+      "recoveryQuintNamedScenarios": 6,
+      "recoveryQuintInvariantSamples": 1000,
+      "failureTimeGeometryPreserved": true,
+      "nativeRestartExit": 3,
+      "observedRendererProcesses": 1,
+      "singleOutputProcessCount": 9,
+      "dualOutputProcessCount": 9,
+      "cleanupPassed": true,
+      "evidence": "implementation/elm-native-recovery-qa-v171/qa/slice-manifest.json",
+      "scope": "Native reservation-preserving renderer failure/restart component31 plus original91/shared-output137; production supervisor/pending-effects/hotplug recovery/coherent GPU/menu/budgets/AT/IME/release remain open",
+      "limitations": [
+        "Reviewed fixture launches fresh host after actual native Restart exit3; production supervisor not implemented",
+        "Failure-time and final geometry checked, no atomic reservation across restart",
+        "Old packet refused via independent QA authority connection; no former-connection reuse or in-flight Unknown reconciliation proof",
+        "Recovery hotplug/zero outputs and keyboard-only/AT remain open"
+      ]
+    },
+    "hostSupervisorV179": {
+      "nativeChecks": 38,
+      "actualSubprocessChecks": 15,
+      "actualSupervisorOwnsReplacement": true,
+      "supervisedGenerations": 2,
+      "thirdGenerationAfterStop": false,
+      "hostExitCodes": [
+        3,
+        1
+      ],
+      "supervisorExitCode": 0,
+      "forcedNativeStop": false,
+      "sealedRuntimeFiles": 18,
+      "idleWaitChannel": "ep_poll",
+      "idleObservedSeconds": 2,
+      "idleContextSwitchDelta": 0,
+      "cleanupPassed": true,
+      "evidence": "implementation/elm-supervisor-native-v179/qa/slice-manifest.json",
+      "scope": "Private actual sealed supervisor restart/cancellation through native recovery controls; failure/final geometry and real application keyboard preserved; pending-intent/AT/hotplug/atomic restart/full release remain open",
+      "limitations": [
+        "Forced-stop helper/service ownership not fully qualified",
+        "Pending Unknown/former authenticated scope, atomic restart reservation, recovery hotplug/zero outputs and AT remain open",
+        "Full137/original91 and recovery Quint6/1000 are inherited, not repeated by this38-check workload"
+      ]
+    },
+    "shellCohortV186": {
+      "passed": true,
+      "scope": "Actual owned transient shell scope cooperative and forced teardown; externally launched applications/compositor preserved; no production app launch or release acceptance",
+      "cooperativeNativeChecks": 40,
+      "forcedNativeChecks": 42,
+      "actualCohortCPUChecks": 7,
+      "forcedStopSeconds": 5.050370658995234,
+      "forcedResidualHelpersRemoved": 3,
+      "scopeMembersRemaining": [],
+      "forcedStopWrapperExitCode": 1,
+      "sealedRuntimeFiles": 18,
+      "originalHelpersAndDeadlinesUnchanged": true,
+      "cleanupPassed": true,
+      "retainedOriginalNativeChecks": 91,
+      "retainedFullNativeChecks": 137,
+      "retainedRecoveryQuintNamed": 6,
+      "retainedRecoveryQuintSamples": 1000,
+      "performanceBudgetsAccepted": false,
+      "evidence": "implementation/elm-cohort-native-v186/qa/slice-manifest.json",
+      "limitations": [
+        "Application launch not implemented; future launches require independently owned application scopes",
+        "Wrapper startup/death races, pending Unknown/former authenticated scope, atomic reservations, recovery hotplug/AT/IME remain open",
+        "Full137/original91 and recovery Quint6/1000 retained, not rerun by40/42 selected campaigns"
+      ]
+    },
+    "windowJournalV193": {
+      "passed": true,
+      "scope": "Bounded durable window-intent journal and native settled-receipt restart; actual interrupted-effect/replacement Unknown display still open",
+      "nativeChecks": 42,
+      "actualFilesystemSubprocessChecks": 19,
+      "compiledRecoveryChecks": 30,
+      "compiledRetainedReducerChecksRerun": 20,
+      "compiledRetainedShellChecksRerun": 27,
+      "namedQuintScenarios": 6,
+      "quintInvariantSamples": 1000,
+      "sealedRuntimeFiles": 19,
+      "originalHelpersAndDeadlinesUnchanged": true,
+      "cleanupPassed": true,
+      "performanceBudgetsAccepted": false,
+      "nativeInterruptedEffectAcceptance": false,
+      "formerAuthenticatedSenderReplayAcceptance": false,
+      "evidence": "implementation/elm-journal-native-v193/qa/slice-manifest.json",
+      "limitations": [
+        "Actual submitted effect interruption/replacement Unknown UI and former authenticated sender reuse need native fault qualification",
+        "Frontend-to-broker journal admission gap remains open",
+        "Quint is abstract policy evidence, not automatic filesystem/C/Elm refinement"
+      ]
+    },
+    "lostReceiptAndOriginalSenderV200": {
+      "passed": true,
+      "scope": "Actual native committed action/lost receipt and same-sender rehandshake refusal; existing/replacement actual Unknown DOM, no automatic replay and fresh explicit action; frontend admission/global revocation/full release open",
+      "nativeLostReceiptChecks": 52,
+      "nativeOriginalSenderChecks": 55,
+      "filesystemSubprocessChecksPerCandidate": 19,
+      "compiledRecoveryChecksPerCandidate": 30,
+      "compiledInheritedReducerChecksRerunPerCandidate": 20,
+      "compiledInheritedShellChecksRerunPerCandidate": 27,
+      "nativeInterruptedEffectAcceptance": true,
+      "sameAuthenticatedSenderRehandshakeReplayRefused": true,
+      "formerLiveSenderGlobalRevocationAcceptance": false,
+      "frontendDurableAdmissionAcceptance": false,
+      "sealedRuntimeFilesPerCandidate": 20,
+      "noAutomaticResubmissionObservedMilliseconds": 500,
+      "originalHelpersAndDeadlinesUnchanged": true,
+      "cleanupPassed": true,
+      "performanceBudgetsAccepted": false,
+      "evidence": "implementation/elm-authenticated-recovery-native-v200/qa/slice-manifest.json",
+      "limitations": [
+        "Frontend-to-broker durable admission gap remains open",
+        "Same original PID rehandshake refusal proved; global revocation of a live former broker by another process not established",
+        "Interrupted minimize/restore variants and full coherent GPU/menu/core/AT/release gates remain open"
+      ]
+    },
+    "durableHostAdmissionV214": {
+      "passed": true,
+      "scope": "Actual durable bound host admission before Pending publication/broker read; unread replacement Unknown/no replay and exact settled commit suppression; full release open",
+      "nativeUnreadChecks": 57,
+      "nativeSettledChecks": 43,
+      "actualCAdmissionFilesystemChecks": 22,
+      "actualJournalChecks": 19,
+      "compiledRecoveryChecks": 30,
+      "compiledInheritedReducerChecksRerun": 20,
+      "compiledInheritedShellChecksRerun": 27,
+      "namedQuintScenarios": 8,
+      "quintInvariantSamples": 1000,
+      "frontendDurableAdmissionAcceptance": true,
+      "singleInflightIntentOnly": true,
+      "storageErrorUXAccepted": false,
+      "journalInstanceMigrationAccepted": false,
+      "originalHelpersAndDeadlinesUnchanged": true,
+      "cleanupPassed": true,
+      "performanceBudgetsAccepted": false,
+      "sealedRuntimeFiles": 20,
+      "evidence": "implementation/elm-admission-settled-native-v214/qa/slice-manifest.json",
+      "limitations": [
+        "Only single admitted window intent; storage-error UX and compositor-instance namespace/migration remain open",
+        "Interrupted minimize/restore, global former-live-broker revocation and full original91/coherent release tuple still require qualification",
+        "Quint8/1000 is abstract admission/settlement policy, not automatic C/filesystem/Elm refinement"
+      ]
+    },
+    "minimizeRestoreRecoveryV235": {
+      "passed": true,
+      "scope": "Four real single-window minimize/restore unread/lost-receipt recovery cases on actual pixels/input and current-state primary actions; original restore timing/full release open",
+      "cases": [
+        {
+          "case": "minimizeUnread",
+          "operation": "minimize",
+          "faultBoundary": "unread",
+          "nativeChecks": 57,
+          "minimizedAcrossRecovery": false,
+          "actualPixelStages": 6,
+          "actualNoAutoResubmission": true,
+          "cleanupPassed": true
+        },
+        {
+          "case": "restoreUnread",
+          "operation": "restore",
+          "faultBoundary": "unread",
+          "nativeChecks": 59,
+          "minimizedAcrossRecovery": true,
+          "actualPixelStages": 6,
+          "actualNoAutoResubmission": true,
+          "cleanupPassed": true
+        },
+        {
+          "case": "minimizeLostReceipt",
+          "operation": "minimize",
+          "faultBoundary": "lost",
+          "nativeChecks": 57,
+          "minimizedAcrossRecovery": true,
+          "actualPixelStages": 6,
+          "actualNoAutoResubmission": true,
+          "cleanupPassed": true
+        },
+        {
+          "case": "restoreLostReceipt",
+          "operation": "restore",
+          "faultBoundary": "lost",
+          "nativeChecks": 59,
+          "minimizedAcrossRecovery": false,
+          "actualPixelStages": 6,
+          "actualNoAutoResubmission": true,
+          "cleanupPassed": true
+        }
+      ],
+      "selectedCases": 4,
+      "nativeCheckCounts": [
+        57,
+        59,
+        57,
+        59
+      ],
+      "distinctBaselineScenarioCountNotInferred": true,
+      "actualDeadCgroupDescriptorChecks": 6,
+      "observedDeadDescriptorErrno": 19,
+      "sameSupervisorRuntimeCoreTuple": true,
+      "actualPixelStagesPerCase": 6,
+      "originalHelpersAndDeadlinesUnchanged": true,
+      "cleanupPassed": true,
+      "performanceBudgetsAccepted": false,
+      "originalRestoreTimingAccepted": false,
+      "sealedRuntimeFiles": 20,
+      "evidence": "implementation/elm-minimize-restore-recovery-v235/qa/slice-manifest.json",
+      "limitations": [
+        "Single controlled window at fixed private output; original restore38/recovery34/case34 timing, multiwindow/modal/device behavior and release are not established",
+        "Instance/lifetime journal namespace/migration, storage-error UX and global old-live-broker revocation remain open",
+        "Compiler/Quint/admission/full original native results are retained, not rerun by these four selected native campaigns"
+      ]
+    },
+    "namespaceV245": {
+      "passed": true,
+      "scope": "Instance/lifetime recovery journal isolation and ownership-qualified restartable migration, one actual unread-minimize recovery case",
+      "cpuNamespaceChecks": 42,
+      "cpuJournalChecks": 19,
+      "compiledAdmissionChecks": 22,
+      "compiledElmChecks": [
+        20,
+        27,
+        30
+      ],
+      "quintNamedScenarios": 8,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "nativeChecks": 59,
+      "nativeSelectedCases": 1,
+      "actualPixelStages": 6,
+      "cleanupPassed": true,
+      "sealedRuntimeFiles": 20,
+      "preparedNativeCasesNotExecuted": [
+        "elm-namespaced-restore-native-v242",
+        "elm-namespaced-minimize-lost-v243",
+        "elm-namespaced-restore-lost-v244"
+      ],
+      "completedRequirementIds": [],
+      "fullOriginalNativeRegressionAccepted": false,
+      "legacyOwnershipProvisioningAccepted": false,
+      "storageErrorUXAccepted": false,
+      "evidence": "implementation/elm-namespace-acceptance-v245/qa/slice-manifest.json"
+    },
+    "namespaceRecoveryV247": {
+      "passed": true,
+      "scope": "Four interrupted minimize/restore native cases and normally settled activation recovery on one namespaced host/broker/core tuple",
+      "cases": [
+        {
+          "case": "minimizeUnread",
+          "operation": "minimize",
+          "faultBoundary": "unread",
+          "nativeChecks": 59,
+          "actualPixelStages": 6,
+          "cleanupPassed": true,
+          "retainedNotRerun": true
+        },
+        {
+          "case": "restoreUnread",
+          "operation": "restore",
+          "faultBoundary": "unread",
+          "nativeChecks": 61,
+          "actualPixelStages": 6,
+          "cleanupPassed": true,
+          "retainedNotRerun": false
+        },
+        {
+          "case": "minimizeLost",
+          "operation": "minimize",
+          "faultBoundary": "lost",
+          "nativeChecks": 59,
+          "actualPixelStages": 6,
+          "cleanupPassed": true,
+          "retainedNotRerun": false
+        },
+        {
+          "case": "restoreLost",
+          "operation": "restore",
+          "faultBoundary": "lost",
+          "nativeChecks": 61,
+          "actualPixelStages": 6,
+          "cleanupPassed": true,
+          "retainedNotRerun": false
+        },
+        {
+          "case": "settled",
+          "operation": null,
+          "faultBoundary": null,
+          "nativeChecks": 43,
+          "actualPixelStages": 0,
+          "cleanupPassed": true,
+          "retainedNotRerun": false
+        }
+      ],
+      "selectedNativeWorkloads": 5,
+      "newNativeWorkloads": 4,
+      "nativeCheckCounts": [
+        59,
+        61,
+        59,
+        61,
+        43
+      ],
+      "sameRuntimeAndCoreTuple": true,
+      "cleanupPassed": true,
+      "sealedRuntimeFiles": 20,
+      "originalHelpersAndDeadlinesUnchanged": true,
+      "completedRequirementIds": [],
+      "fullOriginalNativeRegressionAccepted": false,
+      "storageErrorUXAccepted": false,
+      "legacyOwnershipProvisioningAccepted": false,
+      "evidence": "implementation/elm-namespace-recovery-v247/qa/slice-manifest.json"
+    },
+    "storageUXV254": {
+      "passed": true,
+      "scope": "Typed bounded storage explanations, preserved uncertain state, explicit recovery with two actual native filesystem refusal/correction cases",
+      "compiledStorageUXChecks": 55,
+      "cpuStorageChecks": 21,
+      "compiledAdmissionChecks": 22,
+      "cpuNamespaceChecks": 42,
+      "compiledInheritedElmChecks": [
+        20,
+        27,
+        30
+      ],
+      "quintNamedScenarios": 8,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "nativeCheckCounts": [
+        23,
+        22
+      ],
+      "selectedNativeWorkloads": 2,
+      "sameRuntimeAndCoreTuple": true,
+      "cleanupPassed": true,
+      "sealedRuntimeFiles": 20,
+      "nativeStorageReasonsQualified": [
+        "unverified",
+        "unavailable"
+      ],
+      "diskFullNativeAccepted": false,
+      "legacyOwnerNativeAccepted": false,
+      "busyNativeAccepted": false,
+      "allRecoveryStagesAccepted": false,
+      "fullOriginalNativeRegressionAccepted": false,
+      "completedRequirementIds": [],
+      "evidence": "implementation/elm-storage-acceptance-v254/qa/slice-manifest.json"
+    },
+    "storageQualifiedV262": {
+      "passed": true,
+      "scope": "Pure Elm stale failure-text preservation, actual busy/unowned legacy correction, original unchanged137 workload on V256/V89",
+      "compiledStaleChecks": 47,
+      "compiledStorageUXChecks": 55,
+      "compiledInheritedElmChecks": [
+        20,
+        27,
+        30
+      ],
+      "quintNamedScenarios": 10,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "newNativeStorageCheckCounts": [
+        22,
+        23
+      ],
+      "originalNativeRegressionChecks": 137,
+      "originalNativeBaselineChecks": 91,
+      "originalCheckWaitCallsAndHelperASTUnchanged": true,
+      "sameGUIBuildCorePair": true,
+      "cleanupPassed": true,
+      "sealedRuntimeFiles": 20,
+      "newNativeStorageReasonsQualified": [
+        "busy",
+        "legacy-owner"
+      ],
+      "legacyMetadataRuleNativeAccepted": true,
+      "productionLegacyProvisioningAccepted": false,
+      "allRecoveryStagesAccepted": false,
+      "newerGeometryMenuGPUReleaseAccepted": false,
+      "completedRequirementIds": [],
+      "evidence": "implementation/elm-storage-qualified-v262/qa/slice-manifest.json"
+    },
+    "storageSettlementV265": {
+      "passed": true,
+      "scope": "Actual committed minimize/restore followed by broker settlement read refusal, repair/Unknown UI and explicit same-host reconnect without replay",
+      "cases": [
+        {
+          "operation": "minimize",
+          "nativeChecks": 45,
+          "actualPixelInputStages": 6,
+          "nativeCommittedStateAcrossRecovery": true,
+          "sameHost": true,
+          "cleanupPassed": true
+        },
+        {
+          "operation": "restore",
+          "nativeChecks": 47,
+          "actualPixelInputStages": 6,
+          "nativeCommittedStateAcrossRecovery": false,
+          "sameHost": true,
+          "cleanupPassed": true
+        }
+      ],
+      "nativeCheckCounts": [
+        45,
+        47
+      ],
+      "selectedNativeWorkloads": 2,
+      "actualPixelInputStagesPerCase": 6,
+      "sameRuntimeAndCoreTuple": true,
+      "cleanupPassed": true,
+      "sealedRuntimeFiles": 20,
+      "originalHelpersAndDeadlinesUnchanged": true,
+      "nativeSettlementReadRefusalAccepted": true,
+      "hostBindingRetryAccepted": false,
+      "nativeDiskFullAccepted": false,
+      "allRecoveryStagesAccepted": false,
+      "completedRequirementIds": [],
+      "evidence": "implementation/elm-storage-settlement-v265/qa/slice-manifest.json"
+    },
+    "hostBindV274": {
+      "passed": true,
+      "scope": "Host admission failed-lifetime retirement preserves instance context for explicit retry; actual lock/privacy correction and original137",
+      "compiledRetryChecks": 14,
+      "retainedCompiledAdmissionChecks": 22,
+      "compiledInheritedElmChecks": [
+        20,
+        27,
+        30
+      ],
+      "quintNamedScenarios": 8,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "nativeHostBindingCheckCounts": [
+        22,
+        22
+      ],
+      "originalNativeRegressionChecks": 137,
+      "originalNativeBaselineChecks": 91,
+      "sameGUIBuildCorePair": true,
+      "cleanupPassed": true,
+      "sealedRuntimeFiles": 20,
+      "nativeHostBindingRetryAccepted": true,
+      "allRecoveryStagesAccepted": false,
+      "newerGeometryMenuGPUReleaseAccepted": false,
+      "completedRequirementIds": [],
+      "evidence": "implementation/elm-host-bind-acceptance-v274/qa/slice-manifest.json"
+    },
+    "recoveryProtocolsV279": {
+      "passed": true,
+      "scope": "Actual durable schema1 compatibility/schema2 legacy+geometry intent correlation and compiled C admission; no integrated broker/Elm/native acceptance",
+      "journalProtocolChecks": 60,
+      "inheritedJournalChecks": 19,
+      "namespaceChecks": 42,
+      "compiledAdmissionChecks": 47,
+      "quintNamedScenarios": 9,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "failedQuintParseRetained": true,
+      "nativeRun": false,
+      "geometryBrokerIntegrated": false,
+      "elmGeometryRecoveryIntegrated": false,
+      "completedRequirementIds": [],
+      "evidence": "implementation/elm-recovery-protocol-acceptance-v279/qa/slice-manifest.json",
+      "limitations": [
+        "Geometry broker and strict typed Elm recovery remain to integrate with shared allocator and storage UX",
+        "Preserved original native tuple not superseded; release requires coherent native pixel/input and fault matrix",
+        "Physical/human GPU/AT/IME/performance/storage/provisioning/old-broker revocation/C00 gates remain open"
+      ]
+    },
+    "geometryRecoveryV284": {
+      "passed": false,
+      "componentChecksPassed": true,
+      "scope": "Broker journal + actual compiled shared-controller geometry recovery; reproduced cold loss of earlier Unknown after unrelated commit",
+      "brokerRecoveryChecks": 193,
+      "framingChecks": 1011,
+      "inheritedCompiledElmChecks": [
+        78,
+        53,
+        21
+      ],
+      "compiledElmRecoveryChecks": 34,
+      "geometryBrokerJournalIntegrated": true,
+      "compiledElmGeometryRecovery": true,
+      "multiUnknownColdRecoveryAccepted": false,
+      "integratedNativeHostAccepted": false,
+      "nativeRun": false,
+      "completedRequirementIds": [],
+      "evidence": "implementation/elm-geometry-recovery-acceptance-v284/qa/slice-manifest.json",
+      "limitations": [
+        "V283 original AUnknown preservation assertion fails after unrelated BCommit and cold restart; implement bounded multi-intent durable ledger before native integration",
+        "Retained V281 missing lifetime-helper compiler failure; corrected V282 optimized Main/Popup/shared-controller tests pass",
+        "Actual merged native recovery+geometry/context host, source/ABI closure, pixel/input/fault and broad release gates remain open"
+      ]
+    },
+    "multiRecoveryV292": {
+      "passed": true,
+      "scope": "Bounded multi-intent cold broker/ledger preservation and compiled Elm allocation recovery; live host handoff remains open",
+      "ledgerChecks": 64,
+      "brokerRecoveryChecks": 219,
+      "framingChecks": 1011,
+      "coldBrokerMigrationChecks": 23,
+      "originalColdReproductionChecks": 4,
+      "receiptOrderChecks": 3,
+      "compiledInheritedElmChecks": [
+        78,
+        53,
+        21
+      ],
+      "compiledElmRecoveryChecks": 45,
+      "quintNamedScenarios": 9,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "multiUnknownColdBrokerRecoveryAccepted": true,
+      "nativeHostAdmissionIntegrated": false,
+      "nativeRun": false,
+      "completedRequirementIds": [],
+      "evidence": "implementation/elm-multi-recovery-acceptance-v292/qa/slice-manifest.json",
+      "limitations": [
+        "Actual broker uses synthetic native peer for CPU evidence; no new native geometry/pixels/AT/hardware acceptance",
+        "Current persistent host-writer lock and mutable singleton admission deliberately refuse new ledger adoption; integrate live shared-host admission/definitive retirement protocol next",
+        "128 allocation scopes bounded; native full storage/provisioning/global old-broker revocation, restore timing, GPU/AT/IME/physical/human/budgets/C00/release remain open"
+      ]
+    },
+    "admissionHandoffV299": {
+      "passed": true,
+      "scope": "Actual compiled shared host/controller and live C admission/Python production handler CPU handoff; synthetic native authority in handler tests",
+      "liveCAndPythonChecks": 110,
+      "productionHandlerChecks": 21,
+      "compiledSharedOutputChecks": 37,
+      "compiledSharedRecoveryChecks": 49,
+      "quintNamedScenarios": 12,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "nativeHostAdmissionSourceIntegrated": true,
+      "nativeGUIHandoffQualified": false,
+      "nativeRun": false,
+      "completedRequirementIds": [],
+      "evidence": "implementation/elm-admission-handoff-acceptance-v299/qa/slice-manifest.json",
+      "limitations": [
+        "No GTK/compositor pixel/input or GPU run on this tuple",
+        "Geometry/context menu presentation and newest owning compositor/plugin integration pending",
+        "Native storage/global revocation, original restore timing, AT/IME/physical/human/budgets/C00/release remain open"
+      ]
+    },
+    "sharedStagedMenuV308": {
+      "passed": true,
+      "scope": "Compiled actual shared Elm menu/recovery/output ownership and C geometry carrier; native context input and release open",
+      "compiledSharedOutputChecks": 37,
+      "compiledSharedRecoveryChecks": 49,
+      "compiledSharedMenuOwnershipChecks": 13,
+      "compiledStagedMenuChecks": 78,
+      "compiledStagedGeometryChecks": 53,
+      "compiledStagedRefreshChecks": 21,
+      "compiledPostCloseChecks": 59,
+      "geometryCarrierChecks": 34,
+      "compiledUnsafeMutantsDetected": 3,
+      "quintNamedScenarios": 12,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "nativeRun": false,
+      "nativeContextRouteIntegrated": false,
+      "completedRequirementIds": [],
+      "evidence": "implementation/elm-shared-staged-menu-acceptance-v308/qa/slice-manifest.json",
+      "limitations": [
+        "Original byte-exact menu64/78, refresh18/21 and old geometry setup fatal retained separately; staged semantic passes are not substituted as original passes",
+        "Shared C context/navigation proof must be bound to real per-output source before native menu usability can qualify",
+        "Newest owning core/plugin/AQ runtime integration, full release/GPU/AT/IME/physical/human/budgets/C00/rollback remain open"
+      ]
+    },
+    "sharedContextV332": {
+      "manifest": "implementation/elm-shared-context-integration-held-v332/qa/slice-manifest.json",
+      "manifestSHA256": "35bd1876256a02ff47e514b41be50d3beef459dfffe78324cb1c635ab1eb9fcf",
+      "source": "implementation/elm-shared-context-startup-order-v329",
+      "sharedOutputChecks": 37,
+      "sharedRecoveryChecks": 49,
+      "sharedMenuChecks": 23,
+      "adaptedStableMenuChecks": 78,
+      "geometryChecks": 53,
+      "refreshChecks": 21,
+      "postCloseChecks": 59,
+      "nativeCampaigns": 6,
+      "nativeCampaignsPassed": 0,
+      "nativeCleanupPassed": 6,
+      "fullReleaseAccepted": false,
+      "finding": "Native Escape popup teardown loses physical release; later Escape is rejected as held. Startup broker recovery is materialized before attached publication."
+    },
+    "sharedTerminalV342": {
+      "manifest": "implementation/elm-shared-terminal-acceptance-v342/qa/slice-manifest.json",
+      "manifestSHA256": "df43a65b27a2e4b800e73b4ab846e32cfbc8038d9e901c19b6df06dbaced6c02",
+      "source": "implementation/elm-shared-terminal-release-v333",
+      "latestNativeChecks": 39,
+      "nativeCampaigns": 6,
+      "nativeCampaignsPassed": 4,
+      "nativeCleanupPassed": 6,
+      "contextGuardChecks": 68,
+      "keyChecks": 20,
+      "geometryCarrierChecks": 34,
+      "quintNamedScenarios": 9,
+      "invariantSamples": 1000,
+      "maxSteps": 40,
+      "boundedNativeAcceptance": true,
+      "fullReleaseAccepted": false
+    },
+    "sharedTerminalOrderV348": {
+      "manifest": "implementation/elm-shared-terminal-order-acceptance-v348/qa/slice-manifest.json",
+      "manifestSHA256": "e3353e6f12bb24e60c3a65718dc32771879e004e849e65e3668fc35f3fbd54fd",
+      "source": "implementation/elm-shared-terminal-early-release-v344",
+      "fastNativeChecks": 39,
+      "originalTimingNativeChecks": 39,
+      "nativeCampaigns": 3,
+      "nativeCampaignsPassed": 2,
+      "nativeCleanupPassed": 3,
+      "contextGuardChecks": 73,
+      "quintNamedScenarios": 14,
+      "invariantSamples": 1000,
+      "maxSteps": 40,
+      "boundedNativeAcceptance": true,
+      "fullReleaseAccepted": false
+    },
+    "sharedKeyboardRecoveryV365": {
+      "manifest": "implementation/elm-shared-keyboard-recovery-evidence-v365/qa/slice-manifest.json",
+      "manifestSHA256": "748949dd1aa7280365f3bc9455ff41f59cafd2b397420663533907f71c0d64ba",
+      "summary": "Source359 combines native keyboard proof with certified batch dispositions and exact Pending-only unsent recovery. Compiled C76/key20/carrier34, local refusal65, browser wire2, shared37/49/23 and adapted semantic79/53/21 pass. Native36048 passes bounded observations; strict zero-dwell362 fails Escape after ShiftF10 during publication transition; strict normal364 fails fixture startup. All cleanup pass; no strict native, AT, release, requirement or sprint closure. Earlier implicit-click bypass fix/proof retained in frozen source358 packet.",
+      "strictNativeAccepted": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "sharedNavigationDiagnosticV368": {
+      "manifest": "implementation/elm-shared-navigation-diagnostic-evidence-v368/qa/slice-manifest.json",
+      "manifestSHA256": "e68732b55a0bf382b2e4ac53267788bc64dca63f4378409e8afb8803a552d69b",
+      "summary": "Read-only diagnostic source366 changes only QA refusal logging. Actual optimized host/C76/key20/carrier34 pass; strict original-deadline zero-dwell native367 passes48 input/release/receipt/pixel checks and normal cleanup. Source359 failure362 remains open: pending presentation acknowledgement is a hypothesis requiring controlled reproduction. No render-transition, AT, full native/release, requirement or sprint acceptance.",
+      "renderTransitionQualified": false,
+      "completedRequirementIds": []
+    },
+    "sharedRenderDismissalV379": {
+      "manifest": "implementation/elm-shared-render-dismissal-accepted-v379/qa/slice-manifest.json",
+      "manifestSHA256": "4e84137774d89702933db04081380f4599cc97dd881919ad229d7f350bc24a20",
+      "summary": "Production371 fixes Escape during pending menu rendering while preserving native grabbed/configured/focused exact view/epoch/pub/lease/500ms physical-release proof. Enter retains full readiness. Controlled ancestor370 fails; final production48, controlled49, controlled Enter-refusal51 native checks pass normal cleanup on core89/plugin90/AQ105. Actual C90/key20/carrier34, recovery65/wire2 and Quint21/1000x40 pass; two unsafe controls detected. Source/failed infrastructure/freezer evidence frozen. Full UIUX/AT/IME/GPU/release and requirements/sprints remain open.",
+      "boundedNativeAcceptance": true,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "sharedRegistrationShutdownV387": {
+      "manifest": "implementation/elm-shared-registration-shutdown-accepted-v387/qa/slice-manifest.json",
+      "manifestSHA256": "f2e4114985f0ba936d40ffa876408ce66da9ba61a30b2b21b10c3b0db3595845",
+      "summary": "Final380 merges production371 input proof with reviewed144 registration/refusal and bounded broker output/ordered native drain. Actual native49 and target-retirement48 pass strict6s/pixels/receipts/client-empty/normal cleanup. Actual registration25, operation/deferred65, broker43, teardown10, shared37/49/23, adapted79/53/21 and C90/key20/carrier34 pass. Quint8/1000x40 and unsafe certificate control pass. Original native08/09/10 receipt/EOF faults and full UIUX/ATIME/GPU/release/requirements/sprints remain open.",
+      "boundedNativeAcceptance": true,
+      "originalNativeFaultAccepted": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "sharedReceiptEofV394": {
+      "manifest": "implementation/elm-shared-receipt-eof-accepted-v394/qa/slice-manifest.json",
+      "manifestSHA256": "a67206657a60f996fe8d0eebb5844020588a582cf63d9e8a28f61b2c0cfff68b",
+      "summary": "Current schema5 receipt/EOF fixture391 verifies captured source380; AST-exact original hold/pump algorithms retained. CPU45/52/19/7/7 plus exact profile9 pass; predecessor path/oracle failures frozen. Actual relay baseline50 and physical EOF/reconnect subset57 pass strict6s/normal EOF/owned fresh actors/same lifetime/fresh binding/native facts/no replay/pixels/clientempty cleanup. Original geometry08 savedMax/09heldreceipt/10full contract and full UIUX/GPU/ATIME/release/requirements/sprints remain open.",
+      "boundedNativeAcceptance": true,
+      "originalGeometry08_09_10Accepted": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "geometrySizePolicyV398": {
+      "manifest": "implementation/elm-geometry-size-policy-evidence-v398/qa/slice-manifest.json",
+      "manifestSHA256": "510c4c4b1c401f5ab9baf4410b0ddf9ee8918149935080dd2a68fc91e02d161a",
+      "summary": "Native397 reproduces current380 GTK floating Max refusal, binding exact toplevel/PID/address/incarnation and actual minimum108x42/unbounded raw maximum0x0; original multi-action assertion fails, cleanup passes. Additive EARS SB001-008/OpenSpec pure intersected per-axis size policy395 passes796 C++ checks; Quint396 selected11 cases/1000 trace samples and unsafe lower-bound control pass. No native authority/projection mutation or maximize acceptance; source380 remains frozen and full obligations open.",
+      "nativeAcceptance": false,
+      "wireIntegrated": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "geometryCoordinatesV403": {
+      "manifest": "implementation/elm-geometry-coordinate-evidence-v403/qa/slice-manifest.json",
+      "manifestSHA256": "06a7f19d2223b9fa464fbb53710435d3b0fa5ca74285eca5fa4d52498470d641",
+      "summary": "Prospective zero-origin geometry source402 passes1710 C++ checks on exact owning authority90 math headers/library and five compiled unsafe controls. Raw integer configure limits and real/layout dimensions remain separate; MAX subtracts reservations once, ordinary restore does not, Wayland scale is not multiplied. Nonzero XDG origins remain unsupported. Pure prototype only; authority/projection/native GTK acceptance pending, integrated380 tuple unchanged. Failed399/401 attempts preserved in frozen403110-file packet. No requirement/cycle/release completion.",
+      "nativeAcceptance": false,
+      "wireIntegrated": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "geometryAuthorityV408": {
+      "manifest": "implementation/elm-geometry-coordinate-authority-held-v408/qa/slice-manifest.json",
+      "manifestSHA256": "92ed4d73b4a6d4f519d3990ca74b6d5c776867d7bde792a97724de6ec5330e76",
+      "summary": "Implemented native geometryProtocol2 producer407 with per-frontend negotiation, separate prospective MAX/restore sizes, version1 restrictive compatibility, canonical bound/conversion revisions including invalid/fixed observations, pre-mutation feasibility and exact post-callback target/real/double+integer configure checks. Actual owning core89 compile/strong-symbol closure and helper1710/five compiled unsafe controls PASS; frozen4083335 files/3 links. No native loading, GTK or typed-consumer integration acceptance. Source380 tuple remains current;404 preparation/build failure and405/406 intermediates retained.",
+      "nativeAcceptance": false,
+      "wireIntegrated": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "geometryBoundsV415": {
+      "manifest": "implementation/elm-geometry-bounds-held-v415/qa/slice-manifest.json",
+      "manifestSHA256": "bfcd59585f1bb58175e387f8a5e8d92b772e973424be825a339c61f6cbbc1534",
+      "summary": "Native409 fixes review168 effective configure intersection fixed-axis counterexample: owning core89 compile/symbolclosure and C1715/six controls PASS. Shared410 matching strict Python/typed Elm observation2, conversion/coherence checks, activehost2 negotiation and per-operation effect/menu guards compile actual Main/Bar/Popup/C context/key/carrier/surface checks. Python/compiledElm68 samples agree including36 actual owning helper projections; actual attach/correlation13 PASS. Quint414 selected12/1000x40/two unsafe controls PASS, bounded integer proof only. Failed411 worker annotation fixture retained; frozen4151636 files/7 reports. Shared controller migration/native loading/GTK/release still pending; integrated380 tuple unchanged.",
+      "nativeAcceptance": false,
+      "wireIntegrated": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "sharedGeometryV425": {
+      "manifest": "implementation/elm-geometry-shared-accepted-v425/qa/slice-manifest.json",
+      "manifestSHA256": "12f99d5cf3557bafb8e0bfa6a8f86c58df80db9d0b647b963a7492b15a60fb46",
+      "summary": "Coherent source422/runtime420/core89/plugin409/AQ105 native424 PASS69: actual GTKmin108x42/rawmax0x0 multi-action keyboard Max/RestoreGeometry, correlated committed receipts, exact original placement/ownership, original minimize/restore pixels, retirement/replacement and ordered normal cleanup. Independent actual log proof426 matches MAX798x550 configure/ACK266 and restored800x600 configure/ACK308 with exact GTK geometry/commit; removed-ACK controls detected. Shared fixture419 output37/recovery49/menu23/surface58/presentation12 and optimized GUI/C checks pass. Fixed inherited Apps nonowner publication regression418 and missing QA reflow mapping419; Ccarrier422 admits strict1/2 with37 checks. Failed416/418/421 retained. Frozen4251517 files/12 reports. Bounded native/wire acceptance only; full geometry08/09/10/MAX RGB/release open.",
+      "nativeAcceptance": true,
+      "acceptanceScope": "Bounded native69 GTK/menu and actual client configure/ACK evidence only",
+      "wireIntegrated": true,
+      "fullGeometryCampaignAccepted": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": [],
+      "source": "implementation/elm-shared-geometry-carrier-v422",
+      "runtime": "implementation/elm-geometry-bounds-runtime-v420",
+      "nativeChecks": 69,
+      "boundedClientACKQualified": true
+    },
+    "currentRecoveryV430": {
+      "manifest": "implementation/elm-geometry-current-recovery-accepted-v430/qa/slice-manifest.json",
+      "manifestSHA256": "db8dca6216c0c3dfadff0904911cf797f3598cfacd330a7dca730a41da421ad1",
+      "summary": "Current422/runtime420/core89/plugin409/AQ105 recovery428 native50 and429 native57 passed original real menu/minimize/restore/pixels, normal relay/broker EOF, Detached/physical Reconnect/fresh authority binding and ordered normal cleanup. Fresh427 frozen425 captured adapter binding CPU profile9/selector52/hold45/edges7/deadline7; original391 hold/pump/selector algorithms and all native392/393 assertions/deadlines unchanged. Frozen430182 files/7 reports. Bounded recovery only; geometry08/09/10/full UIUX/GPU/ATIME/output/physical/human/release open.",
+      "nativeAcceptance": true,
+      "acceptanceScope": "Bounded current422 normalEOF50 and reconnect57 native campaign only",
+      "wireIntegrated": true,
+      "fullGeometryCampaignAccepted": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "jointGeometryV434": {
+      "manifest": "implementation/elm-geometry-joint-held-v434/qa/slice-manifest.json",
+      "manifestSHA256": "a74eba5b7f831b662aee51677243cac86c551b7d0af5b6e35c1527e7ac211da9",
+      "summary": "Joint actual432 coherent422/runtime420/core89/plugin409/AQ105/fixture427 GEOMETRY-MENU01-10 PASS161 with client configure/ACK/buffer and independent serialRGB, saved MAX origin across EOF/Detached/physical Reconnect, held actual Committed receipt Pending/fresh observer/no replay then exact once release, target retirement/normal cleanup. Failed43101-09 retained: allocator address reuse incorrectly failed original10 despite new PID/incarnation/no effect;432 documented lifetime oracle uses native stableId+incarnation and9 actual-expression controls. All other original100 assertions/helpers/six-second deadlines exact. Frozen434136files/5reports; failed433 copied-report freezer retained. Joint bounded acceptance only; full size profiles/canonical layering/UIUX/release open.",
+      "nativeAcceptance": true,
+      "acceptanceScope": "Joint geometry menu01-10 with documented lifetime-oracle amendment; not all size profiles or baseline scenarios",
+      "jointGeometryMenuQualified": true,
+      "retirementOracleAmended": true,
+      "nativeChecks": 161,
+      "fullGeometryCampaignAccepted": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "sharedKeyboardV439": {
+      "manifest": "implementation/elm-shared-keyboard-integrated-v439/qa/slice-manifest.json",
+      "manifestSHA256": "111b2e70f9dc1d77f67b36f826785d59977e1439c7ab3aa111f5239598e5820c",
+      "summary": "Current source422/runtime435/core89/plugin409/AQ155/fixture427 coherent integration native436menu69/437jointgeometry161/438reconnect57 PASS287 with exact AQ155 runtime mapping, real physical keyboard/menu input, Max/Restore/minimize/restore/pixels, savedMAX08, held actual receipt09, lifetime retirement10 and normal cleanup. Independent158 focus/capability cancellation543 reviewed as prior core89/plugin90 evidence; public19 headers identical toAQ105 and all1786 exports preserved. Frozen439144files/5reports. Source422/host algorithms unchanged; only reviewed AQ155 runtime selection adopted. Forced focus/capability loss with open shared GUI, multiddevice/physical/ATIME/GPU and broad layering/release remain open.",
+      "nativeAcceptance": true,
+      "acceptanceScope": "Current coherent AQ155 shared menu69/jointgeometry161/reconnect57; no release/physical/multidevice completion",
+      "source": "implementation/elm-shared-geometry-carrier-v422",
+      "runtime": "implementation/elm-shared-keyboard-runtime-v435",
+      "nativeChecks": 287,
+      "jointGeometryMenuQualified": true,
+      "fullGeometryCampaignAccepted": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "sharedKeyboardLossV443": {
+      "manifest": "implementation/elm-shared-keyboard-loss-failure-v443/qa/slice-manifest.json",
+      "manifestSHA256": "d0eb12ce88362907866d2373bd12122326539caf2d1fc42cd1c9524b821b3e1e",
+      "summary": "Shared open-menu loss441 focus cancellation passed then unsupported parentEscape fixture failure; fresh442 focus cancellation/recovered parentA/native Escape passed, capability cancellation/core ledgers/releases/no-effect/output preserved but fresh parentA typing after restoration failed original6s. ParentHypr trace enter/key30 down/up; shared host newkeyboard keymap/repeat with noenter/key pair while popupbuffer continues. Both normal cleanup. Frozen44369files/2failedreports. Current439 source422/runtime435/AQ155 remains candidate; QA440 onlyparent151 faultmodule. Cause not yet proven; native keyboard focus/resource observer next. No new native acceptance.",
+      "nativeAcceptance": false,
+      "evidenceIntegrityPassed": true,
+      "sourceCandidate": "implementation/elm-shared-geometry-carrier-v422",
+      "runtimeCandidate": "implementation/elm-shared-keyboard-runtime-v435",
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "seatFocusV449": {
+      "manifest": "implementation/elm-keyboard-seat-focus-source-held-v449/qa/slice-manifest.json",
+      "manifestSHA256": "68e5c454daac62850674e00a695fd28ac3cc3e625ebe95d64a40fe641d7df875",
+      "summary": "Native445 read-only focus observer444 repeats shared capability failure24/normalcleanup: live popup52/sharedHost -> samefocus zero keyboardresources -> restored focus71/underlying fixture while grab remains. Causal owning setupKeyboard first-device desktop fallback overwrites seat popup. Fresh446 sole expiry guard EARS/OpenSpec;447 actual C++ predicate36/two bad controls and Quint7 named/1000x40/3 mutants pass (446 initial zero named retained); full448 actual InputManager TU compiles against694 exact Core89 headers. Frozen4491865files/6reports. Source correction prepared only; native fix/new core/plugin link unaccepted, candidate439 preserved.",
+      "nativeAcceptance": false,
+      "sourceCompileAccepted": true,
+      "causalNativeDiagnosis": true,
+      "candidate": "implementation/elm-keyboard-seat-focus-policy-v446",
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "seatFocusV458": {
+      "manifest": "implementation/elm-seat-focus-bounded-acceptance-v458/qa/slice-manifest.json",
+      "manifestSHA256": "b76584ceca2a713776f231c1ffc1ea6afa0eed94eb8d1c04bed49bd0adc32191",
+      "summary": "Core450 guarded first-keyboard fallback preserves live popup seat focus. Only InputManager archive payload changed;432 payloads/694 public headers/13412 exports retained. Owning geometry451 and observer452 rebuilt; source422/shared host unchanged/runtime453/AQ155. Actual native45489 held-key focus/capability loss and recovered typing,455161 geometry/menu01-10 ACK/pixels/held receipt,45657 physical reconnect pass with normal cleanup on exact same tuple. Frozen4583009files/7reports; failed freezer457 full-contract-flag mistake retained/corrected bounded oracle. Full-contract flags remain false; no requirement/release completion.",
+      "nativeAcceptance": true,
+      "nativeChecks": 307,
+      "nativeReports": 3,
+      "source": "implementation/elm-shared-geometry-carrier-v422",
+      "runtime": "implementation/elm-seat-focus-restored-runtime-v453",
+      "nativePair": {
+        "core": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-seat-focus-restoration-v450/build-1791131758410759196/Hyprland",
+          "sha256": "59200d452966c2d8cf35073b8eff54cf1a2f1cbc1f40ecfc0ff5626c54ba0746"
+        },
+        "plugin": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-seat-focus-geometry-pair-v451/qa/build-1791131836506283574/elm-window-geometry-authority.so",
+          "sha256": "4d1a911c361b439c14329ec06b1536594fc2f34501cc5be2788318863e6523fa"
+        },
+        "aquamarine": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+          "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+        }
+      },
+      "boundedSeatFocusCorrectionQualified": true,
+      "fullGeometryCampaignAccepted": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "seatFocusBoundsV460": {
+      "manifest": "implementation/elm-seat-focus-bounds-qualified-v460/qa/slice-manifest.json",
+      "manifestSHA256": "de87949b83f13b6ea51b159342a8e90288cfc0880aea60ac4af77bbd90c2acb6",
+      "summary": "Fresh459 preserves exact204/201 source scenarios/checks/deadlines with runtime453/new Core450/plugin451/AQ155. Actual3 sessions passed604 controlled XDG bounds/constraint/refusal/ACK geometry checks across22 profiles (800x600 scale1 14,1600x1200 scale2 6,800x600 scale2 2). Exactmaps/output/workarea gate/normalcleanup. CPU plan7/error7/snapshot5/preflight pass; synthetic error-path refusal explicitly excluded from native counts. Frozen46079files/8reports. Parent458307 shared menu/geometry/keyboard regressions same exact tuple retained. Pixels/physical pointer/GTK/hardware/fullrelease unqualified.",
+      "nativeAcceptance": true,
+      "nativeChecks": 604,
+      "profileCount": 22,
+      "nativePair": {
+        "core": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-seat-focus-restoration-v450/build-1791131758410759196/Hyprland",
+          "sha256": "59200d452966c2d8cf35073b8eff54cf1a2f1cbc1f40ecfc0ff5626c54ba0746"
+        },
+        "plugin": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-seat-focus-geometry-pair-v451/qa/build-1791131836506283574/elm-window-geometry-authority.so",
+          "sha256": "4d1a911c361b439c14329ec06b1536594fc2f34501cc5be2788318863e6523fa"
+        },
+        "aquamarine": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+          "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+        }
+      },
+      "sameTupleSharedRegressionChecks": 307,
+      "nativePixelsAccepted": false,
+      "physicalPointerAccepted": false,
+      "gtkConstrainedConformanceAccepted": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "nonzeroPresentationV462": {
+      "manifest": "implementation/elm-nonzero-origin-presentation-failure-v462/qa/slice-manifest.json",
+      "manifestSHA256": "ea3657b7a15b5f7083a9cc0e4f67a989e404193a8f23f1112c251dc4f14f9290",
+      "summary": "Fresh461 actual screenshot212 derivative on corrected450/451/AQ155. Preflight/test pass; actualnative60checks normalcleanup fails origin-scale1 landmark prediction at geometry[16,24,800,600]/native[-1,-1,800,600]. Zero-scale1 ordinary/MAX/restored five RGB landmarks with postcaptureidentity pass3frames; origin image begins near[15,23], first3 predicted landmarks background. Nonzero transform explicitly hypothetical; no causal renderer defect claim or newpixel acceptance. Frozen46257files3reports. Parent460604profile checks and458307 sharedGUI same tuple preserved. Next source/renderer/projection coordinate diagnosis and actual pointer before enablingnonzero/fullrelease.",
+      "nativeAcceptance": false,
+      "causalRendererDefectConfirmed": false,
+      "nativePixelsAccepted": false,
+      "nativeFailureCleanupPassed": true,
+      "checksReached": 60,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "coordinateContractV465": {
+      "manifest": "implementation/elm-xdg-coordinate-design-held-v465/qa/slice-manifest.json",
+      "manifestSHA256": "f72ae292632c0e1903a0eb3e0741adb266a546b5cae3835847c2ff5d462d3943",
+      "summary": "463 actual frozenPNG/RGB/native/ACK diagnostic9checks confirms red extent15,23..22,30 translated by committed geometry16,24 relative native-1,-1; owning ElementRenderer geometryUVdisabled and rootquadunshifted candidates, not callbackcausality.464 EARS/OpenSpec exact coordinate contract preserves fullsurface/shadows and inversepointer, buffer/outputscales separate. Quint8 explicitnamed/1000x40/4typedmutants pass. Frozen46544files2reports; no native correction/refinement/requirements/fullrelease acceptance. Next complete fullsurface renderer + UV/source/viewport/subsurface/input mapping owningcandidate then actualsame-tuple screenshots/pointer/regressions.",
+      "diagnosticChecks": 9,
+      "quintNamedScenarios": 8,
+      "quintSamples": 1000,
+      "quintMaxSteps": 40,
+      "quintMutantsRejected": 4,
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "xdgOriginRenderV474": {
+      "manifest": "implementation/elm-xdg-origin-render-qualified-v474/qa/slice-manifest.json",
+      "manifestSHA256": "5153ea2a98eb9896a695202f8979a2a6eaa61686b5b33438d0dc00d0402ac69a",
+      "summary": "Candidate466 fullsurfacequad geometry-origin/projection, preservedviewportUV and inversehit transform; compile467 incompleteXDGShelltype failed retained.468 explicitincludes fixes;469 actual3TUs compiled694 ownheaders.470 fullcore3/433archivepayloadreplacements430unchanged (includingseatfocus), exactrelink13412exports/694headers unchanged.471 owning geometry strongclosure;472 sharedhost unchanged/AQ155. Actual473 passed124 checks4profiles8strictPNG/RGB frames and postcapture ACK/buffer/target/output identity with normalcleanup; unchanged461failure nowcorrected. Frozen4743317files7reports. Physicalpointer/nonzerooperations/GTK/roles/newcore307shared+604bounds regressions and fullrelease unqualified.",
+      "nativeAcceptance": true,
+      "nativeChecks": 124,
+      "actualPixelFrames": 8,
+      "profileCount": 4,
+      "nativePair": {
+        "core": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-xdg-origin-projection-v470/build-1791134095830955197/Hyprland",
+          "sha256": "5e83105890357cad74428d5816bd320d0dc29a69c5d1de7e3aaa0aa586520e83"
+        },
+        "plugin": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-origin-owning-pair-v471/qa/build-1791134168724700298/elm-window-geometry-authority.so",
+          "sha256": "4d1a911c361b439c14329ec06b1536594fc2f34501cc5be2788318863e6523fa"
+        },
+        "aquamarine": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+          "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+        }
+      },
+      "nativePixelsAccepted": true,
+      "physicalPointerAccepted": false,
+      "nonzeroGeometryOperationsAccepted": false,
+      "sharedRegressionOnNewCoreAccepted": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "xdgCombinedV484": {
+      "manifest": "implementation/elm-xdg-origin-combined-qualification-v484/qa/slice-manifest.json",
+      "manifestSHA256": "1860680083a19d1db101ed30f066a2b25b8442e63071663953124f368a5fbbc4",
+      "summary": "475 metadata preflight/noGUI failures retained;476 actual pointer285 checks40synthetic parent-seat gestures16before/aftercaptures4origin/bufferprofiles pass.477 observer rebuiltown470;479 joint geometry161/480 physicalreconnect57/4813bounds604 (22profiles) pass normalcleanup,1107 acceptednewchecks.478 fullshared menu fails86 original6s same-title replacement taskbarAwaiting; heldfocus/cap recovery preservepopup resources1->0->1.482log/source diagnosis unansweredprojection58, geometry59received thenrefreshes; source422 sceneNone sendsuncorrelatedhostrefresh whileShell pendingprojectiongatesqueue. Candidatecausalhandler/model replay needed; no fullshared/release acceptance. Failed482/483 freezer metadata-schema/generator assumptions retained;484 verifies initialflag and finalstage-readback separately. Frozen1413files16reports.",
+      "boundedNativeAcceptance": true,
+      "acceptedNativeChecks": 1107,
+      "pointerGestures": 40,
+      "pointerPixelFrames": 16,
+      "syntheticParentPointerAccepted": true,
+      "physicalHardwareAccepted": false,
+      "nativePair": {
+        "core": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-xdg-origin-projection-v470/build-1791134095830955197/Hyprland",
+          "sha256": "5e83105890357cad74428d5816bd320d0dc29a69c5d1de7e3aaa0aa586520e83"
+        },
+        "plugin": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-origin-owning-pair-v471/qa/build-1791134168724700298/elm-window-geometry-authority.so",
+          "sha256": "4d1a911c361b439c14329ec06b1536594fc2f34501cc5be2788318863e6523fa"
+        },
+        "aquamarine": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+          "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+        }
+      },
+      "fullSharedMenuRegressionAccepted": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "projectionTerminalV493": {
+      "manifest": "implementation/elm-projection-terminal-qualified-v493/qa/slice-manifest.json",
+      "manifestSHA256": "211838ad44f800a9efbd3a6c052a5e10015ea501f589f4276fed6098cf603e1f",
+      "summary": "486 actual422 handler changing18/19facts givesno correlatedreply; compiledShell58 pending100notices zero commands (485fixturecompilefailure retained).487/488grammarfails retained;489 EARS/OpenSpec Quint8named/1000x40/5typedmutants pass.490 actual backend adds scopedprojection-unavailable terminal and typedShell projectionRetryQueued/onefreshread preservinggeometry/effects/defer/transport fences; MainBarPopup/nativehost compiled.4919 compileddecoder/retry cases pass. Actual492 unchanged89 native menu/keyboard/retirement pass/normalcleanup on470/471/AQ155/observer477; actual58unavailable ->freshmatchingprojection -> replacementgroup byoriginal6s. Frozen493485files7reports. Broader newElm regressions and fullpointercontract remain unaccepted; review222 inherited219 helper canonicalreceipt/helperownership/parentview gaps recorded.",
+      "nativeAcceptance": true,
+      "nativeChecks": 89,
+      "source": "implementation/elm-projection-correlated-terminal-v490",
+      "nativePair": {
+        "core": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-xdg-origin-projection-v470/build-1791134095830955197/Hyprland",
+          "sha256": "5e83105890357cad74428d5816bd320d0dc29a69c5d1de7e3aaa0aa586520e83"
+        },
+        "plugin": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-origin-owning-pair-v471/qa/build-1791134168724700298/elm-window-geometry-authority.so",
+          "sha256": "4d1a911c361b439c14329ec06b1536594fc2f34501cc5be2788318863e6523fa"
+        },
+        "aquamarine": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+          "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+        }
+      },
+      "actualTerminalRecoveries": 1,
+      "quintNamedScenarios": 8,
+      "quintSamples": 1000,
+      "quintMutantsRejected": 5,
+      "typedCompiledCases": 9,
+      "fullPointerContractAccepted": false,
+      "pointerHelperAudit": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-alignment-review-v222/REVIEW.md",
+      "pointerHelperAuditSHA256": "6b9e59462da648078946b0a1aac9cda9b8bdbf146ef837df8ce55ed623e5518d",
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "projectionRetryBoundary502": {
+      "summary": "496 actual compiledShell490 reproduces single-terminal UInt64-ceiling retry retention (494/495 fixture mistakes preserved).498 clears retry on exhaustion; 497 model cardinality failure preserved. OptimizedMainBarPopup/C build passes;49914typedcases cover ceiling/duplicates/deferred andtransport explicitresume/disconnect plus decoder fences. Quint9named/1000x40/6mutationcontrols.500 original89 native menu/keyboard/retirement pass on unchanged470/471/AQ155/observer477 with orderedcleanup.501 three resumed read-only UX experts prioritize exact baseline IDs and AT/IME/motion/hardware/budgets gaps. Frozen502663files5reports; no requirement or release completion.",
+      "manifest": "implementation/elm-projection-retry-boundary-qualified-v502/qa/slice-manifest.json",
+      "manifestSHA256": "0b0f01cb2d60c228a8f51997279b56852df4ccb93e861ac5c64c18c787a053fc",
+      "nativeAcceptance": true,
+      "fullReleaseAccepted": false
+    },
+    "projectionEscapeIntegrated510": {
+      "summary": "503 fresh current498 relay/receipt binding CPU pass;504 native fails138 at held restore menu-open original6s normalcleanup;505 preflight only.506 reviews composition;507 combines498 Elm/backend with190 C Escape/helpertest only. OptimizedMainBarPopup/C168helperchecks and10mutationcontrols +50814typed cases pass;509 component frozen.511 actual507 backend binding CPU pass.512 joint161 +513 reconnect57 +514 menu/keyboard/retirement89 pass normalcleanup owning470/471/AQ155/observer477 one507 build;8 actual nativeEscape intents.515 frozen raw504 proof/publication-boundary race remains unclosed despite512pass.510 freeze855files13reports; fullrelease false and requirements unchanged.",
+      "manifest": "implementation/elm-projection-escape-integrated-v510/qa/slice-manifest.json",
+      "manifestSHA256": "18461a1d0030c34a0aed86650cf26ce65023eb22ef91753189b93716bbb79c4e",
+      "nativeAcceptance": true,
+      "nativeChecks": 307,
+      "fullReleaseAccepted": false
+    },
+    "stablePublication526": {
+      "summary": "524 public typedElm507 owner registration/retirement/reregistration yields identical established surface with redundant publication2\u21923;520 initial0\u21921 preserved mandatorystartup control. Failed516parentheses/518flags/523opaqueconstructor and517reservedname grammar retained.519 EARS/OpenSpec Quint8named/1000x40/5mutants.521 only SurfaceController.apply adds fullSurface.packet equality/no lease/no effects/nonzero publication coalescing, preserving new Desktop.Model and prior applications path; native/JS/backend guards unchanged507. OptimizedMainBarPopup/C168helper compile pass;5229 publictypedcases plus100 alternatingowner updates;5274actualcompiled badguards rejected.525 original89 native menu/keyboard/retirement normalcleanup owning470tuple.526814files8reports frozen; causal504 pointer race andfullrelease remainopen.",
+      "manifest": "implementation/elm-stable-publication-qualified-v526/qa/slice-manifest.json",
+      "manifestSHA256": "70421e459a6cce9284a133170cd47f5b80d9feb47435d1601f36ca0eaa6ab40e",
+      "nativeAcceptance": true,
+      "nativeChecks": 89,
+      "pointerRaceCausallyResolved": false,
+      "fullReleaseAccepted": false
+    },
+    "stablePublicationIntegrated531": {
+      "summary": "528 fresh frozen526 source521 relay/receipt binding passes CPU/69fileclosure.529 originaljoint161 and530 reconnect57 pass same521build/core470/plugin471/AQ155/observer477 normalcleanup; parent52589 retained same exactbuild gives307 coherent productionchecks.532 qa_exit-only full rawcommit/context/proof logging compiledoptimizedhost/C168helper; no semantic/admission/message/deadline changes.533 original89 diagnostic native pass normalcleanup, kept separatebuild.534strictlydecodes99bridge40proofrecords,11matched physicalrelease/currentfullframecontrol/coordinates,5negative decoder controls; zero interveningcommits those11pairs, no causal504 repair claim.531 frozen418files8reports; fullrelease/requirements unchanged.",
+      "manifest": "implementation/elm-stable-publication-integrated-v531/qa/slice-manifest.json",
+      "manifestSHA256": "0f49d27e22ac4aaa816bd2a7d2a00c401eb75583d3c3bccec75c2095d11dace9",
+      "nativeAcceptance": true,
+      "coherentProductionNativeChecks": 307,
+      "diagnosticNativeChecks": 89,
+      "pointerRaceCausallyResolved": false,
+      "fullReleaseAccepted": false
+    },
+    "unknownReconciliationV582": {
+      "source": "implementation/elm-binding-registration-query-v579",
+      "baselineSource": "implementation/elm-stable-surface-publication-v521",
+      "reviewedNativeChecks": 473,
+      "nativeAcceptance": false,
+      "quintNamedScenarios": 11,
+      "quintSamples": 1000,
+      "quintMutantsRejected": 7,
+      "compiledRegistrationChecks": 10,
+      "compiledRegistrationMutantsRejected": 3,
+      "registrationQueryCompilePassed": true,
+      "registrationQueryNativeAccepted": false,
+      "durableReconciliationImplemented": false,
+      "candidateQualificationComplete": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": [],
+      "manifest": "implementation/elm-unknown-reconciliation-reviewed-v582/qa/slice-manifest.json",
+      "manifestSHA256": "c990deed11a69a543a7a1e6cd7807842bd0f9e037b6c09856e6ec06828c96ef3",
+      "summary": "573 original135 journey fails fresh intent after reconnect75reached/allpassed normalcleanup;574 actual native action admitted then Elm reservation refusal;575 compiled public Effects exact intent12/fresh projection confirms Unknown target remains blocked without emission.576/577 selector failures and578 escaping once-only control retained;581 Quint11named1000x40/7typed mutants pass.579 read-only authenticated strict-schema registration query fullcompile owning205/694headers/symbolclosure, no revocation/release;580 actual integrated C++predicate10checks/3badcontrols.582 freezes1421files9reports. Fullcandidate567 unqualified, baseline521 owning205473 remains bounded. Three UIUX reviewers resumed; budget validator583 independently assigned, native AT/IME/hardware/motion/human gates open."
+    },
+    "registrationQueryV587": {
+      "source": "implementation/elm-binding-registration-query-v579",
+      "nativeRegistrationQueryAccepted": true,
+      "nativeRegistrationChecks": 25,
+      "nativeAcceptance": false,
+      "durableReconciliationImplemented": false,
+      "guiCandidateQualificationComplete": false,
+      "budgetStructuralChecks": 44,
+      "performanceAccepted": false,
+      "recoveryPresentationCompiledChecks": 11,
+      "recoveryPresentationImplemented": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": [],
+      "manifest": "implementation/elm-registration-query-qualified-v587/qa/slice-manifest.json",
+      "manifestSHA256": "2e77e814c7e9a908aa852046785e61e94d723904bb455b61f692d6d919110fb6",
+      "summary": "585 byteidentical216 privatehost binds compiled579 owning205/AQ155.586 reviewedprotected serialnative25checks/allpass normalcleanup: anotherlivepeer grant survivesattach, samepeer frontendadvance invalidatesold, exact current/queried identities/authenticated peer/foreignscope/schema/UInt64 refusals, zero clients/effects and normalregisteredpeer exits/plugin unload. Queryaccepted only; no durable retirement or GUI tuple acceptance.583 independent44CPU structuralbudget preflight currentactualbudgets calibration-only/incomplete, no performanceAccepted.584 untouchedpubliccompiledGUI56711assertions reproduces misleadingenabledUnknown/noeffect/counterconsumption, RetryWindows no-op, publicRefresh onlyreads, catalogreachable.587 freezes278files; baseline521/205/206/AQ155473 unchanged.588 granthelper/model and589 honest recoveryGUI underway; no requirements closed."
+    },
+    "nativeRetirementGraphicsV598": {
+      "source": "implementation/elm-native-grant-retirement-authority-v594",
+      "guiCandidate": "implementation/elm-recovery-context-feedback-v592",
+      "nativeGrantRetirementAccepted": true,
+      "nativeGrantRetirementChecks": 42,
+      "graphicsComponentNativeChecks": 14,
+      "currentGraphicsComponentAccepted": true,
+      "browserWebGPUStatus": "unavailable",
+      "browserWebGPUHardwareAccepted": false,
+      "performanceAccepted": false,
+      "quintNamedScenarios": 22,
+      "quintSamples": 1000,
+      "quintMutantsRejected": 10,
+      "compiledGrantChecks": 2069,
+      "compiledGrantMutantsRejected": 11,
+      "recoveryPresentationCompiledChecks": 35,
+      "recoveryPresentationNativeAccepted": false,
+      "durableReconciliationImplemented": false,
+      "fullReleaseAccepted": false,
+      "nativeAcceptance": false,
+      "completedRequirementIds": [],
+      "manifest": "implementation/elm-native-retirement-graphics-reviewed-v598/qa/slice-manifest.json",
+      "manifestSHA256": "cb1bb3dc2b35e6278d83a64137342ca78f8655eed917537804dbf7c9b67ec36f",
+      "summary": "58822Quint1000x40/10mutants;2069compiledRegistryUBSan/11controls.594actualowning205 authority integratesmonotonic allocator+allfourlegacy bindingguards+strictretirementproof;595byteexact216transport rebind;59642native/allpass normalcleanup oldlivegrant revoked/oldinterfacesdenied/monotonicreattach/irreversibleold vs future/callerprotected.590verifier-shape/count failures preserved;588 unchanged.58921compiled honestuncertainty/publishedread-onlyrefresh/cap259amendment;59235compiled fixes contextualcatalog/launch/choice masking, optimizedMainBarPopup/C pass; no nativeUI acceptance.5911842CPU/12claimchecks plus14 actualcurrenttuple graphicsnative allpass normalcleanup IntelMesa/renderD129/acceleratedCanvas/DMABuf/shaderpixels/secondoutput; WebGPUunavailable; idle5scalibrationonly.597reviewrecord-shapefailure retained;598 freezes3581files. Actualdurablerelease/frontendreconciliation/fullcandidatequalification remainsunimplemented; baseline521/205/206/AQ155473 unchanged.599strictproofconsumer and601pureElmdecoder inprogress; no requirements closed."
+    },
+    "durableReservationV609": {
+      "source": "implementation/elm-durable-reservation-release-v608",
+      "manifest": "implementation/elm-durable-release-reviewed-v609/qa/slice-manifest.json",
+      "manifestSHA256": "3accac2edaf22802fc10ed2d84a659b6183adaf613d41079c85402ccc41bb6bb",
+      "durableReservationLedgerImplemented": true,
+      "durableReservationCPUChecks": 248,
+      "actualPythonMutationsDetected": 6,
+      "retirementProofCPUChecks": 625,
+      "reconciliationElmCompiledChecks": 162,
+      "reconciliationElmMutationsDetected": 5,
+      "quintNamedScenarios": 36,
+      "quintSamples": 2000,
+      "quintMaxSteps": 80,
+      "quintMutantsRejected": 9,
+      "productionWired": false,
+      "durableReconciliationNativeAccepted": false,
+      "powerLossDurabilityAccepted": false,
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": [],
+      "summary": "599 strict immutable authenticatedproof endpoint625checks/9 actual596 wires;601 pure typeddecoder162compiled/5mutants.600119\u2192603158\u2192604228\u2192606234 intermediate source+reviews retained.608248actualfilesystem/unchangedC admissions verifiesprepared/history/crossset/marker/V5conservation/normalizedPending/crash&precallfault/restartrootbeforeunlink/cleanup+absence-fsyncpoison/idempotentimmutablehistory/capacity/lateexactreadmission/nooldreplay.6106actualPythonmutantsdetected.60231Quint2000x80/15controls butrestart-visiblegap preserved;60536Quint2000x80/9controls separatesvisible/durable publication androotbarrier beforePreparedunlink/ReleasedACK.609holds4998files+6links. Nativefrontendcoordinator/Effects+MenuBridgeintegration/full135/473/fullsprints remainopen; no deployment."
+    },
+    "reconciliationV625": {
+      "source": "implementation/elm-reconciliation-startup-order-v626",
+      "manifest": "implementation/elm-reconciliation-integrated-reviewed-v625/component-manifest.json",
+      "manifestSHA256": "c3ae21924ca40b0539458c0ec0b51a58229b1dcf11faae5e838cc9bf39fb0266",
+      "productionWired": true,
+      "reconciliationElmCompiledChecks": 51,
+      "reconciliationElmMutantsDetected": 13,
+      "backendCoordinatorCPUChecks": 54,
+      "backendIndependentControls": 102,
+      "startupActualCChecks": 22,
+      "readyModelNamedScenarios": 55,
+      "acceptedFrontierNamedScenarios": 16,
+      "acceptedFrontierSamples": 1000,
+      "acceptedFrontierMaxSteps": 40,
+      "acceptedFrontierMutantsRejected": 9,
+      "deliveryAttestationCPUChecks": 194,
+      "originalNativeJourneyChecks": 135,
+      "durableReconciliationNativeAccepted": true,
+      "nativeAcceptanceScope": "Original135 current frontend/native retirement correlated normal path on626/205594AQ155; isolated session only",
+      "releaseDeliveryLossNativeAccepted": false,
+      "scalableHistoryAccepted": false,
+      "full473NewTupleAccepted": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": [],
+      "summary": "619 accepted-read frontend51/13mutants;614 readiness55/2000x80/7typedmutants and620 accepted-frontier16/1000x40/9typedmutants explicitFIFO.622 authenticated coordinator54/617102 controls;616 optimized/MainBarPopup/C/public51 passed but618 initial6s startup timeout preserved normalcleanup.626 stages host-locked recovery beforeattached,22actualCstartup/51compiled/build/sourceclosure;627 original135 allPASS normalexits/cleanup unchangedoracles.624194delivery sidecar+inherited248CPU immutableanchor/certificate history, notproductionlostdeliverynative.625 independentholds10625files. No requirement or fullrelease completion; no installed changes."
+    },
+    "reconciliationMenuV638": {
+      "source": "implementation/elm-reconciliation-startup-order-v626",
+      "manifest": "implementation/elm-reconciliation-regression-reviewed-v638/component-manifest.json",
+      "manifestSHA256": "2bb21110d05bb2c4d4e9faefd6f5b36c71b888c32d07052d7c85c4ac41bd6427",
+      "originalNativeMenuChecks": 89,
+      "original135AlreadyQualified": true,
+      "capabilityFocusNativeLaunched": false,
+      "full473NewTupleAccepted": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": [],
+      "summary": "631 original89 fullmenu actualnative ALLPASS normalcleanup oncurrent626/205594AQ155; original135627 qualified625 remains separate.632633sourcepreflightrefused wrongdirectdaemon expectation, no native launched; newcurrent626 relay/receipt634 needed before83+83+161+57 remaining473 families.637reviewfreezer failed str/Path conversion retained;638 verifiedoriginal89AST/deadlines/inputartifactclosure and holdsallsource/failure evidence. No fullrelease/requirement completion."
+    },
+    "reconciliationProgressV645": {
+      "source": "implementation/elm-reconciliation-startup-order-v626",
+      "manifest": "implementation/elm-reconciliation-progress-reviewed-v645/component-manifest.json",
+      "manifestSHA256": "209fc5f8dee5e3542472d6fb942a60b52a887d00f8ae9ff0bbe68afce2e47fa6",
+      "originalNative135AlreadyQualified": true,
+      "currentScopedGeneralNativeChecks": 255,
+      "full473NewTupleAccepted": false,
+      "currentFixtureCPUChecks": 159,
+      "deliveryIntegrationCPUChecks": 36,
+      "deliveryRepeatHistoryDefectConfirmed": "RECOVERY-639-001",
+      "releaseDeliveryLossNativeAccepted": false,
+      "scalableHistoryAccepted": false,
+      "symbolicPagedArchiveNamedScenarios": 32,
+      "symbolicPagedArchiveSamples": 1500,
+      "symbolicPagedArchiveMaxSteps": 70,
+      "symbolicPagedArchiveTypedMutantsRejected": 10,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": [],
+      "summary": "Current626/205594AQ155/actual626fixture634 sourceclosure159CPU;63583cap+63683focus nativeallPASS normalcleanup andoriginaloracles. Prior135627+89menu631 preserved625638; currentgeneral255/473 notfull473.63036actualC/Python+held619sameview compiled recovery plus51public, immutable624freshcertificate but63912actualcontrols confirm alreadyreleasedA proofserialdeadlocks laterlostB;642 correction mandatory beforecoherent640/native641 acceptance.62914 proposedEARS/OpenSpec boundedpages/COW/pagedreplay architecture32symbolicQuint1500x70/10typedmutants noactualFS/C/S15 acceptance.645review inventory holdsnewcomponents/source/reports, nofullrelease."
+    },
+    "reconciliationGeneralV648": {
+      "source": "implementation/elm-reconciliation-startup-order-v626",
+      "manifest": "implementation/elm-reconciliation-scoped-general-reviewed-v648/component-manifest.json",
+      "manifestSHA256": "bcd53d5abc424cae817372b715084837b8eaa2d37a69d27adad95c24ee7e1b99",
+      "currentScopedGeneralNativeChecks": 473,
+      "currentScopedGeneral473Passed": true,
+      "original135NativeChecksAlreadyQualified": 135,
+      "legacyGeometryFullContractAccepted": false,
+      "releaseDeliveryLossNativeAccepted": false,
+      "scalableHistoryAccepted": false,
+      "fullUIUXAccepted": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": [],
+      "summary": "648 independent verifiescurrent626/205594AQ155 actualsource/compiler/ABI/artifact/originalASThelpers/deadlines/634profile closure allfive473 checks:63189+63583+63683+643161+64457 nativeallPASS normalcleanup. 643 legacywholegeometrynativeAcceptance/allContract false preserved; nofullUX inferred.64125CPU faultwrapper/nativeprep heldnotlaunched/targetpreflightpending. Revieweroriginalnormalexit-name assumption failure heldthen correctedwithoutchangingnative evidence. Sourceholds12340files.640642649newdeliveryfix outside648; current626 full473 nottransferred. Allfullproject/hardware/user/release/scaling gates remainactive."
+    },
+    "recoveryDeliveryV650": {
+      "source": "implementation/elm-recovery-delivery-integrated-gui-v640",
+      "manifest": "implementation/elm-recovery-delivery-reviewed-v650/component-manifest.json",
+      "manifestSHA256": "6e2adfe16cbd3edee5d28d350a49842d1ea6039dfe84ff116450e0fcb0ec2536",
+      "productionWired": true,
+      "publicElmCompiledChecks": 51,
+      "coordinatorFilesystemElmIntegrationChecks": 21,
+      "targetedCompiledGuardChecks": 20,
+      "targetedCompiledMutantsDetected": 6,
+      "priorFrontend642CompiledMutantsDetected": 19,
+      "releaseDeliveryLossNativeChecks": 18,
+      "releaseDeliveryLossNativeAccepted": true,
+      "releaseDeliveryLossNativeScope": "Single originalUnknown retained in same Elm view, real first durable certificate outputlost, second explicit reconnect with fresh nativeproof/readpair/certificate; no inferredoutcome/no replay/newexplicitaction only",
+      "currentOriginalNativeJourneyChecks": 135,
+      "durableReconciliationNativeAccepted": true,
+      "multiOriginNativeRecoveryAccepted": false,
+      "currentScopedGeneral473Passed": false,
+      "scalableHistoryAccepted": false,
+      "fullUIUXAccepted": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": [],
+      "summary": "642 informationalalreadyreleasedscope drain corrects639 confirmedserialhead-blocker, actual640 compiled51+real630/624store21+targeted20/6mutants.6498425checks/6499pins independentlysources/ABI/library/compiledclosure and64125CPU wrapperverified.646 actualnative18ALLPASS lost-real-wire afterdurablecert, SAMEElm renderer survives, seconduserReconnect freshproof/reads/anchoredcert clearsliveUnknown only, immutablehistory/counters/one-shotmarker/oldgrantdeny/newexplicitaction, normalcleanup.652current640original135ALLPASSnormalcleanup.650holds16122source/build/report files. Existing626473 doesnotqualify640; 640compilerinventorylimitation retained, separately651producerfinishing. Wholeproject/473640/bounds/multioriginhardware/scaling/fullrelease remainopen."
+    },
+    "recoveryGeneralV656": {
+      "component": "implementation/elm-recovery-delivery-general-reviewed-v656",
+      "manifest": "implementation/elm-recovery-delivery-general-reviewed-v656/component-manifest.json",
+      "manifestSHA256": "14664c4f633ce1e7a9d6d1712b514abea8f492b9e5969c23b760a07cd772e634",
+      "production": "implementation/elm-recovery-delivery-integrated-gui-v640",
+      "currentOriginal473Accepted": true,
+      "currentOriginal473Checks": 473,
+      "campaignChecks": {
+        "menu": 89,
+        "capability": 83,
+        "focus": 83,
+        "geometry": 161,
+        "reconnect": 57
+      },
+      "normalCleanup": true,
+      "originalDeadlinesPreserved": true,
+      "pinnedSameProgramProducer": "implementation/elm-recovery-delivery-pinned-toolchain-v651",
+      "historical640ToolchainLimitationPreserved": true,
+      "fullGeometryContractAccepted": false,
+      "fullUIUXAccepted": false,
+      "scalableHistoryAccepted": false,
+      "fullReleaseAccepted": false,
+      "mainDesktopActivated": false,
+      "completedRequirementIds": []
+    },
+    "recoveryUiUxReview674": {
+      "evidence": "implementation/elm-recovery-and-uiux-review-v674/component-manifest.json",
+      "sha256": "0fb4296ec4d0e560f5790f65219cd0ac1eca4ea9b450a017cb8b8238fae73714",
+      "heldFiles": 2524,
+      "actualDiagnostic678Checks": 473,
+      "actualLayoutFindings": 24,
+      "receiptPrototypeTerminalCycles": 1026,
+      "native681ATChecksPassed": 8,
+      "native681ATChecksTotal": 9,
+      "correctedNativeLayoutPending": true,
+      "keyboardATRecipientAccepted": false,
+      "productionReceiptIntegrated": false,
+      "fullReleaseAccepted": false
+    },
+    "nativeUiUxFailureReview687": {
+      "evidence": "implementation/elm-native-uiux-failure-review-v687/component-manifest.json",
+      "sha256": "7ed8c8492bbe8ac52f9d1a0ec5d1dae902aa8655400b7fd5790d1c1a6574d5e1",
+      "native684Checks": 2570,
+      "native684Passed": false,
+      "native684UncertaintyInkVisible": true,
+      "native684RefreshLabelInkVisible": 6,
+      "native684RefreshLabelInkTotal": 19,
+      "native686PassedPrefixChecks": 8,
+      "native686KeyboardRecipientAccepted": false,
+      "safeCleanupBoth": true,
+      "fullReleaseAccepted": false
+    },
+    "correctedLayoutReview706": {
+      "evidence": "implementation/elm-corrected-layout-native-review-v706/component-manifest.json",
+      "sha256": "fb59b0e6b746150658a56d0cb95a1766d408764ce66b71494c5771211c72cc2b",
+      "heldFiles": 1318,
+      "rendererSource": "implementation/elm-recovery-label-overflow-correction-v690",
+      "native694Passed": true,
+      "native694SourceAndFeatureChecks": 3673,
+      "originalCases": 5,
+      "viewportWidths": [
+        320,
+        480,
+        800
+      ],
+      "narrowLayoutAndKeyboardAccepted": true,
+      "originalVsCorrectedPendingDecodedPixelDifferences": 0,
+      "native697FocusedRegistryRegistrationObserved": true,
+      "native697KeyboardATRecipientAccepted": false,
+      "readabilityPolicy": "implementation/elm-uiux-readability-policy-v702/component-manifest.json",
+      "preparedSourceReview": "implementation/elm-prepared-implementation-review-v701/component-manifest.json",
+      "fullReleaseAccepted": false
+    },
+    "preparedAndFrameworkReview713": {
+      "evidence": "implementation/elm-prepared-and-framework-review-v713/component-manifest.json",
+      "sha256": "7723bb959e9a50c747aba21e0e4e987a32b9623a3ff3c7457a2bb2fe8fa704cf",
+      "heldFiles": 342,
+      "preparedSource700Reviewed": true,
+      "actualReceiptChecks": 1640,
+      "actualPreparedChecks": 329,
+      "actualPythonMutants": 12,
+      "actualGTKControl708Accepted": true,
+      "WebKitControls708Accepted": false,
+      "WebKitControls708FailedBeforeCollector": true,
+      "safePrivateCleanupAll3": true,
+      "fullReleaseAccepted": false
+    },
+    "frpReviewActivePriorities": {
+      "workplan": "docs/elm-roadmap/delivery/FRP-ELM-WORKPLAN.md",
+      "triage": "implementation/elm-frp-finding-triage-v711/triage.json",
+      "W01": "709/710 topology/batch correlation; negative neverdowngrades maySubmitted",
+      "W07": "715/716 keyedcontrol+press-time identity/publication guard; nativeinputsource qualification open",
+      "W02": "700Preparedprototype reviewed; fullrelease/delivery/migration/native integration open",
+      "requirementsCompleted": []
+    },
+    "nativeWebKitControlReview723": {
+      "evidence": "implementation/elm-native-atspi-control-review-v723/component-manifest.json",
+      "sha256": "d5069d47f0d37a200e76f087ac111f99c6e95a1fa1c7128d475780f79d8deb9b",
+      "heldFiles": 179,
+      "bothPrimaryAndRelatedReachedNativeCollector": true,
+      "actualCurrentAlphaBetaFocusedStates": true,
+      "nativeFocusedNotificationObserved": false,
+      "originalSixSecondRecipientAccepted": false,
+      "bothPrivateCleanupSafe": true,
+      "controlApplicationAndCollectorExit0": true,
+      "privateRegistryControlledSIGTERM": true,
+      "WebKitInternalCauseProved": false,
+      "owningElmAccessibilityAccepted": false,
+      "fullReleaseAccepted": false
+    },
+    "topologyChannelSemanticReview725": {
+      "evidence": "implementation/elm-topology-channel-semantic-review-v725/component-manifest.json",
+      "sha256": "4a6c33c1b1ebbedd5737071f0cce64862a4e0856066240966f8f7df408fcdf0e",
+      "heldFiles": 526,
+      "singleExactBatchModelReviewed": true,
+      "actualNamedCases": 5,
+      "actualSampledTraces": 1000,
+      "typedSpecificMutants": 2,
+      "source710ExperimentApproved": true,
+      "FIFOTransportGateAccepted": false,
+      "arbitraryFirstArrivalReorderAccepted": false,
+      "nativeTopologyFixAccepted": false,
+      "actualPublicationUniquenessQualified": false,
+      "fullReleaseAccepted": false
+    },
+    "publicationWrapperCorrection726": {
+      "evidence": "implementation/elm-publication-wrapper-correction-v726/component-manifest.json",
+      "sha256": "001b57ec1f67fc3c5c7742ababd1a5561dea59ea752318f7e71c40e312dc3d52",
+      "supersedes": "725 inference that stableApplications requires redundant production guard",
+      "ordinaryWrapperAllocationPresent": true,
+      "actual710CompiledEvidenceReviewed": false,
+      "fullPublicationUniquenessQualified": false,
+      "fullReleaseAccepted": false
+    },
+    "inputIdentityReview717": {
+      "evidence": "implementation/elm-input-identity-review-v717/component-manifest.json",
+      "sha256": "3825f02754f926051bcd540dc4beeda9265a5b069ff55ef1a7620e75ab0f3bae",
+      "heldFiles": 633,
+      "originalCompiledSyntheticDOMCounterexamples": 2,
+      "compiledModelCases": 15,
+      "actualNamedCases": 18,
+      "sampledTraces": 500,
+      "typedSpecificMutants": 5,
+      "source716ExperimentApproved": true,
+      "browserNonPhysicalSourceBoundaryImplemented": false,
+      "nativeInputAccepted": false,
+      "nativeATSourceAndLivenessAccepted": false,
+      "fullReleaseAccepted": false
+    },
+    "topologyImplementationReview729": {
+      "evidence": "implementation/elm-topology-implementation-review-v729/component-manifest.json",
+      "sha256": "91792ff835cce7d22964d74318e3939a39befd986f7dcefb149df9925d53539a",
+      "heldFiles": 2980,
+      "changedProduction": [
+        "src/OutputController.elm",
+        "native/shared-host.c"
+      ],
+      "compiledTargetedControls": 25,
+      "semanticCompiledMutants": 4,
+      "publicChecks": 51,
+      "nativePreparationApproved": true,
+      "nativeLaunchApproved": false,
+      "FIFOTransportGateAccepted": false,
+      "reentrantCacheRowLifetimeQualified": false,
+      "uncertainDurableRecoveryQualified": false,
+      "fullReleaseAccepted": false
+    },
+    "nativeMessageReview734": {
+      "evidence": "implementation/elm-native-atspi-message-review-v734/component-manifest.json",
+      "sha256": "171d076ecc7f2b442a6b7fb104df6edf2ffb636dad32d3f85ee75d51971b5045",
+      "heldFiles": 188,
+      "bothDiagnosticNativeTreesReached": true,
+      "currentNativeFocusedStatesObserved": true,
+      "nativeFocusNotificationObserved": false,
+      "originalSixSecondRecipientAccepted": false,
+      "safePrivateCleanup": true,
+      "controlAppAndCollectorExit0": true,
+      "privateRegistryControlledSIGTERM": true,
+      "loggingConnectionProvenanceFullyQualified": false,
+      "timingPerturbationPossible": true,
+      "instrumentedOutcomeTransferToOriginal": false,
+      "WebKitInternalCauseProved": false,
+      "fullReleaseAccepted": false
+    },
+    "inputAdapterReview733": {
+      "evidence": "implementation/elm-input-adapter-review-v733/component-manifest.json",
+      "sha256": "3f58fba36c123293e392a6b0d32b6345939d39c25121c7cf1a40691eeb8f4660",
+      "heldFiles": 1243,
+      "adapterControls": 20,
+      "actualJSAssertionMutants": 4,
+      "controllerCases": 51,
+      "knownDelayedStaleClickGateOpen": true,
+      "nativePreparationApproved": true,
+      "nativeLaunchApproved": false,
+      "nativeInputAccepted": false,
+      "ATSourceAndLivenessQualified": false,
+      "fullReleaseAccepted": false
+    },
+    "activeFollowupDefects": {
+      "716CrossInput": "739 immutable captured port delivery and matching canceled release compiled/source-reviewed775:48adapter/51controller/24decoder/14mutants pass;5sourceambiguitiesOPEN. Native718 preparation approved againstnew3JSbuild; no native input transfer.",
+      "710CacheOwnership": "730 owned references source-reviewed746;771/772 candidate actual11 native topology checks pass with exact preflight-unsent duplicate and joinedUI settlement286.48ms/zeroeffect; overall comparator campaign failed oldjoinedPending assertion.773 actual catalog Loading disposition gap reproduced; FIFO/durable recovery remain open.",
+      "727LoggingBusProvenance": "750/753 capturesmalformedruntimeproxy rules bothcohorts;752 signedtwo-stringenginepatch;757 firstconfiguremissinglld;765/774 signedmatchingprivateLLD29controls allows767freshdiagnosticconfigure. Fullmappingclosure/nativeengineaccessibility remainopen.",
+      "fullReleaseAccepted": false
+    },
+    "engineOwnershipReview740": {
+      "evidence": "implementation/elm-engine-and-ownership-review-v740/component-manifest.json",
+      "sha256": "d6216a3abaf12a9599848f88113d4b3619e60ac4cc077d5fdd240292f6bcbdce",
+      "heldFiles": 159,
+      "source730ImplementationApproved": true,
+      "ownershipNamedCases": 4,
+      "ownershipSampledTraces": 1000,
+      "typedOwnershipMutants": 3,
+      "callbackCompletionSerialQualified": false,
+      "fullFIFOQualified": false,
+      "compiled716OpenLivenessWitnesses": 3,
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false
+    },
+    "systemIsolationReview741": {
+      "evidence": "implementation/elm-system-isolation-review-v741/component-manifest.json",
+      "sha256": "bea0de0c04d105edcc9eab785a3e2188814da826197091263ce2a428070854a2",
+      "heldFiles": 152,
+      "actualFreshGioSystemRefusalObserved": true,
+      "sourceControls": 29,
+      "native738LaunchApproved": true,
+      "loggingLifetimeBusClosureQualified": false,
+      "nativeRecipientAccepted": false,
+      "fullReleaseAccepted": false
+    },
+    "isolatedNativeMessageReview742": {
+      "evidence": "implementation/elm-isolated-native-message-review-v742/component-manifest.json",
+      "sha256": "bf957595f9aafd081771abcd6f4aa3d8396817ad04398fc1211d79b974269d89",
+      "heldFiles": 194,
+      "bothActualNativeTreesReached": true,
+      "actualPointerAndKeyboardExit0": true,
+      "observedControlledSystemOverridesExact": true,
+      "observedDescendantCounts": [
+        8,
+        8
+      ],
+      "strictSixSecondFocusRecipientAccepted": false,
+      "appAndCollectorExit0": true,
+      "registryControlledSIGTERM": true,
+      "safePrivateCleanup": true,
+      "actualLifetimeSocketPeerQualified": false,
+      "engineCallbackCauseProved": false,
+      "fullReleaseAccepted": false
+    },
+    "activeAccessibilityCausalHypothesis": {
+      "sourceLane": "implementation/elm-native-atspi-subscription-review-v744",
+      "experimentNext": "745 privatebus actualxdg0.1.8 narrowbroadcast grammar comparison",
+      "hypothesis": "WebKit installedversion producer-rule bus-name/member grammar mismatch; actual runtime owning proxy argv and causal transport comparison not yet qualified",
+      "nativeOwningGUIAccepted": false
+    },
+    "inputCorrelationReview743": {
+      "evidence": "implementation/elm-input-correlation-review-v743/component-manifest.json",
+      "sha256": "03a828f52510b940b4ab327b29d614c398b05ef458a814a2eed2fb04b8d6d1d3",
+      "heldFiles": 95,
+      "source739ImplementationApproved": true,
+      "safeSliceNamedCases": 24,
+      "openSourceBoundaryCounterexamples": 5,
+      "sampledTraces": 500,
+      "typedSpecificMutants": 8,
+      "nativeCompatibilityMappingQualified": false,
+      "nativeInputAccepted": false,
+      "fullReleaseAccepted": false
+    },
+    "cacheOwnershipImplementationReview746": {
+      "evidence": "implementation/elm-cache-ownership-implementation-review-v746/component-manifest.json",
+      "sha256": "ff78e09e6bb0f598ef0639cda928a2b3e07e797c139b1619d4bbe6e0c3dbabb1",
+      "heldFiles": 1799,
+      "compiledOwnershipScenarios": 5,
+      "specificOwnershipMutants": 5,
+      "actualNativeNestedOccurrenceProved": false,
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false
+    },
+    "proxyEvidenceReview748": {
+      "evidence": "implementation/elm-proxy-evidence-review-v748/component-manifest.json",
+      "sha256": "4f87513f0dc549f9e66f0b245f2953e4cf848df36a2383b90c2628915bdce1c9",
+      "heldFiles": 189,
+      "actualProxyFixtureControls": 52,
+      "descriptorCPUControls": 36,
+      "nativeObservationApproved": true,
+      "fullReleaseAccepted": false
+    },
+    "nativeProxyArgumentReview753": {
+      "evidence": "implementation/elm-native-proxy-argument-review-v753/component-manifest.json",
+      "sha256": "646e8cc53d1d53c06bef015711daa8ef855d9d43bbbbcd45299cb2741f682416",
+      "heldFiles": 235,
+      "actualRuntimeArgumentsCapturedBothCohorts": true,
+      "malformedRulesObserved": true,
+      "originalSixSecondFocusRecipientAccepted": false,
+      "safeCleanupBothCohorts": true,
+      "correctedEngineNotRun": true,
+      "fullReleaseAccepted": false
+    },
+    "crossInputInterpretationReview749": {
+      "evidence": "implementation/elm-cross-input-interpretation-review-v749/component-manifest.json",
+      "sha256": "ca84365c1cdc5a6ea970a6370886481a6f0d6a6776679c46fb347c4073381eee",
+      "heldFiles": 72,
+      "originalSyntheticWitnesses": 3,
+      "pointerLivenessDefects": 2,
+      "originalKeyupStimulusMovesFocusAndRequiresCancellation": true,
+      "retainedFocusForeignKeyupSeparateScenarioRequired": true,
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false
+    },
+    "privateEnginePreparationReview755": {
+      "evidence": "implementation/elm-private-engine-preparation-review-v755/component-manifest.json",
+      "sha256": "85bc463f8ce9940d8ea2eec05848c2dd0b0e38092595538eafffb0f12b34751e",
+      "heldFiles": 34,
+      "configure757Approved": true,
+      "sourceControls": 19,
+      "privateEngineBuilt": false,
+      "nativeATRecipientAccepted": false,
+      "fullReleaseAccepted": false
+    },
+    "topologyTimerPreparationReview758": {
+      "evidence": "implementation/elm-topology-timer-preparation-review-v758/component-manifest.json",
+      "sha256": "4216db4ad73d257ab4f1c1965dc2cab82a062e07a9a6e98f31607dcbb6c72fee",
+      "heldFiles": 2058,
+      "native756Approved": true,
+      "nativeTimerExpirationAccepted": false,
+      "fullReleaseAccepted": false
+    },
+    "topologyPendingFixtureFailureReview760": {
+      "evidence": "implementation/elm-topology-pending-fixture-failure-review-v760/component-manifest.json",
+      "sha256": "dde8ac8b60358f0af69ece649c06f18469a69387d333356c3149f050d6a48ed8",
+      "heldFiles": 47,
+      "nativeCampaignPassed": false,
+      "failedBeforeTopologyCreation": true,
+      "safeCleanupBothCohorts": true,
+      "correction759PreparationApproved": true,
+      "fullReleaseAccepted": false
+    },
+    "immutableInputDeliveryReview761": {
+      "evidence": "implementation/elm-immutable-input-delivery-review-v761/component-manifest.json",
+      "sha256": "0351aed32d06ddb11680d619d472e37ec22162fb34cc72672eb5b05c6c9795ba",
+      "heldFiles": 45,
+      "modelFirstSourceRoutingApproved": true,
+      "safeNamedCases": 8,
+      "originalOpenRemintWitnesses": 1,
+      "traces": 500,
+      "typedSpecificMutants": 2,
+      "nativeTimingQualified": false,
+      "fullReleaseAccepted": false
+    },
+    "heldPendingPreparationReview762": {
+      "evidence": "implementation/elm-held-pending-preparation-review-v762/component-manifest.json",
+      "sha256": "57ae1ca6751c152bc2af13c9178fe386eaa5a4eb9d8b83c92dee9e8e2ec34d35",
+      "heldFiles": 2074,
+      "native763Approved": true,
+      "presentedPendingAccepted": false,
+      "fullReleaseAccepted": false
+    },
+    "topologyReleaseFixtureFailureReview764": {
+      "evidence": "implementation/elm-topology-release-fixture-failure-review-v764/component-manifest.json",
+      "sha256": "e2d225f93fc6147b610fc82ce8741c7999e70fbfbfddc844e22117b649e62604",
+      "heldFiles": 47,
+      "campaignPassed": false,
+      "actualNativeTopologyObserved": true,
+      "missingHeldCommitRelease": true,
+      "safeCleanupBothCohorts": true,
+      "correction769PreparationApproved": true,
+      "fullReleaseAccepted": false
+    },
+    "privateEngineConfigureReview766": {
+      "evidence": "implementation/elm-private-engine-configure-review-v766/component-manifest.json",
+      "sha256": "4913ceff39faedac50e1a2efe31494a0c8aa8228071f1406fa4fae22684ee0d1",
+      "heldFiles": 34397,
+      "originalConfigureFailed": true,
+      "requiredLinkerMissing": "ld.lld",
+      "freshConfigureApprovedAfterResolution": true,
+      "privateEngineBuilt": false,
+      "fullReleaseAccepted": false
+    },
+    "canceledReleaseModelReview768": {
+      "evidence": "implementation/elm-canceled-release-model-review-v768/component-manifest.json",
+      "sha256": "ea655df22e99926a040e7ffb4eb0b7fee5d259cde73b25f46b81275af810572e",
+      "heldFiles": 17,
+      "originalNamedDeclarations": 31,
+      "actualNamedRuns": 33,
+      "originalOpenSourceCases": 5,
+      "narrowReleaseGuardApproved": true,
+      "nativeTimingQualified": false,
+      "fullReleaseAccepted": false
+    },
+    "microtaskTopologyPreparationReview770": {
+      "evidence": "implementation/elm-microtask-topology-preparation-review-v770/component-manifest.json",
+      "sha256": "8602b679ec7bf1500182999f84a2bebf9cf681cd5b03b02b7d9dd789b287a17c",
+      "heldFiles": 2090,
+      "native771Approved": true,
+      "fullReleaseAccepted": false
+    },
+    "nativeTopologyDispositionReview772": {
+      "evidence": "implementation/elm-native-topology-disposition-review-v772/component-manifest.json",
+      "sha256": "2f0d6d9814ec3aed9ebc70d4837c8a0b3edb7906136b8fa672719fe7fc3fe093",
+      "heldFiles": 47,
+      "candidateBoundedNativeDispositionAccepted": true,
+      "actualBehavioralChecks": 11,
+      "settledMillisecondsFromPhysicalAction": 286.4799879898783,
+      "overallCampaignPassed": false,
+      "originalComparatorAccepted": false,
+      "zeroEffectQueueAdmissionAndMutation": true,
+      "productionFIFOQualified": false,
+      "fullReleaseAccepted": false
+    },
+    "privateLinkerReview774": {
+      "evidence": "implementation/elm-private-linker-review-v774/component-manifest.json",
+      "sha256": "466c1cd56a463dc6a404e1ea8c86ece81a21d0c581e3241b1a8a21f45fb857c1",
+      "heldFiles": 175,
+      "protectedSignedToolControls": 29,
+      "private767DiagnosticConfigureApproved": true,
+      "fullMappedBackingIdentityQualified": false,
+      "installedChanged": false,
+      "fullReleaseAccepted": false
+    },
+    "immutableInputImplementationReview775": {
+      "evidence": "implementation/elm-immutable-input-implementation-review-v775/component-manifest.json",
+      "sha256": "b6027357456ceb13a964b552ac89a764a062aa75d5019fc8a412db3702d12575",
+      "heldFiles": 3492,
+      "adapterControls": 48,
+      "controllerCases": 51,
+      "decoderFixtures": 24,
+      "specificMutants": 14,
+      "openSourceCases": 5,
+      "mainArtifactUnchanged": false,
+      "native718PreparationApproved": true,
+      "nativeInputAccepted": false,
+      "fullReleaseAccepted": false
+    },
+    "review776": {
+      "evidence": "implementation/elm-private-introspection-configure-review-v776/component-manifest.json",
+      "sha256": "183ebff73c94e88bb98a42f5eec22702a97a67913b407661ebc1ee036c20d284",
+      "heldFiles": 34404,
+      "review": {
+        "passed": true,
+        "evidenceIntegrityPassed": true,
+        "configureAccepted": false,
+        "oneOriginalConfigureFailureHeld": true,
+        "actualRequiredToolsMissing": [
+          "GI_SCANNER_EXE",
+          "GI_COMPILER_EXE"
+        ],
+        "compilerSanityPassed": true,
+        "fresh782ConfigureApprovedAfterResolution": true,
+        "privateEngineBuilt": false,
+        "nativeAcceptance": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      }
+    },
+    "review777": {
+      "evidence": "implementation/elm-catalog-uncertainty-contract-review-v777/component-manifest.json",
+      "sha256": "a79d2f2b43273a2d4ba62dd9fda082ad1d50b1ee905bb64231a8c16f6f79d8f4",
+      "heldFiles": 123,
+      "review": {
+        "passed": true,
+        "finiteNamedCases": 3,
+        "boundedSamples": 1000,
+        "boundedSteps": 30,
+        "actualCompiledCatalogWitnessHeld": true,
+        "actualCControlledPopupReadBoundaryHeld": true,
+        "popupEffectReachabilityClaimRefuted": true,
+        "sourceClosedCMutantAccepted": false,
+        "preparation778Approved": true,
+        "realAdmissionStorageControlsRequiredBeforePatch": true,
+        "durableEffectRecoveryAccepted": false,
+        "nativeAcceptance": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      }
+    },
+    "review781": {
+      "evidence": "implementation/elm-private-introspection-tools-review-v781/component-manifest.json",
+      "sha256": "71e37909d32d9595265f407ef3b6223ffb1a78ff5ab0ae713fa94d9e89313003",
+      "heldFiles": 438,
+      "review": {
+        "passed": true,
+        "protectedSignedToolControls": 37,
+        "actualScannerDumperAndTypelibLoadPassed": true,
+        "private782DiagnosticConfigureApproved": true,
+        "fullMappedBackingIdentityQualified": false,
+        "mappingClosureAccepted": false,
+        "installedChanged": false,
+        "nativeEngineAcceptance": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      }
+    },
+    "review783": {
+      "evidence": "implementation/elm-physical-input-preparation-review-v783/component-manifest.json",
+      "sha256": "54c8658cb55d7a1e30785ef3ed7b149c5dadaad0d2ccaab3865d03987a39463c",
+      "heldFiles": 62,
+      "review": {
+        "passed": true,
+        "boundedPhysical784Approved": true,
+        "actualThreeNewAssetsHeld": true,
+        "preparationControls": 52,
+        "actualEventShapeAccepted": false,
+        "nativeInputAccepted": false,
+        "ATLaunchApproved": false,
+        "sourceAuthentication": false,
+        "fullPhysicalSuiteImplemented": false,
+        "fullGUIAccepted": false,
+        "completedRequirementIds": []
+      }
+    },
+    "review785": {
+      "evidence": "implementation/elm-native-input-loader-failure-review-v785/component-manifest.json",
+      "sha256": "523a67c0d07f4571db81ded519e46efdcba9e058459f50881fc5ee6dcddc3a9c",
+      "heldFiles": 28,
+      "review": {
+        "passed": true,
+        "nativeCampaignPassed": false,
+        "nativeAcceptance": false,
+        "firstApplicationsDeadlineFailed": true,
+        "physicalHelperAndCleanupPassed": true,
+        "frozenHostDeniesActivationAsset": true,
+        "activationLoadingNativeRetestRequired": true,
+        "missingTelemetryIsNotMissingPointerFieldsProof": true,
+        "sourceAuthentication": false,
+        "fiveOriginalInputCasesOpen": true,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      }
+    },
+    "review787": {
+      "evidence": "implementation/elm-catalog-refusal-refinement-review-v787/component-manifest.json",
+      "sha256": "ed7f969d4cf1bb29d61ad028a5ccea054b486e86856daa760e313fd494b002f9",
+      "heldFiles": 314,
+      "review": {
+        "passed": true,
+        "sourceOnlyCatalogPatchApproved": true,
+        "actualCompiledBaselineControls": 9,
+        "actualProducerFilesystemControls": 76,
+        "actualModelScenarios": 10,
+        "typedAssertionMutantsKilled": 5,
+        "randomSafetySamples": 1000,
+        "randomMaxSteps": 30,
+        "originalFailedEvidencePreserved": true,
+        "localRefusalDistinctFromNativeCertificate": true,
+        "noAutomaticRetryRequired": true,
+        "effectAdmissionUncertaintyPreserved": true,
+        "nativeAcceptance": false,
+        "livenessOrPowerLossDurabilityAccepted": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      }
+    },
+    "review789": {
+      "evidence": "implementation/elm-private-docgen-configure-failure-review-v789/component-manifest.json",
+      "sha256": "344c36b59bf89e5ef0473a249eed54d2f97c15a33c03afdc6cc98eee359e35bd",
+      "heldFiles": 34404,
+      "review": {
+        "passed": true,
+        "evidenceIntegrityPassed": true,
+        "configureAccepted": false,
+        "oneOriginalConfigureFailureHeld": true,
+        "actualRequiredToolsMissing": [
+          "GIDocgen_EXE",
+          "GIDocgen_VERSION"
+        ],
+        "compilerSanityPassed": true,
+        "fresh791ConfigureApprovedAfterResolution": true,
+        "privateEngineBuilt": false,
+        "nativeAcceptance": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      }
+    },
+    "review790": {
+      "evidence": "implementation/elm-private-docgen-tools-review-v790/component-manifest.json",
+      "sha256": "ba681c339af761aef878767259a604cdb8d2d29dbfa1a29c8f81e74c7907b94c",
+      "heldFiles": 2039,
+      "review": {
+        "passed": true,
+        "protectedSignedToolControls": 79,
+        "actualCompiledGIRDocumentationAndGraphvizPassed": true,
+        "private791DiagnosticConfigureApproved": true,
+        "fullMappedBackingIdentityQualified": false,
+        "mappingClosureAccepted": false,
+        "installedChanged": false,
+        "nativeEngineAcceptance": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      }
+    },
+    "review793": {
+      "evidence": "implementation/elm-private-gperf-configure-failure-review-v793/component-manifest.json",
+      "sha256": "ccd415ff303220e95c9d0b73a82321dc72195c20e4bd1d19233f58810dfe9d1b",
+      "heldFiles": 34404,
+      "review": {
+        "passed": true,
+        "evidenceIntegrityPassed": true,
+        "configureAccepted": false,
+        "oneOriginalConfigureFailureHeld": true,
+        "actualRequiredToolsMissing": [
+          "gperf"
+        ],
+        "compilerSanityPassed": true,
+        "fresh799ConfigureApprovedAfterResolution": true,
+        "privateEngineBuilt": false,
+        "nativeAcceptance": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      }
+    },
+    "review794": {
+      "evidence": "implementation/elm-native-script-loading-review-v794/component-manifest.json",
+      "sha256": "68126ca2edf991bee2de87f77b97d86e32fe60ba745b4b54ff5a0fc6a8fe1040",
+      "heldFiles": 898,
+      "review": {
+        "passed": true,
+        "sourceOnlyFixAccepted": true,
+        "exactActivationEntryAndSelftestOnly": true,
+        "controllerChecks": 51,
+        "preparationCPUControls": 108,
+        "actualCallbackFileIOCases": 15,
+        "actualNativeCallbackRequestObjectsAccepted": false,
+        "fresh795PhysicalCampaignApproved": true,
+        "ATLaunchApproved": false,
+        "originalFiveInputCasesOpen": true,
+        "nativeAcceptance": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      }
+    },
+    "review796": {
+      "evidence": "implementation/elm-physical-input-native-result-review-v796/component-manifest.json",
+      "sha256": "2d921f1d3af153e75a742bb4eef469b8f960e399d2bf7a1a751458631026f92a",
+      "heldFiles": 28,
+      "review": {
+        "passed": true,
+        "nativeCampaignPassed": false,
+        "boundedNativeActivationLoadingPointerAndEscapePassed": true,
+        "exactCommittedMinimizeReceiptAndTargetPassed": true,
+        "heldInputPublicationChangedWithoutRedirectedEffectPassed": true,
+        "freshInputAfterCancellationPassed": true,
+        "sameDeviceOriginAuthenticated": false,
+        "pointerReleaseEventAfterPublicationQualified": false,
+        "keyboardTabFocusDeadlineFailed": true,
+        "keyboardEnterSpaceAccepted": false,
+        "nativeATAcceptance": false,
+        "nativeAcceptance": false,
+        "safeCleanupPassed": true,
+        "fiveOriginalInputCasesOpen": true,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      }
+    },
+    "review797": {
+      "evidence": "implementation/elm-private-required-tools-review-v797/component-manifest.json",
+      "sha256": "2c0ffec1c7ab852b20652e02eb94776785edeaadba5f456e03369f034a00144e",
+      "heldFiles": 237,
+      "review": {
+        "passed": true,
+        "protectedSignedToolControls": 50,
+        "actualCompiledRequiredToolFixtureChecksPassed": true,
+        "private799DiagnosticConfigureApproved": true,
+        "fullMappedBackingIdentityQualified": false,
+        "mappingClosureAccepted": false,
+        "installedChanged": false,
+        "nativeEngineAcceptance": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      }
+    },
+    "review801": {
+      "component": "implementation/elm-private-ruby-configure-failure-review-v801",
+      "manifestSHA256": "2d82aaa980597c07b98a5c82945d364586772352000ad9d644f5c5424eef46f8",
+      "report": "implementation/elm-private-ruby-configure-failure-review-v801/qa/report.json",
+      "observations": {
+        "passed": true,
+        "evidenceIntegrityPassed": true,
+        "configureAccepted": false,
+        "oneOriginalConfigureFailureHeld": true,
+        "actualRequiredToolsMissing": [
+          "Ruby getoptlong"
+        ],
+        "compilerSanityPassed": true,
+        "fresh805ConfigureApprovedAfterResolution": true,
+        "privateEngineBuilt": false,
+        "nativeAcceptance": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "review802": {
+      "component": "implementation/elm-private-ruby-tools-review-v802",
+      "manifestSHA256": "96f398f6f1cd04ab3fa9a845f3776322f18a627723a04bf8228620bd9e857c07",
+      "report": "implementation/elm-private-ruby-tools-review-v802/qa/report.json",
+      "observations": {
+        "passed": true,
+        "protectedSignedToolControls": 26,
+        "actualWebKitGeneratorCompiledFixtureChecksPassed": true,
+        "private805DiagnosticConfigureApproved": true,
+        "fullMappedBackingIdentityQualified": false,
+        "mappingClosureAccepted": false,
+        "installedChanged": false,
+        "nativeEngineAcceptance": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "review803": {
+      "component": "implementation/elm-native-keyboard-recipient-review-v803",
+      "manifestSHA256": "5021dbf9161fee35781ccd9ef6b17fd208055b95902264404e851f6d85fca23c",
+      "report": "implementation/elm-native-keyboard-recipient-review-v803/qa/report.json",
+      "observations": {
+        "passed": true,
+        "actualPeerTabReceiptConfirmed": true,
+        "original795CampaignStillFailed": true,
+        "invalidPostCloseBarRecipientPremiseConfirmed": true,
+        "finitePythonChecks": 15,
+        "PythonGuardMutationControls": 2,
+        "QuintRunClaimed": false,
+        "StaticTypecheckedMutationClaimed": false,
+        "fresh804QAObservationAndPopupPreparationApproved": true,
+        "nativeLaunchApproved": false,
+        "barKeyboardAcquisitionAccepted": false,
+        "nativeInputAccepted": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "review807": {
+      "component": "implementation/elm-popup-keyboard-preparation-refusal-review-v807",
+      "manifestSHA256": "ba12909927f7d31dbb8e086f9806ecb363feb109b2ceae9fc1ff248b95c9bdef",
+      "report": "implementation/elm-popup-keyboard-preparation-refusal-review-v807/qa/report.json",
+      "observations": {
+        "passed": true,
+        "evidenceIntegrityPassed": true,
+        "original804CPUControlsPreserved": true,
+        "nativePreparationAccepted": false,
+        "nativeLaunchApproved": false,
+        "sourceEnterGuardMismatchesActualRecorderIdentityShape": true,
+        "actual795ShortFocusAndFullDOMIdentityDistinguished": true,
+        "actualNativeEnterFailureObserved": false,
+        "fresh819SourceCorrectionRequired": true,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "review808": {
+      "component": "implementation/elm-private-configure-success-review-v808",
+      "manifestSHA256": "8fad76834a11c15d35a7e8b8b530b179f9fd99b21fb47f6de551634b4fd8220a",
+      "report": "implementation/elm-private-configure-success-review-v808/qa/report.json",
+      "observations": {
+        "passed": true,
+        "boundedConfigureAccepted": true,
+        "originalSourceAndFlagsPreserved": true,
+        "configuredCacheReferencedFiles": 178,
+        "actualNinjaCompilePool": 2,
+        "actualNinjaLinkPool": 1,
+        "WebGPUConfigured": false,
+        "GBMConfigured": true,
+        "nativeGPUAccepted": false,
+        "fullCompilerDependencyClosure": false,
+        "memoryCapEnforced": false,
+        "resourceExperimentPreparationApproved": true,
+        "fullBuildApproved": false,
+        "privateEngineBuilt": false,
+        "nativeAccessibilityAccepted": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "review809": {
+      "component": "implementation/elm-catalog-implementation-review-v809",
+      "manifestSHA256": "abf7b869e353b7bf03e636b544f26782e5b1cfa0422864d791459d352385de59",
+      "report": "implementation/elm-catalog-implementation-review-v809/qa/report.json",
+      "observations": {
+        "passed": true,
+        "sourceOnlyCatalogCorrectionAccepted": true,
+        "sourceChangedOnlyFourDeclaredFiles": true,
+        "catalogCompiledControls": 19,
+        "inheritedControllerChecks": 51,
+        "inheritedNegativeControls": 25,
+        "actualProducerFilesystemControls": 76,
+        "compiledElmMutationControls": 4,
+        "compiledCMutationControls": 1,
+        "localOmissionDistinctFromNativeCertificate": true,
+        "newerRequestAndLeasePreserved": true,
+        "noAutomaticRetry": true,
+        "fresh814IntegrationPreparationApproved": true,
+        "nativeAcceptance": false,
+        "wholeGUIAcceptance": false,
+        "userRecoveryFromStickyWholePacketRefusalAccepted": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "review811": {
+      "component": "implementation/elm-resource-budget-preparation-refusal-review-v811",
+      "manifestSHA256": "f3a7524781e513bfe2d7ba8becadec1a30f9eb74f2ccce58d81db863f7e768ce",
+      "report": "implementation/elm-resource-budget-preparation-refusal-review-v811/qa/report.json",
+      "observations": {
+        "passed": true,
+        "originalSyntheticGuardResultsPreserved": true,
+        "originalGuardRefusesActualProtectedHierarchy": true,
+        "observations": [
+          {
+            "name": "actualCurrentProtectedScope",
+            "scope": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-ea0952c8ff314cdda6e729851f31514b.scope\n",
+            "originalPredicateRefused": true,
+            "error": "Not exact launcher-owned QA scope"
+          },
+          {
+            "name": "retainedActual805Scope",
+            "scope": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-7ec44a74cc98403086dee9b51e9de44b.scope\n",
+            "originalPredicateRefused": true
+          }
+        ],
+        "currentKernelFiles": {
+          "cpu.max": {
+            "exists": false,
+            "value": null
+          },
+          "cgroup.controllers": {
+            "exists": true,
+            "value": "memory pids"
+          },
+          "cgroup.subtree_control": {
+            "exists": true,
+            "value": ""
+          },
+          "memory.max": {
+            "exists": true,
+            "value": "max"
+          },
+          "memory.high": {
+            "exists": true,
+            "value": "max"
+          },
+          "pids.max": {
+            "exists": true,
+            "value": "76167"
+          }
+        },
+        "retained805CPUControllerFilesAbsent": true,
+        "propertyExperimentApproved": false,
+        "propertiesApplied": false,
+        "fresh821RefinementRequired": true,
+        "sourceKernelReferenceDownloadNotQualified": true,
+        "fullBuildApproved": false,
+        "nativeLaunched": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "review815": {
+      "component": "implementation/elm-private-webgpu-source-audit-v815",
+      "manifestSHA256": "43ccaca9a60f663b4a6c9650955a3af1180e889dcf0ba1aa4a4bf5b196921f36",
+      "report": "implementation/elm-private-webgpu-source-audit-v815/qa/report.json",
+      "observations": {
+        "passed": true,
+        "scope": "selected exact primary source and actual configure cache only",
+        "WebGPUConfigured": false,
+        "WebGLConfigured": true,
+        "GPUProcessConfigured": true,
+        "GBMConfigured": true,
+        "flagAloneDoesNotEstablishReviewedGTKWebGPUBackend": true,
+        "CocoaImplementationGuardObserved": true,
+        "privateEngineCompiled": false,
+        "hardwareRenderingQualified": false,
+        "adapterOrDeviceCreated": false,
+        "WebGPUUnavailableDispositionFinal": false,
+        "actualDevicePrototypeRequired": true,
+        "nativeLaunched": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "review817": {
+      "component": "implementation/elm-catalog-budget-model-review-v817",
+      "manifestSHA256": "842a87e38813fac33212869d87a99408be8008434727ac4e91da06e4cb8a1f68",
+      "report": "implementation/elm-catalog-budget-model-review-v817/qa/report.json",
+      "observations": {
+        "passed": true,
+        "boundedNegativeAndRecoveryModelReviewed": true,
+        "exactUTF8PacketPrototypePreparationApproved": true,
+        "productPatchApproved": false,
+        "positiveVisibleLaunchCoverageRequired": true,
+        "distinctPreviousNextControlIdentityRequired": true,
+        "fallbackFitIsModelAssumption": true,
+        "actualWholePacketJSONUTF8BudgetMeasurementRequired": true,
+        "barMenuPickerAndFallbackRequired": true,
+        "immutableWireAndNativeProvenanceNotEstablished": true,
+        "nativeAcceptance": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "review818": {
+      "component": "implementation/elm-catalog-input-integration-review-v818",
+      "manifestSHA256": "1c0cd067e9f32634ec789351cd61bd012e697b880ebe865072b4d41086a82f34",
+      "report": "implementation/elm-catalog-input-integration-review-v818/qa/report.json",
+      "observations": {
+        "passed": true,
+        "sourceOnlyCoherentIntegrationAccepted": true,
+        "fiveChangesVersus786AndElevenVersus778Verified": true,
+        "exactAcceptedOwnershipSharedHostPreserved": true,
+        "catalogCompiledControls": 19,
+        "inheritedControllerChecks": 51,
+        "inheritedNegativeControls": 25,
+        "actualProducerFilesystemControls": 76,
+        "compiledCatalogMutationControls": 5,
+        "decoderFixtures": 24,
+        "decoderMutants": 3,
+        "activationCPUControls": 48,
+        "callbackFileIOControls": 15,
+        "fresh824CombinedNativePreparationApproved": true,
+        "nativeAcceptance": false,
+        "wholeGUIAcceptance": false,
+        "fiveOriginalInputCasesOpen": true,
+        "stickyPacketBudgetRecoveryAccepted": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "review820": {
+      "component": "implementation/elm-popup-keyboard-identity-review-v820",
+      "manifestSHA256": "12e38717a60448ee5edb6cebf24402488d4716e2c4fe8b3ea0af337a72140a96",
+      "report": "implementation/elm-popup-keyboard-identity-review-v820/qa/report.json",
+      "observations": {
+        "passed": true,
+        "sourceOnlyExactIdentityCorrectionAccepted": true,
+        "original804Preserved": true,
+        "originalRecorderShapeCounterexampleConfirmed": true,
+        "identityControls": 3,
+        "driverControls": 18,
+        "wrapperAndDecoderControls": 36,
+        "owningPopupControls": 6,
+        "fresh806PhysicalNativeApproved": true,
+        "ATLaunchApproved": false,
+        "actualKeyboardNativeAccepted": false,
+        "nativeSourceAuthentication": false,
+        "fiveOriginalOriginCasesOpen": true,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "review822": {
+      "component": "implementation/elm-resource-controller-preparation-review-v822",
+      "manifestSHA256": "4cd1caa4f24179e6b3a4b882075d77e59568fb49436388deb73532875e60fb79",
+      "report": "implementation/elm-resource-controller-preparation-review-v822/qa/report.json",
+      "observations": {
+        "passed": true,
+        "sourcePreparedRuntimeExperimentApproved": true,
+        "fresh812OwnedScopeOnlyRequired": true,
+        "actualKernelBudgetAccepted": false,
+        "fullEngineBuildApproved": false,
+        "readOnlyPreflightAcceptedAtCapturedTime": true,
+        "activeSiblingRefusalRequiredBeforeAndAfterWrite": true,
+        "newDefaultCPUInterfacesAndSchedulingEffectsDisclosed": true,
+        "atomicPeerExclusionProved": false,
+        "outerNormalScopeDisappearanceRequired": true,
+        "nativeAcceptance": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "review823": {
+      "component": "implementation/elm-popup-keyboard-native-shape-review-v823",
+      "manifestSHA256": "a02b2ff8e4ea68b30aa531920df0171776a932dd089dc0a13f3be03f153a0c1b",
+      "report": "implementation/elm-popup-keyboard-native-shape-review-v823/qa/report.json",
+      "observations": {
+        "passed": true,
+        "nativeCampaignPassed": false,
+        "boundedNativePointerEscapeMinimizeCancellationPassed": true,
+        "exactOriginalPointerActionObserverOncePassed": true,
+        "pairedPointerEventPublicationChangeAccepted": false,
+        "actualPopupShiftTabEventReceived": true,
+        "actualShiftTabKey": "Unidentified",
+        "actualShiftTabCode": "Tab",
+        "actualReverseDOMFocusProgressed": true,
+        "originalTabKeyNormalizationPremiseRefuted": true,
+        "actualMissingKeyFieldsProved": false,
+        "EnterSpaceNativeAccepted": false,
+        "safeCleanupPassed": true,
+        "sourceAuthentication": false,
+        "fresh825ObservationOracleRefinementRequired": true,
+        "nativeAccessibilityAccepted": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "review827": {
+      "component": "implementation/elm-shift-tab-refinement-review-v827",
+      "manifestSHA256": "341eea8d153c1e56b8f080ad818f991a4bbf9fffa1c74b2cee5ce827c567ad53",
+      "report": "implementation/elm-shift-tab-refinement-review-v827/qa/report.json",
+      "observations": {
+        "passed": true,
+        "raw806NavigationObserved": true,
+        "rawKeyNeverNormalized": true,
+        "sourceMappingFixtureReviewed": true,
+        "fresh826QAOraclePreparationApproved": true,
+        "required826ExactBeforeRequestEnabledDOMSnapshot": true,
+        "required826RequalificationMustMatchExpectedStamp": true,
+        "originalClocksUnchangedRequired": true,
+        "physicalNativeLaunchApproved": false,
+        "EnterSpaceNativeAccepted": false,
+        "sourceAuthentication": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "review828": {
+      "component": "implementation/elm-popup-tab-code-review-v828",
+      "manifestSHA256": "7719390afe68eba926e33f53b96ce616724368500431c9a380d10a0caaf5784b",
+      "report": "implementation/elm-popup-tab-code-review-v828/qa/report.json",
+      "observations": {
+        "passed": true,
+        "826SourceOnlyNavigationObservationCorrectionAccepted": true,
+        "fresh829PhysicalNativeLaunchApproved": true,
+        "exactBeforeRequestEnabledSnapshotAndStampReviewed": true,
+        "rawKeyNeverNormalized": true,
+        "EnterSpaceAndActionGuardsUnchanged": true,
+        "originalClocksUnchanged": true,
+        "nativeAcceptance": false,
+        "sourceAuthentication": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "review832": {
+      "component": "implementation/elm-resource-runtime-review-v832",
+      "manifestSHA256": "7cea538862f84fe9cd5bb0801d6f06821bd7dba5508b2a50170a1a4ab9504262",
+      "report": "implementation/elm-resource-runtime-review-v832/qa/report.json",
+      "observations": {
+        "passed": true,
+        "actual812KernelBudgetAndNormalDisappearanceAccepted": true,
+        "replayedActualTopologyGuard": true,
+        "fixedOwnScopeRuntimePropertyWriteCount": 1,
+        "documentedControllerAndLimitChanges": 16,
+        "fullBuildRequiresOwnScopeLimitsReadback": true,
+        "fresh813SourceBuildPreparationApproved": true,
+        "fullEngineBuildLaunchApproved": false,
+        "persistentBudgetQualified": false,
+        "nativeAcceptance": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    }
+  },
+  "next": "Prioritize FRP workplan W01 outputbatch liveness709/710 and W07 pressidentity715/716 with exactnativeauthority/replaynondowngrade;720actualprimary-relatedWebKit/native721; source700Prepared independentlyreviewed713 (Released/Delivery integration unimplemented); preserved703readability resumesaftercriticalGUI fixes; fullroadmap/GPU/AT/IME/device/human/release gates remain.",
+  "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
+  "uiUxStrategy": {
+    "document": "docs/elm-roadmap/UI-UX-TEST-STRATEGY.md",
+    "coverage": "docs/elm-roadmap/delivery/ui-ux-coverage.json",
+    "requirementsMapped": 242,
+    "scenariosMapped": 417,
+    "executionAcceptance": false,
+    "humanParticipantEvidence": false
+  },
+  "blockingCandidateDefects": [
+    {
+      "id": "UX-PICKER-001",
+      "status": "resolved for ordinary and nine-document default-size captures; broader reflow acceptance open",
+      "description": "Spacing, bounded captions, reachable Close and exact Tab reveal pass in default800x420/16px configuration. Text enlargement, small outputs and full focus/AT metrics remain unqualified.",
+      "evidence": "implementation/elm-picker-parent-native-v54/qa/slice-manifest.json"
+    },
+    {
+      "id": "DURABLE-UNKNOWN-001",
+      "status": "resolved for bounded broker/store cold-restart and compiled Elm model; native host handoff and release remain open",
+      "description": "Single-latest journal loses durable AUnknown when unrelated BCommitted overwrites it; cold reader emits no A uncertainty. Elm unresolved state allows unrelated actions. Preserve every unresolved operation durably before native adoption.",
+      "evidence": "implementation/elm-unresolved-recovery-repro-v283/qa/repro-1791105305850643468/report.json",
+      "resolutionEvidence": "implementation/elm-multi-recovery-acceptance-v292/qa/slice-manifest.json"
+    },
+    {
+      "id": "NATIVE-LEDGER-HANDOFF-001",
+      "status": "implemented and CPU-qualified on actual C/Python production source; native GUI qualification open",
+      "description": "Existing host retains host-writer lock and mutates singleton admission. New ledger refuses adoption until host bounded full-key admissions, critical-section ownership and definitive retirement preserve unread/lost receipts across cold restart.",
+      "evidence": "implementation/elm-multi-recovery-acceptance-v292/HOST-HANDOFF.md",
+      "resolutionEvidence": "implementation/elm-admission-handoff-acceptance-v299/qa/slice-manifest.json"
+    },
+    {
+      "id": "SHARED-NATIVE-CONTEXT-001",
+      "status": "open",
+      "description": "Singleton context prototype authenticates one primary widget/manager; shared output menus require actual per-view native proof and exact asynchronous ownership before usable menu acceptance. Current carrier handles ordinary surface actions only.",
+      "evidence": "implementation/elm-shared-staged-menu-acceptance-v308/HANDOFF.md"
+    },
+    {
+      "id": "POINTER-PUBLICATION-504",
+      "status": "open; later512 pass has no causal repair evidence",
+      "description": "Actual right-button press/release then native publication95/lease9 commit precede DOM callback origin-or-proof refusal; original six-second held-restore menu-open deadline expires. Native cleanup passes. Preserve strict proof guards and deterministically refine lifecycle before claiming resolution.",
+      "evidence": "implementation/elm-pointer-publication-race-diagnostic-v515/witness.json"
+    },
+    {
+      "id": "RECOVERY-639-001",
+      "status": "Resolved in boundedactual640compiled51/21/20and6controls; single-origin lostwire native18 passes, multi-origin native notqualified",
+      "description": "Already locally released archive origin A rejects informational retirement proof, leaving backend readyfalse and later retainedUnknown B blocked behind serial history delivery. No wrongterminaloutcome inferred.",
+      "evidence": "implementation/elm-delivery-recovery-review-v639/component-manifest.json",
+      "resolutionEvidence": "implementation/elm-recovery-delivery-reviewed-v650/component-manifest.json"
+    }
+  ],
+  "resolvedBoundedFindings": [
+    {
+      "id": "NMIN-001",
+      "status": "resolved in V14 scoped native oracles",
+      "evidence": "implementation/elm-minimize-lifecycle-v14/qa/slice-manifest.json"
+    },
+    {
+      "id": "NMIN-002",
+      "status": "resolved in V14 scoped native oracles",
+      "evidence": "implementation/elm-minimize-lifecycle-v14/qa/slice-manifest.json"
+    },
+    {
+      "id": "NMIN-003",
+      "status": "resolved in V14 scoped native oracles",
+      "evidence": "implementation/elm-minimize-lifecycle-v14/qa/slice-manifest.json"
+    },
+    {
+      "id": "INPUT-HOLE-001",
+      "status": "Resolved for unit-scale untransformed owner/MAX native fixtures in V23; complete role/output/device acceptance remains open",
+      "evidence": "implementation/elm-input-hit-v23/qa/slice-manifest.json"
+    },
+    {
+      "id": "UIQA-SCHEMA-001",
+      "status": "Resolved V38 grouped-render QA host contract; V39/V40 normal host/backend exit",
+      "evidence": "implementation/elm-taskbar-family-picker-v40/qa/slice-manifest.json"
+    },
+    {
+      "id": "NATIVE-UFMIN-001",
+      "status": "External unfocused minimize notification missing in V41; V43 publishes invalidation and V44 automatically reconciles without frontend replay",
+      "failedEvidence": "implementation/elm-external-unfocused-probe-v41/qa/slice-manifest.json",
+      "evidence": "implementation/elm-external-state-gui-v44/qa/slice-manifest.json"
+    },
+    {
+      "id": "QA-REPORT-CAP-001",
+      "status": "V46 full-caption QA report rejected by4KiB control gate; separate bounded QA report admission in V47+ preserves4KiB controls",
+      "evidence": "implementation/elm-picker-parent-height-v53/qa/slice-manifest.json"
+    },
+    {
+      "id": "PICKER-REVEAL-001",
+      "status": "Oversized captions and fractional clip failures preserved V48/V50/V52; V53 definite parent height and bounded captions pass V54 exact bounds",
+      "evidence": "implementation/elm-picker-parent-native-v54/qa/slice-manifest.json"
+    },
+    {
+      "id": "NATIVE-POPUP-ROLE-001",
+      "status": "Required xdg_popup/grab/default geometry observed V65/V66 popup-window route; GTK3 GtkPopover no-go retained. Final Elm integration/stale epochs/outputs/IME and production role acceptance remain open.",
+      "failedEvidence": "implementation/elm-native-popover-qa-v62/qa/slice-manifest.json",
+      "evidence": "implementation/elm-native-popup-lifetime-qa-v66/qa/slice-manifest.json"
+    },
+    {
+      "id": "OUTPUT-REFLOW-LEASE-001",
+      "status": "V125/V132 fresh lease after physical retirement and native keyboard readiness qualify on V140 production tuple; broader output/hardware/fullscene gates remain open.",
+      "evidence": "implementation/elm-output-production-qa-v140/qa/slice-manifest.json"
+    },
+    {
+      "id": "SHARED-OUTPUT-CONTROLLER-001",
+      "status": "V150/V151 replace independent per-output fixture controllers with actual one Elm model/backend and native manager-bound presentation views. Private native135; broader output/hardware/release gates remain open.",
+      "evidence": "implementation/elm-output-shared-qa-v151/qa/slice-manifest.json"
+    },
+    {
+      "id": "HOST-ADMISSION-HANDOFF-V299",
+      "scope": "Actual compiled shared host/controller and live C admission/Python production handler CPU handoff; synthetic native authority in handler tests",
+      "evidence": "implementation/elm-admission-handoff-acceptance-v299/qa/slice-manifest.json",
+      "nativeGUIQualified": false
+    },
+    {
+      "id": "REDUNDANT-SURFACE-PUBLICATION-521",
+      "status": "resolved for established identical full packet with empty Desktop effects; initial publication/visible updates retained",
+      "evidence": "implementation/elm-stable-publication-qualified-v526/qa/slice-manifest.json",
+      "scope": "Compiled public Elm transitions and native89 bounded regression; does not causally close504"
+    },
+    {
+      "id": "RECONCILIATION-STARTUP-LOCK-626",
+      "status": "Resolved for deterministic actualC22 and original135 native627; full release open",
+      "failedEvidence": "implementation/elm-reconciliation-native-journey-v618/qa/native-1791151961114203912/report.json",
+      "evidence": "implementation/elm-reconciliation-integrated-reviewed-v625/component-manifest.json"
+    }
+  ]
+}

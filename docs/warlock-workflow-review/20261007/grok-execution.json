@@ -1,0 +1,112 @@
+{
+  "family": "grok",
+  "modelRequested": "grok-4.7",
+  "cli": "/home/hoskinson/.local/share/mise/installs/node/latest/bin/grok",
+  "cliSHA256": "41626a53292324140b92556b9d42ff5542e3dcd04aff85eafb8689dd4adb44fc",
+  "reviewers": [
+    {
+      "id": "grok_product",
+      "pid": 3127957,
+      "startTicks": "37622875",
+      "status": "terminal",
+      "modelRequested": "grok-4.7",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/node/latest/bin/grok",
+        "--model",
+        "grok-4.7",
+        "--reasoning-effort",
+        "high",
+        "--prompt-file",
+        "/home/hoskinson/omarchy-windows-parity/docs/warlock-workflow-review/20261007/grok_product.prompt.txt",
+        "--output-format",
+        "streaming-messages-json",
+        "--tools",
+        "Read,Glob,Grep",
+        "--permission-mode",
+        "dontAsk",
+        "--no-subagents",
+        "--disable-web-search",
+        "--no-alt-screen",
+        "--max-turns",
+        "25"
+      ],
+      "startedUTC": "2026-10-07T21:22:05.046380+00:00",
+      "exitCode": 0,
+      "finishedUTC": "2026-10-07T21:25:58.886213+00:00",
+      "modelsObserved": [
+        "grok-4.7"
+      ],
+      "passed": true
+    },
+    {
+      "id": "grok_velocity",
+      "pid": 3141680,
+      "startTicks": "37646273",
+      "status": "terminal",
+      "modelRequested": "grok-4.7",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/node/latest/bin/grok",
+        "--model",
+        "grok-4.7",
+        "--reasoning-effort",
+        "high",
+        "--prompt-file",
+        "/home/hoskinson/omarchy-windows-parity/docs/warlock-workflow-review/20261007/grok_velocity.prompt.txt",
+        "--output-format",
+        "streaming-messages-json",
+        "--tools",
+        "Read,Glob,Grep",
+        "--permission-mode",
+        "dontAsk",
+        "--no-subagents",
+        "--disable-web-search",
+        "--no-alt-screen",
+        "--max-turns",
+        "25"
+      ],
+      "startedUTC": "2026-10-07T21:25:59.027014+00:00",
+      "exitCode": 0,
+      "finishedUTC": "2026-10-07T21:31:03.120509+00:00",
+      "modelsObserved": [
+        "grok-4.7"
+      ],
+      "passed": true
+    },
+    {
+      "id": "grok_workflow",
+      "pid": 3160531,
+      "startTicks": "37676693",
+      "status": "terminal",
+      "modelRequested": "grok-4.7",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/node/latest/bin/grok",
+        "--model",
+        "grok-4.7",
+        "--reasoning-effort",
+        "high",
+        "--prompt-file",
+        "/home/hoskinson/omarchy-windows-parity/docs/warlock-workflow-review/20261007/grok_workflow.prompt.txt",
+        "--output-format",
+        "streaming-messages-json",
+        "--tools",
+        "Read,Glob,Grep",
+        "--permission-mode",
+        "dontAsk",
+        "--no-subagents",
+        "--disable-web-search",
+        "--no-alt-screen",
+        "--max-turns",
+        "25"
+      ],
+      "startedUTC": "2026-10-07T21:31:03.230791+00:00",
+      "exitCode": 0,
+      "finishedUTC": "2026-10-07T21:35:02.587323+00:00",
+      "modelsObserved": [
+        "grok-4.7"
+      ],
+      "passed": true
+    }
+  ],
+  "allTerminal": true,
+  "inputsVerified": true
+}

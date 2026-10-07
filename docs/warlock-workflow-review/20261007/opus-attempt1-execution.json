@@ -1,0 +1,66 @@
+{
+  "family": "opus",
+  "modelRequested": "claude-opus-5-5",
+  "cli": "/home/hoskinson/.local/share/mise/installs/claude/latest/claude",
+  "cliSHA256": "a186b99e4a9c88366cd49df2f7dad56c61fc306ef0140b19ee64b7c42a8d1348",
+  "reviewers": [
+    {
+      "id": "opus_architecture",
+      "pid": 3127627,
+      "startTicks": "37622758",
+      "status": "terminal",
+      "modelRequested": "claude-opus-5-5",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/claude/latest/claude",
+        "--print",
+        "--model",
+        "claude-opus-5-5",
+        "--effort",
+        "high",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--no-session-persistence",
+        "--safe-mode",
+        "--strict-mcp-config",
+        "--mcp-config",
+        "{\"mcpServers\":{}}",
+        "--permission-mode",
+        "dontAsk",
+        "--permission-prompts",
+        "none",
+        "--tools",
+        "Read,Glob,Grep",
+        "--allowedTools",
+        "Read,Glob,Grep",
+        "--no-chrome",
+        "--max-turns",
+        "25"
+      ],
+      "startedUTC": "2026-10-07T21:22:03.878937+00:00",
+      "exitCode": 1,
+      "finishedUTC": "2026-10-07T21:23:48.617990+00:00",
+      "modelObserved": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 50,
+          "outputTokens": 8257,
+          "cacheReadInputTokens": 1548558,
+          "cacheCreationInputTokens": 112552,
+          "webSearchRequests": 0,
+          "costUSD": 1.3754675999999997,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2410,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "isError": true,
+      "passed": false
+    }
+  ],
+  "allTerminal": false,
+  "inputsVerified": true
+}

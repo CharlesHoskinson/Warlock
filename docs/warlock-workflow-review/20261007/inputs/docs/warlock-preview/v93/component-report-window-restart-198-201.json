@@ -1,0 +1,103 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "passed": true,
+  "sourceHeld": true,
+  "cpuBuildPassed": true,
+  "fullBuildCommands": 119,
+  "actualWindowCommandRestartQualified": true,
+  "actualWindowCommandDurableUnknownQualified": true,
+  "fourOperationBoundaryScenariosQualified": true,
+  "historicalUnknownPreserved": true,
+  "automaticUnknownReplayCount": 0,
+  "originalDeadlinesPreserved": true,
+  "nativeAuthorityResets": 0,
+  "privateSessionCleanupPassed": true,
+  "controlledPreviewRecoveryQualified": false,
+  "combinedControlledPreviewRestartQualified": false,
+  "wholeHostRestartQualified": false,
+  "uncertainPreviewRetirementQualified": false,
+  "physicalRevealQualified": false,
+  "hardwarePresentationQualified": false,
+  "originalRestoreTimingQualified": false,
+  "measuredRSSQualified": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "reports": {
+    "native195": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v195/qa/native-1791403446987902432/report.json",
+      "sha256": "dcd3e5e49d8a13c0e18d295d2ddedb0a935f860f1b17b8ad081b714ef4daaf1a",
+      "passed": false,
+      "checks": 3,
+      "cleanupPassed": true,
+      "normalShortLivedHelpers": 0
+    },
+    "native196": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v196/qa/native-1791403529142543477/report.json",
+      "sha256": "b244e86940744bed465bed6676390e5a9c54501f9d2fcf026b90c65acd881bf0",
+      "passed": false,
+      "checks": 5,
+      "cleanupPassed": true,
+      "normalShortLivedHelpers": 0
+    },
+    "native197": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v197/qa/native-1791403580402133774/report.json",
+      "sha256": "1479788c0b9dc243224cb6d2d240116dc94beb73e56d45f2f9510218bb5462bb",
+      "passed": false,
+      "checks": 37,
+      "cleanupPassed": true,
+      "normalShortLivedHelpers": 0
+    },
+    "native198": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v198/qa/native-1791403711809185595/report.json",
+      "sha256": "7bd04f9a053649299c8e1cef59479bb4580875e4cc12f80ba7b8bea69e8aa491",
+      "passed": true,
+      "checks": 63,
+      "cleanupPassed": true,
+      "normalShortLivedHelpers": 19
+    },
+    "native199": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v199/qa/native-1791403806839558751/report.json",
+      "sha256": "4b14358d0000b24211956940d24dc6ec21df8120dca6ae43ec174a0c825a0c22",
+      "passed": true,
+      "checks": 61,
+      "cleanupPassed": true,
+      "normalShortLivedHelpers": 18
+    },
+    "native200": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v200/qa/native-1791403842042160528/report.json",
+      "sha256": "f08e8ecf186db76f3ec9f2b5d77a5acff2edc1ad02de297eabaf691b4023a776",
+      "passed": true,
+      "checks": 63,
+      "cleanupPassed": true,
+      "normalShortLivedHelpers": 19
+    },
+    "native201": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v201/qa/native-1791403924062637004/report.json",
+      "sha256": "786cc557313dd8445ca7771fe3c198b513210bb390b1c0ddaf69ba3ab2f87788",
+      "passed": true,
+      "checks": 61,
+      "cleanupPassed": true,
+      "normalShortLivedHelpers": 18
+    }
+  },
+  "build": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v143/qa/build-1791402266615452902/report.json",
+    "sha256": "ba1f5764e0c81bab19b70bf345f7435527d8170f5e80632b91c166299d132a9c"
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v16/build-1791282659756472310/Hyprland",
+      "sha256": "201d543c1e4c4833ebe3bafa07944ccda15236cf2ef7a763941d337592ac80ee"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v19/qa/build-1791342038926680323/elm-window-geometry-authority.so",
+      "sha256": "f2f70dae828dac946b29b9484aee34a20bdde033c0d076416da88272e93cf7db"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "scope": "Current GUI143/core16/plugin19/AQ155 main window-command recovery: real minimize and restore, interruption after native commit or after durable host admission before broker write, exact original Pending admission, actual application pixels/keyboard, explicit Unknown/real renderer failure/native GTK Restart/exit3/same sealed supervisor/fresh binding/same compositor lifetime/application geometry. Exact original recovered Unknown/no automatic replay/coherent current scene; actual native old-binding retirement and accepted post-proof reads release capacity while preserving durable historical Unknown. New pointer intent advances request/generation, uses current state and preserves old Unknown. Supervisor cancellation in second fallback exits failure1 without force or third host, empty owned shell scope, normal waited short-lived helpers and fixture/supervisor/private cleanup. Failed195 textual start/config,196 helper path and197 obsolete Pending observer are retained. No production source changed; current119 build/source/ABI closure verified. Separate controlled-preview retirement plus window-command whole-host restart, native uncertainty, original restore timing, physical/hardware, workload/RSS, full S09/release/AT/IME/journeys/deployment remain open. Installed desktop/drafts/foreign edits preserved."
+}

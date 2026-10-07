@@ -1,0 +1,22 @@
+*{box-sizing:border-box}html,body{margin:0;height:100%;background:#17202a;color:#f4f6f7;font:16px system-ui}button{font:inherit;color:inherit;background:#263544;border:1px solid #536777;border-radius:5px;padding:6px 12px;margin:3px;min-height:36px}button:focus-visible{outline:3px solid #7ed7ff;outline-offset:1px}button:disabled{opacity:.55}.bar .surface-bar{display:flex;height:48px;overflow:hidden;align-items:center;flex-wrap:nowrap}.control-label{display:block;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.control-detail{display:block;font-size:13px;line-height:13px;white-space:normal;overflow-wrap:anywhere}.control-detail:empty{display:none}.bar .surface-actions>button{margin:1px;padding:0 4px;min-height:46px;max-height:46px;min-width:0;max-width:240px;line-height:18px;flex:0 0 80px}.bar .surface-actions>.control-group{flex:1 1 116px;min-width:112px}.bar .surface-actions>.control-recovery{flex:0 0 120px}.bar .control-recovery .control-label{font-size:14px;white-space:normal;line-height:15px;overflow:visible}.bar [role=status]{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.popup .surface-popup{height:100vh;overflow:auto;padding:8px}.popup .surface-popup>h1{font-size:20px;line-height:24px;margin:0 0 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.popup .surface-popup>p[role=status]{line-height:20px;margin:0 0 8px;white-space:normal;overflow-wrap:anywhere}.popup button{display:block;width:calc(100% - 6px);text-align:left}.popup .control-detail{margin-top:4px;font-size:14px;line-height:18px}.popup [role=status]{margin:6px}
+
+.popup .window-preview{display:block;margin-bottom:4px}.popup .preview-image{display:block;width:auto;height:auto;max-width:100%;max-height:120px}.popup .preview-title,.popup .preview-state,.popup .preview-fidelity{display:block;font-size:13px;line-height:18px}
+
+/* Keep image and its state beside the action labels in a picker row.
+   Empty, loading and unavailable rows retain their ordinary flow. */
+.popup [data-mode="picker"] button:has(.preview-image){display:grid;grid-template-columns:minmax(0,160px) minmax(0,1fr);grid-template-rows:repeat(4,auto);column-gap:12px;align-items:start}
+.popup [data-mode="picker"] button:has(.preview-image) .window-preview,
+.popup [data-mode="picker"] button:has(.preview-image) .window-preview>span{display:contents}
+.popup [data-mode="picker"] button:has(.preview-image) .preview-image{grid-column:1;grid-row:1 / span 4;align-self:center}
+.popup [data-mode="picker"] button:has(.preview-image) .preview-state{grid-column:2;grid-row:1}
+.popup [data-mode="picker"] button:has(.preview-image) .preview-fidelity{grid-column:2;grid-row:2}
+.popup [data-mode="picker"] button:has(.preview-image) .control-label{grid-column:2;grid-row:3}
+.popup [data-mode="picker"] button:has(.preview-image) .control-detail{grid-column:2;grid-row:4}
+
+/* ELM-UI-007: action feedback remains visible after its popup has closed.
+   Keep all taskbar controls reachable by the existing horizontal overflow. */
+.bar .surface-bar>.surface-status{position:static;flex:0 0 clamp(180px,32vw,360px);align-self:stretch;display:flex;align-items:center;width:auto;height:auto;clip-path:none;overflow:hidden;padding:3px 8px;margin:0 0 0 4px;background:#263544;border-left:3px solid #7ed7ff;font-size:12px;line-height:14px;white-space:normal;overflow-wrap:anywhere}
+.bar .surface-bar>.surface-status-idle{display:none}
+@media(forced-colors:active){.bar .surface-bar>.surface-status{background:Canvas;color:CanvasText;border-color:Highlight}}
+
+.bar .surface-actions{display:flex;align-items:center;flex:1 1 auto;min-width:0;height:48px;overflow-x:auto;overflow-y:hidden;flex-wrap:nowrap}

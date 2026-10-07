@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "scope": "ELM-UI-007 restore-pending/refused/unknown component implementation; native/AT acceptance remains pending",
+  "reportPath": "implementation/warlock/qa/runs/1791409424272044713/report.json",
+  "evidence": {
+    "report.json": "72cf6d2e4f54ea794f6ec33473f5350c62705aa27800c492c8916934c281bc1b",
+    "browser-report.json": "8c51fa411779b9f28857079c75491cb0d787812c11e1d1aebfa3f6a02e4554ec",
+    "feedback.json": "235a6009aba253654c40ac2e2b87fb28cf65f8045ad98e1aa04f81953cf4dddd",
+    "feedback-wide-unknown.png": "a120d1140c0a2014c0ed5af1262ca4911d502ec5c2d974eac59258b515c7622c",
+    "feedback-narrow-refused.png": "ba9b404d02cfd57b7ae226f6b3aabdc28bc235a4e04b8888a6a1cf5c7373ea43"
+  },
+  "productionDelta": [
+    "src/Surface.elm",
+    "src/SurfaceRenderer.elm",
+    "assets/shell.css"
+  ],
+  "compiledAssets": {
+    "elm.js": "fbaf9a38544372f909f672c347bc4f2f22bad9b7e958a7446f0461c071f3733c",
+    "bar.js": "942e4cbc358fac604ca7812713edbc1255a4207f797790e837293b6136990a3d",
+    "popup.js": "e8723d578f42bb84ca6feb59939e608659529863acd010a78a24677a5084c996"
+  },
+  "failedRunRetained": "implementation/warlock/qa/runs/1791409394527867267/report.json",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

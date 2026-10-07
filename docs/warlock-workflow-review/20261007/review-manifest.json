@@ -1,0 +1,98 @@
+{
+  "schema": 1,
+  "reviewers": [
+    {
+      "id": "grok_product",
+      "modelRequested": "grok-4.7",
+      "modelObserved": [
+        "grok-4.7"
+      ],
+      "effort": "high",
+      "reviewSHA256": "2c93e9e959de0f5205903c72312965e69f356877d54b1de59138ee3dca73b46a",
+      "provenance": "grok-execution.json",
+      "terminal": true
+    },
+    {
+      "id": "grok_velocity",
+      "modelRequested": "grok-4.7",
+      "modelObserved": [
+        "grok-4.7"
+      ],
+      "effort": "high",
+      "reviewSHA256": "45a2ccc2459699ed9630caa9f1c52ccc1809b1511df849523de123177452923b",
+      "provenance": "grok-execution.json",
+      "terminal": true
+    },
+    {
+      "id": "grok_workflow",
+      "modelRequested": "grok-4.7",
+      "modelObserved": [
+        "grok-4.7"
+      ],
+      "effort": "high",
+      "reviewSHA256": "81eb19f87bc4f34e07e9025fd2ac67a52f05937792fe44d6e071e699b846356a",
+      "provenance": "grok-execution.json",
+      "terminal": true
+    },
+    {
+      "id": "opus_architecture",
+      "modelRequested": "claude-opus-5-5",
+      "modelObserved": "claude-opus-5-5",
+      "effort": "high",
+      "reviewSHA256": "4bf7cf0ebe543bc6e115c389d3fde97e318995fce5a9f5c15995ad2941dcf837",
+      "provenance": "opus-execution.json",
+      "terminal": true
+    },
+    {
+      "id": "opus_requirements",
+      "modelRequested": "claude-opus-5-5",
+      "modelObserved": "claude-opus-5-5",
+      "effort": "high",
+      "reviewSHA256": "d371a0f39f9d8f9dde91e62673b6e68d15de233d270774c86f4eff638f6206d8",
+      "provenance": "opus-execution.json",
+      "terminal": true
+    },
+    {
+      "id": "opus_product",
+      "modelRequested": "claude-opus-5-5",
+      "modelObserved": "claude-opus-5-5",
+      "effort": "high",
+      "reviewSHA256": "ae8704cd10937a6b040f5d81e4d13c2b5e9e13b63c94a50fa024a43931c706fc",
+      "provenance": "opus-execution.json",
+      "terminal": true
+    },
+    {
+      "id": "astra_process",
+      "modelRequested": "gpt-6-astra",
+      "modelObserved": "gpt-6-astra",
+      "effort": "high",
+      "reviewSHA256": "b734c0573f3ee6b372f810c66cb6e7d94aca5cd3931f5ec12fa9add4d7d78f84",
+      "provenance": "Built-in collaboration.spawn_agent; explicit model/effort, fork_turns none; final response received",
+      "terminal": true
+    },
+    {
+      "id": "astra_code",
+      "modelRequested": "gpt-6-astra",
+      "modelObserved": "gpt-6-astra",
+      "effort": "high",
+      "reviewSHA256": "6b90d2aee7ccf69a0d4b2f1efa2059b4e984e5e16786bf9fc9e5f3e10913d38e",
+      "provenance": "Built-in collaboration.spawn_agent; explicit model/effort, fork_turns none; final response received",
+      "terminal": true
+    },
+    {
+      "id": "astra_delivery",
+      "modelRequested": "gpt-6-astra",
+      "modelObserved": "gpt-6-astra",
+      "effort": "high",
+      "reviewSHA256": "21eaf4dc21301cf8f694172e195227bf7731fd46939bc38d0521fa5f285d9a39",
+      "provenance": "Built-in collaboration.spawn_agent; explicit model/effort, fork_turns none; final response received",
+      "terminal": true
+    }
+  ],
+  "allNineComplete": true,
+  "failedAttemptsRetained": [
+    "opus_architecture.attempt1.stream.jsonl",
+    "opus_architecture.attempt1.result.json"
+  ],
+  "rawThinkingStreamsPublic": false
+}

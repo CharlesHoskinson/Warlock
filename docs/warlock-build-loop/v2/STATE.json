@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "updatedUTC": "2026-10-07T21:44:44.466774+00:00",
+  "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
+  "sourceCandidate": "implementation/warlock",
+  "heldParent": "implementation/warlock-preview-provider-v143",
+  "productWIPLimit": 1,
+  "nativeWIPLimit": 1,
+  "activeSlice": {
+    "id": "visible-window-feedback",
+    "requirements": [
+      "ELM-UI-007"
+    ],
+    "scenarios": [
+      "restore-pending",
+      "restore-refused",
+      "restore-unknown"
+    ],
+    "before": "Taskbar status is visually hidden; a generic recovery message masks Pending/Unknown.",
+    "after": "Window-action status is visible, distinct and persistent; Refresh remains observation-only.",
+    "state": "component-verified; native/AT verdict pending",
+    "paths": [
+      "src/Surface.elm",
+      "src/SurfaceRenderer.elm",
+      "assets/shell.css"
+    ],
+    "verification": [
+      "typed-state projection and no new effects",
+      "actual compiled views in narrow/wide browser",
+      "native/AT original scenarios before acceptance"
+    ],
+    "evidence": "implementation/warlock/qa/evidence/window-feedback/manifest.json"
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle."
+}

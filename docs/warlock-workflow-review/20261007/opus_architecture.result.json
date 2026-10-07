@@ -1,0 +1,98 @@
+{
+  "duration_api_ms": 143475,
+  "stop_reason": "end_turn",
+  "session_id": "7ac161ba-6b4a-4fc1-8147-6b232c275ab8",
+  "total_cost_usd": 1.3003634000000002,
+  "usage": {
+    "input_tokens": 26,
+    "cache_creation_input_tokens": 105947,
+    "cache_read_input_tokens": 841417,
+    "output_tokens": 14220,
+    "output_tokens_details": {
+      "thinking_tokens": 5263
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 105947,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 6881,
+        "cache_read_input_tokens": 108516,
+        "cache_creation_input_tokens": 1368,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1368
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 26,
+      "outputTokens": 14220,
+      "cacheReadInputTokens": 841417,
+      "cacheCreationInputTokens": 105947,
+      "webSearchRequests": 0,
+      "costUSD": 1.3003634000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 5263,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 33,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "# opus_architecture review: real code progress vs. prototype sprawl\n\n## Bottom line\n\nThere is real product code, and real defects were found and fixed on real WebKit. But the work is not converging into one application. Every change copies the whole tree into a new versioned directory. At least three lineages exist on what appear to be different ABI tuples, and none has been reconciled. The \"single immutable Elm policy\" is true within the preview subsystem only, not for the application. The last two full campaigns changed no production source. The preview route that got most of the custody engineering is inactive in the product and kept at opacity 0.\n\n## Findings, ranked by severity\n\n**F1 \u2014 Critical: every change copies the whole tree, so there is no trunk.**\n- `implementation/warlock-preview-provider-v1`\u2026`v143` are 143 full directories. Each has its own `src/Main.elm`.\n- There are 358 `implementation/*/elm.json` projects (e.g. `elm-output-controller-v141/142/144/145`, `elm-shared-staged-menu-carrier{,-fixed,-complete}-v30x`).\n- `git-24h.json` lists 90 commits.\n  - Each \"Qualify\u2026\" commit reports 184\u20131208 `productSourceFiles` and up to 16,515 `qaFiles` (lines 11\u201312, 3206\u20133207, 8852\u20138853).\n  - Each is paired with a \"Record public\u2026\" commit carrying 0 product files.\n  - The real authored deltas are small: v94 changes 4 files (`source-deltas-94-143.json:7-29`). So the per-commit path counts mostly measure copying.\n- The process mandates this. `INSTRUCTIONS.md:22` says: \"Use fresh source derivatives for changes to frozen components.\"\n- Result: no diff is reviewable, \"current source\" is ambiguous, and every reader pays for duplicates.\n\n**F2 \u2014 Critical: three implementation lineages are unreconciled.**\n- `loop-state.json:33` and `implementation-status.json:3` name `elm-recovery-delivery-general-reviewed-v656` as current. Its SPEC selects production 640 on \"core205/Aquamarine155\" (`v656/SPEC.md:5-6`).\n- `INSTRUCTIONS.md:32` says to continue from `elm-preview-provider-host-v519` on core205/native492.\n- The last 24 hours of work happened in `warlock-preview-provider-v86\u2192v143` on \"GUI143/core16/plugin19/AQ155\" (`HANDOFF.md:797`; `component-report-combined-restart-204-207.json:6`).\n- `INSTRUCTIONS.md:34` explicitly requires reconciling \"lanes into one release tuple\". That was never done.\n- **Unverified:** whether core16 and core205 are different numbering schemes for the same artifact.\n\n**F3 \u2014 High: there is no single application policy.** In v143:\n- `Main.elm:28,61` is a `Browser.element` that owns the desktop/window policy (`Outputs.Model`) and renders `text \"\"`.\n- `Popup.elm:27` holds a `RetainedPreviewPresenter` model inside WebKit.\n- `NativePreviewPolicy.elm:11-13` is a `Platform.worker` holding the same `Preview.Model` in native JSC.\n- `NativePreviewRenderer.elm` and `Bar.elm` are further programs.\n- So the preview policy is instantiated once per route (legacy vs controlled), and the window policy is a separate program bridged only through native code.\n- `HANDOFF.md:280` (\"No second window policy\") holds only for the preview subsystem. The `INSTRUCTIONS.md:7` mandate (\"one immutable Elm policy state\") is not met at application level.\n- Policy timing also lives in port wiring rather than in the model: 2000 / 2000 / 10000 ms timers in `Main.elm:36-38`.\n\n**F4 \u2014 High: effort went into a feature the user cannot see.**\n- The controlled host is \"QA-only\" (`HANDOFF.md:399`). The driver \"links but remains inactive in the actual legacy host\" (`HANDOFF.md:368`).\n- The curtain is mandatory opacity 0 and root preview is ineligible (`HANDOFF.md:874`).\n- GUI94\u2013143 is roughly 50 slices of retirement, ticket, custody and confirmation hardening for a route no user reaches.\n- Internal `CONTROL-026\u2026049` contracts replaced original EARS IDs as the unit of progress (`HANDOFF.md:191, 235, 788, 832`).\n\n**F5 \u2014 High: the latest campaigns are QA-only.**\n- `HANDOFF.md:814` and `:862` both say \"No production source changed\".\n- The combined report confirms it: `controlledPreviewRecoveryQualified:false`, `wholeHostRestartQualified:false`, `nativeAcceptance:false` (report lines 23\u201331).\n- The evidence is valid, but it is not product delta.\n\n**F6 \u2014 Medium: closure bookkeeping is broken in both directions.**\n- `completedRequirementIds: []` (`implementation-status.json:35`) is not proof that zero original requirements are satisfied.\n- The combined report sets `actualWindowCommandRestartQualified:true` and `actualWindowCommandDurableUnknownQualified:true`, but maps them to no original ID.\n- `requirementsInProgress` holds 28 IDs with no per-scenario verdicts.\n\n**F7 \u2014 Medium: the handoff is too expensive to read.** `HANDOFF.md` is an 876-line append-only log of hashes and counts. Every continuation re-reads it.\n\n## What the code actually shows\n\nGenuine progress, verified at source level:\n- **ELM-UI-004:** a pure taskbar decision table exists in `Taskbar.elm:25-36`. It covers zero windows (Launch/Unavailable), a single window (Restore/Minimize/Activate) and multiple windows (Picker).\n  - **Unverified:** the EARS also requires distinguishing pin from always-on-top and an explicit new-instance action. I did not find either in this file.\n- **Real WebKit defects were found and fixed:**\n  - the rapid-input drain bug (GUI133\u2192134, `HANDOFF.md:603-616`)\n  - stale-error ordering (GUI136\u2192137)\n  - same-URI reload (GUI140\u2192141)\n  - shared-process drain (GUI142\u2192143)\n- **Worth keeping:** the pure-receiver infrastructure in GUI117\u2013119 (`HANDOFF.md:275-330`). It is the right base for consolidating to one policy.\n\nAlso measured:\n- 90 commits in 24h.\n- About 7.9M tokens / 22.5h cumulative on the goal (INDEX). There is no 24h-only token figure.\n\nUnverified:\n- Whether the v640 and v143 copies of shared modules (e.g. `Shell.elm`, `TaskbarShell.elm`) have diverged. Diffing them is step 1 below.\n- Native minimize focus succession (ELM-UI-001). Minimize/restore commands run natively in Native204\u2013207, but no focus-successor oracle was observed.\n\n## Stop / start / retain\n\n**Stop**\n- Copying whole directories per change.\n- \"Record public\" commits as a separate unit of work.\n- Minting CONTROL-0xx contracts in place of original IDs.\n- Hardening inactive routes.\n- Appending hash prose to `HANDOFF.md`.\n\n**Start**\n- One mutable trunk directory with git as the version history.\n- One root Elm model.\n- Per-scenario verdicts on original EARS IDs.\n- User-visible slices.\n\n**Retain**\n- ABI-tuple identity checks and serial native QA.\n- Unchanged original deadlines and oracles.\n- No automatic replay of Unknown outcomes; no grant resets.\n- Draft, desktop and foreign-edit protections.\n- Held failure evidence, left at its existing paths and never rewritten.\n\n## Integration path\n\n1. **Trunk (one bounded session, no product behavior change).**\n   - Create `implementation/warlock/` from v143. Record the parent path and commit in a single `ANCESTRY.json`.\n   - Diff v640's production Elm and native sources against v143, module by module.\n   - Port only divergences that carry behavior. Name the owning tuple once.\n   - From then on, changes are git commits in this directory.\n   - Old `vN` directories stay frozen as evidence and are referenced by commit hash, not copied. This reduces duplication without rewriting held evidence.\n2. **One policy.** Compose `Outputs.Model` and `Preview.Model` into one root model hosted in the existing native JSC worker (`NativePreviewPolicy`, GUI116). Then:\n   - `Main`, `Popup`, `Bar` and the renderer become pure view programs, built on the GUI117\u2013119 receivers.\n   - Delete the legacy `Popup` preview state once the controlled route is the default.\n   - Do this incrementally: first move window policy into the worker behind an unchanged port contract, using the existing replay modules as regression.\n3. **Close requirements as you go.** Add `docs/elm-roadmap/delivery/closure.json`. Per original scenario name, record:\n   - the evidence path and sha\n   - scope: native, component or model\n   - verdict: satisfied, partial or missing\n\n   Individual scenarios close at native scope without waiting for the full release. Component evidence never counts as native.\n\n## Operating rules\n\n- **WIP:** one product slice at a time, with at most one native campaign in flight. No new versioned directories.\n- **Escalate validation in steps:** Elm unit/replay tests \u2192 one CPU build \u2192 native runs for that slice's original scenarios only. Run the inherited regression suite only when shared native or ABI code changes. Do not add new Quint models unless a slice introduces new concurrency.\n- **Report briefly:** at most 15 lines per slice: original IDs and scenarios, verdicts, diff stat, failures, next step. Hashes belong in `closure.json`, not prose.\n- **Control cost:** stop a slice after 2 failed native attempts or about 400k tokens and record the blocker. Read the diff, not directory copies.\n\n## Recommended first three slices\n\n1. **ELM-UI-004 (taskbar primary-action table).**\n   - Code: `Taskbar.elm` `primary`/`selection` and `TaskbarShell.elm`. Add pin vs always-on-top and an explicit new-instance action, plus the keyboard route.\n   - Verify: Elm tests over the scenarios starting at `requirements.json:5098` (taskbar-zero and its siblings), then one native run per scenario.\n   - Why first: it is safe \u2014 no compositor restart, and the core logic already exists.\n2. **ELM-UI-001 (minimize focus succession: focus-successor, focus-last, focus-unfocused).**\n   - Reuse the Native204\u2013207 minimize fixtures, which already provide real pointer, compositor focus and keyboard recipients.\n   - Add the successor oracle. Implement it in the native authority if it is missing.\n3. **ELM-ARC-019 / ELM-GNO-008 / ELM-KDE-006 (visible noninteractive preview).**\n   - Make the controlled route the default in trunk. Allow one physical reveal for an eligible family under a native pixel oracle; Native136/184 already provide red19200 references.\n   - Keep root preview ineligible. Delete the legacy Popup preview state.\n\nClosure audit, run in parallel and cheaply: assess ELM-ARC-002 (only native authority mutates windows) against Native198\u2013207 evidence. Mark it satisfied only if each named scenario has native evidence.\n\n## Risks\n\n- Merging v640 and v143 may surface conflicting Shell/Taskbar semantics. Resolve these explicitly; never by quietly picking one.\n- Composing one policy risks regressing the custody guarantees. Keep the existing replay and C-coupled suites as gates for changes to that code.\n- An early reveal could expose stale pixels. Keep the GUI137/141 guards.\n\n## Falsifiable success metrics (next 24h)\n\n- New `implementation/*-vN` directories: **0**.\n- At least 60% of commits change production source.\n- At least 6 original scenarios (UI-004 and UI-001) have native verdicts in `closure.json`.\n- Shared Elm modules exist in exactly one copy in trunk.\n- Exactly one root Elm model owns window and preview policy, or a dated plan says which port remains.\n- `HANDOFF.md` growth: 40 lines or fewer.\n- Tokens per closed original scenario are reported.",
+  "ttft_ms": 3601,
+  "type": "result",
+  "duration_ms": 146328,
+  "uuid": "c61795df-901a-4a6e-9c4a-87103a2529ba",
+  "ttft_stream_ms": 3359,
+  "time_to_request_ms": 2027,
+  "first_content_frame_ms": 3359,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

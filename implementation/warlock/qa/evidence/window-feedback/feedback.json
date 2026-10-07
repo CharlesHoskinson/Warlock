@@ -1,0 +1,106 @@
+[
+  {
+    "status": "Pending",
+    "frame": {
+      "surfaceProtocol": 2,
+      "publication": "1",
+      "lease": "1",
+      "mode": "closed",
+      "status": "Restore: applying to selected window…",
+      "bar": [
+        {
+          "id": "bar:applications",
+          "domId": "applications:detached:0:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:recovery-refresh",
+          "domId": "applications:detached:0:bar:recovery-refresh",
+          "label": "Refresh window status",
+          "ariaLabel": "Refresh window status; read observations without retrying actions",
+          "detail": "Observation only",
+          "enabled": false
+        }
+      ],
+      "popup": []
+    },
+    "unresolved": 1
+  },
+  {
+    "status": "Refused",
+    "frame": {
+      "surfaceProtocol": 2,
+      "publication": "1",
+      "lease": "1",
+      "mode": "closed",
+      "status": "Restore: refused for selected window. Refresh window status, then choose again.",
+      "bar": [
+        {
+          "id": "bar:applications",
+          "domId": "applications:detached:0:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true
+        }
+      ],
+      "popup": []
+    },
+    "unresolved": 0
+  },
+  {
+    "status": "Unknown",
+    "frame": {
+      "surfaceProtocol": 2,
+      "publication": "1",
+      "lease": "1",
+      "mode": "closed",
+      "status": "Restore: not confirmed for selected window. Check your windows; Refresh only reads status.",
+      "bar": [
+        {
+          "id": "bar:applications",
+          "domId": "applications:detached:0:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:recovery-refresh",
+          "domId": "applications:detached:0:bar:recovery-refresh",
+          "label": "Refresh window status",
+          "ariaLabel": "Refresh window status; read observations without retrying actions",
+          "detail": "Observation only",
+          "enabled": true
+        }
+      ],
+      "popup": []
+    },
+    "unresolved": 1
+  },
+  {
+    "status": "Committed",
+    "frame": {
+      "surfaceProtocol": 2,
+      "publication": "1",
+      "lease": "1",
+      "mode": "closed",
+      "status": "Ready",
+      "bar": [
+        {
+          "id": "bar:applications",
+          "domId": "applications:detached:0:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true
+        }
+      ],
+      "popup": []
+    },
+    "unresolved": 0
+  }
+]
