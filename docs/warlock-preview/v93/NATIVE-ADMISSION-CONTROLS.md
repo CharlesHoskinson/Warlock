@@ -778,3 +778,36 @@ and create only a new grant-bound transport outbox. It shall reject stale epochs
 foreign bindings and replacement of an open realm before policy processing.
 Reusing a renderer requires its separately qualified original-context lifecycle;
 CPU/C/JSC traces do not qualify actual GTK/WebKit close/reopen or physical reveal.
+# CONTROL-041: original native close/reopen and fixed-grant renderer lifetime
+
+When original popup admission closes, the host shall quarantine the original
+native realm and retain its policy/input/ticket/physical/journal/independent-
+confirmation duties until the original strict retirement gate passes. When it
+passes, the host shall retire that C realm while retaining the same Elm policy,
+detach its visual and URI admission, and replace only its retired renderer
+view/document/manager. A later pending user intent shall retain its original
+popup lease/window/grab while the new context awaits fresh DOM admission.
+
+When a later renderer context completes original GTK/publication/lease admission,
+the host shall use a later original Native epoch on the same binding and the
+same persistent Elm policy, and initialize that context's fixed grant exactly
+once. It shall preserve navigation, snapshot and Native chronology; old-context
+receipts, callbacks and grants shall not acquire current rendering authority.
+
+When private QA observes a later current image, it shall bind the snapshot to
+that original epoch/view/navigation/projection and use a fresh monotonically
+numbered artifact path. Snapshot bookkeeping shall neither reset Native grants
+nor settle jobs or permit physical reveal. Actual pointer close/reopen, source
+pixels, native closed-curtain output, normal exits and strict cleanup shall be
+qualified separately from C/JSC and model passes; reload/unknown recovery remain
+separate gates.
+
+CONTROL-041 bounded normal-route qualification: GUI132/Native145 executes two
+actual pointer open/close cycles through the same Elm policy and Native binding,
+with fresh fixed-grant renderers, current source URI/pixels, monotonic
+epoch/navigation/lease/snapshot, strict native close and original normal cleanup.
+All original29 controls remain in the46-check probe. Native14429/13 normal and
+Native14618/8 delayed-result regressions, full119, Quint9/200 and six coupled
+lifecycle stages pass separately. Pending-intent replacement, old callbacks
+across the new epoch, permanent-retirement GUI interactions, ongoing physical
+conceal/reveal/hardware, recovery and full release remain unqualified.

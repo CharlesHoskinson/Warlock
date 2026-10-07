@@ -581,3 +581,21 @@ current full119 retained. Reports distinguish unchanged host regressions from
 the separately qualified C/JSC143-check two-realm foundation. CONTROL040 bounded
 task checked; actual GUI rebind/reopen and direct-retirement path stay open.
 PUBLIC96 publication preparation next, then fresh native renderer/context lifecycle.
+
+GUI132 is held: actual normal GUI realm close/reopen activates strict original
+C/Bootstrap retirement and transfers the same Elm policy into a later same-binding
+native epoch. Only the retired WebKit view/document/manager is replaced; its
+renderer receives one fresh fixed grant. Navigation, snapshot ordinals and Native
+grant are never reset. Native145 passes46 checks/18 normal owned exits, retaining
+every original29 control across two actual pointer cycles, fresh current source
+URI/red19200 pixels in each, epoch/navigation/lease/request1->2, opacity0 actual
+output regions, both strict closes and private cleanup. Native144 unchanged29/13
+and Native146 unchanged18/8 delayed real-result regressions pass separately.
+Full119, lifecycle Quint9named/200samples and six stages coupled to the actual
+native observations pass. Exact reports/hashes: component-report132.json.
+Failed compiler candidate131 remains held, with its separately passed model.
+Pending-intent replacement has code/model evidence but no actual qualification.
+Next PUBLIC97 then fresh actual pending-intent/stale-context probe. Ongoing
+conceal/reveal/hardware, process/reload/Unknown, pressure/workload/RSS, full S09
+and all original release gates remain open. Installed desktop/drafts and five
+foreign tracked changes remain untouched.

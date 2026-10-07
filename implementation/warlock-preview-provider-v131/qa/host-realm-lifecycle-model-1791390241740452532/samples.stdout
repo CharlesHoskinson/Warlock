@@ -1,0 +1,1325 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      closing: false,
+      code: 0,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history: [],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history: ["Retire"],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: false
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      closing: false,
+      code: 0,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history: ["Retire", "Unknown"],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history: ["Retire", "Unknown", "Replace"],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history: ["Retire", "Unknown", "Replace", "Admit"],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history: ["Retire", "Unknown", "Replace", "Admit", "StaleCallback"],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        ["Retire", "Unknown", "Replace", "Admit", "StaleCallback", "Admit"],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Retire",
+          "Unknown",
+          "Replace",
+          "Admit",
+          "StaleCallback",
+          "Admit",
+          "Apply"
+        ],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Retire",
+          "Unknown",
+          "Replace",
+          "Admit",
+          "StaleCallback",
+          "Admit",
+          "Apply",
+          "Replace"
+        ],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Retire",
+          "Unknown",
+          "Replace",
+          "Admit",
+          "StaleCallback",
+          "Admit",
+          "Apply",
+          "Replace",
+          "Initialize"
+        ],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Retire",
+          "Unknown",
+          "Replace",
+          "Admit",
+          "StaleCallback",
+          "Admit",
+          "Apply",
+          "Replace",
+          "Initialize",
+          "Unknown"
+        ],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Retire",
+          "Unknown",
+          "Replace",
+          "Admit",
+          "StaleCallback",
+          "Admit",
+          "Apply",
+          "Replace",
+          "Initialize",
+          "Unknown",
+          "Apply"
+        ],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Retire",
+          "Unknown",
+          "Replace",
+          "Admit",
+          "StaleCallback",
+          "Admit",
+          "Apply",
+          "Replace",
+          "Initialize",
+          "Unknown",
+          "Apply",
+          "Apply"
+        ],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Retire",
+          "Unknown",
+          "Replace",
+          "Admit",
+          "StaleCallback",
+          "Admit",
+          "Apply",
+          "Replace",
+          "Initialize",
+          "Unknown",
+          "Apply",
+          "Apply",
+          "StaleCallback"
+        ],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Retire",
+          "Unknown",
+          "Replace",
+          "Admit",
+          "StaleCallback",
+          "Admit",
+          "Apply",
+          "Replace",
+          "Initialize",
+          "Unknown",
+          "Apply",
+          "Apply",
+          "StaleCallback",
+          "Apply"
+        ],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Retire",
+          "Unknown",
+          "Replace",
+          "Admit",
+          "StaleCallback",
+          "Admit",
+          "Apply",
+          "Replace",
+          "Initialize",
+          "Unknown",
+          "Apply",
+          "Apply",
+          "StaleCallback",
+          "Apply",
+          "Retire"
+        ],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Retire",
+          "Unknown",
+          "Replace",
+          "Admit",
+          "StaleCallback",
+          "Admit",
+          "Apply",
+          "Replace",
+          "Initialize",
+          "Unknown",
+          "Apply",
+          "Apply",
+          "StaleCallback",
+          "Apply",
+          "Retire",
+          "Drain"
+        ],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Retire",
+          "Unknown",
+          "Replace",
+          "Admit",
+          "StaleCallback",
+          "Admit",
+          "Apply",
+          "Replace",
+          "Initialize",
+          "Unknown",
+          "Apply",
+          "Apply",
+          "StaleCallback",
+          "Apply",
+          "Retire",
+          "Drain",
+          "ClosePopup"
+        ],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Retire",
+          "Unknown",
+          "Replace",
+          "Admit",
+          "StaleCallback",
+          "Admit",
+          "Apply",
+          "Replace",
+          "Initialize",
+          "Unknown",
+          "Apply",
+          "Apply",
+          "StaleCallback",
+          "Apply",
+          "Retire",
+          "Drain",
+          "ClosePopup",
+          "Drain"
+        ],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Retire",
+          "Unknown",
+          "Replace",
+          "Admit",
+          "StaleCallback",
+          "Admit",
+          "Apply",
+          "Replace",
+          "Initialize",
+          "Unknown",
+          "Apply",
+          "Apply",
+          "StaleCallback",
+          "Apply",
+          "Retire",
+          "Drain",
+          "ClosePopup",
+          "Drain",
+          "StaleCallback"
+        ],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Retire",
+          "Unknown",
+          "Replace",
+          "Admit",
+          "StaleCallback",
+          "Admit",
+          "Apply",
+          "Replace",
+          "Initialize",
+          "Unknown",
+          "Apply",
+          "Apply",
+          "StaleCallback",
+          "Apply",
+          "Retire",
+          "Drain",
+          "ClosePopup",
+          "Drain",
+          "StaleCallback",
+          "Unknown"
+        ],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Retire",
+          "Unknown",
+          "Replace",
+          "Admit",
+          "StaleCallback",
+          "Admit",
+          "Apply",
+          "Replace",
+          "Initialize",
+          "Unknown",
+          "Apply",
+          "Apply",
+          "StaleCallback",
+          "Apply",
+          "Retire",
+          "Drain",
+          "ClosePopup",
+          "Drain",
+          "StaleCallback",
+          "Unknown",
+          "Initialize"
+        ],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Retire",
+          "Unknown",
+          "Replace",
+          "Admit",
+          "StaleCallback",
+          "Admit",
+          "Apply",
+          "Replace",
+          "Initialize",
+          "Unknown",
+          "Apply",
+          "Apply",
+          "StaleCallback",
+          "Apply",
+          "Retire",
+          "Drain",
+          "ClosePopup",
+          "Drain",
+          "StaleCallback",
+          "Unknown",
+          "Initialize",
+          "DOMReady"
+        ],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Retire",
+          "Unknown",
+          "Replace",
+          "Admit",
+          "StaleCallback",
+          "Admit",
+          "Apply",
+          "Replace",
+          "Initialize",
+          "Unknown",
+          "Apply",
+          "Apply",
+          "StaleCallback",
+          "Apply",
+          "Retire",
+          "Drain",
+          "ClosePopup",
+          "Drain",
+          "StaleCallback",
+          "Unknown",
+          "Initialize",
+          "DOMReady",
+          "OpenIntent"
+        ],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Retire",
+          "Unknown",
+          "Replace",
+          "Admit",
+          "StaleCallback",
+          "Admit",
+          "Apply",
+          "Replace",
+          "Initialize",
+          "Unknown",
+          "Apply",
+          "Apply",
+          "StaleCallback",
+          "Apply",
+          "Retire",
+          "Drain",
+          "ClosePopup",
+          "Drain",
+          "StaleCallback",
+          "Unknown",
+          "Initialize",
+          "DOMReady",
+          "OpenIntent",
+          "Drain"
+        ],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Retire",
+          "Unknown",
+          "Replace",
+          "Admit",
+          "StaleCallback",
+          "Admit",
+          "Apply",
+          "Replace",
+          "Initialize",
+          "Unknown",
+          "Apply",
+          "Apply",
+          "StaleCallback",
+          "Apply",
+          "Retire",
+          "Drain",
+          "ClosePopup",
+          "Drain",
+          "StaleCallback",
+          "Unknown",
+          "Initialize",
+          "DOMReady",
+          "OpenIntent",
+          "Drain",
+          "Unknown"
+        ],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Retire",
+          "Unknown",
+          "Replace",
+          "Admit",
+          "StaleCallback",
+          "Admit",
+          "Apply",
+          "Replace",
+          "Initialize",
+          "Unknown",
+          "Apply",
+          "Apply",
+          "StaleCallback",
+          "Apply",
+          "Retire",
+          "Drain",
+          "ClosePopup",
+          "Drain",
+          "StaleCallback",
+          "Unknown",
+          "Initialize",
+          "DOMReady",
+          "OpenIntent",
+          "Drain",
+          "Unknown",
+          "Apply"
+        ],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Retire",
+          "Unknown",
+          "Replace",
+          "Admit",
+          "StaleCallback",
+          "Admit",
+          "Apply",
+          "Replace",
+          "Initialize",
+          "Unknown",
+          "Apply",
+          "Apply",
+          "StaleCallback",
+          "Apply",
+          "Retire",
+          "Drain",
+          "ClosePopup",
+          "Drain",
+          "StaleCallback",
+          "Unknown",
+          "Initialize",
+          "DOMReady",
+          "OpenIntent",
+          "Drain",
+          "Unknown",
+          "Apply",
+          "StaleCallback"
+        ],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Retire",
+          "Unknown",
+          "Replace",
+          "Admit",
+          "StaleCallback",
+          "Admit",
+          "Apply",
+          "Replace",
+          "Initialize",
+          "Unknown",
+          "Apply",
+          "Apply",
+          "StaleCallback",
+          "Apply",
+          "Retire",
+          "Drain",
+          "ClosePopup",
+          "Drain",
+          "StaleCallback",
+          "Unknown",
+          "Initialize",
+          "DOMReady",
+          "OpenIntent",
+          "Drain",
+          "Unknown",
+          "Apply",
+          "StaleCallback",
+          "Apply"
+        ],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Retire",
+          "Unknown",
+          "Replace",
+          "Admit",
+          "StaleCallback",
+          "Admit",
+          "Apply",
+          "Replace",
+          "Initialize",
+          "Unknown",
+          "Apply",
+          "Apply",
+          "StaleCallback",
+          "Apply",
+          "Retire",
+          "Drain",
+          "ClosePopup",
+          "Drain",
+          "StaleCallback",
+          "Unknown",
+          "Initialize",
+          "DOMReady",
+          "OpenIntent",
+          "Drain",
+          "Unknown",
+          "Apply",
+          "StaleCallback",
+          "Apply",
+          "Initialize"
+        ],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Retire",
+          "Unknown",
+          "Replace",
+          "Admit",
+          "StaleCallback",
+          "Admit",
+          "Apply",
+          "Replace",
+          "Initialize",
+          "Unknown",
+          "Apply",
+          "Apply",
+          "StaleCallback",
+          "Apply",
+          "Retire",
+          "Drain",
+          "ClosePopup",
+          "Drain",
+          "StaleCallback",
+          "Unknown",
+          "Initialize",
+          "DOMReady",
+          "OpenIntent",
+          "Drain",
+          "Unknown",
+          "Apply",
+          "StaleCallback",
+          "Apply",
+          "Initialize",
+          "Apply"
+        ],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Retire",
+          "Unknown",
+          "Replace",
+          "Admit",
+          "StaleCallback",
+          "Admit",
+          "Apply",
+          "Replace",
+          "Initialize",
+          "Unknown",
+          "Apply",
+          "Apply",
+          "StaleCallback",
+          "Apply",
+          "Retire",
+          "Drain",
+          "ClosePopup",
+          "Drain",
+          "StaleCallback",
+          "Unknown",
+          "Initialize",
+          "DOMReady",
+          "OpenIntent",
+          "Drain",
+          "Unknown",
+          "Apply",
+          "StaleCallback",
+          "Apply",
+          "Initialize",
+          "Apply",
+          "DOMReady"
+        ],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      closing: false,
+      code: 1,
+      context: 1,
+      current: false,
+      dom: false,
+      duty: false,
+      epoch: 0,
+      history:
+        [
+          "Retire",
+          "Unknown",
+          "Replace",
+          "Admit",
+          "StaleCallback",
+          "Admit",
+          "Apply",
+          "Replace",
+          "Initialize",
+          "Unknown",
+          "Apply",
+          "Apply",
+          "StaleCallback",
+          "Apply",
+          "Retire",
+          "Drain",
+          "ClosePopup",
+          "Drain",
+          "StaleCallback",
+          "Unknown",
+          "Initialize",
+          "DOMReady",
+          "OpenIntent",
+          "Drain",
+          "Unknown",
+          "Apply",
+          "StaleCallback",
+          "Apply",
+          "Initialize",
+          "Apply",
+          "DOMReady",
+          "OpenIntent"
+        ],
+      initialized: false,
+      lease: 0,
+      native: false,
+      policy: 1,
+      popup: false,
+      retired: false,
+      reveal: false,
+      uncertain: true
+    }
+}
+
+[ok] No violation found (289ms at 692 traces/second).
+Trace length statistics: max=33, min=33, average=33.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

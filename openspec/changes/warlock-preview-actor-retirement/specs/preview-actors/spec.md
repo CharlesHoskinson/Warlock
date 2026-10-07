@@ -1477,3 +1477,27 @@ Elm policy owner and permanent incarnation-retirement chronology.
 - **WHEN** the host opens a later native preview realm
 - **THEN** the original fixed-grant renderer/context and strict object lifetime gates still apply
 - **AND** actual GTK/WebKit qualification is required separately from C/JSC traces
+# Requirement: Reopen the native GUI through the same policy and a fresh fixed-grant context
+
+The system SHALL implement EARS CONTROL-041 using original Native retirement and
+admission authority, preserving every outstanding duty and permanent policy fact.
+
+#### Scenario: The user closes an admitted popup
+- **WHEN** its original native presentation is invalidated
+- **THEN** demand is quarantined and original custody drains through strict native retirement
+- **AND** the same Elm policy remains alive for a later native realm
+
+#### Scenario: A user reopens while the old realm drains
+- **WHEN** the later popup intent already owns a lease/window/grab
+- **THEN** it retains that original ownership while the old realm finishes
+- **AND** a replacement renderer requires fresh DOM admission before a new preview factory opens
+
+#### Scenario: The later context becomes admitted
+- **WHEN** its original GTK/publication/lease and manager/view match
+- **THEN** the later Native epoch rebinds the exact same policy and initializes its fixed grant once
+- **AND** old context grants, receipts and callbacks remain inadmissible
+
+#### Scenario: Native QA captures a later current preview
+- **WHEN** its snapshot completes with the original epoch/view/navigation/projection still current
+- **THEN** it publishes only a fresh monotonically numbered artifact
+- **AND** private pixels and DOM/GTK observations grant no physical reveal authority

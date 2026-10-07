@@ -1,0 +1,224 @@
+{
+  "passed": true,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v145/qa/native-controlled-1791391057723169073/report.json": "23f6fe029957b7bcacfdea015c05407e337926add989fc15275e781e741beeb5",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v145/qa/preflight.json": "bd6bd4f5058b06b28c07ec644235b1de36f011db0669679a052cbe7771db8d6b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v145/qa/native-controlled-1791391057723169073/private-evidence/controlled-host.log": "6ed139638483cd2c9c9402fd331af38c2e379518fa62bf7ee190851e05c2f4de",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v132/native/controlled-preview-host.h": "7054fa86348450a56edd063b3c355b396e635944f4132fd4523f978e278b4958",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v132/spec/host_realm_lifecycle.qnt": "fb723b878670bd014e6e3a7e37d0d0aacb019d20acf23aff9c6207b1fc3248fa",
+    "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v93/couple_native145_host_lifecycle.py": "49970124a8fa7575ff682a80db735672d24d1017ad02af2e90a1b1ba60345b01"
+  },
+  "quint": {
+    "path": "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+    "sha256": "bd6e9400f6358a8a69d80eb636eb62f59f993039868a7be9719f76ba74191b4e"
+  },
+  "observations": [
+    {
+      "name": "firstCurrent",
+      "events": [
+        "OpenIntent",
+        "DOMReady",
+        "Admit",
+        "Initialize",
+        "Apply"
+      ],
+      "nativeObservation": "controlledOriginalNativeTicketsActuallyIssuedAndDelivered",
+      "expected": {
+        "epoch": 1,
+        "context": 1,
+        "lease": 1,
+        "current": true,
+        "retired": false,
+        "policy": 1,
+        "reveal": false
+      }
+    },
+    {
+      "name": "firstStrictClose",
+      "events": [
+        "OpenIntent",
+        "DOMReady",
+        "Admit",
+        "Initialize",
+        "Apply",
+        "ClosePopup",
+        "Drain",
+        "Retire"
+      ],
+      "nativeObservation": "controlledFirstRealmStrictlyClosedBeforeFreshRenderer",
+      "expected": {
+        "epoch": 1,
+        "context": 1,
+        "lease": 1,
+        "current": false,
+        "retired": true,
+        "policy": 1,
+        "reveal": false
+      }
+    },
+    {
+      "name": "firstFreshContext",
+      "events": [
+        "OpenIntent",
+        "DOMReady",
+        "Admit",
+        "Initialize",
+        "Apply",
+        "ClosePopup",
+        "Drain",
+        "Retire",
+        "Replace"
+      ],
+      "nativeObservation": "controlled-renderer-context-replaced: retiredEpoch=1",
+      "expected": {
+        "epoch": 1,
+        "context": 2,
+        "lease": 1,
+        "current": false,
+        "retired": false,
+        "policy": 1,
+        "reveal": false
+      }
+    },
+    {
+      "name": "secondCurrent",
+      "events": [
+        "OpenIntent",
+        "DOMReady",
+        "Admit",
+        "Initialize",
+        "Apply",
+        "ClosePopup",
+        "Drain",
+        "Retire",
+        "Replace",
+        "OpenIntent",
+        "DOMReady",
+        "Admit",
+        "Initialize",
+        "Apply"
+      ],
+      "nativeObservation": "controlledReopenOriginalBindingLaterNativeEpoch",
+      "expected": {
+        "epoch": 2,
+        "context": 2,
+        "lease": 2,
+        "current": true,
+        "retired": false,
+        "policy": 1,
+        "reveal": false
+      }
+    },
+    {
+      "name": "secondStrictClose",
+      "events": [
+        "OpenIntent",
+        "DOMReady",
+        "Admit",
+        "Initialize",
+        "Apply",
+        "ClosePopup",
+        "Drain",
+        "Retire",
+        "Replace",
+        "OpenIntent",
+        "DOMReady",
+        "Admit",
+        "Initialize",
+        "Apply",
+        "ClosePopup",
+        "Drain",
+        "Retire"
+      ],
+      "nativeObservation": "controlledSecondRealmOriginalCustodyDrainedAndStrictlyClosed",
+      "expected": {
+        "epoch": 2,
+        "context": 2,
+        "lease": 2,
+        "current": false,
+        "retired": true,
+        "policy": 1,
+        "reveal": false
+      }
+    },
+    {
+      "name": "secondFreshContext",
+      "events": [
+        "OpenIntent",
+        "DOMReady",
+        "Admit",
+        "Initialize",
+        "Apply",
+        "ClosePopup",
+        "Drain",
+        "Retire",
+        "Replace",
+        "OpenIntent",
+        "DOMReady",
+        "Admit",
+        "Initialize",
+        "Apply",
+        "ClosePopup",
+        "Drain",
+        "Retire",
+        "Replace"
+      ],
+      "nativeObservation": "controlled-renderer-context-replaced: retiredEpoch=2",
+      "expected": {
+        "epoch": 2,
+        "context": 3,
+        "lease": 2,
+        "current": false,
+        "retired": false,
+        "policy": 1,
+        "reveal": false
+      }
+    }
+  ],
+  "commands": [
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "concrete_host_lifecycle.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "concrete_host_lifecycle.qnt",
+        "--main=concrete_host_lifecycle",
+        "--backend=typescript",
+        "--match=^(firstCurrent|firstStrictClose|firstFreshContext|secondCurrent|secondStrictClose|secondFreshContext)$",
+        "--seed=1450041",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v93/host-lifecycle-coupling-1791391159263243653/coupled-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "scope": "Six context/realm lifecycle abstraction checkpoints coupled to actual Native145 two-cycle GTK/WebKit original binding/current source image and strict C/Bootstrap closure evidence. Same-policy assertion is backed by held native source pointer comparison. Drain is a projection of separately verified original physical/journal/confirmation strict close; model stages do not establish every implementation transition, pending-intent, async faults, physical reveal/hardware or full release.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "coupledQuintChecks": 6,
+  "observedLifecycleStages": 6,
+  "actualNativeReportSHA256": "23f6fe029957b7bcacfdea015c05407e337926add989fc15275e781e741beeb5",
+  "artifacts": {
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "coupled-firstCurrent-0.itf.json": "602ec6b52ad29fd85191a2da169323766fa255e1c875b8e8bdd3aa83a33ccd91",
+    "coupled-firstStrictClose-1.itf.json": "ecf679bbd43fb15da877791f16078cbb75271674a60119f047f50cddd1474f8c",
+    "coupled-firstFreshContext-2.itf.json": "3884779cf0e9b92f0b70b9df0a4d7db7eb44a36aae350efa855b641912be8e8c",
+    "coupled-secondCurrent-3.itf.json": "d4fbe0282b1c8ca591868ef13246d10931f38201ff895abf4092ca2d8e251efd",
+    "coupled-secondStrictClose-4.itf.json": "16834a9e5cd458c13a1709d58a709d1ff6bb919d4a94efcf499b5af99139124b",
+    "coupled-secondFreshContext-5.itf.json": "b0c17237a3b7063e924ec622ef68cf7e7762b805fea51d99596201afa016b309",
+    "selected.stdout": "4fa8d3a3d46b34861f16c37ac013f7c2bccf7a94cbabdde70bc32047f261c31b",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/host_realm_lifecycle.qnt": "fb723b878670bd014e6e3a7e37d0d0aacb019d20acf23aff9c6207b1fc3248fa",
+    "inputs/concrete_host_lifecycle.qnt": "14d706deec88062e687add07b64fe59d848a6f6399488b1f9809a020cde957a8"
+  }
+}

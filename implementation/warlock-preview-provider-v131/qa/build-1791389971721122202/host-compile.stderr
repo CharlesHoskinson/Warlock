@@ -1,0 +1,9 @@
+In file included from native/shared-host.c:944:
+native/controlled-preview-host.h: In function ‘controlled_open’:
+native/controlled-preview-host.h:190:13: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+  190 |             if(!error || !*error)g_set_error_literal(error,G_IO_ERROR,G_IO_ERROR_FAILED,"Original persistent policy owner changed on native realm reopen");return FALSE;
+      |             ^~
+native/controlled-preview-host.h:190:156: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  190 |             if(!error || !*error)g_set_error_literal(error,G_IO_ERROR,G_IO_ERROR_FAILED,"Original persistent policy owner changed on native realm reopen");return FALSE;
+      |                                                                                                                                                            ^~~~~~
+cc1: all warnings being treated as errors

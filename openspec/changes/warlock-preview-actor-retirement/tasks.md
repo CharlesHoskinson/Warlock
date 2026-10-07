@@ -453,3 +453,17 @@ activation and all original full release gates remain open.
   observations. Current full119 and actual unchanged Native14229/13 and delayed
   Native14318/8 regressions/cleanups pass. Actual GUI rebind/reopen remains open;
   direct-retirement fixture failure is retained and unqualified.
+- [ ] Qualify CONTROL-041 actual GUI normal and pending-intent close/reopen:
+  strict original retirement, same persistent policy/Native binding, fresh fixed-
+  grant context, monotonic callback/snapshot custody, current images and private
+  closed-curtain output, original normal exits/cleanup and unchanged deadlines.
+
+- [x] Freeze bounded CONTROL-041 actual normal GUI close/reopen in GUI132:
+  same policy/native binding, fresh one-shot renderer after strict original close,
+  two native pointer cycles with current source images and monotonic chronology.
+  Native14546/18 retains original29; unchanged Native14429/13 and delayed14618/8
+  regressions/cleanup, full119, Quint9/200 and six native-coupled stages pass.
+- [ ] Qualify CONTROL-041 actual pending-intent renderer replacement and original
+  lease/grab preservation while old realm custody drains; code/model is partial.
+- [ ] Qualify old-context asynchronous completions across a reopened GUI realm
+  without current artifact, projection, job or physical-settlement authority.
