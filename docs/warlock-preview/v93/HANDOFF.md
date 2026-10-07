@@ -241,3 +241,30 @@ finite liveness can be accepted; generic refusal or timeout cannot erase intent.
 Native130 GUI110 legacy/core16/plugin19/AQ1552518/278/full cleanup remains bounded
 actual baseline. Full Elm recovery/controlled Core/window/captured FD/renderer
 acceptance and all original full release gates remain open; no installed changes.
+
+GUI115 PUBLIC84 1d89276d5d6b8d7dbd24d79e20073608589da795/6031 exact owned blobs;
+source9825a9d59f35bb3a7eb6bc637291c7f2b60ed24f;
+receipt060a36829fdb934ab03a6f21d9a7df6b1697c07c.
+GUI116 held persistent native-owned optimized JavaScriptCore Elm worker. It
+delegates to the unchanged original single retained window/lifecycle policy,
+pins the creator thread, holds private values/context/scheduling and drains real
+Elm initialization tasks before returning. Explicit WOULD_BLOCK refuses before
+ordinary processing, while trusted quarantine remains admissible. Normal close
+requires empty membership/ingress/deferred/timers and original trusted close;
+processing Unknown supplies no reconstruction or grant-reset authority.
+Current actual C/JSC/native synthetic peer coupling207 retains206 original
+controls/two epochs/unchanged Native grant/two fresh transport contexts/one policy/
+zero renderer Elm instances/normal owned exits. Lifetime37/13 pre-grant faults;
+capacity-one explicit WOULD_BLOCK48; Quint8 selected/20 actual C+JSC traces/405
+states/200 samples/three compiled native guards; full110 retains108 commands.
+Five failures remain at original snapshots, including undrained port initialization
+and an older build entry missing the URI router. No original gate/deadline or
+sanitizer was weakened. 3854 manifest files; CONTROL029/OpenSpec six scenarios.
+See component-report116.json and GUI116/PERSISTENT-POLICY-HANDOFF.md. The actual
+host links the library but does not create a worker or change Popup routes.
+Next PUBLIC85 then typed renderer projection without another window policy,
+durable host input custody/backpressure and original native sender/ticket custody/
+bounded retry. Real WebKit/Core/window activation, live uncertain JSC/process
+recovery, delayed expiry/revocation outcome/order and every original full release
+gate remain open. Native130 GUI110 legacy/core16/plugin19/AQ1552518/278/full cleanup
+remains the actual bounded baseline; installed desktop/drafts/foreign paths preserved.

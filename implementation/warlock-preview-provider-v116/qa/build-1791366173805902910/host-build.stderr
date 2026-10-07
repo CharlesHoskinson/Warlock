@@ -1,0 +1,3 @@
+/usr/bin/ld: /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v116/qa/build-1791366173805902910/preview-uri-webkit.cpp.o: in function `dispatch(void*, PreviewURIRouter*, _WebKitURISchemeRequest*)':
+preview-uri-webkit.cpp:(.text+0x130): undefined reference to `preview_uri_router_open'
+collect2: error: ld returned 1 exit status

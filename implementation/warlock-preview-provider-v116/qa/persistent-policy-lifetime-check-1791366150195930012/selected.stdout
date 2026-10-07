@@ -1,0 +1,12 @@
+
+  native_policy_lifetime_tests
+    ok wrongThreadCannotInvoke passed 1 test(s)
+    ok wrongThreadCannotDestroy passed 1 test(s)
+    ok malformedInputCannotChangeState passed 1 test(s)
+    ok openRealmCannotDestroy passed 1 test(s)
+    ok foreignCloseCannotAuthorizeDestroy passed 1 test(s)
+    ok originalThreadRemainsUsable passed 1 test(s)
+    ok trustedCloseThenNormalDestroy passed 1 test(s)
+    ok emptyUncontrolledOwnerCanDestroy passed 1 test(s)
+
+  8 passing (8ms)

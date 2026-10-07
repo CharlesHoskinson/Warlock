@@ -1,0 +1,102 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "sourceHeld": true,
+  "passed": true,
+  "evidenceIntegrityPassed": true,
+  "reports": {
+    "nativeElmOutbox": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v116/qa/persistent-policy-native-check-v3-1791365589086439980/report.json",
+      "sha256": "0f7641699b535db579455f6dbfc9a8bbea421e7698770a16210e41c84ed10871"
+    },
+    "lifetime": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v116/qa/persistent-policy-lifetime-check-1791366150195930012/report.json",
+      "sha256": "86f02ef8b90620b05f5c82f66144004863083a0efaeb7f4528822db49b3d4d9a"
+    },
+    "backpressure": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v116/qa/persistent-policy-backpressure-check-1791366361682821759/report.json",
+      "sha256": "664961b372e663a69aa8ea9bb6d27fe11e15bbde34ded686a92dbf45a34c8a85"
+    },
+    "build": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v116/qa/build-1791366361680010300/report.json",
+      "sha256": "0f96736d9d545d27558d711b1c1437cf744e04b0dad5937568b4713e3ac2c8d3"
+    }
+  },
+  "historicalPhaseReports": [
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v116/qa/build-1791366173805902910/report.json",
+      "sha256": "ea7523f0cd52ed8e5a3a5609fed831903e82def89b830b41f720566be8181592",
+      "passed": false,
+      "qualifiesFinalSource": false
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v116/qa/persistent-policy-native-check-1791364057762224393/report.json",
+      "sha256": "de74073912fa3565c1becf4154cc5901451c33eb38ce60d6921a2d3b6cf7ba7d",
+      "passed": false,
+      "qualifiesFinalSource": false
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v116/qa/persistent-policy-native-check-v2-1791364325338355208/report.json",
+      "sha256": "472bb9d2ac93c693eca41e8f63fbb65a0859f089fb44a02795e9b27e85037530",
+      "passed": false,
+      "qualifiesFinalSource": false
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v116/qa/persistent-policy-native-check-v2-1791364841137501908/report.json",
+      "sha256": "8f327650fb65e75598a1b284dd1c57ff324ed026c7091539ee2282d8905b9430",
+      "passed": false,
+      "qualifiesFinalSource": false
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v116/qa/persistent-policy-native-check-v3-1791365361547791049/report.json",
+      "sha256": "ff5b51cac9b10a654a417e940111b7a2aa2c0c973ebbd5c61fb16cfd211bcf01",
+      "passed": false,
+      "qualifiesFinalSource": false
+    }
+  ],
+  "heldFailedReports": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v116/qa/build-1791366173805902910/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v116/qa/persistent-policy-native-check-1791364057762224393/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v116/qa/persistent-policy-native-check-v2-1791364325338355208/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v116/qa/persistent-policy-native-check-v2-1791364841137501908/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v116/qa/persistent-policy-native-check-v3-1791365361547791049/report.json"
+  ],
+  "singlePreviewPolicy": true,
+  "originalWindowPolicyUnchanged": true,
+  "nativeOwnedJavaScriptCore": true,
+  "persistentPolicyContexts": 1,
+  "rendererElmInstancesInCoupling": 0,
+  "freshTransportContexts": 2,
+  "nativeElmOutboxChecks": 207,
+  "lifetimeBoundaryChecks": 37,
+  "constructorFaults": 13,
+  "backpressureChecks": 48,
+  "explicitWouldBlockControls": 3,
+  "lifetimeScenarios": 8,
+  "lifetimeTraces": 20,
+  "lifetimeStates": 405,
+  "lifetimeSamples": 200,
+  "lifetimeCompiledNativeVariantsDetected": 3,
+  "realmEpochs": 2,
+  "nativeGrantResets": 0,
+  "fullBuildCommands": 110,
+  "originalBuildCommands": 108,
+  "parentNativeProductUnchanged": true,
+  "parentAssetsAndAdaptersUnchanged": true,
+  "parentManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/component-manifest.json",
+  "parentManifestSHA256": "6d1cac522bcdf737edff332500a0de53fccc84bd3e6fc7f4d20cb304ba7bec21",
+  "persistentPolicyCPUQualified": true,
+  "hostLibraryLinked": true,
+  "realHostPolicyActivated": false,
+  "rendererProjectionImplemented": false,
+  "nativeDelayedProposalLivenessQualified": false,
+  "realHostInputBackpressureQualified": false,
+  "uncertainLiveWorkerRecoveryQualified": false,
+  "fullElmRecoveryQualified": false,
+  "typedHostRoutingActivated": false,
+  "webKitActivated": false,
+  "actualWaylandWindowAcceptance": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "GUI116 implements a native-owned persistent JavaScriptCore worker running the\nsame retained immutable Elm policy. NativePreviewPolicy delegates all preview\nwindow/lifecycle decisions to the unchanged RetainedPreviewPresenter and original\nPreviewPresenter. No native ordinal issuer, independent window policy, native\neffect dispatcher or physical settlement rule is added. This is an inactive\ncomponent: the actual shared host links the library but does not create a worker\nor switch its existing Popup/adapter routes. Never activate both policies.\n\nThe owner pins its original GThread and keeps its JSC values and private\nGMainContext private. Held compiled source initializes once; every accepted\nnative call supplies one bounded closed-union input and requires exactly one\nbounded six-field output. Elm port-manager tasks run through actual owned native\nsetTimeout/clearTimeout sources. The original three-second asynchronous processing\nlimit remains. The loop drains remaining initialization tasks before returning,\nwithout pumping the desktop default context. This scheduling deadline does not\npreempt arbitrary synchronous JavaScript; the source must be the held compiled\npure worker, not renderer-supplied code. Memory/runtime budgets remain unmeasured.\n\nCreator-thread and malformed-input refusals happen before invocation. When\nordinary cleanup is deferred, native returns explicit WOULD_BLOCK; the caller\nmust retain the exact refused input. Quarantine and original issued/retry channels\nremain admissible. Missing/duplicate/malformed output, runtime exceptions or\nunsettled processing classify as Unknown, without granting permission to erase\nintent, reconstruct a policy or reset the native grant. Constructor faults are\ncleaned before native authority exists; live uncertain-worker recovery is open.\n\nNormal destruction requires original creator ownership, no uncertain/inflight\nprocessing, empty policy membership and pending/deferred ingress, no pending\nnative timers and the original trusted closed notification for a controlled\nrealm. This notification does not itself prove native physical closure. Actual\nnative strict close, processing ACK and independent confirmation remain separate.\n\nCurrent qualification, with ASan/UBSan/LeakSanitizer enabled:\n- 207 actual compiled C/native-owned optimized JSC Elm/packetizer/outbox controls\n  retain the original 206 controls plus an early policy-close refusal. Actual\n  Bootstrap/authenticated synthetic Native peer/native broker/purpose issuer\n  complete two realm epochs on the same unchanged native grant and synthetic\n  Active subject. Two fresh JS transport contexts share one policy context;\n  Node instantiates no Elm policy. Native peer and fixture exit normally.\n- 37 direct lifetime/input controls cover 12 malformed/oversized/missing-output\n  refusals, foreign thread calls and open/foreign-close destruction refusals.\n- 13 pre-grant constructor faults include source/export/channel errors, actual\n  compiled init/send exceptions, missing output at the original deadline,\n  duplicated output and malformed output. All fault owners exit normally.\n- Eight explicitly selected Quint lifetime scenarios and 12 bounded sampled\n  traces refine against the actual C/JSC optimized policy: 20 traces, 405 state\n  comparisons and 200 invariant samples. Three compiled native guard variants\n  are detected by original creator/close/input-union witnesses. These empty-realm\n  traces use synthetic trusted grants and close notifications.\n- 48 capacity-one C/JSC controls prove explicit WOULD_BLOCK for ordinary native,\n  presentation and legacy input, original state retention, urgent quarantine,\n  ordered cleanup, terminal ACK before readiness and unissued processing blocking\n  destruction even after membership empties. Six issued-ticket/terminal/close\n  facts are explicitly synthetic; they are not original Native physical proof.\n- The additive full build retains all original 108 commands, adding optimized\n  native-worker compilation and native library compilation/linkage. Its 110\n  commands include the existing retained/legacy/scoped/cold decoders and all\n  unchanged host/native regressions. The exact compiled asset package, host,\n  original toolchain, compiler dependencies and linked libraries are held.\n\nFive failed attempts remain at original input snapshots: absent real setTimeout,\nan initial generic constructor failure, undrained initialization work preventing\nnormal close, strict scheduling detection before draining that work, and invocation\nof an older base build entry missing the URI-router object. No lifecycle oracle,\ndeadline, native purpose counter, physical gate or sanitizer was weakened.\nThe fresh full build extends the actual held 108-command entry. The old base\nbuild.py is restored byte-for-byte from the held parent; its failed snapshot stays.\n\nParent GUI115 source/asset/adapter/native product bytes and retained-window policy\nremain unchanged. Its held ingress/urgent models, cold cohort and wrapper legacy\nnative proof remain their own source-scoped evidence. Their mutation and scenario\ncounts are not newly executed GUI116 lifetime proofs. Native130 GUI110 legacy on\ncore16/plugin19/AQ155 remains the actual bounded baseline: 2518 checks, 278 normal\nowned exits and full cleanup; this component does not supersede its native claim.\n\nNext implement a typed renderer projection without a second window policy,\ndurable native host ordinary-input custody/backpressure, original native sender\nepoch/channel ownership, ticket custody before issued facts and bounded retry.\nQualify real WebKit stable URI/context reference ownership and renderer reload\non the owning Core/plugin tuple. JavaScriptCore/context/process-loss recovery,\ndelayed proposal expiry/revocation original-purpose outcomes, actual controlled\npermanent retirement, Core captured FD/render/fence/readers, actual >256 windows\nand every original full GUI release gate remain open. No installed desktop,\nmain compositor, drafts or foreign worker paths were changed.\n"
+}

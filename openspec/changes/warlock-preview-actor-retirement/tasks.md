@@ -340,3 +340,21 @@ full108 retains104 and earlier106. Six failed attempts remain, including actual
 blocked-quarantine demand counterexample. Real host input backpressure and
 WebKit/policy lifetime remain open. Qualify delayed proposal expiry/revocation
 outcomes before claiming finite liveness or activating that route.
+
+- [x] Freeze CONTROL-029 persistent native-owned JavaScriptCore Elm policy,
+      creator-thread/destruction/input guards, actual original C/native coupling,
+      explicit Quint lifetime refinement and full additive build.
+- [ ] Implement a renderer projection with no second window policy, then qualify
+      durable host input custody, original native sender channel/ticket custody,
+      stable WebKit URI/context ownership and real renderer reload on Core.
+- [ ] Qualify uncertain live-worker/process loss and delayed native proposal
+      expiry/revocation outcomes without erasing intent or resetting its grant.
+
+GUI116 current CPU qualification: native-owned JSC/original C coupling207/two
+epochs/unchanged Native grant/two fresh transport contexts/one policy/normal exits;
+lifetime37/13 pre-grant faults; explicit WOULD_BLOCK48 controls; Quint8/20 actual
+C+JSC traces/405 states/200 samples/three compiled guard variants; full110 retains
+original108. Five failed attempts held. Actual host library links but does not
+create a worker or switch Popup routes. Renderer projection without another
+policy, durable host input/ticket custody, WebKit/Core activation, uncertain live
+worker/process recovery and all original release gates remain open.

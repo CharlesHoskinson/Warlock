@@ -1044,3 +1044,50 @@ Transport bookkeeping SHALL contain no second window policy or native ordinal is
 - **THEN** Elm transfers only available slots and emits the oldest bounded pending rows
 - **AND** a foreign retry neither transfers deferred rows nor emits original controls
 - **AND** real host input backpressure and full context recovery require their own evidence
+
+### Requirement: Own the retained Elm policy outside renderer transport contexts
+
+The system SHALL implement EARS CONTROL-029 without introducing another window
+policy or changing the original native issuer and settlement authorities.
+
+#### Scenario: Renderer transport is recreated while intent remains
+- **GIVEN** the original creator-owned JavaScriptCore Elm worker and a retained intent
+- **WHEN** the renderer transport context is recreated
+- **THEN** the same worker retains the same original model and exact intent
+- **AND** native purpose issuance and recovery preserve the original grant and epoch
+- **AND** a renderer view SHALL receive a projection without another lifecycle policy
+
+#### Scenario: Native input cannot enter the original policy
+- **GIVEN** a policy owner and its original creator thread
+- **WHEN** a foreign thread or malformed closed-union input attempts invocation
+- **THEN** the owner refuses before invocation and remains usable by its creator
+- **AND** neither an emitted projection nor a refusal establishes an effect outcome
+
+#### Scenario: Deferred cleanup blocks ordinary inputs
+- **GIVEN** original pending acquisition and deferred reconciliation/cancellation
+- **WHEN** another ordinary native, presentation or legacy input arrives
+- **THEN** native returns explicit WOULD_BLOCK without changing the same Elm state
+- **AND** the caller retains and retries that original input after capacity admits it
+- **AND** trusted quarantine still revokes demand through the block
+- **AND** current synthetic-ticket tests do not establish real host input custody
+
+#### Scenario: The worker cannot provide an exact processed output
+- **GIVEN** original held compiled worker bytes and private native scheduling
+- **WHEN** initialization throws, output is missing, duplicated or malformed,
+  or the original asynchronous processing limit expires
+- **THEN** processing is classified as Unknown with no successful output
+- **AND** constructor cleanup before a grant supplies no live-policy recovery authority
+- **AND** the desktop default scheduling context is not pumped by the worker
+
+#### Scenario: Normal destruction is requested too early
+- **GIVEN** an open controlled realm or retained policy membership/intent
+- **WHEN** destruction is requested before its trusted close notification and empty ingress
+- **THEN** native refuses while retaining the original owner
+- **AND** final processing intent still blocks destruction after membership empties
+- **AND** original native physical close and independent confirmation remain separate
+
+#### Scenario: The policy execution context itself is lost
+- **GIVEN** transport recovery qualified with a persistent worker
+- **WHEN** the JavaScriptCore context or owning process is lost or uncertain
+- **THEN** this component provides no model reconstruction or native grant reset authority
+- **AND** full context/process recovery and real WebKit/Core activation remain explicit gates

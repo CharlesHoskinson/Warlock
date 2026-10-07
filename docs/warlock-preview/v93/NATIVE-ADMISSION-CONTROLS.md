@@ -494,3 +494,37 @@ the candidate policy. Real host activation requires durable input backpressure,
 native-owned issued facts, retained original tickets before dispatch and an
 explicit bounded retry schedule. Compiled Popup and synthetic peer tests SHALL
 remain distinct from that host qualification and full Elm context recovery.
+
+EARS CONTROL-029: While the retained preview policy exists, its native owner
+SHALL retain one compiled immutable Elm worker, its original creator thread,
+private JavaScriptCore context, private scheduling context and exact input/output
+custody independently of recreated renderer transport contexts. The native API
+SHALL expose no mutable JavaScript value or context and SHALL issue no native
+ticket, dispatch no effect and infer no physical settlement. The existing single
+PreviewPresenter SHALL remain the only window/lifecycle policy. Activating a
+native-owned policy requires a renderer projection without another policy instance.
+
+When an input arrives on a foreign thread or fails the bounded closed native
+input union, the owner SHALL refuse before policy invocation and retain the
+original state. While ordinary output is deferred, ordinary native/presentation/
+legacy inputs SHALL return explicit WOULD_BLOCK before invocation; the caller
+SHALL retain each original refused input until admission. Trusted quarantine and
+exact original issued/retry facts SHALL remain admissible through that block.
+This API refusal SHALL NOT imply real host input storage or retry qualification.
+
+When original processing lacks exactly one bounded valid output, has a runtime
+exception, leaves scheduling work unsettled or exceeds the original three-second
+asynchronous replay limit, the owner SHALL classify processing as Unknown rather
+than safe refusal, successful execution or authority to reset the native grant.
+Private native timers SHALL execute the held Elm port tasks without pumping the
+desktop default context. Constructor failure before any grant SHALL release its
+unpublished resources; this SHALL NOT qualify recovery of an uncertain live policy.
+
+When normal destruction is requested, the owner SHALL require the original
+creator thread, no uncertain/inflight processing, empty policy membership and
+ingress, no deferred output or pending native timers, and the original trusted
+closed notification for a controlled realm. Empty rendering or native inventory
+alone SHALL NOT authorize destruction. This Elm notification SHALL remain
+separate from original native physical/processing/independent-confirmation gates.
+Recreated transport-context evidence SHALL NOT qualify actual WebKit reload,
+JavaScriptCore/process-loss recovery, captured resources or full release acceptance.

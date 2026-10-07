@@ -1,0 +1,3825 @@
+[
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\":\"grant\",\"value\":{\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"capacity\":1}}"
+    },
+    "result": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "models": [],
+        "commands": [],
+        "realm": {
+          "controlled": true,
+          "closing": false,
+          "closed": false,
+          "processed": "0",
+          "retained": 0,
+          "completed": 0,
+          "epoch": "1",
+          "ingress": {
+            "pending": 0,
+            "capacity": 1,
+            "intents": []
+          },
+          "deferred": 0,
+          "deferredIntents": [],
+          "inputBlocked": false
+        },
+        "metadata": [],
+        "enrollment": [],
+        "feedback": []
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\":\"presentation\",\"value\":{\"surfaceProtocol\":2,\"publication\":\"1\",\"lease\":\"1\",\"mode\":\"picker\",\"status\":\"\",\"bar\":[],\"popup\":[{\"id\":\"family:2\",\"domId\":\"window-family:2\",\"label\":\"Window\",\"ariaLabel\":\"Window\",\"detail\":\"\",\"enabled\":true}]}}"
+    },
+    "result": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "models": [],
+        "commands": {
+          "previewProtocol": 3,
+          "kind": "preview-proposals",
+          "binding": {
+            "lifetime": "12618083744238620417",
+            "session": "2",
+            "frontend": "1"
+          },
+          "receiverEpoch": "1",
+          "entries": []
+        },
+        "realm": {
+          "controlled": true,
+          "closing": false,
+          "closed": false,
+          "processed": "0",
+          "retained": 0,
+          "completed": 0,
+          "epoch": "1",
+          "ingress": {
+            "pending": 0,
+            "capacity": 1,
+            "intents": []
+          },
+          "deferred": 0,
+          "deferredIntents": [],
+          "inputBlocked": false
+        },
+        "metadata": [],
+        "enrollment": [],
+        "feedback": []
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\":\"native\",\"value\":{\"previewProtocol\":3,\"kind\":\"native-preview-realm-event\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"event\":{\"kind\":\"source-seed\",\"publication\":\"1\",\"lease\":\"1\",\"identity\":\"family:2\",\"source\":{\"protocolVersion\":3,\"kind\":\"preview-client-scope\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"requestId\":\"1\",\"scope\":{\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"context\":{\"lifetime\":\"12618083744238620417\",\"incarnation\":\"2\",\"output\":\"1\",\"privacy\":\"1\",\"rendering\":\"2\",\"scene\":\"1\",\"content\":\"42\"},\"observation\":\"75\",\"clock\":\"12618083744238620417\",\"now\":\"203483677058877\",\"present\":true,\"sourceLive\":true,\"locked\":false,\"gpuReady\":true},\"maximumTransferBytes\":\"311296\",\"previewEligible\":false,\"scopeKind\":\"isolated-root-client-unqualified\"},\"title\":\"Native source\",\"application\":\"fixture\"}}}"
+    },
+    "result": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "models": [
+          {
+            "identity": "family:2",
+            "active": true,
+            "model": {
+              "scope": {
+                "binding": {
+                  "lifetime": "12618083744238620417",
+                  "session": "2",
+                  "frontend": "1"
+                },
+                "context": {
+                  "lifetime": "12618083744238620417",
+                  "incarnation": "2",
+                  "output": "1",
+                  "privacy": "1",
+                  "rendering": "2",
+                  "scene": "1",
+                  "content": "42"
+                },
+                "observation": "75",
+                "clock": "12618083744238620417",
+                "now": "203483677058877",
+                "present": true,
+                "sourceLive": true,
+                "locked": false,
+                "gpuReady": true
+              },
+              "demand": true,
+              "ready": true,
+              "nextRequest": "1",
+              "job": null,
+              "candidate": null,
+              "accepted": null,
+              "known": [],
+              "cancelling": [],
+              "retiring": [],
+              "state": "unavailable",
+              "image": null
+            }
+          }
+        ],
+        "commands": {
+          "previewProtocol": 3,
+          "kind": "preview-proposals",
+          "binding": {
+            "lifetime": "12618083744238620417",
+            "session": "2",
+            "frontend": "1"
+          },
+          "receiverEpoch": "1",
+          "entries": []
+        },
+        "realm": {
+          "controlled": true,
+          "closing": false,
+          "closed": false,
+          "processed": "0",
+          "retained": 1,
+          "completed": 0,
+          "epoch": "1",
+          "ingress": {
+            "pending": 0,
+            "capacity": 1,
+            "intents": []
+          },
+          "deferred": 0,
+          "deferredIntents": [],
+          "inputBlocked": false
+        },
+        "metadata": [
+          {
+            "identity": "family:2",
+            "title": "Native source",
+            "application": "fixture",
+            "revision": null,
+            "iconKind": "unavailable",
+            "hasIcon": false,
+            "visible": true
+          }
+        ],
+        "enrollment": [
+          {
+            "identity": "family:2",
+            "nativeScoped": true,
+            "minimized": null
+          }
+        ],
+        "feedback": [
+          {
+            "identity": "family:2",
+            "floor": "1",
+            "outcome": null,
+            "label": null,
+            "deadline": null
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\":\"native\",\"value\":{\"previewProtocol\":3,\"kind\":\"native-preview-realm-event\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"event\":{\"kind\":\"event\",\"identity\":\"family:2\",\"event\":{\"kind\":\"request\",\"trigger\":{\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"context\":{\"lifetime\":\"12618083744238620417\",\"incarnation\":\"2\",\"output\":\"1\",\"privacy\":\"1\",\"rendering\":\"2\",\"scene\":\"1\",\"content\":\"42\"},\"origin\":\"1\",\"clock\":\"12618083744238620417\",\"deadline\":\"203485677514126\"}}}}}"
+    },
+    "result": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "models": [
+          {
+            "identity": "family:2",
+            "active": true,
+            "model": {
+              "scope": {
+                "binding": {
+                  "lifetime": "12618083744238620417",
+                  "session": "2",
+                  "frontend": "1"
+                },
+                "context": {
+                  "lifetime": "12618083744238620417",
+                  "incarnation": "2",
+                  "output": "1",
+                  "privacy": "1",
+                  "rendering": "2",
+                  "scene": "1",
+                  "content": "42"
+                },
+                "observation": "75",
+                "clock": "12618083744238620417",
+                "now": "203483677058877",
+                "present": true,
+                "sourceLive": true,
+                "locked": false,
+                "gpuReady": true
+              },
+              "demand": true,
+              "ready": true,
+              "nextRequest": "2",
+              "job": {
+                "binding": {
+                  "lifetime": "12618083744238620417",
+                  "session": "2",
+                  "frontend": "1"
+                },
+                "context": {
+                  "lifetime": "12618083744238620417",
+                  "incarnation": "2",
+                  "output": "1",
+                  "privacy": "1",
+                  "rendering": "2",
+                  "scene": "1",
+                  "content": "42"
+                },
+                "request": "1",
+                "origin": "1",
+                "clock": "12618083744238620417",
+                "deadline": "203485677514126"
+              },
+              "candidate": null,
+              "accepted": null,
+              "known": [
+                {
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "context": {
+                    "lifetime": "12618083744238620417",
+                    "incarnation": "2",
+                    "output": "1",
+                    "privacy": "1",
+                    "rendering": "2",
+                    "scene": "1",
+                    "content": "42"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "12618083744238620417",
+                  "deadline": "203485677514126"
+                }
+              ],
+              "cancelling": [],
+              "retiring": [],
+              "state": "loading",
+              "image": null
+            }
+          }
+        ],
+        "commands": {
+          "previewProtocol": 3,
+          "kind": "preview-proposals",
+          "binding": {
+            "lifetime": "12618083744238620417",
+            "session": "2",
+            "frontend": "1"
+          },
+          "receiverEpoch": "1",
+          "entries": [
+            {
+              "identity": "family:2",
+              "commands": [
+                {
+                  "kind": "acquire",
+                  "job": {
+                    "binding": {
+                      "lifetime": "12618083744238620417",
+                      "session": "2",
+                      "frontend": "1"
+                    },
+                    "context": {
+                      "lifetime": "12618083744238620417",
+                      "incarnation": "2",
+                      "output": "1",
+                      "privacy": "1",
+                      "rendering": "2",
+                      "scene": "1",
+                      "content": "42"
+                    },
+                    "request": "1",
+                    "origin": "1",
+                    "clock": "12618083744238620417",
+                    "deadline": "203485677514126"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "realm": {
+          "controlled": true,
+          "closing": false,
+          "closed": false,
+          "processed": "0",
+          "retained": 1,
+          "completed": 0,
+          "epoch": "1",
+          "ingress": {
+            "pending": 1,
+            "capacity": 1,
+            "intents": [
+              {
+                "identity": "family:2",
+                "commands": [
+                  {
+                    "kind": "acquire",
+                    "job": {
+                      "binding": {
+                        "lifetime": "12618083744238620417",
+                        "session": "2",
+                        "frontend": "1"
+                      },
+                      "context": {
+                        "lifetime": "12618083744238620417",
+                        "incarnation": "2",
+                        "output": "1",
+                        "privacy": "1",
+                        "rendering": "2",
+                        "scene": "1",
+                        "content": "42"
+                      },
+                      "request": "1",
+                      "origin": "1",
+                      "clock": "12618083744238620417",
+                      "deadline": "203485677514126"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "deferred": 0,
+          "deferredIntents": [],
+          "inputBlocked": false
+        },
+        "metadata": [
+          {
+            "identity": "family:2",
+            "title": "Native source",
+            "application": "fixture",
+            "revision": null,
+            "iconKind": "unavailable",
+            "hasIcon": false,
+            "visible": true
+          }
+        ],
+        "enrollment": [
+          {
+            "identity": "family:2",
+            "nativeScoped": true,
+            "minimized": null
+          }
+        ],
+        "feedback": [
+          {
+            "identity": "family:2",
+            "floor": "1",
+            "outcome": null,
+            "label": null,
+            "deadline": null
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\":\"quarantine\",\"value\":{\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\"}}"
+    },
+    "result": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "models": [
+          {
+            "identity": "family:2",
+            "active": false,
+            "model": {
+              "scope": {
+                "binding": {
+                  "lifetime": "12618083744238620417",
+                  "session": "2",
+                  "frontend": "1"
+                },
+                "context": {
+                  "lifetime": "12618083744238620417",
+                  "incarnation": "2",
+                  "output": "1",
+                  "privacy": "1",
+                  "rendering": "2",
+                  "scene": "1",
+                  "content": "42"
+                },
+                "observation": "75",
+                "clock": "12618083744238620417",
+                "now": "203483677058877",
+                "present": true,
+                "sourceLive": true,
+                "locked": false,
+                "gpuReady": true
+              },
+              "demand": false,
+              "ready": true,
+              "nextRequest": "2",
+              "job": null,
+              "candidate": null,
+              "accepted": null,
+              "known": [
+                {
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "context": {
+                    "lifetime": "12618083744238620417",
+                    "incarnation": "2",
+                    "output": "1",
+                    "privacy": "1",
+                    "rendering": "2",
+                    "scene": "1",
+                    "content": "42"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "12618083744238620417",
+                  "deadline": "203485677514126"
+                }
+              ],
+              "cancelling": [
+                {
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "context": {
+                    "lifetime": "12618083744238620417",
+                    "incarnation": "2",
+                    "output": "1",
+                    "privacy": "1",
+                    "rendering": "2",
+                    "scene": "1",
+                    "content": "42"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "12618083744238620417",
+                  "deadline": "203485677514126"
+                }
+              ],
+              "retiring": [],
+              "state": "unavailable",
+              "image": null
+            }
+          }
+        ],
+        "commands": {
+          "previewProtocol": 3,
+          "kind": "preview-proposals",
+          "binding": {
+            "lifetime": "12618083744238620417",
+            "session": "2",
+            "frontend": "1"
+          },
+          "receiverEpoch": "1",
+          "entries": [
+            {
+              "identity": "family:2",
+              "commands": [
+                {
+                  "kind": "acquire",
+                  "job": {
+                    "binding": {
+                      "lifetime": "12618083744238620417",
+                      "session": "2",
+                      "frontend": "1"
+                    },
+                    "context": {
+                      "lifetime": "12618083744238620417",
+                      "incarnation": "2",
+                      "output": "1",
+                      "privacy": "1",
+                      "rendering": "2",
+                      "scene": "1",
+                      "content": "42"
+                    },
+                    "request": "1",
+                    "origin": "1",
+                    "clock": "12618083744238620417",
+                    "deadline": "203485677514126"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "realm": {
+          "controlled": true,
+          "closing": true,
+          "closed": false,
+          "processed": "0",
+          "retained": 1,
+          "completed": 0,
+          "epoch": "1",
+          "ingress": {
+            "pending": 1,
+            "capacity": 1,
+            "intents": [
+              {
+                "identity": "family:2",
+                "commands": [
+                  {
+                    "kind": "acquire",
+                    "job": {
+                      "binding": {
+                        "lifetime": "12618083744238620417",
+                        "session": "2",
+                        "frontend": "1"
+                      },
+                      "context": {
+                        "lifetime": "12618083744238620417",
+                        "incarnation": "2",
+                        "output": "1",
+                        "privacy": "1",
+                        "rendering": "2",
+                        "scene": "1",
+                        "content": "42"
+                      },
+                      "request": "1",
+                      "origin": "1",
+                      "clock": "12618083744238620417",
+                      "deadline": "203485677514126"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "deferred": 2,
+          "deferredIntents": [
+            {
+              "identity": "binding:12618083744238620417:2:1",
+              "commands": [
+                {
+                  "kind": "reconcile",
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  }
+                }
+              ]
+            },
+            {
+              "identity": "family:2",
+              "commands": [
+                {
+                  "kind": "cancel",
+                  "job": {
+                    "binding": {
+                      "lifetime": "12618083744238620417",
+                      "session": "2",
+                      "frontend": "1"
+                    },
+                    "context": {
+                      "lifetime": "12618083744238620417",
+                      "incarnation": "2",
+                      "output": "1",
+                      "privacy": "1",
+                      "rendering": "2",
+                      "scene": "1",
+                      "content": "42"
+                    },
+                    "request": "1",
+                    "origin": "1",
+                    "clock": "12618083744238620417",
+                    "deadline": "203485677514126"
+                  }
+                }
+              ]
+            }
+          ],
+          "inputBlocked": true
+        },
+        "metadata": [
+          {
+            "identity": "family:2",
+            "title": "Native source",
+            "application": "fixture",
+            "revision": null,
+            "iconKind": "unavailable",
+            "hasIcon": false,
+            "visible": true
+          }
+        ],
+        "enrollment": [
+          {
+            "identity": "family:2",
+            "nativeScoped": true,
+            "minimized": null
+          }
+        ],
+        "feedback": [
+          {
+            "identity": "family:2",
+            "floor": "1",
+            "outcome": null,
+            "label": null,
+            "deadline": null
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\":\"status\",\"value\":null}"
+    },
+    "result": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "models": [
+          {
+            "identity": "family:2",
+            "active": false,
+            "model": {
+              "scope": {
+                "binding": {
+                  "lifetime": "12618083744238620417",
+                  "session": "2",
+                  "frontend": "1"
+                },
+                "context": {
+                  "lifetime": "12618083744238620417",
+                  "incarnation": "2",
+                  "output": "1",
+                  "privacy": "1",
+                  "rendering": "2",
+                  "scene": "1",
+                  "content": "42"
+                },
+                "observation": "75",
+                "clock": "12618083744238620417",
+                "now": "203483677058877",
+                "present": true,
+                "sourceLive": true,
+                "locked": false,
+                "gpuReady": true
+              },
+              "demand": false,
+              "ready": true,
+              "nextRequest": "2",
+              "job": null,
+              "candidate": null,
+              "accepted": null,
+              "known": [
+                {
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "context": {
+                    "lifetime": "12618083744238620417",
+                    "incarnation": "2",
+                    "output": "1",
+                    "privacy": "1",
+                    "rendering": "2",
+                    "scene": "1",
+                    "content": "42"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "12618083744238620417",
+                  "deadline": "203485677514126"
+                }
+              ],
+              "cancelling": [
+                {
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "context": {
+                    "lifetime": "12618083744238620417",
+                    "incarnation": "2",
+                    "output": "1",
+                    "privacy": "1",
+                    "rendering": "2",
+                    "scene": "1",
+                    "content": "42"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "12618083744238620417",
+                  "deadline": "203485677514126"
+                }
+              ],
+              "retiring": [],
+              "state": "unavailable",
+              "image": null
+            }
+          }
+        ],
+        "commands": [],
+        "realm": {
+          "controlled": true,
+          "closing": true,
+          "closed": false,
+          "processed": "0",
+          "retained": 1,
+          "completed": 0,
+          "epoch": "1",
+          "ingress": {
+            "pending": 1,
+            "capacity": 1,
+            "intents": [
+              {
+                "identity": "family:2",
+                "commands": [
+                  {
+                    "kind": "acquire",
+                    "job": {
+                      "binding": {
+                        "lifetime": "12618083744238620417",
+                        "session": "2",
+                        "frontend": "1"
+                      },
+                      "context": {
+                        "lifetime": "12618083744238620417",
+                        "incarnation": "2",
+                        "output": "1",
+                        "privacy": "1",
+                        "rendering": "2",
+                        "scene": "1",
+                        "content": "42"
+                      },
+                      "request": "1",
+                      "origin": "1",
+                      "clock": "12618083744238620417",
+                      "deadline": "203485677514126"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "deferred": 2,
+          "deferredIntents": [
+            {
+              "identity": "binding:12618083744238620417:2:1",
+              "commands": [
+                {
+                  "kind": "reconcile",
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  }
+                }
+              ]
+            },
+            {
+              "identity": "family:2",
+              "commands": [
+                {
+                  "kind": "cancel",
+                  "job": {
+                    "binding": {
+                      "lifetime": "12618083744238620417",
+                      "session": "2",
+                      "frontend": "1"
+                    },
+                    "context": {
+                      "lifetime": "12618083744238620417",
+                      "incarnation": "2",
+                      "output": "1",
+                      "privacy": "1",
+                      "rendering": "2",
+                      "scene": "1",
+                      "content": "42"
+                    },
+                    "request": "1",
+                    "origin": "1",
+                    "clock": "12618083744238620417",
+                    "deadline": "203485677514126"
+                  }
+                }
+              ]
+            }
+          ],
+          "inputBlocked": true
+        },
+        "metadata": [
+          {
+            "identity": "family:2",
+            "title": "Native source",
+            "application": "fixture",
+            "revision": null,
+            "iconKind": "unavailable",
+            "hasIcon": false,
+            "visible": true
+          }
+        ],
+        "enrollment": [
+          {
+            "identity": "family:2",
+            "nativeScoped": true,
+            "minimized": null
+          }
+        ],
+        "feedback": [
+          {
+            "identity": "family:2",
+            "floor": "1",
+            "outcome": null,
+            "label": null,
+            "deadline": null
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\": \"native\", \"value\": {\"previewProtocol\": 3, \"kind\": \"native-preview-realm-event\", \"binding\": {\"lifetime\": \"12618083744238620417\", \"session\": \"2\", \"frontend\": \"1\"}, \"receiverEpoch\": \"1\", \"event\": {\"detachProtocol\": 1, \"kind\": \"native-preview-detach-seed\", \"identity\": \"family:2\", \"binding\": {\"lifetime\": \"12618083744238620417\", \"session\": \"2\", \"frontend\": \"1\"}, \"receiverEpoch\": \"1\", \"subject\": \"2\", \"entry\": \"1\", \"entryIssuedThrough\": \"1\", \"requestFloor\": \"1\"}}}"
+    },
+    "result": {
+      "ok": false,
+      "code": 3,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\":\"status\",\"value\":null}"
+    },
+    "result": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "models": [
+          {
+            "identity": "family:2",
+            "active": false,
+            "model": {
+              "scope": {
+                "binding": {
+                  "lifetime": "12618083744238620417",
+                  "session": "2",
+                  "frontend": "1"
+                },
+                "context": {
+                  "lifetime": "12618083744238620417",
+                  "incarnation": "2",
+                  "output": "1",
+                  "privacy": "1",
+                  "rendering": "2",
+                  "scene": "1",
+                  "content": "42"
+                },
+                "observation": "75",
+                "clock": "12618083744238620417",
+                "now": "203483677058877",
+                "present": true,
+                "sourceLive": true,
+                "locked": false,
+                "gpuReady": true
+              },
+              "demand": false,
+              "ready": true,
+              "nextRequest": "2",
+              "job": null,
+              "candidate": null,
+              "accepted": null,
+              "known": [
+                {
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "context": {
+                    "lifetime": "12618083744238620417",
+                    "incarnation": "2",
+                    "output": "1",
+                    "privacy": "1",
+                    "rendering": "2",
+                    "scene": "1",
+                    "content": "42"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "12618083744238620417",
+                  "deadline": "203485677514126"
+                }
+              ],
+              "cancelling": [
+                {
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "context": {
+                    "lifetime": "12618083744238620417",
+                    "incarnation": "2",
+                    "output": "1",
+                    "privacy": "1",
+                    "rendering": "2",
+                    "scene": "1",
+                    "content": "42"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "12618083744238620417",
+                  "deadline": "203485677514126"
+                }
+              ],
+              "retiring": [],
+              "state": "unavailable",
+              "image": null
+            }
+          }
+        ],
+        "commands": [],
+        "realm": {
+          "controlled": true,
+          "closing": true,
+          "closed": false,
+          "processed": "0",
+          "retained": 1,
+          "completed": 0,
+          "epoch": "1",
+          "ingress": {
+            "pending": 1,
+            "capacity": 1,
+            "intents": [
+              {
+                "identity": "family:2",
+                "commands": [
+                  {
+                    "kind": "acquire",
+                    "job": {
+                      "binding": {
+                        "lifetime": "12618083744238620417",
+                        "session": "2",
+                        "frontend": "1"
+                      },
+                      "context": {
+                        "lifetime": "12618083744238620417",
+                        "incarnation": "2",
+                        "output": "1",
+                        "privacy": "1",
+                        "rendering": "2",
+                        "scene": "1",
+                        "content": "42"
+                      },
+                      "request": "1",
+                      "origin": "1",
+                      "clock": "12618083744238620417",
+                      "deadline": "203485677514126"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "deferred": 2,
+          "deferredIntents": [
+            {
+              "identity": "binding:12618083744238620417:2:1",
+              "commands": [
+                {
+                  "kind": "reconcile",
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  }
+                }
+              ]
+            },
+            {
+              "identity": "family:2",
+              "commands": [
+                {
+                  "kind": "cancel",
+                  "job": {
+                    "binding": {
+                      "lifetime": "12618083744238620417",
+                      "session": "2",
+                      "frontend": "1"
+                    },
+                    "context": {
+                      "lifetime": "12618083744238620417",
+                      "incarnation": "2",
+                      "output": "1",
+                      "privacy": "1",
+                      "rendering": "2",
+                      "scene": "1",
+                      "content": "42"
+                    },
+                    "request": "1",
+                    "origin": "1",
+                    "clock": "12618083744238620417",
+                    "deadline": "203485677514126"
+                  }
+                }
+              ]
+            }
+          ],
+          "inputBlocked": true
+        },
+        "metadata": [
+          {
+            "identity": "family:2",
+            "title": "Native source",
+            "application": "fixture",
+            "revision": null,
+            "iconKind": "unavailable",
+            "hasIcon": false,
+            "visible": true
+          }
+        ],
+        "enrollment": [
+          {
+            "identity": "family:2",
+            "nativeScoped": true,
+            "minimized": null
+          }
+        ],
+        "feedback": [
+          {
+            "identity": "family:2",
+            "floor": "1",
+            "outcome": null,
+            "label": null,
+            "deadline": null
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\": \"presentation\", \"value\": {}}"
+    },
+    "result": {
+      "ok": false,
+      "code": 3,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\":\"status\",\"value\":null}"
+    },
+    "result": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "models": [
+          {
+            "identity": "family:2",
+            "active": false,
+            "model": {
+              "scope": {
+                "binding": {
+                  "lifetime": "12618083744238620417",
+                  "session": "2",
+                  "frontend": "1"
+                },
+                "context": {
+                  "lifetime": "12618083744238620417",
+                  "incarnation": "2",
+                  "output": "1",
+                  "privacy": "1",
+                  "rendering": "2",
+                  "scene": "1",
+                  "content": "42"
+                },
+                "observation": "75",
+                "clock": "12618083744238620417",
+                "now": "203483677058877",
+                "present": true,
+                "sourceLive": true,
+                "locked": false,
+                "gpuReady": true
+              },
+              "demand": false,
+              "ready": true,
+              "nextRequest": "2",
+              "job": null,
+              "candidate": null,
+              "accepted": null,
+              "known": [
+                {
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "context": {
+                    "lifetime": "12618083744238620417",
+                    "incarnation": "2",
+                    "output": "1",
+                    "privacy": "1",
+                    "rendering": "2",
+                    "scene": "1",
+                    "content": "42"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "12618083744238620417",
+                  "deadline": "203485677514126"
+                }
+              ],
+              "cancelling": [
+                {
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "context": {
+                    "lifetime": "12618083744238620417",
+                    "incarnation": "2",
+                    "output": "1",
+                    "privacy": "1",
+                    "rendering": "2",
+                    "scene": "1",
+                    "content": "42"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "12618083744238620417",
+                  "deadline": "203485677514126"
+                }
+              ],
+              "retiring": [],
+              "state": "unavailable",
+              "image": null
+            }
+          }
+        ],
+        "commands": [],
+        "realm": {
+          "controlled": true,
+          "closing": true,
+          "closed": false,
+          "processed": "0",
+          "retained": 1,
+          "completed": 0,
+          "epoch": "1",
+          "ingress": {
+            "pending": 1,
+            "capacity": 1,
+            "intents": [
+              {
+                "identity": "family:2",
+                "commands": [
+                  {
+                    "kind": "acquire",
+                    "job": {
+                      "binding": {
+                        "lifetime": "12618083744238620417",
+                        "session": "2",
+                        "frontend": "1"
+                      },
+                      "context": {
+                        "lifetime": "12618083744238620417",
+                        "incarnation": "2",
+                        "output": "1",
+                        "privacy": "1",
+                        "rendering": "2",
+                        "scene": "1",
+                        "content": "42"
+                      },
+                      "request": "1",
+                      "origin": "1",
+                      "clock": "12618083744238620417",
+                      "deadline": "203485677514126"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "deferred": 2,
+          "deferredIntents": [
+            {
+              "identity": "binding:12618083744238620417:2:1",
+              "commands": [
+                {
+                  "kind": "reconcile",
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  }
+                }
+              ]
+            },
+            {
+              "identity": "family:2",
+              "commands": [
+                {
+                  "kind": "cancel",
+                  "job": {
+                    "binding": {
+                      "lifetime": "12618083744238620417",
+                      "session": "2",
+                      "frontend": "1"
+                    },
+                    "context": {
+                      "lifetime": "12618083744238620417",
+                      "incarnation": "2",
+                      "output": "1",
+                      "privacy": "1",
+                      "rendering": "2",
+                      "scene": "1",
+                      "content": "42"
+                    },
+                    "request": "1",
+                    "origin": "1",
+                    "clock": "12618083744238620417",
+                    "deadline": "203485677514126"
+                  }
+                }
+              ]
+            }
+          ],
+          "inputBlocked": true
+        },
+        "metadata": [
+          {
+            "identity": "family:2",
+            "title": "Native source",
+            "application": "fixture",
+            "revision": null,
+            "iconKind": "unavailable",
+            "hasIcon": false,
+            "visible": true
+          }
+        ],
+        "enrollment": [
+          {
+            "identity": "family:2",
+            "nativeScoped": true,
+            "minimized": null
+          }
+        ],
+        "feedback": [
+          {
+            "identity": "family:2",
+            "floor": "1",
+            "outcome": null,
+            "label": null,
+            "deadline": null
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\": \"legacy\", \"value\": {}}"
+    },
+    "result": {
+      "ok": false,
+      "code": 3,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\":\"status\",\"value\":null}"
+    },
+    "result": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "models": [
+          {
+            "identity": "family:2",
+            "active": false,
+            "model": {
+              "scope": {
+                "binding": {
+                  "lifetime": "12618083744238620417",
+                  "session": "2",
+                  "frontend": "1"
+                },
+                "context": {
+                  "lifetime": "12618083744238620417",
+                  "incarnation": "2",
+                  "output": "1",
+                  "privacy": "1",
+                  "rendering": "2",
+                  "scene": "1",
+                  "content": "42"
+                },
+                "observation": "75",
+                "clock": "12618083744238620417",
+                "now": "203483677058877",
+                "present": true,
+                "sourceLive": true,
+                "locked": false,
+                "gpuReady": true
+              },
+              "demand": false,
+              "ready": true,
+              "nextRequest": "2",
+              "job": null,
+              "candidate": null,
+              "accepted": null,
+              "known": [
+                {
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "context": {
+                    "lifetime": "12618083744238620417",
+                    "incarnation": "2",
+                    "output": "1",
+                    "privacy": "1",
+                    "rendering": "2",
+                    "scene": "1",
+                    "content": "42"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "12618083744238620417",
+                  "deadline": "203485677514126"
+                }
+              ],
+              "cancelling": [
+                {
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "context": {
+                    "lifetime": "12618083744238620417",
+                    "incarnation": "2",
+                    "output": "1",
+                    "privacy": "1",
+                    "rendering": "2",
+                    "scene": "1",
+                    "content": "42"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "12618083744238620417",
+                  "deadline": "203485677514126"
+                }
+              ],
+              "retiring": [],
+              "state": "unavailable",
+              "image": null
+            }
+          }
+        ],
+        "commands": [],
+        "realm": {
+          "controlled": true,
+          "closing": true,
+          "closed": false,
+          "processed": "0",
+          "retained": 1,
+          "completed": 0,
+          "epoch": "1",
+          "ingress": {
+            "pending": 1,
+            "capacity": 1,
+            "intents": [
+              {
+                "identity": "family:2",
+                "commands": [
+                  {
+                    "kind": "acquire",
+                    "job": {
+                      "binding": {
+                        "lifetime": "12618083744238620417",
+                        "session": "2",
+                        "frontend": "1"
+                      },
+                      "context": {
+                        "lifetime": "12618083744238620417",
+                        "incarnation": "2",
+                        "output": "1",
+                        "privacy": "1",
+                        "rendering": "2",
+                        "scene": "1",
+                        "content": "42"
+                      },
+                      "request": "1",
+                      "origin": "1",
+                      "clock": "12618083744238620417",
+                      "deadline": "203485677514126"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "deferred": 2,
+          "deferredIntents": [
+            {
+              "identity": "binding:12618083744238620417:2:1",
+              "commands": [
+                {
+                  "kind": "reconcile",
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  }
+                }
+              ]
+            },
+            {
+              "identity": "family:2",
+              "commands": [
+                {
+                  "kind": "cancel",
+                  "job": {
+                    "binding": {
+                      "lifetime": "12618083744238620417",
+                      "session": "2",
+                      "frontend": "1"
+                    },
+                    "context": {
+                      "lifetime": "12618083744238620417",
+                      "incarnation": "2",
+                      "output": "1",
+                      "privacy": "1",
+                      "rendering": "2",
+                      "scene": "1",
+                      "content": "42"
+                    },
+                    "request": "1",
+                    "origin": "1",
+                    "clock": "12618083744238620417",
+                    "deadline": "203485677514126"
+                  }
+                }
+              ]
+            }
+          ],
+          "inputBlocked": true
+        },
+        "metadata": [
+          {
+            "identity": "family:2",
+            "title": "Native source",
+            "application": "fixture",
+            "revision": null,
+            "iconKind": "unavailable",
+            "hasIcon": false,
+            "visible": true
+          }
+        ],
+        "enrollment": [
+          {
+            "identity": "family:2",
+            "nativeScoped": true,
+            "minimized": null
+          }
+        ],
+        "feedback": [
+          {
+            "identity": "family:2",
+            "floor": "1",
+            "outcome": null,
+            "label": null,
+            "deadline": null
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\":\"quarantine\",\"value\":{\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\"}}"
+    },
+    "result": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "models": [
+          {
+            "identity": "family:2",
+            "active": false,
+            "model": {
+              "scope": {
+                "binding": {
+                  "lifetime": "12618083744238620417",
+                  "session": "2",
+                  "frontend": "1"
+                },
+                "context": {
+                  "lifetime": "12618083744238620417",
+                  "incarnation": "2",
+                  "output": "1",
+                  "privacy": "1",
+                  "rendering": "2",
+                  "scene": "1",
+                  "content": "42"
+                },
+                "observation": "75",
+                "clock": "12618083744238620417",
+                "now": "203483677058877",
+                "present": true,
+                "sourceLive": true,
+                "locked": false,
+                "gpuReady": true
+              },
+              "demand": false,
+              "ready": true,
+              "nextRequest": "2",
+              "job": null,
+              "candidate": null,
+              "accepted": null,
+              "known": [
+                {
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "context": {
+                    "lifetime": "12618083744238620417",
+                    "incarnation": "2",
+                    "output": "1",
+                    "privacy": "1",
+                    "rendering": "2",
+                    "scene": "1",
+                    "content": "42"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "12618083744238620417",
+                  "deadline": "203485677514126"
+                }
+              ],
+              "cancelling": [
+                {
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "context": {
+                    "lifetime": "12618083744238620417",
+                    "incarnation": "2",
+                    "output": "1",
+                    "privacy": "1",
+                    "rendering": "2",
+                    "scene": "1",
+                    "content": "42"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "12618083744238620417",
+                  "deadline": "203485677514126"
+                }
+              ],
+              "retiring": [],
+              "state": "unavailable",
+              "image": null
+            }
+          }
+        ],
+        "commands": {
+          "previewProtocol": 3,
+          "kind": "preview-proposals",
+          "binding": {
+            "lifetime": "12618083744238620417",
+            "session": "2",
+            "frontend": "1"
+          },
+          "receiverEpoch": "1",
+          "entries": []
+        },
+        "realm": {
+          "controlled": true,
+          "closing": true,
+          "closed": false,
+          "processed": "0",
+          "retained": 1,
+          "completed": 0,
+          "epoch": "1",
+          "ingress": {
+            "pending": 1,
+            "capacity": 1,
+            "intents": [
+              {
+                "identity": "family:2",
+                "commands": [
+                  {
+                    "kind": "acquire",
+                    "job": {
+                      "binding": {
+                        "lifetime": "12618083744238620417",
+                        "session": "2",
+                        "frontend": "1"
+                      },
+                      "context": {
+                        "lifetime": "12618083744238620417",
+                        "incarnation": "2",
+                        "output": "1",
+                        "privacy": "1",
+                        "rendering": "2",
+                        "scene": "1",
+                        "content": "42"
+                      },
+                      "request": "1",
+                      "origin": "1",
+                      "clock": "12618083744238620417",
+                      "deadline": "203485677514126"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "deferred": 2,
+          "deferredIntents": [
+            {
+              "identity": "binding:12618083744238620417:2:1",
+              "commands": [
+                {
+                  "kind": "reconcile",
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  }
+                }
+              ]
+            },
+            {
+              "identity": "family:2",
+              "commands": [
+                {
+                  "kind": "cancel",
+                  "job": {
+                    "binding": {
+                      "lifetime": "12618083744238620417",
+                      "session": "2",
+                      "frontend": "1"
+                    },
+                    "context": {
+                      "lifetime": "12618083744238620417",
+                      "incarnation": "2",
+                      "output": "1",
+                      "privacy": "1",
+                      "rendering": "2",
+                      "scene": "1",
+                      "content": "42"
+                    },
+                    "request": "1",
+                    "origin": "1",
+                    "clock": "12618083744238620417",
+                    "deadline": "203485677514126"
+                  }
+                }
+              ]
+            }
+          ],
+          "inputBlocked": true
+        },
+        "metadata": [
+          {
+            "identity": "family:2",
+            "title": "Native source",
+            "application": "fixture",
+            "revision": null,
+            "iconKind": "unavailable",
+            "hasIcon": false,
+            "visible": true
+          }
+        ],
+        "enrollment": [
+          {
+            "identity": "family:2",
+            "nativeScoped": true,
+            "minimized": null
+          }
+        ],
+        "feedback": [
+          {
+            "identity": "family:2",
+            "floor": "1",
+            "outcome": null,
+            "label": null,
+            "deadline": null
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "close"
+    },
+    "result": {
+      "ok": false,
+      "code": 5,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\":\"closed\",\"value\":{\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\"}}"
+    },
+    "result": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "models": [
+          {
+            "identity": "family:2",
+            "active": false,
+            "model": {
+              "scope": {
+                "binding": {
+                  "lifetime": "12618083744238620417",
+                  "session": "2",
+                  "frontend": "1"
+                },
+                "context": {
+                  "lifetime": "12618083744238620417",
+                  "incarnation": "2",
+                  "output": "1",
+                  "privacy": "1",
+                  "rendering": "2",
+                  "scene": "1",
+                  "content": "42"
+                },
+                "observation": "75",
+                "clock": "12618083744238620417",
+                "now": "203483677058877",
+                "present": true,
+                "sourceLive": true,
+                "locked": false,
+                "gpuReady": true
+              },
+              "demand": false,
+              "ready": true,
+              "nextRequest": "2",
+              "job": null,
+              "candidate": null,
+              "accepted": null,
+              "known": [
+                {
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "context": {
+                    "lifetime": "12618083744238620417",
+                    "incarnation": "2",
+                    "output": "1",
+                    "privacy": "1",
+                    "rendering": "2",
+                    "scene": "1",
+                    "content": "42"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "12618083744238620417",
+                  "deadline": "203485677514126"
+                }
+              ],
+              "cancelling": [
+                {
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "context": {
+                    "lifetime": "12618083744238620417",
+                    "incarnation": "2",
+                    "output": "1",
+                    "privacy": "1",
+                    "rendering": "2",
+                    "scene": "1",
+                    "content": "42"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "12618083744238620417",
+                  "deadline": "203485677514126"
+                }
+              ],
+              "retiring": [],
+              "state": "unavailable",
+              "image": null
+            }
+          }
+        ],
+        "commands": [],
+        "realm": {
+          "controlled": true,
+          "closing": true,
+          "closed": false,
+          "processed": "0",
+          "retained": 1,
+          "completed": 0,
+          "epoch": "1",
+          "ingress": {
+            "pending": 1,
+            "capacity": 1,
+            "intents": [
+              {
+                "identity": "family:2",
+                "commands": [
+                  {
+                    "kind": "acquire",
+                    "job": {
+                      "binding": {
+                        "lifetime": "12618083744238620417",
+                        "session": "2",
+                        "frontend": "1"
+                      },
+                      "context": {
+                        "lifetime": "12618083744238620417",
+                        "incarnation": "2",
+                        "output": "1",
+                        "privacy": "1",
+                        "rendering": "2",
+                        "scene": "1",
+                        "content": "42"
+                      },
+                      "request": "1",
+                      "origin": "1",
+                      "clock": "12618083744238620417",
+                      "deadline": "203485677514126"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "deferred": 2,
+          "deferredIntents": [
+            {
+              "identity": "binding:12618083744238620417:2:1",
+              "commands": [
+                {
+                  "kind": "reconcile",
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  }
+                }
+              ]
+            },
+            {
+              "identity": "family:2",
+              "commands": [
+                {
+                  "kind": "cancel",
+                  "job": {
+                    "binding": {
+                      "lifetime": "12618083744238620417",
+                      "session": "2",
+                      "frontend": "1"
+                    },
+                    "context": {
+                      "lifetime": "12618083744238620417",
+                      "incarnation": "2",
+                      "output": "1",
+                      "privacy": "1",
+                      "rendering": "2",
+                      "scene": "1",
+                      "content": "42"
+                    },
+                    "request": "1",
+                    "origin": "1",
+                    "clock": "12618083744238620417",
+                    "deadline": "203485677514126"
+                  }
+                }
+              ]
+            }
+          ],
+          "inputBlocked": true
+        },
+        "metadata": [
+          {
+            "identity": "family:2",
+            "title": "Native source",
+            "application": "fixture",
+            "revision": null,
+            "iconKind": "unavailable",
+            "hasIcon": false,
+            "visible": true
+          }
+        ],
+        "enrollment": [
+          {
+            "identity": "family:2",
+            "nativeScoped": true,
+            "minimized": null
+          }
+        ],
+        "feedback": [
+          {
+            "identity": "family:2",
+            "floor": "1",
+            "outcome": null,
+            "label": null,
+            "deadline": null
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\":\"issued\",\"value\":{\"previewProtocol\":3,\"kind\":\"preview-control-ticket\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"controlOrdinal\":\"1\",\"alreadyDelivered\":false,\"wire\":\"{\\\"previewProtocol\\\":3,\\\"kind\\\":\\\"preview-commands\\\",\\\"binding\\\":{\\\"lifetime\\\":\\\"12618083744238620417\\\",\\\"session\\\":\\\"2\\\",\\\"frontend\\\":\\\"1\\\"},\\\"receiverEpoch\\\":\\\"1\\\",\\\"controlOrdinal\\\":\\\"1\\\",\\\"entries\\\":[{\\\"identity\\\":\\\"family:2\\\",\\\"commands\\\":[{\\\"kind\\\":\\\"acquire\\\",\\\"job\\\":{\\\"binding\\\":{\\\"lifetime\\\":\\\"12618083744238620417\\\",\\\"session\\\":\\\"2\\\",\\\"frontend\\\":\\\"1\\\"},\\\"context\\\":{\\\"lifetime\\\":\\\"12618083744238620417\\\",\\\"incarnation\\\":\\\"2\\\",\\\"output\\\":\\\"1\\\",\\\"privacy\\\":\\\"1\\\",\\\"rendering\\\":\\\"2\\\",\\\"scene\\\":\\\"1\\\",\\\"content\\\":\\\"42\\\"},\\\"request\\\":\\\"1\\\",\\\"origin\\\":\\\"1\\\",\\\"clock\\\":\\\"12618083744238620417\\\",\\\"deadline\\\":\\\"203485677514126\\\"}}]}]}\"}}"
+    },
+    "result": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "models": [
+          {
+            "identity": "family:2",
+            "active": false,
+            "model": {
+              "scope": {
+                "binding": {
+                  "lifetime": "12618083744238620417",
+                  "session": "2",
+                  "frontend": "1"
+                },
+                "context": {
+                  "lifetime": "12618083744238620417",
+                  "incarnation": "2",
+                  "output": "1",
+                  "privacy": "1",
+                  "rendering": "2",
+                  "scene": "1",
+                  "content": "42"
+                },
+                "observation": "75",
+                "clock": "12618083744238620417",
+                "now": "203483677058877",
+                "present": true,
+                "sourceLive": true,
+                "locked": false,
+                "gpuReady": true
+              },
+              "demand": false,
+              "ready": true,
+              "nextRequest": "2",
+              "job": null,
+              "candidate": null,
+              "accepted": null,
+              "known": [
+                {
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "context": {
+                    "lifetime": "12618083744238620417",
+                    "incarnation": "2",
+                    "output": "1",
+                    "privacy": "1",
+                    "rendering": "2",
+                    "scene": "1",
+                    "content": "42"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "12618083744238620417",
+                  "deadline": "203485677514126"
+                }
+              ],
+              "cancelling": [
+                {
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "context": {
+                    "lifetime": "12618083744238620417",
+                    "incarnation": "2",
+                    "output": "1",
+                    "privacy": "1",
+                    "rendering": "2",
+                    "scene": "1",
+                    "content": "42"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "12618083744238620417",
+                  "deadline": "203485677514126"
+                }
+              ],
+              "retiring": [],
+              "state": "unavailable",
+              "image": null
+            }
+          }
+        ],
+        "commands": [],
+        "realm": {
+          "controlled": true,
+          "closing": true,
+          "closed": false,
+          "processed": "0",
+          "retained": 1,
+          "completed": 0,
+          "epoch": "1",
+          "ingress": {
+            "pending": 0,
+            "capacity": 1,
+            "intents": []
+          },
+          "deferred": 2,
+          "deferredIntents": [
+            {
+              "identity": "binding:12618083744238620417:2:1",
+              "commands": [
+                {
+                  "kind": "reconcile",
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  }
+                }
+              ]
+            },
+            {
+              "identity": "family:2",
+              "commands": [
+                {
+                  "kind": "cancel",
+                  "job": {
+                    "binding": {
+                      "lifetime": "12618083744238620417",
+                      "session": "2",
+                      "frontend": "1"
+                    },
+                    "context": {
+                      "lifetime": "12618083744238620417",
+                      "incarnation": "2",
+                      "output": "1",
+                      "privacy": "1",
+                      "rendering": "2",
+                      "scene": "1",
+                      "content": "42"
+                    },
+                    "request": "1",
+                    "origin": "1",
+                    "clock": "12618083744238620417",
+                    "deadline": "203485677514126"
+                  }
+                }
+              ]
+            }
+          ],
+          "inputBlocked": true
+        },
+        "metadata": [
+          {
+            "identity": "family:2",
+            "title": "Native source",
+            "application": "fixture",
+            "revision": null,
+            "iconKind": "unavailable",
+            "hasIcon": false,
+            "visible": true
+          }
+        ],
+        "enrollment": [
+          {
+            "identity": "family:2",
+            "nativeScoped": true,
+            "minimized": null
+          }
+        ],
+        "feedback": [
+          {
+            "identity": "family:2",
+            "floor": "1",
+            "outcome": null,
+            "label": null,
+            "deadline": null
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\":\"retry\",\"value\":{\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\"}}"
+    },
+    "result": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "models": [
+          {
+            "identity": "family:2",
+            "active": false,
+            "model": {
+              "scope": {
+                "binding": {
+                  "lifetime": "12618083744238620417",
+                  "session": "2",
+                  "frontend": "1"
+                },
+                "context": {
+                  "lifetime": "12618083744238620417",
+                  "incarnation": "2",
+                  "output": "1",
+                  "privacy": "1",
+                  "rendering": "2",
+                  "scene": "1",
+                  "content": "42"
+                },
+                "observation": "75",
+                "clock": "12618083744238620417",
+                "now": "203483677058877",
+                "present": true,
+                "sourceLive": true,
+                "locked": false,
+                "gpuReady": true
+              },
+              "demand": false,
+              "ready": true,
+              "nextRequest": "2",
+              "job": null,
+              "candidate": null,
+              "accepted": null,
+              "known": [
+                {
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "context": {
+                    "lifetime": "12618083744238620417",
+                    "incarnation": "2",
+                    "output": "1",
+                    "privacy": "1",
+                    "rendering": "2",
+                    "scene": "1",
+                    "content": "42"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "12618083744238620417",
+                  "deadline": "203485677514126"
+                }
+              ],
+              "cancelling": [
+                {
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "context": {
+                    "lifetime": "12618083744238620417",
+                    "incarnation": "2",
+                    "output": "1",
+                    "privacy": "1",
+                    "rendering": "2",
+                    "scene": "1",
+                    "content": "42"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "12618083744238620417",
+                  "deadline": "203485677514126"
+                }
+              ],
+              "retiring": [],
+              "state": "unavailable",
+              "image": null
+            }
+          }
+        ],
+        "commands": {
+          "previewProtocol": 3,
+          "kind": "preview-proposals",
+          "binding": {
+            "lifetime": "12618083744238620417",
+            "session": "2",
+            "frontend": "1"
+          },
+          "receiverEpoch": "1",
+          "entries": [
+            {
+              "identity": "binding:12618083744238620417:2:1",
+              "commands": [
+                {
+                  "kind": "reconcile",
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "realm": {
+          "controlled": true,
+          "closing": true,
+          "closed": false,
+          "processed": "0",
+          "retained": 1,
+          "completed": 0,
+          "epoch": "1",
+          "ingress": {
+            "pending": 1,
+            "capacity": 1,
+            "intents": [
+              {
+                "identity": "binding:12618083744238620417:2:1",
+                "commands": [
+                  {
+                    "kind": "reconcile",
+                    "binding": {
+                      "lifetime": "12618083744238620417",
+                      "session": "2",
+                      "frontend": "1"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "deferred": 1,
+          "deferredIntents": [
+            {
+              "identity": "family:2",
+              "commands": [
+                {
+                  "kind": "cancel",
+                  "job": {
+                    "binding": {
+                      "lifetime": "12618083744238620417",
+                      "session": "2",
+                      "frontend": "1"
+                    },
+                    "context": {
+                      "lifetime": "12618083744238620417",
+                      "incarnation": "2",
+                      "output": "1",
+                      "privacy": "1",
+                      "rendering": "2",
+                      "scene": "1",
+                      "content": "42"
+                    },
+                    "request": "1",
+                    "origin": "1",
+                    "clock": "12618083744238620417",
+                    "deadline": "203485677514126"
+                  }
+                }
+              ]
+            }
+          ],
+          "inputBlocked": true
+        },
+        "metadata": [
+          {
+            "identity": "family:2",
+            "title": "Native source",
+            "application": "fixture",
+            "revision": null,
+            "iconKind": "unavailable",
+            "hasIcon": false,
+            "visible": true
+          }
+        ],
+        "enrollment": [
+          {
+            "identity": "family:2",
+            "nativeScoped": true,
+            "minimized": null
+          }
+        ],
+        "feedback": [
+          {
+            "identity": "family:2",
+            "floor": "1",
+            "outcome": null,
+            "label": null,
+            "deadline": null
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\":\"issued\",\"value\":{\"previewProtocol\":3,\"kind\":\"preview-control-ticket\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"controlOrdinal\":\"2\",\"alreadyDelivered\":false,\"wire\":\"{\\\"previewProtocol\\\":3,\\\"kind\\\":\\\"preview-commands\\\",\\\"binding\\\":{\\\"lifetime\\\":\\\"12618083744238620417\\\",\\\"session\\\":\\\"2\\\",\\\"frontend\\\":\\\"1\\\"},\\\"receiverEpoch\\\":\\\"1\\\",\\\"controlOrdinal\\\":\\\"2\\\",\\\"entries\\\":[{\\\"identity\\\":\\\"binding:12618083744238620417:2:1\\\",\\\"commands\\\":[{\\\"kind\\\":\\\"reconcile\\\",\\\"binding\\\":{\\\"lifetime\\\":\\\"12618083744238620417\\\",\\\"session\\\":\\\"2\\\",\\\"frontend\\\":\\\"1\\\"}}]}]}\"}}"
+    },
+    "result": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "models": [
+          {
+            "identity": "family:2",
+            "active": false,
+            "model": {
+              "scope": {
+                "binding": {
+                  "lifetime": "12618083744238620417",
+                  "session": "2",
+                  "frontend": "1"
+                },
+                "context": {
+                  "lifetime": "12618083744238620417",
+                  "incarnation": "2",
+                  "output": "1",
+                  "privacy": "1",
+                  "rendering": "2",
+                  "scene": "1",
+                  "content": "42"
+                },
+                "observation": "75",
+                "clock": "12618083744238620417",
+                "now": "203483677058877",
+                "present": true,
+                "sourceLive": true,
+                "locked": false,
+                "gpuReady": true
+              },
+              "demand": false,
+              "ready": true,
+              "nextRequest": "2",
+              "job": null,
+              "candidate": null,
+              "accepted": null,
+              "known": [
+                {
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "context": {
+                    "lifetime": "12618083744238620417",
+                    "incarnation": "2",
+                    "output": "1",
+                    "privacy": "1",
+                    "rendering": "2",
+                    "scene": "1",
+                    "content": "42"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "12618083744238620417",
+                  "deadline": "203485677514126"
+                }
+              ],
+              "cancelling": [
+                {
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "context": {
+                    "lifetime": "12618083744238620417",
+                    "incarnation": "2",
+                    "output": "1",
+                    "privacy": "1",
+                    "rendering": "2",
+                    "scene": "1",
+                    "content": "42"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "12618083744238620417",
+                  "deadline": "203485677514126"
+                }
+              ],
+              "retiring": [],
+              "state": "unavailable",
+              "image": null
+            }
+          }
+        ],
+        "commands": [],
+        "realm": {
+          "controlled": true,
+          "closing": true,
+          "closed": false,
+          "processed": "0",
+          "retained": 1,
+          "completed": 0,
+          "epoch": "1",
+          "ingress": {
+            "pending": 0,
+            "capacity": 1,
+            "intents": []
+          },
+          "deferred": 1,
+          "deferredIntents": [
+            {
+              "identity": "family:2",
+              "commands": [
+                {
+                  "kind": "cancel",
+                  "job": {
+                    "binding": {
+                      "lifetime": "12618083744238620417",
+                      "session": "2",
+                      "frontend": "1"
+                    },
+                    "context": {
+                      "lifetime": "12618083744238620417",
+                      "incarnation": "2",
+                      "output": "1",
+                      "privacy": "1",
+                      "rendering": "2",
+                      "scene": "1",
+                      "content": "42"
+                    },
+                    "request": "1",
+                    "origin": "1",
+                    "clock": "12618083744238620417",
+                    "deadline": "203485677514126"
+                  }
+                }
+              ]
+            }
+          ],
+          "inputBlocked": true
+        },
+        "metadata": [
+          {
+            "identity": "family:2",
+            "title": "Native source",
+            "application": "fixture",
+            "revision": null,
+            "iconKind": "unavailable",
+            "hasIcon": false,
+            "visible": true
+          }
+        ],
+        "enrollment": [
+          {
+            "identity": "family:2",
+            "nativeScoped": true,
+            "minimized": null
+          }
+        ],
+        "feedback": [
+          {
+            "identity": "family:2",
+            "floor": "1",
+            "outcome": null,
+            "label": null,
+            "deadline": null
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\":\"retry\",\"value\":{\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\"}}"
+    },
+    "result": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "models": [
+          {
+            "identity": "family:2",
+            "active": false,
+            "model": {
+              "scope": {
+                "binding": {
+                  "lifetime": "12618083744238620417",
+                  "session": "2",
+                  "frontend": "1"
+                },
+                "context": {
+                  "lifetime": "12618083744238620417",
+                  "incarnation": "2",
+                  "output": "1",
+                  "privacy": "1",
+                  "rendering": "2",
+                  "scene": "1",
+                  "content": "42"
+                },
+                "observation": "75",
+                "clock": "12618083744238620417",
+                "now": "203483677058877",
+                "present": true,
+                "sourceLive": true,
+                "locked": false,
+                "gpuReady": true
+              },
+              "demand": false,
+              "ready": true,
+              "nextRequest": "2",
+              "job": null,
+              "candidate": null,
+              "accepted": null,
+              "known": [
+                {
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "context": {
+                    "lifetime": "12618083744238620417",
+                    "incarnation": "2",
+                    "output": "1",
+                    "privacy": "1",
+                    "rendering": "2",
+                    "scene": "1",
+                    "content": "42"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "12618083744238620417",
+                  "deadline": "203485677514126"
+                }
+              ],
+              "cancelling": [
+                {
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "context": {
+                    "lifetime": "12618083744238620417",
+                    "incarnation": "2",
+                    "output": "1",
+                    "privacy": "1",
+                    "rendering": "2",
+                    "scene": "1",
+                    "content": "42"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "12618083744238620417",
+                  "deadline": "203485677514126"
+                }
+              ],
+              "retiring": [],
+              "state": "unavailable",
+              "image": null
+            }
+          }
+        ],
+        "commands": {
+          "previewProtocol": 3,
+          "kind": "preview-proposals",
+          "binding": {
+            "lifetime": "12618083744238620417",
+            "session": "2",
+            "frontend": "1"
+          },
+          "receiverEpoch": "1",
+          "entries": [
+            {
+              "identity": "family:2",
+              "commands": [
+                {
+                  "kind": "cancel",
+                  "job": {
+                    "binding": {
+                      "lifetime": "12618083744238620417",
+                      "session": "2",
+                      "frontend": "1"
+                    },
+                    "context": {
+                      "lifetime": "12618083744238620417",
+                      "incarnation": "2",
+                      "output": "1",
+                      "privacy": "1",
+                      "rendering": "2",
+                      "scene": "1",
+                      "content": "42"
+                    },
+                    "request": "1",
+                    "origin": "1",
+                    "clock": "12618083744238620417",
+                    "deadline": "203485677514126"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "realm": {
+          "controlled": true,
+          "closing": true,
+          "closed": false,
+          "processed": "0",
+          "retained": 1,
+          "completed": 0,
+          "epoch": "1",
+          "ingress": {
+            "pending": 1,
+            "capacity": 1,
+            "intents": [
+              {
+                "identity": "family:2",
+                "commands": [
+                  {
+                    "kind": "cancel",
+                    "job": {
+                      "binding": {
+                        "lifetime": "12618083744238620417",
+                        "session": "2",
+                        "frontend": "1"
+                      },
+                      "context": {
+                        "lifetime": "12618083744238620417",
+                        "incarnation": "2",
+                        "output": "1",
+                        "privacy": "1",
+                        "rendering": "2",
+                        "scene": "1",
+                        "content": "42"
+                      },
+                      "request": "1",
+                      "origin": "1",
+                      "clock": "12618083744238620417",
+                      "deadline": "203485677514126"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "deferred": 0,
+          "deferredIntents": [],
+          "inputBlocked": false
+        },
+        "metadata": [
+          {
+            "identity": "family:2",
+            "title": "Native source",
+            "application": "fixture",
+            "revision": null,
+            "iconKind": "unavailable",
+            "hasIcon": false,
+            "visible": true
+          }
+        ],
+        "enrollment": [
+          {
+            "identity": "family:2",
+            "nativeScoped": true,
+            "minimized": null
+          }
+        ],
+        "feedback": [
+          {
+            "identity": "family:2",
+            "floor": "1",
+            "outcome": null,
+            "label": null,
+            "deadline": null
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\":\"issued\",\"value\":{\"previewProtocol\":3,\"kind\":\"preview-control-ticket\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"controlOrdinal\":\"3\",\"alreadyDelivered\":false,\"wire\":\"{\\\"previewProtocol\\\":3,\\\"kind\\\":\\\"preview-commands\\\",\\\"binding\\\":{\\\"lifetime\\\":\\\"12618083744238620417\\\",\\\"session\\\":\\\"2\\\",\\\"frontend\\\":\\\"1\\\"},\\\"receiverEpoch\\\":\\\"1\\\",\\\"controlOrdinal\\\":\\\"3\\\",\\\"entries\\\":[{\\\"identity\\\":\\\"family:2\\\",\\\"commands\\\":[{\\\"kind\\\":\\\"cancel\\\",\\\"job\\\":{\\\"binding\\\":{\\\"lifetime\\\":\\\"12618083744238620417\\\",\\\"session\\\":\\\"2\\\",\\\"frontend\\\":\\\"1\\\"},\\\"context\\\":{\\\"lifetime\\\":\\\"12618083744238620417\\\",\\\"incarnation\\\":\\\"2\\\",\\\"output\\\":\\\"1\\\",\\\"privacy\\\":\\\"1\\\",\\\"rendering\\\":\\\"2\\\",\\\"scene\\\":\\\"1\\\",\\\"content\\\":\\\"42\\\"},\\\"request\\\":\\\"1\\\",\\\"origin\\\":\\\"1\\\",\\\"clock\\\":\\\"12618083744238620417\\\",\\\"deadline\\\":\\\"203485677514126\\\"}}]}]}\"}}"
+    },
+    "result": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "models": [
+          {
+            "identity": "family:2",
+            "active": false,
+            "model": {
+              "scope": {
+                "binding": {
+                  "lifetime": "12618083744238620417",
+                  "session": "2",
+                  "frontend": "1"
+                },
+                "context": {
+                  "lifetime": "12618083744238620417",
+                  "incarnation": "2",
+                  "output": "1",
+                  "privacy": "1",
+                  "rendering": "2",
+                  "scene": "1",
+                  "content": "42"
+                },
+                "observation": "75",
+                "clock": "12618083744238620417",
+                "now": "203483677058877",
+                "present": true,
+                "sourceLive": true,
+                "locked": false,
+                "gpuReady": true
+              },
+              "demand": false,
+              "ready": true,
+              "nextRequest": "2",
+              "job": null,
+              "candidate": null,
+              "accepted": null,
+              "known": [
+                {
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "context": {
+                    "lifetime": "12618083744238620417",
+                    "incarnation": "2",
+                    "output": "1",
+                    "privacy": "1",
+                    "rendering": "2",
+                    "scene": "1",
+                    "content": "42"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "12618083744238620417",
+                  "deadline": "203485677514126"
+                }
+              ],
+              "cancelling": [
+                {
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "context": {
+                    "lifetime": "12618083744238620417",
+                    "incarnation": "2",
+                    "output": "1",
+                    "privacy": "1",
+                    "rendering": "2",
+                    "scene": "1",
+                    "content": "42"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "12618083744238620417",
+                  "deadline": "203485677514126"
+                }
+              ],
+              "retiring": [],
+              "state": "unavailable",
+              "image": null
+            }
+          }
+        ],
+        "commands": [],
+        "realm": {
+          "controlled": true,
+          "closing": true,
+          "closed": false,
+          "processed": "0",
+          "retained": 1,
+          "completed": 0,
+          "epoch": "1",
+          "ingress": {
+            "pending": 0,
+            "capacity": 1,
+            "intents": []
+          },
+          "deferred": 0,
+          "deferredIntents": [],
+          "inputBlocked": false
+        },
+        "metadata": [
+          {
+            "identity": "family:2",
+            "title": "Native source",
+            "application": "fixture",
+            "revision": null,
+            "iconKind": "unavailable",
+            "hasIcon": false,
+            "visible": true
+          }
+        ],
+        "enrollment": [
+          {
+            "identity": "family:2",
+            "nativeScoped": true,
+            "minimized": null
+          }
+        ],
+        "feedback": [
+          {
+            "identity": "family:2",
+            "floor": "1",
+            "outcome": null,
+            "label": null,
+            "deadline": null
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\":\"native\",\"value\":{\"previewProtocol\":3,\"kind\":\"native-preview-realm-event\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"event\":{\"detachProtocol\":1,\"kind\":\"native-preview-detach-seed\",\"identity\":\"family:2\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"subject\":\"2\",\"entry\":\"1\",\"entryIssuedThrough\":\"1\",\"requestFloor\":\"1\"}}}"
+    },
+    "result": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "models": [
+          {
+            "identity": "family:2",
+            "active": false,
+            "model": {
+              "scope": {
+                "binding": {
+                  "lifetime": "12618083744238620417",
+                  "session": "2",
+                  "frontend": "1"
+                },
+                "context": {
+                  "lifetime": "12618083744238620417",
+                  "incarnation": "2",
+                  "output": "1",
+                  "privacy": "1",
+                  "rendering": "2",
+                  "scene": "1",
+                  "content": "42"
+                },
+                "observation": "75",
+                "clock": "12618083744238620417",
+                "now": "203483677058877",
+                "present": true,
+                "sourceLive": true,
+                "locked": false,
+                "gpuReady": true
+              },
+              "demand": false,
+              "ready": true,
+              "nextRequest": "2",
+              "job": null,
+              "candidate": null,
+              "accepted": null,
+              "known": [
+                {
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "context": {
+                    "lifetime": "12618083744238620417",
+                    "incarnation": "2",
+                    "output": "1",
+                    "privacy": "1",
+                    "rendering": "2",
+                    "scene": "1",
+                    "content": "42"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "12618083744238620417",
+                  "deadline": "203485677514126"
+                }
+              ],
+              "cancelling": [
+                {
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "context": {
+                    "lifetime": "12618083744238620417",
+                    "incarnation": "2",
+                    "output": "1",
+                    "privacy": "1",
+                    "rendering": "2",
+                    "scene": "1",
+                    "content": "42"
+                  },
+                  "request": "1",
+                  "origin": "1",
+                  "clock": "12618083744238620417",
+                  "deadline": "203485677514126"
+                }
+              ],
+              "retiring": [],
+              "state": "unavailable",
+              "image": null
+            }
+          }
+        ],
+        "commands": {
+          "previewProtocol": 3,
+          "kind": "preview-proposals",
+          "binding": {
+            "lifetime": "12618083744238620417",
+            "session": "2",
+            "frontend": "1"
+          },
+          "receiverEpoch": "1",
+          "entries": []
+        },
+        "realm": {
+          "controlled": true,
+          "closing": true,
+          "closed": false,
+          "processed": "0",
+          "retained": 1,
+          "completed": 0,
+          "epoch": "1",
+          "ingress": {
+            "pending": 0,
+            "capacity": 1,
+            "intents": []
+          },
+          "deferred": 0,
+          "deferredIntents": [],
+          "inputBlocked": false
+        },
+        "metadata": [
+          {
+            "identity": "family:2",
+            "title": "Native source",
+            "application": "fixture",
+            "revision": null,
+            "iconKind": "unavailable",
+            "hasIcon": false,
+            "visible": true
+          }
+        ],
+        "enrollment": [
+          {
+            "identity": "family:2",
+            "nativeScoped": true,
+            "minimized": null
+          }
+        ],
+        "feedback": [
+          {
+            "identity": "family:2",
+            "floor": "1",
+            "outcome": null,
+            "label": null,
+            "deadline": null
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\":\"native\",\"value\":{\"previewProtocol\":3,\"kind\":\"native-preview-realm-event\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"event\":{\"kind\":\"event\",\"identity\":\"family:2\",\"event\":{\"kind\":\"receipt\",\"sequence\":\"4\",\"event\":{\"kind\":\"cancelled\",\"job\":{\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"context\":{\"lifetime\":\"12618083744238620417\",\"incarnation\":\"2\",\"output\":\"1\",\"privacy\":\"1\",\"rendering\":\"2\",\"scene\":\"1\",\"content\":\"42\"},\"request\":\"1\",\"origin\":\"1\",\"clock\":\"12618083744238620417\",\"deadline\":\"203485677514126\"}}}}}}"
+    },
+    "result": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "models": [
+          {
+            "identity": "family:2",
+            "active": false,
+            "model": {
+              "scope": {
+                "binding": {
+                  "lifetime": "12618083744238620417",
+                  "session": "2",
+                  "frontend": "1"
+                },
+                "context": {
+                  "lifetime": "12618083744238620417",
+                  "incarnation": "2",
+                  "output": "1",
+                  "privacy": "1",
+                  "rendering": "2",
+                  "scene": "1",
+                  "content": "42"
+                },
+                "observation": "75",
+                "clock": "12618083744238620417",
+                "now": "203483677058877",
+                "present": true,
+                "sourceLive": true,
+                "locked": false,
+                "gpuReady": true
+              },
+              "demand": false,
+              "ready": true,
+              "nextRequest": "2",
+              "job": null,
+              "candidate": null,
+              "accepted": null,
+              "known": [],
+              "cancelling": [],
+              "retiring": [],
+              "state": "unavailable",
+              "image": null
+            }
+          }
+        ],
+        "commands": {
+          "previewProtocol": 3,
+          "kind": "preview-proposals",
+          "binding": {
+            "lifetime": "12618083744238620417",
+            "session": "2",
+            "frontend": "1"
+          },
+          "receiverEpoch": "1",
+          "entries": [
+            {
+              "identity": "family:2",
+              "commands": [
+                {
+                  "kind": "acknowledge",
+                  "job": {
+                    "binding": {
+                      "lifetime": "12618083744238620417",
+                      "session": "2",
+                      "frontend": "1"
+                    },
+                    "context": {
+                      "lifetime": "12618083744238620417",
+                      "incarnation": "2",
+                      "output": "1",
+                      "privacy": "1",
+                      "rendering": "2",
+                      "scene": "1",
+                      "content": "42"
+                    },
+                    "request": "1",
+                    "origin": "1",
+                    "clock": "12618083744238620417",
+                    "deadline": "203485677514126"
+                  },
+                  "sequence": "4"
+                }
+              ]
+            }
+          ]
+        },
+        "realm": {
+          "controlled": true,
+          "closing": true,
+          "closed": false,
+          "processed": "0",
+          "retained": 1,
+          "completed": 0,
+          "epoch": "1",
+          "ingress": {
+            "pending": 1,
+            "capacity": 1,
+            "intents": [
+              {
+                "identity": "family:2",
+                "commands": [
+                  {
+                    "kind": "acknowledge",
+                    "job": {
+                      "binding": {
+                        "lifetime": "12618083744238620417",
+                        "session": "2",
+                        "frontend": "1"
+                      },
+                      "context": {
+                        "lifetime": "12618083744238620417",
+                        "incarnation": "2",
+                        "output": "1",
+                        "privacy": "1",
+                        "rendering": "2",
+                        "scene": "1",
+                        "content": "42"
+                      },
+                      "request": "1",
+                      "origin": "1",
+                      "clock": "12618083744238620417",
+                      "deadline": "203485677514126"
+                    },
+                    "sequence": "4"
+                  }
+                ]
+              }
+            ]
+          },
+          "deferred": 1,
+          "deferredIntents": [
+            {
+              "identity": "family:2",
+              "commands": [
+                {
+                  "kind": "detach-ready",
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "receiverEpoch": "1",
+                  "subject": "2",
+                  "entry": "1",
+                  "entryIssuedThrough": "1",
+                  "requestFloor": "1"
+                }
+              ]
+            }
+          ],
+          "inputBlocked": true
+        },
+        "metadata": [
+          {
+            "identity": "family:2",
+            "title": "Native source",
+            "application": "fixture",
+            "revision": null,
+            "iconKind": "unavailable",
+            "hasIcon": false,
+            "visible": true
+          }
+        ],
+        "enrollment": [
+          {
+            "identity": "family:2",
+            "nativeScoped": true,
+            "minimized": null
+          }
+        ],
+        "feedback": [
+          {
+            "identity": "family:2",
+            "floor": "1",
+            "outcome": null,
+            "label": null,
+            "deadline": null
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\":\"issued\",\"value\":{\"previewProtocol\":3,\"kind\":\"preview-control-ticket\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"controlOrdinal\":\"4\",\"alreadyDelivered\":false,\"wire\":\"{\\\"previewProtocol\\\":3,\\\"kind\\\":\\\"preview-commands\\\",\\\"binding\\\":{\\\"lifetime\\\":\\\"12618083744238620417\\\",\\\"session\\\":\\\"2\\\",\\\"frontend\\\":\\\"1\\\"},\\\"receiverEpoch\\\":\\\"1\\\",\\\"controlOrdinal\\\":\\\"4\\\",\\\"entries\\\":[{\\\"identity\\\":\\\"family:2\\\",\\\"commands\\\":[{\\\"kind\\\":\\\"acknowledge\\\",\\\"job\\\":{\\\"binding\\\":{\\\"lifetime\\\":\\\"12618083744238620417\\\",\\\"session\\\":\\\"2\\\",\\\"frontend\\\":\\\"1\\\"},\\\"context\\\":{\\\"lifetime\\\":\\\"12618083744238620417\\\",\\\"incarnation\\\":\\\"2\\\",\\\"output\\\":\\\"1\\\",\\\"privacy\\\":\\\"1\\\",\\\"rendering\\\":\\\"2\\\",\\\"scene\\\":\\\"1\\\",\\\"content\\\":\\\"42\\\"},\\\"request\\\":\\\"1\\\",\\\"origin\\\":\\\"1\\\",\\\"clock\\\":\\\"12618083744238620417\\\",\\\"deadline\\\":\\\"203485677514126\\\"},\\\"sequence\\\":\\\"4\\\"}]}]}\"}}"
+    },
+    "result": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "models": [
+          {
+            "identity": "family:2",
+            "active": false,
+            "model": {
+              "scope": {
+                "binding": {
+                  "lifetime": "12618083744238620417",
+                  "session": "2",
+                  "frontend": "1"
+                },
+                "context": {
+                  "lifetime": "12618083744238620417",
+                  "incarnation": "2",
+                  "output": "1",
+                  "privacy": "1",
+                  "rendering": "2",
+                  "scene": "1",
+                  "content": "42"
+                },
+                "observation": "75",
+                "clock": "12618083744238620417",
+                "now": "203483677058877",
+                "present": true,
+                "sourceLive": true,
+                "locked": false,
+                "gpuReady": true
+              },
+              "demand": false,
+              "ready": true,
+              "nextRequest": "2",
+              "job": null,
+              "candidate": null,
+              "accepted": null,
+              "known": [],
+              "cancelling": [],
+              "retiring": [],
+              "state": "unavailable",
+              "image": null
+            }
+          }
+        ],
+        "commands": [],
+        "realm": {
+          "controlled": true,
+          "closing": true,
+          "closed": false,
+          "processed": "0",
+          "retained": 1,
+          "completed": 0,
+          "epoch": "1",
+          "ingress": {
+            "pending": 0,
+            "capacity": 1,
+            "intents": []
+          },
+          "deferred": 1,
+          "deferredIntents": [
+            {
+              "identity": "family:2",
+              "commands": [
+                {
+                  "kind": "detach-ready",
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "receiverEpoch": "1",
+                  "subject": "2",
+                  "entry": "1",
+                  "entryIssuedThrough": "1",
+                  "requestFloor": "1"
+                }
+              ]
+            }
+          ],
+          "inputBlocked": true
+        },
+        "metadata": [
+          {
+            "identity": "family:2",
+            "title": "Native source",
+            "application": "fixture",
+            "revision": null,
+            "iconKind": "unavailable",
+            "hasIcon": false,
+            "visible": true
+          }
+        ],
+        "enrollment": [
+          {
+            "identity": "family:2",
+            "nativeScoped": true,
+            "minimized": null
+          }
+        ],
+        "feedback": [
+          {
+            "identity": "family:2",
+            "floor": "1",
+            "outcome": null,
+            "label": null,
+            "deadline": null
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\":\"retry\",\"value\":{\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\"}}"
+    },
+    "result": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "models": [
+          {
+            "identity": "family:2",
+            "active": false,
+            "model": {
+              "scope": {
+                "binding": {
+                  "lifetime": "12618083744238620417",
+                  "session": "2",
+                  "frontend": "1"
+                },
+                "context": {
+                  "lifetime": "12618083744238620417",
+                  "incarnation": "2",
+                  "output": "1",
+                  "privacy": "1",
+                  "rendering": "2",
+                  "scene": "1",
+                  "content": "42"
+                },
+                "observation": "75",
+                "clock": "12618083744238620417",
+                "now": "203483677058877",
+                "present": true,
+                "sourceLive": true,
+                "locked": false,
+                "gpuReady": true
+              },
+              "demand": false,
+              "ready": true,
+              "nextRequest": "2",
+              "job": null,
+              "candidate": null,
+              "accepted": null,
+              "known": [],
+              "cancelling": [],
+              "retiring": [],
+              "state": "unavailable",
+              "image": null
+            }
+          }
+        ],
+        "commands": {
+          "previewProtocol": 3,
+          "kind": "preview-proposals",
+          "binding": {
+            "lifetime": "12618083744238620417",
+            "session": "2",
+            "frontend": "1"
+          },
+          "receiverEpoch": "1",
+          "entries": [
+            {
+              "identity": "family:2",
+              "commands": [
+                {
+                  "kind": "detach-ready",
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "receiverEpoch": "1",
+                  "subject": "2",
+                  "entry": "1",
+                  "entryIssuedThrough": "1",
+                  "requestFloor": "1"
+                }
+              ]
+            }
+          ]
+        },
+        "realm": {
+          "controlled": true,
+          "closing": true,
+          "closed": false,
+          "processed": "0",
+          "retained": 1,
+          "completed": 0,
+          "epoch": "1",
+          "ingress": {
+            "pending": 1,
+            "capacity": 1,
+            "intents": [
+              {
+                "identity": "family:2",
+                "commands": [
+                  {
+                    "kind": "detach-ready",
+                    "binding": {
+                      "lifetime": "12618083744238620417",
+                      "session": "2",
+                      "frontend": "1"
+                    },
+                    "receiverEpoch": "1",
+                    "subject": "2",
+                    "entry": "1",
+                    "entryIssuedThrough": "1",
+                    "requestFloor": "1"
+                  }
+                ]
+              }
+            ]
+          },
+          "deferred": 0,
+          "deferredIntents": [],
+          "inputBlocked": false
+        },
+        "metadata": [
+          {
+            "identity": "family:2",
+            "title": "Native source",
+            "application": "fixture",
+            "revision": null,
+            "iconKind": "unavailable",
+            "hasIcon": false,
+            "visible": true
+          }
+        ],
+        "enrollment": [
+          {
+            "identity": "family:2",
+            "nativeScoped": true,
+            "minimized": null
+          }
+        ],
+        "feedback": [
+          {
+            "identity": "family:2",
+            "floor": "1",
+            "outcome": null,
+            "label": null,
+            "deadline": null
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\":\"issued\",\"value\":{\"previewProtocol\":3,\"kind\":\"preview-control-ticket\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"controlOrdinal\":\"5\",\"alreadyDelivered\":false,\"wire\":\"{\\\"previewProtocol\\\":3,\\\"kind\\\":\\\"preview-commands\\\",\\\"binding\\\":{\\\"lifetime\\\":\\\"12618083744238620417\\\",\\\"session\\\":\\\"2\\\",\\\"frontend\\\":\\\"1\\\"},\\\"receiverEpoch\\\":\\\"1\\\",\\\"controlOrdinal\\\":\\\"5\\\",\\\"entries\\\":[{\\\"identity\\\":\\\"family:2\\\",\\\"commands\\\":[{\\\"kind\\\":\\\"detach-ready\\\",\\\"binding\\\":{\\\"lifetime\\\":\\\"12618083744238620417\\\",\\\"session\\\":\\\"2\\\",\\\"frontend\\\":\\\"1\\\"},\\\"receiverEpoch\\\":\\\"1\\\",\\\"subject\\\":\\\"2\\\",\\\"entry\\\":\\\"1\\\",\\\"entryIssuedThrough\\\":\\\"1\\\",\\\"requestFloor\\\":\\\"1\\\"}]}]}\"}}"
+    },
+    "result": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "models": [
+          {
+            "identity": "family:2",
+            "active": false,
+            "model": {
+              "scope": {
+                "binding": {
+                  "lifetime": "12618083744238620417",
+                  "session": "2",
+                  "frontend": "1"
+                },
+                "context": {
+                  "lifetime": "12618083744238620417",
+                  "incarnation": "2",
+                  "output": "1",
+                  "privacy": "1",
+                  "rendering": "2",
+                  "scene": "1",
+                  "content": "42"
+                },
+                "observation": "75",
+                "clock": "12618083744238620417",
+                "now": "203483677058877",
+                "present": true,
+                "sourceLive": true,
+                "locked": false,
+                "gpuReady": true
+              },
+              "demand": false,
+              "ready": true,
+              "nextRequest": "2",
+              "job": null,
+              "candidate": null,
+              "accepted": null,
+              "known": [],
+              "cancelling": [],
+              "retiring": [],
+              "state": "unavailable",
+              "image": null
+            }
+          }
+        ],
+        "commands": [],
+        "realm": {
+          "controlled": true,
+          "closing": true,
+          "closed": false,
+          "processed": "0",
+          "retained": 1,
+          "completed": 0,
+          "epoch": "1",
+          "ingress": {
+            "pending": 0,
+            "capacity": 1,
+            "intents": []
+          },
+          "deferred": 0,
+          "deferredIntents": [],
+          "inputBlocked": false
+        },
+        "metadata": [
+          {
+            "identity": "family:2",
+            "title": "Native source",
+            "application": "fixture",
+            "revision": null,
+            "iconKind": "unavailable",
+            "hasIcon": false,
+            "visible": true
+          }
+        ],
+        "enrollment": [
+          {
+            "identity": "family:2",
+            "nativeScoped": true,
+            "minimized": null
+          }
+        ],
+        "feedback": [
+          {
+            "identity": "family:2",
+            "floor": "1",
+            "outcome": null,
+            "label": null,
+            "deadline": null
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\":\"native\",\"value\":{\"previewProtocol\":3,\"kind\":\"native-preview-realm-event\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"event\":{\"detachProtocol\":1,\"kind\":\"native-preview-binding-detach-delivery\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"deliveryOrdinal\":\"1\",\"event\":{\"kind\":\"native-preview-actor-detached\",\"identity\":\"family:2\",\"subject\":\"2\",\"entry\":\"1\",\"entryIssuedThrough\":\"1\",\"requestFloor\":\"1\"}}}}"
+    },
+    "result": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "models": [],
+        "commands": {
+          "previewProtocol": 3,
+          "kind": "preview-proposals",
+          "binding": {
+            "lifetime": "12618083744238620417",
+            "session": "2",
+            "frontend": "1"
+          },
+          "receiverEpoch": "1",
+          "entries": [
+            {
+              "identity": "family:2",
+              "commands": [
+                {
+                  "kind": "detach-delivery-ack",
+                  "binding": {
+                    "lifetime": "12618083744238620417",
+                    "session": "2",
+                    "frontend": "1"
+                  },
+                  "receiverEpoch": "1",
+                  "deliveryOrdinal": "1"
+                }
+              ]
+            }
+          ]
+        },
+        "realm": {
+          "controlled": true,
+          "closing": true,
+          "closed": false,
+          "processed": "1",
+          "retained": 0,
+          "completed": 1,
+          "epoch": "1",
+          "ingress": {
+            "pending": 1,
+            "capacity": 1,
+            "intents": [
+              {
+                "identity": "family:2",
+                "commands": [
+                  {
+                    "kind": "detach-delivery-ack",
+                    "binding": {
+                      "lifetime": "12618083744238620417",
+                      "session": "2",
+                      "frontend": "1"
+                    },
+                    "receiverEpoch": "1",
+                    "deliveryOrdinal": "1"
+                  }
+                ]
+              }
+            ]
+          },
+          "deferred": 0,
+          "deferredIntents": [],
+          "inputBlocked": false
+        },
+        "metadata": [],
+        "enrollment": [],
+        "feedback": []
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "close"
+    },
+    "result": {
+      "ok": false,
+      "code": 5,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\":\"closed\",\"value\":{\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\"}}"
+    },
+    "result": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "models": [],
+        "commands": [],
+        "realm": {
+          "controlled": true,
+          "closing": true,
+          "closed": false,
+          "processed": "1",
+          "retained": 0,
+          "completed": 1,
+          "epoch": "1",
+          "ingress": {
+            "pending": 1,
+            "capacity": 1,
+            "intents": [
+              {
+                "identity": "family:2",
+                "commands": [
+                  {
+                    "kind": "detach-delivery-ack",
+                    "binding": {
+                      "lifetime": "12618083744238620417",
+                      "session": "2",
+                      "frontend": "1"
+                    },
+                    "receiverEpoch": "1",
+                    "deliveryOrdinal": "1"
+                  }
+                ]
+              }
+            ]
+          },
+          "deferred": 0,
+          "deferredIntents": [],
+          "inputBlocked": false
+        },
+        "metadata": [],
+        "enrollment": [],
+        "feedback": []
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\":\"issued\",\"value\":{\"previewProtocol\":3,\"kind\":\"preview-control-ticket\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"controlOrdinal\":\"6\",\"alreadyDelivered\":false,\"wire\":\"{\\\"previewProtocol\\\":3,\\\"kind\\\":\\\"preview-commands\\\",\\\"binding\\\":{\\\"lifetime\\\":\\\"12618083744238620417\\\",\\\"session\\\":\\\"2\\\",\\\"frontend\\\":\\\"1\\\"},\\\"receiverEpoch\\\":\\\"1\\\",\\\"controlOrdinal\\\":\\\"6\\\",\\\"entries\\\":[{\\\"identity\\\":\\\"family:2\\\",\\\"commands\\\":[{\\\"kind\\\":\\\"detach-delivery-ack\\\",\\\"binding\\\":{\\\"lifetime\\\":\\\"12618083744238620417\\\",\\\"session\\\":\\\"2\\\",\\\"frontend\\\":\\\"1\\\"},\\\"receiverEpoch\\\":\\\"1\\\",\\\"deliveryOrdinal\\\":\\\"1\\\"}]}]}\"}}"
+    },
+    "result": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "models": [],
+        "commands": [],
+        "realm": {
+          "controlled": true,
+          "closing": true,
+          "closed": false,
+          "processed": "1",
+          "retained": 0,
+          "completed": 1,
+          "epoch": "1",
+          "ingress": {
+            "pending": 0,
+            "capacity": 1,
+            "intents": []
+          },
+          "deferred": 0,
+          "deferredIntents": [],
+          "inputBlocked": false
+        },
+        "metadata": [],
+        "enrollment": [],
+        "feedback": []
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\":\"closed\",\"value\":{\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\"}}"
+    },
+    "result": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "models": [],
+        "commands": [],
+        "realm": {
+          "controlled": true,
+          "closing": true,
+          "closed": true,
+          "processed": "1",
+          "retained": 0,
+          "completed": 1,
+          "epoch": "1",
+          "ingress": {
+            "pending": 0,
+            "capacity": 1,
+            "intents": []
+          },
+          "deferred": 0,
+          "deferredIntents": [],
+          "inputBlocked": false
+        },
+        "metadata": [],
+        "enrollment": [],
+        "feedback": []
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "close"
+    },
+    "result": {
+      "ok": true,
+      "code": 0,
+      "held": false
+    }
+  }
+]
