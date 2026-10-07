@@ -1091,3 +1091,42 @@ policy or changing the original native issuer and settlement authorities.
 - **WHEN** the JavaScriptCore context or owning process is lost or uncertain
 - **THEN** this component provides no model reconstruction or native grant reset authority
 - **AND** full context/process recovery and real WebKit/Core activation remain explicit gates
+
+### Requirement: Project visuals from the single immutable preview policy
+
+The system SHALL implement EARS CONTROL-030 while retaining the original
+preview/window lifecycle transitions and native effect/settlement authorities.
+
+#### Scenario: The same policy shows live and historical content
+- **GIVEN** an original authorized drawable and current presentation stamp
+- **WHEN** the original policy selects live or historical status
+- **THEN** the existing popup view and typed projection share that exact decision
+- **AND** the projection contains only the original drawable token and fidelity
+- **AND** it neither reconstructs a lifecycle model nor settles its known job
+
+#### Scenario: Preview metadata becomes concealed
+- **GIVEN** an original known job and owned frame pending physical retirement
+- **WHEN** locked scope, quarantine or exact detachment conceals the preview
+- **THEN** the projection removes its drawable and concealed preview metadata
+- **AND** original Unknown/retiring resources survive until exact terminal settlement
+- **AND** full desktop/surface-control concealment retains its separate policy gates
+
+#### Scenario: A projection changes domain or ordered membership
+- **GIVEN** an original native binding/epoch and ordered popup presentation
+- **WHEN** a projection changes its domain, duplicates/reorders rows or omits a row
+- **THEN** the pure decoder refuses the complete projection
+- **AND** it preserves original popup2051/bar259 and lossless UInt64 boundaries
+
+#### Scenario: Visual shape attempts an arbitrary URI or concealed metadata
+- **GIVEN** a closed live/historical/loading/unavailable visual union
+- **WHEN** a drawable lacks its original token/fidelity, fallback contains a frame,
+  or extra metadata, fields, malformed tokens or arbitrary URI values arrive
+- **THEN** the pure decoder refuses before producing a rendered projection
+- **AND** accepted labels render as bounded text through the shared view helper
+
+#### Scenario: CPU projection evidence is ready for integration
+- **GIVEN** compiled policy/decoder coupling and unchanged original control assertions
+- **WHEN** the actual host is prepared to switch away from its legacy Popup policy
+- **THEN** native authentic delivery order, current projection custody, renderer reload,
+  URI ownership and actual WebKit/Core/DOM behavior require separate acceptance
+- **AND** only one window/lifecycle policy may be activated

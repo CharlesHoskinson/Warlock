@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "eventId": "0f7037a063d94fb7b28038b6ac6b8abc",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-07T09:54:55.570618+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/warlock-preview-provider-v116",
+  "nextWork": [
+    "PROGRESS PUBLIC85 c026b4b106dc0c4e62b9aecdc853d5bf81931707 verified 3877 exact owned blobs. GUI116 persistent native-owned optimized JSC Elm policy; original single window policy unchanged. Actual C/JSC/native synthetic peer207/two epochs/unchanged Native grant/two fresh transport contexts/one policy/normal exits. Lifetime37/13 pre-grant faults/backpressure48/Quint8 selected/20 actual traces/405 states/three compiled guards/full110 retains108; five failed attempts held. Host library links but creates no worker or controlled route. Next typed renderer projection without another window policy, durable input custody/native sender channel/original ticket custody/retry and actual WebKit/Core activation. Uncertain live JSC/process recovery, delayed proposal expiry/revocation outcomes and all original release gates remain. Native130 legacy2518/278 remains actual baseline; no installed changes."
+  ],
+  "evidence": [
+    {
+      "path": "docs/warlock-preview/v93/component-report116.json",
+      "sha256": "3230d3316cab42f5acac4f4a76eaf52b24ddd8341fae4388e4da11d7de340fb5",
+      "size": 11242
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v116/component-manifest.json",
+      "sha256": "dc4efea0876b48b51d7abb05c1dbbe98300807da9747f3b8d8b81d5635420738",
+      "size": 916013
+    },
+    {
+      "path": "docs/warlock-repository/v85/publication/delivery.json",
+      "sha256": "c624cfc83b590ea4cda8c435dbd91f7a536f97215abdb678155ce22fd552a56c",
+      "size": 1297363
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

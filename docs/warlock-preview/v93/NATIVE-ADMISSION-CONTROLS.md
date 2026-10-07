@@ -528,3 +528,34 @@ alone SHALL NOT authorize destruction. This Elm notification SHALL remain
 separate from original native physical/processing/independent-confirmation gates.
 Recreated transport-context evidence SHALL NOT qualify actual WebKit reload,
 JavaScriptCore/process-loss recovery, captured resources or full release acceptance.
+
+EARS CONTROL-030: While the native-owned single Elm preview policy produces
+display data, its visual projection SHALL share the original lifecycle status,
+drawable authorization, metadata concealment, presentation-stamp and enabled-row
+decisions with the existing popup view. Its lifecycle transitions, known jobs,
+resource ownership, proposal retention and native issuance/settlement rules SHALL
+remain unchanged. A renderer SHALL receive typed visual data rather than another
+window/lifecycle model, original jobs, pending effects or diagnostic metadata.
+
+When a visual projection is decoded, the decoder SHALL require its original
+native binding/receiver epoch, closed protocol/field union and exactly the original
+ordered popup identities. It SHALL preserve the original popup2051/bar259 limits
+and lossless UInt64 strings. Only nonzero original 64-character lowercase opaque
+tokens SHALL form fixed preview/icon URIs. Live/historical shapes SHALL contain
+the original drawable token/fidelity without fallback title/icon metadata;
+loading/unavailable shapes SHALL contain no frame/fidelity. Hidden/fallback/local
+states SHALL remain distinct closed variants. Text SHALL preserve the original
+1024-byte preview-label bound and render as text without arbitrary HTML/URI fields.
+
+When the original preview policy conceals a locked, quarantined or detached
+preview, the visual projection SHALL omit its concealed preview metadata and
+drawable token while leaving Unknown, known jobs and physical retirement intact.
+Concealment of surface controls and the full desktop SHALL retain their separate
+original presentation-policy gates; this preview DTO SHALL NOT invent those proofs.
+
+When a pure renderer decoder or projection helper is qualified, that evidence
+SHALL NOT establish actual DOM/WebKit rendering, URI capability reads, native
+pixels, delivery ordering, resource budgets or full release acceptance. Before
+activation, native host custody SHALL deliver only the current typed visual
+projection through an authenticated original-domain channel with explicit
+ordering/reload/concealment barriers, preserving the single policy authority.

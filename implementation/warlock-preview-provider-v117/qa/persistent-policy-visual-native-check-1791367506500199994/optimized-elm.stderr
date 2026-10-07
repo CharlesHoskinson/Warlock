@@ -1,0 +1,16 @@
+-- SHADOWING ------------------------------------------- src/SurfaceRenderer.elm
+
+The name `identities` is first defined here:
+
+46| identities popup (Snapshot snapshot) = List.map .identity (if popup then snapshot.popup else snapshot.bar)
+    ^^^^^^^^^^
+But then it is defined AGAIN over here:
+
+32|             identities = List.map .identity all
+                ^^^^^^^^^^
+Think of a more helpful name for one of them and you should be all set!
+
+Note: Linters advise against shadowing, so Elm makes “best practices” the
+default. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this
+choice.
+

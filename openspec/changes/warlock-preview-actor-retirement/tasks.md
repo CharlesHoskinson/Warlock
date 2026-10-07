@@ -358,3 +358,18 @@ original108. Five failed attempts held. Actual host library links but does not
 create a worker or switch Popup routes. Renderer projection without another
 policy, durable host input/ticket custody, WebKit/Core activation, uncertain live
 worker/process recovery and all original release gates remain open.
+
+- [x] Freeze CONTROL-030 shared typed visual projection, pure domain/shape decoder,
+      original policy identity, current C/JSC coupling and additive full build.
+- [ ] Implement authenticated native projection custody, delivery order and
+      renderer reload/concealment barriers without another window/lifecycle policy.
+- [ ] Qualify shared visual rendering and control concealment on actual WebKit,
+      captured URI capability reads and the owning Core/plugin/window tuple.
+
+GUI117 CPU projection: original C/JSC/native207 plus90 pure visual comparisons,
+codec101, client/family display150 with explicit synthetic native facts/normal
+exits; current lifetime37/13 faults/backpressure48/Quint8/20 actual C+JSC traces/
+405 states/three guards/full112 retains110. Original lifecycle/native issuance/
+physical transitions remain unchanged. Three compile failures held. Actual DOM,
+current-projection delivery ordering/custody, controlled host/WebKit/Core/URI
+activation and all original full release gates remain open.

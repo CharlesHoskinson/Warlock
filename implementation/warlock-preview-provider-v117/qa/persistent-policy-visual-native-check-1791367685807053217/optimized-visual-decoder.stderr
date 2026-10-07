@@ -1,0 +1,21 @@
+-- TYPE MISMATCH ----------------------------- src/NativePreviewVisualReplay.elm
+
+The 3rd branch of this `case` does not match all the previous branches:
+
+15|     let result = case D.decodeValue (D.field "kind" D.string) raw of
+16|             Ok "visual" -> D.decodeValue (D.field "value" PreviewVisual.decoder) raw |> Result.map PreviewVisual.encode
+17|             Ok "projection" -> D.decodeValue (D.field "domain" Realm.domainDecoder) raw |> Result.andThen (\authority -> D.decodeValue (D.field "value" (Visual.decoder authority)) raw) |> Result.map Visual.encode
+18|             _ -> Err "Closed visual replay kind"
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This `Err` call produces:
+
+    Result String E.Value
+
+But all the previous branches result in:
+
+    Result D.Error E.Value
+
+Hint: All branches in a `case` must produce the same type of values. This way,
+no matter which branch we take, the result is always a consistent shape. Read
+<https://elm-lang.org/0.19.2/custom-types> to learn how to “mix” types.
+

@@ -1,0 +1,11 @@
+"""Materialize exact C/JSC visual lifecycle controls with synthetic native facts."""
+import ast,pathlib,resource,sys
+sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
+require_qa_scope();assert resource.getrlimit(resource.RLIMIT_CORE)==(1,1)
+root=pathlib.Path('/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v117');s=(root/'qa/persistent-policy-visual-native-check.py').read_text()
+s=s.replace('persistent-policy-visual-native-check-','visual-policy-check-').replace('qa/persistent-policy-visual-native-check.py','qa/visual-policy-check.py').replace('qa/persistent-policy-visual-roundtrip.js','qa/visual-policy-checks.js')
+a=s.index(' run(\'compile-c-owner\'');b=s.index('except Exception as e:',a)
+s=s[:a]+" run('compile-c-owner',['g++','-std=c++20','-O1','-Wall','-Wextra','-Werror','-fsanitize=address,undefined','-fno-omit-frame-pointer','-Inative','native/persistent-policy-lifetime-fixture.cpp','native/elm-preview-policy.cpp','-o',str(out/'checks'),*flags])\n e=json.loads(run('actual-jsc-visual-policy',['node','qa/visual-policy-checks.js',str(binary),str(out/'checks'),str(decoder),'qa/native-source-fixture.json']))\n assert e['passed'] and e['actualNativeOwnedJSC'] and e['singleWindowPolicyPerFixture'] and e['syntheticNativeFacts'] and e['normalOwnedExits']==2 and not e['actualDOM'] and not e['actualCapturedFD'];verify()\n assert sha(plugin)==external and all(sha(root/n)==v for n,v in report['inputs'].items());report.update(passed=True,evidence=e)\n"+s[b:]
+old="'scope':'";a=s.index(old)+len(old);b=s.index("'}",a);s=s[:a]+'Actual native-owned optimized C/JSC Elm worker with client/family live, historical, locked-unavailable and quarantined/detached hidden visual projections roundtripped through a pure compiled DTO decoder. Native ticket, offer, scope, terminal and close facts are explicitly synthetic. Preview concealment retains original Unknown/retiring resources; no actual DOM/captured FD or native/full release acceptance.'+s[b:]
+s=s.replace("'qa/toolchain.json']","'qa/toolchain.json','qa/native-source-fixture.json']")
+ast.parse(s);p=root/'qa/visual-policy-check.py';assert not p.exists();p.write_text(s);print(p)

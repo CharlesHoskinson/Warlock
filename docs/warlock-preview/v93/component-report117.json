@@ -1,0 +1,103 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "sourceHeld": true,
+  "passed": true,
+  "evidenceIntegrityPassed": true,
+  "reports": {
+    "nativeElmOutbox": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v117/qa/persistent-policy-visual-native-check-1791367865174261140/report.json",
+      "sha256": "ac2c5692ee26a032e3ab70f0273912dce88809220ff652d22187d73098455f88"
+    },
+    "visualCodec": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v117/qa/visual-codec-check-1791367865172810846/report.json",
+      "sha256": "663ef089a401657794ff4e1e31c767ee6e1a44a8e49b3b6ff9fd25e2ca52b2c6"
+    },
+    "visualPolicy": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v117/qa/visual-policy-check-1791368330476360072/report.json",
+      "sha256": "7a3e0adf53e2368ba53ebaccb3250a640eca2b33592f6589bfab8bfa6e9d4513"
+    },
+    "lifetime": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v117/qa/persistent-policy-lifetime-check-1791368137362036835/report.json",
+      "sha256": "7c0615932637e544fbc8d4244e0e4980e8560a519abe1ea2604873e5ef8eb44c"
+    },
+    "backpressure": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v117/qa/persistent-policy-backpressure-check-1791368137361009462/report.json",
+      "sha256": "614d1cd6d6ed64bba540a37c8c1853e9cfaf7595310e85ff340a38713d7a474d"
+    },
+    "build": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v117/qa/build-1791368137355277472/report.json",
+      "sha256": "84d2bfc0b6995877a1ba496910822a7a1753747281c7ab22c662fc6deb92f4e1"
+    }
+  },
+  "historicalPhaseReports": [
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v117/qa/persistent-policy-visual-native-check-1791367506500199994/report.json",
+      "sha256": "983b6cad391947fc6a1203a852aa35b6847d6eb57abe9950b90a27e4f646edbf",
+      "passed": false,
+      "qualifiesFinalSource": false
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v117/qa/persistent-policy-visual-native-check-1791367685807053217/report.json",
+      "sha256": "20d0311cd8ee1b8d67c573a73dbc465aeba5787462973c431fac74526e710925",
+      "passed": false,
+      "qualifiesFinalSource": false
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v117/qa/visual-codec-check-1791367806362187749/report.json",
+      "sha256": "c18b79a6ce9d0bd8893cec6c8592493f2f4a0187b27850ebe2e3666731323897",
+      "passed": false,
+      "qualifiesFinalSource": false
+    }
+  ],
+  "heldFailedReports": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v117/qa/persistent-policy-visual-native-check-1791367506500199994/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v117/qa/persistent-policy-visual-native-check-1791367685807053217/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v117/qa/visual-codec-check-1791367806362187749/report.json"
+  ],
+  "singlePreviewPolicy": true,
+  "originalLifecycleTransitionsUnchanged": true,
+  "sharedVisualDecisionsImplemented": true,
+  "typedVisualProjectionImplemented": true,
+  "pureRendererDecoderWindowPolicies": 0,
+  "nativeOwnedJavaScriptCore": true,
+  "persistentPolicyContexts": 1,
+  "freshTransportContexts": 2,
+  "nativeElmOutboxChecks": 207,
+  "additiveVisualProjectionChecks": 90,
+  "visualDecoderChecks": 101,
+  "visualPolicyChecks": 150,
+  "visualPolicyFactsSynthetic": true,
+  "lifetimeBoundaryChecks": 37,
+  "constructorFaults": 13,
+  "backpressureChecks": 48,
+  "lifetimeScenarios": 8,
+  "lifetimeTraces": 20,
+  "lifetimeStates": 405,
+  "lifetimeSamples": 200,
+  "lifetimeCompiledNativeVariantsDetected": 3,
+  "realmEpochs": 2,
+  "nativeGrantResets": 0,
+  "fullBuildCommands": 112,
+  "originalBuildCommands": 110,
+  "parentNativeIssuerAndPhysicalProductUnchanged": true,
+  "parentAssetsAndAdaptersUnchanged": true,
+  "parentManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v116/component-manifest.json",
+  "parentManifestSHA256": "dc4efea0876b48b51d7abb05c1dbbe98300807da9747f3b8d8b81d5635420738",
+  "visualProjectionCPUQualified": true,
+  "hostLibraryLinked": true,
+  "realHostPolicyActivated": false,
+  "actualRendererProjectionActivated": false,
+  "actualDOMQualified": false,
+  "projectionDeliveryOrderingQualified": false,
+  "nativeDelayedProposalLivenessQualified": false,
+  "realHostInputBackpressureQualified": false,
+  "uncertainLiveWorkerRecoveryQualified": false,
+  "fullElmRecoveryQualified": false,
+  "typedHostRoutingActivated": false,
+  "webKitActivated": false,
+  "actualWaylandWindowAcceptance": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "GUI117 projects the original retained immutable preview policy into typed visual\ndata. PreviewLifecycle and PreviewPresenter share their original view decisions\nwith PreviewVisual: the same status/drawable authorization, metadata concealment,\npresentation stamp and enabled-row guard feed both the existing popup view and\nDTO. All lifecycle/native scope transitions, known jobs, physical retirement,\nintent retention, native purpose issuance and strict close remain unchanged.\n\nNativePreviewPolicy adds a seventh private output field, visuals. Before a native\ngrant this is null. Under a grant it carries the original binding/receiver epoch,\nexact accepted surface presentation and one ordered visual row per popup control.\nIt exposes no lifecycle job, scope, pending effect, ordinal or private diagnostic\nmetadata. The full diagnostic output stays private to native; future host delivery\nmust select only this visual field. Pure NativePreviewVisual validates and renders\nthe DTO using the same PreviewVisual/SurfaceRenderer helpers. Its decoder/replay\nimports no window/lifecycle policy and creates none. No new browser route is active.\n\nThe closed visual union distinguishes hidden, metadata-only fallback, local\nadmission status and lifecycle display. Drawable live/historical rows contain only\nopaque frame/fidelity, without fallback title/icon. Loading/unavailable rows carry\nfallback text/icon without frame/fidelity. Locked policy suppresses preview title,\nicon and frame; quarantine/detachment share the original hidden stamp decision.\nUnknown and retirement remain in the single original policy. Surface-control\nlabels are the existing presentation's separate authority; full desktop/control\nconcealment is not qualified by this preview DTO.\n\nThe pure decoder requires an exact original native domain, closed protocol/fields\nand original ordered popup identities. It preserves popup2051/bar259 rather than\nintroducing a lower preview/transport limit. UInt64 identities stay strings;\nopaque tokens remain original nonzero64 lowercase hex, fixed scheme prefixes;\npreview text stays <=1024 UTF8 bytes and renders as text. Raw URI/HTML/job/extra\nmetadata fields refuse. Null surface with empty rows represents no presentation.\n\nCurrent bounded CPU qualification (sanitizers stay enabled):\n- All original207 actual C/native-owned JSC/optimized Elm/packetizer/outbox controls\n  remain, with90 additive pure visual projection comparisons. Two realm epochs,\n  unchanged Native grant, same synthetic Active subject, two fresh JS transport\n  contexts, one persistent policy, zero renderer window policies, normal exits.\n- 101 compiled pure visual decoder boundaries include closed unions, text bytes,\n  arbitrary URI/malformed token refusals, wrong domain and ordered membership,\n  original maximum capacities and lossless maximum UInt64 values.\n- 150 actual C/JSC single-policy display controls cover client and family loading,\n  live, historical, locked-unavailable, quarantine-hidden and detached-hidden.\n  Concealment retains the original known/retiring frame; exact synthetic terminal\n  receipt settles it. Two fixtures exit normally. Native ticket/offer/scope/terminal/\n  close facts are explicitly synthetic: this proves no actual captured FD/pixels.\n- Current lifetime37/13 pre-grant faults and original capacity-one backpressure48\n  pass. Current explicitly selected lifetime Quint8/20 actual C+JSC traces/405\n  states/200 invariant samples detect three compiled native guard variants.\n- Full112 commands retain all original110 and add pure decoder compilation/\n  boundaries. Existing Popup remains the legacy window-policy route; native\n  worker/controlled renderer routing is inactive. Source/host/package/tools/\n  dependencies/linked libraries are held at exact identities.\n\nThree failed compile attempts remain with original inputs: new SurfaceRenderer\naccessor shadowing an existing local identifier, and two runners encountering a\nreplay error-type mismatch. Only the new accessor/replay fixture changed. No\nscenario, original oracle/deadline, native resource gate or sanitizer was weakened.\n\nActual DOM markup/image/focus, renderer delivery ordering, stable URI reader\nownership, native current-projection/input/ticket custody and WebKit reload remain\nunqualified. The DTO/helper alone has no freshness/reload channel or policy\nreconstruction authority. Qualify a native-owned ordered authenticated channel\nand latest projection custody before activating it; never instantiate another\nwindow policy in a browser. Unknown live JSC/process recovery, delayed proposal\nexpiry/revocation outcomes, actual controlled permanent retirement, Core FD/render/\nfence/readers, >256 actual native windows and every original release gate remain.\nNative130 GUI110 legacy/core16/plugin19/AQ1552518/278/full cleanup remains the actual\nbounded native baseline. Installed desktop, drafts and foreign worker paths stay.\n"
+}

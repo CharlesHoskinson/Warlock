@@ -268,3 +268,28 @@ bounded retry. Real WebKit/Core/window activation, live uncertain JSC/process
 recovery, delayed expiry/revocation outcome/order and every original full release
 gate remain open. Native130 GUI110 legacy/core16/plugin19/AQ1552518/278/full cleanup
 remains the actual bounded baseline; installed desktop/drafts/foreign paths preserved.
+
+GUI116 PUBLIC85 c026b4b106dc0c4e62b9aecdc853d5bf81931707/3877 exact owned blobs;
+source2fcb2afdbd87a3d0cfba5b09233eb47e94e76091;
+receipt81205931d581c2ba5e4e9f4dfc4f6efb11fbe339.
+GUI117 held shared typed visual projection. Original lifecycle/native transitions
+remain byte-identical around refactored view-only helpers. The legacy Popup view
+and typed DTO share status/drawable/concealment/presentation-stamp/enabled-row
+decisions. Native policy output adds private visuals; a pure renderer decoder
+requires original native domain/closed fields/ordered identities and preserves
+popup2051/bar259/text bytes/opaque tokens/lossless UInt64. No second window policy.
+Current original C/JSC/native207 plus90 visual comparisons/two epochs/unchanged
+Native grant/two transport contexts/one policy/normal exits; codec101; client/family
+display150 with explicitly synthetic tickets/offers/scope/terminal/close facts and
+normal exits. Concealment retains known/retiring resources. Current lifetime37/13
+faults/backpressure48/Quint8/20 actual C+JSC traces/405 states/200 samples/three
+compiled guards; full112 retains110. Three compile failures remain at snapshots.
+3161 manifest files; CONTROL030/OpenSpec five scenarios. See component-report117
+and GUI117/VISUAL-PROJECTION-HANDOFF.md. Actual native issuer/physical products,
+assets/adapters remain unchanged except private output union; no browser/host
+activation or real DOM/captured FD follows. Next PUBLIC86, then native ordered
+authenticated current-projection custody and durable input/native-issued-ticket
+custody/retry before real WebKit/Core/URI/reload activation. Full desktop/control
+concealment, uncertain live JSC/process recovery, delayed proposal expiry/revocation
+outcomes and all original full release gates remain separate. Native130 remains
+actual bounded legacy2518/278 on core16/plugin19/AQ155; installed/foreign paths stay.
