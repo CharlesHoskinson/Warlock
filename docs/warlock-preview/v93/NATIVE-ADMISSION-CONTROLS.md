@@ -442,3 +442,26 @@ Active-subject epochs on unchanged Native grant; Quint20/32/469/six compiled
 variants; cold256/1549; original permanent45/native20+C34/model14/34/667;
 full103 retains98. Eight failed attempts and earlier phase snapshots remain.
 Actual controlled shared-host/WebKit/Core activation and full Elm recovery open.
+
+EARS CONTROL-027: When the native owner receives an Elm preview proposal,
+it SHALL validate the exact closed protocol/kind/Native binding/receiver epoch
+envelope, creator thread, original popup and borrowed receipt capability before
+issuing a native purpose ticket. Each ingress SHALL contain one original member
+row and one original command within the unchanged4096-byte budget. Foreign,
+malformed, oversized, empty or aggregate envelopes and renderer-assigned ordinal
+fields SHALL refuse without consuming a native ordinal or changing original
+job/resource obligations. The original native purpose guards SHALL remain
+mandatory for every accepted command, and exact duplicate proposal retries
+SHALL retain their original native ticket bytes and ordinal. Pure renderer
+packetization SHALL validate the whole ordered policy output before returning
+singleton wires and SHALL NOT allocate ordinals, settle an effect or mutate Elm
+state. Actual Popup realm ports SHALL delegate to the existing PreviewPresenter
+and SHALL NOT reconstruct a second preview policy. Compiling those ports SHALL
+remain distinct from activating and qualifying real shared-host/WebKit routes.
+
+Before activating that route, lost proposals before native issuance require an
+explicit retained ingress/issued-ticket handoff. The post-issuance outbox cannot
+recover a command that never reached native. Neither an emitted readiness flag
+nor an empty native ticket inventory can certify that delivery. Transport-only
+context recovery retains a still-existing Elm policy; actual WebKit context loss
+requires separately qualified recovery of that policy and its outstanding work.

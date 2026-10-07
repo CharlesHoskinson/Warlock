@@ -1,0 +1,16 @@
+
+  native_realm_ingress_tests
+    ok currentEnvelopeIssuesNativePurpose passed 1 test(s)
+    ok exactDuplicateRetainsOriginalOrdinal passed 1 test(s)
+    ok foreignEpochConsumesNoOrdinal passed 1 test(s)
+    ok foreignBindingConsumesNoOrdinal passed 1 test(s)
+    ok extraHeaderConsumesNoOrdinal passed 1 test(s)
+    ok aggregateCannotPartiallyIssue passed 1 test(s)
+    ok emptyEnvelopeConsumesNoOrdinal passed 1 test(s)
+    ok malformedCommandConsumesNoOrdinal passed 1 test(s)
+    ok numericEpochConsumesNoOrdinal passed 1 test(s)
+    ok rendererOrdinalConsumesNoOrdinal passed 1 test(s)
+    ok oversizedIngressConsumesNoOrdinal passed 1 test(s)
+    ok refusalPreservesAlreadyIssuedPurpose passed 1 test(s)
+
+  12 passing (10ms)

@@ -312,3 +312,15 @@ No actual WebKit context loss, Core/window acceptance or full release follows.
       explicit Quint scenarios and unchanged permanent-retirement regressions.
 - [ ] Activate trusted realm routes in the real shared host and qualify actual
       WebKit/Core/Wayland-window detachment, replacement and full Elm recovery.
+
+- [x] Freeze CONTROL-027 exact native proposal ingress, pure ordered packetization
+      and actual Popup typed port delegation with current coupled/native guards.
+- [ ] Implement and qualify retention when an Elm proposal is lost before native
+      ticket issuance, then activate the real host routes and WebKit ownership.
+
+GUI114 qualifies native ingress192, pure packetization43, Quint12/22 actual C
+traces/300 states/200 samples/five compiled admission variants and full104
+retaining103. All four current resource and four scoped suites pass. Popup typed
+ports compile;actual WebKit execution remains unqualified. One failed runner
+anchor attempt remains. Pre-issuance proposal retention, actual host activation
+and full Elm context recovery remain open.

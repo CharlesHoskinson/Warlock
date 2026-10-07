@@ -1,0 +1,601 @@
+An example execution:
+
+[State 0] { s: { accepted: false, history: [], issued: 0 } }
+
+[State 1] { s: { accepted: false, history: ["EmptyRows"], issued: 0 } }
+
+[State 2]
+{ s: { accepted: false, history: ["EmptyRows", "ForeignBinding"], issued: 0 } }
+
+[State 3]
+{
+  s:
+    {
+      accepted: false,
+      history: ["EmptyRows", "ForeignBinding", "MalformedCommand"],
+      issued: 0
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        ["EmptyRows", "ForeignBinding", "MalformedCommand", "OrdinalHeader"],
+      issued: 0
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "EmptyRows",
+          "ForeignBinding",
+          "MalformedCommand",
+          "OrdinalHeader",
+          "ForeignEpoch"
+        ],
+      issued: 0
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "EmptyRows",
+          "ForeignBinding",
+          "MalformedCommand",
+          "OrdinalHeader",
+          "ForeignEpoch",
+          "ExtraHeader"
+        ],
+      issued: 0
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "EmptyRows",
+          "ForeignBinding",
+          "MalformedCommand",
+          "OrdinalHeader",
+          "ForeignEpoch",
+          "ExtraHeader",
+          "ForeignBinding"
+        ],
+      issued: 0
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "EmptyRows",
+          "ForeignBinding",
+          "MalformedCommand",
+          "OrdinalHeader",
+          "ForeignEpoch",
+          "ExtraHeader",
+          "ForeignBinding",
+          "ExtraHeader"
+        ],
+      issued: 0
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "EmptyRows",
+          "ForeignBinding",
+          "MalformedCommand",
+          "OrdinalHeader",
+          "ForeignEpoch",
+          "ExtraHeader",
+          "ForeignBinding",
+          "ExtraHeader",
+          "MultipleRows"
+        ],
+      issued: 0
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      accepted: true,
+      history:
+        [
+          "EmptyRows",
+          "ForeignBinding",
+          "MalformedCommand",
+          "OrdinalHeader",
+          "ForeignEpoch",
+          "ExtraHeader",
+          "ForeignBinding",
+          "ExtraHeader",
+          "MultipleRows",
+          "Valid"
+        ],
+      issued: 1
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "EmptyRows",
+          "ForeignBinding",
+          "MalformedCommand",
+          "OrdinalHeader",
+          "ForeignEpoch",
+          "ExtraHeader",
+          "ForeignBinding",
+          "ExtraHeader",
+          "MultipleRows",
+          "Valid",
+          "OrdinalHeader"
+        ],
+      issued: 1
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "EmptyRows",
+          "ForeignBinding",
+          "MalformedCommand",
+          "OrdinalHeader",
+          "ForeignEpoch",
+          "ExtraHeader",
+          "ForeignBinding",
+          "ExtraHeader",
+          "MultipleRows",
+          "Valid",
+          "OrdinalHeader",
+          "Oversized"
+        ],
+      issued: 1
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "EmptyRows",
+          "ForeignBinding",
+          "MalformedCommand",
+          "OrdinalHeader",
+          "ForeignEpoch",
+          "ExtraHeader",
+          "ForeignBinding",
+          "ExtraHeader",
+          "MultipleRows",
+          "Valid",
+          "OrdinalHeader",
+          "Oversized",
+          "MalformedCommand"
+        ],
+      issued: 1
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      accepted: true,
+      history:
+        [
+          "EmptyRows",
+          "ForeignBinding",
+          "MalformedCommand",
+          "OrdinalHeader",
+          "ForeignEpoch",
+          "ExtraHeader",
+          "ForeignBinding",
+          "ExtraHeader",
+          "MultipleRows",
+          "Valid",
+          "OrdinalHeader",
+          "Oversized",
+          "MalformedCommand",
+          "Valid"
+        ],
+      issued: 1
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "EmptyRows",
+          "ForeignBinding",
+          "MalformedCommand",
+          "OrdinalHeader",
+          "ForeignEpoch",
+          "ExtraHeader",
+          "ForeignBinding",
+          "ExtraHeader",
+          "MultipleRows",
+          "Valid",
+          "OrdinalHeader",
+          "Oversized",
+          "MalformedCommand",
+          "Valid",
+          "ExtraHeader"
+        ],
+      issued: 1
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "EmptyRows",
+          "ForeignBinding",
+          "MalformedCommand",
+          "OrdinalHeader",
+          "ForeignEpoch",
+          "ExtraHeader",
+          "ForeignBinding",
+          "ExtraHeader",
+          "MultipleRows",
+          "Valid",
+          "OrdinalHeader",
+          "Oversized",
+          "MalformedCommand",
+          "Valid",
+          "ExtraHeader",
+          "ExtraHeader"
+        ],
+      issued: 1
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "EmptyRows",
+          "ForeignBinding",
+          "MalformedCommand",
+          "OrdinalHeader",
+          "ForeignEpoch",
+          "ExtraHeader",
+          "ForeignBinding",
+          "ExtraHeader",
+          "MultipleRows",
+          "Valid",
+          "OrdinalHeader",
+          "Oversized",
+          "MalformedCommand",
+          "Valid",
+          "ExtraHeader",
+          "ExtraHeader",
+          "Oversized"
+        ],
+      issued: 1
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "EmptyRows",
+          "ForeignBinding",
+          "MalformedCommand",
+          "OrdinalHeader",
+          "ForeignEpoch",
+          "ExtraHeader",
+          "ForeignBinding",
+          "ExtraHeader",
+          "MultipleRows",
+          "Valid",
+          "OrdinalHeader",
+          "Oversized",
+          "MalformedCommand",
+          "Valid",
+          "ExtraHeader",
+          "ExtraHeader",
+          "Oversized",
+          "MultipleRows"
+        ],
+      issued: 1
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "EmptyRows",
+          "ForeignBinding",
+          "MalformedCommand",
+          "OrdinalHeader",
+          "ForeignEpoch",
+          "ExtraHeader",
+          "ForeignBinding",
+          "ExtraHeader",
+          "MultipleRows",
+          "Valid",
+          "OrdinalHeader",
+          "Oversized",
+          "MalformedCommand",
+          "Valid",
+          "ExtraHeader",
+          "ExtraHeader",
+          "Oversized",
+          "MultipleRows",
+          "EmptyRows"
+        ],
+      issued: 1
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "EmptyRows",
+          "ForeignBinding",
+          "MalformedCommand",
+          "OrdinalHeader",
+          "ForeignEpoch",
+          "ExtraHeader",
+          "ForeignBinding",
+          "ExtraHeader",
+          "MultipleRows",
+          "Valid",
+          "OrdinalHeader",
+          "Oversized",
+          "MalformedCommand",
+          "Valid",
+          "ExtraHeader",
+          "ExtraHeader",
+          "Oversized",
+          "MultipleRows",
+          "EmptyRows",
+          "EmptyRows"
+        ],
+      issued: 1
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      accepted: true,
+      history:
+        [
+          "EmptyRows",
+          "ForeignBinding",
+          "MalformedCommand",
+          "OrdinalHeader",
+          "ForeignEpoch",
+          "ExtraHeader",
+          "ForeignBinding",
+          "ExtraHeader",
+          "MultipleRows",
+          "Valid",
+          "OrdinalHeader",
+          "Oversized",
+          "MalformedCommand",
+          "Valid",
+          "ExtraHeader",
+          "ExtraHeader",
+          "Oversized",
+          "MultipleRows",
+          "EmptyRows",
+          "EmptyRows",
+          "Valid"
+        ],
+      issued: 1
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "EmptyRows",
+          "ForeignBinding",
+          "MalformedCommand",
+          "OrdinalHeader",
+          "ForeignEpoch",
+          "ExtraHeader",
+          "ForeignBinding",
+          "ExtraHeader",
+          "MultipleRows",
+          "Valid",
+          "OrdinalHeader",
+          "Oversized",
+          "MalformedCommand",
+          "Valid",
+          "ExtraHeader",
+          "ExtraHeader",
+          "Oversized",
+          "MultipleRows",
+          "EmptyRows",
+          "EmptyRows",
+          "Valid",
+          "Oversized"
+        ],
+      issued: 1
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "EmptyRows",
+          "ForeignBinding",
+          "MalformedCommand",
+          "OrdinalHeader",
+          "ForeignEpoch",
+          "ExtraHeader",
+          "ForeignBinding",
+          "ExtraHeader",
+          "MultipleRows",
+          "Valid",
+          "OrdinalHeader",
+          "Oversized",
+          "MalformedCommand",
+          "Valid",
+          "ExtraHeader",
+          "ExtraHeader",
+          "Oversized",
+          "MultipleRows",
+          "EmptyRows",
+          "EmptyRows",
+          "Valid",
+          "Oversized",
+          "ExtraHeader"
+        ],
+      issued: 1
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "EmptyRows",
+          "ForeignBinding",
+          "MalformedCommand",
+          "OrdinalHeader",
+          "ForeignEpoch",
+          "ExtraHeader",
+          "ForeignBinding",
+          "ExtraHeader",
+          "MultipleRows",
+          "Valid",
+          "OrdinalHeader",
+          "Oversized",
+          "MalformedCommand",
+          "Valid",
+          "ExtraHeader",
+          "ExtraHeader",
+          "Oversized",
+          "MultipleRows",
+          "EmptyRows",
+          "EmptyRows",
+          "Valid",
+          "Oversized",
+          "ExtraHeader",
+          "NumericEpoch"
+        ],
+      issued: 1
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      accepted: false,
+      history:
+        [
+          "EmptyRows",
+          "ForeignBinding",
+          "MalformedCommand",
+          "OrdinalHeader",
+          "ForeignEpoch",
+          "ExtraHeader",
+          "ForeignBinding",
+          "ExtraHeader",
+          "MultipleRows",
+          "Valid",
+          "OrdinalHeader",
+          "Oversized",
+          "MalformedCommand",
+          "Valid",
+          "ExtraHeader",
+          "ExtraHeader",
+          "Oversized",
+          "MultipleRows",
+          "EmptyRows",
+          "EmptyRows",
+          "Valid",
+          "Oversized",
+          "ExtraHeader",
+          "NumericEpoch",
+          "ForeignBinding"
+        ],
+      issued: 1
+    }
+}
+
+[ok] No violation found (143ms at 1399 traces/second).
+Trace length statistics: max=26, min=26, average=26.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

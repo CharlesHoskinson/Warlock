@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "sourceHeld": true,
+  "passed": true,
+  "evidenceIntegrityPassed": true,
+  "reports": {
+    "nativeElmOutbox": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v114/qa/realm-ingress-native-check-1791359225978208807/report.json",
+      "sha256": "99b31ab55d2888d3443f221f0b8c6258e08a93c96ed12ce315acec841d640249"
+    },
+    "packetizer": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v114/qa/native-proposals-check-1791359320008832665/report.json",
+      "sha256": "13e2c597277e8b8e8cd19c9ff76bbf431786fec0656090da76263cc43b845d45"
+    },
+    "model": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v114/qa/native-ingress-model-check-v2-1791359714937810894/report.json",
+      "sha256": "78456fe21a8629b5c19c78ad6e460cf50cb5f3a246cb27ebf037f8aff68f21b8"
+    },
+    "build": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v114/qa/build-1791359262569976596/report.json",
+      "sha256": "eba54d79ad321f2c0df95da6cd827b0aae73da0f4013d8949f23ffd8f57ffbb1"
+    },
+    "resource": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v114/qa/resource-regression-check-1791359262571504449/report.json",
+      "sha256": "ce3e250c83475e22302b3e3cfefd9b20347f00a3850cc12683e8792797a1f250"
+    },
+    "scoped": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v114/qa/detachment-regression-check-1791359262570618901/report.json",
+      "sha256": "ac9d89b91925b51ab4fe5d3dad818672c57d24d58ef0b0f904775e76fa97b9bd"
+    }
+  },
+  "historicalPhaseReports": [
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v114/qa/native-ingress-model-check-1791359544142924969/report.json",
+      "sha256": "9e8d6acb3f8437cff2a916a67c5f21c7aa78faacd04ca8b126a0e4a9fb45806e",
+      "passed": false,
+      "qualifiesFinalSource": false
+    }
+  ],
+  "heldFailedReports": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v114/qa/native-ingress-model-check-1791359544142924969/report.json"
+  ],
+  "singlePreviewPolicy": true,
+  "nativeProposalIngressImplemented": true,
+  "pureProposalPacketizerImplemented": true,
+  "popupTypedPortsCompiled": true,
+  "popupTypedPortsWebKitExecuted": false,
+  "nativeElmOutboxChecks": 192,
+  "packetizerChecks": 43,
+  "realmEpochs": 2,
+  "nativeGrantResets": 0,
+  "ingressScenarios": 12,
+  "ingressTraces": 22,
+  "ingressStates": 300,
+  "ingressSamples": 200,
+  "unsafeCompiledNativeVariantsDetected": 5,
+  "fullBuildCommands": 104,
+  "originalBuildCommands": 103,
+  "resourceRegressionSuites": 4,
+  "scopedRegressionSuites": 4,
+  "parentPresenterUnchanged": true,
+  "parentAdapterAndLegacyAssetsUnchanged": true,
+  "parentManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v113/component-manifest.json",
+  "parentManifestSHA256": "cc2062840045f206a3b061ea649473906d7eb2902b632e368c223b0ed09d15fb",
+  "proposalRetentionQualified": false,
+  "fullElmRecoveryQualified": false,
+  "typedHostRoutingActivated": false,
+  "webKitActivated": false,
+  "actualWaylandWindowAcceptance": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "freezerAttemptRetained": "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v93/hold114-attempt1.json",
+  "scope": "GUI114 adds an exact native realm proposal entry point and a pure ordered\nsingleton packetizer. Native validates the original creator thread, popup,\nborrowed delivery capability, binding and receiver epoch before passing a\nsingleton command to the existing purpose issuer. Refused malformed, foreign,\naggregate or oversized envelopes consume no ticket ordinal and cannot mutate\nthe original broker job. Exact duplicates retain original native ticket bytes.\n\nActual Popup now delegates decoded realm grant, event, quarantine and close\nports to the existing single immutable PreviewPresenter. The full host build\ncompiles this Popup; its typed ports have not yet executed in actual WebKit.\nThe actual coupled policy witness is the optimized ScopedPreviewPresenterReplay\nworker, the current C Bootstrap/Native with an authenticated synthetic peer,\nthe pure packetizer and the existing native-issued recovered JS transport.\n\nCurrent qualification:192 native/Elm/transport checks across two receiver\nepochs with no Native grant reset, the same synthetic Active subject and normal\nowned exits;43 pure packetization boundary checks;12 explicitly selected Quint\nscenarios,22 actual compiled C traces,300 state comparisons,200 bounded samples\nand five detected compiled native admission variants. The104-command build\nretains all103 original commands. All four original resource and four scoped\ndetachment regression suites pass on this changed native source. One failed\nmodel runner attempt remains:its aggregate mutation anchor matched two guards,\nso it refused before mutating or compiling that variant. The fresh runner uses\nthe exact new ingress guard, preserving product code and original oracle.\n\nLegacy popup HTML, adapter and shared-host route remain unchanged. The new\npacketizer is not loaded by that HTML and controlled routes remain inactive.\nNative-issued ticket recovery cannot recover an Elm proposal lost before native\nissuance. GUI115 must retain original proposal intents in the same immutable\nElm policy before emission, qualify exact native issuance correlation and retry,\nand preserve separate delivery, processing, confirmation and physical barriers.\nActual host routing, WebKit ownership/context loss, full Elm policy recovery,\nCore captured FD/render/fence/readers and real window detachment remain open.\nNative130 with GUI110 legacy/core16/plugin19/AQ155 remains the bounded actual\nnative baseline:2518 checks,278 normal owned exits and full cleanup. No actual\nGUI114 Wayland-window acceptance or full release acceptance follows. No installed\ndesktop or draft changes;five foreign tracked changes remain preserved.\n"
+}

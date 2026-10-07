@@ -1,0 +1,7 @@
+AssertionError [ERR_ASSERTION]: named-foreignEpochConsumesNoOrdinal-2.itf.json exact original admission ForeignEpoch
+
+true !== false
+
+    at replay (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v114/qa/native-ingress-model-check-1791359544142924969/foreign-epoch/qa/native-ingress-refinement.js:30:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v114/qa/native-ingress-model-check-1791359544142924969/foreign-epoch/qa/native-ingress-refinement.js:51:80

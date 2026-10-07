@@ -195,3 +195,21 @@ AQ1552518/278/full cleanup remains actual native baseline. Next PUBLIC82 then
 GUI114 real typed host/retained transport/URI router activation or native current
 legacy tuple requalification. All original full-release gates remain; no installed
 desktop or draft changes. Five foreign tracked changes preserved.
+
+GUI113 PUBLIC82 0670a4500e3b668285b43e163adda958d1996f82/6439 owned blobs;
+source d7ff0259f7a6bf3783ee44d45d48966ce604e0ba;
+receipt a470c667232b0e4a6b9044e79bf3a4647e003e42.
+GUI114 held exact native realm proposal ingress/pure ordered singleton packetizer;
+actual Popup typed ports compile, but WebKit execution remains unqualified.
+Current C+Elm+outbox192/two epochs/unchanged Native grant/same Active synthetic
+subject/normal exits;codec43;Quint12/22 actual C traces/300 states/200 samples/
+five compiled native variants;full104 retains103;resource4+scoped4 suites pass.
+One runner mutation-anchor failure and one freezer classification failure remain
+held. CONTROL027/OpenSpec covers the remaining pre-issuance delivery gap. See
+component-report114.json and GUI114/INGRESS-HANDOFF.md for exact current scope.
+Next PUBLIC83 then GUI115 retained original proposal intents in the single Elm
+policy before native ticket issuance. Native-issued outbox recovery does not
+cover lost unissued proposals. Shared-host/HTML/adapter controlled activation,
+actual WebKit/Core/window qualification and full Elm context recovery remain
+open. Native130 legacy2518/278/full cleanup remains actual bounded baseline.
+No installed changes;all original full-release gates and five foreign edits remain.

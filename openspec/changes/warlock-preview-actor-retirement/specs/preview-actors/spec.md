@@ -949,3 +949,47 @@ Scoped preview membership completion is distinct from permanent Native retiremen
 - **THEN** original native inventory restores transport without resetting that policy
 - **AND** ticket retry returns original delivery evidence without replaying acquisition
 - **AND** this does not qualify recovery of an Elm model lost with an actual WebKit context
+
+### Requirement: Exact native ingress for original Elm policy proposals
+
+The system SHALL implement EARS CONTROL-027 without changing the original
+purpose reservations, physical barriers or Native grant.
+
+#### Scenario: A foreign outer proposal contains a current command
+- **GIVEN** an actual admitted original native job and its current command body
+- **WHEN** the outer proposal carries a foreign binding or receiver epoch
+- **THEN** native refuses before issuance and retains its original issued frontier
+- **AND** the original job and physical resource obligations remain identical
+
+#### Scenario: An aggregate or malformed proposal reaches native
+- **GIVEN** a bounded original native owner and its authenticated receipt capability
+- **WHEN** an envelope is aggregate, empty, oversized, malformed or contains extra fields
+- **THEN** native refuses atomically without issuing its first row as a partial result
+- **AND** renderer ordinal fields cannot enter the native-issued namespace
+
+#### Scenario: The same exact policy purpose is proposed again
+- **GIVEN** a previously issued original native purpose ticket
+- **WHEN** native receives the same valid singleton policy proposal
+- **THEN** its original ticket bytes and ordinal remain unchanged
+- **AND** ingress does not invoke the effect or settle a physical obligation
+
+#### Scenario: Pure packetization validates the complete policy output
+- **GIVEN** ordered commands emitted by the one existing Elm Presenter
+- **WHEN** any singleton would exceed the original shape, quota or byte budget
+- **THEN** packetization refuses before returning any wires to post
+- **AND** valid output preserves original order, binding, epoch and command bodies
+- **AND** it allocates no renderer ordinal and mutates no Elm state
+
+#### Scenario: Actual Popup receives typed native realm data
+- **GIVEN** a trusted native realm grant and the existing compiled Popup policy
+- **WHEN** exact realm events, quarantine or native-close notifications arrive
+- **THEN** Popup delegates to that same immutable PreviewPresenter
+- **AND** bare events cannot downgrade an already controlled realm
+- **AND** compilation alone does not establish real host or WebKit activation
+
+#### Scenario: A proposal is lost before native can issue its ticket
+- **GIVEN** a policy command emitted once and no native-issued ticket for it
+- **WHEN** the proposal transport is lost before native ingress
+- **THEN** an explicitly retained ingress handoff is required before host activation
+- **AND** a post-issuance ticket inventory or emitted readiness flag cannot prove delivery
+- **AND** recovering transport does not reconstruct a lost Elm policy

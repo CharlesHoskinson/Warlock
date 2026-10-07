@@ -1,0 +1,7 @@
+AssertionError [ERR_ASSERTION]: named-aggregateCannotPartiallyIssue-5.itf.json exact original admission MultipleRows
+
+true !== false
+
+    at replay (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v114/qa/native-ingress-model-check-v2-1791359714937810894/aggregate-partial-issue/qa/native-ingress-refinement.js:30:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v114/qa/native-ingress-model-check-v2-1791359714937810894/aggregate-partial-issue/qa/native-ingress-refinement.js:51:80
