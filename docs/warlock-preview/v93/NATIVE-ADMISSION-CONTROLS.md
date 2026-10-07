@@ -941,3 +941,33 @@ fresh184 corrects only pending-first-record wait, preserving request2/deadline/
 pixel/output/strict close gates. This known schedule is qualified; arbitrary/
 repeated/uncertain/process reload, durable Unknown, physical/hardware/pressure/
 full S09/release remain open. No reset/replay/inferred native settlement.
+
+CONTROL-047 shared renderer process failure (EARS): WHEN an actual shared
+WebKit renderer process terminates while the original native preview duties
+remain known, the host SHALL invalidate/conceal renderer authority, retain the
+failure outcome and original policy/binding/counters, quarantine the original
+realm and continue its original native receipt/retirement progress. BEFORE
+showing recovery controls or offering a restart that could discard that realm,
+the host SHALL obtain original strict native policy/physical/ticket/journal/
+confirmation close and empty custody. A WebKit termination signal, disposal or
+new process SHALL NOT certify settlement or reset/replay Unknown. IF original
+custody becomes uncertain, strict retirement/restart SHALL remain refused with
+explicit uncertainty. Recovery after that drain and original window-command
+journal/Unknown preservation SHALL qualify separately on one coherent tuple;
+known preview drain alone is not whole shared-host recovery acceptance.
+Original observer/operation deadlines and failed evidence SHALL remain.
+
+Bounded CONTROL-047 known shared process duty drain: GUI143 keeps original
+failure while actual shared related WebKit termination signals quarantine the
+original realm; original native input/step/poll/receipts and strict policy/
+physical/ticket/journal/confirmation close precede GTK recovery. Native187 exact
+186 oracle passes21: actual API/reason2/first source red19200/known closing/
+closed-empty custody BEFORE recovery/backend normal, dismissal retains failure1/
+seven other normal/private cleanup/no criticals or incomplete teardown. Original
+normal18829/13/reload18934/12/current-error19022/host1 plus seven normal/old-canceled
+19136/13/rapid19251/17/delayed19318/8/old-success19435/13/full119/new Quint9/200/6
+actual projections pass. Failed142/186 retained. Unretired/uncertain recovery
+controls are refused by source; actual uncertain recovery, whole-host restart/
+window-command journal/durable Unknown/all delivery-error or process schedules
+remain open. No native settlement from process death/reset/replay; physical/
+hardware/pressure/full S09/release remain open.

@@ -1,0 +1,4 @@
+#include <png.h>
+#include <vector>
+#include <iostream>
+int main(int argc,char**argv){if(argc!=2)return 1;png_image im{};im.version=PNG_IMAGE_VERSION;if(!png_image_begin_read_from_file(&im,argv[1]))return 2;if(!im.width || !im.height || im.width>4096 || im.height>4096){png_image_free(&im);return 3;}im.format=PNG_FORMAT_RGBA;std::vector<unsigned char>d(PNG_IMAGE_SIZE(im));if(!png_image_finish_read(&im,nullptr,d.data(),0,nullptr)){png_image_free(&im);return 4;}unsigned long root=0,popup=0,modal=0,foreign=0;for(size_t i=0;i<d.size();i+=4){auto r=d[i],g=d[i+1],b=d[i+2],a=d[i+3];root+=r>0 && g==0 && b==0 && a==255;popup+=r==0 && g>0 && g==b && a==255;modal+=r>200 && g>200 && b<40 && a>200;foreign+=r<40 && g>200 && b<40 && a>200;}std::cout<<"{\"width\":"<<im.width<<",\"height\":"<<im.height<<",\"styledRoot\":"<<root<<",\"styledPopup\":"<<popup<<",\"modalYellow\":"<<modal<<",\"foreignGreen\":"<<foreign<<"}\n";png_image_free(&im);return 0;}

@@ -1,0 +1,80 @@
+{
+  "passed": true,
+  "inputs": {
+    "spec/shared_process_drain.qnt": "b0d90106ce0ce063aff1a4860aebefafcbecd87e902a5f588b1221470c0970c8",
+    "spec/shared_process_drain_tests.qnt": "719819e6771cfbda0b3cdb97bda2651e2668b1ca51cccb5cd0fdeb2c09f273b6",
+    "qa/shared-process-drain-model.py": "dd5ed27c1c265a9d2e6f1c4901f0cabfe5faa5e7087e1b4685ca61a919f1bad4"
+  },
+  "quint": {
+    "path": "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+    "sha256": "bd6e9400f6358a8a69d80eb636eb62f59f993039868a7be9719f76ba74191b4e"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "shared_process_drain_tests.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "shared_process_drain_tests.qnt",
+        "--main=shared_process_drain_tests",
+        "--backend=typescript",
+        "--match=^(originalEarlyRecoveryUnsafe|processSignalRetainsNativeCustody|deliveryErrorCannotExitKnownCustody|strictClosePrecedesGTKRecovery|duplicateSignalsDoNotCancelDrain|unknownPreventsRecoveryOrExit|knownFailureOutcomeRetained|noPolicyGrantOrClockReset|staleEventDoesNotSettle)$",
+        "--seed=1430041",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v143/qa/shared-process-drain-model-1791402266616175627/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "samples",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "shared_process_drain.qnt",
+        "--main=shared_process_drain",
+        "--backend=typescript",
+        "--invariant=safety",
+        "--seed=1430042",
+        "--max-samples=200",
+        "--max-steps=32",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v143/qa/shared-process-drain-model-1791402266616175627/samples.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "scope": "Bounded shared process failure/duplicate signal/actual delivery error abstraction: original policy/epoch/nav/snapshot preserved, known original Native settlement/strict close BEFORE GTK recovery or original failure exit, explicit Unknown refuses retirement/recovery/replay. NativeSettled projects separately required original physical/journal/confirmation witnesses, not process disappearance or UI inference. Actual failed142/186 and unchanged fresh process oracle required. Not full refinement, whole-host restart/window command journal/durable Unknown/all termination schedules/physical/hardware/full release acceptance.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "namedScenarios": 9,
+  "invariantSamples": 200,
+  "artifacts": {
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-originalEarlyRecoveryUnsafe-0.itf.json": "6ac96c95ab133c53a83bb7b86ffbae7f9e119247bfe3e3f3033ed66e2d4307c7",
+    "named-processSignalRetainsNativeCustody-1.itf.json": "2c4438fcd61ed1c4a5ccae7e4c4965c822e120c1826cbfa883925944f50baa9f",
+    "named-deliveryErrorCannotExitKnownCustody-2.itf.json": "674188a6a562f4f0dd952a17b0b3d202cbc7fe87134daf29cfa7f716525fc669",
+    "named-strictClosePrecedesGTKRecovery-3.itf.json": "9ee344437dabd0c00ed712a169700f4a55d6e7d551cde2c1d5eab66fd6b3ed79",
+    "named-duplicateSignalsDoNotCancelDrain-4.itf.json": "493a5600e96e1074f91770460115be597e4925dc02fa6100a0b1bfb9e43269e7",
+    "named-unknownPreventsRecoveryOrExit-5.itf.json": "5f817867f619af697eeab24de8022fc68ed71673ca3557cdb91587cfdfab93ab",
+    "named-knownFailureOutcomeRetained-6.itf.json": "f7d8eeb4af9d02fdc827b58c99c146023b8a440ff2e2472107cfb09f66bbdd49",
+    "named-noPolicyGrantOrClockReset-7.itf.json": "8a37e0c71ef981e528f2687e66ef509a6a03cad0756d84166f6edab7624a218a",
+    "named-staleEventDoesNotSettle-8.itf.json": "b0a21088493b47df6820cc22854a8c545d26b31d057a2877ca79b069c3d39615",
+    "selected.stdout": "a0505c36efb6c403d1a09aca16157ccb99350b69fdeabfb38de771b8d6803e2d",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "samples.itf.json": "8c6c253435388a95eaa66516c461189abfdba12fa471c45b53f762e76543abdc",
+    "samples.stdout": "6706ab2108e3aeb891727c0c181b1657c6f4cae2faca54fda8fb6ab42b7fe701",
+    "samples.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/spec/shared_process_drain.qnt": "b0d90106ce0ce063aff1a4860aebefafcbecd87e902a5f588b1221470c0970c8",
+    "inputs/spec/shared_process_drain_tests.qnt": "719819e6771cfbda0b3cdb97bda2651e2668b1ca51cccb5cd0fdeb2c09f273b6",
+    "inputs/qa/shared-process-drain-model.py": "dd5ed27c1c265a9d2e6f1c4901f0cabfe5faa5e7087e1b4685ca61a919f1bad4"
+  }
+}

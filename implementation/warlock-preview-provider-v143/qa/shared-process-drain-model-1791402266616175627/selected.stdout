@@ -1,0 +1,13 @@
+
+  shared_process_drain_tests
+    ok originalEarlyRecoveryUnsafe passed 1 test(s)
+    ok processSignalRetainsNativeCustody passed 1 test(s)
+    ok deliveryErrorCannotExitKnownCustody passed 1 test(s)
+    ok strictClosePrecedesGTKRecovery passed 1 test(s)
+    ok duplicateSignalsDoNotCancelDrain passed 1 test(s)
+    ok unknownPreventsRecoveryOrExit passed 1 test(s)
+    ok knownFailureOutcomeRetained passed 1 test(s)
+    ok noPolicyGrantOrClockReset passed 1 test(s)
+    ok staleEventDoesNotSettle passed 1 test(s)
+
+  9 passing (11ms)

@@ -1,0 +1,127 @@
+{
+  "passed": true,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v186/qa/native-controlled-1791402215051448576/report.json": "0a3328284b2a3bed4fe13fa4901ea5868746ee8657ed0492a08775d1d3bc70c4",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v186/qa/preflight.json": "f534b4f5d8f38517340c6196e7ede03d1e58c4e011bfd52df0321cbe0594df8e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v186/qa/native-controlled-1791402215051448576/private-evidence/controlled-host.log": "c02ad4a1ca99447e4b80605914a9df1a3e9df58c580d2d02fcd52da1c483cf53",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v187/qa/native-controlled-1791402529874996141/report.json": "ea2fb0a353524073bc95b92641d6cb9f20dca760cc3352344fe8679127d9be40",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v187/qa/preflight.json": "258425b8e2263bd684fbe128c92051bfb084c7926dee12480435b243bec5605c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v187/qa/native-controlled-1791402529874996141/private-evidence/controlled-host.log": "651ce146f4f952a96e7a74f49fdc54547bf6c83117880bbf92a09cbf75973d5d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v143/native/host.c": "1b5a8e9c86eafe6376e25bf76fdc6ed181d0636792237ada1484ad554b48e087",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v143/native/shared-host.c": "095da0a2e4ab150986270b559ec194ce971a9ae39d6dc74e59aea7b76ba1c1fc",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v143/native/controlled-preview-host.h": "4d88000dcf82c899b30d6658fa4554da0e8d3078f696c374bfe4405dbbac7dd2",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v143/spec/shared_process_drain.qnt": "b0d90106ce0ce063aff1a4860aebefafcbecd87e902a5f588b1221470c0970c8",
+    "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v93/couple_native187_shared_process_drain.py": "41589ec369f0ff51ed7092bb72fd96970346dacc74ce0b352821ebf1d0e5b891"
+  },
+  "quint": {
+    "path": "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+    "sha256": "bd6e9400f6358a8a69d80eb636eb62f59f993039868a7be9719f76ba74191b4e"
+  },
+  "observations": [
+    {
+      "name": "actualLegacyPrematureRecovery",
+      "events": [
+        "Signal"
+      ],
+      "condition": "not(safe(earlyRecovery(s)))",
+      "nativeObservation": "Native186 actual original termination/recovery while known models remain/strict teardown refusal"
+    },
+    {
+      "name": "actualProcessSignalsPreserveKnownDuties",
+      "events": [
+        "Signal",
+        "Signal"
+      ],
+      "condition": "s.failed and s.processFailed and s.closing and s.owned and not(s.recovery)",
+      "nativeObservation": "Native187 actual shared view termination signals/quarantine and original epoch1 closing custody"
+    },
+    {
+      "name": "actualOriginalStrictNativeClose",
+      "events": [
+        "Signal",
+        "NativeSettled",
+        "StrictRetire"
+      ],
+      "condition": "s.failed and s.closed and not(s.owned or s.recovery)",
+      "nativeObservation": "Native187 separately verified original Native policy/physical/journal/confirmation closure and empty custody"
+    },
+    {
+      "name": "actualGTKRecoveryOnlyAfterClose",
+      "events": [
+        "Signal",
+        "NativeSettled",
+        "StrictRetire",
+        "Recovery"
+      ],
+      "condition": "s.failed and s.closed and s.recovery and not(s.owned)",
+      "nativeObservation": "Native187 original native-recovery-ready/GTK controls after strict close and original backend normal"
+    },
+    {
+      "name": "actualFailureExitAfterRecovery",
+      "events": [
+        "Signal",
+        "NativeSettled",
+        "StrictRetire",
+        "Recovery",
+        "Exit"
+      ],
+      "condition": "s.failed and s.closed and s.recovery and s.exited",
+      "nativeObservation": "Native187 explicit dismissal retains original failure1, seven other normal exits/private cleanup/no criticals"
+    },
+    {
+      "name": "actualNoOriginalIdentityReset",
+      "events": [
+        "Signal",
+        "NativeSettled",
+        "StrictRetire",
+        "Recovery"
+      ],
+      "condition": "s.policy==1 and s.epoch==1 and s.navigation==1 and s.snapshot==1",
+      "nativeObservation": "Native187 original admitted current epoch1/nav1/request1 source, no replacement/reopen/reset; original driver policy preserved and final strict close"
+    }
+  ],
+  "commands": [
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "concrete_shared_process_drain.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "concrete_shared_process_drain.qnt",
+        "--main=concrete_shared_process_drain",
+        "--backend=typescript",
+        "--match=^(actualLegacyPrematureRecovery|actualProcessSignalsPreserveKnownDuties|actualOriginalStrictNativeClose|actualGTKRecoveryOnlyAfterClose|actualFailureExitAfterRecovery|actualNoOriginalIdentityReset)$",
+        "--seed=1430043",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v93/shared-process-drain-coupling-v143-1791402551600888951/coupled-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "scope": "Six bounded abstract stages projected from independently checked actual Native186 shared-process termination failure and unchanged187 process-stop/drain-before-recovery oracle. Real process reason2/multiple related view signals/current source/quarantine/closing, independently original strict Native closed-empty custody BEFORE original GTK recovery and explicit dismissal/failure1/seven other normal exits/private cleanup. NativeSettled projects original independent physical/journal/confirmation closure, never process disappearance or UI inference. Not a full step refinement or proof of all async delivery-error/termination schedules, uncertain custody, whole-host restart/window commands/durable Unknown, physical/hardware/full S09/release.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "coupledQuintChecks": 6,
+  "artifacts": {
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "coupled-actualLegacyPrematureRecovery-0.itf.json": "1450b809c77cf78ae8b80107c1a96f243b40a4bbb80f37ce6dcc6fc73ced9b61",
+    "coupled-actualProcessSignalsPreserveKnownDuties-1.itf.json": "bc195c1ca335b291a9cabdcdaee2364ffe71a7a4c4ca181fce5aefcd0b6a6841",
+    "coupled-actualOriginalStrictNativeClose-2.itf.json": "3de21ef042074a24190d1ba1c0d313d0060aaf50682bcb06248ee1924a2366f5",
+    "coupled-actualGTKRecoveryOnlyAfterClose-3.itf.json": "9cd58f8d6b1e241daff266b07d93136537dd8f7e08071e7a26cc241d35ae3d68",
+    "coupled-actualFailureExitAfterRecovery-4.itf.json": "cdb4a715e739e256d9ee58c6b9ab81174c1ed7f6e213c453bd88950c2fc1c05b",
+    "coupled-actualNoOriginalIdentityReset-5.itf.json": "b0dadfc905fdefbab540629b364c349ffd9ad42f0b899eb94973ff5cb57d860d",
+    "selected.stdout": "5a77ac21b7febe4248d4efc29070512675c2312d16e60425b0e65aabf4af8bee",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/shared_process_drain.qnt": "b0d90106ce0ce063aff1a4860aebefafcbecd87e902a5f588b1221470c0970c8",
+    "inputs/concrete_shared_process_drain.qnt": "8253285477906ec0246e927376623a6a62d30a4f11d82c906e4c9563a6e8df08"
+  }
+}

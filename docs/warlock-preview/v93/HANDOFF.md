@@ -756,3 +756,40 @@ presentation. Physical conceal/reveal/hardware, full workload/RSS, original
 full S09/release/integrated journeys/deployment remain open. Next PUBLIC103,
 then actual uncertain/process recovery and pressure/expiry/physical gates.
 Installed desktop/drafts/foreign edits remain preserved; full GUI goal active.
+
+GUI142 holds actual shared WebKit process failure: explicit private API stops
+the original related controller/popup/bar process only after first current
+snapshot/write. Original termination reason2/three actual view signals/current
+source red19200 pass, but Native18618-check strict-close-before-GTK-recovery
+oracle fails: recovery appears with original known models/realm still live,
+then original final failure1/incomplete native teardown. Seven other normal
+owned exits/private cleanup pass. Original normal18529/13/full119 pass; failed
+source142/186 remain held. No native settlement follows process disappearance.
+
+GUI143 is held: the owning shared termination handler urgently quarantines the
+same known native realm and retains original failure/real reason/recovery path.
+Original input/step/poll/receipts continue to strict policy/physical/ticket/
+journal/confirmation close/empty custody BEFORE GTK recovery. Multiple actual
+view termination signals cannot cancel drain. Original evaluation finish/error
+has an optional owning known-duty drain hook; standalone/noncontrolled default
+remains original. Unretired or uncertain custody explicitly refuses recovery
+controls; it never becomes restart authority through process disappearance.
+
+Exact unchanged186 oracle now18721 controls passes real shared process stop,
+first source red19200, known owning/closing/strict closed before original GTK
+recovery/backend normal, explicit dismissal retains failure1/seven other normal
+exits/private cleanup/no criticals or incomplete teardown. No renderer/new realm/
+reset/replay/inferred settlement. Original normal18829/13, known-reload18934/12,
+current-error19022/host1 plus seven other normal, old-canceled19136/13,
+rapid19251/17, delayed19318/8 and old-success19435/13 pass separately. Full119,
+new shared-process-drain Quint9 named/200 samples and6 actual projected stages
+pass. Exact hashes: component-report-gui143-shared-process-drain.json.
+
+CONTROL047 is bounded to known preview-duty drain before GTK recovery in this
+actual process-stop schedule. Actual native uncertainty, all evaluation-error/
+termination schedules, whole-host restart/window-command journal/durable Unknown
+remain open; the model does not qualify them. Original opacity0/physical/hardware,
+pressure/expiry/full workload/RSS/full S09/release/AT/IME/journeys/deployment gates
+remain. Next PUBLIC104 then actual uncertainty and durable Unknown/window-command/
+whole-host restart work. Installed desktop/drafts/foreign edits are preserved;
+the full GUI goal remains active.

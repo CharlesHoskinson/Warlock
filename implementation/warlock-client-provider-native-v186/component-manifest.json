@@ -1,0 +1,567 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "sourceHeld": true,
+  "passed": false,
+  "cpuBuildPassed": true,
+  "fullBuildCommands": 119,
+  "actualSharedRendererProcessCounterexample": true,
+  "actualTerminateProcessAPIAndSignalObserved": true,
+  "processFailureReachedChecks": 18,
+  "processFailureExpectedHostExitCode": 1,
+  "processFailureOtherNormalOwnedExits": 7,
+  "normalRouteNativeChecks": 29,
+  "normalRouteNormalOwnedExits": 13,
+  "privateSessionCleanupPassed": true,
+  "singlePreviewPolicy": true,
+  "nativeGrantResets": 0,
+  "navigationResets": 0,
+  "snapshotOrdinalResets": 0,
+  "actualKnownSharedProcessNativeDrainQualified": false,
+  "wholeHostRestartQualified": false,
+  "durableUnknownRecoveryQualified": false,
+  "reloadRecoveryQualified": false,
+  "physicalConcealmentQualified": false,
+  "physicalRevealQualified": false,
+  "hardwarePresentationQualified": false,
+  "fullWorkloadProgressQualified": false,
+  "measuredRSSQualified": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "reports": {
+    "warlock-client-provider-native-v185": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v185/qa/native-controlled-1791402147327615384/report.json",
+      "sha256": "c0bed23fffbfd561712a9e5ae3ffc85724f73aed942f81cdf0a931dc737c9610",
+      "checks": 29,
+      "ownedExits": 13,
+      "passed": true
+    },
+    "warlock-client-provider-native-v186": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v186/qa/native-controlled-1791402215051448576/report.json",
+      "sha256": "0a3328284b2a3bed4fe13fa4901ea5868746ee8657ed0492a08775d1d3bc70c4",
+      "checks": 18,
+      "ownedExits": 8,
+      "passed": false
+    },
+    "build": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v142/qa/build-1791401894572643879/report.json",
+      "sha256": "45bfc7967725abf70d6ca92ee42aae607c06cf6471fb541edd1c149d5f46f849",
+      "passed": true
+    }
+  },
+  "scope": "GUI142 holds actual shared related WebKit terminate-process API after original first current captured snapshot. Original real termination reason2 and first source red19200/GTK/native original admission pass. Native18618 reached checks fails strict original native custody close BEFORE GTK recovery: last realm not closed/models remain, native-recovery-ready already shown, original final failure1/strict teardown refusal. Seven other normal owned exits/private cleanup. This is actual process failure evidence, not known-duty drain, process custody persistence, whole-host restart/durable Unknown/normal closure acceptance. Normal185 unchanged29/13/full119 pass separately. Original terminated/evaluate callbacks, main GTK unwind/recovery, Native issuer/Elm policy/strict physical/journal/confirmation/no-reset/no-replay/deadlines unchanged; QA API/signal observations never synthesize native settlement. Next fresh143 defers both actual termination and matching asynchronous delivery failure exits while original known native receipts drive strict close before GTK recovery. Uncertain/window-command/durable Unknown/whole-host restart/physical/hardware/full S09/release remain open.",
+  "files": {
+    "ANCESTRY.json": {
+      "kind": "file",
+      "sha256": "e27e452c2b95eb33beb5ad48374c4661c110307fa7584dd4ab89f3b3e788e94d",
+      "size": 568,
+      "mode": "0o644"
+    },
+    "BACKGROUND-DERIVATION.json": {
+      "kind": "file",
+      "sha256": "17642e79f6be299a6becba721350c923e5dd0ebbc0816b710acf4a4efc63fc64",
+      "size": 753,
+      "mode": "0o644"
+    },
+    "BACKGROUND-QUALIFICATION.json": {
+      "kind": "file",
+      "sha256": "bb4ebd46c55b6e6fcce7d2fb31d86440808d11fcbbdb30f2b0a031c733a90f33",
+      "size": 1047,
+      "mode": "0o644"
+    },
+    "BLUR-BODY-DERIVATION.json": {
+      "kind": "file",
+      "sha256": "bf1de5c437b5d5778db0eabd7667ba63d26f1f8dba4a54b05c051ccc2781a92c",
+      "size": 1171,
+      "mode": "0o644"
+    },
+    "COMPOSITION-DERIVATION.json": {
+      "kind": "file",
+      "sha256": "05ff2a6ae53800847956d3df4f749598dfaa91743f940badc4ad6785c2e8cf0f",
+      "size": 1000,
+      "mode": "0o644"
+    },
+    "DERIVATION.json": {
+      "kind": "file",
+      "sha256": "32bbb6e928476398b961a5dd528c9580186c07ce4479ca1fd70c196a90eb33a8",
+      "size": 426,
+      "mode": "0o644"
+    },
+    "DERIVATION.md": {
+      "kind": "file",
+      "sha256": "46f6812431618540c5c1249fe5acf796936ea662ff5fa3cecca6e4b566b778e1",
+      "size": 1163,
+      "mode": "0o644"
+    },
+    "FIXTURE-COMMAND-DERIVATION.json": {
+      "kind": "file",
+      "sha256": "e1fd67eee358074085df4d18cde534b3dffb7ee6780531bc7b76824869e4223f",
+      "size": 785,
+      "mode": "0o644"
+    },
+    "FIXTURE-DERIVATION.json": {
+      "kind": "file",
+      "sha256": "ab477ee0d425c98e3c655671771051310d8496598411fd92cf20783390698e55",
+      "size": 598,
+      "mode": "0o644"
+    },
+    "GENERATED-BACKDROP-DERIVATION.json": {
+      "kind": "file",
+      "sha256": "97a4090a97df1c3c55d8b53406af9886a875001ae97c4ca0783cfab1ff5c03b4",
+      "size": 1186,
+      "mode": "0o644"
+    },
+    "HALF-ALPHA-CURSOR-DERIVATION.json": {
+      "kind": "file",
+      "sha256": "a4cf832a364d3cfa27823db467d1e3009db28fa791e175224187bf48288613a5",
+      "size": 1225,
+      "mode": "0o644"
+    },
+    "ISOLATION-COPY-DERIVATION.json": {
+      "kind": "file",
+      "sha256": "590fbb68e83229f4340ba4db84c2c0014386ed69199f677e12ea079ff4dac00b",
+      "size": 479,
+      "mode": "0o644"
+    },
+    "NESTED-QUALIFICATION.json": {
+      "kind": "file",
+      "sha256": "696b048224d2ae42ca9dd44f32ff1acd251e6ea5e87f162804a4c5f2dc1d7741",
+      "size": 789,
+      "mode": "0o644"
+    },
+    "OPACITY-DERIVATION.json": {
+      "kind": "file",
+      "sha256": "f7731d8b7ff6fcc36d02bda3110e102181af7aef7ce5ad0ce055d4d34402dd4c",
+      "size": 859,
+      "mode": "0o644"
+    },
+    "QUALIFICATION-DERIVATION.json": {
+      "kind": "file",
+      "sha256": "787b7866e06ced344145c66f99e7bda83140c88fa01394945942f8a7d9afa8f4",
+      "size": 870,
+      "mode": "0o644"
+    },
+    "README.md": {
+      "kind": "file",
+      "sha256": "652e4f348f778d1b7e2f7bbe2892185d69d887e1c457c5a78173250d3923959e",
+      "size": 1662,
+      "mode": "0o644"
+    },
+    "RESOURCE-DERIVATION.md": {
+      "kind": "file",
+      "sha256": "9419ab0b4642f4a93090c802a83839f8d6f3360bf695b28bbb8db8f02d17424d",
+      "size": 1319,
+      "mode": "0o644"
+    },
+    "SHADER-COORDINATE-DERIVATION.json": {
+      "kind": "file",
+      "sha256": "42d2bc1640b370baa3e389a0c4b2755ba9cad70baca1bb3d7d7f189eb7425193",
+      "size": 459,
+      "mode": "0o644"
+    },
+    "SHADER-WHOLE-ROOT-DERIVATION.json": {
+      "kind": "file",
+      "sha256": "7f1e935318ee9b6acafd901f93b4673d384b811bee96be249d0cef42874e7356",
+      "size": 564,
+      "mode": "0o644"
+    },
+    "SPEC.md": {
+      "kind": "file",
+      "sha256": "acbbf2fa455aba6ff4034d95dcd79312fd67d161b10e34fdcfac19d21dafd882",
+      "size": 2929,
+      "mode": "0o644"
+    },
+    "aq-tuple.json": {
+      "kind": "file",
+      "sha256": "4d4c71943b05bb0453184dccb6caabadb72067445ff980e9359bd427ba4d433e",
+      "size": 667,
+      "mode": "0o644"
+    },
+    "backdrop-web-pixels.cpp": {
+      "kind": "file",
+      "sha256": "72a48643aa4448682cbaceeedc8ebb98b48cb8f417f3eebc8bd831c257f4d903",
+      "size": 1785,
+      "mode": "0o644"
+    },
+    "blur-body-deltas.cpp": {
+      "kind": "file",
+      "sha256": "5d39650f926fe2809b19934bcde48372aaf7a57a3654a8a5b826ba74e3b3dd13",
+      "size": 3609,
+      "mode": "0o644"
+    },
+    "blur-body-pixels.cpp": {
+      "kind": "file",
+      "sha256": "cc3b85c70941e54e1ac939b0a9178c05f2cc90eea3fdba48b9d9ba7a2ccc3dbb",
+      "size": 2799,
+      "mode": "0o644"
+    },
+    "candidate_host.py": {
+      "kind": "file",
+      "sha256": "7c8cb4c0990d21241a7689fcbf4276f81886d2660606c82f8dff7cd7cff4d387",
+      "size": 10070,
+      "mode": "0o644"
+    },
+    "composited-crop-pixels.cpp": {
+      "kind": "file",
+      "sha256": "f8d34de3f31452c02fea55ea89ea58b8f9b8d1df6a6d3882a41464b2e42d6969",
+      "size": 3086,
+      "mode": "0o644"
+    },
+    "coordinate-pixels.cpp": {
+      "kind": "file",
+      "sha256": "9f7b061a781a767a7e3bd925a57fe5d46e400ae0e7e97d48d5df25f5160a1633",
+      "size": 2846,
+      "mode": "0o644"
+    },
+    "crop-pixels.cpp": {
+      "kind": "file",
+      "sha256": "50551f6150acc5d863b617bfc720d9ff8be5bd7d1b027dc752cf300019cfb9d9",
+      "size": 3000,
+      "mode": "0o644"
+    },
+    "dynamic-enrollment-probe.cpp": {
+      "kind": "file",
+      "sha256": "0c026854eacd18b586da6cfc5ee307add24e1cb28d4f816ae4accbafcce77b9b",
+      "size": 15638,
+      "mode": "0o644"
+    },
+    "fallback-pixels.cpp": {
+      "kind": "file",
+      "sha256": "94a9975995898546b544c5e22cf7d34b8a118cd7f40fdb098fe0e6f63e590e05",
+      "size": 1364,
+      "mode": "0o644"
+    },
+    "family-pixels.cpp": {
+      "kind": "file",
+      "sha256": "dceb4f673bd216aec4eefb4772fc3d22b875f1dcc5938ac645ce20a5d61c4b4d",
+      "size": 2837,
+      "mode": "0o644"
+    },
+    "family-web-pixels.cpp": {
+      "kind": "file",
+      "sha256": "dd3caa50bd45f1d85796bdb23f84a2ccab70102e6a669c7676c7a6d1bff07110",
+      "size": 946,
+      "mode": "0o644"
+    },
+    "glow-pixels.cpp": {
+      "kind": "file",
+      "sha256": "d1e4d7104a136db87114142acef77be7f433e97e3dc981666d7bd39ddf2c9530",
+      "size": 3444,
+      "mode": "0o644"
+    },
+    "modal-pixels.cpp": {
+      "kind": "file",
+      "sha256": "00c5a59fe52cb4a686b1f2b5eecbc70aaa2bc28cf1c2805557de3b1ef790c6de",
+      "size": 1033,
+      "mode": "0o644"
+    },
+    "native-build-report.json": {
+      "kind": "file",
+      "sha256": "74dcc4043b453f9179398a2d253a82fd1c61da42aee412c8a7b74ea929986db3",
+      "size": 1690,
+      "mode": "0o644"
+    },
+    "opacity-pixels.cpp": {
+      "kind": "file",
+      "sha256": "7431f3681c562b1ab3accb8c8862c54c74d10e6b7acd7fb204750665c6880af1",
+      "size": 3893,
+      "mode": "0o644"
+    },
+    "parent-probe-build.json": {
+      "kind": "file",
+      "sha256": "5c719c99fde9da4357b90e711c50f34d61ed0daca5f6d94cfdedcaf705254221",
+      "size": 243,
+      "mode": "0o644"
+    },
+    "peer.py": {
+      "kind": "file",
+      "sha256": "e83a2c0fce062fb2c3664dd8d56584db0905763ce80ad2a5ae5c6c4a92ef2529",
+      "size": 6149,
+      "mode": "0o644"
+    },
+    "pixels.cpp": {
+      "kind": "file",
+      "sha256": "8f0ab2522b0b8c6a2c71aa53e4d7df66b77acca47f685ae846bd7a540e6faeb9",
+      "size": 1610,
+      "mode": "0o644"
+    },
+    "probe.cpp": {
+      "kind": "file",
+      "sha256": "9d7227ddaecd2ab4781d2cb184bdb45814f7738604d4ee69565ab7416bfd9ac7",
+      "size": 6583,
+      "mode": "0o644"
+    },
+    "qa/isolation.py": {
+      "kind": "file",
+      "sha256": "95e6999ccb1528311e950d95bf855a00bc29327458152eb7943f1f01bce1ceb8",
+      "size": 7257,
+      "mode": "0o644"
+    },
+    "qa/lock_control.py": {
+      "kind": "file",
+      "sha256": "3a9bbbd99f2ef75da64af366ae84154885708ef9a6d5667fabcd7b3df76ee7fd",
+      "size": 1646,
+      "mode": "0o644"
+    },
+    "qa/native-controlled-1791402215051448576/private-evidence/companion-control": {
+      "kind": "file",
+      "sha256": "938ff155d31d23a3ab099c99c0f25cafd7f5a5dd462e75484d6e3b7389ed694a",
+      "size": 7,
+      "mode": "0o600"
+    },
+    "qa/native-controlled-1791402215051448576/private-evidence/companion.log": {
+      "kind": "file",
+      "sha256": "86792c19480cdc3cdbe6cc508610c0745cc11abeedec72b50c5ad4ce60df1cd9",
+      "size": 1586,
+      "mode": "0o600"
+    },
+    "qa/native-controlled-1791402215051448576/private-evidence/controlled-host.log": {
+      "kind": "file",
+      "sha256": "c02ad4a1ca99447e4b80605914a9df1a3e9df58c580d2d02fcd52da1c483cf53",
+      "size": 22793,
+      "mode": "0o600"
+    },
+    "qa/native-controlled-1791402215051448576/private-evidence/controlled-open-input.log": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o600"
+    },
+    "qa/native-controlled-1791402215051448576/private-evidence/controlled-process-first-pixels.log": {
+      "kind": "file",
+      "sha256": "fec2d568f97d401baeb791fa35ebf1058eb49b7646546ab421523bb6be0d5882",
+      "size": 193,
+      "mode": "0o600"
+    },
+    "qa/native-controlled-1791402215051448576/private-evidence/dmabuf-probe.stderr": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o600"
+    },
+    "qa/native-controlled-1791402215051448576/private-evidence/dmabuf-probe.stdout": {
+      "kind": "file",
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174,
+      "mode": "0o600"
+    },
+    "qa/native-controlled-1791402215051448576/private-evidence/host-evidence.json": {
+      "kind": "file",
+      "sha256": "1c07bf02aaeee9976edf12d142e8711dcfa25e5881f2577a92bf6ff545450a16",
+      "size": 216268,
+      "mode": "0o600"
+    },
+    "qa/native-controlled-1791402215051448576/private-evidence/hyprland.log": {
+      "kind": "file",
+      "sha256": "3a5c6edc0f468c76c94ab7ac02b3aa49909a6d9eb31558a2ecdab576ffd911fd",
+      "size": 145403,
+      "mode": "0o600"
+    },
+    "qa/native-controlled-1791402215051448576/private-evidence/privateBus.log": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o600"
+    },
+    "qa/native-controlled-1791402215051448576/private-evidence/process-stop-webkit.png": {
+      "kind": "file",
+      "sha256": "c2c1406e8c4c0c708d6179d048a9985fc75ac2c109e10038cc1dbb05d4a23dc1",
+      "size": 23035,
+      "mode": "0o600"
+    },
+    "qa/native-controlled-1791402215051448576/private-evidence/provider-authority.json": {
+      "kind": "file",
+      "sha256": "1757716af6912b62c1de48657e42f0319dd325e36cfd42e7c98f7aba7d041cec",
+      "size": 245,
+      "mode": "0o600"
+    },
+    "qa/native-controlled-1791402215051448576/private-evidence/runtime-archive/.flatpak/webkit-2799052-17/bwrapinfo.json": {
+      "kind": "file",
+      "sha256": "c035e3c14d84e946e07166461371a007fb5123d976bcebc012591152fae1aa8c",
+      "size": 161,
+      "mode": "0o600"
+    },
+    "qa/native-controlled-1791402215051448576/private-evidence/runtime-archive/.flatpak/webkit-2799052-4/bwrapinfo.json": {
+      "kind": "file",
+      "sha256": "61432cfa0b2359a7932a4032b6cbc345cca417c183be7e6905784350ea749679",
+      "size": 194,
+      "mode": "0o600"
+    },
+    "qa/native-controlled-1791402215051448576/private-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791402216_1203082351/7403803039879498498/ledger-v5.json": {
+      "kind": "file",
+      "sha256": "05647f146b425cac245a86c5cc0c9eef7ae5a116c641ec05494ede8e5f9562d7",
+      "size": 212,
+      "mode": "0o600"
+    },
+    "qa/native-controlled-1791402215051448576/private-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791402216_1203082351/7403803039879498498/ledger-v6.json": {
+      "kind": "file",
+      "sha256": "d33158d47eb8f635cdb543fc28ac715219640f5bf3a4c05d5c2071427320d9af",
+      "size": 327,
+      "mode": "0o600"
+    },
+    "qa/native-controlled-1791402215051448576/private-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791402216_1203082351/7403803039879498498/migration-plan.json": {
+      "kind": "file",
+      "sha256": "e2d4c71fcdb9245846aba455d73cffbddc3f91f659e833faf3dd4e4ffcaf81ab",
+      "size": 247,
+      "mode": "0o600"
+    },
+    "qa/native-controlled-1791402215051448576/private-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791402216_1203082351/7403803039879498498/migration.json": {
+      "kind": "file",
+      "sha256": "fb97e6907da002b889eecd3a787e5348c11a525a42192eff88c398d84a344585",
+      "size": 228,
+      "mode": "0o600"
+    },
+    "qa/native-controlled-1791402215051448576/private-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791402216_1203082351/7403803039879498498/release-deliveries-v1.json": {
+      "kind": "file",
+      "sha256": "25df4d9365ec82d037fc2913c0fd41ee7b6cb3e50ed17bc940c86ac8ecd29ca3",
+      "size": 63,
+      "mode": "0o600"
+    },
+    "qa/native-controlled-1791402215051448576/private-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791402216_1203082351/hyprland.log": {
+      "kind": "file",
+      "sha256": "0f616302e88d440bd7794143852c1c9805908323d3887461d12f30eb96fba502",
+      "size": 25623,
+      "mode": "0o600"
+    },
+    "qa/native-controlled-1791402215051448576/private-evidence/runtime-archive/hyprland.lua": {
+      "kind": "file",
+      "sha256": "b1ccd19ee89fd4b21ee749ee648ce00f9839775994e99103e2e08272f706bb0c",
+      "size": 305,
+      "mode": "0o600"
+    },
+    "qa/native-controlled-1791402215051448576/private-evidence/source-control": {
+      "kind": "file",
+      "sha256": "938ff155d31d23a3ab099c99c0f25cafd7f5a5dd462e75484d6e3b7389ed694a",
+      "size": 7,
+      "mode": "0o600"
+    },
+    "qa/native-controlled-1791402215051448576/private-evidence/source.log": {
+      "kind": "file",
+      "sha256": "f2677b25d75d3638be5efaaa11772878d70a71b0717ddcabc56e24d58f8e493f",
+      "size": 1264,
+      "mode": "0o600"
+    },
+    "qa/native-controlled-1791402215051448576/private-evidence/weston-renderer.log": {
+      "kind": "file",
+      "sha256": "5d0854b38b8e34fa3f789df7d5103bd5d6ddb75f041753d5478ebbe63cdbaba2",
+      "size": 3783,
+      "mode": "0o600"
+    },
+    "qa/native-controlled-1791402215051448576/private-evidence/weston.log": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o600"
+    },
+    "qa/native-controlled-1791402215051448576/report.json": {
+      "kind": "file",
+      "sha256": "0a3328284b2a3bed4fe13fa4901ea5868746ee8657ed0492a08775d1d3bc70c4",
+      "size": 7869115,
+      "mode": "0o644"
+    },
+    "qa/native-controlled-host.py": {
+      "kind": "file",
+      "sha256": "a6e06a8d6c2b3c45e56b846a9fd399a70e15f1ee91039ef28f709d68f7ad9b07",
+      "size": 12445,
+      "mode": "0o644"
+    },
+    "qa/native.py": {
+      "kind": "file",
+      "sha256": "55aa7622f5aa5e77da94d7f4a545b104878e4e9b5897c1b1f4022e1196718fd6",
+      "size": 316779,
+      "mode": "0o644"
+    },
+    "qa/preflight.json": {
+      "kind": "file",
+      "sha256": "f534b4f5d8f38517340c6196e7ede03d1e58c4e011bfd52df0321cbe0594df8e",
+      "size": 7664096,
+      "mode": "0o644"
+    },
+    "qa/prepare-current-provider-v2.py": {
+      "kind": "file",
+      "sha256": "e97330c94584383458e86830dc0200fe3285e086b889f91f411070ffe06be933",
+      "size": 4991,
+      "mode": "0o644"
+    },
+    "qa/prepare-current-provider-v3.py": {
+      "kind": "file",
+      "sha256": "be35eaaabe6d1cffd13f696fc2655232299f2bf1d4efed5697cee89145871c11",
+      "size": 5360,
+      "mode": "0o644"
+    },
+    "qa/prepare-current-provider-v4.py": {
+      "kind": "file",
+      "sha256": "34eeab0c4e2b43be3a4dcdbfdc743723c91e99ccb2d7c10ae7f5f122a23f7694",
+      "size": 5231,
+      "mode": "0o644"
+    },
+    "qa/prepare-current-provider.py": {
+      "kind": "file",
+      "sha256": "6071760a26a58dc4fe24b8389ef8bd341048386f1c375643c8da7793f0905733",
+      "size": 4677,
+      "mode": "0o644"
+    },
+    "qa/prepare-resource.py": {
+      "kind": "file",
+      "sha256": "2c9de278af8e9af2efb4404d811af7db42f371d89d27badbcd4b085a1d41e13a",
+      "size": 4404,
+      "mode": "0o644"
+    },
+    "qa/prepare.py": {
+      "kind": "file",
+      "sha256": "0185238252fde7fca6b2e07a7827f34eb19fa33711e33d9a4e801e12ff30e4b5",
+      "size": 72390,
+      "mode": "0o644"
+    },
+    "qa/resource_phase.py": {
+      "kind": "file",
+      "sha256": "a2b867bded765e441907f025978842b7b7925c8a818ee9e3e10d726dc358e3c0",
+      "size": 10238,
+      "mode": "0o644"
+    },
+    "qa/reuse_comparison.py": {
+      "kind": "file",
+      "sha256": "36d46e0ca077443b6b5d36a629307331ce168ed80bcd53421aa77411f945a3c6",
+      "size": 3074,
+      "mode": "0o644"
+    },
+    "qa/session_bus.py": {
+      "kind": "file",
+      "sha256": "d8f945a68a8e772ffd26458e8e60beac8c8ad79849f08a2daf4110f5c8178916",
+      "size": 1902,
+      "mode": "0o644"
+    },
+    "qa/system_isolation.py": {
+      "kind": "file",
+      "sha256": "029a41bc8aae39936c69dc591857795aabd43df17b1f9a86b02b6c6a83dddc0e",
+      "size": 1109,
+      "mode": "0o644"
+    },
+    "receiver-growth-probe.cpp": {
+      "kind": "file",
+      "sha256": "a94f01e619cb3459cf6b16c88fad58104e711ccb2eb9b2166df4789c26549c09",
+      "size": 10068,
+      "mode": "0o644"
+    },
+    "retirement-native-probe.cpp": {
+      "kind": "file",
+      "sha256": "23ed2e00116301e2d5015e5171b56ce3a2b9ae14ecbf55459f3a704ffb3ab3ec",
+      "size": 5541,
+      "mode": "0o644"
+    },
+    "shader-half-body-pixels.cpp": {
+      "kind": "file",
+      "sha256": "1d97cbe8a30a02f4b6af42682ed8c44b160198771d758d023b6bece489db6090",
+      "size": 3358,
+      "mode": "0o644"
+    },
+    "shader-pixels.cpp": {
+      "kind": "file",
+      "sha256": "0f1284bf844a660b47faba62d5dade53fc4c22f56224a1fb2ea5b0a79a787c61",
+      "size": 3912,
+      "mode": "0o644"
+    }
+  },
+  "nativeChecks": 18,
+  "normalControlledHostClosureQualified": false
+}

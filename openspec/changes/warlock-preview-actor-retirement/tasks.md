@@ -552,3 +552,19 @@ activation and all original full release gates remain open.
 - [ ] Qualify actual repeated/unexpected navigation, uncertain/process renderer
   recovery and durable Unknown under original clocks/retirement/no-reset/no-replay
   obligations. Known one-reload schedule does not close broader CONTROL-046.
+
+- [x] Implement/qualify CONTROL-047 actual shared WebKit process stop after current
+  capture: original known preview duty drain/strict close before GTK recovery,
+  original failure/identity/clock/no-reset/no-replay retained. Whole-host restart,
+  window-command journal/Unknown and uncertainty remain separate required gates.
+
+  Bounded GUI143/Native18721 exact186 oracle/full119/Quint9/200/6 actual projections:
+  real shared termination reason2/first source pixels/quarantine/strict closed-empty
+  native custody BEFORE GTK recovery/backend normal, failure1 after dismissal,
+  seven other normal/private cleanup/no criticals. Original normal/reload/current-
+  error/old-error/rapid/delayed/success regressions pass. Failed142/186 held.
+- [ ] Qualify actual native uncertainty and all asynchronous delivery-error/process
+  schedules with original strict-close/refused recovery/no-reset/no-replay gates.
+- [ ] Implement/qualify whole-host restart with original window-command journal,
+  pending outcomes and durable Unknown preserved; known preview drain before GTK
+  recovery does not establish successful shared-host restart or healthy release.

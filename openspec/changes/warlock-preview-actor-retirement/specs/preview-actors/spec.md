@@ -1590,3 +1590,21 @@ certify native settlement or reset a grant, policy, counter, deadline or Unknown
 #### Scenario: Unexpected URI or uncertain native duties at reload
 - WHEN reload does not retain a trusted same URI or original native duties are uncertain
 - THEN original fail-closed uncertainty remains explicit with no inferred settlement, grant reset or replay
+
+### Requirement: Shared renderer termination preserves native custody before recovery
+Actual shared renderer process termination SHALL retain its failure and original
+native custody. Known preview duties SHALL drain through original native receipts
+and strict close before GTK recovery/restart controls. Native uncertainty SHALL
+prevent normal retirement/restart; process disappearance SHALL NOT infer settlement.
+
+#### Scenario: Actual shared WebKit process termination after current capture
+- GIVEN one original captured image and first actual snapshot with native duties known
+- WHEN the actual WebKit terminate-process API delivers the original termination signal
+- THEN renderer authority is invalidated and the original realm urgently quarantined
+- AND original native receipts and independent physical/journal/confirmation gates close custody before GTK recovery controls
+- AND failure remains failure with no policy/grant/navigation/snapshot/deadline reset or inferred settlement
+- AND whole-host restart, outstanding window commands and durable Unknown qualify separately
+
+#### Scenario: Uncertain native duties at shared process failure
+- WHEN original native custody is uncertain at renderer termination
+- THEN strict retirement and restart remain refused and Unknown is retained without automatic replay
