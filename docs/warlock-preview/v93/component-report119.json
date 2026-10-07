@@ -1,0 +1,76 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "sourceHeld": true,
+  "passed": true,
+  "evidenceIntegrityPassed": true,
+  "reports": {
+    "channel": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v119/qa/visual-channel-check-1791371205851102125/report.json",
+      "sha256": "0833479dce103a8ddef9dc2ee0c26fdf66422769e86a42b1b44944822b916b97"
+    },
+    "refinement": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v119/qa/visual-channel-refinement-1791371509385015823/report.json",
+      "sha256": "dd8cc0aa117b1b0288fe738288c9b63b9f82bf2bc3b1bcd3c8dd15acb25042fd"
+    },
+    "boundaries": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v119/qa/visual-channel-boundaries-1791371697960291443/report.json",
+      "sha256": "6a05fef737266790fabf2d4392330009cf7866248ed2063c68c2f4769148278e"
+    },
+    "nativeElmOutbox": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v119/qa/readonly-visual-native-check-1791371575025222675/report.json",
+      "sha256": "b04658daf062860ed6b2374dbc0a601e9ba0f0b43fc1793054b4977a67f1877b"
+    },
+    "build": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v119/qa/build-1791371573866982085/report.json",
+      "sha256": "98eca6c0ebd7194bcb0a8ee462440e67cdbadc51463f38ad1c83ae8fd9c4221e"
+    }
+  },
+  "heldFailedReports": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v119/qa/visual-channel-check-1791371159539500711/report.json"
+  ],
+  "singlePreviewPolicy": true,
+  "parentElmPolicyUnchanged": true,
+  "parentNativeIssuerAndPhysicalProductUnchanged": true,
+  "parentAssetsAndAdaptersUnchanged": true,
+  "nativeOwnedJavaScriptCore": true,
+  "persistentPolicyContexts": 1,
+  "nativeElmOutboxChecks": 207,
+  "additiveVisualProjectionChecks": 90,
+  "readonlyProjectionChecks": 74,
+  "visualChannelChecks": 67,
+  "visualChannelBoundaryChecks": 33,
+  "pureRendererInstances": 2,
+  "rendererWindowPolicies": 0,
+  "visualChannelScenarios": 14,
+  "visualChannelTraces": 26,
+  "visualChannelObservableStates": 451,
+  "visualChannelSamples": 200,
+  "visualChannelCompiledNativeVariantsDetected": 4,
+  "compiledSeededCounterBoundaries": 2,
+  "nativeContextOwnershipCPUQualified": true,
+  "orderedVisualCustodyCPUQualified": true,
+  "nativeControlOrdinalsUnchanged": true,
+  "fullBuildCommands": 115,
+  "originalBuildCommands": 112,
+  "realmEpochs": 2,
+  "nativeGrantResets": 0,
+  "realHostPolicyActivated": false,
+  "actualRendererProjectionActivated": false,
+  "actualDOMQualified": false,
+  "actualWebKitContextAuthenticationQualified": false,
+  "physicalConcealmentQualified": false,
+  "ongoingProjectionFreshnessQualified": false,
+  "realHostInputBackpressureQualified": false,
+  "nativeDelayedProposalLivenessQualified": false,
+  "uncertainLiveWorkerRecoveryQualified": false,
+  "fullElmRecoveryQualified": false,
+  "typedHostRoutingActivated": false,
+  "webKitActivated": false,
+  "actualWaylandWindowAcceptance": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "parentManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v118/component-manifest.json",
+  "parentManifestSHA256": "e62d4e8e6a30f415d81f1736d37ea59dcb78f85a6afe6c8374fc656d976e153e",
+  "scope": "# Ordered visual custody \u2014 bounded component qualification\n\nNative creator-owned `WarlockVisualChannel` keeps a strong reference to its\nattached native context, one pending visual snapshot and exact expected receipt.\nIts renderer lease and visual sequence are separate monotonically increasing\nUInt64 counters. They never issue or consume original native control ordinals.\nDetach retains both floors; replacement requires detach then a new native lease.\nExhaustion refuses without resetting either counter.\n\nThe channel derives its domain and visual fields through the GUI118 read-only\ngetter. Offer invalidates earlier acceptance and issues a new visual sequence.\nRetry copies the exact pending packet without invoking Elm or allocating another\nsequence. Ack requires byte-exact latest receipt from the attached native context.\nRetry, ack and current checks compare the snapshot with the same policy's latest\ncommitted visual bytes; a changed/closed/uncertain cache removes visual custody.\nForeign threads/contexts and stale receipts refuse. Normal destruction requires\ndetachment and does not close a policy, settle an effect or retire resources.\n\n`NativePreviewReceiver` holds only a validated projection, native grant, ordering\nfloor and concealment latch. It imports no window/lifecycle policy. A native\ngrant is fixed at initialization; incoming packets cannot establish or replace\nauthority. Older sequences and other domains/leases are ignored. Exact duplicates\nrepeat only the acceptance receipt. Conflicting same-sequence visual data or a\nmalformed current channel/projection conceals and latches uncertainty; a packet\ncannot reset that instance. A recreated renderer needs a new native-issued grant.\nThe browser component compiles but no HTML/adapter/native host route activates it.\n\nThis component's receipt establishes pure receiver acceptance, not actual DOM or\nframe application. GObject fixture identities do not qualify actual WebKit callback\nauthentication. Cache comparison establishes currency at that check, not ongoing\nfreshness or concealment between policy transitions and async WebKit evaluation.\nThe real host must physically conceal before policy changes/invalidation, bind\nthe actual WebKit instance and callback to its native lease, reject old async\ncompletions, qualify DOM/frame application and original URI reader lifetime, then\nreveal only with that full native barrier. No such host route is active yet.\n\nQualification passes67 actual C/JSC/pure receiver checks and33 native missing\ndestination/context/policy/receipt, absent/closed/destroyed custody boundaries.\nQuint executes14 selected native custody scenarios and200 invariant samples;\n26 traces compare451 observable states against actual sanitizer C/JSC with\nnormal fixture/policy teardown. Four compiled unsafe guard derivatives are\ndetected; the early-destroy variant also fails sanitizer ownership. Two separately\nlabeled seeded native counter builds preserve original exhaustion guards and\nnormal teardown. The pure receiver's maximum-sequence stress packet is explicitly\nsynthetic and is refused by native acceptance because native did not issue it.\nThe original native207 controls plus90 visual/74 getter comparisons still pass;\nparent policy/getter/lifetime/backpressure/native issuer/physical/assets/adapters\nstay byte-identical. Full115 commands retain112 and add two pure renderer builds\nand native channel compilation/link. One new-header compile failure remains\nwith its exact original input snapshot. No original deadline or oracle is weakened.\n\nNext: freeze/publication, current legacy native source requalification and actual\nhost integration with durable original input/ticket custody and bounded retry.\nUncertain worker/process recovery, delayed proposal outcome/order, actual native\ncaptured FD/render/fence/readers, >256 native windows and all full release gates\nremain open. Native130 remains the actual bounded legacy2518/278 baseline.\n"
+}

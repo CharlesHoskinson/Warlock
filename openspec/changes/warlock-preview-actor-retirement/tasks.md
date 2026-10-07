@@ -379,3 +379,9 @@ activation and all original full release gates remain open.
   Preserve native issuer, policy/effect/physical gates and original checks.
 - [ ] Qualify actual native authenticated ordered projection delivery and renderer
   leases/reload concealment; a committed copy alone provides no freshness proof.
+
+- [x] Freeze CONTROL-032 native context/lease/visual-sequence custody and pure
+  renderer ordering/concealment latch with actual C/JSC/Elm and Quint refinement.
+  Qualify exhaustion, guard variants and full build while retaining original gates.
+- [ ] Activate the pure renderer only with actual WebKit callback binding,
+  native physical concealment and async DOM/frame/reload/URI ownership barriers.

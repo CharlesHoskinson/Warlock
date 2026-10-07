@@ -1,0 +1,39 @@
+
+=================================================================
+==1045286==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 24 byte(s) in 1 object(s) allocated from:
+    #0 0x7f0470d2bea9 in calloc (/usr/lib/libasan.so.8+0x12bea9) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+    #1 0x7f046e5064b2 in g_malloc0 (/usr/lib/libglib-2.0.so.0+0x694b2) (BuildId: cb17d184459352a7985a010f1cd3acef4a4f90d8)
+    #2 0x7f04713adb33 in g_type_create_instance (/usr/lib/libgobject-2.0.so.0+0x3fb33) (BuildId: 1f9773f5f3c3410461fa1b29ecfe2e95fa2e2a48)
+    #3 0x7f0471392904  (/usr/lib/libgobject-2.0.so.0+0x24904) (BuildId: 1f9773f5f3c3410461fa1b29ecfe2e95fa2e2a48)
+    #4 0x7f0471394156 in g_object_new_with_properties (/usr/lib/libgobject-2.0.so.0+0x26156) (BuildId: 1f9773f5f3c3410461fa1b29ecfe2e95fa2e2a48)
+    #5 0x7f0471395131 in g_object_new (/usr/lib/libgobject-2.0.so.0+0x27131) (BuildId: 1f9773f5f3c3410461fa1b29ecfe2e95fa2e2a48)
+    #6 0x55f939f72211 in main (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v119/qa/visual-channel-refinement-1791371509385015823/early-destroy/channel+0x48211) (BuildId: d38d9db8ba90350d957b60de9f04dc72dd14d7da)
+    #7 0x7f046d427780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #8 0x7f046d4278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #9 0x55f939f6e9b4 in _start (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v119/qa/visual-channel-refinement-1791371509385015823/early-destroy/channel+0x449b4) (BuildId: d38d9db8ba90350d957b60de9f04dc72dd14d7da)
+
+Indirect leak of 56 byte(s) in 1 object(s) allocated from:
+    #0 0x7f0470d2c0c1 in malloc (/usr/lib/libasan.so.8+0x12c0c1) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+    #1 0x7f046e5059da in g_malloc (/usr/lib/libglib-2.0.so.0+0x689da) (BuildId: cb17d184459352a7985a010f1cd3acef4a4f90d8)
+    #2 0x7f046e4d8e91  (/usr/lib/libglib-2.0.so.0+0x3be91) (BuildId: cb17d184459352a7985a010f1cd3acef4a4f90d8)
+    #3 0x7f046e4d9ae9  (/usr/lib/libglib-2.0.so.0+0x3cae9) (BuildId: cb17d184459352a7985a010f1cd3acef4a4f90d8)
+    #4 0x7f047138d05e in g_object_weak_ref (/usr/lib/libgobject-2.0.so.0+0x1f05e) (BuildId: 1f9773f5f3c3410461fa1b29ecfe2e95fa2e2a48)
+    #5 0x55f939f72394 in main (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v119/qa/visual-channel-refinement-1791371509385015823/early-destroy/channel+0x48394) (BuildId: d38d9db8ba90350d957b60de9f04dc72dd14d7da)
+    #6 0x7f046d427780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #7 0x7f046d4278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #8 0x55f939f6e9b4 in _start (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v119/qa/visual-channel-refinement-1791371509385015823/early-destroy/channel+0x449b4) (BuildId: d38d9db8ba90350d957b60de9f04dc72dd14d7da)
+
+Indirect leak of 32 byte(s) in 1 object(s) allocated from:
+    #0 0x7f0470d2c0c1 in malloc (/usr/lib/libasan.so.8+0x12c0c1) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+    #1 0x7f046e5059da in g_malloc (/usr/lib/libglib-2.0.so.0+0x689da) (BuildId: cb17d184459352a7985a010f1cd3acef4a4f90d8)
+    #2 0x7f047138b0a2  (/usr/lib/libgobject-2.0.so.0+0x1d0a2) (BuildId: 1f9773f5f3c3410461fa1b29ecfe2e95fa2e2a48)
+    #3 0x7f046e4d9acd  (/usr/lib/libglib-2.0.so.0+0x3cacd) (BuildId: cb17d184459352a7985a010f1cd3acef4a4f90d8)
+    #4 0x7f047138d05e in g_object_weak_ref (/usr/lib/libgobject-2.0.so.0+0x1f05e) (BuildId: 1f9773f5f3c3410461fa1b29ecfe2e95fa2e2a48)
+    #5 0x55f939f72394 in main (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v119/qa/visual-channel-refinement-1791371509385015823/early-destroy/channel+0x48394) (BuildId: d38d9db8ba90350d957b60de9f04dc72dd14d7da)
+    #6 0x7f046d427780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #7 0x7f046d4278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #8 0x55f939f6e9b4 in _start (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v119/qa/visual-channel-refinement-1791371509385015823/early-destroy/channel+0x449b4) (BuildId: d38d9db8ba90350d957b60de9f04dc72dd14d7da)
+
+SUMMARY: AddressSanitizer: 112 byte(s) leaked in 3 allocation(s).

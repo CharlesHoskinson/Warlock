@@ -1,0 +1,109 @@
+In file included from native/visual-channel-fixture.cpp:2:
+native/preview-visual-channel.h:2:32: error: extra tokens at end of ‘#include’ directive [-Werror]
+    2 | #include "elm-preview-policy.h"+#include <glib-object.h>
+      |                                ^
+native/preview-visual-channel.h:13:86: error: ‘GObject’ has not been declared
+   13 | gboolean warlock_visual_channel_attach(WarlockVisualChannel*, WarlockPreviewPolicy*, GObject*, char** grant, GError**);
+      |                                                                                      ^~~~~~~
+native/preview-visual-channel.h:14:85: error: ‘GObject’ has not been declared
+   14 | gboolean warlock_visual_channel_offer(WarlockVisualChannel*, WarlockPreviewPolicy*, GObject*, char** packet, GError**);
+      |                                                                                     ^~~~~~~
+native/preview-visual-channel.h:15:85: error: ‘GObject’ has not been declared
+   15 | gboolean warlock_visual_channel_retry(WarlockVisualChannel*, WarlockPreviewPolicy*, GObject*, char** packet, GError**);
+      |                                                                                     ^~~~~~~
+native/preview-visual-channel.h:16:83: error: ‘GObject’ has not been declared
+   16 | gboolean warlock_visual_channel_ack(WarlockVisualChannel*, WarlockPreviewPolicy*, GObject*, const char* exact_receipt, GError**);
+      |                                                                                   ^~~~~~~
+native/preview-visual-channel.h:17:87: error: ‘GObject’ has not been declared
+   17 | gboolean warlock_visual_channel_current(WarlockVisualChannel*, WarlockPreviewPolicy*, GObject*, GError**);
+      |                                                                                       ^~~~~~~
+native/preview-visual-channel.h:18:67: error: ‘GObject’ has not been declared
+   18 | gboolean warlock_visual_channel_invalidate(WarlockVisualChannel*, GObject*, GError**);
+      |                                                                   ^~~~~~~
+native/preview-visual-channel.h:19:63: error: ‘GObject’ has not been declared
+   19 | gboolean warlock_visual_channel_detach(WarlockVisualChannel*, GObject*, GError**);
+      |                                                               ^~~~~~~
+native/visual-channel-fixture.cpp: In function ‘void* channel_call(gpointer)’:
+native/visual-channel-fixture.cpp:55:79: error: cannot convert ‘GObject*’ {aka ‘_GObject*’} to ‘int*’
+   55 |     if(c.op=="attach")c.ok=warlock_visual_channel_attach(c.channel,c.policy,c.context,&c.output,&c.error);
+      |                                                                             ~~^~~~~~~
+      |                                                                               |
+      |                                                                               GObject* {aka _GObject*}
+native/preview-visual-channel.h:13:86: note: initializing argument 3 of ‘gboolean warlock_visual_channel_attach(WarlockVisualChannel*, WarlockPreviewPolicy*, int*, char**, GError**)’
+   13 | gboolean warlock_visual_channel_attach(WarlockVisualChannel*, WarlockPreviewPolicy*, GObject*, char** grant, GError**);
+      |                                                                                      ^~~~~~~~
+native/visual-channel-fixture.cpp:56:82: error: cannot convert ‘GObject*’ {aka ‘_GObject*’} to ‘int*’
+   56 |     else if(c.op=="offer")c.ok=warlock_visual_channel_offer(c.channel,c.policy,c.context,&c.output,&c.error);
+      |                                                                                ~~^~~~~~~
+      |                                                                                  |
+      |                                                                                  GObject* {aka _GObject*}
+native/preview-visual-channel.h:14:85: note: initializing argument 3 of ‘gboolean warlock_visual_channel_offer(WarlockVisualChannel*, WarlockPreviewPolicy*, int*, char**, GError**)’
+   14 | gboolean warlock_visual_channel_offer(WarlockVisualChannel*, WarlockPreviewPolicy*, GObject*, char** packet, GError**);
+      |                                                                                     ^~~~~~~~
+native/visual-channel-fixture.cpp:57:82: error: cannot convert ‘GObject*’ {aka ‘_GObject*’} to ‘int*’
+   57 |     else if(c.op=="retry")c.ok=warlock_visual_channel_retry(c.channel,c.policy,c.context,&c.output,&c.error);
+      |                                                                                ~~^~~~~~~
+      |                                                                                  |
+      |                                                                                  GObject* {aka _GObject*}
+native/preview-visual-channel.h:15:85: note: initializing argument 3 of ‘gboolean warlock_visual_channel_retry(WarlockVisualChannel*, WarlockPreviewPolicy*, int*, char**, GError**)’
+   15 | gboolean warlock_visual_channel_retry(WarlockVisualChannel*, WarlockPreviewPolicy*, GObject*, char** packet, GError**);
+      |                                                                                     ^~~~~~~~
+native/visual-channel-fixture.cpp:58:78: error: cannot convert ‘GObject*’ {aka ‘_GObject*’} to ‘int*’
+   58 |     else if(c.op=="ack")c.ok=warlock_visual_channel_ack(c.channel,c.policy,c.context,c.wire,&c.error);
+      |                                                                            ~~^~~~~~~
+      |                                                                              |
+      |                                                                              GObject* {aka _GObject*}
+native/preview-visual-channel.h:16:83: note: initializing argument 3 of ‘gboolean warlock_visual_channel_ack(WarlockVisualChannel*, WarlockPreviewPolicy*, int*, const char*, GError**)’
+   16 | gboolean warlock_visual_channel_ack(WarlockVisualChannel*, WarlockPreviewPolicy*, GObject*, const char* exact_receipt, GError**);
+      |                                                                                   ^~~~~~~~
+native/visual-channel-fixture.cpp:59:86: error: cannot convert ‘GObject*’ {aka ‘_GObject*’} to ‘int*’
+   59 |     else if(c.op=="current")c.ok=warlock_visual_channel_current(c.channel,c.policy,c.context,&c.error);
+      |                                                                                    ~~^~~~~~~
+      |                                                                                      |
+      |                                                                                      GObject* {aka _GObject*}
+native/preview-visual-channel.h:17:87: note: initializing argument 3 of ‘gboolean warlock_visual_channel_current(WarlockVisualChannel*, WarlockPreviewPolicy*, int*, GError**)’
+   17 | gboolean warlock_visual_channel_current(WarlockVisualChannel*, WarlockPreviewPolicy*, GObject*, GError**);
+      |                                                                                       ^~~~~~~~
+native/visual-channel-fixture.cpp:60:83: error: cannot convert ‘GObject*’ {aka ‘_GObject*’} to ‘int*’
+   60 |     else if(c.op=="invalidate")c.ok=warlock_visual_channel_invalidate(c.channel,c.context,&c.error);
+      |                                                                                 ~~^~~~~~~
+      |                                                                                   |
+      |                                                                                   GObject* {aka _GObject*}
+native/preview-visual-channel.h:18:67: note: initializing argument 2 of ‘gboolean warlock_visual_channel_invalidate(WarlockVisualChannel*, int*, GError**)’
+   18 | gboolean warlock_visual_channel_invalidate(WarlockVisualChannel*, GObject*, GError**);
+      |                                                                   ^~~~~~~~
+native/visual-channel-fixture.cpp:61:75: error: cannot convert ‘GObject*’ {aka ‘_GObject*’} to ‘int*’
+   61 |     else if(c.op=="detach")c.ok=warlock_visual_channel_detach(c.channel,c.context,&c.error);
+      |                                                                         ~~^~~~~~~
+      |                                                                           |
+      |                                                                           GObject* {aka _GObject*}
+native/preview-visual-channel.h:19:63: note: initializing argument 2 of ‘gboolean warlock_visual_channel_detach(WarlockVisualChannel*, int*, GError**)’
+   19 | gboolean warlock_visual_channel_detach(WarlockVisualChannel*, GObject*, GError**);
+      |                                                               ^~~~~~~~
+cc1plus: all warnings being treated as errors
+In file included from native/preview-visual-channel.cpp:1:
+native/preview-visual-channel.h:2:32: error: extra tokens at end of ‘#include’ directive [-Werror]
+    2 | #include "elm-preview-policy.h"+#include <glib-object.h>
+      |                                ^
+native/preview-visual-channel.h:13:86: error: ‘GObject’ has not been declared
+   13 | gboolean warlock_visual_channel_attach(WarlockVisualChannel*, WarlockPreviewPolicy*, GObject*, char** grant, GError**);
+      |                                                                                      ^~~~~~~
+native/preview-visual-channel.h:14:85: error: ‘GObject’ has not been declared
+   14 | gboolean warlock_visual_channel_offer(WarlockVisualChannel*, WarlockPreviewPolicy*, GObject*, char** packet, GError**);
+      |                                                                                     ^~~~~~~
+native/preview-visual-channel.h:15:85: error: ‘GObject’ has not been declared
+   15 | gboolean warlock_visual_channel_retry(WarlockVisualChannel*, WarlockPreviewPolicy*, GObject*, char** packet, GError**);
+      |                                                                                     ^~~~~~~
+native/preview-visual-channel.h:16:83: error: ‘GObject’ has not been declared
+   16 | gboolean warlock_visual_channel_ack(WarlockVisualChannel*, WarlockPreviewPolicy*, GObject*, const char* exact_receipt, GError**);
+      |                                                                                   ^~~~~~~
+native/preview-visual-channel.h:17:87: error: ‘GObject’ has not been declared
+   17 | gboolean warlock_visual_channel_current(WarlockVisualChannel*, WarlockPreviewPolicy*, GObject*, GError**);
+      |                                                                                       ^~~~~~~
+native/preview-visual-channel.h:18:67: error: ‘GObject’ has not been declared
+   18 | gboolean warlock_visual_channel_invalidate(WarlockVisualChannel*, GObject*, GError**);
+      |                                                                   ^~~~~~~
+native/preview-visual-channel.h:19:63: error: ‘GObject’ has not been declared
+   19 | gboolean warlock_visual_channel_detach(WarlockVisualChannel*, GObject*, GError**);
+      |                                                               ^~~~~~~
+cc1plus: all warnings being treated as errors

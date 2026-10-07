@@ -309,3 +309,22 @@ concealment, durable input/native-ticket custody/retry before actual WebKit/Core
 Committed copies alone qualify no freshness, live uncertain worker recovery,
 delayed proposal outcome, actual DOM/URI/captured FD or full release. Native130
 legacy2518/278 remains actual baseline; installed desktop/foreign paths preserved.
+
+GUI118 PUBLIC87 8bc0b5dd33e97f06e37284d0ca518db4d8e829fb/2292 exact owned blobs;
+sourcee17f3e5dcb66a3a3cc083e83dcfc6951580e5234;
+receipt8399dd6e5f7eef07ae6acaa02b142bafc908fe80.
+GUI119 ordered native visual custody/pure receiver qualifies only bounded CPU:
+strong native GObject context refs until detach, native leases and separate visual
+sequence retained across replacement, exact pending retry, exact current receipt
+and committed-cache comparison. Pure renderer has no window/lifecycle policy,
+ignores stale lease/domain/sequence and latches concealment on malformed/conflicting
+current visuals. Actual C/JSC/Elm67/native boundaries33/Quint14/26 C+JSC traces/
+451 observable states/200 samples/four compiled guards/two seeded exhaustion
+boundaries. Original native207+90+74 still passes; parent policy/issuer/effects/
+physical/assets/adapters unchanged. Full115 retains112. One header failure held.
+CONTROL032/OpenSpec six scenarios. Actual WebKit context/callback authentication,
+DOM/frame/physical concealment/ongoing freshness/URI and real host input/ticket
+custody/retry remain open. Next PUBLIC88, Native131 coherent legacy source tuple
+and actual controlled host/renderer barriers. Native130 legacy2518/278 remains
+actual native baseline; uncertain live worker/revoked delayed proposals and all
+original full release gates stay open. No installed/main desktop changes.

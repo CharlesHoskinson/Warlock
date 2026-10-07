@@ -580,3 +580,31 @@ replacement, actual DOM/URI/physical acceptance or permission to reconstruct an
 uncertain worker. Those host and renderer barriers SHALL remain required before
 activation. Native issuance, independent confirmation and physical retirement
 SHALL retain their original authorities and deadlines.
+
+EARS CONTROL-032: When native attaches an original renderer context to visual
+custody, the creator SHALL strongly retain that context and issue a fresh positive
+renderer lease. Separate native visual sequence and lease counters SHALL remain
+lossless UInt64, survive detach/reload within that channel and refuse exhaustion
+without reset. Neither counter SHALL issue or consume a native control ordinal.
+
+When an original attached context requests a snapshot or exact retry, custody
+SHALL read only the original policy's committed visual projection. New snapshots
+SHALL advance only the visual sequence and invalidate prior acceptance. Retry
+SHALL preserve exact bytes/sequence. Before retry, exact receipt acceptance or
+current acceptance is reported, custody SHALL require the same latest committed
+visual bytes/domain; changed, absent, closed or uncertain authority SHALL clear
+visual custody without settling policy, effects or resources. Foreign creators,
+contexts and non-original receipts SHALL refuse.
+
+While a pure renderer instance exists, its native domain/lease/floor SHALL be fixed
+at initialization. Older snapshots and other domains/leases SHALL NOT revive
+visuals. An exact duplicate SHALL repeat only its acceptance receipt. Malformed
+current data or conflicting same-sequence visuals SHALL conceal and latch
+uncertainty; packets SHALL NOT reset it or establish another lifecycle policy.
+
+Before host activation, native SHALL bind actual WebKit callback identity to its
+issued renderer lease, conceal physically before policy changes/invalidation,
+reject stale async completions and qualify DOM/frame application and original
+URI reader ownership before revealing. A pure acceptance receipt or cache
+comparison SHALL NOT establish physical concealment, ongoing freshness, actual
+WebKit authentication, native pixels, recovery or full release acceptance.

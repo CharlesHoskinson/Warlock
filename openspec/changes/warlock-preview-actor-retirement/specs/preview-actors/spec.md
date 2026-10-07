@@ -1166,3 +1166,46 @@ native ordinal issuer, effects and physical retirement authorities.
 - **THEN** authenticated current delivery, order, renderer leases and reload
   concealment require separate qualification before activation
 - **AND** actual WebKit/Core/DOM/URI and full release gates remain required
+
+### Requirement: Retain ordered native visual custody across renderer replacement
+
+The system SHALL implement EARS CONTROL-032 without advancing the single
+window/lifecycle policy or native control ordinals when delivering visuals.
+
+#### Scenario: Native replaces a renderer instance
+- **GIVEN** an original attached context and issued visual sequence
+- **WHEN** native detaches it and attaches its replacement
+- **THEN** a new positive native renderer lease uses the retained sequence floor
+- **AND** the original context reference is released only at detach
+- **AND** old callbacks and packets cannot accept or seed the replacement
+
+#### Scenario: Renderer delivery is retried or reordered
+- **GIVEN** native retained one current visual snapshot and exact receipt
+- **WHEN** duplicate or older packets arrive at the pure renderer
+- **THEN** duplicates repeat only the same acceptance receipt
+- **AND** older packets cannot revive visuals or acknowledge a newer snapshot
+- **AND** native retry retains the original exact bytes and sequence
+
+#### Scenario: The committed policy changes before a receipt arrives
+- **GIVEN** an issued visual snapshot and its eventual renderer receipt
+- **WHEN** the original policy's latest visual data or domain changes
+- **THEN** native refuses acceptance/retry/current status of that stale snapshot
+- **AND** it clears visual custody while retaining policy/effect/resource obligations
+
+#### Scenario: A renderer encounters conflicting current data
+- **GIVEN** a fixed native grant and accepted visual sequence
+- **WHEN** malformed current data or different visuals with that same sequence arrive
+- **THEN** the pure renderer conceals and latches uncertainty
+- **AND** later packets cannot reset it or introduce another lifecycle policy
+
+#### Scenario: A visual counter exhausts
+- **GIVEN** an original native visual sequence or renderer lease at UInt64 maximum
+- **WHEN** another snapshot or renderer grant would require advancing it
+- **THEN** native refuses without resetting it or consuming a control ordinal
+
+#### Scenario: The ordered component is prepared for actual host use
+- **GIVEN** native custody and pure receiver component evidence
+- **WHEN** a real WebKit route is prepared
+- **THEN** native callback identity, physical concealment before transitions,
+  async completion barriers, DOM/frame application and URI ownership need acceptance
+- **AND** pure receipts do not qualify ongoing freshness or full release behavior

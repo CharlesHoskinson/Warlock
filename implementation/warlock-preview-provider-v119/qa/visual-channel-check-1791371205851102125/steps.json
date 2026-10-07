@@ -1,0 +1,956 @@
+[
+  {
+    "input": {
+      "op": "channel",
+      "action": "attach",
+      "context": 0
+    },
+    "output": {
+      "ok": false,
+      "code": 6,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\":\"grant\",\"value\":{\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"capacity\":1}}"
+    },
+    "output": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "models": [],
+        "commands": [],
+        "realm": {
+          "controlled": true,
+          "closing": false,
+          "closed": false,
+          "processed": "0",
+          "retained": 0,
+          "completed": 0,
+          "epoch": "1",
+          "ingress": {
+            "pending": 0,
+            "capacity": 1,
+            "intents": []
+          },
+          "deferred": 0,
+          "deferredIntents": [],
+          "inputBlocked": false
+        },
+        "metadata": [],
+        "enrollment": [],
+        "feedback": [],
+        "visuals": {
+          "visualProtocol": 1,
+          "kind": "native-preview-visual",
+          "binding": {
+            "lifetime": "12618083744238620417",
+            "session": "2",
+            "frontend": "1"
+          },
+          "receiverEpoch": "1",
+          "surface": null,
+          "previews": []
+        }
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "attach",
+      "context": 0
+    },
+    "output": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "channelProtocol": 1,
+        "kind": "native-preview-renderer-grant",
+        "binding": {
+          "lifetime": "12618083744238620417",
+          "session": "2",
+          "frontend": "1"
+        },
+        "receiverEpoch": "1",
+        "rendererLease": "1",
+        "sequenceFloor": "0"
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "attach",
+      "context": 0
+    },
+    "output": {
+      "ok": false,
+      "code": 1,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "context-drop",
+      "context": 0
+    },
+    "output": {
+      "ok": true,
+      "code": 0,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "contexts"
+    },
+    "output": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "firstAlive": true,
+        "secondAlive": true
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "offer",
+      "context": 0
+    },
+    "output": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "channelProtocol": 1,
+        "kind": "native-preview-projection",
+        "binding": {
+          "lifetime": "12618083744238620417",
+          "session": "2",
+          "frontend": "1"
+        },
+        "receiverEpoch": "1",
+        "rendererLease": "1",
+        "visualSequence": "1",
+        "visual": {
+          "visualProtocol": 1,
+          "kind": "native-preview-visual",
+          "binding": {
+            "lifetime": "12618083744238620417",
+            "session": "2",
+            "frontend": "1"
+          },
+          "receiverEpoch": "1",
+          "surface": null,
+          "previews": []
+        }
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "current",
+      "context": 0
+    },
+    "output": {
+      "ok": false,
+      "code": 4,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "ack",
+      "context": 0,
+      "input": "{\"channelProtocol\":1,\"kind\":\"native-preview-projection-accepted\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"rendererLease\":\"1\",\"visualSequence\":\"1\"}"
+    },
+    "output": {
+      "ok": true,
+      "code": 0,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "current",
+      "context": 0
+    },
+    "output": {
+      "ok": true,
+      "code": 0,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "retry",
+      "context": 0
+    },
+    "output": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "channelProtocol": 1,
+        "kind": "native-preview-projection",
+        "binding": {
+          "lifetime": "12618083744238620417",
+          "session": "2",
+          "frontend": "1"
+        },
+        "receiverEpoch": "1",
+        "rendererLease": "1",
+        "visualSequence": "1",
+        "visual": {
+          "visualProtocol": 1,
+          "kind": "native-preview-visual",
+          "binding": {
+            "lifetime": "12618083744238620417",
+            "session": "2",
+            "frontend": "1"
+          },
+          "receiverEpoch": "1",
+          "surface": null,
+          "previews": []
+        }
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "offer",
+      "context": 0
+    },
+    "output": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "channelProtocol": 1,
+        "kind": "native-preview-projection",
+        "binding": {
+          "lifetime": "12618083744238620417",
+          "session": "2",
+          "frontend": "1"
+        },
+        "receiverEpoch": "1",
+        "rendererLease": "1",
+        "visualSequence": "2",
+        "visual": {
+          "visualProtocol": 1,
+          "kind": "native-preview-visual",
+          "binding": {
+            "lifetime": "12618083744238620417",
+            "session": "2",
+            "frontend": "1"
+          },
+          "receiverEpoch": "1",
+          "surface": null,
+          "previews": []
+        }
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "ack",
+      "context": 0,
+      "input": "{\"channelProtocol\":1,\"kind\":\"native-preview-projection-accepted\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"rendererLease\":\"1\",\"visualSequence\":\"1\"}"
+    },
+    "output": {
+      "ok": false,
+      "code": 4,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "offer",
+      "context": 1,
+      "input": "{\"channelProtocol\":1,\"kind\":\"native-preview-projection-accepted\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"rendererLease\":\"1\",\"visualSequence\":\"2\"}"
+    },
+    "output": {
+      "ok": false,
+      "code": 3,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "retry",
+      "context": 1,
+      "input": "{\"channelProtocol\":1,\"kind\":\"native-preview-projection-accepted\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"rendererLease\":\"1\",\"visualSequence\":\"2\"}"
+    },
+    "output": {
+      "ok": false,
+      "code": 3,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "current",
+      "context": 1,
+      "input": "{\"channelProtocol\":1,\"kind\":\"native-preview-projection-accepted\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"rendererLease\":\"1\",\"visualSequence\":\"2\"}"
+    },
+    "output": {
+      "ok": false,
+      "code": 3,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "ack",
+      "context": 1,
+      "input": "{\"channelProtocol\":1,\"kind\":\"native-preview-projection-accepted\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"rendererLease\":\"1\",\"visualSequence\":\"2\"}"
+    },
+    "output": {
+      "ok": false,
+      "code": 3,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "invalidate",
+      "context": 1,
+      "input": "{\"channelProtocol\":1,\"kind\":\"native-preview-projection-accepted\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"rendererLease\":\"1\",\"visualSequence\":\"2\"}"
+    },
+    "output": {
+      "ok": false,
+      "code": 3,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "detach",
+      "context": 1,
+      "input": "{\"channelProtocol\":1,\"kind\":\"native-preview-projection-accepted\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"rendererLease\":\"1\",\"visualSequence\":\"2\"}"
+    },
+    "output": {
+      "ok": false,
+      "code": 3,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "foreign-channel",
+      "action": "attach",
+      "context": 0,
+      "input": "{\"channelProtocol\":1,\"kind\":\"native-preview-projection-accepted\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"rendererLease\":\"1\",\"visualSequence\":\"2\"}"
+    },
+    "output": {
+      "ok": false,
+      "code": 2,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "foreign-channel",
+      "action": "offer",
+      "context": 0,
+      "input": "{\"channelProtocol\":1,\"kind\":\"native-preview-projection-accepted\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"rendererLease\":\"1\",\"visualSequence\":\"2\"}"
+    },
+    "output": {
+      "ok": false,
+      "code": 2,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "foreign-channel",
+      "action": "retry",
+      "context": 0,
+      "input": "{\"channelProtocol\":1,\"kind\":\"native-preview-projection-accepted\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"rendererLease\":\"1\",\"visualSequence\":\"2\"}"
+    },
+    "output": {
+      "ok": false,
+      "code": 2,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "foreign-channel",
+      "action": "current",
+      "context": 0,
+      "input": "{\"channelProtocol\":1,\"kind\":\"native-preview-projection-accepted\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"rendererLease\":\"1\",\"visualSequence\":\"2\"}"
+    },
+    "output": {
+      "ok": false,
+      "code": 2,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "foreign-channel",
+      "action": "ack",
+      "context": 0,
+      "input": "{\"channelProtocol\":1,\"kind\":\"native-preview-projection-accepted\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"rendererLease\":\"1\",\"visualSequence\":\"2\"}"
+    },
+    "output": {
+      "ok": false,
+      "code": 2,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "foreign-channel",
+      "action": "invalidate",
+      "context": 0,
+      "input": "{\"channelProtocol\":1,\"kind\":\"native-preview-projection-accepted\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"rendererLease\":\"1\",\"visualSequence\":\"2\"}"
+    },
+    "output": {
+      "ok": false,
+      "code": 2,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "foreign-channel",
+      "action": "detach",
+      "context": 0,
+      "input": "{\"channelProtocol\":1,\"kind\":\"native-preview-projection-accepted\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"rendererLease\":\"1\",\"visualSequence\":\"2\"}"
+    },
+    "output": {
+      "ok": false,
+      "code": 2,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "foreign-channel",
+      "action": "close",
+      "context": 0,
+      "input": "{\"channelProtocol\":1,\"kind\":\"native-preview-projection-accepted\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"rendererLease\":\"1\",\"visualSequence\":\"2\"}"
+    },
+    "output": {
+      "ok": false,
+      "code": 2,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "ack",
+      "context": 0,
+      "input": " "
+    },
+    "output": {
+      "ok": false,
+      "code": 4,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "ack",
+      "context": 0,
+      "input": "{\"channelProtocol\":1,\"kind\":\"native-preview-projection-accepted\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"rendererLease\":\"1\",\"visualSequence\":\"2\",\"extra\":true}"
+    },
+    "output": {
+      "ok": false,
+      "code": 4,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "ack",
+      "context": 0,
+      "input": "{\"channelProtocol\":1,\"kind\":\"native-preview-projection-accepted\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"rendererLease\":\"2\",\"visualSequence\":\"2\"}"
+    },
+    "output": {
+      "ok": false,
+      "code": 4,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "ack",
+      "context": 0,
+      "input": "{\"channelProtocol\":1,\"kind\":\"native-preview-projection-accepted\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"rendererLease\":\"1\",\"visualSequence\":\"18446744073709551615\"}"
+    },
+    "output": {
+      "ok": false,
+      "code": 4,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "ack",
+      "context": 0,
+      "input": "{\"channelProtocol\":1,\"kind\":\"native-preview-projection-accepted\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"rendererLease\":\"1\",\"visualSequence\":\"2\"}"
+    },
+    "output": {
+      "ok": true,
+      "code": 0,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\":\"presentation\",\"value\":{\"surfaceProtocol\":2,\"publication\":\"1\",\"lease\":\"1\",\"mode\":\"picker\",\"status\":\"new committed presentation\",\"bar\":[],\"popup\":[]}}"
+    },
+    "output": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "models": [],
+        "commands": {
+          "previewProtocol": 3,
+          "kind": "preview-proposals",
+          "binding": {
+            "lifetime": "12618083744238620417",
+            "session": "2",
+            "frontend": "1"
+          },
+          "receiverEpoch": "1",
+          "entries": []
+        },
+        "realm": {
+          "controlled": true,
+          "closing": false,
+          "closed": false,
+          "processed": "0",
+          "retained": 0,
+          "completed": 0,
+          "epoch": "1",
+          "ingress": {
+            "pending": 0,
+            "capacity": 1,
+            "intents": []
+          },
+          "deferred": 0,
+          "deferredIntents": [],
+          "inputBlocked": false
+        },
+        "metadata": [],
+        "enrollment": [],
+        "feedback": [],
+        "visuals": {
+          "visualProtocol": 1,
+          "kind": "native-preview-visual",
+          "binding": {
+            "lifetime": "12618083744238620417",
+            "session": "2",
+            "frontend": "1"
+          },
+          "receiverEpoch": "1",
+          "surface": {
+            "surfaceProtocol": 2,
+            "publication": "1",
+            "lease": "1",
+            "mode": "picker",
+            "status": "new committed presentation",
+            "bar": [],
+            "popup": []
+          },
+          "previews": []
+        }
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "current",
+      "context": 0
+    },
+    "output": {
+      "ok": false,
+      "code": 4,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "retry",
+      "context": 0
+    },
+    "output": {
+      "ok": false,
+      "code": 4,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "ack",
+      "context": 0,
+      "input": "{\"channelProtocol\":1,\"kind\":\"native-preview-projection-accepted\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"rendererLease\":\"1\",\"visualSequence\":\"2\"}"
+    },
+    "output": {
+      "ok": false,
+      "code": 4,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "offer",
+      "context": 0
+    },
+    "output": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "channelProtocol": 1,
+        "kind": "native-preview-projection",
+        "binding": {
+          "lifetime": "12618083744238620417",
+          "session": "2",
+          "frontend": "1"
+        },
+        "receiverEpoch": "1",
+        "rendererLease": "1",
+        "visualSequence": "3",
+        "visual": {
+          "visualProtocol": 1,
+          "kind": "native-preview-visual",
+          "binding": {
+            "lifetime": "12618083744238620417",
+            "session": "2",
+            "frontend": "1"
+          },
+          "receiverEpoch": "1",
+          "surface": {
+            "surfaceProtocol": 2,
+            "publication": "1",
+            "lease": "1",
+            "mode": "picker",
+            "status": "new committed presentation",
+            "bar": [],
+            "popup": []
+          },
+          "previews": []
+        }
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "ack",
+      "context": 0,
+      "input": "{\"channelProtocol\":1,\"kind\":\"native-preview-projection-accepted\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"rendererLease\":\"1\",\"visualSequence\":\"3\"}"
+    },
+    "output": {
+      "ok": true,
+      "code": 0,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "invalidate",
+      "context": 0
+    },
+    "output": {
+      "ok": true,
+      "code": 0,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "current",
+      "context": 0
+    },
+    "output": {
+      "ok": false,
+      "code": 4,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "close",
+      "context": 0
+    },
+    "output": {
+      "ok": false,
+      "code": 1,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "detach",
+      "context": 0
+    },
+    "output": {
+      "ok": true,
+      "code": 0,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "contexts"
+    },
+    "output": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "firstAlive": false,
+        "secondAlive": true
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "attach",
+      "context": 1
+    },
+    "output": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "channelProtocol": 1,
+        "kind": "native-preview-renderer-grant",
+        "binding": {
+          "lifetime": "12618083744238620417",
+          "session": "2",
+          "frontend": "1"
+        },
+        "receiverEpoch": "1",
+        "rendererLease": "2",
+        "sequenceFloor": "3"
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "offer",
+      "context": 1
+    },
+    "output": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "channelProtocol": 1,
+        "kind": "native-preview-projection",
+        "binding": {
+          "lifetime": "12618083744238620417",
+          "session": "2",
+          "frontend": "1"
+        },
+        "receiverEpoch": "1",
+        "rendererLease": "2",
+        "visualSequence": "4",
+        "visual": {
+          "visualProtocol": 1,
+          "kind": "native-preview-visual",
+          "binding": {
+            "lifetime": "12618083744238620417",
+            "session": "2",
+            "frontend": "1"
+          },
+          "receiverEpoch": "1",
+          "surface": {
+            "surfaceProtocol": 2,
+            "publication": "1",
+            "lease": "1",
+            "mode": "picker",
+            "status": "new committed presentation",
+            "bar": [],
+            "popup": []
+          },
+          "previews": []
+        }
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "ack",
+      "context": 1,
+      "input": "{\"channelProtocol\":1,\"kind\":\"native-preview-projection-accepted\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"rendererLease\":\"2\",\"visualSequence\":\"4\"}"
+    },
+    "output": {
+      "ok": true,
+      "code": 0,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "ack",
+      "context": 0,
+      "input": "{\"channelProtocol\":1,\"kind\":\"native-preview-projection-accepted\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"rendererLease\":\"1\",\"visualSequence\":\"3\"}"
+    },
+    "output": {
+      "ok": false,
+      "code": 3,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "ack",
+      "context": 1,
+      "input": "{\"channelProtocol\":1,\"kind\":\"native-preview-projection-accepted\",\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\",\"rendererLease\":\"2\",\"visualSequence\":\"18446744073709551615\"}"
+    },
+    "output": {
+      "ok": false,
+      "code": 4,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "invoke",
+      "input": "{\"kind\":\"closed\",\"value\":{\"binding\":{\"lifetime\":\"12618083744238620417\",\"session\":\"2\",\"frontend\":\"1\"},\"receiverEpoch\":\"1\"}}"
+    },
+    "output": {
+      "ok": true,
+      "code": 0,
+      "held": true,
+      "projection": {
+        "models": [],
+        "commands": [],
+        "realm": {
+          "controlled": true,
+          "closing": true,
+          "closed": true,
+          "processed": "0",
+          "retained": 0,
+          "completed": 0,
+          "epoch": "1",
+          "ingress": {
+            "pending": 0,
+            "capacity": 1,
+            "intents": []
+          },
+          "deferred": 0,
+          "deferredIntents": [],
+          "inputBlocked": false
+        },
+        "metadata": [],
+        "enrollment": [],
+        "feedback": [],
+        "visuals": {
+          "visualProtocol": 1,
+          "kind": "native-preview-visual",
+          "binding": {
+            "lifetime": "12618083744238620417",
+            "session": "2",
+            "frontend": "1"
+          },
+          "receiverEpoch": "1",
+          "surface": {
+            "surfaceProtocol": 2,
+            "publication": "1",
+            "lease": "1",
+            "mode": "picker",
+            "status": "new committed presentation",
+            "bar": [],
+            "popup": []
+          },
+          "previews": []
+        }
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "offer",
+      "context": 1
+    },
+    "output": {
+      "ok": false,
+      "code": 6,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "detach",
+      "context": 1
+    },
+    "output": {
+      "ok": true,
+      "code": 0,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "channel",
+      "action": "close",
+      "context": 1
+    },
+    "output": {
+      "ok": true,
+      "code": 0,
+      "held": true
+    }
+  },
+  {
+    "input": {
+      "op": "close"
+    },
+    "output": {
+      "ok": true,
+      "code": 0,
+      "held": false
+    }
+  }
+]

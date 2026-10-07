@@ -1,0 +1,18 @@
+
+  visual_channel_tests
+    ok detachedHasNoVisualAuthority passed 1 test(s)
+    ok attachCannotReplaceContext passed 1 test(s)
+    ok deliveryDoesNotAccept passed 1 test(s)
+    ok exactReceiptAcceptsCurrent passed 1 test(s)
+    ok retryRetainsVisualSequence passed 1 test(s)
+    ok changedPolicyRefusesReceipt passed 1 test(s)
+    ok changedPolicyRefusesRetry passed 1 test(s)
+    ok changedAcceptedPolicyLosesCurrency passed 1 test(s)
+    ok invalidationCannotRetainAcceptance passed 1 test(s)
+    ok replacementKeepsSequenceFloor passed 1 test(s)
+    ok foreignContextCannotInvalidate passed 1 test(s)
+    ok foreignThreadCannotDestroy passed 1 test(s)
+    ok attachedContextPreventsDestroy passed 1 test(s)
+    ok detachedChannelClosesNormally passed 1 test(s)
+
+  14 passing (15ms)
