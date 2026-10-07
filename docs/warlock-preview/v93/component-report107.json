@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "sourceHeld": true,
+  "passed": true,
+  "evidenceIntegrityPassed": true,
+  "reports": {
+    "realmC": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-c-check-v3-1791347787381300082/report.json",
+      "sha256": "b86e6b21f441cdd40b99241e222d0907891480257eaccf17e7a5540adabc8be4"
+    },
+    "realmModel": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-v4-1791347753848423769/report.json",
+      "sha256": "2deeef3f0d98942d2682fcea61069857dba0eed7fe12cb2b15f342c5f087bd87"
+    },
+    "realmRace": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-race-check-v2-1791347753848610053/report.json",
+      "sha256": "62be7047a0ba90a23ce76a3e7d30b2162ae99efcc74c4a1a8f36287a7866a3ed"
+    },
+    "regressions": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/resource-regression-check-1791347817271704693/report.json",
+      "sha256": "869de1e667f3762f00fa08a4f75729320126466e4ac102349fa0172cf59e88c1"
+    },
+    "localResourceModel": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/imported-resource-model-check-v3-1791347879263629595/report.json",
+      "sha256": "106876019ede93fd4a5b42b89cbeb999f7d173e3afa27210123991d0dfa29214"
+    },
+    "build": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/build-1791347690779251667/report.json",
+      "sha256": "00ceee7061b9203a1d73e5c3ba2f3dd38f75d5019fe26e4eb91febc79dbe9134"
+    }
+  },
+  "realmCChecks": 111,
+  "realmCCompiledVariants": 2,
+  "realmScenarios": 16,
+  "realmTraces": 28,
+  "realmStates": 711,
+  "realmModelCompiledVariants": 2,
+  "realmRaceChecks": 36,
+  "realmRaceCompiledVariants": 1,
+  "actualReaderChecks": 49,
+  "actualPostTransferChecks": 40,
+  "localResourceScenarios": 14,
+  "localResourceTraces": 22,
+  "localResourceStates": 373,
+  "controlledCChecks": 10190,
+  "fullBuildCommands": 95,
+  "unchangedElmParentManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v106/component-manifest.json",
+  "unchangedElmParentManifestSHA256": "a100dc1c95d83b70f4cffbfb235cecce53332589d5d3fcd490ec939c31adcab7",
+  "boundedNativeManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v129/component-manifest.json",
+  "boundedNativeManifestSHA256": "5469becac27e1811de04757154d255ec54d859db73b22613292b970188bab854",
+  "heldFailedReports": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-c-check-v2-1791347690780805710/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-1791347314294656685/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-v2-1791347386008525413/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-v3-1791347666613315704/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-race-check-1791347539680144909/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-race-check-1791347666614017816/report.json"
+  ],
+  "webKitActivated": false,
+  "liveWindowDetachmentImplemented": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "Inactive CPU component: persistent native-owned realm epoch across Endpoint replacement; original strict C physical/proof/actor/processing/independent-confirmation closure releases only settled claim without resetting shared Native binding. Unpublished rollback consumes epoch and releases its own claim, old exact tickets reject before new handlers, lossless uint64 exhaustion refuses. Permanent atomic controlled-mode marker prevents delayed legacy zero-CAS from crossing controlled close; actual threaded counterexample retained. Actual C74 replacement+37 exhaustion checks/two normal exits/two compiled variants;real threaded36 controls/normal exit/one precise variant;16 selected Quint/28 coupled actual C traces/711 states/two variants. Current49 reader+40 post-transfer allocation,resource14/22/349/three,capture14/66/816/three,local resource14/22/373/three,C10190/260 metadata actors/1041 tickets and95 full-host commands. Frontend/Elm assets byte-identical to held106; original106 Elm/native ACK evidence retained at parent source, not relabelled current native qualification. Core16/plugin19 bounded native129 remains GUI92 legacy runtime2517/278. Live-window detachment, bootstrap reattachment, frontend realm scoping, renderer native outbox/WebKit, actual current controlled Core integration and all original release gates remain open."
+}

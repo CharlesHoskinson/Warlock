@@ -1,0 +1,1110 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      cancelled: false,
+      captures: 0,
+      charge: 4096,
+      closed: false,
+      confirmed: 0,
+      deadlineUnchanged: true,
+      delivered: 0,
+      history: [],
+      intent: false,
+      issued: 0,
+      last: 0,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      cancelled: false,
+      captures: 0,
+      charge: 4096,
+      closed: false,
+      confirmed: 0,
+      deadlineUnchanged: true,
+      delivered: 0,
+      history: ["Close"],
+      intent: false,
+      issued: 0,
+      last: 0,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      cancelled: false,
+      captures: 1,
+      charge: 4096,
+      closed: false,
+      confirmed: 0,
+      deadlineUnchanged: true,
+      delivered: 1,
+      history: ["Close", "Acquire"],
+      intent: true,
+      issued: 1,
+      last: 3,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      cancelled: true,
+      captures: 1,
+      charge: 4096,
+      closed: false,
+      confirmed: 0,
+      deadlineUnchanged: true,
+      delivered: 2,
+      history: ["Close", "Acquire", "Cancel"],
+      intent: true,
+      issued: 2,
+      last: 1,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      cancelled: true,
+      captures: 1,
+      charge: 4096,
+      closed: false,
+      confirmed: 2,
+      deadlineUnchanged: true,
+      delivered: 2,
+      history: ["Close", "Acquire", "Cancel", "Confirm"],
+      intent: true,
+      issued: 2,
+      last: 1,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      cancelled: true,
+      captures: 1,
+      charge: 4096,
+      closed: false,
+      confirmed: 2,
+      deadlineUnchanged: true,
+      delivered: 2,
+      history: ["Close", "Acquire", "Cancel", "Confirm", "Poll"],
+      intent: true,
+      issued: 2,
+      last: 0,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      cancelled: true,
+      captures: 1,
+      charge: 4096,
+      closed: false,
+      confirmed: 2,
+      deadlineUnchanged: true,
+      delivered: 2,
+      history: ["Close", "Acquire", "Cancel", "Confirm", "Poll", "Cancel"],
+      intent: true,
+      issued: 2,
+      last: 2,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      cancelled: true,
+      captures: 1,
+      charge: 4096,
+      closed: false,
+      confirmed: 2,
+      deadlineUnchanged: true,
+      delivered: 2,
+      history:
+        ["Close", "Acquire", "Cancel", "Confirm", "Poll", "Cancel", "BadJob"],
+      intent: true,
+      issued: 2,
+      last: -1,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      cancelled: true,
+      captures: 1,
+      charge: 4096,
+      closed: false,
+      confirmed: 2,
+      deadlineUnchanged: true,
+      delivered: 2,
+      history:
+        [
+          "Close",
+          "Acquire",
+          "Cancel",
+          "Confirm",
+          "Poll",
+          "Cancel",
+          "BadJob",
+          "Confirm"
+        ],
+      intent: true,
+      issued: 2,
+      last: 1,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      cancelled: true,
+      captures: 1,
+      charge: 4096,
+      closed: false,
+      confirmed: 2,
+      deadlineUnchanged: true,
+      delivered: 2,
+      history:
+        [
+          "Close",
+          "Acquire",
+          "Cancel",
+          "Confirm",
+          "Poll",
+          "Cancel",
+          "BadJob",
+          "Confirm",
+          "Confirm"
+        ],
+      intent: true,
+      issued: 2,
+      last: 1,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      cancelled: true,
+      captures: 1,
+      charge: 4096,
+      closed: false,
+      confirmed: 2,
+      deadlineUnchanged: true,
+      delivered: 2,
+      history:
+        [
+          "Close",
+          "Acquire",
+          "Cancel",
+          "Confirm",
+          "Poll",
+          "Cancel",
+          "BadJob",
+          "Confirm",
+          "Confirm",
+          "RawRetry"
+        ],
+      intent: true,
+      issued: 2,
+      last: -1,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      cancelled: true,
+      captures: 1,
+      charge: 4096,
+      closed: false,
+      confirmed: 2,
+      deadlineUnchanged: true,
+      delivered: 2,
+      history:
+        [
+          "Close",
+          "Acquire",
+          "Cancel",
+          "Confirm",
+          "Poll",
+          "Cancel",
+          "BadJob",
+          "Confirm",
+          "Confirm",
+          "RawRetry",
+          "Poll"
+        ],
+      intent: true,
+      issued: 2,
+      last: 0,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      cancelled: true,
+      captures: 1,
+      charge: 4096,
+      closed: false,
+      confirmed: 2,
+      deadlineUnchanged: true,
+      delivered: 2,
+      history:
+        [
+          "Close",
+          "Acquire",
+          "Cancel",
+          "Confirm",
+          "Poll",
+          "Cancel",
+          "BadJob",
+          "Confirm",
+          "Confirm",
+          "RawRetry",
+          "Poll",
+          "RawRetry"
+        ],
+      intent: true,
+      issued: 2,
+      last: -1,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      cancelled: true,
+      captures: 1,
+      charge: 4096,
+      closed: false,
+      confirmed: 2,
+      deadlineUnchanged: true,
+      delivered: 2,
+      history:
+        [
+          "Close",
+          "Acquire",
+          "Cancel",
+          "Confirm",
+          "Poll",
+          "Cancel",
+          "BadJob",
+          "Confirm",
+          "Confirm",
+          "RawRetry",
+          "Poll",
+          "RawRetry",
+          "BadJob"
+        ],
+      intent: true,
+      issued: 2,
+      last: -1,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      cancelled: true,
+      captures: 1,
+      charge: 4096,
+      closed: false,
+      confirmed: 2,
+      deadlineUnchanged: true,
+      delivered: 2,
+      history:
+        [
+          "Close",
+          "Acquire",
+          "Cancel",
+          "Confirm",
+          "Poll",
+          "Cancel",
+          "BadJob",
+          "Confirm",
+          "Confirm",
+          "RawRetry",
+          "Poll",
+          "RawRetry",
+          "BadJob",
+          "Acquire"
+        ],
+      intent: true,
+      issued: 2,
+      last: 0,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      cancelled: true,
+      captures: 1,
+      charge: 4096,
+      closed: false,
+      confirmed: 2,
+      deadlineUnchanged: true,
+      delivered: 2,
+      history:
+        [
+          "Close",
+          "Acquire",
+          "Cancel",
+          "Confirm",
+          "Poll",
+          "Cancel",
+          "BadJob",
+          "Confirm",
+          "Confirm",
+          "RawRetry",
+          "Poll",
+          "RawRetry",
+          "BadJob",
+          "Acquire",
+          "RawRetry"
+        ],
+      intent: true,
+      issued: 2,
+      last: -1,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      cancelled: true,
+      captures: 1,
+      charge: 4096,
+      closed: false,
+      confirmed: 2,
+      deadlineUnchanged: true,
+      delivered: 2,
+      history:
+        [
+          "Close",
+          "Acquire",
+          "Cancel",
+          "Confirm",
+          "Poll",
+          "Cancel",
+          "BadJob",
+          "Confirm",
+          "Confirm",
+          "RawRetry",
+          "Poll",
+          "RawRetry",
+          "BadJob",
+          "Acquire",
+          "RawRetry",
+          "BadJob"
+        ],
+      intent: true,
+      issued: 2,
+      last: -1,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      cancelled: true,
+      captures: 1,
+      charge: 4096,
+      closed: false,
+      confirmed: 2,
+      deadlineUnchanged: true,
+      delivered: 2,
+      history:
+        [
+          "Close",
+          "Acquire",
+          "Cancel",
+          "Confirm",
+          "Poll",
+          "Cancel",
+          "BadJob",
+          "Confirm",
+          "Confirm",
+          "RawRetry",
+          "Poll",
+          "RawRetry",
+          "BadJob",
+          "Acquire",
+          "RawRetry",
+          "BadJob",
+          "RawRetry"
+        ],
+      intent: true,
+      issued: 2,
+      last: -1,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      cancelled: true,
+      captures: 1,
+      charge: 4096,
+      closed: false,
+      confirmed: 2,
+      deadlineUnchanged: true,
+      delivered: 2,
+      history:
+        [
+          "Close",
+          "Acquire",
+          "Cancel",
+          "Confirm",
+          "Poll",
+          "Cancel",
+          "BadJob",
+          "Confirm",
+          "Confirm",
+          "RawRetry",
+          "Poll",
+          "RawRetry",
+          "BadJob",
+          "Acquire",
+          "RawRetry",
+          "BadJob",
+          "RawRetry",
+          "ForeignReceiver"
+        ],
+      intent: true,
+      issued: 2,
+      last: -1,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      cancelled: true,
+      captures: 1,
+      charge: 4096,
+      closed: false,
+      confirmed: 2,
+      deadlineUnchanged: true,
+      delivered: 2,
+      history:
+        [
+          "Close",
+          "Acquire",
+          "Cancel",
+          "Confirm",
+          "Poll",
+          "Cancel",
+          "BadJob",
+          "Confirm",
+          "Confirm",
+          "RawRetry",
+          "Poll",
+          "RawRetry",
+          "BadJob",
+          "Acquire",
+          "RawRetry",
+          "BadJob",
+          "RawRetry",
+          "ForeignReceiver",
+          "BadJob"
+        ],
+      intent: true,
+      issued: 2,
+      last: -1,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      cancelled: true,
+      captures: 1,
+      charge: 4096,
+      closed: false,
+      confirmed: 2,
+      deadlineUnchanged: true,
+      delivered: 2,
+      history:
+        [
+          "Close",
+          "Acquire",
+          "Cancel",
+          "Confirm",
+          "Poll",
+          "Cancel",
+          "BadJob",
+          "Confirm",
+          "Confirm",
+          "RawRetry",
+          "Poll",
+          "RawRetry",
+          "BadJob",
+          "Acquire",
+          "RawRetry",
+          "BadJob",
+          "RawRetry",
+          "ForeignReceiver",
+          "BadJob",
+          "Cancel"
+        ],
+      intent: true,
+      issued: 2,
+      last: 2,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      cancelled: true,
+      captures: 1,
+      charge: 4096,
+      closed: false,
+      confirmed: 2,
+      deadlineUnchanged: true,
+      delivered: 2,
+      history:
+        [
+          "Close",
+          "Acquire",
+          "Cancel",
+          "Confirm",
+          "Poll",
+          "Cancel",
+          "BadJob",
+          "Confirm",
+          "Confirm",
+          "RawRetry",
+          "Poll",
+          "RawRetry",
+          "BadJob",
+          "Acquire",
+          "RawRetry",
+          "BadJob",
+          "RawRetry",
+          "ForeignReceiver",
+          "BadJob",
+          "Cancel",
+          "BadJob"
+        ],
+      intent: true,
+      issued: 2,
+      last: -1,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      cancelled: true,
+      captures: 1,
+      charge: 4096,
+      closed: false,
+      confirmed: 2,
+      deadlineUnchanged: true,
+      delivered: 2,
+      history:
+        [
+          "Close",
+          "Acquire",
+          "Cancel",
+          "Confirm",
+          "Poll",
+          "Cancel",
+          "BadJob",
+          "Confirm",
+          "Confirm",
+          "RawRetry",
+          "Poll",
+          "RawRetry",
+          "BadJob",
+          "Acquire",
+          "RawRetry",
+          "BadJob",
+          "RawRetry",
+          "ForeignReceiver",
+          "BadJob",
+          "Cancel",
+          "BadJob",
+          "Confirm"
+        ],
+      intent: true,
+      issued: 2,
+      last: 1,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      cancelled: true,
+      captures: 1,
+      charge: 4096,
+      closed: false,
+      confirmed: 2,
+      deadlineUnchanged: true,
+      delivered: 2,
+      history:
+        [
+          "Close",
+          "Acquire",
+          "Cancel",
+          "Confirm",
+          "Poll",
+          "Cancel",
+          "BadJob",
+          "Confirm",
+          "Confirm",
+          "RawRetry",
+          "Poll",
+          "RawRetry",
+          "BadJob",
+          "Acquire",
+          "RawRetry",
+          "BadJob",
+          "RawRetry",
+          "ForeignReceiver",
+          "BadJob",
+          "Cancel",
+          "BadJob",
+          "Confirm",
+          "Acquire"
+        ],
+      intent: true,
+      issued: 2,
+      last: 0,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      cancelled: true,
+      captures: 1,
+      charge: 4096,
+      closed: false,
+      confirmed: 2,
+      deadlineUnchanged: true,
+      delivered: 2,
+      history:
+        [
+          "Close",
+          "Acquire",
+          "Cancel",
+          "Confirm",
+          "Poll",
+          "Cancel",
+          "BadJob",
+          "Confirm",
+          "Confirm",
+          "RawRetry",
+          "Poll",
+          "RawRetry",
+          "BadJob",
+          "Acquire",
+          "RawRetry",
+          "BadJob",
+          "RawRetry",
+          "ForeignReceiver",
+          "BadJob",
+          "Cancel",
+          "BadJob",
+          "Confirm",
+          "Acquire",
+          "Confirm"
+        ],
+      intent: true,
+      issued: 2,
+      last: 1,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      cancelled: true,
+      captures: 1,
+      charge: 4096,
+      closed: false,
+      confirmed: 2,
+      deadlineUnchanged: true,
+      delivered: 2,
+      history:
+        [
+          "Close",
+          "Acquire",
+          "Cancel",
+          "Confirm",
+          "Poll",
+          "Cancel",
+          "BadJob",
+          "Confirm",
+          "Confirm",
+          "RawRetry",
+          "Poll",
+          "RawRetry",
+          "BadJob",
+          "Acquire",
+          "RawRetry",
+          "BadJob",
+          "RawRetry",
+          "ForeignReceiver",
+          "BadJob",
+          "Cancel",
+          "BadJob",
+          "Confirm",
+          "Acquire",
+          "Confirm",
+          "Cancel"
+        ],
+      intent: true,
+      issued: 2,
+      last: 2,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      cancelled: true,
+      captures: 1,
+      charge: 4096,
+      closed: false,
+      confirmed: 2,
+      deadlineUnchanged: true,
+      delivered: 2,
+      history:
+        [
+          "Close",
+          "Acquire",
+          "Cancel",
+          "Confirm",
+          "Poll",
+          "Cancel",
+          "BadJob",
+          "Confirm",
+          "Confirm",
+          "RawRetry",
+          "Poll",
+          "RawRetry",
+          "BadJob",
+          "Acquire",
+          "RawRetry",
+          "BadJob",
+          "RawRetry",
+          "ForeignReceiver",
+          "BadJob",
+          "Cancel",
+          "BadJob",
+          "Confirm",
+          "Acquire",
+          "Confirm",
+          "Cancel",
+          "BadJob"
+        ],
+      intent: true,
+      issued: 2,
+      last: -1,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      cancelled: true,
+      captures: 1,
+      charge: 4096,
+      closed: false,
+      confirmed: 2,
+      deadlineUnchanged: true,
+      delivered: 2,
+      history:
+        [
+          "Close",
+          "Acquire",
+          "Cancel",
+          "Confirm",
+          "Poll",
+          "Cancel",
+          "BadJob",
+          "Confirm",
+          "Confirm",
+          "RawRetry",
+          "Poll",
+          "RawRetry",
+          "BadJob",
+          "Acquire",
+          "RawRetry",
+          "BadJob",
+          "RawRetry",
+          "ForeignReceiver",
+          "BadJob",
+          "Cancel",
+          "BadJob",
+          "Confirm",
+          "Acquire",
+          "Confirm",
+          "Cancel",
+          "BadJob",
+          "Close"
+        ],
+      intent: true,
+      issued: 2,
+      last: 0,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      cancelled: true,
+      captures: 1,
+      charge: 4096,
+      closed: false,
+      confirmed: 2,
+      deadlineUnchanged: true,
+      delivered: 2,
+      history:
+        [
+          "Close",
+          "Acquire",
+          "Cancel",
+          "Confirm",
+          "Poll",
+          "Cancel",
+          "BadJob",
+          "Confirm",
+          "Confirm",
+          "RawRetry",
+          "Poll",
+          "RawRetry",
+          "BadJob",
+          "Acquire",
+          "RawRetry",
+          "BadJob",
+          "RawRetry",
+          "ForeignReceiver",
+          "BadJob",
+          "Cancel",
+          "BadJob",
+          "Confirm",
+          "Acquire",
+          "Confirm",
+          "Cancel",
+          "BadJob",
+          "Close",
+          "Acquire"
+        ],
+      intent: true,
+      issued: 2,
+      last: 0,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      cancelled: true,
+      captures: 1,
+      charge: 4096,
+      closed: false,
+      confirmed: 2,
+      deadlineUnchanged: true,
+      delivered: 2,
+      history:
+        [
+          "Close",
+          "Acquire",
+          "Cancel",
+          "Confirm",
+          "Poll",
+          "Cancel",
+          "BadJob",
+          "Confirm",
+          "Confirm",
+          "RawRetry",
+          "Poll",
+          "RawRetry",
+          "BadJob",
+          "Acquire",
+          "RawRetry",
+          "BadJob",
+          "RawRetry",
+          "ForeignReceiver",
+          "BadJob",
+          "Cancel",
+          "BadJob",
+          "Confirm",
+          "Acquire",
+          "Confirm",
+          "Cancel",
+          "BadJob",
+          "Close",
+          "Acquire",
+          "Confirm"
+        ],
+      intent: true,
+      issued: 2,
+      last: 1,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      cancelled: true,
+      captures: 1,
+      charge: 4096,
+      closed: false,
+      confirmed: 2,
+      deadlineUnchanged: true,
+      delivered: 2,
+      history:
+        [
+          "Close",
+          "Acquire",
+          "Cancel",
+          "Confirm",
+          "Poll",
+          "Cancel",
+          "BadJob",
+          "Confirm",
+          "Confirm",
+          "RawRetry",
+          "Poll",
+          "RawRetry",
+          "BadJob",
+          "Acquire",
+          "RawRetry",
+          "BadJob",
+          "RawRetry",
+          "ForeignReceiver",
+          "BadJob",
+          "Cancel",
+          "BadJob",
+          "Confirm",
+          "Acquire",
+          "Confirm",
+          "Cancel",
+          "BadJob",
+          "Close",
+          "Acquire",
+          "Confirm",
+          "Confirm"
+        ],
+      intent: true,
+      issued: 2,
+      last: 1,
+      terminal: false,
+      wireUnchanged: true
+    }
+}
+
+[ok] No violation found (181ms at 552 traces/second).
+Trace length statistics: max=31, min=31, average=31.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

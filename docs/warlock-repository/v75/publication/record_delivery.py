@@ -1,0 +1,10 @@
+import json,pathlib,resource,subprocess,sys
+sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
+require_qa_scope();assert resource.getrlimit(resource.RLIMIT_CORE)==(1,1)
+r=pathlib.Path('/home/hoskinson/omarchy-windows-parity');base=pathlib.Path(__file__).parent;d=json.loads((base/'delivery.json').read_text());assert d['pushCompleted'] and d['ownedFiles']>=10611
+v=json.loads(subprocess.check_output(['gh','repo','view','CharlesHoskinson/Warlock','--json','name,url,visibility'],text=True));assert v['visibility']=='PUBLIC';(base/'visibility.json').write_text(json.dumps(v,indent=2)+'\n')
+observed=subprocess.check_output(['gh','api','repos/CharlesHoskinson/Warlock/branches/feature%2Felm','--jq','.commit.sha'],text=True).strip();assert observed==d['publishedCommit']
+(base/'branch.json').write_text(json.dumps({'commit':observed,'verified':True},indent=2)+'\n')
+report=json.loads((r/'docs/warlock-preview/v93/component-report107.json').read_text())
+sys.path.insert(0,str(r/'implementation/elm-build-loop-v1'));import loop
+e=loop.write_checkpoint(r,'f6779148-8f5d-4bdf-8a0f-044184e486f2','implementation/warlock-preview-provider-v107',['PROGRESS PUBLIC75 '+d['publishedCommit']+' verified '+str(d['ownedFiles'])+' exact owned blobs. HeldGUI107 inactive CPU persistent realm/native claim ownership:111 C replacement/exhaustion controls,36 threaded controls,16 selected Quint/28 actual C traces/711 states/current full95/original resource/capture/ticket/FD regressions; six failures preserved. Native129/public74 GUI92/core16/plugin19 remains2517 checks/278 normal exits/full cleanup. Next freshGUI108 distinct live-window detachment/Bootstrap borrowed receipt reattachment/current controlled Core/native renderer outbox/WebKit; original full release gates remain open. No installed changes.'],'progress',['docs/warlock-preview/v93/component-report107.json','implementation/warlock-preview-provider-v107/component-manifest.json','docs/warlock-repository/v75/publication/delivery.json']);print(e)

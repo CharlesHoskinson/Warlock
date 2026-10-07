@@ -3,6 +3,7 @@
 - [x] Replace dynamic C lifetime history with bounded active membership and nonreused entry serials.
 - [ ] Integrate atomic physical/journal/receiver/Coordinator/Broker/ledger retirement and exact Elm typed facts.
 - [ ] Qualify real native turnover beyond256 distinct windows with a retained live neighbor and replay controls.
+- [x] Implement and CPU-qualify native-owned receiver epochs and exclusive claim closure across endpoint replacement (CONTROL-020), including a deterministic legacy stale-CAS race; current Core/WebKit and live-window detachment qualification remain open.
 - [ ] Freeze and publish exact source/evidence; preserve all original GUI acceptance gates.
 
 Native observation and bridge evidence: [current report](../../../docs/warlock-preview/v91/report.json).

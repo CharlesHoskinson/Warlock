@@ -1,0 +1,2317 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      active: false,
+      actors: 0,
+      closed: 0,
+      epoch: 0,
+      history: [],
+      last: 0,
+      phase: 0,
+      proofs: 0,
+      ready: false,
+      records: 0,
+      terminal: false,
+      through: 0
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      active: false,
+      actors: 0,
+      closed: 0,
+      epoch: 0,
+      history: ["Legacy"],
+      last: 1,
+      phase: 0,
+      proofs: 0,
+      ready: false,
+      records: 0,
+      terminal: false,
+      through: 0
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      active: false,
+      actors: 0,
+      closed: 0,
+      epoch: 0,
+      history: ["Legacy", "Legacy"],
+      last: 1,
+      phase: 0,
+      proofs: 0,
+      ready: false,
+      records: 0,
+      terminal: false,
+      through: 0
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 0,
+      epoch: 1,
+      history: ["Legacy", "Legacy", "Open"],
+      last: 1,
+      phase: 1,
+      proofs: 0,
+      ready: false,
+      records: 1,
+      terminal: false,
+      through: 1
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 0,
+      epoch: 1,
+      history: ["Legacy", "Legacy", "Open", "Reconcile"],
+      last: 1,
+      phase: 2,
+      proofs: 0,
+      ready: false,
+      records: 1,
+      terminal: false,
+      through: 1
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 0,
+      epoch: 1,
+      history: ["Legacy", "Legacy", "Open", "Reconcile", "Close"],
+      last: -1,
+      phase: 2,
+      proofs: 0,
+      ready: false,
+      records: 1,
+      terminal: false,
+      through: 1
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 0,
+      epoch: 1,
+      history: ["Legacy", "Legacy", "Open", "Reconcile", "Close", "Legacy"],
+      last: -1,
+      phase: 2,
+      proofs: 0,
+      ready: false,
+      records: 1,
+      terminal: false,
+      through: 1
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 0,
+      epoch: 1,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen"
+        ],
+      last: -1,
+      phase: 2,
+      proofs: 0,
+      ready: false,
+      records: 1,
+      terminal: false,
+      through: 1
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 0,
+      epoch: 1,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close"
+        ],
+      last: -1,
+      phase: 2,
+      proofs: 0,
+      ready: false,
+      records: 1,
+      terminal: false,
+      through: 1
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 0,
+      epoch: 1,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll"
+        ],
+      last: 1,
+      phase: 3,
+      proofs: 2,
+      ready: false,
+      records: 1,
+      terminal: true,
+      through: 1
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 0,
+      epoch: 1,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob"
+        ],
+      last: 1,
+      phase: 4,
+      proofs: 0,
+      ready: false,
+      records: 0,
+      terminal: false,
+      through: 1
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 0,
+      epoch: 1,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close"
+        ],
+      last: -1,
+      phase: 4,
+      proofs: 0,
+      ready: false,
+      records: 0,
+      terminal: false,
+      through: 1
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 0,
+      epoch: 1,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen"
+        ],
+      last: -1,
+      phase: 4,
+      proofs: 0,
+      ready: false,
+      records: 0,
+      terminal: false,
+      through: 1
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 0,
+      epoch: 1,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy"
+        ],
+      last: -1,
+      phase: 4,
+      proofs: 0,
+      ready: false,
+      records: 0,
+      terminal: false,
+      through: 1
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 0,
+      epoch: 1,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy"
+        ],
+      last: -1,
+      phase: 4,
+      proofs: 0,
+      ready: false,
+      records: 0,
+      terminal: false,
+      through: 1
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      active: true,
+      actors: 0,
+      closed: 0,
+      epoch: 1,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor"
+        ],
+      last: 1,
+      phase: 5,
+      proofs: 0,
+      ready: false,
+      records: 0,
+      terminal: false,
+      through: 1
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      active: true,
+      actors: 0,
+      closed: 0,
+      epoch: 1,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy"
+        ],
+      last: -1,
+      phase: 5,
+      proofs: 0,
+      ready: false,
+      records: 0,
+      terminal: false,
+      through: 1
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      active: true,
+      actors: 0,
+      closed: 0,
+      epoch: 1,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close"
+        ],
+      last: -1,
+      phase: 5,
+      proofs: 0,
+      ready: false,
+      records: 0,
+      terminal: false,
+      through: 1
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      active: true,
+      actors: 0,
+      closed: 0,
+      epoch: 1,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen"
+        ],
+      last: -1,
+      phase: 5,
+      proofs: 0,
+      ready: false,
+      records: 0,
+      terminal: false,
+      through: 1
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      active: true,
+      actors: 0,
+      closed: 0,
+      epoch: 1,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy"
+        ],
+      last: -1,
+      phase: 5,
+      proofs: 0,
+      ready: false,
+      records: 0,
+      terminal: false,
+      through: 1
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      active: true,
+      actors: 0,
+      closed: 0,
+      epoch: 1,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close"
+        ],
+      last: -1,
+      phase: 5,
+      proofs: 0,
+      ready: false,
+      records: 0,
+      terminal: false,
+      through: 1
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      active: true,
+      actors: 0,
+      closed: 0,
+      epoch: 1,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen"
+        ],
+      last: -1,
+      phase: 5,
+      proofs: 0,
+      ready: false,
+      records: 0,
+      terminal: false,
+      through: 1
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      active: true,
+      actors: 0,
+      closed: 0,
+      epoch: 1,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "ConcurrentOpen"
+        ],
+      last: -1,
+      phase: 5,
+      proofs: 0,
+      ready: false,
+      records: 0,
+      terminal: false,
+      through: 1
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      active: true,
+      actors: 0,
+      closed: 0,
+      epoch: 1,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen"
+        ],
+      last: -1,
+      phase: 5,
+      proofs: 0,
+      ready: false,
+      records: 0,
+      terminal: false,
+      through: 1
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      active: true,
+      actors: 0,
+      closed: 0,
+      epoch: 1,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "AckActor"
+        ],
+      last: 1,
+      phase: 6,
+      proofs: 0,
+      ready: false,
+      records: 0,
+      terminal: false,
+      through: 1
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      active: true,
+      actors: 0,
+      closed: 0,
+      epoch: 1,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "AckActor",
+          "Close"
+        ],
+      last: -1,
+      phase: 6,
+      proofs: 0,
+      ready: false,
+      records: 0,
+      terminal: false,
+      through: 1
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      active: true,
+      actors: 0,
+      closed: 0,
+      epoch: 1,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "AckActor",
+          "Close",
+          "ConfirmActor"
+        ],
+      last: 1,
+      phase: 7,
+      proofs: 0,
+      ready: true,
+      records: 0,
+      terminal: false,
+      through: 1
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      active: true,
+      actors: 0,
+      closed: 0,
+      epoch: 1,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "AckActor",
+          "Close",
+          "ConfirmActor",
+          "ConcurrentOpen"
+        ],
+      last: -1,
+      phase: 7,
+      proofs: 0,
+      ready: true,
+      records: 0,
+      terminal: false,
+      through: 1
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      active: true,
+      actors: 0,
+      closed: 0,
+      epoch: 1,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "AckActor",
+          "Close",
+          "ConfirmActor",
+          "ConcurrentOpen",
+          "ConcurrentOpen"
+        ],
+      last: -1,
+      phase: 7,
+      proofs: 0,
+      ready: true,
+      records: 0,
+      terminal: false,
+      through: 1
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      active: true,
+      actors: 0,
+      closed: 0,
+      epoch: 1,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "AckActor",
+          "Close",
+          "ConfirmActor",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen"
+        ],
+      last: -1,
+      phase: 7,
+      proofs: 0,
+      ready: true,
+      records: 0,
+      terminal: false,
+      through: 1
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      active: false,
+      actors: 0,
+      closed: 1,
+      epoch: 1,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "AckActor",
+          "Close",
+          "ConfirmActor",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "Close"
+        ],
+      last: 1,
+      phase: 0,
+      proofs: 0,
+      ready: false,
+      records: 0,
+      terminal: false,
+      through: 1
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 1,
+      epoch: 2,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "AckActor",
+          "Close",
+          "ConfirmActor",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "Close",
+          "Open"
+        ],
+      last: 1,
+      phase: 1,
+      proofs: 0,
+      ready: false,
+      records: 1,
+      terminal: false,
+      through: 2
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 1,
+      epoch: 2,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "AckActor",
+          "Close",
+          "ConfirmActor",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "Close",
+          "Open",
+          "Close"
+        ],
+      last: -1,
+      phase: 1,
+      proofs: 0,
+      ready: false,
+      records: 1,
+      terminal: false,
+      through: 2
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 1,
+      epoch: 2,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "AckActor",
+          "Close",
+          "ConfirmActor",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "Close",
+          "Open",
+          "Close",
+          "Close"
+        ],
+      last: -1,
+      phase: 1,
+      proofs: 0,
+      ready: false,
+      records: 1,
+      terminal: false,
+      through: 2
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 1,
+      epoch: 2,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "AckActor",
+          "Close",
+          "ConfirmActor",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "Close",
+          "Open",
+          "Close",
+          "Close",
+          "ConcurrentOpen"
+        ],
+      last: -1,
+      phase: 1,
+      proofs: 0,
+      ready: false,
+      records: 1,
+      terminal: false,
+      through: 2
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 1,
+      epoch: 2,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "AckActor",
+          "Close",
+          "ConfirmActor",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "Close",
+          "Open",
+          "Close",
+          "Close",
+          "ConcurrentOpen",
+          "OldTicket"
+        ],
+      last: -1,
+      phase: 1,
+      proofs: 0,
+      ready: false,
+      records: 1,
+      terminal: false,
+      through: 2
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 1,
+      epoch: 2,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "AckActor",
+          "Close",
+          "ConfirmActor",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "Close",
+          "Open",
+          "Close",
+          "Close",
+          "ConcurrentOpen",
+          "OldTicket",
+          "Close"
+        ],
+      last: -1,
+      phase: 1,
+      proofs: 0,
+      ready: false,
+      records: 1,
+      terminal: false,
+      through: 2
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 1,
+      epoch: 2,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "AckActor",
+          "Close",
+          "ConfirmActor",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "Close",
+          "Open",
+          "Close",
+          "Close",
+          "ConcurrentOpen",
+          "OldTicket",
+          "Close",
+          "Close"
+        ],
+      last: -1,
+      phase: 1,
+      proofs: 0,
+      ready: false,
+      records: 1,
+      terminal: false,
+      through: 2
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 1,
+      epoch: 2,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "AckActor",
+          "Close",
+          "ConfirmActor",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "Close",
+          "Open",
+          "Close",
+          "Close",
+          "ConcurrentOpen",
+          "OldTicket",
+          "Close",
+          "Close",
+          "Close"
+        ],
+      last: -1,
+      phase: 1,
+      proofs: 0,
+      ready: false,
+      records: 1,
+      terminal: false,
+      through: 2
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 1,
+      epoch: 2,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "AckActor",
+          "Close",
+          "ConfirmActor",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "Close",
+          "Open",
+          "Close",
+          "Close",
+          "ConcurrentOpen",
+          "OldTicket",
+          "Close",
+          "Close",
+          "Close",
+          "ConcurrentOpen"
+        ],
+      last: -1,
+      phase: 1,
+      proofs: 0,
+      ready: false,
+      records: 1,
+      terminal: false,
+      through: 2
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 1,
+      epoch: 2,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "AckActor",
+          "Close",
+          "ConfirmActor",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "Close",
+          "Open",
+          "Close",
+          "Close",
+          "ConcurrentOpen",
+          "OldTicket",
+          "Close",
+          "Close",
+          "Close",
+          "ConcurrentOpen",
+          "OldTicket"
+        ],
+      last: -1,
+      phase: 1,
+      proofs: 0,
+      ready: false,
+      records: 1,
+      terminal: false,
+      through: 2
+    }
+}
+
+[State 41]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 1,
+      epoch: 2,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "AckActor",
+          "Close",
+          "ConfirmActor",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "Close",
+          "Open",
+          "Close",
+          "Close",
+          "ConcurrentOpen",
+          "OldTicket",
+          "Close",
+          "Close",
+          "Close",
+          "ConcurrentOpen",
+          "OldTicket",
+          "Close"
+        ],
+      last: -1,
+      phase: 1,
+      proofs: 0,
+      ready: false,
+      records: 1,
+      terminal: false,
+      through: 2
+    }
+}
+
+[State 42]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 1,
+      epoch: 2,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "AckActor",
+          "Close",
+          "ConfirmActor",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "Close",
+          "Open",
+          "Close",
+          "Close",
+          "ConcurrentOpen",
+          "OldTicket",
+          "Close",
+          "Close",
+          "Close",
+          "ConcurrentOpen",
+          "OldTicket",
+          "Close",
+          "Legacy"
+        ],
+      last: -1,
+      phase: 1,
+      proofs: 0,
+      ready: false,
+      records: 1,
+      terminal: false,
+      through: 2
+    }
+}
+
+[State 43]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 1,
+      epoch: 2,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "AckActor",
+          "Close",
+          "ConfirmActor",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "Close",
+          "Open",
+          "Close",
+          "Close",
+          "ConcurrentOpen",
+          "OldTicket",
+          "Close",
+          "Close",
+          "Close",
+          "ConcurrentOpen",
+          "OldTicket",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen"
+        ],
+      last: -1,
+      phase: 1,
+      proofs: 0,
+      ready: false,
+      records: 1,
+      terminal: false,
+      through: 2
+    }
+}
+
+[State 44]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 1,
+      epoch: 2,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "AckActor",
+          "Close",
+          "ConfirmActor",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "Close",
+          "Open",
+          "Close",
+          "Close",
+          "ConcurrentOpen",
+          "OldTicket",
+          "Close",
+          "Close",
+          "Close",
+          "ConcurrentOpen",
+          "OldTicket",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close"
+        ],
+      last: -1,
+      phase: 1,
+      proofs: 0,
+      ready: false,
+      records: 1,
+      terminal: false,
+      through: 2
+    }
+}
+
+[State 45]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 1,
+      epoch: 2,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "AckActor",
+          "Close",
+          "ConfirmActor",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "Close",
+          "Open",
+          "Close",
+          "Close",
+          "ConcurrentOpen",
+          "OldTicket",
+          "Close",
+          "Close",
+          "Close",
+          "ConcurrentOpen",
+          "OldTicket",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Close"
+        ],
+      last: -1,
+      phase: 1,
+      proofs: 0,
+      ready: false,
+      records: 1,
+      terminal: false,
+      through: 2
+    }
+}
+
+[State 46]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 1,
+      epoch: 2,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "AckActor",
+          "Close",
+          "ConfirmActor",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "Close",
+          "Open",
+          "Close",
+          "Close",
+          "ConcurrentOpen",
+          "OldTicket",
+          "Close",
+          "Close",
+          "Close",
+          "ConcurrentOpen",
+          "OldTicket",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Close",
+          "Reconcile"
+        ],
+      last: 1,
+      phase: 2,
+      proofs: 0,
+      ready: false,
+      records: 1,
+      terminal: false,
+      through: 2
+    }
+}
+
+[State 47]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 1,
+      epoch: 2,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "AckActor",
+          "Close",
+          "ConfirmActor",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "Close",
+          "Open",
+          "Close",
+          "Close",
+          "ConcurrentOpen",
+          "OldTicket",
+          "Close",
+          "Close",
+          "Close",
+          "ConcurrentOpen",
+          "OldTicket",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Close",
+          "Reconcile",
+          "ConcurrentOpen"
+        ],
+      last: -1,
+      phase: 2,
+      proofs: 0,
+      ready: false,
+      records: 1,
+      terminal: false,
+      through: 2
+    }
+}
+
+[State 48]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 1,
+      epoch: 2,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "AckActor",
+          "Close",
+          "ConfirmActor",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "Close",
+          "Open",
+          "Close",
+          "Close",
+          "ConcurrentOpen",
+          "OldTicket",
+          "Close",
+          "Close",
+          "Close",
+          "ConcurrentOpen",
+          "OldTicket",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Close",
+          "Reconcile",
+          "ConcurrentOpen",
+          "Poll"
+        ],
+      last: 1,
+      phase: 3,
+      proofs: 2,
+      ready: false,
+      records: 1,
+      terminal: true,
+      through: 2
+    }
+}
+
+[State 49]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 1,
+      epoch: 2,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "AckActor",
+          "Close",
+          "ConfirmActor",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "Close",
+          "Open",
+          "Close",
+          "Close",
+          "ConcurrentOpen",
+          "OldTicket",
+          "Close",
+          "Close",
+          "Close",
+          "ConcurrentOpen",
+          "OldTicket",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Close",
+          "Reconcile",
+          "ConcurrentOpen",
+          "Poll",
+          "ConcurrentOpen"
+        ],
+      last: -1,
+      phase: 3,
+      proofs: 2,
+      ready: false,
+      records: 1,
+      terminal: true,
+      through: 2
+    }
+}
+
+[State 50]
+{
+  s:
+    {
+      active: true,
+      actors: 1,
+      closed: 1,
+      epoch: 2,
+      history:
+        [
+          "Legacy",
+          "Legacy",
+          "Open",
+          "Reconcile",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Poll",
+          "AckJob",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Legacy",
+          "RetireActor",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "Legacy",
+          "Close",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "AckActor",
+          "Close",
+          "ConfirmActor",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "ConcurrentOpen",
+          "Close",
+          "Open",
+          "Close",
+          "Close",
+          "ConcurrentOpen",
+          "OldTicket",
+          "Close",
+          "Close",
+          "Close",
+          "ConcurrentOpen",
+          "OldTicket",
+          "Close",
+          "Legacy",
+          "ConcurrentOpen",
+          "Close",
+          "Close",
+          "Reconcile",
+          "ConcurrentOpen",
+          "Poll",
+          "ConcurrentOpen",
+          "Close"
+        ],
+      last: -1,
+      phase: 3,
+      proofs: 2,
+      ready: false,
+      records: 1,
+      terminal: true,
+      through: 2
+    }
+}
+
+[ok] No violation found (586ms at 427 traces/second).
+Trace length statistics: max=51, min=51, average=51.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

@@ -1,0 +1,57 @@
+Closed controlled realm cannot downgrade to legacy ownership
+
+=================================================================
+==3823186==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 16 byte(s) in 1 object(s) allocated from:
+    #0 0x7fd7b9b2d2a1 in operator new(unsigned long) (/usr/lib/libasan.so.8+0x12d2a1) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+    #1 0x55b585057ff3 in warlock_preview_bootstrap_open (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-c-check-1791346977122263360/allow-controlled-to-legacy-downgrade/checks+0x785ff3) (BuildId: 8f90878f5f4efc7509f0b9218ca2bae94e817a61)
+    #2 0x55b584e1bb3a in main (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-c-check-1791346977122263360/allow-controlled-to-legacy-downgrade/checks+0x549b3a) (BuildId: 8f90878f5f4efc7509f0b9218ca2bae94e817a61)
+    #3 0x7fd7b8627780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #4 0x7fd7b86278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #5 0x55b584e10f34 in _start (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-c-check-1791346977122263360/allow-controlled-to-legacy-downgrade/checks+0x53ef34) (BuildId: 8f90878f5f4efc7509f0b9218ca2bae94e817a61)
+
+Indirect leak of 816 byte(s) in 1 object(s) allocated from:
+    #0 0x7fd7b9b2d2a1 in operator new(unsigned long) (/usr/lib/libasan.so.8+0x12d2a1) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+    #1 0x55b58506eb3d in std::__detail::_MakeUniq<preview::bridge::Native>::__single_object std::make_unique<preview::bridge::Native, int, unsigned long, char const*, char const*, char const*>(int&&, unsigned long&&, char const*&&, char const*&&, char const*&&) (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-c-check-1791346977122263360/allow-controlled-to-legacy-downgrade/checks+0x79cb3d) (BuildId: 8f90878f5f4efc7509f0b9218ca2bae94e817a61)
+    #2 0x55b58505847f in warlock_preview_bootstrap_open (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-c-check-1791346977122263360/allow-controlled-to-legacy-downgrade/checks+0x78647f) (BuildId: 8f90878f5f4efc7509f0b9218ca2bae94e817a61)
+    #3 0x55b584e1bb3a in main (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-c-check-1791346977122263360/allow-controlled-to-legacy-downgrade/checks+0x549b3a) (BuildId: 8f90878f5f4efc7509f0b9218ca2bae94e817a61)
+    #4 0x7fd7b8627780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #5 0x7fd7b86278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #6 0x55b584e10f34 in _start (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-c-check-1791346977122263360/allow-controlled-to-legacy-downgrade/checks+0x53ef34) (BuildId: 8f90878f5f4efc7509f0b9218ca2bae94e817a61)
+
+Indirect leak of 65 byte(s) in 1 object(s) allocated from:
+    #0 0x7fd7b9b2d2a1 in operator new(unsigned long) (/usr/lib/libasan.so.8+0x12d2a1) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+    #1 0x7fd7b936e060 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/usr/lib/libstdc++.so.6+0x16e060) (BuildId: 5b8d3de442de987b24d0e3679533068f2ae62497)
+    #2 0x55b58506b753 in preview::bridge::Native::Native(int, unsigned long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-c-check-1791346977122263360/allow-controlled-to-legacy-downgrade/checks+0x799753) (BuildId: 8f90878f5f4efc7509f0b9218ca2bae94e817a61)
+    #3 0x55b58506ed3d in std::__detail::_MakeUniq<preview::bridge::Native>::__single_object std::make_unique<preview::bridge::Native, int, unsigned long, char const*, char const*, char const*>(int&&, unsigned long&&, char const*&&, char const*&&, char const*&&) (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-c-check-1791346977122263360/allow-controlled-to-legacy-downgrade/checks+0x79cd3d) (BuildId: 8f90878f5f4efc7509f0b9218ca2bae94e817a61)
+    #4 0x55b58505847f in warlock_preview_bootstrap_open (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-c-check-1791346977122263360/allow-controlled-to-legacy-downgrade/checks+0x78647f) (BuildId: 8f90878f5f4efc7509f0b9218ca2bae94e817a61)
+    #5 0x55b584e1bb3a in main (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-c-check-1791346977122263360/allow-controlled-to-legacy-downgrade/checks+0x549b3a) (BuildId: 8f90878f5f4efc7509f0b9218ca2bae94e817a61)
+    #6 0x7fd7b8627780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #7 0x7fd7b86278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #8 0x55b584e10f34 in _start (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-c-check-1791346977122263360/allow-controlled-to-legacy-downgrade/checks+0x53ef34) (BuildId: 8f90878f5f4efc7509f0b9218ca2bae94e817a61)
+
+Indirect leak of 31 byte(s) in 1 object(s) allocated from:
+    #0 0x7fd7b9b2d2a1 in operator new(unsigned long) (/usr/lib/libasan.so.8+0x12d2a1) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+    #1 0x7fd7b936e168 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long) (/usr/lib/libstdc++.so.6+0x16e168) (BuildId: 5b8d3de442de987b24d0e3679533068f2ae62497)
+    #2 0x7fd7b936f770 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long) (/usr/lib/libstdc++.so.6+0x16f770) (BuildId: 5b8d3de442de987b24d0e3679533068f2ae62497)
+    #3 0x55b58506c6b7 in preview::bridge::Native::Native(int, unsigned long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-c-check-1791346977122263360/allow-controlled-to-legacy-downgrade/checks+0x79a6b7) (BuildId: 8f90878f5f4efc7509f0b9218ca2bae94e817a61)
+    #4 0x55b58506ed3d in std::__detail::_MakeUniq<preview::bridge::Native>::__single_object std::make_unique<preview::bridge::Native, int, unsigned long, char const*, char const*, char const*>(int&&, unsigned long&&, char const*&&, char const*&&, char const*&&) (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-c-check-1791346977122263360/allow-controlled-to-legacy-downgrade/checks+0x79cd3d) (BuildId: 8f90878f5f4efc7509f0b9218ca2bae94e817a61)
+    #5 0x55b58505847f in warlock_preview_bootstrap_open (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-c-check-1791346977122263360/allow-controlled-to-legacy-downgrade/checks+0x78647f) (BuildId: 8f90878f5f4efc7509f0b9218ca2bae94e817a61)
+    #6 0x55b584e1bb3a in main (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-c-check-1791346977122263360/allow-controlled-to-legacy-downgrade/checks+0x549b3a) (BuildId: 8f90878f5f4efc7509f0b9218ca2bae94e817a61)
+    #7 0x7fd7b8627780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #8 0x7fd7b86278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #9 0x55b584e10f34 in _start (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-c-check-1791346977122263360/allow-controlled-to-legacy-downgrade/checks+0x53ef34) (BuildId: 8f90878f5f4efc7509f0b9218ca2bae94e817a61)
+
+Indirect leak of 21 byte(s) in 1 object(s) allocated from:
+    #0 0x7fd7b9b2d2a1 in operator new(unsigned long) (/usr/lib/libasan.so.8+0x12d2a1) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+    #1 0x55b584e20f3a in void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-c-check-1791346977122263360/allow-controlled-to-legacy-downgrade/checks+0x54ef3a) (BuildId: 8f90878f5f4efc7509f0b9218ca2bae94e817a61)
+    #2 0x55b584e215fc in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-c-check-1791346977122263360/allow-controlled-to-legacy-downgrade/checks+0x54f5fc) (BuildId: 8f90878f5f4efc7509f0b9218ca2bae94e817a61)
+    #3 0x55b58506ec84 in std::__detail::_MakeUniq<preview::bridge::Native>::__single_object std::make_unique<preview::bridge::Native, int, unsigned long, char const*, char const*, char const*>(int&&, unsigned long&&, char const*&&, char const*&&, char const*&&) (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-c-check-1791346977122263360/allow-controlled-to-legacy-downgrade/checks+0x79cc84) (BuildId: 8f90878f5f4efc7509f0b9218ca2bae94e817a61)
+    #4 0x55b58505847f in warlock_preview_bootstrap_open (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-c-check-1791346977122263360/allow-controlled-to-legacy-downgrade/checks+0x78647f) (BuildId: 8f90878f5f4efc7509f0b9218ca2bae94e817a61)
+    #5 0x55b584e1bb3a in main (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-c-check-1791346977122263360/allow-controlled-to-legacy-downgrade/checks+0x549b3a) (BuildId: 8f90878f5f4efc7509f0b9218ca2bae94e817a61)
+    #6 0x7fd7b8627780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #7 0x7fd7b86278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #8 0x55b584e10f34 in _start (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-c-check-1791346977122263360/allow-controlled-to-legacy-downgrade/checks+0x53ef34) (BuildId: 8f90878f5f4efc7509f0b9218ca2bae94e817a61)
+
+SUMMARY: AddressSanitizer: 949 byte(s) leaked in 5 allocation(s).

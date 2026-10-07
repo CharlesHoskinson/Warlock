@@ -39,7 +39,10 @@ held. Exact current paths/hashes are in component-report106.json and the
 component manifest. Plugin19 remains held on exact core16 ABI; no Core resource
 API/capture-pixel/WebKit/native GUI acceptance follows from these CPU witnesses.
 
-Native129 is held and ready for publication74.49 new actual Core registry/scoped
+Native129 is held and public through publication74
+806c609195d742d2a97e5d845c4c9cad1d45b2c7,602 exact owned blobs.
+Local source3f40039fbec11bbacf5bafb33a17427cc13c3d68;
+receipt67d8b7e46e719509f8afbe635c1f082530d7a8ae.49 new actual Core registry/scoped
 capture/resource/SCM_RIGHTS/private-lock controls pass, with11 scoped snapshots
 and two independent imported local FD closures. Fresh observation repairs
 application-boundary dropped release/producer responses; this does not claim
@@ -48,13 +51,26 @@ cannot erase another current capture, and foreign binding/subject/transfer
 refuse without resource/counter mutation. Every original native128/126 ordered
 fixed assertion, actual allocator/expiry check and teardown remains retained.
 
-Next exact owned publication74; then fresh GUI107 for explicit live-window
-preview-realm quiescence/detachment with native receiver freshness. The original
-Native transport permits only one controlled preview claim and currently keeps
-it for that transport's lifetime. Releasing/reopening preview ownership will
-need a native serial that survives endpoint replacement, old-event/ticket
-rejection and distinct typed detachment proof. Keep all original physical,
-terminal ACK, processing and confirmation barriers. Current106 controlled
+GUI107 is held and inactive; publication75 is next. Native-owned monotonic
+receiver epochs survive Endpoint replacement, failed construction consumes its
+epoch, and old exact same-binding tickets refuse before replacement handlers.
+Original strict physical/proof/actor/processing/independent-confirmation close
+releases only the settled realm claim without replacing the Native grant. A
+persistent atomic closed marker prevents a legacy zero-CAS paused before claim
+from crossing controlled open/close. The actual threaded counterexample and six
+failed fixture reports remain held. Current qualification:111 C controls/two
+normal exits/two compiled variants,36 actual threaded controls/one variant,
+16 selected Quint/28 coupled actual C traces/711 states/two variants; current
+full95 and original resource/capture/ticket/FD allocation regressions pass.
+Local resource14/22/373/three variants also passes. Parent106 Elm/assets remain
+byte-identical and its own compiled Elm ACK evidence stays at that parent source.
+No current GUI107 native/Core/WebKit acceptance or live-window detachment follows.
+See component-report107.json and GUI107/REALM-HANDOFF.md for exact frozen hashes.
+
+Next exact owned publication75; then fresh GUI108 for explicit live-window
+preview-realm quiescence/detachment and safe Bootstrap borrowed-receipt reattachment.
+Keep all original physical, terminal ACK, processing and confirmation barriers.
+Current107 controlled
 factory/resource protocol still needs actual Core integration and shared-host
 renderer/native outbox/WebKit activation. Resource observation under original
 expired captures and explicit revocation must retain their own native witnesses.

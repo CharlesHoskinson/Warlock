@@ -1,0 +1,57 @@
+Positive wire identity
+
+=================================================================
+==3845134==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 16 byte(s) in 1 object(s) allocated from:
+    #0 0x7f667152d2a1 in operator new(unsigned long) (/usr/lib/libasan.so.8+0x12d2a1) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+    #1 0x5572e739d441 in warlock_preview_bootstrap_open (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-v2-1791347386008525413/checks+0x7a7441) (BuildId: f0c98b370579c16a33a3b11910a4fb1c77e42107)
+    #2 0x5572e715bfdb in main (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-v2-1791347386008525413/checks+0x565fdb) (BuildId: f0c98b370579c16a33a3b11910a4fb1c77e42107)
+    #3 0x7f6670027780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #4 0x7f66700278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #5 0x5572e7149f34 in _start (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-v2-1791347386008525413/checks+0x553f34) (BuildId: f0c98b370579c16a33a3b11910a4fb1c77e42107)
+
+Indirect leak of 816 byte(s) in 1 object(s) allocated from:
+    #0 0x7f667152d2a1 in operator new(unsigned long) (/usr/lib/libasan.so.8+0x12d2a1) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+    #1 0x5572e73b3f8b in std::__detail::_MakeUniq<preview::bridge::Native>::__single_object std::make_unique<preview::bridge::Native, int, unsigned long, char const*, char const*, char const*>(int&&, unsigned long&&, char const*&&, char const*&&, char const*&&) (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-v2-1791347386008525413/checks+0x7bdf8b) (BuildId: f0c98b370579c16a33a3b11910a4fb1c77e42107)
+    #2 0x5572e739d8cd in warlock_preview_bootstrap_open (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-v2-1791347386008525413/checks+0x7a78cd) (BuildId: f0c98b370579c16a33a3b11910a4fb1c77e42107)
+    #3 0x5572e715bfdb in main (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-v2-1791347386008525413/checks+0x565fdb) (BuildId: f0c98b370579c16a33a3b11910a4fb1c77e42107)
+    #4 0x7f6670027780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #5 0x7f66700278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #6 0x5572e7149f34 in _start (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-v2-1791347386008525413/checks+0x553f34) (BuildId: f0c98b370579c16a33a3b11910a4fb1c77e42107)
+
+Indirect leak of 65 byte(s) in 1 object(s) allocated from:
+    #0 0x7f667152d2a1 in operator new(unsigned long) (/usr/lib/libasan.so.8+0x12d2a1) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+    #1 0x7f6670d6e060 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/usr/lib/libstdc++.so.6+0x16e060) (BuildId: 5b8d3de442de987b24d0e3679533068f2ae62497)
+    #2 0x5572e73b0ba1 in preview::bridge::Native::Native(int, unsigned long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-v2-1791347386008525413/checks+0x7baba1) (BuildId: f0c98b370579c16a33a3b11910a4fb1c77e42107)
+    #3 0x5572e73b418b in std::__detail::_MakeUniq<preview::bridge::Native>::__single_object std::make_unique<preview::bridge::Native, int, unsigned long, char const*, char const*, char const*>(int&&, unsigned long&&, char const*&&, char const*&&, char const*&&) (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-v2-1791347386008525413/checks+0x7be18b) (BuildId: f0c98b370579c16a33a3b11910a4fb1c77e42107)
+    #4 0x5572e739d8cd in warlock_preview_bootstrap_open (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-v2-1791347386008525413/checks+0x7a78cd) (BuildId: f0c98b370579c16a33a3b11910a4fb1c77e42107)
+    #5 0x5572e715bfdb in main (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-v2-1791347386008525413/checks+0x565fdb) (BuildId: f0c98b370579c16a33a3b11910a4fb1c77e42107)
+    #6 0x7f6670027780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #7 0x7f66700278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #8 0x5572e7149f34 in _start (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-v2-1791347386008525413/checks+0x553f34) (BuildId: f0c98b370579c16a33a3b11910a4fb1c77e42107)
+
+Indirect leak of 31 byte(s) in 1 object(s) allocated from:
+    #0 0x7f667152d2a1 in operator new(unsigned long) (/usr/lib/libasan.so.8+0x12d2a1) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+    #1 0x7f6670d6e168 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long) (/usr/lib/libstdc++.so.6+0x16e168) (BuildId: 5b8d3de442de987b24d0e3679533068f2ae62497)
+    #2 0x7f6670d6f770 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long) (/usr/lib/libstdc++.so.6+0x16f770) (BuildId: 5b8d3de442de987b24d0e3679533068f2ae62497)
+    #3 0x5572e73b1b05 in preview::bridge::Native::Native(int, unsigned long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-v2-1791347386008525413/checks+0x7bbb05) (BuildId: f0c98b370579c16a33a3b11910a4fb1c77e42107)
+    #4 0x5572e73b418b in std::__detail::_MakeUniq<preview::bridge::Native>::__single_object std::make_unique<preview::bridge::Native, int, unsigned long, char const*, char const*, char const*>(int&&, unsigned long&&, char const*&&, char const*&&, char const*&&) (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-v2-1791347386008525413/checks+0x7be18b) (BuildId: f0c98b370579c16a33a3b11910a4fb1c77e42107)
+    #5 0x5572e739d8cd in warlock_preview_bootstrap_open (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-v2-1791347386008525413/checks+0x7a78cd) (BuildId: f0c98b370579c16a33a3b11910a4fb1c77e42107)
+    #6 0x5572e715bfdb in main (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-v2-1791347386008525413/checks+0x565fdb) (BuildId: f0c98b370579c16a33a3b11910a4fb1c77e42107)
+    #7 0x7f6670027780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #8 0x7f66700278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #9 0x5572e7149f34 in _start (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-v2-1791347386008525413/checks+0x553f34) (BuildId: f0c98b370579c16a33a3b11910a4fb1c77e42107)
+
+Indirect leak of 21 byte(s) in 1 object(s) allocated from:
+    #0 0x7f667152d2a1 in operator new(unsigned long) (/usr/lib/libasan.so.8+0x12d2a1) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+    #1 0x5572e7165b9a in void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-v2-1791347386008525413/checks+0x56fb9a) (BuildId: f0c98b370579c16a33a3b11910a4fb1c77e42107)
+    #2 0x5572e716625c in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-v2-1791347386008525413/checks+0x57025c) (BuildId: f0c98b370579c16a33a3b11910a4fb1c77e42107)
+    #3 0x5572e73b40d2 in std::__detail::_MakeUniq<preview::bridge::Native>::__single_object std::make_unique<preview::bridge::Native, int, unsigned long, char const*, char const*, char const*>(int&&, unsigned long&&, char const*&&, char const*&&, char const*&&) (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-v2-1791347386008525413/checks+0x7be0d2) (BuildId: f0c98b370579c16a33a3b11910a4fb1c77e42107)
+    #4 0x5572e739d8cd in warlock_preview_bootstrap_open (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-v2-1791347386008525413/checks+0x7a78cd) (BuildId: f0c98b370579c16a33a3b11910a4fb1c77e42107)
+    #5 0x5572e715bfdb in main (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-v2-1791347386008525413/checks+0x565fdb) (BuildId: f0c98b370579c16a33a3b11910a4fb1c77e42107)
+    #6 0x7f6670027780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #7 0x7f66700278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #8 0x5572e7149f34 in _start (/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-v2-1791347386008525413/checks+0x553f34) (BuildId: f0c98b370579c16a33a3b11910a4fb1c77e42107)
+
+SUMMARY: AddressSanitizer: 949 byte(s) leaked in 5 allocation(s).

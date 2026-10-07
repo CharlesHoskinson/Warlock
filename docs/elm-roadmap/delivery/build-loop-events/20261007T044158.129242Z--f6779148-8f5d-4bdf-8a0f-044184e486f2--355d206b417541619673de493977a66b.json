@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "355d206b417541619673de493977a66b",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-07T04:41:58.129242+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/warlock-preview-provider-v107",
+  "nextWork": [
+    "Persistent native realm C111 controls/two normal exits/two compiled variants; threaded36 controls/one precise stale-CAS variant; Quint16 selected/28 actual C traces/711 states/two variants; local resource14/22/373/three and full95 current build pass. Original resource regression final FD variants running. Six failures retained. Hold/publish75 next, then live-window detachment/borrowed Bootstrap reattachment/current Core and renderer ticket/WebKit. Native129/public74 baseline unchanged2517/278."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-v4-1791347753848423769/report.json",
+      "sha256": "2deeef3f0d98942d2682fcea61069857dba0eed7fe12cb2b15f342c5f087bd87",
+      "size": 101834
+    },
+    {
+      "path": "implementation/warlock-preview-provider-v107/qa/preview-realm-race-check-v2-1791347753848610053/report.json",
+      "sha256": "62be7047a0ba90a23ce76a3e7d30b2162ae99efcc74c4a1a8f36287a7866a3ed",
+      "size": 55442
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

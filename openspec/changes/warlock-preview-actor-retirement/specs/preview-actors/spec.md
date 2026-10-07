@@ -682,3 +682,48 @@ Confirmation SHALL NOT settle resources or authorize repeated acquisition.
 - THEN the original ticket remains available for receipt retry
 - AND the retry echoes its original receipt without repeating the handler
 - AND polling still requires every original physical retirement barrier.
+
+### Requirement: Preview receiver epochs survive owner replacement
+
+EARS CONTROL-020: A controlled preview realm SHALL obtain a monotonic epoch
+from the original Native transport before subject/job admission. Endpoint
+replacement SHALL NOT reset this namespace. Failed construction SHALL consume
+its allocated epoch and release only its unpublished claim. Exhaustion SHALL
+refuse before admission. Only the complete original physical, terminal-proof,
+actor, final-processing and independently confirmed control close SHALL release
+a published claim. Replacement SHALL retain the shared Native binding, session
+and frontend, reject old tickets before handlers, and never downgrade to legacy
+preview ownership. Realm closure SHALL NOT imply permanent window retirement
+or completed live-window detachment.
+
+#### Scenario: Replacement on the same Native session
+- GIVEN a published controlled owner whose original cleanup barriers have passed
+- WHEN strict C close releases that owner and another owner opens on the same transport
+- THEN the replacement receives a greater native-owned receiver epoch
+- AND shared Native binding, session and frontend remain unchanged
+- AND the old owner's exact ticket refuses before any replacement handler.
+
+#### Scenario: Failed constructor consumes its epoch
+- GIVEN a closed controlled owner and its now-retired native subject
+- WHEN a replacement constructor allocates an epoch but native scope refuses admission
+- THEN no receiver, job or grant is published and only that unpublished claim is released
+- AND the next accepted owner receives an epoch beyond the failed constructor's epoch.
+
+#### Scenario: Incomplete close preserves exclusive ownership
+- GIVEN any outstanding physical, terminal-proof, actor, final-processing or confirmation barrier
+- WHEN strict C close refuses
+- THEN the published native claim remains held
+- AND a concurrent factory refuses without releasing or mutating that claim.
+
+#### Scenario: Counter exhaustion and permanent controlled mode
+- GIVEN the original transport has issued its final lossless uint64 receiver epoch
+- WHEN another controlled factory attempts admission after strict close
+- THEN it refuses without wrapping the epoch or resetting the shared Native grant
+- AND legacy preview ownership also refuses after any controlled epoch has been issued.
+
+#### Scenario: A delayed legacy atomic claim crosses controlled close
+- GIVEN a legacy claim has checked the original zero namespace but has not performed its atomic claim
+- WHEN a controlled owner opens and passes every original strict-close barrier
+- AND the delayed legacy claim resumes its compare/exchange
+- THEN that stale claim refuses against persistent controlled namespace state
+- AND a fresh controlled owner still opens without changing the shared Native binding.

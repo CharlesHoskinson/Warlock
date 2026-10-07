@@ -1,0 +1,20 @@
+
+  preview_realm_tests_v2
+    ok initialLegacy passed 1 test(s)
+    ok activeCloseRefuses passed 1 test(s)
+    ok concurrentClaimRefuses passed 1 test(s)
+    ok activeLegacyRefuses passed 1 test(s)
+    ok cancelledProofCloseRefuses passed 1 test(s)
+    ok jobAckKeepsActor passed 1 test(s)
+    ok finalActorDeliveryKeepsClaim passed 1 test(s)
+    ok processedUnconfirmedKeepsClaim passed 1 test(s)
+    ok confirmedDoesNotReleaseClaim passed 1 test(s)
+    ok settledCloseReleasesClaim passed 1 test(s)
+    ok closedNeverDowngrades passed 1 test(s)
+    ok replacementEpochPersists passed 1 test(s)
+    ok failedConstructorConsumesEpoch passed 1 test(s)
+    ok repeatedFailuresNeverAlias passed 1 test(s)
+    ok oldTicketCannotMutateReplacement passed 1 test(s)
+    ok replacementClosesIndependently passed 1 test(s)
+
+  16 passing (26ms)

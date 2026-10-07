@@ -285,3 +285,28 @@ This does not claim kernel socket loss, native106 controlled factory/WebKit
 activation, live-window binding detachment or full-release acceptance. Original
 expired/revoked capture resource witnesses and current controlled integration
 remain explicit work. Component/native evidence and source hashes stay separate.
+
+EARS CONTROL-020: A controlled preview receiver realm SHALL obtain its epoch
+from the original Native transport's monotonic namespace, before any subject/job
+admission. That namespace SHALL survive endpoint replacement, consume failed
+construction epochs without reuse, and refuse exhaustion before admission.
+Only complete original physical/proof/actor/final-processing/control closure
+SHALL release a published realm claim; unreported constructor rollback SHALL
+release only that unpublished claim. A replacement SHALL retain the exact shared
+Native binding/session/frontend and use a fresh epoch, rejecting every old
+ticket before handler invocation. The transport SHALL never downgrade to legacy
+preview ownership after entering controlled mode. These transport facts SHALL
+NOT be treated as permanent window retirement or completed live-window detach.
+
+The no-downgrade obligation includes a legacy admission already paused between
+its namespace check and atomic claim. Controlled close must retain persistent
+namespace state so a stale zero-state compare/exchange cannot cross that close.
+
+GUI107 is held and inactive. Current111 replacement/exhaustion C controls,
+36 actual threaded controls,16 selected Quint/28 coupled actual C traces/711
+states, full95 and original current resource/capture/ticket/FD regressions pass.
+Six failed reports and pre-race-fix passing evidence remain frozen separately.
+Native129/public74 remains the actual GUI92/Core16/plugin19 bounded tuple,
+2517 checks/278 normal exits; it does not qualify current107 controlled C/WebKit
+activation. Full release, live-window detach, Bootstrap reattachment and typed
+frontend realm delivery remain open. Publication75 is the next owned delivery.

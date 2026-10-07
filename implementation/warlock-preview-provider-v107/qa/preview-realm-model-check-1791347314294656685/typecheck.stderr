@@ -1,0 +1,113 @@
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-1791347314294656685/inputs/spec/preview_realm_tests.qnt:4:49
+  4:  run initialLegacy=init.then(fire(Legacy)).then(check(s.last==1 and s.through==0 and not(s.active)))
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-1791347314294656685/inputs/spec/preview_realm_tests.qnt:5:70
+  5:  run activeCloseRefuses=init.then(fire(Open)).then(fire(Close)).then(check(s.active and s.records==1 and s.last== -1))
+                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-1791347314294656685/inputs/spec/preview_realm_tests.qnt:6:83
+  6:  run concurrentClaimRefuses=init.then(fire(Open)).then(fire(ConcurrentOpen)).then(check(s.epoch==1 and s.through==1 and s.active and s.last== -1))
+                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-1791347314294656685/inputs/spec/preview_realm_tests.qnt:7:72
+  7:  run activeLegacyRefuses=init.then(fire(Open)).then(fire(Legacy)).then(check(s.last== -1 and s.active))
+                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-1791347314294656685/inputs/spec/preview_realm_tests.qnt:8:117
+  8:  run cancelledProofCloseRefuses=init.then(fire(Open)).then(fire(Reconcile)).then(fire(Poll)).then(fire(Close)).then(check(s.terminal and s.proofs==2 and s.active and s.last== -1))
+                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-1791347314294656685/inputs/spec/preview_realm_tests.qnt:9:126
+  9:  run jobAckKeepsActor=init.then(fire(Open)).then(fire(Reconcile)).then(fire(Poll)).then(fire(AckJob)).then(fire(Close)).then(check(s.records==0 and s.actors==1 and s.active and s.last== -1))
+                                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-1791347314294656685/inputs/spec/preview_realm_tests.qnt:10:162
+  10:  run finalActorDeliveryKeepsClaim=init.then(fire(Open)).then(fire(Reconcile)).then(fire(Poll)).then(fire(AckJob)).then(fire(RetireActor)).then(fire(Close)).then(check(s.actors==0 and s.active and not(s.ready) and s.last== -1))
+                                                                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-1791347314294656685/inputs/spec/preview_realm_tests.qnt:11:185
+  11:  run processedUnconfirmedKeepsClaim=init.then(fire(Open)).then(fire(Reconcile)).then(fire(Poll)).then(fire(AckJob)).then(fire(RetireActor)).then(fire(AckActor)).then(fire(Close)).then(check(s.active and not(s.ready) and s.last== -1))
+                                                                                                                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-1791347314294656685/inputs/spec/preview_realm_tests.qnt:12:190
+  12:  run confirmedDoesNotReleaseClaim=init.then(fire(Open)).then(fire(Reconcile)).then(fire(Poll)).then(fire(AckJob)).then(fire(RetireActor)).then(fire(AckActor)).then(fire(ConfirmActor)).then(check(s.ready and s.active))
+                                                                                                                                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-1791347314294656685/inputs/spec/preview_realm_tests.qnt:13:72
+  13:  run settledCloseReleasesClaim=init.then(fire(Open)).then(settle).then(check(not(s.active) and s.closed==1 and s.epoch==1))
+                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-1791347314294656685/inputs/spec/preview_realm_tests.qnt:14:87
+  14:  run closedNeverDowngrades=init.then(fire(Open)).then(settle).then(fire(Legacy)).then(check(s.last== -1 and not(s.active)))
+                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-1791347314294656685/inputs/spec/preview_realm_tests.qnt:15:88
+  15:  run replacementEpochPersists=init.then(fire(Open)).then(settle).then(fire(Open)).then(check(s.epoch==2 and s.active and s.records==1))
+                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-1791347314294656685/inputs/spec/preview_realm_tests.qnt:16:117
+  16:  run failedConstructorConsumesEpoch=init.then(fire(Open)).then(settle).then(fire(FailedOpen)).then(fire(Open)).then(check(s.epoch==3 and s.active and s.records==1))
+                                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-1791347314294656685/inputs/spec/preview_realm_tests.qnt:17:136
+  17:  run repeatedFailuresNeverAlias=init.then(fire(Open)).then(settle).then(fire(FailedOpen)).then(fire(FailedOpen)).then(fire(Open)).then(check(s.epoch==4 and s.active))
+                                                                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-1791347314294656685/inputs/spec/preview_realm_tests.qnt:18:118
+  18:  run oldTicketCannotMutateReplacement=init.then(fire(Open)).then(settle).then(fire(Open)).then(fire(OldTicket)).then(check(s.last== -1 and s.phase==1 and s.proofs==0 and s.records==1))
+                                                                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v107/qa/preview-realm-model-check-1791347314294656685/inputs/spec/preview_realm_tests.qnt:19:152
+  19:  run replacementClosesIndependently=init.then(fire(Open)).then(settle).then(fire(FailedOpen)).then(fire(Open)).then(fire(OldTicket)).then(settle).then(check(s.closed==2 and not(s.active) and s.epoch==3))
+                                                                                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: parsing failed
