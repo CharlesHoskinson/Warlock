@@ -1209,3 +1209,54 @@ window/lifecycle policy or native control ordinals when delivering visuals.
 - **THEN** native callback identity, physical concealment before transitions,
   async completion barriers, DOM/frame application and URI ownership need acceptance
 - **AND** pure receipts do not qualify ongoing freshness or full release behavior
+
+### Requirement: Retain native driver inputs and original issued tickets
+
+The system SHALL implement EARS CONTROL-033 with one persistent original Elm
+policy, original native issuance/effects and independent confirmation. Native
+driver custody SHALL survive renderer replacement within the owning process.
+
+#### Scenario: Driver initialization encounters a constructor fault
+- **GIVEN** the exact empty original native controlled namespace
+- **WHEN** private outbox or worker construction fails before policy admission
+- **THEN** only constructor-owned contexts and its registry entry are released
+- **AND** the original native namespace and grant remain unchanged
+- **AND** another driver cannot bind an already owned or nonempty namespace
+
+#### Scenario: An ordinary input exceeds custody capacity
+- **GIVEN** 1065 retained inputs or insufficient remaining serialized byte capacity
+- **WHEN** native attempts to admit another event batch or presentation
+- **THEN** WOULD_BLOCK leaves original queued representations and policy unchanged
+- **AND** the producer retains unadmitted bytes and pauses further production
+
+#### Scenario: Quarantine arrives while ordinary input is full
+- **GIVEN** full ordinary custody and a known or Unknown original job
+- **WHEN** the original native creator quarantines the original epoch
+- **THEN** quarantine reaches the single policy through its urgent lane
+- **AND** queued inputs and job/resource obligations remain retained
+
+#### Scenario: JavaScript receives a native-issued ticket
+- **GIVEN** an original policy proposal and its original native ticket
+- **WHEN** the private outbox stages a post callback
+- **THEN** the driver already owns exact ticket bytes and performs no native effect
+- **AND** a separate issuance notification precedes subsequent native dispatch
+
+#### Scenario: A dispatched effect returns a receipt with an Unknown outcome
+- **GIVEN** original native dispatch and its returned data receipt
+- **WHEN** the private outbox observes that exact receipt
+- **THEN** native returned events are retained before transport custody is released
+- **AND** confirmation remains a separate native action
+- **AND** receipt or confirmation alone cannot settle the original physical/job duty
+
+#### Scenario: Shutdown encounters original outstanding custody
+- **GIVEN** retained inputs, events, tickets, confirmations or policy/native duties
+- **WHEN** native requests normal driver closure
+- **THEN** closure refuses while those duties remain
+- **AND** only the original strict native closure and trusted policy closure permit exit
+
+#### Scenario: Component driver evidence is prepared for host activation
+- **GIVEN** native C/JSC driver checks with a synthetic native peer
+- **WHEN** an actual browser host route is prepared
+- **THEN** output bounds, paused producer scheduling, WebKit callback identity,
+  async frame/concealment/URI and delayed proposal outcome gates remain required
+- **AND** in-process custody does not establish process-loss recovery or full release

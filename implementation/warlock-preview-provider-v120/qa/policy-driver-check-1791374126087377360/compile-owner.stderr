@@ -1,0 +1,5 @@
+In file included from native/policy-driver-fixture.cpp:1:
+native/capture-resource-source-fixture.hpp:18:13: error: ‘void check(bool, const char*)’ defined but not used [-Werror=unused-function]
+   18 | static void check(bool value,const char* name) {require(value,name);++passed;}
+      |             ^~~~~
+cc1plus: all warnings being treated as errors

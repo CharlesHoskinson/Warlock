@@ -1,0 +1,18 @@
+
+  native_policy_driver_tests
+    ok inputCustodyRunsNoPolicy passed 1 test(s)
+    ok fullInputQueueRefuses passed 1 test(s)
+    ok quarantineBypassesInputPressure passed 1 test(s)
+    ok ticketRetainedBeforeNotification passed 1 test(s)
+    ok dispatchCannotPrecedeIssuedFact passed 1 test(s)
+    ok notificationPerformsNoEffect passed 1 test(s)
+    ok receiptDoesNotConfirmOrSettle passed 1 test(s)
+    ok confirmationCannotSettleJob passed 1 test(s)
+    ok duplicateDispatchCannotInvoke passed 1 test(s)
+    ok foreignSourceCannotEnterCustody passed 1 test(s)
+    ok unknownCannotReset passed 1 test(s)
+    ok custodyPreventsClose passed 1 test(s)
+    ok originalTerminalRequiredForClose passed 1 test(s)
+    ok settledRealmCloses passed 1 test(s)
+
+  14 passing (15ms)

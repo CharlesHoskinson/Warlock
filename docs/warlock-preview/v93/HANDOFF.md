@@ -347,3 +347,28 @@ Next publish Native131 coherence then actual controlled host input/native ticket
 custody/retry and WebKit callback/lease/async frame/physical concealment/URI barriers.
 Uncertain live policy/process recovery, delayed never-issued proposal expiry/
 revocation outcome/order, >256 actual windows and all full release gates stay open.
+
+Native131 PUBLIC89 520fdcc920b48de72672c7864ba291d5fb2442bf/608 exact owned blobs;
+source88f77a78184a5676ae666052c7766a9d84b2e0d4;
+receipt84498f01c814f6a3ff411df965aa508dc167e5b0.
+GUI120 held creator-owned native policy/transport driver. Original policy, issuer,
+effects, physical product and existing assets/adapters are byte-identical. One
+persistent JSC Elm worker and unchanged private native-issued outbox; atomic typed
+input custody1065/16MiB stamped with original native source epoch before JS;
+quarantine bypasses ordinary pressure. Exact ticket retained before issuance
+notification/dispatch; callbacks retain bytes only; returned data receipt and
+independent native confirmation do not settle Unknown jobs or physical duties.
+Actual original Native/C/Bootstrap/Broker/journal/scoped detachment/strict closure
+with authenticated synthetic peer2250 and constructor fault checks9/normal exits/
+no grant reset. Explicit custody Quint14/200 samples/six ordered concrete witnesses/
+four compiled guards. This custody abstraction is not full lifecycle refinement.
+Full116 retains115; 3469 manifest files. Three failed attempts held: unused fixture
+helper, original fixture transport-size refusal and unused parameter in a labeled
+guard mutant. CONTROL033/OpenSpec seven scenarios; bounded component task checked.
+Driver links but remains inactive in the actual legacy host; Native131 remains
+current actualGUI119 legacy2518/278 on core16/plugin19/AQ155. Next PUBLIC90 and
+retained native output bound/paused producer scheduling, then actual controlled
+host/pure renderer WebKit identity/leases/async frame/physical concealment/URI.
+Process-owned custody is not a process-loss journal. Uncertain live worker/process
+recovery, delayed never-issued proposal outcome/order, all actual GUI and full
+release gates stay open. Installed desktop/drafts/five foreign paths preserved.

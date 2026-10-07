@@ -1,0 +1,5 @@
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v120/qa/policy-driver-refinement-1791374932115118412/inputs/native/driver-source-epoch.cpp: In function ‘gboolean warlock_policy_driver_native(WarlockPolicyDriver*, guint64, const char*, GError**)’:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v120/qa/policy-driver-refinement-1791374932115118412/inputs/native/driver-source-epoch.cpp:162:73: error: unused parameter ‘epoch’ [-Werror=unused-parameter]
+  162 | gboolean warlock_policy_driver_native(WarlockPolicyDriver* self,guint64 epoch,const char* events,GError** error) {
+      |                                                                 ~~~~~~~~^~~~~
+cc1plus: all warnings being treated as errors

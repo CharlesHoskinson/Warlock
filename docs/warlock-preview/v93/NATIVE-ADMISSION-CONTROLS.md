@@ -608,3 +608,41 @@ reject stale async completions and qualify DOM/frame application and original
 URI reader ownership before revealing. A pure acceptance receipt or cache
 comparison SHALL NOT establish physical concealment, ongoing freshness, actual
 WebKit authentication, native pixels, recovery or full release acceptance.
+
+EARS CONTROL-033: When native creates a policy driver for an original controlled
+owner, the creator SHALL verify the exact original grant against native's empty
+issued, delivered and confirmed namespace. The owner SHALL have only one driver,
+one persistent Elm lifecycle policy and one private transport outbox. A constructor
+failure before policy admission SHALL release only its own contexts and registry
+entry. Uncertain live admission SHALL retain opaque custody without reconstruction
+or a native grant reset.
+
+When a native event batch is admitted, the driver SHALL validate and stamp the
+original source epoch/domain before JavaScript, then retain all typed wrapped
+events atomically. Ordinary inputs SHALL be bounded by 1065 items and 16 MiB of
+serialized wrapped bytes. While either bound or original policy backpressure
+prevents processing, refusal SHALL retain the exact queued representation and
+leave the producer responsible for unadmitted bytes; the host SHALL pause that
+producer. Native urgent quarantine SHALL bypass ordinary input custody without
+discarding queued inputs or known/Unknown jobs. Only successful invocation SHALL
+remove its input. Process-owned memory SHALL NOT be treated as a process-loss
+journal.
+
+When native issues an original proposal ticket, the driver SHALL retain that
+exact ticket before notifying the policy or allowing native dispatch. JavaScript
+post/confirmation callbacks SHALL store bounded bytes only. A subsequent creator
+step SHALL notify issuance before dispatching; native SHALL remain the sole
+ordinal/effect authority. A returned data receipt SHALL retain original native
+events before releasing transport custody. Confirmation SHALL be a separate
+native step and SHALL NOT settle policy jobs or physical obligations. A ticket
+without a returned receipt SHALL remain exact; retry SHALL NOT authorize another
+handler invocation or infer success from disappearance.
+
+When normal closure is requested, the driver SHALL refuse until ordinary inputs,
+returned events, tickets, confirmations, policy membership, ingress and deferred
+custody are empty, and original native physical/journal/confirmed gates permit
+strict closure. An uncertain live driver SHALL refuse reset/replay/normal close.
+Private diagnostics SHALL remain native/QA only. Before GUI activation, retained
+native output bounds, producer scheduling, original delayed proposal outcomes,
+actual WebKit identity/frame/concealment/URI and all original release gates SHALL
+remain independently required; CPU driver checks SHALL NOT establish them.

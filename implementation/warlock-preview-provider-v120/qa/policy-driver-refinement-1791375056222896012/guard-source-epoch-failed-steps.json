@@ -1,0 +1,170 @@
+[
+  {
+    "input": {
+      "op": "inspect"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": {
+        "retainedInputs": 0,
+        "retainedInputBytes": 0,
+        "ticketUnnotified": false,
+        "postedTickets": 0,
+        "confirmations": 0,
+        "returnedEventsRetained": false,
+        "returnedEventBatches": 0,
+        "returnedEventBytes": 0,
+        "nativeEffectError": "",
+        "transport": {
+          "nativeIssuedThrough": "0",
+          "deliveredThrough": "0",
+          "pending": 0,
+          "capacity": 1065
+        },
+        "privatePolicy": {
+          "models": [],
+          "commands": [],
+          "realm": {
+            "controlled": true,
+            "closing": false,
+            "closed": false,
+            "processed": "0",
+            "retained": 0,
+            "completed": 0,
+            "epoch": "1",
+            "ingress": {
+              "pending": 0,
+              "capacity": 1065,
+              "intents": []
+            },
+            "deferred": 0,
+            "deferredIntents": [],
+            "inputBlocked": false
+          },
+          "metadata": [],
+          "enrollment": [],
+          "feedback": [],
+          "visuals": {
+            "visualProtocol": 1,
+            "kind": "native-preview-visual",
+            "binding": {
+              "lifetime": "18446744073709551615",
+              "session": "1245575",
+              "frontend": "9007199254740993"
+            },
+            "receiverEpoch": "1",
+            "surface": null,
+            "previews": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "duplicate-driver"
+    },
+    "result": {
+      "ok": false,
+      "refused": true,
+      "code": 0,
+      "progressed": false,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "foreign-native",
+      "epoch": "1",
+      "events": "[{\"kind\":\"source-seed\",\"publication\":\"1\",\"lease\":\"1\",\"identity\":\"family:21\",\"title\":\"Client content\",\"application\":\"Native client\",\"source\":{\"protocolVersion\":3,\"kind\":\"preview-client-scope\",\"binding\":{\"lifetime\":\"18446744073709551615\",\"session\":\"1245575\",\"frontend\":\"9007199254740993\"},\"requestId\":\"1\",\"scope\":{\"binding\":{\"lifetime\":\"18446744073709551615\",\"session\":\"1245575\",\"frontend\":\"9007199254740993\"},\"context\":{\"lifetime\":\"18446744073709551615\",\"incarnation\":\"21\",\"output\":\"9007199254740993\",\"privacy\":\"2\",\"rendering\":\"3\",\"scene\":\"4\",\"content\":\"5\"},\"observation\":\"1\",\"clock\":\"18446744073709551615\",\"now\":\"9007199255740993\",\"present\":true,\"sourceLive\":true,\"locked\":false,\"gpuReady\":true},\"maximumTransferBytes\":\"4096\",\"previewEligible\":false,\"scopeKind\":\"isolated-root-client-unqualified\"}},{\"kind\":\"event\",\"identity\":\"family:21\",\"event\":{\"kind\":\"request\",\"trigger\":{\"binding\":{\"lifetime\":\"18446744073709551615\",\"session\":\"1245575\",\"frontend\":\"9007199254740993\"},\"context\":{\"lifetime\":\"18446744073709551615\",\"incarnation\":\"21\",\"output\":\"9007199254740993\",\"privacy\":\"2\",\"rendering\":\"3\",\"scene\":\"4\",\"content\":\"5\"},\"origin\":\"1\",\"clock\":\"18446744073709551615\",\"deadline\":\"9007201255740993\"}}}]"
+    },
+    "result": {
+      "ok": false,
+      "refused": true,
+      "code": 0,
+      "progressed": false,
+      "result": null
+    }
+  },
+  {
+    "input": {
+      "op": "inspect"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": {
+        "retainedInputs": 0,
+        "retainedInputBytes": 0,
+        "ticketUnnotified": false,
+        "postedTickets": 0,
+        "confirmations": 0,
+        "returnedEventsRetained": false,
+        "returnedEventBatches": 0,
+        "returnedEventBytes": 0,
+        "nativeEffectError": "",
+        "transport": {
+          "nativeIssuedThrough": "0",
+          "deliveredThrough": "0",
+          "pending": 0,
+          "capacity": 1065
+        },
+        "privatePolicy": {
+          "models": [],
+          "commands": [],
+          "realm": {
+            "controlled": true,
+            "closing": false,
+            "closed": false,
+            "processed": "0",
+            "retained": 0,
+            "completed": 0,
+            "epoch": "1",
+            "ingress": {
+              "pending": 0,
+              "capacity": 1065,
+              "intents": []
+            },
+            "deferred": 0,
+            "deferredIntents": [],
+            "inputBlocked": false
+          },
+          "metadata": [],
+          "enrollment": [],
+          "feedback": [],
+          "visuals": {
+            "visualProtocol": 1,
+            "kind": "native-preview-visual",
+            "binding": {
+              "lifetime": "18446744073709551615",
+              "session": "1245575",
+              "frontend": "9007199254740993"
+            },
+            "receiverEpoch": "1",
+            "surface": null,
+            "previews": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "input": {
+      "op": "native",
+      "epoch": "2",
+      "events": "[{\"kind\":\"source-seed\",\"publication\":\"1\",\"lease\":\"1\",\"identity\":\"family:21\",\"title\":\"Client content\",\"application\":\"Native client\",\"source\":{\"protocolVersion\":3,\"kind\":\"preview-client-scope\",\"binding\":{\"lifetime\":\"18446744073709551615\",\"session\":\"1245575\",\"frontend\":\"9007199254740993\"},\"requestId\":\"1\",\"scope\":{\"binding\":{\"lifetime\":\"18446744073709551615\",\"session\":\"1245575\",\"frontend\":\"9007199254740993\"},\"context\":{\"lifetime\":\"18446744073709551615\",\"incarnation\":\"21\",\"output\":\"9007199254740993\",\"privacy\":\"2\",\"rendering\":\"3\",\"scene\":\"4\",\"content\":\"5\"},\"observation\":\"1\",\"clock\":\"18446744073709551615\",\"now\":\"9007199255740993\",\"present\":true,\"sourceLive\":true,\"locked\":false,\"gpuReady\":true},\"maximumTransferBytes\":\"4096\",\"previewEligible\":false,\"scopeKind\":\"isolated-root-client-unqualified\"}},{\"kind\":\"event\",\"identity\":\"family:21\",\"event\":{\"kind\":\"request\",\"trigger\":{\"binding\":{\"lifetime\":\"18446744073709551615\",\"session\":\"1245575\",\"frontend\":\"9007199254740993\"},\"context\":{\"lifetime\":\"18446744073709551615\",\"incarnation\":\"21\",\"output\":\"9007199254740993\",\"privacy\":\"2\",\"rendering\":\"3\",\"scene\":\"4\",\"content\":\"5\"},\"origin\":\"1\",\"clock\":\"18446744073709551615\",\"deadline\":\"9007201255740993\"}}}]"
+    },
+    "result": {
+      "ok": true,
+      "refused": false,
+      "code": 0,
+      "progressed": false,
+      "result": null
+    }
+  }
+]

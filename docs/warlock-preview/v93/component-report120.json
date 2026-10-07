@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "sourceHeld": true,
+  "passed": true,
+  "evidenceIntegrityPassed": true,
+  "reports": {
+    "driver": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v120/qa/policy-driver-check-1791374752531149246/report.json",
+      "sha256": "9df945a683c4017ac7bd51f7aa34145158124b17ba9245658558bfb7c1bebefd"
+    },
+    "refinement": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v120/qa/policy-driver-refinement-1791375056222896012/report.json",
+      "sha256": "c7e58d81eb4fad42104bb4cba798b349ee9d24bcc96426e16e2ed1ea3c37558c"
+    },
+    "build": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v120/qa/build-1791374781476163192/report.json",
+      "sha256": "87b1163acc5a2d555206943692dd82d7d8907dc8fdc990d5edebf2b9f6fcd6a4"
+    }
+  },
+  "historicalReports": [
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v120/qa/driver-compile-1791373772823157726/report.json",
+      "sha256": "bd78e42a7f7ebc123498ee5c43eafc54a3ff52b077ace338c387645eceab1869",
+      "passed": true
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v120/qa/policy-driver-check-1791374126087377360/report.json",
+      "sha256": "354fbd02562bbc36ef5bf4d768f486b42fcca52ea4dd0348f8404818727ceeb3",
+      "passed": false
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v120/qa/policy-driver-check-1791374510690444197/report.json",
+      "sha256": "9153ffe37382d4e41ba0a1f7abe124f5917446cb9082ab2d724e9f79e4a3baa4",
+      "passed": true
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v120/qa/policy-driver-check-1791374656759404073/report.json",
+      "sha256": "6723d118d21152787c132ba2387097db19b93f8e74080bc064ec4304d3e6a2e6",
+      "passed": false
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v120/qa/policy-driver-refinement-1791374932115118412/report.json",
+      "sha256": "36c2665ce381c2513cb318153f7d46d84b1878709c715ea04b1d7c13bc0e15e6",
+      "passed": false
+    }
+  ],
+  "heldFailedReports": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v120/qa/policy-driver-check-1791374126087377360/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v120/qa/policy-driver-check-1791374656759404073/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v120/qa/policy-driver-refinement-1791374932115118412/report.json"
+  ],
+  "singlePreviewPolicy": true,
+  "parentElmPolicyUnchanged": true,
+  "parentNativeIssuerAndPhysicalProductUnchanged": true,
+  "parentAssetsAndAdaptersUnchanged": true,
+  "nativeOwnedJavaScriptCore": true,
+  "persistentPolicyContexts": 1,
+  "nativePolicyDriverCPUQualified": true,
+  "driverChecks": 2250,
+  "preGrantFaultChecks": 9,
+  "ordinaryInputCapacity": 1065,
+  "ordinaryInputByteLimit": 16777216,
+  "driverScenarios": 14,
+  "driverSamples": 200,
+  "concreteTraceWitnesses": 6,
+  "concreteObservedStates": 22,
+  "compiledNativeVariantsDetected": 4,
+  "rendererWindowPolicies": 0,
+  "nativeGrantResets": 0,
+  "fullBuildCommands": 116,
+  "originalBuildCommands": 115,
+  "nativeTicketCustodyCPUQualified": true,
+  "independentNativeConfirmationCPUQualified": true,
+  "nativeOutputQueueResourceBoundQualified": false,
+  "realHostPolicyActivated": false,
+  "actualRendererProjectionActivated": false,
+  "actualDOMQualified": false,
+  "actualWebKitContextAuthenticationQualified": false,
+  "physicalConcealmentQualified": false,
+  "ongoingProjectionFreshnessQualified": false,
+  "realHostInputBackpressureQualified": false,
+  "nativeDelayedProposalLivenessQualified": false,
+  "uncertainLiveWorkerRecoveryQualified": false,
+  "processLossInputJournalQualified": false,
+  "fullElmRecoveryQualified": false,
+  "typedHostRoutingActivated": false,
+  "webKitActivated": false,
+  "actualWaylandWindowAcceptance": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "parentManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v119/component-manifest.json",
+  "parentManifestSHA256": "054f47d2b7f1536ad1127a94ab9599bd65b53e56f191bef25b7e1d92b06bdbe2",
+  "nativeBaselineManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v131/component-manifest.json",
+  "nativeBaselineManifestSHA256": "5ff11f972a317f1475776a453409197ce5e13b9210a8f049b0e1c8213234a309",
+  "scope": "# Native policy driver\n\nGUI120 connects the original persistent native JavaScriptCore Elm policy to the\nunchanged native-issued outbox in its own private transport context. The creator\nowns atomic typed input custody, original epoch stamping, exact native ticket\ncustody before issuance notification or dispatch, deferred native callbacks and\nindependent receipt confirmation. Native issuer, original Elm lifecycle, C\ndispatcher and original physical/journal/terminal/closure authorities are unchanged.\n\nOrdinary input custody holds at most 1065 items and 16 MiB of serialized wrapped\nbytes. Refused batches remain with their producer; the eventual host must stop\npolling until admission. Urgent native quarantine bypasses full ordinary custody.\nRetaining input runs no policy, issuance or effect. A step performs one action;\ncallbacks only retain bytes. Native returned events occupy separate custody so\nordinary queue pressure cannot erase them. Their aggregate resource bound and\nfull-workload progress remain unqualified and required before host activation.\n\nThe controlled original owner must have one driver. Constructor faults before\nadmission cleanly release their own contexts and registry entries. A non-null\nhandle with an admission error preserves uncertain live custody; callers must\nretain it. An uncertain driver cannot normally close or be reconstructed. The\noriginal grant cannot reset. Process-owned RAM survives renderer replacement,\nbut is not a process-loss journal or accepted crash recovery.\n\nThe actual C/JSC campaign uses the original native issuer, Bootstrap, broker,\nreceipt journal and authenticated synthetic peer. It qualifies input item/byte\nrefusal, constructor faults, foreign creators/epochs, atomic batches, ticket\nstages, independent confirmation, Unknown capture/resource retention, scoped\ndetachment and strict normal ownership teardown. Explicit Quint custody scenarios\nand compiled native guard variants supplement this bounded component evidence.\nThe custody abstraction does not replace or prove the original lifecycle model.\n\nThe current full host links the driver and keeps the legacy browser route. It\ndoes not instantiate this driver or the pure renderer. No real Core/window,\ncaptured FD/pixel, WebKit callback authentication, DOM/frame, physical concealment\nor actual URI acceptance follows. Native131 remains the current actual legacy\nbaseline on core16/plugin19/AQ155, retaining original controls and deadlines.\n\nNext qualify the retained output bound and producer schedule, then integrate the\ncontrolled driver with actual native renderer grants, original GTK admission,\nWebKit identity/leases, stale async barriers, physical concealment/frame and URI\nownership. Original delayed never-issued proposal expiry/revocation outcomes,\nlive uncertain policy/process recovery, S02 measured budgets and every S01\u2013S16\nfull release gate remain open. Installed desktop, drafts and foreign paths stay\npreserved.\n"
+}

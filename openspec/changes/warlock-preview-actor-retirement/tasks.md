@@ -385,3 +385,11 @@ activation and all original full release gates remain open.
   Qualify exhaustion, guard variants and full build while retaining original gates.
 - [ ] Activate the pure renderer only with actual WebKit callback binding,
   native physical concealment and async DOM/frame/reload/URI ownership barriers.
+
+- [x] Freeze CONTROL-033 native driver atomic input custody, original source epoch,
+  ticket-before-notification/dispatch and independent native confirmation with
+  actual C/JSC checks, explicit custody model/guard checks and current full build.
+- [ ] Qualify bounded retained native outputs and paused producer scheduling before
+  activating the driver in the actual WebKit/Core host.
+- [ ] Qualify live uncertain driver/process recovery and original delayed proposal
+  expiry/revocation outcomes without reconstructing policy or resetting a grant.
