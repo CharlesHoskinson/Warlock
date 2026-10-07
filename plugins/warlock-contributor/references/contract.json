@@ -13,7 +13,10 @@
     "start",
     "check",
     "record",
-    "inspect"
+    "inspect",
+    "doctor",
+    "plan",
+    "handoff"
   ],
   "exitCodes": {
     "0": "structural checks pass (advisories may remain)",
@@ -86,5 +89,8 @@
   "acceptedRestrictions": "No missing observations; reviewer differs from owner; evidence is neither selected product source nor Git-ignored scratch. Partial/blocked verdict requires missing observation. Accepted sourceRevision must resolve to an existing repository commit.",
   "projectOnly": "check --project-only bypasses participant records; incompatible with --require-record. --base-ref archive diff checked with or without record, with rename endpoints preserved.",
   "checkerIdentity": "Default root discovered from cwd ancestors; executed checker bytes must match repository-owned checker. checkerSha256 accompanies every result.",
-  "recordWrites": "POSIX exclusive lock serializes start/record. Start uses atomic exclusive creation; record uses atomic fsynced replacement. Git environment routing/index variables scrubbed."
+  "recordWrites": "POSIX exclusive lock serializes start/record. Start uses atomic exclusive creation; record uses atomic fsynced replacement. Git environment routing/index variables scrubbed.",
+  "plan": "Read-only plan --id ID --requirement ORIGINAL_ID --scenario ORIGINAL_NAME --path CANDIDATE_FILE --before TEXT --after TEXT --verify TEXT (repeat requirement/scenario/path/verify as needed). Global --json prints a planSchema=1 packet containing slice and exact original scenarios/verification. start --slice-file accepts this packet or a bare slice. Plan does not select STATE, adopt drafts or write files.",
+  "handoff": "Read-only participant resume packet: current source hashes/revision, changes since last record, protected foreign paths, latest recorded observation per selected original scenario, missing observations and structural/no-progress findings. evidenceMatchesCurrentSources means matching current source/evidence hashes, not oracle truth or acceptance. Missing records fail explicitly; stale current evidence returns nonzero with the packet.",
+  "doctor": "Read-only local package presence, Python/Git and PATH client availability plus scratch ignore/record state. Does not launch client executables, run builds, install, establish trust, validate host execution or qualify the native runtime. Missing package paths fail; absent optional clients do not."
 }

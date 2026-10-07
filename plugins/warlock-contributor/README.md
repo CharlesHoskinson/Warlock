@@ -5,12 +5,50 @@ One shared offline Python checker and implementation skill, with thin Claude Cod
 From the repository root:
 
 ```sh
+python3 -B plugins/warlock-contributor/scripts/warlock.py doctor
 python3 -B plugins/warlock-contributor/scripts/warlock.py status
 python3 -B plugins/warlock-contributor/scripts/warlock.py inspect --requirement ELM-UX-004
 python3 -B plugins/warlock-contributor/scripts/warlock.py start --owner your-name
 python3 -B docs/warlock-build-loop/v2/loop.py check
 python3 -B plugins/warlock-contributor/scripts/warlock.py record --outcome production-fix --summary 'Describe the actual source behavior and observations'
+python3 -B plugins/warlock-contributor/scripts/warlock.py handoff
 ```
+
+## Scaffold and resume
+
+`doctor` checks local package files, Python/Git availability and the scratch ignore;
+it reports which client executables are on PATH without launching or installing
+them. It does not establish client trust, enabled hooks or product-toolchain
+readiness. Missing client executables do not prevent direct checker use.
+
+`plan` builds a slice from original IDs and scenarios and includes their unchanged
+oracles and verification obligations. It does not choose the next feature, change
+`STATE`, claim ownership or run QA. Use `--json` before the command to save the
+start-compatible packet in ignored scratch:
+
+```sh
+mkdir -p .warlock-contributor
+python3 -B plugins/warlock-contributor/scripts/warlock.py --json plan \
+  --id launcher-search --requirement ELM-UI-005 --scenario search-no-match \
+  --path src/Desktop.elm --path src/SurfaceRenderer.elm \
+  --before 'No-match feedback is unreachable from keyboard search' \
+  --after 'Keyboard search shows no-match feedback and retains the query' \
+  --verify 'Changed Elm compile and replay; owned native keyboard journey' \
+  > .warlock-contributor/search-plan.json
+python3 -B plugins/warlock-contributor/scripts/warlock.py start \
+  --owner your-name --slice-file .warlock-contributor/search-plan.json
+```
+
+Choose source paths and before/after behavior from the actual defect; the example
+is not a current defect verdict. Save each new plan under a new scratch name so
+prior records remain available. A bare slice JSON still works with `start`.
+
+`handoff` prints the participant owner, source revision/hashes, changes since the
+last record, protected foreign paths, latest observation per scenario and its
+missing obligations. It highlights stale evidence and no-progress warnings;
+it writes nothing and never upgrades acceptance. Use it after compaction or when
+another contributor resumes the slice, then read the referenced original ledger
+and evidence. Global `--record` selects an alternate saved participant record.
 
 `start` uses `STATE.activeSlice`; it does not select the next feature. The default local record is `.warlock-contributor/slice.json`; Git must ignore `.warlock-contributor/` before `start` (this repository supplies the ignore). On a new development checkout add that narrow ignore or choose an already-ignored `--record` location. Record updates are serialized with a POSIX lock and written atomically. Global `--repo`, `--record`, and `--json` precede the subcommand. For resumed own drafts, explicitly list each declared dirty path with repeatable `start --adopt-dirty <path>` and supply `--ownership-note`; undeclared and unadopted foreign drafts stay protected. See `--help` and [contract.json](references/contract.json). Zero exit means structural compliance; 1 is a structural policy violation and 2 invalid/unavailable inputs. Explicit loop checks and repository contributor instructions remain required even when no host hook runs.
 

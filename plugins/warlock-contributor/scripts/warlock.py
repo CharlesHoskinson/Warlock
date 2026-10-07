@@ -8,6 +8,7 @@ import datetime as dt
 import hashlib
 import json
 import pathlib
+import shutil
 import subprocess
 import sys
 
@@ -191,6 +192,70 @@ def verdict_key(claim):
     return json.dumps([claim.get('requirement'), claim.get('scenario'), claim.get('disposition'), claim.get('scope'), sorted(claim.get('missingObservations', []))], sort_keys=True)
 
 
+def handoff(root, record, reqs, state):
+    """Read-only resume packet. Current hashes never upgrade recorded observations."""
+    errors, warnings = validate(root, record, reqs, state)
+    s = normalize_slice(root, record['slice'], reqs)
+    iterations = record.get('iterations', [])
+    last = iterations[-1] if iterations else None
+    previous = last['sourceHashes'] if last else record['sourceHashes']
+    current = {n: digest(safe(root, n)) for n in s['paths']}
+    latest = {}
+    for iteration in iterations:
+        for claim in iteration.get('claims', []):
+            latest[(claim['requirement'], claim['scenario'])] = claim
+    observations = []
+    for requirement in s['requirements']:
+        for scenario in reqs[requirement]['scenarios']:
+            if scenario['name'] not in s['scenarios']:
+                continue
+            claim = latest.get((requirement, scenario['name']))
+            observations.append({
+                'requirement': requirement, 'scenario': scenario['name'],
+                'oracle': scenario['then'], 'verificationScope': reqs[requirement]['verification'],
+                'recordedDisposition': claim['disposition'] if claim else None,
+                'evidenceMatchesCurrentSources': bool(claim) and not claim.get('historicalAfterSourceChange', False)
+                    and claim['sourceHashes'] == current
+                    and all(digest(safe(root, e['path'])) == e['sha256'] for e in claim['evidence']),
+                'missingObservations': claim['missingObservations'] if claim else
+                    ['No observation recorded in this participant record; inspect the original ledger and retained evidence.'],
+                'evidence': claim['evidence'] if claim else []})
+    return {
+        'owner': record['owner'], 'slice': s,
+        'sourceRevision': git(root, 'rev-parse', 'HEAD').decode().strip(),
+        'sourceHashes': current,
+        'changedSinceLastRecord': [n for n in current if current[n] != previous.get(n)],
+        'protectedForeignPaths': sorted(record['foreignDirty']),
+        'lastIteration': {k: last[k] for k in ('atUTC', 'outcome', 'summary', 'meaningfulProgress')} if last else None,
+        'observations': observations, 'errors': errors, 'warnings': warnings,
+        'nextAction': 'Resolve structural errors before claims.' if errors else
+            'Read the observations and implement the next source change, or record the decisive original-scenario observation. '
+            'Follow any no-progress warning; do not rerun unchanged qualification by default.'}
+
+
+def doctor(root, record_path):
+    """Inspect local availability without running client binaries, builds or installs."""
+    plugin = 'plugins/warlock-contributor/'
+    required = ['scripts/warlock.py', 'scripts/session_hook.py',
+                'skills/warlock-contribute/SKILL.md', '.claude-plugin/plugin.json',
+                '.codex-plugin/plugin.json', 'hooks/hooks.json', 'hooks/codex.json']
+    missing = [plugin + n for n in required if not safe(root, plugin + n).is_file()]
+    ignored = git_run(root, 'check-ignore', '-q', '--', record_path).returncode == 0
+    warnings = ['Client executable availability does not establish installation, enabled hooks or trust. '
+                'Product toolchain and native runtime are checked by their protected runners.']
+    if not ignored:
+        warnings.append('Scratch record is not ignored; start will refuse to write it. Add a narrow ignore or select an ignored --record path.')
+    return {
+        'python': {'version': list(sys.version_info[:3]), 'minimum': '3.9'},
+        'git': shutil.which('git'),
+        'clientExecutables': {name: shutil.which(name) for name in ('claude', 'codex', 'grok')},
+        'recordIgnored': ignored,
+        'recordExists': safe(root, record_path).exists(),
+        'missingPackageFiles': missing,
+        'errors': ['Missing package file: ' + n for n in missing],
+        'warnings': warnings}
+
+
 def validate(root, record, reqs, state):
     errors, warnings = [], []
     if record.get('schema') != 1 or not record.get('owner'):
@@ -292,6 +357,16 @@ def main():
     inspect = subs.add_parser('inspect')
     inspect.add_argument('--requirement', action='append', required=True)
     subs.add_parser('status'); check = subs.add_parser('check')
+    subs.add_parser('doctor')
+    subs.add_parser('handoff')
+    plan = subs.add_parser('plan', help='Print a start-compatible slice scaffold; does not write or select work')
+    plan.add_argument('--id', required=True)
+    plan.add_argument('--requirement', action='append', required=True)
+    plan.add_argument('--scenario', action='append', required=True)
+    plan.add_argument('--path', action='append', required=True)
+    plan.add_argument('--before', required=True)
+    plan.add_argument('--after', required=True)
+    plan.add_argument('--verify', action='append', required=True)
     check.add_argument('--project-only', action='store_true', help='Check project/baseline without reading a participant record')
     check.add_argument('--require-record', action='store_true', help='Fail if the participant slice record is absent')
     check.add_argument('--base-ref', help='Check changed implementation paths since this Git revision')
@@ -323,7 +398,21 @@ def main():
             lock_path = safe(root, args.record + '.lock')
             lock = os.fdopen(os.open(lock_path, os.O_WRONLY | os.O_CREAT | os.O_NOFOLLOW, 0o600), 'w')
             fcntl.flock(lock, fcntl.LOCK_EX)
-        if args.command == 'inspect':
+        if args.command == 'doctor':
+            result.update(doctor(root, args.record))
+        elif args.command == 'plan':
+            s = normalize_slice(root, {'id': args.id, 'requirements': args.requirement,
+                'scenarios': args.scenario, 'paths': args.path, 'before': args.before,
+                'after': args.after, 'verification': args.verify}, reqs)
+            result.update(planSchema=1, slice=s, originals=[{
+                'requirement': i, 'verification': reqs[i]['verification'],
+                'scenarios': [x for x in reqs[i]['scenarios'] if x['name'] in s['scenarios']]
+            } for i in s['requirements']])
+        elif args.command == 'handoff':
+            if not path.exists():
+                raise ValueError('No participant record to resume; inspect status and start an owned slice first')
+            result.update(handoff(root, read(path), reqs, state))
+        elif args.command == 'inspect':
             if not 1 <= len(args.requirement) <= 3 or len(set(args.requirement)) != len(args.requirement) or any(i not in reqs for i in args.requirement):
                 raise ValueError('Inspect needs 1–3 unique original requirement IDs')
             ledger = read(safe(root, LEDGER))
@@ -337,7 +426,10 @@ def main():
         elif args.command == 'start':
             if path.exists():
                 raise ValueError('Record already exists; retain it and choose a new --record for a new slice')
-            s = normalize_slice(root, read(safe(root, args.slice_file)) if args.slice_file else state['activeSlice'], reqs)
+            selection = read(safe(root, args.slice_file)) if args.slice_file else state['activeSlice']
+            if selection.get('planSchema') == 1:
+                selection = selection['slice']
+            s = normalize_slice(root, selection, reqs)
             adopted = list(dict.fromkeys(args.adopt_dirty))
             if adopted and (not args.ownership_note or not args.ownership_note.strip()):
                 raise ValueError('Dirty adoption requires an explicit --ownership-note')
