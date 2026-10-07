@@ -1,0 +1,24 @@
+-- BAD TUPLE ------------------------------ src/NativePreviewProposalIngress.elm
+
+I only accept tuples with two or three items. This has too many:
+
+79|             (D.map6 (\protocol kind domain ordinal advisory wire -> (protocol,kind,domain,ordinal,advisory,wire))
+                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+I recommend switching to records. Each item will be named, and you can use the
+`point.x` syntax to access them.
+
+Note: Read <https://elm-lang.org/0.19.2/tuples> for more comprehensive advice on
+working with large chunks of data in Elm.
+
+-- BAD TUPLE ------------------------------ src/NativePreviewProposalIngress.elm
+
+I only accept tuples with two or three items. This has too many:
+
+45|             (D.map4 (\protocol kind domain rows -> (protocol,kind,domain,rows))
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+I recommend switching to records. Each item will be named, and you can use the
+`point.x` syntax to access them.
+
+Note: Read <https://elm-lang.org/0.19.2/tuples> for more comprehensive advice on
+working with large chunks of data in Elm.
+

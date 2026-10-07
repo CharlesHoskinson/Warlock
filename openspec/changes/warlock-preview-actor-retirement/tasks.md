@@ -324,3 +324,19 @@ retaining103. All four current resource and four scoped suites pass. Popup typed
 ports compile;actual WebKit execution remains unqualified. One failed runner
 anchor attempt remains. Pre-issuance proposal retention, actual host activation
 and full Elm context recovery remain open.
+
+- [x] Freeze CONTROL-028 retained original Elm proposals, exact native ticket
+      correlation, bounded deferred cleanup and same-domain retry with current
+      compiled Elm/native coupling and explicitly selected Quint traces.
+- [ ] Qualify real host input backpressure, original ticket custody before
+      dispatch, issued-fact channel ownership and bounded retry scheduling before
+      controlled Popup/WebKit/Core route activation.
+
+GUI115 CPU retention qualifies98 boundaries/native C+Elm206/two epochs/unchanged
+Native grant/normal exits; ingress Quint16/28 actualElm traces/468 states/six
+compiled variants; urgent6/18/406/two variants; cold256/3608 with original1549
+assertions and explicit synthetic ticket facts; current wrapper legacy45/20+C34;
+full108 retains104 and earlier106. Six failed attempts remain, including actual
+blocked-quarantine demand counterexample. Real host input backpressure and
+WebKit/policy lifetime remain open. Qualify delayed proposal expiry/revocation
+outcomes before claiming finite liveness or activating that route.

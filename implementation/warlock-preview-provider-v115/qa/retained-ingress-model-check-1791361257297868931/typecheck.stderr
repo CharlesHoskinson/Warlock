@@ -1,0 +1,29 @@
+
+ Error [QNT404]: Name 'min' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-ingress-model-check-1791361257297868931/inputs/spec/retained_preview_ingress.qnt:9:48
+  9:   val retained=st.pending.concat(fresh.slice(0,available.min(fresh.length())));
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'min' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-ingress-model-check-1791361257297868931/inputs/spec/retained_preview_ingress.qnt:10:48
+  10:   {...st,pending:retained,deferred:fresh.slice(available.min(fresh.length()),fresh.length()),commands:retained}
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'min' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-ingress-model-check-1791361257297868931/inputs/spec/retained_preview_ingress.qnt:15:49
+  15:   if(e==Issue){...base,pending:st.pending.slice(st.pending.length().min(1),st.pending.length())}
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'min' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-ingress-model-check-1791361257297868931/inputs/spec/retained_preview_ingress.qnt:19:13
+  19:    val take=available.min(st.deferred.length());
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: parsing failed

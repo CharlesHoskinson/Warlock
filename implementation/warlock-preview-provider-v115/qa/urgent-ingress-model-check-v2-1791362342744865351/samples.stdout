@@ -1,0 +1,972 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      closing: false,
+      commands: ["acquire:first"],
+      deferred: ["acquire:neighbor"],
+      demand: true,
+      held: 2,
+      history: [],
+      known: 2,
+      pending: ["acquire:first"]
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      closing: false,
+      commands: [],
+      deferred: ["acquire:neighbor"],
+      demand: true,
+      held: 2,
+      history: ["ForeignQuarantine"],
+      known: 2,
+      pending: ["acquire:first"]
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      closing: false,
+      commands: ["acquire:first"],
+      deferred: ["acquire:neighbor"],
+      demand: true,
+      held: 2,
+      history: ["ForeignQuarantine", "Retry"],
+      known: 2,
+      pending: ["acquire:first"]
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      closing: false,
+      commands: [],
+      deferred: ["acquire:neighbor"],
+      demand: true,
+      held: 2,
+      history: ["ForeignQuarantine", "Retry", "Issue"],
+      known: 2,
+      pending: []
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      closing: false,
+      commands: [],
+      deferred: ["acquire:neighbor"],
+      demand: true,
+      held: 2,
+      history: ["ForeignQuarantine", "Retry", "Issue", "ForeignTicket"],
+      known: 2,
+      pending: []
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      closing: false,
+      commands: ["acquire:neighbor"],
+      deferred: [],
+      demand: true,
+      held: 2,
+      history:
+        ["ForeignQuarantine", "Retry", "Issue", "ForeignTicket", "Retry"],
+      known: 2,
+      pending: ["acquire:neighbor"]
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      closing: false,
+      commands: [],
+      deferred: [],
+      demand: true,
+      held: 2,
+      history:
+        [
+          "ForeignQuarantine",
+          "Retry",
+          "Issue",
+          "ForeignTicket",
+          "Retry",
+          "ForeignTicket"
+        ],
+      known: 2,
+      pending: ["acquire:neighbor"]
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      closing: false,
+      commands: ["acquire:neighbor"],
+      deferred: [],
+      demand: true,
+      held: 2,
+      history:
+        [
+          "ForeignQuarantine",
+          "Retry",
+          "Issue",
+          "ForeignTicket",
+          "Retry",
+          "ForeignTicket",
+          "Retry"
+        ],
+      known: 2,
+      pending: ["acquire:neighbor"]
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      closing: true,
+      commands: ["acquire:neighbor"],
+      deferred: ["reconcile:binding", "cancel:first", "cancel:neighbor"],
+      demand: false,
+      held: 2,
+      history:
+        [
+          "ForeignQuarantine",
+          "Retry",
+          "Issue",
+          "ForeignTicket",
+          "Retry",
+          "ForeignTicket",
+          "Retry",
+          "Quarantine"
+        ],
+      known: 2,
+      pending: ["acquire:neighbor"]
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      closing: true,
+      commands: ["acquire:neighbor"],
+      deferred: ["reconcile:binding", "cancel:first", "cancel:neighbor"],
+      demand: false,
+      held: 2,
+      history:
+        [
+          "ForeignQuarantine",
+          "Retry",
+          "Issue",
+          "ForeignTicket",
+          "Retry",
+          "ForeignTicket",
+          "Retry",
+          "Quarantine",
+          "Retry"
+        ],
+      known: 2,
+      pending: ["acquire:neighbor"]
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      closing: true,
+      commands: [],
+      deferred: ["reconcile:binding", "cancel:first", "cancel:neighbor"],
+      demand: false,
+      held: 2,
+      history:
+        [
+          "ForeignQuarantine",
+          "Retry",
+          "Issue",
+          "ForeignTicket",
+          "Retry",
+          "ForeignTicket",
+          "Retry",
+          "Quarantine",
+          "Retry",
+          "Quarantine"
+        ],
+      known: 2,
+      pending: ["acquire:neighbor"]
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      closing: true,
+      commands: [],
+      deferred: ["reconcile:binding", "cancel:first", "cancel:neighbor"],
+      demand: false,
+      held: 2,
+      history:
+        [
+          "ForeignQuarantine",
+          "Retry",
+          "Issue",
+          "ForeignTicket",
+          "Retry",
+          "ForeignTicket",
+          "Retry",
+          "Quarantine",
+          "Retry",
+          "Quarantine",
+          "ForeignQuarantine"
+        ],
+      known: 2,
+      pending: ["acquire:neighbor"]
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      closing: true,
+      commands: [],
+      deferred: ["reconcile:binding", "cancel:first", "cancel:neighbor"],
+      demand: false,
+      held: 2,
+      history:
+        [
+          "ForeignQuarantine",
+          "Retry",
+          "Issue",
+          "ForeignTicket",
+          "Retry",
+          "ForeignTicket",
+          "Retry",
+          "Quarantine",
+          "Retry",
+          "Quarantine",
+          "ForeignQuarantine",
+          "Quarantine"
+        ],
+      known: 2,
+      pending: ["acquire:neighbor"]
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      closing: true,
+      commands: [],
+      deferred: ["reconcile:binding", "cancel:first", "cancel:neighbor"],
+      demand: false,
+      held: 2,
+      history:
+        [
+          "ForeignQuarantine",
+          "Retry",
+          "Issue",
+          "ForeignTicket",
+          "Retry",
+          "ForeignTicket",
+          "Retry",
+          "Quarantine",
+          "Retry",
+          "Quarantine",
+          "ForeignQuarantine",
+          "Quarantine",
+          "Ordinary"
+        ],
+      known: 2,
+      pending: ["acquire:neighbor"]
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      closing: true,
+      commands: [],
+      deferred: ["reconcile:binding", "cancel:first", "cancel:neighbor"],
+      demand: false,
+      held: 2,
+      history:
+        [
+          "ForeignQuarantine",
+          "Retry",
+          "Issue",
+          "ForeignTicket",
+          "Retry",
+          "ForeignTicket",
+          "Retry",
+          "Quarantine",
+          "Retry",
+          "Quarantine",
+          "ForeignQuarantine",
+          "Quarantine",
+          "Ordinary",
+          "Ordinary"
+        ],
+      known: 2,
+      pending: ["acquire:neighbor"]
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      closing: true,
+      commands: ["acquire:neighbor"],
+      deferred: ["reconcile:binding", "cancel:first", "cancel:neighbor"],
+      demand: false,
+      held: 2,
+      history:
+        [
+          "ForeignQuarantine",
+          "Retry",
+          "Issue",
+          "ForeignTicket",
+          "Retry",
+          "ForeignTicket",
+          "Retry",
+          "Quarantine",
+          "Retry",
+          "Quarantine",
+          "ForeignQuarantine",
+          "Quarantine",
+          "Ordinary",
+          "Ordinary",
+          "Retry"
+        ],
+      known: 2,
+      pending: ["acquire:neighbor"]
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      closing: true,
+      commands: [],
+      deferred: ["reconcile:binding", "cancel:first", "cancel:neighbor"],
+      demand: false,
+      held: 2,
+      history:
+        [
+          "ForeignQuarantine",
+          "Retry",
+          "Issue",
+          "ForeignTicket",
+          "Retry",
+          "ForeignTicket",
+          "Retry",
+          "Quarantine",
+          "Retry",
+          "Quarantine",
+          "ForeignQuarantine",
+          "Quarantine",
+          "Ordinary",
+          "Ordinary",
+          "Retry",
+          "ForeignQuarantine"
+        ],
+      known: 2,
+      pending: ["acquire:neighbor"]
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      closing: true,
+      commands: [],
+      deferred: ["reconcile:binding", "cancel:first", "cancel:neighbor"],
+      demand: false,
+      held: 2,
+      history:
+        [
+          "ForeignQuarantine",
+          "Retry",
+          "Issue",
+          "ForeignTicket",
+          "Retry",
+          "ForeignTicket",
+          "Retry",
+          "Quarantine",
+          "Retry",
+          "Quarantine",
+          "ForeignQuarantine",
+          "Quarantine",
+          "Ordinary",
+          "Ordinary",
+          "Retry",
+          "ForeignQuarantine",
+          "ForeignTicket"
+        ],
+      known: 2,
+      pending: ["acquire:neighbor"]
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      closing: true,
+      commands: [],
+      deferred: ["reconcile:binding", "cancel:first", "cancel:neighbor"],
+      demand: false,
+      held: 2,
+      history:
+        [
+          "ForeignQuarantine",
+          "Retry",
+          "Issue",
+          "ForeignTicket",
+          "Retry",
+          "ForeignTicket",
+          "Retry",
+          "Quarantine",
+          "Retry",
+          "Quarantine",
+          "ForeignQuarantine",
+          "Quarantine",
+          "Ordinary",
+          "Ordinary",
+          "Retry",
+          "ForeignQuarantine",
+          "ForeignTicket",
+          "ForeignQuarantine"
+        ],
+      known: 2,
+      pending: ["acquire:neighbor"]
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      closing: true,
+      commands: [],
+      deferred: ["reconcile:binding", "cancel:first", "cancel:neighbor"],
+      demand: false,
+      held: 2,
+      history:
+        [
+          "ForeignQuarantine",
+          "Retry",
+          "Issue",
+          "ForeignTicket",
+          "Retry",
+          "ForeignTicket",
+          "Retry",
+          "Quarantine",
+          "Retry",
+          "Quarantine",
+          "ForeignQuarantine",
+          "Quarantine",
+          "Ordinary",
+          "Ordinary",
+          "Retry",
+          "ForeignQuarantine",
+          "ForeignTicket",
+          "ForeignQuarantine",
+          "ForeignTicket"
+        ],
+      known: 2,
+      pending: ["acquire:neighbor"]
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      closing: true,
+      commands: [],
+      deferred: ["reconcile:binding", "cancel:first", "cancel:neighbor"],
+      demand: false,
+      held: 2,
+      history:
+        [
+          "ForeignQuarantine",
+          "Retry",
+          "Issue",
+          "ForeignTicket",
+          "Retry",
+          "ForeignTicket",
+          "Retry",
+          "Quarantine",
+          "Retry",
+          "Quarantine",
+          "ForeignQuarantine",
+          "Quarantine",
+          "Ordinary",
+          "Ordinary",
+          "Retry",
+          "ForeignQuarantine",
+          "ForeignTicket",
+          "ForeignQuarantine",
+          "ForeignTicket",
+          "ForeignTicket"
+        ],
+      known: 2,
+      pending: ["acquire:neighbor"]
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      closing: true,
+      commands: ["acquire:neighbor"],
+      deferred: ["reconcile:binding", "cancel:first", "cancel:neighbor"],
+      demand: false,
+      held: 2,
+      history:
+        [
+          "ForeignQuarantine",
+          "Retry",
+          "Issue",
+          "ForeignTicket",
+          "Retry",
+          "ForeignTicket",
+          "Retry",
+          "Quarantine",
+          "Retry",
+          "Quarantine",
+          "ForeignQuarantine",
+          "Quarantine",
+          "Ordinary",
+          "Ordinary",
+          "Retry",
+          "ForeignQuarantine",
+          "ForeignTicket",
+          "ForeignQuarantine",
+          "ForeignTicket",
+          "ForeignTicket",
+          "Retry"
+        ],
+      known: 2,
+      pending: ["acquire:neighbor"]
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      closing: true,
+      commands: [],
+      deferred: ["reconcile:binding", "cancel:first", "cancel:neighbor"],
+      demand: false,
+      held: 2,
+      history:
+        [
+          "ForeignQuarantine",
+          "Retry",
+          "Issue",
+          "ForeignTicket",
+          "Retry",
+          "ForeignTicket",
+          "Retry",
+          "Quarantine",
+          "Retry",
+          "Quarantine",
+          "ForeignQuarantine",
+          "Quarantine",
+          "Ordinary",
+          "Ordinary",
+          "Retry",
+          "ForeignQuarantine",
+          "ForeignTicket",
+          "ForeignQuarantine",
+          "ForeignTicket",
+          "ForeignTicket",
+          "Retry",
+          "Ordinary"
+        ],
+      known: 2,
+      pending: ["acquire:neighbor"]
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      closing: true,
+      commands: [],
+      deferred: ["reconcile:binding", "cancel:first", "cancel:neighbor"],
+      demand: false,
+      held: 2,
+      history:
+        [
+          "ForeignQuarantine",
+          "Retry",
+          "Issue",
+          "ForeignTicket",
+          "Retry",
+          "ForeignTicket",
+          "Retry",
+          "Quarantine",
+          "Retry",
+          "Quarantine",
+          "ForeignQuarantine",
+          "Quarantine",
+          "Ordinary",
+          "Ordinary",
+          "Retry",
+          "ForeignQuarantine",
+          "ForeignTicket",
+          "ForeignQuarantine",
+          "ForeignTicket",
+          "ForeignTicket",
+          "Retry",
+          "Ordinary",
+          "ForeignTicket"
+        ],
+      known: 2,
+      pending: ["acquire:neighbor"]
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      closing: true,
+      commands: [],
+      deferred: ["reconcile:binding", "cancel:first", "cancel:neighbor"],
+      demand: false,
+      held: 2,
+      history:
+        [
+          "ForeignQuarantine",
+          "Retry",
+          "Issue",
+          "ForeignTicket",
+          "Retry",
+          "ForeignTicket",
+          "Retry",
+          "Quarantine",
+          "Retry",
+          "Quarantine",
+          "ForeignQuarantine",
+          "Quarantine",
+          "Ordinary",
+          "Ordinary",
+          "Retry",
+          "ForeignQuarantine",
+          "ForeignTicket",
+          "ForeignQuarantine",
+          "ForeignTicket",
+          "ForeignTicket",
+          "Retry",
+          "Ordinary",
+          "ForeignTicket",
+          "ForeignTicket"
+        ],
+      known: 2,
+      pending: ["acquire:neighbor"]
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      closing: true,
+      commands: [],
+      deferred: ["reconcile:binding", "cancel:first", "cancel:neighbor"],
+      demand: false,
+      held: 2,
+      history:
+        [
+          "ForeignQuarantine",
+          "Retry",
+          "Issue",
+          "ForeignTicket",
+          "Retry",
+          "ForeignTicket",
+          "Retry",
+          "Quarantine",
+          "Retry",
+          "Quarantine",
+          "ForeignQuarantine",
+          "Quarantine",
+          "Ordinary",
+          "Ordinary",
+          "Retry",
+          "ForeignQuarantine",
+          "ForeignTicket",
+          "ForeignQuarantine",
+          "ForeignTicket",
+          "ForeignTicket",
+          "Retry",
+          "Ordinary",
+          "ForeignTicket",
+          "ForeignTicket",
+          "Ordinary"
+        ],
+      known: 2,
+      pending: ["acquire:neighbor"]
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      closing: true,
+      commands: [],
+      deferred: ["reconcile:binding", "cancel:first", "cancel:neighbor"],
+      demand: false,
+      held: 2,
+      history:
+        [
+          "ForeignQuarantine",
+          "Retry",
+          "Issue",
+          "ForeignTicket",
+          "Retry",
+          "ForeignTicket",
+          "Retry",
+          "Quarantine",
+          "Retry",
+          "Quarantine",
+          "ForeignQuarantine",
+          "Quarantine",
+          "Ordinary",
+          "Ordinary",
+          "Retry",
+          "ForeignQuarantine",
+          "ForeignTicket",
+          "ForeignQuarantine",
+          "ForeignTicket",
+          "ForeignTicket",
+          "Retry",
+          "Ordinary",
+          "ForeignTicket",
+          "ForeignTicket",
+          "Ordinary",
+          "Quarantine"
+        ],
+      known: 2,
+      pending: ["acquire:neighbor"]
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      closing: true,
+      commands: [],
+      deferred: ["reconcile:binding", "cancel:first", "cancel:neighbor"],
+      demand: false,
+      held: 2,
+      history:
+        [
+          "ForeignQuarantine",
+          "Retry",
+          "Issue",
+          "ForeignTicket",
+          "Retry",
+          "ForeignTicket",
+          "Retry",
+          "Quarantine",
+          "Retry",
+          "Quarantine",
+          "ForeignQuarantine",
+          "Quarantine",
+          "Ordinary",
+          "Ordinary",
+          "Retry",
+          "ForeignQuarantine",
+          "ForeignTicket",
+          "ForeignQuarantine",
+          "ForeignTicket",
+          "ForeignTicket",
+          "Retry",
+          "Ordinary",
+          "ForeignTicket",
+          "ForeignTicket",
+          "Ordinary",
+          "Quarantine",
+          "Ordinary"
+        ],
+      known: 2,
+      pending: ["acquire:neighbor"]
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      closing: true,
+      commands: [],
+      deferred: ["reconcile:binding", "cancel:first", "cancel:neighbor"],
+      demand: false,
+      held: 2,
+      history:
+        [
+          "ForeignQuarantine",
+          "Retry",
+          "Issue",
+          "ForeignTicket",
+          "Retry",
+          "ForeignTicket",
+          "Retry",
+          "Quarantine",
+          "Retry",
+          "Quarantine",
+          "ForeignQuarantine",
+          "Quarantine",
+          "Ordinary",
+          "Ordinary",
+          "Retry",
+          "ForeignQuarantine",
+          "ForeignTicket",
+          "ForeignQuarantine",
+          "ForeignTicket",
+          "ForeignTicket",
+          "Retry",
+          "Ordinary",
+          "ForeignTicket",
+          "ForeignTicket",
+          "Ordinary",
+          "Quarantine",
+          "Ordinary",
+          "ForeignQuarantine"
+        ],
+      known: 2,
+      pending: ["acquire:neighbor"]
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      closing: true,
+      commands: [],
+      deferred: ["reconcile:binding", "cancel:first", "cancel:neighbor"],
+      demand: false,
+      held: 2,
+      history:
+        [
+          "ForeignQuarantine",
+          "Retry",
+          "Issue",
+          "ForeignTicket",
+          "Retry",
+          "ForeignTicket",
+          "Retry",
+          "Quarantine",
+          "Retry",
+          "Quarantine",
+          "ForeignQuarantine",
+          "Quarantine",
+          "Ordinary",
+          "Ordinary",
+          "Retry",
+          "ForeignQuarantine",
+          "ForeignTicket",
+          "ForeignQuarantine",
+          "ForeignTicket",
+          "ForeignTicket",
+          "Retry",
+          "Ordinary",
+          "ForeignTicket",
+          "ForeignTicket",
+          "Ordinary",
+          "Quarantine",
+          "Ordinary",
+          "ForeignQuarantine",
+          "Issue"
+        ],
+      known: 2,
+      pending: []
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      closing: true,
+      commands: [],
+      deferred: ["reconcile:binding", "cancel:first", "cancel:neighbor"],
+      demand: false,
+      held: 2,
+      history:
+        [
+          "ForeignQuarantine",
+          "Retry",
+          "Issue",
+          "ForeignTicket",
+          "Retry",
+          "ForeignTicket",
+          "Retry",
+          "Quarantine",
+          "Retry",
+          "Quarantine",
+          "ForeignQuarantine",
+          "Quarantine",
+          "Ordinary",
+          "Ordinary",
+          "Retry",
+          "ForeignQuarantine",
+          "ForeignTicket",
+          "ForeignQuarantine",
+          "ForeignTicket",
+          "ForeignTicket",
+          "Retry",
+          "Ordinary",
+          "ForeignTicket",
+          "ForeignTicket",
+          "Ordinary",
+          "Quarantine",
+          "Ordinary",
+          "ForeignQuarantine",
+          "Issue",
+          "ForeignTicket"
+        ],
+      known: 2,
+      pending: []
+    }
+}
+
+[ok] No violation found (239ms at 837 traces/second).
+Trace length statistics: max=31, min=31, average=31.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

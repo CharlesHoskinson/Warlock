@@ -1,0 +1,21 @@
+
+ Error [QNT000]: Couldn't unify set and list
+Trying to unify Set[_t101] and List[str]
+Trying to unify (Set[_t101], _t101) => bool and (List[str], t_x_655) => _t102
+
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-ingress-model-check-v2-1791361288380533722/inputs/spec/retained_preview_ingress_v2.qnt:8:35
+  8:   val fresh=outputs.filter(x=>not(st.pending.contains(x)));
+                                       ^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT000]: Couldn't unify set and list
+Trying to unify Set[_t104] and List[str]
+Trying to unify (Set[_t104], (_t104) => bool) => Set[_t104] and (List[str], (t_x_655) => _t103) => _t105
+
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-ingress-model-check-v2-1791361288380533722/inputs/spec/retained_preview_ingress_v2.qnt:8:13
+  8:   val fresh=outputs.filter(x=>not(st.pending.contains(x)));
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: typechecking failed

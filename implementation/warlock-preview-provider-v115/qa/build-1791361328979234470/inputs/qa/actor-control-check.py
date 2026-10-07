@@ -1,0 +1,56 @@
+"""Compare explicitly selected Quint job-control traces with actual native issuer."""
+import hashlib,json,pathlib,re,resource,shlex,shutil,subprocess,sys,time
+sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
+require_qa_scope();assert resource.getrlimit(resource.RLIMIT_CORE)==(1,1)
+root=pathlib.Path(__file__).resolve().parents[1];out=root/'qa'/('actor-control-check-'+str(time.time_ns()));out.mkdir()
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+tool='/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint'
+names=[str(p.relative_to(root)) for p in (root/'native').glob('*') if p.is_file()]+['spec/actor_control.qnt','spec/actor_control_tests.qnt',str(pathlib.Path(__file__).relative_to(root))]
+report={'passed':False,'inputs':{rel:sha(root/rel) for rel in names},'commands':[],'nativeAcceptance':False,'fullReleaseAccepted':False,'scope':'Actual native original actor readiness/final delivery/quota release compared after every explicitly selected and sampled Quint event. Physical/proof barriers and original frontend job confirmation precede all-map retirement; actual final processing effect and independent frontend confirmation precede actor/binding credit release. Confirmed Unknown handler retains original native journal/actor credit and cannot be reinvoked through ticket retry. Native authenticated synthetic socket/actual ImportedClients/Coordinator/Broker/retirement journal/C prefix, no capture/FD/compositor/Elm/WebKit/real actor-host close or full release acceptance.'}
+def run(name,args,stdin=None,cwd=None):
+ p=subprocess.run(args,input=stdin,cwd=cwd or out/'inputs',capture_output=True,text=True,timeout=180)
+ (out/(name+'.stdout')).write_text(p.stdout);(out/(name+'.stderr')).write_text(p.stderr)
+ report['commands'].append({'name':name,'argv':args,'exitCode':p.returncode});print(name,p.returncode,flush=True)
+ assert p.returncode==0,p.stderr or p.stdout
+ return p.stdout
+def decode(v):
+ if isinstance(v,list):return [decode(x) for x in v]
+ if isinstance(v,dict):return int(v['#bigint']) if '#bigint' in v else {k:decode(x) for k,x in v.items()}
+ return v
+try:
+ for rel in names:
+  p=out/'inputs'/rel;p.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(root/rel,p)
+ flags=shlex.split(run('flags',['pkg-config','--cflags','--libs','gio-unix-2.0','json-glib-1.0']))
+ args=['g++','-std=c++20','-O1','-Wall','-Wextra','-Werror','-fsanitize=address,undefined','-fno-omit-frame-pointer','-Inative','native/actor-control-replay.cpp','native/imported-clients.cpp','native/preview-provider-bootstrap.cpp','native/preview_uri.cpp','-o',str(out/'checks'),*flags]
+ run('compile',args)
+ folder=out/'inputs/spec';selected=re.findall(r'run (\w+)\s*=',(folder/'actor_control_tests.qnt').read_text());assert len(selected)==15
+ run('typecheck',[tool,'typecheck','actor_control_tests.qnt'],cwd=folder)
+ run('selected',[tool,'test','actor_control_tests.qnt','--main=actor_control_tests','--backend=typescript','--match=^('+'|'.join(selected)+')$','--seed=1020031','--max-samples=1','--out-itf='+str(out/'named-{test}-{seq}.itf.json')],cwd=folder)
+ assert len(list(out.glob('named-*.itf.json')))==15
+ run('samples',[tool,'run','actor_control.qnt','--main=actor_control','--backend=typescript','--invariant=safety','--seed=1020032','--max-samples=100','--max-steps=30','--n-traces=8','--out-itf='+str(out/'sample-{seq}.itf.json')],cwd=folder)
+ traces=[];witnesses={}
+ for path in sorted(out.glob('*.itf.json')):
+  states=[v['s'] for v in decode(json.loads(path.read_text()))['states']];wanted=[];count=0
+  for state in states:
+   if len(state['history'])==count:continue
+   count=len(state['history']);wanted.append({k:v for k,v in state.items() if k!='history'})
+  stdin='\n'.join(states[-1]['history'])+'\n'
+  actual=[json.loads(v) for v in run('replay-'+path.stem,[str(out/'checks')],stdin).splitlines()]
+  assert actual==wanted,(path.name,actual,wanted)
+  traces.append({'trace':path.name,'statesCompared':len(actual)});witnesses[path.name]=(stdin,wanted)
+ mutants=[]
+ for name,header,old,new,witness in [
+  ('forget-final-effect-before-release','native/imported_control_admission.hpp','row->second.retired && row->second.finalAcknowledged &&','row->second.retired &&','confirmedUnknownEffectKeepsActor'),
+  ('release-actor-before-original-confirmation','native/control_reservations.hpp','(void)slot;if(ordinal>channel_.confirmed)return false;','(void)slot;','finalConfirmationBeforeActorCreditRelease'),
+  ('accept-raw-readiness-effect','native/imported_clients.hpp','require(controlAdmission_->actorDispatched(controlGrant_,view,queue.nativeBroker(),entry,1,body),','require(true,','rawReadinessCannotQueryOrMutate'),
+  ('accept-raw-final-effect','native/imported_clients.hpp','require(controlAdmission_->actorDispatched(controlGrant_,view,queue.nativeBroker(),final->entry,2,body,true),','require(true,','rawFinalAckCannotMutatePrefix')]:
+  changed=out/name;shutil.copytree(out/'inputs',changed);p=changed/header;s=p.read_text();assert s.count(old)==1;p.write_text(s.replace(old,new))
+  mutant=[*args];mutant[mutant.index('-o')+1]=str(changed/'checks');run(name+'-compile',mutant,cwd=changed)
+  path=next(v for v in witnesses if witness in v);stdin,wanted=witnesses[path]
+  actual=[json.loads(v) for v in run(name+'-replay',[str(changed/'checks')],stdin).splitlines()]
+  assert actual!=wanted;mutants.append({'name':name,'compiled':True,'witness':path,'differentObservableState':True})
+ assert all(sha(root/rel)==value for rel,value in report['inputs'].items())
+ report.update(passed=True,selectedNames=selected,namedScenarios=15,invariantSamples=100,coupledTraces=traces,statesCompared=sum(v['statesCompared'] for v in traces),unsafeMutantsDetected=4,mutants=mutants)
+except Exception as error:report['error']=repr(error)
+report['artifacts']={str(p.relative_to(out)):sha(p) for p in out.rglob('*') if p.is_file()}
+(out/'report.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({'passed':report['passed'],'report':str(out/'report.json'),'error':str(report.get('error',''))[:900]}),flush=True);sys.exit(not report['passed'])

@@ -1,0 +1,168 @@
+{
+  "schema": 1,
+  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "sourceHeld": true,
+  "passed": true,
+  "evidenceIntegrityPassed": true,
+  "reports": {
+    "boundaries": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-ingress-check-v2-1791362045804086481/report.json",
+      "sha256": "87daa66d6b6a4cef4ac863277d4edc508595f6475903b425962ce5ed8413566f"
+    },
+    "nativeElmOutbox": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-ingress-native-check-1791362312569931127/report.json",
+      "sha256": "044a1a4277042f271ae1a30630584c38748702357cbc74b14d810a00216473e6"
+    },
+    "model": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-ingress-model-check-v5-1791362250074671821/report.json",
+      "sha256": "e8def04b70720b7e94cf998e61c414745341a0d9f396416c5e3c87edcaeda14e"
+    },
+    "urgentModel": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/urgent-ingress-model-check-v2-1791362342744865351/report.json",
+      "sha256": "715068bb0fea92611353409e785063ac24409d709565d579d4c0b4dfc467986f"
+    },
+    "coldCohort": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-ingress-cold-check-1791362342744815580/report.json",
+      "sha256": "e45d0e80264724a67e16f0432ea0b0f4898fc19597588dae5d20e30c077685d1"
+    },
+    "legacy": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-legacy-retirement-check-1791362342744420138/report.json",
+      "sha256": "5446ea7d6dadd3d02f77566f8c6b63d96ed6a8e429480a82ba50a9a6af5d28fe"
+    },
+    "build": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/build-1791362312568104389/report.json",
+      "sha256": "a73112532f2c7fd9d9b5f62e05e11e061ed364e614a6267418c7fd988f846851"
+    }
+  },
+  "historicalPhaseReports": [
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/build-1791361328979234470/report.json",
+      "sha256": "e6934d5d6e81efc3ba6ca39ef6576a58347090cb3760990f97641844fc266664",
+      "passed": true,
+      "qualifiesFinalSource": false
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-ingress-check-1791361049387107029/report.json",
+      "sha256": "c51d249dd18a26c3c05e2558d8dd622067b51dbb3866d84cb70830f756a316d8",
+      "passed": true,
+      "qualifiesFinalSource": false
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-ingress-check-v2-1791361981754916379/report.json",
+      "sha256": "4e7d7683d6443bcd1756de4ca5c122924c08c15e3b525f8926d6a2a1f03774f6",
+      "passed": false,
+      "qualifiesFinalSource": false
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-ingress-cold-check-1791361585916378207/report.json",
+      "sha256": "6f5d7f784b8dd92fc0c7bde8208f892cc9939f66a57e937dda90c722c3d5667d",
+      "passed": true,
+      "qualifiesFinalSource": false
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-ingress-model-check-1791361257297868931/report.json",
+      "sha256": "7be3316b4b2e680bb9372aad1f5490d3a8e9f29af149a749664266d371ef7017",
+      "passed": false,
+      "qualifiesFinalSource": false
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-ingress-model-check-v2-1791361288380533722/report.json",
+      "sha256": "b3106690ce0fb39d56e3790f5fa706eac547266044e580569a5b8c6baec885d5",
+      "passed": false,
+      "qualifiesFinalSource": false
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-ingress-model-check-v3-1791361348344349714/report.json",
+      "sha256": "bcc08264a5419ca0121ead2f7b8e1566914bf7098245f0215b79c0ae811af24b",
+      "passed": false,
+      "qualifiesFinalSource": false
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-ingress-model-check-v4-1791361427669922880/report.json",
+      "sha256": "49431be7df9b516616ac43fc5db1a13d1be342ee5832e9724a3655e1ab3c3067",
+      "passed": true,
+      "qualifiesFinalSource": false
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-ingress-native-check-1791360804226972323/report.json",
+      "sha256": "58c9eb30e19e17ac8d85d24510e3d9a94fe759ac9ea2e95d3f824b9d02b61d63",
+      "passed": false,
+      "qualifiesFinalSource": false
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-ingress-native-check-1791360848062306885/report.json",
+      "sha256": "1534381b506c14e5e068822e405704a7b97f8916466ee0a5b4e6d5d2aae0585e",
+      "passed": true,
+      "qualifiesFinalSource": false
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-ingress-native-check-1791361328980743056/report.json",
+      "sha256": "eb46221de217c2905622e47a3d9cd6345a9b0293f18a9f7639a2c3fce02d952b",
+      "passed": true,
+      "qualifiesFinalSource": false
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-legacy-retirement-check-1791361709244428703/report.json",
+      "sha256": "cdde07b2b60d3d43b812855e8df5d1ae624f0e4ecc70478cc1cb475f2ee4b5b4",
+      "passed": true,
+      "qualifiesFinalSource": false
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/urgent-ingress-model-check-1791362250075885120/report.json",
+      "sha256": "6b015c8c9a9599a232ecbead6f6cf497c1118558b70f93ba3e03a10dafa4eb2e",
+      "passed": false,
+      "qualifiesFinalSource": false
+    }
+  ],
+  "heldFailedReports": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-ingress-check-v2-1791361981754916379/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-ingress-model-check-1791361257297868931/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-ingress-model-check-v2-1791361288380533722/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-ingress-model-check-v3-1791361348344349714/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-ingress-native-check-1791360804226972323/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/urgent-ingress-model-check-1791362250075885120/report.json"
+  ],
+  "singlePreviewPolicy": true,
+  "originalWindowPolicyUnchanged": true,
+  "immutableProposalIngressImplemented": true,
+  "urgentQuarantineBypassesBackpressure": true,
+  "popupTypedPortsCompiled": true,
+  "popupTypedPortsWebKitExecuted": false,
+  "nativeElmOutboxChecks": 206,
+  "boundaryChecks": 98,
+  "realmEpochs": 2,
+  "nativeGrantResets": 0,
+  "ingressScenarios": 16,
+  "ingressTraces": 28,
+  "ingressStates": 468,
+  "ingressSamples": 200,
+  "ingressCompiledVariantsDetected": 6,
+  "urgentScenarios": 6,
+  "urgentTraces": 18,
+  "urgentStates": 406,
+  "urgentSamples": 200,
+  "urgentCompiledVariantsDetected": 2,
+  "coldCohortChecks": 3608,
+  "originalColdAssertionsRetained": 1549,
+  "retainedReadinessIntents": 256,
+  "legacyRetirementChecks": 45,
+  "legacyNativeRoundtripChecks": 20,
+  "legacyCChecks": 34,
+  "fullBuildCommands": 108,
+  "originalBuildCommands": 104,
+  "earlierPhaseBuildCommands": 106,
+  "parentNativeProductUnchanged": true,
+  "parentAdapterAndLegacyAssetsUnchanged": true,
+  "parentManifest": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v114/component-manifest.json",
+  "parentManifestSHA256": "51b5f8b02ebfc7df0b2a9538f80e25974d77290ae17de60ddcb217faee406009",
+  "proposalRetentionCPUQualified": true,
+  "nativeDelayedProposalLivenessQualified": false,
+  "realHostInputBackpressureQualified": false,
+  "fullElmRecoveryQualified": false,
+  "typedHostRoutingActivated": false,
+  "webKitActivated": false,
+  "actualWaylandWindowAcceptance": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "GUI115 retains original proposals before native issuance in immutable Elm state.\nRetainedPreviewPresenter delegates all window/lifecycle decisions to the existing\nPreviewPresenter; NativePreviewProposalIngress adds transport bookkeeping and\ncontains no window policy or ordinal issuer. Actual Popup now uses this wrapper\nand compiles native issued-ticket and same-domain retry ports. Existing HTML,\nadapter and native shared-host controlled routes remain inactive.\n\nEach accepted transition commits its original candidate and exact typed intents\nbefore port emission. The native-facing queue obeys the original native grant\ncapacity. One ordinary batch can wait behind that queue; further ordinary policy\ninput is held back until original issued facts and retry admit it. Trusted urgent\nquarantine bypasses that input block, revokes display/demand immediately and\nretains one bounded reconciliation/cleanup batch behind older intents. The\nexisting policy closing flag prevents a second urgent batch. Each transition is\nat most1065 singleton rows/4096 bytes per singleton; pending plus ordinary and\nurgent deferred output is bounded to3195 intents. This bounds protocol storage,\nnot a measured memory/performance budget or a real host input-retention claim.\n\nAn exact native-owned ticket must match both original domains, a positive\nlossless UInt64 ordinal and the exact pending identity/command inside its original\nwire. Object field order is incidental; body values and domains are not. Native\nissuance removes only that intent, without changing known jobs or treating Unknown\nas success. Native retains the original ticket for post-issuance recovery. Realm\nclose/replacement requires empty pending and deferred ingress in addition to the\noriginal policy and independent strict native physical/processing/confirmation\nbarriers. A failed call, empty native inventory, elapsed deadline or emitted\nreadiness flag cannot erase original intent or reset the Native grant.\n\nCurrent final-source qualification:\n- 98 compiled Elm boundary controls, including actual two-member blocked-input\n  quarantine, retained older acquisition/cleanup order, both known Unknown jobs,\n  repeated quarantine, ticket corruption/foreign domains and unissued close.\n- 206 compiled C/optimized retained Elm/JS packetizer/recovered outbox checks:\n  actual Bootstrap/authenticated synthetic Native peer/original broker, two realm\n  epochs on an unchanged grant, same synthetic Active subject and normal owned\n  exits. Dropped readiness before issuance is retried from Elm while native\n  issuedThrough remains unchanged. This is not actual WebKit or captured FD proof.\n- 16 explicitly selected ingress Quint scenarios,28 actual compiled Elm traces,\n  468 state comparisons,200 bounded samples and six detected compiled variants.\n- Six urgent-quarantine Quint scenarios,18 actual compiled Elm traces,406 state\n  comparisons,200 bounded samples and two detected compiled variants. The model\n  starts with two original jobs, one pending acquisition and a deferred neighbor.\n- 3608 compiled cold-cohort controls retain the original1549 assertions with\n  additional explicitly synthetic native-issued facts. A second realm retains\n  256 lost readiness intents and retries the exact ordered list before synthetic\n  issuance. This is not >256 real native/window acceptance or actual ticket proof.\n- The current wrapper's unchanged legacy route passes the original45 compiled\n  retirement assertions and20 actual compiled Elm/C controls plus34 C assertions\n  with normal owned exits. Only the fixture module name changes; original input,\n  scenario assertions and physical/processing/confirmation gates stay unchanged.\n- Full108 commands retain all106 earlier phase commands and all104 parent\n  commands, with current optimized Popup, retained and legacy replay compilation.\n  Native product, legacy assets/adapters and original PreviewPresenter are byte\n  identical to held114. Parent114 resource4/scoped4 suites remain their own held\n  native-source qualification; they were not newly rerun as Elm wrapper proofs.\n\nSix failed attempts and earlier accepted phases remain at original snapshots.\nFive failures are compile/model API plumbing (Elm tuple arity; Quint minimum,\nlist filtering/membership and reserved next name). The actual urgent quarantine\ncounterexample is retained separately: the ordinary input block initially delayed\ndemand revocation for two known jobs. Final code has the explicit urgent path;\nthe unchanged regression and coupled urgent model now pass. Earlier phase\nreports do not qualify this final source.\n\nBefore real host activation, implement durable input backpressure, native-owned\nissued facts, original ticket custody before dispatch, bounded retry scheduling,\nstable WebKit URI/context ownership and policy lifetime outside a lost renderer\ncontext. Also qualify original proposals delayed through expiry/revocation:\nnative may refuse new issuance after original cleanup. Such pending intent must\nstay Unknown until a separately designed authenticated original-purpose outcome\nor guaranteed issuance ordering is proven; this slice makes no finite liveness\nclaim for that case and does not erase it on generic refusal or timeout.\nActual controlled permanent retirement, full Elm process/context recovery,\nCore captured FD/render/fence/readers and Wayland-window detachment remain open.\nNative130 GUI110 legacy/core16/plugin19/AQ155 remains the actual bounded native\nbaseline:2518 checks/278 normal owned exits/full cleanup. All original full GUI\nrelease gates remain. No installed desktop, main compositor or draft changes.\n"
+}

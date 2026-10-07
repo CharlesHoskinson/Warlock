@@ -213,3 +213,31 @@ cover lost unissued proposals. Shared-host/HTML/adapter controlled activation,
 actual WebKit/Core/window qualification and full Elm context recovery remain
 open. Native130 legacy2518/278/full cleanup remains actual bounded baseline.
 No installed changes;all original full-release gates and five foreign edits remain.
+
+GUI114 PUBLIC83 16d4f7dc97ddb9934341bb60eac1decd74b895e4/8768 exact owned blobs;
+source8776582022f14f9c633d6219211a6f434d3e1eae;
+receipt3527bb5dca16bfa997b3e2d1007baade1cae85bf.
+GUI115 held retained original Elm proposal ingress in immutable transport wrapper
+of the unchanged single PreviewPresenter. Actual Popup uses that wrapper and
+new issued/retry ports compile. Native/assets/adapters/HTML unchanged114; actual
+controlled host routes remain inactive. Native-facing granted capacity plus one
+ordinary and one urgent quarantine batch retains bounded3195 intents. Quarantine
+bypasses already blocked ordinary input without erasing older intents or known
+jobs. Exact native-issued original tickets remove intent only, never Unknown or
+physical obligations. Pending ingress prevents realm close/replacement.
+Current boundaries98/C+Elm+outbox206/two epochs/unchanged Native grant/normal exits;
+ingress Quint16/28 actual compiledElm traces/468 states/200 samples/six compiled
+variants; urgent6/18/406/200 samples/two variants; cold256/3608 retains1549 original
+assertions with explicit synthetic ticket facts; original wrapper legacy45/native20
++C34 normal exits; full108 retains104 and earlier106. Six failed attempts and
+historical phases remain at original snapshots, including actual blocked-demand
+quarantine counterexample. See component-report115.json and GUI115/
+RETAINED-INGRESS-HANDOFF.md for exact scope. CONTROL028/OpenSpec seven scenarios.
+Next PUBLIC84 then qualify durable native input backpressure, issued fact channel/
+ticket custody/retry, real WebKit URI/context ownership and retained Elm policy
+lifetime. Original proposals delayed through native expiry/revocation require
+authenticated original-purpose outcome or guaranteed issuance ordering before
+finite liveness can be accepted; generic refusal or timeout cannot erase intent.
+Native130 GUI110 legacy/core16/plugin19/AQ1552518/278/full cleanup remains bounded
+actual baseline. Full Elm recovery/controlled Core/window/captured FD/renderer
+acceptance and all original full release gates remain open; no installed changes.

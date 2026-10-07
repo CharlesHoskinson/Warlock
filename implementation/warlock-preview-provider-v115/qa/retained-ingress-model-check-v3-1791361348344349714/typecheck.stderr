@@ -1,0 +1,8 @@
+
+ Error [QNT404]: Name 'toSet' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-ingress-model-check-v3-1791361348344349714/inputs/spec/retained_preview_ingress_v3.qnt:8:44
+  8:   val fresh=outputs.foldl([], (rows,x)=>if(st.pending.toSet().contains(x))rows else rows.append(x));
+                                                ^^^^^^^^^^^^^^^^^^
+
+error: parsing failed

@@ -1,0 +1,20 @@
+
+  retained_preview_ingress_v4_tests
+    ok lossBeforeIssuanceRetainsOriginal passed 1 test(s)
+    ok issuedFactDoesNotSettleUnknown passed 1 test(s)
+    ok changedPurposeRetainsIntent passed 1 test(s)
+    ok foreignOuterRetainsIntent passed 1 test(s)
+    ok foreignInnerRetainsIntent passed 1 test(s)
+    ok repeatedGrantRetainsIntent passed 1 test(s)
+    ok fullQueueRetainsQuarantineCleanup passed 1 test(s)
+    ok blockedInputCannotOverwriteCleanup passed 1 test(s)
+    ok foreignRetryCannotTransferCleanup passed 1 test(s)
+    ok boundedRetryKeepsOriginalOrder passed 1 test(s)
+    ok deferredCancellationAdmitsAfterOriginalIssuance passed 1 test(s)
+    ok terminalAckPrecedesDeferredReadiness passed 1 test(s)
+    ok lostReadinessBeforeIssuanceRetries passed 1 test(s)
+    ok unissuedProcessingCannotClose passed 1 test(s)
+    ok emptyIngressAllowsTrustedClose passed 1 test(s)
+    ok greaterRealmRequiresIngressAndNativeClose passed 1 test(s)
+
+  16 passing (19ms)

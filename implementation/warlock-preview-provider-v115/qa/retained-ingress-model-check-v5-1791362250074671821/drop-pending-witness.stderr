@@ -1,0 +1,26 @@
+AssertionError [ERR_ASSERTION]: named-lossBeforeIssuanceRetainsOriginal-0.itf.json step 0 undefined
++ actual - expected
+
+  {
+    closed: false,
+    closing: false,
++   commands: [],
+-   commands: [
+-     'acquire'
+-   ],
+    deferred: [],
+    demand: true,
+    epoch: 1,
+    held: true,
+    known: true,
++   pending: [],
+-   pending: [
+-     'acquire'
+-   ],
+    processed: 0
+  }
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-ingress-model-check-v5-1791362250074671821/drop-pending/qa/retained-ingress-refinement.js:32:11
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)

@@ -1,0 +1,22 @@
+AssertionError [ERR_ASSERTION]: named-repeatedGrantRetainsIntent-5.itf.json step 1 RepeatGrant
++ actual - expected
+... Skipped lines
+
+  {
+    closed: false,
+    closing: false,
+    commands: [],
+    deferred: [],
+...
+    known: true,
++   pending: [],
+-   pending: [
+-     'acquire'
+-   ],
+    processed: 0
+  }
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-ingress-model-check-v4-1791361427669922880/reset-repeated-grant/qa/retained-ingress-refinement.js:32:11
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)

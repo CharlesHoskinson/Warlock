@@ -1,0 +1,24 @@
+AssertionError [ERR_ASSERTION]: named-fullQueueRetainsQuarantineCleanup-6.itf.json step 1 Quarantine
++ actual - expected
+
+  {
+    closed: false,
+    closing: true,
+    commands: [
+      'acquire'
+    ],
++   deferred: [],
+-   deferred: [
+-     'reconcile',
+-     'cancel'
+-   ],
+    demand: false,
+    epoch: 1,
+    held: true,
+    known: true,
+    pending: [
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/retained-ingress-model-check-v4-1791361427669922880/drop-deferred/qa/retained-ingress-refinement.js:32:11
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)

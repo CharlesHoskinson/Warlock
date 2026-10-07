@@ -465,3 +465,32 @@ recover a command that never reached native. Neither an emitted readiness flag
 nor an empty native ticket inventory can certify that delivery. Transport-only
 context recovery retains a still-existing Elm policy; actual WebKit context loss
 requires separately qualified recovery of that policy and its outstanding work.
+
+EARS CONTROL-028: While a controlled preview realm exists, its single immutable
+Elm model SHALL retain every original ordered proposal intent before port
+emission. When a proposal is lost before native issuance, a trusted same-domain
+retry SHALL emit the oldest retained intents with unchanged identity, command
+body, binding and receiver epoch. Only an exact native-owned issued-ticket fact
+whose original wire matches the pending intent and both native domains SHALL
+remove that intent. Foreign, malformed, changed-body, changed-inner-domain,
+changed ordinal, empty, aggregate or unknown-purpose facts SHALL retain it.
+Issuance SHALL NOT certify transport delivery, effect success, physical resource
+settlement, terminal ACK, processing completion or independent confirmation.
+
+The native-facing pending queue SHALL respect its original granted capacity.
+If one accepted policy transition exceeds its free slots, Elm SHALL retain the
+remaining original transition output in a bounded deferred batch, preserve
+original order and hold back further ordinary policy inputs until retry admits it.
+Trusted quarantine SHALL bypass that ordinary input block, immediately revoke
+display/demand and retain its own bounded safety batch behind older original
+intents while preserving known jobs. Repeated quarantine SHALL NOT append another
+safety batch; the existing policy closing flag remains authoritative. The
+pending queue plus one ordinary and one quarantine batch SHALL remain bounded
+to3195 intents, with each original transition at most1065 rows. Neither a full
+queue nor an emitted readiness flag SHALL
+discard cleanup or permit realm close/replacement. A batch exceeding the original
+1065-row or4096-byte singleton limits SHALL refuse atomically before committing
+the candidate policy. Real host activation requires durable input backpressure,
+native-owned issued facts, retained original tickets before dispatch and an
+explicit bounded retry schedule. Compiled Popup and synthetic peer tests SHALL
+remain distinct from that host qualification and full Elm context recovery.

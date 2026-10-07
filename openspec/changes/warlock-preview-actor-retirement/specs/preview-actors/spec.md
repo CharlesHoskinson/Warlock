@@ -993,3 +993,54 @@ purpose reservations, physical barriers or Native grant.
 - **THEN** an explicitly retained ingress handoff is required before host activation
 - **AND** a post-issuance ticket inventory or emitted readiness flag cannot prove delivery
 - **AND** recovering transport does not reconstruct a lost Elm policy
+
+### Requirement: Retain original Elm intent before native ticket issuance
+
+The system SHALL implement EARS CONTROL-028 in the existing immutable Elm model.
+Transport bookkeeping SHALL contain no second window policy or native ordinal issuer.
+
+#### Scenario: A readiness proposal never reaches native
+- **GIVEN** a settled original lifecycle and an emitted scoped readiness proposal
+- **WHEN** the proposal is lost before the actual native issuer receives it
+- **THEN** the same Elm model retains its exact original intent for trusted retry
+- **AND** an empty native recovery inventory cannot remove that intent or permit close
+
+#### Scenario: Native issuance is independent of effect completion
+- **GIVEN** an original retained acquisition or cleanup intent
+- **WHEN** an exact native-issued ticket matches its realm and original command body
+- **THEN** Elm removes only that proposal intent
+- **AND** its known job, Unknown outcome and physical settlement remain unchanged
+
+#### Scenario: A ticket changes its inner purpose or domain
+- **GIVEN** an exact pending original intent and a current outer ticket domain
+- **WHEN** the ticket wire changes its identity, command, inner domain or ordinal
+- **THEN** the pending intent remains available for exact retry
+- **AND** malformed, foreign, aggregate and unknown ticket facts also refuse
+
+#### Scenario: A full native-facing queue receives cleanup
+- **GIVEN** original pending intents occupying the native-granted queue capacity
+- **WHEN** quarantine generates reconciliation and cleanup from the same policy
+- **THEN** the candidate revokes demand/display and retains the deferred output
+- **AND** further policy input waits until exact issued facts and retry free capacity
+- **AND** every retry preserves the original order without losing a command
+
+#### Scenario: Quarantine arrives while ordinary output is already deferred
+- **GIVEN** an original acquisition intent and another member's deferred acquisition
+- **WHEN** trusted quarantine arrives before either native issuance handoff completes
+- **THEN** the same policy immediately revokes demand/display for both members
+- **AND** both original Unknown jobs and ordered pending/deferred acquisitions remain
+- **AND** one bounded reconciliation/cleanup batch follows those older intents
+- **AND** repeated quarantine cannot append a second safety batch
+
+#### Scenario: Retained unissued work prevents realm replacement
+- **GIVEN** empty physical membership but outstanding original proposal intents
+- **WHEN** a close notification or greater receiver grant arrives
+- **THEN** Elm retains the original realm until its ingress is empty
+- **AND** native strict physical close and independent confirmation remain separate gates
+
+#### Scenario: Retry is bounded and requires the original native domain
+- **GIVEN** a pending queue and at most one deferred original transition batch
+- **WHEN** trusted retry arrives under the same native binding and receiver epoch
+- **THEN** Elm transfers only available slots and emits the oldest bounded pending rows
+- **AND** a foreign retry neither transfers deferred rows nor emits original controls
+- **AND** real host input backpressure and full context recovery require their own evidence

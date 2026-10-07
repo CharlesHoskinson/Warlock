@@ -1,0 +1,1150 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      closed: false,
+      closing: false,
+      commands: ["acquire"],
+      deferred: [],
+      demand: true,
+      epoch: 1,
+      held: true,
+      history: [],
+      known: true,
+      pending: ["acquire"],
+      processed: 0,
+      ready: false,
+      seeded: false,
+      terminalSeen: false
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: ["acquire"],
+      deferred: ["cancel"],
+      demand: false,
+      epoch: 1,
+      held: true,
+      history: ["Seed"],
+      known: true,
+      pending: ["acquire"],
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      deferred: ["cancel"],
+      demand: false,
+      epoch: 1,
+      held: true,
+      history: ["Seed", "Complete"],
+      known: true,
+      pending: ["acquire"],
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      deferred: ["cancel"],
+      demand: false,
+      epoch: 1,
+      held: true,
+      history: ["Seed", "Complete", "WrongTicket"],
+      known: true,
+      pending: ["acquire"],
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      deferred: ["cancel"],
+      demand: false,
+      epoch: 1,
+      held: true,
+      history: ["Seed", "Complete", "WrongTicket", "Complete"],
+      known: true,
+      pending: ["acquire"],
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: ["acquire"],
+      deferred: ["cancel"],
+      demand: false,
+      epoch: 1,
+      held: true,
+      history: ["Seed", "Complete", "WrongTicket", "Complete", "Retry"],
+      known: true,
+      pending: ["acquire"],
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      deferred: ["cancel"],
+      demand: false,
+      epoch: 1,
+      held: true,
+      history:
+        ["Seed", "Complete", "WrongTicket", "Complete", "Retry", "NextGrant"],
+      known: true,
+      pending: ["acquire"],
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: ["acquire"],
+      deferred: ["cancel"],
+      demand: false,
+      epoch: 1,
+      held: true,
+      history:
+        [
+          "Seed",
+          "Complete",
+          "WrongTicket",
+          "Complete",
+          "Retry",
+          "NextGrant",
+          "Retry"
+        ],
+      known: true,
+      pending: ["acquire"],
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      deferred: ["cancel"],
+      demand: false,
+      epoch: 1,
+      held: true,
+      history:
+        [
+          "Seed",
+          "Complete",
+          "WrongTicket",
+          "Complete",
+          "Retry",
+          "NextGrant",
+          "Retry",
+          "WrongTicket"
+        ],
+      known: true,
+      pending: ["acquire"],
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      deferred: ["cancel"],
+      demand: false,
+      epoch: 1,
+      held: true,
+      history:
+        [
+          "Seed",
+          "Complete",
+          "WrongTicket",
+          "Complete",
+          "Retry",
+          "NextGrant",
+          "Retry",
+          "WrongTicket",
+          "ForeignTicket"
+        ],
+      known: true,
+      pending: ["acquire"],
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      deferred: ["cancel"],
+      demand: false,
+      epoch: 1,
+      held: true,
+      history:
+        [
+          "Seed",
+          "Complete",
+          "WrongTicket",
+          "Complete",
+          "Retry",
+          "NextGrant",
+          "Retry",
+          "WrongTicket",
+          "ForeignTicket",
+          "RepeatGrant"
+        ],
+      known: true,
+      pending: ["acquire"],
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      deferred: ["cancel"],
+      demand: false,
+      epoch: 1,
+      held: true,
+      history:
+        [
+          "Seed",
+          "Complete",
+          "WrongTicket",
+          "Complete",
+          "Retry",
+          "NextGrant",
+          "Retry",
+          "WrongTicket",
+          "ForeignTicket",
+          "RepeatGrant",
+          "Terminal"
+        ],
+      known: true,
+      pending: ["acquire"],
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      deferred: ["cancel"],
+      demand: false,
+      epoch: 1,
+      held: true,
+      history:
+        [
+          "Seed",
+          "Complete",
+          "WrongTicket",
+          "Complete",
+          "Retry",
+          "NextGrant",
+          "Retry",
+          "WrongTicket",
+          "ForeignTicket",
+          "RepeatGrant",
+          "Terminal",
+          "WrongTicket"
+        ],
+      known: true,
+      pending: ["acquire"],
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      deferred: ["cancel"],
+      demand: false,
+      epoch: 1,
+      held: true,
+      history:
+        [
+          "Seed",
+          "Complete",
+          "WrongTicket",
+          "Complete",
+          "Retry",
+          "NextGrant",
+          "Retry",
+          "WrongTicket",
+          "ForeignTicket",
+          "RepeatGrant",
+          "Terminal",
+          "WrongTicket",
+          "WrongTicket"
+        ],
+      known: true,
+      pending: ["acquire"],
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: ["acquire"],
+      deferred: ["cancel"],
+      demand: false,
+      epoch: 1,
+      held: true,
+      history:
+        [
+          "Seed",
+          "Complete",
+          "WrongTicket",
+          "Complete",
+          "Retry",
+          "NextGrant",
+          "Retry",
+          "WrongTicket",
+          "ForeignTicket",
+          "RepeatGrant",
+          "Terminal",
+          "WrongTicket",
+          "WrongTicket",
+          "Retry"
+        ],
+      known: true,
+      pending: ["acquire"],
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: ["acquire"],
+      deferred: ["cancel"],
+      demand: false,
+      epoch: 1,
+      held: true,
+      history:
+        [
+          "Seed",
+          "Complete",
+          "WrongTicket",
+          "Complete",
+          "Retry",
+          "NextGrant",
+          "Retry",
+          "WrongTicket",
+          "ForeignTicket",
+          "RepeatGrant",
+          "Terminal",
+          "WrongTicket",
+          "WrongTicket",
+          "Retry",
+          "Retry"
+        ],
+      known: true,
+      pending: ["acquire"],
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      deferred: ["cancel"],
+      demand: false,
+      epoch: 1,
+      held: true,
+      history:
+        [
+          "Seed",
+          "Complete",
+          "WrongTicket",
+          "Complete",
+          "Retry",
+          "NextGrant",
+          "Retry",
+          "WrongTicket",
+          "ForeignTicket",
+          "RepeatGrant",
+          "Terminal",
+          "WrongTicket",
+          "WrongTicket",
+          "Retry",
+          "Retry",
+          "Close"
+        ],
+      known: true,
+      pending: ["acquire"],
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      deferred: ["cancel"],
+      demand: false,
+      epoch: 1,
+      held: true,
+      history:
+        [
+          "Seed",
+          "Complete",
+          "WrongTicket",
+          "Complete",
+          "Retry",
+          "NextGrant",
+          "Retry",
+          "WrongTicket",
+          "ForeignTicket",
+          "RepeatGrant",
+          "Terminal",
+          "WrongTicket",
+          "WrongTicket",
+          "Retry",
+          "Retry",
+          "Close",
+          "ForeignRetry"
+        ],
+      known: true,
+      pending: ["acquire"],
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      deferred: ["cancel"],
+      demand: false,
+      epoch: 1,
+      held: true,
+      history:
+        [
+          "Seed",
+          "Complete",
+          "WrongTicket",
+          "Complete",
+          "Retry",
+          "NextGrant",
+          "Retry",
+          "WrongTicket",
+          "ForeignTicket",
+          "RepeatGrant",
+          "Terminal",
+          "WrongTicket",
+          "WrongTicket",
+          "Retry",
+          "Retry",
+          "Close",
+          "ForeignRetry",
+          "Complete"
+        ],
+      known: true,
+      pending: ["acquire"],
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      deferred: ["cancel"],
+      demand: false,
+      epoch: 1,
+      held: true,
+      history:
+        [
+          "Seed",
+          "Complete",
+          "WrongTicket",
+          "Complete",
+          "Retry",
+          "NextGrant",
+          "Retry",
+          "WrongTicket",
+          "ForeignTicket",
+          "RepeatGrant",
+          "Terminal",
+          "WrongTicket",
+          "WrongTicket",
+          "Retry",
+          "Retry",
+          "Close",
+          "ForeignRetry",
+          "Complete",
+          "Seed"
+        ],
+      known: true,
+      pending: ["acquire"],
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      deferred: ["cancel"],
+      demand: false,
+      epoch: 1,
+      held: true,
+      history:
+        [
+          "Seed",
+          "Complete",
+          "WrongTicket",
+          "Complete",
+          "Retry",
+          "NextGrant",
+          "Retry",
+          "WrongTicket",
+          "ForeignTicket",
+          "RepeatGrant",
+          "Terminal",
+          "WrongTicket",
+          "WrongTicket",
+          "Retry",
+          "Retry",
+          "Close",
+          "ForeignRetry",
+          "Complete",
+          "Seed",
+          "Close"
+        ],
+      known: true,
+      pending: ["acquire"],
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      deferred: ["cancel"],
+      demand: false,
+      epoch: 1,
+      held: true,
+      history:
+        [
+          "Seed",
+          "Complete",
+          "WrongTicket",
+          "Complete",
+          "Retry",
+          "NextGrant",
+          "Retry",
+          "WrongTicket",
+          "ForeignTicket",
+          "RepeatGrant",
+          "Terminal",
+          "WrongTicket",
+          "WrongTicket",
+          "Retry",
+          "Retry",
+          "Close",
+          "ForeignRetry",
+          "Complete",
+          "Seed",
+          "Close",
+          "Close"
+        ],
+      known: true,
+      pending: ["acquire"],
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      deferred: ["cancel"],
+      demand: false,
+      epoch: 1,
+      held: true,
+      history:
+        [
+          "Seed",
+          "Complete",
+          "WrongTicket",
+          "Complete",
+          "Retry",
+          "NextGrant",
+          "Retry",
+          "WrongTicket",
+          "ForeignTicket",
+          "RepeatGrant",
+          "Terminal",
+          "WrongTicket",
+          "WrongTicket",
+          "Retry",
+          "Retry",
+          "Close",
+          "ForeignRetry",
+          "Complete",
+          "Seed",
+          "Close",
+          "Close",
+          "Issue"
+        ],
+      known: true,
+      pending: [],
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      deferred: ["cancel"],
+      demand: false,
+      epoch: 1,
+      held: true,
+      history:
+        [
+          "Seed",
+          "Complete",
+          "WrongTicket",
+          "Complete",
+          "Retry",
+          "NextGrant",
+          "Retry",
+          "WrongTicket",
+          "ForeignTicket",
+          "RepeatGrant",
+          "Terminal",
+          "WrongTicket",
+          "WrongTicket",
+          "Retry",
+          "Retry",
+          "Close",
+          "ForeignRetry",
+          "Complete",
+          "Seed",
+          "Close",
+          "Close",
+          "Issue",
+          "Terminal"
+        ],
+      known: true,
+      pending: [],
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      deferred: ["cancel"],
+      demand: false,
+      epoch: 1,
+      held: true,
+      history:
+        [
+          "Seed",
+          "Complete",
+          "WrongTicket",
+          "Complete",
+          "Retry",
+          "NextGrant",
+          "Retry",
+          "WrongTicket",
+          "ForeignTicket",
+          "RepeatGrant",
+          "Terminal",
+          "WrongTicket",
+          "WrongTicket",
+          "Retry",
+          "Retry",
+          "Close",
+          "ForeignRetry",
+          "Complete",
+          "Seed",
+          "Close",
+          "Close",
+          "Issue",
+          "Terminal",
+          "Complete"
+        ],
+      known: true,
+      pending: [],
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      deferred: ["cancel"],
+      demand: false,
+      epoch: 1,
+      held: true,
+      history:
+        [
+          "Seed",
+          "Complete",
+          "WrongTicket",
+          "Complete",
+          "Retry",
+          "NextGrant",
+          "Retry",
+          "WrongTicket",
+          "ForeignTicket",
+          "RepeatGrant",
+          "Terminal",
+          "WrongTicket",
+          "WrongTicket",
+          "Retry",
+          "Retry",
+          "Close",
+          "ForeignRetry",
+          "Complete",
+          "Seed",
+          "Close",
+          "Close",
+          "Issue",
+          "Terminal",
+          "Complete",
+          "ForeignRetry"
+        ],
+      known: true,
+      pending: [],
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      deferred: ["cancel"],
+      demand: false,
+      epoch: 1,
+      held: true,
+      history:
+        [
+          "Seed",
+          "Complete",
+          "WrongTicket",
+          "Complete",
+          "Retry",
+          "NextGrant",
+          "Retry",
+          "WrongTicket",
+          "ForeignTicket",
+          "RepeatGrant",
+          "Terminal",
+          "WrongTicket",
+          "WrongTicket",
+          "Retry",
+          "Retry",
+          "Close",
+          "ForeignRetry",
+          "Complete",
+          "Seed",
+          "Close",
+          "Close",
+          "Issue",
+          "Terminal",
+          "Complete",
+          "ForeignRetry",
+          "NextGrant"
+        ],
+      known: true,
+      pending: [],
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      deferred: ["cancel"],
+      demand: false,
+      epoch: 1,
+      held: true,
+      history:
+        [
+          "Seed",
+          "Complete",
+          "WrongTicket",
+          "Complete",
+          "Retry",
+          "NextGrant",
+          "Retry",
+          "WrongTicket",
+          "ForeignTicket",
+          "RepeatGrant",
+          "Terminal",
+          "WrongTicket",
+          "WrongTicket",
+          "Retry",
+          "Retry",
+          "Close",
+          "ForeignRetry",
+          "Complete",
+          "Seed",
+          "Close",
+          "Close",
+          "Issue",
+          "Terminal",
+          "Complete",
+          "ForeignRetry",
+          "NextGrant",
+          "ForeignInnerTicket"
+        ],
+      known: true,
+      pending: [],
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      deferred: ["cancel"],
+      demand: false,
+      epoch: 1,
+      held: true,
+      history:
+        [
+          "Seed",
+          "Complete",
+          "WrongTicket",
+          "Complete",
+          "Retry",
+          "NextGrant",
+          "Retry",
+          "WrongTicket",
+          "ForeignTicket",
+          "RepeatGrant",
+          "Terminal",
+          "WrongTicket",
+          "WrongTicket",
+          "Retry",
+          "Retry",
+          "Close",
+          "ForeignRetry",
+          "Complete",
+          "Seed",
+          "Close",
+          "Close",
+          "Issue",
+          "Terminal",
+          "Complete",
+          "ForeignRetry",
+          "NextGrant",
+          "ForeignInnerTicket",
+          "WrongTicket"
+        ],
+      known: true,
+      pending: [],
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      deferred: ["cancel"],
+      demand: false,
+      epoch: 1,
+      held: true,
+      history:
+        [
+          "Seed",
+          "Complete",
+          "WrongTicket",
+          "Complete",
+          "Retry",
+          "NextGrant",
+          "Retry",
+          "WrongTicket",
+          "ForeignTicket",
+          "RepeatGrant",
+          "Terminal",
+          "WrongTicket",
+          "WrongTicket",
+          "Retry",
+          "Retry",
+          "Close",
+          "ForeignRetry",
+          "Complete",
+          "Seed",
+          "Close",
+          "Close",
+          "Issue",
+          "Terminal",
+          "Complete",
+          "ForeignRetry",
+          "NextGrant",
+          "ForeignInnerTicket",
+          "WrongTicket",
+          "NextGrant"
+        ],
+      known: true,
+      pending: [],
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      closed: false,
+      closing: true,
+      commands: [],
+      deferred: ["cancel"],
+      demand: false,
+      epoch: 1,
+      held: true,
+      history:
+        [
+          "Seed",
+          "Complete",
+          "WrongTicket",
+          "Complete",
+          "Retry",
+          "NextGrant",
+          "Retry",
+          "WrongTicket",
+          "ForeignTicket",
+          "RepeatGrant",
+          "Terminal",
+          "WrongTicket",
+          "WrongTicket",
+          "Retry",
+          "Retry",
+          "Close",
+          "ForeignRetry",
+          "Complete",
+          "Seed",
+          "Close",
+          "Close",
+          "Issue",
+          "Terminal",
+          "Complete",
+          "ForeignRetry",
+          "NextGrant",
+          "ForeignInnerTicket",
+          "WrongTicket",
+          "NextGrant",
+          "RepeatGrant"
+        ],
+      known: true,
+      pending: [],
+      processed: 0,
+      ready: false,
+      seeded: true,
+      terminalSeen: false
+    }
+}
+
+[ok] No violation found (322ms at 621 traces/second).
+Trace length statistics: max=31, min=31, average=31.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

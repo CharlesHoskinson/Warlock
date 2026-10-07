@@ -1,0 +1,8 @@
+
+ Error [QNT101]: Built-in name 'next' is redefined in module 'urgent_preview_quarantine'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v115/qa/urgent-ingress-model-check-1791362250075885120/inputs/spec/urgent_preview_quarantine.qnt:21:33
+  21:  action fire(e:Event):bool={val next=reduce(s,e);s'={...next,history:s.history.append(label(e))}}
+                                      ^^^^
+
+error: parsing failed
