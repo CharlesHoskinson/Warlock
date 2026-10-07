@@ -1642,3 +1642,25 @@ only a coherent current scene and a new explicit intent may admit another effect
 - GIVEN the main window-command restart scenario passes without an active controlled preview realm
 - THEN combined preview retirement and window-command recovery remains unqualified
 - AND no evidence from process disappearance substitutes for original native preview settlement
+
+### Requirement: Combined preview retirement and window-command recovery
+The shared host SHALL retain original known preview custody and the exact
+uncertain window-command admission across broker and renderer failure. Native
+Restart SHALL remain unavailable until strict original preview retirement;
+an explicit new host SHALL recover the window Unknown without automatic replay.
+
+#### Scenario: Held native preview reader blocks recovery after receipt loss
+- GIVEN an actual pointer-admitted preview with captured source pixels and an original retained GIO reader
+- AND actual popup close revokes that reader while native retirement stays blocked
+- WHEN a real window command commits but loses its broker receipt and the shared renderer fails
+- THEN window Unknown and original reader/policy/ticket/journal/confirmation custody remain distinct
+- AND the original reader closes once before strict native empty custody and GTK recovery
+- AND process death supplies no settlement proof or new grant authority
+
+#### Scenario: Explicit new host preserves Unknown and captures through a fresh owner
+- WHEN the user selects the real native Restart control after strict preview retirement
+- THEN the same sealed supervisor starts a fresh host on the surviving compositor lifetime
+- AND exact original window Unknown survives without replay before a coherent scene and advanced explicit intent
+- AND original historical Unknown survives native reservation retirement and the newer effect
+- AND new actual preview demand captures the same source through the fresh host's own native namespace
+- AND independently observed source pixels, original clock, strict new preview retirement and verified cohort cleanup remain required

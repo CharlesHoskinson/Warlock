@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-window-restart-supervisor-v2/supervisor.py": "3805c219dedf2592616632c2a7cea667de0a58175bf32ebc28090dc1995df1d3",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-window-restart-supervisor-v2/cohort.py": "b4d80b9d864278582373809b187b16b9e6a7db810ab5092d8bd0e09c90f407e1",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-window-restart-supervisor-v2/runtime-manifest.json": "e99c57461e86517b7e775603175622f31ec0b0f70b25beffa9f41cab30ce7e9b",
+    "/home/hoskinson/omarchy-windows-parity/docs/warlock-preview/v93/check_combined_supervisor_guards.py": "33cf52973061d2c64c4e912ca1ddf5822cca18240fa49d18c0fe3fb5a99f23ad"
+  },
+  "checks": [
+    {
+      "name": "nonQA",
+      "passed": true,
+      "exitCode": 2,
+      "childLaunchObserved": false
+    },
+    {
+      "name": "zero",
+      "passed": true,
+      "exitCode": 2,
+      "childLaunchObserved": false
+    },
+    {
+      "name": "leadingZero",
+      "passed": true,
+      "exitCode": 2,
+      "childLaunchObserved": false
+    },
+    {
+      "name": "negative",
+      "passed": true,
+      "exitCode": 2,
+      "childLaunchObserved": false
+    },
+    {
+      "name": "nondigits",
+      "passed": true,
+      "exitCode": 2,
+      "childLaunchObserved": false
+    },
+    {
+      "name": "nonascii",
+      "passed": true,
+      "exitCode": 2,
+      "childLaunchObserved": false
+    },
+    {
+      "name": "overflow",
+      "passed": true,
+      "exitCode": 2,
+      "childLaunchObserved": false
+    }
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "Actual protected Python supervisor CLI rejects seven invalid/non-QA controlled-preview subjects before any host, reader or generation log is created. CPU-only no-display environment; no native behavior claim.",
+  "artifacts": {
+    "authority.json": "7380308e0b431f6d84f7771c1a808b3e2f52908b7ed4eb48bbc2d31e2ffc16bb",
+    "nonQA.stdout": "b16e3928d6a253c731460c33ec6a2d6a72dc6626d2b5f15702d030cb868f7f4b",
+    "nonQA.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "zero.stdout": "b16e3928d6a253c731460c33ec6a2d6a72dc6626d2b5f15702d030cb868f7f4b",
+    "zero.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "leadingZero.stdout": "b16e3928d6a253c731460c33ec6a2d6a72dc6626d2b5f15702d030cb868f7f4b",
+    "leadingZero.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "negative.stdout": "b16e3928d6a253c731460c33ec6a2d6a72dc6626d2b5f15702d030cb868f7f4b",
+    "negative.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "nondigits.stdout": "b16e3928d6a253c731460c33ec6a2d6a72dc6626d2b5f15702d030cb868f7f4b",
+    "nondigits.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "nonascii.stdout": "b16e3928d6a253c731460c33ec6a2d6a72dc6626d2b5f15702d030cb868f7f4b",
+    "nonascii.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "overflow.stdout": "b16e3928d6a253c731460c33ec6a2d6a72dc6626d2b5f15702d030cb868f7f4b",
+    "overflow.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

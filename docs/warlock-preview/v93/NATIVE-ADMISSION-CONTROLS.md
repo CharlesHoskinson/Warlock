@@ -1006,3 +1006,40 @@ Checked fixture/supervisor/helper exits and empty owned shell scope/private clea
 pass; intentional killed broker/renderers and host3/1 remain explicit negative
 outcomes. Original119 build/source/ABI reverified; failed195/196/197 retained.
 Combined controlled-preview restart and broader native/release gates remain open.
+
+## CONTROL-049: Combined known preview duty and uncertain window-command recovery
+
+WHEN a real window command loses its broker receipt while an original controlled
+preview reader retains native custody, the host SHALL preserve both obligations.
+WHEN the shared renderer fails, that original reader SHALL remain revocable and
+its close SHALL precede strict native preview retirement. The host SHALL offer
+the native Restart control only after original policy/physical/ticket/journal/
+confirmation and host custody are empty. Renderer disappearance SHALL NOT
+certify settlement. The explicit replacement host SHALL preserve exact durable
+window Unknown and no replay, accept a coherent scene before a newer explicit
+command, and retain historical Unknown after native reservation retirement.
+
+WHEN that replacement receives an actual new preview demand, its own native
+owner namespace SHALL capture the same surviving source under the original
+compositor lifetime/clock, then strictly retire its own duties. A new host
+namespace SHALL NOT reuse the old unsettled grant or certify the old command.
+Original deadlines, source identity, actual pixels/keyboard, protected isolation,
+checked helper exits and shell-cohort cleanup SHALL remain required. This known
+preview/uncertain command case does not qualify an uncertain preview effect,
+physical reveal/hardware presentation, original full restore timing or release.
+
+CONTROL-049 bounded qualification: unchanged GUI143/core16/plugin19/AQ155,
+Native204 minimize/lost102 controls/26 normal registered helpers,205 restore/
+lost101/25,206 minimize/before-write99/24 and207 restore/before-write104/27.
+Actual held GIO reader, URI revocation, exact original retirement job/deadline,
+window Pending/Unknown, real shared renderer failure, reader close, strict
+independent Native empty custody BEFORE GTK recovery, native Restart/exit3 and
+fresh host own preview namespace/same clock/source incarnation are observed.
+Exact historical Unknown survives reservation retirement and newer explicit
+advanced command plus fresh capture/strict close; no replay or death inference.
+Quint14/200 and14 bounded actual stage projections and7 real supervisor refusal
+checks pass; original119 build reverified; failed202/203 preserved. See
+component-report-combined-restart-204-207.json for frozen source/evidence hashes.
+Popup-dismissal focus restoration, actual native preview-effect uncertainty,
+all async failure schedules and broader whole-host/physical/hardware/resource/
+original-clock pressure/expiry/full native13/release gates remain unqualified.

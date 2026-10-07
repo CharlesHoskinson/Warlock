@@ -1,0 +1,912 @@
+[20:55:06.217019] {Default Queue}  -> wl_display#1.get_registry(new id wl_registry#2)
+[20:55:06.217037] {Default Queue}  -> wl_display#1.sync(new id wl_callback#3)
+[20:55:06.217114] {Display Queue} wl_display#1.delete_id(3)
+[20:55:06.217120] {Default Queue} wl_registry#2.global(1, "wl_seat", 9)
+[20:55:06.217125] {Default Queue} wl_registry#2.global(2, "wl_data_device_manager", 3)
+[20:55:06.217128] {Default Queue}  -> wl_registry#2.bind(2, "wl_data_device_manager", 3, new id [unknown]#4)
+[20:55:06.217131] {Default Queue} wl_registry#2.global(3, "wl_compositor", 6)
+[20:55:06.217135] {Default Queue}  -> wl_registry#2.bind(3, "wl_compositor", 3, new id [unknown]#5)
+[20:55:06.217137] {Default Queue} wl_registry#2.global(4, "wl_subcompositor", 1)
+[20:55:06.217140] {Default Queue}  -> wl_registry#2.bind(4, "wl_subcompositor", 1, new id [unknown]#6)
+[20:55:06.217143] {Default Queue} wl_registry#2.global(5, "wl_shm", 2)
+[20:55:06.217146] {Default Queue}  -> wl_registry#2.bind(5, "wl_shm", 1, new id [unknown]#7)
+[20:55:06.217149] {Default Queue} wl_registry#2.global(6, "wp_viewporter", 1)
+[20:55:06.217152] {Default Queue} wl_registry#2.global(7, "wp_tearing_control_manager_v1", 1)
+[20:55:06.217154] {Default Queue} wl_registry#2.global(8, "wp_fractional_scale_manager_v1", 1)
+[20:55:06.217158] {Default Queue} wl_registry#2.global(9, "zxdg_output_manager_v1", 3)
+[20:55:06.217161] {Default Queue}  -> wl_registry#2.bind(9, "zxdg_output_manager_v1", 3, new id [unknown]#8)
+[20:55:06.217164] {Default Queue}  -> wl_display#1.sync(new id wl_callback#9)
+[20:55:06.217167] {Default Queue} wl_registry#2.global(10, "wp_cursor_shape_manager_v1", 2)
+[20:55:06.217170] {Default Queue}  -> wl_registry#2.bind(10, "wp_cursor_shape_manager_v1", 1, new id [unknown]#10)
+[20:55:06.217172] {Default Queue} wl_registry#2.global(11, "zwp_idle_inhibit_manager_v1", 1)
+[20:55:06.217175] {Default Queue} wl_registry#2.global(12, "zwp_relative_pointer_manager_v1", 1)
+[20:55:06.217177] {Default Queue} wl_registry#2.global(13, "zxdg_decoration_manager_v1", 2)
+[20:55:06.217181] {Default Queue} wl_registry#2.global(14, "wp_alpha_modifier_v1", 1)
+[20:55:06.217185] {Default Queue} wl_registry#2.global(15, "zwlr_gamma_control_manager_v1", 1)
+[20:55:06.217188] {Default Queue} wl_registry#2.global(16, "ext_foreign_toplevel_list_v1", 1)
+[20:55:06.217191] {Default Queue} wl_registry#2.global(17, "zwp_pointer_gestures_v1", 3)
+[20:55:06.217194] {Default Queue}  -> wl_registry#2.bind(17, "zwp_pointer_gestures_v1", 1, new id [unknown]#11)
+[20:55:06.217197] {Default Queue} wl_registry#2.global(18, "zwlr_foreign_toplevel_manager_v1", 3)
+[20:55:06.217200] {Default Queue} wl_registry#2.global(19, "zwp_keyboard_shortcuts_inhibit_manager_v1", 1)
+[20:55:06.217203] {Default Queue}  -> wl_registry#2.bind(19, "zwp_keyboard_shortcuts_inhibit_manager_v1", 1, new id [unknown]#12)
+[20:55:06.217208] {Default Queue} wl_registry#2.global(20, "zwp_text_input_manager_v1", 1)
+[20:55:06.217211] {Default Queue} wl_registry#2.global(21, "zwp_text_input_manager_v3", 1)
+[20:55:06.217214] {Default Queue} wl_registry#2.global(22, "zwp_pointer_constraints_v1", 1)
+[20:55:06.217217] {Default Queue} wl_registry#2.global(23, "zwlr_output_power_manager_v1", 1)
+[20:55:06.217220] {Default Queue} wl_registry#2.global(24, "xdg_activation_v1", 1)
+[20:55:06.217223] {Default Queue}  -> wl_registry#2.bind(24, "xdg_activation_v1", 1, new id [unknown]#13)
+[20:55:06.217226] {Default Queue} wl_registry#2.global(25, "ext_idle_notifier_v1", 2)
+[20:55:06.217228] {Default Queue} wl_registry#2.global(26, "hyprland_lock_notifier_v1", 1)
+[20:55:06.217231] {Default Queue} wl_registry#2.global(27, "ext_session_lock_manager_v1", 1)
+[20:55:06.217233] {Default Queue} wl_registry#2.global(28, "zwp_input_method_manager_v2", 1)
+[20:55:06.217236] {Default Queue} wl_registry#2.global(29, "zwp_virtual_keyboard_manager_v1", 1)
+[20:55:06.217239] {Default Queue} wl_registry#2.global(30, "zwlr_virtual_pointer_manager_v1", 2)
+[20:55:06.217242] {Default Queue} wl_registry#2.global(31, "zwlr_output_manager_v1", 4)
+[20:55:06.217245] {Default Queue} wl_registry#2.global(32, "org_kde_kwin_server_decoration_manager", 1)
+[20:55:06.217258] {Default Queue}  -> wl_registry#2.bind(32, "org_kde_kwin_server_decoration_manager", 1, new id [unknown]#14)
+[20:55:06.217264] {Default Queue} wl_registry#2.global(33, "hyprland_focus_grab_manager_v1", 1)
+[20:55:06.217267] {Default Queue} wl_registry#2.global(34, "zwp_tablet_manager_v2", 1)
+[20:55:06.217269] {Default Queue}  -> wl_registry#2.bind(34, "zwp_tablet_manager_v2", 1, new id [unknown]#15)
+[20:55:06.217272] {Default Queue} wl_registry#2.global(35, "zwlr_layer_shell_v1", 5)
+[20:55:06.217275] {Default Queue} wl_registry#2.global(36, "wp_presentation", 2)
+[20:55:06.217277] {Default Queue} wl_registry#2.global(37, "xdg_wm_base", 7)
+[20:55:06.217280] {Default Queue} wl_registry#2.global(38, "zwlr_data_control_manager_v1", 2)
+[20:55:06.217282] {Default Queue} wl_registry#2.global(39, "zwp_primary_selection_device_manager_v1", 1)
+[20:55:06.217286] {Default Queue}  -> wl_registry#2.bind(39, "zwp_primary_selection_device_manager_v1", 1, new id [unknown]#16)
+[20:55:06.217289] {Default Queue} wl_registry#2.global(40, "xwayland_shell_v1", 1)
+[20:55:06.217292] {Default Queue} wl_registry#2.global(41, "hyprland_toplevel_mapping_manager_v1", 1)
+[20:55:06.217294] {Default Queue} wl_registry#2.global(42, "hyprland_global_shortcuts_manager_v1", 1)
+[20:55:06.217297] {Default Queue} wl_registry#2.global(43, "xdg_wm_dialog_v1", 1)
+[20:55:06.217300] {Default Queue} wl_registry#2.global(44, "wp_single_pixel_buffer_manager_v1", 1)
+[20:55:06.217303] {Default Queue} wl_registry#2.global(45, "wp_security_context_manager_v1", 1)
+[20:55:06.217305] {Default Queue} wl_registry#2.global(46, "hyprland_ctm_control_manager_v1", 2)
+[20:55:06.217308] {Default Queue} wl_registry#2.global(47, "hyprland_input_capture_manager_v1", 1)
+[20:55:06.217311] {Default Queue} wl_registry#2.global(48, "hyprland_surface_manager_v1", 2)
+[20:55:06.217314] {Default Queue} wl_registry#2.global(49, "wp_content_type_manager_v1", 1)
+[20:55:06.217316] {Default Queue} wl_registry#2.global(50, "xdg_toplevel_tag_manager_v1", 1)
+[20:55:06.217319] {Default Queue} wl_registry#2.global(51, "xdg_system_bell_v1", 1)
+[20:55:06.217321] {Default Queue} wl_registry#2.global(52, "vicinae_hotkey_manager_v1", 1)
+[20:55:06.217324] {Default Queue} wl_registry#2.global(53, "ext_workspace_manager_v1", 1)
+[20:55:06.217327] {Default Queue} wl_registry#2.global(54, "ext_data_control_manager_v1", 1)
+[20:55:06.217329] {Default Queue} wl_registry#2.global(55, "wp_pointer_warp_v1", 1)
+[20:55:06.217332] {Default Queue} wl_registry#2.global(56, "wp_fifo_manager_v1", 1)
+[20:55:06.217335] {Default Queue} wl_registry#2.global(57, "zxdg_exporter_v2", 1)
+[20:55:06.217337] {Default Queue}  -> wl_registry#2.bind(57, "zxdg_exporter_v2", 1, new id [unknown]#17)
+[20:55:06.217340] {Default Queue} wl_registry#2.global(58, "zxdg_importer_v2", 1)
+[20:55:06.217343] {Default Queue}  -> wl_registry#2.bind(58, "zxdg_importer_v2", 1, new id [unknown]#18)
+[20:55:06.217346] {Default Queue} wl_registry#2.global(59, "ext_background_effect_manager_v1", 1)
+[20:55:06.217349] {Default Queue} wl_registry#2.global(60, "wp_commit_timing_manager_v1", 1)
+[20:55:06.217351] {Default Queue} wl_registry#2.global(61, "zwlr_screencopy_manager_v1", 3)
+[20:55:06.217355] {Default Queue} wl_registry#2.global(62, "hyprland_toplevel_export_manager_v1", 2)
+[20:55:06.217358] {Default Queue} wl_registry#2.global(63, "ext_output_image_capture_source_manager_v1", 1)
+[20:55:06.217361] {Default Queue} wl_registry#2.global(64, "ext_foreign_toplevel_image_capture_source_manager_v1", 1)
+[20:55:06.217363] {Default Queue} wl_registry#2.global(65, "ext_image_copy_capture_manager_v1", 1)
+[20:55:06.217366] {Default Queue} wl_registry#2.global(66, "wp_color_manager_v1", 3)
+[20:55:06.217369] {Default Queue} wl_registry#2.global(67, "wl_drm", 2)
+[20:55:06.217371] {Default Queue} wl_registry#2.global(68, "zwp_linux_dmabuf_v1", 5)
+[20:55:06.217374] {Default Queue} wl_registry#2.global(69, "wl_output", 4)
+[20:55:06.217377] {Default Queue}  -> wl_registry#2.bind(69, "wl_output", 2, new id [unknown]#19)
+[20:55:06.217407] {Default Queue}  -> zxdg_output_manager_v1#8.get_xdg_output(new id zxdg_output_v1#20, wl_output#19)
+[20:55:06.217413] {Default Queue}  -> wl_display#1.sync(new id wl_callback#21)
+[20:55:06.217417] {Default Queue} wl_callback#3.done(60)
+[20:55:06.217447] {Default Queue}  -> wl_shm#7.create_pool(new id wl_shm_pool#3, fd 10, 2304)
+[20:55:06.217527] {Default Queue}  -> wl_shm_pool#3.resize(6912)
+[20:55:06.217572] {Default Queue}  -> wl_shm_pool#3.resize(16128)
+[20:55:06.217648] {Default Queue}  -> wl_shm_pool#3.resize(34560)
+[20:55:06.217782] {Default Queue}  -> wl_shm_pool#3.resize(71424)
+[20:55:06.218039] {Default Queue}  -> wl_shm_pool#3.resize(145152)
+[20:55:06.218973] {Default Queue}  -> wl_shm_pool#3.resize(292608)
+[20:55:06.220013] {Default Queue}  -> wl_shm_pool#3.resize(587520)
+[20:55:06.223913] {Default Queue}  -> wl_registry#2.bind(1, "wl_seat", 5, new id [unknown]#22)
+[20:55:06.225505] {Default Queue}  -> wl_compositor#5.create_surface(new id wl_surface#23)
+[20:55:06.225519] {Default Queue}  -> zwp_primary_selection_device_manager_v1#16.get_device(new id zwp_primary_selection_device_v1#24, wl_seat#22)
+[20:55:06.225526] {Default Queue}  -> wl_data_device_manager#4.get_data_device(new id wl_data_device#25, wl_seat#22)
+[20:55:06.225570] {Default Queue}  -> wl_compositor#5.create_surface(new id wl_surface#26)
+[20:55:06.225574] {Default Queue}  -> zwp_tablet_manager_v2#15.get_tablet_seat(new id zwp_tablet_seat_v2#27, wl_seat#22)
+[20:55:06.225579] {Default Queue}  -> wl_display#1.sync(new id wl_callback#28)
+[20:55:06.225740] {Display Queue} wl_display#1.delete_id(9)
+[20:55:06.225745] {Display Queue} wl_display#1.delete_id(21)
+[20:55:06.225748] {Display Queue} wl_display#1.delete_id(28)
+[20:55:06.225750] {Default Queue} wl_shm#7.format(0)
+[20:55:06.225752] {Default Queue} wl_shm#7.format(1)
+[20:55:06.225754] {Default Queue} wl_shm#7.format(875709016)
+[20:55:06.225756] {Default Queue} wl_shm#7.format(875708993)
+[20:55:06.225758] {Default Queue} wl_shm#7.format(808669784)
+[20:55:06.225761] {Default Queue} wl_shm#7.format(808669761)
+[20:55:06.225763] {Default Queue} wl_shm#7.format(808665688)
+[20:55:06.225765] {Default Queue} wl_shm#7.format(808665665)
+[20:55:06.225767] {Default Queue} wl_callback#9.done(60)
+[20:55:06.225770] {Default Queue} org_kde_kwin_server_decoration_manager#14.default_mode(2)
+[20:55:06.225773] {Default Queue} wl_output#19.scale(1)
+[20:55:06.225776] {Default Queue} wl_output#19.mode(1, 800, 600, 60000)
+[20:55:06.225780] {Default Queue} wl_output#19.geometry(0, 0, 0, 0, 1, "", "", 0)
+[20:55:06.225785] {Default Queue} wl_output#19.done()
+[20:55:06.225796] {Default Queue} zxdg_output_v1#20.name("WAYLAND-1")
+[20:55:06.225799] {Default Queue} zxdg_output_v1#20.logical_position(0, 0)
+[20:55:06.225802] {Default Queue} zxdg_output_v1#20.logical_size(800, 600)
+[20:55:06.225805] {Default Queue} wl_output#19.done()
+[20:55:06.225808] {Default Queue} wl_callback#21.done(60)
+[20:55:06.225811] {Default Queue} wl_seat#22.name("Hyprland")
+[20:55:06.225814] {Default Queue} wl_seat#22.capabilities(3)
+[20:55:06.225817] {Default Queue}  -> wl_seat#22.get_pointer(new id wl_pointer#21)
+[20:55:06.225823] {Default Queue}  -> zwp_pointer_gestures_v1#11.get_swipe_gesture(new id zwp_pointer_gesture_swipe_v1#9, wl_pointer#21)
+[20:55:06.225828] {Default Queue}  -> zwp_pointer_gestures_v1#11.get_pinch_gesture(new id zwp_pointer_gesture_pinch_v1#29, wl_pointer#21)
+[20:55:06.225832] {Default Queue}  -> wp_cursor_shape_manager_v1#10.get_pointer(new id wp_cursor_shape_device_v1#30, wl_pointer#21)
+[20:55:06.225837] {Default Queue}  -> wl_seat#22.get_keyboard(new id wl_keyboard#31)
+[20:55:06.225842] {Default Queue} wl_callback#28.done(60)
+[20:55:06.225845] {Default Queue}  -> wl_registry#2.bind(37, "xdg_wm_base", 6, new id [unknown]#28)
+[20:55:06.240220] {Default Queue}  -> wl_display#1.get_registry(new id wl_registry#32)
+[20:55:06.240234] {Default Queue}  -> wl_display#1.sync(new id wl_callback#33)
+[20:55:06.240331] {Display Queue} wl_display#1.delete_id(33)
+[20:55:06.240336] {Default Queue} wl_keyboard#31.keymap(1, fd 4, 35572)
+[20:55:06.241067] {Default Queue} wl_keyboard#31.repeat_info(25, 600)
+[20:55:06.241077] {Default Queue} wl_registry#32.global(1, "wl_seat", 9)
+[20:55:06.241082] {Default Queue} wl_registry#32.global(2, "wl_data_device_manager", 3)
+[20:55:06.241084] {Default Queue} wl_registry#32.global(3, "wl_compositor", 6)
+[20:55:06.241087] {Default Queue} wl_registry#32.global(4, "wl_subcompositor", 1)
+[20:55:06.241089] {Default Queue} wl_registry#32.global(5, "wl_shm", 2)
+[20:55:06.241092] {Default Queue} wl_registry#32.global(6, "wp_viewporter", 1)
+[20:55:06.241094] {Default Queue} wl_registry#32.global(7, "wp_tearing_control_manager_v1", 1)
+[20:55:06.241097] {Default Queue} wl_registry#32.global(8, "wp_fractional_scale_manager_v1", 1)
+[20:55:06.241100] {Default Queue} wl_registry#32.global(9, "zxdg_output_manager_v1", 3)
+[20:55:06.241102] {Default Queue} wl_registry#32.global(10, "wp_cursor_shape_manager_v1", 2)
+[20:55:06.241104] {Default Queue} wl_registry#32.global(11, "zwp_idle_inhibit_manager_v1", 1)
+[20:55:06.241107] {Default Queue} wl_registry#32.global(12, "zwp_relative_pointer_manager_v1", 1)
+[20:55:06.241109] {Default Queue} wl_registry#32.global(13, "zxdg_decoration_manager_v1", 2)
+[20:55:06.241112] {Default Queue} wl_registry#32.global(14, "wp_alpha_modifier_v1", 1)
+[20:55:06.241114] {Default Queue} wl_registry#32.global(15, "zwlr_gamma_control_manager_v1", 1)
+[20:55:06.241117] {Default Queue} wl_registry#32.global(16, "ext_foreign_toplevel_list_v1", 1)
+[20:55:06.241119] {Default Queue} wl_registry#32.global(17, "zwp_pointer_gestures_v1", 3)
+[20:55:06.241121] {Default Queue} wl_registry#32.global(18, "zwlr_foreign_toplevel_manager_v1", 3)
+[20:55:06.241124] {Default Queue} wl_registry#32.global(19, "zwp_keyboard_shortcuts_inhibit_manager_v1", 1)
+[20:55:06.241126] {Default Queue} wl_registry#32.global(20, "zwp_text_input_manager_v1", 1)
+[20:55:06.241129] {Default Queue} wl_registry#32.global(21, "zwp_text_input_manager_v3", 1)
+[20:55:06.241131] {Default Queue} wl_registry#32.global(22, "zwp_pointer_constraints_v1", 1)
+[20:55:06.241133] {Default Queue} wl_registry#32.global(23, "zwlr_output_power_manager_v1", 1)
+[20:55:06.241135] {Default Queue} wl_registry#32.global(24, "xdg_activation_v1", 1)
+[20:55:06.241138] {Default Queue} wl_registry#32.global(25, "ext_idle_notifier_v1", 2)
+[20:55:06.241140] {Default Queue} wl_registry#32.global(26, "hyprland_lock_notifier_v1", 1)
+[20:55:06.241142] {Default Queue} wl_registry#32.global(27, "ext_session_lock_manager_v1", 1)
+[20:55:06.241144] {Default Queue} wl_registry#32.global(28, "zwp_input_method_manager_v2", 1)
+[20:55:06.241146] {Default Queue} wl_registry#32.global(29, "zwp_virtual_keyboard_manager_v1", 1)
+[20:55:06.241148] {Default Queue} wl_registry#32.global(30, "zwlr_virtual_pointer_manager_v1", 2)
+[20:55:06.241151] {Default Queue} wl_registry#32.global(31, "zwlr_output_manager_v1", 4)
+[20:55:06.241153] {Default Queue} wl_registry#32.global(32, "org_kde_kwin_server_decoration_manager", 1)
+[20:55:06.241155] {Default Queue} wl_registry#32.global(33, "hyprland_focus_grab_manager_v1", 1)
+[20:55:06.241157] {Default Queue} wl_registry#32.global(34, "zwp_tablet_manager_v2", 1)
+[20:55:06.241160] {Default Queue} wl_registry#32.global(35, "zwlr_layer_shell_v1", 5)
+[20:55:06.241162] {Default Queue}  -> wl_registry#32.bind(35, "zwlr_layer_shell_v1", 4, new id [unknown]#34)
+[20:55:06.241165] {Default Queue} wl_registry#32.global(36, "wp_presentation", 2)
+[20:55:06.241168] {Default Queue} wl_registry#32.global(37, "xdg_wm_base", 7)
+[20:55:06.241170] {Default Queue}  -> wl_registry#32.bind(37, "xdg_wm_base", 7, new id [unknown]#35)
+[20:55:06.241173] {Default Queue} wl_registry#32.global(38, "zwlr_data_control_manager_v1", 2)
+[20:55:06.241175] {Default Queue} wl_registry#32.global(39, "zwp_primary_selection_device_manager_v1", 1)
+[20:55:06.241177] {Default Queue} wl_registry#32.global(40, "xwayland_shell_v1", 1)
+[20:55:06.241180] {Default Queue} wl_registry#32.global(41, "hyprland_toplevel_mapping_manager_v1", 1)
+[20:55:06.241182] {Default Queue} wl_registry#32.global(42, "hyprland_global_shortcuts_manager_v1", 1)
+[20:55:06.241188] {Default Queue} wl_registry#32.global(43, "xdg_wm_dialog_v1", 1)
+[20:55:06.241192] {Default Queue} wl_registry#32.global(44, "wp_single_pixel_buffer_manager_v1", 1)
+[20:55:06.241195] {Default Queue} wl_registry#32.global(45, "wp_security_context_manager_v1", 1)
+[20:55:06.241197] {Default Queue} wl_registry#32.global(46, "hyprland_ctm_control_manager_v1", 2)
+[20:55:06.241200] {Default Queue} wl_registry#32.global(47, "hyprland_input_capture_manager_v1", 1)
+[20:55:06.241202] {Default Queue} wl_registry#32.global(48, "hyprland_surface_manager_v1", 2)
+[20:55:06.241205] {Default Queue} wl_registry#32.global(49, "wp_content_type_manager_v1", 1)
+[20:55:06.241207] {Default Queue} wl_registry#32.global(50, "xdg_toplevel_tag_manager_v1", 1)
+[20:55:06.241209] {Default Queue} wl_registry#32.global(51, "xdg_system_bell_v1", 1)
+[20:55:06.241212] {Default Queue} wl_registry#32.global(52, "vicinae_hotkey_manager_v1", 1)
+[20:55:06.241214] {Default Queue} wl_registry#32.global(53, "ext_workspace_manager_v1", 1)
+[20:55:06.241216] {Default Queue} wl_registry#32.global(54, "ext_data_control_manager_v1", 1)
+[20:55:06.241219] {Default Queue} wl_registry#32.global(55, "wp_pointer_warp_v1", 1)
+[20:55:06.241221] {Default Queue} wl_registry#32.global(56, "wp_fifo_manager_v1", 1)
+[20:55:06.241224] {Default Queue} wl_registry#32.global(57, "zxdg_exporter_v2", 1)
+[20:55:06.241226] {Default Queue} wl_registry#32.global(58, "zxdg_importer_v2", 1)
+[20:55:06.241229] {Default Queue} wl_registry#32.global(59, "ext_background_effect_manager_v1", 1)
+[20:55:06.241231] {Default Queue} wl_registry#32.global(60, "wp_commit_timing_manager_v1", 1)
+[20:55:06.241233] {Default Queue} wl_registry#32.global(61, "zwlr_screencopy_manager_v1", 3)
+[20:55:06.241236] {Default Queue} wl_registry#32.global(62, "hyprland_toplevel_export_manager_v1", 2)
+[20:55:06.241238] {Default Queue} wl_registry#32.global(63, "ext_output_image_capture_source_manager_v1", 1)
+[20:55:06.241241] {Default Queue} wl_registry#32.global(64, "ext_foreign_toplevel_image_capture_source_manager_v1", 1)
+[20:55:06.241243] {Default Queue} wl_registry#32.global(65, "ext_image_copy_capture_manager_v1", 1)
+[20:55:06.241246] {Default Queue} wl_registry#32.global(66, "wp_color_manager_v1", 3)
+[20:55:06.241251] {Default Queue} wl_registry#32.global(67, "wl_drm", 2)
+[20:55:06.241254] {Default Queue} wl_registry#32.global(68, "zwp_linux_dmabuf_v1", 5)
+[20:55:06.241256] {Default Queue} wl_registry#32.global(69, "wl_output", 4)
+[20:55:06.241259] {Default Queue} wl_callback#33.done(60)
+[20:55:06.323424] {Default Queue}  -> wl_compositor#5.create_surface(new id wl_surface#33)
+[20:55:06.323743] {mesa egl display queue}  -> wl_display#1.get_registry(new id wl_registry#36)
+[20:55:06.323751] {mesa egl display queue}  -> wl_display#1.sync(new id wl_callback#37)
+[20:55:06.324111] {Display Queue} wl_display#1.delete_id(37)
+[20:55:06.324128] {mesa egl display queue} wl_registry#36.global(1, "wl_seat", 9)
+[20:55:06.324133] {mesa egl display queue} wl_registry#36.global(2, "wl_data_device_manager", 3)
+[20:55:06.324136] {mesa egl display queue} wl_registry#36.global(3, "wl_compositor", 6)
+[20:55:06.324139] {mesa egl display queue} wl_registry#36.global(4, "wl_subcompositor", 1)
+[20:55:06.324141] {mesa egl display queue} wl_registry#36.global(5, "wl_shm", 2)
+[20:55:06.324144] {mesa egl display queue} wl_registry#36.global(6, "wp_viewporter", 1)
+[20:55:06.324147] {mesa egl display queue} wl_registry#36.global(7, "wp_tearing_control_manager_v1", 1)
+[20:55:06.324149] {mesa egl display queue} wl_registry#36.global(8, "wp_fractional_scale_manager_v1", 1)
+[20:55:06.324152] {mesa egl display queue} wl_registry#36.global(9, "zxdg_output_manager_v1", 3)
+[20:55:06.324154] {mesa egl display queue} wl_registry#36.global(10, "wp_cursor_shape_manager_v1", 2)
+[20:55:06.324157] {mesa egl display queue} wl_registry#36.global(11, "zwp_idle_inhibit_manager_v1", 1)
+[20:55:06.324160] {mesa egl display queue} wl_registry#36.global(12, "zwp_relative_pointer_manager_v1", 1)
+[20:55:06.324162] {mesa egl display queue} wl_registry#36.global(13, "zxdg_decoration_manager_v1", 2)
+[20:55:06.324171] {mesa egl display queue} wl_registry#36.global(14, "wp_alpha_modifier_v1", 1)
+[20:55:06.324180] {mesa egl display queue} wl_registry#36.global(15, "zwlr_gamma_control_manager_v1", 1)
+[20:55:06.324183] {mesa egl display queue} wl_registry#36.global(16, "ext_foreign_toplevel_list_v1", 1)
+[20:55:06.324186] {mesa egl display queue} wl_registry#36.global(17, "zwp_pointer_gestures_v1", 3)
+[20:55:06.324188] {mesa egl display queue} wl_registry#36.global(18, "zwlr_foreign_toplevel_manager_v1", 3)
+[20:55:06.324191] {mesa egl display queue} wl_registry#36.global(19, "zwp_keyboard_shortcuts_inhibit_manager_v1", 1)
+[20:55:06.324194] {mesa egl display queue} wl_registry#36.global(20, "zwp_text_input_manager_v1", 1)
+[20:55:06.324196] {mesa egl display queue} wl_registry#36.global(21, "zwp_text_input_manager_v3", 1)
+[20:55:06.324198] {mesa egl display queue} wl_registry#36.global(22, "zwp_pointer_constraints_v1", 1)
+[20:55:06.324201] {mesa egl display queue} wl_registry#36.global(23, "zwlr_output_power_manager_v1", 1)
+[20:55:06.324204] {mesa egl display queue} wl_registry#36.global(24, "xdg_activation_v1", 1)
+[20:55:06.324207] {mesa egl display queue} wl_registry#36.global(25, "ext_idle_notifier_v1", 2)
+[20:55:06.324209] {mesa egl display queue} wl_registry#36.global(26, "hyprland_lock_notifier_v1", 1)
+[20:55:06.324212] {mesa egl display queue} wl_registry#36.global(27, "ext_session_lock_manager_v1", 1)
+[20:55:06.324215] {mesa egl display queue} wl_registry#36.global(28, "zwp_input_method_manager_v2", 1)
+[20:55:06.324217] {mesa egl display queue} wl_registry#36.global(29, "zwp_virtual_keyboard_manager_v1", 1)
+[20:55:06.324220] {mesa egl display queue} wl_registry#36.global(30, "zwlr_virtual_pointer_manager_v1", 2)
+[20:55:06.324223] {mesa egl display queue} wl_registry#36.global(31, "zwlr_output_manager_v1", 4)
+[20:55:06.324226] {mesa egl display queue} wl_registry#36.global(32, "org_kde_kwin_server_decoration_manager", 1)
+[20:55:06.324228] {mesa egl display queue} wl_registry#36.global(33, "hyprland_focus_grab_manager_v1", 1)
+[20:55:06.324230] {mesa egl display queue} wl_registry#36.global(34, "zwp_tablet_manager_v2", 1)
+[20:55:06.324233] {mesa egl display queue} wl_registry#36.global(35, "zwlr_layer_shell_v1", 5)
+[20:55:06.324236] {mesa egl display queue} wl_registry#36.global(36, "wp_presentation", 2)
+[20:55:06.324239] {mesa egl display queue}  -> wl_registry#36.bind(36, "wp_presentation", 1, new id [unknown]#38)
+[20:55:06.324243] {mesa egl display queue} wl_registry#36.global(37, "xdg_wm_base", 7)
+[20:55:06.324245] {mesa egl display queue} wl_registry#36.global(38, "zwlr_data_control_manager_v1", 2)
+[20:55:06.324252] {mesa egl display queue} wl_registry#36.global(39, "zwp_primary_selection_device_manager_v1", 1)
+[20:55:06.324254] {mesa egl display queue} wl_registry#36.global(40, "xwayland_shell_v1", 1)
+[20:55:06.324257] {mesa egl display queue} wl_registry#36.global(41, "hyprland_toplevel_mapping_manager_v1", 1)
+[20:55:06.324259] {mesa egl display queue} wl_registry#36.global(42, "hyprland_global_shortcuts_manager_v1", 1)
+[20:55:06.324261] {mesa egl display queue} wl_registry#36.global(43, "xdg_wm_dialog_v1", 1)
+[20:55:06.324264] {mesa egl display queue} wl_registry#36.global(44, "wp_single_pixel_buffer_manager_v1", 1)
+[20:55:06.324266] {mesa egl display queue} wl_registry#36.global(45, "wp_security_context_manager_v1", 1)
+[20:55:06.324269] {mesa egl display queue} wl_registry#36.global(46, "hyprland_ctm_control_manager_v1", 2)
+[20:55:06.324271] {mesa egl display queue} wl_registry#36.global(47, "hyprland_input_capture_manager_v1", 1)
+[20:55:06.324274] {mesa egl display queue} wl_registry#36.global(48, "hyprland_surface_manager_v1", 2)
+[20:55:06.324276] {mesa egl display queue} wl_registry#36.global(49, "wp_content_type_manager_v1", 1)
+[20:55:06.324279] {mesa egl display queue} wl_registry#36.global(50, "xdg_toplevel_tag_manager_v1", 1)
+[20:55:06.324281] {mesa egl display queue} wl_registry#36.global(51, "xdg_system_bell_v1", 1)
+[20:55:06.324285] {mesa egl display queue} wl_registry#36.global(52, "vicinae_hotkey_manager_v1", 1)
+[20:55:06.324288] {mesa egl display queue} wl_registry#36.global(53, "ext_workspace_manager_v1", 1)
+[20:55:06.324291] {mesa egl display queue} wl_registry#36.global(54, "ext_data_control_manager_v1", 1)
+[20:55:06.324293] {mesa egl display queue} wl_registry#36.global(55, "wp_pointer_warp_v1", 1)
+[20:55:06.324296] {mesa egl display queue} wl_registry#36.global(56, "wp_fifo_manager_v1", 1)
+[20:55:06.324298] {mesa egl display queue} wl_registry#36.global(57, "zxdg_exporter_v2", 1)
+[20:55:06.324301] {mesa egl display queue} wl_registry#36.global(58, "zxdg_importer_v2", 1)
+[20:55:06.324303] {mesa egl display queue} wl_registry#36.global(59, "ext_background_effect_manager_v1", 1)
+[20:55:06.324305] {mesa egl display queue} wl_registry#36.global(60, "wp_commit_timing_manager_v1", 1)
+[20:55:06.324308] {mesa egl display queue} wl_registry#36.global(61, "zwlr_screencopy_manager_v1", 3)
+[20:55:06.324310] {mesa egl display queue} wl_registry#36.global(62, "hyprland_toplevel_export_manager_v1", 2)
+[20:55:06.324312] {mesa egl display queue} wl_registry#36.global(63, "ext_output_image_capture_source_manager_v1", 1)
+[20:55:06.324314] {mesa egl display queue} wl_registry#36.global(64, "ext_foreign_toplevel_image_capture_source_manager_v1", 1)
+[20:55:06.324317] {mesa egl display queue} wl_registry#36.global(65, "ext_image_copy_capture_manager_v1", 1)
+[20:55:06.324319] {mesa egl display queue} wl_registry#36.global(66, "wp_color_manager_v1", 3)
+[20:55:06.324321] {mesa egl display queue} wl_registry#36.global(67, "wl_drm", 2)
+[20:55:06.324324] {mesa egl display queue} wl_registry#36.global(68, "zwp_linux_dmabuf_v1", 5)
+[20:55:06.324326] {mesa egl display queue}  -> wl_registry#36.bind(68, "zwp_linux_dmabuf_v1", 4, new id [unknown]#39)
+[20:55:06.324329] {mesa egl display queue} wl_registry#36.global(69, "wl_output", 4)
+[20:55:06.324331] {mesa egl display queue} wl_callback#37.done(60)
+[20:55:06.324335] {mesa egl display queue}  -> zwp_linux_dmabuf_v1#39.get_default_feedback(new id zwp_linux_dmabuf_feedback_v1#37)
+[20:55:06.324340] {mesa egl display queue}  -> wl_display#1.sync(new id wl_callback#40)
+[20:55:06.324623] {Display Queue} wl_display#1.delete_id(40)
+[20:55:06.324639] {mesa egl display queue} wp_presentation#38.clock_id(1)
+[20:55:06.324643] {mesa egl display queue} zwp_linux_dmabuf_feedback_v1#37.format_table(fd 12, 2960)
+[20:55:06.324663] {mesa egl display queue} zwp_linux_dmabuf_feedback_v1#37.main_device(array[8])
+[20:55:06.324974] {mesa egl display queue} zwp_linux_dmabuf_feedback_v1#37.tranche_target_device(array[8])
+[20:55:06.324978] {mesa egl display queue} zwp_linux_dmabuf_feedback_v1#37.tranche_flags(0)
+[20:55:06.324981] {mesa egl display queue} zwp_linux_dmabuf_feedback_v1#37.tranche_formats(array[370])
+[20:55:06.324989] {mesa egl display queue} zwp_linux_dmabuf_feedback_v1#37.tranche_done()
+[20:55:06.324992] {mesa egl display queue} zwp_linux_dmabuf_feedback_v1#37.done()
+[20:55:06.324995] {mesa egl display queue} wl_callback#40.done(60)
+[20:55:06.324998] {mesa egl display queue}  -> zwp_linux_dmabuf_feedback_v1#37.destroy()
+[20:55:06.337028] {Default Queue}  -> wl_surface#33.destroy()
+[20:55:06.337112] {Default Queue}  -> wl_compositor#5.create_surface(new id wl_surface#40)
+[20:55:06.340516] {Default Queue}  -> wl_surface#40.destroy()
+view-process-policy: related=1 distinct-manager=1
+view-process-policy: related=1 distinct-manager=1
+[20:55:06.352121] {Default Queue}  -> wl_compositor#5.create_surface(new id wl_surface#41)
+[20:55:06.352581] {Default Queue}  -> wl_display#1.get_registry(new id wl_registry#42)
+[20:55:06.352639] {Default Queue}  -> wl_surface#41.attach(nil, 0, 0)
+[20:55:06.352647] {Default Queue}  -> zwlr_layer_shell_v1#34.get_layer_surface(new id zwlr_layer_surface_v1#43, wl_surface#41, wl_output#19, 2, "elm-shell-recovery-v17")
+[20:55:06.352655] {Default Queue}  -> zwlr_layer_surface_v1#43.set_keyboard_interactivity(0)
+[20:55:06.352658] {Default Queue}  -> zwlr_layer_surface_v1#43.set_exclusive_zone(48)
+[20:55:06.352665] {Default Queue}  -> zwlr_layer_surface_v1#43.set_anchor(13)
+[20:55:06.352673] {Default Queue}  -> zwlr_layer_surface_v1#43.set_margin(0, 0, 0, 0)
+[20:55:06.352677] {Default Queue}  -> zwlr_layer_surface_v1#43.set_size(0, 48)
+[20:55:06.352681] {Default Queue}  -> wl_surface#41.commit()
+[20:55:06.352684] {Default Queue}  -> wl_display#1.sync(new id wl_callback#44)
+[20:55:06.352837] {Display Queue} wl_display#1.delete_id(37)
+[20:55:06.352842] {Display Queue} wl_display#1.delete_id(33)
+[20:55:06.352844] {Display Queue} wl_display#1.delete_id(40)
+[20:55:06.352847] {Display Queue} wl_display#1.delete_id(44)
+[20:55:06.352850] {Default Queue} wl_registry#42.global(1, "wl_seat", 9)
+[20:55:06.352854] {Default Queue} wl_registry#42.global(2, "wl_data_device_manager", 3)
+[20:55:06.352856] {Default Queue} wl_registry#42.global(3, "wl_compositor", 6)
+[20:55:06.352859] {Default Queue} wl_registry#42.global(4, "wl_subcompositor", 1)
+[20:55:06.352861] {Default Queue} wl_registry#42.global(5, "wl_shm", 2)
+[20:55:06.352864] {Default Queue} wl_registry#42.global(6, "wp_viewporter", 1)
+[20:55:06.352867] {Default Queue} wl_registry#42.global(7, "wp_tearing_control_manager_v1", 1)
+[20:55:06.352870] {Default Queue} wl_registry#42.global(8, "wp_fractional_scale_manager_v1", 1)
+[20:55:06.352873] {Default Queue} wl_registry#42.global(9, "zxdg_output_manager_v1", 3)
+[20:55:06.352875] {Default Queue} wl_registry#42.global(10, "wp_cursor_shape_manager_v1", 2)
+[20:55:06.352878] {Default Queue} wl_registry#42.global(11, "zwp_idle_inhibit_manager_v1", 1)
+[20:55:06.352880] {Default Queue} wl_registry#42.global(12, "zwp_relative_pointer_manager_v1", 1)
+[20:55:06.352882] {Default Queue} wl_registry#42.global(13, "zxdg_decoration_manager_v1", 2)
+[20:55:06.352885] {Default Queue} wl_registry#42.global(14, "wp_alpha_modifier_v1", 1)
+[20:55:06.352888] {Default Queue} wl_registry#42.global(15, "zwlr_gamma_control_manager_v1", 1)
+[20:55:06.352890] {Default Queue} wl_registry#42.global(16, "ext_foreign_toplevel_list_v1", 1)
+[20:55:06.352893] {Default Queue} wl_registry#42.global(17, "zwp_pointer_gestures_v1", 3)
+[20:55:06.352895] {Default Queue} wl_registry#42.global(18, "zwlr_foreign_toplevel_manager_v1", 3)
+[20:55:06.352898] {Default Queue} wl_registry#42.global(19, "zwp_keyboard_shortcuts_inhibit_manager_v1", 1)
+[20:55:06.352901] {Default Queue} wl_registry#42.global(20, "zwp_text_input_manager_v1", 1)
+[20:55:06.352903] {Default Queue} wl_registry#42.global(21, "zwp_text_input_manager_v3", 1)
+[20:55:06.352906] {Default Queue}  -> wl_registry#42.bind(21, "zwp_text_input_manager_v3", 1, new id [unknown]#40)
+[20:55:06.352910] {Default Queue}  -> zwp_text_input_manager_v3#40.get_text_input(new id zwp_text_input_v3#33, wl_seat#22)
+[20:55:06.352913] {Default Queue} wl_registry#42.global(22, "zwp_pointer_constraints_v1", 1)
+[20:55:06.352915] {Default Queue} wl_registry#42.global(23, "zwlr_output_power_manager_v1", 1)
+[20:55:06.352918] {Default Queue} wl_registry#42.global(24, "xdg_activation_v1", 1)
+[20:55:06.352921] {Default Queue} wl_registry#42.global(25, "ext_idle_notifier_v1", 2)
+[20:55:06.352923] {Default Queue} wl_registry#42.global(26, "hyprland_lock_notifier_v1", 1)
+[20:55:06.352926] {Default Queue} wl_registry#42.global(27, "ext_session_lock_manager_v1", 1)
+[20:55:06.352929] {Default Queue} wl_registry#42.global(28, "zwp_input_method_manager_v2", 1)
+[20:55:06.352932] {Default Queue} wl_registry#42.global(29, "zwp_virtual_keyboard_manager_v1", 1)
+[20:55:06.352934] {Default Queue} wl_registry#42.global(30, "zwlr_virtual_pointer_manager_v1", 2)
+[20:55:06.352937] {Default Queue} wl_registry#42.global(31, "zwlr_output_manager_v1", 4)
+[20:55:06.352939] {Default Queue} wl_registry#42.global(32, "org_kde_kwin_server_decoration_manager", 1)
+[20:55:06.352942] {Default Queue} wl_registry#42.global(33, "hyprland_focus_grab_manager_v1", 1)
+[20:55:06.352945] {Default Queue} wl_registry#42.global(34, "zwp_tablet_manager_v2", 1)
+[20:55:06.352947] {Default Queue} wl_registry#42.global(35, "zwlr_layer_shell_v1", 5)
+[20:55:06.352950] {Default Queue} wl_registry#42.global(36, "wp_presentation", 2)
+[20:55:06.352955] {Default Queue} wl_registry#42.global(37, "xdg_wm_base", 7)
+[20:55:06.352960] {Default Queue} wl_registry#42.global(38, "zwlr_data_control_manager_v1", 2)
+[20:55:06.352963] {Default Queue} wl_registry#42.global(39, "zwp_primary_selection_device_manager_v1", 1)
+[20:55:06.352965] {Default Queue} wl_registry#42.global(40, "xwayland_shell_v1", 1)
+[20:55:06.352968] {Default Queue} wl_registry#42.global(41, "hyprland_toplevel_mapping_manager_v1", 1)
+[20:55:06.352971] {Default Queue} wl_registry#42.global(42, "hyprland_global_shortcuts_manager_v1", 1)
+[20:55:06.352973] {Default Queue} wl_registry#42.global(43, "xdg_wm_dialog_v1", 1)
+[20:55:06.352976] {Default Queue} wl_registry#42.global(44, "wp_single_pixel_buffer_manager_v1", 1)
+[20:55:06.352979] {Default Queue} wl_registry#42.global(45, "wp_security_context_manager_v1", 1)
+[20:55:06.352981] {Default Queue} wl_registry#42.global(46, "hyprland_ctm_control_manager_v1", 2)
+[20:55:06.352984] {Default Queue} wl_registry#42.global(47, "hyprland_input_capture_manager_v1", 1)
+[20:55:06.352986] {Default Queue} wl_registry#42.global(48, "hyprland_surface_manager_v1", 2)
+[20:55:06.352989] {Default Queue} wl_registry#42.global(49, "wp_content_type_manager_v1", 1)
+[20:55:06.352991] {Default Queue} wl_registry#42.global(50, "xdg_toplevel_tag_manager_v1", 1)
+[20:55:06.352993] {Default Queue} wl_registry#42.global(51, "xdg_system_bell_v1", 1)
+[20:55:06.352996] {Default Queue} wl_registry#42.global(52, "vicinae_hotkey_manager_v1", 1)
+[20:55:06.352998] {Default Queue} wl_registry#42.global(53, "ext_workspace_manager_v1", 1)
+[20:55:06.353001] {Default Queue} wl_registry#42.global(54, "ext_data_control_manager_v1", 1)
+[20:55:06.353003] {Default Queue} wl_registry#42.global(55, "wp_pointer_warp_v1", 1)
+[20:55:06.353005] {Default Queue} wl_registry#42.global(56, "wp_fifo_manager_v1", 1)
+[20:55:06.353008] {Default Queue} wl_registry#42.global(57, "zxdg_exporter_v2", 1)
+[20:55:06.353010] {Default Queue} wl_registry#42.global(58, "zxdg_importer_v2", 1)
+[20:55:06.353013] {Default Queue} wl_registry#42.global(59, "ext_background_effect_manager_v1", 1)
+[20:55:06.353015] {Default Queue} wl_registry#42.global(60, "wp_commit_timing_manager_v1", 1)
+[20:55:06.353018] {Default Queue} wl_registry#42.global(61, "zwlr_screencopy_manager_v1", 3)
+[20:55:06.353021] {Default Queue} wl_registry#42.global(62, "hyprland_toplevel_export_manager_v1", 2)
+[20:55:06.353023] {Default Queue} wl_registry#42.global(63, "ext_output_image_capture_source_manager_v1", 1)
+[20:55:06.353026] {Default Queue} wl_registry#42.global(64, "ext_foreign_toplevel_image_capture_source_manager_v1", 1)
+[20:55:06.353028] {Default Queue} wl_registry#42.global(65, "ext_image_copy_capture_manager_v1", 1)
+[20:55:06.353031] {Default Queue} wl_registry#42.global(66, "wp_color_manager_v1", 3)
+[20:55:06.353033] {Default Queue} wl_registry#42.global(67, "wl_drm", 2)
+[20:55:06.353036] {Default Queue} wl_registry#42.global(68, "zwp_linux_dmabuf_v1", 5)
+[20:55:06.353038] {Default Queue} wl_registry#42.global(69, "wl_output", 4)
+[20:55:06.353041] {Default Queue} zwlr_layer_surface_v1#43.configure(61, 800, 48)
+[20:55:06.353044] {Default Queue}  -> zwlr_layer_surface_v1#43.ack_configure(61)
+[20:55:06.353046] {Default Queue} wl_callback#44.done(61)
+[20:55:06.353090] {Default Queue}  -> wl_surface#41.commit()
+view-added: id=1 geometry=0,0,800,600
+shared-host-start: views=1 controllers=1 backend-clients=1 sandbox=1
+[20:55:06.353456] {Default Queue} zwlr_layer_surface_v1#43.configure(62, 800, 48)
+[20:55:06.353466] {Default Queue}  -> zwlr_layer_surface_v1#43.ack_configure(62)
+[20:55:06.356749] {Default Queue}  -> wl_surface#41.set_buffer_scale(1)
+[20:55:06.356829] {Default Queue}  -> wl_shm#7.create_pool(new id wl_shm_pool#44, fd 24, 153600)
+[20:55:06.356840] {Default Queue}  -> wl_shm_pool#44.create_buffer(new id wl_buffer#37, 0, 800, 48, 3200, 0)
+[20:55:06.356954] {Default Queue}  -> wl_surface#41.attach(wl_buffer#37, 0, 0)
+[20:55:06.356960] {Default Queue}  -> wl_surface#41.set_buffer_scale(1)
+[20:55:06.356963] {Default Queue}  -> wl_surface#41.damage(0, 0, 800, 48)
+[20:55:06.356971] {Default Queue}  -> wl_compositor#5.create_region(new id wl_region#45)
+[20:55:06.356979] {Default Queue}  -> wl_region#45.add(0, 0, 800, 48)
+[20:55:06.356982] {Default Queue}  -> wl_surface#41.set_opaque_region(wl_region#45)
+[20:55:06.356985] {Default Queue}  -> wl_region#45.destroy()
+[20:55:06.356988] {Default Queue}  -> wl_surface#41.set_input_region(nil)
+[20:55:06.356993] {Default Queue}  -> wl_surface#41.frame(new id wl_callback#46)
+[20:55:06.356997] {Default Queue}  -> wl_surface#41.commit()
+[20:55:06.357286] {Display Queue} wl_display#1.delete_id(45)
+[20:55:06.357292] {Display Queue} wl_display#1.delete_id(46)
+[20:55:06.357295] {Default Queue} wl_callback#46.done(370772292)
+[20:55:06.357299] {Default Queue} wl_surface#41.enter(wl_output#19)
+[20:55:06.357302] {Default Queue} wl_buffer#37.release()
+
+** (process:2): WARNING **: 14:55:06.391: Can't connect to a11y bus: Could not connect: No such file or directory
+[20:55:06.455939] {Default Queue}  -> wl_surface#41.set_buffer_scale(1)
+[20:55:06.455963] {mesa egl surface queue}  -> zwp_linux_dmabuf_v1#39.get_surface_feedback(new id zwp_linux_dmabuf_feedback_v1#46, wl_surface#41)
+[20:55:06.455973] {mesa egl display queue}  -> wl_display#1.sync(new id wl_callback#45)
+[20:55:06.456039] {Display Queue} wl_display#1.delete_id(45)
+[20:55:06.456044] {mesa egl display queue} wl_callback#45.done(62)
+[20:55:06.456053] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#46.format_table(fd 32, 2960)
+[20:55:06.456062] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#46.main_device(array[8])
+[20:55:06.456064] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#46.tranche_target_device(array[8])
+[20:55:06.456066] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#46.tranche_flags(0)
+[20:55:06.456068] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#46.tranche_formats(array[370])
+[20:55:06.456073] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#46.tranche_done()
+[20:55:06.456076] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#46.done()
+[20:55:06.458678] {Default Queue}  -> wl_surface#41.attach(wl_buffer#37, 0, 0)
+[20:55:06.458692] {Default Queue}  -> wl_surface#41.set_buffer_scale(1)
+[20:55:06.458696] {Default Queue}  -> wl_surface#41.damage(0, 0, 800, 48)
+[20:55:06.458712] {Default Queue}  -> wl_surface#41.frame(new id wl_callback#45)
+[20:55:06.458716] {Default Queue}  -> wl_surface#41.commit()
+[20:55:06.458847] {Default Queue} wl_buffer#37.release()
+[20:55:06.467041] {Display Queue} wl_display#1.delete_id(45)
+[20:55:06.467055] {Default Queue} wl_callback#45.done(370772402)
+view-topology: {"viewProtocol":1,"kind":"view-topology","revision":"1","views":[{"id":"1","generation":"1"}]}
+surface-report: origin=bar {"kind":"surface-report","body":{"publication":null,"lease":null,"buttons":[],"focus":"","text":""}}
+view-report: id=1 x=0 y=0 {"kind":"surface-report","body":{"publication":null,"lease":null,"buttons":[],"focus":"","text":""}}
+surface-commit: publication=3 lease=0 open=0
+view-commit: popup=0 focus=1 publication=3
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"3","lease":"0","body":{"phase":"Detached","transaction":"Idle","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:detached:2:control:opener","reconnectId":"reconnect"}}
+[20:55:06.490803] {Default Queue}  -> wl_buffer#37.destroy()
+[20:55:06.490816] {Default Queue}  -> wl_shm_pool#44.destroy()
+[20:55:06.495372] {mesa egl display queue}  -> zwp_linux_dmabuf_v1#39.create_params(new id zwp_linux_buffer_params_v1#45)
+[20:55:06.495398] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#45.add(fd 29, 0, 0, 3584, 16777216, 15)
+[20:55:06.495405] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#45.add(fd 31, 1, 229376, 448, 16777216, 15)
+[20:55:06.495409] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#45.add(fd 40, 2, 233472, 64, 16777216, 15)
+[20:55:06.495414] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#45.create_immed(new id wl_buffer#47, 800, 48, 875713089, 0)
+[20:55:06.495431] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#45.destroy()
+[20:55:06.495435] {mesa egl surface queue}  -> wl_surface#41.attach(wl_buffer#47, 0, 0)
+[20:55:06.495438] {mesa egl surface queue}  -> wl_surface#41.damage(0, 0, 2147483647, 2147483647)
+[20:55:06.495443] {mesa egl surface queue}  -> wl_surface#41.commit()
+[20:55:06.495446] {mesa egl surface queue}  -> wl_display#1.sync(new id wl_callback#48)
+[20:55:06.496035] discarded [unknown]#37.[event 0](0 fd, 8 byte)
+[20:55:06.496046] {Display Queue} wl_display#1.delete_id(37)
+[20:55:06.496050] {Display Queue} wl_display#1.delete_id(44)
+[20:55:06.496053] {Display Queue} wl_display#1.delete_id(45)
+[20:55:06.496055] {Display Queue} wl_display#1.delete_id(48)
+[20:55:06.507286] {mesa egl surface queue} wl_callback#48.done(62)
+[20:55:06.507853] {mesa egl display queue}  -> zwp_linux_dmabuf_v1#39.create_params(new id zwp_linux_buffer_params_v1#48)
+[20:55:06.507872] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#48.add(fd 29, 0, 0, 3584, 16777216, 15)
+[20:55:06.507880] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#48.add(fd 31, 1, 229376, 448, 16777216, 15)
+[20:55:06.507884] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#48.add(fd 40, 2, 233472, 64, 16777216, 15)
+[20:55:06.507889] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#48.create_immed(new id wl_buffer#45, 800, 48, 875713089, 0)
+[20:55:06.507894] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#48.destroy()
+[20:55:06.507898] {mesa egl surface queue}  -> wl_surface#41.attach(wl_buffer#45, 0, 0)
+[20:55:06.507903] {mesa egl surface queue}  -> wl_surface#41.damage(0, 0, 2147483647, 2147483647)
+[20:55:06.507906] {mesa egl surface queue}  -> wl_surface#41.commit()
+[20:55:06.507910] {mesa egl surface queue}  -> wl_display#1.sync(new id wl_callback#44)
+[20:55:06.508039] {Display Queue} wl_display#1.delete_id(48)
+[20:55:06.508056] {Display Queue} wl_display#1.delete_id(44)
+surface-report: origin=bar {"kind":"surface-report","body":{"publication":"3","lease":"0","buttons":[{"id":"reconnect","label":"Reconnect","accessibleName":"Reconnect to the window system","disabled":true,"x":1,"y":1,"width":80,"height":46}],"focus":"","text":"\nReconnect\nConnecting…"}}
+view-report: id=1 x=0 y=0 {"kind":"surface-report","body":{"publication":"3","lease":"0","buttons":[{"id":"reconnect","label":"Reconnect","accessibleName":"Reconnect to the window system","disabled":true,"x":1,"y":1,"width":80,"height":46}],"focus":"","text":"\nReconnect\nConnecting…"}}
+backend-frame: {"protocolVersion":3,"kind":"attached","binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"previewFdAddress":"elm-preview-3038141-9700602597588291204","compositor":{"pid":3038141,"instance":"efb50993780079460b0cbed1363e2166a2de1d9f_1791406497_733017148","coreHash":"efb50993780079460b0cbed1363e2166a2de1d9f_aq_0.15_hu_0.14_hg_0.5_hc_0.1_hlg_0.6"},"capabilities":{"observe":true,"effects":true,"minimizedState":true,"effectProtocol":1,"operations":["minimize","restore","activate"],"canonicalScene":false,"taskbarProjectionProtocol":1,"effectInvalidationProtocol":1}}
+backend-frame: {"protocolVersion":3,"kind":"host-recovery-watermarks","binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"request":"2","generation":"2"}
+backend-frame: {"protocolVersion":3,"kind":"host-reservation-unknown","binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"record":{"binding":{"frontend":"1","lifetime":"9700602597588291204","session":"3"},"effectProtocol":1,"intent":{"context":{"epoch":"1","lifetime":"9700602597588291204","output":"1","revision":"3"},"generation":"2","incarnation":"2","operation":"restore","request":"2"},"schema":2,"status":"Unknown"}}
+backend-frame: {"protocolVersion":3,"kind":"binding-retirement","retirementProtocol":1,"operation":"retire","binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"queriedBinding":{"lifetime":"9700602597588291204","session":"3","frontend":"1"},"requestId":"1","sequence":"1","grantState":"Retired"}
+backend-frame: {"protocolVersion":3,"kind":"host-geometry-negotiate"}
+frontend-request: {"protocolVersion":3,"kind":"projection-request","binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"requestId":"1"}
+surface-commit: publication=4 lease=0 open=0
+view-commit: popup=0 focus=1 publication=4
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"4","lease":"0","body":{"phase":"Awaiting","transaction":"Idle","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+backend-frame: {"protocolVersion":3,"kind":"action-projection","binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"requestId":"1","context":{"lifetime":"9700602597588291204","epoch":"1","output":"1","revision":"3"},"scene":{"revision":"3","focused":null,"windows":[{"incarnation":"3","application":"warlock-child-probe","label":"WARLOCK-CHILD-PROBE","minimized":false,"owner":null,"available":true},{"incarnation":"4","application":"warlock-child-probe","label":"WARLOCK-CHILD-PROBE","minimized":false,"owner":null,"available":true},{"incarnation":"2","application":"GTK Application","label":"ELM-AUTHORITY-FIXTURE","minimized":true,"owner":null,"available":true}]}}
+surface-commit: publication=5 lease=0 open=0
+view-commit: popup=0 focus=1 publication=5
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"5","lease":"0","body":{"phase":"Awaiting","transaction":"Idle","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-commit: publication=6 lease=0 open=0
+view-commit: popup=0 focus=1 publication=6
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"6","lease":"0","body":{"phase":"Awaiting","transaction":"Unknown","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+frontend-request: {"protocolVersion":3,"kind":"reconciliation-ready","binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"proofRequestId":"1","queriedBinding":{"lifetime":"9700602597588291204","session":"3","frontend":"1"}}
+frontend-request: {"protocolVersion":3,"kind":"projection-request","binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"requestId":"2"}
+surface-commit: publication=7 lease=0 open=0
+view-commit: popup=0 focus=1 publication=7
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"7","lease":"0","body":{"phase":"Awaiting","transaction":"Unknown","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+frontend-request: {"protocolVersion":3,"kind":"geometry-attach","geometryProtocol":2,"binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"requestId":"3"}
+surface-commit: publication=8 lease=0 open=0
+view-commit: popup=0 focus=1 publication=8
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"8","lease":"0","body":{"phase":"Awaiting","transaction":"Unknown","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"8","lease":"0","body":{"phase":"Awaiting","transaction":"Unknown","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"8","lease":"0","body":{"phase":"Awaiting","transaction":"Unknown","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+backend-frame: {"protocolVersion":3,"kind":"action-projection","binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"requestId":"2","context":{"lifetime":"9700602597588291204","epoch":"1","output":"1","revision":"3"},"scene":{"revision":"3","focused":null,"windows":[{"incarnation":"3","application":"warlock-child-probe","label":"WARLOCK-CHILD-PROBE","minimized":false,"owner":null,"available":true},{"incarnation":"4","application":"warlock-child-probe","label":"WARLOCK-CHILD-PROBE","minimized":false,"owner":null,"available":true},{"incarnation":"2","application":"GTK Application","label":"ELM-AUTHORITY-FIXTURE","minimized":true,"owner":null,"available":true}]}}
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"8","lease":"0","body":{"phase":"Awaiting","transaction":"Unknown","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+backend-frame: {"protocolVersion":3,"kind":"geometry-attached","geometryProtocol":2,"binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"requestId":"3","capabilities":{"observe":true,"effects":true,"effectProtocol":2,"operations":["maximize","restore-geometry"],"placementCapacity":256,"canonicalScene":false}}
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"8","lease":"0","body":{"phase":"Awaiting","transaction":"Unknown","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-commit: publication=9 lease=0 open=0
+view-commit: popup=0 focus=1 publication=9
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"9","lease":"0","body":{"phase":"Coherent","transaction":"Unknown","groups":[{"key":"application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:3:application:GTK Application","title":"ELM-AUTHORITY-FIXTURE","active":false,"expanded":false},{"key":"application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:3:application:warlock-child-probe","title":"WARLOCK-CHILD-PROBE","active":false,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+frontend-request: {"protocolVersion":3,"kind":"reconciliation-ready","binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"proofRequestId":"1","queriedBinding":{"lifetime":"9700602597588291204","session":"3","frontend":"1"}}
+frontend-request: {"protocolVersion":3,"kind":"geometry-facts-request","geometryProtocol":2,"binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"requestId":"4","minimumWatermark":"0"}
+surface-commit: publication=10 lease=0 open=0
+view-commit: popup=0 focus=1 publication=10
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"10","lease":"0","body":{"phase":"Coherent","transaction":"Unknown","groups":[{"key":"application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:3:application:GTK Application","title":"ELM-AUTHORITY-FIXTURE","active":false,"expanded":false},{"key":"application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:3:application:warlock-child-probe","title":"WARLOCK-CHILD-PROBE","active":false,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+backend-frame: {"protocolVersion":3,"kind":"geometry-facts","geometryProtocol":2,"binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"requestId":"4","sequence":"5","revision":"3","outputGeneration":"1","facts":{"focused":null,"inputBlocked":false,"windows":[{"incarnation":"3","owner":null,"workspace":"1","workspaceGeneration":"1","monitor":"0","outputOwnershipGeneration":"1","workAreaRevision":"1","workArea":[0,48,800,552],"logicalGeometry":[420,300,320,240],"visualGeometry":[420,300,320,240],"nativeMode":"ordinary","clientMode":"ordinary","minimized":false,"floating":true,"grouped":false,"fixedSize":true,"constrainedSize":true,"geometryEligible":false,"ordinaryPlacementKnown":false,"sizePolicy":{"inputs":null,"maximize":null,"restoreGeometry":null},"capabilities":{"maximize":false,"restoreGeometry":false}},{"incarnation":"4","owner":null,"workspace":"1","workspaceGeneration":"1","monitor":"0","outputOwnershipGeneration":"1","workAreaRevision":"1","workArea":[0,48,800,552],"logicalGeometry":[420,300,320,240],"visualGeometry":[420,300,320,240],"nativeMode":"ordinary","clientMode":"ordinary","minimized":false,"floating":true,"grouped":false,"fixedSize":true,"constrainedSize":true,"geometryEligible":false,"ordinaryPlacementKnown":false,"sizePolicy":{"inputs":null,"maximize":null,"restoreGeometry":null},"capabilities":{"maximize":false,"restoreGeometry":false}},{"incarnation":"2","owner":null,"workspace":"1","workspaceGeneration":"1","monitor":"0","outputOwnershipGeneration":"1","workAreaRevision":"1","workArea":[0,48,800,552],"logicalGeometry":[40,80,320,240],"visualGeometry":[40,80,320,240],"nativeMode":"ordinary","clientMode":"ordinary","minimized":true,"floating":true,"grouped":false,"fixedSize":false,"constrainedSize":true,"geometryEligible":false,"ordinaryPlacementKnown":false,"sizePolicy":{"inputs":{"profile":"wayland-zero-origin-v1","rawMinimum":[108,42],"rawMaximum":[0,0],"layoutMinimum":[108,42],"layoutMaximum":[1.7976931348623157e+308,1.7976931348623157e+308],"geometryOrigin":[0,0],"reservedTopLeft":[1,1],"reservedBottomRight":[1,1],"monitorScale":1},"maximize":{"logical":[0,48,800,552],"visual":null,"real":[1,49,798,550],"configure":[798,550]},"restoreGeometry":null},"capabilities":{"maximize":false,"restoreGeometry":false}}]}}
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"10","lease":"0","body":{"phase":"Coherent","transaction":"Unknown","groups":[{"key":"application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:3:application:GTK Application","title":"ELM-AUTHORITY-FIXTURE","active":false,"expanded":false},{"key":"application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:3:application:warlock-child-probe","title":"WARLOCK-CHILD-PROBE","active":false,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-commit: publication=11 lease=0 open=0
+view-commit: popup=0 focus=1 publication=11
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"11","lease":"0","body":{"phase":"Coherent","transaction":"Unknown","groups":[{"key":"application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:3:application:GTK Application","title":"ELM-AUTHORITY-FIXTURE","active":false,"expanded":false},{"key":"application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:3:application:warlock-child-probe","title":"WARLOCK-CHILD-PROBE","active":false,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+backend-frame: {"protocolVersion":3,"kind":"host-reservation-released","binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"record":{"binding":{"frontend":"1","lifetime":"9700602597588291204","session":"3"},"effectProtocol":1,"intent":{"context":{"epoch":"1","lifetime":"9700602597588291204","output":"1","revision":"3"},"generation":"2","incarnation":"2","operation":"restore","request":"2"},"schema":2,"status":"Unknown"},"release":{"id":"37a5414c47b39a03286d640a6e6bdd3ae4197b76fc9b0684ede97542fbd0dc66","proof":{"protocolVersion":3,"kind":"binding-retirement","retirementProtocol":1,"operation":"retire","binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"queriedBinding":{"lifetime":"9700602597588291204","session":"3","frontend":"1"},"requestId":"1","sequence":"1","grantState":"Retired"},"observation":{"actionRequestId":"2","geometryRequestId":"4","actionContext":{"lifetime":"9700602597588291204","epoch":"1","output":"1","revision":"3"},"geometryContext":{"lifetime":"9700602597588291204","epoch":"1","output":"1","revision":"3"}}}}
+surface-commit: publication=12 lease=0 open=0
+view-commit: popup=0 focus=1 publication=12
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"12","lease":"0","body":{"phase":"Coherent","transaction":"Unknown","groups":[{"key":"application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:3:application:GTK Application","title":"ELM-AUTHORITY-FIXTURE","active":false,"expanded":false},{"key":"application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:3:application:warlock-child-probe","title":"WARLOCK-CHILD-PROBE","active":false,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+[20:55:06.597083] {mesa egl surface queue} wl_callback#44.done(62)
+[20:55:06.597102] {mesa egl surface queue} wl_buffer#47.release()
+[20:55:06.597107] {mesa egl surface queue}  -> wl_buffer#47.destroy()
+[20:55:06.597537] {mesa egl display queue}  -> zwp_linux_dmabuf_v1#39.create_params(new id zwp_linux_buffer_params_v1#44)
+[20:55:06.597551] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#44.add(fd 42, 0, 0, 3584, 16777216, 15)
+[20:55:06.597556] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#44.add(fd 43, 1, 229376, 448, 16777216, 15)
+[20:55:06.597560] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#44.add(fd 44, 2, 233472, 64, 16777216, 15)
+[20:55:06.597564] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#44.create_immed(new id wl_buffer#48, 800, 48, 875713089, 0)
+[20:55:06.597569] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#44.destroy()
+[20:55:06.597572] {mesa egl surface queue}  -> wl_surface#41.attach(wl_buffer#48, 0, 0)
+[20:55:06.597576] {mesa egl surface queue}  -> wl_surface#41.damage(0, 0, 2147483647, 2147483647)
+[20:55:06.597579] {mesa egl surface queue}  -> wl_surface#41.commit()
+[20:55:06.597582] {mesa egl surface queue}  -> wl_display#1.sync(new id wl_callback#37)
+[20:55:06.598060] discarded [unknown]#47.[event 0](0 fd, 8 byte)
+[20:55:06.598075] discarded [unknown]#47.[event 0](0 fd, 8 byte)
+[20:55:06.598085] {Display Queue} wl_display#1.delete_id(47)
+[20:55:06.598091] {Display Queue} wl_display#1.delete_id(44)
+[20:55:06.598094] {Display Queue} wl_display#1.delete_id(37)
+surface-report: origin=bar {"kind":"surface-report","body":{"publication":"12","lease":"0","buttons":[{"id":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":1,"y":1,"width":80,"height":46},{"id":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:3:application:GTK Application","label":"ELM-AUTHORITY-FIXTURE1","accessibleName":"Restore ELM-AUTHORITY-FIXTURE","disabled":false,"x":83,"y":1,"width":240,"height":46},{"id":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:3:application:warlock-child-probe","label":"WARLOCK-CHILD-PROBE2","accessibleName":"Choose a window from WARLOCK-CHILD-PROBE","disabled":false,"x":325,"y":1,"width":240,"height":46}],"focus":"","text":"\nApplications\n\nELM-AUTHORITY-FIXTURE\n1\n\nWARLOCK-CHILD-PROBE\n2\nPrevious request remains unconfirmed. Choose a new window action. The last request could not be confirmed."}}
+view-report: id=1 x=0 y=0 {"kind":"surface-report","body":{"publication":"12","lease":"0","buttons":[{"id":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":1,"y":1,"width":80,"height":46},{"id":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:3:application:GTK Application","label":"ELM-AUTHORITY-FIXTURE1","accessibleName":"Restore ELM-AUTHORITY-FIXTURE","disabled":false,"x":83,"y":1,"width":240,"height":46},{"id":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:3:application:warlock-child-probe","label":"WARLOCK-CHILD-PROBE2","accessibleName":"Choose a window from WARLOCK-CHILD-PROBE","disabled":false,"x":325,"y":1,"width":240,"height":46}],"focus":"","text":"\nApplications\n\nELM-AUTHORITY-FIXTURE\n1\n\nWARLOCK-CHILD-PROBE\n2\nPrevious request remains unconfirmed. Choose a new window action. The last request could not be confirmed."}}
+[20:55:07.793278] {Default Queue} wl_pointer#21.enter(63, wl_surface#41, 203.00000000, 24.00000000)
+[20:55:07.793298] {Default Queue} wl_pointer#21.frame()
+[20:55:07.793342] {Default Queue}  -> wp_cursor_shape_device_v1#30.set_shape(63, 1)
+[20:55:07.793347] {Default Queue} wl_pointer#21.motion(370773728, 203.00000000, 24.00000000)
+[20:55:07.793350] {Default Queue} wl_pointer#21.frame()
+[20:55:07.893504] {Default Queue} wl_pointer#21.button(64, 370773829, 272, 1)
+[20:55:07.893523] {Default Queue} wl_pointer#21.frame()
+context-input-report: {"kind":"context-input-report","phase":"press","button":0,"buttons":1,"trusted":true,"id":"bar:group:application:GTK Application"}
+surface-report: origin=bar {"kind":"surface-report","body":{"publication":"12","lease":"0","buttons":[{"id":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":1,"y":1,"width":80,"height":46},{"id":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:3:application:GTK Application","label":"ELM-AUTHORITY-FIXTURE1","accessibleName":"Restore ELM-AUTHORITY-FIXTURE","disabled":false,"x":83,"y":1,"width":240,"height":46},{"id":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:3:application:warlock-child-probe","label":"WARLOCK-CHILD-PROBE2","accessibleName":"Choose a window from WARLOCK-CHILD-PROBE","disabled":false,"x":325,"y":1,"width":240,"height":46}],"focus":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:3:application:GTK Application","text":"\nApplications\n\nELM-AUTHORITY-FIXTURE\n1\n\nWARLOCK-CHILD-PROBE\n2\nPrevious request remains unconfirmed. Choose a new window action. The last request could not be confirmed."}}
+view-report: id=1 x=0 y=0 {"kind":"surface-report","body":{"publication":"12","lease":"0","buttons":[{"id":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":1,"y":1,"width":80,"height":46},{"id":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:3:application:GTK Application","label":"ELM-AUTHORITY-FIXTURE1","accessibleName":"Restore ELM-AUTHORITY-FIXTURE","disabled":false,"x":83,"y":1,"width":240,"height":46},{"id":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:3:application:warlock-child-probe","label":"WARLOCK-CHILD-PROBE2","accessibleName":"Choose a window from WARLOCK-CHILD-PROBE","disabled":false,"x":325,"y":1,"width":240,"height":46}],"focus":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:3:application:GTK Application","text":"\nApplications\n\nELM-AUTHORITY-FIXTURE\n1\n\nWARLOCK-CHILD-PROBE\n2\nPrevious request remains unconfirmed. Choose a new window action. The last request could not be confirmed."}}
+[20:55:07.943815] {Default Queue} wl_pointer#21.button(65, 370773879, 272, 0)
+[20:55:07.943841] {Default Queue} wl_pointer#21.frame()
+context-input-report: {"kind":"context-input-report","phase":"release","button":0,"buttons":0,"trusted":true,"id":"bar:group:application:GTK Application"}
+host-intent-durable: {"schema":2,"effectProtocol":1,"binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"intent":{"request":"3","generation":"3","incarnation":"2","operation":"restore","context":{"lifetime":"9700602597588291204","epoch":"1","output":"1","revision":"3"}},"status":"Pending"}
+frontend-request: {"protocolVersion":3,"kind":"window-effect","effectProtocol":1,"binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"intent":{"request":"3","generation":"3","incarnation":"2","operation":"restore","context":{"lifetime":"9700602597588291204","epoch":"1","output":"1","revision":"3"}}}
+surface-commit: publication=13 lease=0 open=0
+view-commit: popup=0 focus=1 publication=13
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"13","lease":"0","body":{"phase":"Coherent","transaction":"Pending","groups":[{"key":"application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:3:application:GTK Application","title":"ELM-AUTHORITY-FIXTURE","active":false,"expanded":false},{"key":"application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:3:application:warlock-child-probe","title":"WARLOCK-CHILD-PROBE","active":false,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"13","lease":"0","body":{"phase":"Coherent","transaction":"Pending","groups":[{"key":"application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:3:application:GTK Application","title":"ELM-AUTHORITY-FIXTURE","active":false,"expanded":false},{"key":"application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:3:application:warlock-child-probe","title":"WARLOCK-CHILD-PROBE","active":false,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+backend-frame: {"protocolVersion":3,"kind":"effect-outcome","effectProtocol":1,"binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"intent":{"request":"3","generation":"3","incarnation":"2","operation":"restore","context":{"lifetime":"9700602597588291204","epoch":"1","output":"1","revision":"3"}},"status":"Committed","reason":"applied","revision":"4","outputGeneration":"1"}
+backend-frame: {"protocolVersion":3,"kind":"host-refresh"}
+frontend-request: {"protocolVersion":3,"kind":"projection-request","binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"requestId":"5"}
+frontend-request: {"protocolVersion":3,"kind":"geometry-facts-request","geometryProtocol":2,"binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"requestId":"6","minimumWatermark":"5"}
+surface-commit: publication=14 lease=0 open=0
+view-commit: popup=0 focus=1 publication=14
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"14","lease":"0","body":{"phase":"Awaiting","transaction":"Committed","groups":[{"key":"application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:3:application:GTK Application","title":"ELM-AUTHORITY-FIXTURE","active":false,"expanded":false},{"key":"application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:3:application:warlock-child-probe","title":"WARLOCK-CHILD-PROBE","active":false,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-commit: publication=15 lease=0 open=0
+view-commit: popup=0 focus=1 publication=15
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"15","lease":"0","body":{"phase":"Awaiting","transaction":"Committed","groups":[{"key":"application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:3:application:GTK Application","title":"ELM-AUTHORITY-FIXTURE","active":false,"expanded":false},{"key":"application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:3:application:warlock-child-probe","title":"WARLOCK-CHILD-PROBE","active":false,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"15","lease":"0","body":{"phase":"Awaiting","transaction":"Committed","groups":[{"key":"application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:3:application:GTK Application","title":"ELM-AUTHORITY-FIXTURE","active":false,"expanded":false},{"key":"application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:3:application:warlock-child-probe","title":"WARLOCK-CHILD-PROBE","active":false,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+backend-frame: {"protocolVersion":3,"kind":"action-projection","binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"requestId":"5","context":{"lifetime":"9700602597588291204","epoch":"1","output":"1","revision":"4"},"scene":{"revision":"4","focused":"2","windows":[{"incarnation":"3","application":"warlock-child-probe","label":"WARLOCK-CHILD-PROBE","minimized":false,"owner":null,"available":true},{"incarnation":"4","application":"warlock-child-probe","label":"WARLOCK-CHILD-PROBE","minimized":false,"owner":null,"available":true},{"incarnation":"2","application":"GTK Application","label":"ELM-AUTHORITY-FIXTURE","minimized":false,"owner":null,"available":true}]}}
+backend-frame: {"protocolVersion":3,"kind":"geometry-facts","geometryProtocol":2,"binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"requestId":"6","sequence":"6","revision":"4","outputGeneration":"1","facts":{"focused":"2","inputBlocked":false,"windows":[{"incarnation":"3","owner":null,"workspace":"1","workspaceGeneration":"1","monitor":"0","outputOwnershipGeneration":"1","workAreaRevision":"1","workArea":[0,48,800,552],"logicalGeometry":[420,300,320,240],"visualGeometry":[420,300,320,240],"nativeMode":"ordinary","clientMode":"ordinary","minimized":false,"floating":true,"grouped":false,"fixedSize":true,"constrainedSize":true,"geometryEligible":false,"ordinaryPlacementKnown":false,"sizePolicy":{"inputs":null,"maximize":null,"restoreGeometry":null},"capabilities":{"maximize":false,"restoreGeometry":false}},{"incarnation":"4","owner":null,"workspace":"1","workspaceGeneration":"1","monitor":"0","outputOwnershipGeneration":"1","workAreaRevision":"1","workArea":[0,48,800,552],"logicalGeometry":[420,300,320,240],"visualGeometry":[420,300,320,240],"nativeMode":"ordinary","clientMode":"ordinary","minimized":false,"floating":true,"grouped":false,"fixedSize":true,"constrainedSize":true,"geometryEligible":false,"ordinaryPlacementKnown":false,"sizePolicy":{"inputs":null,"maximize":null,"restoreGeometry":null},"capabilities":{"maximize":false,"restoreGeometry":false}},{"incarnation":"2","owner":null,"workspace":"1","workspaceGeneration":"1","monitor":"0","outputOwnershipGeneration":"1","workAreaRevision":"1","workArea":[0,48,800,552],"logicalGeometry":[40,80,320,240],"visualGeometry":[40,80,320,240],"nativeMode":"ordinary","clientMode":"ordinary","minimized":false,"floating":true,"grouped":false,"fixedSize":false,"constrainedSize":true,"geometryEligible":true,"ordinaryPlacementKnown":false,"sizePolicy":{"inputs":{"profile":"wayland-zero-origin-v1","rawMinimum":[108,42],"rawMaximum":[0,0],"layoutMinimum":[108,42],"layoutMaximum":[1.7976931348623157e+308,1.7976931348623157e+308],"geometryOrigin":[0,0],"reservedTopLeft":[1,1],"reservedBottomRight":[1,1],"monitorScale":1},"maximize":{"logical":[0,48,800,552],"visual":null,"real":[1,49,798,550],"configure":[798,550]},"restoreGeometry":null},"capabilities":{"maximize":true,"restoreGeometry":false}}]}}
+surface-commit: publication=16 lease=0 open=0
+view-commit: popup=0 focus=1 publication=16
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"16","lease":"0","body":{"phase":"Coherent","transaction":"Committed","groups":[{"key":"application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:GTK Application","title":"ELM-AUTHORITY-FIXTURE","active":true,"expanded":false},{"key":"application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:warlock-child-probe","title":"WARLOCK-CHILD-PROBE","active":false,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+[20:55:07.963678] {mesa egl surface queue} wl_buffer#45.release()
+[20:55:07.963694] {mesa egl surface queue} wl_callback#37.done(62)
+[20:55:07.964096] {mesa egl surface queue}  -> wl_surface#41.attach(wl_buffer#45, 0, 0)
+[20:55:07.964102] {mesa egl surface queue}  -> wl_surface#41.damage(0, 0, 2147483647, 2147483647)
+[20:55:07.964105] {mesa egl surface queue}  -> wl_surface#41.commit()
+[20:55:07.964108] {mesa egl surface queue}  -> wl_display#1.sync(new id wl_callback#37)
+[20:55:07.964159] {Display Queue} wl_display#1.delete_id(37)
+frontend-request: {"protocolVersion":3,"kind":"projection-request","binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"requestId":"7"}
+frontend-request: {"protocolVersion":3,"kind":"geometry-facts-request","geometryProtocol":2,"binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"requestId":"8","minimumWatermark":"6"}
+surface-commit: publication=17 lease=0 open=0
+view-commit: popup=0 focus=1 publication=17
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"17","lease":"0","body":{"phase":"Awaiting","transaction":"Committed","groups":[{"key":"application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:GTK Application","title":"ELM-AUTHORITY-FIXTURE","active":true,"expanded":false},{"key":"application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:warlock-child-probe","title":"WARLOCK-CHILD-PROBE","active":false,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"17","lease":"0","body":{"phase":"Awaiting","transaction":"Committed","groups":[{"key":"application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:GTK Application","title":"ELM-AUTHORITY-FIXTURE","active":true,"expanded":false},{"key":"application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:warlock-child-probe","title":"WARLOCK-CHILD-PROBE","active":false,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+backend-frame: {"protocolVersion":3,"kind":"action-projection","binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"requestId":"7","context":{"lifetime":"9700602597588291204","epoch":"1","output":"1","revision":"4"},"scene":{"revision":"4","focused":"2","windows":[{"incarnation":"3","application":"warlock-child-probe","label":"WARLOCK-CHILD-PROBE","minimized":false,"owner":null,"available":true},{"incarnation":"4","application":"warlock-child-probe","label":"WARLOCK-CHILD-PROBE","minimized":false,"owner":null,"available":true},{"incarnation":"2","application":"GTK Application","label":"ELM-AUTHORITY-FIXTURE","minimized":false,"owner":null,"available":true}]}}
+backend-frame: {"protocolVersion":3,"kind":"geometry-facts","geometryProtocol":2,"binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"requestId":"8","sequence":"7","revision":"4","outputGeneration":"1","facts":{"focused":"2","inputBlocked":false,"windows":[{"incarnation":"3","owner":null,"workspace":"1","workspaceGeneration":"1","monitor":"0","outputOwnershipGeneration":"1","workAreaRevision":"1","workArea":[0,48,800,552],"logicalGeometry":[420,300,320,240],"visualGeometry":[420,300,320,240],"nativeMode":"ordinary","clientMode":"ordinary","minimized":false,"floating":true,"grouped":false,"fixedSize":true,"constrainedSize":true,"geometryEligible":false,"ordinaryPlacementKnown":false,"sizePolicy":{"inputs":null,"maximize":null,"restoreGeometry":null},"capabilities":{"maximize":false,"restoreGeometry":false}},{"incarnation":"4","owner":null,"workspace":"1","workspaceGeneration":"1","monitor":"0","outputOwnershipGeneration":"1","workAreaRevision":"1","workArea":[0,48,800,552],"logicalGeometry":[420,300,320,240],"visualGeometry":[420,300,320,240],"nativeMode":"ordinary","clientMode":"ordinary","minimized":false,"floating":true,"grouped":false,"fixedSize":true,"constrainedSize":true,"geometryEligible":false,"ordinaryPlacementKnown":false,"sizePolicy":{"inputs":null,"maximize":null,"restoreGeometry":null},"capabilities":{"maximize":false,"restoreGeometry":false}},{"incarnation":"2","owner":null,"workspace":"1","workspaceGeneration":"1","monitor":"0","outputOwnershipGeneration":"1","workAreaRevision":"1","workArea":[0,48,800,552],"logicalGeometry":[40,80,320,240],"visualGeometry":[40,80,320,240],"nativeMode":"ordinary","clientMode":"ordinary","minimized":false,"floating":true,"grouped":false,"fixedSize":false,"constrainedSize":true,"geometryEligible":true,"ordinaryPlacementKnown":false,"sizePolicy":{"inputs":{"profile":"wayland-zero-origin-v1","rawMinimum":[108,42],"rawMaximum":[0,0],"layoutMinimum":[108,42],"layoutMaximum":[1.7976931348623157e+308,1.7976931348623157e+308],"geometryOrigin":[0,0],"reservedTopLeft":[1,1],"reservedBottomRight":[1,1],"monitorScale":1},"maximize":{"logical":[0,48,800,552],"visual":null,"real":[1,49,798,550],"configure":[798,550]},"restoreGeometry":null},"capabilities":{"maximize":true,"restoreGeometry":false}}]}}
+surface-commit: publication=18 lease=0 open=0
+view-commit: popup=0 focus=1 publication=18
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"18","lease":"0","body":{"phase":"Coherent","transaction":"Committed","groups":[{"key":"application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:GTK Application","title":"ELM-AUTHORITY-FIXTURE","active":true,"expanded":false},{"key":"application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:warlock-child-probe","title":"WARLOCK-CHILD-PROBE","active":false,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-commit: publication=19 lease=0 open=0
+view-commit: popup=0 focus=1 publication=19
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"19","lease":"0","body":{"phase":"Coherent","transaction":"Committed","groups":[{"key":"application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:GTK Application","title":"ELM-AUTHORITY-FIXTURE","active":true,"expanded":false},{"key":"application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:warlock-child-probe","title":"WARLOCK-CHILD-PROBE","active":false,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-report: origin=bar {"kind":"surface-report","body":{"publication":"19","lease":"0","buttons":[{"id":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":1,"y":1,"width":80,"height":46},{"id":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:GTK Application","label":"ELM-AUTHORITY-FIXTURE1","accessibleName":"Minimize ELM-AUTHORITY-FIXTURE","disabled":false,"x":83,"y":1,"width":240,"height":46},{"id":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:warlock-child-probe","label":"WARLOCK-CHILD-PROBE2","accessibleName":"Choose a window from WARLOCK-CHILD-PROBE","disabled":false,"x":325,"y":1,"width":240,"height":46}],"focus":"","text":"\nApplications\n\nELM-AUTHORITY-FIXTURE\n1\n\nWARLOCK-CHILD-PROBE\n2\nConnected"}}
+view-report: id=1 x=0 y=0 {"kind":"surface-report","body":{"publication":"19","lease":"0","buttons":[{"id":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":1,"y":1,"width":80,"height":46},{"id":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:GTK Application","label":"ELM-AUTHORITY-FIXTURE1","accessibleName":"Minimize ELM-AUTHORITY-FIXTURE","disabled":false,"x":83,"y":1,"width":240,"height":46},{"id":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:warlock-child-probe","label":"WARLOCK-CHILD-PROBE2","accessibleName":"Choose a window from WARLOCK-CHILD-PROBE","disabled":false,"x":325,"y":1,"width":240,"height":46}],"focus":"","text":"\nApplications\n\nELM-AUTHORITY-FIXTURE\n1\n\nWARLOCK-CHILD-PROBE\n2\nConnected"}}
+[20:55:07.974470] {mesa egl surface queue} wl_callback#37.done(68)
+[20:55:07.974482] {mesa egl surface queue} wl_buffer#48.release()
+[20:55:07.974683] {mesa egl surface queue}  -> wl_surface#41.attach(wl_buffer#48, 0, 0)
+[20:55:07.974693] {mesa egl surface queue}  -> wl_surface#41.damage(0, 0, 2147483647, 2147483647)
+[20:55:07.974696] {mesa egl surface queue}  -> wl_surface#41.commit()
+[20:55:07.974700] {mesa egl surface queue}  -> wl_display#1.sync(new id wl_callback#37)
+[20:55:07.974755] {Display Queue} wl_display#1.delete_id(37)
+[20:55:08.555132] {Default Queue} wl_pointer#21.motion(370774490, 445.00000000, 24.00000000)
+[20:55:08.555145] {Default Queue} wl_pointer#21.frame()
+[20:55:08.655561] {Default Queue} wl_pointer#21.button(73, 370774591, 272, 1)
+[20:55:08.655583] {Default Queue} wl_pointer#21.frame()
+context-input-report: {"kind":"context-input-report","phase":"press","button":0,"buttons":1,"trusted":true,"id":"bar:group:application:warlock-child-probe"}
+surface-report: origin=bar {"kind":"surface-report","body":{"publication":"19","lease":"0","buttons":[{"id":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":1,"y":1,"width":80,"height":46},{"id":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:GTK Application","label":"ELM-AUTHORITY-FIXTURE1","accessibleName":"Minimize ELM-AUTHORITY-FIXTURE","disabled":false,"x":83,"y":1,"width":240,"height":46},{"id":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:warlock-child-probe","label":"WARLOCK-CHILD-PROBE2","accessibleName":"Choose a window from WARLOCK-CHILD-PROBE","disabled":false,"x":325,"y":1,"width":240,"height":46}],"focus":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:warlock-child-probe","text":"\nApplications\n\nELM-AUTHORITY-FIXTURE\n1\n\nWARLOCK-CHILD-PROBE\n2\nConnected"}}
+view-report: id=1 x=0 y=0 {"kind":"surface-report","body":{"publication":"19","lease":"0","buttons":[{"id":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":1,"y":1,"width":80,"height":46},{"id":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:GTK Application","label":"ELM-AUTHORITY-FIXTURE1","accessibleName":"Minimize ELM-AUTHORITY-FIXTURE","disabled":false,"x":83,"y":1,"width":240,"height":46},{"id":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:warlock-child-probe","label":"WARLOCK-CHILD-PROBE2","accessibleName":"Choose a window from WARLOCK-CHILD-PROBE","disabled":false,"x":325,"y":1,"width":240,"height":46}],"focus":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:warlock-child-probe","text":"\nApplications\n\nELM-AUTHORITY-FIXTURE\n1\n\nWARLOCK-CHILD-PROBE\n2\nConnected"}}
+[20:55:08.705849] {Default Queue} wl_pointer#21.button(74, 370774641, 272, 0)
+[20:55:08.705865] {Default Queue} wl_pointer#21.frame()
+context-input-report: {"kind":"context-input-report","phase":"release","button":0,"buttons":0,"trusted":true,"id":"bar:group:application:warlock-child-probe"}
+[20:55:08.708923] {Default Queue}  -> wl_compositor#5.create_surface(new id wl_surface#44)
+[20:55:08.709104] {Default Queue}  -> wl_surface#44.attach(nil, 0, 0)
+[20:55:08.709111] {Default Queue}  -> xdg_wm_base#35.create_positioner(new id xdg_positioner#47)
+[20:55:08.709116] {Default Queue}  -> xdg_positioner#47.set_size(700, 420)
+[20:55:08.709118] {Default Queue}  -> xdg_positioner#47.set_anchor_rect(50, 0, 1, 48)
+[20:55:08.709120] {Default Queue}  -> xdg_positioner#47.set_offset(0, 0)
+[20:55:08.709123] {Default Queue}  -> xdg_positioner#47.set_anchor(6)
+[20:55:08.709137] {Default Queue}  -> xdg_positioner#47.set_gravity(8)
+[20:55:08.709150] {Default Queue}  -> xdg_positioner#47.set_constraint_adjustment(11)
+[20:55:08.709153] {Default Queue}  -> xdg_wm_base#35.get_xdg_surface(new id xdg_surface#49, wl_surface#44)
+[20:55:08.709156] {Default Queue}  -> xdg_surface#49.get_popup(new id xdg_popup#50, nil, xdg_positioner#47)
+[20:55:08.709158] {Default Queue}  -> zwlr_layer_surface_v1#43.get_popup(xdg_popup#50)
+[20:55:08.709161] {Default Queue}  -> xdg_positioner#47.destroy()
+[20:55:08.709167] {Default Queue}  -> xdg_popup#50.grab(wl_seat#22, 73)
+[20:55:08.709170] {Default Queue}  -> wl_surface#44.commit()
+[20:55:08.709173] {Default Queue}  -> wl_display#1.sync(new id wl_callback#51)
+[20:55:08.709596] {Display Queue} wl_display#1.delete_id(47)
+[20:55:08.709620] {Display Queue} wl_display#1.delete_id(51)
+[20:55:08.709625] {Default Queue} xdg_popup#50.configure(50, 48, 700, 420)
+surface-configured: lease=1 rectKnown=0 gdkWidth=700 gdkHeight=420
+[20:55:08.709654] {Default Queue} wl_keyboard#31.enter(78, wl_surface#44, array[0])
+[20:55:08.709664] {Default Queue} wl_keyboard#31.modifiers(79, 0, 0, 0, 0)
+[20:55:08.709682] {Default Queue} wl_data_device#25.selection(nil)
+[20:55:08.709693] {Default Queue} wl_pointer#21.leave(80, wl_surface#41)
+[20:55:08.709700] {Default Queue}  -> wp_cursor_shape_device_v1#30.set_shape(63, 1)
+[20:55:08.709705] {Default Queue} wl_pointer#21.enter(81, wl_surface#44, -0.00781250, -0.00781250)
+[20:55:08.709717] {Default Queue}  -> wp_cursor_shape_device_v1#30.set_shape(81, 1)
+[20:55:08.709722] {Default Queue} wl_pointer#21.frame()
+[20:55:08.709727] {Default Queue} wl_callback#51.done(81)
+[20:55:08.709731] {Default Queue} xdg_surface#49.configure(75)
+[20:55:08.709734] {Default Queue}  -> xdg_surface#49.ack_configure(75)
+[20:55:08.709784] {Default Queue}  -> wp_cursor_shape_device_v1#30.set_shape(81, 1)
+surface-popup-open: lease=1
+surface-commit: publication=20 lease=1 open=1
+view-commit: popup=1 focus=1 publication=20
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"20","lease":"1","body":{"phase":"Coherent","transaction":"Committed","groups":[{"key":"application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:GTK Application","title":"ELM-AUTHORITY-FIXTURE","active":true,"expanded":false},{"key":"application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:warlock-child-probe","title":"WARLOCK-CHILD-PROBE","active":false,"expanded":true}],"menu":null,"mode":"picker","outstanding":0,"registry":0,"picker":{"generation":"1","closeId":"picker-close:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:1","selections":[{"incarnation":"3","title":"WARLOCK-CHILD-PROBE","state":"Open","domId":"picker:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:1:3"},{"incarnation":"4","title":"WARLOCK-CHILD-PROBE","state":"Open","domId":"picker:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:1:4"}]},"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-native-keyboard-focus: lease=1 in=1
+[20:55:08.710148] {Default Queue}  -> xdg_surface#49.set_window_geometry(0, 0, 700, 420)
+[20:55:08.710176] {Default Queue}  -> wl_shm#7.create_pool(new id wl_shm_pool#51, fd 42, 1176000)
+[20:55:08.710182] {Default Queue}  -> wl_shm_pool#51.create_buffer(new id wl_buffer#47, 0, 700, 420, 2800, 0)
+[20:55:08.710778] {Default Queue}  -> wl_surface#44.attach(wl_buffer#47, 0, 0)
+[20:55:08.710782] {Default Queue}  -> wl_surface#44.set_buffer_scale(1)
+[20:55:08.710785] {Default Queue}  -> wl_surface#44.damage(0, 0, 700, 420)
+[20:55:08.710787] {Default Queue}  -> wl_compositor#5.create_region(new id wl_region#52)
+[20:55:08.710789] {Default Queue}  -> wl_region#52.add(0, 0, 700, 420)
+[20:55:08.710791] {Default Queue}  -> wl_surface#44.set_opaque_region(wl_region#52)
+[20:55:08.710796] {Default Queue}  -> wl_region#52.destroy()
+[20:55:08.710805] {Default Queue}  -> wl_surface#44.set_input_region(nil)
+[20:55:08.710810] {Default Queue}  -> wl_surface#44.frame(new id wl_callback#53)
+[20:55:08.710812] {Default Queue}  -> wl_surface#44.commit()
+[20:55:08.711205] {Display Queue} wl_display#1.delete_id(52)
+[20:55:08.711208] {Display Queue} wl_display#1.delete_id(53)
+[20:55:08.711211] {Default Queue} wl_callback#53.done(370774646)
+[20:55:08.711213] {Default Queue} wl_pointer#21.motion(370774646, 395.00000000, -24.00000000)
+[20:55:08.711216] {Default Queue} wl_surface#44.enter(wl_output#19)
+[20:55:08.711219] {Default Queue} wl_buffer#47.release()
+[20:55:08.726850] {Default Queue}  -> wl_surface#44.set_buffer_scale(1)
+[20:55:08.726883] {mesa egl surface queue}  -> zwp_linux_dmabuf_v1#39.get_surface_feedback(new id zwp_linux_dmabuf_feedback_v1#53, wl_surface#44)
+[20:55:08.726894] {mesa egl display queue}  -> wl_display#1.sync(new id wl_callback#52)
+[20:55:08.727048] {Display Queue} wl_display#1.delete_id(52)
+[20:55:08.727052] {mesa egl display queue} wl_callback#52.done(81)
+[20:55:08.727064] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#53.format_table(fd 47, 2960)
+[20:55:08.727075] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#53.main_device(array[8])
+[20:55:08.727078] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#53.tranche_target_device(array[8])
+[20:55:08.727080] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#53.tranche_flags(0)
+[20:55:08.727082] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#53.tranche_formats(array[370])
+[20:55:08.727087] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#53.tranche_done()
+[20:55:08.727091] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#53.done()
+[20:55:08.731304] {Default Queue}  -> wl_surface#44.attach(wl_buffer#47, 0, 0)
+[20:55:08.731324] {Default Queue}  -> wl_surface#44.set_buffer_scale(1)
+[20:55:08.731329] {Default Queue}  -> wl_surface#44.damage(0, 0, 700, 420)
+[20:55:08.731349] {Default Queue}  -> wl_surface#44.frame(new id wl_callback#52)
+[20:55:08.731352] {Default Queue}  -> wl_surface#44.commit()
+[20:55:08.731740] {Default Queue} wl_buffer#47.release()
+surface-presentation-applied: publication=20 lease=1
+surface-focus-issued: publication=20 lease=1
+surface-report: origin=bar {"kind":"surface-report","body":{"publication":"20","lease":"1","buttons":[{"id":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":1,"y":1,"width":80,"height":46},{"id":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:GTK Application","label":"ELM-AUTHORITY-FIXTURE1","accessibleName":"Minimize ELM-AUTHORITY-FIXTURE","disabled":false,"x":83,"y":1,"width":240,"height":46},{"id":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:warlock-child-probe","label":"WARLOCK-CHILD-PROBE2","accessibleName":"Choose a window from WARLOCK-CHILD-PROBE","disabled":false,"x":325,"y":1,"width":240,"height":46}],"focus":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:warlock-child-probe","text":"\nApplications\n\nELM-AUTHORITY-FIXTURE\n1\n\nWARLOCK-CHILD-PROBE\n2\nConnected"}}
+view-report: id=1 x=0 y=0 {"kind":"surface-report","body":{"publication":"20","lease":"1","buttons":[{"id":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":1,"y":1,"width":80,"height":46},{"id":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:GTK Application","label":"ELM-AUTHORITY-FIXTURE1","accessibleName":"Minimize ELM-AUTHORITY-FIXTURE","disabled":false,"x":83,"y":1,"width":240,"height":46},{"id":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:warlock-child-probe","label":"WARLOCK-CHILD-PROBE2","accessibleName":"Choose a window from WARLOCK-CHILD-PROBE","disabled":false,"x":325,"y":1,"width":240,"height":46}],"focus":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:warlock-child-probe","text":"\nApplications\n\nELM-AUTHORITY-FIXTURE\n1\n\nWARLOCK-CHILD-PROBE\n2\nConnected"}}
+[20:55:08.734276] {Display Queue} wl_display#1.delete_id(52)
+[20:55:08.734292] {Default Queue} wl_callback#52.done(370774669)
+[20:55:08.734317] {Default Queue}  -> wl_buffer#47.destroy()
+[20:55:08.734319] {Default Queue}  -> wl_shm_pool#51.destroy()
+[20:55:08.739004] {mesa egl display queue}  -> zwp_linux_dmabuf_v1#39.create_params(new id zwp_linux_buffer_params_v1#52)
+[20:55:08.739026] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#52.add(fd 48, 0, 0, 3072, 16777216, 15)
+[20:55:08.739032] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#52.add(fd 49, 1, 1376256, 384, 16777216, 15)
+[20:55:08.739035] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#52.add(fd 50, 2, 1384448, 64, 16777216, 15)
+[20:55:08.739038] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#52.create_immed(new id wl_buffer#54, 700, 420, 875713089, 0)
+[20:55:08.739042] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#52.destroy()
+[20:55:08.739045] {mesa egl surface queue}  -> wl_surface#44.attach(wl_buffer#54, 0, 0)
+[20:55:08.739048] {mesa egl surface queue}  -> wl_surface#44.damage(0, 0, 2147483647, 2147483647)
+[20:55:08.739051] {mesa egl surface queue}  -> wl_surface#44.commit()
+[20:55:08.739053] {mesa egl surface queue}  -> wl_display#1.sync(new id wl_callback#55)
+[20:55:08.739461] discarded [unknown]#47.[event 0](0 fd, 8 byte)
+[20:55:08.739468] {Display Queue} wl_display#1.delete_id(47)
+[20:55:08.739471] {Display Queue} wl_display#1.delete_id(51)
+[20:55:08.739474] {Display Queue} wl_display#1.delete_id(52)
+[20:55:08.739476] {Display Queue} wl_display#1.delete_id(55)
+surface-focus-applied: publication=20 lease=1
+[20:55:08.759840] {mesa egl surface queue} wl_callback#55.done(81)
+[20:55:08.762762] {mesa egl display queue}  -> zwp_linux_dmabuf_v1#39.create_params(new id zwp_linux_buffer_params_v1#55)
+[20:55:08.762782] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#55.add(fd 48, 0, 0, 3072, 16777216, 15)
+[20:55:08.762788] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#55.add(fd 49, 1, 1376256, 384, 16777216, 15)
+[20:55:08.762792] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#55.add(fd 50, 2, 1384448, 64, 16777216, 15)
+[20:55:08.762794] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#55.create_immed(new id wl_buffer#52, 700, 420, 875713089, 0)
+[20:55:08.762798] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#55.destroy()
+[20:55:08.762801] {mesa egl surface queue}  -> wl_surface#44.attach(wl_buffer#52, 0, 0)
+[20:55:08.762804] {mesa egl surface queue}  -> wl_surface#44.damage(0, 0, 2147483647, 2147483647)
+[20:55:08.762806] {mesa egl surface queue}  -> wl_surface#44.commit()
+[20:55:08.762808] {mesa egl surface queue}  -> wl_display#1.sync(new id wl_callback#51)
+[20:55:08.763074] {Display Queue} wl_display#1.delete_id(55)
+[20:55:08.763078] {Display Queue} wl_display#1.delete_id(51)
+controlled-native-start: subject=3 publication=20 lease=1 epoch=1 physicalReveal=0
+controlled-renderer-initialized: nativeEpoch=1 windowPolicies=0 physicalReveal=0
+[20:55:08.782882] {mesa egl surface queue} wl_callback#51.done(81)
+[20:55:08.782901] {mesa egl surface queue} wl_buffer#54.release()
+[20:55:08.782907] {mesa egl surface queue}  -> wl_buffer#54.destroy()
+[20:55:08.785979] {mesa egl display queue}  -> zwp_linux_dmabuf_v1#39.create_params(new id zwp_linux_buffer_params_v1#51)
+[20:55:08.786003] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#51.add(fd 51, 0, 0, 3072, 16777216, 15)
+[20:55:08.786010] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#51.add(fd 52, 1, 1376256, 384, 16777216, 15)
+[20:55:08.786014] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#51.add(fd 53, 2, 1384448, 64, 16777216, 15)
+[20:55:08.786024] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#51.create_immed(new id wl_buffer#55, 700, 420, 875713089, 0)
+[20:55:08.786039] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#51.destroy()
+[20:55:08.786042] {mesa egl surface queue}  -> wl_surface#44.attach(wl_buffer#55, 0, 0)
+[20:55:08.786045] {mesa egl surface queue}  -> wl_surface#44.damage(0, 0, 2147483647, 2147483647)
+[20:55:08.786049] {mesa egl surface queue}  -> wl_surface#44.commit()
+[20:55:08.786052] {mesa egl surface queue}  -> wl_display#1.sync(new id wl_callback#47)
+[20:55:08.786186] discarded [unknown]#54.[event 0](0 fd, 8 byte)
+[20:55:08.786191] discarded [unknown]#54.[event 0](0 fd, 8 byte)
+[20:55:08.786197] {Display Queue} wl_display#1.delete_id(54)
+[20:55:08.786201] {Display Queue} wl_display#1.delete_id(51)
+[20:55:08.786204] {Display Queue} wl_display#1.delete_id(47)
+native-imported-ownership: [{"job":{"binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"context":{"lifetime":"9700602597588291204","incarnation":"3","output":"1","privacy":"1","rendering":"2","scene":"4","content":"2"},"request":"1","origin":"1","clock":"9700602597588291204","deadline":"370776701045207"},"charge":"311296","records":1,"mappedFDClosed":false,"exportReleased":true,"producerRetired":true,"retirementPending":false}]
+controlled-native-private-status: {"retainedInputs":0,"retainedInputBytes":0,"ticketUnnotified":false,"postedTickets":0,"confirmations":0,"returnedEventsRetained":false,"returnedEventBatches":0,"returnedEventBytes":0,"nativeEffectError":"","returnedBatchCapacity":3195,"returnedByteCapacity":26173440,"dispatchOutputReservation":8192,"transport":{"nativeIssuedThrough":"1","deliveredThrough":"1","pending":0,"capacity":1065},"privatePolicy":{"models":[{"identity":"family:3","active":true,"model":{"scope":{"binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"context":{"lifetime":"9700602597588291204","incarnation":"3","output":"1","privacy":"1","rendering":"2","scene":"4","content":"2"},"observation":"45","clock":"9700602597588291204","now":"370774701045207","present":true,"sourceLive":true,"locked":false,"gpuReady":true},"demand":true,"ready":true,"nextRequest":"2","job":null,"candidate":null,"accepted":{"job":{"binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"context":{"lifetime":"9700602597588291204","incarnation":"3","output":"1","privacy":"1","rendering":"2","scene":"4","content":"2"},"request":"1","origin":"1","clock":"9700602597588291204","deadline":"370776701045207"},"handle":"000000000000000061f5c8f06f711cc5e214b7b39b5748df0000000000000001","owned":true,"signaled":true,"fidelity":"client","coverage":["client"],"expires":"370779766334196"},"known":[{"binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"context":{"lifetime":"9700602597588291204","incarnation":"3","output":"1","privacy":"1","rendering":"2","scene":"4","content":"2"},"request":"1","origin":"1","clock":"9700602597588291204","deadline":"370776701045207"}],"cancelling":[],"retiring":[],"state":"live","image":"elm-shell://preview/000000000000000061f5c8f06f711cc5e214b7b39b5748df0000000000000001"}}],"commands":{"previewProtocol":3,"kind":"preview-proposals","binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"receiverEpoch":"1","entries":[]},"realm":{"controlled":true,"closing":false,"closed":false,"processed":"0","retained":1,"completed":0,"epoch":"1","ingress":{"pending":0,"capacity":1065,"intents":[]},"deferred":0,"deferredIntents":[],"inputBlocked":false},"metadata":[{"identity":"family:3","title":"Client content","application":"Native client","revision":null,"iconKind":"unavailable","hasIcon":false,"visible":true}],"enrollment":[{"identity":"family:3","nativeScoped":true,"minimized":null}],"feedback":[{"identity":"family:3","floor":"1","outcome":null,"label":null,"deadline":null}],"visuals":{"visualProtocol":1,"kind":"native-preview-visual","binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"receiverEpoch":"1","surface":{"surfaceProtocol":2,"publication":"20","lease":"1","mode":"picker","status":"Connected","bar":[{"id":"bar:applications","domId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","ariaLabel":"Open applications","detail":"","enabled":true},{"id":"bar:group:application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:GTK Application","label":"ELM-AUTHORITY-FIXTURE","ariaLabel":"Minimize ELM-AUTHORITY-FIXTURE","detail":"1","enabled":true},{"id":"bar:group:application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:warlock-child-probe","label":"WARLOCK-CHILD-PROBE","ariaLabel":"Choose a window from WARLOCK-CHILD-PROBE","detail":"2","enabled":true}],"popup":[{"id":"control:close","domId":"picker-close:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:1","label":"Close","ariaLabel":"Close window picker","detail":"","enabled":true},{"id":"family:3","domId":"picker:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:1:3","label":"Activate WARLOCK-CHILD-PROBE","ariaLabel":"Activate WARLOCK-CHILD-PROBE","detail":"Open","enabled":true},{"id":"family:4","domId":"picker:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:1:4","label":"Activate WARLOCK-CHILD-PROBE","ariaLabel":"Activate WARLOCK-CHILD-PROBE","detail":"Open","enabled":true}]},"previews":[{"identity":"control:close","visual":{"kind":"hidden"}},{"identity":"family:3","visual":{"kind":"lifecycle","state":"live","title":null,"icon":null,"frame":"000000000000000061f5c8f06f711cc5e214b7b39b5748df0000000000000001","fidelity":"client"}},{"identity":"family:4","visual":{"kind":"hidden"}}]}}}
+[20:55:08.851434] {mesa egl surface queue} wl_callback#47.done(81)
+[20:55:08.851454] {mesa egl surface queue} wl_buffer#52.release()
+[20:55:08.854057] {mesa egl surface queue}  -> wl_surface#44.attach(wl_buffer#52, 0, 0)
+[20:55:08.854073] {mesa egl surface queue}  -> wl_surface#44.damage(0, 0, 2147483647, 2147483647)
+[20:55:08.854077] {mesa egl surface queue}  -> wl_surface#44.commit()
+[20:55:08.854080] {mesa egl surface queue}  -> wl_display#1.sync(new id wl_callback#47)
+[20:55:08.854155] {Display Queue} wl_display#1.delete_id(47)
+controlled-renderer-applied: originalContext=1 currentProjection=1 physicalReveal=0
+surface-presentation-applied: publication=20 lease=1
+native-imported-image: [{"uri":"elm-shell://preview/000000000000000061f5c8f06f711cc5e214b7b39b5748df0000000000000001","complete":true,"naturalWidth":320,"naturalHeight":240,"width":160,"height":120}]
+controlled-native-reader-held: epoch=1 actualGIO=1 firstByte=137 bytes=307528 physicalSettlement=0
+[20:55:08.863919] {mesa egl surface queue} wl_callback#47.done(81)
+[20:55:08.863928] {mesa egl surface queue} wl_buffer#55.release()
+[20:55:08.866310] {mesa egl surface queue}  -> wl_surface#44.attach(wl_buffer#55, 0, 0)
+[20:55:08.866334] {mesa egl surface queue}  -> wl_surface#44.damage(0, 0, 2147483647, 2147483647)
+[20:55:08.866338] {mesa egl surface queue}  -> wl_surface#44.commit()
+[20:55:08.866342] {mesa egl surface queue}  -> wl_display#1.sync(new id wl_callback#47)
+controlled-native-paint-observation: {"nativeEpoch":"1","navigation":"1","publication":"20","lease":"1","gtkFrame":"6","x":50,"y":48,"width":700,"height":420,"opacity":0,"gtkAfterPaint":true,"physicalFrameQualified":false}
+[20:55:08.866601] {Display Queue} wl_display#1.delete_id(47)
+native-client-webkit-snapshot: saved=1 hardwarePresentation=0
+native-client-webkit-snapshot-job: request=1 path=/home/hoskinson/window-integration-qa/elm-gui-effects-1791406496039684984/controlled-webkit-generation-2.png
+[20:55:08.880715] {mesa egl surface queue} wl_callback#47.done(81)
+[20:55:08.880739] {mesa egl surface queue} wl_buffer#52.release()
+[20:55:08.883312] {mesa egl surface queue}  -> wl_surface#44.attach(wl_buffer#52, 0, 0)
+[20:55:08.883333] {mesa egl surface queue}  -> wl_surface#44.damage(0, 0, 2147483647, 2147483647)
+[20:55:08.883347] {mesa egl surface queue}  -> wl_surface#44.commit()
+[20:55:08.883351] {mesa egl surface queue}  -> wl_display#1.sync(new id wl_callback#47)
+[20:55:08.884340] {Display Queue} wl_display#1.delete_id(47)
+[20:55:08.923267] {Default Queue} wl_pointer#21.motion(370774858, 350.00000000, 452.00000000)
+[20:55:08.923287] {Default Queue} wl_pointer#21.frame()
+[20:55:09.023871] {Default Queue} wl_pointer#21.button(82, 370774959, 272, 1)
+[20:55:09.023891] {Default Queue} wl_pointer#21.button(83, 370774959, 272, 0)
+[20:55:09.023904] {Default Queue} wl_pointer#21.leave(84, wl_surface#44)
+[20:55:09.023911] {Default Queue}  -> wp_cursor_shape_device_v1#30.set_shape(81, 1)
+[20:55:09.023916] {Default Queue} wl_pointer#21.frame()
+[20:55:09.023919] {Default Queue} wl_keyboard#31.modifiers(86, 0, 0, 0, 0)
+[20:55:09.023930] {Default Queue} wl_keyboard#31.leave(87, wl_surface#44)
+[20:55:09.023934] {Default Queue} xdg_popup#50.popup_done()
+[20:55:09.023943] {Default Queue}  -> xdg_popup#50.destroy()
+[20:55:09.023946] {Default Queue}  -> xdg_surface#49.destroy()
+[20:55:09.023963] {Default Queue}  -> wl_surface#44.destroy()
+[20:55:09.023983] {mesa egl surface queue}  -> wl_buffer#52.destroy()
+[20:55:09.023986] {mesa egl surface queue}  -> wl_buffer#55.destroy()
+[20:55:09.024017] {mesa egl surface queue}  -> zwp_linux_dmabuf_feedback_v1#53.destroy()
+backend-frame: {"protocolVersion":3,"kind":"host-refresh"}
+surface-native-keyboard-focus: lease=1 in=0
+[20:55:09.024208] {Default Queue}  -> wp_cursor_shape_device_v1#30.set_shape(81, 1)
+[20:55:09.024590] {Default Queue}  -> wl_display#1.sync(new id wl_callback#47)
+[20:55:09.024652] discarded [unknown]#52.[event 0](0 fd, 8 byte)
+[20:55:09.024655] discarded [unknown]#55.[event 0](0 fd, 8 byte)
+[20:55:09.024657] discarded [unknown]#55.[event 0](0 fd, 8 byte)
+[20:55:09.024659] {Display Queue} wl_display#1.delete_id(50)
+[20:55:09.024662] {Display Queue} wl_display#1.delete_id(49)
+[20:55:09.024664] {Display Queue} wl_display#1.delete_id(55)
+[20:55:09.024666] {Display Queue} wl_display#1.delete_id(53)
+[20:55:09.024668] {Display Queue} wl_display#1.delete_id(47)
+[20:55:09.024670] {Default Queue} wl_callback#47.done(87)
+surface-popup-closed: lease=1
+frontend-request: {"protocolVersion":3,"kind":"projection-request","binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"requestId":"9"}
+frontend-request: {"protocolVersion":3,"kind":"geometry-facts-request","geometryProtocol":2,"binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"requestId":"10","minimumWatermark":"7"}
+surface-commit: publication=21 lease=1 open=0
+view-commit: popup=0 focus=1 publication=21
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"21","lease":"1","body":{"phase":"Awaiting","transaction":"Committed","groups":[{"key":"application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:GTK Application","title":"ELM-AUTHORITY-FIXTURE","active":true,"expanded":false},{"key":"application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:warlock-child-probe","title":"WARLOCK-CHILD-PROBE","active":false,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"21","lease":"1","body":{"phase":"Awaiting","transaction":"Committed","groups":[{"key":"application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:GTK Application","title":"ELM-AUTHORITY-FIXTURE","active":true,"expanded":false},{"key":"application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:warlock-child-probe","title":"WARLOCK-CHILD-PROBE","active":false,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"21","lease":"1","body":{"phase":"Awaiting","transaction":"Committed","groups":[{"key":"application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:GTK Application","title":"ELM-AUTHORITY-FIXTURE","active":true,"expanded":false},{"key":"application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:4:application:warlock-child-probe","title":"WARLOCK-CHILD-PROBE","active":false,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+backend-frame: {"protocolVersion":3,"kind":"action-projection","binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"requestId":"9","context":{"lifetime":"9700602597588291204","epoch":"1","output":"1","revision":"5"},"scene":{"revision":"5","focused":null,"windows":[{"incarnation":"3","application":"warlock-child-probe","label":"WARLOCK-CHILD-PROBE","minimized":false,"owner":null,"available":true},{"incarnation":"4","application":"warlock-child-probe","label":"WARLOCK-CHILD-PROBE","minimized":false,"owner":null,"available":true},{"incarnation":"2","application":"GTK Application","label":"ELM-AUTHORITY-FIXTURE","minimized":false,"owner":null,"available":true}]}}
+backend-frame: {"protocolVersion":3,"kind":"geometry-facts","geometryProtocol":2,"binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"requestId":"10","sequence":"8","revision":"5","outputGeneration":"1","facts":{"focused":null,"inputBlocked":false,"windows":[{"incarnation":"3","owner":null,"workspace":"1","workspaceGeneration":"1","monitor":"0","outputOwnershipGeneration":"1","workAreaRevision":"1","workArea":[0,48,800,552],"logicalGeometry":[420,300,320,240],"visualGeometry":[420,300,320,240],"nativeMode":"ordinary","clientMode":"ordinary","minimized":false,"floating":true,"grouped":false,"fixedSize":true,"constrainedSize":true,"geometryEligible":false,"ordinaryPlacementKnown":false,"sizePolicy":{"inputs":null,"maximize":null,"restoreGeometry":null},"capabilities":{"maximize":false,"restoreGeometry":false}},{"incarnation":"4","owner":null,"workspace":"1","workspaceGeneration":"1","monitor":"0","outputOwnershipGeneration":"1","workAreaRevision":"1","workArea":[0,48,800,552],"logicalGeometry":[420,300,320,240],"visualGeometry":[420,300,320,240],"nativeMode":"ordinary","clientMode":"ordinary","minimized":false,"floating":true,"grouped":false,"fixedSize":true,"constrainedSize":true,"geometryEligible":false,"ordinaryPlacementKnown":false,"sizePolicy":{"inputs":null,"maximize":null,"restoreGeometry":null},"capabilities":{"maximize":false,"restoreGeometry":false}},{"incarnation":"2","owner":null,"workspace":"1","workspaceGeneration":"1","monitor":"0","outputOwnershipGeneration":"1","workAreaRevision":"1","workArea":[0,48,800,552],"logicalGeometry":[40,80,320,240],"visualGeometry":[40,80,320,240],"nativeMode":"ordinary","clientMode":"ordinary","minimized":false,"floating":true,"grouped":false,"fixedSize":false,"constrainedSize":true,"geometryEligible":true,"ordinaryPlacementKnown":false,"sizePolicy":{"inputs":{"profile":"wayland-zero-origin-v1","rawMinimum":[108,42],"rawMaximum":[0,0],"layoutMinimum":[108,42],"layoutMaximum":[1.7976931348623157e+308,1.7976931348623157e+308],"geometryOrigin":[0,0],"reservedTopLeft":[1,1],"reservedBottomRight":[1,1],"monitorScale":1},"maximize":{"logical":[0,48,800,552],"visual":null,"real":[1,49,798,550],"configure":[798,550]},"restoreGeometry":null},"capabilities":{"maximize":true,"restoreGeometry":false}}]}}
+surface-commit: publication=22 lease=1 open=0
+view-commit: popup=0 focus=1 publication=22
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"22","lease":"1","body":{"phase":"Coherent","transaction":"Committed","groups":[{"key":"application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:5:application:GTK Application","title":"ELM-AUTHORITY-FIXTURE","active":false,"expanded":false},{"key":"application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:5:application:warlock-child-probe","title":"WARLOCK-CHILD-PROBE","active":false,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-commit: publication=23 lease=1 open=0
+view-commit: popup=0 focus=1 publication=23
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"23","lease":"1","body":{"phase":"Coherent","transaction":"Committed","groups":[{"key":"application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:5:application:GTK Application","title":"ELM-AUTHORITY-FIXTURE","active":false,"expanded":false},{"key":"application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:5:application:warlock-child-probe","title":"WARLOCK-CHILD-PROBE","active":false,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+[20:55:09.035326] discarded [unknown]#52.[event 0](0 fd, 8 byte)
+[20:55:09.035335] discarded [unknown]#52.[event 0](0 fd, 8 byte)
+[20:55:09.035343] {Display Queue} wl_display#1.delete_id(44)
+[20:55:09.035349] {Display Queue} wl_display#1.delete_id(52)
+surface-report: origin=bar {"kind":"surface-report","body":{"publication":"23","lease":"1","buttons":[{"id":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":1,"y":1,"width":80,"height":46},{"id":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:5:application:GTK Application","label":"ELM-AUTHORITY-FIXTURE1","accessibleName":"Activate ELM-AUTHORITY-FIXTURE","disabled":false,"x":83,"y":1,"width":240,"height":46},{"id":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:5:application:warlock-child-probe","label":"WARLOCK-CHILD-PROBE2","accessibleName":"Choose a window from WARLOCK-CHILD-PROBE","disabled":false,"x":325,"y":1,"width":240,"height":46}],"focus":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:5:application:warlock-child-probe","text":"\nApplications\n\nELM-AUTHORITY-FIXTURE\n1\n\nWARLOCK-CHILD-PROBE\n2\nConnected"}}
+view-report: id=1 x=0 y=0 {"kind":"surface-report","body":{"publication":"23","lease":"1","buttons":[{"id":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":1,"y":1,"width":80,"height":46},{"id":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:5:application:GTK Application","label":"ELM-AUTHORITY-FIXTURE1","accessibleName":"Activate ELM-AUTHORITY-FIXTURE","disabled":false,"x":83,"y":1,"width":240,"height":46},{"id":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:5:application:warlock-child-probe","label":"WARLOCK-CHILD-PROBE2","accessibleName":"Choose a window from WARLOCK-CHILD-PROBE","disabled":false,"x":325,"y":1,"width":240,"height":46}],"focus":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:5:application:warlock-child-probe","text":"\nApplications\n\nELM-AUTHORITY-FIXTURE\n1\n\nWARLOCK-CHILD-PROBE\n2\nConnected"}}
+controlled-native-private-status: {"retainedInputs":0,"retainedInputBytes":0,"ticketUnnotified":false,"postedTickets":0,"confirmations":0,"returnedEventsRetained":false,"returnedEventBatches":0,"returnedEventBytes":0,"nativeEffectError":"","returnedBatchCapacity":3195,"returnedByteCapacity":26173440,"dispatchOutputReservation":8192,"transport":{"nativeIssuedThrough":"3","deliveredThrough":"3","pending":0,"capacity":1065},"privatePolicy":{"models":[{"identity":"family:3","active":false,"model":{"scope":{"binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"context":{"lifetime":"9700602597588291204","incarnation":"3","output":"1","privacy":"1","rendering":"2","scene":"4","content":"2"},"observation":"45","clock":"9700602597588291204","now":"370774701045207","present":true,"sourceLive":true,"locked":false,"gpuReady":true},"demand":false,"ready":true,"nextRequest":"2","job":null,"candidate":null,"accepted":null,"known":[{"binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"context":{"lifetime":"9700602597588291204","incarnation":"3","output":"1","privacy":"1","rendering":"2","scene":"4","content":"2"},"request":"1","origin":"1","clock":"9700602597588291204","deadline":"370776701045207"}],"cancelling":[],"retiring":[{"job":{"binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"context":{"lifetime":"9700602597588291204","incarnation":"3","output":"1","privacy":"1","rendering":"2","scene":"4","content":"2"},"request":"1","origin":"1","clock":"9700602597588291204","deadline":"370776701045207"},"handle":"000000000000000061f5c8f06f711cc5e214b7b39b5748df0000000000000001","owned":true,"signaled":true,"fidelity":"client","coverage":["client"],"expires":"370779766334196"}],"state":"unavailable","image":null}}],"commands":{"previewProtocol":3,"kind":"preview-proposals","binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"receiverEpoch":"1","entries":[]},"realm":{"controlled":true,"closing":true,"closed":false,"processed":"0","retained":1,"completed":0,"epoch":"1","ingress":{"pending":0,"capacity":1065,"intents":[]},"deferred":0,"deferredIntents":[],"inputBlocked":false},"metadata":[{"identity":"family:3","title":"Client content","application":"Native client","revision":null,"iconKind":"unavailable","hasIcon":false,"visible":true}],"enrollment":[{"identity":"family:3","nativeScoped":true,"minimized":null}],"feedback":[{"identity":"family:3","floor":"1","outcome":null,"label":null,"deadline":null}],"visuals":{"visualProtocol":1,"kind":"native-preview-visual","binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"receiverEpoch":"1","surface":{"surfaceProtocol":2,"publication":"23","lease":"1","mode":"closed","status":"Connected","bar":[{"id":"bar:applications","domId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","ariaLabel":"Open applications","detail":"","enabled":true},{"id":"bar:group:application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:5:application:GTK Application","label":"ELM-AUTHORITY-FIXTURE","ariaLabel":"Activate ELM-AUTHORITY-FIXTURE","detail":"1","enabled":true},{"id":"bar:group:application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:5:application:warlock-child-probe","label":"WARLOCK-CHILD-PROBE","ariaLabel":"Choose a window from WARLOCK-CHILD-PROBE","detail":"2","enabled":true}],"popup":[]},"previews":[]}}}
+controlled-native-private-status: {"retainedInputs":1,"retainedInputBytes":428,"ticketUnnotified":false,"postedTickets":0,"confirmations":0,"returnedEventsRetained":false,"returnedEventBatches":0,"returnedEventBytes":0,"nativeEffectError":"","returnedBatchCapacity":3195,"returnedByteCapacity":26173440,"dispatchOutputReservation":8192,"transport":{"nativeIssuedThrough":"3","deliveredThrough":"3","pending":0,"capacity":1065},"privatePolicy":{"models":[{"identity":"family:3","active":false,"model":{"scope":{"binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"context":{"lifetime":"9700602597588291204","incarnation":"3","output":"1","privacy":"1","rendering":"2","scene":"4","content":"2"},"observation":"45","clock":"9700602597588291204","now":"370774701045207","present":true,"sourceLive":true,"locked":false,"gpuReady":true},"demand":false,"ready":true,"nextRequest":"2","job":null,"candidate":null,"accepted":null,"known":[{"binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"context":{"lifetime":"9700602597588291204","incarnation":"3","output":"1","privacy":"1","rendering":"2","scene":"4","content":"2"},"request":"1","origin":"1","clock":"9700602597588291204","deadline":"370776701045207"}],"cancelling":[],"retiring":[{"job":{"binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"context":{"lifetime":"9700602597588291204","incarnation":"3","output":"1","privacy":"1","rendering":"2","scene":"4","content":"2"},"request":"1","origin":"1","clock":"9700602597588291204","deadline":"370776701045207"},"handle":"000000000000000061f5c8f06f711cc5e214b7b39b5748df0000000000000001","owned":true,"signaled":true,"fidelity":"client","coverage":["client"],"expires":"370779766334196"}],"state":"unavailable","image":null}}],"commands":{"previewProtocol":3,"kind":"preview-proposals","binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"receiverEpoch":"1","entries":[]},"realm":{"controlled":true,"closing":true,"closed":false,"processed":"0","retained":1,"completed":0,"epoch":"1","ingress":{"pending":0,"capacity":1065,"intents":[]},"deferred":0,"deferredIntents":[],"inputBlocked":false},"metadata":[{"identity":"family:3","title":"Client content","application":"Native client","revision":null,"iconKind":"unavailable","hasIcon":false,"visible":true}],"enrollment":[{"identity":"family:3","nativeScoped":true,"minimized":null}],"feedback":[{"identity":"family:3","floor":"1","outcome":null,"label":null,"deadline":null}],"visuals":{"visualProtocol":1,"kind":"native-preview-visual","binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"receiverEpoch":"1","surface":{"surfaceProtocol":2,"publication":"23","lease":"1","mode":"closed","status":"Connected","bar":[{"id":"bar:applications","domId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","ariaLabel":"Open applications","detail":"","enabled":true},{"id":"bar:group:application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:5:application:GTK Application","label":"ELM-AUTHORITY-FIXTURE","ariaLabel":"Activate ELM-AUTHORITY-FIXTURE","detail":"1","enabled":true},{"id":"bar:group:application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:5:application:warlock-child-probe","label":"WARLOCK-CHILD-PROBE","ariaLabel":"Choose a window from WARLOCK-CHILD-PROBE","detail":"2","enabled":true}],"popup":[]},"previews":[]}}}
+controlled-native-private-status: {"retainedInputs":0,"retainedInputBytes":0,"ticketUnnotified":false,"postedTickets":0,"confirmations":0,"returnedEventsRetained":false,"returnedEventBatches":0,"returnedEventBytes":0,"nativeEffectError":"","returnedBatchCapacity":3195,"returnedByteCapacity":26173440,"dispatchOutputReservation":8192,"transport":{"nativeIssuedThrough":"3","deliveredThrough":"3","pending":0,"capacity":1065},"privatePolicy":{"models":[{"identity":"family:3","active":false,"model":{"scope":{"binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"context":{"lifetime":"9700602597588291204","incarnation":"3","output":"1","privacy":"1","rendering":"2","scene":"4","content":"2"},"observation":"45","clock":"9700602597588291204","now":"370774701045207","present":true,"sourceLive":true,"locked":false,"gpuReady":true},"demand":false,"ready":true,"nextRequest":"2","job":null,"candidate":null,"accepted":null,"known":[{"binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"context":{"lifetime":"9700602597588291204","incarnation":"3","output":"1","privacy":"1","rendering":"2","scene":"4","content":"2"},"request":"1","origin":"1","clock":"9700602597588291204","deadline":"370776701045207"}],"cancelling":[],"retiring":[{"job":{"binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"context":{"lifetime":"9700602597588291204","incarnation":"3","output":"1","privacy":"1","rendering":"2","scene":"4","content":"2"},"request":"1","origin":"1","clock":"9700602597588291204","deadline":"370776701045207"},"handle":"000000000000000061f5c8f06f711cc5e214b7b39b5748df0000000000000001","owned":true,"signaled":true,"fidelity":"client","coverage":["client"],"expires":"370779766334196"}],"state":"unavailable","image":null}}],"commands":{"previewProtocol":3,"kind":"preview-proposals","binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"receiverEpoch":"1","entries":[]},"realm":{"controlled":true,"closing":true,"closed":false,"processed":"0","retained":1,"completed":0,"epoch":"1","ingress":{"pending":0,"capacity":1065,"intents":[]},"deferred":0,"deferredIntents":[],"inputBlocked":false},"metadata":[{"identity":"family:3","title":"Client content","application":"Native client","revision":null,"iconKind":"unavailable","hasIcon":false,"visible":true}],"enrollment":[{"identity":"family:3","nativeScoped":true,"minimized":null}],"feedback":[{"identity":"family:3","floor":"1","outcome":null,"label":null,"deadline":null}],"visuals":{"visualProtocol":1,"kind":"native-preview-visual","binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"receiverEpoch":"1","surface":{"surfaceProtocol":2,"publication":"23","lease":"1","mode":"closed","status":"Connected","bar":[{"id":"bar:applications","domId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","ariaLabel":"Open applications","detail":"","enabled":true},{"id":"bar:group:application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:5:application:GTK Application","label":"ELM-AUTHORITY-FIXTURE","ariaLabel":"Activate ELM-AUTHORITY-FIXTURE","detail":"1","enabled":true},{"id":"bar:group:application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:5:application:warlock-child-probe","label":"WARLOCK-CHILD-PROBE","ariaLabel":"Choose a window from WARLOCK-CHILD-PROBE","detail":"2","enabled":true}],"popup":[]},"previews":[]}}}
+controlled-native-reader-probed: epoch=1 heldRead=-1 heldDenied=1 freshDenied=1 actualGIO=1 physicalSettlement=0
+controlled-native-reader-released: epoch=1 originalCloseCalls=1 nativeGrantReset=0
+native-imported-ownership: [{"job":{"binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"context":{"lifetime":"9700602597588291204","incarnation":"3","output":"1","privacy":"1","rendering":"2","scene":"4","content":"2"},"request":"1","origin":"1","clock":"9700602597588291204","deadline":"370776701045207"},"charge":"0","records":1,"mappedFDClosed":true,"exportReleased":true,"producerRetired":true,"retirementPending":false}]
+controlled-native-private-status: {"retainedInputs":1,"retainedInputBytes":428,"ticketUnnotified":false,"postedTickets":0,"confirmations":0,"returnedEventsRetained":false,"returnedEventBatches":0,"returnedEventBytes":0,"nativeEffectError":"","returnedBatchCapacity":3195,"returnedByteCapacity":26173440,"dispatchOutputReservation":8192,"transport":{"nativeIssuedThrough":"3","deliveredThrough":"3","pending":0,"capacity":1065},"privatePolicy":{"models":[{"identity":"family:3","active":false,"model":{"scope":{"binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"context":{"lifetime":"9700602597588291204","incarnation":"3","output":"1","privacy":"1","rendering":"2","scene":"4","content":"2"},"observation":"45","clock":"9700602597588291204","now":"370774701045207","present":true,"sourceLive":true,"locked":false,"gpuReady":true},"demand":false,"ready":true,"nextRequest":"2","job":null,"candidate":null,"accepted":null,"known":[{"binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"context":{"lifetime":"9700602597588291204","incarnation":"3","output":"1","privacy":"1","rendering":"2","scene":"4","content":"2"},"request":"1","origin":"1","clock":"9700602597588291204","deadline":"370776701045207"}],"cancelling":[],"retiring":[{"job":{"binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"context":{"lifetime":"9700602597588291204","incarnation":"3","output":"1","privacy":"1","rendering":"2","scene":"4","content":"2"},"request":"1","origin":"1","clock":"9700602597588291204","deadline":"370776701045207"},"handle":"000000000000000061f5c8f06f711cc5e214b7b39b5748df0000000000000001","owned":true,"signaled":true,"fidelity":"client","coverage":["client"],"expires":"370779766334196"}],"state":"unavailable","image":null}}],"commands":{"previewProtocol":3,"kind":"preview-proposals","binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"receiverEpoch":"1","entries":[]},"realm":{"controlled":true,"closing":true,"closed":false,"processed":"0","retained":1,"completed":0,"epoch":"1","ingress":{"pending":0,"capacity":1065,"intents":[]},"deferred":0,"deferredIntents":[],"inputBlocked":false},"metadata":[{"identity":"family:3","title":"Client content","application":"Native client","revision":null,"iconKind":"unavailable","hasIcon":false,"visible":true}],"enrollment":[{"identity":"family:3","nativeScoped":true,"minimized":null}],"feedback":[{"identity":"family:3","floor":"1","outcome":null,"label":null,"deadline":null}],"visuals":{"visualProtocol":1,"kind":"native-preview-visual","binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"receiverEpoch":"1","surface":{"surfaceProtocol":2,"publication":"23","lease":"1","mode":"closed","status":"Connected","bar":[{"id":"bar:applications","domId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","ariaLabel":"Open applications","detail":"","enabled":true},{"id":"bar:group:application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:5:application:GTK Application","label":"ELM-AUTHORITY-FIXTURE","ariaLabel":"Activate ELM-AUTHORITY-FIXTURE","detail":"1","enabled":true},{"id":"bar:group:application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:5:application:warlock-child-probe","label":"WARLOCK-CHILD-PROBE","ariaLabel":"Choose a window from WARLOCK-CHILD-PROBE","detail":"2","enabled":true}],"popup":[]},"previews":[]}}}
+controlled-native-private-status: {"retainedInputs":0,"retainedInputBytes":0,"ticketUnnotified":false,"postedTickets":0,"confirmations":0,"returnedEventsRetained":false,"returnedEventBatches":0,"returnedEventBytes":0,"nativeEffectError":"","returnedBatchCapacity":3195,"returnedByteCapacity":26173440,"dispatchOutputReservation":8192,"transport":{"nativeIssuedThrough":"3","deliveredThrough":"3","pending":0,"capacity":1065},"privatePolicy":{"models":[{"identity":"family:3","active":false,"model":{"scope":{"binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"context":{"lifetime":"9700602597588291204","incarnation":"3","output":"1","privacy":"1","rendering":"2","scene":"4","content":"2"},"observation":"45","clock":"9700602597588291204","now":"370774701045207","present":true,"sourceLive":true,"locked":false,"gpuReady":true},"demand":false,"ready":true,"nextRequest":"2","job":null,"candidate":null,"accepted":null,"known":[{"binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"context":{"lifetime":"9700602597588291204","incarnation":"3","output":"1","privacy":"1","rendering":"2","scene":"4","content":"2"},"request":"1","origin":"1","clock":"9700602597588291204","deadline":"370776701045207"}],"cancelling":[],"retiring":[{"job":{"binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"context":{"lifetime":"9700602597588291204","incarnation":"3","output":"1","privacy":"1","rendering":"2","scene":"4","content":"2"},"request":"1","origin":"1","clock":"9700602597588291204","deadline":"370776701045207"},"handle":"000000000000000061f5c8f06f711cc5e214b7b39b5748df0000000000000001","owned":true,"signaled":true,"fidelity":"client","coverage":["client"],"expires":"370779766334196"}],"state":"unavailable","image":null}}],"commands":{"previewProtocol":3,"kind":"preview-proposals","binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"receiverEpoch":"1","entries":[]},"realm":{"controlled":true,"closing":true,"closed":false,"processed":"0","retained":1,"completed":0,"epoch":"1","ingress":{"pending":0,"capacity":1065,"intents":[]},"deferred":0,"deferredIntents":[],"inputBlocked":false},"metadata":[{"identity":"family:3","title":"Client content","application":"Native client","revision":null,"iconKind":"unavailable","hasIcon":false,"visible":true}],"enrollment":[{"identity":"family:3","nativeScoped":true,"minimized":null}],"feedback":[{"identity":"family:3","floor":"1","outcome":null,"label":null,"deadline":null}],"visuals":{"visualProtocol":1,"kind":"native-preview-visual","binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"receiverEpoch":"1","surface":{"surfaceProtocol":2,"publication":"23","lease":"1","mode":"closed","status":"Connected","bar":[{"id":"bar:applications","domId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","ariaLabel":"Open applications","detail":"","enabled":true},{"id":"bar:group:application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:5:application:GTK Application","label":"ELM-AUTHORITY-FIXTURE","ariaLabel":"Activate ELM-AUTHORITY-FIXTURE","detail":"1","enabled":true},{"id":"bar:group:application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:5:application:warlock-child-probe","label":"WARLOCK-CHILD-PROBE","ariaLabel":"Choose a window from WARLOCK-CHILD-PROBE","detail":"2","enabled":true}],"popup":[]},"previews":[]}}}
+controlled-native-private-status: {"retainedInputs":1,"retainedInputBytes":779,"ticketUnnotified":false,"postedTickets":0,"confirmations":0,"returnedEventsRetained":false,"returnedEventBatches":0,"returnedEventBytes":0,"nativeEffectError":"","returnedBatchCapacity":3195,"returnedByteCapacity":26173440,"dispatchOutputReservation":8192,"transport":{"nativeIssuedThrough":"3","deliveredThrough":"3","pending":0,"capacity":1065},"privatePolicy":{"models":[{"identity":"family:3","active":false,"model":{"scope":{"binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"context":{"lifetime":"9700602597588291204","incarnation":"3","output":"1","privacy":"1","rendering":"2","scene":"4","content":"2"},"observation":"45","clock":"9700602597588291204","now":"370774701045207","present":true,"sourceLive":true,"locked":false,"gpuReady":true},"demand":false,"ready":true,"nextRequest":"2","job":null,"candidate":null,"accepted":null,"known":[{"binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"context":{"lifetime":"9700602597588291204","incarnation":"3","output":"1","privacy":"1","rendering":"2","scene":"4","content":"2"},"request":"1","origin":"1","clock":"9700602597588291204","deadline":"370776701045207"}],"cancelling":[],"retiring":[{"job":{"binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"context":{"lifetime":"9700602597588291204","incarnation":"3","output":"1","privacy":"1","rendering":"2","scene":"4","content":"2"},"request":"1","origin":"1","clock":"9700602597588291204","deadline":"370776701045207"},"handle":"000000000000000061f5c8f06f711cc5e214b7b39b5748df0000000000000001","owned":true,"signaled":true,"fidelity":"client","coverage":["client"],"expires":"370779766334196"}],"state":"unavailable","image":null}}],"commands":{"previewProtocol":3,"kind":"preview-proposals","binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"receiverEpoch":"1","entries":[]},"realm":{"controlled":true,"closing":true,"closed":false,"processed":"0","retained":1,"completed":0,"epoch":"1","ingress":{"pending":0,"capacity":1065,"intents":[]},"deferred":0,"deferredIntents":[],"inputBlocked":false},"metadata":[{"identity":"family:3","title":"Client content","application":"Native client","revision":null,"iconKind":"unavailable","hasIcon":false,"visible":true}],"enrollment":[{"identity":"family:3","nativeScoped":true,"minimized":null}],"feedback":[{"identity":"family:3","floor":"1","outcome":null,"label":null,"deadline":null}],"visuals":{"visualProtocol":1,"kind":"native-preview-visual","binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"receiverEpoch":"1","surface":{"surfaceProtocol":2,"publication":"23","lease":"1","mode":"closed","status":"Connected","bar":[{"id":"bar:applications","domId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","ariaLabel":"Open applications","detail":"","enabled":true},{"id":"bar:group:application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:5:application:GTK Application","label":"ELM-AUTHORITY-FIXTURE","ariaLabel":"Activate ELM-AUTHORITY-FIXTURE","detail":"1","enabled":true},{"id":"bar:group:application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:5:application:warlock-child-probe","label":"WARLOCK-CHILD-PROBE","ariaLabel":"Choose a window from WARLOCK-CHILD-PROBE","detail":"2","enabled":true}],"popup":[]},"previews":[]}}}
+native-imported-ownership: []
+controlled-native-private-status: {"retainedInputs":0,"retainedInputBytes":0,"ticketUnnotified":false,"postedTickets":0,"confirmations":0,"returnedEventsRetained":false,"returnedEventBatches":0,"returnedEventBytes":0,"nativeEffectError":"","returnedBatchCapacity":3195,"returnedByteCapacity":26173440,"dispatchOutputReservation":8192,"transport":{"nativeIssuedThrough":"6","deliveredThrough":"6","pending":0,"capacity":1065},"privatePolicy":{"models":[],"commands":[],"realm":{"controlled":true,"closing":true,"closed":false,"processed":"1","retained":0,"completed":1,"epoch":"1","ingress":{"pending":0,"capacity":1065,"intents":[]},"deferred":0,"deferredIntents":[],"inputBlocked":false},"metadata":[],"enrollment":[],"feedback":[],"visuals":{"visualProtocol":1,"kind":"native-preview-visual","binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"receiverEpoch":"1","surface":{"surfaceProtocol":2,"publication":"23","lease":"1","mode":"closed","status":"Connected","bar":[{"id":"bar:applications","domId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","ariaLabel":"Open applications","detail":"","enabled":true},{"id":"bar:group:application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:5:application:GTK Application","label":"ELM-AUTHORITY-FIXTURE","ariaLabel":"Activate ELM-AUTHORITY-FIXTURE","detail":"1","enabled":true},{"id":"bar:group:application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:5:application:warlock-child-probe","label":"WARLOCK-CHILD-PROBE","ariaLabel":"Choose a window from WARLOCK-CHILD-PROBE","detail":"2","enabled":true}],"popup":[]},"previews":[]}}}
+controlled-native-private-status: {"retainedInputs":0,"retainedInputBytes":0,"ticketUnnotified":false,"postedTickets":0,"confirmations":0,"returnedEventsRetained":false,"returnedEventBatches":0,"returnedEventBytes":0,"nativeEffectError":"","returnedBatchCapacity":3195,"returnedByteCapacity":26173440,"dispatchOutputReservation":8192,"transport":{"nativeIssuedThrough":"6","deliveredThrough":"6","pending":0,"capacity":1065},"privatePolicy":{"models":[],"commands":[],"realm":{"controlled":true,"closing":true,"closed":true,"processed":"1","retained":0,"completed":1,"epoch":"1","ingress":{"pending":0,"capacity":1065,"intents":[]},"deferred":0,"deferredIntents":[],"inputBlocked":false},"metadata":[],"enrollment":[],"feedback":[],"visuals":{"visualProtocol":1,"kind":"native-preview-visual","binding":{"lifetime":"9700602597588291204","session":"4","frontend":"1"},"receiverEpoch":"1","surface":{"surfaceProtocol":2,"publication":"23","lease":"1","mode":"closed","status":"Connected","bar":[{"id":"bar:applications","domId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","ariaLabel":"Open applications","detail":"","enabled":true},{"id":"bar:group:application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:5:application:GTK Application","label":"ELM-AUTHORITY-FIXTURE","ariaLabel":"Activate ELM-AUTHORITY-FIXTURE","detail":"1","enabled":true},{"id":"bar:group:application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:5:application:warlock-child-probe","label":"WARLOCK-CHILD-PROBE","ariaLabel":"Choose a window from WARLOCK-CHILD-PROBE","detail":"2","enabled":true}],"popup":[]},"previews":[]}}}
+controlled-native-realm-retired: epoch=1 samePolicyRetained=1 strictNativeClose=1 rendererGrantReused=0
+view-process-policy: related=1 distinct-manager=1
+controlled-native-replacement-admission: retiredEpoch=1 pendingPopup=0 publication=23 lease=1 freshDOMRequired=1
+controlled-renderer-context-replaced: retiredEpoch=1 nativeGrantReset=0 navigationReset=0 snapshotOrdinalReset=0
+[20:55:09.543983] {mesa egl surface queue} wl_callback#37.done(68)
+[20:55:09.543999] {mesa egl surface queue} wl_buffer#45.release()
+[20:55:09.544201] {mesa egl surface queue}  -> wl_surface#41.attach(wl_buffer#45, 0, 0)
+[20:55:09.544208] {mesa egl surface queue}  -> wl_surface#41.damage(0, 0, 2147483647, 2147483647)
+[20:55:09.544211] {mesa egl surface queue}  -> wl_surface#41.commit()
+[20:55:09.544215] {mesa egl surface queue}  -> wl_display#1.sync(new id wl_callback#37)
+[20:55:09.544267] {Display Queue} wl_display#1.delete_id(37)
+backend-frame: {"protocolVersion":3,"kind":"host-refresh"}
+frontend-request: {"protocolVersion":3,"kind":"projection-request","binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"requestId":"11"}
+frontend-request: {"protocolVersion":3,"kind":"geometry-facts-request","geometryProtocol":2,"binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"requestId":"12","minimumWatermark":"8"}
+surface-commit: publication=24 lease=1 open=0
+view-commit: popup=0 focus=1 publication=24
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"24","lease":"1","body":{"phase":"Awaiting","transaction":"Committed","groups":[{"key":"application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:5:application:GTK Application","title":"ELM-AUTHORITY-FIXTURE","active":false,"expanded":false},{"key":"application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:5:application:warlock-child-probe","title":"WARLOCK-CHILD-PROBE","active":false,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"24","lease":"1","body":{"phase":"Awaiting","transaction":"Committed","groups":[{"key":"application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:5:application:GTK Application","title":"ELM-AUTHORITY-FIXTURE","active":false,"expanded":false},{"key":"application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:5:application:warlock-child-probe","title":"WARLOCK-CHILD-PROBE","active":false,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+backend-frame: {"protocolVersion":3,"kind":"action-projection","binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"requestId":"11","context":{"lifetime":"9700602597588291204","epoch":"1","output":"1","revision":"6"},"scene":{"revision":"6","focused":"2","windows":[{"incarnation":"3","application":"warlock-child-probe","label":"WARLOCK-CHILD-PROBE","minimized":false,"owner":null,"available":true},{"incarnation":"4","application":"warlock-child-probe","label":"WARLOCK-CHILD-PROBE","minimized":false,"owner":null,"available":true},{"incarnation":"2","application":"GTK Application","label":"ELM-AUTHORITY-FIXTURE","minimized":false,"owner":null,"available":true}]}}
+surface-commit: publication=25 lease=1 open=0
+view-commit: popup=0 focus=1 publication=25
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"25","lease":"1","body":{"phase":"Coherent","transaction":"Committed","groups":[{"key":"application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:6:application:GTK Application","title":"ELM-AUTHORITY-FIXTURE","active":true,"expanded":false},{"key":"application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:6:application:warlock-child-probe","title":"WARLOCK-CHILD-PROBE","active":false,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+backend-frame: {"protocolVersion":3,"kind":"geometry-facts","geometryProtocol":2,"binding":{"lifetime":"9700602597588291204","session":"5","frontend":"1"},"requestId":"12","sequence":"9","revision":"6","outputGeneration":"1","facts":{"focused":"2","inputBlocked":false,"windows":[{"incarnation":"3","owner":null,"workspace":"1","workspaceGeneration":"1","monitor":"0","outputOwnershipGeneration":"1","workAreaRevision":"1","workArea":[0,48,800,552],"logicalGeometry":[420,300,320,240],"visualGeometry":[420,300,320,240],"nativeMode":"ordinary","clientMode":"ordinary","minimized":false,"floating":true,"grouped":false,"fixedSize":true,"constrainedSize":true,"geometryEligible":false,"ordinaryPlacementKnown":false,"sizePolicy":{"inputs":null,"maximize":null,"restoreGeometry":null},"capabilities":{"maximize":false,"restoreGeometry":false}},{"incarnation":"4","owner":null,"workspace":"1","workspaceGeneration":"1","monitor":"0","outputOwnershipGeneration":"1","workAreaRevision":"1","workArea":[0,48,800,552],"logicalGeometry":[420,300,320,240],"visualGeometry":[420,300,320,240],"nativeMode":"ordinary","clientMode":"ordinary","minimized":false,"floating":true,"grouped":false,"fixedSize":true,"constrainedSize":true,"geometryEligible":false,"ordinaryPlacementKnown":false,"sizePolicy":{"inputs":null,"maximize":null,"restoreGeometry":null},"capabilities":{"maximize":false,"restoreGeometry":false}},{"incarnation":"2","owner":null,"workspace":"1","workspaceGeneration":"1","monitor":"0","outputOwnershipGeneration":"1","workAreaRevision":"1","workArea":[0,48,800,552],"logicalGeometry":[40,80,320,240],"visualGeometry":[40,80,320,240],"nativeMode":"ordinary","clientMode":"ordinary","minimized":false,"floating":true,"grouped":false,"fixedSize":false,"constrainedSize":true,"geometryEligible":true,"ordinaryPlacementKnown":false,"sizePolicy":{"inputs":{"profile":"wayland-zero-origin-v1","rawMinimum":[108,42],"rawMaximum":[0,0],"layoutMinimum":[108,42],"layoutMaximum":[1.7976931348623157e+308,1.7976931348623157e+308],"geometryOrigin":[0,0],"reservedTopLeft":[1,1],"reservedBottomRight":[1,1],"monitorScale":1},"maximize":{"logical":[0,48,800,552],"visual":null,"real":[1,49,798,550],"configure":[798,550]},"restoreGeometry":null},"capabilities":{"maximize":true,"restoreGeometry":false}}]}}
+surface-commit: publication=26 lease=1 open=0
+view-commit: popup=0 focus=1 publication=26
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"26","lease":"1","body":{"phase":"Coherent","transaction":"Committed","groups":[{"key":"application:GTK Application","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:6:application:GTK Application","title":"ELM-AUTHORITY-FIXTURE","active":true,"expanded":false},{"key":"application:warlock-child-probe","domId":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:6:application:warlock-child-probe","title":"WARLOCK-CHILD-PROBE","active":false,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-report: origin=bar {"kind":"surface-report","body":{"publication":"26","lease":"1","buttons":[{"id":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":1,"y":1,"width":80,"height":46},{"id":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:6:application:GTK Application","label":"ELM-AUTHORITY-FIXTURE1","accessibleName":"Minimize ELM-AUTHORITY-FIXTURE","disabled":false,"x":83,"y":1,"width":240,"height":46},{"id":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:6:application:warlock-child-probe","label":"WARLOCK-CHILD-PROBE2","accessibleName":"Choose a window from WARLOCK-CHILD-PROBE","disabled":false,"x":325,"y":1,"width":240,"height":46}],"focus":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:6:application:warlock-child-probe","text":"\nApplications\n\nELM-AUTHORITY-FIXTURE\n1\n\nWARLOCK-CHILD-PROBE\n2\nConnected"}}
+view-report: id=1 x=0 y=0 {"kind":"surface-report","body":{"publication":"26","lease":"1","buttons":[{"id":"applications:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":1,"y":1,"width":80,"height":46},{"id":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:6:application:GTK Application","label":"ELM-AUTHORITY-FIXTURE1","accessibleName":"Minimize ELM-AUTHORITY-FIXTURE","disabled":false,"x":83,"y":1,"width":240,"height":46},{"id":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:6:application:warlock-child-probe","label":"WARLOCK-CHILD-PROBE2","accessibleName":"Choose a window from WARLOCK-CHILD-PROBE","disabled":false,"x":325,"y":1,"width":240,"height":46}],"focus":"group:{\"lifetime\":\"9700602597588291204\",\"session\":\"5\",\"frontend\":\"1\"}:1:6:application:warlock-child-probe","text":"\nApplications\n\nELM-AUTHORITY-FIXTURE\n1\n\nWARLOCK-CHILD-PROBE\n2\nConnected"}}
+Web process terminated: 0
+Web process terminated: 0
+Web process terminated: 0
+[20:55:10.206963] {Default Queue}  -> wl_display#1.sync(new id wl_callback#52)
+[20:55:10.207114] {Display Queue} wl_display#1.delete_id(52)
+[20:55:10.207119] {Default Queue} wl_callback#52.done(97)
+backend-exit: waited=1 normal=1 code=0
+native-recovery-ready: views=1 backend-normal=1
+recovery-control: id=1 x=195 y=4 w=84 h=40
+[20:55:10.218418] {mesa egl surface queue} wl_callback#37.done(87)
+[20:55:10.218425] {mesa egl surface queue} wl_buffer#48.release()
+[20:55:10.218899] {Default Queue}  -> wl_surface#41.set_input_region(nil)
+[20:55:10.220367] {mesa egl surface queue}  -> wl_surface#41.attach(wl_buffer#48, 0, 0)
+[20:55:10.220391] {mesa egl surface queue}  -> wl_surface#41.damage(0, 0, 2147483647, 2147483647)
+[20:55:10.220395] {mesa egl surface queue}  -> wl_surface#41.commit()
+[20:55:10.220399] {mesa egl surface queue}  -> wl_display#1.sync(new id wl_callback#37)
+[20:55:10.220456] {Display Queue} wl_display#1.delete_id(37)
+[20:55:10.681192] {Default Queue}  -> wl_display#1.sync(new id wl_callback#52)
+[20:55:10.681282] {Display Queue} wl_display#1.delete_id(52)
+[20:55:10.681291] {Default Queue} wl_callback#52.done(101)
+[20:55:10.682915] {Default Queue}  -> zwlr_layer_surface_v1#43.destroy()
+[20:55:10.682940] {Default Queue}  -> wl_surface#41.destroy()
+[20:55:10.682962] {mesa egl surface queue}  -> wl_buffer#45.destroy()
+[20:55:10.682978] {mesa egl surface queue}  -> wl_buffer#48.destroy()
+[20:55:10.682981] {mesa egl surface queue}  -> zwp_linux_dmabuf_feedback_v1#46.destroy()
+view-retired: id=1
+[20:55:10.685066] discarded [unknown]#45.[event 0](0 fd, 8 byte)
+[20:55:10.685078] discarded [unknown]#45.[event 0](0 fd, 8 byte)
+[20:55:10.685081] discarded [unknown]#48.[event 0](0 fd, 8 byte)
+[20:55:10.685085] {Display Queue} wl_display#1.delete_id(43)
+[20:55:10.685090] {Display Queue} wl_display#1.delete_id(45)
+[20:55:10.685093] {Display Queue} wl_display#1.delete_id(46)
+[20:55:10.705555] discarded [unknown]#48.[event 0](0 fd, 8 byte)
+[20:55:10.705566] discarded [unknown]#48.[event 0](0 fd, 8 byte)
+[20:55:10.705580] {Display Queue} wl_display#1.delete_id(41)
+[20:55:10.705585] {Display Queue} wl_display#1.delete_id(48)
+shared-host-exit: failure=1 rendered=1

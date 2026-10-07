@@ -1,0 +1,277 @@
+{
+  "passed": true,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v204/qa/native-1791405433168520892/report.json": "c44359c76eda91c896cc685f07ced834c647798f6bcab7da847d7f47da0f6006",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v204/qa/preflight.json": "d0b121978e8833ad03da40aab848b8f80442abe5cfc7540d4582a812e1e8cc26",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v204/qa/native-1791405433168520892/native-evidence/generation-1.log": "9b38c95bb45fcca1512da17b4ef8cb5d805b39cbabfe90f719e49a3ac137bac8",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v204/qa/native-1791405433168520892/native-evidence/generation-2.log": "1ca19eb3acfeab125ff2b2147b19fb84519cdde912d8254a384a47dd69ec39e5",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-combined-recovery-model-v1/spec/combined_recovery.qnt": "7a92c229b3918db01916fa8870cef5d353cac09e3909d6bcfb8c2c424f0023cb",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-combined-recovery-model-v1/qa/couple_native204.py": "09d12f40ba5a77b5a471a863d3e1f9b264803948ee75e4bd972ae90b2a849ede",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-combined-recovery-model-v1/qa/model-1791405602389564048/report.json": "7d6d42b9694c687fffe2cb5ff564268bbc213f05bdf332a732d8806d1aa99398"
+  },
+  "quint": {
+    "path": "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+    "sha256": "bd6e9400f6358a8a69d80eb636eb62f59f993039868a7be9719f76ba74191b4e"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "concrete_combined.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "concrete_combined.qnt",
+        "--main=concrete_combined",
+        "--backend=typescript",
+        "--match=^(actualCapturedReader|actualClosingReader|actualPendingNativeCommit|actualWindowUnknown|actualRendererFailureBlockedRecovery|actualReaderClose|actualStrictNativeClose|actualGTKRecovery|actualExplicitRestart|actualFreshCoherentUnknown|actualHistoricalUnknownAfterRetirement|actualExplicitAdvancedCommand|actualFreshOwnNativeCapture|actualFreshNativeClosePreservesHistory)$",
+        "--seed=2040049",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-combined-recovery-model-v1/qa/coupled-1791406650146214681/coupled-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "observations": [
+    {
+      "name": "actualCapturedReader",
+      "events": [],
+      "condition": "s.reader and not(s.admitted)",
+      "nativeCheck": "combinedPreviewKnownActualNativeCustody-1"
+    },
+    {
+      "name": "actualClosingReader",
+      "events": [
+        "ClosePreview"
+      ],
+      "condition": "s.reader and s.closing and not(s.closed)",
+      "nativeCheck": "combinedActualReaderBlocksRetirementBeforeCommand-1"
+    },
+    {
+      "name": "actualPendingNativeCommit",
+      "events": [
+        "ClosePreview",
+        "AdmitWindow",
+        "NativeWindowCommit"
+      ],
+      "condition": "s.admitted and s.nativeWindowCommitted and not(s.oldUnknown)",
+      "nativeCheck": "actualNativeCommitPrecedesLostMinimizeOrRestoreReceipt"
+    },
+    {
+      "name": "actualWindowUnknown",
+      "events": [
+        "ClosePreview",
+        "AdmitWindow",
+        "NativeWindowCommit",
+        "LoseReceipt"
+      ],
+      "condition": "s.oldUnknown and s.historyUnknown and s.reader",
+      "nativeCheck": "lostBrokerReceiptShowsUnknownInExistingUI"
+    },
+    {
+      "name": "actualRendererFailureBlockedRecovery",
+      "events": [
+        "ClosePreview",
+        "AdmitWindow",
+        "NativeWindowCommit",
+        "LoseReceipt",
+        "RendererFailure"
+      ],
+      "condition": "s.rendererFailed and s.reader and not(s.recovery)",
+      "nativeCheck": "combinedRendererDeathCannotSettleHeldNativeReader"
+    },
+    {
+      "name": "actualReaderClose",
+      "events": [
+        "ClosePreview",
+        "AdmitWindow",
+        "NativeWindowCommit",
+        "LoseReceipt",
+        "RendererFailure",
+        "CloseReader"
+      ],
+      "condition": "not(s.reader or s.closed)",
+      "nativeCheck": "combinedNativeReaderAndStrictClosePrecedeGTKRecovery"
+    },
+    {
+      "name": "actualStrictNativeClose",
+      "events": [
+        "ClosePreview",
+        "AdmitWindow",
+        "NativeWindowCommit",
+        "LoseReceipt",
+        "RendererFailure",
+        "CloseReader",
+        "NativeStrictClose"
+      ],
+      "condition": "s.closed and s.oldUnknown and not(s.recovery)",
+      "nativeCheck": "combinedOriginalStrictNativeAndHostCustodyClose-1"
+    },
+    {
+      "name": "actualGTKRecovery",
+      "events": [
+        "ClosePreview",
+        "AdmitWindow",
+        "NativeWindowCommit",
+        "LoseReceipt",
+        "RendererFailure",
+        "CloseReader",
+        "NativeStrictClose",
+        "Recovery"
+      ],
+      "condition": "s.recovery and s.closed and s.oldUnknown",
+      "nativeCheck": "combinedNativeReaderAndStrictClosePrecedeGTKRecovery"
+    },
+    {
+      "name": "actualExplicitRestart",
+      "events": [
+        "ClosePreview",
+        "AdmitWindow",
+        "NativeWindowCommit",
+        "LoseReceipt",
+        "RendererFailure",
+        "CloseReader",
+        "NativeStrictClose",
+        "Recovery",
+        "Restart"
+      ],
+      "condition": "s.host==2 and s.lifetime==1 and s.oldUnknown",
+      "nativeCheck": "nativeRestartButtonEmitsExplicitRestartExit"
+    },
+    {
+      "name": "actualFreshCoherentUnknown",
+      "events": [
+        "ClosePreview",
+        "AdmitWindow",
+        "NativeWindowCommit",
+        "LoseReceipt",
+        "RendererFailure",
+        "CloseReader",
+        "NativeStrictClose",
+        "Recovery",
+        "Restart",
+        "Scene"
+      ],
+      "condition": "s.scene and s.oldUnknown and s.replays==0",
+      "nativeCheck": "freshCoherentSnapshotPrecedesNewEffects"
+    },
+    {
+      "name": "actualHistoricalUnknownAfterRetirement",
+      "events": [
+        "ClosePreview",
+        "AdmitWindow",
+        "NativeWindowCommit",
+        "LoseReceipt",
+        "RendererFailure",
+        "CloseReader",
+        "NativeStrictClose",
+        "Recovery",
+        "Restart",
+        "Scene",
+        "WindowBindingRetired",
+        "ReleaseReservation"
+      ],
+      "condition": "s.reservationReleased and s.historyUnknown and s.oldUnknown",
+      "nativeCheck": "durableReservationReleasePreservesExactHistoricalUnknown"
+    },
+    {
+      "name": "actualExplicitAdvancedCommand",
+      "events": [
+        "ClosePreview",
+        "AdmitWindow",
+        "NativeWindowCommit",
+        "LoseReceipt",
+        "RendererFailure",
+        "CloseReader",
+        "NativeStrictClose",
+        "Recovery",
+        "Restart",
+        "Scene",
+        "WindowBindingRetired",
+        "ReleaseReservation",
+        "ExplicitNewCommand"
+      ],
+      "condition": "s.newCommand and s.request==2 and s.generation==2 and s.historyUnknown",
+      "nativeCheck": "freshExplicitActionUsesCurrentStateAndAdvancedIdentity"
+    },
+    {
+      "name": "actualFreshOwnNativeCapture",
+      "events": [
+        "ClosePreview",
+        "AdmitWindow",
+        "NativeWindowCommit",
+        "LoseReceipt",
+        "RendererFailure",
+        "CloseReader",
+        "NativeStrictClose",
+        "Recovery",
+        "Restart",
+        "Scene",
+        "WindowBindingRetired",
+        "ReleaseReservation",
+        "ExplicitNewCommand",
+        "FreshCapture"
+      ],
+      "condition": "s.freshPreview and s.freshOwner==2 and s.lifetime==1 and s.historyUnknown",
+      "nativeCheck": "combinedFreshHostPreviewUsesNewNativeOwnerSameCompositor"
+    },
+    {
+      "name": "actualFreshNativeClosePreservesHistory",
+      "events": [
+        "ClosePreview",
+        "AdmitWindow",
+        "NativeWindowCommit",
+        "LoseReceipt",
+        "RendererFailure",
+        "CloseReader",
+        "NativeStrictClose",
+        "Recovery",
+        "Restart",
+        "Scene",
+        "WindowBindingRetired",
+        "ReleaseReservation",
+        "ExplicitNewCommand",
+        "FreshCapture",
+        "CloseFreshReader",
+        "FreshStrictClose"
+      ],
+      "condition": "s.freshClosed and not(s.freshReader) and s.historyUnknown",
+      "nativeCheck": "combinedFreshPreviewNativeClosePreservesHistoricalWindowUnknown"
+    }
+  ],
+  "originalRetiringJobUnchanged": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "previewUncertaintyNativeQualified": false,
+  "scope": "Fourteen abstract stages projected from actual qualified204 known-preview/uncertain-window-command combined scenario. Original immutable job/deadline persists in actual retiring custody; native strict close is an independently checked Bootstrap/driver/physical/journal/ticket/confirmation proof, not inferred from renderer death or reader close. GIO close before strict close before GTK recovery; actual native Restart/fresh binding/same lifetime, original normalized Unknown/no replay/retirement history/advanced explicit command, fresh own-native capture and strict close. This is bounded stage projection, not full callback/step refinement, actual preview-effect uncertainty, hardware/physical reveal or full native13/release qualification.",
+  "coupledStages": 14,
+  "artifacts": {
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "coupled-actualCapturedReader-0.itf.json": "666de8c32fdd669e7985edf030ac3a6945ffc50a670206abc735b270c6293b78",
+    "coupled-actualClosingReader-1.itf.json": "cea7528199e83ec854395c87efc1657e70b923e291ddddf9eca8cb59721062d0",
+    "coupled-actualPendingNativeCommit-2.itf.json": "ce8462304848e5be7f357fe407bd3c941a4125905b600b663f8e3dd1ad56810a",
+    "coupled-actualWindowUnknown-3.itf.json": "707e4af87b7192967632503083e55cdb1dc3f3b0383d2c60bbebf955ebbdd151",
+    "coupled-actualRendererFailureBlockedRecovery-4.itf.json": "60372bf9e5e874bb04ffcb88798df478d4fd3bf9a9dd3ada565b36bdffbc263a",
+    "coupled-actualReaderClose-5.itf.json": "3fbcc40afc617106f726533ae159079180e71424d717a0cd914fcda575ca362a",
+    "coupled-actualStrictNativeClose-6.itf.json": "88555cbe1b3fb0835161428db94cebb9e8df2a0873cf0e32e6a8d24b65ce4fc2",
+    "coupled-actualGTKRecovery-7.itf.json": "99356044cdc4d046f7a4d1c42ae57bca17626c6ee280a5fa2f5152c5bd942517",
+    "coupled-actualExplicitRestart-8.itf.json": "b7952117f376966a63100f9bc28e1cda995e76a9604c137cd56d928930de3518",
+    "coupled-actualFreshCoherentUnknown-9.itf.json": "d736b2f07cd90a06befdacab8523c72474e09c5e442e121496d687dcec13704d",
+    "coupled-actualHistoricalUnknownAfterRetirement-10.itf.json": "3c60164d281bd82c4f5a206b39ab28688f7e067d92fc38262f57bb931c33b481",
+    "coupled-actualExplicitAdvancedCommand-11.itf.json": "006fb0869f564379cb6e3304cc64d411b4a7fd519b4b39fcebc5849cee902401",
+    "coupled-actualFreshOwnNativeCapture-12.itf.json": "1f1cfd92114135a66191ea0abbdef12d22f3402d899de12178ecb49f1b6749ca",
+    "coupled-actualFreshNativeClosePreservesHistory-13.itf.json": "b16e23e04529f28a0275549666466fcfa5fc04d628357af2ff45f92fc625b7d9",
+    "selected.stdout": "4fb500b7bce08a9dad8fb04040910b810ef6c1a778375b903b88fcdf8a3e5427",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/combined_recovery.qnt": "7a92c229b3918db01916fa8870cef5d353cac09e3909d6bcfb8c2c424f0023cb",
+    "inputs/concrete_combined.qnt": "c78527752a8ad57fd1580c712ce757952bf0c5e529d26e522dd0de6cf7c434c2"
+  }
+}

@@ -1,0 +1,18 @@
+
+  combined_recovery_tests
+    ok rendererDeathDoesNotCloseReader passed 1 test(s)
+    ok readerCloseDoesNotInferStrictNativeProof passed 1 test(s)
+    ok knownPreviewCanRetireWithWindowUnknown passed 1 test(s)
+    ok previewUnknownStillBlocksRestart passed 1 test(s)
+    ok unreadAdmissionStillRecoversAsUnknown passed 1 test(s)
+    ok nativeRetirementDoesNotSettleWindowOutcome passed 1 test(s)
+    ok newCommandRequiresCurrentSceneAndReservationProof passed 1 test(s)
+    ok explicitAdvancedCommandPreservesHistoricalUnknown passed 1 test(s)
+    ok automaticReplayIsNotAnAllowedTransition passed 1 test(s)
+    ok freshPreviewUsesFreshOwnerSameLifetime passed 1 test(s)
+    ok earlyRestartMutationRejected passed 1 test(s)
+    ok erasedUnknownMutationRejected passed 1 test(s)
+    ok automaticReplayMutationRejected passed 1 test(s)
+    ok reusedNativeOwnerMutationRejected passed 1 test(s)
+
+  14 passing (21ms)

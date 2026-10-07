@@ -1,0 +1,85 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "previewUncertaintyNativeQualified": false,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-combined-recovery-model-v1/spec/combined_recovery.qnt": "7a92c229b3918db01916fa8870cef5d353cac09e3909d6bcfb8c2c424f0023cb",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-combined-recovery-model-v1/spec/combined_recovery_tests.qnt": "c030770c44ef0b40dbfda6cd974816fdd355994f86ed2ce8288583eedebe01c7",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock-combined-recovery-model-v1/qa/check.py": "5cae4fae9792c1e054260043c4a12663db4f91043b0fa3ab0899136be5bc8c5e"
+  },
+  "quint": {
+    "path": "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+    "sha256": "bd6e9400f6358a8a69d80eb636eb62f59f993039868a7be9719f76ba74191b4e"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "combined_recovery_tests.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "selected",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "combined_recovery_tests.qnt",
+        "--main=combined_recovery_tests",
+        "--backend=typescript",
+        "--match=^(rendererDeathDoesNotCloseReader|readerCloseDoesNotInferStrictNativeProof|knownPreviewCanRetireWithWindowUnknown|previewUnknownStillBlocksRestart|unreadAdmissionStillRecoversAsUnknown|nativeRetirementDoesNotSettleWindowOutcome|newCommandRequiresCurrentSceneAndReservationProof|explicitAdvancedCommandPreservesHistoricalUnknown|automaticReplayIsNotAnAllowedTransition|freshPreviewUsesFreshOwnerSameLifetime|earlyRestartMutationRejected|erasedUnknownMutationRejected|automaticReplayMutationRejected|reusedNativeOwnerMutationRejected)$",
+        "--seed=2040049",
+        "--max-samples=1",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/warlock-combined-recovery-model-v1/qa/model-1791405602389564048/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "invariants",
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "combined_recovery.qnt",
+        "--main=combined_recovery",
+        "--backend=typescript",
+        "--init=init",
+        "--step=step",
+        "--invariant=safety",
+        "--max-samples=200",
+        "--max-steps=80",
+        "--seed=2040049"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "scope": "Fourteen explicitly selected acceptance scenarios and200 sampled invariant traces. Independent native strict-close event is an abstract external proof, never inferred from renderer/reader disposal. Window Unknown and preview Unknown remain distinct; fresh native host namespace is not an old grant reset. No native/hardware/full release acceptance.",
+  "namedScenarios": 14,
+  "invariantSamples": 200,
+  "artifacts": {
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-rendererDeathDoesNotCloseReader-0.itf.json": "bc7db22636d1b0f58b9e533330bcd8443180b629782c72e221b0c51c52fdaf4a",
+    "named-readerCloseDoesNotInferStrictNativeProof-1.itf.json": "72f32ecef5a542b07af9065dbe014c13a12aa9ad7465417499746802c4c81255",
+    "named-knownPreviewCanRetireWithWindowUnknown-2.itf.json": "df7fabb7aea0e97967d9b069ecf3fe74a05c9605b6f90fcf3a089b650bd8b789",
+    "named-previewUnknownStillBlocksRestart-3.itf.json": "3c5861cdba333795ca3b76017539d1897184c081ab6995d795addfa7cdbe8f02",
+    "named-unreadAdmissionStillRecoversAsUnknown-4.itf.json": "d70b9815d4982b1ec3431967a1e0ac8f68eea2a8cc09866a199fe9d908528a09",
+    "named-nativeRetirementDoesNotSettleWindowOutcome-5.itf.json": "a596973ba995e0f3d9f9e8994bf05bc235374d8fa57a815c8d53b061180e5575",
+    "named-newCommandRequiresCurrentSceneAndReservationProof-6.itf.json": "c2297a038d77d8cf3a2cba1922b7c6e2e7185a19f4aa94530be6f341577590ee",
+    "named-explicitAdvancedCommandPreservesHistoricalUnknown-7.itf.json": "07b737d0b3b8f0ac7946fe7055c728fb633931c8a62c6bb4e7841062419216c2",
+    "named-automaticReplayIsNotAnAllowedTransition-8.itf.json": "99b157bbeb3b8153358e2b1a879fd119d7518004ea0f6472ba3c8e6195b430af",
+    "named-freshPreviewUsesFreshOwnerSameLifetime-9.itf.json": "198b69b1765dab095c5abd4d23b6bab449be9c69dcc6868a6c923f60403b2cd4",
+    "named-earlyRestartMutationRejected-10.itf.json": "fde5910b268862110468eb3273fb7a300de979e597fca735cd83b1f5c35e30d5",
+    "named-erasedUnknownMutationRejected-11.itf.json": "957ea6b9a4f66a8758391466d8f7e3a7d074881c4cc7af90d23be0648fdb54e8",
+    "named-automaticReplayMutationRejected-12.itf.json": "afa5ae8ff8257b610d835e91605729c05f5dcfadf718002fe8adfd9d92b4de96",
+    "named-reusedNativeOwnerMutationRejected-13.itf.json": "1634b53d7b62d47587d52a1874e34d85711309158c3918bb588d788ac719b94c",
+    "selected.stdout": "5b2c832b443c48fef5a64b37cb2c31e8afbffa41a5bf9b24978147dee1c52ca7",
+    "selected.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invariants.stdout": "3b5bf6f01d22cb950e17b96e2a0787062d188e5df6ab84bdd26a3dbe8a0c2b83",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/combined_recovery.qnt": "7a92c229b3918db01916fa8870cef5d353cac09e3909d6bcfb8c2c424f0023cb",
+    "inputs/combined_recovery_tests.qnt": "c030770c44ef0b40dbfda6cd974816fdd355994f86ed2ce8288583eedebe01c7"
+  }
+}

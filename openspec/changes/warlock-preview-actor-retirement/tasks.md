@@ -582,6 +582,27 @@ activation and all original full release gates remain open.
   checked fixture/supervisor/helpers, empty scope/private cleanup pass. Original
   119-command build/tuple reverified; failed195/196/197 retained. No active
   controlled-preview realm or production source change in this main-route proof.
-- [ ] Qualify combined controlled-preview strict retirement and original durable
+- [x] Qualify combined controlled-preview strict retirement and original durable
   window-command recovery in one actual whole-host restart scenario; separate
   CONTROL-047 and CONTROL-048 results do not close this integration gate.
+- [x] Qualify CONTROL-049 actual retained preview reader across window-command
+  receipt loss and shared renderer failure: revoked original reader close and
+  strict native empty custody before GTK Restart, exact Unknown/no replay and
+  coherent advanced command in fresh host, fresh own native preview capture/
+  clock/source identity/strict retirement, original deadlines and cohort cleanup.
+
+  Bounded unchanged GUI143/core16/plugin19/AQ155: Native204 minimize/lost102
+  controls/26 normal registered helpers,205 restore/lost101/25,206 minimize/
+  before-write99/24 and207 restore/before-write104/27 pass. Actual original GIO
+  reader remains held through popup close/window uncertainty/renderer failure;
+  real close and strict independent native empty custody precede GTK recovery.
+  Actual Restart/exit3 reaches a fresh host on the same compositor, retains
+  normalized exact Unknown/no replay/retirement history and advanced new intent;
+  fresh own native preview capture red19200 and strict close preserve history.
+  No production source changed; original119 build reverified. Quint14 selected/
+  200 samples,14 actual abstract projected stages and7 real supervisor refusal
+  controls pass. Failed202/203 retained. Original focus preconditions are restored
+  by actual compositor/pointer input; popup-dismissal focus restoration remains
+  unqualified. This bounded result does not close the broad whole-host/release
+  gate or qualify preview-effect Unknown, every async schedule, physical reveal,
+  original-clock pressure/expiry, hardware/resource/input/AT/IME/deployment gates.

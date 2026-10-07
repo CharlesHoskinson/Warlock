@@ -828,3 +828,48 @@ expiry, physical/hardware presentation, workload/RSS, original restore timing,
 full S09/release/AT/IME/journeys/deployment stay open. Next PUBLIC105, then combined
 controlled-preview/command recovery on the same tuple. Installed desktop/drafts/
 foreign edits preserved; full GUI goal active.
+
+CONTROL-049 combined recovery is held on unchanged GUI143/core16/plugin19/AQ155.
+Native204 minimize/lost102 controls/26 normal registered short-lived helpers,
+205 restore/lost101/25,206 minimize/before-write99/24 and207 restore/before-write
+104/27 pass. Original actual GIO reader holds native preview custody after real
+popup dismissal; original URI revocation denies held/fresh access without reader
+settlement. Window Pending/Unknown and actual renderer failure leave the exact
+original retiring job/deadline owned. Actual reader close and independently
+observed strict empty Native policy/physical/journal/ticket/confirmation/host
+custody precede GTK recovery; process death never establishes settlement.
+
+Actual native Restart exits3 into a fresh host on the surviving compositor.
+Exact normalized recovered window Unknown is never replayed; authentic native
+old-binding retirement and accepted post-proof reads release reservation capacity
+while preserving immutable historical Unknown during the newer explicit advanced
+command. Fresh preview demand captures red19200 through the new host's own native
+namespace on the same compositor clock/source incarnation, then strictly closes.
+This fresh namespace is not a reset of an unsettled old grant or a claim that a
+policy object survives process replacement. Second fallback dismissal retains
+host failure1; expected killed broker/renderers remain separate fault outcomes.
+Source/companion/registered helpers/supervisor checked normal exits, empty owned
+cohort and private-session cleanup pass. Original deadlines remain unchanged.
+
+Failed20227 controls retains the missing focused Minimize fixture precondition
+after actual popup dismissal; no window-effect was submitted. Failed20391 retains
+the final keyboard recipient precondition failure after the actual recovery/fresh
+capture path. Fresh successors establish original focus preconditions with actual
+compositor focus and visible-fixture pointer input. Popup-dismissal focus
+restoration itself is explicitly unqualified, with no added window-effect or
+weakened keyboard oracle. A packaging-only freezer list-schema failure is held.
+
+No production C/Elm source changed. The original119-command build/source/ABI
+closure is reverified. New requirements Quint14 explicitly selected/200 invariant
+samples,14 abstract stages coupled to actual204 including immutable original
+retiring job/deadline, and7 actual supervisor CLI refusal guards pass. Coupling
+is bounded stage projection, not full callback/transition refinement. Exact
+frozen hashes: component-report-combined-restart-204-207.json.
+
+The bounded combined gate is closed; native preview-effect uncertainty remains
+distinct from window-command Unknown and is the next implementation slice.
+All async fault schedules, original-clock expiry/pressure, physical conceal/
+reveal and hardware presentation, measured workload/RSS, original restore timing,
+full native13/S09/release/input/AT/IME/journeys and reversible deployment remain
+open. Opacity0/root preview ineligibility remain mandatory. Next PUBLIC106 then
+actual native preview-effect uncertainty; full GUI goal remains active.
