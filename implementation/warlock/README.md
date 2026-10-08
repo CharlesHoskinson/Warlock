@@ -18,3 +18,13 @@ focus and a currently rendered enabled control. Context operations retain the
 existing native physical-key/pointer proof and Elm policy route. Current observed
 coverage and remaining AT/independent review are recorded in
 `qa/evidence/dense-taskbar/manifest.json`.
+
+In a window-group picker, Up/Down traverse enabled controls and Home/End reach
+the close action and final member. The view retains the focused logical identity
+through the same popup lease, including reordered publications, resizing and
+late preview-content growth. A new lease cannot restore an old selection.
+Navigation changes no window state; activation and context operations still use
+the existing Elm/native authority. The ten-member, 150% text native journey,
+member menus, selected-window pixels and real keyboard recipient are recorded in
+`qa/evidence/dense-picker/manifest.json`. Native popup reflow continuity,
+action-menu overflow, applicable AT and independent acceptance remain open.

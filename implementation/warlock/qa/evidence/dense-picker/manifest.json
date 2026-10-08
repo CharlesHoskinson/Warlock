@@ -1,0 +1,335 @@
+{
+  "schema": 1,
+  "generatedUTC": "2026-10-08T08:16:17.104401+00:00",
+  "requirements": [
+    "ELM-UI-008",
+    "ELM-UI-004"
+  ],
+  "scenarios": [
+    "overflow-first-last",
+    "overflow-resize",
+    "menu-invocation",
+    "taskbar-group"
+  ],
+  "originalRequirements": [
+    {
+      "id": "ELM-UI-004",
+      "capability": "elm-taskbar",
+      "phase": "P3",
+      "pattern": "ubiquitous",
+      "priority": "must",
+      "ears": "The taskbar SHALL follow the INTERACTION.md primary-action table for zero, single and multiple family entries, distinguish application pin from always-on-top, and expose explicit new-instance actions without launching duplicates on ordinary activation.",
+      "task": "Implement taskbar decision table with matching pointer/keyboard routes.",
+      "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+      "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+      "scenarios": [
+        {
+          "name": "taskbar-zero",
+          "given": "a pinned app with zero windows",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "one launch request is issued"
+        },
+        {
+          "name": "taskbar-inactive",
+          "given": "one inactive member",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "the member visibly activates"
+        },
+        {
+          "name": "taskbar-minimized",
+          "given": "one minimized member",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "the member restores and visibly activates"
+        },
+        {
+          "name": "taskbar-active",
+          "given": "one active eligible member",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "the family minimizes with declared focus succession"
+        },
+        {
+          "name": "taskbar-group",
+          "given": "multiple family entries",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "a group picker opens without new launch and selecting a member visibly activates it"
+        },
+        {
+          "name": "taskbar-refusal",
+          "given": "native authority refuses the requested action",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "observed state remains authoritative with feedback"
+        }
+      ],
+      "source": "docs/elm-roadmap/coordinator-requirements.json",
+      "status": "proposed",
+      "taskId": "P3-ELM-UI-004",
+      "accountableOwnerRole": "Elm presentation lead",
+      "verifierRole": "Independent acceptance reviewer"
+    },
+    {
+      "id": "ELM-UI-008",
+      "capability": "elm-taskbar",
+      "phase": "P3",
+      "pattern": "ubiquitous",
+      "priority": "must",
+      "ears": "The shell SHALL keep every configured icon, group member and action reachable through bounded scrolling or overflow, reveal keyboard selection, preserve identity/order across resizing, and expose labeled menu and window-operation affordances through pointer and keyboard.",
+      "task": "Implement accessible dense-layout overflow and menu discovery.",
+      "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+      "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+      "scenarios": [
+        {
+          "name": "overflow-first-last",
+          "given": "small output, enlarged text and more icons than fit",
+          "when": "first and last entries and their menus are visited",
+          "then": "all entries are reachable, focus is revealed and labels identify operations"
+        },
+        {
+          "name": "overflow-resize",
+          "given": "small output, enlarged text and more icons than fit",
+          "when": "output size changes",
+          "then": "identity and configured order persist with reachable active selection"
+        },
+        {
+          "name": "menu-invocation",
+          "given": "small output, enlarged text and more icons than fit",
+          "when": "context menu or jump list is invoked",
+          "then": "secondary click and Menu/Shift-F10 expose labeled operations and Escape returns focus"
+        }
+      ],
+      "source": "docs/elm-roadmap/coordinator-requirements.json",
+      "status": "proposed",
+      "taskId": "P3-ELM-UI-008",
+      "accountableOwnerRole": "Elm presentation lead",
+      "verifierRole": "Independent acceptance reviewer"
+    }
+  ],
+  "observed": "Ten native GTK roots on a 480x600 output at 150% text: arrows visit each member with reveal, Home/End reach endpoints, first/last member menus use secondary click/Menu/Shift-F10, Escape returns bar group focus, keyboard primary opens the same picker with no launch, Enter activates exactly one current incarnation and its visible window receives a real GTK keystroke. Late fallback content growth remains revealed. Default launcher reopen/query/refusal/no-match pixels and input regression passed.",
+  "scope": "Native member navigation/menu/activation/input and physical control/window pixels; component lease/disabled/reorder/viewport resize checks. Native popup reflow continuity, full action-menu overflow, applicable AT and independent original-scenario acceptance remain open.",
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "fullReleaseAccepted": false,
+  "missing": [
+    "Applicable assistive-technology navigation, operation names and focus observations",
+    "Independent original-scenario review against exact source/ABI/toolchain",
+    "Native popup reflow continuity and complete action-menu overflow; browser viewport resizing is component evidence only"
+  ],
+  "sourceParentRevision": "88b84e97c38d1799aa74f9a83f6583c50cd08ff8",
+  "sourceHashes": {
+    "implementation/warlock/src/SurfaceRenderer.elm": "42a02a43780f79107f376a54eba46aa277fc5457b61fda656649cfe495ace0e1",
+    "implementation/warlock/assets/popup-adapter.js": "765e01488ecb7d6107306a16e60e1110300391b3f83f21f995a5eeecf61d3052",
+    "implementation/warlock/assets/shell.css": "e94dcb2274254d874b1fabaaee59a6bd85a0543909238fef3a6ad12bc64f6078",
+    "implementation/warlock/qa/check-search.py": "f59b0e810eb840dea75709fa29e9b43a7f4f43b112ea4f9c71deecbc556ca829",
+    "implementation/warlock/qa/dense-taskbar-browser.mjs": "09be271f9c7eb72581104105fefe1cbeeca2c9aaa27f6427f99556403aa9c4b6",
+    "implementation/warlock/qa/native-window-feedback.py": "500c4bff847b91a7ec07295320b15a4c18910eaa1f68662993ebe54ee6a7be5e",
+    "implementation/warlock/qa/current-search-build.json": "b9184ede947d302b346cfe7bb5bd97313ed9d09e04a87b1c336807a55bc80be6",
+    "implementation/warlock/assets/elm.js": "9b48195dd4b61b8f34906444915f070530fcb07e8ec1f2c530fa1e5ed43aa8eb",
+    "implementation/warlock/assets/bar.js": "d2bd3e1d84b6dc605744da689c0331e89a0cd45d083c0cdbc3b1ee620a18e860",
+    "implementation/warlock/assets/popup.js": "054636c284b4f6a026963b18b0e41b2f1a737fd87f9cdc1d8ef5449d6030222a",
+    "implementation/warlock/README.md": "6cb6d66d5fcba42348ad739e0728d6d3f7b1fe547e777e7aeeb8c483a22fa905"
+  },
+  "runnerSHA256": "500c4bff847b91a7ec07295320b15a4c18910eaa1f68662993ebe54ee6a7be5e",
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+      "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791440691968763486/elm-window-geometry-authority.so",
+      "sha256": "1805693201328985cbf109f5fef6779b8fe469badf094fd417e8206f91c50b47"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791446861278799521/elm-host",
+    "sha256": "7088446d92a3f979b9804faae8909cb20289ab35ce95f1bfab769dd0abd824ff",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791446861278799521/report.json",
+    "heldBuildSHA256": "a32740dbb41a8be34a09b14887582732d57ac9f74ca28fe418ac177c33e24eb0"
+  },
+  "componentReport": {
+    "path": "implementation/warlock/qa/runs/taskbar-primary-1791446861278799521/report.json",
+    "sha256": "a32740dbb41a8be34a09b14887582732d57ac9f74ca28fe418ac177c33e24eb0"
+  },
+  "counts": {
+    "nativeDenseChecksIncludingHelpers": 97,
+    "nativeDefaultLauncherChecksIncludingHelpers": 35,
+    "browserChecks": 30
+  },
+  "files": [
+    {
+      "path": "implementation/warlock/qa/evidence/dense-picker/component-report.json",
+      "sha256": "a32740dbb41a8be34a09b14887582732d57ac9f74ca28fe418ac177c33e24eb0",
+      "bytes": 81783,
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791446861278799521/report.json",
+      "originalSHA256": "a32740dbb41a8be34a09b14887582732d57ac9f74ca28fe418ac177c33e24eb0"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/dense-picker/browser-report.json",
+      "sha256": "90db16de153d3afabfbf5135a84dcf071b57e6b9967884fad7a9ee21b18f31ac",
+      "bytes": 37559,
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791446861278799521/dense-browser.json",
+      "originalSHA256": "90db16de153d3afabfbf5135a84dcf071b57e6b9967884fad7a9ee21b18f31ac"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/dense-picker/native-report.json",
+      "sha256": "caa99ac2b17597a4481bceeaf77c09897a568d14c16e99f05e3cfd597296adae",
+      "bytes": 520888,
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-dense-picker-1791447203497746725/report.json",
+      "originalSHA256": "caa99ac2b17597a4481bceeaf77c09897a568d14c16e99f05e3cfd597296adae"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/dense-picker/launcher-regression-report.json",
+      "sha256": "1cc61e72580182c9c71f6a94e62b9d9619f629b88b766e0fa8faf30074b47dd0",
+      "bytes": 304798,
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-search-1791447255148333470/report.json",
+      "originalSHA256": "1cc61e72580182c9c71f6a94e62b9d9619f629b88b766e0fa8faf30074b47dd0"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/dense-picker/native-last.png",
+      "sha256": "3e0447b299055363a700e2aa97550e6562b04b1627dd4ee29b3407876eaa1823",
+      "bytes": 74936,
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791447203497849797/dense-picker-last.png",
+      "originalSHA256": "3e0447b299055363a700e2aa97550e6562b04b1627dd4ee29b3407876eaa1823"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/dense-picker/native-first.png",
+      "sha256": "1cf834b86e2be0beaa37eb4f30384b7f5bacc7764420261ed9acca8caf55f792",
+      "bytes": 74965,
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791447203497849797/dense-picker-first.png",
+      "originalSHA256": "1cf834b86e2be0beaa37eb4f30384b7f5bacc7764420261ed9acca8caf55f792"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/dense-picker/native-first-secondary-menu.png",
+      "sha256": "0a6ddf1a525fbf1ece4e0dc80782164157f1baea4e1fe7d2b72e8f920fd009ad",
+      "bytes": 54464,
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791447203497849797/dense-picker-first-secondary-menu.png",
+      "originalSHA256": "0a6ddf1a525fbf1ece4e0dc80782164157f1baea4e1fe7d2b72e8f920fd009ad"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/dense-picker/native-first-menu.png",
+      "sha256": "98004b7e29e5ac5ce3c8e59ffeca08f5f38f6742efc3bc3634cbcb96d51e1af5",
+      "bytes": 54349,
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791447203497849797/dense-picker-first-menu.png",
+      "originalSHA256": "98004b7e29e5ac5ce3c8e59ffeca08f5f38f6742efc3bc3634cbcb96d51e1af5"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/dense-picker/native-last-menu.png",
+      "sha256": "930b84b331d32d9bc47ede82f93f6e23f1c80c9eefdc06bba27c8a17a4e74660",
+      "bytes": 54525,
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791447203497849797/dense-picker-last-menu.png",
+      "originalSHA256": "930b84b331d32d9bc47ede82f93f6e23f1c80c9eefdc06bba27c8a17a4e74660"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/dense-picker/native-chosen-window.png",
+      "sha256": "471b23d33e71bbff31c96bc410fb806b812a6bda25cf598fc11a74aaadb2a236",
+      "bytes": 65405,
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791447203497849797/dense-picker-chosen-window.png",
+      "originalSHA256": "471b23d33e71bbff31c96bc410fb806b812a6bda25cf598fc11a74aaadb2a236"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/dense-picker/launcher-initial.png",
+      "sha256": "4d91eec9bc4a0487d9048fa17efede7a861bacaf70e04e9b084fb1e1742c3d2a",
+      "bytes": 226512,
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791447255148445495/popup-initial.png",
+      "originalSHA256": "4d91eec9bc4a0487d9048fa17efede7a861bacaf70e04e9b084fb1e1742c3d2a"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/dense-picker/launcher-filtered.png",
+      "sha256": "c87ee36198483316737ed27b2997c1204fd3497b705da69dcd1b82a7141032e5",
+      "bytes": 222789,
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791447255148445495/popup-filtered.png",
+      "originalSHA256": "c87ee36198483316737ed27b2997c1204fd3497b705da69dcd1b82a7141032e5"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/dense-picker/launcher-refused.png",
+      "sha256": "1e09b1927c039335f2e582737de387cff9e66cf74fc5ccf37bea04c3bc9481f7",
+      "bytes": 226538,
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791447255148445495/popup-refused.png",
+      "originalSHA256": "1e09b1927c039335f2e582737de387cff9e66cf74fc5ccf37bea04c3bc9481f7"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/dense-picker/launcher-no-match.png",
+      "sha256": "8442ba9a238aafd7f960bcdb26e6ae27af3b069bafc4bd423810b47f50a78a1d",
+      "bytes": 221523,
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791447255148445495/popup-no-match.png",
+      "originalSHA256": "8442ba9a238aafd7f960bcdb26e6ae27af3b069bafc4bd423810b47f50a78a1d"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/dense-picker/browser-picker-last.png",
+      "sha256": "6fce4959e17cb78f2d2797b0060af5511ab80b24510356047a609fbfb92b8ef6",
+      "bytes": 23642,
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791446861278799521/picker-last.png",
+      "originalSHA256": "6fce4959e17cb78f2d2797b0060af5511ab80b24510356047a609fbfb92b8ef6"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/dense-picker/browser-dense-last.png",
+      "sha256": "8ec9926c0a50801c4eaed19662cc77728340386a05d66aa26d94f87802f81ba5",
+      "bytes": 7459,
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791446861278799521/dense-last.png",
+      "originalSHA256": "8ec9926c0a50801c4eaed19662cc77728340386a05d66aa26d94f87802f81ba5"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/dense-picker/failed-1791446755829046182.json",
+      "sha256": "2864a4d554236b97345744bdb689ec4b1319b24c51aacd303daba1e08dc3b230",
+      "bytes": 490606,
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-dense-picker-1791446755829046182/report.json",
+      "originalSHA256": "2864a4d554236b97345744bdb689ec4b1319b24c51aacd303daba1e08dc3b230"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/dense-picker/failed-1791446921660306652.json",
+      "sha256": "ac6b87c7652c9e03eb1ad0cea0709330ddb578976bd765bb85cef6e62f51a10c",
+      "bytes": 517451,
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-dense-picker-1791446921660306652/report.json",
+      "originalSHA256": "ac6b87c7652c9e03eb1ad0cea0709330ddb578976bd765bb85cef6e62f51a10c"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/dense-picker/failed-1791447037014329252.json",
+      "sha256": "b9e088ff21409f754cecb93afb42f74f381602da9ece9be0af676ed970246c80",
+      "bytes": 519473,
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-dense-picker-1791447037014329252/report.json",
+      "originalSHA256": "b9e088ff21409f754cecb93afb42f74f381602da9ece9be0af676ed970246c80"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/dense-picker/failed-layout-growth-popup-trace.json",
+      "sha256": "93de61d0eb86e230eccea2f674a5845a5d9d42a7c950a65f02fffbd4d9a2c0b0",
+      "bytes": 283786
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/dense-picker/native-inputs.json",
+      "sha256": "b7d57690e89c74c514682c2572511104aca4b2b0ae3cfb069bd5315790d64f68",
+      "bytes": 14115
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/dense-picker/source.patch",
+      "sha256": "6b484929a2dd94d4040e5979683dcbc6320bebe4b19942e3e6ebfe77fbeffa97",
+      "bytes": 9753
+    }
+  ],
+  "failedRuns": [
+    {
+      "path": "implementation/warlock/qa/runs/native-dense-picker-1791446755829046182/report.json",
+      "sha256": "2864a4d554236b97345744bdb689ec4b1319b24c51aacd303daba1e08dc3b230",
+      "error": "RuntimeError('Original observation deadline <lambda>')",
+      "disposition": "Late preview fallback growth moved the selected member below the viewport; observing the controls content fixes reveal."
+    },
+    {
+      "path": "implementation/warlock/qa/runs/native-dense-picker-1791446921660306652/report.json",
+      "sha256": "ac6b87c7652c9e03eb1ad0cea0709330ddb578976bd765bb85cef6e62f51a10c",
+      "error": "KeyError('geometry')",
+      "disposition": "Pixel QA used a catalog snapshot without geometry; the test now reads the owning native scene facts."
+    },
+    {
+      "path": "implementation/warlock/qa/runs/native-dense-picker-1791447037014329252/report.json",
+      "sha256": "b9e088ff21409f754cecb93afb42f74f381602da9ece9be0af676ed970246c80",
+      "error": "AssertionError('ChosenDenseWindowIsPhysicallyPresented')",
+      "disposition": "Ten tiled roots left the chosen root at 21x18; configure usable owned floating fixture bounds without relaxing the pixel assertion."
+    }
+  ],
+  "reviewerDisposition": {
+    "name": "root-dense-picker",
+    "independent": false,
+    "disposition": "Owner-observed bounded native/component result; exact original acceptance remains pending."
+  }
+}

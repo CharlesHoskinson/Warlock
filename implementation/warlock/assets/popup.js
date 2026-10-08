@@ -12926,8 +12926,16 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 						[
 							$elm$html$Html$text(snapshot.aa)
 						])),
-					A2(
+					(snapshot.B === 'overview') ? A2(
 					$elm$html$Html$div,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('surface-controls'),
+							A2($elm$html$Html$Attributes$attribute, 'role', 'group')
+						]),
+					overviewRows(snapshot.v)) : A3(
+					$elm$html$Html$Keyed$node,
+					'div',
 					_List_fromArray(
 						[
 							$elm$html$Html$Attributes$class('surface-controls'),
@@ -12936,7 +12944,14 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 							'role',
 							(snapshot.B === 'menu') ? 'menu' : 'group')
 						]),
-					(snapshot.B === 'overview') ? overviewRows(snapshot.v) : A2($elm$core$List$map, control, snapshot.v))
+					A2(
+						$elm$core$List$map,
+						function (item) {
+							return _Utils_Tuple2(
+								'control:' + item.az,
+								control(item));
+						},
+						snapshot.v))
 				])) : A3(
 			$elm$html$Html$Keyed$node,
 			'div',

@@ -1,48 +1,45 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-08T07:35:43.116518+00:00",
+  "updatedUTC": "2026-10-08T08:17:35.147091+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "dense-taskbar-overflow",
+    "id": "dense-window-picker",
     "requirements": [
-      "ELM-UI-008"
+      "ELM-UI-008",
+      "ELM-UI-004"
     ],
     "scenarios": [
       "overflow-first-last",
       "overflow-resize",
-      "menu-invocation"
+      "menu-invocation",
+      "taskbar-group"
     ],
     "paths": [
       "implementation/warlock/src/SurfaceRenderer.elm",
+      "implementation/warlock/assets/popup-adapter.js",
       "implementation/warlock/assets/shell.css",
-      "implementation/warlock/assets/bar-adapter.js",
-      "implementation/warlock/native/shared-host.c",
       "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/dense-taskbar-browser.mjs",
       "implementation/warlock/qa/native-window-feedback.py",
       "implementation/warlock/qa/current-search-build.json",
       "implementation/warlock/assets/elm.js",
       "implementation/warlock/assets/bar.js",
       "implementation/warlock/assets/popup.js",
-      "implementation/warlock/qa/dense-taskbar-browser.mjs",
-      "implementation/warlock/assets/context.js",
       "implementation/warlock/README.md"
     ],
-    "before": "Fixed 48px controls and 16px text do not adapt to enlarged text, and the bar has no explicit keyboard endpoint navigation or selected-item reveal after resizing.",
-    "after": "A dense bar scales with text, keeps configured order, supports wheel/keyboard endpoints and reveals the selected current item after output resizing; its existing context menus retain focus and identity.",
+    "before": "Dense picker members can be reached by Tab, but have no explicit arrow/endpoints or retained logical selection through an ordinary publication.",
+    "after": "Dense picker members and controls remain reachable and visible by arrows and endpoints; current logical focus survives the same lease, and selection activates only the chosen current native member.",
     "verification": [
-      "Focused Elm/host build, browser first/last/disabled/order/resize checks at enlarged text, and protected native dense enlarged-text first/last/menu/resize journey."
+      "Actual compiled Popup browser resize/disabled/lease navigation and protected ten-root enlarged-text native picker/menu/activation/recipient journey."
     ],
-    "state": "Implemented dense taskbar scaling/navigation; current native and component observations recorded, original AT/independent acceptance open.",
-    "nextSourceWork": "Complete broader dense multi-member picker/action overflow and applicable AT; continue mandatory snap/output, preview, settings/Files and release journeys under original oracles.",
-    "evidence": {
-      "path": "implementation/warlock/qa/evidence/dense-taskbar/manifest.json",
-      "sha256": "b8c2dca5159e2e1a766e998c2487f5748b2f3e8c4351b3b754db109a6fb5afc3"
-    }
+    "state": "implemented; 30 browser checks, ten-root native keyboard/menu/activation/pixels/recipient and default launcher regression observed; original AT/independent/native popup reflow/action overflow remain open",
+    "nextSourceWork": "Implement and qualify action-menu overflow, then native popup reflow selection continuity and applicable AT.",
+    "evidence": "implementation/warlock/qa/evidence/dense-picker/current-manifest.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -426,6 +423,43 @@
       "nextSourceWork": "Implement/qualify dense taskbar overflow and enlarged-text selection reveal for the original ELM-UI-008 fixtures; retain current menu/popup custody and native focus behavior.",
       "evidence": "implementation/warlock/qa/evidence/pinned-window-menus/manifest.json",
       "lastObservedBehavior": "Secondary click/Menu/Shift-F10 and arrow/Escape routes, current-revision focus after inactive minimize, exact one restore and actual GTK typing; Task View after menus and current Alt-Tab regression pass."
+    },
+    {
+      "id": "dense-taskbar-overflow",
+      "requirements": [
+        "ELM-UI-008"
+      ],
+      "scenarios": [
+        "overflow-first-last",
+        "overflow-resize",
+        "menu-invocation"
+      ],
+      "paths": [
+        "implementation/warlock/src/SurfaceRenderer.elm",
+        "implementation/warlock/assets/shell.css",
+        "implementation/warlock/assets/bar-adapter.js",
+        "implementation/warlock/native/shared-host.c",
+        "implementation/warlock/qa/check-search.py",
+        "implementation/warlock/qa/native-window-feedback.py",
+        "implementation/warlock/qa/current-search-build.json",
+        "implementation/warlock/assets/elm.js",
+        "implementation/warlock/assets/bar.js",
+        "implementation/warlock/assets/popup.js",
+        "implementation/warlock/qa/dense-taskbar-browser.mjs",
+        "implementation/warlock/assets/context.js",
+        "implementation/warlock/README.md"
+      ],
+      "before": "Fixed 48px controls and 16px text do not adapt to enlarged text, and the bar has no explicit keyboard endpoint navigation or selected-item reveal after resizing.",
+      "after": "A dense bar scales with text, keeps configured order, supports wheel/keyboard endpoints and reveals the selected current item after output resizing; its existing context menus retain focus and identity.",
+      "verification": [
+        "Focused Elm/host build, browser first/last/disabled/order/resize checks at enlarged text, and protected native dense enlarged-text first/last/menu/resize journey."
+      ],
+      "state": "Implemented dense taskbar scaling/navigation; current native and component observations recorded, original AT/independent acceptance open.",
+      "nextSourceWork": "Complete broader dense multi-member picker/action overflow and applicable AT; continue mandatory snap/output, preview, settings/Files and release journeys under original oracles.",
+      "evidence": {
+        "path": "implementation/warlock/qa/evidence/dense-taskbar/manifest.json",
+        "sha256": "b8c2dca5159e2e1a766e998c2487f5748b2f3e8c4351b3b754db109a6fb5afc3"
+      }
     }
   ]
 }

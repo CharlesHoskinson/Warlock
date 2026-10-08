@@ -38,7 +38,32 @@ try{
  await key('End');check('Keyboard navigation reveals selection after manual scrolling',visible(await state()));
  await show(99);await show();check('A transiently disabled selection returns by current identity',(await state()).id==='bar:pin:app-99'&&visible(await state()));
  await call('Emulation.setEmulatedMedia',{features:[{name:'forced-colors',value:'active'}]});await key('Home');check('Forced colors retain a visible focus outline',await evaluate(`getComputedStyle(document.activeElement).outlineStyle!=='none'`));
- check('Scrolling and navigation never emit activation',await evaluate(`nativePackets.filter(p=>p.kind==='surface-action').length===0`));check('No uncaught browser exceptions',report.errors.length===0,report.errors);report.passed=true;
+ check('Scrolling and navigation never emit activation',await evaluate(`nativePackets.filter(p=>p.kind==='surface-action').length===0`));await call('Emulation.setEmulatedMedia',{features:[]});await viewport(480,420);await call('Page.navigate',{url:base+'/qa/dense-picker.html'});await until('!!window.receivePresentation');
+ let pickerPub=0;
+ async function showPicker(disabled=-1,lease='1',reverse=false){
+  const members=Array.from({length:20},(_,i)=>({id:'family:'+i,domId:'picker:'+String(pickerPub+1)+':'+i,label:'Document '+i,ariaLabel:'Activate Document '+i,detail:'Open',enabled:i!==disabled}));
+  if(reverse)members.reverse();
+  const frame={surfaceProtocol:2,publication:String(++pickerPub),lease,mode:'picker',status:'Choose a window',bar:[],popup:[{id:'control:close',domId:'picker-close:'+pickerPub,label:'Close',ariaLabel:'Close picker',detail:'',enabled:true},...members]};
+  await evaluate('receivePresentation('+JSON.stringify(frame)+')');await until('document.querySelector(".surface-popup")?.dataset.publication==='+JSON.stringify(frame.publication));await sleep(70);
+ }
+ const pickerState=()=>evaluate(`(()=>{const n=document.querySelector('.surface-popup'),f=document.activeElement,r=f.getBoundingClientRect();return {id:f.dataset.surfaceControl,domId:f.id,top:r.top,bottom:r.bottom,height:innerHeight,font:getComputedStyle(document.body).fontSize,scroll:n.scrollTop,scrollHeight:n.scrollHeight,clientHeight:n.clientHeight,order:[...n.querySelectorAll('[data-surface-control]')].map(b=>b.dataset.surfaceControl)};})()`);
+ const pickerVisible=s=>s.top>=-.5&&s.bottom<=s.height+.5;
+ await showPicker();await evaluate(`document.querySelector('[data-surface-control="family:0"]').focus()`);
+ const pickerFirst=await pickerState();check('Picker uses enlarged text and bounded overflow',pickerFirst.font==='24px'&&pickerVisible(pickerFirst)&&pickerFirst.scrollHeight>pickerFirst.clientHeight,pickerFirst);
+ await key('End');const pickerLast=await pickerState();check('Picker End reveals final member',pickerLast.id==='family:19'&&pickerVisible(pickerLast),pickerLast);await capture('picker-last');
+ await showPicker(18);await key('ArrowUp');const pickerSkip=await pickerState();check('Picker arrows skip disabled member without changing order',pickerSkip.id==='family:17'&&pickerVisible(pickerSkip)&&JSON.stringify(pickerSkip.order)===JSON.stringify(pickerFirst.order),pickerSkip);
+ await key('Home');check('Picker Home reaches close action',(await pickerState()).id==='control:close'&&pickerVisible(await pickerState()));
+ await key('ArrowDown');check('Picker Down reaches first member',(await pickerState()).id==='family:0'&&pickerVisible(await pickerState()));
+ await key('End');await showPicker();const pickerUpdated=await pickerState();check('Picker publication keeps selected logical identity',pickerUpdated.id==='family:19'&&pickerUpdated.domId==='picker:3:19'&&pickerVisible(pickerUpdated),pickerUpdated);
+ for(const [width,height] of [[320,260],[700,600],[480,420]]){await viewport(width,height);const v=await pickerState();check('Picker resize '+width+'x'+height+' reveals current member',v.id==='family:19'&&pickerVisible(v)&&JSON.stringify(v.order)===JSON.stringify(pickerFirst.order),v);}
+ await evaluate(`document.querySelectorAll('.surface-controls button').forEach(button=>button.style.minHeight='160px')`);await sleep(100);const grown=await pickerState();check('Late picker content growth keeps final selection visible',grown.id==='family:19'&&pickerVisible(grown),grown);
+ await evaluate(`document.querySelectorAll('.surface-controls button').forEach(button=>button.style.minHeight='')`);await sleep(100);
+ await showPicker(-1,'1',true);check('Picker reordered publication preserves chosen identity',(await pickerState()).id==='family:19'&&pickerVisible(await pickerState()));
+ await evaluate(`document.body.tabIndex=-1;document.body.focus()`);await showPicker(-1,'2');check('Picker old lease cannot restore a selected member',await evaluate('document.activeElement===document.body'));
+ await evaluate(`document.querySelector('[data-surface-control="family:0"]').focus()`);await key('ArrowUp');await key('ArrowUp');check('Picker arrows clamp at first action',(await pickerState()).id==='control:close');
+ await key('End');await key('ArrowDown');check('Picker arrows clamp at final member',(await pickerState()).id==='family:19'&&pickerVisible(await pickerState()));
+ check('Picker navigation emits no window action',await evaluate(`nativePackets.filter(p=>p.kind==='surface-action').length===0`));
+ check('No uncaught browser exceptions',report.errors.length===0,report.errors);report.passed=true;
 }catch(error){report.error=String(error.stack||error);}
 finally{
  if(ws?.readyState===1){try{await call('Browser.close',{},null);}catch(_){}ws.close();}

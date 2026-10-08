@@ -38,3 +38,6 @@ html{font-size:100%}body{font:1rem system-ui}
 .popup button{min-height:2.25rem}
 .popup .control-detail{font-size:.875rem;line-height:1.125rem}
 @media(forced-colors:active){.bar .surface-actions button:focus-visible{outline:2px solid Highlight;outline-offset:-3px;box-shadow:none}}
+
+.popup .preview-title,.popup .preview-state,.popup .preview-fidelity{font-size:.8125rem;line-height:1.125rem}
+.popup .preview-title{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
