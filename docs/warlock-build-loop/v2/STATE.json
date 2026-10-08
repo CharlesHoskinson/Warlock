@@ -1,13 +1,75 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-08T21:09:06.180522+00:00",
+  "updatedUTC": "2026-10-08T21:26:58.444619+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "quiescent-picker-retained-frames",
+    "requirements": [
+      "ELM-UI-017"
+    ],
+    "scenarios": [
+      "quiesce",
+      "reopen"
+    ],
+    "paths": [
+      "implementation/warlock/native/shared-host.c",
+      "implementation/warlock/native/host.c",
+      "implementation/warlock/native/client-producer.cpp",
+      "implementation/warlock/native/family_producer.hpp",
+      "implementation/warlock/native/picker-previews.inc",
+      "implementation/warlock/native/picker-previews.h",
+      "implementation/warlock/src/PreviewPresenter.elm",
+      "implementation/warlock/src/RetainedPreviewPresenter.elm",
+      "implementation/warlock/src/Popup.elm",
+      "implementation/warlock/assets/popup-adapter.js",
+      "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/native-preview-states.py",
+      "implementation/warlock/qa/PreviewStateReplay.elm",
+      "implementation/warlock/qa/current-search-build.json",
+      "implementation/warlock/assets/popup.js",
+      "implementation/warlock/assets/bar.js",
+      "implementation/warlock/assets/elm.js",
+      "implementation/warlock/README.md"
+    ],
+    "before": "The ordinary picker retains authorized frames and counters but its 250ms preview timer remains armed after the consumer closes, including when storage and terminal journals are empty.",
+    "after": "Suspend idle preview callbacks when there is neither a visible consumer nor bounded cleanup; preserve retained frames/counters and native control handling, then revalidate grants/incarnations and wake only on a current consumer or required transition.",
+    "verification": [
+      "Compare actual native closed/open capture and callback counters against the frozen quiescence policy; exact previous-frame privacy/identity, cancellation/proof retirement and next request-floor reopening regression. Compile owning changed host/reducer paths; original power/wakeup/resource soak and independent acceptance remain separate."
+    ],
+    "status": "completed-partial",
+    "result": {
+      "manifest": "implementation/warlock/qa/evidence/quiescent-picker/manifest.json",
+      "sha256": "8594f9c01681ef296891ea1d045527201d1da928ec8a4611258690524a51823c",
+      "scope": "Actual changed host removes its recurring picker timer when no current consumer or physical/control custody remains, retains logical actor request floors and wakes on acknowledged current presentation/control. Real GLib callback retirement passes. Native observed Historical retention/expiry, one-second dormant unchanged callback/catalog counters, current reopened native scope with larger request floor, fresh owned pixels, no expired-frame borrowing and no frontend window-effect replay. Second native journey fails normal owned client exit with outstanding custody/journal; no complete native campaign or full original scenario acceptance is claimed.",
+      "requirementAccepted": false,
+      "missingObservations": [
+        "Frozen numeric quiescence interval/policy and qualified whole-process power/wakeup/resource soak are not established. One second of unchanged picker counters is bounded evidence only.",
+        "Dormancy is observed after original frame expiry/cleanup; authorized Historical storage is observed across close/reopen, but no fully dormant retained-storage interval is established.",
+        "The extended reopened journey fails normal owned client exit with outstanding picker custody/journal. Original bounded cleanup is not qualified. Both failed native reports are retained.",
+        "Unknown reserved-custody cases, broader capacity/fairness, native AT and independent original-scenario/requirement acceptance remain open."
+      ]
+    }
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "visible-authorized-preview-states",
     "requirements": [
       "ELM-UI-016"
@@ -54,96 +116,6 @@
         "Physical loading pixels were not intercepted; native DOM label observation is weaker.",
         "Actual assistive technology and independent original-scenario acceptance remain open."
       ]
-    }
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "live-motion-preference",
-    "requirements": [
-      "ELM-UI-014",
-      "ELM-UI-018"
-    ],
-    "scenarios": [
-      "live-motion-minimize",
-      "live-motion-restore",
-      "live-motion-switcher",
-      "live-motion-Task View",
-      "motion-enable",
-      "motion-overlays",
-      "motion-disable"
-    ],
-    "paths": [
-      "implementation/warlock/src/MotionPreferences.elm",
-      "implementation/warlock/src/Motion.elm",
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/adapter/motion_preferences.py",
-      "implementation/warlock/adapter/catalog_transport.py",
-      "implementation/warlock/adapter/daemon.py",
-      "implementation/warlock/native/authority.cpp",
-      "implementation/warlock/native/motion-profile.inc",
-      "implementation/warlock/native/host.c",
-      "implementation/warlock/qa/LiveMotionReplay.elm",
-      "implementation/warlock/qa/MotionReplay.elm",
-      "implementation/warlock/qa/check-live-motion.py",
-      "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/motion-profile.qnt",
-      "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/qa/current-native-pair.json",
-      "implementation/warlock/assets/elm.js",
-      "implementation/warlock/assets/bar.js",
-      "implementation/warlock/assets/popup.js",
-      "implementation/warlock/README.md"
-    ],
-    "before": "The native motion input has no saved explicit override; current profile changes do not settle a retained accepted native family on its next valid presentation.",
-    "after": "Settings persists a typed system/reduced/full override with exact revision CAS. Confirmed preferences govern live native and shell motion without replay, target/focus/deadline changes or repeated completed motion.",
-    "verification": [
-      "Actual root replay for source precedence, saved/refused/unknown outcomes, existing pending window identity/deadline, disabling without replay and binding retirement; private durable storage/version/CAS tests and bounded motion schedules. Original protected native keyboard save/reset/restart, live minimize/restore and separate overlay/source-change recordings at six-second deadlines; AT and independent acceptance remain explicit."
-    ],
-    "status": "completed-partial",
-    "observed": "Actual Settings three-choice motion override, strict revisioned persistence/reset, source precedence, unknown-write read-only recovery, native accepted-family goal settlement without replay. Actual compiled root/store/model/host and owning ABI closure pass. Native keyboard five saves/resets, actual GTK changes and whole-host Full override restart pass; combined recording fails before a subsequent normal-profile effect because its application control is off-screen. Mid-flight and full original qualification remain open.",
-    "missingObservations": [
-      "Original motion-enable has no observed intermediate restore geometry or exactly-once proxy retirement. Native accepted-family/goal settlement compiles but has not been qualified during a real intermediate frame; no proxy behavior is inferred.",
-      "Original live-motion-minimize/live-motion-restore/live-motion-switcher/live-motion-Task View toggle-during-transition intervals and resource ownership are not established by post-completion GTK changes or the Settings journey.",
-      "Original motion-overlays requires separate switcher, Task View and snap open/navigation/dismissal fixtures. Current native Task View reduced-profile recording is only one interval.",
-      "Original motion-disable post-completion source disable/no-replay is observed, but the subsequent normal-profile window operation was not submitted: the second native campaign stopped at an application button outside the scrolled viewport. Its helper correction is not natively rerun; no third qualification campaign.",
-      "Independent original scenario/requirement review, applicable native AT and full release hardware/resource/journey/package/deployment obligations remain open."
-    ],
-    "investigationStopped": true,
-    "evidence": {
-      "path": "implementation/warlock/qa/evidence/live-motion/manifest.json",
-      "sha256": "9f6e387b3560624a9c1f8577d73ffac529baab4d1d004dd6c947913602492c99",
-      "scope": "Actual Settings three-choice motion override, strict revisioned persistence/reset, source precedence, unknown-write read-only recovery, native accepted-family goal settlement without replay. Actual compiled root/store/model/host and owning ABI closure pass. Native keyboard five saves/resets, actual GTK changes and whole-host Full override restart pass; combined recording fails before a subsequent normal-profile effect because its application control is off-screen. Mid-flight and full original qualification remain open.",
-      "sourceBaseRevision": "eb62e2333cc3816a2f4a2c9a650f7070d7507b17",
-      "sourceTuple": {
-        "core": {
-          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
-          "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
-        },
-        "plugin": {
-          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791489372596689127/elm-window-geometry-authority.so",
-          "sha256": "aea28fae8b9b25321d42bfe1da60e7dfd0ffd468f000df715e1a644094f6d28e"
-        },
-        "aquamarine": {
-          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
-          "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
-        }
-      },
-      "reviewerDisposition": "Owner-observed partial implementation and native subintervals; original midpoint/proxy/subsequent-profile/overlay/AT and independent acceptance remain open."
     }
   },
   "recentSlices": [

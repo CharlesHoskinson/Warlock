@@ -4,7 +4,8 @@ Reuse its exact ABI checks, owned helpers, original six-second waits and normal
 cleanup. Change only the FOCUS observation branch; supply no policy/source pixels.
 """
 import hashlib,pathlib,sys
-assert not sys.argv[1:]
+QUIESCENT=sys.argv[1:]==['--quiescence']
+assert not sys.argv[1:] or QUIESCENT
 path=pathlib.Path(__file__).with_name('native-window-feedback.py')
 original=path.read_text()
 start=original.index('   elif FOCUS:\n')
@@ -12,6 +13,10 @@ end=original.index('   else:\n    # Current real taskbar primary action',start)
 branch=r'''   elif FOCUS:
     import re
     import gi;gi.require_version('GdkPixbuf','2.0');from gi.repository import GdkPixbuf
+    def scheduler_rows():
+     return [json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('picker-preview-scheduler: ')]
+    def scheduler():
+     rows=scheduler_rows();return rows[-1] if rows else None
     before=len(journal());click(initial)
     picker=wait(lambda:(projection() or {}).get('picker'))
     check('OrdinaryPickerOpensWithoutWindowMutation',len(journal())==before and len(picker['selections'])==2,picker=picker)
@@ -70,14 +75,51 @@ branch=r'''   elif FOCUS:
     keyboard=pathlib.Path('/home/hoskinson/window-integration-qa/orca-reader/physical-commands/evdev-keyboard')
     helper([str(keyboard)],'key 1 1\nsleep 50\nkey 1 0\nsleep 100\nsync\n')
     wait(lambda:(projection() or {}).get('mode')=='closed')
+    if QUIESCENT:
+     dormant=wait(lambda: scheduler() if scheduler() and scheduler()['state']=='dormant' else None)
+     check('ClosedExpiredPickerRetiresRecurringSource',True,counters=dormant)
+     until=time.monotonic()+1.0
+     while time.monotonic()<until:s.guard();time.sleep(.025)
+     quiet=scheduler()
+     check('ClosedIntervalHasNoCallbackOrCatalogWork',quiet==dormant,before=dormant,after=quiet,seconds=1.0)
+     before_reopen=len(journal())
+     private_effect('restore',primary.removeprefix('family:'))
+     click(wait(lambda:group('Choose a window from')))
+     wait(lambda:(projection() or {}).get('picker'))
+     def renewed_row():
+      current=body()
+      if not current or not any(row['state']=='live' and row['image'] and row['image']['complete'] and row['image']['naturalWidth']>0 and row['image']['uri']!=old_handle for row in current['previews']):return None
+      own=next((row for row in current['previews'] if row['identity']==primary),None)
+      return current if own and ((own['state']=='unavailable' and own['image'] is None and 'Preview unavailable' in own['text']) or (own['state']=='live' and own['image'] and own['image']['complete'] and own['image']['uri']!=old_handle)) else None
+     renewed=wait(renewed_row)
+     packets=[json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('picker-preview-events: ')]
+     own_jobs=[]
+     for batch in packets:
+      for event in batch:
+       if event['kind']!='event' or event['identity']!=primary:continue
+       ev=event['event'];job=None
+       if ev['kind']=='offer':job=ev['frame']['job']
+       elif ev['kind']=='receipt' and ev['event']['kind']=='refused':job=ev['event']['job']
+       if job and job not in own_jobs:own_jobs.append(job)
+     check('ReopenRevalidatesNativeIdentityAndPreservesRequestFloor',len(own_jobs)>=2 and int(own_jobs[-1]['request'])>int(offered[primary]['job']['request']) and own_jobs[-1]['context']['incarnation']==primary.removeprefix('family:') and own_jobs[-1]['context']!=offered[primary]['job']['context'],jobs=own_jobs)
+     check('ReopenNeverBorrowsExpiredFrame',all(not row['image'] or row['image']['uri']!=old_handle for row in renewed['previews']),body=renewed)
+     check('CurrentAcknowledgedReopenWakesScheduler',scheduler()['callbacks']>dormant['callbacks'] and scheduler()['catalogReads']>dormant['catalogReads'],before=dormant,after=scheduler())
+     check('ReopenNeverReplaysWindowEffect',len(journal())==before_reopen)
+     capture('Reopened',renewed,expected)
+     helper([str(keyboard)],'key 1 1\nsleep 50\nkey 1 0\nsleep 100\nsync\n')
+     wait(lambda:(projection() or {}).get('mode')=='closed')
+     report['previewQuiescenceCounters']={'dormant':dormant,'closedInterval':quiet,'reopened':scheduler()}
     report['nativeOrdinaryPreviewsObserved']=True
     report['missingObservations']=['Two simultaneous native raster/export pairs exceed the unchanged two-allocation native budget; broader capacity/fairness remains open.','Physical loading pixels were not intercepted; native DOM label observation is weaker.','Actual assistive technology and independent original-scenario acceptance remain open.']
 '''
 adapted=original[:start]+branch+original[end:]
-adapted=adapted.replace("'native-taskbar-focus-' if FOCUS", "'native-preview-states-' if FOCUS")
+adapted=adapted.replace("'native-taskbar-focus-' if FOCUS", "('native-preview-quiescence-' if QUIESCENT else 'native-preview-states-') if FOCUS")
 needle='try:\n with host.PrivateHyprSession'
 assert adapted.count(needle)==1
-packet={'originalPath':str(path),'originalSHA256':hashlib.sha256(original.encode()).hexdigest(),'change':'Only original FOCUS observation branch replaced with ordinary authorized picker states and exact colored family pixel checks; original host/deadlines/isolation/cleanup retained.'}
+packet={'originalPath':str(path),'originalSHA256':hashlib.sha256(original.encode()).hexdigest(),'change':'Only original FOCUS observation branch replaced with ordinary authorized picker states, optional actual idle/reopen counters and exact colored family pixel checks; original host/deadlines/isolation/cleanup retained.'}
 adapted=adapted.replace(needle,"report.update(requirements=['ELM-UI-016'],scenarios=['preview-states'],scope='Actual ordinary picker native Loading DOM, Live/Historical/Unavailable and owned color/expiry journey; physical loading and actual AT/independent acceptance separate',nativePreviewRunner="+repr(packet)+")\n"+needle)
+if QUIESCENT:
+ adapted=adapted.replace("requirements=['ELM-UI-016'],scenarios=['preview-states']", "requirements=['ELM-UI-017'],scenarios=['quiesce','reopen']")
+ adapted=adapted.replace("report['missingObservations']=['Two simultaneous", "report['missingObservations']=['Frozen numeric quiescence interval and whole-process power/wakeup/resource soak remain unqualified. Retained frames are preserved through bounded native scope/expiry cleanup; callback dormancy is established after original expiry.','Two simultaneous")
 sys.argv=[str(path),'--taskbar-focus']
 exec(compile(adapted,str(path),'exec'),globals())

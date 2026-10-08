@@ -6615,21 +6615,77 @@
       "owner": "Graphics lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "quiesce",
           "oracle": "recurring work stops, authorized storage remains and control processing continues",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/quiescent-picker/manifest.json",
+              "sha256": "8594f9c01681ef296891ea1d045527201d1da928ec8a4611258690524a51823c",
+              "scope": "Actual changed host removes its recurring picker timer when no current consumer or physical/control custody remains, retains logical actor request floors and wakes on acknowledged current presentation/control. Real GLib callback retirement passes. Native observed Historical retention/expiry, one-second dormant unchanged callback/catalog counters, current reopened native scope with larger request floor, fresh owned pixels, no expired-frame borrowing and no frontend window-effect replay. Second native journey fails normal owned client exit with outstanding custody/journal; no complete native campaign or full original scenario acceptance is claimed.",
+              "sourceBaseRevision": "c5aa3d4009eaf04dcf98c921d6e76cd174dbd03a",
+              "sourceHashes": {
+                "implementation/warlock/native/shared-host.c": "e8e907a2b850142facbf8af1d2abfc519b94e3d06d5889889b15e199a50e5eeb",
+                "implementation/warlock/native/host.c": "f4a36569b2b03bbb88a0a62a871b71020331cf7b3f4be66a831909e7198ba852",
+                "implementation/warlock/native/client-producer.cpp": "b332305b3c4cdcb29f72bd2b01e32f233f496e99a37ca576de269aa056c86de6",
+                "implementation/warlock/native/family_producer.hpp": "05e8ad81dac3841e3ebe2355ec826e36e8326fded94ba6baff1fb9c63c6c9990",
+                "implementation/warlock/native/picker-previews.inc": "8e0799d2a56b08e7bee8c64fe098168ac2f1f4f3ab8a4b53e9e1363fa0cdcca3",
+                "implementation/warlock/native/picker-previews.h": "3de20eb93294c790dae3e950a8a94221be47613d181bfae7f2dc93468213ab56",
+                "implementation/warlock/src/PreviewPresenter.elm": "10769b8d9a86e5e5b35f1f292d9837a38b20a0ba636d5baa0ee0c3b8fcdac1cc",
+                "implementation/warlock/src/RetainedPreviewPresenter.elm": "7e1f806897e4bc728961ef6c19da5cf0d36a2948a2966f329cc8d34a6b0ed506",
+                "implementation/warlock/src/Popup.elm": "94038692d76a8061b26c22967683d7837963d5b4a6a452e25597c8e570f710ff",
+                "implementation/warlock/assets/popup-adapter.js": "c637040ec23dff55cebf6959a75f9ae8cd144c3f8c96b870163564c2148c10f4",
+                "implementation/warlock/qa/check-search.py": "0328b5b9434861833fb64a9cff7e733ca754991dc328966f862809ceb0bf4859",
+                "implementation/warlock/qa/native-preview-states.py": "0836abf13375d62bc9bc330ce4dba1602a099cf06ccb332fa533ec89bb699609",
+                "implementation/warlock/qa/PreviewStateReplay.elm": "efefea96e5683b22ae8f7a739245f442293585b0ccce7c810f2b455d2d198847",
+                "implementation/warlock/qa/current-search-build.json": "a221aac8e6963e33bdf06d33283f96540df344e2fbb82770facfe5af5821a520",
+                "implementation/warlock/assets/popup.js": "3a6fb8f2298ad11ead76c4f0a5e84d82c4a48c8d97618dbfb255240574f6fd3d",
+                "implementation/warlock/assets/bar.js": "676469d827783ed1e60e6a3e578ca79153b3e135e550f1cf95fd9d01a1db5683",
+                "implementation/warlock/assets/elm.js": "9a3319b59e265c8c64e9cd1312de4951d549c651135a3fd538dd824eb916bea3",
+                "implementation/warlock/README.md": "fff301292f4a6bfb822d24e35e0d690f0d1acc4a9301494140c258064f0acbff"
+              },
+              "reviewerDisposition": "Independent original-scenario acceptance remains open."
+            }
+          ],
+          "missingObservation": "Frozen numeric quiescence interval/policy and qualified whole-process power/wakeup/resource soak are not established. One second of unchanged picker counters is bounded evidence only.; Dormancy is observed after original frame expiry/cleanup; authorized Historical storage is observed across close/reopen, but no fully dormant retained-storage interval is established.; The extended reopened journey fails normal owned client exit with outstanding picker custody/journal. Original bounded cleanup is not qualified. Both failed native reports are retained.; Unknown reserved-custody cases, broader capacity/fairness, native AT and independent original-scenario/requirement acceptance remain open."
         },
         {
           "name": "reopen",
           "oracle": "authorization and identity revalidate before acquisition; pending/unavailable is explicit",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/quiescent-picker/manifest.json",
+              "sha256": "8594f9c01681ef296891ea1d045527201d1da928ec8a4611258690524a51823c",
+              "scope": "Actual changed host removes its recurring picker timer when no current consumer or physical/control custody remains, retains logical actor request floors and wakes on acknowledged current presentation/control. Real GLib callback retirement passes. Native observed Historical retention/expiry, one-second dormant unchanged callback/catalog counters, current reopened native scope with larger request floor, fresh owned pixels, no expired-frame borrowing and no frontend window-effect replay. Second native journey fails normal owned client exit with outstanding custody/journal; no complete native campaign or full original scenario acceptance is claimed.",
+              "sourceBaseRevision": "c5aa3d4009eaf04dcf98c921d6e76cd174dbd03a",
+              "sourceHashes": {
+                "implementation/warlock/native/shared-host.c": "e8e907a2b850142facbf8af1d2abfc519b94e3d06d5889889b15e199a50e5eeb",
+                "implementation/warlock/native/host.c": "f4a36569b2b03bbb88a0a62a871b71020331cf7b3f4be66a831909e7198ba852",
+                "implementation/warlock/native/client-producer.cpp": "b332305b3c4cdcb29f72bd2b01e32f233f496e99a37ca576de269aa056c86de6",
+                "implementation/warlock/native/family_producer.hpp": "05e8ad81dac3841e3ebe2355ec826e36e8326fded94ba6baff1fb9c63c6c9990",
+                "implementation/warlock/native/picker-previews.inc": "8e0799d2a56b08e7bee8c64fe098168ac2f1f4f3ab8a4b53e9e1363fa0cdcca3",
+                "implementation/warlock/native/picker-previews.h": "3de20eb93294c790dae3e950a8a94221be47613d181bfae7f2dc93468213ab56",
+                "implementation/warlock/src/PreviewPresenter.elm": "10769b8d9a86e5e5b35f1f292d9837a38b20a0ba636d5baa0ee0c3b8fcdac1cc",
+                "implementation/warlock/src/RetainedPreviewPresenter.elm": "7e1f806897e4bc728961ef6c19da5cf0d36a2948a2966f329cc8d34a6b0ed506",
+                "implementation/warlock/src/Popup.elm": "94038692d76a8061b26c22967683d7837963d5b4a6a452e25597c8e570f710ff",
+                "implementation/warlock/assets/popup-adapter.js": "c637040ec23dff55cebf6959a75f9ae8cd144c3f8c96b870163564c2148c10f4",
+                "implementation/warlock/qa/check-search.py": "0328b5b9434861833fb64a9cff7e733ca754991dc328966f862809ceb0bf4859",
+                "implementation/warlock/qa/native-preview-states.py": "0836abf13375d62bc9bc330ce4dba1602a099cf06ccb332fa533ec89bb699609",
+                "implementation/warlock/qa/PreviewStateReplay.elm": "efefea96e5683b22ae8f7a739245f442293585b0ccce7c810f2b455d2d198847",
+                "implementation/warlock/qa/current-search-build.json": "a221aac8e6963e33bdf06d33283f96540df344e2fbb82770facfe5af5821a520",
+                "implementation/warlock/assets/popup.js": "3a6fb8f2298ad11ead76c4f0a5e84d82c4a48c8d97618dbfb255240574f6fd3d",
+                "implementation/warlock/assets/bar.js": "676469d827783ed1e60e6a3e578ca79153b3e135e550f1cf95fd9d01a1db5683",
+                "implementation/warlock/assets/elm.js": "9a3319b59e265c8c64e9cd1312de4951d549c651135a3fd538dd824eb916bea3",
+                "implementation/warlock/README.md": "fff301292f4a6bfb822d24e35e0d690f0d1acc4a9301494140c258064f0acbff"
+              },
+              "reviewerDisposition": "Independent original-scenario acceptance remains open."
+            }
+          ],
+          "missingObservation": "Frozen numeric quiescence interval/policy and qualified whole-process power/wakeup/resource soak are not established. One second of unchanged picker counters is bounded evidence only.; Dormancy is observed after original frame expiry/cleanup; authorized Historical storage is observed across close/reopen, but no fully dormant retained-storage interval is established.; The extended reopened journey fails normal owned client exit with outstanding picker custody/journal. Original bounded cleanup is not qualified. Both failed native reports are retained.; Unknown reserved-custody cases, broader capacity/fairness, native AT and independent original-scenario/requirement acceptance remain open."
         },
         {
           "name": "quiescence-soak",
@@ -9108,5 +9164,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-08T21:09:06.180522+00:00"
+  "updatedUTC": "2026-10-08T21:26:58.444619+00:00"
 }

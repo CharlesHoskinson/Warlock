@@ -49,6 +49,8 @@ static const char *qa_controlled_reader_path;
 static guint imported_poll_source;
 static guint product_catalog_source;
 static char *product_catalog_error;
+static guint64 product_poll_callbacks,product_catalog_reads;
+static void product_wake(void);
 static guint64 imported_snapshot_ordinal;
 static char *imported_last_status;
 static gboolean imported_image_report(JsonObject *object);
@@ -166,6 +168,7 @@ static void shared_publish(void) {
         }
         if(row->ready)surface_eval(row->engine,"receivePresentation",surface_snapshot);
     }
+    product_wake();
 }
 static WebKitWebView *shared_focus_target(void) {
     return focus_owner && focus_owner->active ? focus_owner->engine : view;
@@ -490,7 +493,7 @@ static void shared_receive_text(WebKitUserContentManager *manager,const char *te
                 g_get_monotonic_time()-context_proof.captured,diagnostic);}
         fflush(stdout);}return;}
     if (manager==popup_manager) {
-        if (surface_ack(object,"presentation-applied",FALSE) || surface_ack(object,"focus-applied",TRUE)) {client_wake();imported_wake();return;}
+        if (surface_ack(object,"presentation-applied",FALSE) || surface_ack(object,"focus-applied",TRUE)) {client_wake();imported_wake();product_wake();return;}
         if (surface_popup_ready()) shared_forward(popup_owner,root,TRUE);
     } else shared_forward(origin,root,FALSE);
 }
@@ -750,7 +753,7 @@ static gboolean product_preview_commands(WebKitWebView *target,JsonNode *root) {
         ok=warlock_picker_previews_poll(product_previews,subjects,count,publication,lease,&events,&error) && product_events(events,&error);
     }
     if(!ok)g_printerr("Picker control retained without replay: %s\n",error?error->message:"Unproven outcome");
-    g_clear_error(&error);return ok;
+    g_clear_error(&error);product_wake();return ok;
 }
 static gboolean product_preview_dispatch(WebKitURISchemeRequest *request) {
     const char *uri=webkit_uri_scheme_request_get_uri(request);
@@ -770,11 +773,31 @@ static gboolean product_preview_dispatch(WebKitURISchemeRequest *request) {
     webkit_uri_scheme_response_set_http_headers(response,headers);webkit_uri_scheme_request_finish_with_response(request,response);
     g_object_unref(response);g_object_unref(stream);return TRUE;
 }
+/* Retained frames still need native revocation/expiry and bounded reader/proof
+ * cleanup. Logical actors and request floors survive when their pool is empty;
+ * they are not a reason to run a recurring GLib source. */
+static gboolean product_work_required(void) {
+    guint64 publication=0,lease=0;
+    return !shutting_down && (product_picker_gate(&publication,&lease) ||
+        (product_previews && !warlock_picker_previews_empty(product_previews)));
+}
+static void product_scheduler_report(const char *state) {
+    if(qa_exit) {
+        g_print("picker-preview-scheduler: {\"state\":\"%s\",\"callbacks\":%" G_GUINT64_FORMAT ",\"catalogReads\":%" G_GUINT64_FORMAT ",\"monotonicUS\":%" G_GINT64_FORMAT "}\n",
+            state,product_poll_callbacks,product_catalog_reads,g_get_monotonic_time());fflush(stdout);
+    }
+}
+static gboolean product_poll_next(void) {
+    if(product_work_required())return G_SOURCE_CONTINUE;
+    product_catalog_source=0;product_scheduler_report("dormant");return G_SOURCE_REMOVE;
+}
 static gboolean product_catalog_poll(gpointer data) {
     (void)data;guint64 publication=0,lease=0;guint64 subjects[256];guint count=0;
     if(shutting_down) {product_catalog_source=0;return G_SOURCE_REMOVE;}
+    ++product_poll_callbacks;
     GError *error=NULL;g_autofree char *catalog=NULL,*events=NULL;
     if(product_picker_gate(&publication,&lease)) {
+        ++product_catalog_reads;
         if(!warlock_preview_bootstrap_catalog(preview_bootstrap,publication,lease,&catalog,&error))goto unavailable;
         g_autoptr(JsonParser) parser=json_parser_new();
         if(!strict_json_load(parser,catalog) || !JSON_NODE_HOLDS_OBJECT(json_parser_get_root(parser)))goto unavailable;
@@ -787,11 +810,17 @@ static gboolean product_catalog_poll(gpointer data) {
         }
     }
     if(product_previews && (!warlock_picker_previews_poll(product_previews,subjects,count,publication,lease,&events,&error) || !product_events(events,&error)))goto unavailable;
-    g_clear_pointer(&product_catalog_error,g_free);return G_SOURCE_CONTINUE;
+    g_clear_pointer(&product_catalog_error,g_free);product_scheduler_report("poll");return product_poll_next();
 unavailable:
     {const char *message=error?error->message:"Native preview shape unavailable";
     if(g_strcmp0(product_catalog_error,message)){g_free(product_catalog_error);product_catalog_error=g_strdup(message);g_printerr("Picker preview retained without replay: %s\n",message);}}
-    g_clear_error(&error);return G_SOURCE_CONTINUE;
+    g_clear_error(&error);return product_poll_next();
+}
+static void product_wake(void) {
+    if(!qa_client_subject && !qa_import_subjects[0] && !product_catalog_source && product_work_required()) {
+        product_catalog_source=g_timeout_add(250,product_catalog_poll,NULL);
+        product_scheduler_report("armed");
+    }
 }
 static void client_failure(GError *error) {
     g_printerr("Native client producer failed: %s\n",error?error->message:"Owner unavailable");g_clear_error(&error);failed=TRUE;gtk_main_quit();
@@ -1431,9 +1460,21 @@ static void recovery_show(void) {
 #ifndef ELM_SHARED_HOST_MAIN
 #define ELM_SHARED_HOST_MAIN main
 #endif
+static void test_product_source_retirement(void) {
+    /* Drive the actual GLib callback, rather than a duplicate scheduler model.
+     * A late idle callback must retire itself and a stale wake must stay idle. */
+    g_assert_null(product_previews);g_assert_false(popup_ready);
+    product_catalog_source=g_timeout_add(1,product_catalog_poll,NULL);
+    guint retired=product_catalog_source;guint64 before=product_poll_callbacks;
+    while(product_poll_callbacks==before)g_main_context_iteration(NULL,TRUE);
+    g_assert_cmpuint(product_catalog_source,==,0);
+    g_assert_null(g_main_context_find_source_by_id(NULL,retired));
+    product_wake();g_assert_cmpuint(product_catalog_source,==,0);
+    g_assert_cmpuint(product_catalog_reads,==,0);
+}
 int ELM_SHARED_HOST_MAIN(int argc,char **argv) {
     if (argc==2 && g_str_equal(argv[1],"--self-test")) {
-        g_test_init(&argc,&argv,NULL);g_test_add_func("/host/assets",test_assets);g_test_add_func("/host/request-schema",test_requests);g_test_add_func("/host/qa-report-control-bounds",test_bridge_bounds);g_test_add_func("/host/surface-atomic-preflight",test_surface_preflight);g_test_add_func("/host/surface-manager-isolation",test_surface_managers);g_test_add_func("/host/surface-acknowledgements",test_surface_acknowledgements);g_test_add_func("/host/monitor-index-boundaries",test_monitor_index);g_test_add_func("/host/popup-logical-dimensions",test_popup_dimensions);g_test_add_func("/host/popup-retired-event-order-and-bound",test_popup_queue);g_test_add_func("/host/popup-callback-retirement",test_popup_callback_retirement);g_test_add_func("/host/shared-view-capabilities",test_view_capabilities);g_test_add_func("/host/shared-projection-capabilities",test_projection_capabilities);g_test_add_func("/host/shared-foreground-keyboard-handoff",test_foreground_handoff);g_test_add_func("/host/shared-duplicate-fields",test_duplicate_fields);g_test_add_func("/host/shared-preview-router",test_shared_preview_router);g_test_add_func("/host/client-source-target",test_client_target);g_test_add_func("/host/imported-source-targets",test_imported_target);g_test_add_func("/host/imported-acknowledgement-isolation",test_imported_acknowledgement_isolation);return g_test_run();
+        g_test_init(&argc,&argv,NULL);g_test_add_func("/host/assets",test_assets);g_test_add_func("/host/request-schema",test_requests);g_test_add_func("/host/qa-report-control-bounds",test_bridge_bounds);g_test_add_func("/host/surface-atomic-preflight",test_surface_preflight);g_test_add_func("/host/surface-manager-isolation",test_surface_managers);g_test_add_func("/host/surface-acknowledgements",test_surface_acknowledgements);g_test_add_func("/host/monitor-index-boundaries",test_monitor_index);g_test_add_func("/host/popup-logical-dimensions",test_popup_dimensions);g_test_add_func("/host/popup-retired-event-order-and-bound",test_popup_queue);g_test_add_func("/host/popup-callback-retirement",test_popup_callback_retirement);g_test_add_func("/host/shared-view-capabilities",test_view_capabilities);g_test_add_func("/host/shared-projection-capabilities",test_projection_capabilities);g_test_add_func("/host/shared-foreground-keyboard-handoff",test_foreground_handoff);g_test_add_func("/host/shared-duplicate-fields",test_duplicate_fields);g_test_add_func("/host/shared-preview-router",test_shared_preview_router);g_test_add_func("/host/client-source-target",test_client_target);g_test_add_func("/host/imported-source-targets",test_imported_target);g_test_add_func("/host/imported-acknowledgement-isolation",test_imported_acknowledgement_isolation);g_test_add_func("/host/product-preview-source-retirement",test_product_source_retirement);return g_test_run();
     }
     for (int i=1;i<argc;i++) {
         if (g_str_equal(argv[i],"--assets") && i+1<argc) asset_dir=argv[++i];
@@ -1531,7 +1572,7 @@ int ELM_SHARED_HOST_MAIN(int argc,char **argv) {
     if (qa_client_subject) client_poll_source=g_timeout_add(50,client_poll,NULL);
     if(qa_controlled_preview)controlled_source=g_timeout_add(50,controlled_tick,NULL);
     else if (qa_import_subjects[0]) imported_poll_source=g_timeout_add(50,imported_poll,NULL);
-    if (!qa_client_subject && !qa_import_subjects[0]) product_catalog_source=g_timeout_add(250,product_catalog_poll,NULL);
+    product_wake();
     g_print("shared-host-start: views=%u controllers=1 backend-clients=1 sandbox=%d\n",output_views->len,webkit_web_context_get_sandbox_enabled(shared_context));fflush(stdout);
     gtk_main();shutting_down=TRUE;if (quit_source) g_source_remove(quit_source);if(client_poll_source) {g_source_remove(client_poll_source);client_poll_source=0;}if(imported_poll_source) {g_source_remove(imported_poll_source);imported_poll_source=0;}
     if(product_catalog_source) {g_source_remove(product_catalog_source);product_catalog_source=0;}g_clear_pointer(&product_catalog_error,g_free);

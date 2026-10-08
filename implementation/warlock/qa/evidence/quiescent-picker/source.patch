@@ -1,0 +1,260 @@
+diff --git i/implementation/warlock/README.md w/implementation/warlock/README.md
+index 6046f98..04228ef 100644
+--- i/implementation/warlock/README.md
++++ w/implementation/warlock/README.md
+@@ -316,3 +316,7 @@ Motion Settings now offer Follow system, Reduced motion and Full motion with a s
+ The ordinary window picker now displays authorized native family thumbnails through the existing Elm preview policy. Its dedicated product source retains strict native grant, incarnation, style/crop, privacy, deadline and opaque-URI checks; the older unqualified QA source contracts and controlled curtain remain separate. Closing/reopening preserves the incarnation's native allocator and request floor. A confirmed stale-context refusal permits one changed-context demand after exact terminal acknowledgement; unknown outcomes retain custody without replay. Receiver teardown asks the same Elm reducer to retire all owned jobs before disposing native storage.
+ 
+ Current compiled state/source/refusal/ownership checks and the actual private native picker journey pass. A real colored family paints Live, survives minimize and ordinary reopening as Historical, and becomes Unavailable at the unchanged native expiry; Loading is observed in the actual DOM. All owned clients and helpers exit normally. Physical Loading pixels, actual AT, independent acceptance, broader resource/fairness and simultaneous family raster/export capacity remain open. The native 128MiB/two-allocation budget remains unchanged. See `qa/evidence/preview-states/manifest.json`.
++
++The ordinary picker preview timer now runs only for a current acknowledged picker or outstanding native frame/control cleanup. Once the closed pool is physically empty, its GLib source is removed; retained logical actors keep their request floors. Current presentation acknowledgements and exact native controls can wake it again, without relaxing the source gate or replaying an effect.
++
++The actual private native recording observes a dormant source with unchanged callback/catalog counters over one closed second, then a current reopened gate, increased request floor, fresh authorized pixels and no expired-image borrowing. Historical-frame preservation and native expiry still pass. The extended reopened journey fails normal client exit with outstanding custody, and both native attempts are retained. This is partial UI-017 evidence, not frozen interval, whole-process power/resource soak or independent acceptance. See `qa/evidence/quiescent-picker/manifest.json`.
+diff --git i/implementation/warlock/native/shared-host.c w/implementation/warlock/native/shared-host.c
+index eb0ee9c..1df7425 100644
+--- i/implementation/warlock/native/shared-host.c
++++ w/implementation/warlock/native/shared-host.c
+@@ -49,6 +49,8 @@ static const char *qa_controlled_reader_path;
+ static guint imported_poll_source;
+ static guint product_catalog_source;
+ static char *product_catalog_error;
++static guint64 product_poll_callbacks,product_catalog_reads;
++static void product_wake(void);
+ static guint64 imported_snapshot_ordinal;
+ static char *imported_last_status;
+ static gboolean imported_image_report(JsonObject *object);
+@@ -166,6 +168,7 @@ static void shared_publish(void) {
+         }
+         if(row->ready)surface_eval(row->engine,"receivePresentation",surface_snapshot);
+     }
++    product_wake();
+ }
+ static WebKitWebView *shared_focus_target(void) {
+     return focus_owner && focus_owner->active ? focus_owner->engine : view;
+@@ -490,7 +493,7 @@ static void shared_receive_text(WebKitUserContentManager *manager,const char *te
+                 g_get_monotonic_time()-context_proof.captured,diagnostic);}
+         fflush(stdout);}return;}
+     if (manager==popup_manager) {
+-        if (surface_ack(object,"presentation-applied",FALSE) || surface_ack(object,"focus-applied",TRUE)) {client_wake();imported_wake();return;}
++        if (surface_ack(object,"presentation-applied",FALSE) || surface_ack(object,"focus-applied",TRUE)) {client_wake();imported_wake();product_wake();return;}
+         if (surface_popup_ready()) shared_forward(popup_owner,root,TRUE);
+     } else shared_forward(origin,root,FALSE);
+ }
+@@ -750,7 +753,7 @@ static gboolean product_preview_commands(WebKitWebView *target,JsonNode *root) {
+         ok=warlock_picker_previews_poll(product_previews,subjects,count,publication,lease,&events,&error) && product_events(events,&error);
+     }
+     if(!ok)g_printerr("Picker control retained without replay: %s\n",error?error->message:"Unproven outcome");
+-    g_clear_error(&error);return ok;
++    g_clear_error(&error);product_wake();return ok;
+ }
+ static gboolean product_preview_dispatch(WebKitURISchemeRequest *request) {
+     const char *uri=webkit_uri_scheme_request_get_uri(request);
+@@ -770,11 +773,31 @@ static gboolean product_preview_dispatch(WebKitURISchemeRequest *request) {
+     webkit_uri_scheme_response_set_http_headers(response,headers);webkit_uri_scheme_request_finish_with_response(request,response);
+     g_object_unref(response);g_object_unref(stream);return TRUE;
+ }
++/* Retained frames still need native revocation/expiry and bounded reader/proof
++ * cleanup. Logical actors and request floors survive when their pool is empty;
++ * they are not a reason to run a recurring GLib source. */
++static gboolean product_work_required(void) {
++    guint64 publication=0,lease=0;
++    return !shutting_down && (product_picker_gate(&publication,&lease) ||
++        (product_previews && !warlock_picker_previews_empty(product_previews)));
++}
++static void product_scheduler_report(const char *state) {
++    if(qa_exit) {
++        g_print("picker-preview-scheduler: {\"state\":\"%s\",\"callbacks\":%" G_GUINT64_FORMAT ",\"catalogReads\":%" G_GUINT64_FORMAT ",\"monotonicUS\":%" G_GINT64_FORMAT "}\n",
++            state,product_poll_callbacks,product_catalog_reads,g_get_monotonic_time());fflush(stdout);
++    }
++}
++static gboolean product_poll_next(void) {
++    if(product_work_required())return G_SOURCE_CONTINUE;
++    product_catalog_source=0;product_scheduler_report("dormant");return G_SOURCE_REMOVE;
++}
+ static gboolean product_catalog_poll(gpointer data) {
+     (void)data;guint64 publication=0,lease=0;guint64 subjects[256];guint count=0;
+     if(shutting_down) {product_catalog_source=0;return G_SOURCE_REMOVE;}
++    ++product_poll_callbacks;
+     GError *error=NULL;g_autofree char *catalog=NULL,*events=NULL;
+     if(product_picker_gate(&publication,&lease)) {
++        ++product_catalog_reads;
+         if(!warlock_preview_bootstrap_catalog(preview_bootstrap,publication,lease,&catalog,&error))goto unavailable;
+         g_autoptr(JsonParser) parser=json_parser_new();
+         if(!strict_json_load(parser,catalog) || !JSON_NODE_HOLDS_OBJECT(json_parser_get_root(parser)))goto unavailable;
+@@ -787,11 +810,17 @@ static gboolean product_catalog_poll(gpointer data) {
+         }
+     }
+     if(product_previews && (!warlock_picker_previews_poll(product_previews,subjects,count,publication,lease,&events,&error) || !product_events(events,&error)))goto unavailable;
+-    g_clear_pointer(&product_catalog_error,g_free);return G_SOURCE_CONTINUE;
++    g_clear_pointer(&product_catalog_error,g_free);product_scheduler_report("poll");return product_poll_next();
+ unavailable:
+     {const char *message=error?error->message:"Native preview shape unavailable";
+     if(g_strcmp0(product_catalog_error,message)){g_free(product_catalog_error);product_catalog_error=g_strdup(message);g_printerr("Picker preview retained without replay: %s\n",message);}}
+-    g_clear_error(&error);return G_SOURCE_CONTINUE;
++    g_clear_error(&error);return product_poll_next();
++}
++static void product_wake(void) {
++    if(!qa_client_subject && !qa_import_subjects[0] && !product_catalog_source && product_work_required()) {
++        product_catalog_source=g_timeout_add(250,product_catalog_poll,NULL);
++        product_scheduler_report("armed");
++    }
+ }
+ static void client_failure(GError *error) {
+     g_printerr("Native client producer failed: %s\n",error?error->message:"Owner unavailable");g_clear_error(&error);failed=TRUE;gtk_main_quit();
+@@ -1431,9 +1460,21 @@ static void recovery_show(void) {
+ #ifndef ELM_SHARED_HOST_MAIN
+ #define ELM_SHARED_HOST_MAIN main
+ #endif
++static void test_product_source_retirement(void) {
++    /* Drive the actual GLib callback, rather than a duplicate scheduler model.
++     * A late idle callback must retire itself and a stale wake must stay idle. */
++    g_assert_null(product_previews);g_assert_false(popup_ready);
++    product_catalog_source=g_timeout_add(1,product_catalog_poll,NULL);
++    guint retired=product_catalog_source;guint64 before=product_poll_callbacks;
++    while(product_poll_callbacks==before)g_main_context_iteration(NULL,TRUE);
++    g_assert_cmpuint(product_catalog_source,==,0);
++    g_assert_null(g_main_context_find_source_by_id(NULL,retired));
++    product_wake();g_assert_cmpuint(product_catalog_source,==,0);
++    g_assert_cmpuint(product_catalog_reads,==,0);
++}
+ int ELM_SHARED_HOST_MAIN(int argc,char **argv) {
+     if (argc==2 && g_str_equal(argv[1],"--self-test")) {
+-        g_test_init(&argc,&argv,NULL);g_test_add_func("/host/assets",test_assets);g_test_add_func("/host/request-schema",test_requests);g_test_add_func("/host/qa-report-control-bounds",test_bridge_bounds);g_test_add_func("/host/surface-atomic-preflight",test_surface_preflight);g_test_add_func("/host/surface-manager-isolation",test_surface_managers);g_test_add_func("/host/surface-acknowledgements",test_surface_acknowledgements);g_test_add_func("/host/monitor-index-boundaries",test_monitor_index);g_test_add_func("/host/popup-logical-dimensions",test_popup_dimensions);g_test_add_func("/host/popup-retired-event-order-and-bound",test_popup_queue);g_test_add_func("/host/popup-callback-retirement",test_popup_callback_retirement);g_test_add_func("/host/shared-view-capabilities",test_view_capabilities);g_test_add_func("/host/shared-projection-capabilities",test_projection_capabilities);g_test_add_func("/host/shared-foreground-keyboard-handoff",test_foreground_handoff);g_test_add_func("/host/shared-duplicate-fields",test_duplicate_fields);g_test_add_func("/host/shared-preview-router",test_shared_preview_router);g_test_add_func("/host/client-source-target",test_client_target);g_test_add_func("/host/imported-source-targets",test_imported_target);g_test_add_func("/host/imported-acknowledgement-isolation",test_imported_acknowledgement_isolation);return g_test_run();
++        g_test_init(&argc,&argv,NULL);g_test_add_func("/host/assets",test_assets);g_test_add_func("/host/request-schema",test_requests);g_test_add_func("/host/qa-report-control-bounds",test_bridge_bounds);g_test_add_func("/host/surface-atomic-preflight",test_surface_preflight);g_test_add_func("/host/surface-manager-isolation",test_surface_managers);g_test_add_func("/host/surface-acknowledgements",test_surface_acknowledgements);g_test_add_func("/host/monitor-index-boundaries",test_monitor_index);g_test_add_func("/host/popup-logical-dimensions",test_popup_dimensions);g_test_add_func("/host/popup-retired-event-order-and-bound",test_popup_queue);g_test_add_func("/host/popup-callback-retirement",test_popup_callback_retirement);g_test_add_func("/host/shared-view-capabilities",test_view_capabilities);g_test_add_func("/host/shared-projection-capabilities",test_projection_capabilities);g_test_add_func("/host/shared-foreground-keyboard-handoff",test_foreground_handoff);g_test_add_func("/host/shared-duplicate-fields",test_duplicate_fields);g_test_add_func("/host/shared-preview-router",test_shared_preview_router);g_test_add_func("/host/client-source-target",test_client_target);g_test_add_func("/host/imported-source-targets",test_imported_target);g_test_add_func("/host/imported-acknowledgement-isolation",test_imported_acknowledgement_isolation);g_test_add_func("/host/product-preview-source-retirement",test_product_source_retirement);return g_test_run();
+     }
+     for (int i=1;i<argc;i++) {
+         if (g_str_equal(argv[i],"--assets") && i+1<argc) asset_dir=argv[++i];
+@@ -1531,7 +1572,7 @@ int ELM_SHARED_HOST_MAIN(int argc,char **argv) {
+     if (qa_client_subject) client_poll_source=g_timeout_add(50,client_poll,NULL);
+     if(qa_controlled_preview)controlled_source=g_timeout_add(50,controlled_tick,NULL);
+     else if (qa_import_subjects[0]) imported_poll_source=g_timeout_add(50,imported_poll,NULL);
+-    if (!qa_client_subject && !qa_import_subjects[0]) product_catalog_source=g_timeout_add(250,product_catalog_poll,NULL);
++    product_wake();
+     g_print("shared-host-start: views=%u controllers=1 backend-clients=1 sandbox=%d\n",output_views->len,webkit_web_context_get_sandbox_enabled(shared_context));fflush(stdout);
+     gtk_main();shutting_down=TRUE;if (quit_source) g_source_remove(quit_source);if(client_poll_source) {g_source_remove(client_poll_source);client_poll_source=0;}if(imported_poll_source) {g_source_remove(imported_poll_source);imported_poll_source=0;}
+     if(product_catalog_source) {g_source_remove(product_catalog_source);product_catalog_source=0;}g_clear_pointer(&product_catalog_error,g_free);
+diff --git i/implementation/warlock/qa/check-search.py w/implementation/warlock/qa/check-search.py
+index ed4393c..d33495e 100644
+--- i/implementation/warlock/qa/check-search.py
++++ w/implementation/warlock/qa/check-search.py
+@@ -1,5 +1,6 @@
+ """Focused compiled launcher/search integration, protected CPU scope only."""
+ import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures,http.server,threading
++QUIESCENT=sys.argv[1:]==['--preview-quiescence']
+ PREVIEW=sys.argv[1:]==['--preview-states']
+ LIVE=sys.argv[1:]==['--live-motion']
+ MOTION=sys.argv[1:]==['--reduced-motion'] or LIVE
+@@ -23,11 +24,11 @@ DENSE=sys.argv[1:]==['--dense-taskbar'] or PICKER
+ PINMENUS=sys.argv[1:]==['--pinned-menus'] or (DENSE and not PICKER)
+ PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PINMENUS or PICKER
+ SWITCHER=sys.argv[1:]==['--switcher'] or ACCESSIBILITY
+-NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'];POPUP=sys.argv[1:]==['--native-popup'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD or DRAG or IME or TRANSFER or MOTION;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER or PREVIEW
++NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'];POPUP=sys.argv[1:]==['--native-popup'] or QUIESCENT;TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD or DRAG or IME or TRANSFER or MOTION;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER or PREVIEW
+ ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143'
+ sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
+ scope=require_qa_scope();sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
+-OUT=ROOT/'qa/runs'/(('preview-states-' if PREVIEW else 'live-motion-' if LIVE else 'reduced-motion-' if MOTION else 'transfer-workspace-' if TRANSFER else 'ime-' if IME else 'accessibility-' if ACCESSIBILITY else 'high-contrast-' if CONTRAST else 'drag-ownership-' if DRAG else 'keyboard-shell-' if KEYBOARD else 'attention-' if ATTENTION else 'jump-lists-' if JUMP else 'files-' if FILES else 'system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
++OUT=ROOT/'qa/runs'/(('preview-quiescence-' if QUIESCENT else 'preview-states-' if PREVIEW else 'live-motion-' if LIVE else 'reduced-motion-' if MOTION else 'transfer-workspace-' if TRANSFER else 'ime-' if IME else 'accessibility-' if ACCESSIBILITY else 'high-contrast-' if CONTRAST else 'drag-ownership-' if DRAG else 'keyboard-shell-' if KEYBOARD else 'attention-' if ATTENTION else 'jump-lists-' if JUMP else 'files-' if FILES else 'system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
+ for folder in ['src','native','adapter','assets','qa']:
+  (INPUT/folder).mkdir()
+  for p in (ROOT/folder).iterdir():
+@@ -51,6 +52,7 @@ try:
+  if PRIMARY:report.update(requirements=['ELM-UI-004'],scope='Compile current taskbar state labels and integrated Elm roots; unchanged native host reused by exact source/binary hashes; actual pointer/keyboard/AT acceptance separate')
+  if PINS:report.update(requirements=['ELM-UI-004','ELM-UX-004'],scope='Compiled identity pins/reorder, private atomic native persistence, current integrated host; native restart/pixels acceptance pending')
+  if POPUP:report.update(requirements=['ELM-UI-005','ELM-UX-029','ELM-UX-004'],scope='Changed native popup presentation units compiled/relinked; previously verified compiled Elm assets reused unchanged; actual native pixels acceptance pending')
++ if QUIESCENT:report.update(requirements=['ELM-UI-017'],scenarios=['quiesce','reopen'],scope='Changed native preview scheduler compiled/relinked with exact unchanged Elm/C++ assets; actual GLib idle source retirement self-test; native counters and original soak acceptance separate')
+  if TASKVIEW:report.update(requirements=['ELM-UX-017','ELM-UI-006'],scope='Compiled integrated Task View, workspace membership/active marker and guarded native selection; native pixels/input and original acceptance remain separate')
+  if NAV:report.update(requirements=['ELM-UI-002','ELM-UI-006','ELM-UX-008'],scope='Compiled exact current off-workspace choice/restore replay and coherent scene admission; bounded navigation/refusal/no-replay model; separately compiled authority and actual native journeys required')
+  if not POPUP:
+diff --git i/implementation/warlock/qa/current-search-build.json w/implementation/warlock/qa/current-search-build.json
+index a285fce..6638b6d 100644
+--- i/implementation/warlock/qa/current-search-build.json
++++ w/implementation/warlock/qa/current-search-build.json
+@@ -1,6 +1,6 @@
+ {
+-  "report": "implementation/warlock/qa/runs/preview-states-1791493532102412666/report.json",
+-  "reportSHA256": "c0b5d6d3096836dee80fbcb24a2086a11364d8c44b57758747a3c41e1c0e7bd3",
++  "report": "implementation/warlock/qa/runs/preview-quiescence-1791494520325614702/report.json",
++  "reportSHA256": "4e18f7aac3551d92867783c238b8a03e4295944547f5a0f609adb931ad6e6690",
+   "compiledAssets": {
+     "elm.js": "9a3319b59e265c8c64e9cd1312de4951d549c651135a3fd538dd824eb916bea3",
+     "bar.js": "676469d827783ed1e60e6a3e578ca79153b3e135e550f1cf95fd9d01a1db5683",
+diff --git i/implementation/warlock/qa/native-preview-states.py w/implementation/warlock/qa/native-preview-states.py
+index 39a6a7b..6ec8275 100644
+--- i/implementation/warlock/qa/native-preview-states.py
++++ w/implementation/warlock/qa/native-preview-states.py
+@@ -4,7 +4,8 @@ Reuse its exact ABI checks, owned helpers, original six-second waits and normal
+ cleanup. Change only the FOCUS observation branch; supply no policy/source pixels.
+ """
+ import hashlib,pathlib,sys
+-assert not sys.argv[1:]
++QUIESCENT=sys.argv[1:]==['--quiescence']
++assert not sys.argv[1:] or QUIESCENT
+ path=pathlib.Path(__file__).with_name('native-window-feedback.py')
+ original=path.read_text()
+ start=original.index('   elif FOCUS:\n')
+@@ -12,6 +13,10 @@ end=original.index('   else:\n    # Current real taskbar primary action',start)
+ branch=r'''   elif FOCUS:
+     import re
+     import gi;gi.require_version('GdkPixbuf','2.0');from gi.repository import GdkPixbuf
++    def scheduler_rows():
++     return [json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('picker-preview-scheduler: ')]
++    def scheduler():
++     rows=scheduler_rows();return rows[-1] if rows else None
+     before=len(journal());click(initial)
+     picker=wait(lambda:(projection() or {}).get('picker'))
+     check('OrdinaryPickerOpensWithoutWindowMutation',len(journal())==before and len(picker['selections'])==2,picker=picker)
+@@ -70,14 +75,51 @@ branch=r'''   elif FOCUS:
+     keyboard=pathlib.Path('/home/hoskinson/window-integration-qa/orca-reader/physical-commands/evdev-keyboard')
+     helper([str(keyboard)],'key 1 1\nsleep 50\nkey 1 0\nsleep 100\nsync\n')
+     wait(lambda:(projection() or {}).get('mode')=='closed')
++    if QUIESCENT:
++     dormant=wait(lambda: scheduler() if scheduler() and scheduler()['state']=='dormant' else None)
++     check('ClosedExpiredPickerRetiresRecurringSource',True,counters=dormant)
++     until=time.monotonic()+1.0
++     while time.monotonic()<until:s.guard();time.sleep(.025)
++     quiet=scheduler()
++     check('ClosedIntervalHasNoCallbackOrCatalogWork',quiet==dormant,before=dormant,after=quiet,seconds=1.0)
++     before_reopen=len(journal())
++     private_effect('restore',primary.removeprefix('family:'))
++     click(wait(lambda:group('Choose a window from')))
++     wait(lambda:(projection() or {}).get('picker'))
++     def renewed_row():
++      current=body()
++      if not current or not any(row['state']=='live' and row['image'] and row['image']['complete'] and row['image']['naturalWidth']>0 and row['image']['uri']!=old_handle for row in current['previews']):return None
++      own=next((row for row in current['previews'] if row['identity']==primary),None)
++      return current if own and ((own['state']=='unavailable' and own['image'] is None and 'Preview unavailable' in own['text']) or (own['state']=='live' and own['image'] and own['image']['complete'] and own['image']['uri']!=old_handle)) else None
++     renewed=wait(renewed_row)
++     packets=[json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('picker-preview-events: ')]
++     own_jobs=[]
++     for batch in packets:
++      for event in batch:
++       if event['kind']!='event' or event['identity']!=primary:continue
++       ev=event['event'];job=None
++       if ev['kind']=='offer':job=ev['frame']['job']
++       elif ev['kind']=='receipt' and ev['event']['kind']=='refused':job=ev['event']['job']
++       if job and job not in own_jobs:own_jobs.append(job)
++     check('ReopenRevalidatesNativeIdentityAndPreservesRequestFloor',len(own_jobs)>=2 and int(own_jobs[-1]['request'])>int(offered[primary]['job']['request']) and own_jobs[-1]['context']['incarnation']==primary.removeprefix('family:') and own_jobs[-1]['context']!=offered[primary]['job']['context'],jobs=own_jobs)
++     check('ReopenNeverBorrowsExpiredFrame',all(not row['image'] or row['image']['uri']!=old_handle for row in renewed['previews']),body=renewed)
++     check('CurrentAcknowledgedReopenWakesScheduler',scheduler()['callbacks']>dormant['callbacks'] and scheduler()['catalogReads']>dormant['catalogReads'],before=dormant,after=scheduler())
++     check('ReopenNeverReplaysWindowEffect',len(journal())==before_reopen)
++     capture('Reopened',renewed,expected)
++     helper([str(keyboard)],'key 1 1\nsleep 50\nkey 1 0\nsleep 100\nsync\n')
++     wait(lambda:(projection() or {}).get('mode')=='closed')
++     report['previewQuiescenceCounters']={'dormant':dormant,'closedInterval':quiet,'reopened':scheduler()}
+     report['nativeOrdinaryPreviewsObserved']=True
+     report['missingObservations']=['Two simultaneous native raster/export pairs exceed the unchanged two-allocation native budget; broader capacity/fairness remains open.','Physical loading pixels were not intercepted; native DOM label observation is weaker.','Actual assistive technology and independent original-scenario acceptance remain open.']
+ '''
+ adapted=original[:start]+branch+original[end:]
+-adapted=adapted.replace("'native-taskbar-focus-' if FOCUS", "'native-preview-states-' if FOCUS")
++adapted=adapted.replace("'native-taskbar-focus-' if FOCUS", "('native-preview-quiescence-' if QUIESCENT else 'native-preview-states-') if FOCUS")
+ needle='try:\n with host.PrivateHyprSession'
+ assert adapted.count(needle)==1
+-packet={'originalPath':str(path),'originalSHA256':hashlib.sha256(original.encode()).hexdigest(),'change':'Only original FOCUS observation branch replaced with ordinary authorized picker states and exact colored family pixel checks; original host/deadlines/isolation/cleanup retained.'}
++packet={'originalPath':str(path),'originalSHA256':hashlib.sha256(original.encode()).hexdigest(),'change':'Only original FOCUS observation branch replaced with ordinary authorized picker states, optional actual idle/reopen counters and exact colored family pixel checks; original host/deadlines/isolation/cleanup retained.'}
+ adapted=adapted.replace(needle,"report.update(requirements=['ELM-UI-016'],scenarios=['preview-states'],scope='Actual ordinary picker native Loading DOM, Live/Historical/Unavailable and owned color/expiry journey; physical loading and actual AT/independent acceptance separate',nativePreviewRunner="+repr(packet)+")\n"+needle)
++if QUIESCENT:
++ adapted=adapted.replace("requirements=['ELM-UI-016'],scenarios=['preview-states']", "requirements=['ELM-UI-017'],scenarios=['quiesce','reopen']")
++ adapted=adapted.replace("report['missingObservations']=['Two simultaneous", "report['missingObservations']=['Frozen numeric quiescence interval and whole-process power/wakeup/resource soak remain unqualified. Retained frames are preserved through bounded native scope/expiry cleanup; callback dormancy is established after original expiry.','Two simultaneous")
+ sys.argv=[str(path),'--taskbar-focus']
+ exec(compile(adapted,str(path),'exec'),globals())
