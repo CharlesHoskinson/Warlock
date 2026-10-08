@@ -136,7 +136,7 @@ syncSwitcher model =
             case TaskView.groups model.windows.shell of
                 Just groups ->
                     let candidates=List.concatMap .windows groups |> List.filter (\row -> List.member row.root chord.roots)
-                        (switcher,selected)=if Switcher.phase model.switcher==Switcher.Browsing then (Switcher.reconcile candidates model.switcher,Nothing) else Switcher.ready (Switcher.generation model.switcher) chord.history candidates chord.origin model.switcher
+                        (switcher,selected)=if Switcher.phase model.switcher==Switcher.Browsing then (Switcher.reconcile candidates model.switcher,Nothing) else Switcher.readyFrozen (Switcher.generation model.switcher) chord.roots chord.history candidates chord.origin model.switcher
                         next=advance {model | switcher=switcher}
                     in case selected of
                         Just family -> chooseFamily family next

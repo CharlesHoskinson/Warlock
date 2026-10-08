@@ -1,0 +1,91 @@
+{
+  "schema": 1,
+  "generatedUTC": "2026-10-08T05:47:02.567747+00:00",
+  "baseSourceRevision": "0914d073d1102c82ce77f3030cc2793fd6526456",
+  "sourceHashes": {
+    "implementation/warlock/src/Switcher.elm": "7523cc13bf794c126cee2d39541d9fbae062ec3b420d5898eed6380792ec3061",
+    "implementation/warlock/src/Desktop.elm": "d7dc0be93fef40004aa1c703edd91a55c5e7277f27b07c6fc9ef4e88dbc9a79f",
+    "implementation/warlock/src/Surface.elm": "42efca16e4282897c013ba55fde68ecfb004db3a5e4be99a7095dd2c88828245",
+    "implementation/warlock/src/SurfaceController.elm": "b68ce597342c33f10871e37a495d27a0b6922b62e946bfc6929f22cde1303068",
+    "implementation/warlock/src/SurfaceRenderer.elm": "e633f56a36e65d5468d55f5e73064b1f43ab1e604cda10ce4cbb00239e77a550",
+    "implementation/warlock/src/Inspection.elm": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+    "implementation/warlock/src/Effects.elm": "c41a0732a640ca7727506193c654fd6e9c996e3b9e136ca58e911961233e9e4b",
+    "implementation/warlock/src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+    "implementation/warlock/native/authority.cpp": "df211288d63b258ce5858696b9f7dcdcfa179aeffa00f0abc21e34fa8c0fe23a",
+    "implementation/warlock/native/host.c": "7696afd88d76494bf80ffcfb209c7c0a140b0ec506df913323ff7d8b4de24a6d",
+    "implementation/warlock/native/shared-host.c": "603961b58810985097a8060818be054025dba6138eeeaf31e00e275fc2a7f5ee",
+    "implementation/warlock/native/surface.h": "87b78b8f1f01fcfb98854133f48527476b4bc48422b1cb1c9feba02433dd3f79",
+    "implementation/warlock/adapter/daemon.py": "cf594c7b04789ce8f4970c857118f1fd40964200d0e1ee0116b1944c90be0a25",
+    "implementation/warlock/adapter/effect_endpoint.py": "78c2e26741c23622de562db9ad773120f9069d2435b7949335e31ade1c10bfc5",
+    "implementation/warlock/assets/popup-adapter.js": "f64bc2003e79bc1d16c5010d4246cea9245ab6b98f73bb53e68d9d77c13fd1a8",
+    "implementation/warlock/assets/elm.js": "f7d5f4889b3545126eccf49ab36e1c3da808d8e27168ba05fd854c8f42963f33",
+    "implementation/warlock/assets/bar.js": "dae4f21e29bc176fec10c686ab619570c42839f247b42bd97a1c7236f84150f1",
+    "implementation/warlock/assets/popup.js": "32a30270c86371cf6bed6755cec7584b39707d4a7ece6c3fd07fbb2f82767706",
+    "implementation/warlock/qa/SwitcherReplay.elm": "e94def9c4a3cf5637361291ff6a7a98abeee3fe77703fe4ad5adbad073a282bd",
+    "implementation/warlock/qa/switcher.qnt": "f8b2b9b0d08a3aacf5300b2986ae0cd9f53ca795e723fc799a79bcbf165e146a",
+    "implementation/warlock/qa/check-search.py": "677cd739c6eb018f419768e371b19596f319f50f88f0551aff097f4311b84c6e",
+    "implementation/warlock/qa/check-native-authority.py": "c1b36b2225f76a1b42666c05c7f627e705ac75403810ffa0995a58937021aaed",
+    "implementation/warlock/qa/current-native-pair.json": "5ae8406bd17ffa199c10b37ae28a61b2c4491d05ea1429fcbcfc0f94ee97cf05",
+    "implementation/warlock/qa/current-search-build.json": "99c627f653a9a0eed20ae894541e253e901ddfbeb3f9389888e98c2e59e33624",
+    "implementation/warlock/qa/native-window-feedback.py": "3e7cffea412e7d85b3a8e39ddfb2b5108502dc4bdeec77c60f2b0c7537e65e1b",
+    "implementation/warlock/native/switcher-bindings.lua": "bb5b08c8c98f1699ea6bbec9615098d343299625bc8c0bd59d110576ef6c2f7c",
+    "implementation/warlock/native/core/SeatManager.cpp": "844243e0eb906b0fb144db4769dbcf2a58a078b2815fa19716e65bd30f294f0d",
+    "implementation/warlock/qa/check-focus-core.py": "08f56e21163be2f51e2e863d245dabe13fef06717ff325b274cefc2488f9e04d",
+    "implementation/warlock/qa/current-focus-core.json": "d7a63fef046541c4b7c17c80debcdb0b90f2e802e4c89fdab7488ecfcff3dcf4",
+    "implementation/warlock/native/shared-context.h": "4209c869c75301246d3e8ba266c862289f67dd99c2b68866325dc00278063803",
+    "implementation/warlock/native/shared-context-test.c": "17b6853472e6fb51888d85493ea2d6b4423b5b29a9172c0fad62ab089fe9b4e8"
+  },
+  "artifacts": {
+    "component.json": "74a2ec7450277d5594813898b328f81c4b56c8ff700d44f645f048d4be773298",
+    "authority.json": "a2e49c237017fda726082c7a5fe95904d418f13c56cdef80c547f3b9fbcd127a",
+    "startup-failure.json": "69720bd7ec3d1f7b6cd0713f4afa009272fef54a5d522d1449253a460faa07b1",
+    "two-step-native.json": "e5c313748852b4b935a348ae2c5932010b263ddef8225ffd220243ff0ac703dc",
+    "selected-retirement-native.json": "c2b4c5b964c1fae3d818cf540a035d8ef9179a2d76ef47463d936685dd6760ac",
+    "global-regression.json": "d87b997ebc60c40a1184f1e09500dbee8568d5f9c08a0906824b473e70aad598",
+    "source-delta.patch": "187dee3ace549336a4e8648c81e773e4dd933e977e3133a4609a500b798da14f",
+    "modal-membership.png": "f3beae7aa6c27108fb9f3bec586c3db6d8a94e0d078fec01e4f2a4f66b1d9997"
+  },
+  "originalRequirements": [
+    "ELM-UI-003",
+    "ELM-UX-012",
+    "ELM-UX-013"
+  ],
+  "candidateOnly": true,
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "independentReview": false,
+  "fullReleaseAccepted": false,
+  "mainDesktopActions": false,
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791434796839377534/Hyprland",
+      "sha256": "b246b5ff22545c779b0c541f98e203a5b13eee78d3a66d1df78b6bee5eedec63"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791438047459018419/elm-window-geometry-authority.so",
+      "sha256": "1805693201328985cbf109f5fef6779b8fe469badf094fd417e8206f91c50b47"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "observations": [
+    "A native startup failure committed C instead of A after two physical forward steps and B retirement before the Elm host existed. Failed receipt and original source/core/plugin tuple are preserved.",
+    "The corrected entry ring preserves original positions through Ready, then retires absent entries; actual one-step selected-B retirement and two-step ordinal preservation both choose A once and exclude arrival D from the old chord.",
+    "One family row represents a mapped GTK owner/modal pair. Selecting the owner commits exactly one activate and delivers actual GTK keyboard input to SCENE-MODAL.",
+    "A minimized peer on workspace 2 is represented and restores through the existing native authority once; real keyboard input reaches that peer and workspace/output memberships are unchanged.",
+    "Special-workspace C is excluded from both native entry journal and rendered switcher; browsing/cancellation sends no window effect and preserves memberships.",
+    "Current global order/reverse/cancellation/zero-one/restore/arrival regression and five exact terminal-cache retries pass on the same compiled product tuple."
+  ],
+  "missingObservations": [
+    "Native lock/exclusive-input and other-output membership fixtures remain open.",
+    "Applicable assistive-technology observation and independent original-scenario review remain open."
+  ],
+  "evidenceLimits": [
+    "These are root contributor observations, not independent original-scenario acceptance. AT was disabled in these native fixtures. Lock/exclusive input, other-output and full release remain open.",
+    "The global report and two-step report record their exact earlier runner hashes. Later runner edits add membership-only journal assertions, a truthful setup-membership check and an additional one-step CLI fixture. Global mode and compiled product bytes are unchanged; the selected-retirement report uses the final runner.",
+    "The model covers readiness/cancel/freeze/one-mutation safety; exact ordered retirement selection is checked by the compiled production reducer and native physical cases.",
+    "The captured popup shows current owner/minimized entries; its fourth entry extends below the viewport and is scrollable. This image does not establish all-row physical or AT acceptance."
+  ]
+}

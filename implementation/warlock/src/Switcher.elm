@@ -1,4 +1,4 @@
-module Switcher exposing (Model, Direction(..), Phase(..), initial, generation, phase, entries, selected, lastStep, step, release, ready, reconcile, navigate, choose, commit, cancel)
+module Switcher exposing (Model, Direction(..), Phase(..), initial, generation, phase, entries, selected, lastStep, step, release, ready, readyFrozen, reconcile, navigate, choose, commit, cancel)
 
 import Dict exposing (Dict)
 import Taskbar exposing (Family)
@@ -13,13 +13,14 @@ type Model = Model
     , released : Maybe Int
     , ready : Bool
     , entries : List Family
+    , ring : List Counter
     , origin : Maybe Counter
     , selected : Int
     , baseline : Maybe { root : Counter, through : Int }
     }
 
 initial : Model
-initial = Model {generation=UInt64.zero,phase=Idle,steps=Dict.empty,released=Nothing,ready=False,entries=[],origin=Nothing,selected=0,baseline=Nothing}
+initial = Model {generation=UInt64.zero,phase=Idle,steps=Dict.empty,released=Nothing,ready=False,entries=[],ring=[],origin=Nothing,selected=0,baseline=Nothing}
 
 generation (Model model) = model.generation
 phase (Model model) = model.phase
@@ -54,12 +55,19 @@ settle model =
        else (Model {model | phase=Browsing},Nothing)
 
 advanceSelection model =
-    let size=List.length model.entries
-        anchor=(model.baseline |> Maybe.map .root |> Maybe.withDefault (model.origin |> Maybe.withDefault UInt64.zero)) |> (\root -> index root model.entries)
+    let ring=if model.baseline==Nothing then model.ring else List.map .root model.entries
+        size=List.length ring
+        anchor=(model.baseline |> Maybe.map .root |> Maybe.withDefault (model.origin |> Maybe.withDefault UInt64.zero))
+            |> (\root -> ring |> List.indexedMap Tuple.pair |> List.filter (\(_,identity) -> identity==root) |> List.head |> Maybe.map Tuple.first)
             |> Maybe.withDefault (if Dict.get 1 model.steps==Just Forward then -1 else 0)
         through=model.baseline |> Maybe.map .through |> Maybe.withDefault 0
         total=Dict.toList model.steps |> List.filter (\(number,_) -> number>through) |> List.map (Tuple.second >> delta) |> List.sum
-    in {model | selected=if size==0 then 0 else modBy size (anchor+total)}
+        position=if size==0 then 0 else modBy size (anchor+total)
+        -- Buffered steps keep their entry-time positions even when a member
+        -- retires before Ready. Only then advance to the next surviving root.
+        survivor=(List.drop position ring++List.take position ring)
+            |> List.filter (\identity -> List.any (\row -> row.root==identity) model.entries) |> List.head
+    in {model | selected=survivor |> Maybe.andThen (\identity -> index identity model.entries) |> Maybe.withDefault 0}
 
 step : Counter -> Int -> Direction -> Model -> (Model,Maybe Family)
 step token ordinal direction ((Model current) as original) =
@@ -88,15 +96,23 @@ release token ordinal ((Model current) as original) =
                 Nothing -> settle {model | released=Just ordinal}
 
 ready : Counter -> List Counter -> List Family -> Maybe Counter -> Model -> (Model,Maybe Family)
-ready token history candidates origin ((Model model) as original) =
+ready = readyWith Nothing
+
+readyFrozen : Counter -> List Counter -> List Counter -> List Family -> Maybe Counter -> Model -> (Model,Maybe Family)
+readyFrozen token roots = readyWith (Just roots) token
+
+readyWith frozenRoots token history candidates origin ((Model model) as original) =
     if token/=model.generation || not (writable model) || model.ready then (original,Nothing) else
-    let eligible=List.filter .available candidates
+    let eligible=List.filter (\row -> row.available && (frozenRoots |> Maybe.map (List.member row.root) |> Maybe.withDefault True)) candidates
         unique rows = List.foldl (\row accumulated -> if List.any (\old -> old.root==row.root) accumulated then accumulated else accumulated++[row]) [] rows
         known=List.filterMap (\root -> List.filter (\row -> row.root==root) eligible |> List.head) history |> unique
         unranked=eligible |> List.filter (\row -> not (List.any (\old -> old.root==row.root) known)) |> unique |> List.sortWith (\a b -> UInt64.compare a.root b.root)
         frozen=known++unranked
-    in if List.length candidates>256 then (Model {model | phase=Cancelled},Nothing) else
-        settle (advanceSelection {model | ready=True,entries=frozen,origin=origin})
+        ring=frozenRoots |> Maybe.map (\roots -> List.filter (\identity -> List.member identity roots) history
+            ++ (roots |> List.filter (\identity -> not (List.member identity history)) |> List.sortWith UInt64.compare))
+            |> Maybe.withDefault (List.map .root frozen)
+    in if List.length candidates>256 || List.length ring>256 then (Model {model | phase=Cancelled},Nothing) else
+        settle (advanceSelection {model | ready=True,entries=frozen,ring=ring,origin=origin})
 
 -- Retire from the frozen ring, updating only surviving identities. Arrivals
 -- cannot enter this chord and replacement native incarnations never alias it.

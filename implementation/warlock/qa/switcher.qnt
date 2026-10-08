@@ -24,4 +24,5 @@ module switcher {
   run cancelledPreparedNeverCommitsTest = init.then(first).then(second).then(release).then(ready).then(prepareNative).then(cancel).then(stale).then(all {assert(s.prepared and s.cancelled and not(s.consumed) and s.nativeEffects==0),s'=s})
   run nativeCommitConsumesOnceTest = init.then(first).then(second).then(release).then(ready).then(prepareNative).then(commitNative).then(stale).then(all {assert(s.consumed and s.nativeEffects==1),s'=s})
   run arrivalsWaitForNextRingTest = init.then(first).then(ready).then(arrive).then(retire).then(all {assert(s.frozen==Set(1,3)),s'=s})
+  run retirementBeforeReadyCannotAdmitArrivalTest = init.then(first).then(second).then(release).then(retire).then(arrive).then(ready).then(settle).then(all {assert(s.frozen==Set(1,3) and s.emitted==1),s'=s})
 }

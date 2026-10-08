@@ -90,6 +90,14 @@ result =
         earlyWindows=early.windows
         readyEarly={early | windows={earlyWindows | shell=base.windows.shell}}
         (earlyResolved,earlyResolvedEffects)=Desktop.update (Desktop.Window (TaskbarShell.Native (Shell.Incoming E.null))) readyEarly
+        frozenReady steps live =
+            let stepped=List.foldl (\(ordinal,direction) state -> S.step one ordinal direction state |> Tuple.first) S.initial steps
+                released=S.release one (List.length steps) stepped |> Tuple.first
+            in S.readyFrozen one [one,two,three] history live (Just three) released
+        retiredBeforeReady=frozenReady [(1,S.Forward),(2,S.Forward)] [family "1",family "3"]
+        selectedRetiredBeforeReady=frozenReady [(1,S.Forward)] [family "1",family "3"]
+        originRetiredBeforeReady=frozenReady [(1,S.Forward)] [family "1",family "2"]
+        gapBeforeRetirement=S.step one 3 S.Forward start |> Tuple.first |> S.release one 3 |> Tuple.first |> S.readyFrozen one [one,two,three] history [family "1",family "3"] (Just three) |> Tuple.first
         checks=
             [("mruFirstForward",root browsing==Just two)
             ,("mruForwardWrap",root (cycle 2 S.Forward browsing)==Just one && root (cycle 3 S.Forward (cycle 2 S.Forward browsing))==Just three)
@@ -115,6 +123,10 @@ result =
             ,("nativeCancelDropsPendingSelection",nativeCancelled.choice==Nothing && Surface.mode nativeCancelled=="closed" && List.isEmpty (mutations nativeCancelEffects))
             ,("nativeReleaseBeforeReadyWaits",S.phase early.switcher==S.Waiting && early.choice==Nothing && List.isEmpty (mutations earlyEffects))
             ,("nativeReleaseBeforeReadyThenResolves",earlyResolved.choice |> Maybe.map .root |> (==) (Just one))
+            ,("preReadyRetirementKeepsBufferedPositions",Tuple.second retiredBeforeReady |> Maybe.map .root |> (==) (Just one))
+            ,("preReadySelectedRetirementAdvances",Tuple.second selectedRetiredBeforeReady |> Maybe.map .root |> (==) (Just one))
+            ,("preReadyOriginRetirementKeepsAnchor",Tuple.second originRetiredBeforeReady |> Maybe.map .root |> (==) (Just two))
+            ,("preReadyGapRetirementResolvesOnce",S.phase gapBeforeRetirement==S.Waiting && (S.step one 2 S.Forward gapBeforeRetirement |> Tuple.second |> Maybe.map .root)==Just three)
             ,("localNavigationKeepsNativeOrdinal",let moved=S.navigate S.Forward browsing in S.lastStep moved==1 && root moved==Just one && root (cycle 2 S.Forward moved)==Just three)
             ,("unknownManualChoiceCannotCommit",let (unchanged,commands)=scoped (\stamp -> Desktop.SwitcherChoose stamp (counter "99")) integrated in unchanged.choice==Nothing && List.isEmpty commands)
             ,("nativeReadinessDoesNotMutate",List.isEmpty (mutations earlyResolvedEffects) && List.isEmpty (mutations nativeReleaseEffects))

@@ -292,6 +292,7 @@ void notifySwitcher() noexcept {
 void cancelSwitcher() noexcept {
     if(switcherChord.generation && !switcherChord.consumed && !switcherChord.cancelled){switcherChord.cancelled=true;notifySwitcher();}
 }
+std::optional<std::vector<PHLWINDOW>> nativeFamily(PHLWINDOW window);
 void switcherStep(int direction) noexcept {
     try {
         if(switcherAlts.empty() || !switcherTab || !switcherStepAvailable || g_pSessionLockManager->isSessionLocked() || !g_pInputManager->m_exclusiveLSes.empty())return;
@@ -302,7 +303,10 @@ void switcherStep(int direction) noexcept {
             next.ownerSession=switcherOwnerSession;next.ownerFrontend=switcherOwnerFrontend;
             for(const auto& member:members) {
                 const auto root=member.window.lock();
-                if(root && root->m_isMapped && !root->parent())next.roots.push_back(member.id);
+                if(!root || !root->m_isMapped || root->parent() || !root->m_workspace || root->m_workspace->m_id<=0 || root->isHidden())continue;
+                const auto family=nativeFamily(root);
+                if(!family || family->empty() || std::ranges::any_of(*family,[&](const auto& window){return !window->m_workspace || window->m_workspace!=root->m_workspace || window->isHidden() || window->onSpecialWorkspace();}))continue;
+                next.roots.push_back(member.id);
             }
             if(next.roots.size()>256)return;
             for(const auto& entry:activationHistory | std::views::reverse)

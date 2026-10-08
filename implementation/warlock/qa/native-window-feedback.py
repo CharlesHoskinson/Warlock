@@ -5,7 +5,9 @@ lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
 """
 import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
 PRIMARY=sys.argv[1:]==['--taskbar-primary']
-CHORD=sys.argv[1:]==['--switcher-chord']
+PRE_READY_RETIRE=sys.argv[1:]==['--switcher-pre-ready-retirement']
+MEMBERSHIP=sys.argv[1:]==['--switcher-membership'] or PRE_READY_RETIRE
+CHORD=sys.argv[1:]==['--switcher-chord'] or MEMBERSHIP
 SWITCHER=sys.argv[1:]==['--switcher']
 NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'];PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143';RUNTIME=REPO/'implementation/warlock-client-provider-native-v204'
@@ -43,7 +45,7 @@ else:
 for row in pair.values():assert sha(row['path'])==row['sha256']
 assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
 subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
-OUT=ROOT/'qa/runs'/(('native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+OUT=ROOT/'qa/runs'/(('native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
 OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
 focus_host=None
 if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
@@ -84,7 +86,7 @@ if CHORD:
  adapted=fixture_source.replace(initial,initial+"\ncreate('ELM-CHORD-THIRD', 'blue')")
  needle="        elif request['op'] == 'retire-peer':"
  assert adapted.count(needle)==1
- adapted=adapted.replace(needle,"        elif request['op'] == 'arrive-chord':\n            create('ELM-CHORD-ARRIVAL', 'blue')\n        elif request['op'] == 'retire-third':\n            windows.pop('ELM-CHORD-THIRD').destroy()\n        elif request['op'] == 'retire-arrival':\n            windows.pop('ELM-CHORD-ARRIVAL').destroy()\n        elif request['op'] == 'retire-primary':\n            windows.pop('ELM-AUTHORITY-FIXTURE').destroy()\n"+needle)
+ adapted=adapted.replace(needle,"        elif request['op'] == 'arrive-peer':\n            create('ELM-ACTIVATION-PEER', 'green')\n        elif request['op'] == 'arrive-chord':\n            create('ELM-CHORD-ARRIVAL', 'blue')\n        elif request['op'] == 'retire-third':\n            windows.pop('ELM-CHORD-THIRD').destroy()\n        elif request['op'] == 'retire-arrival':\n            windows.pop('ELM-CHORD-ARRIVAL').destroy()\n        elif request['op'] == 'retire-primary':\n            windows.pop('ELM-AUTHORITY-FIXTURE').destroy()\n"+needle)
  original_fixture=FIXTURE;FIXTURE=fixture_inputs/'chord-fixture.py';FIXTURE.write_text(adapted)
  chord_fixture={'originalSHA256':sha(original_fixture),'path':str(FIXTURE),'sha256':sha(FIXTURE),'change':'Third independent GTK root plus controlled retire/arrival operations; original client input/controllers unchanged.'}
 report={'schema':1,'requirements':['ELM-UI-007'],'scenarios':['restore-pending','restore-refused','restore-unknown'],'scope':'Actual pointer/Elm/native effect feedback and private compositor pixels; no AT/IME/full release acceptance','nativeFeedbackObserved':False,'nativeAcceptance':False,'assistiveTechnologyAccepted':False,'fullReleaseAccepted':False,'mainDesktopActions':False,'passed':False,'checks':[],'sourceInputs':{str(p.relative_to(ROOT)):sha(p) for folder in ['src','native','adapter','assets'] for p in (ROOT/folder).iterdir() if p.is_file()},'pair':pair,'nativeHost':{'path':str(binary),'sha256':sha(binary),'heldBuild':str(build_path),'heldBuildSHA256':sha(build_path)},'runtimeByReference':{'root':str(RUNTIME),'hostSHA256':sha(RUNTIME/'candidate_host.py')},'helpers':[],'nativeFixtures':[]};s=None;loaded=False;apps=[];broker=None;paused=False;sequence=0;chord_keyboard=None;chord_writer=None
@@ -98,6 +100,7 @@ if RETIRE_OPENER:report['scope']='Actual native Task View browse then primary op
 if NAV:report.update(requirements=['ELM-UI-002','ELM-UI-006','ELM-UX-008'],scenarios=['activate-other-workspace','overview-select','ux-008','activation-refused'],scope='Actual minimized workspace-2 family selected through Task View and taskbar; native receipts, focus/keyboard, pixels and unchanged membership; stale-context refusal; other-output, partial-refusal and AT acceptance remain separate',nativeNavigationJourneyObserved=False,authorityBuild={'path':str(authority_path),'sha256':sha(authority_path)})
 if FOCUS:report.update(requirements=['ELM-UI-004','ELM-UX-024'],scenarios=['taskbar-group','ux-024'],scope='Actual native picker traversal and Escape/focus recipient diagnosis; menu/AT original acceptance remains pending')
 if CHORD:report.update(requirements=['ELM-UI-003','ELM-UX-012','ELM-UX-013'],scenarios=['switcher-order','switcher-cancel','switcher-zero-one','switcher-retire-arrive','ux-012','ux-013'],scope='Actual global native Alt-Tab three-root order, startup release, native cancellation fence, membership freeze and zero/one; modal/protected/AT/independent acceptance remain open',nativeChordJourneyObserved=False,chordFixture=chord_fixture)
+if MEMBERSHIP:report.update(scenarios=['switcher-membership','switcher-retire-arrive'],scope='Actual native '+('one-step selected retirement' if PRE_READY_RETIRE else 'two-step buffered retirement')+' before readiness/arrival, modal-family activation/recipient and minimized workspace-2 restore; lock, other-output, AT and independent review remain open',nativeMembershipJourneyObserved=False)
 if SWITCHER:report.update(requirements=['ELM-UI-003'],scenarios=['switcher-order','switcher-cancel'],scope='Actual native MRU observation, integrated switcher control pixels, local keyboard cycling/cancel and identity-bound chosen activation; global Alt-Tab journal, modal representation and AT/independent acceptance remain pending',nativeSwitcherJourneyObserved=False)
 if PRIMARY:report.update(requirements=['ELM-UI-004'],scenarios=['taskbar-inactive','taskbar-active','taskbar-minimized'],scope='Actual pointer single-family activation/minimize/restore, exact native receipt and GTK keyboard recipient, MRU/desktop succession and pixels; primary keyboard and AT acceptance remain pending',nativePrimaryJourneyObserved=False)
 LUA=b'''hl.config({xwayland={enabled=false},animations={enabled=false}})
@@ -194,12 +197,15 @@ try:
     native_roots=client.snapshot('430')['windows'];chord_labels={row['label']:row['incarnation'] for row in native_roots}
     a,b,c=[chord_labels[name] for name in ['ELM-AUTHORITY-FIXTURE','ELM-ACTIVATION-PEER','ELM-CHORD-THIRD']]
     def native_focus(identity):
-     row=client.scene_facts('430');n=str(8000+len(report['nativeFixtures']));intent={'request':n,'generation':n,'incarnation':identity,'operation':'activate','context':client.context(row)};result=client.effect(intent);report['nativeFixtures'].append({'intent':intent,'result':result});check('CommittedHistoryFixture',result['status']=='Committed',result=result)
+     row=client.scene_facts('430');n=str((10000 if MEMBERSHIP else 8000)+len(report['nativeFixtures']));intent={'request':n,'generation':n,'incarnation':identity,'operation':'activate','context':client.context(row)};result=client.effect(intent);report['nativeFixtures'].append({'intent':intent,'result':result});check('CommittedHistoryFixture',result['status']=='Committed',result=result)
     for identity in [a,b,c]:native_focus(identity)
     check('NativeHistoryABCBeforeFrontend',client.activation_history('430')['roots']==[c,b,a])
-    physical('key 56 1\nkey 15 1\nsleep 50\nkey 15 0\nkey 56 0\nsleep 100')
+    physical('key 56 1\nkey 15 1\nsleep 50\nkey 15 0\n'+('key 15 1\nsleep 50\nkey 15 0\n' if MEMBERSHIP and not PRE_READY_RETIRE else '')+'key 56 0\nsleep 100')
     startup=client.switcher_journal('430',observe=True);report['startupJournalBeforeHost']=startup
-    check('NativeReleaseRecordedBeforeFrontendExists',startup['chord']['released'] and startup['chord']['steps']==[1] and startup['chord']['history']==[c,b,a] and not startup['chord']['consumed'])
+    check('NativeReleaseRecordedBeforeFrontendExists',startup['chord']['released'] and startup['chord']['steps']==([1,1] if MEMBERSHIP and not PRE_READY_RETIRE else [1]) and startup['chord']['history']==[c,b,a] and not startup['chord']['consumed'])
+    if MEMBERSHIP:
+     fixture_control('retire-peer');wait(lambda:all(row['incarnation']!=b for row in client.snapshot('430')['windows']));fixture_control('arrive-chord');wait(lambda:any(row['label']=='ELM-CHORD-ARRIVAL' for row in client.snapshot('430')['windows']))
+     report['startupAfterRetirement']=client.scene_facts('430');check('RetirementAndArrivalBeforeElmHost',b in startup['chord']['roots'] and len(client.snapshot('430')['windows'])==3)
     hold_arm=OUTPUT/'chord-hold.arm';hold_waiting=OUTPUT/'chord-hold.waiting';hold_release=OUTPUT/'chord-hold.release'
     backend_fixture=OUTPUT/'chord-backend.py'
     backend_fixture.write_text(f"""import sys,time,json
@@ -262,7 +268,7 @@ raise SystemExit(daemon.run())
    def current_window():return next(w for w in facts()['facts']['windows'] if w['incarnation']==target)
    def transaction_state():return (projection() or {}).get('transaction')
    def private_effect(operation,identity=None):
-    before=facts();n=str(9000+len(report['nativeFixtures']));intent={'request':n,'generation':n,'incarnation':identity or target,'operation':operation,'context':client.context(before)};result=client.effect(intent);report['nativeFixtures'].append({'intent':intent,'result':result});check('ControlledNativeFixture'+operation,result['status']=='Committed',result=result)
+    before=facts();n=str((10000 if MEMBERSHIP else 9000)+len(report['nativeFixtures']));intent={'request':n,'generation':n,'incarnation':identity or target,'operation':operation,'context':client.context(before)};result=client.effect(intent);report['nativeFixtures'].append({'intent':intent,'result':result});check('ControlledNativeFixture'+operation,result['status']=='Committed',result=result)
    def screenshot(state):
     body=wait(lambda:feedback(state));o=body['feedback'];check(state+'VisibleCorrelatedMessage',o and o['width']>=180 and o['height']==48 and o['clip']=='none' and o['display']!='none' and o['accessibleName']==o['text'] and o['atomic']=='true' and o['live']=='polite',feedback=o)
     image=OUTPUT/(state+'.png');helper(['/usr/bin/grim',str(image)])
@@ -400,31 +406,63 @@ raise SystemExit(daemon.run())
       physical('key 30 1\nsleep 50\nkey 30 0\nsleep 100')
       delivered=[json.loads(line) for line in events.read_text().splitlines()[before:]] if events.exists() else []
       check(stage+'RealKeyboardRecipient',facts()['facts']['focused']==identity and any(row['kind']=='key' and row['keyval']==97 and row['window']==label for row in delivered),focus=facts()['facts']['focused'],events=delivered)
-     receipt('StartupRelease',0,b);check('StartupOneResolutionAndNoOpenSwitcher',len(journal())==1 and native_journal()['consumed']);recipient('StartupRelease',b,'ELM-ACTIVATION-PEER')
-     for identity in [a,b,c]:native_focus(identity)
-     wait(coherent_closed);before=len(journal());history_before=client.activation_history('450')['roots'];chord_start();body=wait(lambda:selected_window('ELM-ACTIVATION-PEER'))
-     order=[button['accessibleName'].split(';',1)[0] for button in body['buttons'] if button['accessibleName'].startswith(('Activate ELM-','Restore ELM-'))]
-     check('NativeThreeRootFrozenMRUOrder',order==['Activate ELM-CHORD-THIRD','Activate ELM-ACTIVATION-PEER','Activate ELM-AUTHORITY-FIXTURE'],body=body,journal=native_journal())
-     popup_capture('global-mru');chord_step();wait(lambda:selected_window('ELM-AUTHORITY-FIXTURE'));chord_step();wait(lambda:selected_window('ELM-CHORD-THIRD'))
-     check('ForwardBACWrapNoMutation',len(journal())==before);escape();release_alt();wait(coherent_closed)
-     check('CancelPreservesCAndCommittedMRU',facts()['facts']['focused']==c and client.activation_history('450')['roots']==history_before and len(journal())==before,expectedFocus=c,actualFocus=facts()['facts']['focused'],historyBefore=history_before,historyAfter=client.activation_history('450')['roots']);recipient('Cancel',c,'ELM-CHORD-THIRD')
-     chord_start(True);wait(lambda:selected_window('ELM-AUTHORITY-FIXTURE'));escape();release_alt();wait(coherent_closed);check('FirstReverseAWithoutMutation',len(journal())==before and facts()['facts']['focused']==c)
-     chord_start();wait(lambda:selected_window('ELM-ACTIVATION-PEER'));hold_arm.write_text('armed');release_alt();wait(lambda:hold_waiting.exists());prepared=json.loads(hold_waiting.read_text());report['heldSelection']=prepared
-     escape();check('NativeCancelBeforeQueuedEffectCommit',native_journal()['cancelled'] and not native_journal()['consumed']);hold_release.write_text('release')
-     receipt('QueuedCancel',before,b,'Refused');check('QueuedCancelPreservesFocusMRU',facts()['facts']['focused']==c and client.activation_history('450')['roots']==history_before);recipient('QueuedCancel',c,'ELM-CHORD-THIRD')
-     before=len(journal());chord_start();wait(lambda:selected_window('ELM-ACTIVATION-PEER'));release_alt();receipt('GlobalForward',before,b);recipient('GlobalForward',b,'ELM-ACTIVATION-PEER')
-     for identity in [a,b,c]:native_focus(identity)
-     wait(coherent_closed);report['beforeControlledRetirements']=facts();check('ChordOriginalTargetMembershipBeforeRetirement',current_window()['workspace']==initial_workspace,nativeWorkspace=current_window()['workspace'],originalWorkspace=initial_workspace);before=len(journal());chord_start();wait(lambda:selected_window('ELM-ACTIVATION-PEER'));frozen=native_journal()['roots'];fixture_control('retire-peer');wait(lambda:all(row['incarnation']!=b for row in facts()['facts']['windows']));fixture_control('arrive-chord');arrival=wait(lambda:next((row['incarnation'] for row in client.snapshot('450')['windows'] if row['label']=='ELM-CHORD-ARRIVAL'),None));wait(lambda:selected_window('ELM-AUTHORITY-FIXTURE'))
-     body=popup_body();check('HeldChordRetiresBAndExcludesArrival',arrival not in frozen and all('ELM-CHORD-ARRIVAL' not in row['accessibleName'] for row in body['buttons']),body=body,journal=native_journal());release_alt();receipt('RetiredSelectionFallback',before,a);recipient('RetiredSelectionFallback',a,'ELM-AUTHORITY-FIXTURE')
-     chord_start();wait(lambda:selected_window('ELM-CHORD-ARRIVAL'));check('ArrivalEntersNextChord',arrival in native_journal()['roots']);escape();release_alt();wait(coherent_closed)
-     fixture_control('retire-third');wait(lambda:all(row['incarnation']!=c for row in facts()['facts']['windows']));fixture_control('retire-arrival');wait(lambda:len(client.snapshot('450')['windows'])==1);wait(coherent_closed)
-     before=len(journal());chord_start();wait(lambda:selected_window('ELM-AUTHORITY-FIXTURE'));release_alt();receipt('SoleCandidate',before,a);check('SoleCandidateNeverMinimized',not facts()['facts']['windows'][0]['minimized']);recipient('SoleCandidate',a,'ELM-AUTHORITY-FIXTURE')
-     private_effect('minimize',a);wait(lambda:facts()['facts']['windows'][0]['minimized'] and coherent_closed());before=len(journal());chord_start();wait(lambda:selected_window('ELM-AUTHORITY-FIXTURE'));release_alt();receipt('SoleMinimizedRestore',before,a);check('SoleMinimizedCandidateRestores',not facts()['facts']['windows'][0]['minimized'] and journal()[-1]['intent']['operation']=='restore');recipient('SoleMinimizedRestore',a,'ELM-AUTHORITY-FIXTURE')
-     fixture_control('retire-primary');wait(lambda:len(client.snapshot('450')['windows'])==0);wait(coherent_closed);before=len(journal());before_publication=int(projection()['publication']);chord_start();release_alt();zero_journal=native_journal();zero_generation=zero_journal['generation'];wait(lambda:any(json.loads(line.split(': ',1)[1]).get('chord',{}).get('generation')==zero_generation for line in text().splitlines() if line.startswith('backend-frame: ')));wait(lambda:coherent_closed() and int(projection()['publication'])>before_publication);check('ZeroCandidateNoEffectNoOpenSwitcher',len(journal())==before and facts()['facts']['focused'] is None)
-     check('GlobalChordNeverLaunchesApplications',not launches())
-     retries=[json.loads(line) for line in (OUTPUT/'chord-retries.jsonl').read_text().splitlines()]
-     check('ExactTerminalRetriesSurviveNewSelectionPreparation',len(retries)>=3 and all(row['matches'] for row in retries),retries=retries)
-     report['nativeChordJourneyObserved']=True
+     if MEMBERSHIP:
+      receipt('StartupFrozenSteps',0,a);recipient('StartupFrozenSteps',a,'ELM-AUTHORITY-FIXTURE')
+      check('StartupRetiredPeerAndArrivalDoNotRenumberBufferedSteps',b not in [row['incarnation'] for row in facts()['facts']['windows']] and journal()[-1]['intent']['incarnation']==a)
+      fixture_control('arrive-peer');b=wait(lambda:next((row['incarnation'] for row in client.snapshot('450')['windows'] if row['label']=='ELM-ACTIVATION-PEER'),None))
+      fixture_control('add-modal');modal=wait(lambda:next((row['incarnation'] for row in client.snapshot('450')['windows'] if row['label']=='SCENE-MODAL'),None))
+      wait(lambda:any(row['incarnation']==modal and row['owner']==a for row in facts()['facts']['windows']))
+      native_focus(c);private_effect('minimize',b)
+      peer=next(row for row in s.data('clients') if row['title']=='ELM-ACTIVATION-PEER')
+      check('MinimizedPeerMovesToWorkspaceTwo',s.ctl('dispatch',"hl.dsp.window.move({workspace=2,follow=false,window='address:"+peer['address']+"'})").strip()=='ok')
+      wait(lambda:any(row['incarnation']==b and row['workspace']=='2' and row['minimized'] for row in facts()['facts']['windows']))
+      membership=sorted((row['incarnation'],row['workspace'],row['monitor']) for row in facts()['facts']['windows'])
+      report['membershipBeforeChoice']=facts();before=len(journal());chord_start();body=wait(lambda:selected_window('ELM-AUTHORITY-FIXTURE'))
+      labels=[row['accessibleName'].split(';',1)[0] for row in body['buttons'] if row['accessibleName'].startswith(('Activate ELM-','Restore ELM-'))]
+      check('ModalFamilyAndAllOrdinaryWorkspaceRootsEnumeratedOnce',len(labels)==4 and len(set(labels))==4 and modal not in native_journal()['roots'] and b in native_journal()['roots'] and any(label=='Restore ELM-ACTIVATION-PEER' for label in labels),body=body,journal=native_journal())
+      popup_capture('modal-all-workspaces');release_alt();receipt('ModalFamilyActivation',before,a);recipient('ModalFamilyActivation',modal,'SCENE-MODAL')
+      check('ModalActivationPreservesNativeMembership',membership==sorted((row['incarnation'],row['workspace'],row['monitor']) for row in facts()['facts']['windows']))
+      before=len(journal());chord_start();wait(lambda:(projection() or {}).get('mode')=='switcher')
+      for _ in range(4):
+       if selected_window('ELM-ACTIVATION-PEER'):break
+       chord_step()
+      wait(lambda:selected_window('ELM-ACTIVATION-PEER'));release_alt();receipt('OtherWorkspaceMinimizedRestore',before,b);recipient('OtherWorkspaceMinimizedRestore',b,'ELM-ACTIVATION-PEER')
+      check('OtherWorkspaceRestorePreservesMembershipAndUsesRestore',membership==sorted((row['incarnation'],row['workspace'],row['monitor']) for row in facts()['facts']['windows']) and journal()[-1]['intent']['operation']=='restore' and s.data('monitors')[0]['activeWorkspace']['id']==2)
+      excluded=next(row for row in s.data('clients') if row['title']=='ELM-CHORD-THIRD')
+      check('FixtureMovesOnlyThirdToSpecialWorkspace',s.ctl('dispatch',"hl.dsp.window.move({workspace='special:warlock-excluded',follow=false,window='address:"+excluded['address']+"'})").strip()=='ok')
+      wait(lambda:any(row['incarnation']==c and int(row['workspace'])<0 for row in facts()['facts']['windows']))
+      before=len(journal());chord_start();body=wait(lambda:next((body for body in [popup_body()] if body and (projection() or {}).get('mode')=='switcher' and body['publication']==projection()['publication'] and all('ELM-CHORD-THIRD' not in row['accessibleName'] for row in body['buttons'])),None))
+      check('SpecialWorkspaceExcludedFromSwitcher',c not in native_journal()['roots'] and all('ELM-CHORD-THIRD' not in row['accessibleName'] for row in body['buttons']),body=body,journal=native_journal())
+      excluded_membership=sorted((row['incarnation'],row['workspace'],row['monitor']) for row in facts()['facts']['windows'])
+      escape();release_alt();wait(coherent_closed);check('ExclusionBrowseCancelHasNoWindowEffect',len(journal())==before)
+      check('ExclusionBrowseCancelPreservesMembership',excluded_membership==sorted((row['incarnation'],row['workspace'],row['monitor']) for row in facts()['facts']['windows']))
+      report['membershipAfterChoice']=facts();check('MembershipJourneyNeverLaunchesApplications',not launches());report['nativeMembershipJourneyObserved']=True
+     else:
+      receipt('StartupRelease',0,b);check('StartupOneResolutionAndNoOpenSwitcher',len(journal())==1 and native_journal()['consumed']);recipient('StartupRelease',b,'ELM-ACTIVATION-PEER')
+      for identity in [a,b,c]:native_focus(identity)
+      wait(coherent_closed);before=len(journal());history_before=client.activation_history('450')['roots'];chord_start();body=wait(lambda:selected_window('ELM-ACTIVATION-PEER'))
+      order=[button['accessibleName'].split(';',1)[0] for button in body['buttons'] if button['accessibleName'].startswith(('Activate ELM-','Restore ELM-'))]
+      check('NativeThreeRootFrozenMRUOrder',order==['Activate ELM-CHORD-THIRD','Activate ELM-ACTIVATION-PEER','Activate ELM-AUTHORITY-FIXTURE'],body=body,journal=native_journal())
+      popup_capture('global-mru');chord_step();wait(lambda:selected_window('ELM-AUTHORITY-FIXTURE'));chord_step();wait(lambda:selected_window('ELM-CHORD-THIRD'))
+      check('ForwardBACWrapNoMutation',len(journal())==before);escape();release_alt();wait(coherent_closed)
+      check('CancelPreservesCAndCommittedMRU',facts()['facts']['focused']==c and client.activation_history('450')['roots']==history_before and len(journal())==before,expectedFocus=c,actualFocus=facts()['facts']['focused'],historyBefore=history_before,historyAfter=client.activation_history('450')['roots']);recipient('Cancel',c,'ELM-CHORD-THIRD')
+      chord_start(True);wait(lambda:selected_window('ELM-AUTHORITY-FIXTURE'));escape();release_alt();wait(coherent_closed);check('FirstReverseAWithoutMutation',len(journal())==before and facts()['facts']['focused']==c)
+      chord_start();wait(lambda:selected_window('ELM-ACTIVATION-PEER'));hold_arm.write_text('armed');release_alt();wait(lambda:hold_waiting.exists());prepared=json.loads(hold_waiting.read_text());report['heldSelection']=prepared
+      escape();check('NativeCancelBeforeQueuedEffectCommit',native_journal()['cancelled'] and not native_journal()['consumed']);hold_release.write_text('release')
+      receipt('QueuedCancel',before,b,'Refused');check('QueuedCancelPreservesFocusMRU',facts()['facts']['focused']==c and client.activation_history('450')['roots']==history_before);recipient('QueuedCancel',c,'ELM-CHORD-THIRD')
+      before=len(journal());chord_start();wait(lambda:selected_window('ELM-ACTIVATION-PEER'));release_alt();receipt('GlobalForward',before,b);recipient('GlobalForward',b,'ELM-ACTIVATION-PEER')
+      for identity in [a,b,c]:native_focus(identity)
+      wait(coherent_closed);report['beforeControlledRetirements']=facts();check('ChordOriginalTargetMembershipBeforeRetirement',current_window()['workspace']==initial_workspace,nativeWorkspace=current_window()['workspace'],originalWorkspace=initial_workspace);before=len(journal());chord_start();wait(lambda:selected_window('ELM-ACTIVATION-PEER'));frozen=native_journal()['roots'];fixture_control('retire-peer');wait(lambda:all(row['incarnation']!=b for row in facts()['facts']['windows']));fixture_control('arrive-chord');arrival=wait(lambda:next((row['incarnation'] for row in client.snapshot('450')['windows'] if row['label']=='ELM-CHORD-ARRIVAL'),None));wait(lambda:selected_window('ELM-AUTHORITY-FIXTURE'))
+      body=popup_body();check('HeldChordRetiresBAndExcludesArrival',arrival not in frozen and all('ELM-CHORD-ARRIVAL' not in row['accessibleName'] for row in body['buttons']),body=body,journal=native_journal());release_alt();receipt('RetiredSelectionFallback',before,a);recipient('RetiredSelectionFallback',a,'ELM-AUTHORITY-FIXTURE')
+      chord_start();wait(lambda:selected_window('ELM-CHORD-ARRIVAL'));check('ArrivalEntersNextChord',arrival in native_journal()['roots']);escape();release_alt();wait(coherent_closed)
+      fixture_control('retire-third');wait(lambda:all(row['incarnation']!=c for row in facts()['facts']['windows']));fixture_control('retire-arrival');wait(lambda:len(client.snapshot('450')['windows'])==1);wait(coherent_closed)
+      before=len(journal());chord_start();wait(lambda:selected_window('ELM-AUTHORITY-FIXTURE'));release_alt();receipt('SoleCandidate',before,a);check('SoleCandidateNeverMinimized',not facts()['facts']['windows'][0]['minimized']);recipient('SoleCandidate',a,'ELM-AUTHORITY-FIXTURE')
+      private_effect('minimize',a);wait(lambda:facts()['facts']['windows'][0]['minimized'] and coherent_closed());before=len(journal());chord_start();wait(lambda:selected_window('ELM-AUTHORITY-FIXTURE'));release_alt();receipt('SoleMinimizedRestore',before,a);check('SoleMinimizedCandidateRestores',not facts()['facts']['windows'][0]['minimized'] and journal()[-1]['intent']['operation']=='restore');recipient('SoleMinimizedRestore',a,'ELM-AUTHORITY-FIXTURE')
+      fixture_control('retire-primary');wait(lambda:len(client.snapshot('450')['windows'])==0);wait(coherent_closed);before=len(journal());before_publication=int(projection()['publication']);chord_start();release_alt();zero_journal=native_journal();zero_generation=zero_journal['generation'];wait(lambda:any(json.loads(line.split(': ',1)[1]).get('chord',{}).get('generation')==zero_generation for line in text().splitlines() if line.startswith('backend-frame: ')));wait(lambda:coherent_closed() and int(projection()['publication'])>before_publication);check('ZeroCandidateNoEffectNoOpenSwitcher',len(journal())==before and facts()['facts']['focused'] is None)
+      check('GlobalChordNeverLaunchesApplications',not launches())
+      retries=[json.loads(line) for line in (OUTPUT/'chord-retries.jsonl').read_text().splitlines()]
+      check('ExactTerminalRetriesSurviveNewSelectionPreparation',len(retries)>=3 and all(row['matches'] for row in retries),retries=retries)
+      report['nativeChordJourneyObserved']=True
     elif SWITCHER:
      roots=client.snapshot('443')['windows'];labels={row['incarnation']:row['label'] for row in roots}
      native_history=client.activation_history('444');before_focus=facts()['facts']['focused'];before=len(journal())
@@ -513,7 +551,7 @@ raise SystemExit(daemon.run())
      popup_capture('taskbar-before-select');capture=report['popupCaptures'][-1];check('TaskbarNavigationControlsArePainted',bool(capture['controlRegions']) and all(r['area']>0 and r['brightPixels']>30 and r['paintedPixels']>.9*r['area'] for r in capture['controlRegions']),capture=capture)
      keyboard_button(button['accessibleName']);restored('TaskbarRestore',before)
      old=facts();check('RefusalFixtureFocusChanges',s.ctl('dispatch',"hl.dsp.focus({window='"+selector+"'})").strip()=='ok');wait(lambda:facts()['facts']['focused']==target)
-     before_refusal=facts();n=str(9000+len(report['nativeFixtures']));intent={'request':n,'generation':n,'incarnation':peer_identity,'operation':'activate','context':client.context(old)};receipt=client.effect(intent);report['nativeFixtures'].append({'intent':intent,'result':receipt})
+     before_refusal=facts();n=str((10000 if MEMBERSHIP else 9000)+len(report['nativeFixtures']));intent={'request':n,'generation':n,'incarnation':peer_identity,'operation':'activate','context':client.context(old)};receipt=client.effect(intent);report['nativeFixtures'].append({'intent':intent,'result':receipt})
      check('StaleActivationRefusesWithoutNavigationOrFocus',receipt['status']=='Refused' and receipt['reason']=='dependency-mismatch' and facts()['facts']==before_refusal['facts'] and s.data('monitors')[0]['activeWorkspace']['id']==1,result=receipt,before=before_refusal,after=facts())
      report['nativeNavigationJourneyObserved']=True
     elif TASKVIEW:
@@ -678,7 +716,8 @@ raise SystemExit(daemon.run())
     after_peer=next(w for w in facts()['facts']['windows'] if w['incarnation']==peer['incarnation'])
     check('NoScratchpadOrWorkspaceTransfer',all(before_peer[k]==after_peer[k] for k in ['workspace','monitor']),before={k:before_peer[k] for k in ['workspace','monitor']},after={k:after_peer[k] for k in ['workspace','monitor']})
    else:
-    check('NoScratchpadOrWorkspaceTransfer',not facts()['facts']['windows'] and report['beforeControlledRetirements']['facts']['windows'] if CHORD else current_window()['workspace']==initial_workspace,nativeWorkspace='controlled original roots retired' if CHORD else current_window()['workspace'],originalWorkspace=initial_workspace)
+    if MEMBERSHIP:check('OnlyExplicitSpecialWorkspaceFixtureMoved',len(facts()['facts']['windows'])==5 and any(row['incarnation']==c and int(row['workspace'])<0 for row in facts()['facts']['windows']),nativeFacts=facts())
+    else:check('NoScratchpadOrWorkspaceTransfer',not facts()['facts']['windows'] and report['beforeControlledRetirements']['facts']['windows'] if CHORD else current_window()['workspace']==initial_workspace,nativeWorkspace='controlled original roots retired' if CHORD else current_window()['workspace'],originalWorkspace=initial_workspace)
    report['nativeFeedbackObserved']=not FOCUS and not CATALOG and not TASKVIEW and not PRIMARY and not SWITCHER and not CHORD;report['nativeFocusJourneyObserved']=FOCUS;check('EveryRegisteredHelperExitedNormally',all(r['exitCode']==0 for r in report['helpers']));report['passed']=True
   finally:
    if paused:pause(False)
