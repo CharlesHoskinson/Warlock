@@ -1,0 +1,821 @@
+{
+  "schema": 1,
+  "owner": "root-files",
+  "observedUTC": "2026-10-08T14:19:59.615162+00:00",
+  "requirements": [
+    "ELM-UX-033"
+  ],
+  "scenarios": [
+    "ux-033"
+  ],
+  "originals": [
+    {
+      "id": "ELM-UX-033",
+      "capability": "elm-shell-experience",
+      "pattern": "event-driven",
+      "ears": "WHEN a user opens Files from the Elm shell, the Elm desktop SHALL invoke the installed explorer with the requested path or collection and preserve its existing operation semantics.",
+      "phase": "P5",
+      "priority": "must",
+      "verification": "Elm replay assertion and isolated native recording: existing explorer is reused at requested collection; no ops.sh semantics change.",
+      "legacyEvidence": "AGENTS.md; new Files integration coverage",
+      "task": "Integrate omarchy-files launch/reuse contract without rewriting file operations.",
+      "scenarios": [
+        {
+          "name": "ux-033",
+          "given": "existing Files window and collection identifier",
+          "when": "user opens that collection from shell",
+          "then": "existing explorer is reused at requested collection; no ops.sh semantics change"
+        }
+      ],
+      "source": "docs/elm-roadmap/contributions/experience.json",
+      "status": "proposed",
+      "taskId": "P5-ELM-UX-033",
+      "accountableOwnerRole": "Desktop experience lead",
+      "verifierRole": "Independent acceptance reviewer"
+    }
+  ],
+  "scope": "Integrated Files collection/path navigation with immutable Elm state and strict native instance admission. Actual unmodified installed explorer in a private desktop: physical Images selection and typed ~/Documents each reopen the requested location in the same native instance; no file operation or Quint spec changes. Independent original-scenario acceptance remains open.",
+  "sourceBaseRevision": "5fa23732966f1ac15a57139689b6524f392a5ff0",
+  "publicBaseRevision": "b6ba4ee31cdb26bf123d23b958f00078b7cde7ac",
+  "sourceHashes": {
+    "implementation/warlock/src/Files.elm": "c2099647bca3b325ca21485bb3a246e0b6d7c2a693d0bcfd5f10dedbad7a89f7",
+    "implementation/warlock/src/Desktop.elm": "de7ce3f346d9a4cb50d732eb43dd6fd75361040f7f9d1dc46e2ae82efb73e326",
+    "implementation/warlock/src/Surface.elm": "fdbf5df40bcfefd0e95e01e19d147756675b94f0508775083c8e40e0dc4a8211",
+    "implementation/warlock/src/SurfaceRenderer.elm": "7df645ec876ee641edb6fbc6a8d6acfb72cc5fdf7102a607be5e280e187bc2a7",
+    "implementation/warlock/src/SurfaceController.elm": "b4cdd19452d87525053bdfb4c743678984c7ec8ebd912920e7f2b63ad8d1d398",
+    "implementation/warlock/adapter/explorer.py": "5771d66fe29af0aed5e6f81f0d0287374d816ea048bdeaf08ae07a9cdf681e78",
+    "implementation/warlock/adapter/daemon.py": "b31a2da7d16f687faf4f67e02cb3b7ea834ec88c52b2f999e7452a8ba2348289",
+    "implementation/warlock/native/host.c": "9af3d797a020c2415757f5946c6c92b1066a1a037e907480c4ec4e06f4a0b76e",
+    "implementation/warlock/native/surface.h": "a0627b0e6cf5b49ee1fd2e94836844d2a09f933bba44c35e53863452c1204a5f",
+    "implementation/warlock/assets/popup-adapter.js": "87299dd82e0466026253422ad172b789aa30d9501d977e5270da01233d3b2fbc",
+    "implementation/warlock/qa/FilesReplay.elm": "5e353f83a87e87fde9ea0eb0c85cfe7a1419ac738d647ca0cefb573e62050478",
+    "implementation/warlock/qa/check-files.py": "0b139e5e7a881a66ad149700b455a1c33721c916e0bb74680427dd7e659aed1b",
+    "implementation/warlock/qa/files.qnt": "e564b7e36d92188a28f93f4061475633bf22211317af713ace19128e866c5aa0",
+    "implementation/warlock/qa/files-browser.mjs": "12b09fdad64331ac8296f350a31d96b959bd7a865f21e764bcbbf5302a241c0d",
+    "implementation/warlock/qa/check-search.py": "f31c1a72f30b33ca78ca6e698097cb3808b6ac976b7475009fa679ae30e6e016",
+    "implementation/warlock/qa/native-window-feedback.py": "d65a55fa4cc5eef43138ec034c829db81c18c65b03c19df15b42ca0983048d48",
+    "implementation/warlock/README.md": "5ff16814ccea1c46e689de47a366235dcbe7b5d70665de6504c0303f7dbb267a",
+    "implementation/warlock/assets/elm.js": "f3d1c0cff0b594732b6787b8f6668c1512ce9acc9593fcc42f121ba293a03598",
+    "implementation/warlock/assets/bar.js": "c9c69fcbe3bfad8acf8a865ce67fbc10641c7d88fce9140439549e0b16e00d81",
+    "implementation/warlock/assets/popup.js": "346577fb4154790ef9a22ae71a53ad84751c401e6ad354a92d86541cb2b629d4",
+    "implementation/warlock/qa/current-search-build.json": "26ee61c7dd9a76568660ab620f4aa12d02e359fe9af7ab4326c891a121e162be",
+    "implementation/warlock/src/Popup.elm": "89d09ccd5221862f97ed8c6ef9584b1cdae1c2836a03a36a745c2eb0cb876103",
+    "implementation/warlock/src/Presentation.elm": "d5e5638753d14da9f4a690ee65bfce1a7d727846c56464b84e27c48448b2eb77"
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+      "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791457340009159176/elm-window-geometry-authority.so",
+      "sha256": "55be0d723123f8089abfa0ce735f5e496aee558a0d822e1ad8278d50ee958307"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/files-1791468795730387952/elm-host",
+    "sha256": "52708b0052a5515a2c713e6e8b73c28974180213437bbbc49cb7a16ec8d09b85",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/files-1791468795730387952/report.json",
+    "heldBuildSHA256": "5c03950465b8137538e47acc96f52b1717afebe168ae7e670c0529b8101e5c84"
+  },
+  "compiledAssets": {
+    "elm.js": "f3d1c0cff0b594732b6787b8f6668c1512ce9acc9593fcc42f121ba293a03598",
+    "bar.js": "c9c69fcbe3bfad8acf8a865ce67fbc10641c7d88fce9140439549e0b16e00d81",
+    "popup.js": "346577fb4154790ef9a22ae71a53ad84751c401e6ad354a92d86541cb2b629d4"
+  },
+  "observedChecks": {
+    "compiledElm": 22,
+    "actualQuickshellProtocolFixture": 12,
+    "productionBrowser": 12,
+    "quintNamed": 4,
+    "quintInvariantTraces": 100,
+    "nativeGUI": 64
+  },
+  "nativeCampaignPassed": true,
+  "nativeFilesObserved": true,
+  "installedSource": {
+    "backend": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791468965838545318/files-backend.py",
+    "backendSHA256": "b5d437aecab7778fa1d7234c11167ee48434303d2e10a4e655d9eed5faeff038",
+    "installedRoot": "/home/hoskinson/.local/share/omarchy-files",
+    "installedQmlSHA256": {
+      "/home/hoskinson/.local/share/omarchy-files/shell.qml": "e4f364cdca1fdf99d3a9da35d2295fd173856156d1379994a7cd6776da8e8944",
+      "/home/hoskinson/.local/share/omarchy-files/Commons/Theme.qml": "5f1e8a24580fc3bdd80c04443d854dc76cbf60a1a3ab974d81a03c3d8cef6bd1",
+      "/home/hoskinson/.local/share/omarchy-files/Commons/Lister.qml": "d3b5e038bf46ecbdb41056c5159765fbbe7912db6aabe5a44fd37b4bb23dbca3",
+      "/home/hoskinson/.local/share/omarchy-files/Commons/Fs.qml": "2dccf4f9c7f9856e63e0dac4426fab0485270fb1816d2a4b1dbf0d18c4bda079",
+      "/home/hoskinson/.local/share/omarchy-files/Commons/Thumbs.qml": "fac09c63cd2104d66102b01ceb4a12319482dffc85886c9ab02874b929190dda",
+      "/home/hoskinson/.local/share/omarchy-files/Commons/Data.qml": "4888a3b664c48af9fa22f51934bebe38020ae913e057d44d93bb0b6c9ee674ca",
+      "/home/hoskinson/.local/share/omarchy-files/explorer/ScrollBar_.qml": "0b96e375f982b9d636edd9538742a5cacf887f980746fc3536ab09150281f691",
+      "/home/hoskinson/.local/share/omarchy-files/explorer/Cell.qml": "d0da41b493041d6111680f8585bdc4081a016fd8f6ec79e1592671eae61f9d9f",
+      "/home/hoskinson/.local/share/omarchy-files/explorer/Dashboard.qml": "c20a25f0c45eed8e5ff9580e08da27abac09dedd7d723cc52d3d0760d25aa585",
+      "/home/hoskinson/.local/share/omarchy-files/explorer/Detail.qml": "a415763b2fef5fbd9faf1cc3908cd9c1e1087c6b1812b1e871d4e6ea96c0a6be",
+      "/home/hoskinson/.local/share/omarchy-files/explorer/Explorer.qml": "c4c1cdfd5c8d95d989edc183ae37bd3cc36f5917d1c15c471fa019ba640a3958",
+      "/home/hoskinson/.local/share/omarchy-files/explorer/FileArea.qml": "a572e7db3ca46dfff4046768ab4484e82f5a9213bea5ddb70fb40911f439804b",
+      "/home/hoskinson/.local/share/omarchy-files/explorer/Lightbox.qml": "9519c9fa5ce742cfa56e27c80d965b076e0d421174fdee477d984390f873e3cc",
+      "/home/hoskinson/.local/share/omarchy-files/explorer/PathBar.qml": "3cad2e6d2448ae774d4b395b4de888b458ae2ed280887f0a3e2732e0513591de",
+      "/home/hoskinson/.local/share/omarchy-files/explorer/Tree.qml": "80f88b797191c72b0ae24a60c4b42512269ba5d4bd275201de9351146479164b",
+      "/home/hoskinson/.local/share/omarchy-files/explorer/Treemap.qml": "c95c24079da385b8aa8554eeb739a5ee6954f8ab3440551edddd38549729ae09",
+      "/home/hoskinson/.local/share/omarchy-files/Ui/Label.qml": "c48db6eb8cefe7fa9702bbac861c0cd5621f55eb1980b81fda0acb137f886b66",
+      "/home/hoskinson/.local/share/omarchy-files/Ui/Slider.qml": "c03c1749ddfca296a91bbf30970d47ac5edfa180eedcf6e26c395f4651bcc8ad",
+      "/home/hoskinson/.local/share/omarchy-files/Ui/Thumb.qml": "662010e2ebd1a60b05aec200a53b42c5ef310d6ae89750d9f82fd7f0480200dd",
+      "/home/hoskinson/.local/share/omarchy-files/Ui/Section.qml": "a7d97c708295760f9a09d40984d7a4381331ea9d9b88956edbb5bb90bcda541e",
+      "/home/hoskinson/.local/share/omarchy-files/Ui/Btn.qml": "b3bf56f01f79db488a2db1166e93bc4507522db256bab4847ac2dfcf9c6669e3",
+      "/home/hoskinson/.local/share/omarchy-files/Ui/Chip.qml": "18e0ace558870491852f27461e7abc2d45974ba6dc306396fc69060d40b5f922",
+      "/home/hoskinson/.local/share/omarchy-files/Ui/ContextMenu.qml": "8e0af8bb8eb18305d7a886df28b6ce4dc47961648b188c6004110c71d893b993",
+      "/home/hoskinson/.local/share/omarchy-files/Ui/Ico.qml": "7b2db1f4651f1ba388183036e752d45df8fba299b58b3d7ffcc448aaf7577e9d",
+      "/home/hoskinson/.local/share/omarchy-files/Ui/Prompt.qml": "745833f64fefebfe316eecc7758c023f9f2c99bf2201c609921c80c0e33226f9",
+      "/home/hoskinson/.local/share/omarchy-files/widget/Widget.qml": "5570b4a1cdf91b6f822450adffe26356f04c13c433e97563d4e29602edf554ed"
+    },
+    "installedOperationSHA256": {
+      "/home/hoskinson/.local/share/omarchy-files/scripts/ops.sh": "6678d6b84b4bc5c2e86414b6250848119dd372a9a701dba880f4dcfdb8f3236a",
+      "/home/hoskinson/.local/share/omarchy-files/spec/fileops.qnt": "ba116b777b98d9cb2f9d6b8b3adfdf2958fdeffc6f11548faae805b6b6cf5974"
+    },
+    "qsSHA256": "2dc99382c032710fe495ed115cdee9dc9c69bdb3a21af4d86a9a8ea16733069b",
+    "home": "/run/user/1000/wqa/15f9/home",
+    "runtime": "/run/user/1000/wqa/15f9",
+    "wayland": "wayland-1",
+    "systemBusRemainsRefusing": true,
+    "scope": "Actual unmodified installed explorer; native-only root constructor selects existing installation in private home, no operation script/spec edits or invocation."
+  },
+  "collectionOutcome": {
+    "protocolVersion": 3,
+    "kind": "files-outcome",
+    "binding": {
+      "lifetime": "5950529549519099035",
+      "session": "3",
+      "frontend": "1"
+    },
+    "requestId": "4",
+    "status": "Opened",
+    "snapshot": {
+      "service": "6985681842720416645",
+      "revision": "3",
+      "available": true,
+      "reason": "",
+      "peer": {
+        "pid": "2216363",
+        "start": "43707277",
+        "instance": "n5ib1xaelmt",
+        "target": "coll:images",
+        "visible": true
+      }
+    }
+  },
+  "folderOutcome": {
+    "protocolVersion": 3,
+    "kind": "files-outcome",
+    "binding": {
+      "lifetime": "5950529549519099035",
+      "session": "3",
+      "frontend": "1"
+    },
+    "requestId": "6",
+    "status": "Opened",
+    "snapshot": {
+      "service": "6985681842720416645",
+      "revision": "5",
+      "available": true,
+      "reason": "",
+      "peer": {
+        "pid": "2216363",
+        "start": "43707277",
+        "instance": "n5ib1xaelmt",
+        "target": "/run/user/1000/wqa/15f9/home/Documents",
+        "visible": true
+      }
+    }
+  },
+  "componentNativeRunnerNote": "CPU snapshot captures the earlier native runner; its production/replay/browser inputs match current files. The separate native report records the final runner SHA and actual installed explorer.",
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "decisiveChecks": [
+    {
+      "name": "ElmObservesActualExistingExplorerIdentity",
+      "passed": true,
+      "peer": {
+        "pid": "2216363",
+        "start": "43707277",
+        "instance": "n5ib1xaelmt",
+        "target": "home",
+        "visible": true
+      }
+    },
+    {
+      "name": "FilesMenuHasActualNativeControlPixels",
+      "passed": true,
+      "capture": {
+        "stage": "files-existing-explorer",
+        "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791468965838545318/popup-files-existing-explorer.png",
+        "sha256": "847aa0c4808da16905fe0046d19c9187d1b8bc118e2dcd7601f965c6f2871add",
+        "nativeBox": [
+          50,
+          48,
+          700,
+          420
+        ],
+        "controlRegions": [
+          {
+            "accessibleName": "Images",
+            "brightPixels": 159,
+            "paintedPixels": 4704,
+            "area": 4704,
+            "region": [
+              73,
+              329,
+              269,
+              353
+            ]
+          },
+          {
+            "accessibleName": "Current location: home",
+            "brightPixels": 217,
+            "paintedPixels": 1176,
+            "area": 1176,
+            "region": [
+              82,
+              222,
+              278,
+              228
+            ]
+          }
+        ],
+        "body": {
+          "publication": "13",
+          "lease": "1",
+          "buttons": [
+            {
+              "id": "applications:{\"lifetime\":\"5950529549519099035\",\"session\":\"3\",\"frontend\":\"1\"}:9:files:close",
+              "identity": "control:close",
+              "label": "Close Files menu",
+              "labelRect": {
+                "x": 24,
+                "y": 73,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Close Files menu",
+              "disabled": false,
+              "x": 11,
+              "y": 64,
+              "width": 678,
+              "height": 36
+            },
+            {
+              "id": "applications:{\"lifetime\":\"5950529549519099035\",\"session\":\"3\",\"frontend\":\"1\"}:9:files:refresh",
+              "identity": "files:refresh",
+              "label": "Refresh Files stateRead location; never repeat an opening",
+              "labelRect": {
+                "x": 24,
+                "y": 110,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Refresh Files state",
+              "disabled": false,
+              "x": 11,
+              "y": 103,
+              "width": 678,
+              "height": 54
+            },
+            {
+              "id": "applications:{\"lifetime\":\"5950529549519099035\",\"session\":\"3\",\"frontend\":\"1\"}:9:files:home",
+              "identity": "files:home",
+              "label": "Home",
+              "labelRect": {
+                "x": 24,
+                "y": 206.375,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Home",
+              "disabled": false,
+              "x": 11,
+              "y": 197.375,
+              "width": 678,
+              "height": 36
+            },
+            {
+              "id": "applications:{\"lifetime\":\"5950529549519099035\",\"session\":\"3\",\"frontend\":\"1\"}:9:files:collection:recent",
+              "identity": "files:collection:recent",
+              "label": "Recent",
+              "labelRect": {
+                "x": 24,
+                "y": 245.375,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Recent",
+              "disabled": false,
+              "x": 11,
+              "y": 236.375,
+              "width": 678,
+              "height": 36
+            },
+            {
+              "id": "applications:{\"lifetime\":\"5950529549519099035\",\"session\":\"3\",\"frontend\":\"1\"}:9:files:collection:images",
+              "identity": "files:collection:images",
+              "label": "Images",
+              "labelRect": {
+                "x": 24,
+                "y": 284.375,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Images",
+              "disabled": false,
+              "x": 11,
+              "y": 275.375,
+              "width": 678,
+              "height": 36
+            },
+            {
+              "id": "applications:{\"lifetime\":\"5950529549519099035\",\"session\":\"3\",\"frontend\":\"1\"}:9:files:collection:videos",
+              "identity": "files:collection:videos",
+              "label": "Videos",
+              "labelRect": {
+                "x": 24,
+                "y": 323.375,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Videos",
+              "disabled": false,
+              "x": 11,
+              "y": 314.375,
+              "width": 678,
+              "height": 36
+            },
+            {
+              "id": "applications:{\"lifetime\":\"5950529549519099035\",\"session\":\"3\",\"frontend\":\"1\"}:9:files:collection:documents",
+              "identity": "files:collection:documents",
+              "label": "Documents",
+              "labelRect": {
+                "x": 24,
+                "y": 362.375,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Documents",
+              "disabled": false,
+              "x": 11,
+              "y": 353.375,
+              "width": 678,
+              "height": 36
+            },
+            {
+              "id": "applications:{\"lifetime\":\"5950529549519099035\",\"session\":\"3\",\"frontend\":\"1\"}:9:files:collection:downloads",
+              "identity": "files:collection:downloads",
+              "label": "Downloads",
+              "labelRect": {
+                "x": 24,
+                "y": 401.375,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Downloads",
+              "disabled": false,
+              "x": 11,
+              "y": 392.375,
+              "width": 678,
+              "height": 36
+            },
+            {
+              "id": "applications:{\"lifetime\":\"5950529549519099035\",\"session\":\"3\",\"frontend\":\"1\"}:9:files:collection:large",
+              "identity": "files:collection:large",
+              "label": "Large files",
+              "labelRect": {
+                "x": 24,
+                "y": 440.375,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Large files",
+              "disabled": false,
+              "x": 11,
+              "y": 431.375,
+              "width": 678,
+              "height": 36
+            },
+            {
+              "id": "applications:{\"lifetime\":\"5950529549519099035\",\"session\":\"3\",\"frontend\":\"1\"}:9:files:collection:screenshots",
+              "identity": "files:collection:screenshots",
+              "label": "Screenshots",
+              "labelRect": {
+                "x": 24,
+                "y": 479.375,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Screenshots",
+              "disabled": false,
+              "x": 11,
+              "y": 470.375,
+              "width": 678,
+              "height": 36
+            },
+            {
+              "id": "applications:{\"lifetime\":\"5950529549519099035\",\"session\":\"3\",\"frontend\":\"1\"}:9:files:open-path",
+              "identity": "files:open-path",
+              "label": "Open folderOpen this path in Files",
+              "labelRect": {
+                "x": 24,
+                "y": 559.375,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Open folder",
+              "disabled": true,
+              "x": 11,
+              "y": 552.375,
+              "width": 678,
+              "height": 54
+            }
+          ],
+          "content": [
+            {
+              "id": "applications:{\"lifetime\":\"5950529549519099035\",\"session\":\"3\",\"frontend\":\"1\"}:9:files:location:state",
+              "identity": "files:location:state",
+              "label": "Current location: home",
+              "labelRect": {
+                "x": 20.796875,
+                "y": 168.1875,
+                "width": 658.40625,
+                "height": 18
+              },
+              "accessibleName": "Current location: home",
+              "disabled": true,
+              "x": 20.796875,
+              "y": 168.1875,
+              "width": 658.40625,
+              "height": 18
+            }
+          ],
+          "fields": [
+            {
+              "id": "applications:{\"lifetime\":\"5950529549519099035\",\"session\":\"3\",\"frontend\":\"1\"}:9:files:path",
+              "value": "",
+              "accessibleName": "Folder path",
+              "disabled": false
+            }
+          ],
+          "focus": "applications:{\"lifetime\":\"5950529549519099035\",\"session\":\"3\",\"frontend\":\"1\"}:9:files:collection:images",
+          "documentFocused": true,
+          "fontSize": "16px",
+          "theme": "night",
+          "textScale": "100",
+          "viewportWidth": 700,
+          "viewportHeight": 420,
+          "scrollTop": 0,
+          "scrollHeight": 617,
+          "text": "Files\nChoose a collection or folder.\n\n\nClose Files menu\n\nRefresh Files state\nRead location; never repeat an opening\nCurrent location: home\n\n\nHome\n\nRecent\n\nImages\n\nVideos\n\nDocuments\n\nDownloads\n\nLarge files\n\nScreenshots\n\nOpen folder\nOpen this path in Files"
+        },
+        "drawObservations": []
+      }
+    },
+    {
+      "name": "OriginalExistingExplorerReusedAtRequestedCollection",
+      "passed": true,
+      "outcome": {
+        "protocolVersion": 3,
+        "kind": "files-outcome",
+        "binding": {
+          "lifetime": "5950529549519099035",
+          "session": "3",
+          "frontend": "1"
+        },
+        "requestId": "4",
+        "status": "Opened",
+        "snapshot": {
+          "service": "6985681842720416645",
+          "revision": "3",
+          "available": true,
+          "reason": "",
+          "peer": {
+            "pid": "2216363",
+            "start": "43707277",
+            "instance": "n5ib1xaelmt",
+            "target": "coll:images",
+            "visible": true
+          }
+        }
+      },
+      "ui": {
+        "version": 2,
+        "view": "folder",
+        "cwd": "/run/user/1000/wqa/15f9/home",
+        "history": [
+          "",
+          "coll:images"
+        ],
+        "hIdx": 1,
+        "filter": "",
+        "searchLabel": "",
+        "errorText": "",
+        "showHidden": false,
+        "sortKey": "modified",
+        "sortAsc": false,
+        "viewMode": "grid",
+        "collId": "images",
+        "zoom": 200,
+        "detailOpen": true,
+        "sel": {},
+        "nsel": 0,
+        "cur": -1,
+        "anchorIdx": -1,
+        "kbd": false,
+        "clip": {
+          "paths": [],
+          "cut": false
+        },
+        "lbIdx": -1,
+        "lbOpen": false,
+        "pendingSelect": "",
+        "hiddenCount": 0,
+        "sidebarRequested": false,
+        "detailOverlayRequested": false,
+        "visible": true,
+        "windowWidth": 758,
+        "windowHeight": 510,
+        "fileScroll": -6,
+        "dashboardScroll": 0,
+        "sidebarScroll": 0,
+        "detailScroll": 0,
+        "dashboardKind": "all",
+        "focusIdentity": "main",
+        "focus": "main",
+        "path": {
+          "editing": false,
+          "text": "",
+          "cursor": 0,
+          "cands": [],
+          "candIdx": -1,
+          "completing": ""
+        },
+        "prompt": {
+          "visible": false,
+          "title": "",
+          "hint": "",
+          "confirmOnly": false,
+          "danger": false,
+          "okLabel": "OK",
+          "mode": "",
+          "payload": null,
+          "text": "",
+          "cursor": 0,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "scroll": 0
+        },
+        "menu": {
+          "visible": false,
+          "items": [],
+          "px": 0,
+          "py": 0,
+          "hi": -1,
+          "scroll": 0
+        },
+        "ctxTarget": null
+      },
+      "status": {
+        "ready": true,
+        "error": "",
+        "pid": 2216363,
+        "instance": "n5ib1xaelmt",
+        "initialization": {
+          "resumed": false,
+          "visible": false,
+          "backingVisible": false,
+          "historyLength": 1,
+          "historyIndex": 0
+        }
+      }
+    },
+    {
+      "name": "FilesOpeningClosesPopupWithoutWindowEffects",
+      "passed": true
+    },
+    {
+      "name": "RequestedCollectionHasInstalledExplorerNativeImage",
+      "passed": true,
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791468965838545318/installed-files-images.png",
+      "sha256": "90a829145238f565d30668f19576fb378794bb7cb0fd834ddb32b05adaa54a2d"
+    },
+    {
+      "name": "InstalledOperationsAndQuintSemanticsUnchanged",
+      "passed": true,
+      "hashes": {
+        "/home/hoskinson/.local/share/omarchy-files/scripts/ops.sh": "6678d6b84b4bc5c2e86414b6250848119dd372a9a701dba880f4dcfdb8f3236a",
+        "/home/hoskinson/.local/share/omarchy-files/spec/fileops.qnt": "ba116b777b98d9cb2f9d6b8b3adfdf2958fdeffc6f11548faae805b6b6cf5974"
+      }
+    },
+    {
+      "name": "FilesNavigationDoesNotCreateAnotherExplorer",
+      "passed": true
+    },
+    {
+      "name": "NativeFolderTypingDoesNotOpen",
+      "passed": true
+    },
+    {
+      "name": "NativeExplicitFolderOpeningReusesSameExplorer",
+      "passed": true,
+      "outcome": {
+        "protocolVersion": 3,
+        "kind": "files-outcome",
+        "binding": {
+          "lifetime": "5950529549519099035",
+          "session": "3",
+          "frontend": "1"
+        },
+        "requestId": "6",
+        "status": "Opened",
+        "snapshot": {
+          "service": "6985681842720416645",
+          "revision": "5",
+          "available": true,
+          "reason": "",
+          "peer": {
+            "pid": "2216363",
+            "start": "43707277",
+            "instance": "n5ib1xaelmt",
+            "target": "/run/user/1000/wqa/15f9/home/Documents",
+            "visible": true
+          }
+        }
+      },
+      "ui": {
+        "version": 2,
+        "view": "folder",
+        "cwd": "/run/user/1000/wqa/15f9/home/Documents",
+        "history": [
+          "",
+          "coll:images",
+          "/run/user/1000/wqa/15f9/home/Documents"
+        ],
+        "hIdx": 2,
+        "filter": "",
+        "searchLabel": "",
+        "errorText": "",
+        "showHidden": false,
+        "sortKey": "modified",
+        "sortAsc": false,
+        "viewMode": "grid",
+        "collId": "",
+        "zoom": 200,
+        "detailOpen": true,
+        "sel": {},
+        "nsel": 0,
+        "cur": -1,
+        "anchorIdx": -1,
+        "kbd": false,
+        "clip": {
+          "paths": [],
+          "cut": false
+        },
+        "lbIdx": -1,
+        "lbOpen": false,
+        "pendingSelect": "",
+        "hiddenCount": 0,
+        "sidebarRequested": false,
+        "detailOverlayRequested": false,
+        "visible": true,
+        "windowWidth": 758,
+        "windowHeight": 510,
+        "fileScroll": -6,
+        "dashboardScroll": 0,
+        "sidebarScroll": 0,
+        "detailScroll": 0,
+        "dashboardKind": "all",
+        "focusIdentity": "main",
+        "focus": "main",
+        "path": {
+          "editing": false,
+          "text": "",
+          "cursor": 0,
+          "cands": [],
+          "candIdx": -1,
+          "completing": ""
+        },
+        "prompt": {
+          "visible": false,
+          "title": "",
+          "hint": "",
+          "confirmOnly": false,
+          "danger": false,
+          "okLabel": "OK",
+          "mode": "",
+          "payload": null,
+          "text": "",
+          "cursor": 0,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "scroll": 0
+        },
+        "menu": {
+          "visible": false,
+          "items": [],
+          "px": 0,
+          "py": 0,
+          "hi": -1,
+          "scroll": 0
+        },
+        "ctxTarget": null
+      }
+    },
+    {
+      "name": "NativeFolderOpeningPreservesOperationsAndNoWindowEffects",
+      "passed": true
+    }
+  ],
+  "ownerImageReview": {
+    "reviewer": "root-files",
+    "independent": false,
+    "images": [
+      "popup-files-existing-explorer.png",
+      "installed-files-images.png"
+    ],
+    "observed": "Actual private compositor displays Files menu with Images focused and readable current Home location. The actual installed explorer capture displays Collections > Images and its empty collection. Host warning overlay belongs to the isolated fixture."
+  },
+  "missingObservations": [
+    "Independent original ux-033 review against this exact source/core/plugin/toolchain tuple.",
+    "Actual native cold startup and legacy minimized/other-workspace summon behavior are not established by this existing-window fixture.",
+    "Applicable release AT/IME/resource and full desktop journeys remain separate; browser composition evidence does not establish native IME acceptance."
+  ],
+  "retainedFailures": [
+    "failed-replay-helper.json",
+    "failed-disconnect-fixture.json",
+    "failed-native-initial-focus.json",
+    "failed-native-image-write.json"
+  ],
+  "files": [
+    {
+      "path": "implementation/warlock/qa/evidence/files/browser-report.json",
+      "sha256": "27b11346c69202fd916c4ad046c42ac2567015394361577423ac42588a83fcf8"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/files/component-report.json",
+      "sha256": "5c03950465b8137538e47acc96f52b1717afebe168ae7e670c0529b8101e5c84"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/files/failed-disconnect-fixture.json",
+      "sha256": "d058c0d6322cd4a52bc97cc676584520e8cf4048342cff2721f2accce174e622"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/files/failed-native-image-write.json",
+      "sha256": "fcb31f231e91dfb780ab54773866082bee994a7d96f23bbd6e8ba4b38a0dc8d1"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/files/failed-native-initial-focus.json",
+      "sha256": "5bbfc7aab45ab78850e8a81f7fd074cefd6350d4e028bce5a59a2d9058564d73"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/files/failed-replay-helper.json",
+      "sha256": "e4a03668817d205b662fb6cbbc9bb741da95696971a7332f160402d6724fb1b1"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/files/files-collections.png",
+      "sha256": "5c87984ab4ea4f0658033827cbdcd9a46ce18fbddd3dd2ae2bbff15376cf16ae"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/files/files-model-invariants.stdout",
+      "sha256": "df3f35cf6c844977f77fae248bc93b5a0a2d90638e9efbddb35f0f4bd16dfd6c"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/files/files-model-named.stdout",
+      "sha256": "2dc662c785ad94fc4593e6440f1821f0ce9adfe359355e06869dab057a53d95b"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/files/files-protocol.stdout",
+      "sha256": "73ea88684b243d98131bc0e58fafc231f34b367af168f1eb29cfa804e1c3bbb1"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/files/files.json",
+      "sha256": "0ca2e00e44f4e2e354c59c06099c8a79e4b3967e8909104083a2df652c0a3ba2"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/files/host-self-tests.stdout",
+      "sha256": "120066fdd14de44f8ac2ca4f43f71389beece8bdf097bcef9ec17cabf1a406ca"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/files/installed-files-images.png",
+      "sha256": "90a829145238f565d30668f19576fb378794bb7cb0fd834ddb32b05adaa54a2d"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/files/native-report.json",
+      "sha256": "63982224ed81b51d584e3b4f84b0d5b18647864875500f481f3fbd59266d9f41"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/files/popup-files-existing-explorer.png",
+      "sha256": "847aa0c4808da16905fe0046d19c9187d1b8bc118e2dcd7601f965c6f2871add"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/files/source.patch",
+      "sha256": "45dbfcd7e6543fa99630ece3796cfa1bd39c9b4edd18604d11c40d8b1ce87dd9"
+    }
+  ]
+}

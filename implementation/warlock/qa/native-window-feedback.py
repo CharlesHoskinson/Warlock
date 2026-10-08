@@ -4,6 +4,7 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
 lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
 """
 import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
+FILES=sys.argv[1:]==['--files']
 SYSTEM=sys.argv[1:]==['--system-menu']
 NOTIFICATIONS=sys.argv[1:]==['--notifications']
 SETTINGS=sys.argv[1:]==['--settings']
@@ -20,7 +21,7 @@ PRE_READY_RETIRE=sys.argv[1:]==['--switcher-pre-ready-retirement']
 MEMBERSHIP=sys.argv[1:]==['--switcher-membership'] or PRE_READY_RETIRE
 CHORD=sys.argv[1:]==['--switcher-chord'] or MEMBERSHIP
 SWITCHER=sys.argv[1:]==['--switcher']
-NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'] or DENSEPICKER;PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS or PINMENUS or REFLOW or SETTINGS or NOTIFICATIONS or SYSTEM;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD
+NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'] or DENSEPICKER;PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS or PINMENUS or REFLOW or SETTINGS or NOTIFICATIONS or SYSTEM or FILES;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143';RUNTIME=REPO/'implementation/warlock-client-provider-native-v204'
 sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
 spec=importlib.util.spec_from_file_location('feedback_private_host',RUNTIME/'candidate_host.py');host=importlib.util.module_from_spec(spec);spec.loader.exec_module(host)
@@ -58,7 +59,7 @@ else:
 for row in pair.values():assert sha(row['path'])==row['sha256']
 assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
 subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
-OUT=ROOT/'qa/runs'/(('native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+OUT=ROOT/'qa/runs'/(('native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
 OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
 focus_host=None
 if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
@@ -107,6 +108,7 @@ if focus_host:report['focusHostAdaptation']=focus_host
 if retirement_fixture:report['retirementFixture']=retirement_fixture
 if primary_fixture:report['primaryFixture']=primary_fixture
 if SEARCH:report.update(requirements=['ELM-UI-005','ELM-UX-029'],scenarios=['search-no-match','search-race','search-refused','launcher-refused'],scope='Actual current query and private catalog, native typing/Enter refusal and no duplicate launch; AT/IME and popup physical presentation acceptance remain pending',popupPresentationAccepted=False)
+if FILES:report.update(requirements=['ELM-UX-033'],scenarios=['ux-033'],scope='Actual installed Files explorer in private home/runtime; physical Elm collection choice, exact native instance reuse, location readback, no unchanged file operation source edits. Independent/AT and other-workspace summon acceptance remain open.',nativeFilesObserved=False)
 if SYSTEM:report.update(requirements=['ELM-UX-032'],scenarios=['ux-032'],scope='Actual isolated native menu with current private PipeWire volume and login1 session/power capabilities, unavailable network, physical keyboard changes, readback, confirmation and pixels; real hardware, AT and independent acceptance remain open.',nativeSystemMenuObserved=False)
 if NOTIFICATIONS:report.update(requirements=['ELM-UX-031'],scenarios=['ux-031','notification-valid','notification-reused'],scope='Actual private native producers and physical Elm center: exactly-once current dispatch, expired history and reused-incarnation queued refusal; independent/AT acceptance remains open.',nativeNotificationsObserved=False)
 if SETTINGS:report.update(requirements=['ELM-UX-030'],scenarios=['ux-030'],scope='Actual integrated settings controls, exact saved appearance, native text size/reservation and whole-host restart; native-bound invalid scale refuses without changing stored or presented settings. Independent and applicable AT/IME/release acceptance remain open.',nativeSettingsObserved=False)
@@ -302,6 +304,26 @@ raise SystemExit(daemon.run())
     backend_fixture=OUTPUT/'notification-backend.py'
     backend_fixture.write_text('import json,sys,time\nfrom pathlib import Path\nsys.path.insert(0,'+repr(str(ROOT/'adapter'))+')\nimport daemon\nsys.argv[1]='+repr(str(broker_config))+'\noriginal=daemon.handle_request\ndef handle(*args):\n request=args[2]\n arm=Path('+repr(str(notification_arm))+');waiting=Path('+repr(str(notification_waiting))+');release=Path('+repr(str(notification_release))+')\n if request.get("kind")=="notification-effect" and arm.exists():\n  arm.unlink();waiting.write_text(json.dumps(request));deadline=time.monotonic()+2\n  while not release.exists():\n   if time.monotonic()>=deadline:raise RuntimeError("Notification transport hold expired")\n   time.sleep(.005)\n  release.unlink()\n return original(*args)\ndaemon.handle_request=handle\nraise SystemExit(daemon.run())\n')
     report['notificationHoldFixture']={'path':str(backend_fixture),'sha256':sha(backend_fixture),'maximumSeconds':2,'scope':'Hold actual queued request before its unchanged admission route; no artificial effect or receipt.'}
+   if FILES:
+    installed_files=pathlib.Path('/home/hoskinson/.local/share/omarchy-files');private_home=pathlib.Path(env['HOME'])
+    assert private_home.resolve().is_relative_to(s.host.runtime.resolve())
+    for directory in ['Pictures','Documents','Downloads']:(private_home/directory).mkdir(mode=0o700,exist_ok=True)
+    (private_home/'Documents/warlock-files-fixture.txt').write_text('Private Files navigation fixture')
+    env.update(FILES_OPEN='home',FILES_WIDGET='0',FILES_DRYRUN='1',QT_QPA_PLATFORM='wayland',QT_QUICK_CONTROLS_STYLE='Basic')
+    operation_hashes={str(path):sha(path) for path in [installed_files/'scripts/ops.sh',installed_files/'spec/fileops.qnt']}
+    qml_hashes={str(path):sha(path) for path in installed_files.rglob('*') if path.is_file() and path.suffix in ['.qml','.js']}
+    files_process=s.host.launch('installed-files',['/usr/bin/qs','-p',str(installed_files),'--no-duplicate'],env=env);apps.append(files_process)
+    def files_ipc(method,*args):
+     assert files_process.poll() is None
+     raw=helper(['/usr/bin/qs','--log-rules','quickshell.bare.info=false','-p',str(installed_files),'ipc','--pid',str(files_process.pid),'call','files',method,*args])
+     return json.loads(raw.strip()) if method in ['migrationStatus','uiState'] else raw
+    wait(lambda:files_process.poll() is not None or any(w['label']=='Files' for w in client.snapshot('452')['windows']))
+    check('ActualInstalledExplorerMapped',files_process.poll() is None,log=str(OUTPUT/'installed-files.log'))
+    files_native_status=files_ipc('migrationStatus');files_original_ui=files_ipc('uiState')
+    check('InstalledExplorerReadyInPrivateHome',files_native_status['ready'] and not files_native_status['error'] and files_original_ui['view']=='home' and files_original_ui['visible'],status=files_native_status,ui=files_original_ui)
+    backend_fixture=OUTPUT/'files-backend.py'
+    backend_fixture.write_text('import os,sys\nfrom pathlib import Path\nsys.path.insert(0,'+repr(str(ROOT/'adapter'))+')\nimport daemon\nfrom explorer import Explorer\nassert Path(sys.argv[1]).read_text()=='+repr(config_path.read_text())+'\nassert not Path(os.environ["DBUS_SYSTEM_BUS_ADDRESS"].removeprefix("unix:path=")).exists()\nsys.argv[1]='+repr(str(broker_config))+'\ndaemon.Explorer=lambda:Explorer('+repr(str(installed_files))+')\nraise SystemExit(daemon.run())\n')
+    report['filesFixture']={'backend':str(backend_fixture),'backendSHA256':sha(backend_fixture),'installedRoot':str(installed_files),'installedQmlSHA256':qml_hashes,'installedOperationSHA256':operation_hashes,'qsSHA256':sha('/usr/bin/qs'),'home':env['HOME'],'runtime':env['XDG_RUNTIME_DIR'],'wayland':env['WAYLAND_DISPLAY'],'systemBusRemainsRefusing':True,'scope':'Actual unmodified installed explorer; native-only root constructor selects existing installation in private home, no operation script/spec edits or invocation.'}
    if SYSTEM:
     import importlib.util
     system_spec=importlib.util.spec_from_file_location('private_system_fixture',ROOT/'qa/system-menu-provider.py');system_fixture=importlib.util.module_from_spec(system_spec);system_spec.loader.exec_module(system_fixture)
@@ -330,7 +352,7 @@ raise SystemExit(daemon.run())
    def click(item):
     check('PointerTargetWithinActualViewport',item['visible'],item=item);x,y=map(round,item['point']);helper([str(POINTER),'800','600'],f'move {x} {y}\nsleep 100\nbutton 272 1\nsleep 50\nbutton 272 0\nsleep 100\n')
    def facts():return client.scene_facts('441')
-   initial=None if TASKVIEW or SWITCHER or CHORD else wait(lambda:group('Activate' if PRIMARY else 'Choose a window from' if FOCUS else 'Minimize'))
+   initial=None if TASKVIEW or SWITCHER or CHORD or FILES else wait(lambda:group('Activate' if PRIMARY else 'Choose a window from' if FOCUS else 'Minimize'))
    target=next(w['incarnation'] for w in client.snapshot('442')['windows'] if w['label']==('ELM-ACTIVATION-PEER' if PRIMARY else 'ELM-AUTHORITY-FIXTURE'))
    initial_workspace=next(w['workspace'] for w in facts()['facts']['windows'] if w['incarnation']==target)
    def current_window():return next(w for w in facts()['facts']['windows'] if w['incarnation']==target)
@@ -421,11 +443,12 @@ raise SystemExit(daemon.run())
      pix=GdkPixbuf.Pixbuf.new_from_file(str(image));pixels=pix.get_pixels();stride=pix.get_rowstride();channels=pix.get_n_channels();regions=[]
      # Count only current control interiors. Whole-popup counts incorrectly
      # included the compositor's warning overlay above a black reopened popup.
-     for button in body['buttons']+(body.get('content',[]) if NOTIFICATIONS or SYSTEM else []):
+     for button in body['buttons']+(body.get('content',[]) if NOTIFICATIONS or SYSTEM or FILES else []):
       selected=button['id']==body['focus'] if SETTINGS else button['id']==body['focus'] if SNAP and (projection() or {}).get('mode')=='snap' else button['accessibleName'] in ['Minimize','Close window actions','Maximize'] if PINMENUS else button['accessibleName'].startswith(('Activate ELM-','Restore ELM-')) if SWITCHER or CHORD else (button['accessibleName'].startswith('Browse workspace ') or (NAV and button['accessibleName'].startswith('Restore ELM-ACTIVATION-PEER'))) if TASKVIEW else button['accessibleName'] in ['Refresh applications','Open Files']
+      if FILES:selected=button.get('identity','') in ['files:location:state','files:collection:images'] or button['id']==body['focus']
       if SYSTEM:selected=button.get('identity','').endswith(':state') or button['id']==body['focus']
       if NOTIFICATIONS:selected=button['accessibleName']=='Warlock fixture: Expiring notification'
-      if not selected or (button['disabled'] and not (NOTIFICATIONS or SYSTEM)) or button['y']<0 or button['y']+button['height']>box[3]:continue
+      if not selected or (button['disabled'] and not (NOTIFICATIONS or SYSTEM or FILES)) or button['y']<0 or button['y']+button['height']>box[3]:continue
       left,top=max(0,int(box[0]+button['x'])+12),max(100,int(box[1]+button['y'])+6)
       right,bottom=min(pix.get_width(),int(box[0]+button['x']+min(220,button['width']))-12),min(pix.get_height(),box[1]+box[3],int(box[1]+button['y']+button['height'])-6)
       bright=sum(1 for y in range(top,bottom) for x in range(left,right) if all(pixels[y*stride+x*channels+c]>170 for c in range(3)))
@@ -862,6 +885,63 @@ raise SystemExit(daemon.run())
       check('OverviewEscapeReturnsToEligibleOpener',facts()['facts']['focused']==before_focus and any(e['kind']=='key' and e['keyval']==97 and e['window']=='ELM-AUTHORITY-FIXTURE' for e in delivered),events=delivered,before=before_focus,after=facts()['facts']['focused'])
      check('OverviewDismissalHasNoNativeMutation',len(journal())==before)
      report['nativeTaskViewJourneyObserved']=not RETIRE_OPENER
+    elif FILES:
+     def files_body():
+      body=popup_body();p=projection()
+      return body if body and p and p.get('mode')=='files' and body['publication']==p['publication'] else None
+     def files_frames():return [json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('backend-frame: ') and json.loads(line.split(': ',1)[1]).get('kind') in ['files-snapshot','files-outcome']]
+     before_window=len(journal())
+     opener=wait(lambda:next((b for b in (bar_body() or {}).get('buttons',[]) if b['accessibleName']=='Open Files menu' and not b['disabled']),None))
+     click({'visible':0<=opener['x'] and opener['x']+opener['width']<=800 and 0<=opener['y']<48,'point':[opener['x']+opener['width']/2,opener['y']+opener['height']/2]})
+     body=wait(lambda:(body:=files_body()) and files_frames() and files_frames()[-1]['snapshot']['peer'] and body)
+     peer=files_frames()[-1]['snapshot']['peer']
+     check('ElmObservesActualExistingExplorerIdentity',peer['pid']==str(files_process.pid) and peer['start']==start_time(files_process.pid) and peer['instance']==files_native_status['instance'] and peer['target']=='home',peer=peer)
+     images=next(b for b in body['buttons'] if b.get('identity')=='files:collection:images' and not b['disabled'])
+     for _ in range(len(body['buttons'])+2):
+      if (files_body() or {}).get('focus')==images['id']:break
+      key(15)
+     wait(lambda:(body:=files_body()) and body['focus']==images['id'])
+     popup_capture('files-existing-explorer')
+     check('FilesMenuHasActualNativeControlPixels',any(row['accessibleName']=='Images' and row['brightPixels']>15 for row in report['popupCaptures'][-1]['controlRegions']),capture=report['popupCaptures'][-1])
+     key(28)
+     wait(lambda:files_frames()[-1]['kind']=='files-outcome')
+     outcome=files_frames()[-1];opened=outcome['snapshot']['peer'];ui=files_ipc('uiState');status=files_ipc('migrationStatus')
+     check('OriginalExistingExplorerReusedAtRequestedCollection',outcome['status']=='Opened' and len(requests('files-open'))==1 and all(opened[k]==peer[k] for k in ['pid','start','instance']) and ui['collId']=='images' and ui['visible'] and status['instance']==files_native_status['instance'],outcome=outcome,ui=ui,status=status)
+     check('FilesOpeningClosesPopupWithoutWindowEffects',projection()['mode']=='closed' and len(journal())==before_window and not launches())
+     # Read-only native UI capture from the same exact explorer instance.
+     explorer_image=OUTPUT/'installed-files-images.png';files_ipc('shot','explorer',str(explorer_image))
+     def image_ready(path):
+      if not path.exists() or path.stat().st_size<=1000:return False
+      import gi;gi.require_version('GdkPixbuf','2.0');from gi.repository import GdkPixbuf,GLib
+      try:image=GdkPixbuf.Pixbuf.new_from_file(str(path))
+      except GLib.Error:return False
+      return image.get_width()>300 and image.get_height()>300
+     wait(lambda:image_ready(explorer_image))
+     check('RequestedCollectionHasInstalledExplorerNativeImage',explorer_image.stat().st_size>1000,path=str(explorer_image),sha256=sha(explorer_image))
+     check('InstalledOperationsAndQuintSemanticsUnchanged',all(sha(path)==digest for path,digest in operation_hashes.items()) and all(sha(path)==digest for path,digest in qml_hashes.items()),hashes=operation_hashes)
+     check('FilesNavigationDoesNotCreateAnotherExplorer',len(json.loads(helper(['/usr/bin/qs','--log-rules','quickshell.bare.info=false','-p',str(installed_files),'list','--json'])))==1)
+     report['filesCollectionOutcome']=outcome
+     # A separate explicit folder gesture exercises the actual native field,
+     # composition-free keyboard editing, and the installed directory view.
+     opener=wait(lambda:next((b for b in (bar_body() or {}).get('buttons',[]) if b['accessibleName']=='Open Files menu' and not b['disabled']),None))
+     click({'visible':0<=opener['x'] and opener['x']+opener['width']<=800 and 0<=opener['y']<48,'point':[opener['x']+opener['width']/2,opener['y']+opener['height']/2]})
+     wait(lambda:(body:=files_body()) and files_frames()[-1]['kind']=='files-snapshot' and body)
+     for _ in range(len(files_body()['buttons'])+3):
+      body=files_body()
+      if any(field['id']==body['focus'] for field in body['fields']):break
+      key(15)
+     check('NativeKeyboardReachesFolderField',any(field['id']==files_body()['focus'] for field in files_body()['fields']),body=files_body())
+     # Held Shift for the two uppercase characters; original key pulses.
+     helper([str(keyboard)],'key 29 1\nkey 30 1\nsleep 50\nkey 30 0\nkey 29 0\nkey 14 1\nsleep 50\nkey 14 0\nsleep 100\nkey 42 1\nkey 41 1\nsleep 50\nkey 41 0\nkey 42 0\nsleep 100\nkey 53 1\nsleep 50\nkey 53 0\nsleep 100\nkey 42 1\nkey 32 1\nsleep 50\nkey 32 0\nkey 42 0\nsleep 100\nsync\n')
+     for code in [24,46,22,50,18,49,20,31]:key(code)
+     wait(lambda:any(field['value']=='~/Documents' for field in (files_body() or {}).get('fields',[])))
+     check('NativeFolderTypingDoesNotOpen',len(requests('files-open'))==1)
+     key(15);keyboard_button('Open folder',28)
+     wait(lambda:files_frames()[-1]['kind']=='files-outcome' and len(requests('files-open'))==2)
+     folder=files_frames()[-1];ui=files_ipc('uiState')
+     check('NativeExplicitFolderOpeningReusesSameExplorer',folder['status']=='Opened' and folder['snapshot']['peer']['target']==str(private_home/'Documents') and all(folder['snapshot']['peer'][k]==peer[k] for k in ['pid','start','instance']) and ui['cwd']==str(private_home/'Documents') and ui['collId']=='',outcome=folder,ui=ui)
+     check('NativeFolderOpeningPreservesOperationsAndNoWindowEffects',len(journal())==before_window and all(sha(path)==digest for path,digest in operation_hashes.items()))
+     report['filesOutcome']=folder;report['nativeFilesObserved']=True
     elif SYSTEM:
      def system_body():
       body=popup_body();p=projection()
@@ -1258,6 +1338,8 @@ raise SystemExit(daemon.run())
     chord_keyboard.wait(timeout=5);check('PersistentKeyboardNormalExit',chord_keyboard.returncode==0)
    if notification_producer is not None and notification_producer.poll() is None:
     notification_serial+=1;notification_control.write_text(json.dumps({"serial":notification_serial,"op":"quit"}));notification_producer.wait(timeout=5)
+   if FILES and 'files_process' in locals() and 'files_native_status' in locals() and files_process.poll() is None:
+    helper(['/usr/bin/qs','kill','--id',files_native_status['instance']]);files_process.wait(timeout=5)
    for proc in reversed(apps):
     if proc.poll() is None:
      if proc is fixture:fixture_control('quit');proc.wait(timeout=5)

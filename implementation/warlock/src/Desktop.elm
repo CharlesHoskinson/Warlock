@@ -6,6 +6,7 @@ import Switcher
 import Pins
 import Settings
 import Notifications
+import Files
 import SystemMenu
 import MenuBridge
 import NativeProvider
@@ -34,6 +35,10 @@ type alias Model =
     , launch : Launch.Model
     , applications : Maybe Catalog.Snapshot
     , pins : Pins.Model
+    , files : Files.Model
+    , filesOpen : Bool
+    , filesOpening : Bool
+    , filesExpected : Maybe Counter
     , systemMenu : SystemMenu.Model
     , systemMenuOpen : Bool
     , systemMenuOpening : Bool
@@ -89,6 +94,12 @@ type Msg
     | PresentationOwner (Maybe {outputId : Counter, providerId : Counter})
     | Incoming D.Value
     | OpenApplications ViewStamp
+    | OpenFiles ViewStamp
+    | CloseFiles ViewStamp
+    | RefreshFiles ViewStamp
+    | EditFilesPath ViewStamp String
+    | OpenFilesTarget ViewStamp Files.Intent
+    | OpenFilesPath ViewStamp
     | OpenSystemMenu ViewStamp
     | CloseSystemMenu ViewStamp
     | RefreshSystemMenu ViewStamp
@@ -133,7 +144,7 @@ type Effect
 
 initial : Model
 initial =
-    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
+    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, files = Files.initial, filesOpen = False, filesOpening = False, filesExpected = Nothing, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
 
 switcherOpen : Model -> Bool
 switcherOpen model = List.member (Switcher.phase model.switcher) [Switcher.Waiting,Switcher.Browsing]
@@ -214,7 +225,7 @@ receiveChord chord model =
         order=old |> Maybe.map (\previous -> UInt64.compare chord.generation previous.generation) |> Maybe.withDefault GT
         inconsistent=old |> Maybe.map (\previous -> order==EQ && (previous.roots/=chord.roots || previous.history/=chord.history || previous.origin/=chord.origin || List.take (List.length previous.steps) chord.steps/=previous.steps || (previous.released && not chord.released) || (previous.cancelled && not chord.cancelled) || (previous.consumed && not chord.consumed))) |> Maybe.withDefault False
         closed =
-            let retired=advance (retireSwitcher {model | systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,nativeSwitcher=Just chord})
+            let retired=advance (retireSwitcher {model | filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,nativeSwitcher=Just chord})
                 choice=retired.choice |> Maybe.andThen (\pending -> if pending.chord==Just chord.generation then Nothing else Just pending)
             in ({retired | choice=choice},[])
     in if chord.generation==UInt64.zero || order==LT then (model,[]) else
@@ -224,7 +235,7 @@ receiveChord chord model =
            Nothing -> (retireSwitcher model,[])
            Just generation ->
                let windows=model.windows
-                   base=if order==GT then {model | systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,nativeSwitcher=Just chord,choice=Nothing,choiceNotice="",open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,switcherHistory=Nothing,switcherExpected=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}} else {model | systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,nativeSwitcher=Just chord}
+                   base=if order==GT then {model | filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,nativeSwitcher=Just chord,choice=Nothing,choiceNotice="",open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,switcherHistory=Nothing,switcherExpected=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}} else {model | filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,nativeSwitcher=Just chord}
                    (stepped,_) = List.foldl (\(ordinal,direction) (state,_) -> Switcher.step generation (ordinal+1) direction state) (base.switcher,Nothing) (List.indexedMap Tuple.pair chord.steps)
                    (released,selected)=if chord.released then Switcher.release generation (List.length chord.steps) stepped else (stepped,Nothing)
                    next=advance {base | switcher=released}
@@ -308,6 +319,10 @@ windowBase message model =
         , switcherExpected = if disconnected || changed || windows.shell.phase==Shell.Exhausted then Nothing else model.switcherExpected
         , switcherHistory = if disconnected || changed || windows.shell.phase==Shell.Exhausted then Nothing else model.switcherHistory
         , pins = pins
+        , files = if disconnected || changed then Files.disconnect model.files else model.files
+        , filesOpen = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.filesOpen
+        , filesOpening = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.filesOpening
+        , filesExpected = if disconnected || changed then Nothing else model.filesExpected
         , systemMenu = if disconnected || changed then SystemMenu.initial else model.systemMenu
         , systemMenuOpen = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.systemMenuOpen
         , systemMenuOpening = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.systemMenuOpening
@@ -458,7 +473,7 @@ update message model =
                 Nothing -> (model,[])
                 Just choice ->
                     let windows=model.windows
-                    in (advance (retireSwitcher {model|systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,snap=Just choice,open=False,overview=False,choice=Nothing,
+                    in (advance (retireSwitcher {model|filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,snap=Just choice,open=False,overview=False,choice=Nothing,
                         expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,
                         windows={windows|picker=Nothing,menus=MenuBridge.retireChoices windows.menus}}),[])
         SelectSnap stamp region ->
@@ -527,7 +542,7 @@ update message model =
                                 Ok provider ->
                                     let (next,effects)=windowBase (TaskbarShell.OpenMenu provider) model
                                     in if (MenuBridge.menuSnapshot next.windows.menus).menu==(MenuBridge.menuSnapshot model.windows.menus).menu then (model,[]) else
-                                        (retireSwitcher {next | systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,snap=Nothing,open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=model.windows.shell.binding |> Maybe.andThen (\binding -> TaskbarShell.groups model.windows |> List.filter (\group -> List.any (\family -> family.root==root) group.families) |> List.head |> Maybe.map (\group -> {binding=binding,destination=TaskbarGroup group.key,output=Just observed.context.output}))},effects)
+                                        (retireSwitcher {next | filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,snap=Nothing,open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=model.windows.shell.binding |> Maybe.andThen (\binding -> TaskbarShell.groups model.windows |> List.filter (\group -> List.any (\family -> family.root==root) group.families) |> List.head |> Maybe.map (\group -> {binding=binding,destination=TaskbarGroup group.key,output=Just observed.context.output}))},effects)
         OpenSwitcher stamp direction ->
             if capture model/=Just stamp || model.choice/=Nothing || not (Shell.available model.windows.shell) || MenuBridge.preparedSnapshot model.windows.menus/=Nothing then (model,[]) else
             case UInt64.next (Switcher.generation model.switcher) of
@@ -537,7 +552,7 @@ update message model =
                         origin=base.windows.shell.effects.observed |> Maybe.andThen (\observed -> Scene.focused observed.scene |> Maybe.andThen (\root -> Scene.rootOf root observed.scene))
                         (switcher,_)=Switcher.step generation 1 direction base.switcher
                         windows=base.windows
-                        opened=advance {base | snap=Nothing,nativeSwitcher=Nothing,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,switcher=switcher,switcherOrigin=origin,switcherHistory=Nothing,open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing}}
+                        opened=advance {base | snap=Nothing,nativeSwitcher=Nothing,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,switcher=switcher,switcherOrigin=origin,switcherHistory=Nothing,open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing}}
                         (refreshing,commands)=windowBase (TaskbarShell.Native Shell.Refresh) opened
                         (next,history)=readSwitcherHistory refreshing
                     in (next,commands++history)
@@ -573,7 +588,7 @@ update message model =
         Window value ->
             let (next,effects)=window value model
                 (synced,commands)=syncSwitcher next
-            in if next.windows.picker/=Nothing && next.windows.picker/=model.windows.picker then (retireSwitcher {next | systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,snap=Nothing,open=False,overview=False,expected=Nothing,menuOrigin=Nothing,returnFocus=Nothing},effects) else (synced,effects++commands)
+            in if next.windows.picker/=Nothing && next.windows.picker/=model.windows.picker then (retireSwitcher {next | filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,snap=Nothing,open=False,overview=False,expected=Nothing,menuOrigin=Nothing,returnFocus=Nothing},effects) else (synced,effects++commands)
         Incoming raw ->
             case D.decodeValue (D.field "kind" D.string) raw of
                 Ok "switcher-journal" ->
@@ -590,6 +605,22 @@ update message model =
                         Ok receipt ->
                             if not (switcherOpen model) || model.windows.shell.binding/=Just receipt.binding || model.switcherExpected/=Just receipt.request then (model,[]) else
                             syncSwitcher {model | switcherExpected=Nothing,switcherHistory=Just {context=receipt.context,roots=receipt.roots}}
+                        Err _ -> (model,[])
+                Ok "files-snapshot" ->
+                    let decoder=strict ["protocolVersion","kind","binding","requestId","snapshot"] (D.map4 (\_ binding request snapshot -> {binding=binding,request=request,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "snapshot" Files.decoder))
+                    in case D.decodeValue decoder raw of
+                        Ok result ->
+                            if model.windows.shell.binding/=Just result.binding || model.filesExpected/=Just result.request || model.windows.shell.phase==Shell.Detached then (model,[]) else
+                                let next=advance {model | files=Files.reconcile result.snapshot model.files,filesExpected=Nothing,filesOpening=False}
+                                in (next,if model.filesOpen && model.filesOpening then [Focus (key next "files:close")] else [])
+                        Err _ -> (model,[])
+                Ok "files-outcome" ->
+                    let decoder=strict ["protocolVersion","kind","binding","requestId","status","snapshot"] (D.map5 (\_ binding request status snapshot -> {binding=binding,request=request,status=status,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "status" D.string) (D.field "snapshot" Files.decoder))
+                    in case D.decodeValue decoder raw of
+                        Ok result ->
+                            if model.windows.shell.binding/=Just result.binding || model.windows.shell.phase==Shell.Detached then (model,[]) else
+                                let files=Files.receive result.request result.status result.snapshot model.files
+                                in if files==model.files then (model,[]) else (advance {model | files=files},[])
                         Err _ -> (model,[])
                 Ok "system-menu-snapshot" ->
                     let decoder=strict ["protocolVersion","kind","binding","requestId","snapshot"] (D.map4 (\_ binding request snapshot -> {binding=binding,request=request,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "snapshot" SystemMenu.decoder))
@@ -683,15 +714,36 @@ update message model =
                     let (next,effects)=window (TaskbarShell.Native (Shell.Incoming raw)) model
                         (synced,commands)=syncSwitcher next
                     in (synced,effects++commands)
+        OpenFiles stamp ->
+            if capture model/=Just stamp || model.choice/=Nothing || model.windows.shell.binding==Nothing || MenuBridge.preparedSnapshot model.windows.menus/=Nothing then (model,[]) else
+            let windows=model.windows
+                next=advance (retireSwitcher {model | filesOpen=True,filesOpening=True,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,open=False,overview=False,snap=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}})
+                (reading,commands)=readFiles next
+            in (reading,commands++[Focus (key reading "files:close")])
+        CloseFiles stamp ->
+            if capture model/=Just stamp || not model.filesOpen then (model,[]) else
+                let next=advance {model | filesOpen=False,filesOpening=False}
+                in (next,[Focus (key next "files:opener")])
+        RefreshFiles stamp ->
+            if capture model/=Just stamp || not model.filesOpen then (model,[]) else readFiles model
+        EditFilesPath stamp value ->
+            if capture model/=Just stamp || not model.filesOpen then (model,[]) else
+                let files=Files.edit value model.files
+                in if files==model.files then (model,[]) else (advance {model | files=files},[])
+        OpenFilesPath stamp ->
+            if capture model/=Just stamp || not model.filesOpen then (model,[]) else
+                model.files.snapshot |> Maybe.map (\snapshot -> sendFiles (Files.intent snapshot model.files.draft) model) |> Maybe.withDefault (model,[])
+        OpenFilesTarget stamp target ->
+            if capture model/=Just stamp || not model.filesOpen then (model,[]) else sendFiles target model
         OpenSystemMenu stamp ->
             if capture model/=Just stamp || model.choice/=Nothing || model.windows.shell.binding==Nothing || MenuBridge.preparedSnapshot model.windows.menus/=Nothing then (model,[]) else
             let windows=model.windows
-                next=advance (retireSwitcher {model | systemMenuOpen=True,systemMenuOpening=True,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,open=False,overview=False,snap=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}})
+                next=advance (retireSwitcher {model | filesOpen=False,filesOpening=False,systemMenuOpen=True,systemMenuOpening=True,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,open=False,overview=False,snap=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}})
                 (reading,commands)=readSystemMenu next
             in (reading,commands++[Focus (key reading "system:close")])
         CloseSystemMenu stamp ->
             if capture model/=Just stamp || not model.systemMenuOpen then (model,[]) else
-                let next=advance {model | systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing}
+                let next=advance {model | filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing}
                 in (next,[Focus (key next "system:opener")])
         RefreshSystemMenu stamp ->
             if capture model/=Just stamp || not model.systemMenuOpen || model.systemMenuExpected/=Nothing then (model,[]) else readSystemMenu {model | systemMenuConfirmation=Nothing}
@@ -706,7 +758,7 @@ update message model =
         OpenNotifications stamp ->
             if capture model/=Just stamp || model.choice/=Nothing || model.windows.shell.binding==Nothing then (model,[]) else
             let windows=model.windows
-                next=advance (retireSwitcher {model | systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=True,notificationsOpening=True,settingsOpen=False,settingsOpening=False,open=False,overview=False,snap=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}})
+                next=advance (retireSwitcher {model | filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=True,notificationsOpening=True,settingsOpen=False,settingsOpening=False,open=False,overview=False,snap=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}})
                 (reading,commands)=readNotifications next
             in (reading,commands++[Focus (key reading "notifications:close")])
         CloseNotifications stamp ->
@@ -727,12 +779,12 @@ update message model =
         OpenSettings stamp ->
             if capture model/=Just stamp || model.choice/=Nothing || model.windows.shell.binding==Nothing then (model,[]) else
             let windows=model.windows
-                next=advance (retireSwitcher {model | systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=True,settingsOpening=True,open=False,overview=False,snap=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}})
+                next=advance (retireSwitcher {model | filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=True,settingsOpening=True,open=False,overview=False,snap=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}})
                 (reading,commands)=readSettings next
             in (reading,commands++[Focus (key reading "settings:close")])
         CloseSettings stamp ->
             if capture model/=Just stamp || not model.settingsOpen then (model,[]) else
-                let next=advance {model | systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False}
+                let next=advance {model | filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False}
                 in (next,[Focus (key next "settings:opener")])
         EditSettings stamp values ->
             if capture model/=Just stamp || not model.settingsOpen then (model,[]) else
@@ -755,7 +807,7 @@ update message model =
                         Nothing -> model
                         Just menu -> windowBase (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)) model |> Tuple.first
                 windows=base.windows
-                retired = advance (retireSwitcher {base | windows={windows | picker=Nothing}, returnFocus=Nothing, menuOrigin=Nothing, snap=Nothing, systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,open = True, overview = False, applications = Nothing, launch = Launch.catalog E.null model.launch, expected = Nothing, catalogFailure = Nothing})
+                retired = advance (retireSwitcher {base | windows={windows | picker=Nothing}, returnFocus=Nothing, menuOrigin=Nothing, snap=Nothing, filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,open = True, overview = False, applications = Nothing, launch = Launch.catalog E.null model.launch, expected = Nothing, catalogFailure = Nothing})
             in case (model.windows.shell.binding, UInt64.next model.request) of
                 (Just binding,Just request) ->
                     if model.windows.shell.phase == Shell.Detached || retired.presentation == Nothing then (retired,[]) else
@@ -774,7 +826,7 @@ update message model =
                     |> Maybe.map (\menu -> windowBase (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)) model |> Tuple.first)
                     |> Maybe.withDefault model
                 windows=base.windows
-                next=advance (retireSwitcher {base | snap=Nothing,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,overview=True,overviewWorkspace=Nothing,open=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing}})
+                next=advance (retireSwitcher {base | snap=Nothing,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,overview=True,overviewWorkspace=Nothing,open=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing}})
                 focus=TaskView.activeWorkspace next.windows.shell |> Maybe.map (\workspace -> key next ("overview:workspace:"++workspace)) |> Maybe.withDefault (key next "overview:all")
             in (next,[Focus focus])
         CloseOverview stamp ->
@@ -884,4 +936,22 @@ readNotifications model =
     case (model.windows.shell.binding,UInt64.next model.request) of
         (Just binding,Just request) ->
             (advance {model | request=request,notificationsExpected=Just request},[Send (E.object [("protocolVersion",E.int 3),("kind",E.string "notification-request"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request))])])
+        _ -> (model,[])
+
+readFiles : Model -> (Model,List Effect)
+readFiles model =
+    if model.filesExpected/=Nothing then (model,[]) else
+    case (model.windows.shell.binding,UInt64.next model.request) of
+        (Just binding,Just request) -> (advance {model | request=request,filesExpected=Just request},[Send (E.object [("protocolVersion",E.int 3),("kind",E.string "files-request"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request))])])
+        _ -> (model,[])
+
+sendFiles : Files.Intent -> Model -> (Model,List Effect)
+sendFiles target model =
+    if model.filesExpected/=Nothing then (model,[]) else
+    case (model.windows.shell.binding,UInt64.next model.request) of
+        (Just binding,Just request) ->
+            let (files,proposal)=Files.propose request target model.files
+            in case proposal of
+                Nothing -> (model,[])
+                Just value -> (advance {model | files=files,request=request,filesOpen=False,filesOpening=False},[Send (E.object [("protocolVersion",E.int 3),("kind",E.string "files-open"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request)),("intent",value)])])
         _ -> (model,[])

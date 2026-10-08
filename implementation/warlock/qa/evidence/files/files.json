@@ -1,0 +1,551 @@
+{
+  "checks": {
+    "FilesOpenerIntegrated": true,
+    "InstalledCollectionNamesPreserved": true,
+    "NativeModeAccepted": true,
+    "CurrentLocationDisplayed": true,
+    "ExactlyOneExplicitCollectionOpening": true,
+    "PopupClosesBeforeNativeOpening": true,
+    "ObservedOutcomeSettles": true,
+    "UnknownRemainsVisibleAndCannotReplay": true,
+    "RefreshNeverOpens": true,
+    "ChangedReadReconcilesWithoutReplay": true,
+    "ReplacementCannotBeReportedAsReused": true,
+    "WrongLocationCannotBeReportedAsOpened": true,
+    "ConnectionLossKeepsUnknownWithoutReplay": true,
+    "WrongReceiptDoesNotSettle": true,
+    "TypingHasNoEffect": true,
+    "FolderRequiresExplicitAction": true,
+    "CommandTextDoesNotOpen": true,
+    "CloseHasNoNavigationEffect": true,
+    "AnotherPopupRetiresFiles": true,
+    "FolderFieldHasScopedAcknowledgment": true,
+    "DetachedSessionRetiresFiles": true,
+    "AllControlsNamed": true
+  },
+  "frame": {
+    "surfaceProtocol": 2,
+    "appearance": {
+      "theme": "night",
+      "textScale": 100
+    },
+    "publication": "1",
+    "lease": "1",
+    "mode": "files",
+    "status": "Choose a collection or folder.",
+    "bar": [
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:overview",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:control:overview-opener",
+        "label": "Task View",
+        "ariaLabel": "Open Task View",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "bar:switcher",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:control:switcher-opener",
+        "label": "Switch windows",
+        "ariaLabel": "Open window switcher",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "bar:notifications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:notifications:opener",
+        "label": "Notifications",
+        "ariaLabel": "Open notifications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:files",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:files:opener",
+        "label": "Files",
+        "ariaLabel": "Open Files menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:system",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:opener",
+        "label": "System",
+        "ariaLabel": "Open system menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:settings",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:settings:opener",
+        "label": "Settings",
+        "ariaLabel": "Open settings",
+        "detail": "",
+        "enabled": true
+      }
+    ],
+    "popup": [
+      {
+        "id": "control:close",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:files:close",
+        "label": "Close Files menu",
+        "ariaLabel": "Close Files menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "files:refresh",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:files:refresh",
+        "label": "Refresh Files state",
+        "ariaLabel": "Refresh Files state",
+        "detail": "Read location; never repeat an opening",
+        "enabled": true
+      },
+      {
+        "id": "files:location:state",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:files:location:state",
+        "label": "Current location: home",
+        "ariaLabel": "Current location: home",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "files:home",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:files:home",
+        "label": "Home",
+        "ariaLabel": "Home",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "files:collection:recent",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:files:collection:recent",
+        "label": "Recent",
+        "ariaLabel": "Recent",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "files:collection:images",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:files:collection:images",
+        "label": "Images",
+        "ariaLabel": "Images",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "files:collection:videos",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:files:collection:videos",
+        "label": "Videos",
+        "ariaLabel": "Videos",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "files:collection:documents",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:files:collection:documents",
+        "label": "Documents",
+        "ariaLabel": "Documents",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "files:collection:downloads",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:files:collection:downloads",
+        "label": "Downloads",
+        "ariaLabel": "Downloads",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "files:collection:large",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:files:collection:large",
+        "label": "Large files",
+        "ariaLabel": "Large files",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "files:collection:screenshots",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:files:collection:screenshots",
+        "label": "Screenshots",
+        "ariaLabel": "Screenshots",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "control:files-path",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:files:path",
+        "label": "",
+        "ariaLabel": "Folder path",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "files:open-path",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:files:open-path",
+        "label": "Open folder",
+        "ariaLabel": "Open folder",
+        "detail": "Open this path in Files",
+        "enabled": false
+      }
+    ]
+  },
+  "pathFrame": {
+    "surfaceProtocol": 2,
+    "appearance": {
+      "theme": "night",
+      "textScale": 100
+    },
+    "publication": "1",
+    "lease": "1",
+    "mode": "files",
+    "status": "Choose a collection or folder.",
+    "bar": [
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:overview",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:overview-opener",
+        "label": "Task View",
+        "ariaLabel": "Open Task View",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "bar:switcher",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:switcher-opener",
+        "label": "Switch windows",
+        "ariaLabel": "Open window switcher",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "bar:notifications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:notifications:opener",
+        "label": "Notifications",
+        "ariaLabel": "Open notifications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:files",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:files:opener",
+        "label": "Files",
+        "ariaLabel": "Open Files menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:system",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:opener",
+        "label": "System",
+        "ariaLabel": "Open system menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:settings",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:settings:opener",
+        "label": "Settings",
+        "ariaLabel": "Open settings",
+        "detail": "",
+        "enabled": true
+      }
+    ],
+    "popup": [
+      {
+        "id": "control:close",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:files:close",
+        "label": "Close Files menu",
+        "ariaLabel": "Close Files menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "files:refresh",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:files:refresh",
+        "label": "Refresh Files state",
+        "ariaLabel": "Refresh Files state",
+        "detail": "Read location; never repeat an opening",
+        "enabled": true
+      },
+      {
+        "id": "files:location:state",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:files:location:state",
+        "label": "Current location: home",
+        "ariaLabel": "Current location: home",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "files:home",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:files:home",
+        "label": "Home",
+        "ariaLabel": "Home",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "files:collection:recent",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:files:collection:recent",
+        "label": "Recent",
+        "ariaLabel": "Recent",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "files:collection:images",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:files:collection:images",
+        "label": "Images",
+        "ariaLabel": "Images",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "files:collection:videos",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:files:collection:videos",
+        "label": "Videos",
+        "ariaLabel": "Videos",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "files:collection:documents",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:files:collection:documents",
+        "label": "Documents",
+        "ariaLabel": "Documents",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "files:collection:downloads",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:files:collection:downloads",
+        "label": "Downloads",
+        "ariaLabel": "Downloads",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "files:collection:large",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:files:collection:large",
+        "label": "Large files",
+        "ariaLabel": "Large files",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "files:collection:screenshots",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:files:collection:screenshots",
+        "label": "Screenshots",
+        "ariaLabel": "Screenshots",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "control:files-path",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:files:path",
+        "label": "/tmp/Documents",
+        "ariaLabel": "Folder path",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "files:open-path",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:files:open-path",
+        "label": "Open folder",
+        "ariaLabel": "Open folder",
+        "detail": "Open this path in Files",
+        "enabled": true
+      }
+    ]
+  },
+  "pendingFrame": {
+    "surfaceProtocol": 2,
+    "appearance": {
+      "theme": "night",
+      "textScale": 100
+    },
+    "publication": "3",
+    "lease": "1",
+    "mode": "files",
+    "status": "Files: waiting for the requested location…",
+    "bar": [
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:overview",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:control:overview-opener",
+        "label": "Task View",
+        "ariaLabel": "Open Task View",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "bar:switcher",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:control:switcher-opener",
+        "label": "Switch windows",
+        "ariaLabel": "Open window switcher",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "bar:notifications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:notifications:opener",
+        "label": "Notifications",
+        "ariaLabel": "Open notifications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:files",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:files:opener",
+        "label": "Files",
+        "ariaLabel": "Open Files menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:system",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:opener",
+        "label": "System",
+        "ariaLabel": "Open system menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:settings",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:settings:opener",
+        "label": "Settings",
+        "ariaLabel": "Open settings",
+        "detail": "",
+        "enabled": true
+      }
+    ],
+    "popup": [
+      {
+        "id": "control:close",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:files:close",
+        "label": "Close Files menu",
+        "ariaLabel": "Close Files menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "files:refresh",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:files:refresh",
+        "label": "Refresh Files state",
+        "ariaLabel": "Refresh Files state",
+        "detail": "Read location; never repeat an opening",
+        "enabled": true
+      },
+      {
+        "id": "files:location:state",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:files:location:state",
+        "label": "Current location: home",
+        "ariaLabel": "Current location: home",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "files:home",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:files:home",
+        "label": "Home",
+        "ariaLabel": "Home",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "files:collection:recent",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:files:collection:recent",
+        "label": "Recent",
+        "ariaLabel": "Recent",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "files:collection:images",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:files:collection:images",
+        "label": "Images",
+        "ariaLabel": "Images",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "files:collection:videos",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:files:collection:videos",
+        "label": "Videos",
+        "ariaLabel": "Videos",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "files:collection:documents",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:files:collection:documents",
+        "label": "Documents",
+        "ariaLabel": "Documents",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "files:collection:downloads",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:files:collection:downloads",
+        "label": "Downloads",
+        "ariaLabel": "Downloads",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "files:collection:large",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:files:collection:large",
+        "label": "Large files",
+        "ariaLabel": "Large files",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "files:collection:screenshots",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:files:collection:screenshots",
+        "label": "Screenshots",
+        "ariaLabel": "Screenshots",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "control:files-path",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:files:path",
+        "label": "",
+        "ariaLabel": "Folder path",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "files:open-path",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:files:open-path",
+        "label": "Open folder",
+        "ariaLabel": "Open folder",
+        "detail": "Open this path in Files",
+        "enabled": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,1431 @@
+diff --git c/implementation/warlock/README.md w/implementation/warlock/README.md
+index 79cdfcc..57b92f7 100644
+--- c/implementation/warlock/README.md
++++ w/implementation/warlock/README.md
+@@ -120,3 +120,18 @@ ELM-UX-032 has a private native-protocol and compositor recording of unavailable
+ networking with observed remaining state, physical volume/mute changes and
+ confirmation cancellation. Actual hardware, authorization dialogs, accessibility
+ and independent original-scenario acceptance remain separate.
++
++
++The Files button opens Home, the installed explorer's seven collections, or a
++folder entered as an absolute path or `~/…`. Typing does not open a location;
++choose Open folder explicitly. Navigation reuses the exact installed Quickshell
++instance and reports success only after native location readback. The menu closes
++before navigation and does not force keyboard focus afterward. Unknown requests
++are never automatically repeated; Refresh reads current explorer state.
++
++The adapter uses the installed explorer's launch/reuse IPC and never invokes or
++rewrites `ops.sh` or its Quint specification. Frontend text cannot select an
++executable, QML root, instance or IPC method. The ELM-UX-033 recording uses the
++actual installed explorer with private HOME/runtime: physical collection choice,
++folder typing and observed reuse pass. Cold startup, minimized/other-workspace
++summoning, accessibility and independent acceptance remain separate obligations.
+diff --git c/implementation/warlock/adapter/daemon.py w/implementation/warlock/adapter/daemon.py
+index 6aadd78..510efa5 100644
+--- c/implementation/warlock/adapter/daemon.py
++++ w/implementation/warlock/adapter/daemon.py
+@@ -9,6 +9,7 @@ from reconciliation import Reconciliation
+ from taskbar_projection import coherent_scene
+ from catalog_transport import CatalogTransport
+ from notification_service import Service as NotificationService
++from explorer import Explorer
+ from system_menu import Menu as SystemMenu
+ from recovery_journal import RecoveryFailure,guarded
+ from recovery_store import RecoveryStore as Journal
+@@ -79,13 +80,16 @@ def event_socket(client):
+  except BaseException:connection.close();raise
+ 
+ 
+-def handle_request(client,catalog,request,recovery,reconciliation,notifications=None,system_menu=None):
++def handle_request(client,catalog,request,recovery,reconciliation,notifications=None,system_menu=None,explorer=None):
+  if not isinstance(request,dict):raise Refused('Frontend request object')
+  kind=request.get('kind')
+  if kind=='reconciliation-ready':
+   reconciliation.proof_ready(request);return
+  if kind in {'catalog-request','application-launch','taskbar-pins-write','shell-settings-request','shell-settings-write'}:
+   send(catalog.handle(request));return
++ if kind in {'files-request','files-open'}:
++  if explorer is None:raise Refused('Files unavailable')
++  send(explorer.read(request,client) if kind=='files-request' else explorer.open(request,client));return
+  if kind in {'system-menu-request','system-menu-effect'}:
+   if system_menu is None:raise Refused('System menu unavailable')
+   send(system_menu.read(request,client) if kind=='system-menu-request' else system_menu.effect(request,client));return
+@@ -181,6 +185,7 @@ def main():
+  with event_socket(client) as events,selectors.DefaultSelector() as selector,ExitStack() as lifetime:
+   notification_service=lifetime.enter_context(NotificationService())
+   system_menu=lifetime.enter_context(SystemMenu())
++  explorer=lifetime.enter_context(Explorer())
+   hello=client.hello()
+   recovery=lifetime.enter_context(guarded(lambda:Journal(config['runtime'],config['instance'],client.bound['lifetime'])))
+   reconciliation=publish_startup(client,hello,recovery)
+@@ -198,7 +203,7 @@ def main():
+      if not data:incoming.finish();return 0
+      for line in incoming.feed(data):
+       request=json.loads(line,object_pairs_hook=unique)
+-      handle_request(client,catalog,request,recovery,reconciliation,notification_service,system_menu)
++      handle_request(client,catalog,request,recovery,reconciliation,notification_service,system_menu,explorer)
+       if request.get('kind')=='projection-request':have_snapshot=True;dirty=False
+     elif key.data=='notifications':
+      notification_service.drain();send(notification_service.observation(client))
+diff --git c/implementation/warlock/assets/popup-adapter.js w/implementation/warlock/assets/popup-adapter.js
+index 3091f4c..b63fab8 100644
+--- c/implementation/warlock/assets/popup-adapter.js
++++ w/implementation/warlock/assets/popup-adapter.js
+@@ -3,9 +3,9 @@ const app = Elm.Popup.init({node:document.getElementById('app')});
+ window.submitSurfaceAction = value => app.ports.requestAction.send(value);
+ const post = value => window.webkit.messageHandlers.native.postMessage(JSON.stringify(value));
+ let pickerSelection=null,observedPicker=null;
+-const pickerNode=()=>document.querySelector('.surface-popup:is([data-mode="picker"],[data-mode="snap"],[data-mode="settings"],[data-mode="notifications"],[data-mode="system"])');
++const pickerNode=()=>document.querySelector('.surface-popup:is([data-mode="picker"],[data-mode="snap"],[data-mode="settings"],[data-mode="notifications"],[data-mode="system"],[data-mode="files"])');
+ const rememberPicker=control=>{
+-  const node=control?.closest?.('.surface-popup:is([data-mode="picker"],[data-mode="snap"],[data-mode="settings"],[data-mode="notifications"],[data-mode="system"])');
++  const node=control?.closest?.('.surface-popup:is([data-mode="picker"],[data-mode="snap"],[data-mode="settings"],[data-mode="notifications"],[data-mode="system"],[data-mode="files"])');
+   if(node&&!control.disabled&&control.dataset.surfaceControl)pickerSelection={lease:node.dataset.lease,identity:control.dataset.surfaceControl};
+ };
+ const revealPicker=(force=false)=>{
+@@ -23,14 +23,14 @@ const observePicker=()=>{
+   if(node){pickerResize?.observe(node);const controls=node.querySelector('.surface-controls');if(controls)pickerResize?.observe(controls);}
+ };
+ document.addEventListener('focusin',event=>{
+-  if(event.target.closest?.('.surface-popup:is([data-mode="picker"],[data-mode="snap"],[data-mode="settings"],[data-mode="notifications"],[data-mode="system"])')){rememberPicker(event.target);revealPicker(true);}
++  if(event.target.closest?.('.surface-popup:is([data-mode="picker"],[data-mode="snap"],[data-mode="settings"],[data-mode="notifications"],[data-mode="system"],[data-mode="files"])')){if(event.target.matches?.('[data-surface-field]'))pickerSelection=null;else {rememberPicker(event.target);revealPicker(true);}}
+   else if(event.target!==document.body&&event.target!==document.documentElement)pickerSelection=null;
+ });
+ window.addEventListener('focus',()=>{rememberPicker(document.activeElement);revealPicker(true);});
+ window.addEventListener('resize',()=>requestAnimationFrame(()=>revealPicker(true)));
+ document.addEventListener('keydown',event=>{
+   if(!['ArrowUp','ArrowDown','Home','End'].includes(event.key)||event.isComposing||event.defaultPrevented||event.ctrlKey||event.altKey||event.metaKey||event.shiftKey)return;
+-  const node=event.target.closest?.('.surface-popup:is([data-mode="picker"],[data-mode="snap"],[data-mode="settings"],[data-mode="notifications"],[data-mode="system"])');if(!node)return;
++  const node=event.target.closest?.('.surface-popup:is([data-mode="picker"],[data-mode="snap"],[data-mode="settings"],[data-mode="notifications"],[data-mode="system"],[data-mode="files"])');if(!node)return;
+   const items=[...node.querySelectorAll('[data-surface-control]:not(:disabled)')],current=items.indexOf(document.activeElement);if(current<0)return;
+   const index=event.key==='Home'?0:event.key==='End'?items.length-1:Math.max(0,Math.min(items.length-1,current+(event.key==='ArrowDown'?1:-1)));
+   event.preventDefault();event.stopImmediatePropagation();items[index].focus({preventScroll:true});rememberPicker(items[index]);revealPicker(true);
+@@ -43,7 +43,7 @@ window.receivePresentation = value => {
+       // A native reflow replaces the input lease around the same retained view.
+       // Carry only the currently focused eligible DOM control into that lease;
+       // a remembered identity alone never restores focus from an older lease.
+-      if(['notifications','system'].includes(node.dataset.mode) && document.hasFocus() && pickerSelection?.lease===node.dataset.lease &&
++      if(['notifications','system','files'].includes(node.dataset.mode) && document.hasFocus() && pickerSelection?.lease===node.dataset.lease &&
+          ![...node.querySelectorAll('[data-surface-control]')].some(item=>item.dataset.surfaceControl===pickerSelection.identity&&!item.disabled) &&
+          (document.activeElement===document.body || document.activeElement?.disabled)){
+         const close=node.querySelector('[data-surface-control="control:close"]');close?.focus({preventScroll:true});
+@@ -71,7 +71,7 @@ app.ports.actions.subscribe(post);
+ let switcherTerminal=null;
+ document.addEventListener('keydown',event=>{
+   const node=event.target?.closest?.('.surface-popup');
+-  const dismissal=event.key==='Escape' && ['switcher','overview','picker','snap','settings', 'notifications','system'].includes(node?.dataset.mode);
++  const dismissal=event.key==='Escape' && ['switcher','overview','picker','snap','settings', 'notifications','system','files'].includes(node?.dataset.mode);
+   if(!node || (node.dataset.mode!=='switcher' && !dismissal) || event.isComposing ||
+      event.defaultPrevented || event.ctrlKey || event.metaKey) return;
+   const id=event.key==='Tab'?(event.shiftKey?'control:reverse':'control:forward'):
+@@ -94,7 +94,7 @@ document.addEventListener('keyup',event=>{
+   if(!held || held.key!==event.key) return;
+   switcherTerminal=null;event.preventDefault();event.stopImmediatePropagation();
+   if(event.isComposing || event.ctrlKey || event.metaKey || !held.node.isConnected ||
+-    (held.node.dataset.mode!=='switcher' && !(held.key==='Escape' && ['overview','picker','snap','settings', 'notifications','system'].includes(held.node.dataset.mode))) || held.node.dataset.publication!==held.packet.publication ||
++    (held.node.dataset.mode!=='switcher' && !(held.key==='Escape' && ['overview','picker','snap','settings', 'notifications','system','files'].includes(held.node.dataset.mode))) || held.node.dataset.publication!==held.packet.publication ||
+     held.node.dataset.lease!==held.packet.lease || !held.node.contains(event.target)) return;
+   app.ports.requestAction.send(held.packet);
+ },true);
+@@ -107,8 +107,8 @@ if (window.elmHostQA) {
+     const buttons=[...document.querySelectorAll('button')].map(button=>{
+       const r=button.getBoundingClientRect(),label=button.querySelector('.control-label')?.getBoundingClientRect();return {id:button.id,identity:button.dataset.surfaceControl,label:button.textContent,labelRect:label?{x:label.x,y:label.y,width:label.width,height:label.height}:null,accessibleName:button.getAttribute('aria-label'),disabled:button.disabled,x:r.x,y:r.y,width:r.width,height:r.height};
+     });
+-    const content=[...document.querySelectorAll('[data-notification-content],[data-system-content]')].map(item=>{
+-      const r=item.getBoundingClientRect(),label=item.querySelector('.control-label')?.getBoundingClientRect();return {id:item.id,identity:item.dataset.notificationContent||item.dataset.systemContent,label:item.textContent,labelRect:label?{x:label.x,y:label.y,width:label.width,height:label.height}:null,accessibleName:item.querySelector('.control-label')?.textContent||'',disabled:true,x:r.x,y:r.y,width:r.width,height:r.height};
++    const content=[...document.querySelectorAll('[data-notification-content],[data-system-content],[data-files-content]')].map(item=>{
++      const r=item.getBoundingClientRect(),label=item.querySelector('.control-label')?.getBoundingClientRect();return {id:item.id,identity:item.dataset.notificationContent||item.dataset.systemContent||item.dataset.filesContent,label:item.textContent,labelRect:label?{x:label.x,y:label.y,width:label.width,height:label.height}:null,accessibleName:item.querySelector('.control-label')?.textContent||'',disabled:true,x:r.x,y:r.y,width:r.width,height:r.height};
+     });
+     const node=document.querySelector('.surface-bar,.surface-popup');
+     const fields=[...document.querySelectorAll('[data-surface-field]')].map(field=>({id:field.id,value:field.value,accessibleName:field.getAttribute('aria-label'),disabled:field.disabled}));
+diff --git c/implementation/warlock/native/host.c w/implementation/warlock/native/host.c
+index e75715c..902bfd9 100644
+--- c/implementation/warlock/native/host.c
++++ w/implementation/warlock/native/host.c
+@@ -295,6 +295,17 @@ static const char *request_kind(JsonNode *root) {
+         if(!surface_fields(obj,names,selection?6:5) || !JSON_NODE_HOLDS_OBJECT(json_object_get_member(obj,"binding")) || !surface_uint(json_object_get_member(obj,"requestId"),&request) || !request || !surface_uint(json_object_get_member(obj,"chord"),&chord) || !chord || (selection && (!surface_uint(json_object_get_member(obj,"root"),&root) || !root)))return NULL;
+         return value;
+     }
++    if(g_str_equal(value,"files-request") || g_str_equal(value,"files-open")) {
++        gboolean navigation=g_str_equal(value,"files-open");guint64 request;
++        const char *const fields[]={"protocolVersion","kind","binding","requestId","intent"};
++        if(!surface_fields(obj,fields,navigation?5:4) || !JSON_NODE_HOLDS_OBJECT(json_object_get_member(obj,"binding")) || !surface_uint(json_object_get_member(obj,"requestId"),&request) || !request)return NULL;
++        if(navigation) {
++            JsonNode *node=json_object_get_member(obj,"intent");if(!node || !JSON_NODE_HOLDS_OBJECT(node))return NULL;
++            JsonObject *intent=json_node_get_object(node);const char *const names[]={"service","revision","target"};guint64 service,revision;
++            if(!surface_fields(intent,names,3) || !surface_uint(json_object_get_member(intent,"service"),&service) || !service || !surface_uint(json_object_get_member(intent,"revision"),&revision) || !revision || !surface_text(json_object_get_member(intent,"target"),2048,FALSE) || g_utf8_strlen(json_object_get_string_member(intent,"target"),-1)>512)return NULL;
++        }
++        return value;
++    }
+     if(g_str_equal(value,"system-menu-request") || g_str_equal(value,"system-menu-effect")) {
+         gboolean effect=g_str_equal(value,"system-menu-effect");guint64 request;
+         const char *const fields[]={"protocolVersion","kind","binding","requestId","intent"};
+@@ -483,7 +494,7 @@ static void receive(WebKitUserContentManager *manager,WebKitJavascriptResult *re
+     if (qa_exit && (g_str_equal(kind,"window-effect") || g_str_equal(kind,"application-launch") || g_str_equal(kind,"host-reconnect"))) { g_print("frontend-request: %s\n",text);fflush(stdout); }
+     if (g_str_equal(kind,"host-ready")) backend_start();
+     else if (g_str_equal(kind,"host-reconnect")) backend_restart();
+-    else if ((observation_kind(kind) || g_str_equal(kind,"projection-request") || g_str_equal(kind,"activation-history-request") || g_str_equal(kind,"switcher-selection-request") || g_str_equal(kind,"switcher-cancel-request") || g_str_equal(kind,"window-effect") || g_str_equal(kind,"catalog-request") || g_str_equal(kind,"taskbar-pins-write") || g_str_equal(kind,"system-menu-request") || g_str_equal(kind,"system-menu-effect") || g_str_equal(kind,"notification-request") || g_str_equal(kind,"notification-effect") || g_str_equal(kind,"shell-settings-request") || g_str_equal(kind,"shell-settings-write") || g_str_equal(kind,"application-launch"))) {
++    else if ((observation_kind(kind) || g_str_equal(kind,"projection-request") || g_str_equal(kind,"activation-history-request") || g_str_equal(kind,"switcher-selection-request") || g_str_equal(kind,"switcher-cancel-request") || g_str_equal(kind,"window-effect") || g_str_equal(kind,"catalog-request") || g_str_equal(kind,"taskbar-pins-write") || g_str_equal(kind,"files-request") || g_str_equal(kind,"files-open") || g_str_equal(kind,"system-menu-request") || g_str_equal(kind,"system-menu-effect") || g_str_equal(kind,"notification-request") || g_str_equal(kind,"notification-effect") || g_str_equal(kind,"shell-settings-request") || g_str_equal(kind,"shell-settings-write") || g_str_equal(kind,"application-launch"))) {
+         if (!backend_ready || shutting_down) return;
+         if (g_queue_get_length(&requests)>=16) { failed=TRUE;backend_ready=FALSE;deliver("{\"kind\":\"host-disconnected\"}");gtk_main_quit();return; }
+         g_queue_push_tail(&requests,g_strconcat(text,"\n",NULL));write_next();
+@@ -724,7 +735,7 @@ static gboolean surface_preflight(SurfaceGate *gate,JsonNode *root,guint queued,
+     for (guint i=0;i<count;i++) {
+         JsonNode *item=json_array_get_element(req,i);const char *rk=request_kind(item);
+         g_autofree char *wire=json_to_string(item,FALSE);
+-        if (!rk || strlen(wire)>4096 || (!observation_kind(rk) && !g_str_equal(rk,"projection-request") && !g_str_equal(rk,"activation-history-request") && !g_str_equal(rk,"switcher-selection-request") && !g_str_equal(rk,"switcher-cancel-request") && !g_str_equal(rk,"catalog-request") && !g_str_equal(rk,"taskbar-pins-write") && !g_str_equal(rk,"system-menu-request") && !g_str_equal(rk,"system-menu-effect") && !g_str_equal(rk,"notification-request") && !g_str_equal(rk,"notification-effect") && !g_str_equal(rk,"shell-settings-request") && !g_str_equal(rk,"shell-settings-write") && !g_str_equal(rk,"application-launch") && !g_str_equal(rk,"window-effect") && !g_str_equal(rk,"host-reconnect")) || (open && (g_str_equal(rk,"application-launch") || g_str_equal(rk,"window-effect")))) return FALSE;
++        if (!rk || strlen(wire)>4096 || (!observation_kind(rk) && !g_str_equal(rk,"projection-request") && !g_str_equal(rk,"activation-history-request") && !g_str_equal(rk,"switcher-selection-request") && !g_str_equal(rk,"switcher-cancel-request") && !g_str_equal(rk,"catalog-request") && !g_str_equal(rk,"taskbar-pins-write") && !g_str_equal(rk,"files-request") && !g_str_equal(rk,"files-open") && !g_str_equal(rk,"system-menu-request") && !g_str_equal(rk,"system-menu-effect") && !g_str_equal(rk,"notification-request") && !g_str_equal(rk,"notification-effect") && !g_str_equal(rk,"shell-settings-request") && !g_str_equal(rk,"shell-settings-write") && !g_str_equal(rk,"application-launch") && !g_str_equal(rk,"window-effect") && !g_str_equal(rk,"host-reconnect")) || (open && (g_str_equal(rk,"application-launch") || g_str_equal(rk,"window-effect") || g_str_equal(rk,"files-open")))) return FALSE;
+         if (g_str_equal(rk,"host-reconnect") && count!=1) return FALSE;
+         if (!ready && !g_str_equal(rk,"host-reconnect")) return FALSE;
+     }
+@@ -876,6 +887,14 @@ static void test_surface_preflight(void) {
+     json_object_set_string_member(system_intent,"operation","network-enable");g_assert_false(surface_preflight(&gate,root,0,0,TRUE,&out));json_object_set_int_member(system_intent,"value",1);g_assert_true(surface_preflight(&gate,root,0,0,TRUE,&out));
+     json_object_set_string_member(system_intent,"operation","execute");g_assert_false(surface_preflight(&gate,root,0,0,TRUE,&out));json_object_set_string_member(system_intent,"operation","session-lock");json_object_set_int_member(system_intent,"value",0);g_assert_true(surface_preflight(&gate,root,0,0,TRUE,&out));
+     json_object_set_string_member(system_intent,"path","/tmp/foreign");g_assert_false(surface_preflight(&gate,root,0,0,TRUE,&out));json_object_remove_member(system_intent,"path");
++    json_object_set_string_member(frame,"mode","closed");json_array_remove_element(array,0);
++    JsonNode *files=test_json("{\"protocolVersion\":3,\"kind\":\"files-open\",\"binding\":{},\"requestId\":\"1\",\"intent\":{\"service\":\"9\",\"revision\":\"1\",\"target\":\"coll:images\"}}");
++    json_array_add_element(array,files);g_assert_true(surface_preflight(&gate,root,0,0,TRUE,&out));
++    JsonObject *files_intent=json_object_get_object_member(json_node_get_object(files),"intent");
++    json_object_set_string_member(frame,"mode","files");g_assert_false(surface_preflight(&gate,root,0,0,TRUE,&out));
++    json_object_set_string_member(frame,"mode","closed");json_object_set_string_member(files_intent,"instance","foreign");g_assert_false(surface_preflight(&gate,root,0,0,TRUE,&out));json_object_remove_member(files_intent,"instance");
++    json_object_set_string_member(files_intent,"revision","0");g_assert_false(surface_preflight(&gate,root,0,0,TRUE,&out));json_object_set_string_member(files_intent,"revision","1");
++    json_object_set_string_member(files_intent,"target","/tmp/Documents");g_assert_true(surface_preflight(&gate,root,0,0,TRUE,&out));
+     json_node_unref(root);
+ }
+ static void test_surface_managers(void) {
+diff --git c/implementation/warlock/native/surface.h w/implementation/warlock/native/surface.h
+index 37414ad..3194927 100644
+--- c/implementation/warlock/native/surface.h
++++ w/implementation/warlock/native/surface.h
+@@ -50,7 +50,7 @@ static gboolean surface_frame(JsonNode *node,guint64 *pub,guint64 *lease,gboolea
+     if (!surface_fields(o,names,appearance?8:7) || json_node_get_value_type(json_object_get_member(o,"surfaceProtocol"))!=G_TYPE_INT64 || json_object_get_int_member(o,"surfaceProtocol")!=2 || !surface_uint(json_object_get_member(o,"publication"),pub) || !*pub || !surface_uint(json_object_get_member(o,"lease"),lease) || !surface_text(json_object_get_member(o,"mode"),32,FALSE) || !surface_text(json_object_get_member(o,"status"),1024,TRUE)) return FALSE;
+     const char *mode=json_object_get_string_member(o,"mode");
+     *open=!g_str_equal(mode,"closed");
+-    if (*open && (!*lease || (!g_str_equal(mode,"picker") && !g_str_equal(mode,"applications") && !g_str_equal(mode,"menu") && !g_str_equal(mode,"overview") && !g_str_equal(mode,"switcher") && !g_str_equal(mode,"snap") && !g_str_equal(mode,"settings") && !g_str_equal(mode,"notifications") && !g_str_equal(mode,"system")))) return FALSE;
++    if (*open && (!*lease || (!g_str_equal(mode,"picker") && !g_str_equal(mode,"applications") && !g_str_equal(mode,"menu") && !g_str_equal(mode,"overview") && !g_str_equal(mode,"switcher") && !g_str_equal(mode,"snap") && !g_str_equal(mode,"settings") && !g_str_equal(mode,"notifications") && !g_str_equal(mode,"system") && !g_str_equal(mode,"files")))) return FALSE;
+     g_autoptr(GHashTable) ids=g_hash_table_new(g_str_hash,g_str_equal),doms=g_hash_table_new(g_str_hash,g_str_equal);
+     if (!surface_controls(json_object_get_member(o,"bar"),300,ids,doms) || !surface_controls(json_object_get_member(o,"popup"),2150,ids,doms)) return FALSE;
+     return *open || json_array_get_length(json_object_get_array_member(o,"popup"))==0;
+@@ -74,7 +74,7 @@ static gboolean surface_query(SurfaceGate *gate,JsonNode *node,JsonNode *frame,g
+     if (!popup || !node || !frame || !JSON_NODE_HOLDS_OBJECT(node)) return FALSE;
+     JsonObject *o=json_node_get_object(node);
+     const char *const fields[]={"surfaceProtocol","kind","surface","publication","lease","id","query"};
+-    if (!surface_fields(o,fields,7) || !surface_text(json_object_get_member(o,"kind"),32,FALSE) || !g_str_equal(json_object_get_string_member(o,"kind"),"surface-query") || !surface_text(json_object_get_member(o,"id"),512,FALSE) || !g_str_equal(json_object_get_string_member(o,"id"),"control:search") || !surface_text(json_object_get_member(o,"query"),256,TRUE) || !g_str_equal(json_object_get_string_member(json_node_get_object(frame),"mode"),"applications")) return FALSE;
++    if (!surface_fields(o,fields,7) || !surface_text(json_object_get_member(o,"kind"),32,FALSE) || !g_str_equal(json_object_get_string_member(o,"kind"),"surface-query") || !surface_text(json_object_get_member(o,"id"),512,FALSE) || !((g_str_equal(json_object_get_string_member(o,"id"),"control:search") && g_str_equal(json_object_get_string_member(json_node_get_object(frame),"mode"),"applications") && surface_text(json_object_get_member(o,"query"),256,TRUE)) || (g_str_equal(json_object_get_string_member(o,"id"),"control:files-path") && g_str_equal(json_object_get_string_member(json_node_get_object(frame),"mode"),"files") && surface_text(json_object_get_member(o,"query"),2048,TRUE) && g_utf8_strlen(json_object_get_string_member(o,"query"),-1)<=512))) return FALSE;
+     JsonObject *action=json_object_new();
+     for (guint i=0;i<6;i++) json_object_set_member(action,fields[i],json_node_copy(json_object_get_member(o,fields[i])));
+     json_object_set_string_member(action,"kind","surface-action");
+diff --git c/implementation/warlock/qa/check-search.py w/implementation/warlock/qa/check-search.py
+index 8c1ef23..9175824 100644
+--- c/implementation/warlock/qa/check-search.py
++++ w/implementation/warlock/qa/check-search.py
+@@ -1,5 +1,6 @@
+ """Focused compiled launcher/search integration, protected CPU scope only."""
+ import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures,http.server,threading
++FILES=sys.argv[1:]==['--files']
+ SYSTEM=sys.argv[1:]==['--system-menu']
+ NOTIFICATIONS=sys.argv[1:]==['--notifications']
+ SETTINGS=sys.argv[1:]==['--settings']
+@@ -11,11 +12,11 @@ DENSE=sys.argv[1:]==['--dense-taskbar'] or PICKER
+ PINMENUS=sys.argv[1:]==['--pinned-menus'] or (DENSE and not PICKER)
+ PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PINMENUS or PICKER
+ SWITCHER=sys.argv[1:]==['--switcher']
+-NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'];POPUP=sys.argv[1:]==['--native-popup'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER
++NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'];POPUP=sys.argv[1:]==['--native-popup'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER
+ ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143'
+ sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
+ scope=require_qa_scope();sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
+-OUT=ROOT/'qa/runs'/(('system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
++OUT=ROOT/'qa/runs'/(('files-' if FILES else 'system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
+ for folder in ['src','native','adapter','assets','qa']:
+  (INPUT/folder).mkdir()
+  for p in (ROOT/folder).iterdir():
+@@ -73,6 +74,12 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
+   run('compile-task-view',[str(HELD/pinned['compiler']),'make','qa/TaskViewReplay.elm','--optimize','--output=assets/task-view.js'])
+   (INPUT/'qa/task-view-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.TaskViewReplay'));run('typed-task-view',['node','qa/task-view-replay.js','assets/task-view.js',str(OUT/'task-view.json')]);report['typedTaskView']=json.loads((OUT/'task-view.json').read_text());assert all(report['typedTaskView']['checks'].values())
+   run('task-view-model-typecheck',['quint','typecheck','qa/task-view.qnt']);run('task-view-model-named',['quint','test','qa/task-view.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79101']);run('task-view-model-invariants',['quint','run','qa/task-view.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79102'])
++ if FILES:
++  report.update(requirements=['ELM-UX-033'],scenarios=['ux-033'],scope='Integrated Files reducers, folder field/preedit, strict native admission and actual Quickshell protocol fixture. Installed explorer/native GUI acceptance is separate.')
++  report['filesProtocol']=json.loads(run('files-protocol',['/usr/bin/python3','-B','qa/check-files.py']))
++  run('compile-files',[str(HELD/pinned['compiler']),'make','qa/FilesReplay.elm','--optimize','--output=assets/files.js'])
++  (INPUT/'qa/files-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.FilesReplay'));run('typed-files',['node','qa/files-replay.js','assets/files.js',str(OUT/'files.json')]);report['typedFiles']=json.loads((OUT/'files.json').read_text());assert all(report['typedFiles']['checks'].values())
++  run('files-model-typecheck',['quint','typecheck','qa/files.qnt']);run('files-model-named',['quint','test','qa/files.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79129']);run('files-model-invariants',['quint','run','qa/files.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79130'])
+  if SYSTEM:
+   report.update(requirements=['ELM-UX-032'],scenarios=['ux-032'],scope='Current immutable Elm system menu, native capability/outcome admission, actual private audio and D-Bus protocols; physical GUI, hardware and independent acceptance separate')
+   run('system-model-typecheck',['quint','typecheck','qa/system-menu.qnt']);run('system-model-named',['quint','test','qa/system-menu.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79127']);run('system-model-invariants',['quint','run','qa/system-menu.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79128'])
+@@ -136,7 +143,7 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
+    if TASKVIEW:
+     # The authority TU is independently compiled against its owning core; none
+     # of these reused GTK host objects link it or include its modal preflight.
+-    excluded=['native/surface.h','native/host.c','native/shared-host.c']+(['native/authority.cpp','native/navigation-modal.hpp'] if NAV else [])+(['native/authority.cpp','native/host-journal.h','native/geometry-effects.inc','native/snap-placement.inc'] if SNAP or SETTINGS or NOTIFICATIONS or SYSTEM else [])
++    excluded=['native/surface.h','native/host.c','native/shared-host.c']+(['native/authority.cpp','native/navigation-modal.hpp'] if NAV else [])+(['native/authority.cpp','native/host-journal.h','native/geometry-effects.inc','native/snap-placement.inc'] if SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES else [])
+     assert all(sha(INPUT/p)==h for p,h in prior['inputs'].items() if p.startswith('native/') and p not in excluded)
+     assert all('surface.h' not in (INPUT/'native'/name).read_text() for name in units)
+    object_path=prior_path;object_report=prior;seen=set()
+@@ -156,7 +163,7 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
+    run('popup-context-link',['g++',str(OUT/'popup-context.o'),*[str(OUT/(name+'.o')) for name in units],'-o',str(OUT/'popup-context-tests'),*flags])
+    run('popup-context-tests',[str(OUT/'popup-context-tests')])
+  run('host-self-tests',[str(OUT/'elm-host'),'--self-test'])
+- if DENSE or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM:
++ if DENSE or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES:
+   if DENSE:report.update(requirements=['ELM-UI-008'],scenarios=['overflow-first-last','overflow-resize','menu-invocation'],scope='Current compiled renderer/adapter dense enlarged-text browser journeys and rebuilt scalable native host; native output/menu/AT observations separate')
+   (INPUT/'qa/dense.html').write_text('<!doctype html><html style="font-size:24px"><head><link rel="stylesheet" href="../assets/shell.css"></head><body class="bar"><div id="app"></div><script>window.nativePackets=[];window.webkit={messageHandlers:{native:{postMessage:s=>nativePackets.push(JSON.parse(s))}}};</script><script src="../assets/bar.js"></script><script src="../assets/bar-adapter.js"></script><script src="../assets/context.js"></script><script src="../assets/activation.js"></script></body></html>')
+   (INPUT/'qa/dense-picker.html').write_text('<!doctype html><html style="font-size:24px"><head><link rel="stylesheet" href="../assets/shell.css"></head><body class="popup"><div id="app"></div><script>window.nativePackets=[];window.webkit={messageHandlers:{native:{postMessage:s=>nativePackets.push(JSON.parse(s))}}};</script><script src="../assets/popup.js"></script><script src="../assets/popup-adapter.js"></script><script src="../assets/context.js"></script><script src="../assets/activation.js"></script></body></html>')
+@@ -168,9 +175,9 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
+    def log_message(self,*args):pass
+   server=http.server.ThreadingHTTPServer(('127.0.0.1',0),Handler);threading.Thread(target=server.serve_forever,daemon=True).start()
+   browser=pathlib.Path('/home/hoskinson/.cache/puppeteer/chrome-headless-shell/linux-154.0.8037.57/chrome-headless-shell-linux64/chrome-headless-shell');report['browserSHA256']=sha(browser)
+-  browser_name='system-menu-browser' if SYSTEM else 'notifications-browser' if NOTIFICATIONS else 'settings-browser' if SETTINGS else 'snap-browser' if SNAP else 'dense-browser';browser_runner='system-menu-browser.mjs' if SYSTEM else 'notifications-browser.mjs' if NOTIFICATIONS else 'settings-browser.mjs' if SETTINGS else 'snap-browser.mjs' if SNAP else 'dense-taskbar-browser.mjs'
++  browser_name='files-browser' if FILES else 'system-menu-browser' if SYSTEM else 'notifications-browser' if NOTIFICATIONS else 'settings-browser' if SETTINGS else 'snap-browser' if SNAP else 'dense-browser';browser_runner='files-browser.mjs' if FILES else 'system-menu-browser.mjs' if SYSTEM else 'notifications-browser.mjs' if NOTIFICATIONS else 'settings-browser.mjs' if SETTINGS else 'snap-browser.mjs' if SNAP else 'dense-taskbar-browser.mjs'
+   run(browser_name,['node','qa/'+browser_runner,'http://127.0.0.1:'+str(server.server_port),str(OUT),str(browser)])
+-  child_path=OUT/(browser_name+'.json');child=json.loads(child_path.read_text());assert child['passed'] and child['browserExitCode']==0;report['systemMenuBrowser' if SYSTEM else 'notificationsBrowser' if NOTIFICATIONS else 'settingsBrowser' if SETTINGS else 'snapBrowser' if SNAP else 'denseBrowser']={'path':str(child_path),'sha256':sha(child_path),'checks':child['checks']}
++  child_path=OUT/(browser_name+'.json');child=json.loads(child_path.read_text());assert child['passed'] and child['browserExitCode']==0;report['filesBrowser' if FILES else 'systemMenuBrowser' if SYSTEM else 'notificationsBrowser' if NOTIFICATIONS else 'settingsBrowser' if SETTINGS else 'snapBrowser' if SNAP else 'denseBrowser']={'path':str(child_path),'sha256':sha(child_path),'checks':child['checks']}
+   if SNAP:
+    run('menu-navigation-regression',['node','qa/dense-taskbar-browser.mjs','http://127.0.0.1:'+str(server.server_port),str(OUT),str(browser)])
+    regression=json.loads((OUT/'dense-browser.json').read_text());assert regression['passed'] and regression['browserExitCode']==0;report['menuNavigationRegression']={'path':str(OUT/'dense-browser.json'),'sha256':sha(OUT/'dense-browser.json'),'checks':regression['checks']}
+diff --git c/implementation/warlock/qa/current-search-build.json w/implementation/warlock/qa/current-search-build.json
+index 5c1ff1e..109f5ae 100644
+--- c/implementation/warlock/qa/current-search-build.json
++++ w/implementation/warlock/qa/current-search-build.json
+@@ -1,13 +1,10 @@
+ {
+-  "schema": 1,
+-  "report": "implementation/warlock/qa/runs/system-menu-1791465946311061384/report.json",
+-  "reportSHA256": "1208ea9e8e3bdc2d03900cd5e04b4b5967474ec796edf3f554248ee6667448f0",
++  "report": "implementation/warlock/qa/runs/files-1791468795730387952/report.json",
++  "reportSHA256": "5c03950465b8137538e47acc96f52b1717afebe168ae7e670c0529b8101e5c84",
++  "binarySHA256": "52708b0052a5515a2c713e6e8b73c28974180213437bbbc49cb7a16ec8d09b85",
+   "compiledAssets": {
+-    "elm.js": "2a3fb0d51c6d266479f2b6f330f96c2dfa71897def9a201e883f5368c59a9219",
+-    "bar.js": "dff9b880c51c1a5622de9ea1133bddd87876fbb4f4610b7e2998114030aef4df",
+-    "popup.js": "9e7c999c47aa7dac3dc1858ca1c73522989317fc5ac2f38d83bfb185f94bacd9"
+-  },
+-  "binarySHA256": "ab03f0a1b38bebf8a730a61be34e9cd0b43c57773ffef97c8b95c4816c5d46c6",
+-  "nativeAcceptance": false,
+-  "fullReleaseAccepted": false
++    "elm.js": "f3d1c0cff0b594732b6787b8f6668c1512ce9acc9593fcc42f121ba293a03598",
++    "bar.js": "c9c69fcbe3bfad8acf8a865ce67fbc10641c7d88fce9140439549e0b16e00d81",
++    "popup.js": "346577fb4154790ef9a22ae71a53ad84751c401e6ad354a92d86541cb2b629d4"
++  }
+ }
+diff --git c/implementation/warlock/qa/native-window-feedback.py w/implementation/warlock/qa/native-window-feedback.py
+index f349d97..cfa5731 100644
+--- c/implementation/warlock/qa/native-window-feedback.py
++++ w/implementation/warlock/qa/native-window-feedback.py
+@@ -4,6 +4,7 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
+ lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
+ """
+ import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
++FILES=sys.argv[1:]==['--files']
+ SYSTEM=sys.argv[1:]==['--system-menu']
+ NOTIFICATIONS=sys.argv[1:]==['--notifications']
+ SETTINGS=sys.argv[1:]==['--settings']
+@@ -20,7 +21,7 @@ PRE_READY_RETIRE=sys.argv[1:]==['--switcher-pre-ready-retirement']
+ MEMBERSHIP=sys.argv[1:]==['--switcher-membership'] or PRE_READY_RETIRE
+ CHORD=sys.argv[1:]==['--switcher-chord'] or MEMBERSHIP
+ SWITCHER=sys.argv[1:]==['--switcher']
+-NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'] or DENSEPICKER;PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS or PINMENUS or REFLOW or SETTINGS or NOTIFICATIONS or SYSTEM;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD
++NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'] or DENSEPICKER;PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS or PINMENUS or REFLOW or SETTINGS or NOTIFICATIONS or SYSTEM or FILES;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD
+ ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143';RUNTIME=REPO/'implementation/warlock-client-provider-native-v204'
+ sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
+ spec=importlib.util.spec_from_file_location('feedback_private_host',RUNTIME/'candidate_host.py');host=importlib.util.module_from_spec(spec);spec.loader.exec_module(host)
+@@ -58,7 +59,7 @@ else:
+ for row in pair.values():assert sha(row['path'])==row['sha256']
+ assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
+ subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
+-OUT=ROOT/'qa/runs'/(('native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
++OUT=ROOT/'qa/runs'/(('native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+ OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
+ focus_host=None
+ if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
+@@ -107,6 +108,7 @@ if focus_host:report['focusHostAdaptation']=focus_host
+ if retirement_fixture:report['retirementFixture']=retirement_fixture
+ if primary_fixture:report['primaryFixture']=primary_fixture
+ if SEARCH:report.update(requirements=['ELM-UI-005','ELM-UX-029'],scenarios=['search-no-match','search-race','search-refused','launcher-refused'],scope='Actual current query and private catalog, native typing/Enter refusal and no duplicate launch; AT/IME and popup physical presentation acceptance remain pending',popupPresentationAccepted=False)
++if FILES:report.update(requirements=['ELM-UX-033'],scenarios=['ux-033'],scope='Actual installed Files explorer in private home/runtime; physical Elm collection choice, exact native instance reuse, location readback, no unchanged file operation source edits. Independent/AT and other-workspace summon acceptance remain open.',nativeFilesObserved=False)
+ if SYSTEM:report.update(requirements=['ELM-UX-032'],scenarios=['ux-032'],scope='Actual isolated native menu with current private PipeWire volume and login1 session/power capabilities, unavailable network, physical keyboard changes, readback, confirmation and pixels; real hardware, AT and independent acceptance remain open.',nativeSystemMenuObserved=False)
+ if NOTIFICATIONS:report.update(requirements=['ELM-UX-031'],scenarios=['ux-031','notification-valid','notification-reused'],scope='Actual private native producers and physical Elm center: exactly-once current dispatch, expired history and reused-incarnation queued refusal; independent/AT acceptance remains open.',nativeNotificationsObserved=False)
+ if SETTINGS:report.update(requirements=['ELM-UX-030'],scenarios=['ux-030'],scope='Actual integrated settings controls, exact saved appearance, native text size/reservation and whole-host restart; native-bound invalid scale refuses without changing stored or presented settings. Independent and applicable AT/IME/release acceptance remain open.',nativeSettingsObserved=False)
+@@ -302,6 +304,26 @@ raise SystemExit(daemon.run())
+     backend_fixture=OUTPUT/'notification-backend.py'
+     backend_fixture.write_text('import json,sys,time\nfrom pathlib import Path\nsys.path.insert(0,'+repr(str(ROOT/'adapter'))+')\nimport daemon\nsys.argv[1]='+repr(str(broker_config))+'\noriginal=daemon.handle_request\ndef handle(*args):\n request=args[2]\n arm=Path('+repr(str(notification_arm))+');waiting=Path('+repr(str(notification_waiting))+');release=Path('+repr(str(notification_release))+')\n if request.get("kind")=="notification-effect" and arm.exists():\n  arm.unlink();waiting.write_text(json.dumps(request));deadline=time.monotonic()+2\n  while not release.exists():\n   if time.monotonic()>=deadline:raise RuntimeError("Notification transport hold expired")\n   time.sleep(.005)\n  release.unlink()\n return original(*args)\ndaemon.handle_request=handle\nraise SystemExit(daemon.run())\n')
+     report['notificationHoldFixture']={'path':str(backend_fixture),'sha256':sha(backend_fixture),'maximumSeconds':2,'scope':'Hold actual queued request before its unchanged admission route; no artificial effect or receipt.'}
++   if FILES:
++    installed_files=pathlib.Path('/home/hoskinson/.local/share/omarchy-files');private_home=pathlib.Path(env['HOME'])
++    assert private_home.resolve().is_relative_to(s.host.runtime.resolve())
++    for directory in ['Pictures','Documents','Downloads']:(private_home/directory).mkdir(mode=0o700,exist_ok=True)
++    (private_home/'Documents/warlock-files-fixture.txt').write_text('Private Files navigation fixture')
++    env.update(FILES_OPEN='home',FILES_WIDGET='0',FILES_DRYRUN='1',QT_QPA_PLATFORM='wayland',QT_QUICK_CONTROLS_STYLE='Basic')
++    operation_hashes={str(path):sha(path) for path in [installed_files/'scripts/ops.sh',installed_files/'spec/fileops.qnt']}
++    qml_hashes={str(path):sha(path) for path in installed_files.rglob('*') if path.is_file() and path.suffix in ['.qml','.js']}
++    files_process=s.host.launch('installed-files',['/usr/bin/qs','-p',str(installed_files),'--no-duplicate'],env=env);apps.append(files_process)
++    def files_ipc(method,*args):
++     assert files_process.poll() is None
++     raw=helper(['/usr/bin/qs','--log-rules','quickshell.bare.info=false','-p',str(installed_files),'ipc','--pid',str(files_process.pid),'call','files',method,*args])
++     return json.loads(raw.strip()) if method in ['migrationStatus','uiState'] else raw
++    wait(lambda:files_process.poll() is not None or any(w['label']=='Files' for w in client.snapshot('452')['windows']))
++    check('ActualInstalledExplorerMapped',files_process.poll() is None,log=str(OUTPUT/'installed-files.log'))
++    files_native_status=files_ipc('migrationStatus');files_original_ui=files_ipc('uiState')
++    check('InstalledExplorerReadyInPrivateHome',files_native_status['ready'] and not files_native_status['error'] and files_original_ui['view']=='home' and files_original_ui['visible'],status=files_native_status,ui=files_original_ui)
++    backend_fixture=OUTPUT/'files-backend.py'
++    backend_fixture.write_text('import os,sys\nfrom pathlib import Path\nsys.path.insert(0,'+repr(str(ROOT/'adapter'))+')\nimport daemon\nfrom explorer import Explorer\nassert Path(sys.argv[1]).read_text()=='+repr(config_path.read_text())+'\nassert not Path(os.environ["DBUS_SYSTEM_BUS_ADDRESS"].removeprefix("unix:path=")).exists()\nsys.argv[1]='+repr(str(broker_config))+'\ndaemon.Explorer=lambda:Explorer('+repr(str(installed_files))+')\nraise SystemExit(daemon.run())\n')
++    report['filesFixture']={'backend':str(backend_fixture),'backendSHA256':sha(backend_fixture),'installedRoot':str(installed_files),'installedQmlSHA256':qml_hashes,'installedOperationSHA256':operation_hashes,'qsSHA256':sha('/usr/bin/qs'),'home':env['HOME'],'runtime':env['XDG_RUNTIME_DIR'],'wayland':env['WAYLAND_DISPLAY'],'systemBusRemainsRefusing':True,'scope':'Actual unmodified installed explorer; native-only root constructor selects existing installation in private home, no operation script/spec edits or invocation.'}
+    if SYSTEM:
+     import importlib.util
+     system_spec=importlib.util.spec_from_file_location('private_system_fixture',ROOT/'qa/system-menu-provider.py');system_fixture=importlib.util.module_from_spec(system_spec);system_spec.loader.exec_module(system_fixture)
+@@ -330,7 +352,7 @@ raise SystemExit(daemon.run())
+    def click(item):
+     check('PointerTargetWithinActualViewport',item['visible'],item=item);x,y=map(round,item['point']);helper([str(POINTER),'800','600'],f'move {x} {y}\nsleep 100\nbutton 272 1\nsleep 50\nbutton 272 0\nsleep 100\n')
+    def facts():return client.scene_facts('441')
+-   initial=None if TASKVIEW or SWITCHER or CHORD else wait(lambda:group('Activate' if PRIMARY else 'Choose a window from' if FOCUS else 'Minimize'))
++   initial=None if TASKVIEW or SWITCHER or CHORD or FILES else wait(lambda:group('Activate' if PRIMARY else 'Choose a window from' if FOCUS else 'Minimize'))
+    target=next(w['incarnation'] for w in client.snapshot('442')['windows'] if w['label']==('ELM-ACTIVATION-PEER' if PRIMARY else 'ELM-AUTHORITY-FIXTURE'))
+    initial_workspace=next(w['workspace'] for w in facts()['facts']['windows'] if w['incarnation']==target)
+    def current_window():return next(w for w in facts()['facts']['windows'] if w['incarnation']==target)
+@@ -421,11 +443,12 @@ raise SystemExit(daemon.run())
+      pix=GdkPixbuf.Pixbuf.new_from_file(str(image));pixels=pix.get_pixels();stride=pix.get_rowstride();channels=pix.get_n_channels();regions=[]
+      # Count only current control interiors. Whole-popup counts incorrectly
+      # included the compositor's warning overlay above a black reopened popup.
+-     for button in body['buttons']+(body.get('content',[]) if NOTIFICATIONS or SYSTEM else []):
++     for button in body['buttons']+(body.get('content',[]) if NOTIFICATIONS or SYSTEM or FILES else []):
+       selected=button['id']==body['focus'] if SETTINGS else button['id']==body['focus'] if SNAP and (projection() or {}).get('mode')=='snap' else button['accessibleName'] in ['Minimize','Close window actions','Maximize'] if PINMENUS else button['accessibleName'].startswith(('Activate ELM-','Restore ELM-')) if SWITCHER or CHORD else (button['accessibleName'].startswith('Browse workspace ') or (NAV and button['accessibleName'].startswith('Restore ELM-ACTIVATION-PEER'))) if TASKVIEW else button['accessibleName'] in ['Refresh applications','Open Files']
++      if FILES:selected=button.get('identity','') in ['files:location:state','files:collection:images'] or button['id']==body['focus']
+       if SYSTEM:selected=button.get('identity','').endswith(':state') or button['id']==body['focus']
+       if NOTIFICATIONS:selected=button['accessibleName']=='Warlock fixture: Expiring notification'
+-      if not selected or (button['disabled'] and not (NOTIFICATIONS or SYSTEM)) or button['y']<0 or button['y']+button['height']>box[3]:continue
++      if not selected or (button['disabled'] and not (NOTIFICATIONS or SYSTEM or FILES)) or button['y']<0 or button['y']+button['height']>box[3]:continue
+       left,top=max(0,int(box[0]+button['x'])+12),max(100,int(box[1]+button['y'])+6)
+       right,bottom=min(pix.get_width(),int(box[0]+button['x']+min(220,button['width']))-12),min(pix.get_height(),box[1]+box[3],int(box[1]+button['y']+button['height'])-6)
+       bright=sum(1 for y in range(top,bottom) for x in range(left,right) if all(pixels[y*stride+x*channels+c]>170 for c in range(3)))
+@@ -862,6 +885,63 @@ raise SystemExit(daemon.run())
+       check('OverviewEscapeReturnsToEligibleOpener',facts()['facts']['focused']==before_focus and any(e['kind']=='key' and e['keyval']==97 and e['window']=='ELM-AUTHORITY-FIXTURE' for e in delivered),events=delivered,before=before_focus,after=facts()['facts']['focused'])
+      check('OverviewDismissalHasNoNativeMutation',len(journal())==before)
+      report['nativeTaskViewJourneyObserved']=not RETIRE_OPENER
++    elif FILES:
++     def files_body():
++      body=popup_body();p=projection()
++      return body if body and p and p.get('mode')=='files' and body['publication']==p['publication'] else None
++     def files_frames():return [json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('backend-frame: ') and json.loads(line.split(': ',1)[1]).get('kind') in ['files-snapshot','files-outcome']]
++     before_window=len(journal())
++     opener=wait(lambda:next((b for b in (bar_body() or {}).get('buttons',[]) if b['accessibleName']=='Open Files menu' and not b['disabled']),None))
++     click({'visible':0<=opener['x'] and opener['x']+opener['width']<=800 and 0<=opener['y']<48,'point':[opener['x']+opener['width']/2,opener['y']+opener['height']/2]})
++     body=wait(lambda:(body:=files_body()) and files_frames() and files_frames()[-1]['snapshot']['peer'] and body)
++     peer=files_frames()[-1]['snapshot']['peer']
++     check('ElmObservesActualExistingExplorerIdentity',peer['pid']==str(files_process.pid) and peer['start']==start_time(files_process.pid) and peer['instance']==files_native_status['instance'] and peer['target']=='home',peer=peer)
++     images=next(b for b in body['buttons'] if b.get('identity')=='files:collection:images' and not b['disabled'])
++     for _ in range(len(body['buttons'])+2):
++      if (files_body() or {}).get('focus')==images['id']:break
++      key(15)
++     wait(lambda:(body:=files_body()) and body['focus']==images['id'])
++     popup_capture('files-existing-explorer')
++     check('FilesMenuHasActualNativeControlPixels',any(row['accessibleName']=='Images' and row['brightPixels']>15 for row in report['popupCaptures'][-1]['controlRegions']),capture=report['popupCaptures'][-1])
++     key(28)
++     wait(lambda:files_frames()[-1]['kind']=='files-outcome')
++     outcome=files_frames()[-1];opened=outcome['snapshot']['peer'];ui=files_ipc('uiState');status=files_ipc('migrationStatus')
++     check('OriginalExistingExplorerReusedAtRequestedCollection',outcome['status']=='Opened' and len(requests('files-open'))==1 and all(opened[k]==peer[k] for k in ['pid','start','instance']) and ui['collId']=='images' and ui['visible'] and status['instance']==files_native_status['instance'],outcome=outcome,ui=ui,status=status)
++     check('FilesOpeningClosesPopupWithoutWindowEffects',projection()['mode']=='closed' and len(journal())==before_window and not launches())
++     # Read-only native UI capture from the same exact explorer instance.
++     explorer_image=OUTPUT/'installed-files-images.png';files_ipc('shot','explorer',str(explorer_image))
++     def image_ready(path):
++      if not path.exists() or path.stat().st_size<=1000:return False
++      import gi;gi.require_version('GdkPixbuf','2.0');from gi.repository import GdkPixbuf,GLib
++      try:image=GdkPixbuf.Pixbuf.new_from_file(str(path))
++      except GLib.Error:return False
++      return image.get_width()>300 and image.get_height()>300
++     wait(lambda:image_ready(explorer_image))
++     check('RequestedCollectionHasInstalledExplorerNativeImage',explorer_image.stat().st_size>1000,path=str(explorer_image),sha256=sha(explorer_image))
++     check('InstalledOperationsAndQuintSemanticsUnchanged',all(sha(path)==digest for path,digest in operation_hashes.items()) and all(sha(path)==digest for path,digest in qml_hashes.items()),hashes=operation_hashes)
++     check('FilesNavigationDoesNotCreateAnotherExplorer',len(json.loads(helper(['/usr/bin/qs','--log-rules','quickshell.bare.info=false','-p',str(installed_files),'list','--json'])))==1)
++     report['filesCollectionOutcome']=outcome
++     # A separate explicit folder gesture exercises the actual native field,
++     # composition-free keyboard editing, and the installed directory view.
++     opener=wait(lambda:next((b for b in (bar_body() or {}).get('buttons',[]) if b['accessibleName']=='Open Files menu' and not b['disabled']),None))
++     click({'visible':0<=opener['x'] and opener['x']+opener['width']<=800 and 0<=opener['y']<48,'point':[opener['x']+opener['width']/2,opener['y']+opener['height']/2]})
++     wait(lambda:(body:=files_body()) and files_frames()[-1]['kind']=='files-snapshot' and body)
++     for _ in range(len(files_body()['buttons'])+3):
++      body=files_body()
++      if any(field['id']==body['focus'] for field in body['fields']):break
++      key(15)
++     check('NativeKeyboardReachesFolderField',any(field['id']==files_body()['focus'] for field in files_body()['fields']),body=files_body())
++     # Held Shift for the two uppercase characters; original key pulses.
++     helper([str(keyboard)],'key 29 1\nkey 30 1\nsleep 50\nkey 30 0\nkey 29 0\nkey 14 1\nsleep 50\nkey 14 0\nsleep 100\nkey 42 1\nkey 41 1\nsleep 50\nkey 41 0\nkey 42 0\nsleep 100\nkey 53 1\nsleep 50\nkey 53 0\nsleep 100\nkey 42 1\nkey 32 1\nsleep 50\nkey 32 0\nkey 42 0\nsleep 100\nsync\n')
++     for code in [24,46,22,50,18,49,20,31]:key(code)
++     wait(lambda:any(field['value']=='~/Documents' for field in (files_body() or {}).get('fields',[])))
++     check('NativeFolderTypingDoesNotOpen',len(requests('files-open'))==1)
++     key(15);keyboard_button('Open folder',28)
++     wait(lambda:files_frames()[-1]['kind']=='files-outcome' and len(requests('files-open'))==2)
++     folder=files_frames()[-1];ui=files_ipc('uiState')
++     check('NativeExplicitFolderOpeningReusesSameExplorer',folder['status']=='Opened' and folder['snapshot']['peer']['target']==str(private_home/'Documents') and all(folder['snapshot']['peer'][k]==peer[k] for k in ['pid','start','instance']) and ui['cwd']==str(private_home/'Documents') and ui['collId']=='',outcome=folder,ui=ui)
++     check('NativeFolderOpeningPreservesOperationsAndNoWindowEffects',len(journal())==before_window and all(sha(path)==digest for path,digest in operation_hashes.items()))
++     report['filesOutcome']=folder;report['nativeFilesObserved']=True
+     elif SYSTEM:
+      def system_body():
+       body=popup_body();p=projection()
+@@ -1258,6 +1338,8 @@ raise SystemExit(daemon.run())
+     chord_keyboard.wait(timeout=5);check('PersistentKeyboardNormalExit',chord_keyboard.returncode==0)
+    if notification_producer is not None and notification_producer.poll() is None:
+     notification_serial+=1;notification_control.write_text(json.dumps({"serial":notification_serial,"op":"quit"}));notification_producer.wait(timeout=5)
++   if FILES and 'files_process' in locals() and 'files_native_status' in locals() and files_process.poll() is None:
++    helper(['/usr/bin/qs','kill','--id',files_native_status['instance']]);files_process.wait(timeout=5)
+    for proc in reversed(apps):
+     if proc.poll() is None:
+      if proc is fixture:fixture_control('quit');proc.wait(timeout=5)
+diff --git c/implementation/warlock/src/Desktop.elm w/implementation/warlock/src/Desktop.elm
+index bd10f95..222379d 100644
+--- c/implementation/warlock/src/Desktop.elm
++++ w/implementation/warlock/src/Desktop.elm
+@@ -6,6 +6,7 @@ import Switcher
+ import Pins
+ import Settings
+ import Notifications
++import Files
+ import SystemMenu
+ import MenuBridge
+ import NativeProvider
+@@ -34,6 +35,10 @@ type alias Model =
+     , launch : Launch.Model
+     , applications : Maybe Catalog.Snapshot
+     , pins : Pins.Model
++    , files : Files.Model
++    , filesOpen : Bool
++    , filesOpening : Bool
++    , filesExpected : Maybe Counter
+     , systemMenu : SystemMenu.Model
+     , systemMenuOpen : Bool
+     , systemMenuOpening : Bool
+@@ -89,6 +94,12 @@ type Msg
+     | PresentationOwner (Maybe {outputId : Counter, providerId : Counter})
+     | Incoming D.Value
+     | OpenApplications ViewStamp
++    | OpenFiles ViewStamp
++    | CloseFiles ViewStamp
++    | RefreshFiles ViewStamp
++    | EditFilesPath ViewStamp String
++    | OpenFilesTarget ViewStamp Files.Intent
++    | OpenFilesPath ViewStamp
+     | OpenSystemMenu ViewStamp
+     | CloseSystemMenu ViewStamp
+     | RefreshSystemMenu ViewStamp
+@@ -133,7 +144,7 @@ type Effect
+ 
+ initial : Model
+ initial =
+-    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
++    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, files = Files.initial, filesOpen = False, filesOpening = False, filesExpected = Nothing, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
+ 
+ switcherOpen : Model -> Bool
+ switcherOpen model = List.member (Switcher.phase model.switcher) [Switcher.Waiting,Switcher.Browsing]
+@@ -214,7 +225,7 @@ receiveChord chord model =
+         order=old |> Maybe.map (\previous -> UInt64.compare chord.generation previous.generation) |> Maybe.withDefault GT
+         inconsistent=old |> Maybe.map (\previous -> order==EQ && (previous.roots/=chord.roots || previous.history/=chord.history || previous.origin/=chord.origin || List.take (List.length previous.steps) chord.steps/=previous.steps || (previous.released && not chord.released) || (previous.cancelled && not chord.cancelled) || (previous.consumed && not chord.consumed))) |> Maybe.withDefault False
+         closed =
+-            let retired=advance (retireSwitcher {model | systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,nativeSwitcher=Just chord})
++            let retired=advance (retireSwitcher {model | filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,nativeSwitcher=Just chord})
+                 choice=retired.choice |> Maybe.andThen (\pending -> if pending.chord==Just chord.generation then Nothing else Just pending)
+             in ({retired | choice=choice},[])
+     in if chord.generation==UInt64.zero || order==LT then (model,[]) else
+@@ -224,7 +235,7 @@ receiveChord chord model =
+            Nothing -> (retireSwitcher model,[])
+            Just generation ->
+                let windows=model.windows
+-                   base=if order==GT then {model | systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,nativeSwitcher=Just chord,choice=Nothing,choiceNotice="",open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,switcherHistory=Nothing,switcherExpected=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}} else {model | systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,nativeSwitcher=Just chord}
++                   base=if order==GT then {model | filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,nativeSwitcher=Just chord,choice=Nothing,choiceNotice="",open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,switcherHistory=Nothing,switcherExpected=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}} else {model | filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,nativeSwitcher=Just chord}
+                    (stepped,_) = List.foldl (\(ordinal,direction) (state,_) -> Switcher.step generation (ordinal+1) direction state) (base.switcher,Nothing) (List.indexedMap Tuple.pair chord.steps)
+                    (released,selected)=if chord.released then Switcher.release generation (List.length chord.steps) stepped else (stepped,Nothing)
+                    next=advance {base | switcher=released}
+@@ -308,6 +319,10 @@ windowBase message model =
+         , switcherExpected = if disconnected || changed || windows.shell.phase==Shell.Exhausted then Nothing else model.switcherExpected
+         , switcherHistory = if disconnected || changed || windows.shell.phase==Shell.Exhausted then Nothing else model.switcherHistory
+         , pins = pins
++        , files = if disconnected || changed then Files.disconnect model.files else model.files
++        , filesOpen = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.filesOpen
++        , filesOpening = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.filesOpening
++        , filesExpected = if disconnected || changed then Nothing else model.filesExpected
+         , systemMenu = if disconnected || changed then SystemMenu.initial else model.systemMenu
+         , systemMenuOpen = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.systemMenuOpen
+         , systemMenuOpening = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.systemMenuOpening
+@@ -458,7 +473,7 @@ update message model =
+                 Nothing -> (model,[])
+                 Just choice ->
+                     let windows=model.windows
+-                    in (advance (retireSwitcher {model|systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,snap=Just choice,open=False,overview=False,choice=Nothing,
++                    in (advance (retireSwitcher {model|filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,snap=Just choice,open=False,overview=False,choice=Nothing,
+                         expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,
+                         windows={windows|picker=Nothing,menus=MenuBridge.retireChoices windows.menus}}),[])
+         SelectSnap stamp region ->
+@@ -527,7 +542,7 @@ update message model =
+                                 Ok provider ->
+                                     let (next,effects)=windowBase (TaskbarShell.OpenMenu provider) model
+                                     in if (MenuBridge.menuSnapshot next.windows.menus).menu==(MenuBridge.menuSnapshot model.windows.menus).menu then (model,[]) else
+-                                        (retireSwitcher {next | systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,snap=Nothing,open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=model.windows.shell.binding |> Maybe.andThen (\binding -> TaskbarShell.groups model.windows |> List.filter (\group -> List.any (\family -> family.root==root) group.families) |> List.head |> Maybe.map (\group -> {binding=binding,destination=TaskbarGroup group.key,output=Just observed.context.output}))},effects)
++                                        (retireSwitcher {next | filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,snap=Nothing,open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=model.windows.shell.binding |> Maybe.andThen (\binding -> TaskbarShell.groups model.windows |> List.filter (\group -> List.any (\family -> family.root==root) group.families) |> List.head |> Maybe.map (\group -> {binding=binding,destination=TaskbarGroup group.key,output=Just observed.context.output}))},effects)
+         OpenSwitcher stamp direction ->
+             if capture model/=Just stamp || model.choice/=Nothing || not (Shell.available model.windows.shell) || MenuBridge.preparedSnapshot model.windows.menus/=Nothing then (model,[]) else
+             case UInt64.next (Switcher.generation model.switcher) of
+@@ -537,7 +552,7 @@ update message model =
+                         origin=base.windows.shell.effects.observed |> Maybe.andThen (\observed -> Scene.focused observed.scene |> Maybe.andThen (\root -> Scene.rootOf root observed.scene))
+                         (switcher,_)=Switcher.step generation 1 direction base.switcher
+                         windows=base.windows
+-                        opened=advance {base | snap=Nothing,nativeSwitcher=Nothing,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,switcher=switcher,switcherOrigin=origin,switcherHistory=Nothing,open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing}}
++                        opened=advance {base | snap=Nothing,nativeSwitcher=Nothing,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,switcher=switcher,switcherOrigin=origin,switcherHistory=Nothing,open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing}}
+                         (refreshing,commands)=windowBase (TaskbarShell.Native Shell.Refresh) opened
+                         (next,history)=readSwitcherHistory refreshing
+                     in (next,commands++history)
+@@ -573,7 +588,7 @@ update message model =
+         Window value ->
+             let (next,effects)=window value model
+                 (synced,commands)=syncSwitcher next
+-            in if next.windows.picker/=Nothing && next.windows.picker/=model.windows.picker then (retireSwitcher {next | systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,snap=Nothing,open=False,overview=False,expected=Nothing,menuOrigin=Nothing,returnFocus=Nothing},effects) else (synced,effects++commands)
++            in if next.windows.picker/=Nothing && next.windows.picker/=model.windows.picker then (retireSwitcher {next | filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,snap=Nothing,open=False,overview=False,expected=Nothing,menuOrigin=Nothing,returnFocus=Nothing},effects) else (synced,effects++commands)
+         Incoming raw ->
+             case D.decodeValue (D.field "kind" D.string) raw of
+                 Ok "switcher-journal" ->
+@@ -591,6 +606,22 @@ update message model =
+                             if not (switcherOpen model) || model.windows.shell.binding/=Just receipt.binding || model.switcherExpected/=Just receipt.request then (model,[]) else
+                             syncSwitcher {model | switcherExpected=Nothing,switcherHistory=Just {context=receipt.context,roots=receipt.roots}}
+                         Err _ -> (model,[])
++                Ok "files-snapshot" ->
++                    let decoder=strict ["protocolVersion","kind","binding","requestId","snapshot"] (D.map4 (\_ binding request snapshot -> {binding=binding,request=request,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "snapshot" Files.decoder))
++                    in case D.decodeValue decoder raw of
++                        Ok result ->
++                            if model.windows.shell.binding/=Just result.binding || model.filesExpected/=Just result.request || model.windows.shell.phase==Shell.Detached then (model,[]) else
++                                let next=advance {model | files=Files.reconcile result.snapshot model.files,filesExpected=Nothing,filesOpening=False}
++                                in (next,if model.filesOpen && model.filesOpening then [Focus (key next "files:close")] else [])
++                        Err _ -> (model,[])
++                Ok "files-outcome" ->
++                    let decoder=strict ["protocolVersion","kind","binding","requestId","status","snapshot"] (D.map5 (\_ binding request status snapshot -> {binding=binding,request=request,status=status,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "status" D.string) (D.field "snapshot" Files.decoder))
++                    in case D.decodeValue decoder raw of
++                        Ok result ->
++                            if model.windows.shell.binding/=Just result.binding || model.windows.shell.phase==Shell.Detached then (model,[]) else
++                                let files=Files.receive result.request result.status result.snapshot model.files
++                                in if files==model.files then (model,[]) else (advance {model | files=files},[])
++                        Err _ -> (model,[])
+                 Ok "system-menu-snapshot" ->
+                     let decoder=strict ["protocolVersion","kind","binding","requestId","snapshot"] (D.map4 (\_ binding request snapshot -> {binding=binding,request=request,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "snapshot" SystemMenu.decoder))
+                     in case D.decodeValue decoder raw of
+@@ -683,15 +714,36 @@ update message model =
+                     let (next,effects)=window (TaskbarShell.Native (Shell.Incoming raw)) model
+                         (synced,commands)=syncSwitcher next
+                     in (synced,effects++commands)
++        OpenFiles stamp ->
++            if capture model/=Just stamp || model.choice/=Nothing || model.windows.shell.binding==Nothing || MenuBridge.preparedSnapshot model.windows.menus/=Nothing then (model,[]) else
++            let windows=model.windows
++                next=advance (retireSwitcher {model | filesOpen=True,filesOpening=True,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,open=False,overview=False,snap=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}})
++                (reading,commands)=readFiles next
++            in (reading,commands++[Focus (key reading "files:close")])
++        CloseFiles stamp ->
++            if capture model/=Just stamp || not model.filesOpen then (model,[]) else
++                let next=advance {model | filesOpen=False,filesOpening=False}
++                in (next,[Focus (key next "files:opener")])
++        RefreshFiles stamp ->
++            if capture model/=Just stamp || not model.filesOpen then (model,[]) else readFiles model
++        EditFilesPath stamp value ->
++            if capture model/=Just stamp || not model.filesOpen then (model,[]) else
++                let files=Files.edit value model.files
++                in if files==model.files then (model,[]) else (advance {model | files=files},[])
++        OpenFilesPath stamp ->
++            if capture model/=Just stamp || not model.filesOpen then (model,[]) else
++                model.files.snapshot |> Maybe.map (\snapshot -> sendFiles (Files.intent snapshot model.files.draft) model) |> Maybe.withDefault (model,[])
++        OpenFilesTarget stamp target ->
++            if capture model/=Just stamp || not model.filesOpen then (model,[]) else sendFiles target model
+         OpenSystemMenu stamp ->
+             if capture model/=Just stamp || model.choice/=Nothing || model.windows.shell.binding==Nothing || MenuBridge.preparedSnapshot model.windows.menus/=Nothing then (model,[]) else
+             let windows=model.windows
+-                next=advance (retireSwitcher {model | systemMenuOpen=True,systemMenuOpening=True,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,open=False,overview=False,snap=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}})
++                next=advance (retireSwitcher {model | filesOpen=False,filesOpening=False,systemMenuOpen=True,systemMenuOpening=True,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,open=False,overview=False,snap=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}})
+                 (reading,commands)=readSystemMenu next
+             in (reading,commands++[Focus (key reading "system:close")])
+         CloseSystemMenu stamp ->
+             if capture model/=Just stamp || not model.systemMenuOpen then (model,[]) else
+-                let next=advance {model | systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing}
++                let next=advance {model | filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing}
+                 in (next,[Focus (key next "system:opener")])
+         RefreshSystemMenu stamp ->
+             if capture model/=Just stamp || not model.systemMenuOpen || model.systemMenuExpected/=Nothing then (model,[]) else readSystemMenu {model | systemMenuConfirmation=Nothing}
+@@ -706,7 +758,7 @@ update message model =
+         OpenNotifications stamp ->
+             if capture model/=Just stamp || model.choice/=Nothing || model.windows.shell.binding==Nothing then (model,[]) else
+             let windows=model.windows
+-                next=advance (retireSwitcher {model | systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=True,notificationsOpening=True,settingsOpen=False,settingsOpening=False,open=False,overview=False,snap=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}})
++                next=advance (retireSwitcher {model | filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=True,notificationsOpening=True,settingsOpen=False,settingsOpening=False,open=False,overview=False,snap=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}})
+                 (reading,commands)=readNotifications next
+             in (reading,commands++[Focus (key reading "notifications:close")])
+         CloseNotifications stamp ->
+@@ -727,12 +779,12 @@ update message model =
+         OpenSettings stamp ->
+             if capture model/=Just stamp || model.choice/=Nothing || model.windows.shell.binding==Nothing then (model,[]) else
+             let windows=model.windows
+-                next=advance (retireSwitcher {model | systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=True,settingsOpening=True,open=False,overview=False,snap=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}})
++                next=advance (retireSwitcher {model | filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=True,settingsOpening=True,open=False,overview=False,snap=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}})
+                 (reading,commands)=readSettings next
+             in (reading,commands++[Focus (key reading "settings:close")])
+         CloseSettings stamp ->
+             if capture model/=Just stamp || not model.settingsOpen then (model,[]) else
+-                let next=advance {model | systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False}
++                let next=advance {model | filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False}
+                 in (next,[Focus (key next "settings:opener")])
+         EditSettings stamp values ->
+             if capture model/=Just stamp || not model.settingsOpen then (model,[]) else
+@@ -755,7 +807,7 @@ update message model =
+                         Nothing -> model
+                         Just menu -> windowBase (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)) model |> Tuple.first
+                 windows=base.windows
+-                retired = advance (retireSwitcher {base | windows={windows | picker=Nothing}, returnFocus=Nothing, menuOrigin=Nothing, snap=Nothing, systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,open = True, overview = False, applications = Nothing, launch = Launch.catalog E.null model.launch, expected = Nothing, catalogFailure = Nothing})
++                retired = advance (retireSwitcher {base | windows={windows | picker=Nothing}, returnFocus=Nothing, menuOrigin=Nothing, snap=Nothing, filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,open = True, overview = False, applications = Nothing, launch = Launch.catalog E.null model.launch, expected = Nothing, catalogFailure = Nothing})
+             in case (model.windows.shell.binding, UInt64.next model.request) of
+                 (Just binding,Just request) ->
+                     if model.windows.shell.phase == Shell.Detached || retired.presentation == Nothing then (retired,[]) else
+@@ -774,7 +826,7 @@ update message model =
+                     |> Maybe.map (\menu -> windowBase (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)) model |> Tuple.first)
+                     |> Maybe.withDefault model
+                 windows=base.windows
+-                next=advance (retireSwitcher {base | snap=Nothing,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,overview=True,overviewWorkspace=Nothing,open=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing}})
++                next=advance (retireSwitcher {base | snap=Nothing,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,overview=True,overviewWorkspace=Nothing,open=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing}})
+                 focus=TaskView.activeWorkspace next.windows.shell |> Maybe.map (\workspace -> key next ("overview:workspace:"++workspace)) |> Maybe.withDefault (key next "overview:all")
+             in (next,[Focus focus])
+         CloseOverview stamp ->
+@@ -885,3 +937,21 @@ readNotifications model =
+         (Just binding,Just request) ->
+             (advance {model | request=request,notificationsExpected=Just request},[Send (E.object [("protocolVersion",E.int 3),("kind",E.string "notification-request"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request))])])
+         _ -> (model,[])
++
++readFiles : Model -> (Model,List Effect)
++readFiles model =
++    if model.filesExpected/=Nothing then (model,[]) else
++    case (model.windows.shell.binding,UInt64.next model.request) of
++        (Just binding,Just request) -> (advance {model | request=request,filesExpected=Just request},[Send (E.object [("protocolVersion",E.int 3),("kind",E.string "files-request"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request))])])
++        _ -> (model,[])
++
++sendFiles : Files.Intent -> Model -> (Model,List Effect)
++sendFiles target model =
++    if model.filesExpected/=Nothing then (model,[]) else
++    case (model.windows.shell.binding,UInt64.next model.request) of
++        (Just binding,Just request) ->
++            let (files,proposal)=Files.propose request target model.files
++            in case proposal of
++                Nothing -> (model,[])
++                Just value -> (advance {model | files=files,request=request,filesOpen=False,filesOpening=False},[Send (E.object [("protocolVersion",E.int 3),("kind",E.string "files-open"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request)),("intent",value)])])
++        _ -> (model,[])
+diff --git c/implementation/warlock/src/Popup.elm w/implementation/warlock/src/Popup.elm
+index 99ae453..692bd56 100644
+--- c/implementation/warlock/src/Popup.elm
++++ w/implementation/warlock/src/Popup.elm
+@@ -39,15 +39,15 @@ main = Browser.element
+                         let composing = D.decodeValue (D.field "kind" D.string) value==Ok "surface-preedit"
+                         in ({model | pendingQuery=Just query,composing=composing},if composing then Cmd.none else actions wire)
+                     Nothing -> (model,Cmd.none)
+-            else if (model.pendingQuery/=Nothing || model.composing) && (D.decodeValue (D.field "id" D.string) value |> Result.map (String.startsWith "entry:") |> Result.withDefault False) then (model,Cmd.none)
++            else if (model.pendingQuery/=Nothing || model.composing) && (D.decodeValue (D.field "id" D.string) value |> Result.map (\identity -> String.startsWith "entry:" identity || identity=="files:open-path" || identity=="files:home" || String.startsWith "files:collection:" identity) |> Result.withDefault False) then (model,Cmd.none)
+             else (model,Presentation.dispatch True value model.presentation |> Maybe.map actions |> Maybe.withDefault Cmd.none)
+         Present raw ->
+             let acceptedPresentation = Presentation.accept raw model.presentation
+                 (previews,commands) = Preview.present (Presentation.current acceptedPresentation) model.previews
+                 pending = model.pendingQuery |> Maybe.andThen (\query -> case Presentation.current acceptedPresentation of
+-                    Just snapshot -> if SurfaceRenderer.mode snapshot=="applications" && SurfaceRenderer.queryValue snapshot/=Just query then Just query else Nothing
++                    Just snapshot -> if List.member (SurfaceRenderer.mode snapshot) ["applications","files"] && SurfaceRenderer.queryValue snapshot/=Just query then Just query else Nothing
+                     Nothing -> Nothing)
+-                composing = model.composing && (Presentation.current acceptedPresentation |> Maybe.map (\snapshot -> SurfaceRenderer.mode snapshot=="applications") |> Maybe.withDefault False)
++                composing = model.composing && (Presentation.current acceptedPresentation |> Maybe.map (\snapshot -> List.member (SurfaceRenderer.mode snapshot) ["applications","files"]) |> Maybe.withDefault False)
+                 queryCommand = if composing then Cmd.none else pending |> Maybe.andThen (\query -> Presentation.query query acceptedPresentation) |> Maybe.map actions |> Maybe.withDefault Cmd.none
+             in ({presentation=acceptedPresentation,previews=previews,pendingQuery=pending,composing=composing},Cmd.batch [previewCommands commands,queryCommand])
+         NativePreview raw ->
+diff --git c/implementation/warlock/src/Presentation.elm w/implementation/warlock/src/Presentation.elm
+index 66b2807..625d1d8 100644
+--- c/implementation/warlock/src/Presentation.elm
++++ w/implementation/warlock/src/Presentation.elm
+@@ -31,15 +31,15 @@ dispatch popup raw (Model model) =
+ 
+ query : String -> Model -> Maybe E.Value
+ query value (Model model) =
+-    if String.length value>256 || String.any (\c -> Char.toCode c<32 || Char.toCode c==127) value then Nothing else
++    if String.length value>(model.snapshot |> Maybe.map (\snapshot -> if SurfaceRenderer.mode snapshot=="files" then 512 else 256) |> Maybe.withDefault 256) || String.any (\c -> Char.toCode c<32 || Char.toCode c==127) value then Nothing else
+     model.snapshot |> Maybe.andThen (\snapshot ->
+-        if SurfaceRenderer.mode snapshot/="applications" || not (SurfaceRenderer.enabled True "control:search" snapshot) then Nothing else
+-        Just (E.object [("surfaceProtocol",E.int 2),("kind",E.string "surface-query"),("surface",E.string "popup"),("publication",E.string (UInt64.string (SurfaceRenderer.publication snapshot))),("lease",E.string (UInt64.string (SurfaceRenderer.lease snapshot))),("id",E.string "control:search"),("query",E.string value)]))
++        if not (List.member (SurfaceRenderer.mode snapshot) ["applications","files"]) || not (SurfaceRenderer.enabled True (SurfaceRenderer.fieldIdentity snapshot) snapshot) then Nothing else
++        Just (E.object [("surfaceProtocol",E.int 2),("kind",E.string "surface-query"),("surface",E.string "popup"),("publication",E.string (UInt64.string (SurfaceRenderer.publication snapshot))),("lease",E.string (UInt64.string (SurfaceRenderer.lease snapshot))),("id",E.string (SurfaceRenderer.fieldIdentity snapshot)),("query",E.string value)]))
+ 
+ editQuery : D.Value -> Model -> Maybe (String,E.Value)
+ editQuery raw ((Model model) as currentModel) =
+     let decoder = D.map5 (\version surface publication lease value -> {version=version,surface=surface,publication=publication,lease=lease,value=value}) (D.field "surfaceProtocol" D.int) (D.field "surface" D.string) (D.field "publication" UInt64.decoder) (D.field "lease" UInt64.decoder) (D.field "query" D.string)
+     in case (D.decodeValue decoder raw,model.snapshot) of
+         (Ok event,Just snapshot) ->
+-            if event.version/=2 || event.surface/="popup" || event.publication/=SurfaceRenderer.publication snapshot || event.lease/=SurfaceRenderer.lease snapshot || D.decodeValue (D.field "id" D.string) raw/=Ok "control:search" then Nothing else query event.value currentModel |> Maybe.map (\wire -> (event.value,wire))
++            if event.version/=2 || event.surface/="popup" || event.publication/=SurfaceRenderer.publication snapshot || event.lease/=SurfaceRenderer.lease snapshot || D.decodeValue (D.field "id" D.string) raw/=Ok (SurfaceRenderer.fieldIdentity snapshot) then Nothing else query event.value currentModel |> Maybe.map (\wire -> (event.value,wire))
+         _ -> Nothing
+diff --git c/implementation/warlock/src/Surface.elm w/implementation/warlock/src/Surface.elm
+index e9b435e..43fd4c8 100644
+--- c/implementation/warlock/src/Surface.elm
++++ w/implementation/warlock/src/Surface.elm
+@@ -5,6 +5,7 @@ import Switcher
+ import Pins
+ import Settings
+ import Notifications
++import Files
+ import SystemMenu
+ import MenuBridge
+ import Provider
+@@ -45,7 +46,8 @@ recoveryPopup model = if recoveryNeeded model then [recoveryControl "control:rec
+ 
+ mode : Desktop.Model -> String
+ mode model =
+-    if model.systemMenuOpen then "system"
++    if model.filesOpen then "files"
++    else if model.systemMenuOpen then "system"
+     else if model.notificationsOpen then "notifications"
+     else if model.settingsOpen then "settings"
+     else if model.snap/=Nothing then "snap"
+@@ -58,7 +60,21 @@ mode model =
+ 
+ controls : Desktop.Model -> List Control
+ controls model =
+-    if model.systemMenuOpen then
++    if model.filesOpen then
++        let scoped message=Desktop.capture model |> Maybe.map message
++            control identity label detail enabled message={id=identity,domId=Desktop.key model (if identity=="control:close" then "files:close" else identity),label=label,ariaLabel=label,detail=detail,enabled=enabled,message=if enabled then scoped message else Nothing}
++            ready target=model.filesExpected==Nothing && (model.files.snapshot |> Maybe.map (\snapshot -> Files.supported (Files.intent snapshot target) model.files) |> Maybe.withDefault False)
++            openTarget target stamp=model.files.snapshot |> Maybe.map (\snapshot -> Desktop.OpenFilesTarget stamp (Files.intent snapshot target)) |> Maybe.withDefault (Desktop.CloseFiles stamp)
++            collection (identifier,label)=control ("files:collection:"++identifier) label "" (ready ("coll:"++identifier)) (openTarget ("coll:"++identifier))
++            location=model.files.snapshot |> Maybe.andThen .peer |> Maybe.map (\peer -> "Current location: "++peer.target) |> Maybe.withDefault "No Files window observed."
++        in [control "control:close" "Close Files menu" "" True Desktop.CloseFiles
++           ,control "files:refresh" "Refresh Files state" "Read location; never repeat an opening" (model.filesExpected==Nothing) Desktop.RefreshFiles
++           ,control "files:location:state" location "" False Desktop.CloseFiles
++           ,control "files:home" "Home" "" (ready "home") (openTarget "home")]
++           ++List.map collection Files.collections
++           ++[{id="control:files-path",domId=Desktop.key model "files:path",label=model.files.draft,ariaLabel="Folder path",detail="",enabled=True,message=scoped (\stamp -> Desktop.EditFilesPath stamp model.files.draft)}
++             ,control "files:open-path" "Open folder" "Open this path in Files" (ready model.files.draft) Desktop.OpenFilesPath]
++    else if model.systemMenuOpen then
+         let scoped action=Desktop.capture model |> Maybe.map action
+             control identity label detail enabled message={id=identity,domId=Desktop.key model (if identity=="control:close" then "system:close" else identity),label=label,ariaLabel=label,detail=detail,enabled=enabled,message=if enabled then scoped message else Nothing}
+             state section value=control ("system:"++section++":state") value "" False Desktop.CloseSystemMenu
+@@ -254,11 +270,12 @@ barControls model =
+         ordinaryGroups=TaskbarShell.groups model.windows |> List.filter (\group -> List.length (owners group)/=1)
+         reconnect = {id="bar:reconnect",domId="reconnect",label="Reconnect",ariaLabel="Reconnect to the window system",detail="",enabled=not model.windows.shell.reconnecting,message=Just (Desktop.Window (TaskbarShell.Native Shell.Reconnect))}
+         retry = {id="bar:refresh-windows",domId=Desktop.key model "refresh-windows",label="Refresh windows",ariaLabel="Refresh windows",detail="",enabled=model.choice==Nothing,message=Just Desktop.RetryWindows}
+-    in (if model.windows.shell.phase==Shell.Detached then reconnect else application) :: overview :: switcher :: {id="bar:notifications",domId=Desktop.key model "notifications:opener",label="Notifications"++(model.notifications.snapshot |> Maybe.map (\snapshot -> let count=List.length (List.filter (\entry -> entry.state=="live") snapshot.entries) in if count==0 then "" else " · "++String.fromInt count) |> Maybe.withDefault ""),ariaLabel="Open notifications",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenNotifications} :: {id="bar:system",domId=Desktop.key model "system:opener",label="System",ariaLabel="Open system menu",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenSystemMenu} :: {id="bar:settings",domId=Desktop.key model "settings:opener",label="Settings",ariaLabel="Open settings",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenSettings} :: List.map pinControl pinIds ++ List.map groupControl ordinaryGroups ++ (if not (String.isEmpty model.choiceNotice) && model.windows.shell.phase/=Shell.Detached then [retry] else []) ++ (if recoveryNeeded model && model.windows.shell.phase/=Shell.Detached then [recoveryControl "bar:recovery-refresh" model] else [])
++    in (if model.windows.shell.phase==Shell.Detached then reconnect else application) :: overview :: switcher :: {id="bar:notifications",domId=Desktop.key model "notifications:opener",label="Notifications"++(model.notifications.snapshot |> Maybe.map (\snapshot -> let count=List.length (List.filter (\entry -> entry.state=="live") snapshot.entries) in if count==0 then "" else " · "++String.fromInt count) |> Maybe.withDefault ""),ariaLabel="Open notifications",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenNotifications} :: {id="bar:files",domId=Desktop.key model "files:opener",label="Files",ariaLabel="Open Files menu",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenFiles} :: {id="bar:system",domId=Desktop.key model "system:opener",label="System",ariaLabel="Open system menu",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenSystemMenu} :: {id="bar:settings",domId=Desktop.key model "settings:opener",label="Settings",ariaLabel="Open settings",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenSettings} :: List.map pinControl pinIds ++ List.map groupControl ordinaryGroups ++ (if not (String.isEmpty model.choiceNotice) && model.windows.shell.phase/=Shell.Detached then [retry] else []) ++ (if recoveryNeeded model && model.windows.shell.phase/=Shell.Detached then [recoveryControl "bar:recovery-refresh" model] else [])
+ 
+ notice : Desktop.Model -> String
+ notice model =
+-    if model.systemMenuOpen then (if model.systemMenuExpected/=Nothing then "Reading native system state…" else if model.systemMenuConfirmation/=Nothing then "Confirm or cancel the requested system change." else model.systemMenu.notice)
++    if model.filesOpen then (if model.filesExpected/=Nothing then "Reading Files state…" else model.files.notice)
++    else if model.systemMenuOpen then (if model.systemMenuExpected/=Nothing then "Reading native system state…" else if model.systemMenuConfirmation/=Nothing then "Confirm or cancel the requested system change." else model.systemMenu.notice)
+     else if model.notificationsOpen then (if model.notificationsExpected/=Nothing then "Loading notifications…" else model.notifications.notice)
+     else if model.settingsOpen then (if model.settingsExpected/=Nothing then "Loading settings…" else model.settings.notice)
+     else if Desktop.switcherOpen model then
+@@ -321,7 +338,7 @@ packet : Counter -> Counter -> Desktop.Model -> E.Value
+ packet publication lease model =
+     let
+         encode control = E.object [("id",E.string control.id),("domId",E.string control.domId),("label",E.string control.label),("ariaLabel",E.string control.ariaLabel),("detail",E.string control.detail),("enabled",E.bool (control.enabled && control.message/=Nothing))]
+-    in E.object [("surfaceProtocol",E.int 2),("appearance",Settings.encodeValues (model.settings.snapshot |> Maybe.map .values |> Maybe.withDefault Settings.defaults)),("publication",E.string (UInt64.string publication)),("lease",E.string (UInt64.string lease)),("mode",E.string (mode model)),("status",E.string (notice model)),("bar",E.list encode (barControls model)),("popup",E.list encode (controls model))]
++    in E.object [("surfaceProtocol",E.int 2),("appearance",Settings.encodeValues (model.settings.snapshot |> Maybe.map .values |> Maybe.withDefault Settings.defaults)),("publication",E.string (UInt64.string publication)),("lease",E.string (UInt64.string lease)),("mode",E.string (mode model)),("status",E.string ((notice model)++(if not model.filesOpen && (model.files.pending/=Nothing || String.startsWith "Files:" model.files.notice) then " · "++model.files.notice else ""))),("bar",E.list encode (barControls model)),("popup",E.list encode (controls model))]
+ 
+ resolveAction : Counter -> Counter -> D.Value -> Desktop.Model -> Maybe Desktop.Msg
+ resolveAction publication lease raw model =
+@@ -340,7 +357,7 @@ resolve publication lease raw model =
+         scopes child = D.map4 (\version shown scoped role -> (version==2 && shown==publication && scoped==lease,role)) (D.field "surfaceProtocol" D.int) (D.field "publication" UInt64.decoder) (D.field "lease" UInt64.decoder) (D.field "surface" D.string) |> D.andThen (\(valid,role) -> if valid then child role else D.fail "Stale surface event")
+         context = strict ["surfaceProtocol","kind","surface","publication","lease","id","trigger","x","y"] (scopes (\role -> D.map4 (\identity trigger x y -> (role,identity,trigger)) (D.field "id" D.string) (D.field "trigger" D.string) (D.field "x" D.int) (D.field "y" D.int)))
+         navigation = strict ["surfaceProtocol","kind","surface","publication","lease","key"] (scopes (\role -> if role=="popup" && mode model=="menu" then D.field "key" D.string else D.fail "No menu"))
+-        query = strict ["surfaceProtocol","kind","surface","publication","lease","id","query"] (scopes (\role -> if role=="popup" && model.open then D.map2 Tuple.pair (D.field "id" D.string) (D.field "query" D.string) else D.fail "No applications"))
++        query = strict ["surfaceProtocol","kind","surface","publication","lease","id","query"] (scopes (\role -> if role=="popup" && (model.open || model.filesOpen) then D.map2 Tuple.pair (D.field "id" D.string) (D.field "query" D.string) else D.fail "No applications"))
+         menuMessage key =
+             (MenuBridge.menuSnapshot model.windows.menus).menu |> Maybe.andThen (\menu ->
+                 let send = Just << Desktop.Window << TaskbarShell.MenuEvent
+@@ -355,7 +372,7 @@ resolve publication lease raw model =
+                     _ -> Nothing)
+     in case D.decodeValue (D.field "kind" D.string) raw of
+         Ok "surface-action" -> resolveAction publication lease raw model
+-        Ok "surface-query" -> D.decodeValue query raw |> Result.toMaybe |> Maybe.andThen (\(identity,value) -> if identity/="control:search" then Nothing else Desktop.capture model |> Maybe.map (\stamp -> Desktop.SearchQuery stamp value))
++        Ok "surface-query" -> D.decodeValue query raw |> Result.toMaybe |> Maybe.andThen (\(identity,value) -> if identity=="control:search" && model.open then Desktop.capture model |> Maybe.map (\stamp -> Desktop.SearchQuery stamp value) else if identity=="control:files-path" && model.filesOpen then Desktop.capture model |> Maybe.map (\stamp -> Desktop.EditFilesPath stamp value) else Nothing)
+         Ok "surface-menu-navigation" -> D.decodeValue navigation raw |> Result.toMaybe |> Maybe.andThen menuMessage
+         Ok "surface-context" ->
+             D.decodeValue context raw |> Result.toMaybe |> Maybe.andThen (\(role,identity,trigger) ->
+diff --git c/implementation/warlock/src/SurfaceController.elm w/implementation/warlock/src/SurfaceController.elm
+index 5088732..165dd6b 100644
+--- c/implementation/warlock/src/SurfaceController.elm
++++ w/implementation/warlock/src/SurfaceController.elm
+@@ -96,7 +96,7 @@ apply message ((Model model) as current) =
+         clearChoices application =
+             let windows=application.windows
+                 shell=windows.shell
+-            in {application|systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,choice=Nothing,overview=False,overviewWorkspace=Nothing,switcher=Switcher.cancel (Switcher.generation application.switcher) application.switcher,switcherExpected=Nothing,switcherHistory=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows|picker=Nothing,menus=MenuBridge.retireChoices windows.menus,shell={shell|deferNotifications=False}}}
++            in {application|filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,choice=Nothing,overview=False,overviewWorkspace=Nothing,switcher=Switcher.cancel (Switcher.generation application.switcher) application.switcher,switcherExpected=Nothing,switcherHistory=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows|picker=Nothing,menus=MenuBridge.retireChoices windows.menus,shell={shell|deferNotifications=False}}}
+         publishDesktop recovery next =
+             if next==model.desktop then (Model {model|recovery=recovery},[]) else
+             case UInt64.next model.publication of
+@@ -173,7 +173,9 @@ update event ((Model model) as current) =
+                     _ -> (Model {model | exhausted=True},[])
+         NativeDismiss lease ->
+             if lease/=model.lease || Surface.mode model.desktop=="closed" then (current,[]) else
+-                if model.desktop.systemMenuOpen then
++                if model.desktop.filesOpen then
++                    Desktop.capture model.desktop |> Maybe.map (\stamp -> apply (Desktop.CloseFiles stamp) current) |> Maybe.withDefault (current,[])
++                else if model.desktop.systemMenuOpen then
+                     Desktop.capture model.desktop |> Maybe.map (\stamp -> apply (Desktop.CloseSystemMenu stamp) current) |> Maybe.withDefault (current,[])
+                 else if model.desktop.notificationsOpen then
+                     Desktop.capture model.desktop |> Maybe.map (\stamp -> apply (Desktop.CloseNotifications stamp) current) |> Maybe.withDefault (current,[])
+diff --git c/implementation/warlock/src/SurfaceRenderer.elm w/implementation/warlock/src/SurfaceRenderer.elm
+index 7408a1a..d398aab 100644
+--- c/implementation/warlock/src/SurfaceRenderer.elm
++++ w/implementation/warlock/src/SurfaceRenderer.elm
+@@ -1,4 +1,4 @@
+-module SurfaceRenderer exposing (enabled, Snapshot, decode, encode, controlIdentities, publication, lease, mode, view, viewWithPreview, action, queryValue, pendingQuery)
++module SurfaceRenderer exposing (enabled, Snapshot, decode, encode, controlIdentities, publication, lease, mode, view, viewWithPreview, action, queryValue, pendingQuery, fieldIdentity)
+ 
+ import Html exposing (Html, button, div, h1, input, p, span, text)
+ import Html.Attributes exposing (attribute, class, disabled, id, title, type_, value, placeholder)
+@@ -34,7 +34,7 @@ decode raw =
+         let all = record.bar ++ record.popup
+             identities = List.map .identity all
+             unique names = List.length names == Set.size (Set.fromList names)
+-        in if record.version/=2 || record.shown==UInt64.zero || not (List.member record.current ["closed","picker","applications","menu","overview","switcher","snap","settings","notifications","system"]) || (record.current/="closed" && record.scoped==UInt64.zero) || (record.current=="closed" && not (List.isEmpty record.popup)) || not (unique identities) || not (unique (List.map .domId all)) || List.any (\control -> String.isEmpty control.identity || String.isEmpty control.domId) all then Err "Invalid presentation scope/identities"
++        in if record.version/=2 || record.shown==UInt64.zero || not (List.member record.current ["closed","picker","applications","menu","overview","switcher","snap","settings","notifications","system","files"]) || (record.current/="closed" && record.scoped==UInt64.zero) || (record.current=="closed" && not (List.isEmpty record.popup)) || not (unique identities) || not (unique (List.map .domId all)) || List.any (\control -> String.isEmpty control.identity || String.isEmpty control.domId) all then Err "Invalid presentation scope/identities"
+         else Ok (Snapshot {publication=record.shown,lease=record.scoped,mode=record.current,status=record.notice,appearance=record.appearance,bar=record.bar,popup=record.popup}))
+ 
+ publication : Snapshot -> Counter
+@@ -55,10 +55,13 @@ mode : Snapshot -> String
+ mode (Snapshot snapshot) = snapshot.mode
+ 
+ queryValue : Snapshot -> Maybe String
+-queryValue (Snapshot snapshot) = snapshot.popup |> List.filter (\item -> item.identity=="control:search") |> List.head |> Maybe.map .label
++queryValue ((Snapshot snapshot) as current) = snapshot.popup |> List.filter (\item -> item.identity==fieldIdentity current) |> List.head |> Maybe.map .label
++
++fieldIdentity : Snapshot -> String
++fieldIdentity (Snapshot snapshot) = if snapshot.mode=="files" then "control:files-path" else "control:search"
+ 
+ pendingQuery : String -> Snapshot -> Snapshot
+-pendingQuery query (Snapshot snapshot) = Snapshot {snapshot | popup=List.map (\item -> if item.identity=="control:search" then {item | label=query} else if String.startsWith "entry:" item.identity then {item | enabled=False} else item) snapshot.popup}
++pendingQuery query ((Snapshot snapshot) as current) = Snapshot {snapshot | popup=List.map (\item -> if item.identity==fieldIdentity current then {item | label=query} else if String.startsWith "entry:" item.identity || item.identity=="files:open-path" || String.startsWith "files:collection:" item.identity || item.identity=="files:home" then {item | enabled=False} else item) snapshot.popup}
+ 
+ enabled : Bool -> String -> Snapshot -> Bool
+ enabled popup identity (Snapshot snapshot) = List.any (\control -> control.identity==identity && control.enabled) (if popup then snapshot.popup else snapshot.bar)
+@@ -78,12 +81,12 @@ viewWithPreview preview popup send ((Snapshot snapshot) as current) =
+             let kind = if String.startsWith "bar:group:" item.identity || String.startsWith "bar:pin:" item.identity then "control-group" else if item.identity=="bar:recovery-refresh" then "control-recovery" else "control-utility"
+             in if popup && snapshot.mode=="notifications" && (String.endsWith ":summary" item.identity || String.endsWith ":body" item.identity) then
+                 p [class "notification-text",id item.domId,attribute "data-notification-content" item.identity] [span [class "control-label"] [text item.label],span [class "control-detail"] [text item.detail]]
+-            else if popup && snapshot.mode=="system" && String.endsWith ":state" item.identity then
+-                p [class "notification-text",id item.domId,attribute "data-system-content" item.identity] [span [class "control-label"] [text item.label]]
+-            else if popup && snapshot.mode=="applications" && item.identity=="control:search" then
++            else if popup && List.member snapshot.mode ["system","files"] && String.endsWith ":state" item.identity then
++                p [class "notification-text",id item.domId,attribute (if snapshot.mode=="files" then "data-files-content" else "data-system-content") item.identity] [span [class "control-label"] [text item.label]]
++            else if popup && List.member snapshot.mode ["applications","files"] && item.identity==fieldIdentity current then
+                 let event = D.map2 (\query composing -> (query,composing)) (D.at ["target","value"] D.string) (D.oneOf [D.field "isComposing" D.bool,D.succeed False]) |> D.andThen (\(query,composing) -> D.succeed (send (E.object [("surfaceProtocol",E.int 2),("kind",E.string (if composing then "surface-preedit" else "surface-query")),("surface",E.string "popup"),("publication",E.string (UInt64.string snapshot.publication)),("lease",E.string (UInt64.string snapshot.lease)),("id",E.string item.identity),("query",E.string query)])))
+-                in input [class "launcher-search",id item.domId,type_ "search",placeholder "Search applications",value item.label,attribute "aria-label" item.ariaLabel,attribute "data-surface-field" item.identity,attribute "autocomplete" "off",disabled (not item.enabled),on "input" event,on "compositionend" event] []
+-            else button [class kind,id item.domId,attribute "aria-label" item.ariaLabel,disabled (not item.enabled),attribute "data-surface-control" item.identity,attribute "role" (if popup && snapshot.mode=="menu" then "menuitem" else "button"),attribute "aria-current" (if popup && List.member snapshot.mode ["menu","switcher","snap","settings","notifications","system"] && item.detail=="Selected" then "true" else "false")] [preview item.identity,span [class "control-label"] [text item.label],span [class "control-detail"] [text item.detail]]
++                in input [class "launcher-search",id item.domId,type_ (if snapshot.mode=="files" then "text" else "search"),placeholder (if snapshot.mode=="files" then "/path/to/folder or ~/Documents" else "Search applications"),value item.label,attribute "aria-label" item.ariaLabel,attribute "data-surface-field" item.identity,attribute "autocomplete" "off",disabled (not item.enabled),on "input" event,on "compositionend" event] []
++            else button [class kind,id item.domId,attribute "aria-label" item.ariaLabel,disabled (not item.enabled),attribute "data-surface-control" item.identity,attribute "role" (if popup && snapshot.mode=="menu" then "menuitem" else "button"),attribute "aria-current" (if popup && List.member snapshot.mode ["menu","switcher","snap","settings","notifications","system","files"] && item.detail=="Selected" then "true" else "false")] [preview item.identity,span [class "control-label"] [text item.label],span [class "control-detail"] [text item.detail]]
+         familyPrefix rows = case rows of
+             first :: rest -> if String.startsWith "overview:family:" first.identity then first :: familyPrefix rest else []
+             [] -> []
+@@ -95,7 +98,7 @@ viewWithPreview preview popup send ((Snapshot snapshot) as current) =
+                         let members = familyPrefix rest
+                         in div [class "overview-workspace",attribute "role" "group",attribute "aria-labelledby" first.domId] (List.map control (first::members)) :: overviewRows (List.drop (List.length members) rest)
+                     else control first :: overviewRows rest
+-    in if popup then div [attribute "data-theme" (Settings.themeName snapshot.appearance.theme),attribute "data-text-scale" (String.fromInt snapshot.appearance.textScale),class "surface-popup",attribute "data-mode" snapshot.mode,attribute "data-publication" (UInt64.string snapshot.publication),attribute "data-lease" (UInt64.string snapshot.lease)] [h1 [] [text (if snapshot.mode=="applications" then "Applications" else if snapshot.mode=="overview" then "Task View" else if snapshot.mode=="switcher" then "Switch windows" else if snapshot.mode=="snap" then "Snap window" else if snapshot.mode=="system" then "System" else if snapshot.mode=="notifications" then "Notifications" else if snapshot.mode=="settings" then "Settings" else if snapshot.mode=="menu" then "Window actions" else "Choose a window")],p [attribute "role" "status",attribute "aria-live" "polite"] [text snapshot.status],(if snapshot.mode=="overview" then div [class "surface-controls",attribute "role" "group"] (overviewRows snapshot.popup) else Keyed.node "div" [class "surface-controls",attribute "role" (if snapshot.mode=="menu" then "menu" else "group")] (List.map (\item -> ("control:" ++ item.identity,control item)) snapshot.popup))]
++    in if popup then div [attribute "data-theme" (Settings.themeName snapshot.appearance.theme),attribute "data-text-scale" (String.fromInt snapshot.appearance.textScale),class "surface-popup",attribute "data-mode" snapshot.mode,attribute "data-publication" (UInt64.string snapshot.publication),attribute "data-lease" (UInt64.string snapshot.lease)] [h1 [] [text (if snapshot.mode=="applications" then "Applications" else if snapshot.mode=="overview" then "Task View" else if snapshot.mode=="switcher" then "Switch windows" else if snapshot.mode=="snap" then "Snap window" else if snapshot.mode=="files" then "Files" else if snapshot.mode=="system" then "System" else if snapshot.mode=="notifications" then "Notifications" else if snapshot.mode=="settings" then "Settings" else if snapshot.mode=="menu" then "Window actions" else "Choose a window")],p [attribute "role" "status",attribute "aria-live" "polite"] [text snapshot.status],(if snapshot.mode=="overview" then div [class "surface-controls",attribute "role" "group"] (overviewRows snapshot.popup) else Keyed.node "div" [class "surface-controls",attribute "role" (if snapshot.mode=="menu" then "menu" else "group")] (List.map (\item -> ("control:" ++ item.identity,control item)) snapshot.popup))]
+        else Keyed.node "div" [attribute "data-theme" (Settings.themeName snapshot.appearance.theme),attribute "data-text-scale" (String.fromInt snapshot.appearance.textScale),class "surface-bar",attribute "data-publication" (UInt64.string snapshot.publication),attribute "data-lease" (UInt64.string snapshot.lease)]
+             [("actions",Keyed.node "div" [class "surface-actions"] (List.map (\item -> ("control:" ++ item.identity,control item)) snapshot.bar))
+             ,("status",span [class (if String.isEmpty snapshot.status || snapshot.status=="Ready" then "surface-status surface-status-idle" else "surface-status"),attribute "role" "status",attribute "aria-live" "polite",attribute "aria-atomic" "true",attribute "aria-label" snapshot.status,title snapshot.status] [text snapshot.status])]
+diff --git 1/implementation/warlock/src/Files.elm 2/implementation/warlock/src/Files.elm
+new file mode 100644
+index 0000000..d01f392
+--- /dev/null
++++ 2/implementation/warlock/src/Files.elm
+@@ -0,0 +1,80 @@
++module Files exposing (Model, Snapshot, Peer, Intent, initial, collections, decoder, observe, reconcile, edit, intent, supported, propose, receive, disconnect)
++
++import Json.Decode as D
++import Json.Encode as E
++import UInt64 exposing (Counter)
++
++type alias Peer = { pid : Counter, start : Counter, instance : String, target : String, visible : Bool }
++type alias Snapshot = { service : Counter, revision : Counter, available : Bool, reason : String, peer : Maybe Peer }
++type alias Intent = { service : Counter, revision : Counter, target : String }
++type alias Model = { snapshot : Maybe Snapshot, draft : String, pending : Maybe { request : Counter, intent : Intent }, spent : List Intent, notice : String }
++
++initial : Model
++initial = {snapshot=Nothing,draft="",pending=Nothing,spent=[],notice="Loading Files…"}
++
++collections : List (String,String)
++collections = [("recent","Recent"),("images","Images"),("videos","Videos"),("documents","Documents"),("downloads","Downloads"),("large","Large files"),("screenshots","Screenshots")]
++
++strict fields child = D.keyValuePairs D.value |> D.andThen (\pairs -> if List.sort (List.map Tuple.first pairs)==List.sort fields then child else D.fail "Files fields")
++positive = UInt64.decoder |> D.andThen (\value -> if value==UInt64.zero then D.fail "Files identity" else D.succeed value)
++textValid value = String.length value<=512 && not (String.any (\c -> Char.toCode c<32 || Char.toCode c==127) value)
++bounded limit = D.string |> D.andThen (\value -> if String.length value<=limit && textValid value then D.succeed value else D.fail "Files text")
++validTarget value = textValid value && (value=="home" || List.any (\(collection,_) -> value=="coll:"++collection) collections || String.startsWith "/" (String.trim value) || value=="~" || String.startsWith "~/" value)
++
++decoder : D.Decoder Snapshot
++decoder = strict ["service","revision","available","reason","peer"] (D.map5 Snapshot
++    (D.field "service" positive) (D.field "revision" positive) (D.field "available" D.bool) (D.field "reason" (bounded 128))
++    (D.field "peer" (D.nullable (strict ["pid","start","instance","target","visible"] (D.map5 Peer
++        (D.field "pid" positive) (D.field "start" positive)
++        (D.field "instance" (bounded 128 |> D.andThen (\value -> if not (String.isEmpty value) && String.all (\c -> Char.isAlphaNum c || c=='_' || c=='-') value then D.succeed value else D.fail "Files instance")))
++        (D.field "target" (bounded 512 |> D.andThen (\value -> if validTarget value && not (String.startsWith "~" value) then D.succeed value else D.fail "Files observed target"))) (D.field "visible" D.bool))))))
++    |> D.andThen (\snapshot -> if not snapshot.available && snapshot.peer/=Nothing then D.fail "Unavailable Files peer" else D.succeed snapshot)
++
++observe : Snapshot -> Model -> Model
++observe snapshot model =
++    let admitted=model.snapshot |> Maybe.map (\old -> snapshot.service==old.service && (UInt64.compare snapshot.revision old.revision==GT || snapshot==old)) |> Maybe.withDefault True
++    in if not admitted then model else {model | snapshot=Just snapshot,notice=if model.pending/=Nothing then model.notice else if snapshot.available then "Choose a collection or folder." else snapshot.reason}
++
++edit : String -> Model -> Model
++edit value model = if textValid value then {model | draft=value} else model
++
++intent snapshot target = {service=snapshot.service,revision=snapshot.revision,target=target}
++
++supported : Intent -> Model -> Bool
++supported value model = model.pending==Nothing && validTarget value.target && not (List.member value model.spent) &&
++    (model.snapshot |> Maybe.map (\snapshot -> snapshot.available && value.service==snapshot.service && value.revision==snapshot.revision) |> Maybe.withDefault False)
++
++propose : Counter -> Intent -> Model -> (Model,Maybe E.Value)
++propose request value model =
++    if request==UInt64.zero || not (supported value model) then (model,Nothing) else
++        ({model | pending=Just {request=request,intent=value},spent=List.take 128 (value::model.spent),notice="Files: waiting for the requested location…"},Just (E.object [("service",E.string (UInt64.string value.service)),("revision",E.string (UInt64.string value.revision)),("target",E.string value.target)]))
++
++receive : Counter -> String -> Snapshot -> Model -> Model
++receive request status snapshot model = case model.pending of
++    Nothing -> model
++    Just pending ->
++        if request/=pending.request || snapshot.service/=pending.intent.service || not (List.member status ["Opened","Refused","Unknown"]) then model else
++        let next=observe snapshot model
++            samePeer=case (model.snapshot |> Maybe.andThen .peer,snapshot.peer) of
++                (Just old,Just current) -> old.pid==current.pid && old.start==current.start && old.instance==current.instance
++                (Nothing,Just _) -> True
++                _ -> False
++            locationMatches=snapshot.peer |> Maybe.map (\peer -> if String.startsWith "~" (String.trim pending.intent.target) then String.startsWith "/" peer.target else peer.target==normalize pending.intent.target) |> Maybe.withDefault False
++            opened=snapshot.available && samePeer && locationMatches && UInt64.compare snapshot.revision pending.intent.revision==GT && (snapshot.peer |> Maybe.map .visible |> Maybe.withDefault False)
++            notice=if status=="Opened" && opened then "Files: requested location opened." else if status=="Refused" then "Files: request refused. Refresh before choosing again." else "Files: opening not confirmed. Refresh only reads state; this request will not be repeated."
++        in if next.snapshot/=Just snapshot then model else {next | pending=if status=="Refused" || (status=="Opened" && opened) then Nothing else model.pending,notice=notice}
++
++reconcile : Snapshot -> Model -> Model
++reconcile snapshot model =
++    let next=observe snapshot model
++    in case next.pending of
++        Nothing -> next
++        Just pending -> if next.snapshot==Just snapshot && UInt64.compare snapshot.revision pending.intent.revision==GT then {next | pending=Nothing,notice="Files state refreshed. The previous request will not be repeated."} else next
++
++normalize : String -> String
++normalize value =
++    if not (String.startsWith "/" (String.trim value)) then value else
++        "/"++(String.split "/" (String.trim value) |> List.foldl (\part parts -> if part=="" || part=="." then parts else if part==".." then List.drop 1 parts else part::parts) [] |> List.reverse |> String.join "/")
++
++disconnect : Model -> Model
++disconnect model = {model | snapshot=Nothing,pending=Nothing,spent=[],notice=if model.pending/=Nothing then "Files: opening not confirmed after connection loss. Open the menu to read current state; this request will not be repeated." else model.notice}
+diff --git 1/implementation/warlock/adapter/explorer.py 2/implementation/warlock/adapter/explorer.py
+new file mode 100644
+index 0000000..fd241e0
+--- /dev/null
++++ 2/implementation/warlock/adapter/explorer.py
+@@ -0,0 +1,148 @@
++"""Installed Files navigation; exact Quickshell instance, fixed argv, no file ops.
++
++Uses the installed launch/reuse IPC contract. Paths are navigation data only;
++frontend values cannot select an executable, QML root, instance or IPC method.
++"""
++import copy,hashlib,json,os,pathlib,re,secrets,selectors,stat,subprocess,time
++from endpoint import Refused,binding,canonical,exact,start_time,unique
++COLLECTIONS={'recent','images','videos','documents','downloads','large','screenshots'}
++class Unknown(RuntimeError):pass
++
++def command(args,deadline,environment=None):
++ if args[0]!='/usr/bin/qs':raise Refused('Files executable')
++ process=subprocess.Popen([args[0],"--log-rules","quickshell.bare.info=false",*args[1:]],stdout=subprocess.PIPE,stderr=subprocess.PIPE,env=environment or os.environ,start_new_session=True)
++ output=bytearray();errors=bytearray()
++ try:
++  with selectors.DefaultSelector() as selector:
++   for stream,label in [(process.stdout,'out'),(process.stderr,'error')]:os.set_blocking(stream.fileno(),False);selector.register(stream,selectors.EVENT_READ,label)
++   while selector.get_map():
++    left=deadline-time.monotonic()
++    if left<=0:raise Unknown('Files native response not confirmed')
++    for key,_ in selector.select(left):
++     chunk=os.read(key.fileobj.fileno(),8192)
++     if not chunk:selector.unregister(key.fileobj);continue
++     target=output if key.data=='out' else errors;target.extend(chunk)
++     if len(target)>(262144 if key.data=='out' else 8192):raise Unknown('Files native response capacity')
++  process.wait(timeout=max(.001,deadline-time.monotonic()))
++  if process.returncode:raise Refused('Installed Files operation refused')
++  return output.decode('utf-8')
++ finally:
++  if process.poll() is None:process.terminate()
++  try:process.wait(timeout=.3)
++  except subprocess.TimeoutExpired:process.kill();process.wait()
++  process.stdout.close();process.stderr.close()
++
++class Explorer:
++ def __init__(self,app_root=None):
++  self.root=pathlib.Path(app_root or pathlib.Path.home()/'.local/share/omarchy-files').resolve()
++  self.service=str(secrets.randbelow(2**64-1)+1);self.revision=0;self.last=None;self.identity=None;self.spent=set();self.high=0;self.scope=None
++  self.qs=pathlib.Path('/usr/bin/qs').resolve();self.binary=None
++  try:self.binary=self.qs.stat()
++  except OSError:pass
++ def __enter__(self):return self
++ def __exit__(self,*_):pass
++ def source(self):
++  if not self.binary or not self.root.is_dir() or not (self.root/'shell.qml').is_file():raise Refused('Installed Files unavailable')
++  now=self.qs.stat()
++  if (now.st_dev,now.st_ino,now.st_size,now.st_mtime_ns)!=(self.binary.st_dev,self.binary.st_ino,self.binary.st_size,self.binary.st_mtime_ns):raise Refused('Files executable changed')
++  result={}
++  for name in ['shell.qml','scripts/ops.sh','spec/fileops.qnt']:
++   path=self.root/name
++   if not path.is_file():raise Refused('Installed Files contract unavailable')
++   result[name]=hashlib.sha256(path.read_bytes()).hexdigest()
++  return result
++ def target(self,value):
++  if not isinstance(value,str) or len(value)>512 or any(ord(c)<32 or ord(c)==127 for c in value):raise Refused('Files navigation target')
++  if value=='home':return value
++  if value.startswith('coll:'):
++   if value[5:] not in COLLECTIONS:raise Refused('Files collection unavailable')
++   return value
++  value=value.strip()
++  if value=='~':value=str(pathlib.Path.home())
++  elif value.startswith('~/'):value=str(pathlib.Path.home())+value[1:]
++  if not value.startswith('/'):raise Refused('Files path must be absolute')
++  pieces=[]
++  for part in value.split('/'):
++   if part in ('','.'):continue
++   if part=='..':
++    if pieces:pieces.pop()
++   else:pieces.append(part)
++  target='/'+('/'.join(pieces))
++  if not pathlib.Path(target).is_dir():raise Refused('Files folder unavailable')
++  return target
++ def instances(self,deadline):
++  raw=command(['/usr/bin/qs','-p',str(self.root),'list','--json'],deadline)
++  rows=json.loads(raw,object_pairs_hook=unique) if raw.strip() else []
++  if not isinstance(rows,list) or len(rows)>16:raise Refused('Files instance capacity')
++  if len(rows)>1:raise Refused('Multiple Files instances; choose an existing window')
++  if not rows:return None
++  row=rows[0];pid=row.get('pid');identifier=row.get('id');config=row.get('config_path')
++  if type(pid) is not int or pid<=0 or not isinstance(identifier,str) or not re.fullmatch(r'[A-Za-z0-9_-]{1,128}',identifier) or not isinstance(config,str) or pathlib.Path(config).resolve()!=self.root/'shell.qml':raise Refused('Files native instance')
++  peer={'pid':pid,'start':start_time(pid),'instance':identifier};self.verify_peer(peer);return peer
++ def verify_peer(self,peer):
++  proc=pathlib.Path('/proc')/str(peer['pid'])
++  if proc.stat().st_uid!=os.getuid() or start_time(peer['pid'])!=peer['start'] or (proc/'exe').resolve()!=self.qs:raise Refused('Files instance changed')
++  image=(proc/'exe').stat()
++  if (image.st_dev,image.st_ino)!=(self.binary.st_dev,self.binary.st_ino):raise Refused('Files executable identity changed')
++ def ipc(self,peer,method,args,deadline):
++  if method not in ('migrationStatus','uiState','open'):raise Refused('Files native method')
++  self.verify_peer(peer)
++  result=command(['/usr/bin/qs','-p',str(self.root),'ipc','--id',peer['instance'],'call','files',method,*args],deadline)
++  self.verify_peer(peer);return result
++ def probe(self,peer,deadline):
++  status=json.loads(self.ipc(peer,'migrationStatus',[],deadline),object_pairs_hook=unique)
++  if status.get('pid')!=peer['pid'] or status.get('instance')!=peer['instance'] or status.get('ready') is not True or status.get('error'):raise Refused('Files instance not ready')
++  ui=json.loads(self.ipc(peer,'uiState',[],deadline),object_pairs_hook=unique)
++  collection=ui.get('collId');view=ui.get('view');cwd=ui.get('cwd');visible=ui.get('visible')
++  if not isinstance(collection,str) or collection not in COLLECTIONS|{''} or view not in ('home','folder') or type(visible) is not bool or not isinstance(cwd,str) or not cwd.startswith('/') or len(cwd)>512:raise Refused('Files observed location')
++  target='coll:'+collection if collection else 'home' if view=='home' else cwd
++  return {**peer,'target':target,'visible':visible}
++ def observe(self,deadline=None,advance=False):
++  deadline=deadline or time.monotonic()+2;value={'available':False,'reason':'Installed Files unavailable','peer':None};identity=None
++  try:
++   source=self.source();peer=self.instances(deadline);observed=self.probe(peer,deadline) if peer else None
++   value={'available':True,'reason':'','peer':observed};identity={'source':source,'peer':peer}
++  except (Refused,Unknown,OSError,ValueError,subprocess.SubprocessError):pass
++  if advance or value!=self.last or identity!=self.identity:
++   if self.revision>=2**64-1:raise Refused('Files revision exhausted')
++   self.revision+=1;self.last=copy.deepcopy(value);self.identity=copy.deepcopy(identity);self.spent={item for item in self.spent if item[0]>=self.revision-32}
++  public=copy.deepcopy(value)
++  if public['peer'] is not None:public['peer']['pid']=str(public['peer']['pid'])
++  return {'service':self.service,'revision':str(self.revision),**public}
++ def verify(self,request,client,effect):
++  exact(request,['protocolVersion','kind','binding','requestId',*(['intent'] if effect else [])]);canonical(request['requestId'])
++  if type(request['protocolVersion']) is not int or request['protocolVersion']!=3 or request['kind']!=('files-open' if effect else 'files-request') or binding(request['binding'])!=client.bound:raise Refused('Files binding')
++  client.verify_process();client.verify_paths()
++ def read(self,request,client):
++  self.verify(request,client,False);snapshot=self.observe();self.verify(request,client,False)
++  return {'protocolVersion':3,'kind':'files-snapshot','binding':client.bound,'requestId':request['requestId'],'snapshot':snapshot}
++ def open(self,request,client):
++  self.verify(request,client,True);intent=request['intent'];exact(intent,['service','revision','target']);canonical(intent['service']);canonical(intent['revision'])
++  deadline=time.monotonic()+3;current=self.observe(deadline);status='Refused';submitted=False;key=(int(intent['revision']),intent['target']) if isinstance(intent['target'],str) else None
++  if self.scope!=client.bound:self.scope=copy.deepcopy(client.bound);self.high=0
++  number=int(request['requestId'])
++  if number>self.high:
++   self.high=number
++   if intent['service']==self.service and intent['revision']==current['revision'] and current['available'] and key is not None and key not in self.spent:
++    try:
++     target=self.target(intent['target']);source=self.source();peer=copy.deepcopy(self.identity['peer']);self.spent.add(key)
++     submitted=True
++     if peer:
++      self.ipc(peer,'open',[target],deadline)
++     else:
++      # The same installed explorer, one no-duplicate cold start. An uncertain
++      # startup never falls back to another launch or a different instance.
++      command(['/usr/bin/qs','-p',str(self.root),'--no-duplicate','--daemonize'],deadline,{**os.environ,'FILES_OPEN':target})
++     observed=self.observe(deadline)
++     actual=observed['peer'];same=(actual is not None and (peer is None or all(actual[k]==(str(peer[k]) if k=='pid' else peer[k]) for k in ('pid','start','instance'))))
++     if not same or actual['target']!=target or not actual['visible'] or self.source()!=source:raise Unknown('Requested Files location not confirmed')
++     # A confirmed explicit navigation creates the next proposal generation,
++     # even if it was a same-location summon. Old gestures remain consumed.
++     current=self.observe(deadline,advance=True);status='Opened'
++    except Refused:status='Unknown' if submitted else 'Refused'
++    except Exception:status='Unknown'
++  if status!='Opened':
++   try:current=self.observe(deadline)
++   except Exception:pass
++  self.verify(request,client,True)
++  return {'protocolVersion':3,'kind':'files-outcome','binding':client.bound,'requestId':request['requestId'],'status':status,'snapshot':current}
+diff --git 1/implementation/warlock/qa/FilesReplay.elm 2/implementation/warlock/qa/FilesReplay.elm
+new file mode 100644
+index 0000000..a83fe8b
+--- /dev/null
++++ 2/implementation/warlock/qa/FilesReplay.elm
+@@ -0,0 +1,81 @@
++port module FilesReplay exposing (main)
++import Desktop
++import Files
++import Surface
++import SurfaceRenderer
++import Presentation
++import Json.Decode as D
++import Json.Encode as E
++import Platform
++import UInt64
++port outgoing : E.Value -> Cmd msg
++counter value = D.decodeValue UInt64.decoder (E.string value) |> Result.withDefault UInt64.zero
++bound = E.object [("lifetime",E.string "1"),("session",E.string "1"),("frontend",E.string "1")]
++native raw model = Desktop.update (Desktop.Incoming raw) model |> Tuple.first
++snapshot revision target = E.object [("service",E.string "9"),("revision",E.string revision),("available",E.bool True),("reason",E.string ""),("peer",E.object [("pid",E.string "20"),("start",E.string "40"),("instance",E.string "owned1"),("target",E.string target),("visible",E.bool True)])]
++loaded request value = E.object [("protocolVersion",E.int 3),("kind",E.string "files-snapshot"),("binding",bound),("requestId",E.string (UInt64.string request)),("snapshot",value)]
++outcome request status value = E.object [("protocolVersion",E.int 3),("kind",E.string "files-outcome"),("binding",bound),("requestId",E.string (UInt64.string request)),("status",E.string status),("snapshot",value)]
++dispatch build model = Desktop.capture model |> Maybe.map (\stamp -> Desktop.update (build stamp) model) |> Maybe.withDefault (model,[])
++effect e = case e of
++    Desktop.Send wire -> D.decodeValue (D.field "kind" D.string) wire==Ok "files-open"
++    _ -> False
++result =
++    let attached=E.object [("protocolVersion",E.int 3),("kind",E.string "attached"),("binding",bound)]
++        ready=native attached Desktop.initial
++        (opening,_)=dispatch Desktop.OpenFiles ready
++        read=native (loaded (opening.filesExpected |> Maybe.withDefault UInt64.zero) (snapshot "1" "home")) opening
++        current=read.files.snapshot |> Maybe.withDefault {service=counter "9",revision=counter "1",available=False,reason="",peer=Nothing}
++        target=Files.intent current "coll:images"
++        (pending,effects)=dispatch (\stamp -> Desktop.OpenFilesTarget stamp target) read
++        request=pending.files.pending |> Maybe.map .request |> Maybe.withDefault UInt64.zero
++        opened=native (outcome request "Opened" (snapshot "2" "coll:images")) pending
++        unknown=native (outcome request "Unknown" (snapshot "1" "home")) pending
++        (unknownPopup,_)=dispatch Desktop.OpenFiles unknown
++        (refreshed,refreshEffects)=dispatch Desktop.RefreshFiles unknownPopup
++        reconciled=native (loaded (refreshed.filesExpected |> Maybe.withDefault UInt64.zero) (snapshot "2" "coll:images")) refreshed
++        (_,repeat)=dispatch (\stamp -> Desktop.OpenFilesTarget stamp target) reconciled
++        (_,unknownRepeat)=dispatch (\stamp -> Desktop.OpenFilesTarget stamp target) unknownPopup
++        replaced=E.object [("service",E.string "9"),("revision",E.string "2"),("available",E.bool True),("reason",E.string ""),("peer",E.object [("pid",E.string "21"),("start",E.string "41"),("instance",E.string "replacement"),("target",E.string "coll:images"),("visible",E.bool True)])]
++        wrongPeer=native (outcome request "Opened" replaced) pending
++        wrongLocation=native (outcome request "Opened" (snapshot "2" "coll:videos")) pending
++        disconnected=native (E.object [("protocolVersion",E.int 3),("kind",E.string "host-disconnected")]) pending
++        wrong=native (outcome (counter "999") "Opened" (snapshot "2" "coll:images")) pending
++        (edited,editEffects)=dispatch (\stamp -> Desktop.EditFilesPath stamp "/tmp/Documents") read
++        (folder,folderEffects)=dispatch Desktop.OpenFilesPath edited
++        (invalid,_)=dispatch (\stamp -> Desktop.EditFilesPath stamp "$(touch injected)") read
++        (_,invalidEffects)=dispatch Desktop.OpenFilesPath invalid
++        (closed,closeEffects)=dispatch Desktop.CloseFiles read
++        (other,_)=dispatch Desktop.OpenSystemMenu read
++        frame=Surface.packet (counter "1") (counter "1") edited
++        originalFrame=Surface.packet (counter "1") (counter "1") read
++        presentation=Presentation.accept frame Presentation.initial
++        field=E.object [("surfaceProtocol",E.int 2),("kind",E.string "surface-query"),("surface",E.string "popup"),("publication",E.string "1"),("lease",E.string "1"),("id",E.string "control:files-path"),("query",E.string "/tmp/Other")]
++        resolved=Surface.resolve (counter "1") (counter "1") field edited
++        typed=resolved |> Maybe.map (\message -> Desktop.update message edited) |> Maybe.withDefault (edited,[])
++        checked name value=(name,E.bool value)
++        checks=[checked "FilesOpenerIntegrated" (D.decodeValue (D.field "bar" (D.list (D.field "id" D.string))) originalFrame |> Result.map (List.member "bar:files") |> Result.withDefault False)
++            ,checked "InstalledCollectionNamesPreserved" (List.all (\(identifier,_) -> List.any (\c -> c.id=="files:collection:"++identifier) (Surface.controls read)) Files.collections)
++            ,checked "NativeModeAccepted" (SurfaceRenderer.decode frame |> Result.map (SurfaceRenderer.mode >> (==) "files") |> Result.withDefault False)
++            ,checked "CurrentLocationDisplayed" (List.any (\c -> c.id=="files:location:state" && c.label=="Current location: home" && not c.enabled) (Surface.controls read))
++            ,checked "ExactlyOneExplicitCollectionOpening" (List.length (List.filter effect effects)==1)
++            ,checked "PopupClosesBeforeNativeOpening" (not pending.filesOpen && not (List.any (\e -> case e of
++                Desktop.Focus _ -> True
++                _ -> False) effects))
++            ,checked "ObservedOutcomeSettles" (opened.files.pending==Nothing && String.contains "opened" opened.files.notice)
++            ,checked "UnknownRemainsVisibleAndCannotReplay" (unknown.files.pending/=Nothing && String.contains "not confirmed" unknown.files.notice && List.isEmpty unknownRepeat)
++            ,checked "RefreshNeverOpens" (not (List.any effect refreshEffects))
++            ,checked "ChangedReadReconcilesWithoutReplay" (reconciled.files.pending==Nothing && List.isEmpty repeat)
++            ,checked "ReplacementCannotBeReportedAsReused" (wrongPeer.files.pending/=Nothing && String.contains "not confirmed" wrongPeer.files.notice)
++            ,checked "WrongLocationCannotBeReportedAsOpened" (wrongLocation.files.pending/=Nothing && String.contains "not confirmed" wrongLocation.files.notice)
++            ,checked "ConnectionLossKeepsUnknownWithoutReplay" (not disconnected.filesOpen && disconnected.files.pending==Nothing && disconnected.files.snapshot==Nothing && String.contains "not confirmed" disconnected.files.notice)
++            ,checked "WrongReceiptDoesNotSettle" (wrong==pending)
++            ,checked "TypingHasNoEffect" (edited.files.draft=="/tmp/Documents" && List.isEmpty editEffects)
++            ,checked "FolderRequiresExplicitAction" (List.length (List.filter effect folderEffects)==1 && folder.files.pending/=Nothing)
++            ,checked "CommandTextDoesNotOpen" (List.isEmpty invalidEffects)
++            ,checked "CloseHasNoNavigationEffect" (not closed.filesOpen && not (List.any effect closeEffects))
++            ,checked "AnotherPopupRetiresFiles" (not other.filesOpen && other.systemMenuOpen && other.files==read.files)
++            ,checked "FolderFieldHasScopedAcknowledgment" (Presentation.editQuery field presentation/=Nothing && (Tuple.first typed).files.draft=="/tmp/Other" && List.isEmpty (Tuple.second typed))
++            ,checked "DetachedSessionRetiresFiles" (not (native (E.object [("protocolVersion",E.int 3),("kind",E.string "host-disconnected"),("binding",bound)]) read).filesOpen)
++            ,checked "AllControlsNamed" (List.all (\c -> not (String.isEmpty c.ariaLabel)) (Surface.controls read))]
++    in E.object [("checks",E.object checks),("frame",originalFrame),("pathFrame",frame),("pendingFrame",Surface.packet (counter "3") (counter "1") {read | files=pending.files})]
++main = Platform.worker {init=\() -> ((),outgoing result),update=\_ model -> (model,Cmd.none),subscriptions=\_ -> Sub.none}
+diff --git 1/implementation/warlock/qa/check-files.py 2/implementation/warlock/qa/check-files.py
+new file mode 100644
+index 0000000..34953e3
+--- /dev/null
++++ 2/implementation/warlock/qa/check-files.py
+@@ -0,0 +1,74 @@
++"""Actual Quickshell IPC fixture with private runtime/home and offscreen Qt.
++
++Protocol/admission evidence only. Actual installed explorer is a separate native GUI case.
++"""
++import hashlib,json,os,pathlib,subprocess,sys,tempfile,time
++ROOT=pathlib.Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'adapter'))
++from explorer import Explorer,Refused
++APP=pathlib.Path('/home/hoskinson/.local/share/omarchy-files');checks=[]
++def check(name,value):assert value,name;checks.append(name)
++class Client:
++ bound={'lifetime':'1','session':'1','frontend':'1'}
++ def verify_process(self):pass
++ def verify_paths(self):pass
++serial=10
++def request(intent=None):
++ global serial
++ serial+=1
++ return {'protocolVersion':3,'kind':'files-open' if intent else 'files-request','binding':Client.bound,'requestId':str(serial),**({'intent':intent} if intent else {})}
++def intent(snapshot,target):return {'service':snapshot['service'],'revision':snapshot['revision'],'target':target}
++def wait(fn):
++ deadline=time.monotonic()+3
++ while time.monotonic()<deadline:
++  value=fn()
++  if value:return value
++  time.sleep(.01)
++ raise AssertionError('Original private explorer readiness deadline')
++sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();preserved={str(p):sha(p) for p in [APP/'scripts/ops.sh',APP/'spec/fileops.qnt']};original=os.environ.copy()
++with tempfile.TemporaryDirectory(prefix='warlock-files-') as temporary:
++ root=pathlib.Path(temporary);home=root/'home';home.mkdir(mode=0o700);runtime=root/'runtime';runtime.mkdir(mode=0o700)
++ for name in ['Pictures','Documents','Downloads']:(home/name).mkdir()
++ (home/'Documents/native-fixture.txt').write_text('Files collection fixture')
++ app=root/'ipc-fixture';app.mkdir();(app/'scripts').mkdir();(app/'spec').mkdir();(app/'scripts/ops.sh').symlink_to(APP/'scripts/ops.sh');(app/'spec/fileops.qnt').symlink_to(APP/'spec/fileops.qnt')
++ (app/'shell.qml').write_text('''import QtQuick
++import Quickshell
++import Quickshell.Io
++ShellRoot {
++ property string selected: Quickshell.env("FILES_OPEN") || "home"
++ IpcHandler { target: "files"
++ function migrationStatus(): string { return JSON.stringify({ready:true,error:"",pid:Quickshell.processId,instance:Quickshell.instanceId}) }
++ function uiState(): string { return JSON.stringify({view:selected==="home" ? "home" : "folder",cwd:selected.startsWith("/") ? selected : Quickshell.env("HOME"),collId:selected.startsWith("coll:") ? selected.slice(5) : "",visible:true}) }
++ function open(path: string): void { selected=path }
++ }
++}
++''')
++ env={**os.environ,'HOME':str(home),'XDG_RUNTIME_DIR':str(runtime),'XDG_DATA_HOME':str(home/'.local/share'),'XDG_CACHE_HOME':str(home/'.cache'),'XDG_CONFIG_HOME':str(home/'.config'),'QT_QPA_PLATFORM':'offscreen','WAYLAND_DISPLAY':'warlock-files-private','FILES_OPEN':'home','FILES_WIDGET':'0','FILES_DRYRUN':'1','QT_QUICK_CONTROLS_STYLE':'Basic','DBUS_SESSION_BUS_ADDRESS':'unix:path='+str(runtime/'absent'),'DBUS_SYSTEM_BUS_ADDRESS':'unix:path='+str(runtime/'absent')}
++ log=open(root/'explorer.log','wb');process=subprocess.Popen(['/usr/bin/qs','-p',str(app),'--no-duplicate'],env=env,stdout=log,stderr=log)
++ try:
++  os.environ.update(env)
++  with Explorer(app) as explorer:
++   observed=wait(lambda:(snapshot:=explorer.observe()) and snapshot['peer'] and snapshot);print('OBSERVED',json.dumps(observed),file=sys.stderr)
++   check('Native protocol fixture identity observed',observed['peer']['pid']==str(process.pid) and observed['peer']['target']=='home')
++   old=intent(observed,'coll:images');opened=explorer.open(request(old),Client());check('Native IPC observes requested collection',opened['status']=='Opened' and opened['snapshot']['peer']['target']=='coll:images')
++   check('IPC reuses exact native instance/PID/start',all(opened['snapshot']['peer'][k]==observed['peer'][k] for k in ['pid','start','instance']))
++   check('Old queued collection intent cannot repeat',explorer.open(request(old),Client())['status']=='Refused')
++   folder=explorer.open(request(intent(opened['snapshot'],str(home/'Documents'))),Client());check('Requested absolute folder is observed',folder['status']=='Opened' and folder['snapshot']['peer']['target']==str(home/'Documents'))
++   same=explorer.open(request(intent(folder['snapshot'],str(home/'Documents'))),Client());check('Fresh same-folder gesture reuses current explorer',same['status']=='Opened' and same['snapshot']['peer']['pid']==str(process.pid))
++   invalid=explorer.open(request(intent(same['snapshot'],'coll:execute')),Client());check('Unsupported collection is Refused without changing location',invalid['status']=='Refused' and invalid['snapshot']['peer']['target']==str(home/'Documents'))
++   unsafe=explorer.open(request(intent(invalid['snapshot'],'$(touch injected)')),Client());check('Navigation input is never executed as a command',unsafe['status']=='Refused' and not (home/'injected').exists())
++   bad=request(intent(invalid['snapshot'],'home'));bad['intent']['instance']='foreign'
++   try:explorer.open(bad,Client());raise AssertionError('Frontend instance selected')
++   except Refused:checks.append('Frontend cannot select executable, instance or QML root')
++   process.terminate();process.wait(timeout=3);gone=explorer.observe()
++   check('Retired native explorer identity is withdrawn',gone['peer'] is None and gone['available'])
++   check('Old identity intent cannot target a replacement',explorer.open(request(intent(folder['snapshot'],'home')),Client())['status']=='Refused')
++  check('Installed file operations and Quint spec are byte-identical',all(sha(pathlib.Path(p))==h for p,h in preserved.items()))
++ except Exception:
++  log.flush();print((root/'explorer.log').read_text()[-3500:],file=sys.stderr);raise
++ finally:
++  os.environ.clear();os.environ.update(original)
++  if process.poll() is None:process.terminate()
++  try:process.wait(timeout=3)
++  except subprocess.TimeoutExpired:process.kill();process.wait()
++  log.close()
++print(json.dumps({'passed':True,'checks':checks,'scenario':'ux-033','installedSourceHashes':preserved,'evidenceScope':'Actual Quickshell IPC protocol fixture in private offscreen runtime; installed explorer/native-window/AT acceptance separate'}))
+diff --git 1/implementation/warlock/qa/files.qnt 2/implementation/warlock/qa/files.qnt
+new file mode 100644
+index 0000000..eaede87
+--- /dev/null
++++ 2/implementation/warlock/qa/files.qnt
+@@ -0,0 +1,22 @@
++module Files {
++ var revision: int
++ var peer: int
++ var proposal: (int,int)
++ var spent: Set[(int,int)]
++ var pending: bool
++ var effects: int
++ action init = all {revision'=1,peer'=1,proposal'=(0,0),spent'=Set(),pending'=false,effects'=0}
++ action capture = all {not(pending),proposal'=(revision,peer),pending'=true,revision'=revision,peer'=peer,spent'=spent,effects'=effects}
++ val admitted = proposal==(revision,peer) and not(spent.contains(proposal))
++ action submit = all {pending,admitted,spent'=spent.union(Set(proposal)),effects'=effects+1,pending'=true,proposal'=proposal,revision'=revision,peer'=peer}
++ action refuse = all {pending,not(admitted),pending'=false,proposal'=proposal,revision'=revision,peer'=peer,spent'=spent,effects'=effects}
++ action read = all {revision'=revision+1,pending'=false,proposal'=proposal,peer'=peer,spent'=spent,effects'=effects}
++ action replace = all {revision'=revision+1,peer'=peer+1,proposal'=proposal,pending'=pending,spent'=spent,effects'=effects}
++ action verify(condition: bool): bool = all {assert(condition),revision'=revision,peer'=peer,proposal'=proposal,pending'=pending,spent'=spent,effects'=effects}
++ action step = any {capture,submit,refuse,read,replace}
++ val safety = effects==spent.size() and revision>0 and peer>0
++ run currentInstanceOnceTest = init.then(capture).then(submit).then(refuse).then(capture).then(refuse).then(verify(effects==1))
++ run replacementRefusesOldProposalTest = init.then(capture).then(replace).then(refuse).then(verify(effects==0))
++ run unknownCannotReplayTest = init.then(capture).then(submit).then(refuse).then(verify(effects==1))
++ run explicitFreshGestureTest = init.then(capture).then(submit).then(read).then(capture).then(submit).then(verify(effects==2))
++}
+diff --git 1/implementation/warlock/qa/files-browser.mjs 2/implementation/warlock/qa/files-browser.mjs
+new file mode 100644
+index 0000000..4765588
+--- /dev/null
++++ 2/implementation/warlock/qa/files-browser.mjs
+@@ -0,0 +1,61 @@
++import {spawn} from 'node:child_process';
++import fs from 'node:fs';
++import path from 'node:path';
++const [base,out,binary]=process.argv.slice(2), report={passed:false,checks:[],captures:[],errors:[],externalRequests:[],nativeAcceptance:false,fullReleaseAccepted:false};
++const sleep=ms=>new Promise(r=>setTimeout(r,ms));
++const browser=spawn(binary,['--remote-debugging-address=127.0.0.1','--remote-debugging-port=0','--user-data-dir='+path.join(out,'profile'),'--disable-gpu','--disable-breakpad','--disable-crash-reporter','--no-first-run','about:blank'],{stdio:['ignore','pipe','pipe']});
++let stderr='',stdout='',ws,session,sequence=0,pending=new Map();
++browser.stderr.on('data',v=>stderr+=v);browser.stdout.on('data',v=>stdout+=v);
++function call(method,params={},sessionId=session){return new Promise((resolve,reject)=>{const id=++sequence;const timer=setTimeout(()=>{pending.delete(id);reject(new Error('CDP timeout '+method));},15000);pending.set(id,{resolve,reject,timer});ws.send(JSON.stringify({id,method,params,...(sessionId?{sessionId}:{})}));});}
++function check(name,condition,detail){if(!condition)throw Error(name+' '+JSON.stringify(detail));report.checks.push({name,detail});}
++async function evaluate(expression){const r=await call('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error(JSON.stringify(r.exceptionDetails));return r.result.value;}
++async function until(expression){for(let i=0;i<100;i++){if(await evaluate(expression))return;await sleep(30);}throw Error('Condition timeout '+expression);}
++async function click(selector){const rect=await evaluate(`(()=>{const b=document.querySelector(${JSON.stringify(selector)});b.scrollIntoView({block:'center'});const r=b.getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2};})()`);await call('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',clickCount:1,...rect});await call('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',clickCount:1,...rect});await sleep(60);}
++async function route(name){await evaluate('location.hash='+JSON.stringify(name));await until('!!document.querySelector("main h1") && location.hash === '+JSON.stringify('#'+name));await sleep(100);}
++async function viewport(width,height=980){await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false});await sleep(80);}
++async function capture(name){await evaluate('document.fonts.ready');const r=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});fs.writeFileSync(path.join(out,name+'.png'),Buffer.from(r.data,'base64'));report.captures.push(name+'.png');}
++async function observation(){return evaluate('window.fixtureObservation');}
++try{
++ let match;for(let i=0;i<100;i++){match=stderr.match(/DevTools listening on (ws:\/\/[^\s]+)/);if(match)break;if(browser.exitCode!==null)throw Error('Browser exited '+browser.exitCode+' '+stderr);await sleep(30);}if(!match)throw Error('No DevTools endpoint '+stderr);
++ ws=new WebSocket(match[1]);await new Promise((resolve,reject)=>{ws.onopen=resolve;ws.onerror=reject;});
++ ws.onmessage=event=>{const m=JSON.parse(event.data);if(m.id){const p=pending.get(m.id);if(p){pending.delete(m.id);clearTimeout(p.timer);m.error?p.reject(Error(JSON.stringify(m.error))):p.resolve(m.result);}}else if(m.method==='Runtime.exceptionThrown')report.errors.push(m.params.exceptionDetails);};
++ const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;
++
++
++ await call('Page.enable');await call('Runtime.enable');await viewport(640,620);
++ await call('Page.addScriptToEvaluateOnNewDocument',{source:'window.nativePackets=[];window.webkit={messageHandlers:{native:{postMessage:text=>nativePackets.push(JSON.parse(text))}}};'});
++ await call('Page.navigate',{url:base+'/assets/popup.html'});await until('!!window.receivePresentation');
++ const packet=JSON.parse(fs.readFileSync(path.join(out,'files.json'),'utf8'));
++ await evaluate('receivePresentation('+JSON.stringify(packet.frame)+')');
++ await until(`document.querySelector('.surface-popup[data-mode="files"]')?.dataset.publication==="1"`);
++ check('Files collection catalog and native current location are readable',await evaluate(`document.querySelector('h1').textContent==='Files' && document.body.textContent.includes('Current location: home') && document.querySelectorAll('[data-surface-control^="files:collection:"]').length===7`));
++ check('Location is semantic text and folder input has an accessible name',await evaluate(`!!document.querySelector('[data-files-content]') && document.querySelector('[data-surface-field]').getAttribute('aria-label')==='Folder path'`));
++ await viewport(320,260);
++ async function key(key){await call('Input.dispatchKeyEvent',{type:'keyDown',key,code:key});await call('Input.dispatchKeyEvent',{type:'keyUp',key,code:key});await sleep(60);}
++ await evaluate(`document.querySelector('[data-surface-control="control:close"]').focus()`);await key('End');
++ check('End reveals last available collection in a small viewport',await evaluate(`document.activeElement.dataset.surfaceControl==='files:collection:screenshots' && document.activeElement.getBoundingClientRect().bottom<=innerHeight+1`));
++ await key('Home');check('Home reveals Close',await evaluate(`document.activeElement.dataset.surfaceControl==='control:close' && document.activeElement.getBoundingClientRect().top>=0`));
++ await evaluate(`(()=>{const f=document.querySelector('[data-surface-field]');f.scrollIntoView({block:'center'});f.focus();f.value='~/Draft';f.dispatchEvent(new InputEvent('input',{bubbles:true,isComposing:true,data:'Draft'}));})()`);await sleep(80);
++ check('Folder input retains focus instead of restoring an old button',await evaluate(`document.activeElement.matches('[data-surface-field]') && document.activeElement.value==='~/Draft'`));
++ check('Preedit disables navigation and submits no native edit or open',await evaluate(`document.querySelector('[data-surface-control="files:collection:images"]').disabled && !nativePackets.some(p=>p.kind==='surface-query'||p.kind==='files-open')`));
++ await evaluate(`document.querySelector('[data-surface-field]').dispatchEvent(new CompositionEvent('compositionend',{bubbles:true,data:'Draft'}))`);await sleep(80);
++ check('Composition commit submits a field edit only',await evaluate(`nativePackets.filter(p=>p.kind==='surface-query' && p.id==='control:files-path' && p.query==='~/Draft').length===1 && !nativePackets.some(p=>p.kind==='files-open')`));
++ const acknowledged=structuredClone(packet.pathFrame);acknowledged.publication='2';acknowledged.popup.find(c=>c.id==='control:files-path').label='~/Draft';
++ await evaluate('receivePresentation('+JSON.stringify(acknowledged)+')');await until(`document.querySelector('.surface-popup')?.dataset.publication==="2"`);
++ check('Acknowledged field retains focus and enables explicit Open folder',await evaluate(`document.activeElement.matches('[data-surface-field]') && document.activeElement.value==='~/Draft' && !document.querySelector('[data-surface-control="files:open-path"]').disabled`));
++ await key('Tab');await key('Enter');
++ check('Tab then Enter submits one explicit scoped folder action',await evaluate(`nativePackets.filter(p=>p.kind==='surface-action' && p.id==='files:open-path' && p.publication==='2').length===1`));
++ await evaluate('receivePresentation('+JSON.stringify(packet.pendingFrame)+')');await until(`document.querySelector('.surface-popup')?.dataset.publication==="3"`);
++ check('Pending disables navigation while keeping read-only refresh',await evaluate(`document.querySelector('[data-surface-control="files:collection:images"]').disabled && !document.querySelector('[data-surface-control="files:refresh"]').disabled && document.body.textContent.includes('waiting for the requested location')`));
++ await evaluate(`document.querySelector('[data-surface-control="control:close"]').focus()`);await key('Escape');
++ check('Escape closes through matching physical release',await evaluate(`nativePackets.filter(p=>p.kind==='surface-action' && p.id==='control:close' && p.publication==='3').length===1`));
++ await viewport(640,900);await capture('files-collections');
++ check('No browser exceptions',report.errors.length===0,report.errors);report.passed=true;
++}catch(error){report.error=String(error.stack||error);}
++finally{
++ if(ws?.readyState===1){try{await call('Browser.close',{},null);}catch(_){}ws.close();}
++ for(let i=0;i<100&&browser.exitCode===null;i++)await sleep(20);if(browser.exitCode===null)browser.kill('SIGTERM');
++ await new Promise(resolve=>{if(browser.exitCode!==null)resolve();else browser.once('exit',resolve);});report.browserExitCode=browser.exitCode;
++ fs.writeFileSync(path.join(out,'browser.stderr'),stderr);fs.writeFileSync(path.join(out,'browser.stdout'),stdout);fs.writeFileSync(path.join(out,'files-browser.json'),JSON.stringify(report,null,2)+'\n');
++ console.log(JSON.stringify({passed:report.passed,checks:report.checks.length,captures:report.captures,error:report.error}));process.exitCode=report.passed?0:1;
++}

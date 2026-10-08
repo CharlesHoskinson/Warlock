@@ -5,6 +5,7 @@ import Switcher
 import Pins
 import Settings
 import Notifications
+import Files
 import SystemMenu
 import MenuBridge
 import Provider
@@ -45,7 +46,8 @@ recoveryPopup model = if recoveryNeeded model then [recoveryControl "control:rec
 
 mode : Desktop.Model -> String
 mode model =
-    if model.systemMenuOpen then "system"
+    if model.filesOpen then "files"
+    else if model.systemMenuOpen then "system"
     else if model.notificationsOpen then "notifications"
     else if model.settingsOpen then "settings"
     else if model.snap/=Nothing then "snap"
@@ -58,7 +60,21 @@ mode model =
 
 controls : Desktop.Model -> List Control
 controls model =
-    if model.systemMenuOpen then
+    if model.filesOpen then
+        let scoped message=Desktop.capture model |> Maybe.map message
+            control identity label detail enabled message={id=identity,domId=Desktop.key model (if identity=="control:close" then "files:close" else identity),label=label,ariaLabel=label,detail=detail,enabled=enabled,message=if enabled then scoped message else Nothing}
+            ready target=model.filesExpected==Nothing && (model.files.snapshot |> Maybe.map (\snapshot -> Files.supported (Files.intent snapshot target) model.files) |> Maybe.withDefault False)
+            openTarget target stamp=model.files.snapshot |> Maybe.map (\snapshot -> Desktop.OpenFilesTarget stamp (Files.intent snapshot target)) |> Maybe.withDefault (Desktop.CloseFiles stamp)
+            collection (identifier,label)=control ("files:collection:"++identifier) label "" (ready ("coll:"++identifier)) (openTarget ("coll:"++identifier))
+            location=model.files.snapshot |> Maybe.andThen .peer |> Maybe.map (\peer -> "Current location: "++peer.target) |> Maybe.withDefault "No Files window observed."
+        in [control "control:close" "Close Files menu" "" True Desktop.CloseFiles
+           ,control "files:refresh" "Refresh Files state" "Read location; never repeat an opening" (model.filesExpected==Nothing) Desktop.RefreshFiles
+           ,control "files:location:state" location "" False Desktop.CloseFiles
+           ,control "files:home" "Home" "" (ready "home") (openTarget "home")]
+           ++List.map collection Files.collections
+           ++[{id="control:files-path",domId=Desktop.key model "files:path",label=model.files.draft,ariaLabel="Folder path",detail="",enabled=True,message=scoped (\stamp -> Desktop.EditFilesPath stamp model.files.draft)}
+             ,control "files:open-path" "Open folder" "Open this path in Files" (ready model.files.draft) Desktop.OpenFilesPath]
+    else if model.systemMenuOpen then
         let scoped action=Desktop.capture model |> Maybe.map action
             control identity label detail enabled message={id=identity,domId=Desktop.key model (if identity=="control:close" then "system:close" else identity),label=label,ariaLabel=label,detail=detail,enabled=enabled,message=if enabled then scoped message else Nothing}
             state section value=control ("system:"++section++":state") value "" False Desktop.CloseSystemMenu
@@ -254,11 +270,12 @@ barControls model =
         ordinaryGroups=TaskbarShell.groups model.windows |> List.filter (\group -> List.length (owners group)/=1)
         reconnect = {id="bar:reconnect",domId="reconnect",label="Reconnect",ariaLabel="Reconnect to the window system",detail="",enabled=not model.windows.shell.reconnecting,message=Just (Desktop.Window (TaskbarShell.Native Shell.Reconnect))}
         retry = {id="bar:refresh-windows",domId=Desktop.key model "refresh-windows",label="Refresh windows",ariaLabel="Refresh windows",detail="",enabled=model.choice==Nothing,message=Just Desktop.RetryWindows}
-    in (if model.windows.shell.phase==Shell.Detached then reconnect else application) :: overview :: switcher :: {id="bar:notifications",domId=Desktop.key model "notifications:opener",label="Notifications"++(model.notifications.snapshot |> Maybe.map (\snapshot -> let count=List.length (List.filter (\entry -> entry.state=="live") snapshot.entries) in if count==0 then "" else " · "++String.fromInt count) |> Maybe.withDefault ""),ariaLabel="Open notifications",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenNotifications} :: {id="bar:system",domId=Desktop.key model "system:opener",label="System",ariaLabel="Open system menu",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenSystemMenu} :: {id="bar:settings",domId=Desktop.key model "settings:opener",label="Settings",ariaLabel="Open settings",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenSettings} :: List.map pinControl pinIds ++ List.map groupControl ordinaryGroups ++ (if not (String.isEmpty model.choiceNotice) && model.windows.shell.phase/=Shell.Detached then [retry] else []) ++ (if recoveryNeeded model && model.windows.shell.phase/=Shell.Detached then [recoveryControl "bar:recovery-refresh" model] else [])
+    in (if model.windows.shell.phase==Shell.Detached then reconnect else application) :: overview :: switcher :: {id="bar:notifications",domId=Desktop.key model "notifications:opener",label="Notifications"++(model.notifications.snapshot |> Maybe.map (\snapshot -> let count=List.length (List.filter (\entry -> entry.state=="live") snapshot.entries) in if count==0 then "" else " · "++String.fromInt count) |> Maybe.withDefault ""),ariaLabel="Open notifications",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenNotifications} :: {id="bar:files",domId=Desktop.key model "files:opener",label="Files",ariaLabel="Open Files menu",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenFiles} :: {id="bar:system",domId=Desktop.key model "system:opener",label="System",ariaLabel="Open system menu",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenSystemMenu} :: {id="bar:settings",domId=Desktop.key model "settings:opener",label="Settings",ariaLabel="Open settings",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenSettings} :: List.map pinControl pinIds ++ List.map groupControl ordinaryGroups ++ (if not (String.isEmpty model.choiceNotice) && model.windows.shell.phase/=Shell.Detached then [retry] else []) ++ (if recoveryNeeded model && model.windows.shell.phase/=Shell.Detached then [recoveryControl "bar:recovery-refresh" model] else [])
 
 notice : Desktop.Model -> String
 notice model =
-    if model.systemMenuOpen then (if model.systemMenuExpected/=Nothing then "Reading native system state…" else if model.systemMenuConfirmation/=Nothing then "Confirm or cancel the requested system change." else model.systemMenu.notice)
+    if model.filesOpen then (if model.filesExpected/=Nothing then "Reading Files state…" else model.files.notice)
+    else if model.systemMenuOpen then (if model.systemMenuExpected/=Nothing then "Reading native system state…" else if model.systemMenuConfirmation/=Nothing then "Confirm or cancel the requested system change." else model.systemMenu.notice)
     else if model.notificationsOpen then (if model.notificationsExpected/=Nothing then "Loading notifications…" else model.notifications.notice)
     else if model.settingsOpen then (if model.settingsExpected/=Nothing then "Loading settings…" else model.settings.notice)
     else if Desktop.switcherOpen model then
@@ -321,7 +338,7 @@ packet : Counter -> Counter -> Desktop.Model -> E.Value
 packet publication lease model =
     let
         encode control = E.object [("id",E.string control.id),("domId",E.string control.domId),("label",E.string control.label),("ariaLabel",E.string control.ariaLabel),("detail",E.string control.detail),("enabled",E.bool (control.enabled && control.message/=Nothing))]
-    in E.object [("surfaceProtocol",E.int 2),("appearance",Settings.encodeValues (model.settings.snapshot |> Maybe.map .values |> Maybe.withDefault Settings.defaults)),("publication",E.string (UInt64.string publication)),("lease",E.string (UInt64.string lease)),("mode",E.string (mode model)),("status",E.string (notice model)),("bar",E.list encode (barControls model)),("popup",E.list encode (controls model))]
+    in E.object [("surfaceProtocol",E.int 2),("appearance",Settings.encodeValues (model.settings.snapshot |> Maybe.map .values |> Maybe.withDefault Settings.defaults)),("publication",E.string (UInt64.string publication)),("lease",E.string (UInt64.string lease)),("mode",E.string (mode model)),("status",E.string ((notice model)++(if not model.filesOpen && (model.files.pending/=Nothing || String.startsWith "Files:" model.files.notice) then " · "++model.files.notice else ""))),("bar",E.list encode (barControls model)),("popup",E.list encode (controls model))]
 
 resolveAction : Counter -> Counter -> D.Value -> Desktop.Model -> Maybe Desktop.Msg
 resolveAction publication lease raw model =
@@ -340,7 +357,7 @@ resolve publication lease raw model =
         scopes child = D.map4 (\version shown scoped role -> (version==2 && shown==publication && scoped==lease,role)) (D.field "surfaceProtocol" D.int) (D.field "publication" UInt64.decoder) (D.field "lease" UInt64.decoder) (D.field "surface" D.string) |> D.andThen (\(valid,role) -> if valid then child role else D.fail "Stale surface event")
         context = strict ["surfaceProtocol","kind","surface","publication","lease","id","trigger","x","y"] (scopes (\role -> D.map4 (\identity trigger x y -> (role,identity,trigger)) (D.field "id" D.string) (D.field "trigger" D.string) (D.field "x" D.int) (D.field "y" D.int)))
         navigation = strict ["surfaceProtocol","kind","surface","publication","lease","key"] (scopes (\role -> if role=="popup" && mode model=="menu" then D.field "key" D.string else D.fail "No menu"))
-        query = strict ["surfaceProtocol","kind","surface","publication","lease","id","query"] (scopes (\role -> if role=="popup" && model.open then D.map2 Tuple.pair (D.field "id" D.string) (D.field "query" D.string) else D.fail "No applications"))
+        query = strict ["surfaceProtocol","kind","surface","publication","lease","id","query"] (scopes (\role -> if role=="popup" && (model.open || model.filesOpen) then D.map2 Tuple.pair (D.field "id" D.string) (D.field "query" D.string) else D.fail "No applications"))
         menuMessage key =
             (MenuBridge.menuSnapshot model.windows.menus).menu |> Maybe.andThen (\menu ->
                 let send = Just << Desktop.Window << TaskbarShell.MenuEvent
@@ -355,7 +372,7 @@ resolve publication lease raw model =
                     _ -> Nothing)
     in case D.decodeValue (D.field "kind" D.string) raw of
         Ok "surface-action" -> resolveAction publication lease raw model
-        Ok "surface-query" -> D.decodeValue query raw |> Result.toMaybe |> Maybe.andThen (\(identity,value) -> if identity/="control:search" then Nothing else Desktop.capture model |> Maybe.map (\stamp -> Desktop.SearchQuery stamp value))
+        Ok "surface-query" -> D.decodeValue query raw |> Result.toMaybe |> Maybe.andThen (\(identity,value) -> if identity=="control:search" && model.open then Desktop.capture model |> Maybe.map (\stamp -> Desktop.SearchQuery stamp value) else if identity=="control:files-path" && model.filesOpen then Desktop.capture model |> Maybe.map (\stamp -> Desktop.EditFilesPath stamp value) else Nothing)
         Ok "surface-menu-navigation" -> D.decodeValue navigation raw |> Result.toMaybe |> Maybe.andThen menuMessage
         Ok "surface-context" ->
             D.decodeValue context raw |> Result.toMaybe |> Maybe.andThen (\(role,identity,trigger) ->

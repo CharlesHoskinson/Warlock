@@ -295,6 +295,17 @@ static const char *request_kind(JsonNode *root) {
         if(!surface_fields(obj,names,selection?6:5) || !JSON_NODE_HOLDS_OBJECT(json_object_get_member(obj,"binding")) || !surface_uint(json_object_get_member(obj,"requestId"),&request) || !request || !surface_uint(json_object_get_member(obj,"chord"),&chord) || !chord || (selection && (!surface_uint(json_object_get_member(obj,"root"),&root) || !root)))return NULL;
         return value;
     }
+    if(g_str_equal(value,"files-request") || g_str_equal(value,"files-open")) {
+        gboolean navigation=g_str_equal(value,"files-open");guint64 request;
+        const char *const fields[]={"protocolVersion","kind","binding","requestId","intent"};
+        if(!surface_fields(obj,fields,navigation?5:4) || !JSON_NODE_HOLDS_OBJECT(json_object_get_member(obj,"binding")) || !surface_uint(json_object_get_member(obj,"requestId"),&request) || !request)return NULL;
+        if(navigation) {
+            JsonNode *node=json_object_get_member(obj,"intent");if(!node || !JSON_NODE_HOLDS_OBJECT(node))return NULL;
+            JsonObject *intent=json_node_get_object(node);const char *const names[]={"service","revision","target"};guint64 service,revision;
+            if(!surface_fields(intent,names,3) || !surface_uint(json_object_get_member(intent,"service"),&service) || !service || !surface_uint(json_object_get_member(intent,"revision"),&revision) || !revision || !surface_text(json_object_get_member(intent,"target"),2048,FALSE) || g_utf8_strlen(json_object_get_string_member(intent,"target"),-1)>512)return NULL;
+        }
+        return value;
+    }
     if(g_str_equal(value,"system-menu-request") || g_str_equal(value,"system-menu-effect")) {
         gboolean effect=g_str_equal(value,"system-menu-effect");guint64 request;
         const char *const fields[]={"protocolVersion","kind","binding","requestId","intent"};
@@ -483,7 +494,7 @@ static void receive(WebKitUserContentManager *manager,WebKitJavascriptResult *re
     if (qa_exit && (g_str_equal(kind,"window-effect") || g_str_equal(kind,"application-launch") || g_str_equal(kind,"host-reconnect"))) { g_print("frontend-request: %s\n",text);fflush(stdout); }
     if (g_str_equal(kind,"host-ready")) backend_start();
     else if (g_str_equal(kind,"host-reconnect")) backend_restart();
-    else if ((observation_kind(kind) || g_str_equal(kind,"projection-request") || g_str_equal(kind,"activation-history-request") || g_str_equal(kind,"switcher-selection-request") || g_str_equal(kind,"switcher-cancel-request") || g_str_equal(kind,"window-effect") || g_str_equal(kind,"catalog-request") || g_str_equal(kind,"taskbar-pins-write") || g_str_equal(kind,"system-menu-request") || g_str_equal(kind,"system-menu-effect") || g_str_equal(kind,"notification-request") || g_str_equal(kind,"notification-effect") || g_str_equal(kind,"shell-settings-request") || g_str_equal(kind,"shell-settings-write") || g_str_equal(kind,"application-launch"))) {
+    else if ((observation_kind(kind) || g_str_equal(kind,"projection-request") || g_str_equal(kind,"activation-history-request") || g_str_equal(kind,"switcher-selection-request") || g_str_equal(kind,"switcher-cancel-request") || g_str_equal(kind,"window-effect") || g_str_equal(kind,"catalog-request") || g_str_equal(kind,"taskbar-pins-write") || g_str_equal(kind,"files-request") || g_str_equal(kind,"files-open") || g_str_equal(kind,"system-menu-request") || g_str_equal(kind,"system-menu-effect") || g_str_equal(kind,"notification-request") || g_str_equal(kind,"notification-effect") || g_str_equal(kind,"shell-settings-request") || g_str_equal(kind,"shell-settings-write") || g_str_equal(kind,"application-launch"))) {
         if (!backend_ready || shutting_down) return;
         if (g_queue_get_length(&requests)>=16) { failed=TRUE;backend_ready=FALSE;deliver("{\"kind\":\"host-disconnected\"}");gtk_main_quit();return; }
         g_queue_push_tail(&requests,g_strconcat(text,"\n",NULL));write_next();
@@ -724,7 +735,7 @@ static gboolean surface_preflight(SurfaceGate *gate,JsonNode *root,guint queued,
     for (guint i=0;i<count;i++) {
         JsonNode *item=json_array_get_element(req,i);const char *rk=request_kind(item);
         g_autofree char *wire=json_to_string(item,FALSE);
-        if (!rk || strlen(wire)>4096 || (!observation_kind(rk) && !g_str_equal(rk,"projection-request") && !g_str_equal(rk,"activation-history-request") && !g_str_equal(rk,"switcher-selection-request") && !g_str_equal(rk,"switcher-cancel-request") && !g_str_equal(rk,"catalog-request") && !g_str_equal(rk,"taskbar-pins-write") && !g_str_equal(rk,"system-menu-request") && !g_str_equal(rk,"system-menu-effect") && !g_str_equal(rk,"notification-request") && !g_str_equal(rk,"notification-effect") && !g_str_equal(rk,"shell-settings-request") && !g_str_equal(rk,"shell-settings-write") && !g_str_equal(rk,"application-launch") && !g_str_equal(rk,"window-effect") && !g_str_equal(rk,"host-reconnect")) || (open && (g_str_equal(rk,"application-launch") || g_str_equal(rk,"window-effect")))) return FALSE;
+        if (!rk || strlen(wire)>4096 || (!observation_kind(rk) && !g_str_equal(rk,"projection-request") && !g_str_equal(rk,"activation-history-request") && !g_str_equal(rk,"switcher-selection-request") && !g_str_equal(rk,"switcher-cancel-request") && !g_str_equal(rk,"catalog-request") && !g_str_equal(rk,"taskbar-pins-write") && !g_str_equal(rk,"files-request") && !g_str_equal(rk,"files-open") && !g_str_equal(rk,"system-menu-request") && !g_str_equal(rk,"system-menu-effect") && !g_str_equal(rk,"notification-request") && !g_str_equal(rk,"notification-effect") && !g_str_equal(rk,"shell-settings-request") && !g_str_equal(rk,"shell-settings-write") && !g_str_equal(rk,"application-launch") && !g_str_equal(rk,"window-effect") && !g_str_equal(rk,"host-reconnect")) || (open && (g_str_equal(rk,"application-launch") || g_str_equal(rk,"window-effect") || g_str_equal(rk,"files-open")))) return FALSE;
         if (g_str_equal(rk,"host-reconnect") && count!=1) return FALSE;
         if (!ready && !g_str_equal(rk,"host-reconnect")) return FALSE;
     }
@@ -876,6 +887,14 @@ static void test_surface_preflight(void) {
     json_object_set_string_member(system_intent,"operation","network-enable");g_assert_false(surface_preflight(&gate,root,0,0,TRUE,&out));json_object_set_int_member(system_intent,"value",1);g_assert_true(surface_preflight(&gate,root,0,0,TRUE,&out));
     json_object_set_string_member(system_intent,"operation","execute");g_assert_false(surface_preflight(&gate,root,0,0,TRUE,&out));json_object_set_string_member(system_intent,"operation","session-lock");json_object_set_int_member(system_intent,"value",0);g_assert_true(surface_preflight(&gate,root,0,0,TRUE,&out));
     json_object_set_string_member(system_intent,"path","/tmp/foreign");g_assert_false(surface_preflight(&gate,root,0,0,TRUE,&out));json_object_remove_member(system_intent,"path");
+    json_object_set_string_member(frame,"mode","closed");json_array_remove_element(array,0);
+    JsonNode *files=test_json("{\"protocolVersion\":3,\"kind\":\"files-open\",\"binding\":{},\"requestId\":\"1\",\"intent\":{\"service\":\"9\",\"revision\":\"1\",\"target\":\"coll:images\"}}");
+    json_array_add_element(array,files);g_assert_true(surface_preflight(&gate,root,0,0,TRUE,&out));
+    JsonObject *files_intent=json_object_get_object_member(json_node_get_object(files),"intent");
+    json_object_set_string_member(frame,"mode","files");g_assert_false(surface_preflight(&gate,root,0,0,TRUE,&out));
+    json_object_set_string_member(frame,"mode","closed");json_object_set_string_member(files_intent,"instance","foreign");g_assert_false(surface_preflight(&gate,root,0,0,TRUE,&out));json_object_remove_member(files_intent,"instance");
+    json_object_set_string_member(files_intent,"revision","0");g_assert_false(surface_preflight(&gate,root,0,0,TRUE,&out));json_object_set_string_member(files_intent,"revision","1");
+    json_object_set_string_member(files_intent,"target","/tmp/Documents");g_assert_true(surface_preflight(&gate,root,0,0,TRUE,&out));
     json_node_unref(root);
 }
 static void test_surface_managers(void) {

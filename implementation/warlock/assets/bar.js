@@ -4927,7 +4927,7 @@ var $author$project$SurfaceRenderer$bounded = function (limit) {
 };
 var $author$project$SurfaceRenderer$Control = F6(
 	function (identity, domId, label, ariaLabel, detail, enabled) {
-		return {U: ariaLabel, O: detail, o: domId, B: enabled, I: identity, u: label};
+		return {U: ariaLabel, O: detail, o: domId, C: enabled, I: identity, u: label};
 	});
 var $elm$json$Json$Decode$bool = _Json_decodeBool;
 var $elm$json$Json$Decode$field = _Json_decodeField;
@@ -5376,7 +5376,7 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 				$elm$core$List$member,
 				record.N,
 				_List_fromArray(
-					['closed', 'picker', 'applications', 'menu', 'overview', 'switcher', 'snap', 'settings', 'notifications', 'system']))) || (((record.N !== 'closed') && _Utils_eq(record.ac, $author$project$UInt64$zero)) || (((record.N === 'closed') && (!$elm$core$List$isEmpty(record.g))) || ((!unique(identities)) || ((!unique(
+					['closed', 'picker', 'applications', 'menu', 'overview', 'switcher', 'snap', 'settings', 'notifications', 'system', 'files']))) || (((record.N !== 'closed') && _Utils_eq(record.ac, $author$project$UInt64$zero)) || (((record.N === 'closed') && (!$elm$core$List$isEmpty(record.g))) || ((!unique(identities)) || ((!unique(
 				A2(
 					$elm$core$List$map,
 					function ($) {
@@ -5388,7 +5388,7 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 					return $elm$core$String$isEmpty(control.I) || $elm$core$String$isEmpty(control.o);
 				},
 				all)))))))) ? $elm$core$Result$Err('Invalid presentation scope/identities') : $elm$core$Result$Ok(
-				{s: record.s, n: record.n, Z: record.ac, a: record.N, g: record.g, V: record.ae, x: record.q});
+				{s: record.s, n: record.n, Z: record.ac, a: record.N, g: record.g, V: record.ae, y: record.q});
 		},
 		A2(
 			$elm$core$Result$mapError,
@@ -5410,7 +5410,7 @@ var $author$project$Presentation$accept = F2(
 		if (_v0.$ === 1) {
 			return _Utils_update(
 				model,
-				{F: $elm$core$Maybe$Nothing});
+				{x: $elm$core$Maybe$Nothing});
 		} else {
 			var snapshot = _v0.a;
 			return ((A2(
@@ -5422,7 +5422,7 @@ var $author$project$Presentation$accept = F2(
 				model.Z))) ? prior : {
 				Y: $author$project$SurfaceRenderer$publication(snapshot),
 				Z: $author$project$SurfaceRenderer$lease(snapshot),
-				F: $elm$core$Maybe$Just(snapshot)
+				x: $elm$core$Maybe$Just(snapshot)
 			};
 		}
 	});
@@ -5430,7 +5430,7 @@ var $author$project$Bar$actions = _Platform_outgoingPort('actions', $elm$core$Ba
 var $elm$core$Platform$Sub$batch = _Platform_batch;
 var $author$project$Presentation$current = function (_v0) {
 	var model = _v0;
-	return model.F;
+	return model.x;
 };
 var $author$project$CapturedAction$CapturedAction = $elm$core$Basics$identity;
 var $author$project$CapturedAction$decode = function (raw) {
@@ -5484,7 +5484,7 @@ var $author$project$SurfaceRenderer$enabled = F3(
 		return A2(
 			$elm$core$List$any,
 			function (control) {
-				return _Utils_eq(control.I, identity) && control.B;
+				return _Utils_eq(control.I, identity) && control.C;
 			},
 			popup ? snapshot.g : snapshot.n);
 	});
@@ -5554,7 +5554,7 @@ var $author$project$Presentation$dispatch = F3(
 	function (popup, raw, _v0) {
 		var model = _v0;
 		var _v1 = _Utils_Tuple2(
-			model.F,
+			model.x,
 			$author$project$CapturedAction$decode(raw));
 		if ((!_v1.a.$) && (!_v1.b.$)) {
 			var snapshot = _v1.a.a;
@@ -5804,7 +5804,7 @@ var $elm$core$Task$perform = F2(
 			A2($elm$core$Task$map, toMessage, task));
 	});
 var $elm$browser$Browser$element = _Browser_element;
-var $author$project$Presentation$initial = {Y: $author$project$UInt64$zero, Z: $author$project$UInt64$zero, F: $elm$core$Maybe$Nothing};
+var $author$project$Presentation$initial = {Y: $author$project$UInt64$zero, Z: $author$project$UInt64$zero, x: $elm$core$Maybe$Nothing};
 var $elm$core$Maybe$map = F2(
 	function (f, maybe) {
 		if (!maybe.$) {
@@ -5874,6 +5874,10 @@ var $elm$core$List$drop = F2(
 		}
 	});
 var $elm$core$String$endsWith = _String_endsWith;
+var $author$project$SurfaceRenderer$fieldIdentity = function (_v0) {
+	var snapshot = _v0;
+	return (snapshot.a === 'files') ? 'control:files-path' : 'control:search';
+};
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
 var $elm$html$Html$Attributes$id = $elm$html$Html$Attributes$stringProperty('id');
 var $elm$html$Html$input = _VirtualDom_node('input');
@@ -5957,14 +5961,21 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 								]))
 						]));
 			} else {
-				if (popup && ((snapshot.a === 'system') && A2($elm$core$String$endsWith, ':state', item.I))) {
+				if (popup && (A2(
+					$elm$core$List$member,
+					snapshot.a,
+					_List_fromArray(
+						['system', 'files'])) && A2($elm$core$String$endsWith, ':state', item.I))) {
 					return A2(
 						$elm$html$Html$p,
 						_List_fromArray(
 							[
 								$elm$html$Html$Attributes$class('notification-text'),
 								$elm$html$Html$Attributes$id(item.o),
-								A2($elm$html$Html$Attributes$attribute, 'data-system-content', item.I)
+								A2(
+								$elm$html$Html$Attributes$attribute,
+								(snapshot.a === 'files') ? 'data-files-content' : 'data-system-content',
+								item.I)
 							]),
 						_List_fromArray(
 							[
@@ -5980,7 +5991,13 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 									]))
 							]));
 				} else {
-					if (popup && ((snapshot.a === 'applications') && (item.I === 'control:search'))) {
+					if (popup && (A2(
+						$elm$core$List$member,
+						snapshot.a,
+						_List_fromArray(
+							['applications', 'files'])) && _Utils_eq(
+						item.I,
+						$author$project$SurfaceRenderer$fieldIdentity(current)))) {
 						var event = A2(
 							$elm$json$Json$Decode$andThen,
 							function (_v2) {
@@ -6040,13 +6057,15 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 								[
 									$elm$html$Html$Attributes$class('launcher-search'),
 									$elm$html$Html$Attributes$id(item.o),
-									$elm$html$Html$Attributes$type_('search'),
-									$elm$html$Html$Attributes$placeholder('Search applications'),
+									$elm$html$Html$Attributes$type_(
+									(snapshot.a === 'files') ? 'text' : 'search'),
+									$elm$html$Html$Attributes$placeholder(
+									(snapshot.a === 'files') ? '/path/to/folder or ~/Documents' : 'Search applications'),
 									$elm$html$Html$Attributes$value(item.u),
 									A2($elm$html$Html$Attributes$attribute, 'aria-label', item.U),
 									A2($elm$html$Html$Attributes$attribute, 'data-surface-field', item.I),
 									A2($elm$html$Html$Attributes$attribute, 'autocomplete', 'off'),
-									$elm$html$Html$Attributes$disabled(!item.B),
+									$elm$html$Html$Attributes$disabled(!item.C),
 									A2($elm$html$Html$Events$on, 'input', event),
 									A2($elm$html$Html$Events$on, 'compositionend', event)
 								]),
@@ -6059,7 +6078,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 									$elm$html$Html$Attributes$class(kind),
 									$elm$html$Html$Attributes$id(item.o),
 									A2($elm$html$Html$Attributes$attribute, 'aria-label', item.U),
-									$elm$html$Html$Attributes$disabled(!item.B),
+									$elm$html$Html$Attributes$disabled(!item.C),
 									A2($elm$html$Html$Attributes$attribute, 'data-surface-control', item.I),
 									A2(
 									$elm$html$Html$Attributes$attribute,
@@ -6072,7 +6091,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 										$elm$core$List$member,
 										snapshot.a,
 										_List_fromArray(
-											['menu', 'switcher', 'snap', 'settings', 'notifications', 'system'])) && (item.O === 'Selected'))) ? 'true' : 'false')
+											['menu', 'switcher', 'snap', 'settings', 'notifications', 'system', 'files'])) && (item.O === 'Selected'))) ? 'true' : 'false')
 								]),
 							_List_fromArray(
 								[
@@ -6168,7 +6187,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 					_List_fromArray(
 						[
 							$elm$html$Html$text(
-							(snapshot.a === 'applications') ? 'Applications' : ((snapshot.a === 'overview') ? 'Task View' : ((snapshot.a === 'switcher') ? 'Switch windows' : ((snapshot.a === 'snap') ? 'Snap window' : ((snapshot.a === 'system') ? 'System' : ((snapshot.a === 'notifications') ? 'Notifications' : ((snapshot.a === 'settings') ? 'Settings' : ((snapshot.a === 'menu') ? 'Window actions' : 'Choose a window'))))))))
+							(snapshot.a === 'applications') ? 'Applications' : ((snapshot.a === 'overview') ? 'Task View' : ((snapshot.a === 'switcher') ? 'Switch windows' : ((snapshot.a === 'snap') ? 'Snap window' : ((snapshot.a === 'files') ? 'Files' : ((snapshot.a === 'system') ? 'System' : ((snapshot.a === 'notifications') ? 'Notifications' : ((snapshot.a === 'settings') ? 'Settings' : ((snapshot.a === 'menu') ? 'Window actions' : 'Choose a window')))))))))
 						])),
 					A2(
 					$elm$html$Html$p,
@@ -6179,7 +6198,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 						]),
 					_List_fromArray(
 						[
-							$elm$html$Html$text(snapshot.x)
+							$elm$html$Html$text(snapshot.y)
 						])),
 					(snapshot.a === 'overview') ? A2(
 					$elm$html$Html$div,
@@ -6256,16 +6275,16 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 						_List_fromArray(
 							[
 								$elm$html$Html$Attributes$class(
-								($elm$core$String$isEmpty(snapshot.x) || (snapshot.x === 'Ready')) ? 'surface-status surface-status-idle' : 'surface-status'),
+								($elm$core$String$isEmpty(snapshot.y) || (snapshot.y === 'Ready')) ? 'surface-status surface-status-idle' : 'surface-status'),
 								A2($elm$html$Html$Attributes$attribute, 'role', 'status'),
 								A2($elm$html$Html$Attributes$attribute, 'aria-live', 'polite'),
 								A2($elm$html$Html$Attributes$attribute, 'aria-atomic', 'true'),
-								A2($elm$html$Html$Attributes$attribute, 'aria-label', snapshot.x),
-								$elm$html$Html$Attributes$title(snapshot.x)
+								A2($elm$html$Html$Attributes$attribute, 'aria-label', snapshot.y),
+								$elm$html$Html$Attributes$title(snapshot.y)
 							]),
 						_List_fromArray(
 							[
-								$elm$html$Html$text(snapshot.x)
+								$elm$html$Html$text(snapshot.y)
 							])))
 				]));
 	});

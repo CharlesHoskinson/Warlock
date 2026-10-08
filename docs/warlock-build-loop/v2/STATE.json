@@ -1,13 +1,109 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-08T13:30:02.218927+00:00",
+  "updatedUTC": "2026-10-08T14:19:59.615162+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "files-integration",
+    "requirements": [
+      "ELM-UX-033"
+    ],
+    "scenarios": [
+      "ux-033"
+    ],
+    "paths": [
+      "implementation/warlock/src/Files.elm",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/src/SurfaceRenderer.elm",
+      "implementation/warlock/src/SurfaceController.elm",
+      "implementation/warlock/adapter/explorer.py",
+      "implementation/warlock/adapter/daemon.py",
+      "implementation/warlock/native/host.c",
+      "implementation/warlock/native/surface.h",
+      "implementation/warlock/assets/popup-adapter.js",
+      "implementation/warlock/qa/FilesReplay.elm",
+      "implementation/warlock/qa/check-files.py",
+      "implementation/warlock/qa/files.qnt",
+      "implementation/warlock/qa/files-browser.mjs",
+      "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/README.md",
+      "implementation/warlock/assets/elm.js",
+      "implementation/warlock/assets/bar.js",
+      "implementation/warlock/assets/popup.js",
+      "implementation/warlock/qa/current-search-build.json",
+      "implementation/warlock/src/Popup.elm",
+      "implementation/warlock/src/Presentation.elm"
+    ],
+    "before": "The integrated Elm shell has no installed Files collection/path navigation or guarded explorer reuse.",
+    "after": "Files opens requested paths/collections through the installed explorer IPC, reuses its exact native instance, exposes observed outcomes and preserves all file operation sources.",
+    "verification": [
+      "Changed Elm/native admission, real installed explorer with private home/runtime, exactly-once identity/reuse/refusal cases, browser keyboard and original isolated native collection recording."
+    ],
+    "status": "completed-partial",
+    "evidence": {
+      "path": "implementation/warlock/qa/evidence/files/manifest.json",
+      "sha256": "e3b870cbcde846bd926f65b675c976892772b4ba403a75983a2cd64932058666",
+      "scope": "Integrated Files collection/path navigation with immutable Elm state and strict native instance admission. Actual unmodified installed explorer in a private desktop: physical Images selection and typed ~/Documents each reopen the requested location in the same native instance; no file operation or Quint spec changes. Independent original-scenario acceptance remains open.",
+      "sourceBaseRevision": "5fa23732966f1ac15a57139689b6524f392a5ff0",
+      "sourceHashes": {
+        "implementation/warlock/src/Files.elm": "c2099647bca3b325ca21485bb3a246e0b6d7c2a693d0bcfd5f10dedbad7a89f7",
+        "implementation/warlock/src/Desktop.elm": "de7ce3f346d9a4cb50d732eb43dd6fd75361040f7f9d1dc46e2ae82efb73e326",
+        "implementation/warlock/src/Surface.elm": "fdbf5df40bcfefd0e95e01e19d147756675b94f0508775083c8e40e0dc4a8211",
+        "implementation/warlock/src/SurfaceRenderer.elm": "7df645ec876ee641edb6fbc6a8d6acfb72cc5fdf7102a607be5e280e187bc2a7",
+        "implementation/warlock/src/SurfaceController.elm": "b4cdd19452d87525053bdfb4c743678984c7ec8ebd912920e7f2b63ad8d1d398",
+        "implementation/warlock/adapter/explorer.py": "5771d66fe29af0aed5e6f81f0d0287374d816ea048bdeaf08ae07a9cdf681e78",
+        "implementation/warlock/adapter/daemon.py": "b31a2da7d16f687faf4f67e02cb3b7ea834ec88c52b2f999e7452a8ba2348289",
+        "implementation/warlock/native/host.c": "9af3d797a020c2415757f5946c6c92b1066a1a037e907480c4ec4e06f4a0b76e",
+        "implementation/warlock/native/surface.h": "a0627b0e6cf5b49ee1fd2e94836844d2a09f933bba44c35e53863452c1204a5f",
+        "implementation/warlock/assets/popup-adapter.js": "87299dd82e0466026253422ad172b789aa30d9501d977e5270da01233d3b2fbc",
+        "implementation/warlock/qa/FilesReplay.elm": "5e353f83a87e87fde9ea0eb0c85cfe7a1419ac738d647ca0cefb573e62050478",
+        "implementation/warlock/qa/check-files.py": "0b139e5e7a881a66ad149700b455a1c33721c916e0bb74680427dd7e659aed1b",
+        "implementation/warlock/qa/files.qnt": "e564b7e36d92188a28f93f4061475633bf22211317af713ace19128e866c5aa0",
+        "implementation/warlock/qa/files-browser.mjs": "12b09fdad64331ac8296f350a31d96b959bd7a865f21e764bcbbf5302a241c0d",
+        "implementation/warlock/qa/check-search.py": "f31c1a72f30b33ca78ca6e698097cb3808b6ac976b7475009fa679ae30e6e016",
+        "implementation/warlock/qa/native-window-feedback.py": "d65a55fa4cc5eef43138ec034c829db81c18c65b03c19df15b42ca0983048d48",
+        "implementation/warlock/README.md": "5ff16814ccea1c46e689de47a366235dcbe7b5d70665de6504c0303f7dbb267a",
+        "implementation/warlock/assets/elm.js": "f3d1c0cff0b594732b6787b8f6668c1512ce9acc9593fcc42f121ba293a03598",
+        "implementation/warlock/assets/bar.js": "c9c69fcbe3bfad8acf8a865ce67fbc10641c7d88fce9140439549e0b16e00d81",
+        "implementation/warlock/assets/popup.js": "346577fb4154790ef9a22ae71a53ad84751c401e6ad354a92d86541cb2b629d4",
+        "implementation/warlock/qa/current-search-build.json": "26ee61c7dd9a76568660ab620f4aa12d02e359fe9af7ab4326c891a121e162be",
+        "implementation/warlock/src/Popup.elm": "89d09ccd5221862f97ed8c6ef9584b1cdae1c2836a03a36a745c2eb0cb876103",
+        "implementation/warlock/src/Presentation.elm": "d5e5638753d14da9f4a690ee65bfce1a7d727846c56464b84e27c48448b2eb77"
+      },
+      "reviewerDisposition": {
+        "name": "root-files",
+        "independent": false,
+        "disposition": "Owner-observed scenario evidence; independent acceptance pending."
+      }
+    },
+    "observed": "Integrated Files collection/path navigation with immutable Elm state and strict native instance admission. Actual unmodified installed explorer in a private desktop: physical Images selection and typed ~/Documents each reopen the requested location in the same native instance; no file operation or Quint spec changes. Independent original-scenario acceptance remains open.",
+    "missingObservations": [
+      "Independent original ux-033 review against this exact source/core/plugin/toolchain tuple.",
+      "Actual native cold startup and legacy minimized/other-workspace summon behavior are not established by this existing-window fixture.",
+      "Applicable release AT/IME/resource and full desktop journeys remain separate; browser composition evidence does not establish native IME acceptance."
+    ]
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "system-menu",
     "requirements": [
       "ELM-UX-032"
@@ -86,67 +182,6 @@
       "Actual hardware/network/power transitions and interactive authorization are not established by private native-protocol fixtures.",
       "Applicable release AT/IME/resource and full desktop journeys remain separate."
     ]
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "notification-center",
-    "requirements": [
-      "ELM-UX-031"
-    ],
-    "scenarios": [
-      "ux-031",
-      "notification-valid",
-      "notification-reused"
-    ],
-    "paths": [
-      "implementation/warlock/src/Notifications.elm",
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/src/SurfaceRenderer.elm",
-      "implementation/warlock/src/SurfaceController.elm",
-      "implementation/warlock/adapter/notification_service.py",
-      "implementation/warlock/adapter/daemon.py",
-      "implementation/warlock/native/host.c",
-      "implementation/warlock/native/surface.h",
-      "implementation/warlock/assets/popup-adapter.js",
-      "implementation/warlock/qa/NotificationsReplay.elm",
-      "implementation/warlock/qa/check-notifications.py",
-      "implementation/warlock/qa/notifications.qnt",
-      "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/README.md",
-      "implementation/warlock/assets/elm.js",
-      "implementation/warlock/assets/bar.js",
-      "implementation/warlock/assets/popup.js",
-      "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/qa/notifications-browser.mjs",
-      "implementation/warlock/qa/notification-producer.py",
-      "implementation/warlock/assets/shell.css"
-    ],
-    "before": "The integrated shell has no notification center or native producer action lifecycle.",
-    "after": "The center shows current notifications and history; exact producer/incarnation actions dispatch once, while expired or replaced targets are removed and rejected.",
-    "verification": [
-      "Changed Elm views/reducer and native units; real private-D-Bus producer/action/expiry/replacement fixtures; native center keyboard and painted lifecycle."
-    ],
-    "status": "native-notifications-observed-independent-acceptance-open",
-    "evidence": {
-      "path": "implementation/warlock/qa/evidence/notifications/manifest.json",
-      "sha256": "e082dadb49cb0807add94345fe6696ddcc39c7d3d3abae7d1f5667e3f0a5179b"
-    },
-    "nextAction": "Implement the next original mandatory system-menu slice ELM-UX-032: supported volume/network/power/session observations and explicit unavailable controls; preserve notification review obligations."
   },
   "recentSlices": [
     {

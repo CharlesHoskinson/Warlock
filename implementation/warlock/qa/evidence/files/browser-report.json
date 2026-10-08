@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "Files collection catalog and native current location are readable"
+    },
+    {
+      "name": "Location is semantic text and folder input has an accessible name"
+    },
+    {
+      "name": "End reveals last available collection in a small viewport"
+    },
+    {
+      "name": "Home reveals Close"
+    },
+    {
+      "name": "Folder input retains focus instead of restoring an old button"
+    },
+    {
+      "name": "Preedit disables navigation and submits no native edit or open"
+    },
+    {
+      "name": "Composition commit submits a field edit only"
+    },
+    {
+      "name": "Acknowledged field retains focus and enables explicit Open folder"
+    },
+    {
+      "name": "Tab then Enter submits one explicit scoped folder action"
+    },
+    {
+      "name": "Pending disables navigation while keeping read-only refresh"
+    },
+    {
+      "name": "Escape closes through matching physical release"
+    },
+    {
+      "name": "No browser exceptions",
+      "detail": []
+    }
+  ],
+  "captures": [
+    "files-collections.png"
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "browserExitCode": 0
+}

@@ -120,3 +120,18 @@ ELM-UX-032 has a private native-protocol and compositor recording of unavailable
 networking with observed remaining state, physical volume/mute changes and
 confirmation cancellation. Actual hardware, authorization dialogs, accessibility
 and independent original-scenario acceptance remain separate.
+
+
+The Files button opens Home, the installed explorer's seven collections, or a
+folder entered as an absolute path or `~/…`. Typing does not open a location;
+choose Open folder explicitly. Navigation reuses the exact installed Quickshell
+instance and reports success only after native location readback. The menu closes
+before navigation and does not force keyboard focus afterward. Unknown requests
+are never automatically repeated; Refresh reads current explorer state.
+
+The adapter uses the installed explorer's launch/reuse IPC and never invokes or
+rewrites `ops.sh` or its Quint specification. Frontend text cannot select an
+executable, QML root, instance or IPC method. The ELM-UX-033 recording uses the
+actual installed explorer with private HOME/runtime: physical collection choice,
+folder typing and observed reuse pass. Cold startup, minimized/other-workspace
+summoning, accessibility and independent acceptance remain separate obligations.

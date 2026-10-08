@@ -39,15 +39,15 @@ main = Browser.element
                         let composing = D.decodeValue (D.field "kind" D.string) value==Ok "surface-preedit"
                         in ({model | pendingQuery=Just query,composing=composing},if composing then Cmd.none else actions wire)
                     Nothing -> (model,Cmd.none)
-            else if (model.pendingQuery/=Nothing || model.composing) && (D.decodeValue (D.field "id" D.string) value |> Result.map (String.startsWith "entry:") |> Result.withDefault False) then (model,Cmd.none)
+            else if (model.pendingQuery/=Nothing || model.composing) && (D.decodeValue (D.field "id" D.string) value |> Result.map (\identity -> String.startsWith "entry:" identity || identity=="files:open-path" || identity=="files:home" || String.startsWith "files:collection:" identity) |> Result.withDefault False) then (model,Cmd.none)
             else (model,Presentation.dispatch True value model.presentation |> Maybe.map actions |> Maybe.withDefault Cmd.none)
         Present raw ->
             let acceptedPresentation = Presentation.accept raw model.presentation
                 (previews,commands) = Preview.present (Presentation.current acceptedPresentation) model.previews
                 pending = model.pendingQuery |> Maybe.andThen (\query -> case Presentation.current acceptedPresentation of
-                    Just snapshot -> if SurfaceRenderer.mode snapshot=="applications" && SurfaceRenderer.queryValue snapshot/=Just query then Just query else Nothing
+                    Just snapshot -> if List.member (SurfaceRenderer.mode snapshot) ["applications","files"] && SurfaceRenderer.queryValue snapshot/=Just query then Just query else Nothing
                     Nothing -> Nothing)
-                composing = model.composing && (Presentation.current acceptedPresentation |> Maybe.map (\snapshot -> SurfaceRenderer.mode snapshot=="applications") |> Maybe.withDefault False)
+                composing = model.composing && (Presentation.current acceptedPresentation |> Maybe.map (\snapshot -> List.member (SurfaceRenderer.mode snapshot) ["applications","files"]) |> Maybe.withDefault False)
                 queryCommand = if composing then Cmd.none else pending |> Maybe.andThen (\query -> Presentation.query query acceptedPresentation) |> Maybe.map actions |> Maybe.withDefault Cmd.none
             in ({presentation=acceptedPresentation,previews=previews,pendingQuery=pending,composing=composing},Cmd.batch [previewCommands commands,queryCommand])
         NativePreview raw ->
