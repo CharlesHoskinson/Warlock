@@ -17,7 +17,10 @@
     "doctor",
     "plan",
     "handoff",
-    "claim"
+    "claim",
+    "remaining",
+    "review",
+    "report"
   ],
   "exitCodes": {
     "0": "structural checks pass (advisories may remain)",
@@ -96,5 +99,6 @@
   "doctor": "Read-only local package presence, Python/Git and PATH client availability plus scratch ignore/record state. Does not launch client executables, run builds, install, establish trust, validate host execution or qualify the native runtime. Missing package paths fail; absent optional clients do not.",
   "claim": "Read-only claim --requirement ID --scenario NAME --evidence REPO_FILE (repeat) --scope OBSERVED_SCOPE --disposition NONACCEPTED --missing TEXT (repeat). Requires an owned participant record and real nonsymlink evidence plus existing selected sources. Copies exact original oracle/verification and current source/evidence hashes. Output claimSchema=1 packet is accepted by record --claim-file, alongside existing bare arrays; record revalidates all claims. Does not write, interpret evidence, update the ledger, appoint an external reviewer or allow accepted. Partial/blocked require explicit missing observations. Reviewer is the participant owner; historical prior claims are marked only in memory while preparing current hashes.",
   "remaining": "Read-only recorded backlog: --requirement ID (repeat), --status DISPOSITION (repeat) or --summary counts only. Default excludes recorded accepted scenarios. Includes exact original given/when/then and verification plus the ledger scenario row. Counts and dispositions are not revalidated acceptance or delivered-feature totals. Never selects work or changes the ledger; baseline is not the entire release scope.",
-  "review": "Read-only participant handoff plus staged-byte and contribution-scope review. Declared sources and recorded evidence are allowed. --include REPO_FILE explicitly asserts owned support scope, never overrides protected foreign paths or permits archival implementation. Staged entries must be resolved regular files and match current bytes, including deletion. Missing records/mismatches fail; empty index advises. Does not stage, run QA, commit, publish or certify ownership/observations."
+  "review": "Read-only participant handoff plus staged-byte and contribution-scope review. Declared sources and recorded evidence are allowed. --include REPO_FILE explicitly asserts owned support scope, never overrides protected foreign paths or permits archival implementation. Staged entries must be resolved regular files and match current bytes, including deletion. Missing records/mismatches fail; empty index advises. Does not stage, run QA, commit, publish or certify ownership/observations.",
+  "report": "Read-only delivery note from an owned record. Global --json returns a reportSchema=1 packet; report --markdown renders reviewable prose and is incompatible with --json. Includes intended versus observed behavior, selected changes from initial hashes, uncommitted paths, exact oracles/verification, evidence scope/hashes, missing obligations and structural findings. No observation remains explicit; stale evidence fails with findings retained. Does not run QA, post, change records/ledger or infer acceptance. Source HEAD is not a tested source tuple for uncommitted drafts."
 }

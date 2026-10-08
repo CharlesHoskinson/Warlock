@@ -259,6 +259,7 @@ def handoff(root, record, reqs, state):
                 'requirement': requirement, 'scenario': scenario['name'],
                 'oracle': scenario['then'], 'verificationScope': reqs[requirement]['verification'],
                 'recordedDisposition': claim['disposition'] if claim else None,
+                'scope': claim['scope'] if claim else None,
                 'evidenceMatchesCurrentSources': bool(claim) and not claim.get('historicalAfterSourceChange', False)
                     and claim['sourceHashes'] == current
                     and all(digest(safe(root, e['path'])) == e['sha256'] for e in claim['evidence']),
@@ -299,6 +300,69 @@ def doctor(root, record_path):
         'missingPackageFiles': missing,
         'errors': ['Missing package file: ' + n for n in missing],
         'warnings': warnings}
+
+
+def contribution_report(root, record, reqs, state):
+    """Prepare a delivery note from recorded observations, without inventing results."""
+    packet = handoff(root, record, reqs, state)
+    current = packet['sourceHashes']
+    selected_dirty = set(dirty_names(root)) & set(current)
+    packet.update(
+        reportSchema=1, releaseAccepted=False,
+        intendedBehavior=record['slice']['after'],
+        observedResult=packet['lastIteration']['summary'] if packet['lastIteration'] else None,
+        selectedChanges=[{'path': name, 'initialSha256': record['sourceHashes'].get(name),
+                         'currentSha256': sha, 'uncommitted': name in selected_dirty}
+                        for name, sha in current.items()
+                        if sha != record['sourceHashes'].get(name) or name in selected_dirty],
+        reportBoundary='Contributor self-attestation for review. Intended behavior is not an observation; '
+                       'matching hashes do not establish oracle truth, independent review or release acceptance.')
+    return packet
+
+
+def report_markdown(packet):
+    # Keep contributor text literal: no HTML, links or injected Markdown headings.
+    def literal(value):
+        text = ' '.join(str(value).splitlines())
+        for character in ('\\', '`', '*', '_', '[', ']', '<', '>', '#', '|'):
+            text = text.replace(character, '\\' + character)
+        return text
+
+    lines = ['Warlock contribution: ' + literal(packet['slice']['id']), '',
+             'Owner: ' + literal(packet['owner']),
+             'Source HEAD: ' + literal(packet['sourceRevision']) + ' (see uncommitted paths below).', '',
+             'Before: ' + literal(packet['slice']['before']),
+             'Intended result: ' + literal(packet['intendedBehavior']),
+             'Recorded observation: ' + literal(packet['observedResult'] or 'No iteration recorded.'), '',
+             packet['reportBoundary'], '', 'Selected source changes:', '']
+    for change in packet['selectedChanges']:
+        lines.append('- ' + literal(change['path']) +
+                     (' — uncommitted' if change['uncommitted'] else ' — committed') +
+                     '; current SHA-256: ' + literal(change['currentSha256'] or 'deleted'))
+    if not packet['selectedChanges']:
+        lines.append('No selected source changes since this record began.')
+    lines.extend(['', 'Original scenario observations:', ''])
+    for observation in packet['observations']:
+        lines.extend(['- ' + literal(observation['requirement']) + ' / ' + literal(observation['scenario']) +
+                      ': recorded disposition ' + literal(observation['recordedDisposition'] or 'none') + '.',
+                      '  Original oracle: ' + literal(observation['oracle']),
+                      '  Verification obligations: ' + literal(observation['verificationScope']),
+                      '  Source/evidence hashes: ' + ('current' if observation['evidenceMatchesCurrentSources']
+                                                    else 'not current or no observation') + '.'])
+        if observation.get('scope'):
+            lines.append('  Recorded evidence scope: ' + literal(observation['scope']))
+        for evidence in observation['evidence']:
+            lines.append('  Evidence: ' + literal(evidence['path']) + '; SHA-256: ' + literal(evidence['sha256']))
+        for missing in observation['missingObservations']:
+            lines.append('  Remaining observation: ' + literal(missing))
+    lines.extend(['', 'Planned verification (execution is not inferred):', ''])
+    lines.extend('- ' + literal(item) for item in packet['slice']['verification'])
+    if packet['errors'] or packet['warnings']:
+        lines.extend(['', 'Structural findings:', ''])
+        lines.extend('- Error: ' + literal(item) for item in packet['errors'])
+        lines.extend('- Advisory: ' + literal(item) for item in packet['warnings'])
+    lines.extend(['', 'Full release acceptance is not established by this report.', ''])
+    return '\n'.join(lines)
 
 
 def remaining(root, reqs, requirements, statuses, summary_only):
@@ -483,6 +547,8 @@ def main():
     subs.add_parser('status'); check = subs.add_parser('check')
     subs.add_parser('doctor')
     subs.add_parser('handoff')
+    report = subs.add_parser('report', help='Read-only delivery note from the participant record; no acceptance inferred')
+    report.add_argument('--markdown', action='store_true', help='Print a reviewable Markdown note instead of the JSON packet')
     backlog = subs.add_parser('remaining', help='Read-only original scenario checklist from recorded ledger dispositions')
     backlog.add_argument('--requirement', action='append', default=[])
     backlog.add_argument('--status', action='append', choices=['unadjudicated', 'missing', 'implemented-unverified', 'partial', 'failed', 'blocked', 'accepted'])
@@ -525,6 +591,8 @@ def main():
             raise ValueError('Installed checker differs from repository-owned checker; use the reviewed repository copy')
         if args.command == 'check' and args.project_only and args.require_record:
             raise ValueError('--project-only is incompatible with --require-record')
+        if args.command == 'report' and args.markdown and args.json:
+            raise ValueError('--markdown is incompatible with --json')
         reqs, state = context(root)
         if args.command == 'check' and args.base_ref:
             args.base_ref = git(root, 'rev-parse', '--verify', '--end-of-options', args.base_ref + '^{commit}').decode().strip()
@@ -549,13 +617,15 @@ def main():
                 'requirement': i, 'verification': reqs[i]['verification'],
                 'scenarios': [x for x in reqs[i]['scenarios'] if x['name'] in s['scenarios']]
             } for i in s['requirements']])
-        elif args.command in ('handoff', 'claim', 'review'):
+        elif args.command in ('handoff', 'claim', 'review', 'report'):
             if not path.exists():
                 raise ValueError('No participant record to resume; inspect status and start an owned slice first')
             if args.command == 'claim':
                 result.update(scaffold_claim(root, read(path), reqs, state, args))
             elif args.command == 'review':
                 result.update(review(root, read(path), reqs, state, args.include))
+            elif args.command == 'report':
+                result.update(contribution_report(root, read(path), reqs, state))
             else:
                 result.update(handoff(root, read(path), reqs, state))
         elif args.command == 'inspect':
@@ -635,7 +705,10 @@ def main():
     finally:
         if lock is not None:
             lock.close()
-    print(json.dumps(result, indent=2) if args.json else '\n'.join([BOUNDARY, json.dumps(result, indent=2)]))
+    if args.command == 'report' and args.markdown and 'reportSchema' in result:
+        print(report_markdown(result))
+    else:
+        print(json.dumps(result, indent=2) if args.json else '\n'.join([BOUNDARY, json.dumps(result, indent=2)]))
     return code
 
 

@@ -13,10 +13,15 @@ python3 -B plugins/warlock-contributor/scripts/warlock.py start --owner your-nam
 python3 -B docs/warlock-build-loop/v2/loop.py check
 python3 -B plugins/warlock-contributor/scripts/warlock.py record --outcome production-fix --summary 'Describe the actual source behavior and observations'
 python3 -B plugins/warlock-contributor/scripts/warlock.py handoff
+python3 -B plugins/warlock-contributor/scripts/warlock.py report --markdown
 python3 -B plugins/warlock-contributor/scripts/warlock.py review
 ```
 
 ## Scaffold and resume
+
+For source entry points and the existing Elm/event/effect route, use the
+[implementation map](references/implementation.md). Read only the rows relevant
+to the selected behavior; it is not another mandatory full-suite checklist.
 
 `remaining` returns a checklist from the original scenario ledger, including exact
 given/when/then text, verification obligations and recorded missing observations.
@@ -161,3 +166,24 @@ A source change is still an implementation observation, not GUI acceptance.
 The v2 product-loop wrapper requires a participant record before and after native execution; session hooks remain advisory. For explicitly requested documentation/plugin/support work, run the shared `check --project-only` directly before and after without inventing a GUI slice. The [CI template](references/warlock-contributions.yml) uses project checks on a clean checkout and compares PR changes against the base revision; ignored local ownership records are not available to CI. Copy it to `.github/workflows/warlock-contributions.yml` to activate GitHub Actions when the publishing credential has `workflow` permission. The existing GitHub credential lacks that permission, so this package publishes the reviewed template rather than claiming live CI.
 
 Local records are self-attested, not a tamper-proof audit or proof of independent review. The checker detects contradictions and stale/current evidence but cannot tell whether changed code improves behavior, whether a reviewer is honest, or whether pixels/AT match the original oracle. Work in separate Git worktrees when concurrent ownership is unclear. Record reports must describe observable behavior and unresolved obligations.
+
+## Prepare a delivery note
+
+`report` produces a read-only packet from the selected participant record. Use
+`--markdown` for a status update or pull-request body, or global `--json` for tools.
+It includes the before/after intention, latest recorded result, selected source
+changes, uncommitted paths, exact original oracles and verification obligations,
+recorded evidence scope/hashes and missing observations. Planned verification is
+labeled as planned; an intended result is never rendered as an observed result.
+
+```sh
+python3 -B plugins/warlock-contributor/scripts/warlock.py report --markdown
+```
+
+Read the evidence before publishing the note and edit the prose for the actual
+contribution. The command does not post, commit, run QA, update the ledger or
+establish acceptance. Source HEAD is accompanied by uncommitted path information;
+a draft is not represented as a tested commit. Missing records fail. Stale evidence
+returns a nonzero exit and retains the structural findings in the note. Historical
+claims remain visible with their hashes marked noncurrent. `--markdown` and
+`--json` are mutually exclusive. Use `review` separately for staged contents.
