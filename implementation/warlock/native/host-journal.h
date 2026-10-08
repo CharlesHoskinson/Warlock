@@ -103,6 +103,15 @@ static gboolean admission_placement(JsonObject *intent) {
     }
     return TRUE;
 }
+static gboolean admission_transfer(JsonObject *intent) {
+    JsonNode *node=json_object_get_member(intent,"transfer");
+    if(!node || !JSON_NODE_HOLDS_OBJECT(node))return FALSE;
+    JsonObject *p=json_node_get_object(node);const char *const fields[]={"source","sourceGeneration","destination"};
+    guint64 source,destination;
+    return surface_fields(p,fields,3) && admission_positive(p,"sourceGeneration")
+        && surface_uint(json_object_get_member(p,"source"),&source) && source && source<=G_MAXINT64
+        && surface_uint(json_object_get_member(p,"destination"),&destination) && destination && destination<=G_MAXINT64 && source!=destination;
+}
 static JsonNode *admission_record(JsonNode *request) {
     if (!request || !JSON_NODE_HOLDS_OBJECT(request)) return NULL;
     JsonObject *o=json_node_get_object(request);
@@ -116,8 +125,10 @@ static JsonNode *admission_record(JsonNode *request) {
     const char *const bindings[]={"lifetime","session","frontend"},*const intents[]={"request","generation","incarnation","operation","context"},*const contexts[]={"lifetime","epoch","output","revision"};
     JsonNode *operationNode=json_object_get_member(intent,"operation");
     gboolean snap=json_node_get_int(ep)==2 && operationNode && surface_text(operationNode,32,FALSE) && g_str_equal(json_node_get_string(operationNode),"snap");
+    gboolean transfer=json_node_get_int(ep)==2 && operationNode && surface_text(operationNode,32,FALSE) && g_str_equal(json_node_get_string(operationNode),"transfer-workspace");
+    const char *const transferFields[]={"request","generation","incarnation","operation","context","transfer"};
     const char *const snapFields[]={"request","generation","incarnation","operation","context","placement"};
-    if (!surface_fields(b,bindings,3) || !(snap ? surface_fields(intent,snapFields,6)&&admission_placement(intent) : surface_fields(intent,intents,5))) return NULL;
+    if (!surface_fields(b,bindings,3) || !(snap ? surface_fields(intent,snapFields,6)&&admission_placement(intent) : transfer ? surface_fields(intent,transferFields,6)&&admission_transfer(intent) : surface_fields(intent,intents,5))) return NULL;
     for(guint i=0;i<3;i++) if (!admission_positive(b,bindings[i]) || !admission_positive(intent,intents[i])) return NULL;
     JsonNode *cn=json_object_get_member(intent,"context"),*op=json_object_get_member(intent,"operation");
     if (!JSON_NODE_HOLDS_OBJECT(cn) || !surface_text(op,32,FALSE)) return NULL;
@@ -126,7 +137,7 @@ static JsonNode *admission_record(JsonNode *request) {
     for(guint i=0;i<4;i++) if (!admission_positive(context,contexts[i])) return NULL;
     const char *operation=json_node_get_string(op);
     gint64 protocol=json_node_get_int(ep);
-    gboolean supported=protocol==1 ? (g_str_equal(operation,"minimize") || g_str_equal(operation,"restore") || g_str_equal(operation,"activate")) : (g_str_equal(operation,"maximize") || g_str_equal(operation,"restore-geometry") || snap);
+    gboolean supported=protocol==1 ? (g_str_equal(operation,"minimize") || g_str_equal(operation,"restore") || g_str_equal(operation,"activate")) : (g_str_equal(operation,"maximize") || g_str_equal(operation,"restore-geometry") || snap || transfer);
     if (!supported ||
         !g_str_equal(json_object_get_string_member(b,"lifetime"),json_object_get_string_member(context,"lifetime")) ||
         !g_str_equal(json_object_get_string_member(b,"frontend"),json_object_get_string_member(context,"epoch"))) return NULL;
@@ -143,6 +154,10 @@ static char *admission_key(JsonNode *record) {
     for(guint n=0;n<3;n++)json_array_add_string_element(a,json_object_get_string_member(i,ids[n]));
     json_array_add_string_element(a,json_object_get_string_member(i,"operation"));
     for(guint n=0;n<4;n++)json_array_add_string_element(a,json_object_get_string_member(c,contexts[n]));
+    if(g_str_equal(json_object_get_string_member(i,"operation"),"transfer-workspace")){
+        JsonObject *p=json_object_get_object_member(i,"transfer");const char *const fields[]={"source","sourceGeneration","destination"};
+        for(guint n=0;n<3;n++)json_array_add_string_element(a,json_object_get_string_member(p,fields[n]));
+    }
     if(g_str_equal(json_object_get_string_member(i,"operation"),"snap")){
         JsonObject *p=json_object_get_object_member(i,"placement");const char *const fields[]={"region","monitor","outputOwnershipGeneration","workAreaRevision","workspaceGeneration"};
         for(guint n=0;n<5;n++)json_array_add_string_element(a,json_object_get_string_member(p,fields[n]));

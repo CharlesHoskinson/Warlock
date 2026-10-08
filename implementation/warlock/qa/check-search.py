@@ -1,5 +1,6 @@
 """Focused compiled launcher/search integration, protected CPU scope only."""
 import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures,http.server,threading
+TRANSFER=sys.argv[1:]==['--transfer-workspace']
 IME=sys.argv[1:]==['--ime']
 ACCESSIBILITY=sys.argv[1:]==['--accessibility']
 CONTRAST=sys.argv[1:]==['--high-contrast']
@@ -19,11 +20,11 @@ DENSE=sys.argv[1:]==['--dense-taskbar'] or PICKER
 PINMENUS=sys.argv[1:]==['--pinned-menus'] or (DENSE and not PICKER)
 PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PINMENUS or PICKER
 SWITCHER=sys.argv[1:]==['--switcher'] or ACCESSIBILITY
-NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'];POPUP=sys.argv[1:]==['--native-popup'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD or DRAG or IME;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER
+NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'];POPUP=sys.argv[1:]==['--native-popup'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD or DRAG or IME or TRANSFER;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143'
 sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
 scope=require_qa_scope();sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
-OUT=ROOT/'qa/runs'/(('ime-' if IME else 'accessibility-' if ACCESSIBILITY else 'high-contrast-' if CONTRAST else 'drag-ownership-' if DRAG else 'keyboard-shell-' if KEYBOARD else 'attention-' if ATTENTION else 'jump-lists-' if JUMP else 'files-' if FILES else 'system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
+OUT=ROOT/'qa/runs'/(('transfer-workspace-' if TRANSFER else 'ime-' if IME else 'accessibility-' if ACCESSIBILITY else 'high-contrast-' if CONTRAST else 'drag-ownership-' if DRAG else 'keyboard-shell-' if KEYBOARD else 'attention-' if ATTENTION else 'jump-lists-' if JUMP else 'files-' if FILES else 'system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
 for folder in ['src','native','adapter','assets','qa']:
  (INPUT/folder).mkdir()
  for p in (ROOT/folder).iterdir():
@@ -82,6 +83,14 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
   report.update(requirements=['ELM-UX-028'],scenarios=['ime-spike-commit','ime-spike-cancel'],scope='Actual compiled popup composition lifecycle, commit coalescing and field/custody retirement; original native IME candidate and caret evidence remains separate.')
   run('compile-ime',[str(HELD/pinned['compiler']),'make','qa/ImeReplay.elm','--optimize','--output=assets/ime.js'])
   (INPUT/'qa/ime-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.ImeReplay'));run('typed-ime',['node','qa/ime-replay.js','assets/ime.js',str(OUT/'ime.json')]);report['typedIme']=json.loads((OUT/'ime.json').read_text());assert all(report['typedIme']['checks'].values())
+ if TRANSFER:
+  report.update(requirements=['ELM-UX-018'],scenarios=['ux-018','transfer-refused','transfer-accepted'],scope='Actual Task View transfer controls and immutable shared transaction/receipt/membership gates; production custody/schema/key checks. Original native transfer/refusal evidence separate.')
+  run('compile-transfer',[str(HELD/pinned['compiler']),'make','qa/TransferReplay.elm','--optimize','--output=assets/transfer.js'])
+  (INPUT/'qa/transfer-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.TransferReplay'));run('typed-transfer',['node','qa/transfer-replay.js','assets/transfer.js',str(OUT/'transfer.json')]);report['typedTransfer']=json.loads((OUT/'transfer.json').read_text());assert all(report['typedTransfer']['checks'].values())
+  report['transferCustody']=json.loads(run('transfer-custody',['/usr/bin/python3','-B','qa/check-transfer-workspace.py']))
+  run('transfer-model-typecheck',['quint','typecheck','qa/transfer-workspace.qnt'])
+  run('transfer-model-named',['quint','test','qa/transfer-workspace.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79141'])
+  run('transfer-model-invariants',['quint','run','qa/transfer-workspace.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79142'])
  if TASKVIEW and not IME:
   run('compile-task-view',[str(HELD/pinned['compiler']),'make','qa/TaskViewReplay.elm','--optimize','--output=assets/task-view.js'])
   (INPUT/'qa/task-view-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.TaskViewReplay'));run('typed-task-view',['node','qa/task-view-replay.js','assets/task-view.js',str(OUT/'task-view.json')]);report['typedTaskView']=json.loads((OUT/'task-view.json').read_text());assert all(report['typedTaskView']['checks'].values())
@@ -195,7 +204,7 @@ console.log('Current body-target Escape releases once; stale scope, preedit, rep
    if TASKVIEW:
     # The authority TU is independently compiled against its owning core; none
     # of these reused GTK host objects link it or include its modal preflight.
-    excluded=['native/surface-test.c','native/surface.h','native/host.c','native/shared-host.c','native/shell-bindings.lua','native/shared-context.h','native/shared-context-test.c']+(['native/authority.cpp','native/navigation-modal.hpp'] if NAV or DRAG else [])+(['native/authority.cpp','native/host-journal.h','native/geometry-effects.inc','native/snap-placement.inc'] if SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD else [])
+    excluded=['native/surface-test.c','native/surface.h','native/host.c','native/shared-host.c','native/shell-bindings.lua','native/shared-context.h','native/shared-context-test.c']+(['native/authority.cpp','native/navigation-modal.hpp'] if NAV or DRAG else [])+(['native/authority.cpp','native/host-journal.h','native/geometry-effects.inc','native/snap-placement.inc'] if SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD or TRANSFER else [])
     assert all(sha(INPUT/p)==h for p,h in prior['inputs'].items() if p.startswith('native/') and p not in excluded)
     assert all('surface.h' not in (INPUT/'native'/name).read_text() for name in units)
    object_path=prior_path;object_report=prior;seen=set()

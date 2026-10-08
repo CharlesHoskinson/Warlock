@@ -1,0 +1,323 @@
+{
+  "checks": {
+    "sharedAllocatorCreatesOneTypedTransfer": true,
+    "intentStrictRoundtrip": true,
+    "pendingNativeObservationCannotMoveMembership": true,
+    "wrongDestinationReceiptCannotMoveMembership": true,
+    "matchingCommittedReceiptReleasesMembership": true,
+    "refusalKeepsOriginalObservedWorkspace": true,
+    "unknownKeepsMembershipAndCustody": true,
+    "duplicateCannotSubmitAgain": true,
+    "unnegotiatedCannotSubmit": true,
+    "specialAndSameWorkspaceRejected": true,
+    "taskViewExposesMoveAction": true,
+    "emptyWorkspaceDestinationAvailable": true,
+    "cancelReturnsToOverviewWithoutEffect": true,
+    "selectionRequiresFreshObservations": true,
+    "staleViewCannotChooseDestination": true,
+    "duplicateTerminalReceiptDoesNotReplay": true
+  },
+  "frame": {
+    "surfaceProtocol": 2,
+    "appearance": {
+      "theme": "night",
+      "textScale": 100
+    },
+    "publication": "1",
+    "lease": "1",
+    "mode": "overview",
+    "status": "Choose a window to reveal its workspace, or browse another workspace.",
+    "bar": [
+      {
+        "id": "bar:group:application:documents",
+        "domId": "group:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:1:application:documents",
+        "label": "Document",
+        "ariaLabel": "Minimize Document; Active",
+        "detail": "Active",
+        "enabled": true
+      },
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:2:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:overview",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:2:control:overview-opener",
+        "label": "Task View",
+        "ariaLabel": "Open Task View",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:switcher",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:2:control:switcher-opener",
+        "label": "Switch windows",
+        "ariaLabel": "Open window switcher",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:notifications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:2:notifications:opener",
+        "label": "Notifications",
+        "ariaLabel": "Open notifications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:files",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:2:files:opener",
+        "label": "Files",
+        "ariaLabel": "Open Files menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:system",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:2:system:opener",
+        "label": "System",
+        "ariaLabel": "Open system menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:settings",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:2:settings:opener",
+        "label": "Settings",
+        "ariaLabel": "Open settings",
+        "detail": "",
+        "enabled": true
+      }
+    ],
+    "popup": [
+      {
+        "id": "control:close",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:2:overview:close",
+        "label": "Close Task View",
+        "ariaLabel": "Close Task View and return to windows",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "overview:all",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:2:overview:all",
+        "label": "All windows",
+        "ariaLabel": "Browse all workspaces",
+        "detail": "Selected",
+        "enabled": true
+      },
+      {
+        "id": "overview:workspace:1",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:2:overview:workspace:1",
+        "label": "Workspace 1",
+        "ariaLabel": "Browse workspace 1; active workspace",
+        "detail": "Active workspace",
+        "enabled": true
+      },
+      {
+        "id": "overview:family:1",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:2:overview:family:1",
+        "label": "Document",
+        "ariaLabel": "Activate Document on workspace 1",
+        "detail": "Workspace 1 • Open",
+        "enabled": true
+      },
+      {
+        "id": "overview:transfer:1",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:2:overview:transfer:1",
+        "label": "Move Document…",
+        "ariaLabel": "Move Document to another workspace",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "overview:refresh",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:2:overview:refresh",
+        "label": "Refresh window status",
+        "ariaLabel": "Refresh window status; read observations without retrying actions",
+        "detail": "Observation only",
+        "enabled": true
+      }
+    ]
+  },
+  "chooserFrame": {
+    "surfaceProtocol": 2,
+    "appearance": {
+      "theme": "night",
+      "textScale": 100
+    },
+    "publication": "1",
+    "lease": "1",
+    "mode": "overview",
+    "status": "Choose a window to reveal its workspace, or browse another workspace.",
+    "bar": [
+      {
+        "id": "bar:group:application:documents",
+        "domId": "group:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:1:application:documents",
+        "label": "Document",
+        "ariaLabel": "Minimize Document; Active",
+        "detail": "Active",
+        "enabled": true
+      },
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:overview",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:overview-opener",
+        "label": "Task View",
+        "ariaLabel": "Open Task View",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:switcher",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:switcher-opener",
+        "label": "Switch windows",
+        "ariaLabel": "Open window switcher",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:notifications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:notifications:opener",
+        "label": "Notifications",
+        "ariaLabel": "Open notifications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:files",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:files:opener",
+        "label": "Files",
+        "ariaLabel": "Open Files menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:system",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:system:opener",
+        "label": "System",
+        "ariaLabel": "Open system menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:settings",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:settings:opener",
+        "label": "Settings",
+        "ariaLabel": "Open settings",
+        "detail": "",
+        "enabled": true
+      }
+    ],
+    "popup": [
+      {
+        "id": "control:close",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:overview:transfer-cancel",
+        "label": "Cancel transfer",
+        "ariaLabel": "Cancel window transfer",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "overview:destination:2",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:overview:destination:2",
+        "label": "Move to workspace 2",
+        "ariaLabel": "Move selected window to workspace 2",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "overview:destination:3",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:overview:destination:3",
+        "label": "Move to workspace 3",
+        "ariaLabel": "Move selected window to workspace 3",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "overview:destination:4",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:overview:destination:4",
+        "label": "Move to workspace 4",
+        "ariaLabel": "Move selected window to workspace 4",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "overview:destination:5",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:overview:destination:5",
+        "label": "Move to workspace 5",
+        "ariaLabel": "Move selected window to workspace 5",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "overview:destination:6",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:overview:destination:6",
+        "label": "Move to workspace 6",
+        "ariaLabel": "Move selected window to workspace 6",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "overview:destination:7",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:overview:destination:7",
+        "label": "Move to workspace 7",
+        "ariaLabel": "Move selected window to workspace 7",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "overview:destination:8",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:overview:destination:8",
+        "label": "Move to workspace 8",
+        "ariaLabel": "Move selected window to workspace 8",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "overview:destination:9",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:overview:destination:9",
+        "label": "Move to workspace 9",
+        "ariaLabel": "Move selected window to workspace 9",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "overview:destination:10",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:overview:destination:10",
+        "label": "Move to workspace 10",
+        "ariaLabel": "Move selected window to workspace 10",
+        "detail": "",
+        "enabled": true
+      }
+    ]
+  },
+  "intent": {
+    "request": "1",
+    "generation": "1",
+    "incarnation": "1",
+    "operation": "transfer-workspace",
+    "context": {
+      "lifetime": "1",
+      "epoch": "1",
+      "output": "1",
+      "revision": "1"
+    },
+    "transfer": {
+      "source": "1",
+      "sourceGeneration": "4",
+      "destination": "2"
+    }
+  }
+}

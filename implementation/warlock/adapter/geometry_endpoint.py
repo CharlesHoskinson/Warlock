@@ -8,7 +8,7 @@ from effect_endpoint import Endpoint as LegacyEffectEndpoint
 from endpoint import Refused, binding, canonical, exact
 
 MODES = {'ordinary', 'maximized', 'fullscreen'}
-OPERATIONS = {'maximize', 'restore-geometry', 'snap'}
+OPERATIONS = {'maximize', 'restore-geometry', 'snap', 'transfer-workspace'}
 WINDOW_FIELDS = ['incarnation', 'owner', 'workspace', 'workspaceGeneration', 'monitor',
                  'outputOwnershipGeneration', 'workAreaRevision', 'workArea',
                  'logicalGeometry', 'visualGeometry', 'nativeMode', 'clientMode',
@@ -58,7 +58,7 @@ class GeometryEndpoint(LegacyEffectEndpoint):
         if type(caps['effectProtocol']) is not int or caps['effectProtocol'] != 2 or type(caps['placementCapacity']) is not int or caps['placementCapacity'] != 256:
             raise Refused('Geometry capability versions/bounds')
         operations = caps['operations']
-        if not isinstance(operations, list) or len(operations) > 3 or any(type(op) is not str or op not in OPERATIONS for op in operations) or len(set(operations)) != len(operations):
+        if not isinstance(operations, list) or len(operations) > 4 or any(type(op) is not str or op not in OPERATIONS for op in operations) or len(set(operations)) != len(operations):
             raise Refused('Geometry operation capabilities')
         if caps['effects'] != bool(operations):
             raise Refused('Geometry effects/operation contradiction')
@@ -196,8 +196,9 @@ class GeometryEndpoint(LegacyEffectEndpoint):
         caps = getattr(self, 'geometry_capabilities', None)
         if not caps or caps['effects'] is not True:
             raise Refused('Native geometry effects unavailable')
-        exact(intent, ['request', 'generation', 'incarnation', 'operation', 'context'] + (['placement'] if intent.get('operation')=='snap' else []))
+        exact(intent, ['request', 'generation', 'incarnation', 'operation', 'context'] + (['placement'] if intent.get('operation')=='snap' else ['transfer'] if intent.get('operation')=='transfer-workspace' else []))
         if intent.get('operation')=='snap':geometry_placement.validate(intent['placement'])
+        if intent.get('operation')=='transfer-workspace':validate_transfer(intent['transfer'])
         exact(intent['context'], ['lifetime', 'epoch', 'output', 'revision'])
         for field in ('request', 'generation', 'incarnation'):
             canonical(intent[field])
@@ -228,3 +229,14 @@ class GeometryEndpoint(LegacyEffectEndpoint):
             raise Refused('Geometry effect reason Unicode') from error
         canonical(response['revision']); canonical(response['outputGeneration'])
         return response
+
+
+def validate_transfer(proposal):
+    exact(proposal, ['source', 'sourceGeneration', 'destination'])
+    canonical(proposal['sourceGeneration'])
+    for name in ('source', 'destination'):
+        workspace(proposal[name])
+        if int(proposal[name]) <= 0:
+            raise Refused('Transfer requires ordinary workspace')
+    if proposal['source'] == proposal['destination']:
+        raise Refused('Transfer destination equals source')

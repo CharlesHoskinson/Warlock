@@ -1,5 +1,6 @@
 module TaskView exposing (Workspace, groups, activeWorkspace)
 
+import Effects
 import ActionProjection as Scene
 import GeometryProjection
 import Shell
@@ -23,7 +24,7 @@ groups shell =
                 families = Taskbar.groups observed.scene |> List.concatMap .families
                 positive workspace = not (String.isEmpty workspace) && not (String.startsWith "-" workspace) && workspace/="0"
                 add family accumulated =
-                    case GeometryProjection.window family.root geometry |> Maybe.andThen .workspace of
+                    case membership family.root shell geometry of
                         Just workspace ->
                             if not (positive workspace) then accumulated else
                             if List.any (\g -> g.identity==workspace) accumulated then
@@ -45,3 +46,11 @@ groups shell =
 
 activeWorkspace : Shell.Model -> Maybe String
 activeWorkspace shell = groups shell |> Maybe.andThen (List.filter .active >> List.head) |> Maybe.map .identity
+
+-- A native observation can race ahead of its transfer receipt. Preserve the
+-- admitted source membership while the exact transfer remains Pending/Unknown.
+membership root shell geometry =
+    let pending = shell.effects.unresolved |> List.filter (\t -> t.intent.incarnation==root && t.intent.context.lifetime==geometry.context.lifetime && List.member t.status [Effects.Pending,Effects.Unknown]) |> List.head
+    in case pending |> Maybe.map (.intent >> .operation) of
+        Just (Effects.TransferWorkspace p) -> Just p.source
+        _ -> GeometryProjection.window root geometry |> Maybe.andThen .workspace

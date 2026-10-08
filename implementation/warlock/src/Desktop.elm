@@ -24,6 +24,7 @@ import Taskbar
 import Effects
 import TaskbarShell
 import TaskView
+import Transfer
 import Snap
 import UInt64 exposing (Counter)
 
@@ -66,6 +67,7 @@ type alias Model =
     , open : Bool
     , overview : Bool
     , overviewWorkspace : Maybe String
+    , overviewTransfer : Maybe Counter
     , snap : Maybe Snap.Choice
     , switcher : Switcher.Model
     , nativeSwitcher : Maybe NativeChord
@@ -85,7 +87,7 @@ type alias NativeChord = {generation : Counter, roots : List Counter, history : 
 
 type ChoiceToken = ChoiceToken Binding.Binding Counter
 
-type alias Choice = { chord : Maybe Counter, binding : Binding.Binding, output : Counter, root : Counter, application : String, token : ChoiceToken, placement : Maybe Snap.Proposal }
+type alias Choice = { chord : Maybe Counter, binding : Binding.Binding, output : Counter, root : Counter, application : String, token : ChoiceToken, placement : Maybe Snap.Proposal, transfer : Maybe Transfer.Proposal }
 
 choiceToken : Model -> Maybe ChoiceToken
 choiceToken model = model.choice |> Maybe.map .token
@@ -138,6 +140,9 @@ type Msg
     | CloseOverview ViewStamp
     | OverviewWorkspace ViewStamp (Maybe String)
     | OverviewChoose ViewStamp Counter
+    | OpenOverviewTransfer ViewStamp Counter
+    | CancelOverviewTransfer ViewStamp
+    | OverviewTransfer ViewStamp Counter String
     | CloseApplications ViewStamp
     | SearchQuery ViewStamp String
     | TogglePin ViewStamp String
@@ -158,7 +163,7 @@ type Effect
 
 initial : Model
 initial =
-    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, pointer = PointerOwnership.initial, shortcuts = Shortcuts.initial, jumpList = JumpList.initial, jumpEntry = Nothing, jumpOpening = False, jumpExpected = Nothing, jumpBack = False, files = Files.initial, filesOpen = False, filesOpening = False, filesExpected = Nothing, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
+    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, pointer = PointerOwnership.initial, shortcuts = Shortcuts.initial, jumpList = JumpList.initial, jumpEntry = Nothing, jumpOpening = False, jumpExpected = Nothing, jumpBack = False, files = Files.initial, filesOpen = False, filesOpening = False, filesExpected = Nothing, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, overviewTransfer = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
 
 switcherOpen : Model -> Bool
 switcherOpen model = List.member (Switcher.phase model.switcher) [Switcher.Waiting,Switcher.Browsing]
@@ -187,7 +192,7 @@ chooseFamily family model =
             in case next.windows.shell.expected of
                 Just request ->
                     let token=ChoiceToken binding request
-                    in ({next | choice=Just {chord=model.nativeSwitcher |> Maybe.map .generation,binding=binding,output=observed.context.output,root=family.root,application=family.application,token=token,placement=Nothing}},effects++[ArmChoice token])
+                    in ({next | choice=Just {chord=model.nativeSwitcher |> Maybe.map .generation,binding=binding,output=observed.context.output,root=family.root,application=family.application,token=token,placement=Nothing,transfer=Nothing}},effects++[ArmChoice token])
                 Nothing -> (next,effects)
         _ -> (retireSwitcher model,[])
 
@@ -323,6 +328,7 @@ windowBase message model =
         , menuOrigin = if disconnected || changed || (MenuBridge.menuSnapshot windows.menus).menu==Nothing then Nothing else model.menuOrigin
         , choiceNotice = if disconnected || changed then "" else model.choiceNotice
         , overview = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.overview
+        , overviewTransfer = if disconnected || changed || not model.overview then Nothing else model.overviewTransfer
         , overviewWorkspace = if disconnected || changed then Nothing else model.overviewWorkspace
         , snap = if disconnected || changed || windows.shell.phase==Shell.Exhausted then Nothing else
             model.snap |> Maybe.andThen (\choice -> case windows.shell.geometry of
@@ -413,7 +419,7 @@ window message model =
                             in case next.windows.shell.expected of
                                 Just request ->
                                     let token=ChoiceToken binding request
-                                    in ({next | choice=Just {chord=Nothing,binding=binding,output=observed.context.output,root=root,application=family.application,token=token,placement=Nothing}},effects++[ArmChoice token])
+                                    in ({next | choice=Just {chord=Nothing,binding=binding,output=observed.context.output,root=root,application=family.application,token=token,placement=Nothing,transfer=Nothing}},effects++[ArmChoice token])
                                 Nothing -> (next,effects)
                 _ -> (model,[])
         _ ->
@@ -457,14 +463,22 @@ window message model =
             in case next.choice of
                 Just pending ->
                     if not matchingObservation || not (Shell.available next.windows.shell)
-                        || (pending.placement/=Nothing && (next.windows.shell.geometry |> Maybe.map .blocked |> Maybe.withDefault True)) then (next,effects) else
+                        || (pending.transfer/=Nothing && not matchingGeometry)
+                        || ((pending.placement/=Nothing || pending.transfer/=Nothing) && (next.windows.shell.geometry |> Maybe.map .blocked |> Maybe.withDefault True)) then (next,effects) else
                     let retired={next | choice=Nothing,choiceNotice="The window changed. Choose again."}
                         family=TaskbarShell.groups next.windows |> List.concatMap .families |> List.filter (\item -> item.root==pending.root && item.application==pending.application && item.available) |> List.head
                         output=next.windows.shell.effects.observed |> Maybe.map (.context >> .output)
                     in if next.windows.shell.binding/=Just pending.binding || output/=Just pending.output || geometryOutput/=Just pending.output then (retired,effects) else
                         case (Shell.capture next.windows.shell,family) of
                             (Just scope,Just selected) ->
-                                case pending.placement of
+                                if pending.transfer/=Nothing then
+                                    case (pending.transfer,next.windows.shell.geometry,Shell.captureGeometry next.windows.shell) of
+                                        (Just proposed,Just geometry,Just stamp) ->
+                                            if not (Transfer.matches geometry pending.root proposed) then ({retired|choiceNotice="Window workspace changed. Choose again."},effects) else
+                                                let (applied,commands)=windowBase (TaskbarShell.Native (Shell.Act stamp (Effects.TransferWorkspace proposed) pending.root)) {retired|choiceNotice=""}
+                                                in (applied,effects++commands)
+                                        _ -> (retired,effects)
+                                else case pending.placement of
                                     Just proposed ->
                                         case (next.windows.shell.geometry,Shell.captureGeometry next.windows.shell) of
                                             (Just geometry,Just stamp) ->
@@ -922,12 +936,12 @@ updateAvailable message model =
                     |> Maybe.map (\menu -> windowBase (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)) model |> Tuple.first)
                     |> Maybe.withDefault model
                 windows=base.windows
-                next=advance (retireSwitcher {base | snap=Nothing,jumpEntry=Nothing,jumpOpening=False,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,overview=True,overviewWorkspace=Nothing,open=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing}})
+                next=advance (retireSwitcher {base | snap=Nothing,jumpEntry=Nothing,jumpOpening=False,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,overview=True,overviewWorkspace=Nothing,overviewTransfer=Nothing,open=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing}})
                 focus=TaskView.activeWorkspace next.windows.shell |> Maybe.map (\workspace -> key next ("overview:workspace:"++workspace)) |> Maybe.withDefault (key next "overview:all")
             in (next,[Focus focus])
         CloseOverview stamp ->
             if capture model/=Just stamp || not model.overview then (model,[]) else
-                let next=advance {model | overview=False,overviewWorkspace=Nothing}
+                let next=advance {model | overview=False,overviewWorkspace=Nothing,overviewTransfer=Nothing}
                     (refreshing,commands)=windowBase (TaskbarShell.Native Shell.Refresh) next
                     target=model.windows.shell.binding |> Maybe.map (\binding -> {binding=binding,destination=OverviewOpener,output=model.windows.shell.effects.observed |> Maybe.map (.context >> .output)})
                 in ({refreshing | returnFocus=target},commands)
@@ -936,6 +950,27 @@ updateAvailable message model =
             let exists=selected |> Maybe.map (\workspace -> TaskView.groups model.windows.shell |> Maybe.map (List.any (\g -> g.identity==workspace)) |> Maybe.withDefault False) |> Maybe.withDefault True
                 next=advance {model | overviewWorkspace=selected}
             in if not exists then (model,[]) else (next,[Focus (key next (selected |> Maybe.map ((++) "overview:workspace:") |> Maybe.withDefault "overview:all"))])
+        OpenOverviewTransfer stamp root ->
+            if capture model/=Just stamp || not model.overview || model.choice/=Nothing || not (Shell.available model.windows.shell) then (model,[]) else
+                let listed=TaskView.groups model.windows.shell |> Maybe.withDefault [] |> List.concatMap .windows |> List.any (\family -> family.root==root && family.available)
+                    enabled=model.windows.shell.geometryCaps |> Maybe.map (\caps -> List.member "transfer-workspace" caps.operations) |> Maybe.withDefault False
+                in if not (listed && enabled) then (model,[]) else (advance {model|overviewTransfer=Just root},[])
+        CancelOverviewTransfer stamp ->
+            if capture model/=Just stamp || not model.overview then (model,[]) else (advance {model|overviewTransfer=Nothing},[])
+        OverviewTransfer stamp root destination ->
+            if capture model/=Just stamp || model.overviewTransfer/=Just root || model.choice/=Nothing then (model,[]) else
+            case (model.windows.shell.geometry |> Maybe.andThen (\g -> Transfer.propose g root destination),model.windows.shell.binding,model.windows.shell.effects.observed) of
+                (Just proposed,Just binding,Just observed) ->
+                    case TaskbarShell.groups model.windows |> List.concatMap .families |> List.filter (\f -> f.root==root && f.available) |> List.head of
+                        Just family ->
+                            let (next,effects)=windowBase (TaskbarShell.Native Shell.Refresh) {model|overview=False,overviewTransfer=Nothing,choiceNotice=""}
+                            in case next.windows.shell.expected of
+                                Just request ->
+                                    let token=ChoiceToken binding request
+                                    in ({next|choice=Just {chord=Nothing,binding=binding,output=observed.context.output,root=root,application=family.application,token=token,placement=Nothing,transfer=Just proposed}},effects++[ArmChoice token])
+                                Nothing -> (next,effects)
+                        Nothing -> (model,[])
+                _ -> (model,[])
         OverviewChoose stamp root ->
             if capture model/=Just stamp || not model.overview || model.choice/=Nothing || not (Shell.available model.windows.shell) then (model,[]) else
             let selected=TaskView.groups model.windows.shell |> Maybe.withDefault []
@@ -947,7 +982,7 @@ updateAvailable message model =
                     in case next.windows.shell.expected of
                         Just request ->
                             let token=ChoiceToken binding request
-                            in ({next | choice=Just {chord=Nothing,binding=binding,output=observed.context.output,root=root,application=family.application,token=token,placement=Nothing}},effects++[ArmChoice token])
+                            in ({next | choice=Just {chord=Nothing,binding=binding,output=observed.context.output,root=root,application=family.application,token=token,placement=Nothing,transfer=Nothing}},effects++[ArmChoice token])
                         Nothing -> (next,effects)
                 _ -> (model,[])
         SearchQuery stamp query ->

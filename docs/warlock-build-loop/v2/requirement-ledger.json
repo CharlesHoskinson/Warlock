@@ -7533,28 +7533,97 @@
       "owner": "Desktop experience lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "ux-018",
           "oracle": "accepted transfer updates membership; refusal retains workspace 1",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/transfer/manifest.json",
+              "sha256": "ee983f8638fffbf41fac47e47bbb2c0dc96b9a92ffd6304aac665e06fd16533f",
+              "scope": "Original physical cancellation, pinned native refusal retaining workspace 1 with visible feedback, committed workspace 2 transfer and actual Task View membership; later supplementary empty-workspace interval failed before request.",
+              "sourceRevision": "c1367de606cb57fd9c253550b6dfae93c56f5453",
+              "sourceTuple": {
+                "core": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+                  "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+                },
+                "plugin": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791484487625706040/elm-window-geometry-authority.so",
+                  "sha256": "796537e82996ac670d4b1da9c764764b921d61fe9f420220535c40ef1fbfb21f"
+                },
+                "aquamarine": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+                  "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+                }
+              },
+              "reviewerDisposition": "Owner-observed original native/replay oracles; independent original acceptance pending."
+            }
+          ],
+          "missingObservation": "Independent original scenario/requirement review remains pending; the owner-observed original native oracles are separate from acceptance.",
+          "ownerObservedOriginalOracle": true
         },
         {
           "name": "transfer-refused",
           "oracle": "membership remains workspace 1 and refusal feedback appears",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/transfer/manifest.json",
+              "sha256": "ee983f8638fffbf41fac47e47bbb2c0dc96b9a92ffd6304aac665e06fd16533f",
+              "scope": "Original physical cancellation, pinned native refusal retaining workspace 1 with visible feedback, committed workspace 2 transfer and actual Task View membership; later supplementary empty-workspace interval failed before request.",
+              "sourceRevision": "c1367de606cb57fd9c253550b6dfae93c56f5453",
+              "sourceTuple": {
+                "core": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+                  "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+                },
+                "plugin": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791484487625706040/elm-window-geometry-authority.so",
+                  "sha256": "796537e82996ac670d4b1da9c764764b921d61fe9f420220535c40ef1fbfb21f"
+                },
+                "aquamarine": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+                  "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+                }
+              },
+              "reviewerDisposition": "Owner-observed original native/replay oracles; independent original acceptance pending."
+            }
+          ],
+          "missingObservation": "Independent original scenario/requirement review remains pending; the owner-observed original native oracles are separate from acceptance.",
+          "ownerObservedOriginalOracle": true
         },
         {
           "name": "transfer-accepted",
           "oracle": "membership changes only with the matching committed receipt",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/transfer/manifest.json",
+              "sha256": "ee983f8638fffbf41fac47e47bbb2c0dc96b9a92ffd6304aac665e06fd16533f",
+              "scope": "Original physical cancellation, pinned native refusal retaining workspace 1 with visible feedback, committed workspace 2 transfer and actual Task View membership; later supplementary empty-workspace interval failed before request.",
+              "sourceRevision": "c1367de606cb57fd9c253550b6dfae93c56f5453",
+              "sourceTuple": {
+                "core": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+                  "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+                },
+                "plugin": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791484487625706040/elm-window-geometry-authority.so",
+                  "sha256": "796537e82996ac670d4b1da9c764764b921d61fe9f420220535c40ef1fbfb21f"
+                },
+                "aquamarine": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+                  "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+                }
+              },
+              "reviewerDisposition": "Owner-observed original native/replay oracles; independent original acceptance pending."
+            }
+          ],
+          "missingObservation": "Independent original scenario/requirement review remains pending; the owner-observed original native oracles are separate from acceptance.",
+          "ownerObservedOriginalOracle": true
         }
       ]
     },
@@ -8805,5 +8874,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-08T18:13:28.300621+00:00"
+  "updatedUTC": "2026-10-08T18:45:44.425080+00:00"
 }

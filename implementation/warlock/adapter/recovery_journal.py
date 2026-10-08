@@ -33,13 +33,19 @@ def validate(record):
  protocol=1 if record['schema']==1 else record['effectProtocol']
  if type(protocol) is not int or protocol not in [1,2]:raise Refused('Recovery effect protocol')
  binding(record['binding']);intent=record['intent']
- exact(intent,['request','generation','incarnation','operation','context']+(['placement'] if protocol==2 and isinstance(intent,dict) and intent.get('operation')=='snap' else []))
+ exact(intent,['request','generation','incarnation','operation','context']+(['placement'] if protocol==2 and isinstance(intent,dict) and intent.get('operation')=='snap' else ['transfer'] if protocol==2 and isinstance(intent,dict) and intent.get('operation')=='transfer-workspace' else []))
  if protocol==2 and intent.get('operation')=='snap':geometry_placement.validate(intent['placement'])
+ if protocol==2 and intent.get('operation')=='transfer-workspace':
+  p=intent['transfer'];exact(p,['source','sourceGeneration','destination']);canonical(p['sourceGeneration'])
+  for field in ['source','destination']:
+   canonical(p[field])
+   if int(p[field])>(1<<63)-1:raise Refused('Transfer workspace bound')
+  if p['source']==p['destination']:raise Refused('Transfer destination equals source')
  for key in ['request','generation','incarnation']:canonical(intent[key])
  exact(intent['context'],['lifetime','epoch','output','revision'])
  for value in intent['context'].values():canonical(value)
  if intent['context']['lifetime']!=record['binding']['lifetime'] or intent['context']['epoch']!=record['binding']['frontend']:raise Refused('Recovery context')
- operations=['minimize','restore','activate'] if protocol==1 else ['maximize','restore-geometry','snap']
+ operations=['minimize','restore','activate'] if protocol==1 else ['maximize','restore-geometry','snap','transfer-workspace']
  if intent['operation'] not in operations or record['status'] not in ['Pending','Committed','Refused','Unknown']:raise Refused('Recovery outcome')
  return record
 

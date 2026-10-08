@@ -1,0 +1,565 @@
+{
+  "schema": 1,
+  "ownerObservedOriginalOracles": true,
+  "independentAccepted": false,
+  "fullReleaseAccepted": false,
+  "scope": "Original physical cancellation, pinned native refusal retaining workspace 1 with visible feedback, committed workspace 2 transfer and actual Task View membership; later supplementary empty-workspace interval failed before request.",
+  "nativeReportSHA256": "7beb30b7f25f3c665f572f94ea51e0e3ad2ff25cece35e52a4217eb982f1fe47",
+  "nativeLog": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791484838748924661/warlock.log",
+  "nativeLogSHA256": "1f36ee6650faee947aa10a768f06baecdde81581b49a49ec9c9a2edc964633ec",
+  "receipts": [
+    {
+      "protocolVersion": 3,
+      "kind": "effect-outcome",
+      "effectProtocol": 2,
+      "binding": {
+        "lifetime": "2333442842044256765",
+        "session": "3",
+        "frontend": "1"
+      },
+      "intent": {
+        "request": "1",
+        "generation": "1",
+        "incarnation": "2",
+        "operation": "transfer-workspace",
+        "context": {
+          "lifetime": "2333442842044256765",
+          "epoch": "1",
+          "output": "1",
+          "revision": "2"
+        },
+        "transfer": {
+          "source": "1",
+          "sourceGeneration": "2",
+          "destination": "2"
+        }
+      },
+      "status": "Refused",
+      "reason": "transfer-family-ineligible",
+      "revision": "2",
+      "outputGeneration": "1"
+    },
+    {
+      "protocolVersion": 3,
+      "kind": "effect-outcome",
+      "effectProtocol": 2,
+      "binding": {
+        "lifetime": "2333442842044256765",
+        "session": "3",
+        "frontend": "1"
+      },
+      "intent": {
+        "request": "2",
+        "generation": "2",
+        "incarnation": "2",
+        "operation": "transfer-workspace",
+        "context": {
+          "lifetime": "2333442842044256765",
+          "epoch": "1",
+          "output": "1",
+          "revision": "3"
+        },
+        "transfer": {
+          "source": "1",
+          "sourceGeneration": "2",
+          "destination": "2"
+        }
+      },
+      "status": "Committed",
+      "reason": "workspace-transferred",
+      "revision": "4",
+      "outputGeneration": "1"
+    }
+  ],
+  "originalChecks": [
+    {
+      "name": "CancelTransferDoesNotSubmitOrMove",
+      "passed": true
+    },
+    {
+      "name": "NativeRefusalRetainsWorkspaceOneWithVisibleFeedback",
+      "passed": true,
+      "receipt": {
+        "protocolVersion": 3,
+        "kind": "effect-outcome",
+        "effectProtocol": 2,
+        "binding": {
+          "lifetime": "2333442842044256765",
+          "session": "3",
+          "frontend": "1"
+        },
+        "intent": {
+          "request": "1",
+          "generation": "1",
+          "incarnation": "2",
+          "operation": "transfer-workspace",
+          "context": {
+            "lifetime": "2333442842044256765",
+            "epoch": "1",
+            "output": "1",
+            "revision": "2"
+          },
+          "transfer": {
+            "source": "1",
+            "sourceGeneration": "2",
+            "destination": "2"
+          }
+        },
+        "status": "Refused",
+        "reason": "transfer-family-ineligible",
+        "revision": "2",
+        "outputGeneration": "1"
+      },
+      "member": {
+        "incarnation": "2",
+        "owner": null,
+        "application": "GTK Application",
+        "stackPosition": 1,
+        "workspace": "1",
+        "monitor": "0",
+        "geometry": [
+          40.0,
+          100.0,
+          320.0,
+          240.0
+        ],
+        "fullscreenMode": 0,
+        "workspaceVisible": true,
+        "hidden": false,
+        "pinned": true,
+        "allowedOverFullscreen": true,
+        "renderOverFullscreen": true,
+        "acceptsInput": true,
+        "shouldRenderAny": true,
+        "shouldRenderOwnMonitor": true,
+        "minimized": false
+      },
+      "bar": {
+        "palette": {
+          "background": "rgb(23, 32, 42)",
+          "foreground": "rgb(244, 246, 247)"
+        },
+        "focusStyle": {
+          "color": "rgb(244, 246, 247)",
+          "background": "rgb(23, 32, 42)",
+          "outlineColor": "rgb(244, 246, 247)",
+          "outlineWidth": "3px",
+          "outlineOffset": "0px",
+          "x": 0,
+          "y": 0,
+          "width": 800,
+          "height": 48
+        },
+        "publication": "36",
+        "lease": "2",
+        "buttons": [
+          {
+            "id": "group:{\"lifetime\":\"2333442842044256765\",\"session\":\"3\",\"frontend\":\"1\"}:1:3:application:GTK Application",
+            "identity": "bar:group:application:GTK Application",
+            "label": "ELM-ACTIVATION-PEER2 windows",
+            "accessibleName": "Choose a window from ELM-ACTIVATION-PEER; 2 windows",
+            "disabled": false,
+            "x": 1,
+            "y": 1,
+            "width": 112,
+            "height": 46
+          },
+          {
+            "id": "applications:{\"lifetime\":\"2333442842044256765\",\"session\":\"3\",\"frontend\":\"1\"}:12:control:opener",
+            "identity": "bar:applications",
+            "label": "Applications",
+            "accessibleName": "Open applications",
+            "disabled": false,
+            "x": 115,
+            "y": 1,
+            "width": 80,
+            "height": 46
+          },
+          {
+            "id": "applications:{\"lifetime\":\"2333442842044256765\",\"session\":\"3\",\"frontend\":\"1\"}:12:control:overview-opener",
+            "identity": "bar:overview",
+            "label": "Task View",
+            "accessibleName": "Open Task View",
+            "disabled": false,
+            "x": 197,
+            "y": 1,
+            "width": 80,
+            "height": 46
+          },
+          {
+            "id": "applications:{\"lifetime\":\"2333442842044256765\",\"session\":\"3\",\"frontend\":\"1\"}:12:control:switcher-opener",
+            "identity": "bar:switcher",
+            "label": "Switch windows",
+            "accessibleName": "Open window switcher",
+            "disabled": false,
+            "x": 279,
+            "y": 1,
+            "width": 80,
+            "height": 46
+          },
+          {
+            "id": "applications:{\"lifetime\":\"2333442842044256765\",\"session\":\"3\",\"frontend\":\"1\"}:12:notifications:opener",
+            "identity": "bar:notifications",
+            "label": "Notifications",
+            "accessibleName": "Open notifications",
+            "disabled": false,
+            "x": 361,
+            "y": 1,
+            "width": 80,
+            "height": 46
+          },
+          {
+            "id": "applications:{\"lifetime\":\"2333442842044256765\",\"session\":\"3\",\"frontend\":\"1\"}:12:files:opener",
+            "identity": "bar:files",
+            "label": "Files",
+            "accessibleName": "Open Files menu",
+            "disabled": false,
+            "x": 443,
+            "y": 1,
+            "width": 80,
+            "height": 46
+          },
+          {
+            "id": "applications:{\"lifetime\":\"2333442842044256765\",\"session\":\"3\",\"frontend\":\"1\"}:12:system:opener",
+            "identity": "bar:system",
+            "label": "System",
+            "accessibleName": "Open system menu",
+            "disabled": false,
+            "x": 525,
+            "y": 1,
+            "width": 80,
+            "height": 46
+          },
+          {
+            "id": "applications:{\"lifetime\":\"2333442842044256765\",\"session\":\"3\",\"frontend\":\"1\"}:12:settings:opener",
+            "identity": "bar:settings",
+            "label": "Settings",
+            "accessibleName": "Open settings",
+            "disabled": false,
+            "x": 607,
+            "y": 1,
+            "width": 80,
+            "height": 46
+          },
+          {
+            "id": "applications:{\"lifetime\":\"2333442842044256765\",\"session\":\"3\",\"frontend\":\"1\"}:12:bar:recovery-refresh",
+            "identity": "bar:recovery-refresh",
+            "label": "Refresh window statusObservation only",
+            "accessibleName": "Refresh window status; read observations without retrying actions",
+            "disabled": false,
+            "x": 689,
+            "y": 1,
+            "width": 120,
+            "height": 46
+          }
+        ],
+        "feedback": {
+          "text": "Move to workspace 2: refused for ELM-AUTHORITY-FIXTURE. Refresh window status, then choose again.",
+          "accessibleName": "Move to workspace 2: refused for ELM-AUTHORITY-FIXTURE. Refresh window status, then choose again.",
+          "live": "polite",
+          "atomic": "true",
+          "x": 544,
+          "y": 0,
+          "width": 256,
+          "height": 48,
+          "clip": "none",
+          "display": "flex"
+        },
+        "focus": "",
+        "documentFocused": false,
+        "selectionAnchor": "bar:overview",
+        "text": "\nELM-ACTIVATION-PEER\n2 windows\n\nApplications\n\nTask View\n\nSwitch windows\n\nNotifications\n\nFiles\n\nSystem\n\nSettings\n\nRefresh window status\nObservation only\nMove to workspace 2: refused for ELM-AUTHORITY-FIXTURE. Refresh window status, then choose again.",
+        "fontSize": "16px",
+        "theme": "night",
+        "textScale": "100",
+        "viewportWidth": 800,
+        "scrollLeft": 0,
+        "scrollWidth": 810,
+        "clientWidth": 540,
+        "actions": {
+          "x": 0,
+          "y": 0,
+          "width": 540,
+          "height": 48
+        }
+      }
+    },
+    {
+      "name": "MatchingCommittedTransferMovesOnlySelectedRoot",
+      "passed": true,
+      "receipt": {
+        "protocolVersion": 3,
+        "kind": "effect-outcome",
+        "effectProtocol": 2,
+        "binding": {
+          "lifetime": "2333442842044256765",
+          "session": "3",
+          "frontend": "1"
+        },
+        "intent": {
+          "request": "2",
+          "generation": "2",
+          "incarnation": "2",
+          "operation": "transfer-workspace",
+          "context": {
+            "lifetime": "2333442842044256765",
+            "epoch": "1",
+            "output": "1",
+            "revision": "3"
+          },
+          "transfer": {
+            "source": "1",
+            "sourceGeneration": "2",
+            "destination": "2"
+          }
+        },
+        "status": "Committed",
+        "reason": "workspace-transferred",
+        "revision": "4",
+        "outputGeneration": "1"
+      },
+      "facts": {
+        "protocolVersion": 3,
+        "kind": "scene-facts",
+        "binding": {
+          "lifetime": "2333442842044256765",
+          "session": "1",
+          "frontend": "1"
+        },
+        "requestId": "441",
+        "sequence": "30",
+        "revision": "6",
+        "outputGeneration": "1",
+        "facts": {
+          "focused": null,
+          "windows": [
+            {
+              "incarnation": "1",
+              "owner": null,
+              "application": "GTK Application",
+              "stackPosition": 0,
+              "workspace": "2",
+              "monitor": "0",
+              "geometry": [
+                21.0,
+                69.0,
+                758.0,
+                510.0
+              ],
+              "fullscreenMode": 0,
+              "workspaceVisible": false,
+              "hidden": false,
+              "pinned": false,
+              "allowedOverFullscreen": true,
+              "renderOverFullscreen": true,
+              "acceptsInput": true,
+              "shouldRenderAny": false,
+              "shouldRenderOwnMonitor": false,
+              "minimized": false
+            },
+            {
+              "incarnation": "2",
+              "owner": null,
+              "application": "GTK Application",
+              "stackPosition": 1,
+              "workspace": "2",
+              "monitor": "0",
+              "geometry": [
+                40.0,
+                100.0,
+                320.0,
+                240.0
+              ],
+              "fullscreenMode": 0,
+              "workspaceVisible": false,
+              "hidden": false,
+              "pinned": false,
+              "allowedOverFullscreen": true,
+              "renderOverFullscreen": true,
+              "acceptsInput": true,
+              "shouldRenderAny": false,
+              "shouldRenderOwnMonitor": false,
+              "minimized": false
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "taskViewWorkspaceTwoObservation": {
+    "line": 4389,
+    "body": {
+      "queryObservations": [],
+      "compositionEvents": [],
+      "composing": false,
+      "palette": {
+        "background": "rgb(23, 32, 42)",
+        "foreground": "rgb(244, 246, 247)"
+      },
+      "focusStyle": {
+        "color": "rgb(244, 246, 247)",
+        "background": "rgb(38, 53, 68)",
+        "outlineColor": "rgb(126, 215, 255)",
+        "outlineWidth": "3px",
+        "outlineOffset": "1px",
+        "x": 11,
+        "y": 67,
+        "width": 678,
+        "height": 54
+      },
+      "publication": "51",
+      "lease": "4",
+      "buttons": [
+        {
+          "id": "applications:{\"lifetime\":\"2333442842044256765\",\"session\":\"3\",\"frontend\":\"1\"}:15:overview:close",
+          "identity": "control:close",
+          "label": "Close Task View",
+          "labelRect": {
+            "x": 24,
+            "y": 37,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Close Task View and return to windows",
+          "disabled": false,
+          "x": 11,
+          "y": 28,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2333442842044256765\",\"session\":\"3\",\"frontend\":\"1\"}:15:overview:all",
+          "identity": "overview:all",
+          "label": "All windowsSelected",
+          "labelRect": {
+            "x": 24,
+            "y": 74,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Browse all workspaces",
+          "disabled": false,
+          "x": 11,
+          "y": 67,
+          "width": 678,
+          "height": 54
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2333442842044256765\",\"session\":\"3\",\"frontend\":\"1\"}:15:overview:workspace:2",
+          "identity": "overview:workspace:2",
+          "label": "Workspace 2",
+          "labelRect": {
+            "x": 24,
+            "y": 133,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Browse workspace 2",
+          "disabled": false,
+          "x": 11,
+          "y": 124,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2333442842044256765\",\"session\":\"3\",\"frontend\":\"1\"}:15:overview:family:1",
+          "identity": "overview:family:1",
+          "label": "ELM-ACTIVATION-PEERWorkspace 2 \u2022 Open",
+          "labelRect": {
+            "x": 24,
+            "y": 170,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Activate ELM-ACTIVATION-PEER on workspace 2",
+          "disabled": false,
+          "x": 11,
+          "y": 163,
+          "width": 678,
+          "height": 54
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2333442842044256765\",\"session\":\"3\",\"frontend\":\"1\"}:15:overview:transfer:1",
+          "identity": "overview:transfer:1",
+          "label": "Move ELM-ACTIVATION-PEER\u2026",
+          "labelRect": {
+            "x": 24,
+            "y": 229,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Move ELM-ACTIVATION-PEER to another workspace",
+          "disabled": false,
+          "x": 11,
+          "y": 220,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2333442842044256765\",\"session\":\"3\",\"frontend\":\"1\"}:15:overview:family:2",
+          "identity": "overview:family:2",
+          "label": "ELM-AUTHORITY-FIXTUREWorkspace 2 \u2022 Open",
+          "labelRect": {
+            "x": 24,
+            "y": 266,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Activate ELM-AUTHORITY-FIXTURE on workspace 2",
+          "disabled": false,
+          "x": 11,
+          "y": 259,
+          "width": 678,
+          "height": 54
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2333442842044256765\",\"session\":\"3\",\"frontend\":\"1\"}:15:overview:transfer:2",
+          "identity": "overview:transfer:2",
+          "label": "Move ELM-AUTHORITY-FIXTURE\u2026",
+          "labelRect": {
+            "x": 24,
+            "y": 325,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Move ELM-AUTHORITY-FIXTURE to another workspace",
+          "disabled": false,
+          "x": 11,
+          "y": 316,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2333442842044256765\",\"session\":\"3\",\"frontend\":\"1\"}:15:overview:refresh",
+          "identity": "overview:refresh",
+          "label": "Refresh window statusObservation only",
+          "labelRect": {
+            "x": 24,
+            "y": 362,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Refresh window status; read observations without retrying actions",
+          "disabled": false,
+          "x": 11,
+          "y": 355,
+          "width": 678,
+          "height": 54
+        }
+      ],
+      "content": [],
+      "fields": [],
+      "focus": "applications:{\"lifetime\":\"2333442842044256765\",\"session\":\"3\",\"frontend\":\"1\"}:15:overview:all",
+      "documentFocused": true,
+      "fontSize": "16px",
+      "theme": "night",
+      "textScale": "100",
+      "viewportWidth": 700,
+      "viewportHeight": 420,
+      "scrollTop": 36,
+      "scrollHeight": 456,
+      "text": "Task View\nChoose a window to reveal its workspace, or browse another workspace.\n\n\nClose Task View\n\nAll windows\nSelected\n\nWorkspace 2\n\nELM-ACTIVATION-PEER\nWorkspace 2 \u2022 Open\n\nMove ELM-ACTIVATION-PEER\u2026\n\nELM-AUTHORITY-FIXTURE\nWorkspace 2 \u2022 Open\n\nMove ELM-AUTHORITY-FIXTURE\u2026\n\nRefresh window status\nObservation only"
+    }
+  },
+  "supplementaryEmptyWorkspaceThreeObserved": false
+}

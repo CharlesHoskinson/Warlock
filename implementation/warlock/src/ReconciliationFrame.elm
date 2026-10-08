@@ -23,7 +23,7 @@ recordDecoder : D.Decoder Record
 recordDecoder = strict ["schema","effectProtocol","binding","intent","status"]
     (D.map5 Record (D.field "schema" (exactInt 2)) (D.field "effectProtocol" protocolDecoder) (D.field "binding" Binding.decoder) (D.field "intent" Effects.intentDecoder) (D.field "status" (exactString "Unknown" |> D.map (\_ -> Effects.Unknown))))
     |> D.andThen (\record ->
-        let operationMatches = if record.effectProtocol==1 then List.member record.intent.operation [Effects.Minimize,Effects.Restore,Effects.Activate] else List.member record.intent.operation [Effects.Maximize,Effects.RestoreGeometry]
+        let operationMatches = if record.effectProtocol==1 then List.member record.intent.operation [Effects.Minimize,Effects.Restore,Effects.Activate] else Effects.protocol record.intent.operation==2
         in if Binding.matchesContext record.intent.context.lifetime record.intent.context.epoch record.binding && operationMatches then D.succeed record else D.fail "Record authority or operation/protocol mismatch")
 
 proofDecoder : D.Decoder Proof

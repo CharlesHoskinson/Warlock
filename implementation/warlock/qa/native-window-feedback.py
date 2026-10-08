@@ -4,6 +4,7 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
 lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
 """
 import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
+TRANSFER=sys.argv[1:]==['--transfer-workspace']
 IME=sys.argv[1:]==['--ime']
 ACCESSIBILITY=sys.argv[1:]==['--accessibility']
 CONTRAST=sys.argv[1:]==['--high-contrast']
@@ -28,7 +29,7 @@ PRE_READY_RETIRE=sys.argv[1:]==['--switcher-pre-ready-retirement']
 MEMBERSHIP=sys.argv[1:]==['--switcher-membership'] or PRE_READY_RETIRE
 CHORD=sys.argv[1:]==['--switcher-chord'] or MEMBERSHIP
 SWITCHER=sys.argv[1:]==['--switcher'] or ACCESSIBILITY
-NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'] or DENSEPICKER or KEYBOARD;PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION or IME;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS or PINMENUS or REFLOW or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or KEYBOARD;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD or DRAG
+NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'] or DENSEPICKER or KEYBOARD;PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION or IME;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS or PINMENUS or REFLOW or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or KEYBOARD;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER or TRANSFER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD or DRAG
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143';RUNTIME=REPO/'implementation/warlock-client-provider-native-v204'
 sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
 spec=importlib.util.spec_from_file_location('feedback_private_host',RUNTIME/'candidate_host.py');host=importlib.util.module_from_spec(spec);spec.loader.exec_module(host)
@@ -40,7 +41,7 @@ from system_isolation import supply,validate
 from inspection import Collector
 isolate_session_host(host)
 sys.path.insert(0,str(ROOT/'adapter'));from effect_endpoint import Endpoint;from endpoint import start_time
-if PLACEMENT:
+if PLACEMENT or TRANSFER:
  from geometry_endpoint import GeometryEndpoint as Endpoint
 pre=json.loads((RUNTIME/'qa/preflight.json').read_text());pair=pre['pair'];build_path=pathlib.Path(pre['controlledHostBuild']);build=json.loads(build_path.read_text());assert build['passed'];binary=build_path.parent/'elm-host';assert sha(binary)==build['binarySHA256']
 assert not NAV or (ROOT/'qa/current-native-pair.json').exists()
@@ -68,7 +69,7 @@ else:
 for row in pair.values():assert sha(row['path'])==row['sha256']
 assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
 subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
-OUT=ROOT/'qa/runs'/(('native-ime-' if IME else 'native-accessibility-' if ACCESSIBILITY else 'native-high-contrast-' if CONTRAST else 'native-drag-ownership-' if DRAG else 'native-keyboard-shell-' if KEYBOARD else 'native-attention-' if ATTENTION else 'native-jump-lists-' if JUMP else 'native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+OUT=ROOT/'qa/runs'/(('native-transfer-workspace-' if TRANSFER else 'native-ime-' if IME else 'native-accessibility-' if ACCESSIBILITY else 'native-high-contrast-' if CONTRAST else 'native-drag-ownership-' if DRAG else 'native-keyboard-shell-' if KEYBOARD else 'native-attention-' if ATTENTION else 'native-jump-lists-' if JUMP else 'native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
 OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
 focus_host=None
 if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
@@ -156,6 +157,7 @@ if DRAG:
  report.update(requirements=['ELM-UX-021'],scenarios=['ux-021'],scope='Actual native move/resize input across taskbar and two outputs; native controller owner/serial, real blocked shell shortcut and competing native effect, one end per gesture. No caption/edge, AT, touch/tablet or independent acceptance inferred.')
 if ACCESSIBILITY:report.update(requirements=['ELM-UX-025'],scenarios=['actual-surface-at'],scope='Actual private GTK/WebKit taskbar and switcher AT-SPI tree/states/focus and real Orca observations with physical input; independent original acceptance remains separate.')
 if IME:report.update(requirements=['ELM-UX-028'],scenarios=['ime-spike-commit','ime-spike-cancel'],scope='Actual installed private Fcitx Unicode preedit/candidate keyboard traversal/commit/cancel through GTK/WebKit in integrated launcher; query/caret/native effects observed at original deadline. Independent original acceptance remains separate.')
+if TRANSFER:report.update(requirements=['ELM-UX-018'],scenarios=['ux-018','transfer-refused','transfer-accepted'],scope='Actual physical Task View transfers, native pinned refusal/source retention, matching committed receipts and observed existing/empty workspace membership under original deadlines. Independent and AT acceptance separate.')
 def check(name,condition,**data):
  report['checks'].append({'name':name,'passed':bool(condition),**data});assert condition,name
 def wait(fn,seconds=6):
@@ -1143,6 +1145,40 @@ raise SystemExit(daemon.run())
      before_refusal=facts();n=str((10000 if MEMBERSHIP else 9000)+len(report['nativeFixtures']));intent={'request':n,'generation':n,'incarnation':peer_identity,'operation':'activate','context':client.context(old)};receipt=client.effect(intent);report['nativeFixtures'].append({'intent':intent,'result':receipt})
      check('StaleActivationRefusesWithoutNavigationOrFocus',receipt['status']=='Refused' and receipt['reason']=='dependency-mismatch' and facts()['facts']==before_refusal['facts'] and s.data('monitors')[0]['activeWorkspace']['id']==1,result=receipt,before=before_refusal,after=facts())
      report['nativeNavigationJourneyObserved']=True
+    elif TRANSFER:
+     wait(lambda:(projection() or {}).get('phase')=='Coherent')
+     root=target
+     def member():return next(w for w in facts()['facts']['windows'] if w['incarnation']==root)
+     def transfer_receipts():
+      return [json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('backend-frame: ') and json.loads(line.split(': ',1)[1]).get('kind')=='effect-outcome' and json.loads(line.split(': ',1)[1]).get('intent',{}).get('operation')=='transfer-workspace']
+     def open_transfer(destination="2"):
+      opener=wait(lambda:next((b for b in (bar_body() or {}).get('buttons',[]) if b['accessibleName']=='Open Task View' and not b['disabled']),None))
+      click({'visible':0<=opener['x']<800 and 0<=opener['y']<48,'point':[opener['x']+opener['width']/2,opener['y']+opener['height']/2]})
+      wait(lambda:(projection() or {}).get('mode')=='overview' and any(b['accessibleName']=='Move ELM-AUTHORITY-FIXTURE to another workspace' for b in (popup_body() or {}).get('buttons',[])))
+      keyboard_button('Move ELM-AUTHORITY-FIXTURE to another workspace')
+      return wait(lambda:any(b['accessibleName']=='Move selected window to workspace '+destination for b in (popup_body() or {}).get('buttons',[])))
+     before=len(journal());original=member();check('OriginalTransferStartsOnWorkspaceOne',original['workspace']=='1',member=original)
+     open_transfer();keyboard_button('Cancel window transfer');wait(lambda:not any(b['accessibleName'].startswith('Move selected window') for b in (popup_body() or {}).get('buttons',[])))
+     check('CancelTransferDoesNotSubmitOrMove',len(journal())==before and member()['workspace']=='1')
+     key(1);wait(lambda:(projection() or {}).get('mode')=='closed')
+     check('NativePinnedRefusalFixture',s.ctl('dispatch',"hl.dsp.window.pin({window='"+selector+"'})").strip()=='ok')
+     wait(lambda:any(w['title']=='ELM-AUTHORITY-FIXTURE' and w['pinned'] for w in s.data('clients')))
+     open_transfer();popup_capture('native-transfer-destinations');before=len(transfer_receipts());keyboard_button('Move selected window to workspace 2',28)
+     refused=wait(lambda:len(transfer_receipts())==before+1 and transfer_receipts()[-1]);wait(lambda:(projection() or {}).get('phase')=='Coherent' and 'refused' in (bar_body() or {}).get('text','').lower())
+     check('NativeRefusalRetainsWorkspaceOneWithVisibleFeedback',refused['status']=='Refused' and refused['reason']=='transfer-family-ineligible' and member()['workspace']=='1',receipt=refused,member=member(),bar=bar_body())
+     check('NativeUnpinForAcceptedTransfer',s.ctl('dispatch',"hl.dsp.window.pin({window='"+selector+"'})").strip()=='ok')
+     wait(lambda:any(w['title']=='ELM-AUTHORITY-FIXTURE' and not w['pinned'] for w in s.data('clients')))
+     open_transfer();before=len(transfer_receipts());keyboard_button('Move selected window to workspace 2',28)
+     committed=wait(lambda:len(transfer_receipts())==before+1 and transfer_receipts()[-1]);wait(lambda:member()['workspace']=='2' and (projection() or {}).get('phase')=='Coherent')
+     check('MatchingCommittedTransferMovesOnlySelectedRoot',committed['status']=='Committed' and committed['intent']['incarnation']==root and committed['intent']['transfer']['source']=='1' and committed['intent']['transfer']['destination']=='2' and all(w['workspace']=='2' for w in facts()['facts']['windows']),receipt=committed,facts=facts())
+     before=len(transfer_receipts());open_transfer('3');keyboard_button('Move selected window to workspace 3',28)
+     empty=wait(lambda:len(transfer_receipts())==before+1 and transfer_receipts()[-1]);wait(lambda:member()['workspace']=='3' and (projection() or {}).get('phase')=='Coherent')
+     check('TransferCreatesEmptyOrdinaryWorkspaceWithoutFollowing',empty['status']=='Committed' and empty['intent']['transfer']['source']=='2' and empty['intent']['transfer']['destination']=='3' and s.data('monitors')[0]['activeWorkspace']['id']==1,receipt=empty,member=member())
+     opener=wait(lambda:next((b for b in (bar_body() or {}).get('buttons',[]) if b['accessibleName']=='Open Task View' and not b['disabled']),None))
+     click({'visible':True,'point':[opener['x']+opener['width']/2,opener['y']+opener['height']/2]})
+     body=wait(lambda:next((body for body in [popup_body()] if body and any(b['accessibleName']=='Activate ELM-AUTHORITY-FIXTURE on workspace 3' for b in body['buttons'])),None));popup_capture('native-transfer-workspace-three')
+     check('TaskViewDisplaysAcceptedNativeMembership',any(b['accessibleName']=='Activate ELM-AUTHORITY-FIXTURE on workspace 3' for b in body['buttons']) and len(transfer_receipts())==before+1,body=body)
+     key(1);wait(lambda:(projection() or {}).get('mode')=='closed');report['nativeTransferJourneyObserved']=True
     elif TASKVIEW:
      wait(lambda:(projection() or {}).get('phase')=='Coherent')
      native_facts=facts();labels={w['incarnation']:w['label'] for w in client.snapshot('443')['windows']}

@@ -14,6 +14,8 @@ MAX_BYTES=1048576
 def storage_key(record):
  r=normalize(record);b,i=r['binding'],r['intent'];c=i['context']
  fields=[b['lifetime'],b['session'],b['frontend'],r['effectProtocol'],i['request'],i['generation'],i['incarnation'],i['operation'],c['lifetime'],c['epoch'],c['output'],c['revision']]
+ if i['operation']=='transfer-workspace':
+  fields.extend(i['transfer'][name] for name in ['source','sourceGeneration','destination'])
  if i['operation']=='snap':
   p=i['placement'];fields.extend(p[name] for name in ['region','monitor','outputOwnershipGeneration','workAreaRevision','workspaceGeneration'])
   fields.extend(struct.pack('>d',0.0 if value==0 else float(value)).hex() for value in p['geometry'])

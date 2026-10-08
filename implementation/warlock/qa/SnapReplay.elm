@@ -1,4 +1,4 @@
-port module SnapReplay exposing (main)
+port module SnapReplay exposing (main, readyFor, geometryFor, bound, counter)
 
 import Binding
 import Desktop

@@ -1,5 +1,6 @@
 module Effects exposing (recoverUnknown, releaseUnknown, Model, Operation(..), Intent, Transaction, intentDecoder, operationDecoder, operationName, Status(..), empty, apply, encode, pending, encodeIntent, statusName, protocol, beginGeometry, blocked, canProveUnsent, locallyRefuseUnsent)
 
+import Transfer
 import Snap
 import GeometryProjection
 import Json.Decode as D
@@ -8,7 +9,7 @@ import ActionProjection as Scene
 import UInt64 exposing (Counter)
 
 -- Typed activation/minimize/restore intents. No workspace/scratchpad dispatch.
-type Operation = Minimize | Restore | Activate | Maximize | RestoreGeometry | SnapPlacement Snap.Proposal
+type Operation = Minimize | Restore | Activate | Maximize | RestoreGeometry | SnapPlacement Snap.Proposal | TransferWorkspace Transfer.Proposal
 type Status = Pending | Committed | Refused | Cancelled | Unknown
 
 type alias Context = { lifetime : Counter, epoch : Counter, output : Counter, revision : Counter }
@@ -53,6 +54,8 @@ intentDecoder = D.field "operation" D.string |> D.andThen (\name ->
             (D.field "context" contextDecoder |> D.andThen (\context -> D.map5 Intent
                 (D.field "request" identity) (D.field "generation" identity) (D.field "incarnation" identity)
                 (D.field "placement" (Snap.proposalDecoder context) |> D.map SnapPlacement) (D.succeed context)))
+    else if name=="transfer-workspace" then
+        strict ["request","generation","incarnation","operation","context","transfer"] (D.map5 Intent (D.field "request" identity) (D.field "generation" identity) (D.field "incarnation" identity) (D.field "transfer" Transfer.decoder |> D.map TransferWorkspace) (D.field "context" contextDecoder))
     else strict ["request","generation","incarnation","operation","context"] (D.map5 Intent (D.field "request" identity) (D.field "generation" identity) (D.field "incarnation" identity) (D.field "operation" operationDecoder) (D.field "context" contextDecoder)))
 
 unknown : Maybe Transaction -> Maybe Transaction
@@ -142,6 +145,7 @@ operationName operation = case operation of
     Maximize -> "maximize"
     RestoreGeometry -> "restore-geometry"
     SnapPlacement _ -> "snap"
+    TransferWorkspace _ -> "transfer-workspace"
 
 statusName : Status -> String
 statusName status = case status of
@@ -160,6 +164,7 @@ encodeContext context = E.object [("lifetime",counter context.lifetime),("epoch"
 encodeIntent : Intent -> E.Value
 encodeIntent intent = E.object ([("request",counter intent.request),("generation",counter intent.generation),("incarnation",counter intent.incarnation),("operation",E.string (operationName intent.operation)),("context",encodeContext intent.context)] ++ (case intent.operation of
     SnapPlacement proposed -> [("placement",Snap.encodeProposal proposed)]
+    TransferWorkspace proposed -> [("transfer",Transfer.encode proposed)]
     _ -> []))
 
 encode : Model -> E.Value
@@ -178,6 +183,7 @@ protocol operation = case operation of
     Maximize -> 2
     RestoreGeometry -> 2
     SnapPlacement _ -> 2
+    TransferWorkspace _ -> 2
     _ -> 1
 
 blocked : Counter -> Counter -> Model -> Bool
@@ -192,7 +198,9 @@ beginGeometry caps observed operation incarnation model =
             if not model.connected || not legacyReady || pending model || blocked observed.context.lifetime incarnation model then refuse "Unresolved or disconnected native operation"
             else if List.length model.unresolved>=64 then refuse "Unresolved operation capacity"
             else if protocol operation/=2 || not caps.effects || not (List.member (operationName operation) caps.operations) then refuse "Geometry operation not negotiated"
-            else if observed.blocked || not window.eligible || window.minimized || window.fixedSize then refuse "Geometry target ineligible"
+            else if observed.blocked || (case operation of
+                TransferWorkspace p -> not (Transfer.matches observed incarnation p)
+                _ -> not window.eligible || window.minimized || window.fixedSize) then refuse "Geometry target ineligible"
             else if (operation==Maximize && (not window.maximize || window.nativeMode/=GeometryProjection.Ordinary)) || (operation==RestoreGeometry && (not window.restoreGeometry || window.nativeMode/=GeometryProjection.Maximized || not window.placementKnown)) then refuse "Geometry state/capability unavailable"
             else if (case operation of
                 SnapPlacement proposed -> not (Snap.matches observed incarnation proposed)

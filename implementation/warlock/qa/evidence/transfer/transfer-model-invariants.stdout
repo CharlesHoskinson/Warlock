@@ -1,0 +1,301 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      accepted: false,
+      displayed: 1,
+      native: 1,
+      pending: false,
+      request: 0,
+      sends: 0,
+      unknown: false
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      accepted: false,
+      displayed: 1,
+      native: 1,
+      pending: true,
+      request: 1,
+      sends: 1,
+      unknown: false
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      accepted: false,
+      displayed: 1,
+      native: 2,
+      pending: true,
+      request: 1,
+      sends: 1,
+      unknown: false
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      accepted: false,
+      displayed: 1,
+      native: 2,
+      pending: true,
+      request: 1,
+      sends: 1,
+      unknown: false
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      accepted: false,
+      displayed: 1,
+      native: 2,
+      pending: true,
+      request: 1,
+      sends: 1,
+      unknown: false
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      accepted: false,
+      displayed: 1,
+      native: 2,
+      pending: true,
+      request: 1,
+      sends: 1,
+      unknown: false
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      accepted: false,
+      displayed: 1,
+      native: 2,
+      pending: true,
+      request: 1,
+      sends: 1,
+      unknown: false
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      accepted: true,
+      displayed: 2,
+      native: 2,
+      pending: false,
+      request: 1,
+      sends: 1,
+      unknown: false
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      accepted: true,
+      displayed: 2,
+      native: 2,
+      pending: false,
+      request: 1,
+      sends: 1,
+      unknown: false
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      accepted: true,
+      displayed: 2,
+      native: 2,
+      pending: false,
+      request: 1,
+      sends: 1,
+      unknown: false
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      accepted: true,
+      displayed: 2,
+      native: 2,
+      pending: false,
+      request: 1,
+      sends: 1,
+      unknown: false
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      accepted: true,
+      displayed: 2,
+      native: 2,
+      pending: false,
+      request: 1,
+      sends: 1,
+      unknown: false
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      accepted: true,
+      displayed: 2,
+      native: 2,
+      pending: false,
+      request: 1,
+      sends: 1,
+      unknown: false
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      accepted: true,
+      displayed: 2,
+      native: 2,
+      pending: false,
+      request: 1,
+      sends: 1,
+      unknown: false
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      accepted: true,
+      displayed: 2,
+      native: 2,
+      pending: false,
+      request: 1,
+      sends: 1,
+      unknown: false
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      accepted: true,
+      displayed: 2,
+      native: 2,
+      pending: false,
+      request: 1,
+      sends: 1,
+      unknown: false
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      accepted: true,
+      displayed: 2,
+      native: 2,
+      pending: false,
+      request: 1,
+      sends: 1,
+      unknown: false
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      accepted: true,
+      displayed: 2,
+      native: 2,
+      pending: false,
+      request: 1,
+      sends: 1,
+      unknown: false
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      accepted: true,
+      displayed: 2,
+      native: 2,
+      pending: false,
+      request: 1,
+      sends: 1,
+      unknown: false
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      accepted: true,
+      displayed: 2,
+      native: 2,
+      pending: false,
+      request: 1,
+      sends: 1,
+      unknown: false
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      accepted: true,
+      displayed: 2,
+      native: 2,
+      pending: false,
+      request: 1,
+      sends: 1,
+      unknown: false
+    }
+}
+
+[ok] No violation found (45ms at 2222 traces/second).
+Trace length statistics: max=21, min=21, average=21.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x13526 --backend=typescript to reproduce.

@@ -1,13 +1,100 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-08T18:13:28.300621+00:00",
+  "updatedUTC": "2026-10-08T18:45:44.425080+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "task-view-workspace-transfer",
+    "requirements": [
+      "ELM-UX-018"
+    ],
+    "scenarios": [
+      "ux-018",
+      "transfer-refused",
+      "transfer-accepted"
+    ],
+    "paths": [
+      "implementation/warlock/src/Transfer.elm",
+      "implementation/warlock/src/Effects.elm",
+      "implementation/warlock/src/GeometryProjection.elm",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/TaskView.elm",
+      "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/src/ReconciliationFrame.elm",
+      "implementation/warlock/src/ReceiptRouter.elm",
+      "implementation/warlock/adapter/geometry_endpoint.py",
+      "implementation/warlock/adapter/recovery_journal.py",
+      "implementation/warlock/adapter/admission_ledger.py",
+      "implementation/warlock/native/authority.cpp",
+      "implementation/warlock/native/geometry-effects.inc",
+      "implementation/warlock/native/transfer-workspace.inc",
+      "implementation/warlock/qa/check-native-authority.py",
+      "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/qa/TransferReplay.elm",
+      "implementation/warlock/qa/transfer-workspace.qnt",
+      "implementation/warlock/qa/check-transfer-workspace.py",
+      "implementation/warlock/README.md",
+      "implementation/warlock/assets/elm.js",
+      "implementation/warlock/assets/bar.js",
+      "implementation/warlock/assets/popup.js",
+      "implementation/warlock/qa/current-search-build.json",
+      "implementation/warlock/qa/current-native-pair.json"
+    ],
+    "before": "Task View lists native workspace membership and activates selected windows but exposes no explicit transfer transaction or refusal feedback.",
+    "after": "Task View offers typed window transfer destinations, uses the shared request/custody/native authority, preserves membership until the matching committed receipt, and shows refusal or Unknown without replay. Native authority supports existing and empty ordinary workspaces under current ownership.",
+    "verification": [
+      "Actual Elm root/transfer replay checks pending, mismatched/duplicate receipts, committed membership and refusal; actual production adapter recovery/custody key checks and bounded Quint traces. Original isolated physical Task View transfer to workspace 2 and native refusal retention on workspace 1 under unchanged six-second observations."
+    ],
+    "status": "completed-partial",
+    "observed": "Original physical cancellation, pinned native refusal retaining workspace 1 with visible feedback, committed workspace 2 transfer and actual Task View membership; later supplementary empty-workspace interval failed before request.",
+    "evidence": {
+      "path": "implementation/warlock/qa/evidence/transfer/manifest.json",
+      "sha256": "ee983f8638fffbf41fac47e47bbb2c0dc96b9a92ffd6304aac665e06fd16533f",
+      "scope": "Original physical cancellation, pinned native refusal retaining workspace 1 with visible feedback, committed workspace 2 transfer and actual Task View membership; later supplementary empty-workspace interval failed before request.",
+      "sourceRevision": "c1367de606cb57fd9c253550b6dfae93c56f5453",
+      "sourceTuple": {
+        "core": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+          "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+        },
+        "plugin": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791484487625706040/elm-window-geometry-authority.so",
+          "sha256": "796537e82996ac670d4b1da9c764764b921d61fe9f420220535c40ef1fbfb21f"
+        },
+        "aquamarine": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+          "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+        }
+      },
+      "reviewerDisposition": "Owner-observed original native/replay oracles; independent original acceptance pending."
+    },
+    "missingObservations": [
+      "Independent original scenario/requirement review remains pending; the owner-observed original native oracles are separate from acceptance.",
+      "The later supplementary empty-workspace 3 native interval was not reached: its helper waited for workspace 2, correctly excluded as the current source. The helper now takes the requested destination but is unrerun after two native attempts.",
+      "Native modal/minimized/cross-output/device and applicable AT coverage, full release journeys/resource/package/deployment remain open."
+    ],
+    "investigationStopped": true
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "actual-shell-ime",
     "requirements": [
       "ELM-UX-028"
@@ -62,78 +149,6 @@
       "Original ime-spike-commit requires actual native candidate interaction as well as the field/caret/no-launch observations. Trusted GTK/WebKit direct field preedit and one Unicode commit passed, but external candidate-panel inspection expired at the unchanged six-second candidate_layers deadline. No candidate traversal/commit or candidate-panel presentation acceptance is inferred.",
       "Original ime-spike-cancel native interval was not reached after the candidate barrier failed; actual compiled/browser cancellation passes only at component level. Both native attempts are preserved and no third IME campaign qualified these scenarios.",
       "Native Files-field/other input-method languages, independent original scenario/requirement acceptance, full release AT/hardware/resource/journey/package/deployment obligations remain open."
-    ],
-    "investigationStopped": true
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "actual-surface-accessibility",
-    "requirements": [
-      "ELM-UX-025"
-    ],
-    "scenarios": [
-      "actual-surface-at"
-    ],
-    "paths": [
-      "implementation/warlock/src/SurfaceRenderer.elm",
-      "implementation/warlock/qa/accessibility-session.py",
-      "implementation/warlock/qa/accessibility-inspector.py",
-      "implementation/warlock/qa/accessibility-reader.py",
-      "implementation/warlock/qa/accessibility-browser.mjs",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/README.md",
-      "implementation/warlock/assets/elm.js",
-      "implementation/warlock/assets/bar.js",
-      "implementation/warlock/assets/popup.js",
-      "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/qa/SwitcherReplay.elm"
-    ],
-    "before": "Actual taskbar and switcher have DOM labels/current markers but no verified native accessibility states or real Orca focus observations; private QA deliberately disables the accessibility bridge.",
-    "after": "Taskbar active controls and switcher selection expose explicit native accessible roles/states/names and real focus changes, verified through a private owned AT-SPI bus, inspector and actual Orca without touching the main desktop.",
-    "verification": [
-      "Compile changed Elm roots; actual projected role/name/selection browser checks and selection/retirement replay. Isolated original native taskbar/switcher inspector and Orca focus/navigation recording under original six-second deadlines, preserving nonactivating private buses and cleanup. Independent acceptance remains separate."
-    ],
-    "status": "completed-partial",
-    "evidence": {
-      "path": "implementation/warlock/qa/evidence/accessibility/manifest.json",
-      "sha256": "edcabfa67297356b0bbeca973d1214b7e82747ac2c468f98a773a3322ebb9298",
-      "scope": "Actual renderer projects a named taskbar toolbar, active toggle state, named switcher listbox and exactly one selected window option from the immutable Elm root. Current compiled/replay/browser role/name/selection/cycle/retirement checks pass; actual native switcher presentation, local traversal, cancel, chosen activation/restore and real GTK keyboard recipient pass. Original native taskbar/switcher inspector/Orca oracle is unverified; both failed private AT campaigns are retained.",
-      "sourceRevision": "467f0338e57eabc100bd12e9883ed1184cadcdb1",
-      "sourceTuple": {
-        "core": {
-          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
-          "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
-        },
-        "plugin": {
-          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791477973836253029/elm-window-geometry-authority.so",
-          "sha256": "216c5cce257eaff5d063285d44df6ac20090f285064c9681fac6213e414b0d1c"
-        },
-        "aquamarine": {
-          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
-          "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
-        }
-      },
-      "reviewerDisposition": "Owner-observed compiled semantics and native switcher regression only; original native AT/Orca and independent acceptance remain open."
-    },
-    "observed": "Actual renderer projects a named taskbar toolbar, active toggle state, named switcher listbox and exactly one selected window option from the immutable Elm root. Current compiled/replay/browser role/name/selection/cycle/retirement checks pass; actual native switcher presentation, local traversal, cancel, chosen activation/restore and real GTK keyboard recipient pass. Original native taskbar/switcher inspector/Orca oracle is unverified; both failed private AT campaigns are retained.",
-    "missingObservations": [
-      "Original actual-surface-at remains implemented-unverified: neither private AT attempt established the taskbar/switcher names, roles, native selection state and Orca focus agreement. The first observed initial empty taskbar DOM and failed its toggle-state check; the second expired at the original six-second bar_tree barrier. Read-only tree traversal incorrectly called get_application on the desktop root; corrected without a third AT campaign. No native host bridge success or failure is inferred.",
-      "The current inspector desktop-root guard and additional private-XDG reader assertions were changed after the attempts and have not been natively rerun.",
-      "Independent original-scenario/requirement acceptance, applicable audible/braille/IME and full release hardware/resource/journey/package/deployment obligations remain open."
     ],
     "investigationStopped": true
   },
@@ -568,15 +583,13 @@
     }
   ],
   "nextOriginalSlice": {
-    "id": "task-view-workspace-transfer",
+    "id": "reduced-motion-profile",
     "requirements": [
-      "ELM-UX-018"
+      "ELM-UX-022"
     ],
     "scenarios": [
-      "ux-018",
-      "transfer-refused",
-      "transfer-accepted"
+      "ux-022"
     ],
-    "reason": "Mandatory guarded Task View workspace transfer through correlated native acceptance/refusal; independent of the stopped AT/IME fixture investigations."
+    "reason": "Implement the documented reduced-motion profile for actual minimize/restore and shell overlays, independently of stopped AT/IME/transfer qualifications."
   }
 }

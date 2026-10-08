@@ -263,3 +263,22 @@ refusal journey also passes. Candidate-panel traversal/commit and cancellation
 remain unverified after the two-attempt stop threshold. See
 `qa/evidence/ime/manifest.json`; no complete UX028 or release acceptance is
 claimed from the direct-input interval.
+
+Task View now offers **Move …** for a listed window. Its destination chooser
+includes ordinary workspaces 1–10 and additional observed workspace identities.
+Cancel changes nothing. Selecting a destination closes the chooser, refreshes
+current authority and submits one typed transfer through the shared effect
+allocator and durable custody. Pending or Unknown transfers retain their source
+membership in Task View; only the matching committed receipt releases it to
+new native observations. Refusal is visible in the taskbar and never moves the
+window optimistically. The native controller reserves the family, refuses pinned
+or grouped targets, preserves minimized state and never follows the destination
+implicitly. Existing native placement records are retired after transfer.
+
+The original ELM-UX-018 workspace-1 refusal and accepted workspace-2 transfer
+were physically observed, including native receipts and actual Task View names.
+Compiled reducer/custody/Quint checks pass. A supplementary empty-workspace-3
+interval was not reached because the helper expected the excluded source
+workspace in the destination chooser; that helper is corrected but unrerun after
+the two-attempt limit. Modal/minimized/cross-output coverage, applicable AT and
+independent original acceptance remain open. See `qa/evidence/transfer/manifest.json`.

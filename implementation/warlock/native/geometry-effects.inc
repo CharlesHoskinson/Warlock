@@ -47,13 +47,16 @@ std::string geometryPeers(const PHLWINDOW& excluded) {
     return result;
 }
 #include "snap-placement.inc"
+#include "transfer-workspace.inc"
 std::string performGeometryEffect(Session& session,JsonObject* object) {
     const auto intent=objectMember(object,"intent");
     if(!intent)return error("effect-schema");
     const auto name=json_object_get_member(intent,"operation");
     const bool snap=name && JSON_NODE_HOLDS_VALUE(name) && json_node_get_value_type(name)==G_TYPE_STRING && std::string(json_node_get_string(name))=="snap";
+    const bool moving=name && JSON_NODE_HOLDS_VALUE(name) && json_node_get_value_type(name)==G_TYPE_STRING && std::string(json_node_get_string(name))=="transfer-workspace";
+    const auto transfer=moving?transferSubmission(intent):std::nullopt;
     const auto placement=snap?snapSubmission(intent):std::nullopt;
-    if(snap ? (!fields(intent,{"request","generation","incarnation","operation","context","placement"}) || !placement) : !fields(intent,{"request","generation","incarnation","operation","context"}))return error("effect-schema");
+    if(snap ? (!fields(intent,{"request","generation","incarnation","operation","context","placement"}) || !placement) : moving ? (!fields(intent,{"request","generation","incarnation","operation","context","transfer"}) || !transfer) : !fields(intent,{"request","generation","incarnation","operation","context"}))return error("effect-schema");
     const auto request=counter(intent,"request"),generation=counter(intent,"generation"),targetId=counter(intent,"incarnation");
     const auto context=objectMember(intent,"context");
     if(!request || !generation || !targetId || !context || !fields(context,{"lifetime","epoch","output","revision"})) return error("effect-schema");
@@ -64,20 +67,21 @@ std::string performGeometryEffect(Session& session,JsonObject* object) {
     gchar* raw=json_to_string(json_object_get_member(object,"intent"),FALSE);const std::string encoded(raw);g_free(raw);
     const auto reply=[&](const char* status,const char* reason){return effectOutcome(session,encoded,status,reason,2);};
     if(!session.geometryEnabled || session.geometryFrontend!=session.frontend || !session.geometryOperations.contains(operation)) return reply("Refused","geometry-operation-not-negotiated");
-    const std::string fingerprint="2:"+quote(operation)+":"+std::to_string(*request)+":"+std::to_string(*generation)+":"+std::to_string(*targetId)+":"+std::to_string(*native)+":"+std::to_string(*epoch)+":"+std::to_string(*output)+":"+std::to_string(*expected)+(placement?":"+snapFingerprint(*placement):"");
+    const std::string fingerprint="2:"+quote(operation)+":"+std::to_string(*request)+":"+std::to_string(*generation)+":"+std::to_string(*targetId)+":"+std::to_string(*native)+":"+std::to_string(*epoch)+":"+std::to_string(*output)+":"+std::to_string(*expected)+(placement?":"+snapFingerprint(*placement):transfer?":"+transferFingerprint(*transfer):"");
     if(*native!=lifetime || *epoch!=session.frontend) return reply("Refused","authority-mismatch");
     if(*request==session.effectRequest) return fingerprint==session.lastPayload ? session.lastReply : reply("Refused","request-reuse");
     if(*request<session.effectRequest || *generation<=session.generation) return reply("Refused","operation-order");
     session.effectRequest=*request;session.generation=*generation;session.lastPayload=fingerprint;
     session.lastReply=reply("Unknown","effect-unproven");
     const auto reject=[&](const char* reason){session.lastReply=reply("Refused",reason);return session.lastReply;};
-    if(operation!="maximize" && operation!="restore-geometry" && operation!="snap") return reject("unsupported-operation");
+    if(operation!="maximize" && operation!="restore-geometry" && operation!="snap" && operation!="transfer-workspace") return reject("unsupported-operation");
     refreshGeometryFacts();
     if(*output!=outputGeneration || *expected!=geometryRevision) return reject("dependency-mismatch");
     const auto member=std::ranges::find_if(members,[&](const Member& entry){return entry.id==*targetId;});
     if(member==members.end() || !member->window.lock()) return reject("stale-incarnation");
     const auto window=member->window.lock();const Elm::Geometry::Target barrier{lifetime,*targetId};
     if(effectBarriers.blocked(barrier)) return reject("native-operation-unresolved");
+    if(transfer)return performTransferEffect(session,*transfer,*targetId,window,barrier,reply,reject);
     if(!geometryTargetEligible(window,session.geometryProtocol)) return reject("geometry-ineligible");
     const auto scope=geometryScope(window);const auto key=Elm::Placement::Identity::fromNative(lifetime,*targetId);
     if(!scope || !key) return reject("geometry-scope");

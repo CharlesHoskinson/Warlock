@@ -15,6 +15,8 @@
 #include <hyprland/src/managers/input/InputManager.hpp>
 #include <hyprland/src/managers/SessionLockManager.hpp>
 #include <hyprland/src/state/MonitorState.hpp>
+#include <hyprland/src/state/WorkspaceState.hpp>
+#include <hyprland/src/desktop/state/GlobalWindowController.hpp>
 #include <hyprland/src/managers/fullscreen/FullscreenController.hpp>
 #include <hyprland/src/plugins/PluginAPI.hpp>
 #include <hyprland/src/Compositor.hpp>
@@ -830,8 +832,8 @@ std::string observe(eHyprCtlOutputFormat, std::string request) {
             const auto found=sessions.find(peer);
             if(!native || !sessionId || !frontend || found==sessions.end() || found->second.start!=start || *native!=lifetime || *sessionId!=found->second.id || *frontend!=found->second.frontend || !grantRegistry->callerMatches(verifiedPeer(peer,start),{lifetime,*sessionId,*frontend})) reply=error("binding-mismatch");
             else if(operation=="geometry-attach") {
-                found->second.geometryProtocol=json_node_get_int(geometryProtocol);found->second.geometryEnabled=true;found->second.geometryFrontend=found->second.frontend;found->second.geometryOperations={"maximize","restore-geometry"};if(found->second.geometryProtocol==2)found->second.geometryOperations.insert("snap");
-                reply="{\"protocolVersion\":3,\"kind\":\"geometry-attached\",\"geometryProtocol\":"+std::to_string(found->second.geometryProtocol)+",\"binding\":"+binding(found->second)+",\"requestId\":"+quote(std::to_string(*requestId))+",\"capabilities\":{\"observe\":true,\"effects\":true,\"effectProtocol\":2,\"operations\":"+(found->second.geometryProtocol==2?"[\"maximize\",\"restore-geometry\",\"snap\"]":"[\"maximize\",\"restore-geometry\"]")+",\"placementCapacity\":256,\"canonicalScene\":false}}";
+                found->second.geometryProtocol=json_node_get_int(geometryProtocol);found->second.geometryEnabled=true;found->second.geometryFrontend=found->second.frontend;found->second.geometryOperations={"maximize","restore-geometry"};if(found->second.geometryProtocol==2){found->second.geometryOperations.insert("snap");found->second.geometryOperations.insert("transfer-workspace");}
+                reply="{\"protocolVersion\":3,\"kind\":\"geometry-attached\",\"geometryProtocol\":"+std::to_string(found->second.geometryProtocol)+",\"binding\":"+binding(found->second)+",\"requestId\":"+quote(std::to_string(*requestId))+",\"capabilities\":{\"observe\":true,\"effects\":true,\"effectProtocol\":2,\"operations\":"+(found->second.geometryProtocol==2?"[\"maximize\",\"restore-geometry\",\"snap\",\"transfer-workspace\"]":"[\"maximize\",\"restore-geometry\"]")+",\"placementCapacity\":256,\"canonicalScene\":false}}";
             } else if(!found->second.geometryEnabled || found->second.geometryFrontend!=found->second.frontend || found->second.geometryProtocol!=json_node_get_int(geometryProtocol)) reply=error("geometry-negotiation-required");
             else {
                 const auto floor=counter(object,"minimumWatermark",true);

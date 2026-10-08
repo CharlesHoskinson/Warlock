@@ -42,7 +42,7 @@ try:
   core={'path':focus_core['binary'],'sha256':focus_core['binarySHA256']};assert sha(core['path'])==core['sha256']
  source=OUT/'inputs/native';source.mkdir(parents=True)
  inputs={}
- for name in ('authority.cpp','navigation-modal.hpp','geometry-effects.inc','snap-placement.inc'):
+ for name in ('authority.cpp','navigation-modal.hpp','geometry-effects.inc','snap-placement.inc','transfer-workspace.inc'):
   p=ROOT/'native'/name;inputs['native/'+name]=sha(p);shutil.copyfile(p,source/name)
  command=next(c['command'] for c in prior['commands'] if c['name']=='compile').copy()
  for i,arg in enumerate(command):
@@ -57,10 +57,12 @@ try:
  dependencies={str(pathlib.Path(p).resolve()):sha(p) for p in deps}
  for p,h in dependencies.items():
   if p.startswith(str(source)):
-   assert pathlib.Path(p).name in ('authority.cpp','navigation-modal.hpp','geometry-effects.inc','snap-placement.inc')
+   assert pathlib.Path(p).name in ('authority.cpp','navigation-modal.hpp','geometry-effects.inc','snap-placement.inc','transfer-workspace.inc')
   else:
    inherited=header_prefix[0]+p[len(header_prefix[1]):] if header_prefix and p.startswith(header_prefix[1]+'/') else p
-   assert preserved.get(inherited)==h,('Unrecorded or changed inherited dependency',p)
+   recorded=preserved.get(inherited)
+   verified_header=focus_core and '/owning-headers/' in p and focus_core['owningHeaders'].get(p.split('/owning-headers/',1)[1])==h
+   assert recorded==h or (recorded is None and verified_header),('Unrecorded or changed inherited dependency',p)
  exports=set()
  for command_row in prior['commands']:
   if not command_row['name'].startswith('provider-symbols-'):continue

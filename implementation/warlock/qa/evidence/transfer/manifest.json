@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "requirement": "ELM-UX-018",
+  "scenarios": [
+    "ux-018",
+    "transfer-refused",
+    "transfer-accepted"
+  ],
+  "sourceRevision": "c1367de606cb57fd9c253550b6dfae93c56f5453",
+  "sourceRevisionMeaning": "Parent commit plus exact changed source hashes and source.patch; the tested drafts are committed next.",
+  "sourceHashes": {
+    "implementation/warlock/src/Transfer.elm": "357a68e70977184ced8be8b8a4c0db6209730e6fe6ad2f4718087a6d6a2c32be",
+    "implementation/warlock/src/Effects.elm": "09b999a42a09065278673184e5d5ba24ff91428059aa9d98a893b5f55f2fa62a",
+    "implementation/warlock/src/GeometryProjection.elm": "d50b694ea176e4b39b511ca6f05af8cc50ad3cf935592bb2915e266ef106936b",
+    "implementation/warlock/src/Desktop.elm": "7eda22d4f3f282b250b804a9a091ed8071c020e2c43b53eafd49a61d493e92b7",
+    "implementation/warlock/src/TaskView.elm": "4775c51917d4117bda6b6c21b354d2d8ac018f1902af8b0dcd6489d443f946d8",
+    "implementation/warlock/src/Surface.elm": "ac759b6219bf04b42e60f78ea98067d8a063e5d89b4eca4376f29069e56971bb",
+    "implementation/warlock/src/ReconciliationFrame.elm": "c44fa50ac86d528b35959d50fc4d85bd9d8983c1e866fdda01ad1854f465004e",
+    "implementation/warlock/src/ReceiptRouter.elm": "ffcf85cf38de5665b35b3e2b6eb5a9f261360ec4b226b2fcefc0723cece1a011",
+    "implementation/warlock/adapter/geometry_endpoint.py": "847f7a2a8f55029d76d1fa823caf41594708f595bc7d20e3be3380e0dd7c9418",
+    "implementation/warlock/adapter/recovery_journal.py": "d1c47b6d2187c63a8db50a184a85762c4e188628a2924d63dce55e3a34e8379c",
+    "implementation/warlock/adapter/admission_ledger.py": "2faf5eb03dff6993de707f2d7458b929db881f4102bdc1ec467d3f7aaa4413d1",
+    "implementation/warlock/native/authority.cpp": "64503f3db66e30bfc078ea12b851164cec870c19d4e602bd90728e3fe61c2ecb",
+    "implementation/warlock/native/geometry-effects.inc": "d943d7c89242ea2f4c4b04fe683097e17d69fd41b2d2319814cfc93b0783e271",
+    "implementation/warlock/native/transfer-workspace.inc": "5e1a64474eb248e9ed13d0860d1fe1aa1ec99eb2b3984723645d89e6beddb026",
+    "implementation/warlock/qa/check-native-authority.py": "7ee39814b416a9b76ce93e1c0de960a65f7f00bd8ac80e31052780a23d9bd18f",
+    "implementation/warlock/qa/check-search.py": "93633fc0341df94cedb100dc7b92a8a4c5a391fdb4576b6ce7c58a4d600e19be",
+    "implementation/warlock/qa/native-window-feedback.py": "3b35c3872e363f97e0426e9d83895bc02d5b61e737801f040b90c25c7626b597",
+    "implementation/warlock/qa/TransferReplay.elm": "bfbd1e8064e9f24cba2cb71bd8f2cf7beda0892bdb4cff4363b3c593e949dcf1",
+    "implementation/warlock/qa/transfer-workspace.qnt": "1258181d574c0b537132f405fd0177dc41f9407f96b91ef55cf9dcebefb9c9c3",
+    "implementation/warlock/qa/check-transfer-workspace.py": "37bf968a380f6e55d3c86f8cbbd40c0480e7a0bc9c9c382448be739b347ed445",
+    "implementation/warlock/README.md": "afc4f6bf95853d56913e4f7c63217238361adcb248a4d83db5519f04e925ea87",
+    "implementation/warlock/assets/elm.js": "a3bb1b4b94814037d4b319b3ab9bfd714c35f59f859c04891f620a7df203ca90",
+    "implementation/warlock/assets/bar.js": "4bc147fe924ac897a32373a3602cba858ec5a23a8d0581e4be240191a9b28a47",
+    "implementation/warlock/assets/popup.js": "0ad005321b89a014989c887ff393786947b0bf156337af43cd0afb2ca95147a3",
+    "implementation/warlock/qa/current-search-build.json": "14f8fb7e73af8023444207b8efee3fbbe4fbed79258911c89db2f7f6eee0d510",
+    "implementation/warlock/qa/current-native-pair.json": "d318b5518adc3de6a06c1e74a29c28954360c5b6fc7f88aaf92f28e90b393223",
+    "implementation/warlock/native/host-journal.h": "45414d8aca91e31995a9cc923316ea0f20e696bbfa05e77ae78ffa57bd5c673d",
+    "implementation/warlock/native/host-journal-test.c": "5d3e286f16a77130ce43b40b66df707c4a9d8bd485615e2e83bbb2d6362b0191",
+    "implementation/warlock/qa/SnapReplay.elm": "f0969778577d8dfea218e890b85546509ed1b1b8463ac9d6ea0da0e816d5288e"
+  },
+  "sourceTuple": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+      "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791484487625706040/elm-window-geometry-authority.so",
+      "sha256": "796537e82996ac670d4b1da9c764764b921d61fe9f420220535c40ef1fbfb21f"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "scope": "Original physical cancellation, pinned native refusal retaining workspace 1 with visible feedback, committed workspace 2 transfer and actual Task View membership; later supplementary empty-workspace interval failed before request.",
+  "componentPassed": true,
+  "ownerObservedOriginalOracles": true,
+  "nativeCampaignPassed": false,
+  "nativeCleanupPassed": true,
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "investigationStopped": true,
+  "missingObservations": [
+    "Independent original scenario/requirement review remains pending; the owner-observed original native oracles are separate from acceptance.",
+    "The later supplementary empty-workspace 3 native interval was not reached: its helper waited for workspace 2, correctly excluded as the current source. The helper now takes the requested destination but is unrerun after two native attempts.",
+    "Native modal/minimized/cross-output/device and applicable AT coverage, full release journeys/resource/package/deployment remain open."
+  ],
+  "runtimeLog": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791484838748924661/warlock.log",
+  "runtimeLogSHA256": "1f36ee6650faee947aa10a768f06baecdde81581b49a49ec9c9a2edc964633ec",
+  "runnerNote": "The destination helper parameter was corrected after the second frozen native failure. Current production source/compiled roots/native pair remain exactly tested; that QA-only correction has not been rerun.",
+  "artifacts": {
+    "component-report.json": "cd9f6e8fd09fe541b8a84b19b72a8fad409b4c19bbec50074a3aee51f1938a0f",
+    "authority-report.json": "7cabb66a47a2f5a88a3cff2887fe092cc1610e91b7940df54fbc6be05e4e408b",
+    "native-report.json": "7beb30b7f25f3c665f572f94ea51e0e3ad2ff25cece35e52a4217eb982f1fe47",
+    "failed-refusal-case-observation.json": "367f90fae57578c22b8aa8c21ede92b331cad511644309345fade367bc80dd35",
+    "transfer.json": "6b2a541e1d0d18bd74541e29765de9b33939d0446d619299b061f090df038dee",
+    "typed-transfer.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "transfer-custody.stdout": "9a5eab9624b8eab8faa53d17086558f8768978b9c66e2a0badf302d666619b38",
+    "transfer-model-named.stdout": "b7a98825176e5ee5a1e4aa06c6ee78cd37ab594513229298fe8cf29e07b8d719",
+    "transfer-model-invariants.stdout": "87c598cf2019319cdd00eb70fd1f6580bfb43110983266e7c571d636189bd7e7",
+    "original-observations.json": "950332446eca5a9d8f06757bfef31a481b6a7de8acde9cfde9f2d1b4a6d74489",
+    "native-transfer-destinations.png": "3b5188d369f7d18f3dbd7906e25e5289b0618420ff7ad2ffcf300cb5d03012fe",
+    "source.patch": "fd76f90f0271db75a90e08c9ec7b612a0997ee26c4b2d711b42ac74d1e8f7ecc"
+  },
+  "localFailedBuilds": {
+    "implementation/warlock/qa/runs/transfer-workspace-1791484298866939463/report.json": "7ee55060cd7f82be856b12d117bef3e12c6d39ebd749087927f8a2d23c98eed3",
+    "implementation/warlock/qa/runs/transfer-workspace-1791484323089065673/report.json": "aa00247b2fef5106336b080f6f3c0c386d67bdcc97814ace816149f959b9204c",
+    "implementation/warlock/qa/runs/transfer-workspace-1791484487646991501/report.json": "2d19f583af301a31ca351682650061207585f03a828481fbfaa4cc664db0e9c5",
+    "implementation/warlock/qa/runs/transfer-workspace-1791484552860967165/report.json": "4dc2c41ff6dd90644043875605aba20b8330a2300fabd8ea77ce4fc4144fbd06",
+    "implementation/warlock/qa/runs/native-authority-1791484298839466662/report.json": "7ab165c3666a778a7378f3fed2e47f2fff4b33c15996df60d0d280ff1f4af15e",
+    "implementation/warlock/qa/runs/native-authority-1791484323065593838/report.json": "d0868c9092c093462e6c6c01ffa53f018693ad3df4acf0a1cad5301a16e4da32"
+  }
+}

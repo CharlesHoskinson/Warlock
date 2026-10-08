@@ -20,6 +20,7 @@ import Shell
 import Taskbar
 import TaskbarShell
 import TaskView
+import Transfer
 import Snap
 import UInt64 exposing (Counter)
 
@@ -180,7 +181,9 @@ controls model =
            ,control "control:commit" "Activate selected window" (browsing && (selected |> Maybe.map (familyBlocked model >> not) |> Maybe.withDefault False)) Desktop.CommitSwitcher]
            ++ List.map row (Switcher.entries model.switcher)
     else if model.overview then
-        let scoped message = Desktop.capture model |> Maybe.map message
+        let
+            transferReady=Shell.available model.windows.shell && model.choice==Nothing
+            scoped message = Desktop.capture model |> Maybe.map message
             groups = TaskView.groups model.windows.shell |> Maybe.withDefault []
             workspaceControl group =
                 {id="overview:workspace:"++group.identity,domId=Desktop.key model ("overview:workspace:"++group.identity),label="Workspace "++group.identity,ariaLabel="Browse workspace "++group.identity++(if group.active then "; active workspace" else ""),detail=(if group.active then "Active workspace" else "")++(if model.overviewWorkspace==Just group.identity then " • Selected" else ""),enabled=True,message=scoped (\stamp -> Desktop.OverviewWorkspace stamp (Just group.identity))}
@@ -189,9 +192,20 @@ controls model =
                     identity="overview:family:"++UInt64.string family.root
                     detail="Workspace "++group.identity++" • "++(if familyBlocked model family.root then "Awaiting native confirmation" else if not family.available then "Unavailable for activation" else if family.minimized then "Minimized" else "Open")
                 in {id=identity,domId=Desktop.key model identity,label=family.label,ariaLabel=(if family.minimized then "Restore " else "Activate ")++family.label++" on workspace "++group.identity,detail=detail,enabled=ready,message=if ready then scoped (\stamp -> Desktop.OverviewChoose stamp family.root) else Nothing}
+            transferControl family =
+                let identity="overview:transfer:"++UInt64.string family.root
+                    enabled=transferReady && family.available && not (familyBlocked model family.root) && (model.windows.shell.geometryCaps |> Maybe.map (\caps -> List.member "transfer-workspace" caps.operations) |> Maybe.withDefault False)
+                in {id=identity,domId=Desktop.key model identity,label="Move "++family.label++"…",ariaLabel="Move "++family.label++" to another workspace",detail="",enabled=enabled,message=if enabled then scoped (\stamp -> Desktop.OpenOverviewTransfer stamp family.root) else Nothing}
+            destinationRows root = model.windows.shell.geometry |> Maybe.map (\geometry ->
+                Transfer.destinations geometry |> List.filterMap (\destination -> Transfer.propose geometry root destination |> Maybe.map (\_ ->
+                    let identity="overview:destination:"++destination
+                    in {id=identity,domId=Desktop.key model identity,label="Move to workspace "++destination,ariaLabel="Move selected window to workspace "++destination,detail="",enabled=transferReady,message=if transferReady then scoped (\stamp -> Desktop.OverviewTransfer stamp root destination) else Nothing}))) |> Maybe.withDefault []
             workspaceRows group = workspaceControl group ::
-                (if model.overviewWorkspace==Nothing || model.overviewWorkspace==Just group.identity then List.map (familyControl group) group.windows else [])
-        in [{id="control:close",domId=Desktop.key model "overview:close",label="Close Task View",ariaLabel="Close Task View and return to windows",detail="",enabled=True,message=scoped Desktop.CloseOverview}
+                (if model.overviewWorkspace==Nothing || model.overviewWorkspace==Just group.identity then List.concatMap (\family -> [familyControl group family,transferControl family]) group.windows else [])
+        in if model.overviewTransfer/=Nothing then
+            [{id="control:close",domId=Desktop.key model "overview:transfer-cancel",label="Cancel transfer",ariaLabel="Cancel window transfer",detail="",enabled=True,message=scoped Desktop.CancelOverviewTransfer}]
+                ++ (model.overviewTransfer |> Maybe.map destinationRows |> Maybe.withDefault [])
+        else [{id="control:close",domId=Desktop.key model "overview:close",label="Close Task View",ariaLabel="Close Task View and return to windows",detail="",enabled=True,message=scoped Desktop.CloseOverview}
            ,{id="overview:all",domId=Desktop.key model "overview:all",label="All windows",ariaLabel="Browse all workspaces",detail=if model.overviewWorkspace==Nothing then "Selected" else "",enabled=True,message=scoped (\stamp -> Desktop.OverviewWorkspace stamp Nothing)}]
             ++ List.concatMap workspaceRows groups ++ [recoveryControl "overview:refresh" model]
     else if model.open then
@@ -345,6 +359,7 @@ windowNotice model =
                     Effects.Maximize -> "Maximize"
                     Effects.RestoreGeometry -> "Restore size"
                     Effects.SnapPlacement _ -> "Snap"
+                    Effects.TransferWorkspace p -> "Move to workspace "++p.destination
                 label = TaskbarShell.groups model.windows |> List.concatMap .families
                     |> List.filter (\family -> family.root==transaction.intent.incarnation)
                     |> List.head |> Maybe.map (.label >> String.left 512) |> Maybe.withDefault "selected window"
