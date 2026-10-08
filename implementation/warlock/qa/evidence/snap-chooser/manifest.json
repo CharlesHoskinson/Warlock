@@ -1,0 +1,1341 @@
+{
+  "schema": 1,
+  "owner": "root-snap-chooser",
+  "observedUTC": "2026-10-08T10:50:08.049974+00:00",
+  "requirements": [
+    "ELM-UX-019",
+    "ELM-UX-020"
+  ],
+  "scenarios": [
+    "ux-019",
+    "ux-020"
+  ],
+  "originals": [
+    {
+      "id": "ELM-UX-019",
+      "capability": "elm-shell-experience",
+      "pattern": "event-driven",
+      "ears": "WHEN a user chooses a snap region, the Elm desktop SHALL submit geometry keyed to the selected output generation and show the accepted native placement.",
+      "phase": "P5",
+      "priority": "must",
+      "verification": "Elm replay assertion and isolated native recording: accepted placement matches half work area within native rounding tolerance.",
+      "legacyEvidence": "window-behavior-spec/snap.lua",
+      "task": "Implement snap chooser and native placement reconciliation.",
+      "scenarios": [
+        {
+          "name": "ux-019",
+          "given": "output has a defined work area",
+          "when": "user chooses left half",
+          "then": "accepted placement matches half work area within native rounding tolerance"
+        }
+      ],
+      "source": "docs/elm-roadmap/contributions/experience.json",
+      "status": "proposed",
+      "taskId": "P5-ELM-UX-019",
+      "accountableOwnerRole": "Desktop experience lead",
+      "verifierRole": "Independent acceptance reviewer"
+    },
+    {
+      "id": "ELM-UX-020",
+      "capability": "elm-shell-experience",
+      "pattern": "unwanted",
+      "ears": "IF an output changes during snap selection, THEN the Elm desktop SHALL invalidate the old preview and require geometry derived from the new output generation before commit.",
+      "phase": "P5",
+      "priority": "must",
+      "verification": "Elm replay assertion and isolated native recording: old generation geometry is never committed.",
+      "legacyEvidence": "docs/HANDOFF.md",
+      "task": "Invalidate snap transactions on scale, transform and hotplug changes.",
+      "scenarios": [
+        {
+          "name": "ux-020",
+          "given": "snap chooser is open",
+          "when": "output scale changes or output disappears",
+          "then": "old generation geometry is never committed"
+        }
+      ],
+      "source": "docs/elm-roadmap/contributions/experience.json",
+      "status": "proposed",
+      "taskId": "P5-ELM-UX-020",
+      "accountableOwnerRole": "Desktop experience lead",
+      "verifierRole": "Independent acceptance reviewer"
+    }
+  ],
+  "scope": "Integrated generation-bound chooser preview, existing-menu keyboard utility and read-only popup lifecycle; owner-observed real native presentation/input/output-scale retirement. Native placement is unwired and acceptance remains open.",
+  "sourceBaseRevision": "df42448ed3d3177a6541c455007a647008335c85",
+  "publicBaseRevision": "0918ede32f62d86605648262a1d96fa512fff428",
+  "sourceHashes": {
+    "implementation/warlock/src/Snap.elm": "3f48a987bf6b8f9c65076ff0c17d7ad6b5a692c241f8ca9e8f46ad8870adc3ce",
+    "implementation/warlock/src/Desktop.elm": "abe8207e8c502876425d4abedec16ff6422720794279e10cbda7bdcd291b3264",
+    "implementation/warlock/src/Surface.elm": "27ebaf8bc95c9580f62493d7e08b5ef2a6117e1166ab496eb8f42449106fdacc",
+    "implementation/warlock/src/SurfaceRenderer.elm": "56f4923e97a276c11dd91f21c2e7a051e6809ff4d43455f6b06541c2349bbd3a",
+    "implementation/warlock/src/SurfaceController.elm": "e9b3c7baeb47550c2fe313349afa7977e7ebb148676eda5ed0089fd701304999",
+    "implementation/warlock/native/surface.h": "aac0f8750949382554722a09cc0df5a0e49b48594b229682789c5a7c29c6e35c",
+    "implementation/warlock/qa/SnapReplay.elm": "e77a1100dc7fa62d53f2155b63d386f26a2901a5f35f684ee1c981417903220c",
+    "implementation/warlock/qa/check-search.py": "18d0adb350b3b52df4d8529a6220ca0c25af8167937069aad3007b9517835769",
+    "implementation/warlock/qa/current-search-build.json": "adbd0399afb4fd56cb76c2d9be80aad6da037e003923df4fd673419718f040d0",
+    "implementation/warlock/assets/elm.js": "3b7d96db2efd88a7e0962776af0df962119320340f10e0ceeb855cc1bf401b06",
+    "implementation/warlock/assets/bar.js": "be223dc781307d076c136fb6cb1da4f5996b16460ea56d25a1dab1e673a8de5b",
+    "implementation/warlock/assets/popup.js": "530fe4e756cd47b6643e8b9b27af61d8aca2c0bac9c23b2127e6557803093df0",
+    "implementation/warlock/assets/shell.css": "f447658f994c43123701aadcecc5de0c5b99af2ba88896767887adc14128f498",
+    "implementation/warlock/README.md": "e535d286a5bf4681ce54ed29bc4b3e361f43a024d3ce4ba50fc865d1a754c4cf",
+    "implementation/warlock/assets/popup-adapter.js": "fd900458ff4f93cad22eee07d714f45215e1bbe74e3077ffcd6fa6509111fc07",
+    "implementation/warlock/qa/snap-browser.mjs": "3cbf604050af755d2e02712de389b3c6e0935912bf1e6198b3246ff853d26879",
+    "implementation/warlock/qa/native-window-feedback.py": "406832e51717b06a2e97c231f14ef628dd42658f7b8d3741538cf82917d22c28",
+    "implementation/warlock/qa/snap-chooser.qnt": "b989610e580af6bc77caa1bf02e1a8a1023b318b313e90224ccd8a602a368fdd",
+    "implementation/warlock/assets/context.js": "a7fccb3fe47e384a6094d87944b9f958c961c24804b92612e8754ea8451c05ce",
+    "implementation/warlock/assets/activation.js": "ef7be78b88399c743d3d16ebee17d6e9010d14b73c6574d7b108defc74868a40"
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+      "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791440691968763486/elm-window-geometry-authority.so",
+      "sha256": "1805693201328985cbf109f5fef6779b8fe469badf094fd417e8206f91c50b47"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/snap-chooser-1791456453743910116/elm-host",
+    "sha256": "69dae6338fd8f3f8c20a43e21285ff2a4831b07232f99f451a3fd4708a936c31",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/snap-chooser-1791456453743910116/report.json",
+    "heldBuildSHA256": "00800c1d50131635e8875ad511314a25811a7ccb53579c4995672609e9b30ebd"
+  },
+  "compiledAssets": {
+    "elm.js": "3b7d96db2efd88a7e0962776af0df962119320340f10e0ceeb855cc1bf401b06",
+    "bar.js": "be223dc781307d076c136fb6cb1da4f5996b16460ea56d25a1dab1e673a8de5b",
+    "popup.js": "530fe4e756cd47b6643e8b9b27af61d8aca2c0bac9c23b2127e6557803093df0"
+  },
+  "observedChecks": {
+    "elmSnap": 19,
+    "browserSnapAndMenuUtility": 14,
+    "menuNavigationRegression": 45,
+    "nativeCampaign": 81
+  },
+  "nativeCampaignPassed": true,
+  "nativeSnapChooserObserved": true,
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "fullReleaseAccepted": false,
+  "missingObservations": [
+    "Native geometry submission through the existing shared effect allocator, durable custody/recovery and native placement authority.",
+    "Original ux-019 isolated recording of accepted left-half placement within native rounding tolerance.",
+    "Original ux-020 isolated stale-output refusal/no-commit observation with a real native placement request; disabled placement is not that oracle.",
+    "Independent original-scenario review; broader release AT/IME/hardware/performance obligations remain open."
+  ],
+  "decisiveChecks": [
+    {
+      "name": "NativeSnapChooserHasSixRegions",
+      "passed": true,
+      "body": {
+        "publication": "64",
+        "lease": "8",
+        "buttons": [
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:close",
+            "identity": "control:close",
+            "label": "Close",
+            "labelRect": {
+              "x": 24,
+              "y": 76,
+              "width": 652,
+              "height": 18
+            },
+            "accessibleName": "Close snapping",
+            "disabled": false,
+            "x": 11,
+            "y": 67,
+            "width": 678,
+            "height": 36
+          },
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:left-half",
+            "identity": "snap:region:left-half",
+            "label": "Left halfSelected",
+            "labelRect": {
+              "x": 147.53125,
+              "y": 176,
+              "width": 56.9375,
+              "height": 18
+            },
+            "accessibleName": "Left half; selected preview",
+            "disabled": false,
+            "x": 11,
+            "y": 121,
+            "width": 330,
+            "height": 108
+          },
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:right-half",
+            "identity": "snap:region:right-half",
+            "label": "Right half",
+            "labelRect": {
+              "x": 490.203125,
+              "y": 176,
+              "width": 67.59375,
+              "height": 18
+            },
+            "accessibleName": "Right half",
+            "disabled": false,
+            "x": 359,
+            "y": 121,
+            "width": 330,
+            "height": 108
+          },
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:top-left",
+            "identity": "snap:region:top-left",
+            "label": "Top left quarter",
+            "labelRect": {
+              "x": 122.625,
+              "y": 302,
+              "width": 106.734375,
+              "height": 18
+            },
+            "accessibleName": "Top left quarter",
+            "disabled": false,
+            "x": 11,
+            "y": 247,
+            "width": 330,
+            "height": 108
+          },
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:top-right",
+            "identity": "snap:region:top-right",
+            "label": "Top right quarter",
+            "labelRect": {
+              "x": 465.734375,
+              "y": 302,
+              "width": 116.515625,
+              "height": 18
+            },
+            "accessibleName": "Top right quarter",
+            "disabled": false,
+            "x": 359,
+            "y": 247,
+            "width": 330,
+            "height": 108
+          },
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:bottom-left",
+            "identity": "snap:region:bottom-left",
+            "label": "Bottom left quarter",
+            "labelRect": {
+              "x": 110.1875,
+              "y": 428,
+              "width": 131.625,
+              "height": 18
+            },
+            "accessibleName": "Bottom left quarter",
+            "disabled": false,
+            "x": 11,
+            "y": 373,
+            "width": 330,
+            "height": 108
+          },
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:bottom-right",
+            "identity": "snap:region:bottom-right",
+            "label": "Bottom right quarter",
+            "labelRect": {
+              "x": 453.296875,
+              "y": 428,
+              "width": 141.40625,
+              "height": 18
+            },
+            "accessibleName": "Bottom right quarter",
+            "disabled": false,
+            "x": 359,
+            "y": 373,
+            "width": 330,
+            "height": 108
+          },
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:apply",
+            "identity": "snap:apply",
+            "label": "Snapping unavailable",
+            "labelRect": {
+              "x": 24,
+              "y": 508,
+              "width": 652,
+              "height": 18
+            },
+            "accessibleName": "Snapping unavailable",
+            "disabled": true,
+            "x": 11,
+            "y": 499,
+            "width": 678,
+            "height": 36
+          }
+        ],
+        "fields": [],
+        "focus": "",
+        "documentFocused": true,
+        "fontSize": "16px",
+        "viewportWidth": 700,
+        "viewportHeight": 420,
+        "scrollTop": 0,
+        "scrollHeight": 546,
+        "text": "Snap window\nConnected\n\n\nClose\n\nLeft half\nSelected\n\nRight half\n\nTop left quarter\n\nTop right quarter\n\nBottom left quarter\n\nBottom right quarter\n\nSnapping unavailable"
+      }
+    },
+    {
+      "name": "NativeRegionSelectionHasNoWindowEffect",
+      "passed": true,
+      "body": {
+        "publication": "65",
+        "lease": "8",
+        "buttons": [
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:close",
+            "identity": "control:close",
+            "label": "Close",
+            "labelRect": {
+              "x": 24,
+              "y": 76,
+              "width": 652,
+              "height": 18
+            },
+            "accessibleName": "Close snapping",
+            "disabled": false,
+            "x": 11,
+            "y": 67,
+            "width": 678,
+            "height": 36
+          },
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:left-half",
+            "identity": "snap:region:left-half",
+            "label": "Left half",
+            "labelRect": {
+              "x": 147.53125,
+              "y": 176,
+              "width": 56.9375,
+              "height": 18
+            },
+            "accessibleName": "Left half",
+            "disabled": false,
+            "x": 11,
+            "y": 121,
+            "width": 330,
+            "height": 108
+          },
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:right-half",
+            "identity": "snap:region:right-half",
+            "label": "Right halfSelected",
+            "labelRect": {
+              "x": 490.203125,
+              "y": 176,
+              "width": 67.59375,
+              "height": 18
+            },
+            "accessibleName": "Right half; selected preview",
+            "disabled": false,
+            "x": 359,
+            "y": 121,
+            "width": 330,
+            "height": 108
+          },
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:top-left",
+            "identity": "snap:region:top-left",
+            "label": "Top left quarter",
+            "labelRect": {
+              "x": 122.625,
+              "y": 302,
+              "width": 106.734375,
+              "height": 18
+            },
+            "accessibleName": "Top left quarter",
+            "disabled": false,
+            "x": 11,
+            "y": 247,
+            "width": 330,
+            "height": 108
+          },
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:top-right",
+            "identity": "snap:region:top-right",
+            "label": "Top right quarter",
+            "labelRect": {
+              "x": 465.734375,
+              "y": 302,
+              "width": 116.515625,
+              "height": 18
+            },
+            "accessibleName": "Top right quarter",
+            "disabled": false,
+            "x": 359,
+            "y": 247,
+            "width": 330,
+            "height": 108
+          },
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:bottom-left",
+            "identity": "snap:region:bottom-left",
+            "label": "Bottom left quarter",
+            "labelRect": {
+              "x": 110.1875,
+              "y": 428,
+              "width": 131.625,
+              "height": 18
+            },
+            "accessibleName": "Bottom left quarter",
+            "disabled": false,
+            "x": 11,
+            "y": 373,
+            "width": 330,
+            "height": 108
+          },
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:bottom-right",
+            "identity": "snap:region:bottom-right",
+            "label": "Bottom right quarter",
+            "labelRect": {
+              "x": 453.296875,
+              "y": 428,
+              "width": 141.40625,
+              "height": 18
+            },
+            "accessibleName": "Bottom right quarter",
+            "disabled": false,
+            "x": 359,
+            "y": 373,
+            "width": 330,
+            "height": 108
+          },
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:apply",
+            "identity": "snap:apply",
+            "label": "Snapping unavailable",
+            "labelRect": {
+              "x": 24,
+              "y": 508,
+              "width": 652,
+              "height": 18
+            },
+            "accessibleName": "Snapping unavailable",
+            "disabled": true,
+            "x": 11,
+            "y": 499,
+            "width": 678,
+            "height": 36
+          }
+        ],
+        "fields": [],
+        "focus": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:right-half",
+        "documentFocused": true,
+        "fontSize": "16px",
+        "viewportWidth": 700,
+        "viewportHeight": 420,
+        "scrollTop": 0,
+        "scrollHeight": 546,
+        "text": "Snap window\nConnected\n\n\nClose\n\nLeft half\n\nRight half\nSelected\n\nTop left quarter\n\nTop right quarter\n\nBottom left quarter\n\nBottom right quarter\n\nSnapping unavailable"
+      }
+    },
+    {
+      "name": "NativeSnapSelectedControlHasActualTextPixels",
+      "passed": true,
+      "capture": {
+        "stage": "native-snap-chooser",
+        "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791456484004894132/popup-native-snap-chooser.png",
+        "sha256": "916fe3e90e02a996bca9759b8deadc126848061191cc7d2a09a6b103c5e525c0",
+        "controlRegions": [
+          {
+            "accessibleName": "Right half; selected preview",
+            "brightPixels": 345,
+            "paintedPixels": 18816,
+            "area": 18816,
+            "region": [
+              421,
+              175,
+              617,
+              271
+            ]
+          }
+        ],
+        "body": {
+          "publication": "65",
+          "lease": "8",
+          "buttons": [
+            {
+              "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:close",
+              "identity": "control:close",
+              "label": "Close",
+              "labelRect": {
+                "x": 24,
+                "y": 76,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Close snapping",
+              "disabled": false,
+              "x": 11,
+              "y": 67,
+              "width": 678,
+              "height": 36
+            },
+            {
+              "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:left-half",
+              "identity": "snap:region:left-half",
+              "label": "Left half",
+              "labelRect": {
+                "x": 147.53125,
+                "y": 176,
+                "width": 56.9375,
+                "height": 18
+              },
+              "accessibleName": "Left half",
+              "disabled": false,
+              "x": 11,
+              "y": 121,
+              "width": 330,
+              "height": 108
+            },
+            {
+              "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:right-half",
+              "identity": "snap:region:right-half",
+              "label": "Right halfSelected",
+              "labelRect": {
+                "x": 490.203125,
+                "y": 176,
+                "width": 67.59375,
+                "height": 18
+              },
+              "accessibleName": "Right half; selected preview",
+              "disabled": false,
+              "x": 359,
+              "y": 121,
+              "width": 330,
+              "height": 108
+            },
+            {
+              "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:top-left",
+              "identity": "snap:region:top-left",
+              "label": "Top left quarter",
+              "labelRect": {
+                "x": 122.625,
+                "y": 302,
+                "width": 106.734375,
+                "height": 18
+              },
+              "accessibleName": "Top left quarter",
+              "disabled": false,
+              "x": 11,
+              "y": 247,
+              "width": 330,
+              "height": 108
+            },
+            {
+              "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:top-right",
+              "identity": "snap:region:top-right",
+              "label": "Top right quarter",
+              "labelRect": {
+                "x": 465.734375,
+                "y": 302,
+                "width": 116.515625,
+                "height": 18
+              },
+              "accessibleName": "Top right quarter",
+              "disabled": false,
+              "x": 359,
+              "y": 247,
+              "width": 330,
+              "height": 108
+            },
+            {
+              "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:bottom-left",
+              "identity": "snap:region:bottom-left",
+              "label": "Bottom left quarter",
+              "labelRect": {
+                "x": 110.1875,
+                "y": 428,
+                "width": 131.625,
+                "height": 18
+              },
+              "accessibleName": "Bottom left quarter",
+              "disabled": false,
+              "x": 11,
+              "y": 373,
+              "width": 330,
+              "height": 108
+            },
+            {
+              "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:bottom-right",
+              "identity": "snap:region:bottom-right",
+              "label": "Bottom right quarter",
+              "labelRect": {
+                "x": 453.296875,
+                "y": 428,
+                "width": 141.40625,
+                "height": 18
+              },
+              "accessibleName": "Bottom right quarter",
+              "disabled": false,
+              "x": 359,
+              "y": 373,
+              "width": 330,
+              "height": 108
+            },
+            {
+              "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:apply",
+              "identity": "snap:apply",
+              "label": "Snapping unavailable",
+              "labelRect": {
+                "x": 24,
+                "y": 508,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Snapping unavailable",
+              "disabled": true,
+              "x": 11,
+              "y": 499,
+              "width": 678,
+              "height": 36
+            }
+          ],
+          "fields": [],
+          "focus": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:right-half",
+          "documentFocused": true,
+          "fontSize": "16px",
+          "viewportWidth": 700,
+          "viewportHeight": 420,
+          "scrollTop": 0,
+          "scrollHeight": 546,
+          "text": "Snap window\nConnected\n\n\nClose\n\nLeft half\n\nRight half\nSelected\n\nTop left quarter\n\nTop right quarter\n\nBottom left quarter\n\nBottom right quarter\n\nSnapping unavailable"
+        },
+        "drawObservations": []
+      }
+    },
+    {
+      "name": "NativeSnapEndRevealsLastRegionAndSkipsUnavailableApply",
+      "passed": true,
+      "body": {
+        "publication": "65",
+        "lease": "8",
+        "buttons": [
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:close",
+            "identity": "control:close",
+            "label": "Close",
+            "labelRect": {
+              "x": 24,
+              "y": 11,
+              "width": 652,
+              "height": 18
+            },
+            "accessibleName": "Close snapping",
+            "disabled": false,
+            "x": 11,
+            "y": 2,
+            "width": 678,
+            "height": 36
+          },
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:left-half",
+            "identity": "snap:region:left-half",
+            "label": "Left half",
+            "labelRect": {
+              "x": 147.53125,
+              "y": 111,
+              "width": 56.9375,
+              "height": 18
+            },
+            "accessibleName": "Left half",
+            "disabled": false,
+            "x": 11,
+            "y": 56,
+            "width": 330,
+            "height": 108
+          },
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:right-half",
+            "identity": "snap:region:right-half",
+            "label": "Right halfSelected",
+            "labelRect": {
+              "x": 490.203125,
+              "y": 111,
+              "width": 67.59375,
+              "height": 18
+            },
+            "accessibleName": "Right half; selected preview",
+            "disabled": false,
+            "x": 359,
+            "y": 56,
+            "width": 330,
+            "height": 108
+          },
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:top-left",
+            "identity": "snap:region:top-left",
+            "label": "Top left quarter",
+            "labelRect": {
+              "x": 122.625,
+              "y": 237,
+              "width": 106.734375,
+              "height": 18
+            },
+            "accessibleName": "Top left quarter",
+            "disabled": false,
+            "x": 11,
+            "y": 182,
+            "width": 330,
+            "height": 108
+          },
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:top-right",
+            "identity": "snap:region:top-right",
+            "label": "Top right quarter",
+            "labelRect": {
+              "x": 465.734375,
+              "y": 237,
+              "width": 116.515625,
+              "height": 18
+            },
+            "accessibleName": "Top right quarter",
+            "disabled": false,
+            "x": 359,
+            "y": 182,
+            "width": 330,
+            "height": 108
+          },
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:bottom-left",
+            "identity": "snap:region:bottom-left",
+            "label": "Bottom left quarter",
+            "labelRect": {
+              "x": 110.1875,
+              "y": 363,
+              "width": 131.625,
+              "height": 18
+            },
+            "accessibleName": "Bottom left quarter",
+            "disabled": false,
+            "x": 11,
+            "y": 308,
+            "width": 330,
+            "height": 108
+          },
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:bottom-right",
+            "identity": "snap:region:bottom-right",
+            "label": "Bottom right quarter",
+            "labelRect": {
+              "x": 453.296875,
+              "y": 363,
+              "width": 141.40625,
+              "height": 18
+            },
+            "accessibleName": "Bottom right quarter",
+            "disabled": false,
+            "x": 359,
+            "y": 308,
+            "width": 330,
+            "height": 108
+          },
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:apply",
+            "identity": "snap:apply",
+            "label": "Snapping unavailable",
+            "labelRect": {
+              "x": 24,
+              "y": 443,
+              "width": 652,
+              "height": 18
+            },
+            "accessibleName": "Snapping unavailable",
+            "disabled": true,
+            "x": 11,
+            "y": 434,
+            "width": 678,
+            "height": 36
+          }
+        ],
+        "fields": [],
+        "focus": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:bottom-right",
+        "documentFocused": true,
+        "fontSize": "16px",
+        "viewportWidth": 700,
+        "viewportHeight": 420,
+        "scrollTop": 65,
+        "scrollHeight": 546,
+        "text": "Snap window\nConnected\n\n\nClose\n\nLeft half\n\nRight half\nSelected\n\nTop left quarter\n\nTop right quarter\n\nBottom left quarter\n\nBottom right quarter\n\nSnapping unavailable"
+      },
+      "capture": {
+        "stage": "native-snap-last-region",
+        "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791456484004894132/popup-native-snap-last-region.png",
+        "sha256": "7254a03734861a3fd999c104ab8786c2a4b3cb878d77f753fc72534c8e2e3f89",
+        "controlRegions": [
+          {
+            "accessibleName": "Bottom right quarter",
+            "brightPixels": 309,
+            "paintedPixels": 18816,
+            "area": 18816,
+            "region": [
+              421,
+              362,
+              617,
+              458
+            ]
+          }
+        ],
+        "body": {
+          "publication": "65",
+          "lease": "8",
+          "buttons": [
+            {
+              "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:close",
+              "identity": "control:close",
+              "label": "Close",
+              "labelRect": {
+                "x": 24,
+                "y": 11,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Close snapping",
+              "disabled": false,
+              "x": 11,
+              "y": 2,
+              "width": 678,
+              "height": 36
+            },
+            {
+              "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:left-half",
+              "identity": "snap:region:left-half",
+              "label": "Left half",
+              "labelRect": {
+                "x": 147.53125,
+                "y": 111,
+                "width": 56.9375,
+                "height": 18
+              },
+              "accessibleName": "Left half",
+              "disabled": false,
+              "x": 11,
+              "y": 56,
+              "width": 330,
+              "height": 108
+            },
+            {
+              "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:right-half",
+              "identity": "snap:region:right-half",
+              "label": "Right halfSelected",
+              "labelRect": {
+                "x": 490.203125,
+                "y": 111,
+                "width": 67.59375,
+                "height": 18
+              },
+              "accessibleName": "Right half; selected preview",
+              "disabled": false,
+              "x": 359,
+              "y": 56,
+              "width": 330,
+              "height": 108
+            },
+            {
+              "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:top-left",
+              "identity": "snap:region:top-left",
+              "label": "Top left quarter",
+              "labelRect": {
+                "x": 122.625,
+                "y": 237,
+                "width": 106.734375,
+                "height": 18
+              },
+              "accessibleName": "Top left quarter",
+              "disabled": false,
+              "x": 11,
+              "y": 182,
+              "width": 330,
+              "height": 108
+            },
+            {
+              "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:top-right",
+              "identity": "snap:region:top-right",
+              "label": "Top right quarter",
+              "labelRect": {
+                "x": 465.734375,
+                "y": 237,
+                "width": 116.515625,
+                "height": 18
+              },
+              "accessibleName": "Top right quarter",
+              "disabled": false,
+              "x": 359,
+              "y": 182,
+              "width": 330,
+              "height": 108
+            },
+            {
+              "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:bottom-left",
+              "identity": "snap:region:bottom-left",
+              "label": "Bottom left quarter",
+              "labelRect": {
+                "x": 110.1875,
+                "y": 363,
+                "width": 131.625,
+                "height": 18
+              },
+              "accessibleName": "Bottom left quarter",
+              "disabled": false,
+              "x": 11,
+              "y": 308,
+              "width": 330,
+              "height": 108
+            },
+            {
+              "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:bottom-right",
+              "identity": "snap:region:bottom-right",
+              "label": "Bottom right quarter",
+              "labelRect": {
+                "x": 453.296875,
+                "y": 363,
+                "width": 141.40625,
+                "height": 18
+              },
+              "accessibleName": "Bottom right quarter",
+              "disabled": false,
+              "x": 359,
+              "y": 308,
+              "width": 330,
+              "height": 108
+            },
+            {
+              "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:apply",
+              "identity": "snap:apply",
+              "label": "Snapping unavailable",
+              "labelRect": {
+                "x": 24,
+                "y": 443,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Snapping unavailable",
+              "disabled": true,
+              "x": 11,
+              "y": 434,
+              "width": 678,
+              "height": 36
+            }
+          ],
+          "fields": [],
+          "focus": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:bottom-right",
+          "documentFocused": true,
+          "fontSize": "16px",
+          "viewportWidth": 700,
+          "viewportHeight": 420,
+          "scrollTop": 65,
+          "scrollHeight": 546,
+          "text": "Snap window\nConnected\n\n\nClose\n\nLeft half\n\nRight half\nSelected\n\nTop left quarter\n\nTop right quarter\n\nBottom left quarter\n\nBottom right quarter\n\nSnapping unavailable"
+        },
+        "drawObservations": []
+      }
+    },
+    {
+      "name": "NativeSnapHomeReturnsToVisibleClose",
+      "passed": true,
+      "body": {
+        "publication": "65",
+        "lease": "8",
+        "buttons": [
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:close",
+            "identity": "control:close",
+            "label": "Close",
+            "labelRect": {
+              "x": 24,
+              "y": 13,
+              "width": 652,
+              "height": 18
+            },
+            "accessibleName": "Close snapping",
+            "disabled": false,
+            "x": 11,
+            "y": 4,
+            "width": 678,
+            "height": 36
+          },
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:left-half",
+            "identity": "snap:region:left-half",
+            "label": "Left half",
+            "labelRect": {
+              "x": 147.53125,
+              "y": 113,
+              "width": 56.9375,
+              "height": 18
+            },
+            "accessibleName": "Left half",
+            "disabled": false,
+            "x": 11,
+            "y": 58,
+            "width": 330,
+            "height": 108
+          },
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:right-half",
+            "identity": "snap:region:right-half",
+            "label": "Right halfSelected",
+            "labelRect": {
+              "x": 490.203125,
+              "y": 113,
+              "width": 67.59375,
+              "height": 18
+            },
+            "accessibleName": "Right half; selected preview",
+            "disabled": false,
+            "x": 359,
+            "y": 58,
+            "width": 330,
+            "height": 108
+          },
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:top-left",
+            "identity": "snap:region:top-left",
+            "label": "Top left quarter",
+            "labelRect": {
+              "x": 122.625,
+              "y": 239,
+              "width": 106.734375,
+              "height": 18
+            },
+            "accessibleName": "Top left quarter",
+            "disabled": false,
+            "x": 11,
+            "y": 184,
+            "width": 330,
+            "height": 108
+          },
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:top-right",
+            "identity": "snap:region:top-right",
+            "label": "Top right quarter",
+            "labelRect": {
+              "x": 465.734375,
+              "y": 239,
+              "width": 116.515625,
+              "height": 18
+            },
+            "accessibleName": "Top right quarter",
+            "disabled": false,
+            "x": 359,
+            "y": 184,
+            "width": 330,
+            "height": 108
+          },
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:bottom-left",
+            "identity": "snap:region:bottom-left",
+            "label": "Bottom left quarter",
+            "labelRect": {
+              "x": 110.1875,
+              "y": 365,
+              "width": 131.625,
+              "height": 18
+            },
+            "accessibleName": "Bottom left quarter",
+            "disabled": false,
+            "x": 11,
+            "y": 310,
+            "width": 330,
+            "height": 108
+          },
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:region:bottom-right",
+            "identity": "snap:region:bottom-right",
+            "label": "Bottom right quarter",
+            "labelRect": {
+              "x": 453.296875,
+              "y": 365,
+              "width": 141.40625,
+              "height": 18
+            },
+            "accessibleName": "Bottom right quarter",
+            "disabled": false,
+            "x": 359,
+            "y": 310,
+            "width": 330,
+            "height": 108
+          },
+          {
+            "id": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:apply",
+            "identity": "snap:apply",
+            "label": "Snapping unavailable",
+            "labelRect": {
+              "x": 24,
+              "y": 445,
+              "width": 652,
+              "height": 18
+            },
+            "accessibleName": "Snapping unavailable",
+            "disabled": true,
+            "x": 11,
+            "y": 436,
+            "width": 678,
+            "height": 36
+          }
+        ],
+        "fields": [],
+        "focus": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:15:snap:close",
+        "documentFocused": true,
+        "fontSize": "16px",
+        "viewportWidth": 700,
+        "viewportHeight": 420,
+        "scrollTop": 63,
+        "scrollHeight": 546,
+        "text": "Snap window\nConnected\n\n\nClose\n\nLeft half\n\nRight half\nSelected\n\nTop left quarter\n\nTop right quarter\n\nBottom left quarter\n\nBottom right quarter\n\nSnapping unavailable"
+      }
+    },
+    {
+      "name": "NativeSnapOutputScaleCommand",
+      "passed": true,
+      "result": "ok\n"
+    },
+    {
+      "name": "NativeOutputScaleRetiresSnapWithoutCommit",
+      "passed": true,
+      "projection": {
+        "phase": "Coherent",
+        "transaction": "Committed",
+        "groups": [
+          {
+            "key": "application:warlock-primary-fixture",
+            "domId": "group:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:2:3:application:warlock-primary-fixture",
+            "title": "ELM-AUTHORITY-FIXTURE",
+            "active": false,
+            "expanded": false,
+            "disabled": false,
+            "label": "Activate ELM-AUTHORITY-FIXTURE",
+            "point": [
+              417.0,
+              24.0
+            ],
+            "rect": [
+              361,
+              1,
+              112,
+              46
+            ],
+            "clip": [
+              0,
+              0,
+              800,
+              48
+            ],
+            "visible": true
+          },
+          {
+            "key": "application:warlock-peer-fixture",
+            "domId": "group:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:2:3:application:warlock-peer-fixture",
+            "title": "ELM-ACTIVATION-PEER",
+            "active": true,
+            "expanded": false,
+            "disabled": false,
+            "label": "Minimize ELM-ACTIVATION-PEER",
+            "point": [
+              303.0,
+              24.0
+            ],
+            "rect": [
+              247,
+              1,
+              112,
+              46
+            ],
+            "clip": [
+              0,
+              0,
+              800,
+              48
+            ],
+            "visible": true
+          }
+        ],
+        "menu": null,
+        "mode": "closed",
+        "outstanding": 0,
+        "registry": 0,
+        "picker": null,
+        "openerId": "applications:{\"lifetime\":\"8654546386549883994\",\"session\":\"3\",\"frontend\":\"1\"}:16:control:opener",
+        "reconnectId": "reconnect",
+        "focus": "",
+        "reconnect": null,
+        "openApplications": {
+          "disabled": false,
+          "label": "Open applications",
+          "point": [
+            41.0,
+            24.0
+          ],
+          "rect": [
+            1,
+            1,
+            80,
+            46
+          ],
+          "clip": [
+            0,
+            0,
+            800,
+            48
+          ],
+          "visible": true
+        },
+        "publication": "71"
+      },
+      "monitors": [
+        {
+          "id": 0,
+          "name": "WAYLAND-1",
+          "description": "",
+          "make": "",
+          "model": "",
+          "serial": "",
+          "width": 800,
+          "height": 600,
+          "physicalWidth": 0,
+          "physicalHeight": 0,
+          "refreshRate": 60.0,
+          "x": 0,
+          "y": 0,
+          "activeWorkspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "specialWorkspace": {
+            "id": 0,
+            "name": ""
+          },
+          "reserved": [
+            0,
+            48,
+            0,
+            0
+          ],
+          "scale": 1.25,
+          "transform": 0,
+          "focused": true,
+          "dpmsStatus": true,
+          "vrr": false,
+          "solitary": "0",
+          "solitaryBlockedBy": [
+            "NOTIFICATION",
+            "WINDOWED",
+            "CANDIDATE"
+          ],
+          "activelyTearing": false,
+          "tearingBlockedBy": [
+            "NOT_TORN",
+            "USER",
+            "SUPPORT",
+            "CANDIDATE"
+          ],
+          "directScanoutTo": "0",
+          "directScanoutBlockedBy": [
+            "USER",
+            "SW",
+            "CANDIDATE"
+          ],
+          "disabled": false,
+          "currentFormat": "XRGB8888",
+          "mirrorOf": "none",
+          "availableModes": [],
+          "colorManagementPreset": "srgb",
+          "sdrBrightness": 1,
+          "sdrSaturation": 1,
+          "sdrMinLuminance": 0.2,
+          "sdrMaxLuminance": 80,
+          "hardwareCursorsInUse": true
+        }
+      ]
+    }
+  ],
+  "retainedFailures": [
+    {
+      "report": "implementation/warlock/qa/runs/native-snap-chooser-1791455697720375808/report.json",
+      "sha256": "e13c46a2bcb5ac008fdd5b525974f71675337c63555fb60fba5256ed21982152",
+      "error": "AssertionError('KeyboardReachesOpen snapping')",
+      "cleanupPassed": true,
+      "scope": "Actual native snap chooser presentation/keyboard/output-scale invalidation only; native snap placement authority and accepted half-work-area oracle remain required"
+    },
+    {
+      "report": "implementation/warlock/qa/runs/native-snap-chooser-1791455902318180856/report.json",
+      "sha256": "d233c1184abaa61d942c3b2977ae3f28223ca2103c7904eca96b87e91dcbe871",
+      "error": "RuntimeError('Original observation deadline snap_body')",
+      "cleanupPassed": true,
+      "scope": "Actual native snap chooser presentation/keyboard/output-scale invalidation only; native snap placement authority and accepted half-work-area oracle remain required"
+    },
+    {
+      "report": "implementation/warlock/qa/runs/native-snap-chooser-1791456129948256730/report.json",
+      "sha256": "cdc85e1bd4825d3ab4d7542d87ba30f1f87676866cc169a6af7ccd336b79c49e",
+      "error": "RuntimeError('Original observation deadline snap_body')",
+      "cleanupPassed": true,
+      "scope": "Actual native snap chooser presentation/keyboard/output-scale invalidation only; native snap placement authority and accepted half-work-area oracle remain required"
+    },
+    {
+      "report": "implementation/warlock/qa/runs/native-snap-chooser-1791456316585565927/report.json",
+      "sha256": "f5b8266b58681bf066dba90d5a9103b71649d5afa43172111a9dd31c9c5ea65b",
+      "error": "RuntimeError('Original observation deadline snap_body')",
+      "cleanupPassed": true,
+      "scope": "Actual native snap chooser presentation/keyboard/output-scale invalidation only; native snap placement authority and accepted half-work-area oracle remain required"
+    }
+  ],
+  "files": [
+    {
+      "path": "implementation/warlock/qa/evidence/snap-chooser/browser-snap-chooser.png",
+      "sha256": "f6e3fadf6e6cc247df6a51f219d52dcf880f2862bd628b4faba82698ab08fc3f"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/snap-chooser/component-report.json",
+      "sha256": "00800c1d50131635e8875ad511314a25811a7ccb53579c4995672609e9b30ebd"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/snap-chooser/menu-navigation-regression.json",
+      "sha256": "a958da1e46092b4c226a64e07c0207e255c35ca2283e13dd319b81f6db89231c"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/snap-chooser/native-report.json",
+      "sha256": "5b6ffcf81e86491a00ba37e927992441578558fd1745b2aed6ba1fbb49bd5a20"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/snap-chooser/native-snap-chooser.png",
+      "sha256": "916fe3e90e02a996bca9759b8deadc126848061191cc7d2a09a6b103c5e525c0"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/snap-chooser/native-snap-last-region.png",
+      "sha256": "7254a03734861a3fd999c104ab8786c2a4b3cb878d77f753fc72534c8e2e3f89"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/snap-chooser/physical-input-commands.json",
+      "sha256": "7bbcea36d8bd0abea63af37214b045951514b2bdc6456860026f3c20a22421b6"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/snap-chooser/retained-native-failures.json",
+      "sha256": "be78ec15adda4d123ae8332b324753c1d0fefea2700546f61594fa23fc5901fa"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/snap-chooser/snap-browser.json",
+      "sha256": "6a81ba91b3da53a90782cc8b91b7b9b9b2b44e1118a1ac94794cf69bb75d3218"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/snap-chooser/snap-replay.json",
+      "sha256": "565544cb3bc7ff504d98a03d016b4dd7f64b12dbf0edc5951c21cd497117ea69"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/snap-chooser/source.patch",
+      "sha256": "ed5fe5dd368bf7f465263a3fcfa178f4a02bc589224393c37b67ea0a575c55fa"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/snap-chooser/wayland-keyboard-trace.txt",
+      "sha256": "181925ee260196d97ffe3978c87e70012fe1e61d042edad7d16b397032e277b1"
+    }
+  ]
+}

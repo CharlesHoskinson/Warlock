@@ -161,6 +161,7 @@ update event ((Model model) as current) =
                     _ -> (Model {model | exhausted=True},[])
         NativeReflow lease ->
             if lease/=model.lease || Surface.mode model.desktop=="closed" then (current,[]) else
+            if model.desktop.snap/=Nothing then apply Desktop.InvalidateSnap current else
                 case (UInt64.next model.lease,UInt64.next model.publication) of
                     (Just token,Just shown) ->
                         -- The host has retired the old popup/input lease. Output
@@ -172,7 +173,9 @@ update event ((Model model) as current) =
                     _ -> (Model {model | exhausted=True},[])
         NativeDismiss lease ->
             if lease/=model.lease || Surface.mode model.desktop=="closed" then (current,[]) else
-                if Surface.mode model.desktop=="menu" then
+                if model.desktop.snap/=Nothing then
+                    Desktop.capture model.desktop |> Maybe.map (\stamp -> apply (Desktop.CloseSnap stamp) current) |> Maybe.withDefault (current,[])
+                else if Surface.mode model.desktop=="menu" then
                     (MenuBridge.menuSnapshot model.desktop.windows.menus).menu |> Maybe.map (\menu -> apply (Desktop.Window (TaskbarShell.MenuEvent (Menu.Dismiss menu.id))) current) |> Maybe.withDefault (current,[])
                 else if Desktop.switcherOpen model.desktop then
                     Desktop.capture model.desktop |> Maybe.map (\stamp -> apply (Desktop.CloseSwitcher stamp) current) |> Maybe.withDefault (current,[])

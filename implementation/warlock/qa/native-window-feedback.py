@@ -4,12 +4,13 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
 lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
 """
 import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
+SNAP=sys.argv[1:]==['--snap-chooser']
 REFLOW=sys.argv[1:]==['--popup-reflow']
 DENSEMENU=sys.argv[1:]==['--dense-menu'] or REFLOW
 DENSEPICKER=sys.argv[1:]==['--dense-picker'] or DENSEMENU
 DENSE=sys.argv[1:]==['--dense-taskbar']
 SMALL=DENSE or DENSEPICKER
-PINMENUS=sys.argv[1:]==['--pinned-menus'] or DENSE
+PINMENUS=sys.argv[1:]==['--pinned-menus'] or DENSE or SNAP
 PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PINMENUS
 PRE_READY_RETIRE=sys.argv[1:]==['--switcher-pre-ready-retirement']
 MEMBERSHIP=sys.argv[1:]==['--switcher-membership'] or PRE_READY_RETIRE
@@ -51,7 +52,7 @@ else:
 for row in pair.values():assert sha(row['path'])==row['sha256']
 assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
 subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
-OUT=ROOT/'qa/runs'/(('native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+OUT=ROOT/'qa/runs'/(('native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
 OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
 focus_host=None
 if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
@@ -110,6 +111,7 @@ if MEMBERSHIP:report.update(scenarios=['switcher-membership','switcher-retire-ar
 if SWITCHER:report.update(requirements=['ELM-UI-003'],scenarios=['switcher-order','switcher-cancel'],scope='Actual native MRU observation, integrated switcher control pixels, local keyboard cycling/cancel and identity-bound chosen activation; global Alt-Tab journal, modal representation and AT/independent acceptance remain pending',nativeSwitcherJourneyObserved=False)
 if PRIMARY:report.update(requirements=['ELM-UI-004'],scenarios=['taskbar-inactive','taskbar-active','taskbar-minimized'],scope='Actual pointer single-family activation/minimize/restore, exact native receipt and GTK keyboard recipient, MRU/desktop succession and pixels; primary keyboard and AT acceptance remain pending',nativePrimaryJourneyObserved=False)
 if PINMENUS:report.update(requirements=['ELM-UI-008','ELM-UX-023'],scenarios=['menu-invocation','keyboard-menus'],scope='Actual current running pin, native secondary click/Menu/Shift-F10 menus and existing minimize/restore path; dense/enlarged-text, AT and independent acceptance remain open',nativePinnedMenusObserved=False)
+if SNAP:report.update(requirements=['ELM-UX-019','ELM-UX-020'],scenarios=['ux-019','ux-020'],scope='Actual native snap chooser presentation/keyboard/output-scale invalidation only; native snap placement authority and accepted half-work-area oracle remain required',nativeSnapChooserObserved=False)
 if DENSE:report.update(requirements=['ELM-UI-008'],scenarios=['overflow-first-last','overflow-resize','menu-invocation'],scope='Actual small native output, enlarged text, configured overflowing pins, physical keyboard/wheel/menu traversal and output resize; AT and independent review remain open',nativeDenseTaskbarObserved=False)
 if DENSEPICKER:report.update(requirements=['ELM-UI-008','ELM-UI-004'],scenarios=['overflow-first-last','overflow-resize','menu-invocation','taskbar-group'],scope='Actual ten-root native enlarged-text picker arrow/endpoints, first/last menus and identity-bound selection/input; browser resize continuity is separate; native popup reflow, AT and independent review remain open',nativeDensePickerObserved=False)
 if DENSEMENU:report.update(requirements=['ELM-UI-008'],scenarios=['overflow-first-last','menu-invocation'],scope='Actual ten-root 480x360 native output at 200% text; overflow of current three-operation menu, typed endpoint/arrows/disabled/Tab/Escape and operation-label pixels; renderer capacity/growth/blur are component observations; AT/independent and native popup reflow remain open',nativeDenseMenuObserved=False)
@@ -393,7 +395,7 @@ raise SystemExit(daemon.run())
      # Count only current control interiors. Whole-popup counts incorrectly
      # included the compositor's warning overlay above a black reopened popup.
      for button in body['buttons']:
-      selected=button['accessibleName'] in ['Minimize','Close window actions','Maximize'] if PINMENUS else button['accessibleName'].startswith(('Activate ELM-','Restore ELM-')) if SWITCHER or CHORD else (button['accessibleName'].startswith('Browse workspace ') or (NAV and button['accessibleName'].startswith('Restore ELM-ACTIVATION-PEER'))) if TASKVIEW else button['accessibleName'] in ['Refresh applications','Open Files']
+      selected=button['id']==body['focus'] if SNAP and (projection() or {}).get('mode')=='snap' else button['accessibleName'] in ['Minimize','Close window actions','Maximize'] if PINMENUS else button['accessibleName'].startswith(('Activate ELM-','Restore ELM-')) if SWITCHER or CHORD else (button['accessibleName'].startswith('Browse workspace ') or (NAV and button['accessibleName'].startswith('Restore ELM-ACTIVATION-PEER'))) if TASKVIEW else button['accessibleName'] in ['Refresh applications','Open Files']
       if not selected or button['disabled'] or button['y']<0 or button['y']+button['height']>box[3]:continue
       left,top=max(0,int(box[0]+button['x'])+12),max(100,int(box[1]+button['y'])+6)
       right,bottom=min(pix.get_width(),int(box[0]+button['x']+min(220,button['width']))-12),min(pix.get_height(),box[1]+box[3],int(box[1]+button['y']+button['height'])-6)
@@ -411,13 +413,13 @@ raise SystemExit(daemon.run())
      helper([str(keyboard)],'key 29 1\nkey 30 1\nsleep 50\nkey 30 0\nkey 29 0\nkey 14 1\nkey 14 0\nsleep 100\nsync\n')
      for code in codes:key(code)
      wait(lambda:field_value()==expected)
-    def keyboard_button(label):
+    def keyboard_button(label,code=57):
      button=wait(lambda:next((b for b in (popup_body() or {}).get('buttons',[]) if b['accessibleName']==label and not b['disabled']),None))
      for _ in range(len(popup_body()['buttons'])+2):
       if popup_body()['focus']==button['id']:break
       key(15)
      check('KeyboardReaches'+label,popup_body()['focus']==button['id'],body=popup_body())
-     key(57)
+     key(code)
     if DENSE:
      def dense_body():
       body=bar_body();p=projection()
@@ -547,6 +549,32 @@ raise SystemExit(daemon.run())
      n=len(events.read_text().splitlines());key(30);delivered=wait(lambda:[json.loads(line) for line in events.read_text().splitlines()[n:]])
      check('TaskViewAfterMenuReturnsApplicationKeyboard',facts()['facts']['focused']==target and any(row['window']=='ELM-ACTIVATION-PEER' and row['kind']=='key' and row['keyval']==97 for row in delivered),events=delivered)
      report['nativePinnedMenusObserved']=True
+     if SNAP:
+      before=len(journal());before_launches=len(launches())
+      button=wait(pin_button);x,y=round(button['x']+button['width']/2),round(button['y']+button['height']/2)
+      helper([str(POINTER),'800','600'],f'move {x} {y}\nsleep 100\nbutton 273 1\nsleep 50\nbutton 273 0\nsleep 100\n');wait(menu)
+      keyboard_button('Open snapping',28)
+      def snap_body():
+       body=popup_body();p=projection()
+       return body if body and p and p.get('mode')=='snap' and body['publication']==p['publication'] and len([b for b in body['buttons'] if b.get('identity','').startswith('snap:region:')])==6 else None
+      body=wait(snap_body);check('NativeSnapChooserHasSixRegions',len([b for b in body['buttons'] if b.get('identity','').startswith('snap:region:')])==6,body=body)
+      keyboard_button('Right half');body=wait(lambda:next((b for b in [snap_body()] if b and any(row['accessibleName']=='Right half; selected preview' for row in b['buttons'])),None))
+      check('NativeRegionSelectionHasNoWindowEffect',len(journal())==before and len(launches())==before_launches,body=body)
+      check('NativePlacementRemainsExplicitlyUnavailable',any(b['identity']=='snap:apply' and b['disabled'] for b in body['buttons']),body=body)
+      popup_capture('native-snap-chooser');capture=report['popupCaptures'][-1]
+      check('NativeSnapSelectedControlHasActualTextPixels',len(capture['controlRegions'])==1 and capture['controlRegions'][0]['accessibleName']=='Right half; selected preview' and all(r['area']>0 and r['brightPixels']>15 and r['paintedPixels']>.9*r['area'] for r in capture['controlRegions']),capture=capture)
+      def focused_snap(identity):
+       body=snap_body();button=next((b for b in (body or {}).get('buttons',[]) if b.get('identity')==identity),None)
+       return body if button and button['id']==body['focus'] and button['y']>=-.5 and button['y']+button['height']<=body['viewportHeight']+.5 else None
+      key(107);body=wait(lambda:focused_snap('snap:region:bottom-right'));popup_capture('native-snap-last-region');capture=report['popupCaptures'][-1]
+      check('NativeSnapEndRevealsLastRegionAndSkipsUnavailableApply',len(capture['controlRegions'])==1 and capture['controlRegions'][0]['accessibleName']=='Bottom right quarter' and all(r['area']>0 and r['brightPixels']>15 and r['paintedPixels']>.9*r['area'] for r in capture['controlRegions']),body=body,capture=capture)
+      key(102);wait(lambda:focused_snap('control:close'));check('NativeSnapHomeReturnsToVisibleClose',len(journal())==before and len(launches())==before_launches,body=snap_body())
+      result=s.ctl('eval','hl.monitor({output="WAYLAND-1",mode="800x600@60",position="0x0",scale=1.25})');check('NativeSnapOutputScaleCommand',result.strip()=='ok',result=result)
+      wait(lambda:any(m['name']=='WAYLAND-1' and m['scale']==1.25 for m in s.data('monitors')))
+      wait(lambda:(projection() or {}).get('mode')=='closed')
+      check('NativeOutputScaleRetiresSnapWithoutCommit',len(journal())==before and len(launches())==before_launches,projection=projection(),monitors=s.data('monitors'))
+      report['nativeSnapChooserObserved']=True
+
     elif CHORD:
      def coherent_closed():return (projection() or {}).get('mode')=='closed' and (projection() or {}).get('phase')=='Coherent'
      def native_journal():return client.switcher_journal('450',observe=True)['chord']

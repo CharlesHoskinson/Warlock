@@ -13,8 +13,9 @@
   // Keyboard menu activation uses the native proof route. WebKit's implicit
   // zero-detail button click must not also invoke Elm's pointer-click handler.
   document.addEventListener('click',event => {
-    const node=owner(control(event.target));
-    if(node?.dataset.mode==='menu' && event.detail===0){event.preventDefault();event.stopImmediatePropagation();}
+    const item=control(event.target),node=owner(item);
+    const nativeOperation=item&&(item.dataset.surfaceControl.startsWith('menu:')||item.dataset.surfaceControl==='control:menu-close');
+    if(node?.dataset.mode==='menu' && nativeOperation && event.detail===0){event.preventDefault();event.stopImmediatePropagation();}
   },true);
   document.addEventListener('contextmenu',event => { if(owner(event.target)) event.preventDefault(); });
   document.addEventListener('mousedown',event => {
@@ -61,12 +62,18 @@
       if(event.key==='Tab'){
         event.preventDefault();
         const selected=node.querySelector('[aria-current="true"]'),close=node.querySelector('[data-surface-control="control:menu-close"]');
-        (item===close?selected:close)?.focus();revealMenu(false,true);return;
+        const utilities=[...node.querySelectorAll('[data-surface-control^="control:"]:not(:disabled)')].filter(control=>control!==close);
+        const stops=[close,selected,...utilities].filter(control=>control&&!control.disabled);
+        const current=stops.indexOf(item);
+        stops[(current+(event.shiftKey?-1:1)+stops.length)%stops.length]?.focus();revealMenu(false,true);return;
       }
       if(event.key==='Enter' && item.dataset.surfaceControl==='control:menu-close'){
         event.preventDefault();post({surfaceProtocol:2,kind:'surface-menu-navigation',surface:'popup',...stamp(node),key:'Close'});return;
       }
       if(['Escape','ArrowUp','ArrowDown','Home','End','Enter'].includes(event.key)) {
+        // Utility activation belongs to its own current surface action. Enter
+        // must never apply the independently selected window operation.
+        if(event.key==='Enter'&&!item.dataset.surfaceControl.startsWith('menu:'))return;
         if(['ArrowUp','ArrowDown','Home','End'].includes(event.key))revealMenu(false,true);
         event.preventDefault();post({surfaceProtocol:2,kind:'surface-menu-navigation',surface:'popup',...stamp(node),key:event.key});
       }
@@ -85,10 +92,13 @@
     force=force||changed||layout!==previousLayout;previousLayout=layout;
     if(!node||!document.hasFocus())return;
     // The selected operation comes only from the current Elm projection.
-    // Preserve Tab focus on Close through unrelated layout/publication changes.
-    if(select&&selected&&!selected.disabled&&(changed||control(document.activeElement)?.dataset.surfaceControl!=='control:menu-close')&&document.activeElement!==selected){selected.focus({preventScroll:true});force=true;}
     const focused=control(document.activeElement);
-    if(force&&focused&&node.contains(focused)&&!focused.disabled)focused.scrollIntoView({block:'nearest',inline:'nearest'});
+    // Preserve a current enabled utility reached by Tab across unrelated
+    // publications; an actual operation-selection change still owns focus.
+    const retainedUtility=focused&&node.contains(focused)&&!focused.disabled&&focused.dataset.surfaceControl.startsWith('control:');
+    if(select&&selected&&!selected.disabled&&(changed||!retainedUtility)&&document.activeElement!==selected){selected.focus({preventScroll:true});force=true;}
+    const revealed=control(document.activeElement);
+    if(force&&revealed&&node.contains(revealed)&&!revealed.disabled)revealed.scrollIntoView({block:'nearest',inline:'nearest'});
   };
   const menuResize=window.ResizeObserver&&new ResizeObserver(()=>requestAnimationFrame(()=>revealMenu(false,true)));
   new MutationObserver(()=>revealMenu(true)).observe(document.body,{subtree:true,childList:true,attributes:true});

@@ -1,38 +1,52 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-08T10:03:00.875281+00:00",
+  "updatedUTC": "2026-10-08T10:50:37.535855+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "native-picker-keyboard-handoff",
+    "id": "native-snap-chooser",
     "requirements": [
-      "ELM-UI-004",
-      "ELM-UI-008"
+      "ELM-UX-019",
+      "ELM-UX-020"
     ],
     "scenarios": [
-      "taskbar-group",
-      "overflow-resize"
+      "ux-019",
+      "ux-020"
     ],
     "paths": [
-      "implementation/warlock/native/host.c",
-      "implementation/warlock/native/shared-host.c",
+      "implementation/warlock/src/Snap.elm",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/src/SurfaceRenderer.elm",
+      "implementation/warlock/src/SurfaceController.elm",
+      "implementation/warlock/native/surface.h",
+      "implementation/warlock/qa/SnapReplay.elm",
       "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/native-window-feedback.py",
       "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/README.md"
+      "implementation/warlock/assets/elm.js",
+      "implementation/warlock/assets/bar.js",
+      "implementation/warlock/assets/popup.js",
+      "implementation/warlock/assets/shell.css",
+      "implementation/warlock/README.md",
+      "implementation/warlock/assets/popup-adapter.js",
+      "implementation/warlock/qa/snap-browser.mjs",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/qa/snap-chooser.qnt",
+      "implementation/warlock/assets/context.js",
+      "implementation/warlock/assets/activation.js"
     ],
-    "before": "After resizing a dense picker, selecting the exact member commits activation but the taskbar reclaims native keyboard input before GTK typing.",
-    "after": "Admitted Activate/Restore handoff relinquishes taskbar keyboard eligibility before native dispatch, so typing reaches the selected application; Escape and background Minimize preserve their recipients.",
+    "before": "Window actions expose Maximize/Restore but no snap chooser, typed region preview or output-generation-bound placement policy.",
+    "after": "Window actions open a keyboard-navigable snap chooser with immutable half/quarter regions tied to exact geometry scope; changed outputs retire previews. Native placement authority and observed accepted placement remain required before release.",
     "verification": [
-      "Changed owning host compile/relink and foreground/negative self-tests; original protected popup-reflow journey and menu Escape/Minimize/Restore regression without focus workarounds or deadline changes."
+      "Changed integrated Elm compile and actual chooser/reflow/stale-view replay; native host mode admission and browser controls. Continue with exact native effect authority and original isolated placement/stale-output recordings."
     ],
-    "state": "Implemented native foreground keyboard handoff; original dense reflow journey and Escape/background-Minimize/Restore typing regression pass; applicable AT and independent acceptance remain open",
-    "nextSourceWork": "Implement the original ELM-UX-019/020 snap chooser in the integrated Elm/native route: output-generation-bound regions, current geometry placement and stale-output invalidation; inventory existing geometry authority before selecting source dependencies.",
-    "evidence": "implementation/warlock/qa/evidence/keyboard-handoff/manifest.json"
+    "state": "Chooser integrated; 19 Elm checks, 14 browser utility/chooser checks, 45 menu regressions and 81 native campaign checks pass. Exact native snap placement is still required; original scenarios remain partial.",
+    "evidence": "implementation/warlock/qa/evidence/snap-chooser/manifest.json",
+    "nextSourceWork": "Extend the existing typed geometry effect operation, shared request allocator and durable custody through native placement authority; close the chooser before native geometry admission, reconcile fresh exact output/work-area/workspace scope, then qualify actual left-half placement and stale-output refusal using the original isolated oracles."
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",

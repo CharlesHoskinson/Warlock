@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "Actual production snap frame renders all six previews"
+    },
+    {
+      "name": "Selected preview is accessible"
+    },
+    {
+      "name": "Preview uses selected glow and shading"
+    },
+    {
+      "name": "End reaches last enabled quarter and skips unavailable apply"
+    },
+    {
+      "name": "Arrow traversal reaches adjacent enabled region"
+    },
+    {
+      "name": "Home reaches Close"
+    },
+    {
+      "name": "Enter emits the exact region action once"
+    },
+    {
+      "name": "Unavailable placement cannot dispatch an action"
+    },
+    {
+      "name": "Menu Tab reaches the snap utility"
+    },
+    {
+      "name": "Menu Shift Tab returns to selected native operation"
+    },
+    {
+      "name": "Unrelated publication retains focused utility"
+    },
+    {
+      "name": "Menu Enter activates its exact current utility once"
+    },
+    {
+      "name": "Utility Enter cannot invoke selected window operation"
+    },
+    {
+      "name": "No browser exceptions",
+      "detail": []
+    }
+  ],
+  "captures": [
+    "snap-chooser.png"
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "browserExitCode": 0
+}

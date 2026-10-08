@@ -15,6 +15,7 @@ import Shell
 import Taskbar
 import TaskbarShell
 import TaskView
+import Snap
 import UInt64 exposing (Counter)
 
 type alias Control =
@@ -41,7 +42,8 @@ recoveryPopup model = if recoveryNeeded model then [recoveryControl "control:rec
 
 mode : Desktop.Model -> String
 mode model =
-    if Desktop.switcherOpen model then "switcher"
+    if model.snap/=Nothing then "snap"
+    else if Desktop.switcherOpen model then "switcher"
     else if model.overview then "overview"
     else if model.open then "applications"
     else if (MenuBridge.menuSnapshot model.windows.menus).menu/=Nothing then "menu"
@@ -50,7 +52,23 @@ mode model =
 
 controls : Desktop.Model -> List Control
 controls model =
-    if Desktop.switcherOpen model then
+    if model.snap/=Nothing then
+        case model.snap of
+            Nothing -> []
+            Just choice ->
+                let scoped message=Desktop.capture model |> Maybe.map message
+                    ready=Shell.available model.windows.shell
+                    regionControl region=
+                        let identity="snap:region:"++Snap.identity region
+                            selected=region==choice.selected
+                        in {id=identity,domId=Desktop.key model identity,label=Snap.name region,
+                            ariaLabel=Snap.name region++(if selected then "; selected preview" else ""),
+                            detail=if selected then "Selected" else "",enabled=ready,
+                            message=if ready then scoped (\stamp -> Desktop.SelectSnap stamp region) else Nothing}
+                in {id="control:close",domId=Desktop.key model "snap:close",label="Close",ariaLabel="Close snapping",detail="",enabled=True,message=scoped Desktop.CloseSnap}
+                    :: List.map regionControl Snap.regions
+                    ++ [{id="snap:apply",domId=Desktop.key model "snap:apply",label="Snapping unavailable",ariaLabel="Snapping unavailable",detail="",enabled=False,message=Nothing}]
+    else if Desktop.switcherOpen model then
         let scoped message=Desktop.capture model |> Maybe.map message
             selected=Switcher.selected model.switcher |> Maybe.map .root
             browsing=Switcher.phase model.switcher==Switcher.Browsing
@@ -110,7 +128,11 @@ controls model =
                     row index item =
                         let detail = if menuBlocked model then "Awaiting native confirmation" else if menu.selected==Just index then "Selected" else ""
                         in {id=prefix ++ String.fromInt index,domId=prefix ++ String.fromInt index,label=item.label,ariaLabel=item.label ++ (if menuBlocked model then "; " ++ detail else ""),detail=detail,enabled=ready && item.enabled,message=if ready && item.enabled then Just (Desktop.Window (TaskbarShell.MenuEvent (Menu.Activate menu.id menu.binding index))) else Nothing}
-                in {id="control:menu-close",domId=prefix ++ "close",label="Close",ariaLabel="Close window actions",detail="",enabled=True,message=Just (Desktop.Window (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)))} :: List.indexedMap row menu.items ++ recoveryPopup model
+                    snap = MenuBridge.currentProvider model.windows.menus |> Maybe.andThen (\provider ->
+                        model.windows.shell.geometry |> Maybe.andThen (\geometry -> Snap.open geometry (Provider.incarnation provider))
+                            |> Maybe.map (\_ -> {id="control:snap-open",domId=prefix++"snap",label="Snap window",ariaLabel="Open snapping",detail="",enabled=ready,
+                                message=if ready then Desktop.capture model |> Maybe.map (\stamp -> Desktop.OpenSnap stamp (Provider.incarnation provider)) else Nothing}))
+                in {id="control:menu-close",domId=prefix ++ "close",label="Close",ariaLabel="Close window actions",detail="",enabled=True,message=Just (Desktop.Window (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)))} :: List.indexedMap row menu.items ++ (snap |> Maybe.map List.singleton |> Maybe.withDefault []) ++ recoveryPopup model
     else
         case model.windows.picker of
             Just picker ->

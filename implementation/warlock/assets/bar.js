@@ -5260,7 +5260,7 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 			$elm$json$Json$Decode$map7,
 			F7(
 				function (version, shown, scoped, current, notice, bar, popup) {
-					return {n: bar, H: current, al: notice, f: popup, W: scoped, Y: shown, az: version};
+					return {n: bar, H: current, al: notice, g: popup, W: scoped, Y: shown, az: version};
 				}),
 			A2($elm$json$Json$Decode$field, 'surfaceProtocol', $elm$json$Json$Decode$int),
 			A2($elm$json$Json$Decode$field, 'publication', $author$project$UInt64$decoder),
@@ -5290,7 +5290,7 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 					$elm$core$Set$size(
 						$elm$core$Set$fromList(names)));
 			};
-			var all = _Utils_ap(record.n, record.f);
+			var all = _Utils_ap(record.n, record.g);
 			var identities = A2(
 				$elm$core$List$map,
 				function ($) {
@@ -5301,7 +5301,7 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 				$elm$core$List$member,
 				record.H,
 				_List_fromArray(
-					['closed', 'picker', 'applications', 'menu', 'overview', 'switcher']))) || (((record.H !== 'closed') && _Utils_eq(record.W, $author$project$UInt64$zero)) || (((record.H === 'closed') && (!$elm$core$List$isEmpty(record.f))) || ((!unique(identities)) || ((!unique(
+					['closed', 'picker', 'applications', 'menu', 'overview', 'switcher', 'snap']))) || (((record.H !== 'closed') && _Utils_eq(record.W, $author$project$UInt64$zero)) || (((record.H === 'closed') && (!$elm$core$List$isEmpty(record.g))) || ((!unique(identities)) || ((!unique(
 				A2(
 					$elm$core$List$map,
 					function ($) {
@@ -5313,7 +5313,7 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 					return $elm$core$String$isEmpty(control.C) || $elm$core$String$isEmpty(control.u);
 				},
 				all)))))))) ? $elm$core$Result$Err('Invalid presentation scope/identities') : $elm$core$Result$Ok(
-				{n: record.n, S: record.W, h: record.H, f: record.f, P: record.Y, s: record.al});
+				{n: record.n, S: record.W, f: record.H, g: record.g, P: record.Y, s: record.al});
 		},
 		A2(
 			$elm$core$Result$mapError,
@@ -5411,7 +5411,7 @@ var $author$project$SurfaceRenderer$enabled = F3(
 			function (control) {
 				return _Utils_eq(control.C, identity) && control.v;
 			},
-			popup ? snapshot.f : snapshot.n);
+			popup ? snapshot.g : snapshot.n);
 	});
 var $elm$json$Json$Encode$int = _Json_wrap;
 var $elm$json$Json$Encode$object = function (pairs) {
@@ -5842,7 +5842,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 		};
 		var control = function (item) {
 			var kind = (A2($elm$core$String$startsWith, 'bar:group:', item.C) || A2($elm$core$String$startsWith, 'bar:pin:', item.C)) ? 'control-group' : ((item.C === 'bar:recovery-refresh') ? 'control-recovery' : 'control-utility');
-			if (popup && ((snapshot.h === 'applications') && (item.C === 'control:search'))) {
+			if (popup && ((snapshot.f === 'applications') && (item.C === 'control:search'))) {
 				var event = A2(
 					$elm$json$Json$Decode$andThen,
 					function (_v2) {
@@ -5926,15 +5926,15 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 							A2(
 							$elm$html$Html$Attributes$attribute,
 							'role',
-							(popup && (snapshot.h === 'menu')) ? 'menuitem' : 'button'),
+							(popup && (snapshot.f === 'menu')) ? 'menuitem' : 'button'),
 							A2(
 							$elm$html$Html$Attributes$attribute,
 							'aria-current',
 							(popup && (A2(
 								$elm$core$List$member,
-								snapshot.h,
+								snapshot.f,
 								_List_fromArray(
-									['menu', 'switcher'])) && (item.O === 'Selected'))) ? 'true' : 'false')
+									['menu', 'switcher', 'snap'])) && (item.O === 'Selected'))) ? 'true' : 'false')
 						]),
 					_List_fromArray(
 						[
@@ -6002,7 +6002,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 			_List_fromArray(
 				[
 					$elm$html$Html$Attributes$class('surface-popup'),
-					A2($elm$html$Html$Attributes$attribute, 'data-mode', snapshot.h),
+					A2($elm$html$Html$Attributes$attribute, 'data-mode', snapshot.f),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-publication',
@@ -6020,7 +6020,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 					_List_fromArray(
 						[
 							$elm$html$Html$text(
-							(snapshot.h === 'applications') ? 'Applications' : ((snapshot.h === 'overview') ? 'Task View' : ((snapshot.h === 'switcher') ? 'Switch windows' : ((snapshot.h === 'menu') ? 'Window actions' : 'Choose a window'))))
+							(snapshot.f === 'applications') ? 'Applications' : ((snapshot.f === 'overview') ? 'Task View' : ((snapshot.f === 'switcher') ? 'Switch windows' : ((snapshot.f === 'snap') ? 'Snap window' : ((snapshot.f === 'menu') ? 'Window actions' : 'Choose a window')))))
 						])),
 					A2(
 					$elm$html$Html$p,
@@ -6033,14 +6033,14 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 						[
 							$elm$html$Html$text(snapshot.s)
 						])),
-					(snapshot.h === 'overview') ? A2(
+					(snapshot.f === 'overview') ? A2(
 					$elm$html$Html$div,
 					_List_fromArray(
 						[
 							$elm$html$Html$Attributes$class('surface-controls'),
 							A2($elm$html$Html$Attributes$attribute, 'role', 'group')
 						]),
-					overviewRows(snapshot.f)) : A3(
+					overviewRows(snapshot.g)) : A3(
 					$elm$html$Html$Keyed$node,
 					'div',
 					_List_fromArray(
@@ -6049,7 +6049,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 							A2(
 							$elm$html$Html$Attributes$attribute,
 							'role',
-							(snapshot.h === 'menu') ? 'menu' : 'group')
+							(snapshot.f === 'menu') ? 'menu' : 'group')
 						]),
 					A2(
 						$elm$core$List$map,
@@ -6058,7 +6058,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 								'control:' + item.C,
 								control(item));
 						},
-						snapshot.f))
+						snapshot.g))
 				])) : A3(
 			$elm$html$Html$Keyed$node,
 			'div',

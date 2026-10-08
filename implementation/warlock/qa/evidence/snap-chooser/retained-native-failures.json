@@ -1,0 +1,30 @@
+[
+  {
+    "report": "implementation/warlock/qa/runs/native-snap-chooser-1791455697720375808/report.json",
+    "sha256": "e13c46a2bcb5ac008fdd5b525974f71675337c63555fb60fba5256ed21982152",
+    "error": "AssertionError('KeyboardReachesOpen snapping')",
+    "cleanupPassed": true,
+    "scope": "Actual native snap chooser presentation/keyboard/output-scale invalidation only; native snap placement authority and accepted half-work-area oracle remain required"
+  },
+  {
+    "report": "implementation/warlock/qa/runs/native-snap-chooser-1791455902318180856/report.json",
+    "sha256": "d233c1184abaa61d942c3b2977ae3f28223ca2103c7904eca96b87e91dcbe871",
+    "error": "RuntimeError('Original observation deadline snap_body')",
+    "cleanupPassed": true,
+    "scope": "Actual native snap chooser presentation/keyboard/output-scale invalidation only; native snap placement authority and accepted half-work-area oracle remain required"
+  },
+  {
+    "report": "implementation/warlock/qa/runs/native-snap-chooser-1791456129948256730/report.json",
+    "sha256": "cdc85e1bd4825d3ab4d7542d87ba30f1f87676866cc169a6af7ccd336b79c49e",
+    "error": "RuntimeError('Original observation deadline snap_body')",
+    "cleanupPassed": true,
+    "scope": "Actual native snap chooser presentation/keyboard/output-scale invalidation only; native snap placement authority and accepted half-work-area oracle remain required"
+  },
+  {
+    "report": "implementation/warlock/qa/runs/native-snap-chooser-1791456316585565927/report.json",
+    "sha256": "f5b8266b58681bf066dba90d5a9103b71649d5afa43172111a9dd31c9c5ea65b",
+    "error": "RuntimeError('Original observation deadline snap_body')",
+    "cleanupPassed": true,
+    "scope": "Actual native snap chooser presentation/keyboard/output-scale invalidation only; native snap placement authority and accepted half-work-area oracle remain required"
+  }
+]

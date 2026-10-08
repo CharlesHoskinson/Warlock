@@ -1,0 +1,898 @@
+diff --git c/implementation/warlock/README.md i/implementation/warlock/README.md
+index 2208b37..015d923 100644
+--- c/implementation/warlock/README.md
++++ i/implementation/warlock/README.md
+@@ -64,3 +64,13 @@ The same host also passes Escape, inactive-Minimize keyboard preservation,
+ Restore typing and subsequent Task View dismissal. Original deadlines, owning
+ core/plugin pair and compiled Elm assets are unchanged. Applicable AT and
+ independent acceptance still remain open.
++
++Window actions now include a snap chooser for eligible ordinary windows. It
++shows six half/quarter regions derived from the observed native work area,
++including negative output origins and odd dimensions. Tab reaches the chooser
++utility; Enter opens it without applying the selected menu operation. Inside
++the chooser, Up/Down and Home/End traverse enabled controls, and selection uses
++the current view identity. Changed output/work-area scope retires the preview.
++The selected region uses the shared color, glow, shadow and shading language.
++Native snap placement is still being implemented: the placement control remains
++disabled and no successful placement or complete snapping acceptance is claimed.
+diff --git c/implementation/warlock/assets/activation.js i/implementation/warlock/assets/activation.js
+index 48a9fc2..498d145 100644
+--- c/implementation/warlock/assets/activation.js
++++ i/implementation/warlock/assets/activation.js
+@@ -75,7 +75,8 @@
+   document.addEventListener('click',event=>{
+     pairing=null;const item=control(event.target),root=owner(item);if(!item||!root)return;
+     // Unchanged earlier context handler owns native menu detail0 routing.
+-    if(root.dataset.mode==='menu'&&event.detail===0)return;
++    if(root.dataset.mode==='menu'&&event.detail===0&&
++       (item.dataset.surfaceControl.startsWith('menu:')||item.dataset.surfaceControl==='control:menu-close'))return;
+     const held=pending;
+     if(held){
+       const route=held.route.kind==='keyboard'&&generated===held?held.route:direct(event)||compat;
+@@ -125,7 +126,8 @@
+     }
+     if(!activationKey(event)){pairing=null;return;}
+     const item=control(event.target),root=owner(item);pairing=null;
+-    if(!item||!root||root.dataset.mode==='menu')return;
++    if(!item||!root||(root.dataset.mode==='menu'&&
++       (item.dataset.surfaceControl.startsWith('menu:')||item.dataset.surfaceControl==='control:menu-close')))return;
+     const route=keyboard(event),wasQualified=qualified(event);event.preventDefault();
+     if(!route){quarantineTurn();return;}
+     const held=pending;
+@@ -139,7 +141,8 @@
+   document.addEventListener('keyup',event=>{
+     if(!activationKey(event)){pairing=null;return;}
+     const item=control(event.target),root=owner(item);pairing=null;
+-    if(!item||!root||root.dataset.mode==='menu')return;
++    if(!item||!root||(root.dataset.mode==='menu'&&
++       (item.dataset.surfaceControl.startsWith('menu:')||item.dataset.surfaceControl==='control:menu-close')))return;
+     const route=keyboard(event),wasQualified=qualified(event);event.preventDefault();
+     const held=pending;
+     if(!route||!matches(held,item,route)||event.key!==' ')return;
+diff --git c/implementation/warlock/assets/context.js i/implementation/warlock/assets/context.js
+index 099a19b..f560c73 100644
+--- c/implementation/warlock/assets/context.js
++++ i/implementation/warlock/assets/context.js
+@@ -13,8 +13,9 @@
+   // Keyboard menu activation uses the native proof route. WebKit's implicit
+   // zero-detail button click must not also invoke Elm's pointer-click handler.
+   document.addEventListener('click',event => {
+-    const node=owner(control(event.target));
+-    if(node?.dataset.mode==='menu' && event.detail===0){event.preventDefault();event.stopImmediatePropagation();}
++    const item=control(event.target),node=owner(item);
++    const nativeOperation=item&&(item.dataset.surfaceControl.startsWith('menu:')||item.dataset.surfaceControl==='control:menu-close');
++    if(node?.dataset.mode==='menu' && nativeOperation && event.detail===0){event.preventDefault();event.stopImmediatePropagation();}
+   },true);
+   document.addEventListener('contextmenu',event => { if(owner(event.target)) event.preventDefault(); });
+   document.addEventListener('mousedown',event => {
+@@ -61,12 +62,18 @@
+       if(event.key==='Tab'){
+         event.preventDefault();
+         const selected=node.querySelector('[aria-current="true"]'),close=node.querySelector('[data-surface-control="control:menu-close"]');
+-        (item===close?selected:close)?.focus();revealMenu(false,true);return;
++        const utilities=[...node.querySelectorAll('[data-surface-control^="control:"]:not(:disabled)')].filter(control=>control!==close);
++        const stops=[close,selected,...utilities].filter(control=>control&&!control.disabled);
++        const current=stops.indexOf(item);
++        stops[(current+(event.shiftKey?-1:1)+stops.length)%stops.length]?.focus();revealMenu(false,true);return;
+       }
+       if(event.key==='Enter' && item.dataset.surfaceControl==='control:menu-close'){
+         event.preventDefault();post({surfaceProtocol:2,kind:'surface-menu-navigation',surface:'popup',...stamp(node),key:'Close'});return;
+       }
+       if(['Escape','ArrowUp','ArrowDown','Home','End','Enter'].includes(event.key)) {
++        // Utility activation belongs to its own current surface action. Enter
++        // must never apply the independently selected window operation.
++        if(event.key==='Enter'&&!item.dataset.surfaceControl.startsWith('menu:'))return;
+         if(['ArrowUp','ArrowDown','Home','End'].includes(event.key))revealMenu(false,true);
+         event.preventDefault();post({surfaceProtocol:2,kind:'surface-menu-navigation',surface:'popup',...stamp(node),key:event.key});
+       }
+@@ -85,10 +92,13 @@
+     force=force||changed||layout!==previousLayout;previousLayout=layout;
+     if(!node||!document.hasFocus())return;
+     // The selected operation comes only from the current Elm projection.
+-    // Preserve Tab focus on Close through unrelated layout/publication changes.
+-    if(select&&selected&&!selected.disabled&&(changed||control(document.activeElement)?.dataset.surfaceControl!=='control:menu-close')&&document.activeElement!==selected){selected.focus({preventScroll:true});force=true;}
+     const focused=control(document.activeElement);
+-    if(force&&focused&&node.contains(focused)&&!focused.disabled)focused.scrollIntoView({block:'nearest',inline:'nearest'});
++    // Preserve a current enabled utility reached by Tab across unrelated
++    // publications; an actual operation-selection change still owns focus.
++    const retainedUtility=focused&&node.contains(focused)&&!focused.disabled&&focused.dataset.surfaceControl.startsWith('control:');
++    if(select&&selected&&!selected.disabled&&(changed||!retainedUtility)&&document.activeElement!==selected){selected.focus({preventScroll:true});force=true;}
++    const revealed=control(document.activeElement);
++    if(force&&revealed&&node.contains(revealed)&&!revealed.disabled)revealed.scrollIntoView({block:'nearest',inline:'nearest'});
+   };
+   const menuResize=window.ResizeObserver&&new ResizeObserver(()=>requestAnimationFrame(()=>revealMenu(false,true)));
+   new MutationObserver(()=>revealMenu(true)).observe(document.body,{subtree:true,childList:true,attributes:true});
+diff --git c/implementation/warlock/assets/popup-adapter.js i/implementation/warlock/assets/popup-adapter.js
+index a9ffcde..8d6bd8d 100644
+--- c/implementation/warlock/assets/popup-adapter.js
++++ i/implementation/warlock/assets/popup-adapter.js
+@@ -3,9 +3,9 @@ const app = Elm.Popup.init({node:document.getElementById('app')});
+ window.submitSurfaceAction = value => app.ports.requestAction.send(value);
+ const post = value => window.webkit.messageHandlers.native.postMessage(JSON.stringify(value));
+ let pickerSelection=null,observedPicker=null;
+-const pickerNode=()=>document.querySelector('.surface-popup[data-mode="picker"]');
++const pickerNode=()=>document.querySelector('.surface-popup:is([data-mode="picker"],[data-mode="snap"])');
+ const rememberPicker=control=>{
+-  const node=control?.closest?.('.surface-popup[data-mode="picker"]');
++  const node=control?.closest?.('.surface-popup:is([data-mode="picker"],[data-mode="snap"])');
+   if(node&&!control.disabled&&control.dataset.surfaceControl)pickerSelection={lease:node.dataset.lease,identity:control.dataset.surfaceControl};
+ };
+ const revealPicker=(force=false)=>{
+@@ -23,14 +23,14 @@ const observePicker=()=>{
+   if(node){pickerResize?.observe(node);const controls=node.querySelector('.surface-controls');if(controls)pickerResize?.observe(controls);}
+ };
+ document.addEventListener('focusin',event=>{
+-  if(event.target.closest?.('.surface-popup[data-mode="picker"]')){rememberPicker(event.target);revealPicker(true);}
++  if(event.target.closest?.('.surface-popup:is([data-mode="picker"],[data-mode="snap"])')){rememberPicker(event.target);revealPicker(true);}
+   else if(event.target!==document.body&&event.target!==document.documentElement)pickerSelection=null;
+ });
+ window.addEventListener('focus',()=>{rememberPicker(document.activeElement);revealPicker(true);});
+ window.addEventListener('resize',()=>requestAnimationFrame(()=>revealPicker(true)));
+ document.addEventListener('keydown',event=>{
+   if(!['ArrowUp','ArrowDown','Home','End'].includes(event.key)||event.isComposing||event.defaultPrevented||event.ctrlKey||event.altKey||event.metaKey||event.shiftKey)return;
+-  const node=event.target.closest?.('.surface-popup[data-mode="picker"]');if(!node)return;
++  const node=event.target.closest?.('.surface-popup:is([data-mode="picker"],[data-mode="snap"])');if(!node)return;
+   const items=[...node.querySelectorAll('[data-surface-control]:not(:disabled)')],current=items.indexOf(document.activeElement);if(current<0)return;
+   const index=event.key==='Home'?0:event.key==='End'?items.length-1:Math.max(0,Math.min(items.length-1,current+(event.key==='ArrowDown'?1:-1)));
+   event.preventDefault();event.stopImmediatePropagation();items[index].focus({preventScroll:true});rememberPicker(items[index]);revealPicker(true);
+@@ -66,7 +66,7 @@ app.ports.actions.subscribe(post);
+ let switcherTerminal=null;
+ document.addEventListener('keydown',event=>{
+   const node=event.target?.closest?.('.surface-popup');
+-  const dismissal=event.key==='Escape' && ['switcher','overview','picker'].includes(node?.dataset.mode);
++  const dismissal=event.key==='Escape' && ['switcher','overview','picker','snap'].includes(node?.dataset.mode);
+   if(!node || (node.dataset.mode!=='switcher' && !dismissal) || event.isComposing ||
+      event.defaultPrevented || event.ctrlKey || event.metaKey) return;
+   const id=event.key==='Tab'?(event.shiftKey?'control:reverse':'control:forward'):
+@@ -89,7 +89,7 @@ document.addEventListener('keyup',event=>{
+   if(!held || held.key!==event.key) return;
+   switcherTerminal=null;event.preventDefault();event.stopImmediatePropagation();
+   if(event.isComposing || event.ctrlKey || event.metaKey || !held.node.isConnected ||
+-    (held.node.dataset.mode!=='switcher' && !(held.key==='Escape' && ['overview','picker'].includes(held.node.dataset.mode))) || held.node.dataset.publication!==held.packet.publication ||
++    (held.node.dataset.mode!=='switcher' && !(held.key==='Escape' && ['overview','picker','snap'].includes(held.node.dataset.mode))) || held.node.dataset.publication!==held.packet.publication ||
+     held.node.dataset.lease!==held.packet.lease || !held.node.contains(event.target)) return;
+   app.ports.requestAction.send(held.packet);
+ },true);
+diff --git c/implementation/warlock/assets/shell.css i/implementation/warlock/assets/shell.css
+index 4162565..2fc45e4 100644
+--- c/implementation/warlock/assets/shell.css
++++ i/implementation/warlock/assets/shell.css
+@@ -42,3 +42,14 @@ html{font-size:100%}body{font:1rem system-ui}
+ .popup .preview-title,.popup .preview-state,.popup .preview-fidelity{font-size:.8125rem;line-height:1.125rem}
+ .popup .preview-title{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ .popup button{scroll-margin-block:4px}
++
++.surface-popup[data-mode="snap"] .surface-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
++.surface-popup[data-mode="snap"] [data-surface-control="control:close"],.surface-popup[data-mode="snap"] [data-surface-control="snap:apply"]{grid-column:1/-1}
++.surface-popup[data-mode="snap"] [data-surface-control^="snap:region:"]{min-height:108px;display:flex;flex-direction:column;align-items:center;gap:6px;background:linear-gradient(145deg,#1f3045,#142133);box-shadow:0 6px 18px #0005,inset 0 1px 0 #ffffff12}
++.surface-popup[data-mode="snap"] [data-surface-control^="snap:region:"]::before{content:"";display:block;width:64px;height:40px;border:1px solid #9aaec8;border-radius:4px;background:linear-gradient(to right,#80c7f0 50%,#24344b 50%);box-shadow:inset 0 0 0 3px #142133}
++.surface-popup[data-mode="snap"] [data-surface-control="snap:region:right-half"]::before{transform:scaleX(-1)}
++.surface-popup[data-mode="snap"] [data-surface-control*="top-"]::before,.surface-popup[data-mode="snap"] [data-surface-control*="bottom-"]::before{background:conic-gradient(from 270deg at 50% 50%,#80c7f0 0deg 90deg,#24344b 90deg 360deg)}
++.surface-popup[data-mode="snap"] [data-surface-control="snap:region:top-right"]::before{transform:scaleX(-1)}
++.surface-popup[data-mode="snap"] [data-surface-control="snap:region:bottom-left"]::before{transform:scaleY(-1)}
++.surface-popup[data-mode="snap"] [data-surface-control="snap:region:bottom-right"]::before{transform:scale(-1)}
++.surface-popup[data-mode="snap"] [aria-current="true"]{border-color:#80c7f0;box-shadow:0 0 0 1px #80c7f0,0 0 18px #80c7f045,inset 0 1px 0 #ffffff25}
+diff --git c/implementation/warlock/native/surface.h i/implementation/warlock/native/surface.h
+index a81763b..2a04dc5 100644
+--- c/implementation/warlock/native/surface.h
++++ i/implementation/warlock/native/surface.h
+@@ -43,7 +43,7 @@ static gboolean surface_frame(JsonNode *node,guint64 *pub,guint64 *lease,gboolea
+     if (!surface_fields(o,names,7) || json_node_get_value_type(json_object_get_member(o,"surfaceProtocol"))!=G_TYPE_INT64 || json_object_get_int_member(o,"surfaceProtocol")!=2 || !surface_uint(json_object_get_member(o,"publication"),pub) || !*pub || !surface_uint(json_object_get_member(o,"lease"),lease) || !surface_text(json_object_get_member(o,"mode"),32,FALSE) || !surface_text(json_object_get_member(o,"status"),1024,TRUE)) return FALSE;
+     const char *mode=json_object_get_string_member(o,"mode");
+     *open=!g_str_equal(mode,"closed");
+-    if (*open && (!*lease || (!g_str_equal(mode,"picker") && !g_str_equal(mode,"applications") && !g_str_equal(mode,"menu") && !g_str_equal(mode,"overview") && !g_str_equal(mode,"switcher")))) return FALSE;
++    if (*open && (!*lease || (!g_str_equal(mode,"picker") && !g_str_equal(mode,"applications") && !g_str_equal(mode,"menu") && !g_str_equal(mode,"overview") && !g_str_equal(mode,"switcher") && !g_str_equal(mode,"snap")))) return FALSE;
+     g_autoptr(GHashTable) ids=g_hash_table_new(g_str_hash,g_str_equal),doms=g_hash_table_new(g_str_hash,g_str_equal);
+     if (!surface_controls(json_object_get_member(o,"bar"),292,ids,doms) || !surface_controls(json_object_get_member(o,"popup"),2150,ids,doms)) return FALSE;
+     return *open || json_array_get_length(json_object_get_array_member(o,"popup"))==0;
+diff --git c/implementation/warlock/qa/SnapReplay.elm i/implementation/warlock/qa/SnapReplay.elm
+new file mode 100644
+index 0000000..b946ad7
+--- /dev/null
++++ i/implementation/warlock/qa/SnapReplay.elm
+@@ -0,0 +1,80 @@
++port module SnapReplay exposing (main)
++
++import Binding
++import Desktop
++import GeometryProjection as Geometry
++import Json.Decode as D
++import Json.Encode as E
++import Platform
++import Shell
++import Snap
++import Surface
++import TaskbarShell
++import UInt64
++
++port outgoing : E.Value -> Cmd msg
++
++counter value = D.decodeValue UInt64.decoder (E.string value) |> Result.withDefault UInt64.zero
++bound = E.object [("lifetime",E.string "1"),("session",E.string "1"),("frontend",E.string "1")]
++window = {incarnation=counter "1",owner=Nothing,workspace=Just "1",workspaceGeneration=Just (counter "4"),monitor=Just UInt64.zero,outputOwnershipGeneration=Just (counter "2"),workAreaRevision=Just (counter "3"),workArea=Just [-80,30,801,601],logicalGeometry=[0,80,320,240],visualGeometry=[0,80,320,240],nativeMode=Geometry.Ordinary,clientMode=Geometry.Ordinary,minimized=False,floating=True,grouped=False,fixedSize=False,constrainedSize=False,eligible=True,placementKnown=False,maximize=True,restoreGeometry=False,sizePolicy=Nothing}
++geometryFor binding = {binding=binding,request=counter "1",sequence=counter "1",context={lifetime=counter "1",epoch=counter "1",output=counter "1",revision=counter "1"},focused=Just (counter "1"),blocked=False,windows=[window]}
++native raw model = Desktop.update (Desktop.Incoming raw) model |> Tuple.first
++attached = E.object [("protocolVersion",E.int 3),("kind",E.string "attached"),("binding",bound)]
++projection = E.object [("protocolVersion",E.int 3),("kind",E.string "action-projection"),("binding",bound),("requestId",E.string "1"),("context",E.object [("lifetime",E.string "1"),("epoch",E.string "1"),("output",E.string "1"),("revision",E.string "1")]),("scene",E.object [("revision",E.string "1"),("focused",E.string "1"),("windows",E.list identity [E.object [("incarnation",E.string "1"),("label",E.string "Document"),("owner",E.null),("application",E.string "documents"),("minimized",E.bool False),("available",E.bool True)]])])]
++readyFor binding =
++    let model=Desktop.initial |> native attached |> native projection
++        windows=model.windows
++        shell=windows.shell
++    in {model|windows={windows|shell={shell|geometry=Just (geometryFor binding),geometryCaps=Just {effects=True,operations=["maximize","restore-geometry"]}}}}
++proposal model = model.snap |> Maybe.andThen Snap.proposal
++mutation effect = case effect of
++    Desktop.WindowEffect (Shell.Send wire) -> D.decodeValue (D.field "kind" D.string) wire==Ok "window-effect"
++    Desktop.Send wire -> D.decodeValue (D.field "kind" D.string) wire==Ok "window-effect"
++    _ -> False
++
++resultFor binding =
++    let ready=readyFor binding
++        geometry=geometryFor binding
++        opened=Desktop.capture ready |> Maybe.map (\stamp -> Desktop.update (Desktop.OpenSnap stamp (counter "1")) ready |> Tuple.first) |> Maybe.withDefault ready
++        right=Desktop.capture opened |> Maybe.map (\stamp -> Desktop.update (Desktop.SelectSnap stamp Snap.RightHalf) opened) |> Maybe.withDefault (opened,[])
++        (invalidated,reads)=Desktop.update Desktop.InvalidateSnap opened
++        stale=Desktop.capture ready |> Maybe.map (\stamp -> Desktop.update (Desktop.SelectSnap stamp Snap.BottomRight) opened) |> Maybe.withDefault (opened,[])
++        context=geometry.context
++        changed={geometry|context={context|output=counter "2"}}
++        changedArea={geometry|windows=[{window|workAreaRevision=Just (counter "5")}]}
++        invalidGeometry={geometry|windows=[{window|minimized=True}]}
++        refreshed={geometry|context={context|revision=counter "2"}}
++        grabbed={refreshed|blocked=True,windows=[{window|eligible=False,maximize=False}]}
++        ineligible={geometry|windows=[{window|eligible=False}]}
++        pending=Desktop.update (Desktop.Window (TaskbarShell.Native Shell.Refresh)) opened |> Tuple.first
++        closed=Desktop.capture opened |> Maybe.map (\stamp -> Desktop.update (Desktop.CloseSnap stamp) opened |> Tuple.first) |> Maybe.withDefault opened
++        controls=Surface.controls opened
++        disabledAction=E.object [("surfaceProtocol",E.int 2),("kind",E.string "surface-action"),("surface",E.string "popup"),("publication",E.string "1"),("lease",E.string "1"),("id",E.string "snap:apply")]
++        checks=[("actualDesktopOpensSnap",Surface.mode opened=="snap" && opened.snap/=Nothing),
++            ("leftHalfUsesNativeWorkArea",(proposal opened |> Maybe.map .geometry)==Just [-80,30,400.5,601]),
++            ("rightHalfCompletesOddWidth",(proposal (Tuple.first right) |> Maybe.map .geometry)==Just [320.5,30,400.5,601]),
++            ("selectionHasNoNativeEffects",List.isEmpty (Tuple.second right)),
++            ("staleViewCannotChangeRegion",Tuple.first stale==opened && List.isEmpty (Tuple.second stale)),
++            ("changedOutputInvalidatesPreview",opened.snap |> Maybe.map (Snap.valid changed >> not) |> Maybe.withDefault False),
++            ("changedWorkAreaInvalidatesPreview",opened.snap |> Maybe.map (Snap.valid changedArea >> not) |> Maybe.withDefault False),
++            ("sameScopeRevisionCanRefreshPreview",opened.snap |> Maybe.map (Snap.valid refreshed) |> Maybe.withDefault False),
++            ("grabRetainsOnlyExistingUnchangedPreview",opened.snap |> Maybe.map (Snap.valid grabbed) |> Maybe.withDefault False),
++            ("grabCannotAdmitNewChooser",Snap.open grabbed (counter "1")==Nothing),
++            ("unblockedIneligibleTargetRetiresPreview",opened.snap |> Maybe.map (Snap.valid ineligible >> not) |> Maybe.withDefault False),
++            ("readonlyRefreshRetainsPreview",Surface.mode pending=="snap" && pending.snap/=Nothing),
++            ("refreshPendingDisablesRegionInput",List.length (List.filter .enabled (Surface.controls pending))==1),
++            ("minimizedTargetHasNoChooser",Snap.open invalidGeometry (counter "1")==Nothing),
++            ("allSixRegionsAndCloseReachable",List.length (List.filter .enabled controls)==7),
++            ("nativePlacementExplicitlyUnavailable",List.any (\control -> control.id=="snap:apply" && not control.enabled && control.message==Nothing) controls),
++            ("disabledApplyCannotResolve",Surface.resolve (counter "1") (counter "1") disabledAction opened==Nothing),
++            ("outputReflowRetiresChoiceAndOnlyReads",invalidated.snap==Nothing && not (List.any mutation reads)),
++            ("closeRetiresPreview",Surface.mode closed=="closed")]
++    in E.object [("checks",E.object (List.map (\(name,passed) -> (name,E.bool passed)) checks)),("frame",Surface.packet (counter "1") (counter "1") opened),
++        ("scope",E.string "Actual Desktop/Surface policy with typed geometry fixture; native geometry decoding, placement authority and original isolated recordings remain required.")]
++
++result = case D.decodeValue Binding.decoder bound of
++    Ok binding -> resultFor binding
++    Err _ -> E.object [("checks",E.object [("fixtureBinding",E.bool False)])]
++
++main : Program () () Never
++main = Platform.worker {init=\_ -> ((),outgoing result),update=\_ state -> (state,Cmd.none),subscriptions=\_ -> Sub.none}
+diff --git c/implementation/warlock/qa/check-search.py i/implementation/warlock/qa/check-search.py
+index 90d1af4..a91a181 100644
+--- c/implementation/warlock/qa/check-search.py
++++ i/implementation/warlock/qa/check-search.py
+@@ -1,5 +1,6 @@
+ """Focused compiled launcher/search integration, protected CPU scope only."""
+ import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures,http.server,threading
++SNAP=sys.argv[1:]==['--snap-chooser']
+ REFLOW=sys.argv[1:]==['--popup-reflow']
+ MENU=sys.argv[1:]==['--dense-menu'] or REFLOW
+ PICKER=sys.argv[1:]==['--dense-picker'] or MENU
+@@ -7,11 +8,11 @@ DENSE=sys.argv[1:]==['--dense-taskbar'] or PICKER
+ PINMENUS=sys.argv[1:]==['--pinned-menus'] or (DENSE and not PICKER)
+ PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PINMENUS or PICKER
+ SWITCHER=sys.argv[1:]==['--switcher']
+-NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'];POPUP=sys.argv[1:]==['--native-popup'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER
++NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'];POPUP=sys.argv[1:]==['--native-popup'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or SNAP;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER
+ ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143'
+ sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
+ scope=require_qa_scope();sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
+-OUT=ROOT/'qa/runs'/(('switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
++OUT=ROOT/'qa/runs'/(('snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
+ for folder in ['src','native','adapter','assets','qa']:
+  (INPUT/folder).mkdir()
+  for p in (ROOT/folder).iterdir():
+@@ -69,6 +70,11 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
+   run('compile-task-view',[str(HELD/pinned['compiler']),'make','qa/TaskViewReplay.elm','--optimize','--output=assets/task-view.js'])
+   (INPUT/'qa/task-view-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.TaskViewReplay'));run('typed-task-view',['node','qa/task-view-replay.js','assets/task-view.js',str(OUT/'task-view.json')]);report['typedTaskView']=json.loads((OUT/'task-view.json').read_text());assert all(report['typedTaskView']['checks'].values())
+   run('task-view-model-typecheck',['quint','typecheck','qa/task-view.qnt']);run('task-view-model-named',['quint','test','qa/task-view.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79101']);run('task-view-model-invariants',['quint','run','qa/task-view.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79102'])
++ if SNAP:
++  report.update(requirements=['ELM-UX-019','ELM-UX-020'],scenarios=['ux-019','ux-020'],scope='Compiled integrated snap chooser with generation-bound half/quarter previews and stale action/output invalidation; native placement authority and original isolated recordings remain required')
++  run('compile-snap',[str(HELD/pinned['compiler']),'make','qa/SnapReplay.elm','--optimize','--output=assets/snap.js'])
++  (INPUT/'qa/snap-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.SnapReplay'));run('typed-snap',['node','qa/snap-replay.js','assets/snap.js',str(OUT/'snap.json')]);report['typedSnap']=json.loads((OUT/'snap.json').read_text());assert all(report['typedSnap']['checks'].values())
++  run('snap-model-typecheck',['quint','typecheck','qa/snap-chooser.qnt']);run('snap-model-named',['quint','test','qa/snap-chooser.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79121']);run('snap-model-invariants',['quint','run','qa/snap-chooser.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79122'])
+  if NAV:
+   run('navigation-projection',['/usr/bin/python3','-B','qa/check-navigation-projection.py'])
+   run('navigation-model-typecheck',['quint','typecheck','qa/workspace-navigation.qnt']);run('navigation-model-named',['quint','test','qa/workspace-navigation.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79103']);run('navigation-model-invariants',['quint','run','qa/workspace-navigation.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79104'])
+@@ -128,8 +134,8 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
+    run('popup-context-link',['g++',str(OUT/'popup-context.o'),*[str(OUT/(name+'.o')) for name in units],'-o',str(OUT/'popup-context-tests'),*flags])
+    run('popup-context-tests',[str(OUT/'popup-context-tests')])
+  run('host-self-tests',[str(OUT/'elm-host'),'--self-test'])
+- if DENSE:
+-  report.update(requirements=['ELM-UI-008'],scenarios=['overflow-first-last','overflow-resize','menu-invocation'],scope='Current compiled renderer/adapter dense enlarged-text browser journeys and rebuilt scalable native host; native output/menu/AT observations separate')
++ if DENSE or SNAP:
++  if DENSE:report.update(requirements=['ELM-UI-008'],scenarios=['overflow-first-last','overflow-resize','menu-invocation'],scope='Current compiled renderer/adapter dense enlarged-text browser journeys and rebuilt scalable native host; native output/menu/AT observations separate')
+   (INPUT/'qa/dense.html').write_text('<!doctype html><html style="font-size:24px"><head><link rel="stylesheet" href="../assets/shell.css"></head><body class="bar"><div id="app"></div><script>window.nativePackets=[];window.webkit={messageHandlers:{native:{postMessage:s=>nativePackets.push(JSON.parse(s))}}};</script><script src="../assets/bar.js"></script><script src="../assets/bar-adapter.js"></script><script src="../assets/context.js"></script><script src="../assets/activation.js"></script></body></html>')
+   (INPUT/'qa/dense-picker.html').write_text('<!doctype html><html style="font-size:24px"><head><link rel="stylesheet" href="../assets/shell.css"></head><body class="popup"><div id="app"></div><script>window.nativePackets=[];window.webkit={messageHandlers:{native:{postMessage:s=>nativePackets.push(JSON.parse(s))}}};</script><script src="../assets/popup.js"></script><script src="../assets/popup-adapter.js"></script><script src="../assets/context.js"></script><script src="../assets/activation.js"></script></body></html>')
+   if PICKER:report.update(requirements=['ELM-UI-008','ELM-UI-004'],scenarios=['overflow-first-last','overflow-resize','menu-invocation','taskbar-group'],scope='Actual compiled dense picker and bar enlarged-text component navigation, identity, lease, disabled and resize checks; exact unchanged native host reused; native activation/menu/input and AT obligations separate')
+@@ -140,8 +146,12 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
+    def log_message(self,*args):pass
+   server=http.server.ThreadingHTTPServer(('127.0.0.1',0),Handler);threading.Thread(target=server.serve_forever,daemon=True).start()
+   browser=pathlib.Path('/home/hoskinson/.cache/puppeteer/chrome-headless-shell/linux-154.0.8037.57/chrome-headless-shell-linux64/chrome-headless-shell');report['browserSHA256']=sha(browser)
+-  run('dense-browser',['node','qa/dense-taskbar-browser.mjs','http://127.0.0.1:'+str(server.server_port),str(OUT),str(browser)])
+-  child=json.loads((OUT/'dense-browser.json').read_text());assert child['passed'] and child['browserExitCode']==0;report['denseBrowser']={'path':str(OUT/'dense-browser.json'),'sha256':sha(OUT/'dense-browser.json'),'checks':child['checks']}
++  browser_name='snap-browser' if SNAP else 'dense-browser';browser_runner='snap-browser.mjs' if SNAP else 'dense-taskbar-browser.mjs'
++  run(browser_name,['node','qa/'+browser_runner,'http://127.0.0.1:'+str(server.server_port),str(OUT),str(browser)])
++  child_path=OUT/(browser_name+'.json');child=json.loads(child_path.read_text());assert child['passed'] and child['browserExitCode']==0;report['snapBrowser' if SNAP else 'denseBrowser']={'path':str(child_path),'sha256':sha(child_path),'checks':child['checks']}
++  if SNAP:
++   run('menu-navigation-regression',['node','qa/dense-taskbar-browser.mjs','http://127.0.0.1:'+str(server.server_port),str(OUT),str(browser)])
++   regression=json.loads((OUT/'dense-browser.json').read_text());assert regression['passed'] and regression['browserExitCode']==0;report['menuNavigationRegression']={'path':str(OUT/'dense-browser.json'),'sha256':sha(OUT/'dense-browser.json'),'checks':regression['checks']}
+  assert all(sha(ROOT/p)==h for p,h in inputs.items());toolchain.verify();report['compiledAssets']={n:sha(INPUT/'assets'/n) for n in ['elm.js','bar.js','popup.js']};report['passed']=True
+ except Exception as error:report['error']=repr(error)
+ finally:
+diff --git c/implementation/warlock/qa/current-search-build.json i/implementation/warlock/qa/current-search-build.json
+index fe47ca5..1e6afed 100644
+--- c/implementation/warlock/qa/current-search-build.json
++++ i/implementation/warlock/qa/current-search-build.json
+@@ -1,14 +1,14 @@
+ {
+   "schema": 1,
+-  "report": "implementation/warlock/qa/runs/taskbar-primary-1791453447239135682/report.json",
+-  "reportSHA256": "f00a3d3817ea0413f5a70b7e4f8554276f983a6699092af5849bf8b3c2cf159a",
++  "report": "implementation/warlock/qa/runs/snap-chooser-1791456453743910116/report.json",
++  "reportSHA256": "00800c1d50131635e8875ad511314a25811a7ccb53579c4995672609e9b30ebd",
+   "compiledAssets": {
+-    "elm.js": "10d72c9dd0cba778619e0284368861e57da4c5b8512914ca7bbaa4549a6712df",
+-    "bar.js": "d2bd3e1d84b6dc605744da689c0331e89a0cd45d083c0cdbc3b1ee620a18e860",
+-    "popup.js": "054636c284b4f6a026963b18b0e41b2f1a737fd87f9cdc1d8ef5449d6030222a"
++    "elm.js": "3b7d96db2efd88a7e0962776af0df962119320340f10e0ceeb855cc1bf401b06",
++    "bar.js": "be223dc781307d076c136fb6cb1da4f5996b16460ea56d25a1dab1e673a8de5b",
++    "popup.js": "530fe4e756cd47b6643e8b9b27af61d8aca2c0bac9c23b2127e6557803093df0"
+   },
+-  "binarySHA256": "543928926619370ca89bd308515ccb10ec1ee726b98b215abd4c77e9776e80a3",
++  "binarySHA256": "69dae6338fd8f3f8c20a43e21285ff2a4831b07232f99f451a3fd4708a936c31",
+   "nativeAcceptance": false,
+   "fullReleaseAccepted": false,
+-  "scope": "Changed owning shared host compile/relink and foreground-handoff self-tests; compiled popup reflow/browser guards; native keyboard/AT acceptance remains separate."
++  "scope": "Compiled integrated snap chooser with generation-bound half/quarter previews and stale action/output invalidation; native placement authority and original isolated recordings remain required"
+ }
+diff --git c/implementation/warlock/qa/native-window-feedback.py i/implementation/warlock/qa/native-window-feedback.py
+index d378869..1713c3d 100644
+--- c/implementation/warlock/qa/native-window-feedback.py
++++ i/implementation/warlock/qa/native-window-feedback.py
+@@ -4,12 +4,13 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
+ lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
+ """
+ import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
++SNAP=sys.argv[1:]==['--snap-chooser']
+ REFLOW=sys.argv[1:]==['--popup-reflow']
+ DENSEMENU=sys.argv[1:]==['--dense-menu'] or REFLOW
+ DENSEPICKER=sys.argv[1:]==['--dense-picker'] or DENSEMENU
+ DENSE=sys.argv[1:]==['--dense-taskbar']
+ SMALL=DENSE or DENSEPICKER
+-PINMENUS=sys.argv[1:]==['--pinned-menus'] or DENSE
++PINMENUS=sys.argv[1:]==['--pinned-menus'] or DENSE or SNAP
+ PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PINMENUS
+ PRE_READY_RETIRE=sys.argv[1:]==['--switcher-pre-ready-retirement']
+ MEMBERSHIP=sys.argv[1:]==['--switcher-membership'] or PRE_READY_RETIRE
+@@ -51,7 +52,7 @@ else:
+ for row in pair.values():assert sha(row['path'])==row['sha256']
+ assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
+ subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
+-OUT=ROOT/'qa/runs'/(('native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
++OUT=ROOT/'qa/runs'/(('native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+ OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
+ focus_host=None
+ if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
+@@ -110,6 +111,7 @@ if MEMBERSHIP:report.update(scenarios=['switcher-membership','switcher-retire-ar
+ if SWITCHER:report.update(requirements=['ELM-UI-003'],scenarios=['switcher-order','switcher-cancel'],scope='Actual native MRU observation, integrated switcher control pixels, local keyboard cycling/cancel and identity-bound chosen activation; global Alt-Tab journal, modal representation and AT/independent acceptance remain pending',nativeSwitcherJourneyObserved=False)
+ if PRIMARY:report.update(requirements=['ELM-UI-004'],scenarios=['taskbar-inactive','taskbar-active','taskbar-minimized'],scope='Actual pointer single-family activation/minimize/restore, exact native receipt and GTK keyboard recipient, MRU/desktop succession and pixels; primary keyboard and AT acceptance remain pending',nativePrimaryJourneyObserved=False)
+ if PINMENUS:report.update(requirements=['ELM-UI-008','ELM-UX-023'],scenarios=['menu-invocation','keyboard-menus'],scope='Actual current running pin, native secondary click/Menu/Shift-F10 menus and existing minimize/restore path; dense/enlarged-text, AT and independent acceptance remain open',nativePinnedMenusObserved=False)
++if SNAP:report.update(requirements=['ELM-UX-019','ELM-UX-020'],scenarios=['ux-019','ux-020'],scope='Actual native snap chooser presentation/keyboard/output-scale invalidation only; native snap placement authority and accepted half-work-area oracle remain required',nativeSnapChooserObserved=False)
+ if DENSE:report.update(requirements=['ELM-UI-008'],scenarios=['overflow-first-last','overflow-resize','menu-invocation'],scope='Actual small native output, enlarged text, configured overflowing pins, physical keyboard/wheel/menu traversal and output resize; AT and independent review remain open',nativeDenseTaskbarObserved=False)
+ if DENSEPICKER:report.update(requirements=['ELM-UI-008','ELM-UI-004'],scenarios=['overflow-first-last','overflow-resize','menu-invocation','taskbar-group'],scope='Actual ten-root native enlarged-text picker arrow/endpoints, first/last menus and identity-bound selection/input; browser resize continuity is separate; native popup reflow, AT and independent review remain open',nativeDensePickerObserved=False)
+ if DENSEMENU:report.update(requirements=['ELM-UI-008'],scenarios=['overflow-first-last','menu-invocation'],scope='Actual ten-root 480x360 native output at 200% text; overflow of current three-operation menu, typed endpoint/arrows/disabled/Tab/Escape and operation-label pixels; renderer capacity/growth/blur are component observations; AT/independent and native popup reflow remain open',nativeDenseMenuObserved=False)
+@@ -393,7 +395,7 @@ raise SystemExit(daemon.run())
+      # Count only current control interiors. Whole-popup counts incorrectly
+      # included the compositor's warning overlay above a black reopened popup.
+      for button in body['buttons']:
+-      selected=button['accessibleName'] in ['Minimize','Close window actions','Maximize'] if PINMENUS else button['accessibleName'].startswith(('Activate ELM-','Restore ELM-')) if SWITCHER or CHORD else (button['accessibleName'].startswith('Browse workspace ') or (NAV and button['accessibleName'].startswith('Restore ELM-ACTIVATION-PEER'))) if TASKVIEW else button['accessibleName'] in ['Refresh applications','Open Files']
++      selected=button['id']==body['focus'] if SNAP and (projection() or {}).get('mode')=='snap' else button['accessibleName'] in ['Minimize','Close window actions','Maximize'] if PINMENUS else button['accessibleName'].startswith(('Activate ELM-','Restore ELM-')) if SWITCHER or CHORD else (button['accessibleName'].startswith('Browse workspace ') or (NAV and button['accessibleName'].startswith('Restore ELM-ACTIVATION-PEER'))) if TASKVIEW else button['accessibleName'] in ['Refresh applications','Open Files']
+       if not selected or button['disabled'] or button['y']<0 or button['y']+button['height']>box[3]:continue
+       left,top=max(0,int(box[0]+button['x'])+12),max(100,int(box[1]+button['y'])+6)
+       right,bottom=min(pix.get_width(),int(box[0]+button['x']+min(220,button['width']))-12),min(pix.get_height(),box[1]+box[3],int(box[1]+button['y']+button['height'])-6)
+@@ -411,13 +413,13 @@ raise SystemExit(daemon.run())
+      helper([str(keyboard)],'key 29 1\nkey 30 1\nsleep 50\nkey 30 0\nkey 29 0\nkey 14 1\nkey 14 0\nsleep 100\nsync\n')
+      for code in codes:key(code)
+      wait(lambda:field_value()==expected)
+-    def keyboard_button(label):
++    def keyboard_button(label,code=57):
+      button=wait(lambda:next((b for b in (popup_body() or {}).get('buttons',[]) if b['accessibleName']==label and not b['disabled']),None))
+      for _ in range(len(popup_body()['buttons'])+2):
+       if popup_body()['focus']==button['id']:break
+       key(15)
+      check('KeyboardReaches'+label,popup_body()['focus']==button['id'],body=popup_body())
+-     key(57)
++     key(code)
+     if DENSE:
+      def dense_body():
+       body=bar_body();p=projection()
+@@ -547,6 +549,32 @@ raise SystemExit(daemon.run())
+      n=len(events.read_text().splitlines());key(30);delivered=wait(lambda:[json.loads(line) for line in events.read_text().splitlines()[n:]])
+      check('TaskViewAfterMenuReturnsApplicationKeyboard',facts()['facts']['focused']==target and any(row['window']=='ELM-ACTIVATION-PEER' and row['kind']=='key' and row['keyval']==97 for row in delivered),events=delivered)
+      report['nativePinnedMenusObserved']=True
++     if SNAP:
++      before=len(journal());before_launches=len(launches())
++      button=wait(pin_button);x,y=round(button['x']+button['width']/2),round(button['y']+button['height']/2)
++      helper([str(POINTER),'800','600'],f'move {x} {y}\nsleep 100\nbutton 273 1\nsleep 50\nbutton 273 0\nsleep 100\n');wait(menu)
++      keyboard_button('Open snapping',28)
++      def snap_body():
++       body=popup_body();p=projection()
++       return body if body and p and p.get('mode')=='snap' and body['publication']==p['publication'] and len([b for b in body['buttons'] if b.get('identity','').startswith('snap:region:')])==6 else None
++      body=wait(snap_body);check('NativeSnapChooserHasSixRegions',len([b for b in body['buttons'] if b.get('identity','').startswith('snap:region:')])==6,body=body)
++      keyboard_button('Right half');body=wait(lambda:next((b for b in [snap_body()] if b and any(row['accessibleName']=='Right half; selected preview' for row in b['buttons'])),None))
++      check('NativeRegionSelectionHasNoWindowEffect',len(journal())==before and len(launches())==before_launches,body=body)
++      check('NativePlacementRemainsExplicitlyUnavailable',any(b['identity']=='snap:apply' and b['disabled'] for b in body['buttons']),body=body)
++      popup_capture('native-snap-chooser');capture=report['popupCaptures'][-1]
++      check('NativeSnapSelectedControlHasActualTextPixels',len(capture['controlRegions'])==1 and capture['controlRegions'][0]['accessibleName']=='Right half; selected preview' and all(r['area']>0 and r['brightPixels']>15 and r['paintedPixels']>.9*r['area'] for r in capture['controlRegions']),capture=capture)
++      def focused_snap(identity):
++       body=snap_body();button=next((b for b in (body or {}).get('buttons',[]) if b.get('identity')==identity),None)
++       return body if button and button['id']==body['focus'] and button['y']>=-.5 and button['y']+button['height']<=body['viewportHeight']+.5 else None
++      key(107);body=wait(lambda:focused_snap('snap:region:bottom-right'));popup_capture('native-snap-last-region');capture=report['popupCaptures'][-1]
++      check('NativeSnapEndRevealsLastRegionAndSkipsUnavailableApply',len(capture['controlRegions'])==1 and capture['controlRegions'][0]['accessibleName']=='Bottom right quarter' and all(r['area']>0 and r['brightPixels']>15 and r['paintedPixels']>.9*r['area'] for r in capture['controlRegions']),body=body,capture=capture)
++      key(102);wait(lambda:focused_snap('control:close'));check('NativeSnapHomeReturnsToVisibleClose',len(journal())==before and len(launches())==before_launches,body=snap_body())
++      result=s.ctl('eval','hl.monitor({output="WAYLAND-1",mode="800x600@60",position="0x0",scale=1.25})');check('NativeSnapOutputScaleCommand',result.strip()=='ok',result=result)
++      wait(lambda:any(m['name']=='WAYLAND-1' and m['scale']==1.25 for m in s.data('monitors')))
++      wait(lambda:(projection() or {}).get('mode')=='closed')
++      check('NativeOutputScaleRetiresSnapWithoutCommit',len(journal())==before and len(launches())==before_launches,projection=projection(),monitors=s.data('monitors'))
++      report['nativeSnapChooserObserved']=True
++
+     elif CHORD:
+      def coherent_closed():return (projection() or {}).get('mode')=='closed' and (projection() or {}).get('phase')=='Coherent'
+      def native_journal():return client.switcher_journal('450',observe=True)['chord']
+diff --git c/implementation/warlock/qa/snap-browser.mjs i/implementation/warlock/qa/snap-browser.mjs
+new file mode 100644
+index 0000000..52f599e
+--- /dev/null
++++ i/implementation/warlock/qa/snap-browser.mjs
+@@ -0,0 +1,69 @@
++import {spawn} from 'node:child_process';
++import fs from 'node:fs';
++import path from 'node:path';
++const [base,out,binary]=process.argv.slice(2), report={passed:false,checks:[],captures:[],errors:[],externalRequests:[],nativeAcceptance:false,fullReleaseAccepted:false};
++const sleep=ms=>new Promise(r=>setTimeout(r,ms));
++const browser=spawn(binary,['--remote-debugging-address=127.0.0.1','--remote-debugging-port=0','--user-data-dir='+path.join(out,'profile'),'--disable-gpu','--disable-breakpad','--disable-crash-reporter','--no-first-run','about:blank'],{stdio:['ignore','pipe','pipe']});
++let stderr='',stdout='',ws,session,sequence=0,pending=new Map();
++browser.stderr.on('data',v=>stderr+=v);browser.stdout.on('data',v=>stdout+=v);
++function call(method,params={},sessionId=session){return new Promise((resolve,reject)=>{const id=++sequence;const timer=setTimeout(()=>{pending.delete(id);reject(new Error('CDP timeout '+method));},15000);pending.set(id,{resolve,reject,timer});ws.send(JSON.stringify({id,method,params,...(sessionId?{sessionId}:{})}));});}
++function check(name,condition,detail){if(!condition)throw Error(name+' '+JSON.stringify(detail));report.checks.push({name,detail});}
++async function evaluate(expression){const r=await call('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error(JSON.stringify(r.exceptionDetails));return r.result.value;}
++async function until(expression){for(let i=0;i<100;i++){if(await evaluate(expression))return;await sleep(30);}throw Error('Condition timeout '+expression);}
++async function click(selector){const rect=await evaluate(`(()=>{const b=document.querySelector(${JSON.stringify(selector)});b.scrollIntoView({block:'center'});const r=b.getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2};})()`);await call('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',clickCount:1,...rect});await call('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',clickCount:1,...rect});await sleep(60);}
++async function route(name){await evaluate('location.hash='+JSON.stringify(name));await until('!!document.querySelector("main h1") && location.hash === '+JSON.stringify('#'+name));await sleep(100);}
++async function viewport(width,height=980){await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false});await sleep(80);}
++async function capture(name){await evaluate('document.fonts.ready');const r=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});fs.writeFileSync(path.join(out,name+'.png'),Buffer.from(r.data,'base64'));report.captures.push(name+'.png');}
++async function observation(){return evaluate('window.fixtureObservation');}
++try{
++ let match;for(let i=0;i<100;i++){match=stderr.match(/DevTools listening on (ws:\/\/[^\s]+)/);if(match)break;if(browser.exitCode!==null)throw Error('Browser exited '+browser.exitCode+' '+stderr);await sleep(30);}if(!match)throw Error('No DevTools endpoint '+stderr);
++ ws=new WebSocket(match[1]);await new Promise((resolve,reject)=>{ws.onopen=resolve;ws.onerror=reject;});
++ ws.onmessage=event=>{const m=JSON.parse(event.data);if(m.id){const p=pending.get(m.id);if(p){pending.delete(m.id);clearTimeout(p.timer);m.error?p.reject(Error(JSON.stringify(m.error))):p.resolve(m.result);}}else if(m.method==='Runtime.exceptionThrown')report.errors.push(m.params.exceptionDetails);};
++ const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;
++
++
++ await call('Page.enable');await call('Runtime.enable');await viewport(640,620);
++ await call('Page.addScriptToEvaluateOnNewDocument',{source:'window.nativePackets=[];window.webkit={messageHandlers:{native:{postMessage:text=>nativePackets.push(JSON.parse(text))}}};'});
++ await call('Page.navigate',{url:base+'/assets/popup.html'});await until('!!window.receivePresentation');
++ const packet=JSON.parse(fs.readFileSync(path.join(out,'snap.json'),'utf8'));
++ await evaluate('receivePresentation('+JSON.stringify(packet.frame)+')');
++ await until(`document.querySelector('.surface-popup[data-mode="snap"]')?.dataset.publication==="1"`);
++ await until(`document.querySelectorAll('[data-surface-control^="snap:region:"]').length===6`);
++ check('Actual production snap frame renders all six previews',await evaluate(`document.querySelector("h1").textContent==="Snap window"`));
++ check('Selected preview is accessible',await evaluate(`document.querySelector('[data-surface-control="snap:region:left-half"]').getAttribute("aria-current")==="true"`));
++ check('Preview uses selected glow and shading',await evaluate(`getComputedStyle(document.querySelector('[data-surface-control="snap:region:left-half"]')).boxShadow!=="none"`));
++ async function key(key){await call('Input.dispatchKeyEvent',{type:'keyDown',key,code:key});await call('Input.dispatchKeyEvent',{type:'keyUp',key,code:key});await sleep(60);}
++ await evaluate(`document.querySelector('[data-surface-control="snap:region:left-half"]').focus()`);
++ await key('End');check('End reaches last enabled quarter and skips unavailable apply',await evaluate(`document.activeElement.dataset.surfaceControl==="snap:region:bottom-right"`));
++ await key('ArrowUp');check('Arrow traversal reaches adjacent enabled region',await evaluate(`document.activeElement.dataset.surfaceControl==="snap:region:bottom-left"`));
++ await key('Home');check('Home reaches Close',await evaluate(`document.activeElement.dataset.surfaceControl==="control:close"`));
++ await key('ArrowDown');await key('Enter');
++ check('Enter emits the exact region action once',await evaluate(`nativePackets.filter(p=>p.kind==="surface-action"&&p.id==="snap:region:left-half").length===1`));
++ const before=await evaluate(`nativePackets.filter(p=>p.kind==="surface-action").length`);await click('[data-surface-control="snap:apply"]');
++ check('Unavailable placement cannot dispatch an action',await evaluate(`document.querySelector('[data-surface-control="snap:apply"]').disabled && nativePackets.filter(p=>p.kind==="surface-action").length===`+before));
++ await capture('snap-chooser');
++ // Renderer/adapter fixture for the existing menu's new utility route. This
++ // checks real keyboard adapters, not native operation admission or Elm policy.
++ const menu={...packet.frame,publication:'2',lease:'2',mode:'menu',popup:[
++  {id:'control:menu-close',domId:'menu-close',label:'Close',ariaLabel:'Close window actions',detail:'',enabled:true},
++  {id:'menu:1:0',domId:'menu-op',label:'Minimize',ariaLabel:'Minimize',detail:'Selected',enabled:true},
++  {id:'control:snap-open',domId:'menu-snap',label:'Snap window',ariaLabel:'Open snapping',detail:'',enabled:true}]};
++ await evaluate('receivePresentation('+JSON.stringify(menu)+')');await until(`document.querySelector('.surface-popup[data-mode="menu"]')?.dataset.publication==="2"`);await sleep(80);
++ await evaluate(`document.getElementById('menu-op').focus()`);await key('Tab');
++ check('Menu Tab reaches the snap utility',await evaluate(`document.activeElement.dataset.surfaceControl==="control:snap-open"`));
++ await call('Input.dispatchKeyEvent',{type:'keyDown',key:'Tab',code:'Tab',modifiers:8});await call('Input.dispatchKeyEvent',{type:'keyUp',key:'Tab',code:'Tab'});await sleep(60);
++ check('Menu Shift Tab returns to selected native operation',await evaluate(`document.activeElement.dataset.surfaceControl==="menu:1:0"`));
++ await key('Tab');menu.publication='3';await evaluate('receivePresentation('+JSON.stringify(menu)+')');await sleep(80);
++ check('Unrelated publication retains focused utility',await evaluate(`document.activeElement.dataset.surfaceControl==="control:snap-open"`));
++ await key('Enter');
++ check('Menu Enter activates its exact current utility once',await evaluate(`nativePackets.filter(p=>p.kind==="surface-action"&&p.id==="control:snap-open"&&p.publication==="3"&&p.lease==="2").length===1`));
++ check('Utility Enter cannot invoke selected window operation',await evaluate(`nativePackets.filter(p=>p.kind==="surface-menu-navigation"&&p.key==="Enter").length===0`));
++ check('No browser exceptions',report.errors.length===0,report.errors);report.passed=true;
++}catch(error){report.error=String(error.stack||error);}
++finally{
++ if(ws?.readyState===1){try{await call('Browser.close',{},null);}catch(_){}ws.close();}
++ for(let i=0;i<100&&browser.exitCode===null;i++)await sleep(20);if(browser.exitCode===null)browser.kill('SIGTERM');
++ await new Promise(resolve=>{if(browser.exitCode!==null)resolve();else browser.once('exit',resolve);});report.browserExitCode=browser.exitCode;
++ fs.writeFileSync(path.join(out,'browser.stderr'),stderr);fs.writeFileSync(path.join(out,'browser.stdout'),stdout);fs.writeFileSync(path.join(out,'snap-browser.json'),JSON.stringify(report,null,2)+'\n');
++ console.log(JSON.stringify({passed:report.passed,checks:report.checks.length,captures:report.captures,error:report.error}));process.exitCode=report.passed?0:1;
++}
+diff --git c/implementation/warlock/qa/snap-chooser.qnt i/implementation/warlock/qa/snap-chooser.qnt
+new file mode 100644
+index 0000000..db21429
+--- /dev/null
++++ i/implementation/warlock/qa/snap-chooser.qnt
+@@ -0,0 +1,20 @@
++module SnapChooser {
++  var state: { output: int, revision: int, choiceOutput: int, choiceRevision: int, open: bool, region: int }
++  action init = state' = { output: 1, revision: 1, choiceOutput: 0, choiceRevision: 0, open: false, region: 0 }
++  action open = state' = { ...state, choiceOutput: state.output, choiceRevision: state.revision, open: true, region: 0 }
++  action chooseRegion = {
++    nondet region = 0.to(5).oneOf()
++    all {
++      state.open and state.choiceOutput == state.output and state.choiceRevision == state.revision,
++      state' = { ...state, region: region }
++    }
++  }
++  action outputChanged = state' = { ...state, output: state.output + 1, revision: state.revision + 1, open: false }
++  action workAreaChanged = state' = { ...state, revision: state.revision + 1, open: false }
++  action close = state' = { ...state, open: false }
++  action step = any { open, chooseRegion, outputChanged, workAreaChanged, close }
++  val safety = not(state.open) or (state.choiceOutput == state.output and state.choiceRevision == state.revision and state.region >= 0 and state.region <= 5)
++  run outputRetiresPreviewTest = init.then(open).then(outputChanged).then(all { assert(not(state.open)), state' = state })
++  run areaRetiresPreviewTest = init.then(open).then(workAreaChanged).then(all { assert(not(state.open)), state' = state })
++  run reopenUsesCurrentGenerationTest = init.then(open).then(outputChanged).then(open).then(all { assert(safety and state.choiceOutput == 2), state' = state })
++}
+diff --git c/implementation/warlock/src/Desktop.elm i/implementation/warlock/src/Desktop.elm
+index 960076a..1c29c0c 100644
+--- c/implementation/warlock/src/Desktop.elm
++++ i/implementation/warlock/src/Desktop.elm
+@@ -17,6 +17,7 @@ import Taskbar
+ import Effects
+ import TaskbarShell
+ import TaskView
++import Snap
+ import UInt64 exposing (Counter)
+ 
+ type alias Model =
+@@ -34,6 +35,7 @@ type alias Model =
+     , open : Bool
+     , overview : Bool
+     , overviewWorkspace : Maybe String
++    , snap : Maybe Snap.Choice
+     , switcher : Switcher.Model
+     , nativeSwitcher : Maybe NativeChord
+     , switcherOrigin : Maybe Counter
+@@ -62,6 +64,10 @@ type ViewStamp = ViewStamp (Maybe Binding.Binding) Counter
+ type Msg
+     = Window TaskbarShell.Msg
+     | OpenWindowMenu Shell.Stamp Counter
++    | OpenSnap ViewStamp Counter
++    | SelectSnap ViewStamp Snap.Region
++    | CloseSnap ViewStamp
++    | InvalidateSnap
+     | OwnerScope D.Value
+     | PresentationOwner (Maybe {outputId : Counter, providerId : Counter})
+     | Incoming D.Value
+@@ -95,7 +101,7 @@ type Effect
+ 
+ initial : Model
+ initial =
+-    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, open = False, overview = False, overviewWorkspace = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
++    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, open = False, overview = False, overviewWorkspace = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
+ 
+ switcherOpen : Model -> Bool
+ switcherOpen model = List.member (Switcher.phase model.switcher) [Switcher.Waiting,Switcher.Browsing]
+@@ -260,6 +266,10 @@ windowBase message model =
+         , choiceNotice = if disconnected || changed then "" else model.choiceNotice
+         , overview = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.overview
+         , overviewWorkspace = if disconnected || changed then Nothing else model.overviewWorkspace
++        , snap = if disconnected || changed || windows.shell.phase==Shell.Exhausted then Nothing else
++            model.snap |> Maybe.andThen (\choice -> case windows.shell.geometry of
++                Nothing -> Just choice
++                Just geometry -> if Snap.valid geometry choice then Just {choice|snapshot=geometry} else Nothing)
+         , nativeSwitcher = if disconnected || changed || windows.shell.phase==Shell.Exhausted then Nothing else model.nativeSwitcher
+         , switcher = if disconnected || changed || windows.shell.phase==Shell.Exhausted then Switcher.cancel (Switcher.generation model.switcher) model.switcher else model.switcher
+         , switcherExpected = if disconnected || changed || windows.shell.phase==Shell.Exhausted then Nothing else model.switcherExpected
+@@ -384,6 +394,27 @@ window message model =
+ update : Msg -> Model -> ( Model, List Effect )
+ update message model =
+     case message of
++        OpenSnap stamp root ->
++            if capture model/=Just stamp || not (Shell.available model.windows.shell)
++                || MenuBridge.blockedFor root model.windows.shell model.windows.menus then (model,[]) else
++            case model.windows.shell.geometry |> Maybe.andThen (\geometry -> Snap.open geometry root) of
++                Nothing -> (model,[])
++                Just choice ->
++                    let windows=model.windows
++                    in (advance (retireSwitcher {model|snap=Just choice,open=False,overview=False,choice=Nothing,
++                        expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,
++                        windows={windows|picker=Nothing,menus=MenuBridge.retireChoices windows.menus}}),[])
++        SelectSnap stamp region ->
++            if capture model/=Just stamp then (model,[]) else
++            case (model.windows.shell.geometry,model.snap) of
++                (Just geometry,Just choice) -> ({model|snap=Snap.select geometry region choice},[])
++                _ -> (model,[])
++        CloseSnap stamp ->
++            if capture model/=Just stamp || model.snap==Nothing then (model,[]) else
++                (advance {model|snap=Nothing},[])
++        InvalidateSnap ->
++            if model.snap==Nothing then (model,[]) else
++                windowBase (TaskbarShell.Native Shell.Refresh) (advance {model|snap=Nothing,choiceNotice="Output changed. Open snapping again."})
+         ChoiceDeadline token ->
+             if (model.choice |> Maybe.map .token)/=Just token then (model,[]) else
+                 ({model | choice=Nothing,choiceNotice="Window information took too long. Refresh windows, then choose again."},[])
+@@ -396,7 +427,7 @@ update message model =
+                     case MenuBridge.currentProvider model.windows.menus of
+                         Nothing -> (model,[])
+                         Just provider -> windowBase (TaskbarShell.MenuEvent (Menu.Invalidate (Provider.getBinding provider))) model
+-            in (retireSwitcher {retired | ownerScope=scope,ownerExhausted=False,menuOrigin=Nothing,returnFocus=Nothing},effects)
++            in (retireSwitcher {retired | ownerScope=scope,ownerExhausted=False,snap=Nothing,menuOrigin=Nothing,returnFocus=Nothing},effects)
+         OwnerScope raw ->
+             let positive = UInt64.decoder |> D.andThen (\counter -> if counter==UInt64.zero then D.fail "Zero owner identity" else D.succeed counter)
+                 decoder = strict ["surfaceProtocol","kind","outputId","providerId"]
+@@ -412,7 +443,7 @@ update message model =
+                                     case MenuBridge.currentProvider model.windows.menus of
+                                         Nothing -> model
+                                         Just provider -> windowBase (TaskbarShell.MenuEvent (Menu.Invalidate (Provider.getBinding provider))) model |> Tuple.first
+-                            in (retireSwitcher {retired | ownerScope=Nothing,ownerExhausted=True,menuOrigin=Nothing,returnFocus=Nothing},[])
++                            in (retireSwitcher {retired | snap=Nothing,ownerScope=Nothing,ownerExhausted=True,menuOrigin=Nothing,returnFocus=Nothing},[])
+                 _ -> (model,[])
+         OpenWindowMenu stamp root ->
+             if model.ownerExhausted || model.choice/=Nothing || MenuBridge.preparedSnapshot model.windows.menus/=Nothing || Shell.capture model.windows.shell/=Just stamp || not (Shell.available model.windows.shell) then (model,[]) else
+@@ -427,7 +458,7 @@ update message model =
+                                 Ok provider ->
+                                     let (next,effects)=windowBase (TaskbarShell.OpenMenu provider) model
+                                     in if (MenuBridge.menuSnapshot next.windows.menus).menu==(MenuBridge.menuSnapshot model.windows.menus).menu then (model,[]) else
+-                                        (retireSwitcher {next | open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=model.windows.shell.binding |> Maybe.andThen (\binding -> TaskbarShell.groups model.windows |> List.filter (\group -> List.any (\family -> family.root==root) group.families) |> List.head |> Maybe.map (\group -> {binding=binding,destination=TaskbarGroup group.key,output=Just observed.context.output}))},effects)
++                                        (retireSwitcher {next | snap=Nothing,open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=model.windows.shell.binding |> Maybe.andThen (\binding -> TaskbarShell.groups model.windows |> List.filter (\group -> List.any (\family -> family.root==root) group.families) |> List.head |> Maybe.map (\group -> {binding=binding,destination=TaskbarGroup group.key,output=Just observed.context.output}))},effects)
+         OpenSwitcher stamp direction ->
+             if capture model/=Just stamp || model.choice/=Nothing || not (Shell.available model.windows.shell) || MenuBridge.preparedSnapshot model.windows.menus/=Nothing then (model,[]) else
+             case UInt64.next (Switcher.generation model.switcher) of
+@@ -437,7 +468,7 @@ update message model =
+                         origin=base.windows.shell.effects.observed |> Maybe.andThen (\observed -> Scene.focused observed.scene |> Maybe.andThen (\root -> Scene.rootOf root observed.scene))
+                         (switcher,_)=Switcher.step generation 1 direction base.switcher
+                         windows=base.windows
+-                        opened=advance {base | nativeSwitcher=Nothing,switcher=switcher,switcherOrigin=origin,switcherHistory=Nothing,open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing}}
++                        opened=advance {base | snap=Nothing,nativeSwitcher=Nothing,switcher=switcher,switcherOrigin=origin,switcherHistory=Nothing,open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing}}
+                         (refreshing,commands)=windowBase (TaskbarShell.Native Shell.Refresh) opened
+                         (next,history)=readSwitcherHistory refreshing
+                     in (next,commands++history)
+@@ -473,7 +504,7 @@ update message model =
+         Window value ->
+             let (next,effects)=window value model
+                 (synced,commands)=syncSwitcher next
+-            in if next.windows.picker/=Nothing && next.windows.picker/=model.windows.picker then (retireSwitcher {next | open=False,overview=False,expected=Nothing,menuOrigin=Nothing,returnFocus=Nothing},effects) else (synced,effects++commands)
++            in if next.windows.picker/=Nothing && next.windows.picker/=model.windows.picker then (retireSwitcher {next | snap=Nothing,open=False,overview=False,expected=Nothing,menuOrigin=Nothing,returnFocus=Nothing},effects) else (synced,effects++commands)
+         Incoming raw ->
+             case D.decodeValue (D.field "kind" D.string) raw of
+                 Ok "switcher-journal" ->
+@@ -534,7 +565,7 @@ update message model =
+                         Nothing -> model
+                         Just menu -> windowBase (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)) model |> Tuple.first
+                 windows=base.windows
+-                retired = advance (retireSwitcher {base | windows={windows | picker=Nothing}, returnFocus=Nothing, menuOrigin=Nothing, open = True, overview = False, applications = Nothing, launch = Launch.catalog E.null model.launch, expected = Nothing, catalogFailure = Nothing})
++                retired = advance (retireSwitcher {base | windows={windows | picker=Nothing}, returnFocus=Nothing, menuOrigin=Nothing, snap=Nothing, open = True, overview = False, applications = Nothing, launch = Launch.catalog E.null model.launch, expected = Nothing, catalogFailure = Nothing})
+             in case (model.windows.shell.binding, UInt64.next model.request) of
+                 (Just binding,Just request) ->
+                     if model.windows.shell.phase == Shell.Detached || retired.presentation == Nothing then (retired,[]) else
+@@ -553,7 +584,7 @@ update message model =
+                     |> Maybe.map (\menu -> windowBase (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)) model |> Tuple.first)
+                     |> Maybe.withDefault model
+                 windows=base.windows
+-                next=advance (retireSwitcher {base | overview=True,overviewWorkspace=Nothing,open=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing}})
++                next=advance (retireSwitcher {base | snap=Nothing,overview=True,overviewWorkspace=Nothing,open=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing}})
+                 focus=TaskView.activeWorkspace next.windows.shell |> Maybe.map (\workspace -> key next ("overview:workspace:"++workspace)) |> Maybe.withDefault (key next "overview:all")
+             in (next,[Focus focus])
+         CloseOverview stamp ->
+diff --git c/implementation/warlock/src/Snap.elm i/implementation/warlock/src/Snap.elm
+new file mode 100644
+index 0000000..a6bc032
+--- /dev/null
++++ i/implementation/warlock/src/Snap.elm
+@@ -0,0 +1,78 @@
++module Snap exposing (Choice, Region(..), Proposal, regions, name, identity, open, valid, select, proposal)
++
++import GeometryProjection as Geometry
++import UInt64 exposing (Counter)
++
++type Region = LeftHalf | RightHalf | TopLeft | TopRight | BottomLeft | BottomRight
++type alias Choice = { snapshot : Geometry.Snapshot, target : Counter, selected : Region }
++type alias Proposal =
++    { region : String, geometry : List Float, monitor : Counter
++    , outputOwnershipGeneration : Counter, workAreaRevision : Counter
++    , workspaceGeneration : Counter, context : Geometry.Context }
++
++regions : List Region
++regions = [LeftHalf,RightHalf,TopLeft,TopRight,BottomLeft,BottomRight]
++
++identity : Region -> String
++identity region = case region of
++    LeftHalf -> "left-half"
++    RightHalf -> "right-half"
++    TopLeft -> "top-left"
++    TopRight -> "top-right"
++    BottomLeft -> "bottom-left"
++    BottomRight -> "bottom-right"
++
++name : Region -> String
++name region = case region of
++    LeftHalf -> "Left half"
++    RightHalf -> "Right half"
++    TopLeft -> "Top left quarter"
++    TopRight -> "Top right quarter"
++    BottomLeft -> "Bottom left quarter"
++    BottomRight -> "Bottom right quarter"
++
++open : Geometry.Snapshot -> Counter -> Maybe Choice
++open snapshot target =
++    Geometry.window target snapshot |> Maybe.andThen (\window ->
++        let choice={snapshot=snapshot,target=target,selected=LeftHalf}
++        in if snapshot.blocked || not window.eligible || window.minimized
++            || window.nativeMode/=Geometry.Ordinary || window.clientMode/=Geometry.Ordinary
++            || proposal choice==Nothing then Nothing else Just choice)
++
++valid : Geometry.Snapshot -> Choice -> Bool
++valid current choice =
++    current.binding==choice.snapshot.binding
++        && current.context.lifetime==choice.snapshot.context.lifetime
++        && current.context.epoch==choice.snapshot.context.epoch
++        && current.context.output==choice.snapshot.context.output
++        && (Geometry.window choice.target current |> Maybe.map (\window ->
++            -- A live shell popup can block native geometry effects. Retain
++            -- only its pure preview in an unchanged scope; opening still
++            -- requires eligibility, and this module emits no native effect.
++            (current.blocked || window.eligible) && not window.minimized
++                && window.floating && not window.grouped && not window.fixedSize
++                && window.owner==Nothing && window.nativeMode==Geometry.Ordinary
++                && window.clientMode==Geometry.Ordinary
++                && (Geometry.window choice.target choice.snapshot |> Maybe.map .sizePolicy)==Just window.sizePolicy
++                && proposal {choice|snapshot=current}==(proposal choice |> Maybe.map (\prior -> {prior|context=current.context}))) |> Maybe.withDefault False)
++
++select : Geometry.Snapshot -> Region -> Choice -> Maybe Choice
++select current region choice = if valid current choice then Just {choice|selected=region} else Nothing
++
++proposal : Choice -> Maybe Proposal
++proposal choice = Geometry.window choice.target choice.snapshot |> Maybe.andThen (\window ->
++    case ((window.workArea,window.monitor),(window.outputOwnershipGeneration,window.workAreaRevision,window.workspaceGeneration)) of
++        ((Just [x,y,width,height],Just monitor),(Just output,Just area,Just workspace)) ->
++            let half=width/2
++                quarter=height/2
++                geometry=case choice.selected of
++                    LeftHalf -> [x,y,half,height]
++                    RightHalf -> [x+half,y,width-half,height]
++                    TopLeft -> [x,y,half,quarter]
++                    TopRight -> [x+half,y,width-half,quarter]
++                    BottomLeft -> [x,y+quarter,half,height-quarter]
++                    BottomRight -> [x+half,y+quarter,width-half,height-quarter]
++            in Just {region=identity choice.selected,geometry=geometry,monitor=monitor,
++                outputOwnershipGeneration=output,workAreaRevision=area,workspaceGeneration=workspace,
++                context=choice.snapshot.context}
++        _ -> Nothing)
+diff --git c/implementation/warlock/src/Surface.elm i/implementation/warlock/src/Surface.elm
+index d85d6ae..ac18765 100644
+--- c/implementation/warlock/src/Surface.elm
++++ i/implementation/warlock/src/Surface.elm
+@@ -15,6 +15,7 @@ import Shell
+ import Taskbar
+ import TaskbarShell
+ import TaskView
++import Snap
+ import UInt64 exposing (Counter)
+ 
+ type alias Control =
+@@ -41,7 +42,8 @@ recoveryPopup model = if recoveryNeeded model then [recoveryControl "control:rec
+ 
+ mode : Desktop.Model -> String
+ mode model =
+-    if Desktop.switcherOpen model then "switcher"
++    if model.snap/=Nothing then "snap"
++    else if Desktop.switcherOpen model then "switcher"
+     else if model.overview then "overview"
+     else if model.open then "applications"
+     else if (MenuBridge.menuSnapshot model.windows.menus).menu/=Nothing then "menu"
+@@ -50,7 +52,23 @@ mode model =
+ 
+ controls : Desktop.Model -> List Control
+ controls model =
+-    if Desktop.switcherOpen model then
++    if model.snap/=Nothing then
++        case model.snap of
++            Nothing -> []
++            Just choice ->
++                let scoped message=Desktop.capture model |> Maybe.map message
++                    ready=Shell.available model.windows.shell
++                    regionControl region=
++                        let identity="snap:region:"++Snap.identity region
++                            selected=region==choice.selected
++                        in {id=identity,domId=Desktop.key model identity,label=Snap.name region,
++                            ariaLabel=Snap.name region++(if selected then "; selected preview" else ""),
++                            detail=if selected then "Selected" else "",enabled=ready,
++                            message=if ready then scoped (\stamp -> Desktop.SelectSnap stamp region) else Nothing}
++                in {id="control:close",domId=Desktop.key model "snap:close",label="Close",ariaLabel="Close snapping",detail="",enabled=True,message=scoped Desktop.CloseSnap}
++                    :: List.map regionControl Snap.regions
++                    ++ [{id="snap:apply",domId=Desktop.key model "snap:apply",label="Snapping unavailable",ariaLabel="Snapping unavailable",detail="",enabled=False,message=Nothing}]
++    else if Desktop.switcherOpen model then
+         let scoped message=Desktop.capture model |> Maybe.map message
+             selected=Switcher.selected model.switcher |> Maybe.map .root
+             browsing=Switcher.phase model.switcher==Switcher.Browsing
+@@ -110,7 +128,11 @@ controls model =
+                     row index item =
+                         let detail = if menuBlocked model then "Awaiting native confirmation" else if menu.selected==Just index then "Selected" else ""
+                         in {id=prefix ++ String.fromInt index,domId=prefix ++ String.fromInt index,label=item.label,ariaLabel=item.label ++ (if menuBlocked model then "; " ++ detail else ""),detail=detail,enabled=ready && item.enabled,message=if ready && item.enabled then Just (Desktop.Window (TaskbarShell.MenuEvent (Menu.Activate menu.id menu.binding index))) else Nothing}
+-                in {id="control:menu-close",domId=prefix ++ "close",label="Close",ariaLabel="Close window actions",detail="",enabled=True,message=Just (Desktop.Window (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)))} :: List.indexedMap row menu.items ++ recoveryPopup model
++                    snap = MenuBridge.currentProvider model.windows.menus |> Maybe.andThen (\provider ->
++                        model.windows.shell.geometry |> Maybe.andThen (\geometry -> Snap.open geometry (Provider.incarnation provider))
++                            |> Maybe.map (\_ -> {id="control:snap-open",domId=prefix++"snap",label="Snap window",ariaLabel="Open snapping",detail="",enabled=ready,
++                                message=if ready then Desktop.capture model |> Maybe.map (\stamp -> Desktop.OpenSnap stamp (Provider.incarnation provider)) else Nothing}))
++                in {id="control:menu-close",domId=prefix ++ "close",label="Close",ariaLabel="Close window actions",detail="",enabled=True,message=Just (Desktop.Window (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)))} :: List.indexedMap row menu.items ++ (snap |> Maybe.map List.singleton |> Maybe.withDefault []) ++ recoveryPopup model
+     else
+         case model.windows.picker of
+             Just picker ->
+diff --git c/implementation/warlock/src/SurfaceController.elm i/implementation/warlock/src/SurfaceController.elm
+index 4b77fb0..8aa7c9d 100644
+--- c/implementation/warlock/src/SurfaceController.elm
++++ i/implementation/warlock/src/SurfaceController.elm
+@@ -161,6 +161,7 @@ update event ((Model model) as current) =
+                     _ -> (Model {model | exhausted=True},[])
+         NativeReflow lease ->
+             if lease/=model.lease || Surface.mode model.desktop=="closed" then (current,[]) else
++            if model.desktop.snap/=Nothing then apply Desktop.InvalidateSnap current else
+                 case (UInt64.next model.lease,UInt64.next model.publication) of
+                     (Just token,Just shown) ->
+                         -- The host has retired the old popup/input lease. Output
+@@ -172,7 +173,9 @@ update event ((Model model) as current) =
+                     _ -> (Model {model | exhausted=True},[])
+         NativeDismiss lease ->
+             if lease/=model.lease || Surface.mode model.desktop=="closed" then (current,[]) else
+-                if Surface.mode model.desktop=="menu" then
++                if model.desktop.snap/=Nothing then
++                    Desktop.capture model.desktop |> Maybe.map (\stamp -> apply (Desktop.CloseSnap stamp) current) |> Maybe.withDefault (current,[])
++                else if Surface.mode model.desktop=="menu" then
+                     (MenuBridge.menuSnapshot model.desktop.windows.menus).menu |> Maybe.map (\menu -> apply (Desktop.Window (TaskbarShell.MenuEvent (Menu.Dismiss menu.id))) current) |> Maybe.withDefault (current,[])
+                 else if Desktop.switcherOpen model.desktop then
+                     Desktop.capture model.desktop |> Maybe.map (\stamp -> apply (Desktop.CloseSwitcher stamp) current) |> Maybe.withDefault (current,[])
+diff --git c/implementation/warlock/src/SurfaceRenderer.elm i/implementation/warlock/src/SurfaceRenderer.elm
+index c7063ec..0c224c7 100644
+--- c/implementation/warlock/src/SurfaceRenderer.elm
++++ i/implementation/warlock/src/SurfaceRenderer.elm
+@@ -32,7 +32,7 @@ decode raw =
+         let all = record.bar ++ record.popup
+             identities = List.map .identity all
+             unique names = List.length names == Set.size (Set.fromList names)
+-        in if record.version/=2 || record.shown==UInt64.zero || not (List.member record.current ["closed","picker","applications","menu","overview","switcher"]) || (record.current/="closed" && record.scoped==UInt64.zero) || (record.current=="closed" && not (List.isEmpty record.popup)) || not (unique identities) || not (unique (List.map .domId all)) || List.any (\control -> String.isEmpty control.identity || String.isEmpty control.domId) all then Err "Invalid presentation scope/identities"
++        in if record.version/=2 || record.shown==UInt64.zero || not (List.member record.current ["closed","picker","applications","menu","overview","switcher","snap"]) || (record.current/="closed" && record.scoped==UInt64.zero) || (record.current=="closed" && not (List.isEmpty record.popup)) || not (unique identities) || not (unique (List.map .domId all)) || List.any (\control -> String.isEmpty control.identity || String.isEmpty control.domId) all then Err "Invalid presentation scope/identities"
+         else Ok (Snapshot {publication=record.shown,lease=record.scoped,mode=record.current,status=record.notice,bar=record.bar,popup=record.popup}))
+ 
+ publication : Snapshot -> Counter
+@@ -77,7 +77,7 @@ viewWithPreview preview popup send ((Snapshot snapshot) as current) =
+             in if popup && snapshot.mode=="applications" && item.identity=="control:search" then
+                 let event = D.map2 (\query composing -> (query,composing)) (D.at ["target","value"] D.string) (D.oneOf [D.field "isComposing" D.bool,D.succeed False]) |> D.andThen (\(query,composing) -> D.succeed (send (E.object [("surfaceProtocol",E.int 2),("kind",E.string (if composing then "surface-preedit" else "surface-query")),("surface",E.string "popup"),("publication",E.string (UInt64.string snapshot.publication)),("lease",E.string (UInt64.string snapshot.lease)),("id",E.string item.identity),("query",E.string query)])))
+                 in input [class "launcher-search",id item.domId,type_ "search",placeholder "Search applications",value item.label,attribute "aria-label" item.ariaLabel,attribute "data-surface-field" item.identity,attribute "autocomplete" "off",disabled (not item.enabled),on "input" event,on "compositionend" event] []
+-            else button [class kind,id item.domId,attribute "aria-label" item.ariaLabel,disabled (not item.enabled),attribute "data-surface-control" item.identity,attribute "role" (if popup && snapshot.mode=="menu" then "menuitem" else "button"),attribute "aria-current" (if popup && List.member snapshot.mode ["menu","switcher"] && item.detail=="Selected" then "true" else "false")] [preview item.identity,span [class "control-label"] [text item.label],span [class "control-detail"] [text item.detail]]
++            else button [class kind,id item.domId,attribute "aria-label" item.ariaLabel,disabled (not item.enabled),attribute "data-surface-control" item.identity,attribute "role" (if popup && snapshot.mode=="menu" then "menuitem" else "button"),attribute "aria-current" (if popup && List.member snapshot.mode ["menu","switcher","snap"] && item.detail=="Selected" then "true" else "false")] [preview item.identity,span [class "control-label"] [text item.label],span [class "control-detail"] [text item.detail]]
+         familyPrefix rows = case rows of
+             first :: rest -> if String.startsWith "overview:family:" first.identity then first :: familyPrefix rest else []
+             [] -> []
+@@ -89,7 +89,7 @@ viewWithPreview preview popup send ((Snapshot snapshot) as current) =
+                         let members = familyPrefix rest
+                         in div [class "overview-workspace",attribute "role" "group",attribute "aria-labelledby" first.domId] (List.map control (first::members)) :: overviewRows (List.drop (List.length members) rest)
+                     else control first :: overviewRows rest
+-    in if popup then div [class "surface-popup",attribute "data-mode" snapshot.mode,attribute "data-publication" (UInt64.string snapshot.publication),attribute "data-lease" (UInt64.string snapshot.lease)] [h1 [] [text (if snapshot.mode=="applications" then "Applications" else if snapshot.mode=="overview" then "Task View" else if snapshot.mode=="switcher" then "Switch windows" else if snapshot.mode=="menu" then "Window actions" else "Choose a window")],p [attribute "role" "status",attribute "aria-live" "polite"] [text snapshot.status],(if snapshot.mode=="overview" then div [class "surface-controls",attribute "role" "group"] (overviewRows snapshot.popup) else Keyed.node "div" [class "surface-controls",attribute "role" (if snapshot.mode=="menu" then "menu" else "group")] (List.map (\item -> ("control:" ++ item.identity,control item)) snapshot.popup))]
++    in if popup then div [class "surface-popup",attribute "data-mode" snapshot.mode,attribute "data-publication" (UInt64.string snapshot.publication),attribute "data-lease" (UInt64.string snapshot.lease)] [h1 [] [text (if snapshot.mode=="applications" then "Applications" else if snapshot.mode=="overview" then "Task View" else if snapshot.mode=="switcher" then "Switch windows" else if snapshot.mode=="snap" then "Snap window" else if snapshot.mode=="menu" then "Window actions" else "Choose a window")],p [attribute "role" "status",attribute "aria-live" "polite"] [text snapshot.status],(if snapshot.mode=="overview" then div [class "surface-controls",attribute "role" "group"] (overviewRows snapshot.popup) else Keyed.node "div" [class "surface-controls",attribute "role" (if snapshot.mode=="menu" then "menu" else "group")] (List.map (\item -> ("control:" ++ item.identity,control item)) snapshot.popup))]
+        else Keyed.node "div" [class "surface-bar",attribute "data-publication" (UInt64.string snapshot.publication),attribute "data-lease" (UInt64.string snapshot.lease)]
+             [("actions",Keyed.node "div" [class "surface-actions"] (List.map (\item -> ("control:" ++ item.identity,control item)) snapshot.bar))
+             ,("status",span [class (if String.isEmpty snapshot.status || snapshot.status=="Ready" then "surface-status surface-status-idle" else "surface-status"),attribute "role" "status",attribute "aria-live" "polite",attribute "aria-atomic" "true",attribute "aria-label" snapshot.status,title snapshot.status] [text snapshot.status])]

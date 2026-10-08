@@ -64,3 +64,13 @@ The same host also passes Escape, inactive-Minimize keyboard preservation,
 Restore typing and subsequent Task View dismissal. Original deadlines, owning
 core/plugin pair and compiled Elm assets are unchanged. Applicable AT and
 independent acceptance still remain open.
+
+Window actions now include a snap chooser for eligible ordinary windows. It
+shows six half/quarter regions derived from the observed native work area,
+including negative output origins and odd dimensions. Tab reaches the chooser
+utility; Enter opens it without applying the selected menu operation. Inside
+the chooser, Up/Down and Home/End traverse enabled controls, and selection uses
+the current view identity. Changed output/work-area scope retires the preview.
+The selected region uses the shared color, glow, shadow and shading language.
+Native snap placement is still being implemented: the placement control remains
+disabled and no successful placement or complete snapping acceptance is claimed.

@@ -75,7 +75,8 @@
   document.addEventListener('click',event=>{
     pairing=null;const item=control(event.target),root=owner(item);if(!item||!root)return;
     // Unchanged earlier context handler owns native menu detail0 routing.
-    if(root.dataset.mode==='menu'&&event.detail===0)return;
+    if(root.dataset.mode==='menu'&&event.detail===0&&
+       (item.dataset.surfaceControl.startsWith('menu:')||item.dataset.surfaceControl==='control:menu-close'))return;
     const held=pending;
     if(held){
       const route=held.route.kind==='keyboard'&&generated===held?held.route:direct(event)||compat;
@@ -125,7 +126,8 @@
     }
     if(!activationKey(event)){pairing=null;return;}
     const item=control(event.target),root=owner(item);pairing=null;
-    if(!item||!root||root.dataset.mode==='menu')return;
+    if(!item||!root||(root.dataset.mode==='menu'&&
+       (item.dataset.surfaceControl.startsWith('menu:')||item.dataset.surfaceControl==='control:menu-close')))return;
     const route=keyboard(event),wasQualified=qualified(event);event.preventDefault();
     if(!route){quarantineTurn();return;}
     const held=pending;
@@ -139,7 +141,8 @@
   document.addEventListener('keyup',event=>{
     if(!activationKey(event)){pairing=null;return;}
     const item=control(event.target),root=owner(item);pairing=null;
-    if(!item||!root||root.dataset.mode==='menu')return;
+    if(!item||!root||(root.dataset.mode==='menu'&&
+       (item.dataset.surfaceControl.startsWith('menu:')||item.dataset.surfaceControl==='control:menu-close')))return;
     const route=keyboard(event),wasQualified=qualified(event);event.preventDefault();
     const held=pending;
     if(!route||!matches(held,item,route)||event.key!==' ')return;

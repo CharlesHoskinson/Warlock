@@ -1,14 +1,14 @@
 {
   "schema": 1,
-  "report": "implementation/warlock/qa/runs/taskbar-primary-1791453447239135682/report.json",
-  "reportSHA256": "f00a3d3817ea0413f5a70b7e4f8554276f983a6699092af5849bf8b3c2cf159a",
+  "report": "implementation/warlock/qa/runs/snap-chooser-1791456453743910116/report.json",
+  "reportSHA256": "00800c1d50131635e8875ad511314a25811a7ccb53579c4995672609e9b30ebd",
   "compiledAssets": {
-    "elm.js": "10d72c9dd0cba778619e0284368861e57da4c5b8512914ca7bbaa4549a6712df",
-    "bar.js": "d2bd3e1d84b6dc605744da689c0331e89a0cd45d083c0cdbc3b1ee620a18e860",
-    "popup.js": "054636c284b4f6a026963b18b0e41b2f1a737fd87f9cdc1d8ef5449d6030222a"
+    "elm.js": "3b7d96db2efd88a7e0962776af0df962119320340f10e0ceeb855cc1bf401b06",
+    "bar.js": "be223dc781307d076c136fb6cb1da4f5996b16460ea56d25a1dab1e673a8de5b",
+    "popup.js": "530fe4e756cd47b6643e8b9b27af61d8aca2c0bac9c23b2127e6557803093df0"
   },
-  "binarySHA256": "543928926619370ca89bd308515ccb10ec1ee726b98b215abd4c77e9776e80a3",
+  "binarySHA256": "69dae6338fd8f3f8c20a43e21285ff2a4831b07232f99f451a3fd4708a936c31",
   "nativeAcceptance": false,
   "fullReleaseAccepted": false,
-  "scope": "Changed owning shared host compile/relink and foreground-handoff self-tests; compiled popup reflow/browser guards; native keyboard/AT acceptance remains separate."
+  "scope": "Compiled integrated snap chooser with generation-bound half/quarter previews and stale action/output invalidation; native placement authority and original isolated recordings remain required"
 }
