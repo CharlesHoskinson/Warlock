@@ -62,3 +62,6 @@ html[data-theme="dawn"] .launcher-search{background:#fff;color:#172536;border-co
 html[data-theme="dawn"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:"]{background:linear-gradient(145deg,#fff,#e4edf6)}
 .surface-popup[data-mode="settings"] [aria-current="true"]{border-color:var(--shell-focus,#7ed7ff);box-shadow:inset 3px 0 var(--shell-focus,#7ed7ff)}
 @media(forced-colors:active){.surface-popup[data-mode="settings"] [aria-current="true"]{border-color:Highlight;box-shadow:none}}
+
+.notification-text { margin: .7rem .8rem; color: inherit; opacity: 1; overflow-wrap: anywhere; }
+.notification-text .control-detail { display: block; }

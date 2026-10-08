@@ -89,3 +89,19 @@ an unconfirmed write. The supervisor selects private settings storage; a stale
 revision, invalid value or unsupported schema cannot overwrite the existing copy.
 The bounded native save/whole-host-restart and invalid-scale journey is tracked
 under ELM-UX-030; independent and applicable release acceptance remain separate.
+
+The Notifications button opens the current native notification center. It shows
+plain notification text, live actions, and bounded retired history. Incoming
+notifications never open a popup or steal focus; the center announces status
+politely while open. Producer actions use exact service, unique bus producer,
+numeric ID and native incarnation, consume their target before signal emission,
+and cannot repeat after a lost receipt. Refresh reads current targets without
+replaying actions. Expiry, dismissal, replacement and producer disconnect retire
+actions; text from expired entries remains readable in history.
+
+The freedesktop notification adapter lives in the existing broker process, uses
+the session bus, and claims its name without replacement or queuing. If another
+notification service owns the name, the center explains its unavailability. It
+implements plain body/actions, never executes notification text, and does not
+advertise activation-token, sound, image, markup or persistence capabilities.
+See the [native notification protocol](https://specifications.freedesktop.org/notification/latest/protocol.html).

@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "Center shows notification text and named current action"
+    },
+    {
+      "name": "Notification content cannot issue actions"
+    },
+    {
+      "name": "End reveals last live operation on small output"
+    },
+    {
+      "name": "Home returns to Close"
+    },
+    {
+      "name": "Production keyboard emits one current surface action"
+    },
+    {
+      "name": "Expired action disappears while center stays open"
+    },
+    {
+      "name": "Expired content remains readable"
+    },
+    {
+      "name": "Escape dismisses via matching physical release"
+    },
+    {
+      "name": "Duplicate presentation identity fails closed"
+    },
+    {
+      "name": "No browser exceptions",
+      "detail": []
+    }
+  ],
+  "captures": [
+    "notification-expired-history.png"
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "browserExitCode": 0
+}

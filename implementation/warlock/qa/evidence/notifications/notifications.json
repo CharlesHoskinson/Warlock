@@ -1,0 +1,210 @@
+{
+  "checks": {
+    "notificationOpenerIntegrated": true,
+    "centerModeAcceptedByProductionRenderer": true,
+    "openingReadFocusMatchesActualControl": true,
+    "oneExplicitAction": true,
+    "pendingCannotRepeat": true,
+    "dispatchedCannotRepeat": true,
+    "expiryRemovesActionsAndKeepsHistory": true,
+    "expiredChoiceIsInert": true,
+    "reusedIdRejectsOldIncarnation": true,
+    "unknownCannotReplay": true,
+    "explicitReadReconcilesRetiredUnknownWithoutEffect": true,
+    "staleViewCannotSubmit": true,
+    "wrongReceiptCannotSettle": true,
+    "olderObservationCannotReviveTarget": true,
+    "incomingExpiryNeverMovesFocus": true,
+    "allControlsHaveNames": true
+  },
+  "frame": {
+    "surfaceProtocol": 2,
+    "appearance": {
+      "theme": "night",
+      "textScale": 100
+    },
+    "publication": "1",
+    "lease": "1",
+    "mode": "notifications",
+    "status": "1 live notifications. Actions apply only to the current notification.",
+    "bar": [
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:overview",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:overview-opener",
+        "label": "Task View",
+        "ariaLabel": "Open Task View",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "bar:switcher",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:switcher-opener",
+        "label": "Switch windows",
+        "ariaLabel": "Open window switcher",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "bar:notifications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:notifications:opener",
+        "label": "Notifications · 1",
+        "ariaLabel": "Open notifications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:settings",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:settings:opener",
+        "label": "Settings",
+        "ariaLabel": "Open settings",
+        "detail": "",
+        "enabled": true
+      }
+    ],
+    "popup": [
+      {
+        "id": "control:close",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:notifications:close",
+        "label": "Close notifications",
+        "ariaLabel": "Close notifications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "notifications:refresh",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:notifications:refresh",
+        "label": "Refresh notifications",
+        "ariaLabel": "Refresh notifications",
+        "detail": "Read current targets; no action is repeated",
+        "enabled": true
+      },
+      {
+        "id": "notification:9:1:summary",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:notification:9:1:summary",
+        "label": "Calendar: Meeting soon",
+        "ariaLabel": "Calendar: Meeting soon",
+        "detail": "Live",
+        "enabled": false
+      },
+      {
+        "id": "notification:9:1:body",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:notification:9:1:body",
+        "label": "Bring your notes",
+        "ariaLabel": "Bring your notes",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "notification:9:1:invoke:open",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:notification:9:1:invoke:open",
+        "label": "Open meeting",
+        "ariaLabel": "Open meeting",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "notification:9:1:dismiss:",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:notification:9:1:dismiss:",
+        "label": "Dismiss notification",
+        "ariaLabel": "Dismiss notification",
+        "detail": "",
+        "enabled": true
+      }
+    ]
+  },
+  "expiredFrame": {
+    "surfaceProtocol": 2,
+    "appearance": {
+      "theme": "night",
+      "textScale": 100
+    },
+    "publication": "2",
+    "lease": "1",
+    "mode": "notifications",
+    "status": "No live notifications. Previous notifications remain in history.",
+    "bar": [
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:overview",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:control:overview-opener",
+        "label": "Task View",
+        "ariaLabel": "Open Task View",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "bar:switcher",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:control:switcher-opener",
+        "label": "Switch windows",
+        "ariaLabel": "Open window switcher",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "bar:notifications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:notifications:opener",
+        "label": "Notifications",
+        "ariaLabel": "Open notifications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:settings",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:settings:opener",
+        "label": "Settings",
+        "ariaLabel": "Open settings",
+        "detail": "",
+        "enabled": true
+      }
+    ],
+    "popup": [
+      {
+        "id": "control:close",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:notifications:close",
+        "label": "Close notifications",
+        "ariaLabel": "Close notifications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "notifications:refresh",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:notifications:refresh",
+        "label": "Refresh notifications",
+        "ariaLabel": "Refresh notifications",
+        "detail": "Read current targets; no action is repeated",
+        "enabled": true
+      },
+      {
+        "id": "notification:9:1:summary",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:notification:9:1:summary",
+        "label": "Calendar: Meeting soon",
+        "ariaLabel": "Calendar: Meeting soon",
+        "detail": "History · expired",
+        "enabled": false
+      },
+      {
+        "id": "notification:9:1:body",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:notification:9:1:body",
+        "label": "Bring your notes",
+        "ariaLabel": "Bring your notes",
+        "detail": "",
+        "enabled": false
+      }
+    ]
+  }
+}

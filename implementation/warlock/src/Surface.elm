@@ -4,6 +4,7 @@ import Menu
 import Switcher
 import Pins
 import Settings
+import Notifications
 import MenuBridge
 import Provider
 import Catalog
@@ -43,7 +44,8 @@ recoveryPopup model = if recoveryNeeded model then [recoveryControl "control:rec
 
 mode : Desktop.Model -> String
 mode model =
-    if model.settingsOpen then "settings"
+    if model.notificationsOpen then "notifications"
+    else if model.settingsOpen then "settings"
     else if model.snap/=Nothing then "snap"
     else if Desktop.switcherOpen model then "switcher"
     else if model.overview then "overview"
@@ -54,7 +56,24 @@ mode model =
 
 controls : Desktop.Model -> List Control
 controls model =
-    if model.settingsOpen then
+    if model.notificationsOpen then
+        let scoped message=Desktop.capture model |> Maybe.map message
+            control identity label detail enabled message={id=identity,domId=Desktop.key model (if identity=="control:close" then "notifications:close" else identity),label=label,ariaLabel=label,detail=detail,enabled=enabled,message=if enabled then scoped message else Nothing}
+            clean value=String.join " " (String.words value)
+            entryRows snapshot entry=
+                let prefix="notification:"++UInt64.string snapshot.service++":"++UInt64.string entry.incarnation
+                    textRow identity label detail={id=identity,domId=Desktop.key model identity,label=clean label,ariaLabel=clean label,detail=detail,enabled=False,message=Nothing}
+                    action verb key label=
+                        let target=Notifications.target snapshot entry verb key
+                            ready=Notifications.live target model.notifications && model.notifications.pending==Nothing && model.notificationsExpected==Nothing
+                        in control (Notifications.identity target) (clean label) "" ready (\stamp -> Desktop.NotificationAction stamp target)
+                in [textRow (prefix++":summary") (entry.app++": "++entry.summary) (if entry.state=="live" then "Live" else "History · "++entry.state)]
+                   ++ (if String.isEmpty entry.body then [] else [textRow (prefix++":body") entry.body ""])
+                   ++ (if entry.state=="live" then List.map (\item -> action "invoke" item.key item.label) entry.actions ++ [action "dismiss" "" "Dismiss notification"] else [])
+        in [control "control:close" "Close notifications" "" True Desktop.CloseNotifications
+           ,control "notifications:refresh" "Refresh notifications" "Read current targets; no action is repeated" (model.notificationsExpected==Nothing) Desktop.RefreshNotifications]
+           ++ (model.notifications.snapshot |> Maybe.map (\snapshot -> List.concatMap (entryRows snapshot) snapshot.entries) |> Maybe.withDefault [])
+    else if model.settingsOpen then
         let scoped message=Desktop.capture model |> Maybe.map message
             ready=Settings.writable model.settings && model.settingsExpected==Nothing
             control identity label detail enabled message={id=identity,domId=Desktop.key model (if identity=="control:close" then "settings:close" else identity),label=label,ariaLabel=label,detail=detail,enabled=enabled,message=if enabled then scoped message else Nothing}
@@ -205,11 +224,12 @@ barControls model =
         ordinaryGroups=TaskbarShell.groups model.windows |> List.filter (\group -> List.length (owners group)/=1)
         reconnect = {id="bar:reconnect",domId="reconnect",label="Reconnect",ariaLabel="Reconnect to the window system",detail="",enabled=not model.windows.shell.reconnecting,message=Just (Desktop.Window (TaskbarShell.Native Shell.Reconnect))}
         retry = {id="bar:refresh-windows",domId=Desktop.key model "refresh-windows",label="Refresh windows",ariaLabel="Refresh windows",detail="",enabled=model.choice==Nothing,message=Just Desktop.RetryWindows}
-    in (if model.windows.shell.phase==Shell.Detached then reconnect else application) :: overview :: switcher :: {id="bar:settings",domId=Desktop.key model "settings:opener",label="Settings",ariaLabel="Open settings",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenSettings} :: List.map pinControl pinIds ++ List.map groupControl ordinaryGroups ++ (if not (String.isEmpty model.choiceNotice) && model.windows.shell.phase/=Shell.Detached then [retry] else []) ++ (if recoveryNeeded model && model.windows.shell.phase/=Shell.Detached then [recoveryControl "bar:recovery-refresh" model] else [])
+    in (if model.windows.shell.phase==Shell.Detached then reconnect else application) :: overview :: switcher :: {id="bar:notifications",domId=Desktop.key model "notifications:opener",label="Notifications"++(model.notifications.snapshot |> Maybe.map (\snapshot -> let count=List.length (List.filter (\entry -> entry.state=="live") snapshot.entries) in if count==0 then "" else " · "++String.fromInt count) |> Maybe.withDefault ""),ariaLabel="Open notifications",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenNotifications} :: {id="bar:settings",domId=Desktop.key model "settings:opener",label="Settings",ariaLabel="Open settings",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenSettings} :: List.map pinControl pinIds ++ List.map groupControl ordinaryGroups ++ (if not (String.isEmpty model.choiceNotice) && model.windows.shell.phase/=Shell.Detached then [retry] else []) ++ (if recoveryNeeded model && model.windows.shell.phase/=Shell.Detached then [recoveryControl "bar:recovery-refresh" model] else [])
 
 notice : Desktop.Model -> String
 notice model =
-    if model.settingsOpen then (if model.settingsExpected/=Nothing then "Loading settings…" else model.settings.notice)
+    if model.notificationsOpen then (if model.notificationsExpected/=Nothing then "Loading notifications…" else model.notifications.notice)
+    else if model.settingsOpen then (if model.settingsExpected/=Nothing then "Loading settings…" else model.settings.notice)
     else if Desktop.switcherOpen model then
         if Switcher.phase model.switcher==Switcher.Waiting then "Loading window activation history…"
         else if model.nativeSwitcher/=Nothing then "Alt+Tab: next window. Alt+Shift+Tab: previous. Release Alt: activate. Escape: cancel."

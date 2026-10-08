@@ -1,0 +1,837 @@
+{
+  "schema": 1,
+  "owner": "root-notifications",
+  "observedUTC": "2026-10-08T12:48:01.486317+00:00",
+  "requirements": [
+    "ELM-UX-031"
+  ],
+  "scenarios": [
+    "ux-031",
+    "notification-valid",
+    "notification-reused"
+  ],
+  "originals": [
+    {
+      "requirement": "ELM-UX-031",
+      "verification": "Valid/expired/reused notification identity fixtures with exactly-once current dispatch and no stale producer action.",
+      "scenarios": [
+        {
+          "name": "ux-031",
+          "given": "notification expires while center is open",
+          "when": "user attempts its former action",
+          "then": "expired action sends no request to another notification"
+        },
+        {
+          "name": "notification-valid",
+          "given": "a current live notification with action identity A",
+          "when": "A is invoked",
+          "then": "the current producer receives exactly that action once and another notification is unaffected"
+        },
+        {
+          "name": "notification-reused",
+          "given": "an expired notification id has been reused by a new native incarnation",
+          "when": "an old queued action arrives",
+          "then": "the old action is rejected and the new incarnation receives no unintended action"
+        }
+      ]
+    }
+  ],
+  "scope": "Integrated immutable Elm notification center, live count, semantic history and native session-bus lifecycle in the existing broker. Actual physical GUI current dispatch, expiry withdrawal and old queued refusal after expired numeric ID reuse. Independent original-scenario acceptance remains open.",
+  "sourceBaseRevision": "92a622697b152ec6e2ece14d954b1f9d5d327816",
+  "publicBaseRevision": "381b4cf001e0392a2fde91af2e4df8216a17266f",
+  "sourceHashes": {
+    "implementation/warlock/src/Notifications.elm": "705e0049a8f3193e6be813a0128c493ae9d9f88d1224dec5549ad2b2b631e7aa",
+    "implementation/warlock/src/Desktop.elm": "1ac8b418504e92e8d991b688e4dcf392293d0abd46636b883f145e1d7988e539",
+    "implementation/warlock/src/Surface.elm": "6722c48b4a49ff34b03cf89eedcadb0fe8eb72d72be83c2b6f659121403ebd8c",
+    "implementation/warlock/src/SurfaceRenderer.elm": "d73e1dc383dfe13c00b9202c5b0736286531e8bf190e718be6f64da5431580c7",
+    "implementation/warlock/src/SurfaceController.elm": "f131bbcdeeade61d8347cb38eaa262d716c25d70260f410043bd554b3f4e1f2e",
+    "implementation/warlock/adapter/notification_service.py": "068040e66c56ae0d6fafb0c28a3c3e5054d44a7bad321126a2b86b96e2d3b66f",
+    "implementation/warlock/adapter/daemon.py": "b53b831c8fcc136547e4c35159bc2e0266184e3b3085075d453863ae680e3ee6",
+    "implementation/warlock/native/host.c": "9d57458538ca3193adde7b3910ff88ffa53e90cccdbb39ad6ba8c84670fccbf5",
+    "implementation/warlock/native/surface.h": "6f8a09c3200304a7d99183c21162baf75181e3d186ed7fab9df6a25df05dd8d3",
+    "implementation/warlock/assets/popup-adapter.js": "a1c0a4b6a3d067f3c3b755d00584706ba50499603fb45e05dfab4b8b6950a3ba",
+    "implementation/warlock/qa/NotificationsReplay.elm": "e394fd7a466a4d85c20d02dbb1450760763396a1c2e2e206d1e944756a7ec11b",
+    "implementation/warlock/qa/check-notifications.py": "625f65fe746ff0031fde852dea109dcef158862315219e11129a0387e73d5e3d",
+    "implementation/warlock/qa/notifications.qnt": "f28e5b1cc02f4599c6e42a783f32e5397c0e390c01913cee890407dcc98380a5",
+    "implementation/warlock/qa/check-search.py": "17b6ac9e4c8d1525583e1e4efabfd1bcc476f3623a28ff8525ee16112d32adaf",
+    "implementation/warlock/qa/native-window-feedback.py": "9d0503ed7084c54eb44087636c3f171b7bbd6e222764f197b54d58eb3ff56c14",
+    "implementation/warlock/README.md": "38d0a6255760230b3e5a5a809a5ad7fc5db6cc3a2c3cb7dd42e94b8e0e55fbb4",
+    "implementation/warlock/assets/elm.js": "f6db14785b37fc32986507cebabb40f243d7b60084eb95c9087e1240ec7cc8cb",
+    "implementation/warlock/assets/bar.js": "b4c22fda25f7be71d74c62d7ae5690d38a6f097221f2b0b156069d23dd422153",
+    "implementation/warlock/assets/popup.js": "44d4f096605bf871223d5d409786344a91aaa605dffab1654a39cf976ce9808b",
+    "implementation/warlock/qa/current-search-build.json": "5c89651f9d36d22f12351bce0211f68cbfce5960c570160753cee8b83de3c03a",
+    "implementation/warlock/qa/notifications-browser.mjs": "e80df9b445a8140835a8f3e34b95044da79d60f56ac9f14a43430773b4ff78fe",
+    "implementation/warlock/qa/notification-producer.py": "28c8f7b1db02cba9afd7f567091f03b75af86049b04328ca752afce1a80faf6d",
+    "implementation/warlock/assets/shell.css": "9109b23c1183d5e5a49f57f5683c36d97feef86dc1f92234c44fe5914c99b219"
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+      "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791457340009159176/elm-window-geometry-authority.so",
+      "sha256": "55be0d723123f8089abfa0ce735f5e496aee558a0d822e1ad8278d50ee958307"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/notifications-1791463441591656970/elm-host",
+    "sha256": "d3f75520794395dcba8602cf4350372be7fe809a79b840317c7732b822703c76",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/notifications-1791463441591656970/report.json",
+    "heldBuildSHA256": "f3b57d490137136316c84e0e84f7951592a86f4e1ac9a0504846a642c85a7554"
+  },
+  "compiledAssets": {
+    "elm.js": "f6db14785b37fc32986507cebabb40f243d7b60084eb95c9087e1240ec7cc8cb",
+    "bar.js": "b4c22fda25f7be71d74c62d7ae5690d38a6f097221f2b0b156069d23dd422153",
+    "popup.js": "44d4f096605bf871223d5d409786344a91aaa605dffab1654a39cf976ce9808b"
+  },
+  "observedChecks": {
+    "elm": 16,
+    "nativeDbusProducers": 24,
+    "browser": 10,
+    "nativeGui": 38,
+    "quintNamedCases": 6,
+    "quintInvariantTraces": 100
+  },
+  "nativeCampaignPassed": true,
+  "nativeNotificationsObserved": true,
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "decisiveChecks": [
+    {
+      "name": "IncomingNotificationsDoNotOpenPopupOrStealNativeFocus",
+      "passed": true
+    },
+    {
+      "name": "CurrentActionDispatchesExactlyOnceToItsProducer",
+      "passed": true,
+      "request": [
+        {
+          "protocolVersion": 3,
+          "kind": "notification-effect",
+          "binding": {
+            "lifetime": "789717209010765040",
+            "session": "3",
+            "frontend": "1"
+          },
+          "requestId": "4",
+          "intent": {
+            "service": "16967955421686368406",
+            "id": "1",
+            "incarnation": "1",
+            "producer": ":1.5",
+            "action": "open",
+            "verb": "invoke"
+          }
+        }
+      ],
+      "outcomes": [
+        {
+          "protocolVersion": 3,
+          "kind": "notification-outcome",
+          "binding": {
+            "lifetime": "789717209010765040",
+            "session": "3",
+            "frontend": "1"
+          },
+          "requestId": "4",
+          "status": "Dispatched",
+          "snapshot": {
+            "service": "16967955421686368406",
+            "revision": "5",
+            "available": true,
+            "reason": "",
+            "entries": [
+              {
+                "id": "2",
+                "incarnation": "2",
+                "producer": ":1.6",
+                "app": "Warlock fixture",
+                "summary": "Other producer",
+                "body": "A real native notification",
+                "state": "live",
+                "actions": [
+                  {
+                    "key": "open",
+                    "label": "Open other notification"
+                  }
+                ]
+              },
+              {
+                "id": "1",
+                "incarnation": "1",
+                "producer": ":1.5",
+                "app": "Warlock fixture",
+                "summary": "Current notification",
+                "body": "A real native notification",
+                "state": "invoked",
+                "actions": []
+              }
+            ]
+          }
+        }
+      ],
+      "signals": [
+        {
+          "kind": "signal",
+          "producer": 0,
+          "signal": "ActionInvoked",
+          "values": [
+            1,
+            "open"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AnotherNotificationAndProducerUnaffected",
+      "passed": true
+    },
+    {
+      "name": "ExpiryRemovesFormerActionAndKeepsReadableHistory",
+      "passed": true,
+      "body": {
+        "publication": "20",
+        "lease": "1",
+        "buttons": [
+          {
+            "id": "applications:{\"lifetime\":\"789717209010765040\",\"session\":\"3\",\"frontend\":\"1\"}:16:notifications:close",
+            "identity": "control:close",
+            "label": "Close notifications",
+            "labelRect": {
+              "x": 24,
+              "y": 70,
+              "width": 652,
+              "height": 18
+            },
+            "accessibleName": "Close notifications",
+            "disabled": false,
+            "x": 11,
+            "y": 61,
+            "width": 678,
+            "height": 36
+          },
+          {
+            "id": "applications:{\"lifetime\":\"789717209010765040\",\"session\":\"3\",\"frontend\":\"1\"}:16:notifications:refresh",
+            "identity": "notifications:refresh",
+            "label": "Refresh notificationsRead current targets; no action is repeated",
+            "labelRect": {
+              "x": 24,
+              "y": 107,
+              "width": 652,
+              "height": 18
+            },
+            "accessibleName": "Refresh notifications",
+            "disabled": false,
+            "x": 11,
+            "y": 100,
+            "width": 678,
+            "height": 54
+          },
+          {
+            "id": "applications:{\"lifetime\":\"789717209010765040\",\"session\":\"3\",\"frontend\":\"1\"}:16:notification:16967955421686368406:2:invoke:open",
+            "identity": "notification:16967955421686368406:2:invoke:open",
+            "label": "Open other notification",
+            "labelRect": {
+              "x": 24,
+              "y": 334.9375,
+              "width": 652,
+              "height": 18
+            },
+            "accessibleName": "Open other notification",
+            "disabled": false,
+            "x": 11,
+            "y": 325.9375,
+            "width": 678,
+            "height": 36
+          },
+          {
+            "id": "applications:{\"lifetime\":\"789717209010765040\",\"session\":\"3\",\"frontend\":\"1\"}:16:notification:16967955421686368406:2:dismiss:",
+            "identity": "notification:16967955421686368406:2:dismiss:",
+            "label": "Dismiss notification",
+            "labelRect": {
+              "x": 24,
+              "y": 373.9375,
+              "width": 652,
+              "height": 18
+            },
+            "accessibleName": "Dismiss notification",
+            "disabled": false,
+            "x": 11,
+            "y": 364.9375,
+            "width": 678,
+            "height": 36
+          }
+        ],
+        "content": [
+          {
+            "id": "applications:{\"lifetime\":\"789717209010765040\",\"session\":\"3\",\"frontend\":\"1\"}:16:notification:16967955421686368406:3:summary",
+            "identity": "notification:16967955421686368406:3:summary",
+            "label": "Warlock fixture: Expiring notificationHistory \u00b7 expired",
+            "labelRect": {
+              "x": 20.796875,
+              "y": 165.1875,
+              "width": 658.40625,
+              "height": 18
+            },
+            "accessibleName": "Warlock fixture: Expiring notification",
+            "disabled": true,
+            "x": 20.796875,
+            "y": 165.1875,
+            "width": 658.40625,
+            "height": 40
+          },
+          {
+            "id": "applications:{\"lifetime\":\"789717209010765040\",\"session\":\"3\",\"frontend\":\"1\"}:16:notification:16967955421686368406:3:body",
+            "identity": "notification:16967955421686368406:3:body",
+            "label": "A real native notification",
+            "labelRect": {
+              "x": 20.796875,
+              "y": 216.375,
+              "width": 658.40625,
+              "height": 18
+            },
+            "accessibleName": "A real native notification",
+            "disabled": true,
+            "x": 20.796875,
+            "y": 216.375,
+            "width": 658.40625,
+            "height": 18
+          },
+          {
+            "id": "applications:{\"lifetime\":\"789717209010765040\",\"session\":\"3\",\"frontend\":\"1\"}:16:notification:16967955421686368406:2:summary",
+            "identity": "notification:16967955421686368406:2:summary",
+            "label": "Warlock fixture: Other producerLive",
+            "labelRect": {
+              "x": 20.796875,
+              "y": 245.5625,
+              "width": 658.40625,
+              "height": 18
+            },
+            "accessibleName": "Warlock fixture: Other producer",
+            "disabled": true,
+            "x": 20.796875,
+            "y": 245.5625,
+            "width": 658.40625,
+            "height": 40
+          },
+          {
+            "id": "applications:{\"lifetime\":\"789717209010765040\",\"session\":\"3\",\"frontend\":\"1\"}:16:notification:16967955421686368406:2:body",
+            "identity": "notification:16967955421686368406:2:body",
+            "label": "A real native notification",
+            "labelRect": {
+              "x": 20.796875,
+              "y": 296.75,
+              "width": 658.40625,
+              "height": 18
+            },
+            "accessibleName": "A real native notification",
+            "disabled": true,
+            "x": 20.796875,
+            "y": 296.75,
+            "width": 658.40625,
+            "height": 18
+          },
+          {
+            "id": "applications:{\"lifetime\":\"789717209010765040\",\"session\":\"3\",\"frontend\":\"1\"}:16:notification:16967955421686368406:1:summary",
+            "identity": "notification:16967955421686368406:1:summary",
+            "label": "Warlock fixture: Current notificationHistory \u00b7 invoked",
+            "labelRect": {
+              "x": 20.796875,
+              "y": 412.125,
+              "width": 658.40625,
+              "height": 18
+            },
+            "accessibleName": "Warlock fixture: Current notification",
+            "disabled": true,
+            "x": 20.796875,
+            "y": 412.125,
+            "width": 658.40625,
+            "height": 40
+          },
+          {
+            "id": "applications:{\"lifetime\":\"789717209010765040\",\"session\":\"3\",\"frontend\":\"1\"}:16:notification:16967955421686368406:1:body",
+            "identity": "notification:16967955421686368406:1:body",
+            "label": "A real native notification",
+            "labelRect": {
+              "x": 20.796875,
+              "y": 463.3125,
+              "width": 658.40625,
+              "height": 18
+            },
+            "accessibleName": "A real native notification",
+            "disabled": true,
+            "x": 20.796875,
+            "y": 463.3125,
+            "width": 658.40625,
+            "height": 18
+          }
+        ],
+        "fields": [],
+        "focus": "applications:{\"lifetime\":\"789717209010765040\",\"session\":\"3\",\"frontend\":\"1\"}:16:notifications:close",
+        "documentFocused": true,
+        "fontSize": "16px",
+        "theme": "night",
+        "textScale": "100",
+        "viewportWidth": 700,
+        "viewportHeight": 420,
+        "scrollTop": 3,
+        "scrollHeight": 504,
+        "text": "Notifications\n1 live notifications. Actions apply only to the current notification.\n\n\nClose notifications\n\nRefresh notifications\nRead current targets; no action is repeated\nWarlock fixture: Expiring notification\nHistory \u00b7 expired\n\nA real native notification\n\nWarlock fixture: Other producer\nLive\n\nA real native notification\n\n\nOpen other notification\n\nDismiss notification\nWarlock fixture: Current notification\nHistory \u00b7 invoked\n\nA real native notification\n"
+      },
+      "signals": [
+        {
+          "kind": "signal",
+          "producer": 0,
+          "signal": "NotificationClosed",
+          "values": [
+            3,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "name": "OldQueuedActionRefusedAfterExpiredIdReuse",
+      "passed": true,
+      "queued": {
+        "protocolVersion": 3,
+        "kind": "notification-effect",
+        "binding": {
+          "lifetime": "789717209010765040",
+          "session": "3",
+          "frontend": "1"
+        },
+        "requestId": "5",
+        "intent": {
+          "service": "16967955421686368406",
+          "id": "4",
+          "incarnation": "4",
+          "producer": ":1.5",
+          "action": "open",
+          "verb": "invoke"
+        }
+      },
+      "outcome": {
+        "protocolVersion": 3,
+        "kind": "notification-outcome",
+        "binding": {
+          "lifetime": "789717209010765040",
+          "session": "3",
+          "frontend": "1"
+        },
+        "requestId": "5",
+        "status": "Refused",
+        "snapshot": {
+          "service": "16967955421686368406",
+          "revision": "10",
+          "available": true,
+          "reason": "",
+          "entries": [
+            {
+              "id": "4",
+              "incarnation": "5",
+              "producer": ":1.5",
+              "app": "Warlock fixture",
+              "summary": "Reuse replacement",
+              "body": "A real native notification",
+              "state": "live",
+              "actions": [
+                {
+                  "key": "open",
+                  "label": "Open replacement notification"
+                }
+              ]
+            },
+            {
+              "id": "3",
+              "incarnation": "3",
+              "producer": ":1.5",
+              "app": "Warlock fixture",
+              "summary": "Expiring notification",
+              "body": "A real native notification",
+              "state": "expired",
+              "actions": []
+            },
+            {
+              "id": "2",
+              "incarnation": "2",
+              "producer": ":1.6",
+              "app": "Warlock fixture",
+              "summary": "Other producer",
+              "body": "A real native notification",
+              "state": "live",
+              "actions": [
+                {
+                  "key": "open",
+                  "label": "Open other notification"
+                }
+              ]
+            },
+            {
+              "id": "1",
+              "incarnation": "1",
+              "producer": ":1.5",
+              "app": "Warlock fixture",
+              "summary": "Current notification",
+              "body": "A real native notification",
+              "state": "invoked",
+              "actions": []
+            }
+          ]
+        }
+      },
+      "producerSignals": [
+        {
+          "kind": "signal",
+          "producer": 0,
+          "signal": "NotificationClosed",
+          "values": [
+            4,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "name": "OnlyNewIncarnationReceivesChosenAction",
+      "passed": true,
+      "signals": [
+        {
+          "kind": "signal",
+          "producer": 0,
+          "signal": "NotificationClosed",
+          "values": [
+            4,
+            1
+          ]
+        },
+        {
+          "kind": "signal",
+          "producer": 0,
+          "signal": "ActionInvoked",
+          "values": [
+            4,
+            "open"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HistoryHasActualNativeTextPixels",
+      "passed": true,
+      "capture": {
+        "stage": "notification-history",
+        "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791463508900538951/popup-notification-history.png",
+        "sha256": "dff8db289f5c8cb47e2b35b1dfd585775da50d1b119242618e83a4edf68ade48",
+        "nativeBox": [
+          50,
+          48,
+          700,
+          420
+        ],
+        "controlRegions": [
+          {
+            "accessibleName": "Warlock fixture: Expiring notification",
+            "brightPixels": 581,
+            "paintedPixels": 5488,
+            "area": 5488,
+            "region": [
+              82,
+              139,
+              278,
+              167
+            ]
+          }
+        ],
+        "body": {
+          "publication": "27",
+          "lease": "1",
+          "buttons": [
+            {
+              "id": "applications:{\"lifetime\":\"789717209010765040\",\"session\":\"3\",\"frontend\":\"1\"}:23:notifications:close",
+              "identity": "control:close",
+              "label": "Close notifications",
+              "labelRect": {
+                "x": 24,
+                "y": -90,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Close notifications",
+              "disabled": false,
+              "x": 11,
+              "y": -99,
+              "width": 678,
+              "height": 36
+            },
+            {
+              "id": "applications:{\"lifetime\":\"789717209010765040\",\"session\":\"3\",\"frontend\":\"1\"}:23:notifications:refresh",
+              "identity": "notifications:refresh",
+              "label": "Refresh notificationsRead current targets; no action is repeated",
+              "labelRect": {
+                "x": 24,
+                "y": -53,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Refresh notifications",
+              "disabled": false,
+              "x": 11,
+              "y": -60,
+              "width": 678,
+              "height": 54
+            },
+            {
+              "id": "applications:{\"lifetime\":\"789717209010765040\",\"session\":\"3\",\"frontend\":\"1\"}:23:notification:16967955421686368406:2:invoke:open",
+              "identity": "notification:16967955421686368406:2:invoke:open",
+              "label": "Open other notification",
+              "labelRect": {
+                "x": 24,
+                "y": 255.3125,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Open other notification",
+              "disabled": false,
+              "x": 11,
+              "y": 246.3125,
+              "width": 678,
+              "height": 36
+            },
+            {
+              "id": "applications:{\"lifetime\":\"789717209010765040\",\"session\":\"3\",\"frontend\":\"1\"}:23:notification:16967955421686368406:2:dismiss:",
+              "identity": "notification:16967955421686368406:2:dismiss:",
+              "label": "Dismiss notification",
+              "labelRect": {
+                "x": 24,
+                "y": 294.3125,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Dismiss notification",
+              "disabled": false,
+              "x": 11,
+              "y": 285.3125,
+              "width": 678,
+              "height": 36
+            }
+          ],
+          "content": [
+            {
+              "id": "applications:{\"lifetime\":\"789717209010765040\",\"session\":\"3\",\"frontend\":\"1\"}:23:notification:16967955421686368406:5:summary",
+              "identity": "notification:16967955421686368406:5:summary",
+              "label": "Warlock fixture: Reuse replacementHistory \u00b7 invoked",
+              "labelRect": {
+                "x": 20.796875,
+                "y": 5.1875,
+                "width": 658.40625,
+                "height": 18
+              },
+              "accessibleName": "Warlock fixture: Reuse replacement",
+              "disabled": true,
+              "x": 20.796875,
+              "y": 5.1875,
+              "width": 658.40625,
+              "height": 40
+            },
+            {
+              "id": "applications:{\"lifetime\":\"789717209010765040\",\"session\":\"3\",\"frontend\":\"1\"}:23:notification:16967955421686368406:5:body",
+              "identity": "notification:16967955421686368406:5:body",
+              "label": "A real native notification",
+              "labelRect": {
+                "x": 20.796875,
+                "y": 56.375,
+                "width": 658.40625,
+                "height": 18
+              },
+              "accessibleName": "A real native notification",
+              "disabled": true,
+              "x": 20.796875,
+              "y": 56.375,
+              "width": 658.40625,
+              "height": 18
+            },
+            {
+              "id": "applications:{\"lifetime\":\"789717209010765040\",\"session\":\"3\",\"frontend\":\"1\"}:23:notification:16967955421686368406:3:summary",
+              "identity": "notification:16967955421686368406:3:summary",
+              "label": "Warlock fixture: Expiring notificationHistory \u00b7 expired",
+              "labelRect": {
+                "x": 20.796875,
+                "y": 85.5625,
+                "width": 658.40625,
+                "height": 18
+              },
+              "accessibleName": "Warlock fixture: Expiring notification",
+              "disabled": true,
+              "x": 20.796875,
+              "y": 85.5625,
+              "width": 658.40625,
+              "height": 40
+            },
+            {
+              "id": "applications:{\"lifetime\":\"789717209010765040\",\"session\":\"3\",\"frontend\":\"1\"}:23:notification:16967955421686368406:3:body",
+              "identity": "notification:16967955421686368406:3:body",
+              "label": "A real native notification",
+              "labelRect": {
+                "x": 20.796875,
+                "y": 136.75,
+                "width": 658.40625,
+                "height": 18
+              },
+              "accessibleName": "A real native notification",
+              "disabled": true,
+              "x": 20.796875,
+              "y": 136.75,
+              "width": 658.40625,
+              "height": 18
+            },
+            {
+              "id": "applications:{\"lifetime\":\"789717209010765040\",\"session\":\"3\",\"frontend\":\"1\"}:23:notification:16967955421686368406:2:summary",
+              "identity": "notification:16967955421686368406:2:summary",
+              "label": "Warlock fixture: Other producerLive",
+              "labelRect": {
+                "x": 20.796875,
+                "y": 165.9375,
+                "width": 658.40625,
+                "height": 18
+              },
+              "accessibleName": "Warlock fixture: Other producer",
+              "disabled": true,
+              "x": 20.796875,
+              "y": 165.9375,
+              "width": 658.40625,
+              "height": 40
+            },
+            {
+              "id": "applications:{\"lifetime\":\"789717209010765040\",\"session\":\"3\",\"frontend\":\"1\"}:23:notification:16967955421686368406:2:body",
+              "identity": "notification:16967955421686368406:2:body",
+              "label": "A real native notification",
+              "labelRect": {
+                "x": 20.796875,
+                "y": 217.125,
+                "width": 658.40625,
+                "height": 18
+              },
+              "accessibleName": "A real native notification",
+              "disabled": true,
+              "x": 20.796875,
+              "y": 217.125,
+              "width": 658.40625,
+              "height": 18
+            },
+            {
+              "id": "applications:{\"lifetime\":\"789717209010765040\",\"session\":\"3\",\"frontend\":\"1\"}:23:notification:16967955421686368406:1:summary",
+              "identity": "notification:16967955421686368406:1:summary",
+              "label": "Warlock fixture: Current notificationHistory \u00b7 invoked",
+              "labelRect": {
+                "x": 20.796875,
+                "y": 332.5,
+                "width": 658.40625,
+                "height": 18
+              },
+              "accessibleName": "Warlock fixture: Current notification",
+              "disabled": true,
+              "x": 20.796875,
+              "y": 332.5,
+              "width": 658.40625,
+              "height": 40
+            },
+            {
+              "id": "applications:{\"lifetime\":\"789717209010765040\",\"session\":\"3\",\"frontend\":\"1\"}:23:notification:16967955421686368406:1:body",
+              "identity": "notification:16967955421686368406:1:body",
+              "label": "A real native notification",
+              "labelRect": {
+                "x": 20.796875,
+                "y": 383.6875,
+                "width": 658.40625,
+                "height": 18
+              },
+              "accessibleName": "A real native notification",
+              "disabled": true,
+              "x": 20.796875,
+              "y": 383.6875,
+              "width": 658.40625,
+              "height": 18
+            }
+          ],
+          "fields": [],
+          "focus": "applications:{\"lifetime\":\"789717209010765040\",\"session\":\"3\",\"frontend\":\"1\"}:23:notifications:close",
+          "documentFocused": true,
+          "fontSize": "16px",
+          "theme": "night",
+          "textScale": "100",
+          "viewportWidth": 700,
+          "viewportHeight": 420,
+          "scrollTop": 163,
+          "scrollHeight": 584,
+          "text": "Notifications\n1 live notifications. Actions apply only to the current notification.\n\n\nClose notifications\n\nRefresh notifications\nRead current targets; no action is repeated\nWarlock fixture: Reuse replacement\nHistory \u00b7 invoked\n\nA real native notification\n\nWarlock fixture: Expiring notification\nHistory \u00b7 expired\n\nA real native notification\n\nWarlock fixture: Other producer\nLive\n\nA real native notification\n\n\nOpen other notification\n\nDismiss notification\nWarlock fixture: Current notification\nHistory \u00b7 invoked\n\nA real native notification\n"
+        },
+        "drawObservations": []
+      }
+    },
+    {
+      "name": "NotificationEscapeClosesCenterWithoutWindowEffects",
+      "passed": true
+    }
+  ],
+  "ownerImageReview": {
+    "path": "popup-notification-history.png",
+    "sha256": "dff8db289f5c8cb47e2b35b1dfd585775da50d1b119242618e83a4edf68ade48",
+    "observation": "Owner inspected real private compositor frame: readable expired/invoked history, unrelated current action and dismissal; expired action absent."
+  },
+  "missingObservations": [
+    "Independent review of the three original notification scenario oracles.",
+    "Applicable release accessibility/IME, hardware/resource and full desktop journeys remain unaccepted.",
+    "Session activation with an existing desktop notification owner requires the final reversible deployment plan; the main desktop was preserved."
+  ],
+  "retainedFailures": [
+    {
+      "path": "failed-native-1791462920559799882.json",
+      "sha256": "425fda81236a785717b7a16c39731c6a95fae219eab9beb49fa7f873830c64a4",
+      "error": "RuntimeError('Original observation deadline <lambda>')",
+      "cleanupPassed": true
+    },
+    {
+      "path": "failed-native-1791462973298469104.json",
+      "sha256": "0d9d87c17dc9a64d75ec4979bc718294d0be0e6a2f9f0d4bde262e6e141002a5",
+      "error": "AssertionError('OwnedClientNormalExit')",
+      "cleanupPassed": false
+    },
+    {
+      "path": "failed-native-1791463199221769471.json",
+      "sha256": "173f8430d5c415771d6478569464c453b97d34266a36f7a8120240e98d21ca37",
+      "error": "TypeError(\"'NoneType' object is not subscriptable\")",
+      "cleanupPassed": true
+    },
+    {
+      "path": "failed-native-1791463322849471159.json",
+      "sha256": "abbc43d6d9d848b061120a0fcf43f98bb65463a008beb5c8b96e4094a8f16d9c",
+      "error": "AssertionError('HistoryHasActualNativeTextPixels')",
+      "cleanupPassed": true
+    }
+  ],
+  "files": {
+    "component-report.json": "f3b57d490137136316c84e0e84f7951592a86f4e1ac9a0504846a642c85a7554",
+    "native-report.json": "1f29e2bf814407b8510593fb8573daf40c82e374470d62da9daec9c2176765bd",
+    "notifications.json": "18d9104ca33a449248d22131e8bf8a3fbb7a75652aa2db69fedbda6e42e272d7",
+    "notifications-browser.json": "f4e8c733ab428e0eb7b24a0ac2bc56dcc933d22834a1a337d13ec4f53460dd80",
+    "notification-producers.stdout": "d54344064f2eb381826a23f27dcc4e3b0ed1e4ad81b661482ae1456211ae42dc",
+    "notification-model-named.stdout": "1f45a19678382dfc426c44c64c256dc6bd0f48fb5b5bcd6416292f0dc6f0fa56",
+    "notification-model-invariants.stdout": "aec8fd6bbb17971cfc118e53bf5a79c1d5dae3ff09d90ff6bb961c8e572280ca",
+    "notification-expired-history.png": "b58457108afbf52f580078a226d0b6337589380953e24f09657f60e9c5433df4",
+    "popup-notification-history.png": "dff8db289f5c8cb47e2b35b1dfd585775da50d1b119242618e83a4edf68ade48",
+    "failed-native-1791462920559799882.json": "425fda81236a785717b7a16c39731c6a95fae219eab9beb49fa7f873830c64a4",
+    "failed-native-1791462973298469104.json": "0d9d87c17dc9a64d75ec4979bc718294d0be0e6a2f9f0d4bde262e6e141002a5",
+    "failed-native-1791463199221769471.json": "173f8430d5c415771d6478569464c453b97d34266a36f7a8120240e98d21ca37",
+    "failed-native-1791463322849471159.json": "abbc43d6d9d848b061120a0fcf43f98bb65463a008beb5c8b96e4094a8f16d9c",
+    "physical-commands.json": "7cacd1512634350c950d196487b03c25d7d8a32d24b62093d09235297e0f0f93",
+    "source.patch": "559f4037085611a701b65b2e2e0a010df6bcc6901a9ab82217c953653af6e91e"
+  }
+}

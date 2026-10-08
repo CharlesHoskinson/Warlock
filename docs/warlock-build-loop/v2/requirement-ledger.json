@@ -7943,28 +7943,139 @@
       "owner": "Desktop experience lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "ux-031",
           "oracle": "expired action sends no request to another notification",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/notifications/manifest.json",
+              "sha256": "e082dadb49cb0807add94345fe6696ddcc39c7d3d3abae7d1f5667e3f0a5179b",
+              "scope": "Integrated immutable Elm notification center, live count, semantic history and native session-bus lifecycle in the existing broker. Actual physical GUI current dispatch, expiry withdrawal and old queued refusal after expired numeric ID reuse. Independent original-scenario acceptance remains open.",
+              "sourceBaseRevision": "92a622697b152ec6e2ece14d954b1f9d5d327816",
+              "sourceHashes": {
+                "implementation/warlock/src/Notifications.elm": "705e0049a8f3193e6be813a0128c493ae9d9f88d1224dec5549ad2b2b631e7aa",
+                "implementation/warlock/src/Desktop.elm": "1ac8b418504e92e8d991b688e4dcf392293d0abd46636b883f145e1d7988e539",
+                "implementation/warlock/src/Surface.elm": "6722c48b4a49ff34b03cf89eedcadb0fe8eb72d72be83c2b6f659121403ebd8c",
+                "implementation/warlock/src/SurfaceRenderer.elm": "d73e1dc383dfe13c00b9202c5b0736286531e8bf190e718be6f64da5431580c7",
+                "implementation/warlock/src/SurfaceController.elm": "f131bbcdeeade61d8347cb38eaa262d716c25d70260f410043bd554b3f4e1f2e",
+                "implementation/warlock/adapter/notification_service.py": "068040e66c56ae0d6fafb0c28a3c3e5054d44a7bad321126a2b86b96e2d3b66f",
+                "implementation/warlock/adapter/daemon.py": "b53b831c8fcc136547e4c35159bc2e0266184e3b3085075d453863ae680e3ee6",
+                "implementation/warlock/native/host.c": "9d57458538ca3193adde7b3910ff88ffa53e90cccdbb39ad6ba8c84670fccbf5",
+                "implementation/warlock/native/surface.h": "6f8a09c3200304a7d99183c21162baf75181e3d186ed7fab9df6a25df05dd8d3",
+                "implementation/warlock/assets/popup-adapter.js": "a1c0a4b6a3d067f3c3b755d00584706ba50499603fb45e05dfab4b8b6950a3ba",
+                "implementation/warlock/qa/NotificationsReplay.elm": "e394fd7a466a4d85c20d02dbb1450760763396a1c2e2e206d1e944756a7ec11b",
+                "implementation/warlock/qa/check-notifications.py": "625f65fe746ff0031fde852dea109dcef158862315219e11129a0387e73d5e3d",
+                "implementation/warlock/qa/notifications.qnt": "f28e5b1cc02f4599c6e42a783f32e5397c0e390c01913cee890407dcc98380a5",
+                "implementation/warlock/qa/check-search.py": "17b6ac9e4c8d1525583e1e4efabfd1bcc476f3623a28ff8525ee16112d32adaf",
+                "implementation/warlock/qa/native-window-feedback.py": "9d0503ed7084c54eb44087636c3f171b7bbd6e222764f197b54d58eb3ff56c14",
+                "implementation/warlock/README.md": "38d0a6255760230b3e5a5a809a5ad7fc5db6cc3a2c3cb7dd42e94b8e0e55fbb4",
+                "implementation/warlock/assets/elm.js": "f6db14785b37fc32986507cebabb40f243d7b60084eb95c9087e1240ec7cc8cb",
+                "implementation/warlock/assets/bar.js": "b4c22fda25f7be71d74c62d7ae5690d38a6f097221f2b0b156069d23dd422153",
+                "implementation/warlock/assets/popup.js": "44d4f096605bf871223d5d409786344a91aaa605dffab1654a39cf976ce9808b",
+                "implementation/warlock/qa/current-search-build.json": "5c89651f9d36d22f12351bce0211f68cbfce5960c570160753cee8b83de3c03a",
+                "implementation/warlock/qa/notifications-browser.mjs": "e80df9b445a8140835a8f3e34b95044da79d60f56ac9f14a43430773b4ff78fe",
+                "implementation/warlock/qa/notification-producer.py": "28c8f7b1db02cba9afd7f567091f03b75af86049b04328ca752afce1a80faf6d",
+                "implementation/warlock/assets/shell.css": "9109b23c1183d5e5a49f57f5683c36d97feef86dc1f92234c44fe5914c99b219"
+              },
+              "reviewerDisposition": {
+                "name": "root-notifications",
+                "independent": false,
+                "disposition": "Owner-observed scenario evidence; independent acceptance pending."
+              }
+            }
+          ],
+          "missingObservation": "Independent original-scenario review remains open. Applicable release AT/IME/hardware/resource/journey gates remain separate."
         },
         {
           "name": "notification-valid",
           "oracle": "the current producer receives exactly that action once and another notification is unaffected",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/notifications/manifest.json",
+              "sha256": "e082dadb49cb0807add94345fe6696ddcc39c7d3d3abae7d1f5667e3f0a5179b",
+              "scope": "Integrated immutable Elm notification center, live count, semantic history and native session-bus lifecycle in the existing broker. Actual physical GUI current dispatch, expiry withdrawal and old queued refusal after expired numeric ID reuse. Independent original-scenario acceptance remains open.",
+              "sourceBaseRevision": "92a622697b152ec6e2ece14d954b1f9d5d327816",
+              "sourceHashes": {
+                "implementation/warlock/src/Notifications.elm": "705e0049a8f3193e6be813a0128c493ae9d9f88d1224dec5549ad2b2b631e7aa",
+                "implementation/warlock/src/Desktop.elm": "1ac8b418504e92e8d991b688e4dcf392293d0abd46636b883f145e1d7988e539",
+                "implementation/warlock/src/Surface.elm": "6722c48b4a49ff34b03cf89eedcadb0fe8eb72d72be83c2b6f659121403ebd8c",
+                "implementation/warlock/src/SurfaceRenderer.elm": "d73e1dc383dfe13c00b9202c5b0736286531e8bf190e718be6f64da5431580c7",
+                "implementation/warlock/src/SurfaceController.elm": "f131bbcdeeade61d8347cb38eaa262d716c25d70260f410043bd554b3f4e1f2e",
+                "implementation/warlock/adapter/notification_service.py": "068040e66c56ae0d6fafb0c28a3c3e5054d44a7bad321126a2b86b96e2d3b66f",
+                "implementation/warlock/adapter/daemon.py": "b53b831c8fcc136547e4c35159bc2e0266184e3b3085075d453863ae680e3ee6",
+                "implementation/warlock/native/host.c": "9d57458538ca3193adde7b3910ff88ffa53e90cccdbb39ad6ba8c84670fccbf5",
+                "implementation/warlock/native/surface.h": "6f8a09c3200304a7d99183c21162baf75181e3d186ed7fab9df6a25df05dd8d3",
+                "implementation/warlock/assets/popup-adapter.js": "a1c0a4b6a3d067f3c3b755d00584706ba50499603fb45e05dfab4b8b6950a3ba",
+                "implementation/warlock/qa/NotificationsReplay.elm": "e394fd7a466a4d85c20d02dbb1450760763396a1c2e2e206d1e944756a7ec11b",
+                "implementation/warlock/qa/check-notifications.py": "625f65fe746ff0031fde852dea109dcef158862315219e11129a0387e73d5e3d",
+                "implementation/warlock/qa/notifications.qnt": "f28e5b1cc02f4599c6e42a783f32e5397c0e390c01913cee890407dcc98380a5",
+                "implementation/warlock/qa/check-search.py": "17b6ac9e4c8d1525583e1e4efabfd1bcc476f3623a28ff8525ee16112d32adaf",
+                "implementation/warlock/qa/native-window-feedback.py": "9d0503ed7084c54eb44087636c3f171b7bbd6e222764f197b54d58eb3ff56c14",
+                "implementation/warlock/README.md": "38d0a6255760230b3e5a5a809a5ad7fc5db6cc3a2c3cb7dd42e94b8e0e55fbb4",
+                "implementation/warlock/assets/elm.js": "f6db14785b37fc32986507cebabb40f243d7b60084eb95c9087e1240ec7cc8cb",
+                "implementation/warlock/assets/bar.js": "b4c22fda25f7be71d74c62d7ae5690d38a6f097221f2b0b156069d23dd422153",
+                "implementation/warlock/assets/popup.js": "44d4f096605bf871223d5d409786344a91aaa605dffab1654a39cf976ce9808b",
+                "implementation/warlock/qa/current-search-build.json": "5c89651f9d36d22f12351bce0211f68cbfce5960c570160753cee8b83de3c03a",
+                "implementation/warlock/qa/notifications-browser.mjs": "e80df9b445a8140835a8f3e34b95044da79d60f56ac9f14a43430773b4ff78fe",
+                "implementation/warlock/qa/notification-producer.py": "28c8f7b1db02cba9afd7f567091f03b75af86049b04328ca752afce1a80faf6d",
+                "implementation/warlock/assets/shell.css": "9109b23c1183d5e5a49f57f5683c36d97feef86dc1f92234c44fe5914c99b219"
+              },
+              "reviewerDisposition": {
+                "name": "root-notifications",
+                "independent": false,
+                "disposition": "Owner-observed scenario evidence; independent acceptance pending."
+              }
+            }
+          ],
+          "missingObservation": "Independent original-scenario review remains open. Applicable release AT/IME/hardware/resource/journey gates remain separate."
         },
         {
           "name": "notification-reused",
           "oracle": "the old action is rejected and the new incarnation receives no unintended action",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/notifications/manifest.json",
+              "sha256": "e082dadb49cb0807add94345fe6696ddcc39c7d3d3abae7d1f5667e3f0a5179b",
+              "scope": "Integrated immutable Elm notification center, live count, semantic history and native session-bus lifecycle in the existing broker. Actual physical GUI current dispatch, expiry withdrawal and old queued refusal after expired numeric ID reuse. Independent original-scenario acceptance remains open.",
+              "sourceBaseRevision": "92a622697b152ec6e2ece14d954b1f9d5d327816",
+              "sourceHashes": {
+                "implementation/warlock/src/Notifications.elm": "705e0049a8f3193e6be813a0128c493ae9d9f88d1224dec5549ad2b2b631e7aa",
+                "implementation/warlock/src/Desktop.elm": "1ac8b418504e92e8d991b688e4dcf392293d0abd46636b883f145e1d7988e539",
+                "implementation/warlock/src/Surface.elm": "6722c48b4a49ff34b03cf89eedcadb0fe8eb72d72be83c2b6f659121403ebd8c",
+                "implementation/warlock/src/SurfaceRenderer.elm": "d73e1dc383dfe13c00b9202c5b0736286531e8bf190e718be6f64da5431580c7",
+                "implementation/warlock/src/SurfaceController.elm": "f131bbcdeeade61d8347cb38eaa262d716c25d70260f410043bd554b3f4e1f2e",
+                "implementation/warlock/adapter/notification_service.py": "068040e66c56ae0d6fafb0c28a3c3e5054d44a7bad321126a2b86b96e2d3b66f",
+                "implementation/warlock/adapter/daemon.py": "b53b831c8fcc136547e4c35159bc2e0266184e3b3085075d453863ae680e3ee6",
+                "implementation/warlock/native/host.c": "9d57458538ca3193adde7b3910ff88ffa53e90cccdbb39ad6ba8c84670fccbf5",
+                "implementation/warlock/native/surface.h": "6f8a09c3200304a7d99183c21162baf75181e3d186ed7fab9df6a25df05dd8d3",
+                "implementation/warlock/assets/popup-adapter.js": "a1c0a4b6a3d067f3c3b755d00584706ba50499603fb45e05dfab4b8b6950a3ba",
+                "implementation/warlock/qa/NotificationsReplay.elm": "e394fd7a466a4d85c20d02dbb1450760763396a1c2e2e206d1e944756a7ec11b",
+                "implementation/warlock/qa/check-notifications.py": "625f65fe746ff0031fde852dea109dcef158862315219e11129a0387e73d5e3d",
+                "implementation/warlock/qa/notifications.qnt": "f28e5b1cc02f4599c6e42a783f32e5397c0e390c01913cee890407dcc98380a5",
+                "implementation/warlock/qa/check-search.py": "17b6ac9e4c8d1525583e1e4efabfd1bcc476f3623a28ff8525ee16112d32adaf",
+                "implementation/warlock/qa/native-window-feedback.py": "9d0503ed7084c54eb44087636c3f171b7bbd6e222764f197b54d58eb3ff56c14",
+                "implementation/warlock/README.md": "38d0a6255760230b3e5a5a809a5ad7fc5db6cc3a2c3cb7dd42e94b8e0e55fbb4",
+                "implementation/warlock/assets/elm.js": "f6db14785b37fc32986507cebabb40f243d7b60084eb95c9087e1240ec7cc8cb",
+                "implementation/warlock/assets/bar.js": "b4c22fda25f7be71d74c62d7ae5690d38a6f097221f2b0b156069d23dd422153",
+                "implementation/warlock/assets/popup.js": "44d4f096605bf871223d5d409786344a91aaa605dffab1654a39cf976ce9808b",
+                "implementation/warlock/qa/current-search-build.json": "5c89651f9d36d22f12351bce0211f68cbfce5960c570160753cee8b83de3c03a",
+                "implementation/warlock/qa/notifications-browser.mjs": "e80df9b445a8140835a8f3e34b95044da79d60f56ac9f14a43430773b4ff78fe",
+                "implementation/warlock/qa/notification-producer.py": "28c8f7b1db02cba9afd7f567091f03b75af86049b04328ca752afce1a80faf6d",
+                "implementation/warlock/assets/shell.css": "9109b23c1183d5e5a49f57f5683c36d97feef86dc1f92234c44fe5914c99b219"
+              },
+              "reviewerDisposition": {
+                "name": "root-notifications",
+                "independent": false,
+                "disposition": "Owner-observed scenario evidence; independent acceptance pending."
+              }
+            }
+          ],
+          "missingObservation": "Independent original-scenario review remains open. Applicable release AT/IME/hardware/resource/journey gates remain separate."
         }
       ]
     },
@@ -8052,5 +8163,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-08T12:05:39.738367+00:00"
+  "updatedUTC": "2026-10-08T12:48:01.486317+00:00"
 }

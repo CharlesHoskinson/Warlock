@@ -5,6 +5,7 @@ import ActionProjection as Scene
 import Switcher
 import Pins
 import Settings
+import Notifications
 import MenuBridge
 import NativeProvider
 import Provider
@@ -32,6 +33,10 @@ type alias Model =
     , launch : Launch.Model
     , applications : Maybe Catalog.Snapshot
     , pins : Pins.Model
+    , notifications : Notifications.Model
+    , notificationsOpen : Bool
+    , notificationsOpening : Bool
+    , notificationsExpected : Maybe Counter
     , settings : Settings.Model
     , settingsOpen : Bool
     , settingsOpening : Bool
@@ -78,6 +83,10 @@ type Msg
     | PresentationOwner (Maybe {outputId : Counter, providerId : Counter})
     | Incoming D.Value
     | OpenApplications ViewStamp
+    | OpenNotifications ViewStamp
+    | CloseNotifications ViewStamp
+    | RefreshNotifications ViewStamp
+    | NotificationAction ViewStamp Notifications.Target
     | OpenSettings ViewStamp
     | CloseSettings ViewStamp
     | EditSettings ViewStamp Settings.Values
@@ -112,7 +121,7 @@ type Effect
 
 initial : Model
 initial =
-    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
+    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
 
 switcherOpen : Model -> Bool
 switcherOpen model = List.member (Switcher.phase model.switcher) [Switcher.Waiting,Switcher.Browsing]
@@ -193,7 +202,7 @@ receiveChord chord model =
         order=old |> Maybe.map (\previous -> UInt64.compare chord.generation previous.generation) |> Maybe.withDefault GT
         inconsistent=old |> Maybe.map (\previous -> order==EQ && (previous.roots/=chord.roots || previous.history/=chord.history || previous.origin/=chord.origin || List.take (List.length previous.steps) chord.steps/=previous.steps || (previous.released && not chord.released) || (previous.cancelled && not chord.cancelled) || (previous.consumed && not chord.consumed))) |> Maybe.withDefault False
         closed =
-            let retired=advance (retireSwitcher {model | settingsOpen=False,settingsOpening=False,nativeSwitcher=Just chord})
+            let retired=advance (retireSwitcher {model | notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,nativeSwitcher=Just chord})
                 choice=retired.choice |> Maybe.andThen (\pending -> if pending.chord==Just chord.generation then Nothing else Just pending)
             in ({retired | choice=choice},[])
     in if chord.generation==UInt64.zero || order==LT then (model,[]) else
@@ -203,7 +212,7 @@ receiveChord chord model =
            Nothing -> (retireSwitcher model,[])
            Just generation ->
                let windows=model.windows
-                   base=if order==GT then {model | settingsOpen=False,settingsOpening=False,nativeSwitcher=Just chord,choice=Nothing,choiceNotice="",open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,switcherHistory=Nothing,switcherExpected=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}} else {model | settingsOpen=False,settingsOpening=False,nativeSwitcher=Just chord}
+                   base=if order==GT then {model | notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,nativeSwitcher=Just chord,choice=Nothing,choiceNotice="",open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,switcherHistory=Nothing,switcherExpected=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}} else {model | notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,nativeSwitcher=Just chord}
                    (stepped,_) = List.foldl (\(ordinal,direction) (state,_) -> Switcher.step generation (ordinal+1) direction state) (base.switcher,Nothing) (List.indexedMap Tuple.pair chord.steps)
                    (released,selected)=if chord.released then Switcher.release generation (List.length chord.steps) stepped else (stepped,Nothing)
                    next=advance {base | switcher=released}
@@ -287,6 +296,10 @@ windowBase message model =
         , switcherExpected = if disconnected || changed || windows.shell.phase==Shell.Exhausted then Nothing else model.switcherExpected
         , switcherHistory = if disconnected || changed || windows.shell.phase==Shell.Exhausted then Nothing else model.switcherHistory
         , pins = pins
+        , notifications = if disconnected || changed then Notifications.initial else model.notifications
+        , notificationsOpen = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.notificationsOpen
+        , notificationsOpening = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.notificationsOpening
+        , notificationsExpected = if disconnected || changed then Nothing else model.notificationsExpected
         , settings = if disconnected || changed then Settings.initial else model.settings
         , settingsOpen = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.settingsOpen
         , settingsOpening = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.settingsOpening
@@ -428,7 +441,7 @@ update message model =
                 Nothing -> (model,[])
                 Just choice ->
                     let windows=model.windows
-                    in (advance (retireSwitcher {model|settingsOpen=False,settingsOpening=False,snap=Just choice,open=False,overview=False,choice=Nothing,
+                    in (advance (retireSwitcher {model|notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,snap=Just choice,open=False,overview=False,choice=Nothing,
                         expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,
                         windows={windows|picker=Nothing,menus=MenuBridge.retireChoices windows.menus}}),[])
         SelectSnap stamp region ->
@@ -507,7 +520,7 @@ update message model =
                         origin=base.windows.shell.effects.observed |> Maybe.andThen (\observed -> Scene.focused observed.scene |> Maybe.andThen (\root -> Scene.rootOf root observed.scene))
                         (switcher,_)=Switcher.step generation 1 direction base.switcher
                         windows=base.windows
-                        opened=advance {base | snap=Nothing,nativeSwitcher=Nothing,settingsOpen=False,settingsOpening=False,switcher=switcher,switcherOrigin=origin,switcherHistory=Nothing,open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing}}
+                        opened=advance {base | snap=Nothing,nativeSwitcher=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,switcher=switcher,switcherOrigin=origin,switcherHistory=Nothing,open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing}}
                         (refreshing,commands)=windowBase (TaskbarShell.Native Shell.Refresh) opened
                         (next,history)=readSwitcherHistory refreshing
                     in (next,commands++history)
@@ -561,6 +574,30 @@ update message model =
                             if not (switcherOpen model) || model.windows.shell.binding/=Just receipt.binding || model.switcherExpected/=Just receipt.request then (model,[]) else
                             syncSwitcher {model | switcherExpected=Nothing,switcherHistory=Just {context=receipt.context,roots=receipt.roots}}
                         Err _ -> (model,[])
+                Ok "notification-snapshot" ->
+                    let decoder=strict ["protocolVersion","kind","binding","requestId","snapshot"] (D.map4 (\_ binding request snapshot -> {binding=binding,request=request,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "snapshot" Notifications.decoder))
+                    in case D.decodeValue decoder raw of
+                        Ok receipt ->
+                            if model.windows.shell.binding/=Just receipt.binding || model.notificationsExpected/=Just receipt.request then (model,[]) else
+                                let next=advance {model | notifications=Notifications.reconcile receipt.snapshot model.notifications,notificationsExpected=Nothing,notificationsOpening=False}
+                                in (next,if model.notificationsOpen && model.notificationsOpening then [Focus (key next "notifications:close")] else [])
+                        Err _ -> (model,[])
+                Ok "notification-update" ->
+                    let decoder=strict ["protocolVersion","kind","binding","snapshot"] (D.map3 (\_ binding snapshot -> {binding=binding,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "snapshot" Notifications.decoder))
+                    in case D.decodeValue decoder raw of
+                        Ok receipt ->
+                            if model.windows.shell.binding/=Just receipt.binding || model.windows.shell.phase==Shell.Detached then (model,[]) else
+                                let notifications=Notifications.observe receipt.snapshot model.notifications
+                                in if notifications==model.notifications then (model,[]) else (advance {model | notifications=notifications},[])
+                        Err _ -> (model,[])
+                Ok "notification-outcome" ->
+                    let decoder=strict ["protocolVersion","kind","binding","requestId","status","snapshot"] (D.map5 (\_ binding request status snapshot -> {binding=binding,request=request,status=status,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "status" D.string) (D.field "snapshot" Notifications.decoder))
+                    in case D.decodeValue decoder raw of
+                        Ok receipt ->
+                            if model.windows.shell.binding/=Just receipt.binding then (model,[]) else
+                                let notifications=Notifications.receive receipt.request receipt.status receipt.snapshot model.notifications
+                                in if notifications==model.notifications then (model,[]) else (advance {model | notifications=notifications},[])
+                        Err _ -> (model,[])
                 Ok "shell-settings" ->
                     let decoder=strict ["protocolVersion","kind","binding","requestId","snapshot"] (D.map4 (\_ binding request snapshot -> {binding=binding,request=request,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "snapshot" (D.nullable Settings.decoder)))
                     in case D.decodeValue decoder raw of
@@ -613,15 +650,36 @@ update message model =
                     let (next,effects)=window (TaskbarShell.Native (Shell.Incoming raw)) model
                         (synced,commands)=syncSwitcher next
                     in (synced,effects++commands)
+        OpenNotifications stamp ->
+            if capture model/=Just stamp || model.choice/=Nothing || model.windows.shell.binding==Nothing then (model,[]) else
+            let windows=model.windows
+                next=advance (retireSwitcher {model | notificationsOpen=True,notificationsOpening=True,settingsOpen=False,settingsOpening=False,open=False,overview=False,snap=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}})
+                (reading,commands)=readNotifications next
+            in (reading,commands++[Focus (key reading "notifications:close")])
+        CloseNotifications stamp ->
+            if capture model/=Just stamp || not model.notificationsOpen then (model,[]) else
+                let next=advance {model | notificationsOpen=False,notificationsOpening=False}
+                in (next,[Focus (key next "notifications:opener")])
+        RefreshNotifications stamp ->
+            if capture model/=Just stamp || not model.notificationsOpen then (model,[]) else readNotifications model
+        NotificationAction stamp target ->
+            if capture model/=Just stamp || not model.notificationsOpen || model.notificationsExpected/=Nothing then (model,[]) else
+            case (model.windows.shell.binding,UInt64.next model.request) of
+                (Just binding,Just request) ->
+                    let (notifications,proposal)=Notifications.propose request target model.notifications
+                    in case proposal of
+                        Nothing -> (model,[])
+                        Just value -> (advance {model | notifications=notifications,request=request},[Send (E.object [("protocolVersion",E.int 3),("kind",E.string "notification-effect"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request)),("intent",value)])])
+                _ -> (model,[])
         OpenSettings stamp ->
             if capture model/=Just stamp || model.choice/=Nothing || model.windows.shell.binding==Nothing then (model,[]) else
             let windows=model.windows
-                next=advance (retireSwitcher {model | settingsOpen=True,settingsOpening=True,open=False,overview=False,snap=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}})
+                next=advance (retireSwitcher {model | notificationsOpen=False,notificationsOpening=False,settingsOpen=True,settingsOpening=True,open=False,overview=False,snap=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}})
                 (reading,commands)=readSettings next
             in (reading,commands++[Focus (key reading "settings:close")])
         CloseSettings stamp ->
             if capture model/=Just stamp || not model.settingsOpen then (model,[]) else
-                let next=advance {model | settingsOpen=False,settingsOpening=False}
+                let next=advance {model | notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False}
                 in (next,[Focus (key next "settings:opener")])
         EditSettings stamp values ->
             if capture model/=Just stamp || not model.settingsOpen then (model,[]) else
@@ -644,7 +702,7 @@ update message model =
                         Nothing -> model
                         Just menu -> windowBase (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)) model |> Tuple.first
                 windows=base.windows
-                retired = advance (retireSwitcher {base | windows={windows | picker=Nothing}, returnFocus=Nothing, menuOrigin=Nothing, snap=Nothing, settingsOpen=False,settingsOpening=False,open = True, overview = False, applications = Nothing, launch = Launch.catalog E.null model.launch, expected = Nothing, catalogFailure = Nothing})
+                retired = advance (retireSwitcher {base | windows={windows | picker=Nothing}, returnFocus=Nothing, menuOrigin=Nothing, snap=Nothing, notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,open = True, overview = False, applications = Nothing, launch = Launch.catalog E.null model.launch, expected = Nothing, catalogFailure = Nothing})
             in case (model.windows.shell.binding, UInt64.next model.request) of
                 (Just binding,Just request) ->
                     if model.windows.shell.phase == Shell.Detached || retired.presentation == Nothing then (retired,[]) else
@@ -663,7 +721,7 @@ update message model =
                     |> Maybe.map (\menu -> windowBase (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)) model |> Tuple.first)
                     |> Maybe.withDefault model
                 windows=base.windows
-                next=advance (retireSwitcher {base | snap=Nothing,settingsOpen=False,settingsOpening=False,overview=True,overviewWorkspace=Nothing,open=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing}})
+                next=advance (retireSwitcher {base | snap=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,overview=True,overviewWorkspace=Nothing,open=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing}})
                 focus=TaskView.activeWorkspace next.windows.shell |> Maybe.map (\workspace -> key next ("overview:workspace:"++workspace)) |> Maybe.withDefault (key next "overview:all")
             in (next,[Focus focus])
         CloseOverview stamp ->
@@ -749,4 +807,12 @@ readSettings : Model -> (Model,List Effect)
 readSettings model =
     case (model.windows.shell.binding,UInt64.next model.request) of
         (Just binding,Just request) -> (advance {model | request=request,settingsExpected=Just request},[settingsRequest binding request])
+        _ -> (model,[])
+
+readNotifications : Model -> (Model,List Effect)
+readNotifications model =
+    if model.notificationsExpected/=Nothing then (model,[]) else
+    case (model.windows.shell.binding,UInt64.next model.request) of
+        (Just binding,Just request) ->
+            (advance {model | request=request,notificationsExpected=Just request},[Send (E.object [("protocolVersion",E.int 3),("kind",E.string "notification-request"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request))])])
         _ -> (model,[])

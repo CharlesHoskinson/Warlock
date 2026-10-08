@@ -4,6 +4,7 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
 lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
 """
 import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
+NOTIFICATIONS=sys.argv[1:]==['--notifications']
 SETTINGS=sys.argv[1:]==['--settings']
 PLACEMENT=sys.argv[1:]==['--snap-placement']
 SNAP=sys.argv[1:]==['--snap-chooser'] or PLACEMENT
@@ -18,7 +19,7 @@ PRE_READY_RETIRE=sys.argv[1:]==['--switcher-pre-ready-retirement']
 MEMBERSHIP=sys.argv[1:]==['--switcher-membership'] or PRE_READY_RETIRE
 CHORD=sys.argv[1:]==['--switcher-chord'] or MEMBERSHIP
 SWITCHER=sys.argv[1:]==['--switcher']
-NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'] or DENSEPICKER;PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS or PINMENUS or REFLOW or SETTINGS;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD
+NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'] or DENSEPICKER;PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS or PINMENUS or REFLOW or SETTINGS or NOTIFICATIONS;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143';RUNTIME=REPO/'implementation/warlock-client-provider-native-v204'
 sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
 spec=importlib.util.spec_from_file_location('feedback_private_host',RUNTIME/'candidate_host.py');host=importlib.util.module_from_spec(spec);spec.loader.exec_module(host)
@@ -56,7 +57,7 @@ else:
 for row in pair.values():assert sha(row['path'])==row['sha256']
 assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
 subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
-OUT=ROOT/'qa/runs'/(('native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+OUT=ROOT/'qa/runs'/(('native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
 OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
 focus_host=None
 if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
@@ -100,11 +101,12 @@ if CHORD:
  adapted=adapted.replace(needle,"        elif request['op'] == 'arrive-peer':\n            create('ELM-ACTIVATION-PEER', 'green')\n        elif request['op'] == 'arrive-chord':\n            create('ELM-CHORD-ARRIVAL', 'blue')\n        elif request['op'] == 'retire-third':\n            windows.pop('ELM-CHORD-THIRD').destroy()\n        elif request['op'] == 'retire-arrival':\n            windows.pop('ELM-CHORD-ARRIVAL').destroy()\n        elif request['op'] == 'retire-primary':\n            windows.pop('ELM-AUTHORITY-FIXTURE').destroy()\n"+needle)
  original_fixture=FIXTURE;FIXTURE=fixture_inputs/'chord-fixture.py';FIXTURE.write_text(adapted)
  chord_fixture={'originalSHA256':sha(original_fixture),'path':str(FIXTURE),'sha256':sha(FIXTURE),'change':'Third independent GTK root plus controlled retire/arrival operations; original client input/controllers unchanged.'}
-report={'schema':1,'requirements':['ELM-UI-007'],'scenarios':['restore-pending','restore-refused','restore-unknown'],'scope':'Actual pointer/Elm/native effect feedback and private compositor pixels; no AT/IME/full release acceptance','nativeFeedbackObserved':False,'nativeAcceptance':False,'assistiveTechnologyAccepted':False,'fullReleaseAccepted':False,'mainDesktopActions':False,'passed':False,'checks':[],'sourceInputs':{str(p.relative_to(ROOT)):sha(p) for folder in ['src','native','adapter','assets'] for p in (ROOT/folder).iterdir() if p.is_file()},'pair':pair,'nativeHost':{'path':str(binary),'sha256':sha(binary),'heldBuild':str(build_path),'heldBuildSHA256':sha(build_path)},'runtimeByReference':{'root':str(RUNTIME),'hostSHA256':sha(RUNTIME/'candidate_host.py')},'helpers':[],'nativeFixtures':[]};s=None;loaded=False;apps=[];broker=None;paused=False;sequence=0;chord_keyboard=None;chord_writer=None
+report={'schema':1,'requirements':['ELM-UI-007'],'scenarios':['restore-pending','restore-refused','restore-unknown'],'scope':'Actual pointer/Elm/native effect feedback and private compositor pixels; no AT/IME/full release acceptance','nativeFeedbackObserved':False,'nativeAcceptance':False,'assistiveTechnologyAccepted':False,'fullReleaseAccepted':False,'mainDesktopActions':False,'passed':False,'checks':[],'sourceInputs':{str(p.relative_to(ROOT)):sha(p) for folder in ['src','native','adapter','assets'] for p in (ROOT/folder).iterdir() if p.is_file()},'pair':pair,'nativeHost':{'path':str(binary),'sha256':sha(binary),'heldBuild':str(build_path),'heldBuildSHA256':sha(build_path)},'runtimeByReference':{'root':str(RUNTIME),'hostSHA256':sha(RUNTIME/'candidate_host.py')},'helpers':[],'nativeFixtures':[]};s=None;loaded=False;apps=[];notification_producer=None;broker=None;paused=False;sequence=0;chord_keyboard=None;chord_writer=None
 if focus_host:report['focusHostAdaptation']=focus_host
 if retirement_fixture:report['retirementFixture']=retirement_fixture
 if primary_fixture:report['primaryFixture']=primary_fixture
 if SEARCH:report.update(requirements=['ELM-UI-005','ELM-UX-029'],scenarios=['search-no-match','search-race','search-refused','launcher-refused'],scope='Actual current query and private catalog, native typing/Enter refusal and no duplicate launch; AT/IME and popup physical presentation acceptance remain pending',popupPresentationAccepted=False)
+if NOTIFICATIONS:report.update(requirements=['ELM-UX-031'],scenarios=['ux-031','notification-valid','notification-reused'],scope='Actual private native producers and physical Elm center: exactly-once current dispatch, expired history and reused-incarnation queued refusal; independent/AT acceptance remains open.',nativeNotificationsObserved=False)
 if SETTINGS:report.update(requirements=['ELM-UX-030'],scenarios=['ux-030'],scope='Actual integrated settings controls, exact saved appearance, native text size/reservation and whole-host restart; native-bound invalid scale refuses without changing stored or presented settings. Independent and applicable AT/IME/release acceptance remain open.',nativeSettingsObserved=False)
 if PINS:report.update(requirements=['ELM-UI-004','ELM-UX-004'],scenarios=['taskbar-zero','ux-004'],scope='Actual native keyboard pin/reorder, shell restart, identity order and one current zero-window launch; popup physical presentation and AT acceptance remain separate',popupPresentationAccepted=False,nativePinJourneyObserved=False)
 if TASKVIEW:report.update(requirements=['ELM-UX-017','ELM-UI-006'],scenarios=['ux-017','overview-cancel'],scope='Actual two populated native workspaces, exact window membership and active marker, keyboard/pointer local browsing and Escape recipient; independent and applicable AT acceptance remain pending',nativeTaskViewJourneyObserved=False)
@@ -293,6 +295,11 @@ daemon.handle_request=handle
 raise SystemExit(daemon.run())
 """)
     report['commitHoldFixture']={'path':str(backend_fixture),'sha256':sha(backend_fixture),'maximumSeconds':2,'scope':'Only delay transport before selection prepare; original effect path and six-second observation deadline unchanged.'}
+   if NOTIFICATIONS:
+    notification_arm=OUTPUT/'notification-hold-arm';notification_waiting=OUTPUT/'notification-hold-waiting';notification_release=OUTPUT/'notification-hold-release'
+    backend_fixture=OUTPUT/'notification-backend.py'
+    backend_fixture.write_text('import json,sys,time\nfrom pathlib import Path\nsys.path.insert(0,'+repr(str(ROOT/'adapter'))+')\nimport daemon\nsys.argv[1]='+repr(str(broker_config))+'\noriginal=daemon.handle_request\ndef handle(*args):\n request=args[2]\n arm=Path('+repr(str(notification_arm))+');waiting=Path('+repr(str(notification_waiting))+');release=Path('+repr(str(notification_release))+')\n if request.get("kind")=="notification-effect" and arm.exists():\n  arm.unlink();waiting.write_text(json.dumps(request));deadline=time.monotonic()+2\n  while not release.exists():\n   if time.monotonic()>=deadline:raise RuntimeError("Notification transport hold expired")\n   time.sleep(.005)\n  release.unlink()\n return original(*args)\ndaemon.handle_request=handle\nraise SystemExit(daemon.run())\n')
+    report['notificationHoldFixture']={'path':str(backend_fixture),'sha256':sha(backend_fixture),'maximumSeconds':2,'scope':'Hold actual queued request before its unchanged admission route; no artificial effect or receipt.'}
    web=s.host.launch('warlock',['%s'%binary,'--assets',str(assets),'--authority-config',str(config_path),'--backend',str(backend_fixture if CATALOG or CHORD else ROOT/'adapter/daemon.py'),'--qa-exit-after-render','--qa-stay-open','--surface-experiment',*(['--text-scale','2' if DENSEMENU else '1.5'] if SMALL else [])],env=env);apps.append(web);log=OUTPUT/'warlock.log';collector=Collector()
    def text():
     raw=log.read_text(errors='replace')
@@ -402,9 +409,10 @@ raise SystemExit(daemon.run())
      pix=GdkPixbuf.Pixbuf.new_from_file(str(image));pixels=pix.get_pixels();stride=pix.get_rowstride();channels=pix.get_n_channels();regions=[]
      # Count only current control interiors. Whole-popup counts incorrectly
      # included the compositor's warning overlay above a black reopened popup.
-     for button in body['buttons']:
+     for button in body['buttons']+(body.get('content',[]) if NOTIFICATIONS else []):
       selected=button['id']==body['focus'] if SETTINGS else button['id']==body['focus'] if SNAP and (projection() or {}).get('mode')=='snap' else button['accessibleName'] in ['Minimize','Close window actions','Maximize'] if PINMENUS else button['accessibleName'].startswith(('Activate ELM-','Restore ELM-')) if SWITCHER or CHORD else (button['accessibleName'].startswith('Browse workspace ') or (NAV and button['accessibleName'].startswith('Restore ELM-ACTIVATION-PEER'))) if TASKVIEW else button['accessibleName'] in ['Refresh applications','Open Files']
-      if not selected or button['disabled'] or button['y']<0 or button['y']+button['height']>box[3]:continue
+      if NOTIFICATIONS:selected=button['accessibleName']=='Warlock fixture: Expiring notification'
+      if not selected or (button['disabled'] and not NOTIFICATIONS) or button['y']<0 or button['y']+button['height']>box[3]:continue
       left,top=max(0,int(box[0]+button['x'])+12),max(100,int(box[1]+button['y'])+6)
       right,bottom=min(pix.get_width(),int(box[0]+button['x']+min(220,button['width']))-12),min(pix.get_height(),box[1]+box[3],int(box[1]+button['y']+button['height'])-6)
       bright=sum(1 for y in range(top,bottom) for x in range(left,right) if all(pixels[y*stride+x*channels+c]>170 for c in range(3)))
@@ -841,6 +849,72 @@ raise SystemExit(daemon.run())
       check('OverviewEscapeReturnsToEligibleOpener',facts()['facts']['focused']==before_focus and any(e['kind']=='key' and e['keyval']==97 and e['window']=='ELM-AUTHORITY-FIXTURE' for e in delivered),events=delivered,before=before_focus,after=facts()['facts']['focused'])
      check('OverviewDismissalHasNoNativeMutation',len(journal())==before)
      report['nativeTaskViewJourneyObserved']=not RETIRE_OPENER
+    elif NOTIFICATIONS:
+     notification_control=OUTPUT/'notification-control.json'
+     producer=s.host.launch('notification-producers',['/usr/bin/python3','-B',str(ROOT/'qa/notification-producer.py'),str(notification_control)],env=env);apps.append(producer);notification_producer=producer
+     notification_serial=0
+     def producer_events():
+      path=notification_control.with_suffix('.events.jsonl')
+      raw=path.read_text() if path.exists() else ''
+      return [json.loads(line) for line in raw[:raw.rfind('\n')+1].splitlines()]
+     wait(lambda:any(row['kind']=='ready' for row in producer_events()))
+     def notify(producer_index,summary,label,timeout=0,replaces=0):
+      global notification_serial
+      notification_serial+=1
+      temp=notification_control.with_suffix('.tmp');temp.write_text(json.dumps({'serial':notification_serial,'op':'notify','producer':producer_index,'summary':summary,'label':label,'timeout':timeout,'replaces':replaces}));os.replace(temp,notification_control)
+      return wait(lambda:next((row['id'] for row in producer_events() if row['kind']=='notified' and row['serial']==notification_serial),None))
+     def center_body():
+      body=popup_body();p=projection()
+      return body if body and p and p.get('mode')=='notifications' and body['publication']==p['publication'] else None
+     def incoming():return [json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('backend-frame: ')]
+     def notification_snapshot():
+      frames=[frame['snapshot'] for frame in incoming() if frame.get('kind') in ['notification-update','notification-snapshot','notification-outcome']]
+      return frames[-1] if frames else None
+     def notification_row(identifier):return next((row for row in (notification_snapshot() or {}).get('entries',[]) if row['id']==str(identifier)),None)
+     def signals(identifier):return [row for row in producer_events() if row['kind']=='signal' and row['values'][0]==identifier]
+     before_effects=len(journal());before_focus=facts()['facts']['focused']
+     current=notify(0,'Current notification','Open current notification');other=notify(1,'Other producer','Open other notification')
+     wait(lambda:notification_row(current) and notification_row(other))
+     check('IncomingNotificationsDoNotOpenPopupOrStealNativeFocus',projection()['mode']=='closed' and facts()['facts']['focused']==before_focus)
+     opener=wait(lambda:next((b for b in (bar_body() or {}).get('buttons',[]) if b['accessibleName']=='Open notifications' and not b['disabled']),None))
+     helper([str(POINTER),'800','600'],f"move {round(opener['x']+opener['width']/2)} {round(opener['y']+opener['height']/2)}\nsleep 100\nbutton 272 1\nsleep 50\nbutton 272 0\nsleep 100\n")
+     wait(lambda:(body:=center_body()) and any(b['accessibleName']=='Open current notification' and not b['disabled'] for b in body['buttons']))
+     keyboard_button('Open current notification',28)
+     wait(lambda:any(row['signal']=='ActionInvoked' for row in signals(current)))
+     sent=requests('notification-effect');outcomes=[frame for frame in incoming() if frame.get('kind')=='notification-outcome' and frame.get('requestId')==sent[-1]['requestId']]
+     check('CurrentActionDispatchesExactlyOnceToItsProducer',len(sent)==1 and len(outcomes)==1 and outcomes[0]['status']=='Dispatched' and signals(current)==[{'kind':'signal','producer':0,'signal':'ActionInvoked','values':[current,'open']}],request=sent,outcomes=outcomes,signals=signals(current))
+     check('AnotherNotificationAndProducerUnaffected',signals(other)==[] and notification_row(other)['state']=='live')
+     wait(lambda:(body:=center_body()) and not any(b['accessibleName']=='Open current notification' for b in body['buttons']))
+     expired=notify(0,'Expiring notification','Open expiring notification',timeout=1200)
+     wait(lambda:(body:=center_body()) and any(b['accessibleName']=='Open expiring notification' and not b['disabled'] for b in body['buttons']))
+     old_expiring=notification_row(expired)
+     wait(lambda:notification_row(expired) and notification_row(expired)['state']=='expired' and (body:=center_body()) and not any(b['accessibleName']=='Open expiring notification' for b in body['buttons']))
+     check('ExpiryRemovesFormerActionAndKeepsReadableHistory',any(b['accessibleName']=='Warlock fixture: Expiring notification' and 'expired' in b['label'] for b in center_body().get('content',[])) and signals(expired)==[{'kind':'signal','producer':0,'signal':'NotificationClosed','values':[expired,1]}],body=center_body(),signals=signals(expired))
+     # The latest entry is first; queue its real keyboard action while live,
+     # let it expire, replace the same ID on the native bus, then admit it.
+     reuse=notify(0,'Reuse original','Open old incarnation',timeout=1800)
+     wait(lambda:(body:=center_body()) and any(b['accessibleName']=='Open old incarnation' and not b['disabled'] for b in body['buttons']))
+     notification_arm.write_text('hold')
+     keyboard_button('Open old incarnation',28)
+     queued=wait(lambda:json.loads(notification_waiting.read_text()) if notification_waiting.exists() else None)
+     wait(lambda:any(row['signal']=='NotificationClosed' and row['values']==[reuse,1] for row in signals(reuse)))
+     replacement=notify(0,'Reuse replacement','Open replacement notification',replaces=reuse)
+     notification_release.write_text('release')
+     refused=wait(lambda:next((frame for frame in incoming() if frame.get('kind')=='notification-outcome' and frame.get('requestId')==queued['requestId']),None))
+     wait(lambda:(body:=center_body()) and any(b['accessibleName']=='Open replacement notification' and not b['disabled'] for b in body['buttons']))
+     check('OldQueuedActionRefusedAfterExpiredIdReuse',replacement==reuse and refused['status']=='Refused' and notification_row(reuse)['incarnation']!=queued['intent']['incarnation'] and not any(row['signal']=='ActionInvoked' for row in signals(reuse)),queued=queued,outcome=refused,producerSignals=signals(reuse))
+     keyboard_button('Open replacement notification',28)
+     wait(lambda:any(row['signal']=='ActionInvoked' for row in signals(reuse)))
+     check('OnlyNewIncarnationReceivesChosenAction',len([row for row in signals(reuse) if row['signal']=='ActionInvoked'])==1 and signals(other)==[],signals=signals(reuse))
+     helper([str(POINTER),'800','600'],'move 400 280\nwheel 180 0\nsleep 100\n')
+     popup_capture('notification-history')
+     capture=report['popupCaptures'][-1]
+     check('HistoryHasActualNativeTextPixels',any(region['accessibleName']=='Warlock fixture: Expiring notification' and region['brightPixels']>15 for region in capture['controlRegions']),capture=capture)
+     key(1);wait(lambda:projection()['mode']=='closed')
+     check('NotificationEscapeClosesCenterWithoutWindowEffects',len(journal())==before_effects and not launches())
+     notification_serial+=1;notification_control.write_text(json.dumps({'serial':notification_serial,'op':'quit'}));producer.wait(timeout=5)
+     check('NativeNotificationProducersExitNormally',producer.returncode==0)
+     report['notificationProducerEvents']=producer_events();report['nativeNotificationsObserved']=True
     elif SETTINGS:
      state_file=pathlib.Path(env['XDG_STATE_HOME'])/'warlock/settings.json'
      def stored():return json.loads(state_file.read_text()) if state_file.exists() else None
@@ -1134,6 +1208,8 @@ raise SystemExit(daemon.run())
     os.close(chord_writer);chord_writer=None
    if chord_keyboard is not None:
     chord_keyboard.wait(timeout=5);check('PersistentKeyboardNormalExit',chord_keyboard.returncode==0)
+   if notification_producer is not None and notification_producer.poll() is None:
+    notification_serial+=1;notification_control.write_text(json.dumps({"serial":notification_serial,"op":"quit"}));notification_producer.wait(timeout=5)
    for proc in reversed(apps):
     if proc.poll() is None:
      if proc is fixture:fixture_control('quit');proc.wait(timeout=5)

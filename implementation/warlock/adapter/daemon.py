@@ -8,6 +8,7 @@ from grant_endpoint import GrantEndpoint
 from reconciliation import Reconciliation
 from taskbar_projection import coherent_scene
 from catalog_transport import CatalogTransport
+from notification_service import Service as NotificationService
 from recovery_journal import RecoveryFailure,guarded
 from recovery_store import RecoveryStore as Journal
 from recovery_fault import after_submit
@@ -77,13 +78,16 @@ def event_socket(client):
  except BaseException:connection.close();raise
 
 
-def handle_request(client,catalog,request,recovery,reconciliation):
+def handle_request(client,catalog,request,recovery,reconciliation,notifications=None):
  if not isinstance(request,dict):raise Refused('Frontend request object')
  kind=request.get('kind')
  if kind=='reconciliation-ready':
   reconciliation.proof_ready(request);return
  if kind in {'catalog-request','application-launch','taskbar-pins-write','shell-settings-request','shell-settings-write'}:
   send(catalog.handle(request));return
+ if kind in {'notification-request','notification-effect'}:
+  if notifications is None:raise Refused('Notification service unavailable')
+  send(notifications.read(request,client) if kind=='notification-request' else notifications.effect(request,client));return
  if kind=='window-effect':
   exact(request,['protocolVersion','kind','effectProtocol','binding','intent'])
   if type(request['effectProtocol']) is not int or request['effectProtocol'] not in (1,2):raise Refused('Effect protocol')
@@ -171,10 +175,12 @@ def main():
  # Subscribe before initial projection; notifications may coalesce before a new
  # authoritative snapshot is requested, never after numbered publication.
  with event_socket(client) as events,selectors.DefaultSelector() as selector,ExitStack() as lifetime:
+  notification_service=lifetime.enter_context(NotificationService())
   hello=client.hello()
   recovery=lifetime.enter_context(guarded(lambda:Journal(config['runtime'],config['instance'],client.bound['lifetime'])))
   reconciliation=publish_startup(client,hello,recovery)
   chord_request=1;send(client.switcher_journal(str(chord_request)))
+  send(notification_service.observation(client));selector.register(notification_service.wake,selectors.EVENT_READ,'notifications')
   selector.register(0,selectors.EVENT_READ,'stdin');selector.register(events,selectors.EVENT_READ,'events')
   incoming=FrontendFrames();notifications=bytearray();dirty=False;have_snapshot=False;last_notice=0.0
   relevant={b'elmwindowstate',b'workspace',b'workspacev2',b'focusedmon',b'focusedmonv2',b'monitoradded',b'monitoraddedv2',b'monitorremoved',b'fullscreen',b'pin',b'openwindow',b'closewindow',b'windowtitle',b'windowtitlev2',b'activewindow',b'movewindow',b'movewindowv2',b'changefloatingmode'}
@@ -187,8 +193,10 @@ def main():
      if not data:incoming.finish();return 0
      for line in incoming.feed(data):
       request=json.loads(line,object_pairs_hook=unique)
-      handle_request(client,catalog,request,recovery,reconciliation)
+      handle_request(client,catalog,request,recovery,reconciliation,notification_service)
       if request.get('kind')=='projection-request':have_snapshot=True;dirty=False
+    elif key.data=='notifications':
+     notification_service.drain();send(notification_service.observation(client))
     else:
      data=events.recv(4096)
      if not data:raise Refused('Event connection closed')

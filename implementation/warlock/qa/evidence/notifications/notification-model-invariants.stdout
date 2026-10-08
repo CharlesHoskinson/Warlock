@@ -1,0 +1,259 @@
+An example execution:
+
+[State 0]
+{
+  counts: 0,
+  dispatched: Set(),
+  incarnation: 1,
+  live: true,
+  pending: false,
+  queuedIncarnation: 0,
+  queuedService: 0,
+  service: 1
+}
+
+[State 1]
+{
+  counts: 0,
+  dispatched: Set(),
+  incarnation: 1,
+  live: true,
+  pending: true,
+  queuedIncarnation: 1,
+  queuedService: 1,
+  service: 1
+}
+
+[State 2]
+{
+  counts: 0,
+  dispatched: Set(),
+  incarnation: 2,
+  live: true,
+  pending: true,
+  queuedIncarnation: 1,
+  queuedService: 1,
+  service: 1
+}
+
+[State 3]
+{
+  counts: 0,
+  dispatched: Set(),
+  incarnation: 1,
+  live: true,
+  pending: true,
+  queuedIncarnation: 1,
+  queuedService: 1,
+  service: 2
+}
+
+[State 4]
+{
+  counts: 0,
+  dispatched: Set(),
+  incarnation: 2,
+  live: true,
+  pending: true,
+  queuedIncarnation: 1,
+  queuedService: 1,
+  service: 2
+}
+
+[State 5]
+{
+  counts: 0,
+  dispatched: Set(),
+  incarnation: 3,
+  live: true,
+  pending: true,
+  queuedIncarnation: 1,
+  queuedService: 1,
+  service: 2
+}
+
+[State 6]
+{
+  counts: 0,
+  dispatched: Set(),
+  incarnation: 1,
+  live: true,
+  pending: true,
+  queuedIncarnation: 1,
+  queuedService: 1,
+  service: 3
+}
+
+[State 7]
+{
+  counts: 0,
+  dispatched: Set(),
+  incarnation: 2,
+  live: true,
+  pending: true,
+  queuedIncarnation: 1,
+  queuedService: 1,
+  service: 3
+}
+
+[State 8]
+{
+  counts: 0,
+  dispatched: Set(),
+  incarnation: 2,
+  live: false,
+  pending: true,
+  queuedIncarnation: 1,
+  queuedService: 1,
+  service: 3
+}
+
+[State 9]
+{
+  counts: 0,
+  dispatched: Set(),
+  incarnation: 1,
+  live: true,
+  pending: true,
+  queuedIncarnation: 1,
+  queuedService: 1,
+  service: 4
+}
+
+[State 10]
+{
+  counts: 0,
+  dispatched: Set(),
+  incarnation: 1,
+  live: true,
+  pending: true,
+  queuedIncarnation: 1,
+  queuedService: 1,
+  service: 5
+}
+
+[State 11]
+{
+  counts: 0,
+  dispatched: Set(),
+  incarnation: 2,
+  live: true,
+  pending: true,
+  queuedIncarnation: 1,
+  queuedService: 1,
+  service: 5
+}
+
+[State 12]
+{
+  counts: 0,
+  dispatched: Set(),
+  incarnation: 2,
+  live: false,
+  pending: true,
+  queuedIncarnation: 1,
+  queuedService: 1,
+  service: 5
+}
+
+[State 13]
+{
+  counts: 0,
+  dispatched: Set(),
+  incarnation: 2,
+  live: false,
+  pending: false,
+  queuedIncarnation: 1,
+  queuedService: 1,
+  service: 5
+}
+
+[State 14]
+{
+  counts: 0,
+  dispatched: Set(),
+  incarnation: 2,
+  live: false,
+  pending: false,
+  queuedIncarnation: 1,
+  queuedService: 1,
+  service: 5
+}
+
+[State 15]
+{
+  counts: 0,
+  dispatched: Set(),
+  incarnation: 2,
+  live: false,
+  pending: false,
+  queuedIncarnation: 1,
+  queuedService: 1,
+  service: 5
+}
+
+[State 16]
+{
+  counts: 0,
+  dispatched: Set(),
+  incarnation: 1,
+  live: true,
+  pending: false,
+  queuedIncarnation: 1,
+  queuedService: 1,
+  service: 6
+}
+
+[State 17]
+{
+  counts: 0,
+  dispatched: Set(),
+  incarnation: 1,
+  live: true,
+  pending: true,
+  queuedIncarnation: 1,
+  queuedService: 6,
+  service: 6
+}
+
+[State 18]
+{
+  counts: 0,
+  dispatched: Set(),
+  incarnation: 2,
+  live: true,
+  pending: true,
+  queuedIncarnation: 1,
+  queuedService: 6,
+  service: 6
+}
+
+[State 19]
+{
+  counts: 0,
+  dispatched: Set(),
+  incarnation: 2,
+  live: false,
+  pending: true,
+  queuedIncarnation: 1,
+  queuedService: 6,
+  service: 6
+}
+
+[State 20]
+{
+  counts: 0,
+  dispatched: Set(),
+  incarnation: 3,
+  live: true,
+  pending: true,
+  queuedIncarnation: 1,
+  queuedService: 6,
+  service: 6
+}
+
+[ok] No violation found (74ms at 1351 traces/second).
+Trace length statistics: max=21, min=21, average=21.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x13516 --backend=typescript to reproduce.

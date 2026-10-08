@@ -1,13 +1,74 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-08T12:05:39.738367+00:00",
+  "updatedUTC": "2026-10-08T12:48:01.486317+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "notification-center",
+    "requirements": [
+      "ELM-UX-031"
+    ],
+    "scenarios": [
+      "ux-031",
+      "notification-valid",
+      "notification-reused"
+    ],
+    "paths": [
+      "implementation/warlock/src/Notifications.elm",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/src/SurfaceRenderer.elm",
+      "implementation/warlock/src/SurfaceController.elm",
+      "implementation/warlock/adapter/notification_service.py",
+      "implementation/warlock/adapter/daemon.py",
+      "implementation/warlock/native/host.c",
+      "implementation/warlock/native/surface.h",
+      "implementation/warlock/assets/popup-adapter.js",
+      "implementation/warlock/qa/NotificationsReplay.elm",
+      "implementation/warlock/qa/check-notifications.py",
+      "implementation/warlock/qa/notifications.qnt",
+      "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/README.md",
+      "implementation/warlock/assets/elm.js",
+      "implementation/warlock/assets/bar.js",
+      "implementation/warlock/assets/popup.js",
+      "implementation/warlock/qa/current-search-build.json",
+      "implementation/warlock/qa/notifications-browser.mjs",
+      "implementation/warlock/qa/notification-producer.py",
+      "implementation/warlock/assets/shell.css"
+    ],
+    "before": "The integrated shell has no notification center or native producer action lifecycle.",
+    "after": "The center shows current notifications and history; exact producer/incarnation actions dispatch once, while expired or replaced targets are removed and rejected.",
+    "verification": [
+      "Changed Elm views/reducer and native units; real private-D-Bus producer/action/expiry/replacement fixtures; native center keyboard and painted lifecycle."
+    ],
+    "status": "native-notifications-observed-independent-acceptance-open",
+    "evidence": {
+      "path": "implementation/warlock/qa/evidence/notifications/manifest.json",
+      "sha256": "e082dadb49cb0807add94345fe6696ddcc39c7d3d3abae7d1f5667e3f0a5179b"
+    },
+    "nextAction": "Implement the next original mandatory system-menu slice ELM-UX-032: supported volume/network/power/session observations and explicit unavailable controls; preserve notification review obligations."
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "persistent-shell-settings",
     "requirements": [
       "ELM-UX-030"
@@ -56,81 +117,6 @@
       "sha256": "1f3fda77b902c3e9445c107aa13a4c4dba6d53c00f3eda6425a2cebaec5ba253"
     },
     "nextAction": "Continue the next original mandatory GUI slice: current-identity notification action/history and expiry, ELM-UX-031; retain independent review and broader settings/AT/IME obligations."
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "native-snap-chooser",
-    "requirements": [
-      "ELM-UX-019",
-      "ELM-UX-020"
-    ],
-    "scenarios": [
-      "ux-019",
-      "ux-020"
-    ],
-    "paths": [
-      "implementation/warlock/src/Snap.elm",
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/src/SurfaceRenderer.elm",
-      "implementation/warlock/src/SurfaceController.elm",
-      "implementation/warlock/native/surface.h",
-      "implementation/warlock/qa/SnapReplay.elm",
-      "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/assets/elm.js",
-      "implementation/warlock/assets/bar.js",
-      "implementation/warlock/assets/popup.js",
-      "implementation/warlock/assets/shell.css",
-      "implementation/warlock/README.md",
-      "implementation/warlock/assets/popup-adapter.js",
-      "implementation/warlock/qa/snap-browser.mjs",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/snap-chooser.qnt",
-      "implementation/warlock/assets/context.js",
-      "implementation/warlock/assets/activation.js",
-      "implementation/warlock/src/Effects.elm",
-      "implementation/warlock/src/GeometryProjection.elm",
-      "implementation/warlock/src/Shell.elm",
-      "implementation/warlock/src/ReceiptRouter.elm",
-      "implementation/warlock/native/authority.cpp",
-      "implementation/warlock/native/geometry-effects.inc",
-      "implementation/warlock/native/snap-placement.inc",
-      "implementation/warlock/native/host-journal.h",
-      "implementation/warlock/adapter/geometry_placement.py",
-      "implementation/warlock/adapter/geometry_endpoint.py",
-      "implementation/warlock/adapter/recovery_journal.py",
-      "implementation/warlock/qa/check-native-authority.py",
-      "implementation/warlock/qa/current-native-pair.json",
-      "implementation/warlock/qa/check-snap.py",
-      "implementation/warlock/adapter/admission_ledger.py",
-      "implementation/warlock/src/NativeOutcome.elm"
-    ],
-    "before": "Window actions expose Maximize/Restore but no snap chooser, typed region preview or output-generation-bound placement policy.",
-    "after": "Chooser submits a negotiated typed snap through existing preparation/allocator/custody; exact native accepted half placement is visible; changed-output old geometry is refused without replay.",
-    "verification": [
-      "Changed integrated Elm compile and actual chooser/reflow/stale-view replay; native host mode admission and browser controls. Continue with exact native effect authority and original isolated placement/stale-output recordings."
-    ],
-    "state": "Chooser integrated; 19 Elm checks, 14 browser utility/chooser checks, 45 menu regressions and 81 native campaign checks pass. Exact native snap placement is still required; original scenarios remain partial.",
-    "evidence": {
-      "path": "implementation/warlock/qa/evidence/snap-placement/manifest.json",
-      "sha256": "19ecc95a39ab602c65397e85304b8c25064952034f61cd601c82f8eb88056a87"
-    },
-    "nextSourceWork": "Extend the existing typed geometry effect operation, shared request allocator and durable custody through native placement authority; close the chooser before native geometry admission, reconcile fresh exact output/work-area/workspace scope, then qualify actual left-half placement and stale-output refusal using the original isolated oracles.",
-    "status": "native-placement-observed-independent-acceptance-open"
   },
   "recentSlices": [
     {
