@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-UI-005",
+    "ELM-UX-029"
+  ],
+  "scenarios": [
+    "search-refused",
+    "search-no-match",
+    "launcher-refused"
+  ],
+  "scope": "Native search/refusal input and DOM work; initial and filtered controls paint. After actual close/reopen, refusal and no-match control interiors are black. Neither hide before detach nor GL initialization repaired it. Two attempted fixes are retired; no current GUI acceptance.",
+  "reports": [
+    {
+      "path": "implementation/warlock/qa/evidence/popup-reopen/retained-false-positive.json",
+      "sha256": "28fcf568855c7d44ee42cb14574565cb8a3016ff08d5a468ba907b3c3d9adaba",
+      "original": "implementation/warlock/qa/runs/native-search-1791416276882507525/report.json",
+      "originalSHA256": "28fcf568855c7d44ee42cb14574565cb8a3016ff08d5a468ba907b3c3d9adaba",
+      "passed": true,
+      "disposition": "unqualified false-positive pixel check",
+      "cleanupPassed": true
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-reopen/hide-attempt.json",
+      "sha256": "54e821d1b3a66f6c89a813e3d864799f1e5b4ad907cfa9c1d9a58719cd447613",
+      "original": "implementation/warlock/qa/runs/native-search-1791416895154523911/report.json",
+      "originalSHA256": "54e821d1b3a66f6c89a813e3d864799f1e5b4ad907cfa9c1d9a58719cd447613",
+      "passed": false,
+      "disposition": "failed reopened popup physical controls",
+      "cleanupPassed": true
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-reopen/gl-attempt.json",
+      "sha256": "940774dce5e27af99d7fbcb98f99cdc719e2bdea284febe4eafaf981f1a339ca",
+      "original": "implementation/warlock/qa/runs/native-search-1791417152634572135/report.json",
+      "originalSHA256": "940774dce5e27af99d7fbcb98f99cdc719e2bdea284febe4eafaf981f1a339ca",
+      "passed": false,
+      "disposition": "failed reopened popup physical controls",
+      "cleanupPassed": true
+    }
+  ],
+  "retainedPatch": {
+    "path": "implementation/warlock/qa/evidence/popup-reopen/attempted-host-changes.patch",
+    "sha256": "8092b976998f2ddbb379abcea179e40f7e34077ab8cda8c9dcc9aa1ec8aad2e2",
+    "baseLocalRevision": "8ef1cae88755881a920f3e3fbdb5161b016a394a"
+  },
+  "independentReview": "pending",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "nextAction": "Stop expanding popup investigation under v2 two-trial limit; implement Task View. Reopened renderer surface remains a release obligation."
+}

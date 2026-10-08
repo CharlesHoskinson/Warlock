@@ -14,6 +14,7 @@ import Shell
 import Taskbar
 import Effects
 import TaskbarShell
+import TaskView
 import UInt64 exposing (Counter)
 
 type alias Model =
@@ -29,13 +30,16 @@ type alias Model =
     , pins : Pins.Model
     , query : String
     , open : Bool
+    , overview : Bool
+    , overviewWorkspace : Maybe String
     , request : Counter
     , presentation : Maybe Counter
     , expected : Maybe Counter
     , catalogFailure : Maybe { binding : Binding.Binding, request : Counter }
     }
 
-type alias FocusTarget = {binding : Binding.Binding, key : String, output : Maybe Counter}
+type FocusDestination = TaskbarGroup String | OverviewOpener
+type alias FocusTarget = {binding : Binding.Binding, destination : FocusDestination, output : Maybe Counter}
 
 type ChoiceToken = ChoiceToken Binding.Binding Counter
 
@@ -53,6 +57,10 @@ type Msg
     | PresentationOwner (Maybe {outputId : Counter, providerId : Counter})
     | Incoming D.Value
     | OpenApplications ViewStamp
+    | OpenOverview ViewStamp
+    | CloseOverview ViewStamp
+    | OverviewWorkspace ViewStamp (Maybe String)
+    | OverviewChoose ViewStamp Counter
     | CloseApplications ViewStamp
     | SearchQuery ViewStamp String
     | TogglePin ViewStamp String
@@ -73,7 +81,7 @@ type Effect
 
 initial : Model
 initial =
-    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, open = False, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
+    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, open = False, overview = False, overviewWorkspace = Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
 
 canProveCatalogUnsent : Binding.Binding -> Counter -> Model -> Bool
 canProveCatalogUnsent binding request model =
@@ -92,7 +100,7 @@ advance : Model -> Model
 advance model =
     case model.presentation |> Maybe.andThen UInt64.next of
         Just value -> { model | presentation = Just value }
-        Nothing -> { model | presentation = Nothing, open = False, applications = Nothing, expected = Nothing }
+        Nothing -> { model | presentation = Nothing, open = False, overview = False, applications = Nothing, expected = Nothing }
 
 
 host : Binding.Binding -> String
@@ -125,6 +133,8 @@ windowBase message model =
         , returnFocus = if disconnected || changed then Nothing else model.returnFocus
         , menuOrigin = if disconnected || changed || (MenuBridge.menuSnapshot windows.menus).menu==Nothing then Nothing else model.menuOrigin
         , choiceNotice = if disconnected || changed then "" else model.choiceNotice
+        , overview = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.overview
+        , overviewWorkspace = if disconnected || changed then Nothing else model.overviewWorkspace
         , pins = pins
         , request = read |> Maybe.map Tuple.second |> Maybe.withDefault model.request
         , applications = if disconnected || changed then Nothing else model.applications
@@ -158,7 +168,7 @@ window message model =
                     let (closed,effects)=windowBase message model
                     in if closed.windows.picker/=Nothing || picker.scope/=scope || picker.generation/=generation then (closed,effects) else
                         let (refreshing,commands)=windowBase (TaskbarShell.Native Shell.Refresh) closed
-                        in ({refreshing | returnFocus=Just {binding=binding,key=picker.key,output=model.windows.shell.effects.observed |> Maybe.map (.context >> .output)}},List.filter (\effect -> case effect of
+                        in ({refreshing | returnFocus=Just {binding=binding,destination=TaskbarGroup picker.key,output=model.windows.shell.effects.observed |> Maybe.map (.context >> .output)}},List.filter (\effect -> case effect of
                             Focus _ -> False
                             _ -> True) effects ++ commands)
                 _ -> windowBase message model
@@ -202,11 +212,14 @@ window message model =
                     Just target ->
                         if not matchingObservation || not (Shell.available updated.windows.shell) then (updated,ordinaryEffects) else
                             let retired={updated | returnFocus=Nothing}
-                                exists=TaskbarShell.groups retired.windows |> List.any (\group -> group.key==target.key && List.any .available group.families)
-                            in if retired.open || retired.windows.picker/=Nothing || (MenuBridge.menuSnapshot retired.windows.menus).menu/=Nothing || retired.windows.shell.binding/=Just target.binding || target.output==Nothing || (retired.windows.shell.effects.observed |> Maybe.map (.context >> .output))/=target.output || geometryOutput/=target.output || not exists then (retired,ordinaryEffects) else
-                                case Shell.capture retired.windows.shell of
-                                    Just scope -> (retired,ordinaryEffects++[Focus ("group:" ++ Shell.stampKey scope ++ ":" ++ target.key)])
-                                    Nothing -> (retired,ordinaryEffects)
+                                exists=case target.destination of
+                                    TaskbarGroup groupKey -> TaskbarShell.groups retired.windows |> List.any (\group -> group.key==groupKey && List.any .available group.families)
+                                    OverviewOpener -> retired.choice==Nothing
+                                focus=case target.destination of
+                                    TaskbarGroup groupKey -> Shell.capture retired.windows.shell |> Maybe.map (\scope -> "group:" ++ Shell.stampKey scope ++ ":" ++ groupKey)
+                                    OverviewOpener -> Just (key retired "control:overview-opener")
+                            in if retired.open || retired.overview || retired.windows.picker/=Nothing || (MenuBridge.menuSnapshot retired.windows.menus).menu/=Nothing || retired.windows.shell.binding/=Just target.binding || target.output==Nothing || (retired.windows.shell.effects.observed |> Maybe.map (.context >> .output))/=target.output || geometryOutput/=target.output || not exists then (retired,ordinaryEffects) else
+                                (retired,ordinaryEffects++(focus |> Maybe.map (Focus >> List.singleton) |> Maybe.withDefault []))
                     Nothing -> (updated,ordinaryEffects)
 
             in case next.choice of
@@ -272,10 +285,10 @@ update message model =
                                 Ok provider ->
                                     let (next,effects)=windowBase (TaskbarShell.OpenMenu provider) model
                                     in if (MenuBridge.menuSnapshot next.windows.menus).menu==(MenuBridge.menuSnapshot model.windows.menus).menu then (model,[]) else
-                                        ({next | open=False,expected=Nothing,returnFocus=Nothing,menuOrigin=model.windows.shell.binding |> Maybe.andThen (\binding -> TaskbarShell.groups model.windows |> List.filter (\group -> List.any (\family -> family.root==root) group.families) |> List.head |> Maybe.map (\group -> {binding=binding,key=group.key,output=Just observed.context.output}))},effects)
+                                        ({next | open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=model.windows.shell.binding |> Maybe.andThen (\binding -> TaskbarShell.groups model.windows |> List.filter (\group -> List.any (\family -> family.root==root) group.families) |> List.head |> Maybe.map (\group -> {binding=binding,destination=TaskbarGroup group.key,output=Just observed.context.output}))},effects)
         Window value ->
             let (next,effects)=window value model
-            in if next.windows.picker/=Nothing && next.windows.picker/=model.windows.picker then ({next | open=False,expected=Nothing,menuOrigin=Nothing,returnFocus=Nothing},effects) else (next,effects)
+            in if next.windows.picker/=Nothing && next.windows.picker/=model.windows.picker then ({next | open=False,overview=False,expected=Nothing,menuOrigin=Nothing,returnFocus=Nothing},effects) else (next,effects)
         Incoming raw ->
             case D.decodeValue (D.field "kind" D.string) raw of
                 Ok "application-catalog" ->
@@ -318,7 +331,7 @@ update message model =
                         Nothing -> model
                         Just menu -> windowBase (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)) model |> Tuple.first
                 windows=base.windows
-                retired = advance {base | windows={windows | picker=Nothing}, returnFocus=Nothing, menuOrigin=Nothing, open = True, applications = Nothing, launch = Launch.catalog E.null model.launch, expected = Nothing, catalogFailure = Nothing}
+                retired = advance {base | windows={windows | picker=Nothing}, returnFocus=Nothing, menuOrigin=Nothing, open = True, overview = False, applications = Nothing, launch = Launch.catalog E.null model.launch, expected = Nothing, catalogFailure = Nothing}
             in case (model.windows.shell.binding, UInt64.next model.request) of
                 (Just binding,Just request) ->
                     if model.windows.shell.phase == Shell.Detached || retired.presentation == Nothing then (retired,[]) else
@@ -331,6 +344,40 @@ update message model =
             if capture model /= Just stamp || not model.open then (model,[]) else
                 let next = advance {model | open = False, expected = Nothing}
                 in (next,[Focus (key next "control:opener")])
+        OpenOverview stamp ->
+            if capture model/=Just stamp || model.choice/=Nothing || not (Shell.available model.windows.shell) || MenuBridge.preparedSnapshot model.windows.menus/=Nothing then (model,[]) else
+            let base = (MenuBridge.menuSnapshot model.windows.menus).menu
+                    |> Maybe.map (\menu -> windowBase (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)) model |> Tuple.first)
+                    |> Maybe.withDefault model
+                windows=base.windows
+                next=advance {base | overview=True,overviewWorkspace=Nothing,open=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing}}
+                focus=TaskView.activeWorkspace next.windows.shell |> Maybe.map (\workspace -> key next ("overview:workspace:"++workspace)) |> Maybe.withDefault (key next "overview:all")
+            in (next,[Focus focus])
+        CloseOverview stamp ->
+            if capture model/=Just stamp || not model.overview then (model,[]) else
+                let next=advance {model | overview=False,overviewWorkspace=Nothing}
+                    (refreshing,commands)=windowBase (TaskbarShell.Native Shell.Refresh) next
+                    target=model.windows.shell.binding |> Maybe.map (\binding -> {binding=binding,destination=OverviewOpener,output=model.windows.shell.effects.observed |> Maybe.map (.context >> .output)})
+                in ({refreshing | returnFocus=target},commands)
+        OverviewWorkspace stamp selected ->
+            if capture model/=Just stamp || not model.overview || selected==model.overviewWorkspace then (model,[]) else
+            let exists=selected |> Maybe.map (\workspace -> TaskView.groups model.windows.shell |> Maybe.map (List.any (\g -> g.identity==workspace)) |> Maybe.withDefault False) |> Maybe.withDefault True
+                next=advance {model | overviewWorkspace=selected}
+            in if not exists then (model,[]) else (next,[Focus (key next (selected |> Maybe.map ((++) "overview:workspace:") |> Maybe.withDefault "overview:all"))])
+        OverviewChoose stamp root ->
+            if capture model/=Just stamp || not model.overview || model.choice/=Nothing || not (Shell.available model.windows.shell) then (model,[]) else
+            let selected=TaskView.groups model.windows.shell |> Maybe.withDefault []
+                    |> List.filter (\g -> model.overviewWorkspace==Nothing || model.overviewWorkspace==Just g.identity)
+                    |> List.concatMap .windows |> List.filter (\family -> family.root==root && family.available && not (MenuBridge.blockedFor root model.windows.shell model.windows.menus)) |> List.head
+            in case (selected,model.windows.shell.binding,model.windows.shell.effects.observed) of
+                (Just family,Just binding,Just observed) ->
+                    let (next,effects)=windowBase (TaskbarShell.Native Shell.Refresh) {model | overview=False,choiceNotice=""}
+                    in case next.windows.shell.expected of
+                        Just request ->
+                            let token=ChoiceToken binding request
+                            in ({next | choice=Just {binding=binding,output=observed.context.output,root=root,application=family.application,token=token}},effects++[ArmChoice token])
+                        Nothing -> (next,effects)
+                _ -> (model,[])
         SearchQuery stamp query ->
             if capture model /= Just stamp || not model.open || query==model.query || String.length query > 256 || String.any (\c -> Char.toCode c < 32 || Char.toCode c == 127) query then (model,[]) else
                 (advance {model | query=query},[])
@@ -345,7 +392,7 @@ update message model =
             let (launch,intent) = Launch.start selection model.launch
             in case (intent,model.windows.shell.binding) of
                 (Just wire,Just binding) ->
-                    ({model | launch = launch, open = False, expected = Nothing},Send (E.object [("protocolVersion",E.int 3),("kind",E.string "application-launch"),("binding",Binding.encode binding),("intent",wire)]) :: (Launch.pending launch |> Maybe.map (Arm >> List.singleton) |> Maybe.withDefault []))
+                    ({model | launch = launch, open = False, overview = False, expected = Nothing},Send (E.object [("protocolVersion",E.int 3),("kind",E.string "application-launch"),("binding",Binding.encode binding),("intent",wire)]) :: (Launch.pending launch |> Maybe.map (Arm >> List.singleton) |> Maybe.withDefault []))
                 _ -> ({model | launch = launch},[])
         Deadline token -> ({model | launch = Launch.timeout token model.launch},[])
         Acknowledge token -> ({model | launch = Launch.acknowledgeUnknown token model.launch},[])

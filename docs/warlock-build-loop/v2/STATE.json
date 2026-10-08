@@ -1,51 +1,48 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-07T23:29:55.139447+00:00",
+  "updatedUTC": "2026-10-08T00:24:46.313976+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "persistent-catalog-pins",
+    "id": "task-view-workspace-overview",
     "requirements": [
-      "ELM-UI-004",
-      "ELM-UX-004"
+      "ELM-UX-017",
+      "ELM-UI-006"
     ],
     "scenarios": [
-      "taskbar-zero",
-      "ux-004"
+      "ux-017",
+      "overview-cancel",
+      "overview-retire"
     ],
-    "before": "Catalog launchers and chosen pin order do not persist in the integrated candidate.",
-    "after": "Users can pin and reorder desktop identities, retain relative order after shell restart, and launch a pinned zero-window identity once.",
-    "state": "implemented; compiled replay, native keyboard pin/reorder, whole shell restart/order/pixels and pointer zero-window launch verified; independent review, popup presentation and applicable AT remain open",
+    "before": "Integrated bar has no Task View; populated workspace/window membership cannot be browsed in the Elm shell.",
+    "after": "Task View opens from the bar, groups exact native window families by workspace, names the active workspace, permits keyboard/pointer filtering and current eligible window choice, and dismisses without mutation. Cross-workspace activation/transfer, empty native destinations and full AT remain release work.",
     "paths": [
-      "src/Pins.elm",
       "src/Desktop.elm",
+      "src/TaskView.elm",
       "src/Surface.elm",
       "src/SurfaceRenderer.elm",
-      "adapter/taskbar_preferences.py",
-      "adapter/catalog_transport.py",
-      "adapter/daemon.py",
-      "native/host.c",
+      "src/SurfaceController.elm",
       "native/surface.h",
+      "qa/TaskViewReplay.elm",
+      "qa/task-view.qnt",
       "qa/check-search.py",
-      "qa/check-pin-storage.py",
-      "qa/PinsReplay.elm",
-      "qa/pins.qnt",
+      "qa/native-window-feedback.py",
+      "qa/current-search-build.json",
       "assets/elm.js",
       "assets/bar.js",
-      "assets/popup.js",
-      "qa/native-window-feedback.py",
-      "qa/current-search-build.json"
+      "assets/popup.js"
     ],
     "verification": [
-      "Typed pin/reorder and catalog reconciliation replay",
-      "Isolated native restart/order and zero-window identity-bound launch recording"
+      "Compile current Elm roots and native surface admission; reuse unchanged native C++ objects with source/header identity checks",
+      "Typed replay and bounded Quint prove stale selections/retired identities cannot mutate or substitute",
+      "Owned native two-workspace popup, keyboard filter/dismiss and physical capture; retain black reopen failure separately"
     ],
-    "evidence": "implementation/warlock/qa/evidence/persistent-pins/manifest.json",
-    "missingObservation": "Independent reviewer, native zero-window keyboard/AT route, and actual launcher popup pixels remain open. Pins after restart are physically visible in the captured native taskbar."
+    "state": "implemented; original two-workspace native membership/active marker/control pixels and local keyboard/pointer browsing observed; dismissal focus failed twice and is deferred; independent/AT review remains open",
+    "evidence": "implementation/warlock/qa/evidence/task-view/manifest.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -62,36 +59,35 @@
   "last24hTokenUsage": "unavailable; old goal figure was cumulative",
   "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
   "previousSlice": {
-    "id": "launcher-search",
+    "id": "launcher-popup-presentation",
     "requirements": [
       "ELM-UI-005",
-      "ELM-UX-029"
+      "ELM-UX-029",
+      "ELM-UX-004"
     ],
     "scenarios": [
       "search-no-match",
-      "search-race",
-      "search-removed",
       "search-refused",
-      "launcher-refused"
+      "launcher-refused",
+      "ux-004"
     ],
-    "before": "Applications is an unfiltered catalog; there is no editable search query.",
-    "after": "Typing filters and ranks current catalog results; current query owns selection and survives refusal; Enter sends one identity-bound launch.",
-    "state": "implemented; compiled and native behavior verified; black popup physical presentation remains open",
+    "before": "Native applications popup receives input but retained native capture is solid black; search/pin controls are not physically qualified.",
+    "after": "Current launcher results, refusal/no-match status and pin controls paint in the actual owned popup without altering controlled preview reveal authority.",
     "paths": [
-      "src/Desktop.elm",
-      "src/Surface.elm",
-      "src/SurfaceRenderer.elm",
-      "src/Catalog.elm",
-      "native/surface.h",
-      "adapter/taskbar_catalog.py"
+      "native/host.c",
+      "native/shared-host.c",
+      "qa/native-window-feedback.py",
+      "qa/check-search.py",
+      "qa/current-search-build.json"
     ],
     "verification": [
-      "compile changed targets and native admission",
-      "current/stale query and current catalog replay",
-      "actual native query/keyboard launch and refusal when ready"
+      "Changed native host compile and relink with verified unchanged objects",
+      "Actual Wayland popup captures correlated to initial/current query, refusal and no-match; keyboard remains current-scoped",
+      "Controlled preview curtain unchanged; original acceptance and applicable AT remain separate"
     ],
-    "evidence": "implementation/warlock/qa/evidence/launcher-search/manifest.json",
-    "missingObservation": "Capture is after Refresh and no-match, despite its original search-refused.png filename. The bar paints the no-match status; the 700x420 applications popup is solid black. DOM, focus acknowledgement and successful input do not prove visible controls. Controlled preview mode was not requested; do not attribute this to or lift the preview curtain without evidence."
+    "state": "deferred after two unsuccessful native lifecycle fixes; physical reopened popup remains failed",
+    "evidence": "implementation/warlock/qa/evidence/popup-reopen/manifest.json",
+    "missingObservation": "Initial/filtered popup paints; refused/no-match popup after native close/reopen is black. Whole-popup old pixel count was a false positive. Two attempted fixes are retired."
   },
   "recentSlices": [
     {
@@ -174,6 +170,64 @@
       ],
       "evidence": "implementation/warlock/qa/evidence/launcher-search/manifest.json",
       "missingObservation": "Capture is after Refresh and no-match, despite its original search-refused.png filename. The bar paints the no-match status; the 700x420 applications popup is solid black. DOM, focus acknowledgement and successful input do not prove visible controls. Controlled preview mode was not requested; do not attribute this to or lift the preview curtain without evidence."
+    },
+    {
+      "id": "persistent-catalog-pins",
+      "requirements": [
+        "ELM-UI-004",
+        "ELM-UX-004"
+      ],
+      "scenarios": [
+        "taskbar-zero",
+        "ux-004"
+      ],
+      "before": "Catalog launchers and chosen pin order do not persist in the integrated candidate.",
+      "after": "Users can pin and reorder desktop identities, retain relative order after shell restart, and launch a pinned zero-window identity once.",
+      "state": "implemented; compiled replay, native keyboard pin/reorder, whole shell restart/order/pixels and pointer zero-window launch verified; independent review, popup presentation and applicable AT remain open",
+      "paths": [
+        "src/Pins.elm",
+        "src/Desktop.elm",
+        "src/Surface.elm",
+        "src/SurfaceRenderer.elm",
+        "adapter/taskbar_preferences.py",
+        "adapter/catalog_transport.py",
+        "adapter/daemon.py",
+        "native/host.c",
+        "native/surface.h",
+        "qa/check-search.py",
+        "qa/check-pin-storage.py",
+        "qa/PinsReplay.elm",
+        "qa/pins.qnt",
+        "assets/elm.js",
+        "assets/bar.js",
+        "assets/popup.js",
+        "qa/native-window-feedback.py",
+        "qa/current-search-build.json"
+      ],
+      "verification": [
+        "Typed pin/reorder and catalog reconciliation replay",
+        "Isolated native restart/order and zero-window identity-bound launch recording"
+      ],
+      "evidence": "implementation/warlock/qa/evidence/persistent-pins/manifest.json",
+      "missingObservation": "Independent reviewer, native zero-window keyboard/AT route, and actual launcher popup pixels remain open. Pins after restart are physically visible in the captured native taskbar."
     }
-  ]
+  ],
+  "nextOriginalSlice": {
+    "id": "cross-workspace-native-activation",
+    "requirements": [
+      "ELM-UI-002",
+      "ELM-UI-006",
+      "ELM-UX-008"
+    ],
+    "scenarios": [
+      "activate-other-workspace",
+      "overview-select",
+      "ux-008"
+    ],
+    "observedBlocker": "Current native effect1 authority requires workspaceVisible and refuses off-workspace roots; current Task View shows them disabled. Implement identity-bound navigation on the owning output without moving membership, validate current target/fallback before activation, and retain original Refused/Unknown semantics. Do not substitute local browsing for navigation.",
+    "deferredOriginalFailures": [
+      "ELM-UI-006 overview-cancel: native eligible opener focus return",
+      "ELM-UI-005 reopened launcher popup physical controls"
+    ]
+  }
 }

@@ -1,0 +1,70 @@
+diff --git i/implementation/warlock/native/host.c w/implementation/warlock/native/host.c
+index 18979a5..2d7f1b3 100644
+--- i/implementation/warlock/native/host.c
++++ w/implementation/warlock/native/host.c
+@@ -456,7 +456,9 @@ static void popup_hide(void) {
+     if (gtk_grab_get_current()==popover) gtk_grab_remove(popover);
+     gdk_seat_ungrab(gdk_display_get_default_seat(gtk_widget_get_display(window)));
+     GtkWidget *retired=popover;popover=NULL;
+-    /* Reparent the presentation engine before destroying its lease-owned wrapper. */
++    /* End the engine's visible lifetime before detaching its native surface.
++     * It is retained for the next lease, where show_all maps it afresh. */
++    gtk_widget_hide(GTK_WIDGET(popup_view));
+     g_object_ref(popup_view);gtk_container_remove(GTK_CONTAINER(retired),GTK_WIDGET(popup_view));
+     gtk_widget_hide(retired);gtk_widget_destroy(retired);
+     /* Fence native popup destruction before the post-close authoritative read. */
+@@ -555,6 +557,17 @@ static gboolean popup_dimensions(int logical_width,int logical_height,int *width
+     /* Owning compositor positioner insets its constraint box by four logical pixels. */
+     *width=MIN(700,logical_width-8);*height=MIN(420,logical_height-48-4);return TRUE;
+ }
++static gboolean popup_draw_report(GtkWidget *widget,cairo_t *cr,gpointer unused) {
++    (void)unused;
++    static guint64 publication;
++    if (!qa_exit || !popup_active || widget!=GTK_WIDGET(popup_view) || publication==surface_gate.publication) return FALSE;
++    publication=surface_gate.publication;
++    GtkAllocation allocation;gtk_widget_get_allocation(widget,&allocation);
++    GdkRGBA color;webkit_web_view_get_background_color(popup_view,&color);
++    double left,top,right,bottom;cairo_clip_extents(cr,&left,&top,&right,&bottom);
++    g_print("popup-draw-observation: publication=%" G_GUINT64_FORMAT " mapped=%d viewOpacity=%.3f parentOpacity=%.3f allocation=%d,%d clip=%.1f,%.1f,%.1f,%.1f background=%.3f,%.3f,%.3f,%.3f\n",publication,gtk_widget_get_mapped(widget),gtk_widget_get_opacity(widget),gtk_widget_get_opacity(popover),allocation.width,allocation.height,left,top,right,bottom,color.red,color.green,color.blue,color.alpha);fflush(stdout);
++    return FALSE;
++}
+ static gboolean popup_open(void) {
+     if (popup_active) return TRUE;
+     GdkRectangle geometry;int width,height;
+@@ -568,6 +581,7 @@ static gboolean popup_open(void) {
+     gtk_window_set_default_size(GTK_WINDOW(popover),width,height);
+     gtk_widget_set_size_request(GTK_WIDGET(popup_view),width,height);
+     gtk_container_add(GTK_CONTAINER(popover),GTK_WIDGET(popup_view));g_object_unref(popup_view);
++    if (qa_exit && !g_signal_handler_find(popup_view,G_SIGNAL_MATCH_FUNC,0,0,NULL,G_CALLBACK(popup_draw_report),NULL)) g_signal_connect_after(popup_view,"draw",G_CALLBACK(popup_draw_report),NULL);
+     popup_connect(G_OBJECT(popover),"unmap-event",G_CALLBACK(popup_unmapped));
+     popup_connect(G_OBJECT(popover),"focus-in-event",G_CALLBACK(popup_focus));
+     popup_connect(G_OBJECT(popover),"focus-out-event",G_CALLBACK(popup_focus));
+@@ -578,6 +592,14 @@ static gboolean popup_open(void) {
+     popup_connect(G_OBJECT(native),"moved-to-rect",G_CALLBACK(popup_positioned));
+     gdk_window_move_to_rect(native,&anchor,GDK_GRAVITY_SOUTH_WEST,GDK_GRAVITY_NORTH_WEST,GDK_ANCHOR_SLIDE_X|GDK_ANCHOR_FLIP_Y|GDK_ANCHOR_SLIDE_Y,0,0);
+     popup_active=TRUE;
++    /* GTK 3 selects GL painting before a frame starts. WebKit retains its own
++     * context across reparenting, so initialize the new native paint context
++     * before mapping, rather than letting the first draw switch mid-frame. */
++    GError *gl_error=NULL;GdkGLContext *paint_context=gdk_window_create_gl_context(native,&gl_error);
++    if (!paint_context) {
++        surface_dismiss();g_print("surface-popup-refused: gl=%s\n",gl_error?gl_error->message:"unavailable");g_clear_error(&gl_error);return FALSE;
++    }
++    g_object_unref(paint_context);
+     GdkGrabStatus status=gdk_seat_grab(gdk_display_get_default_seat(gtk_widget_get_display(window)),native,GDK_SEAT_CAPABILITY_ALL,TRUE,NULL,bar_event,popup_prepare,popover);
+     if (status!=GDK_GRAB_SUCCESS) {surface_dismiss();g_print("surface-popup-refused: grab=%d\n",status);return FALSE;}
+     gtk_grab_add(popover);gtk_widget_grab_focus(GTK_WIDGET(popup_view));grab_ready=TRUE;
+diff --git i/implementation/warlock/native/shared-host.c w/implementation/warlock/native/shared-host.c
+index aac8a86..f462498 100644
+--- i/implementation/warlock/native/shared-host.c
++++ w/implementation/warlock/native/shared-host.c
+@@ -432,6 +432,9 @@ static WebKitWebView *shared_child(WebKitUserContentManager *manager) {
+     g_assert(webkit_web_view_get_context(child)==shared_context);
+     g_assert(webkit_web_view_get_settings(child)==shared_settings);
+     g_assert(webkit_web_view_get_user_content_manager(child)==manager);
++    /* Match the opaque shell canvas in the standalone host before first paint.
++     * Controlled preview setup can still close its own explicit opacity curtain. */
++    GdkRGBA backdrop={0.09,0.125,0.16,1.0};webkit_web_view_set_background_color(child,&backdrop);
+     g_print("view-process-policy: related=1 distinct-manager=1\n");fflush(stdout);
+     return child;
+ }

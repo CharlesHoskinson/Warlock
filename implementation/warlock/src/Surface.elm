@@ -13,6 +13,7 @@ import Launch
 import Shell
 import Taskbar
 import TaskbarShell
+import TaskView
 import UInt64 exposing (Counter)
 
 type alias Control =
@@ -39,14 +40,30 @@ recoveryPopup model = if recoveryNeeded model then [recoveryControl "control:rec
 
 mode : Desktop.Model -> String
 mode model =
-    if model.open then "applications"
+    if model.overview then "overview"
+    else if model.open then "applications"
     else if (MenuBridge.menuSnapshot model.windows.menus).menu/=Nothing then "menu"
     else if model.windows.picker /= Nothing then "picker"
     else "closed"
 
 controls : Desktop.Model -> List Control
 controls model =
-    if model.open then
+    if model.overview then
+        let scoped message = Desktop.capture model |> Maybe.map message
+            groups = TaskView.groups model.windows.shell |> Maybe.withDefault []
+            workspaceControl group =
+                {id="overview:workspace:"++group.identity,domId=Desktop.key model ("overview:workspace:"++group.identity),label="Workspace "++group.identity,ariaLabel="Browse workspace "++group.identity++(if group.active then "; active workspace" else ""),detail=(if group.active then "Active workspace" else "")++(if model.overviewWorkspace==Just group.identity then " • Selected" else ""),enabled=True,message=scoped (\stamp -> Desktop.OverviewWorkspace stamp (Just group.identity))}
+            familyControl group family =
+                let ready=Shell.available model.windows.shell && family.available && not (familyBlocked model family.root)
+                    identity="overview:family:"++UInt64.string family.root
+                    detail="Workspace "++group.identity++" • "++(if familyBlocked model family.root then "Awaiting native confirmation" else if not family.available then "Unavailable for activation" else if family.minimized then "Minimized" else "Open")
+                in {id=identity,domId=Desktop.key model identity,label=family.label,ariaLabel=(if family.minimized then "Restore " else "Activate ")++family.label++" on workspace "++group.identity,detail=detail,enabled=ready,message=if ready then scoped (\stamp -> Desktop.OverviewChoose stamp family.root) else Nothing}
+            workspaceRows group = workspaceControl group ::
+                (if model.overviewWorkspace==Nothing || model.overviewWorkspace==Just group.identity then List.map (familyControl group) group.windows else [])
+        in [{id="control:close",domId=Desktop.key model "overview:close",label="Close Task View",ariaLabel="Close Task View and return to windows",detail="",enabled=True,message=scoped Desktop.CloseOverview}
+           ,{id="overview:all",domId=Desktop.key model "overview:all",label="All windows",ariaLabel="Browse all workspaces",detail=if model.overviewWorkspace==Nothing then "Selected" else "",enabled=True,message=scoped (\stamp -> Desktop.OverviewWorkspace stamp Nothing)}]
+            ++ List.concatMap workspaceRows groups ++ [recoveryControl "overview:refresh" model]
+    else if model.open then
         let
             scoped build = Desktop.capture model |> Maybe.map build
             entries = model.applications |> Maybe.map (Catalog.search model.query) |> Maybe.withDefault []
@@ -92,6 +109,7 @@ barControls : Desktop.Model -> List Control
 barControls model =
     let
         application = {id="bar:applications",domId=Desktop.key model "control:opener",label="Applications",ariaLabel="Open applications",detail="",enabled=model.windows.shell.phase/=Shell.Detached,message=Desktop.capture model |> Maybe.map Desktop.OpenApplications}
+        overview = {id="bar:overview",domId=Desktop.key model "control:overview-opener",label="Task View",ariaLabel="Open Task View",detail="",enabled=Shell.available model.windows.shell && model.choice==Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenOverview}
         groupControl group =
             let scoped = Shell.capture model.windows.shell
                 blocked = case Taskbar.primary False group.families of
@@ -125,11 +143,17 @@ barControls model =
         ordinaryGroups=TaskbarShell.groups model.windows |> List.filter (\group -> List.length (owners group)/=1)
         reconnect = {id="bar:reconnect",domId="reconnect",label="Reconnect",ariaLabel="Reconnect to the window system",detail="",enabled=not model.windows.shell.reconnecting,message=Just (Desktop.Window (TaskbarShell.Native Shell.Reconnect))}
         retry = {id="bar:refresh-windows",domId=Desktop.key model "refresh-windows",label="Refresh windows",ariaLabel="Refresh windows",detail="",enabled=model.choice==Nothing,message=Just Desktop.RetryWindows}
-    in (if model.windows.shell.phase==Shell.Detached then reconnect else application) :: List.map pinControl pinIds ++ List.map groupControl ordinaryGroups ++ (if not (String.isEmpty model.choiceNotice) && model.windows.shell.phase/=Shell.Detached then [retry] else []) ++ (if recoveryNeeded model && model.windows.shell.phase/=Shell.Detached then [recoveryControl "bar:recovery-refresh" model] else [])
+    in (if model.windows.shell.phase==Shell.Detached then reconnect else application) :: overview :: List.map pinControl pinIds ++ List.map groupControl ordinaryGroups ++ (if not (String.isEmpty model.choiceNotice) && model.windows.shell.phase/=Shell.Detached then [retry] else []) ++ (if recoveryNeeded model && model.windows.shell.phase/=Shell.Detached then [recoveryControl "bar:recovery-refresh" model] else [])
 
 notice : Desktop.Model -> String
 notice model =
-    if mode model=="menu" then
+    if model.overview then
+        if recoveryNeeded model then windowNotice model else
+        case TaskView.groups model.windows.shell of
+            Nothing -> "Waiting for current workspace information. Refresh window status."
+            Just [] -> "No windows to show. Close Task View to return."
+            Just _ -> "Choose a window on the current workspace, or browse another workspace."
+    else if mode model=="menu" then
         case (MenuBridge.menuSnapshot model.windows.menus).menu |> Maybe.map .status of
             Just (Menu.Refused reason) -> reason
             Just (Menu.Unknown _) -> "The operation could not be confirmed."

@@ -1,0 +1,47 @@
+module TaskView exposing (Workspace, groups, activeWorkspace)
+
+import ActionProjection as Scene
+import GeometryProjection
+import Shell
+import Taskbar
+
+type alias Workspace = { identity : String, active : Bool, windows : List Taskbar.Family }
+
+-- Geometry supplies membership; the action projection supplies family identity
+-- and action eligibility. Enumeration never grants live paint/input authority.
+groups : Shell.Model -> Maybe (List Workspace)
+groups shell =
+    case (shell.effects.observed,shell.geometry) of
+        (Just observed,Just geometry) ->
+            let rows = Scene.windows observed.scene
+                matching row = GeometryProjection.window row.incarnation geometry
+                    |> Maybe.map (\g -> g.owner==row.owner && g.minimized==row.minimized)
+                    |> Maybe.withDefault False
+                focusedWorkspace = Scene.focused observed.scene
+                    |> Maybe.andThen (\identity -> GeometryProjection.window identity geometry)
+                    |> Maybe.andThen .workspace
+                families = Taskbar.groups observed.scene |> List.concatMap .families
+                positive workspace = not (String.isEmpty workspace) && not (String.startsWith "-" workspace) && workspace/="0"
+                add family accumulated =
+                    case GeometryProjection.window family.root geometry |> Maybe.andThen .workspace of
+                        Just workspace ->
+                            if not (positive workspace) then accumulated else
+                            if List.any (\g -> g.identity==workspace) accumulated then
+                                List.map (\g -> if g.identity==workspace then {g | windows=g.windows++[family]} else g) accumulated
+                            else accumulated++[{identity=workspace,active=focusedWorkspace==Just workspace,windows=[family]}]
+                        Nothing -> accumulated
+                -- Action and geometry revision counters have different owners.
+                -- Join only display metadata under the same native authority;
+                -- choosing a window still refreshes its current action grant.
+                sameAuthority = shell.binding==Just geometry.binding
+                    && observed.context.lifetime==geometry.context.lifetime
+                    && observed.context.epoch==geometry.context.epoch
+                    && observed.context.output==geometry.context.output
+                    && Scene.focused observed.scene==geometry.focused
+                    && List.length rows==List.length geometry.windows && List.all matching rows
+            in if not sameAuthority then Nothing else
+                Just (List.foldl add [] families |> List.sortWith (\a b -> compare (String.length a.identity,a.identity) (String.length b.identity,b.identity)))
+        _ -> Nothing
+
+activeWorkspace : Shell.Model -> Maybe String
+activeWorkspace shell = groups shell |> Maybe.andThen (List.filter .active >> List.head) |> Maybe.map .identity

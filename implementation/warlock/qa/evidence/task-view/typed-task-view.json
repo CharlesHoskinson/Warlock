@@ -1,0 +1,119 @@
+{
+  "checks": {
+    "groupsMatchMembership": true,
+    "activeWorkspaceNamed": true,
+    "openingIsObservationOnly": true,
+    "workspaceBrowseIsLocal": true,
+    "staleSelectionInert": true,
+    "unavailableWorkspaceNeverActivates": true,
+    "retiredIdentityNeverSubstitutes": true,
+    "selectionRefreshesBeforeEffect": true,
+    "duplicateChoiceInert": true,
+    "dismissalDoesNotMutate": true,
+    "dismissalDefersDOMFocusUntilFreshRead": true,
+    "independentRevisionNamespacesRemainBrowsable": true,
+    "mixedOutputMembershipWithheld": true,
+    "mixedFocusMembershipWithheld": true,
+    "mixedMinimizedMembershipWithheld": true,
+    "ordinaryRendererAcceptsTaskView": true
+  },
+  "frame": {
+    "surfaceProtocol": 2,
+    "publication": "1",
+    "lease": "1",
+    "mode": "overview",
+    "status": "Choose a window on the current workspace, or browse another workspace.",
+    "bar": [
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:overview",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:control:overview-opener",
+        "label": "Task View",
+        "ariaLabel": "Open Task View",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:group:application:Editor",
+        "domId": "group:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:1:application:Editor",
+        "label": "Editor",
+        "ariaLabel": "Minimize Editor",
+        "detail": "1",
+        "enabled": true
+      },
+      {
+        "id": "bar:group:application:Files",
+        "domId": "group:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:1:application:Files",
+        "label": "Files",
+        "ariaLabel": "Unavailable Files",
+        "detail": "1",
+        "enabled": false
+      }
+    ],
+    "popup": [
+      {
+        "id": "control:close",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:overview:close",
+        "label": "Close Task View",
+        "ariaLabel": "Close Task View and return to windows",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "overview:all",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:overview:all",
+        "label": "All windows",
+        "ariaLabel": "Browse all workspaces",
+        "detail": "Selected",
+        "enabled": true
+      },
+      {
+        "id": "overview:workspace:1",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:overview:workspace:1",
+        "label": "Workspace 1",
+        "ariaLabel": "Browse workspace 1; active workspace",
+        "detail": "Active workspace",
+        "enabled": true
+      },
+      {
+        "id": "overview:family:1",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:overview:family:1",
+        "label": "Editor",
+        "ariaLabel": "Activate Editor on workspace 1",
+        "detail": "Workspace 1 • Open",
+        "enabled": true
+      },
+      {
+        "id": "overview:workspace:2",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:overview:workspace:2",
+        "label": "Workspace 2",
+        "ariaLabel": "Browse workspace 2",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "overview:family:2",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:overview:family:2",
+        "label": "Files",
+        "ariaLabel": "Activate Files on workspace 2",
+        "detail": "Workspace 2 • Unavailable for activation",
+        "enabled": false
+      },
+      {
+        "id": "overview:refresh",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:overview:refresh",
+        "label": "Refresh window status",
+        "ariaLabel": "Refresh window status; read observations without retrying actions",
+        "detail": "Observation only",
+        "enabled": true
+      }
+    ]
+  }
+}

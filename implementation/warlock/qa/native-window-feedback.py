@@ -4,7 +4,7 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
 lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
 """
 import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
-FOCUS=sys.argv[1:]==['--taskbar-focus'];SEARCH=sys.argv[1:]==['--launcher-search'];PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS;assert not sys.argv[1:] or FOCUS or CATALOG
+FOCUS=sys.argv[1:]==['--taskbar-focus'];PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS;TASKVIEW=sys.argv[1:]==['--task-view'];assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143';RUNTIME=REPO/'implementation/warlock-client-provider-native-v204'
 sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
 spec=importlib.util.spec_from_file_location('feedback_private_host',RUNTIME/'candidate_host.py');host=importlib.util.module_from_spec(spec);spec.loader.exec_module(host)
@@ -16,7 +16,7 @@ isolate_session_host(host)
 sys.path.insert(0,str(ROOT/'adapter'));from effect_endpoint import Endpoint;from endpoint import start_time
 pre=json.loads((RUNTIME/'qa/preflight.json').read_text());pair=pre['pair'];build_path=pathlib.Path(pre['controlledHostBuild']);build=json.loads(build_path.read_text());assert build['passed'];binary=build_path.parent/'elm-host';assert sha(binary)==build['binarySHA256']
 CURRENT=(ROOT/'qa/current-search-build.json').exists()
-assert not CATALOG or CURRENT
+assert not (CATALOG or TASKVIEW) or CURRENT
 if CURRENT:
  current=json.loads((ROOT/'qa/current-search-build.json').read_text());build_path=REPO/current['report'];assert sha(build_path)==current['reportSHA256'];build=json.loads(build_path.read_text());assert build['passed'];binary=build_path.parent/'elm-host';assert sha(binary)==build['binarySHA256'];assert all(sha(ROOT/p)==h for p,h in build['inputs'].items() if p.startswith(('src/','native/','adapter/')))
 else:
@@ -24,12 +24,13 @@ else:
 for row in pair.values():assert sha(row['path'])==row['sha256']
 assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
 subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
-OUT=ROOT/'qa/runs'/(('native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+OUT=ROOT/'qa/runs'/(('native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
 OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
 POINTER=pathlib.Path('/home/hoskinson/.local/share/hypr-window-controls/qa/virtual-pointer');FIXTURE=RUNTIME/'fixture.py'
 report={'schema':1,'requirements':['ELM-UI-007'],'scenarios':['restore-pending','restore-refused','restore-unknown'],'scope':'Actual pointer/Elm/native effect feedback and private compositor pixels; no AT/IME/full release acceptance','nativeFeedbackObserved':False,'nativeAcceptance':False,'assistiveTechnologyAccepted':False,'fullReleaseAccepted':False,'mainDesktopActions':False,'passed':False,'checks':[],'sourceInputs':{str(p.relative_to(ROOT)):sha(p) for folder in ['src','native','adapter','assets'] for p in (ROOT/folder).iterdir() if p.is_file()},'pair':pair,'nativeHost':{'path':str(binary),'sha256':sha(binary),'heldBuild':str(build_path),'heldBuildSHA256':sha(build_path)},'runtimeByReference':{'root':str(RUNTIME),'hostSHA256':sha(RUNTIME/'candidate_host.py')},'helpers':[],'nativeFixtures':[]};s=None;loaded=False;apps=[];broker=None;paused=False;sequence=0
 if SEARCH:report.update(requirements=['ELM-UI-005','ELM-UX-029'],scenarios=['search-no-match','search-race','search-refused','launcher-refused'],scope='Actual current query and private catalog, native typing/Enter refusal and no duplicate launch; AT/IME and popup physical presentation acceptance remain pending',popupPresentationAccepted=False)
 if PINS:report.update(requirements=['ELM-UI-004','ELM-UX-004'],scenarios=['taskbar-zero','ux-004'],scope='Actual native keyboard pin/reorder, shell restart, identity order and one current zero-window launch; popup physical presentation and AT acceptance remain separate',popupPresentationAccepted=False,nativePinJourneyObserved=False)
+if TASKVIEW:report.update(requirements=['ELM-UX-017','ELM-UI-006'],scenarios=['ux-017','overview-cancel'],scope='Actual two populated native workspaces, exact window membership and active marker, keyboard/pointer local browsing and Escape recipient; independent and applicable AT acceptance remain pending',nativeTaskViewJourneyObserved=False)
 if FOCUS:report.update(requirements=['ELM-UI-004','ELM-UX-024'],scenarios=['taskbar-group','ux-024'],scope='Actual native picker traversal and Escape/focus recipient diagnosis; menu/AT original acceptance remains pending')
 LUA=b'''hl.config({xwayland={enabled=false},animations={enabled=false}})
 hl.monitor({output="WAYLAND-1",mode="800x600@60",position="0x0",scale=1})
@@ -83,7 +84,11 @@ try:
     (catalog_root/'warlock-editor.desktop').write_text('[Desktop Entry]\nType=Application\nName=Editor\nGenericName=Text editor\nExec=/usr/bin/true\n')
    control=OUTPUT/'fixture-control.json';fixture=s.host.launch('fixture',['/usr/bin/python3','-B',str(FIXTURE),str(control)],env=env);apps.append(fixture)
    wait(lambda:any(w['title']=='ELM-AUTHORITY-FIXTURE' for w in s.data('clients')));wait(lambda:any(w['title']=='ELM-ACTIVATION-PEER' for w in s.data('clients')));
-   if not FOCUS:fixture_control('hide-peer');wait(lambda:len(s.data('clients'))==1)
+   if not (FOCUS or TASKVIEW):fixture_control('hide-peer');wait(lambda:len(s.data('clients'))==1)
+   if TASKVIEW:
+    peer=next(w for w in s.data('clients') if w['title']=='ELM-ACTIVATION-PEER')
+    check('OwnedPeerMovesToWorkspaceTwo',s.ctl('dispatch',"hl.dsp.window.move({workspace=2,follow=false,window='address:"+peer['address']+"'})").strip()=='ok')
+    wait(lambda:any(w['title']=='ELM-ACTIVATION-PEER' and w['workspace']['id']==2 for w in s.data('clients')))
    w=next(w for w in s.data('clients') if w['title']=='ELM-AUTHORITY-FIXTURE');selector='address:'+w['address']
    if not w['floating']:check('FixtureFloats',s.ctl('dispatch',"hl.dsp.window.float({action='set',window='"+selector+"'})").strip()=='ok')
    check('FixtureSize',s.ctl('dispatch',"hl.dsp.window.resize({x=320,y=240,window='"+selector+"'})").strip()=='ok')
@@ -103,7 +108,8 @@ try:
    def click(item):
     check('PointerTargetWithinActualViewport',item['visible'],item=item);x,y=map(round,item['point']);helper([str(POINTER),'800','600'],f'move {x} {y}\nsleep 100\nbutton 272 1\nsleep 50\nbutton 272 0\nsleep 100\n')
    def facts():return client.scene_facts('441')
-   initial=wait(lambda:group('Choose a window from' if FOCUS else 'Minimize'));target=next(w['incarnation'] for w in facts()['facts']['windows'] if w['application']=='GTK Application')
+   initial=None if TASKVIEW else wait(lambda:group('Choose a window from' if FOCUS else 'Minimize'))
+   target=next(w['incarnation'] for w in client.snapshot('442')['windows'] if w['label']=='ELM-AUTHORITY-FIXTURE')
    initial_workspace=next(w['workspace'] for w in facts()['facts']['windows'] if w['incarnation']==target)
    def current_window():return next(w for w in facts()['facts']['windows'] if w['incarnation']==target)
    def transaction_state():return (projection() or {}).get('transaction')
@@ -116,7 +122,7 @@ try:
     pix=GdkPixbuf.Pixbuf.new_from_file(str(image));data=pix.get_pixels();stride=pix.get_rowstride();channels=pix.get_n_channels();left,top=int(o['x'])+5,int(o['y'])+3;right,bottom=min(800,int(o['x']+o['width'])-3),min(48,int(o['y']+o['height'])-3)
     bright=sum(1 for y in range(top,bottom) for x in range(left,right) if all(data[y*stride+x*channels+i]>170 for i in range(3)))
     check(state+'NativeTaskbarHasTextPixels',pix.get_width()==800 and pix.get_height()==600 and bright>30,image=str(image),sha256=sha(image),brightPixels=bright,region=[left,top,right,bottom]);report.setdefault('feedback',{})[state]=body
-   if CATALOG:
+   if CATALOG or TASKVIEW:
     keyboard=pathlib.Path('/home/hoskinson/window-integration-qa/orca-reader/physical-commands/evdev-keyboard');report['keyboard']={'path':str(keyboard),'sha256':sha(keyboard)}
     def key(code):helper([str(keyboard)],f'key {code} 1\nsleep 50\nkey {code} 0\nsleep 100\nsync\n')
     def popup_body():
@@ -126,6 +132,25 @@ try:
      body=popup_body();fields=body.get('fields',[]) if body else []
      return next((f['value'] for f in fields if f['id']=='launcher-search'),None)
     def launches():return [json.loads(l.split(': ',1)[1]) for l in text().splitlines() if l.startswith('frontend-request: ') and json.loads(l.split(': ',1)[1])['kind']=='application-launch']
+    def popup_capture(stage):
+     import re
+     rows=[l for l in text().splitlines() if 'xdg_popup' in l and '.configure(' in l]
+     box=tuple(map(int,re.search(r'configure\((-?\d+), (-?\d+), (\d+), (\d+)\)',rows[-1]).groups()))
+     body=popup_body();image=OUTPUT/('popup-'+stage+'.png');helper(['/usr/bin/grim',str(image)])
+     import gi;gi.require_version('GdkPixbuf','2.0');from gi.repository import GdkPixbuf
+     pix=GdkPixbuf.Pixbuf.new_from_file(str(image));pixels=pix.get_pixels();stride=pix.get_rowstride();channels=pix.get_n_channels();regions=[]
+     # Count only current control interiors. Whole-popup counts incorrectly
+     # included the compositor's warning overlay above a black reopened popup.
+     for button in body['buttons']:
+      selected=button['accessibleName'].startswith('Browse workspace ') if TASKVIEW else button['accessibleName'] in ['Refresh applications','Open Files']
+      if not selected or button['disabled'] or button['y']<0 or button['y']+button['height']>box[3]:continue
+      left,top=max(0,int(box[0]+button['x'])+12),max(100,int(box[1]+button['y'])+6)
+      right,bottom=min(800,int(box[0]+button['x']+min(220,button['width']))-12),min(600,box[1]+box[3],int(box[1]+button['y']+button['height'])-6)
+      bright=sum(1 for y in range(top,bottom) for x in range(left,right) if all(pixels[y*stride+x*channels+c]>170 for c in range(3)))
+      painted=sum(1 for y in range(top,bottom) for x in range(left,right) if all(pixels[y*stride+x*channels+c]>15 for c in range(3)))
+      regions.append({'accessibleName':button['accessibleName'],'brightPixels':bright,'paintedPixels':painted,'area':max(0,right-left)*max(0,bottom-top),'region':[left,top,right,bottom]})
+     report.setdefault('popupCaptures',[]).append({'stage':stage,'path':str(image),'sha256':sha(image),'controlRegions':regions,'body':body,'drawObservations':[l for l in text().splitlines() if l.startswith('popup-draw-observation:')][-3:]})
+
     def bar_body():
      rows=[json.loads(l.split(' ',2)[2])['body'] for l in text().splitlines() if l.startswith('surface-report: origin=bar ')]
      return rows[-1] if rows else None
@@ -142,7 +167,41 @@ try:
       key(15)
      check('KeyboardReaches'+label,popup_body()['focus']==button['id'],body=popup_body())
      key(57)
-    if PINS:
+    if TASKVIEW:
+     wait(lambda:(projection() or {}).get('phase')=='Coherent')
+     native_facts=facts();labels={w['incarnation']:w['label'] for w in client.snapshot('443')['windows']}
+     membership=[{'incarnation':w['incarnation'],'label':labels[w['incarnation']],'workspace':w['workspace']} for w in native_facts['facts']['windows'] if w['incarnation'] in labels]
+     active=s.data('monitors')[0]['activeWorkspace']['id'];before=len(journal());before_focus=native_facts['facts']['focused']
+     check('TwoPopulatedNativeWorkspaceFixture',sorted((w['label'],w['workspace']) for w in membership)==[('ELM-ACTIVATION-PEER','2'),('ELM-AUTHORITY-FIXTURE','1')] and active==1,membership=membership,activeWorkspace=active)
+     report['workspaceOracle']={'membership':membership,'activeWorkspace':str(active),'beforeFocus':before_focus}
+     opener=wait(lambda:next((b for b in (bar_body() or {}).get('buttons',[]) if b['accessibleName']=='Open Task View' and not b['disabled']),None))
+     click({'visible':0<=opener['x']<800 and 0<=opener['y']<48,'point':[opener['x']+opener['width']/2,opener['y']+opener['height']/2]})
+     body=wait(lambda:next((b for b in [popup_body()] if b and 'Task View' in b['text'] and 'active workspace' in b['text'].lower() and all(any(w['label']+' on workspace '+w['workspace'] in button['accessibleName'] for button in b['buttons']) for w in membership)),None))
+     marker=next(b for b in body['buttons'] if b['accessibleName']=='Browse workspace 1; active workspace')
+     wait(lambda:(popup_body() or {}).get('focus')==marker['id'])
+     check('TaskViewGroupsMatchNativeMembership',all(any(w['label']+' on workspace '+w['workspace'] in b['accessibleName'] and 'Workspace '+w['workspace'] in b['label'] for b in body['buttons']) for w in membership),body=body)
+     check('ActiveWorkspaceMarkerIsKeyboardSelected',popup_body()['focus']==marker['id'] and 'Active workspace' in marker['label'],body=popup_body())
+     popup_capture('initial')
+     keyboard_button('Browse workspace 2')
+     body=wait(lambda:next((b for b in [popup_body()] if b and 'ELM-ACTIVATION-PEER' in b['text'] and 'ELM-AUTHORITY-FIXTURE' not in b['text'] and any(button['accessibleName']=='Browse workspace 2' and 'Selected' in button['label'] and button['id']==b['focus'] for button in b['buttons'])),None))
+     check('KeyboardWorkspaceBrowseDoesNotMutateNative',len(journal())==before and facts()['facts']['focused']==before_focus and s.data('monitors')[0]['activeWorkspace']['id']==active,body=body)
+     popup_capture('workspace-two')
+     for capture in report['popupCaptures']:check('ActualTaskViewControlPixels'+capture['stage'],bool(capture['controlRegions']) and all(r['area']>0 and r['brightPixels']>30 and r['paintedPixels']>.9*r['area'] for r in capture['controlRegions']),capture=capture)
+     report['nativeTaskViewMembershipObserved']=True
+     all_windows=next(b for b in body['buttons'] if b['accessibleName']=='Browse all workspaces')
+     import re
+     rows=[l for l in text().splitlines() if 'xdg_popup' in l and '.configure(' in l];box=tuple(map(int,re.search(r'configure\((-?\d+), (-?\d+), (\d+), (\d+)\)',rows[-1]).groups()))
+     x,y=map(round,(box[0]+all_windows['x']+all_windows['width']/2,box[1]+all_windows['y']+all_windows['height']/2))
+     helper([str(POINTER),'800','600'],f'move {x} {y}\nsleep 100\nbutton 272 1\nsleep 50\nbutton 272 0\nsleep 100\n')
+     wait(lambda:all(w['label'] in (popup_body() or {}).get('text','') for w in membership))
+     check('PointerAllWorkspacesRestoresGroupsWithoutMutation',len(journal())==before,body=popup_body())
+     key(1);wait(lambda:(projection() or {}).get('mode')=='closed' and (projection() or {}).get('phase')=='Coherent')
+     events=control.with_suffix('.events.jsonl');before_events=len(events.read_text().splitlines()) if events.exists() else 0
+     key(30);delivered=[json.loads(l) for l in events.read_text().splitlines()[before_events:]] if events.exists() else []
+     check('OverviewEscapeReturnsToEligibleOpener',facts()['facts']['focused']==before_focus and any(e['kind']=='key' and e['keyval']==97 and e['window']=='ELM-AUTHORITY-FIXTURE' for e in delivered),events=delivered,before=before_focus,after=facts()['facts']['focused'])
+     check('OverviewDismissalHasNoNativeMutation',len(journal())==before)
+     report['nativeTaskViewJourneyObserved']=True
+    elif PINS:
      state_file=pathlib.Path(env['XDG_STATE_HOME'])/'warlock/taskbar.json'
      def saved_order():return json.loads(state_file.read_text())['identities'] if state_file.exists() else []
      click(wait(lambda:(projection() or {}).get('openApplications')))
@@ -176,17 +235,24 @@ try:
     else:
      click(wait(lambda:(projection() or {}).get('openApplications')));wait(lambda:field_value()=='' and any(b['accessibleName']=='Open Files' for b in (popup_body() or {}).get('buttons',[])));wait(lambda:(popup_body() or {}).get('focus')=='launcher-search')
      check('NativeCatalogAndEditableSearchHaveNames',popup_body()['focus']=='launcher-search',body=popup_body())
+     if PRESENTATION:popup_capture('initial')
      for code in [33,23,38,18,31]:key(code)
      wait(lambda:field_value()=='files' and any(b['accessibleName']=='Open Files' and not b['disabled'] for b in (popup_body() or {}).get('buttons',[])))
      check('CurrentQueryFiltersNativeCatalog',not any(b['accessibleName']=='Open Editor' for b in popup_body()['buttons']),body=popup_body());check('TypingIsObservationOnly',not launches() and not journal())
+     if PRESENTATION:popup_capture('filtered')
      # Remove the exact selected identity after its observed current result.
      desktop.unlink();key(28);wait(lambda:'refused' in (popup_body() or {}).get('text','').lower() and field_value()=='files' and (popup_body() or {}).get('focus')=='launcher-search')
      check('NativeEnterIssuesOneIdentityBoundLaunch',len(launches())==1 and launches()[0]['intent']['entry']=='warlock-files',requests=launches())
      check('RefusalPreservesQueryAndReachableFocus',popup_body()['focus']=='launcher-search' and field_value()=='files' and any(b['accessibleName']=='Refresh applications' and not b['disabled'] for b in popup_body()['buttons']),body=popup_body())
+     if PRESENTATION:popup_capture('refused')
      body=popup_body();refresh=next(b for b in body['buttons'] if b['accessibleName']=='Refresh applications' and not b['disabled']);rows=[l for l in text().splitlines() if 'xdg_popup' in l and '.configure(' in l];import re;rect=tuple(map(int,re.search(r'configure\((\d+), (\d+), (\d+), (\d+)\)',rows[-1]).groups()));x,y=map(round,(rect[0]+refresh['x']+refresh['width']/2,rect[1]+refresh['y']+refresh['height']/2));helper([str(POINTER),'800','600'],f'move {x} {y}\nsleep 100\nbutton 272 1\nsleep 50\nbutton 272 0\nsleep 100\n')
      wait(lambda:field_value()=='files' and 'No matching' in (popup_body() or {}).get('text',''));key(28);check('RefreshAndNoMatchNeverLaunchReplacement',len(launches())==1,body=popup_body())
      screenshot_path=OUTPUT/'search-refused.png';helper(['/usr/bin/grim',str(screenshot_path)]);report['capture']={'path':str(screenshot_path),'sha256':sha(screenshot_path)}
      report['nativeSearchJourneyObserved']=True
+     if PRESENTATION:
+      popup_capture('no-match')
+      for capture in report['popupCaptures']:check('ActualPopupControlPixels'+capture['stage'],bool(capture['controlRegions']) and all(r['area']>0 and r['brightPixels']>30 and r['paintedPixels']>.9*r['area'] for r in capture['controlRegions']),capture=capture)
+      report['popupControlsPhysicallyObserved']=True
    elif FOCUS:
     keyboard=pathlib.Path('/home/hoskinson/window-integration-qa/orca-reader/physical-commands/evdev-keyboard')
     report['keyboard']={'path':str(keyboard),'sha256':sha(keyboard)}
@@ -240,7 +306,7 @@ try:
     body=feedback('Unknown');refresh=next(b for b in body['buttons'] if b['accessibleName'].startswith('Refresh window status') and not b['disabled']);x,y=map(round,(refresh['x']+refresh['width']/2,refresh['y']+refresh['height']/2));helper([str(POINTER),'800','600'],f'move {x} {y}\nsleep 100\nbutton 272 1\nsleep 50\nbutton 272 0\nsleep 100\n');check('RefreshQueuesNoSecondWindowEffect',len(journal())==before+1)
     wait(lambda:(projection() or {}).get('phase')=='Coherent');check('ReadOnlyRecoveryPreservesUnknownAndNoReplay',transaction_state()=='Unknown' and len(journal())==before+1 and current_window()['minimized'])
    check('NoScratchpadOrWorkspaceTransfer',current_window()['workspace']==initial_workspace,nativeWorkspace=current_window()['workspace'],originalWorkspace=initial_workspace)
-   report['nativeFeedbackObserved']=not FOCUS and not CATALOG;report['nativeFocusJourneyObserved']=FOCUS;check('EveryRegisteredHelperExitedNormally',all(r['exitCode']==0 for r in report['helpers']));report['passed']=True
+   report['nativeFeedbackObserved']=not FOCUS and not CATALOG and not TASKVIEW;report['nativeFocusJourneyObserved']=FOCUS;check('EveryRegisteredHelperExitedNormally',all(r['exitCode']==0 for r in report['helpers']));report['passed']=True
   finally:
    if paused:pause(False)
    for proc in reversed(apps):
