@@ -22,3 +22,19 @@
 .bar .surface-actions{display:flex;align-items:center;flex:1 1 auto;min-width:0;height:48px;overflow-x:auto;overflow-y:hidden;flex-wrap:nowrap}
 .launcher-search { box-sizing:border-box; width:100%; min-height:40px; padding:8px 12px; color:#f0f5fa; background:#17232f; border:1px solid #7f9caf; border-radius:4px; font:inherit; }
 .launcher-search:focus-visible { outline:2px solid #86c8ff; outline-offset:2px; }
+
+/* Match native text sizing; keep a bounded single row at enlarged text sizes. */
+html{font-size:100%}body{font:1rem system-ui}
+.bar .surface-bar,.bar .surface-actions{height:3rem}
+.bar .surface-actions>button{height:calc(100% - 2px);min-height:0;max-height:none;max-width:15rem;line-height:1.125rem;flex-basis:5rem;scroll-margin-inline:4px}
+.bar .surface-actions>.control-group{flex-basis:7.25rem;min-width:7rem}
+.bar .surface-actions>.control-recovery{flex-basis:7.5rem}
+.bar .control-detail{font-size:.8125rem;line-height:.8125rem}
+.bar .surface-actions button:focus-visible{outline:none;box-shadow:inset 0 0 0 3px #7ed7ff}
+.bar .surface-actions{scrollbar-width:thin}
+.bar .surface-actions::-webkit-scrollbar{height:4px}
+.popup .surface-popup>h1{font-size:1.25rem;line-height:1.5rem}
+.popup .surface-popup>p[role=status]{line-height:1.25rem}
+.popup button{min-height:2.25rem}
+.popup .control-detail{font-size:.875rem;line-height:1.125rem}
+@media(forced-colors:active){.bar .surface-actions button:focus-visible{outline:2px solid Highlight;outline-offset:-3px;box-shadow:none}}

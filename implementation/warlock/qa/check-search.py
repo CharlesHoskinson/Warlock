@@ -1,6 +1,7 @@
 """Focused compiled launcher/search integration, protected CPU scope only."""
-import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures
-PINMENUS=sys.argv[1:]==['--pinned-menus']
+import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures,http.server,threading
+DENSE=sys.argv[1:]==['--dense-taskbar']
+PINMENUS=sys.argv[1:]==['--pinned-menus'] or DENSE
 PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PINMENUS
 SWITCHER=sys.argv[1:]==['--switcher']
 NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'];POPUP=sys.argv[1:]==['--native-popup'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER
@@ -14,7 +15,7 @@ for folder in ['src','native','adapter','assets','qa']:
   if p.is_file():shutil.copyfile(p,INPUT/folder/p.name);inputs[str(p.relative_to(ROOT))]=sha(p)
 info=json.loads((ROOT/'elm.json').read_text());info['source-directories']=['src','qa'];(INPUT/'elm.json').write_text(json.dumps(info))
 spec=importlib.util.spec_from_file_location('search_toolchain',HELD/'qa/toolchain.py');toolchain=importlib.util.module_from_spec(spec);spec.loader.exec_module(toolchain);pinned=toolchain.verify();shutil.copytree(HELD/pinned['elmHome'],OUT/'elm-home');env={**os.environ,'ELM_HOME':str(OUT/'elm-home')}
-report={'passed':False,'scope':'Compiled Elm query/ranking, native scoped field admission and current integrated host; native keyboard/AT release acceptance pending','requirements':['ELM-UI-005','ELM-UX-029'],'inputs':inputs,'commands':[],'protectedScope':scope,'nativeAcceptance':False,'fullReleaseAccepted':False}
+report={'passed':False,'scope':'Compiled Elm query/ranking, native scoped field admission and current integrated host; native keyboard/AT release acceptance pending','requirements':['ELM-UI-005','ELM-UX-029'],'inputs':inputs,'commands':[],'protectedScope':scope,'nativeAcceptance':False,'fullReleaseAccepted':False};server=None
 def run(name,args):
  p=subprocess.run(args,cwd=INPUT,env=env,capture_output=True,text=True,timeout=180);(OUT/(name+'.stdout')).write_text(p.stdout);(OUT/(name+'.stderr')).write_text(p.stderr);report['commands'].append({'name':name,'exitCode':p.returncode});print(name,p.returncode,flush=True)
  if p.returncode:raise RuntimeError(p.stderr or p.stdout)
@@ -117,6 +118,19 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
    run('popup-context-compile',['cc','-std=c11','-O2','-Wall','-Wextra','-Werror','-Wno-deprecated-declarations','-c','native/shared-context-test.c','-o',str(OUT/'popup-context.o'),*flags])
    run('popup-context-link',['g++',str(OUT/'popup-context.o'),*[str(OUT/(name+'.o')) for name in units],'-o',str(OUT/'popup-context-tests'),*flags])
    run('popup-context-tests',[str(OUT/'popup-context-tests')])
- run('host-self-tests',[str(OUT/'elm-host'),'--self-test']);assert all(sha(ROOT/p)==h for p,h in inputs.items());toolchain.verify();report['compiledAssets']={n:sha(INPUT/'assets'/n) for n in ['elm.js','bar.js','popup.js']};report['passed']=True
+ run('host-self-tests',[str(OUT/'elm-host'),'--self-test'])
+ if DENSE:
+  report.update(requirements=['ELM-UI-008'],scenarios=['overflow-first-last','overflow-resize','menu-invocation'],scope='Current compiled renderer/adapter dense enlarged-text browser journeys and rebuilt scalable native host; native output/menu/AT observations separate')
+  (INPUT/'qa/dense.html').write_text('<!doctype html><html style="font-size:24px"><head><link rel="stylesheet" href="../assets/shell.css"></head><body class="bar"><div id="app"></div><script>window.nativePackets=[];window.webkit={messageHandlers:{native:{postMessage:s=>nativePackets.push(JSON.parse(s))}}};</script><script src="../assets/bar.js"></script><script src="../assets/bar-adapter.js"></script><script src="../assets/context.js"></script><script src="../assets/activation.js"></script></body></html>')
+  class Handler(http.server.SimpleHTTPRequestHandler):
+   def __init__(self,*args,**kwargs):super().__init__(*args,directory=str(INPUT),**kwargs)
+   def log_message(self,*args):pass
+  server=http.server.ThreadingHTTPServer(('127.0.0.1',0),Handler);threading.Thread(target=server.serve_forever,daemon=True).start()
+  browser=pathlib.Path('/home/hoskinson/.cache/puppeteer/chrome-headless-shell/linux-154.0.8037.57/chrome-headless-shell-linux64/chrome-headless-shell');report['browserSHA256']=sha(browser)
+  run('dense-browser',['node','qa/dense-taskbar-browser.mjs','http://127.0.0.1:'+str(server.server_port),str(OUT),str(browser)])
+  child=json.loads((OUT/'dense-browser.json').read_text());assert child['passed'] and child['browserExitCode']==0;report['denseBrowser']={'path':str(OUT/'dense-browser.json'),'sha256':sha(OUT/'dense-browser.json'),'checks':child['checks']}
+ assert all(sha(ROOT/p)==h for p,h in inputs.items());toolchain.verify();report['compiledAssets']={n:sha(INPUT/'assets'/n) for n in ['elm.js','bar.js','popup.js']};report['passed']=True
 except Exception as error:report['error']=repr(error)
+finally:
+ if server:server.shutdown();server.server_close()
 (OUT/'report.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({'passed':report['passed'],'report':str(OUT/'report.json'),'error':report.get('error')}));raise SystemExit(not report['passed'])

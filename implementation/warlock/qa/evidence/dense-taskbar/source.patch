@@ -1,0 +1,484 @@
+diff --git c/implementation/warlock/README.md w/implementation/warlock/README.md
+index 05d0cd1..97b25fa 100644
+--- c/implementation/warlock/README.md
++++ w/implementation/warlock/README.md
+@@ -5,3 +5,16 @@ This is the active editable product source. It was materialized once from held G
+ Follow `docs/warlock-build-loop/v2/INSTRUCTIONS.md`. Generated builds/browser profiles live in ignored `.build/` / `qa/runs/`; commit only minimal reports needed by a bounded claim. Use the held pinned compiler/toolchain by verified reference, not another toolchain copy. Changed Main/Bar/Popup must be rebuilt as one asset package before native qualification.
+ 
+ This candidate is not installed on the user's desktop. Its component results, native scenario acceptance and full release acceptance are separate. Preserve the exact GUI143/core16/plugin19/AQ155 ABI manifests for inherited native code; numbering alone is not ABI proof. The controlled preview curtain remains closed until native reveal conditions are implemented and accepted.
++
++The shared surface host accepts `--text-scale 1.5` for enlarged text. Values from
++1 to 2 scale the base text and taskbar height together; the default remains 1.
++This startup option does not configure the desktop or implement a Settings page.
++
++In the taskbar, vertical wheel input scrolls an overflowing row. While a bar
++control has keyboard focus, Home/End reach the endpoints and Left/Right visit
++enabled controls in order. Current logical selection survives presentation
++updates, menu grabs and output resizing; focus restoration requires real document
++focus and a currently rendered enabled control. Context operations retain the
++existing native physical-key/pointer proof and Elm policy route. Current observed
++coverage and remaining AT/independent review are recorded in
++`qa/evidence/dense-taskbar/manifest.json`.
+diff --git c/implementation/warlock/assets/bar-adapter.js w/implementation/warlock/assets/bar-adapter.js
+index 9feeb2c..9140df9 100644
+--- c/implementation/warlock/assets/bar-adapter.js
++++ w/implementation/warlock/assets/bar-adapter.js
+@@ -2,11 +2,51 @@
+ const app = Elm.Bar.init({node:document.getElementById('app')});
+ window.submitSurfaceAction = value => app.ports.requestAction.send(value);
+ const post = value => window.webkit.messageHandlers.native.postMessage(JSON.stringify(value));
++let selectedIdentity=null, observedActions=null;
++const actionsNode=()=>document.querySelector('.surface-actions');
++const revealSelection=(restoreOnly=false)=>{
++  const actions=actionsNode();
++  if(!actions||!document.hasFocus()||!selectedIdentity)return;
++  const control=[...actions.querySelectorAll('[data-surface-control]')].find(item=>item.dataset.surfaceControl===selectedIdentity&&!item.disabled);
++  if(!control)return;
++  if(restoreOnly&&document.activeElement===control)return;
++  if(document.activeElement!==control)control.focus({preventScroll:true});
++  control.scrollIntoView({block:'nearest',inline:'nearest'});
++};
++const resizeObserver=window.ResizeObserver&&new ResizeObserver(()=>requestAnimationFrame(()=>revealSelection()));
++const observeActions=()=>{
++  const actions=actionsNode();
++  if(actions===observedActions)return;
++  resizeObserver?.disconnect();observedActions=actions;if(actions)resizeObserver?.observe(actions);
++};
++document.addEventListener('focusin',event=>{
++  const control=event.target.closest?.('[data-surface-control]');
++  if(control?.closest('.surface-actions')){selectedIdentity=control.dataset.surfaceControl;revealSelection();}
++  else if(event.target!==document.body&&event.target!==document.documentElement)selectedIdentity=null;
++});
++// Keep the view's logical selection through a popup grab. Restoration still
++// requires real document focus and a currently rendered enabled control.
++window.addEventListener('focus',()=>revealSelection(true));
++window.addEventListener('resize',()=>requestAnimationFrame(()=>revealSelection()));
++document.addEventListener('keydown',event=>{
++  if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key)||event.defaultPrevented||event.isComposing||event.ctrlKey||event.altKey||event.metaKey||event.shiftKey)return;
++  const actions=event.target.closest?.('.surface-actions');if(!actions)return;
++  const items=[...actions.querySelectorAll('[data-surface-control]:not(:disabled)')],current=items.indexOf(document.activeElement);if(current<0)return;
++  const index=event.key==='Home'?0:event.key==='End'?items.length-1:Math.max(0,Math.min(items.length-1,current+(event.key==='ArrowRight'?1:-1)));
++  event.preventDefault();event.stopImmediatePropagation();items[index].focus({preventScroll:true});
++  selectedIdentity=items[index].dataset.surfaceControl;revealSelection();
++},true);
++document.addEventListener('wheel',event=>{
++  const actions=event.target.closest?.('.surface-actions');if(!actions||actions.scrollWidth<=actions.clientWidth||!event.deltaY||event.deltaX)return;
++  const unit=event.deltaMode===1?parseFloat(getComputedStyle(actions).fontSize):event.deltaMode===2?actions.clientWidth:1;
++  actions.scrollLeft+=event.deltaY*unit;event.preventDefault();
++},{passive:false});
+ window.receivePresentation = value => {
+   app.ports.presentation.send(value);
+   requestAnimationFrame(() => requestAnimationFrame(() => {
+     const node=document.querySelector('.surface-bar');
+     if (node?.dataset.publication===value.publication && node.dataset.lease===value.lease) {
++      observeActions();revealSelection(true);
+       post({surfaceProtocol:2,kind:'presentation-applied',publication:value.publication,lease:value.lease});
+     }
+   }));
+@@ -17,7 +57,7 @@ window.receiveFocus = value => requestAnimationFrame(() => {
+   const focused=[];
+   for (const target of value.targets) {
+     const control=document.getElementById(target);
+-    if(control && node.contains(control) && !control.disabled){control.focus();if(document.activeElement===control) focused.push(target);}
++    if(control && node.contains(control) && !control.disabled){control.focus();control.scrollIntoView({block:'nearest',inline:'nearest'});if(document.activeElement===control){selectedIdentity=control.dataset.surfaceControl;focused.push(target);}}
+   }
+   post({surfaceProtocol:2,kind:'focus-applied',publication:value.publication,lease:value.lease,targets:focused});
+ });
+@@ -28,15 +68,18 @@ if (window.elmHostQA) {
+   let last='';
+   const observe=()=>requestAnimationFrame(()=>{
+     const buttons=[...document.querySelectorAll('button')].map(button=>{
+-      const r=button.getBoundingClientRect();return {id:button.id,label:button.textContent,accessibleName:button.getAttribute('aria-label'),disabled:button.disabled,x:r.x,y:r.y,width:r.width,height:r.height};
++      const r=button.getBoundingClientRect();return {id:button.id,identity:button.dataset.surfaceControl,label:button.textContent,accessibleName:button.getAttribute('aria-label'),disabled:button.disabled,x:r.x,y:r.y,width:r.width,height:r.height};
+     });
+     const node=document.querySelector('.surface-bar,.surface-bar');
+     const status=document.querySelector('[role="status"]'),box=status?.getBoundingClientRect(),style=status&&getComputedStyle(status);
+     const feedback=status?{text:status.textContent,accessibleName:status.getAttribute('aria-label'),live:status.getAttribute('aria-live'),atomic:status.getAttribute('aria-atomic'),x:box.x,y:box.y,width:box.width,height:box.height,clip:style.clipPath,display:style.display}:null;
+-    const body={publication:node?.dataset.publication||null,lease:node?.dataset.lease||null,buttons,feedback,focus:document.activeElement?.id||'',text:document.body.innerText};
++    const actions=actionsNode(),actionBox=actions?.getBoundingClientRect();
++    const body={publication:node?.dataset.publication||null,lease:node?.dataset.lease||null,buttons,feedback,focus:document.activeElement?.id||'',documentFocused:document.hasFocus(),selectionAnchor:selectedIdentity,text:document.body.innerText,fontSize:getComputedStyle(document.body).fontSize,viewportWidth:innerWidth,scrollLeft:actions?.scrollLeft||0,scrollWidth:actions?.scrollWidth||0,clientWidth:actions?.clientWidth||0,actions:actionBox?{x:actionBox.x,y:actionBox.y,width:actionBox.width,height:actionBox.height}:null};
+     const current=JSON.stringify(body);if(current!==last){last=current;post({kind:'surface-report',body});}
+   });
+   document.addEventListener('scroll',observe,true);
+   new MutationObserver(observe).observe(document.body,{subtree:true,childList:true,attributes:true});
+   document.addEventListener('focusin',observe);observe();
++  window.addEventListener('resize',observe);
++  window.addEventListener('focus',observe);window.addEventListener('blur',observe);
+ }
+diff --git c/implementation/warlock/assets/context.js w/implementation/warlock/assets/context.js
+index 28bf098..7aeacec 100644
+--- c/implementation/warlock/assets/context.js
++++ w/implementation/warlock/assets/context.js
+@@ -6,7 +6,7 @@
+   const stamp = node => node && ({publication:node.dataset.publication,lease:node.dataset.lease});
+   const same = (a,b) => a && b && a.publication===b.publication && a.lease===b.lease;
+   const post = value => window.webkit.messageHandlers.native.postMessage(JSON.stringify(value));
+-  const diagnostic=(phase,event)=>{if(window.elmHostQA)post({kind:'context-input-report',phase,button:event.button,buttons:event.buttons,trusted:event.isTrusted,id:control(event.target)?.dataset.surfaceControl||null});};
++  const diagnostic=(phase,event)=>{if(window.elmHostQA)post({kind:'context-input-report',phase,button:event.button,buttons:event.buttons,key:event.key,repeat:event.repeat,composing:event.isComposing,prevented:event.defaultPrevented,trusted:event.isTrusted,id:control(event.target)?.dataset.surfaceControl||null});};
+   const invoke = (item,node,trigger,x,y) => post({surfaceProtocol:2,kind:'surface-context',
+     surface:node.classList.contains('surface-popup')?'popup':'bar',...stamp(node),
+     id:item.dataset.surfaceControl,trigger,x,y});
+@@ -40,7 +40,12 @@
+   window.addEventListener('blur',()=>{pressed=null;});
+   for(const name of ['scroll','dragstart']) document.addEventListener(name,()=>{pressed=null;},true);
+   document.addEventListener('keydown',event => {
+-    if(!event.isTrusted || event.repeat || event.isComposing || event.defaultPrevented || event.ctrlKey || event.altKey || event.metaKey) return;
++    diagnostic('key',event);
++    const contextKey=event.key==='ContextMenu' || (event.key==='F10' && event.shiftKey);
++    // WebKit can retain repeat=true after the key release went to a grabbed
++    // popup. Context requests still need the native fresh physical-key proof;
++    // its held-key guard rejects genuine repeats across both surfaces.
++    if(!event.isTrusted || (event.repeat&&!contextKey) || event.isComposing || event.defaultPrevented || event.ctrlKey || event.altKey || event.metaKey) return;
+     const menu=document.querySelector('.surface-popup[data-mode="menu"]');
+     // Dismissal belongs to the live popup, including when a disabled row blurs focus.
+     if(event.key==='Escape' && menu){
+@@ -48,7 +53,7 @@
+     }
+     const item=control(document.activeElement),node=owner(item);
+     if(!item || !node) return;
+-    if(event.key==='ContextMenu' || (event.key==='F10' && event.shiftKey)) {
++    if(contextKey) {
+       if(item.disabled) return;
+       event.preventDefault();invoke(item,node,'keyboard',0,0);return;
+     }
+diff --git c/implementation/warlock/assets/shell.css w/implementation/warlock/assets/shell.css
+index 95474a3..11fc4eb 100644
+--- c/implementation/warlock/assets/shell.css
++++ w/implementation/warlock/assets/shell.css
+@@ -22,3 +22,19 @@
+ .bar .surface-actions{display:flex;align-items:center;flex:1 1 auto;min-width:0;height:48px;overflow-x:auto;overflow-y:hidden;flex-wrap:nowrap}
+ .launcher-search { box-sizing:border-box; width:100%; min-height:40px; padding:8px 12px; color:#f0f5fa; background:#17232f; border:1px solid #7f9caf; border-radius:4px; font:inherit; }
+ .launcher-search:focus-visible { outline:2px solid #86c8ff; outline-offset:2px; }
++
++/* Match native text sizing; keep a bounded single row at enlarged text sizes. */
++html{font-size:100%}body{font:1rem system-ui}
++.bar .surface-bar,.bar .surface-actions{height:3rem}
++.bar .surface-actions>button{height:calc(100% - 2px);min-height:0;max-height:none;max-width:15rem;line-height:1.125rem;flex-basis:5rem;scroll-margin-inline:4px}
++.bar .surface-actions>.control-group{flex-basis:7.25rem;min-width:7rem}
++.bar .surface-actions>.control-recovery{flex-basis:7.5rem}
++.bar .control-detail{font-size:.8125rem;line-height:.8125rem}
++.bar .surface-actions button:focus-visible{outline:none;box-shadow:inset 0 0 0 3px #7ed7ff}
++.bar .surface-actions{scrollbar-width:thin}
++.bar .surface-actions::-webkit-scrollbar{height:4px}
++.popup .surface-popup>h1{font-size:1.25rem;line-height:1.5rem}
++.popup .surface-popup>p[role=status]{line-height:1.25rem}
++.popup button{min-height:2.25rem}
++.popup .control-detail{font-size:.875rem;line-height:1.125rem}
++@media(forced-colors:active){.bar .surface-actions button:focus-visible{outline:2px solid Highlight;outline-offset:-3px;box-shadow:none}}
+diff --git c/implementation/warlock/native/shared-host.c w/implementation/warlock/native/shared-host.c
+index 16ea982..3af8e08 100644
+--- c/implementation/warlock/native/shared-host.c
++++ w/implementation/warlock/native/shared-host.c
+@@ -107,6 +107,7 @@ static OutputView *popup_owner,*focus_owner;
+ static GtkWidget *controller_window;
+ static WebKitWebContext *shared_context;
+ static WebKitSettings *shared_settings;
++static guint shared_text_pixels=16;
+ 
+ static JsonNode *scope_packet(const OutputView *owner) {
+     if (!owner) return json_node_new(JSON_NODE_NULL);
+@@ -463,8 +464,8 @@ static void shared_add(GdkDisplay *display,GdkMonitor *monitor,gpointer unused)
+     row->engine=shared_child(row->manager);
+     row->bar=gtk_window_new(GTK_WINDOW_TOPLEVEL);gtk_window_set_title(GTK_WINDOW(row->bar),"Elm bar");
+     gtk_layer_init_for_window(GTK_WINDOW(row->bar));gtk_layer_set_monitor(GTK_WINDOW(row->bar),monitor);gtk_layer_set_namespace(GTK_WINDOW(row->bar),"elm-shell-recovery-v17");
+-    gtk_layer_set_layer(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_LAYER_TOP);gtk_layer_set_anchor(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_EDGE_TOP,TRUE);gtk_layer_set_anchor(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_EDGE_LEFT,TRUE);gtk_layer_set_anchor(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_EDGE_RIGHT,TRUE);gtk_layer_set_exclusive_zone(GTK_WINDOW(row->bar),48);gtk_layer_set_keyboard_mode(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_KEYBOARD_MODE_NONE);
+-    gtk_widget_set_size_request(row->bar,-1,48);gtk_window_resize(GTK_WINDOW(row->bar),1,1);gtk_widget_set_size_request(GTK_WIDGET(row->engine),-1,48);
++    gtk_layer_set_layer(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_LAYER_TOP);gtk_layer_set_anchor(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_EDGE_TOP,TRUE);gtk_layer_set_anchor(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_EDGE_LEFT,TRUE);gtk_layer_set_anchor(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_EDGE_RIGHT,TRUE);gtk_layer_set_exclusive_zone(GTK_WINDOW(row->bar),3*shared_text_pixels);gtk_layer_set_keyboard_mode(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_KEYBOARD_MODE_NONE);
++    gtk_widget_set_size_request(row->bar,-1,3*shared_text_pixels);gtk_window_resize(GTK_WINDOW(row->bar),1,1);gtk_widget_set_size_request(GTK_WIDGET(row->engine),-1,3*shared_text_pixels);
+     gtk_container_add(GTK_CONTAINER(row->bar),GTK_WIDGET(row->engine));
+     g_signal_connect(row->engine,"decide-policy",G_CALLBACK(policy),NULL);g_signal_connect(row->engine,"web-process-terminated",G_CALLBACK(terminated),NULL);
+     g_signal_connect(row->engine,"event",G_CALLBACK(shared_context_event),NULL);
+@@ -1244,6 +1245,11 @@ int ELM_SHARED_HOST_MAIN(int argc,char **argv) {
+         if (g_str_equal(argv[i],"--assets") && i+1<argc) asset_dir=argv[++i];
+         else if (g_str_equal(argv[i],"--authority-config") && i+1<argc) authority_config=argv[++i];
+         else if (g_str_equal(argv[i],"--backend") && i+1<argc) backend_path=argv[++i];
++        else if (g_str_equal(argv[i],"--text-scale") && i+1<argc) {
++            char *end=NULL;double scale=g_ascii_strtod(argv[++i],&end);
++            if(!end || *end || !(scale>=1.0 && scale<=2.0)) {g_printerr("Text scale must be between 1 and 2\n");return 2;}
++            shared_text_pixels=(guint)(16.0*scale+0.5);
++        }
+         else if (g_str_equal(argv[i],"--qa-stay-open")) qa_stay=TRUE;
+         else if (g_str_equal(argv[i],"--qa-preview-delayed-snapshot")) qa_controlled_delayed_snapshot=TRUE;
+         else if (g_str_equal(argv[i],"--qa-preview-reopened-snapshot")) {qa_controlled_delayed_snapshot=TRUE;qa_controlled_reopened_snapshot=TRUE;}
+@@ -1305,6 +1311,7 @@ int ELM_SHARED_HOST_MAIN(int argc,char **argv) {
+     WebKitSecurityManager *security=webkit_web_context_get_security_manager(shared_context);webkit_security_manager_register_uri_scheme_as_local(security,"elm-shell");webkit_security_manager_register_uri_scheme_as_secure(security,"elm-shell");
+     primary_manager=webkit_user_content_manager_new();manager_configure(primary_manager);
+     view=WEBKIT_WEB_VIEW(g_object_new(WEBKIT_TYPE_WEB_VIEW,"web-context",shared_context,"user-content-manager",primary_manager,NULL));shared_settings=webkit_web_view_get_settings(view);
++    webkit_settings_set_default_font_size(shared_settings,shared_text_pixels);
+     webkit_settings_set_enable_developer_extras(shared_settings,FALSE);webkit_settings_set_enable_write_console_messages_to_stdout(shared_settings,qa_exit);webkit_settings_set_javascript_can_open_windows_automatically(shared_settings,FALSE);webkit_settings_set_enable_html5_local_storage(shared_settings,FALSE);webkit_settings_set_hardware_acceleration_policy(shared_settings,WEBKIT_HARDWARE_ACCELERATION_POLICY_ALWAYS);
+     controller_window=gtk_window_new(GTK_WINDOW_TOPLEVEL);window=controller_window;gtk_container_add(GTK_CONTAINER(controller_window),GTK_WIDGET(view));
+     g_signal_connect(view,"decide-policy",G_CALLBACK(policy),NULL);g_signal_connect(view,"web-process-terminated",G_CALLBACK(terminated),NULL);
+diff --git c/implementation/warlock/qa/check-search.py w/implementation/warlock/qa/check-search.py
+index f052f8b..0d9c6fd 100644
+--- c/implementation/warlock/qa/check-search.py
++++ w/implementation/warlock/qa/check-search.py
+@@ -1,6 +1,7 @@
+ """Focused compiled launcher/search integration, protected CPU scope only."""
+-import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures
+-PINMENUS=sys.argv[1:]==['--pinned-menus']
++import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures,http.server,threading
++DENSE=sys.argv[1:]==['--dense-taskbar']
++PINMENUS=sys.argv[1:]==['--pinned-menus'] or DENSE
+ PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PINMENUS
+ SWITCHER=sys.argv[1:]==['--switcher']
+ NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'];POPUP=sys.argv[1:]==['--native-popup'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER
+@@ -14,7 +15,7 @@ for folder in ['src','native','adapter','assets','qa']:
+   if p.is_file():shutil.copyfile(p,INPUT/folder/p.name);inputs[str(p.relative_to(ROOT))]=sha(p)
+ info=json.loads((ROOT/'elm.json').read_text());info['source-directories']=['src','qa'];(INPUT/'elm.json').write_text(json.dumps(info))
+ spec=importlib.util.spec_from_file_location('search_toolchain',HELD/'qa/toolchain.py');toolchain=importlib.util.module_from_spec(spec);spec.loader.exec_module(toolchain);pinned=toolchain.verify();shutil.copytree(HELD/pinned['elmHome'],OUT/'elm-home');env={**os.environ,'ELM_HOME':str(OUT/'elm-home')}
+-report={'passed':False,'scope':'Compiled Elm query/ranking, native scoped field admission and current integrated host; native keyboard/AT release acceptance pending','requirements':['ELM-UI-005','ELM-UX-029'],'inputs':inputs,'commands':[],'protectedScope':scope,'nativeAcceptance':False,'fullReleaseAccepted':False}
++report={'passed':False,'scope':'Compiled Elm query/ranking, native scoped field admission and current integrated host; native keyboard/AT release acceptance pending','requirements':['ELM-UI-005','ELM-UX-029'],'inputs':inputs,'commands':[],'protectedScope':scope,'nativeAcceptance':False,'fullReleaseAccepted':False};server=None
+ def run(name,args):
+  p=subprocess.run(args,cwd=INPUT,env=env,capture_output=True,text=True,timeout=180);(OUT/(name+'.stdout')).write_text(p.stdout);(OUT/(name+'.stderr')).write_text(p.stderr);report['commands'].append({'name':name,'exitCode':p.returncode});print(name,p.returncode,flush=True)
+  if p.returncode:raise RuntimeError(p.stderr or p.stdout)
+@@ -117,6 +118,19 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
+    run('popup-context-compile',['cc','-std=c11','-O2','-Wall','-Wextra','-Werror','-Wno-deprecated-declarations','-c','native/shared-context-test.c','-o',str(OUT/'popup-context.o'),*flags])
+    run('popup-context-link',['g++',str(OUT/'popup-context.o'),*[str(OUT/(name+'.o')) for name in units],'-o',str(OUT/'popup-context-tests'),*flags])
+    run('popup-context-tests',[str(OUT/'popup-context-tests')])
+- run('host-self-tests',[str(OUT/'elm-host'),'--self-test']);assert all(sha(ROOT/p)==h for p,h in inputs.items());toolchain.verify();report['compiledAssets']={n:sha(INPUT/'assets'/n) for n in ['elm.js','bar.js','popup.js']};report['passed']=True
++ run('host-self-tests',[str(OUT/'elm-host'),'--self-test'])
++ if DENSE:
++  report.update(requirements=['ELM-UI-008'],scenarios=['overflow-first-last','overflow-resize','menu-invocation'],scope='Current compiled renderer/adapter dense enlarged-text browser journeys and rebuilt scalable native host; native output/menu/AT observations separate')
++  (INPUT/'qa/dense.html').write_text('<!doctype html><html style="font-size:24px"><head><link rel="stylesheet" href="../assets/shell.css"></head><body class="bar"><div id="app"></div><script>window.nativePackets=[];window.webkit={messageHandlers:{native:{postMessage:s=>nativePackets.push(JSON.parse(s))}}};</script><script src="../assets/bar.js"></script><script src="../assets/bar-adapter.js"></script><script src="../assets/context.js"></script><script src="../assets/activation.js"></script></body></html>')
++  class Handler(http.server.SimpleHTTPRequestHandler):
++   def __init__(self,*args,**kwargs):super().__init__(*args,directory=str(INPUT),**kwargs)
++   def log_message(self,*args):pass
++  server=http.server.ThreadingHTTPServer(('127.0.0.1',0),Handler);threading.Thread(target=server.serve_forever,daemon=True).start()
++  browser=pathlib.Path('/home/hoskinson/.cache/puppeteer/chrome-headless-shell/linux-154.0.8037.57/chrome-headless-shell-linux64/chrome-headless-shell');report['browserSHA256']=sha(browser)
++  run('dense-browser',['node','qa/dense-taskbar-browser.mjs','http://127.0.0.1:'+str(server.server_port),str(OUT),str(browser)])
++  child=json.loads((OUT/'dense-browser.json').read_text());assert child['passed'] and child['browserExitCode']==0;report['denseBrowser']={'path':str(OUT/'dense-browser.json'),'sha256':sha(OUT/'dense-browser.json'),'checks':child['checks']}
++ assert all(sha(ROOT/p)==h for p,h in inputs.items());toolchain.verify();report['compiledAssets']={n:sha(INPUT/'assets'/n) for n in ['elm.js','bar.js','popup.js']};report['passed']=True
+ except Exception as error:report['error']=repr(error)
++finally:
++ if server:server.shutdown();server.server_close()
+ (OUT/'report.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({'passed':report['passed'],'report':str(OUT/'report.json'),'error':report.get('error')}));raise SystemExit(not report['passed'])
+diff --git c/implementation/warlock/qa/native-window-feedback.py w/implementation/warlock/qa/native-window-feedback.py
+index a011018..d4f5a47 100644
+--- c/implementation/warlock/qa/native-window-feedback.py
++++ w/implementation/warlock/qa/native-window-feedback.py
+@@ -4,7 +4,8 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
+ lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
+ """
+ import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
+-PINMENUS=sys.argv[1:]==['--pinned-menus']
++DENSE=sys.argv[1:]==['--dense-taskbar']
++PINMENUS=sys.argv[1:]==['--pinned-menus'] or DENSE
+ PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PINMENUS
+ PRE_READY_RETIRE=sys.argv[1:]==['--switcher-pre-ready-retirement']
+ MEMBERSHIP=sys.argv[1:]==['--switcher-membership'] or PRE_READY_RETIRE
+@@ -46,7 +47,7 @@ else:
+ for row in pair.values():assert sha(row['path'])==row['sha256']
+ assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
+ subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
+-OUT=ROOT/'qa/runs'/(('native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
++OUT=ROOT/'qa/runs'/(('native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+ OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
+ focus_host=None
+ if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
+@@ -105,9 +106,11 @@ if MEMBERSHIP:report.update(scenarios=['switcher-membership','switcher-retire-ar
+ if SWITCHER:report.update(requirements=['ELM-UI-003'],scenarios=['switcher-order','switcher-cancel'],scope='Actual native MRU observation, integrated switcher control pixels, local keyboard cycling/cancel and identity-bound chosen activation; global Alt-Tab journal, modal representation and AT/independent acceptance remain pending',nativeSwitcherJourneyObserved=False)
+ if PRIMARY:report.update(requirements=['ELM-UI-004'],scenarios=['taskbar-inactive','taskbar-active','taskbar-minimized'],scope='Actual pointer single-family activation/minimize/restore, exact native receipt and GTK keyboard recipient, MRU/desktop succession and pixels; primary keyboard and AT acceptance remain pending',nativePrimaryJourneyObserved=False)
+ if PINMENUS:report.update(requirements=['ELM-UI-008','ELM-UX-023'],scenarios=['menu-invocation','keyboard-menus'],scope='Actual current running pin, native secondary click/Menu/Shift-F10 menus and existing minimize/restore path; dense/enlarged-text, AT and independent acceptance remain open',nativePinnedMenusObserved=False)
++if DENSE:report.update(requirements=['ELM-UI-008'],scenarios=['overflow-first-last','overflow-resize','menu-invocation'],scope='Actual small native output, enlarged text, configured overflowing pins, physical keyboard/wheel/menu traversal and output resize; AT and independent review remain open',nativeDenseTaskbarObserved=False)
+ LUA=b'''hl.config({xwayland={enabled=false},animations={enabled=false}})
+ hl.monitor({output="WAYLAND-1",mode="800x600@60",position="0x0",scale=1})
+ '''
++if DENSE:LUA=LUA.replace(b'800x600',b'480x600')
+ if CHORD:LUA+=(ROOT/'native/switcher-bindings.lua').read_bytes()
+ def check(name,condition,**data):
+  report['checks'].append({'name':name,'passed':bool(condition),**data});assert condition,name
+@@ -158,6 +161,15 @@ try:
+     (catalog_root/'warlock-editor.desktop').write_text('[Desktop Entry]\nType=Application\nName=Editor\nGenericName=Text editor\nExec=/usr/bin/true\n')
+    if PINMENUS:
+     (catalog_root/'warlock-running-peer.desktop').write_text('[Desktop Entry]\nType=Application\nName=Peer\nStartupWMClass=warlock-peer-fixture\nExec=/usr/bin/true\n')
++   if DENSE:
++    (catalog_root/'warlock-running-primary.desktop').write_text('[Desktop Entry]\nType=Application\nName=Primary\nStartupWMClass=warlock-primary-fixture\nExec=/usr/bin/true\n')
++    dense_labels=['Primary']+['Dense '+str(i) for i in range(16)]+['Peer']
++    dense_ids=['warlock-running-primary']+['warlock-dense-'+str(i) for i in range(16)]+['warlock-running-peer']
++    for i in range(16):(catalog_root/('warlock-dense-'+str(i)+'.desktop')).write_text('[Desktop Entry]\nType=Application\nName=Dense '+str(i)+'\nExec=/usr/bin/true\n')
++    from taskbar_preferences import Store
++    configured=Store(env['XDG_STATE_HOME']);status,saved=configured.save({'revision':configured.read()['revision'],'identities':dense_ids})
++    check('DenseFixturePinsSavedThroughActualStore',status=='Saved' and saved['identities']==dense_ids)
++    report['configuredDensePins']={'identities':dense_ids,'labels':dense_labels,'saved':saved,'path':str(configured.path/'taskbar.json'),'sha256':sha(configured.path/'taskbar.json')}
+    control=OUTPUT/'fixture-control.json';fixture=s.host.launch('fixture',['/usr/bin/python3','-B',str(FIXTURE),str(control),*(['primary'] if PRIMARY else [])],env=env);apps.append(fixture)
+    if PRIMARY:
+     peer_control=OUTPUT/'peer-control.json';peer_fixture=s.host.launch('peer-fixture',['/usr/bin/python3','-B',str(FIXTURE),str(peer_control),'peer'],env=env);apps.append(peer_fixture)
+@@ -167,7 +179,7 @@ try:
+     peer=next(w for w in s.data('clients') if w['title']=='ELM-ACTIVATION-PEER');peer_selector='address:'+peer['address']
+     if not peer['floating']:check('PeerFixtureFloats',s.ctl('dispatch',"hl.dsp.window.float({action='set',window='"+peer_selector+"'})").strip()=='ok')
+     check('PeerFixtureSize',s.ctl('dispatch',"hl.dsp.window.resize({x=320,y=240,window='"+peer_selector+"'})").strip()=='ok')
+-    check('PeerFixturePosition',s.ctl('dispatch',"hl.dsp.window.move({x=400,y=150,window='"+peer_selector+"'})").strip()=='ok')
++    check('PeerFixturePosition',s.ctl('dispatch',"hl.dsp.window.move({x="+('120' if DENSE else '400')+",y=150,window='"+peer_selector+"'})").strip()=='ok')
+    if TASKVIEW:
+     peer=next(w for w in s.data('clients') if w['title']=='ELM-ACTIVATION-PEER')
+     if NAV:
+@@ -248,7 +260,7 @@ daemon.handle_request=handle
+ raise SystemExit(daemon.run())
+ """)
+     report['commitHoldFixture']={'path':str(backend_fixture),'sha256':sha(backend_fixture),'maximumSeconds':2,'scope':'Only delay transport before selection prepare; original effect path and six-second observation deadline unchanged.'}
+-   web=s.host.launch('warlock',['%s'%binary,'--assets',str(assets),'--authority-config',str(config_path),'--backend',str(backend_fixture if CATALOG or CHORD else ROOT/'adapter/daemon.py'),'--qa-exit-after-render','--qa-stay-open','--surface-experiment'],env=env);apps.append(web);log=OUTPUT/'warlock.log';collector=Collector()
++   web=s.host.launch('warlock',['%s'%binary,'--assets',str(assets),'--authority-config',str(config_path),'--backend',str(backend_fixture if CATALOG or CHORD else ROOT/'adapter/daemon.py'),'--qa-exit-after-render','--qa-stay-open','--surface-experiment',*(['--text-scale','1.5'] if DENSE else [])],env=env);apps.append(web);log=OUTPUT/'warlock.log';collector=Collector()
+    def text():
+     raw=log.read_text(errors='replace')
+     # The live file may end in a producer's unfinished JSON record. Observe
+@@ -361,7 +373,7 @@ raise SystemExit(daemon.run())
+       selected=button['accessibleName'] in ['Minimize','Close window actions','Maximize'] if PINMENUS else button['accessibleName'].startswith(('Activate ELM-','Restore ELM-')) if SWITCHER or CHORD else (button['accessibleName'].startswith('Browse workspace ') or (NAV and button['accessibleName'].startswith('Restore ELM-ACTIVATION-PEER'))) if TASKVIEW else button['accessibleName'] in ['Refresh applications','Open Files']
+       if not selected or button['disabled'] or button['y']<0 or button['y']+button['height']>box[3]:continue
+       left,top=max(0,int(box[0]+button['x'])+12),max(100,int(box[1]+button['y'])+6)
+-      right,bottom=min(800,int(box[0]+button['x']+min(220,button['width']))-12),min(600,box[1]+box[3],int(box[1]+button['y']+button['height'])-6)
++      right,bottom=min(pix.get_width(),int(box[0]+button['x']+min(220,button['width']))-12),min(pix.get_height(),box[1]+box[3],int(box[1]+button['y']+button['height'])-6)
+       bright=sum(1 for y in range(top,bottom) for x in range(left,right) if all(pixels[y*stride+x*channels+c]>170 for c in range(3)))
+       painted=sum(1 for y in range(top,bottom) for x in range(left,right) if all(pixels[y*stride+x*channels+c]>15 for c in range(3)))
+       regions.append({'accessibleName':button['accessibleName'],'brightPixels':bright,'paintedPixels':painted,'area':max(0,right-left)*max(0,bottom-top),'region':[left,top,right,bottom]})
+@@ -383,7 +395,82 @@ raise SystemExit(daemon.run())
+       key(15)
+      check('KeyboardReaches'+label,popup_body()['focus']==button['id'],body=popup_body())
+      key(57)
+-    if PINMENUS:
++    if DENSE:
++     def dense_body():
++      body=bar_body();p=projection()
++      return body if body and p and p['phase']=='Coherent' and p['mode']=='closed' and body['publication']==p['publication'] and len([b for b in body['buttons'] if b.get('identity','').startswith('bar:pin:')])==len(dense_ids) else None
++     def dense_pin(identity):
++      body=dense_body()
++      return next((b for b in body['buttons'] if b.get('identity')=='bar:pin:'+identity and not b['disabled']),None) if body else None
++     def visible(button,body):
++      box=body['actions']
++      return button and button['x']>=box['x']-.5 and button['x']+button['width']<=box['x']+box['width']+.5 and button['y']>=box['y']-.5 and button['y']+button['height']<=box['y']+box['height']+.5
++     def selected(identity):
++      button=dense_pin(identity);body=dense_body()
++      return body if button and body['focus']==button['id'] and visible(button,body) else None
++     def order(body):return [b['identity'][len('bar:pin:'):] for b in body['buttons'] if b.get('identity','').startswith('bar:pin:')]
++     def dense_capture(stage):
++      image=OUTPUT/(stage+'.png');helper(['/usr/bin/grim',str(image)])
++      import gi;gi.require_version('GdkPixbuf','2.0');from gi.repository import GdkPixbuf
++      pix=GdkPixbuf.Pixbuf.new_from_file(str(image));check(stage+'ActualOutputPixels',pix.get_width()==dense_body()['viewportWidth'] and pix.get_height()==600)
++      report.setdefault('denseCaptures',[]).append({'stage':stage,'path':str(image),'sha256':sha(image),'body':dense_body()})
++     def dense_menu():
++      body=popup_body();p=projection()
++      return body if body and p and p.get('mode')=='menu' and body['publication']==p['publication'] and any(b['accessibleName']=='Minimize' and not b['disabled'] for b in body['buttons']) else None
++     before=len(journal());body=wait(dense_body)
++     check('NativeDenseFixtureUsesSmallOutputAndEnlargedText',body['fontSize']=='24px' and body['viewportWidth']==480 and body['actions']['height']==72 and body['scrollWidth']>body['clientWidth'],body=body)
++     check('NativeConfiguredPinOrderIsRendered',order(body)==dense_ids,body=body)
++     for _ in range(12):
++      body=dense_body();button=dense_pin(dense_ids[0]);box=body['actions']
++      # Pointer opening needs a visible hit region. Complete selection reveal
++      # is asserted after Escape, when this control actually receives focus.
++      if button['x']+button['width']>box['x']+8 and button['x']<box['x']+box['width']-8:break
++      delta=-120 if button['x']<box['x'] else 120
++      helper([str(POINTER),'480','600'],f'move {round(box["x"]+box["width"]/2)} 30\nwheel {delta} 0\nsleep 100\n')
++     body=dense_body();button=dense_pin(dense_ids[0]);box=body['actions']
++     check('NativeWheelMakesFirstConfiguredPinReachable',button['x']+button['width']>box['x']+8 and button['x']<box['x']+box['width']-8,body=body)
++     x=round((max(button['x'],box['x'])+min(button['x']+button['width'],box['x']+box['width']))/2);y=round(button['y']+button['height']/2)
++     check('FirstDensePinSecondaryClickUsesVisibleIntersection',box['x']<=x<box['x']+box['width'] and 0<=y<72,button=button)
++     helper([str(POINTER),'480','600'],f'move {x} {y}\nsleep 100\nbutton 273 1\nsleep 50\nbutton 273 0\nsleep 100\n')
++     wait(dense_menu);popup_capture('dense-first-menu')
++     check('DenseFirstPinMenuLabelsHaveNativePixels',bool(report['popupCaptures'][-1]['controlRegions']) and all(r['brightPixels']>15 for r in report['popupCaptures'][-1]['controlRegions']))
++     key(1);wait(lambda:selected(dense_ids[0]));check('DenseMenuEscapeRevealsFirstPin',bool(selected(dense_ids[0])))
++     key(107);wait(lambda:selected(dense_ids[-1]));check('NativeEndRevealsLastPin',bool(selected(dense_ids[-1])));dense_capture('dense-last')
++     key(102);wait(lambda:(dense_body() or {}).get('focus')==(dense_body() or {}).get('buttons',[{}])[0].get('id'))
++     visited=[]
++     for identity in dense_ids:
++      for _ in range(len(dense_body()['buttons'])+1):
++       if selected(identity):break
++       key(106)
++      body=wait(lambda:selected(identity));visited.append(identity)
++      check('NativeKeyboardReachesConfiguredPin'+identity,visible(dense_pin(identity),body) and order(body)==dense_ids and bool(dense_pin(identity)['accessibleName']))
++     report['keyboardVisitedPins']=visited
++     proofs=sum('surface-context-admitted:' in l and 'origin=bar trigger=keyboard' in l for l in text().splitlines())
++     key(127);wait(dense_menu);check('DenseLastPinMenuKeyUsesCurrentNativeProof',sum('surface-context-admitted:' in l and 'origin=bar trigger=keyboard' in l for l in text().splitlines())==proofs+1)
++     key(1);wait(lambda:selected(dense_ids[-1]))
++     helper([str(keyboard)],'key 42 1\nkey 68 1\nsleep 50\nkey 68 0\nkey 42 0\nsleep 100\nsync\n');wait(dense_menu);popup_capture('dense-last-menu');key(1);wait(lambda:selected(dense_ids[-1]))
++     check('DenseMenusAndNavigationHaveNoWindowEffectsOrLaunches',len(journal())==before and not launches())
++     helper([str(POINTER),'480','600'],'move 200 30\nwheel -30000 0\nsleep 100\n')
++     wait(lambda:(dense_body() or {}).get('scrollLeft')==0);check('NativeVerticalWheelReachesBeginning',dense_body()['scrollLeft']==0)
++     key(107);wait(lambda:selected(dense_ids[-1]))
++     for width in [640,480]:
++      result=s.ctl('eval','hl.monitor({output="WAYLAND-1",mode="'+str(width)+'x600@60",position="0x0",scale=1})')
++      check('NativeOutputResizeCommand'+str(width),result.strip()=='ok',result=result)
++      wait(lambda:any(m['name']=='WAYLAND-1' and m['width']==width and m['height']==600 for m in s.data('monitors')))
++      wait(lambda:(dense_body() or {}).get('viewportWidth')==width and selected(dense_ids[-1]))
++      body=dense_body();check('NativeResize'+str(width)+'PreservesOrderAndRevealsSelection',order(body)==dense_ids and visible(dense_pin(dense_ids[-1]),body),body=body)
++      dense_capture('dense-resize-'+str(width))
++      admitted=sum('surface-context-admitted:' in l for l in text().splitlines())
++      if width==480:
++       helper([str(keyboard)],'key 127 1\nsleep 100\nkey 127 1\nsleep 50\nkey 127 0\nsleep 100\nsync\n')
++      else:key(127)
++      wait(dense_menu)
++      check('NativeMenuAfterResize'+str(width)+'AdmitsOnlyOneFreshKey',sum('surface-context-admitted:' in l for l in text().splitlines())==admitted+1 and len(journal())==before and not launches())
++      key(1);wait(lambda:selected(dense_ids[-1]))
++     check('DenseResizeKeepsConfiguredIdentityFile',configured.read()['identities']==dense_ids and sha(configured.path/'taskbar.json')==report['configuredDensePins']['sha256'])
++     check('DenseJourneyDoesNotActivateOrLaunch',len(journal())==before and not launches())
++     report['nativeDenseTaskbarObserved']=True
++    elif PINMENUS:
+      click(wait(lambda:projection().get('openApplications') if projection() else None))
+      wait(lambda:field_value()=='');query([25,18,18,19],'peer');keyboard_button('Pin Peer')
+      wait(lambda:any(button['label'].startswith('Peer') and 'Pinned;' in button['label'] for button in (bar_body() or {}).get('buttons',[])))
+diff --git c/implementation/warlock/src/SurfaceRenderer.elm w/implementation/warlock/src/SurfaceRenderer.elm
+index b0ec64d..d950ca8 100644
+--- c/implementation/warlock/src/SurfaceRenderer.elm
++++ w/implementation/warlock/src/SurfaceRenderer.elm
+@@ -73,7 +73,7 @@ view popup send current = viewWithPreview (\_ -> text "") popup send current
+ viewWithPreview : (String -> Html msg) -> Bool -> (E.Value -> msg) -> Snapshot -> Html msg
+ viewWithPreview preview popup send ((Snapshot snapshot) as current) =
+     let control item =
+-            let kind = if String.startsWith "bar:group:" item.identity then "control-group" else if item.identity=="bar:recovery-refresh" then "control-recovery" else "control-utility"
++            let kind = if String.startsWith "bar:group:" item.identity || String.startsWith "bar:pin:" item.identity then "control-group" else if item.identity=="bar:recovery-refresh" then "control-recovery" else "control-utility"
+             in if popup && snapshot.mode=="applications" && item.identity=="control:search" then
+                 let event = D.map2 (\query composing -> (query,composing)) (D.at ["target","value"] D.string) (D.oneOf [D.field "isComposing" D.bool,D.succeed False]) |> D.andThen (\(query,composing) -> D.succeed (send (E.object [("surfaceProtocol",E.int 2),("kind",E.string (if composing then "surface-preedit" else "surface-query")),("surface",E.string "popup"),("publication",E.string (UInt64.string snapshot.publication)),("lease",E.string (UInt64.string snapshot.lease)),("id",E.string item.identity),("query",E.string query)])))
+                 in input [class "launcher-search",id item.domId,type_ "search",placeholder "Search applications",value item.label,attribute "aria-label" item.ariaLabel,attribute "data-surface-field" item.identity,attribute "autocomplete" "off",disabled (not item.enabled),on "input" event,on "compositionend" event] []
+diff --git 1/implementation/warlock/qa/dense-taskbar-browser.mjs 2/implementation/warlock/qa/dense-taskbar-browser.mjs
+new file mode 100644
+index 0000000..f73c7c5
+--- /dev/null
++++ 2/implementation/warlock/qa/dense-taskbar-browser.mjs
+@@ -0,0 +1,49 @@
++import {spawn} from 'node:child_process';
++import fs from 'node:fs';
++import path from 'node:path';
++const [base,out,binary]=process.argv.slice(2), report={passed:false,checks:[],captures:[],errors:[],externalRequests:[],nativeAcceptance:false,fullReleaseAccepted:false};
++const sleep=ms=>new Promise(r=>setTimeout(r,ms));
++const browser=spawn(binary,['--remote-debugging-address=127.0.0.1','--remote-debugging-port=0','--user-data-dir='+path.join(out,'profile'),'--disable-gpu','--disable-breakpad','--disable-crash-reporter','--no-first-run','about:blank'],{stdio:['ignore','pipe','pipe']});
++let stderr='',stdout='',ws,session,sequence=0,pending=new Map();
++browser.stderr.on('data',v=>stderr+=v);browser.stdout.on('data',v=>stdout+=v);
++function call(method,params={},sessionId=session){return new Promise((resolve,reject)=>{const id=++sequence;const timer=setTimeout(()=>{pending.delete(id);reject(new Error('CDP timeout '+method));},15000);pending.set(id,{resolve,reject,timer});ws.send(JSON.stringify({id,method,params,...(sessionId?{sessionId}:{})}));});}
++function check(name,condition,detail){if(!condition)throw Error(name+' '+JSON.stringify(detail));report.checks.push({name,detail});}
++async function evaluate(expression){const r=await call('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error(JSON.stringify(r.exceptionDetails));return r.result.value;}
++async function until(expression){for(let i=0;i<100;i++){if(await evaluate(expression))return;await sleep(30);}throw Error('Condition timeout '+expression);}
++async function click(selector){const rect=await evaluate(`(()=>{const b=document.querySelector(${JSON.stringify(selector)});b.scrollIntoView({block:'center'});const r=b.getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2};})()`);await call('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',clickCount:1,...rect});await call('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',clickCount:1,...rect});await sleep(60);}
++async function route(name){await evaluate('location.hash='+JSON.stringify(name));await until('!!document.querySelector("main h1") && location.hash === '+JSON.stringify('#'+name));await sleep(100);}
++async function viewport(width,height=980){await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false});await sleep(80);}
++async function capture(name){await evaluate('document.fonts.ready');const r=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});fs.writeFileSync(path.join(out,name+'.png'),Buffer.from(r.data,'base64'));report.captures.push(name+'.png');}
++async function observation(){return evaluate('window.fixtureObservation');}
++try{
++ let match;for(let i=0;i<100;i++){match=stderr.match(/DevTools listening on (ws:\/\/[^\s]+)/);if(match)break;if(browser.exitCode!==null)throw Error('Browser exited '+browser.exitCode+' '+stderr);await sleep(30);}if(!match)throw Error('No DevTools endpoint '+stderr);
++ ws=new WebSocket(match[1]);await new Promise((resolve,reject)=>{ws.onopen=resolve;ws.onerror=reject;});
++ ws.onmessage=event=>{const m=JSON.parse(event.data);if(m.id){const p=pending.get(m.id);if(p){pending.delete(m.id);clearTimeout(p.timer);m.error?p.reject(Error(JSON.stringify(m.error))):p.resolve(m.result);}}else if(m.method==='Runtime.exceptionThrown')report.errors.push(m.params.exceptionDetails);};
++ const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;
++
++ await call('Page.enable');await call('Runtime.enable');await viewport(480,96);await call('Page.navigate',{url:base+'/qa/dense.html'});await until('!!window.receivePresentation');
++ let pub=0;
++ async function show(disabled=-1){const frame={surfaceProtocol:2,publication:String(++pub),lease:'0',mode:'closed',status:'Ready',popup:[],bar:Array.from({length:100},(_,i)=>({id:'bar:pin:app-'+i,domId:'pin:'+pub+':'+i,label:'Application '+i,ariaLabel:'Activate Application '+i,detail:'Pinned; Open',enabled:i!==disabled}))};await evaluate('receivePresentation('+JSON.stringify(frame)+')');await until('document.querySelector(".surface-bar")?.dataset.publication==='+JSON.stringify(frame.publication));await sleep(60);}
++ async function key(value){await call('Input.dispatchKeyEvent',{type:'keyDown',key:value,code:value});await call('Input.dispatchKeyEvent',{type:'keyUp',key:value,code:value});await sleep(40);}
++ const state=()=>evaluate(`(()=>{const a=document.querySelector('.surface-actions'),f=document.activeElement,r=f.getBoundingClientRect(),v=a.getBoundingClientRect();return {id:f.dataset.surfaceControl,domId:f.id,x:r.x,right:r.right,top:r.top,bottom:r.bottom,left:v.left,viewRight:v.right,viewBottom:v.bottom,scroll:a.scrollLeft,scrollWidth:a.scrollWidth,width:a.clientWidth,font:getComputedStyle(document.body).fontSize,shadow:getComputedStyle(f).boxShadow,order:[...a.children].map(b=>b.dataset.surfaceControl)};})()`);
++ const visible=s=>s.x>=s.left-.5&&s.right<=s.viewRight+.5&&s.top>=0&&s.bottom<=s.viewBottom+.5;
++ await show();await evaluate(`document.querySelector('[data-surface-control="bar:pin:app-0"]').focus()`);const first=await state();check('Enlarged first item visible with bounded overflow',first.font==='24px'&&visible(first)&&first.scrollWidth>first.width,first);
++ await key('End');const last=await state();check('End reveals last item',last.id==='bar:pin:app-99'&&visible(last),last);await capture('dense-last');
++ await show(98);await key('ArrowLeft');const skipped=await state();check('Arrow traversal skips disabled controls without changing order',skipped.id==='bar:pin:app-97'&&visible(skipped)&&JSON.stringify(skipped.order)===JSON.stringify(first.order),skipped);
++ await key('Home');check('Home reveals first item',(await state()).id==='bar:pin:app-0'&&visible(await state()));
++ await key('End');await show();const changed=await state();check('Publication changes keep the logical selected identity',changed.id==='bar:pin:app-99'&&changed.domId==='pin:3:99'&&visible(changed),changed);
++ for(const width of [960,320,640]){await viewport(width,96);const current=await state();check('Resize '+width+' preserves order and visible selection',current.id==='bar:pin:app-99'&&visible(current)&&JSON.stringify(current.order)===JSON.stringify(first.order),current);}
++ await call('Input.dispatchMouseEvent',{type:'mouseWheel',x:600,y:30,deltaX:0,deltaY:-30000});await sleep(70);check('Vertical wheel reaches the beginning',(await state()).scroll===0,await state());
++ await show();check('Observation publications do not undo manual scrolling',(await state()).scroll===0,await state());
++ await key('End');check('Keyboard navigation reveals selection after manual scrolling',visible(await state()));
++ await show(99);await show();check('A transiently disabled selection returns by current identity',(await state()).id==='bar:pin:app-99'&&visible(await state()));
++ await call('Emulation.setEmulatedMedia',{features:[{name:'forced-colors',value:'active'}]});await key('Home');check('Forced colors retain a visible focus outline',await evaluate(`getComputedStyle(document.activeElement).outlineStyle!=='none'`));
++ check('Scrolling and navigation never emit activation',await evaluate(`nativePackets.filter(p=>p.kind==='surface-action').length===0`));check('No uncaught browser exceptions',report.errors.length===0,report.errors);report.passed=true;
++}catch(error){report.error=String(error.stack||error);}
++finally{
++ if(ws?.readyState===1){try{await call('Browser.close',{},null);}catch(_){}ws.close();}
++ for(let i=0;i<100&&browser.exitCode===null;i++)await sleep(20);if(browser.exitCode===null)browser.kill('SIGTERM');
++ await new Promise(resolve=>{if(browser.exitCode!==null)resolve();else browser.once('exit',resolve);});report.browserExitCode=browser.exitCode;
++ fs.writeFileSync(path.join(out,'browser.stderr'),stderr);fs.writeFileSync(path.join(out,'browser.stdout'),stdout);fs.writeFileSync(path.join(out,'dense-browser.json'),JSON.stringify(report,null,2)+'\n');
++ console.log(JSON.stringify({passed:report.passed,checks:report.checks.length,captures:report.captures,error:report.error}));process.exitCode=report.passed?0:1;
++}

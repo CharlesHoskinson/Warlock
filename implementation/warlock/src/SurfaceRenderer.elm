@@ -73,7 +73,7 @@ view popup send current = viewWithPreview (\_ -> text "") popup send current
 viewWithPreview : (String -> Html msg) -> Bool -> (E.Value -> msg) -> Snapshot -> Html msg
 viewWithPreview preview popup send ((Snapshot snapshot) as current) =
     let control item =
-            let kind = if String.startsWith "bar:group:" item.identity then "control-group" else if item.identity=="bar:recovery-refresh" then "control-recovery" else "control-utility"
+            let kind = if String.startsWith "bar:group:" item.identity || String.startsWith "bar:pin:" item.identity then "control-group" else if item.identity=="bar:recovery-refresh" then "control-recovery" else "control-utility"
             in if popup && snapshot.mode=="applications" && item.identity=="control:search" then
                 let event = D.map2 (\query composing -> (query,composing)) (D.at ["target","value"] D.string) (D.oneOf [D.field "isComposing" D.bool,D.succeed False]) |> D.andThen (\(query,composing) -> D.succeed (send (E.object [("surfaceProtocol",E.int 2),("kind",E.string (if composing then "surface-preedit" else "surface-query")),("surface",E.string "popup"),("publication",E.string (UInt64.string snapshot.publication)),("lease",E.string (UInt64.string snapshot.lease)),("id",E.string item.identity),("query",E.string query)])))
                 in input [class "launcher-search",id item.domId,type_ "search",placeholder "Search applications",value item.label,attribute "aria-label" item.ariaLabel,attribute "data-surface-field" item.identity,attribute "autocomplete" "off",disabled (not item.enabled),on "input" event,on "compositionend" event] []

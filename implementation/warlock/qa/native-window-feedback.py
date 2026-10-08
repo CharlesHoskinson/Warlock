@@ -4,7 +4,8 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
 lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
 """
 import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
-PINMENUS=sys.argv[1:]==['--pinned-menus']
+DENSE=sys.argv[1:]==['--dense-taskbar']
+PINMENUS=sys.argv[1:]==['--pinned-menus'] or DENSE
 PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PINMENUS
 PRE_READY_RETIRE=sys.argv[1:]==['--switcher-pre-ready-retirement']
 MEMBERSHIP=sys.argv[1:]==['--switcher-membership'] or PRE_READY_RETIRE
@@ -46,7 +47,7 @@ else:
 for row in pair.values():assert sha(row['path'])==row['sha256']
 assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
 subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
-OUT=ROOT/'qa/runs'/(('native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+OUT=ROOT/'qa/runs'/(('native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
 OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
 focus_host=None
 if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
@@ -105,9 +106,11 @@ if MEMBERSHIP:report.update(scenarios=['switcher-membership','switcher-retire-ar
 if SWITCHER:report.update(requirements=['ELM-UI-003'],scenarios=['switcher-order','switcher-cancel'],scope='Actual native MRU observation, integrated switcher control pixels, local keyboard cycling/cancel and identity-bound chosen activation; global Alt-Tab journal, modal representation and AT/independent acceptance remain pending',nativeSwitcherJourneyObserved=False)
 if PRIMARY:report.update(requirements=['ELM-UI-004'],scenarios=['taskbar-inactive','taskbar-active','taskbar-minimized'],scope='Actual pointer single-family activation/minimize/restore, exact native receipt and GTK keyboard recipient, MRU/desktop succession and pixels; primary keyboard and AT acceptance remain pending',nativePrimaryJourneyObserved=False)
 if PINMENUS:report.update(requirements=['ELM-UI-008','ELM-UX-023'],scenarios=['menu-invocation','keyboard-menus'],scope='Actual current running pin, native secondary click/Menu/Shift-F10 menus and existing minimize/restore path; dense/enlarged-text, AT and independent acceptance remain open',nativePinnedMenusObserved=False)
+if DENSE:report.update(requirements=['ELM-UI-008'],scenarios=['overflow-first-last','overflow-resize','menu-invocation'],scope='Actual small native output, enlarged text, configured overflowing pins, physical keyboard/wheel/menu traversal and output resize; AT and independent review remain open',nativeDenseTaskbarObserved=False)
 LUA=b'''hl.config({xwayland={enabled=false},animations={enabled=false}})
 hl.monitor({output="WAYLAND-1",mode="800x600@60",position="0x0",scale=1})
 '''
+if DENSE:LUA=LUA.replace(b'800x600',b'480x600')
 if CHORD:LUA+=(ROOT/'native/switcher-bindings.lua').read_bytes()
 def check(name,condition,**data):
  report['checks'].append({'name':name,'passed':bool(condition),**data});assert condition,name
@@ -158,6 +161,15 @@ try:
     (catalog_root/'warlock-editor.desktop').write_text('[Desktop Entry]\nType=Application\nName=Editor\nGenericName=Text editor\nExec=/usr/bin/true\n')
    if PINMENUS:
     (catalog_root/'warlock-running-peer.desktop').write_text('[Desktop Entry]\nType=Application\nName=Peer\nStartupWMClass=warlock-peer-fixture\nExec=/usr/bin/true\n')
+   if DENSE:
+    (catalog_root/'warlock-running-primary.desktop').write_text('[Desktop Entry]\nType=Application\nName=Primary\nStartupWMClass=warlock-primary-fixture\nExec=/usr/bin/true\n')
+    dense_labels=['Primary']+['Dense '+str(i) for i in range(16)]+['Peer']
+    dense_ids=['warlock-running-primary']+['warlock-dense-'+str(i) for i in range(16)]+['warlock-running-peer']
+    for i in range(16):(catalog_root/('warlock-dense-'+str(i)+'.desktop')).write_text('[Desktop Entry]\nType=Application\nName=Dense '+str(i)+'\nExec=/usr/bin/true\n')
+    from taskbar_preferences import Store
+    configured=Store(env['XDG_STATE_HOME']);status,saved=configured.save({'revision':configured.read()['revision'],'identities':dense_ids})
+    check('DenseFixturePinsSavedThroughActualStore',status=='Saved' and saved['identities']==dense_ids)
+    report['configuredDensePins']={'identities':dense_ids,'labels':dense_labels,'saved':saved,'path':str(configured.path/'taskbar.json'),'sha256':sha(configured.path/'taskbar.json')}
    control=OUTPUT/'fixture-control.json';fixture=s.host.launch('fixture',['/usr/bin/python3','-B',str(FIXTURE),str(control),*(['primary'] if PRIMARY else [])],env=env);apps.append(fixture)
    if PRIMARY:
     peer_control=OUTPUT/'peer-control.json';peer_fixture=s.host.launch('peer-fixture',['/usr/bin/python3','-B',str(FIXTURE),str(peer_control),'peer'],env=env);apps.append(peer_fixture)
@@ -167,7 +179,7 @@ try:
     peer=next(w for w in s.data('clients') if w['title']=='ELM-ACTIVATION-PEER');peer_selector='address:'+peer['address']
     if not peer['floating']:check('PeerFixtureFloats',s.ctl('dispatch',"hl.dsp.window.float({action='set',window='"+peer_selector+"'})").strip()=='ok')
     check('PeerFixtureSize',s.ctl('dispatch',"hl.dsp.window.resize({x=320,y=240,window='"+peer_selector+"'})").strip()=='ok')
-    check('PeerFixturePosition',s.ctl('dispatch',"hl.dsp.window.move({x=400,y=150,window='"+peer_selector+"'})").strip()=='ok')
+    check('PeerFixturePosition',s.ctl('dispatch',"hl.dsp.window.move({x="+('120' if DENSE else '400')+",y=150,window='"+peer_selector+"'})").strip()=='ok')
    if TASKVIEW:
     peer=next(w for w in s.data('clients') if w['title']=='ELM-ACTIVATION-PEER')
     if NAV:
@@ -248,7 +260,7 @@ daemon.handle_request=handle
 raise SystemExit(daemon.run())
 """)
     report['commitHoldFixture']={'path':str(backend_fixture),'sha256':sha(backend_fixture),'maximumSeconds':2,'scope':'Only delay transport before selection prepare; original effect path and six-second observation deadline unchanged.'}
-   web=s.host.launch('warlock',['%s'%binary,'--assets',str(assets),'--authority-config',str(config_path),'--backend',str(backend_fixture if CATALOG or CHORD else ROOT/'adapter/daemon.py'),'--qa-exit-after-render','--qa-stay-open','--surface-experiment'],env=env);apps.append(web);log=OUTPUT/'warlock.log';collector=Collector()
+   web=s.host.launch('warlock',['%s'%binary,'--assets',str(assets),'--authority-config',str(config_path),'--backend',str(backend_fixture if CATALOG or CHORD else ROOT/'adapter/daemon.py'),'--qa-exit-after-render','--qa-stay-open','--surface-experiment',*(['--text-scale','1.5'] if DENSE else [])],env=env);apps.append(web);log=OUTPUT/'warlock.log';collector=Collector()
    def text():
     raw=log.read_text(errors='replace')
     # The live file may end in a producer's unfinished JSON record. Observe
@@ -361,7 +373,7 @@ raise SystemExit(daemon.run())
       selected=button['accessibleName'] in ['Minimize','Close window actions','Maximize'] if PINMENUS else button['accessibleName'].startswith(('Activate ELM-','Restore ELM-')) if SWITCHER or CHORD else (button['accessibleName'].startswith('Browse workspace ') or (NAV and button['accessibleName'].startswith('Restore ELM-ACTIVATION-PEER'))) if TASKVIEW else button['accessibleName'] in ['Refresh applications','Open Files']
       if not selected or button['disabled'] or button['y']<0 or button['y']+button['height']>box[3]:continue
       left,top=max(0,int(box[0]+button['x'])+12),max(100,int(box[1]+button['y'])+6)
-      right,bottom=min(800,int(box[0]+button['x']+min(220,button['width']))-12),min(600,box[1]+box[3],int(box[1]+button['y']+button['height'])-6)
+      right,bottom=min(pix.get_width(),int(box[0]+button['x']+min(220,button['width']))-12),min(pix.get_height(),box[1]+box[3],int(box[1]+button['y']+button['height'])-6)
       bright=sum(1 for y in range(top,bottom) for x in range(left,right) if all(pixels[y*stride+x*channels+c]>170 for c in range(3)))
       painted=sum(1 for y in range(top,bottom) for x in range(left,right) if all(pixels[y*stride+x*channels+c]>15 for c in range(3)))
       regions.append({'accessibleName':button['accessibleName'],'brightPixels':bright,'paintedPixels':painted,'area':max(0,right-left)*max(0,bottom-top),'region':[left,top,right,bottom]})
@@ -383,7 +395,82 @@ raise SystemExit(daemon.run())
       key(15)
      check('KeyboardReaches'+label,popup_body()['focus']==button['id'],body=popup_body())
      key(57)
-    if PINMENUS:
+    if DENSE:
+     def dense_body():
+      body=bar_body();p=projection()
+      return body if body and p and p['phase']=='Coherent' and p['mode']=='closed' and body['publication']==p['publication'] and len([b for b in body['buttons'] if b.get('identity','').startswith('bar:pin:')])==len(dense_ids) else None
+     def dense_pin(identity):
+      body=dense_body()
+      return next((b for b in body['buttons'] if b.get('identity')=='bar:pin:'+identity and not b['disabled']),None) if body else None
+     def visible(button,body):
+      box=body['actions']
+      return button and button['x']>=box['x']-.5 and button['x']+button['width']<=box['x']+box['width']+.5 and button['y']>=box['y']-.5 and button['y']+button['height']<=box['y']+box['height']+.5
+     def selected(identity):
+      button=dense_pin(identity);body=dense_body()
+      return body if button and body['focus']==button['id'] and visible(button,body) else None
+     def order(body):return [b['identity'][len('bar:pin:'):] for b in body['buttons'] if b.get('identity','').startswith('bar:pin:')]
+     def dense_capture(stage):
+      image=OUTPUT/(stage+'.png');helper(['/usr/bin/grim',str(image)])
+      import gi;gi.require_version('GdkPixbuf','2.0');from gi.repository import GdkPixbuf
+      pix=GdkPixbuf.Pixbuf.new_from_file(str(image));check(stage+'ActualOutputPixels',pix.get_width()==dense_body()['viewportWidth'] and pix.get_height()==600)
+      report.setdefault('denseCaptures',[]).append({'stage':stage,'path':str(image),'sha256':sha(image),'body':dense_body()})
+     def dense_menu():
+      body=popup_body();p=projection()
+      return body if body and p and p.get('mode')=='menu' and body['publication']==p['publication'] and any(b['accessibleName']=='Minimize' and not b['disabled'] for b in body['buttons']) else None
+     before=len(journal());body=wait(dense_body)
+     check('NativeDenseFixtureUsesSmallOutputAndEnlargedText',body['fontSize']=='24px' and body['viewportWidth']==480 and body['actions']['height']==72 and body['scrollWidth']>body['clientWidth'],body=body)
+     check('NativeConfiguredPinOrderIsRendered',order(body)==dense_ids,body=body)
+     for _ in range(12):
+      body=dense_body();button=dense_pin(dense_ids[0]);box=body['actions']
+      # Pointer opening needs a visible hit region. Complete selection reveal
+      # is asserted after Escape, when this control actually receives focus.
+      if button['x']+button['width']>box['x']+8 and button['x']<box['x']+box['width']-8:break
+      delta=-120 if button['x']<box['x'] else 120
+      helper([str(POINTER),'480','600'],f'move {round(box["x"]+box["width"]/2)} 30\nwheel {delta} 0\nsleep 100\n')
+     body=dense_body();button=dense_pin(dense_ids[0]);box=body['actions']
+     check('NativeWheelMakesFirstConfiguredPinReachable',button['x']+button['width']>box['x']+8 and button['x']<box['x']+box['width']-8,body=body)
+     x=round((max(button['x'],box['x'])+min(button['x']+button['width'],box['x']+box['width']))/2);y=round(button['y']+button['height']/2)
+     check('FirstDensePinSecondaryClickUsesVisibleIntersection',box['x']<=x<box['x']+box['width'] and 0<=y<72,button=button)
+     helper([str(POINTER),'480','600'],f'move {x} {y}\nsleep 100\nbutton 273 1\nsleep 50\nbutton 273 0\nsleep 100\n')
+     wait(dense_menu);popup_capture('dense-first-menu')
+     check('DenseFirstPinMenuLabelsHaveNativePixels',bool(report['popupCaptures'][-1]['controlRegions']) and all(r['brightPixels']>15 for r in report['popupCaptures'][-1]['controlRegions']))
+     key(1);wait(lambda:selected(dense_ids[0]));check('DenseMenuEscapeRevealsFirstPin',bool(selected(dense_ids[0])))
+     key(107);wait(lambda:selected(dense_ids[-1]));check('NativeEndRevealsLastPin',bool(selected(dense_ids[-1])));dense_capture('dense-last')
+     key(102);wait(lambda:(dense_body() or {}).get('focus')==(dense_body() or {}).get('buttons',[{}])[0].get('id'))
+     visited=[]
+     for identity in dense_ids:
+      for _ in range(len(dense_body()['buttons'])+1):
+       if selected(identity):break
+       key(106)
+      body=wait(lambda:selected(identity));visited.append(identity)
+      check('NativeKeyboardReachesConfiguredPin'+identity,visible(dense_pin(identity),body) and order(body)==dense_ids and bool(dense_pin(identity)['accessibleName']))
+     report['keyboardVisitedPins']=visited
+     proofs=sum('surface-context-admitted:' in l and 'origin=bar trigger=keyboard' in l for l in text().splitlines())
+     key(127);wait(dense_menu);check('DenseLastPinMenuKeyUsesCurrentNativeProof',sum('surface-context-admitted:' in l and 'origin=bar trigger=keyboard' in l for l in text().splitlines())==proofs+1)
+     key(1);wait(lambda:selected(dense_ids[-1]))
+     helper([str(keyboard)],'key 42 1\nkey 68 1\nsleep 50\nkey 68 0\nkey 42 0\nsleep 100\nsync\n');wait(dense_menu);popup_capture('dense-last-menu');key(1);wait(lambda:selected(dense_ids[-1]))
+     check('DenseMenusAndNavigationHaveNoWindowEffectsOrLaunches',len(journal())==before and not launches())
+     helper([str(POINTER),'480','600'],'move 200 30\nwheel -30000 0\nsleep 100\n')
+     wait(lambda:(dense_body() or {}).get('scrollLeft')==0);check('NativeVerticalWheelReachesBeginning',dense_body()['scrollLeft']==0)
+     key(107);wait(lambda:selected(dense_ids[-1]))
+     for width in [640,480]:
+      result=s.ctl('eval','hl.monitor({output="WAYLAND-1",mode="'+str(width)+'x600@60",position="0x0",scale=1})')
+      check('NativeOutputResizeCommand'+str(width),result.strip()=='ok',result=result)
+      wait(lambda:any(m['name']=='WAYLAND-1' and m['width']==width and m['height']==600 for m in s.data('monitors')))
+      wait(lambda:(dense_body() or {}).get('viewportWidth')==width and selected(dense_ids[-1]))
+      body=dense_body();check('NativeResize'+str(width)+'PreservesOrderAndRevealsSelection',order(body)==dense_ids and visible(dense_pin(dense_ids[-1]),body),body=body)
+      dense_capture('dense-resize-'+str(width))
+      admitted=sum('surface-context-admitted:' in l for l in text().splitlines())
+      if width==480:
+       helper([str(keyboard)],'key 127 1\nsleep 100\nkey 127 1\nsleep 50\nkey 127 0\nsleep 100\nsync\n')
+      else:key(127)
+      wait(dense_menu)
+      check('NativeMenuAfterResize'+str(width)+'AdmitsOnlyOneFreshKey',sum('surface-context-admitted:' in l for l in text().splitlines())==admitted+1 and len(journal())==before and not launches())
+      key(1);wait(lambda:selected(dense_ids[-1]))
+     check('DenseResizeKeepsConfiguredIdentityFile',configured.read()['identities']==dense_ids and sha(configured.path/'taskbar.json')==report['configuredDensePins']['sha256'])
+     check('DenseJourneyDoesNotActivateOrLaunch',len(journal())==before and not launches())
+     report['nativeDenseTaskbarObserved']=True
+    elif PINMENUS:
      click(wait(lambda:projection().get('openApplications') if projection() else None))
      wait(lambda:field_value()=='');query([25,18,18,19],'peer');keyboard_button('Pin Peer')
      wait(lambda:any(button['label'].startswith('Peer') and 'Pinned;' in button['label'] for button in (bar_body() or {}).get('buttons',[])))

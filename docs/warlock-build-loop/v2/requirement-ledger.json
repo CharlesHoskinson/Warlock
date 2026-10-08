@@ -5716,16 +5716,38 @@
         {
           "name": "overflow-first-last",
           "oracle": "all entries are reachable, focus is revealed and labels identify operations",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/dense-taskbar/manifest.json",
+              "sha256": "b8c2dca5159e2e1a766e998c2487f5748b2f3e8c4351b3b754db109a6fb5afc3",
+              "scope": "18 configured pins at 150% text on a 480x600 native output; physical wheel and Home/End/arrows visit all enabled entries, first/last labeled menus via secondary click/Menu/Shift-F10, Escape returns selection, 480\u2192640\u2192480 resize preserves order and reveals selection, current native held-key proof rejects a duplicate menu press. Default-size minimize/restore, application typing and Task View dismissal regression also passed. Native dense pins and single-family running entries; component disabled/identity/forced-color cases. Multi-member picker/action overflow, applicable AT and independent original-scenario review remain open."
+            }
+          ],
+          "missingObservation": "Applicable AT and independent exact original-scenario review remain open; dense multi-member picker/action overflow remains outside this 18-pin fixture.",
+          "reviewerDisposition": {
+            "name": "root-dense-taskbar",
+            "independent": false,
+            "disposition": "Observed scoped implementation; original requirement and release acceptance remain pending."
+          }
         },
         {
           "name": "overflow-resize",
           "oracle": "identity and configured order persist with reachable active selection",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/dense-taskbar/manifest.json",
+              "sha256": "b8c2dca5159e2e1a766e998c2487f5748b2f3e8c4351b3b754db109a6fb5afc3",
+              "scope": "18 configured pins at 150% text on a 480x600 native output; physical wheel and Home/End/arrows visit all enabled entries, first/last labeled menus via secondary click/Menu/Shift-F10, Escape returns selection, 480\u2192640\u2192480 resize preserves order and reveals selection, current native held-key proof rejects a duplicate menu press. Default-size minimize/restore, application typing and Task View dismissal regression also passed. Native dense pins and single-family running entries; component disabled/identity/forced-color cases. Multi-member picker/action overflow, applicable AT and independent original-scenario review remain open."
+            }
+          ],
+          "missingObservation": "Applicable AT and independent exact original-scenario review remain open; dense multi-member picker/action overflow remains outside this 18-pin fixture.",
+          "reviewerDisposition": {
+            "name": "root-dense-taskbar",
+            "independent": false,
+            "disposition": "Observed scoped implementation; original requirement and release acceptance remain pending."
+          }
         },
         {
           "name": "menu-invocation",
@@ -5735,14 +5757,20 @@
             {
               "path": "implementation/warlock/qa/evidence/pinned-window-menus/manifest.json",
               "sha256": "558e5294161a44057a20fc2fa18c8495cd9dbd1c4be738f32f3be3de88e14384",
-              "scope": "Native current running pin: secondary click, Menu/Shift-F10, labeled operations, arrow traversal, Escape focus, minimize/restore and actual application input. 800x600 fixture with default 16px text; full original dense/enlarged-text/AT fixture not qualified."
+              "scope": "Native current running pin: secondary click, Menu/Shift-F10, labeled operations, arrow traversal, Escape focus, minimize/restore and actual application input. 800x600 fixture with default 16px text; full original dense/enlarged-text/AT fixture not qualified.",
+              "historicalAfterSourceChange": true
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/dense-taskbar/manifest.json",
+              "sha256": "b8c2dca5159e2e1a766e998c2487f5748b2f3e8c4351b3b754db109a6fb5afc3",
+              "scope": "18 configured pins at 150% text on a 480x600 native output; physical wheel and Home/End/arrows visit all enabled entries, first/last labeled menus via secondary click/Menu/Shift-F10, Escape returns selection, 480\u2192640\u2192480 resize preserves order and reveals selection, current native held-key proof rejects a duplicate menu press. Default-size minimize/restore, application typing and Task View dismissal regression also passed. Native dense pins and single-family running entries; component disabled/identity/forced-color cases. Multi-member picker/action overflow, applicable AT and independent original-scenario review remain open."
             }
           ],
-          "missingObservation": "Dense layout with enlarged text and more icons than fit; applicable AT and independent original-scenario review remain open.",
+          "missingObservation": "Applicable AT and independent exact original-scenario review remain open; dense multi-member picker/action overflow remains outside this 18-pin fixture.",
           "reviewerDisposition": {
-            "name": "root-pinned-menus",
+            "name": "root-dense-taskbar",
             "independent": false,
-            "disposition": "Observed scoped native/compiled behavior; original-scenario acceptance remains pending."
+            "disposition": "Observed scoped implementation; original requirement and release acceptance remain pending."
           }
         }
       ]
@@ -7599,5 +7627,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-08T05:24:10.749353+00:00"
+  "updatedUTC": "2026-10-08T07:35:43.116518+00:00"
 }

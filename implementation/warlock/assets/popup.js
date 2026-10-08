@@ -12734,7 +12734,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 			}
 		};
 		var control = function (item) {
-			var kind = A2($elm$core$String$startsWith, 'bar:group:', item.az) ? 'control-group' : ((item.az === 'bar:recovery-refresh') ? 'control-recovery' : 'control-utility');
+			var kind = (A2($elm$core$String$startsWith, 'bar:group:', item.az) || A2($elm$core$String$startsWith, 'bar:pin:', item.az)) ? 'control-group' : ((item.az === 'bar:recovery-refresh') ? 'control-recovery' : 'control-utility');
 			if (popup && ((snapshot.B === 'applications') && (item.az === 'control:search'))) {
 				var event = A2(
 					$elm$json$Json$Decode$andThen,

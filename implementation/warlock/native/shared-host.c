@@ -107,6 +107,7 @@ static OutputView *popup_owner,*focus_owner;
 static GtkWidget *controller_window;
 static WebKitWebContext *shared_context;
 static WebKitSettings *shared_settings;
+static guint shared_text_pixels=16;
 
 static JsonNode *scope_packet(const OutputView *owner) {
     if (!owner) return json_node_new(JSON_NODE_NULL);
@@ -463,8 +464,8 @@ static void shared_add(GdkDisplay *display,GdkMonitor *monitor,gpointer unused) 
     row->engine=shared_child(row->manager);
     row->bar=gtk_window_new(GTK_WINDOW_TOPLEVEL);gtk_window_set_title(GTK_WINDOW(row->bar),"Elm bar");
     gtk_layer_init_for_window(GTK_WINDOW(row->bar));gtk_layer_set_monitor(GTK_WINDOW(row->bar),monitor);gtk_layer_set_namespace(GTK_WINDOW(row->bar),"elm-shell-recovery-v17");
-    gtk_layer_set_layer(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_LAYER_TOP);gtk_layer_set_anchor(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_EDGE_TOP,TRUE);gtk_layer_set_anchor(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_EDGE_LEFT,TRUE);gtk_layer_set_anchor(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_EDGE_RIGHT,TRUE);gtk_layer_set_exclusive_zone(GTK_WINDOW(row->bar),48);gtk_layer_set_keyboard_mode(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_KEYBOARD_MODE_NONE);
-    gtk_widget_set_size_request(row->bar,-1,48);gtk_window_resize(GTK_WINDOW(row->bar),1,1);gtk_widget_set_size_request(GTK_WIDGET(row->engine),-1,48);
+    gtk_layer_set_layer(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_LAYER_TOP);gtk_layer_set_anchor(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_EDGE_TOP,TRUE);gtk_layer_set_anchor(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_EDGE_LEFT,TRUE);gtk_layer_set_anchor(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_EDGE_RIGHT,TRUE);gtk_layer_set_exclusive_zone(GTK_WINDOW(row->bar),3*shared_text_pixels);gtk_layer_set_keyboard_mode(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_KEYBOARD_MODE_NONE);
+    gtk_widget_set_size_request(row->bar,-1,3*shared_text_pixels);gtk_window_resize(GTK_WINDOW(row->bar),1,1);gtk_widget_set_size_request(GTK_WIDGET(row->engine),-1,3*shared_text_pixels);
     gtk_container_add(GTK_CONTAINER(row->bar),GTK_WIDGET(row->engine));
     g_signal_connect(row->engine,"decide-policy",G_CALLBACK(policy),NULL);g_signal_connect(row->engine,"web-process-terminated",G_CALLBACK(terminated),NULL);
     g_signal_connect(row->engine,"event",G_CALLBACK(shared_context_event),NULL);
@@ -1244,6 +1245,11 @@ int ELM_SHARED_HOST_MAIN(int argc,char **argv) {
         if (g_str_equal(argv[i],"--assets") && i+1<argc) asset_dir=argv[++i];
         else if (g_str_equal(argv[i],"--authority-config") && i+1<argc) authority_config=argv[++i];
         else if (g_str_equal(argv[i],"--backend") && i+1<argc) backend_path=argv[++i];
+        else if (g_str_equal(argv[i],"--text-scale") && i+1<argc) {
+            char *end=NULL;double scale=g_ascii_strtod(argv[++i],&end);
+            if(!end || *end || !(scale>=1.0 && scale<=2.0)) {g_printerr("Text scale must be between 1 and 2\n");return 2;}
+            shared_text_pixels=(guint)(16.0*scale+0.5);
+        }
         else if (g_str_equal(argv[i],"--qa-stay-open")) qa_stay=TRUE;
         else if (g_str_equal(argv[i],"--qa-preview-delayed-snapshot")) qa_controlled_delayed_snapshot=TRUE;
         else if (g_str_equal(argv[i],"--qa-preview-reopened-snapshot")) {qa_controlled_delayed_snapshot=TRUE;qa_controlled_reopened_snapshot=TRUE;}
@@ -1305,6 +1311,7 @@ int ELM_SHARED_HOST_MAIN(int argc,char **argv) {
     WebKitSecurityManager *security=webkit_web_context_get_security_manager(shared_context);webkit_security_manager_register_uri_scheme_as_local(security,"elm-shell");webkit_security_manager_register_uri_scheme_as_secure(security,"elm-shell");
     primary_manager=webkit_user_content_manager_new();manager_configure(primary_manager);
     view=WEBKIT_WEB_VIEW(g_object_new(WEBKIT_TYPE_WEB_VIEW,"web-context",shared_context,"user-content-manager",primary_manager,NULL));shared_settings=webkit_web_view_get_settings(view);
+    webkit_settings_set_default_font_size(shared_settings,shared_text_pixels);
     webkit_settings_set_enable_developer_extras(shared_settings,FALSE);webkit_settings_set_enable_write_console_messages_to_stdout(shared_settings,qa_exit);webkit_settings_set_javascript_can_open_windows_automatically(shared_settings,FALSE);webkit_settings_set_enable_html5_local_storage(shared_settings,FALSE);webkit_settings_set_hardware_acceleration_policy(shared_settings,WEBKIT_HARDWARE_ACCELERATION_POLICY_ALWAYS);
     controller_window=gtk_window_new(GTK_WINDOW_TOPLEVEL);window=controller_window;gtk_container_add(GTK_CONTAINER(controller_window),GTK_WIDGET(view));
     g_signal_connect(view,"decide-policy",G_CALLBACK(policy),NULL);g_signal_connect(view,"web-process-terminated",G_CALLBACK(terminated),NULL);

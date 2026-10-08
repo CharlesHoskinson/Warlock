@@ -6,7 +6,7 @@
   const stamp = node => node && ({publication:node.dataset.publication,lease:node.dataset.lease});
   const same = (a,b) => a && b && a.publication===b.publication && a.lease===b.lease;
   const post = value => window.webkit.messageHandlers.native.postMessage(JSON.stringify(value));
-  const diagnostic=(phase,event)=>{if(window.elmHostQA)post({kind:'context-input-report',phase,button:event.button,buttons:event.buttons,trusted:event.isTrusted,id:control(event.target)?.dataset.surfaceControl||null});};
+  const diagnostic=(phase,event)=>{if(window.elmHostQA)post({kind:'context-input-report',phase,button:event.button,buttons:event.buttons,key:event.key,repeat:event.repeat,composing:event.isComposing,prevented:event.defaultPrevented,trusted:event.isTrusted,id:control(event.target)?.dataset.surfaceControl||null});};
   const invoke = (item,node,trigger,x,y) => post({surfaceProtocol:2,kind:'surface-context',
     surface:node.classList.contains('surface-popup')?'popup':'bar',...stamp(node),
     id:item.dataset.surfaceControl,trigger,x,y});
@@ -40,7 +40,12 @@
   window.addEventListener('blur',()=>{pressed=null;});
   for(const name of ['scroll','dragstart']) document.addEventListener(name,()=>{pressed=null;},true);
   document.addEventListener('keydown',event => {
-    if(!event.isTrusted || event.repeat || event.isComposing || event.defaultPrevented || event.ctrlKey || event.altKey || event.metaKey) return;
+    diagnostic('key',event);
+    const contextKey=event.key==='ContextMenu' || (event.key==='F10' && event.shiftKey);
+    // WebKit can retain repeat=true after the key release went to a grabbed
+    // popup. Context requests still need the native fresh physical-key proof;
+    // its held-key guard rejects genuine repeats across both surfaces.
+    if(!event.isTrusted || (event.repeat&&!contextKey) || event.isComposing || event.defaultPrevented || event.ctrlKey || event.altKey || event.metaKey) return;
     const menu=document.querySelector('.surface-popup[data-mode="menu"]');
     // Dismissal belongs to the live popup, including when a disabled row blurs focus.
     if(event.key==='Escape' && menu){
@@ -48,7 +53,7 @@
     }
     const item=control(document.activeElement),node=owner(item);
     if(!item || !node) return;
-    if(event.key==='ContextMenu' || (event.key==='F10' && event.shiftKey)) {
+    if(contextKey) {
       if(item.disabled) return;
       event.preventDefault();invoke(item,node,'keyboard',0,0);return;
     }

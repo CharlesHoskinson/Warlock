@@ -5841,7 +5841,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 			}
 		};
 		var control = function (item) {
-			var kind = A2($elm$core$String$startsWith, 'bar:group:', item.C) ? 'control-group' : ((item.C === 'bar:recovery-refresh') ? 'control-recovery' : 'control-utility');
+			var kind = (A2($elm$core$String$startsWith, 'bar:group:', item.C) || A2($elm$core$String$startsWith, 'bar:pin:', item.C)) ? 'control-group' : ((item.C === 'bar:recovery-refresh') ? 'control-recovery' : 'control-utility');
 			if (popup && ((snapshot.h === 'applications') && (item.C === 'control:search'))) {
 				var event = A2(
 					$elm$json$Json$Decode$andThen,
