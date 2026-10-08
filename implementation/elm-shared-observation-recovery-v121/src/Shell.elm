@@ -63,7 +63,7 @@ disconnect model =
     let (effects,_,_) = Effects.apply (E.object [("kind",E.string "disconnect")]) model.effects
     in {model | effects = effects, expected = Nothing, geometry=Nothing,geometryCaps=Nothing,geometryExpected=Nothing,geometryAttachExpected=Nothing, attachNeeded=False, notificationQueued=False,deferNotifications=False, phase = Detached, reconnecting = False, notice = Maybe.map recoveryNotice model.recoveryFailure |> Maybe.withDefault "Connection lost. Reconnect to continue."}
 available : Model -> Bool
-available model = model.phase == Ready && not (Effects.pending model.effects) && model.geometryAttachExpected==Nothing && (not (model.geometryCaps |> Maybe.map .effects |> Maybe.withDefault False) || (model.geometryExpected==Nothing && model.geometry/=Nothing))
+available model = model.phase == Ready && not model.attachNeeded && not (Effects.pending model.effects) && model.geometryAttachExpected==Nothing && (not (model.geometryCaps |> Maybe.map .effects |> Maybe.withDefault False) || (model.geometryExpected==Nothing && model.geometry/=Nothing))
 status : Model -> String
 status model =
     case model.effects.transaction |> Maybe.map .status of
@@ -238,7 +238,10 @@ geometrySupported model = model.geometryCaps |> Maybe.map .effects |> Maybe.with
 refreshObservations : Model -> (Model,List Effect)
 refreshObservations model =
     let (legacy,commands)=refresh {model|notificationQueued=False}
-    in if geometrySupported legacy then
+    in if legacy.attachNeeded then
+        let (attached,attachCommands)=geometryRequest True legacy
+        in (attached,commands++attachCommands)
+       else if geometrySupported legacy then
         let (geometry,geometryCommands)=geometryRequest False legacy
         in (geometry,commands++geometryCommands)
        else (legacy,commands)

@@ -31,6 +31,8 @@ try:
  run('compiled-local-unsent',['node',str(inputs/'qa/disposition.cjs'),str(OUT/'worker.js'),str(inputs/'qa/native-evidence.json'),str(OUT/'probe'),str(OUT/'checks.json')])
  result=json.loads((OUT/'checks.json').read_text());assert result['passed'];report['checks']=result['checks'];report['passed']=True
  run('actual-main-compile',['npm','exec','--yes','--package=elm@0.19.2-0','--','elm','make','src/Main.elm','--optimize','--output='+str(OUT/'main.js')])
+ for module in ['Bar','Popup']:
+  run('actual-'+module.lower()+'-compile',['npm','exec','--yes','--package=elm@0.19.2-0','--','elm','make','src/'+module+'.elm','--optimize','--output='+str(OUT/(module.lower()+'.js'))])
  deps=shlex.split((OUT/'probe.d').read_text().replace('\\\n',' ').split(':',1)[1]);report['compilerDependencies']={str((inputs/p).resolve()):sha((inputs/p).resolve()) for p in deps}
  for relative,wanted in report['inputs'].items():assert sha(ROOT/relative)==wanted
 except Exception as error:report['passed']=False;report['error']=repr(error)

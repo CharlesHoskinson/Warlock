@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
   "activeSlice": "implementation/elm-recovery-delivery-general-reviewed-v656",
-  "status": "Active: current640 native lost-release18 andoriginal135 passed; full473/currentbounds, scalablehistory andcompleteUIUX/release gates open.",
+  "status": "Active: criticalFRPW01 batch/topology race andW07 pressedidentity prioritized; narrow690layout passed, nativeAT697stillfails; actual708GTKcontrolpassed butWebKitfixtures invalidbeforecollector. Prepared700 source-reviewed limitedsameLife/scopes, complete productionS15/release stillopen.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -2267,13 +2267,1078 @@
       "fullReleaseAccepted": false,
       "mainDesktopActivated": false,
       "completedRequirementIds": []
+    },
+    "recoveryUiUxReview674": {
+      "evidence": "implementation/elm-recovery-and-uiux-review-v674/component-manifest.json",
+      "sha256": "0fb4296ec4d0e560f5790f65219cd0ac1eca4ea9b450a017cb8b8238fae73714",
+      "heldFiles": 2524,
+      "actualDiagnostic678Checks": 473,
+      "actualLayoutFindings": 24,
+      "receiptPrototypeTerminalCycles": 1026,
+      "native681ATChecksPassed": 8,
+      "native681ATChecksTotal": 9,
+      "correctedNativeLayoutPending": true,
+      "keyboardATRecipientAccepted": false,
+      "productionReceiptIntegrated": false,
+      "fullReleaseAccepted": false
+    },
+    "nativeUiUxFailureReview687": {
+      "evidence": "implementation/elm-native-uiux-failure-review-v687/component-manifest.json",
+      "sha256": "7ed8c8492bbe8ac52f9d1a0ec5d1dae902aa8655400b7fd5790d1c1a6574d5e1",
+      "native684Checks": 2570,
+      "native684Passed": false,
+      "native684UncertaintyInkVisible": true,
+      "native684RefreshLabelInkVisible": 6,
+      "native684RefreshLabelInkTotal": 19,
+      "native686PassedPrefixChecks": 8,
+      "native686KeyboardRecipientAccepted": false,
+      "safeCleanupBoth": true,
+      "fullReleaseAccepted": false
+    },
+    "correctedLayoutReview706": {
+      "evidence": "implementation/elm-corrected-layout-native-review-v706/component-manifest.json",
+      "sha256": "fb59b0e6b746150658a56d0cb95a1766d408764ce66b71494c5771211c72cc2b",
+      "heldFiles": 1318,
+      "rendererSource": "implementation/elm-recovery-label-overflow-correction-v690",
+      "native694Passed": true,
+      "native694SourceAndFeatureChecks": 3673,
+      "originalCases": 5,
+      "viewportWidths": [
+        320,
+        480,
+        800
+      ],
+      "narrowLayoutAndKeyboardAccepted": true,
+      "originalVsCorrectedPendingDecodedPixelDifferences": 0,
+      "native697FocusedRegistryRegistrationObserved": true,
+      "native697KeyboardATRecipientAccepted": false,
+      "readabilityPolicy": "implementation/elm-uiux-readability-policy-v702/component-manifest.json",
+      "preparedSourceReview": "implementation/elm-prepared-implementation-review-v701/component-manifest.json",
+      "fullReleaseAccepted": false
+    },
+    "preparedAndFrameworkReview713": {
+      "evidence": "implementation/elm-prepared-and-framework-review-v713/component-manifest.json",
+      "sha256": "7723bb959e9a50c747aba21e0e4e987a32b9623a3ff3c7457a2bb2fe8fa704cf",
+      "heldFiles": 342,
+      "preparedSource700Reviewed": true,
+      "actualReceiptChecks": 1640,
+      "actualPreparedChecks": 329,
+      "actualPythonMutants": 12,
+      "actualGTKControl708Accepted": true,
+      "WebKitControls708Accepted": false,
+      "WebKitControls708FailedBeforeCollector": true,
+      "safePrivateCleanupAll3": true,
+      "fullReleaseAccepted": false
+    },
+    "frpReviewActivePriorities": {
+      "workplan": "docs/elm-roadmap/delivery/FRP-ELM-WORKPLAN.md",
+      "triage": "implementation/elm-frp-finding-triage-v711/triage.json",
+      "W01": "709/710 topology/batch correlation; negative neverdowngrades maySubmitted",
+      "W07": "715/716 keyedcontrol+press-time identity/publication guard; nativeinputsource qualification open",
+      "W02": "700Preparedprototype reviewed; fullrelease/delivery/migration/native integration open",
+      "requirementsCompleted": []
+    },
+    "nativeWebKitControlReview723": {
+      "evidence": "implementation/elm-native-atspi-control-review-v723/component-manifest.json",
+      "sha256": "d5069d47f0d37a200e76f087ac111f99c6e95a1fa1c7128d475780f79d8deb9b",
+      "heldFiles": 179,
+      "bothPrimaryAndRelatedReachedNativeCollector": true,
+      "actualCurrentAlphaBetaFocusedStates": true,
+      "nativeFocusedNotificationObserved": false,
+      "originalSixSecondRecipientAccepted": false,
+      "bothPrivateCleanupSafe": true,
+      "controlApplicationAndCollectorExit0": true,
+      "privateRegistryControlledSIGTERM": true,
+      "WebKitInternalCauseProved": false,
+      "owningElmAccessibilityAccepted": false,
+      "fullReleaseAccepted": false
+    },
+    "topologyChannelSemanticReview725": {
+      "evidence": "implementation/elm-topology-channel-semantic-review-v725/component-manifest.json",
+      "sha256": "4a6c33c1b1ebbedd5737071f0cce64862a4e0856066240966f8f7df408fcdf0e",
+      "heldFiles": 526,
+      "singleExactBatchModelReviewed": true,
+      "actualNamedCases": 5,
+      "actualSampledTraces": 1000,
+      "typedSpecificMutants": 2,
+      "source710ExperimentApproved": true,
+      "FIFOTransportGateAccepted": false,
+      "arbitraryFirstArrivalReorderAccepted": false,
+      "nativeTopologyFixAccepted": false,
+      "actualPublicationUniquenessQualified": false,
+      "fullReleaseAccepted": false
+    },
+    "publicationWrapperCorrection726": {
+      "evidence": "implementation/elm-publication-wrapper-correction-v726/component-manifest.json",
+      "sha256": "001b57ec1f67fc3c5c7742ababd1a5561dea59ea752318f7e71c40e312dc3d52",
+      "supersedes": "725 inference that stableApplications requires redundant production guard",
+      "ordinaryWrapperAllocationPresent": true,
+      "actual710CompiledEvidenceReviewed": false,
+      "fullPublicationUniquenessQualified": false,
+      "fullReleaseAccepted": false
+    },
+    "inputIdentityReview717": {
+      "evidence": "implementation/elm-input-identity-review-v717/component-manifest.json",
+      "sha256": "3825f02754f926051bcd540dc4beeda9265a5b069ff55ef1a7620e75ab0f3bae",
+      "heldFiles": 633,
+      "originalCompiledSyntheticDOMCounterexamples": 2,
+      "compiledModelCases": 15,
+      "actualNamedCases": 18,
+      "sampledTraces": 500,
+      "typedSpecificMutants": 5,
+      "source716ExperimentApproved": true,
+      "browserNonPhysicalSourceBoundaryImplemented": false,
+      "nativeInputAccepted": false,
+      "nativeATSourceAndLivenessAccepted": false,
+      "fullReleaseAccepted": false
+    },
+    "topologyImplementationReview729": {
+      "evidence": "implementation/elm-topology-implementation-review-v729/component-manifest.json",
+      "sha256": "91792ff835cce7d22964d74318e3939a39befd986f7dcefb149df9925d53539a",
+      "heldFiles": 2980,
+      "changedProduction": [
+        "src/OutputController.elm",
+        "native/shared-host.c"
+      ],
+      "compiledTargetedControls": 25,
+      "semanticCompiledMutants": 4,
+      "publicChecks": 51,
+      "nativePreparationApproved": true,
+      "nativeLaunchApproved": false,
+      "FIFOTransportGateAccepted": false,
+      "reentrantCacheRowLifetimeQualified": false,
+      "uncertainDurableRecoveryQualified": false,
+      "fullReleaseAccepted": false
+    },
+    "nativeMessageReview734": {
+      "evidence": "implementation/elm-native-atspi-message-review-v734/component-manifest.json",
+      "sha256": "171d076ecc7f2b442a6b7fb104df6edf2ffb636dad32d3f85ee75d51971b5045",
+      "heldFiles": 188,
+      "bothDiagnosticNativeTreesReached": true,
+      "currentNativeFocusedStatesObserved": true,
+      "nativeFocusNotificationObserved": false,
+      "originalSixSecondRecipientAccepted": false,
+      "safePrivateCleanup": true,
+      "controlAppAndCollectorExit0": true,
+      "privateRegistryControlledSIGTERM": true,
+      "loggingConnectionProvenanceFullyQualified": false,
+      "timingPerturbationPossible": true,
+      "instrumentedOutcomeTransferToOriginal": false,
+      "WebKitInternalCauseProved": false,
+      "fullReleaseAccepted": false
+    },
+    "inputAdapterReview733": {
+      "evidence": "implementation/elm-input-adapter-review-v733/component-manifest.json",
+      "sha256": "3f58fba36c123293e392a6b0d32b6345939d39c25121c7cf1a40691eeb8f4660",
+      "heldFiles": 1243,
+      "adapterControls": 20,
+      "actualJSAssertionMutants": 4,
+      "controllerCases": 51,
+      "knownDelayedStaleClickGateOpen": true,
+      "nativePreparationApproved": true,
+      "nativeLaunchApproved": false,
+      "nativeInputAccepted": false,
+      "ATSourceAndLivenessQualified": false,
+      "fullReleaseAccepted": false
+    },
+    "activeFollowupDefects": {
+      "716CrossInput": "739 immutable captured port delivery and matching canceled release compiled/source-reviewed775:48adapter/51controller/24decoder/14mutants pass;5sourceambiguitiesOPEN. Native718 preparation approved againstnew3JSbuild; no native input transfer.",
+      "710CacheOwnership": "730 owned references source-reviewed746;771/772 candidate actual11 native topology checks pass with exact preflight-unsent duplicate and joinedUI settlement286.48ms/zeroeffect; overall comparator campaign failed oldjoinedPending assertion.773 actual catalog Loading disposition gap reproduced; FIFO/durable recovery remain open.",
+      "727LoggingBusProvenance": "750/753 capturesmalformedruntimeproxy rules bothcohorts;752 signedtwo-stringenginepatch;757 firstconfiguremissinglld;765/774 signedmatchingprivateLLD29controls allows767freshdiagnosticconfigure. Fullmappingclosure/nativeengineaccessibility remainopen.",
+      "fullReleaseAccepted": false
+    },
+    "engineOwnershipReview740": {
+      "evidence": "implementation/elm-engine-and-ownership-review-v740/component-manifest.json",
+      "sha256": "d6216a3abaf12a9599848f88113d4b3619e60ac4cc077d5fdd240292f6bcbdce",
+      "heldFiles": 159,
+      "source730ImplementationApproved": true,
+      "ownershipNamedCases": 4,
+      "ownershipSampledTraces": 1000,
+      "typedOwnershipMutants": 3,
+      "callbackCompletionSerialQualified": false,
+      "fullFIFOQualified": false,
+      "compiled716OpenLivenessWitnesses": 3,
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false
+    },
+    "systemIsolationReview741": {
+      "evidence": "implementation/elm-system-isolation-review-v741/component-manifest.json",
+      "sha256": "bea0de0c04d105edcc9eab785a3e2188814da826197091263ce2a428070854a2",
+      "heldFiles": 152,
+      "actualFreshGioSystemRefusalObserved": true,
+      "sourceControls": 29,
+      "native738LaunchApproved": true,
+      "loggingLifetimeBusClosureQualified": false,
+      "nativeRecipientAccepted": false,
+      "fullReleaseAccepted": false
+    },
+    "isolatedNativeMessageReview742": {
+      "evidence": "implementation/elm-isolated-native-message-review-v742/component-manifest.json",
+      "sha256": "bf957595f9aafd081771abcd6f4aa3d8396817ad04398fc1211d79b974269d89",
+      "heldFiles": 194,
+      "bothActualNativeTreesReached": true,
+      "actualPointerAndKeyboardExit0": true,
+      "observedControlledSystemOverridesExact": true,
+      "observedDescendantCounts": [
+        8,
+        8
+      ],
+      "strictSixSecondFocusRecipientAccepted": false,
+      "appAndCollectorExit0": true,
+      "registryControlledSIGTERM": true,
+      "safePrivateCleanup": true,
+      "actualLifetimeSocketPeerQualified": false,
+      "engineCallbackCauseProved": false,
+      "fullReleaseAccepted": false
+    },
+    "activeAccessibilityCausalHypothesis": {
+      "sourceLane": "implementation/elm-native-atspi-subscription-review-v744",
+      "experimentNext": "745 privatebus actualxdg0.1.8 narrowbroadcast grammar comparison",
+      "hypothesis": "WebKit installedversion producer-rule bus-name/member grammar mismatch; actual runtime owning proxy argv and causal transport comparison not yet qualified",
+      "nativeOwningGUIAccepted": false
+    },
+    "inputCorrelationReview743": {
+      "evidence": "implementation/elm-input-correlation-review-v743/component-manifest.json",
+      "sha256": "03a828f52510b940b4ab327b29d614c398b05ef458a814a2eed2fb04b8d6d1d3",
+      "heldFiles": 95,
+      "source739ImplementationApproved": true,
+      "safeSliceNamedCases": 24,
+      "openSourceBoundaryCounterexamples": 5,
+      "sampledTraces": 500,
+      "typedSpecificMutants": 8,
+      "nativeCompatibilityMappingQualified": false,
+      "nativeInputAccepted": false,
+      "fullReleaseAccepted": false
+    },
+    "cacheOwnershipImplementationReview746": {
+      "evidence": "implementation/elm-cache-ownership-implementation-review-v746/component-manifest.json",
+      "sha256": "ff78e09e6bb0f598ef0639cda928a2b3e07e797c139b1619d4bbe6e0c3dbabb1",
+      "heldFiles": 1799,
+      "compiledOwnershipScenarios": 5,
+      "specificOwnershipMutants": 5,
+      "actualNativeNestedOccurrenceProved": false,
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false
+    },
+    "proxyEvidenceReview748": {
+      "evidence": "implementation/elm-proxy-evidence-review-v748/component-manifest.json",
+      "sha256": "4f87513f0dc549f9e66f0b245f2953e4cf848df36a2383b90c2628915bdce1c9",
+      "heldFiles": 189,
+      "actualProxyFixtureControls": 52,
+      "descriptorCPUControls": 36,
+      "nativeObservationApproved": true,
+      "fullReleaseAccepted": false
+    },
+    "nativeProxyArgumentReview753": {
+      "evidence": "implementation/elm-native-proxy-argument-review-v753/component-manifest.json",
+      "sha256": "646e8cc53d1d53c06bef015711daa8ef855d9d43bbbbcd45299cb2741f682416",
+      "heldFiles": 235,
+      "actualRuntimeArgumentsCapturedBothCohorts": true,
+      "malformedRulesObserved": true,
+      "originalSixSecondFocusRecipientAccepted": false,
+      "safeCleanupBothCohorts": true,
+      "correctedEngineNotRun": true,
+      "fullReleaseAccepted": false
+    },
+    "crossInputInterpretationReview749": {
+      "evidence": "implementation/elm-cross-input-interpretation-review-v749/component-manifest.json",
+      "sha256": "ca84365c1cdc5a6ea970a6370886481a6f0d6a6776679c46fb347c4073381eee",
+      "heldFiles": 72,
+      "originalSyntheticWitnesses": 3,
+      "pointerLivenessDefects": 2,
+      "originalKeyupStimulusMovesFocusAndRequiresCancellation": true,
+      "retainedFocusForeignKeyupSeparateScenarioRequired": true,
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false
+    },
+    "privateEnginePreparationReview755": {
+      "evidence": "implementation/elm-private-engine-preparation-review-v755/component-manifest.json",
+      "sha256": "85bc463f8ce9940d8ea2eec05848c2dd0b0e38092595538eafffb0f12b34751e",
+      "heldFiles": 34,
+      "configure757Approved": true,
+      "sourceControls": 19,
+      "privateEngineBuilt": false,
+      "nativeATRecipientAccepted": false,
+      "fullReleaseAccepted": false
+    },
+    "topologyTimerPreparationReview758": {
+      "evidence": "implementation/elm-topology-timer-preparation-review-v758/component-manifest.json",
+      "sha256": "4216db4ad73d257ab4f1c1965dc2cab82a062e07a9a6e98f31607dcbb6c72fee",
+      "heldFiles": 2058,
+      "native756Approved": true,
+      "nativeTimerExpirationAccepted": false,
+      "fullReleaseAccepted": false
+    },
+    "topologyPendingFixtureFailureReview760": {
+      "evidence": "implementation/elm-topology-pending-fixture-failure-review-v760/component-manifest.json",
+      "sha256": "dde8ac8b60358f0af69ece649c06f18469a69387d333356c3149f050d6a48ed8",
+      "heldFiles": 47,
+      "nativeCampaignPassed": false,
+      "failedBeforeTopologyCreation": true,
+      "safeCleanupBothCohorts": true,
+      "correction759PreparationApproved": true,
+      "fullReleaseAccepted": false
+    },
+    "immutableInputDeliveryReview761": {
+      "evidence": "implementation/elm-immutable-input-delivery-review-v761/component-manifest.json",
+      "sha256": "0351aed32d06ddb11680d619d472e37ec22162fb34cc72672eb5b05c6c9795ba",
+      "heldFiles": 45,
+      "modelFirstSourceRoutingApproved": true,
+      "safeNamedCases": 8,
+      "originalOpenRemintWitnesses": 1,
+      "traces": 500,
+      "typedSpecificMutants": 2,
+      "nativeTimingQualified": false,
+      "fullReleaseAccepted": false
+    },
+    "heldPendingPreparationReview762": {
+      "evidence": "implementation/elm-held-pending-preparation-review-v762/component-manifest.json",
+      "sha256": "57ae1ca6751c152bc2af13c9178fe386eaa5a4eb9d8b83c92dee9e8e2ec34d35",
+      "heldFiles": 2074,
+      "native763Approved": true,
+      "presentedPendingAccepted": false,
+      "fullReleaseAccepted": false
+    },
+    "topologyReleaseFixtureFailureReview764": {
+      "evidence": "implementation/elm-topology-release-fixture-failure-review-v764/component-manifest.json",
+      "sha256": "e2d225f93fc6147b610fc82ce8741c7999e70fbfbfddc844e22117b649e62604",
+      "heldFiles": 47,
+      "campaignPassed": false,
+      "actualNativeTopologyObserved": true,
+      "missingHeldCommitRelease": true,
+      "safeCleanupBothCohorts": true,
+      "correction769PreparationApproved": true,
+      "fullReleaseAccepted": false
+    },
+    "privateEngineConfigureReview766": {
+      "evidence": "implementation/elm-private-engine-configure-review-v766/component-manifest.json",
+      "sha256": "4913ceff39faedac50e1a2efe31494a0c8aa8228071f1406fa4fae22684ee0d1",
+      "heldFiles": 34397,
+      "originalConfigureFailed": true,
+      "requiredLinkerMissing": "ld.lld",
+      "freshConfigureApprovedAfterResolution": true,
+      "privateEngineBuilt": false,
+      "fullReleaseAccepted": false
+    },
+    "canceledReleaseModelReview768": {
+      "evidence": "implementation/elm-canceled-release-model-review-v768/component-manifest.json",
+      "sha256": "ea655df22e99926a040e7ffb4eb0b7fee5d259cde73b25f46b81275af810572e",
+      "heldFiles": 17,
+      "originalNamedDeclarations": 31,
+      "actualNamedRuns": 33,
+      "originalOpenSourceCases": 5,
+      "narrowReleaseGuardApproved": true,
+      "nativeTimingQualified": false,
+      "fullReleaseAccepted": false
+    },
+    "microtaskTopologyPreparationReview770": {
+      "evidence": "implementation/elm-microtask-topology-preparation-review-v770/component-manifest.json",
+      "sha256": "8602b679ec7bf1500182999f84a2bebf9cf681cd5b03b02b7d9dd789b287a17c",
+      "heldFiles": 2090,
+      "native771Approved": true,
+      "fullReleaseAccepted": false
+    },
+    "nativeTopologyDispositionReview772": {
+      "evidence": "implementation/elm-native-topology-disposition-review-v772/component-manifest.json",
+      "sha256": "2f0d6d9814ec3aed9ebc70d4837c8a0b3edb7906136b8fa672719fe7fc3fe093",
+      "heldFiles": 47,
+      "candidateBoundedNativeDispositionAccepted": true,
+      "actualBehavioralChecks": 11,
+      "settledMillisecondsFromPhysicalAction": 286.4799879898783,
+      "overallCampaignPassed": false,
+      "originalComparatorAccepted": false,
+      "zeroEffectQueueAdmissionAndMutation": true,
+      "productionFIFOQualified": false,
+      "fullReleaseAccepted": false
+    },
+    "privateLinkerReview774": {
+      "evidence": "implementation/elm-private-linker-review-v774/component-manifest.json",
+      "sha256": "466c1cd56a463dc6a404e1ea8c86ece81a21d0c581e3241b1a8a21f45fb857c1",
+      "heldFiles": 175,
+      "protectedSignedToolControls": 29,
+      "private767DiagnosticConfigureApproved": true,
+      "fullMappedBackingIdentityQualified": false,
+      "installedChanged": false,
+      "fullReleaseAccepted": false
+    },
+    "immutableInputImplementationReview775": {
+      "evidence": "implementation/elm-immutable-input-implementation-review-v775/component-manifest.json",
+      "sha256": "b6027357456ceb13a964b552ac89a764a062aa75d5019fc8a412db3702d12575",
+      "heldFiles": 3492,
+      "adapterControls": 48,
+      "controllerCases": 51,
+      "decoderFixtures": 24,
+      "specificMutants": 14,
+      "openSourceCases": 5,
+      "mainArtifactUnchanged": false,
+      "native718PreparationApproved": true,
+      "nativeInputAccepted": false,
+      "fullReleaseAccepted": false
+    },
+    "review776": {
+      "evidence": "implementation/elm-private-introspection-configure-review-v776/component-manifest.json",
+      "sha256": "183ebff73c94e88bb98a42f5eec22702a97a67913b407661ebc1ee036c20d284",
+      "heldFiles": 34404,
+      "review": {
+        "passed": true,
+        "evidenceIntegrityPassed": true,
+        "configureAccepted": false,
+        "oneOriginalConfigureFailureHeld": true,
+        "actualRequiredToolsMissing": [
+          "GI_SCANNER_EXE",
+          "GI_COMPILER_EXE"
+        ],
+        "compilerSanityPassed": true,
+        "fresh782ConfigureApprovedAfterResolution": true,
+        "privateEngineBuilt": false,
+        "nativeAcceptance": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      }
+    },
+    "review777": {
+      "evidence": "implementation/elm-catalog-uncertainty-contract-review-v777/component-manifest.json",
+      "sha256": "a79d2f2b43273a2d4ba62dd9fda082ad1d50b1ee905bb64231a8c16f6f79d8f4",
+      "heldFiles": 123,
+      "review": {
+        "passed": true,
+        "finiteNamedCases": 3,
+        "boundedSamples": 1000,
+        "boundedSteps": 30,
+        "actualCompiledCatalogWitnessHeld": true,
+        "actualCControlledPopupReadBoundaryHeld": true,
+        "popupEffectReachabilityClaimRefuted": true,
+        "sourceClosedCMutantAccepted": false,
+        "preparation778Approved": true,
+        "realAdmissionStorageControlsRequiredBeforePatch": true,
+        "durableEffectRecoveryAccepted": false,
+        "nativeAcceptance": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      }
+    },
+    "review781": {
+      "evidence": "implementation/elm-private-introspection-tools-review-v781/component-manifest.json",
+      "sha256": "71e37909d32d9595265f407ef3b6223ffb1a78ff5ab0ae713fa94d9e89313003",
+      "heldFiles": 438,
+      "review": {
+        "passed": true,
+        "protectedSignedToolControls": 37,
+        "actualScannerDumperAndTypelibLoadPassed": true,
+        "private782DiagnosticConfigureApproved": true,
+        "fullMappedBackingIdentityQualified": false,
+        "mappingClosureAccepted": false,
+        "installedChanged": false,
+        "nativeEngineAcceptance": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      }
+    },
+    "review783": {
+      "evidence": "implementation/elm-physical-input-preparation-review-v783/component-manifest.json",
+      "sha256": "54c8658cb55d7a1e30785ef3ed7b149c5dadaad0d2ccaab3865d03987a39463c",
+      "heldFiles": 62,
+      "review": {
+        "passed": true,
+        "boundedPhysical784Approved": true,
+        "actualThreeNewAssetsHeld": true,
+        "preparationControls": 52,
+        "actualEventShapeAccepted": false,
+        "nativeInputAccepted": false,
+        "ATLaunchApproved": false,
+        "sourceAuthentication": false,
+        "fullPhysicalSuiteImplemented": false,
+        "fullGUIAccepted": false,
+        "completedRequirementIds": []
+      }
+    },
+    "review785": {
+      "evidence": "implementation/elm-native-input-loader-failure-review-v785/component-manifest.json",
+      "sha256": "523a67c0d07f4571db81ded519e46efdcba9e058459f50881fc5ee6dcddc3a9c",
+      "heldFiles": 28,
+      "review": {
+        "passed": true,
+        "nativeCampaignPassed": false,
+        "nativeAcceptance": false,
+        "firstApplicationsDeadlineFailed": true,
+        "physicalHelperAndCleanupPassed": true,
+        "frozenHostDeniesActivationAsset": true,
+        "activationLoadingNativeRetestRequired": true,
+        "missingTelemetryIsNotMissingPointerFieldsProof": true,
+        "sourceAuthentication": false,
+        "fiveOriginalInputCasesOpen": true,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      }
+    },
+    "review787": {
+      "evidence": "implementation/elm-catalog-refusal-refinement-review-v787/component-manifest.json",
+      "sha256": "ed7f969d4cf1bb29d61ad028a5ccea054b486e86856daa760e313fd494b002f9",
+      "heldFiles": 314,
+      "review": {
+        "passed": true,
+        "sourceOnlyCatalogPatchApproved": true,
+        "actualCompiledBaselineControls": 9,
+        "actualProducerFilesystemControls": 76,
+        "actualModelScenarios": 10,
+        "typedAssertionMutantsKilled": 5,
+        "randomSafetySamples": 1000,
+        "randomMaxSteps": 30,
+        "originalFailedEvidencePreserved": true,
+        "localRefusalDistinctFromNativeCertificate": true,
+        "noAutomaticRetryRequired": true,
+        "effectAdmissionUncertaintyPreserved": true,
+        "nativeAcceptance": false,
+        "livenessOrPowerLossDurabilityAccepted": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      }
+    },
+    "review789": {
+      "evidence": "implementation/elm-private-docgen-configure-failure-review-v789/component-manifest.json",
+      "sha256": "344c36b59bf89e5ef0473a249eed54d2f97c15a33c03afdc6cc98eee359e35bd",
+      "heldFiles": 34404,
+      "review": {
+        "passed": true,
+        "evidenceIntegrityPassed": true,
+        "configureAccepted": false,
+        "oneOriginalConfigureFailureHeld": true,
+        "actualRequiredToolsMissing": [
+          "GIDocgen_EXE",
+          "GIDocgen_VERSION"
+        ],
+        "compilerSanityPassed": true,
+        "fresh791ConfigureApprovedAfterResolution": true,
+        "privateEngineBuilt": false,
+        "nativeAcceptance": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      }
+    },
+    "review790": {
+      "evidence": "implementation/elm-private-docgen-tools-review-v790/component-manifest.json",
+      "sha256": "ba681c339af761aef878767259a604cdb8d2d29dbfa1a29c8f81e74c7907b94c",
+      "heldFiles": 2039,
+      "review": {
+        "passed": true,
+        "protectedSignedToolControls": 79,
+        "actualCompiledGIRDocumentationAndGraphvizPassed": true,
+        "private791DiagnosticConfigureApproved": true,
+        "fullMappedBackingIdentityQualified": false,
+        "mappingClosureAccepted": false,
+        "installedChanged": false,
+        "nativeEngineAcceptance": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      }
+    },
+    "review793": {
+      "evidence": "implementation/elm-private-gperf-configure-failure-review-v793/component-manifest.json",
+      "sha256": "ccd415ff303220e95c9d0b73a82321dc72195c20e4bd1d19233f58810dfe9d1b",
+      "heldFiles": 34404,
+      "review": {
+        "passed": true,
+        "evidenceIntegrityPassed": true,
+        "configureAccepted": false,
+        "oneOriginalConfigureFailureHeld": true,
+        "actualRequiredToolsMissing": [
+          "gperf"
+        ],
+        "compilerSanityPassed": true,
+        "fresh799ConfigureApprovedAfterResolution": true,
+        "privateEngineBuilt": false,
+        "nativeAcceptance": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      }
+    },
+    "review794": {
+      "evidence": "implementation/elm-native-script-loading-review-v794/component-manifest.json",
+      "sha256": "68126ca2edf991bee2de87f77b97d86e32fe60ba745b4b54ff5a0fc6a8fe1040",
+      "heldFiles": 898,
+      "review": {
+        "passed": true,
+        "sourceOnlyFixAccepted": true,
+        "exactActivationEntryAndSelftestOnly": true,
+        "controllerChecks": 51,
+        "preparationCPUControls": 108,
+        "actualCallbackFileIOCases": 15,
+        "actualNativeCallbackRequestObjectsAccepted": false,
+        "fresh795PhysicalCampaignApproved": true,
+        "ATLaunchApproved": false,
+        "originalFiveInputCasesOpen": true,
+        "nativeAcceptance": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      }
+    },
+    "review796": {
+      "evidence": "implementation/elm-physical-input-native-result-review-v796/component-manifest.json",
+      "sha256": "2d921f1d3af153e75a742bb4eef469b8f960e399d2bf7a1a751458631026f92a",
+      "heldFiles": 28,
+      "review": {
+        "passed": true,
+        "nativeCampaignPassed": false,
+        "boundedNativeActivationLoadingPointerAndEscapePassed": true,
+        "exactCommittedMinimizeReceiptAndTargetPassed": true,
+        "heldInputPublicationChangedWithoutRedirectedEffectPassed": true,
+        "freshInputAfterCancellationPassed": true,
+        "sameDeviceOriginAuthenticated": false,
+        "pointerReleaseEventAfterPublicationQualified": false,
+        "keyboardTabFocusDeadlineFailed": true,
+        "keyboardEnterSpaceAccepted": false,
+        "nativeATAcceptance": false,
+        "nativeAcceptance": false,
+        "safeCleanupPassed": true,
+        "fiveOriginalInputCasesOpen": true,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      }
+    },
+    "review797": {
+      "evidence": "implementation/elm-private-required-tools-review-v797/component-manifest.json",
+      "sha256": "2c0ffec1c7ab852b20652e02eb94776785edeaadba5f456e03369f034a00144e",
+      "heldFiles": 237,
+      "review": {
+        "passed": true,
+        "protectedSignedToolControls": 50,
+        "actualCompiledRequiredToolFixtureChecksPassed": true,
+        "private799DiagnosticConfigureApproved": true,
+        "fullMappedBackingIdentityQualified": false,
+        "mappingClosureAccepted": false,
+        "installedChanged": false,
+        "nativeEngineAcceptance": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      }
+    },
+    "review801": {
+      "component": "implementation/elm-private-ruby-configure-failure-review-v801",
+      "manifestSHA256": "2d82aaa980597c07b98a5c82945d364586772352000ad9d644f5c5424eef46f8",
+      "report": "implementation/elm-private-ruby-configure-failure-review-v801/qa/report.json",
+      "observations": {
+        "passed": true,
+        "evidenceIntegrityPassed": true,
+        "configureAccepted": false,
+        "oneOriginalConfigureFailureHeld": true,
+        "actualRequiredToolsMissing": [
+          "Ruby getoptlong"
+        ],
+        "compilerSanityPassed": true,
+        "fresh805ConfigureApprovedAfterResolution": true,
+        "privateEngineBuilt": false,
+        "nativeAcceptance": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "review802": {
+      "component": "implementation/elm-private-ruby-tools-review-v802",
+      "manifestSHA256": "96f398f6f1cd04ab3fa9a845f3776322f18a627723a04bf8228620bd9e857c07",
+      "report": "implementation/elm-private-ruby-tools-review-v802/qa/report.json",
+      "observations": {
+        "passed": true,
+        "protectedSignedToolControls": 26,
+        "actualWebKitGeneratorCompiledFixtureChecksPassed": true,
+        "private805DiagnosticConfigureApproved": true,
+        "fullMappedBackingIdentityQualified": false,
+        "mappingClosureAccepted": false,
+        "installedChanged": false,
+        "nativeEngineAcceptance": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "review803": {
+      "component": "implementation/elm-native-keyboard-recipient-review-v803",
+      "manifestSHA256": "5021dbf9161fee35781ccd9ef6b17fd208055b95902264404e851f6d85fca23c",
+      "report": "implementation/elm-native-keyboard-recipient-review-v803/qa/report.json",
+      "observations": {
+        "passed": true,
+        "actualPeerTabReceiptConfirmed": true,
+        "original795CampaignStillFailed": true,
+        "invalidPostCloseBarRecipientPremiseConfirmed": true,
+        "finitePythonChecks": 15,
+        "PythonGuardMutationControls": 2,
+        "QuintRunClaimed": false,
+        "StaticTypecheckedMutationClaimed": false,
+        "fresh804QAObservationAndPopupPreparationApproved": true,
+        "nativeLaunchApproved": false,
+        "barKeyboardAcquisitionAccepted": false,
+        "nativeInputAccepted": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "review807": {
+      "component": "implementation/elm-popup-keyboard-preparation-refusal-review-v807",
+      "manifestSHA256": "ba12909927f7d31dbb8e086f9806ecb363feb109b2ceae9fc1ff248b95c9bdef",
+      "report": "implementation/elm-popup-keyboard-preparation-refusal-review-v807/qa/report.json",
+      "observations": {
+        "passed": true,
+        "evidenceIntegrityPassed": true,
+        "original804CPUControlsPreserved": true,
+        "nativePreparationAccepted": false,
+        "nativeLaunchApproved": false,
+        "sourceEnterGuardMismatchesActualRecorderIdentityShape": true,
+        "actual795ShortFocusAndFullDOMIdentityDistinguished": true,
+        "actualNativeEnterFailureObserved": false,
+        "fresh819SourceCorrectionRequired": true,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "review808": {
+      "component": "implementation/elm-private-configure-success-review-v808",
+      "manifestSHA256": "8fad76834a11c15d35a7e8b8b530b179f9fd99b21fb47f6de551634b4fd8220a",
+      "report": "implementation/elm-private-configure-success-review-v808/qa/report.json",
+      "observations": {
+        "passed": true,
+        "boundedConfigureAccepted": true,
+        "originalSourceAndFlagsPreserved": true,
+        "configuredCacheReferencedFiles": 178,
+        "actualNinjaCompilePool": 2,
+        "actualNinjaLinkPool": 1,
+        "WebGPUConfigured": false,
+        "GBMConfigured": true,
+        "nativeGPUAccepted": false,
+        "fullCompilerDependencyClosure": false,
+        "memoryCapEnforced": false,
+        "resourceExperimentPreparationApproved": true,
+        "fullBuildApproved": false,
+        "privateEngineBuilt": false,
+        "nativeAccessibilityAccepted": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "review809": {
+      "component": "implementation/elm-catalog-implementation-review-v809",
+      "manifestSHA256": "abf7b869e353b7bf03e636b544f26782e5b1cfa0422864d791459d352385de59",
+      "report": "implementation/elm-catalog-implementation-review-v809/qa/report.json",
+      "observations": {
+        "passed": true,
+        "sourceOnlyCatalogCorrectionAccepted": true,
+        "sourceChangedOnlyFourDeclaredFiles": true,
+        "catalogCompiledControls": 19,
+        "inheritedControllerChecks": 51,
+        "inheritedNegativeControls": 25,
+        "actualProducerFilesystemControls": 76,
+        "compiledElmMutationControls": 4,
+        "compiledCMutationControls": 1,
+        "localOmissionDistinctFromNativeCertificate": true,
+        "newerRequestAndLeasePreserved": true,
+        "noAutomaticRetry": true,
+        "fresh814IntegrationPreparationApproved": true,
+        "nativeAcceptance": false,
+        "wholeGUIAcceptance": false,
+        "userRecoveryFromStickyWholePacketRefusalAccepted": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "review811": {
+      "component": "implementation/elm-resource-budget-preparation-refusal-review-v811",
+      "manifestSHA256": "f3a7524781e513bfe2d7ba8becadec1a30f9eb74f2ccce58d81db863f7e768ce",
+      "report": "implementation/elm-resource-budget-preparation-refusal-review-v811/qa/report.json",
+      "observations": {
+        "passed": true,
+        "originalSyntheticGuardResultsPreserved": true,
+        "originalGuardRefusesActualProtectedHierarchy": true,
+        "observations": [
+          {
+            "name": "actualCurrentProtectedScope",
+            "scope": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-ea0952c8ff314cdda6e729851f31514b.scope\n",
+            "originalPredicateRefused": true,
+            "error": "Not exact launcher-owned QA scope"
+          },
+          {
+            "name": "retainedActual805Scope",
+            "scope": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-7ec44a74cc98403086dee9b51e9de44b.scope\n",
+            "originalPredicateRefused": true
+          }
+        ],
+        "currentKernelFiles": {
+          "cpu.max": {
+            "exists": false,
+            "value": null
+          },
+          "cgroup.controllers": {
+            "exists": true,
+            "value": "memory pids"
+          },
+          "cgroup.subtree_control": {
+            "exists": true,
+            "value": ""
+          },
+          "memory.max": {
+            "exists": true,
+            "value": "max"
+          },
+          "memory.high": {
+            "exists": true,
+            "value": "max"
+          },
+          "pids.max": {
+            "exists": true,
+            "value": "76167"
+          }
+        },
+        "retained805CPUControllerFilesAbsent": true,
+        "propertyExperimentApproved": false,
+        "propertiesApplied": false,
+        "fresh821RefinementRequired": true,
+        "sourceKernelReferenceDownloadNotQualified": true,
+        "fullBuildApproved": false,
+        "nativeLaunched": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "review815": {
+      "component": "implementation/elm-private-webgpu-source-audit-v815",
+      "manifestSHA256": "43ccaca9a60f663b4a6c9650955a3af1180e889dcf0ba1aa4a4bf5b196921f36",
+      "report": "implementation/elm-private-webgpu-source-audit-v815/qa/report.json",
+      "observations": {
+        "passed": true,
+        "scope": "selected exact primary source and actual configure cache only",
+        "WebGPUConfigured": false,
+        "WebGLConfigured": true,
+        "GPUProcessConfigured": true,
+        "GBMConfigured": true,
+        "flagAloneDoesNotEstablishReviewedGTKWebGPUBackend": true,
+        "CocoaImplementationGuardObserved": true,
+        "privateEngineCompiled": false,
+        "hardwareRenderingQualified": false,
+        "adapterOrDeviceCreated": false,
+        "WebGPUUnavailableDispositionFinal": false,
+        "actualDevicePrototypeRequired": true,
+        "nativeLaunched": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "review817": {
+      "component": "implementation/elm-catalog-budget-model-review-v817",
+      "manifestSHA256": "842a87e38813fac33212869d87a99408be8008434727ac4e91da06e4cb8a1f68",
+      "report": "implementation/elm-catalog-budget-model-review-v817/qa/report.json",
+      "observations": {
+        "passed": true,
+        "boundedNegativeAndRecoveryModelReviewed": true,
+        "exactUTF8PacketPrototypePreparationApproved": true,
+        "productPatchApproved": false,
+        "positiveVisibleLaunchCoverageRequired": true,
+        "distinctPreviousNextControlIdentityRequired": true,
+        "fallbackFitIsModelAssumption": true,
+        "actualWholePacketJSONUTF8BudgetMeasurementRequired": true,
+        "barMenuPickerAndFallbackRequired": true,
+        "immutableWireAndNativeProvenanceNotEstablished": true,
+        "nativeAcceptance": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "review818": {
+      "component": "implementation/elm-catalog-input-integration-review-v818",
+      "manifestSHA256": "1c0cd067e9f32634ec789351cd61bd012e697b880ebe865072b4d41086a82f34",
+      "report": "implementation/elm-catalog-input-integration-review-v818/qa/report.json",
+      "observations": {
+        "passed": true,
+        "sourceOnlyCoherentIntegrationAccepted": true,
+        "fiveChangesVersus786AndElevenVersus778Verified": true,
+        "exactAcceptedOwnershipSharedHostPreserved": true,
+        "catalogCompiledControls": 19,
+        "inheritedControllerChecks": 51,
+        "inheritedNegativeControls": 25,
+        "actualProducerFilesystemControls": 76,
+        "compiledCatalogMutationControls": 5,
+        "decoderFixtures": 24,
+        "decoderMutants": 3,
+        "activationCPUControls": 48,
+        "callbackFileIOControls": 15,
+        "fresh824CombinedNativePreparationApproved": true,
+        "nativeAcceptance": false,
+        "wholeGUIAcceptance": false,
+        "fiveOriginalInputCasesOpen": true,
+        "stickyPacketBudgetRecoveryAccepted": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "review820": {
+      "component": "implementation/elm-popup-keyboard-identity-review-v820",
+      "manifestSHA256": "12e38717a60448ee5edb6cebf24402488d4716e2c4fe8b3ea0af337a72140a96",
+      "report": "implementation/elm-popup-keyboard-identity-review-v820/qa/report.json",
+      "observations": {
+        "passed": true,
+        "sourceOnlyExactIdentityCorrectionAccepted": true,
+        "original804Preserved": true,
+        "originalRecorderShapeCounterexampleConfirmed": true,
+        "identityControls": 3,
+        "driverControls": 18,
+        "wrapperAndDecoderControls": 36,
+        "owningPopupControls": 6,
+        "fresh806PhysicalNativeApproved": true,
+        "ATLaunchApproved": false,
+        "actualKeyboardNativeAccepted": false,
+        "nativeSourceAuthentication": false,
+        "fiveOriginalOriginCasesOpen": true,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "review822": {
+      "component": "implementation/elm-resource-controller-preparation-review-v822",
+      "manifestSHA256": "4cd1caa4f24179e6b3a4b882075d77e59568fb49436388deb73532875e60fb79",
+      "report": "implementation/elm-resource-controller-preparation-review-v822/qa/report.json",
+      "observations": {
+        "passed": true,
+        "sourcePreparedRuntimeExperimentApproved": true,
+        "fresh812OwnedScopeOnlyRequired": true,
+        "actualKernelBudgetAccepted": false,
+        "fullEngineBuildApproved": false,
+        "readOnlyPreflightAcceptedAtCapturedTime": true,
+        "activeSiblingRefusalRequiredBeforeAndAfterWrite": true,
+        "newDefaultCPUInterfacesAndSchedulingEffectsDisclosed": true,
+        "atomicPeerExclusionProved": false,
+        "outerNormalScopeDisappearanceRequired": true,
+        "nativeAcceptance": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "review823": {
+      "component": "implementation/elm-popup-keyboard-native-shape-review-v823",
+      "manifestSHA256": "a02b2ff8e4ea68b30aa531920df0171776a932dd089dc0a13f3be03f153a0c1b",
+      "report": "implementation/elm-popup-keyboard-native-shape-review-v823/qa/report.json",
+      "observations": {
+        "passed": true,
+        "nativeCampaignPassed": false,
+        "boundedNativePointerEscapeMinimizeCancellationPassed": true,
+        "exactOriginalPointerActionObserverOncePassed": true,
+        "pairedPointerEventPublicationChangeAccepted": false,
+        "actualPopupShiftTabEventReceived": true,
+        "actualShiftTabKey": "Unidentified",
+        "actualShiftTabCode": "Tab",
+        "actualReverseDOMFocusProgressed": true,
+        "originalTabKeyNormalizationPremiseRefuted": true,
+        "actualMissingKeyFieldsProved": false,
+        "EnterSpaceNativeAccepted": false,
+        "safeCleanupPassed": true,
+        "sourceAuthentication": false,
+        "fresh825ObservationOracleRefinementRequired": true,
+        "nativeAccessibilityAccepted": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "review827": {
+      "component": "implementation/elm-shift-tab-refinement-review-v827",
+      "manifestSHA256": "341eea8d153c1e56b8f080ad818f991a4bbf9fffa1c74b2cee5ce827c567ad53",
+      "report": "implementation/elm-shift-tab-refinement-review-v827/qa/report.json",
+      "observations": {
+        "passed": true,
+        "raw806NavigationObserved": true,
+        "rawKeyNeverNormalized": true,
+        "sourceMappingFixtureReviewed": true,
+        "fresh826QAOraclePreparationApproved": true,
+        "required826ExactBeforeRequestEnabledDOMSnapshot": true,
+        "required826RequalificationMustMatchExpectedStamp": true,
+        "originalClocksUnchangedRequired": true,
+        "physicalNativeLaunchApproved": false,
+        "EnterSpaceNativeAccepted": false,
+        "sourceAuthentication": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "review828": {
+      "component": "implementation/elm-popup-tab-code-review-v828",
+      "manifestSHA256": "7719390afe68eba926e33f53b96ce616724368500431c9a380d10a0caaf5784b",
+      "report": "implementation/elm-popup-tab-code-review-v828/qa/report.json",
+      "observations": {
+        "passed": true,
+        "826SourceOnlyNavigationObservationCorrectionAccepted": true,
+        "fresh829PhysicalNativeLaunchApproved": true,
+        "exactBeforeRequestEnabledSnapshotAndStampReviewed": true,
+        "rawKeyNeverNormalized": true,
+        "EnterSpaceAndActionGuardsUnchanged": true,
+        "originalClocksUnchanged": true,
+        "nativeAcceptance": false,
+        "sourceAuthentication": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "review832": {
+      "component": "implementation/elm-resource-runtime-review-v832",
+      "manifestSHA256": "7cea538862f84fe9cd5bb0801d6f06821bd7dba5508b2a50170a1a4ab9504262",
+      "report": "implementation/elm-resource-runtime-review-v832/qa/report.json",
+      "observations": {
+        "passed": true,
+        "actual812KernelBudgetAndNormalDisappearanceAccepted": true,
+        "replayedActualTopologyGuard": true,
+        "fixedOwnScopeRuntimePropertyWriteCount": 1,
+        "documentedControllerAndLimitChanges": 16,
+        "fullBuildRequiresOwnScopeLimitsReadback": true,
+        "fresh813SourceBuildPreparationApproved": true,
+        "fullEngineBuildLaunchApproved": false,
+        "persistentBudgetQualified": false,
+        "nativeAcceptance": false,
+        "fullReleaseAccepted": false,
+        "completedRequirementIds": []
+      },
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
     }
   },
-  "next": [
-    "Current640 scoped473 allpassed with normalcleanup and source/ABI/originaldeadline closure in656; parent650 separatelyholds original135 andreal lostrelease18. Continue actualuncertainty visibilitydiagnostic via corrected667/668 andfresh663 GUI fix if confirmed; actualAT-SPI669 preparation, no DOM-to-AT acceptance transfer.",
-    "665 frozen boundedatomicAdmission prototype462FS/58faults/5child exits plus4namedQuint/500x50/3typedmutants; root review then670 completionformalmodel/API beforeimplementation. No integratedS15/scalablehistory/nativeproof/C/migration claims.",
-    "Completecurrentbounds, AT/IME, motion/output/device/performance/GPU/WebGPU/human/GTKQt/fullS01-S16/C00 and reversible release; no completed requirements or main desktop activation."
-  ],
+  "next": "Prioritize FRP workplan W01 outputbatch liveness709/710 and W07 pressidentity715/716 with exactnativeauthority/replaynondowngrade;720actualprimary-relatedWebKit/native721; source700Prepared independentlyreviewed713 (Released/Delivery integration unimplemented); preserved703readability resumesaftercriticalGUI fixes; fullroadmap/GPU/AT/IME/device/human/release gates remain.",
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {
     "document": "docs/elm-roadmap/UI-UX-TEST-STRATEGY.md",
