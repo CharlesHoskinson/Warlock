@@ -179,6 +179,64 @@ def normalize_slice(root, s, reqs):
     return s
 
 
+def slice_originals(s, reqs):
+    return [{'requirement': i, 'verification': reqs[i]['verification'],
+             'scenarios': [x for x in reqs[i]['scenarios'] if x['name'] in s['scenarios']]}
+            for i in s['requirements']]
+
+
+def load_slice(root, name, reqs):
+    """Accept bare slices or unchanged plan packets; never trust copied oracles."""
+    selection = read(safe(root, name))
+    if not isinstance(selection, dict):
+        raise ValueError('Slice file must contain a bare slice or planSchema=1 packet')
+    if 'planSchema' in selection:
+        if type(selection['planSchema']) is not int or selection['planSchema'] != 1:
+            raise ValueError('Unsupported planSchema; expected 1')
+        s = normalize_slice(root, selection['slice'], reqs)
+        if selection.get('originals') != slice_originals(s, reqs):
+            raise ValueError('Saved plan originals differ from the selected frozen scenarios or verification; regenerate the plan')
+        return s
+    return normalize_slice(root, selection, reqs)
+
+
+def preflight(root, record_path, slice_file, reqs):
+    """Preview a prospective start without adopting drafts or writing records."""
+    s = load_slice(root, slice_file, reqs)
+    snapshot = dirty(root)
+    selected_dirty = {n: snapshot[n] for n in s['paths'] if n in snapshot}
+    ignored = git_run(root, 'check-ignore', '-q', '--', record_path).returncode == 0
+    path = safe(root, record_path)
+    errors, warnings = [], []
+    if path.exists():
+        errors.append('Record already exists; use handoff to resume it or choose a new --record. Preflight never replaces records.')
+    if not ignored:
+        errors.append('Record must be Git-ignored before start; add its narrow directory to the ignore or choose an ignored --record.')
+    for parent in path.parents:
+        if parent == root:
+            break
+        if parent.exists() and not parent.is_dir():
+            errors.append('Record parent is not a directory: ' + str(parent.relative_to(root)))
+            break
+    if selected_dirty:
+        warnings.append('Selected dirty paths are not owned by this preview. start protects them unless you explicitly assert actual ownership with --adopt-dirty and --ownership-note; never adopt another contributor\'s draft.')
+    missing = [n for n in s['paths'] if not safe(root, n).exists()]
+    if missing:
+        warnings.append('Absent selected files are allowed for new implementation; they cannot support an evidence claim until created and verified.')
+    return {'preflightSchema': 1, 'slice': s, 'originals': slice_originals(s, reqs),
+            'sliceFile': slice_file, 'sliceFileSha256': digest(safe(root, slice_file)),
+            'sourceRevision': git(root, 'rev-parse', 'HEAD').decode().strip(),
+            'sourceHashes': {n: digest(safe(root, n)) for n in s['paths']},
+            'record': record_path, 'recordExists': path.exists(), 'recordIgnored': ignored,
+            'selectedDirtyPaths': selected_dirty,
+            'otherDirtyPaths': {n: h for n, h in snapshot.items() if n not in selected_dirty},
+            'newSourcePaths': missing, 'requiresOwnershipDecision': bool(selected_dirty),
+            'canStartCleanDraft': not errors and not selected_dirty,
+            'errors': errors, 'warnings': warnings,
+            'writesPerformed': False, 'acceptanceInferred': False,
+            'snapshotLimit': 'Read-only snapshot, not reserved ownership. start rechecks paths and Git state; concurrent edits can change these findings.'}
+
+
 def authored(name, include_cpp=True):
     prefix = 'implementation/warlock/'
     if not name.startswith(prefix):
@@ -946,6 +1004,8 @@ def main():
     subs.add_parser('status'); check = subs.add_parser('check')
     subs.add_parser('doctor')
     subs.add_parser('self-test', help='Run plugin regression tests in isolated fixtures; no GUI campaigns')
+    preview = subs.add_parser('preflight', help='Read-only saved-plan and prospective-record checks; no ownership or writes')
+    preview.add_argument('--slice-file', required=True)
     subs.add_parser('handoff')
     extension = subs.add_parser('extend', help='Add dependencies to the same owned slice without resetting its history or timer')
     extension.add_argument('--path', action='append', required=True)
@@ -1034,10 +1094,9 @@ def main():
             s = normalize_slice(root, {'id': args.id, 'requirements': args.requirement,
                 'scenarios': args.scenario, 'paths': args.path, 'before': args.before,
                 'after': args.after, 'verification': args.verify}, reqs)
-            result.update(planSchema=1, slice=s, originals=[{
-                'requirement': i, 'verification': reqs[i]['verification'],
-                'scenarios': [x for x in reqs[i]['scenarios'] if x['name'] in s['scenarios']]
-            } for i in s['requirements']])
+            result.update(planSchema=1, slice=s, originals=slice_originals(s, reqs))
+        elif args.command == 'preflight':
+            result.update(preflight(root, args.record, args.slice_file, reqs))
         elif args.command in ('handoff', 'claim', 'review', 'report', 'verify-plan', 'extend'):
             if not path.exists():
                 raise ValueError('No participant record to resume; inspect status and start an owned slice first')
@@ -1069,10 +1128,7 @@ def main():
         elif args.command == 'start':
             if path.exists():
                 raise ValueError('Record already exists; retain it and choose a new --record for a new slice')
-            selection = read(safe(root, args.slice_file)) if args.slice_file else state['activeSlice']
-            if selection.get('planSchema') == 1:
-                selection = selection['slice']
-            s = normalize_slice(root, selection, reqs)
+            s = load_slice(root, args.slice_file, reqs) if args.slice_file else normalize_slice(root, state['activeSlice'], reqs)
             adopted = list(dict.fromkeys(args.adopt_dirty))
             if adopted and (not args.ownership_note or not args.ownership_note.strip()):
                 raise ValueError('Dirty adoption requires an explicit --ownership-note')

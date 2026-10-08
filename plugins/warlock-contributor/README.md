@@ -113,6 +113,28 @@ Choose source paths and before/after behavior from the actual defect; the exampl
 is not a current defect verdict. Save each new plan under a new scratch name so
 prior records remain available. A bare slice JSON still works with `start`.
 
+Before creating a record, optionally preview the saved plan:
+
+```sh
+python3 -B plugins/warlock-contributor/scripts/warlock.py preflight \
+  --slice-file .warlock-contributor/search-plan.json
+```
+
+`preflight` checks the exact selected originals, source paths, prospective record
+and its ignore rule. It lists selected dirty files separately from other drafts,
+with current hashes, and allows absent source files for new implementation. It
+writes no files, takes no ownership and runs no QA. An existing record fails with
+guidance to resume it using `handoff` or choose an alternate global `--record`.
+Selected dirty files produce an explicit ownership advisory: without a genuine
+ownership assertion, `start` protects them as foreign drafts. A successful
+preview does not reserve paths; `start` reads current state again.
+
+Both `preflight` and `start` reject a `planSchema=1` packet whose copied original
+given/when/then or verification differs from the frozen selection. Regenerate a
+plan after changing its selected scenarios. Bare slice files still work because
+their originals come directly from the authoritative requirements. This is a
+structural preview, not another mandatory gate for every slice.
+
 `handoff` prints the participant owner, source revision/hashes, changes since the
 last record, protected foreign paths, latest observation per scenario and its
 missing obligations. It highlights stale evidence and no-progress warnings;
