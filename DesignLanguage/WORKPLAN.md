@@ -6,13 +6,13 @@ The five-reviewer exact-v2 consensus is accepted as a design target. The native 
 
 - [x] Create DesignLanguage and freeze brand/Elm/reference inputs.
 - [x] Run five actual Opus5.5/high independent research reviews.
-- [x] Cross-review60 proposals, correct four contracts, and obtain unanimous exact-v2 votes on30 contracts.
+- [x] Cross-review 60 proposals, correct four contracts, and obtain unanimous exact-v2 votes on 30 contracts.
 - [x] Record additive EARS/OpenSpec design requirements and source-proposal routing.
-- [ ] Generate the complete current widget/state/content inventory from the selected full Elm/assets/bridge closure, with source hashes and integration-lane gaps.
-- [ ] Build additive semantic/component tokens, contrast checks, icon/asset rules and original visual library.
-- [ ] Implement the offline-capable catalog with search, deep links, responsive navigation, all component sections and faithful actual-Elm fixture demos.
-- [ ] Qualify browser accessibility/keyboard, token/coverage/source checks and one bounded independent visual finish review.
-- [ ] Commit and publish only owned design files, with exact artifact and evidence identity.
+- [x] Generate the widget/state/content inventory for the frozen selected 49-module closure, with source hashes and integration-lane gaps (catalog scope only).
+- [x] Build additive semantic/component tokens, contrast checks, icon/asset rules and original visual library.
+- [x] Implement the offline-capable catalog with search, deep links, responsive navigation, all component sections and faithful actual-Elm fixture demos.
+- [x] Qualify browser accessibility/keyboard, token/coverage/source checks and one bounded independent visual finish review.
+- [x] Commit and publish only owned design files, with exact artifact and evidence identity.
 - [ ] Integrate product renderer/input/feedback improvements in fresh owned GUI derivatives, preserving existing priorities and native gates.
 
 ## Contract tracking
@@ -39,19 +39,29 @@ The five-reviewer exact-v2 consensus is accepted as a design target. The native 
 - [ ] WARLOCK-DL-020: Launcher search as a guarded extension (catalog-and-product-design).
 - [ ] WARLOCK-DL-021: Host-owned workspaces and gated placement patterns (catalog-and-product-design).
 - [ ] WARLOCK-DL-022: Settings declare behavioral guarantees (catalog-and-product-design).
-- [ ] WARLOCK-DL-023: Source-derived complete widget registry (catalog).
-- [ ] WARLOCK-DL-024: Read-mode website with consistent component sections (catalog).
-- [ ] WARLOCK-DL-025: Claim-specific status and evidence records (catalog).
-- [ ] WARLOCK-DL-026: Real Elm demonstrations with explicit fixture authority (catalog).
-- [ ] WARLOCK-DL-027: Content and accessible semantics inventory (catalog).
-- [ ] WARLOCK-DL-028: Responsive, accessible and offline-capable catalog (catalog).
-- [ ] WARLOCK-DL-029: Versioned assets, coverage and bounded finish review (catalog).
+- [x] WARLOCK-DL-023: Source-derived complete widget registry (frozen catalog scope only).
+- [x] WARLOCK-DL-024: Read-mode website with consistent component sections (frozen catalog scope only).
+- [x] WARLOCK-DL-025: Claim-specific status and evidence records (frozen catalog scope only).
+- [x] WARLOCK-DL-026: Real Elm demonstrations with explicit fixture authority (frozen catalog scope only).
+- [x] WARLOCK-DL-027: Content and accessible semantics inventory (frozen catalog scope only).
+- [x] WARLOCK-DL-028: Responsive, accessible and offline-capable catalog (frozen catalog scope only).
+- [x] WARLOCK-DL-029: Versioned assets, coverage and bounded finish review (frozen catalog scope only).
 - [ ] WARLOCK-DL-030: Reference adoption matrix with original visual identity (catalog-and-product-design).
 
-## Integration priorities
+## Current integration priorities — 8 October 2026
 
-Current renderer findings: popup controls are not keyed; selected detail drives aria-current; toggle checked semantics are absent; duplicated live status regions lack a qualified single announcement route; current disabled focus policy needs explicit declaration and fallback. These map to existing ELM-ADOPT-016/017/020/029/030 and W07/W11, not a separate policy authority. Full closure corrected initial subset assumptions: blocked controls already publish disabled and the shipped Taskbar.primary call passes False.
+The root workplan is the current coordination document. [Catalog closure](catalog/WORKPLAN.md) records the completed frozen v6 scope and historical publication; its DL-023–029 closure does not extend to today's candidate. The [current browser entrance](catalog/index.html) adds guidance and the contributor-plugin section without editing frozen v6 assets.
 
-Preview, resource and native work continues from qualified warlock-preview-provider-v3: own host bootstrap compiled with43 real socket/C checks,23 GIO ownership checks and existing demand Quint/replay checks. Next is typed native enrollment/retained receipt delivery, eligible client/family producer wiring and original preview13 on the owning tuple. Native492 root plane stays unqualified.
+- [x] Run three requested Opus 5.5/high read-only design/documentation/plugin audits and retain their findings and model provenance.
+- [x] Reconcile publication, navigation, catalog-scope, plugin onboarding and current feature documentation.
+- [x] Add [EARS/OpenSpec interaction clarifications](INTERACTION-ADDENDUM.md) for stable targets and observed toggles.
+- [ ] Regenerate the widget/state/content registry from the current declared integration closure, covering later settings, notifications, system controls, Files, jump lists, snap, workspace transfer, motion and preview surfaces.
+- [ ] Reserve picker preview/status geometry across source-state changes; preserve press-time guards and original native UX-016 deadlines.
+- [ ] Make Always on top a stable checkable control with observed semantics; keep application Pin/Unpin terminology separate.
+- [ ] Key popup controls and complete explicit focus behavior. Current inset focus rings avoid clipping; DL-006 product scope remains open until its outer-indicator contract and actual contrast are reconciled. Unify search and button focus tokens.
+- [ ] Establish one announcement owner. PreviewVisual currently creates per-preview live regions and duplicates unavailable text; native speech/braille delivery remains open.
+- [ ] Adopt approved layered-window tokens and observed layer cues natively. Current shell/snap colors and local glow/shadow are provisional. Implement effects-off and reduced-transparency preferences.
+- [ ] Complete effective Omarchy keyword/binding compatibility, guidance and offline recovery.
+- [ ] Finish original native, AT/IME, motion, resource and hardware observations on one coherent candidate tuple.
 
-New settings/search/snap presentation and focusable disabled-menu targets remain guarded by the agreed contracts and existing baseline requirements. Do not replace mandated tasks with a website demonstration.
+These findings support existing W07/W11 and ELM-ADOPT-016/017/020/029/030 and original GUI work, not a separate policy authority. See the [feature-completion checklist](../docs/warlock-roadmap/FEATURE-COMPLETION.md), [current guidance](CURRENT.md), [design contribution workflow](CONTRIBUTING.md) and [audit disposition](../docs/warlock-documentation-review/20261008/DISPOSITION.md). No design/documentation checkbox closes a native release gate.

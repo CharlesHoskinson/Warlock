@@ -26,7 +26,7 @@ bool geometryTargetEligible(const PHLWINDOW& window,int protocol) {
     if(!std::isfinite(raw.minSize.x) || !std::isfinite(raw.minSize.y) || !std::isfinite(raw.maxSize.x) || !std::isfinite(raw.maxSize.y) || raw.minSize.x<0 || raw.minSize.y<0 || raw.maxSize.x<0 || raw.maxSize.y<0 || raw.maxSize.x>0 || raw.maxSize.y>0 || raw.minSize.x>1 || raw.minSize.y>1) return false;
     const auto minimum=target->minSize(),maximum=target->maxSize();
     if((minimum && (minimum->x>1 || minimum->y>1)) || (maximum && (maximum->x<std::numeric_limits<double>::max() || maximum->y<std::numeric_limits<double>::max()))) return false;
-    } else if(protocol==2) {
+    } else if(protocol>=2) {
         const auto input=geometryInput(window,Elm::ProspectiveGeometry::Operation::Maximize,CBox{0,0,1,1},{});
         if(!input || geometryPolicyInputs(window)=="null" || input->xdgGeometryOrigin!=Vector2D{0,0} || Elm::ProspectiveGeometry::fixedConfigureDomain(input->raw,input->layout))return false;
     } else return false;
@@ -74,7 +74,7 @@ std::string performGeometryEffect(Session& session,JsonObject* object) {
     session.effectRequest=*request;session.generation=*generation;session.lastPayload=fingerprint;
     session.lastReply=reply("Unknown","effect-unproven");
     const auto reject=[&](const char* reason){session.lastReply=reply("Refused",reason);return session.lastReply;};
-    if(operation!="maximize" && operation!="restore-geometry" && operation!="snap" && operation!="transfer-workspace") return reject("unsupported-operation");
+    if(operation!="maximize" && operation!="restore-geometry" && operation!="snap" && operation!="transfer-workspace" && operation!="pin" && operation!="unpin") return reject("unsupported-operation");
     refreshGeometryFacts();
     if(*output!=outputGeneration || *expected!=geometryRevision) return reject("dependency-mismatch");
     const auto member=std::ranges::find_if(members,[&](const Member& entry){return entry.id==*targetId;});
@@ -82,6 +82,26 @@ std::string performGeometryEffect(Session& session,JsonObject* object) {
     const auto window=member->window.lock();const Elm::Geometry::Target barrier{lifetime,*targetId};
     if(effectBarriers.blocked(barrier)) return reject("native-operation-unresolved");
     if(transfer)return performTransferEffect(session,*transfer,*targetId,window,barrier,reply,reject);
+    if(operation=="pin" || operation=="unpin") {
+        if(session.geometryProtocol!=3 || !pinTargetEligible(window))return reject("pin-ineligible");
+        const bool desired=operation=="pin";
+        if(window->m_pinned==desired){session.lastReply=reply("Committed","already-applied");return session.lastReply;}
+        const auto scope=geometryScope(window);if(!scope)return reject("pin-scope");
+        const auto modes=Fullscreen::controller()->getFullscreenModes(window);
+        const auto logical=geometryRect(window->layoutTarget()->position()),visual=geometryRect(window->geometricBox(Desktop::View::IGeometric::GEOMETRIC_GOAL));
+        const auto oldFocus=Desktop::focusState()->window();const auto oldKeyboard=g_pSeatManager->m_state.keyboardFocus.lock();const auto oldPointer=g_pSeatManager->m_state.pointerFocus.lock();
+        const auto peers=geometryPeers(window);
+        if(!effectBarriers.begin(barrier))return reject("native-operation-bound");
+        try {
+            const auto outcome=Config::Actions::pinWindow(desired?Config::Actions::TOGGLE_ACTION_ENABLE:Config::Actions::TOGGLE_ACTION_DISABLE,window);
+            refreshFacts();refreshGeometryFacts(3);notifyEffectChange();
+            const auto live=std::ranges::find_if(members,[&](const Member& entry){return entry.id==*targetId && entry.window.lock()==window;});
+            if(!outcome || live==members.end() || !pinTargetEligible(window))return session.lastReply;
+            const auto current=geometryScope(window);const auto actual=Fullscreen::controller()->getFullscreenModes(window);
+            if(!current || !(current->scope==scope->scope) || current->workspace!=scope->workspace || current->output!=scope->output || current->outputDependency!=scope->outputDependency || window->m_pinned!=desired || actual.internal!=modes.internal || actual.client!=modes.client || geometryRect(window->layoutTarget()->position())!=logical || geometryRect(window->geometricBox(Desktop::View::IGeometric::GEOMETRIC_GOAL))!=visual || Desktop::focusState()->window()!=oldFocus || g_pSeatManager->m_state.keyboardFocus.lock()!=oldKeyboard || g_pSeatManager->m_state.pointerFocus.lock()!=oldPointer || geometryPeers(window)!=peers)return session.lastReply;
+            effectBarriers.definitive(barrier);session.lastReply=reply("Committed","applied");return session.lastReply;
+        }catch(...){return session.lastReply;}
+    }
     if(!geometryTargetEligible(window,session.geometryProtocol)) return reject("geometry-ineligible");
     const auto scope=geometryScope(window);const auto key=Elm::Placement::Identity::fromNative(lifetime,*targetId);
     if(!scope || !key) return reject("geometry-scope");
@@ -106,7 +126,7 @@ std::string performGeometryEffect(Session& session,JsonObject* object) {
     }
     const auto prospective=geometryProspective(window,maximize,original);
     const auto conversion=geometryPolicyInputs(window);
-    if(session.geometryProtocol==2 && (!prospective || conversion=="null"))return reject("geometry-size-infeasible");
+    if(session.geometryProtocol>=2 && (!prospective || conversion=="null"))return reject("geometry-size-infeasible");
     const auto oldFocus=Desktop::focusState()->window();const auto oldKeyboard=g_pSeatManager->m_state.keyboardFocus.lock();
     const auto oldPointer=g_pSeatManager->m_state.pointerFocus.lock();const auto peers=geometryPeers(window);
     if(!effectBarriers.begin(barrier)) return reject("native-operation-bound");
@@ -128,7 +148,7 @@ std::string performGeometryEffect(Session& session,JsonObject* object) {
         const auto currentScope=geometryScope(window);const auto actual=Fullscreen::controller()->getFullscreenModes(window);
         if(!currentScope || !(currentScope->scope==scope->scope) || currentScope->workspace!=scope->workspace || currentScope->output!=scope->output || currentScope->outputDependency!=scope->outputDependency || actual.internal!=desired || actual.client!=desired || Desktop::focusState()->window()!=oldFocus || g_pSeatManager->m_state.keyboardFocus.lock()!=oldKeyboard || g_pSeatManager->m_state.pointerFocus.lock()!=oldPointer || geometryPeers(window)!=peers) return session.lastReply;
         const auto known=geometryPlacements.read(*key,key,currentScope->scope);if(!known) return session.lastReply;
-        if(session.geometryProtocol==2) {
+        if(session.geometryProtocol>=2) {
             const auto fresh=geometryProspective(window,maximize,known);
             if(!fresh || geometryPolicyInputs(window)!=conversion || fresh->logical!=prospective->logical || fresh->real!=prospective->real || fresh->configure!=prospective->configure || window->layoutTarget()->position()!=prospective->logical || window->geometricBox(Desktop::View::IGeometric::GEOMETRIC_GOAL)!=prospective->real || window->m_pendingReportedSize!=prospective->real.size() || window->m_pendingReportedSize.floor()!=prospective->configure)return session.lastReply;
         }

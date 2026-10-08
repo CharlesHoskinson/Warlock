@@ -15,7 +15,7 @@ type alias Window =
     , workArea : Maybe (List Float), logicalGeometry : List Float, visualGeometry : List Float
     , nativeMode : Mode, clientMode : Mode, minimized : Bool, floating : Bool, grouped : Bool
     , fixedSize : Bool, constrainedSize : Bool, eligible : Bool, placementKnown : Bool
-    , maximize : Bool, restoreGeometry : Bool, sizePolicy : Maybe GeometrySizePolicy.Policy }
+    , maximize : Bool, restoreGeometry : Bool, sizePolicy : Maybe GeometrySizePolicy.Policy, pin : Maybe { pinned : Bool, eligible : Bool } }
 type alias Snapshot = { binding : Binding.Binding, request : Counter, sequence : Counter, context : Context, focused : Maybe Counter, blocked : Bool, windows : List Window }
 strict fields body = D.keyValuePairs D.value |> D.andThen (\pairs -> if List.sort (List.map Tuple.first pairs)==List.sort fields then body else D.fail "Geometry schema")
 positive = UInt64.decoder |> D.andThen (\x -> if x==UInt64.zero then D.fail "Zero geometry identity" else D.succeed x)
@@ -42,7 +42,7 @@ capabilitiesDecoder = strict ["observe","effects","effectProtocol","operations",
     (D.map6 (\_ effects _ operations _ _ -> {effects=effects,operations=operations})
         (exact "observe" D.bool True) (D.field "effects" D.bool) (exact "effectProtocol" D.int 2)
         (D.field "operations" (D.list D.string)) (exact "placementCapacity" D.int 256) (exact "canonicalScene" D.bool False))
-    |> D.andThen (\caps -> if List.length caps.operations<=4 && List.all (\op -> List.member op ["maximize","restore-geometry","snap","transfer-workspace"]) caps.operations && List.length caps.operations==List.length (List.foldl (\x xs -> if List.member x xs then xs else x::xs) [] caps.operations) && caps.effects==not (List.isEmpty caps.operations) then D.succeed caps else D.fail "Geometry capabilities")
+    |> D.andThen (\caps -> if List.length caps.operations<=6 && List.all (\op -> List.member op ["maximize","restore-geometry","snap","transfer-workspace","pin","unpin"]) caps.operations && List.length caps.operations==List.length (List.foldl (\x xs -> if List.member x xs then xs else x::xs) [] caps.operations) && caps.effects==not (List.isEmpty caps.operations) then D.succeed caps else D.fail "Geometry capabilities")
 windowDecoder protocol =
     let identities = D.map8 (\inc owner ws wg mon og wr wa -> {inc=inc,owner=owner,ws=ws,wg=wg,mon=mon,og=og,wr=wr,wa=wa})
             (D.field "incarnation" positive) (D.field "owner" (D.nullable positive)) (D.field "workspace" (D.nullable workspace))
@@ -51,12 +51,13 @@ windowDecoder protocol =
         state = D.map8 (\logical visual native client minimized floating grouped fixed -> {logical=logical,visual=visual,native=native,client=client,minimized=minimized,floating=floating,grouped=grouped,fixed=fixed})
             (D.field "logicalGeometry" rect) (D.field "visualGeometry" rect) (D.field "nativeMode" modeDecoder) (D.field "clientMode" modeDecoder)
             (D.field "minimized" D.bool) (D.field "floating" D.bool) (D.field "grouped" D.bool) (D.field "fixedSize" D.bool)
-        policy = D.map5 (\constrained eligible known caps size -> {constrained=constrained,eligible=eligible,known=known,caps=caps,size=size})
+        policy = D.map6 (\constrained eligible known caps size pin -> {constrained=constrained,eligible=eligible,known=known,caps=caps,size=size,pin=pin})
             (D.field "constrainedSize" D.bool) (D.field "geometryEligible" D.bool) (D.field "ordinaryPlacementKnown" D.bool)
             (D.field "capabilities" (strict ["maximize","restoreGeometry"] (D.map2 Tuple.pair (D.field "maximize" D.bool) (D.field "restoreGeometry" D.bool))))
-            (if protocol==2 then D.field "sizePolicy" GeometrySizePolicy.decoder |> D.map Just else D.succeed Nothing)
-    in strict (["incarnation","owner","workspace","workspaceGeneration","monitor","outputOwnershipGeneration","workAreaRevision","workArea","logicalGeometry","visualGeometry","nativeMode","clientMode","minimized","floating","grouped","fixedSize","constrainedSize","geometryEligible","ordinaryPlacementKnown","capabilities"] ++ (if protocol==2 then ["sizePolicy"] else []))
-        (D.map3 (\i s p -> {incarnation=i.inc,owner=i.owner,workspace=i.ws,workspaceGeneration=i.wg,monitor=i.mon,outputOwnershipGeneration=i.og,workAreaRevision=i.wr,workArea=i.wa,logicalGeometry=s.logical,visualGeometry=s.visual,nativeMode=s.native,clientMode=s.client,minimized=s.minimized,floating=s.floating,grouped=s.grouped,fixedSize=s.fixed,constrainedSize=p.constrained,eligible=p.eligible,placementKnown=p.known,maximize=Tuple.first p.caps,restoreGeometry=Tuple.second p.caps,sizePolicy=p.size}) identities state policy)
+            (if protocol>=2 then D.field "sizePolicy" GeometrySizePolicy.decoder |> D.map Just else D.succeed Nothing)
+            (if protocol==3 then D.field "pin" (strict ["pinned","eligible"] (D.map2 (\pinned eligible -> {pinned=pinned,eligible=eligible}) (D.field "pinned" D.bool) (D.field "eligible" D.bool))) |> D.map Just else D.succeed Nothing)
+    in strict (["incarnation","owner","workspace","workspaceGeneration","monitor","outputOwnershipGeneration","workAreaRevision","workArea","logicalGeometry","visualGeometry","nativeMode","clientMode","minimized","floating","grouped","fixedSize","constrainedSize","geometryEligible","ordinaryPlacementKnown","capabilities"] ++ (if protocol>=2 then ["sizePolicy"] else []) ++ (if protocol==3 then ["pin"] else []))
+        (D.map3 (\i s p -> {incarnation=i.inc,owner=i.owner,workspace=i.ws,workspaceGeneration=i.wg,monitor=i.mon,outputOwnershipGeneration=i.og,workAreaRevision=i.wr,workArea=i.wa,logicalGeometry=s.logical,visualGeometry=s.visual,nativeMode=s.native,clientMode=s.client,minimized=s.minimized,floating=s.floating,grouped=s.grouped,fixedSize=s.fixed,constrainedSize=p.constrained,eligible=p.eligible,placementKnown=p.known,maximize=Tuple.first p.caps,restoreGeometry=Tuple.second p.caps,sizePolicy=p.size,pin=p.pin}) identities state policy)
 window incarnation snapshot = List.filter (\row -> row.incarnation==incarnation) snapshot.windows |> List.head
 validRows caps blocked rows =
     let ids=List.map .incarnation rows
@@ -70,7 +71,8 @@ validRows caps blocked rows =
                     Just _ -> walk [] row.incarnation
                 sizeValid=row.sizePolicy |> Maybe.map (\p -> GeometrySizePolicy.coherent p row.workArea row.constrainedSize row.fixedSize && (not row.eligible || GeometrySizePolicy.supported p) && (not row.maximize || GeometrySizePolicy.permits True p) && (not row.restoreGeometry || GeometrySizePolicy.permits False p)) |> Maybe.withDefault True
                 capabilityModes=(not row.maximize || (row.eligible && row.nativeMode==Ordinary)) && (not row.restoreGeometry || (row.eligible && row.nativeMode==Maximized && row.placementKnown))
-            in paired && eligible && ownership && sizeValid && capabilityModes && (not row.maximize || List.member "maximize" caps.operations) && (not row.restoreGeometry || List.member "restore-geometry" caps.operations)
+                pinValid=row.pin |> Maybe.map (\pin -> not pin.eligible || (not blocked && row.workspace/=Nothing && row.floating && row.owner==Nothing && not row.grouped && not row.minimized && row.nativeMode==row.clientMode && row.nativeMode/=Fullscreen && List.member "pin" caps.operations && List.member "unpin" caps.operations)) |> Maybe.withDefault True
+            in pinValid && paired && eligible && ownership && sizeValid && capabilityModes && (not row.maximize || List.member "maximize" caps.operations) && (not row.restoreGeometry || List.member "restore-geometry" caps.operations)
         walk visited id = if List.member id visited then False else case List.filter (\row -> row.incarnation==id) rows |> List.head of
             Nothing -> False
             Just row -> case row.owner of
@@ -93,6 +95,6 @@ decoder protocol caps = strict ["protocolVersion","kind","geometryProtocol","bin
         (D.map2 Tuple.pair (D.field "outputGeneration" positive)
             (D.field "facts" (strict ["focused","inputBlocked","windows"] (D.map3 (\focus blocked rows -> {focused=focus,blocked=blocked,windows=rows}) (D.field "focused" (D.nullable positive)) (D.field "inputBlocked" D.bool) (D.field "windows" (D.list (windowDecoder protocol))))))))
     |> D.andThen (\snapshot -> if validRows caps snapshot.blocked snapshot.windows && (snapshot.focused |> Maybe.map (\id -> List.any (\row -> row.incarnation==id) snapshot.windows) |> Maybe.withDefault True) then D.succeed snapshot else D.fail "Geometry facts coherence")
-decode caps raw = D.decodeValue (decoder 2 caps) raw |> Result.mapError (\_ -> "Invalid geometry projection")
+decode caps raw = D.decodeValue (D.field "geometryProtocol" D.int |> D.andThen (\version -> if List.member version [2,3] then decoder version caps else D.fail "Geometry protocol")) raw |> Result.mapError (\_ -> "Invalid geometry projection")
 
 decodeLegacy caps raw = D.decodeValue (decoder 1 caps) raw |> Result.mapError (\_ -> "Invalid legacy geometry projection")

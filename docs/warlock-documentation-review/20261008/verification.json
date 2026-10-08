@@ -1,0 +1,252 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-83a1803c25464f35b611e8373b09fc9c.scope",
+    "coreLimit": 1
+  },
+  "checks": [
+    "Link resolves: README.md \u2192 docs/warlock-repository/v1/README.md",
+    "Link resolves: README.md \u2192 implementation/warlock/README.md",
+    "Link resolves: README.md \u2192 docs/warlock-roadmap/FEATURE-COMPLETION.md",
+    "Link resolves: README.md \u2192 docs/warlock-build-loop/v2/INSTRUCTIONS.md",
+    "Link resolves: README.md \u2192 docs/warlock-build-loop/v2/requirement-ledger.json",
+    "Link resolves: README.md \u2192 docs/HANDOFF.md",
+    "Link resolves: README.md \u2192 window-behavior-spec/requirements.md",
+    "Link resolves: README.md \u2192 window-behavior-spec/PARITY_STATUS.md",
+    "Link resolves: README.md \u2192 docs/warlock-brand/README.md",
+    "Link resolves: README.md \u2192 docs/warlock-brand/PHILOSOPHY.md",
+    "Link resolves: README.md \u2192 docs/elm-roadmap/research/20261005-design-adoption/WORKPLAN.md",
+    "Link resolves: README.md \u2192 DesignLanguage/README.md",
+    "Link resolves: README.md \u2192 DesignLanguage/catalog/index.html",
+    "Link resolves: README.md \u2192 AGENTS.md",
+    "Link resolves: README.md \u2192 CONTRIBUTING.md",
+    "Link resolves: README.md \u2192 plugins/warlock-contributor/README.md",
+    "Link resolves: CONTRIBUTING.md \u2192 plugins/warlock-contributor/README.md",
+    "Link resolves: CONTRIBUTING.md \u2192 docs/warlock-build-loop/v2/INSTRUCTIONS.md",
+    "Link resolves: CONTRIBUTING.md \u2192 docs/warlock-workflow-review/20261007/AAR.md",
+    "Link resolves: CONTRIBUTING.md \u2192 plugins/warlock-contributor/README.md",
+    "Link resolves: CONTRIBUTING.md \u2192 plugins/warlock-contributor/README.md",
+    "Link resolves: CONTRIBUTING.md \u2192 plugins/warlock-contributor/references/implementation.md",
+    "Link resolves: CONTRIBUTING.md \u2192 DesignLanguage/CONTRIBUTING.md",
+    "Link resolves: DesignLanguage/README.md \u2192 CONSENSUS.md",
+    "Link resolves: DesignLanguage/README.md \u2192 ../docs/warlock-brand/README.md",
+    "Link resolves: DesignLanguage/README.md \u2192 ../docs/warlock-brand/PHILOSOPHY.md",
+    "Link resolves: DesignLanguage/README.md \u2192 PRODUCT.md",
+    "Link resolves: DesignLanguage/README.md \u2192 DESIGN.md",
+    "Link resolves: DesignLanguage/README.md \u2192 WORKPLAN.md",
+    "Link resolves: DesignLanguage/README.md \u2192 EARS.md",
+    "Link resolves: DesignLanguage/README.md \u2192 ../openspec/changes/warlock-design-language/proposal.md",
+    "Link resolves: DesignLanguage/README.md \u2192 research/v1/consensus-receipt-v2.json",
+    "Link resolves: DesignLanguage/README.md \u2192 CURRENT.md",
+    "Link resolves: DesignLanguage/README.md \u2192 catalog/index.html",
+    "Link resolves: DesignLanguage/README.md \u2192 catalog/v6/index.html",
+    "Link resolves: DesignLanguage/README.md \u2192 catalog/WORKPLAN.md",
+    "Link resolves: DesignLanguage/README.md \u2192 layered-windows/v1/README.md",
+    "Link resolves: DesignLanguage/README.md \u2192 CONTRIBUTING.md",
+    "Link resolves: DesignLanguage/README.md \u2192 INTERACTION-ADDENDUM.md",
+    "Link resolves: DesignLanguage/README.md \u2192 ../docs/warlock-roadmap/FEATURE-COMPLETION.md",
+    "Link resolves: DesignLanguage/WORKPLAN.md \u2192 catalog/WORKPLAN.md",
+    "Link resolves: DesignLanguage/WORKPLAN.md \u2192 catalog/index.html",
+    "Link resolves: DesignLanguage/WORKPLAN.md \u2192 INTERACTION-ADDENDUM.md",
+    "Link resolves: DesignLanguage/WORKPLAN.md \u2192 ../docs/warlock-roadmap/FEATURE-COMPLETION.md",
+    "Link resolves: DesignLanguage/WORKPLAN.md \u2192 CURRENT.md",
+    "Link resolves: DesignLanguage/WORKPLAN.md \u2192 CONTRIBUTING.md",
+    "Link resolves: DesignLanguage/WORKPLAN.md \u2192 ../docs/warlock-documentation-review/20261008/DISPOSITION.md",
+    "Link resolves: DesignLanguage/CURRENT.md \u2192 catalog/index.html",
+    "Link resolves: DesignLanguage/CURRENT.md \u2192 DESIGN.md",
+    "Link resolves: DesignLanguage/CURRENT.md \u2192 CONTRIBUTING.md",
+    "Link resolves: DesignLanguage/CURRENT.md \u2192 ../docs/warlock-roadmap/FEATURE-COMPLETION.md",
+    "Link resolves: DesignLanguage/CURRENT.md \u2192 ../implementation/warlock/README.md",
+    "Link resolves: DesignLanguage/CURRENT.md \u2192 catalog/v6/index.html",
+    "Link resolves: DesignLanguage/CURRENT.md \u2192 EARS.md",
+    "Link resolves: DesignLanguage/CURRENT.md \u2192 layered-windows/v1/EARS.md",
+    "Link resolves: DesignLanguage/CURRENT.md \u2192 layered-windows/v1/DECISIONS.md",
+    "Link resolves: DesignLanguage/CURRENT.md \u2192 ../plugins/warlock-contributor/README.md",
+    "Link resolves: DesignLanguage/CURRENT.md \u2192 CONTRIBUTING.md",
+    "Link resolves: DesignLanguage/CONTRIBUTING.md \u2192 ../plugins/warlock-contributor/README.md",
+    "Link resolves: DesignLanguage/CONTRIBUTING.md \u2192 ../CONTRIBUTING.md",
+    "Link resolves: DesignLanguage/CONTRIBUTING.md \u2192 ../docs/warlock-build-loop/v2/INSTRUCTIONS.md",
+    "Link resolves: DesignLanguage/CONTRIBUTING.md \u2192 ../plugins/warlock-contributor/references/implementation.md",
+    "Link resolves: DesignLanguage/CONTRIBUTING.md \u2192 ../plugins/warlock-contributor/README.md",
+    "Link resolves: DesignLanguage/CONTRIBUTING.md \u2192 ../plugins/warlock-contributor/README.md",
+    "Link resolves: DesignLanguage/DESIGN.md \u2192 CURRENT.md",
+    "Link resolves: DesignLanguage/DESIGN.md \u2192 ../plugins/warlock-contributor/README.md",
+    "Link resolves: DesignLanguage/PRODUCT.md \u2192 CURRENT.md",
+    "Link resolves: DesignLanguage/PRODUCT.md \u2192 ../docs/warlock-roadmap/FEATURE-COMPLETION.md",
+    "Link resolves: DesignLanguage/INTERACTION-ADDENDUM.md \u2192 ../openspec/changes/warlock-stable-target-guidance/specs/warlock-stable-targets/spec.md",
+    "Link resolves: DesignLanguage/INTERACTION-ADDENDUM.md \u2192 WORKPLAN.md",
+    "Link resolves: DesignLanguage/catalog/WORKPLAN.md \u2192 ../WORKPLAN.md",
+    "Link resolves: DesignLanguage/catalog/WORKPLAN.md \u2192 ../CURRENT.md",
+    "Link resolves: DesignLanguage/catalog/WORKPLAN.md \u2192 index.html",
+    "Link resolves: DesignLanguage/catalog/index.html \u2192 v6/assets/identity/warlock-mark-mono.svg",
+    "Link resolves: DesignLanguage/catalog/index.html \u2192 ../current.css",
+    "Link resolves: DesignLanguage/catalog/index.html \u2192 ../../README.md",
+    "Link resolves: DesignLanguage/catalog/index.html \u2192 ../CURRENT.md",
+    "Link resolves: DesignLanguage/catalog/index.html \u2192 ../../docs/warlock-brand/PHILOSOPHY.md",
+    "Link resolves: DesignLanguage/catalog/index.html \u2192 ../DESIGN.md",
+    "Link resolves: DesignLanguage/catalog/index.html \u2192 ../layered-windows/v1/README.md",
+    "Link resolves: DesignLanguage/catalog/index.html \u2192 v6/index.html",
+    "Link resolves: DesignLanguage/catalog/index.html \u2192 ../../implementation/warlock/README.md",
+    "Link resolves: DesignLanguage/catalog/index.html \u2192 ../CONTRIBUTING.md",
+    "Link resolves: DesignLanguage/catalog/index.html \u2192 ../../plugins/warlock-contributor/README.md",
+    "Link resolves: DesignLanguage/catalog/index.html \u2192 ../../docs/warlock-roadmap/FEATURE-COMPLETION.md",
+    "Link resolves: DesignLanguage/catalog/index.html \u2192 ../EARS.md",
+    "Link resolves: DesignLanguage/catalog/index.html \u2192 ../../CONTRIBUTING.md",
+    "Link resolves: DesignLanguage/current.css \u2192 catalog/v6/tokens.css",
+    "Link resolves: DesignLanguage/current.css \u2192 catalog/v6/assets/fonts/inter-variable.woff2",
+    "Link resolves: plugins/warlock-contributor/README.md \u2192 references/implementation.md",
+    "Link resolves: plugins/warlock-contributor/README.md \u2192 references/contract.json",
+    "Link resolves: plugins/warlock-contributor/README.md \u2192 ../../DesignLanguage/CONTRIBUTING.md",
+    "Link resolves: plugins/warlock-contributor/README.md \u2192 ../../DesignLanguage/catalog/index.html",
+    "Link resolves: plugins/warlock-contributor/README.md \u2192 ../../docs/warlock-workflow-review/contributor-plugin-20261007/consensus.md",
+    "Link resolves: plugins/warlock-contributor/README.md \u2192 skills/warlock-contribute/SKILL.md",
+    "Link resolves: plugins/warlock-contributor/README.md \u2192 references/workflow.md",
+    "Link resolves: plugins/warlock-contributor/README.md \u2192 references/contract.json",
+    "Link resolves: plugins/warlock-contributor/README.md \u2192 references/warlock-contributions.yml",
+    "Link resolves: plugins/warlock-contributor/references/implementation.md \u2192 workflow.md",
+    "Link resolves: docs/warlock-roadmap/FEATURE-COMPLETION.md \u2192 ../../implementation/warlock/README.md",
+    "Link resolves: docs/warlock-roadmap/FEATURE-COMPLETION.md \u2192 ../elm-roadmap/requirements.json",
+    "Link resolves: docs/warlock-roadmap/FEATURE-COMPLETION.md \u2192 ../elm-roadmap/delivery/FRP-ELM-WORKPLAN.md",
+    "Link resolves: docs/warlock-roadmap/FEATURE-COMPLETION.md \u2192 ../elm-roadmap/research/20261005-design-adoption/WORKPLAN.md",
+    "Link resolves: docs/warlock-roadmap/FEATURE-COMPLETION.md \u2192 ../warlock-build-loop/v2/requirement-ledger.json",
+    "Link resolves: implementation/warlock/README.md \u2192 ../../docs/warlock-roadmap/FEATURE-COMPLETION.md",
+    "Link resolves: implementation/warlock/README.md \u2192 ../../DesignLanguage/catalog/index.html",
+    "Link resolves: implementation/warlock/README.md \u2192 qa/evidence/pin-max/README.md",
+    "Frozen v6 unchanged",
+    "Browser normal exit and checks pass",
+    "Documentation inputs unchanged"
+  ],
+  "inputs": {
+    "README.md": "f8b9a51d16b06bbd7a8c5a13232436d57d9d2f79e398d9575a1b50b13d8809ee",
+    "CONTRIBUTING.md": "5e72e897a422454ab88d3b115662a9ee7d88427d977420b611367096782d5ac5",
+    "DesignLanguage/README.md": "32a110b45bed49c9b1381dd13752bd69a0a256ea193315c90c4bf36c578d49af",
+    "DesignLanguage/WORKPLAN.md": "105bf957ff98be58992bf8711a3c2f0be15c8899b9b193fc32274fe50490bf05",
+    "DesignLanguage/CURRENT.md": "a1621bc69a27ff13222ac914b73ba662418912faffaceabaa269c32bff47828c",
+    "DesignLanguage/CONTRIBUTING.md": "3f46b2e88ff7b0602359c0292acc45540dcc589e6c2f1ea930fe824174ee4971",
+    "DesignLanguage/DESIGN.md": "ba5be6c5cd16c558958628a1f90ef644b823221cf117dd79db9d71ad4ef27fd9",
+    "DesignLanguage/PRODUCT.md": "e9793fc852f755fbcb700254a55a8f25576480df02ca6e7b36356a3ed5b953e2",
+    "DesignLanguage/INTERACTION-ADDENDUM.md": "63e7d3a8c70fb6d47015a6a1b45f53840c43c4f72c6b6cf619d34aee7d9da84c",
+    "DesignLanguage/catalog/WORKPLAN.md": "7b3675babf492f07856e7da00dfda8f8ae9fd593fcda5585eed8c05e99723970",
+    "DesignLanguage/catalog/index.html": "fee64c342d36ef53bb693f9754e6bca63949ff2ee298163627745ed0ae7ef3a3",
+    "DesignLanguage/current.css": "a65ef1f37703189b4b7753510347047b4a0f557b6cacb5eb163df3a57851af73",
+    "plugins/warlock-contributor/README.md": "910f7d8471c04504ace6a09f54ebfc480a9a11e76aa3b3872ec9aa2b9f80b077",
+    "plugins/warlock-contributor/references/implementation.md": "f71a8e5447b1f6de0343080625e7f28eb5e65f211d6312e8fc5dc7e245fad983",
+    "docs/warlock-roadmap/FEATURE-COMPLETION.md": "02481dbc3d8bfa00719d90bfd6c21fcfcbdacc84e97164a4c85d5bbf6c9043f0",
+    "implementation/warlock/README.md": "c5e1873604d3b9cfc3ac68e2523e18b7d8a3c209671b76173eb561cf316d744a"
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "resolvedLocalLinks": 107,
+  "browser": {
+    "passed": true,
+    "checks": [
+      {
+        "name": "Current heading and plugin section"
+      },
+      {
+        "name": "Development and fixture scope visible"
+      },
+      {
+        "name": "Approved tokens render"
+      },
+      {
+        "name": "Font loaded"
+      },
+      {
+        "name": "Browser link HTTP http://127.0.0.1:33987/DesignLanguage/catalog/index.html#main"
+      },
+      {
+        "name": "Browser link HTTP http://127.0.0.1:33987/README.md"
+      },
+      {
+        "name": "Browser link HTTP http://127.0.0.1:33987/DesignLanguage/catalog/index.html#foundations"
+      },
+      {
+        "name": "Browser link HTTP http://127.0.0.1:33987/DesignLanguage/catalog/index.html#components"
+      },
+      {
+        "name": "Browser link HTTP http://127.0.0.1:33987/DesignLanguage/catalog/index.html#contributors"
+      },
+      {
+        "name": "Browser link HTTP http://127.0.0.1:33987/DesignLanguage/catalog/index.html#remaining"
+      },
+      {
+        "name": "Browser link HTTP http://127.0.0.1:33987/DesignLanguage/CURRENT.md"
+      },
+      {
+        "name": "Browser link HTTP http://127.0.0.1:33987/docs/warlock-brand/PHILOSOPHY.md"
+      },
+      {
+        "name": "Browser link HTTP http://127.0.0.1:33987/DesignLanguage/DESIGN.md"
+      },
+      {
+        "name": "Browser link HTTP http://127.0.0.1:33987/DesignLanguage/layered-windows/v1/README.md"
+      },
+      {
+        "name": "Browser link HTTP http://127.0.0.1:33987/DesignLanguage/catalog/v6/index.html"
+      },
+      {
+        "name": "Browser link HTTP http://127.0.0.1:33987/implementation/warlock/README.md"
+      },
+      {
+        "name": "Browser link HTTP http://127.0.0.1:33987/DesignLanguage/CONTRIBUTING.md"
+      },
+      {
+        "name": "Browser link HTTP http://127.0.0.1:33987/plugins/warlock-contributor/README.md"
+      },
+      {
+        "name": "Browser link HTTP http://127.0.0.1:33987/docs/warlock-roadmap/FEATURE-COMPLETION.md"
+      },
+      {
+        "name": "Browser link HTTP http://127.0.0.1:33987/DesignLanguage/EARS.md"
+      },
+      {
+        "name": "Browser link HTTP http://127.0.0.1:33987/CONTRIBUTING.md"
+      },
+      {
+        "name": "Keyboard skip link reachable"
+      },
+      {
+        "name": "Skip reaches main"
+      },
+      {
+        "name": "No horizontal page overflow 1440"
+      },
+      {
+        "name": "No horizontal page overflow 390"
+      },
+      {
+        "name": "No horizontal page overflow 320"
+      },
+      {
+        "name": "Forced-color keyboard focus"
+      },
+      {
+        "name": "No off-origin assets",
+        "detail": []
+      },
+      {
+        "name": "No browser errors",
+        "detail": []
+      }
+    ],
+    "captures": [
+      "current-catalog-desktop.png",
+      "current-catalog-mobile.png"
+    ],
+    "errors": [],
+    "externalRequests": [],
+    "nativeAcceptance": false,
+    "fullReleaseAccepted": false,
+    "browser": {
+      "Browser": "HeadlessChrome/154.0.8037.57",
+      "Protocol-Version": "1.3",
+      "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.8037.57 Safari/537.36",
+      "V8-Version": "15.4.80.11",
+      "WebKit-Version": "537.36 (@73c14f6228d7cd537c855007e8f88678969cc0eb)",
+      "webSocketDebuggerUrl": "ws://127.0.0.1:36469/devtools/browser/8b5c897d-d129-4e0e-942c-6796a933795d"
+    },
+    "binary": "/home/hoskinson/.cache/puppeteer/chrome-headless-shell/linux-154.0.8037.57/chrome-headless-shell-linux64/chrome-headless-shell",
+    "browserExitCode": 0
+  }
+}

@@ -1,0 +1,31 @@
+# Warlock feature completion
+
+Updated 8 October 2026. The editable product is [implementation/warlock](../../implementation/warlock/README.md). This checklist distinguishes missing behavior and integration from release acceptance. A published draft or passing component check does not make a feature complete. The original [242 requirements](../elm-roadmap/requirements.json), 417 scenarios, FRP adoption requirements and design contracts retain their identities.
+
+## Implementation still required
+
+| Work | Current implementation and remaining behavior | Contract |
+| --- | --- | --- |
+| [ ] Always-on-top, MAX and stable input targets | Typed pin/unpin and confirmed native state are implemented. Preview arrival currently moves picker rows between pointer press and release. Stabilize target geometry, expose a stable checkable Always on top label, finish pin/MAX interaction, and reconcile family, fullscreen, paint and input ordering on the integrated native scene. | UX-016; REN-015–018; GNO/KDE layering; DL-005/007/014 |
+| [ ] Drag, resize and transition interruption | Ownership guards exist. Finish the integrated native gesture, release/cancel, snap interaction and mid-flight reversal paths, retaining presented geometry and pointer ownership. | UX-021; REN-009/010; original drag/resize 52 |
+| [ ] Continuous minimize/restore and resource retirement | Native activation/restore, retained picker frames and bounded idle timer suspension exist. Finish retained-frame-to-live presentation, cancellation, output invalidation and bounded cleanup across the original restore/recovery journeys. Picker thumbnails alone do not complete window transition rendering. | REN-002–014/019; UI-017/018; original 38/34 and preview gates |
+| [ ] Complete keyboard and nested focus behavior | Many shell routes work; the combined repeated Home/group journey fails. Finish all keyboard routes, parent-scope restoration and opener retirement/workspace/minimize/restart cases. | UX-023/024; UI-011; DL-005/009/010 |
+| [ ] Multi-output behavior and hotplug recovery | Workspace activation, transfer and snap placement exist in bounded recordings. Complete per-output taskbars, cross-output activation/transfer, removed-output fallback and scale/transform changes on the current candidate. | UX-002; UI-002/019; REN-019/020 |
+| [ ] Accessible delivery on every surface | Roles, names, selected states, high contrast and text scaling are implemented. Complete native accessibility exposure, relationships/actions, speech and braille delivery, and one announcement owner across the migrated surfaces. | UI-009/010/013; UX-025–027; DL-007/011 |
+| [ ] Full IME interaction | Trusted preedit and a Unicode commit are observed. Candidate navigation/cancellation, caret/output tracking and stale callback retirement remain unresolved or unqualified. Finish the integration needed for those paths. | UI-012; UX-028 |
+| [ ] Native layered-window design adoption | Color/glow/shadow/shading contracts are agreed. Replace provisional shell treatments with approved tokens and apply confirmed keyboard recipient, active application, candidate, family and outcome cues. Implement effects-off and reduced-transparency preferences; reconcile focus-ring deviations. Keep decorative pixels out of input regions. | Warlock layered-window EARS/OpenSpec; DL-001–022/030 |
+| [ ] Effective Omarchy commands and bindings | Some entry routes exist. Complete the compatibility inventory and routing for installed defaults and user overrides; preserve command meaning and require an explicit decision for shortcut conflicts. | Layered-window Omarchy contracts; UI-020; UX-023 |
+| [ ] First-use guidance and offline recovery | Add dismissible keyboard-accessible guidance, approved preference mappings and reachable offline recovery without mandatory onboarding. | UI-020 |
+| [ ] Remaining shell integration paths | Complete or reconcile taskbar new-instance/jump-list routes, empty/refused Task View cases, Files cold/minimized/other-workspace summoning, notification announcement/DND policy, and real capability/authorization outcomes for system controls. Implement only missing behavior after checking existing source and evidence. | UI-004–008/010; UX-010/017/031–033 |
+| [ ] Remaining typed-state and recovery refinements | Integrate the approved FRP/Elm boundary, focus and announcement corrections. Reconcile current topology, durable admission and long-lifetime recovery implementations; fix demonstrated gaps without replaying Unknown mutations. Keep native deadlines, opaque handles and ownership intact. | [FRP workplan](../elm-roadmap/delivery/FRP-ELM-WORKPLAN.md); [adoption plan](../elm-roadmap/research/20261005-design-adoption/WORKPLAN.md) |
+
+IDs above abbreviate the `ELM-` prefix; DL refers to `WARLOCK-DL-`. These are workstreams, not a count of missing requirements. Some rows contain implemented behavior awaiting native observations; the [delivery ledger](../warlock-build-loop/v2/requirement-ledger.json) records those distinctions. Unadjudicated means evidence has not been reconciled, not that code is absent. Conditional compositor replacement and an Elm Files replacement are not assumed to be selected release features.
+
+## Work after feature completion
+
+- [ ] Run the preserved native, AT/IME, hardware, resource and usability obligations on one coherent source/core/plugin/toolchain tuple; fix any demonstrated failures.
+- [ ] Obtain independent original-scenario dispositions and reconcile the baseline and adopted requirements without relaxing deadlines or budgets.
+- [ ] Produce a reproducible package and validate installation, preservation, rollback and recovery.
+- [ ] Complete release admission and session deployment. A GitHub merge performs none of these steps.
+
+Feature complete means the selected behaviors are implemented and integrated. Release ready additionally requires the original acceptance obligations. No percentage or completion date is inferred from commit counts or ledger bookkeeping.

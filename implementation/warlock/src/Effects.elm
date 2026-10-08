@@ -9,7 +9,7 @@ import ActionProjection as Scene
 import UInt64 exposing (Counter)
 
 -- Typed activation/minimize/restore intents. No workspace/scratchpad dispatch.
-type Operation = Minimize | Restore | Activate | Maximize | RestoreGeometry | SnapPlacement Snap.Proposal | TransferWorkspace Transfer.Proposal
+type Operation = Minimize | Restore | Activate | Maximize | RestoreGeometry | SnapPlacement Snap.Proposal | TransferWorkspace Transfer.Proposal | Pin | Unpin
 type Status = Pending | Committed | Refused | Cancelled | Unknown
 
 type alias Context = { lifetime : Counter, epoch : Counter, output : Counter, revision : Counter }
@@ -37,6 +37,8 @@ operationDecoder = D.string |> D.andThen (\name -> case name of
     "activate" -> D.succeed Activate
     "maximize" -> D.succeed Maximize
     "restore-geometry" -> D.succeed RestoreGeometry
+    "pin" -> D.succeed Pin
+    "unpin" -> D.succeed Unpin
     _ -> D.fail "Unsupported operation")
 
 statusDecoder : D.Decoder Status
@@ -144,6 +146,8 @@ operationName operation = case operation of
     Activate -> "activate"
     Maximize -> "maximize"
     RestoreGeometry -> "restore-geometry"
+    Pin -> "pin"
+    Unpin -> "unpin"
     SnapPlacement _ -> "snap"
     TransferWorkspace _ -> "transfer-workspace"
 
@@ -182,6 +186,8 @@ protocol : Operation -> Int
 protocol operation = case operation of
     Maximize -> 2
     RestoreGeometry -> 2
+    Pin -> 2
+    Unpin -> 2
     SnapPlacement _ -> 2
     TransferWorkspace _ -> 2
     _ -> 1
@@ -199,8 +205,11 @@ beginGeometry caps observed operation incarnation model =
             else if List.length model.unresolved>=64 then refuse "Unresolved operation capacity"
             else if protocol operation/=2 || not caps.effects || not (List.member (operationName operation) caps.operations) then refuse "Geometry operation not negotiated"
             else if observed.blocked || (case operation of
+                Pin -> not (window.pin |> Maybe.map .eligible |> Maybe.withDefault False)
+                Unpin -> not (window.pin |> Maybe.map .eligible |> Maybe.withDefault False)
                 TransferWorkspace p -> not (Transfer.matches observed incarnation p)
                 _ -> not window.eligible || window.minimized || window.fixedSize) then refuse "Geometry target ineligible"
+            else if ((operation==Pin || operation==Unpin) && (window.pin |> Maybe.map (\pin -> pin.pinned==(operation==Pin)) |> Maybe.withDefault True)) then refuse "Pin state already requested or unavailable"
             else if (operation==Maximize && (not window.maximize || window.nativeMode/=GeometryProjection.Ordinary)) || (operation==RestoreGeometry && (not window.restoreGeometry || window.nativeMode/=GeometryProjection.Maximized || not window.placementKnown)) then refuse "Geometry state/capability unavailable"
             else if (case operation of
                 SnapPlacement proposed -> not (Snap.matches observed incarnation proposed)

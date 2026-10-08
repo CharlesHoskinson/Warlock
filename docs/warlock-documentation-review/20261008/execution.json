@@ -1,0 +1,154 @@
+{
+  "schema": 1,
+  "sourceParent": "a6d25cae6e6bcc48ffc7f5e192a32ace794a11c3",
+  "inputHashes": {
+    "README.md": "49f614307249e9d48a26e7e6b3c6dd383b046881dc9dfde3901a847810284d85",
+    "CONTRIBUTING.md": "1d0e4b8379936be80eaa4632857328af5b601fe34ab4db0e703477a886c1253b",
+    "DesignLanguage/README.md": "f6480937d6266d19df8e5d2a26c6882ef175f93378380cb07e3abae084a19a90",
+    "DesignLanguage/WORKPLAN.md": "986d257d98c09802759e63ffb0894a22780bbc47b4a4e6279c3316dea090e1cc",
+    "DesignLanguage/DESIGN.md": "876309dcae7d8be95c7aef7d7d0b65879aa9f0f9af04a6865b7ecd6256d0d3cc",
+    "DesignLanguage/PRODUCT.md": "d6c47c6363b434e01185f3ac725e9697cc21916873a8c5bf8fdd1ae44b2f2f5c",
+    "DesignLanguage/EARS.md": "2e0a5d0eace0f4c4aca25f6b205edb8bdd0a6b468fbd10883e96053e44a06f18",
+    "DesignLanguage/catalog/WORKPLAN.md": "010aebacd6c41c86d73c13627a7f7ee2496230f2269b476c26ac249092ec61ce",
+    "DesignLanguage/catalog/v6/README.md": "c88a43c26e4505aaf81419f60da16ce446559594a2724fb456069d84709d2c6a",
+    "DesignLanguage/layered-windows/v1/README.md": "b976e1b5d1b3eb95bb0d810423eb6a380df4c6e699d26f1c99af7945670a121c",
+    "DesignLanguage/layered-windows/v1/WORKPLAN.md": "0b9fe67f4c8942eab14d9df08f41b5a245ca2c214b6e987aa65e636ab9635b30",
+    "docs/warlock-brand/PHILOSOPHY.md": "704d66b5f4e020a24e4cdfe690c4ab5d55b830b451e30212793ac634730c2d5b",
+    "plugins/warlock-contributor/README.md": "f66434e346c69ac822cccc6ea87719569b7eeeac1e00e105b9e0786421730a36",
+    "plugins/warlock-contributor/references/implementation.md": "6f936d696af3cedfc6cfc6c1f50616512f88b0df1d26aab6fa5dc8e500420807",
+    "plugins/warlock-contributor/skills/warlock-contribute/SKILL.md": "51ee4a4d81d76ae07871c31342325dca530c18fefa1ec5bb16019afa51d7dc55",
+    "docs/warlock-build-loop/v2/STATE.json": "038713b7dd42b7da5723f8fd401923db4bdff58c7567bfebfceab1c3a7ea0d6b",
+    "docs/warlock-build-loop/v2/INSTRUCTIONS.md": "fbdc88d76585bebd926895bbebb797854cbe5f5f6ae1af8592337096c8467971",
+    "implementation/warlock/README.md": "fff301292f4a6bfb822d24e35e0d690f0d1acc4a9301494140c258064f0acbff",
+    "docs/elm-roadmap/requirements.json": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+    "docs/warlock-build-loop/v2/requirement-ledger.json": "fc074000473945c65dbe021f00f43a69a7158e2f1f280f12018d68ceeb24f28a"
+  },
+  "baselineDraftSnapshots": [
+    "docs/warlock-build-loop/v2/STATE.json"
+  ],
+  "reviewers": [
+    {
+      "reviewer": "design",
+      "modelRequested": "claude-opus-5-5",
+      "effort": "high",
+      "startedUTC": "2026-10-08T21:55:33.943190+00:00",
+      "readOnly": true,
+      "exitCode": 0,
+      "modelObserved": "claude-opus-5-5",
+      "finishedUTC": "2026-10-08T21:59:34.098368+00:00",
+      "isError": false,
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 56,
+          "outputTokens": 22088,
+          "cacheReadInputTokens": 1939513,
+          "cacheCreationInputTokens": 104847,
+          "webSearchRequests": 0,
+          "costUSD": 1.6686625999999998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 8683,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "passed": true,
+      "report": "design.md",
+      "reportSHA256": "8af94ceea97c970ed7706bef125f3bf6cc9482d0df2bb5ee916aac73457e13bd"
+    },
+    {
+      "reviewer": "documentation",
+      "modelRequested": "claude-opus-5-5",
+      "effort": "high",
+      "startedUTC": "2026-10-08T21:55:33.943422+00:00",
+      "readOnly": true,
+      "exitCode": 0,
+      "modelObserved": "claude-opus-5-5",
+      "finishedUTC": "2026-10-08T21:58:58.963830+00:00",
+      "isError": false,
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 54,
+          "outputTokens": 18671,
+          "cacheReadInputTokens": 1566512,
+          "cacheCreationInputTokens": 86506,
+          "webSearchRequests": 0,
+          "costUSD": 1.3789863999999998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 6396,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "passed": true,
+      "report": "documentation.md",
+      "reportSHA256": "233cfe900a1ca1a9432025bf4c2de52001e242572ae4bd510693b042d2a4717e"
+    },
+    {
+      "reviewer": "plugin",
+      "modelRequested": "claude-opus-5-5",
+      "modelObserved": "claude-opus-5-5",
+      "effort": "high",
+      "readOnly": true,
+      "startedUTC": "2026-10-08T21:59:01.182394+00:00",
+      "finishedUTC": "2026-10-08T22:00:59.291702+00:00",
+      "exitCode": 0,
+      "researchPhase": {
+        "reviewer": "plugin",
+        "modelRequested": "claude-opus-5-5",
+        "effort": "high",
+        "startedUTC": "2026-10-08T21:55:33.943605+00:00",
+        "readOnly": true,
+        "exitCode": 1,
+        "modelObserved": "claude-opus-5-5",
+        "finishedUTC": "2026-10-08T21:58:16.258835+00:00",
+        "isError": true,
+        "modelUsage": {
+          "claude-opus-5-5": {
+            "inputTokens": 70,
+            "outputTokens": 13875,
+            "cacheReadInputTokens": 2430066,
+            "cacheCreationInputTokens": 116089,
+            "webSearchRequests": 0,
+            "costUSD": 1.6925052000000003,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 3940,
+            "canonicalModel": "claude-opus-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "passed": false
+      },
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 12558,
+          "cacheReadInputTokens": 535,
+          "cacheCreationInputTokens": 108755,
+          "webSearchRequests": 0,
+          "costUSD": 1.121315,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 6510,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "researchFinalizedFromRetainedReads": true,
+      "passed": true,
+      "report": "plugin.md",
+      "reportSHA256": "ec5fd2f0af762d15cfbe36678bb25109c02b373717ceb6a3588fe8c8e04e7efc"
+    }
+  ],
+  "allRequestedModelsVerified": true,
+  "readOnly": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "researchNote": "Plugin auditor exhausted 35 read turns, then finalized from retained complete read results with tools disabled. Both phases used verified Opus 5.5/high; the original limit failure remains recorded. Raw streams and exact prompts are retained locally."
+}

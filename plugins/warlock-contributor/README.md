@@ -6,18 +6,12 @@ From the repository root:
 
 ```sh
 python3 -B plugins/warlock-contributor/scripts/warlock.py doctor
-python3 -B plugins/warlock-contributor/scripts/warlock.py self-test
 python3 -B plugins/warlock-contributor/scripts/warlock.py status
 python3 -B plugins/warlock-contributor/scripts/warlock.py remaining --summary
 python3 -B plugins/warlock-contributor/scripts/warlock.py inspect --requirement ELM-UX-004
-python3 -B plugins/warlock-contributor/scripts/warlock.py start --owner your-name
-python3 -B docs/warlock-build-loop/v2/loop.py check
-python3 -B plugins/warlock-contributor/scripts/warlock.py verify-plan
-python3 -B plugins/warlock-contributor/scripts/warlock.py record --outcome production-fix --summary 'Describe the actual source behavior and observations'
-python3 -B plugins/warlock-contributor/scripts/warlock.py handoff
-python3 -B plugins/warlock-contributor/scripts/warlock.py report --markdown
-python3 -B plugins/warlock-contributor/scripts/warlock.py review
 ```
+
+These commands inspect the repository without adopting the active work. Before implementation, follow `plan` → `preflight --slice-file` → `start --slice-file` below, selecting your own record. Bare `start --owner` resumes the selected `STATE.activeSlice`; use it only when you own that slice. Carry the same global `--record` through the loop. Then use `verify-plan`, implement, `record`, ending loop `check`, `report` and `review`. `self-test` is optional plugin regression testing after package changes, not a prerequisite for every GUI contribution.
 
 ## Scaffold and resume
 
@@ -219,7 +213,7 @@ quoted commands, keeping compilation and serial native candidates separate.
 No changed source means no default rerun. Use `verify-plan --selected` to plan
 before editing. Global `--record` carries through to suggested native commands.
 
-The map covers existing feedback, search, pins, Task View, popup and owning-core
+The map covers existing feedback, search, persistent catalog pins (ELM-UX-004), Task View, popup and owning-core
 routes. A SeatManager change suggests the single-unit core build followed by the
 owning-header authority build. Unmapped product files and supporting changes stay
 explicit so a contributor can choose their proportional checks. Missing runners
@@ -236,6 +230,14 @@ changed host/surface units. Shared targets retain all triggering source paths
 without duplicate runs. Menu invocation suggests `--pinned-menus`.
 Preview transport changes remain explicit unmapped product
 work so the contributor can inspect their authority/lifecycle obligations.
+
+Always-on-top/MAX (ELM-UX-016) is not mapped by `verify-plan`. Taskbar application pins, running-pin context menus and always-on-top are distinct behaviors. For UX-016, explicitly choose `qa/check-search.py --pin-max` through the protected CPU launcher and `qa/native-pin-max.py` with no arguments through `loop.py native`; inspect their prerequisites and exact core/plugin pair first. A suggestion or a passing compile does not complete the original native overlap/hit-target scenario.
+
+## Design language contributions
+
+The [design contribution guide](../../DesignLanguage/CONTRIBUTING.md) and [current browser catalog entrance](../../DesignLanguage/catalog/index.html) explain how the plugin supports product design and documentation. Apply the three token tiers, stable preview/control geometry, observed checked semantics, non-color cues and explicit focus/announcement ownership in the runnable product. Current inset-focus, provisional palette and effects-off/transparency gaps remain implementation work; preserve the voted EARS rather than rewriting them to match defects.
+
+Catalog v6 is a frozen earlier closure, not current product coverage. Update current guidance or a fresh specimen after implementing the behavior. Independent documentation/catalog work uses `check --project-only` and proportional link/browser checks. Product design changes retain the original scenario slice and protected native obligations. Neither catalog checks nor this plugin can close a native gate.
 
 Checks and delivery packets also include `progress`: consecutive iterations
 without meaningful progress, elapsed seconds since the recorded baseline, trigger
@@ -279,7 +281,7 @@ Installed plugins may be cached copies; prefer the repository checker with expli
 
 ## Hook scope and limits
 
-Claude's default `hooks/hooks.json` and Codex's explicit `hooks/codex.json` run a read-only checker at SessionStart (including resume/compaction when supplied by the host) and UserPromptSubmit. They add a concise reminder at session start or when a prompt check needs attention for recognized Warlock repositories. They never block prompts/tools/Stop or write contribution records; correction loops and unrelated work remain usable. A five-second checker timeout is advisory, so explicit checks must still run. They do not inspect transcripts or execute builds.
+Claude's default `hooks/hooks.json` and Codex's explicit `hooks/codex.json` run a read-only checker at SessionStart (including resume/compaction when supplied by the host) and UserPromptSubmit. They add a concise reminder at session start or when a prompt check needs attention for recognized Warlock repositories. They never block prompts/tools/Stop or write contribution records; correction loops and unrelated work remain usable. The checker subprocess has a five-second timeout inside a ten-second host hook; both are advisory, so explicit checks must still run. They do not inspect transcripts or execute builds.
 
 Grok uses the Claude-compatible manifest but has different semantics: passive event stdout is ignored. The adapter detects Grok's documented environment and returns immediately; its passive hook cannot deliver context. Explicit loop calls still run the checker. The shared skill and mandatory repository loop carry the instruction to call it. There is no Grok blocking tool hook.
 
@@ -324,7 +326,7 @@ the original scenario evidence.
 
 ## What is enforced
 
-The v2 product-loop wrapper requires a participant record before and after native execution; session hooks remain advisory. For explicitly requested documentation/plugin/support work, run the shared `check --project-only` directly before and after without inventing a GUI slice. The [CI template](references/warlock-contributions.yml) uses project checks on a clean checkout and compares PR changes against the base revision; ignored local ownership records are not available to CI. Copy it to `.github/workflows/warlock-contributions.yml` to activate GitHub Actions when the publishing credential has `workflow` permission. The existing GitHub credential lacks that permission, so this package publishes the reviewed template rather than claiming live CI.
+The v2 product-loop wrapper requires a participant record before and after native execution; session hooks remain advisory. For explicitly requested documentation/plugin/support work, run the shared `check --project-only` directly before and after without inventing a GUI slice. The [CI template](references/warlock-contributions.yml) runs recordless `--json check` on a clean checkout and compares PR changes against the base revision; ignored local ownership records are not available to CI. Copy it to `.github/workflows/warlock-contributions.yml` to activate GitHub Actions when the publishing credential has `workflow` permission. The existing GitHub credential lacks that permission, so this package publishes the reviewed template rather than claiming live CI.
 
 Local records are self-attested, not a tamper-proof audit or proof of independent review. The checker detects contradictions and stale/current evidence but cannot tell whether changed code improves behavior, whether a reviewer is honest, or whether pixels/AT match the original oracle. Work in separate Git worktrees when concurrent ownership is unclear. Record reports must describe observable behavior and unresolved obligations.
 

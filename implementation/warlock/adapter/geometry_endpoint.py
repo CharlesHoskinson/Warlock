@@ -8,7 +8,7 @@ from effect_endpoint import Endpoint as LegacyEffectEndpoint
 from endpoint import Refused, binding, canonical, exact
 
 MODES = {'ordinary', 'maximized', 'fullscreen'}
-OPERATIONS = {'maximize', 'restore-geometry', 'snap', 'transfer-workspace'}
+OPERATIONS = {'maximize', 'restore-geometry', 'snap', 'transfer-workspace', 'pin', 'unpin'}
 WINDOW_FIELDS = ['incarnation', 'owner', 'workspace', 'workspaceGeneration', 'monitor',
                  'outputOwnershipGeneration', 'workAreaRevision', 'workArea',
                  'logicalGeometry', 'visualGeometry', 'nativeMode', 'clientMode',
@@ -45,7 +45,7 @@ class GeometryEndpoint(LegacyEffectEndpoint):
         if not self.bound:
             raise Refused('Legacy handshake required')
         canonical(request_id)
-        if type(protocol) is not int or protocol not in (1, 2):
+        if type(protocol) is not int or protocol not in (1, 2, 3):
             raise Refused('Unsupported geometry observation version')
         response = self.request({'protocolVersion': 3, 'kind': 'geometry-attach',
                                  'geometryProtocol': protocol, 'binding': self.bound, 'requestId': request_id})
@@ -58,7 +58,7 @@ class GeometryEndpoint(LegacyEffectEndpoint):
         if type(caps['effectProtocol']) is not int or caps['effectProtocol'] != 2 or type(caps['placementCapacity']) is not int or caps['placementCapacity'] != 256:
             raise Refused('Geometry capability versions/bounds')
         operations = caps['operations']
-        if not isinstance(operations, list) or len(operations) > 4 or any(type(op) is not str or op not in OPERATIONS for op in operations) or len(set(operations)) != len(operations):
+        if not isinstance(operations, list) or len(operations) > 6 or any(type(op) is not str or op not in OPERATIONS for op in operations) or len(set(operations)) != len(operations):
             raise Refused('Geometry operation capabilities')
         if caps['effects'] != bool(operations):
             raise Refused('Geometry effects/operation contradiction')
@@ -101,7 +101,12 @@ class GeometryEndpoint(LegacyEffectEndpoint):
         output_owners = {}
         workspace_areas = {}
         for row in rows:
-            exact(row, WINDOW_FIELDS + (['sizePolicy'] if self.geometry_protocol == 2 else []))
+            exact(row, WINDOW_FIELDS + (['sizePolicy'] if self.geometry_protocol >= 2 else []) + (['pin'] if self.geometry_protocol == 3 else []))
+            if self.geometry_protocol == 3:
+                pin = row['pin']; exact(pin, ['pinned', 'eligible'])
+                if any(type(v) is not bool for v in pin.values()): raise Refused('Pin state booleans')
+                if pin['eligible'] and (facts['inputBlocked'] or row['workspace'] is None or not row['floating'] or row['owner'] is not None or row['grouped'] or row['minimized'] or row['nativeMode'] != row['clientMode'] or row['nativeMode'] == 'fullscreen' or not {'pin', 'unpin'} <= set(self.geometry_capabilities['operations'])):
+                    raise Refused('Contradictory native pin eligibility')
             identity = canonical(row['incarnation'])
             if identity in table:
                 raise Refused('Duplicate geometry incarnation')
@@ -147,7 +152,7 @@ class GeometryEndpoint(LegacyEffectEndpoint):
                     row['minimized'] or row['grouped'] or row['fixedSize'] or (self.geometry_protocol == 1 and row['constrainedSize']) or not row['floating'] or
                     row['owner'] is not None or row['nativeMode'] != row['clientMode'] or row['nativeMode'] == 'fullscreen'):
                 raise Refused('Contradictory geometry eligibility')
-            supported = geometry_size_policy.validate(row['sizePolicy'], row) if self.geometry_protocol == 2 else True
+            supported = geometry_size_policy.validate(row['sizePolicy'], row) if self.geometry_protocol >= 2 else True
             if row['geometryEligible'] and not supported:
                 raise Refused('Geometry eligibility without supported size policy')
             caps = row['capabilities']
@@ -155,7 +160,7 @@ class GeometryEndpoint(LegacyEffectEndpoint):
             if any(type(value) is not bool for value in caps.values()):
                 raise Refused('Window geometry capability booleans')
             for field, operation in (('maximize', 'maximize'), ('restoreGeometry', 'restore-geometry')):
-                if caps[field] and (not row['geometryEligible'] or (field == 'maximize' and row['nativeMode'] != 'ordinary') or (field == 'restoreGeometry' and (row['nativeMode'] != 'maximized' or not row['ordinaryPlacementKnown'])) or (self.geometry_protocol == 2 and row['sizePolicy'][field] is None)):
+                if caps[field] and (not row['geometryEligible'] or (field == 'maximize' and row['nativeMode'] != 'ordinary') or (field == 'restoreGeometry' and (row['nativeMode'] != 'maximized' or not row['ordinaryPlacementKnown'])) or (self.geometry_protocol >= 2 and row['sizePolicy'][field] is None)):
                     raise Refused('Contradictory geometry operation capability')
                 if caps[field] and operation not in self.geometry_capabilities['operations']:
                     raise Refused('Window capability exceeds negotiated native support')

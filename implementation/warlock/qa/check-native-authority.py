@@ -40,9 +40,15 @@ try:
   header_prefix=(str(owning/'owning-headers'),str(focus_report.parent/'owning-headers'))
   for rel,h in focus_core['owningHeaders'].items():assert sha(pathlib.Path(header_prefix[1])/rel)==h
   core={'path':focus_core['binary'],'sha256':focus_core['binarySHA256']};assert sha(core['path'])==core['sha256']
+ pin_path=ROOT/'qa/current-pin-core.json'
+ if pin_path.exists():
+  pin=json.loads(pin_path.read_text());pin_report=REPO/pin['report'];assert sha(pin_report)==pin['reportSHA256'];pin_core=json.loads(pin_report.read_text())
+  assert pin_core['passed'] and pin_core['existingPublicHeadersUnchanged'] and pin_core['existingObjectLayoutsUnchanged'] and sha(ROOT/'native/core/ConfigActions.cpp')==pin_core['sourceSHA256']
+  assert pin_core['ancestor']=={'report':str(focus_report),'reportSHA256':sha(focus_report)} and pin_core['owningHeaders']==focus_core['owningHeaders']
+  header_prefix=(header_prefix[0],str(pin_report.parent/'owning-headers'));core={'path':pin_core['binary'],'sha256':pin_core['binarySHA256']};assert sha(core['path'])==core['sha256']
  source=OUT/'inputs/native';source.mkdir(parents=True)
  inputs={}
- for name in ('authority.cpp','navigation-modal.hpp','geometry-effects.inc','snap-placement.inc','transfer-workspace.inc','motion-profile.inc','picker-preview.inc','picker-probe-table.hpp','capture-fd-server.inc'):
+ for name in ('authority.cpp','navigation-modal.hpp','geometry-effects.inc','snap-placement.inc','transfer-workspace.inc','motion-profile.inc','picker-preview.inc','picker-probe-table.hpp','capture-fd-server.inc','geometry.inc'):
   p=ROOT/'native'/name;inputs['native/'+name]=sha(p);shutil.copyfile(p,source/name)
  command=next(c['command'] for c in prior['commands'] if c['name']=='compile').copy()
  for i,arg in enumerate(command):
@@ -57,7 +63,7 @@ try:
  dependencies={str(pathlib.Path(p).resolve()):sha(p) for p in deps}
  for p,h in dependencies.items():
   if p.startswith(str(source)):
-   assert pathlib.Path(p).name in ('authority.cpp','navigation-modal.hpp','geometry-effects.inc','snap-placement.inc','transfer-workspace.inc','motion-profile.inc','picker-preview.inc','picker-probe-table.hpp','capture-fd-server.inc')
+   assert pathlib.Path(p).name in ('authority.cpp','navigation-modal.hpp','geometry-effects.inc','snap-placement.inc','transfer-workspace.inc','motion-profile.inc','picker-preview.inc','picker-probe-table.hpp','capture-fd-server.inc','geometry.inc')
   else:
    inherited=header_prefix[0]+p[len(header_prefix[1]):] if header_prefix and p.startswith(header_prefix[1]+'/') else p
    recorded=preserved.get(inherited)

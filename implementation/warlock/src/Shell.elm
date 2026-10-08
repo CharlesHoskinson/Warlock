@@ -204,7 +204,7 @@ update msg model =
                 Ok "geometry-attached" ->
                     let decoder = strict ["protocolVersion","kind","geometryProtocol","binding","requestId","capabilities"]
                             (D.map5 (\_ _ binding request caps -> {binding=binding,request=request,caps=caps}) version
-                                (D.field "geometryProtocol" D.int |> D.andThen (\v -> if v==2 then D.succeed () else D.fail "Geometry protocol"))
+                                (D.field "geometryProtocol" D.int |> D.andThen (\v -> if v==3 then D.succeed () else D.fail "Geometry protocol"))
                                 (D.field "binding" Binding.decoder) (D.field "requestId" positive) (D.field "capabilities" GeometryProjection.capabilitiesDecoder))
                     in case D.decodeValue decoder raw of
                         Ok value -> if model.binding/=Just value.binding || model.geometryAttachExpected/=Just value.request || model.phase==Detached then (model,[]) else geometryRequest False {model|geometryCaps=Just value.caps,geometry=Nothing,geometryAttachExpected=Nothing,attachNeeded=False}
@@ -272,7 +272,7 @@ geometryRequest attach model =
     case (model.binding,UInt64.next model.request) of
         (Just binding,Just request) ->
             if model.phase==Detached || (attach && model.geometryAttachExpected/=Nothing) || (not attach && (model.geometryCaps==Nothing || model.geometryExpected/=Nothing)) then (model,[]) else
-            let common=[("protocolVersion",E.int 3),("kind",E.string (if attach then "geometry-attach" else "geometry-facts-request")),("geometryProtocol",E.int 2),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request))]
+            let common=[("protocolVersion",E.int 3),("kind",E.string (if attach then "geometry-attach" else "geometry-facts-request")),("geometryProtocol",E.int 3),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request))]
                 payload=if attach then common else common++[("minimumWatermark",E.string (model.geometry |> Maybe.map (.sequence >> UInt64.string) |> Maybe.withDefault "0"))]
             in ({model|request=request,geometryAttachExpected=if attach then Just request else model.geometryAttachExpected,attachNeeded=attach || model.attachNeeded,geometryExpected=if attach then Nothing else Just request},[Send (E.object payload)])
         _ -> (model,[])

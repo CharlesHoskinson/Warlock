@@ -24,10 +24,19 @@ import TaskbarShell
 import TaskView
 import Transfer
 import Snap
+import GeometryProjection
 import UInt64 exposing (Counter)
 
 type alias Control =
     { id : String, domId : String, label : String, ariaLabel : String, detail : String, enabled : Bool, message : Maybe Desktop.Msg }
+
+confirmedWindowState : Desktop.Model -> Counter -> String
+confirmedWindowState model root =
+    let shell=model.windows.shell
+    in if shell.geometryExpected/=Nothing then "" else
+        shell.geometry |> Maybe.andThen (\observed -> if shell.binding/=Just observed.binding then Nothing else GeometryProjection.window root observed)
+            |> Maybe.map (\window -> String.join " • " ((if window.nativeMode==GeometryProjection.Maximized then ["Maximized"] else []) ++ (window.pin |> Maybe.map (\pin -> if pin.pinned then ["Always on top"] else []) |> Maybe.withDefault [])))
+            |> Maybe.withDefault ""
 
 reservationReason : String
 reservationReason = "Window action awaits native confirmation. Refresh status only reads observations; it does not retry the action."
@@ -248,7 +257,8 @@ controls model =
                 let prefix="menu:" ++ String.fromInt (Menu.menuNumber menu.id) ++ ":"
                     ready=Shell.available model.windows.shell && menu.status==Menu.Ready && not (menuBlocked model)
                     row index item =
-                        let detail = if menuBlocked model then "Awaiting native confirmation" else if menu.selected==Just index then "Selected" else ""
+                        let committed=MenuBridge.currentProvider model.windows.menus |> Maybe.map (Provider.incarnation >> confirmedWindowState model) |> Maybe.withDefault ""
+                            detail = String.join " • " (List.filter (not << String.isEmpty) [committed,if menuBlocked model then "Awaiting native confirmation" else if menu.selected==Just index then "Selected" else ""])
                         in {id=prefix ++ String.fromInt index,domId=prefix ++ String.fromInt index,label=item.label,ariaLabel=item.label ++ (if menuBlocked model then "; " ++ detail else ""),detail=detail,enabled=ready && item.enabled,message=if ready && item.enabled then Just (Desktop.Window (TaskbarShell.MenuEvent (Menu.Activate menu.id menu.binding index))) else Nothing}
                     snap = MenuBridge.currentProvider model.windows.menus |> Maybe.andThen (\provider ->
                         model.windows.shell.geometry |> Maybe.andThen (\geometry -> Snap.open geometry (Provider.incarnation provider))
@@ -267,7 +277,7 @@ controls model =
                 let families = TaskbarShell.groups model.windows |> List.filter (\group -> group.key==picker.key) |> List.concatMap .families
                     familyControl family =
                         let ready = Shell.available model.windows.shell && family.available && not (familyBlocked model family.root) && Shell.capture model.windows.shell==Just picker.scope
-                            detail = if familyBlocked model family.root then "Awaiting native confirmation" else if family.minimized then "Minimized" else "Open"
+                            detail = String.join " • " (List.filter (not << String.isEmpty) [confirmedWindowState model family.root,if familyBlocked model family.root then "Awaiting native confirmation" else if family.minimized then "Minimized" else "Open"])
                         in {id="family:" ++ UInt64.string family.root,domId="picker:" ++ Shell.stampKey picker.scope ++ ":" ++ UInt64.string picker.generation ++ ":" ++ UInt64.string family.root,label=(if family.minimized then "Restore " else "Activate ") ++ family.label,ariaLabel=(if family.minimized then "Restore " else "Activate ") ++ family.label ++ (if familyBlocked model family.root then "; " ++ detail else ""),detail=detail,enabled=ready,message=if ready then Just (Desktop.Window (TaskbarShell.Choose picker.scope picker.generation family.root)) else Nothing}
                 in {id="control:close",domId="picker-close:" ++ Shell.stampKey picker.scope ++ ":" ++ UInt64.string picker.generation,label="Close",ariaLabel="Close window picker",detail="",enabled=True,message=Just (Desktop.Window (TaskbarShell.Close picker.scope picker.generation))} :: List.map familyControl families ++ recoveryPopup model
             Nothing -> []
@@ -369,6 +379,8 @@ windowNotice model =
                     Effects.Activate -> "Activate"
                     Effects.Maximize -> "Maximize"
                     Effects.RestoreGeometry -> "Restore size"
+                    Effects.Pin -> "Always on top"
+                    Effects.Unpin -> "Unpin window"
                     Effects.SnapPlacement _ -> "Snap"
                     Effects.TransferWorkspace p -> "Move to workspace "++p.destination
                 label = TaskbarShell.groups model.windows |> List.concatMap .families

@@ -117,7 +117,7 @@ def handle_request(client,catalog,request,recovery,reconciliation,notifications=
  else:raise Refused('Unsupported frontend request')
  if type(request['protocolVersion']) is not int or request['protocolVersion']!=3 or binding(request['binding'])!=client.bound:raise Refused('Frontend scope mismatch')
  if kind.startswith('geometry-'):
-  if type(request['geometryProtocol']) is not int or request['geometryProtocol'] not in (1,2):raise Refused('Geometry protocol')
+  if type(request['geometryProtocol']) is not int or request['geometryProtocol'] not in (1,2,3):raise Refused('Geometry protocol')
  if kind=='motion-profile-set':
   canonical(request['requestId']);send(client.motion_profile(request['requestId'],request['profile']));return
  if kind=='window-effect':

@@ -393,7 +393,9 @@ geometryObservation : Snapshot -> Maybe GeometryProjection.Snapshot
 geometryObservation (Snapshot state) = state.geometry
 
 actionProtocol : Menu.Action -> Int
-actionProtocol action = if action==Menu.Maximize || action==Menu.RestoreGeometry then 2 else 1
+actionProtocol action = if action==Menu.Maximize || action==Menu.RestoreGeometry || (case action of
+    Menu.AlwaysOnTop _ -> True
+    _ -> False) then 2 else 1
 
 actionContext : Menu.Action -> Snapshot -> NativeContext
 actionContext action ((Snapshot state) as snapshot) =
@@ -413,6 +415,7 @@ withGeometry caps observed ((Snapshot state) as snapshot) =
                 restore=if restoreGeometry then {label="Restore",action=Menu.RestoreGeometry,enabled=ready && window.restoreGeometry && window.nativeMode==GeometryProjection.Maximized && window.placementKnown}
                     else Maybe.withDefault {label="Restore",action=Menu.Restore,enabled=False} legacyRestore
                 minimize=Maybe.withDefault {label="Minimize",action=Menu.Minimize,enabled=False} legacyMinimize
-                items=[restore,minimize]++(if supported "maximize" then [{label="Maximize",action=Menu.Maximize,enabled=ready && window.maximize && not window.minimized && window.nativeMode==GeometryProjection.Ordinary}] else [])
+                pinItems=window.pin |> Maybe.map (\pin -> if supported "pin" && supported "unpin" then [{label=if pin.pinned then "Unpin window" else "Always on top",action=Menu.AlwaysOnTop (not pin.pinned),enabled=not observed.blocked && pin.eligible}] else []) |> Maybe.withDefault []
+                items=[restore,minimize]++pinItems++(if supported "maximize" then [{label="Maximize",action=Menu.Maximize,enabled=ready && window.maximize && not window.minimized && window.nativeMode==GeometryProjection.Ordinary}] else [])
                 authority=E.encode 0 (E.list identity [E.string (E.encode 0 (NativeBinding.encode state.context.native) ++ ":" ++ UInt64.string state.providerId ++ ":" ++ UInt64.string state.capabilityGeneration ++ ":" ++ UInt64.string state.context.revision),E.string (UInt64.string observed.context.revision),E.string (UInt64.string observed.context.output),E.list E.string caps.operations])
             in Ok (Snapshot {state|items=items,geometry=Just observed,binding=Menu.binding {authority=authority,revision=UInt64.string observed.context.revision,output=Menu.outputId (UInt64.string state.context.outputId),outputGeneration=UInt64.string observed.context.output,target=Menu.Window (Menu.windowId (NativeBinding.authorityIdentity state.context.native) (UInt64.string state.incarnation))}})

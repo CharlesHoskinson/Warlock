@@ -25,7 +25,7 @@ scene = Scene.decode (E.object [("revision",E.string "1"),("focused",E.string "1
 window identity label available = windowState identity label available False
 windowState identity label available minimized = E.object [("incarnation",E.string identity),("label",E.string label),("owner",E.null),("application",E.string label),("minimized",E.bool minimized),("available",E.bool available)]
 geometryWindow identity workspace =
-    {incarnation=identity,owner=Nothing,workspace=Just workspace,workspaceGeneration=Just identity,monitor=Just UInt64.zero,outputOwnershipGeneration=Just one,workAreaRevision=Just one,workArea=Just [0,0,800,552],logicalGeometry=[40,100,320,240],visualGeometry=[40,100,320,240],nativeMode=Geometry.Ordinary,clientMode=Geometry.Ordinary,minimized=False,floating=True,grouped=False,fixedSize=False,constrainedSize=False,eligible=False,placementKnown=False,maximize=False,restoreGeometry=False,sizePolicy=Nothing}
+    {incarnation=identity,owner=Nothing,workspace=Just workspace,workspaceGeneration=Just identity,monitor=Just UInt64.zero,outputOwnershipGeneration=Just one,workAreaRevision=Just one,workArea=Just [0,0,800,552],logicalGeometry=[40,100,320,240],visualGeometry=[40,100,320,240],nativeMode=Geometry.Ordinary,clientMode=Geometry.Ordinary,minimized=False,floating=True,grouped=False,fixedSize=False,constrainedSize=False,eligible=False,pin=Nothing,placementKnown=False,maximize=False,restoreGeometry=False,sizePolicy=Nothing}
 base =
     let initial=Desktop.initial
         windows=initial.windows

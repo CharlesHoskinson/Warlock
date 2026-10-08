@@ -7418,14 +7418,21 @@
       "owner": "Desktop experience lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "in-progress",
       "scenarios": [
         {
           "name": "ux-016",
           "oracle": "displayed pin/MAX state agrees with native state and visible hit target",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "failed",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/pin-max/manifest.json",
+              "sha256": "3130ce67232719535e9ebdbd820e97fdb101b3dcbc0124c9690286806157e6ed",
+              "scope": "Changed Elm roots/host, native authority and owning-core compile; 13 pin/MAX replay checks pass. Native context gesture fails after preview layout change; maximize/pin/unpin and physical overlap oracle not reached. Published unfinished draft."
+            }
+          ],
+          "missingObservation": "Production layout fix for stable picker targets through preview arrival; original native maximize/pin/unpin and scene/hit/display agreement; native checked semantics and independent original-scenario disposition.",
+          "reviewerDisposition": "Owner retained compiled evidence and failed native interaction; no independent GUI acceptance."
         }
       ]
     },
@@ -9164,5 +9171,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-08T21:26:58.444619+00:00"
+  "updatedUTC": "2026-10-08T22:05:15.795704+00:00"
 }

@@ -7,11 +7,12 @@ From the repository root:
 ```sh
 python3 -B plugins/warlock-contributor/scripts/warlock.py status
 python3 -B plugins/warlock-contributor/scripts/warlock.py remaining --summary
-python3 -B plugins/warlock-contributor/scripts/warlock.py start --owner your-name
-python3 -B docs/warlock-build-loop/v2/loop.py check
+python3 -B plugins/warlock-contributor/scripts/warlock.py capabilities
 ```
 
 The default scaffold uses the selected slice in `STATE.json`. For another task, supply a small JSON slice through `start --slice-file`: 1–3 original requirement IDs, exact scenario names, before/after behavior, candidate source paths and decisive verification. Preserve the old record and use a different `--record` when moving slices. Declare all files you intend to edit before work. Resumed drafts require explicit per-path `--adopt-dirty` and an ownership note; other contributors' dirty files remain protected. Scratch records are ignored.
+
+For a new contributor, use `plan` → `preflight --slice-file` → `start --slice-file` with your own record. Bare `start --owner` adopts the current active slice and is appropriate only when you own that work; it is not a general task selector. Carry the same global `--record` into subsequent plugin and loop commands. Run the beginning loop check after starting the record. See the plugin's [scaffold examples](plugins/warlock-contributor/README.md#scaffold-and-resume).
 
 Implement in `implementation/warlock/`, integrating with its actual model/update/view and narrow native authority. Read only applicable architecture/design-language/FRP and OpenSpec constraints. Preserve original deadlines, Unknown/no-replay, ABI pairing and drafts. Build changed targets and run the decisive behavior plus relevant negative/lifecycle case. Native campaigns use `docs/warlock-build-loop/v2/loop.py native --runner /absolute/runner.py`; it checks the contribution first and afterward, then delegates to the unchanged serialized protected native coordinator. CPU QA retains the original `qa_run.py` launcher.
 
@@ -24,3 +25,5 @@ Use `remaining --requirement <original-ID>` for the recorded scenario checklist,
 The [implementation map](plugins/warlock-contributor/references/implementation.md) identifies existing source entry points. Use `report --markdown` for a delivery note from the participant record: it separates intended and observed behavior, retains evidence scope and missing obligations, and identifies uncommitted paths. Review the evidence before publishing; this command writes nothing and stale observations return nonzero.
 
 Documentation, plugin development and other explicitly requested supporting work use proportional validation; use `python3 -B plugins/warlock-contributor/scripts/warlock.py check --project-only` before and after; they do not require a fabricated GUI completion. The optional CI template checks frozen original identities and archival-path changes, then runs the cheap plugin policy tests. It does not run GUI sessions or certify a release.
+
+Design work follows the [design contribution guide](DesignLanguage/CONTRIBUTING.md). The browser catalog contains frozen specimens; current product guidance and source are linked separately. CPU/native runners retain machine-local paths and toolchain dependencies. Another machine needs a reviewed equivalent protected launcher; the portable contributor checker does not make product builds portable.

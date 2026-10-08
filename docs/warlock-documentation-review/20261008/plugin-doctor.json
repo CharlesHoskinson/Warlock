@@ -1,0 +1,31 @@
+{
+  "acceptanceBoundary": "Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.",
+  "checkerSha256": "d3218fc17b62695b3683948e1d9e2f157543afc9c765d9e1b8164b7e76e997c5",
+  "python": {
+    "version": [
+      3,
+      14,
+      7
+    ],
+    "minimum": "3.9"
+  },
+  "git": "/usr/bin/git",
+  "clientExecutables": {
+    "claude": "/home/hoskinson/.local/share/mise/installs/claude/latest/claude",
+    "codex": "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/codex",
+    "grok": "/home/hoskinson/.local/share/mise/installs/node/latest/bin/grok"
+  },
+  "recordIgnored": true,
+  "recordExists": true,
+  "missingPackageFiles": [],
+  "manifestVersions": {
+    ".claude-plugin/plugin.json": "0.14.0",
+    ".codex-plugin/plugin.json": "0.14.0"
+  },
+  "metadataValidation": "Local manifest identity, version agreement, referenced paths and reminder-hook shape only; no client loading or trust inferred.",
+  "errors": [],
+  "warnings": [
+    "Client executable availability does not establish installation, enabled hooks or trust. Product toolchain and native runtime are checked by their protected runners."
+  ],
+  "ok": true
+}

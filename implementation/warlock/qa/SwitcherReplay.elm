@@ -31,7 +31,7 @@ binding=D.decodeValue Binding.decoder (E.object [("lifetime",E.string "1"),("ses
 context={lifetime=one,epoch=one,output=one,revision=one}
 window id=E.object [("incarnation",E.string id),("label",E.string id),("owner",E.null),("application",E.string id),("minimized",E.bool False),("available",E.bool True)]
 scene=Scene.decode (E.object [("revision",E.string "1"),("focused",E.string "3"),("windows",E.list window ["1","2","3"])]) |> Result.toMaybe
-geometryWindow id = {incarnation=id,owner=Nothing,workspace=Just "1",workspaceGeneration=Just one,monitor=Just UInt64.zero,outputOwnershipGeneration=Just one,workAreaRevision=Just one,workArea=Just [0,0,800,552],logicalGeometry=[40,100,320,240],visualGeometry=[40,100,320,240],nativeMode=Geometry.Ordinary,clientMode=Geometry.Ordinary,minimized=False,floating=True,grouped=False,fixedSize=False,constrainedSize=False,eligible=False,placementKnown=False,maximize=False,restoreGeometry=False,sizePolicy=Nothing}
+geometryWindow id = {incarnation=id,owner=Nothing,workspace=Just "1",workspaceGeneration=Just one,monitor=Just UInt64.zero,outputOwnershipGeneration=Just one,workAreaRevision=Just one,workArea=Just [0,0,800,552],logicalGeometry=[40,100,320,240],visualGeometry=[40,100,320,240],nativeMode=Geometry.Ordinary,clientMode=Geometry.Ordinary,minimized=False,floating=True,grouped=False,fixedSize=False,constrainedSize=False,eligible=False,pin=Nothing,placementKnown=False,maximize=False,restoreGeometry=False,sizePolicy=Nothing}
 base =
     let initial=Desktop.initial
         windows=initial.windows

@@ -405,7 +405,7 @@ static const char *request_kind(JsonNode *root) {
         const char *const fields[]={"protocolVersion","kind","geometryProtocol","binding","requestId","minimumWatermark"};
         if (!surface_fields(obj,fields,facts?6:5)) return NULL;
         JsonNode *protocol=json_object_get_member(obj,"geometryProtocol");
-        if (json_node_get_value_type(protocol)!=G_TYPE_INT64 || (json_node_get_int(protocol)!=1 && json_node_get_int(protocol)!=2) ||
+        if (json_node_get_value_type(protocol)!=G_TYPE_INT64 || (json_node_get_int(protocol)!=1 && (json_node_get_int(protocol)!=2 && json_node_get_int(protocol)!=3)) ||
             !JSON_NODE_HOLDS_OBJECT(json_object_get_member(obj,"binding")) ||
             json_node_get_value_type(json_object_get_member(obj,"requestId"))!=G_TYPE_STRING ||
             (facts && json_node_get_value_type(json_object_get_member(obj,"minimumWatermark"))!=G_TYPE_STRING)) return NULL;

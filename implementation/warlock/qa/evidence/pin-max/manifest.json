@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-UX-016"
+  ],
+  "scenarios": [
+    "ux-016"
+  ],
+  "sourceParent": "a6d25cae6e6bcc48ffc7f5e192a32ace794a11c3",
+  "sourceHashes": {
+    "implementation/warlock/src/Provider.elm": "70f133d4588b72f9aaa3fb2bf3e3064b6d6e24d10ee685482ff6d54f76889abd",
+    "implementation/warlock/src/Surface.elm": "c3fd634bde202749ffa961213b6c257036a09af192275e30421ed0920c8a1cd6",
+    "implementation/warlock/src/Effects.elm": "805e2dfcd189b0c11acaee0ed2381734d53e793baba6abd68262bde5aeb4ae25",
+    "implementation/warlock/src/Shell.elm": "93fdf86ac11ff9c190978fb46557623045a6c697d468a42fc9ba16a4bfa4df48",
+    "implementation/warlock/native/authority.cpp": "2b6be970b8f9b72a78f37c24b8cfca11da9e60b2a4c75d282bf599851937a64b",
+    "implementation/warlock/native/geometry-effects.inc": "b299e891fd298394acc654df76924a01d7c1611472cdbec5a2d8dd3b9ca8c797",
+    "implementation/warlock/qa/check-search.py": "ca9dc360e337720402e524e53dd996a8fe3a9583c6073449dd80839bc84352cf",
+    "implementation/warlock/qa/check-native-authority.py": "c3ac83c4379363993c34ec71ce34c489d5e9e1f5f9338b3667d1326c33eba5ce",
+    "implementation/warlock/qa/current-search-build.json": "b07270a5eec2be66a9d0c0f2df239932799e14190834fb9e935cf0ba1064e707",
+    "implementation/warlock/qa/current-native-pair.json": "aae221250c349acdfa3572b25a2408f8590689d4514511f0db02ee9ac0012d19",
+    "implementation/warlock/qa/native-window-feedback.py": "d0c45c673ac47751cef680175a79c251674dc19d444eb7eeb3f35dd23ecbd353",
+    "implementation/warlock/assets/elm.js": "c296b3328bac617f772117d428fe0a79e3759c5c9382f318745fed7e36174647",
+    "implementation/warlock/src/MenuBridge.elm": "809e203a3f49e9e1ed554ba584c01ec1a0a139fc56b48feb1ea42be325199d2e",
+    "implementation/warlock/src/GeometryProjection.elm": "9360033076b594b1c4ede65e3a28a351f5097beb10f3e2fda97c536c9c2437dc",
+    "implementation/warlock/adapter/geometry_endpoint.py": "17913d31654ab186ae473f131c41581bf41d3d46a0c7fcd1ff660fc4f205823b",
+    "implementation/warlock/adapter/daemon.py": "dcfc29e4f02c7ded7abe91df50f27d5abc2152a68a5b969b27a19679c34cf20c",
+    "implementation/warlock/native/geometry.inc": "fa945f6ba2521d9c54f1fdcd7bc9772b95a1b2e28d0772ef80282eda3ae38dbd",
+    "implementation/warlock/native/core/ConfigActions.cpp": "4b74a2876bc78efbacbb3993bbeef103a6b086183872151a7972ab98bc4cd956",
+    "implementation/warlock/qa/check-pin-core.py": "7a934ef2096d5a76d375470f5e4259212d1c8b246eb1645f27a7d8efd8261cfc",
+    "implementation/warlock/qa/current-pin-core.json": "36c2ab91e342791794f297abb4272195889292823491eff4740cc5ee55c1d082",
+    "implementation/warlock/qa/PinMaxReplay.elm": "370d6af3da784c4cc20ac573c2525fad7ebbff76db4f3ad7b5b358094705b01f",
+    "implementation/warlock/qa/native-pin-max.py": "e6549d73d30284a849097e93f966fad2e2d38cba18a944dec6fee094673eb19e",
+    "implementation/warlock/native/host-journal.h": "bc6c25b28911a9704e64d56326fa00eeda3b71e61a1084ff0c9e5d90cf609917",
+    "implementation/warlock/adapter/recovery_journal.py": "bbd6ca5140ec13146182dd36b242f1e383ac2d2731b6f748692bf3563f2b2a8e",
+    "implementation/warlock/qa/SnapReplay.elm": "f29d40e9473694f966c00053cf153dc21aaa8e07f32c3e370d6dc058cc25dfc8",
+    "implementation/warlock/qa/SwitcherReplay.elm": "bfc1ef2cc802775da4c3d7672726533a57824b8ce927dc318371093e359a4f09",
+    "implementation/warlock/qa/TaskViewReplay.elm": "c5d0997c2b83a3d6eb56e81dc3eca55a3aa98569c61b02502796bd2437e9645d",
+    "implementation/warlock/native/host.c": "b145c9464b7dfb27f526c6128f587b33755e826d4aa8bb2878b67de33b394fc2"
+  },
+  "evidence": {
+    "compiled-report.json": "61291ea2cc6fc2b2109f1ba9f08ac772843cbd8621f478dce6d30ed5485f336e",
+    "native-authority-report.json": "0031cb8323d7325e7e471c56a0e5337086cce7cc71d83c793eb8c4e9adb54cb3",
+    "owning-core-report.json": "8b708af7cc1f4b4eae0600cd43a1024fb5f7bad9ead03fa65a1ec3d6d1d84ebf",
+    "native-startup-failure.json": "0ca1e9f9c040a5d548ea30e8408402fa8671ab43bcbdd4ad0592391d8a2f43f6",
+    "native-interaction-failure.json": "2fe79b8777c52205849179af2733c26bc0fe57f61933c7018474d56f65269c72"
+  },
+  "compiledPassed": true,
+  "pinMaxReplayChecks": 13,
+  "owningCoreRebuilt": true,
+  "nativeAuthorityCompiled": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "disposition": "implemented-unverified",
+  "missingObservations": [
+    "Preview arrival changes picker row geometry between native right-button press and release; release hits another family and the menu correctly cancels. Stable target geometry needs implementation.",
+    "Native maximize/pin/unpin interaction and overlap paint/hit consistency not reached.",
+    "Independent original-scenario acceptance remains absent."
+  ],
+  "receiptBookkeeping": "Runtime code inputs match the passing compiled report. README prose and qa/current-search-build.json were updated after the build; neither changes compiled runtime inputs."
+}

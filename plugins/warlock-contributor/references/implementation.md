@@ -15,12 +15,21 @@ The original requirement and OpenSpec determine which behavior belongs in the ch
 | Task View/workspace navigation | `src/Desktop.elm` and the current native authority | `qa/check-navigation-projection.py`, `qa/task-view.qnt`, `qa/workspace-navigation.qnt` |
 | Pending/Refused/Unknown outcomes | `src/Effects.elm`, `src/NativeOutcome.elm`, `adapter/effect_endpoint.py` | Current transaction replay and the native refusal/recovery journey |
 | GTK/WebKit surfaces and leases | `native/host.c`, `native/shared-host.c` | Changed host compilation/self-tests and `qa/native-window-feedback.py` with the relevant reviewed campaign |
+| Always-on-top / MAX, UX-016 | `src/MenuBridge.elm`, `src/Provider.elm`, `src/Effects.elm`, `src/GeometryProjection.elm`, `src/Surface.elm`, `native/geometry-effects.inc`, `native/core/ConfigActions.cpp` | `qa/check-search.py --pin-max`; `qa/check-pin-core.py`; `qa/check-native-authority.py`; native `qa/native-pin-max.py` takes no arguments. The planner does not map this route yet. |
+| Snap and workspace transfer | `src/Snap.elm`, `src/Transfer.elm`, `src/Surface.elm`, `native/snap-placement.inc`, `native/transfer-workspace.inc` | Focused `check-snap.py` / `check-transfer-workspace.py`; compiled `check-search.py --snap-chooser` / `--transfer-workspace`; original native observations remain separate |
+| Appearance, high contrast and motion | `src/Settings.elm`, `src/Motion.elm`, `src/MotionPreferences.elm`, `assets/appearance.js`, `assets/shell.css`, `adapter/shell_preferences.py`, `native/motion-profile.inc` | Focused settings/motion checks and compiled `--settings`, `--high-contrast`, `--reduced-motion`, `--live-motion` modes; mid-flight/native/AT coverage stays explicit |
+| Notifications and system controls | `src/Notifications.elm`, `src/SystemMenu.elm`, their adapter authorities and `src/Surface.elm` | `qa/check-notifications.py`, `qa/check-system-menu.py`; compiled `--notifications` / `--system-menu`; service acceptance is not hardware completion |
+| Files and jump lists | `src/Files.elm`, `src/JumpList.elm`, `adapter/explorer.py`, `adapter/jump_list.py` | `qa/check-files.py`, `qa/check-jump-lists.py`; compiled `--files` / `--jump-lists`; preserve installed Files semantics |
+| Attention, shortcuts and drag ownership | `src/ActionProjection.elm`, `src/Shortcuts.elm`, `src/PointerOwnership.elm`, handwritten surface adapters | `qa/check-attention.py`, `qa/check-keyboard-shortcuts.py`, `qa/check-pointer-ownership.py`; native recipient/gesture observations remain separate |
+| Visual tokens, preview layout, focus and semantics | `assets/shell.css`, `src/PreviewVisual.elm`, `src/SurfaceRenderer.elm`, `src/Surface.elm`, `assets/context.js` | Compiled `--high-contrast`, `--accessibility`, `--ime`, `--preview-states` modes plus the decisive original native case; browser specimens qualify their own scope only |
 
 All abbreviated paths in the table are inside `implementation/warlock/`. Replay
 modules and model results establish their stated component properties; they do
 not qualify native focus, pixels, AT or IME. Read a runner's arguments before using
 it. Execute builds and native campaigns through [protected execution](workflow.md).
 Do not infer a current runnable core/plugin pair from filenames or historical paths.
+
+Pin terminology: persistent taskbar application pins (UX-004), running-pin context menus and window Always on top (UX-016) are separate routes. Native Always on top needs observed checked semantics, not an optimistic taskbar preference. Additional rows identify manual check choices; they do not expand `verify-plan`'s implemented coverage.
 
 For an Elm behavior change, follow the existing route: decode the boundary event,
 update immutable policy through typed messages, emit its existing effect type,

@@ -1,4 +1,4 @@
-# Design language implementation workplan
+# Frozen catalog closure record
 
 The five-reviewer exact-v2 consensus is accepted as a design target. The native GUI completion loop remains active in parallel. Design work cannot close or remove any original release gate.
 
@@ -6,7 +6,7 @@ The five-reviewer exact-v2 consensus is accepted as a design target. The native 
 
 - [x] Create DesignLanguage and freeze brand/Elm/reference inputs.
 - [x] Run five actual Opus5.5/high independent research reviews.
-- [x] Cross-review60 proposals, correct four contracts, and obtain unanimous exact-v2 votes on30 contracts.
+- [x] Cross-review 60 proposals, correct four contracts, and obtain unanimous exact-v2 votes on 30 contracts.
 - [x] Record additive EARS/OpenSpec design requirements and source-proposal routing.
 - [x] Generate the complete current widget/state/content inventory from the selected full Elm/assets/bridge closure, with source hashes and integration-lane gaps.
 - [x] Build additive semantic/component tokens, contrast checks, icon/asset rules and original visual library.
@@ -52,12 +52,16 @@ The five-reviewer exact-v2 consensus is accepted as a design target. The native 
 
 Current renderer findings: popup controls are not keyed; selected detail drives aria-current; toggle checked semantics are absent; duplicated live status regions lack a qualified single announcement route; current disabled focus policy needs explicit declaration and fallback. These map to existing ELM-ADOPT-016/017/020/029/030 and W07/W11, not a separate policy authority. Full closure corrected initial subset assumptions: blocked controls already publish disabled and the shipped Taskbar.primary call passes False.
 
-Preview, resource and native work continues from qualified warlock-preview-provider-v3: own host bootstrap compiled with43 real socket/C checks,23 GIO ownership checks and existing demand Quint/replay checks. Next is typed native enrollment/retained receipt delivery, eligible client/family producer wiring and original preview13 on the owning tuple. Native492 root plane stays unqualified.
+Preview, resource and native work continues from qualified warlock-preview-provider-v3: own host bootstrap compiled with 43 real socket/C checks, 23 GIO ownership checks and existing demand Quint/replay checks. Next is typed native enrollment/retained receipt delivery, eligible client/family producer wiring and original preview13 on the owning tuple. Native492 root plane stays unqualified.
 
 New settings/search/snap presentation and focusable disabled-menu targets remain guarded by the agreed contracts and existing baseline requirements. Do not replace mandated tasks with a website demonstration.
 
 ## Catalog closure — selected source scope
 
-Catalog/v6 compiled against the pinned Elm toolchain and passed 42 source/token and 104 browser checks. The source-derived registry covers all49 selected modules, 17 rendered/wrapper classes,14 component families and2338 source string tokens. Five earlier derivatives retain failures and the primary finish candidate. The independent review accepted with required corrections; allB1–B3 conditions passed in one correction/confirmation batch. DL023–029 are closed only for this catalog scope; DL030’s reference matrix is implemented in the catalog, while its product scope remains open, including the reference decision matrix; product adoption and native gates remain open. No full WCAG/native AT claim is inferred from DOM checks. See catalog/finish-receipt.json.
+Catalog/v6 compiled against the pinned Elm toolchain and passed 42 source/token and 104 browser checks. The source-derived registry covers all 49 selected modules, 17 rendered/wrapper classes,14 component families and2338 source string tokens. Five earlier derivatives retain failures and the primary finish candidate. The independent review accepted with required corrections; all B1–B3 conditions passed in one correction/confirmation batch. DL023–029 are closed only for this catalog scope; DL030’s reference matrix is implemented in the catalog, while its product scope remains open; product adoption and native gates remain open. No full WCAG/native AT claim is inferred from DOM checks. See catalog/finish-receipt.json.
 
-Publication: exact959 owned files over existing GitHub history, remote verified at382523ab82ed4158f97a3502c463f12bad355f3b. Native/product integration remains open.
+Historical catalog publication: exact 959 owned files over existing GitHub history, remote verified at382523ab82ed4158f97a3502c463f12bad355f3b. Native/product integration remains open.
+
+## Current coordination
+
+This file records the selected frozen catalog closure; historical source findings and publication hashes above are not the current product state. Use [the root workplan](../WORKPLAN.md), [current design guidance](../CURRENT.md) and [browser entrance](index.html) for later surfaces and the contributor-plugin section. Current widget coverage and native/product adoption remain open. The versioned v6 source, assets and evidence remain unchanged.

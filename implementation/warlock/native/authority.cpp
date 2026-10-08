@@ -4,6 +4,7 @@
 #include "capture-resources.hpp"
 #include <hyprland/src/render/warlock/screen_shader.hpp>
 #include <hyprland/src/config/ConfigValue.hpp>
+#include <hyprland/src/config/shared/actions/ConfigActions.hpp>
 #include <hyprland/src/desktop/rule/windowRule/WindowRuleApplicator.hpp>
 #include "WindowPolicy.hpp"
 #include "../candidate/PlacementPolicy.hpp"
@@ -860,13 +861,13 @@ std::string observe(eHyprCtlOutputFormat, std::string request) {
             const auto bound=objectMember(object,"binding");
             const auto geometryProtocol=json_object_get_member(object,"geometryProtocol");
             const auto requestId=counter(object,"requestId");
-            if(!bound || !fields(bound,{"lifetime","session","frontend"}) || !requestId || !geometryProtocol || !JSON_NODE_HOLDS_VALUE(geometryProtocol) || json_node_get_value_type(geometryProtocol)!=G_TYPE_INT64 || (json_node_get_int(geometryProtocol)!=1 && json_node_get_int(geometryProtocol)!=2)) throw std::runtime_error("geometry-schema");
+            if(!bound || !fields(bound,{"lifetime","session","frontend"}) || !requestId || !geometryProtocol || !JSON_NODE_HOLDS_VALUE(geometryProtocol) || json_node_get_value_type(geometryProtocol)!=G_TYPE_INT64 || (json_node_get_int(geometryProtocol)!=1 && json_node_get_int(geometryProtocol)!=2 && json_node_get_int(geometryProtocol)!=3)) throw std::runtime_error("geometry-schema");
             const auto native=counter(bound,"lifetime"),sessionId=counter(bound,"session"),frontend=counter(bound,"frontend");
             const auto found=sessions.find(peer);
             if(!native || !sessionId || !frontend || found==sessions.end() || found->second.start!=start || *native!=lifetime || *sessionId!=found->second.id || *frontend!=found->second.frontend || !grantRegistry->callerMatches(verifiedPeer(peer,start),{lifetime,*sessionId,*frontend})) reply=error("binding-mismatch");
             else if(operation=="geometry-attach") {
-                found->second.geometryProtocol=json_node_get_int(geometryProtocol);found->second.geometryEnabled=true;found->second.geometryFrontend=found->second.frontend;found->second.geometryOperations={"maximize","restore-geometry"};if(found->second.geometryProtocol==2){found->second.geometryOperations.insert("snap");found->second.geometryOperations.insert("transfer-workspace");}
-                reply="{\"protocolVersion\":3,\"kind\":\"geometry-attached\",\"geometryProtocol\":"+std::to_string(found->second.geometryProtocol)+",\"binding\":"+binding(found->second)+",\"requestId\":"+quote(std::to_string(*requestId))+",\"capabilities\":{\"observe\":true,\"effects\":true,\"effectProtocol\":2,\"operations\":"+(found->second.geometryProtocol==2?"[\"maximize\",\"restore-geometry\",\"snap\",\"transfer-workspace\"]":"[\"maximize\",\"restore-geometry\"]")+",\"placementCapacity\":256,\"canonicalScene\":false}}";
+                found->second.geometryProtocol=json_node_get_int(geometryProtocol);found->second.geometryEnabled=true;found->second.geometryFrontend=found->second.frontend;found->second.geometryOperations={"maximize","restore-geometry"};if(found->second.geometryProtocol>=2){found->second.geometryOperations.insert("snap");found->second.geometryOperations.insert("transfer-workspace");}if(found->second.geometryProtocol==3){found->second.geometryOperations.insert("pin");found->second.geometryOperations.insert("unpin");}
+                reply="{\"protocolVersion\":3,\"kind\":\"geometry-attached\",\"geometryProtocol\":"+std::to_string(found->second.geometryProtocol)+",\"binding\":"+binding(found->second)+",\"requestId\":"+quote(std::to_string(*requestId))+",\"capabilities\":{\"observe\":true,\"effects\":true,\"effectProtocol\":2,\"operations\":"+(found->second.geometryProtocol==3?"[\"maximize\",\"restore-geometry\",\"snap\",\"transfer-workspace\",\"pin\",\"unpin\"]":found->second.geometryProtocol==2?"[\"maximize\",\"restore-geometry\",\"snap\",\"transfer-workspace\"]":"[\"maximize\",\"restore-geometry\"]")+",\"placementCapacity\":256,\"canonicalScene\":false}}";
             } else if(!found->second.geometryEnabled || found->second.geometryFrontend!=found->second.frontend || found->second.geometryProtocol!=json_node_get_int(geometryProtocol)) reply=error("geometry-negotiation-required");
             else {
                 const auto floor=counter(object,"minimumWatermark",true);

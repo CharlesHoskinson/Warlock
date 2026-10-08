@@ -4,11 +4,15 @@ This is the active editable product source. It was materialized once from held G
 
 Follow `docs/warlock-build-loop/v2/INSTRUCTIONS.md`. Generated builds/browser profiles live in ignored `.build/` / `qa/runs/`; commit only minimal reports needed by a bounded claim. Use the held pinned compiler/toolchain by verified reference, not another toolchain copy. Changed Main/Bar/Popup must be rebuilt as one asset package before native qualification.
 
-This candidate is not installed on the user's desktop. Its component results, native scenario acceptance and full release acceptance are separate. Preserve the exact GUI143/core16/plugin19/AQ155 ABI manifests for inherited native code; numbering alone is not ABI proof. The controlled preview curtain remains closed until native reveal conditions are implemented and accepted.
+This candidate is not installed on the user's desktop. Its component results, native scenario acceptance and full release acceptance are separate. Preserve inherited ABI manifests and verify the current recorded core/plugin/Aquamarine pair before loading native code; numbering alone is not ABI proof. Authorized native picker previews have bounded recordings, while full transition, resource and release acceptance remain open.
+
+Current implementation status and remaining behavior are in the [feature-completion checklist](../../docs/warlock-roadmap/FEATURE-COMPLETION.md). Current design guidance and the [contributor plugin section](../../DesignLanguage/catalog/index.html#contributors) distinguish the editable product from frozen browser examples.
+
+The always-on-top/MAX draft adds typed pin/unpin, observed geometry protocol 3 and confirmed state labels through the existing custody/no-replay route. The changed Elm roots, native host, native authority and owning ConfigActions unit compile, with 13 focused replay checks. Its original native interaction remains unfinished: preview arrival changes picker geometry between right-button press and release, and the release reaches another family, cancelling the gesture. Native maximize/pin/unpin and physical overlap/hit consistency were not reached. See the [retained draft evidence](qa/evidence/pin-max/README.md). Taskbar application pins are a separate preference feature.
 
 The shared surface host accepts `--text-scale 1.5` for enlarged text. Values from
 1 to 2 scale the base text and taskbar height together; the default remains 1.
-This startup option does not configure the desktop or implement a Settings page.
+This startup option sets initial scale; the persistent Settings page described below is a separate integrated route.
 
 In the taskbar, vertical wheel input scrolls an overflowing row. While a bar
 control has keyboard focus, Home/End reach the endpoints and Left/Right visit
@@ -35,6 +39,8 @@ Window-action menus reveal their current Elm-selected operation after row growth
 or viewport changes. Ordinary publications preserve deliberate wheel scrolling
 and Tab focus on Close; keyboard navigation reveals the current focus again.
 An inactive document cannot acquire operation focus from the view adapter.
+
+These focus guarantees do not mean pointer target geometry is stable across preview arrival; that layout defect remains visible in the pin/MAX native failure above.
 `qa/evidence/dense-menu/manifest.json` records the 480x360 native journey at
 200% text, current operation endpoints/disabled rows/Tab/Escape and text pixels,
 plus the default-size minimize/restore regression. AT, independent original
@@ -71,7 +77,8 @@ including negative output origins and odd dimensions. Tab reaches the chooser
 utility; Enter opens it without applying the selected menu operation. Inside
 the chooser, Up/Down and Home/End traverse enabled controls, and selection uses
 the current view identity. Changed output/work-area scope retires the preview.
-The selected region uses the shared color, glow, shadow and shading language.
+The selected region uses a provisional shell palette and glow/shadow treatment;
+complete adoption of the approved layered-window tokens remains open.
 Native placement uses the negotiated snap capability. Apply closes the chooser,
 reads fresh unblocked facts and submits the exact region through the shared
 geometry request allocator, custody journal and native authority. Changed scope

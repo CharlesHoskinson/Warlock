@@ -55,7 +55,14 @@ if (ROOT/'qa/current-native-pair.json').exists():
   focus=authority['focusCoreReport'];focus_path=REPO/focus['report'];assert sha(focus_path)==focus['reportSHA256'];focus_core=json.loads(focus_path.read_text())
   assert focus_core['passed'] and focus_core['existingPublicHeadersUnchanged'] and focus_core['existingObjectLayoutsUnchanged']
   assert sha(ROOT/'native/core/SeatManager.cpp')==focus_core['sourceSHA256']
-  assert native_pair['pair']['core']=={'path':focus_core['binary'],'sha256':focus_core['binarySHA256']}
+  qualified_core=focus_core
+  if 'pinCoreReport' in native_pair:
+   pin=native_pair['pinCoreReport'];pin_path=REPO/pin['report'];assert sha(pin_path)==pin['reportSHA256'];pin_core=json.loads(pin_path.read_text())
+   assert pin_core['passed'] and pin_core['existingPublicHeadersUnchanged'] and pin_core['existingObjectLayoutsUnchanged'] and pin_core['owningHeaders']==focus_core['owningHeaders']
+   assert sha(ROOT/'native/core/ConfigActions.cpp')==pin_core['sourceSHA256'] and pin_core['ancestor']=={'report':str(focus_path),'reportSHA256':sha(focus_path)}
+   assert all(sha(p)==h for p,h in pin_core['dependencies'].items()) and all(sha(p)==h for p,h in pin_core['linkDependencies'].items())
+   qualified_core=pin_core
+  assert native_pair['pair']['core']=={'path':qualified_core['binary'],'sha256':qualified_core['binarySHA256']}
   ancestor_path=pathlib.Path(focus_core['ancestor']['report']);assert sha(ancestor_path)==focus_core['ancestor']['reportSHA256'];ancestor=json.loads(ancestor_path.read_text())
   assert pair['core']=={'path':ancestor['binary'],'sha256':ancestor['binarySHA256']}
   assert all(sha(p)==h for p,h in focus_core['dependencies'].items())
