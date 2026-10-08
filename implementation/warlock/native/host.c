@@ -24,8 +24,13 @@ void preview_host_set_command_handler(PreviewCommandHandler handler) { if (previ
 
 
 /* Authenticated experimental effect helper is selected by trusted launcher arguments, never by web content. */
-static GtkWidget *window, *popover;
+static GtkWidget *window, *popover, *retired_popup;
+typedef struct {GObject *target;gulong handler;} PopupSignal;
+static PopupSignal popup_signals[6];
+static guint popup_signal_count;
+static gboolean popup_events_drained=TRUE;
 static gboolean surface_experiment, popup_active;
+static gboolean qa_exit, reported, failed, shutting_down, renderer_failed, quit_requested;
 static gboolean qa_controlled_preview;
 static void (*controlled_surface_notice)(JsonNode*);
 static GdkMonitor *owned_monitor;
@@ -51,6 +56,62 @@ static gboolean has_context_anchor,shared_preserve_context_anchor;
 typedef enum { SURFACE_IGNORED, SURFACE_PREFLIGHT_UNSENT, SURFACE_ADMITTED, SURFACE_UNCERTAIN } SurfaceDisposition;
 static SurfaceDisposition surface_receive(WebKitUserContentManager *,const char *,JsonNode *);
 static void popup_hide(void);
+static void popup_disconnect(void) {
+    while (popup_signal_count) {
+        PopupSignal signal=popup_signals[--popup_signal_count];
+        if (g_signal_handler_is_connected(signal.target,signal.handler))
+            g_signal_handler_disconnect(signal.target,signal.handler);
+        g_object_unref(signal.target);
+    }
+}
+typedef struct {
+    gpointer context;
+    gpointer (*take)(gpointer);
+    gboolean (*retired)(gpointer,gpointer);
+    void (*restore)(gpointer,gpointer);
+    GDestroyNotify release;
+} PopupEventQueue;
+static gboolean popup_retire_events(const PopupEventQueue *queue,guint limit,guint *dropped) {
+    GPtrArray *others=g_ptr_array_new_with_free_func(queue->release);
+    gboolean drained=FALSE;*dropped=0;
+    /* No GTK/main-loop dispatch: discard only queued events for the closed
+     * popup tree, retaining every other event in its original order. A flood
+     * refuses remapping rather than admitting old input into a fresh lease. */
+    for (guint count=0;count<limit;count++) {
+        gpointer event=queue->take(queue->context);
+        if (!event) {drained=TRUE;break;}
+        if (queue->retired(queue->context,event)) {queue->release(event);(*dropped)++;}
+        else g_ptr_array_add(others,event);
+    }
+    for (guint i=others->len;i>0;i--) queue->restore(queue->context,g_ptr_array_index(others,i-1));
+    g_ptr_array_unref(others);
+    return drained;
+}
+typedef struct {GdkDisplay *display;GdkWindow *retired;} PopupNativeQueue;
+static gpointer popup_native_take(gpointer context) {
+    return gdk_display_get_event(((PopupNativeQueue *)context)->display);
+}
+static gboolean popup_native_retired(gpointer context,gpointer event) {
+    GdkWindow *retired=((PopupNativeQueue *)context)->retired,*source=gdk_event_get_window(event);
+    return source && (source==retired || gdk_window_get_toplevel(source)==retired);
+}
+static void popup_native_restore(gpointer context,gpointer event) {
+    gdk_display_put_event(((PopupNativeQueue *)context)->display,event);
+}
+static gboolean popup_drain_retired(GdkDisplay *display,GdkWindow *retired) {
+    PopupNativeQueue native={display,retired};guint dropped;
+    PopupEventQueue queue={&native,popup_native_take,popup_native_retired,popup_native_restore,(GDestroyNotify)gdk_event_free};
+    gboolean drained=popup_retire_events(&queue,4096,&dropped);
+    if (qa_exit) {g_print("surface-retired-input: lease=%" G_GUINT64_FORMAT " dropped=%u drained=%d\n",surface_gate.lease,dropped,drained);fflush(stdout);}
+    return drained;
+}
+static void popup_release_retired(void) {
+    if (!retired_popup) return;
+    GtkWidget *retired=retired_popup;retired_popup=NULL;
+    if (gtk_widget_get_parent(GTK_WIDGET(popup_view))==retired)
+        gtk_container_remove(GTK_CONTAINER(retired),GTK_WIDGET(popup_view));
+    gtk_widget_destroy(retired);
+}
 /* Private qualification can retain the same renderer after normal wrapper
  * destruction. No product callback is installed by the inherited host. */
 static void (*qa_popup_retired)(void);
@@ -58,7 +119,6 @@ static void (*shared_popup_notice)(const char *,guint64);
 static void (*shared_frame_notice)(void);
 static WebKitWebView *(*shared_bar_focus_view)(void);
 static const char *asset_dir;
-static gboolean qa_exit, reported, failed, shutting_down, renderer_failed, quit_requested;
 /* Optional owning shared-host hook; standalone legacy behavior stays exact. */
 static gboolean (*renderer_failure_drain_hook)(void);
 static guint quit_source;
@@ -456,11 +516,13 @@ static void popup_hide(void) {
     if (gtk_grab_get_current()==popover) gtk_grab_remove(popover);
     gdk_seat_ungrab(gdk_display_get_default_seat(gtk_widget_get_display(window)));
     GtkWidget *retired=popover;popover=NULL;
-    /* Reparent the presentation engine before destroying its lease-owned wrapper. */
-    g_object_ref(popup_view);gtk_container_remove(GTK_CONTAINER(retired),GTK_WIDGET(popup_view));
-    gtk_widget_hide(retired);gtk_widget_destroy(retired);
-    /* Fence native popup destruction before the post-close authoritative read. */
+    popup_disconnect();
+    /* Retire the xdg_popup role and input lease, retaining the realized GTK
+     * presentation tree. Reparenting destroys its accelerated paint context. */
+    g_object_ref(popup_view);gtk_widget_hide(retired);retired_popup=retired;
+    /* Fence withdrawal before purging retired input and the authoritative read. */
     gdk_display_sync(gtk_widget_get_display(window));
+    popup_events_drained=popup_drain_retired(gtk_widget_get_display(window),gtk_widget_get_window(retired));
     g_print("surface-popup-closed: lease=%" G_GUINT64_FORMAT "\n",surface_gate.lease);fflush(stdout);
     if(qa_popup_retired)qa_popup_retired();
 }
@@ -494,7 +556,9 @@ static gboolean popup_scope_current(const PopupScope *scope) {
 static void popup_scope_free(gpointer data,GClosure *closure) {(void)closure;g_free(data);}
 static void popup_connect(GObject *target,const char *name,GCallback handler) {
     PopupScope *scope=g_new(PopupScope,1);*scope=(PopupScope){surface_gate.lease,popover};
-    g_signal_connect_data(target,name,handler,scope,popup_scope_free,0);
+    g_assert(popup_signal_count<G_N_ELEMENTS(popup_signals));
+    gulong id=g_signal_connect_data(target,name,handler,scope,popup_scope_free,0);
+    popup_signals[popup_signal_count++]=(PopupSignal){g_object_ref(target),id};
 }
 static void popup_positioned(GdkWindow *native,GdkRectangle *flipped,GdkRectangle *final,gboolean flip_x,gboolean flip_y,gpointer data) {
     (void)flipped;(void)flip_x;(void)flip_y;PopupScope *scope=data;
@@ -561,13 +625,20 @@ static gboolean popup_open(void) {
     if (output_retired || !owned_monitor) return FALSE;
     gdk_monitor_get_geometry(owned_monitor,&geometry);
     if (!popup_dimensions(geometry.width,geometry.height,&width,&height)) {g_print("surface-popup-refused: unavailable-logical-area\n");return FALSE;}
-    popover=gtk_window_new(GTK_WINDOW_POPUP);
+    gboolean reused=retired_popup!=NULL;
+    if (reused && !popup_events_drained) {
+        gdk_display_sync(gtk_widget_get_display(window));
+        popup_events_drained=popup_drain_retired(gtk_widget_get_display(window),gtk_widget_get_window(retired_popup));
+        if (!popup_events_drained) {g_print("surface-popup-refused: retired-input-pending\n");return FALSE;}
+    }
+    popover=reused?retired_popup:gtk_window_new(GTK_WINDOW_POPUP);retired_popup=NULL;
     gtk_window_set_transient_for(GTK_WINDOW(popover),GTK_WINDOW(window));
     gtk_window_set_attached_to(GTK_WINDOW(popover),window);
     gtk_window_set_type_hint(GTK_WINDOW(popover),GDK_WINDOW_TYPE_HINT_POPUP_MENU);
     gtk_window_set_default_size(GTK_WINDOW(popover),width,height);
     gtk_widget_set_size_request(GTK_WIDGET(popup_view),width,height);
-    gtk_container_add(GTK_CONTAINER(popover),GTK_WIDGET(popup_view));g_object_unref(popup_view);
+    if (!reused) gtk_container_add(GTK_CONTAINER(popover),GTK_WIDGET(popup_view));
+    g_object_unref(popup_view);
     popup_connect(G_OBJECT(popover),"unmap-event",G_CALLBACK(popup_unmapped));
     popup_connect(G_OBJECT(popover),"focus-in-event",G_CALLBACK(popup_focus));
     popup_connect(G_OBJECT(popover),"focus-out-event",G_CALLBACK(popup_focus));
@@ -786,9 +857,62 @@ static void test_monitor_index(void) {
     for (guint i=0;i<G_N_ELEMENTS(bad);i++) g_assert_false(parse_monitor_index(bad[i],&index));
 }
 
+typedef struct {guint sequence;gboolean retired;} TestPopupEvent;
+static gpointer test_popup_take(gpointer context) {return g_queue_pop_head(context);}
+static gboolean test_popup_retired(gpointer context,gpointer event) {
+    (void)context;return ((TestPopupEvent *)event)->retired;
+}
+static void test_popup_restore(gpointer context,gpointer event) {
+    TestPopupEvent *copy=g_new(TestPopupEvent,1);*copy=*(TestPopupEvent *)event;
+    g_queue_push_head(context,copy);
+}
+static void test_popup_queue(void) {
+    GQueue events=G_QUEUE_INIT;
+    PopupEventQueue queue={&events,test_popup_take,test_popup_retired,test_popup_restore,g_free};guint dropped;
+    /* Interleaved retired and unrelated events: only retired input disappears. */
+    for(guint i=0;i<6;i++) {TestPopupEvent *event=g_new(TestPopupEvent,1);*event=(TestPopupEvent){i,i%2==0};g_queue_push_tail(&events,event);}
+    g_assert_true(popup_retire_events(&queue,4096,&dropped));g_assert_cmpuint(dropped,==,3);
+    for(guint i=1;i<6;i+=2) {TestPopupEvent *event=g_queue_pop_head(&events);g_assert_cmpuint(event->sequence,==,i);g_free(event);}
+    g_assert_true(g_queue_is_empty(&events));
+    /* At the finite bound, admission stays closed even if the last item was
+     * consumed: only an observed empty queue proves the retirement barrier. */
+    for(guint i=0;i<4097;i++) {TestPopupEvent *event=g_new(TestPopupEvent,1);*event=(TestPopupEvent){i,i%2==0};g_queue_push_tail(&events,event);}
+    g_assert_false(popup_retire_events(&queue,4096,&dropped));g_assert_cmpuint(dropped,==,2048);
+    for(guint i=1;i<4096;i+=2) {TestPopupEvent *event=g_queue_pop_head(&events);g_assert_cmpuint(event->sequence,==,i);g_free(event);}
+    g_assert_cmpuint(((TestPopupEvent *)g_queue_peek_head(&events))->sequence,==,4096);
+    g_assert_true(popup_retire_events(&queue,4096,&dropped));g_assert_cmpuint(dropped,==,1);
+    g_assert_true(g_queue_is_empty(&events));
+    TestPopupEvent *last=g_new(TestPopupEvent,1);*last=(TestPopupEvent){1,TRUE};g_queue_push_tail(&events,last);
+    g_assert_false(popup_retire_events(&queue,1,&dropped));g_assert_cmpuint(dropped,==,1);
+    g_assert_true(popup_retire_events(&queue,1,&dropped));g_assert_cmpuint(dropped,==,0);
+}
+static guint test_popup_notifications;
+static void test_popup_notify(GObject *object,GParamSpec *property,gpointer data) {
+    (void)object;(void)property;if(popup_scope_current(data))test_popup_notifications++;
+}
+static void test_popup_callback_retirement(void) {
+    GtkWidget *saved=popover;gboolean active=popup_active;guint64 lease=surface_gate.lease;
+    g_assert_cmpuint(popup_signal_count,==,0);
+    GObject *target=g_object_new(G_TYPE_OBJECT,NULL);
+    popover=(GtkWidget *)target;popup_active=TRUE;surface_gate.lease=100;
+    PopupScope old={100,popover};g_assert_true(popup_scope_current(&old));
+    popup_connect(target,"notify",G_CALLBACK(test_popup_notify));
+    g_signal_emit_by_name(target,"notify",NULL);g_assert_cmpuint(test_popup_notifications,==,1);
+    popup_active=FALSE;g_assert_false(popup_scope_current(&old));popup_disconnect();
+    g_assert_cmpuint(popup_signal_count,==,0);
+    g_signal_emit_by_name(target,"notify",NULL);g_assert_cmpuint(test_popup_notifications,==,1);
+    /* Reusing the same wrapper cannot revive the previous lease. */
+    popup_active=TRUE;surface_gate.lease=101;g_assert_false(popup_scope_current(&old));
+    for(guint i=0;i<6;i++)popup_connect(target,"notify",G_CALLBACK(test_popup_notify));
+    g_signal_emit_by_name(target,"notify",NULL);g_assert_cmpuint(test_popup_notifications,==,7);
+    popup_disconnect();g_signal_emit_by_name(target,"notify",NULL);g_assert_cmpuint(test_popup_notifications,==,7);
+    g_assert_cmpuint(popup_signal_count,==,0);g_object_unref(target);
+    popover=saved;popup_active=active;surface_gate.lease=lease;
+}
+
 int main(int argc,char **argv) {
     if (argc==2 && g_str_equal(argv[1],"--self-test")) {
-        g_test_init(&argc,&argv,NULL);g_test_add_func("/host/assets",test_assets);g_test_add_func("/host/request-schema",test_requests);g_test_add_func("/host/qa-report-control-bounds",test_bridge_bounds);g_test_add_func("/host/surface-atomic-preflight",test_surface_preflight);g_test_add_func("/host/surface-manager-isolation",test_surface_managers);g_test_add_func("/host/surface-acknowledgements",test_surface_acknowledgements);g_test_add_func("/host/monitor-index-boundaries",test_monitor_index);g_test_add_func("/host/popup-logical-dimensions",test_popup_dimensions);return g_test_run();
+        g_test_init(&argc,&argv,NULL);g_test_add_func("/host/assets",test_assets);g_test_add_func("/host/request-schema",test_requests);g_test_add_func("/host/qa-report-control-bounds",test_bridge_bounds);g_test_add_func("/host/surface-atomic-preflight",test_surface_preflight);g_test_add_func("/host/surface-manager-isolation",test_surface_managers);g_test_add_func("/host/surface-acknowledgements",test_surface_acknowledgements);g_test_add_func("/host/monitor-index-boundaries",test_monitor_index);g_test_add_func("/host/popup-logical-dimensions",test_popup_dimensions);g_test_add_func("/host/popup-retired-event-order-and-bound",test_popup_queue);g_test_add_func("/host/popup-callback-retirement",test_popup_callback_retirement);return g_test_run();
     }
     gboolean layer=FALSE;
     for (int i=1;i<argc;i++) {
@@ -896,6 +1020,7 @@ int main(int argc,char **argv) {
     }
     g_queue_clear_full(&requests,g_free);
     if (popup_active) popup_hide();
+    popup_release_retired();
     if (popup_view) g_object_unref(popup_view);
     if (popup_manager) g_object_unref(popup_manager);
     if (surface_snapshot) json_node_unref(surface_snapshot);

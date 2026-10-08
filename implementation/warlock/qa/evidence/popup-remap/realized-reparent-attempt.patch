@@ -1,0 +1,94 @@
+diff --git i/implementation/warlock/native/host.c w/implementation/warlock/native/host.c
+index 18979a5..f93a098 100644
+--- i/implementation/warlock/native/host.c
++++ w/implementation/warlock/native/host.c
+@@ -24,7 +24,7 @@ void preview_host_set_command_handler(PreviewCommandHandler handler) { if (previ
+ 
+ 
+ /* Authenticated experimental effect helper is selected by trusted launcher arguments, never by web content. */
+-static GtkWidget *window, *popover;
++static GtkWidget *window, *popover, *retired_popup;
+ static gboolean surface_experiment, popup_active;
+ static gboolean qa_controlled_preview;
+ static void (*controlled_surface_notice)(JsonNode*);
+@@ -51,6 +51,13 @@ static gboolean has_context_anchor,shared_preserve_context_anchor;
+ typedef enum { SURFACE_IGNORED, SURFACE_PREFLIGHT_UNSENT, SURFACE_ADMITTED, SURFACE_UNCERTAIN } SurfaceDisposition;
+ static SurfaceDisposition surface_receive(WebKitUserContentManager *,const char *,JsonNode *);
+ static void popup_hide(void);
++static void popup_release_retired(void) {
++    if (!retired_popup) return;
++    GtkWidget *retired=retired_popup;retired_popup=NULL;
++    if (gtk_widget_get_parent(GTK_WIDGET(popup_view))==retired)
++        gtk_container_remove(GTK_CONTAINER(retired),GTK_WIDGET(popup_view));
++    gtk_widget_destroy(retired);
++}
+ /* Private qualification can retain the same renderer after normal wrapper
+  * destruction. No product callback is installed by the inherited host. */
+ static void (*qa_popup_retired)(void);
+@@ -456,10 +463,12 @@ static void popup_hide(void) {
+     if (gtk_grab_get_current()==popover) gtk_grab_remove(popover);
+     gdk_seat_ungrab(gdk_display_get_default_seat(gtk_widget_get_display(window)));
+     GtkWidget *retired=popover;popover=NULL;
+-    /* Reparent the presentation engine before destroying its lease-owned wrapper. */
+-    g_object_ref(popup_view);gtk_container_remove(GTK_CONTAINER(retired),GTK_WIDGET(popup_view));
+-    gtk_widget_hide(retired);gtk_widget_destroy(retired);
+-    /* Fence native popup destruction before the post-close authoritative read. */
++    /* Unmap the retired lease immediately. Retain its realized parent until
++     * GTK can move the WebView between two realized wrappers without tearing
++     * down the accelerated backing store. The next lease gets a distinct
++     * wrapper and callback owner; late events cannot address the new popup. */
++    g_object_ref(popup_view);gtk_widget_hide(retired);retired_popup=retired;
++    /* Fence native popup withdrawal before the post-close authoritative read. */
+     gdk_display_sync(gtk_widget_get_display(window));
+     g_print("surface-popup-closed: lease=%" G_GUINT64_FORMAT "\n",surface_gate.lease);fflush(stdout);
+     if(qa_popup_retired)qa_popup_retired();
+@@ -567,7 +576,14 @@ static gboolean popup_open(void) {
+     gtk_window_set_type_hint(GTK_WINDOW(popover),GDK_WINDOW_TYPE_HINT_POPUP_MENU);
+     gtk_window_set_default_size(GTK_WINDOW(popover),width,height);
+     gtk_widget_set_size_request(GTK_WIDGET(popup_view),width,height);
+-    gtk_container_add(GTK_CONTAINER(popover),GTK_WIDGET(popup_view));g_object_unref(popup_view);
++    gtk_widget_realize(popover);
++    if (retired_popup && gtk_widget_get_parent(GTK_WIDGET(popup_view))==retired_popup) {
++        gtk_widget_reparent(GTK_WIDGET(popup_view),popover);
++        popup_release_retired();
++    } else {
++        popup_release_retired();gtk_container_add(GTK_CONTAINER(popover),GTK_WIDGET(popup_view));
++    }
++    g_object_unref(popup_view);
+     popup_connect(G_OBJECT(popover),"unmap-event",G_CALLBACK(popup_unmapped));
+     popup_connect(G_OBJECT(popover),"focus-in-event",G_CALLBACK(popup_focus));
+     popup_connect(G_OBJECT(popover),"focus-out-event",G_CALLBACK(popup_focus));
+@@ -896,6 +912,7 @@ int main(int argc,char **argv) {
+     }
+     g_queue_clear_full(&requests,g_free);
+     if (popup_active) popup_hide();
++    popup_release_retired();
+     if (popup_view) g_object_unref(popup_view);
+     if (popup_manager) g_object_unref(popup_manager);
+     if (surface_snapshot) json_node_unref(surface_snapshot);
+diff --git i/implementation/warlock/native/shared-host.c w/implementation/warlock/native/shared-host.c
+index aac8a86..d5c14ee 100644
+--- i/implementation/warlock/native/shared-host.c
++++ w/implementation/warlock/native/shared-host.c
+@@ -67,7 +67,11 @@ static gboolean client_fallback_pending,client_fallback_written;
+ static gboolean client_concealed_pending,client_concealed_written;
+ static GtkWidget *qa_snapshot_carrier;
+ static void qa_snapshot_carrier_open(void) {
+-    if(shutting_down || !qa_icon_reader_path || !qa_held_icon_request || client_concealed_written || qa_snapshot_carrier || gtk_widget_get_parent(GTK_WIDGET(popup_view)))return;
++    if(shutting_down || !qa_icon_reader_path || !qa_held_icon_request || client_concealed_written || qa_snapshot_carrier)return;
++    /* This explicit private snapshot fixture needs the original detached
++     * renderer. It never maps a product popup or grants presentation. */
++    popup_release_retired();
++    if(gtk_widget_get_parent(GTK_WIDGET(popup_view)))return;
+     qa_snapshot_carrier=gtk_offscreen_window_new();
+     gtk_container_add(GTK_CONTAINER(qa_snapshot_carrier),GTK_WIDGET(popup_view));
+     gtk_widget_show_all(qa_snapshot_carrier);
+@@ -1311,7 +1315,7 @@ int ELM_SHARED_HOST_MAIN(int argc,char **argv) {
+     if(product_catalog_source) {g_source_remove(product_catalog_source);product_catalog_source=0;}g_clear_pointer(&product_catalog_error,g_free);
+     g_signal_handler_disconnect(owned_display,add_handler);g_signal_handler_disconnect(owned_display,remove_handler);
+     if (popup_active) popup_hide();
+-    qa_popup_retired=NULL;qa_snapshot_carrier_close();
++    qa_popup_retired=NULL;qa_snapshot_carrier_close();popup_release_retired();
+     if (backend) {
+         if (io_cancel) g_cancellable_cancel(io_cancel);
+         if (backend_source) {g_source_remove(backend_source);backend_source=0;}

@@ -1,13 +1,57 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-08T01:02:45.929276+00:00",
+  "updatedUTC": "2026-10-08T01:38:28.931787+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "popup-reopen-native-presentation",
+    "requirements": [
+      "ELM-UI-004",
+      "ELM-UI-005",
+      "ELM-UX-029"
+    ],
+    "scenarios": [
+      "taskbar-group",
+      "search-no-match",
+      "search-refused",
+      "launcher-refused"
+    ],
+    "paths": [
+      "native/host.c",
+      "native/shared-host.c",
+      "qa/check-search.py",
+      "qa/native-window-feedback.py",
+      "qa/current-search-build.json"
+    ],
+    "before": "First popup paints, but reopening the taskbar picker or launcher after dismissal shows black controls despite current DOM projection.",
+    "after": "A reopened current popup paints its real controls and supports the same keyboard/pointer journey with fresh lease readiness and no stale events or repeated effects.",
+    "verification": [
+      "Compile/relink changed native host units with unchanged CPP objects and compiled Elm assets; existing native host lease/readiness self-tests",
+      "Protected native workspace-2 Task View then reopened taskbar restore with actual control pixels, native receipt/focus/keyboard/membership",
+      "Protected native launcher repeated/refused/no-match popup physical controls; retain original failures and native AT/IME obligations"
+    ],
+    "state": "implemented; current taskbar and launcher native repaint/input journeys pass; independent and applicable AT/IME acceptance remain open",
+    "evidence": "implementation/warlock/qa/evidence/popup-remap/manifest.json"
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "cross-workspace-native-activation",
     "requirements": [
       "ELM-UI-002",
@@ -48,57 +92,6 @@
     ],
     "state": "implemented; physical Task View workspace-2 restore/receipt/focus/keyboard/membership observed; backend taskbar restore observed but reopened picker paint fails; partial-refusal/other-output/independent/AT remain open",
     "evidence": "implementation/warlock/qa/evidence/workspace-navigation/current-manifest.json"
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "task-view-workspace-overview",
-    "requirements": [
-      "ELM-UX-017",
-      "ELM-UI-006"
-    ],
-    "scenarios": [
-      "ux-017",
-      "overview-cancel",
-      "overview-retire"
-    ],
-    "before": "Integrated bar has no Task View; populated workspace/window membership cannot be browsed in the Elm shell.",
-    "after": "Task View opens from the bar, groups exact native window families by workspace, names the active workspace, permits keyboard/pointer filtering and current eligible window choice, and dismisses without mutation. Cross-workspace activation/transfer, empty native destinations and full AT remain release work.",
-    "paths": [
-      "src/Desktop.elm",
-      "src/TaskView.elm",
-      "src/Surface.elm",
-      "src/SurfaceRenderer.elm",
-      "src/SurfaceController.elm",
-      "native/surface.h",
-      "qa/TaskViewReplay.elm",
-      "qa/task-view.qnt",
-      "qa/check-search.py",
-      "qa/native-window-feedback.py",
-      "qa/current-search-build.json",
-      "assets/elm.js",
-      "assets/bar.js",
-      "assets/popup.js"
-    ],
-    "verification": [
-      "Compile current Elm roots and native surface admission; reuse unchanged native C++ objects with source/header identity checks",
-      "Typed replay and bounded Quint prove stale selections/retired identities cannot mutate or substitute",
-      "Owned native two-workspace popup, keyboard filter/dismiss and physical capture; retain black reopen failure separately"
-    ],
-    "state": "implemented; original two-workspace native membership/active marker/control pixels and local keyboard/pointer browsing observed; dismissal focus failed twice and is deferred; independent/AT review remains open",
-    "evidence": "implementation/warlock/qa/evidence/task-view/manifest.json"
   },
   "recentSlices": [
     {
@@ -224,23 +217,15 @@
     }
   ],
   "nextOriginalSlice": {
-    "id": "popup-reopen-native-presentation",
+    "id": "task-view-dismissal-focus",
     "requirements": [
-      "ELM-UI-004",
-      "ELM-UI-005",
-      "ELM-UX-029"
+      "ELM-UI-006",
+      "ELM-UX-017"
     ],
     "scenarios": [
-      "taskbar-group",
-      "search-no-match",
-      "search-refused",
-      "launcher-refused"
+      "overview-cancel",
+      "ux-017"
     ],
-    "observedBlocker": "Current GTK/WebKit popup paints on first map and displays black current controls after reopening. Native workspace navigation is implemented; fix actual popup remap/repaint in the current host while preserving exact leases, one Elm policy, preview curtain/custody, no-replay and owned cleanup. The strict taskbar native campaign observed zero painted/text pixels in the current Restore control.",
-    "deferredOriginalFailures": [
-      "ELM-UI-006 overview-cancel native opener focus return",
-      "ELM-UI-002 native other-output and partial-refusal compensation",
-      "Native AT/IME and full release qualification remain open"
-    ]
+    "observedBlocker": "Retained Task View Escape journey previously failed actual opener keyboard recipient; revalidate against the retained-wrapper host then fix actual eligible-recipient behavior without manual focus repair."
   }
 }

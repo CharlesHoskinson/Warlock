@@ -4480,9 +4480,15 @@
               "path": "implementation/warlock/qa/evidence/taskbar-focus/manifest.json",
               "sha256": "43cce95bfad5a33a3ba43ede35c9bd8134f75db974efcedf0676183999d7103c",
               "scope": "Native two-member picker, complete forward/reverse Tab wrap, Escape restores actual original application keyboard recipient without effect, pointer member selection activates its exact incarnation. Original menu/three-member/AT obligations remain pending."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/popup-remap/manifest.json",
+              "sha256": "9a13918f1b4d2464987bfdef9dd85ca7e4ee701be171169e04bd5466d4b1bf5e",
+              "scope": "Current reopened taskbar controls paint and select a workspace-2 restore with one correlated native receipt, membership/output preserved, actual GTK keyboard recipient and restored pixels. Launcher initial, filtered, reopened refused and no-match controls paint; native Enter submits one identity-bound launch, refusal preserves query/focus, refresh never launches a replacement."
             }
           ],
-          "missingObservation": "Original exact native pointer/keyboard activation coverage and applicable AT; remaining primary-action cases. Menu/UX-024 is not qualified by this picker run."
+          "missingObservation": "Independent original-scenario reviewer disposition; applicable AT/IME coverage. Original remaining primary-action/menu/three-member taskbar fixtures remain open.",
+          "reviewerDisposition": "Owner observed current native pixels/input/receipts; independent acceptance pending."
         },
         {
           "name": "taskbar-refusal",
@@ -4506,7 +4512,7 @@
         {
           "name": "search-no-match",
           "oracle": "no-match message and query remain reachable without launch",
-          "status": "failed",
+          "status": "partial",
           "evidence": [
             {
               "path": "implementation/warlock/qa/evidence/launcher-search/manifest.json",
@@ -4517,10 +4523,15 @@
               "path": "implementation/warlock/qa/evidence/popup-reopen/manifest.json",
               "sha256": "307d4a39e5e5593eda5d546079c22d67bab09787b581a54a40c6784938b79796",
               "scope": "Native search/refusal input and DOM work; initial and filtered controls paint. After actual close/reopen, refusal and no-match control interiors are black. Neither hide before detach nor GL initialization repaired it. Two attempted fixes are retired; no current GUI acceptance."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/popup-remap/manifest.json",
+              "sha256": "9a13918f1b4d2464987bfdef9dd85ca7e4ee701be171169e04bd5466d4b1bf5e",
+              "scope": "Current reopened taskbar controls paint and select a workspace-2 restore with one correlated native receipt, membership/output preserved, actual GTK keyboard recipient and restored pixels. Launcher initial, filtered, reopened refused and no-match controls paint; native Enter submits one identity-bound launch, refusal preserves query/focus, refresh never launches a replacement."
             }
           ],
-          "missingObservation": "Reopened popup physically shows refusal/no-match/query controls; current native captures are black.; Applicable AT/IME and independent original-scenario review remain.",
-          "reviewerDisposition": "Owner native observation; independent original-scenario review pending"
+          "missingObservation": "Independent original-scenario reviewer disposition; applicable AT/IME coverage. Other original search/catalog and release scenarios remain separately open.",
+          "reviewerDisposition": "Owner observed current native pixels/input/receipts; independent acceptance pending."
         },
         {
           "name": "search-unavailable",
@@ -4560,7 +4571,7 @@
         {
           "name": "search-refused",
           "oracle": "query and focus remain with accessible refusal and retry",
-          "status": "failed",
+          "status": "partial",
           "evidence": [
             {
               "path": "implementation/warlock/qa/evidence/launcher-search/manifest.json",
@@ -4571,10 +4582,15 @@
               "path": "implementation/warlock/qa/evidence/popup-reopen/manifest.json",
               "sha256": "307d4a39e5e5593eda5d546079c22d67bab09787b581a54a40c6784938b79796",
               "scope": "Native search/refusal input and DOM work; initial and filtered controls paint. After actual close/reopen, refusal and no-match control interiors are black. Neither hide before detach nor GL initialization repaired it. Two attempted fixes are retired; no current GUI acceptance."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/popup-remap/manifest.json",
+              "sha256": "9a13918f1b4d2464987bfdef9dd85ca7e4ee701be171169e04bd5466d4b1bf5e",
+              "scope": "Current reopened taskbar controls paint and select a workspace-2 restore with one correlated native receipt, membership/output preserved, actual GTK keyboard recipient and restored pixels. Launcher initial, filtered, reopened refused and no-match controls paint; native Enter submits one identity-bound launch, refusal preserves query/focus, refresh never launches a replacement."
             }
           ],
-          "missingObservation": "Reopened popup physically shows refusal/no-match/query controls; current native captures are black.; Applicable AT/IME and independent original-scenario review remain.",
-          "reviewerDisposition": "Owner native observation; independent original-scenario review pending"
+          "missingObservation": "Independent original-scenario reviewer disposition; applicable AT/IME coverage. Other original search/catalog and release scenarios remain separately open.",
+          "reviewerDisposition": "Owner observed current native pixels/input/receipts; independent acceptance pending."
         }
       ]
     },
@@ -7217,7 +7233,7 @@
         {
           "name": "launcher-refused",
           "oracle": "one request is refused and the UI shows that refusal without a duplicate launch",
-          "status": "failed",
+          "status": "partial",
           "evidence": [
             {
               "path": "implementation/warlock/qa/evidence/launcher-search/manifest.json",
@@ -7228,10 +7244,15 @@
               "path": "implementation/warlock/qa/evidence/popup-reopen/manifest.json",
               "sha256": "307d4a39e5e5593eda5d546079c22d67bab09787b581a54a40c6784938b79796",
               "scope": "Native search/refusal input and DOM work; initial and filtered controls paint. After actual close/reopen, refusal and no-match control interiors are black. Neither hide before detach nor GL initialization repaired it. Two attempted fixes are retired; no current GUI acceptance."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/popup-remap/manifest.json",
+              "sha256": "9a13918f1b4d2464987bfdef9dd85ca7e4ee701be171169e04bd5466d4b1bf5e",
+              "scope": "Current reopened taskbar controls paint and select a workspace-2 restore with one correlated native receipt, membership/output preserved, actual GTK keyboard recipient and restored pixels. Launcher initial, filtered, reopened refused and no-match controls paint; native Enter submits one identity-bound launch, refusal preserves query/focus, refresh never launches a replacement."
             }
           ],
-          "missingObservation": "Reopened popup physically shows refusal/no-match/query controls; current native captures are black.; Applicable AT/IME and independent original-scenario review remain.",
-          "reviewerDisposition": "Owner native observation; independent original-scenario review pending"
+          "missingObservation": "Independent original-scenario reviewer disposition; applicable AT/IME coverage. Other original search/catalog and release scenarios remain separately open.",
+          "reviewerDisposition": "Owner observed current native pixels/input/receipts; independent acceptance pending."
         }
       ]
     },

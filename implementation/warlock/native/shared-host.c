@@ -67,7 +67,9 @@ static gboolean client_fallback_pending,client_fallback_written;
 static gboolean client_concealed_pending,client_concealed_written;
 static GtkWidget *qa_snapshot_carrier;
 static void qa_snapshot_carrier_open(void) {
-    if(shutting_down || !qa_icon_reader_path || !qa_held_icon_request || client_concealed_written || qa_snapshot_carrier || gtk_widget_get_parent(GTK_WIDGET(popup_view)))return;
+    if(shutting_down || !qa_icon_reader_path || !qa_held_icon_request || client_concealed_written || qa_snapshot_carrier)return;
+    popup_release_retired();
+    if(gtk_widget_get_parent(GTK_WIDGET(popup_view)))return;
     qa_snapshot_carrier=gtk_offscreen_window_new();
     gtk_container_add(GTK_CONTAINER(qa_snapshot_carrier),GTK_WIDGET(popup_view));
     gtk_widget_show_all(qa_snapshot_carrier);
@@ -1219,7 +1221,7 @@ static void recovery_show(void) {
 #endif
 int ELM_SHARED_HOST_MAIN(int argc,char **argv) {
     if (argc==2 && g_str_equal(argv[1],"--self-test")) {
-        g_test_init(&argc,&argv,NULL);g_test_add_func("/host/assets",test_assets);g_test_add_func("/host/request-schema",test_requests);g_test_add_func("/host/qa-report-control-bounds",test_bridge_bounds);g_test_add_func("/host/surface-atomic-preflight",test_surface_preflight);g_test_add_func("/host/surface-manager-isolation",test_surface_managers);g_test_add_func("/host/surface-acknowledgements",test_surface_acknowledgements);g_test_add_func("/host/monitor-index-boundaries",test_monitor_index);g_test_add_func("/host/popup-logical-dimensions",test_popup_dimensions);g_test_add_func("/host/shared-view-capabilities",test_view_capabilities);g_test_add_func("/host/shared-projection-capabilities",test_projection_capabilities);g_test_add_func("/host/shared-duplicate-fields",test_duplicate_fields);g_test_add_func("/host/shared-preview-router",test_shared_preview_router);g_test_add_func("/host/client-source-target",test_client_target);g_test_add_func("/host/imported-source-targets",test_imported_target);g_test_add_func("/host/imported-acknowledgement-isolation",test_imported_acknowledgement_isolation);return g_test_run();
+        g_test_init(&argc,&argv,NULL);g_test_add_func("/host/assets",test_assets);g_test_add_func("/host/request-schema",test_requests);g_test_add_func("/host/qa-report-control-bounds",test_bridge_bounds);g_test_add_func("/host/surface-atomic-preflight",test_surface_preflight);g_test_add_func("/host/surface-manager-isolation",test_surface_managers);g_test_add_func("/host/surface-acknowledgements",test_surface_acknowledgements);g_test_add_func("/host/monitor-index-boundaries",test_monitor_index);g_test_add_func("/host/popup-logical-dimensions",test_popup_dimensions);g_test_add_func("/host/popup-retired-event-order-and-bound",test_popup_queue);g_test_add_func("/host/popup-callback-retirement",test_popup_callback_retirement);g_test_add_func("/host/shared-view-capabilities",test_view_capabilities);g_test_add_func("/host/shared-projection-capabilities",test_projection_capabilities);g_test_add_func("/host/shared-duplicate-fields",test_duplicate_fields);g_test_add_func("/host/shared-preview-router",test_shared_preview_router);g_test_add_func("/host/client-source-target",test_client_target);g_test_add_func("/host/imported-source-targets",test_imported_target);g_test_add_func("/host/imported-acknowledgement-isolation",test_imported_acknowledgement_isolation);return g_test_run();
     }
     for (int i=1;i<argc;i++) {
         if (g_str_equal(argv[i],"--assets") && i+1<argc) asset_dir=argv[++i];
@@ -1311,7 +1313,7 @@ int ELM_SHARED_HOST_MAIN(int argc,char **argv) {
     if(product_catalog_source) {g_source_remove(product_catalog_source);product_catalog_source=0;}g_clear_pointer(&product_catalog_error,g_free);
     g_signal_handler_disconnect(owned_display,add_handler);g_signal_handler_disconnect(owned_display,remove_handler);
     if (popup_active) popup_hide();
-    qa_popup_retired=NULL;qa_snapshot_carrier_close();
+    qa_popup_retired=NULL;qa_snapshot_carrier_close();popup_release_retired();
     if (backend) {
         if (io_cancel) g_cancellable_cancel(io_cancel);
         if (backend_source) {g_source_remove(backend_source);backend_source=0;}
