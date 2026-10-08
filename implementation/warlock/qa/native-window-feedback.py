@@ -4,6 +4,7 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
 lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
 """
 import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
+JUMP=sys.argv[1:]==['--jump-lists']
 FILES=sys.argv[1:]==['--files']
 SYSTEM=sys.argv[1:]==['--system-menu']
 NOTIFICATIONS=sys.argv[1:]==['--notifications']
@@ -21,7 +22,7 @@ PRE_READY_RETIRE=sys.argv[1:]==['--switcher-pre-ready-retirement']
 MEMBERSHIP=sys.argv[1:]==['--switcher-membership'] or PRE_READY_RETIRE
 CHORD=sys.argv[1:]==['--switcher-chord'] or MEMBERSHIP
 SWITCHER=sys.argv[1:]==['--switcher']
-NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'] or DENSEPICKER;PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS or PINMENUS or REFLOW or SETTINGS or NOTIFICATIONS or SYSTEM or FILES;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD
+NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'] or DENSEPICKER;PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS or PINMENUS or REFLOW or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143';RUNTIME=REPO/'implementation/warlock-client-provider-native-v204'
 sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
 spec=importlib.util.spec_from_file_location('feedback_private_host',RUNTIME/'candidate_host.py');host=importlib.util.module_from_spec(spec);spec.loader.exec_module(host)
@@ -59,7 +60,7 @@ else:
 for row in pair.values():assert sha(row['path'])==row['sha256']
 assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
 subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
-OUT=ROOT/'qa/runs'/(('native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+OUT=ROOT/'qa/runs'/(('native-jump-lists-' if JUMP else 'native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
 OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
 focus_host=None
 if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
@@ -108,6 +109,7 @@ if focus_host:report['focusHostAdaptation']=focus_host
 if retirement_fixture:report['retirementFixture']=retirement_fixture
 if primary_fixture:report['primaryFixture']=primary_fixture
 if SEARCH:report.update(requirements=['ELM-UI-005','ELM-UX-029'],scenarios=['search-no-match','search-race','search-refused','launcher-refused'],scope='Actual current query and private catalog, native typing/Enter refusal and no duplicate launch; AT/IME and popup physical presentation acceptance remain pending',popupPresentationAccepted=False)
+if JUMP:report.update(requirements=['ELM-UX-010'],scenarios=['ux-010','jump-list-recent-identity'],scope='Physical private native jump list: catalog-declared actions, exact application-bound local XBEL file, actual GIO argv; foreign entries absent. Native negative admission is separate adapter evidence, AT and independent acceptance remain open.',nativeJumpListsObserved=False)
 if FILES:report.update(requirements=['ELM-UX-033'],scenarios=['ux-033'],scope='Actual installed Files explorer in private home/runtime; physical Elm collection choice, exact native instance reuse, location readback, no unchanged file operation source edits. Independent/AT and other-workspace summon acceptance remain open.',nativeFilesObserved=False)
 if SYSTEM:report.update(requirements=['ELM-UX-032'],scenarios=['ux-032'],scope='Actual isolated native menu with current private PipeWire volume and login1 session/power capabilities, unavailable network, physical keyboard changes, readback, confirmation and pixels; real hardware, AT and independent acceptance remain open.',nativeSystemMenuObserved=False)
 if NOTIFICATIONS:report.update(requirements=['ELM-UX-031'],scenarios=['ux-031','notification-valid','notification-reused'],scope='Actual private native producers and physical Elm center: exactly-once current dispatch, expired history and reused-incarnation queued refusal; independent/AT acceptance remains open.',nativeNotificationsObserved=False)
@@ -182,6 +184,19 @@ try:
     report['catalogFixture']={'backend':str(backend_fixture),'backendSHA256':sha(backend_fixture),'roots':roots,'originalConfigUnchanged':True}
     desktop=catalog_root/'warlock-files.desktop';desktop.write_text('[Desktop Entry]\nType=Application\nName=Files\nGenericName=File manager\nKeywords=folders;documents;\nExec=/usr/bin/true\n')
     (catalog_root/'warlock-editor.desktop').write_text('[Desktop Entry]\nType=Application\nName=Editor\nGenericName=Text editor\nExec=/usr/bin/true\n')
+   if JUMP:
+    import gi;gi.require_version('GLib','2.0');from gi.repository import GLib
+    jump_events=OUTPUT/'jump-action-events.jsonl';jump_recorder=OUTPUT/'jump-action-recorder.py'
+    jump_recorder.write_text('import json,os,sys\nwith open(sys.argv[1],"a") as stream:stream.write(json.dumps({"argv":sys.argv[2:],"pid":os.getpid()})+"\\n")\n')
+    jump_document=pathlib.Path(env['HOME'])/'Warlock recent document.txt';jump_document.write_text('Owned recent document')
+    jump_foreign=pathlib.Path(env['HOME'])/'Foreign recent document.txt';jump_foreign.write_text('Foreign recent document')
+    jump_exec='/usr/bin/python3 '+str(jump_recorder)+' '+str(jump_events)
+    (catalog_root/'warlock-editor.desktop').write_text('[Desktop Entry]\nType=Application\nName=A Warlock Editor\nExec='+jump_exec+' RECENT %u\nActions=Alpha;Beta;\n[Desktop Action Alpha]\nName=New document\nExec='+jump_exec+' ALPHA\n[Desktop Action Beta]\nName=Private window\nExec='+jump_exec+' BETA\n[Desktop Action Unsupported]\nName=Unsupported action\nExec=/usr/bin/false\n')
+    bookmarks=GLib.BookmarkFile.new()
+    for document,owner,title in [(jump_document,'warlock-editor.desktop','Warlock recent document'),(jump_foreign,'foreign.desktop','Foreign recent document')]:
+     uri=document.as_uri();bookmarks.set_title(uri,title);bookmarks.set_mime_type(uri,'text/plain');bookmarks.set_application_info(uri,owner,'/usr/bin/false %u',1,GLib.DateTime.new_now_utc())
+    jump_xbel=pathlib.Path(env['XDG_DATA_HOME'])/'recently-used.xbel';bookmarks.to_file(str(jump_xbel))
+    report['jumpFixture']={'desktop':str(catalog_root/'warlock-editor.desktop'),'desktopSHA256':sha(catalog_root/'warlock-editor.desktop'),'recentSource':str(jump_xbel),'recentSHA256':sha(jump_xbel),'recorder':str(jump_recorder),'recorderSHA256':sha(jump_recorder),'document':str(jump_document),'documentSHA256':sha(jump_document),'canonicalApplicationIdentity':'warlock-editor.desktop','storedBookmarkCommandIgnored':True}
    if PINMENUS:
     (catalog_root/'warlock-running-peer.desktop').write_text('[Desktop Entry]\nType=Application\nName=Peer\nStartupWMClass=warlock-peer-fixture\nExec=/usr/bin/true\n')
    if REFLOW:
@@ -352,7 +367,7 @@ raise SystemExit(daemon.run())
    def click(item):
     check('PointerTargetWithinActualViewport',item['visible'],item=item);x,y=map(round,item['point']);helper([str(POINTER),'800','600'],f'move {x} {y}\nsleep 100\nbutton 272 1\nsleep 50\nbutton 272 0\nsleep 100\n')
    def facts():return client.scene_facts('441')
-   initial=None if TASKVIEW or SWITCHER or CHORD or FILES else wait(lambda:group('Activate' if PRIMARY else 'Choose a window from' if FOCUS else 'Minimize'))
+   initial=None if TASKVIEW or SWITCHER or CHORD or FILES or JUMP else wait(lambda:group('Activate' if PRIMARY else 'Choose a window from' if FOCUS else 'Minimize'))
    target=next(w['incarnation'] for w in client.snapshot('442')['windows'] if w['label']==('ELM-ACTIVATION-PEER' if PRIMARY else 'ELM-AUTHORITY-FIXTURE'))
    initial_workspace=next(w['workspace'] for w in facts()['facts']['windows'] if w['incarnation']==target)
    def current_window():return next(w for w in facts()['facts']['windows'] if w['incarnation']==target)
@@ -443,12 +458,13 @@ raise SystemExit(daemon.run())
      pix=GdkPixbuf.Pixbuf.new_from_file(str(image));pixels=pix.get_pixels();stride=pix.get_rowstride();channels=pix.get_n_channels();regions=[]
      # Count only current control interiors. Whole-popup counts incorrectly
      # included the compositor's warning overlay above a black reopened popup.
-     for button in body['buttons']+(body.get('content',[]) if NOTIFICATIONS or SYSTEM or FILES else []):
+     for button in body['buttons']+(body.get('content',[]) if NOTIFICATIONS or SYSTEM or FILES or JUMP else []):
       selected=button['id']==body['focus'] if SETTINGS else button['id']==body['focus'] if SNAP and (projection() or {}).get('mode')=='snap' else button['accessibleName'] in ['Minimize','Close window actions','Maximize'] if PINMENUS else button['accessibleName'].startswith(('Activate ELM-','Restore ELM-')) if SWITCHER or CHORD else (button['accessibleName'].startswith('Browse workspace ') or (NAV and button['accessibleName'].startswith('Restore ELM-ACTIVATION-PEER'))) if TASKVIEW else button['accessibleName'] in ['Refresh applications','Open Files']
+      if JUMP:selected=button.get("identity","")=="jump:title:state" or button["id"]==body["focus"]
       if FILES:selected=button.get('identity','') in ['files:location:state','files:collection:images'] or button['id']==body['focus']
       if SYSTEM:selected=button.get('identity','').endswith(':state') or button['id']==body['focus']
       if NOTIFICATIONS:selected=button['accessibleName']=='Warlock fixture: Expiring notification'
-      if not selected or (button['disabled'] and not (NOTIFICATIONS or SYSTEM or FILES)) or button['y']<0 or button['y']+button['height']>box[3]:continue
+      if not selected or (button['disabled'] and not (NOTIFICATIONS or SYSTEM or FILES or JUMP)) or button['y']<0 or button['y']+button['height']>box[3]:continue
       left,top=max(0,int(box[0]+button['x'])+12),max(100,int(box[1]+button['y'])+6)
       right,bottom=min(pix.get_width(),int(box[0]+button['x']+min(220,button['width']))-12),min(pix.get_height(),box[1]+box[3],int(box[1]+button['y']+button['height'])-6)
       bright=sum(1 for y in range(top,bottom) for x in range(left,right) if all(pixels[y*stride+x*channels+c]>170 for c in range(3)))
@@ -885,6 +901,34 @@ raise SystemExit(daemon.run())
       check('OverviewEscapeReturnsToEligibleOpener',facts()['facts']['focused']==before_focus and any(e['kind']=='key' and e['keyval']==97 and e['window']=='ELM-AUTHORITY-FIXTURE' for e in delivered),events=delivered,before=before_focus,after=facts()['facts']['focused'])
      check('OverviewDismissalHasNoNativeMutation',len(journal())==before)
      report['nativeTaskViewJourneyObserved']=not RETIRE_OPENER
+    elif JUMP:
+     def jump_body():
+      body=popup_body();p=projection()
+      return body if body and p and p.get('mode')=='jump' and body['publication']==p['publication'] else None
+     def jump_frames():return [json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('backend-frame: ') and json.loads(line.split(': ',1)[1]).get('kind') in ['jump-list-snapshot','jump-list-outcome']]
+     def requests(kind):return [json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('frontend-request: ') and json.loads(line.split(': ',1)[1]).get('kind')==kind]
+     def events():return [json.loads(line) for line in jump_events.read_text().splitlines()] if jump_events.exists() else []
+     def open_jump():
+      opener=wait(lambda:next((b for b in (bar_body() or {}).get('buttons',[]) if b['accessibleName']=='Open applications' and not b['disabled']),None))
+      click({'visible':0<=opener['x'] and opener['x']+opener['width']<=800 and 0<=opener['y']<48,'point':[opener['x']+opener['width']/2,opener['y']+opener['height']/2]})
+      wait(lambda:(body:=popup_body()) and any(b['accessibleName']=='Actions for A Warlock Editor' and not b['disabled'] for b in body['buttons']))
+      keyboard_button('Actions for A Warlock Editor',28)
+      return wait(lambda:(body:=jump_body()) and jump_frames() and jump_frames()[-1]['kind']=='jump-list-snapshot' and body)
+     before_window=len(journal());body=open_jump();snapshot=jump_frames()[-1]['snapshot'];actions=snapshot['actions']
+     check('OriginalTwoDeclaredActionsAppearAndUnsupportedIsAbsent',[a['id'] for a in actions if a['kind']=='desktop']==['desktop:Alpha','desktop:Beta'] and not any('Unsupported' in b['label'] for b in body['buttons']),snapshot=snapshot,body=body)
+     check('OriginalOnlyOwnedRecentIdentityIsRendered',len([a for a in actions if a['kind']=='recent'])==1 and not any('Foreign recent' in b['label'] for b in body['buttons']) and snapshot['entry']=='warlock-editor',snapshot=snapshot)
+     key(107);wait(lambda:(body:=jump_body()) and any(b['identity']=='jump:action:recent:'+actions[-1]['id'].removeprefix('recent:') and b['id']==body['focus'] for b in body['buttons']))
+     popup_capture('jump-list-declared-and-recent');check('JumpListActualNativeTextPixels',bool(report['popupCaptures'][-1]['controlRegions']) and all(r['brightPixels']>15 for r in report['popupCaptures'][-1]['controlRegions']),capture=report['popupCaptures'][-1])
+     keyboard_button('New document',28)
+     wait(lambda:jump_frames()[-1]['kind']=='jump-list-outcome' and len(events())==1)
+     outcome=jump_frames()[-1];check('NativeDeclaredActionSubmittedOnce',outcome['status']=='Submitted' and events()[0]['argv']==['ALPHA'] and len(requests('jump-list-effect'))==1,outcome=outcome,events=events())
+     wait(lambda:(projection() or {}).get('mode')=='closed');check('JumpPopupClosesBeforeNativeEffect',len(journal())==before_window and not launches())
+     body=open_jump();keyboard_button('Open Warlock recent document',28)
+     wait(lambda:jump_frames()[-1]['kind']=='jump-list-outcome' and len(events())==2)
+     outcome=jump_frames()[-1];check('NativeOwnedRecentDispatchUsesExactGioDocument',outcome['status']=='Submitted' and events()[1]['argv'] in [['RECENT',str(jump_document)],['RECENT',jump_document.as_uri()]] and len(requests('jump-list-effect'))==2,outcome=outcome,events=events())
+     check('ForeignRecentNeverAppearsOrReceivesDispatch',all(str(jump_foreign) not in json.dumps(row) and jump_foreign.as_uri() not in json.dumps(row) for row in events()) and all(r['intent']['entry']=='warlock-editor' for r in requests('jump-list-effect')))
+     check('JumpListLeavesWindowAuthorityAndCatalogLaunchUntouched',len(journal())==before_window and not launches())
+     report['actualJumpGioEvents']=events();report['jumpOutcomes']=[row for row in jump_frames() if row['kind']=='jump-list-outcome'];report['nativeJumpListsObserved']=True
     elif FILES:
      def files_body():
       body=popup_body();p=projection()

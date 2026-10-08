@@ -1,0 +1,736 @@
+{
+  "schema": 1,
+  "owner": "root-jump-lists",
+  "observedUTC": "2026-10-08T14:56:56.833556+00:00",
+  "requirements": [
+    "ELM-UX-010"
+  ],
+  "scenarios": [
+    "ux-010",
+    "jump-list-recent-identity"
+  ],
+  "originals": [
+    {
+      "id": "ELM-UX-010",
+      "capability": "elm-taskbar",
+      "pattern": "event-driven",
+      "ears": "WHEN a user invokes an application jump list, the Elm desktop SHALL show only catalog-declared actions and supported recent-item actions for that application identity.",
+      "phase": "P5",
+      "priority": "must",
+      "verification": "Elm replay assertion and isolated native recording: two declared actions appear and unsupported actions are absent.",
+      "legacyEvidence": "window-behavior-spec/taskbar_menu.qnt; new recent-item provider coverage",
+      "task": "Define jump-list providers and dispatch identity-bound actions.",
+      "scenarios": [
+        {
+          "name": "ux-010",
+          "given": "catalog declares two actions",
+          "when": "jump list opens",
+          "then": "two declared actions appear and unsupported actions are absent"
+        },
+        {
+          "name": "jump-list-recent-identity",
+          "given": "an application with supported recent-item provider and a foreign item",
+          "when": "its jump list opens and an item is selected",
+          "then": "only identity-bound supported recent actions appear and dispatch; foreign items never dispatch"
+        }
+      ],
+      "source": "docs/elm-roadmap/contributions/experience.json",
+      "status": "proposed",
+      "taskId": "P5-ELM-UX-010",
+      "accountableOwnerRole": "Elm presentation lead",
+      "verifierRole": "Independent acceptance reviewer"
+    }
+  ],
+  "scope": "Integrated immutable application jump lists with catalog-declared native GIO actions and exact desktop-identity local XBEL recent files. Physical private compositor shows the two declared actions, excludes unsupported/foreign entries and dispatches a declared action plus the owned document once with actual native argv. Foreign/stale/replay refusals use separate real GIO adapter evidence. Independent original-scenario acceptance remains open.",
+  "sourceBaseRevision": "9e75f019ec16c193b968aea320b6c81d7eeb377e",
+  "publicBaseRevision": "18df9b4352b2762c48cedb183ecad8d986eae1c6",
+  "sourceHashes": {
+    "implementation/warlock/src/JumpList.elm": "059841cc0669fdc7fd699498ee72d4211a2aa5d69c466d4aade7558e03b0f68c",
+    "implementation/warlock/src/Desktop.elm": "2037001b5c859d3a709dec506f16df854d97ad555faf9f4479700705ca67fba0",
+    "implementation/warlock/src/Surface.elm": "3ae8df1e8c09f6ed3297c95df11da07803f934434f0bca22b97ef4b81b93f47f",
+    "implementation/warlock/src/SurfaceController.elm": "399283022f7dd4dc345f313c32655d74cca7dd70cd3e4b0811310cb09711fcd1",
+    "implementation/warlock/src/SurfaceRenderer.elm": "05f6da40cd91275bfc543eb22d2f1f33cb826a1f14101ddbfa5b5621f60eafd7",
+    "implementation/warlock/adapter/jump_list.py": "2280c0ab00ff0683c0a28611a99b70ac122887629cafb9226f40c649be581806",
+    "implementation/warlock/adapter/daemon.py": "917b402a2ed17cac957aabb52af4ecb36098c0f3cd523b45f42b8928dc22034e",
+    "implementation/warlock/native/host.c": "3e26780a9a5145982ff9588c218bf023b6494ed9aa025dd1a4114f8bc349655c",
+    "implementation/warlock/native/surface.h": "20a8ce10d0f160612f02d1b1bf65d6fd87afe5f425782ce0973210aefeb0560f",
+    "implementation/warlock/assets/popup-adapter.js": "99022f3ba9bbe779c553ce2eaaf80ad628ae0e6982cd785b2b20312af69474aa",
+    "implementation/warlock/qa/JumpListReplay.elm": "2348233902fb1476b895c6ffffa4335dd541618d4ae7d4591d46b29f01a3acb0",
+    "implementation/warlock/qa/check-jump-lists.py": "bcec6a1b753b4878ca1006d5b6084dc3d873e6d98d3f028cdc8f9a94e1e356af",
+    "implementation/warlock/qa/jump-lists.qnt": "9fc806b4887ad88ccc810fecacff43c30530598646d418f2aba00fc49a965417",
+    "implementation/warlock/qa/jump-lists-browser.mjs": "55da79532acff1a0ebfddecce43333eb2fe2157dab31815ebebf4ff573d7978e",
+    "implementation/warlock/qa/check-search.py": "2e9ca09005a8afaf28eda565a047e0443d04046401206133ef42e1e932397d26",
+    "implementation/warlock/qa/native-window-feedback.py": "09e5aa441107fdbc9702b356011d31176e9716789d0270c0225672fbf3024e57",
+    "implementation/warlock/README.md": "a350af73b73dd35234e1bb40ab2383918ccfaa1aa297781dc0345c891786328e",
+    "implementation/warlock/assets/elm.js": "dbe4b7762201ebcec5fac295784760fb710738185edc5bd543ef95e0fd412271",
+    "implementation/warlock/assets/bar.js": "7626d051069ec4b9d6513bafb37b7469f23f96d8a9913544d8d147a3b1b3df40",
+    "implementation/warlock/assets/popup.js": "5dca81f24d0b17e460bd95519837970f31aaaca01318de3a5940a3ef604c5e2f",
+    "implementation/warlock/qa/current-search-build.json": "12fff5c76a13f6579e43698060449b2b1d2e661b18cde7cd88702e0ecf899c27"
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+      "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791457340009159176/elm-window-geometry-authority.so",
+      "sha256": "55be0d723123f8089abfa0ce735f5e496aee558a0d822e1ad8278d50ee958307"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/jump-lists-1791471213662138830/elm-host",
+    "sha256": "7b71d995d80cd6c17180c2dc50f9c2624798edd77f7783c3115ce7532d30be5a",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/jump-lists-1791471213662138830/report.json",
+    "heldBuildSHA256": "3c55e462f8006942c5ca34b34643c91887cabe26a1302f5af00085043ab07ff5"
+  },
+  "compiledAssets": {
+    "elm.js": "dbe4b7762201ebcec5fac295784760fb710738185edc5bd543ef95e0fd412271",
+    "bar.js": "7626d051069ec4b9d6513bafb37b7469f23f96d8a9913544d8d147a3b1b3df40",
+    "popup.js": "5dca81f24d0b17e460bd95519837970f31aaaca01318de3a5940a3ef604c5e2f"
+  },
+  "observedChecks": {
+    "compiledElm": 19,
+    "actualGioXbel": 13,
+    "productionBrowser": 10,
+    "quintNamed": 4,
+    "quintInvariantTraces": 100,
+    "nativeGUI": 46
+  },
+  "nativeCampaignPassed": true,
+  "nativeJumpListsObserved": true,
+  "nativeFixture": {
+    "desktop": "/run/user/1000/wqa/a37d/data/applications/warlock-editor.desktop",
+    "desktopSHA256": "dbe522099327223be192c1787b0db2bbcf299777759257d3de49efd17a091f7f",
+    "recentSource": "/run/user/1000/wqa/a37d/data/recently-used.xbel",
+    "recentSHA256": "be87b4c1986c8f2477a57c156092a68607a60bd5039f51dcaa3e60b0f5d8f378",
+    "recorder": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791471254174566760/jump-action-recorder.py",
+    "recorderSHA256": "4678fb4e73eab8bd2bcb7f3b97bd6759b4dbaa941850b865901034166b1dd3af",
+    "document": "/run/user/1000/wqa/a37d/home/Warlock recent document.txt",
+    "documentSHA256": "c4196fd1c2137fac59f50bcf635fdeefdd46614128145074c247832796619879",
+    "canonicalApplicationIdentity": "warlock-editor.desktop",
+    "storedBookmarkCommandIgnored": true
+  },
+  "actualGioEvents": [
+    {
+      "argv": [
+        "ALPHA"
+      ],
+      "pid": 2333864
+    },
+    {
+      "argv": [
+        "RECENT",
+        "/run/user/1000/wqa/a37d/home/Warlock recent document.txt"
+      ],
+      "pid": 2333895
+    }
+  ],
+  "nativeOutcomes": [
+    {
+      "protocolVersion": 3,
+      "kind": "jump-list-outcome",
+      "binding": {
+        "lifetime": "17698444915942939403",
+        "session": "3",
+        "frontend": "1"
+      },
+      "requestId": "5",
+      "status": "Submitted",
+      "snapshot": {
+        "service": "12872742355162147875",
+        "revision": "2",
+        "entry": "warlock-editor",
+        "name": "A Warlock Editor",
+        "available": true,
+        "reason": "",
+        "actions": [
+          {
+            "id": "desktop:Alpha",
+            "label": "New document",
+            "kind": "desktop"
+          },
+          {
+            "id": "desktop:Beta",
+            "label": "Private window",
+            "kind": "desktop"
+          },
+          {
+            "id": "recent:bc9a071052301fed330dab312f8c975f9c7b39cbacf07104219fc6608fbfdba8",
+            "label": "Open Warlock recent document",
+            "kind": "recent"
+          }
+        ]
+      }
+    },
+    {
+      "protocolVersion": 3,
+      "kind": "jump-list-outcome",
+      "binding": {
+        "lifetime": "17698444915942939403",
+        "session": "3",
+        "frontend": "1"
+      },
+      "requestId": "8",
+      "status": "Submitted",
+      "snapshot": {
+        "service": "12872742355162147875",
+        "revision": "3",
+        "entry": "warlock-editor",
+        "name": "A Warlock Editor",
+        "available": true,
+        "reason": "",
+        "actions": [
+          {
+            "id": "desktop:Alpha",
+            "label": "New document",
+            "kind": "desktop"
+          },
+          {
+            "id": "desktop:Beta",
+            "label": "Private window",
+            "kind": "desktop"
+          },
+          {
+            "id": "recent:bc9a071052301fed330dab312f8c975f9c7b39cbacf07104219fc6608fbfdba8",
+            "label": "Open Warlock recent document",
+            "kind": "recent"
+          }
+        ]
+      }
+    }
+  ],
+  "componentNativeRunnerNote": "CPU snapshot captures the earlier runner with the wrong closed-mode predicate. The separate native report records the final reviewed runner SHA; compiled production/replay/browser bytes are unchanged.",
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "decisiveChecks": [
+    {
+      "name": "OriginalTwoDeclaredActionsAppearAndUnsupportedIsAbsent",
+      "passed": true,
+      "snapshot": {
+        "service": "12872742355162147875",
+        "revision": "1",
+        "entry": "warlock-editor",
+        "name": "A Warlock Editor",
+        "available": true,
+        "reason": "",
+        "actions": [
+          {
+            "id": "desktop:Alpha",
+            "label": "New document",
+            "kind": "desktop"
+          },
+          {
+            "id": "desktop:Beta",
+            "label": "Private window",
+            "kind": "desktop"
+          },
+          {
+            "id": "recent:bc9a071052301fed330dab312f8c975f9c7b39cbacf07104219fc6608fbfdba8",
+            "label": "Open Warlock recent document",
+            "kind": "recent"
+          }
+        ]
+      },
+      "body": {
+        "publication": "18",
+        "lease": "2",
+        "buttons": [
+          {
+            "id": "applications:{\"lifetime\":\"17698444915942939403\",\"session\":\"3\",\"frontend\":\"1\"}:11:jump:close",
+            "identity": "control:close",
+            "label": "Close application actions",
+            "labelRect": {
+              "x": 24,
+              "y": 73,
+              "width": 652,
+              "height": 18
+            },
+            "accessibleName": "Close application actions",
+            "disabled": false,
+            "x": 11,
+            "y": 64,
+            "width": 678,
+            "height": 36
+          },
+          {
+            "id": "applications:{\"lifetime\":\"17698444915942939403\",\"session\":\"3\",\"frontend\":\"1\"}:11:jump:refresh",
+            "identity": "jump:refresh",
+            "label": "Refresh application actionsRead actions; never repeat a request",
+            "labelRect": {
+              "x": 24,
+              "y": 110,
+              "width": 652,
+              "height": 18
+            },
+            "accessibleName": "Refresh application actions",
+            "disabled": false,
+            "x": 11,
+            "y": 103,
+            "width": 678,
+            "height": 54
+          },
+          {
+            "id": "applications:{\"lifetime\":\"17698444915942939403\",\"session\":\"3\",\"frontend\":\"1\"}:11:jump:action:desktop:Alpha",
+            "identity": "jump:action:desktop:Alpha",
+            "label": "New documentApplication action",
+            "labelRect": {
+              "x": 24,
+              "y": 204.375,
+              "width": 652,
+              "height": 18
+            },
+            "accessibleName": "New document",
+            "disabled": false,
+            "x": 11,
+            "y": 197.375,
+            "width": 678,
+            "height": 54
+          },
+          {
+            "id": "applications:{\"lifetime\":\"17698444915942939403\",\"session\":\"3\",\"frontend\":\"1\"}:11:jump:action:desktop:Beta",
+            "identity": "jump:action:desktop:Beta",
+            "label": "Private windowApplication action",
+            "labelRect": {
+              "x": 24,
+              "y": 261.375,
+              "width": 652,
+              "height": 18
+            },
+            "accessibleName": "Private window",
+            "disabled": false,
+            "x": 11,
+            "y": 254.375,
+            "width": 678,
+            "height": 54
+          },
+          {
+            "id": "applications:{\"lifetime\":\"17698444915942939403\",\"session\":\"3\",\"frontend\":\"1\"}:11:jump:action:recent:bc9a071052301fed330dab312f8c975f9c7b39cbacf07104219fc6608fbfdba8",
+            "identity": "jump:action:recent:bc9a071052301fed330dab312f8c975f9c7b39cbacf07104219fc6608fbfdba8",
+            "label": "Open Warlock recent documentRecent file",
+            "labelRect": {
+              "x": 24,
+              "y": 318.375,
+              "width": 652,
+              "height": 18
+            },
+            "accessibleName": "Open Warlock recent document",
+            "disabled": false,
+            "x": 11,
+            "y": 311.375,
+            "width": 678,
+            "height": 54
+          }
+        ],
+        "content": [
+          {
+            "id": "applications:{\"lifetime\":\"17698444915942939403\",\"session\":\"3\",\"frontend\":\"1\"}:11:jump:title:state",
+            "identity": "jump:title:state",
+            "label": "Actions for A Warlock Editor",
+            "labelRect": {
+              "x": 20.796875,
+              "y": 168.1875,
+              "width": 658.40625,
+              "height": 18
+            },
+            "accessibleName": "Actions for A Warlock Editor",
+            "disabled": true,
+            "x": 20.796875,
+            "y": 168.1875,
+            "width": 658.40625,
+            "height": 18
+          }
+        ],
+        "fields": [],
+        "focus": "applications:{\"lifetime\":\"17698444915942939403\",\"session\":\"3\",\"frontend\":\"1\"}:11:jump:close",
+        "documentFocused": true,
+        "fontSize": "16px",
+        "theme": "night",
+        "textScale": "100",
+        "viewportWidth": 700,
+        "viewportHeight": 420,
+        "scrollTop": 0,
+        "scrollHeight": 420,
+        "text": "Application actions\nChoose an application action or recent file.\n\n\nClose application actions\n\nRefresh application actions\nRead actions; never repeat a request\nActions for A Warlock Editor\n\n\nNew document\nApplication action\n\nPrivate window\nApplication action\n\nOpen Warlock recent document\nRecent file"
+      }
+    },
+    {
+      "name": "OriginalOnlyOwnedRecentIdentityIsRendered",
+      "passed": true,
+      "snapshot": {
+        "service": "12872742355162147875",
+        "revision": "1",
+        "entry": "warlock-editor",
+        "name": "A Warlock Editor",
+        "available": true,
+        "reason": "",
+        "actions": [
+          {
+            "id": "desktop:Alpha",
+            "label": "New document",
+            "kind": "desktop"
+          },
+          {
+            "id": "desktop:Beta",
+            "label": "Private window",
+            "kind": "desktop"
+          },
+          {
+            "id": "recent:bc9a071052301fed330dab312f8c975f9c7b39cbacf07104219fc6608fbfdba8",
+            "label": "Open Warlock recent document",
+            "kind": "recent"
+          }
+        ]
+      }
+    },
+    {
+      "name": "JumpListActualNativeTextPixels",
+      "passed": true,
+      "capture": {
+        "stage": "jump-list-declared-and-recent",
+        "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791471254174566760/popup-jump-list-declared-and-recent.png",
+        "sha256": "7837fed6baae448151cfbce738fa61dd4e833991bf5567e840f9e1ec1bedb8d6",
+        "nativeBox": [
+          50,
+          48,
+          700,
+          420
+        ],
+        "controlRegions": [
+          {
+            "accessibleName": "Open Warlock recent document",
+            "brightPixels": 731,
+            "paintedPixels": 8232,
+            "area": 8232,
+            "region": [
+              73,
+              365,
+              269,
+              407
+            ]
+          },
+          {
+            "accessibleName": "Actions for A Warlock Editor",
+            "brightPixels": 282,
+            "paintedPixels": 1176,
+            "area": 1176,
+            "region": [
+              82,
+              222,
+              278,
+              228
+            ]
+          }
+        ],
+        "body": {
+          "publication": "18",
+          "lease": "2",
+          "buttons": [
+            {
+              "id": "applications:{\"lifetime\":\"17698444915942939403\",\"session\":\"3\",\"frontend\":\"1\"}:11:jump:close",
+              "identity": "control:close",
+              "label": "Close application actions",
+              "labelRect": {
+                "x": 24,
+                "y": 73,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Close application actions",
+              "disabled": false,
+              "x": 11,
+              "y": 64,
+              "width": 678,
+              "height": 36
+            },
+            {
+              "id": "applications:{\"lifetime\":\"17698444915942939403\",\"session\":\"3\",\"frontend\":\"1\"}:11:jump:refresh",
+              "identity": "jump:refresh",
+              "label": "Refresh application actionsRead actions; never repeat a request",
+              "labelRect": {
+                "x": 24,
+                "y": 110,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Refresh application actions",
+              "disabled": false,
+              "x": 11,
+              "y": 103,
+              "width": 678,
+              "height": 54
+            },
+            {
+              "id": "applications:{\"lifetime\":\"17698444915942939403\",\"session\":\"3\",\"frontend\":\"1\"}:11:jump:action:desktop:Alpha",
+              "identity": "jump:action:desktop:Alpha",
+              "label": "New documentApplication action",
+              "labelRect": {
+                "x": 24,
+                "y": 204.375,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "New document",
+              "disabled": false,
+              "x": 11,
+              "y": 197.375,
+              "width": 678,
+              "height": 54
+            },
+            {
+              "id": "applications:{\"lifetime\":\"17698444915942939403\",\"session\":\"3\",\"frontend\":\"1\"}:11:jump:action:desktop:Beta",
+              "identity": "jump:action:desktop:Beta",
+              "label": "Private windowApplication action",
+              "labelRect": {
+                "x": 24,
+                "y": 261.375,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Private window",
+              "disabled": false,
+              "x": 11,
+              "y": 254.375,
+              "width": 678,
+              "height": 54
+            },
+            {
+              "id": "applications:{\"lifetime\":\"17698444915942939403\",\"session\":\"3\",\"frontend\":\"1\"}:11:jump:action:recent:bc9a071052301fed330dab312f8c975f9c7b39cbacf07104219fc6608fbfdba8",
+              "identity": "jump:action:recent:bc9a071052301fed330dab312f8c975f9c7b39cbacf07104219fc6608fbfdba8",
+              "label": "Open Warlock recent documentRecent file",
+              "labelRect": {
+                "x": 24,
+                "y": 318.375,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Open Warlock recent document",
+              "disabled": false,
+              "x": 11,
+              "y": 311.375,
+              "width": 678,
+              "height": 54
+            }
+          ],
+          "content": [
+            {
+              "id": "applications:{\"lifetime\":\"17698444915942939403\",\"session\":\"3\",\"frontend\":\"1\"}:11:jump:title:state",
+              "identity": "jump:title:state",
+              "label": "Actions for A Warlock Editor",
+              "labelRect": {
+                "x": 20.796875,
+                "y": 168.1875,
+                "width": 658.40625,
+                "height": 18
+              },
+              "accessibleName": "Actions for A Warlock Editor",
+              "disabled": true,
+              "x": 20.796875,
+              "y": 168.1875,
+              "width": 658.40625,
+              "height": 18
+            }
+          ],
+          "fields": [],
+          "focus": "applications:{\"lifetime\":\"17698444915942939403\",\"session\":\"3\",\"frontend\":\"1\"}:11:jump:action:recent:bc9a071052301fed330dab312f8c975f9c7b39cbacf07104219fc6608fbfdba8",
+          "documentFocused": true,
+          "fontSize": "16px",
+          "theme": "night",
+          "textScale": "100",
+          "viewportWidth": 700,
+          "viewportHeight": 420,
+          "scrollTop": 0,
+          "scrollHeight": 420,
+          "text": "Application actions\nChoose an application action or recent file.\n\n\nClose application actions\n\nRefresh application actions\nRead actions; never repeat a request\nActions for A Warlock Editor\n\n\nNew document\nApplication action\n\nPrivate window\nApplication action\n\nOpen Warlock recent document\nRecent file"
+        },
+        "drawObservations": []
+      }
+    },
+    {
+      "name": "NativeDeclaredActionSubmittedOnce",
+      "passed": true,
+      "outcome": {
+        "protocolVersion": 3,
+        "kind": "jump-list-outcome",
+        "binding": {
+          "lifetime": "17698444915942939403",
+          "session": "3",
+          "frontend": "1"
+        },
+        "requestId": "5",
+        "status": "Submitted",
+        "snapshot": {
+          "service": "12872742355162147875",
+          "revision": "2",
+          "entry": "warlock-editor",
+          "name": "A Warlock Editor",
+          "available": true,
+          "reason": "",
+          "actions": [
+            {
+              "id": "desktop:Alpha",
+              "label": "New document",
+              "kind": "desktop"
+            },
+            {
+              "id": "desktop:Beta",
+              "label": "Private window",
+              "kind": "desktop"
+            },
+            {
+              "id": "recent:bc9a071052301fed330dab312f8c975f9c7b39cbacf07104219fc6608fbfdba8",
+              "label": "Open Warlock recent document",
+              "kind": "recent"
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "argv": [
+            "ALPHA"
+          ],
+          "pid": 2333864
+        }
+      ]
+    },
+    {
+      "name": "JumpPopupClosesBeforeNativeEffect",
+      "passed": true
+    },
+    {
+      "name": "NativeOwnedRecentDispatchUsesExactGioDocument",
+      "passed": true,
+      "outcome": {
+        "protocolVersion": 3,
+        "kind": "jump-list-outcome",
+        "binding": {
+          "lifetime": "17698444915942939403",
+          "session": "3",
+          "frontend": "1"
+        },
+        "requestId": "8",
+        "status": "Submitted",
+        "snapshot": {
+          "service": "12872742355162147875",
+          "revision": "3",
+          "entry": "warlock-editor",
+          "name": "A Warlock Editor",
+          "available": true,
+          "reason": "",
+          "actions": [
+            {
+              "id": "desktop:Alpha",
+              "label": "New document",
+              "kind": "desktop"
+            },
+            {
+              "id": "desktop:Beta",
+              "label": "Private window",
+              "kind": "desktop"
+            },
+            {
+              "id": "recent:bc9a071052301fed330dab312f8c975f9c7b39cbacf07104219fc6608fbfdba8",
+              "label": "Open Warlock recent document",
+              "kind": "recent"
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "argv": [
+            "ALPHA"
+          ],
+          "pid": 2333864
+        },
+        {
+          "argv": [
+            "RECENT",
+            "/run/user/1000/wqa/a37d/home/Warlock recent document.txt"
+          ],
+          "pid": 2333895
+        }
+      ]
+    },
+    {
+      "name": "ForeignRecentNeverAppearsOrReceivesDispatch",
+      "passed": true
+    },
+    {
+      "name": "JumpListLeavesWindowAuthorityAndCatalogLaunchUntouched",
+      "passed": true
+    }
+  ],
+  "ownerImageReview": {
+    "reviewer": "root-jump-lists",
+    "independent": false,
+    "images": [
+      "popup-jump-list-declared-and-recent.png"
+    ],
+    "observed": "Current native popup displays the application identity, two declared actions and the owned recent document; keyboard focus highlights the recent file. Unsupported and foreign entries are absent. The isolated compositor warning overlay is visible above the popup."
+  },
+  "missingObservations": [
+    "Independent review of ux-010 and jump-list-recent-identity against this exact source/core/plugin/toolchain tuple.",
+    "Actual taskbar context-menu routes and additional provider/application fixtures are not established by the physical launcher recording.",
+    "Foreign recent intent refusal is established by the actual GIO adapter fixture, not a forged physical GUI request. Applicable release AT/IME/hardware/resource and full desktop journeys remain separate."
+  ],
+  "retainedFailures": [
+    "failed-quint-reserved-name.json"
+  ],
+  "files": [
+    {
+      "path": "implementation/warlock/qa/evidence/jump-lists/browser-report.json",
+      "sha256": "c7694f852f4ef62bb08a57ca7daf223461e731bb8a4c0ec8a721bccfd09b57b2"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/jump-lists/component-report.json",
+      "sha256": "3c55e462f8006942c5ca34b34643c91887cabe26a1302f5af00085043ab07ff5"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/jump-lists/failed-quint-reserved-name.json",
+      "sha256": "7aca0c3791efe769d1c55dacdc9f8058d54a83ffe343108c7fc8e226e41fccab"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/jump-lists/host-self-tests.stdout",
+      "sha256": "e9f576db6bdec2372c475d79883b66aa6fe4194c1c76053111ba78b005ae1dac"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/jump-lists/jump-list-model-invariants.stdout",
+      "sha256": "588441ae998bfa329db8ccd2fc40a371af28ec79cc2647c0a9aa4513a1e6b51d"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/jump-lists/jump-list-model-named.stdout",
+      "sha256": "dd8586dbaa501f77e998abd041b7cba3269d77d92ccd2f84bd45e06965307772"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/jump-lists/jump-list-native-gio.stdout",
+      "sha256": "eddd4b95ea7477072b8e7bb02bae4bd1b627ff59491d03af683f8f73b4c43bb4"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/jump-lists/jump-lists-actions.png",
+      "sha256": "35bfd417cb6a9fe6ca7ffa9be2c2f9a08080784b582967c34d296a43352eca0b"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/jump-lists/jump-lists.json",
+      "sha256": "d4083f1e1ba26b8ad0c93c498e262a7e84031d055d711a35c513be354449e3e9"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/jump-lists/native-report.json",
+      "sha256": "5e3c96401af27fe53f001d88ebb6826ebbb4030580d1bacfbabd6ef60b79f033"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/jump-lists/popup-jump-list-declared-and-recent.png",
+      "sha256": "7837fed6baae448151cfbce738fa61dd4e833991bf5567e840f9e1ec1bedb8d6"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/jump-lists/source.patch",
+      "sha256": "723894c91e9dbc273350639fec212a7a9995b77d37500732e14090dd7371cf8c"
+    }
+  ]
+}

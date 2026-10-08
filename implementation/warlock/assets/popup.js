@@ -5431,7 +5431,7 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 				$elm$core$List$member,
 				record.aP,
 				_List_fromArray(
-					['closed', 'picker', 'applications', 'menu', 'overview', 'switcher', 'snap', 'settings', 'notifications', 'system', 'files']))) || (((record.aP !== 'closed') && _Utils_eq(record.br, $author$project$UInt64$zero)) || (((record.aP === 'closed') && (!$elm$core$List$isEmpty(record.w))) || ((!unique(identities)) || ((!unique(
+					['closed', 'picker', 'applications', 'menu', 'overview', 'switcher', 'snap', 'settings', 'notifications', 'system', 'files', 'jump']))) || (((record.aP !== 'closed') && _Utils_eq(record.br, $author$project$UInt64$zero)) || (((record.aP === 'closed') && (!$elm$core$List$isEmpty(record.w))) || ((!unique(identities)) || ((!unique(
 				A2(
 					$elm$core$List$map,
 					function ($) {
@@ -5443,7 +5443,7 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 					return $elm$core$String$isEmpty(control.aE) || $elm$core$String$isEmpty(control.R);
 				},
 				all)))))))) ? $elm$core$Result$Err('Invalid presentation scope/identities') : $elm$core$Result$Ok(
-				{Z: record.Z, N: record.N, bl: record.br, e: record.aP, w: record.w, bb: record.bt, af: record.V});
+				{Z: record.Z, N: record.N, bl: record.br, d: record.aP, w: record.w, bb: record.bt, af: record.V});
 		},
 		A2(
 			$elm$core$Result$mapError,
@@ -5784,12 +5784,12 @@ var $author$project$NativePreviewRealm$domainDecoder = A3(
 	A2($elm$json$Json$Decode$field, 'receiverEpoch', $author$project$NativePreviewRealm$positive));
 var $author$project$SurfaceRenderer$fieldIdentity = function (_v0) {
 	var snapshot = _v0;
-	return (snapshot.e === 'files') ? 'control:files-path' : 'control:search';
+	return (snapshot.d === 'files') ? 'control:files-path' : 'control:search';
 };
 var $elm$json$Json$Decode$map5 = _Json_map5;
 var $author$project$SurfaceRenderer$mode = function (_v0) {
 	var snapshot = _v0;
-	return snapshot.e;
+	return snapshot.d;
 };
 var $author$project$Presentation$query = F2(
 	function (value, _v0) {
@@ -6663,7 +6663,7 @@ var $author$project$PreviewLifecycle$notAfter = F2(
 	});
 var $author$project$PreviewLifecycle$authorized = F2(
 	function (st, frame) {
-		return (!st.y) && (st.a.as && ((!st.a.A) && (st.a.am && (frame.a9 && (_Utils_eq(frame.d.f, st.a.f) && (_Utils_eq(frame.d.O, st.a.O) && (A2($author$project$PreviewLifecycle$generationMatches, st.a.b, frame.d.b) && (A2($author$project$PreviewLifecycle$notAfter, frame.d.b.L, st.a.b.L) && (A2($author$project$PreviewLifecycle$notAfter, frame.d.b.cp, st.a.b.cp) && (A2($author$project$PreviewLifecycle$before, st.a.ac, frame.aS) && (A2($elm$core$Set$member, 'client', frame.a3) && ((!frame.aD) || _Utils_eq(
+		return (!st.y) && (st.a.as && ((!st.a.A) && (st.a.am && (frame.a9 && (_Utils_eq(frame.e.f, st.a.f) && (_Utils_eq(frame.e.O, st.a.O) && (A2($author$project$PreviewLifecycle$generationMatches, st.a.b, frame.e.b) && (A2($author$project$PreviewLifecycle$notAfter, frame.e.b.L, st.a.b.L) && (A2($author$project$PreviewLifecycle$notAfter, frame.e.b.cp, st.a.b.cp) && (A2($author$project$PreviewLifecycle$before, st.a.ac, frame.aS) && (A2($elm$core$Set$member, 'client', frame.a3) && ((!frame.aD) || _Utils_eq(
 			frame.a3,
 			$elm$core$Set$fromList(
 				_List_fromArray(
@@ -6680,7 +6680,7 @@ var $author$project$PreviewLifecycle$status = function (st) {
 	if (!_v0.$) {
 		var lease = _v0.a;
 		var frame = lease;
-		return (st.C && A2($author$project$PreviewLifecycle$authorized, st, frame)) ? ((st.a.aw && (_Utils_eq(frame.d.b.L, st.a.b.L) && _Utils_eq(frame.d.b.cp, st.a.b.cp))) ? $author$project$PreviewLifecycle$Live(lease) : $author$project$PreviewLifecycle$Historical(lease)) : $author$project$PreviewLifecycle$loadingStatus(st);
+		return (st.C && A2($author$project$PreviewLifecycle$authorized, st, frame)) ? ((st.a.aw && (_Utils_eq(frame.e.b.L, st.a.b.L) && _Utils_eq(frame.e.b.cp, st.a.b.cp))) ? $author$project$PreviewLifecycle$Live(lease) : $author$project$PreviewLifecycle$Historical(lease)) : $author$project$PreviewLifecycle$loadingStatus(st);
 	} else {
 		return $author$project$PreviewLifecycle$loadingStatus(st);
 	}
@@ -7549,7 +7549,7 @@ var $author$project$PreviewLifecycle$nativeScopeDecoder = A2(
 var $author$project$PreviewLifecycle$LeaseHandle = $elm$core$Basics$identity;
 var $author$project$PreviewLifecycle$Packet = F7(
 	function (job, handle, owned, signaled, fidelity, coverage, expires) {
-		return {a3: coverage, aS: expires, aD: fidelity, S: handle, d: job, a9: owned, bg: signaled};
+		return {a3: coverage, aS: expires, aD: fidelity, S: handle, e: job, a9: owned, bg: signaled};
 	});
 var $elm$core$Dict$foldl = F3(
 	function (func, acc, dict) {
@@ -8201,7 +8201,7 @@ var $author$project$PreviewLifecycle$terminalJob = function (event) {
 			return $elm$core$Maybe$Just(job);
 		case 10:
 			var frame = event.a;
-			return $elm$core$Maybe$Just(frame.d);
+			return $elm$core$Maybe$Just(frame.e);
 		case 13:
 			var job = event.a;
 			return $elm$core$Maybe$Just(job);
@@ -8330,7 +8330,7 @@ var $author$project$PreviewLifecycle$Release = function (a) {
 };
 var $author$project$PreviewLifecycle$sameLease = F2(
 	function (a, b) {
-		return _Utils_eq(a.d, b.d) && _Utils_eq(a.S, b.S);
+		return _Utils_eq(a.e, b.e) && _Utils_eq(a.S, b.S);
 	});
 var $author$project$PreviewLifecycle$retirePacket = F2(
 	function (frame, work) {
@@ -8417,7 +8417,7 @@ var $author$project$PreviewLifecycle$advanceClock = F2(
 			var _v1 = $author$project$PreviewLifecycle$candidate(jobTimed.i);
 			if (!_v1.$) {
 				var frame = _v1.a;
-				return (A2($author$project$PreviewLifecycle$notAfter, frame.d.H, now) || A2($author$project$PreviewLifecycle$notAfter, frame.aS, now)) ? $author$project$PreviewLifecycle$retireCandidate(jobTimed) : jobTimed;
+				return (A2($author$project$PreviewLifecycle$notAfter, frame.e.H, now) || A2($author$project$PreviewLifecycle$notAfter, frame.aS, now)) ? $author$project$PreviewLifecycle$retireCandidate(jobTimed) : jobTimed;
 			} else {
 				return jobTimed;
 			}
@@ -8441,7 +8441,7 @@ var $author$project$PreviewLifecycle$finishKnown = F2(
 					return _Utils_eq(current, job);
 				case 2:
 					var current = _v0.a;
-					return _Utils_eq(current.d, job);
+					return _Utils_eq(current.e, job);
 				default:
 					return false;
 			}
@@ -8452,12 +8452,12 @@ var $author$project$PreviewLifecycle$finishKnown = F2(
 			A2(
 				$elm$core$Maybe$map,
 				function (f) {
-					return _Utils_eq(f.d, job);
+					return _Utils_eq(f.e, job);
 				},
 				$author$project$PreviewLifecycle$acceptedPacket(st))) || (A2($elm$core$List$member, job, st.x) || A2(
 			$elm$core$List$any,
 			function (f) {
-				return _Utils_eq(f.d, job);
+				return _Utils_eq(f.e, job);
 			},
 			st.u)));
 		return stillHeld ? work : A2(
@@ -8565,7 +8565,7 @@ var $author$project$PreviewLifecycle$offer = F2(
 			var _v1 = st.g;
 			if (_v1.$ === 1) {
 				var job = _v1.a;
-				return st.C && (_Utils_eq(job, frame.d) && (A2($author$project$PreviewLifecycle$authorized, st, frame) && (A2($author$project$PreviewLifecycle$before, st.a.ac, frame.d.H) && (!A2($author$project$PreviewLifecycle$heldHandle, st, frame.S)))));
+				return st.C && (_Utils_eq(job, frame.e) && (A2($author$project$PreviewLifecycle$authorized, st, frame) && (A2($author$project$PreviewLifecycle$before, st.a.ac, frame.e.H) && (!A2($author$project$PreviewLifecycle$heldHandle, st, frame.S)))));
 			} else {
 				return false;
 			}
@@ -8592,12 +8592,12 @@ var $author$project$PreviewLifecycle$offer = F2(
 				},
 				work);
 		} else {
-			if (A2($elm$core$List$member, frame.d, st.z) && (frame.a9 && (!A2($author$project$PreviewLifecycle$heldHandle, st, frame.S)))) {
+			if (A2($elm$core$List$member, frame.e, st.z) && (frame.a9 && (!A2($author$project$PreviewLifecycle$heldHandle, st, frame.S)))) {
 				var cleanup = A2($author$project$PreviewLifecycle$retirePacket, frame, work);
 				var _v0 = cleanup.i.g;
 				if (_v0.$ === 1) {
 					var job = _v0.a;
-					return _Utils_eq(job, frame.d) ? $author$project$PreviewLifecycle$cancelCurrent(cleanup) : cleanup;
+					return _Utils_eq(job, frame.e) ? $author$project$PreviewLifecycle$cancelCurrent(cleanup) : cleanup;
 				} else {
 					return cleanup;
 				}
@@ -8696,7 +8696,7 @@ var $author$project$PreviewLifecycle$updatePlain = F2(
 					var _v3 = $author$project$PreviewLifecycle$candidate(initial);
 					if (!_v3.$) {
 						var frame = _v3.a;
-						return (A2($author$project$PreviewLifecycle$sameLease, frame, incoming) && (initial.C && (A2($author$project$PreviewLifecycle$authorized, initial, frame) && A2($author$project$PreviewLifecycle$before, initial.a.ac, frame.d.H)))) ? A2(
+						return (A2($author$project$PreviewLifecycle$sameLease, frame, incoming) && (initial.C && (A2($author$project$PreviewLifecycle$authorized, initial, frame) && A2($author$project$PreviewLifecycle$before, initial.a.ac, frame.e.H)))) ? A2(
 							$author$project$PreviewLifecycle$mapState,
 							function (st) {
 								return _Utils_update(
@@ -8750,7 +8750,7 @@ var $author$project$PreviewLifecycle$updatePlain = F2(
 								return _Utils_eq(active, job);
 							case 2:
 								var frame = _v4.a;
-								return _Utils_eq(frame.d, job);
+								return _Utils_eq(frame.e, job);
 							default:
 								return false;
 						}
@@ -8761,7 +8761,7 @@ var $author$project$PreviewLifecycle$updatePlain = F2(
 						A2(
 							$elm$core$Maybe$map,
 							function (frame) {
-								return _Utils_eq(frame.d, job);
+								return _Utils_eq(frame.e, job);
 							},
 							$author$project$PreviewLifecycle$acceptedPacket(initial)));
 					return (_Utils_eq(job.f, initial.a.f) && (A2($elm$core$List$member, job, initial.z) && (current || accepted))) ? A2(
@@ -8814,7 +8814,7 @@ var $author$project$PreviewLifecycle$updatePlain = F2(
 										u: A2(
 											$elm$core$List$filter,
 											function (f) {
-												return !_Utils_eq(f.d, job);
+												return !_Utils_eq(f.e, job);
 											},
 											st.u)
 									});
@@ -8827,7 +8827,7 @@ var $author$project$PreviewLifecycle$updatePlain = F2(
 						$author$project$PreviewLifecycle$sameLease(frame),
 						initial.u) ? A2(
 						$author$project$PreviewLifecycle$finishKnown,
-						frame.d,
+						frame.e,
 						A2(
 							$author$project$PreviewLifecycle$mapState,
 							function (st) {
@@ -9058,7 +9058,7 @@ var $author$project$PreviewLifecycle$encodePacket = function (packet) {
 			[
 				_Utils_Tuple2(
 				'job',
-				$author$project$PreviewLifecycle$encodeJob(packet.d)),
+				$author$project$PreviewLifecycle$encodeJob(packet.e)),
 				_Utils_Tuple2(
 				'handle',
 				$elm$json$Json$Encode$string(
@@ -12837,7 +12837,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 		};
 		var control = function (item) {
 			var kind = (A2($elm$core$String$startsWith, 'bar:group:', item.aE) || A2($elm$core$String$startsWith, 'bar:pin:', item.aE)) ? 'control-group' : ((item.aE === 'bar:recovery-refresh') ? 'control-recovery' : 'control-utility');
-			if (popup && ((snapshot.e === 'notifications') && (A2($elm$core$String$endsWith, ':summary', item.aE) || A2($elm$core$String$endsWith, ':body', item.aE)))) {
+			if (popup && ((snapshot.d === 'notifications') && (A2($elm$core$String$endsWith, ':summary', item.aE) || A2($elm$core$String$endsWith, ':body', item.aE)))) {
 				return A2(
 					$elm$html$Html$p,
 					_List_fromArray(
@@ -12872,9 +12872,9 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 			} else {
 				if (popup && (A2(
 					$elm$core$List$member,
-					snapshot.e,
+					snapshot.d,
 					_List_fromArray(
-						['system', 'files'])) && A2($elm$core$String$endsWith, ':state', item.aE))) {
+						['system', 'files', 'jump'])) && A2($elm$core$String$endsWith, ':state', item.aE))) {
 					return A2(
 						$elm$html$Html$p,
 						_List_fromArray(
@@ -12883,7 +12883,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 								$elm$html$Html$Attributes$id(item.R),
 								A2(
 								$elm$html$Html$Attributes$attribute,
-								(snapshot.e === 'files') ? 'data-files-content' : 'data-system-content',
+								(snapshot.d === 'jump') ? 'data-jump-content' : ((snapshot.d === 'files') ? 'data-files-content' : 'data-system-content'),
 								item.aE)
 							]),
 						_List_fromArray(
@@ -12902,7 +12902,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 				} else {
 					if (popup && (A2(
 						$elm$core$List$member,
-						snapshot.e,
+						snapshot.d,
 						_List_fromArray(
 							['applications', 'files'])) && _Utils_eq(
 						item.aE,
@@ -12967,9 +12967,9 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 									$elm$html$Html$Attributes$class('launcher-search'),
 									$elm$html$Html$Attributes$id(item.R),
 									$elm$html$Html$Attributes$type_(
-									(snapshot.e === 'files') ? 'text' : 'search'),
+									(snapshot.d === 'files') ? 'text' : 'search'),
 									$elm$html$Html$Attributes$placeholder(
-									(snapshot.e === 'files') ? '/path/to/folder or ~/Documents' : 'Search applications'),
+									(snapshot.d === 'files') ? '/path/to/folder or ~/Documents' : 'Search applications'),
 									$elm$html$Html$Attributes$value(item.bS),
 									A2($elm$html$Html$Attributes$attribute, 'aria-label', item.a1),
 									A2($elm$html$Html$Attributes$attribute, 'data-surface-field', item.aE),
@@ -12992,15 +12992,15 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 									A2(
 									$elm$html$Html$Attributes$attribute,
 									'role',
-									(popup && (snapshot.e === 'menu')) ? 'menuitem' : 'button'),
+									(popup && (snapshot.d === 'menu')) ? 'menuitem' : 'button'),
 									A2(
 									$elm$html$Html$Attributes$attribute,
 									'aria-current',
 									(popup && (A2(
 										$elm$core$List$member,
-										snapshot.e,
+										snapshot.d,
 										_List_fromArray(
-											['menu', 'switcher', 'snap', 'settings', 'notifications', 'system', 'files'])) && (item.aQ === 'Selected'))) ? 'true' : 'false')
+											['menu', 'switcher', 'snap', 'settings', 'notifications', 'system', 'files', 'jump'])) && (item.aQ === 'Selected'))) ? 'true' : 'false')
 								]),
 							_List_fromArray(
 								[
@@ -13078,7 +13078,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 					'data-text-scale',
 					$elm$core$String$fromInt(snapshot.Z.bi)),
 					$elm$html$Html$Attributes$class('surface-popup'),
-					A2($elm$html$Html$Attributes$attribute, 'data-mode', snapshot.e),
+					A2($elm$html$Html$Attributes$attribute, 'data-mode', snapshot.d),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-publication',
@@ -13096,7 +13096,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 					_List_fromArray(
 						[
 							$elm$html$Html$text(
-							(snapshot.e === 'applications') ? 'Applications' : ((snapshot.e === 'overview') ? 'Task View' : ((snapshot.e === 'switcher') ? 'Switch windows' : ((snapshot.e === 'snap') ? 'Snap window' : ((snapshot.e === 'files') ? 'Files' : ((snapshot.e === 'system') ? 'System' : ((snapshot.e === 'notifications') ? 'Notifications' : ((snapshot.e === 'settings') ? 'Settings' : ((snapshot.e === 'menu') ? 'Window actions' : 'Choose a window')))))))))
+							(snapshot.d === 'applications') ? 'Applications' : ((snapshot.d === 'overview') ? 'Task View' : ((snapshot.d === 'switcher') ? 'Switch windows' : ((snapshot.d === 'snap') ? 'Snap window' : ((snapshot.d === 'jump') ? 'Application actions' : ((snapshot.d === 'files') ? 'Files' : ((snapshot.d === 'system') ? 'System' : ((snapshot.d === 'notifications') ? 'Notifications' : ((snapshot.d === 'settings') ? 'Settings' : ((snapshot.d === 'menu') ? 'Window actions' : 'Choose a window'))))))))))
 						])),
 					A2(
 					$elm$html$Html$p,
@@ -13109,7 +13109,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 						[
 							$elm$html$Html$text(snapshot.af)
 						])),
-					(snapshot.e === 'overview') ? A2(
+					(snapshot.d === 'overview') ? A2(
 					$elm$html$Html$div,
 					_List_fromArray(
 						[
@@ -13125,7 +13125,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 							A2(
 							$elm$html$Html$Attributes$attribute,
 							'role',
-							(snapshot.e === 'menu') ? 'menu' : 'group')
+							(snapshot.d === 'menu') ? 'menu' : 'group')
 						]),
 					A2(
 						$elm$core$List$map,

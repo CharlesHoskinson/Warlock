@@ -96,7 +96,7 @@ apply message ((Model model) as current) =
         clearChoices application =
             let windows=application.windows
                 shell=windows.shell
-            in {application|filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,choice=Nothing,overview=False,overviewWorkspace=Nothing,switcher=Switcher.cancel (Switcher.generation application.switcher) application.switcher,switcherExpected=Nothing,switcherHistory=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows|picker=Nothing,menus=MenuBridge.retireChoices windows.menus,shell={shell|deferNotifications=False}}}
+            in {application|jumpEntry=Nothing,jumpOpening=False,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,choice=Nothing,overview=False,overviewWorkspace=Nothing,switcher=Switcher.cancel (Switcher.generation application.switcher) application.switcher,switcherExpected=Nothing,switcherHistory=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows|picker=Nothing,menus=MenuBridge.retireChoices windows.menus,shell={shell|deferNotifications=False}}}
         publishDesktop recovery next =
             if next==model.desktop then (Model {model|recovery=recovery},[]) else
             case UInt64.next model.publication of
@@ -173,7 +173,9 @@ update event ((Model model) as current) =
                     _ -> (Model {model | exhausted=True},[])
         NativeDismiss lease ->
             if lease/=model.lease || Surface.mode model.desktop=="closed" then (current,[]) else
-                if model.desktop.filesOpen then
+                if model.desktop.jumpEntry/=Nothing then
+                    Desktop.capture model.desktop |> Maybe.map (\stamp -> apply (Desktop.CloseJumpList stamp) current) |> Maybe.withDefault (current,[])
+                else if model.desktop.filesOpen then
                     Desktop.capture model.desktop |> Maybe.map (\stamp -> apply (Desktop.CloseFiles stamp) current) |> Maybe.withDefault (current,[])
                 else if model.desktop.systemMenuOpen then
                     Desktop.capture model.desktop |> Maybe.map (\stamp -> apply (Desktop.CloseSystemMenu stamp) current) |> Maybe.withDefault (current,[])

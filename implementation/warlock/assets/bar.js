@@ -5376,7 +5376,7 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 				$elm$core$List$member,
 				record.N,
 				_List_fromArray(
-					['closed', 'picker', 'applications', 'menu', 'overview', 'switcher', 'snap', 'settings', 'notifications', 'system', 'files']))) || (((record.N !== 'closed') && _Utils_eq(record.ac, $author$project$UInt64$zero)) || (((record.N === 'closed') && (!$elm$core$List$isEmpty(record.g))) || ((!unique(identities)) || ((!unique(
+					['closed', 'picker', 'applications', 'menu', 'overview', 'switcher', 'snap', 'settings', 'notifications', 'system', 'files', 'jump']))) || (((record.N !== 'closed') && _Utils_eq(record.ac, $author$project$UInt64$zero)) || (((record.N === 'closed') && (!$elm$core$List$isEmpty(record.g))) || ((!unique(identities)) || ((!unique(
 				A2(
 					$elm$core$List$map,
 					function ($) {
@@ -5965,7 +5965,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 					$elm$core$List$member,
 					snapshot.a,
 					_List_fromArray(
-						['system', 'files'])) && A2($elm$core$String$endsWith, ':state', item.I))) {
+						['system', 'files', 'jump'])) && A2($elm$core$String$endsWith, ':state', item.I))) {
 					return A2(
 						$elm$html$Html$p,
 						_List_fromArray(
@@ -5974,7 +5974,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 								$elm$html$Html$Attributes$id(item.o),
 								A2(
 								$elm$html$Html$Attributes$attribute,
-								(snapshot.a === 'files') ? 'data-files-content' : 'data-system-content',
+								(snapshot.a === 'jump') ? 'data-jump-content' : ((snapshot.a === 'files') ? 'data-files-content' : 'data-system-content'),
 								item.I)
 							]),
 						_List_fromArray(
@@ -6091,7 +6091,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 										$elm$core$List$member,
 										snapshot.a,
 										_List_fromArray(
-											['menu', 'switcher', 'snap', 'settings', 'notifications', 'system', 'files'])) && (item.O === 'Selected'))) ? 'true' : 'false')
+											['menu', 'switcher', 'snap', 'settings', 'notifications', 'system', 'files', 'jump'])) && (item.O === 'Selected'))) ? 'true' : 'false')
 								]),
 							_List_fromArray(
 								[
@@ -6187,7 +6187,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 					_List_fromArray(
 						[
 							$elm$html$Html$text(
-							(snapshot.a === 'applications') ? 'Applications' : ((snapshot.a === 'overview') ? 'Task View' : ((snapshot.a === 'switcher') ? 'Switch windows' : ((snapshot.a === 'snap') ? 'Snap window' : ((snapshot.a === 'files') ? 'Files' : ((snapshot.a === 'system') ? 'System' : ((snapshot.a === 'notifications') ? 'Notifications' : ((snapshot.a === 'settings') ? 'Settings' : ((snapshot.a === 'menu') ? 'Window actions' : 'Choose a window')))))))))
+							(snapshot.a === 'applications') ? 'Applications' : ((snapshot.a === 'overview') ? 'Task View' : ((snapshot.a === 'switcher') ? 'Switch windows' : ((snapshot.a === 'snap') ? 'Snap window' : ((snapshot.a === 'jump') ? 'Application actions' : ((snapshot.a === 'files') ? 'Files' : ((snapshot.a === 'system') ? 'System' : ((snapshot.a === 'notifications') ? 'Notifications' : ((snapshot.a === 'settings') ? 'Settings' : ((snapshot.a === 'menu') ? 'Window actions' : 'Choose a window'))))))))))
 						])),
 					A2(
 					$elm$html$Html$p,

@@ -135,3 +135,25 @@ executable, QML root, instance or IPC method. The ELM-UX-033 recording uses the
 actual installed explorer with private HOME/runtime: physical collection choice,
 folder typing and observed reuse pass. Cold startup, minimized/other-workspace
 summoning, accessibility and independent acceptance remain separate obligations.
+
+Application jump lists show the current desktop entry's declared actions and up
+to twelve supported local recent files. Open the first search result's Actions
+control, use an application entry's context menu, or open Application actions
+from a window menu with an unambiguous catalog identity. A pinned application
+with no running window also exposes its jump list through the context menu.
+Recent files must name the exact desktop identity in the native XBEL provider;
+foreign entries, remote URIs and stored bookmark commands supply no actions.
+
+Elm retains immutable action identities and dispatches an explicit selection
+once. Native GIO owns desktop-file commands, document URIs and launch context;
+none are frontend capabilities. The popup closes before submission. Submitted
+reports native handoff, not application readiness; an unknown result persists
+without automatic replay, and Refresh only observes current actions.
+
+ELM-UX-010 has compiled replay/browser/Quint checks, actual GIO/XBEL admission
+checks and a private compositor recording of the two declared actions, an owned
+recent document and their exact native argv. The launcher route was physically
+exercised; additional taskbar routes, assistive technology and independent
+original-scenario acceptance remain separate. Run focused component checks with
+`qa/check-search.py --jump-lists` through the protected CPU launcher and native
+checks with `qa/native-window-feedback.py --jump-lists` through the v2 loop.

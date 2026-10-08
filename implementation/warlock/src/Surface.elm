@@ -5,6 +5,7 @@ import Switcher
 import Pins
 import Settings
 import Notifications
+import JumpList
 import Files
 import SystemMenu
 import MenuBridge
@@ -46,7 +47,8 @@ recoveryPopup model = if recoveryNeeded model then [recoveryControl "control:rec
 
 mode : Desktop.Model -> String
 mode model =
-    if model.filesOpen then "files"
+    if model.jumpEntry/=Nothing then "jump"
+    else if model.filesOpen then "files"
     else if model.systemMenuOpen then "system"
     else if model.notificationsOpen then "notifications"
     else if model.settingsOpen then "settings"
@@ -60,7 +62,20 @@ mode model =
 
 controls : Desktop.Model -> List Control
 controls model =
-    if model.filesOpen then
+    if model.jumpEntry/=Nothing then
+        let scoped message=Desktop.capture model |> Maybe.map message
+            control identity label detail enabled message={id=identity,domId=Desktop.key model (if identity=="control:close" then "jump:close" else identity),label=label,ariaLabel=label,detail=detail,enabled=enabled,message=if enabled then scoped message else Nothing}
+            current=model.jumpList.snapshot |> Maybe.andThen (\snapshot -> if Just snapshot.entry==model.jumpEntry then Just snapshot else Nothing)
+            row snapshot action=
+                let intent=JumpList.intent snapshot action.id
+                in control ("jump:action:"++action.id) action.label (if action.kind=="recent" then "Recent file" else "Application action") (model.jumpExpected==Nothing && JumpList.supported intent model.jumpList) (\stamp -> Desktop.JumpAction stamp intent)
+            title=current |> Maybe.map (\snapshot -> "Actions for "++snapshot.name) |> Maybe.withDefault "Application actions"
+            entries=current |> Maybe.map (\snapshot -> List.map (row snapshot) snapshot.actions) |> Maybe.withDefault []
+        in [control "control:close" "Close application actions" "" True Desktop.CloseJumpList
+           ,control "jump:refresh" "Refresh application actions" "Read actions; never repeat a request" (model.jumpExpected==Nothing) Desktop.RefreshJumpList
+           ,control "jump:title:state" title "" False Desktop.CloseJumpList]
+           ++entries++(if List.isEmpty entries && model.jumpExpected==Nothing then [control "jump:empty:state" "No supported actions or recent files." "" False Desktop.CloseJumpList] else [])
+    else if model.filesOpen then
         let scoped message=Desktop.capture model |> Maybe.map message
             control identity label detail enabled message={id=identity,domId=Desktop.key model (if identity=="control:close" then "files:close" else identity),label=label,ariaLabel=label,detail=detail,enabled=enabled,message=if enabled then scoped message else Nothing}
             ready target=model.filesExpected==Nothing && (model.files.snapshot |> Maybe.map (\snapshot -> Files.supported (Files.intent snapshot target) model.files) |> Maybe.withDefault False)
@@ -196,10 +211,11 @@ controls model =
                    ,pinAction ("pin-left:" ++ identity) ("Move " ++ label ++ " left") "Pin order" (index>0) (\stamp -> Desktop.MovePin stamp identity -1)
                    ,pinAction ("pin-right:" ++ identity) ("Move " ++ label ++ " right") "Pin order" (index<List.length pinIds-1) (\stamp -> Desktop.MovePin stamp identity 1)]
             acknowledge = Launch.uncertain model.launch |> Maybe.map (\token -> {id="control:acknowledge",domId=Desktop.key model "control:acknowledge",label="I checked; allow another launch",ariaLabel="I checked; allow another launch",detail="",enabled=True,message=Just (Desktop.Acknowledge token)}) |> Maybe.map List.singleton |> Maybe.withDefault []
+            jump=entries |> List.head |> Maybe.map (\entry -> {id="jump:open:"++Catalog.id entry.identity,domId=Desktop.key model ("jump:open:"++Catalog.id entry.identity),label="Actions for "++entry.name,ariaLabel="Actions for "++entry.name,detail="Application actions and recent files",enabled=True,message=scoped (\stamp -> Desktop.OpenJumpList stamp (Catalog.id entry.identity))}) |> Maybe.map List.singleton |> Maybe.withDefault []
         in [ {id="control:search",domId="launcher-search",label=model.query,ariaLabel="Search applications",detail="",enabled=True,message=scoped (\stamp -> Desktop.SearchQuery stamp model.query)}
            , {id="control:close",domId=Desktop.key model "control:close",label="Windows",ariaLabel="Close applications and return to windows",detail="",enabled=True,message=scoped Desktop.CloseApplications}
            , {id="control:refresh",domId=Desktop.key model "control:refresh",label="Refresh",ariaLabel="Refresh applications",detail="",enabled=True,message=scoped Desktop.OpenApplications}
-           ] ++ acknowledge ++ pinFirst ++ List.concat (List.indexedMap pinRows pinIds) ++ List.map entryControl entries
+           ] ++ acknowledge ++ jump ++ pinFirst ++ List.concat (List.indexedMap pinRows pinIds) ++ List.map entryControl entries
     else if (MenuBridge.menuSnapshot model.windows.menus).menu/=Nothing then
         case (MenuBridge.menuSnapshot model.windows.menus).menu of
             Nothing -> []
@@ -213,7 +229,13 @@ controls model =
                         model.windows.shell.geometry |> Maybe.andThen (\geometry -> Snap.open geometry (Provider.incarnation provider))
                             |> Maybe.map (\_ -> {id="control:snap-open",domId=prefix++"snap",label="Snap window",ariaLabel="Open snapping",detail="",enabled=ready,
                                 message=if ready then Desktop.capture model |> Maybe.map (\stamp -> Desktop.OpenSnap stamp (Provider.incarnation provider)) else Nothing}))
-                in {id="control:menu-close",domId=prefix ++ "close",label="Close",ariaLabel="Close window actions",detail="",enabled=True,message=Just (Desktop.Window (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)))} :: List.indexedMap row menu.items ++ (snap |> Maybe.map List.singleton |> Maybe.withDefault []) ++ recoveryPopup model
+                    applicationActions = MenuBridge.currentProvider model.windows.menus |> Maybe.andThen (\provider ->
+                        model.applications |> Maybe.map Catalog.entries |> Maybe.withDefault []
+                            |> List.filter (\entry -> Desktop.pinGroups (Catalog.id entry.identity) model |> List.any (\group -> List.any (\family -> family.root==Provider.incarnation provider) group.families))
+                            |> (\matches -> case matches of
+                                [entry] -> Just {id="jump:open:"++Catalog.id entry.identity,domId=prefix++"application-actions",label="Application actions",ariaLabel="Actions for "++entry.name,detail="Declared actions and recent files",enabled=ready,message=if ready then Desktop.capture model |> Maybe.map (\stamp -> Desktop.OpenJumpList stamp (Catalog.id entry.identity)) else Nothing}
+                                _ -> Nothing))
+                in {id="control:menu-close",domId=prefix ++ "close",label="Close",ariaLabel="Close window actions",detail="",enabled=True,message=Just (Desktop.Window (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)))} :: List.indexedMap row menu.items ++ (snap |> Maybe.map List.singleton |> Maybe.withDefault []) ++ (applicationActions |> Maybe.map List.singleton |> Maybe.withDefault []) ++ recoveryPopup model
     else
         case model.windows.picker of
             Just picker ->
@@ -274,7 +296,8 @@ barControls model =
 
 notice : Desktop.Model -> String
 notice model =
-    if model.filesOpen then (if model.filesExpected/=Nothing then "Reading Files state…" else model.files.notice)
+    if model.jumpEntry/=Nothing then (if model.jumpExpected/=Nothing then "Reading application actions…" else model.jumpList.notice)
+    else if model.filesOpen then (if model.filesExpected/=Nothing then "Reading Files state…" else model.files.notice)
     else if model.systemMenuOpen then (if model.systemMenuExpected/=Nothing then "Reading native system state…" else if model.systemMenuConfirmation/=Nothing then "Confirm or cancel the requested system change." else model.systemMenu.notice)
     else if model.notificationsOpen then (if model.notificationsExpected/=Nothing then "Loading notifications…" else model.notifications.notice)
     else if model.settingsOpen then (if model.settingsExpected/=Nothing then "Loading settings…" else model.settings.notice)
@@ -338,7 +361,7 @@ packet : Counter -> Counter -> Desktop.Model -> E.Value
 packet publication lease model =
     let
         encode control = E.object [("id",E.string control.id),("domId",E.string control.domId),("label",E.string control.label),("ariaLabel",E.string control.ariaLabel),("detail",E.string control.detail),("enabled",E.bool (control.enabled && control.message/=Nothing))]
-    in E.object [("surfaceProtocol",E.int 2),("appearance",Settings.encodeValues (model.settings.snapshot |> Maybe.map .values |> Maybe.withDefault Settings.defaults)),("publication",E.string (UInt64.string publication)),("lease",E.string (UInt64.string lease)),("mode",E.string (mode model)),("status",E.string ((notice model)++(if not model.filesOpen && (model.files.pending/=Nothing || String.startsWith "Files:" model.files.notice) then " · "++model.files.notice else ""))),("bar",E.list encode (barControls model)),("popup",E.list encode (controls model))]
+    in E.object [("surfaceProtocol",E.int 2),("appearance",Settings.encodeValues (model.settings.snapshot |> Maybe.map .values |> Maybe.withDefault Settings.defaults)),("publication",E.string (UInt64.string publication)),("lease",E.string (UInt64.string lease)),("mode",E.string (mode model)),("status",E.string ((notice model)++(if not model.filesOpen && (model.files.pending/=Nothing || String.startsWith "Files:" model.files.notice) then " · "++model.files.notice else "")++(if model.jumpEntry==Nothing && (model.jumpList.pending/=Nothing || String.startsWith "Application action:" model.jumpList.notice) then " · "++model.jumpList.notice else ""))),("bar",E.list encode (barControls model)),("popup",E.list encode (controls model))]
 
 resolveAction : Counter -> Counter -> D.Value -> Desktop.Model -> Maybe Desktop.Msg
 resolveAction publication lease raw model =
@@ -384,10 +407,17 @@ resolve publication lease raw model =
                                 let pin=String.dropLeft 8 identity
                                 in if List.member pin (Desktop.pinIdentities model) then Desktop.pinnedGroup pin model else Nothing
                                 else TaskbarShell.groups model.windows |> List.filter (\candidate -> "bar:group:" ++ candidate.key==identity) |> List.head
-                        in (if enabled then group else Nothing) |> Maybe.andThen (\current ->
+                            emptyPin=if enabled && String.startsWith "bar:pin:" identity then
+                                let entryId=String.dropLeft 8 identity
+                                in if List.member entryId (Desktop.pinIdentities model) && List.isEmpty (Desktop.pinGroups entryId model) then model.applications |> Maybe.andThen (Catalog.lookup entryId) |> Maybe.andThen (\_ -> Desktop.capture model |> Maybe.map (\current -> Desktop.OpenJumpList current entryId)) else Nothing
+                                else Nothing
+                        in if group==Nothing then emptyPin else (if enabled then group else Nothing) |> Maybe.andThen (\current ->
                             case current.families of
                                 [family] -> if family.available then Just (Desktop.OpenWindowMenu stamp family.root) else Nothing
                                 _ -> if Taskbar.primary False current.families==Taskbar.Picker then Just (Desktop.Window (TaskbarShell.Primary stamp current.key)) else Nothing)
+                    else if role=="popup" && model.open && String.startsWith "entry:" identity then
+                        let entry=String.dropLeft 6 identity
+                        in model.applications |> Maybe.andThen (Catalog.lookup entry) |> Maybe.andThen (\_ -> Desktop.capture model |> Maybe.map (\current -> Desktop.OpenJumpList current entry))
                     else if role=="popup" && mode model=="picker" then
                         model.windows.picker |> Maybe.andThen (\picker ->
                             if picker.scope/=stamp then Nothing else

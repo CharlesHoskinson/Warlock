@@ -9,6 +9,7 @@ from reconciliation import Reconciliation
 from taskbar_projection import coherent_scene
 from catalog_transport import CatalogTransport
 from notification_service import Service as NotificationService
+from jump_list import Lists as JumpLists
 from explorer import Explorer
 from system_menu import Menu as SystemMenu
 from recovery_journal import RecoveryFailure,guarded
@@ -80,13 +81,16 @@ def event_socket(client):
  except BaseException:connection.close();raise
 
 
-def handle_request(client,catalog,request,recovery,reconciliation,notifications=None,system_menu=None,explorer=None):
+def handle_request(client,catalog,request,recovery,reconciliation,notifications=None,system_menu=None,explorer=None,jump_lists=None):
  if not isinstance(request,dict):raise Refused('Frontend request object')
  kind=request.get('kind')
  if kind=='reconciliation-ready':
   reconciliation.proof_ready(request);return
  if kind in {'catalog-request','application-launch','taskbar-pins-write','shell-settings-request','shell-settings-write'}:
   send(catalog.handle(request));return
+ if kind in {'jump-list-request','jump-list-effect'}:
+  if jump_lists is None:raise Refused('Application actions unavailable')
+  send(jump_lists.read(request,client) if kind=='jump-list-request' else jump_lists.effect(request,client));return
  if kind in {'files-request','files-open'}:
   if explorer is None:raise Refused('Files unavailable')
   send(explorer.read(request,client) if kind=='files-request' else explorer.open(request,client));return
@@ -186,6 +190,7 @@ def main():
   notification_service=lifetime.enter_context(NotificationService())
   system_menu=lifetime.enter_context(SystemMenu())
   explorer=lifetime.enter_context(Explorer())
+  jump_lists=lifetime.enter_context(JumpLists(catalog.authority))
   hello=client.hello()
   recovery=lifetime.enter_context(guarded(lambda:Journal(config['runtime'],config['instance'],client.bound['lifetime'])))
   reconciliation=publish_startup(client,hello,recovery)
@@ -203,7 +208,7 @@ def main():
      if not data:incoming.finish();return 0
      for line in incoming.feed(data):
       request=json.loads(line,object_pairs_hook=unique)
-      handle_request(client,catalog,request,recovery,reconciliation,notification_service,system_menu,explorer)
+      handle_request(client,catalog,request,recovery,reconciliation,notification_service,system_menu,explorer,jump_lists)
       if request.get('kind')=='projection-request':have_snapshot=True;dirty=False
     elif key.data=='notifications':
      notification_service.drain();send(notification_service.observation(client))

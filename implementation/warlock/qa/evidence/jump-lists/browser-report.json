@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "Original two declared actions and owned recent file are shown"
+    },
+    {
+      "name": "Application identity is semantic text and native paths are absent"
+    },
+    {
+      "name": "End reveals owned recent action in a small viewport"
+    },
+    {
+      "name": "Enter submits one current scoped recent action"
+    },
+    {
+      "name": "Home reveals Close"
+    },
+    {
+      "name": "Foreign action absent from current presentation cannot dispatch"
+    },
+    {
+      "name": "Pending disables effects and retains read-only refresh"
+    },
+    {
+      "name": "Unknown visibly persists without enabling replay"
+    },
+    {
+      "name": "Escape closes once through matching physical release"
+    },
+    {
+      "name": "No browser exceptions",
+      "detail": []
+    }
+  ],
+  "captures": [
+    "jump-lists-actions.png"
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "browserExitCode": 0
+}

@@ -1,0 +1,217 @@
+An example execution:
+
+[State 0]
+{
+  actionOwner: 0,
+  effects: 0,
+  owner: 1,
+  queued: (0, 0),
+  revision: 1,
+  spent: Set()
+}
+
+[State 1]
+{
+  actionOwner: 1,
+  effects: 0,
+  owner: 1,
+  queued: (1, 1),
+  revision: 1,
+  spent: Set()
+}
+
+[State 2]
+{
+  actionOwner: 1,
+  effects: 0,
+  owner: 1,
+  queued: (1, 1),
+  revision: 2,
+  spent: Set()
+}
+
+[State 3]
+{
+  actionOwner: 1,
+  effects: 0,
+  owner: 1,
+  queued: (1, 1),
+  revision: 2,
+  spent: Set()
+}
+
+[State 4]
+{
+  actionOwner: 1,
+  effects: 0,
+  owner: 1,
+  queued: (1, 1),
+  revision: 3,
+  spent: Set()
+}
+
+[State 5]
+{
+  actionOwner: 1,
+  effects: 0,
+  owner: 1,
+  queued: (3, 1),
+  revision: 3,
+  spent: Set()
+}
+
+[State 6]
+{
+  actionOwner: 2,
+  effects: 0,
+  owner: 1,
+  queued: (3, 1),
+  revision: 3,
+  spent: Set()
+}
+
+[State 7]
+{
+  actionOwner: 2,
+  effects: 0,
+  owner: 1,
+  queued: (3, 1),
+  revision: 3,
+  spent: Set()
+}
+
+[State 8]
+{
+  actionOwner: 2,
+  effects: 0,
+  owner: 1,
+  queued: (3, 1),
+  revision: 4,
+  spent: Set()
+}
+
+[State 9]
+{
+  actionOwner: 2,
+  effects: 0,
+  owner: 1,
+  queued: (4, 1),
+  revision: 4,
+  spent: Set()
+}
+
+[State 10]
+{
+  actionOwner: 2,
+  effects: 0,
+  owner: 1,
+  queued: (4, 1),
+  revision: 5,
+  spent: Set()
+}
+
+[State 11]
+{
+  actionOwner: 1,
+  effects: 0,
+  owner: 1,
+  queued: (5, 1),
+  revision: 5,
+  spent: Set()
+}
+
+[State 12]
+{
+  actionOwner: 1,
+  effects: 0,
+  owner: 1,
+  queued: (5, 1),
+  revision: 5,
+  spent: Set()
+}
+
+[State 13]
+{
+  actionOwner: 2,
+  effects: 0,
+  owner: 1,
+  queued: (5, 1),
+  revision: 5,
+  spent: Set()
+}
+
+[State 14]
+{
+  actionOwner: 2,
+  effects: 0,
+  owner: 1,
+  queued: (5, 1),
+  revision: 6,
+  spent: Set()
+}
+
+[State 15]
+{
+  actionOwner: 2,
+  effects: 0,
+  owner: 1,
+  queued: (6, 1),
+  revision: 6,
+  spent: Set()
+}
+
+[State 16]
+{
+  actionOwner: 1,
+  effects: 0,
+  owner: 1,
+  queued: (6, 1),
+  revision: 6,
+  spent: Set()
+}
+
+[State 17]
+{
+  actionOwner: 1,
+  effects: 0,
+  owner: 1,
+  queued: (6, 1),
+  revision: 7,
+  spent: Set()
+}
+
+[State 18]
+{
+  actionOwner: 1,
+  effects: 0,
+  owner: 1,
+  queued: (6, 1),
+  revision: 8,
+  spent: Set()
+}
+
+[State 19]
+{
+  actionOwner: 1,
+  effects: 0,
+  owner: 1,
+  queued: (6, 1),
+  revision: 9,
+  spent: Set()
+}
+
+[State 20]
+{
+  actionOwner: 2,
+  effects: 0,
+  owner: 1,
+  queued: (9, 1),
+  revision: 9,
+  spent: Set()
+}
+
+[ok] No violation found (60ms at 1667 traces/second).
+Trace length statistics: max=21, min=21, average=21.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x1351c --backend=typescript to reproduce.
