@@ -79,6 +79,34 @@ it writes nothing and never upgrades acceptance. Use it after compaction or when
 another contributor resumes the slice, then read the referenced original ledger
 and evidence. Global `--record` selects an alternate saved participant record.
 
+`extend` adds source dependencies discovered while implementing the same selected
+behavior. It retains the owner, original requirements/scenarios, start time,
+iterations, failed evidence and progress timer. It does not change `STATE` or
+select another feature. Declare dependencies before editing them:
+
+```sh
+python3 -B plugins/warlock-contributor/scripts/warlock.py extend \
+  --path src/Effects.elm \
+  --reason 'The selected behavior needs its existing effect dispatch route'
+```
+
+Use an actual new dependency for your slice; duplicate paths fail. For a file
+already changed by you, repeat `--adopt-dirty implementation/warlock/EXACT_PATH`
+and supply `--ownership-note`. This is an explicit ownership assertion, not a way
+to take another contributor's draft. An overwritten protected file still fails,
+and unrelated foreign paths stay protected. Paths outside the incremental product
+and symlinks are refused. Record writes use the same lock and atomic replacement
+as `start`/`record`.
+
+Each extension retains the dependency's current hash (or absence) and the point
+in the iteration history where it was added. Declaring an existing file does not
+count as a production fix or reset the no-progress timer. Prior claims retain
+their original source/evidence hashes and become historical for the expanded
+source tuple; a fresh observation must include all declared sources. `handoff`
+and `report` expose the extension history. For adopted edits, use
+`verify-plan --selected` to consider verification of the newly declared bytes.
+Choose a new record for another behavior rather than extending scope indefinitely.
+
 `claim` prints a record-compatible observation packet with the selected original
 oracle, verification obligations, current hashes for every declared source and
 SHA-256 hashes of real evidence files. Supply the actual evidence scope,

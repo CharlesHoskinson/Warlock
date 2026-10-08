@@ -164,6 +164,8 @@ def normalize_slice(root, s, reqs):
         raise ValueError('Slice needs unique product source paths')
     normalized = []
     for name in paths:
+        safe(root, name)  # Reject absolute/escaping inputs before adding the product prefix.
+        name = str(pathlib.Path(name))
         name = name if name.startswith('implementation/warlock/') else 'implementation/warlock/' + name
         p = safe(root, name)
         if not name.startswith('implementation/warlock/') or name.endswith('/') or p.is_dir():
@@ -188,6 +190,55 @@ def authored(name, include_cpp=True):
 
 def product_delta(current, previous, include_cpp=True):
     return any(authored(n, include_cpp) and current[n] != previous.get(n) for n in current)
+
+
+def extension_baseline(record, previous, position):
+    """Include new dependencies without presenting their existing bytes as a fix."""
+    previous = dict(previous)
+    for extension in record.get('pathExtensions', []):
+        if extension['afterIteration'] == position:
+            previous.update(extension['sourceHashes'])
+    return previous
+
+
+def extend_paths(root, record, reqs, state, args):
+    """Explicitly add dependencies to the same behavior, retaining its delivery history."""
+    if not args.reason.strip():
+        raise ValueError('Extension requires a concrete --reason')
+    old = normalize_slice(root, record['slice'], reqs)
+    requested = normalize_slice(root, dict(old, paths=args.path), reqs)['paths']
+    if any(n in old['paths'] for n in requested):
+        raise ValueError('Extension paths must be new to this slice')
+    adopted = list(dict.fromkeys(args.adopt_dirty))
+    if any(n not in requested for n in adopted):
+        raise ValueError('Dirty adoption is restricted to exact new product paths')
+    if adopted and (not args.ownership_note or not args.ownership_note.strip()):
+        raise ValueError('Dirty adoption requires an explicit --ownership-note')
+    snapshot = dirty(root)
+    if any(n not in snapshot for n in adopted):
+        raise ValueError('Adopted path is not currently dirty')
+    if any(n in snapshot and n not in adopted for n in requested):
+        raise ValueError('New dirty dependencies require explicit --adopt-dirty and ownership note')
+    # Check foreign custody before any adoption; an overwritten draft cannot be repaired here.
+    if any(fingerprint(root, n) != h for n, h in record['foreignDirty'].items()):
+        raise ValueError('Protected foreign-dirty path changed; extension cannot override custody')
+    hashes = {n: digest(safe(root, n)) for n in requested}
+    event = {'atUTC': now(), 'afterIteration': len(record['iterations']),
+             'reason': args.reason, 'sourceHashes': hashes,
+             'adoptedDirty': {'paths': adopted, 'ownershipNote': args.ownership_note}}
+    record['slice']['paths'] = old['paths'] + requested
+    record.setdefault('pathExtensions', []).append(event)
+    for n in adopted:
+        record['foreignDirty'].pop(n, None)
+    for iteration in record['iterations']:
+        for claim in iteration.get('claims', []):
+            claim['historicalAfterSliceExtension'] = True
+    mark_historical(root, record)
+    errors, warnings = validate(root, record, reqs, state)
+    if errors:
+        raise ValueError('Cannot extend slice: ' + '; '.join(errors))
+    return {'extension': event, 'slice': record['slice'], 'warnings': warnings,
+            'progress': progress_status(record)}
 
 
 def verdict_key(claim):
@@ -244,7 +295,7 @@ def handoff(root, record, reqs, state):
     s = normalize_slice(root, record['slice'], reqs)
     iterations = record.get('iterations', [])
     last = iterations[-1] if iterations else None
-    previous = last['sourceHashes'] if last else record['sourceHashes']
+    previous = extension_baseline(record, last['sourceHashes'] if last else record['sourceHashes'], len(iterations))
     current = {n: digest(safe(root, n)) for n in s['paths']}
     latest = {}
     for iteration in iterations:
@@ -262,6 +313,7 @@ def handoff(root, record, reqs, state):
                 'recordedDisposition': claim['disposition'] if claim else None,
                 'scope': claim['scope'] if claim else None,
                 'evidenceMatchesCurrentSources': bool(claim) and not claim.get('historicalAfterSourceChange', False)
+                    and not claim.get('historicalAfterSliceExtension', False)
                     and claim['sourceHashes'] == current
                     and all(digest(safe(root, e['path'])) == e['sha256'] for e in claim['evidence']),
                 'missingObservations': claim['missingObservations'] if claim else
@@ -273,6 +325,7 @@ def handoff(root, record, reqs, state):
         'sourceHashes': current,
         'changedSinceLastRecord': [n for n in current if current[n] != previous.get(n)],
         'protectedForeignPaths': sorted(record['foreignDirty']),
+        'pathExtensions': record.get('pathExtensions', []),
         'lastIteration': {k: last[k] for k in ('atUTC', 'outcome', 'summary', 'meaningfulProgress')} if last else None,
         'observations': observations, 'errors': errors, 'warnings': warnings,
         'progress': progress_status(record),
@@ -523,14 +576,17 @@ def contribution_report(root, record, reqs, state):
     packet = handoff(root, record, reqs, state)
     current = packet['sourceHashes']
     selected_dirty = set(dirty_names(root)) & set(current)
+    initial = dict(record['sourceHashes'])
+    for extension in record.get('pathExtensions', []):
+        initial.update(extension['sourceHashes'])
     packet.update(
         reportSchema=1, releaseAccepted=False,
         intendedBehavior=record['slice']['after'],
         observedResult=packet['lastIteration']['summary'] if packet['lastIteration'] else None,
-        selectedChanges=[{'path': name, 'initialSha256': record['sourceHashes'].get(name),
+        selectedChanges=[{'path': name, 'initialSha256': initial.get(name),
                          'currentSha256': sha, 'uncommitted': name in selected_dirty}
                         for name, sha in current.items()
-                        if sha != record['sourceHashes'].get(name) or name in selected_dirty],
+                        if sha != initial.get(name) or name in selected_dirty],
         reportBoundary='Contributor self-attestation for review. Intended behavior is not an observation; '
                        'matching hashes do not establish oracle truth, independent review or release acceptance.')
     return packet
@@ -676,6 +732,30 @@ def validate(root, record, reqs, state):
         errors.append('Dirty adoption exceeds declared product paths')
     if record.get('baseline') != EXPECTED:
         errors.append('Record baseline differs')
+    extensions = record.get('pathExtensions', [])
+    known_paths = set(record['sourceHashes'])
+    last_position = 0
+    for extension in extensions:
+        position = extension.get('afterIteration')
+        if type(position) is not int or not last_position <= position <= len(record.get('iterations', [])):
+            raise ValueError('Invalid extension iteration position')
+        last_position = position
+        hashes = extension.get('sourceHashes')
+        if not isinstance(hashes, dict) or not hashes or known_paths.intersection(hashes):
+            raise ValueError('Extension must identify unique new source paths')
+        if any(n not in s['paths'] or (h is not None and (not isinstance(h, str) or len(h) != 64)) for n, h in hashes.items()):
+            raise ValueError('Invalid extension source baseline')
+        if not isinstance(extension.get('reason'), str) or not extension['reason'].strip():
+            raise ValueError('Extension needs its reason')
+        dt.datetime.fromisoformat(extension['atUTC'])
+        adoption = extension.get('adoptedDirty', {})
+        if not isinstance(adoption.get('paths'), list) or any(n not in hashes for n in adoption['paths']):
+            raise ValueError('Invalid extension dirty adoption')
+        if adoption['paths'] and (not isinstance(adoption.get('ownershipNote'), str) or not adoption['ownershipNote'].strip()):
+            raise ValueError('Extension dirty adoption needs ownership note')
+        known_paths.update(hashes)
+    if extensions and known_paths != set(s['paths']):
+        errors.append('Extension history does not cover declared source paths')
     if not record.get('explicitSliceOverride') and s['id'] != state['activeSlice']['id']:
         errors.append('Live selected slice changed; restart deliberately or explicitly select a slice')
     for name, old in record['foreignDirty'].items():
@@ -686,7 +766,7 @@ def validate(root, record, reqs, state):
             continue
         if name.startswith('implementation/'):
             errors.append('Unowned or archival implementation change: ' + name)
-    for item in record.get('iterations', []):
+    for index, item in enumerate(record.get('iterations', [])):
         for c in item.get('claims', []):
             if c.get('disposition') not in ('unadjudicated', 'missing', 'implemented-unverified', 'partial', 'failed', 'blocked', 'accepted'):
                 errors.append('Unknown scenario disposition')
@@ -728,12 +808,20 @@ def validate(root, record, reqs, state):
                         warnings.append('Historical evidence source changed; current acceptance invalidated: ' + name)
                     else:
                         errors.append('Stale or irrelevant claim source: ' + name)
-            if set(c['sourceHashes']) != set(s['paths']):
+            later_paths = {n for e in extensions if e['afterIteration'] > index for n in e['sourceHashes']}
+            historical_scope = bool(later_paths) and c.get('historicalAfterSliceExtension') is True
+            expected_sources = set(s['paths']) - later_paths if historical_scope else set(s['paths'])
+            if set(c['sourceHashes']) != expected_sources:
                 errors.append('Claim must identify all selected relevant sources')
+            if historical_scope:
+                warnings.append('Historical evidence predates added dependencies; current acceptance invalidated.')
+            elif c.get('historicalAfterSliceExtension'):
+                errors.append('Claim extension marker lacks a later source extension')
     iterations = record.get('iterations', [])
     previous = record['sourceHashes']
     seen_verdicts = set()
-    for item in iterations:
+    for index, item in enumerate(iterations):
+        previous = extension_baseline(record, previous, index)
         if item.get('progressPolicy', 1) not in (1, 2):
             errors.append('Unknown iteration progress policy')
         expected_progress = (item['outcome'] == 'production-fix' and product_delta(item['sourceHashes'], previous, item.get('progressPolicy', 1) == 2)) or (item['outcome'] == 'scenario-verdict' and any(verdict_key(c) not in seen_verdicts for c in item.get('claims', [])))
@@ -758,6 +846,11 @@ def main():
     subs.add_parser('doctor')
     subs.add_parser('self-test', help='Run plugin regression tests in isolated fixtures; no GUI campaigns')
     subs.add_parser('handoff')
+    extension = subs.add_parser('extend', help='Add dependencies to the same owned slice without resetting its history or timer')
+    extension.add_argument('--path', action='append', required=True)
+    extension.add_argument('--reason', required=True)
+    extension.add_argument('--adopt-dirty', action='append', default=[], metavar='PATH')
+    extension.add_argument('--ownership-note')
     verification = subs.add_parser('verify-plan', help='Read-only suggestions for proportional protected checks; never executes QA')
     verification.add_argument('--selected', action='store_true', help='Plan declared paths before edits; default considers only changes since last record')
     report = subs.add_parser('report', help='Read-only delivery note from the participant record; no acceptance inferred')
@@ -810,7 +903,7 @@ def main():
         if args.command == 'check' and args.base_ref:
             args.base_ref = git(root, 'rev-parse', '--verify', '--end-of-options', args.base_ref + '^{commit}').decode().strip()
         path = safe(root, args.record)
-        if args.command in ('start', 'record'):
+        if args.command in ('start', 'record', 'extend'):
             if git_run(root, 'check-ignore', '-q', '--', args.record).returncode != 0:
                 raise ValueError('Record must be Git-ignored; add its directory to .gitignore or local .git/info/exclude')
             path.parent.mkdir(parents=True, exist_ok=True)
@@ -832,10 +925,15 @@ def main():
                 'requirement': i, 'verification': reqs[i]['verification'],
                 'scenarios': [x for x in reqs[i]['scenarios'] if x['name'] in s['scenarios']]
             } for i in s['requirements']])
-        elif args.command in ('handoff', 'claim', 'review', 'report', 'verify-plan'):
+        elif args.command in ('handoff', 'claim', 'review', 'report', 'verify-plan', 'extend'):
             if not path.exists():
                 raise ValueError('No participant record to resume; inspect status and start an owned slice first')
-            if args.command == 'verify-plan':
+            if args.command == 'extend':
+                record = read(path)
+                result.update(extend_paths(root, record, reqs, state, args))
+                write_record(path, record)
+                result['record'] = args.record
+            elif args.command == 'verify-plan':
                 record = read(path)
                 record['_recordPath'] = args.record
                 result.update(verification_plan(root, record, reqs, state, args.selected))
@@ -906,7 +1004,7 @@ def main():
                     if not c['evidence'] or not c['reviewer'] or not c['scope'] or not c['disposition']:
                         raise ValueError('Claims require evidence, scope, reviewer and disposition')
                 hashes = {n: digest(safe(root,n)) for n in record['slice']['paths']}
-                previous = record['iterations'][-1]['sourceHashes'] if record['iterations'] else record['sourceHashes']
+                previous = extension_baseline(record, record['iterations'][-1]['sourceHashes'] if record['iterations'] else record['sourceHashes'], len(record['iterations']))
                 seen_verdicts = {verdict_key(c) for i in record['iterations'] for c in i.get('claims', [])}
                 progress = (args.outcome == 'production-fix' and product_delta(hashes, previous)) or (args.outcome == 'scenario-verdict' and any(verdict_key(c) not in seen_verdicts for c in claims))
                 record['iterations'].append({'atUTC': now(), 'outcome': args.outcome, 'summary': args.summary, 'sourceHashes': hashes, 'meaningfulProgress': progress, 'progressPolicy': 2, 'claims': claims, 'sourceRevision': git(root, 'rev-parse', 'HEAD').decode().strip()})
