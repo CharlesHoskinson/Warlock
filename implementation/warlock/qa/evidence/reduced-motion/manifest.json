@@ -1,0 +1,836 @@
+{
+  "schema": 1,
+  "owner": "root-reduced-motion",
+  "observedUTC": "2026-10-08T19:31:40.670121+00:00",
+  "requirements": [
+    "ELM-UX-022"
+  ],
+  "scenarios": [
+    "ux-022"
+  ],
+  "originals": {
+    "id": "ELM-UX-022",
+    "capability": "elm-shell-experience",
+    "pattern": "state-driven",
+    "ears": "WHILE reduced motion is enabled, the Elm desktop SHALL use the documented reduced-motion transition profile for minimize, restore and shell overlays.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: recorded transitions match approved reduced-motion profile.",
+    "legacyEvidence": "window-behavior-spec/accessibility.qnt",
+    "task": "Define reduced-motion profile and retain native motion receipts.",
+    "scenarios": [
+      {
+        "name": "ux-022",
+        "given": "reduced motion setting is enabled",
+        "when": "window minimizes and restores",
+        "then": "recorded transitions match approved reduced-motion profile"
+      }
+    ],
+    "source": "docs/elm-roadmap/contributions/experience.json",
+    "status": "proposed",
+    "taskId": "P4-ELM-UX-022",
+    "accountableOwnerRole": "Desktop experience lead",
+    "verifierRole": "Independent acceptance reviewer"
+  },
+  "scope": "Native portal/GTK observation is a typed immutable Elm input with acknowledged per-binding native profile and stale/binding guards. Actual original physical minimize/restore, MRU/desktop succession, native settled geometry/alpha traces, actual native Task View reduced profile with zero WebKit animation, exact five window commands, pixels, real GTK keyboard recipients and normal cleanup pass with compositor animations enabled. Independent original acceptance remains open.",
+  "sourceBaseRevision": "75fe9303b88b45766438223154f097b6a9515e90",
+  "sourceHashes": {
+    "implementation/warlock/src/Motion.elm": "a42a26af05dc7d5adf19f7abbd2275e25224e28240d36be9a3d68fee761f7ce2",
+    "implementation/warlock/src/Desktop.elm": "19133b869b7580039d2e7d78003108f6dfe295fd6681cb94f77d1a0026dc74a1",
+    "implementation/warlock/src/Surface.elm": "44c7a34097cc025f664e0721ef45b2a719f5b8fdb9c98ae0b1879063dbe36953",
+    "implementation/warlock/src/SurfaceRenderer.elm": "c997f882cfbcd31c1afac3d95b07a6b64c08931f5fca9b2d2ec472980125cf39",
+    "implementation/warlock/native/motion-preference.h": "9e288173ae5ecc6a97d89bb03f577b988f5e7e0a1ef380c4667d7abae0fbc2f7",
+    "implementation/warlock/native/shared-host.c": "e5b9284eaeca3449c84b89be8ae545d893544dcb1c673b06b0e2d3c9567b77f1",
+    "implementation/warlock/native/authority.cpp": "ea9035524a37855d7e881a2bfd664049c7839c1a83c95c8b1b0650accf129349",
+    "implementation/warlock/native/motion-profile.inc": "d9c4dad886ccbce848a106dc3105a4447003cc752de03900b7f2c3770ff80861",
+    "implementation/warlock/native/surface.h": "80e3466a1b982e150e9d3c31e4cb4b360e66ce89d3265783c8f488bbefaea6d1",
+    "implementation/warlock/adapter/effect_endpoint.py": "46ff92e626d6f8a7b449adbeb336db28fbf9000f4a7d5f6e5c3f3eb35a3a61b9",
+    "implementation/warlock/adapter/daemon.py": "c7636cdeea9f3bb429d65905a4133cd9603e97925a072260dfc119eb2e09e8c2",
+    "implementation/warlock/assets/shell.css": "aedf36e8f12622265615bec01a027e987c374edd6f2d9f8874173d67a5e60762",
+    "implementation/warlock/qa/MotionReplay.elm": "ee2c9469943f03306f46aa3665c6b69adae846696baae97449301b08b497658f",
+    "implementation/warlock/qa/check-motion.py": "99a3590570d8e6671dae44f2241f5a61db939aa5c2d45519bf43b2c700add573",
+    "implementation/warlock/qa/check-search.py": "a00a25cd3d841e63ad93c513ff16503194d8061283f26b591694411efe3cefb9",
+    "implementation/warlock/qa/check-native-authority.py": "d14a58e448b0e669e078571b7cc365c618b33ecc474c573634e8d96716eacc51",
+    "implementation/warlock/qa/native-window-feedback.py": "a8a5e0ae921a9cc3e6960d30d9ed68f05e1289308ef983b929ed15d03e081b06",
+    "implementation/warlock/README.md": "e6dae2d00b2748cf335c18b233a1fb0c04276c50b86d44d24ad8f38a9caf999f",
+    "implementation/warlock/assets/elm.js": "722af3176b7ff065cd1d01241356df8b9fe526d80ca928f72ac981436c0a3da4",
+    "implementation/warlock/assets/bar.js": "676469d827783ed1e60e6a3e578ca79153b3e135e550f1cf95fd9d01a1db5683",
+    "implementation/warlock/assets/popup.js": "f8d0c7ee2a286a9b41054e615ec97f9ef43c6165562821812bfc59ee65c17c06",
+    "implementation/warlock/qa/current-search-build.json": "78980c5dce16ecba56b68cd55caead2093345112a85d4489a8082770430bb960",
+    "implementation/warlock/qa/current-native-pair.json": "58a283ee6cdb8ef63f5c27526477052bd52a439b1b72a97ffde756658041bd75",
+    "implementation/warlock/native/host.c": "d895e5f182c23cae7e3e76d8a256708c91b6540720d2a396770c88d4feb1b981",
+    "implementation/warlock/assets/bar-adapter.js": "dc9f34db9fd382e4b736b0c4a50a641b1e472caadcd6c7da3bb79990e0ea88da",
+    "implementation/warlock/assets/popup-adapter.js": "75ecbb808dc1431aa1aea9e879a93701579e0f39784cdd7c529ae006b8ed5de6",
+    "implementation/warlock/qa/motion-profile.qnt": "9e85dbfaf513035fe072097cf619693a41a0d2a65bc22b29054c27cb3dd5e638"
+  },
+  "sourceTuple": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+      "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791486715715656135/elm-window-geometry-authority.so",
+      "sha256": "84e4b3b5b2e0595daab8e85328319d10763f98aa8a1a2da679c61447741f123e"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    },
+    "componentReport": "implementation/warlock/qa/runs/reduced-motion-1791487548435914937/report.json",
+    "componentReportSHA256": "a6bd607d116a13cfc025796e61b50546b6e82a1175bfae86085bea57ca3f9795",
+    "authorityReport": "implementation/warlock/qa/runs/native-authority-1791486715715656135/report.json",
+    "authorityReportSHA256": "00dd0de3d0ac89b3e515cd0176b32ffee8053efa8ce9bf1f6184e8a4b7170bef"
+  },
+  "runnerSHA256": "a8a5e0ae921a9cc3e6960d30d9ed68f05e1289308ef983b929ed15d03e081b06",
+  "nativeCampaignPassed": true,
+  "ownerObservedOriginalOracle": true,
+  "nativeAcceptance": false,
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "missingObservations": [
+    "Independent original ux-022 review against the exact committed source/core/plugin/toolchain tuple.",
+    "Native live preference changes during transitions, all-overlay/style/output/device fixtures and applicable AT are separate original UI014/UI018 and release obligations; this campaign covers static GTK reduced motion and Task View on one 800x600 output.",
+    "Private portal protocol/lifecycle is actual C/private-D-Bus component evidence; the native GUI campaign uses the actual GTK property selected in an explicit QA-only host, because the unchanged protected launcher forces the in-memory settings backend."
+  ],
+  "reviewerDisposition": "Owner-observed original replay and native recording; independent original scenario and requirement review pending.",
+  "observedChecks": {
+    "replay": {
+      "preferenceProducesOneProfileConfiguration": true,
+      "configurationHasNoWindowEffect": true,
+      "awaitAcknowledgementBeforeGesture": true,
+      "wrongRequestCannotApplyProfile": true,
+      "matchingAcknowledgementAppliesProfile": true,
+      "duplicateAcknowledgementHasNoCommands": true,
+      "staleObservationCannotChangeProfile": true,
+      "changedPreferenceUsesOneConfiguration": true,
+      "newPreferenceWaitsForExistingConfiguration": true,
+      "oldAcknowledgementConfiguresLatestPreferenceOnce": true,
+      "disconnectRetiresProfileReceipt": true,
+      "nativePreferenceSurvivesBindingRetirement": true,
+      "malformedProfileRejected": true,
+      "surfaceCarriesTypedProfile": true
+    },
+    "preferenceObserver": {
+      "actualReadOneOverridesFallback": true,
+      "serial-1": true,
+      "actualSettingChangedUpdatesPreference": true,
+      "serial-3": true,
+      "serial-4": true,
+      "unknownPortalValueMeansNoPreference": true,
+      "serial-6": true,
+      "serial-7": true,
+      "malformedPortalValueFallsBack": true,
+      "serial-9": true,
+      "ownerLossRetiresPortalPreference": true,
+      "newOwnerIsReadAgain": true,
+      "observerNormalExit": true,
+      "strictTypedObservationFrames": true
+    },
+    "native": [
+      "OwningPluginLoads",
+      "PeerFixtureFloats",
+      "PeerFixtureSize",
+      "PeerFixturePosition",
+      "FixtureFloats",
+      "FixtureSize",
+      "FixturePosition",
+      "FixtureFocus",
+      "MotionTraceHasActualNativePeer",
+      "ActualNativeGtkReducedMotionObserved",
+      "NativeProfileAcknowledgesElmReducedPreference",
+      "DistinctSingleFamilyApplicationIdentities",
+      "NativeInactiveMemberBeforePrimary",
+      "InactiveMemberHasOpenCue",
+      "PointerTargetWithinActualViewport",
+      "feedback-helper-1NormalExit",
+      "InactiveActivationExactlyOneBoundEffect",
+      "InactiveActivationNativeCommittedReceipt",
+      "InactiveActivationNativeMotionProfileIsInstant",
+      "InactiveActivationPreservesFamilyMembership",
+      "InactiveActivationAdmittedStateCueIsVisible",
+      "feedback-helper-2NormalExit",
+      "InactiveActivationActualWindowPresentation",
+      "InactiveActivationActualStateCueTextPixels",
+      "feedback-helper-3NormalExit",
+      "InactiveActivationActualKeyboardRecipient",
+      "PointerTargetWithinActualViewport",
+      "feedback-helper-4NormalExit",
+      "ActiveMinimizeToMRUExactlyOneBoundEffect",
+      "ActiveMinimizeToMRUNativeCommittedReceipt",
+      "ActiveMinimizeToMRUNativeMotionProfileIsInstant",
+      "ActiveMinimizeToMRUPreservesFamilyMembership",
+      "ActiveMinimizeToMRUAdmittedStateCueIsVisible",
+      "feedback-helper-5NormalExit",
+      "ActiveMinimizeToMRUActualWindowPresentation",
+      "ActiveMinimizeToMRUActualStateCueTextPixels",
+      "feedback-helper-6NormalExit",
+      "ActiveMinimizeToMRUActualKeyboardRecipient",
+      "PointerTargetWithinActualViewport",
+      "feedback-helper-7NormalExit",
+      "MinimizedRestoreExactlyOneBoundEffect",
+      "MinimizedRestoreNativeCommittedReceipt",
+      "MinimizedRestoreNativeMotionProfileIsInstant",
+      "MinimizedRestorePreservesFamilyMembership",
+      "MinimizedRestoreAdmittedStateCueIsVisible",
+      "feedback-helper-8NormalExit",
+      "MinimizedRestoreActualWindowPresentation",
+      "MinimizedRestoreActualStateCueTextPixels",
+      "feedback-helper-9NormalExit",
+      "MinimizedRestoreActualKeyboardRecipient",
+      "ControlledNativeFixtureminimize",
+      "OnlyMinimizedCompanionRemains",
+      "PointerTargetWithinActualViewport",
+      "feedback-helper-10NormalExit",
+      "ActiveMinimizeToDesktopExactlyOneBoundEffect",
+      "ActiveMinimizeToDesktopNativeCommittedReceipt",
+      "ActiveMinimizeToDesktopNativeMotionProfileIsInstant",
+      "ActiveMinimizeToDesktopPreservesFamilyMembership",
+      "ActiveMinimizeToDesktopAdmittedStateCueIsVisible",
+      "feedback-helper-11NormalExit",
+      "ActiveMinimizeToDesktopActualWindowPresentation",
+      "ActiveMinimizeToDesktopActualStateCueTextPixels",
+      "feedback-helper-12NormalExit",
+      "NoEligibleSuccessorDoesNotSendKeysToMinimizedFamily",
+      "PointerTargetWithinActualViewport",
+      "feedback-helper-13NormalExit",
+      "DesktopRestoreExactlyOneBoundEffect",
+      "DesktopRestoreNativeCommittedReceipt",
+      "DesktopRestoreNativeMotionProfileIsInstant",
+      "DesktopRestorePreservesFamilyMembership",
+      "DesktopRestoreAdmittedStateCueIsVisible",
+      "feedback-helper-14NormalExit",
+      "DesktopRestoreActualWindowPresentation",
+      "DesktopRestoreActualStateCueTextPixels",
+      "feedback-helper-15NormalExit",
+      "DesktopRestoreActualKeyboardRecipient",
+      "OrdinaryPrimaryActionsNeverLaunchDuplicates",
+      "NativeTaskbarProjectsInstantProfile",
+      "TaskViewOpenerPhysicallyVisible",
+      "PointerTargetWithinActualViewport",
+      "feedback-helper-16NormalExit",
+      "ActualNativeOverlayUsesReducedProfileWithoutDecorativeMotion",
+      "feedback-helper-17NormalExit",
+      "feedback-helper-18NormalExit",
+      "ReducedMotionOverlayDismissalCreatesNoWindowEffect",
+      "NoScratchpadOrWorkspaceTransfer",
+      "EveryRegisteredHelperExitedNormally",
+      "OwnedClientNormalExit",
+      "OwnedClientNormalExit",
+      "OwnedClientNormalExit",
+      "OwningPluginUnloads"
+    ]
+  },
+  "nativeMotionPreference": {
+    "path": "/run/user/1000/wqa/c6a4/motion-config/gtk-3.0/settings.ini",
+    "sha256": "9baea6af27ba69359d73519d84588805a0766832b61bfc7a9ef96664912b40bc",
+    "mainDesktopUnchanged": true,
+    "compositorAnimationsEnabled": true,
+    "fixture": "Actual GtkSettings gtk-enable-animations property selected in the QA-only host because the unchanged protected launcher forces GSETTINGS_BACKEND=memory; no fake motion frame."
+  },
+  "motionPreferenceObservations": [
+    {
+      "protocolVersion": 3,
+      "kind": "host-motion-preference",
+      "serial": "1",
+      "profile": "reduced",
+      "source": "gtk"
+    }
+  ],
+  "motionProfileReceipts": [
+    {
+      "protocolVersion": 3,
+      "kind": "motion-profile",
+      "binding": {
+        "lifetime": "3568856137541462090",
+        "session": "3",
+        "frontend": "1"
+      },
+      "requestId": "3",
+      "profile": "reduced"
+    }
+  ],
+  "motionTransitionReceipts": [
+    {
+      "binding": {
+        "lifetime": "3568856137541462090",
+        "session": "3",
+        "frontend": "1"
+      },
+      "intent": {
+        "request": "1",
+        "generation": "1",
+        "incarnation": "2",
+        "operation": "activate",
+        "context": {
+          "lifetime": "3568856137541462090",
+          "epoch": "1",
+          "output": "1",
+          "revision": "1"
+        }
+      },
+      "profile": "reduced",
+      "settled": true
+    },
+    {
+      "binding": {
+        "lifetime": "3568856137541462090",
+        "session": "3",
+        "frontend": "1"
+      },
+      "intent": {
+        "request": "2",
+        "generation": "2",
+        "incarnation": "2",
+        "operation": "minimize",
+        "context": {
+          "lifetime": "3568856137541462090",
+          "epoch": "1",
+          "output": "1",
+          "revision": "2"
+        }
+      },
+      "profile": "reduced",
+      "settled": true
+    },
+    {
+      "binding": {
+        "lifetime": "3568856137541462090",
+        "session": "3",
+        "frontend": "1"
+      },
+      "intent": {
+        "request": "3",
+        "generation": "3",
+        "incarnation": "2",
+        "operation": "restore",
+        "context": {
+          "lifetime": "3568856137541462090",
+          "epoch": "1",
+          "output": "1",
+          "revision": "3"
+        }
+      },
+      "profile": "reduced",
+      "settled": true
+    },
+    {
+      "binding": {
+        "lifetime": "3568856137541462090",
+        "session": "3",
+        "frontend": "1"
+      },
+      "intent": {
+        "request": "4",
+        "generation": "4",
+        "incarnation": "2",
+        "operation": "minimize",
+        "context": {
+          "lifetime": "3568856137541462090",
+          "epoch": "1",
+          "output": "1",
+          "revision": "5"
+        }
+      },
+      "profile": "reduced",
+      "settled": true
+    },
+    {
+      "binding": {
+        "lifetime": "3568856137541462090",
+        "session": "3",
+        "frontend": "1"
+      },
+      "intent": {
+        "request": "5",
+        "generation": "5",
+        "incarnation": "2",
+        "operation": "restore",
+        "context": {
+          "lifetime": "3568856137541462090",
+          "epoch": "1",
+          "output": "1",
+          "revision": "6"
+        }
+      },
+      "profile": "reduced",
+      "settled": true
+    }
+  ],
+  "physicalWindowReceipts": [
+    {
+      "stage": "InactiveActivation",
+      "request": {
+        "protocolVersion": 3,
+        "kind": "window-effect",
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "3568856137541462090",
+          "session": "3",
+          "frontend": "1"
+        },
+        "intent": {
+          "request": "1",
+          "generation": "1",
+          "incarnation": "2",
+          "operation": "activate",
+          "context": {
+            "lifetime": "3568856137541462090",
+            "epoch": "1",
+            "output": "1",
+            "revision": "1"
+          }
+        }
+      },
+      "receipt": {
+        "protocolVersion": 3,
+        "kind": "effect-outcome",
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "3568856137541462090",
+          "session": "3",
+          "frontend": "1"
+        },
+        "intent": {
+          "request": "1",
+          "generation": "1",
+          "incarnation": "2",
+          "operation": "activate",
+          "context": {
+            "lifetime": "3568856137541462090",
+            "epoch": "1",
+            "output": "1",
+            "revision": "1"
+          }
+        },
+        "status": "Committed",
+        "reason": "applied",
+        "revision": "2",
+        "outputGeneration": "1"
+      }
+    },
+    {
+      "stage": "ActiveMinimizeToMRU",
+      "request": {
+        "protocolVersion": 3,
+        "kind": "window-effect",
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "3568856137541462090",
+          "session": "3",
+          "frontend": "1"
+        },
+        "intent": {
+          "request": "2",
+          "generation": "2",
+          "incarnation": "2",
+          "operation": "minimize",
+          "context": {
+            "lifetime": "3568856137541462090",
+            "epoch": "1",
+            "output": "1",
+            "revision": "2"
+          }
+        }
+      },
+      "receipt": {
+        "protocolVersion": 3,
+        "kind": "effect-outcome",
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "3568856137541462090",
+          "session": "3",
+          "frontend": "1"
+        },
+        "intent": {
+          "request": "2",
+          "generation": "2",
+          "incarnation": "2",
+          "operation": "minimize",
+          "context": {
+            "lifetime": "3568856137541462090",
+            "epoch": "1",
+            "output": "1",
+            "revision": "2"
+          }
+        },
+        "status": "Committed",
+        "reason": "applied",
+        "revision": "3",
+        "outputGeneration": "1"
+      }
+    },
+    {
+      "stage": "MinimizedRestore",
+      "request": {
+        "protocolVersion": 3,
+        "kind": "window-effect",
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "3568856137541462090",
+          "session": "3",
+          "frontend": "1"
+        },
+        "intent": {
+          "request": "3",
+          "generation": "3",
+          "incarnation": "2",
+          "operation": "restore",
+          "context": {
+            "lifetime": "3568856137541462090",
+            "epoch": "1",
+            "output": "1",
+            "revision": "3"
+          }
+        }
+      },
+      "receipt": {
+        "protocolVersion": 3,
+        "kind": "effect-outcome",
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "3568856137541462090",
+          "session": "3",
+          "frontend": "1"
+        },
+        "intent": {
+          "request": "3",
+          "generation": "3",
+          "incarnation": "2",
+          "operation": "restore",
+          "context": {
+            "lifetime": "3568856137541462090",
+            "epoch": "1",
+            "output": "1",
+            "revision": "3"
+          }
+        },
+        "status": "Committed",
+        "reason": "applied",
+        "revision": "4",
+        "outputGeneration": "1"
+      }
+    },
+    {
+      "stage": "ActiveMinimizeToDesktop",
+      "request": {
+        "protocolVersion": 3,
+        "kind": "window-effect",
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "3568856137541462090",
+          "session": "3",
+          "frontend": "1"
+        },
+        "intent": {
+          "request": "4",
+          "generation": "4",
+          "incarnation": "2",
+          "operation": "minimize",
+          "context": {
+            "lifetime": "3568856137541462090",
+            "epoch": "1",
+            "output": "1",
+            "revision": "5"
+          }
+        }
+      },
+      "receipt": {
+        "protocolVersion": 3,
+        "kind": "effect-outcome",
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "3568856137541462090",
+          "session": "3",
+          "frontend": "1"
+        },
+        "intent": {
+          "request": "4",
+          "generation": "4",
+          "incarnation": "2",
+          "operation": "minimize",
+          "context": {
+            "lifetime": "3568856137541462090",
+            "epoch": "1",
+            "output": "1",
+            "revision": "5"
+          }
+        },
+        "status": "Committed",
+        "reason": "applied",
+        "revision": "6",
+        "outputGeneration": "1"
+      }
+    },
+    {
+      "stage": "DesktopRestore",
+      "request": {
+        "protocolVersion": 3,
+        "kind": "window-effect",
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "3568856137541462090",
+          "session": "3",
+          "frontend": "1"
+        },
+        "intent": {
+          "request": "5",
+          "generation": "5",
+          "incarnation": "2",
+          "operation": "restore",
+          "context": {
+            "lifetime": "3568856137541462090",
+            "epoch": "1",
+            "output": "1",
+            "revision": "6"
+          }
+        }
+      },
+      "receipt": {
+        "protocolVersion": 3,
+        "kind": "effect-outcome",
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "3568856137541462090",
+          "session": "3",
+          "frontend": "1"
+        },
+        "intent": {
+          "request": "5",
+          "generation": "5",
+          "incarnation": "2",
+          "operation": "restore",
+          "context": {
+            "lifetime": "3568856137541462090",
+            "epoch": "1",
+            "output": "1",
+            "revision": "6"
+          }
+        },
+        "status": "Committed",
+        "reason": "applied",
+        "revision": "7",
+        "outputGeneration": "1"
+      }
+    }
+  ],
+  "overlayRecording": {
+    "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791487619161746918/motion-task-view.png",
+    "sha256": "1422a1aa677ac1fba46d25ee6739ae45e3404dd0b5d6a2af9ccd92811003b569",
+    "body": {
+      "motionProfile": "reduced",
+      "motionAnimations": 0,
+      "queryObservations": [],
+      "compositionEvents": [],
+      "composing": false,
+      "palette": {
+        "background": "rgb(23, 32, 42)",
+        "foreground": "rgb(244, 246, 247)"
+      },
+      "focusStyle": {
+        "color": "rgb(244, 246, 247)",
+        "background": "rgb(38, 53, 68)",
+        "outlineColor": "rgb(126, 215, 255)",
+        "outlineWidth": "3px",
+        "outlineOffset": "1px",
+        "x": 11,
+        "y": 160,
+        "width": 678,
+        "height": 54
+      },
+      "publication": "54",
+      "lease": "1",
+      "buttons": [
+        {
+          "id": "applications:{\"lifetime\":\"3568856137541462090\",\"session\":\"3\",\"frontend\":\"1\"}:10:overview:close",
+          "identity": "control:close",
+          "label": "Close Task View",
+          "labelRect": {
+            "x": 24,
+            "y": 73,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Close Task View and return to windows",
+          "disabled": false,
+          "x": 11,
+          "y": 64,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"3568856137541462090\",\"session\":\"3\",\"frontend\":\"1\"}:10:overview:all",
+          "identity": "overview:all",
+          "label": "All windowsSelected",
+          "labelRect": {
+            "x": 24,
+            "y": 110,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Browse all workspaces",
+          "disabled": false,
+          "x": 11,
+          "y": 103,
+          "width": 678,
+          "height": 54
+        },
+        {
+          "id": "applications:{\"lifetime\":\"3568856137541462090\",\"session\":\"3\",\"frontend\":\"1\"}:10:overview:workspace:1",
+          "identity": "overview:workspace:1",
+          "label": "Workspace 1Active workspace",
+          "labelRect": {
+            "x": 24,
+            "y": 167,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Browse workspace 1; active workspace",
+          "disabled": false,
+          "x": 11,
+          "y": 160,
+          "width": 678,
+          "height": 54
+        },
+        {
+          "id": "applications:{\"lifetime\":\"3568856137541462090\",\"session\":\"3\",\"frontend\":\"1\"}:10:overview:family:1",
+          "identity": "overview:family:1",
+          "label": "ELM-AUTHORITY-FIXTUREWorkspace 1 \u2022 Minimized",
+          "labelRect": {
+            "x": 24,
+            "y": 224,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Restore ELM-AUTHORITY-FIXTURE on workspace 1",
+          "disabled": false,
+          "x": 11,
+          "y": 217,
+          "width": 678,
+          "height": 54
+        },
+        {
+          "id": "applications:{\"lifetime\":\"3568856137541462090\",\"session\":\"3\",\"frontend\":\"1\"}:10:overview:transfer:1",
+          "identity": "overview:transfer:1",
+          "label": "Move ELM-AUTHORITY-FIXTURE\u2026",
+          "labelRect": {
+            "x": 24,
+            "y": 283,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Move ELM-AUTHORITY-FIXTURE to another workspace",
+          "disabled": false,
+          "x": 11,
+          "y": 274,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"3568856137541462090\",\"session\":\"3\",\"frontend\":\"1\"}:10:overview:family:2",
+          "identity": "overview:family:2",
+          "label": "ELM-ACTIVATION-PEERWorkspace 1 \u2022 Open",
+          "labelRect": {
+            "x": 24,
+            "y": 320,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Activate ELM-ACTIVATION-PEER on workspace 1",
+          "disabled": false,
+          "x": 11,
+          "y": 313,
+          "width": 678,
+          "height": 54
+        },
+        {
+          "id": "applications:{\"lifetime\":\"3568856137541462090\",\"session\":\"3\",\"frontend\":\"1\"}:10:overview:transfer:2",
+          "identity": "overview:transfer:2",
+          "label": "Move ELM-ACTIVATION-PEER\u2026",
+          "labelRect": {
+            "x": 24,
+            "y": 379,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Move ELM-ACTIVATION-PEER to another workspace",
+          "disabled": false,
+          "x": 11,
+          "y": 370,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"3568856137541462090\",\"session\":\"3\",\"frontend\":\"1\"}:10:overview:refresh",
+          "identity": "overview:refresh",
+          "label": "Refresh window statusObservation only",
+          "labelRect": {
+            "x": 24,
+            "y": 416,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Refresh window status; read observations without retrying actions",
+          "disabled": false,
+          "x": 11,
+          "y": 409,
+          "width": 678,
+          "height": 54
+        }
+      ],
+      "content": [],
+      "fields": [],
+      "focus": "applications:{\"lifetime\":\"3568856137541462090\",\"session\":\"3\",\"frontend\":\"1\"}:10:overview:workspace:1",
+      "documentFocused": true,
+      "fontSize": "16px",
+      "theme": "night",
+      "textScale": "100",
+      "viewportWidth": 700,
+      "viewportHeight": 420,
+      "scrollTop": 0,
+      "scrollHeight": 474,
+      "text": "Task View\nChoose a window to reveal its workspace, or browse another workspace.\n\n\nClose Task View\n\nAll windows\nSelected\n\nWorkspace 1\nActive workspace\n\nELM-AUTHORITY-FIXTURE\nWorkspace 1 \u2022 Minimized\n\nMove ELM-AUTHORITY-FIXTURE\u2026\n\nELM-ACTIVATION-PEER\nWorkspace 1 \u2022 Open\n\nMove ELM-ACTIVATION-PEER\u2026\n\nRefresh window status\nObservation only"
+    }
+  },
+  "retainedFailures": [
+    {
+      "report": "implementation/warlock/qa/runs/native-reduced-motion-1791487063943582444/report.json",
+      "sha256": "6265469ded918f4e5b0a34fc8c08bd8cdbe2ee677ca02b141b4ec1c2876dd94f",
+      "error": "AssertionError('ActualNativeGtkReducedMotionObserved')",
+      "cleanupPassed": true
+    },
+    {
+      "report": "implementation/warlock/qa/runs/native-reduced-motion-1791487325154482087/report.json",
+      "sha256": "a85e49b765518ecf10affab40e211009020a50a57652f9262d7c6175fa40d189",
+      "error": "RuntimeError('Original observation deadline <lambda>')",
+      "cleanupPassed": true
+    },
+    {
+      "report": "implementation/warlock/qa/runs/reduced-motion-1791486805857619978/report.json",
+      "sha256": "d356556cb58bc9019e6683c380dd0f433c4c924e57ba0c1f3f909690b0f36574",
+      "error": "AssertionError()"
+    },
+    {
+      "report": "implementation/warlock/qa/runs/native-authority-1791486640959127993/report.json",
+      "sha256": "e6e82cdb51cbe5432e27ecdfc01f61fbff9f45992e6461b1c177b5e3b6041705",
+      "error": "RuntimeError('/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791486640959127993/inputs/native/authority.cpp: In function \u2018std::string {anonymous}::observe(eHyprCtlOutputFormat, std::string)\u2019:\\n/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791486640959127993/inputs/native/authority.cpp:759:141: error: missing initializer for member \u2018{anonymous}::Session::presentationStart\u2019 [-Werror=missing-field-initializers]\\n  759 |             if(!sessions.contains(peer)) sessions.emplace(peer,Session{start,admitted.binding.session,admitted.binding.frontend,0,0,\"\",\"\",{}});\\n      |                                                                                                                                             ^\\ncc1plus: all warnings being treated as errors\\n')"
+    }
+  ],
+  "files": {
+    "component-report.json": "a6bd607d116a13cfc025796e61b50546b6e82a1175bfae86085bea57ca3f9795",
+    "native-report.json": "267979e3d94263b167c41e615a51f0aeb8a38ddf19c76a41f73b866ea6446f8c",
+    "authority-report.json": "00dd0de3d0ac89b3e515cd0176b32ffee8053efa8ce9bf1f6184e8a4b7170bef",
+    "motion.json": "8e086cfc98627493f804025601892b507784b796a18699fe3c0a74478f843ab4",
+    "native-motion-preference.stdout": "a35f2e719c105d3fce7a4e83e000dccc85ee891037dc0fce7d68c94f52bc4e1a",
+    "motion-model-named.stdout": "503ae0a4e362e17d39eccf23b148eba7548aaf07096ee54050b7eb4635b9150c",
+    "motion-model-invariants.stdout": "4a815a66416f50f62f339ab7bcbb14b3023a16c3f8b691b8bb0aece77ea86803",
+    "host-self-tests.stdout": "bbd9325c33f43903dcbf772700b60ce559d398beafad3cf852dd1ac6da2942e2",
+    "native-motion-events.jsonl": "0c1c1824e72730040d2e5a662dbbc1c0beb79cab62dc84fb5a26c4b914047909",
+    "ActiveMinimizeToMRU.png": "05e2337027f38f097994b20e047afabe804a13aa4046b39576f459767a61428b",
+    "MinimizedRestore.png": "186936997f630d88639fee9640758abc20a7c886b44ab9caf950d7c9856d601e",
+    "ActiveMinimizeToDesktop.png": "31f427389b34d0a19b6a43ff4ade831d72abb0b9d587875d3cec32895ec24bae",
+    "DesktopRestore.png": "5e785136532e4c4aa3aa8aa7b4e281407258354548567ef9c68165222877a18d",
+    "motion-task-view.png": "1422a1aa677ac1fba46d25ee6739ae45e3404dd0b5d6a2af9ccd92811003b569",
+    "failed-private-gtk-setting.json": "6265469ded918f4e5b0a34fc8c08bd8cdbe2ee677ca02b141b4ec1c2876dd94f",
+    "failed-profile-command-admission.json": "a85e49b765518ecf10affab40e211009020a50a57652f9262d7c6175fa40d189"
+  }
+}

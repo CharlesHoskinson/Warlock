@@ -42,7 +42,7 @@ static gboolean surface_controls(JsonNode *node,guint limit,GHashTable *ids,GHas
 static gboolean surface_frame(JsonNode *node,guint64 *pub,guint64 *lease,gboolean *open) {
     if (!node || !JSON_NODE_HOLDS_OBJECT(node)) return FALSE;
     JsonObject *o=json_node_get_object(node);
-    const char *const names[]={"surfaceProtocol","publication","lease","mode","status","bar","popup","appearance"};
+    const char *const names[]={"surfaceProtocol","publication","lease","mode","status","bar","popup","appearance","motion"};
     JsonNode *appearance=json_object_get_member(o,"appearance");
     if(appearance){
         const char *const fields[]={"theme","textScale"};
@@ -50,7 +50,10 @@ static gboolean surface_frame(JsonNode *node,guint64 *pub,guint64 *lease,gboolea
         JsonObject *a=json_node_get_object(appearance);JsonNode *theme=json_object_get_member(a,"theme"),*scale=json_object_get_member(a,"textScale");
         if(!surface_fields(a,fields,2) || !surface_theme(theme) || !scale || json_node_get_value_type(scale)!=G_TYPE_INT64 || (json_node_get_int(scale)!=100 && json_node_get_int(scale)!=125 && json_node_get_int(scale)!=150 && json_node_get_int(scale)!=200))return FALSE;
     }
-    if (!surface_fields(o,names,appearance?8:7) || json_node_get_value_type(json_object_get_member(o,"surfaceProtocol"))!=G_TYPE_INT64 || json_object_get_int_member(o,"surfaceProtocol")!=2 || !surface_uint(json_object_get_member(o,"publication"),pub) || !*pub || !surface_uint(json_object_get_member(o,"lease"),lease) || !surface_text(json_object_get_member(o,"mode"),32,FALSE) || !surface_text(json_object_get_member(o,"status"),1024,TRUE)) return FALSE;
+    JsonNode *motion=json_object_get_member(o,"motion");
+    if(motion && (!surface_text(motion,16,FALSE) || (!g_str_equal(json_node_get_string(motion),"reduced") && !g_str_equal(json_node_get_string(motion),"full"))))return FALSE;
+    const char *admitted[9];guint count=7;for(guint i=0;i<7;i++)admitted[i]=names[i];if(appearance)admitted[count++]="appearance";if(motion)admitted[count++]="motion";
+    if (!surface_fields(o,admitted,count) || json_node_get_value_type(json_object_get_member(o,"surfaceProtocol"))!=G_TYPE_INT64 || json_object_get_int_member(o,"surfaceProtocol")!=2 || !surface_uint(json_object_get_member(o,"publication"),pub) || !*pub || !surface_uint(json_object_get_member(o,"lease"),lease) || !surface_text(json_object_get_member(o,"mode"),32,FALSE) || !surface_text(json_object_get_member(o,"status"),1024,TRUE)) return FALSE;
     const char *mode=json_object_get_string_member(o,"mode");
     *open=!g_str_equal(mode,"closed");
     if (*open && (!*lease || (!g_str_equal(mode,"picker") && !g_str_equal(mode,"applications") && !g_str_equal(mode,"menu") && !g_str_equal(mode,"overview") && !g_str_equal(mode,"switcher") && !g_str_equal(mode,"snap") && !g_str_equal(mode,"settings") && !g_str_equal(mode,"notifications") && !g_str_equal(mode,"system") && !g_str_equal(mode,"files") && !g_str_equal(mode,"jump")))) return FALSE;

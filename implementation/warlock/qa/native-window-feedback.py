@@ -4,6 +4,7 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
 lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
 """
 import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
+MOTION=sys.argv[1:]==['--reduced-motion']
 TRANSFER=sys.argv[1:]==['--transfer-workspace']
 IME=sys.argv[1:]==['--ime']
 ACCESSIBILITY=sys.argv[1:]==['--accessibility']
@@ -24,7 +25,7 @@ DENSEPICKER=sys.argv[1:]==['--dense-picker'] or DENSEMENU
 DENSE=sys.argv[1:]==['--dense-taskbar']
 SMALL=DENSE or DENSEPICKER
 PINMENUS=sys.argv[1:]==['--pinned-menus'] or DENSE or SNAP
-PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PINMENUS or ATTENTION
+PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PINMENUS or ATTENTION or MOTION
 PRE_READY_RETIRE=sys.argv[1:]==['--switcher-pre-ready-retirement']
 MEMBERSHIP=sys.argv[1:]==['--switcher-membership'] or PRE_READY_RETIRE
 CHORD=sys.argv[1:]==['--switcher-chord'] or MEMBERSHIP
@@ -69,7 +70,7 @@ else:
 for row in pair.values():assert sha(row['path'])==row['sha256']
 assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
 subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
-OUT=ROOT/'qa/runs'/(('native-transfer-workspace-' if TRANSFER else 'native-ime-' if IME else 'native-accessibility-' if ACCESSIBILITY else 'native-high-contrast-' if CONTRAST else 'native-drag-ownership-' if DRAG else 'native-keyboard-shell-' if KEYBOARD else 'native-attention-' if ATTENTION else 'native-jump-lists-' if JUMP else 'native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+OUT=ROOT/'qa/runs'/(('native-reduced-motion-' if MOTION else 'native-transfer-workspace-' if TRANSFER else 'native-ime-' if IME else 'native-accessibility-' if ACCESSIBILITY else 'native-high-contrast-' if CONTRAST else 'native-drag-ownership-' if DRAG else 'native-keyboard-shell-' if KEYBOARD else 'native-attention-' if ATTENTION else 'native-jump-lists-' if JUMP else 'native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
 OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
 focus_host=None
 if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
@@ -148,6 +149,7 @@ if REFLOW:report.update(requirements=['ELM-UI-008'],scenarios=['overflow-resize'
 LUA=b'''hl.config({xwayland={enabled=false},animations={enabled=false}})
 hl.monitor({output="WAYLAND-1",mode="800x600@60",position="0x0",scale=1})
 '''
+if MOTION:LUA=LUA.replace(b'animations={enabled=false}',b'animations={enabled=true}')
 if SMALL:LUA=LUA.replace(b'800x600',b'480x360' if DENSEMENU else b'480x600')
 if ATTENTION:LUA+=b'hl.config({misc={focus_on_activate=false}})\n'
 if CHORD or KEYBOARD or DRAG:LUA+=(ROOT/'native/switcher-bindings.lua').read_bytes()
@@ -158,6 +160,7 @@ if DRAG:
 if ACCESSIBILITY:report.update(requirements=['ELM-UX-025'],scenarios=['actual-surface-at'],scope='Actual private GTK/WebKit taskbar and switcher AT-SPI tree/states/focus and real Orca observations with physical input; independent original acceptance remains separate.')
 if IME:report.update(requirements=['ELM-UX-028'],scenarios=['ime-spike-commit','ime-spike-cancel'],scope='Actual installed private Fcitx Unicode preedit/candidate keyboard traversal/commit/cancel through GTK/WebKit in integrated launcher; query/caret/native effects observed at original deadline. Independent original acceptance remains separate.')
 if TRANSFER:report.update(requirements=['ELM-UX-018'],scenarios=['ux-018','transfer-refused','transfer-accepted'],scope='Actual physical Task View transfers, native pinned refusal/source retention, matching committed receipts and observed existing/empty workspace membership under original deadlines. Independent and AT acceptance separate.')
+if MOTION:report.update(requirements=['ELM-UX-022'],scenarios=['ux-022'],scope='Original physical minimize/restore and shell overlay recording with actual private GTK reduced-motion setting and compositor animations enabled. Exact native settled-state traces and physical presentation; independent acceptance separate.')
 def check(name,condition,**data):
  report['checks'].append({'name':name,'passed':bool(condition),**data});assert condition,name
 def wait(fn,seconds=6):
@@ -202,6 +205,10 @@ try:
    client=Endpoint(**config);client.hello();
    if PLACEMENT:client.geometry_attach('15000')
    env=supply(s.env,s.host.runtime);validate(env,s.host.runtime);env['XDG_STATE_HOME']=str(s.host.runtime/'private-warlock-state');report['privateStateRoot']=env['XDG_STATE_HOME'];env.update(GTK_A11Y='none',NO_AT_BRIDGE='1',GSETTINGS_BACKEND='memory',GTK_USE_PORTAL='0',WAYLAND_DEBUG='client')
+   if MOTION:
+    gtk_root=s.host.runtime/'motion-config';(gtk_root/'gtk-3.0').mkdir(parents=True,mode=0o700)
+    gtk_settings=gtk_root/'gtk-3.0/settings.ini';gtk_settings.write_text('[Settings]\ngtk-enable-animations=false\n');env['XDG_CONFIG_HOME']=str(gtk_root)
+    report['nativeMotionPreference']={'path':str(gtk_settings),'sha256':sha(gtk_settings),'mainDesktopUnchanged':True,'compositorAnimationsEnabled':True,'fixture':'Actual GtkSettings gtk-enable-animations property selected in the QA-only host because the unchanged protected launcher forces GSETTINGS_BACKEND=memory; no fake motion frame.'}
    if ACCESSIBILITY:
     env['AT_SPI_BUS_ADDRESS']='unix:path='+str(s.host.runtime/'a11y-bus');env.pop('GTK_A11Y',None);env.pop('NO_AT_BRIDGE',None)
     s.env.update(AT_SPI_BUS_ADDRESS=env['AT_SPI_BUS_ADDRESS'])
@@ -408,7 +415,7 @@ raise SystemExit(daemon.run())
     backend_fixture=OUTPUT/'system-menu-backend.py'
     backend_fixture.write_text('import os,sys\nfrom pathlib import Path\nsys.path.insert(0,'+repr(str(ROOT/'adapter'))+')\nimport daemon\nfrom system_menu import Menu\nassert Path(sys.argv[1]).read_text()=='+repr(config_path.read_text())+'\nassert not Path(os.environ["DBUS_SYSTEM_BUS_ADDRESS"].removeprefix("unix:path=")).exists()\nassert os.environ["PULSE_SERVER"]=='+repr(env['PULSE_SERVER'])+'\nsys.argv[1]='+repr(str(broker_config))+'\ndaemon.SystemMenu=lambda:Menu(system_address=os.environ["DBUS_SESSION_BUS_ADDRESS"])\nraise SystemExit(daemon.run())\n')
     report['systemFixture']={'backend':str(backend_fixture),'backendSHA256':sha(backend_fixture),'provider':str(ROOT/'qa/system-menu-provider.py'),'providerSHA256':sha(ROOT/'qa/system-menu-provider.py'),'audioCoreConfigSHA256':sha(audio_root/'core.conf'),'audioPulseConfigSHA256':sha(audio_root/'pulse.conf'),'audioEndpoint':env['PULSE_SERVER'],'systemBusRemainsRefusing':True,'privateSessionBus':env['DBUS_SESSION_BUS_ADDRESS'],'scope':'Native-only fixture constructor selects owned private login1 provider; unchanged production admission/effect path, real private null audio sink, network owner absent, no hardware/desktop system effect.'}
-   web=s.host.launch('warlock',['%s'%binary,'--assets',str(assets),'--authority-config',str(config_path),'--backend',str(backend_fixture if CATALOG or CHORD else ROOT/'adapter/daemon.py'),'--qa-exit-after-render','--qa-stay-open','--surface-experiment',*(['--text-scale','2' if DENSEMENU else '1.5'] if SMALL else [])],env=env);apps.append(web);log=OUTPUT/'warlock.log';collector=Collector()
+   web=s.host.launch('warlock',['%s'%binary,'--assets',str(assets),'--authority-config',str(config_path),'--backend',str(backend_fixture if CATALOG or CHORD else ROOT/'adapter/daemon.py'),'--qa-exit-after-render','--qa-stay-open','--surface-experiment',*(['--qa-reduced-motion'] if MOTION else []),*(['--text-scale','2' if DENSEMENU else '1.5'] if SMALL else [])],env=env);apps.append(web);log=OUTPUT/'warlock.log';collector=Collector()
    def text():
     raw=log.read_text(errors='replace')
     # The live file may end in a producer's unfinished JSON record. Observe
@@ -418,6 +425,29 @@ raise SystemExit(daemon.run())
    def group(operation):
     p=projection();return next((g for g in p['groups'] if (FOCUS or NAV or g['title']==('ELM-ACTIVATION-PEER' if PRIMARY else 'ELM-AUTHORITY-FIXTURE')) and g['label'].startswith(operation+' ') and not g['disabled']),None) if p and p['phase']=='Coherent' else None
    def journal():return [json.loads(l.split(': ',1)[1]) for l in text().splitlines() if l.startswith('frontend-request: ') and json.loads(l.split(': ',1)[1])['kind']=='window-effect']
+   if MOTION:
+    import socket,struct
+    motion_socket=socket.socket(socket.AF_UNIX,socket.SOCK_STREAM);client.verify_process();client.verify_paths();motion_socket.connect(str(client.path.with_name('.socket2.sock')))
+    event_pid,event_uid,_=struct.unpack('3i',motion_socket.getsockopt(socket.SOL_SOCKET,socket.SO_PEERCRED,12));check('MotionTraceHasActualNativePeer',event_pid==native['pid'] and event_uid==os.getuid());motion_socket.setblocking(False)
+    motion_buffer=b'';motion_traces=[];motion_log=OUTPUT/'native-motion-events.jsonl'
+    def motion_events():
+     global motion_buffer
+     while True:
+      try:chunk=motion_socket.recv(65536)
+      except BlockingIOError:break
+      assert chunk,'native motion event socket closed';motion_buffer+=chunk;assert len(motion_buffer)<=1048576
+      while b'\n' in motion_buffer:
+       line,motion_buffer=motion_buffer.split(b'\n',1)
+       if line.startswith(b'warlockmotion>>'):
+        raw=line.split(b'>>',1)[1];record=json.loads(raw);motion_traces.append(record)
+        with motion_log.open('ab') as out:out.write(raw+b'\n')
+     return motion_traces
+    preferences=wait(lambda:[json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('motion-preference: ')])
+    check('ActualNativeGtkReducedMotionObserved',preferences[-1]['source']=='gtk' and preferences[-1]['profile']=='reduced',preferences=preferences)
+    applied=wait(lambda:[json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('backend-frame: ') and json.loads(line.split(': ',1)[1]).get('kind')=='motion-profile'])
+    check('NativeProfileAcknowledgesElmReducedPreference',applied[-1]['profile']=='reduced',receipts=applied)
+    report['motionPreferenceObservations']=preferences;report['motionProfileReceipts']=applied
+
    def feedback(state):
     p=projection()
     if not p or p['transaction']!=state:return None
@@ -573,6 +603,11 @@ raise SystemExit(daemon.run())
      def receipts():return [f for f in [json.loads(l.split(': ',1)[1]) for l in text().splitlines() if l.startswith('backend-frame: ')] if f.get('kind')=='effect-outcome' and f.get('binding')==submitted['binding'] and f.get('effectProtocol')==submitted['effectProtocol'] and f.get('intent')==submitted['intent']]
      rows=wait(receipts);check(stage+'NativeCommittedReceipt',len(rows)==1 and rows[0]['status']=='Committed',request=submitted,receipts=rows)
      report.setdefault('primaryReceipts',[]).append({'stage':stage,'request':submitted,'receipt':rows[0]})
+     if MOTION:
+      observed=wait(lambda:next((row for row in motion_events() if row['binding']==submitted['binding'] and row['intent']==submitted['intent']),None))
+      check(stage+'NativeMotionProfileIsInstant',observed['profile']=='reduced' and observed['settled'],motion=observed)
+      report.setdefault('motionTransitionReceipts',[]).append(observed)
+
      check(stage+'PreservesFamilyMembership',sorted((w['incarnation'],w['workspace'],w['monitor']) for w in facts()['facts']['windows'])==initial_membership)
      capture(stage,minimized)
      if focus is not None:actual_recipient(stage,focus)
@@ -590,6 +625,21 @@ raise SystemExit(daemon.run())
     action('DesktopRestore','restore',target,False)
     launches=[json.loads(l.split(': ',1)[1]) for l in text().splitlines() if l.startswith('frontend-request: ') and json.loads(l.split(': ',1)[1])['kind']=='application-launch']
     check('OrdinaryPrimaryActionsNeverLaunchDuplicates',not launches and len(journal())==5,launchRequests=launches,windowRequests=len(journal()))
+    if MOTION:
+     def bar_body_motion():
+      bodies=[json.loads(line.split(' ',2)[2])['body'] for line in text().splitlines() if line.startswith('surface-report: origin=bar ')]
+      return bodies[-1] if bodies else None
+     body=wait(bar_body_motion);check('NativeTaskbarProjectsInstantProfile',body['motionProfile']=='reduced' and body['motionAnimations']==0,body=body)
+     opener=next(b for b in body['buttons'] if b['accessibleName']=='Open Task View' and not b['disabled'])
+     check('TaskViewOpenerPhysicallyVisible',0<=opener['x']+opener['width']/2<800 and 0<=opener['y']<48,opener=opener)
+     before_effects=len(journal());click({'visible':True,'point':[opener['x']+opener['width']/2,opener['y']+opener['height']/2]})
+     def overlay_motion():
+      bodies=[json.loads(line.split(' ',2)[2])['body'] for line in text().splitlines() if line.startswith('surface-report: origin=popup ')]
+      return bodies[-1] if bodies and 'Task View' in bodies[-1]['text'] else None
+     overlay=wait(overlay_motion);check('ActualNativeOverlayUsesReducedProfileWithoutDecorativeMotion',overlay['motionProfile']=='reduced' and overlay['motionAnimations']==0 and overlay['documentFocused'],body=overlay)
+     image=OUTPUT/'motion-task-view.png';helper(['/usr/bin/grim',str(image)]);report['motionOverlayRecording']={'path':str(image),'sha256':sha(image),'body':overlay}
+     helper([str(keyboard)],'key 1 1\nsleep 50\nkey 1 0\nsleep 100\nsync\n');wait(lambda:(projection() or {}).get('mode')=='closed');check('ReducedMotionOverlayDismissalCreatesNoWindowEffect',len(journal())==before_effects)
+     motion_socket.close();report['nativeReducedMotionObserved']=True
     report['nativePrimaryJourneyObserved']=True
    elif (CATALOG or TASKVIEW or SWITCHER or CHORD) and not DENSEPICKER:
     keyboard=pathlib.Path('/home/hoskinson/window-integration-qa/orca-reader/physical-commands/evdev-keyboard');report['keyboard']={'path':str(keyboard),'sha256':sha(keyboard)}
@@ -1768,6 +1818,7 @@ raise SystemExit(daemon.run())
     else:check('NoScratchpadOrWorkspaceTransfer',not facts()['facts']['windows'] and report['beforeControlledRetirements']['facts']['windows'] if CHORD else current_window()['workspace']==initial_workspace,nativeWorkspace='controlled original roots retired' if CHORD else current_window()['workspace'],originalWorkspace=initial_workspace)
    report['nativeFeedbackObserved']=not FOCUS and not CATALOG and not TASKVIEW and not PRIMARY and not SWITCHER and not CHORD;report['nativeFocusJourneyObserved']=FOCUS;check('EveryRegisteredHelperExitedNormally',all(r['exitCode']==0 for r in report['helpers']));report['passed']=True
   finally:
+   if MOTION and 'motion_socket' in globals():motion_socket.close()
    if paused:pause(False)
    if drag_writer is not None:
     os.close(drag_writer);drag_writer=None

@@ -99,3 +99,10 @@ html[data-theme="high-contrast"] .surface-popup[data-mode="snap"] [data-surface-
  html[data-theme="high-contrast"] .bar .control-group[data-window-state="active"]{border-bottom:4px double Highlight}
  html[data-theme="high-contrast"] .bar .control-group[data-window-state="attention"]{border-top:4px double Highlight}
 }
+
+/* The authoritative native profile is projected by Elm, never inferred here. */
+[data-motion="reduced"], [data-motion="reduced"] *, [data-motion="reduced"] *::before, [data-motion="reduced"] *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}

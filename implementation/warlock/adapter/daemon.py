@@ -110,12 +110,16 @@ def handle_request(client,catalog,request,recovery,reconciliation,notifications=
   exact(request,['protocolVersion','kind','geometryProtocol','binding','requestId','minimumWatermark'])
  elif kind in {'switcher-selection-request','switcher-cancel-request'}:
   exact(request,['protocolVersion','kind','binding','requestId','chord',*(['root'] if kind=='switcher-selection-request' else [])])
+ elif kind=='motion-profile-set':
+  exact(request,['protocolVersion','kind','binding','requestId','profile'])
  elif kind in {'projection-request','activation-history-request'}:
   exact(request,['protocolVersion','kind','binding','requestId'])
  else:raise Refused('Unsupported frontend request')
  if type(request['protocolVersion']) is not int or request['protocolVersion']!=3 or binding(request['binding'])!=client.bound:raise Refused('Frontend scope mismatch')
  if kind.startswith('geometry-'):
   if type(request['geometryProtocol']) is not int or request['geometryProtocol'] not in (1,2):raise Refused('Geometry protocol')
+ if kind=='motion-profile-set':
+  canonical(request['requestId']);send(client.motion_profile(request['requestId'],request['profile']));return
  if kind=='window-effect':
   admitted=guarded(lambda:recovery.begin(client.bound,request['intent'],request['effectProtocol']))
   if not admitted:raise Refused('Duplicate durable intent; not resubmitted')

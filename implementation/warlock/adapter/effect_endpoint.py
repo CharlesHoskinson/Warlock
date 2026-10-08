@@ -82,6 +82,13 @@ class Endpoint(ReadOnlyEndpoint):
   if r['context']['lifetime']!=self.bound['lifetime'] or r['context']['epoch']!=self.bound['frontend']:raise Refused('History authority')
   if not isinstance(r['roots'],list) or len(r['roots'])>256 or len(set(canonical(value) for value in r['roots']))!=len(r['roots']):raise Refused('History bound/identity')
   return r
+ def motion_profile(self,request_id,profile):
+  if not self.bound or profile not in ('reduced','full'):raise Refused('Motion profile scope')
+  canonical(request_id)
+  r=self.request({'protocolVersion':3,'kind':'motion-profile-set','binding':self.bound,'requestId':request_id,'profile':profile})
+  exact(r,['protocolVersion','kind','binding','requestId','profile'])
+  if type(r['protocolVersion']) is not int or r['protocolVersion']!=3 or r['kind']!='motion-profile' or binding(r['binding'])!=self.bound or r['requestId']!=request_id or r['profile']!=profile:raise Refused('Motion profile correlation')
+  return r
  def pointer_ownership(self,request_id):
   canonical(request_id)
   r=self.request({'protocolVersion':3,'kind':'pointer-ownership-request','binding':self.bound,'requestId':request_id})

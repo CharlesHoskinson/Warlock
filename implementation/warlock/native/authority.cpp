@@ -1,3 +1,5 @@
+#include <hyprland/src/desktop/state/LayerState.hpp>
+#include <hyprland/src/desktop/view/LayerSurface.hpp>
 #include "incarnation-retirement.hpp"
 #include "capture-resources.hpp"
 #include <hyprland/src/render/warlock/screen_shader.hpp>
@@ -102,7 +104,7 @@ struct Member { PHLWINDOWREF window; uint64_t id; };
 std::vector<Member> members;
 Elm::Placement::Records geometryPlacements;
 Elm::Geometry::Barriers effectBarriers;
-struct Session { std::string start; uint64_t id; uint64_t frontend; uint64_t effectRequest=0, generation=0; std::string lastPayload, lastReply; std::vector<Render::SceneTrace::Frame> retained; int geometryProtocol=0; bool geometryEnabled=false; uint64_t geometryFrontend=0; std::set<std::string> geometryOperations{}; };
+struct Session { std::string start; uint64_t id; uint64_t frontend; uint64_t effectRequest=0, generation=0; std::string lastPayload, lastReply; std::vector<Render::SceneTrace::Frame> retained; int geometryProtocol=0; bool geometryEnabled=false; uint64_t geometryFrontend=0; std::set<std::string> geometryOperations{}; bool reducedMotion=true; uint64_t motionRequest=0; pid_t presentationPid=0; std::string presentationStart{}; };
 std::map<pid_t, Session> sessions;
 enum class ShellRoute {Applications,System,Notifications};
 struct ShellShortcut {uint64_t serial;ShellRoute route;};
@@ -168,6 +170,12 @@ std::string startTime(pid_t pid) {
     std::string field;
     for (int i = 0; i <= 19; ++i) if (!(fields >> field)) return "";
     return field;
+}
+pid_t parentPid(pid_t pid) {
+    if(startTime(pid).empty()) return 0;
+    std::ifstream source("/proc/"+std::to_string(pid)+"/stat");std::string line;std::getline(source,line);const auto end=line.rfind(')');
+    if(end==std::string::npos) return 0;
+    std::istringstream fields_(line.substr(end+1));char state;pid_t parent=0;fields_>>state>>parent;return parent>0 && !startTime(parent).empty() ? parent : 0;
 }
 std::string error(const std::string& reason) {
     return "{\"protocolVersion\":3,\"kind\":\"refused\",\"reason\":\"" + reason + "\"}";
@@ -513,6 +521,8 @@ std::string effectOutcome(const Session& session, const std::string& intent, con
         ",\"intent\":"+intent+",\"status\":"+quote(status)+",\"reason\":"+quote(reason)+
         ",\"revision\":"+quote(std::to_string(protocol==2 ? geometryRevision : factsRevision))+",\"outputGeneration\":"+quote(std::to_string(outputGeneration))+"}";
 }
+#include "motion-profile.inc"
+
 std::string performEffect(Session& session, JsonObject* object, const std::string&) {
     JsonObject* intent=objectMember(object,"intent");
     if(!intent || !fields(intent,{"request","generation","incarnation","operation","context"})) return error("effect-schema");
@@ -676,6 +686,7 @@ std::string performEffect(Session& session, JsonObject* object, const std::strin
             Desktop::focusState()->fullWindowFocus(restoreFocus,Desktop::FOCUS_REASON_DESKTOP_STATE_CHANGE);
             if(const auto focused=Desktop::focusState()->window()) Desktop::windowState()->raise(focused);
         }
+        if(session.reducedMotion) settleReducedMotion(*family,previousWorkspace,destination);
         refreshFacts();
         if(factsRevision!=beforeMutationRevision) notifyEffectChange();
         if(!membershipCurrent() || *output!=outputGeneration || g_pSessionLockManager->isSessionLocked() || !g_pInputManager->m_exclusiveLSes.empty() || g_pSeatManager->m_seatGrab!=protectedGrab || (!minimize && !destination->isVisible())) return session.lastReply;
@@ -689,6 +700,7 @@ std::string performEffect(Session& session, JsonObject* object, const std::strin
         }
         for(auto id:reserved) effectBarriers.definitive(id);
         session.lastReply=effectOutcome(session,encoded,"Committed","applied");
+        motionTransitionObserved(session,encoded,*family,previousWorkspace,destination);
     } catch (...) { notifyEffectChange(); /* Preserve Unknown after unproven partial mutation. */ }
     return session.lastReply;
 }
@@ -748,6 +760,7 @@ std::string observe(eHyprCtlOutputFormat, std::string request) {
             auto& session=sessions.at(peer);
             session.id=admitted.binding.session;session.frontend=admitted.binding.frontend;
             switcherSelections.erase(session.id);
+            session.reducedMotion=true;session.motionRequest=0;session.presentationPid=parentPid(peer);session.presentationStart=startTime(session.presentationPid);
             session.geometryProtocol=0;session.geometryEnabled=false;session.geometryFrontend=0;session.geometryOperations.clear();session.retained.clear(); session.effectRequest=0; session.generation=0; session.lastPayload.clear(); session.lastReply.clear();
             reply = "{\"protocolVersion\":3,\"kind\":\"attached\",\"binding\":" + binding(session) +
                 ",\"previewFdAddress\":"+quote(previewFdAddress)+",\"compositor\":{\"pid\":" + std::to_string(getpid()) + ",\"instance\":" + quote(g_pCompositor->m_instanceSignature) +
@@ -843,6 +856,13 @@ std::string observe(eHyprCtlOutputFormat, std::string request) {
                     reply="{\"protocolVersion\":3,\"kind\":\"geometry-facts\",\"geometryProtocol\":"+std::to_string(found->second.geometryProtocol)+",\"binding\":"+binding(found->second)+",\"requestId\":"+quote(std::to_string(*requestId))+",\"sequence\":"+quote(std::to_string(geometrySequence))+",\"revision\":"+quote(std::to_string(geometryRevision))+",\"outputGeneration\":"+quote(std::to_string(outputGeneration))+",\"facts\":"+facts+"}";
                 }
             }
+        } else if(operation=="motion-profile-set" && fields(object,{"protocolVersion","kind","binding","requestId","profile"})) {
+            const auto bound=objectMember(object,"binding");const auto requestId=counter(object,"requestId");const auto found=sessions.find(peer);const auto profileNode=json_object_get_member(object,"profile");const std::string profile=profileNode && json_node_get_value_type(profileNode)==G_TYPE_STRING ? json_node_get_string(profileNode) : "";
+            if(!bound || !fields(bound,{"lifetime","session","frontend"}) || !requestId || (profile!="reduced" && profile!="full"))throw std::runtime_error("motion-schema");
+            const auto native=counter(bound,"lifetime"),sessionId=counter(bound,"session"),frontend=counter(bound,"frontend");
+            if(!native || !sessionId || !frontend || found==sessions.end() || found->second.start!=start || *native!=lifetime || *sessionId!=found->second.id || *frontend!=found->second.frontend || !grantRegistry->callerMatches(verifiedPeer(peer,start),{lifetime,*sessionId,*frontend}))reply=error("binding-mismatch");
+            else if(*requestId<=found->second.motionRequest)reply=error("motion-request-retired");
+            else {found->second.motionRequest=*requestId;found->second.reducedMotion=profile=="reduced";reply="{\"protocolVersion\":3,\"kind\":\"motion-profile\",\"binding\":"+binding(found->second)+",\"requestId\":"+quote(std::to_string(*requestId))+",\"profile\":"+quote(profile)+"}";}
         } else if(operation=="pointer-ownership-request" && fields(object,{"protocolVersion","kind","binding","requestId"})) {
             const auto bound=objectMember(object,"binding");const auto requestId=counter(object,"requestId");const auto found=sessions.find(peer);
             if(!bound || !fields(bound,{"lifetime","session","frontend"}) || !requestId)throw std::runtime_error("pointer-schema");
@@ -969,7 +989,7 @@ APICALL EXPORT PLUGIN_DESCRIPTION_INFO PLUGIN_INIT(HANDLE handle) {
     if (const auto current=Desktop::focusState()->window()) recordActivation(current);
     shellShortcuts.clear();shellShortcutSerial=shellShortcutSession=shellShortcutFrontend=0;
     pointerSerial=1;pointerState="idle";pointerOwner="null";
-    pointerFrames=Event::bus()->m_events.render.pre.listen([](PHLMONITOR){try{refreshPointerOwnership();}catch(...){}});
+    pointerFrames=Event::bus()->m_events.render.pre.listen([](PHLMONITOR){try{refreshPointerOwnership();settleShellMotion();}catch(...){}});
     switcherKeys=Event::bus()->m_events.input.keyboard.key.listen(switcherKey);
     if(!HyprlandAPI::addLuaFunction(handle,"warlock","apps_menu",appsMenu) || !HyprlandAPI::addLuaFunction(handle,"warlock","system_menu",systemMenu) || !HyprlandAPI::addLuaFunction(handle,"warlock","notification_history",notificationHistory))throw std::runtime_error("Shell shortcut binding registration failed");
     if(!HyprlandAPI::addLuaFunction(handle,"warlock","switcher_forward",switcherForward) || !HyprlandAPI::addLuaFunction(handle,"warlock","switcher_reverse",switcherReverse))throw std::runtime_error("Switcher binding registration failed");

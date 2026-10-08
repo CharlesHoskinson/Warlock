@@ -1,5 +1,6 @@
 """Focused compiled launcher/search integration, protected CPU scope only."""
 import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures,http.server,threading
+MOTION=sys.argv[1:]==['--reduced-motion']
 TRANSFER=sys.argv[1:]==['--transfer-workspace']
 IME=sys.argv[1:]==['--ime']
 ACCESSIBILITY=sys.argv[1:]==['--accessibility']
@@ -20,11 +21,11 @@ DENSE=sys.argv[1:]==['--dense-taskbar'] or PICKER
 PINMENUS=sys.argv[1:]==['--pinned-menus'] or (DENSE and not PICKER)
 PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PINMENUS or PICKER
 SWITCHER=sys.argv[1:]==['--switcher'] or ACCESSIBILITY
-NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'];POPUP=sys.argv[1:]==['--native-popup'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD or DRAG or IME or TRANSFER;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER
+NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'];POPUP=sys.argv[1:]==['--native-popup'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD or DRAG or IME or TRANSFER or MOTION;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143'
 sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
 scope=require_qa_scope();sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
-OUT=ROOT/'qa/runs'/(('transfer-workspace-' if TRANSFER else 'ime-' if IME else 'accessibility-' if ACCESSIBILITY else 'high-contrast-' if CONTRAST else 'drag-ownership-' if DRAG else 'keyboard-shell-' if KEYBOARD else 'attention-' if ATTENTION else 'jump-lists-' if JUMP else 'files-' if FILES else 'system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
+OUT=ROOT/'qa/runs'/(('reduced-motion-' if MOTION else 'transfer-workspace-' if TRANSFER else 'ime-' if IME else 'accessibility-' if ACCESSIBILITY else 'high-contrast-' if CONTRAST else 'drag-ownership-' if DRAG else 'keyboard-shell-' if KEYBOARD else 'attention-' if ATTENTION else 'jump-lists-' if JUMP else 'files-' if FILES else 'system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
 for folder in ['src','native','adapter','assets','qa']:
  (INPUT/folder).mkdir()
  for p in (ROOT/folder).iterdir():
@@ -79,6 +80,14 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
   (INPUT/'qa/switcher-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.SwitcherReplay'));run('typed-switcher',['node','qa/switcher-replay.js','assets/switcher.js',str(OUT/'switcher.json')]);report['typedSwitcher']=json.loads((OUT/'switcher.json').read_text());assert all(report['typedSwitcher']['checks'].values())
   run('switcher-model-typecheck',['quint','typecheck','qa/switcher.qnt']);run('switcher-model-named',['quint','test','qa/switcher.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79111']);run('switcher-model-invariants',['quint','run','qa/switcher.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79112'])
  if ACCESSIBILITY:report.update(requirements=['ELM-UX-025'],scenarios=['actual-surface-at'],scope='Actual compiled taskbar button pressed state and switcher listbox selection, names and focus. Native inspector/Orca evidence remains separate.')
+ if MOTION:
+  report.update(requirements=['ELM-UX-022'],scenarios=['ux-022'],scope='Actual immutable-root motion observation/configuration/ack/retirement replay, native read-only preference observer and changed host compile; native transition recording remains separate.')
+  run('compile-motion',[str(HELD/pinned['compiler']),'make','qa/MotionReplay.elm','--optimize','--output=assets/motion.js'])
+  (INPUT/'qa/motion-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.MotionReplay'));run('typed-motion',['node','qa/motion-replay.js','assets/motion.js',str(OUT/'motion.json')]);report['typedMotion']=json.loads((OUT/'motion.json').read_text());assert all(report['typedMotion']['checks'].values())
+  report['nativePreferenceObserver']=json.loads(run('native-motion-preference',['/usr/bin/python3','-B','qa/check-motion.py']))
+  run('motion-model-typecheck',['quint','typecheck','qa/motion-profile.qnt'])
+  run('motion-model-named',['quint','test','qa/motion-profile.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79151'])
+  run('motion-model-invariants',['quint','run','qa/motion-profile.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79152'])
  if IME:
   report.update(requirements=['ELM-UX-028'],scenarios=['ime-spike-commit','ime-spike-cancel'],scope='Actual compiled popup composition lifecycle, commit coalescing and field/custody retirement; original native IME candidate and caret evidence remains separate.')
   run('compile-ime',[str(HELD/pinned['compiler']),'make','qa/ImeReplay.elm','--optimize','--output=assets/ime.js'])
@@ -204,7 +213,7 @@ console.log('Current body-target Escape releases once; stale scope, preedit, rep
    if TASKVIEW:
     # The authority TU is independently compiled against its owning core; none
     # of these reused GTK host objects link it or include its modal preflight.
-    excluded=['native/surface-test.c','native/surface.h','native/host.c','native/shared-host.c','native/shell-bindings.lua','native/shared-context.h','native/shared-context-test.c']+(['native/authority.cpp','native/navigation-modal.hpp'] if NAV or DRAG else [])+(['native/authority.cpp','native/host-journal.h','native/geometry-effects.inc','native/snap-placement.inc'] if SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD or TRANSFER else [])
+    excluded=['native/surface-test.c','native/surface.h','native/host.c','native/shared-host.c','native/shell-bindings.lua','native/shared-context.h','native/shared-context-test.c']+(['native/authority.cpp','native/navigation-modal.hpp'] if NAV or DRAG else [])+(['native/authority.cpp','native/host-journal.h','native/geometry-effects.inc','native/snap-placement.inc','native/motion-profile.inc'] if SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD or TRANSFER or MOTION else [])
     assert all(sha(INPUT/p)==h for p,h in prior['inputs'].items() if p.startswith('native/') and p not in excluded)
     assert all('surface.h' not in (INPUT/'native'/name).read_text() for name in units)
    object_path=prior_path;object_report=prior;seen=set()

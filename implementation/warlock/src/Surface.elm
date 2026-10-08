@@ -4,6 +4,7 @@ import Menu
 import Switcher
 import Pins
 import Settings
+import Motion
 import Notifications
 import JumpList
 import Files
@@ -143,6 +144,7 @@ controls model =
             scale percent=control ("settings:scale:"++String.fromInt percent) ("Text size "++String.fromInt percent++"%") (if model.settings.draft.textScale==percent then "Selected" else "") ready (\stamp -> Desktop.EditSettings stamp {theme=model.settings.draft.theme,textScale=percent})
             changed=model.settings.snapshot |> Maybe.map (\current -> current.values/=model.settings.draft) |> Maybe.withDefault False
         in [control "control:close" "Close settings" "" True Desktop.CloseSettings
+           ,control "settings:motion" (Motion.notice model.motion) "System preference" False Desktop.RefreshSettings
            ,theme Settings.Night "Night theme",theme Settings.Dawn "Dawn theme",theme Settings.HighContrast "High contrast theme"]++List.map scale [100,125,150,200]
            ++[control "settings:save" "Save settings" "Apply and keep across restart" (ready && changed) Desktop.SaveSettings
              ,control "settings:refresh" "Refresh settings" "Read stored values; discard unsaved changes" (model.settingsExpected==Nothing) Desktop.RefreshSettings]
@@ -380,7 +382,7 @@ packet : Counter -> Counter -> Desktop.Model -> E.Value
 packet publication lease model =
     let
         encode control = E.object [("id",E.string control.id),("domId",E.string control.domId),("label",E.string control.label),("ariaLabel",E.string control.ariaLabel),("detail",E.string control.detail),("enabled",E.bool (control.enabled && control.message/=Nothing))]
-    in E.object [("surfaceProtocol",E.int 2),("appearance",Settings.encodeValues (model.settings.snapshot |> Maybe.map .values |> Maybe.withDefault Settings.defaults)),("publication",E.string (UInt64.string publication)),("lease",E.string (UInt64.string lease)),("mode",E.string (mode model)),("status",E.string ((notice model)++(if not model.filesOpen && (model.files.pending/=Nothing || String.startsWith "Files:" model.files.notice) then " · "++model.files.notice else "")++(if model.jumpEntry==Nothing && (model.jumpList.pending/=Nothing || String.startsWith "Application action:" model.jumpList.notice) then " · "++model.jumpList.notice else ""))),("bar",E.list encode (barControls model)),("popup",E.list encode (controls model))]
+    in E.object [("surfaceProtocol",E.int 2),("motion",E.string (Motion.name (Motion.desired model.motion))),("appearance",Settings.encodeValues (model.settings.snapshot |> Maybe.map .values |> Maybe.withDefault Settings.defaults)),("publication",E.string (UInt64.string publication)),("lease",E.string (UInt64.string lease)),("mode",E.string (mode model)),("status",E.string ((notice model)++(if not model.filesOpen && (model.files.pending/=Nothing || String.startsWith "Files:" model.files.notice) then " · "++model.files.notice else "")++(if model.jumpEntry==Nothing && (model.jumpList.pending/=Nothing || String.startsWith "Application action:" model.jumpList.notice) then " · "++model.jumpList.notice else ""))),("bar",E.list encode (barControls model)),("popup",E.list encode (controls model))]
 
 resolveAction : Counter -> Counter -> D.Value -> Desktop.Model -> Maybe Desktop.Msg
 resolveAction publication lease raw model =

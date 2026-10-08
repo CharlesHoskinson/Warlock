@@ -282,3 +282,31 @@ interval was not reached because the helper expected the excluded source
 workspace in the destination chooser; that helper is corrected but unrerun after
 the two-attempt limit. Modal/minimized/cross-output coverage, applicable AT and
 independent original acceptance remain open. See `qa/evidence/transfer/manifest.json`.
+
+Reduced motion is now a native input to the shared Elm root. The read-only
+observer reads the owned session portal `reduced-motion` preference first and
+falls back to GTK `gtk-enable-animations`; it never starts the portal or changes
+the desktop's settings. Unknown portal uint values mean no preference. Signals,
+portal owner replacement and GTK notifications update the current typed input;
+stale reads and observations cannot overwrite newer state.
+
+The documented reduced profile is **instant state presentation**: no decorative
+position/size/alpha continuation, CSS animation, transition or smooth scrolling.
+An acknowledged binding-scoped native profile controls compositor-owned window
+and host-surface animation goals. Minimize/restore keeps the original family,
+focus, custody, native receipt and Unknown/no-replay semantics. Host surfaces
+are identified by actual client credentials and process start identity, never
+by an application name. Settings displays the observed system preference.
+
+The actual integrated roots, fourteen motion replay assertions, C observer on a
+private portal bus, six named Quint schedules and bounded invariants pass. The
+original private native minimize/restore and Task View recording passes with
+compositor animations enabled, exact native settled-state traces, physical
+pixels, real keyboard recipients and normal cleanup. The unchanged protected
+launcher forces in-memory GTK settings, so an explicit QA-only host option sets
+the actual GTK property for the fixture; the observer and Elm receive path stay
+unchanged. Two earlier native failures are retained, including the production
+command-admission refusal corrected before the passing campaign. Native live
+preference changes, every overlay/output/device fixture, applicable AT and
+independent original/release acceptance remain open. See
+`qa/evidence/reduced-motion/manifest.json`.

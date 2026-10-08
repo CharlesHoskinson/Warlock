@@ -2,6 +2,7 @@
 #define main inherited_main
 #define terminated inherited_terminated
 #include "host.c"
+#include "motion-preference.h"
 #undef terminated
 #undef main
 static void terminated(WebKitWebView*,WebKitWebProcessTerminationReason,gpointer);
@@ -13,6 +14,7 @@ static void terminated(WebKitWebView*,WebKitWebProcessTerminationReason,gpointer
 #include <libsoup/soup.h>
 #include "qa-reader-control.h"
 #include "imported-clients.h"
+static gboolean qa_reduced_motion;
 static WarlockPreviewBootstrap *preview_bootstrap;
 static WarlockClientProducer *client_producer;
 static WarlockImportedClients *imported_clients;
@@ -155,6 +157,10 @@ static WebKitWebView *shared_focus_target(void) {
 /* This only retires the bar's input eligibility for the foreground handoff
  * already requested by Elm. Native authority still decides the effect and
  * recipient. No window is focused here, and receipts cannot trigger a replay. */
+static void shared_motion_preference(const char *frame) {
+    if(qa_exit) {g_print("motion-preference: %s\n",frame);fflush(stdout);}
+    deliver(frame);
+}
 static gboolean shared_foreground_requests(JsonArray *requests,JsonNode *binding) {
     if (!binding) return FALSE;
     for (guint i=0;i<json_array_get_length(requests);i++) {
@@ -447,7 +453,7 @@ static void shared_receive_text(WebKitUserContentManager *manager,const char *te
     if (manager==primary_manager) {
         if (qa_exit && kind && g_str_equal(kind,"surface-inspection")) {g_print("surface-inspection: %s\n",text);fflush(stdout);return;}
         const char *const ready[]={"protocolVersion","kind"};
-        if (strlen(text)<=4096 && surface_fields(object,ready,2) && request_kind(root) && g_str_equal(request_kind(root),"host-ready")) {controller_ready=TRUE;shared_topology();backend_start();return;}
+        if (strlen(text)<=4096 && surface_fields(object,ready,2) && request_kind(root) && g_str_equal(request_kind(root),"host-ready")) {controller_ready=TRUE;shared_topology();motion_preference_start(shared_motion_preference);backend_start();return;}
         if(!qa_delay_controller_commit(root,text)) {shared_commit(root,text);}
         return;
     }
@@ -1347,6 +1353,7 @@ int ELM_SHARED_HOST_MAIN(int argc,char **argv) {
             if(!end || *end || !(scale>=1.0 && scale<=2.0)) {g_printerr("Text scale must be between 1 and 2\n");return 2;}
             shared_text_pixels=(guint)(16.0*scale+0.5);
         }
+        else if (g_str_equal(argv[i],"--qa-reduced-motion")) qa_reduced_motion=TRUE;
         else if (g_str_equal(argv[i],"--qa-stay-open")) qa_stay=TRUE;
         else if (g_str_equal(argv[i],"--qa-preview-delayed-snapshot")) qa_controlled_delayed_snapshot=TRUE;
         else if (g_str_equal(argv[i],"--qa-preview-reopened-snapshot")) {qa_controlled_delayed_snapshot=TRUE;qa_controlled_reopened_snapshot=TRUE;}
@@ -1394,7 +1401,9 @@ int ELM_SHARED_HOST_MAIN(int argc,char **argv) {
     if(qa_controlled_current_cancelled_snapshot && qa_controlled_delayed_snapshot) {g_printerr("Current cancellation cannot retain an old result\n");return 2;}
     if(qa_controlled_process_stop && (!qa_controlled_preview || !qa_exit || !qa_stay || !qa_client_snapshot || qa_controlled_reload || qa_controlled_delayed_snapshot || qa_controlled_cancelled_snapshot || qa_controlled_reader_path || qa_reader_path || qa_icon_reader_path)) {g_printerr("Renderer process stop requires separate explicit controlled private qualification\n");return 2;}
     if(qa_controlled_reload && (!qa_controlled_preview || !qa_exit || !qa_stay || !qa_client_snapshot || qa_controlled_delayed_snapshot || qa_controlled_cancelled_snapshot || qa_controlled_reader_path || qa_reader_path || qa_icon_reader_path)) {g_printerr("Renderer reload requires separate explicit controlled private qualification\n");return 2;}
+    if(qa_reduced_motion && (!qa_exit || !qa_stay)) {g_printerr("Reduced-motion fixture requires explicit qualification mode\n");return 2;}
     if (!asset_dir || !authority_config || !backend_path || !gtk_init_check(NULL,NULL) || !gtk_layer_is_supported()) return 2;
+    if(qa_reduced_motion) g_object_set(gtk_settings_get_default(),"gtk-enable-animations",FALSE,NULL);
     if (!admission_open(authority_config)) {g_printerr("Host durable admission unavailable\n");return 2;}
     GError *preview_error=NULL;
     preview_bootstrap=warlock_preview_bootstrap_open(authority_config,&preview_error);

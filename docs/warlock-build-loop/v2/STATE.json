@@ -1,43 +1,38 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-08T18:45:44.425080+00:00",
+  "updatedUTC": "2026-10-08T19:31:40.670121+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "task-view-workspace-transfer",
+    "id": "reduced-motion-profile",
     "requirements": [
-      "ELM-UX-018"
+      "ELM-UX-022"
     ],
     "scenarios": [
-      "ux-018",
-      "transfer-refused",
-      "transfer-accepted"
+      "ux-022"
     ],
     "paths": [
-      "implementation/warlock/src/Transfer.elm",
-      "implementation/warlock/src/Effects.elm",
-      "implementation/warlock/src/GeometryProjection.elm",
+      "implementation/warlock/src/Motion.elm",
       "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/TaskView.elm",
       "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/src/ReconciliationFrame.elm",
-      "implementation/warlock/src/ReceiptRouter.elm",
-      "implementation/warlock/adapter/geometry_endpoint.py",
-      "implementation/warlock/adapter/recovery_journal.py",
-      "implementation/warlock/adapter/admission_ledger.py",
+      "implementation/warlock/src/SurfaceRenderer.elm",
+      "implementation/warlock/native/motion-preference.h",
+      "implementation/warlock/native/shared-host.c",
       "implementation/warlock/native/authority.cpp",
-      "implementation/warlock/native/geometry-effects.inc",
-      "implementation/warlock/native/transfer-workspace.inc",
-      "implementation/warlock/qa/check-native-authority.py",
+      "implementation/warlock/native/motion-profile.inc",
+      "implementation/warlock/native/surface.h",
+      "implementation/warlock/adapter/effect_endpoint.py",
+      "implementation/warlock/adapter/daemon.py",
+      "implementation/warlock/assets/shell.css",
+      "implementation/warlock/qa/MotionReplay.elm",
+      "implementation/warlock/qa/check-motion.py",
       "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/check-native-authority.py",
       "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/TransferReplay.elm",
-      "implementation/warlock/qa/transfer-workspace.qnt",
-      "implementation/warlock/qa/check-transfer-workspace.py",
       "implementation/warlock/README.md",
       "implementation/warlock/assets/elm.js",
       "implementation/warlock/assets/bar.js",
@@ -45,38 +40,42 @@
       "implementation/warlock/qa/current-search-build.json",
       "implementation/warlock/qa/current-native-pair.json"
     ],
-    "before": "Task View lists native workspace membership and activates selected windows but exposes no explicit transfer transaction or refusal feedback.",
-    "after": "Task View offers typed window transfer destinations, uses the shared request/custody/native authority, preserves membership until the matching committed receipt, and shows refusal or Unknown without replay. Native authority supports existing and empty ordinary workspaces under current ownership.",
+    "before": "Native reduced-motion preference is absent from Elm policy and minimize/restore does not enforce the documented native transition profile.",
+    "after": "Native portal/GTK reduced-motion observations feed the immutable Elm root; its typed applied profile governs native minimize/restore and shell overlays with instant state presentation and no decorative motion.",
     "verification": [
-      "Actual Elm root/transfer replay checks pending, mismatched/duplicate receipts, committed membership and refusal; actual production adapter recovery/custody key checks and bounded Quint traces. Original isolated physical Task View transfer to workspace 2 and native refusal retention on workspace 1 under unchanged six-second observations."
+      "Compile current roots and native host/authority; actual root replay for preference changes, stale observations and binding retirement; actual native GTK preference and physical minimize/restore/overlay recording under original six-second observations."
     ],
     "status": "completed-partial",
-    "observed": "Original physical cancellation, pinned native refusal retaining workspace 1 with visible feedback, committed workspace 2 transfer and actual Task View membership; later supplementary empty-workspace interval failed before request.",
+    "observed": "Native portal/GTK observation is a typed immutable Elm input with acknowledged per-binding native profile and stale/binding guards. Actual original physical minimize/restore, MRU/desktop succession, native settled geometry/alpha traces, actual native Task View reduced profile with zero WebKit animation, exact five window commands, pixels, real GTK keyboard recipients and normal cleanup pass with compositor animations enabled. Independent original acceptance remains open.",
     "evidence": {
-      "path": "implementation/warlock/qa/evidence/transfer/manifest.json",
-      "sha256": "ee983f8638fffbf41fac47e47bbb2c0dc96b9a92ffd6304aac665e06fd16533f",
-      "scope": "Original physical cancellation, pinned native refusal retaining workspace 1 with visible feedback, committed workspace 2 transfer and actual Task View membership; later supplementary empty-workspace interval failed before request.",
-      "sourceRevision": "c1367de606cb57fd9c253550b6dfae93c56f5453",
+      "path": "implementation/warlock/qa/evidence/reduced-motion/manifest.json",
+      "sha256": "cbd78c6dbed55b513612d3475c229113175672437c3b9959310383c6505a32c7",
+      "scope": "Native portal/GTK observation is a typed immutable Elm input with acknowledged per-binding native profile and stale/binding guards. Actual original physical minimize/restore, MRU/desktop succession, native settled geometry/alpha traces, actual native Task View reduced profile with zero WebKit animation, exact five window commands, pixels, real GTK keyboard recipients and normal cleanup pass with compositor animations enabled. Independent original acceptance remains open.",
+      "sourceBaseRevision": "75fe9303b88b45766438223154f097b6a9515e90",
       "sourceTuple": {
         "core": {
           "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
           "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
         },
         "plugin": {
-          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791484487625706040/elm-window-geometry-authority.so",
-          "sha256": "796537e82996ac670d4b1da9c764764b921d61fe9f420220535c40ef1fbfb21f"
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791486715715656135/elm-window-geometry-authority.so",
+          "sha256": "84e4b3b5b2e0595daab8e85328319d10763f98aa8a1a2da679c61447741f123e"
         },
         "aquamarine": {
           "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
           "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
-        }
+        },
+        "componentReport": "implementation/warlock/qa/runs/reduced-motion-1791487548435914937/report.json",
+        "componentReportSHA256": "a6bd607d116a13cfc025796e61b50546b6e82a1175bfae86085bea57ca3f9795",
+        "authorityReport": "implementation/warlock/qa/runs/native-authority-1791486715715656135/report.json",
+        "authorityReportSHA256": "00dd0de3d0ac89b3e515cd0176b32ffee8053efa8ce9bf1f6184e8a4b7170bef"
       },
-      "reviewerDisposition": "Owner-observed original native/replay oracles; independent original acceptance pending."
+      "reviewerDisposition": "Owner-observed original replay and native recording; independent original scenario and requirement review pending."
     },
     "missingObservations": [
-      "Independent original scenario/requirement review remains pending; the owner-observed original native oracles are separate from acceptance.",
-      "The later supplementary empty-workspace 3 native interval was not reached: its helper waited for workspace 2, correctly excluded as the current source. The helper now takes the requested destination but is unrerun after two native attempts.",
-      "Native modal/minimized/cross-output/device and applicable AT coverage, full release journeys/resource/package/deployment remain open."
+      "Independent original ux-022 review against the exact committed source/core/plugin/toolchain tuple.",
+      "Native live preference changes during transitions, all-overlay/style/output/device fixtures and applicable AT are separate original UI014/UI018 and release obligations; this campaign covers static GTK reduced motion and Task View on one 800x600 output.",
+      "Private portal protocol/lifecycle is actual C/private-D-Bus component evidence; the native GUI campaign uses the actual GTK property selected in an explicit QA-only host, because the unchanged protected launcher forces the in-memory settings backend."
     ],
     "investigationStopped": true
   },
@@ -583,13 +582,20 @@
     }
   ],
   "nextOriginalSlice": {
-    "id": "reduced-motion-profile",
+    "id": "live-motion-preference",
     "requirements": [
-      "ELM-UX-022"
+      "ELM-UI-014",
+      "ELM-UI-018"
     ],
     "scenarios": [
-      "ux-022"
+      "live-motion-minimize",
+      "live-motion-restore",
+      "live-motion-switcher",
+      "live-motion-Task View",
+      "motion-enable",
+      "motion-overlays",
+      "motion-disable"
     ],
-    "reason": "Implement the documented reduced-motion profile for actual minimize/restore and shell overlays, independently of stopped AT/IME/transfer qualifications."
+    "reason": "Integrate explicit system/override policy and qualify live native preference changes during window and overlay motion, preserving acknowledged targets, deadlines and ownership; the static UX022 profile is implemented and owner-observed."
   }
 }

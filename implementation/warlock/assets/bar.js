@@ -519,11 +519,11 @@ function _Debug_crash_UNUSED(identifier, fact1, fact2, fact3, fact4)
 
 function _Debug_regionToString(region)
 {
-	if (region.af.P === region.am.P)
+	if (region.ag.P === region.an.P)
 	{
-		return 'on line ' + region.af.P;
+		return 'on line ' + region.ag.P;
 	}
-	return 'on lines ' + region.af.P + ' through ' + region.am.P;
+	return 'on lines ' + region.ag.P + ' through ' + region.an.P;
 }
 
 
@@ -1857,9 +1857,9 @@ var _Platform_worker = F4(function(impl, flagDecoder, debugMetadata, args)
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aV,
-		impl.a1,
-		impl.a$,
+		impl.aW,
+		impl.a2,
+		impl.a0,
 		function() { return function() {} }
 	);
 });
@@ -2720,8 +2720,8 @@ var _VirtualDom_mapEventRecord = F2(function(func, record)
 {
 	return {
 		w: func(record.w),
-		ag: record.ag,
-		ab: record.ab
+		ah: record.ah,
+		ac: record.ac
 	}
 });
 
@@ -2990,10 +2990,10 @@ function _VirtualDom_makeCallback(eventNode, initialHandler)
 
 		var value = result.a;
 		var message = !tag ? value : tag < 3 ? value.a : value.w;
-		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.ag;
+		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.ah;
 		var currentEventNode = (
 			stopPropagation && event.stopPropagation(),
-			(tag == 2 ? value.b : tag == 3 && value.ab) && event.preventDefault(),
+			(tag == 2 ? value.b : tag == 3 && value.ac) && event.preventDefault(),
 			eventNode
 		);
 		var tagger;
@@ -3943,11 +3943,11 @@ var _Browser_element = _Debugger_element || F4(function(impl, flagDecoder, debug
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aV,
-		impl.a1,
-		impl.a$,
+		impl.aW,
+		impl.a2,
+		impl.a0,
 		function(sendToApp, initialModel) {
-			var view = impl.a2;
+			var view = impl.a3;
 			/**/
 			var domNode = args['node'];
 			//*/
@@ -3979,12 +3979,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aV,
-		impl.a1,
-		impl.a$,
+		impl.aW,
+		impl.a2,
+		impl.a0,
 		function(sendToApp, initialModel) {
-			var divertHrefToApp = impl.ad && impl.ad(sendToApp)
-			var view = impl.a2;
+			var divertHrefToApp = impl.ae && impl.ae(sendToApp)
+			var view = impl.a3;
 			var title = _VirtualDom_doc.title;
 			var bodyNode = _VirtualDom_doc.body;
 			var currNode = _VirtualDom_virtualize(bodyNode);
@@ -3992,12 +3992,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 			{
 				_VirtualDom_divertHrefToApp = divertHrefToApp;
 				var doc = view(model);
-				var nextNode = _VirtualDom_node('body')(_List_Nil)(doc.aO);
+				var nextNode = _VirtualDom_node('body')(_List_Nil)(doc.aP);
 				var patches = _VirtualDom_diff(currNode, nextNode);
 				bodyNode = _VirtualDom_applyPatches(bodyNode, currNode, patches, sendToApp);
 				currNode = nextNode;
 				_VirtualDom_divertHrefToApp = 0;
-				(title !== doc.a0) && (_VirtualDom_doc.title = title = doc.a0);
+				(title !== doc.a1) && (_VirtualDom_doc.title = title = doc.a1);
 			});
 		}
 	);
@@ -4053,12 +4053,12 @@ function _Browser_makeAnimator(model, draw)
 
 function _Browser_application(impl)
 {
-	var onUrlChange = impl.aX;
-	var onUrlRequest = impl.aY;
+	var onUrlChange = impl.aY;
+	var onUrlRequest = impl.aZ;
 	var key = function() { key.a(onUrlChange(_Browser_getUrl())); };
 
 	return _Browser_document({
-		ad: function(sendToApp)
+		ae: function(sendToApp)
 		{
 			key.a = sendToApp;
 			_Browser_window.addEventListener('popstate', key);
@@ -4074,9 +4074,9 @@ function _Browser_application(impl)
 					var next = $elm$url$Url$fromString(href).a;
 					sendToApp(onUrlRequest(
 						(next
-							&& curr.az === next.az
-							&& curr.aq === next.aq
-							&& curr.aw.a === next.aw.a
+							&& curr.aA === next.aA
+							&& curr.ar === next.ar
+							&& curr.ax.a === next.ax.a
 						)
 							? $elm$browser$Browser$Internal(next)
 							: $elm$browser$Browser$External(href)
@@ -4084,13 +4084,13 @@ function _Browser_application(impl)
 				}
 			});
 		},
-		aV: function(flags)
+		aW: function(flags)
 		{
-			return A3(impl.aV, flags, _Browser_getUrl(), key);
+			return A3(impl.aW, flags, _Browser_getUrl(), key);
 		},
+		a3: impl.a3,
 		a2: impl.a2,
-		a1: impl.a1,
-		a$: impl.a$
+		a0: impl.a0
 	});
 }
 
@@ -4156,17 +4156,17 @@ var _Browser_decodeEvent = F2(function(decoder, event)
 function _Browser_visibilityInfo()
 {
 	return (typeof _VirtualDom_doc.hidden !== 'undefined')
-		? { aT: 'hidden', aP: 'visibilitychange' }
+		? { aU: 'hidden', aQ: 'visibilitychange' }
 		:
 	(typeof _VirtualDom_doc.mozHidden !== 'undefined')
-		? { aT: 'mozHidden', aP: 'mozvisibilitychange' }
+		? { aU: 'mozHidden', aQ: 'mozvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.msHidden !== 'undefined')
-		? { aT: 'msHidden', aP: 'msvisibilitychange' }
+		? { aU: 'msHidden', aQ: 'msvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.webkitHidden !== 'undefined')
-		? { aT: 'webkitHidden', aP: 'webkitvisibilitychange' }
-		: { aT: 'hidden', aP: 'visibilitychange' };
+		? { aU: 'webkitHidden', aQ: 'webkitvisibilitychange' }
+		: { aU: 'hidden', aQ: 'visibilitychange' };
 }
 
 
@@ -4247,12 +4247,12 @@ var _Browser_call = F2(function(functionName, id)
 function _Browser_getViewport()
 {
 	return {
-		aD: _Browser_getScene(),
-		aI: {
-			aK: _Browser_window.pageXOffset,
-			aL: _Browser_window.pageYOffset,
-			aJ: _Browser_doc.documentElement.clientWidth,
-			ap: _Browser_doc.documentElement.clientHeight
+		aE: _Browser_getScene(),
+		aJ: {
+			aL: _Browser_window.pageXOffset,
+			aM: _Browser_window.pageYOffset,
+			aK: _Browser_doc.documentElement.clientWidth,
+			aq: _Browser_doc.documentElement.clientHeight
 		}
 	};
 }
@@ -4262,8 +4262,8 @@ function _Browser_getScene()
 	var body = _Browser_doc.body;
 	var elem = _Browser_doc.documentElement;
 	return {
-		aJ: Math.max(body.scrollWidth, body.offsetWidth, elem.scrollWidth, elem.offsetWidth, elem.clientWidth),
-		ap: Math.max(body.scrollHeight, body.offsetHeight, elem.scrollHeight, elem.offsetHeight, elem.clientHeight)
+		aK: Math.max(body.scrollWidth, body.offsetWidth, elem.scrollWidth, elem.offsetWidth, elem.clientWidth),
+		aq: Math.max(body.scrollHeight, body.offsetHeight, elem.scrollHeight, elem.offsetHeight, elem.clientHeight)
 	};
 }
 
@@ -4286,15 +4286,15 @@ function _Browser_getViewportOf(id)
 	return _Browser_withNode(id, function(node)
 	{
 		return {
-			aD: {
-				aJ: node.scrollWidth,
-				ap: node.scrollHeight
+			aE: {
+				aK: node.scrollWidth,
+				aq: node.scrollHeight
 			},
-			aI: {
-				aK: node.scrollLeft,
-				aL: node.scrollTop,
-				aJ: node.clientWidth,
-				ap: node.clientHeight
+			aJ: {
+				aL: node.scrollLeft,
+				aM: node.scrollTop,
+				aK: node.clientWidth,
+				aq: node.clientHeight
 			}
 		};
 	});
@@ -4324,18 +4324,18 @@ function _Browser_getElement(id)
 		var x = _Browser_window.pageXOffset;
 		var y = _Browser_window.pageYOffset;
 		return {
-			aD: _Browser_getScene(),
-			aI: {
-				aK: x,
-				aL: y,
-				aJ: _Browser_doc.documentElement.clientWidth,
-				ap: _Browser_doc.documentElement.clientHeight
+			aE: _Browser_getScene(),
+			aJ: {
+				aL: x,
+				aM: y,
+				aK: _Browser_doc.documentElement.clientWidth,
+				aq: _Browser_doc.documentElement.clientHeight
 			},
-			aR: {
-				aK: x + rect.left,
-				aL: y + rect.top,
-				aJ: rect.width,
-				ap: rect.height
+			aS: {
+				aL: x + rect.left,
+				aM: y + rect.top,
+				aK: rect.width,
+				aq: rect.height
 			}
 		};
 	});
@@ -4490,43 +4490,6 @@ var $elm$core$Result$Ok = function (a) {
 };
 var $author$project$SurfaceRenderer$Snapshot = $elm$core$Basics$identity;
 var $elm$core$Basics$and = _Basics_and;
-var $elm$core$Result$andThen = F2(
-	function (callback, result) {
-		if (!result.$) {
-			var value = result.a;
-			return callback(value);
-		} else {
-			var msg = result.a;
-			return $elm$core$Result$Err(msg);
-		}
-	});
-var $elm$core$Basics$True = 0;
-var $elm$core$List$any = F2(
-	function (isOkay, list) {
-		any:
-		while (true) {
-			if (!list.b) {
-				return false;
-			} else {
-				var x = list.a;
-				var xs = list.b;
-				if (isOkay(x)) {
-					return true;
-				} else {
-					var $temp$isOkay = isOkay,
-						$temp$list = xs;
-					isOkay = $temp$isOkay;
-					list = $temp$list;
-					continue any;
-				}
-			}
-		}
-	});
-var $elm$core$Basics$apR = F2(
-	function (x, f) {
-		return f(x);
-	});
-var $elm$core$Basics$append = _Utils_append;
 var $elm$json$Json$Decode$Failure = F2(
 	function (a, b) {
 		return {$: 3, a: a, b: b};
@@ -4544,6 +4507,7 @@ var $elm$json$Json$Decode$OneOf = function (a) {
 };
 var $elm$core$Basics$add = _Basics_add;
 var $elm$core$String$all = _String_all;
+var $elm$core$Basics$append = _Utils_append;
 var $elm$json$Json$Encode$encode = _Json_encode;
 var $elm$core$String$fromInt = _String_fromNumber;
 var $elm$core$String$join = F2(
@@ -4779,6 +4743,10 @@ var $elm$core$Basics$apL = F2(
 	function (f, x) {
 		return f(x);
 	});
+var $elm$core$Basics$apR = F2(
+	function (x, f) {
+		return f(x);
+	});
 var $elm$core$Basics$eq = _Utils_equal;
 var $elm$core$Basics$floor = _Basics_floor;
 var $elm$core$Elm$JsArray$length = _JsArray_length;
@@ -4897,6 +4865,7 @@ var $elm$core$Array$initialize = F2(
 			return A5($elm$core$Array$initializeHelp, fn, initialFromIndex, len, _List_Nil, tail);
 		}
 	});
+var $elm$core$Basics$True = 0;
 var $elm$core$Result$isOk = function (result) {
 	if (!result.$) {
 		return true;
@@ -4905,6 +4874,37 @@ var $elm$core$Result$isOk = function (result) {
 	}
 };
 var $elm$json$Json$Decode$andThen = _Json_andThen;
+var $elm$core$Result$andThen = F2(
+	function (callback, result) {
+		if (!result.$) {
+			var value = result.a;
+			return callback(value);
+		} else {
+			var msg = result.a;
+			return $elm$core$Result$Err(msg);
+		}
+	});
+var $elm$core$List$any = F2(
+	function (isOkay, list) {
+		any:
+		while (true) {
+			if (!list.b) {
+				return false;
+			} else {
+				var x = list.a;
+				var xs = list.b;
+				if (isOkay(x)) {
+					return true;
+				} else {
+					var $temp$isOkay = isOkay,
+						$temp$list = xs;
+					isOkay = $temp$isOkay;
+					list = $temp$list;
+					continue any;
+				}
+			}
+		}
+	});
 var $elm$core$String$any = _String_any;
 var $elm$json$Json$Decode$fail = _Json_fail;
 var $elm$core$Basics$not = _Basics_not;
@@ -5077,7 +5077,7 @@ var $author$project$UInt64$decoder = A2(
 	},
 	$elm$json$Json$Decode$string);
 var $author$project$Settings$Night = 0;
-var $author$project$Settings$defaults = {X: 100, ah: 0};
+var $author$project$Settings$defaults = {Y: 100, ai: 0};
 var $elm$core$Set$Set_elm_builtin = $elm$core$Basics$identity;
 var $elm$core$Dict$RBEmpty_elm_builtin = {$: -2};
 var $elm$core$Dict$empty = $elm$core$Dict$RBEmpty_elm_builtin;
@@ -5206,6 +5206,7 @@ var $elm$core$List$isEmpty = function (xs) {
 		return false;
 	}
 };
+var $elm$json$Json$Decode$map2 = _Json_map2;
 var $elm$json$Json$Decode$map8 = _Json_map8;
 var $elm$core$Result$mapError = F2(
 	function (f, result) {
@@ -5228,6 +5229,10 @@ var $elm$core$List$member = F2(
 			xs);
 	});
 var $elm$core$Basics$neq = _Utils_notEqual;
+var $elm$core$Tuple$pair = F2(
+	function (a, b) {
+		return _Utils_Tuple2(a, b);
+	});
 var $elm$core$Dict$sizeHelp = F2(
 	function (n, dict) {
 		sizeHelp:
@@ -5264,9 +5269,8 @@ var $author$project$Settings$Dawn = 1;
 var $author$project$Settings$HighContrast = 2;
 var $author$project$Settings$Values = F2(
 	function (theme, textScale) {
-		return {X: textScale, ah: theme};
+		return {Y: textScale, ai: theme};
 	});
-var $elm$json$Json$Decode$map2 = _Json_map2;
 var $author$project$Settings$strict = F2(
 	function (fields, child) {
 		return A2(
@@ -5326,42 +5330,71 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 				$elm$json$Json$Decode$decodeValue,
 				A2($elm$json$Json$Decode$field, 'appearance', $elm$json$Json$Decode$value),
 				raw)));
+	var hasMotion = !_Utils_eq(
+		$elm$core$Maybe$Nothing,
+		$elm$core$Result$toMaybe(
+			A2(
+				$elm$json$Json$Decode$decodeValue,
+				A2($elm$json$Json$Decode$field, 'motion', $elm$json$Json$Decode$value),
+				raw)));
+	var motionDecoder = hasMotion ? A2(
+		$elm$json$Json$Decode$field,
+		'motion',
+		A2(
+			$elm$json$Json$Decode$andThen,
+			function (v) {
+				return A2(
+					$elm$core$List$member,
+					v,
+					_List_fromArray(
+						['reduced', 'full'])) ? $elm$json$Json$Decode$succeed(v) : $elm$json$Json$Decode$fail('Motion profile');
+			},
+			$elm$json$Json$Decode$string)) : $elm$json$Json$Decode$succeed('reduced');
 	var decoder = A2(
 		$author$project$SurfaceRenderer$strict,
 		_Utils_ap(
 			_List_fromArray(
 				['surfaceProtocol', 'publication', 'lease', 'mode', 'status', 'bar', 'popup']),
-			legacy ? _List_Nil : _List_fromArray(
-				['appearance'])),
-		A9(
-			$elm$json$Json$Decode$map8,
-			F8(
-				function (version, shown, scoped, current, notice, bar, popup, appearance) {
-					return {t: appearance, o: bar, O: current, r: notice, f: popup, ac: scoped, ae: shown, aH: version};
-				}),
-			A2($elm$json$Json$Decode$field, 'surfaceProtocol', $elm$json$Json$Decode$int),
-			A2($elm$json$Json$Decode$field, 'publication', $author$project$UInt64$decoder),
-			A2($elm$json$Json$Decode$field, 'lease', $author$project$UInt64$decoder),
-			A2(
-				$elm$json$Json$Decode$field,
-				'mode',
-				$author$project$SurfaceRenderer$bounded(16)),
-			A2(
-				$elm$json$Json$Decode$field,
-				'status',
-				$author$project$SurfaceRenderer$bounded(1024)),
-			A2(
-				$elm$json$Json$Decode$field,
-				'bar',
-				$author$project$SurfaceRenderer$controls(300)),
-			A2(
-				$elm$json$Json$Decode$field,
-				'popup',
-				$author$project$SurfaceRenderer$controls(2150)),
-			legacy ? $elm$json$Json$Decode$succeed($author$project$Settings$defaults) : A2($elm$json$Json$Decode$field, 'appearance', $author$project$Settings$valuesDecoder)));
+			_Utils_ap(
+				legacy ? _List_Nil : _List_fromArray(
+					['appearance']),
+				hasMotion ? _List_fromArray(
+					['motion']) : _List_Nil)),
+		A3(
+			$elm$json$Json$Decode$map2,
+			$elm$core$Tuple$pair,
+			motionDecoder,
+			A9(
+				$elm$json$Json$Decode$map8,
+				F8(
+					function (version, shown, scoped, current, notice, bar, popup, appearance) {
+						return {t: appearance, o: bar, O: current, r: notice, f: popup, ad: scoped, af: shown, aI: version};
+					}),
+				A2($elm$json$Json$Decode$field, 'surfaceProtocol', $elm$json$Json$Decode$int),
+				A2($elm$json$Json$Decode$field, 'publication', $author$project$UInt64$decoder),
+				A2($elm$json$Json$Decode$field, 'lease', $author$project$UInt64$decoder),
+				A2(
+					$elm$json$Json$Decode$field,
+					'mode',
+					$author$project$SurfaceRenderer$bounded(16)),
+				A2(
+					$elm$json$Json$Decode$field,
+					'status',
+					$author$project$SurfaceRenderer$bounded(1024)),
+				A2(
+					$elm$json$Json$Decode$field,
+					'bar',
+					$author$project$SurfaceRenderer$controls(300)),
+				A2(
+					$elm$json$Json$Decode$field,
+					'popup',
+					$author$project$SurfaceRenderer$controls(2150)),
+				legacy ? $elm$json$Json$Decode$succeed($author$project$Settings$defaults) : A2($elm$json$Json$Decode$field, 'appearance', $author$project$Settings$valuesDecoder))));
 	return A2(
 		$elm$core$Result$andThen,
-		function (record) {
+		function (_v0) {
+			var motion = _v0.a;
+			var record = _v0.b;
 			var unique = function (names) {
 				return _Utils_eq(
 					$elm$core$List$length(names),
@@ -5375,11 +5408,11 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 					return $.J;
 				},
 				all);
-			return ((record.aH !== 2) || (_Utils_eq(record.ae, $author$project$UInt64$zero) || ((!A2(
+			return ((record.aI !== 2) || (_Utils_eq(record.af, $author$project$UInt64$zero) || ((!A2(
 				$elm$core$List$member,
 				record.O,
 				_List_fromArray(
-					['closed', 'picker', 'applications', 'menu', 'overview', 'switcher', 'snap', 'settings', 'notifications', 'system', 'files', 'jump']))) || (((record.O !== 'closed') && _Utils_eq(record.ac, $author$project$UInt64$zero)) || (((record.O === 'closed') && (!$elm$core$List$isEmpty(record.f))) || ((!unique(identities)) || ((!unique(
+					['closed', 'picker', 'applications', 'menu', 'overview', 'switcher', 'snap', 'settings', 'notifications', 'system', 'files', 'jump']))) || (((record.O !== 'closed') && _Utils_eq(record.ad, $author$project$UInt64$zero)) || (((record.O === 'closed') && (!$elm$core$List$isEmpty(record.f))) || ((!unique(identities)) || ((!unique(
 				A2(
 					$elm$core$List$map,
 					function ($) {
@@ -5391,7 +5424,7 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 					return $elm$core$String$isEmpty(control.J) || $elm$core$String$isEmpty(control.p);
 				},
 				all)))))))) ? $elm$core$Result$Err('Invalid presentation scope/identities') : $elm$core$Result$Ok(
-				{t: record.t, o: record.o, Z: record.ac, a: record.O, f: record.f, V: record.ae, z: record.r});
+				{t: record.t, o: record.o, _: record.ad, a: record.O, V: motion, f: record.f, W: record.af, z: record.r});
 		},
 		A2(
 			$elm$core$Result$mapError,
@@ -5400,11 +5433,11 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 };
 var $author$project$SurfaceRenderer$lease = function (_v0) {
 	var snapshot = _v0;
-	return snapshot.Z;
+	return snapshot._;
 };
 var $author$project$SurfaceRenderer$publication = function (_v0) {
 	var snapshot = _v0;
-	return snapshot.V;
+	return snapshot.W;
 };
 var $author$project$Presentation$accept = F2(
 	function (raw, prior) {
@@ -5419,12 +5452,12 @@ var $author$project$Presentation$accept = F2(
 			return ((A2(
 				$author$project$UInt64$compare,
 				$author$project$SurfaceRenderer$publication(snapshot),
-				model.Y) !== 2) || (!A2(
+				model.Z) !== 2) || (!A2(
 				$author$project$UInt64$compare,
 				$author$project$SurfaceRenderer$lease(snapshot),
-				model.Z))) ? prior : {
-				Y: $author$project$SurfaceRenderer$publication(snapshot),
-				Z: $author$project$SurfaceRenderer$lease(snapshot),
+				model._))) ? prior : {
+				Z: $author$project$SurfaceRenderer$publication(snapshot),
+				_: $author$project$SurfaceRenderer$lease(snapshot),
 				y: $elm$core$Maybe$Just(snapshot)
 			};
 		}
@@ -5451,9 +5484,9 @@ var $author$project$CapturedAction$decode = function (raw) {
 					var version = _v0.a;
 					var kind = _v0.b;
 					var value = _v0.c;
-					return ((version === 2) && ((kind === 'surface-action') && ((!_Utils_eq(value.V, $author$project$UInt64$zero)) && (A2(
+					return ((version === 2) && ((kind === 'surface-action') && ((!_Utils_eq(value.W, $author$project$UInt64$zero)) && (A2(
 						$elm$core$List$member,
-						value.W,
+						value.X,
 						_List_fromArray(
 							['bar', 'popup'])) && ((!$elm$core$String$isEmpty(value.J)) && (($elm$core$String$length(value.J) <= 512) && (!A2(
 						$elm$core$String$any,
@@ -5469,7 +5502,7 @@ var $author$project$CapturedAction$decode = function (raw) {
 							return _Utils_Tuple3(
 								version,
 								kind,
-								{J: name, Z: scoped, V: shown, W: role});
+								{J: name, _: scoped, W: shown, X: role});
 						}),
 					A2($elm$json$Json$Decode$field, 'surfaceProtocol', $elm$json$Json$Decode$int),
 					A2($elm$json$Json$Decode$field, 'kind', $elm$json$Json$Decode$string),
@@ -5517,7 +5550,7 @@ var $author$project$CapturedAction$encode = function (_v0) {
 			[
 				_Utils_Tuple2(
 				'surface',
-				$elm$json$Json$Encode$string(value.W)),
+				$elm$json$Json$Encode$string(value.X)),
 				_Utils_Tuple2(
 				'surfaceProtocol',
 				$elm$json$Json$Encode$int(2)),
@@ -5527,11 +5560,11 @@ var $author$project$CapturedAction$encode = function (_v0) {
 				_Utils_Tuple2(
 				'publication',
 				$elm$json$Json$Encode$string(
-					$author$project$UInt64$string(value.V))),
+					$author$project$UInt64$string(value.W))),
 				_Utils_Tuple2(
 				'lease',
 				$elm$json$Json$Encode$string(
-					$author$project$UInt64$string(value.Z))),
+					$author$project$UInt64$string(value._))),
 				_Utils_Tuple2(
 				'id',
 				$elm$json$Json$Encode$string(value.J))
@@ -5543,15 +5576,15 @@ var $author$project$CapturedAction$identity = function (_v0) {
 };
 var $author$project$CapturedAction$lease = function (_v0) {
 	var value = _v0;
-	return value.Z;
+	return value._;
 };
 var $author$project$CapturedAction$publication = function (_v0) {
 	var value = _v0;
-	return value.V;
+	return value.W;
 };
 var $author$project$CapturedAction$surface = function (_v0) {
 	var value = _v0;
-	return value.W;
+	return value.X;
 };
 var $author$project$Presentation$dispatch = F3(
 	function (popup, raw, _v0) {
@@ -5602,7 +5635,7 @@ var $elm$url$Url$Http = 0;
 var $elm$url$Url$Https = 1;
 var $elm$url$Url$Url = F6(
 	function (protocol, host, port_, path, query, fragment) {
-		return {ao: fragment, aq: host, au: path, aw: port_, az: protocol, aA: query};
+		return {ap: fragment, ar: host, av: path, ax: port_, aA: protocol, aB: query};
 	});
 var $elm$core$String$contains = _String_contains;
 var $elm$core$String$slice = _String_slice;
@@ -5807,7 +5840,7 @@ var $elm$core$Task$perform = F2(
 			A2($elm$core$Task$map, toMessage, task));
 	});
 var $elm$browser$Browser$element = _Browser_element;
-var $author$project$Presentation$initial = {Y: $author$project$UInt64$zero, Z: $author$project$UInt64$zero, y: $elm$core$Maybe$Nothing};
+var $author$project$Presentation$initial = {Z: $author$project$UInt64$zero, _: $author$project$UInt64$zero, y: $elm$core$Maybe$Nothing};
 var $elm$core$Maybe$map = F2(
 	function (f, maybe) {
 		if (!maybe.$) {
@@ -6035,11 +6068,11 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 												_Utils_Tuple2(
 												'publication',
 												$elm$json$Json$Encode$string(
-													$author$project$UInt64$string(snapshot.V))),
+													$author$project$UInt64$string(snapshot.W))),
 												_Utils_Tuple2(
 												'lease',
 												$elm$json$Json$Encode$string(
-													$author$project$UInt64$string(snapshot.Z))),
+													$author$project$UInt64$string(snapshot._))),
 												_Utils_Tuple2(
 												'id',
 												$elm$json$Json$Encode$string(item.J)),
@@ -6212,24 +6245,25 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 			$elm$html$Html$div,
 			_List_fromArray(
 				[
+					A2($elm$html$Html$Attributes$attribute, 'data-motion', snapshot.V),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-theme',
-					$author$project$Settings$themeName(snapshot.t.ah)),
+					$author$project$Settings$themeName(snapshot.t.ai)),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-text-scale',
-					$elm$core$String$fromInt(snapshot.t.X)),
+					$elm$core$String$fromInt(snapshot.t.Y)),
 					$elm$html$Html$Attributes$class('surface-popup'),
 					A2($elm$html$Html$Attributes$attribute, 'data-mode', snapshot.a),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-publication',
-					$author$project$UInt64$string(snapshot.V)),
+					$author$project$UInt64$string(snapshot.W)),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-lease',
-					$author$project$UInt64$string(snapshot.Z))
+					$author$project$UInt64$string(snapshot._))
 				]),
 			_List_fromArray(
 				[
@@ -6336,23 +6370,24 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 			'div',
 			_List_fromArray(
 				[
+					A2($elm$html$Html$Attributes$attribute, 'data-motion', snapshot.V),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-theme',
-					$author$project$Settings$themeName(snapshot.t.ah)),
+					$author$project$Settings$themeName(snapshot.t.ai)),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-text-scale',
-					$elm$core$String$fromInt(snapshot.t.X)),
+					$elm$core$String$fromInt(snapshot.t.Y)),
 					$elm$html$Html$Attributes$class('surface-bar'),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-publication',
-					$author$project$UInt64$string(snapshot.V)),
+					$author$project$UInt64$string(snapshot.W)),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-lease',
-					$author$project$UInt64$string(snapshot.Z))
+					$author$project$UInt64$string(snapshot._))
 				]),
 			_List_fromArray(
 				[
@@ -6417,10 +6452,10 @@ var $elm$core$Maybe$withDefault = F2(
 	});
 var $author$project$Bar$main = $elm$browser$Browser$element(
 	{
-		aV: function (_v0) {
+		aW: function (_v0) {
 			return _Utils_Tuple2($author$project$Presentation$initial, $elm$core$Platform$Cmd$none);
 		},
-		a$: function (_v1) {
+		a0: function (_v1) {
 			return $elm$core$Platform$Sub$batch(
 				_List_fromArray(
 					[
@@ -6428,7 +6463,7 @@ var $author$project$Bar$main = $elm$browser$Browser$element(
 						$author$project$Bar$requestAction($author$project$Bar$Action)
 					]));
 		},
-		a1: F2(
+		a2: F2(
 			function (message, model) {
 				if (message.$ === 1) {
 					var value = message.a;
@@ -6448,7 +6483,7 @@ var $author$project$Bar$main = $elm$browser$Browser$element(
 						$elm$core$Platform$Cmd$none);
 				}
 			}),
-		a2: function (model) {
+		a3: function (model) {
 			return A2(
 				$elm$core$Maybe$withDefault,
 				$elm$html$Html$text(''),

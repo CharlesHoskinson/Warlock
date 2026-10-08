@@ -5,6 +5,7 @@ import ActionProjection as Scene
 import Switcher
 import Pins
 import Settings
+import Motion
 import Notifications
 import JumpList
 import PointerOwnership
@@ -59,6 +60,7 @@ type alias Model =
     , notificationsOpen : Bool
     , notificationsOpening : Bool
     , notificationsExpected : Maybe Counter
+    , motion : Motion.Model
     , settings : Settings.Model
     , settingsOpen : Bool
     , settingsOpening : Bool
@@ -163,7 +165,7 @@ type Effect
 
 initial : Model
 initial =
-    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, pointer = PointerOwnership.initial, shortcuts = Shortcuts.initial, jumpList = JumpList.initial, jumpEntry = Nothing, jumpOpening = False, jumpExpected = Nothing, jumpBack = False, files = Files.initial, filesOpen = False, filesOpening = False, filesExpected = Nothing, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, overviewTransfer = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
+    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, pointer = PointerOwnership.initial, shortcuts = Shortcuts.initial, jumpList = JumpList.initial, jumpEntry = Nothing, jumpOpening = False, jumpExpected = Nothing, jumpBack = False, files = Files.initial, filesOpen = False, filesOpening = False, filesExpected = Nothing, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, motion = Motion.initial, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, overviewTransfer = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
 
 switcherOpen : Model -> Bool
 switcherOpen model = List.member (Switcher.phase model.switcher) [Switcher.Waiting,Switcher.Browsing]
@@ -357,6 +359,7 @@ windowBase message model =
         , notificationsOpen = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.notificationsOpen
         , notificationsOpening = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.notificationsOpening
         , notificationsExpected = if disconnected || changed then Nothing else model.notificationsExpected
+        , motion = if disconnected || changed then Motion.rebind model.motion else model.motion
         , settings = if disconnected || changed then Settings.initial else model.settings
         , settingsOpen = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.settingsOpen
         , settingsOpening = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.settingsOpening
@@ -498,8 +501,21 @@ window message model =
 
 update : Msg -> Model -> ( Model, List Effect )
 update message model =
-    if PointerOwnership.blocked model.windows.shell.binding model.pointer && gestureAction message then (model,[]) else
-    updateAvailable message model
+    if (PointerOwnership.blocked model.windows.shell.binding model.pointer || not (Motion.ready model.windows.shell.binding model.motion)) && gestureAction message then (model,[]) else
+    let (next,effects)=updateAvailable message model
+        (synced,commands)=syncMotion next
+    in (synced,effects++commands)
+
+syncMotion : Model -> (Model,List Effect)
+syncMotion model =
+    if model.windows.shell.phase==Shell.Detached || model.windows.shell.phase==Shell.Exhausted then (model,[]) else
+    case (model.windows.shell.binding,UInt64.next model.request) of
+        (Just binding,Just request) ->
+            let (motion,command)=Motion.propose binding request model.motion
+            in case command of
+                Nothing -> (model,[])
+                Just wire -> (advance {model | motion=motion,request=request},[Send wire])
+        _ -> (model,[])
 
 gestureAction message =
     case message of
@@ -641,6 +657,18 @@ updateAvailable message model =
             in if next.windows.picker/=Nothing && next.windows.picker/=model.windows.picker then (retireSwitcher {next | jumpEntry=Nothing,jumpOpening=False,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,snap=Nothing,open=False,overview=False,expected=Nothing,menuOrigin=Nothing,returnFocus=Nothing},effects) else (synced,effects++commands)
         Incoming raw ->
             case D.decodeValue (D.field "kind" D.string) raw of
+                Ok "host-motion-preference" ->
+                    case D.decodeValue Motion.decoder raw of
+                        Err _ -> (model,[])
+                        Ok observation ->
+                            let motion=Motion.observe observation model.motion
+                            in if motion==model.motion then (model,[]) else (advance {model | motion=motion},[])
+                Ok "motion-profile" ->
+                    case D.decodeValue Motion.receiptDecoder raw of
+                        Err _ -> (model,[])
+                        Ok receipt ->
+                            let motion=Motion.receive model.windows.shell.binding receipt model.motion
+                            in if motion==model.motion then (model,[]) else (advance {model | motion=motion},[])
                 Ok "pointer-ownership" ->
                     case D.decodeValue PointerOwnership.decoder raw of
                         Err _ -> (model,[])

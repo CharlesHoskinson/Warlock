@@ -7822,14 +7822,41 @@
       "owner": "Desktop experience lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "ux-022",
           "oracle": "recorded transitions match approved reduced-motion profile",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/reduced-motion/manifest.json",
+              "sha256": "cbd78c6dbed55b513612d3475c229113175672437c3b9959310383c6505a32c7",
+              "scope": "Native portal/GTK observation is a typed immutable Elm input with acknowledged per-binding native profile and stale/binding guards. Actual original physical minimize/restore, MRU/desktop succession, native settled geometry/alpha traces, actual native Task View reduced profile with zero WebKit animation, exact five window commands, pixels, real GTK keyboard recipients and normal cleanup pass with compositor animations enabled. Independent original acceptance remains open.",
+              "sourceBaseRevision": "75fe9303b88b45766438223154f097b6a9515e90",
+              "sourceTuple": {
+                "core": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+                  "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+                },
+                "plugin": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791486715715656135/elm-window-geometry-authority.so",
+                  "sha256": "84e4b3b5b2e0595daab8e85328319d10763f98aa8a1a2da679c61447741f123e"
+                },
+                "aquamarine": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+                  "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+                },
+                "componentReport": "implementation/warlock/qa/runs/reduced-motion-1791487548435914937/report.json",
+                "componentReportSHA256": "a6bd607d116a13cfc025796e61b50546b6e82a1175bfae86085bea57ca3f9795",
+                "authorityReport": "implementation/warlock/qa/runs/native-authority-1791486715715656135/report.json",
+                "authorityReportSHA256": "00dd0de3d0ac89b3e515cd0176b32ffee8053efa8ce9bf1f6184e8a4b7170bef"
+              },
+              "reviewerDisposition": "Owner-observed original replay and native recording; independent original scenario and requirement review pending."
+            }
+          ],
+          "missingObservation": "Independent original ux-022 review against the exact committed source/core/plugin/toolchain tuple.",
+          "ownerObservedOriginalOracle": true
         }
       ]
     },
@@ -8874,5 +8901,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-08T18:45:44.425080+00:00"
+  "updatedUTC": "2026-10-08T19:31:40.670121+00:00"
 }
