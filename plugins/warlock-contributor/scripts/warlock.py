@@ -192,6 +192,50 @@ def verdict_key(claim):
     return json.dumps([claim.get('requirement'), claim.get('scenario'), claim.get('disposition'), claim.get('scope'), sorted(claim.get('missingObservations', []))], sort_keys=True)
 
 
+def mark_historical(root, record):
+    for iteration in record.get('iterations', []):
+        for claim in iteration.get('claims', []):
+            if any(digest(safe(root, n)) != h for n, h in claim.get('sourceHashes', {}).items()):
+                claim['historicalAfterSourceChange'] = True
+
+
+def scaffold_claim(root, record, reqs, state, args):
+    """Print a self-attested observation packet; never write or grant acceptance."""
+    mark_historical(root, record)  # Only the in-memory copy; same freshness rules as record.
+    errors, warnings = validate(root, record, reqs, state)
+    if errors:
+        raise ValueError('Cannot scaffold claim: ' + '; '.join(errors))
+    s = normalize_slice(root, record['slice'], reqs)
+    if args.requirement not in s['requirements'] or args.scenario not in s['scenarios']:
+        raise ValueError('Claim outside selected slice')
+    original = reqs[args.requirement]
+    scenario = next((x for x in original['scenarios'] if x['name'] == args.scenario), None)
+    if scenario is None:
+        raise ValueError('Scenario does not belong to selected original requirement')
+    if not args.scope.strip() or any(not x.strip() for x in args.missing):
+        raise ValueError('Evidence scope and missing observations must contain text')
+    if args.disposition in ('partial', 'blocked') and not args.missing:
+        raise ValueError('Partial/blocked observations require --missing')
+    evidence = []
+    for name in dict.fromkeys(args.evidence):
+        h = digest(safe(root, name))
+        if h is None:
+            raise ValueError('Missing evidence file: ' + name)
+        evidence.append({'path': name, 'sha256': h})
+    hashes = {n: digest(safe(root, n)) for n in s['paths']}
+    if any(h is None for h in hashes.values()):
+        raise ValueError('Every selected source must exist before a claim is scaffolded')
+    claim = {'requirement': args.requirement, 'scenario': args.scenario,
+             'oracle': scenario['then'], 'verificationScope': original['verification'],
+             'scope': args.scope, 'evidence': evidence, 'sourceHashes': hashes,
+             'reviewer': record['owner'], 'disposition': args.disposition,
+             'missingObservations': args.missing}
+    return {'claimSchema': 1, 'claims': [claim],
+            'sourceRevision': git(root, 'rev-parse', 'HEAD').decode().strip(),
+            'warnings': warnings + ['Contributor observation only. This scaffold neither reviews evidence contents '
+                                    'nor updates the original ledger; accepted claims require external review.']}
+
+
 def handoff(root, record, reqs, state):
     """Read-only resume packet. Current hashes never upgrade recorded observations."""
     errors, warnings = validate(root, record, reqs, state)
@@ -359,6 +403,14 @@ def main():
     subs.add_parser('status'); check = subs.add_parser('check')
     subs.add_parser('doctor')
     subs.add_parser('handoff')
+    claim = subs.add_parser('claim', help='Print a record-compatible observation scaffold; does not write or accept')
+    claim.add_argument('--requirement', required=True)
+    claim.add_argument('--scenario', required=True)
+    claim.add_argument('--evidence', action='append', required=True)
+    claim.add_argument('--scope', required=True)
+    claim.add_argument('--disposition', required=True,
+                       choices=['unadjudicated', 'missing', 'implemented-unverified', 'partial', 'failed', 'blocked'])
+    claim.add_argument('--missing', action='append', default=[])
     plan = subs.add_parser('plan', help='Print a start-compatible slice scaffold; does not write or select work')
     plan.add_argument('--id', required=True)
     plan.add_argument('--requirement', action='append', required=True)
@@ -408,10 +460,13 @@ def main():
                 'requirement': i, 'verification': reqs[i]['verification'],
                 'scenarios': [x for x in reqs[i]['scenarios'] if x['name'] in s['scenarios']]
             } for i in s['requirements']])
-        elif args.command == 'handoff':
+        elif args.command in ('handoff', 'claim'):
             if not path.exists():
                 raise ValueError('No participant record to resume; inspect status and start an owned slice first')
-            result.update(handoff(root, read(path), reqs, state))
+            if args.command == 'claim':
+                result.update(scaffold_claim(root, read(path), reqs, state, args))
+            else:
+                result.update(handoff(root, read(path), reqs, state))
         elif args.command == 'inspect':
             if not 1 <= len(args.requirement) <= 3 or len(set(args.requirement)) != len(args.requirement) or any(i not in reqs for i in args.requirement):
                 raise ValueError('Inspect needs 1–3 unique original requirement IDs')
@@ -453,15 +508,14 @@ def main():
         else:
             record = read(path)
             if args.command == 'record':
-                for iteration in record.get('iterations', []):
-                    for claim in iteration.get('claims', []):
-                        if any(digest(safe(root, n)) != h for n, h in claim.get('sourceHashes', {}).items()):
-                            claim['historicalAfterSourceChange'] = True
+                mark_historical(root, record)
             errors, warnings = validate(root, record, reqs, state)
             if args.command == 'record' and not errors:
                 claims = read(safe(root, args.claim_file)) if args.claim_file else []
+                if isinstance(claims, dict) and claims.get('claimSchema') == 1:
+                    claims = claims['claims']
                 if not isinstance(claims, list):
-                    raise ValueError('Claim file must contain an array')
+                    raise ValueError('Claim file must contain an array or claimSchema=1 packet')
                 for c in claims:
                     for key in ('requirement','scenario','oracle','verificationScope','scope','evidence','sourceHashes','reviewer','disposition','missingObservations'):
                         if key not in c:

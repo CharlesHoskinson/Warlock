@@ -131,6 +131,91 @@ class ContributorHelperTests(unittest.TestCase):
         self.assertEqual(before, (self.repo / '.gitignore').read_bytes())
         self.assertFalse((self.repo / 'unignored-record.json').exists())
 
+    def claim_packet(self, *extra, ok=True):
+        return self.cli('claim', '--requirement', 'ELM-UI-007', '--scenario', 'restore-pending',
+                        '--evidence', 'implementation/warlock/qa/evidence/result.json',
+                        '--scope', 'typed component replay only', '--disposition', 'partial',
+                        '--missing', 'Native physical presentation and AT remain open', *extra, ok=ok)
+
+    def test_claim_packet_preserves_original_and_is_record_compatible_without_writes(self):
+        self.fixture.start()
+        expected = self.fixture.claim()
+        record = self.repo / '.warlock-contributor/slice.json'
+        ledger = self.repo / 'docs/warlock-build-loop/v2/requirement-ledger.json'
+        before = (record.read_bytes(), ledger.read_bytes())
+        packet = json.loads(self.claim_packet().stdout)
+        self.assertEqual(before, (record.read_bytes(), ledger.read_bytes()))
+        claim = packet['claims'][0]
+        for key in ('oracle', 'verificationScope', 'evidence', 'sourceHashes'):
+            self.assertEqual(claim[key], expected[key])
+        self.assertEqual(claim['reviewer'], 'fresh-contributor')
+        self.assertEqual(claim['disposition'], 'partial')
+        self.fixture.write('.warlock-contributor/packet.json', packet)
+        self.cli('record', '--outcome', 'scenario-verdict', '--summary', 'Observed bounded replay',
+                 '--claim-file', '.warlock-contributor/packet.json')
+        self.cli('check')
+        self.assertEqual(ledger.read_bytes(), before[1])
+
+    def test_claim_packet_tampering_and_changed_evidence_are_rechecked_by_record(self):
+        self.fixture.start()
+        expected = self.fixture.claim()
+        packet = json.loads(self.claim_packet().stdout)
+        packet['claims'][0]['oracle'] = 'Relaxed oracle'
+        self.fixture.write('.warlock-contributor/packet.json', packet)
+        self.cli('record', '--outcome', 'scenario-verdict', '--summary', 'Attempted claim',
+                 '--claim-file', '.warlock-contributor/packet.json', ok=False)
+        packet = json.loads(self.claim_packet().stdout)
+        self.fixture.write('.warlock-contributor/packet.json', packet)
+        self.fixture.write(expected['evidence'][0]['path'], 'changed after scaffold')
+        self.cli('record', '--outcome', 'scenario-verdict', '--summary', 'Attempted stale claim',
+                 '--claim-file', '.warlock-contributor/packet.json', ok=False)
+
+    def test_claim_cannot_accept_or_expand_slice(self):
+        self.claim_packet(ok=False)  # No participant record.
+        self.fixture.start()
+        self.fixture.claim()
+        self.claim_packet('--disposition', 'accepted', ok=False)
+        self.claim_packet('--scenario', 'search-no-match', ok=False)
+        self.claim_packet('--requirement', 'ELM-UI-005', ok=False)
+        self.claim_packet('--scope', ' ', ok=False)
+
+    def test_claim_requires_real_safe_evidence_and_existing_sources(self):
+        self.fixture.start()
+        self.claim_packet(ok=False)  # Missing evidence file.
+        self.fixture.claim()
+        self.claim_packet('--evidence', '../escape', ok=False)
+        evidence = self.repo / 'linked.json'
+        evidence.symlink_to(self.repo / 'implementation/warlock/qa/evidence/result.json')
+        self.claim_packet('--evidence', 'linked.json', ok=False)
+        (self.repo / 'implementation/warlock/src/Desktop.elm').unlink()
+        self.claim_packet(ok=False)
+
+    def test_claim_requires_missing_observation_and_guards_foreign_work(self):
+        self.fixture.write('foreign.txt', 'other contributor draft')
+        self.fixture.start()
+        self.fixture.claim()
+        self.cli('claim', '--requirement', 'ELM-UI-007', '--scenario', 'restore-pending',
+                 '--evidence', 'implementation/warlock/qa/evidence/result.json',
+                 '--scope', 'component', '--disposition', 'partial', ok=False)
+        self.fixture.write('foreign.txt', 'overwritten draft')
+        self.claim_packet(ok=False)
+
+    def test_claim_after_source_change_retains_prior_record_and_hashes_current_source(self):
+        self.fixture.start()
+        self.fixture.record_claim(self.fixture.claim())
+        self.fixture.write('implementation/warlock/src/Desktop.elm', 'new own implementation')
+        record = self.repo / '.warlock-contributor/slice.json'
+        before = record.read_bytes()
+        packet = json.loads(self.claim_packet().stdout)
+        self.assertEqual(record.read_bytes(), before)
+        self.assertEqual(packet['claims'][0]['sourceHashes']['implementation/warlock/src/Desktop.elm'],
+                         fixtures.digest(self.repo / 'implementation/warlock/src/Desktop.elm'))
+        self.fixture.write('.warlock-contributor/packet.json', packet)
+        self.cli('record', '--outcome', 'scenario-verdict', '--summary', 'Updated bounded replay',
+                 '--claim-file', '.warlock-contributor/packet.json')
+        self.assertTrue(json.loads(record.read_text())['iterations'][0]['claims'][0]['historicalAfterSourceChange'])
+        self.cli('check')
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -50,6 +50,33 @@ it writes nothing and never upgrades acceptance. Use it after compaction or when
 another contributor resumes the slice, then read the referenced original ledger
 and evidence. Global `--record` selects an alternate saved participant record.
 
+`claim` prints a record-compatible observation packet with the selected original
+oracle, verification obligations, current hashes for every declared source and
+SHA-256 hashes of real evidence files. Supply the actual evidence scope,
+disposition and missing observations. The observer is the participant owner;
+this helper cannot scaffold `accepted` or appoint an independent reviewer.
+It reads files without interpreting the evidence, running QA or changing records
+and the ledger. For example, after producing a real component report:
+
+```sh
+python3 -B plugins/warlock-contributor/scripts/warlock.py --json claim \
+  --requirement ELM-UI-005 --scenario search-no-match \
+  --evidence implementation/warlock/qa/evidence/your-report.json \
+  --scope 'Observed typed replay only' --disposition partial \
+  --missing 'Native keyboard, physical presentation and applicable AT remain open' \
+  > .warlock-contributor/search-claim.json
+python3 -B plugins/warlock-contributor/scripts/warlock.py record \
+  --outcome scenario-verdict --summary 'Describe the actual observation' \
+  --claim-file .warlock-contributor/search-claim.json
+```
+
+Use the requirement/scenario from your own selected slice and replace the example
+evidence path with the report you actually produced. `record` rechecks the packet
+against the originals and current evidence/source hashes; editing an oracle or
+changing a report after scaffolding fails. Existing bare claim arrays remain
+supported. Partial and blocked observations require `--missing`; acceptance needs
+the separate external review and source tuple described in the contract.
+
 `start` uses `STATE.activeSlice`; it does not select the next feature. The default local record is `.warlock-contributor/slice.json`; Git must ignore `.warlock-contributor/` before `start` (this repository supplies the ignore). On a new development checkout add that narrow ignore or choose an already-ignored `--record` location. Record updates are serialized with a POSIX lock and written atomically. Global `--repo`, `--record`, and `--json` precede the subcommand. For resumed own drafts, explicitly list each declared dirty path with repeatable `start --adopt-dirty <path>` and supply `--ownership-note`; undeclared and unadopted foreign drafts stay protected. See `--help` and [contract.json](references/contract.json). Zero exit means structural compliance; 1 is a structural policy violation and 2 invalid/unavailable inputs. Explicit loop checks and repository contributor instructions remain required even when no host hook runs.
 
 ## Local development and installation

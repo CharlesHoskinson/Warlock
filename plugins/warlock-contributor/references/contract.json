@@ -16,7 +16,8 @@
     "inspect",
     "doctor",
     "plan",
-    "handoff"
+    "handoff",
+    "claim"
   ],
   "exitCodes": {
     "0": "structural checks pass (advisories may remain)",
@@ -92,5 +93,6 @@
   "recordWrites": "POSIX exclusive lock serializes start/record. Start uses atomic exclusive creation; record uses atomic fsynced replacement. Git environment routing/index variables scrubbed.",
   "plan": "Read-only plan --id ID --requirement ORIGINAL_ID --scenario ORIGINAL_NAME --path CANDIDATE_FILE --before TEXT --after TEXT --verify TEXT (repeat requirement/scenario/path/verify as needed). Global --json prints a planSchema=1 packet containing slice and exact original scenarios/verification. start --slice-file accepts this packet or a bare slice. Plan does not select STATE, adopt drafts or write files.",
   "handoff": "Read-only participant resume packet: current source hashes/revision, changes since last record, protected foreign paths, latest recorded observation per selected original scenario, missing observations and structural/no-progress findings. evidenceMatchesCurrentSources means matching current source/evidence hashes, not oracle truth or acceptance. Missing records fail explicitly; stale current evidence returns nonzero with the packet.",
-  "doctor": "Read-only local package presence, Python/Git and PATH client availability plus scratch ignore/record state. Does not launch client executables, run builds, install, establish trust, validate host execution or qualify the native runtime. Missing package paths fail; absent optional clients do not."
+  "doctor": "Read-only local package presence, Python/Git and PATH client availability plus scratch ignore/record state. Does not launch client executables, run builds, install, establish trust, validate host execution or qualify the native runtime. Missing package paths fail; absent optional clients do not.",
+  "claim": "Read-only claim --requirement ID --scenario NAME --evidence REPO_FILE (repeat) --scope OBSERVED_SCOPE --disposition NONACCEPTED --missing TEXT (repeat). Requires an owned participant record and real nonsymlink evidence plus existing selected sources. Copies exact original oracle/verification and current source/evidence hashes. Output claimSchema=1 packet is accepted by record --claim-file, alongside existing bare arrays; record revalidates all claims. Does not write, interpret evidence, update the ledger, appoint an external reviewer or allow accepted. Partial/blocked require explicit missing observations. Reviewer is the participant owner; historical prior claims are marked only in memory while preparing current hashes."
 }
