@@ -1,0 +1,42 @@
+{
+  "acceptanceBoundary": "Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.",
+  "checkerSha256": "8ab139e4f13616425d4f64c741a895166f33c7620fb6389f08ee974307d7a6de",
+  "selfTestSchema": 1,
+  "executionPerformed": true,
+  "acceptanceInferred": false,
+  "scope": "Plugin contribution-policy regressions; no GUI build, native/AT oracle or client installation.",
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "/home/hoskinson/omarchy-windows-parity/plugins/warlock-contributor/qa",
+    "-t",
+    "/home/hoskinson/omarchy-windows-parity/plugins/warlock-contributor/qa",
+    "-p",
+    "test_*.py"
+  ],
+  "returnCode": 0,
+  "stdout": "{\n  \"acceptanceBoundary\": \"Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.\",\n  \"checkerSha256\": \"8ab139e4f13616425d4f64c741a895166f33c7620fb6389f08ee974307d7a6de\",\n  \"ok\": false,\n  \"errors\": [\n    \"Continuation requires a participant slice record; run start first\"\n  ]\n}\n{\n  \"acceptanceBoundary\": \"Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.\",\n  \"checkerSha256\": \"8ab139e4f13616425d4f64c741a895166f33c7620fb6389f08ee974307d7a6de\",\n  \"errors\": [],\n  \"warnings\": [],\n  \"record\": \".warlock-contributor/slice.json\",\n  \"progress\": {\n    \"iterationsWithoutProgress\": 0,\n    \"lastRecordedProgressUTC\": \"2026-10-08T09:09:29.986020+00:00\",\n    \"secondsSinceRecordedProgress\": 0,\n    \"limits\": {\n      \"iterations\": 2,\n      \"seconds\": 2700\n    },\n    \"investigationNeedsChange\": false,\n    \"reasons\": [],\n    \"action\": \"Continue the selected behavior with proportional verification.\",\n    \"basis\": \"Participant record; unrecorded work and oracle truth are not inferred.\"\n  },\n  \"ok\": true\n}\n",
+  "stderr": "......................................................................................................................................................................\n----------------------------------------------------------------------\nRan 166 tests in 32.149s\n\nOK\n",
+  "errors": [],
+  "ok": true,
+  "packageVersion": "0.13.0",
+  "hostValidation": {
+    "claude": "Manifest validation passed",
+    "grok": "Manifest validation passed",
+    "skill": "Skill is valid",
+    "codex": "Local manifest/skill/hook metadata validated by doctor; live installation/trust not performed"
+  },
+  "changedSourceHashes": {
+    "plugins/warlock-contributor/.claude-plugin/plugin.json": "c5a01d3a1d63390809690fc973c84bb0d3e7e9fda9afb0acbd851104182ccf0a",
+    "plugins/warlock-contributor/.codex-plugin/plugin.json": "59ba35ca398eb835c5d85562024c3db76949b33cb3781e3578f8149f2c81ab15",
+    "plugins/warlock-contributor/README.md": "ab2416b02291bf62215dba288843c189f46be344b30249aec232dcc4ae47762d",
+    "plugins/warlock-contributor/references/contract.json": "08c4304dd1da972b67d85b92df9c119fd45be57c9774dbf97d3c0862b8b53ca7",
+    "plugins/warlock-contributor/scripts/warlock.py": "8ab139e4f13616425d4f64c741a895166f33c7620fb6389f08ee974307d7a6de",
+    "plugins/warlock-contributor/skills/warlock-contribute/SKILL.md": "9acde4b8579b9dce78d0c4a1ca9bf535011947e68967bad58574e9a8da1453bb",
+    "plugins/warlock-contributor/qa/test_acceptance_revision.py": "8504942637eabbcaeeed6bc077c3dfa620213b19faf597fda6a4fcdc32768717"
+  }
+}

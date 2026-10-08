@@ -197,6 +197,18 @@ changing a report after scaffolding fails. Existing bare claim arrays remain
 supported. Partial and blocked observations require `--missing`; acceptance needs
 the separate external review and source tuple described in the contract.
 
+For an externally reviewed `accepted` claim, `sourceTuple.sourceRevision` must
+be the full commit hash containing every source in `sourceHashes`. The checker
+compares each hash with its regular Git file blob without checking out files or
+changing the index. A branch, `HEAD`, abbreviated hash, absent file, symlink or
+older commit with different bytes fails. Staging a draft alone is insufficient;
+retain a partial observation until the tested source is committed and reviewed.
+The independent reviewer's disposition must also be `accepted`, with no missing
+observations and retained evidence. Historical observations keep their original
+commit and remain explicitly noncurrent after relevant source changes. This
+does not verify evidence contents, reviewer honesty, native/AT behavior or the
+actual core/plugin/toolchain tuple.
+
 `start` uses `STATE.activeSlice`; it does not select the next feature. The default local record is `.warlock-contributor/slice.json`; Git must ignore `.warlock-contributor/` before `start` (this repository supplies the ignore). On a new development checkout add that narrow ignore or choose an already-ignored `--record` location. Record updates are serialized with a POSIX lock and written atomically. Global `--repo`, `--record`, and `--json` precede the subcommand. For resumed own drafts, explicitly list each declared dirty path with repeatable `start --adopt-dirty <path>` and supply `--ownership-note`; undeclared and unadopted foreign drafts stay protected. See `--help` and [contract.json](references/contract.json). Zero exit means structural compliance; 1 is a structural policy violation and 2 invalid/unavailable inputs. Explicit loop checks and repository contributor instructions remain required even when no host hook runs.
 
 ## Choose proportional verification

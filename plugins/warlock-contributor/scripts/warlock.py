@@ -892,8 +892,42 @@ def review(root, record, reqs, state, includes):
     return packet
 
 
+def accepted_revision(root, claim, cache):
+    """Bind accepted source hashes to immutable regular Git blobs, without checkout."""
+    source_tuple = claim.get('sourceTuple', {})
+    if not isinstance(source_tuple, dict) or any(not source_tuple.get(k) for k in ('sourceRevision', 'core', 'plugin', 'toolchain')):
+        return ['Accepted claim needs reproducible source/core/plugin/toolchain tuple']
+    revision = source_tuple['sourceRevision']
+    if not isinstance(revision, str):
+        return ['Accepted sourceRevision must be a full immutable commit hash']
+    resolved = git_run(root, 'rev-parse', '--verify', '--end-of-options', revision + '^{commit}')
+    if resolved.returncode:
+        return ['Accepted sourceRevision is not a commit in this repository']
+    if resolved.stdout.decode().strip() != revision:
+        return ['Accepted sourceRevision must be a full immutable commit hash, not a ref or abbreviation']
+    errors = []
+    for name, expected in claim['sourceHashes'].items():
+        safe(root, name)
+        key = (revision, name)
+        if key not in cache:
+            tree = git(root, '--literal-pathspecs', 'ls-tree', '-z', revision, '--', name)
+            entry = tree.rstrip(b'\0').split(b'\t', 1)
+            metadata = entry[0].split() if tree else []
+            if len(entry) != 2 or len(metadata) != 3 or metadata[0] not in (b'100644', b'100755') or metadata[1] != b'blob':
+                cache[key] = None
+            else:
+                blob = git(root, 'cat-file', 'blob', metadata[2].decode())
+                cache[key] = hashlib.sha256(blob).hexdigest()
+        if cache[key] is None:
+            errors.append('Accepted sourceRevision lacks a regular source file: ' + name)
+        elif cache[key] != expected:
+            errors.append('Accepted sourceRevision bytes differ from claimed source: ' + name)
+    return errors
+
+
 def validate(root, record, reqs, state):
     errors, warnings = [], []
+    revision_cache = {}
     if record.get('schema') != 1 or not record.get('owner'):
         raise ValueError('Invalid record schema/owner')
     s = normalize_slice(root, record['slice'], reqs)
@@ -952,7 +986,7 @@ def validate(root, record, reqs, state):
                 if c.get('missingObservations'):
                     errors.append('Accepted claim contradicts remaining missing observations')
                 reviewer = c.get('reviewer')
-                if not isinstance(reviewer, dict) or not reviewer.get('name') or reviewer.get('independent') is not True or not reviewer.get('disposition'):
+                if not isinstance(reviewer, dict) or not reviewer.get('name') or reviewer.get('independent') is not True or reviewer.get('disposition') != 'accepted':
                     errors.append('Accepted claim needs independent external reviewer identity/disposition')
                 if isinstance(reviewer, dict) and str(reviewer.get('name', '')).strip().casefold() == str(record['owner']).strip().casefold():
                     errors.append('Accepted external reviewer must differ from contributor owner')
@@ -961,11 +995,9 @@ def validate(root, record, reqs, state):
                     ignored = git_run(root, 'check-ignore', '--', evidence_path).returncode == 0
                     if evidence_path in s['paths'] or authored(evidence_path) or evidence_path.startswith('.warlock-contributor/') or ignored:
                         errors.append('Accepted evidence cannot be product source or ignored scratch')
-                source_tuple = c.get('sourceTuple', {})
-                if not isinstance(source_tuple, dict) or any(not source_tuple.get(k) for k in ('sourceRevision', 'core', 'plugin', 'toolchain')):
-                    errors.append('Accepted claim needs reproducible source/core/plugin/toolchain tuple')
-                elif git_run(root, 'cat-file', '-e', str(source_tuple['sourceRevision']) + '^{commit}').returncode:
-                    errors.append('Accepted sourceRevision is not a commit in this repository')
+                if not c.get('evidence'):
+                    errors.append('Accepted claim needs retained evidence')
+                errors.extend(accepted_revision(root, c, revision_cache))
             if c['requirement'] not in s['requirements'] or c['scenario'] not in s['scenarios']:
                 errors.append('Claim outside selected slice')
                 continue
