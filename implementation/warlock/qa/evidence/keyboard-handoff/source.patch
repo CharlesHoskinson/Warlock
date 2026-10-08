@@ -1,0 +1,90 @@
+diff --git i/implementation/warlock/native/shared-host.c w/implementation/warlock/native/shared-host.c
+index 3af8e08..e951600 100644
+--- i/implementation/warlock/native/shared-host.c
++++ w/implementation/warlock/native/shared-host.c
+@@ -139,8 +139,24 @@ static void shared_publish(void) {
+ static WebKitWebView *shared_focus_target(void) {
+     return focus_owner && focus_owner->active ? focus_owner->engine : view;
+ }
+-static void shared_keyboard_parent(OutputView *owner,JsonNode *frame) {
+-    if (!owner) return; /* Closing retains the menu's keyboard-eligible parent. */
++/* This only retires the bar's input eligibility for the foreground handoff
++ * already requested by Elm. Native authority still decides the effect and
++ * recipient. No window is focused here, and receipts cannot trigger a replay. */
++static gboolean shared_foreground_requests(JsonArray *requests,JsonNode *binding) {
++    if (!binding) return FALSE;
++    for (guint i=0;i<json_array_get_length(requests);i++) {
++        g_autoptr(JsonNode) record=admission_record(json_array_get_element(requests,i));
++        if (!record) continue;
++        JsonObject *object=json_node_get_object(record);
++        if (!json_node_equal(json_object_get_member(object,"binding"),binding) || json_object_get_int_member(object,"effectProtocol")!=1) continue;
++        const char *operation=json_object_get_string_member(json_object_get_object_member(object,"intent"),"operation");
++        if (g_str_equal(operation,"activate") || g_str_equal(operation,"restore")) return TRUE;
++    }
++    return FALSE;
++}
++static void shared_keyboard_parent(OutputView *owner,JsonNode *frame,JsonArray *requests) {
++    gboolean foreground=shared_foreground_requests(requests,authority_binding);
++    if (!owner && !foreground) return; /* Escape/background Minimize retains the parent. */
+     const char *mode=json_object_get_string_member(json_node_get_object(frame),"mode");
+     gboolean returns_to_bar=g_str_equal(mode,"menu") || g_str_equal(mode,"picker");
+     for (guint i=0;i<output_views->len;i++) {
+@@ -149,7 +165,7 @@ static void shared_keyboard_parent(OutputView *owner,JsonNode *frame) {
+         /* On-demand permits native popup-parent restoration and ordinary clicks
+          * back into applications. Never acquire exclusive keyboard focus. Other
+          * surfaces retain their application's existing dismissal recipient. */
+-        GtkLayerShellKeyboardMode keyboard=row==owner && returns_to_bar?GTK_LAYER_SHELL_KEYBOARD_MODE_ON_DEMAND:GTK_LAYER_SHELL_KEYBOARD_MODE_NONE;
++        GtkLayerShellKeyboardMode keyboard=!foreground && row==owner && returns_to_bar?GTK_LAYER_SHELL_KEYBOARD_MODE_ON_DEMAND:GTK_LAYER_SHELL_KEYBOARD_MODE_NONE;
+         if (gtk_layer_get_keyboard_mode(GTK_WINDOW(row->bar))==keyboard) continue;
+         gtk_layer_set_keyboard_mode(GTK_WINDOW(row->bar),keyboard);
+         gtk_layer_try_force_commit(GTK_WINDOW(row->bar));
+@@ -312,7 +328,7 @@ static void shared_commit(JsonNode *root,const char *original) {
+     if (popup_active && popup_owner!=next_popup) popup_hide();
+     popup_owner=next_popup;focus_owner=next_focus;
+     owned_monitor=popup_owner?popup_owner->monitor:NULL;window=popup_owner?popup_owner->bar:controller_window;
+-    shared_keyboard_parent(popup_owner,frame);
++    shared_keyboard_parent(popup_owner,frame,json_node_get_array(rn));
+     wire=json_to_string(translated,FALSE);SurfaceDisposition disposition=surface_receive(primary_manager,wire,translated);shared_preserve_context_anchor=FALSE;json_node_unref(translated);
+     shared_batch_finish(record,disposition);
+     g_print("view-commit: popup=%" G_GUINT64_FORMAT " focus=%" G_GUINT64_FORMAT " publication=%" G_GUINT64_FORMAT "\n",popup_owner?popup_owner->id:0,focus_owner?focus_owner->id:0,publication);fflush(stdout);return;
+@@ -515,6 +531,31 @@ static void test_projection_capabilities(void) {
+     json_array_remove_element(rows,1);json_array_add_element(rows,scope_packet(&two));json_object_set_string_member(object,"injected","authority");g_assert_false(projection_scopes(object,&popup,&focus));
+     g_ptr_array_unref(output_views);output_views=NULL;
+ }
++static void test_foreground_handoff(void) {
++    const char *request="{\"protocolVersion\":3,\"kind\":\"window-effect\",\"effectProtocol\":1,\"binding\":{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"1\",\"generation\":\"1\",\"incarnation\":\"4\",\"operation\":\"activate\",\"context\":{\"lifetime\":\"1\",\"epoch\":\"3\",\"output\":\"1\",\"revision\":\"1\"}}}";
++    g_autoptr(JsonParser) parser=json_parser_new();g_assert_true(json_parser_load_from_data(parser,request,-1,NULL));
++    JsonNode *root=json_parser_get_root(parser);JsonObject *object=json_node_get_object(root),*intent=json_object_get_object_member(object,"intent");
++    g_autoptr(JsonParser) bound_parser=json_parser_new();
++    g_assert_true(json_parser_load_from_data(bound_parser,"{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}",-1,NULL));
++    JsonNode *binding=json_parser_get_root(bound_parser);
++    g_autoptr(JsonArray) requests=json_array_new();
++    g_assert_false(shared_foreground_requests(requests,binding)); /* Escape has no effect. */
++    json_array_add_element(requests,json_node_copy(root));g_assert_true(shared_foreground_requests(requests,binding));
++    g_assert_false(shared_foreground_requests(requests,NULL));
++    json_array_remove_element(requests,0);
++    json_object_set_string_member(intent,"operation","restore");json_array_add_element(requests,json_node_copy(root));g_assert_true(shared_foreground_requests(requests,binding));
++    json_array_remove_element(requests,0);
++    json_object_set_string_member(intent,"operation","minimize");json_array_add_element(requests,json_node_copy(root));g_assert_false(shared_foreground_requests(requests,binding));
++    json_array_remove_element(requests,0);
++    json_object_set_string_member(intent,"operation","maximize");json_object_set_int_member(object,"effectProtocol",2);json_array_add_element(requests,json_node_copy(root));g_assert_false(shared_foreground_requests(requests,binding));
++    json_array_remove_element(requests,0);
++    json_object_set_string_member(intent,"operation","activate");json_object_set_int_member(object,"effectProtocol",1);
++    json_object_set_string_member(json_object_get_object_member(object,"binding"),"session","5");json_array_add_element(requests,json_node_copy(root));g_assert_false(shared_foreground_requests(requests,binding));
++    json_array_remove_element(requests,0);json_object_set_string_member(json_object_get_object_member(object,"binding"),"session","2");
++    json_object_set_string_member(intent,"request","0");json_array_add_element(requests,json_node_copy(root));g_assert_false(shared_foreground_requests(requests,binding));
++    json_array_remove_element(requests,0);json_object_set_string_member(intent,"request","1");
++    json_object_set_string_member(object,"status","Unknown");json_object_set_string_member(object,"kind","effect-outcome");json_array_add_element(requests,json_node_copy(root));g_assert_false(shared_foreground_requests(requests,binding));
++}
+ static void test_duplicate_fields(void) {
+     const char *accepted[]={"{\"scope\":{\"id\":\"1\"},\"other\":{\"id\":\"2\"}}","{\"views\":[{\"id\":\"1\"},{\"id\":\"2\"}]}"};
+     const char *refused[]={"{\"kind\":\"action\",\"kind\":\"execute\"}","{\"scope\":{\"id\":\"1\",\"id\":\"2\"}}","{\"id\":\"1\",\"\\u0069d\":\"2\"}","{\"scope\":{\"id\":\"1\"},\"scope\":{\"id\":\"2\"}}","{bad"};
+@@ -1239,7 +1280,7 @@ static void recovery_show(void) {
+ #endif
+ int ELM_SHARED_HOST_MAIN(int argc,char **argv) {
+     if (argc==2 && g_str_equal(argv[1],"--self-test")) {
+-        g_test_init(&argc,&argv,NULL);g_test_add_func("/host/assets",test_assets);g_test_add_func("/host/request-schema",test_requests);g_test_add_func("/host/qa-report-control-bounds",test_bridge_bounds);g_test_add_func("/host/surface-atomic-preflight",test_surface_preflight);g_test_add_func("/host/surface-manager-isolation",test_surface_managers);g_test_add_func("/host/surface-acknowledgements",test_surface_acknowledgements);g_test_add_func("/host/monitor-index-boundaries",test_monitor_index);g_test_add_func("/host/popup-logical-dimensions",test_popup_dimensions);g_test_add_func("/host/popup-retired-event-order-and-bound",test_popup_queue);g_test_add_func("/host/popup-callback-retirement",test_popup_callback_retirement);g_test_add_func("/host/shared-view-capabilities",test_view_capabilities);g_test_add_func("/host/shared-projection-capabilities",test_projection_capabilities);g_test_add_func("/host/shared-duplicate-fields",test_duplicate_fields);g_test_add_func("/host/shared-preview-router",test_shared_preview_router);g_test_add_func("/host/client-source-target",test_client_target);g_test_add_func("/host/imported-source-targets",test_imported_target);g_test_add_func("/host/imported-acknowledgement-isolation",test_imported_acknowledgement_isolation);return g_test_run();
++        g_test_init(&argc,&argv,NULL);g_test_add_func("/host/assets",test_assets);g_test_add_func("/host/request-schema",test_requests);g_test_add_func("/host/qa-report-control-bounds",test_bridge_bounds);g_test_add_func("/host/surface-atomic-preflight",test_surface_preflight);g_test_add_func("/host/surface-manager-isolation",test_surface_managers);g_test_add_func("/host/surface-acknowledgements",test_surface_acknowledgements);g_test_add_func("/host/monitor-index-boundaries",test_monitor_index);g_test_add_func("/host/popup-logical-dimensions",test_popup_dimensions);g_test_add_func("/host/popup-retired-event-order-and-bound",test_popup_queue);g_test_add_func("/host/popup-callback-retirement",test_popup_callback_retirement);g_test_add_func("/host/shared-view-capabilities",test_view_capabilities);g_test_add_func("/host/shared-projection-capabilities",test_projection_capabilities);g_test_add_func("/host/shared-foreground-keyboard-handoff",test_foreground_handoff);g_test_add_func("/host/shared-duplicate-fields",test_duplicate_fields);g_test_add_func("/host/shared-preview-router",test_shared_preview_router);g_test_add_func("/host/client-source-target",test_client_target);g_test_add_func("/host/imported-source-targets",test_imported_target);g_test_add_func("/host/imported-acknowledgement-isolation",test_imported_acknowledgement_isolation);return g_test_run();
+     }
+     for (int i=1;i<argc;i++) {
+         if (g_str_equal(argv[i],"--assets") && i+1<argc) asset_dir=argv[++i];

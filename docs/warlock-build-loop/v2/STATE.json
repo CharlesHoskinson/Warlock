@@ -1,42 +1,38 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-08T09:33:39.729017+00:00",
+  "updatedUTC": "2026-10-08T10:03:00.875281+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "native-popup-reflow",
+    "id": "native-picker-keyboard-handoff",
     "requirements": [
+      "ELM-UI-004",
       "ELM-UI-008"
     ],
     "scenarios": [
+      "taskbar-group",
       "overflow-resize"
     ],
     "paths": [
-      "implementation/warlock/src/SurfaceController.elm",
-      "implementation/warlock/assets/popup-adapter.js",
+      "implementation/warlock/native/host.c",
+      "implementation/warlock/native/shared-host.c",
       "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/dense-taskbar-browser.mjs",
       "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/PopupReflowReplay.elm",
       "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/assets/elm.js",
-      "implementation/warlock/assets/bar.js",
-      "implementation/warlock/assets/popup.js",
-      "implementation/warlock/README.md",
-      "implementation/warlock/native/host.c"
+      "implementation/warlock/README.md"
     ],
-    "before": "Native output resize retires the popup correctly, but Elm reflow starts reconciliation that clears the picker; the retained view cannot carry focused selection across the fresh lease.",
-    "after": "Output resizing replaces the native popup with a fresh input lease while retaining the current Elm choices and focused logical member or operation, with identity/order and keyboard reachability preserved.",
+    "before": "After resizing a dense picker, selecting the exact member commits activation but the taskbar reclaims native keyboard input before GTK typing.",
+    "after": "Admitted Activate/Restore handoff relinquishes taskbar keyboard eligibility before native dispatch, so typing reaches the selected application; Escape and background Minimize preserve their recipients.",
     "verification": [
-      "Changed Elm compilation and exact renderer reflow/old-lease/disabled/lost-focus checks; protected 200%-text native picker/menu output shrink/grow with fresh lease, labels, Escape and one chosen activation."
+      "Changed owning host compile/relink and foreground/negative self-tests; original protected popup-reflow journey and menu Escape/Minimize/Restore regression without focus workarounds or deadline changes."
     ],
-    "state": "implemented native resize continuity and GTK shrink; current member/operation order, complete output bounds and label pixels pass; post-resize dense group activation commits but GTK typing fails; AT/independent acceptance open",
-    "nextSourceWork": "Fix the real GTK keyboard recipient after choosing a dense group member following output reflow; preserve the failing native journey and current popup lease/ownership protections.",
-    "evidence": "implementation/warlock/qa/evidence/popup-reflow/manifest.json"
+    "state": "Implemented native foreground keyboard handoff; original dense reflow journey and Escape/background-Minimize/Restore typing regression pass; applicable AT and independent acceptance remain open",
+    "nextSourceWork": "Implement the original ELM-UX-019/020 snap chooser in the integrated Elm/native route: output-generation-bound regions, current geometry placement and stale-output invalidation; inventory existing geometry authority before selecting source dependencies.",
+    "evidence": "implementation/warlock/qa/evidence/keyboard-handoff/manifest.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",

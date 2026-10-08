@@ -1,0 +1,351 @@
+{
+  "schema": 1,
+  "owner": "root-native-keyboard-handoff",
+  "observedUTC": "2026-10-08T10:02:27.286132+00:00",
+  "requirements": [
+    "ELM-UI-004",
+    "ELM-UI-008"
+  ],
+  "scenarios": [
+    "taskbar-group",
+    "overflow-resize"
+  ],
+  "originals": [
+    {
+      "requirement": "ELM-UI-004",
+      "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+      "scenarios": [
+        {
+          "name": "taskbar-group",
+          "given": "multiple family entries",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "a group picker opens without new launch and selecting a member visibly activates it"
+        }
+      ]
+    },
+    {
+      "requirement": "ELM-UI-008",
+      "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+      "scenarios": [
+        {
+          "name": "overflow-resize",
+          "given": "small output, enlarged text and more icons than fit",
+          "when": "output size changes",
+          "then": "identity and configured order persist with reachable active selection"
+        }
+      ]
+    }
+  ],
+  "scope": "Owner-observed native picker activation/input after reflow and background-Minimize/Escape/Restore guards. Original applicable AT and independent acceptance remain open.",
+  "sourceBaseRevision": "277fba7a8e60b5b4dc32e359244f561be7c4b2b0",
+  "publicBaseRevision": "08d4d6c13f6574ce16320af4bc4475d3fcce379e",
+  "sourceHashes": {
+    "implementation/warlock/native/host.c": "97781183f747fe202628be969226c11cffd8311a96a43ecc5c07e8ce3d5657d7",
+    "implementation/warlock/native/shared-host.c": "43dda6c2391d52e78f689bf2323be0493baae5493947aa9f7ad483e6dfca7d94",
+    "implementation/warlock/qa/check-search.py": "1c02ea302c174855016149f117875af5694906ac19ef833ec019dd75715b2869",
+    "implementation/warlock/qa/native-window-feedback.py": "d0a3e2d5b8e7ceb31e1682503c81d55dac231bba83ef6d6dfec8e02ec1167caf",
+    "implementation/warlock/qa/current-search-build.json": "edb2634aed6d76361e5f61c3bf2234ae2dc1656b58ad5ed8ac8b450da5c4744a",
+    "implementation/warlock/README.md": "d4fa8380fedd28c8d3ae763f897202d66a853c1a92a69ccc2e46dc56a88596c8"
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+      "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791440691968763486/elm-window-geometry-authority.so",
+      "sha256": "1805693201328985cbf109f5fef6779b8fe469badf094fd417e8206f91c50b47"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791453447239135682/elm-host",
+    "sha256": "543928926619370ca89bd308515ccb10ec1ee726b98b215abd4c77e9776e80a3",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791453447239135682/report.json",
+    "heldBuildSHA256": "f00a3d3817ea0413f5a70b7e4f8554276f983a6699092af5849bf8b3c2cf159a"
+  },
+  "compiledAssets": {
+    "elm.js": "10d72c9dd0cba778619e0284368861e57da4c5b8512914ca7bbaa4549a6712df",
+    "bar.js": "d2bd3e1d84b6dc605744da689c0331e89a0cd45d083c0cdbc3b1ee620a18e860",
+    "popup.js": "054636c284b4f6a026963b18b0e41b2f1a737fd87f9cdc1d8ef5449d6030222a"
+  },
+  "nativeCampaignPassed": true,
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "fullReleaseAccepted": false,
+  "observedChecks": {
+    "browser": 45,
+    "nativeReflow": 143,
+    "nativeMenuRegression": 60
+  },
+  "decisiveChecks": [
+    {
+      "name": "ChosenDenseGroupMemberActivatesExactlyOnce",
+      "passed": true,
+      "chosen": {
+        "incarnation": "10",
+        "title": "LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+        "state": "Open",
+        "domId": "picker:{\"lifetime\":\"6341357968228391722\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:4:10",
+        "disabled": false,
+        "label": "Activate LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+        "point": [
+          240.0,
+          1018.5
+        ],
+        "rect": [
+          15,
+          973,
+          450,
+          91
+        ],
+        "clip": [
+          4,
+          48,
+          476,
+          356
+        ],
+        "visible": false
+      },
+      "request": {
+        "protocolVersion": 3,
+        "kind": "window-effect",
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "6341357968228391722",
+          "session": "3",
+          "frontend": "1"
+        },
+        "intent": {
+          "request": "1",
+          "generation": "1",
+          "incarnation": "10",
+          "operation": "activate",
+          "context": {
+            "lifetime": "6341357968228391722",
+            "epoch": "1",
+            "output": "1",
+            "revision": "1"
+          }
+        }
+      }
+    },
+    {
+      "name": "ChosenDenseMemberReceivesRealKeyboardInput",
+      "passed": true,
+      "events": [
+        {
+          "window": "LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+          "kind": "key",
+          "keyval": 97,
+          "keycode": 38
+        }
+      ],
+      "chosen": {
+        "incarnation": "10",
+        "title": "LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+        "state": "Open",
+        "domId": "picker:{\"lifetime\":\"6341357968228391722\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:4:10",
+        "disabled": false,
+        "label": "Activate LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+        "point": [
+          240.0,
+          1018.5
+        ],
+        "rect": [
+          15,
+          973,
+          450,
+          91
+        ],
+        "clip": [
+          4,
+          48,
+          476,
+          356
+        ],
+        "visible": false
+      }
+    },
+    {
+      "name": "ChosenDenseWindowIsPhysicallyPresented",
+      "passed": true,
+      "capture": {
+        "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791453495652635675/dense-picker-chosen-window.png",
+        "sha256": "af7913f3ccdbe17f9cc69453ad59780413d57f86ff881e2ee3a152be9c8c9918",
+        "chosen": {
+          "incarnation": "10",
+          "owner": null,
+          "application": "GTK Application",
+          "stackPosition": 9,
+          "workspace": "1",
+          "monitor": "0",
+          "geometry": [
+            70.0,
+            110.0,
+            320.0,
+            240.0
+          ],
+          "fullscreenMode": 0,
+          "workspaceVisible": true,
+          "hidden": false,
+          "pinned": false,
+          "allowedOverFullscreen": true,
+          "renderOverFullscreen": true,
+          "acceptsInput": true,
+          "shouldRenderAny": true,
+          "shouldRenderOwnMonitor": true,
+          "minimized": false
+        },
+        "region": [
+          80,
+          120,
+          380,
+          340
+        ],
+        "greenPixels": 61254
+      }
+    },
+    {
+      "name": "MenuEscapeReturnsRunningPinFocus",
+      "passed": true
+    },
+    {
+      "name": "InactiveMenuMinimizePreservesExistingFocus",
+      "passed": true,
+      "priorFocus": "1"
+    },
+    {
+      "name": "InactiveMinimizeRetainsNativeBarKeyboard",
+      "passed": true
+    },
+    {
+      "name": "RestoredPinReceivesActualApplicationTyping",
+      "passed": true,
+      "events": [
+        {
+          "window": "ELM-ACTIVATION-PEER",
+          "kind": "key",
+          "keyval": 97,
+          "keycode": 38
+        }
+      ]
+    },
+    {
+      "name": "TaskViewAfterMenuReturnsApplicationKeyboard",
+      "passed": true,
+      "events": [
+        {
+          "window": "ELM-ACTIVATION-PEER",
+          "kind": "key",
+          "keyval": 97,
+          "keycode": 38
+        }
+      ]
+    }
+  ],
+  "missingObservations": [
+    "Applicable assistive-technology navigation, operation names and focus observations",
+    "Independent original-scenario review against exact source/ABI/toolchain"
+  ],
+  "files": [
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-handoff/component-report.json",
+      "sha256": "f00a3d3817ea0413f5a70b7e4f8554276f983a6699092af5849bf8b3c2cf159a"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-handoff/native-reflow-report.json",
+      "sha256": "1f6d6172bb5c19416de8e65664808d95df4199e62bbd1bc59ee281cd2dc4387d"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-handoff/native-menu-regression.json",
+      "sha256": "5fd0b9d31679aadc4af0cfd8c5cd04af0f337a49c09173084d99bdf2867747ba"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-handoff/dense-browser.json",
+      "sha256": "a958da1e46092b4c226a64e07c0207e255c35ca2283e13dd319b81f6db89231c"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-handoff/host-self-tests.stdout",
+      "sha256": "ad5760d63829475be386514a41ebce41b2806177a9a47ebe5d52d98b999dbef9"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-handoff/reflow-dense-picker-last.png",
+      "sha256": "e57a992d3f5485384b504bd39237d9520fcc56e9f6c8efac376a47e708157a7f"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-handoff/reflow-dense-picker-picker-reflow-grow.png",
+      "sha256": "823ae556cbd419bdcd5d06103f5c9f95885979aff6138d0fae5cce52c026a76e"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-handoff/reflow-dense-picker-picker-reflow-shrink.png",
+      "sha256": "948aaa00db993669a1ee4d42e01643e1fa30b994af0a8a67ae6255ebcece716e"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-handoff/reflow-dense-picker-first.png",
+      "sha256": "c3c431f6e160a6b8b1e67a1ec3718448b9c01af55d40820588bd5cdd8af96c1c"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-handoff/reflow-dense-picker-first-secondary-menu.png",
+      "sha256": "0959d108d4e2203a248b22d4df3c012112421df086a4a82975fa9fa32faaf19b"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-handoff/reflow-dense-picker-first-menu.png",
+      "sha256": "ad166625cb3810730b27ad817fac19f66e08030d67d171a5a02dfd3b976c44d4"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-handoff/reflow-dense-picker-last-menu.png",
+      "sha256": "ffc6a242d73a39cb1f87e9ee926590e91163c1d88e600a6818d4af2b13578945"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-handoff/reflow-dense-picker-operation-end.png",
+      "sha256": "698bec691a77831f97900f4f1180de96927fc6b16beb68ca7263a1e76ec3553a"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-handoff/reflow-dense-picker-menu-reflow-grow.png",
+      "sha256": "f0b379db5186a559365c69b8d707ff7fa7156e95c153f28598451a2c84950e6c"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-handoff/reflow-dense-picker-menu-reflow-shrink.png",
+      "sha256": "ec4fd85700bdba864aeadf4d1f666ac10afcfbc47ec6527e989264c686f5d7c2"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-handoff/reflow-dense-picker-operation-close.png",
+      "sha256": "858cbbaacc49428305bb391dafa0fc72add5e9550dad244a18206320a5664a32"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-handoff/reflow-dense-picker-chosen-window.png",
+      "sha256": "af7913f3ccdbe17f9cc69453ad59780413d57f86ff881e2ee3a152be9c8c9918"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-handoff/menus-popup-pinned-window-menu.png",
+      "sha256": "fd6495476daf1f703776772be026e3715c8ff3599466b1b0f6acd285a6402510"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-handoff/physical-input-commands.json",
+      "sha256": "d537c30624d5caada82f16ee4aedc838aa426b563c65bb2b1b3fa057a448d686"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-handoff/wayland-keyboard-trace.txt",
+      "sha256": "ba40ebbbe9e5893a805acf48a7ccd7ec66542ae60a6d379065b13044f79dfec1"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-handoff/source.patch",
+      "sha256": "77007ddd5e593d2367131bc520c667d74f32425ceb9ef0bb22f451bf851aedc3"
+    }
+  ],
+  "priorFailedJourney": {
+    "path": "implementation/warlock/qa/evidence/popup-reflow/manifest.json",
+    "sha256": "a60d83a4cc712d4b050a42bd3ebfd19b1ac539e0f077adec6ffcbc861f295610",
+    "disposition": "Retained failed post-reflow GTK keyboard journey; current source fixes the observed taskbar eligibility handoff."
+  },
+  "failedComponentAttempt": {
+    "path": "implementation/warlock/qa/runs/taskbar-primary-1791453397720809620/report.json",
+    "sha256": "c96e87f6600a55ef022a3533bbafd6635bf23fc26af370f1ef539754b0bf07ff",
+    "scope": "First new negative test shared a JsonObject with its expected binding; test setup corrected to independent binding before successful qualification. Failed local report preserved."
+  },
+  "componentNote": "CPU checks preceded README delivery-note edits. Tested production source, owning host binary and compiled assets match current native reports."
+}
