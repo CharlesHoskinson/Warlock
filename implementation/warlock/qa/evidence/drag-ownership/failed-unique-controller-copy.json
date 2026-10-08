@@ -1,0 +1,59 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "installed": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-c6b4671702b44a608f135e6396072686.scope",
+    "coreLimit": 1
+  },
+  "commands": [
+    {
+      "name": "navigation-authority-compile",
+      "command": [
+        "g++",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v19/qa/build-1791342038926680323/inputs/native",
+        "-std=c++23",
+        "-O2",
+        "-fPIC",
+        "-shared",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-isystem",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v19/qa/build-1791342038926680323/include",
+        "-isystem",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v19/qa/build-1791342038926680323/owning-headers",
+        "-isystem",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v19/qa/build-1791342038926680323/owning-headers/src",
+        "-isystem",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v19/qa/build-1791342038926680323/owning-headers/protocols",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v19/qa/build-1791342038926680323/inputs/candidate",
+        "-I/usr/include/json-glib-1.0",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-I/usr/include/pixman-1",
+        "-I/usr/include/libdrm",
+        "-I/usr/include/libei-1.0",
+        "-MD",
+        "-MF",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791477941139790012/authority.d",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791477941139790012/inputs/native/authority.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791477941139790012/elm-window-geometry-authority.so",
+        "-lGLESv2",
+        "-ljson-glib-1.0",
+        "-lgio-2.0",
+        "-lgobject-2.0",
+        "-lglib-2.0"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "scope": "Changed native pointer ownership observation/effect guards and navigation authority TU against unchanged owning core/capture inputs; strict strong-symbol closure; native acceptance separate",
+  "error": "RuntimeError('/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791477941139790012/inputs/native/authority.cpp: In function \u2018void {anonymous}::refreshPointerOwnership()\u2019:\\n/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791477941139790012/inputs/native/authority.cpp:334:59: error: use of deleted function \u2018Hyprutils::Memory::CUniquePointer<T>::CUniquePointer(const Hyprutils::Memory::CUniquePointer<T>&) [with T = Layout::Supplementary::CDragStateController]\u2019\\n  334 |     const auto controller=g_layoutManager->dragController();\\n      |                                                           ^\\nIn file included from /usr/include/hyprutils/memory/WeakPtr.hpp:4,\\n                 from /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v19/qa/build-1791342038926680323/owning-headers/src/helpers/memory/Memory.hpp:3,\\n                 from /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v19/qa/build-1791342038926680323/owning-headers/src/macros.hpp:9,\\n                 from /home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v19/qa/build-1791342038926680323/owning-headers/src/config/ConfigValue.hpp:7,\\n                 from /home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791477941139790012/inputs/native/authority.cpp:4:\\n/usr/include/hyprutils/memory/UniquePtr.hpp:32:9: note: declared here\\n   32 |         CUniquePointer(const CUniquePointer& ref)    = delete;\\n      |         ^~~~~~~~~~~~~~\\n/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791477941139790012/inputs/native/authority.cpp:334:59: note: use \u2018-fdiagnostics-all-candidates\u2019 to display considered candidates\\n  334 |     const auto controller=g_layoutManager->dragController();\\n      |                                                           ^\\n')"
+}

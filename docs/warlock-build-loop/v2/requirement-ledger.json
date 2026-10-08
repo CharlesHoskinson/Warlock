@@ -7712,14 +7712,36 @@
       "owner": "Desktop experience lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "ux-021",
           "oracle": "exactly one gesture ends and no shell surface steals the drag",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "implemented-unverified",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/drag-ownership/manifest.json",
+              "sha256": "aacf49f1d5b11e3c055c5f25270463e184f1e6d248696d788023e9c4a838d0c4",
+              "scope": "Integrated native move/resize owner observation, actual-controller window-effect/shortcut guards, immutable Elm surface suppression and adopted Super/Alt pointer bindings. Compiled typed/root and production-decoder checks plus unchanged original drag model pass. Two-output native setup failed before gesture input; separate current native taskbar activation/minimize/restore/input regression passes. Original drag acceptance is unproven.",
+              "sourceRevision": "2c63cde304b19aed170dafa9ade2f9e042cb8b54",
+              "sourceTuple": {
+                "core": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+                  "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+                },
+                "plugin": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791477973836253029/elm-window-geometry-authority.so",
+                  "sha256": "216c5cce257eaff5d063285d44df6ac20090f285064c9681fac6213e414b0d1c"
+                },
+                "aquamarine": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+                  "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+                }
+              },
+              "reviewerDisposition": "Owner-observed component/regression evidence only; original drag scenario and independent acceptance remain unproven."
+            }
+          ],
+          "missingObservation": "Original ux-021 native gesture oracle remains unverified: both isolated qualification attempts failed before input, first observing native 1600x1000 output dimensions and then timing out at the unchanged six-second expected 800x600 geometry barrier. No native drag, taskbar/output crossing, single end or surface-theft observation is claimed. Caption/edge initiation, explicit cancellation/close interleavings, native AT and touch/tablet/device coverage remain open. Independent original-scenario and full-release acceptance remain open."
         }
       ]
     },
@@ -8695,5 +8717,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-08T12:48:01.486317+00:00"
+  "updatedUTC": "2026-10-08T16:52:24.427467+00:00"
 }

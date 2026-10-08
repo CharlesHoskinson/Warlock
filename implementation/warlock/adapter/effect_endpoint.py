@@ -82,6 +82,19 @@ class Endpoint(ReadOnlyEndpoint):
   if r['context']['lifetime']!=self.bound['lifetime'] or r['context']['epoch']!=self.bound['frontend']:raise Refused('History authority')
   if not isinstance(r['roots'],list) or len(r['roots'])>256 or len(set(canonical(value) for value in r['roots']))!=len(r['roots']):raise Refused('History bound/identity')
   return r
+ def pointer_ownership(self,request_id):
+  canonical(request_id)
+  r=self.request({'protocolVersion':3,'kind':'pointer-ownership-request','binding':self.bound,'requestId':request_id})
+  exact(r,['protocolVersion','kind','ownershipProtocol','binding','requestId','serial','state','owner'])
+  if type(r['protocolVersion']) is not int or r['protocolVersion']!=3 or r['kind']!='pointer-ownership' or type(r['ownershipProtocol']) is not int or r['ownershipProtocol']!=1 or binding(r['binding'])!=self.bound or r['requestId']!=request_id:raise Refused('Pointer ownership correlation/protocol')
+  canonical(r['serial'])
+  if r['state'] not in ['idle','move','resize']:raise Refused('Pointer ownership state')
+  if r['state']=='idle':
+   if r['owner'] is not None:raise Refused('Idle pointer owner')
+  elif r['owner'] is not None:canonical(r['owner'])
+  # A grouped/retiring target may have no mapped root identity. Active state
+  # still blocks shell input; null never turns a native grab into idle.
+  return r
  def shell_shortcuts(self,request_id):
   canonical(request_id)
   r=self.request({'protocolVersion':3,'kind':'shell-shortcuts-request','binding':self.bound,'requestId':request_id})

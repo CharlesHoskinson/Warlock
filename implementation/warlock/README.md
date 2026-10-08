@@ -198,3 +198,23 @@ compiled reducer/model checks establish event admission and no-replay behavior;
 physical surface journeys and independent ELM-UX-023 acceptance are separately
 recorded in `qa/evidence/keyboard-shell/manifest.json`. Omarchy's remaining
 commands/keybindings and applicable native accessibility gates stay open.
+
+Native move and resize ownership is now observed from the owning core's drag
+controller through a strict, binding-correlated `pointer-ownership` snapshot.
+Elm retires shell surfaces without requesting focus, preserves existing native
+transactions and launch state, and suppresses surface entry while a current
+move/resize observation is active. Older or duplicate observations cannot release
+ownership. A grouped target without a root identity remains input-blocking.
+The native authority independently checks the actual controller before window
+activation/minimize/restore and shell shortcut or Alt-Tab admission. Existing
+geometry guards continue to refuse competing placement changes.
+
+The source bindings include Omarchy's Super+left/right-button move/resize and
+the adopted Alt additions; they invoke native dispatchers. This does not modify
+the running desktop. `--drag-ownership` selects the focused protected component
+and native checks. The component checks pass, but the original two-output drag
+journey did not begin: the private outputs reported 1600×1000 instead of the
+fixture's expected 800×600, and did not reach that geometry within six seconds.
+Both failed setup reports and the passing current taskbar regression are retained
+in `qa/evidence/drag-ownership/manifest.json`. Caption/edge, cancellation,
+AT/device coverage and independent original acceptance remain open.

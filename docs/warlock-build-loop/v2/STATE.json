@@ -1,13 +1,89 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-08T16:22:03.353053+00:00",
+  "updatedUTC": "2026-10-08T16:52:24.427467+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "native-drag-ownership",
+    "requirements": [
+      "ELM-UX-021"
+    ],
+    "scenarios": [
+      "ux-021"
+    ],
+    "paths": [
+      "implementation/warlock/src/PointerOwnership.elm",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/adapter/effect_endpoint.py",
+      "implementation/warlock/adapter/daemon.py",
+      "implementation/warlock/native/authority.cpp",
+      "implementation/warlock/native/shell-bindings.lua",
+      "implementation/warlock/qa/PointerOwnershipReplay.elm",
+      "implementation/warlock/qa/check-pointer-ownership.py",
+      "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/check-native-authority.py",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/README.md",
+      "implementation/warlock/assets/elm.js",
+      "implementation/warlock/assets/bar.js",
+      "implementation/warlock/assets/popup.js",
+      "implementation/warlock/qa/current-search-build.json",
+      "implementation/warlock/qa/current-native-pair.json"
+    ],
+    "before": "Native geometry refuses active drags but shell shortcuts and ordinary window effects can interrupt the gesture; Elm has no typed native pointer-owner observation.",
+    "after": "Native move/resize ownership is observed with binding and revision, suppresses competing shell surfaces and native effects until release/cancellation, and preserves the original native drag across taskbar/output crossing.",
+    "verification": [
+      "Compiled immutable Elm ownership/root replay, strict decoder and original native_drag Quint invariants; isolated actual native move/resize crossing taskbar and second output with exactly one ownership end and no shell surface theft. Independent acceptance and device coverage remain separate."
+    ],
+    "status": "completed-partial",
+    "evidence": {
+      "path": "implementation/warlock/qa/evidence/drag-ownership/manifest.json",
+      "sha256": "aacf49f1d5b11e3c055c5f25270463e184f1e6d248696d788023e9c4a838d0c4",
+      "scope": "Integrated native move/resize owner observation, actual-controller window-effect/shortcut guards, immutable Elm surface suppression and adopted Super/Alt pointer bindings. Compiled typed/root and production-decoder checks plus unchanged original drag model pass. Two-output native setup failed before gesture input; separate current native taskbar activation/minimize/restore/input regression passes. Original drag acceptance is unproven.",
+      "sourceRevision": "2c63cde304b19aed170dafa9ade2f9e042cb8b54",
+      "sourceTuple": {
+        "core": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+          "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+        },
+        "plugin": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791477973836253029/elm-window-geometry-authority.so",
+          "sha256": "216c5cce257eaff5d063285d44df6ac20090f285064c9681fac6213e414b0d1c"
+        },
+        "aquamarine": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+          "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+        }
+      },
+      "reviewerDisposition": "Owner-observed component/regression evidence only; original drag scenario and independent acceptance remain unproven."
+    },
+    "observed": "Integrated native move/resize owner observation, actual-controller window-effect/shortcut guards, immutable Elm surface suppression and adopted Super/Alt pointer bindings. Compiled typed/root and production-decoder checks plus unchanged original drag model pass. Two-output native setup failed before gesture input; separate current native taskbar activation/minimize/restore/input regression passes. Original drag acceptance is unproven.",
+    "missingObservations": [
+      "Original ux-021 native gesture oracle remains unverified: both isolated qualification attempts failed before input, first observing native 1600x1000 output dimensions and then timing out at the unchanged six-second expected 800x600 geometry barrier. No native drag, taskbar/output crossing, single end or surface-theft observation is claimed.",
+      "Caption/edge initiation, explicit cancellation/close interleavings, native AT and touch/tablet/device coverage remain open.",
+      "Independent original-scenario and full-release acceptance remain open."
+    ],
+    "stopDisposition": "Two consecutive qualification-only output-setup attempts ended further geometry investigation; preserve original failures and continue another mandatory product slice."
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "keyboard-shell-routes",
     "requirements": [
       "ELM-UX-023"
@@ -98,98 +174,6 @@
       "Full Omarchy vocabulary/keybindings, multi-output/device/resource and release gates remain separate mandatory work."
     ],
     "stopDisposition": "Two consecutive qualification-only results ended further repeated-Home investigation; continue another mandatory product slice under v2."
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "taskbar-attention",
-    "requirements": [
-      "ELM-UX-009"
-    ],
-    "scenarios": [
-      "ux-009"
-    ],
-    "paths": [
-      "implementation/warlock/src/ActionProjection.elm",
-      "implementation/warlock/src/Taskbar.elm",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/src/SurfaceRenderer.elm",
-      "implementation/warlock/adapter/effect_endpoint.py",
-      "implementation/warlock/adapter/taskbar_projection.py",
-      "implementation/warlock/adapter/daemon.py",
-      "implementation/warlock/native/authority.cpp",
-      "implementation/warlock/assets/shell.css",
-      "implementation/warlock/qa/AttentionReplay.elm",
-      "implementation/warlock/qa/check-attention.py",
-      "implementation/warlock/qa/attention-browser.mjs",
-      "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/check-native-authority.py",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/README.md",
-      "implementation/warlock/assets/elm.js",
-      "implementation/warlock/assets/bar.js",
-      "implementation/warlock/assets/popup.js",
-      "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/qa/current-native-pair.json"
-    ],
-    "before": "Taskbar labels native active/minimized state but discards native attention requests and exposes no distinct attention highlight.",
-    "after": "Taskbar active and attention states derive from a coherent incarnation-bound native observation; amber attention and blue active indicators have distinct visible and accessible state.",
-    "verification": [
-      "Changed Elm roots and production replay; strict native coherent attention projection and stale-state refusal; actual rendered browser state and native inactive-window attention recording with pixels and accessible DOM state. Independent AT/original acceptance separate."
-    ],
-    "status": "completed-partial",
-    "evidence": {
-      "path": "implementation/warlock/qa/evidence/attention/manifest.json",
-      "sha256": "37853d8d809722ad10d4029568517bb84d5c03d974ca3f51a18866c1bceba31c",
-      "scope": "Immutable incarnation-bound native attention in taskbar families, static amber top-edge attention versus blue bottom-edge active state, explicit accessible labels and active aria-current. Actual GTK activation request while inactive yields native urgency without focus theft; physical indicators differ, activation clears urgency and the chosen client receives keys. Application controls now precede utilities after original pixels exposed clipping. Independent native-AT/original acceptance remains open.",
-      "sourceBaseRevision": "d7a11a0851c15cf77ee610c45a51e7a581c109a8",
-      "sourceHashes": {
-        "implementation/warlock/src/ActionProjection.elm": "911faed965465fac4e32f404d75a4d130b4e560cda191c7773eb96749be1d062",
-        "implementation/warlock/src/Taskbar.elm": "31ed9ce6b37e5b35065f8833e31412657800d894b6d9e9544f380bc16e7aa519",
-        "implementation/warlock/src/Surface.elm": "980312661ffe9cb1280335ff8a1e301ea022b3b866c392139fc948af0178609d",
-        "implementation/warlock/src/SurfaceRenderer.elm": "296a3a94759730d03a1c9914e341a214392616c346b8cb9daadf22f21c101491",
-        "implementation/warlock/adapter/effect_endpoint.py": "b640c48088929e84fb5a9b520e5eb56b13fe93ce362d6bfdad77690c7807ad6a",
-        "implementation/warlock/adapter/taskbar_projection.py": "3dfc3e88bcdeee2d1e39c8f0fac1661b9940d8b2edf54a775fe060321d1a1aca",
-        "implementation/warlock/adapter/daemon.py": "d060c1112f4f205e6e422c65541415f6f1a8559e1695f4620a7fcd81f767f0ab",
-        "implementation/warlock/native/authority.cpp": "50cb23dd338ed1e3bcaf3c30fdc0341e3fff0f1808b353adbad3219489ab1b6a",
-        "implementation/warlock/assets/shell.css": "f35225501a32fe220787ef0d370f623470f4c10c432cf9bc91544d43c8030631",
-        "implementation/warlock/qa/AttentionReplay.elm": "46ea7fcd9e1a47d01b400738e1fd50cd2da4c7a886f189257f8f14d03d381abc",
-        "implementation/warlock/qa/check-attention.py": "d848071beb1e2fe5694986a76ec7f74ae669d0ee64c8bf43fdbe0ea85b7bc412",
-        "implementation/warlock/qa/attention-browser.mjs": "d72a988c0a208b04b7b5274a95acac15aa7f2f87e56b39b7a93a0f1e923d77ea",
-        "implementation/warlock/qa/check-search.py": "8d143689700b0ef80b8ef2ce31de2a7a6753ab103e2a168b8035654f065f5af6",
-        "implementation/warlock/qa/check-native-authority.py": "6ef0b26cc323aa2c161e2b4ce5618765f94147be44a02b0a60e5a0a4104283d3",
-        "implementation/warlock/qa/native-window-feedback.py": "c367f86e1e2ec40409ed138705c8a044087250bcc86404640d5bee980b1acf79",
-        "implementation/warlock/README.md": "d00849324eba87aa05e1f2702d15f71e307ac35c2b10ee7f6379499de353e23d",
-        "implementation/warlock/assets/elm.js": "78ab8ced00bbb9dbfa59e974cb14bcd4ca0150752567791af3e183e383f02a80",
-        "implementation/warlock/assets/bar.js": "fbe4416674b120412b0be63abe47d438104aaacd3dee2eea4c81323ea9262d29",
-        "implementation/warlock/assets/popup.js": "d56f655974b3c128b442e080350aa37276127b7d2d16a8e36c0356f2b3092944",
-        "implementation/warlock/qa/current-search-build.json": "bdf66bf2dab2f1bf5be14133576ba9470410e9e692db1d0555333da1c85269cd",
-        "implementation/warlock/qa/current-native-pair.json": "990037d094ab0400e3b9073a9fb404e55ab33dc66803da41a7eeb09ca19e5372"
-      },
-      "reviewerDisposition": {
-        "name": "root-attention",
-        "independent": false,
-        "disposition": "Owner-observed original scenario evidence; independent native-AT acceptance pending."
-      }
-    },
-    "observed": "Immutable incarnation-bound native attention in taskbar families, static amber top-edge attention versus blue bottom-edge active state, explicit accessible labels and active aria-current. Actual GTK activation request while inactive yields native urgency without focus theft; physical indicators differ, activation clears urgency and the chosen client receives keys. Application controls now precede utilities after original pixels exposed clipping. Independent native-AT/original acceptance remains open.",
-    "missingObservations": [
-      "Independent original ux-009 review against the exact source/core/plugin/toolchain tuple.",
-      "Accessible labels/current state have compiled/browser and native DOM observations; this GTK/native campaign disables AT and does not establish inspector/Orca accessibility-state export.",
-      "Additional multi-output, scale, dense overflow and actual native theme/forced-color fixtures are not established by this single-output physical recording; full release AT/IME/hardware/resource and desktop journeys remain separate."
-    ]
   },
   "recentSlices": [
     {

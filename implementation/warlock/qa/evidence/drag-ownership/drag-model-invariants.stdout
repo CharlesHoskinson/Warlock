@@ -1,0 +1,534 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      alive: Set(1, 2),
+      focus: 1,
+      generation: 1,
+      lastOwner: 0,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 0,
+      snapped: Set(1),
+      sourceSnapped: false,
+      token: 0
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      alive: Set(1, 2),
+      focus: 1,
+      generation: 1,
+      lastOwner: 0,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 0,
+      snapped: Set(1),
+      sourceSnapped: false,
+      token: 0
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      alive: Set(1),
+      focus: 1,
+      generation: 1,
+      lastOwner: 0,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 0,
+      snapped: Set(1),
+      sourceSnapped: false,
+      token: 0
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      alive: Set(1, 2),
+      focus: 1,
+      generation: 1,
+      lastOwner: 0,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 0,
+      snapped: Set(1),
+      sourceSnapped: false,
+      token: 0
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      alive: Set(1, 2),
+      focus: 1,
+      generation: 1,
+      lastOwner: 0,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 0,
+      snapped: Set(1),
+      sourceSnapped: false,
+      token: 0
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      alive: Set(1, 2),
+      focus: 1,
+      generation: 1,
+      lastOwner: 0,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 2,
+      snapped: Set(1),
+      sourceSnapped: false,
+      token: 1
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      alive: Set(1, 2),
+      focus: 1,
+      generation: 2,
+      lastOwner: 2,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 0,
+      snapped: Set(1),
+      sourceSnapped: false,
+      token: 0
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      alive: Set(1, 2),
+      focus: 1,
+      generation: 2,
+      lastOwner: 0,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 2,
+      snapped: Set(1),
+      sourceSnapped: false,
+      token: 2
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      alive: Set(1),
+      focus: 1,
+      generation: 2,
+      lastOwner: 2,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 0,
+      snapped: Set(1),
+      sourceSnapped: false,
+      token: 0
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      alive: Set(1),
+      focus: 1,
+      generation: 3,
+      lastOwner: 0,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 0,
+      snapped: Set(1),
+      sourceSnapped: false,
+      token: 0
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      alive: Set(1),
+      focus: 1,
+      generation: 3,
+      lastOwner: 0,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 0,
+      snapped: Set(1),
+      sourceSnapped: false,
+      token: 0
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      alive: Set(1),
+      focus: 1,
+      generation: 3,
+      lastOwner: 0,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 0,
+      snapped: Set(1),
+      sourceSnapped: false,
+      token: 0
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      alive: Set(1),
+      focus: 1,
+      generation: 3,
+      lastOwner: 0,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 1,
+      snapped: Set(),
+      sourceSnapped: true,
+      token: 3
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      alive: Set(1),
+      focus: 2,
+      generation: 3,
+      lastOwner: 1,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 1,
+      snapped: Set(),
+      sourceSnapped: true,
+      token: 3
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      alive: Set(1),
+      focus: 2,
+      generation: 3,
+      lastOwner: 1,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 1,
+      snapped: Set(),
+      sourceSnapped: true,
+      token: 3
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      alive: Set(1),
+      focus: 1,
+      generation: 3,
+      lastOwner: 1,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 1,
+      snapped: Set(),
+      sourceSnapped: true,
+      token: 3
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      alive: Set(1),
+      focus: 1,
+      generation: 3,
+      lastOwner: 1,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 0,
+      snapped: Set(),
+      sourceSnapped: true,
+      token: 0
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      alive: Set(1),
+      focus: 1,
+      generation: 3,
+      lastOwner: 0,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 0,
+      snapped: Set(),
+      sourceSnapped: true,
+      token: 0
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      alive: Set(1),
+      focus: 1,
+      generation: 3,
+      lastOwner: 0,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 0,
+      snapped: Set(),
+      sourceSnapped: true,
+      token: 0
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      alive: Set(1),
+      focus: 1,
+      generation: 3,
+      lastOwner: 0,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 0,
+      snapped: Set(),
+      sourceSnapped: true,
+      token: 0
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      alive: Set(1),
+      focus: 1,
+      generation: 3,
+      lastOwner: 0,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 0,
+      snapped: Set(),
+      sourceSnapped: true,
+      token: 0
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      alive: Set(),
+      focus: 1,
+      generation: 3,
+      lastOwner: 0,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 0,
+      snapped: Set(),
+      sourceSnapped: true,
+      token: 0
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      alive: Set(),
+      focus: 1,
+      generation: 3,
+      lastOwner: 0,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 0,
+      snapped: Set(),
+      sourceSnapped: true,
+      token: 0
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      alive: Set(1),
+      focus: 1,
+      generation: 3,
+      lastOwner: 0,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 0,
+      snapped: Set(),
+      sourceSnapped: true,
+      token: 0
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      alive: Set(1),
+      focus: 1,
+      generation: 3,
+      lastOwner: 0,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 0,
+      snapped: Set(),
+      sourceSnapped: true,
+      token: 0
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      alive: Set(1),
+      focus: 1,
+      generation: 3,
+      lastOwner: 0,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 0,
+      snapped: Set(),
+      sourceSnapped: true,
+      token: 0
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      alive: Set(1),
+      focus: 1,
+      generation: 3,
+      lastOwner: 0,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 0,
+      snapped: Set(),
+      sourceSnapped: true,
+      token: 0
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      alive: Set(1),
+      focus: 1,
+      generation: 3,
+      lastOwner: 0,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 0,
+      snapped: Set(),
+      sourceSnapped: true,
+      token: 0
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      alive: Set(1),
+      focus: 1,
+      generation: 3,
+      lastOwner: 0,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 0,
+      snapped: Set(),
+      sourceSnapped: true,
+      token: 0
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      alive: Set(),
+      focus: 1,
+      generation: 3,
+      lastOwner: 0,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 0,
+      snapped: Set(),
+      sourceSnapped: true,
+      token: 0
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      alive: Set(),
+      focus: 2,
+      generation: 3,
+      lastOwner: 0,
+      lastRelease: false,
+      lastTarget: 0,
+      owner: 0,
+      snapped: Set(),
+      sourceSnapped: true,
+      token: 0
+    }
+}
+
+[ok] No violation found (150ms at 667 traces/second).
+Trace length statistics: max=31, min=31, average=31.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x1351f --backend=typescript to reproduce.

@@ -80,7 +80,9 @@ struct SwitcherChord {
 };
 SwitcherChord switcherChord;
 uint64_t switcherSerial=0;
-CHyprSignalListener switcherKeys;
+CHyprSignalListener switcherKeys, pointerFrames;
+uint64_t pointerSerial=1;
+std::string pointerState="idle", pointerOwner="null";
 std::set<uint32_t> switcherAlts;
 bool switcherTab=false,switcherStepAvailable=false;
 struct SwitcherSelection {uint64_t request=0,generation=0,root=0;};
@@ -300,7 +302,7 @@ void cancelSwitcher() noexcept {
 std::optional<std::vector<PHLWINDOW>> nativeFamily(PHLWINDOW window);
 void switcherStep(int direction) noexcept {
     try {
-        if(switcherAlts.empty() || !switcherTab || !switcherStepAvailable || g_pSessionLockManager->isSessionLocked() || !g_pInputManager->m_exclusiveLSes.empty())return;
+        if(g_layoutManager->dragController()->target() || switcherAlts.empty() || !switcherTab || !switcherStepAvailable || g_pSessionLockManager->isSessionLocked() || !g_pInputManager->m_exclusiveLSes.empty())return;
         switcherStepAvailable=false;
         if(!switcherChord.generation || switcherChord.released || switcherChord.cancelled || switcherChord.consumed) {
             if(switcherSerial==std::numeric_limits<uint64_t>::max())return;
@@ -325,10 +327,28 @@ void switcherStep(int direction) noexcept {
         switcherChord.steps.push_back(direction);notifySwitcher();
     }catch(...){cancelSwitcher();}
 }
+// Read the core drag controller; the shell never chooses a gesture target.
+// Render pre observes transitions after native input dispatch. Every competing
+// native operation also checks the controller directly, before any mutation.
+void refreshPointerOwnership() {
+    const auto& controller=g_layoutManager->dragController();
+    const auto target=controller->target();
+    const std::string state=!target ? "idle" : controller->mode()==MBIND_MOVE ? "move" : "resize";
+    const std::string owner=target ? identityOf(target->window()) : "null";
+    if(state==pointerState && owner==pointerOwner)return;
+    if(pointerSerial==std::numeric_limits<uint64_t>::max())throw std::runtime_error("Pointer observation exhausted");
+    pointerState=state;pointerOwner=owner;++pointerSerial;
+    if(target){cancelSwitcher();shellShortcuts.clear();}
+    if(g_pEventManager)g_pEventManager->postEvent(SHyprIPCEvent{"warlockpointer",std::to_string(lifetime)});
+}
+std::string pointerOwnership(const Session& session,uint64_t request) {
+    refreshPointerOwnership();
+    return "{\"protocolVersion\":3,\"kind\":\"pointer-ownership\",\"ownershipProtocol\":1,\"binding\":"+binding(session)+",\"requestId\":"+quote(std::to_string(request))+",\"serial\":"+quote(std::to_string(pointerSerial))+",\"state\":"+quote(pointerState)+",\"owner\":"+pointerOwner+"}";
+}
 void notifyShellShortcuts() noexcept {try {if(g_pEventManager)g_pEventManager->postEvent(SHyprIPCEvent{"warlockshortcuts",std::to_string(lifetime)});}catch(...) {}}
 void shellShortcut(ShellRoute route) noexcept {
     try {
-        if(!shellShortcutSession || !shellShortcutFrontend || g_pSessionLockManager->isSessionLocked() || !g_pInputManager->m_exclusiveLSes.empty() || (switcherChord.generation && !switcherChord.cancelled && !switcherChord.consumed && !switcherChord.released) || shellShortcutSerial==std::numeric_limits<uint64_t>::max())return;
+        if(g_layoutManager->dragController()->target() || !shellShortcutSession || !shellShortcutFrontend || g_pSessionLockManager->isSessionLocked() || !g_pInputManager->m_exclusiveLSes.empty() || (switcherChord.generation && !switcherChord.cancelled && !switcherChord.consumed && !switcherChord.released) || shellShortcutSerial==std::numeric_limits<uint64_t>::max())return;
         if(shellShortcuts.size()==64)shellShortcuts.erase(shellShortcuts.begin());
         shellShortcuts.push_back({++shellShortcutSerial,route});notifyShellShortcuts();
     } catch(...) {shellShortcuts.clear();}
@@ -337,7 +357,7 @@ int appsMenu(lua_State*){shellShortcut(ShellRoute::Applications);return 0;}
 int systemMenu(lua_State*){shellShortcut(ShellRoute::System);return 0;}
 int notificationHistory(lua_State*){shellShortcut(ShellRoute::Notifications);return 0;}
 std::string shellShortcutJournal(const Session& session,uint64_t request) {
-    const bool blocked=g_pSessionLockManager->isSessionLocked() || !g_pInputManager->m_exclusiveLSes.empty();
+    const bool blocked=g_layoutManager->dragController()->target() || g_pSessionLockManager->isSessionLocked() || !g_pInputManager->m_exclusiveLSes.empty();
     std::string events="[";
     if(!blocked)for(const auto& event:shellShortcuts) {
         if(events.size()>1)events+=',';
@@ -526,6 +546,7 @@ std::string performEffect(Session& session, JsonObject* object, const std::strin
     }
     if(operation!="minimize" && operation!="restore" && operation!="activate") return reject("unsupported-operation");
     if(*output!=outputGeneration || *expected!=factsRevision) return reject("dependency-mismatch");
+    if(g_layoutManager->dragController()->target()) return reject("native-pointer-owned");
     if(g_pSessionLockManager->isSessionLocked() || !g_pInputManager->m_exclusiveLSes.empty()) return reject("exclusive-input");
     const auto member=std::find_if(members.begin(),members.end(),[&](const Member& entry){return entry.id==*target;});
     if(member==members.end() || !member->window.lock() || !member->window.lock()->m_isMapped) return reject("stale-incarnation");
@@ -820,6 +841,12 @@ std::string observe(eHyprCtlOutputFormat, std::string request) {
                     reply="{\"protocolVersion\":3,\"kind\":\"geometry-facts\",\"geometryProtocol\":"+std::to_string(found->second.geometryProtocol)+",\"binding\":"+binding(found->second)+",\"requestId\":"+quote(std::to_string(*requestId))+",\"sequence\":"+quote(std::to_string(geometrySequence))+",\"revision\":"+quote(std::to_string(geometryRevision))+",\"outputGeneration\":"+quote(std::to_string(outputGeneration))+",\"facts\":"+facts+"}";
                 }
             }
+        } else if(operation=="pointer-ownership-request" && fields(object,{"protocolVersion","kind","binding","requestId"})) {
+            const auto bound=objectMember(object,"binding");const auto requestId=counter(object,"requestId");const auto found=sessions.find(peer);
+            if(!bound || !fields(bound,{"lifetime","session","frontend"}) || !requestId)throw std::runtime_error("pointer-schema");
+            const auto native=counter(bound,"lifetime"),sessionId=counter(bound,"session"),frontend=counter(bound,"frontend");
+            if(!native || !sessionId || !frontend || found==sessions.end() || found->second.start!=start || *native!=lifetime || *sessionId!=found->second.id || *frontend!=found->second.frontend || !grantRegistry->callerMatches(verifiedPeer(peer,start),{lifetime,*sessionId,*frontend}))reply=error("binding-mismatch");
+            else reply=pointerOwnership(found->second,*requestId);
         } else if(operation=="shell-shortcuts-request" && fields(object,{"protocolVersion","kind","binding","requestId"})) {
             const auto bound=objectMember(object,"binding");const auto requestId=counter(object,"requestId");const auto found=sessions.find(peer);
             if(!bound || !fields(bound,{"lifetime","session","frontend"}) || !requestId)throw std::runtime_error("shortcut-schema");
@@ -939,6 +966,8 @@ APICALL EXPORT PLUGIN_DESCRIPTION_INFO PLUGIN_INIT(HANDLE handle) {
     });
     if (const auto current=Desktop::focusState()->window()) recordActivation(current);
     shellShortcuts.clear();shellShortcutSerial=shellShortcutSession=shellShortcutFrontend=0;
+    pointerSerial=1;pointerState="idle";pointerOwner="null";
+    pointerFrames=Event::bus()->m_events.render.pre.listen([](PHLMONITOR){try{refreshPointerOwnership();}catch(...){}});
     switcherKeys=Event::bus()->m_events.input.keyboard.key.listen(switcherKey);
     if(!HyprlandAPI::addLuaFunction(handle,"warlock","apps_menu",appsMenu) || !HyprlandAPI::addLuaFunction(handle,"warlock","system_menu",systemMenu) || !HyprlandAPI::addLuaFunction(handle,"warlock","notification_history",notificationHistory))throw std::runtime_error("Shell shortcut binding registration failed");
     if(!HyprlandAPI::addLuaFunction(handle,"warlock","switcher_forward",switcherForward) || !HyprlandAPI::addLuaFunction(handle,"warlock","switcher_reverse",switcherReverse))throw std::runtime_error("Switcher binding registration failed");
@@ -953,6 +982,7 @@ APICALL EXPORT PLUGIN_DESCRIPTION_INFO PLUGIN_INIT(HANDLE handle) {
 }
 APICALL EXPORT void PLUGIN_EXIT() {
     shellShortcuts.clear();shellShortcutSerial=shellShortcutSession=shellShortcutFrontend=0;
+    pointerFrames.reset();
     switcherKeys.reset();switcherSelections.clear();switcherAlts.clear();switcherChord={};switcherOwnerSession=switcherOwnerFrontend=0;
     stopPreviewFdServer();previewLocked.reset();previewReloaded.reset();previewOutputRemoved.reset();
     opened.reset(); closed.reset(); activated.reset(); recentFocus.clear();activationHistory.clear();

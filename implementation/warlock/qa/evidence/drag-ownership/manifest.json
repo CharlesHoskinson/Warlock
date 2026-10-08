@@ -1,0 +1,106 @@
+{
+  "schema": 1,
+  "owner": "root-drag-ownership",
+  "observedUTC": "2026-10-08T16:52:24.427467+00:00",
+  "requirements": [
+    "ELM-UX-021"
+  ],
+  "scenarios": [
+    "ux-021"
+  ],
+  "originals": [
+    {
+      "requirement": "ELM-UX-021",
+      "verification": "Elm replay assertion and isolated native recording: exactly one gesture ends and no shell surface steals the drag.",
+      "scenarios": [
+        {
+          "name": "ux-021",
+          "given": "drag crosses the taskbar and another output",
+          "when": "pointer releases",
+          "then": "exactly one gesture ends and no shell surface steals the drag"
+        }
+      ]
+    }
+  ],
+  "scope": "Integrated native move/resize owner observation, actual-controller window-effect/shortcut guards, immutable Elm surface suppression and adopted Super/Alt pointer bindings. Compiled typed/root and production-decoder checks plus unchanged original drag model pass. Two-output native setup failed before gesture input; separate current native taskbar activation/minimize/restore/input regression passes. Original drag acceptance is unproven.",
+  "sourceBaseRevision": "2c63cde304b19aed170dafa9ade2f9e042cb8b54",
+  "publicBaseRevision": "4be0202429e4c1f807e543dff7aea3b96de9d9d5",
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+      "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791477973836253029/elm-window-geometry-authority.so",
+      "sha256": "216c5cce257eaff5d063285d44df6ac20090f285064c9681fac6213e414b0d1c"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791478048842827539/elm-host",
+    "sha256": "ed21a43f16555c25364f405ad302d6985f42e8dbdaa911ca119ca6204e2e6d76",
+    "heldBuild": "implementation/warlock/qa/runs/drag-ownership-1791478048842827539/report.json",
+    "heldBuildSHA256": "ee33e0f4fb3b3c7fd611a329b6d58ebd77a96f1e21418a56b096223e72290d7a"
+  },
+  "compiledAssets": {
+    "elm.js": "b1a91066d10c3f541279bb2912f5b72bbe7fa80d9e127b244e1537e077744f0e",
+    "bar.js": "fbe4416674b120412b0be63abe47d438104aaacd3dee2eea4c81323ea9262d29",
+    "popup.js": "d56f655974b3c128b442e080350aa37276127b7d2d16a8e36c0356f2b3092944"
+  },
+  "observedChecks": {
+    "compiledPointerOwnership": 22,
+    "productionDecoder": 15,
+    "frozenDragInvariantTraces": 100,
+    "nativePrimaryRegression": 75
+  },
+  "nativeCampaignPassed": false,
+  "originalScenarioDisposition": "implemented-unverified",
+  "nativeDragOwnershipObserved": false,
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "missingObservations": [
+    "Original ux-021 native gesture oracle remains unverified: both isolated qualification attempts failed before input, first observing native 1600x1000 output dimensions and then timing out at the unchanged six-second expected 800x600 geometry barrier. No native drag, taskbar/output crossing, single end or surface-theft observation is claimed.",
+    "Caption/edge initiation, explicit cancellation/close interleavings, native AT and touch/tablet/device coverage remain open.",
+    "Independent original-scenario and full-release acceptance remain open."
+  ],
+  "stopDisposition": "Two consecutive qualification-only output-setup attempts ended further geometry investigation; preserve original failures and continue another mandatory product slice.",
+  "componentFixtureNote": "Native runner setup wait was corrected after the component build; that file is not used by the component compile/replay/decoder/model checks. Native reports bind their own executed runner bytes.",
+  "sources": {
+    "implementation/warlock/src/PointerOwnership.elm": "c9590423eb41aff0077c4170ebf287f37a43c1a96d7c19c36e621b283194f492",
+    "implementation/warlock/src/Desktop.elm": "d6732ee9a44af0a17885a59f535317abbd6cae20f3a8bbe00837561a3da70c69",
+    "implementation/warlock/adapter/effect_endpoint.py": "6a9fce2a2faa5bb0b174f9e21fb60d2d08954555a0cb23a90c278e1fc783c2bf",
+    "implementation/warlock/adapter/daemon.py": "d3d31604bdbe1798e7f3f21de495546b09bf4e52932360855f140d063b7b8851",
+    "implementation/warlock/native/authority.cpp": "45653d9d37acff3b9c7a6005b48d2717c9ab4be534742a023e853d130a3ad9bc",
+    "implementation/warlock/native/shell-bindings.lua": "e45df486e3ee988a66a9a98c2713ff51982d14a0edfddfb2790e7b5351179306",
+    "implementation/warlock/qa/PointerOwnershipReplay.elm": "4636d0433c83815edd84dfd0c09fd49b28a562b5d542b25561285cfc03eb9c57",
+    "implementation/warlock/qa/check-pointer-ownership.py": "a4b340962613d6becfce6bdc178c6f77bd34a567547c7a35c4c777ca170cd3d7",
+    "implementation/warlock/qa/check-search.py": "5d67a68031e04455aaf7a4c35bd2bfaba9780890a9c2a3fa5c148ca536d062e4",
+    "implementation/warlock/qa/check-native-authority.py": "d51fb42da8f25fed6114d5552bb27de682d66de822df3568813b9952486dff53",
+    "implementation/warlock/qa/native-window-feedback.py": "449d1261859c2bad1ee7496679ccb512388ed13fc2a75fa4c1f0dc55f37b8636",
+    "implementation/warlock/README.md": "17403de372b0c6d0a98f8e6a026099b3441db750c4c6348acb8ea712e47334d7",
+    "implementation/warlock/assets/elm.js": "b1a91066d10c3f541279bb2912f5b72bbe7fa80d9e127b244e1537e077744f0e",
+    "implementation/warlock/assets/bar.js": "fbe4416674b120412b0be63abe47d438104aaacd3dee2eea4c81323ea9262d29",
+    "implementation/warlock/assets/popup.js": "d56f655974b3c128b442e080350aa37276127b7d2d16a8e36c0356f2b3092944",
+    "implementation/warlock/qa/current-search-build.json": "5ba802f9a0b8992aad7f0c7690b064cee8a610b6aa63cc4effb300292b375285",
+    "implementation/warlock/qa/current-native-pair.json": "3fe06c95f33356f8f058af8c52439e8f5c5ceaa0f5b7609309e4a836b833165e"
+  },
+  "artifacts": {
+    "component-report.json": "ee33e0f4fb3b3c7fd611a329b6d58ebd77a96f1e21418a56b096223e72290d7a",
+    "native-report.json": "a867c592a87403c33fa1a3030dd74a71a0ee62f1f7edf055c66d3f27688b8685",
+    "authority-report.json": "2eb04799be9bb058fc6acf1e31b8d2ea0eaa0172a5cf1da33575414b2aa70f31",
+    "primary-regression-report.json": "fd715d8e802bbc3c831c7bf25b104f39756847a0d22af922c67f3667080887d8",
+    "pointer-ownership.json": "1205505b8d7afabc1d894f8194088de0007ef0015ddfd6f660a81206d2187551",
+    "pointer-decoder.stdout": "cef9517577af27110ce655807ac00211f83f7fcb7e5d340060e90b53380bc1cf",
+    "drag-model-invariants.stdout": "1164b03dae06745394d6a1f46b82fd89327947ce235fb6e68424763153376581",
+    "host-self-tests.stdout": "f1737738f9b9b6590efb4297af0a49a3707b9b4e7ec36879859f66de8404e47a",
+    "failed-initial-output-geometry.json": "eb398f523cb7c15c60d37881c82590d25c9a07888b71da71596101c798bc23e4",
+    "failed-replay-flags.json": "3544ff428f6717ff9d98fcaac3cc1ce1f76e97b835ba9cba6124d9ece07400e6",
+    "failed-unique-controller-copy.json": "74f0a89fd6de706ec3ab4fc57a6157b094f6f091d1521bbbc0524740c5c17911",
+    "source.patch": "7f17dd9a25af628409376b801a622cfc8107e64e55cdf1f44244219f5ef386b3"
+  }
+}

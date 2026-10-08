@@ -7,6 +7,7 @@ import Pins
 import Settings
 import Notifications
 import JumpList
+import PointerOwnership
 import Shortcuts
 import Files
 import SystemMenu
@@ -37,6 +38,7 @@ type alias Model =
     , launch : Launch.Model
     , applications : Maybe Catalog.Snapshot
     , pins : Pins.Model
+    , pointer : PointerOwnership.Model
     , shortcuts : Shortcuts.Model
     , jumpList : JumpList.Model
     , jumpEntry : Maybe String
@@ -156,7 +158,7 @@ type Effect
 
 initial : Model
 initial =
-    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, shortcuts = Shortcuts.initial, jumpList = JumpList.initial, jumpEntry = Nothing, jumpOpening = False, jumpExpected = Nothing, jumpBack = False, files = Files.initial, filesOpen = False, filesOpening = False, filesExpected = Nothing, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
+    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, pointer = PointerOwnership.initial, shortcuts = Shortcuts.initial, jumpList = JumpList.initial, jumpEntry = Nothing, jumpOpening = False, jumpExpected = Nothing, jumpBack = False, files = Files.initial, filesOpen = False, filesOpening = False, filesExpected = Nothing, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
 
 switcherOpen : Model -> Bool
 switcherOpen model = List.member (Switcher.phase model.switcher) [Switcher.Waiting,Switcher.Browsing]
@@ -482,6 +484,23 @@ window message model =
 
 update : Msg -> Model -> ( Model, List Effect )
 update message model =
+    if PointerOwnership.blocked model.windows.shell.binding model.pointer && gestureAction message then (model,[]) else
+    updateAvailable message model
+
+gestureAction message =
+    case message of
+        Incoming _ -> False
+        OwnerScope _ -> False
+        PresentationOwner _ -> False
+        InvalidateSnap -> False
+        Deadline _ -> False
+        ChoiceDeadline _ -> False
+        CatalogUnsent _ _ -> False
+        Acknowledge _ -> False
+        Window (TaskbarShell.Native _) -> False
+        _ -> True
+
+updateAvailable message model =
     case message of
         OpenSnap stamp root ->
             if capture model/=Just stamp || not (Shell.available model.windows.shell)
@@ -608,6 +627,17 @@ update message model =
             in if next.windows.picker/=Nothing && next.windows.picker/=model.windows.picker then (retireSwitcher {next | jumpEntry=Nothing,jumpOpening=False,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,snap=Nothing,open=False,overview=False,expected=Nothing,menuOrigin=Nothing,returnFocus=Nothing},effects) else (synced,effects++commands)
         Incoming raw ->
             case D.decodeValue (D.field "kind" D.string) raw of
+                Ok "pointer-ownership" ->
+                    case D.decodeValue PointerOwnership.decoder raw of
+                        Err _ -> (model,[])
+                        Ok snapshot ->
+                            let pointer=PointerOwnership.receive model.windows.shell.binding snapshot model.pointer
+                                next={model | pointer=pointer}
+                            in if pointer==model.pointer then (model,[]) else
+                               if not (PointerOwnership.blocked model.windows.shell.binding pointer) then (next,[]) else
+                               let windows=next.windows
+                                   retired=advance (retireSwitcher {next | windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus},choice=Nothing,returnFocus=Nothing,menuOrigin=Nothing,snap=Nothing,open=False,overview=False,jumpEntry=Nothing,jumpOpening=False,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False})
+                               in (retired,[])
                 Ok "shell-shortcuts" ->
                     case D.decodeValue Shortcuts.decoder raw of
                         Err _ -> (model,[])

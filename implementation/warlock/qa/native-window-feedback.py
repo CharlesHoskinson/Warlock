@@ -4,6 +4,7 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
 lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
 """
 import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
+DRAG=sys.argv[1:]==['--drag-ownership']
 KEYBOARD=sys.argv[1:]==['--keyboard-shell']
 ATTENTION=sys.argv[1:]==['--attention']
 JUMP=sys.argv[1:]==['--jump-lists']
@@ -24,7 +25,7 @@ PRE_READY_RETIRE=sys.argv[1:]==['--switcher-pre-ready-retirement']
 MEMBERSHIP=sys.argv[1:]==['--switcher-membership'] or PRE_READY_RETIRE
 CHORD=sys.argv[1:]==['--switcher-chord'] or MEMBERSHIP
 SWITCHER=sys.argv[1:]==['--switcher']
-NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'] or DENSEPICKER or KEYBOARD;PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS or PINMENUS or REFLOW or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or KEYBOARD;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD
+NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'] or DENSEPICKER or KEYBOARD;PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS or PINMENUS or REFLOW or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or KEYBOARD;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD or DRAG
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143';RUNTIME=REPO/'implementation/warlock-client-provider-native-v204'
 sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
 spec=importlib.util.spec_from_file_location('feedback_private_host',RUNTIME/'candidate_host.py');host=importlib.util.module_from_spec(spec);spec.loader.exec_module(host)
@@ -62,7 +63,7 @@ else:
 for row in pair.values():assert sha(row['path'])==row['sha256']
 assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
 subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
-OUT=ROOT/'qa/runs'/(('native-keyboard-shell-' if KEYBOARD else 'native-attention-' if ATTENTION else 'native-jump-lists-' if JUMP else 'native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+OUT=ROOT/'qa/runs'/(('native-drag-ownership-' if DRAG else 'native-keyboard-shell-' if KEYBOARD else 'native-attention-' if ATTENTION else 'native-jump-lists-' if JUMP else 'native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
 OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
 focus_host=None
 if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
@@ -109,7 +110,7 @@ if CHORD:
  adapted=adapted.replace(needle,"        elif request['op'] == 'arrive-peer':\n            create('ELM-ACTIVATION-PEER', 'green')\n        elif request['op'] == 'arrive-chord':\n            create('ELM-CHORD-ARRIVAL', 'blue')\n        elif request['op'] == 'retire-third':\n            windows.pop('ELM-CHORD-THIRD').destroy()\n        elif request['op'] == 'retire-arrival':\n            windows.pop('ELM-CHORD-ARRIVAL').destroy()\n        elif request['op'] == 'retire-primary':\n            windows.pop('ELM-AUTHORITY-FIXTURE').destroy()\n"+needle)
  original_fixture=FIXTURE;FIXTURE=fixture_inputs/'chord-fixture.py';FIXTURE.write_text(adapted)
  chord_fixture={'originalSHA256':sha(original_fixture),'path':str(FIXTURE),'sha256':sha(FIXTURE),'change':'Third independent GTK root plus controlled retire/arrival operations; original client input/controllers unchanged.'}
-report={'schema':1,'requirements':['ELM-UI-007'],'scenarios':['restore-pending','restore-refused','restore-unknown'],'scope':'Actual pointer/Elm/native effect feedback and private compositor pixels; no AT/IME/full release acceptance','nativeFeedbackObserved':False,'nativeAcceptance':False,'assistiveTechnologyAccepted':False,'fullReleaseAccepted':False,'mainDesktopActions':False,'passed':False,'checks':[],'sourceInputs':{str(p.relative_to(ROOT)):sha(p) for folder in ['src','native','adapter','assets'] for p in (ROOT/folder).iterdir() if p.is_file()},'pair':pair,'nativeHost':{'path':str(binary),'sha256':sha(binary),'heldBuild':str(build_path),'heldBuildSHA256':sha(build_path)},'runtimeByReference':{'root':str(RUNTIME),'hostSHA256':sha(RUNTIME/'candidate_host.py')},'helpers':[],'nativeFixtures':[]};s=None;loaded=False;apps=[];notification_producer=None;broker=None;paused=False;sequence=0;chord_keyboard=None;chord_writer=None
+report={'schema':1,'requirements':['ELM-UI-007'],'scenarios':['restore-pending','restore-refused','restore-unknown'],'scope':'Actual pointer/Elm/native effect feedback and private compositor pixels; no AT/IME/full release acceptance','nativeFeedbackObserved':False,'nativeAcceptance':False,'assistiveTechnologyAccepted':False,'fullReleaseAccepted':False,'mainDesktopActions':False,'passed':False,'checks':[],'sourceInputs':{str(p.relative_to(ROOT)):sha(p) for folder in ['src','native','adapter','assets'] for p in (ROOT/folder).iterdir() if p.is_file()},'pair':pair,'nativeHost':{'path':str(binary),'sha256':sha(binary),'heldBuild':str(build_path),'heldBuildSHA256':sha(build_path)},'runtimeByReference':{'root':str(RUNTIME),'hostSHA256':sha(RUNTIME/'candidate_host.py')},'helpers':[],'nativeFixtures':[]};s=None;loaded=False;apps=[];notification_producer=None;broker=None;paused=False;sequence=0;chord_keyboard=None;chord_writer=None;drag_pointer=None;drag_writer=None
 if focus_host:report['focusHostAdaptation']=focus_host
 if retirement_fixture:report['retirementFixture']=retirement_fixture
 if primary_fixture:report['primaryFixture']=primary_fixture
@@ -142,8 +143,11 @@ hl.monitor({output="WAYLAND-1",mode="800x600@60",position="0x0",scale=1})
 '''
 if SMALL:LUA=LUA.replace(b'800x600',b'480x360' if DENSEMENU else b'480x600')
 if ATTENTION:LUA+=b'hl.config({misc={focus_on_activate=false}})\n'
-if CHORD or KEYBOARD:LUA+=(ROOT/'native/switcher-bindings.lua').read_bytes()
-if KEYBOARD:LUA+=(ROOT/'native/shell-bindings.lua').read_bytes()
+if CHORD or KEYBOARD or DRAG:LUA+=(ROOT/'native/switcher-bindings.lua').read_bytes()
+if KEYBOARD or DRAG:LUA+=(ROOT/'native/shell-bindings.lua').read_bytes()
+if DRAG:
+ LUA+=b'hl.monitor({output="WAYLAND-2",mode="800x600@60",position="800x0",scale=1})\n'
+ report.update(requirements=['ELM-UX-021'],scenarios=['ux-021'],scope='Actual native move/resize input across taskbar and two outputs; native controller owner/serial, real blocked shell shortcut and competing native effect, one end per gesture. No caption/edge, AT, touch/tablet or independent acceptance inferred.')
 def check(name,condition,**data):
  report['checks'].append({'name':name,'passed':bool(condition),**data});assert condition,name
 def wait(fn,seconds=6):
@@ -177,6 +181,11 @@ try:
  with host.PrivateHyprSession(OUTPUT,dict(os.environ),1600,1000,LUA,mesa_vendor=True) as s:
   try:
    plugin=pair['plugin']['path'];check('OwningPluginLoads',s.ctl('plugin','load',plugin).strip()=='ok');loaded=True
+   if DRAG:
+    check('CreateSecondWaylandOutput',s.ctl('output','create','wayland').strip()=='ok')
+    wait(lambda:len(s.data('monitors'))==2 and all(m['width']==800 and m['height']==600 for m in s.data('monitors')))
+    report['dragOutputs']=s.data('monitors')
+    check('TwoNativeOutputsHaveOriginalCrossingGeometry',[(m['name'],m['x'],m['y'],m['width'],m['height']) for m in sorted(report['dragOutputs'],key=lambda m:m['x'])]==[('WAYLAND-1',0,0,800,600),('WAYLAND-2',800,0,800,600)])
    native=next(row for _,row in s.host.processes if row['name']=='hyprland')
    config={'runtime':str(s.host.runtime),'instance':s.env['HYPRLAND_INSTANCE_SIGNATURE'],'pid':native['pid'],'expected_start':int(start_time(native['pid'])),'binary_sha256':pair['core']['sha256']}
    config_path=OUTPUT/'authority-config.json';config_path.write_text(json.dumps(config));config_path.chmod(0o600)
@@ -376,7 +385,7 @@ raise SystemExit(daemon.run())
    def click(item):
     check('PointerTargetWithinActualViewport',item['visible'],item=item);x,y=map(round,item['point']);helper([str(POINTER),'800','600'],f'move {x} {y}\nsleep 100\nbutton 272 1\nsleep 50\nbutton 272 0\nsleep 100\n')
    def facts():return client.scene_facts('441')
-   initial=None if TASKVIEW or SWITCHER or CHORD or FILES or JUMP or KEYBOARD else wait(lambda:group('Activate' if PRIMARY else 'Choose a window from' if FOCUS else 'Minimize'))
+   initial=None if TASKVIEW or SWITCHER or CHORD or FILES or JUMP or KEYBOARD or DRAG else wait(lambda:group('Activate' if PRIMARY else 'Choose a window from' if FOCUS else 'Minimize'))
    target=next(w['incarnation'] for w in client.snapshot('442')['windows'] if w['label']==('ELM-ACTIVATION-PEER' if PRIMARY else 'ELM-AUTHORITY-FIXTURE'))
    initial_workspace=next(w['workspace'] for w in facts()['facts']['windows'] if w['incarnation']==target)
    def current_window():return next(w for w in facts()['facts']['windows'] if w['incarnation']==target)
@@ -390,7 +399,61 @@ raise SystemExit(daemon.run())
     pix=GdkPixbuf.Pixbuf.new_from_file(str(image));data=pix.get_pixels();stride=pix.get_rowstride();channels=pix.get_n_channels();left,top=int(o['x'])+5,int(o['y'])+3;right,bottom=min(800,int(o['x']+o['width'])-3),min(48,int(o['y']+o['height'])-3)
     bright=sum(1 for y in range(top,bottom) for x in range(left,right) if all(data[y*stride+x*channels+i]>170 for i in range(3)))
     check(state+'NativeTaskbarHasTextPixels',pix.get_width()==800 and pix.get_height()==600 and bright>30,image=str(image),sha256=sha(image),brightPixels=bright,region=[left,top,right,bottom]);report.setdefault('feedback',{})[state]=body
-   if ATTENTION:
+   if DRAG:
+    keyboard=pathlib.Path('/home/hoskinson/window-integration-qa/orca-reader/physical-commands/evdev-keyboard');report['keyboard']={'path':str(keyboard),'sha256':sha(keyboard)}
+    wrapper=OUTPUT/'drag-input.py';wrapper.write_text('import os,stat,sys\nfd=os.open(sys.argv[1],os.O_RDONLY|os.O_NOFOLLOW)\nst=os.fstat(fd)\nassert stat.S_ISFIFO(st.st_mode) and st.st_uid==os.getuid() and stat.S_IMODE(st.st_mode)==0o600\nos.dup2(fd,0);os.close(fd)\nos.execv(sys.argv[2],sys.argv[2:])\n')
+    fifo=OUTPUT/'drag-keyboard.fifo';os.mkfifo(fifo,0o600);chord_writer=os.open(fifo,os.O_RDWR|os.O_NOFOLLOW)
+    chord_keyboard=s.host.launch('chord-keyboard',['/usr/bin/python3','-B',str(wrapper),str(fifo),str(keyboard)],env=s.env)
+    pfifo=OUTPUT/'drag-pointer.fifo';os.mkfifo(pfifo,0o600);drag_writer=os.open(pfifo,os.O_RDWR|os.O_NOFOLLOW)
+    drag_pointer=s.host.launch('drag-pointer',['/usr/bin/python3','-B',str(wrapper),str(pfifo),str(POINTER),'1600','600'],env=s.env)
+    report['persistentInput']={'wrapper':str(wrapper),'sha256':sha(wrapper),'commands':[]};report['dragPointerCommands']=[]
+    def physical(commands):
+     assert chord_keyboard.poll() is None
+     before=(OUTPUT/'chord-keyboard.log').read_text().splitlines().count('ready')
+     raw=(commands+'\nsync\n').encode();assert len(raw)<=4096 and os.write(chord_writer,raw)==len(raw)
+     report['persistentInput']['commands'].append(commands)
+     wait(lambda:(OUTPUT/'chord-keyboard.log').read_text().splitlines().count('ready')>before)
+    def pointer(commands):
+     assert drag_pointer.poll() is None
+     raw=(commands+'\n').encode();assert len(raw)<=4096 and os.write(drag_writer,raw)==len(raw)
+     report['dragPointerCommands'].append(commands)
+    def ownership():return client.pointer_ownership('470')
+    def owned(state):
+     value=ownership();return value if value['state']==state else None
+    def root_window():return next(w for w in s.data('clients') if w['title']=='ELM-AUTHORITY-FIXTURE')
+    def received_owner(state,serial):
+     rows=[json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('backend-frame: ') and json.loads(line.split(': ',1)[1]).get('kind')=='pointer-ownership']
+     return next((row for row in reversed(rows) if row['state']==state and row['serial']==serial),None)
+    wait(lambda:(projection() or {}).get('phase')=='Coherent' and received_owner('idle',ownership()['serial']))
+    report['gestures']=[]
+    for name,button,modifier,points in [('MoveAcrossTaskbarAndOutput',272,125,[(200,580),(1000,350)]),('ResizeAcrossTaskbarAndOutput',273,56,[(1000,580),(700,550)])]:
+     before=ownership();window_before=root_window();x,y=map(round,[window_before['at'][0]+window_before['size'][0]/2,window_before['at'][1]+window_before['size'][1]/2])
+     check(name+'StartsIdle',before['state']=='idle')
+     pointer(f'move {x} {y}\nsleep 100');physical(f'key {modifier} 1\nsleep 50');pointer(f'button {button} 1\nsleep 50\nmove {x+10} {y+10}\nsleep 100')
+     state='move' if button==272 else 'resize';active=wait(lambda:owned(state));wait(lambda:received_owner(state,active['serial']))
+     check(name+'NativeOwnerIsOriginalWindow',active['owner']==target and int(active['serial'])==int(before['serial'])+1,observation=active)
+     crossings=[]
+     for px,py in points:
+      pointer(f'move {px} {py}\nsleep 100')
+      wait(lambda:s.data('cursorpos')=={'x':px,'y':py})
+      current=ownership();crossings.append({'point':[px,py],'owner':current,'projection':projection()})
+      check(name+'CrossingRetainsNativeOwner',current['state']==state and current['owner']==target and current['serial']==active['serial'] and (projection() or {}).get('mode')=='closed',point=[px,py],observation=current)
+     # Both adopted modifiers are exercised. Super or Alt is already held.
+     other=56 if modifier==125 else 125
+     physical(f'key {other} 1\nkey 57 1\nsleep 50\nkey 57 0\nkey {other} 0\nsleep 100')
+     check(name+'AppsShortcutCannotStealGesture',ownership()==active and (projection() or {}).get('mode')=='closed',observation=ownership(),projection=projection())
+     outcome=private_effect('minimize',target)
+     check(name+'CompetingNativeEffectRefused',outcome['status']=='Refused' and outcome['reason']=='native-pointer-owned' and ownership()==active,result=outcome)
+     pointer(f'button {button} 0\nsleep 100');ended=wait(lambda:owned('idle'));physical(f'key {modifier} 0\nsleep 100');wait(lambda:received_owner('idle',ended['serial']))
+     check(name+'ExactlyOneNativeEnd',int(ended['serial'])==int(active['serial'])+1 and ended['owner'] is None and not current_window()['minimized'],before=before,active=active,end=ended)
+     after=root_window();check(name+'NativeGeometryChanged',after['at']!=window_before['at'] if button==272 else after['size']!=window_before['size'],before=window_before,after=after)
+     report['gestures'].append({'name':name,'before':before,'active':active,'crossings':crossings,'end':ended,'windowBefore':window_before,'windowAfter':after})
+    physical('key 125 1\nkey 56 1\nkey 57 1\nsleep 50\nkey 57 0\nkey 56 0\nkey 125 0\nsleep 100')
+    wait(lambda:(projection() or {}).get('mode')=='applications')
+    check('FreshAppsShortcutWorksAfterNativeRelease',(projection() or {}).get('mode')=='applications')
+    image=OUTPUT/'drag-two-output.png';helper(['/usr/bin/grim',str(image)]);report['dragPixels']={'path':str(image),'sha256':sha(image)}
+    report['nativeDragOwnershipObserved']=True
+   elif ATTENTION:
     keyboard=pathlib.Path('/home/hoskinson/window-integration-qa/orca-reader/physical-commands/evdev-keyboard');report['keyboard']={'path':str(keyboard),'sha256':sha(keyboard)}
     def bar_body():
      rows=[json.loads(line.split(' ',2)[2])['body'] for line in text().splitlines() if line.startswith('surface-report: origin=bar ')]
@@ -1528,10 +1591,15 @@ raise SystemExit(daemon.run())
     check('NoScratchpadOrWorkspaceTransfer',all(before_peer[k]==after_peer[k] for k in ['workspace','monitor']),before={k:before_peer[k] for k in ['workspace','monitor']},after={k:after_peer[k] for k in ['workspace','monitor']})
    else:
     if MEMBERSHIP:check('OnlyExplicitSpecialWorkspaceFixtureMoved',len(facts()['facts']['windows'])==5 and any(row['incarnation']==c and int(row['workspace'])<0 for row in facts()['facts']['windows']),nativeFacts=facts())
+    elif DRAG:check('OnlyExplicitNativeGestureCanChangeOutput',all(g['end']['state']=='idle' for g in report['gestures']),gestures=report['gestures'])
     else:check('NoScratchpadOrWorkspaceTransfer',not facts()['facts']['windows'] and report['beforeControlledRetirements']['facts']['windows'] if CHORD else current_window()['workspace']==initial_workspace,nativeWorkspace='controlled original roots retired' if CHORD else current_window()['workspace'],originalWorkspace=initial_workspace)
    report['nativeFeedbackObserved']=not FOCUS and not CATALOG and not TASKVIEW and not PRIMARY and not SWITCHER and not CHORD;report['nativeFocusJourneyObserved']=FOCUS;check('EveryRegisteredHelperExitedNormally',all(r['exitCode']==0 for r in report['helpers']));report['passed']=True
   finally:
    if paused:pause(False)
+   if drag_writer is not None:
+    os.close(drag_writer);drag_writer=None
+   if drag_pointer is not None:
+    drag_pointer.wait(timeout=5);check('PersistentPointerNormalExit',drag_pointer.returncode==0)
    if chord_writer is not None:
     os.close(chord_writer);chord_writer=None
    if chord_keyboard is not None:
