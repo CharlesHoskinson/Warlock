@@ -8,6 +8,7 @@ The original requirement and OpenSpec determine which behavior belongs in the ch
 | --- | --- | --- |
 | Shell policy and typed transitions | `implementation/warlock/src/Desktop.elm`; integration ports in `src/Main.elm` | `src/DesktopReplay.elm` and the replay for the affected subsystem |
 | Taskbar/popup presentation and feedback | `src/SurfaceRenderer.elm`, `src/Bar.elm`, `src/ActionProjection.elm` | `qa/check-feedback.py`; native presentation/input when required |
+| Surface keyboard, focus and layout | `assets/bar-adapter.js`, `assets/popup-adapter.js`, `assets/context.js`, `assets/activation.js`, `assets/shell.css` | For UI-008, `qa/check-search.py --dense-taskbar` (overflow) or `--pinned-menus` (menus); corresponding native modes and original AT obligations remain separate |
 | Single-family taskbar primary actions/state labels | `src/Taskbar.elm`, `src/TaskbarShell.elm`, `src/Surface.elm` | `qa/check-search.py --taskbar-primary`; native `qa/native-window-feedback.py --taskbar-primary` for exact receipt, MRU/desktop focus and window pixels; primary keyboard/AT remains separate |
 | Catalog search and launch | `src/Catalog.elm`, `src/Launch.elm`, `adapter/catalog_authority.py` | `qa/check-search.py`, `src/CatalogReplay.elm`, `src/LaunchReplay.elm` |
 | Persistent pins | `src/Desktop.elm`, `adapter/taskbar_preferences.py`, `adapter/taskbar_projection.py` | `qa/check-pin-storage.py`, `qa/pins.qnt` |

@@ -217,6 +217,12 @@ before using a suggestion. This command executes nothing; candidate native modes
 are not complete original-scenario coverage. AT/IME, hardware and other original
 verification obligations remain in the observation packet.
 
+Handwritten surface adapters and `shell.css` use the same view routes as the
+Elm renderer. For selected UI-008 overflow scenarios, the map suggests the
+existing `--dense-taskbar` component and native modes; menu invocation suggests
+`--pinned-menus`. Preview transport changes remain explicit unmapped product
+work so the contributor can inspect their authority/lifecycle obligations.
+
 Checks and delivery packets also include `progress`: consecutive iterations
 without meaningful progress, elapsed seconds since the recorded baseline, trigger
 reasons and an explicit next action. At two iterations or 45 minutes, end expansion
@@ -284,11 +290,14 @@ python3 -B plugins/warlock-contributor/scripts/warlock.py review \
   --include docs/your-owned-observation.md
 ```
 
-Changed authored C++ `.cpp`/`.hpp` files now count as implementation progress
-alongside Elm, C, Python, CSS and SVG in the candidate's source directories.
-Generated JavaScript, QA and documentation remain excluded. New iterations record
-progress policy 2; existing policy 1 records retain their original interpretation.
-A source change is still an implementation observation, not GUI acceptance.
+Changed authored C++ `.cpp`/`.hpp` files and the ten handwritten JavaScript
+adapters listed in [the contract](references/contract.json) count as implementation
+progress alongside Elm, C, Python, CSS and SVG. Compiled `elm.js`, `bar.js`,
+`popup.js`, unknown JavaScript, QA and documentation remain excluded. New
+iterations record progress policy 3; older policy 1/2 records retain their
+original interpretation. Re-recording unchanged bytes does not reset progress.
+A source change remains an implementation observation; GUI acceptance requires
+the original scenario evidence.
 
 ## What is enforced
 

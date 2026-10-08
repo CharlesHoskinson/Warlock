@@ -1,0 +1,33 @@
+{
+  "acceptanceBoundary": "Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.",
+  "checkerSha256": "0dade895f5bccd8ddb429fc7d11602ba434c6f1a747def5650c64525fb724e6d",
+  "selfTestSchema": 1,
+  "executionPerformed": true,
+  "acceptanceInferred": false,
+  "scope": "Plugin contribution-policy regressions; no GUI build, native/AT oracle or client installation.",
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "/home/hoskinson/omarchy-windows-parity/plugins/warlock-contributor/qa",
+    "-t",
+    "/home/hoskinson/omarchy-windows-parity/plugins/warlock-contributor/qa",
+    "-p",
+    "test_*.py"
+  ],
+  "returnCode": 0,
+  "stdout": "{\n  \"acceptanceBoundary\": \"Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.\",\n  \"checkerSha256\": \"0dade895f5bccd8ddb429fc7d11602ba434c6f1a747def5650c64525fb724e6d\",\n  \"ok\": false,\n  \"errors\": [\n    \"Continuation requires a participant slice record; run start first\"\n  ]\n}\n{\n  \"acceptanceBoundary\": \"Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.\",\n  \"checkerSha256\": \"0dade895f5bccd8ddb429fc7d11602ba434c6f1a747def5650c64525fb724e6d\",\n  \"errors\": [],\n  \"warnings\": [],\n  \"record\": \".warlock-contributor/slice.json\",\n  \"progress\": {\n    \"iterationsWithoutProgress\": 0,\n    \"lastRecordedProgressUTC\": \"2026-10-08T07:58:42.067273+00:00\",\n    \"secondsSinceRecordedProgress\": 0,\n    \"limits\": {\n      \"iterations\": 2,\n      \"seconds\": 2700\n    },\n    \"investigationNeedsChange\": false,\n    \"reasons\": [],\n    \"action\": \"Continue the selected behavior with proportional verification.\",\n    \"basis\": \"Participant record; unrecorded work and oracle truth are not inferred.\"\n  },\n  \"ok\": true\n}\n",
+  "stderr": ".............................................................................................................................................................\n----------------------------------------------------------------------\nRan 157 tests in 29.579s\n\nOK\n",
+  "errors": [],
+  "ok": true,
+  "packageVersion": "0.12.0",
+  "hostValidation": {
+    "claude": "Manifest validation passed",
+    "grok": "Manifest validation passed",
+    "skill": "Skill is valid",
+    "codex": "Local manifest/skill/hook metadata validated by doctor; live installation/trust not performed"
+  }
+}

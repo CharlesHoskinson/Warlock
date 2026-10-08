@@ -18,6 +18,11 @@ STATE = 'docs/warlock-build-loop/v2/STATE.json'
 LEDGER = 'docs/warlock-build-loop/v2/requirement-ledger.json'
 EXPECTED = 'a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b'
 BOUNDARY = 'Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.'
+AUTHORED_JAVASCRIPT = frozenset('assets/' + name for name in (
+    'adapter.js', 'activation.js', 'bar-adapter.js', 'context.js',
+    'controlled-popup-adapter.js', 'native-preview-proposals.js',
+    'native-preview-control-outbox.js', 'popup-adapter.js',
+    'retained-preview-controls.js', 'recovered-native-preview-control-outbox.js'))
 
 
 def now():
@@ -237,17 +242,19 @@ def preflight(root, record_path, slice_file, reqs):
             'snapshotLimit': 'Read-only snapshot, not reserved ownership. start rechecks paths and Git state; concurrent edits can change these findings.'}
 
 
-def authored(name, include_cpp=True):
+def authored(name, include_cpp=True, include_js=True):
     prefix = 'implementation/warlock/'
     if not name.startswith(prefix):
         return False
     relative = name[len(prefix):]
+    if include_js and relative in AUTHORED_JAVASCRIPT:
+        return True
     extensions = ('.elm', '.c', '.h', '.py', '.css', '.svg') + (('.cpp', '.hpp') if include_cpp else ())
     return relative.startswith(('src/', 'native/', 'adapter/', 'assets/')) and pathlib.Path(name).suffix in extensions
 
 
-def product_delta(current, previous, include_cpp=True):
-    return any(authored(n, include_cpp) and current[n] != previous.get(n) for n in current)
+def product_delta(current, previous, include_cpp=True, include_js=True):
+    return any(authored(n, include_cpp, include_js) and current[n] != previous.get(n) for n in current)
 
 
 def extension_baseline(record, previous, position):
@@ -429,6 +436,8 @@ def verification_plan(root, record, reqs, state, selected=False):
     requirements = set(packet['slice']['requirements'])
     scenarios = set(packet['slice']['scenarios'])
     primary = bool(scenarios & {'taskbar-inactive', 'taskbar-active', 'taskbar-minimized'})
+    dense = bool(requirements & {'ELM-UI-008'} and scenarios & {'overflow-first-last', 'overflow-resize'})
+    menus = bool(requirements & {'ELM-UI-008'} and 'menu-invocation' in scenarios)
     cpu, mapped = [], set()
 
     def add(name, arguments, sources, reason):
@@ -465,11 +474,15 @@ def verification_plan(root, record, reqs, state, selected=False):
             add('check-search.py', [], [name], 'Compile search views and catalog/launch replays.')
         elif relative in ('src/TaskView.elm', 'src/Taskbar.elm', 'src/TaskbarShell.elm',
                           'src/Surface.elm', 'src/Desktop.elm', 'src/Main.elm',
-                          'src/SurfaceRenderer.elm', 'src/Bar.elm', 'src/ActionProjection.elm'):
+                          'src/SurfaceRenderer.elm', 'src/Bar.elm', 'src/ActionProjection.elm',
+                          'assets/adapter.js', 'assets/activation.js', 'assets/bar-adapter.js',
+                          'assets/context.js', 'assets/popup-adapter.js', 'assets/shell.css'):
             if requirements & {'ELM-UI-007'}:
                 add('check-feedback.py', [], [name], 'Changed feedback views and state projection.')
             else:
-                flags = ['--taskbar-primary'] if primary else \
+                flags = ['--dense-taskbar'] if dense else \
+                        ['--pinned-menus'] if menus else \
+                        ['--taskbar-primary'] if primary else \
                         ['--workspace-navigation'] if requirements & {'ELM-UI-002', 'ELM-UX-008'} else \
                         ['--task-view'] if requirements & {'ELM-UI-006', 'ELM-UX-017'} else \
                         ['--pins'] if requirements & {'ELM-UX-004'} else []
@@ -482,6 +495,10 @@ def verification_plan(root, record, reqs, state, selected=False):
 
     modes = []
     if product:
+        if dense:
+            modes += [['--dense-taskbar']]
+        elif menus:
+            modes += [['--pinned-menus']]
         if requirements & {'ELM-UI-006', 'ELM-UX-017'}:
             modes += [['--task-view'], ['--task-view-retired-opener']]
         if requirements & {'ELM-UI-002', 'ELM-UX-008'}:
@@ -979,9 +996,10 @@ def validate(root, record, reqs, state):
     seen_verdicts = set()
     for index, item in enumerate(iterations):
         previous = extension_baseline(record, previous, index)
-        if item.get('progressPolicy', 1) not in (1, 2):
+        policy = item.get('progressPolicy', 1)
+        if policy not in (1, 2, 3):
             errors.append('Unknown iteration progress policy')
-        expected_progress = (item['outcome'] == 'production-fix' and product_delta(item['sourceHashes'], previous, item.get('progressPolicy', 1) == 2)) or (item['outcome'] == 'scenario-verdict' and any(verdict_key(c) not in seen_verdicts for c in item.get('claims', [])))
+        expected_progress = (item['outcome'] == 'production-fix' and product_delta(item['sourceHashes'], previous, policy in (2, 3), policy == 3)) or (item['outcome'] == 'scenario-verdict' and any(verdict_key(c) not in seen_verdicts for c in item.get('claims', [])))
         if item['meaningfulProgress'] != expected_progress:
             errors.append('Iteration progress assertion differs from source hashes/recorded verdict')
         previous = item['sourceHashes']
@@ -1172,7 +1190,7 @@ def main():
                 previous = extension_baseline(record, record['iterations'][-1]['sourceHashes'] if record['iterations'] else record['sourceHashes'], len(record['iterations']))
                 seen_verdicts = {verdict_key(c) for i in record['iterations'] for c in i.get('claims', [])}
                 progress = (args.outcome == 'production-fix' and product_delta(hashes, previous)) or (args.outcome == 'scenario-verdict' and any(verdict_key(c) not in seen_verdicts for c in claims))
-                record['iterations'].append({'atUTC': now(), 'outcome': args.outcome, 'summary': args.summary, 'sourceHashes': hashes, 'meaningfulProgress': progress, 'progressPolicy': 2, 'claims': claims, 'sourceRevision': git(root, 'rev-parse', 'HEAD').decode().strip()})
+                record['iterations'].append({'atUTC': now(), 'outcome': args.outcome, 'summary': args.summary, 'sourceHashes': hashes, 'meaningfulProgress': progress, 'progressPolicy': 3, 'claims': claims, 'sourceRevision': git(root, 'rev-parse', 'HEAD').decode().strip()})
                 errors, warnings = validate(root, record, reqs, state)
                 if not errors:
                     write_record(path, record)

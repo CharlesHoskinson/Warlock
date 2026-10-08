@@ -139,6 +139,33 @@ class VerificationPlannerTests(unittest.TestCase):
         self.assertEqual(argv[argv.index('--record') + 1], name)
         self.assertFalse((self.repo / 'sentinel.json').exists())
 
+    def test_dense_keyboard_adapter_maps_existing_protected_browser_and_native_modes(self):
+        self.select('ELM-UI-008', 'overflow-first-last', ['assets/bar-adapter.js', 'assets/shell.css'])
+        self.fixture.start()
+        self.fixture.write('implementation/warlock/assets/bar-adapter.js', 'changed keyboard behavior\n')
+        packet = self.packet()
+        self.assertEqual(packet['supportPaths'], [])
+        self.assertEqual(packet['unmappedProductPaths'], [])
+        self.assertEqual(packet['cpuTargets'][0]['arguments'], ['--dense-taskbar'])
+        self.assertEqual([x['arguments'] for x in packet['nativeCandidates']], [['--dense-taskbar']])
+        self.assertFalse(packet['executionPerformed'])
+        self.assertFalse(packet['acceptanceInferred'])
+
+    def test_menu_keyboard_adapter_maps_current_menu_campaign(self):
+        self.select('ELM-UI-008', 'menu-invocation', ['assets/context.js'])
+        self.fixture.start()
+        packet = self.packet('--selected')
+        self.assertEqual(packet['cpuTargets'][0]['arguments'], ['--pinned-menus'])
+        self.assertEqual([x['arguments'] for x in packet['nativeCandidates']], [['--pinned-menus']])
+
+    def test_transport_is_unmapped_product_and_generated_js_stays_support(self):
+        self.select('ELM-UI-007', 'restore-pending', ['assets/native-preview-proposals.js', 'assets/elm.js'])
+        self.fixture.start()
+        packet = self.packet('--selected')
+        self.assertEqual(packet['unmappedProductPaths'], ['implementation/warlock/assets/native-preview-proposals.js'])
+        self.assertEqual(packet['supportPaths'], ['implementation/warlock/assets/elm.js'])
+        self.assertEqual(packet['cpuTargets'], [])
+
 
 class ProgressStatusTests(unittest.TestCase):
     @classmethod

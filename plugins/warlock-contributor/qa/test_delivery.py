@@ -176,7 +176,7 @@ class DeliveryHelperTests(unittest.TestCase):
                 self.cli('record', '--outcome', 'production-fix', '--summary', 'native behavior changed')
                 record = json.loads((self.repo / '.warlock-contributor/slice.json').read_text())
                 self.assertTrue(record['iterations'][-1]['meaningfulProgress'])
-                self.assertEqual(record['iterations'][-1]['progressPolicy'], 2)
+                self.assertEqual(record['iterations'][-1]['progressPolicy'], 3)
                 self.cli('check')
 
     def test_legacy_cpp_progress_assertion_remains_valid(self):
