@@ -11,6 +11,7 @@ python3 -B plugins/warlock-contributor/scripts/warlock.py remaining --summary
 python3 -B plugins/warlock-contributor/scripts/warlock.py inspect --requirement ELM-UX-004
 python3 -B plugins/warlock-contributor/scripts/warlock.py start --owner your-name
 python3 -B docs/warlock-build-loop/v2/loop.py check
+python3 -B plugins/warlock-contributor/scripts/warlock.py verify-plan
 python3 -B plugins/warlock-contributor/scripts/warlock.py record --outcome production-fix --summary 'Describe the actual source behavior and observations'
 python3 -B plugins/warlock-contributor/scripts/warlock.py handoff
 python3 -B plugins/warlock-contributor/scripts/warlock.py report --markdown
@@ -94,6 +95,31 @@ supported. Partial and blocked observations require `--missing`; acceptance need
 the separate external review and source tuple described in the contract.
 
 `start` uses `STATE.activeSlice`; it does not select the next feature. The default local record is `.warlock-contributor/slice.json`; Git must ignore `.warlock-contributor/` before `start` (this repository supplies the ignore). On a new development checkout add that narrow ignore or choose an already-ignored `--record` location. Record updates are serialized with a POSIX lock and written atomically. Global `--repo`, `--record`, and `--json` precede the subcommand. For resumed own drafts, explicitly list each declared dirty path with repeatable `start --adopt-dirty <path>` and supply `--ownership-note`; undeclared and unadopted foreign drafts stay protected. See `--help` and [contract.json](references/contract.json). Zero exit means structural compliance; 1 is a structural policy violation and 2 invalid/unavailable inputs. Explicit loop checks and repository contributor instructions remain required even when no host hook runs.
+
+## Choose proportional verification
+
+`verify-plan` suggests existing protected checks for declared source changes since
+this participant's last record. It prints runner hashes, argument arrays and
+quoted commands, keeping compilation and serial native candidates separate.
+No changed source means no default rerun. Use `verify-plan --selected` to plan
+before editing. Global `--record` carries through to suggested native commands.
+
+The map covers existing feedback, search, pins, Task View, popup and owning-core
+routes. A SeatManager change suggests the single-unit core build followed by the
+owning-header authority build. Unmapped product files and supporting changes stay
+explicit so a contributor can choose their proportional checks. Missing runners
+have no executable command; a missing protected launcher requires a reviewed
+local equivalent. Inspect the runner, arguments, source tuple and prerequisites
+before using a suggestion. This command executes nothing; candidate native modes
+are not complete original-scenario coverage. AT/IME, hardware and other original
+verification obligations remain in the observation packet.
+
+Checks and delivery packets also include `progress`: consecutive iterations
+without meaningful progress, elapsed seconds since the recorded baseline, trigger
+reasons and an explicit next action. At two iterations or 45 minutes, end expansion
+of that investigation and select another bounded mandatory slice. This remains an
+advisory about contributor records; it does not measure feature delivery or block
+independent work. The required loop checks expose these fields on every continuation.
 
 ## Local development and installation
 

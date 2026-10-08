@@ -9,6 +9,7 @@ import hashlib
 import json
 import pathlib
 import shutil
+import shlex
 import subprocess
 import sys
 
@@ -274,9 +275,133 @@ def handoff(root, record, reqs, state):
         'protectedForeignPaths': sorted(record['foreignDirty']),
         'lastIteration': {k: last[k] for k in ('atUTC', 'outcome', 'summary', 'meaningfulProgress')} if last else None,
         'observations': observations, 'errors': errors, 'warnings': warnings,
+        'progress': progress_status(record),
         'nextAction': 'Resolve structural errors before claims.' if errors else
             'Read the observations and implement the next source change, or record the decisive original-scenario observation. '
             'Follow any no-progress warning; do not rerun unchanged qualification by default.'}
+
+
+def progress_status(record, clock=None):
+    """Recorded progress is a self-attestation, never an observed feature count."""
+    iterations = record.get('iterations', [])
+    qualifying = 0
+    for item in reversed(iterations):
+        if item['meaningfulProgress']:
+            break
+        qualifying += 1
+    since = record['startedUTC']
+    for item in iterations:
+        if item['meaningfulProgress']:
+            since = item['atUTC']
+    clock = clock or dt.datetime.now(dt.timezone.utc)
+    elapsed = max(0, (clock - dt.datetime.fromisoformat(since)).total_seconds())
+    reasons = []
+    if qualifying >= 2:
+        reasons.append('two-iterations-without-progress')
+    if elapsed >= 2700:
+        reasons.append('45-minutes-without-recorded-progress')
+    return {'iterationsWithoutProgress': qualifying, 'lastRecordedProgressUTC': since,
+            'secondsSinceRecordedProgress': int(elapsed),
+            'limits': {'iterations': 2, 'seconds': 2700},
+            'investigationNeedsChange': bool(reasons), 'reasons': reasons,
+            'action': 'Record the missing observation and select another bounded mandatory slice; '
+                      'do not block independent work or bypass safety.' if reasons else
+                      'Continue the selected behavior with proportional verification.',
+            'basis': 'Participant record; unrecorded work and oracle truth are not inferred.'}
+
+
+def verification_plan(root, record, reqs, state, selected=False):
+    """Suggest existing protected runners. Never run or certify their contents."""
+    packet = handoff(root, record, reqs, state)
+    paths = packet['slice']['paths'] if selected else packet['changedSinceLastRecord']
+    product = [n for n in paths if authored(n)]
+    requirements = set(packet['slice']['requirements'])
+    cpu, mapped = [], set()
+
+    def add(name, arguments, sources, reason):
+        runner = 'implementation/warlock/qa/' + name
+        key = (runner, tuple(arguments))
+        for target in cpu:
+            if (target['runner'], tuple(target['arguments'])) == key:
+                target['triggerPaths'] = sorted(set(target['triggerPaths']) | set(sources))
+                return
+        exists = safe(root, runner).is_file()
+        launcher = pathlib.Path('/home/hoskinson/window-integration-qa/qa_run.py')
+        argv = ['/usr/bin/python3', '-B', str(launcher), '--', '/usr/bin/python3',
+                '-B', str(safe(root, runner)), *arguments] if exists else None
+        cpu.append({'runner': runner, 'runnerSha256': digest(safe(root, runner)),
+                    'arguments': arguments, 'triggerPaths': sorted(sources), 'reason': reason,
+                    'runnerAvailable': exists, 'protectedLauncherAvailable': launcher.is_file(),
+                    'argv': argv, 'command': 'PYTHONDONTWRITEBYTECODE=1 ' + shlex.join(argv) if argv else None})
+
+    for name in product:
+        relative = name.removeprefix('implementation/warlock/')
+        if relative.startswith('native/core/'):
+            if relative == 'native/core/SeatManager.cpp':
+                add('check-focus-core.py', [], [name], 'Compile the changed owning core unit and relink the exact archive.')
+                add('check-native-authority.py', [], [name], 'After the core build, rebuild authority against the same owning headers/provider.')
+            else:
+                continue
+        elif relative in ('native/host.c', 'native/shared-host.c'):
+            add('check-search.py', ['--native-popup'], [name], 'Changed host compile, relink and popup lifecycle self-tests.')
+        elif relative.startswith('native/'):
+            add('check-native-authority.py', [], [name], 'Compile changed authority units against the owning core tuple.')
+        elif relative in ('adapter/taskbar_preferences.py', 'adapter/taskbar_projection.py'):
+            add('check-pin-storage.py', [], [name], 'Pin persistence/component behavior; inspect scope for non-pin projection changes.')
+        elif relative in ('src/Catalog.elm', 'src/Launch.elm', 'adapter/catalog_authority.py'):
+            add('check-search.py', [], [name], 'Compile search views and catalog/launch replays.')
+        elif relative in ('src/TaskView.elm', 'src/Desktop.elm', 'src/Main.elm',
+                          'src/SurfaceRenderer.elm', 'src/Bar.elm', 'src/ActionProjection.elm'):
+            if requirements & {'ELM-UI-007'}:
+                add('check-feedback.py', [], [name], 'Changed feedback views and state projection.')
+            else:
+                flags = ['--workspace-navigation'] if requirements & {'ELM-UI-002', 'ELM-UX-008'} else \
+                        ['--task-view'] if requirements & {'ELM-UI-006', 'ELM-UX-017'} else \
+                        ['--pins'] if requirements & {'ELM-UX-004'} else []
+                add('check-search.py', flags, [name], 'Compile the affected shell/view route; review the selected runner mode.')
+        elif relative in ('src/Effects.elm', 'src/NativeOutcome.elm', 'adapter/effect_endpoint.py'):
+            add('check-feedback.py', [], [name], 'Outcome/state projection; select additional replay/model cases for changed invariants.')
+        else:
+            continue
+        mapped.add(name)
+
+    modes = []
+    if product:
+        if requirements & {'ELM-UI-006', 'ELM-UX-017'}:
+            modes += [['--task-view'], ['--task-view-retired-opener']]
+        if requirements & {'ELM-UI-002', 'ELM-UX-008'}:
+            modes += [['--workspace-navigation']]
+        if requirements & {'ELM-UI-005', 'ELM-UX-029'}:
+            modes += [['--launcher-search']]
+        if requirements & {'ELM-UX-004'}:
+            modes += [['--taskbar-pins']]
+        if requirements & {'ELM-UI-004', 'ELM-UX-005', 'ELM-UX-024'}:
+            modes += [['--taskbar-focus']]
+        if requirements & {'ELM-UI-007'}:
+            modes += [[]]
+    native = []
+    runner = 'implementation/warlock/qa/native-window-feedback.py'
+    for arguments in modes:
+        exists = safe(root, runner).is_file()
+        argv = ['python3', '-B', 'docs/warlock-build-loop/v2/loop.py', '--record',
+                record.get('_recordPath', '.warlock-contributor/slice.json'),
+                'native', '--runner', str(safe(root, runner)), '--', *arguments] if exists else None
+        native.append({'runner': runner, 'runnerSha256': digest(safe(root, runner)),
+                       'arguments': arguments, 'runnerAvailable': exists,
+                       'argv': argv, 'command': shlex.join(argv) if argv else None})
+    packet.update(verificationPlanSchema=1, executionPerformed=False, acceptanceInferred=False,
+                  mode='selected-paths' if selected else 'changes-since-last-record',
+                  consideredPaths=paths, cpuTargets=cpu, nativeCandidates=native,
+                  unmappedProductPaths=sorted(set(product) - mapped),
+                  supportPaths=[n for n in paths if n not in product],
+                  instructions=[
+                      'Suggestions only: inspect runners, prerequisites and source tuple before execution; run nothing automatically.',
+                      'Choose the smallest decisive behavior plus a meaningful negative/lifecycle case. Native candidates run serially.',
+                      'Add Quint/fuzz only for changed reducer, concurrency or authority invariants; this map is not complete coverage.',
+                      'Unmapped product/support changes need an explicit proportional check chosen by the contributor.',
+                      'Original verification and missing observations below still apply; suggested runner passes do not accept scenarios.',
+                      'No changed sources means no default rerun. Use --selected to plan before edits, not to infer new evidence.'])
+    return packet
 
 
 def doctor(root, record_path):
@@ -334,6 +459,10 @@ def report_markdown(packet):
              'Before: ' + literal(packet['slice']['before']),
              'Intended result: ' + literal(packet['intendedBehavior']),
              'Recorded observation: ' + literal(packet['observedResult'] or 'No iteration recorded.'), '',
+             'Recorded progress: ' + str(packet['progress']['iterationsWithoutProgress']) +
+             ' consecutive iterations without progress; ' + str(packet['progress']['secondsSinceRecordedProgress']) +
+             ' seconds since the recorded progress baseline.',
+             'Investigation action: ' + literal(packet['progress']['action']), '',
              packet['reportBoundary'], '', 'Selected source changes:', '']
     for change in packet['selectedChanges']:
         lines.append('- ' + literal(change['path']) +
@@ -521,17 +650,7 @@ def validate(root, record, reqs, state):
             errors.append('Iteration progress assertion differs from source hashes/recorded verdict')
         previous = item['sourceHashes']
         seen_verdicts.update(verdict_key(c) for c in item.get('claims', []))
-    qualifying = 0
-    for i in reversed(iterations):
-        if i['meaningfulProgress']:
-            break
-        qualifying += 1
-    since = record['startedUTC']
-    for i in iterations:
-        if i['meaningfulProgress']:
-            since = i['atUTC']
-    elapsed = (dt.datetime.now(dt.timezone.utc) - dt.datetime.fromisoformat(since)).total_seconds()
-    if qualifying >= 2 or elapsed >= 2700:
+    if progress_status(record)['investigationNeedsChange']:
         warnings.append('Stop expanding this investigation; record missing observation and choose another bounded mandatory slice. Independent work remains allowed.')
     return errors, warnings
 
@@ -547,6 +666,8 @@ def main():
     subs.add_parser('status'); check = subs.add_parser('check')
     subs.add_parser('doctor')
     subs.add_parser('handoff')
+    verification = subs.add_parser('verify-plan', help='Read-only suggestions for proportional protected checks; never executes QA')
+    verification.add_argument('--selected', action='store_true', help='Plan declared paths before edits; default considers only changes since last record')
     report = subs.add_parser('report', help='Read-only delivery note from the participant record; no acceptance inferred')
     report.add_argument('--markdown', action='store_true', help='Print a reviewable Markdown note instead of the JSON packet')
     backlog = subs.add_parser('remaining', help='Read-only original scenario checklist from recorded ledger dispositions')
@@ -617,10 +738,14 @@ def main():
                 'requirement': i, 'verification': reqs[i]['verification'],
                 'scenarios': [x for x in reqs[i]['scenarios'] if x['name'] in s['scenarios']]
             } for i in s['requirements']])
-        elif args.command in ('handoff', 'claim', 'review', 'report'):
+        elif args.command in ('handoff', 'claim', 'review', 'report', 'verify-plan'):
             if not path.exists():
                 raise ValueError('No participant record to resume; inspect status and start an owned slice first')
-            if args.command == 'claim':
+            if args.command == 'verify-plan':
+                record = read(path)
+                record['_recordPath'] = args.record
+                result.update(verification_plan(root, record, reqs, state, args.selected))
+            elif args.command == 'claim':
                 result.update(scaffold_claim(root, read(path), reqs, state, args))
             elif args.command == 'review':
                 result.update(review(root, read(path), reqs, state, args.include))
@@ -637,8 +762,9 @@ def main():
         elif args.command == 'status':
             result.update(activeSlice=state['activeSlice'], baseline=EXPECTED, recordExists=path.exists(), releaseAccepted=False)
             if path.exists():
-                errors, warnings = validate(root, read(path), reqs, state)
-                result.update(errors=errors, warnings=warnings)
+                record = read(path)
+                errors, warnings = validate(root, record, reqs, state)
+                result.update(errors=errors, warnings=warnings, progress=progress_status(record))
         elif args.command == 'start':
             if path.exists():
                 raise ValueError('Record already exists; retain it and choose a new --record for a new slice')
@@ -693,7 +819,7 @@ def main():
                 errors, warnings = validate(root, record, reqs, state)
                 if not errors:
                     write_record(path, record)
-            result.update(errors=errors, warnings=warnings, record=args.record)
+            result.update(errors=errors, warnings=warnings, record=args.record, progress=progress_status(record))
         if args.command == 'check' and args.base_ref and path.exists() and not args.project_only:
             names = git(root, 'diff', '--no-renames', '--name-only', '-z', args.base_ref, '--').decode().split('\0')
             result.setdefault('errors', []).extend('Archival implementation change: ' + n for n in names if n.startswith('implementation/') and not n.startswith('implementation/warlock/'))
