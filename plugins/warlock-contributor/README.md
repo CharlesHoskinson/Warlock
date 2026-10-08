@@ -28,7 +28,26 @@ to the selected behavior; it is not another mandatory full-suite checklist.
 `remaining` returns a checklist from the original scenario ledger, including exact
 given/when/then text, verification obligations and recorded missing observations.
 Use `--requirement ID` to focus on a feature, repeat `--status failed` or other
-statuses to filter, or use `--summary` for counts. The default omits recorded
+statuses to filter, or use `--summary` for counts. Use `--markdown` for a readable
+checklist and `--limit N --offset N` for bounded pages instead of loading the full
+ledger into a planning conversation:
+
+```sh
+python3 -B plugins/warlock-contributor/scripts/warlock.py remaining \
+  --requirement ELM-UI-003 --markdown --limit 3
+```
+
+Pages follow ledger order after filtering. They retain total matching counts,
+the number of omitted rows and a ledger hash; repeat the same filters and limit
+with the reported `nextOffset` (`--offset` in Markdown). Compare hashes before
+combining pages because a changed ledger can change their contents. JSON remains
+the default, with complete original scenario objects and recorded rows. Markdown
+retains given/when/then, verification, missing observations and recorded evidence
+scope. An empty page does not mean the release is complete, and recorded accepted
+rows never appear as checked boxes. `--summary` cannot be combined with pagination;
+`--markdown` cannot be combined with global `--json`.
+
+The default omits recorded
 accepted scenarios. Counts describe recorded dispositions, not delivered features;
 unadjudicated does not mean unimplemented, and this command does not revalidate
 accepted evidence. The original 242/417 inventory is only part of the full release

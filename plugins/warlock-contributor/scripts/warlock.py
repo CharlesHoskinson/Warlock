@@ -592,13 +592,16 @@ def contribution_report(root, record, reqs, state):
     return packet
 
 
+def markdown_literal(value):
+    """Keep contributor text literal, without HTML, links or injected headings."""
+    text = ' '.join(str(value).splitlines())
+    for character in ('\\', '`', '*', '_', '[', ']', '<', '>', '#', '|'):
+        text = text.replace(character, '\\' + character)
+    return text
+
+
 def report_markdown(packet):
-    # Keep contributor text literal: no HTML, links or injected Markdown headings.
-    def literal(value):
-        text = ' '.join(str(value).splitlines())
-        for character in ('\\', '`', '*', '_', '[', ']', '<', '>', '#', '|'):
-            text = text.replace(character, '\\' + character)
-        return text
+    literal = markdown_literal
 
     lines = ['Warlock contribution: ' + literal(packet['slice']['id']), '',
              'Owner: ' + literal(packet['owner']),
@@ -641,7 +644,7 @@ def report_markdown(packet):
     return '\n'.join(lines)
 
 
-def remaining(root, reqs, requirements, statuses, summary_only):
+def remaining(root, reqs, requirements, statuses, summary_only, limit=None, offset=0):
     """Report recorded backlog, without inferring implementation or acceptance."""
     if len(set(requirements)) != len(requirements) or any(i not in reqs for i in requirements):
         raise ValueError('Remaining needs unique original requirement IDs')
@@ -663,13 +666,55 @@ def remaining(root, reqs, requirements, statuses, summary_only):
             rows.append({'requirement': identity, 'capability': original['capability'],
                          'original': scenarios[scenario['name']],
                          'verificationScope': original['verification'], 'ledger': scenario})
+    matching = len(rows)
+    shown = [] if summary_only else rows[offset:None if limit is None else offset + limit]
+    omitted_before = 0 if summary_only else min(offset, matching)
+    omitted_after = matching - omitted_before - len(shown)
     return {'ledgerSha256': digest(safe(root, LEDGER)), 'recordedOnly': True,
             'requirementsConsidered': requirement_count, 'scenarioCountsByRecordedStatus': counts,
-            'matchingScenarios': len(rows), 'scenarios': [] if summary_only else rows,
+            'matchingScenarios': matching, 'scenarios': shown,
+            'offset': offset, 'limit': limit, 'shownScenarios': len(shown),
+            'omittedBefore': omitted_before, 'omittedAfter': omitted_after,
+            'nextOffset': offset + len(shown) if omitted_after and not summary_only else None,
             'summaryOnly': summary_only, 'releaseAccepted': False,
             'warnings': ['Recorded dispositions are not revalidated here. Unadjudicated does not mean unimplemented; '
                          'accepted rows still require current evidence and independent review. '
                          'The frozen 242/417 baseline is only part of the full release scope.']}
+
+
+def remaining_markdown(packet):
+    literal = markdown_literal
+    lines = ['Warlock recorded scenario checklist', '',
+             'Ledger SHA-256: ' + literal(packet['ledgerSha256']), '',
+             str(packet['requirementsConsidered']) + ' requirements considered; ' +
+             str(packet['matchingScenarios']) + ' scenarios match the selected statuses.',
+             'Recorded counts: ' + ', '.join(literal(status) + '=' + str(count)
+                 for status, count in sorted(packet['scenarioCountsByRecordedStatus'].items())) + '.', '',
+             'Showing ' + str(packet['shownScenarios']) + ' scenarios; ' +
+             str(packet['omittedBefore']) + ' omitted before and ' + str(packet['omittedAfter']) + ' after.', '']
+    for row in packet['scenarios']:
+        original, observation = row['original'], row['ledger']
+        # Never render a checked box: recorded acceptance has not been revalidated.
+        marker = '- ' if observation['status'] == 'accepted' else '- [ ] '
+        lines.extend([marker + literal(row['requirement']) + ' / ' + literal(original['name']) +
+                      ' (recorded ' + literal(observation['status']) + ')', '',
+                      '  Given: ' + literal(original['given']), '',
+                      '  When: ' + literal(original['when']), '',
+                      '  Original oracle: ' + literal(original['then']), '',
+                      '  Verification obligations: ' + literal(row['verificationScope']), ''])
+        if observation.get('missingObservation'):
+            lines.extend(['  Missing observation: ' + literal(observation['missingObservation']), ''])
+        for evidence in observation.get('evidence', []):
+            if evidence.get('scope'):
+                lines.extend(['  Recorded evidence scope: ' + literal(evidence['scope']), ''])
+    if packet['nextOffset'] is not None:
+        lines.extend(['Next page: repeat the same filters and limit with --offset ' +
+                      str(packet['nextOffset']) + '; compare the ledger hash before combining pages.', ''])
+    if not packet['scenarios'] and not packet['summaryOnly']:
+        lines.extend(['No rows on this page; this does not establish release completion.', ''])
+    lines.extend(packet['warnings'])
+    lines.extend(['', 'Full release acceptance is not established by this checklist.', ''])
+    return '\n'.join(lines)
 
 
 def review(root, record, reqs, state, includes):
@@ -859,6 +904,9 @@ def main():
     backlog.add_argument('--requirement', action='append', default=[])
     backlog.add_argument('--status', action='append', choices=['unadjudicated', 'missing', 'implemented-unverified', 'partial', 'failed', 'blocked', 'accepted'])
     backlog.add_argument('--summary', action='store_true', help='Counts only; omit scenario details')
+    backlog.add_argument('--limit', type=int, help='Maximum matching scenarios to show; positive integer')
+    backlog.add_argument('--offset', type=int, default=0, help='Skip this many matching scenarios in ledger order')
+    backlog.add_argument('--markdown', action='store_true', help='Print a readable checklist instead of the JSON packet')
     staging = subs.add_parser('review', help='Read-only participant handoff and staged contribution review')
     staging.add_argument('--include', action='append', default=[], help='Explicitly owned supporting file; cannot override protected foreign paths')
     claim = subs.add_parser('claim', help='Print a record-compatible observation scaffold; does not write or accept')
@@ -897,8 +945,13 @@ def main():
             raise ValueError('Installed checker differs from repository-owned checker; use the reviewed repository copy')
         if args.command == 'check' and args.project_only and args.require_record:
             raise ValueError('--project-only is incompatible with --require-record')
-        if args.command == 'report' and args.markdown and args.json:
+        if args.command in ('report', 'remaining') and args.markdown and args.json:
             raise ValueError('--markdown is incompatible with --json')
+        if args.command == 'remaining':
+            if args.limit is not None and args.limit < 1 or args.offset < 0:
+                raise ValueError('--limit must be positive and --offset must be nonnegative')
+            if args.summary and (args.limit is not None or args.offset):
+                raise ValueError('--summary is incompatible with pagination')
         reqs, state = context(root)
         if args.command == 'check' and args.base_ref:
             args.base_ref = git(root, 'rev-parse', '--verify', '--end-of-options', args.base_ref + '^{commit}').decode().strip()
@@ -916,7 +969,8 @@ def main():
             result.update(self_test(root))
         elif args.command == 'remaining':
             result.update(remaining(root, reqs, args.requirement,
-                args.status or ['unadjudicated', 'missing', 'implemented-unverified', 'partial', 'failed', 'blocked'], args.summary))
+                args.status or ['unadjudicated', 'missing', 'implemented-unverified', 'partial', 'failed', 'blocked'],
+                args.summary, args.limit, args.offset))
         elif args.command == 'plan':
             s = normalize_slice(root, {'id': args.id, 'requirements': args.requirement,
                 'scenarios': args.scenario, 'paths': args.path, 'before': args.before,
@@ -1025,6 +1079,8 @@ def main():
             lock.close()
     if args.command == 'report' and args.markdown and 'reportSchema' in result:
         print(report_markdown(result))
+    elif args.command == 'remaining' and args.markdown and 'matchingScenarios' in result:
+        print(remaining_markdown(result))
     else:
         print(json.dumps(result, indent=2) if args.json else '\n'.join([BOUNDARY, json.dumps(result, indent=2)]))
     return code
