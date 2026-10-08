@@ -6385,35 +6385,127 @@
       "owner": "Graphics lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "live-motion-minimize",
           "oracle": "optional motion promptly settles with identical target/focus, no duplicate effect or orphan resource and persisted preference after restart",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/live-motion/manifest.json",
+              "sha256": "9f6e387b3560624a9c1f8577d73ffac529baab4d1d004dd6c947913602492c99",
+              "scope": "Actual Settings three-choice motion override, strict revisioned persistence/reset, source precedence, unknown-write read-only recovery, native accepted-family goal settlement without replay. Actual compiled root/store/model/host and owning ABI closure pass. Native keyboard five saves/resets, actual GTK changes and whole-host Full override restart pass; combined recording fails before a subsequent normal-profile effect because its application control is off-screen. Mid-flight and full original qualification remain open.",
+              "sourceBaseRevision": "eb62e2333cc3816a2f4a2c9a650f7070d7507b17",
+              "sourceTuple": {
+                "core": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+                  "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+                },
+                "plugin": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791489372596689127/elm-window-geometry-authority.so",
+                  "sha256": "aea28fae8b9b25321d42bfe1da60e7dfd0ffd468f000df715e1a644094f6d28e"
+                },
+                "aquamarine": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+                  "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+                }
+              },
+              "reviewerDisposition": "Owner-observed partial implementation and native subintervals; original midpoint/proxy/subsequent-profile/overlay/AT and independent acceptance remain open."
+            }
+          ],
+          "missingObservation": "Original motion-enable has no observed intermediate restore geometry or exactly-once proxy retirement. Native accepted-family/goal settlement compiles but has not been qualified during a real intermediate frame; no proxy behavior is inferred. Original live-motion-minimize/live-motion-restore/live-motion-switcher/live-motion-Task View toggle-during-transition intervals and resource ownership are not established by post-completion GTK changes or the Settings journey. Original motion-overlays requires separate switcher, Task View and snap open/navigation/dismissal fixtures. Current native Task View reduced-profile recording is only one interval. Original motion-disable post-completion source disable/no-replay is observed, but the subsequent normal-profile window operation was not submitted: the second native campaign stopped at an application button outside the scrolled viewport. Its helper correction is not natively rerun; no third qualification campaign. Independent original scenario/requirement review, applicable native AT and full release hardware/resource/journey/package/deployment obligations remain open.",
+          "ownerObservedOriginalOracle": false
         },
         {
           "name": "live-motion-restore",
           "oracle": "optional motion promptly settles with identical target/focus, no duplicate effect or orphan resource and persisted preference after restart",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/live-motion/manifest.json",
+              "sha256": "9f6e387b3560624a9c1f8577d73ffac529baab4d1d004dd6c947913602492c99",
+              "scope": "Actual Settings three-choice motion override, strict revisioned persistence/reset, source precedence, unknown-write read-only recovery, native accepted-family goal settlement without replay. Actual compiled root/store/model/host and owning ABI closure pass. Native keyboard five saves/resets, actual GTK changes and whole-host Full override restart pass; combined recording fails before a subsequent normal-profile effect because its application control is off-screen. Mid-flight and full original qualification remain open.",
+              "sourceBaseRevision": "eb62e2333cc3816a2f4a2c9a650f7070d7507b17",
+              "sourceTuple": {
+                "core": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+                  "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+                },
+                "plugin": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791489372596689127/elm-window-geometry-authority.so",
+                  "sha256": "aea28fae8b9b25321d42bfe1da60e7dfd0ffd468f000df715e1a644094f6d28e"
+                },
+                "aquamarine": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+                  "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+                }
+              },
+              "reviewerDisposition": "Owner-observed partial implementation and native subintervals; original midpoint/proxy/subsequent-profile/overlay/AT and independent acceptance remain open."
+            }
+          ],
+          "missingObservation": "Original motion-enable has no observed intermediate restore geometry or exactly-once proxy retirement. Native accepted-family/goal settlement compiles but has not been qualified during a real intermediate frame; no proxy behavior is inferred. Original live-motion-minimize/live-motion-restore/live-motion-switcher/live-motion-Task View toggle-during-transition intervals and resource ownership are not established by post-completion GTK changes or the Settings journey. Original motion-overlays requires separate switcher, Task View and snap open/navigation/dismissal fixtures. Current native Task View reduced-profile recording is only one interval. Original motion-disable post-completion source disable/no-replay is observed, but the subsequent normal-profile window operation was not submitted: the second native campaign stopped at an application button outside the scrolled viewport. Its helper correction is not natively rerun; no third qualification campaign. Independent original scenario/requirement review, applicable native AT and full release hardware/resource/journey/package/deployment obligations remain open.",
+          "ownerObservedOriginalOracle": false
         },
         {
           "name": "live-motion-switcher",
           "oracle": "optional motion promptly settles with identical target/focus, no duplicate effect or orphan resource and persisted preference after restart",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/live-motion/manifest.json",
+              "sha256": "9f6e387b3560624a9c1f8577d73ffac529baab4d1d004dd6c947913602492c99",
+              "scope": "Actual Settings three-choice motion override, strict revisioned persistence/reset, source precedence, unknown-write read-only recovery, native accepted-family goal settlement without replay. Actual compiled root/store/model/host and owning ABI closure pass. Native keyboard five saves/resets, actual GTK changes and whole-host Full override restart pass; combined recording fails before a subsequent normal-profile effect because its application control is off-screen. Mid-flight and full original qualification remain open.",
+              "sourceBaseRevision": "eb62e2333cc3816a2f4a2c9a650f7070d7507b17",
+              "sourceTuple": {
+                "core": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+                  "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+                },
+                "plugin": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791489372596689127/elm-window-geometry-authority.so",
+                  "sha256": "aea28fae8b9b25321d42bfe1da60e7dfd0ffd468f000df715e1a644094f6d28e"
+                },
+                "aquamarine": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+                  "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+                }
+              },
+              "reviewerDisposition": "Owner-observed partial implementation and native subintervals; original midpoint/proxy/subsequent-profile/overlay/AT and independent acceptance remain open."
+            }
+          ],
+          "missingObservation": "Original motion-enable has no observed intermediate restore geometry or exactly-once proxy retirement. Native accepted-family/goal settlement compiles but has not been qualified during a real intermediate frame; no proxy behavior is inferred. Original live-motion-minimize/live-motion-restore/live-motion-switcher/live-motion-Task View toggle-during-transition intervals and resource ownership are not established by post-completion GTK changes or the Settings journey. Original motion-overlays requires separate switcher, Task View and snap open/navigation/dismissal fixtures. Current native Task View reduced-profile recording is only one interval. Original motion-disable post-completion source disable/no-replay is observed, but the subsequent normal-profile window operation was not submitted: the second native campaign stopped at an application button outside the scrolled viewport. Its helper correction is not natively rerun; no third qualification campaign. Independent original scenario/requirement review, applicable native AT and full release hardware/resource/journey/package/deployment obligations remain open.",
+          "ownerObservedOriginalOracle": false
         },
         {
           "name": "live-motion-Task View",
           "oracle": "optional motion promptly settles with identical target/focus, no duplicate effect or orphan resource and persisted preference after restart",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/live-motion/manifest.json",
+              "sha256": "9f6e387b3560624a9c1f8577d73ffac529baab4d1d004dd6c947913602492c99",
+              "scope": "Actual Settings three-choice motion override, strict revisioned persistence/reset, source precedence, unknown-write read-only recovery, native accepted-family goal settlement without replay. Actual compiled root/store/model/host and owning ABI closure pass. Native keyboard five saves/resets, actual GTK changes and whole-host Full override restart pass; combined recording fails before a subsequent normal-profile effect because its application control is off-screen. Mid-flight and full original qualification remain open.",
+              "sourceBaseRevision": "eb62e2333cc3816a2f4a2c9a650f7070d7507b17",
+              "sourceTuple": {
+                "core": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+                  "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+                },
+                "plugin": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791489372596689127/elm-window-geometry-authority.so",
+                  "sha256": "aea28fae8b9b25321d42bfe1da60e7dfd0ffd468f000df715e1a644094f6d28e"
+                },
+                "aquamarine": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+                  "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+                }
+              },
+              "reviewerDisposition": "Owner-observed partial implementation and native subintervals; original midpoint/proxy/subsequent-profile/overlay/AT and independent acceptance remain open."
+            }
+          ],
+          "missingObservation": "Original motion-enable has no observed intermediate restore geometry or exactly-once proxy retirement. Native accepted-family/goal settlement compiles but has not been qualified during a real intermediate frame; no proxy behavior is inferred. Original live-motion-minimize/live-motion-restore/live-motion-switcher/live-motion-Task View toggle-during-transition intervals and resource ownership are not established by post-completion GTK changes or the Settings journey. Original motion-overlays requires separate switcher, Task View and snap open/navigation/dismissal fixtures. Current native Task View reduced-profile recording is only one interval. Original motion-disable post-completion source disable/no-replay is observed, but the subsequent normal-profile window operation was not submitted: the second native campaign stopped at an application button outside the scrolled viewport. Its helper correction is not natively rerun; no third qualification campaign. Independent original scenario/requirement review, applicable native AT and full release hardware/resource/journey/package/deployment obligations remain open.",
+          "ownerObservedOriginalOracle": false
         }
       ]
     },
@@ -6510,28 +6602,97 @@
       "owner": "Graphics lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "motion-enable",
           "oracle": "next valid presentation settles same target/focus/deadline and retires proxy once",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/live-motion/manifest.json",
+              "sha256": "9f6e387b3560624a9c1f8577d73ffac529baab4d1d004dd6c947913602492c99",
+              "scope": "Actual Settings three-choice motion override, strict revisioned persistence/reset, source precedence, unknown-write read-only recovery, native accepted-family goal settlement without replay. Actual compiled root/store/model/host and owning ABI closure pass. Native keyboard five saves/resets, actual GTK changes and whole-host Full override restart pass; combined recording fails before a subsequent normal-profile effect because its application control is off-screen. Mid-flight and full original qualification remain open.",
+              "sourceBaseRevision": "eb62e2333cc3816a2f4a2c9a650f7070d7507b17",
+              "sourceTuple": {
+                "core": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+                  "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+                },
+                "plugin": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791489372596689127/elm-window-geometry-authority.so",
+                  "sha256": "aea28fae8b9b25321d42bfe1da60e7dfd0ffd468f000df715e1a644094f6d28e"
+                },
+                "aquamarine": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+                  "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+                }
+              },
+              "reviewerDisposition": "Owner-observed partial implementation and native subintervals; original midpoint/proxy/subsequent-profile/overlay/AT and independent acceptance remain open."
+            }
+          ],
+          "missingObservation": "Original motion-enable has no observed intermediate restore geometry or exactly-once proxy retirement. Native accepted-family/goal settlement compiles but has not been qualified during a real intermediate frame; no proxy behavior is inferred. Original live-motion-minimize/live-motion-restore/live-motion-switcher/live-motion-Task View toggle-during-transition intervals and resource ownership are not established by post-completion GTK changes or the Settings journey. Original motion-overlays requires separate switcher, Task View and snap open/navigation/dismissal fixtures. Current native Task View reduced-profile recording is only one interval. Original motion-disable post-completion source disable/no-replay is observed, but the subsequent normal-profile window operation was not submitted: the second native campaign stopped at an application button outside the scrolled viewport. Its helper correction is not natively rerun; no third qualification campaign. Independent original scenario/requirement review, applicable native AT and full release hardware/resource/journey/package/deployment obligations remain open.",
+          "ownerObservedOriginalOracle": false
         },
         {
           "name": "motion-overlays",
           "oracle": "nondecorative profiles preserve focus/cancellation",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/live-motion/manifest.json",
+              "sha256": "9f6e387b3560624a9c1f8577d73ffac529baab4d1d004dd6c947913602492c99",
+              "scope": "Actual Settings three-choice motion override, strict revisioned persistence/reset, source precedence, unknown-write read-only recovery, native accepted-family goal settlement without replay. Actual compiled root/store/model/host and owning ABI closure pass. Native keyboard five saves/resets, actual GTK changes and whole-host Full override restart pass; combined recording fails before a subsequent normal-profile effect because its application control is off-screen. Mid-flight and full original qualification remain open.",
+              "sourceBaseRevision": "eb62e2333cc3816a2f4a2c9a650f7070d7507b17",
+              "sourceTuple": {
+                "core": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+                  "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+                },
+                "plugin": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791489372596689127/elm-window-geometry-authority.so",
+                  "sha256": "aea28fae8b9b25321d42bfe1da60e7dfd0ffd468f000df715e1a644094f6d28e"
+                },
+                "aquamarine": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+                  "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+                }
+              },
+              "reviewerDisposition": "Owner-observed partial implementation and native subintervals; original midpoint/proxy/subsequent-profile/overlay/AT and independent acceptance remain open."
+            }
+          ],
+          "missingObservation": "Original motion-enable has no observed intermediate restore geometry or exactly-once proxy retirement. Native accepted-family/goal settlement compiles but has not been qualified during a real intermediate frame; no proxy behavior is inferred. Original live-motion-minimize/live-motion-restore/live-motion-switcher/live-motion-Task View toggle-during-transition intervals and resource ownership are not established by post-completion GTK changes or the Settings journey. Original motion-overlays requires separate switcher, Task View and snap open/navigation/dismissal fixtures. Current native Task View reduced-profile recording is only one interval. Original motion-disable post-completion source disable/no-replay is observed, but the subsequent normal-profile window operation was not submitted: the second native campaign stopped at an application button outside the scrolled viewport. Its helper correction is not natively rerun; no third qualification campaign. Independent original scenario/requirement review, applicable native AT and full release hardware/resource/journey/package/deployment obligations remain open.",
+          "ownerObservedOriginalOracle": false
         },
         {
           "name": "motion-disable",
           "oracle": "completed motion is not replayed; subsequent transitions use normal profile",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/live-motion/manifest.json",
+              "sha256": "9f6e387b3560624a9c1f8577d73ffac529baab4d1d004dd6c947913602492c99",
+              "scope": "Actual Settings three-choice motion override, strict revisioned persistence/reset, source precedence, unknown-write read-only recovery, native accepted-family goal settlement without replay. Actual compiled root/store/model/host and owning ABI closure pass. Native keyboard five saves/resets, actual GTK changes and whole-host Full override restart pass; combined recording fails before a subsequent normal-profile effect because its application control is off-screen. Mid-flight and full original qualification remain open.",
+              "sourceBaseRevision": "eb62e2333cc3816a2f4a2c9a650f7070d7507b17",
+              "sourceTuple": {
+                "core": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+                  "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+                },
+                "plugin": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791489372596689127/elm-window-geometry-authority.so",
+                  "sha256": "aea28fae8b9b25321d42bfe1da60e7dfd0ffd468f000df715e1a644094f6d28e"
+                },
+                "aquamarine": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+                  "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+                }
+              },
+              "reviewerDisposition": "Owner-observed partial implementation and native subintervals; original midpoint/proxy/subsequent-profile/overlay/AT and independent acceptance remain open."
+            }
+          ],
+          "missingObservation": "Original motion-enable has no observed intermediate restore geometry or exactly-once proxy retirement. Native accepted-family/goal settlement compiles but has not been qualified during a real intermediate frame; no proxy behavior is inferred. Original live-motion-minimize/live-motion-restore/live-motion-switcher/live-motion-Task View toggle-during-transition intervals and resource ownership are not established by post-completion GTK changes or the Settings journey. Original motion-overlays requires separate switcher, Task View and snap open/navigation/dismissal fixtures. Current native Task View reduced-profile recording is only one interval. Original motion-disable post-completion source disable/no-replay is observed, but the subsequent normal-profile window operation was not submitted: the second native campaign stopped at an application button outside the scrolled viewport. Its helper correction is not natively rerun; no third qualification campaign. Independent original scenario/requirement review, applicable native AT and full release hardware/resource/journey/package/deployment obligations remain open.",
+          "ownerObservedOriginalOracle": false
         }
       ]
     },
@@ -8901,5 +9062,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-08T19:31:40.670121+00:00"
+  "updatedUTC": "2026-10-08T20:08:02.803426+00:00"
 }

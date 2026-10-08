@@ -15,6 +15,20 @@ static void terminated(WebKitWebView*,WebKitWebProcessTerminationReason,gpointer
 #include "qa-reader-control.h"
 #include "imported-clients.h"
 static gboolean qa_reduced_motion;
+static const char *qa_motion_control;
+static int qa_motion_last=-1;
+static gboolean qa_motion_tick(gpointer unused) {
+    (void)unused;
+    int fd=open(qa_motion_control,O_RDONLY|O_NOFOLLOW|O_NONBLOCK);
+    if(fd<0) return G_SOURCE_CONTINUE;
+    struct stat info;char body[3];ssize_t count=read(fd,body,sizeof(body));
+    gboolean safe=fstat(fd,&info)==0 && S_ISREG(info.st_mode) && info.st_uid==getuid() && info.st_nlink==1 && !(info.st_mode&0077);
+    close(fd);
+    if(!safe || count!=2 || body[1]!='\n' || (body[0]!='R' && body[0]!='F')) return G_SOURCE_CONTINUE;
+    int enabled=body[0]=='F';
+    if(enabled!=qa_motion_last) {qa_motion_last=enabled;g_object_set(gtk_settings_get_default(),"gtk-enable-animations",enabled,NULL);}
+    return G_SOURCE_CONTINUE;
+}
 static WarlockPreviewBootstrap *preview_bootstrap;
 static WarlockClientProducer *client_producer;
 static WarlockImportedClients *imported_clients;
@@ -1354,6 +1368,7 @@ int ELM_SHARED_HOST_MAIN(int argc,char **argv) {
             shared_text_pixels=(guint)(16.0*scale+0.5);
         }
         else if (g_str_equal(argv[i],"--qa-reduced-motion")) qa_reduced_motion=TRUE;
+        else if (g_str_equal(argv[i],"--qa-motion-control") && i+1<argc) qa_motion_control=argv[++i];
         else if (g_str_equal(argv[i],"--qa-stay-open")) qa_stay=TRUE;
         else if (g_str_equal(argv[i],"--qa-preview-delayed-snapshot")) qa_controlled_delayed_snapshot=TRUE;
         else if (g_str_equal(argv[i],"--qa-preview-reopened-snapshot")) {qa_controlled_delayed_snapshot=TRUE;qa_controlled_reopened_snapshot=TRUE;}
@@ -1402,8 +1417,10 @@ int ELM_SHARED_HOST_MAIN(int argc,char **argv) {
     if(qa_controlled_process_stop && (!qa_controlled_preview || !qa_exit || !qa_stay || !qa_client_snapshot || qa_controlled_reload || qa_controlled_delayed_snapshot || qa_controlled_cancelled_snapshot || qa_controlled_reader_path || qa_reader_path || qa_icon_reader_path)) {g_printerr("Renderer process stop requires separate explicit controlled private qualification\n");return 2;}
     if(qa_controlled_reload && (!qa_controlled_preview || !qa_exit || !qa_stay || !qa_client_snapshot || qa_controlled_delayed_snapshot || qa_controlled_cancelled_snapshot || qa_controlled_reader_path || qa_reader_path || qa_icon_reader_path)) {g_printerr("Renderer reload requires separate explicit controlled private qualification\n");return 2;}
     if(qa_reduced_motion && (!qa_exit || !qa_stay)) {g_printerr("Reduced-motion fixture requires explicit qualification mode\n");return 2;}
+    if(qa_motion_control && (!qa_exit || !qa_stay || qa_reduced_motion || !g_path_is_absolute(qa_motion_control))) {g_printerr("Live motion fixture requires explicit private qualification mode\n");return 2;}
     if (!asset_dir || !authority_config || !backend_path || !gtk_init_check(NULL,NULL) || !gtk_layer_is_supported()) return 2;
     if(qa_reduced_motion) g_object_set(gtk_settings_get_default(),"gtk-enable-animations",FALSE,NULL);
+    if(qa_motion_control) {qa_motion_tick(NULL);if(qa_motion_last<0)return 2;g_timeout_add(16,qa_motion_tick,NULL);}
     if (!admission_open(authority_config)) {g_printerr("Host durable admission unavailable\n");return 2;}
     GError *preview_error=NULL;
     preview_bootstrap=warlock_preview_bootstrap_open(authority_config,&preview_error);

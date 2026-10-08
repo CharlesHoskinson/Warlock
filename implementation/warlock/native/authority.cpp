@@ -102,9 +102,18 @@ uint64_t factsSequence = 0, factsRevision = 0;
 std::string previousFacts;
 struct Member { PHLWINDOWREF window; uint64_t id; };
 std::vector<Member> members;
+struct MotionWindow { Member member; CBox goal; PHLWORKSPACEREF workspace; float alpha; };
+struct MotionWorkspace { PHLWORKSPACEREF workspace; Vector2D goal; float alpha; };
+struct AcceptedMotion {
+    std::vector<MotionWindow> windows{};
+    std::vector<MotionWorkspace> workspaces{};
+    uint64_t output=0;
+    std::string intent{};
+    bool settle=false;
+};
 Elm::Placement::Records geometryPlacements;
 Elm::Geometry::Barriers effectBarriers;
-struct Session { std::string start; uint64_t id; uint64_t frontend; uint64_t effectRequest=0, generation=0; std::string lastPayload, lastReply; std::vector<Render::SceneTrace::Frame> retained; int geometryProtocol=0; bool geometryEnabled=false; uint64_t geometryFrontend=0; std::set<std::string> geometryOperations{}; bool reducedMotion=true; uint64_t motionRequest=0; pid_t presentationPid=0; std::string presentationStart{}; };
+struct Session { std::string start; uint64_t id; uint64_t frontend; uint64_t effectRequest=0, generation=0; std::string lastPayload, lastReply; std::vector<Render::SceneTrace::Frame> retained; int geometryProtocol=0; bool geometryEnabled=false; uint64_t geometryFrontend=0; std::set<std::string> geometryOperations{}; bool reducedMotion=true; uint64_t motionRequest=0; pid_t presentationPid=0; std::string presentationStart{}; AcceptedMotion motion{}; };
 std::map<pid_t, Session> sessions;
 enum class ShellRoute {Applications,System,Notifications};
 struct ShellShortcut {uint64_t serial;ShellRoute route;};
@@ -700,6 +709,7 @@ std::string performEffect(Session& session, JsonObject* object, const std::strin
         }
         for(auto id:reserved) effectBarriers.definitive(id);
         session.lastReply=effectOutcome(session,encoded,"Committed","applied");
+        retainAcceptedMotion(session,encoded,*family,previousWorkspace,destination);
         motionTransitionObserved(session,encoded,*family,previousWorkspace,destination);
     } catch (...) { notifyEffectChange(); /* Preserve Unknown after unproven partial mutation. */ }
     return session.lastReply;
@@ -761,6 +771,7 @@ std::string observe(eHyprCtlOutputFormat, std::string request) {
             session.id=admitted.binding.session;session.frontend=admitted.binding.frontend;
             switcherSelections.erase(session.id);
             session.reducedMotion=true;session.motionRequest=0;session.presentationPid=parentPid(peer);session.presentationStart=startTime(session.presentationPid);
+            session.motion={};
             session.geometryProtocol=0;session.geometryEnabled=false;session.geometryFrontend=0;session.geometryOperations.clear();session.retained.clear(); session.effectRequest=0; session.generation=0; session.lastPayload.clear(); session.lastReply.clear();
             reply = "{\"protocolVersion\":3,\"kind\":\"attached\",\"binding\":" + binding(session) +
                 ",\"previewFdAddress\":"+quote(previewFdAddress)+",\"compositor\":{\"pid\":" + std::to_string(getpid()) + ",\"instance\":" + quote(g_pCompositor->m_instanceSignature) +
@@ -862,7 +873,7 @@ std::string observe(eHyprCtlOutputFormat, std::string request) {
             const auto native=counter(bound,"lifetime"),sessionId=counter(bound,"session"),frontend=counter(bound,"frontend");
             if(!native || !sessionId || !frontend || found==sessions.end() || found->second.start!=start || *native!=lifetime || *sessionId!=found->second.id || *frontend!=found->second.frontend || !grantRegistry->callerMatches(verifiedPeer(peer,start),{lifetime,*sessionId,*frontend}))reply=error("binding-mismatch");
             else if(*requestId<=found->second.motionRequest)reply=error("motion-request-retired");
-            else {found->second.motionRequest=*requestId;found->second.reducedMotion=profile=="reduced";reply="{\"protocolVersion\":3,\"kind\":\"motion-profile\",\"binding\":"+binding(found->second)+",\"requestId\":"+quote(std::to_string(*requestId))+",\"profile\":"+quote(profile)+"}";}
+            else {found->second.motionRequest=*requestId;found->second.reducedMotion=profile=="reduced";found->second.motion.settle=found->second.reducedMotion;reply="{\"protocolVersion\":3,\"kind\":\"motion-profile\",\"binding\":"+binding(found->second)+",\"requestId\":"+quote(std::to_string(*requestId))+",\"profile\":"+quote(profile)+"}";}
         } else if(operation=="pointer-ownership-request" && fields(object,{"protocolVersion","kind","binding","requestId"})) {
             const auto bound=objectMember(object,"binding");const auto requestId=counter(object,"requestId");const auto found=sessions.find(peer);
             if(!bound || !fields(bound,{"lifetime","session","frontend"}) || !requestId)throw std::runtime_error("pointer-schema");
@@ -989,7 +1000,7 @@ APICALL EXPORT PLUGIN_DESCRIPTION_INFO PLUGIN_INIT(HANDLE handle) {
     if (const auto current=Desktop::focusState()->window()) recordActivation(current);
     shellShortcuts.clear();shellShortcutSerial=shellShortcutSession=shellShortcutFrontend=0;
     pointerSerial=1;pointerState="idle";pointerOwner="null";
-    pointerFrames=Event::bus()->m_events.render.pre.listen([](PHLMONITOR){try{refreshPointerOwnership();settleShellMotion();}catch(...){}});
+    pointerFrames=Event::bus()->m_events.render.pre.listen([](PHLMONITOR){try{refreshPointerOwnership();settleAcceptedMotion();settleShellMotion();}catch(...){}});
     switcherKeys=Event::bus()->m_events.input.keyboard.key.listen(switcherKey);
     if(!HyprlandAPI::addLuaFunction(handle,"warlock","apps_menu",appsMenu) || !HyprlandAPI::addLuaFunction(handle,"warlock","system_menu",systemMenu) || !HyprlandAPI::addLuaFunction(handle,"warlock","notification_history",notificationHistory))throw std::runtime_error("Shell shortcut binding registration failed");
     if(!HyprlandAPI::addLuaFunction(handle,"warlock","switcher_forward",switcherForward) || !HyprlandAPI::addLuaFunction(handle,"warlock","switcher_reverse",switcherReverse))throw std::runtime_error("Switcher binding registration failed");

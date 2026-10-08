@@ -310,3 +310,5 @@ command-admission refusal corrected before the passing campaign. Native live
 preference changes, every overlay/output/device fixture, applicable AT and
 independent original/release acceptance remain open. See
 `qa/evidence/reduced-motion/manifest.json`.
+
+Motion Settings now offer Follow system, Reduced motion and Full motion with a separate versioned private override record, revision-CAS saves, explicit reset and no automatic retry of an ambiguous save. Confirmed overrides govern the existing typed native profile; reset follows the latest GTK/portal source. A native accepted-family/goal tracker settles valid retained motion at the next pre-render opportunity and discards stale identities/goals without replay. Compiled root/store/model/host checks pass. Actual private native keyboard saves/resets, GTK source changes and saved Full-over-Reduced preference after a whole-host restart are observed; the combined campaign fails at a later off-screen application control. Mid-flight geometry/proxy and separate overlay/AT qualification remain open. See `qa/evidence/live-motion/manifest.json`.

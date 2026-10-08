@@ -1,0 +1,287 @@
+{
+  "schema": 1,
+  "owner": "root-live-motion",
+  "observedUTC": "2026-10-08T20:08:02.803426+00:00",
+  "requirements": [
+    "ELM-UI-014",
+    "ELM-UI-018"
+  ],
+  "scenarios": [
+    "live-motion-minimize",
+    "live-motion-restore",
+    "live-motion-switcher",
+    "live-motion-Task View",
+    "motion-enable",
+    "motion-overlays",
+    "motion-disable"
+  ],
+  "sourceBaseRevision": "eb62e2333cc3816a2f4a2c9a650f7070d7507b17",
+  "sourceBaseRevisionMeaning": "Parent before these live preference changes; sourceHashes below identify actual observed bytes, not an accepted committed source.",
+  "sourceHashes": {
+    "implementation/warlock/src/MotionPreferences.elm": "d3130d74c3172cb1808df38efd7a2cc267ba5ae346b564544661d3d539f5c560",
+    "implementation/warlock/src/Motion.elm": "e101862bae874426f0cf9aaf02340c6582abdeea21dec38c32003da7f94e8a69",
+    "implementation/warlock/src/Desktop.elm": "92392a3185847b245123ff5d8263dcf9c877c3dd6195930cbad6e1e35ecafdee",
+    "implementation/warlock/src/Surface.elm": "5a6612e8614fb71d2dd01d5845f7424317d1b9800942649afc4050ab0658c08e",
+    "implementation/warlock/adapter/motion_preferences.py": "ec75685d52f81d5d28f82155b92580015dc897bee6488892c2a8f98e0ffa3633",
+    "implementation/warlock/adapter/catalog_transport.py": "31a96ef1e80d49e92033c8702e4f996a571efe4a8b905cfde1d735ae88ec0558",
+    "implementation/warlock/adapter/daemon.py": "6eaa035a0bea4f4635ab0296a3d03f93bb6067b3e32a500c5a4fc4b5277c6496",
+    "implementation/warlock/native/authority.cpp": "18bf3ee6f13efa08a2bf3790648169eb75ec7449e43b5f7f29765924a4d6d511",
+    "implementation/warlock/native/motion-profile.inc": "60ec1e00982bc1e58be76805d4be52faad12c15f5822521dddf4d3042e7c4b62",
+    "implementation/warlock/native/host.c": "6f129a13585c32d5d305e8a654dc8c7f5db8a591ea9f0257c6eaf19c71e3648c",
+    "implementation/warlock/qa/LiveMotionReplay.elm": "b467d8bbd719081942a44a67a49a26b1aea343ab67c229feeb8b81f132d033b5",
+    "implementation/warlock/qa/MotionReplay.elm": "c81a02d9644b5d31154017bd77b4cf1f90407d01e2026981a73df18a3a85eb25",
+    "implementation/warlock/qa/check-live-motion.py": "bcd737337e14c13a7b5882adc42197cca84314781e2881e902f9d936481ef397",
+    "implementation/warlock/qa/check-search.py": "67d3335516cd13b069300a05512c9195225cc683c8b7ab1d3ab2e1a68769a0a9",
+    "implementation/warlock/qa/native-window-feedback.py": "32a47765570de6f5da699be1b041d91ae031a3e657a7c2a25be9910264807954",
+    "implementation/warlock/qa/motion-profile.qnt": "6aa855aa794e13178e48babe025e5ab357293660990862c068e5528f49dc0a7c",
+    "implementation/warlock/qa/current-search-build.json": "36958209cebc08a8944babefcd043a21fe90539d6daa16cf4b2b58b2483ce5d3",
+    "implementation/warlock/qa/current-native-pair.json": "417c85a3cab13c7f005760c64354119c04e888ec34941c9c6a451ebe5b2a4484",
+    "implementation/warlock/assets/elm.js": "9a3319b59e265c8c64e9cd1312de4951d549c651135a3fd538dd824eb916bea3",
+    "implementation/warlock/assets/bar.js": "676469d827783ed1e60e6a3e578ca79153b3e135e550f1cf95fd9d01a1db5683",
+    "implementation/warlock/assets/popup.js": "f8d0c7ee2a286a9b41054e615ec97f9ef43c6165562821812bfc59ee65c17c06",
+    "implementation/warlock/README.md": "229892a9965092eaf9cb7d8132e8f4ef4bce7127c5ded621fea6fb5ef383ce81",
+    "implementation/warlock/native/shared-host.c": "1b8bd8ff434a2dab9796eb8ecfa968052d86046a07e2cc6a5d055e622bfacb69"
+  },
+  "sourceTuple": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+      "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791489372596689127/elm-window-geometry-authority.so",
+      "sha256": "aea28fae8b9b25321d42bfe1da60e7dfd0ffd468f000df715e1a644094f6d28e"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "compiledAssets": {
+    "elm.js": "9a3319b59e265c8c64e9cd1312de4951d549c651135a3fd538dd824eb916bea3",
+    "bar.js": "676469d827783ed1e60e6a3e578ca79153b3e135e550f1cf95fd9d01a1db5683",
+    "popup.js": "f8d0c7ee2a286a9b41054e615ec97f9ef43c6165562821812bfc59ee65c17c06"
+  },
+  "scope": "Actual Settings three-choice motion override, strict revisioned persistence/reset, source precedence, unknown-write read-only recovery, native accepted-family goal settlement without replay. Actual compiled root/store/model/host and owning ABI closure pass. Native keyboard five saves/resets, actual GTK changes and whole-host Full override restart pass; combined recording fails before a subsequent normal-profile effect because its application control is off-screen. Mid-flight and full original qualification remain open.",
+  "componentPassed": true,
+  "authorityCompilePassed": true,
+  "nativeCampaignPassed": false,
+  "nativeCleanupPassed": true,
+  "nativeLivePreferenceSubintervalsObserved": true,
+  "nativeSavedRestartObserved": true,
+  "originalMotionEnableObserved": false,
+  "ownerObservedOriginalOracle": false,
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "investigationStopped": true,
+  "missingObservations": [
+    "Original motion-enable has no observed intermediate restore geometry or exactly-once proxy retirement. Native accepted-family/goal settlement compiles but has not been qualified during a real intermediate frame; no proxy behavior is inferred.",
+    "Original live-motion-minimize/live-motion-restore/live-motion-switcher/live-motion-Task View toggle-during-transition intervals and resource ownership are not established by post-completion GTK changes or the Settings journey.",
+    "Original motion-overlays requires separate switcher, Task View and snap open/navigation/dismissal fixtures. Current native Task View reduced-profile recording is only one interval.",
+    "Original motion-disable post-completion source disable/no-replay is observed, but the subsequent normal-profile window operation was not submitted: the second native campaign stopped at an application button outside the scrolled viewport. No subsequent normal-profile effect is inferred and no third qualification campaign was run.",
+    "Independent original scenario/requirement review, applicable native AT and full release hardware/resource/journey/package/deployment obligations remain open."
+  ],
+  "reviewerDisposition": "Owner-observed partial implementation and native subintervals; original midpoint/proxy/subsequent-profile/overlay/AT and independent acceptance remain open.",
+  "runtimeLogsByReference": [
+    {
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791489904347519091/warlock.log",
+      "sha256": "8022ca69ce3dafc7e840faf16a626c5dc2be3573ee3ce27bc9aa948f1f60db9f"
+    },
+    {
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791489904347519091/warlock-motion-restarted.log",
+      "sha256": "59ed64eb7de52e8f98f6ec13daf7a9d109fd394b3c3ea1cc903d87febfe5cd8b"
+    }
+  ],
+  "firstFailure": "AssertionError('MotionKeyboardReachesFollow system')",
+  "secondFailure": "AssertionError('PointerTargetWithinActualViewport')",
+  "nativeSaves": [
+    {
+      "label": "Reduced motion",
+      "storage": {
+        "schema": 1,
+        "revision": "2",
+        "override": "reduced"
+      },
+      "request": {
+        "protocolVersion": 3,
+        "kind": "motion-preferences-write",
+        "binding": {
+          "lifetime": "11951867944790615244",
+          "session": "3",
+          "frontend": "1"
+        },
+        "requestId": "7",
+        "proposal": {
+          "schema": 1,
+          "revision": "1",
+          "override": "reduced"
+        }
+      },
+      "ack": {
+        "protocolVersion": 3,
+        "kind": "motion-profile",
+        "binding": {
+          "lifetime": "11951867944790615244",
+          "session": "3",
+          "frontend": "1"
+        },
+        "requestId": "8",
+        "profile": "reduced"
+      }
+    },
+    {
+      "label": "Follow system",
+      "storage": {
+        "schema": 1,
+        "revision": "3",
+        "override": null
+      },
+      "request": {
+        "protocolVersion": 3,
+        "kind": "motion-preferences-write",
+        "binding": {
+          "lifetime": "11951867944790615244",
+          "session": "3",
+          "frontend": "1"
+        },
+        "requestId": "9",
+        "proposal": {
+          "schema": 1,
+          "revision": "2",
+          "override": null
+        }
+      },
+      "ack": {
+        "protocolVersion": 3,
+        "kind": "motion-profile",
+        "binding": {
+          "lifetime": "11951867944790615244",
+          "session": "3",
+          "frontend": "1"
+        },
+        "requestId": "10",
+        "profile": "full"
+      }
+    },
+    {
+      "label": "Full motion",
+      "storage": {
+        "schema": 1,
+        "revision": "4",
+        "override": "full"
+      },
+      "request": {
+        "protocolVersion": 3,
+        "kind": "motion-preferences-write",
+        "binding": {
+          "lifetime": "11951867944790615244",
+          "session": "3",
+          "frontend": "1"
+        },
+        "requestId": "11",
+        "proposal": {
+          "schema": 1,
+          "revision": "3",
+          "override": "full"
+        }
+      },
+      "ack": {
+        "protocolVersion": 3,
+        "kind": "motion-profile",
+        "binding": {
+          "lifetime": "11951867944790615244",
+          "session": "3",
+          "frontend": "1"
+        },
+        "requestId": "10",
+        "profile": "full"
+      }
+    },
+    {
+      "label": "Reduced motion",
+      "storage": {
+        "schema": 1,
+        "revision": "5",
+        "override": "reduced"
+      },
+      "request": {
+        "protocolVersion": 3,
+        "kind": "motion-preferences-write",
+        "binding": {
+          "lifetime": "11951867944790615244",
+          "session": "5",
+          "frontend": "1"
+        },
+        "requestId": "6",
+        "proposal": {
+          "schema": 1,
+          "revision": "4",
+          "override": "reduced"
+        }
+      },
+      "ack": {
+        "protocolVersion": 3,
+        "kind": "motion-profile",
+        "binding": {
+          "lifetime": "11951867944790615244",
+          "session": "5",
+          "frontend": "1"
+        },
+        "requestId": "7",
+        "profile": "reduced"
+      }
+    },
+    {
+      "label": "Follow system",
+      "storage": {
+        "schema": 1,
+        "revision": "6",
+        "override": null
+      },
+      "request": {
+        "protocolVersion": 3,
+        "kind": "motion-preferences-write",
+        "binding": {
+          "lifetime": "11951867944790615244",
+          "session": "5",
+          "frontend": "1"
+        },
+        "requestId": "8",
+        "proposal": {
+          "schema": 1,
+          "revision": "5",
+          "override": null
+        }
+      },
+      "ack": {
+        "protocolVersion": 3,
+        "kind": "motion-profile",
+        "binding": {
+          "lifetime": "11951867944790615244",
+          "session": "5",
+          "frontend": "1"
+        },
+        "requestId": "7",
+        "profile": "reduced"
+      }
+    }
+  ],
+  "files": {
+    "authority-report.json": "8d7fa22af9507ce9d67aee30e1e6048ec4c1728e127e645dce7194fd68b72f57",
+    "component-report.json": "df06284b91b120ae1a0670956a24fab8245428118abbd2ba558d8aa04b4ed01c",
+    "failed-annotation-build.json": "d2313dbddf271a25e34ec0693df5f4525675ada6ce111efcaef39c35b81786a9",
+    "failed-model-selection.json": "fd694601558ce30289216a8bdaad8c1923e204dfd753b16e87b3a0d4d85299fe",
+    "first-native-failure.json": "c96229ed6d354b2321004c20e9cfb2a91715d082846cdb37385e65c9820f08a2",
+    "host-self-tests.stdout": "7a6f69aa1a4a6e011403f0a74ae5ff1620f153cafe32dc74b914eb59d9250830",
+    "live-motion-before-restart.png": "c0c56108d51cb4298f5d3bdef53b74a32832a54cfab714a249dbbfc48713bf43",
+    "live-motion-model-invariants.stdout": "294d5a3b88bf1d13dc6c2f7be574acea014728d627484bff9c5b5cd8093948b1",
+    "live-motion-model-named.stdout": "9b4e87474d5ccd7e0c9d8f43e5b6b32bbb53c8e98c1ed1acb23077c9ab85589f",
+    "live-motion-settings.png": "9c0c73f207453f8f0f838232096dfff21c77ce37d0129988ee2b75f548efd19f",
+    "live-motion.json": "70dd7c6b355b9231553a0e6a0fc84379b7e1bdeed150fc4e32c38daa6f74322d",
+    "motion-store.stdout": "4d0585f64e6148019e2d6a75e7b7eb31ded7479b704f15dcc47d60124ec41038",
+    "motion-task-view.png": "587a0f96e1d23c515b3289e4b1f0aee106ca487dd09fdcbf491333935d4cb976",
+    "motion.json": "8e086cfc98627493f804025601892b507784b796a18699fe3c0a74478f843ab4",
+    "native-report.json": "faa48ac36fbdc1f88002731a7de2f92a757ff7b232f6ab70fb7262e7585885f5",
+    "warlock-motion-restarted.log.motion.txt": "c255f41307c644e2fc993f57b7a584adac7e0bd398db5d05af5ae69ed6ad5ede",
+    "warlock.log.motion.txt": "27823ce3664744b3afa4b1fba0c43ae5d68407a8658a86e4c2ead945d9efb9f1"
+  }
+}

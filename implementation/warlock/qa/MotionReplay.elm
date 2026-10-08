@@ -5,6 +5,7 @@ import Desktop
 import Json.Decode as D
 import Json.Encode as E
 import Motion
+import MotionPreferences
 import Platform
 import Shell
 import SnapReplay as Fixture
@@ -21,7 +22,9 @@ wire effects = List.filterMap (\effect -> case effect of
     _ -> Nothing) effects
 
 result binding =
-    let base=Fixture.readyFor binding
+    let initial=Fixture.readyFor binding
+        initialMotion=initial.motion
+        base={initial | motion={initialMotion | preferences=MotionPreferences.observe (Just {revision=Fixture.counter "1",override=MotionPreferences.System}) initialMotion.preferences},motionExpected=Nothing}
         (first,commands)=native (observation "1" "reduced") base
         pending=first.motion.pending
         receipt p=E.object [("protocolVersion",E.int 3),("kind",E.string "motion-profile"),("binding",Binding.encode p.binding),("requestId",E.string (UInt64.string p.request)),("profile",E.string (Motion.name p.profile))]
@@ -50,7 +53,7 @@ result binding =
             ,("newPreferenceWaitsForExistingConfiguration",List.isEmpty (Tuple.second waiting) && Motion.desired (Tuple.first waiting).motion==Motion.Reduced)
             ,("oldAcknowledgementConfiguresLatestPreferenceOnce",List.length (wire (Tuple.second outdated))==1 && ((Tuple.first outdated).motion.pending |> Maybe.map .profile)==Just Motion.Reduced)
             ,("disconnectRetiresProfileReceipt",disconnected.motion.pending==Nothing && disconnected.motion.applied==Nothing && disconnected.windows.shell.phase==Shell.Detached)
-            ,("nativePreferenceSurvivesBindingRetirement",Motion.desired disconnected.motion==Motion.Full)
+            ,("nativePreferenceSurvivesBindingRetirement",(disconnected.motion.observation |> Maybe.map .profile)==Just Motion.Full && disconnected.motion.preferences.snapshot==Nothing)
             ,("malformedProfileRejected",Tuple.first (native malformed reduced)==reduced)
             ,("surfaceCarriesTypedProfile",D.decodeValue (D.field "motion" D.string) frame==Ok "reduced" && Result.toMaybe decoded/=Nothing)
             ]

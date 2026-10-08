@@ -1,0 +1,14 @@
+motion-preference: {"protocolVersion":3,"kind":"host-motion-preference","serial":"1","profile":"reduced","source":"gtk"}
+frontend-request: {"protocolVersion":3,"kind":"motion-preferences-request","binding":{"lifetime":"11951867944790615244","session":"5","frontend":"1"},"requestId":"3"}
+backend-frame: {"protocolVersion":3,"kind":"motion-preferences","binding":{"lifetime":"11951867944790615244","session":"5","frontend":"1"},"requestId":"3","snapshot":{"schema":1,"revision":"4","override":"full"}}
+frontend-request: {"protocolVersion":3,"kind":"motion-profile-set","binding":{"lifetime":"11951867944790615244","session":"5","frontend":"1"},"requestId":"4","profile":"full"}
+backend-frame: {"protocolVersion":3,"kind":"motion-profile","binding":{"lifetime":"11951867944790615244","session":"5","frontend":"1"},"requestId":"4","profile":"full"}
+frontend-request: {"protocolVersion":3,"kind":"motion-preferences-write","binding":{"lifetime":"11951867944790615244","session":"5","frontend":"1"},"requestId":"6","proposal":{"schema":1,"revision":"4","override":"reduced"}}
+backend-frame: {"protocolVersion":3,"kind":"motion-preferences-outcome","binding":{"lifetime":"11951867944790615244","session":"5","frontend":"1"},"requestId":"6","snapshot":{"schema":1,"revision":"5","override":"reduced"},"status":"Saved"}
+frontend-request: {"protocolVersion":3,"kind":"motion-profile-set","binding":{"lifetime":"11951867944790615244","session":"5","frontend":"1"},"requestId":"7","profile":"reduced"}
+backend-frame: {"protocolVersion":3,"kind":"motion-profile","binding":{"lifetime":"11951867944790615244","session":"5","frontend":"1"},"requestId":"7","profile":"reduced"}
+frontend-request: {"protocolVersion":3,"kind":"motion-preferences-write","binding":{"lifetime":"11951867944790615244","session":"5","frontend":"1"},"requestId":"8","proposal":{"schema":1,"revision":"5","override":null}}
+backend-frame: {"protocolVersion":3,"kind":"motion-preferences-outcome","binding":{"lifetime":"11951867944790615244","session":"5","frontend":"1"},"requestId":"8","snapshot":{"schema":1,"revision":"6","override":null},"status":"Saved"}
+motion-preference: {"protocolVersion":3,"kind":"host-motion-preference","serial":"2","profile":"full","source":"gtk"}
+frontend-request: {"protocolVersion":3,"kind":"motion-profile-set","binding":{"lifetime":"11951867944790615244","session":"5","frontend":"1"},"requestId":"9","profile":"full"}
+backend-frame: {"protocolVersion":3,"kind":"motion-profile","binding":{"lifetime":"11951867944790615244","session":"5","frontend":"1"},"requestId":"9","profile":"full"}

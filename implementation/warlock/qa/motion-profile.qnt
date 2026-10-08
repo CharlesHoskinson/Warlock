@@ -18,3 +18,21 @@ module motionProfile {
   run disconnectRetiresProfileTest = init.then(full).then(configure).then(rebind).then(stale).then(all {assert(s.pending==0 and s.native==1 and s.applied==1),s'=s})
   run lostAcknowledgementCannotIssueWindowTest = init.then(full).then(configure).then(nativeApply).then(stale).then(all {assert(s.pending>0 and s.windowSends==0),s'=s})
 }
+
+module liveMotion {
+  var s: {source:int,override:int,draft:int,revision:int,write:int,unknown:bool,effective:int,windowSends:int,target:int,deadline:int}
+  pure def effective(source:int,override:int):int = if (override == -1) source else override
+  action init = s'={source:0,override:-1,draft:-1,revision:1,write:0,unknown:false,effective:0,windowSends:1,target:7,deadline:6}
+  action source = all {s'={...s,source:1-s.source,effective:effective(1-s.source,s.override)}}
+  action edit = all {s.write==0,s'={...s,draft:if(s.draft==1) -1 else 1}}
+  action save = all {s.write==0,s.draft!=s.override,s'={...s,write:1}}
+  action commit = all {s.write==1,s.revision<4,s'={...s,override:s.draft,effective:effective(s.source,s.draft),revision:s.revision+1,write:0,unknown:false}}
+  action lose = all {s.write==1,s'={...s,unknown:true}}
+  action refused = all {s.write==1,s'={...s,write:0,unknown:false}}
+  action stale = s'=s
+  action step = any {source,edit,save,commit,lose,refused,stale}
+  val safety = s.effective==effective(s.source,s.override) and s.windowSends==1 and s.target==7 and s.deadline==6 and (not(s.unknown) or s.write==1)
+  run overrideWinsOverLiveSourceTest = init.then(edit).then(save).then(commit).then(source).then(source).then(all {assert(s.effective==1 and s.override==1),s'=s})
+  run resetUsesCurrentSystemTest = init.then(edit).then(save).then(commit).then(edit).then(save).then(commit).then(all {assert(s.override == -1 and s.effective==s.source and s.windowSends==1),s'=s})
+  run unknownWriteDoesNotApplyOrReplayTest = init.then(edit).then(save).then(lose).then(stale).then(all {assert(s.override == -1 and s.write==1 and s.windowSends==1 and s.deadline==6),s'=s})
+}

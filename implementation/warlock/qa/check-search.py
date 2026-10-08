@@ -1,6 +1,7 @@
 """Focused compiled launcher/search integration, protected CPU scope only."""
 import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures,http.server,threading
-MOTION=sys.argv[1:]==['--reduced-motion']
+LIVE=sys.argv[1:]==['--live-motion']
+MOTION=sys.argv[1:]==['--reduced-motion'] or LIVE
 TRANSFER=sys.argv[1:]==['--transfer-workspace']
 IME=sys.argv[1:]==['--ime']
 ACCESSIBILITY=sys.argv[1:]==['--accessibility']
@@ -25,7 +26,7 @@ NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'];POPUP
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143'
 sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
 scope=require_qa_scope();sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
-OUT=ROOT/'qa/runs'/(('reduced-motion-' if MOTION else 'transfer-workspace-' if TRANSFER else 'ime-' if IME else 'accessibility-' if ACCESSIBILITY else 'high-contrast-' if CONTRAST else 'drag-ownership-' if DRAG else 'keyboard-shell-' if KEYBOARD else 'attention-' if ATTENTION else 'jump-lists-' if JUMP else 'files-' if FILES else 'system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
+OUT=ROOT/'qa/runs'/(('live-motion-' if LIVE else 'reduced-motion-' if MOTION else 'transfer-workspace-' if TRANSFER else 'ime-' if IME else 'accessibility-' if ACCESSIBILITY else 'high-contrast-' if CONTRAST else 'drag-ownership-' if DRAG else 'keyboard-shell-' if KEYBOARD else 'attention-' if ATTENTION else 'jump-lists-' if JUMP else 'files-' if FILES else 'system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
 for folder in ['src','native','adapter','assets','qa']:
  (INPUT/folder).mkdir()
  for p in (ROOT/folder).iterdir():
@@ -86,8 +87,15 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
   (INPUT/'qa/motion-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.MotionReplay'));run('typed-motion',['node','qa/motion-replay.js','assets/motion.js',str(OUT/'motion.json')]);report['typedMotion']=json.loads((OUT/'motion.json').read_text());assert all(report['typedMotion']['checks'].values())
   report['nativePreferenceObserver']=json.loads(run('native-motion-preference',['/usr/bin/python3','-B','qa/check-motion.py']))
   run('motion-model-typecheck',['quint','typecheck','qa/motion-profile.qnt'])
-  run('motion-model-named',['quint','test','qa/motion-profile.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79151'])
-  run('motion-model-invariants',['quint','run','qa/motion-profile.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79152'])
+  run('motion-model-named',['quint','test','qa/motion-profile.qnt','--main=motionProfile','--backend=typescript','--match=Test$','--max-samples=1','--seed=79151'])
+  run('motion-model-invariants',['quint','run','qa/motion-profile.qnt','--main=motionProfile','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79152'])
+ if LIVE:
+  report.update(requirements=['ELM-UI-014','ELM-UI-018'],scenarios=['live-motion-minimize','live-motion-restore','live-motion-switcher','live-motion-Task View','motion-enable','motion-overlays','motion-disable'],scope='Actual root persisted override/source precedence and window transaction preservation; private durable storage and strict host admission. Original mid-transition native presentation, overlay fixtures and restart remain separate.')
+  run('compile-live-motion',[str(HELD/pinned['compiler']),'make','qa/LiveMotionReplay.elm','--optimize','--output=assets/live-motion.js'])
+  (INPUT/'qa/live-motion-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.LiveMotionReplay'));run('typed-live-motion',['node','qa/live-motion-replay.js','assets/live-motion.js',str(OUT/'live-motion.json')]);report['typedLiveMotion']=json.loads((OUT/'live-motion.json').read_text());assert all(report['typedLiveMotion']['checks'].values())
+  report['motionStorage']=json.loads(run('motion-store',['/usr/bin/python3','-B','qa/check-live-motion.py']))
+  run('live-motion-model-named',['quint','test','qa/motion-profile.qnt','--main=liveMotion','--backend=typescript','--match=Test$','--max-samples=1','--seed=79161'])
+  run('live-motion-model-invariants',['quint','run','qa/motion-profile.qnt','--main=liveMotion','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79162'])
  if IME:
   report.update(requirements=['ELM-UX-028'],scenarios=['ime-spike-commit','ime-spike-cancel'],scope='Actual compiled popup composition lifecycle, commit coalescing and field/custody retirement; original native IME candidate and caret evidence remains separate.')
   run('compile-ime',[str(HELD/pinned['compiler']),'make','qa/ImeReplay.elm','--optimize','--output=assets/ime.js'])

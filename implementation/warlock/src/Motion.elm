@@ -1,6 +1,7 @@
 module Motion exposing (Model, Profile(..), Observation, Receipt, initial, name, desired, observe, rebind, propose, receive, ready, decoder, receiptDecoder, request, notice)
 
 import Binding
+import MotionPreferences
 import Json.Decode as D
 import Json.Encode as E
 import UInt64 exposing (Counter)
@@ -9,10 +10,10 @@ type Profile = Reduced | Full
 type alias Observation = { serial : Counter, profile : Profile, source : String }
 type alias Pending = { binding : Binding.Binding, request : Counter, profile : Profile }
 type alias Receipt = Pending
-type alias Model = { observation : Maybe Observation, pending : Maybe Pending, applied : Maybe { binding : Binding.Binding, profile : Profile } }
+type alias Model = { preferences : MotionPreferences.Model, observation : Maybe Observation, pending : Maybe Pending, applied : Maybe { binding : Binding.Binding, profile : Profile } }
 
 initial : Model
-initial = { observation = Nothing, pending = Nothing, applied = Nothing }
+initial = { preferences = MotionPreferences.initial, observation = Nothing, pending = Nothing, applied = Nothing }
 
 name : Profile -> String
 name profile = case profile of
@@ -20,7 +21,13 @@ name profile = case profile of
     Full -> "full"
 
 desired : Model -> Profile
-desired model = model.observation |> Maybe.map .profile |> Maybe.withDefault Reduced
+desired model =
+    case model.preferences.snapshot of
+        Nothing -> Reduced
+        Just preference -> case preference.override of
+            MotionPreferences.Reduce -> Reduced
+            MotionPreferences.Full -> Full
+            MotionPreferences.System -> model.observation |> Maybe.map .profile |> Maybe.withDefault Reduced
 
 strict fields decoder_ =
     D.keyValuePairs D.value |> D.andThen (\pairs -> if List.sort (List.map Tuple.first pairs)==List.sort fields then decoder_ else D.fail "Motion fields")
@@ -47,11 +54,11 @@ observe observation model =
     else {model | observation=Just observation}
 
 rebind : Model -> Model
-rebind model = {model | pending=Nothing,applied=Nothing}
+rebind model = {model | pending=Nothing,applied=Nothing,preferences=MotionPreferences.initial}
 
 propose : Binding.Binding -> Counter -> Model -> (Model, Maybe E.Value)
 propose binding request_ model =
-    if model.pending/=Nothing || request_==UInt64.zero || model.observation==Nothing || (model.applied |> Maybe.map (\a -> a.binding==binding && a.profile==desired model) |> Maybe.withDefault False) then (model,Nothing)
+    if model.pending/=Nothing || request_==UInt64.zero || model.preferences.snapshot==Nothing || (model.observation==Nothing && MotionPreferences.selected model.preferences==MotionPreferences.System) || (model.applied |> Maybe.map (\a -> a.binding==binding && a.profile==desired model) |> Maybe.withDefault False) then (model,Nothing)
     else
         let pending={binding=binding,request=request_,profile=desired model}
         in ({model | pending=Just pending},Just (request pending))
@@ -66,13 +73,10 @@ receive binding receipt model =
 ready : Maybe Binding.Binding -> Model -> Bool
 ready binding model =
     -- The native session defaults to the instant profile before observation.
-    model.observation==Nothing || (model.pending==Nothing && (model.applied |> Maybe.map (\a -> binding==Just a.binding && a.profile==desired model) |> Maybe.withDefault False))
+    (model.observation==Nothing && MotionPreferences.selected model.preferences==MotionPreferences.System && model.pending==Nothing) || (model.preferences.snapshot/=Nothing && model.pending==Nothing && (model.applied |> Maybe.map (\a -> binding==Just a.binding && a.profile==desired model) |> Maybe.withDefault False))
 
 notice : Model -> String
 notice model =
-    case model.observation of
-        Nothing -> "Motion preference is being read; transitions are instant."
-        Just observation ->
-            if model.pending/=Nothing then "Applying motion preference…"
-            else if observation.profile==Reduced then "Reduced motion: instant transitions"
-            else "System motion preference: full motion"
+    if model.preferences.snapshot==Nothing then model.preferences.notice
+    else if model.pending/=Nothing then "Applying motion preference…"
+    else (if desired model==Reduced then "Reduced motion: instant transitions" else "Full motion") ++ " · " ++ MotionPreferences.label (MotionPreferences.selected model.preferences)

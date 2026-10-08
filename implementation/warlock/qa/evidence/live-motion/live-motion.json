@@ -1,0 +1,235 @@
+{
+  "checks": {
+    "initialReadUsesThirdSharedRequest": true,
+    "followSystemLoadsFullProfile": true,
+    "draftDoesNotChangeEffectiveProfile": true,
+    "saveUsesOnePreferenceWrite": true,
+    "pendingWriteCannotRepeat": true,
+    "sameRevisionCannotConfirmSave": true,
+    "wrongValueCannotConfirmSave": true,
+    "confirmedSaveConfiguresOneNativeProfile": true,
+    "saveWaitsForNativeAcknowledgement": true,
+    "explicitOverrideWinsOverSystem": true,
+    "unknownPreservesPriorProfileAndNoReplay": true,
+    "refreshOnlyReadsUnknownWrite": true,
+    "readReconcilesStoredOverride": true,
+    "refusalDoesNotApplyProposedOverride": true,
+    "resetRestoresCurrentSystemProfile": true,
+    "disablingNeverReplaysWindowEffect": true,
+    "restartLoadsSavedOverrideBeforeSystemObservation": true,
+    "unsupportedStorageRemainsRecoverableInSettings": true,
+    "fixtureReallyHasPendingWindowEffect": true,
+    "liveSourcePreservesWholeWindowTransaction": true,
+    "retiredBindingCannotReceiveLatePreferenceSave": true,
+    "controlsExposeAllThreeChoices": true,
+    "settingsFrameAcceptedByActualRenderer": true
+  },
+  "settingsFrame": {
+    "surfaceProtocol": 2,
+    "motion": "reduced",
+    "appearance": {
+      "theme": "night",
+      "textScale": 100
+    },
+    "publication": "8",
+    "lease": "1",
+    "mode": "settings",
+    "status": "Loading settings…",
+    "bar": [
+      {
+        "id": "bar:group:application:documents",
+        "domId": "group:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:1:application:documents",
+        "label": "Document",
+        "ariaLabel": "Minimize Document; Active",
+        "detail": "Active",
+        "enabled": true
+      },
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:overview",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:control:overview-opener",
+        "label": "Task View",
+        "ariaLabel": "Open Task View",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:switcher",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:control:switcher-opener",
+        "label": "Switch windows",
+        "ariaLabel": "Open window switcher",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:notifications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notifications:opener",
+        "label": "Notifications",
+        "ariaLabel": "Open notifications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:files",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:files:opener",
+        "label": "Files",
+        "ariaLabel": "Open Files menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:system",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:system:opener",
+        "label": "System",
+        "ariaLabel": "Open system menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:settings",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:opener",
+        "label": "Settings",
+        "ariaLabel": "Open settings",
+        "detail": "",
+        "enabled": true
+      }
+    ],
+    "popup": [
+      {
+        "id": "control:close",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:close",
+        "label": "Close settings",
+        "ariaLabel": "Close settings",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "settings:motion",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:motion",
+        "label": "Reduced motion: instant transitions · Reduced motion",
+        "ariaLabel": "Reduced motion: instant transitions · Reduced motion",
+        "detail": "Motion preference saved.",
+        "enabled": false
+      },
+      {
+        "id": "settings:motion:system",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:motion:system",
+        "label": "Follow system",
+        "ariaLabel": "Follow system",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "settings:motion:reduced",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:motion:reduced",
+        "label": "Reduced motion",
+        "ariaLabel": "Reduced motion",
+        "detail": "Selected",
+        "enabled": true
+      },
+      {
+        "id": "settings:motion:full",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:motion:full",
+        "label": "Full motion",
+        "ariaLabel": "Full motion",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "settings:motion:save",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:motion:save",
+        "label": "Save motion preference",
+        "ariaLabel": "Save motion preference",
+        "detail": "Apply and keep across restart",
+        "enabled": false
+      },
+      {
+        "id": "settings:motion:refresh",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:motion:refresh",
+        "label": "Refresh motion preference",
+        "ariaLabel": "Refresh motion preference",
+        "detail": "Read stored preference; no write is repeated",
+        "enabled": true
+      },
+      {
+        "id": "settings:theme:night",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:theme:night",
+        "label": "Night theme",
+        "ariaLabel": "Night theme",
+        "detail": "Selected",
+        "enabled": false
+      },
+      {
+        "id": "settings:theme:dawn",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:theme:dawn",
+        "label": "Dawn theme",
+        "ariaLabel": "Dawn theme",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "settings:theme:high-contrast",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:theme:high-contrast",
+        "label": "High contrast theme",
+        "ariaLabel": "High contrast theme",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "settings:scale:100",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:scale:100",
+        "label": "Text size 100%",
+        "ariaLabel": "Text size 100%",
+        "detail": "Selected",
+        "enabled": false
+      },
+      {
+        "id": "settings:scale:125",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:scale:125",
+        "label": "Text size 125%",
+        "ariaLabel": "Text size 125%",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "settings:scale:150",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:scale:150",
+        "label": "Text size 150%",
+        "ariaLabel": "Text size 150%",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "settings:scale:200",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:scale:200",
+        "label": "Text size 200%",
+        "ariaLabel": "Text size 200%",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "settings:save",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:save",
+        "label": "Save settings",
+        "ariaLabel": "Save settings",
+        "detail": "Apply and keep across restart",
+        "enabled": false
+      },
+      {
+        "id": "settings:refresh",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:refresh",
+        "label": "Refresh settings",
+        "ariaLabel": "Refresh settings",
+        "detail": "Read stored values; discard unsaved changes",
+        "enabled": false
+      }
+    ]
+  }
+}

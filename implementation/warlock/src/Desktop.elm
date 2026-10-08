@@ -6,6 +6,7 @@ import Switcher
 import Pins
 import Settings
 import Motion
+import MotionPreferences
 import Notifications
 import JumpList
 import PointerOwnership
@@ -60,6 +61,7 @@ type alias Model =
     , notificationsOpen : Bool
     , notificationsOpening : Bool
     , notificationsExpected : Maybe Counter
+    , motionExpected : Maybe Counter
     , motion : Motion.Model
     , settings : Settings.Model
     , settingsOpen : Bool
@@ -132,6 +134,9 @@ type Msg
     | CloseSettings ViewStamp
     | EditSettings ViewStamp Settings.Values
     | SaveSettings ViewStamp
+    | EditMotionPreference ViewStamp MotionPreferences.Override
+    | SaveMotionPreference ViewStamp
+    | RefreshMotionPreference ViewStamp
     | RefreshSettings ViewStamp
     | OpenOverview ViewStamp
     | OpenSwitcher ViewStamp Switcher.Direction
@@ -165,7 +170,7 @@ type Effect
 
 initial : Model
 initial =
-    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, pointer = PointerOwnership.initial, shortcuts = Shortcuts.initial, jumpList = JumpList.initial, jumpEntry = Nothing, jumpOpening = False, jumpExpected = Nothing, jumpBack = False, files = Files.initial, filesOpen = False, filesOpening = False, filesExpected = Nothing, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, motion = Motion.initial, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, overviewTransfer = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
+    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, pointer = PointerOwnership.initial, shortcuts = Shortcuts.initial, jumpList = JumpList.initial, jumpEntry = Nothing, jumpOpening = False, jumpExpected = Nothing, jumpBack = False, files = Files.initial, filesOpen = False, filesOpening = False, filesExpected = Nothing, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, motionExpected = Nothing, motion = Motion.initial, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, overviewTransfer = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
 
 switcherOpen : Model -> Bool
 switcherOpen model = List.member (Switcher.phase model.switcher) [Switcher.Waiting,Switcher.Browsing]
@@ -319,6 +324,7 @@ windowBase message model =
         pins = if disconnected || changed then Pins.initial else model.pins
         read = if changed && not disconnected then windows.shell.binding |> Maybe.andThen (\binding -> UInt64.next model.request |> Maybe.map (\request -> (binding,request))) else Nothing
         settingsRead = read |> Maybe.andThen (\(binding,request) -> UInt64.next request |> Maybe.map (\next -> (binding,next)))
+        motionRead = settingsRead |> Maybe.andThen (\(binding,request) -> UInt64.next request |> Maybe.map (\next -> (binding,next)))
         launch =
             if disconnected then Launch.disconnect model.launch
             else if changed then windows.shell.binding |> Maybe.map (\binding -> Launch.bind (host binding) model.launch) |> Maybe.withDefault (Launch.disconnect model.launch)
@@ -359,16 +365,17 @@ windowBase message model =
         , notificationsOpen = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.notificationsOpen
         , notificationsOpening = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.notificationsOpening
         , notificationsExpected = if disconnected || changed then Nothing else model.notificationsExpected
+        , motionExpected = if disconnected || changed then motionRead |> Maybe.map Tuple.second else model.motionExpected
         , motion = if disconnected || changed then Motion.rebind model.motion else model.motion
         , settings = if disconnected || changed then Settings.initial else model.settings
         , settingsOpen = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.settingsOpen
         , settingsOpening = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.settingsOpening
         , settingsExpected = if disconnected || changed then settingsRead |> Maybe.map Tuple.second else model.settingsExpected
-        , request = settingsRead |> Maybe.map Tuple.second |> Maybe.withDefault (read |> Maybe.map Tuple.second |> Maybe.withDefault model.request)
+        , request = motionRead |> Maybe.map Tuple.second |> Maybe.withDefault (settingsRead |> Maybe.map Tuple.second |> Maybe.withDefault (read |> Maybe.map Tuple.second |> Maybe.withDefault model.request))
         , applications = if disconnected || changed then Nothing else model.applications
         , expected = if disconnected || changed then read |> Maybe.map Tuple.second else model.expected
         , catalogFailure = if disconnected || changed then Nothing else model.catalogFailure
-      }, (read |> Maybe.map (\(binding,request) -> [catalogRequest binding request]) |> Maybe.withDefault []) ++ (settingsRead |> Maybe.map (\(binding,request) -> [settingsRequest binding request]) |> Maybe.withDefault []) ++ List.map WindowEffect effects ++
+      }, (read |> Maybe.map (\(binding,request) -> [catalogRequest binding request]) |> Maybe.withDefault []) ++ (settingsRead |> Maybe.map (\(binding,request) -> [settingsRequest binding request]) |> Maybe.withDefault []) ++ (motionRead |> Maybe.map (\(binding,request) -> [motionPreferencesRequest binding request]) |> Maybe.withDefault []) ++ List.map WindowEffect effects ++
         (case (model.windows.picker,windows.picker,message) of
             (prior,Just picker,_) ->
                 if (prior |> Maybe.map .generation)==Just picker.generation then [] else
@@ -501,7 +508,7 @@ window message model =
 
 update : Msg -> Model -> ( Model, List Effect )
 update message model =
-    if (PointerOwnership.blocked model.windows.shell.binding model.pointer || not (Motion.ready model.windows.shell.binding model.motion)) && gestureAction message then (model,[]) else
+    if (PointerOwnership.blocked model.windows.shell.binding model.pointer && gestureAction message) || (not (Motion.ready model.windows.shell.binding model.motion) && motionGesture message) then (model,[]) else
     let (next,effects)=updateAvailable message model
         (synced,commands)=syncMotion next
     in (synced,effects++commands)
@@ -516,6 +523,18 @@ syncMotion model =
                 Nothing -> (model,[])
                 Just wire -> (advance {model | motion=motion,request=request},[Send wire])
         _ -> (model,[])
+
+motionGesture message =
+    case message of
+        OpenSettings _ -> False
+        CloseSettings _ -> False
+        EditSettings _ _ -> False
+        SaveSettings _ -> False
+        RefreshSettings _ -> False
+        EditMotionPreference _ _ -> False
+        SaveMotionPreference _ -> False
+        RefreshMotionPreference _ -> False
+        _ -> gestureAction message
 
 gestureAction message =
     case message of
@@ -657,6 +676,24 @@ updateAvailable message model =
             in if next.windows.picker/=Nothing && next.windows.picker/=model.windows.picker then (retireSwitcher {next | jumpEntry=Nothing,jumpOpening=False,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,snap=Nothing,open=False,overview=False,expected=Nothing,menuOrigin=Nothing,returnFocus=Nothing},effects) else (synced,effects++commands)
         Incoming raw ->
             case D.decodeValue (D.field "kind" D.string) raw of
+                Ok "motion-preferences" ->
+                    let decoder=strict ["protocolVersion","kind","binding","requestId","snapshot"] (D.map4 (\_ binding request snapshot -> {binding=binding,request=request,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "snapshot" (D.nullable MotionPreferences.decoder)))
+                    in case D.decodeValue decoder raw of
+                        Err _ -> (model,[])
+                        Ok receipt ->
+                            if model.windows.shell.binding/=Just receipt.binding || model.motionExpected/=Just receipt.request then (model,[]) else
+                            let motion=model.motion
+                                preference=MotionPreferences.observe receipt.snapshot motion.preferences
+                            in (advance {model | motion={motion | preferences=preference},motionExpected=Nothing},[])
+                Ok "motion-preferences-outcome" ->
+                    let decoder=strict ["protocolVersion","kind","binding","requestId","status","snapshot"] (D.map5 (\_ binding request status snapshot -> {binding=binding,request=request,status=status,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "status" D.string) (D.field "snapshot" (D.nullable MotionPreferences.decoder)))
+                    in case D.decodeValue decoder raw of
+                        Err _ -> (model,[])
+                        Ok receipt ->
+                            if model.windows.shell.binding/=Just receipt.binding then (model,[]) else
+                            let motion=model.motion
+                                preference=MotionPreferences.receive receipt.request receipt.status receipt.snapshot motion.preferences
+                            in if preference==motion.preferences then (model,[]) else (advance {model | motion={motion | preferences=preference}},[])
                 Ok "host-motion-preference" ->
                     case D.decodeValue Motion.decoder raw of
                         Err _ -> (model,[])
@@ -936,6 +973,21 @@ updateAvailable message model =
                         Nothing -> (model,[])
                         Just value -> (advance {model | settings=settings,request=request},[Send (E.object [("protocolVersion",E.int 3),("kind",E.string "shell-settings-write"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request)),("proposal",value)])])
                 _ -> (model,[])
+        EditMotionPreference stamp override ->
+            if capture model/=Just stamp || not model.settingsOpen || model.motionExpected/=Nothing then (model,[]) else
+            let motion=model.motion in (advance {model | motion={motion | preferences=MotionPreferences.edit override motion.preferences}},[])
+        SaveMotionPreference stamp ->
+            if capture model/=Just stamp || not model.settingsOpen || model.motionExpected/=Nothing then (model,[]) else
+            case (model.windows.shell.binding,UInt64.next model.request) of
+                (Just binding,Just request) ->
+                    let motion=model.motion
+                        (preference,proposal)=MotionPreferences.propose request motion.preferences
+                    in case proposal of
+                        Nothing -> (model,[])
+                        Just value -> (advance {model | request=request,motion={motion | preferences=preference}},[Send (E.object [("protocolVersion",E.int 3),("kind",E.string "motion-preferences-write"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request)),("proposal",value)])])
+                _ -> (model,[])
+        RefreshMotionPreference stamp ->
+            if capture model/=Just stamp || not model.settingsOpen || model.motionExpected/=Nothing then (model,[]) else readMotionPreferences model
         RefreshSettings stamp ->
             if capture model/=Just stamp || not model.settingsOpen then (model,[]) else readSettings model
         OpenApplications stamp ->
@@ -1078,6 +1130,15 @@ sendSystemChange intent model =
             in case proposal of
                 Nothing -> (model,[])
                 Just value -> (advance {model | systemMenu=menu,request=request,systemMenuConfirmation=Nothing},[Send (E.object [("protocolVersion",E.int 3),("kind",E.string "system-menu-effect"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request)),("intent",value)])])
+        _ -> (model,[])
+
+motionPreferencesRequest : Binding.Binding -> Counter -> Effect
+motionPreferencesRequest binding request = Send (E.object [("protocolVersion",E.int 3),("kind",E.string "motion-preferences-request"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request))])
+
+readMotionPreferences : Model -> (Model,List Effect)
+readMotionPreferences model =
+    case (model.windows.shell.binding,UInt64.next model.request) of
+        (Just binding,Just request) -> (advance {model | request=request,motionExpected=Just request},[motionPreferencesRequest binding request])
         _ -> (model,[])
 
 settingsRequest : Binding.Binding -> Counter -> Effect

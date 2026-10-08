@@ -5,6 +5,7 @@ import Switcher
 import Pins
 import Settings
 import Motion
+import MotionPreferences
 import Notifications
 import JumpList
 import Files
@@ -142,9 +143,17 @@ controls model =
             control identity label detail enabled message={id=identity,domId=Desktop.key model (if identity=="control:close" then "settings:close" else identity),label=label,ariaLabel=label,detail=detail,enabled=enabled,message=if enabled then scoped message else Nothing}
             theme selected label=control ("settings:theme:"++Settings.themeName selected) label (if model.settings.draft.theme==selected then "Selected" else "") ready (\stamp -> Desktop.EditSettings stamp {theme=selected,textScale=model.settings.draft.textScale})
             scale percent=control ("settings:scale:"++String.fromInt percent) ("Text size "++String.fromInt percent++"%") (if model.settings.draft.textScale==percent then "Selected" else "") ready (\stamp -> Desktop.EditSettings stamp {theme=model.settings.draft.theme,textScale=percent})
+            motionReady=MotionPreferences.writable model.motion.preferences && model.motionExpected==Nothing
+            motionOption selected=control ("settings:motion:"++(case selected of
+                MotionPreferences.System -> "system"
+                MotionPreferences.Reduce -> "reduced"
+                MotionPreferences.Full -> "full")) (MotionPreferences.label selected) (if model.motion.preferences.draft==selected then "Selected" else "") motionReady (\stamp -> Desktop.EditMotionPreference stamp selected)
             changed=model.settings.snapshot |> Maybe.map (\current -> current.values/=model.settings.draft) |> Maybe.withDefault False
         in [control "control:close" "Close settings" "" True Desktop.CloseSettings
-           ,control "settings:motion" (Motion.notice model.motion) "System preference" False Desktop.RefreshSettings
+           ,control "settings:motion" (Motion.notice model.motion) model.motion.preferences.notice False Desktop.RefreshMotionPreference
+           ,motionOption MotionPreferences.System,motionOption MotionPreferences.Reduce,motionOption MotionPreferences.Full
+           ,control "settings:motion:save" "Save motion preference" "Apply and keep across restart" (motionReady && model.motion.preferences.draft/=MotionPreferences.selected model.motion.preferences) Desktop.SaveMotionPreference
+           ,control "settings:motion:refresh" "Refresh motion preference" "Read stored preference; no write is repeated" (model.motionExpected==Nothing) Desktop.RefreshMotionPreference
            ,theme Settings.Night "Night theme",theme Settings.Dawn "Dawn theme",theme Settings.HighContrast "High contrast theme"]++List.map scale [100,125,150,200]
            ++[control "settings:save" "Save settings" "Apply and keep across restart" (ready && changed) Desktop.SaveSettings
              ,control "settings:refresh" "Refresh settings" "Read stored values; discard unsaved changes" (model.settingsExpected==Nothing) Desktop.RefreshSettings]
