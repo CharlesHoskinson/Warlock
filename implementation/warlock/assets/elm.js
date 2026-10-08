@@ -6123,6 +6123,16 @@ var $author$project$Surface$barControls = function (model) {
 		},
 		$author$project$TaskbarShell$groups(model.a));
 	var groupControl = function (group) {
+		var state = function () {
+			var _v6 = group.aX;
+			if (_v6.b && (!_v6.b.b)) {
+				var family = _v6.a;
+				return family.a_ ? 'Minimized' : (family.dm ? 'Active' : 'Open');
+			} else {
+				return $elm$core$String$fromInt(
+					$elm$core$List$length(group.aX)) + ' windows';
+			}
+		}();
 		var scoped = $author$project$Shell$capture(model.a.b);
 		var operation = function () {
 			var _v2 = A2($author$project$Taskbar$primary, false, group.aX);
@@ -6178,8 +6188,7 @@ var $author$project$Surface$barControls = function (model) {
 				_Utils_ap(
 					label,
 					blocked ? '; awaiting native confirmation' : '')),
-			e: blocked ? 'Awaiting native confirmation' : $elm$core$String$fromInt(
-				$elm$core$List$length(group.aX)),
+			e: blocked ? 'Awaiting native confirmation' : state,
 			i: A2(
 				$elm$core$Maybe$withDefault,
 				'detached-group',

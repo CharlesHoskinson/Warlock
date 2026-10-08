@@ -316,6 +316,8 @@ def verification_plan(root, record, reqs, state, selected=False):
     paths = packet['slice']['paths'] if selected else packet['changedSinceLastRecord']
     product = [n for n in paths if authored(n)]
     requirements = set(packet['slice']['requirements'])
+    scenarios = set(packet['slice']['scenarios'])
+    primary = bool(scenarios & {'taskbar-inactive', 'taskbar-active', 'taskbar-minimized'})
     cpu, mapped = [], set()
 
     def add(name, arguments, sources, reason):
@@ -350,12 +352,14 @@ def verification_plan(root, record, reqs, state, selected=False):
             add('check-pin-storage.py', [], [name], 'Pin persistence/component behavior; inspect scope for non-pin projection changes.')
         elif relative in ('src/Catalog.elm', 'src/Launch.elm', 'adapter/catalog_authority.py'):
             add('check-search.py', [], [name], 'Compile search views and catalog/launch replays.')
-        elif relative in ('src/TaskView.elm', 'src/Desktop.elm', 'src/Main.elm',
+        elif relative in ('src/TaskView.elm', 'src/Taskbar.elm', 'src/TaskbarShell.elm',
+                          'src/Surface.elm', 'src/Desktop.elm', 'src/Main.elm',
                           'src/SurfaceRenderer.elm', 'src/Bar.elm', 'src/ActionProjection.elm'):
             if requirements & {'ELM-UI-007'}:
                 add('check-feedback.py', [], [name], 'Changed feedback views and state projection.')
             else:
-                flags = ['--workspace-navigation'] if requirements & {'ELM-UI-002', 'ELM-UX-008'} else \
+                flags = ['--taskbar-primary'] if primary else \
+                        ['--workspace-navigation'] if requirements & {'ELM-UI-002', 'ELM-UX-008'} else \
                         ['--task-view'] if requirements & {'ELM-UI-006', 'ELM-UX-017'} else \
                         ['--pins'] if requirements & {'ELM-UX-004'} else []
                 add('check-search.py', flags, [name], 'Compile the affected shell/view route; review the selected runner mode.')
@@ -375,7 +379,9 @@ def verification_plan(root, record, reqs, state, selected=False):
             modes += [['--launcher-search']]
         if requirements & {'ELM-UX-004'}:
             modes += [['--taskbar-pins']]
-        if requirements & {'ELM-UI-004', 'ELM-UX-005', 'ELM-UX-024'}:
+        if primary:
+            modes += [['--taskbar-primary']]
+        if 'taskbar-group' in scenarios or requirements & {'ELM-UX-005', 'ELM-UX-024'}:
             modes += [['--taskbar-focus']]
         if requirements & {'ELM-UI-007'}:
             modes += [[]]

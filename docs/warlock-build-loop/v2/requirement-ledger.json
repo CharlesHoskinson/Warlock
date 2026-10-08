@@ -4453,23 +4453,59 @@
         {
           "name": "taskbar-inactive",
           "oracle": "the member visibly activates",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/taskbar-primary/manifest.json",
+              "sha256": "56bd278b5b69f87d67d8da18df8815ecca61d237a0e7fee5d87efbf3e04e4d31",
+              "scope": "Pointer activation, minimize-to-MRU, restore, minimize-to-desktop and restore from desktop pass with one identity-bound Committed native receipt each, actual green-window presence/absence and actual GTK key recipient; no duplicate launch or membership/output change. Current state label/button geometry, actual text pixels and captured native frames checked; two current frames inspected by owner."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/taskbar-primary/current-manifest.json",
+              "sha256": "8d1219a3f154fa6b7aa118d4dbb4eea26188de3fd10863b42eb08dbc1a054edb",
+              "scope": "Current build-reference/relink repair; observed native GUI tuple and runner remain byte-identical. Original native primary proof retained; keyboard/AT and independent review remain pending."
+            }
+          ],
+          "missingObservation": "Native primary keyboard entry/activation and applicable assistive-technology fixtures remain open. GTK key-recipient tests after pointer actions do not qualify keyboard taskbar activation.; Independent original-scenario reviewer disposition remains open.; Other primary cases, group/menu/overflow and full release qualification remain separate.",
+          "reviewerDisposition": "Owner current-source native observation; independent acceptance pending."
         },
         {
           "name": "taskbar-minimized",
           "oracle": "the member restores and visibly activates",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/taskbar-primary/manifest.json",
+              "sha256": "56bd278b5b69f87d67d8da18df8815ecca61d237a0e7fee5d87efbf3e04e4d31",
+              "scope": "Pointer activation, minimize-to-MRU, restore, minimize-to-desktop and restore from desktop pass with one identity-bound Committed native receipt each, actual green-window presence/absence and actual GTK key recipient; no duplicate launch or membership/output change. Current state label/button geometry, actual text pixels and captured native frames checked; two current frames inspected by owner."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/taskbar-primary/current-manifest.json",
+              "sha256": "8d1219a3f154fa6b7aa118d4dbb4eea26188de3fd10863b42eb08dbc1a054edb",
+              "scope": "Current build-reference/relink repair; observed native GUI tuple and runner remain byte-identical. Original native primary proof retained; keyboard/AT and independent review remain pending."
+            }
+          ],
+          "missingObservation": "Native primary keyboard entry/activation and applicable assistive-technology fixtures remain open. GTK key-recipient tests after pointer actions do not qualify keyboard taskbar activation.; Independent original-scenario reviewer disposition remains open.; Other primary cases, group/menu/overflow and full release qualification remain separate.",
+          "reviewerDisposition": "Owner current-source native observation; independent acceptance pending."
         },
         {
           "name": "taskbar-active",
           "oracle": "the family minimizes with declared focus succession",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/taskbar-primary/manifest.json",
+              "sha256": "56bd278b5b69f87d67d8da18df8815ecca61d237a0e7fee5d87efbf3e04e4d31",
+              "scope": "Pointer activation, minimize-to-MRU, restore, minimize-to-desktop and restore from desktop pass with one identity-bound Committed native receipt each, actual green-window presence/absence and actual GTK key recipient; no duplicate launch or membership/output change. Current state label/button geometry, actual text pixels and captured native frames checked; two current frames inspected by owner."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/taskbar-primary/current-manifest.json",
+              "sha256": "8d1219a3f154fa6b7aa118d4dbb4eea26188de3fd10863b42eb08dbc1a054edb",
+              "scope": "Current build-reference/relink repair; observed native GUI tuple and runner remain byte-identical. Original native primary proof retained; keyboard/AT and independent review remain pending."
+            }
+          ],
+          "missingObservation": "Native primary keyboard entry/activation and applicable assistive-technology fixtures remain open. GTK key-recipient tests after pointer actions do not qualify keyboard taskbar activation.; Independent original-scenario reviewer disposition remains open.; Other primary cases, group/menu/overflow and full release qualification remain separate.",
+          "reviewerDisposition": "Owner current-source native observation; independent acceptance pending."
         },
         {
           "name": "taskbar-group",

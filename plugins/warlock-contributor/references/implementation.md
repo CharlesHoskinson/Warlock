@@ -8,6 +8,7 @@ The original requirement and OpenSpec determine which behavior belongs in the ch
 | --- | --- | --- |
 | Shell policy and typed transitions | `implementation/warlock/src/Desktop.elm`; integration ports in `src/Main.elm` | `src/DesktopReplay.elm` and the replay for the affected subsystem |
 | Taskbar/popup presentation and feedback | `src/SurfaceRenderer.elm`, `src/Bar.elm`, `src/ActionProjection.elm` | `qa/check-feedback.py`; native presentation/input when required |
+| Single-family taskbar primary actions/state labels | `src/Taskbar.elm`, `src/TaskbarShell.elm`, `src/Surface.elm` | `qa/check-search.py --taskbar-primary`; native `qa/native-window-feedback.py --taskbar-primary` for exact receipt, MRU/desktop focus and window pixels; primary keyboard/AT remains separate |
 | Catalog search and launch | `src/Catalog.elm`, `src/Launch.elm`, `adapter/catalog_authority.py` | `qa/check-search.py`, `src/CatalogReplay.elm`, `src/LaunchReplay.elm` |
 | Persistent pins | `src/Desktop.elm`, `adapter/taskbar_preferences.py`, `adapter/taskbar_projection.py` | `qa/check-pin-storage.py`, `qa/pins.qnt` |
 | Task View/workspace navigation | `src/Desktop.elm` and the current native authority | `qa/check-navigation-projection.py`, `qa/task-view.qnt`, `qa/workspace-navigation.qnt` |

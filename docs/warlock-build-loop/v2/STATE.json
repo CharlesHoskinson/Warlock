@@ -1,44 +1,47 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-08T02:15:57.036502+00:00",
+  "updatedUTC": "2026-10-08T02:51:50.454948+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "task-view-dismissal-focus",
+    "id": "taskbar-primary-actions",
     "requirements": [
-      "ELM-UI-006",
-      "ELM-UX-017"
+      "ELM-UI-004"
     ],
     "scenarios": [
-      "overview-cancel",
-      "ux-017"
+      "taskbar-inactive",
+      "taskbar-active",
+      "taskbar-minimized"
     ],
+    "before": "Single-family primary decision policy exists, but native visible activation, minimize succession and restore cases are not yet adjudicated.",
+    "after": "A native single-family primary action visibly activates inactive windows, minimizes the active family to its eligible MRU successor and restores/activates minimized windows without duplicate launch.",
     "paths": [
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/TaskView.elm",
-      "implementation/warlock/native/host.c",
-      "implementation/warlock/native/shared-host.c",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/native/core/SeatManager.cpp",
-      "implementation/warlock/qa/check-focus-core.py",
-      "implementation/warlock/qa/current-focus-core.json",
-      "implementation/warlock/qa/current-native-pair.json",
-      "implementation/warlock/qa/check-native-authority.py"
+      "src/Taskbar.elm",
+      "src/TaskbarShell.elm",
+      "src/Surface.elm",
+      "src/Desktop.elm",
+      "native/authority.cpp",
+      "native/host.c",
+      "native/shared-host.c",
+      "qa/native-window-feedback.py",
+      "qa/check-search.py",
+      "qa/current-search-build.json",
+      "qa/check-native-authority.py",
+      "qa/current-native-pair.json",
+      "assets/elm.js",
+      "assets/bar.js",
+      "assets/popup.js"
     ],
-    "before": "Retained Task View Escape did not deliver keyboard input back to the eligible opener.",
-    "after": "Task View browse is observation-only and Escape returns the native keyboard recipient to its eligible opener.",
     "verification": [
-      "Current-source native Task View local browsing, actual control pixels and Escape/GTK keyboard recipient; fix eligible focus policy if the retained failure persists.",
-      "Compile one owning compositor TU, preserve ordered archive members and strict dependencies/exports, refresh exact owning authority pair; repeat actual Escape recipient and retirement negative case."
+      "Protected native pointer primary actions with exact identities, committed receipts, actual window pixels and GTK keyboard recipient after each action; eligible MRU focus succession and no launches.",
+      "One native stale-context refusal without target mutation or replay; preserve workspace/output membership. Native primary keyboard and applicable AT obligations are separately recorded."
     ],
-    "state": "implemented; native Escape returns surviving opener keyboard focus; retired opener negative and current-tuple regressions pass; independent/AT remain open",
-    "evidence": "implementation/warlock/qa/evidence/taskview-focus-return/manifest.json"
+    "state": "implemented state labels; native pointer primary activation/minimize/restore, MRU/desktop focus, exact receipts and physical labels pass; keyboard/AT/independent acceptance pending",
+    "evidence": "implementation/warlock/qa/evidence/taskbar-primary/current-manifest.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -247,19 +250,53 @@
       ],
       "state": "implemented; current taskbar and launcher native repaint/input journeys pass; independent and applicable AT/IME acceptance remain open",
       "evidence": "implementation/warlock/qa/evidence/popup-remap/manifest.json"
+    },
+    {
+      "id": "task-view-dismissal-focus",
+      "requirements": [
+        "ELM-UI-006",
+        "ELM-UX-017"
+      ],
+      "scenarios": [
+        "overview-cancel",
+        "ux-017"
+      ],
+      "paths": [
+        "implementation/warlock/src/Desktop.elm",
+        "implementation/warlock/src/TaskView.elm",
+        "implementation/warlock/native/host.c",
+        "implementation/warlock/native/shared-host.c",
+        "implementation/warlock/qa/native-window-feedback.py",
+        "implementation/warlock/qa/check-search.py",
+        "implementation/warlock/qa/current-search-build.json",
+        "implementation/warlock/native/core/SeatManager.cpp",
+        "implementation/warlock/qa/check-focus-core.py",
+        "implementation/warlock/qa/current-focus-core.json",
+        "implementation/warlock/qa/current-native-pair.json",
+        "implementation/warlock/qa/check-native-authority.py"
+      ],
+      "before": "Retained Task View Escape did not deliver keyboard input back to the eligible opener.",
+      "after": "Task View browse is observation-only and Escape returns the native keyboard recipient to its eligible opener.",
+      "verification": [
+        "Current-source native Task View local browsing, actual control pixels and Escape/GTK keyboard recipient; fix eligible focus policy if the retained failure persists.",
+        "Compile one owning compositor TU, preserve ordered archive members and strict dependencies/exports, refresh exact owning authority pair; repeat actual Escape recipient and retirement negative case."
+      ],
+      "state": "implemented; native Escape returns surviving opener keyboard focus; retired opener negative and current-tuple regressions pass; independent/AT remain open",
+      "evidence": "implementation/warlock/qa/evidence/taskview-focus-return/manifest.json"
     }
   ],
   "nextOriginalSlice": {
-    "id": "taskbar-primary-actions",
+    "id": "switcher-sequence",
     "requirements": [
-      "ELM-UI-004"
+      "ELM-UI-003"
     ],
     "scenarios": [
-      "taskbar-inactive",
-      "taskbar-active",
-      "taskbar-minimized"
+      "switcher-order",
+      "switcher-cancel",
+      "switcher-zero-one"
     ],
-    "before": "Primary activation/minimize/restore exist in policy but original native cases are unadjudicated.",
-    "after": "Native single-family taskbar primary actions activate inactive, minimize active and restore minimized with exact recipients, visible outcomes and declared focus succession."
+    "before": "Integrated candidate has no switcher policy module or native switcher journey.",
+    "after": "A typed immutable switcher freezes exact committed-MRU order, cycles in both directions and cancels without window effects; integration uses the existing window-effect authority and qualified popup scope.",
+    "scopeNote": "Read original switcher/Omarchy entry and release contracts; no arbitrary default shortcut. Remaining keyboard taskbar/AT contracts remain P5 obligations."
   }
 }

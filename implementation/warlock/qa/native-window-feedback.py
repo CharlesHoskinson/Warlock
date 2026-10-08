@@ -4,7 +4,8 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
 lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
 """
 import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
-NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'];PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW
+PRIMARY=sys.argv[1:]==['--taskbar-primary']
+NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'];PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143';RUNTIME=REPO/'implementation/warlock-client-provider-native-v204'
 sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
 spec=importlib.util.spec_from_file_location('feedback_private_host',RUNTIME/'candidate_host.py');host=importlib.util.module_from_spec(spec);spec.loader.exec_module(host)
@@ -40,7 +41,7 @@ else:
 for row in pair.values():assert sha(row['path'])==row['sha256']
 assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
 subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
-OUT=ROOT/'qa/runs'/(('native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+OUT=ROOT/'qa/runs'/(('native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
 OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
 focus_host=None
 if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
@@ -58,6 +59,7 @@ if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
  focus_host={'originalSHA256':sha(RUNTIME/'candidate_host.py'),'adaptedPath':str(host_path),'adaptedSHA256':sha(host_path),'change':'Keep frozen asset ROOT; sibling process tuple points only to the source-verified focus core.'}
 POINTER=pathlib.Path('/home/hoskinson/.local/share/hypr-window-controls/qa/virtual-pointer');FIXTURE=RUNTIME/'fixture.py'
 retirement_fixture=None
+primary_fixture=None
 if RETIRE_OPENER:
  fixture_inputs=OUTPUT.with_name(OUTPUT.name+'-inputs');fixture_inputs.mkdir(mode=0o700,exist_ok=True)
  fixture_source=FIXTURE.read_text();needle="        elif request['op'] == 'retire-peer':"
@@ -65,15 +67,25 @@ if RETIRE_OPENER:
  adapted=fixture_source.replace(needle,"        elif request['op'] == 'retire-primary':\n            windows.pop('ELM-AUTHORITY-FIXTURE').destroy()\n"+needle)
  original_fixture=FIXTURE;FIXTURE=fixture_inputs/'retire-opener-fixture.py';FIXTURE.write_text(adapted)
  retirement_fixture={'originalSHA256':sha(original_fixture),'path':str(FIXTURE),'sha256':sha(FIXTURE),'change':'Retire only the original primary window; create no replacement/modal.'}
+if PRIMARY:
+ fixture_inputs=OUTPUT.with_name(OUTPUT.name+'-inputs');fixture_inputs.mkdir(mode=0o700,exist_ok=True)
+ fixture_source=FIXTURE.read_text();initial="create('ELM-AUTHORITY-FIXTURE', 'red')\ncreate('ELM-ACTIVATION-PEER', 'green')"
+ assert fixture_source.count(initial)==1 and fixture_source.count('control = Path(sys.argv[1])')==1
+ adapted=fixture_source.replace('control = Path(sys.argv[1])',"GLib.set_prgname('warlock-primary-fixture' if sys.argv[2]=='primary' else 'warlock-peer-fixture')\ncontrol = Path(sys.argv[1])")
+ adapted=adapted.replace(initial,"create('ELM-AUTHORITY-FIXTURE', 'red') if sys.argv[2]=='primary' else create('ELM-ACTIVATION-PEER', 'green')")
+ original_fixture=FIXTURE;FIXTURE=fixture_inputs/'primary-action-fixture.py';FIXTURE.write_text(adapted)
+ primary_fixture={'originalSHA256':sha(original_fixture),'path':str(FIXTURE),'sha256':sha(FIXTURE),'change':'One original colored GTK root per process; distinct program identities create two single-family taskbar entries.'}
 report={'schema':1,'requirements':['ELM-UI-007'],'scenarios':['restore-pending','restore-refused','restore-unknown'],'scope':'Actual pointer/Elm/native effect feedback and private compositor pixels; no AT/IME/full release acceptance','nativeFeedbackObserved':False,'nativeAcceptance':False,'assistiveTechnologyAccepted':False,'fullReleaseAccepted':False,'mainDesktopActions':False,'passed':False,'checks':[],'sourceInputs':{str(p.relative_to(ROOT)):sha(p) for folder in ['src','native','adapter','assets'] for p in (ROOT/folder).iterdir() if p.is_file()},'pair':pair,'nativeHost':{'path':str(binary),'sha256':sha(binary),'heldBuild':str(build_path),'heldBuildSHA256':sha(build_path)},'runtimeByReference':{'root':str(RUNTIME),'hostSHA256':sha(RUNTIME/'candidate_host.py')},'helpers':[],'nativeFixtures':[]};s=None;loaded=False;apps=[];broker=None;paused=False;sequence=0
 if focus_host:report['focusHostAdaptation']=focus_host
 if retirement_fixture:report['retirementFixture']=retirement_fixture
+if primary_fixture:report['primaryFixture']=primary_fixture
 if SEARCH:report.update(requirements=['ELM-UI-005','ELM-UX-029'],scenarios=['search-no-match','search-race','search-refused','launcher-refused'],scope='Actual current query and private catalog, native typing/Enter refusal and no duplicate launch; AT/IME and popup physical presentation acceptance remain pending',popupPresentationAccepted=False)
 if PINS:report.update(requirements=['ELM-UI-004','ELM-UX-004'],scenarios=['taskbar-zero','ux-004'],scope='Actual native keyboard pin/reorder, shell restart, identity order and one current zero-window launch; popup physical presentation and AT acceptance remain separate',popupPresentationAccepted=False,nativePinJourneyObserved=False)
 if TASKVIEW:report.update(requirements=['ELM-UX-017','ELM-UI-006'],scenarios=['ux-017','overview-cancel'],scope='Actual two populated native workspaces, exact window membership and active marker, keyboard/pointer local browsing and Escape recipient; independent and applicable AT acceptance remain pending',nativeTaskViewJourneyObserved=False)
 if RETIRE_OPENER:report['scope']='Actual native Task View browse then primary opener retirement; Escape must not revive its incarnation or dispatch a window effect. Independent/AT acceptance remains pending.'
 if NAV:report.update(requirements=['ELM-UI-002','ELM-UI-006','ELM-UX-008'],scenarios=['activate-other-workspace','overview-select','ux-008','activation-refused'],scope='Actual minimized workspace-2 family selected through Task View and taskbar; native receipts, focus/keyboard, pixels and unchanged membership; stale-context refusal; other-output, partial-refusal and AT acceptance remain separate',nativeNavigationJourneyObserved=False,authorityBuild={'path':str(authority_path),'sha256':sha(authority_path)})
 if FOCUS:report.update(requirements=['ELM-UI-004','ELM-UX-024'],scenarios=['taskbar-group','ux-024'],scope='Actual native picker traversal and Escape/focus recipient diagnosis; menu/AT original acceptance remains pending')
+if PRIMARY:report.update(requirements=['ELM-UI-004'],scenarios=['taskbar-inactive','taskbar-active','taskbar-minimized'],scope='Actual pointer single-family activation/minimize/restore, exact native receipt and GTK keyboard recipient, MRU/desktop succession and pixels; primary keyboard and AT acceptance remain pending',nativePrimaryJourneyObserved=False)
 LUA=b'''hl.config({xwayland={enabled=false},animations={enabled=false}})
 hl.monitor({output="WAYLAND-1",mode="800x600@60",position="0x0",scale=1})
 '''
@@ -124,9 +136,16 @@ try:
     report['catalogFixture']={'backend':str(backend_fixture),'backendSHA256':sha(backend_fixture),'roots':roots,'originalConfigUnchanged':True}
     desktop=catalog_root/'warlock-files.desktop';desktop.write_text('[Desktop Entry]\nType=Application\nName=Files\nGenericName=File manager\nKeywords=folders;documents;\nExec=/usr/bin/true\n')
     (catalog_root/'warlock-editor.desktop').write_text('[Desktop Entry]\nType=Application\nName=Editor\nGenericName=Text editor\nExec=/usr/bin/true\n')
-   control=OUTPUT/'fixture-control.json';fixture=s.host.launch('fixture',['/usr/bin/python3','-B',str(FIXTURE),str(control)],env=env);apps.append(fixture)
+   control=OUTPUT/'fixture-control.json';fixture=s.host.launch('fixture',['/usr/bin/python3','-B',str(FIXTURE),str(control),*(['primary'] if PRIMARY else [])],env=env);apps.append(fixture)
+   if PRIMARY:
+    peer_control=OUTPUT/'peer-control.json';peer_fixture=s.host.launch('peer-fixture',['/usr/bin/python3','-B',str(FIXTURE),str(peer_control),'peer'],env=env);apps.append(peer_fixture)
    wait(lambda:any(w['title']=='ELM-AUTHORITY-FIXTURE' for w in s.data('clients')));wait(lambda:any(w['title']=='ELM-ACTIVATION-PEER' for w in s.data('clients')));
-   if not (FOCUS or TASKVIEW):fixture_control('hide-peer');wait(lambda:len(s.data('clients'))==1)
+   if not (FOCUS or TASKVIEW or PRIMARY):fixture_control('hide-peer');wait(lambda:len(s.data('clients'))==1)
+   if PRIMARY:
+    peer=next(w for w in s.data('clients') if w['title']=='ELM-ACTIVATION-PEER');peer_selector='address:'+peer['address']
+    if not peer['floating']:check('PeerFixtureFloats',s.ctl('dispatch',"hl.dsp.window.float({action='set',window='"+peer_selector+"'})").strip()=='ok')
+    check('PeerFixtureSize',s.ctl('dispatch',"hl.dsp.window.resize({x=320,y=240,window='"+peer_selector+"'})").strip()=='ok')
+    check('PeerFixturePosition',s.ctl('dispatch',"hl.dsp.window.move({x=400,y=150,window='"+peer_selector+"'})").strip()=='ok')
    if TASKVIEW:
     peer=next(w for w in s.data('clients') if w['title']=='ELM-ACTIVATION-PEER')
     if NAV:
@@ -149,7 +168,7 @@ try:
    def text():return log.read_text(errors='replace')
    def projection():return collector.read(text())
    def group(operation):
-    p=projection();return next((g for g in p['groups'] if (FOCUS or NAV or g['title']=='ELM-AUTHORITY-FIXTURE') and g['label'].startswith(operation+' ') and not g['disabled']),None) if p and p['phase']=='Coherent' else None
+    p=projection();return next((g for g in p['groups'] if (FOCUS or NAV or g['title']==('ELM-ACTIVATION-PEER' if PRIMARY else 'ELM-AUTHORITY-FIXTURE')) and g['label'].startswith(operation+' ') and not g['disabled']),None) if p and p['phase']=='Coherent' else None
    def journal():return [json.loads(l.split(': ',1)[1]) for l in text().splitlines() if l.startswith('frontend-request: ') and json.loads(l.split(': ',1)[1])['kind']=='window-effect']
    def feedback(state):
     p=projection()
@@ -159,8 +178,8 @@ try:
    def click(item):
     check('PointerTargetWithinActualViewport',item['visible'],item=item);x,y=map(round,item['point']);helper([str(POINTER),'800','600'],f'move {x} {y}\nsleep 100\nbutton 272 1\nsleep 50\nbutton 272 0\nsleep 100\n')
    def facts():return client.scene_facts('441')
-   initial=None if TASKVIEW else wait(lambda:group('Choose a window from' if FOCUS else 'Minimize'))
-   target=next(w['incarnation'] for w in client.snapshot('442')['windows'] if w['label']=='ELM-AUTHORITY-FIXTURE')
+   initial=None if TASKVIEW else wait(lambda:group('Activate' if PRIMARY else 'Choose a window from' if FOCUS else 'Minimize'))
+   target=next(w['incarnation'] for w in client.snapshot('442')['windows'] if w['label']==('ELM-ACTIVATION-PEER' if PRIMARY else 'ELM-AUTHORITY-FIXTURE'))
    initial_workspace=next(w['workspace'] for w in facts()['facts']['windows'] if w['incarnation']==target)
    def current_window():return next(w for w in facts()['facts']['windows'] if w['incarnation']==target)
    def transaction_state():return (projection() or {}).get('transaction')
@@ -173,7 +192,65 @@ try:
     pix=GdkPixbuf.Pixbuf.new_from_file(str(image));data=pix.get_pixels();stride=pix.get_rowstride();channels=pix.get_n_channels();left,top=int(o['x'])+5,int(o['y'])+3;right,bottom=min(800,int(o['x']+o['width'])-3),min(48,int(o['y']+o['height'])-3)
     bright=sum(1 for y in range(top,bottom) for x in range(left,right) if all(data[y*stride+x*channels+i]>170 for i in range(3)))
     check(state+'NativeTaskbarHasTextPixels',pix.get_width()==800 and pix.get_height()==600 and bright>30,image=str(image),sha256=sha(image),brightPixels=bright,region=[left,top,right,bottom]);report.setdefault('feedback',{})[state]=body
-   if CATALOG or TASKVIEW:
+   if PRIMARY:
+    keyboard=pathlib.Path('/home/hoskinson/window-integration-qa/orca-reader/physical-commands/evdev-keyboard');report['keyboard']={'path':str(keyboard),'sha256':sha(keyboard)}
+    roots=client.snapshot('443')['windows'];companion=next(w['incarnation'] for w in roots if w['label']=='ELM-AUTHORITY-FIXTURE')
+    check('DistinctSingleFamilyApplicationIdentities',len(roots)==2 and len({w['application'] for w in roots})==2,windows=roots)
+    initial_membership=sorted((w['incarnation'],w['workspace'],w['monitor']) for w in facts()['facts']['windows'])
+    check('NativeInactiveMemberBeforePrimary',facts()['facts']['focused']==companion and not current_window()['minimized'],nativeFacts=facts())
+    def events():
+     return {str(path):[json.loads(line) for line in path.read_text().splitlines()] if path.exists() else [] for path in [control.with_suffix('.events.jsonl'),peer_control.with_suffix('.events.jsonl')]}
+    def actual_recipient(stage,identity):
+     before={name:len(rows) for name,rows in events().items()};helper([str(keyboard)],'key 30 1\nsleep 50\nkey 30 0\nsleep 100\nsync\n')
+     delivered=[event for name,rows in events().items() for event in rows[before[name]:]];expected='ELM-ACTIVATION-PEER' if identity==target else 'ELM-AUTHORITY-FIXTURE'
+     check(stage+'ActualKeyboardRecipient',facts()['facts']['focused']==identity and any(e['kind']=='key' and e['keyval']==97 and e['window']==expected for e in delivered),nativeFocus=facts()['facts']['focused'],events=delivered)
+    def state_cue(minimized,focus):
+     rows=[json.loads(l.split(' ',2)[2])['body'] for l in text().splitlines() if l.startswith('surface-report: origin=bar ')]
+     body=rows[-1] if rows else None;p=projection()
+     if not body or not p or p['phase']!='Coherent' or body['publication']!=p['publication']:return None
+     operation='Restore' if minimized else 'Minimize' if focus==target else 'Activate'
+     button=next((b for b in body['buttons'] if b['accessibleName']==operation+' ELM-ACTIVATION-PEER' and not b['disabled']),None)
+     cue='Minimized' if minimized else 'Active' if focus==target else 'Open'
+     return (body,button,cue) if button and cue in button['label'] else None
+    def capture(stage,minimized):
+     body,button,cue=wait(lambda:state_cue(minimized,facts()['facts']['focused']))
+     check(stage+'AdmittedStateCueIsVisible',button['height']<=48 and button['width']>=112 and button['y']>=0 and button['y']+button['height']<=48,cue=cue,button=button)
+     image=OUTPUT/(stage+'.png');helper(['/usr/bin/grim',str(image)])
+     import gi;gi.require_version('GdkPixbuf','2.0');from gi.repository import GdkPixbuf
+     pix=GdkPixbuf.Pixbuf.new_from_file(str(image));data=pix.get_pixels();stride=pix.get_rowstride();channels=pix.get_n_channels();x,y,width,height=map(int,current_window()['geometry']);left,top=max(0,x+10),max(100,y+10);right,bottom=min(800,x+width-10),min(600,y+height-10)
+     green=sum(1 for py in range(top,bottom) for px in range(left,right) if data[py*stride+px*channels+1]>100 and data[py*stride+px*channels+1]>data[py*stride+px*channels]+30 and data[py*stride+px*channels+1]>data[py*stride+px*channels+2]+30)
+     check(stage+'ActualWindowPresentation',green==0 if minimized else green>1000,greenPixels=green,region=[left,top,right,bottom],image=str(image),sha256=sha(image))
+     left,top=max(0,int(button['x'])+5),max(0,int(button['y']+button['height']/2));right,bottom=min(800,int(button['x']+button['width'])-5),min(48,int(button['y']+button['height'])-3)
+     bright=sum(1 for py in range(top,bottom) for px in range(left,right) if all(data[py*stride+px*channels+c]>170 for c in range(3)))
+     check(stage+'ActualStateCueTextPixels',bright>15,brightPixels=bright,region=[left,top,right,bottom],cue=cue)
+     report.setdefault('primaryCaptures',[]).append({'stage':stage,'path':str(image),'sha256':sha(image),'nativeFacts':facts(),'stateCue':cue,'barBody':body})
+    def action(stage,operation,focus,minimized):
+     button=wait(lambda:group(operation.title()));before=len(journal());click(button)
+     wait(lambda:transaction_state()=='Committed' and current_window()['minimized']==minimized and facts()['facts']['focused']==focus)
+     check(stage+'ExactlyOneBoundEffect',len(journal())==before+1 and journal()[-1]['intent']['incarnation']==target and journal()[-1]['intent']['operation']==operation,journal=journal()[before:])
+     submitted=journal()[-1]
+     def receipts():return [f for f in [json.loads(l.split(': ',1)[1]) for l in text().splitlines() if l.startswith('backend-frame: ')] if f.get('kind')=='effect-outcome' and f.get('binding')==submitted['binding'] and f.get('effectProtocol')==submitted['effectProtocol'] and f.get('intent')==submitted['intent']]
+     rows=wait(receipts);check(stage+'NativeCommittedReceipt',len(rows)==1 and rows[0]['status']=='Committed',request=submitted,receipts=rows)
+     report.setdefault('primaryReceipts',[]).append({'stage':stage,'request':submitted,'receipt':rows[0]})
+     check(stage+'PreservesFamilyMembership',sorted((w['incarnation'],w['workspace'],w['monitor']) for w in facts()['facts']['windows'])==initial_membership)
+     capture(stage,minimized)
+     if focus is not None:actual_recipient(stage,focus)
+    before_body,before_button,before_cue=wait(lambda:state_cue(False,companion));check('InactiveMemberHasOpenCue',before_cue=='Open',button=before_button)
+    action('InactiveActivation','activate',target,False)
+    action('ActiveMinimizeToMRU','minimize',companion,True)
+    action('MinimizedRestore','restore',target,False)
+    # Remove the only eligible successor through a separate owned fixture effect.
+    private_effect('minimize',companion);check('OnlyMinimizedCompanionRemains',next(w for w in facts()['facts']['windows'] if w['incarnation']==companion)['minimized'])
+    action('ActiveMinimizeToDesktop','minimize',None,True)
+    before=[p.read_text().splitlines() if p.exists() else [] for p in [control.with_suffix('.events.jsonl'),peer_control.with_suffix('.events.jsonl')]]
+    helper([str(keyboard)],'key 30 1\nsleep 50\nkey 30 0\nsleep 100\nsync\n')
+    after=[p.read_text().splitlines() if p.exists() else [] for p in [control.with_suffix('.events.jsonl'),peer_control.with_suffix('.events.jsonl')]]
+    check('NoEligibleSuccessorDoesNotSendKeysToMinimizedFamily',facts()['facts']['focused'] is None and all(a==b for a,b in zip(before,after)),before=before,after=after)
+    action('DesktopRestore','restore',target,False)
+    launches=[json.loads(l.split(': ',1)[1]) for l in text().splitlines() if l.startswith('frontend-request: ') and json.loads(l.split(': ',1)[1])['kind']=='application-launch']
+    check('OrdinaryPrimaryActionsNeverLaunchDuplicates',not launches and len(journal())==5,launchRequests=launches,windowRequests=len(journal()))
+    report['nativePrimaryJourneyObserved']=True
+   elif CATALOG or TASKVIEW:
     keyboard=pathlib.Path('/home/hoskinson/window-integration-qa/orca-reader/physical-commands/evdev-keyboard');report['keyboard']={'path':str(keyboard),'sha256':sha(keyboard)}
     def key(code):helper([str(keyboard)],f'key {code} 1\nsleep 50\nkey {code} 0\nsleep 100\nsync\n')
     def popup_body():
@@ -421,7 +498,7 @@ try:
     check('NoScratchpadOrWorkspaceTransfer',all(before_peer[k]==after_peer[k] for k in ['workspace','monitor']),before={k:before_peer[k] for k in ['workspace','monitor']},after={k:after_peer[k] for k in ['workspace','monitor']})
    else:
     check('NoScratchpadOrWorkspaceTransfer',current_window()['workspace']==initial_workspace,nativeWorkspace=current_window()['workspace'],originalWorkspace=initial_workspace)
-   report['nativeFeedbackObserved']=not FOCUS and not CATALOG and not TASKVIEW;report['nativeFocusJourneyObserved']=FOCUS;check('EveryRegisteredHelperExitedNormally',all(r['exitCode']==0 for r in report['helpers']));report['passed']=True
+   report['nativeFeedbackObserved']=not FOCUS and not CATALOG and not TASKVIEW and not PRIMARY;report['nativeFocusJourneyObserved']=FOCUS;check('EveryRegisteredHelperExitedNormally',all(r['exitCode']==0 for r in report['helpers']));report['passed']=True
   finally:
    if paused:pause(False)
    for proc in reversed(apps):

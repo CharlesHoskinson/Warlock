@@ -113,6 +113,15 @@ class VerificationPlannerTests(unittest.TestCase):
         runners = [x['runner'].split('/')[-1] for x in self.packet()['cpuTargets']]
         self.assertEqual(runners, ['check-focus-core.py', 'check-native-authority.py'])
 
+    def test_primary_surface_change_uses_primary_campaign_instead_of_group_picker(self):
+        self.select('ELM-UI-004', 'taskbar-inactive', ['src/Surface.elm'])
+        self.fixture.start()
+        self.fixture.write('implementation/warlock/src/Surface.elm', 'changed state cues\n')
+        packet = self.packet()
+        self.assertEqual(packet['unmappedProductPaths'], [])
+        self.assertEqual(packet['cpuTargets'][0]['arguments'], ['--taskbar-primary'])
+        self.assertEqual([p['arguments'] for p in packet['nativeCandidates']], [['--taskbar-primary']])
+
     def test_custom_record_is_preserved_as_one_quoted_argument(self):
         name = '.warlock-contributor/alternate record;touch sentinel.json'
         self.cli('--record', name, 'start', '--owner', 'contributor')

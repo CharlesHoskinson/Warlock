@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "atUTC": "2026-10-08T02:44:54.494818+00:00",
+  "requirements": [
+    "ELM-UI-004"
+  ],
+  "scenarios": [
+    "taskbar-inactive",
+    "taskbar-active",
+    "taskbar-minimized"
+  ],
+  "sourceRevisionBefore": "761b254344693b39caf97685f35dc2f2d923a779",
+  "sourceHashes": {
+    "implementation/warlock/src/Taskbar.elm": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb",
+    "implementation/warlock/src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+    "implementation/warlock/src/Surface.elm": "0efbff8f127a529330237a493da2e353863da78343bcdeeed8ae63a8a987749b",
+    "implementation/warlock/src/Desktop.elm": "63bcac5e0ad15f18d20ea233c38f28c8425459275e977068e406f8c3a3360448",
+    "implementation/warlock/native/authority.cpp": "5ba7996e4bb6606f10e03ad334d0fff8ab433807cf5f1da14099250cd8e78101",
+    "implementation/warlock/native/host.c": "d5418c9cf5d6e296ac001c4c6192bd734277fdc88b7fcf64e9dd5fabeddda801",
+    "implementation/warlock/native/shared-host.c": "603961b58810985097a8060818be054025dba6138eeeaf31e00e275fc2a7f5ee",
+    "implementation/warlock/qa/native-window-feedback.py": "f0b55db9538f942b2df62161ba3920ef3887179648fdd1414ab0ad819d66cd1a",
+    "implementation/warlock/qa/check-search.py": "8a6092a634fd6e79957d8fa4d045f7fe14ef5d1cc2c8e2f89c774e96c1d2e87e",
+    "implementation/warlock/qa/current-search-build.json": "617125fc3ce37f6817ad8c7cc1b548b31ec41e41cb86e51f6593b643f5101ed5",
+    "implementation/warlock/qa/check-native-authority.py": "c1b36b2225f76a1b42666c05c7f627e705ac75403810ffa0995a58937021aaed",
+    "implementation/warlock/qa/current-native-pair.json": "86fcde1bd6129483624e37bd0898e8a0464ff500c4acc6185347a4d1a95d6d7d",
+    "implementation/warlock/assets/elm.js": "0c823a1635245116b69522e45d46c83b01b43ea2a6482a306cab562826bcfce8",
+    "implementation/warlock/assets/bar.js": "8cbd65ef673c71ea3c420176440776cf44bb9edf70a18933839adb7c3ad72a97",
+    "implementation/warlock/assets/popup.js": "a44f1caa745e99d7e8049134f1efc6081ccc1e9c531b5049a800c5ffe80a3b0a"
+  },
+  "artifacts": [
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-primary/component-report.json",
+      "sha256": "fbf8b25a230207e802c5fc636ce59969762c38115fd0e6429e86df0f459714b6"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-primary/native-report.json",
+      "sha256": "64778f078848b831a588f34704359e7fdc17232b6cb5e042e6b493c16f30130d"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-primary/InactiveActivation.png",
+      "sha256": "9a5c911b7bbe409b1de05bbf10e30b0988270a9a9bc9b9650fb6c0bc423c65b7"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-primary/ActiveMinimizeToMRU.png",
+      "sha256": "ea7fb1179deb6cda1eceffe0f2ba1d65e65ef21367364ce3f633e9f55ac61569"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-primary/MinimizedRestore.png",
+      "sha256": "1db84ca9c557d1dcaeaf78b2f5756a7d6c2ffaff158b48c67398572b772811de"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-primary/ActiveMinimizeToDesktop.png",
+      "sha256": "fb7a0582712a917355f45ca10597a9c958937621b2d9b96ea715896bf52349db"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-primary/DesktopRestore.png",
+      "sha256": "5f754316a48afe9d2349dba3f064e5794822fdade21edc2de0aaf47caa59c7d0"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-primary/source-delta.patch",
+      "sha256": "aa75d48dd51df86aea40121f3e72db0246b34c886d1a22e2050710b0fd850fc3"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-primary/report-index.json",
+      "sha256": "c0718e6f4b1b3f30c0c466a3de8100c0ea873df1b8e2a6d544db322ea8f478bc"
+    }
+  ],
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791424194221212572/Hyprland",
+      "sha256": "d33564c40106bda01fdfb9cc2fdedfe791abb7b2c4744469d64228f0bd4ac105"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791424217295022348/elm-window-geometry-authority.so",
+      "sha256": "649dac1d070ea5995603de5a261e4a53271302dc16dd6aeb73d8ae535cd2fc3b"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791427120700892868/elm-host",
+    "sha256": "65dbe7ea443d1bd00df9144871388eb7e27ca4b0086b2da086e9a14e7c3f3e44",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791427120700892868/report.json",
+    "heldBuildSHA256": "fbf8b25a230207e802c5fc636ce59969762c38115fd0e6429e86df0f459714b6"
+  },
+  "runnerSHA256": "f0b55db9538f942b2df62161ba3920ef3887179648fdd1414ab0ad819d66cd1a",
+  "observations": {
+    "implemented": "Single-family taskbar detail now shows admitted Active/Minimized/Open state; group entries retain a window count; Pending/Unknown correlation text remains separate.",
+    "native": "Pointer activation, minimize-to-MRU, restore, minimize-to-desktop and restore from desktop pass with one identity-bound Committed native receipt each, actual green-window presence/absence and actual GTK key recipient; no duplicate launch or membership/output change.",
+    "negative": "With both applications minimized, desktop/no-application focus is observed and neither minimized process receives injected keys.",
+    "presentation": "Current state label/button geometry, actual text pixels and captured native frames checked; two current frames inspected by owner.",
+    "component": "Three actual Elm roots and existing search replay compile/run; unchanged host source/binary referenced and existing host self-tests pass."
+  },
+  "missingObservations": [
+    "Native primary keyboard entry/activation and applicable assistive-technology fixtures remain open. GTK key-recipient tests after pointer actions do not qualify keyboard taskbar activation.",
+    "Independent original-scenario reviewer disposition remains open.",
+    "Other primary cases, group/menu/overflow and full release qualification remain separate."
+  ],
+  "accepted": false,
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "reviewer": "root-taskbar-primary; owner observation, independent acceptance pending",
+  "beforeByReference": {
+    "report": "implementation/warlock/qa/runs/native-primary-1791426798338455712/report.json",
+    "sha256": "7ad94142ace10b03ca58755bd77e583aa011964edf5122a839ea93b9e2a1e452",
+    "scope": "Before state label change, original pointer primary actions already pass; no new effect-policy implementation claimed."
+  }
+}
