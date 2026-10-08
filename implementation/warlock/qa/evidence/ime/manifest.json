@@ -1,0 +1,150 @@
+{
+  "schema": 1,
+  "owner": "root-shell-ime",
+  "observedUTC": "2026-10-08T18:13:28.300621+00:00",
+  "requirements": [
+    "ELM-UX-028"
+  ],
+  "scenarios": [
+    "ime-spike-commit",
+    "ime-spike-cancel"
+  ],
+  "originals": [
+    {
+      "requirement": "ELM-UX-028",
+      "verification": "Elm replay assertion and isolated native recording: one committed query appears and preedit is not dispatched as a launch.",
+      "scenarios": [
+        {
+          "name": "ime-spike-commit",
+          "given": "a minimal shell text field on the candidate native host has IME focus",
+          "when": "preedit and candidate selection commit",
+          "then": "one text string appears with correct caret and no application launch is caused"
+        },
+        {
+          "name": "ime-spike-cancel",
+          "given": "the minimal candidate-host field holds preedit",
+          "when": "composition is cancelled",
+          "then": "preedit clears without committed text or unintended effect"
+        }
+      ]
+    }
+  ],
+  "scope": "Integrated explicit typed popup composition start/end, same-field preedit retention, one coalesced committed query, no query on cancellation and retirement on field replacement/closure. Actual replay/browser lifecycle and meaningful stale/field cases pass. Actual private installed Fcitx/GTK/WebKit trusted field preedit and direct Unicode commit with correct caret and no launch/window action pass; normal native launcher filtering/refusal/no-match remains intact. Full original candidate commit and native cancellation remain unverified.",
+  "sourceBaseRevision": "683339ef7b1bfa2cd08cb52454b5bb65a2d061da",
+  "publicBaseRevision": "851e9b114b36e2a35fcc20fee754e2d877102970",
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+      "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791477973836253029/elm-window-geometry-authority.so",
+      "sha256": "216c5cce257eaff5d063285d44df6ac20090f285064c9681fac6213e414b0d1c"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/ime-1791482631264803513/elm-host",
+    "sha256": "df2d1b62a68f3ec8ed8e6993d9f473d34c14eb0c4064e9e52ac5b90c3b8a829e",
+    "heldBuild": "implementation/warlock/qa/runs/ime-1791482631264803513/report.json",
+    "heldBuildSHA256": "920aebcfa6b411b820cb5c8f6babff6423794b23208eb2e684ef6823c3d49610"
+  },
+  "compiledAssets": {
+    "elm.js": "03b9824b04255dfba42c90f0c8e279680a8f84911254b4cd0e781555cac09033",
+    "bar.js": "4bc147fe924ac897a32373a3602cba858ec5a23a8d0581e4be240191a9b28a47",
+    "popup.js": "0ad005321b89a014989c887ff393786947b0bf156337af43cd0afb2ca95147a3"
+  },
+  "observedChecks": {
+    "compiledIme": 12,
+    "browser": 10,
+    "nativeFieldCommitCampaign": 32,
+    "nativeLauncherRegression": 35
+  },
+  "nativeFieldPreeditAndDirectCommitObserved": true,
+  "nativeCandidateCampaignPassed": false,
+  "nativeCancelObserved": false,
+  "nativeLauncherCampaignPassed": true,
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "missingObservations": [
+    "Original ime-spike-commit requires actual native candidate interaction as well as the field/caret/no-launch observations. Trusted GTK/WebKit direct field preedit and one Unicode commit passed, but external candidate-panel inspection expired at the unchanged six-second candidate_layers deadline. No candidate traversal/commit or candidate-panel presentation acceptance is inferred.",
+    "Original ime-spike-cancel native interval was not reached after the candidate barrier failed; actual compiled/browser cancellation passes only at component level. Both native attempts are preserved and no third IME campaign qualified these scenarios.",
+    "Native Files-field/other input-method languages, independent original scenario/requirement acceptance, full release AT/hardware/resource/journey/package/deployment obligations remain open."
+  ],
+  "stopDisposition": "Two consecutive qualification-only native attempts ended candidate-panel investigation. Preserve original deadlines and failed reports; next mandatory slice is original UX018 guarded Task View workspace transfer. The changed query pipeline receives one proportional existing native launcher/refusal regression, not a third IME attempt.",
+  "imeFixture": {
+    "binary": "/usr/bin/fcitx5",
+    "binarySHA256": "2fee902f79e2277d89e6b71ac371f760d74fd946b712958e17333449608757bc",
+    "gtkModule": "/usr/lib/gtk-3.0/3.0.0/immodules/im-fcitx5.so",
+    "gtkModuleSHA256": "d2ccb0c7acb9bdf2233beae3bf0db5df1f7cf669c01f182e903681b20f39a74f",
+    "profile": "/run/user/1000/wqa/bce5/config/fcitx5/profile",
+    "profileSHA256": "9a8fbabf1eecd73e5dc1d6961b896014a1f37dfcc3a606b0c9503dbf6f27df8f",
+    "sessionBus": "unix:path=/run/user/1000/wqa/bce5/bus",
+    "systemBusRemainsRefusing": true,
+    "installedAddonsSelected": [
+      "dbus",
+      "dbusfrontend",
+      "keyboard",
+      "unicode",
+      "classicui",
+      "wayland"
+    ],
+    "sourceReference": "https://fcitx-im.org/wiki/Tips_and_Tricks",
+    "nativeIMEObserved": false
+  },
+  "sourceReferences": [
+    "https://fcitx-im.org/wiki/Tips_and_Tricks",
+    "https://raw.githubusercontent.com/fcitx/fcitx5/5.1.22/src/modules/unicode/unicodetempmode.cpp"
+  ],
+  "fixtureChangesAfterComponentSnapshot": {
+    "qa/native-window-feedback.py": {
+      "captured": "a6e281f6ef6e78683ca9a9c80fd84539d41b9231ada9e006f9c225e8801753ee",
+      "current": "35bf0b7b5489ede6ccd74b011ba33e4d5ed5ced410bc1434c14b92df1fe6418f",
+      "reason": "Only original native fixture refined after the successful component snapshot; product sources and assets remain exactly tested."
+    }
+  },
+  "failedComponentReportsByReference": [
+    {
+      "path": "implementation/warlock/qa/runs/ime-1791482428795471220/report.json",
+      "sha256": "7c0cc2fa214ed781a134fd1dcece12a14d055aea75a70cf5b89c30f92dea6f2c"
+    },
+    {
+      "path": "implementation/warlock/qa/runs/ime-1791482557432955576/report.json",
+      "sha256": "eab14331b38e5bcebed3dab7442ca7a156eb45733bb0fb03e48400d900cf84e3"
+    }
+  ],
+  "sources": {
+    "implementation/warlock/src/Popup.elm": "d50f0a876c9885fb9e082d24ba6676bc72e0f53c7510e0e04fa74b5a77a47b2a",
+    "implementation/warlock/src/SurfaceRenderer.elm": "5c7076b6398c0fd1604a4e4e434ca01bd15a7a08d0992295308d87b7bef6e9c6",
+    "implementation/warlock/assets/popup-adapter.js": "d89bfcf939321c7d7e1859bc27c299a62ec2f15bfcf3b539fc66d6908e68e3b4",
+    "implementation/warlock/qa/ImeReplay.elm": "41a92f4ff4cb5fca34fe2c510c87edfeb3ed8649abf245c941d01d19aa01e9b8",
+    "implementation/warlock/qa/ime-browser.mjs": "a979c2e12e1edd10b6240bc1721e7f7561a42910e37d27a50634e16f712544fa",
+    "implementation/warlock/qa/check-search.py": "0026101cf165ed8d8951d4444813104a3d8c0d2a53e6afc64ba64cc94d540e72",
+    "implementation/warlock/qa/native-window-feedback.py": "35bf0b7b5489ede6ccd74b011ba33e4d5ed5ced410bc1434c14b92df1fe6418f",
+    "implementation/warlock/README.md": "0b0377ba17a144ecbd53cfc0c6be4466adf6550cc9bba2fe1a11cb100fe850df",
+    "implementation/warlock/assets/elm.js": "03b9824b04255dfba42c90f0c8e279680a8f84911254b4cd0e781555cac09033",
+    "implementation/warlock/assets/bar.js": "4bc147fe924ac897a32373a3602cba858ec5a23a8d0581e4be240191a9b28a47",
+    "implementation/warlock/assets/popup.js": "0ad005321b89a014989c887ff393786947b0bf156337af43cd0afb2ca95147a3",
+    "implementation/warlock/qa/current-search-build.json": "b5bbbeca83b743a70ef362a65d01d5223e4cc7bbbc916ace73d1399ac17debb3"
+  },
+  "artifacts": {
+    "component-report.json": "920aebcfa6b411b820cb5c8f6babff6423794b23208eb2e684ef6823c3d49610",
+    "native-field-commit-candidate-failure.json": "4a67dd80cd381d1d1a0d5c80dd5dbd6319140d612cb9df4c19ad558b3d1772c0",
+    "native-launcher-regression.json": "33d155f483a0e62836ef202660b1cddb6bb7f6501b5b9b0ab164ecfaa5ccb2eb",
+    "browser-report.json": "9eaa793cca5dbe741de90c24e1ecb858de64848f494407fc01aabd2b117554d8",
+    "ime.json": "f8b94b953205e43f5ca876c1315a58577dda0178cfbcd3f2510e83923138676b",
+    "typed-ime.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ime-committed-query.png": "c218fc2e89dba81b5a0cfe8957adcf54fcde15c02f18a1101ba562ebd5327f0a",
+    "native-field-preedit.png": "9832b86d4d093b81af6f8dd6a638122930ea51399dbff50de498b63eaf2cd1bb",
+    "native-field-committed.png": "2c3ff05a6300ecdbbdb168620fc57710e22f63d3376ce06294b4d5bf1671ff0b",
+    "failed-search-preedit-assumption.json": "113dfa7e48cd0d9aa7147af60fcefa8314eed750cbef78277ac7cc101da0fa96",
+    "failed-search-preedit-engine.log": "cb947b4f388090cf04fdef2b5ad4a6af444bfc5ffe598a34c83d87b4e829f5d8",
+    "direct-preedit-candidate-unverified-engine.log": "22efdb9cab8f726c67ef48574a027b285799208c0d78dd7d794e401ba707e326",
+    "source.patch": "585973823495277ff3b1d14d212ad268b3759d8e5914778081ffbb5fbda09cb3"
+  }
+}

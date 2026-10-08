@@ -250,3 +250,16 @@ rerun after the AAR stop threshold. See `qa/evidence/accessibility/manifest.json
 for the exact failed observations and source tuple. `--accessibility` uses
 explicitly owned nonactivating session/AT buses and a private Orca home; its
 silent speech adapter cannot establish audible or braille acceptance.
+
+Shell text fields now have explicit composition start/end state. Same-field
+observations preserve preedit, final input is coalesced with the explicit
+commit, cancellation restores the prior text without submitting a query, and
+closing or replacing a field retires its local composition. Original mutation
+and native admission authority are unchanged. `--ime` component checks cover
+the actual popup and the typed lifecycle. Private native Fcitx/GTK/WebKit
+recording observes trusted field preedit and one direct Unicode commit with
+correct caret and no launch/window effect; the normal launcher filtering and
+refusal journey also passes. Candidate-panel traversal/commit and cancellation
+remain unverified after the two-attempt stop threshold. See
+`qa/evidence/ime/manifest.json`; no complete UX028 or release acceptance is
+claimed from the direct-input interval.

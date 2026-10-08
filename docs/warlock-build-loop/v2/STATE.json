@@ -1,13 +1,85 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-08T17:46:51.054844+00:00",
+  "updatedUTC": "2026-10-08T18:13:28.300621+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "actual-shell-ime",
+    "requirements": [
+      "ELM-UX-028"
+    ],
+    "scenarios": [
+      "ime-spike-commit",
+      "ime-spike-cancel"
+    ],
+    "paths": [
+      "implementation/warlock/src/Popup.elm",
+      "implementation/warlock/src/SurfaceRenderer.elm",
+      "implementation/warlock/assets/popup-adapter.js",
+      "implementation/warlock/qa/ImeReplay.elm",
+      "implementation/warlock/qa/ime-browser.mjs",
+      "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/README.md",
+      "implementation/warlock/assets/elm.js",
+      "implementation/warlock/assets/bar.js",
+      "implementation/warlock/assets/popup.js",
+      "implementation/warlock/qa/current-search-build.json"
+    ],
+    "before": "Composition begins only at the first composing input; preedit overlay can be cleared by an unrelated presentation, composition can carry between launcher and Files, and compositionend plus final input can dispatch duplicate queries. Native IME commit/candidate/cancel has not been observed.",
+    "after": "The existing popup owns typed composition start/end state for its current text field, preserves native preedit across same-field updates, coalesces the committed query and suppresses unintended actions; actual isolated installed Fcitx composition and candidate commit/cancel are verified without main desktop changes.",
+    "verification": [
+      "Compile actual Elm roots and replay current field lifecycle/duplicate/no-effect guards; browser actual compiled start/preedit/refresh/end/input/cancel/field-retirement. Original isolated native IME preedit/candidate commit and cancellation under unchanged six-second observations and physical input, with private Fcitx/GTK module provenance. Independent acceptance remains separate."
+    ],
+    "status": "completed-partial",
+    "evidence": {
+      "path": "implementation/warlock/qa/evidence/ime/manifest.json",
+      "sha256": "f1b3630760dff369ec5ead8d6e5a394da8d7760d26b1959b57837fc8dd4e32c7",
+      "scope": "Integrated explicit typed popup composition start/end, same-field preedit retention, one coalesced committed query, no query on cancellation and retirement on field replacement/closure. Actual replay/browser lifecycle and meaningful stale/field cases pass. Actual private installed Fcitx/GTK/WebKit trusted field preedit and direct Unicode commit with correct caret and no launch/window action pass; normal native launcher filtering/refusal/no-match remains intact. Full original candidate commit and native cancellation remain unverified.",
+      "sourceRevision": "683339ef7b1bfa2cd08cb52454b5bb65a2d061da",
+      "sourceTuple": {
+        "core": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+          "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+        },
+        "plugin": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791477973836253029/elm-window-geometry-authority.so",
+          "sha256": "216c5cce257eaff5d063285d44df6ac20090f285064c9681fac6213e414b0d1c"
+        },
+        "aquamarine": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+          "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+        }
+      },
+      "reviewerDisposition": "Owner-observed component lifecycle and direct native field preedit/commit plus launcher regression; original candidate/cancel and independent acceptance remain open."
+    },
+    "observed": "Integrated explicit typed popup composition start/end, same-field preedit retention, one coalesced committed query, no query on cancellation and retirement on field replacement/closure. Actual replay/browser lifecycle and meaningful stale/field cases pass. Actual private installed Fcitx/GTK/WebKit trusted field preedit and direct Unicode commit with correct caret and no launch/window action pass; normal native launcher filtering/refusal/no-match remains intact. Full original candidate commit and native cancellation remain unverified.",
+    "missingObservations": [
+      "Original ime-spike-commit requires actual native candidate interaction as well as the field/caret/no-launch observations. Trusted GTK/WebKit direct field preedit and one Unicode commit passed, but external candidate-panel inspection expired at the unchanged six-second candidate_layers deadline. No candidate traversal/commit or candidate-panel presentation acceptance is inferred.",
+      "Original ime-spike-cancel native interval was not reached after the candidate barrier failed; actual compiled/browser cancellation passes only at component level. Both native attempts are preserved and no third IME campaign qualified these scenarios.",
+      "Native Files-field/other input-method languages, independent original scenario/requirement acceptance, full release AT/hardware/resource/journey/package/deployment obligations remain open."
+    ],
+    "investigationStopped": true
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "actual-surface-accessibility",
     "requirements": [
       "ELM-UX-025"
@@ -64,84 +136,6 @@
       "Independent original-scenario/requirement acceptance, applicable audible/braille/IME and full release hardware/resource/journey/package/deployment obligations remain open."
     ],
     "investigationStopped": true
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "high-contrast-appearance",
-    "requirements": [
-      "ELM-UX-027"
-    ],
-    "scenarios": [
-      "ux-027"
-    ],
-    "paths": [
-      "implementation/warlock/src/Settings.elm",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/adapter/shell_preferences.py",
-      "implementation/warlock/assets/shell.css",
-      "implementation/warlock/assets/appearance.js",
-      "implementation/warlock/assets/bar-adapter.js",
-      "implementation/warlock/assets/popup-adapter.js",
-      "implementation/warlock/qa/SettingsReplay.elm",
-      "implementation/warlock/qa/check-settings.py",
-      "implementation/warlock/qa/settings-browser.mjs",
-      "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/README.md",
-      "implementation/warlock/assets/elm.js",
-      "implementation/warlock/assets/bar.js",
-      "implementation/warlock/assets/popup.js",
-      "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/native/surface.h",
-      "implementation/warlock/native/surface-test.c",
-      "implementation/warlock/native/host.c"
-    ],
-    "before": "Committed appearance provides only Night and Dawn; the shell lacks an explicit high-contrast fixture and readable enlarged focused controls cannot be verified in that mode.",
-    "after": "A typed High contrast theme can be saved, applied across bar/popups and restored after restart, with clear content/borders/state/focus cues at supported text sizes and actual native controls.",
-    "verification": [
-      "Compile changed Elm roots and committed-theme replay; real private store CAS/restart/invalid-theme checks; measured browser contrast/focus/reachability in Night, Dawn, High contrast and forced colors; isolated native settings/taskbar pixels, enlarged focus traversal and saved-theme restart. Full all-surface original and independent acceptance remain separate."
-    ],
-    "status": "completed-partial",
-    "evidence": {
-      "path": "implementation/warlock/qa/evidence/high-contrast/manifest.json",
-      "sha256": "43fec26e2a8fb1564fdf52d0f7ab468d40db2940352b96cea988b98cbd96f6b6",
-      "scope": "Integrated persistent typed High contrast appearance with one native theme admission predicate for frames and requests, white-on-black content, inset yellow focus and cyan/amber state bands. Current physical native High contrast 150% saved/restarted Settings and taskbar pass, with actual focus glyph/outline pixels and separate Dawn compatibility journey. Actual compiled Settings browser fixtures cover all three themes at all four text sizes plus forced colors. All-surface native original acceptance remains partial.",
-      "sourceRevision": "caa19bf143ce408adbcd028c2e6f721cb8cd8233",
-      "sourceTuple": {
-        "core": {
-          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
-          "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
-        },
-        "plugin": {
-          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791477973836253029/elm-window-geometry-authority.so",
-          "sha256": "216c5cce257eaff5d063285d44df6ac20090f285064c9681fac6213e414b0d1c"
-        },
-        "aquamarine": {
-          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
-          "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
-        }
-      },
-      "reviewerDisposition": "Owner-observed native Settings/taskbar and component theme/scale fixtures only; independent original all-surface acceptance remains open."
-    },
-    "observed": "Integrated persistent typed High contrast appearance with one native theme admission predicate for frames and requests, white-on-black content, inset yellow focus and cyan/amber state bands. Current physical native High contrast 150% saved/restarted Settings and taskbar pass, with actual focus glyph/outline pixels and separate Dawn compatibility journey. Actual compiled Settings browser fixtures cover all three themes at all four text sizes plus forced colors. All-surface native original acceptance remains partial.",
-    "missingObservations": [
-      "Original ux-027 still requires native readable-label/focus/hit-target coverage across every migrated shell surface and every supported theme/text-scale fixture. Current physical evidence covers Settings and taskbar with Night defaults, High contrast at 150% and a separate Dawn 150% restart journey; the 12-fixture matrix and forced colors are browser component evidence.",
-      "Applicable native AT/speech/braille consumers and independent original-scenario acceptance remain open.",
-      "Full-release hardware/resource/journey/package/deployment gates remain open."
-    ]
   },
   "recentSlices": [
     {
@@ -574,14 +568,15 @@
     }
   ],
   "nextOriginalSlice": {
-    "id": "actual-shell-ime",
+    "id": "task-view-workspace-transfer",
     "requirements": [
-      "ELM-UX-028"
+      "ELM-UX-018"
     ],
     "scenarios": [
-      "ime-spike-commit",
-      "ime-spike-cancel"
+      "ux-018",
+      "transfer-refused",
+      "transfer-accepted"
     ],
-    "reason": "Mandatory actual preedit/candidate commit/cancel verification for the chosen host and shell field; independent from the stopped AT inspector investigation."
+    "reason": "Mandatory guarded Task View workspace transfer through correlated native acceptance/refusal; independent of the stopped AT/IME fixture investigations."
   }
 }

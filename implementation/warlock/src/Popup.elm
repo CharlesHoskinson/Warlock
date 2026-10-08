@@ -1,8 +1,8 @@
-port module Popup exposing (main)
+port module Popup exposing (main, Model, Msg(..), Composition(..), initial, update)
 
 import Browser
 import Html exposing (div, text)
-import Html.Events exposing (on)
+import Html.Attributes exposing (attribute)
 import Json.Decode as D
 import Json.Encode as E
 import RetainedPreviewPresenter as Preview
@@ -24,32 +24,67 @@ port nativePreviewIssued : (D.Value -> msg) -> Sub msg
 port nativePreviewRetry : (D.Value -> msg) -> Sub msg
 
 type Msg = Present D.Value | Action E.Value | NativePreview D.Value | NativeGrant D.Value | NativeQuarantine D.Value | NativeClosed D.Value | NativeIssued D.Value | NativeRetry D.Value
-type alias Model = { presentation : Presentation.Model, previews : Preview.Model, pendingQuery : Maybe String, composing : Bool }
+type Composition = Idle | Preediting { baseline : String, before : Maybe String }
+type alias Model = { presentation : Presentation.Model, previews : Preview.Model, pendingQuery : Maybe String, composition : Composition, lastQuery : Maybe (String, UInt64.Counter, UInt64.Counter) }
+
+initial : Model
+initial = {presentation=Presentation.initial,previews=Preview.initial,pendingQuery=Nothing,composition=Idle,lastQuery=Nothing}
+
+isComposing : Model -> Bool
+isComposing model = model.composition/=Idle
 
 main : Program () Model Msg
 main = Browser.element
-    { init=\_ -> ({presentation=Presentation.initial,previews=Preview.initial,pendingQuery=Nothing,composing=False},Cmd.none)
+    { init=\_ -> (initial,Cmd.none)
     , subscriptions=\_ -> Sub.batch [presentation Present,requestAction Action,nativePreviews NativePreview,nativePreviewGrants NativeGrant,nativePreviewQuarantine NativeQuarantine,nativePreviewClosed NativeClosed,nativePreviewIssued NativeIssued,nativePreviewRetry NativeRetry]
-    , view=\model -> Presentation.current model.presentation |> Maybe.map (\snapshot -> SurfaceRenderer.viewWithPreview (\identity -> Preview.image snapshot identity model.previews) True Action (model.pendingQuery |> Maybe.map (\query -> SurfaceRenderer.pendingQuery query snapshot) |> Maybe.withDefault snapshot)) |> Maybe.withDefault (text "")
-    , update=\message model -> case message of
+    , view=\model -> div [attribute "data-input-composing" (if isComposing model then "true" else "false")] [Presentation.current model.presentation |> Maybe.map (\snapshot -> SurfaceRenderer.viewWithPreview (\identity -> Preview.image snapshot identity model.previews) True Action (model.pendingQuery |> Maybe.map (\query -> SurfaceRenderer.pendingQuery query snapshot) |> Maybe.withDefault snapshot)) |> Maybe.withDefault (text "")]
+    , update=update
+    }
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update message model =
+    case message of
         Action value ->
-            if D.decodeValue (D.field "kind" D.string) value |> Result.map (\kind -> List.member kind ["surface-query","surface-preedit"]) |> Result.withDefault False then
+            let kind=D.decodeValue (D.field "kind" D.string) value |> Result.withDefault ""
+                sendQuery query wire current =
+                    let key=Presentation.current current.presentation |> Maybe.map (\snapshot -> (query,SurfaceRenderer.publication snapshot,SurfaceRenderer.lease snapshot))
+                        unchanged=Presentation.current current.presentation |> Maybe.andThen SurfaceRenderer.queryValue |> (==) (Just query)
+                        duplicate=key/=Nothing && key==current.lastQuery
+                    in ({current | pendingQuery=if unchanged then Nothing else Just query,lastQuery=key},if unchanged || duplicate then Cmd.none else actions wire)
+                before = {baseline=model.pendingQuery |> Maybe.withDefault (Presentation.current model.presentation |> Maybe.andThen SurfaceRenderer.queryValue |> Maybe.withDefault ""),before=model.pendingQuery}
+            in if List.member kind ["surface-query","surface-preedit","surface-composition-start","surface-composition-end"] then
                 case Presentation.editQuery value model.presentation of
                     Just (query,wire) ->
-                        let composing = D.decodeValue (D.field "kind" D.string) value==Ok "surface-preedit"
-                        in ({model | pendingQuery=Just query,composing=composing},if composing then Cmd.none else actions wire)
+                        if kind=="surface-composition-start" then
+                            ({model | composition=Preediting {baseline=query,before=model.pendingQuery},pendingQuery=Just query},Cmd.none)
+                        else if kind=="surface-composition-end" then
+                            case model.composition of
+                                Idle -> (model,Cmd.none)
+                                Preediting held ->
+                                    if query==held.baseline then
+                                        ({model | composition=Idle,pendingQuery=held.before |> Maybe.andThen (\prior -> if (Presentation.current model.presentation |> Maybe.andThen SurfaceRenderer.queryValue)==Just prior then Nothing else Just prior)},Cmd.none)
+                                    else sendQuery query wire {model | composition=Idle}
+                        else if kind=="surface-preedit" || isComposing model then
+                            ({model | composition=if isComposing model then model.composition else Preediting before,pendingQuery=Just query},Cmd.none)
+                        else sendQuery query wire model
                     Nothing -> (model,Cmd.none)
-            else if (model.pendingQuery/=Nothing || model.composing) && (D.decodeValue (D.field "id" D.string) value |> Result.map (\identity -> String.startsWith "entry:" identity || identity=="files:open-path" || identity=="files:home" || String.startsWith "files:collection:" identity) |> Result.withDefault False) then (model,Cmd.none)
+            else if isComposing model || (model.pendingQuery/=Nothing && (D.decodeValue (D.field "id" D.string) value |> Result.map (\identity -> String.startsWith "entry:" identity || identity=="files:open-path" || identity=="files:home" || String.startsWith "files:collection:" identity) |> Result.withDefault False)) then (model,Cmd.none)
             else (model,Presentation.dispatch True value model.presentation |> Maybe.map actions |> Maybe.withDefault Cmd.none)
         Present raw ->
             let acceptedPresentation = Presentation.accept raw model.presentation
                 (previews,commands) = Preview.present (Presentation.current acceptedPresentation) model.previews
-                pending = model.pendingQuery |> Maybe.andThen (\query -> case Presentation.current acceptedPresentation of
-                    Just snapshot -> if List.member (SurfaceRenderer.mode snapshot) ["applications","files"] && SurfaceRenderer.queryValue snapshot/=Just query then Just query else Nothing
+                sameField = case (Presentation.current model.presentation,Presentation.current acceptedPresentation) of
+                    (Just old,Just next) -> List.member (SurfaceRenderer.mode next) ["applications","files"] && SurfaceRenderer.mode old==SurfaceRenderer.mode next && SurfaceRenderer.enabled True (SurfaceRenderer.fieldIdentity next) next
+                    _ -> False
+                composition = if sameField then model.composition else Idle
+                composing = composition/=Idle
+                pending = if not sameField then Nothing else if composing then model.pendingQuery else model.pendingQuery |> Maybe.andThen (\query -> case Presentation.current acceptedPresentation of
+                    Just snapshot -> if SurfaceRenderer.queryValue snapshot/=Just query then Just query else Nothing
                     Nothing -> Nothing)
-                composing = model.composing && (Presentation.current acceptedPresentation |> Maybe.map (\snapshot -> List.member (SurfaceRenderer.mode snapshot) ["applications","files"]) |> Maybe.withDefault False)
-                queryCommand = if composing then Cmd.none else pending |> Maybe.andThen (\query -> Presentation.query query acceptedPresentation) |> Maybe.map actions |> Maybe.withDefault Cmd.none
-            in ({presentation=acceptedPresentation,previews=previews,pendingQuery=pending,composing=composing},Cmd.batch [previewCommands commands,queryCommand])
+                key = pending |> Maybe.andThen (\query -> Presentation.current acceptedPresentation |> Maybe.map (\snapshot -> (query,SurfaceRenderer.publication snapshot,SurfaceRenderer.lease snapshot)))
+                queryCommand = if composing || key==model.lastQuery then Cmd.none else pending |> Maybe.andThen (\query -> Presentation.query query acceptedPresentation) |> Maybe.map actions |> Maybe.withDefault Cmd.none
+                lastQuery = if not sameField then Nothing else if composing || pending==Nothing then model.lastQuery else key
+            in ({presentation=acceptedPresentation,previews=previews,pendingQuery=pending,composition=composition,lastQuery=lastQuery},Cmd.batch [previewCommands commands,queryCommand])
         NativePreview raw ->
             let (previews,commands) =
                     case D.decodeValue Realm.envelopeDecoder raw of
@@ -69,4 +104,3 @@ main = Browser.element
         NativeClosed raw ->
             let previews = D.decodeValue Realm.domainDecoder raw |> Result.toMaybe |> Maybe.andThen (\domain -> Preview.closeRealm domain model.previews) |> Maybe.withDefault model.previews
             in ({model | previews=previews},Cmd.none)
-    }

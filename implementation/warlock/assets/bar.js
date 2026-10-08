@@ -6017,59 +6017,67 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 							['applications', 'files'])) && _Utils_eq(
 						item.J,
 						$author$project$SurfaceRenderer$fieldIdentity(current)))) {
-						var event = A2(
-							$elm$json$Json$Decode$andThen,
-							function (_v2) {
-								var query = _v2.a;
-								var composing = _v2.b;
-								return $elm$json$Json$Decode$succeed(
-									send(
-										$elm$json$Json$Encode$object(
-											_List_fromArray(
-												[
-													_Utils_Tuple2(
-													'surfaceProtocol',
-													$elm$json$Json$Encode$int(2)),
-													_Utils_Tuple2(
-													'kind',
-													$elm$json$Json$Encode$string(
-														composing ? 'surface-preedit' : 'surface-query')),
-													_Utils_Tuple2(
-													'surface',
-													$elm$json$Json$Encode$string('popup')),
-													_Utils_Tuple2(
-													'publication',
-													$elm$json$Json$Encode$string(
-														$author$project$UInt64$string(snapshot.V))),
-													_Utils_Tuple2(
-													'lease',
-													$elm$json$Json$Encode$string(
-														$author$project$UInt64$string(snapshot.Z))),
-													_Utils_Tuple2(
-													'id',
-													$elm$json$Json$Encode$string(item.J)),
-													_Utils_Tuple2(
-													'query',
-													$elm$json$Json$Encode$string(query))
-												]))));
-							},
-							A3(
-								$elm$json$Json$Decode$map2,
-								F2(
-									function (query, composing) {
-										return _Utils_Tuple2(query, composing);
-									}),
+						var packet = F2(
+							function (inputKind, query) {
+								return send(
+									$elm$json$Json$Encode$object(
+										_List_fromArray(
+											[
+												_Utils_Tuple2(
+												'surfaceProtocol',
+												$elm$json$Json$Encode$int(2)),
+												_Utils_Tuple2(
+												'kind',
+												$elm$json$Json$Encode$string(inputKind)),
+												_Utils_Tuple2(
+												'surface',
+												$elm$json$Json$Encode$string('popup')),
+												_Utils_Tuple2(
+												'publication',
+												$elm$json$Json$Encode$string(
+													$author$project$UInt64$string(snapshot.V))),
+												_Utils_Tuple2(
+												'lease',
+												$elm$json$Json$Encode$string(
+													$author$project$UInt64$string(snapshot.Z))),
+												_Utils_Tuple2(
+												'id',
+												$elm$json$Json$Encode$string(item.J)),
+												_Utils_Tuple2(
+												'query',
+												$elm$json$Json$Encode$string(query))
+											])));
+							});
+						var edit = A3(
+							$elm$json$Json$Decode$map2,
+							F2(
+								function (query, composing) {
+									return A2(
+										packet,
+										composing ? 'surface-preedit' : 'surface-query',
+										query);
+								}),
+							A2(
+								$elm$json$Json$Decode$at,
+								_List_fromArray(
+									['target', 'value']),
+								$elm$json$Json$Decode$string),
+							$elm$json$Json$Decode$oneOf(
+								_List_fromArray(
+									[
+										A2($elm$json$Json$Decode$field, 'isComposing', $elm$json$Json$Decode$bool),
+										$elm$json$Json$Decode$succeed(false)
+									])));
+						var composition = function (inputKind) {
+							return A2(
+								$elm$json$Json$Decode$map,
+								packet(inputKind),
 								A2(
 									$elm$json$Json$Decode$at,
 									_List_fromArray(
 										['target', 'value']),
-									$elm$json$Json$Decode$string),
-								$elm$json$Json$Decode$oneOf(
-									_List_fromArray(
-										[
-											A2($elm$json$Json$Decode$field, 'isComposing', $elm$json$Json$Decode$bool),
-											$elm$json$Json$Decode$succeed(false)
-										]))));
+									$elm$json$Json$Decode$string));
+						};
 						return A2(
 							$elm$html$Html$input,
 							_List_fromArray(
@@ -6085,8 +6093,15 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 									A2($elm$html$Html$Attributes$attribute, 'data-surface-field', item.J),
 									A2($elm$html$Html$Attributes$attribute, 'autocomplete', 'off'),
 									$elm$html$Html$Attributes$disabled(!item.D),
-									A2($elm$html$Html$Events$on, 'input', event),
-									A2($elm$html$Html$Events$on, 'compositionend', event)
+									A2($elm$html$Html$Events$on, 'input', edit),
+									A2(
+									$elm$html$Html$Events$on,
+									'compositionstart',
+									composition('surface-composition-start')),
+									A2(
+									$elm$html$Html$Events$on,
+									'compositionend',
+									composition('surface-composition-end'))
 								]),
 							_List_Nil);
 					} else {

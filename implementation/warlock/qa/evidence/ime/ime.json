@@ -1,0 +1,808 @@
+{
+  "checks": {
+    "startBlocksBeforeFirstPreedit": true,
+    "preeditNeverMarksQuerySent": true,
+    "sameFieldRefreshPreservesPreedit": true,
+    "MatchingObservationCannotAcknowledgeUnsentPreedit": true,
+    "commitSetsOneCurrentScopedQuery": true,
+    "finalInputDoesNotChangeSentQuery": true,
+    "nativeAcknowledgementClearsPending": true,
+    "cancelClearsPreeditWithoutQuery": true,
+    "oldPublicationCannotCommitComposition": true,
+    "closeRetiresLocalComposition": true,
+    "fieldReplacementDoesNotInheritPreedit": true,
+    "finalInputBeforeEndRemainsPreedit": true
+  },
+  "frame": {
+    "surfaceProtocol": 2,
+    "appearance": {
+      "theme": "night",
+      "textScale": 100
+    },
+    "publication": "1",
+    "lease": "1",
+    "mode": "applications",
+    "status": "Type to search applications.",
+    "bar": [
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:overview",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:overview-opener",
+        "label": "Task View",
+        "ariaLabel": "Open Task View",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:switcher",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:switcher-opener",
+        "label": "Switch windows",
+        "ariaLabel": "Open window switcher",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:notifications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:notifications:opener",
+        "label": "Notifications",
+        "ariaLabel": "Open notifications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:files",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:opener",
+        "label": "Files",
+        "ariaLabel": "Open Files menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:system",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:system:opener",
+        "label": "System",
+        "ariaLabel": "Open system menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:settings",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:settings:opener",
+        "label": "Settings",
+        "ariaLabel": "Open settings",
+        "detail": "",
+        "enabled": true
+      }
+    ],
+    "popup": [
+      {
+        "id": "control:search",
+        "domId": "launcher-search",
+        "label": "",
+        "ariaLabel": "Search applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "control:close",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:close",
+        "label": "Windows",
+        "ariaLabel": "Close applications and return to windows",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "control:refresh",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:refresh",
+        "label": "Refresh",
+        "ariaLabel": "Refresh applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "jump:open:editor",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:jump:open:editor",
+        "label": "Actions for Editor",
+        "ariaLabel": "Actions for Editor",
+        "detail": "Application actions and recent files",
+        "enabled": true
+      },
+      {
+        "id": "pin:editor",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:pin:editor",
+        "label": "Pin Editor",
+        "ariaLabel": "Pin Editor",
+        "detail": "Add to taskbar",
+        "enabled": false
+      },
+      {
+        "id": "entry:editor",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:entry:editor",
+        "label": "Open Editor",
+        "ariaLabel": "Open Editor",
+        "detail": "",
+        "enabled": true
+      }
+    ]
+  },
+  "refreshFrame": {
+    "surfaceProtocol": 2,
+    "appearance": {
+      "theme": "night",
+      "textScale": 100
+    },
+    "publication": "2",
+    "lease": "1",
+    "mode": "applications",
+    "status": "Type to search applications.",
+    "bar": [
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:overview",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:overview-opener",
+        "label": "Task View",
+        "ariaLabel": "Open Task View",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:switcher",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:switcher-opener",
+        "label": "Switch windows",
+        "ariaLabel": "Open window switcher",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:notifications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:notifications:opener",
+        "label": "Notifications",
+        "ariaLabel": "Open notifications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:files",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:opener",
+        "label": "Files",
+        "ariaLabel": "Open Files menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:system",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:system:opener",
+        "label": "System",
+        "ariaLabel": "Open system menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:settings",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:settings:opener",
+        "label": "Settings",
+        "ariaLabel": "Open settings",
+        "detail": "",
+        "enabled": true
+      }
+    ],
+    "popup": [
+      {
+        "id": "control:search",
+        "domId": "launcher-search",
+        "label": "",
+        "ariaLabel": "Search applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "control:close",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:close",
+        "label": "Windows",
+        "ariaLabel": "Close applications and return to windows",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "control:refresh",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:refresh",
+        "label": "Refresh",
+        "ariaLabel": "Refresh applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "jump:open:editor",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:jump:open:editor",
+        "label": "Actions for Editor",
+        "ariaLabel": "Actions for Editor",
+        "detail": "Application actions and recent files",
+        "enabled": true
+      },
+      {
+        "id": "pin:editor",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:pin:editor",
+        "label": "Pin Editor",
+        "ariaLabel": "Pin Editor",
+        "detail": "Add to taskbar",
+        "enabled": false
+      },
+      {
+        "id": "entry:editor",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:entry:editor",
+        "label": "Open Editor",
+        "ariaLabel": "Open Editor",
+        "detail": "",
+        "enabled": true
+      }
+    ]
+  },
+  "equalFrame": {
+    "surfaceProtocol": 2,
+    "appearance": {
+      "theme": "night",
+      "textScale": 100
+    },
+    "publication": "3",
+    "lease": "1",
+    "mode": "applications",
+    "status": "No matching applications. Change your search or Refresh.",
+    "bar": [
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:overview",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:overview-opener",
+        "label": "Task View",
+        "ariaLabel": "Open Task View",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:switcher",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:switcher-opener",
+        "label": "Switch windows",
+        "ariaLabel": "Open window switcher",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:notifications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:notifications:opener",
+        "label": "Notifications",
+        "ariaLabel": "Open notifications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:files",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:opener",
+        "label": "Files",
+        "ariaLabel": "Open Files menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:system",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:system:opener",
+        "label": "System",
+        "ariaLabel": "Open system menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:settings",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:settings:opener",
+        "label": "Settings",
+        "ariaLabel": "Open settings",
+        "detail": "",
+        "enabled": true
+      }
+    ],
+    "popup": [
+      {
+        "id": "control:search",
+        "domId": "launcher-search",
+        "label": "é",
+        "ariaLabel": "Search applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "control:close",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:close",
+        "label": "Windows",
+        "ariaLabel": "Close applications and return to windows",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "control:refresh",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:refresh",
+        "label": "Refresh",
+        "ariaLabel": "Refresh applications",
+        "detail": "",
+        "enabled": true
+      }
+    ]
+  },
+  "nextFrame": {
+    "surfaceProtocol": 2,
+    "appearance": {
+      "theme": "night",
+      "textScale": 100
+    },
+    "publication": "4",
+    "lease": "1",
+    "mode": "applications",
+    "status": "Type to search applications.",
+    "bar": [
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:overview",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:overview-opener",
+        "label": "Task View",
+        "ariaLabel": "Open Task View",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:switcher",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:switcher-opener",
+        "label": "Switch windows",
+        "ariaLabel": "Open window switcher",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:notifications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:notifications:opener",
+        "label": "Notifications",
+        "ariaLabel": "Open notifications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:files",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:opener",
+        "label": "Files",
+        "ariaLabel": "Open Files menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:system",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:system:opener",
+        "label": "System",
+        "ariaLabel": "Open system menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:settings",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:settings:opener",
+        "label": "Settings",
+        "ariaLabel": "Open settings",
+        "detail": "",
+        "enabled": true
+      }
+    ],
+    "popup": [
+      {
+        "id": "control:search",
+        "domId": "launcher-search",
+        "label": "",
+        "ariaLabel": "Search applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "control:close",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:close",
+        "label": "Windows",
+        "ariaLabel": "Close applications and return to windows",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "control:refresh",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:refresh",
+        "label": "Refresh",
+        "ariaLabel": "Refresh applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "jump:open:editor",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:jump:open:editor",
+        "label": "Actions for Editor",
+        "ariaLabel": "Actions for Editor",
+        "detail": "Application actions and recent files",
+        "enabled": true
+      },
+      {
+        "id": "pin:editor",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:pin:editor",
+        "label": "Pin Editor",
+        "ariaLabel": "Pin Editor",
+        "detail": "Add to taskbar",
+        "enabled": false
+      },
+      {
+        "id": "entry:editor",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:entry:editor",
+        "label": "Open Editor",
+        "ariaLabel": "Open Editor",
+        "detail": "",
+        "enabled": true
+      }
+    ]
+  },
+  "ackFrame": {
+    "surfaceProtocol": 2,
+    "appearance": {
+      "theme": "night",
+      "textScale": 100
+    },
+    "publication": "5",
+    "lease": "1",
+    "mode": "applications",
+    "status": "No matching applications. Change your search or Refresh.",
+    "bar": [
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:overview",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:overview-opener",
+        "label": "Task View",
+        "ariaLabel": "Open Task View",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:switcher",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:switcher-opener",
+        "label": "Switch windows",
+        "ariaLabel": "Open window switcher",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:notifications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:notifications:opener",
+        "label": "Notifications",
+        "ariaLabel": "Open notifications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:files",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:opener",
+        "label": "Files",
+        "ariaLabel": "Open Files menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:system",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:system:opener",
+        "label": "System",
+        "ariaLabel": "Open system menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:settings",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:settings:opener",
+        "label": "Settings",
+        "ariaLabel": "Open settings",
+        "detail": "",
+        "enabled": true
+      }
+    ],
+    "popup": [
+      {
+        "id": "control:search",
+        "domId": "launcher-search",
+        "label": "é",
+        "ariaLabel": "Search applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "control:close",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:close",
+        "label": "Windows",
+        "ariaLabel": "Close applications and return to windows",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "control:refresh",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:refresh",
+        "label": "Refresh",
+        "ariaLabel": "Refresh applications",
+        "detail": "",
+        "enabled": true
+      }
+    ]
+  },
+  "closedFrame": {
+    "surfaceProtocol": 2,
+    "appearance": {
+      "theme": "night",
+      "textScale": 100
+    },
+    "publication": "6",
+    "lease": "1",
+    "mode": "closed",
+    "status": "Connecting…",
+    "bar": [
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:overview",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:overview-opener",
+        "label": "Task View",
+        "ariaLabel": "Open Task View",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:switcher",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:switcher-opener",
+        "label": "Switch windows",
+        "ariaLabel": "Open window switcher",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:notifications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:notifications:opener",
+        "label": "Notifications",
+        "ariaLabel": "Open notifications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:files",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:opener",
+        "label": "Files",
+        "ariaLabel": "Open Files menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:system",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:system:opener",
+        "label": "System",
+        "ariaLabel": "Open system menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:settings",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:settings:opener",
+        "label": "Settings",
+        "ariaLabel": "Open settings",
+        "detail": "",
+        "enabled": true
+      }
+    ],
+    "popup": []
+  },
+  "filesFrame": {
+    "surfaceProtocol": 2,
+    "appearance": {
+      "theme": "night",
+      "textScale": 100
+    },
+    "publication": "6",
+    "lease": "1",
+    "mode": "files",
+    "status": "Loading Files…",
+    "bar": [
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:overview",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:overview-opener",
+        "label": "Task View",
+        "ariaLabel": "Open Task View",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:switcher",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:switcher-opener",
+        "label": "Switch windows",
+        "ariaLabel": "Open window switcher",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:notifications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:notifications:opener",
+        "label": "Notifications",
+        "ariaLabel": "Open notifications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:files",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:opener",
+        "label": "Files",
+        "ariaLabel": "Open Files menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:system",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:system:opener",
+        "label": "System",
+        "ariaLabel": "Open system menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:settings",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:settings:opener",
+        "label": "Settings",
+        "ariaLabel": "Open settings",
+        "detail": "",
+        "enabled": true
+      }
+    ],
+    "popup": [
+      {
+        "id": "control:close",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:close",
+        "label": "Close Files menu",
+        "ariaLabel": "Close Files menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "files:refresh",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:refresh",
+        "label": "Refresh Files state",
+        "ariaLabel": "Refresh Files state",
+        "detail": "Read location; never repeat an opening",
+        "enabled": true
+      },
+      {
+        "id": "files:location:state",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:location:state",
+        "label": "No Files window observed.",
+        "ariaLabel": "No Files window observed.",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "files:home",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:home",
+        "label": "Home",
+        "ariaLabel": "Home",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "files:collection:recent",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:collection:recent",
+        "label": "Recent",
+        "ariaLabel": "Recent",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "files:collection:images",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:collection:images",
+        "label": "Images",
+        "ariaLabel": "Images",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "files:collection:videos",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:collection:videos",
+        "label": "Videos",
+        "ariaLabel": "Videos",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "files:collection:documents",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:collection:documents",
+        "label": "Documents",
+        "ariaLabel": "Documents",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "files:collection:downloads",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:collection:downloads",
+        "label": "Downloads",
+        "ariaLabel": "Downloads",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "files:collection:large",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:collection:large",
+        "label": "Large files",
+        "ariaLabel": "Large files",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "files:collection:screenshots",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:collection:screenshots",
+        "label": "Screenshots",
+        "ariaLabel": "Screenshots",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "control:files-path",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:path",
+        "label": "",
+        "ariaLabel": "Folder path",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "files:open-path",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:open-path",
+        "label": "Open folder",
+        "ariaLabel": "Open folder",
+        "detail": "Open this path in Files",
+        "enabled": false
+      }
+    ]
+  }
+}

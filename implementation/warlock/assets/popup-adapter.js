@@ -64,7 +64,11 @@ window.receiveFocus = value => requestAnimationFrame(() => {
   }
   post({surfaceProtocol:2,kind:'focus-applied',publication:value.publication,lease:value.lease,targets:focused});
 });
-app.ports.actions.subscribe(post);
+if(window.elmHostQA)window.imeQueryObservations=[];
+app.ports.actions.subscribe(value=>{
+  post(value);
+  if(window.elmHostQA&&value.kind==='surface-query'){window.imeQueryObservations.push(value);if(window.imeQueryObservations.length>64)window.imeQueryObservations.shift();}
+});
 // Forward only current-surface key observations. Elm owns candidate order,
 // selection, ordinal bounds and mutation decisions; this is not a global chord
 // journal and cannot attest to input arriving before native popup readiness.
@@ -108,6 +112,7 @@ post({surfaceProtocol:2,kind:'presentation-ready'});
 
 if (window.elmHostQA) {
   let last='';
+  const compositionEvents=[];
   const observe=()=>requestAnimationFrame(()=>{
     const buttons=[...document.querySelectorAll('button')].map(button=>{
       const r=button.getBoundingClientRect(),label=button.querySelector('.control-label')?.getBoundingClientRect();return {id:button.id,identity:button.dataset.surfaceControl,label:button.textContent,labelRect:label?{x:label.x,y:label.y,width:label.width,height:label.height}:null,accessibleName:button.getAttribute('aria-label'),disabled:button.disabled,x:r.x,y:r.y,width:r.width,height:r.height};
@@ -116,13 +121,18 @@ if (window.elmHostQA) {
       const r=item.getBoundingClientRect(),label=item.querySelector('.control-label')?.getBoundingClientRect();return {id:item.id,identity:item.dataset.notificationContent||item.dataset.systemContent||item.dataset.filesContent||item.dataset.jumpContent,label:item.textContent,labelRect:label?{x:label.x,y:label.y,width:label.width,height:label.height}:null,accessibleName:item.querySelector('.control-label')?.textContent||'',disabled:true,x:r.x,y:r.y,width:r.width,height:r.height};
     });
     const node=document.querySelector('.surface-bar,.surface-popup');
-    const fields=[...document.querySelectorAll('[data-surface-field]')].map(field=>({id:field.id,value:field.value,accessibleName:field.getAttribute('aria-label'),disabled:field.disabled}));
+    const fields=[...document.querySelectorAll('[data-surface-field]')].map(field=>({id:field.id,value:field.value,accessibleName:field.getAttribute('aria-label'),disabled:field.disabled,caretStart:field.selectionStart,caretEnd:field.selectionEnd}));
     const palette={background:getComputedStyle(document.body).backgroundColor,foreground:getComputedStyle(document.body).color};
     const active=document.activeElement,activeStyle=active&&getComputedStyle(active),activeBox=active?.getBoundingClientRect();
     const focusStyle=activeStyle?{color:activeStyle.color,background:activeStyle.backgroundColor,outlineColor:activeStyle.outlineColor,outlineWidth:activeStyle.outlineWidth,outlineOffset:activeStyle.outlineOffset,x:activeBox.x,y:activeBox.y,width:activeBox.width,height:activeBox.height}:null;
-    const body={palette,focusStyle,publication:node?.dataset.publication||null,lease:node?.dataset.lease||null,buttons,content,fields,focus:document.activeElement?.id||'',documentFocused:document.hasFocus(),fontSize:getComputedStyle(document.body).fontSize,theme:document.documentElement.dataset.theme||null,textScale:document.documentElement.dataset.textScale||null,viewportWidth:innerWidth,viewportHeight:innerHeight,scrollTop:node?.scrollTop||0,scrollHeight:node?.scrollHeight||0,text:document.body.innerText};
+    const body={queryObservations:window.imeQueryObservations||[],compositionEvents,composing:document.querySelector('[data-input-composing]')?.dataset.inputComposing==='true',palette,focusStyle,publication:node?.dataset.publication||null,lease:node?.dataset.lease||null,buttons,content,fields,focus:document.activeElement?.id||'',documentFocused:document.hasFocus(),fontSize:getComputedStyle(document.body).fontSize,theme:document.documentElement.dataset.theme||null,textScale:document.documentElement.dataset.textScale||null,viewportWidth:innerWidth,viewportHeight:innerHeight,scrollTop:node?.scrollTop||0,scrollHeight:node?.scrollHeight||0,text:document.body.innerText};
     const current=JSON.stringify(body);if(current!==last){last=current;post({kind:'surface-report',body});}
   });
+  for(const type of ['compositionstart','compositionupdate','compositionend','input'])document.addEventListener(type,event=>{
+    if(!event.target.matches?.('[data-surface-field]'))return;
+    compositionEvents.push({type,data:event.data??null,value:event.target.value,isComposing:!!event.isComposing,isTrusted:event.isTrusted,caretStart:event.target.selectionStart,caretEnd:event.target.selectionEnd});
+    if(compositionEvents.length>64)compositionEvents.shift();observe();
+  },true);
   document.addEventListener('scroll',observe,true);
   new MutationObserver(observe).observe(document.body,{subtree:true,childList:true,attributes:true});
   document.addEventListener('focusin',observe);observe();

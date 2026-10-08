@@ -4,6 +4,7 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
 lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
 """
 import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
+IME=sys.argv[1:]==['--ime']
 ACCESSIBILITY=sys.argv[1:]==['--accessibility']
 CONTRAST=sys.argv[1:]==['--high-contrast']
 DRAG=sys.argv[1:]==['--drag-ownership']
@@ -27,7 +28,7 @@ PRE_READY_RETIRE=sys.argv[1:]==['--switcher-pre-ready-retirement']
 MEMBERSHIP=sys.argv[1:]==['--switcher-membership'] or PRE_READY_RETIRE
 CHORD=sys.argv[1:]==['--switcher-chord'] or MEMBERSHIP
 SWITCHER=sys.argv[1:]==['--switcher'] or ACCESSIBILITY
-NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'] or DENSEPICKER or KEYBOARD;PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS or PINMENUS or REFLOW or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or KEYBOARD;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD or DRAG
+NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'] or DENSEPICKER or KEYBOARD;PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION or IME;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS or PINMENUS or REFLOW or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or KEYBOARD;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD or DRAG
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143';RUNTIME=REPO/'implementation/warlock-client-provider-native-v204'
 sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
 spec=importlib.util.spec_from_file_location('feedback_private_host',RUNTIME/'candidate_host.py');host=importlib.util.module_from_spec(spec);spec.loader.exec_module(host)
@@ -67,7 +68,7 @@ else:
 for row in pair.values():assert sha(row['path'])==row['sha256']
 assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
 subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
-OUT=ROOT/'qa/runs'/(('native-accessibility-' if ACCESSIBILITY else 'native-high-contrast-' if CONTRAST else 'native-drag-ownership-' if DRAG else 'native-keyboard-shell-' if KEYBOARD else 'native-attention-' if ATTENTION else 'native-jump-lists-' if JUMP else 'native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+OUT=ROOT/'qa/runs'/(('native-ime-' if IME else 'native-accessibility-' if ACCESSIBILITY else 'native-high-contrast-' if CONTRAST else 'native-drag-ownership-' if DRAG else 'native-keyboard-shell-' if KEYBOARD else 'native-attention-' if ATTENTION else 'native-jump-lists-' if JUMP else 'native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
 OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
 focus_host=None
 if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
@@ -154,6 +155,7 @@ if DRAG:
  LUA+=b'hl.monitor({output="WAYLAND-2",mode="800x600@60",position="800x0",scale=1})\n'
  report.update(requirements=['ELM-UX-021'],scenarios=['ux-021'],scope='Actual native move/resize input across taskbar and two outputs; native controller owner/serial, real blocked shell shortcut and competing native effect, one end per gesture. No caption/edge, AT, touch/tablet or independent acceptance inferred.')
 if ACCESSIBILITY:report.update(requirements=['ELM-UX-025'],scenarios=['actual-surface-at'],scope='Actual private GTK/WebKit taskbar and switcher AT-SPI tree/states/focus and real Orca observations with physical input; independent original acceptance remains separate.')
+if IME:report.update(requirements=['ELM-UX-028'],scenarios=['ime-spike-commit','ime-spike-cancel'],scope='Actual installed private Fcitx Unicode preedit/candidate keyboard traversal/commit/cancel through GTK/WebKit in integrated launcher; query/caret/native effects observed at original deadline. Independent original acceptance remains separate.')
 def check(name,condition,**data):
  report['checks'].append({'name':name,'passed':bool(condition),**data});assert condition,name
 def wait(fn,seconds=6):
@@ -217,6 +219,18 @@ try:
     wait(lambda:at_observe().get('reader'))
     held_reader=pathlib.Path('/home/hoskinson/window-integration-qa/orca-reader')
     report['accessibilityFixture']={'session':env['DBUS_SESSION_BUS_ADDRESS'],'accessibility':env['AT_SPI_BUS_ADDRESS'],'systemBusRemainsRefusing':True,'servicesExplicitlyOwned':True,'activationDisabled':True,'inspectorSHA256':sha(ROOT/'qa/accessibility-inspector.py'),'readerLauncherSHA256':sha(ROOT/'qa/accessibility-reader.py'),'sessionWrapperSHA256':sha(ROOT/'qa/accessibility-session.py'),'orcaPackageSHA256':sha(held_reader/'packages.json'),'readerEntrySHA256':sha(held_reader/'prefix/usr/bin/orca'),'speechAdapterSHA256':sha(held_reader/'silent_factory.py'),'observationAdapterSHA256':sha(held_reader/'data/orca/orca-customizations.py'),'nativeATObserved':False}
+   if IME:
+    config_home=pathlib.Path(env['XDG_CONFIG_HOME']);assert config_home.resolve().is_relative_to(s.host.runtime.resolve());profile=config_home/'fcitx5/profile';profile.parent.mkdir(mode=0o700,parents=True,exist_ok=True)
+    profile.write_text('[Groups/0]\nName=Default\nDefault Layout=us\nDefaultIM=keyboard-us\n[Groups/0/Items/0]\nName=keyboard-us\nLayout=\n[GroupOrder]\n0=Default\n');profile.chmod(0o600)
+    fcitx_env=dict(env,XDG_DATA_DIRS='/usr/local/share:/usr/share');fcitx_env.pop('WAYLAND_DEBUG',None)
+    fcitx=s.host.launch('ime-fcitx',['/usr/bin/fcitx5','-D','--disable','all','--enable','dbus,dbusfrontend,keyboard,unicode,classicui,wayland','-u','classicui','--verbose','key_trace=5'],env=fcitx_env);apps.append(fcitx)
+    wait(lambda:fcitx.poll() is not None or 'Loaded addon dbusfrontend' in (OUTPUT/'ime-fcitx.log').read_text(errors='replace'))
+    check('PrivateInstalledFcitxRemainsAlive',fcitx.poll() is None)
+    owner_raw=helper(['/usr/bin/gdbus','call','--session','--dest','org.freedesktop.DBus','--object-path','/org/freedesktop/DBus','--method','org.freedesktop.DBus.GetConnectionUnixProcessID','org.fcitx.Fcitx5'])
+    check('IMEBusOwnerIsExactOwnedProcess',str(fcitx.pid) in owner_raw,pid=fcitx.pid,owner=owner_raw)
+    env['GTK_IM_MODULE']='fcitx';s.env['GTK_IM_MODULE']='fcitx'
+    module=pathlib.Path('/usr/lib/gtk-3.0/3.0.0/immodules/im-fcitx5.so')
+    report['imeFixture']={'binary':'/usr/bin/fcitx5','binarySHA256':sha('/usr/bin/fcitx5'),'gtkModule':str(module),'gtkModuleSHA256':sha(module),'profile':str(profile),'profileSHA256':sha(profile),'sessionBus':env['DBUS_SESSION_BUS_ADDRESS'],'systemBusRemainsRefusing':True,'installedAddonsSelected':['dbus','dbusfrontend','keyboard','unicode','classicui','wayland'],'sourceReference':'https://fcitx-im.org/wiki/Tips_and_Tricks','nativeIMEObserved':False}
    if CATALOG:
     catalog_root=pathlib.Path(env['XDG_DATA_HOME'])/'applications';catalog_root.mkdir(mode=0o700,parents=True,exist_ok=True)
     # Only explicitly owned fixture metadata is visible to this broker.
@@ -1474,6 +1488,38 @@ raise SystemExit(daemon.run())
      outcomes=[json.loads(l.split(': ',1)[1]) for l in text().splitlines() if l.startswith('backend-frame: ') and 'application-launch-outcome' in l]
      report['launchOutcomes']=outcomes;check('NativeGioSubmissionConfirmed',len(outcomes)==1 and outcomes[0]['outcome']['status']=='Submitted',outcomes=outcomes)
      report['afterRestartOrder']=saved_order();report['afterRestartLaunches']=launches();report['nativePinJourneyObserved']=True
+    elif IME:
+     click(wait(lambda:(projection() or {}).get('openApplications')))
+     wait(lambda:field_value()=='' and (popup_body() or {}).get('focus')=='launcher-search')
+     queries=lambda:(popup_body() or {}).get('queryObservations',[])
+     before_effects=len(journal());before_launches=len(launches());before_queries=len(queries())
+     def direct_preedit():
+      helper([str(keyboard)],'key 29 1\nkey 42 1\nkey 22 1\nsleep 50\nkey 22 0\nkey 42 0\nkey 29 0\nsleep 100\nsync\n')
+      for code in [3,7,4,30]:key(code)
+      return wait(lambda:(body if body.get('composing') and any(e['type']=='compositionstart' and e['isTrusted'] for e in body.get('compositionEvents',[])) else None) if (body:=popup_body()) else None)
+     def candidate_layers():
+      return [row for output in s.data('layers').values() for rows in output.get('levels',{}).values() for row in rows if 'fcitx' in row.get('namespace','').lower()]
+     def unicode_search():
+      helper([str(keyboard)],'key 29 1\nkey 42 1\nkey 56 1\nkey 22 1\nsleep 50\nkey 22 0\nkey 56 0\nkey 42 0\nkey 29 0\nsleep 100\nsync\n')
+      for code in [31,49,24,17,50,30,49]:key(code)
+      return wait(candidate_layers)
+     def settled(value):
+      body=popup_body();return body if body and not body.get('composing') and 'No matching applications' in body.get('text','') and any(f['id']=='launcher-search' and f['value']==value and f.get('caretStart')==len(value) and f.get('caretEnd')==len(value) for f in body.get('fields',[])) else None
+     preedit=direct_preedit();report['imePreedit']=preedit;popup_capture('ime-field-preedit')
+     check('NativeFieldPreeditDoesNotDispatchCommittedQueryOrEffect',len(queries())==before_queries and len(journal())==before_effects and len(launches())==before_launches,preedit=preedit,queries=queries())
+     key(57);committed=wait(lambda:settled('☺'));report['imeDirectCommitted']=committed;popup_capture('ime-field-committed')
+     check('OneNativeFieldCommitHasCorrectCaretAndNoLaunch',len(queries())==before_queries+1 and len(journal())==before_effects and len(launches())==before_launches,queries=queries(),committed=committed)
+     before_queries=len(queries());layers=unicode_search();report['imeCandidateLayers']=layers;popup_capture('ime-candidates')
+     check('ActualExternalCandidatePreeditRetainsCommittedField',field_value()=='☺' and len(queries())==before_queries and len(journal())==before_effects and len(launches())==before_launches,layers=layers)
+     key(108);key(28);committed=wait(lambda:settled('☺⛄'));report['imeCommitted']=committed;popup_capture('ime-candidate-committed')
+     check('OneNativeCandidateCommitHasCorrectCaretAndNoLaunch',len(queries())==before_queries+1 and len(journal())==before_effects and len(launches())==before_launches,queries=queries(),committed=committed)
+     before_queries=len(queries());cancelled_preedit=direct_preedit();report['imeCancelPreedit']=cancelled_preedit;key(1)
+     cancelled=wait(lambda:settled('☺⛄'));report['imeCancelled']=cancelled;popup_capture('ime-field-cancelled')
+     check('NativeFieldCancelClearsPreeditWithoutQueryOrUnintendedEffect',len(queries())==before_queries and len(journal())==before_effects and len(launches())==before_launches and (projection() or {}).get('mode')=='applications',queries=queries(),cancelled=cancelled)
+     unicode_search();key(1);wait(lambda:not candidate_layers());cancelled=wait(lambda:settled('☺⛄'));report['imeCandidateCancelled']=cancelled
+     check('NativeCandidateCancelHasNoQueryOrUnintendedEffect',len(queries())==before_queries and len(journal())==before_effects and len(launches())==before_launches,queries=queries(),cancelled=cancelled)
+     check('NativeCompositionEventsAreTrustedGTKWebKitEvents',all(e['isTrusted'] for e in cancelled.get('compositionEvents',[])),events=cancelled.get('compositionEvents',[]))
+     report['imeFixture']['nativeIMEObserved']=True
     else:
      click(wait(lambda:(projection() or {}).get('openApplications')));wait(lambda:field_value()=='' and any(b['accessibleName']=='Open Files' for b in (popup_body() or {}).get('buttons',[])));wait(lambda:(popup_body() or {}).get('focus')=='launcher-search')
      check('NativeCatalogAndEditableSearchHaveNames',popup_body()['focus']=='launcher-search',body=popup_body())

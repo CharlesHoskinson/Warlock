@@ -8339,21 +8339,65 @@
       "owner": "Accessibility lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "ime-spike-commit",
           "oracle": "one text string appears with correct caret and no application launch is caused",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/ime/manifest.json",
+              "sha256": "f1b3630760dff369ec5ead8d6e5a394da8d7760d26b1959b57837fc8dd4e32c7",
+              "scope": "Integrated explicit typed popup composition start/end, same-field preedit retention, one coalesced committed query, no query on cancellation and retirement on field replacement/closure. Actual replay/browser lifecycle and meaningful stale/field cases pass. Actual private installed Fcitx/GTK/WebKit trusted field preedit and direct Unicode commit with correct caret and no launch/window action pass; normal native launcher filtering/refusal/no-match remains intact. Full original candidate commit and native cancellation remain unverified.",
+              "sourceRevision": "683339ef7b1bfa2cd08cb52454b5bb65a2d061da",
+              "sourceTuple": {
+                "core": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+                  "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+                },
+                "plugin": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791477973836253029/elm-window-geometry-authority.so",
+                  "sha256": "216c5cce257eaff5d063285d44df6ac20090f285064c9681fac6213e414b0d1c"
+                },
+                "aquamarine": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+                  "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+                }
+              },
+              "reviewerDisposition": "Owner-observed component lifecycle and direct native field preedit/commit plus launcher regression; original candidate/cancel and independent acceptance remain open."
+            }
+          ],
+          "missingObservation": "Original ime-spike-commit requires actual native candidate interaction as well as the field/caret/no-launch observations. Trusted GTK/WebKit direct field preedit and one Unicode commit passed, but external candidate-panel inspection expired at the unchanged six-second candidate_layers deadline. No candidate traversal/commit or candidate-panel presentation acceptance is inferred. Original ime-spike-cancel native interval was not reached after the candidate barrier failed; actual compiled/browser cancellation passes only at component level. Both native attempts are preserved and no third IME campaign qualified these scenarios. Native Files-field/other input-method languages, independent original scenario/requirement acceptance, full release AT/hardware/resource/journey/package/deployment obligations remain open."
         },
         {
           "name": "ime-spike-cancel",
           "oracle": "preedit clears without committed text or unintended effect",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "implemented-unverified",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/ime/manifest.json",
+              "sha256": "f1b3630760dff369ec5ead8d6e5a394da8d7760d26b1959b57837fc8dd4e32c7",
+              "scope": "Integrated explicit typed popup composition start/end, same-field preedit retention, one coalesced committed query, no query on cancellation and retirement on field replacement/closure. Actual replay/browser lifecycle and meaningful stale/field cases pass. Actual private installed Fcitx/GTK/WebKit trusted field preedit and direct Unicode commit with correct caret and no launch/window action pass; normal native launcher filtering/refusal/no-match remains intact. Full original candidate commit and native cancellation remain unverified.",
+              "sourceRevision": "683339ef7b1bfa2cd08cb52454b5bb65a2d061da",
+              "sourceTuple": {
+                "core": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+                  "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+                },
+                "plugin": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791477973836253029/elm-window-geometry-authority.so",
+                  "sha256": "216c5cce257eaff5d063285d44df6ac20090f285064c9681fac6213e414b0d1c"
+                },
+                "aquamarine": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+                  "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+                }
+              },
+              "reviewerDisposition": "Owner-observed component lifecycle and direct native field preedit/commit plus launcher regression; original candidate/cancel and independent acceptance remain open."
+            }
+          ],
+          "missingObservation": "Original ime-spike-commit requires actual native candidate interaction as well as the field/caret/no-launch observations. Trusted GTK/WebKit direct field preedit and one Unicode commit passed, but external candidate-panel inspection expired at the unchanged six-second candidate_layers deadline. No candidate traversal/commit or candidate-panel presentation acceptance is inferred. Original ime-spike-cancel native interval was not reached after the candidate barrier failed; actual compiled/browser cancellation passes only at component level. Both native attempts are preserved and no third IME campaign qualified these scenarios. Native Files-field/other input-method languages, independent original scenario/requirement acceptance, full release AT/hardware/resource/journey/package/deployment obligations remain open."
         }
       ]
     },
@@ -8761,5 +8805,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-08T17:46:51.054844+00:00"
+  "updatedUTC": "2026-10-08T18:13:28.300621+00:00"
 }
