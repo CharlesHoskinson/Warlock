@@ -59,7 +59,8 @@ try{
  await evaluate(`document.querySelectorAll('.surface-controls button').forEach(button=>button.style.minHeight='160px')`);await sleep(100);const grown=await pickerState();check('Late picker content growth keeps final selection visible',grown.id==='family:19'&&pickerVisible(grown),grown);
  await evaluate(`document.querySelectorAll('.surface-controls button').forEach(button=>button.style.minHeight='')`);await sleep(100);
  await showPicker(-1,'1',true);check('Picker reordered publication preserves chosen identity',(await pickerState()).id==='family:19'&&pickerVisible(await pickerState()));
- await evaluate(`document.body.tabIndex=-1;document.body.focus()`);await showPicker(-1,'2');check('Picker old lease cannot restore a selected member',await evaluate('document.activeElement===document.body'));
+ await showPicker(-1,'2',true);check('Picker fresh reflow lease preserves its current focused member',(await pickerState()).id==='family:19'&&pickerVisible(await pickerState()));
+ await evaluate(`document.body.tabIndex=-1;document.body.focus()`);await showPicker(-1,'3');check('Picker old lease cannot restore a selected member',await evaluate('document.activeElement===document.body'));
  await evaluate(`document.querySelector('[data-surface-control="family:0"]').focus()`);await key('ArrowUp');await key('ArrowUp');check('Picker arrows clamp at first action',(await pickerState()).id==='control:close');
  await key('End');await key('ArrowDown');check('Picker arrows clamp at final member',(await pickerState()).id==='family:19'&&pickerVisible(await pickerState()));
  check('Picker navigation emits no window action',await evaluate(`nativePackets.filter(p=>p.kind==='surface-action').length===0`));

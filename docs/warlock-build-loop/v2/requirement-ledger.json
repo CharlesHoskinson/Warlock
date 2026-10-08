@@ -5826,29 +5826,36 @@
             {
               "path": "implementation/warlock/qa/evidence/dense-picker/current-manifest.json",
               "sha256": "d787283f093386ed183528b807c7c244e216b4e0bcc6da2053b600c312d7f418",
-              "scope": "Compiled picker viewport resize from 480x420 to 320x260, 700x600 and back retains exact enabled member order and reveals logical selection. Late content growth also reveals selection. Native ten-member navigation/menu/activation supports the same candidate but does not qualify native active-popup reflow continuity."
+              "scope": "Compiled picker viewport resize from 480x420 to 320x260, 700x600 and back retains exact enabled member order and reveals logical selection. Late content growth also reveals selection. Native ten-member navigation/menu/activation supports the same candidate but does not qualify native active-popup reflow continuity.",
+              "historicalAfterSourceChange": true
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/popup-reflow/manifest.json",
+              "sha256": "a60d83a4cc712d4b050a42bd3ebfd19b1ac539e0f077adec6ffcbc861f295610",
+              "scope": "At 200% text, 18 configured overflowing pins and ten native roots retain configured/control order and focused member/operation across 480x360 -> 640x480 -> 480x360. Every focused control fits entirely within the physical output and its label paints; each replacement retires the old input lease and opens a fresh lease. Menu traversal/Tab/Escape return group focus, and member activation targets one exact incarnation. Default-size minimize/restore, actual GTK typing and Task View dismissal pass. The resized dense selection journey fails final GTK typing at the original six-second deadline. Bounded native picker/menu reflow, physical dimensions/pixels, order and fresh input leases; actual compiled Elm policy and browser presentation checks. Native campaign passed is false because post-selection application keyboard input failed; no complete journey, applicable AT, independent original-scenario or release acceptance claimed."
             }
           ],
-          "missingObservation": "Applicable assistive-technology navigation, operation names and focus observations; Independent original-scenario review against exact source/ABI/toolchain; Native popup reflow continuity and complete action-menu overflow; browser viewport resizing is component evidence only",
+          "missingObservation": "Real GTK keyboard recipient after choosing a dense group member following native output reflow; Applicable assistive-technology navigation, operation names and focus observations; Independent original-scenario review against exact source/ABI/toolchain",
           "reviewerDisposition": {
-            "name": "root-dense-picker",
+            "name": "root-native-popup-reflow",
             "independent": false,
-            "disposition": "Owner-observed bounded native/component result; exact original acceptance remains pending."
+            "disposition": "Owner-observed bounded native reflow; dense selection typing failed, AT/independent original acceptance pending."
           },
           "sourceTuple": {
-            "sourceParentRevision": "88b84e97c38d1799aa74f9a83f6583c50cd08ff8",
+            "sourceParentRevision": "03d0a6516982daac33be446220e2dd300fd48002",
             "sourceHashes": {
-              "implementation/warlock/src/SurfaceRenderer.elm": "42a02a43780f79107f376a54eba46aa277fc5457b61fda656649cfe495ace0e1",
-              "implementation/warlock/assets/popup-adapter.js": "765e01488ecb7d6107306a16e60e1110300391b3f83f21f995a5eeecf61d3052",
-              "implementation/warlock/assets/shell.css": "e94dcb2274254d874b1fabaaee59a6bd85a0543909238fef3a6ad12bc64f6078",
-              "implementation/warlock/qa/check-search.py": "f59b0e810eb840dea75709fa29e9b43a7f4f43b112ea4f9c71deecbc556ca829",
-              "implementation/warlock/qa/dense-taskbar-browser.mjs": "09be271f9c7eb72581104105fefe1cbeeca2c9aaa27f6427f99556403aa9c4b6",
-              "implementation/warlock/qa/native-window-feedback.py": "500c4bff847b91a7ec07295320b15a4c18910eaa1f68662993ebe54ee6a7be5e",
-              "implementation/warlock/qa/current-search-build.json": "0a7ecc37f93d8bf6f9b4e1c48b3c96403c80f394718d1c1172140795c3d77d7e",
-              "implementation/warlock/assets/elm.js": "9b48195dd4b61b8f34906444915f070530fcb07e8ec1f2c530fa1e5ed43aa8eb",
+              "implementation/warlock/src/SurfaceController.elm": "6a67e402cc1b736d916bdf6fb755668dfcd1c50f9008a585a647200f8ba994bb",
+              "implementation/warlock/assets/popup-adapter.js": "08526be2387a279122dd0b5236ce3bd205d24240bc9378b444d150eeda2c7781",
+              "implementation/warlock/qa/check-search.py": "1c02ea302c174855016149f117875af5694906ac19ef833ec019dd75715b2869",
+              "implementation/warlock/qa/dense-taskbar-browser.mjs": "aa0ec17559253de21333ab60a6e1561c44d1b8296298286b61621f9463bb20da",
+              "implementation/warlock/qa/native-window-feedback.py": "d0a3e2d5b8e7ceb31e1682503c81d55dac231bba83ef6d6dfec8e02ec1167caf",
+              "implementation/warlock/qa/PopupReflowReplay.elm": "19b1e6e709ab78d8c79825e37cddeb49cde02617e51d286df3971e78bf1b2172",
+              "implementation/warlock/qa/current-search-build.json": "dc3bf1d99c9d44498eaa05db3c276ade1931570975a8b9d49f0bac5fdaff1237",
+              "implementation/warlock/assets/elm.js": "10d72c9dd0cba778619e0284368861e57da4c5b8512914ca7bbaa4549a6712df",
               "implementation/warlock/assets/bar.js": "d2bd3e1d84b6dc605744da689c0331e89a0cd45d083c0cdbc3b1ee620a18e860",
               "implementation/warlock/assets/popup.js": "054636c284b4f6a026963b18b0e41b2f1a737fd87f9cdc1d8ef5449d6030222a",
-              "implementation/warlock/README.md": "6cb6d66d5fcba42348ad739e0728d6d3f7b1fe547e777e7aeeb8c483a22fa905"
+              "implementation/warlock/README.md": "95b504921b2298e2caffb4d03df2f5644a09238abf2fa45a85b6e16d48c9acd2",
+              "implementation/warlock/native/host.c": "97781183f747fe202628be969226c11cffd8311a96a43ecc5c07e8ce3d5657d7"
             },
             "testedWorkingTree": true,
             "core": {
@@ -5860,8 +5867,8 @@
               "sha256": "1805693201328985cbf109f5fef6779b8fe469badf094fd417e8206f91c50b47"
             },
             "toolchain": {
-              "path": "implementation/warlock/qa/runs/taskbar-primary-1791446861278799521/report.json",
-              "sha256": "a32740dbb41a8be34a09b14887582732d57ac9f74ca28fe418ac177c33e24eb0"
+              "path": "implementation/warlock/qa/runs/taskbar-primary-1791451470950801371/report.json",
+              "sha256": "8c6877f9b48a6a8e396f427fbab6cb264483ee583cf97ce9afb811ea92cef1dc"
             }
           }
         },
@@ -7784,5 +7791,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-08T09:10:02.791564+00:00"
+  "updatedUTC": "2026-10-08T09:33:39.729017+00:00"
 }

@@ -26,7 +26,7 @@ document.addEventListener('focusin',event=>{
   if(event.target.closest?.('.surface-popup[data-mode="picker"]')){rememberPicker(event.target);revealPicker(true);}
   else if(event.target!==document.body&&event.target!==document.documentElement)pickerSelection=null;
 });
-window.addEventListener('focus',()=>revealPicker());
+window.addEventListener('focus',()=>{rememberPicker(document.activeElement);revealPicker(true);});
 window.addEventListener('resize',()=>requestAnimationFrame(()=>revealPicker(true)));
 document.addEventListener('keydown',event=>{
   if(!['ArrowUp','ArrowDown','Home','End'].includes(event.key)||event.isComposing||event.defaultPrevented||event.ctrlKey||event.altKey||event.metaKey||event.shiftKey)return;
@@ -40,6 +40,10 @@ window.receivePresentation = value => {
   requestAnimationFrame(() => requestAnimationFrame(() => {
     const node=document.querySelector('.surface-popup');
     if (node?.dataset.publication===value.publication && node.dataset.lease===value.lease) {
+      // A native reflow replaces the input lease around the same retained view.
+      // Carry only the currently focused eligible DOM control into that lease;
+      // a remembered identity alone never restores focus from an older lease.
+      if(document.hasFocus())rememberPicker(document.activeElement);
       observePicker();revealPicker();
       post({surfaceProtocol:2,kind:'presentation-applied',publication:value.publication,lease:value.lease});
     }

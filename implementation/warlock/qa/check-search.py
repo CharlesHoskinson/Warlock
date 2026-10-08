@@ -1,6 +1,7 @@
 """Focused compiled launcher/search integration, protected CPU scope only."""
 import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures,http.server,threading
-MENU=sys.argv[1:]==['--dense-menu']
+REFLOW=sys.argv[1:]==['--popup-reflow']
+MENU=sys.argv[1:]==['--dense-menu'] or REFLOW
 PICKER=sys.argv[1:]==['--dense-picker'] or MENU
 DENSE=sys.argv[1:]==['--dense-taskbar'] or PICKER
 PINMENUS=sys.argv[1:]==['--pinned-menus'] or (DENSE and not PICKER)
@@ -34,6 +35,12 @@ try:
   run('compile-search',[str(HELD/pinned['compiler']),'make','qa/SearchReplay.elm','--optimize','--output=assets/search.js'])
   replay=(INPUT/'qa/feedback-replay.js').read_text().replace('Elm.FeedbackReplay','Elm.SearchReplay');(INPUT/'qa/search-replay.js').write_text(replay)
   run('typed-search',['node','qa/search-replay.js','assets/search.js',str(OUT/'search.json')]);r=json.loads((OUT/'search.json').read_text());assert r['rank']==['z-exact','a-prefix','b-token'] and r['keyword']==['z-exact'] and r['generic']==['b-token','z-exact'] and r['unicode']==['c-unicode'];assert r['refreshClearsSettledRefusal'] and r['refreshPreservesUnknown'];assert r['queryEditHasNoEffects'] and r['staleQueryRejected'] and 'No matching' in r['noMatchStatus'] and r['queryRetained']=='nonexistent';report['typedSearch']=r
+ if REFLOW:
+  run('compile-popup-reflow',[str(HELD/pinned['compiler']),'make','qa/PopupReflowReplay.elm','--optimize','--output=assets/popup-reflow.js'])
+  (INPUT/'qa/popup-reflow-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.PopupReflowReplay'));run('typed-popup-reflow',['node','qa/popup-reflow-replay.js','assets/popup-reflow.js',str(OUT/'popup-reflow.json')]);report['typedPopupReflow']=json.loads((OUT/'popup-reflow.json').read_text());assert all(report['typedPopupReflow']['checks'].values())
+  run('focus-model-typecheck',['quint','typecheck','qa/focus-publication.qnt'])
+  run('focus-model-named',['quint','test','qa/focus-publication.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79113'])
+  run('focus-model-invariants',['quint','run','qa/focus-publication.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79114'])
  if PINMENUS:
   report.update(requirements=['ELM-UI-008','ELM-UX-023'],scope='Compiled running-pin context guards and changed native keyboard-parent host; unchanged C++ objects reused by exact hashes; native menu/AT acceptance separate')
   run('compile-pinned-menu',[str(HELD/pinned['compiler']),'make','qa/PinnedMenuReplay.elm','--optimize','--output=assets/pinned-menu.js'])
@@ -69,7 +76,7 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
   run('compile-pins',[str(HELD/pinned['compiler']),'make','qa/PinsReplay.elm','--optimize','--output=assets/pins.js'])
   (INPUT/'qa/pins-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.PinsReplay'));run('typed-pins',['node','qa/pins-replay.js','assets/pins.js',str(OUT/'pins.json')]);report['typedPins']=json.loads((OUT/'pins.json').read_text());assert all(report['typedPins']['checks'].values());run('pin-storage',['/usr/bin/python3','-B','qa/check-pin-storage.py'])
   run('pin-model-typecheck',['quint','typecheck','qa/pins.qnt']);run('pin-model-named',['quint','test','qa/pins.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79019']);run('pin-model-invariants',['quint','run','qa/pins.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79020'])
- if PRIMARY and not PINMENUS:
+ if PRIMARY and not PINMENUS and not REFLOW:
   previous=json.loads((ROOT/'qa/current-search-build.json').read_text());prior_path=REPO/previous['report'];assert sha(prior_path)==previous['reportSHA256'];prior=json.loads(prior_path.read_text());assert prior['passed']
   old_binary=prior_path.parent/'elm-host';assert sha(old_binary)==prior['binarySHA256']
   assert all(sha(INPUT/p)==h for p,h in prior['inputs'].items() if p.startswith('native/'))
@@ -85,7 +92,7 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
    run('surface-admission-build',['cc','-std=c11','-O2','-Wall','-Wextra','-Werror','native/surface-test.c','-o',str(OUT/'surface-tests'),*flags]);run('surface-admission',[str(OUT/'surface-tests')])
   run('host-compile',['cc','-std=c11','-O2','-Wall','-Wextra','-Werror','-Wno-deprecated-declarations','-MD','-MF',str(OUT/'host.d'),'-c','native/shared-host.c','-o',str(OUT/'host.o'),*flags])
   units=['preview_uri.cpp','preview_icons.cpp','preview-uri-webkit.cpp','preview-provider-bootstrap.cpp','client-producer.cpp','imported-clients.cpp','preview-uri-router.cpp','elm-preview-policy.cpp','preview-visual-channel.cpp','preview-policy-driver.cpp']
-  if PINS or POPUP or TASKVIEW or SWITCHER or PINMENUS:
+  if PINS or POPUP or TASKVIEW or SWITCHER or PINMENUS or REFLOW:
    previous=json.loads((ROOT/'qa/current-search-build.json').read_text());prior_path=REPO/previous['report'];assert sha(prior_path)==previous['reportSHA256'];prior=json.loads(prior_path.read_text());assert prior['passed'] and sha(prior_path.parent/'elm-host')==prior['binarySHA256'];report['reusedNativeObjects']={}
    if SWITCHER:
     # The readonly compositor TU is compiled separately. Reused host objects
@@ -95,7 +102,7 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
    if POPUP:
     assert all(sha(INPUT/p)==h for p,h in prior['inputs'].items() if p.startswith('native/') and p not in ['native/host.c','native/shared-host.c'])
     assert all(sha(INPUT/'assets'/n)==h for n,h in previous['compiledAssets'].items())
-   if PINMENUS:
+   if PINMENUS or REFLOW:
     # Only the owning GTK host changes; every reused C++ dependency is exact.
     assert all(sha(INPUT/p)==h for p,h in prior['inputs'].items() if p.startswith('native/') and p not in ['native/host.c','native/shared-host.c'])
    if TASKVIEW:
@@ -127,6 +134,7 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
   (INPUT/'qa/dense-picker.html').write_text('<!doctype html><html style="font-size:24px"><head><link rel="stylesheet" href="../assets/shell.css"></head><body class="popup"><div id="app"></div><script>window.nativePackets=[];window.webkit={messageHandlers:{native:{postMessage:s=>nativePackets.push(JSON.parse(s))}}};</script><script src="../assets/popup.js"></script><script src="../assets/popup-adapter.js"></script><script src="../assets/context.js"></script><script src="../assets/activation.js"></script></body></html>')
   if PICKER:report.update(requirements=['ELM-UI-008','ELM-UI-004'],scenarios=['overflow-first-last','overflow-resize','menu-invocation','taskbar-group'],scope='Actual compiled dense picker and bar enlarged-text component navigation, identity, lease, disabled and resize checks; exact unchanged native host reused; native activation/menu/input and AT obligations separate')
   if MENU:report.update(requirements=['ELM-UI-008'],scenarios=['overflow-first-last','menu-invocation'],scope='Actual compiled menu selection/navigation, enlarged text, content growth, disabled rows and bounded viewport reveal; exact unchanged native host reused; original native/AT observations separate')
+  if REFLOW:report.update(requirements=['ELM-UI-008'],scenarios=['overflow-resize'],scope='Compiled actual popup reflow policy/retired-lease rejection and dense picker/menu presentation continuity; exact unchanged native host reused; physical output resizing and AT/independent acceptance remain separate')
   class Handler(http.server.SimpleHTTPRequestHandler):
    def __init__(self,*args,**kwargs):super().__init__(*args,directory=str(INPUT),**kwargs)
    def log_message(self,*args):pass

@@ -4,7 +4,8 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
 lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
 """
 import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
-DENSEMENU=sys.argv[1:]==['--dense-menu']
+REFLOW=sys.argv[1:]==['--popup-reflow']
+DENSEMENU=sys.argv[1:]==['--dense-menu'] or REFLOW
 DENSEPICKER=sys.argv[1:]==['--dense-picker'] or DENSEMENU
 DENSE=sys.argv[1:]==['--dense-taskbar']
 SMALL=DENSE or DENSEPICKER
@@ -14,7 +15,7 @@ PRE_READY_RETIRE=sys.argv[1:]==['--switcher-pre-ready-retirement']
 MEMBERSHIP=sys.argv[1:]==['--switcher-membership'] or PRE_READY_RETIRE
 CHORD=sys.argv[1:]==['--switcher-chord'] or MEMBERSHIP
 SWITCHER=sys.argv[1:]==['--switcher']
-NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'] or DENSEPICKER;PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS or PINMENUS;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD
+NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'] or DENSEPICKER;PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS or PINMENUS or REFLOW;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143';RUNTIME=REPO/'implementation/warlock-client-provider-native-v204'
 sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
 spec=importlib.util.spec_from_file_location('feedback_private_host',RUNTIME/'candidate_host.py');host=importlib.util.module_from_spec(spec);spec.loader.exec_module(host)
@@ -112,6 +113,7 @@ if PINMENUS:report.update(requirements=['ELM-UI-008','ELM-UX-023'],scenarios=['m
 if DENSE:report.update(requirements=['ELM-UI-008'],scenarios=['overflow-first-last','overflow-resize','menu-invocation'],scope='Actual small native output, enlarged text, configured overflowing pins, physical keyboard/wheel/menu traversal and output resize; AT and independent review remain open',nativeDenseTaskbarObserved=False)
 if DENSEPICKER:report.update(requirements=['ELM-UI-008','ELM-UI-004'],scenarios=['overflow-first-last','overflow-resize','menu-invocation','taskbar-group'],scope='Actual ten-root native enlarged-text picker arrow/endpoints, first/last menus and identity-bound selection/input; browser resize continuity is separate; native popup reflow, AT and independent review remain open',nativeDensePickerObserved=False)
 if DENSEMENU:report.update(requirements=['ELM-UI-008'],scenarios=['overflow-first-last','menu-invocation'],scope='Actual ten-root 480x360 native output at 200% text; overflow of current three-operation menu, typed endpoint/arrows/disabled/Tab/Escape and operation-label pixels; renderer capacity/growth/blur are component observations; AT/independent and native popup reflow remain open',nativeDenseMenuObserved=False)
+if REFLOW:report.update(requirements=['ELM-UI-008'],scenarios=['overflow-resize'],scope='Actual 18 configured overflowing pins and ten-root picker, 200% text, physical picker/menu selection across native output geometry changes with fresh leases and pixels; applicable AT/independent acceptance remains separate',nativePopupReflowObserved=False)
 LUA=b'''hl.config({xwayland={enabled=false},animations={enabled=false}})
 hl.monitor({output="WAYLAND-1",mode="800x600@60",position="0x0",scale=1})
 '''
@@ -166,6 +168,13 @@ try:
     (catalog_root/'warlock-editor.desktop').write_text('[Desktop Entry]\nType=Application\nName=Editor\nGenericName=Text editor\nExec=/usr/bin/true\n')
    if PINMENUS:
     (catalog_root/'warlock-running-peer.desktop').write_text('[Desktop Entry]\nType=Application\nName=Peer\nStartupWMClass=warlock-peer-fixture\nExec=/usr/bin/true\n')
+   if REFLOW:
+    reflow_ids=['warlock-reflow-'+str(i) for i in range(18)]
+    for i in range(18):(catalog_root/(reflow_ids[i]+'.desktop')).write_text('[Desktop Entry]\nType=Application\nName=Reflow '+str(i)+'\nExec=/usr/bin/true\n')
+    from taskbar_preferences import Store
+    configured=Store(env['XDG_STATE_HOME']);status,saved=configured.save({'revision':configured.read()['revision'],'identities':reflow_ids})
+    check('ReflowFixturePinsSavedThroughActualStore',status=='Saved' and saved['identities']==reflow_ids)
+    report['configuredReflowPins']={'identities':reflow_ids,'saved':saved,'path':str(configured.path/'taskbar.json'),'sha256':sha(configured.path/'taskbar.json')}
    if DENSE:
     (catalog_root/'warlock-running-primary.desktop').write_text('[Desktop Entry]\nType=Application\nName=Primary\nStartupWMClass=warlock-primary-fixture\nExec=/usr/bin/true\n')
     dense_labels=['Primary']+['Dense '+str(i) for i in range(16)]+['Peer']
@@ -364,7 +373,7 @@ raise SystemExit(daemon.run())
     launches=[json.loads(l.split(': ',1)[1]) for l in text().splitlines() if l.startswith('frontend-request: ') and json.loads(l.split(': ',1)[1])['kind']=='application-launch']
     check('OrdinaryPrimaryActionsNeverLaunchDuplicates',not launches and len(journal())==5,launchRequests=launches,windowRequests=len(journal()))
     report['nativePrimaryJourneyObserved']=True
-   elif CATALOG or TASKVIEW or SWITCHER or CHORD:
+   elif (CATALOG or TASKVIEW or SWITCHER or CHORD) and not DENSEPICKER:
     keyboard=pathlib.Path('/home/hoskinson/window-integration-qa/orca-reader/physical-commands/evdev-keyboard');report['keyboard']={'path':str(keyboard),'sha256':sha(keyboard)}
     def key(code):helper([str(keyboard)],f'key {code} 1\nsleep 50\nkey {code} 0\nsleep 100\nsync\n')
     def popup_body():
@@ -833,7 +842,8 @@ raise SystemExit(daemon.run())
     def open_picker():
      button=wait(group_button);body=bar_body();box=body['actions']
      left=max(box['x'],button['x']);right=min(box['x']+box['width'],button['x']+button['width'])
-     if right-left<20:
+     for _ in range(18 if REFLOW else 1):
+      if right-left>=20:break
       helper([str(POINTER),'480',str(dense_height)],f'move {round(box["x"]+box["width"]/2)} 30\nwheel 400 0\nsleep 100\n')
       button=wait(group_button);body=bar_body();box=body['actions'];left=max(box['x'],button['x']);right=min(box['x']+box['width'],button['x']+button['width'])
      check('ActualGroupPointerIntersection',right-left>=20,button=button,body=body)
@@ -866,6 +876,25 @@ raise SystemExit(daemon.run())
     check('ActualTenMemberGroupOpensWithoutLaunchOrWindowEffect',len(picker['selections'])==10 and len(journal())==before and len(launches())==before_launches,picker=picker)
     check('NativePickerHasEnlargedTextAndOverflow',popup_body()['fontSize']==('32px' if DENSEMENU else '24px') and popup_body()['scrollHeight']>popup_body()['viewportHeight'],body=popup_body())
     key(107);wait(lambda:selected(order[-1]));capture('last')
+    if REFLOW:
+     def pin_order(body):return [b['identity'][len('bar:pin:'):] for b in body['buttons'] if b.get('identity','').startswith('bar:pin:')]
+     check('ReflowFixtureHasConfiguredOverflow',pin_order(bar_body())==reflow_ids and bar_body()['scrollWidth']>bar_body()['clientWidth'],body=bar_body())
+     def resize_selected(stage,mode,identity,width,height):
+      prior=projection();previous_lease=int(popup_body()['lease']);previous_order=[b['identity'] for b in popup_body()['buttons']];closed=text().count('surface-popup-closed:');reflows=text().count('view-reflow:')
+      result=s.ctl('eval','hl.monitor({output="WAYLAND-1",mode="'+str(width)+'x'+str(height)+'@60",position="0x0",scale=1})')
+      check(stage+'NativeOutputResizeCommand',result.strip()=='ok',result=result)
+      wait(lambda:any(m['name']=='WAYLAND-1' and m['width']==width and m['height']==height for m in s.data('monitors')))
+      expected_width,expected_height=min(700,width-8),min(420,height-52)
+      wait(lambda:(projection() or {}).get('mode')==mode and int((popup_body() or {}).get('lease','0'))>previous_lease and (popup_body() or {}).get('viewportWidth')==expected_width and (popup_body() or {}).get('viewportHeight')==expected_height and selected(identity))
+      wait(lambda:(bar_body() or {}).get('viewportWidth')==width)
+      body=popup_body();check(stage+'CurrentSelectionAndOrderPersist',[b['identity'] for b in body['buttons']]==previous_order and pin_order(bar_body())==reflow_ids and len(journal())==before and len(launches())==before_launches,body=body,prior=prior,current=projection())
+      import re
+      boxes=[line for line in text().splitlines() if 'xdg_popup' in line and '.configure(' in line];box=tuple(map(int,re.search(r'configure\((-?\d+), (-?\d+), (\d+), (\d+)\)',boxes[-1]).groups()));focused=next(b for b in body['buttons'] if b['id']==body['focus'])
+      check(stage+'EntireFocusedControlWithinPhysicalOutput',box[0]+focused['x']>=0 and box[1]+focused['y']>=0 and box[0]+focused['x']+focused['width']<=width and box[1]+focused['y']+focused['height']<=height,box=box,focused=focused,output=[width,height])
+      check(stage+'RetiresOldInputBeforeFreshPopup',text().count('surface-popup-closed:')>closed and text().count('view-reflow:')>reflows and 'surface-popup-open: lease='+body['lease'] in text(),oldLease=previous_lease,newLease=body['lease'])
+      capture(stage)
+     resize_selected('picker-reflow-grow','picker',order[-1],640,480)
+     resize_selected('picker-reflow-shrink','picker',order[-1],480,360)
     key(102);wait(lambda:selected('control:close'));key(108);wait(lambda:selected(order[0]));capture('first')
     for identity in order[1:]:
      key(108);body=wait(lambda:selected(identity));check('PhysicalArrowReaches'+identity,selected(identity),body=body)
@@ -891,6 +920,10 @@ raise SystemExit(daemon.run())
      menu_order=[b['identity'] for b in popup_body()['buttons']]
      check('NativeOperationMenuActuallyOverflowsAt200Percent',popup_body()['fontSize']=='32px' and popup_body()['scrollHeight']>popup_body()['viewportHeight'],body=popup_body())
      key(107);body=wait(lambda:menu_selected('Maximize'));check('NativeMenuEndRevealsLastEnabledOperation',True,body=body);capture('operation-end')
+     if REFLOW:
+      maximum=next(b['identity'] for b in popup_body()['buttons'] if b['accessibleName']=='Maximize')
+      resize_selected('menu-reflow-grow','menu',maximum,640,480)
+      resize_selected('menu-reflow-shrink','menu',maximum,480,360)
      key(102);body=wait(lambda:menu_selected('Minimize'));check('NativeMenuHomeSkipsDisabledRestore',True,body=body)
      key(103);wait(lambda:menu_selected('Maximize'));key(108);wait(lambda:menu_selected('Minimize'))
      check('NativeMenuArrowsWrapEnabledOperationsInOriginalOrder',[b['identity'] for b in popup_body()['buttons']]==menu_order and len(journal())==before,body=popup_body())
@@ -904,7 +937,11 @@ raise SystemExit(daemon.run())
     key(28);wait(lambda:transaction_state()=='Committed' and (projection() or {}).get('picker') is None)
     check('ChosenDenseGroupMemberActivatesExactlyOnce',len(journal())==before+1 and journal()[-1]['intent']['incarnation']==chosen['incarnation'] and facts()['facts']['focused']==chosen['incarnation'],chosen=chosen,request=journal()[-1])
     events=control.with_suffix('.events.jsonl');before_events=len(events.read_text().splitlines()) if events.exists() else 0
-    key(30);delivered=[json.loads(l) for l in events.read_text().splitlines()[before_events:]] if events.exists() else []
+    key(30)
+    def chosen_input():
+     delivered=[json.loads(l) for l in events.read_text().splitlines()[before_events:]] if events.exists() else []
+     return delivered if any(e['kind']=='key' and e['keyval']==97 and e['window']==chosen['title'] for e in delivered) else None
+    delivered=wait(chosen_input)
     check('ChosenDenseMemberReceivesRealKeyboardInput',any(e['kind']=='key' and e['keyval']==97 and e['window']==chosen['title'] for e in delivered),events=delivered,chosen=chosen)
     image=OUTPUT/'dense-picker-chosen-window.png';helper(['/usr/bin/grim',str(image)])
     import gi;gi.require_version('GdkPixbuf','2.0');from gi.repository import GdkPixbuf
@@ -916,6 +953,7 @@ raise SystemExit(daemon.run())
     check('ChosenDenseWindowIsPhysicallyPresented',green>1000,capture=report['chosenWindowCapture'])
     report['nativeDensePickerObserved']=True
     if DENSEMENU:report['nativeDenseMenuObserved']=True
+    if REFLOW:report['nativePopupReflowObserved']=True
    elif FOCUS:
     keyboard=pathlib.Path('/home/hoskinson/window-integration-qa/orca-reader/physical-commands/evdev-keyboard')
     report['keyboard']={'path':str(keyboard),'sha256':sha(keyboard)}

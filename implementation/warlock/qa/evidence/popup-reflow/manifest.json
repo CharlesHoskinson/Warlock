@@ -1,0 +1,3367 @@
+{
+  "schema": 1,
+  "generatedUTC": "2026-10-08T09:32:46.848788+00:00",
+  "requirements": [
+    "ELM-UI-008"
+  ],
+  "scenarios": [
+    "overflow-resize"
+  ],
+  "originalRequirements": [
+    {
+      "id": "ELM-UI-008",
+      "capability": "elm-taskbar",
+      "phase": "P3",
+      "pattern": "ubiquitous",
+      "priority": "must",
+      "ears": "The shell SHALL keep every configured icon, group member and action reachable through bounded scrolling or overflow, reveal keyboard selection, preserve identity/order across resizing, and expose labeled menu and window-operation affordances through pointer and keyboard.",
+      "task": "Implement accessible dense-layout overflow and menu discovery.",
+      "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+      "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+      "scenarios": [
+        {
+          "name": "overflow-first-last",
+          "given": "small output, enlarged text and more icons than fit",
+          "when": "first and last entries and their menus are visited",
+          "then": "all entries are reachable, focus is revealed and labels identify operations"
+        },
+        {
+          "name": "overflow-resize",
+          "given": "small output, enlarged text and more icons than fit",
+          "when": "output size changes",
+          "then": "identity and configured order persist with reachable active selection"
+        },
+        {
+          "name": "menu-invocation",
+          "given": "small output, enlarged text and more icons than fit",
+          "when": "context menu or jump list is invoked",
+          "then": "secondary click and Menu/Shift-F10 expose labeled operations and Escape returns focus"
+        }
+      ],
+      "source": "docs/elm-roadmap/coordinator-requirements.json",
+      "status": "proposed",
+      "taskId": "P3-ELM-UI-008",
+      "accountableOwnerRole": "Elm presentation lead",
+      "verifierRole": "Independent acceptance reviewer"
+    }
+  ],
+  "observed": "At 200% text, 18 configured overflowing pins and ten native roots retain configured/control order and focused member/operation across 480x360 -> 640x480 -> 480x360. Every focused control fits entirely within the physical output and its label paints; each replacement retires the old input lease and opens a fresh lease. Menu traversal/Tab/Escape return group focus, and member activation targets one exact incarnation. Default-size minimize/restore, actual GTK typing and Task View dismissal pass. The resized dense selection journey fails final GTK typing at the original six-second deadline.",
+  "scope": "Bounded native picker/menu reflow, physical dimensions/pixels, order and fresh input leases; actual compiled Elm policy and browser presentation checks. Native campaign passed is false because post-selection application keyboard input failed; no complete journey, applicable AT, independent original-scenario or release acceptance claimed.",
+  "missingObservations": [
+    "Real GTK keyboard recipient after choosing a dense group member following native output reflow",
+    "Applicable assistive-technology navigation, operation names and focus observations",
+    "Independent original-scenario review against exact source/ABI/toolchain"
+  ],
+  "nativeCampaignPassed": false,
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "fullReleaseAccepted": false,
+  "sourceParentRevision": "03d0a6516982daac33be446220e2dd300fd48002",
+  "sourceHashes": {
+    "implementation/warlock/src/SurfaceController.elm": "6a67e402cc1b736d916bdf6fb755668dfcd1c50f9008a585a647200f8ba994bb",
+    "implementation/warlock/assets/popup-adapter.js": "08526be2387a279122dd0b5236ce3bd205d24240bc9378b444d150eeda2c7781",
+    "implementation/warlock/qa/check-search.py": "1c02ea302c174855016149f117875af5694906ac19ef833ec019dd75715b2869",
+    "implementation/warlock/qa/dense-taskbar-browser.mjs": "aa0ec17559253de21333ab60a6e1561c44d1b8296298286b61621f9463bb20da",
+    "implementation/warlock/qa/native-window-feedback.py": "d0a3e2d5b8e7ceb31e1682503c81d55dac231bba83ef6d6dfec8e02ec1167caf",
+    "implementation/warlock/qa/PopupReflowReplay.elm": "19b1e6e709ab78d8c79825e37cddeb49cde02617e51d286df3971e78bf1b2172",
+    "implementation/warlock/qa/current-search-build.json": "dc3bf1d99c9d44498eaa05db3c276ade1931570975a8b9d49f0bac5fdaff1237",
+    "implementation/warlock/assets/elm.js": "10d72c9dd0cba778619e0284368861e57da4c5b8512914ca7bbaa4549a6712df",
+    "implementation/warlock/assets/bar.js": "d2bd3e1d84b6dc605744da689c0331e89a0cd45d083c0cdbc3b1ee620a18e860",
+    "implementation/warlock/assets/popup.js": "054636c284b4f6a026963b18b0e41b2f1a737fd87f9cdc1d8ef5449d6030222a",
+    "implementation/warlock/README.md": "95b504921b2298e2caffb4d03df2f5644a09238abf2fa45a85b6e16d48c9acd2",
+    "implementation/warlock/native/host.c": "97781183f747fe202628be969226c11cffd8311a96a43ecc5c07e8ce3d5657d7"
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+      "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791440691968763486/elm-window-geometry-authority.so",
+      "sha256": "1805693201328985cbf109f5fef6779b8fe469badf094fd417e8206f91c50b47"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791451470950801371/elm-host",
+    "sha256": "9cb3f2ff24b38ede5dc7669cc0509cf1106fe3b40f3d71062910b273a7608473",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791451470950801371/report.json",
+    "heldBuildSHA256": "8c6877f9b48a6a8e396f427fbab6cb264483ee583cf97ce9afb811ea92cef1dc"
+  },
+  "runnerSHA256": "d0a3e2d5b8e7ceb31e1682503c81d55dac231bba83ef6d6dfec8e02ec1167caf",
+  "componentReport": {
+    "path": "implementation/warlock/qa/runs/taskbar-primary-1791451470950801371/report.json",
+    "sha256": "8c6877f9b48a6a8e396f427fbab6cb264483ee583cf97ce9afb811ea92cef1dc"
+  },
+  "componentRunnerSnapshotNote": "Component build predates the native runner-only change to observe the already-sent GTK key within its existing six-second deadline; tested Elm/native/view bytes are unchanged.",
+  "nativeReflowChecks": [
+    {
+      "name": "picker-reflow-growNativeOutputResizeCommand",
+      "passed": true,
+      "result": "ok\n"
+    },
+    {
+      "name": "picker-reflow-growCurrentSelectionAndOrderPersist",
+      "passed": true,
+      "body": {
+        "publication": "11",
+        "lease": "2",
+        "buttons": [
+          {
+            "id": "picker-close:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1",
+            "identity": "control:close",
+            "label": "Close",
+            "labelRect": {
+              "x": 24,
+              "y": -585.5,
+              "width": 584,
+              "height": 37
+            },
+            "accessibleName": "Close window picker",
+            "disabled": false,
+            "x": 11,
+            "y": -603,
+            "width": 610,
+            "height": 72
+          },
+          {
+            "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:1",
+            "identity": "family:1",
+            "label": "Activate ELM-ACTIVATION-PEEROpen",
+            "labelRect": {
+              "x": 24,
+              "y": -521,
+              "width": 584,
+              "height": 37
+            },
+            "accessibleName": "Activate ELM-ACTIVATION-PEER",
+            "disabled": false,
+            "x": 11,
+            "y": -528,
+            "width": 610,
+            "height": 91
+          },
+          {
+            "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:2",
+            "identity": "family:2",
+            "label": "Activate ELM-AUTHORITY-FIXTUREOpen",
+            "labelRect": {
+              "x": 24,
+              "y": -427,
+              "width": 584,
+              "height": 37
+            },
+            "accessibleName": "Activate ELM-AUTHORITY-FIXTURE",
+            "disabled": false,
+            "x": 11,
+            "y": -434,
+            "width": 610,
+            "height": 91
+          },
+          {
+            "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:3",
+            "identity": "family:3",
+            "label": "Activate LONG-DOC-7 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+            "labelRect": {
+              "x": 24,
+              "y": -333,
+              "width": 584,
+              "height": 37
+            },
+            "accessibleName": "Activate LONG-DOC-7 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+            "disabled": false,
+            "x": 11,
+            "y": -340,
+            "width": 610,
+            "height": 91
+          },
+          {
+            "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:4",
+            "identity": "family:4",
+            "label": "Activate LONG-DOC-6 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+            "labelRect": {
+              "x": 24,
+              "y": -239,
+              "width": 584,
+              "height": 37
+            },
+            "accessibleName": "Activate LONG-DOC-6 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+            "disabled": false,
+            "x": 11,
+            "y": -246,
+            "width": 610,
+            "height": 91
+          },
+          {
+            "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:5",
+            "identity": "family:5",
+            "label": "Activate LONG-DOC-5 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+            "labelRect": {
+              "x": 24,
+              "y": -145,
+              "width": 584,
+              "height": 37
+            },
+            "accessibleName": "Activate LONG-DOC-5 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+            "disabled": false,
+            "x": 11,
+            "y": -152,
+            "width": 610,
+            "height": 91
+          },
+          {
+            "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:6",
+            "identity": "family:6",
+            "label": "Activate LONG-DOC-4 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+            "labelRect": {
+              "x": 24,
+              "y": -51,
+              "width": 584,
+              "height": 37
+            },
+            "accessibleName": "Activate LONG-DOC-4 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+            "disabled": false,
+            "x": 11,
+            "y": -58,
+            "width": 610,
+            "height": 91
+          },
+          {
+            "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:7",
+            "identity": "family:7",
+            "label": "Activate LONG-DOC-3 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+            "labelRect": {
+              "x": 24,
+              "y": 43,
+              "width": 584,
+              "height": 37
+            },
+            "accessibleName": "Activate LONG-DOC-3 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+            "disabled": false,
+            "x": 11,
+            "y": 36,
+            "width": 610,
+            "height": 91
+          },
+          {
+            "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:8",
+            "identity": "family:8",
+            "label": "Activate LONG-DOC-2 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+            "labelRect": {
+              "x": 24,
+              "y": 137,
+              "width": 584,
+              "height": 37
+            },
+            "accessibleName": "Activate LONG-DOC-2 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+            "disabled": false,
+            "x": 11,
+            "y": 130,
+            "width": 610,
+            "height": 91
+          },
+          {
+            "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:9",
+            "identity": "family:9",
+            "label": "Activate LONG-DOC-1 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+            "labelRect": {
+              "x": 24,
+              "y": 231,
+              "width": 584,
+              "height": 37
+            },
+            "accessibleName": "Activate LONG-DOC-1 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+            "disabled": false,
+            "x": 11,
+            "y": 224,
+            "width": 610,
+            "height": 91
+          },
+          {
+            "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:10",
+            "identity": "family:10",
+            "label": "Activate LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+            "labelRect": {
+              "x": 24,
+              "y": 325,
+              "width": 584,
+              "height": 37
+            },
+            "accessibleName": "Activate LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+            "disabled": false,
+            "x": 11,
+            "y": 318,
+            "width": 610,
+            "height": 91
+          }
+        ],
+        "fields": [],
+        "focus": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:10",
+        "documentFocused": true,
+        "fontSize": "32px",
+        "viewportWidth": 632,
+        "viewportHeight": 420,
+        "scrollTop": 711,
+        "scrollHeight": 1131,
+        "text": "Choose a window\nConnected\n\nClose\n\nActivate ELM-ACTIVATION-PEER\nOpen\n\nActivate ELM-AUTHORITY-FIXTURE\nOpen\n\nActivate LONG-DOC-7 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen\n\nActivate LONG-DOC-6 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen\n\nActivate LONG-DOC-5 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen\n\nActivate LONG-DOC-4 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen\n\nActivate LONG-DOC-3 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen\n\nActivate LONG-DOC-2 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen\n\nActivate LONG-DOC-1 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen\n\nActivate LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen"
+      },
+      "prior": {
+        "phase": "Coherent",
+        "transaction": "Idle",
+        "groups": [
+          {
+            "key": "application:GTK Application",
+            "domId": "group:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:application:GTK Application",
+            "title": "ELM-ACTIVATION-PEER",
+            "active": true,
+            "expanded": true,
+            "disabled": false,
+            "label": "Choose a window from ELM-ACTIVATION-PEER",
+            "point": [
+              183.0,
+              48.0
+            ],
+            "rect": [
+              71,
+              1,
+              224,
+              94
+            ],
+            "clip": [
+              0,
+              0,
+              800,
+              48
+            ],
+            "visible": false
+          }
+        ],
+        "menu": null,
+        "mode": "picker",
+        "outstanding": 0,
+        "registry": 0,
+        "picker": {
+          "generation": "1",
+          "selections": [
+            {
+              "incarnation": "1",
+              "title": "ELM-ACTIVATION-PEER",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:1",
+              "disabled": false,
+              "label": "Activate ELM-ACTIVATION-PEER",
+              "point": [
+                240.0,
+                -1261.5
+              ],
+              "rect": [
+                15,
+                -1345,
+                450,
+                167
+              ],
+              "clip": [
+                4,
+                48,
+                476,
+                356
+              ],
+              "visible": false
+            },
+            {
+              "incarnation": "2",
+              "title": "ELM-AUTHORITY-FIXTURE",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:2",
+              "disabled": false,
+              "label": "Activate ELM-AUTHORITY-FIXTURE",
+              "point": [
+                240.0,
+                -1091.5
+              ],
+              "rect": [
+                15,
+                -1175,
+                450,
+                167
+              ],
+              "clip": [
+                4,
+                48,
+                476,
+                356
+              ],
+              "visible": false
+            },
+            {
+              "incarnation": "3",
+              "title": "LONG-DOC-7 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:3",
+              "disabled": false,
+              "label": "Activate LONG-DOC-7 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                240.0,
+                -921.5
+              ],
+              "rect": [
+                15,
+                -1005,
+                450,
+                167
+              ],
+              "clip": [
+                4,
+                48,
+                476,
+                356
+              ],
+              "visible": false
+            },
+            {
+              "incarnation": "4",
+              "title": "LONG-DOC-6 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:4",
+              "disabled": false,
+              "label": "Activate LONG-DOC-6 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                240.0,
+                -751.5
+              ],
+              "rect": [
+                15,
+                -835,
+                450,
+                167
+              ],
+              "clip": [
+                4,
+                48,
+                476,
+                356
+              ],
+              "visible": false
+            },
+            {
+              "incarnation": "5",
+              "title": "LONG-DOC-5 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:5",
+              "disabled": false,
+              "label": "Activate LONG-DOC-5 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                240.0,
+                -581.5
+              ],
+              "rect": [
+                15,
+                -665,
+                450,
+                167
+              ],
+              "clip": [
+                4,
+                48,
+                476,
+                356
+              ],
+              "visible": false
+            },
+            {
+              "incarnation": "6",
+              "title": "LONG-DOC-4 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:6",
+              "disabled": false,
+              "label": "Activate LONG-DOC-4 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                240.0,
+                -411.5
+              ],
+              "rect": [
+                15,
+                -495,
+                450,
+                167
+              ],
+              "clip": [
+                4,
+                48,
+                476,
+                356
+              ],
+              "visible": false
+            },
+            {
+              "incarnation": "7",
+              "title": "LONG-DOC-3 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:7",
+              "disabled": false,
+              "label": "Activate LONG-DOC-3 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                240.0,
+                -241.5
+              ],
+              "rect": [
+                15,
+                -325,
+                450,
+                167
+              ],
+              "clip": [
+                4,
+                48,
+                476,
+                356
+              ],
+              "visible": false
+            },
+            {
+              "incarnation": "8",
+              "title": "LONG-DOC-2 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:8",
+              "disabled": false,
+              "label": "Activate LONG-DOC-2 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                240.0,
+                -71.5
+              ],
+              "rect": [
+                15,
+                -155,
+                450,
+                167
+              ],
+              "clip": [
+                4,
+                48,
+                476,
+                356
+              ],
+              "visible": false
+            },
+            {
+              "incarnation": "9",
+              "title": "LONG-DOC-1 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:9",
+              "disabled": false,
+              "label": "Activate LONG-DOC-1 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                240.0,
+                98.5
+              ],
+              "rect": [
+                15,
+                15,
+                450,
+                167
+              ],
+              "clip": [
+                4,
+                48,
+                476,
+                356
+              ],
+              "visible": false
+            },
+            {
+              "incarnation": "10",
+              "title": "LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:10",
+              "disabled": false,
+              "label": "Activate LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                240.0,
+                268.5
+              ],
+              "rect": [
+                15,
+                185,
+                450,
+                167
+              ],
+              "clip": [
+                4,
+                48,
+                476,
+                356
+              ],
+              "visible": true
+            }
+          ],
+          "close": {
+            "disabled": false,
+            "label": "Close window picker",
+            "point": [
+              240.0,
+              -1384.0
+            ],
+            "rect": [
+              15,
+              -1420,
+              450,
+              72
+            ],
+            "clip": [
+              4,
+              48,
+              476,
+              356
+            ],
+            "visible": false
+          }
+        },
+        "openerId": "applications:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:4:control:opener",
+        "reconnectId": "reconnect",
+        "focus": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:10",
+        "reconnect": null,
+        "openApplications": {
+          "disabled": false,
+          "label": "Open applications",
+          "point": [
+            -4403.0,
+            48.0
+          ],
+          "rect": [
+            -4483,
+            1,
+            160,
+            94
+          ],
+          "clip": [
+            0,
+            0,
+            800,
+            48
+          ],
+          "visible": false
+        },
+        "publication": "10"
+      },
+      "current": {
+        "phase": "Coherent",
+        "transaction": "Idle",
+        "groups": [
+          {
+            "key": "application:GTK Application",
+            "domId": "group:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:application:GTK Application",
+            "title": "ELM-ACTIVATION-PEER",
+            "active": true,
+            "expanded": true,
+            "disabled": false,
+            "label": "Choose a window from ELM-ACTIVATION-PEER",
+            "point": [
+              318.0,
+              48.0
+            ],
+            "rect": [
+              206,
+              1,
+              224,
+              94
+            ],
+            "clip": [
+              0,
+              0,
+              800,
+              48
+            ],
+            "visible": false
+          }
+        ],
+        "menu": null,
+        "mode": "picker",
+        "outstanding": 0,
+        "registry": 0,
+        "picker": {
+          "generation": "1",
+          "selections": [
+            {
+              "incarnation": "1",
+              "title": "ELM-ACTIVATION-PEER",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:1",
+              "disabled": false,
+              "label": "Activate ELM-ACTIVATION-PEER",
+              "point": [
+                320.0,
+                -434.5
+              ],
+              "rect": [
+                15,
+                -480,
+                610,
+                91
+              ],
+              "clip": [
+                4,
+                48,
+                636,
+                468
+              ],
+              "visible": false
+            },
+            {
+              "incarnation": "2",
+              "title": "ELM-AUTHORITY-FIXTURE",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:2",
+              "disabled": false,
+              "label": "Activate ELM-AUTHORITY-FIXTURE",
+              "point": [
+                320.0,
+                -340.5
+              ],
+              "rect": [
+                15,
+                -386,
+                610,
+                91
+              ],
+              "clip": [
+                4,
+                48,
+                636,
+                468
+              ],
+              "visible": false
+            },
+            {
+              "incarnation": "3",
+              "title": "LONG-DOC-7 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:3",
+              "disabled": false,
+              "label": "Activate LONG-DOC-7 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                320.0,
+                -246.5
+              ],
+              "rect": [
+                15,
+                -292,
+                610,
+                91
+              ],
+              "clip": [
+                4,
+                48,
+                636,
+                468
+              ],
+              "visible": false
+            },
+            {
+              "incarnation": "4",
+              "title": "LONG-DOC-6 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:4",
+              "disabled": false,
+              "label": "Activate LONG-DOC-6 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                320.0,
+                -152.5
+              ],
+              "rect": [
+                15,
+                -198,
+                610,
+                91
+              ],
+              "clip": [
+                4,
+                48,
+                636,
+                468
+              ],
+              "visible": false
+            },
+            {
+              "incarnation": "5",
+              "title": "LONG-DOC-5 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:5",
+              "disabled": false,
+              "label": "Activate LONG-DOC-5 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                320.0,
+                -58.5
+              ],
+              "rect": [
+                15,
+                -104,
+                610,
+                91
+              ],
+              "clip": [
+                4,
+                48,
+                636,
+                468
+              ],
+              "visible": false
+            },
+            {
+              "incarnation": "6",
+              "title": "LONG-DOC-4 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:6",
+              "disabled": false,
+              "label": "Activate LONG-DOC-4 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                320.0,
+                35.5
+              ],
+              "rect": [
+                15,
+                -10,
+                610,
+                91
+              ],
+              "clip": [
+                4,
+                48,
+                636,
+                468
+              ],
+              "visible": false
+            },
+            {
+              "incarnation": "7",
+              "title": "LONG-DOC-3 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:7",
+              "disabled": false,
+              "label": "Activate LONG-DOC-3 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                320.0,
+                129.5
+              ],
+              "rect": [
+                15,
+                84,
+                610,
+                91
+              ],
+              "clip": [
+                4,
+                48,
+                636,
+                468
+              ],
+              "visible": true
+            },
+            {
+              "incarnation": "8",
+              "title": "LONG-DOC-2 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:8",
+              "disabled": false,
+              "label": "Activate LONG-DOC-2 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                320.0,
+                223.5
+              ],
+              "rect": [
+                15,
+                178,
+                610,
+                91
+              ],
+              "clip": [
+                4,
+                48,
+                636,
+                468
+              ],
+              "visible": true
+            },
+            {
+              "incarnation": "9",
+              "title": "LONG-DOC-1 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:9",
+              "disabled": false,
+              "label": "Activate LONG-DOC-1 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                320.0,
+                317.5
+              ],
+              "rect": [
+                15,
+                272,
+                610,
+                91
+              ],
+              "clip": [
+                4,
+                48,
+                636,
+                468
+              ],
+              "visible": true
+            },
+            {
+              "incarnation": "10",
+              "title": "LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:10",
+              "disabled": false,
+              "label": "Activate LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                320.0,
+                411.5
+              ],
+              "rect": [
+                15,
+                366,
+                610,
+                91
+              ],
+              "clip": [
+                4,
+                48,
+                636,
+                468
+              ],
+              "visible": true
+            }
+          ],
+          "close": {
+            "disabled": false,
+            "label": "Close window picker",
+            "point": [
+              320.0,
+              -519.0
+            ],
+            "rect": [
+              15,
+              -555,
+              610,
+              72
+            ],
+            "clip": [
+              4,
+              48,
+              636,
+              468
+            ],
+            "visible": false
+          }
+        },
+        "openerId": "applications:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:4:control:opener",
+        "reconnectId": "reconnect",
+        "focus": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:10",
+        "reconnect": null,
+        "openApplications": {
+          "disabled": false,
+          "label": "Open applications",
+          "point": [
+            -4268.0,
+            48.0
+          ],
+          "rect": [
+            -4348,
+            1,
+            160,
+            94
+          ],
+          "clip": [
+            0,
+            0,
+            800,
+            48
+          ],
+          "visible": false
+        },
+        "publication": "11"
+      }
+    },
+    {
+      "name": "picker-reflow-growEntireFocusedControlWithinPhysicalOutput",
+      "passed": true,
+      "box": [
+        4,
+        48,
+        632,
+        420
+      ],
+      "focused": {
+        "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:10",
+        "identity": "family:10",
+        "label": "Activate LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+        "labelRect": {
+          "x": 24,
+          "y": 325,
+          "width": 584,
+          "height": 37
+        },
+        "accessibleName": "Activate LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+        "disabled": false,
+        "x": 11,
+        "y": 318,
+        "width": 610,
+        "height": 91
+      },
+      "output": [
+        640,
+        480
+      ]
+    },
+    {
+      "name": "picker-reflow-growRetiresOldInputBeforeFreshPopup",
+      "passed": true,
+      "oldLease": 1,
+      "newLease": "2"
+    },
+    {
+      "name": "picker-reflow-growActualFocusedControlPixels",
+      "passed": true,
+      "capture": {
+        "stage": "picker-reflow-grow",
+        "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791451692130429752/dense-picker-picker-reflow-grow.png",
+        "sha256": "6728f7bc47cf83f3c2b0d6c36ead19407c17d5fb2be12ee2e529e63030e36f8f",
+        "region": [
+          28,
+          373,
+          248,
+          410
+        ],
+        "brightPixels": 1243,
+        "paintedPixels": 8140,
+        "area": 8140,
+        "body": {
+          "publication": "11",
+          "lease": "2",
+          "buttons": [
+            {
+              "id": "picker-close:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1",
+              "identity": "control:close",
+              "label": "Close",
+              "labelRect": {
+                "x": 24,
+                "y": -585.5,
+                "width": 584,
+                "height": 37
+              },
+              "accessibleName": "Close window picker",
+              "disabled": false,
+              "x": 11,
+              "y": -603,
+              "width": 610,
+              "height": 72
+            },
+            {
+              "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:1",
+              "identity": "family:1",
+              "label": "Activate ELM-ACTIVATION-PEEROpen",
+              "labelRect": {
+                "x": 24,
+                "y": -521,
+                "width": 584,
+                "height": 37
+              },
+              "accessibleName": "Activate ELM-ACTIVATION-PEER",
+              "disabled": false,
+              "x": 11,
+              "y": -528,
+              "width": 610,
+              "height": 91
+            },
+            {
+              "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:2",
+              "identity": "family:2",
+              "label": "Activate ELM-AUTHORITY-FIXTUREOpen",
+              "labelRect": {
+                "x": 24,
+                "y": -427,
+                "width": 584,
+                "height": 37
+              },
+              "accessibleName": "Activate ELM-AUTHORITY-FIXTURE",
+              "disabled": false,
+              "x": 11,
+              "y": -434,
+              "width": 610,
+              "height": 91
+            },
+            {
+              "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:3",
+              "identity": "family:3",
+              "label": "Activate LONG-DOC-7 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+              "labelRect": {
+                "x": 24,
+                "y": -333,
+                "width": 584,
+                "height": 37
+              },
+              "accessibleName": "Activate LONG-DOC-7 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "disabled": false,
+              "x": 11,
+              "y": -340,
+              "width": 610,
+              "height": 91
+            },
+            {
+              "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:4",
+              "identity": "family:4",
+              "label": "Activate LONG-DOC-6 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+              "labelRect": {
+                "x": 24,
+                "y": -239,
+                "width": 584,
+                "height": 37
+              },
+              "accessibleName": "Activate LONG-DOC-6 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "disabled": false,
+              "x": 11,
+              "y": -246,
+              "width": 610,
+              "height": 91
+            },
+            {
+              "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:5",
+              "identity": "family:5",
+              "label": "Activate LONG-DOC-5 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+              "labelRect": {
+                "x": 24,
+                "y": -145,
+                "width": 584,
+                "height": 37
+              },
+              "accessibleName": "Activate LONG-DOC-5 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "disabled": false,
+              "x": 11,
+              "y": -152,
+              "width": 610,
+              "height": 91
+            },
+            {
+              "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:6",
+              "identity": "family:6",
+              "label": "Activate LONG-DOC-4 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+              "labelRect": {
+                "x": 24,
+                "y": -51,
+                "width": 584,
+                "height": 37
+              },
+              "accessibleName": "Activate LONG-DOC-4 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "disabled": false,
+              "x": 11,
+              "y": -58,
+              "width": 610,
+              "height": 91
+            },
+            {
+              "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:7",
+              "identity": "family:7",
+              "label": "Activate LONG-DOC-3 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+              "labelRect": {
+                "x": 24,
+                "y": 43,
+                "width": 584,
+                "height": 37
+              },
+              "accessibleName": "Activate LONG-DOC-3 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "disabled": false,
+              "x": 11,
+              "y": 36,
+              "width": 610,
+              "height": 91
+            },
+            {
+              "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:8",
+              "identity": "family:8",
+              "label": "Activate LONG-DOC-2 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+              "labelRect": {
+                "x": 24,
+                "y": 137,
+                "width": 584,
+                "height": 37
+              },
+              "accessibleName": "Activate LONG-DOC-2 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "disabled": false,
+              "x": 11,
+              "y": 130,
+              "width": 610,
+              "height": 91
+            },
+            {
+              "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:9",
+              "identity": "family:9",
+              "label": "Activate LONG-DOC-1 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+              "labelRect": {
+                "x": 24,
+                "y": 231,
+                "width": 584,
+                "height": 37
+              },
+              "accessibleName": "Activate LONG-DOC-1 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "disabled": false,
+              "x": 11,
+              "y": 224,
+              "width": 610,
+              "height": 91
+            },
+            {
+              "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:10",
+              "identity": "family:10",
+              "label": "Activate LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+              "labelRect": {
+                "x": 24,
+                "y": 325,
+                "width": 584,
+                "height": 37
+              },
+              "accessibleName": "Activate LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "disabled": false,
+              "x": 11,
+              "y": 318,
+              "width": 610,
+              "height": 91
+            }
+          ],
+          "fields": [],
+          "focus": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:10",
+          "documentFocused": true,
+          "fontSize": "32px",
+          "viewportWidth": 632,
+          "viewportHeight": 420,
+          "scrollTop": 711,
+          "scrollHeight": 1131,
+          "text": "Choose a window\nConnected\n\nClose\n\nActivate ELM-ACTIVATION-PEER\nOpen\n\nActivate ELM-AUTHORITY-FIXTURE\nOpen\n\nActivate LONG-DOC-7 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen\n\nActivate LONG-DOC-6 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen\n\nActivate LONG-DOC-5 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen\n\nActivate LONG-DOC-4 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen\n\nActivate LONG-DOC-3 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen\n\nActivate LONG-DOC-2 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen\n\nActivate LONG-DOC-1 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen\n\nActivate LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen"
+        }
+      }
+    },
+    {
+      "name": "picker-reflow-shrinkNativeOutputResizeCommand",
+      "passed": true,
+      "result": "ok\n"
+    },
+    {
+      "name": "picker-reflow-shrinkCurrentSelectionAndOrderPersist",
+      "passed": true,
+      "body": {
+        "publication": "12",
+        "lease": "3",
+        "buttons": [
+          {
+            "id": "picker-close:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1",
+            "identity": "control:close",
+            "label": "Close",
+            "labelRect": {
+              "x": 24,
+              "y": -1450.5,
+              "width": 424,
+              "height": 37
+            },
+            "accessibleName": "Close window picker",
+            "disabled": false,
+            "x": 11,
+            "y": -1468,
+            "width": 450,
+            "height": 72
+          },
+          {
+            "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:1",
+            "identity": "family:1",
+            "label": "Preview unavailablePreview unavailableActivate ELM-ACTIVATION-PEEROpen",
+            "labelRect": {
+              "x": 24,
+              "y": -1310,
+              "width": 424,
+              "height": 37
+            },
+            "accessibleName": "Activate ELM-ACTIVATION-PEER",
+            "disabled": false,
+            "x": 11,
+            "y": -1393,
+            "width": 450,
+            "height": 167
+          },
+          {
+            "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:2",
+            "identity": "family:2",
+            "label": "Preview unavailablePreview unavailableActivate ELM-AUTHORITY-FIXTUREOpen",
+            "labelRect": {
+              "x": 24,
+              "y": -1140,
+              "width": 424,
+              "height": 37
+            },
+            "accessibleName": "Activate ELM-AUTHORITY-FIXTURE",
+            "disabled": false,
+            "x": 11,
+            "y": -1223,
+            "width": 450,
+            "height": 167
+          },
+          {
+            "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:3",
+            "identity": "family:3",
+            "label": "Preview unavailablePreview unavailableActivate LONG-DOC-7 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+            "labelRect": {
+              "x": 24,
+              "y": -970,
+              "width": 424,
+              "height": 37
+            },
+            "accessibleName": "Activate LONG-DOC-7 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+            "disabled": false,
+            "x": 11,
+            "y": -1053,
+            "width": 450,
+            "height": 167
+          },
+          {
+            "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:4",
+            "identity": "family:4",
+            "label": "Preview unavailablePreview unavailableActivate LONG-DOC-6 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+            "labelRect": {
+              "x": 24,
+              "y": -800,
+              "width": 424,
+              "height": 37
+            },
+            "accessibleName": "Activate LONG-DOC-6 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+            "disabled": false,
+            "x": 11,
+            "y": -883,
+            "width": 450,
+            "height": 167
+          },
+          {
+            "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:5",
+            "identity": "family:5",
+            "label": "Preview unavailablePreview unavailableActivate LONG-DOC-5 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+            "labelRect": {
+              "x": 24,
+              "y": -630,
+              "width": 424,
+              "height": 37
+            },
+            "accessibleName": "Activate LONG-DOC-5 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+            "disabled": false,
+            "x": 11,
+            "y": -713,
+            "width": 450,
+            "height": 167
+          },
+          {
+            "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:6",
+            "identity": "family:6",
+            "label": "Preview unavailablePreview unavailableActivate LONG-DOC-4 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+            "labelRect": {
+              "x": 24,
+              "y": -460,
+              "width": 424,
+              "height": 37
+            },
+            "accessibleName": "Activate LONG-DOC-4 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+            "disabled": false,
+            "x": 11,
+            "y": -543,
+            "width": 450,
+            "height": 167
+          },
+          {
+            "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:7",
+            "identity": "family:7",
+            "label": "Preview unavailablePreview unavailableActivate LONG-DOC-3 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+            "labelRect": {
+              "x": 24,
+              "y": -290,
+              "width": 424,
+              "height": 37
+            },
+            "accessibleName": "Activate LONG-DOC-3 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+            "disabled": false,
+            "x": 11,
+            "y": -373,
+            "width": 450,
+            "height": 167
+          },
+          {
+            "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:8",
+            "identity": "family:8",
+            "label": "Preview unavailablePreview unavailableActivate LONG-DOC-2 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+            "labelRect": {
+              "x": 24,
+              "y": -120,
+              "width": 424,
+              "height": 37
+            },
+            "accessibleName": "Activate LONG-DOC-2 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+            "disabled": false,
+            "x": 11,
+            "y": -203,
+            "width": 450,
+            "height": 167
+          },
+          {
+            "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:9",
+            "identity": "family:9",
+            "label": "Preview unavailablePreview unavailableActivate LONG-DOC-1 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+            "labelRect": {
+              "x": 24,
+              "y": 50,
+              "width": 424,
+              "height": 37
+            },
+            "accessibleName": "Activate LONG-DOC-1 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+            "disabled": false,
+            "x": 11,
+            "y": -33,
+            "width": 450,
+            "height": 167
+          },
+          {
+            "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:10",
+            "identity": "family:10",
+            "label": "Preview unavailablePreview unavailableActivate LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+            "labelRect": {
+              "x": 24,
+              "y": 220,
+              "width": 424,
+              "height": 37
+            },
+            "accessibleName": "Activate LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+            "disabled": false,
+            "x": 11,
+            "y": 137,
+            "width": 450,
+            "height": 167
+          }
+        ],
+        "fields": [],
+        "focus": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:10",
+        "documentFocused": true,
+        "fontSize": "32px",
+        "viewportWidth": 472,
+        "viewportHeight": 308,
+        "scrollTop": 1576,
+        "scrollHeight": 1891,
+        "text": "Choose a window\nConnected\n\nClose\n\nPreview unavailable\nPreview unavailable\nActivate ELM-ACTIVATION-PEER\nOpen\n\nPreview unavailable\nPreview unavailable\nActivate ELM-AUTHORITY-FIXTURE\nOpen\n\nPreview unavailable\nPreview unavailable\nActivate LONG-DOC-7 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen\n\nPreview unavailable\nPreview unavailable\nActivate LONG-DOC-6 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen\n\nPreview unavailable\nPreview unavailable\nActivate LONG-DOC-5 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen\n\nPreview unavailable\nPreview unavailable\nActivate LONG-DOC-4 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen\n\nPreview unavailable\nPreview unavailable\nActivate LONG-DOC-3 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen\n\nPreview unavailable\nPreview unavailable\nActivate LONG-DOC-2 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen\n\nPreview unavailable\nPreview unavailable\nActivate LONG-DOC-1 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen\n\nPreview unavailable\nPreview unavailable\nActivate LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen"
+      },
+      "prior": {
+        "phase": "Coherent",
+        "transaction": "Idle",
+        "groups": [
+          {
+            "key": "application:GTK Application",
+            "domId": "group:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:application:GTK Application",
+            "title": "ELM-ACTIVATION-PEER",
+            "active": true,
+            "expanded": true,
+            "disabled": false,
+            "label": "Choose a window from ELM-ACTIVATION-PEER",
+            "point": [
+              318.0,
+              48.0
+            ],
+            "rect": [
+              206,
+              1,
+              224,
+              94
+            ],
+            "clip": [
+              0,
+              0,
+              800,
+              48
+            ],
+            "visible": false
+          }
+        ],
+        "menu": null,
+        "mode": "picker",
+        "outstanding": 0,
+        "registry": 0,
+        "picker": {
+          "generation": "1",
+          "selections": [
+            {
+              "incarnation": "1",
+              "title": "ELM-ACTIVATION-PEER",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:1",
+              "disabled": false,
+              "label": "Activate ELM-ACTIVATION-PEER",
+              "point": [
+                320.0,
+                -434.5
+              ],
+              "rect": [
+                15,
+                -480,
+                610,
+                91
+              ],
+              "clip": [
+                4,
+                48,
+                636,
+                468
+              ],
+              "visible": false
+            },
+            {
+              "incarnation": "2",
+              "title": "ELM-AUTHORITY-FIXTURE",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:2",
+              "disabled": false,
+              "label": "Activate ELM-AUTHORITY-FIXTURE",
+              "point": [
+                320.0,
+                -340.5
+              ],
+              "rect": [
+                15,
+                -386,
+                610,
+                91
+              ],
+              "clip": [
+                4,
+                48,
+                636,
+                468
+              ],
+              "visible": false
+            },
+            {
+              "incarnation": "3",
+              "title": "LONG-DOC-7 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:3",
+              "disabled": false,
+              "label": "Activate LONG-DOC-7 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                320.0,
+                -246.5
+              ],
+              "rect": [
+                15,
+                -292,
+                610,
+                91
+              ],
+              "clip": [
+                4,
+                48,
+                636,
+                468
+              ],
+              "visible": false
+            },
+            {
+              "incarnation": "4",
+              "title": "LONG-DOC-6 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:4",
+              "disabled": false,
+              "label": "Activate LONG-DOC-6 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                320.0,
+                -152.5
+              ],
+              "rect": [
+                15,
+                -198,
+                610,
+                91
+              ],
+              "clip": [
+                4,
+                48,
+                636,
+                468
+              ],
+              "visible": false
+            },
+            {
+              "incarnation": "5",
+              "title": "LONG-DOC-5 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:5",
+              "disabled": false,
+              "label": "Activate LONG-DOC-5 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                320.0,
+                -58.5
+              ],
+              "rect": [
+                15,
+                -104,
+                610,
+                91
+              ],
+              "clip": [
+                4,
+                48,
+                636,
+                468
+              ],
+              "visible": false
+            },
+            {
+              "incarnation": "6",
+              "title": "LONG-DOC-4 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:6",
+              "disabled": false,
+              "label": "Activate LONG-DOC-4 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                320.0,
+                35.5
+              ],
+              "rect": [
+                15,
+                -10,
+                610,
+                91
+              ],
+              "clip": [
+                4,
+                48,
+                636,
+                468
+              ],
+              "visible": false
+            },
+            {
+              "incarnation": "7",
+              "title": "LONG-DOC-3 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:7",
+              "disabled": false,
+              "label": "Activate LONG-DOC-3 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                320.0,
+                129.5
+              ],
+              "rect": [
+                15,
+                84,
+                610,
+                91
+              ],
+              "clip": [
+                4,
+                48,
+                636,
+                468
+              ],
+              "visible": true
+            },
+            {
+              "incarnation": "8",
+              "title": "LONG-DOC-2 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:8",
+              "disabled": false,
+              "label": "Activate LONG-DOC-2 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                320.0,
+                223.5
+              ],
+              "rect": [
+                15,
+                178,
+                610,
+                91
+              ],
+              "clip": [
+                4,
+                48,
+                636,
+                468
+              ],
+              "visible": true
+            },
+            {
+              "incarnation": "9",
+              "title": "LONG-DOC-1 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:9",
+              "disabled": false,
+              "label": "Activate LONG-DOC-1 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                320.0,
+                317.5
+              ],
+              "rect": [
+                15,
+                272,
+                610,
+                91
+              ],
+              "clip": [
+                4,
+                48,
+                636,
+                468
+              ],
+              "visible": true
+            },
+            {
+              "incarnation": "10",
+              "title": "LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:10",
+              "disabled": false,
+              "label": "Activate LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                320.0,
+                411.5
+              ],
+              "rect": [
+                15,
+                366,
+                610,
+                91
+              ],
+              "clip": [
+                4,
+                48,
+                636,
+                468
+              ],
+              "visible": true
+            }
+          ],
+          "close": {
+            "disabled": false,
+            "label": "Close window picker",
+            "point": [
+              320.0,
+              -519.0
+            ],
+            "rect": [
+              15,
+              -555,
+              610,
+              72
+            ],
+            "clip": [
+              4,
+              48,
+              636,
+              468
+            ],
+            "visible": false
+          }
+        },
+        "openerId": "applications:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:4:control:opener",
+        "reconnectId": "reconnect",
+        "focus": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:10",
+        "reconnect": null,
+        "openApplications": {
+          "disabled": false,
+          "label": "Open applications",
+          "point": [
+            -4268.0,
+            48.0
+          ],
+          "rect": [
+            -4348,
+            1,
+            160,
+            94
+          ],
+          "clip": [
+            0,
+            0,
+            800,
+            48
+          ],
+          "visible": false
+        },
+        "publication": "11"
+      },
+      "current": {
+        "phase": "Coherent",
+        "transaction": "Idle",
+        "groups": [
+          {
+            "key": "application:GTK Application",
+            "domId": "group:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:application:GTK Application",
+            "title": "ELM-ACTIVATION-PEER",
+            "active": true,
+            "expanded": true,
+            "disabled": false,
+            "label": "Choose a window from ELM-ACTIVATION-PEER",
+            "point": [
+              183.0,
+              48.0
+            ],
+            "rect": [
+              71,
+              1,
+              224,
+              94
+            ],
+            "clip": [
+              0,
+              0,
+              800,
+              48
+            ],
+            "visible": false
+          }
+        ],
+        "menu": null,
+        "mode": "picker",
+        "outstanding": 0,
+        "registry": 0,
+        "picker": {
+          "generation": "1",
+          "selections": [
+            {
+              "incarnation": "1",
+              "title": "ELM-ACTIVATION-PEER",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:1",
+              "disabled": false,
+              "label": "Activate ELM-ACTIVATION-PEER",
+              "point": [
+                240.0,
+                -1261.5
+              ],
+              "rect": [
+                15,
+                -1345,
+                450,
+                167
+              ],
+              "clip": [
+                4,
+                48,
+                476,
+                356
+              ],
+              "visible": false
+            },
+            {
+              "incarnation": "2",
+              "title": "ELM-AUTHORITY-FIXTURE",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:2",
+              "disabled": false,
+              "label": "Activate ELM-AUTHORITY-FIXTURE",
+              "point": [
+                240.0,
+                -1091.5
+              ],
+              "rect": [
+                15,
+                -1175,
+                450,
+                167
+              ],
+              "clip": [
+                4,
+                48,
+                476,
+                356
+              ],
+              "visible": false
+            },
+            {
+              "incarnation": "3",
+              "title": "LONG-DOC-7 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:3",
+              "disabled": false,
+              "label": "Activate LONG-DOC-7 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                240.0,
+                -921.5
+              ],
+              "rect": [
+                15,
+                -1005,
+                450,
+                167
+              ],
+              "clip": [
+                4,
+                48,
+                476,
+                356
+              ],
+              "visible": false
+            },
+            {
+              "incarnation": "4",
+              "title": "LONG-DOC-6 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:4",
+              "disabled": false,
+              "label": "Activate LONG-DOC-6 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                240.0,
+                -751.5
+              ],
+              "rect": [
+                15,
+                -835,
+                450,
+                167
+              ],
+              "clip": [
+                4,
+                48,
+                476,
+                356
+              ],
+              "visible": false
+            },
+            {
+              "incarnation": "5",
+              "title": "LONG-DOC-5 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:5",
+              "disabled": false,
+              "label": "Activate LONG-DOC-5 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                240.0,
+                -581.5
+              ],
+              "rect": [
+                15,
+                -665,
+                450,
+                167
+              ],
+              "clip": [
+                4,
+                48,
+                476,
+                356
+              ],
+              "visible": false
+            },
+            {
+              "incarnation": "6",
+              "title": "LONG-DOC-4 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:6",
+              "disabled": false,
+              "label": "Activate LONG-DOC-4 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                240.0,
+                -411.5
+              ],
+              "rect": [
+                15,
+                -495,
+                450,
+                167
+              ],
+              "clip": [
+                4,
+                48,
+                476,
+                356
+              ],
+              "visible": false
+            },
+            {
+              "incarnation": "7",
+              "title": "LONG-DOC-3 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:7",
+              "disabled": false,
+              "label": "Activate LONG-DOC-3 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                240.0,
+                -241.5
+              ],
+              "rect": [
+                15,
+                -325,
+                450,
+                167
+              ],
+              "clip": [
+                4,
+                48,
+                476,
+                356
+              ],
+              "visible": false
+            },
+            {
+              "incarnation": "8",
+              "title": "LONG-DOC-2 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:8",
+              "disabled": false,
+              "label": "Activate LONG-DOC-2 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                240.0,
+                -71.5
+              ],
+              "rect": [
+                15,
+                -155,
+                450,
+                167
+              ],
+              "clip": [
+                4,
+                48,
+                476,
+                356
+              ],
+              "visible": false
+            },
+            {
+              "incarnation": "9",
+              "title": "LONG-DOC-1 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:9",
+              "disabled": false,
+              "label": "Activate LONG-DOC-1 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                240.0,
+                98.5
+              ],
+              "rect": [
+                15,
+                15,
+                450,
+                167
+              ],
+              "clip": [
+                4,
+                48,
+                476,
+                356
+              ],
+              "visible": false
+            },
+            {
+              "incarnation": "10",
+              "title": "LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "state": "Open",
+              "domId": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:10",
+              "disabled": false,
+              "label": "Activate LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "point": [
+                240.0,
+                268.5
+              ],
+              "rect": [
+                15,
+                185,
+                450,
+                167
+              ],
+              "clip": [
+                4,
+                48,
+                476,
+                356
+              ],
+              "visible": true
+            }
+          ],
+          "close": {
+            "disabled": false,
+            "label": "Close window picker",
+            "point": [
+              240.0,
+              -1384.0
+            ],
+            "rect": [
+              15,
+              -1420,
+              450,
+              72
+            ],
+            "clip": [
+              4,
+              48,
+              476,
+              356
+            ],
+            "visible": false
+          }
+        },
+        "openerId": "applications:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:4:control:opener",
+        "reconnectId": "reconnect",
+        "focus": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:10",
+        "reconnect": null,
+        "openApplications": {
+          "disabled": false,
+          "label": "Open applications",
+          "point": [
+            -4403.0,
+            48.0
+          ],
+          "rect": [
+            -4483,
+            1,
+            160,
+            94
+          ],
+          "clip": [
+            0,
+            0,
+            800,
+            48
+          ],
+          "visible": false
+        },
+        "publication": "12"
+      }
+    },
+    {
+      "name": "picker-reflow-shrinkEntireFocusedControlWithinPhysicalOutput",
+      "passed": true,
+      "box": [
+        4,
+        48,
+        472,
+        308
+      ],
+      "focused": {
+        "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:10",
+        "identity": "family:10",
+        "label": "Preview unavailablePreview unavailableActivate LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+        "labelRect": {
+          "x": 24,
+          "y": 220,
+          "width": 424,
+          "height": 37
+        },
+        "accessibleName": "Activate LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+        "disabled": false,
+        "x": 11,
+        "y": 137,
+        "width": 450,
+        "height": 167
+      },
+      "output": [
+        480,
+        360
+      ]
+    },
+    {
+      "name": "picker-reflow-shrinkRetiresOldInputBeforeFreshPopup",
+      "passed": true,
+      "oldLease": 2,
+      "newLease": "3"
+    },
+    {
+      "name": "picker-reflow-shrinkActualFocusedControlPixels",
+      "passed": true,
+      "capture": {
+        "stage": "picker-reflow-shrink",
+        "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791451692130429752/dense-picker-picker-reflow-shrink.png",
+        "sha256": "927f4882491f7e7f332ee4a202924b3de4dd71f56e91d152463494f6565bcac2",
+        "region": [
+          28,
+          268,
+          248,
+          305
+        ],
+        "brightPixels": 1243,
+        "paintedPixels": 8140,
+        "area": 8140,
+        "body": {
+          "publication": "12",
+          "lease": "3",
+          "buttons": [
+            {
+              "id": "picker-close:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1",
+              "identity": "control:close",
+              "label": "Close",
+              "labelRect": {
+                "x": 24,
+                "y": -1450.5,
+                "width": 424,
+                "height": 37
+              },
+              "accessibleName": "Close window picker",
+              "disabled": false,
+              "x": 11,
+              "y": -1468,
+              "width": 450,
+              "height": 72
+            },
+            {
+              "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:1",
+              "identity": "family:1",
+              "label": "Preview unavailablePreview unavailableActivate ELM-ACTIVATION-PEEROpen",
+              "labelRect": {
+                "x": 24,
+                "y": -1310,
+                "width": 424,
+                "height": 37
+              },
+              "accessibleName": "Activate ELM-ACTIVATION-PEER",
+              "disabled": false,
+              "x": 11,
+              "y": -1393,
+              "width": 450,
+              "height": 167
+            },
+            {
+              "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:2",
+              "identity": "family:2",
+              "label": "Preview unavailablePreview unavailableActivate ELM-AUTHORITY-FIXTUREOpen",
+              "labelRect": {
+                "x": 24,
+                "y": -1140,
+                "width": 424,
+                "height": 37
+              },
+              "accessibleName": "Activate ELM-AUTHORITY-FIXTURE",
+              "disabled": false,
+              "x": 11,
+              "y": -1223,
+              "width": 450,
+              "height": 167
+            },
+            {
+              "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:3",
+              "identity": "family:3",
+              "label": "Preview unavailablePreview unavailableActivate LONG-DOC-7 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+              "labelRect": {
+                "x": 24,
+                "y": -970,
+                "width": 424,
+                "height": 37
+              },
+              "accessibleName": "Activate LONG-DOC-7 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "disabled": false,
+              "x": 11,
+              "y": -1053,
+              "width": 450,
+              "height": 167
+            },
+            {
+              "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:4",
+              "identity": "family:4",
+              "label": "Preview unavailablePreview unavailableActivate LONG-DOC-6 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+              "labelRect": {
+                "x": 24,
+                "y": -800,
+                "width": 424,
+                "height": 37
+              },
+              "accessibleName": "Activate LONG-DOC-6 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "disabled": false,
+              "x": 11,
+              "y": -883,
+              "width": 450,
+              "height": 167
+            },
+            {
+              "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:5",
+              "identity": "family:5",
+              "label": "Preview unavailablePreview unavailableActivate LONG-DOC-5 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+              "labelRect": {
+                "x": 24,
+                "y": -630,
+                "width": 424,
+                "height": 37
+              },
+              "accessibleName": "Activate LONG-DOC-5 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "disabled": false,
+              "x": 11,
+              "y": -713,
+              "width": 450,
+              "height": 167
+            },
+            {
+              "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:6",
+              "identity": "family:6",
+              "label": "Preview unavailablePreview unavailableActivate LONG-DOC-4 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+              "labelRect": {
+                "x": 24,
+                "y": -460,
+                "width": 424,
+                "height": 37
+              },
+              "accessibleName": "Activate LONG-DOC-4 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "disabled": false,
+              "x": 11,
+              "y": -543,
+              "width": 450,
+              "height": 167
+            },
+            {
+              "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:7",
+              "identity": "family:7",
+              "label": "Preview unavailablePreview unavailableActivate LONG-DOC-3 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+              "labelRect": {
+                "x": 24,
+                "y": -290,
+                "width": 424,
+                "height": 37
+              },
+              "accessibleName": "Activate LONG-DOC-3 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "disabled": false,
+              "x": 11,
+              "y": -373,
+              "width": 450,
+              "height": 167
+            },
+            {
+              "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:8",
+              "identity": "family:8",
+              "label": "Preview unavailablePreview unavailableActivate LONG-DOC-2 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+              "labelRect": {
+                "x": 24,
+                "y": -120,
+                "width": 424,
+                "height": 37
+              },
+              "accessibleName": "Activate LONG-DOC-2 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "disabled": false,
+              "x": 11,
+              "y": -203,
+              "width": 450,
+              "height": 167
+            },
+            {
+              "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:9",
+              "identity": "family:9",
+              "label": "Preview unavailablePreview unavailableActivate LONG-DOC-1 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+              "labelRect": {
+                "x": 24,
+                "y": 50,
+                "width": 424,
+                "height": 37
+              },
+              "accessibleName": "Activate LONG-DOC-1 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "disabled": false,
+              "x": 11,
+              "y": -33,
+              "width": 450,
+              "height": 167
+            },
+            {
+              "id": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:10",
+              "identity": "family:10",
+              "label": "Preview unavailablePreview unavailableActivate LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWOpen",
+              "labelRect": {
+                "x": 24,
+                "y": 220,
+                "width": 424,
+                "height": 37
+              },
+              "accessibleName": "Activate LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+              "disabled": false,
+              "x": 11,
+              "y": 137,
+              "width": 450,
+              "height": 167
+            }
+          ],
+          "fields": [],
+          "focus": "picker:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:10",
+          "documentFocused": true,
+          "fontSize": "32px",
+          "viewportWidth": 472,
+          "viewportHeight": 308,
+          "scrollTop": 1576,
+          "scrollHeight": 1891,
+          "text": "Choose a window\nConnected\n\nClose\n\nPreview unavailable\nPreview unavailable\nActivate ELM-ACTIVATION-PEER\nOpen\n\nPreview unavailable\nPreview unavailable\nActivate ELM-AUTHORITY-FIXTURE\nOpen\n\nPreview unavailable\nPreview unavailable\nActivate LONG-DOC-7 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen\n\nPreview unavailable\nPreview unavailable\nActivate LONG-DOC-6 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen\n\nPreview unavailable\nPreview unavailable\nActivate LONG-DOC-5 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen\n\nPreview unavailable\nPreview unavailable\nActivate LONG-DOC-4 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen\n\nPreview unavailable\nPreview unavailable\nActivate LONG-DOC-3 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen\n\nPreview unavailable\nPreview unavailable\nActivate LONG-DOC-2 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen\n\nPreview unavailable\nPreview unavailable\nActivate LONG-DOC-1 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen\n\nPreview unavailable\nPreview unavailable\nActivate LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\nOpen"
+        }
+      }
+    },
+    {
+      "name": "menu-reflow-growNativeOutputResizeCommand",
+      "passed": true,
+      "result": "ok\n"
+    },
+    {
+      "name": "menu-reflow-growCurrentSelectionAndOrderPersist",
+      "passed": true,
+      "body": {
+        "publication": "25",
+        "lease": "9",
+        "buttons": [
+          {
+            "id": "menu:3:close",
+            "identity": "control:menu-close",
+            "label": "Close",
+            "labelRect": {
+              "x": 24,
+              "y": 110.5,
+              "width": 584,
+              "height": 37
+            },
+            "accessibleName": "Close window actions",
+            "disabled": false,
+            "x": 11,
+            "y": 93,
+            "width": 610,
+            "height": 72
+          },
+          {
+            "id": "menu:3:0",
+            "identity": "menu:3:0",
+            "label": "Restore",
+            "labelRect": {
+              "x": 24,
+              "y": 185.5,
+              "width": 584,
+              "height": 37
+            },
+            "accessibleName": "Restore",
+            "disabled": true,
+            "x": 11,
+            "y": 168,
+            "width": 610,
+            "height": 72
+          },
+          {
+            "id": "menu:3:1",
+            "identity": "menu:3:1",
+            "label": "Minimize",
+            "labelRect": {
+              "x": 24,
+              "y": 260.5,
+              "width": 584,
+              "height": 37
+            },
+            "accessibleName": "Minimize",
+            "disabled": false,
+            "x": 11,
+            "y": 243,
+            "width": 610,
+            "height": 72
+          },
+          {
+            "id": "menu:3:2",
+            "identity": "menu:3:2",
+            "label": "MaximizeSelected",
+            "labelRect": {
+              "x": 24,
+              "y": 325,
+              "width": 584,
+              "height": 37
+            },
+            "accessibleName": "Maximize",
+            "disabled": false,
+            "x": 11,
+            "y": 318,
+            "width": 610,
+            "height": 91
+          }
+        ],
+        "fields": [],
+        "focus": "menu:3:2",
+        "documentFocused": true,
+        "fontSize": "32px",
+        "viewportWidth": 632,
+        "viewportHeight": 420,
+        "scrollTop": 15,
+        "scrollHeight": 435,
+        "text": "Window actions\nWindow actions\n\nClose\n\nRestore\n\nMinimize\n\nMaximize\nSelected"
+      },
+      "prior": {
+        "phase": "Coherent",
+        "transaction": "Idle",
+        "groups": [
+          {
+            "key": "application:GTK Application",
+            "domId": "group:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:application:GTK Application",
+            "title": "ELM-ACTIVATION-PEER",
+            "active": true,
+            "expanded": false,
+            "disabled": false,
+            "label": "Choose a window from ELM-ACTIVATION-PEER",
+            "point": [
+              183.0,
+              48.0
+            ],
+            "rect": [
+              71,
+              1,
+              224,
+              94
+            ],
+            "clip": [
+              0,
+              0,
+              800,
+              48
+            ],
+            "visible": false
+          }
+        ],
+        "menu": {
+          "id": 3,
+          "closeId": "menu:3:close",
+          "incarnation": "10",
+          "title": "LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+          "selected": 2,
+          "actions": [
+            {
+              "domId": "menu:3:0",
+              "label": "Restore",
+              "enabled": false
+            },
+            {
+              "domId": "menu:3:1",
+              "label": "Minimize",
+              "enabled": true
+            },
+            {
+              "domId": "menu:3:2",
+              "label": "Maximize",
+              "enabled": true
+            }
+          ]
+        },
+        "mode": "menu",
+        "outstanding": 0,
+        "registry": 0,
+        "picker": null,
+        "openerId": "applications:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:4:control:opener",
+        "reconnectId": "reconnect",
+        "focus": "group:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:application:GTK Application",
+        "reconnect": null,
+        "openApplications": {
+          "disabled": false,
+          "label": "Open applications",
+          "point": [
+            -4403.0,
+            48.0
+          ],
+          "rect": [
+            -4483,
+            1,
+            160,
+            94
+          ],
+          "clip": [
+            0,
+            0,
+            800,
+            48
+          ],
+          "visible": false
+        },
+        "publication": "24"
+      },
+      "current": {
+        "phase": "Coherent",
+        "transaction": "Idle",
+        "groups": [
+          {
+            "key": "application:GTK Application",
+            "domId": "group:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:application:GTK Application",
+            "title": "ELM-ACTIVATION-PEER",
+            "active": true,
+            "expanded": false,
+            "disabled": false,
+            "label": "Choose a window from ELM-ACTIVATION-PEER",
+            "point": [
+              318.0,
+              48.0
+            ],
+            "rect": [
+              206,
+              1,
+              224,
+              94
+            ],
+            "clip": [
+              0,
+              0,
+              800,
+              48
+            ],
+            "visible": false
+          }
+        ],
+        "menu": {
+          "id": 3,
+          "closeId": "menu:3:close",
+          "incarnation": "10",
+          "title": "LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+          "selected": 2,
+          "actions": [
+            {
+              "domId": "menu:3:0",
+              "label": "Restore",
+              "enabled": false
+            },
+            {
+              "domId": "menu:3:1",
+              "label": "Minimize",
+              "enabled": true
+            },
+            {
+              "domId": "menu:3:2",
+              "label": "Maximize",
+              "enabled": true
+            }
+          ]
+        },
+        "mode": "menu",
+        "outstanding": 0,
+        "registry": 0,
+        "picker": null,
+        "openerId": "applications:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:4:control:opener",
+        "reconnectId": "reconnect",
+        "focus": "group:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:application:GTK Application",
+        "reconnect": null,
+        "openApplications": {
+          "disabled": false,
+          "label": "Open applications",
+          "point": [
+            -4268.0,
+            48.0
+          ],
+          "rect": [
+            -4348,
+            1,
+            160,
+            94
+          ],
+          "clip": [
+            0,
+            0,
+            800,
+            48
+          ],
+          "visible": false
+        },
+        "publication": "25"
+      }
+    },
+    {
+      "name": "menu-reflow-growEntireFocusedControlWithinPhysicalOutput",
+      "passed": true,
+      "box": [
+        4,
+        48,
+        632,
+        420
+      ],
+      "focused": {
+        "id": "menu:3:2",
+        "identity": "menu:3:2",
+        "label": "MaximizeSelected",
+        "labelRect": {
+          "x": 24,
+          "y": 325,
+          "width": 584,
+          "height": 37
+        },
+        "accessibleName": "Maximize",
+        "disabled": false,
+        "x": 11,
+        "y": 318,
+        "width": 610,
+        "height": 91
+      },
+      "output": [
+        640,
+        480
+      ]
+    },
+    {
+      "name": "menu-reflow-growRetiresOldInputBeforeFreshPopup",
+      "passed": true,
+      "oldLease": 8,
+      "newLease": "9"
+    },
+    {
+      "name": "menu-reflow-growActualFocusedControlPixels",
+      "passed": true,
+      "capture": {
+        "stage": "menu-reflow-grow",
+        "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791451692130429752/dense-picker-menu-reflow-grow.png",
+        "sha256": "201a1a2bb3e3150067673d54e3c00cb828ee4965792001887385b2ad52593284",
+        "region": [
+          28,
+          373,
+          248,
+          410
+        ],
+        "brightPixels": 824,
+        "paintedPixels": 8140,
+        "area": 8140,
+        "body": {
+          "publication": "25",
+          "lease": "9",
+          "buttons": [
+            {
+              "id": "menu:3:close",
+              "identity": "control:menu-close",
+              "label": "Close",
+              "labelRect": {
+                "x": 24,
+                "y": 110.5,
+                "width": 584,
+                "height": 37
+              },
+              "accessibleName": "Close window actions",
+              "disabled": false,
+              "x": 11,
+              "y": 93,
+              "width": 610,
+              "height": 72
+            },
+            {
+              "id": "menu:3:0",
+              "identity": "menu:3:0",
+              "label": "Restore",
+              "labelRect": {
+                "x": 24,
+                "y": 185.5,
+                "width": 584,
+                "height": 37
+              },
+              "accessibleName": "Restore",
+              "disabled": true,
+              "x": 11,
+              "y": 168,
+              "width": 610,
+              "height": 72
+            },
+            {
+              "id": "menu:3:1",
+              "identity": "menu:3:1",
+              "label": "Minimize",
+              "labelRect": {
+                "x": 24,
+                "y": 260.5,
+                "width": 584,
+                "height": 37
+              },
+              "accessibleName": "Minimize",
+              "disabled": false,
+              "x": 11,
+              "y": 243,
+              "width": 610,
+              "height": 72
+            },
+            {
+              "id": "menu:3:2",
+              "identity": "menu:3:2",
+              "label": "MaximizeSelected",
+              "labelRect": {
+                "x": 24,
+                "y": 325,
+                "width": 584,
+                "height": 37
+              },
+              "accessibleName": "Maximize",
+              "disabled": false,
+              "x": 11,
+              "y": 318,
+              "width": 610,
+              "height": 91
+            }
+          ],
+          "fields": [],
+          "focus": "menu:3:2",
+          "documentFocused": true,
+          "fontSize": "32px",
+          "viewportWidth": 632,
+          "viewportHeight": 420,
+          "scrollTop": 15,
+          "scrollHeight": 435,
+          "text": "Window actions\nWindow actions\n\nClose\n\nRestore\n\nMinimize\n\nMaximize\nSelected"
+        }
+      }
+    },
+    {
+      "name": "menu-reflow-shrinkNativeOutputResizeCommand",
+      "passed": true,
+      "result": "ok\n"
+    },
+    {
+      "name": "menu-reflow-shrinkCurrentSelectionAndOrderPersist",
+      "passed": true,
+      "body": {
+        "publication": "26",
+        "lease": "10",
+        "buttons": [
+          {
+            "id": "menu:3:close",
+            "identity": "control:menu-close",
+            "label": "Close",
+            "labelRect": {
+              "x": 24,
+              "y": 5.5,
+              "width": 424,
+              "height": 37
+            },
+            "accessibleName": "Close window actions",
+            "disabled": false,
+            "x": 11,
+            "y": -12,
+            "width": 450,
+            "height": 72
+          },
+          {
+            "id": "menu:3:0",
+            "identity": "menu:3:0",
+            "label": "Restore",
+            "labelRect": {
+              "x": 24,
+              "y": 80.5,
+              "width": 424,
+              "height": 37
+            },
+            "accessibleName": "Restore",
+            "disabled": true,
+            "x": 11,
+            "y": 63,
+            "width": 450,
+            "height": 72
+          },
+          {
+            "id": "menu:3:1",
+            "identity": "menu:3:1",
+            "label": "Minimize",
+            "labelRect": {
+              "x": 24,
+              "y": 155.5,
+              "width": 424,
+              "height": 37
+            },
+            "accessibleName": "Minimize",
+            "disabled": false,
+            "x": 11,
+            "y": 138,
+            "width": 450,
+            "height": 72
+          },
+          {
+            "id": "menu:3:2",
+            "identity": "menu:3:2",
+            "label": "MaximizeSelected",
+            "labelRect": {
+              "x": 24,
+              "y": 220,
+              "width": 424,
+              "height": 37
+            },
+            "accessibleName": "Maximize",
+            "disabled": false,
+            "x": 11,
+            "y": 213,
+            "width": 450,
+            "height": 91
+          }
+        ],
+        "fields": [],
+        "focus": "menu:3:2",
+        "documentFocused": true,
+        "fontSize": "32px",
+        "viewportWidth": 472,
+        "viewportHeight": 308,
+        "scrollTop": 120,
+        "scrollHeight": 435,
+        "text": "Window actions\nWindow actions\n\nClose\n\nRestore\n\nMinimize\n\nMaximize\nSelected"
+      },
+      "prior": {
+        "phase": "Coherent",
+        "transaction": "Idle",
+        "groups": [
+          {
+            "key": "application:GTK Application",
+            "domId": "group:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:application:GTK Application",
+            "title": "ELM-ACTIVATION-PEER",
+            "active": true,
+            "expanded": false,
+            "disabled": false,
+            "label": "Choose a window from ELM-ACTIVATION-PEER",
+            "point": [
+              318.0,
+              48.0
+            ],
+            "rect": [
+              206,
+              1,
+              224,
+              94
+            ],
+            "clip": [
+              0,
+              0,
+              800,
+              48
+            ],
+            "visible": false
+          }
+        ],
+        "menu": {
+          "id": 3,
+          "closeId": "menu:3:close",
+          "incarnation": "10",
+          "title": "LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+          "selected": 2,
+          "actions": [
+            {
+              "domId": "menu:3:0",
+              "label": "Restore",
+              "enabled": false
+            },
+            {
+              "domId": "menu:3:1",
+              "label": "Minimize",
+              "enabled": true
+            },
+            {
+              "domId": "menu:3:2",
+              "label": "Maximize",
+              "enabled": true
+            }
+          ]
+        },
+        "mode": "menu",
+        "outstanding": 0,
+        "registry": 0,
+        "picker": null,
+        "openerId": "applications:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:4:control:opener",
+        "reconnectId": "reconnect",
+        "focus": "group:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:application:GTK Application",
+        "reconnect": null,
+        "openApplications": {
+          "disabled": false,
+          "label": "Open applications",
+          "point": [
+            -4268.0,
+            48.0
+          ],
+          "rect": [
+            -4348,
+            1,
+            160,
+            94
+          ],
+          "clip": [
+            0,
+            0,
+            800,
+            48
+          ],
+          "visible": false
+        },
+        "publication": "25"
+      },
+      "current": {
+        "phase": "Coherent",
+        "transaction": "Idle",
+        "groups": [
+          {
+            "key": "application:GTK Application",
+            "domId": "group:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:application:GTK Application",
+            "title": "ELM-ACTIVATION-PEER",
+            "active": true,
+            "expanded": false,
+            "disabled": false,
+            "label": "Choose a window from ELM-ACTIVATION-PEER",
+            "point": [
+              183.0,
+              48.0
+            ],
+            "rect": [
+              71,
+              1,
+              224,
+              94
+            ],
+            "clip": [
+              0,
+              0,
+              800,
+              48
+            ],
+            "visible": false
+          }
+        ],
+        "menu": {
+          "id": 3,
+          "closeId": "menu:3:close",
+          "incarnation": "10",
+          "title": "LONG-DOC-0 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+          "selected": 2,
+          "actions": [
+            {
+              "domId": "menu:3:0",
+              "label": "Restore",
+              "enabled": false
+            },
+            {
+              "domId": "menu:3:1",
+              "label": "Minimize",
+              "enabled": true
+            },
+            {
+              "domId": "menu:3:2",
+              "label": "Maximize",
+              "enabled": true
+            }
+          ]
+        },
+        "mode": "menu",
+        "outstanding": 0,
+        "registry": 0,
+        "picker": null,
+        "openerId": "applications:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:4:control:opener",
+        "reconnectId": "reconnect",
+        "focus": "group:{\"lifetime\":\"10947167912671719596\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:application:GTK Application",
+        "reconnect": null,
+        "openApplications": {
+          "disabled": false,
+          "label": "Open applications",
+          "point": [
+            -4403.0,
+            48.0
+          ],
+          "rect": [
+            -4483,
+            1,
+            160,
+            94
+          ],
+          "clip": [
+            0,
+            0,
+            800,
+            48
+          ],
+          "visible": false
+        },
+        "publication": "26"
+      }
+    },
+    {
+      "name": "menu-reflow-shrinkEntireFocusedControlWithinPhysicalOutput",
+      "passed": true,
+      "box": [
+        4,
+        48,
+        472,
+        308
+      ],
+      "focused": {
+        "id": "menu:3:2",
+        "identity": "menu:3:2",
+        "label": "MaximizeSelected",
+        "labelRect": {
+          "x": 24,
+          "y": 220,
+          "width": 424,
+          "height": 37
+        },
+        "accessibleName": "Maximize",
+        "disabled": false,
+        "x": 11,
+        "y": 213,
+        "width": 450,
+        "height": 91
+      },
+      "output": [
+        480,
+        360
+      ]
+    },
+    {
+      "name": "menu-reflow-shrinkRetiresOldInputBeforeFreshPopup",
+      "passed": true,
+      "oldLease": 9,
+      "newLease": "10"
+    },
+    {
+      "name": "menu-reflow-shrinkActualFocusedControlPixels",
+      "passed": true,
+      "capture": {
+        "stage": "menu-reflow-shrink",
+        "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791451692130429752/dense-picker-menu-reflow-shrink.png",
+        "sha256": "a51d0402aea96a3ccfbb0c8b9fc9ce510d3186d2bdd2ced71ca40a8a0e978714",
+        "region": [
+          28,
+          268,
+          248,
+          305
+        ],
+        "brightPixels": 824,
+        "paintedPixels": 8140,
+        "area": 8140,
+        "body": {
+          "publication": "26",
+          "lease": "10",
+          "buttons": [
+            {
+              "id": "menu:3:close",
+              "identity": "control:menu-close",
+              "label": "Close",
+              "labelRect": {
+                "x": 24,
+                "y": 5.5,
+                "width": 424,
+                "height": 37
+              },
+              "accessibleName": "Close window actions",
+              "disabled": false,
+              "x": 11,
+              "y": -12,
+              "width": 450,
+              "height": 72
+            },
+            {
+              "id": "menu:3:0",
+              "identity": "menu:3:0",
+              "label": "Restore",
+              "labelRect": {
+                "x": 24,
+                "y": 80.5,
+                "width": 424,
+                "height": 37
+              },
+              "accessibleName": "Restore",
+              "disabled": true,
+              "x": 11,
+              "y": 63,
+              "width": 450,
+              "height": 72
+            },
+            {
+              "id": "menu:3:1",
+              "identity": "menu:3:1",
+              "label": "Minimize",
+              "labelRect": {
+                "x": 24,
+                "y": 155.5,
+                "width": 424,
+                "height": 37
+              },
+              "accessibleName": "Minimize",
+              "disabled": false,
+              "x": 11,
+              "y": 138,
+              "width": 450,
+              "height": 72
+            },
+            {
+              "id": "menu:3:2",
+              "identity": "menu:3:2",
+              "label": "MaximizeSelected",
+              "labelRect": {
+                "x": 24,
+                "y": 220,
+                "width": 424,
+                "height": 37
+              },
+              "accessibleName": "Maximize",
+              "disabled": false,
+              "x": 11,
+              "y": 213,
+              "width": 450,
+              "height": 91
+            }
+          ],
+          "fields": [],
+          "focus": "menu:3:2",
+          "documentFocused": true,
+          "fontSize": "32px",
+          "viewportWidth": 472,
+          "viewportHeight": 308,
+          "scrollTop": 120,
+          "scrollHeight": 435,
+          "text": "Window actions\nWindow actions\n\nClose\n\nRestore\n\nMinimize\n\nMaximize\nSelected"
+        }
+      }
+    }
+  ],
+  "counts": {
+    "nativeCampaignChecks": 138,
+    "defaultRegressionChecks": 60,
+    "browserChecks": 45,
+    "compiledReflowChecks": 10
+  },
+  "files": [
+    {
+      "path": "implementation/warlock/qa/evidence/popup-reflow/component-report.json",
+      "sha256": "8c6877f9b48a6a8e396f427fbab6cb264483ee583cf97ce9afb811ea92cef1dc",
+      "bytes": 91407,
+      "originalPath": "implementation/warlock/qa/runs/taskbar-primary-1791451470950801371/report.json",
+      "originalSHA256": "8c6877f9b48a6a8e396f427fbab6cb264483ee583cf97ce9afb811ea92cef1dc"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-reflow/browser-report.json",
+      "sha256": "a958da1e46092b4c226a64e07c0207e255c35ca2283e13dd319b81f6db89231c",
+      "bytes": 42197,
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791451470950801371/dense-browser.json",
+      "originalSHA256": "a958da1e46092b4c226a64e07c0207e255c35ca2283e13dd319b81f6db89231c"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-reflow/native-report.json",
+      "sha256": "a5f9fc63ad5ebaa24139f2cd6bbc6f54a5a26850fd6245e1ef0bfba500f3f1db",
+      "bytes": 784099,
+      "originalPath": "implementation/warlock/qa/runs/native-dense-picker-1791451692130321908/report.json",
+      "originalSHA256": "a5f9fc63ad5ebaa24139f2cd6bbc6f54a5a26850fd6245e1ef0bfba500f3f1db"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-reflow/default-regression-report.json",
+      "sha256": "b51cf794ffe05bbc0945fa9382c52a65a6f66e9522a0cc84b4618e2df0288454",
+      "bytes": 306586,
+      "originalPath": "implementation/warlock/qa/runs/native-pinned-menus-1791451763624517893/report.json",
+      "originalSHA256": "b51cf794ffe05bbc0945fa9382c52a65a6f66e9522a0cc84b4618e2df0288454"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-reflow/native-last.png",
+      "sha256": "13025174f8a6053b4dd5df287fdf22f8ee5a35c2e7bf639f25bb71cf57f1f680",
+      "bytes": 36759,
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791451692130429752/dense-picker-last.png",
+      "originalSHA256": "13025174f8a6053b4dd5df287fdf22f8ee5a35c2e7bf639f25bb71cf57f1f680"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-reflow/native-picker-reflow-grow.png",
+      "sha256": "6728f7bc47cf83f3c2b0d6c36ead19407c17d5fb2be12ee2e529e63030e36f8f",
+      "bytes": 60080,
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791451692130429752/dense-picker-picker-reflow-grow.png",
+      "originalSHA256": "6728f7bc47cf83f3c2b0d6c36ead19407c17d5fb2be12ee2e529e63030e36f8f"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-reflow/native-picker-reflow-shrink.png",
+      "sha256": "927f4882491f7e7f332ee4a202924b3de4dd71f56e91d152463494f6565bcac2",
+      "bytes": 38588,
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791451692130429752/dense-picker-picker-reflow-shrink.png",
+      "originalSHA256": "927f4882491f7e7f332ee4a202924b3de4dd71f56e91d152463494f6565bcac2"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-reflow/native-first.png",
+      "sha256": "a55d831b3cf136c85fe06c2fb645a0585f90a014339acea5c9000e511a496e3c",
+      "bytes": 36402,
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791451692130429752/dense-picker-first.png",
+      "originalSHA256": "a55d831b3cf136c85fe06c2fb645a0585f90a014339acea5c9000e511a496e3c"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-reflow/native-first-secondary-menu.png",
+      "sha256": "d58423928aa6194a99f6a66fa6d936cf175497d8d4c870f1d1d31e95cbb69b11",
+      "bytes": 24486,
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791451692130429752/dense-picker-first-secondary-menu.png",
+      "originalSHA256": "d58423928aa6194a99f6a66fa6d936cf175497d8d4c870f1d1d31e95cbb69b11"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-reflow/native-first-menu.png",
+      "sha256": "6be50d43c40a83dfea690364b518ec8e278aac9b02f59d7bfb7fe82c0479955b",
+      "bytes": 24493,
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791451692130429752/dense-picker-first-menu.png",
+      "originalSHA256": "6be50d43c40a83dfea690364b518ec8e278aac9b02f59d7bfb7fe82c0479955b"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-reflow/native-last-menu.png",
+      "sha256": "41831f74b3113b95b82f251c3e404bf2900af574dd8a377bddee04f9cd893037",
+      "bytes": 24791,
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791451692130429752/dense-picker-last-menu.png",
+      "originalSHA256": "41831f74b3113b95b82f251c3e404bf2900af574dd8a377bddee04f9cd893037"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-reflow/native-operation-end.png",
+      "sha256": "e6b149a3412e6df131f48ebcf2763843e26f0c811d6a6008c256772ad0e58e7b",
+      "bytes": 24848,
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791451692130429752/dense-picker-operation-end.png",
+      "originalSHA256": "e6b149a3412e6df131f48ebcf2763843e26f0c811d6a6008c256772ad0e58e7b"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-reflow/native-menu-reflow-grow.png",
+      "sha256": "201a1a2bb3e3150067673d54e3c00cb828ee4965792001887385b2ad52593284",
+      "bytes": 38490,
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791451692130429752/dense-picker-menu-reflow-grow.png",
+      "originalSHA256": "201a1a2bb3e3150067673d54e3c00cb828ee4965792001887385b2ad52593284"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-reflow/native-menu-reflow-shrink.png",
+      "sha256": "a51d0402aea96a3ccfbb0c8b9fc9ce510d3186d2bdd2ced71ca40a8a0e978714",
+      "bytes": 23853,
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791451692130429752/dense-picker-menu-reflow-shrink.png",
+      "originalSHA256": "a51d0402aea96a3ccfbb0c8b9fc9ce510d3186d2bdd2ced71ca40a8a0e978714"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-reflow/native-operation-close.png",
+      "sha256": "0b5ce080a6d0eccd2721125dc19a6f18334bf82090facc9eb578482057c718c0",
+      "bytes": 24749,
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791451692130429752/dense-picker-operation-close.png",
+      "originalSHA256": "0b5ce080a6d0eccd2721125dc19a6f18334bf82090facc9eb578482057c718c0"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-reflow/failed-fixture-lease-field-report.json",
+      "sha256": "634a3e83a23eb5d9038938b5aaa5f0c8ab34edff2b2fe4d90f74fd1ff08aa222",
+      "bytes": 342236,
+      "originalPath": "implementation/warlock/qa/runs/native-dense-picker-1791451250956244148/report.json",
+      "originalSHA256": "634a3e83a23eb5d9038938b5aaa5f0c8ab34edff2b2fe4d90f74fd1ff08aa222"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-reflow/failed-retained-large-allocation-report.json",
+      "sha256": "c514c924f252f12db5bbf16f94726c80020c05a664e084b5463bf447bbee994d",
+      "bytes": 755263,
+      "originalPath": "implementation/warlock/qa/runs/native-dense-picker-1791451314045254224/report.json",
+      "originalSHA256": "c514c924f252f12db5bbf16f94726c80020c05a664e084b5463bf447bbee994d"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-reflow/failed-retained-allocation-close.png",
+      "sha256": "64bdc49399dcf5a10be8cd4acd69ec2c0ac4e3eb952445afa547d5481d1936bb",
+      "bytes": 28808,
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791451314045344340/dense-picker-operation-close.png",
+      "originalSHA256": "64bdc49399dcf5a10be8cd4acd69ec2c0ac4e3eb952445afa547d5481d1936bb"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-reflow/failed-immediate-keyboard-observation-report.json",
+      "sha256": "48008a7b820dde7f278a6158bdfd769138c1421992852da9f9342427b2e1c07d",
+      "bytes": 781313,
+      "originalPath": "implementation/warlock/qa/runs/native-dense-picker-1791451512253269208/report.json",
+      "originalSHA256": "48008a7b820dde7f278a6158bdfd769138c1421992852da9f9342427b2e1c07d"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-reflow/native-inputs.json",
+      "sha256": "8decca18e164b486268e71be5ba65f6c273fec0f31260c1cdcf6183004f325c1",
+      "bytes": 33891
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-reflow/source.patch",
+      "sha256": "1f24c23452eff660ec9e254118307d62b2d058798d814666b6d160c006476de4",
+      "bytes": 4112
+    }
+  ],
+  "failedRuns": [
+    {
+      "path": "implementation/warlock/qa/evidence/popup-reflow/failed-fixture-lease-field-report.json",
+      "sha256": "634a3e83a23eb5d9038938b5aaa5f0c8ab34edff2b2fe4d90f74fd1ff08aa222",
+      "error": "KeyError('lease')"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-reflow/failed-retained-large-allocation-report.json",
+      "sha256": "c514c924f252f12db5bbf16f94726c80020c05a664e084b5463bf447bbee994d",
+      "error": "AssertionError('operation-closeActualFocusedControlPixels')"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-reflow/failed-immediate-keyboard-observation-report.json",
+      "sha256": "48008a7b820dde7f278a6158bdfd769138c1421992852da9f9342427b2e1c07d",
+      "error": "AssertionError('ChosenDenseMemberReceivesRealKeyboardInput')"
+    }
+  ],
+  "reviewerDisposition": {
+    "name": "root-native-popup-reflow",
+    "independent": false,
+    "disposition": "Owner-observed bounded native reflow; dense selection typing failed, AT/independent original acceptance pending."
+  }
+}

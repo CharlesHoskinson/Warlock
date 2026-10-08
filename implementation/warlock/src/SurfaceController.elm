@@ -163,9 +163,12 @@ update event ((Model model) as current) =
             if lease/=model.lease || Surface.mode model.desktop=="closed" then (current,[]) else
                 case (UInt64.next model.lease,UInt64.next model.publication) of
                     (Just token,Just shown) ->
-                        let refreshed = Model {model | lease=token,publication=shown}
-                            (result,effects)=apply (Desktop.Window (TaskbarShell.Native Shell.Refresh)) refreshed
-                        in (result,Publish (frame result)::effects)
+                        -- The host has retired the old popup/input lease. Output
+                        -- geometry changes its presentation, not the authority
+                        -- or membership of the displayed choices. Ordinary native
+                        -- observations still reconcile changed window state.
+                        let result = Model {model | lease=token,publication=shown}
+                        in (result,[Publish (frame result)])
                     _ -> (Model {model | exhausted=True},[])
         NativeDismiss lease ->
             if lease/=model.lease || Surface.mode model.desktop=="closed" then (current,[]) else

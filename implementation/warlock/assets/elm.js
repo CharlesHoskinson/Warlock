@@ -20206,23 +20206,16 @@ var $author$project$SurfaceController$update = F2(
 						if ((!_v2.a.$) && (!_v2.b.$)) {
 							var token = _v2.a.a;
 							var shown = _v2.b.a;
-							var refreshed = _Utils_update(
+							var result = _Utils_update(
 								model,
 								{aG: token, bA: shown});
-							var _v3 = A2(
-								$author$project$SurfaceController$apply,
-								$author$project$Desktop$Window(
-									$author$project$TaskbarShell$Native($author$project$Shell$Refresh)),
-								refreshed);
-							var result = _v3.a;
-							var effects = _v3.b;
 							return _Utils_Tuple2(
 								result,
-								A2(
-									$elm$core$List$cons,
-									$author$project$SurfaceController$Publish(
-										$author$project$SurfaceController$frame(result)),
-									effects));
+								_List_fromArray(
+									[
+										$author$project$SurfaceController$Publish(
+										$author$project$SurfaceController$frame(result))
+									]));
 						} else {
 							return _Utils_Tuple2(
 								_Utils_update(

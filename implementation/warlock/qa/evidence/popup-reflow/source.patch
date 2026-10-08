@@ -1,0 +1,58 @@
+diff --git i/implementation/warlock/assets/popup-adapter.js w/implementation/warlock/assets/popup-adapter.js
+index 6792dfc..a9ffcde 100644
+--- i/implementation/warlock/assets/popup-adapter.js
++++ w/implementation/warlock/assets/popup-adapter.js
+@@ -26,7 +26,7 @@ document.addEventListener('focusin',event=>{
+   if(event.target.closest?.('.surface-popup[data-mode="picker"]')){rememberPicker(event.target);revealPicker(true);}
+   else if(event.target!==document.body&&event.target!==document.documentElement)pickerSelection=null;
+ });
+-window.addEventListener('focus',()=>revealPicker());
++window.addEventListener('focus',()=>{rememberPicker(document.activeElement);revealPicker(true);});
+ window.addEventListener('resize',()=>requestAnimationFrame(()=>revealPicker(true)));
+ document.addEventListener('keydown',event=>{
+   if(!['ArrowUp','ArrowDown','Home','End'].includes(event.key)||event.isComposing||event.defaultPrevented||event.ctrlKey||event.altKey||event.metaKey||event.shiftKey)return;
+@@ -40,6 +40,10 @@ window.receivePresentation = value => {
+   requestAnimationFrame(() => requestAnimationFrame(() => {
+     const node=document.querySelector('.surface-popup');
+     if (node?.dataset.publication===value.publication && node.dataset.lease===value.lease) {
++      // A native reflow replaces the input lease around the same retained view.
++      // Carry only the currently focused eligible DOM control into that lease;
++      // a remembered identity alone never restores focus from an older lease.
++      if(document.hasFocus())rememberPicker(document.activeElement);
+       observePicker();revealPicker();
+       post({surfaceProtocol:2,kind:'presentation-applied',publication:value.publication,lease:value.lease});
+     }
+diff --git i/implementation/warlock/native/host.c w/implementation/warlock/native/host.c
+index c4b3b3a..4a052ea 100644
+--- i/implementation/warlock/native/host.c
++++ w/implementation/warlock/native/host.c
+@@ -644,6 +644,9 @@ static gboolean popup_open(void) {
+     gtk_window_set_type_hint(GTK_WINDOW(popover),GDK_WINDOW_TYPE_HINT_POPUP_MENU);
+     gtk_window_set_default_size(GTK_WINDOW(popover),width,height);
+     gtk_widget_set_size_request(GTK_WIDGET(popup_view),width,height);
++    /* Default size only governs the first map. A retained presentation tree
++     * must also shrink its previous allocation before its fresh popup role. */
++    gtk_window_resize(GTK_WINDOW(popover),width,height);
+     if (!reused) gtk_container_add(GTK_CONTAINER(popover),GTK_WIDGET(popup_view));
+     g_object_unref(popup_view);
+     popup_connect(G_OBJECT(popover),"unmap-event",G_CALLBACK(popup_unmapped));
+diff --git i/implementation/warlock/src/SurfaceController.elm w/implementation/warlock/src/SurfaceController.elm
+index 5b28c71..4b77fb0 100644
+--- i/implementation/warlock/src/SurfaceController.elm
++++ w/implementation/warlock/src/SurfaceController.elm
+@@ -163,9 +163,12 @@ update event ((Model model) as current) =
+             if lease/=model.lease || Surface.mode model.desktop=="closed" then (current,[]) else
+                 case (UInt64.next model.lease,UInt64.next model.publication) of
+                     (Just token,Just shown) ->
+-                        let refreshed = Model {model | lease=token,publication=shown}
+-                            (result,effects)=apply (Desktop.Window (TaskbarShell.Native Shell.Refresh)) refreshed
+-                        in (result,Publish (frame result)::effects)
++                        -- The host has retired the old popup/input lease. Output
++                        -- geometry changes its presentation, not the authority
++                        -- or membership of the displayed choices. Ordinary native
++                        -- observations still reconcile changed window state.
++                        let result = Model {model | lease=token,publication=shown}
++                        in (result,[Publish (frame result)])
+                     _ -> (Model {model | exhausted=True},[])
+         NativeDismiss lease ->
+             if lease/=model.lease || Surface.mode model.desktop=="closed" then (current,[]) else

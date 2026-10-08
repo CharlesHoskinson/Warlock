@@ -22,7 +22,8 @@ coverage and remaining AT/independent review are recorded in
 In a window-group picker, Up/Down traverse enabled controls and Home/End reach
 the close action and final member. The view retains the focused logical identity
 through the same popup lease, including reordered publications, resizing and
-late preview-content growth. A new lease cannot restore an old selection.
+late preview-content growth. A remembered old-lease identity alone cannot restore
+focus; native reflow can retain the currently focused eligible DOM control.
 Navigation changes no window state; activation and context operations still use
 the existing Elm/native authority. The ten-member, 150% text native journey,
 member menus, selected-window pixels and real keyboard recipient are recorded in
@@ -37,3 +38,16 @@ An inactive document cannot acquire operation focus from the view adapter.
 200% text, current operation endpoints/disabled rows/Tab/Escape and text pixels,
 plus the default-size minimize/restore regression. AT, independent original
 acceptance and native popup reflow continuity remain open.
+
+Native output resizing now retires the popup input lease and publishes the same
+Elm choices under a fresh lease without a destructive window refresh. The
+retained GTK presentation tree explicitly resizes its previous allocation,
+including shrinking after growth. `qa/evidence/popup-reflow/manifest.json`
+records 18 overflowing configured pins and ten native roots at 200% text:
+480x360 to 640x480 and back preserves the focused picker member and menu
+operation, configured/control order, complete physical control bounds and label
+pixels. Escape and the selected member's exact activation pass. The final GTK
+keystroke after group selection fails its original six-second observation
+deadline; this journey is not accepted. Default-size minimize/restore, real
+application typing and Task View dismissal pass against the same host. Applicable
+AT and independent original-scenario acceptance remain open.

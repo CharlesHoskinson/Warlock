@@ -644,6 +644,9 @@ static gboolean popup_open(void) {
     gtk_window_set_type_hint(GTK_WINDOW(popover),GDK_WINDOW_TYPE_HINT_POPUP_MENU);
     gtk_window_set_default_size(GTK_WINDOW(popover),width,height);
     gtk_widget_set_size_request(GTK_WIDGET(popup_view),width,height);
+    /* Default size only governs the first map. A retained presentation tree
+     * must also shrink its previous allocation before its fresh popup role. */
+    gtk_window_resize(GTK_WINDOW(popover),width,height);
     if (!reused) gtk_container_add(GTK_CONTAINER(popover),GTK_WIDGET(popup_view));
     g_object_unref(popup_view);
     popup_connect(G_OBJECT(popover),"unmap-event",G_CALLBACK(popup_unmapped));
