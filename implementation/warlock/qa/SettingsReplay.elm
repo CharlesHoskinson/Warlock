@@ -43,6 +43,17 @@ result =
         stale=case Desktop.capture read of
             Just stamp -> Desktop.update (Desktop.EditSettings stamp {theme=Settings.Night,textScale=200}) edited |> Tuple.first
             Nothing -> edited
+        themed theme scale ordinal =
+            let altered=dispatch (\stamp -> Desktop.EditSettings stamp {theme=theme,textScale=scale}) read |> Tuple.first
+                submitted=dispatch Desktop.SaveSettings altered |> Tuple.first
+                expected=submitted.settings.pending |> Maybe.map .request |> Maybe.withDefault UInt64.zero
+                observed=native (outcome expected "Saved" (snapshot "2" (Settings.themeName theme) scale)) submitted
+            in Surface.packet (counter (String.fromInt ordinal)) (counter "1") observed
+        appearanceFrames=List.indexedMap (\index (theme,scale) -> themed theme scale (index+3)) (List.concatMap (\theme -> List.map (\scale -> (theme,scale)) [100,125,150,200]) [Settings.Night,Settings.Dawn,Settings.HighContrast])
+        contrastEdited=dispatch (\stamp -> Desktop.EditSettings stamp {theme=Settings.HighContrast,textScale=150}) read |> Tuple.first
+        contrastSaving=dispatch Desktop.SaveSettings contrastEdited |> Tuple.first
+        contrastRequest=contrastSaving.settings.pending |> Maybe.map .request |> Maybe.withDefault UInt64.zero
+        contrastSaved=native (outcome contrastRequest "Saved" (snapshot "2" "high-contrast" 150)) contrastSaving
         frame=Surface.packet (counter "1") (counter "1") read
         savedFrame=Surface.packet (counter "2") (counter "1") committed
         checked name value=(name,E.bool value)
@@ -70,6 +81,9 @@ result =
             ,checked "invalidScaleCannotEditOrApply" (invalid.settings==read.settings && List.isEmpty invalidEffects)
             ,checked "invalidScaleDecoderRejects" (D.decodeValue Settings.decoder (snapshot "2" "dawn" 77) |> Result.toMaybe |> (==) Nothing)
             ,checked "staleViewCannotEdit" (stale==edited)
+            ,checked "contrastDecoderIsTyped" (D.decodeValue Settings.valuesDecoder (Settings.encodeValues {theme=Settings.HighContrast,textScale=200})==Ok {theme=Settings.HighContrast,textScale=200})
+            ,checked "contrastDraftDoesNotApplyBeforeReceipt" (appearance contrastEdited==Just {theme=Settings.Night,textScale=100})
+            ,checked "contrastCorrelatedReceiptApplies" (appearance contrastSaved==Just {theme=Settings.HighContrast,textScale=150})
             ,checked "allSettingsHaveNames" (List.all (\c -> not (String.isEmpty c.ariaLabel)) (Surface.controls read))]
-    in E.object [("checks",E.object checks),("frame",frame),("savedFrame",savedFrame)]
+    in E.object [("checks",E.object checks),("frame",frame),("savedFrame",savedFrame),("appearanceFrames",E.list identity appearanceFrames)]
 main = Platform.worker {init=\() -> ((),outgoing result),update=\_ model -> (model,Cmd.none),subscriptions=\_ -> Sub.none}

@@ -1,5 +1,6 @@
 """Focused compiled launcher/search integration, protected CPU scope only."""
 import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures,http.server,threading
+CONTRAST=sys.argv[1:]==['--high-contrast']
 DRAG=sys.argv[1:]==['--drag-ownership']
 KEYBOARD=sys.argv[1:]==['--keyboard-shell']
 ATTENTION=sys.argv[1:]==['--attention']
@@ -7,7 +8,7 @@ JUMP=sys.argv[1:]==['--jump-lists']
 FILES=sys.argv[1:]==['--files']
 SYSTEM=sys.argv[1:]==['--system-menu']
 NOTIFICATIONS=sys.argv[1:]==['--notifications']
-SETTINGS=sys.argv[1:]==['--settings']
+SETTINGS=sys.argv[1:]==['--settings'] or CONTRAST
 SNAP=sys.argv[1:]==['--snap-chooser']
 REFLOW=sys.argv[1:]==['--popup-reflow']
 MENU=sys.argv[1:]==['--dense-menu'] or REFLOW
@@ -20,7 +21,7 @@ NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'];POPUP
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143'
 sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
 scope=require_qa_scope();sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
-OUT=ROOT/'qa/runs'/(('drag-ownership-' if DRAG else 'keyboard-shell-' if KEYBOARD else 'attention-' if ATTENTION else 'jump-lists-' if JUMP else 'files-' if FILES else 'system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
+OUT=ROOT/'qa/runs'/(('high-contrast-' if CONTRAST else 'drag-ownership-' if DRAG else 'keyboard-shell-' if KEYBOARD else 'attention-' if ATTENTION else 'jump-lists-' if JUMP else 'files-' if FILES else 'system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
 for folder in ['src','native','adapter','assets','qa']:
  (INPUT/folder).mkdir()
  for p in (ROOT/folder).iterdir():
@@ -135,8 +136,9 @@ console.log('Current body-target Escape releases once; stale scope, preedit, rep
   run('notification-model-typecheck',['quint','typecheck','qa/notifications.qnt']);run('notification-model-named',['quint','test','qa/notifications.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79125']);run('notification-model-invariants',['quint','run','qa/notifications.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79126'])
   run('compile-notifications',[str(HELD/pinned['compiler']),'make','qa/NotificationsReplay.elm','--optimize','--output=assets/notifications.js'])
   (INPUT/'qa/notifications-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.NotificationsReplay'));run('typed-notifications',['node','qa/notifications-replay.js','assets/notifications.js',str(OUT/'notifications.json')]);report['typedNotifications']=json.loads((OUT/'notifications.json').read_text());assert all(report['typedNotifications']['checks'].values())
+ if CONTRAST:report.update(requirements=['ELM-UX-027'],scenarios=['ux-027'],scope='Integrated high contrast theme; actual compiled committed-theme projection, CAS/restart/invalid-theme handling and measured browser content/focus at all supported theme/text-scale fixtures. Native all-surface original qualification remains separate.')
  if SETTINGS:
-  report.update(requirements=['ELM-UX-030'],scenarios=['ux-030'],scope='Integrated committed appearance and validated revision-CAS storage; actual native restart and invalid-scale observations remain separate')
+  report.update(requirements=['ELM-UX-027'] if CONTRAST else ['ELM-UX-030'],scenarios=['ux-027'] if CONTRAST else ['ux-030'],scope='Integrated committed appearance and validated revision-CAS storage; actual native restart and invalid-scale observations remain separate')
   run('settings-store',['/usr/bin/python3','-B','qa/check-settings.py'])
   run('settings-model-typecheck',['quint','typecheck','qa/settings.qnt']);run('settings-model-named',['quint','test','qa/settings.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79123']);run('settings-model-invariants',['quint','run','qa/settings.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79124'])
   run('compile-settings',[str(HELD/pinned['compiler']),'make','qa/SettingsReplay.elm','--optimize','--output=assets/settings.js'])
@@ -186,7 +188,7 @@ console.log('Current body-target Escape releases once; stale scope, preedit, rep
    if TASKVIEW:
     # The authority TU is independently compiled against its owning core; none
     # of these reused GTK host objects link it or include its modal preflight.
-    excluded=['native/surface.h','native/host.c','native/shared-host.c','native/shell-bindings.lua','native/shared-context.h','native/shared-context-test.c']+(['native/authority.cpp','native/navigation-modal.hpp'] if NAV or DRAG else [])+(['native/authority.cpp','native/host-journal.h','native/geometry-effects.inc','native/snap-placement.inc'] if SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD else [])
+    excluded=['native/surface-test.c','native/surface.h','native/host.c','native/shared-host.c','native/shell-bindings.lua','native/shared-context.h','native/shared-context-test.c']+(['native/authority.cpp','native/navigation-modal.hpp'] if NAV or DRAG else [])+(['native/authority.cpp','native/host-journal.h','native/geometry-effects.inc','native/snap-placement.inc'] if SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD else [])
     assert all(sha(INPUT/p)==h for p,h in prior['inputs'].items() if p.startswith('native/') and p not in excluded)
     assert all('surface.h' not in (INPUT/'native'/name).read_text() for name in units)
    object_path=prior_path;object_report=prior;seen=set()

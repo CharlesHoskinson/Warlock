@@ -4,7 +4,7 @@ import Json.Decode as D
 import Json.Encode as E
 import UInt64 exposing (Counter)
 
-type Theme = Night | Dawn
+type Theme = Night | Dawn | HighContrast
 type alias Values = { theme : Theme, textScale : Int }
 type alias Snapshot = { schema : Int, revision : Counter, values : Values }
 type alias Model = { snapshot : Maybe Snapshot, draft : Values, pending : Maybe { request : Counter, values : Values }, notice : String }
@@ -17,11 +17,13 @@ strict fields child = D.keyValuePairs D.value |> D.andThen (\pairs -> if List.so
 themeName theme = case theme of
     Night -> "night"
     Dawn -> "dawn"
+    HighContrast -> "high-contrast"
 valuesDecoder : D.Decoder Values
 valuesDecoder = strict ["theme","textScale"] (D.map2 Values
     (D.field "theme" (D.string |> D.andThen (\value -> case value of
         "night" -> D.succeed Night
         "dawn" -> D.succeed Dawn
+        "high-contrast" -> D.succeed HighContrast
         _ -> D.fail "Theme unavailable")))
     (D.field "textScale" (D.int |> D.andThen (\scale -> if List.member scale [100,125,150,200] then D.succeed scale else D.fail "Text scale unavailable"))))
 decoder : D.Decoder Snapshot

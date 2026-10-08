@@ -8276,14 +8276,36 @@
       "owner": "Accessibility lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "ux-027",
           "oracle": "labels and focus remain visible and every action retains a hit target",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/high-contrast/manifest.json",
+              "sha256": "43fec26e2a8fb1564fdf52d0f7ab468d40db2940352b96cea988b98cbd96f6b6",
+              "scope": "Integrated persistent typed High contrast appearance with one native theme admission predicate for frames and requests, white-on-black content, inset yellow focus and cyan/amber state bands. Current physical native High contrast 150% saved/restarted Settings and taskbar pass, with actual focus glyph/outline pixels and separate Dawn compatibility journey. Actual compiled Settings browser fixtures cover all three themes at all four text sizes plus forced colors. All-surface native original acceptance remains partial.",
+              "sourceRevision": "caa19bf143ce408adbcd028c2e6f721cb8cd8233",
+              "sourceTuple": {
+                "core": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+                  "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+                },
+                "plugin": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791477973836253029/elm-window-geometry-authority.so",
+                  "sha256": "216c5cce257eaff5d063285d44df6ac20090f285064c9681fac6213e414b0d1c"
+                },
+                "aquamarine": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+                  "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+                }
+              },
+              "reviewerDisposition": "Owner-observed native Settings/taskbar and component theme/scale fixtures only; independent original all-surface acceptance remains open."
+            }
+          ],
+          "missingObservation": "Original ux-027 still requires native readable-label/focus/hit-target coverage across every migrated shell surface and every supported theme/text-scale fixture. Current physical evidence covers Settings and taskbar with Night defaults, High contrast at 150% and a separate Dawn 150% restart journey; the 12-fixture matrix and forced colors are browser component evidence. Applicable native AT/speech/braille consumers and independent original-scenario acceptance remain open. Full-release hardware/resource/journey/package/deployment gates remain open."
         }
       ]
     },
@@ -8717,5 +8739,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-08T16:52:24.427467+00:00"
+  "updatedUTC": "2026-10-08T17:20:46.737397+00:00"
 }

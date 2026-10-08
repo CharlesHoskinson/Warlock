@@ -20,6 +20,9 @@ static gboolean surface_text(JsonNode *node,gsize limit,gboolean empty) {
     for (;*s;s++) if ((guchar)*s<32 || (guchar)*s==127) return FALSE;
     return TRUE;
 }
+static gboolean surface_theme(JsonNode *theme) {
+    return surface_text(theme,16,FALSE) && (g_str_equal(json_node_get_string(theme),"night") || g_str_equal(json_node_get_string(theme),"dawn") || g_str_equal(json_node_get_string(theme),"high-contrast"));
+}
 static gboolean surface_controls(JsonNode *node,guint limit,GHashTable *ids,GHashTable *doms) {
     if (!node || !JSON_NODE_HOLDS_ARRAY(node)) return FALSE;
     JsonArray *array=json_node_get_array(node);
@@ -45,7 +48,7 @@ static gboolean surface_frame(JsonNode *node,guint64 *pub,guint64 *lease,gboolea
         const char *const fields[]={"theme","textScale"};
         if(!JSON_NODE_HOLDS_OBJECT(appearance))return FALSE;
         JsonObject *a=json_node_get_object(appearance);JsonNode *theme=json_object_get_member(a,"theme"),*scale=json_object_get_member(a,"textScale");
-        if(!surface_fields(a,fields,2) || !surface_text(theme,16,FALSE) || (!g_str_equal(json_node_get_string(theme),"night") && !g_str_equal(json_node_get_string(theme),"dawn")) || !scale || json_node_get_value_type(scale)!=G_TYPE_INT64 || (json_node_get_int(scale)!=100 && json_node_get_int(scale)!=125 && json_node_get_int(scale)!=150 && json_node_get_int(scale)!=200))return FALSE;
+        if(!surface_fields(a,fields,2) || !surface_theme(theme) || !scale || json_node_get_value_type(scale)!=G_TYPE_INT64 || (json_node_get_int(scale)!=100 && json_node_get_int(scale)!=125 && json_node_get_int(scale)!=150 && json_node_get_int(scale)!=200))return FALSE;
     }
     if (!surface_fields(o,names,appearance?8:7) || json_node_get_value_type(json_object_get_member(o,"surfaceProtocol"))!=G_TYPE_INT64 || json_object_get_int_member(o,"surfaceProtocol")!=2 || !surface_uint(json_object_get_member(o,"publication"),pub) || !*pub || !surface_uint(json_object_get_member(o,"lease"),lease) || !surface_text(json_object_get_member(o,"mode"),32,FALSE) || !surface_text(json_object_get_member(o,"status"),1024,TRUE)) return FALSE;
     const char *mode=json_object_get_string_member(o,"mode");

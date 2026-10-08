@@ -71,3 +71,31 @@ html[data-theme="dawn"] .surface-popup[data-mode="snap"] [data-surface-control^=
 .bar .control-group[data-window-state="attention"]{border-color:#ffc66b;box-shadow:inset 0 3px 0 #ffc66b,0 0 8px #ffc66b40;background:color-mix(in srgb,var(--shell-control,#263544) 82%,#ffc66b)}
 html[data-theme="dawn"] .bar .control-group[data-window-state="attention"]{border-color:#8c4e00;box-shadow:inset 0 3px 0 #8c4e00,0 0 8px #8c4e0030}
 @media(forced-colors:active){.bar .control-group[data-window-state="active"]{border-color:Highlight;box-shadow:none;border-bottom-width:4px}.bar .control-group[data-window-state="attention"]{border-color:CanvasText;box-shadow:none;border-top-width:4px}}
+
+/* High contrast preserves semantic color and shape without relying on glow.
+   Focus sits inside the native hit target so overflow cannot clip its outline. */
+html[data-theme="high-contrast"]{color-scheme:dark;--shell-background:#000;--shell-foreground:#fff;--shell-control:#000;--shell-border:#fff;--shell-focus:#ff0}
+html[data-theme="high-contrast"] button{border-width:2px}
+html[data-theme="high-contrast"] button:disabled{opacity:1;color:#bfbfbf;border-color:#8c8c8c;border-style:dashed}
+html[data-theme="high-contrast"] button:focus-visible,
+html[data-theme="high-contrast"] .launcher-search:focus-visible{outline:3px solid #ff0;outline-offset:-4px}
+html[data-theme="high-contrast"] .launcher-search{color:#fff;background:#000;border:2px solid #fff}
+html[data-theme="high-contrast"] .surface-bar>.surface-status{color:#fff;background:#000;border-color:#ff0}
+html[data-theme="high-contrast"] .bar .control-group[data-window-state="active"]{border-color:#0ff;box-shadow:inset 0 -3px 0 #0ff;background:#000}
+html[data-theme="high-contrast"] .bar .control-group[data-window-state="attention"]{border-color:#fc0;box-shadow:inset 0 3px 0 #fc0;background:#000}
+html[data-theme="high-contrast"] .surface-popup [aria-current="true"]{border-color:#fff;box-shadow:inset 3px 0 #fff}
+html[data-theme="high-contrast"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:"]{background:#000;box-shadow:none}
+html[data-theme="high-contrast"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:"]::before{border-color:#fff;background:linear-gradient(to right,#fff 50%,#000 50%);box-shadow:inset 0 0 0 3px #000}
+html[data-theme="high-contrast"] .surface-popup[data-mode="snap"] [data-surface-control*="top-"]::before,
+html[data-theme="high-contrast"] .surface-popup[data-mode="snap"] [data-surface-control*="bottom-"]::before{background:conic-gradient(from 270deg at 50% 50%,#fff 0deg 90deg,#000 90deg 360deg)}
+@media(forced-colors:active){
+ html[data-theme="high-contrast"]{--shell-background:Canvas;--shell-foreground:CanvasText;--shell-control:ButtonFace;--shell-border:ButtonText;--shell-focus:Highlight}
+ html[data-theme="high-contrast"] button:focus-visible,html[data-theme="high-contrast"] .launcher-search:focus-visible{outline-color:Highlight}
+ html[data-theme="high-contrast"] button:disabled{color:GrayText;border-color:GrayText}
+ html[data-theme="high-contrast"] .launcher-search{color:FieldText;background:Field;border-color:FieldText}
+ html[data-theme="high-contrast"] .surface-bar>.surface-status{color:CanvasText;background:Canvas;border-color:Highlight}
+ html[data-theme="high-contrast"] .bar .control-group[data-window-state]{border-color:Highlight;box-shadow:none;background:ButtonFace}
+ html[data-theme="high-contrast"] .surface-popup [aria-current="true"]{border-color:Highlight;box-shadow:none}
+ html[data-theme="high-contrast"] .bar .control-group[data-window-state="active"]{border-bottom:4px double Highlight}
+ html[data-theme="high-contrast"] .bar .control-group[data-window-state="attention"]{border-top:4px double Highlight}
+}

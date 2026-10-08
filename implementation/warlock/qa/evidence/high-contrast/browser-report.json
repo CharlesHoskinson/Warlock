@@ -1,0 +1,561 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "Actual settings popup renders named controls"
+    },
+    {
+      "name": "Loaded appearance is current, not an unsaved draft"
+    },
+    {
+      "name": "Save disabled without changes"
+    },
+    {
+      "name": "Current theme and scale exposed semantically"
+    },
+    {
+      "name": "End reaches refresh and skips disabled Save"
+    },
+    {
+      "name": "Home reveals Close"
+    },
+    {
+      "name": "Arrow reaches first theme"
+    },
+    {
+      "name": "Keyboard theme dispatch uses exact current identity once"
+    },
+    {
+      "name": "Dispatch alone cannot optimistically apply theme"
+    },
+    {
+      "name": "Committed text size applies to real rendering"
+    },
+    {
+      "name": "Dawn colors apply to actual document"
+    },
+    {
+      "name": "Committed selected state follows receipt"
+    },
+    {
+      "name": "Enlarged small viewport reveals last control"
+    },
+    {
+      "name": "Escape submits dismissal after real key release"
+    },
+    {
+      "name": "Readable enlarged named target night/100",
+      "detail": {
+        "theme": "night",
+        "scale": "100",
+        "foreground": "rgb(244, 246, 247)",
+        "background": "rgb(38, 53, 68)",
+        "bodyForeground": "rgb(244, 246, 247)",
+        "bodyBackground": "rgb(23, 32, 42)",
+        "outlineColor": "rgb(126, 215, 255)",
+        "outlineWidth": "3px",
+        "outlineOffset": "1px",
+        "fontSize": "16px",
+        "identity": "settings:refresh",
+        "visible": true,
+        "hasName": true
+      }
+    },
+    {
+      "name": "Readable enlarged named target night/125",
+      "detail": {
+        "theme": "night",
+        "scale": "125",
+        "foreground": "rgb(244, 246, 247)",
+        "background": "rgb(38, 53, 68)",
+        "bodyForeground": "rgb(244, 246, 247)",
+        "bodyBackground": "rgb(23, 32, 42)",
+        "outlineColor": "rgb(126, 215, 255)",
+        "outlineWidth": "3px",
+        "outlineOffset": "1px",
+        "fontSize": "20px",
+        "identity": "settings:refresh",
+        "visible": true,
+        "hasName": true
+      }
+    },
+    {
+      "name": "Readable enlarged named target night/150",
+      "detail": {
+        "theme": "night",
+        "scale": "150",
+        "foreground": "rgb(244, 246, 247)",
+        "background": "rgb(38, 53, 68)",
+        "bodyForeground": "rgb(244, 246, 247)",
+        "bodyBackground": "rgb(23, 32, 42)",
+        "outlineColor": "rgb(126, 215, 255)",
+        "outlineWidth": "3px",
+        "outlineOffset": "1px",
+        "fontSize": "24px",
+        "identity": "settings:refresh",
+        "visible": true,
+        "hasName": true
+      }
+    },
+    {
+      "name": "Readable enlarged named target night/200",
+      "detail": {
+        "theme": "night",
+        "scale": "200",
+        "foreground": "rgb(244, 246, 247)",
+        "background": "rgb(38, 53, 68)",
+        "bodyForeground": "rgb(244, 246, 247)",
+        "bodyBackground": "rgb(23, 32, 42)",
+        "outlineColor": "rgb(126, 215, 255)",
+        "outlineWidth": "3px",
+        "outlineOffset": "1px",
+        "fontSize": "32px",
+        "identity": "settings:refresh",
+        "visible": true,
+        "hasName": true
+      }
+    },
+    {
+      "name": "Readable enlarged named target dawn/100",
+      "detail": {
+        "theme": "dawn",
+        "scale": "100",
+        "foreground": "rgb(23, 37, 54)",
+        "background": "rgb(255, 255, 255)",
+        "bodyForeground": "rgb(23, 37, 54)",
+        "bodyBackground": "rgb(237, 242, 247)",
+        "outlineColor": "rgb(23, 104, 176)",
+        "outlineWidth": "3px",
+        "outlineOffset": "1px",
+        "fontSize": "16px",
+        "identity": "settings:refresh",
+        "visible": true,
+        "hasName": true
+      }
+    },
+    {
+      "name": "Readable enlarged named target dawn/125",
+      "detail": {
+        "theme": "dawn",
+        "scale": "125",
+        "foreground": "rgb(23, 37, 54)",
+        "background": "rgb(255, 255, 255)",
+        "bodyForeground": "rgb(23, 37, 54)",
+        "bodyBackground": "rgb(237, 242, 247)",
+        "outlineColor": "rgb(23, 104, 176)",
+        "outlineWidth": "3px",
+        "outlineOffset": "1px",
+        "fontSize": "20px",
+        "identity": "settings:refresh",
+        "visible": true,
+        "hasName": true
+      }
+    },
+    {
+      "name": "Readable enlarged named target dawn/150",
+      "detail": {
+        "theme": "dawn",
+        "scale": "150",
+        "foreground": "rgb(23, 37, 54)",
+        "background": "rgb(255, 255, 255)",
+        "bodyForeground": "rgb(23, 37, 54)",
+        "bodyBackground": "rgb(237, 242, 247)",
+        "outlineColor": "rgb(23, 104, 176)",
+        "outlineWidth": "3px",
+        "outlineOffset": "1px",
+        "fontSize": "24px",
+        "identity": "settings:refresh",
+        "visible": true,
+        "hasName": true
+      }
+    },
+    {
+      "name": "Readable enlarged named target dawn/200",
+      "detail": {
+        "theme": "dawn",
+        "scale": "200",
+        "foreground": "rgb(23, 37, 54)",
+        "background": "rgb(255, 255, 255)",
+        "bodyForeground": "rgb(23, 37, 54)",
+        "bodyBackground": "rgb(237, 242, 247)",
+        "outlineColor": "rgb(23, 104, 176)",
+        "outlineWidth": "3px",
+        "outlineOffset": "1px",
+        "fontSize": "32px",
+        "identity": "settings:refresh",
+        "visible": true,
+        "hasName": true
+      }
+    },
+    {
+      "name": "Readable enlarged named target high-contrast/100",
+      "detail": {
+        "theme": "high-contrast",
+        "scale": "100",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 0)",
+        "bodyForeground": "rgb(255, 255, 255)",
+        "bodyBackground": "rgb(0, 0, 0)",
+        "outlineColor": "rgb(255, 255, 0)",
+        "outlineWidth": "3px",
+        "outlineOffset": "-4px",
+        "fontSize": "16px",
+        "identity": "settings:refresh",
+        "visible": true,
+        "hasName": true
+      }
+    },
+    {
+      "name": "Inset high contrast focus 100",
+      "detail": {
+        "theme": "high-contrast",
+        "scale": "100",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 0)",
+        "bodyForeground": "rgb(255, 255, 255)",
+        "bodyBackground": "rgb(0, 0, 0)",
+        "outlineColor": "rgb(255, 255, 0)",
+        "outlineWidth": "3px",
+        "outlineOffset": "-4px",
+        "fontSize": "16px",
+        "identity": "settings:refresh",
+        "visible": true,
+        "hasName": true
+      }
+    },
+    {
+      "name": "Readable enlarged named target high-contrast/125",
+      "detail": {
+        "theme": "high-contrast",
+        "scale": "125",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 0)",
+        "bodyForeground": "rgb(255, 255, 255)",
+        "bodyBackground": "rgb(0, 0, 0)",
+        "outlineColor": "rgb(255, 255, 0)",
+        "outlineWidth": "3px",
+        "outlineOffset": "-4px",
+        "fontSize": "20px",
+        "identity": "settings:refresh",
+        "visible": true,
+        "hasName": true
+      }
+    },
+    {
+      "name": "Inset high contrast focus 125",
+      "detail": {
+        "theme": "high-contrast",
+        "scale": "125",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 0)",
+        "bodyForeground": "rgb(255, 255, 255)",
+        "bodyBackground": "rgb(0, 0, 0)",
+        "outlineColor": "rgb(255, 255, 0)",
+        "outlineWidth": "3px",
+        "outlineOffset": "-4px",
+        "fontSize": "20px",
+        "identity": "settings:refresh",
+        "visible": true,
+        "hasName": true
+      }
+    },
+    {
+      "name": "Readable enlarged named target high-contrast/150",
+      "detail": {
+        "theme": "high-contrast",
+        "scale": "150",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 0)",
+        "bodyForeground": "rgb(255, 255, 255)",
+        "bodyBackground": "rgb(0, 0, 0)",
+        "outlineColor": "rgb(255, 255, 0)",
+        "outlineWidth": "3px",
+        "outlineOffset": "-4px",
+        "fontSize": "24px",
+        "identity": "settings:refresh",
+        "visible": true,
+        "hasName": true
+      }
+    },
+    {
+      "name": "Inset high contrast focus 150",
+      "detail": {
+        "theme": "high-contrast",
+        "scale": "150",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 0)",
+        "bodyForeground": "rgb(255, 255, 255)",
+        "bodyBackground": "rgb(0, 0, 0)",
+        "outlineColor": "rgb(255, 255, 0)",
+        "outlineWidth": "3px",
+        "outlineOffset": "-4px",
+        "fontSize": "24px",
+        "identity": "settings:refresh",
+        "visible": true,
+        "hasName": true
+      }
+    },
+    {
+      "name": "Readable enlarged named target high-contrast/200",
+      "detail": {
+        "theme": "high-contrast",
+        "scale": "200",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 0)",
+        "bodyForeground": "rgb(255, 255, 255)",
+        "bodyBackground": "rgb(0, 0, 0)",
+        "outlineColor": "rgb(255, 255, 0)",
+        "outlineWidth": "3px",
+        "outlineOffset": "-4px",
+        "fontSize": "32px",
+        "identity": "settings:refresh",
+        "visible": true,
+        "hasName": true
+      }
+    },
+    {
+      "name": "Inset high contrast focus 200",
+      "detail": {
+        "theme": "high-contrast",
+        "scale": "200",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 0)",
+        "bodyForeground": "rgb(255, 255, 255)",
+        "bodyBackground": "rgb(0, 0, 0)",
+        "outlineColor": "rgb(255, 255, 0)",
+        "outlineWidth": "3px",
+        "outlineOffset": "-4px",
+        "fontSize": "32px",
+        "identity": "settings:refresh",
+        "visible": true,
+        "hasName": true
+      }
+    },
+    {
+      "name": "Forced color content and focus remain readable",
+      "detail": {
+        "foreground": "rgb(0, 0, 0)",
+        "background": "rgb(255, 255, 255)",
+        "outlineColor": "rgba(5, 0, 73, 0.8)",
+        "outlineWidth": "3px"
+      }
+    },
+    {
+      "name": "Invalid presentation scale cannot change appearance"
+    },
+    {
+      "name": "No browser exceptions",
+      "detail": []
+    }
+  ],
+  "captures": [
+    "settings-dawn-enlarged.png",
+    "settings-high-contrast-enlarged.png",
+    "settings-high-contrast-forced-colors.png"
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "appearanceFixtures": [
+    {
+      "theme": "night",
+      "scale": "100",
+      "foreground": "rgb(244, 246, 247)",
+      "background": "rgb(38, 53, 68)",
+      "bodyForeground": "rgb(244, 246, 247)",
+      "bodyBackground": "rgb(23, 32, 42)",
+      "outlineColor": "rgb(126, 215, 255)",
+      "outlineWidth": "3px",
+      "outlineOffset": "1px",
+      "fontSize": "16px",
+      "identity": "settings:refresh",
+      "visible": true,
+      "hasName": true,
+      "contrast": 11.564506616574336
+    },
+    {
+      "theme": "night",
+      "scale": "125",
+      "foreground": "rgb(244, 246, 247)",
+      "background": "rgb(38, 53, 68)",
+      "bodyForeground": "rgb(244, 246, 247)",
+      "bodyBackground": "rgb(23, 32, 42)",
+      "outlineColor": "rgb(126, 215, 255)",
+      "outlineWidth": "3px",
+      "outlineOffset": "1px",
+      "fontSize": "20px",
+      "identity": "settings:refresh",
+      "visible": true,
+      "hasName": true,
+      "contrast": 11.564506616574336
+    },
+    {
+      "theme": "night",
+      "scale": "150",
+      "foreground": "rgb(244, 246, 247)",
+      "background": "rgb(38, 53, 68)",
+      "bodyForeground": "rgb(244, 246, 247)",
+      "bodyBackground": "rgb(23, 32, 42)",
+      "outlineColor": "rgb(126, 215, 255)",
+      "outlineWidth": "3px",
+      "outlineOffset": "1px",
+      "fontSize": "24px",
+      "identity": "settings:refresh",
+      "visible": true,
+      "hasName": true,
+      "contrast": 11.564506616574336
+    },
+    {
+      "theme": "night",
+      "scale": "200",
+      "foreground": "rgb(244, 246, 247)",
+      "background": "rgb(38, 53, 68)",
+      "bodyForeground": "rgb(244, 246, 247)",
+      "bodyBackground": "rgb(23, 32, 42)",
+      "outlineColor": "rgb(126, 215, 255)",
+      "outlineWidth": "3px",
+      "outlineOffset": "1px",
+      "fontSize": "32px",
+      "identity": "settings:refresh",
+      "visible": true,
+      "hasName": true,
+      "contrast": 11.564506616574336
+    },
+    {
+      "theme": "dawn",
+      "scale": "100",
+      "foreground": "rgb(23, 37, 54)",
+      "background": "rgb(255, 255, 255)",
+      "bodyForeground": "rgb(23, 37, 54)",
+      "bodyBackground": "rgb(237, 242, 247)",
+      "outlineColor": "rgb(23, 104, 176)",
+      "outlineWidth": "3px",
+      "outlineOffset": "1px",
+      "fontSize": "16px",
+      "identity": "settings:refresh",
+      "visible": true,
+      "hasName": true,
+      "contrast": 15.505854293645799
+    },
+    {
+      "theme": "dawn",
+      "scale": "125",
+      "foreground": "rgb(23, 37, 54)",
+      "background": "rgb(255, 255, 255)",
+      "bodyForeground": "rgb(23, 37, 54)",
+      "bodyBackground": "rgb(237, 242, 247)",
+      "outlineColor": "rgb(23, 104, 176)",
+      "outlineWidth": "3px",
+      "outlineOffset": "1px",
+      "fontSize": "20px",
+      "identity": "settings:refresh",
+      "visible": true,
+      "hasName": true,
+      "contrast": 15.505854293645799
+    },
+    {
+      "theme": "dawn",
+      "scale": "150",
+      "foreground": "rgb(23, 37, 54)",
+      "background": "rgb(255, 255, 255)",
+      "bodyForeground": "rgb(23, 37, 54)",
+      "bodyBackground": "rgb(237, 242, 247)",
+      "outlineColor": "rgb(23, 104, 176)",
+      "outlineWidth": "3px",
+      "outlineOffset": "1px",
+      "fontSize": "24px",
+      "identity": "settings:refresh",
+      "visible": true,
+      "hasName": true,
+      "contrast": 15.505854293645799
+    },
+    {
+      "theme": "dawn",
+      "scale": "200",
+      "foreground": "rgb(23, 37, 54)",
+      "background": "rgb(255, 255, 255)",
+      "bodyForeground": "rgb(23, 37, 54)",
+      "bodyBackground": "rgb(237, 242, 247)",
+      "outlineColor": "rgb(23, 104, 176)",
+      "outlineWidth": "3px",
+      "outlineOffset": "1px",
+      "fontSize": "32px",
+      "identity": "settings:refresh",
+      "visible": true,
+      "hasName": true,
+      "contrast": 15.505854293645799
+    },
+    {
+      "theme": "high-contrast",
+      "scale": "100",
+      "foreground": "rgb(255, 255, 255)",
+      "background": "rgb(0, 0, 0)",
+      "bodyForeground": "rgb(255, 255, 255)",
+      "bodyBackground": "rgb(0, 0, 0)",
+      "outlineColor": "rgb(255, 255, 0)",
+      "outlineWidth": "3px",
+      "outlineOffset": "-4px",
+      "fontSize": "16px",
+      "identity": "settings:refresh",
+      "visible": true,
+      "hasName": true,
+      "contrast": 21
+    },
+    {
+      "theme": "high-contrast",
+      "scale": "125",
+      "foreground": "rgb(255, 255, 255)",
+      "background": "rgb(0, 0, 0)",
+      "bodyForeground": "rgb(255, 255, 255)",
+      "bodyBackground": "rgb(0, 0, 0)",
+      "outlineColor": "rgb(255, 255, 0)",
+      "outlineWidth": "3px",
+      "outlineOffset": "-4px",
+      "fontSize": "20px",
+      "identity": "settings:refresh",
+      "visible": true,
+      "hasName": true,
+      "contrast": 21
+    },
+    {
+      "theme": "high-contrast",
+      "scale": "150",
+      "foreground": "rgb(255, 255, 255)",
+      "background": "rgb(0, 0, 0)",
+      "bodyForeground": "rgb(255, 255, 255)",
+      "bodyBackground": "rgb(0, 0, 0)",
+      "outlineColor": "rgb(255, 255, 0)",
+      "outlineWidth": "3px",
+      "outlineOffset": "-4px",
+      "fontSize": "24px",
+      "identity": "settings:refresh",
+      "visible": true,
+      "hasName": true,
+      "contrast": 21
+    },
+    {
+      "theme": "high-contrast",
+      "scale": "200",
+      "foreground": "rgb(255, 255, 255)",
+      "background": "rgb(0, 0, 0)",
+      "bodyForeground": "rgb(255, 255, 255)",
+      "bodyBackground": "rgb(0, 0, 0)",
+      "outlineColor": "rgb(255, 255, 0)",
+      "outlineWidth": "3px",
+      "outlineOffset": "-4px",
+      "fontSize": "32px",
+      "identity": "settings:refresh",
+      "visible": true,
+      "hasName": true,
+      "contrast": 21
+    }
+  ],
+  "forcedColors": {
+    "foreground": "rgb(0, 0, 0)",
+    "background": "rgb(255, 255, 255)",
+    "outlineColor": "rgba(5, 0, 73, 0.8)",
+    "outlineWidth": "3px"
+  },
+  "browserExitCode": 0
+}

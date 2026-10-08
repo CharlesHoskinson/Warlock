@@ -218,3 +218,22 @@ fixture's expected 800×600, and did not reach that geometry within six seconds.
 Both failed setup reports and the passing current taskbar regression are retained
 in `qa/evidence/drag-ownership/manifest.json`. Caption/edge, cancellation,
 AT/device coverage and independent original acceptance remain open.
+
+Settings now offers **High contrast theme** alongside Night and Dawn. Its saved
+value uses the same typed, revision-correlated appearance protocol and private
+atomic store. The native host admits only these three named themes; an unknown
+palette or path cannot become a settings request. Unsaved edits do not alter
+appearance, and restart restores the committed theme and text scale.
+
+High contrast uses white text and borders on black, inset yellow keyboard focus,
+and distinct cyan active/amber attention bands. Disabled controls keep readable
+labels. System forced colors take precedence. The shared palette applies to bar,
+popup, text-field and snap controls without changing their action identities.
+
+Focused `--high-contrast` checks measure the actual compiled Settings controls
+in all 12 theme/text-scale combinations and forced colors. The physical native
+journey saves at 150%, traverses keyboard focus, records white glyph/yellow
+outline pixels and restarts the host; the existing Dawn journey is checked
+separately. Evidence is in `qa/evidence/high-contrast/manifest.json`.
+ELM-UX-027 remains partial: all-surface native theme/scale coverage, applicable
+accessibility consumers and independent original acceptance remain open.

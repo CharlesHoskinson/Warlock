@@ -5261,6 +5261,7 @@ var $elm$core$Result$toMaybe = function (result) {
 	}
 };
 var $author$project$Settings$Dawn = 1;
+var $author$project$Settings$HighContrast = 2;
 var $author$project$Settings$Values = F2(
 	function (theme, textScale) {
 		return {X: textScale, ah: theme};
@@ -5296,6 +5297,8 @@ var $author$project$Settings$valuesDecoder = A2(
 							return $elm$json$Json$Decode$succeed(0);
 						case 'dawn':
 							return $elm$json$Json$Decode$succeed(1);
+						case 'high-contrast':
+							return $elm$json$Json$Decode$succeed(2);
 						default:
 							return $elm$json$Json$Decode$fail('Theme unavailable');
 					}
@@ -5902,10 +5905,13 @@ var $elm$html$Html$p = _VirtualDom_node('p');
 var $elm$html$Html$Attributes$placeholder = $elm$html$Html$Attributes$stringProperty('placeholder');
 var $elm$html$Html$span = _VirtualDom_node('span');
 var $author$project$Settings$themeName = function (theme) {
-	if (!theme) {
-		return 'night';
-	} else {
-		return 'dawn';
+	switch (theme) {
+		case 0:
+			return 'night';
+		case 1:
+			return 'dawn';
+		default:
+			return 'high-contrast';
 	}
 };
 var $elm$html$Html$Attributes$title = $elm$html$Html$Attributes$stringProperty('title');

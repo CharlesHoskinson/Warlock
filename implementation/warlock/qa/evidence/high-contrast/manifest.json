@@ -1,0 +1,123 @@
+{
+  "schema": 1,
+  "owner": "root-high-contrast",
+  "observedUTC": "2026-10-08T17:20:46.737397+00:00",
+  "requirements": [
+    "ELM-UX-027"
+  ],
+  "scenarios": [
+    "ux-027"
+  ],
+  "originals": [
+    {
+      "requirement": "ELM-UX-027",
+      "verification": "Elm replay assertion and isolated native recording: labels and focus remain visible and every action retains a hit target.",
+      "scenarios": [
+        {
+          "name": "ux-027",
+          "given": "supported theme and text-scale fixtures",
+          "when": "all shell surfaces render",
+          "then": "labels and focus remain visible and every action retains a hit target"
+        }
+      ]
+    }
+  ],
+  "scope": "Integrated persistent typed High contrast appearance with one native theme admission predicate for frames and requests, white-on-black content, inset yellow focus and cyan/amber state bands. Current physical native High contrast 150% saved/restarted Settings and taskbar pass, with actual focus glyph/outline pixels and separate Dawn compatibility journey. Actual compiled Settings browser fixtures cover all three themes at all four text sizes plus forced colors. All-surface native original acceptance remains partial.",
+  "sourceBaseRevision": "caa19bf143ce408adbcd028c2e6f721cb8cd8233",
+  "publicBaseRevision": "91925d14371522960eb9f76f89cf5e3d65c6d538",
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+      "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791477973836253029/elm-window-geometry-authority.so",
+      "sha256": "216c5cce257eaff5d063285d44df6ac20090f285064c9681fac6213e414b0d1c"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/high-contrast-1791479698385420636/elm-host",
+    "sha256": "df2d1b62a68f3ec8ed8e6993d9f473d34c14eb0c4064e9e52ac5b90c3b8a829e",
+    "heldBuild": "implementation/warlock/qa/runs/high-contrast-1791479698385420636/report.json",
+    "heldBuildSHA256": "2d593aef4699530c9ef4ed7513be88fab14eaba1bb691660768630139a592206"
+  },
+  "compiledAssets": {
+    "elm.js": "22afa12809061904a3987a0307655ebaa07295209de4c0016f256626dc311edb",
+    "bar.js": "6766287fd648e07026c8237b267f47b76a41f8b0cf146f91760c959fc2ca9fa5",
+    "popup.js": "f24a06ea2193a13b712d2dce9e65637d404d6642fb4224f11451948145e994aa"
+  },
+  "observedChecks": {
+    "compiledSettings": 22,
+    "actualPrivateStore": 26,
+    "productionBrowser": 33,
+    "browserThemeScaleFixtures": 12,
+    "nativeSurfaceGuards": 6,
+    "nativeHighContrast": 59,
+    "nativeDawnRegression": 52
+  },
+  "browserMinimumEnabledTextContrast": 11.564506616574336,
+  "nativeFocusedPixels": {
+    "whiteTextPixels": 2630,
+    "yellowFocusPixels": 4432,
+    "region": [
+      61,
+      329,
+      739,
+      404
+    ]
+  },
+  "nativeCampaignPassed": true,
+  "nativeHighContrastObserved": true,
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "missingObservations": [
+    "Original ux-027 still requires native readable-label/focus/hit-target coverage across every migrated shell surface and every supported theme/text-scale fixture. Current physical evidence covers Settings and taskbar with Night defaults, High contrast at 150% and a separate Dawn 150% restart journey; the 12-fixture matrix and forced colors are browser component evidence.",
+    "Applicable native AT/speech/braille consumers and independent original-scenario acceptance remain open.",
+    "Full-release hardware/resource/journey/package/deployment gates remain open."
+  ],
+  "sources": {
+    "implementation/warlock/src/Settings.elm": "8ff941e33dfed8fe3ecb0e050333e04c368e53366ac49b69843bad3b7d80da90",
+    "implementation/warlock/src/Surface.elm": "2f127852494136f31f3a489dbac826322c0d33b5669bd398540ec7a0b03dbfbb",
+    "implementation/warlock/adapter/shell_preferences.py": "7e6b319894e5888be00a67ada7b372e5dc1a7119ffabd7c046f4f39b443b0ae6",
+    "implementation/warlock/assets/shell.css": "ee453214f1b522a1fad8d89c513959bbc992ac96fd50252342cf882cb8f871f2",
+    "implementation/warlock/assets/appearance.js": "0306235aabfde73e615d55820dde28f5f1f453076e047237efb849ba2aac5a3d",
+    "implementation/warlock/assets/bar-adapter.js": "219bc3865be91cdfad9d6d8040aff4654921605300538adb834e8965d6ecea79",
+    "implementation/warlock/assets/popup-adapter.js": "52335ba659cc736cb60fc8c46e7059323f869484c89c0bfa7cf96a8e65e66a03",
+    "implementation/warlock/qa/SettingsReplay.elm": "56cf7275806fcb2719f4ad58467850c448c232036e77966a1f92dfcad56f56c9",
+    "implementation/warlock/qa/check-settings.py": "e03f63952f2d66361e6b96b77f6f3c7e7fa54453b890ca2d7eb05aedb2888c6f",
+    "implementation/warlock/qa/settings-browser.mjs": "8a95698e9bab632244abf3414d5fba1afd04db17de00ae52542f296a8e379611",
+    "implementation/warlock/qa/check-search.py": "f4cb744054bf68cb1486ca3bd216b86ea77271784a1ecc13dfa84607e6c81c66",
+    "implementation/warlock/qa/native-window-feedback.py": "9792633f388c2474e88d54c9579d5098e956dcff85bee3fee4d6a282e621d772",
+    "implementation/warlock/README.md": "21bb08ff538f49eda8fe738b921e580d6508cc6246ca246c22c30a0524b18a6a",
+    "implementation/warlock/assets/elm.js": "22afa12809061904a3987a0307655ebaa07295209de4c0016f256626dc311edb",
+    "implementation/warlock/assets/bar.js": "6766287fd648e07026c8237b267f47b76a41f8b0cf146f91760c959fc2ca9fa5",
+    "implementation/warlock/assets/popup.js": "f24a06ea2193a13b712d2dce9e65637d404d6642fb4224f11451948145e994aa",
+    "implementation/warlock/qa/current-search-build.json": "4c5cf1902c1a7d88325b26f290c8825c5716b870f8ece1364c14c590857ebd75",
+    "implementation/warlock/native/surface.h": "f00eab93ebe3e695630233bbb6eb85a73cfcb160127e3362240f308e77dcab39",
+    "implementation/warlock/native/surface-test.c": "7cde33ca05eacae1aa25cffb1e6507901e14f44ae74304cea90a3dd26fef559e",
+    "implementation/warlock/native/host.c": "b9fa687b9227788b8121ae93ac24cfd5ae45cd0ba652e968018afcc42c01a6c0"
+  },
+  "artifacts": {
+    "component-report.json": "2d593aef4699530c9ef4ed7513be88fab14eaba1bb691660768630139a592206",
+    "native-report.json": "52735976aead13317deea90b2b6f5ab20ea6dec393bfb145fe35c10461531e7e",
+    "dawn-regression-report.json": "28ed0cda5d0776db84e656784f343db0b0143848d4033bf7219f7b73f5d1dacc",
+    "browser-report.json": "d7d1688a6d60c47c7e9ee89d0fb5702dd692e5a8de6fb462b516e728bf1d70f0",
+    "settings.json": "ecf39db9456cd830a94b361e42d318a3b4638cc9f6b2a02d5763dc65fdaa3252",
+    "settings-store.stdout": "0e0cee144795e1379bfe43f9344c40be2a880edff88bd123a29c041984502bfd",
+    "surface-admission.stdout": "3e0e2388db54261a6f4a11c804aef9a20f69faba9ff41e05270ae92d6c503b49",
+    "host-self-tests.stdout": "95aad63838b3b77fbe3e6c76b99f523be3b6fc7f6e0c372890f35276c33e526e",
+    "settings-high-contrast-enlarged.png": "8b5b71490a96d911beaeb9c225d016d852987f82c7d136d303970c3b375a1f2f",
+    "settings-high-contrast-forced-colors.png": "b280fbb3b2c28d38a383ebf077cf3dd8d9aa2a3be9e4ebb92a1fd428af0a5b83",
+    "native-high-contrast-focus.png": "1a2ee7960a00133bbccad483d3f0161cfd8648fff22a0609f02493131bc7b10b",
+    "native-dawn-enlarged.png": "e93309c67177269cb41197bc2c6fce3357766f4248bc670e774d72d8b9987816",
+    "failed-clipped-settings-target.json": "133e22106e9cb7c5a92f39a1068f8fe4a805da0f40a29c7518085ae925122216",
+    "failed-native-save-theme-gate.json": "c8e0b96af502c118728cdeec7eaa9d5992caae32f6f88a360decbf9a18359b0b",
+    "source.patch": "67ccf04112151cf92bff2e85cd649148fd230a090a98a3a0680cf45a1c639838"
+  }
+}

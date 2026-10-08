@@ -9,7 +9,7 @@ from taskbar_preferences import Store as PrivateStore, MAX_REVISION
 
 def values(value):
  exact(value,['theme','textScale'])
- if value['theme'] not in ('night','dawn') or type(value['theme']) is not str:raise Refused('Appearance theme')
+ if value['theme'] not in ('night','dawn','high-contrast') or type(value['theme']) is not str:raise Refused('Appearance theme')
  if type(value['textScale']) is not int or value['textScale'] not in (100,125,150,200):raise Refused('Appearance text scale')
  return value
 

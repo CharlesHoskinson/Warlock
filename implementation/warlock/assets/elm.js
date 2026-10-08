@@ -6527,6 +6527,7 @@ var $author$project$Desktop$EditSettings = F2(
 	function (a, b) {
 		return {$: 33, a: a, b: b};
 	});
+var $author$project$Settings$HighContrast = 2;
 var $author$project$Desktop$JumpAction = F2(
 	function (a, b) {
 		return {$: 14, a: a, b: b};
@@ -7624,10 +7625,13 @@ var $author$project$Notifications$target = F4(
 		return {eh: action, b1: entry.b1, al: entry.al, aQ: entry.aQ, au: snapshot.au, bR: verb};
 	});
 var $author$project$Settings$themeName = function (theme) {
-	if (!theme) {
-		return 'night';
-	} else {
-		return 'dawn';
+	switch (theme) {
+		case 0:
+			return 'night';
+		case 1:
+			return 'dawn';
+		default:
+			return 'high-contrast';
 	}
 };
 var $author$project$Launch$Acknowledgement = $elm$core$Basics$identity;
@@ -8223,7 +8227,8 @@ var $author$project$Surface$controls = function (model) {
 								[
 									A5(control, 'control:close', 'Close settings', '', true, $author$project$Desktop$CloseSettings),
 									A2(theme, 0, 'Night theme'),
-									A2(theme, 1, 'Dawn theme')
+									A2(theme, 1, 'Dawn theme'),
+									A2(theme, 2, 'High contrast theme')
 								]),
 							_Utils_ap(
 								A2(
@@ -17881,6 +17886,8 @@ var $author$project$Settings$valuesDecoder = A2(
 							return $elm$json$Json$Decode$succeed(0);
 						case 'dawn':
 							return $elm$json$Json$Decode$succeed(1);
+						case 'high-contrast':
+							return $elm$json$Json$Decode$succeed(2);
 						default:
 							return $elm$json$Json$Decode$fail('Theme unavailable');
 					}

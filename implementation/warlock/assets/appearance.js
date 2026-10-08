@@ -9,7 +9,7 @@
     const surface = document.querySelector('.surface-bar[data-theme],.surface-popup[data-theme]');
     if (!surface) return;
     const theme = surface.dataset.theme, scale = Number(surface.dataset.textScale);
-    if (!['night','dawn'].includes(theme) || ![100,125,150,200].includes(scale)) return;
+    if (!['night','dawn','high-contrast'].includes(theme) || ![100,125,150,200].includes(scale)) return;
     const key = `${theme}:${scale}`;
     if (key === previous) return;
     previous = key;

@@ -39,4 +39,12 @@ static void test_query(void) {
     json_object_set_boolean_member(field,"enabled",FALSE);g_assert_false(surface_query(&gate,q,f,TRUE));json_object_set_boolean_member(field,"enabled",TRUE);
     JsonObject *o=json_node_get_object(q);json_object_set_string_member(o,"Exec","forbidden");g_assert_false(surface_query(&gate,q,f,TRUE));json_node_unref(q);json_node_unref(f);
 }
-int main(int argc,char **argv) {g_test_init(&argc,&argv,NULL);g_test_add_func("/surface/canonical-uint64",test_counter);g_test_add_func("/surface/publication-close-barrier",test_barrier);g_test_add_func("/surface/actual-manager-origin",test_origin);g_test_add_func("/surface/strict-frame",test_schema);g_test_add_func("/surface/query-is-not-action-authority",test_query);return g_test_run();}
+static void test_appearance(void) {
+    JsonNode *f=frame("7","3","settings");JsonObject *root=json_node_get_object(f),*a=json_object_new();
+    json_object_set_string_member(a,"theme","high-contrast");json_object_set_int_member(a,"textScale",200);json_object_set_object_member(root,"appearance",a);
+    guint64 p,l;gboolean open;g_assert_true(surface_frame(f,&p,&l,&open));
+    json_object_set_string_member(a,"theme","high-contrast/path");g_assert_false(surface_frame(f,&p,&l,&open));
+    json_object_set_string_member(a,"theme","high-contrast");json_object_set_int_member(a,"textScale",77);g_assert_false(surface_frame(f,&p,&l,&open));
+    json_object_set_int_member(a,"textScale",200);json_object_set_string_member(a,"path","foreign");g_assert_false(surface_frame(f,&p,&l,&open));json_node_unref(f);
+}
+int main(int argc,char **argv) {g_test_init(&argc,&argv,NULL);g_test_add_func("/surface/canonical-uint64",test_counter);g_test_add_func("/surface/publication-close-barrier",test_barrier);g_test_add_func("/surface/actual-manager-origin",test_origin);g_test_add_func("/surface/strict-frame",test_schema);g_test_add_func("/surface/query-is-not-action-authority",test_query);g_test_add_func("/surface/typed-committed-appearance",test_appearance);return g_test_run();}

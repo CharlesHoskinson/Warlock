@@ -1,13 +1,91 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-08T16:52:24.427467+00:00",
+  "updatedUTC": "2026-10-08T17:20:46.737397+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "high-contrast-appearance",
+    "requirements": [
+      "ELM-UX-027"
+    ],
+    "scenarios": [
+      "ux-027"
+    ],
+    "paths": [
+      "implementation/warlock/src/Settings.elm",
+      "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/adapter/shell_preferences.py",
+      "implementation/warlock/assets/shell.css",
+      "implementation/warlock/assets/appearance.js",
+      "implementation/warlock/assets/bar-adapter.js",
+      "implementation/warlock/assets/popup-adapter.js",
+      "implementation/warlock/qa/SettingsReplay.elm",
+      "implementation/warlock/qa/check-settings.py",
+      "implementation/warlock/qa/settings-browser.mjs",
+      "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/README.md",
+      "implementation/warlock/assets/elm.js",
+      "implementation/warlock/assets/bar.js",
+      "implementation/warlock/assets/popup.js",
+      "implementation/warlock/qa/current-search-build.json",
+      "implementation/warlock/native/surface.h",
+      "implementation/warlock/native/surface-test.c",
+      "implementation/warlock/native/host.c"
+    ],
+    "before": "Committed appearance provides only Night and Dawn; the shell lacks an explicit high-contrast fixture and readable enlarged focused controls cannot be verified in that mode.",
+    "after": "A typed High contrast theme can be saved, applied across bar/popups and restored after restart, with clear content/borders/state/focus cues at supported text sizes and actual native controls.",
+    "verification": [
+      "Compile changed Elm roots and committed-theme replay; real private store CAS/restart/invalid-theme checks; measured browser contrast/focus/reachability in Night, Dawn, High contrast and forced colors; isolated native settings/taskbar pixels, enlarged focus traversal and saved-theme restart. Full all-surface original and independent acceptance remain separate."
+    ],
+    "status": "completed-partial",
+    "evidence": {
+      "path": "implementation/warlock/qa/evidence/high-contrast/manifest.json",
+      "sha256": "43fec26e2a8fb1564fdf52d0f7ab468d40db2940352b96cea988b98cbd96f6b6",
+      "scope": "Integrated persistent typed High contrast appearance with one native theme admission predicate for frames and requests, white-on-black content, inset yellow focus and cyan/amber state bands. Current physical native High contrast 150% saved/restarted Settings and taskbar pass, with actual focus glyph/outline pixels and separate Dawn compatibility journey. Actual compiled Settings browser fixtures cover all three themes at all four text sizes plus forced colors. All-surface native original acceptance remains partial.",
+      "sourceRevision": "caa19bf143ce408adbcd028c2e6f721cb8cd8233",
+      "sourceTuple": {
+        "core": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+          "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+        },
+        "plugin": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791477973836253029/elm-window-geometry-authority.so",
+          "sha256": "216c5cce257eaff5d063285d44df6ac20090f285064c9681fac6213e414b0d1c"
+        },
+        "aquamarine": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+          "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+        }
+      },
+      "reviewerDisposition": "Owner-observed native Settings/taskbar and component theme/scale fixtures only; independent original all-surface acceptance remains open."
+    },
+    "observed": "Integrated persistent typed High contrast appearance with one native theme admission predicate for frames and requests, white-on-black content, inset yellow focus and cyan/amber state bands. Current physical native High contrast 150% saved/restarted Settings and taskbar pass, with actual focus glyph/outline pixels and separate Dawn compatibility journey. Actual compiled Settings browser fixtures cover all three themes at all four text sizes plus forced colors. All-surface native original acceptance remains partial.",
+    "missingObservations": [
+      "Original ux-027 still requires native readable-label/focus/hit-target coverage across every migrated shell surface and every supported theme/text-scale fixture. Current physical evidence covers Settings and taskbar with Night defaults, High contrast at 150% and a separate Dawn 150% restart journey; the 12-fixture matrix and forced colors are browser component evidence.",
+      "Applicable native AT/speech/braille consumers and independent original-scenario acceptance remain open.",
+      "Full-release hardware/resource/journey/package/deployment gates remain open."
+    ]
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "native-drag-ownership",
     "requirements": [
       "ELM-UX-021"
@@ -68,112 +146,6 @@
       "Independent original-scenario and full-release acceptance remain open."
     ],
     "stopDisposition": "Two consecutive qualification-only output-setup attempts ended further geometry investigation; preserve original failures and continue another mandatory product slice."
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "keyboard-shell-routes",
-    "requirements": [
-      "ELM-UX-023"
-    ],
-    "scenarios": [
-      "ux-023",
-      "keyboard-launcher",
-      "keyboard-taskbar-groups",
-      "keyboard-switcher",
-      "keyboard-task-view",
-      "keyboard-snap-chooser",
-      "keyboard-menus",
-      "keyboard-settings",
-      "keyboard-notifications",
-      "keyboard-jump-lists"
-    ],
-    "paths": [
-      "implementation/warlock/src/Shortcuts.elm",
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/adapter/effect_endpoint.py",
-      "implementation/warlock/adapter/daemon.py",
-      "implementation/warlock/native/authority.cpp",
-      "implementation/warlock/native/shell-bindings.lua",
-      "implementation/warlock/qa/KeyboardShortcutsReplay.elm",
-      "implementation/warlock/qa/keyboard-shortcuts.qnt",
-      "implementation/warlock/qa/check-keyboard-shortcuts.py",
-      "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/check-native-authority.py",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/README.md",
-      "implementation/warlock/assets/elm.js",
-      "implementation/warlock/assets/bar.js",
-      "implementation/warlock/assets/popup.js",
-      "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/qa/current-native-pair.json",
-      "implementation/warlock/native/shared-host.c",
-      "implementation/warlock/assets/popup-adapter.js",
-      "implementation/warlock/native/shared-context.h",
-      "implementation/warlock/native/shared-context-test.c"
-    ],
-    "before": "Migrated controls have local keyboard traversal but Applications and utility surfaces need pointer entry when an application owns native keyboard focus.",
-    "after": "Adopted native Apps/System/Notification history chords deliver typed epoch-bound shortcut events to Elm, enabling pointer-free opening, operation and dismissal across the existing shell controls.",
-    "verification": [
-      "Compiled actual shortcut/root replay and strict broker decoding; epoch/serial/gap/no-replay model; isolated physical keyboard-only original surface journeys with native outcomes/focus and zero injected pointer events. Native AT and independent original acceptance separate."
-    ],
-    "status": "completed-partial",
-    "evidence": {
-      "path": "implementation/warlock/qa/evidence/keyboard-shell/manifest.json",
-      "sha256": "3e413e0ab486f6c37237e93c98acc79878ed16a2cd78e4e55bec14911dfae878",
-      "scope": "Native epoch-bound Apps/System/Notification history entry integrated with the shared immutable Elm root. Owner-observed keyboard-only launcher/GIO submission, declared jump action, notification/system read/dismissal, Saved settings and actual two-member group activation/input/dismissal. Apps layer-parent eligibility and noneditable physical Escape corrected. Combined journey fails at repeated Home group entry; remaining three surfaces are implemented but unverified here. No requirement/release acceptance.",
-      "sourceBaseRevision": "78a9925dcc75e6c138847047c15f8c3e04d17fba",
-      "sourceHashes": {
-        "implementation/warlock/src/Shortcuts.elm": "4647b05774e5be60a497c8b98f30b273b2b6b3e5928062d83d0c51993c23bedb",
-        "implementation/warlock/src/Desktop.elm": "0b9ca548afbf5a6fe3bc4f9928c8c24b83a61866e6952ff5ef37adedaa32aadf",
-        "implementation/warlock/adapter/effect_endpoint.py": "e0c6d613f7313377f0dd5cf01e9675f500b93b2fc55913944db84770a1f251e0",
-        "implementation/warlock/adapter/daemon.py": "7b4cd4279b85b1ebb1858df5d331629d53471e2c197849e88775e515597b7a75",
-        "implementation/warlock/native/authority.cpp": "304f02636c8c9b7e83f43240f119d4a553b8435ad066f8d962026b1ffcac5404",
-        "implementation/warlock/native/shell-bindings.lua": "31de6d303102d9b37ee21367b6197353960636afd12b653b91ad160961354baf",
-        "implementation/warlock/qa/KeyboardShortcutsReplay.elm": "bc6d7339ac682d886ab6dd4cf3bee74302d6b1476b19052e3c1a47c9b6451fc6",
-        "implementation/warlock/qa/keyboard-shortcuts.qnt": "3cff6d0872adf6ee6599091c4f054820ff55b2a610e1be4cedc1464f2b96e90c",
-        "implementation/warlock/qa/check-keyboard-shortcuts.py": "26bd95d5f97b25495ffddae779c6703ce2512aaf8da2f28fe1ecb6d93d9634d2",
-        "implementation/warlock/qa/check-search.py": "05d53addd38b6898cf1879d70d2421a2b5e646c1f84b8ccaf443efcb744f09bb",
-        "implementation/warlock/qa/check-native-authority.py": "61992b791c75000044f87af114032945d846f7c1d6b719c5b40f37bcf529c727",
-        "implementation/warlock/qa/native-window-feedback.py": "de5c83e3c2922b6c51226bec4cc5753f4ec998b68eb04207e4ee558c90799ab0",
-        "implementation/warlock/README.md": "fc8dbafd848dfa9b83545714e4fe88a9445d405e20fae16cd37d67e5c8f9fbbd",
-        "implementation/warlock/assets/elm.js": "177be78e6cb86d68d1e7979715e076f30612ffb5b7d7360d2b517ebfbc7cc4c6",
-        "implementation/warlock/assets/bar.js": "fbe4416674b120412b0be63abe47d438104aaacd3dee2eea4c81323ea9262d29",
-        "implementation/warlock/assets/popup.js": "d56f655974b3c128b442e080350aa37276127b7d2d16a8e36c0356f2b3092944",
-        "implementation/warlock/qa/current-search-build.json": "259f36269ef09335d35ac547b99e4ac6fb49d47c4f7fe729464a4c0d537edafb",
-        "implementation/warlock/qa/current-native-pair.json": "1c95bf58354862f48cb0c5923319ec6a5dd84d0849342e3818c0c586cafcddd3",
-        "implementation/warlock/native/shared-host.c": "cb04ee89d1b56faf04c28838c5604f5eb0053b19fbc851fac6e63f121817c88a",
-        "implementation/warlock/assets/popup-adapter.js": "65c2ce6c30931e3807eea88985d4f53f62499b48dbf157552b2cecce789b8a4b",
-        "implementation/warlock/native/shared-context.h": "19e1415305fd87a0a74287f5a541b38c80a56df9ab8179a08d357d8cf8f061d1",
-        "implementation/warlock/native/shared-context-test.c": "8cb1d6725456b17df2847fb2dbbf501f34688375bf63d28f693eb67653e83ce9"
-      },
-      "reviewerDisposition": {
-        "name": "root-keyboard-shell",
-        "independent": false,
-        "disposition": "Owner partial observations and failed combined original journey; independent acceptance remains open."
-      }
-    },
-    "observed": "Native epoch-bound Apps/System/Notification history entry integrated with the shared immutable Elm root. Owner-observed keyboard-only launcher/GIO submission, declared jump action, notification/system read/dismissal, Saved settings and actual two-member group activation/input/dismissal. Apps layer-parent eligibility and noneditable physical Escape corrected. Combined journey fails at repeated Home group entry; remaining three surfaces are implemented but unverified here. No requirement/release acceptance.",
-    "missingObservations": [
-      "Combined original ux-023 remains failed: after completed group activation/dismissal, a repeated Home press does not select the current taskbar group within the original six-second deadline. No forced focus, reordered journey or deadline extension qualifies it.",
-      "Remaining keyboard-switcher, keyboard-task-view and keyboard-snap-chooser intervals were not reached in this combined native campaign.",
-      "Menus has observed global System entry/refresh/dismissal; keyboard window-context and snap entry remain unreached in this campaign.",
-      "Native AT/IME consumers and independent original-scenario acceptance remain open; this private campaign disables accessibility bridging.",
-      "Full Omarchy vocabulary/keybindings, multi-output/device/resource and release gates remain separate mandatory work."
-    ],
-    "stopDisposition": "Two consecutive qualification-only results ended further repeated-Home investigation; continue another mandatory product slice under v2."
   },
   "recentSlices": [
     {

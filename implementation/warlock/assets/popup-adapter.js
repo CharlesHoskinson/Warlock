@@ -117,7 +117,10 @@ if (window.elmHostQA) {
     });
     const node=document.querySelector('.surface-bar,.surface-popup');
     const fields=[...document.querySelectorAll('[data-surface-field]')].map(field=>({id:field.id,value:field.value,accessibleName:field.getAttribute('aria-label'),disabled:field.disabled}));
-    const body={publication:node?.dataset.publication||null,lease:node?.dataset.lease||null,buttons,content,fields,focus:document.activeElement?.id||'',documentFocused:document.hasFocus(),fontSize:getComputedStyle(document.body).fontSize,theme:document.documentElement.dataset.theme||null,textScale:document.documentElement.dataset.textScale||null,viewportWidth:innerWidth,viewportHeight:innerHeight,scrollTop:node?.scrollTop||0,scrollHeight:node?.scrollHeight||0,text:document.body.innerText};
+    const palette={background:getComputedStyle(document.body).backgroundColor,foreground:getComputedStyle(document.body).color};
+    const active=document.activeElement,activeStyle=active&&getComputedStyle(active),activeBox=active?.getBoundingClientRect();
+    const focusStyle=activeStyle?{color:activeStyle.color,background:activeStyle.backgroundColor,outlineColor:activeStyle.outlineColor,outlineWidth:activeStyle.outlineWidth,outlineOffset:activeStyle.outlineOffset,x:activeBox.x,y:activeBox.y,width:activeBox.width,height:activeBox.height}:null;
+    const body={palette,focusStyle,publication:node?.dataset.publication||null,lease:node?.dataset.lease||null,buttons,content,fields,focus:document.activeElement?.id||'',documentFocused:document.hasFocus(),fontSize:getComputedStyle(document.body).fontSize,theme:document.documentElement.dataset.theme||null,textScale:document.documentElement.dataset.textScale||null,viewportWidth:innerWidth,viewportHeight:innerHeight,scrollTop:node?.scrollTop||0,scrollHeight:node?.scrollHeight||0,text:document.body.innerText};
     const current=JSON.stringify(body);if(current!==last){last=current;post({kind:'surface-report',body});}
   });
   document.addEventListener('scroll',observe,true);

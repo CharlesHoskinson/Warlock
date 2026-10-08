@@ -1,0 +1,514 @@
+diff --git c/implementation/warlock/README.md w/implementation/warlock/README.md
+index 2dcc17f..47a0097 100644
+--- c/implementation/warlock/README.md
++++ w/implementation/warlock/README.md
+@@ -218,3 +218,22 @@ fixture's expected 800×600, and did not reach that geometry within six seconds.
+ Both failed setup reports and the passing current taskbar regression are retained
+ in `qa/evidence/drag-ownership/manifest.json`. Caption/edge, cancellation,
+ AT/device coverage and independent original acceptance remain open.
++
++Settings now offers **High contrast theme** alongside Night and Dawn. Its saved
++value uses the same typed, revision-correlated appearance protocol and private
++atomic store. The native host admits only these three named themes; an unknown
++palette or path cannot become a settings request. Unsaved edits do not alter
++appearance, and restart restores the committed theme and text scale.
++
++High contrast uses white text and borders on black, inset yellow keyboard focus,
++and distinct cyan active/amber attention bands. Disabled controls keep readable
++labels. System forced colors take precedence. The shared palette applies to bar,
++popup, text-field and snap controls without changing their action identities.
++
++Focused `--high-contrast` checks measure the actual compiled Settings controls
++in all 12 theme/text-scale combinations and forced colors. The physical native
++journey saves at 150%, traverses keyboard focus, records white glyph/yellow
++outline pixels and restarts the host; the existing Dawn journey is checked
++separately. Evidence is in `qa/evidence/high-contrast/manifest.json`.
++ELM-UX-027 remains partial: all-surface native theme/scale coverage, applicable
++accessibility consumers and independent original acceptance remain open.
+diff --git c/implementation/warlock/adapter/shell_preferences.py w/implementation/warlock/adapter/shell_preferences.py
+index c319069..746c351 100644
+--- c/implementation/warlock/adapter/shell_preferences.py
++++ w/implementation/warlock/adapter/shell_preferences.py
+@@ -9,7 +9,7 @@ from taskbar_preferences import Store as PrivateStore, MAX_REVISION
+ 
+ def values(value):
+  exact(value,['theme','textScale'])
+- if value['theme'] not in ('night','dawn') or type(value['theme']) is not str:raise Refused('Appearance theme')
++ if value['theme'] not in ('night','dawn','high-contrast') or type(value['theme']) is not str:raise Refused('Appearance theme')
+  if type(value['textScale']) is not int or value['textScale'] not in (100,125,150,200):raise Refused('Appearance text scale')
+  return value
+ 
+diff --git c/implementation/warlock/assets/appearance.js w/implementation/warlock/assets/appearance.js
+index 68b6d6d..6d671fd 100644
+--- c/implementation/warlock/assets/appearance.js
++++ w/implementation/warlock/assets/appearance.js
+@@ -9,7 +9,7 @@
+     const surface = document.querySelector('.surface-bar[data-theme],.surface-popup[data-theme]');
+     if (!surface) return;
+     const theme = surface.dataset.theme, scale = Number(surface.dataset.textScale);
+-    if (!['night','dawn'].includes(theme) || ![100,125,150,200].includes(scale)) return;
++    if (!['night','dawn','high-contrast'].includes(theme) || ![100,125,150,200].includes(scale)) return;
+     const key = `${theme}:${scale}`;
+     if (key === previous) return;
+     previous = key;
+diff --git c/implementation/warlock/assets/bar-adapter.js w/implementation/warlock/assets/bar-adapter.js
+index d45fd7a..360629c 100644
+--- c/implementation/warlock/assets/bar-adapter.js
++++ w/implementation/warlock/assets/bar-adapter.js
+@@ -74,7 +74,10 @@ if (window.elmHostQA) {
+     const status=document.querySelector('[role="status"]'),box=status?.getBoundingClientRect(),style=status&&getComputedStyle(status);
+     const feedback=status?{text:status.textContent,accessibleName:status.getAttribute('aria-label'),live:status.getAttribute('aria-live'),atomic:status.getAttribute('aria-atomic'),x:box.x,y:box.y,width:box.width,height:box.height,clip:style.clipPath,display:style.display}:null;
+     const actions=actionsNode(),actionBox=actions?.getBoundingClientRect();
+-    const body={publication:node?.dataset.publication||null,lease:node?.dataset.lease||null,buttons,feedback,focus:document.activeElement?.id||'',documentFocused:document.hasFocus(),selectionAnchor:selectedIdentity,text:document.body.innerText,fontSize:getComputedStyle(document.body).fontSize,theme:document.documentElement.dataset.theme||null,textScale:document.documentElement.dataset.textScale||null,viewportWidth:innerWidth,scrollLeft:actions?.scrollLeft||0,scrollWidth:actions?.scrollWidth||0,clientWidth:actions?.clientWidth||0,actions:actionBox?{x:actionBox.x,y:actionBox.y,width:actionBox.width,height:actionBox.height}:null};
++    const palette={background:getComputedStyle(document.body).backgroundColor,foreground:getComputedStyle(document.body).color};
++    const active=document.activeElement,activeStyle=active&&getComputedStyle(active),activeBox=active?.getBoundingClientRect();
++    const focusStyle=activeStyle?{color:activeStyle.color,background:activeStyle.backgroundColor,outlineColor:activeStyle.outlineColor,outlineWidth:activeStyle.outlineWidth,outlineOffset:activeStyle.outlineOffset,x:activeBox.x,y:activeBox.y,width:activeBox.width,height:activeBox.height}:null;
++    const body={palette,focusStyle,publication:node?.dataset.publication||null,lease:node?.dataset.lease||null,buttons,feedback,focus:document.activeElement?.id||'',documentFocused:document.hasFocus(),selectionAnchor:selectedIdentity,text:document.body.innerText,fontSize:getComputedStyle(document.body).fontSize,theme:document.documentElement.dataset.theme||null,textScale:document.documentElement.dataset.textScale||null,viewportWidth:innerWidth,scrollLeft:actions?.scrollLeft||0,scrollWidth:actions?.scrollWidth||0,clientWidth:actions?.clientWidth||0,actions:actionBox?{x:actionBox.x,y:actionBox.y,width:actionBox.width,height:actionBox.height}:null};
+     const current=JSON.stringify(body);if(current!==last){last=current;post({kind:'surface-report',body});}
+   });
+   document.addEventListener('scroll',observe,true);
+diff --git c/implementation/warlock/assets/popup-adapter.js w/implementation/warlock/assets/popup-adapter.js
+index 1a4f405..32730fc 100644
+--- c/implementation/warlock/assets/popup-adapter.js
++++ w/implementation/warlock/assets/popup-adapter.js
+@@ -117,7 +117,10 @@ if (window.elmHostQA) {
+     });
+     const node=document.querySelector('.surface-bar,.surface-popup');
+     const fields=[...document.querySelectorAll('[data-surface-field]')].map(field=>({id:field.id,value:field.value,accessibleName:field.getAttribute('aria-label'),disabled:field.disabled}));
+-    const body={publication:node?.dataset.publication||null,lease:node?.dataset.lease||null,buttons,content,fields,focus:document.activeElement?.id||'',documentFocused:document.hasFocus(),fontSize:getComputedStyle(document.body).fontSize,theme:document.documentElement.dataset.theme||null,textScale:document.documentElement.dataset.textScale||null,viewportWidth:innerWidth,viewportHeight:innerHeight,scrollTop:node?.scrollTop||0,scrollHeight:node?.scrollHeight||0,text:document.body.innerText};
++    const palette={background:getComputedStyle(document.body).backgroundColor,foreground:getComputedStyle(document.body).color};
++    const active=document.activeElement,activeStyle=active&&getComputedStyle(active),activeBox=active?.getBoundingClientRect();
++    const focusStyle=activeStyle?{color:activeStyle.color,background:activeStyle.backgroundColor,outlineColor:activeStyle.outlineColor,outlineWidth:activeStyle.outlineWidth,outlineOffset:activeStyle.outlineOffset,x:activeBox.x,y:activeBox.y,width:activeBox.width,height:activeBox.height}:null;
++    const body={palette,focusStyle,publication:node?.dataset.publication||null,lease:node?.dataset.lease||null,buttons,content,fields,focus:document.activeElement?.id||'',documentFocused:document.hasFocus(),fontSize:getComputedStyle(document.body).fontSize,theme:document.documentElement.dataset.theme||null,textScale:document.documentElement.dataset.textScale||null,viewportWidth:innerWidth,viewportHeight:innerHeight,scrollTop:node?.scrollTop||0,scrollHeight:node?.scrollHeight||0,text:document.body.innerText};
+     const current=JSON.stringify(body);if(current!==last){last=current;post({kind:'surface-report',body});}
+   });
+   document.addEventListener('scroll',observe,true);
+diff --git c/implementation/warlock/assets/shell.css w/implementation/warlock/assets/shell.css
+index f306acb..3be6ee9 100644
+--- c/implementation/warlock/assets/shell.css
++++ w/implementation/warlock/assets/shell.css
+@@ -71,3 +71,31 @@ html[data-theme="dawn"] .surface-popup[data-mode="snap"] [data-surface-control^=
+ .bar .control-group[data-window-state="attention"]{border-color:#ffc66b;box-shadow:inset 0 3px 0 #ffc66b,0 0 8px #ffc66b40;background:color-mix(in srgb,var(--shell-control,#263544) 82%,#ffc66b)}
+ html[data-theme="dawn"] .bar .control-group[data-window-state="attention"]{border-color:#8c4e00;box-shadow:inset 0 3px 0 #8c4e00,0 0 8px #8c4e0030}
+ @media(forced-colors:active){.bar .control-group[data-window-state="active"]{border-color:Highlight;box-shadow:none;border-bottom-width:4px}.bar .control-group[data-window-state="attention"]{border-color:CanvasText;box-shadow:none;border-top-width:4px}}
++
++/* High contrast preserves semantic color and shape without relying on glow.
++   Focus sits inside the native hit target so overflow cannot clip its outline. */
++html[data-theme="high-contrast"]{color-scheme:dark;--shell-background:#000;--shell-foreground:#fff;--shell-control:#000;--shell-border:#fff;--shell-focus:#ff0}
++html[data-theme="high-contrast"] button{border-width:2px}
++html[data-theme="high-contrast"] button:disabled{opacity:1;color:#bfbfbf;border-color:#8c8c8c;border-style:dashed}
++html[data-theme="high-contrast"] button:focus-visible,
++html[data-theme="high-contrast"] .launcher-search:focus-visible{outline:3px solid #ff0;outline-offset:-4px}
++html[data-theme="high-contrast"] .launcher-search{color:#fff;background:#000;border:2px solid #fff}
++html[data-theme="high-contrast"] .surface-bar>.surface-status{color:#fff;background:#000;border-color:#ff0}
++html[data-theme="high-contrast"] .bar .control-group[data-window-state="active"]{border-color:#0ff;box-shadow:inset 0 -3px 0 #0ff;background:#000}
++html[data-theme="high-contrast"] .bar .control-group[data-window-state="attention"]{border-color:#fc0;box-shadow:inset 0 3px 0 #fc0;background:#000}
++html[data-theme="high-contrast"] .surface-popup [aria-current="true"]{border-color:#fff;box-shadow:inset 3px 0 #fff}
++html[data-theme="high-contrast"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:"]{background:#000;box-shadow:none}
++html[data-theme="high-contrast"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:"]::before{border-color:#fff;background:linear-gradient(to right,#fff 50%,#000 50%);box-shadow:inset 0 0 0 3px #000}
++html[data-theme="high-contrast"] .surface-popup[data-mode="snap"] [data-surface-control*="top-"]::before,
++html[data-theme="high-contrast"] .surface-popup[data-mode="snap"] [data-surface-control*="bottom-"]::before{background:conic-gradient(from 270deg at 50% 50%,#fff 0deg 90deg,#000 90deg 360deg)}
++@media(forced-colors:active){
++ html[data-theme="high-contrast"]{--shell-background:Canvas;--shell-foreground:CanvasText;--shell-control:ButtonFace;--shell-border:ButtonText;--shell-focus:Highlight}
++ html[data-theme="high-contrast"] button:focus-visible,html[data-theme="high-contrast"] .launcher-search:focus-visible{outline-color:Highlight}
++ html[data-theme="high-contrast"] button:disabled{color:GrayText;border-color:GrayText}
++ html[data-theme="high-contrast"] .launcher-search{color:FieldText;background:Field;border-color:FieldText}
++ html[data-theme="high-contrast"] .surface-bar>.surface-status{color:CanvasText;background:Canvas;border-color:Highlight}
++ html[data-theme="high-contrast"] .bar .control-group[data-window-state]{border-color:Highlight;box-shadow:none;background:ButtonFace}
++ html[data-theme="high-contrast"] .surface-popup [aria-current="true"]{border-color:Highlight;box-shadow:none}
++ html[data-theme="high-contrast"] .bar .control-group[data-window-state="active"]{border-bottom:4px double Highlight}
++ html[data-theme="high-contrast"] .bar .control-group[data-window-state="attention"]{border-top:4px double Highlight}
++}
+diff --git c/implementation/warlock/native/host.c w/implementation/warlock/native/host.c
+index 4868693..1a1b252 100644
+--- c/implementation/warlock/native/host.c
++++ w/implementation/warlock/native/host.c
+@@ -357,7 +357,7 @@ static const char *request_kind(JsonNode *root) {
+             JsonObject *p=json_node_get_object(proposal);const char *const pfields[]={"schema","revision","values"};JsonNode *version=json_object_get_member(p,"schema"),*values=json_object_get_member(p,"values");
+             if(!surface_fields(p,pfields,3) || !version || json_node_get_value_type(version)!=G_TYPE_INT64 || json_node_get_int(version)!=1 || !surface_uint(json_object_get_member(p,"revision"),&revision) || !revision || !values || !JSON_NODE_HOLDS_OBJECT(values))return NULL;
+             JsonObject *v=json_node_get_object(values);const char *const vfields[]={"theme","textScale"};JsonNode *theme=json_object_get_member(v,"theme"),*scale=json_object_get_member(v,"textScale");
+-            if(!surface_fields(v,vfields,2) || !surface_text(theme,16,FALSE) || (!g_str_equal(json_node_get_string(theme),"night") && !g_str_equal(json_node_get_string(theme),"dawn")) || !scale || json_node_get_value_type(scale)!=G_TYPE_INT64 || (json_node_get_int(scale)!=100 && json_node_get_int(scale)!=125 && json_node_get_int(scale)!=150 && json_node_get_int(scale)!=200))return NULL;
++            if(!surface_fields(v,vfields,2) || !surface_theme(theme) || !scale || json_node_get_value_type(scale)!=G_TYPE_INT64 || (json_node_get_int(scale)!=100 && json_node_get_int(scale)!=125 && json_node_get_int(scale)!=150 && json_node_get_int(scale)!=200))return NULL;
+         }
+         return value;
+     }
+@@ -861,6 +861,9 @@ static void test_requests(void) {
+     const char *settings_good="{\"protocolVersion\":3,\"kind\":\"shell-settings-write\",\"binding\":{},\"requestId\":\"1\",\"proposal\":{\"schema\":1,\"revision\":\"1\",\"values\":{\"theme\":\"dawn\",\"textScale\":150}}}";
+     g_autoptr(JsonParser) settings_parser=json_parser_new();g_assert_true(json_parser_load_from_data(settings_parser,settings_good,-1,NULL));g_assert_nonnull(request_kind(json_parser_get_root(settings_parser)));
+     JsonObject *settings_proposal=json_object_get_object_member(json_node_get_object(json_parser_get_root(settings_parser)),"proposal"),*settings_values=json_object_get_object_member(settings_proposal,"values");
++    json_object_set_string_member(settings_values,"theme","high-contrast");g_assert_nonnull(request_kind(json_parser_get_root(settings_parser)));
++    json_object_set_string_member(settings_values,"theme","high-contrast/path");g_assert_null(request_kind(json_parser_get_root(settings_parser)));
++    json_object_set_string_member(settings_values,"theme","high-contrast");
+     json_object_set_int_member(settings_values,"textScale",77);g_assert_null(request_kind(json_parser_get_root(settings_parser)));
+     json_object_set_int_member(settings_values,"textScale",150);json_object_set_int_member(settings_proposal,"schema",2);g_assert_null(request_kind(json_parser_get_root(settings_parser)));
+     json_object_set_int_member(settings_proposal,"schema",1);json_object_set_string_member(settings_proposal,"path","/tmp/foreign");g_assert_null(request_kind(json_parser_get_root(settings_parser)));
+diff --git c/implementation/warlock/native/surface-test.c w/implementation/warlock/native/surface-test.c
+index 9438036..28d4040 100644
+--- c/implementation/warlock/native/surface-test.c
++++ w/implementation/warlock/native/surface-test.c
+@@ -39,4 +39,12 @@ static void test_query(void) {
+     json_object_set_boolean_member(field,"enabled",FALSE);g_assert_false(surface_query(&gate,q,f,TRUE));json_object_set_boolean_member(field,"enabled",TRUE);
+     JsonObject *o=json_node_get_object(q);json_object_set_string_member(o,"Exec","forbidden");g_assert_false(surface_query(&gate,q,f,TRUE));json_node_unref(q);json_node_unref(f);
+ }
+-int main(int argc,char **argv) {g_test_init(&argc,&argv,NULL);g_test_add_func("/surface/canonical-uint64",test_counter);g_test_add_func("/surface/publication-close-barrier",test_barrier);g_test_add_func("/surface/actual-manager-origin",test_origin);g_test_add_func("/surface/strict-frame",test_schema);g_test_add_func("/surface/query-is-not-action-authority",test_query);return g_test_run();}
++static void test_appearance(void) {
++    JsonNode *f=frame("7","3","settings");JsonObject *root=json_node_get_object(f),*a=json_object_new();
++    json_object_set_string_member(a,"theme","high-contrast");json_object_set_int_member(a,"textScale",200);json_object_set_object_member(root,"appearance",a);
++    guint64 p,l;gboolean open;g_assert_true(surface_frame(f,&p,&l,&open));
++    json_object_set_string_member(a,"theme","high-contrast/path");g_assert_false(surface_frame(f,&p,&l,&open));
++    json_object_set_string_member(a,"theme","high-contrast");json_object_set_int_member(a,"textScale",77);g_assert_false(surface_frame(f,&p,&l,&open));
++    json_object_set_int_member(a,"textScale",200);json_object_set_string_member(a,"path","foreign");g_assert_false(surface_frame(f,&p,&l,&open));json_node_unref(f);
++}
++int main(int argc,char **argv) {g_test_init(&argc,&argv,NULL);g_test_add_func("/surface/canonical-uint64",test_counter);g_test_add_func("/surface/publication-close-barrier",test_barrier);g_test_add_func("/surface/actual-manager-origin",test_origin);g_test_add_func("/surface/strict-frame",test_schema);g_test_add_func("/surface/query-is-not-action-authority",test_query);g_test_add_func("/surface/typed-committed-appearance",test_appearance);return g_test_run();}
+diff --git c/implementation/warlock/native/surface.h w/implementation/warlock/native/surface.h
+index 2838240..4f35f9a 100644
+--- c/implementation/warlock/native/surface.h
++++ w/implementation/warlock/native/surface.h
+@@ -20,6 +20,9 @@ static gboolean surface_text(JsonNode *node,gsize limit,gboolean empty) {
+     for (;*s;s++) if ((guchar)*s<32 || (guchar)*s==127) return FALSE;
+     return TRUE;
+ }
++static gboolean surface_theme(JsonNode *theme) {
++    return surface_text(theme,16,FALSE) && (g_str_equal(json_node_get_string(theme),"night") || g_str_equal(json_node_get_string(theme),"dawn") || g_str_equal(json_node_get_string(theme),"high-contrast"));
++}
+ static gboolean surface_controls(JsonNode *node,guint limit,GHashTable *ids,GHashTable *doms) {
+     if (!node || !JSON_NODE_HOLDS_ARRAY(node)) return FALSE;
+     JsonArray *array=json_node_get_array(node);
+@@ -45,7 +48,7 @@ static gboolean surface_frame(JsonNode *node,guint64 *pub,guint64 *lease,gboolea
+         const char *const fields[]={"theme","textScale"};
+         if(!JSON_NODE_HOLDS_OBJECT(appearance))return FALSE;
+         JsonObject *a=json_node_get_object(appearance);JsonNode *theme=json_object_get_member(a,"theme"),*scale=json_object_get_member(a,"textScale");
+-        if(!surface_fields(a,fields,2) || !surface_text(theme,16,FALSE) || (!g_str_equal(json_node_get_string(theme),"night") && !g_str_equal(json_node_get_string(theme),"dawn")) || !scale || json_node_get_value_type(scale)!=G_TYPE_INT64 || (json_node_get_int(scale)!=100 && json_node_get_int(scale)!=125 && json_node_get_int(scale)!=150 && json_node_get_int(scale)!=200))return FALSE;
++        if(!surface_fields(a,fields,2) || !surface_theme(theme) || !scale || json_node_get_value_type(scale)!=G_TYPE_INT64 || (json_node_get_int(scale)!=100 && json_node_get_int(scale)!=125 && json_node_get_int(scale)!=150 && json_node_get_int(scale)!=200))return FALSE;
+     }
+     if (!surface_fields(o,names,appearance?8:7) || json_node_get_value_type(json_object_get_member(o,"surfaceProtocol"))!=G_TYPE_INT64 || json_object_get_int_member(o,"surfaceProtocol")!=2 || !surface_uint(json_object_get_member(o,"publication"),pub) || !*pub || !surface_uint(json_object_get_member(o,"lease"),lease) || !surface_text(json_object_get_member(o,"mode"),32,FALSE) || !surface_text(json_object_get_member(o,"status"),1024,TRUE)) return FALSE;
+     const char *mode=json_object_get_string_member(o,"mode");
+diff --git c/implementation/warlock/qa/SettingsReplay.elm w/implementation/warlock/qa/SettingsReplay.elm
+index c8eb9c8..ea24645 100644
+--- c/implementation/warlock/qa/SettingsReplay.elm
++++ w/implementation/warlock/qa/SettingsReplay.elm
+@@ -43,6 +43,17 @@ result =
+         stale=case Desktop.capture read of
+             Just stamp -> Desktop.update (Desktop.EditSettings stamp {theme=Settings.Night,textScale=200}) edited |> Tuple.first
+             Nothing -> edited
++        themed theme scale ordinal =
++            let altered=dispatch (\stamp -> Desktop.EditSettings stamp {theme=theme,textScale=scale}) read |> Tuple.first
++                submitted=dispatch Desktop.SaveSettings altered |> Tuple.first
++                expected=submitted.settings.pending |> Maybe.map .request |> Maybe.withDefault UInt64.zero
++                observed=native (outcome expected "Saved" (snapshot "2" (Settings.themeName theme) scale)) submitted
++            in Surface.packet (counter (String.fromInt ordinal)) (counter "1") observed
++        appearanceFrames=List.indexedMap (\index (theme,scale) -> themed theme scale (index+3)) (List.concatMap (\theme -> List.map (\scale -> (theme,scale)) [100,125,150,200]) [Settings.Night,Settings.Dawn,Settings.HighContrast])
++        contrastEdited=dispatch (\stamp -> Desktop.EditSettings stamp {theme=Settings.HighContrast,textScale=150}) read |> Tuple.first
++        contrastSaving=dispatch Desktop.SaveSettings contrastEdited |> Tuple.first
++        contrastRequest=contrastSaving.settings.pending |> Maybe.map .request |> Maybe.withDefault UInt64.zero
++        contrastSaved=native (outcome contrastRequest "Saved" (snapshot "2" "high-contrast" 150)) contrastSaving
+         frame=Surface.packet (counter "1") (counter "1") read
+         savedFrame=Surface.packet (counter "2") (counter "1") committed
+         checked name value=(name,E.bool value)
+@@ -70,6 +81,9 @@ result =
+             ,checked "invalidScaleCannotEditOrApply" (invalid.settings==read.settings && List.isEmpty invalidEffects)
+             ,checked "invalidScaleDecoderRejects" (D.decodeValue Settings.decoder (snapshot "2" "dawn" 77) |> Result.toMaybe |> (==) Nothing)
+             ,checked "staleViewCannotEdit" (stale==edited)
++            ,checked "contrastDecoderIsTyped" (D.decodeValue Settings.valuesDecoder (Settings.encodeValues {theme=Settings.HighContrast,textScale=200})==Ok {theme=Settings.HighContrast,textScale=200})
++            ,checked "contrastDraftDoesNotApplyBeforeReceipt" (appearance contrastEdited==Just {theme=Settings.Night,textScale=100})
++            ,checked "contrastCorrelatedReceiptApplies" (appearance contrastSaved==Just {theme=Settings.HighContrast,textScale=150})
+             ,checked "allSettingsHaveNames" (List.all (\c -> not (String.isEmpty c.ariaLabel)) (Surface.controls read))]
+-    in E.object [("checks",E.object checks),("frame",frame),("savedFrame",savedFrame)]
++    in E.object [("checks",E.object checks),("frame",frame),("savedFrame",savedFrame),("appearanceFrames",E.list identity appearanceFrames)]
+ main = Platform.worker {init=\() -> ((),outgoing result),update=\_ model -> (model,Cmd.none),subscriptions=\_ -> Sub.none}
+diff --git c/implementation/warlock/qa/check-search.py w/implementation/warlock/qa/check-search.py
+index 18b58b5..08c5617 100644
+--- c/implementation/warlock/qa/check-search.py
++++ w/implementation/warlock/qa/check-search.py
+@@ -1,5 +1,6 @@
+ """Focused compiled launcher/search integration, protected CPU scope only."""
+ import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures,http.server,threading
++CONTRAST=sys.argv[1:]==['--high-contrast']
+ DRAG=sys.argv[1:]==['--drag-ownership']
+ KEYBOARD=sys.argv[1:]==['--keyboard-shell']
+ ATTENTION=sys.argv[1:]==['--attention']
+@@ -7,7 +8,7 @@ JUMP=sys.argv[1:]==['--jump-lists']
+ FILES=sys.argv[1:]==['--files']
+ SYSTEM=sys.argv[1:]==['--system-menu']
+ NOTIFICATIONS=sys.argv[1:]==['--notifications']
+-SETTINGS=sys.argv[1:]==['--settings']
++SETTINGS=sys.argv[1:]==['--settings'] or CONTRAST
+ SNAP=sys.argv[1:]==['--snap-chooser']
+ REFLOW=sys.argv[1:]==['--popup-reflow']
+ MENU=sys.argv[1:]==['--dense-menu'] or REFLOW
+@@ -20,7 +21,7 @@ NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'];POPUP
+ ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143'
+ sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
+ scope=require_qa_scope();sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
+-OUT=ROOT/'qa/runs'/(('drag-ownership-' if DRAG else 'keyboard-shell-' if KEYBOARD else 'attention-' if ATTENTION else 'jump-lists-' if JUMP else 'files-' if FILES else 'system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
++OUT=ROOT/'qa/runs'/(('high-contrast-' if CONTRAST else 'drag-ownership-' if DRAG else 'keyboard-shell-' if KEYBOARD else 'attention-' if ATTENTION else 'jump-lists-' if JUMP else 'files-' if FILES else 'system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
+ for folder in ['src','native','adapter','assets','qa']:
+  (INPUT/folder).mkdir()
+  for p in (ROOT/folder).iterdir():
+@@ -135,8 +136,9 @@ console.log('Current body-target Escape releases once; stale scope, preedit, rep
+   run('notification-model-typecheck',['quint','typecheck','qa/notifications.qnt']);run('notification-model-named',['quint','test','qa/notifications.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79125']);run('notification-model-invariants',['quint','run','qa/notifications.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79126'])
+   run('compile-notifications',[str(HELD/pinned['compiler']),'make','qa/NotificationsReplay.elm','--optimize','--output=assets/notifications.js'])
+   (INPUT/'qa/notifications-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.NotificationsReplay'));run('typed-notifications',['node','qa/notifications-replay.js','assets/notifications.js',str(OUT/'notifications.json')]);report['typedNotifications']=json.loads((OUT/'notifications.json').read_text());assert all(report['typedNotifications']['checks'].values())
++ if CONTRAST:report.update(requirements=['ELM-UX-027'],scenarios=['ux-027'],scope='Integrated high contrast theme; actual compiled committed-theme projection, CAS/restart/invalid-theme handling and measured browser content/focus at all supported theme/text-scale fixtures. Native all-surface original qualification remains separate.')
+  if SETTINGS:
+-  report.update(requirements=['ELM-UX-030'],scenarios=['ux-030'],scope='Integrated committed appearance and validated revision-CAS storage; actual native restart and invalid-scale observations remain separate')
++  report.update(requirements=['ELM-UX-027'] if CONTRAST else ['ELM-UX-030'],scenarios=['ux-027'] if CONTRAST else ['ux-030'],scope='Integrated committed appearance and validated revision-CAS storage; actual native restart and invalid-scale observations remain separate')
+   run('settings-store',['/usr/bin/python3','-B','qa/check-settings.py'])
+   run('settings-model-typecheck',['quint','typecheck','qa/settings.qnt']);run('settings-model-named',['quint','test','qa/settings.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79123']);run('settings-model-invariants',['quint','run','qa/settings.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79124'])
+   run('compile-settings',[str(HELD/pinned['compiler']),'make','qa/SettingsReplay.elm','--optimize','--output=assets/settings.js'])
+@@ -186,7 +188,7 @@ console.log('Current body-target Escape releases once; stale scope, preedit, rep
+    if TASKVIEW:
+     # The authority TU is independently compiled against its owning core; none
+     # of these reused GTK host objects link it or include its modal preflight.
+-    excluded=['native/surface.h','native/host.c','native/shared-host.c','native/shell-bindings.lua','native/shared-context.h','native/shared-context-test.c']+(['native/authority.cpp','native/navigation-modal.hpp'] if NAV or DRAG else [])+(['native/authority.cpp','native/host-journal.h','native/geometry-effects.inc','native/snap-placement.inc'] if SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD else [])
++    excluded=['native/surface-test.c','native/surface.h','native/host.c','native/shared-host.c','native/shell-bindings.lua','native/shared-context.h','native/shared-context-test.c']+(['native/authority.cpp','native/navigation-modal.hpp'] if NAV or DRAG else [])+(['native/authority.cpp','native/host-journal.h','native/geometry-effects.inc','native/snap-placement.inc'] if SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD else [])
+     assert all(sha(INPUT/p)==h for p,h in prior['inputs'].items() if p.startswith('native/') and p not in excluded)
+     assert all('surface.h' not in (INPUT/'native'/name).read_text() for name in units)
+    object_path=prior_path;object_report=prior;seen=set()
+diff --git c/implementation/warlock/qa/check-settings.py w/implementation/warlock/qa/check-settings.py
+index 8b827c8..671bc93 100644
+--- c/implementation/warlock/qa/check-settings.py
++++ w/implementation/warlock/qa/check-settings.py
+@@ -35,5 +35,11 @@ with tempfile.TemporaryDirectory(prefix='warlock-settings-') as temp:
+  with patch('shell_preferences.os.fsync',uncertain):status,value=store.save(nextValue)
+  check('Post-rename durability failure is Unknown',status=='Unknown' and value is None)
+  reconciled=store.read();check('Read reconciles actual saved value without replay',reconciled['revision']=='3' and reconciled['values']==nextValue['values'])
++ contrast=Store(pathlib.Path(temp)/'contrast');default=contrast.read();proposal={**default,'values':{'theme':'high-contrast','textScale':200}};status,high=contrast.save(proposal)
++ check('High contrast saves with enlarged text',status=='Saved' and high['values']==proposal['values'])
++ check('High contrast persists through native store restart',Store(pathlib.Path(temp)/'contrast').read()==high)
++ contrast_path=pathlib.Path(temp)/'contrast/warlock/settings.json';preserved=contrast_path.read_bytes()
++ rejected={**high,'values':{'theme':'high-contrast/path','textScale':200}};refuses('Theme cannot name external palette',lambda:contrast.save(rejected));check('Invalid theme preserves contrast bytes',contrast_path.read_bytes()==preserved)
++ check('Stale competing appearance cannot overwrite contrast',contrast.save({**default,'values':{'theme':'dawn','textScale':150}})==('Refused',high))
+  path.chmod(0o644);refuses('Shared storage refused',store.read)
+ print(json.dumps({'passed':True,'checks':checks}))
+diff --git c/implementation/warlock/qa/current-search-build.json w/implementation/warlock/qa/current-search-build.json
+index c327e4d..58434c9 100644
+--- c/implementation/warlock/qa/current-search-build.json
++++ w/implementation/warlock/qa/current-search-build.json
+@@ -1,9 +1,9 @@
+ {
+-  "report": "implementation/warlock/qa/runs/drag-ownership-1791478048842827539/report.json",
+-  "reportSHA256": "ee33e0f4fb3b3c7fd611a329b6d58ebd77a96f1e21418a56b096223e72290d7a",
++  "report": "implementation/warlock/qa/runs/high-contrast-1791479698385420636/report.json",
++  "reportSHA256": "2d593aef4699530c9ef4ed7513be88fab14eaba1bb691660768630139a592206",
+   "compiledAssets": {
+-    "elm.js": "b1a91066d10c3f541279bb2912f5b72bbe7fa80d9e127b244e1537e077744f0e",
+-    "bar.js": "fbe4416674b120412b0be63abe47d438104aaacd3dee2eea4c81323ea9262d29",
+-    "popup.js": "d56f655974b3c128b442e080350aa37276127b7d2d16a8e36c0356f2b3092944"
++    "elm.js": "22afa12809061904a3987a0307655ebaa07295209de4c0016f256626dc311edb",
++    "bar.js": "6766287fd648e07026c8237b267f47b76a41f8b0cf146f91760c959fc2ca9fa5",
++    "popup.js": "f24a06ea2193a13b712d2dce9e65637d404d6642fb4224f11451948145e994aa"
+   }
+ }
+diff --git c/implementation/warlock/qa/native-window-feedback.py w/implementation/warlock/qa/native-window-feedback.py
+index 57dc4da..4aec122 100644
+--- c/implementation/warlock/qa/native-window-feedback.py
++++ w/implementation/warlock/qa/native-window-feedback.py
+@@ -4,6 +4,7 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
+ lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
+ """
+ import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
++CONTRAST=sys.argv[1:]==['--high-contrast']
+ DRAG=sys.argv[1:]==['--drag-ownership']
+ KEYBOARD=sys.argv[1:]==['--keyboard-shell']
+ ATTENTION=sys.argv[1:]==['--attention']
+@@ -11,7 +12,7 @@ JUMP=sys.argv[1:]==['--jump-lists']
+ FILES=sys.argv[1:]==['--files']
+ SYSTEM=sys.argv[1:]==['--system-menu']
+ NOTIFICATIONS=sys.argv[1:]==['--notifications']
+-SETTINGS=sys.argv[1:]==['--settings']
++SETTINGS=sys.argv[1:]==['--settings'] or CONTRAST
+ PLACEMENT=sys.argv[1:]==['--snap-placement']
+ SNAP=sys.argv[1:]==['--snap-chooser'] or PLACEMENT
+ REFLOW=sys.argv[1:]==['--popup-reflow']
+@@ -63,7 +64,7 @@ else:
+ for row in pair.values():assert sha(row['path'])==row['sha256']
+ assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
+ subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
+-OUT=ROOT/'qa/runs'/(('native-drag-ownership-' if DRAG else 'native-keyboard-shell-' if KEYBOARD else 'native-attention-' if ATTENTION else 'native-jump-lists-' if JUMP else 'native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
++OUT=ROOT/'qa/runs'/(('native-high-contrast-' if CONTRAST else 'native-drag-ownership-' if DRAG else 'native-keyboard-shell-' if KEYBOARD else 'native-attention-' if ATTENTION else 'native-jump-lists-' if JUMP else 'native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+ OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
+ focus_host=None
+ if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
+@@ -133,6 +134,7 @@ if SWITCHER:report.update(requirements=['ELM-UI-003'],scenarios=['switcher-order
+ if PRIMARY:report.update(requirements=['ELM-UI-004'],scenarios=['taskbar-inactive','taskbar-active','taskbar-minimized'],scope='Actual pointer single-family activation/minimize/restore, exact native receipt and GTK keyboard recipient, MRU/desktop succession and pixels; primary keyboard and AT acceptance remain pending',nativePrimaryJourneyObserved=False)
+ if PINMENUS:report.update(requirements=['ELM-UI-008','ELM-UX-023'],scenarios=['menu-invocation','keyboard-menus'],scope='Actual current running pin, native secondary click/Menu/Shift-F10 menus and existing minimize/restore path; dense/enlarged-text, AT and independent acceptance remain open',nativePinnedMenusObserved=False)
+ if SNAP:report.update(requirements=['ELM-UX-019','ELM-UX-020'],scenarios=['ux-019','ux-020'],scope='Actual native snap chooser presentation/keyboard/output-scale invalidation only; native snap placement authority and accepted half-work-area oracle remain required',nativeSnapChooserObserved=False)
++if CONTRAST:report.update(requirements=['ELM-UX-027'],scenarios=['ux-027'],scope='Actual native high contrast appearance at enlarged text, named keyboard focus/pixels and committed persistence/restart; all-surface/theme/scale original qualification and native AT remain open.')
+ if PLACEMENT:report.update(scope='Actual GUI snap submission through shared allocator/custody/native geometry authority, exact half-work-area readback/pixels and stale output refusal; original independent/AT release acceptance remains separate',nativeSnapPlacementObserved=False)
+ if DENSE:report.update(requirements=['ELM-UI-008'],scenarios=['overflow-first-last','overflow-resize','menu-invocation'],scope='Actual small native output, enlarged text, configured overflowing pins, physical keyboard/wheel/menu traversal and output resize; AT and independent review remain open',nativeDenseTaskbarObserved=False)
+ if DENSEPICKER:report.update(requirements=['ELM-UI-008','ELM-UI-004'],scenarios=['overflow-first-last','overflow-resize','menu-invocation','taskbar-group'],scope='Actual ten-root native enlarged-text picker arrow/endpoints, first/last menus and identity-bound selection/input; browser resize continuity is separate; native popup reflow, AT and independent review remain open',nativeDensePickerObserved=False)
+@@ -1307,27 +1309,39 @@ raise SystemExit(daemon.run())
+      check('NativeNotificationProducersExitNormally',producer.returncode==0)
+      report['notificationProducerEvents']=producer_events();report['nativeNotificationsObserved']=True
+     elif SETTINGS:
++     desired_theme="high-contrast" if CONTRAST else "dawn"
+      state_file=pathlib.Path(env['XDG_STATE_HOME'])/'warlock/settings.json'
+      def stored():return json.loads(state_file.read_text()) if state_file.exists() else None
+      def settings_body():
+       body=popup_body();p=projection()
+-      return body if body and p and p.get('mode')=='settings' and body['publication']==p['publication'] and any(b['identity']=='settings:theme:dawn' for b in body['buttons']) else None
+-     def opener():return next((b for b in (bar_body() or {}).get('buttons',[]) if b['accessibleName']=='Open settings' and not b['disabled']),None)
++      return body if body and p and p.get('mode')=='settings' and body['publication']==p['publication'] and any(b['identity']=='settings:theme:'+desired_theme for b in body['buttons']) else None
++     def opener():
++      body=bar_body()
++      if not body:return None
++      button=next((b for b in body['buttons'] if b['accessibleName']=='Open settings' and not b['disabled']),None)
++      if not button:return None
++      actions=body['actions']
++      if button['x']<actions['x'] or button['x']+button['width']>actions['x']+actions['width']:
++       # A bounding box outside the scrolling action strip is not a hit target.
++       # Use ordinary native pointer wheel input to reveal the actual control.
++       helper([str(POINTER),'800','600'],f"move {round(actions['x']+actions['width']/2)} {round(actions['y']+actions['height']/2)}\nsleep 100\nwheel 4096\nsleep 100")
++       return None
++      return button
+      # Pointer opens the surface; every preference edit/save/dismissal uses
+      # actual native keyboard events with the original 6-second observations.
+      button=wait(opener);click({'visible':0<=button['x']<800 and 0<=button['y']<48,'point':[button['x']+button['width']/2,button['y']+button['height']/2]})
+-     body=wait(lambda:settings_body() if settings_body() and any(b['identity']=='settings:theme:dawn' and not b['disabled'] for b in settings_body()['buttons']) else None)
++     body=wait(lambda:settings_body() if settings_body() and any(b['identity']=='settings:theme:'+desired_theme and not b['disabled'] for b in settings_body()['buttons']) else None)
+      check('SettingsLoadedNativeDefaultAppearance',body['theme']=='night' and body['textScale']=='100' and body['fontSize']=='16px',body=body)
+-     keyboard_button('Dawn theme',28);keyboard_button('Text size 150%',28)
++     keyboard_button('High contrast theme' if CONTRAST else 'Dawn theme',28);keyboard_button('Text size 150%',28)
+      check('SettingsDraftDoesNotChangeAppearanceOrWrite',settings_body()['theme']=='night' and settings_body()['textScale']=='100' and not requests('shell-settings-write') and not stored())
+      keyboard_button('Save settings',28)
+-     saved=wait(lambda:stored() if stored() and stored()['values']=={'theme':'dawn','textScale':150} else None)
+-     body=wait(lambda:settings_body() if settings_body() and settings_body()['theme']=='dawn' and settings_body()['fontSize']=='24px' else None)
++     saved=wait(lambda:stored() if stored() and stored()['values']=={'theme':desired_theme,'textScale':150} else None)
++     body=wait(lambda:settings_body() if settings_body() and settings_body()['theme']==desired_theme and settings_body()['fontSize']=='24px' else None)
+      submitted=requests('shell-settings-write');check('SettingsSavesOneExactProposal',len(submitted)==1 and submitted[0]['proposal']['values']==saved['values'],request=submitted,storage=saved)
+      rows=[json.loads(l.split(': ',1)[1]) for l in text().splitlines() if l.startswith('backend-frame: ')]
+      receipts=[f for f in rows if f.get('kind')=='shell-settings-outcome' and f.get('binding')==submitted[0]['binding'] and f.get('requestId')==submitted[0]['requestId']]
+      check('SettingsHasExactSavedReceipt',len(receipts)==1 and receipts[0]['status']=='Saved' and receipts[0]['snapshot']==saved,receipts=receipts)
+-     wait(lambda:(bar_body() or {}).get('theme')=='dawn' and (bar_body() or {}).get('textScale')=='150')
++     wait(lambda:(bar_body() or {}).get('theme')==desired_theme and (bar_body() or {}).get('textScale')=='150')
+      monitors=json.loads(s.ctl('monitors','-j'));check('CommittedScaleReservesActualNativeBar',monitors[0]['reserved'][1]==72 and bar_body()['fontSize']=='24px',monitors=monitors,bar=bar_body())
+      check('SettingsStorageIsPrivate',state_file.stat().st_mode&0o777==0o600 and state_file.parent.stat().st_mode&0o777==0o700)
+      # Invalid text scale crosses the real authenticated transport bound to
+@@ -1337,20 +1351,38 @@ raise SystemExit(daemon.run())
+      transport=CatalogTransport(client,roots);transport.settings=SettingsStore(env['XDG_STATE_HOME'])
+      original=state_file.read_bytes();invalid={**saved,'values':{'theme':'night','textScale':77}}
+      bad_request={'protocolVersion':3,'kind':'shell-settings-write','binding':client.bound,'requestId':'31000','proposal':invalid};refusal=transport.handle(bad_request)
+-     check('NativeBoundInvalidScaleRefusedAndUnapplied',refusal['status']=='Refused' and refusal['snapshot'] is None and state_file.read_bytes()==original and settings_body()['theme']=='dawn' and settings_body()['textScale']=='150',request=bad_request,receipt=refusal)
++     check('NativeBoundInvalidScaleRefusedAndUnapplied',refusal['status']=='Refused' and refusal['snapshot'] is None and state_file.read_bytes()==original and settings_body()['theme']==desired_theme and settings_body()['textScale']=='150',request=bad_request,receipt=refusal)
+      report['nativeSettingsInvalidScale']={'request':bad_request,'receipt':refusal,'storedSHA256':sha(state_file)}
+-     keyboard_button('Refresh settings',28);wait(lambda:settings_body() and settings_body()['theme']=='dawn' and any(b['identity']=='settings:theme:dawn' and not b['disabled'] for b in settings_body()['buttons']))
+-     popup_capture('settings-before-restart');check('LiveEnlargedSettingsPopupStartsBelowNativeBar',report['popupCaptures'][-1]['nativeBox'][1]>=72,nativeBox=report['popupCaptures'][-1]['nativeBox']);check('SettingsCaptureShowsActualControls',bool(report['popupCaptures'][-1]['controlRegions']) and all(c['paintedPixels']>.9*c['area'] and c['area']>0 for c in report['popupCaptures'][-1]['controlRegions']))
++     keyboard_button('Refresh settings',28);wait(lambda:settings_body() and settings_body()['theme']==desired_theme and any(b['identity']=='settings:theme:'+desired_theme and not b['disabled'] for b in settings_body()['buttons']))
++     popup_capture('settings-before-restart');check('LiveEnlargedSettingsPopupStartsBelowNativeBar',report['popupCaptures'][-1]['nativeBox'][1]>=72,nativeBox=report['popupCaptures'][-1]['nativeBox']);check('SettingsCaptureShowsActualControls',bool(report['popupCaptures'][-1]['controlRegions']) and all((c['brightPixels']>30 if CONTRAST else c['paintedPixels']>.9*c['area']) and c['area']>0 for c in report['popupCaptures'][-1]['controlRegions']))
+      report['nativeSettingsBeforeRestart']={'storage':saved,'body':settings_body(),'writes':submitted,'receipt':receipts[0]}
+      key(1);wait(lambda:(projection() or {}).get('mode')=='closed')
+      owned=next(row for proc,row in s.host.processes if proc is web);s.host.stop(owned,web);web.wait(timeout=5);check('SettingsFirstHostExitsNormallyForRestart',web.returncode==0)
+      web=s.host.launch('warlock-settings-restarted',[str(binary),'--assets',str(assets),'--authority-config',str(config_path),'--backend',str(backend_fixture),'--qa-exit-after-render','--qa-stay-open','--surface-experiment'],env=env);apps.append(web);log=OUTPUT/'warlock-settings-restarted.log';collector=Collector()
+-     wait(lambda:(projection() or {}).get('phase')=='Coherent' and (bar_body() or {}).get('theme')=='dawn' and (bar_body() or {}).get('textScale')=='150' and bar_body()['fontSize']=='24px')
++     wait(lambda:(projection() or {}).get('phase')=='Coherent' and (bar_body() or {}).get('theme')==desired_theme and (bar_body() or {}).get('textScale')=='150' and bar_body()['fontSize']=='24px')
+      check('WholeHostRestartRestoresCommittedAppearance',stored()==saved and not requests('shell-settings-write') and not journal() and not launches(),storage=stored(),body=bar_body())
+      button=wait(opener);click({'visible':0<=button['x']<800 and 0<=button['y']<72,'point':[button['x']+button['width']/2,button['y']+button['height']/2]})
+-     body=wait(lambda:settings_body() if settings_body() and settings_body()['theme']=='dawn' and settings_body()['fontSize']=='24px' else None)
++     body=wait(lambda:settings_body() if settings_body() and settings_body()['theme']==desired_theme and settings_body()['fontSize']=='24px' else None)
+      check('ReopenedSettingsReadsSavedValues',body['textScale']=='150' and 'Settings loaded.' in body['text'],body=body)
++     if CONTRAST:
++      for _ in range(len(body['buttons'])+1):
++       body=settings_body();focus=next((button for button in body['buttons'] if button['id']==body['focus']),None)
++       if focus and focus['identity']=='settings:theme:high-contrast':break
++       key(15)
++      else:raise AssertionError('Original native high contrast focus traversal')
++      body=wait(lambda:settings_body() if settings_body() and settings_body()['focus']==focus['id'] and settings_body()['documentFocused'] else None)
++      style=body['focusStyle'];report['nativeContrastFocus']={'body':body,'target':focus}
++      check('NativeHighContrastHasReadableCommittedPalette',body['theme']=='high-contrast' and body['fontSize']=='24px' and body['palette']=={'background':'rgb(0, 0, 0)','foreground':'rgb(255, 255, 255)'},body=body)
++      check('ActualKeyboardFocusHasInsetContrastOutline',style['outlineColor']=='rgb(255, 255, 0)' and style['outlineWidth']=='3px' and style['outlineOffset']=='-4px' and focus['accessibleName']=='High contrast theme',body=body)
++      check('HighContrastFocusedLabelAndTargetAreVisible',focus['width']>0 and focus['height']>0 and focus['x']>=0 and focus['y']>=0 and focus['x']+focus['width']<=body['viewportWidth'] and focus['y']+focus['height']<=body['viewportHeight'] and focus['labelRect']['x']>=focus['x'] and focus['labelRect']['x']+focus['labelRect']['width']<=focus['x']+focus['width'],target=focus,body=body)
+      popup_capture('settings-after-restart');check('EnlargedSettingsPopupStartsBelowNativeBar',report['popupCaptures'][-1]['nativeBox'][1]>=72,nativeBox=report['popupCaptures'][-1]['nativeBox']);report['nativeSettingsAfterRestart']={'storage':stored(),'body':body,'writes':requests('shell-settings-write')}
++     if CONTRAST:
++      capture=report['popupCaptures'][-1];image=pathlib.Path(capture['path']);import gi;gi.require_version('GdkPixbuf','2.0');from gi.repository import GdkPixbuf
++      pix=GdkPixbuf.Pixbuf.new_from_file(str(image));pixels=pix.get_pixels();stride=pix.get_rowstride();channels=pix.get_n_channels();box=capture['nativeBox']
++      left,top=max(0,int(box[0]+focus['x'])),max(0,int(box[1]+focus['y']));right,bottom=min(pix.get_width(),int(box[0]+focus['x']+focus['width'])),min(pix.get_height(),int(box[1]+focus['y']+focus['height']))
++      white=sum(1 for y in range(top,bottom) for x in range(left,right) if all(pixels[y*stride+x*channels+i]>200 for i in range(3)))
++      yellow=sum(1 for y in range(top,bottom) for x in range(left,right) if pixels[y*stride+x*channels]>200 and pixels[y*stride+x*channels+1]>200 and pixels[y*stride+x*channels+2]<80)
++      check('ActualNativeHighContrastTextAndFocusPixels',white>30 and yellow>60,image=str(image),sha256=sha(image),whiteTextPixels=white,yellowFocusPixels=yellow,region=[left,top,right,bottom]);report['nativeHighContrastObserved']=True
+      key(1);wait(lambda:(projection() or {}).get('mode')=='closed');check('SettingsJourneyNeverMutatesOrLaunchesWindows',not journal() and not launches());report['nativeSettingsObserved']=True
+     elif PINS:
+      state_file=pathlib.Path(env['XDG_STATE_HOME'])/'warlock/taskbar.json'
+diff --git c/implementation/warlock/qa/settings-browser.mjs w/implementation/warlock/qa/settings-browser.mjs
+index 3b3d70c..5f3b7ca 100644
+--- c/implementation/warlock/qa/settings-browser.mjs
++++ w/implementation/warlock/qa/settings-browser.mjs
+@@ -28,7 +28,7 @@ try{
+  const packet=JSON.parse(fs.readFileSync(path.join(out,'settings.json'),'utf8'));
+  await evaluate('receivePresentation('+JSON.stringify(packet.frame)+')');
+  await until(`document.querySelector('.surface-popup[data-mode="settings"]')?.dataset.publication==="1"`);
+- check('Actual settings popup renders named controls',await evaluate(`document.querySelector("h1").textContent==="Settings" && document.querySelectorAll('[data-surface-control]').length===9`));
++ check('Actual settings popup renders named controls',await evaluate(`document.querySelector("h1").textContent==="Settings" && document.querySelectorAll('[data-surface-control]').length===10`));
+  check('Loaded appearance is current, not an unsaved draft',await evaluate(`document.documentElement.dataset.theme==="night" && document.documentElement.dataset.textScale==="100"`));
+  check('Save disabled without changes',await evaluate(`document.querySelector('[data-surface-control="settings:save"]').disabled`));
+  check('Current theme and scale exposed semantically',await evaluate(`document.querySelector('[data-surface-control="settings:theme:night"]').getAttribute('aria-current')==='true' && document.querySelector('[data-surface-control="settings:scale:100"]').getAttribute('aria-current')==='true'`));
+@@ -49,7 +49,28 @@ try{
+  await key('Home');const count=await evaluate(`nativePackets.filter(p=>p.kind==='surface-action' && p.id==='control:close').length`);await key('Escape');
+  check('Escape submits dismissal after real key release',await evaluate(`nativePackets.filter(p=>p.kind==='surface-action' && p.id==='control:close' && p.publication==='2').length`)==count+1);
+  await capture('settings-dawn-enlarged');
+- const invalid=structuredClone(packet.savedFrame);invalid.publication='3';invalid.appearance.textScale=77;await evaluate('receivePresentation('+JSON.stringify(invalid)+')');await sleep(80);
++ const luminance=rgb=>{const values=rgb.match(/[\d.]+/g).slice(0,3).map(Number).map(v=>{v/=255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4;});return .2126*values[0]+.7152*values[1]+.0722*values[2];};
++ const contrast=(a,b)=>{const x=luminance(a),y=luminance(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05);};
++ report.appearanceFixtures=[];
++ for(const frame of packet.appearanceFrames){
++  await call('Emulation.setEmulatedMedia',{features:[{name:'forced-colors',value:'none'}]});
++  await viewport(480,360);await evaluate('receivePresentation('+JSON.stringify(frame)+')');
++  await until(`document.querySelector('.surface-popup')?.dataset.publication===${JSON.stringify(frame.publication)} && document.documentElement.dataset.theme===${JSON.stringify(frame.appearance.theme)} && document.documentElement.dataset.textScale===${JSON.stringify(String(frame.appearance.textScale))}`);
++  await evaluate(`document.querySelector('[data-surface-control="control:close"]').focus()`);await key('End');
++  const observed=await evaluate(`(()=>{const a=document.activeElement,s=getComputedStyle(a),b=getComputedStyle(document.body),r=a.getBoundingClientRect();return {theme:document.documentElement.dataset.theme,scale:document.documentElement.dataset.textScale,foreground:s.color,background:s.backgroundColor,bodyForeground:b.color,bodyBackground:b.backgroundColor,outlineColor:s.outlineColor,outlineWidth:s.outlineWidth,outlineOffset:s.outlineOffset,fontSize:b.fontSize,identity:a.dataset.surfaceControl,visible:r.x>=0&&r.y>=0&&r.right<=innerWidth+1&&r.bottom<=innerHeight+1,hasName:!!a.getAttribute('aria-label')};})()`);
++  const ratio=contrast(observed.foreground,observed.background);report.appearanceFixtures.push({...observed,contrast:ratio});
++  check('Readable enlarged named target '+observed.theme+'/'+observed.scale,ratio>=4.5 && observed.visible && observed.hasName && observed.identity==='settings:refresh' && Number.parseFloat(observed.fontSize)===16*frame.appearance.textScale/100,observed);
++  if(observed.theme==='high-contrast')check('Inset high contrast focus '+observed.scale,observed.outlineColor==='rgb(255, 255, 0)' && observed.outlineWidth==='3px' && observed.outlineOffset==='-4px' && contrast(observed.outlineColor,observed.background)>=3,observed);
++ }
++ await capture('settings-high-contrast-enlarged');
++ await call('Emulation.setEmulatedMedia',{features:[{name:'forced-colors',value:'active'}]});
++ await evaluate(`document.querySelector('[data-surface-control="control:close"]').focus()`);await key('End');
++ const forced=await evaluate(`(()=>{const s=getComputedStyle(document.activeElement);return {foreground:s.color,background:s.backgroundColor,outlineColor:s.outlineColor,outlineWidth:s.outlineWidth};})()`);
++ check('Forced color content and focus remain readable',contrast(forced.foreground,forced.background)>=4.5 && contrast(forced.outlineColor,forced.background)>=3 && Number.parseFloat(forced.outlineWidth)>=2,forced);
++ report.forcedColors=forced;await capture('settings-high-contrast-forced-colors');
++ await call('Emulation.setEmulatedMedia',{features:[{name:'forced-colors',value:'none'}]});
++ await evaluate('receivePresentation('+JSON.stringify({...packet.savedFrame,publication:'15'})+')');await until(`document.documentElement.dataset.theme==='dawn'`);
++ const invalid=structuredClone(packet.savedFrame);invalid.publication='16';invalid.appearance.textScale=77;await evaluate('receivePresentation('+JSON.stringify(invalid)+')');await sleep(80);
+  check('Invalid presentation scale cannot change appearance',await evaluate(`document.querySelector('.surface-popup')===null && document.documentElement.dataset.textScale==='150'`));
+  check('No browser exceptions',report.errors.length===0,report.errors);report.passed=true;
+ }catch(error){report.error=String(error.stack||error);}
+diff --git c/implementation/warlock/src/Settings.elm w/implementation/warlock/src/Settings.elm
+index f619884..16dea91 100644
+--- c/implementation/warlock/src/Settings.elm
++++ w/implementation/warlock/src/Settings.elm
+@@ -4,7 +4,7 @@ import Json.Decode as D
+ import Json.Encode as E
+ import UInt64 exposing (Counter)
+ 
+-type Theme = Night | Dawn
++type Theme = Night | Dawn | HighContrast
+ type alias Values = { theme : Theme, textScale : Int }
+ type alias Snapshot = { schema : Int, revision : Counter, values : Values }
+ type alias Model = { snapshot : Maybe Snapshot, draft : Values, pending : Maybe { request : Counter, values : Values }, notice : String }
+@@ -17,11 +17,13 @@ strict fields child = D.keyValuePairs D.value |> D.andThen (\pairs -> if List.so
+ themeName theme = case theme of
+     Night -> "night"
+     Dawn -> "dawn"
++    HighContrast -> "high-contrast"
+ valuesDecoder : D.Decoder Values
+ valuesDecoder = strict ["theme","textScale"] (D.map2 Values
+     (D.field "theme" (D.string |> D.andThen (\value -> case value of
+         "night" -> D.succeed Night
+         "dawn" -> D.succeed Dawn
++        "high-contrast" -> D.succeed HighContrast
+         _ -> D.fail "Theme unavailable")))
+     (D.field "textScale" (D.int |> D.andThen (\scale -> if List.member scale [100,125,150,200] then D.succeed scale else D.fail "Text scale unavailable"))))
+ decoder : D.Decoder Snapshot
+diff --git c/implementation/warlock/src/Surface.elm w/implementation/warlock/src/Surface.elm
+index efb59e9..daa4028 100644
+--- c/implementation/warlock/src/Surface.elm
++++ w/implementation/warlock/src/Surface.elm
+@@ -142,7 +142,7 @@ controls model =
+             scale percent=control ("settings:scale:"++String.fromInt percent) ("Text size "++String.fromInt percent++"%") (if model.settings.draft.textScale==percent then "Selected" else "") ready (\stamp -> Desktop.EditSettings stamp {theme=model.settings.draft.theme,textScale=percent})
+             changed=model.settings.snapshot |> Maybe.map (\current -> current.values/=model.settings.draft) |> Maybe.withDefault False
+         in [control "control:close" "Close settings" "" True Desktop.CloseSettings
+-           ,theme Settings.Night "Night theme",theme Settings.Dawn "Dawn theme"]++List.map scale [100,125,150,200]
++           ,theme Settings.Night "Night theme",theme Settings.Dawn "Dawn theme",theme Settings.HighContrast "High contrast theme"]++List.map scale [100,125,150,200]
+            ++[control "settings:save" "Save settings" "Apply and keep across restart" (ready && changed) Desktop.SaveSettings
+              ,control "settings:refresh" "Refresh settings" "Read stored values; discard unsaved changes" (model.settingsExpected==Nothing) Desktop.RefreshSettings]
+     else if model.snap/=Nothing then

@@ -4,6 +4,7 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
 lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
 """
 import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
+CONTRAST=sys.argv[1:]==['--high-contrast']
 DRAG=sys.argv[1:]==['--drag-ownership']
 KEYBOARD=sys.argv[1:]==['--keyboard-shell']
 ATTENTION=sys.argv[1:]==['--attention']
@@ -11,7 +12,7 @@ JUMP=sys.argv[1:]==['--jump-lists']
 FILES=sys.argv[1:]==['--files']
 SYSTEM=sys.argv[1:]==['--system-menu']
 NOTIFICATIONS=sys.argv[1:]==['--notifications']
-SETTINGS=sys.argv[1:]==['--settings']
+SETTINGS=sys.argv[1:]==['--settings'] or CONTRAST
 PLACEMENT=sys.argv[1:]==['--snap-placement']
 SNAP=sys.argv[1:]==['--snap-chooser'] or PLACEMENT
 REFLOW=sys.argv[1:]==['--popup-reflow']
@@ -63,7 +64,7 @@ else:
 for row in pair.values():assert sha(row['path'])==row['sha256']
 assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
 subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
-OUT=ROOT/'qa/runs'/(('native-drag-ownership-' if DRAG else 'native-keyboard-shell-' if KEYBOARD else 'native-attention-' if ATTENTION else 'native-jump-lists-' if JUMP else 'native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+OUT=ROOT/'qa/runs'/(('native-high-contrast-' if CONTRAST else 'native-drag-ownership-' if DRAG else 'native-keyboard-shell-' if KEYBOARD else 'native-attention-' if ATTENTION else 'native-jump-lists-' if JUMP else 'native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
 OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
 focus_host=None
 if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
@@ -133,6 +134,7 @@ if SWITCHER:report.update(requirements=['ELM-UI-003'],scenarios=['switcher-order
 if PRIMARY:report.update(requirements=['ELM-UI-004'],scenarios=['taskbar-inactive','taskbar-active','taskbar-minimized'],scope='Actual pointer single-family activation/minimize/restore, exact native receipt and GTK keyboard recipient, MRU/desktop succession and pixels; primary keyboard and AT acceptance remain pending',nativePrimaryJourneyObserved=False)
 if PINMENUS:report.update(requirements=['ELM-UI-008','ELM-UX-023'],scenarios=['menu-invocation','keyboard-menus'],scope='Actual current running pin, native secondary click/Menu/Shift-F10 menus and existing minimize/restore path; dense/enlarged-text, AT and independent acceptance remain open',nativePinnedMenusObserved=False)
 if SNAP:report.update(requirements=['ELM-UX-019','ELM-UX-020'],scenarios=['ux-019','ux-020'],scope='Actual native snap chooser presentation/keyboard/output-scale invalidation only; native snap placement authority and accepted half-work-area oracle remain required',nativeSnapChooserObserved=False)
+if CONTRAST:report.update(requirements=['ELM-UX-027'],scenarios=['ux-027'],scope='Actual native high contrast appearance at enlarged text, named keyboard focus/pixels and committed persistence/restart; all-surface/theme/scale original qualification and native AT remain open.')
 if PLACEMENT:report.update(scope='Actual GUI snap submission through shared allocator/custody/native geometry authority, exact half-work-area readback/pixels and stale output refusal; original independent/AT release acceptance remains separate',nativeSnapPlacementObserved=False)
 if DENSE:report.update(requirements=['ELM-UI-008'],scenarios=['overflow-first-last','overflow-resize','menu-invocation'],scope='Actual small native output, enlarged text, configured overflowing pins, physical keyboard/wheel/menu traversal and output resize; AT and independent review remain open',nativeDenseTaskbarObserved=False)
 if DENSEPICKER:report.update(requirements=['ELM-UI-008','ELM-UI-004'],scenarios=['overflow-first-last','overflow-resize','menu-invocation','taskbar-group'],scope='Actual ten-root native enlarged-text picker arrow/endpoints, first/last menus and identity-bound selection/input; browser resize continuity is separate; native popup reflow, AT and independent review remain open',nativeDensePickerObserved=False)
@@ -1307,27 +1309,39 @@ raise SystemExit(daemon.run())
      check('NativeNotificationProducersExitNormally',producer.returncode==0)
      report['notificationProducerEvents']=producer_events();report['nativeNotificationsObserved']=True
     elif SETTINGS:
+     desired_theme="high-contrast" if CONTRAST else "dawn"
      state_file=pathlib.Path(env['XDG_STATE_HOME'])/'warlock/settings.json'
      def stored():return json.loads(state_file.read_text()) if state_file.exists() else None
      def settings_body():
       body=popup_body();p=projection()
-      return body if body and p and p.get('mode')=='settings' and body['publication']==p['publication'] and any(b['identity']=='settings:theme:dawn' for b in body['buttons']) else None
-     def opener():return next((b for b in (bar_body() or {}).get('buttons',[]) if b['accessibleName']=='Open settings' and not b['disabled']),None)
+      return body if body and p and p.get('mode')=='settings' and body['publication']==p['publication'] and any(b['identity']=='settings:theme:'+desired_theme for b in body['buttons']) else None
+     def opener():
+      body=bar_body()
+      if not body:return None
+      button=next((b for b in body['buttons'] if b['accessibleName']=='Open settings' and not b['disabled']),None)
+      if not button:return None
+      actions=body['actions']
+      if button['x']<actions['x'] or button['x']+button['width']>actions['x']+actions['width']:
+       # A bounding box outside the scrolling action strip is not a hit target.
+       # Use ordinary native pointer wheel input to reveal the actual control.
+       helper([str(POINTER),'800','600'],f"move {round(actions['x']+actions['width']/2)} {round(actions['y']+actions['height']/2)}\nsleep 100\nwheel 4096\nsleep 100")
+       return None
+      return button
      # Pointer opens the surface; every preference edit/save/dismissal uses
      # actual native keyboard events with the original 6-second observations.
      button=wait(opener);click({'visible':0<=button['x']<800 and 0<=button['y']<48,'point':[button['x']+button['width']/2,button['y']+button['height']/2]})
-     body=wait(lambda:settings_body() if settings_body() and any(b['identity']=='settings:theme:dawn' and not b['disabled'] for b in settings_body()['buttons']) else None)
+     body=wait(lambda:settings_body() if settings_body() and any(b['identity']=='settings:theme:'+desired_theme and not b['disabled'] for b in settings_body()['buttons']) else None)
      check('SettingsLoadedNativeDefaultAppearance',body['theme']=='night' and body['textScale']=='100' and body['fontSize']=='16px',body=body)
-     keyboard_button('Dawn theme',28);keyboard_button('Text size 150%',28)
+     keyboard_button('High contrast theme' if CONTRAST else 'Dawn theme',28);keyboard_button('Text size 150%',28)
      check('SettingsDraftDoesNotChangeAppearanceOrWrite',settings_body()['theme']=='night' and settings_body()['textScale']=='100' and not requests('shell-settings-write') and not stored())
      keyboard_button('Save settings',28)
-     saved=wait(lambda:stored() if stored() and stored()['values']=={'theme':'dawn','textScale':150} else None)
-     body=wait(lambda:settings_body() if settings_body() and settings_body()['theme']=='dawn' and settings_body()['fontSize']=='24px' else None)
+     saved=wait(lambda:stored() if stored() and stored()['values']=={'theme':desired_theme,'textScale':150} else None)
+     body=wait(lambda:settings_body() if settings_body() and settings_body()['theme']==desired_theme and settings_body()['fontSize']=='24px' else None)
      submitted=requests('shell-settings-write');check('SettingsSavesOneExactProposal',len(submitted)==1 and submitted[0]['proposal']['values']==saved['values'],request=submitted,storage=saved)
      rows=[json.loads(l.split(': ',1)[1]) for l in text().splitlines() if l.startswith('backend-frame: ')]
      receipts=[f for f in rows if f.get('kind')=='shell-settings-outcome' and f.get('binding')==submitted[0]['binding'] and f.get('requestId')==submitted[0]['requestId']]
      check('SettingsHasExactSavedReceipt',len(receipts)==1 and receipts[0]['status']=='Saved' and receipts[0]['snapshot']==saved,receipts=receipts)
-     wait(lambda:(bar_body() or {}).get('theme')=='dawn' and (bar_body() or {}).get('textScale')=='150')
+     wait(lambda:(bar_body() or {}).get('theme')==desired_theme and (bar_body() or {}).get('textScale')=='150')
      monitors=json.loads(s.ctl('monitors','-j'));check('CommittedScaleReservesActualNativeBar',monitors[0]['reserved'][1]==72 and bar_body()['fontSize']=='24px',monitors=monitors,bar=bar_body())
      check('SettingsStorageIsPrivate',state_file.stat().st_mode&0o777==0o600 and state_file.parent.stat().st_mode&0o777==0o700)
      # Invalid text scale crosses the real authenticated transport bound to
@@ -1337,20 +1351,38 @@ raise SystemExit(daemon.run())
      transport=CatalogTransport(client,roots);transport.settings=SettingsStore(env['XDG_STATE_HOME'])
      original=state_file.read_bytes();invalid={**saved,'values':{'theme':'night','textScale':77}}
      bad_request={'protocolVersion':3,'kind':'shell-settings-write','binding':client.bound,'requestId':'31000','proposal':invalid};refusal=transport.handle(bad_request)
-     check('NativeBoundInvalidScaleRefusedAndUnapplied',refusal['status']=='Refused' and refusal['snapshot'] is None and state_file.read_bytes()==original and settings_body()['theme']=='dawn' and settings_body()['textScale']=='150',request=bad_request,receipt=refusal)
+     check('NativeBoundInvalidScaleRefusedAndUnapplied',refusal['status']=='Refused' and refusal['snapshot'] is None and state_file.read_bytes()==original and settings_body()['theme']==desired_theme and settings_body()['textScale']=='150',request=bad_request,receipt=refusal)
      report['nativeSettingsInvalidScale']={'request':bad_request,'receipt':refusal,'storedSHA256':sha(state_file)}
-     keyboard_button('Refresh settings',28);wait(lambda:settings_body() and settings_body()['theme']=='dawn' and any(b['identity']=='settings:theme:dawn' and not b['disabled'] for b in settings_body()['buttons']))
-     popup_capture('settings-before-restart');check('LiveEnlargedSettingsPopupStartsBelowNativeBar',report['popupCaptures'][-1]['nativeBox'][1]>=72,nativeBox=report['popupCaptures'][-1]['nativeBox']);check('SettingsCaptureShowsActualControls',bool(report['popupCaptures'][-1]['controlRegions']) and all(c['paintedPixels']>.9*c['area'] and c['area']>0 for c in report['popupCaptures'][-1]['controlRegions']))
+     keyboard_button('Refresh settings',28);wait(lambda:settings_body() and settings_body()['theme']==desired_theme and any(b['identity']=='settings:theme:'+desired_theme and not b['disabled'] for b in settings_body()['buttons']))
+     popup_capture('settings-before-restart');check('LiveEnlargedSettingsPopupStartsBelowNativeBar',report['popupCaptures'][-1]['nativeBox'][1]>=72,nativeBox=report['popupCaptures'][-1]['nativeBox']);check('SettingsCaptureShowsActualControls',bool(report['popupCaptures'][-1]['controlRegions']) and all((c['brightPixels']>30 if CONTRAST else c['paintedPixels']>.9*c['area']) and c['area']>0 for c in report['popupCaptures'][-1]['controlRegions']))
      report['nativeSettingsBeforeRestart']={'storage':saved,'body':settings_body(),'writes':submitted,'receipt':receipts[0]}
      key(1);wait(lambda:(projection() or {}).get('mode')=='closed')
      owned=next(row for proc,row in s.host.processes if proc is web);s.host.stop(owned,web);web.wait(timeout=5);check('SettingsFirstHostExitsNormallyForRestart',web.returncode==0)
      web=s.host.launch('warlock-settings-restarted',[str(binary),'--assets',str(assets),'--authority-config',str(config_path),'--backend',str(backend_fixture),'--qa-exit-after-render','--qa-stay-open','--surface-experiment'],env=env);apps.append(web);log=OUTPUT/'warlock-settings-restarted.log';collector=Collector()
-     wait(lambda:(projection() or {}).get('phase')=='Coherent' and (bar_body() or {}).get('theme')=='dawn' and (bar_body() or {}).get('textScale')=='150' and bar_body()['fontSize']=='24px')
+     wait(lambda:(projection() or {}).get('phase')=='Coherent' and (bar_body() or {}).get('theme')==desired_theme and (bar_body() or {}).get('textScale')=='150' and bar_body()['fontSize']=='24px')
      check('WholeHostRestartRestoresCommittedAppearance',stored()==saved and not requests('shell-settings-write') and not journal() and not launches(),storage=stored(),body=bar_body())
      button=wait(opener);click({'visible':0<=button['x']<800 and 0<=button['y']<72,'point':[button['x']+button['width']/2,button['y']+button['height']/2]})
-     body=wait(lambda:settings_body() if settings_body() and settings_body()['theme']=='dawn' and settings_body()['fontSize']=='24px' else None)
+     body=wait(lambda:settings_body() if settings_body() and settings_body()['theme']==desired_theme and settings_body()['fontSize']=='24px' else None)
      check('ReopenedSettingsReadsSavedValues',body['textScale']=='150' and 'Settings loaded.' in body['text'],body=body)
+     if CONTRAST:
+      for _ in range(len(body['buttons'])+1):
+       body=settings_body();focus=next((button for button in body['buttons'] if button['id']==body['focus']),None)
+       if focus and focus['identity']=='settings:theme:high-contrast':break
+       key(15)
+      else:raise AssertionError('Original native high contrast focus traversal')
+      body=wait(lambda:settings_body() if settings_body() and settings_body()['focus']==focus['id'] and settings_body()['documentFocused'] else None)
+      style=body['focusStyle'];report['nativeContrastFocus']={'body':body,'target':focus}
+      check('NativeHighContrastHasReadableCommittedPalette',body['theme']=='high-contrast' and body['fontSize']=='24px' and body['palette']=={'background':'rgb(0, 0, 0)','foreground':'rgb(255, 255, 255)'},body=body)
+      check('ActualKeyboardFocusHasInsetContrastOutline',style['outlineColor']=='rgb(255, 255, 0)' and style['outlineWidth']=='3px' and style['outlineOffset']=='-4px' and focus['accessibleName']=='High contrast theme',body=body)
+      check('HighContrastFocusedLabelAndTargetAreVisible',focus['width']>0 and focus['height']>0 and focus['x']>=0 and focus['y']>=0 and focus['x']+focus['width']<=body['viewportWidth'] and focus['y']+focus['height']<=body['viewportHeight'] and focus['labelRect']['x']>=focus['x'] and focus['labelRect']['x']+focus['labelRect']['width']<=focus['x']+focus['width'],target=focus,body=body)
      popup_capture('settings-after-restart');check('EnlargedSettingsPopupStartsBelowNativeBar',report['popupCaptures'][-1]['nativeBox'][1]>=72,nativeBox=report['popupCaptures'][-1]['nativeBox']);report['nativeSettingsAfterRestart']={'storage':stored(),'body':body,'writes':requests('shell-settings-write')}
+     if CONTRAST:
+      capture=report['popupCaptures'][-1];image=pathlib.Path(capture['path']);import gi;gi.require_version('GdkPixbuf','2.0');from gi.repository import GdkPixbuf
+      pix=GdkPixbuf.Pixbuf.new_from_file(str(image));pixels=pix.get_pixels();stride=pix.get_rowstride();channels=pix.get_n_channels();box=capture['nativeBox']
+      left,top=max(0,int(box[0]+focus['x'])),max(0,int(box[1]+focus['y']));right,bottom=min(pix.get_width(),int(box[0]+focus['x']+focus['width'])),min(pix.get_height(),int(box[1]+focus['y']+focus['height']))
+      white=sum(1 for y in range(top,bottom) for x in range(left,right) if all(pixels[y*stride+x*channels+i]>200 for i in range(3)))
+      yellow=sum(1 for y in range(top,bottom) for x in range(left,right) if pixels[y*stride+x*channels]>200 and pixels[y*stride+x*channels+1]>200 and pixels[y*stride+x*channels+2]<80)
+      check('ActualNativeHighContrastTextAndFocusPixels',white>30 and yellow>60,image=str(image),sha256=sha(image),whiteTextPixels=white,yellowFocusPixels=yellow,region=[left,top,right,bottom]);report['nativeHighContrastObserved']=True
      key(1);wait(lambda:(projection() or {}).get('mode')=='closed');check('SettingsJourneyNeverMutatesOrLaunchesWindows',not journal() and not launches());report['nativeSettingsObserved']=True
     elif PINS:
      state_file=pathlib.Path(env['XDG_STATE_HOME'])/'warlock/taskbar.json'

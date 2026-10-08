@@ -28,7 +28,7 @@ try{
  const packet=JSON.parse(fs.readFileSync(path.join(out,'settings.json'),'utf8'));
  await evaluate('receivePresentation('+JSON.stringify(packet.frame)+')');
  await until(`document.querySelector('.surface-popup[data-mode="settings"]')?.dataset.publication==="1"`);
- check('Actual settings popup renders named controls',await evaluate(`document.querySelector("h1").textContent==="Settings" && document.querySelectorAll('[data-surface-control]').length===9`));
+ check('Actual settings popup renders named controls',await evaluate(`document.querySelector("h1").textContent==="Settings" && document.querySelectorAll('[data-surface-control]').length===10`));
  check('Loaded appearance is current, not an unsaved draft',await evaluate(`document.documentElement.dataset.theme==="night" && document.documentElement.dataset.textScale==="100"`));
  check('Save disabled without changes',await evaluate(`document.querySelector('[data-surface-control="settings:save"]').disabled`));
  check('Current theme and scale exposed semantically',await evaluate(`document.querySelector('[data-surface-control="settings:theme:night"]').getAttribute('aria-current')==='true' && document.querySelector('[data-surface-control="settings:scale:100"]').getAttribute('aria-current')==='true'`));
@@ -49,7 +49,28 @@ try{
  await key('Home');const count=await evaluate(`nativePackets.filter(p=>p.kind==='surface-action' && p.id==='control:close').length`);await key('Escape');
  check('Escape submits dismissal after real key release',await evaluate(`nativePackets.filter(p=>p.kind==='surface-action' && p.id==='control:close' && p.publication==='2').length`)==count+1);
  await capture('settings-dawn-enlarged');
- const invalid=structuredClone(packet.savedFrame);invalid.publication='3';invalid.appearance.textScale=77;await evaluate('receivePresentation('+JSON.stringify(invalid)+')');await sleep(80);
+ const luminance=rgb=>{const values=rgb.match(/[\d.]+/g).slice(0,3).map(Number).map(v=>{v/=255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4;});return .2126*values[0]+.7152*values[1]+.0722*values[2];};
+ const contrast=(a,b)=>{const x=luminance(a),y=luminance(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05);};
+ report.appearanceFixtures=[];
+ for(const frame of packet.appearanceFrames){
+  await call('Emulation.setEmulatedMedia',{features:[{name:'forced-colors',value:'none'}]});
+  await viewport(480,360);await evaluate('receivePresentation('+JSON.stringify(frame)+')');
+  await until(`document.querySelector('.surface-popup')?.dataset.publication===${JSON.stringify(frame.publication)} && document.documentElement.dataset.theme===${JSON.stringify(frame.appearance.theme)} && document.documentElement.dataset.textScale===${JSON.stringify(String(frame.appearance.textScale))}`);
+  await evaluate(`document.querySelector('[data-surface-control="control:close"]').focus()`);await key('End');
+  const observed=await evaluate(`(()=>{const a=document.activeElement,s=getComputedStyle(a),b=getComputedStyle(document.body),r=a.getBoundingClientRect();return {theme:document.documentElement.dataset.theme,scale:document.documentElement.dataset.textScale,foreground:s.color,background:s.backgroundColor,bodyForeground:b.color,bodyBackground:b.backgroundColor,outlineColor:s.outlineColor,outlineWidth:s.outlineWidth,outlineOffset:s.outlineOffset,fontSize:b.fontSize,identity:a.dataset.surfaceControl,visible:r.x>=0&&r.y>=0&&r.right<=innerWidth+1&&r.bottom<=innerHeight+1,hasName:!!a.getAttribute('aria-label')};})()`);
+  const ratio=contrast(observed.foreground,observed.background);report.appearanceFixtures.push({...observed,contrast:ratio});
+  check('Readable enlarged named target '+observed.theme+'/'+observed.scale,ratio>=4.5 && observed.visible && observed.hasName && observed.identity==='settings:refresh' && Number.parseFloat(observed.fontSize)===16*frame.appearance.textScale/100,observed);
+  if(observed.theme==='high-contrast')check('Inset high contrast focus '+observed.scale,observed.outlineColor==='rgb(255, 255, 0)' && observed.outlineWidth==='3px' && observed.outlineOffset==='-4px' && contrast(observed.outlineColor,observed.background)>=3,observed);
+ }
+ await capture('settings-high-contrast-enlarged');
+ await call('Emulation.setEmulatedMedia',{features:[{name:'forced-colors',value:'active'}]});
+ await evaluate(`document.querySelector('[data-surface-control="control:close"]').focus()`);await key('End');
+ const forced=await evaluate(`(()=>{const s=getComputedStyle(document.activeElement);return {foreground:s.color,background:s.backgroundColor,outlineColor:s.outlineColor,outlineWidth:s.outlineWidth};})()`);
+ check('Forced color content and focus remain readable',contrast(forced.foreground,forced.background)>=4.5 && contrast(forced.outlineColor,forced.background)>=3 && Number.parseFloat(forced.outlineWidth)>=2,forced);
+ report.forcedColors=forced;await capture('settings-high-contrast-forced-colors');
+ await call('Emulation.setEmulatedMedia',{features:[{name:'forced-colors',value:'none'}]});
+ await evaluate('receivePresentation('+JSON.stringify({...packet.savedFrame,publication:'15'})+')');await until(`document.documentElement.dataset.theme==='dawn'`);
+ const invalid=structuredClone(packet.savedFrame);invalid.publication='16';invalid.appearance.textScale=77;await evaluate('receivePresentation('+JSON.stringify(invalid)+')');await sleep(80);
  check('Invalid presentation scale cannot change appearance',await evaluate(`document.querySelector('.surface-popup')===null && document.documentElement.dataset.textScale==='150'`));
  check('No browser exceptions',report.errors.length===0,report.errors);report.passed=true;
 }catch(error){report.error=String(error.stack||error);}

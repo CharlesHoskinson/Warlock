@@ -142,7 +142,7 @@ controls model =
             scale percent=control ("settings:scale:"++String.fromInt percent) ("Text size "++String.fromInt percent++"%") (if model.settings.draft.textScale==percent then "Selected" else "") ready (\stamp -> Desktop.EditSettings stamp {theme=model.settings.draft.theme,textScale=percent})
             changed=model.settings.snapshot |> Maybe.map (\current -> current.values/=model.settings.draft) |> Maybe.withDefault False
         in [control "control:close" "Close settings" "" True Desktop.CloseSettings
-           ,theme Settings.Night "Night theme",theme Settings.Dawn "Dawn theme"]++List.map scale [100,125,150,200]
+           ,theme Settings.Night "Night theme",theme Settings.Dawn "Dawn theme",theme Settings.HighContrast "High contrast theme"]++List.map scale [100,125,150,200]
            ++[control "settings:save" "Save settings" "Apply and keep across restart" (ready && changed) Desktop.SaveSettings
              ,control "settings:refresh" "Refresh settings" "Read stored values; discard unsaved changes" (model.settingsExpected==Nothing) Desktop.RefreshSettings]
     else if model.snap/=Nothing then
