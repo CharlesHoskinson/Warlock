@@ -1,5 +1,7 @@
-module Snap exposing (Choice, Region(..), Proposal, regions, name, identity, open, valid, select, proposal)
+module Snap exposing (Choice, Region(..), Proposal, regions, name, identity, open, valid, select, proposal, encodeProposal, proposalDecoder, matches)
 
+import Json.Decode as D
+import Json.Encode as E
 import GeometryProjection as Geometry
 import UInt64 exposing (Counter)
 
@@ -76,3 +78,32 @@ proposal choice = Geometry.window choice.target choice.snapshot |> Maybe.andThen
                 outputOwnershipGeneration=output,workAreaRevision=area,workspaceGeneration=workspace,
                 context=choice.snapshot.context}
         _ -> Nothing)
+
+
+encodeProposal : Proposal -> E.Value
+encodeProposal proposed = E.object
+    [("region",E.string proposed.region),("geometry",E.list E.float proposed.geometry)
+    ,("monitor",E.string (UInt64.string proposed.monitor))
+    ,("outputOwnershipGeneration",E.string (UInt64.string proposed.outputOwnershipGeneration))
+    ,("workAreaRevision",E.string (UInt64.string proposed.workAreaRevision))
+    ,("workspaceGeneration",E.string (UInt64.string proposed.workspaceGeneration))]
+
+proposalDecoder : Geometry.Context -> D.Decoder Proposal
+proposalDecoder context =
+    let positive=UInt64.decoder |> D.andThen (\n -> if n==UInt64.zero then D.fail "Zero placement generation" else D.succeed n)
+        region=D.string |> D.andThen (\value -> if List.any (identity >> (==) value) regions then D.succeed value else D.fail "Unsupported snap region")
+        rectangle=D.list D.float |> D.andThen (\values -> case values of
+            [x,y,w,h] -> if List.all (\n -> not (isNaN n || isInfinite n) && abs n<=2147483647) values && w>0 && h>0 then D.succeed values else D.fail "Invalid snap rectangle"
+            _ -> D.fail "Invalid snap rectangle shape")
+        fields=["region","geometry","monitor","outputOwnershipGeneration","workAreaRevision","workspaceGeneration"]
+    in D.keyValuePairs D.value |> D.andThen (\pairs ->
+        if List.sort (List.map Tuple.first pairs)/=List.sort fields then D.fail "Snap placement fields" else
+        D.map6 (\regionName geometry monitor output area workspace -> {region=regionName,geometry=geometry,monitor=monitor,outputOwnershipGeneration=output,workAreaRevision=area,workspaceGeneration=workspace,context=context})
+            (D.field "region" region) (D.field "geometry" rectangle) (D.field "monitor" UInt64.decoder)
+            (D.field "outputOwnershipGeneration" positive) (D.field "workAreaRevision" positive) (D.field "workspaceGeneration" positive))
+
+matches : Geometry.Snapshot -> Counter -> Proposal -> Bool
+matches snapshot target proposed =
+    case List.filter (identity >> (==) proposed.region) regions |> List.head of
+        Nothing -> False
+        Just region -> open snapshot target |> Maybe.map (\choice -> proposal {choice|selected=region}==Just proposed) |> Maybe.withDefault False

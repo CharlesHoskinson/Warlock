@@ -72,5 +72,9 @@ utility; Enter opens it without applying the selected menu operation. Inside
 the chooser, Up/Down and Home/End traverse enabled controls, and selection uses
 the current view identity. Changed output/work-area scope retires the preview.
 The selected region uses the shared color, glow, shadow and shading language.
-Native snap placement is still being implemented: the placement control remains
-disabled and no successful placement or complete snapping acceptance is claimed.
+Native placement uses the negotiated snap capability. Apply closes the chooser,
+reads fresh unblocked facts and submits the exact region through the shared
+geometry request allocator, custody journal and native authority. Changed scope
+refuses placement; only a correlated native receipt settles the request. Unknown
+retains the existing read-only recovery path and is never replayed. Original
+scenario observations and independent acceptance remain separate.

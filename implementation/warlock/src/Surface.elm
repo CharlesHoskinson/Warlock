@@ -58,6 +58,9 @@ controls model =
             Just choice ->
                 let scoped message=Desktop.capture model |> Maybe.map message
                     ready=Shell.available model.windows.shell
+                    placement=Snap.proposal choice
+                    applyReady=ready && model.choice==Nothing && (model.windows.shell.geometryCaps |> Maybe.map (\caps -> List.member "snap" caps.operations) |> Maybe.withDefault False) && placement/=Nothing
+                    applyLabel=if applyReady then "Snap to "++String.toLower (Snap.name choice.selected) else "Snapping unavailable"
                     regionControl region=
                         let identity="snap:region:"++Snap.identity region
                             selected=region==choice.selected
@@ -67,7 +70,7 @@ controls model =
                             message=if ready then scoped (\stamp -> Desktop.SelectSnap stamp region) else Nothing}
                 in {id="control:close",domId=Desktop.key model "snap:close",label="Close",ariaLabel="Close snapping",detail="",enabled=True,message=scoped Desktop.CloseSnap}
                     :: List.map regionControl Snap.regions
-                    ++ [{id="snap:apply",domId=Desktop.key model "snap:apply",label="Snapping unavailable",ariaLabel="Snapping unavailable",detail="",enabled=False,message=Nothing}]
+                    ++ [{id="snap:apply",domId=Desktop.key model "snap:apply",label=applyLabel,ariaLabel=applyLabel,detail="",enabled=applyReady,message=if applyReady then scoped Desktop.ApplySnap else Nothing}]
     else if Desktop.switcherOpen model then
         let scoped message=Desktop.capture model |> Maybe.map message
             selected=Switcher.selected model.switcher |> Maybe.map .root
@@ -232,6 +235,7 @@ windowNotice model =
                     Effects.Activate -> "Activate"
                     Effects.Maximize -> "Maximize"
                     Effects.RestoreGeometry -> "Restore size"
+                    Effects.SnapPlacement _ -> "Snap"
                 label = TaskbarShell.groups model.windows |> List.concatMap .families
                     |> List.filter (\family -> family.root==transaction.intent.incarnation)
                     |> List.head |> Maybe.map (.label >> String.left 512) |> Maybe.withDefault "selected window"

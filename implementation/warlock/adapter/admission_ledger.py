@@ -2,7 +2,7 @@
 
 Admissions are observation evidence; neither import nor recovery replays effects.
 """
-import copy,fcntl,hashlib,json,os,re,secrets,stat
+import copy,fcntl,hashlib,json,os,re,secrets,stat,struct
 from contextlib import contextmanager
 from durable_ledger import Ledger,normalize,key,watermark,scope,encoded
 from recovery_journal import Journal,validate
@@ -14,6 +14,9 @@ MAX_BYTES=1048576
 def storage_key(record):
  r=normalize(record);b,i=r['binding'],r['intent'];c=i['context']
  fields=[b['lifetime'],b['session'],b['frontend'],r['effectProtocol'],i['request'],i['generation'],i['incarnation'],i['operation'],c['lifetime'],c['epoch'],c['output'],c['revision']]
+ if i['operation']=='snap':
+  p=i['placement'];fields.extend(p[name] for name in ['region','monitor','outputOwnershipGeneration','workAreaRevision','workspaceGeneration'])
+  fields.extend(struct.pack('>d',0.0 if value==0 else float(value)).hex() for value in p['geometry'])
  return hashlib.sha256(json.dumps(fields,separators=(',',':'),ensure_ascii=True).encode()).hexdigest()
 
 class AdmissionLedger(Ledger):

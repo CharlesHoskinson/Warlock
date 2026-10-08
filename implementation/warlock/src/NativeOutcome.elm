@@ -6,6 +6,7 @@ operation identities. Callers must use the authenticated bounded native channel.
 -}
 
 import Binding
+import Effects
 import Json.Decode as D
 import UInt64
 
@@ -24,12 +25,8 @@ context = strict ["lifetime","epoch","output","revision"]
     (D.map4 (\_ _ _ _ -> ()) (D.field "lifetime" positive) (D.field "epoch" positive)
         (D.field "output" positive) (D.field "revision" positive))
 
-intent protocolId = strict ["request","generation","incarnation","operation","context"]
-    (D.map5 (\_ _ _ _ _ -> ()) (D.field "request" positive) (D.field "generation" positive)
-        (D.field "incarnation" positive)
-        (D.field "operation" D.string |> D.andThen (\value ->
-            if List.member value (if protocolId==1 then ["minimize","restore","activate"] else ["maximize","restore-geometry"]) then D.succeed () else D.fail "Outcome operation"))
-        (D.field "context" context))
+intent protocolId = Effects.intentDecoder |> D.andThen (\original ->
+    if Effects.protocol original.operation==protocolId then D.succeed () else D.fail "Outcome operation protocol")
 
 decoderBody protocolId = strict ["protocolVersion","kind","effectProtocol","binding","intent","status","reason","revision","outputGeneration"]
     (D.map8 (\_ _ _ _ _ _ _ _ -> ())

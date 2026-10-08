@@ -7472,35 +7472,56 @@
               "path": "implementation/warlock/qa/evidence/snap-chooser/manifest.json",
               "sha256": "f400b474c04d40ac8abc60c779ae0bd1c7f5510f3a81ea524e2a11c73d720dd3",
               "scope": "Integrated generation-bound chooser preview, existing-menu keyboard utility and read-only popup lifecycle; owner-observed real native presentation/input/output-scale retirement. Native placement is unwired and acceptance remains open."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/snap-placement/manifest.json",
+              "sha256": "19ecc95a39ab602c65397e85304b8c25064952034f61cd601c82f8eb88056a87",
+              "scope": "Integrated negotiated snap placement through the shared Elm allocator, strict custody/recovery and owning native geometry authority. Owner-observed GUI left-half committed placement and old-output refusal after native scale change; independent original-scenario acceptance remains open."
             }
           ],
-          "missingObservation": "Native geometry submission through the existing shared effect allocator, durable custody/recovery and native placement authority.; Original ux-019 isolated recording of accepted left-half placement within native rounding tolerance.; Original ux-020 isolated stale-output refusal/no-commit observation with a real native placement request; disabled placement is not that oracle.; Independent original-scenario review; broader release AT/IME/hardware/performance obligations remain open.",
+          "missingObservation": "Independent original-scenario review against this exact source/core/plugin/toolchain tuple.; Additional transform/disappearance/output fixtures are not established by this bounded scale-change recording.; Broader applicable release AT/IME/hardware/resource and journey obligations remain separate.",
           "sourceHashes": {
-            "implementation/warlock/src/Snap.elm": "3f48a987bf6b8f9c65076ff0c17d7ad6b5a692c241f8ca9e8f46ad8870adc3ce",
-            "implementation/warlock/src/Desktop.elm": "abe8207e8c502876425d4abedec16ff6422720794279e10cbda7bdcd291b3264",
-            "implementation/warlock/src/Surface.elm": "27ebaf8bc95c9580f62493d7e08b5ef2a6117e1166ab496eb8f42449106fdacc",
+            "implementation/warlock/src/Snap.elm": "8ee61de4cd63557d3f2928893ed35ce93f1e3290128847e66ca388aa5d98ec8e",
+            "implementation/warlock/src/Desktop.elm": "4711b0d57fedd745ef7e66cfa096b118de6df2810508f62e4a20ada198dad80a",
+            "implementation/warlock/src/Surface.elm": "d5bfdb42861fceb9df3ef76aae69e140595a68ded393c41cb5280dfbfc561280",
             "implementation/warlock/src/SurfaceRenderer.elm": "56f4923e97a276c11dd91f21c2e7a051e6809ff4d43455f6b06541c2349bbd3a",
             "implementation/warlock/src/SurfaceController.elm": "e9b3c7baeb47550c2fe313349afa7977e7ebb148676eda5ed0089fd701304999",
             "implementation/warlock/native/surface.h": "aac0f8750949382554722a09cc0df5a0e49b48594b229682789c5a7c29c6e35c",
-            "implementation/warlock/qa/SnapReplay.elm": "e77a1100dc7fa62d53f2155b63d386f26a2901a5f35f684ee1c981417903220c",
-            "implementation/warlock/qa/check-search.py": "18d0adb350b3b52df4d8529a6220ca0c25af8167937069aad3007b9517835769",
-            "implementation/warlock/qa/current-search-build.json": "adbd0399afb4fd56cb76c2d9be80aad6da037e003923df4fd673419718f040d0",
-            "implementation/warlock/assets/elm.js": "3b7d96db2efd88a7e0962776af0df962119320340f10e0ceeb855cc1bf401b06",
+            "implementation/warlock/qa/SnapReplay.elm": "123f2541ca1ff18eed755f9d83dcd9c5b749adb9b3c2e78a065f14184309ffd2",
+            "implementation/warlock/qa/check-search.py": "c488ff76a5dd8fcefc03ac88245652d1ae12eb2cf804f09c6425fcf5c9959a1b",
+            "implementation/warlock/qa/current-search-build.json": "6f9b6933daec505c3878b272ed186342c38e86218fb7cef999d9a0df900f54a7",
+            "implementation/warlock/assets/elm.js": "2dcd6ded1e384ef2387efc0421ffbdd4ab6c01c029cf20e063fedaf56fb9940b",
             "implementation/warlock/assets/bar.js": "be223dc781307d076c136fb6cb1da4f5996b16460ea56d25a1dab1e673a8de5b",
             "implementation/warlock/assets/popup.js": "530fe4e756cd47b6643e8b9b27af61d8aca2c0bac9c23b2127e6557803093df0",
             "implementation/warlock/assets/shell.css": "f447658f994c43123701aadcecc5de0c5b99af2ba88896767887adc14128f498",
-            "implementation/warlock/README.md": "e535d286a5bf4681ce54ed29bc4b3e361f43a024d3ce4ba50fc865d1a754c4cf",
+            "implementation/warlock/README.md": "6512828eb8d9f197d676afcb5fb83939b1492b432ddb9d14e46964b5f9ead1eb",
             "implementation/warlock/assets/popup-adapter.js": "fd900458ff4f93cad22eee07d714f45215e1bbe74e3077ffcd6fa6509111fc07",
             "implementation/warlock/qa/snap-browser.mjs": "3cbf604050af755d2e02712de389b3c6e0935912bf1e6198b3246ff853d26879",
-            "implementation/warlock/qa/native-window-feedback.py": "406832e51717b06a2e97c231f14ef628dd42658f7b8d3741538cf82917d22c28",
-            "implementation/warlock/qa/snap-chooser.qnt": "b989610e580af6bc77caa1bf02e1a8a1023b318b313e90224ccd8a602a368fdd",
+            "implementation/warlock/qa/native-window-feedback.py": "d6d918ae23221bb349fe03d1d51bdf84954994ed65abbde00a09ce895de249e5",
+            "implementation/warlock/qa/snap-chooser.qnt": "ad575eab3db408cb5b2b2d5d9fa9486cb5afa91c0c409426907effcd2b1093b0",
             "implementation/warlock/assets/context.js": "a7fccb3fe47e384a6094d87944b9f958c961c24804b92612e8754ea8451c05ce",
-            "implementation/warlock/assets/activation.js": "ef7be78b88399c743d3d16ebee17d6e9010d14b73c6574d7b108defc74868a40"
+            "implementation/warlock/assets/activation.js": "ef7be78b88399c743d3d16ebee17d6e9010d14b73c6574d7b108defc74868a40",
+            "implementation/warlock/src/Effects.elm": "887b377208f429fdc80a6a244cc263db9f5180325f00066a93644048f8f2dd00",
+            "implementation/warlock/src/GeometryProjection.elm": "bed6c6616df3429c1298383c00bae1639c6305a6e17a21a62cadeafeffef04c1",
+            "implementation/warlock/src/Shell.elm": "06867a8be89fa184ccf3da55724cc5245dec9ab6fa82c6edfd663f5296c99f9f",
+            "implementation/warlock/src/ReceiptRouter.elm": "ffcf85cf38de5665b35b3e2b6eb5a9f261360ec4b226b2fcefc0723cece1a011",
+            "implementation/warlock/native/authority.cpp": "5aa4ea53a0d811f24eda60c22b14ee594c81e44ff5722a3d0fb0e4882173e7a4",
+            "implementation/warlock/native/geometry-effects.inc": "147224d13163a3671f7606cee9df2f596c885a6b65acde9b9cb89436e4260d52",
+            "implementation/warlock/native/snap-placement.inc": "736badc0ebc3fd423286778539a453f1a704d26b3f41a8fa6416d739b4015d64",
+            "implementation/warlock/native/host-journal.h": "57c8adb9cbf0a6a0ade37a72438d728bdf40868bb65c22f4d9e66e03cf1ce751",
+            "implementation/warlock/adapter/geometry_placement.py": "706899e88f911e1e02bceff8351d6426101ed918d194e7f8ca1f7b707c959614",
+            "implementation/warlock/adapter/geometry_endpoint.py": "1c9900e97ed9692552c23f15efdc335fa815c2d3bf2848382f4c8ebef46baff4",
+            "implementation/warlock/adapter/recovery_journal.py": "324c97ebd465e7dd7a74d37acc003fa4e24b6b33902b51f0ef2ccf12777ae72f",
+            "implementation/warlock/qa/check-native-authority.py": "33b97f4b6169956e6c0589afc1fba2bf8fb3d2f147d31098e0234bedb0ea2f27",
+            "implementation/warlock/qa/current-native-pair.json": "2825a6ad01ae94edda5173f87f0090a985faf17523ed7b1525d382198f80c518",
+            "implementation/warlock/qa/check-snap.py": "76dd541d746636068184b960f601cb16b6154f5ca48ce6c387084e959bb8f966",
+            "implementation/warlock/adapter/admission_ledger.py": "8e54be35a1522bd86c6753d2f65be509b94d56929b331d1ff7a0ab8f49c0e8a1",
+            "implementation/warlock/src/NativeOutcome.elm": "ffb20d47827d29653552d9a5c7f552491473b8df1cd336e00cc036816ae8b396"
           },
           "reviewer": {
             "name": "root-snap-chooser",
             "independent": false,
-            "disposition": "Owner-observed preview/input/scale retirement only; native placement and independent acceptance remain open."
+            "disposition": "Original native placement/stale-output oracles observed by owner; independent acceptance remains open."
           }
         }
       ]
@@ -7524,35 +7545,56 @@
               "path": "implementation/warlock/qa/evidence/snap-chooser/manifest.json",
               "sha256": "f400b474c04d40ac8abc60c779ae0bd1c7f5510f3a81ea524e2a11c73d720dd3",
               "scope": "Integrated generation-bound chooser preview, existing-menu keyboard utility and read-only popup lifecycle; owner-observed real native presentation/input/output-scale retirement. Native placement is unwired and acceptance remains open."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/snap-placement/manifest.json",
+              "sha256": "19ecc95a39ab602c65397e85304b8c25064952034f61cd601c82f8eb88056a87",
+              "scope": "Integrated negotiated snap placement through the shared Elm allocator, strict custody/recovery and owning native geometry authority. Owner-observed GUI left-half committed placement and old-output refusal after native scale change; independent original-scenario acceptance remains open."
             }
           ],
-          "missingObservation": "Native geometry submission through the existing shared effect allocator, durable custody/recovery and native placement authority.; Original ux-019 isolated recording of accepted left-half placement within native rounding tolerance.; Original ux-020 isolated stale-output refusal/no-commit observation with a real native placement request; disabled placement is not that oracle.; Independent original-scenario review; broader release AT/IME/hardware/performance obligations remain open.",
+          "missingObservation": "Independent original-scenario review against this exact source/core/plugin/toolchain tuple.; Additional transform/disappearance/output fixtures are not established by this bounded scale-change recording.; Broader applicable release AT/IME/hardware/resource and journey obligations remain separate.",
           "sourceHashes": {
-            "implementation/warlock/src/Snap.elm": "3f48a987bf6b8f9c65076ff0c17d7ad6b5a692c241f8ca9e8f46ad8870adc3ce",
-            "implementation/warlock/src/Desktop.elm": "abe8207e8c502876425d4abedec16ff6422720794279e10cbda7bdcd291b3264",
-            "implementation/warlock/src/Surface.elm": "27ebaf8bc95c9580f62493d7e08b5ef2a6117e1166ab496eb8f42449106fdacc",
+            "implementation/warlock/src/Snap.elm": "8ee61de4cd63557d3f2928893ed35ce93f1e3290128847e66ca388aa5d98ec8e",
+            "implementation/warlock/src/Desktop.elm": "4711b0d57fedd745ef7e66cfa096b118de6df2810508f62e4a20ada198dad80a",
+            "implementation/warlock/src/Surface.elm": "d5bfdb42861fceb9df3ef76aae69e140595a68ded393c41cb5280dfbfc561280",
             "implementation/warlock/src/SurfaceRenderer.elm": "56f4923e97a276c11dd91f21c2e7a051e6809ff4d43455f6b06541c2349bbd3a",
             "implementation/warlock/src/SurfaceController.elm": "e9b3c7baeb47550c2fe313349afa7977e7ebb148676eda5ed0089fd701304999",
             "implementation/warlock/native/surface.h": "aac0f8750949382554722a09cc0df5a0e49b48594b229682789c5a7c29c6e35c",
-            "implementation/warlock/qa/SnapReplay.elm": "e77a1100dc7fa62d53f2155b63d386f26a2901a5f35f684ee1c981417903220c",
-            "implementation/warlock/qa/check-search.py": "18d0adb350b3b52df4d8529a6220ca0c25af8167937069aad3007b9517835769",
-            "implementation/warlock/qa/current-search-build.json": "adbd0399afb4fd56cb76c2d9be80aad6da037e003923df4fd673419718f040d0",
-            "implementation/warlock/assets/elm.js": "3b7d96db2efd88a7e0962776af0df962119320340f10e0ceeb855cc1bf401b06",
+            "implementation/warlock/qa/SnapReplay.elm": "123f2541ca1ff18eed755f9d83dcd9c5b749adb9b3c2e78a065f14184309ffd2",
+            "implementation/warlock/qa/check-search.py": "c488ff76a5dd8fcefc03ac88245652d1ae12eb2cf804f09c6425fcf5c9959a1b",
+            "implementation/warlock/qa/current-search-build.json": "6f9b6933daec505c3878b272ed186342c38e86218fb7cef999d9a0df900f54a7",
+            "implementation/warlock/assets/elm.js": "2dcd6ded1e384ef2387efc0421ffbdd4ab6c01c029cf20e063fedaf56fb9940b",
             "implementation/warlock/assets/bar.js": "be223dc781307d076c136fb6cb1da4f5996b16460ea56d25a1dab1e673a8de5b",
             "implementation/warlock/assets/popup.js": "530fe4e756cd47b6643e8b9b27af61d8aca2c0bac9c23b2127e6557803093df0",
             "implementation/warlock/assets/shell.css": "f447658f994c43123701aadcecc5de0c5b99af2ba88896767887adc14128f498",
-            "implementation/warlock/README.md": "e535d286a5bf4681ce54ed29bc4b3e361f43a024d3ce4ba50fc865d1a754c4cf",
+            "implementation/warlock/README.md": "6512828eb8d9f197d676afcb5fb83939b1492b432ddb9d14e46964b5f9ead1eb",
             "implementation/warlock/assets/popup-adapter.js": "fd900458ff4f93cad22eee07d714f45215e1bbe74e3077ffcd6fa6509111fc07",
             "implementation/warlock/qa/snap-browser.mjs": "3cbf604050af755d2e02712de389b3c6e0935912bf1e6198b3246ff853d26879",
-            "implementation/warlock/qa/native-window-feedback.py": "406832e51717b06a2e97c231f14ef628dd42658f7b8d3741538cf82917d22c28",
-            "implementation/warlock/qa/snap-chooser.qnt": "b989610e580af6bc77caa1bf02e1a8a1023b318b313e90224ccd8a602a368fdd",
+            "implementation/warlock/qa/native-window-feedback.py": "d6d918ae23221bb349fe03d1d51bdf84954994ed65abbde00a09ce895de249e5",
+            "implementation/warlock/qa/snap-chooser.qnt": "ad575eab3db408cb5b2b2d5d9fa9486cb5afa91c0c409426907effcd2b1093b0",
             "implementation/warlock/assets/context.js": "a7fccb3fe47e384a6094d87944b9f958c961c24804b92612e8754ea8451c05ce",
-            "implementation/warlock/assets/activation.js": "ef7be78b88399c743d3d16ebee17d6e9010d14b73c6574d7b108defc74868a40"
+            "implementation/warlock/assets/activation.js": "ef7be78b88399c743d3d16ebee17d6e9010d14b73c6574d7b108defc74868a40",
+            "implementation/warlock/src/Effects.elm": "887b377208f429fdc80a6a244cc263db9f5180325f00066a93644048f8f2dd00",
+            "implementation/warlock/src/GeometryProjection.elm": "bed6c6616df3429c1298383c00bae1639c6305a6e17a21a62cadeafeffef04c1",
+            "implementation/warlock/src/Shell.elm": "06867a8be89fa184ccf3da55724cc5245dec9ab6fa82c6edfd663f5296c99f9f",
+            "implementation/warlock/src/ReceiptRouter.elm": "ffcf85cf38de5665b35b3e2b6eb5a9f261360ec4b226b2fcefc0723cece1a011",
+            "implementation/warlock/native/authority.cpp": "5aa4ea53a0d811f24eda60c22b14ee594c81e44ff5722a3d0fb0e4882173e7a4",
+            "implementation/warlock/native/geometry-effects.inc": "147224d13163a3671f7606cee9df2f596c885a6b65acde9b9cb89436e4260d52",
+            "implementation/warlock/native/snap-placement.inc": "736badc0ebc3fd423286778539a453f1a704d26b3f41a8fa6416d739b4015d64",
+            "implementation/warlock/native/host-journal.h": "57c8adb9cbf0a6a0ade37a72438d728bdf40868bb65c22f4d9e66e03cf1ce751",
+            "implementation/warlock/adapter/geometry_placement.py": "706899e88f911e1e02bceff8351d6426101ed918d194e7f8ca1f7b707c959614",
+            "implementation/warlock/adapter/geometry_endpoint.py": "1c9900e97ed9692552c23f15efdc335fa815c2d3bf2848382f4c8ebef46baff4",
+            "implementation/warlock/adapter/recovery_journal.py": "324c97ebd465e7dd7a74d37acc003fa4e24b6b33902b51f0ef2ccf12777ae72f",
+            "implementation/warlock/qa/check-native-authority.py": "33b97f4b6169956e6c0589afc1fba2bf8fb3d2f147d31098e0234bedb0ea2f27",
+            "implementation/warlock/qa/current-native-pair.json": "2825a6ad01ae94edda5173f87f0090a985faf17523ed7b1525d382198f80c518",
+            "implementation/warlock/qa/check-snap.py": "76dd541d746636068184b960f601cb16b6154f5ca48ce6c387084e959bb8f966",
+            "implementation/warlock/adapter/admission_ledger.py": "8e54be35a1522bd86c6753d2f65be509b94d56929b331d1ff7a0ab8f49c0e8a1",
+            "implementation/warlock/src/NativeOutcome.elm": "ffb20d47827d29653552d9a5c7f552491473b8df1cd336e00cc036816ae8b396"
           },
           "reviewer": {
             "name": "root-snap-chooser",
             "independent": false,
-            "disposition": "Owner-observed preview/input/scale retirement only; native placement and independent acceptance remain open."
+            "disposition": "Original native placement/stale-output oracles observed by owner; independent acceptance remains open."
           }
         }
       ]
@@ -7969,5 +8011,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-08T10:50:37.535855+00:00"
+  "updatedUTC": "2026-10-08T11:30:00.079507+00:00"
 }

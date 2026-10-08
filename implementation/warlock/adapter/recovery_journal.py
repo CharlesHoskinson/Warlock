@@ -1,5 +1,6 @@
 """One durable uncertain window intent; never an executable retry queue."""
 import fcntl,json,os,secrets,stat,re,hashlib,errno
+import geometry_placement
 from pathlib import Path
 from endpoint import Refused,binding,canonical,exact,unique
 
@@ -32,12 +33,13 @@ def validate(record):
  protocol=1 if record['schema']==1 else record['effectProtocol']
  if type(protocol) is not int or protocol not in [1,2]:raise Refused('Recovery effect protocol')
  binding(record['binding']);intent=record['intent']
- exact(intent,['request','generation','incarnation','operation','context'])
+ exact(intent,['request','generation','incarnation','operation','context']+(['placement'] if protocol==2 and isinstance(intent,dict) and intent.get('operation')=='snap' else []))
+ if protocol==2 and intent.get('operation')=='snap':geometry_placement.validate(intent['placement'])
  for key in ['request','generation','incarnation']:canonical(intent[key])
  exact(intent['context'],['lifetime','epoch','output','revision'])
  for value in intent['context'].values():canonical(value)
  if intent['context']['lifetime']!=record['binding']['lifetime'] or intent['context']['epoch']!=record['binding']['frontend']:raise Refused('Recovery context')
- operations=['minimize','restore','activate'] if protocol==1 else ['maximize','restore-geometry']
+ operations=['minimize','restore','activate'] if protocol==1 else ['maximize','restore-geometry','snap']
  if intent['operation'] not in operations or record['status'] not in ['Pending','Committed','Refused','Unknown']:raise Refused('Recovery outcome')
  return record
 

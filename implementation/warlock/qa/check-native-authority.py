@@ -42,7 +42,7 @@ try:
   core={'path':focus_core['binary'],'sha256':focus_core['binarySHA256']};assert sha(core['path'])==core['sha256']
  source=OUT/'inputs/native';source.mkdir(parents=True)
  inputs={}
- for name in ('authority.cpp','navigation-modal.hpp'):
+ for name in ('authority.cpp','navigation-modal.hpp','geometry-effects.inc','snap-placement.inc'):
   p=ROOT/'native'/name;inputs['native/'+name]=sha(p);shutil.copyfile(p,source/name)
  command=next(c['command'] for c in prior['commands'] if c['name']=='compile').copy()
  for i,arg in enumerate(command):
@@ -57,7 +57,7 @@ try:
  dependencies={str(pathlib.Path(p).resolve()):sha(p) for p in deps}
  for p,h in dependencies.items():
   if p.startswith(str(source)):
-   assert pathlib.Path(p).name in ('authority.cpp','navigation-modal.hpp')
+   assert pathlib.Path(p).name in ('authority.cpp','navigation-modal.hpp','geometry-effects.inc','snap-placement.inc')
   else:
    inherited=header_prefix[0]+p[len(header_prefix[1]):] if header_prefix and p.startswith(header_prefix[1]+'/') else p
    assert preserved.get(inherited)==h,('Unrecorded or changed inherited dependency',p)

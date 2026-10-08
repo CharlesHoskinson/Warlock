@@ -72,6 +72,7 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
   run('task-view-model-typecheck',['quint','typecheck','qa/task-view.qnt']);run('task-view-model-named',['quint','test','qa/task-view.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79101']);run('task-view-model-invariants',['quint','run','qa/task-view.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79102'])
  if SNAP:
   report.update(requirements=['ELM-UX-019','ELM-UX-020'],scenarios=['ux-019','ux-020'],scope='Compiled integrated snap chooser with generation-bound half/quarter previews and stale action/output invalidation; native placement authority and original isolated recordings remain required')
+  run('snap-wire-custody',['/usr/bin/python3','-B','qa/check-snap.py'])
   run('compile-snap',[str(HELD/pinned['compiler']),'make','qa/SnapReplay.elm','--optimize','--output=assets/snap.js'])
   (INPUT/'qa/snap-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.SnapReplay'));run('typed-snap',['node','qa/snap-replay.js','assets/snap.js',str(OUT/'snap.json')]);report['typedSnap']=json.loads((OUT/'snap.json').read_text());assert all(report['typedSnap']['checks'].values())
   run('snap-model-typecheck',['quint','typecheck','qa/snap-chooser.qnt']);run('snap-model-named',['quint','test','qa/snap-chooser.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79121']);run('snap-model-invariants',['quint','run','qa/snap-chooser.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79122'])
@@ -114,7 +115,7 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
    if TASKVIEW:
     # The authority TU is independently compiled against its owning core; none
     # of these reused GTK host objects link it or include its modal preflight.
-    excluded=['native/surface.h']+(['native/authority.cpp','native/navigation-modal.hpp'] if NAV else [])
+    excluded=['native/surface.h']+(['native/authority.cpp','native/navigation-modal.hpp'] if NAV else [])+(['native/authority.cpp','native/host-journal.h','native/geometry-effects.inc','native/snap-placement.inc'] if SNAP else [])
     assert all(sha(INPUT/p)==h for p,h in prior['inputs'].items() if p.startswith('native/') and p not in excluded)
     assert all('surface.h' not in (INPUT/'native'/name).read_text() for name in units)
    object_path=prior_path;object_report=prior;seen=set()

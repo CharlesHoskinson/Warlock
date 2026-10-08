@@ -42,7 +42,7 @@ capabilitiesDecoder = strict ["observe","effects","effectProtocol","operations",
     (D.map6 (\_ effects _ operations _ _ -> {effects=effects,operations=operations})
         (exact "observe" D.bool True) (D.field "effects" D.bool) (exact "effectProtocol" D.int 2)
         (D.field "operations" (D.list D.string)) (exact "placementCapacity" D.int 256) (exact "canonicalScene" D.bool False))
-    |> D.andThen (\caps -> if List.length caps.operations<=2 && List.all (\op -> List.member op ["maximize","restore-geometry"]) caps.operations && List.length caps.operations==List.length (List.foldl (\x xs -> if List.member x xs then xs else x::xs) [] caps.operations) && caps.effects==not (List.isEmpty caps.operations) then D.succeed caps else D.fail "Geometry capabilities")
+    |> D.andThen (\caps -> if List.length caps.operations<=3 && List.all (\op -> List.member op ["maximize","restore-geometry","snap"]) caps.operations && List.length caps.operations==List.length (List.foldl (\x xs -> if List.member x xs then xs else x::xs) [] caps.operations) && caps.effects==not (List.isEmpty caps.operations) then D.succeed caps else D.fail "Geometry capabilities")
 windowDecoder protocol =
     let identities = D.map8 (\inc owner ws wg mon og wr wa -> {inc=inc,owner=owner,ws=ws,wg=wg,mon=mon,og=og,wr=wr,wa=wa})
             (D.field "incarnation" positive) (D.field "owner" (D.nullable positive)) (D.field "workspace" (D.nullable workspace))

@@ -1,3 +1,4 @@
+#include <math.h>
 /* Durable admission belongs to the host; authoritative settlement to the broker. */
 #include <errno.h>
 #include <sys/file.h>
@@ -84,6 +85,24 @@ static gboolean admission_bind(JsonNode *bound) {
 static gboolean admission_positive(JsonObject *object,const char *name) {
     guint64 number;return surface_uint(json_object_get_member(object,name),&number) && number>0;
 }
+static gboolean admission_placement(JsonObject *intent) {
+    JsonNode *node=json_object_get_member(intent,"placement");if(!node || !JSON_NODE_HOLDS_OBJECT(node))return FALSE;
+    JsonObject *p=json_node_get_object(node);const char *const fields[]={"region","geometry","monitor","outputOwnershipGeneration","workAreaRevision","workspaceGeneration"};
+    if(!surface_fields(p,fields,6))return FALSE;
+    JsonNode *name=json_object_get_member(p,"region");if(!surface_text(name,32,FALSE))return FALSE;
+    const char *region=json_node_get_string(name);
+    if(!g_str_equal(region,"left-half")&&!g_str_equal(region,"right-half")&&!g_str_equal(region,"top-left")&&!g_str_equal(region,"top-right")&&!g_str_equal(region,"bottom-left")&&!g_str_equal(region,"bottom-right"))return FALSE;
+    guint64 monitor;if(!surface_uint(json_object_get_member(p,"monitor"),&monitor))return FALSE;
+    for(guint i=3;i<6;i++)if(!admission_positive(p,fields[i]))return FALSE;
+    JsonNode *rect=json_object_get_member(p,"geometry");if(!rect || !JSON_NODE_HOLDS_ARRAY(rect))return FALSE;
+    JsonArray *values=json_node_get_array(rect);if(json_array_get_length(values)!=4)return FALSE;
+    for(guint i=0;i<4;i++){
+        JsonNode *value=json_array_get_element(values,i);if(!JSON_NODE_HOLDS_VALUE(value))return FALSE;
+        GType type=json_node_get_value_type(value);if(type!=G_TYPE_INT64 && type!=G_TYPE_DOUBLE)return FALSE;
+        double n=json_node_get_double(value);if(!isfinite(n)||fabs(n)>2147483647.0||(i>=2&&n<=0))return FALSE;
+    }
+    return TRUE;
+}
 static JsonNode *admission_record(JsonNode *request) {
     if (!request || !JSON_NODE_HOLDS_OBJECT(request)) return NULL;
     JsonObject *o=json_node_get_object(request);
@@ -95,7 +114,10 @@ static JsonNode *admission_record(JsonNode *request) {
     if (!JSON_NODE_HOLDS_OBJECT(bn) || !JSON_NODE_HOLDS_OBJECT(in)) return NULL;
     JsonObject *b=json_node_get_object(bn),*intent=json_node_get_object(in);
     const char *const bindings[]={"lifetime","session","frontend"},*const intents[]={"request","generation","incarnation","operation","context"},*const contexts[]={"lifetime","epoch","output","revision"};
-    if (!surface_fields(b,bindings,3) || !surface_fields(intent,intents,5)) return NULL;
+    JsonNode *operationNode=json_object_get_member(intent,"operation");
+    gboolean snap=json_node_get_int(ep)==2 && operationNode && surface_text(operationNode,32,FALSE) && g_str_equal(json_node_get_string(operationNode),"snap");
+    const char *const snapFields[]={"request","generation","incarnation","operation","context","placement"};
+    if (!surface_fields(b,bindings,3) || !(snap ? surface_fields(intent,snapFields,6)&&admission_placement(intent) : surface_fields(intent,intents,5))) return NULL;
     for(guint i=0;i<3;i++) if (!admission_positive(b,bindings[i]) || !admission_positive(intent,intents[i])) return NULL;
     JsonNode *cn=json_object_get_member(intent,"context"),*op=json_object_get_member(intent,"operation");
     if (!JSON_NODE_HOLDS_OBJECT(cn) || !surface_text(op,32,FALSE)) return NULL;
@@ -104,7 +126,7 @@ static JsonNode *admission_record(JsonNode *request) {
     for(guint i=0;i<4;i++) if (!admission_positive(context,contexts[i])) return NULL;
     const char *operation=json_node_get_string(op);
     gint64 protocol=json_node_get_int(ep);
-    gboolean supported=protocol==1 ? (g_str_equal(operation,"minimize") || g_str_equal(operation,"restore") || g_str_equal(operation,"activate")) : (g_str_equal(operation,"maximize") || g_str_equal(operation,"restore-geometry"));
+    gboolean supported=protocol==1 ? (g_str_equal(operation,"minimize") || g_str_equal(operation,"restore") || g_str_equal(operation,"activate")) : (g_str_equal(operation,"maximize") || g_str_equal(operation,"restore-geometry") || snap);
     if (!supported ||
         !g_str_equal(json_object_get_string_member(b,"lifetime"),json_object_get_string_member(context,"lifetime")) ||
         !g_str_equal(json_object_get_string_member(b,"frontend"),json_object_get_string_member(context,"epoch"))) return NULL;
@@ -121,6 +143,16 @@ static char *admission_key(JsonNode *record) {
     for(guint n=0;n<3;n++)json_array_add_string_element(a,json_object_get_string_member(i,ids[n]));
     json_array_add_string_element(a,json_object_get_string_member(i,"operation"));
     for(guint n=0;n<4;n++)json_array_add_string_element(a,json_object_get_string_member(c,contexts[n]));
+    if(g_str_equal(json_object_get_string_member(i,"operation"),"snap")){
+        JsonObject *p=json_object_get_object_member(i,"placement");const char *const fields[]={"region","monitor","outputOwnershipGeneration","workAreaRevision","workspaceGeneration"};
+        for(guint n=0;n<5;n++)json_array_add_string_element(a,json_object_get_string_member(p,fields[n]));
+        JsonArray *rect=json_object_get_array_member(p,"geometry");
+        for(guint n=0;n<4;n++){
+            double value=json_array_get_double_element(rect,n);if(value==0)value=0;
+            guint64 bits;memcpy(&bits,&value,sizeof(bits));char hex[17];g_snprintf(hex,sizeof(hex),"%016" G_GINT64_MODIFIER "x",bits);
+            json_array_add_string_element(a,hex);
+        }
+    }
     g_autoptr(JsonNode) node=json_node_new(JSON_NODE_ARRAY);json_node_take_array(node,a);
     g_autofree char *raw=json_to_string(node,FALSE);return g_compute_checksum_for_string(G_CHECKSUM_SHA256,raw,-1);
 }

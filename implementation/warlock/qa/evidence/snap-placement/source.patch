@@ -1,0 +1,1137 @@
+diff --git c/implementation/warlock/README.md i/implementation/warlock/README.md
+index 015d923..cc444bd 100644
+--- c/implementation/warlock/README.md
++++ i/implementation/warlock/README.md
+@@ -72,5 +72,9 @@ utility; Enter opens it without applying the selected menu operation. Inside
+ the chooser, Up/Down and Home/End traverse enabled controls, and selection uses
+ the current view identity. Changed output/work-area scope retires the preview.
+ The selected region uses the shared color, glow, shadow and shading language.
+-Native snap placement is still being implemented: the placement control remains
+-disabled and no successful placement or complete snapping acceptance is claimed.
++Native placement uses the negotiated snap capability. Apply closes the chooser,
++reads fresh unblocked facts and submits the exact region through the shared
++geometry request allocator, custody journal and native authority. Changed scope
++refuses placement; only a correlated native receipt settles the request. Unknown
++retains the existing read-only recovery path and is never replayed. Original
++scenario observations and independent acceptance remain separate.
+diff --git c/implementation/warlock/adapter/admission_ledger.py i/implementation/warlock/adapter/admission_ledger.py
+index 592c9a8..9e0a84a 100644
+--- c/implementation/warlock/adapter/admission_ledger.py
++++ i/implementation/warlock/adapter/admission_ledger.py
+@@ -2,7 +2,7 @@
+ 
+ Admissions are observation evidence; neither import nor recovery replays effects.
+ """
+-import copy,fcntl,hashlib,json,os,re,secrets,stat
++import copy,fcntl,hashlib,json,os,re,secrets,stat,struct
+ from contextlib import contextmanager
+ from durable_ledger import Ledger,normalize,key,watermark,scope,encoded
+ from recovery_journal import Journal,validate
+@@ -14,6 +14,9 @@ MAX_BYTES=1048576
+ def storage_key(record):
+  r=normalize(record);b,i=r['binding'],r['intent'];c=i['context']
+  fields=[b['lifetime'],b['session'],b['frontend'],r['effectProtocol'],i['request'],i['generation'],i['incarnation'],i['operation'],c['lifetime'],c['epoch'],c['output'],c['revision']]
++ if i['operation']=='snap':
++  p=i['placement'];fields.extend(p[name] for name in ['region','monitor','outputOwnershipGeneration','workAreaRevision','workspaceGeneration'])
++  fields.extend(struct.pack('>d',0.0 if value==0 else float(value)).hex() for value in p['geometry'])
+  return hashlib.sha256(json.dumps(fields,separators=(',',':'),ensure_ascii=True).encode()).hexdigest()
+ 
+ class AdmissionLedger(Ledger):
+diff --git c/implementation/warlock/adapter/geometry_endpoint.py i/implementation/warlock/adapter/geometry_endpoint.py
+index 0d0b9f4..8d87787 100644
+--- c/implementation/warlock/adapter/geometry_endpoint.py
++++ i/implementation/warlock/adapter/geometry_endpoint.py
+@@ -2,12 +2,13 @@
+ import math
+ import re
+ import geometry_size_policy
++import geometry_placement
+ 
+ from effect_endpoint import Endpoint as LegacyEffectEndpoint
+ from endpoint import Refused, binding, canonical, exact
+ 
+ MODES = {'ordinary', 'maximized', 'fullscreen'}
+-OPERATIONS = {'maximize', 'restore-geometry'}
++OPERATIONS = {'maximize', 'restore-geometry', 'snap'}
+ WINDOW_FIELDS = ['incarnation', 'owner', 'workspace', 'workspaceGeneration', 'monitor',
+                  'outputOwnershipGeneration', 'workAreaRevision', 'workArea',
+                  'logicalGeometry', 'visualGeometry', 'nativeMode', 'clientMode',
+@@ -57,7 +58,7 @@ class GeometryEndpoint(LegacyEffectEndpoint):
+         if type(caps['effectProtocol']) is not int or caps['effectProtocol'] != 2 or type(caps['placementCapacity']) is not int or caps['placementCapacity'] != 256:
+             raise Refused('Geometry capability versions/bounds')
+         operations = caps['operations']
+-        if not isinstance(operations, list) or len(operations) > 2 or any(type(op) is not str or op not in OPERATIONS for op in operations) or len(set(operations)) != len(operations):
++        if not isinstance(operations, list) or len(operations) > 3 or any(type(op) is not str or op not in OPERATIONS for op in operations) or len(set(operations)) != len(operations):
+             raise Refused('Geometry operation capabilities')
+         if caps['effects'] != bool(operations):
+             raise Refused('Geometry effects/operation contradiction')
+@@ -195,7 +196,8 @@ class GeometryEndpoint(LegacyEffectEndpoint):
+         caps = getattr(self, 'geometry_capabilities', None)
+         if not caps or caps['effects'] is not True:
+             raise Refused('Native geometry effects unavailable')
+-        exact(intent, ['request', 'generation', 'incarnation', 'operation', 'context'])
++        exact(intent, ['request', 'generation', 'incarnation', 'operation', 'context'] + (['placement'] if intent.get('operation')=='snap' else []))
++        if intent.get('operation')=='snap':geometry_placement.validate(intent['placement'])
+         exact(intent['context'], ['lifetime', 'epoch', 'output', 'revision'])
+         for field in ('request', 'generation', 'incarnation'):
+             canonical(intent[field])
+diff --git c/implementation/warlock/adapter/geometry_placement.py i/implementation/warlock/adapter/geometry_placement.py
+new file mode 100644
+index 0000000..b50bf48
+--- /dev/null
++++ i/implementation/warlock/adapter/geometry_placement.py
+@@ -0,0 +1,15 @@
++"""Strict syntax for the negotiated snap intent; no geometry or effect policy."""
++import math
++from endpoint import Refused, canonical, exact
++
++REGIONS = {'left-half','right-half','top-left','top-right','bottom-left','bottom-right'}
++FIELDS = ['region','geometry','monitor','outputOwnershipGeneration','workAreaRevision','workspaceGeneration']
++
++def validate(placement):
++ exact(placement,FIELDS)
++ if type(placement['region']) is not str or placement['region'] not in REGIONS:raise Refused('Snap region')
++ values=placement['geometry']
++ if type(values) is not list or len(values)!=4 or any(type(n) not in [int,float] or not math.isfinite(n) or abs(n)>2147483647 for n in values) or values[2]<=0 or values[3]<=0:raise Refused('Snap geometry')
++ canonical(placement['monitor'],True)
++ for field in FIELDS[3:]:canonical(placement[field])
++ return placement
+diff --git c/implementation/warlock/adapter/recovery_journal.py i/implementation/warlock/adapter/recovery_journal.py
+index df159ee..56eb77d 100644
+--- c/implementation/warlock/adapter/recovery_journal.py
++++ i/implementation/warlock/adapter/recovery_journal.py
+@@ -1,5 +1,6 @@
+ """One durable uncertain window intent; never an executable retry queue."""
+ import fcntl,json,os,secrets,stat,re,hashlib,errno
++import geometry_placement
+ from pathlib import Path
+ from endpoint import Refused,binding,canonical,exact,unique
+ 
+@@ -32,12 +33,13 @@ def validate(record):
+  protocol=1 if record['schema']==1 else record['effectProtocol']
+  if type(protocol) is not int or protocol not in [1,2]:raise Refused('Recovery effect protocol')
+  binding(record['binding']);intent=record['intent']
+- exact(intent,['request','generation','incarnation','operation','context'])
++ exact(intent,['request','generation','incarnation','operation','context']+(['placement'] if protocol==2 and isinstance(intent,dict) and intent.get('operation')=='snap' else []))
++ if protocol==2 and intent.get('operation')=='snap':geometry_placement.validate(intent['placement'])
+  for key in ['request','generation','incarnation']:canonical(intent[key])
+  exact(intent['context'],['lifetime','epoch','output','revision'])
+  for value in intent['context'].values():canonical(value)
+  if intent['context']['lifetime']!=record['binding']['lifetime'] or intent['context']['epoch']!=record['binding']['frontend']:raise Refused('Recovery context')
+- operations=['minimize','restore','activate'] if protocol==1 else ['maximize','restore-geometry']
++ operations=['minimize','restore','activate'] if protocol==1 else ['maximize','restore-geometry','snap']
+  if intent['operation'] not in operations or record['status'] not in ['Pending','Committed','Refused','Unknown']:raise Refused('Recovery outcome')
+  return record
+ 
+diff --git c/implementation/warlock/native/authority.cpp i/implementation/warlock/native/authority.cpp
+index 64394e4..ff9f7d4 100644
+--- c/implementation/warlock/native/authority.cpp
++++ i/implementation/warlock/native/authority.cpp
+@@ -782,8 +782,8 @@ std::string observe(eHyprCtlOutputFormat, std::string request) {
+             const auto found=sessions.find(peer);
+             if(!native || !sessionId || !frontend || found==sessions.end() || found->second.start!=start || *native!=lifetime || *sessionId!=found->second.id || *frontend!=found->second.frontend || !grantRegistry->callerMatches(verifiedPeer(peer,start),{lifetime,*sessionId,*frontend})) reply=error("binding-mismatch");
+             else if(operation=="geometry-attach") {
+-                found->second.geometryProtocol=json_node_get_int(geometryProtocol);found->second.geometryEnabled=true;found->second.geometryFrontend=found->second.frontend;found->second.geometryOperations={"maximize","restore-geometry"};
+-                reply="{\"protocolVersion\":3,\"kind\":\"geometry-attached\",\"geometryProtocol\":"+std::to_string(found->second.geometryProtocol)+",\"binding\":"+binding(found->second)+",\"requestId\":"+quote(std::to_string(*requestId))+",\"capabilities\":{\"observe\":true,\"effects\":true,\"effectProtocol\":2,\"operations\":[\"maximize\",\"restore-geometry\"],\"placementCapacity\":256,\"canonicalScene\":false}}";
++                found->second.geometryProtocol=json_node_get_int(geometryProtocol);found->second.geometryEnabled=true;found->second.geometryFrontend=found->second.frontend;found->second.geometryOperations={"maximize","restore-geometry"};if(found->second.geometryProtocol==2)found->second.geometryOperations.insert("snap");
++                reply="{\"protocolVersion\":3,\"kind\":\"geometry-attached\",\"geometryProtocol\":"+std::to_string(found->second.geometryProtocol)+",\"binding\":"+binding(found->second)+",\"requestId\":"+quote(std::to_string(*requestId))+",\"capabilities\":{\"observe\":true,\"effects\":true,\"effectProtocol\":2,\"operations\":"+(found->second.geometryProtocol==2?"[\"maximize\",\"restore-geometry\",\"snap\"]":"[\"maximize\",\"restore-geometry\"]")+",\"placementCapacity\":256,\"canonicalScene\":false}}";
+             } else if(!found->second.geometryEnabled || found->second.geometryFrontend!=found->second.frontend || found->second.geometryProtocol!=json_node_get_int(geometryProtocol)) reply=error("geometry-negotiation-required");
+             else {
+                 const auto floor=counter(object,"minimumWatermark",true);
+diff --git c/implementation/warlock/native/geometry-effects.inc i/implementation/warlock/native/geometry-effects.inc
+new file mode 100644
+index 0000000..4765767
+--- /dev/null
++++ i/implementation/warlock/native/geometry-effects.inc
+@@ -0,0 +1,141 @@
++// Isolated qualification candidate: exact implemented operation negotiation.
++Elm::Placement::Rect placementRect(const CBox& box) {return {box.x,box.y,box.w,box.h};}
++struct GeometryScope {
++    Elm::Placement::Scope scope;
++    PHLWORKSPACE workspace;
++    PHLMONITOR output;
++    uint64_t outputDependency;
++};
++std::optional<GeometryScope> geometryScope(const PHLWINDOW& window) {
++    const auto workspace=window->m_workspace;const auto output=window->m_monitor.lock();
++    if(!workspace || !workspace->m_space || !output || output->m_id<0) return {};
++    const auto wg=geometryWorkspaces.bind(workspace),og=geometryOutputs.bind(output);
++    const auto area=geometryWorkAreaRevision(wg,og,geometryRect(workspace->m_space->workArea(true)));
++    const auto scope=Elm::Placement::Scope::fromNative(workspace->m_id,wg,static_cast<uint64_t>(output->m_id),og,area);
++    if(!scope) return {};
++    return GeometryScope{*scope,workspace,output,outputGeneration};
++}
++bool geometryTargetEligible(const PHLWINDOW& window,int protocol) {
++    const auto target=window->layoutTarget();const auto workspace=window->m_workspace;
++    const auto modes=Fullscreen::controller()->getFullscreenModes(window);
++    if(!target || !workspace || !workspace->m_space || !window->m_isMapped || window->parent() || window->m_group || window->m_isX11 || !window->m_xdgSurface || !window->m_xdgSurface->m_toplevel || !target->floating() || window->m_pinned || window->isHidden() || Desktop::WindowPolicy::isMinimized(window) || !workspace->isVisible() || window->onSpecialWorkspace() || !window->m_monitor.lock() || target->workspace()!=workspace || modes.internal!=modes.client || modes.internal==Fullscreen::FSMODE_FULLSCREEN || Fullscreen::controller()->layoutManagedFS(window)) return false;
++    if(g_pSessionLockManager->isSessionLocked() || !g_pInputManager->m_exclusiveLSes.empty() || g_pSeatManager->m_seatGrab || g_layoutManager->dragController()->target()) return false;
++    const auto family=nativeFamily(window);if(!family || family->size()!=1) return false;
++    if(protocol==1) {
++    const auto raw=window->m_xdgSurface->m_toplevel->m_current;
++    if(!std::isfinite(raw.minSize.x) || !std::isfinite(raw.minSize.y) || !std::isfinite(raw.maxSize.x) || !std::isfinite(raw.maxSize.y) || raw.minSize.x<0 || raw.minSize.y<0 || raw.maxSize.x<0 || raw.maxSize.y<0 || raw.maxSize.x>0 || raw.maxSize.y>0 || raw.minSize.x>1 || raw.minSize.y>1) return false;
++    const auto minimum=target->minSize(),maximum=target->maxSize();
++    if((minimum && (minimum->x>1 || minimum->y>1)) || (maximum && (maximum->x<std::numeric_limits<double>::max() || maximum->y<std::numeric_limits<double>::max()))) return false;
++    } else if(protocol==2) {
++        const auto input=geometryInput(window,Elm::ProspectiveGeometry::Operation::Maximize,CBox{0,0,1,1},{});
++        if(!input || geometryPolicyInputs(window)=="null" || input->xdgGeometryOrigin!=Vector2D{0,0} || Elm::ProspectiveGeometry::fixedConfigureDomain(input->raw,input->layout))return false;
++    } else return false;
++    for(const auto& peer:Desktop::windowState()->windows()) if(peer!=window && peer->m_isMapped && peer->m_workspace==workspace) {
++        const auto other=Fullscreen::controller()->getFullscreenModes(peer);
++        if(other.internal!=Fullscreen::FSMODE_NONE || other.client!=Fullscreen::FSMODE_NONE) return false;
++    }
++    return true;
++}
++// Exact peer state/readback includes identity, placement and input protection.
++std::string geometryPeers(const PHLWINDOW& excluded) {
++    std::string result;
++    for(const auto& window:Desktop::windowState()->windows()) if(window!=excluded && window->m_isMapped) {
++        const auto scope=geometryScope(window);const auto modes=Fullscreen::controller()->getFullscreenModes(window);
++        if(!scope || !window->layoutTarget()) throw std::runtime_error("Peer scope unavailable");
++        result+=identityOf(window)+":"+identityOf(window->parent())+":"+std::to_string(scope->workspace->m_id)+":"+std::to_string(scope->output->m_id)+":"+std::to_string(geometryWorkspaces.bind(scope->workspace))+":"+std::to_string(geometryOutputs.bind(scope->output))+":"+std::to_string(geometryWorkAreaRevision(geometryWorkspaces.bind(scope->workspace),geometryOutputs.bind(scope->output),geometryRect(scope->workspace->m_space->workArea(true))))+":"+geometryMode(modes.internal)+":"+geometryMode(modes.client)+":"+geometryRect(window->layoutTarget()->position())+":"+geometryRect(window->geometricBox(Desktop::View::IGeometric::GEOMETRIC_GOAL))+":"+(Desktop::WindowPolicy::isMinimized(window)?"1":"0")+":"+(window->m_pinned?"1":"0")+":"+(window->isHidden()?"1":"0")+";";
++    }
++    return result;
++}
++#include "snap-placement.inc"
++std::string performGeometryEffect(Session& session,JsonObject* object) {
++    const auto intent=objectMember(object,"intent");
++    if(!intent)return error("effect-schema");
++    const auto name=json_object_get_member(intent,"operation");
++    const bool snap=name && JSON_NODE_HOLDS_VALUE(name) && json_node_get_value_type(name)==G_TYPE_STRING && std::string(json_node_get_string(name))=="snap";
++    const auto placement=snap?snapSubmission(intent):std::nullopt;
++    if(snap ? (!fields(intent,{"request","generation","incarnation","operation","context","placement"}) || !placement) : !fields(intent,{"request","generation","incarnation","operation","context"}))return error("effect-schema");
++    const auto request=counter(intent,"request"),generation=counter(intent,"generation"),targetId=counter(intent,"incarnation");
++    const auto context=objectMember(intent,"context");
++    if(!request || !generation || !targetId || !context || !fields(context,{"lifetime","epoch","output","revision"})) return error("effect-schema");
++    const auto native=counter(context,"lifetime"),epoch=counter(context,"epoch"),output=counter(context,"output"),expected=counter(context,"revision");
++    const auto op=json_object_get_member(intent,"operation");
++    if(!native || !epoch || !output || !expected || !op || !JSON_NODE_HOLDS_VALUE(op) || json_node_get_value_type(op)!=G_TYPE_STRING) return error("effect-schema");
++    const std::string operation=json_node_get_string(op);
++    gchar* raw=json_to_string(json_object_get_member(object,"intent"),FALSE);const std::string encoded(raw);g_free(raw);
++    const auto reply=[&](const char* status,const char* reason){return effectOutcome(session,encoded,status,reason,2);};
++    if(!session.geometryEnabled || session.geometryFrontend!=session.frontend || !session.geometryOperations.contains(operation)) return reply("Refused","geometry-operation-not-negotiated");
++    const std::string fingerprint="2:"+quote(operation)+":"+std::to_string(*request)+":"+std::to_string(*generation)+":"+std::to_string(*targetId)+":"+std::to_string(*native)+":"+std::to_string(*epoch)+":"+std::to_string(*output)+":"+std::to_string(*expected)+(placement?":"+snapFingerprint(*placement):"");
++    if(*native!=lifetime || *epoch!=session.frontend) return reply("Refused","authority-mismatch");
++    if(*request==session.effectRequest) return fingerprint==session.lastPayload ? session.lastReply : reply("Refused","request-reuse");
++    if(*request<session.effectRequest || *generation<=session.generation) return reply("Refused","operation-order");
++    session.effectRequest=*request;session.generation=*generation;session.lastPayload=fingerprint;
++    session.lastReply=reply("Unknown","effect-unproven");
++    const auto reject=[&](const char* reason){session.lastReply=reply("Refused",reason);return session.lastReply;};
++    if(operation!="maximize" && operation!="restore-geometry" && operation!="snap") return reject("unsupported-operation");
++    refreshGeometryFacts();
++    if(*output!=outputGeneration || *expected!=geometryRevision) return reject("dependency-mismatch");
++    const auto member=std::ranges::find_if(members,[&](const Member& entry){return entry.id==*targetId;});
++    if(member==members.end() || !member->window.lock()) return reject("stale-incarnation");
++    const auto window=member->window.lock();const Elm::Geometry::Target barrier{lifetime,*targetId};
++    if(effectBarriers.blocked(barrier)) return reject("native-operation-unresolved");
++    if(!geometryTargetEligible(window,session.geometryProtocol)) return reject("geometry-ineligible");
++    const auto scope=geometryScope(window);const auto key=Elm::Placement::Identity::fromNative(lifetime,*targetId);
++    if(!scope || !key) return reject("geometry-scope");
++    if(placement)return performSnapEffect(session,*placement,*targetId,window,barrier,*scope,*key,reply,reject);
++    const auto modes=Fullscreen::controller()->getFullscreenModes(window);
++    auto original=geometryPlacements.read(*key,key,scope->scope);
++    const bool maximize=operation=="maximize";
++    if(maximize && modes.internal==Fullscreen::FSMODE_NONE && original) {
++        const Elm::Placement::Original current{placementRect(window->layoutTarget()->position()),placementRect(window->geometricBox(Desktop::View::IGeometric::GEOMETRIC_GOAL))};
++        if(!(current==*original)) return reject("ordinary-placement-external-change");
++    }
++    if(maximize && modes.internal==Fullscreen::FSMODE_MAXIMIZED && !original) return reject("ordinary-placement-unavailable");
++    if(!maximize && modes.internal==Fullscreen::FSMODE_MAXIMIZED && !original) return reject("ordinary-placement-unavailable");
++    // Desired-state duplicate is a read-only operation, never a recapture.
++    if((maximize && modes.internal==Fullscreen::FSMODE_MAXIMIZED) || (!maximize && modes.internal==Fullscreen::FSMODE_NONE)) {
++        if(!maximize && original) {
++            const Elm::Placement::Original current{placementRect(window->layoutTarget()->position()),placementRect(window->geometricBox(Desktop::View::IGeometric::GEOMETRIC_GOAL))};
++            if(!(current==*original)) return reject("ordinary-placement-external-change");
++            geometryPlacements.retire(*key);refreshGeometryFacts();notifyEffectChange();
++        }
++        session.lastReply=reply("Committed","already-applied");return session.lastReply;
++    }
++    const auto prospective=geometryProspective(window,maximize,original);
++    const auto conversion=geometryPolicyInputs(window);
++    if(session.geometryProtocol==2 && (!prospective || conversion=="null"))return reject("geometry-size-infeasible");
++    const auto oldFocus=Desktop::focusState()->window();const auto oldKeyboard=g_pSeatManager->m_state.keyboardFocus.lock();
++    const auto oldPointer=g_pSeatManager->m_state.pointerFocus.lock();const auto peers=geometryPeers(window);
++    if(!effectBarriers.begin(barrier)) return reject("native-operation-bound");
++    if(maximize) {
++        const Elm::Placement::Original capture{placementRect(window->layoutTarget()->position()),placementRect(window->geometricBox(Desktop::View::IGeometric::GEOMETRIC_GOAL))};
++        const auto result=geometryPlacements.capture(*key,key,scope->scope,capture);
++        original=geometryPlacements.read(*key,key,scope->scope);
++        if((result!=Elm::Placement::Capture::Captured && result!=Elm::Placement::Capture::Duplicate) || !original) {
++            effectBarriers.definitive(barrier);return reject("ordinary-placement-bound-or-incompatible");
++        }
++    }
++    try {
++        const auto desired=maximize?Fullscreen::FSMODE_MAXIMIZED:Fullscreen::FSMODE_NONE;
++        Fullscreen::controller()->setFullscreenMode(window,desired,desired,false);
++        refreshFacts();refreshGeometryFacts();notifyEffectChange();
++        // Callbacks may replace identity/owners. Reacquire exact native member.
++        const auto live=std::ranges::find_if(members,[&](const Member& entry){return entry.id==*targetId && entry.window.lock()==window;});
++        if(live==members.end() || !geometryTargetEligible(window,session.geometryProtocol)) return session.lastReply;
++        const auto currentScope=geometryScope(window);const auto actual=Fullscreen::controller()->getFullscreenModes(window);
++        if(!currentScope || !(currentScope->scope==scope->scope) || currentScope->workspace!=scope->workspace || currentScope->output!=scope->output || currentScope->outputDependency!=scope->outputDependency || actual.internal!=desired || actual.client!=desired || Desktop::focusState()->window()!=oldFocus || g_pSeatManager->m_state.keyboardFocus.lock()!=oldKeyboard || g_pSeatManager->m_state.pointerFocus.lock()!=oldPointer || geometryPeers(window)!=peers) return session.lastReply;
++        const auto known=geometryPlacements.read(*key,key,currentScope->scope);if(!known) return session.lastReply;
++        if(session.geometryProtocol==2) {
++            const auto fresh=geometryProspective(window,maximize,known);
++            if(!fresh || geometryPolicyInputs(window)!=conversion || fresh->logical!=prospective->logical || fresh->real!=prospective->real || fresh->configure!=prospective->configure || window->layoutTarget()->position()!=prospective->logical || window->geometricBox(Desktop::View::IGeometric::GEOMETRIC_GOAL)!=prospective->real || window->m_pendingReportedSize!=prospective->real.size() || window->m_pendingReportedSize.floor()!=prospective->configure)return session.lastReply;
++        }
++        if(maximize) {
++            if(session.geometryProtocol==1 && geometryRect(window->layoutTarget()->position())!=geometryRect(scope->workspace->m_space->workArea(true))) return session.lastReply;
++        } else {
++            const Elm::Placement::Original restored{placementRect(window->layoutTarget()->position()),placementRect(window->geometricBox(Desktop::View::IGeometric::GEOMETRIC_GOAL))};
++            if(!(restored==*known)) return session.lastReply;
++            geometryPlacements.retire(*key);
++        }
++        effectBarriers.definitive(barrier);session.lastReply=reply("Committed","applied");
++    } catch(...) {notifyEffectChange();} // No retries, no recapture, no fabricated rollback.
++    return session.lastReply;
++}
+diff --git c/implementation/warlock/native/host-journal.h i/implementation/warlock/native/host-journal.h
+index 1676b1e..f03d65c 100644
+--- c/implementation/warlock/native/host-journal.h
++++ i/implementation/warlock/native/host-journal.h
+@@ -1,3 +1,4 @@
++#include <math.h>
+ /* Durable admission belongs to the host; authoritative settlement to the broker. */
+ #include <errno.h>
+ #include <sys/file.h>
+@@ -84,6 +85,24 @@ static gboolean admission_bind(JsonNode *bound) {
+ static gboolean admission_positive(JsonObject *object,const char *name) {
+     guint64 number;return surface_uint(json_object_get_member(object,name),&number) && number>0;
+ }
++static gboolean admission_placement(JsonObject *intent) {
++    JsonNode *node=json_object_get_member(intent,"placement");if(!node || !JSON_NODE_HOLDS_OBJECT(node))return FALSE;
++    JsonObject *p=json_node_get_object(node);const char *const fields[]={"region","geometry","monitor","outputOwnershipGeneration","workAreaRevision","workspaceGeneration"};
++    if(!surface_fields(p,fields,6))return FALSE;
++    JsonNode *name=json_object_get_member(p,"region");if(!surface_text(name,32,FALSE))return FALSE;
++    const char *region=json_node_get_string(name);
++    if(!g_str_equal(region,"left-half")&&!g_str_equal(region,"right-half")&&!g_str_equal(region,"top-left")&&!g_str_equal(region,"top-right")&&!g_str_equal(region,"bottom-left")&&!g_str_equal(region,"bottom-right"))return FALSE;
++    guint64 monitor;if(!surface_uint(json_object_get_member(p,"monitor"),&monitor))return FALSE;
++    for(guint i=3;i<6;i++)if(!admission_positive(p,fields[i]))return FALSE;
++    JsonNode *rect=json_object_get_member(p,"geometry");if(!rect || !JSON_NODE_HOLDS_ARRAY(rect))return FALSE;
++    JsonArray *values=json_node_get_array(rect);if(json_array_get_length(values)!=4)return FALSE;
++    for(guint i=0;i<4;i++){
++        JsonNode *value=json_array_get_element(values,i);if(!JSON_NODE_HOLDS_VALUE(value))return FALSE;
++        GType type=json_node_get_value_type(value);if(type!=G_TYPE_INT64 && type!=G_TYPE_DOUBLE)return FALSE;
++        double n=json_node_get_double(value);if(!isfinite(n)||fabs(n)>2147483647.0||(i>=2&&n<=0))return FALSE;
++    }
++    return TRUE;
++}
+ static JsonNode *admission_record(JsonNode *request) {
+     if (!request || !JSON_NODE_HOLDS_OBJECT(request)) return NULL;
+     JsonObject *o=json_node_get_object(request);
+@@ -95,7 +114,10 @@ static JsonNode *admission_record(JsonNode *request) {
+     if (!JSON_NODE_HOLDS_OBJECT(bn) || !JSON_NODE_HOLDS_OBJECT(in)) return NULL;
+     JsonObject *b=json_node_get_object(bn),*intent=json_node_get_object(in);
+     const char *const bindings[]={"lifetime","session","frontend"},*const intents[]={"request","generation","incarnation","operation","context"},*const contexts[]={"lifetime","epoch","output","revision"};
+-    if (!surface_fields(b,bindings,3) || !surface_fields(intent,intents,5)) return NULL;
++    JsonNode *operationNode=json_object_get_member(intent,"operation");
++    gboolean snap=json_node_get_int(ep)==2 && operationNode && surface_text(operationNode,32,FALSE) && g_str_equal(json_node_get_string(operationNode),"snap");
++    const char *const snapFields[]={"request","generation","incarnation","operation","context","placement"};
++    if (!surface_fields(b,bindings,3) || !(snap ? surface_fields(intent,snapFields,6)&&admission_placement(intent) : surface_fields(intent,intents,5))) return NULL;
+     for(guint i=0;i<3;i++) if (!admission_positive(b,bindings[i]) || !admission_positive(intent,intents[i])) return NULL;
+     JsonNode *cn=json_object_get_member(intent,"context"),*op=json_object_get_member(intent,"operation");
+     if (!JSON_NODE_HOLDS_OBJECT(cn) || !surface_text(op,32,FALSE)) return NULL;
+@@ -104,7 +126,7 @@ static JsonNode *admission_record(JsonNode *request) {
+     for(guint i=0;i<4;i++) if (!admission_positive(context,contexts[i])) return NULL;
+     const char *operation=json_node_get_string(op);
+     gint64 protocol=json_node_get_int(ep);
+-    gboolean supported=protocol==1 ? (g_str_equal(operation,"minimize") || g_str_equal(operation,"restore") || g_str_equal(operation,"activate")) : (g_str_equal(operation,"maximize") || g_str_equal(operation,"restore-geometry"));
++    gboolean supported=protocol==1 ? (g_str_equal(operation,"minimize") || g_str_equal(operation,"restore") || g_str_equal(operation,"activate")) : (g_str_equal(operation,"maximize") || g_str_equal(operation,"restore-geometry") || snap);
+     if (!supported ||
+         !g_str_equal(json_object_get_string_member(b,"lifetime"),json_object_get_string_member(context,"lifetime")) ||
+         !g_str_equal(json_object_get_string_member(b,"frontend"),json_object_get_string_member(context,"epoch"))) return NULL;
+@@ -121,6 +143,16 @@ static char *admission_key(JsonNode *record) {
+     for(guint n=0;n<3;n++)json_array_add_string_element(a,json_object_get_string_member(i,ids[n]));
+     json_array_add_string_element(a,json_object_get_string_member(i,"operation"));
+     for(guint n=0;n<4;n++)json_array_add_string_element(a,json_object_get_string_member(c,contexts[n]));
++    if(g_str_equal(json_object_get_string_member(i,"operation"),"snap")){
++        JsonObject *p=json_object_get_object_member(i,"placement");const char *const fields[]={"region","monitor","outputOwnershipGeneration","workAreaRevision","workspaceGeneration"};
++        for(guint n=0;n<5;n++)json_array_add_string_element(a,json_object_get_string_member(p,fields[n]));
++        JsonArray *rect=json_object_get_array_member(p,"geometry");
++        for(guint n=0;n<4;n++){
++            double value=json_array_get_double_element(rect,n);if(value==0)value=0;
++            guint64 bits;memcpy(&bits,&value,sizeof(bits));char hex[17];g_snprintf(hex,sizeof(hex),"%016" G_GINT64_MODIFIER "x",bits);
++            json_array_add_string_element(a,hex);
++        }
++    }
+     g_autoptr(JsonNode) node=json_node_new(JSON_NODE_ARRAY);json_node_take_array(node,a);
+     g_autofree char *raw=json_to_string(node,FALSE);return g_compute_checksum_for_string(G_CHECKSUM_SHA256,raw,-1);
+ }
+diff --git c/implementation/warlock/native/snap-placement.inc i/implementation/warlock/native/snap-placement.inc
+new file mode 100644
+index 0000000..13bf9ba
+--- /dev/null
++++ i/implementation/warlock/native/snap-placement.inc
+@@ -0,0 +1,68 @@
++// Negotiated geometry operation; syntax alone never admits a native mutation.
++struct SnapSubmission {
++    std::string region;
++    CBox geometry;
++    uint64_t monitor, output, area, workspace;
++};
++std::optional<SnapSubmission> snapSubmission(JsonObject* intent) {
++    const auto p=objectMember(intent,"placement");
++    if(!p || !fields(p,{"region","geometry","monitor","outputOwnershipGeneration","workAreaRevision","workspaceGeneration"}))return {};
++    const auto name=json_object_get_member(p,"region");
++    if(!name || !JSON_NODE_HOLDS_VALUE(name) || json_node_get_value_type(name)!=G_TYPE_STRING)return {};
++    const std::string region=json_node_get_string(name);
++    if(region!="left-half" && region!="right-half" && region!="top-left" && region!="top-right" && region!="bottom-left" && region!="bottom-right")return {};
++    const auto monitor=counter(p,"monitor",true),output=counter(p,"outputOwnershipGeneration"),area=counter(p,"workAreaRevision"),workspace=counter(p,"workspaceGeneration");
++    const auto node=json_object_get_member(p,"geometry");
++    if(!monitor || !output || !area || !workspace || !node || !JSON_NODE_HOLDS_ARRAY(node))return {};
++    const auto values=json_node_get_array(node);if(json_array_get_length(values)!=4)return {};
++    double rect[4];
++    for(unsigned i=0;i<4;i++){
++        const auto value=json_array_get_element(values,i);if(!JSON_NODE_HOLDS_VALUE(value))return {};
++        const auto type=json_node_get_value_type(value);if(type!=G_TYPE_INT64 && type!=G_TYPE_DOUBLE)return {};
++        rect[i]=json_node_get_double(value);if(!std::isfinite(rect[i]) || std::abs(rect[i])>INT_MAX || (i>=2 && rect[i]<=0))return {};
++    }
++    return SnapSubmission{region,CBox{rect[0],rect[1],rect[2],rect[3]},*monitor,*output,*area,*workspace};
++}
++std::string snapFingerprint(const SnapSubmission& p) {
++    return quote(p.region)+":"+geometryRect(p.geometry)+":"+std::to_string(p.monitor)+":"+std::to_string(p.output)+":"+std::to_string(p.area)+":"+std::to_string(p.workspace);
++}
++CBox snapRegion(const CBox& area,const std::string& region) {
++    const bool right=region=="right-half" || region=="top-right" || region=="bottom-right";
++    const bool quarter=region!="left-half" && region!="right-half";
++    const bool bottom=region=="bottom-left" || region=="bottom-right";
++    return {area.x+(right?area.w/2:0),area.y+(bottom?area.h/2:0),area.w/2,quarter?area.h/2:area.h};
++}
++template<class Reply,class Reject>
++std::string performSnapEffect(Session& session,const SnapSubmission& placement,uint64_t targetId,const PHLWINDOW& window,
++    const Elm::Geometry::Target& barrier,const GeometryScope& scope,const Elm::Placement::Identity& key,Reply reply,Reject reject) {
++    if(session.geometryProtocol!=2)return reject("snap-protocol");
++    const auto modes=Fullscreen::controller()->getFullscreenModes(window);
++    if(modes.internal!=Fullscreen::FSMODE_NONE || modes.client!=Fullscreen::FSMODE_NONE)return reject("snap-mode");
++    if(geometryPlacements.read(key,key,scope.scope))return reject("ordinary-placement-reserved");
++    const auto wg=geometryWorkspaces.bind(scope.workspace),og=geometryOutputs.bind(scope.output);
++    const auto workArea=scope.workspace->m_space->workArea(true);
++    const auto revision=geometryWorkAreaRevision(wg,og,geometryRect(workArea));
++    if(placement.monitor!=static_cast<uint64_t>(scope.output->m_id) || placement.output!=og || placement.area!=revision || placement.workspace!=wg)return reject("snap-scope-mismatch");
++    const auto desired=snapRegion(workArea,placement.region);
++    if(std::abs(desired.x-placement.geometry.x)>1e-6 || std::abs(desired.y-placement.geometry.y)>1e-6 || std::abs(desired.w-placement.geometry.w)>1e-6 || std::abs(desired.h-placement.geometry.h)>1e-6)return reject("snap-region-mismatch");
++    const auto input=geometryInput(window,Elm::ProspectiveGeometry::Operation::RestoreOrdinary,desired,{});
++    const auto projected=input?Elm::ProspectiveGeometry::project(*input):std::nullopt;
++    const auto conversion=geometryPolicyInputs(window);
++    if(!projected || conversion=="null")return reject("snap-size-infeasible");
++    const auto oldFocus=Desktop::focusState()->window();const auto oldKeyboard=g_pSeatManager->m_state.keyboardFocus.lock();
++    const auto oldPointer=g_pSeatManager->m_state.pointerFocus.lock();const auto peers=geometryPeers(window);
++    if(!effectBarriers.begin(barrier))return reject("native-operation-bound");
++    try {
++        window->layoutTarget()->setPositionGlobal(projected->logical);
++        refreshFacts();refreshGeometryFacts();notifyEffectChange();
++        const auto live=std::ranges::find_if(members,[&](const Member& entry){return entry.id==targetId && entry.window.lock()==window;});
++        if(live==members.end() || !geometryTargetEligible(window,session.geometryProtocol))return session.lastReply;
++        const auto current=geometryScope(window);const auto actual=Fullscreen::controller()->getFullscreenModes(window);
++        if(!current || !(current->scope==scope.scope) || current->workspace!=scope.workspace || current->output!=scope.output || current->outputDependency!=scope.outputDependency || actual.internal!=Fullscreen::FSMODE_NONE || actual.client!=Fullscreen::FSMODE_NONE || Desktop::focusState()->window()!=oldFocus || g_pSeatManager->m_state.keyboardFocus.lock()!=oldKeyboard || g_pSeatManager->m_state.pointerFocus.lock()!=oldPointer || geometryPeers(window)!=peers)return session.lastReply;
++        const auto freshInput=geometryInput(window,Elm::ProspectiveGeometry::Operation::RestoreOrdinary,desired,{});
++        const auto fresh=freshInput?Elm::ProspectiveGeometry::project(*freshInput):std::nullopt;
++        if(!fresh || geometryPolicyInputs(window)!=conversion || fresh->logical!=projected->logical || fresh->real!=projected->real || fresh->configure!=projected->configure || window->layoutTarget()->position()!=projected->logical || window->geometricBox(Desktop::View::IGeometric::GEOMETRIC_GOAL)!=projected->real || window->m_pendingReportedSize!=projected->real.size() || window->m_pendingReportedSize.floor()!=projected->configure)return session.lastReply;
++        effectBarriers.definitive(barrier);session.lastReply=reply("Committed","applied");
++    }catch(...){notifyEffectChange();} // Retain Unknown, never replay or invent rollback.
++    return session.lastReply;
++}
+diff --git c/implementation/warlock/qa/SnapReplay.elm i/implementation/warlock/qa/SnapReplay.elm
+index b946ad7..95a1f98 100644
+--- c/implementation/warlock/qa/SnapReplay.elm
++++ i/implementation/warlock/qa/SnapReplay.elm
+@@ -2,6 +2,8 @@ port module SnapReplay exposing (main)
+ 
+ import Binding
+ import Desktop
++import Effects
++import NativeOutcome
+ import GeometryProjection as Geometry
+ import Json.Decode as D
+ import Json.Encode as E
+@@ -50,6 +52,27 @@ resultFor binding =
+         closed=Desktop.capture opened |> Maybe.map (\stamp -> Desktop.update (Desktop.CloseSnap stamp) opened |> Tuple.first) |> Maybe.withDefault opened
+         controls=Surface.controls opened
+         disabledAction=E.object [("surfaceProtocol",E.int 2),("kind",E.string "surface-action"),("surface",E.string "popup"),("publication",E.string "1"),("lease",E.string "1"),("id",E.string "snap:apply")]
++        caps={effects=True,operations=["maximize","restore-geometry","snap"]}
++        placement=Snap.open geometry (counter "1") |> Maybe.andThen Snap.proposal
++        begun=placement |> Maybe.map (\value -> Effects.beginGeometry caps geometry (Effects.SnapPlacement value) (counter "1") ready.windows.shell.effects) |> Maybe.withDefault (ready.windows.shell.effects,Nothing,Just "No fixture proposal")
++        (allocated,wire,error)=begun
++        currentIntent=allocated.transaction |> Maybe.map .intent
++        roundtrip=currentIntent |> Maybe.map (Effects.encodeIntent >> D.decodeValue Effects.intentDecoder >> Result.mapError D.errorToString) |> Maybe.withDefault (Err "Missing intent")
++        duplicate=placement |> Maybe.map (\value -> Effects.beginGeometry caps geometry (Effects.SnapPlacement value) (counter "1") allocated) |> Maybe.withDefault begun
++        stalePlacement=placement |> Maybe.map (\value -> Effects.beginGeometry caps changed (Effects.SnapPlacement value) (counter "1") ready.windows.shell.effects) |> Maybe.withDefault begun
++        blockedPlacement=placement |> Maybe.map (\value -> Effects.beginGeometry caps grabbed (Effects.SnapPlacement value) (counter "1") ready.windows.shell.effects) |> Maybe.withDefault begun
++        negotiatedWindows=ready.windows
++        negotiatedShell=negotiatedWindows.shell
++        negotiated={ready|windows={negotiatedWindows|shell={negotiatedShell|geometryCaps=Just caps}}}
++        chooser=Desktop.capture negotiated |> Maybe.map (\stamp -> Desktop.update (Desktop.OpenSnap stamp (counter "1")) negotiated |> Tuple.first) |> Maybe.withDefault negotiated
++        submitted=Desktop.capture chooser |> Maybe.map (\stamp -> Desktop.update (Desktop.ApplySnap stamp) chooser) |> Maybe.withDefault (chooser,[])
++        recovered=currentIntent |> Maybe.map (\intent -> Effects.recoverUnknown 2 intent ready.windows.shell.effects |> Result.withDefault ready.windows.shell.effects) |> Maybe.withDefault ready.windows.shell.effects
++        issued=placement |> Maybe.andThen (\proposed -> Shell.captureGeometry negotiatedShell |> Maybe.map (\stamp -> Shell.update (Shell.Act stamp (Effects.SnapPlacement proposed) (counter "1")) {negotiatedShell|geometryCaps=Just caps} |> Tuple.first)) |> Maybe.withDefault negotiatedShell
++        issuedIntent=issued.effects.transaction |> Maybe.map .intent
++        nativeReceipt intent = E.object [("protocolVersion",E.int 3),("kind",E.string "effect-outcome"),("effectProtocol",E.int 2),("binding",bound),("intent",Effects.encodeIntent intent),("status",E.string "Committed"),("reason",E.string "applied"),("revision",E.string "2"),("outputGeneration",E.string "1")]
++        settled=issuedIntent |> Maybe.map (nativeReceipt >> Shell.Incoming >> (\message -> Shell.update message issued |> Tuple.first)) |> Maybe.withDefault issued
++        altered=issuedIntent |> Maybe.map (\intent -> {intent|operation=Effects.SnapPlacement {region="right-half",geometry=[320.5,30,400.5,601],monitor=UInt64.zero,outputOwnershipGeneration=counter "2",workAreaRevision=counter "3",workspaceGeneration=counter "4",context=geometry.context}})
++        rejected=altered |> Maybe.map (nativeReceipt >> Shell.Incoming >> (\message -> Shell.update message issued |> Tuple.first)) |> Maybe.withDefault issued
+         checks=[("actualDesktopOpensSnap",Surface.mode opened=="snap" && opened.snap/=Nothing),
+             ("leftHalfUsesNativeWorkArea",(proposal opened |> Maybe.map .geometry)==Just [-80,30,400.5,601]),
+             ("rightHalfCompletesOddWidth",(proposal (Tuple.first right) |> Maybe.map .geometry)==Just [320.5,30,400.5,601]),
+@@ -68,6 +91,17 @@ resultFor binding =
+             ("nativePlacementExplicitlyUnavailable",List.any (\control -> control.id=="snap:apply" && not control.enabled && control.message==Nothing) controls),
+             ("disabledApplyCannotResolve",Surface.resolve (counter "1") (counter "1") disabledAction opened==Nothing),
+             ("outputReflowRetiresChoiceAndOnlyReads",invalidated.snap==Nothing && not (List.any mutation reads)),
++            ("snapUsesSharedAllocator",error==Nothing && wire/=Nothing && allocated.request==counter "1" && allocated.generation==counter "1"),
++            ("placementIntentRoundTripsStrictly",roundtrip==(currentIntent |> Maybe.map Ok |> Maybe.withDefault (Err "Missing intent"))),
++            ("pendingSnapCannotAllocateAgain",duplicate==(allocated,Nothing,Just "Unresolved or disconnected native operation")),
++            ("staleOutputCannotSubmitPlacement",case stalePlacement of (_,sent,_) -> sent==Nothing),
++            ("grabCannotSubmitPlacement",case blockedPlacement of (_,sent,_) -> sent==Nothing),
++            ("negotiatedSnapExposesApply",List.any (\control -> control.id=="snap:apply" && control.enabled && control.message/=Nothing) (Surface.controls chooser)),
++            ("applyClosesChooserAndReadsBeforeMutation",Surface.mode (Tuple.first submitted)=="closed" && (Tuple.first submitted).choice/=Nothing && not (List.any mutation (Tuple.second submitted))),
++            ("unknownRecoveryRetainsPlacementAndBlocksReplay",recovered.transaction |> Maybe.map (\transaction -> transaction.status==Effects.Unknown && Just transaction.intent==currentIntent && Effects.blocked geometry.context.lifetime (counter "1") recovered) |> Maybe.withDefault False),
++            ("sharedOutcomeGateAcceptsExactSnapShape",issuedIntent |> Maybe.map (nativeReceipt >> NativeOutcome.valid) |> Maybe.withDefault False),
++            ("shellCorrelatesSnapCommittedReceipt",settled.effects.transaction |> Maybe.map (\transaction -> transaction.status==Effects.Committed) |> Maybe.withDefault False),
++            ("sameIdsDifferentPlacementCannotSettle",rejected==issued),
+             ("closeRetiresPreview",Surface.mode closed=="closed")]
+     in E.object [("checks",E.object (List.map (\(name,passed) -> (name,E.bool passed)) checks)),("frame",Surface.packet (counter "1") (counter "1") opened),
+         ("scope",E.string "Actual Desktop/Surface policy with typed geometry fixture; native geometry decoding, placement authority and original isolated recordings remain required.")]
+diff --git c/implementation/warlock/qa/check-native-authority.py i/implementation/warlock/qa/check-native-authority.py
+index eae206f..52f91ad 100644
+--- c/implementation/warlock/qa/check-native-authority.py
++++ i/implementation/warlock/qa/check-native-authority.py
+@@ -42,7 +42,7 @@ try:
+   core={'path':focus_core['binary'],'sha256':focus_core['binarySHA256']};assert sha(core['path'])==core['sha256']
+  source=OUT/'inputs/native';source.mkdir(parents=True)
+  inputs={}
+- for name in ('authority.cpp','navigation-modal.hpp'):
++ for name in ('authority.cpp','navigation-modal.hpp','geometry-effects.inc','snap-placement.inc'):
+   p=ROOT/'native'/name;inputs['native/'+name]=sha(p);shutil.copyfile(p,source/name)
+  command=next(c['command'] for c in prior['commands'] if c['name']=='compile').copy()
+  for i,arg in enumerate(command):
+@@ -57,7 +57,7 @@ try:
+  dependencies={str(pathlib.Path(p).resolve()):sha(p) for p in deps}
+  for p,h in dependencies.items():
+   if p.startswith(str(source)):
+-   assert pathlib.Path(p).name in ('authority.cpp','navigation-modal.hpp')
++   assert pathlib.Path(p).name in ('authority.cpp','navigation-modal.hpp','geometry-effects.inc','snap-placement.inc')
+   else:
+    inherited=header_prefix[0]+p[len(header_prefix[1]):] if header_prefix and p.startswith(header_prefix[1]+'/') else p
+    assert preserved.get(inherited)==h,('Unrecorded or changed inherited dependency',p)
+diff --git c/implementation/warlock/qa/check-search.py i/implementation/warlock/qa/check-search.py
+index a91a181..3a152ec 100644
+--- c/implementation/warlock/qa/check-search.py
++++ i/implementation/warlock/qa/check-search.py
+@@ -72,6 +72,7 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
+   run('task-view-model-typecheck',['quint','typecheck','qa/task-view.qnt']);run('task-view-model-named',['quint','test','qa/task-view.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79101']);run('task-view-model-invariants',['quint','run','qa/task-view.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79102'])
+  if SNAP:
+   report.update(requirements=['ELM-UX-019','ELM-UX-020'],scenarios=['ux-019','ux-020'],scope='Compiled integrated snap chooser with generation-bound half/quarter previews and stale action/output invalidation; native placement authority and original isolated recordings remain required')
++  run('snap-wire-custody',['/usr/bin/python3','-B','qa/check-snap.py'])
+   run('compile-snap',[str(HELD/pinned['compiler']),'make','qa/SnapReplay.elm','--optimize','--output=assets/snap.js'])
+   (INPUT/'qa/snap-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.SnapReplay'));run('typed-snap',['node','qa/snap-replay.js','assets/snap.js',str(OUT/'snap.json')]);report['typedSnap']=json.loads((OUT/'snap.json').read_text());assert all(report['typedSnap']['checks'].values())
+   run('snap-model-typecheck',['quint','typecheck','qa/snap-chooser.qnt']);run('snap-model-named',['quint','test','qa/snap-chooser.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79121']);run('snap-model-invariants',['quint','run','qa/snap-chooser.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79122'])
+@@ -114,7 +115,7 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
+    if TASKVIEW:
+     # The authority TU is independently compiled against its owning core; none
+     # of these reused GTK host objects link it or include its modal preflight.
+-    excluded=['native/surface.h']+(['native/authority.cpp','native/navigation-modal.hpp'] if NAV else [])
++    excluded=['native/surface.h']+(['native/authority.cpp','native/navigation-modal.hpp'] if NAV else [])+(['native/authority.cpp','native/host-journal.h','native/geometry-effects.inc','native/snap-placement.inc'] if SNAP else [])
+     assert all(sha(INPUT/p)==h for p,h in prior['inputs'].items() if p.startswith('native/') and p not in excluded)
+     assert all('surface.h' not in (INPUT/'native'/name).read_text() for name in units)
+    object_path=prior_path;object_report=prior;seen=set()
+diff --git c/implementation/warlock/qa/check-snap.py i/implementation/warlock/qa/check-snap.py
+new file mode 100644
+index 0000000..ab32a1f
+--- /dev/null
++++ i/implementation/warlock/qa/check-snap.py
+@@ -0,0 +1,70 @@
++"""Focused real snap wire/custody validators; no native acceptance claim."""
++import copy,json,pathlib,shlex,subprocess,sys,tempfile
++ROOT=pathlib.Path(__file__).resolve().parents[1]
++sys.path.insert(0,str(ROOT/'adapter'))
++import geometry_placement,recovery_journal,admission_ledger
++from geometry_endpoint import GeometryEndpoint as Endpoint
++from endpoint import Refused
++bound={'lifetime':'1','session':'1','frontend':'1'}
++placement={'region':'left-half','geometry':[-80,30,400.5,601],'monitor':'0','outputOwnershipGeneration':'2','workAreaRevision':'3','workspaceGeneration':'4'}
++intent={'request':'1','generation':'1','incarnation':'1','operation':'snap','context':{'lifetime':'1','epoch':'1','output':'1','revision':'1'},'placement':placement}
++record={'schema':2,'effectProtocol':2,'binding':bound,'intent':intent,'status':'Pending'}
++checks=[]
++def check(name,condition):
++ assert condition,name
++ checks.append(name)
++def reject(fn):
++ try:fn()
++ except Refused:return True
++ return False
++check('Actual journal accepts complete snap custody',recovery_journal.validate(copy.deepcopy(record))==record)
++check('Unknown journal retains exact placement',recovery_journal.validate(dict(copy.deepcopy(record),status='Unknown'))['intent']==intent)
++for name,mutate in [
++ ('unsupported region',lambda p:p.update(region='fullscreen')),
++ ('zero output generation',lambda p:p.update(outputOwnershipGeneration='0')),
++ ('boolean width',lambda p:p['geometry'].__setitem__(2,True)),
++ ('zero height',lambda p:p['geometry'].__setitem__(3,0)),
++ ('extra placement field',lambda p:p.update(command='anything')),
++ ('noncanonical monitor',lambda p:p.update(monitor='00')),
++ ('invalid rectangle shape',lambda p:p.update(geometry=[0,0,1]))]:
++ candidate=copy.deepcopy(record);mutate(candidate['intent']['placement']);check('Journal rejects '+name,reject(lambda:recovery_journal.validate(candidate)))
++legacy=copy.deepcopy(record);legacy['effectProtocol']=1
++check('Legacy protocol cannot carry snap',reject(lambda:recovery_journal.validate(legacy)))
++client=object.__new__(Endpoint);client.bound=bound;client.geometry_binding=bound;client.geometry_capabilities={'effects':True,'operations':['maximize','restore-geometry','snap']};calls=[]
++def request(frame):
++ calls.append(frame)
++ return {'protocolVersion':3,'kind':'effect-outcome','effectProtocol':2,'binding':bound,'intent':frame['intent'],'status':'Refused','reason':'dependency-mismatch','revision':'2','outputGeneration':'2'}
++client.request=request
++outcome=client.geometry_effect(copy.deepcopy(intent))
++check('Real endpoint preserves typed placement in protocol 2',len(calls)==1 and calls[0]['intent']==intent and calls[0]['effectProtocol']==2 and outcome['status']=='Refused')
++client.geometry_capabilities['operations']=['maximize','restore-geometry']
++check('Unnegotiated snap never reaches transport',reject(lambda:client.geometry_effect(copy.deepcopy(intent))) and len(calls)==1)
++# Compile the exact production codec functions, without storage/process globals.
++# The source is extracted verbatim and includes the real surface validator.
++source=(ROOT/'native/host-journal.h').read_text();start=source.index('static gboolean admission_positive(');end=source.index('static JsonNode *admission_normalize(',start)
++main=r'''
++int main(int argc,char **argv){
++ if(argc!=2)return 2;
++ JsonParser *parser=json_parser_new();if(!json_parser_load_from_data(parser,argv[1],-1,NULL))return 3;
++ JsonNode *record=admission_record(json_parser_get_root(parser));
++ if(!record){puts("REJECT");g_object_unref(parser);return 0;}
++ char *key=admission_key(record);puts(key);g_free(key);json_node_free(record);g_object_unref(parser);return 0;
++}
++'''
++with tempfile.TemporaryDirectory(prefix='warlock-snap-codec-') as tmp:
++ p=pathlib.Path(tmp);unit=p/'snap-codec.c';unit.write_text('#include <math.h>\n#include <glib.h>\n#include <json-glib/json-glib.h>\n#include <stdio.h>\n#include "surface.h"\n'+source[start:end]+main)
++ flags=shlex.split(subprocess.check_output(['pkg-config','--cflags','--libs','json-glib-1.0'],text=True))
++ subprocess.run(['cc','-std=c11','-Wall','-Wextra','-Werror','-Wno-unused-function','-I'+str(ROOT/'native'),str(unit),'-o',str(p/'codec'),*flags],check=True)
++ def codec(value):return subprocess.check_output([str(p/'codec'),json.dumps(value,separators=(',',':'))],text=True).strip()
++ frame={'protocolVersion':3,'kind':'window-effect','effectProtocol':2,'binding':bound,'intent':intent};key=codec(frame)
++ check('Real host admits complete snap payload',key!='REJECT')
++ check('Real host and broker custody keys agree',key==admission_ledger.storage_key(record))
++ altered=copy.deepcopy(frame);altered['intent']['placement']['geometry'][0]+=1
++ check('Host custody identity includes rectangle',codec(altered)!=key and codec(altered)!='REJECT')
++ reordered=copy.deepcopy(frame);reordered['intent']['placement']=dict(reversed(list(reordered['intent']['placement'].items())))
++ check('Host custody identity ignores field order',codec(reordered)==key)
++ missing=copy.deepcopy(frame);del missing['intent']['placement'];check('Host rejects missing placement',codec(missing)=='REJECT')
++ extra=copy.deepcopy(frame);extra['intent']['placement']['unexpected']=1;check('Host rejects extra placement fields',codec(extra)=='REJECT')
++ bool_rect=copy.deepcopy(frame);bool_rect['intent']['placement']['geometry'][2]=True;check('Host rejects boolean rectangle',codec(bool_rect)=='REJECT')
++ bad_protocol=copy.deepcopy(frame);bad_protocol['effectProtocol']=1;check('Host rejects snap under legacy protocol',codec(bad_protocol)=='REJECT')
++print(json.dumps({'passed':True,'checks':checks,'nativeAcceptance':False}))
+diff --git c/implementation/warlock/qa/current-native-pair.json i/implementation/warlock/qa/current-native-pair.json
+index 3bd680b..da66078 100644
+--- c/implementation/warlock/qa/current-native-pair.json
++++ i/implementation/warlock/qa/current-native-pair.json
+@@ -6,19 +6,21 @@
+       "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+     },
+     "plugin": {
+-      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791440691968763486/elm-window-geometry-authority.so",
+-      "sha256": "1805693201328985cbf109f5fef6779b8fe469badf094fd417e8206f91c50b47"
++      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791457340009159176/elm-window-geometry-authority.so",
++      "sha256": "55be0d723123f8089abfa0ce735f5e496aee558a0d822e1ad8278d50ee958307"
+     },
+     "aquamarine": {
+       "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+       "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+     }
+   },
+-  "authorityReport": "implementation/warlock/qa/runs/native-authority-1791440691968763486/report.json",
+-  "authorityReportSHA256": "6ad32abf5d91cba7ffd97e94a43428200380a1b10df456432ae5e7a5eb32fa88",
++  "authorityReport": "implementation/warlock/qa/runs/native-authority-1791457340009159176/report.json",
++  "authorityReportSHA256": "6004a85004b1b840860958cf49e3d31dd2e1f830556800fc5faee7713e24a42b",
+   "authorityInputs": {
+-    "native/authority.cpp": "df211288d63b258ce5858696b9f7dcdcfa179aeffa00f0abc21e34fa8c0fe23a",
+-    "native/navigation-modal.hpp": "f3a1fdabeaa4abdaa3bcd839e0a3b62854a844cd791dd338d8f1a3e5bb488c1e"
++    "native/authority.cpp": "5aa4ea53a0d811f24eda60c22b14ee594c81e44ff5722a3d0fb0e4882173e7a4",
++    "native/navigation-modal.hpp": "f3a1fdabeaa4abdaa3bcd839e0a3b62854a844cd791dd338d8f1a3e5bb488c1e",
++    "native/geometry-effects.inc": "147224d13163a3671f7606cee9df2f596c885a6b65acde9b9cb89436e4260d52",
++    "native/snap-placement.inc": "736badc0ebc3fd423286778539a453f1a704d26b3f41a8fa6416d739b4015d64"
+   },
+   "unchangedRuntimePreflight": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v204/qa/preflight.json",
+   "unchangedRuntimePreflightSHA256": "d0b121978e8833ad03da40aab848b8f80442abe5cfc7540d4582a812e1e8cc26",
+diff --git c/implementation/warlock/qa/current-search-build.json i/implementation/warlock/qa/current-search-build.json
+index 1e6afed..c5c280e 100644
+--- c/implementation/warlock/qa/current-search-build.json
++++ i/implementation/warlock/qa/current-search-build.json
+@@ -1,14 +1,14 @@
+ {
+   "schema": 1,
+-  "report": "implementation/warlock/qa/runs/snap-chooser-1791456453743910116/report.json",
+-  "reportSHA256": "00800c1d50131635e8875ad511314a25811a7ccb53579c4995672609e9b30ebd",
++  "report": "implementation/warlock/qa/runs/snap-chooser-1791458451975779193/report.json",
++  "reportSHA256": "43f050d202baa3d485ed8c57e8b1934425eb5f99076d2e1d626234231e211313",
+   "compiledAssets": {
+-    "elm.js": "3b7d96db2efd88a7e0962776af0df962119320340f10e0ceeb855cc1bf401b06",
++    "elm.js": "2dcd6ded1e384ef2387efc0421ffbdd4ab6c01c029cf20e063fedaf56fb9940b",
+     "bar.js": "be223dc781307d076c136fb6cb1da4f5996b16460ea56d25a1dab1e673a8de5b",
+     "popup.js": "530fe4e756cd47b6643e8b9b27af61d8aca2c0bac9c23b2127e6557803093df0"
+   },
+-  "binarySHA256": "69dae6338fd8f3f8c20a43e21285ff2a4831b07232f99f451a3fd4708a936c31",
++  "binarySHA256": "3efdbb3cf6d2fdc6b33c1d72b02cc5d8f410ddaf54d85886a5fde862b02dc87a",
+   "nativeAcceptance": false,
+   "fullReleaseAccepted": false,
+-  "scope": "Compiled integrated snap chooser with generation-bound half/quarter previews and stale action/output invalidation; native placement authority and original isolated recordings remain required"
++  "scope": "Compiled integrated snap placement, exact receipt/custody/recovery and bounded scope/Unknown model; actual native original journeys and independent acceptance remain separate"
+ }
+diff --git c/implementation/warlock/qa/native-window-feedback.py i/implementation/warlock/qa/native-window-feedback.py
+index 1713c3d..4bc3d3e 100644
+--- c/implementation/warlock/qa/native-window-feedback.py
++++ i/implementation/warlock/qa/native-window-feedback.py
+@@ -4,7 +4,8 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
+ lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
+ """
+ import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
+-SNAP=sys.argv[1:]==['--snap-chooser']
++PLACEMENT=sys.argv[1:]==['--snap-placement']
++SNAP=sys.argv[1:]==['--snap-chooser'] or PLACEMENT
+ REFLOW=sys.argv[1:]==['--popup-reflow']
+ DENSEMENU=sys.argv[1:]==['--dense-menu'] or REFLOW
+ DENSEPICKER=sys.argv[1:]==['--dense-picker'] or DENSEMENU
+@@ -26,6 +27,8 @@ from system_isolation import supply,validate
+ from inspection import Collector
+ isolate_session_host(host)
+ sys.path.insert(0,str(ROOT/'adapter'));from effect_endpoint import Endpoint;from endpoint import start_time
++if PLACEMENT:
++ from geometry_endpoint import GeometryEndpoint as Endpoint
+ pre=json.loads((RUNTIME/'qa/preflight.json').read_text());pair=pre['pair'];build_path=pathlib.Path(pre['controlledHostBuild']);build=json.loads(build_path.read_text());assert build['passed'];binary=build_path.parent/'elm-host';assert sha(binary)==build['binarySHA256']
+ assert not NAV or (ROOT/'qa/current-native-pair.json').exists()
+ assert not (ROOT/'native/authority.cpp').exists() or (ROOT/'qa/current-native-pair.json').exists()
+@@ -52,7 +55,7 @@ else:
+ for row in pair.values():assert sha(row['path'])==row['sha256']
+ assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
+ subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
+-OUT=ROOT/'qa/runs'/(('native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
++OUT=ROOT/'qa/runs'/(('native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+ OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
+ focus_host=None
+ if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
+@@ -112,6 +115,7 @@ if SWITCHER:report.update(requirements=['ELM-UI-003'],scenarios=['switcher-order
+ if PRIMARY:report.update(requirements=['ELM-UI-004'],scenarios=['taskbar-inactive','taskbar-active','taskbar-minimized'],scope='Actual pointer single-family activation/minimize/restore, exact native receipt and GTK keyboard recipient, MRU/desktop succession and pixels; primary keyboard and AT acceptance remain pending',nativePrimaryJourneyObserved=False)
+ if PINMENUS:report.update(requirements=['ELM-UI-008','ELM-UX-023'],scenarios=['menu-invocation','keyboard-menus'],scope='Actual current running pin, native secondary click/Menu/Shift-F10 menus and existing minimize/restore path; dense/enlarged-text, AT and independent acceptance remain open',nativePinnedMenusObserved=False)
+ if SNAP:report.update(requirements=['ELM-UX-019','ELM-UX-020'],scenarios=['ux-019','ux-020'],scope='Actual native snap chooser presentation/keyboard/output-scale invalidation only; native snap placement authority and accepted half-work-area oracle remain required',nativeSnapChooserObserved=False)
++if PLACEMENT:report.update(scope='Actual GUI snap submission through shared allocator/custody/native geometry authority, exact half-work-area readback/pixels and stale output refusal; original independent/AT release acceptance remains separate',nativeSnapPlacementObserved=False)
+ if DENSE:report.update(requirements=['ELM-UI-008'],scenarios=['overflow-first-last','overflow-resize','menu-invocation'],scope='Actual small native output, enlarged text, configured overflowing pins, physical keyboard/wheel/menu traversal and output resize; AT and independent review remain open',nativeDenseTaskbarObserved=False)
+ if DENSEPICKER:report.update(requirements=['ELM-UI-008','ELM-UI-004'],scenarios=['overflow-first-last','overflow-resize','menu-invocation','taskbar-group'],scope='Actual ten-root native enlarged-text picker arrow/endpoints, first/last menus and identity-bound selection/input; browser resize continuity is separate; native popup reflow, AT and independent review remain open',nativeDensePickerObserved=False)
+ if DENSEMENU:report.update(requirements=['ELM-UI-008'],scenarios=['overflow-first-last','menu-invocation'],scope='Actual ten-root 480x360 native output at 200% text; overflow of current three-operation menu, typed endpoint/arrows/disabled/Tab/Escape and operation-label pixels; renderer capacity/growth/blur are component observations; AT/independent and native popup reflow remain open',nativeDenseMenuObserved=False)
+@@ -157,7 +161,9 @@ try:
+    native=next(row for _,row in s.host.processes if row['name']=='hyprland')
+    config={'runtime':str(s.host.runtime),'instance':s.env['HYPRLAND_INSTANCE_SIGNATURE'],'pid':native['pid'],'expected_start':int(start_time(native['pid'])),'binary_sha256':pair['core']['sha256']}
+    config_path=OUTPUT/'authority-config.json';config_path.write_text(json.dumps(config));config_path.chmod(0o600)
+-   client=Endpoint(**config);client.hello();env=supply(s.env,s.host.runtime);validate(env,s.host.runtime);env['XDG_STATE_HOME']=str(s.host.runtime/'private-warlock-state');report['privateStateRoot']=env['XDG_STATE_HOME'];env.update(GTK_A11Y='none',NO_AT_BRIDGE='1',GSETTINGS_BACKEND='memory',GTK_USE_PORTAL='0',WAYLAND_DEBUG='client')
++   client=Endpoint(**config);client.hello();
++   if PLACEMENT:client.geometry_attach('15000')
++   env=supply(s.env,s.host.runtime);validate(env,s.host.runtime);env['XDG_STATE_HOME']=str(s.host.runtime/'private-warlock-state');report['privateStateRoot']=env['XDG_STATE_HOME'];env.update(GTK_A11Y='none',NO_AT_BRIDGE='1',GSETTINGS_BACKEND='memory',GTK_USE_PORTAL='0',WAYLAND_DEBUG='client')
+    if CATALOG:
+     catalog_root=pathlib.Path(env['XDG_DATA_HOME'])/'applications';catalog_root.mkdir(mode=0o700,parents=True,exist_ok=True)
+     # Only explicitly owned fixture metadata is visible to this broker.
+@@ -560,19 +566,50 @@ raise SystemExit(daemon.run())
+       body=wait(snap_body);check('NativeSnapChooserHasSixRegions',len([b for b in body['buttons'] if b.get('identity','').startswith('snap:region:')])==6,body=body)
+       keyboard_button('Right half');body=wait(lambda:next((b for b in [snap_body()] if b and any(row['accessibleName']=='Right half; selected preview' for row in b['buttons'])),None))
+       check('NativeRegionSelectionHasNoWindowEffect',len(journal())==before and len(launches())==before_launches,body=body)
+-      check('NativePlacementRemainsExplicitlyUnavailable',any(b['identity']=='snap:apply' and b['disabled'] for b in body['buttons']),body=body)
++      check('NativeNegotiatedSnapPlacementAvailable',any(b['identity']=='snap:apply' and not b['disabled'] for b in body['buttons']),body=body)
+       popup_capture('native-snap-chooser');capture=report['popupCaptures'][-1]
+       check('NativeSnapSelectedControlHasActualTextPixels',len(capture['controlRegions'])==1 and capture['controlRegions'][0]['accessibleName']=='Right half; selected preview' and all(r['area']>0 and r['brightPixels']>15 and r['paintedPixels']>.9*r['area'] for r in capture['controlRegions']),capture=capture)
+       def focused_snap(identity):
+        body=snap_body();button=next((b for b in (body or {}).get('buttons',[]) if b.get('identity')==identity),None)
+        return body if button and button['id']==body['focus'] and button['y']>=-.5 and button['y']+button['height']<=body['viewportHeight']+.5 else None
+-      key(107);body=wait(lambda:focused_snap('snap:region:bottom-right'));popup_capture('native-snap-last-region');capture=report['popupCaptures'][-1]
+-      check('NativeSnapEndRevealsLastRegionAndSkipsUnavailableApply',len(capture['controlRegions'])==1 and capture['controlRegions'][0]['accessibleName']=='Bottom right quarter' and all(r['area']>0 and r['brightPixels']>15 and r['paintedPixels']>.9*r['area'] for r in capture['controlRegions']),body=body,capture=capture)
++      key(107);wait(lambda:focused_snap('snap:apply'));key(103);body=wait(lambda:focused_snap('snap:region:bottom-right'));popup_capture('native-snap-last-region');capture=report['popupCaptures'][-1]
++      check('NativeSnapEndReachesApplyAndArrowRevealsLastRegion',len(capture['controlRegions'])==1 and capture['controlRegions'][0]['accessibleName']=='Bottom right quarter' and all(r['area']>0 and r['brightPixels']>15 and r['paintedPixels']>.9*r['area'] for r in capture['controlRegions']),body=body,capture=capture)
+       key(102);wait(lambda:focused_snap('control:close'));check('NativeSnapHomeReturnsToVisibleClose',len(journal())==before and len(launches())==before_launches,body=snap_body())
++      if PLACEMENT:
++       keyboard_button('Left half');wait(lambda:any(b['accessibleName']=='Left half; selected preview' for b in (snap_body() or {}).get('buttons',[])))
++       old=client.geometry_facts('16001');row=next(w for w in old['facts']['windows'] if w['incarnation']==target);area=row['workArea'];expected=[area[0],area[1],area[2]/2,area[3]]
++       original_membership=sorted((w['incarnation'],w['workspace'],w['monitor']) for w in facts()['facts']['windows'])
++       original_focus=facts()['facts']['focused'];keyboard_button('Snap to left half')
++       wait(lambda:(projection() or {}).get('mode')=='closed' and len(journal())==before+1 and transaction_state()=='Committed')
++       request=journal()[-1];check('NativeSnapSubmitsOneExactGenerationBoundPlacement',request['effectProtocol']==2 and request['intent']['operation']=='snap' and request['intent']['incarnation']==target and request['intent']['placement']['geometry']==expected and request['intent']['placement']['outputOwnershipGeneration']==row['outputOwnershipGeneration'] and request['intent']['placement']['workAreaRevision']==row['workAreaRevision'] and request['intent']['placement']['workspaceGeneration']==row['workspaceGeneration'],request=request,observed=row)
++       actual=client.geometry_facts('16002');placed=next(w for w in actual['facts']['windows'] if w['incarnation']==target)
++       check('OriginalUX019AcceptedHalfWorkAreaWithinRounding',all(abs(a-b)<=1 for a,b in zip(placed['logicalGeometry'],expected)) and placed['nativeMode']=='ordinary' and placed['clientMode']=='ordinary',expected=expected,actual=placed)
++       check('NativeSnapPreservesMembershipAndFocus',original_membership==sorted((w['incarnation'],w['workspace'],w['monitor']) for w in facts()['facts']['windows']) and facts()['facts']['focused']==original_focus)
++       receipts=[json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('backend-frame: ') and json.loads(line.split(': ',1)[1]).get('kind')=='effect-outcome']
++       correlated=[r for r in receipts if r.get('binding')==request['binding'] and r.get('intent')==request['intent'] and r.get('effectProtocol')==2]
++       check('NativeSnapHasOneCorrelatedCommittedReceipt',len(correlated)==1 and correlated[0]['status']=='Committed',request=request,receipts=correlated)
++       report['nativeSnapReceipt']={'request':request,'receipt':correlated[0],'before':old,'after':actual}
++       image=OUTPUT/'native-left-half-placement.png';helper(['/usr/bin/grim',str(image)])
++       import gi;gi.require_version('GdkPixbuf','2.0');from gi.repository import GdkPixbuf
++       pix=GdkPixbuf.Pixbuf.new_from_file(str(image));data=pix.get_pixels();stride=pix.get_rowstride();channels=pix.get_n_channels();x,y,width,height=placed['logicalGeometry'];left,top=max(0,int(x+10)),max(80,int(y+10));right,bottom=min(800,int(x+width-10)),min(600,int(y+height-10))
++       green=sum(1 for py in range(top,bottom) for px in range(left,right) if data[py*stride+px*channels+1]>100 and data[py*stride+px*channels+1]>data[py*stride+px*channels]+30 and data[py*stride+px*channels+1]>data[py*stride+px*channels+2]+30)
++       check('NativeAcceptedSnapHasActualWindowPixels',green>1000,image=str(image),sha256=sha(image),region=[left,top,right,bottom],greenPixels=green)
++       report['nativeSnapCapture']={'path':str(image),'sha256':sha(image),'expected':expected,'actual':placed,'greenPixels':green}
++       # Reopen the same target's real chooser, then retain its exact observed
++       # placement scope for a stale native request after the scale change.
++       before=len(journal());button=wait(pin_button);x,y=round(button['x']+button['width']/2),round(button['y']+button['height']/2)
++       helper([str(POINTER),'800','600'],f'move {x} {y}\nsleep 100\nbutton 273 1\nsleep 50\nbutton 273 0\nsleep 100\n');wait(menu);keyboard_button('Open snapping',28);wait(snap_body)
++       stale=client.geometry_facts('16003');stale_row=next(w for w in stale['facts']['windows'] if w['incarnation']==target);wa=stale_row['workArea']
++       stale_intent={'request':'20000','generation':'20000','incarnation':target,'operation':'snap','context':{'lifetime':client.bound['lifetime'],'epoch':client.bound['frontend'],'output':stale['outputGeneration'],'revision':stale['revision']},'placement':{'region':'left-half','geometry':[wa[0],wa[1],wa[2]/2,wa[3]],'monitor':stale_row['monitor'],'outputOwnershipGeneration':stale_row['outputOwnershipGeneration'],'workAreaRevision':stale_row['workAreaRevision'],'workspaceGeneration':stale_row['workspaceGeneration']}}
+       result=s.ctl('eval','hl.monitor({output="WAYLAND-1",mode="800x600@60",position="0x0",scale=1.25})');check('NativeSnapOutputScaleCommand',result.strip()=='ok',result=result)
+       wait(lambda:any(m['name']=='WAYLAND-1' and m['scale']==1.25 for m in s.data('monitors')))
+       wait(lambda:(projection() or {}).get('mode')=='closed')
+       check('NativeOutputScaleRetiresSnapWithoutCommit',len(journal())==before and len(launches())==before_launches,projection=projection(),monitors=s.data('monitors'))
++      if PLACEMENT:
++       after_scale=client.geometry_facts('16004');before_refusal=next(w for w in after_scale['facts']['windows'] if w['incarnation']==target)
++       receipt=client.geometry_effect(stale_intent);after_refusal=client.geometry_facts('16005');final=next(w for w in after_refusal['facts']['windows'] if w['incarnation']==target)
++       check('OriginalUX020OldOutputGeometryNeverCommits',receipt['status']=='Refused' and receipt['reason']=='dependency-mismatch' and final['logicalGeometry']==before_refusal['logicalGeometry'] and len(journal())==before,receipt=receipt,before=before_refusal,after=final)
++       report['nativeSnapStaleRefusal']={'intent':stale_intent,'receipt':receipt,'before':after_scale,'after':after_refusal};report['nativeSnapPlacementObserved']=True
+       report['nativeSnapChooserObserved']=True
+ 
+     elif CHORD:
+diff --git c/implementation/warlock/qa/snap-chooser.qnt i/implementation/warlock/qa/snap-chooser.qnt
+index db21429..73a6a84 100644
+--- c/implementation/warlock/qa/snap-chooser.qnt
++++ i/implementation/warlock/qa/snap-chooser.qnt
+@@ -1,20 +1,40 @@
+ module SnapChooser {
+-  var state: { output: int, revision: int, choiceOutput: int, choiceRevision: int, open: bool, region: int }
+-  action init = state' = { output: 1, revision: 1, choiceOutput: 0, choiceRevision: 0, open: false, region: 0 }
+-  action open = state' = { ...state, choiceOutput: state.output, choiceRevision: state.revision, open: true, region: 0 }
++  var state: { output: int, revision: int, choiceOutput: int, choiceRevision: int, open: bool, region: int, waiting: bool, issued: bool, sealed: bool, request: int, admittedOutput: int, admittedRevision: int }
++  action init = state' = { output: 1, revision: 1, choiceOutput: 0, choiceRevision: 0, open: false, region: 0, waiting: false, issued: false, sealed: false, request: 0, admittedOutput: 0, admittedRevision: 0 }
++  action open = all {
++    not(state.waiting) and not(state.issued) and not(state.sealed),
++    state' = { ...state, choiceOutput: state.output, choiceRevision: state.revision, open: true, region: 0 }
++  }
+   action chooseRegion = {
+     nondet region = 0.to(5).oneOf()
+-    all {
+-      state.open and state.choiceOutput == state.output and state.choiceRevision == state.revision,
+-      state' = { ...state, region: region }
+-    }
++    all { state.open and state.choiceOutput == state.output and state.choiceRevision == state.revision, state' = { ...state, region: region } }
+   }
+-  action outputChanged = state' = { ...state, output: state.output + 1, revision: state.revision + 1, open: false }
+-  action workAreaChanged = state' = { ...state, revision: state.revision + 1, open: false }
++  action apply = all { state.open, state' = { ...state, open: false, waiting: true } }
++  action authorize = all {
++    state.waiting and not(state.sealed) and state.choiceOutput == state.output and state.choiceRevision == state.revision,
++    state' = { ...state, waiting: false, issued: true, request: state.request + 1, admittedOutput: state.output, admittedRevision: state.revision }
++  }
++  action refuseStale = all {
++    state.waiting and (state.choiceOutput != state.output or state.choiceRevision != state.revision),
++    state' = { ...state, waiting: false }
++  }
++  action definitive = all { state.issued and not(state.sealed), state' = { ...state, issued: false } }
++  action uncertain = all { state.issued, state' = { ...state, sealed: true } }
++  action retrySealed = all { state.sealed, state' = state }
++  action outputChanged = state' = { ...state, output: state.output + 1, revision: state.revision + 1, open: false, sealed: state.sealed or state.issued }
++  action workAreaChanged = state' = { ...state, revision: state.revision + 1, open: false, sealed: state.sealed or state.issued }
+   action close = state' = { ...state, open: false }
+-  action step = any { open, chooseRegion, outputChanged, workAreaChanged, close }
+-  val safety = not(state.open) or (state.choiceOutput == state.output and state.choiceRevision == state.revision and state.region >= 0 and state.region <= 5)
++  action step = any { open, chooseRegion, apply, authorize, refuseStale, definitive, uncertain, retrySealed, outputChanged, workAreaChanged, close }
++  val safety = all {
++    not(state.open) or (state.choiceOutput == state.output and state.choiceRevision == state.revision and not(state.waiting) and not(state.issued) and not(state.sealed)),
++    not(state.issued) or (not(state.open) and not(state.waiting) and (state.sealed or (state.admittedOutput == state.output and state.admittedRevision == state.revision))),
++    state.region >= 0 and state.region <= 5 and state.request >= 0
++  }
+   run outputRetiresPreviewTest = init.then(open).then(outputChanged).then(all { assert(not(state.open)), state' = state })
+   run areaRetiresPreviewTest = init.then(open).then(workAreaChanged).then(all { assert(not(state.open)), state' = state })
+   run reopenUsesCurrentGenerationTest = init.then(open).then(outputChanged).then(open).then(all { assert(safety and state.choiceOutput == 2), state' = state })
++  run outputChangeBeforeCommitRefusesTest = init.then(open).then(apply).then(outputChanged).then(refuseStale).then(all { assert(state.request == 0 and not(state.waiting)), state' = state })
++  run areaChangeBeforeCommitRefusesTest = init.then(open).then(apply).then(workAreaChanged).then(refuseStale).then(all { assert(state.request == 0), state' = state })
++  run unknownCannotReplayTest = init.then(open).then(apply).then(authorize).then(uncertain).then(retrySealed).then(all { assert(state.request == 1 and state.sealed), state' = state })
++  run changedAfterIssueCannotCommitTest = init.then(open).then(apply).then(authorize).then(outputChanged).then(all { assert(state.sealed and state.issued and safety), state' = state })
+ }
+diff --git c/implementation/warlock/src/Desktop.elm i/implementation/warlock/src/Desktop.elm
+index 1c29c0c..4052855 100644
+--- c/implementation/warlock/src/Desktop.elm
++++ i/implementation/warlock/src/Desktop.elm
+@@ -54,7 +54,7 @@ type alias NativeChord = {generation : Counter, roots : List Counter, history :
+ 
+ type ChoiceToken = ChoiceToken Binding.Binding Counter
+ 
+-type alias Choice = { chord : Maybe Counter, binding : Binding.Binding, output : Counter, root : Counter, application : String, token : ChoiceToken }
++type alias Choice = { chord : Maybe Counter, binding : Binding.Binding, output : Counter, root : Counter, application : String, token : ChoiceToken, placement : Maybe Snap.Proposal }
+ 
+ choiceToken : Model -> Maybe ChoiceToken
+ choiceToken model = model.choice |> Maybe.map .token
+@@ -66,6 +66,7 @@ type Msg
+     | OpenWindowMenu Shell.Stamp Counter
+     | OpenSnap ViewStamp Counter
+     | SelectSnap ViewStamp Snap.Region
++    | ApplySnap ViewStamp
+     | CloseSnap ViewStamp
+     | InvalidateSnap
+     | OwnerScope D.Value
+@@ -130,7 +131,7 @@ chooseFamily family model =
+             in case next.windows.shell.expected of
+                 Just request ->
+                     let token=ChoiceToken binding request
+-                    in ({next | choice=Just {chord=model.nativeSwitcher |> Maybe.map .generation,binding=binding,output=observed.context.output,root=family.root,application=family.application,token=token}},effects++[ArmChoice token])
++                    in ({next | choice=Just {chord=model.nativeSwitcher |> Maybe.map .generation,binding=binding,output=observed.context.output,root=family.root,application=family.application,token=token,placement=Nothing}},effects++[ArmChoice token])
+                 Nothing -> (next,effects)
+         _ -> (retireSwitcher model,[])
+ 
+@@ -333,7 +334,7 @@ window message model =
+                             in case next.windows.shell.expected of
+                                 Just request ->
+                                     let token=ChoiceToken binding request
+-                                    in ({next | choice=Just {chord=Nothing,binding=binding,output=observed.context.output,root=root,application=family.application,token=token}},effects++[ArmChoice token])
++                                    in ({next | choice=Just {chord=Nothing,binding=binding,output=observed.context.output,root=root,application=family.application,token=token,placement=Nothing}},effects++[ArmChoice token])
+                                 Nothing -> (next,effects)
+                 _ -> (model,[])
+         _ ->
+@@ -376,18 +377,29 @@ window message model =
+ 
+             in case next.choice of
+                 Just pending ->
+-                    if not matchingObservation || not (Shell.available next.windows.shell) then (next,effects) else
++                    if not matchingObservation || not (Shell.available next.windows.shell)
++                        || (pending.placement/=Nothing && (next.windows.shell.geometry |> Maybe.map .blocked |> Maybe.withDefault True)) then (next,effects) else
+                     let retired={next | choice=Nothing,choiceNotice="The window changed. Choose again."}
+                         family=TaskbarShell.groups next.windows |> List.concatMap .families |> List.filter (\item -> item.root==pending.root && item.application==pending.application && item.available) |> List.head
+                         output=next.windows.shell.effects.observed |> Maybe.map (.context >> .output)
+                     in if next.windows.shell.binding/=Just pending.binding || output/=Just pending.output || geometryOutput/=Just pending.output then (retired,effects) else
+                         case (Shell.capture next.windows.shell,family) of
+                             (Just scope,Just selected) ->
+-                                case Taskbar.selection selected of
+-                                    Taskbar.Apply operation root ->
+-                                        let (applied,commands)=windowBase (TaskbarShell.Native (Shell.Act scope operation root)) {retired | choiceNotice=""}
+-                                        in (applied,effects++fenceSwitcherSelection pending.chord pending.binding commands)
+-                                    _ -> (retired,effects)
++                                case pending.placement of
++                                    Just proposed ->
++                                        case (next.windows.shell.geometry,Shell.captureGeometry next.windows.shell) of
++                                            (Just geometry,Just stamp) ->
++                                                let current={proposed|context=geometry.context}
++                                                in if not (Snap.matches geometry pending.root current) then ({retired|choiceNotice="Output or window changed. Open snapping again."},effects) else
++                                                    let (applied,commands)=windowBase (TaskbarShell.Native (Shell.Act stamp (Effects.SnapPlacement current) pending.root)) {retired|choiceNotice=""}
++                                                    in (applied,effects++commands)
++                                            _ -> (retired,effects)
++                                    Nothing ->
++                                        case Taskbar.selection selected of
++                                            Taskbar.Apply operation root ->
++                                                let (applied,commands)=windowBase (TaskbarShell.Native (Shell.Act scope operation root)) {retired | choiceNotice=""}
++                                                in (applied,effects++fenceSwitcherSelection pending.chord pending.binding commands)
++                                            _ -> (retired,effects)
+                             _ -> (retired,effects)
+                 Nothing -> (next,effects)
+ 
+@@ -409,6 +421,18 @@ update message model =
+             case (model.windows.shell.geometry,model.snap) of
+                 (Just geometry,Just choice) -> ({model|snap=Snap.select geometry region choice},[])
+                 _ -> (model,[])
++        ApplySnap stamp ->
++            if capture model/=Just stamp || model.choice/=Nothing || not (Shell.available model.windows.shell)
++                || not (model.windows.shell.geometryCaps |> Maybe.map (\caps -> List.member "snap" caps.operations) |> Maybe.withDefault False) then (model,[]) else
++            case (model.snap,model.windows.shell.geometry) of
++                (Just choice,Just geometry) ->
++                    if not (Snap.valid geometry choice) then (model,[]) else
++                    case (Snap.proposal choice,TaskbarShell.groups model.windows |> List.concatMap .families |> List.filter (\family -> family.root==choice.target && family.available) |> List.head) of
++                        (Just proposed,Just family) ->
++                            let (next,effects)=chooseFamily family {model|snap=Nothing}
++                            in ({next|choice=next.choice |> Maybe.map (\pending -> {pending|placement=Just proposed})},effects)
++                        _ -> (model,[])
++                _ -> (model,[])
+         CloseSnap stamp ->
+             if capture model/=Just stamp || model.snap==Nothing then (model,[]) else
+                 (advance {model|snap=Nothing},[])
+@@ -609,7 +633,7 @@ update message model =
+                     in case next.windows.shell.expected of
+                         Just request ->
+                             let token=ChoiceToken binding request
+-                            in ({next | choice=Just {chord=Nothing,binding=binding,output=observed.context.output,root=root,application=family.application,token=token}},effects++[ArmChoice token])
++                            in ({next | choice=Just {chord=Nothing,binding=binding,output=observed.context.output,root=root,application=family.application,token=token,placement=Nothing}},effects++[ArmChoice token])
+                         Nothing -> (next,effects)
+                 _ -> (model,[])
+         SearchQuery stamp query ->
+diff --git c/implementation/warlock/src/Effects.elm i/implementation/warlock/src/Effects.elm
+index e4ea938..f359ee5 100644
+--- c/implementation/warlock/src/Effects.elm
++++ i/implementation/warlock/src/Effects.elm
+@@ -1,5 +1,6 @@
+ module Effects exposing (recoverUnknown, releaseUnknown, Model, Operation(..), Intent, Transaction, intentDecoder, operationDecoder, operationName, Status(..), empty, apply, encode, pending, encodeIntent, statusName, protocol, beginGeometry, blocked, canProveUnsent, locallyRefuseUnsent)
+ 
++import Snap
+ import GeometryProjection
+ import Json.Decode as D
+ import Json.Encode as E
+@@ -7,7 +8,7 @@ import ActionProjection as Scene
+ import UInt64 exposing (Counter)
+ 
+ -- Typed activation/minimize/restore intents. No workspace/scratchpad dispatch.
+-type Operation = Minimize | Restore | Activate | Maximize | RestoreGeometry
++type Operation = Minimize | Restore | Activate | Maximize | RestoreGeometry | SnapPlacement Snap.Proposal
+ type Status = Pending | Committed | Refused | Cancelled | Unknown
+ 
+ type alias Context = { lifetime : Counter, epoch : Counter, output : Counter, revision : Counter }
+@@ -46,7 +47,13 @@ statusDecoder = D.string |> D.andThen (\name -> case name of
+     _ -> D.fail "Not an authoritative terminal outcome")
+ 
+ intentDecoder : D.Decoder Intent
+-intentDecoder = strict ["request","generation","incarnation","operation","context"] (D.map5 Intent (D.field "request" identity) (D.field "generation" identity) (D.field "incarnation" identity) (D.field "operation" operationDecoder) (D.field "context" contextDecoder))
++intentDecoder = D.field "operation" D.string |> D.andThen (\name ->
++    if name=="snap" then
++        strict ["request","generation","incarnation","operation","context","placement"]
++            (D.field "context" contextDecoder |> D.andThen (\context -> D.map5 Intent
++                (D.field "request" identity) (D.field "generation" identity) (D.field "incarnation" identity)
++                (D.field "placement" (Snap.proposalDecoder context) |> D.map SnapPlacement) (D.succeed context)))
++    else strict ["request","generation","incarnation","operation","context"] (D.map5 Intent (D.field "request" identity) (D.field "generation" identity) (D.field "incarnation" identity) (D.field "operation" operationDecoder) (D.field "context" contextDecoder)))
+ 
+ unknown : Maybe Transaction -> Maybe Transaction
+ unknown = Maybe.map (\transaction -> if transaction.status == Pending then { transaction | status = Unknown } else transaction)
+@@ -89,7 +96,7 @@ apply value model =
+                         if not model.connected then refuse "Disconnected"
+                         else if pending model then refuse "Operation already pending"
+                         else if List.length model.unresolved>=64 then refuse "Unresolved operation capacity"
+-                        else if operation==Maximize || operation==RestoreGeometry then refuse "Geometry observation required"
++                        else if protocol operation==2 then refuse "Geometry observation required"
+                         else if blocked observed.context.lifetime incarnation model then refuse "Unresolved native operation"
+                         else if not (Scene.actionable incarnation observed.scene) then refuse "Locked or unmapped target"
+                         else case Scene.minimized incarnation observed.scene of
+@@ -134,6 +141,7 @@ operationName operation = case operation of
+     Activate -> "activate"
+     Maximize -> "maximize"
+     RestoreGeometry -> "restore-geometry"
++    SnapPlacement _ -> "snap"
+ 
+ statusName : Status -> String
+ statusName status = case status of
+@@ -150,7 +158,9 @@ encodeContext : Context -> E.Value
+ encodeContext context = E.object [("lifetime",counter context.lifetime),("epoch",counter context.epoch),("output",counter context.output),("revision",counter context.revision)]
+ 
+ encodeIntent : Intent -> E.Value
+-encodeIntent intent = E.object [("request",counter intent.request),("generation",counter intent.generation),("incarnation",counter intent.incarnation),("operation",E.string (operationName intent.operation)),("context",encodeContext intent.context)]
++encodeIntent intent = E.object ([("request",counter intent.request),("generation",counter intent.generation),("incarnation",counter intent.incarnation),("operation",E.string (operationName intent.operation)),("context",encodeContext intent.context)] ++ (case intent.operation of
++    SnapPlacement proposed -> [("placement",Snap.encodeProposal proposed)]
++    _ -> []))
+ 
+ encode : Model -> E.Value
+ encode model = E.object
+@@ -164,7 +174,11 @@ encode model = E.object
+     ]
+ 
+ protocol : Operation -> Int
+-protocol operation = if operation==Maximize || operation==RestoreGeometry then 2 else 1
++protocol operation = case operation of
++    Maximize -> 2
++    RestoreGeometry -> 2
++    SnapPlacement _ -> 2
++    _ -> 1
+ 
+ blocked : Counter -> Counter -> Model -> Bool
+ blocked lifetime incarnation model = List.any (\t -> t.intent.context.lifetime==lifetime && t.intent.incarnation==incarnation && List.member t.status [Pending,Unknown]) model.unresolved
+@@ -178,8 +192,11 @@ beginGeometry caps observed operation incarnation model =
+             if not model.connected || not legacyReady || pending model || blocked observed.context.lifetime incarnation model then refuse "Unresolved or disconnected native operation"
+             else if List.length model.unresolved>=64 then refuse "Unresolved operation capacity"
+             else if protocol operation/=2 || not caps.effects || not (List.member (operationName operation) caps.operations) then refuse "Geometry operation not negotiated"
+-            else if not window.eligible || window.minimized || window.fixedSize then refuse "Geometry target ineligible"
++            else if observed.blocked || not window.eligible || window.minimized || window.fixedSize then refuse "Geometry target ineligible"
+             else if (operation==Maximize && (not window.maximize || window.nativeMode/=GeometryProjection.Ordinary)) || (operation==RestoreGeometry && (not window.restoreGeometry || window.nativeMode/=GeometryProjection.Maximized || not window.placementKnown)) then refuse "Geometry state/capability unavailable"
++            else if (case operation of
++                SnapPlacement proposed -> not (Snap.matches observed incarnation proposed)
++                _ -> False) then refuse "Snap output/work-area placement changed"
+             else let intent={request=request,generation=generation,incarnation=incarnation,operation=operation,context=observed.context}
+                      transaction={intent=intent,status=Pending,effectProtocol=2}
+                  in ({model|request=request,generation=generation,transaction=Just transaction,unresolved=transaction::model.unresolved},Just (E.object [("kind",E.string "window-effect"),("protocol",E.int 2),("intent",encodeIntent intent)]),Nothing)
+diff --git c/implementation/warlock/src/GeometryProjection.elm i/implementation/warlock/src/GeometryProjection.elm
+index c10f6cd..d53fc0d 100644
+--- c/implementation/warlock/src/GeometryProjection.elm
++++ i/implementation/warlock/src/GeometryProjection.elm
+@@ -42,7 +42,7 @@ capabilitiesDecoder = strict ["observe","effects","effectProtocol","operations",
+     (D.map6 (\_ effects _ operations _ _ -> {effects=effects,operations=operations})
+         (exact "observe" D.bool True) (D.field "effects" D.bool) (exact "effectProtocol" D.int 2)
+         (D.field "operations" (D.list D.string)) (exact "placementCapacity" D.int 256) (exact "canonicalScene" D.bool False))
+-    |> D.andThen (\caps -> if List.length caps.operations<=2 && List.all (\op -> List.member op ["maximize","restore-geometry"]) caps.operations && List.length caps.operations==List.length (List.foldl (\x xs -> if List.member x xs then xs else x::xs) [] caps.operations) && caps.effects==not (List.isEmpty caps.operations) then D.succeed caps else D.fail "Geometry capabilities")
++    |> D.andThen (\caps -> if List.length caps.operations<=3 && List.all (\op -> List.member op ["maximize","restore-geometry","snap"]) caps.operations && List.length caps.operations==List.length (List.foldl (\x xs -> if List.member x xs then xs else x::xs) [] caps.operations) && caps.effects==not (List.isEmpty caps.operations) then D.succeed caps else D.fail "Geometry capabilities")
+ windowDecoder protocol =
+     let identities = D.map8 (\inc owner ws wg mon og wr wa -> {inc=inc,owner=owner,ws=ws,wg=wg,mon=mon,og=og,wr=wr,wa=wa})
+             (D.field "incarnation" positive) (D.field "owner" (D.nullable positive)) (D.field "workspace" (D.nullable workspace))
+diff --git c/implementation/warlock/src/NativeOutcome.elm i/implementation/warlock/src/NativeOutcome.elm
+index c5839c4..5ac62d2 100644
+--- c/implementation/warlock/src/NativeOutcome.elm
++++ i/implementation/warlock/src/NativeOutcome.elm
+@@ -6,6 +6,7 @@ operation identities. Callers must use the authenticated bounded native channel.
+ -}
+ 
+ import Binding
++import Effects
+ import Json.Decode as D
+ import UInt64
+ 
+@@ -24,12 +25,8 @@ context = strict ["lifetime","epoch","output","revision"]
+     (D.map4 (\_ _ _ _ -> ()) (D.field "lifetime" positive) (D.field "epoch" positive)
+         (D.field "output" positive) (D.field "revision" positive))
+ 
+-intent protocolId = strict ["request","generation","incarnation","operation","context"]
+-    (D.map5 (\_ _ _ _ _ -> ()) (D.field "request" positive) (D.field "generation" positive)
+-        (D.field "incarnation" positive)
+-        (D.field "operation" D.string |> D.andThen (\value ->
+-            if List.member value (if protocolId==1 then ["minimize","restore","activate"] else ["maximize","restore-geometry"]) then D.succeed () else D.fail "Outcome operation"))
+-        (D.field "context" context))
++intent protocolId = Effects.intentDecoder |> D.andThen (\original ->
++    if Effects.protocol original.operation==protocolId then D.succeed () else D.fail "Outcome operation protocol")
+ 
+ decoderBody protocolId = strict ["protocolVersion","kind","effectProtocol","binding","intent","status","reason","revision","outputGeneration"]
+     (D.map8 (\_ _ _ _ _ _ _ _ -> ())
+diff --git c/implementation/warlock/src/Snap.elm i/implementation/warlock/src/Snap.elm
+index a6bc032..041b89a 100644
+--- c/implementation/warlock/src/Snap.elm
++++ i/implementation/warlock/src/Snap.elm
+@@ -1,5 +1,7 @@
+-module Snap exposing (Choice, Region(..), Proposal, regions, name, identity, open, valid, select, proposal)
++module Snap exposing (Choice, Region(..), Proposal, regions, name, identity, open, valid, select, proposal, encodeProposal, proposalDecoder, matches)
+ 
++import Json.Decode as D
++import Json.Encode as E
+ import GeometryProjection as Geometry
+ import UInt64 exposing (Counter)
+ 
+@@ -76,3 +78,32 @@ proposal choice = Geometry.window choice.target choice.snapshot |> Maybe.andThen
+                 outputOwnershipGeneration=output,workAreaRevision=area,workspaceGeneration=workspace,
+                 context=choice.snapshot.context}
+         _ -> Nothing)
++
++
++encodeProposal : Proposal -> E.Value
++encodeProposal proposed = E.object
++    [("region",E.string proposed.region),("geometry",E.list E.float proposed.geometry)
++    ,("monitor",E.string (UInt64.string proposed.monitor))
++    ,("outputOwnershipGeneration",E.string (UInt64.string proposed.outputOwnershipGeneration))
++    ,("workAreaRevision",E.string (UInt64.string proposed.workAreaRevision))
++    ,("workspaceGeneration",E.string (UInt64.string proposed.workspaceGeneration))]
++
++proposalDecoder : Geometry.Context -> D.Decoder Proposal
++proposalDecoder context =
++    let positive=UInt64.decoder |> D.andThen (\n -> if n==UInt64.zero then D.fail "Zero placement generation" else D.succeed n)
++        region=D.string |> D.andThen (\value -> if List.any (identity >> (==) value) regions then D.succeed value else D.fail "Unsupported snap region")
++        rectangle=D.list D.float |> D.andThen (\values -> case values of
++            [x,y,w,h] -> if List.all (\n -> not (isNaN n || isInfinite n) && abs n<=2147483647) values && w>0 && h>0 then D.succeed values else D.fail "Invalid snap rectangle"
++            _ -> D.fail "Invalid snap rectangle shape")
++        fields=["region","geometry","monitor","outputOwnershipGeneration","workAreaRevision","workspaceGeneration"]
++    in D.keyValuePairs D.value |> D.andThen (\pairs ->
++        if List.sort (List.map Tuple.first pairs)/=List.sort fields then D.fail "Snap placement fields" else
++        D.map6 (\regionName geometry monitor output area workspace -> {region=regionName,geometry=geometry,monitor=monitor,outputOwnershipGeneration=output,workAreaRevision=area,workspaceGeneration=workspace,context=context})
++            (D.field "region" region) (D.field "geometry" rectangle) (D.field "monitor" UInt64.decoder)
++            (D.field "outputOwnershipGeneration" positive) (D.field "workAreaRevision" positive) (D.field "workspaceGeneration" positive))
++
++matches : Geometry.Snapshot -> Counter -> Proposal -> Bool
++matches snapshot target proposed =
++    case List.filter (identity >> (==) proposed.region) regions |> List.head of
++        Nothing -> False
++        Just region -> open snapshot target |> Maybe.map (\choice -> proposal {choice|selected=region}==Just proposed) |> Maybe.withDefault False
+diff --git c/implementation/warlock/src/Surface.elm i/implementation/warlock/src/Surface.elm
+index ac18765..f560094 100644
+--- c/implementation/warlock/src/Surface.elm
++++ i/implementation/warlock/src/Surface.elm
+@@ -58,6 +58,9 @@ controls model =
+             Just choice ->
+                 let scoped message=Desktop.capture model |> Maybe.map message
+                     ready=Shell.available model.windows.shell
++                    placement=Snap.proposal choice
++                    applyReady=ready && model.choice==Nothing && (model.windows.shell.geometryCaps |> Maybe.map (\caps -> List.member "snap" caps.operations) |> Maybe.withDefault False) && placement/=Nothing
++                    applyLabel=if applyReady then "Snap to "++String.toLower (Snap.name choice.selected) else "Snapping unavailable"
+                     regionControl region=
+                         let identity="snap:region:"++Snap.identity region
+                             selected=region==choice.selected
+@@ -67,7 +70,7 @@ controls model =
+                             message=if ready then scoped (\stamp -> Desktop.SelectSnap stamp region) else Nothing}
+                 in {id="control:close",domId=Desktop.key model "snap:close",label="Close",ariaLabel="Close snapping",detail="",enabled=True,message=scoped Desktop.CloseSnap}
+                     :: List.map regionControl Snap.regions
+-                    ++ [{id="snap:apply",domId=Desktop.key model "snap:apply",label="Snapping unavailable",ariaLabel="Snapping unavailable",detail="",enabled=False,message=Nothing}]
++                    ++ [{id="snap:apply",domId=Desktop.key model "snap:apply",label=applyLabel,ariaLabel=applyLabel,detail="",enabled=applyReady,message=if applyReady then scoped Desktop.ApplySnap else Nothing}]
+     else if Desktop.switcherOpen model then
+         let scoped message=Desktop.capture model |> Maybe.map message
+             selected=Switcher.selected model.switcher |> Maybe.map .root
+@@ -232,6 +235,7 @@ windowNotice model =
+                     Effects.Activate -> "Activate"
+                     Effects.Maximize -> "Maximize"
+                     Effects.RestoreGeometry -> "Restore size"
++                    Effects.SnapPlacement _ -> "Snap"
+                 label = TaskbarShell.groups model.windows |> List.concatMap .families
+                     |> List.filter (\family -> family.root==transaction.intent.incarnation)
+                     |> List.head |> Maybe.map (.label >> String.left 512) |> Maybe.withDefault "selected window"

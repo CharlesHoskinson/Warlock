@@ -1,5 +1,6 @@
 module Effects exposing (recoverUnknown, releaseUnknown, Model, Operation(..), Intent, Transaction, intentDecoder, operationDecoder, operationName, Status(..), empty, apply, encode, pending, encodeIntent, statusName, protocol, beginGeometry, blocked, canProveUnsent, locallyRefuseUnsent)
 
+import Snap
 import GeometryProjection
 import Json.Decode as D
 import Json.Encode as E
@@ -7,7 +8,7 @@ import ActionProjection as Scene
 import UInt64 exposing (Counter)
 
 -- Typed activation/minimize/restore intents. No workspace/scratchpad dispatch.
-type Operation = Minimize | Restore | Activate | Maximize | RestoreGeometry
+type Operation = Minimize | Restore | Activate | Maximize | RestoreGeometry | SnapPlacement Snap.Proposal
 type Status = Pending | Committed | Refused | Cancelled | Unknown
 
 type alias Context = { lifetime : Counter, epoch : Counter, output : Counter, revision : Counter }
@@ -46,7 +47,13 @@ statusDecoder = D.string |> D.andThen (\name -> case name of
     _ -> D.fail "Not an authoritative terminal outcome")
 
 intentDecoder : D.Decoder Intent
-intentDecoder = strict ["request","generation","incarnation","operation","context"] (D.map5 Intent (D.field "request" identity) (D.field "generation" identity) (D.field "incarnation" identity) (D.field "operation" operationDecoder) (D.field "context" contextDecoder))
+intentDecoder = D.field "operation" D.string |> D.andThen (\name ->
+    if name=="snap" then
+        strict ["request","generation","incarnation","operation","context","placement"]
+            (D.field "context" contextDecoder |> D.andThen (\context -> D.map5 Intent
+                (D.field "request" identity) (D.field "generation" identity) (D.field "incarnation" identity)
+                (D.field "placement" (Snap.proposalDecoder context) |> D.map SnapPlacement) (D.succeed context)))
+    else strict ["request","generation","incarnation","operation","context"] (D.map5 Intent (D.field "request" identity) (D.field "generation" identity) (D.field "incarnation" identity) (D.field "operation" operationDecoder) (D.field "context" contextDecoder)))
 
 unknown : Maybe Transaction -> Maybe Transaction
 unknown = Maybe.map (\transaction -> if transaction.status == Pending then { transaction | status = Unknown } else transaction)
@@ -89,7 +96,7 @@ apply value model =
                         if not model.connected then refuse "Disconnected"
                         else if pending model then refuse "Operation already pending"
                         else if List.length model.unresolved>=64 then refuse "Unresolved operation capacity"
-                        else if operation==Maximize || operation==RestoreGeometry then refuse "Geometry observation required"
+                        else if protocol operation==2 then refuse "Geometry observation required"
                         else if blocked observed.context.lifetime incarnation model then refuse "Unresolved native operation"
                         else if not (Scene.actionable incarnation observed.scene) then refuse "Locked or unmapped target"
                         else case Scene.minimized incarnation observed.scene of
@@ -134,6 +141,7 @@ operationName operation = case operation of
     Activate -> "activate"
     Maximize -> "maximize"
     RestoreGeometry -> "restore-geometry"
+    SnapPlacement _ -> "snap"
 
 statusName : Status -> String
 statusName status = case status of
@@ -150,7 +158,9 @@ encodeContext : Context -> E.Value
 encodeContext context = E.object [("lifetime",counter context.lifetime),("epoch",counter context.epoch),("output",counter context.output),("revision",counter context.revision)]
 
 encodeIntent : Intent -> E.Value
-encodeIntent intent = E.object [("request",counter intent.request),("generation",counter intent.generation),("incarnation",counter intent.incarnation),("operation",E.string (operationName intent.operation)),("context",encodeContext intent.context)]
+encodeIntent intent = E.object ([("request",counter intent.request),("generation",counter intent.generation),("incarnation",counter intent.incarnation),("operation",E.string (operationName intent.operation)),("context",encodeContext intent.context)] ++ (case intent.operation of
+    SnapPlacement proposed -> [("placement",Snap.encodeProposal proposed)]
+    _ -> []))
 
 encode : Model -> E.Value
 encode model = E.object
@@ -164,7 +174,11 @@ encode model = E.object
     ]
 
 protocol : Operation -> Int
-protocol operation = if operation==Maximize || operation==RestoreGeometry then 2 else 1
+protocol operation = case operation of
+    Maximize -> 2
+    RestoreGeometry -> 2
+    SnapPlacement _ -> 2
+    _ -> 1
 
 blocked : Counter -> Counter -> Model -> Bool
 blocked lifetime incarnation model = List.any (\t -> t.intent.context.lifetime==lifetime && t.intent.incarnation==incarnation && List.member t.status [Pending,Unknown]) model.unresolved
@@ -178,8 +192,11 @@ beginGeometry caps observed operation incarnation model =
             if not model.connected || not legacyReady || pending model || blocked observed.context.lifetime incarnation model then refuse "Unresolved or disconnected native operation"
             else if List.length model.unresolved>=64 then refuse "Unresolved operation capacity"
             else if protocol operation/=2 || not caps.effects || not (List.member (operationName operation) caps.operations) then refuse "Geometry operation not negotiated"
-            else if not window.eligible || window.minimized || window.fixedSize then refuse "Geometry target ineligible"
+            else if observed.blocked || not window.eligible || window.minimized || window.fixedSize then refuse "Geometry target ineligible"
             else if (operation==Maximize && (not window.maximize || window.nativeMode/=GeometryProjection.Ordinary)) || (operation==RestoreGeometry && (not window.restoreGeometry || window.nativeMode/=GeometryProjection.Maximized || not window.placementKnown)) then refuse "Geometry state/capability unavailable"
+            else if (case operation of
+                SnapPlacement proposed -> not (Snap.matches observed incarnation proposed)
+                _ -> False) then refuse "Snap output/work-area placement changed"
             else let intent={request=request,generation=generation,incarnation=incarnation,operation=operation,context=observed.context}
                      transaction={intent=intent,status=Pending,effectProtocol=2}
                  in ({model|request=request,generation=generation,transaction=Just transaction,unresolved=transaction::model.unresolved},Just (E.object [("kind",E.string "window-effect"),("protocol",E.int 2),("intent",encodeIntent intent)]),Nothing)

@@ -2,12 +2,13 @@
 import math
 import re
 import geometry_size_policy
+import geometry_placement
 
 from effect_endpoint import Endpoint as LegacyEffectEndpoint
 from endpoint import Refused, binding, canonical, exact
 
 MODES = {'ordinary', 'maximized', 'fullscreen'}
-OPERATIONS = {'maximize', 'restore-geometry'}
+OPERATIONS = {'maximize', 'restore-geometry', 'snap'}
 WINDOW_FIELDS = ['incarnation', 'owner', 'workspace', 'workspaceGeneration', 'monitor',
                  'outputOwnershipGeneration', 'workAreaRevision', 'workArea',
                  'logicalGeometry', 'visualGeometry', 'nativeMode', 'clientMode',
@@ -57,7 +58,7 @@ class GeometryEndpoint(LegacyEffectEndpoint):
         if type(caps['effectProtocol']) is not int or caps['effectProtocol'] != 2 or type(caps['placementCapacity']) is not int or caps['placementCapacity'] != 256:
             raise Refused('Geometry capability versions/bounds')
         operations = caps['operations']
-        if not isinstance(operations, list) or len(operations) > 2 or any(type(op) is not str or op not in OPERATIONS for op in operations) or len(set(operations)) != len(operations):
+        if not isinstance(operations, list) or len(operations) > 3 or any(type(op) is not str or op not in OPERATIONS for op in operations) or len(set(operations)) != len(operations):
             raise Refused('Geometry operation capabilities')
         if caps['effects'] != bool(operations):
             raise Refused('Geometry effects/operation contradiction')
@@ -195,7 +196,8 @@ class GeometryEndpoint(LegacyEffectEndpoint):
         caps = getattr(self, 'geometry_capabilities', None)
         if not caps or caps['effects'] is not True:
             raise Refused('Native geometry effects unavailable')
-        exact(intent, ['request', 'generation', 'incarnation', 'operation', 'context'])
+        exact(intent, ['request', 'generation', 'incarnation', 'operation', 'context'] + (['placement'] if intent.get('operation')=='snap' else []))
+        if intent.get('operation')=='snap':geometry_placement.validate(intent['placement'])
         exact(intent['context'], ['lifetime', 'epoch', 'output', 'revision'])
         for field in ('request', 'generation', 'incarnation'):
             canonical(intent[field])

@@ -1,0 +1,142 @@
+{
+  "checks": {
+    "actualDesktopOpensSnap": true,
+    "leftHalfUsesNativeWorkArea": true,
+    "rightHalfCompletesOddWidth": true,
+    "selectionHasNoNativeEffects": true,
+    "staleViewCannotChangeRegion": true,
+    "changedOutputInvalidatesPreview": true,
+    "changedWorkAreaInvalidatesPreview": true,
+    "sameScopeRevisionCanRefreshPreview": true,
+    "grabRetainsOnlyExistingUnchangedPreview": true,
+    "grabCannotAdmitNewChooser": true,
+    "unblockedIneligibleTargetRetiresPreview": true,
+    "readonlyRefreshRetainsPreview": true,
+    "refreshPendingDisablesRegionInput": true,
+    "minimizedTargetHasNoChooser": true,
+    "allSixRegionsAndCloseReachable": true,
+    "nativePlacementExplicitlyUnavailable": true,
+    "disabledApplyCannotResolve": true,
+    "outputReflowRetiresChoiceAndOnlyReads": true,
+    "snapUsesSharedAllocator": true,
+    "placementIntentRoundTripsStrictly": true,
+    "pendingSnapCannotAllocateAgain": true,
+    "staleOutputCannotSubmitPlacement": true,
+    "grabCannotSubmitPlacement": true,
+    "negotiatedSnapExposesApply": true,
+    "applyClosesChooserAndReadsBeforeMutation": true,
+    "unknownRecoveryRetainsPlacementAndBlocksReplay": true,
+    "sharedOutcomeGateAcceptsExactSnapShape": true,
+    "shellCorrelatesSnapCommittedReceipt": true,
+    "sameIdsDifferentPlacementCannotSettle": true,
+    "closeRetiresPreview": true
+  },
+  "frame": {
+    "surfaceProtocol": 2,
+    "publication": "1",
+    "lease": "1",
+    "mode": "snap",
+    "status": "Connected",
+    "bar": [
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:2:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:overview",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:2:control:overview-opener",
+        "label": "Task View",
+        "ariaLabel": "Open Task View",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:switcher",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:2:control:switcher-opener",
+        "label": "Switch windows",
+        "ariaLabel": "Open window switcher",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:group:application:documents",
+        "domId": "group:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:1:application:documents",
+        "label": "Document",
+        "ariaLabel": "Minimize Document",
+        "detail": "Active",
+        "enabled": true
+      }
+    ],
+    "popup": [
+      {
+        "id": "control:close",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:2:snap:close",
+        "label": "Close",
+        "ariaLabel": "Close snapping",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "snap:region:left-half",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:2:snap:region:left-half",
+        "label": "Left half",
+        "ariaLabel": "Left half; selected preview",
+        "detail": "Selected",
+        "enabled": true
+      },
+      {
+        "id": "snap:region:right-half",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:2:snap:region:right-half",
+        "label": "Right half",
+        "ariaLabel": "Right half",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "snap:region:top-left",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:2:snap:region:top-left",
+        "label": "Top left quarter",
+        "ariaLabel": "Top left quarter",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "snap:region:top-right",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:2:snap:region:top-right",
+        "label": "Top right quarter",
+        "ariaLabel": "Top right quarter",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "snap:region:bottom-left",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:2:snap:region:bottom-left",
+        "label": "Bottom left quarter",
+        "ariaLabel": "Bottom left quarter",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "snap:region:bottom-right",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:2:snap:region:bottom-right",
+        "label": "Bottom right quarter",
+        "ariaLabel": "Bottom right quarter",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "snap:apply",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:2:snap:apply",
+        "label": "Snapping unavailable",
+        "ariaLabel": "Snapping unavailable",
+        "detail": "",
+        "enabled": false
+      }
+    ]
+  },
+  "scope": "Actual Desktop/Surface policy with typed geometry fixture; native geometry decoding, placement authority and original isolated recordings remain required."
+}

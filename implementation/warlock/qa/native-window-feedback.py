@@ -4,7 +4,8 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
 lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
 """
 import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
-SNAP=sys.argv[1:]==['--snap-chooser']
+PLACEMENT=sys.argv[1:]==['--snap-placement']
+SNAP=sys.argv[1:]==['--snap-chooser'] or PLACEMENT
 REFLOW=sys.argv[1:]==['--popup-reflow']
 DENSEMENU=sys.argv[1:]==['--dense-menu'] or REFLOW
 DENSEPICKER=sys.argv[1:]==['--dense-picker'] or DENSEMENU
@@ -26,6 +27,8 @@ from system_isolation import supply,validate
 from inspection import Collector
 isolate_session_host(host)
 sys.path.insert(0,str(ROOT/'adapter'));from effect_endpoint import Endpoint;from endpoint import start_time
+if PLACEMENT:
+ from geometry_endpoint import GeometryEndpoint as Endpoint
 pre=json.loads((RUNTIME/'qa/preflight.json').read_text());pair=pre['pair'];build_path=pathlib.Path(pre['controlledHostBuild']);build=json.loads(build_path.read_text());assert build['passed'];binary=build_path.parent/'elm-host';assert sha(binary)==build['binarySHA256']
 assert not NAV or (ROOT/'qa/current-native-pair.json').exists()
 assert not (ROOT/'native/authority.cpp').exists() or (ROOT/'qa/current-native-pair.json').exists()
@@ -52,7 +55,7 @@ else:
 for row in pair.values():assert sha(row['path'])==row['sha256']
 assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
 subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
-OUT=ROOT/'qa/runs'/(('native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+OUT=ROOT/'qa/runs'/(('native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
 OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
 focus_host=None
 if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
@@ -112,6 +115,7 @@ if SWITCHER:report.update(requirements=['ELM-UI-003'],scenarios=['switcher-order
 if PRIMARY:report.update(requirements=['ELM-UI-004'],scenarios=['taskbar-inactive','taskbar-active','taskbar-minimized'],scope='Actual pointer single-family activation/minimize/restore, exact native receipt and GTK keyboard recipient, MRU/desktop succession and pixels; primary keyboard and AT acceptance remain pending',nativePrimaryJourneyObserved=False)
 if PINMENUS:report.update(requirements=['ELM-UI-008','ELM-UX-023'],scenarios=['menu-invocation','keyboard-menus'],scope='Actual current running pin, native secondary click/Menu/Shift-F10 menus and existing minimize/restore path; dense/enlarged-text, AT and independent acceptance remain open',nativePinnedMenusObserved=False)
 if SNAP:report.update(requirements=['ELM-UX-019','ELM-UX-020'],scenarios=['ux-019','ux-020'],scope='Actual native snap chooser presentation/keyboard/output-scale invalidation only; native snap placement authority and accepted half-work-area oracle remain required',nativeSnapChooserObserved=False)
+if PLACEMENT:report.update(scope='Actual GUI snap submission through shared allocator/custody/native geometry authority, exact half-work-area readback/pixels and stale output refusal; original independent/AT release acceptance remains separate',nativeSnapPlacementObserved=False)
 if DENSE:report.update(requirements=['ELM-UI-008'],scenarios=['overflow-first-last','overflow-resize','menu-invocation'],scope='Actual small native output, enlarged text, configured overflowing pins, physical keyboard/wheel/menu traversal and output resize; AT and independent review remain open',nativeDenseTaskbarObserved=False)
 if DENSEPICKER:report.update(requirements=['ELM-UI-008','ELM-UI-004'],scenarios=['overflow-first-last','overflow-resize','menu-invocation','taskbar-group'],scope='Actual ten-root native enlarged-text picker arrow/endpoints, first/last menus and identity-bound selection/input; browser resize continuity is separate; native popup reflow, AT and independent review remain open',nativeDensePickerObserved=False)
 if DENSEMENU:report.update(requirements=['ELM-UI-008'],scenarios=['overflow-first-last','menu-invocation'],scope='Actual ten-root 480x360 native output at 200% text; overflow of current three-operation menu, typed endpoint/arrows/disabled/Tab/Escape and operation-label pixels; renderer capacity/growth/blur are component observations; AT/independent and native popup reflow remain open',nativeDenseMenuObserved=False)
@@ -157,7 +161,9 @@ try:
    native=next(row for _,row in s.host.processes if row['name']=='hyprland')
    config={'runtime':str(s.host.runtime),'instance':s.env['HYPRLAND_INSTANCE_SIGNATURE'],'pid':native['pid'],'expected_start':int(start_time(native['pid'])),'binary_sha256':pair['core']['sha256']}
    config_path=OUTPUT/'authority-config.json';config_path.write_text(json.dumps(config));config_path.chmod(0o600)
-   client=Endpoint(**config);client.hello();env=supply(s.env,s.host.runtime);validate(env,s.host.runtime);env['XDG_STATE_HOME']=str(s.host.runtime/'private-warlock-state');report['privateStateRoot']=env['XDG_STATE_HOME'];env.update(GTK_A11Y='none',NO_AT_BRIDGE='1',GSETTINGS_BACKEND='memory',GTK_USE_PORTAL='0',WAYLAND_DEBUG='client')
+   client=Endpoint(**config);client.hello();
+   if PLACEMENT:client.geometry_attach('15000')
+   env=supply(s.env,s.host.runtime);validate(env,s.host.runtime);env['XDG_STATE_HOME']=str(s.host.runtime/'private-warlock-state');report['privateStateRoot']=env['XDG_STATE_HOME'];env.update(GTK_A11Y='none',NO_AT_BRIDGE='1',GSETTINGS_BACKEND='memory',GTK_USE_PORTAL='0',WAYLAND_DEBUG='client')
    if CATALOG:
     catalog_root=pathlib.Path(env['XDG_DATA_HOME'])/'applications';catalog_root.mkdir(mode=0o700,parents=True,exist_ok=True)
     # Only explicitly owned fixture metadata is visible to this broker.
@@ -560,19 +566,50 @@ raise SystemExit(daemon.run())
       body=wait(snap_body);check('NativeSnapChooserHasSixRegions',len([b for b in body['buttons'] if b.get('identity','').startswith('snap:region:')])==6,body=body)
       keyboard_button('Right half');body=wait(lambda:next((b for b in [snap_body()] if b and any(row['accessibleName']=='Right half; selected preview' for row in b['buttons'])),None))
       check('NativeRegionSelectionHasNoWindowEffect',len(journal())==before and len(launches())==before_launches,body=body)
-      check('NativePlacementRemainsExplicitlyUnavailable',any(b['identity']=='snap:apply' and b['disabled'] for b in body['buttons']),body=body)
+      check('NativeNegotiatedSnapPlacementAvailable',any(b['identity']=='snap:apply' and not b['disabled'] for b in body['buttons']),body=body)
       popup_capture('native-snap-chooser');capture=report['popupCaptures'][-1]
       check('NativeSnapSelectedControlHasActualTextPixels',len(capture['controlRegions'])==1 and capture['controlRegions'][0]['accessibleName']=='Right half; selected preview' and all(r['area']>0 and r['brightPixels']>15 and r['paintedPixels']>.9*r['area'] for r in capture['controlRegions']),capture=capture)
       def focused_snap(identity):
        body=snap_body();button=next((b for b in (body or {}).get('buttons',[]) if b.get('identity')==identity),None)
        return body if button and button['id']==body['focus'] and button['y']>=-.5 and button['y']+button['height']<=body['viewportHeight']+.5 else None
-      key(107);body=wait(lambda:focused_snap('snap:region:bottom-right'));popup_capture('native-snap-last-region');capture=report['popupCaptures'][-1]
-      check('NativeSnapEndRevealsLastRegionAndSkipsUnavailableApply',len(capture['controlRegions'])==1 and capture['controlRegions'][0]['accessibleName']=='Bottom right quarter' and all(r['area']>0 and r['brightPixels']>15 and r['paintedPixels']>.9*r['area'] for r in capture['controlRegions']),body=body,capture=capture)
+      key(107);wait(lambda:focused_snap('snap:apply'));key(103);body=wait(lambda:focused_snap('snap:region:bottom-right'));popup_capture('native-snap-last-region');capture=report['popupCaptures'][-1]
+      check('NativeSnapEndReachesApplyAndArrowRevealsLastRegion',len(capture['controlRegions'])==1 and capture['controlRegions'][0]['accessibleName']=='Bottom right quarter' and all(r['area']>0 and r['brightPixels']>15 and r['paintedPixels']>.9*r['area'] for r in capture['controlRegions']),body=body,capture=capture)
       key(102);wait(lambda:focused_snap('control:close'));check('NativeSnapHomeReturnsToVisibleClose',len(journal())==before and len(launches())==before_launches,body=snap_body())
+      if PLACEMENT:
+       keyboard_button('Left half');wait(lambda:any(b['accessibleName']=='Left half; selected preview' for b in (snap_body() or {}).get('buttons',[])))
+       old=client.geometry_facts('16001');row=next(w for w in old['facts']['windows'] if w['incarnation']==target);area=row['workArea'];expected=[area[0],area[1],area[2]/2,area[3]]
+       original_membership=sorted((w['incarnation'],w['workspace'],w['monitor']) for w in facts()['facts']['windows'])
+       original_focus=facts()['facts']['focused'];keyboard_button('Snap to left half')
+       wait(lambda:(projection() or {}).get('mode')=='closed' and len(journal())==before+1 and transaction_state()=='Committed')
+       request=journal()[-1];check('NativeSnapSubmitsOneExactGenerationBoundPlacement',request['effectProtocol']==2 and request['intent']['operation']=='snap' and request['intent']['incarnation']==target and request['intent']['placement']['geometry']==expected and request['intent']['placement']['outputOwnershipGeneration']==row['outputOwnershipGeneration'] and request['intent']['placement']['workAreaRevision']==row['workAreaRevision'] and request['intent']['placement']['workspaceGeneration']==row['workspaceGeneration'],request=request,observed=row)
+       actual=client.geometry_facts('16002');placed=next(w for w in actual['facts']['windows'] if w['incarnation']==target)
+       check('OriginalUX019AcceptedHalfWorkAreaWithinRounding',all(abs(a-b)<=1 for a,b in zip(placed['logicalGeometry'],expected)) and placed['nativeMode']=='ordinary' and placed['clientMode']=='ordinary',expected=expected,actual=placed)
+       check('NativeSnapPreservesMembershipAndFocus',original_membership==sorted((w['incarnation'],w['workspace'],w['monitor']) for w in facts()['facts']['windows']) and facts()['facts']['focused']==original_focus)
+       receipts=[json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('backend-frame: ') and json.loads(line.split(': ',1)[1]).get('kind')=='effect-outcome']
+       correlated=[r for r in receipts if r.get('binding')==request['binding'] and r.get('intent')==request['intent'] and r.get('effectProtocol')==2]
+       check('NativeSnapHasOneCorrelatedCommittedReceipt',len(correlated)==1 and correlated[0]['status']=='Committed',request=request,receipts=correlated)
+       report['nativeSnapReceipt']={'request':request,'receipt':correlated[0],'before':old,'after':actual}
+       image=OUTPUT/'native-left-half-placement.png';helper(['/usr/bin/grim',str(image)])
+       import gi;gi.require_version('GdkPixbuf','2.0');from gi.repository import GdkPixbuf
+       pix=GdkPixbuf.Pixbuf.new_from_file(str(image));data=pix.get_pixels();stride=pix.get_rowstride();channels=pix.get_n_channels();x,y,width,height=placed['logicalGeometry'];left,top=max(0,int(x+10)),max(80,int(y+10));right,bottom=min(800,int(x+width-10)),min(600,int(y+height-10))
+       green=sum(1 for py in range(top,bottom) for px in range(left,right) if data[py*stride+px*channels+1]>100 and data[py*stride+px*channels+1]>data[py*stride+px*channels]+30 and data[py*stride+px*channels+1]>data[py*stride+px*channels+2]+30)
+       check('NativeAcceptedSnapHasActualWindowPixels',green>1000,image=str(image),sha256=sha(image),region=[left,top,right,bottom],greenPixels=green)
+       report['nativeSnapCapture']={'path':str(image),'sha256':sha(image),'expected':expected,'actual':placed,'greenPixels':green}
+       # Reopen the same target's real chooser, then retain its exact observed
+       # placement scope for a stale native request after the scale change.
+       before=len(journal());button=wait(pin_button);x,y=round(button['x']+button['width']/2),round(button['y']+button['height']/2)
+       helper([str(POINTER),'800','600'],f'move {x} {y}\nsleep 100\nbutton 273 1\nsleep 50\nbutton 273 0\nsleep 100\n');wait(menu);keyboard_button('Open snapping',28);wait(snap_body)
+       stale=client.geometry_facts('16003');stale_row=next(w for w in stale['facts']['windows'] if w['incarnation']==target);wa=stale_row['workArea']
+       stale_intent={'request':'20000','generation':'20000','incarnation':target,'operation':'snap','context':{'lifetime':client.bound['lifetime'],'epoch':client.bound['frontend'],'output':stale['outputGeneration'],'revision':stale['revision']},'placement':{'region':'left-half','geometry':[wa[0],wa[1],wa[2]/2,wa[3]],'monitor':stale_row['monitor'],'outputOwnershipGeneration':stale_row['outputOwnershipGeneration'],'workAreaRevision':stale_row['workAreaRevision'],'workspaceGeneration':stale_row['workspaceGeneration']}}
       result=s.ctl('eval','hl.monitor({output="WAYLAND-1",mode="800x600@60",position="0x0",scale=1.25})');check('NativeSnapOutputScaleCommand',result.strip()=='ok',result=result)
       wait(lambda:any(m['name']=='WAYLAND-1' and m['scale']==1.25 for m in s.data('monitors')))
       wait(lambda:(projection() or {}).get('mode')=='closed')
       check('NativeOutputScaleRetiresSnapWithoutCommit',len(journal())==before and len(launches())==before_launches,projection=projection(),monitors=s.data('monitors'))
+      if PLACEMENT:
+       after_scale=client.geometry_facts('16004');before_refusal=next(w for w in after_scale['facts']['windows'] if w['incarnation']==target)
+       receipt=client.geometry_effect(stale_intent);after_refusal=client.geometry_facts('16005');final=next(w for w in after_refusal['facts']['windows'] if w['incarnation']==target)
+       check('OriginalUX020OldOutputGeometryNeverCommits',receipt['status']=='Refused' and receipt['reason']=='dependency-mismatch' and final['logicalGeometry']==before_refusal['logicalGeometry'] and len(journal())==before,receipt=receipt,before=before_refusal,after=final)
+       report['nativeSnapStaleRefusal']={'intent':stale_intent,'receipt':receipt,'before':after_scale,'after':after_refusal};report['nativeSnapPlacementObserved']=True
       report['nativeSnapChooserObserved']=True
 
     elif CHORD:

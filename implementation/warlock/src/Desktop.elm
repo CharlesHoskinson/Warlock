@@ -54,7 +54,7 @@ type alias NativeChord = {generation : Counter, roots : List Counter, history : 
 
 type ChoiceToken = ChoiceToken Binding.Binding Counter
 
-type alias Choice = { chord : Maybe Counter, binding : Binding.Binding, output : Counter, root : Counter, application : String, token : ChoiceToken }
+type alias Choice = { chord : Maybe Counter, binding : Binding.Binding, output : Counter, root : Counter, application : String, token : ChoiceToken, placement : Maybe Snap.Proposal }
 
 choiceToken : Model -> Maybe ChoiceToken
 choiceToken model = model.choice |> Maybe.map .token
@@ -66,6 +66,7 @@ type Msg
     | OpenWindowMenu Shell.Stamp Counter
     | OpenSnap ViewStamp Counter
     | SelectSnap ViewStamp Snap.Region
+    | ApplySnap ViewStamp
     | CloseSnap ViewStamp
     | InvalidateSnap
     | OwnerScope D.Value
@@ -130,7 +131,7 @@ chooseFamily family model =
             in case next.windows.shell.expected of
                 Just request ->
                     let token=ChoiceToken binding request
-                    in ({next | choice=Just {chord=model.nativeSwitcher |> Maybe.map .generation,binding=binding,output=observed.context.output,root=family.root,application=family.application,token=token}},effects++[ArmChoice token])
+                    in ({next | choice=Just {chord=model.nativeSwitcher |> Maybe.map .generation,binding=binding,output=observed.context.output,root=family.root,application=family.application,token=token,placement=Nothing}},effects++[ArmChoice token])
                 Nothing -> (next,effects)
         _ -> (retireSwitcher model,[])
 
@@ -333,7 +334,7 @@ window message model =
                             in case next.windows.shell.expected of
                                 Just request ->
                                     let token=ChoiceToken binding request
-                                    in ({next | choice=Just {chord=Nothing,binding=binding,output=observed.context.output,root=root,application=family.application,token=token}},effects++[ArmChoice token])
+                                    in ({next | choice=Just {chord=Nothing,binding=binding,output=observed.context.output,root=root,application=family.application,token=token,placement=Nothing}},effects++[ArmChoice token])
                                 Nothing -> (next,effects)
                 _ -> (model,[])
         _ ->
@@ -376,18 +377,29 @@ window message model =
 
             in case next.choice of
                 Just pending ->
-                    if not matchingObservation || not (Shell.available next.windows.shell) then (next,effects) else
+                    if not matchingObservation || not (Shell.available next.windows.shell)
+                        || (pending.placement/=Nothing && (next.windows.shell.geometry |> Maybe.map .blocked |> Maybe.withDefault True)) then (next,effects) else
                     let retired={next | choice=Nothing,choiceNotice="The window changed. Choose again."}
                         family=TaskbarShell.groups next.windows |> List.concatMap .families |> List.filter (\item -> item.root==pending.root && item.application==pending.application && item.available) |> List.head
                         output=next.windows.shell.effects.observed |> Maybe.map (.context >> .output)
                     in if next.windows.shell.binding/=Just pending.binding || output/=Just pending.output || geometryOutput/=Just pending.output then (retired,effects) else
                         case (Shell.capture next.windows.shell,family) of
                             (Just scope,Just selected) ->
-                                case Taskbar.selection selected of
-                                    Taskbar.Apply operation root ->
-                                        let (applied,commands)=windowBase (TaskbarShell.Native (Shell.Act scope operation root)) {retired | choiceNotice=""}
-                                        in (applied,effects++fenceSwitcherSelection pending.chord pending.binding commands)
-                                    _ -> (retired,effects)
+                                case pending.placement of
+                                    Just proposed ->
+                                        case (next.windows.shell.geometry,Shell.captureGeometry next.windows.shell) of
+                                            (Just geometry,Just stamp) ->
+                                                let current={proposed|context=geometry.context}
+                                                in if not (Snap.matches geometry pending.root current) then ({retired|choiceNotice="Output or window changed. Open snapping again."},effects) else
+                                                    let (applied,commands)=windowBase (TaskbarShell.Native (Shell.Act stamp (Effects.SnapPlacement current) pending.root)) {retired|choiceNotice=""}
+                                                    in (applied,effects++commands)
+                                            _ -> (retired,effects)
+                                    Nothing ->
+                                        case Taskbar.selection selected of
+                                            Taskbar.Apply operation root ->
+                                                let (applied,commands)=windowBase (TaskbarShell.Native (Shell.Act scope operation root)) {retired | choiceNotice=""}
+                                                in (applied,effects++fenceSwitcherSelection pending.chord pending.binding commands)
+                                            _ -> (retired,effects)
                             _ -> (retired,effects)
                 Nothing -> (next,effects)
 
@@ -408,6 +420,18 @@ update message model =
             if capture model/=Just stamp then (model,[]) else
             case (model.windows.shell.geometry,model.snap) of
                 (Just geometry,Just choice) -> ({model|snap=Snap.select geometry region choice},[])
+                _ -> (model,[])
+        ApplySnap stamp ->
+            if capture model/=Just stamp || model.choice/=Nothing || not (Shell.available model.windows.shell)
+                || not (model.windows.shell.geometryCaps |> Maybe.map (\caps -> List.member "snap" caps.operations) |> Maybe.withDefault False) then (model,[]) else
+            case (model.snap,model.windows.shell.geometry) of
+                (Just choice,Just geometry) ->
+                    if not (Snap.valid geometry choice) then (model,[]) else
+                    case (Snap.proposal choice,TaskbarShell.groups model.windows |> List.concatMap .families |> List.filter (\family -> family.root==choice.target && family.available) |> List.head) of
+                        (Just proposed,Just family) ->
+                            let (next,effects)=chooseFamily family {model|snap=Nothing}
+                            in ({next|choice=next.choice |> Maybe.map (\pending -> {pending|placement=Just proposed})},effects)
+                        _ -> (model,[])
                 _ -> (model,[])
         CloseSnap stamp ->
             if capture model/=Just stamp || model.snap==Nothing then (model,[]) else
@@ -609,7 +633,7 @@ update message model =
                     in case next.windows.shell.expected of
                         Just request ->
                             let token=ChoiceToken binding request
-                            in ({next | choice=Just {chord=Nothing,binding=binding,output=observed.context.output,root=root,application=family.application,token=token}},effects++[ArmChoice token])
+                            in ({next | choice=Just {chord=Nothing,binding=binding,output=observed.context.output,root=root,application=family.application,token=token,placement=Nothing}},effects++[ArmChoice token])
                         Nothing -> (next,effects)
                 _ -> (model,[])
         SearchQuery stamp query ->

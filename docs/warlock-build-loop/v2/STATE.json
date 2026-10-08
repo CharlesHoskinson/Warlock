@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-08T10:50:37.535855+00:00",
+  "updatedUTC": "2026-10-08T11:30:00.079507+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
@@ -37,16 +37,36 @@
       "implementation/warlock/qa/native-window-feedback.py",
       "implementation/warlock/qa/snap-chooser.qnt",
       "implementation/warlock/assets/context.js",
-      "implementation/warlock/assets/activation.js"
+      "implementation/warlock/assets/activation.js",
+      "implementation/warlock/src/Effects.elm",
+      "implementation/warlock/src/GeometryProjection.elm",
+      "implementation/warlock/src/Shell.elm",
+      "implementation/warlock/src/ReceiptRouter.elm",
+      "implementation/warlock/native/authority.cpp",
+      "implementation/warlock/native/geometry-effects.inc",
+      "implementation/warlock/native/snap-placement.inc",
+      "implementation/warlock/native/host-journal.h",
+      "implementation/warlock/adapter/geometry_placement.py",
+      "implementation/warlock/adapter/geometry_endpoint.py",
+      "implementation/warlock/adapter/recovery_journal.py",
+      "implementation/warlock/qa/check-native-authority.py",
+      "implementation/warlock/qa/current-native-pair.json",
+      "implementation/warlock/qa/check-snap.py",
+      "implementation/warlock/adapter/admission_ledger.py",
+      "implementation/warlock/src/NativeOutcome.elm"
     ],
     "before": "Window actions expose Maximize/Restore but no snap chooser, typed region preview or output-generation-bound placement policy.",
-    "after": "Window actions open a keyboard-navigable snap chooser with immutable half/quarter regions tied to exact geometry scope; changed outputs retire previews. Native placement authority and observed accepted placement remain required before release.",
+    "after": "Chooser submits a negotiated typed snap through existing preparation/allocator/custody; exact native accepted half placement is visible; changed-output old geometry is refused without replay.",
     "verification": [
       "Changed integrated Elm compile and actual chooser/reflow/stale-view replay; native host mode admission and browser controls. Continue with exact native effect authority and original isolated placement/stale-output recordings."
     ],
     "state": "Chooser integrated; 19 Elm checks, 14 browser utility/chooser checks, 45 menu regressions and 81 native campaign checks pass. Exact native snap placement is still required; original scenarios remain partial.",
-    "evidence": "implementation/warlock/qa/evidence/snap-chooser/manifest.json",
-    "nextSourceWork": "Extend the existing typed geometry effect operation, shared request allocator and durable custody through native placement authority; close the chooser before native geometry admission, reconcile fresh exact output/work-area/workspace scope, then qualify actual left-half placement and stale-output refusal using the original isolated oracles."
+    "evidence": {
+      "path": "implementation/warlock/qa/evidence/snap-placement/manifest.json",
+      "sha256": "19ecc95a39ab602c65397e85304b8c25064952034f61cd601c82f8eb88056a87"
+    },
+    "nextSourceWork": "Extend the existing typed geometry effect operation, shared request allocator and durable custody through native placement authority; close the chooser before native geometry admission, reconcile fresh exact output/work-area/workspace scope, then qualify actual left-half placement and stale-output refusal using the original isolated oracles.",
+    "status": "native-placement-observed-independent-acceptance-open"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",

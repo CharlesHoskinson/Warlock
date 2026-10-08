@@ -1,0 +1,406 @@
+An example execution:
+
+[State 0]
+{
+  state:
+    {
+      admittedOutput: 0,
+      admittedRevision: 0,
+      choiceOutput: 0,
+      choiceRevision: 0,
+      issued: false,
+      open: false,
+      output: 1,
+      region: 0,
+      request: 0,
+      revision: 1,
+      sealed: false,
+      waiting: false
+    }
+}
+
+[State 1]
+{
+  state:
+    {
+      admittedOutput: 0,
+      admittedRevision: 0,
+      choiceOutput: 0,
+      choiceRevision: 0,
+      issued: false,
+      open: false,
+      output: 2,
+      region: 0,
+      request: 0,
+      revision: 2,
+      sealed: false,
+      waiting: false
+    }
+}
+
+[State 2]
+{
+  state:
+    {
+      admittedOutput: 0,
+      admittedRevision: 0,
+      choiceOutput: 0,
+      choiceRevision: 0,
+      issued: false,
+      open: false,
+      output: 3,
+      region: 0,
+      request: 0,
+      revision: 3,
+      sealed: false,
+      waiting: false
+    }
+}
+
+[State 3]
+{
+  state:
+    {
+      admittedOutput: 0,
+      admittedRevision: 0,
+      choiceOutput: 3,
+      choiceRevision: 3,
+      issued: false,
+      open: true,
+      output: 3,
+      region: 0,
+      request: 0,
+      revision: 3,
+      sealed: false,
+      waiting: false
+    }
+}
+
+[State 4]
+{
+  state:
+    {
+      admittedOutput: 0,
+      admittedRevision: 0,
+      choiceOutput: 3,
+      choiceRevision: 3,
+      issued: false,
+      open: true,
+      output: 3,
+      region: 4,
+      request: 0,
+      revision: 3,
+      sealed: false,
+      waiting: false
+    }
+}
+
+[State 5]
+{
+  state:
+    {
+      admittedOutput: 0,
+      admittedRevision: 0,
+      choiceOutput: 3,
+      choiceRevision: 3,
+      issued: false,
+      open: true,
+      output: 3,
+      region: 0,
+      request: 0,
+      revision: 3,
+      sealed: false,
+      waiting: false
+    }
+}
+
+[State 6]
+{
+  state:
+    {
+      admittedOutput: 0,
+      admittedRevision: 0,
+      choiceOutput: 3,
+      choiceRevision: 3,
+      issued: false,
+      open: true,
+      output: 3,
+      region: 4,
+      request: 0,
+      revision: 3,
+      sealed: false,
+      waiting: false
+    }
+}
+
+[State 7]
+{
+  state:
+    {
+      admittedOutput: 0,
+      admittedRevision: 0,
+      choiceOutput: 3,
+      choiceRevision: 3,
+      issued: false,
+      open: true,
+      output: 3,
+      region: 0,
+      request: 0,
+      revision: 3,
+      sealed: false,
+      waiting: false
+    }
+}
+
+[State 8]
+{
+  state:
+    {
+      admittedOutput: 0,
+      admittedRevision: 0,
+      choiceOutput: 3,
+      choiceRevision: 3,
+      issued: false,
+      open: true,
+      output: 3,
+      region: 3,
+      request: 0,
+      revision: 3,
+      sealed: false,
+      waiting: false
+    }
+}
+
+[State 9]
+{
+  state:
+    {
+      admittedOutput: 0,
+      admittedRevision: 0,
+      choiceOutput: 3,
+      choiceRevision: 3,
+      issued: false,
+      open: false,
+      output: 4,
+      region: 3,
+      request: 0,
+      revision: 4,
+      sealed: false,
+      waiting: false
+    }
+}
+
+[State 10]
+{
+  state:
+    {
+      admittedOutput: 0,
+      admittedRevision: 0,
+      choiceOutput: 3,
+      choiceRevision: 3,
+      issued: false,
+      open: false,
+      output: 4,
+      region: 3,
+      request: 0,
+      revision: 4,
+      sealed: false,
+      waiting: false
+    }
+}
+
+[State 11]
+{
+  state:
+    {
+      admittedOutput: 0,
+      admittedRevision: 0,
+      choiceOutput: 3,
+      choiceRevision: 3,
+      issued: false,
+      open: false,
+      output: 5,
+      region: 3,
+      request: 0,
+      revision: 5,
+      sealed: false,
+      waiting: false
+    }
+}
+
+[State 12]
+{
+  state:
+    {
+      admittedOutput: 0,
+      admittedRevision: 0,
+      choiceOutput: 3,
+      choiceRevision: 3,
+      issued: false,
+      open: false,
+      output: 5,
+      region: 3,
+      request: 0,
+      revision: 5,
+      sealed: false,
+      waiting: false
+    }
+}
+
+[State 13]
+{
+  state:
+    {
+      admittedOutput: 0,
+      admittedRevision: 0,
+      choiceOutput: 5,
+      choiceRevision: 5,
+      issued: false,
+      open: true,
+      output: 5,
+      region: 0,
+      request: 0,
+      revision: 5,
+      sealed: false,
+      waiting: false
+    }
+}
+
+[State 14]
+{
+  state:
+    {
+      admittedOutput: 0,
+      admittedRevision: 0,
+      choiceOutput: 5,
+      choiceRevision: 5,
+      issued: false,
+      open: false,
+      output: 6,
+      region: 0,
+      request: 0,
+      revision: 6,
+      sealed: false,
+      waiting: false
+    }
+}
+
+[State 15]
+{
+  state:
+    {
+      admittedOutput: 0,
+      admittedRevision: 0,
+      choiceOutput: 6,
+      choiceRevision: 6,
+      issued: false,
+      open: true,
+      output: 6,
+      region: 0,
+      request: 0,
+      revision: 6,
+      sealed: false,
+      waiting: false
+    }
+}
+
+[State 16]
+{
+  state:
+    {
+      admittedOutput: 0,
+      admittedRevision: 0,
+      choiceOutput: 6,
+      choiceRevision: 6,
+      issued: false,
+      open: false,
+      output: 7,
+      region: 0,
+      request: 0,
+      revision: 7,
+      sealed: false,
+      waiting: false
+    }
+}
+
+[State 17]
+{
+  state:
+    {
+      admittedOutput: 0,
+      admittedRevision: 0,
+      choiceOutput: 6,
+      choiceRevision: 6,
+      issued: false,
+      open: false,
+      output: 7,
+      region: 0,
+      request: 0,
+      revision: 8,
+      sealed: false,
+      waiting: false
+    }
+}
+
+[State 18]
+{
+  state:
+    {
+      admittedOutput: 0,
+      admittedRevision: 0,
+      choiceOutput: 6,
+      choiceRevision: 6,
+      issued: false,
+      open: false,
+      output: 8,
+      region: 0,
+      request: 0,
+      revision: 9,
+      sealed: false,
+      waiting: false
+    }
+}
+
+[State 19]
+{
+  state:
+    {
+      admittedOutput: 0,
+      admittedRevision: 0,
+      choiceOutput: 6,
+      choiceRevision: 6,
+      issued: false,
+      open: false,
+      output: 9,
+      region: 0,
+      request: 0,
+      revision: 10,
+      sealed: false,
+      waiting: false
+    }
+}
+
+[State 20]
+{
+  state:
+    {
+      admittedOutput: 0,
+      admittedRevision: 0,
+      choiceOutput: 6,
+      choiceRevision: 6,
+      issued: false,
+      open: false,
+      output: 9,
+      region: 0,
+      request: 0,
+      revision: 11,
+      sealed: false,
+      waiting: false
+    }
+}
+
+[ok] No violation found (109ms at 917 traces/second).
+Trace length statistics: max=21, min=21, average=21.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x13512 --backend=typescript to reproduce.
