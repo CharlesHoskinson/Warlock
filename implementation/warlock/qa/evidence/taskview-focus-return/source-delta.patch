@@ -1,0 +1,24 @@
+--- implementation/maximized-stack-v1/native-core-v2/src/managers/SeatManager.cpp
++++ implementation/warlock/native/core/SeatManager.cpp
+@@ -687,6 +687,7 @@
+ void CSeatManager::setGrab(SP<CSeatGrab> grab) {
+     if (m_seatGrab) {
+         auto oldGrab = m_seatGrab;
++        auto previousWindow = Desktop::focusState()->window();
+ 
+         // Try to find the parent window or layer surface from the grab
+         PHLWINDOW parentWindow;
+@@ -770,6 +771,13 @@
+         if (refocus) {
+             auto candidate = Desktop::focusState()->window();
+ 
++            // Pointer refocus can clear a keyboard-none layer popup's opener.
++            // Retain its exact object only while it remains eligible; an
++            // existing new focus, hidden workspace or retired window wins.
++            if (!candidate && parentLayer && parentLayer->m_interactivity == ZWLR_LAYER_SURFACE_V1_KEYBOARD_INTERACTIVITY_NONE && validMapped(previousWindow) &&
++                previousWindow->m_workspace && previousWindow->m_workspace->isVisibleNotCovered())
++                candidate = previousWindow;
++
+             if (candidate && candidate->m_workspace && candidate->m_workspace->isVisibleNotCovered())
+                 Desktop::focusState()->rawWindowFocus(candidate, Desktop::FOCUS_REASON_FFM);
+             else {

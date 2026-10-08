@@ -1,41 +1,44 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-08T01:38:28.931787+00:00",
+  "updatedUTC": "2026-10-08T02:15:57.036502+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "popup-reopen-native-presentation",
+    "id": "task-view-dismissal-focus",
     "requirements": [
-      "ELM-UI-004",
-      "ELM-UI-005",
-      "ELM-UX-029"
+      "ELM-UI-006",
+      "ELM-UX-017"
     ],
     "scenarios": [
-      "taskbar-group",
-      "search-no-match",
-      "search-refused",
-      "launcher-refused"
+      "overview-cancel",
+      "ux-017"
     ],
     "paths": [
-      "native/host.c",
-      "native/shared-host.c",
-      "qa/check-search.py",
-      "qa/native-window-feedback.py",
-      "qa/current-search-build.json"
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/TaskView.elm",
+      "implementation/warlock/native/host.c",
+      "implementation/warlock/native/shared-host.c",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/current-search-build.json",
+      "implementation/warlock/native/core/SeatManager.cpp",
+      "implementation/warlock/qa/check-focus-core.py",
+      "implementation/warlock/qa/current-focus-core.json",
+      "implementation/warlock/qa/current-native-pair.json",
+      "implementation/warlock/qa/check-native-authority.py"
     ],
-    "before": "First popup paints, but reopening the taskbar picker or launcher after dismissal shows black controls despite current DOM projection.",
-    "after": "A reopened current popup paints its real controls and supports the same keyboard/pointer journey with fresh lease readiness and no stale events or repeated effects.",
+    "before": "Retained Task View Escape did not deliver keyboard input back to the eligible opener.",
+    "after": "Task View browse is observation-only and Escape returns the native keyboard recipient to its eligible opener.",
     "verification": [
-      "Compile/relink changed native host units with unchanged CPP objects and compiled Elm assets; existing native host lease/readiness self-tests",
-      "Protected native workspace-2 Task View then reopened taskbar restore with actual control pixels, native receipt/focus/keyboard/membership",
-      "Protected native launcher repeated/refused/no-match popup physical controls; retain original failures and native AT/IME obligations"
+      "Current-source native Task View local browsing, actual control pixels and Escape/GTK keyboard recipient; fix eligible focus policy if the retained failure persists.",
+      "Compile one owning compositor TU, preserve ordered archive members and strict dependencies/exports, refresh exact owning authority pair; repeat actual Escape recipient and retirement negative case."
     ],
-    "state": "implemented; current taskbar and launcher native repaint/input journeys pass; independent and applicable AT/IME acceptance remain open",
-    "evidence": "implementation/warlock/qa/evidence/popup-remap/manifest.json"
+    "state": "implemented; native Escape returns surviving opener keyboard focus; retired opener negative and current-tuple regressions pass; independent/AT remain open",
+    "evidence": "implementation/warlock/qa/evidence/taskview-focus-return/manifest.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -214,18 +217,49 @@
       ],
       "evidence": "implementation/warlock/qa/evidence/persistent-pins/manifest.json",
       "missingObservation": "Independent reviewer, native zero-window keyboard/AT route, and actual launcher popup pixels remain open. Pins after restart are physically visible in the captured native taskbar."
+    },
+    {
+      "id": "popup-reopen-native-presentation",
+      "requirements": [
+        "ELM-UI-004",
+        "ELM-UI-005",
+        "ELM-UX-029"
+      ],
+      "scenarios": [
+        "taskbar-group",
+        "search-no-match",
+        "search-refused",
+        "launcher-refused"
+      ],
+      "paths": [
+        "native/host.c",
+        "native/shared-host.c",
+        "qa/check-search.py",
+        "qa/native-window-feedback.py",
+        "qa/current-search-build.json"
+      ],
+      "before": "First popup paints, but reopening the taskbar picker or launcher after dismissal shows black controls despite current DOM projection.",
+      "after": "A reopened current popup paints its real controls and supports the same keyboard/pointer journey with fresh lease readiness and no stale events or repeated effects.",
+      "verification": [
+        "Compile/relink changed native host units with unchanged CPP objects and compiled Elm assets; existing native host lease/readiness self-tests",
+        "Protected native workspace-2 Task View then reopened taskbar restore with actual control pixels, native receipt/focus/keyboard/membership",
+        "Protected native launcher repeated/refused/no-match popup physical controls; retain original failures and native AT/IME obligations"
+      ],
+      "state": "implemented; current taskbar and launcher native repaint/input journeys pass; independent and applicable AT/IME acceptance remain open",
+      "evidence": "implementation/warlock/qa/evidence/popup-remap/manifest.json"
     }
   ],
   "nextOriginalSlice": {
-    "id": "task-view-dismissal-focus",
+    "id": "taskbar-primary-actions",
     "requirements": [
-      "ELM-UI-006",
-      "ELM-UX-017"
+      "ELM-UI-004"
     ],
     "scenarios": [
-      "overview-cancel",
-      "ux-017"
+      "taskbar-inactive",
+      "taskbar-active",
+      "taskbar-minimized"
     ],
-    "observedBlocker": "Retained Task View Escape journey previously failed actual opener keyboard recipient; revalidate against the retained-wrapper host then fix actual eligible-recipient behavior without manual focus repair."
+    "before": "Primary activation/minimize/restore exist in policy but original native cases are unadjudicated.",
+    "after": "Native single-family taskbar primary actions activate inactive, minimize active and restore minimized with exact recipients, visible outcomes and declared focus succession."
   }
 }

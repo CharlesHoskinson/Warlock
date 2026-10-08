@@ -1,0 +1,14 @@
+--- proven-focus-return
++++ retired-reentry-attempt
+@@ -205,6 +205,11 @@
+ 
+     if (!surf) {
+         m_events.keyboardFocusChange.emit();
++        // An ordinary window can disappear while a live popup grab owns the
++        // keyboard. Preserve leave/cancellation above, then re-enter only the
++        // current grab's surviving surfaces; observers may already replace it.
++        if (m_state.keyboardFocus.expired() && m_seatGrab && m_seatGrab->m_keyboard && m_keyboard)
++            refocusGrab();
+         return;
+     }
+ 

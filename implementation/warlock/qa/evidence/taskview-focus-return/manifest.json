@@ -1,0 +1,195 @@
+{
+  "schema": 1,
+  "slice": "task-view-dismissal-focus",
+  "observedUTC": "2026-10-08T02:15:57.036502+00:00",
+  "requirements": [
+    "ELM-UI-006",
+    "ELM-UX-017"
+  ],
+  "scenarios": [
+    "overview-cancel",
+    "ux-017"
+  ],
+  "sourceHashes": {
+    "implementation/warlock/src/Desktop.elm": "63bcac5e0ad15f18d20ea233c38f28c8425459275e977068e406f8c3a3360448",
+    "implementation/warlock/src/TaskView.elm": "0c2a4c1ba02077bfdf439e8dead2fc19074a79e3b37ea0be286a7ffa613a8b08",
+    "implementation/warlock/native/host.c": "d5418c9cf5d6e296ac001c4c6192bd734277fdc88b7fcf64e9dd5fabeddda801",
+    "implementation/warlock/native/shared-host.c": "603961b58810985097a8060818be054025dba6138eeeaf31e00e275fc2a7f5ee",
+    "implementation/warlock/qa/native-window-feedback.py": "c80ef08dde6b9d41ea72634b01726b3c4b6e7763d0ac97830c597f55750adf5c",
+    "implementation/warlock/qa/check-search.py": "65424b91c2e46be809e2fd30f1bb9ceefa1e27497afbf5473d7d12e778b7e7a1",
+    "implementation/warlock/qa/current-search-build.json": "d770e9b99a26b708a0e81bfe80027cc15771093253f3f8c5bc3789cfa4178aa2",
+    "implementation/warlock/native/core/SeatManager.cpp": "6708011ae8c0ef5fcd462074c7c923d05c649b992832c75ffcff6b17a50a9b00",
+    "implementation/warlock/qa/check-focus-core.py": "08f56e21163be2f51e2e863d245dabe13fef06717ff325b274cefc2488f9e04d",
+    "implementation/warlock/qa/current-focus-core.json": "57a45caba28b3f65f8a45240d692c22e2d777d92b5bef0ccc56e2dfb2a3ce886",
+    "implementation/warlock/qa/current-native-pair.json": "86fcde1bd6129483624e37bd0898e8a0464ff500c4acc6185347a4d1a95d6d7d",
+    "implementation/warlock/qa/check-native-authority.py": "c1b36b2225f76a1b42666c05c7f627e705ac75403810ffa0995a58937021aaed"
+  },
+  "nativePair": {
+    "schema": 1,
+    "pair": {
+      "core": {
+        "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791424194221212572/Hyprland",
+        "sha256": "d33564c40106bda01fdfb9cc2fdedfe791abb7b2c4744469d64228f0bd4ac105"
+      },
+      "plugin": {
+        "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791424217295022348/elm-window-geometry-authority.so",
+        "sha256": "649dac1d070ea5995603de5a261e4a53271302dc16dd6aeb73d8ae535cd2fc3b"
+      },
+      "aquamarine": {
+        "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+        "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+      }
+    },
+    "authorityReport": "implementation/warlock/qa/runs/native-authority-1791424217295022348/report.json",
+    "authorityReportSHA256": "7d0d439a0dd566f8eb6b757bdab6fbfed1dcf6b5f2416c097cc4bfd16f0736aa",
+    "authorityInputs": {
+      "native/authority.cpp": "5ba7996e4bb6606f10e03ad334d0fff8ab433807cf5f1da14099250cd8e78101",
+      "native/navigation-modal.hpp": "f3a1fdabeaa4abdaa3bcd839e0a3b62854a844cd791dd338d8f1a3e5bb488c1e"
+    },
+    "unchangedRuntimePreflight": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v204/qa/preflight.json",
+    "unchangedRuntimePreflightSHA256": "d0b121978e8833ad03da40aab848b8f80442abe5cfc7540d4582a812e1e8cc26",
+    "nativeAcceptance": false,
+    "fullReleaseAccepted": false
+  },
+  "hostBuild": {
+    "schema": 1,
+    "report": "implementation/warlock/qa/runs/popup-1791423332551779927/report.json",
+    "reportSHA256": "1f231905eeffc8770e046468a589a829ed07b87142a319d1c19e4e329ee2eefe",
+    "compiledAssets": {
+      "elm.js": "667a48618ad94013f16ac1be40090b0144364984fca520ca1d8da692e3cfa560",
+      "bar.js": "8cbd65ef673c71ea3c420176440776cf44bb9edf70a18933839adb7c3ad72a97",
+      "popup.js": "a44f1caa745e99d7e8049134f1efc6081ccc1e9c531b5049a800c5ffe80a3b0a"
+    },
+    "binarySHA256": "65dbe7ea443d1bd00df9144871388eb7e27ca4b0086b2da086e9a14e7c3f3e44",
+    "nativeAcceptance": false,
+    "fullReleaseAccepted": false
+  },
+  "reports": {
+    "component": {
+      "original": "implementation/warlock/qa/runs/focus-core-1791424194221212572/report.json",
+      "copy": "implementation/warlock/qa/evidence/taskview-focus-return/component-report.json",
+      "sha256": "3504708346df95877854ec8b6b36cb726a6c048c06340cd6140600d7ce5a3895",
+      "passed": true
+    },
+    "authority": {
+      "original": "implementation/warlock/qa/runs/native-authority-1791424217295022348/report.json",
+      "copy": "implementation/warlock/qa/evidence/taskview-focus-return/authority-report.json",
+      "sha256": "7d0d439a0dd566f8eb6b757bdab6fbfed1dcf6b5f2416c097cc4bfd16f0736aa",
+      "passed": true
+    },
+    "before": {
+      "original": "implementation/warlock/qa/runs/native-task-view-1791423633164394488/report.json",
+      "copy": "implementation/warlock/qa/evidence/taskview-focus-return/before-report.json",
+      "sha256": "b6649a4399cd60479df4d400a9705d0c1c7281d4f86e04c85c74b7811ebcdacf",
+      "passed": false
+    },
+    "after": {
+      "original": "implementation/warlock/qa/runs/native-task-view-1791425341433354456/report.json",
+      "copy": "implementation/warlock/qa/evidence/taskview-focus-return/after-report.json",
+      "sha256": "8d7804517deebac67c55eaba3af548bd097404d257b801052a62ec1a54e1247a",
+      "passed": true
+    },
+    "retired-opener": {
+      "original": "implementation/warlock/qa/runs/native-task-view-1791425279284045365/report.json",
+      "copy": "implementation/warlock/qa/evidence/taskview-focus-return/retired-opener-report.json",
+      "sha256": "eaa075a40811ff25402ee262046efd0ea70a50553c092c3f37d79a44686529c5",
+      "passed": true
+    },
+    "workspace-navigation": {
+      "original": "implementation/warlock/qa/runs/native-workspace-navigation-1791425411036803317/report.json",
+      "copy": "implementation/warlock/qa/evidence/taskview-focus-return/workspace-navigation-report.json",
+      "sha256": "f1da87b4b8d5a72ed3fc3612a97a3558f15d591e0884fbec197ddcf13a26e1f1",
+      "passed": true
+    },
+    "launcher": {
+      "original": "implementation/warlock/qa/runs/native-search-1791425496015831438/report.json",
+      "copy": "implementation/warlock/qa/evidence/taskview-focus-return/launcher-report.json",
+      "sha256": "1172d0cbb8d0b1ff6aee127f16c916d74bee42d7cbf441d3b1b75d6356313114",
+      "passed": true
+    },
+    "feedback": {
+      "original": "implementation/warlock/qa/runs/native-feedback-1791425556343380463/report.json",
+      "copy": "implementation/warlock/qa/evidence/taskview-focus-return/feedback-report.json",
+      "sha256": "d7ea12381429eb2eac75843ae39304af369be5e7e663f54f63f16950b880cded",
+      "passed": true
+    }
+  },
+  "captures": [
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-focus-return/after-popup-initial.png",
+      "sha256": "c15ad02e50b0ed9d8739ec915f29153831d0796854f2f7a915e1a45b908d8b6b",
+      "stage": "initial",
+      "report": "after"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-focus-return/after-popup-workspace-two.png",
+      "sha256": "5e32b22bb7cba631da7a49cdbd7047865ec8cb7a92978d975bb037e0f8af5a29",
+      "stage": "workspace-two",
+      "report": "after"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-focus-return/launcher-popup-refused.png",
+      "sha256": "3d19c55823ad7d2a749619b8be80ef0b2339ec4083a8e82fa5c214d022d72894",
+      "stage": "refused",
+      "report": "launcher"
+    }
+  ],
+  "observedBehavior": "Native Task View keyboard/pointer local browsing and actual group/active-marker controls paint. Escape closes the popup without a window-effect request, preserves workspace membership, and returns native incarnation 2 and GTK key a to the surviving opener. When that opener is really destroyed, current presentation acknowledgement precedes one Escape; the popup closes, retired incarnation 2 stays absent/unfocused, no window effect is sent and surviving peer workspace/output stay unchanged.",
+  "productionChange": "Capture the exact previous native focused window before grab-end pointer refocus; use it only when current focus is empty, the popup belongs to a keyboard-none layer, and that object is still mapped on a visible workspace. Existing native focus/lock/nofocus policy remains in force.",
+  "buildBoundary": "One SeatManager TU compiled/relinked against identical owning public headers; 432 ordered archive payloads preserved, public exports equal. Authority recompiled against the owning identical-header tuple with strict strong-symbol closure. Frozen runtime assets retained; a recorded private host copy changes only the core-selector tuple location.",
+  "retiredAttempt": "An extra keyboard-grab reentry patch did not fix the negative observation and is retired. Protocol/GDK trace shows Escape arrived before presentation-applied for the replacement frame. The final negative fixture waits the real current-frame acknowledgement under the unchanged six-second observation deadline; it does not move focus or repeat Escape.",
+  "failedReportsByReference": [
+    {
+      "path": "implementation/warlock/qa/runs/native-task-view-1791424312928317646/report.json",
+      "sha256": "c10f7682a57ed50b9d21c0b8b8fc437f45bfae0ae1d552497d7559b7cda67b77",
+      "error": "FileExistsError(17, 'File exists')",
+      "retainedLocally": true
+    },
+    {
+      "path": "implementation/warlock/qa/runs/native-task-view-1791424451278314691/report.json",
+      "sha256": "2a3a8bb00786de42ad8b3d90b931b686052a87cfe46cb523f246ec4158a1abf6",
+      "error": "RuntimeError('Original observation deadline <lambda>')",
+      "retainedLocally": true
+    },
+    {
+      "path": "implementation/warlock/qa/runs/native-task-view-1791424595643550621/report.json",
+      "sha256": "6498506631de1414e2e914d69731908c423c8e1d7c177243825e067786da7583",
+      "error": "RuntimeError('Original observation deadline <lambda>')",
+      "retainedLocally": true
+    },
+    {
+      "path": "implementation/warlock/qa/runs/native-task-view-1791424897320882802/report.json",
+      "sha256": "cf3b00d2a6287114354e5d8c1ab95f7324e85eea9756e9a75e4e1d07fc792a35",
+      "error": "RuntimeError('Original observation deadline <lambda>')",
+      "retainedLocally": true
+    },
+    {
+      "path": "implementation/warlock/qa/runs/native-task-view-1791425206181283142/report.json",
+      "sha256": "26ded2066680718e78e036d72fef4e701706d935948ba7c8bf2e3edf20bd0fc7",
+      "error": "StopIteration()",
+      "retainedLocally": true
+    },
+    {
+      "path": "implementation/warlock/qa/runs/focus-core-1791424084977274151/report.json",
+      "sha256": "11605f116045794829de8f5a3668056cb01b21870643ca3c8023935cc73e8b31",
+      "error": "FileNotFoundError(2, 'No such file or directory')",
+      "retainedLocally": true
+    }
+  ],
+  "regressions": "Current tuple workspace-2 Task View and reopened taskbar restore, launcher input/refusal/no-match physical controls, and native Pending/Refused/Unknown read-only recovery/no-replay all pass with normal cleanup.",
+  "acceptance": {
+    "nativeJourneysObserved": true,
+    "independentReviewAccepted": false,
+    "assistiveTechnologyAccepted": false,
+    "fullReleaseAccepted": false
+  },
+  "missingObservations": [
+    "Independent original-scenario review and applicable native AT/IME.",
+    "Empty workspace, selected-member removal, overview refusal/transfer and other-output original journeys remain separately open.",
+    "Session-lock/exclusive-input/hardware/resource and original full-release qualification remain required."
+  ],
+  "sourceAncestry": {
+    "path": "implementation/maximized-stack-v1/native-core-v2/src/managers/SeatManager.cpp",
+    "sha256": "bd7485535c7e9f71382e587d92a7c73e048a0d7a5efcf518a1e671a188f94378"
+  }
+}

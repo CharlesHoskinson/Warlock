@@ -4,7 +4,7 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
 lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
 """
 import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
-NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'];PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS;TASKVIEW=sys.argv[1:]==['--task-view'] or NAV;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW
+NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'];PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143';RUNTIME=REPO/'implementation/warlock-client-provider-native-v204'
 sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
 spec=importlib.util.spec_from_file_location('feedback_private_host',RUNTIME/'candidate_host.py');host=importlib.util.module_from_spec(spec);spec.loader.exec_module(host)
@@ -19,7 +19,16 @@ assert not NAV or (ROOT/'qa/current-native-pair.json').exists()
 assert not (ROOT/'native/authority.cpp').exists() or (ROOT/'qa/current-native-pair.json').exists()
 if (ROOT/'qa/current-native-pair.json').exists():
  native_pair=json.loads((ROOT/'qa/current-native-pair.json').read_text());authority_path=REPO/native_pair['authorityReport'];assert sha(authority_path)==native_pair['authorityReportSHA256'];authority=json.loads(authority_path.read_text());assert authority['passed'] and authority['missingSymbols']==[]
- assert native_pair['pair']['core']==pair['core'] and native_pair['pair']['aquamarine']==pair['aquamarine'] and sha(RUNTIME/'qa/preflight.json')==native_pair['unchangedRuntimePreflightSHA256']
+ assert native_pair['pair']['aquamarine']==pair['aquamarine'] and sha(RUNTIME/'qa/preflight.json')==native_pair['unchangedRuntimePreflightSHA256']
+ if native_pair['pair']['core']!=pair['core']:
+  focus=authority['focusCoreReport'];focus_path=REPO/focus['report'];assert sha(focus_path)==focus['reportSHA256'];focus_core=json.loads(focus_path.read_text())
+  assert focus_core['passed'] and focus_core['existingPublicHeadersUnchanged'] and focus_core['existingObjectLayoutsUnchanged']
+  assert sha(ROOT/'native/core/SeatManager.cpp')==focus_core['sourceSHA256']
+  assert native_pair['pair']['core']=={'path':focus_core['binary'],'sha256':focus_core['binarySHA256']}
+  ancestor_path=pathlib.Path(focus_core['ancestor']['report']);assert sha(ancestor_path)==focus_core['ancestor']['reportSHA256'];ancestor=json.loads(ancestor_path.read_text())
+  assert pair['core']=={'path':ancestor['binary'],'sha256':ancestor['binarySHA256']}
+  assert all(sha(p)==h for p,h in focus_core['dependencies'].items())
+  assert all(sha(p)==h for p,h in focus_core['linkDependencies'].items())
  assert native_pair['authorityInputs']==authority['inputs'] and all(sha(ROOT/p)==h for p,h in authority['inputs'].items()) and all(sha(p)==h for p,h in authority['dependencies'].items())
  assert native_pair['pair']['plugin']=={'path':authority['binary'],'sha256':authority['binarySHA256']};pair=native_pair['pair']
 CURRENT=(ROOT/'qa/current-search-build.json').exists()
@@ -33,11 +42,36 @@ assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa
 subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
 OUT=ROOT/'qa/runs'/(('native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
 OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
+focus_host=None
+if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
+ # The frozen host's process selector reads its sibling native build tuple.
+ # Keep every other verified runtime asset at the frozen root and give this
+ # private, recorded copy the newly compiled core tuple. Never edit that root.
+ focus_inputs=OUTPUT.with_name(OUTPUT.name+'-inputs');focus_inputs.mkdir(mode=0o700)
+ original_host=(RUNTIME/'candidate_host.py').read_text();needle='ROOT=Path(__file__).resolve().parent'
+ assert original_host.count(needle)==1
+ adapted=original_host.replace(needle,'ROOT=Path('+repr(str(RUNTIME))+')')
+ host_path=focus_inputs/'focus_host.py';host_path.write_text(adapted)
+ (focus_inputs/'native-build-report.json').write_text(json.dumps({'result':'pass','binary':pair['core']['path'],'sha256':pair['core']['sha256']}))
+ spec=importlib.util.spec_from_file_location('focus_core_private_host',host_path);host=importlib.util.module_from_spec(spec);spec.loader.exec_module(host)
+ isolate_session_host(host)
+ focus_host={'originalSHA256':sha(RUNTIME/'candidate_host.py'),'adaptedPath':str(host_path),'adaptedSHA256':sha(host_path),'change':'Keep frozen asset ROOT; sibling process tuple points only to the source-verified focus core.'}
 POINTER=pathlib.Path('/home/hoskinson/.local/share/hypr-window-controls/qa/virtual-pointer');FIXTURE=RUNTIME/'fixture.py'
+retirement_fixture=None
+if RETIRE_OPENER:
+ fixture_inputs=OUTPUT.with_name(OUTPUT.name+'-inputs');fixture_inputs.mkdir(mode=0o700,exist_ok=True)
+ fixture_source=FIXTURE.read_text();needle="        elif request['op'] == 'retire-peer':"
+ assert fixture_source.count(needle)==1
+ adapted=fixture_source.replace(needle,"        elif request['op'] == 'retire-primary':\n            windows.pop('ELM-AUTHORITY-FIXTURE').destroy()\n"+needle)
+ original_fixture=FIXTURE;FIXTURE=fixture_inputs/'retire-opener-fixture.py';FIXTURE.write_text(adapted)
+ retirement_fixture={'originalSHA256':sha(original_fixture),'path':str(FIXTURE),'sha256':sha(FIXTURE),'change':'Retire only the original primary window; create no replacement/modal.'}
 report={'schema':1,'requirements':['ELM-UI-007'],'scenarios':['restore-pending','restore-refused','restore-unknown'],'scope':'Actual pointer/Elm/native effect feedback and private compositor pixels; no AT/IME/full release acceptance','nativeFeedbackObserved':False,'nativeAcceptance':False,'assistiveTechnologyAccepted':False,'fullReleaseAccepted':False,'mainDesktopActions':False,'passed':False,'checks':[],'sourceInputs':{str(p.relative_to(ROOT)):sha(p) for folder in ['src','native','adapter','assets'] for p in (ROOT/folder).iterdir() if p.is_file()},'pair':pair,'nativeHost':{'path':str(binary),'sha256':sha(binary),'heldBuild':str(build_path),'heldBuildSHA256':sha(build_path)},'runtimeByReference':{'root':str(RUNTIME),'hostSHA256':sha(RUNTIME/'candidate_host.py')},'helpers':[],'nativeFixtures':[]};s=None;loaded=False;apps=[];broker=None;paused=False;sequence=0
+if focus_host:report['focusHostAdaptation']=focus_host
+if retirement_fixture:report['retirementFixture']=retirement_fixture
 if SEARCH:report.update(requirements=['ELM-UI-005','ELM-UX-029'],scenarios=['search-no-match','search-race','search-refused','launcher-refused'],scope='Actual current query and private catalog, native typing/Enter refusal and no duplicate launch; AT/IME and popup physical presentation acceptance remain pending',popupPresentationAccepted=False)
 if PINS:report.update(requirements=['ELM-UI-004','ELM-UX-004'],scenarios=['taskbar-zero','ux-004'],scope='Actual native keyboard pin/reorder, shell restart, identity order and one current zero-window launch; popup physical presentation and AT acceptance remain separate',popupPresentationAccepted=False,nativePinJourneyObserved=False)
 if TASKVIEW:report.update(requirements=['ELM-UX-017','ELM-UI-006'],scenarios=['ux-017','overview-cancel'],scope='Actual two populated native workspaces, exact window membership and active marker, keyboard/pointer local browsing and Escape recipient; independent and applicable AT acceptance remain pending',nativeTaskViewJourneyObserved=False)
+if RETIRE_OPENER:report['scope']='Actual native Task View browse then primary opener retirement; Escape must not revive its incarnation or dispatch a window effect. Independent/AT acceptance remains pending.'
 if NAV:report.update(requirements=['ELM-UI-002','ELM-UI-006','ELM-UX-008'],scenarios=['activate-other-workspace','overview-select','ux-008','activation-refused'],scope='Actual minimized workspace-2 family selected through Task View and taskbar; native receipts, focus/keyboard, pixels and unchanged membership; stale-context refusal; other-output, partial-refusal and AT acceptance remain separate',nativeNavigationJourneyObserved=False,authorityBuild={'path':str(authority_path),'sha256':sha(authority_path)})
 if FOCUS:report.update(requirements=['ELM-UI-004','ELM-UX-024'],scenarios=['taskbar-group','ux-024'],scope='Actual native picker traversal and Escape/focus recipient diagnosis; menu/AT original acceptance remains pending')
 LUA=b'''hl.config({xwayland={enabled=false},animations={enabled=false}})
@@ -254,12 +288,28 @@ try:
      helper([str(POINTER),'800','600'],f'move {x} {y}\nsleep 100\nbutton 272 1\nsleep 50\nbutton 272 0\nsleep 100\n')
      wait(lambda:all(w['label'] in (popup_body() or {}).get('text','') for w in membership))
      check('PointerAllWorkspacesRestoresGroupsWithoutMutation',len(journal())==before,body=popup_body())
+     if RETIRE_OPENER:
+      fixture_control('retire-primary')
+      wait(lambda:not any(w['title']=='ELM-AUTHORITY-FIXTURE' for w in s.data('clients')))
+      wait(lambda:(projection() or {}).get('phase')=='Coherent' and before_focus not in [w['incarnation'] for w in facts()['facts']['windows']])
+      check('OriginalOpenerActuallyRetired',before_focus not in [w['incarnation'] for w in facts()['facts']['windows']])
+      def current_popup_presented():
+       body=popup_body()
+       if not body:return False
+       ack='surface-presentation-applied: publication='+body['publication']+' lease='+body['lease']
+       return body if ack in text().splitlines() else False
+      presented=wait(current_popup_presented)
+      report['retiredOpenerPresentationBarrier']={'publication':presented['publication'],'lease':presented['lease'],'observedNativeAck':True}
      key(1);wait(lambda:(projection() or {}).get('mode')=='closed' and (projection() or {}).get('phase')=='Coherent')
      events=control.with_suffix('.events.jsonl');before_events=len(events.read_text().splitlines()) if events.exists() else 0
      key(30);delivered=[json.loads(l) for l in events.read_text().splitlines()[before_events:]] if events.exists() else []
-     check('OverviewEscapeReturnsToEligibleOpener',facts()['facts']['focused']==before_focus and any(e['kind']=='key' and e['keyval']==97 and e['window']=='ELM-AUTHORITY-FIXTURE' for e in delivered),events=delivered,before=before_focus,after=facts()['facts']['focused'])
+     if RETIRE_OPENER:
+      check('OverviewEscapeCannotReviveRetiredOpener',facts()['facts']['focused']!=before_focus and not any(e['window']=='ELM-AUTHORITY-FIXTURE' for e in delivered),events=delivered,retired=before_focus,after=facts()['facts']['focused'])
+      report['nativeRetiredOpenerNegativeObserved']=True
+     else:
+      check('OverviewEscapeReturnsToEligibleOpener',facts()['facts']['focused']==before_focus and any(e['kind']=='key' and e['keyval']==97 and e['window']=='ELM-AUTHORITY-FIXTURE' for e in delivered),events=delivered,before=before_focus,after=facts()['facts']['focused'])
      check('OverviewDismissalHasNoNativeMutation',len(journal())==before)
-     report['nativeTaskViewJourneyObserved']=True
+     report['nativeTaskViewJourneyObserved']=not RETIRE_OPENER
     elif PINS:
      state_file=pathlib.Path(env['XDG_STATE_HOME'])/'warlock/taskbar.json'
      def saved_order():return json.loads(state_file.read_text())['identities'] if state_file.exists() else []
@@ -364,7 +414,13 @@ try:
     reconnect=next(b for b in body['buttons'] if b['accessibleName'].startswith('Reconnect') and not b['disabled']);x,y=map(round,(reconnect['x']+reconnect['width']/2,reconnect['y']+reconnect['height']/2));helper([str(POINTER),'800','600'],f'move {x} {y}\nsleep 100\nbutton 272 1\nsleep 50\nbutton 272 0\nsleep 100\n');wait(lambda:(projection() or {}).get('phase')=='Coherent');check('ReconnectReadsWithoutReplayingRestore',len(journal())==before+1 and current_window()['minimized'])
     body=feedback('Unknown');refresh=next(b for b in body['buttons'] if b['accessibleName'].startswith('Refresh window status') and not b['disabled']);x,y=map(round,(refresh['x']+refresh['width']/2,refresh['y']+refresh['height']/2));helper([str(POINTER),'800','600'],f'move {x} {y}\nsleep 100\nbutton 272 1\nsleep 50\nbutton 272 0\nsleep 100\n');check('RefreshQueuesNoSecondWindowEffect',len(journal())==before+1)
     wait(lambda:(projection() or {}).get('phase')=='Coherent');check('ReadOnlyRecoveryPreservesUnknownAndNoReplay',transaction_state()=='Unknown' and len(journal())==before+1 and current_window()['minimized'])
-   check('NoScratchpadOrWorkspaceTransfer',current_window()['workspace']==initial_workspace,nativeWorkspace=current_window()['workspace'],originalWorkspace=initial_workspace)
+   if RETIRE_OPENER:
+    peer=next(w for w in membership if w['label']=='ELM-ACTIVATION-PEER')
+    before_peer=next(w for w in native_facts['facts']['windows'] if w['incarnation']==peer['incarnation'])
+    after_peer=next(w for w in facts()['facts']['windows'] if w['incarnation']==peer['incarnation'])
+    check('NoScratchpadOrWorkspaceTransfer',all(before_peer[k]==after_peer[k] for k in ['workspace','monitor']),before={k:before_peer[k] for k in ['workspace','monitor']},after={k:after_peer[k] for k in ['workspace','monitor']})
+   else:
+    check('NoScratchpadOrWorkspaceTransfer',current_window()['workspace']==initial_workspace,nativeWorkspace=current_window()['workspace'],originalWorkspace=initial_workspace)
    report['nativeFeedbackObserved']=not FOCUS and not CATALOG and not TASKVIEW;report['nativeFocusJourneyObserved']=FOCUS;check('EveryRegisteredHelperExitedNormally',all(r['exitCode']==0 for r in report['helpers']));report['passed']=True
   finally:
    if paused:pause(False)

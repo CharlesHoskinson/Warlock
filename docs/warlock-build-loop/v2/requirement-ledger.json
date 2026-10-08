@@ -4708,14 +4708,19 @@
         {
           "name": "overview-cancel",
           "oracle": "no native mutation occurs and eligible opener focus returns",
-          "status": "failed",
+          "status": "partial",
           "evidence": [
             {
               "path": "implementation/warlock/qa/evidence/task-view/manifest.json",
               "sha256": "878c7c2f4782b7276b9e6183701c4f7e47d9540fb8f5b6990aa30303c5e12da9"
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/taskview-focus-return/manifest.json",
+              "sha256": "85fdd677f5987b7bc58dbf9f95b2cdfc6279501edb4882281373d24b18aacb75",
+              "scope": "Native Task View keyboard/pointer local browsing and actual group/active-marker controls paint. Escape closes the popup without a window-effect request, preserves workspace membership, and returns native incarnation 2 and GTK key a to the surviving opener. When that opener is really destroyed, current presentation acknowledgement precedes one Escape; the popup closes, retired incarnation 2 stays absent/unfocused, no window effect is sent and surviving peer workspace/output stay unchanged."
             }
           ],
-          "missingObservation": "Native focus return fails after pointer browsing and Escape; focus becomes null and opener receives no key. Applicable AT and independent original review remain pending.",
+          "missingObservation": "Independent original-scenario reviewer disposition and applicable native AT/IME; other original Task View scenarios remain separate.",
           "sourceTuple": {
             "candidate": "implementation/warlock",
             "sourceRevisionBeforeSlice": "84eee56542791d87b1d8d33cbe727fbfca66f5f5",
@@ -5045,11 +5050,7 @@
               "heldBuildSHA256": "3c67df33a8895fc0032476f90cf0fcf9491a8f4597b793e4cc4cc35246e04544"
             }
           },
-          "reviewerDisposition": {
-            "name": "root-task-view",
-            "independent": false,
-            "disposition": "Owner observation; original acceptance remains pending independent review"
-          }
+          "reviewerDisposition": "Owner records actual current tuple native presentation/browsing/Escape/input; independent acceptance pending."
         },
         {
           "name": "overview-retire",
@@ -6580,9 +6581,14 @@
             {
               "path": "implementation/warlock/qa/evidence/task-view/manifest.json",
               "sha256": "878c7c2f4782b7276b9e6183701c4f7e47d9540fb8f5b6990aa30303c5e12da9"
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/taskview-focus-return/manifest.json",
+              "sha256": "85fdd677f5987b7bc58dbf9f95b2cdfc6279501edb4882281373d24b18aacb75",
+              "scope": "Native Task View keyboard/pointer local browsing and actual group/active-marker controls paint. Escape closes the popup without a window-effect request, preserves workspace membership, and returns native incarnation 2 and GTK key a to the surviving opener. When that opener is really destroyed, current presentation acknowledgement precedes one Escape; the popup closes, retired incarnation 2 stays absent/unfocused, no window effect is sent and surviving peer workspace/output stay unchanged."
             }
           ],
-          "missingObservation": "Actual grouping/active marker and native control pixels observed; independent original-scenario review remains pending.",
+          "missingObservation": "Independent original-scenario reviewer disposition and applicable native AT/IME; other original Task View scenarios remain separate.",
           "sourceTuple": {
             "candidate": "implementation/warlock",
             "sourceRevisionBeforeSlice": "84eee56542791d87b1d8d33cbe727fbfca66f5f5",
@@ -6912,11 +6918,7 @@
               "heldBuildSHA256": "3c67df33a8895fc0032476f90cf0fcf9491a8f4597b793e4cc4cc35246e04544"
             }
           },
-          "reviewerDisposition": {
-            "name": "root-task-view",
-            "independent": false,
-            "disposition": "Owner observation; original acceptance remains pending independent review"
-          }
+          "reviewerDisposition": "Owner records actual current tuple native presentation/browsing/Escape/input; independent acceptance pending."
         }
       ]
     },

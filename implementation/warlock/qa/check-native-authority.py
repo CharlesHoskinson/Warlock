@@ -27,6 +27,19 @@ try:
  preserved={**prior['dependencies'],**prior['linkedLibraries'],**prior['tools']}
  for p,h in preserved.items():assert sha(p)==h,p
  core=prior['core'];assert sha(core['path'])==core['sha256']
+ old_core=dict(core);focus_core=None;header_prefix=None
+ focus_path=ROOT/'qa/current-focus-core.json'
+ if focus_path.exists():
+  focus=json.loads(focus_path.read_text());focus_report=REPO/focus['report']
+  assert sha(focus_report)==focus['reportSHA256'];focus_core=json.loads(focus_report.read_text())
+  assert focus_core['passed'] and focus_core['existingPublicHeadersUnchanged'] and focus_core['existingObjectLayoutsUnchanged']
+  assert sha(ROOT/'native/core/SeatManager.cpp')==focus_core['sourceSHA256']
+  owning=pathlib.Path(old_core['path']).parent
+  original_core=json.loads((owning/'report.json').read_text())
+  assert focus_core['owningHeaders']==original_core['owningHeaders']
+  header_prefix=(str(owning/'owning-headers'),str(focus_report.parent/'owning-headers'))
+  for rel,h in focus_core['owningHeaders'].items():assert sha(pathlib.Path(header_prefix[1])/rel)==h
+  core={'path':focus_core['binary'],'sha256':focus_core['binarySHA256']};assert sha(core['path'])==core['sha256']
  source=OUT/'inputs/native';source.mkdir(parents=True)
  inputs={}
  for name in ('authority.cpp','navigation-modal.hpp'):
@@ -36,6 +49,7 @@ try:
   if arg==str(PRIOR/'inputs/native/authority.cpp'):command[i]=str(source/'authority.cpp')
   elif i and command[i-1]=='-o':command[i]=str(OUT/'elm-window-geometry-authority.so')
   elif i and command[i-1]=='-MF':command[i]=str(OUT/'authority.d')
+  elif header_prefix and arg.startswith('-I'+header_prefix[0]):command[i]='-I'+header_prefix[1]+arg[len('-I'+header_prefix[0]):]
  command[1:1]=['-I'+str(PRIOR/'inputs/native')]
  run('navigation-authority-compile',command)
  binary=OUT/'elm-window-geometry-authority.so'
@@ -44,13 +58,16 @@ try:
  for p,h in dependencies.items():
   if p.startswith(str(source)):
    assert pathlib.Path(p).name in ('authority.cpp','navigation-modal.hpp')
-  else:assert preserved.get(p)==h,('Unrecorded or changed inherited dependency',p)
+  else:
+   inherited=header_prefix[0]+p[len(header_prefix[1]):] if header_prefix and p.startswith(header_prefix[1]+'/') else p
+   assert preserved.get(inherited)==h,('Unrecorded or changed inherited dependency',p)
  exports=set()
  for command_row in prior['commands']:
   if not command_row['name'].startswith('provider-symbols-'):continue
   path=PRIOR/(command_row['name']+'.stdout');assert sha(path)==prior['artifacts'][path.name]
-  provider=command_row['command'][-1];assert sha(provider)==(core['sha256'] if provider==core['path'] else prior['linkedLibraries'][provider])
-  for line in path.read_text().splitlines():
+  provider=command_row['command'][-1];assert sha(provider)==(old_core['sha256'] if provider==old_core['path'] else prior['linkedLibraries'][provider])
+  symbols=run('current-core-exports',['nm','-D','--defined-only',core['path']]) if focus_core and provider==old_core['path'] else path.read_text()
+  for line in symbols.splitlines():
    words=line.split()
    if len(words)>=3:
     symbol=words[-1].replace('@@','@');exports.add(symbol);exports.add(symbol.split('@')[0])
@@ -63,7 +80,8 @@ try:
  for p,h in preserved.items():assert sha(p)==h,p
  assert sha(core['path'])==core['sha256']
  r.update(passed=True,inputs=inputs,dependencies=dependencies,inheritedBuild=str(PRIOR/'report.json'),
-          inheritedBuildSHA256=sha(PRIOR/'report.json'),core=core,binary=str(binary),binarySHA256=sha(binary),missingSymbols=missing)
+          inheritedBuildSHA256=sha(PRIOR/'report.json'),core=core,binary=str(binary),binarySHA256=sha(binary),missingSymbols=missing,
+          focusCoreReport=focus if focus_core else None)
 except Exception as e:r['error']=repr(e)
 (OUT/'report.json').write_text(json.dumps(r,indent=2)+'\n')
 print(json.dumps({'passed':r['passed'],'report':str(OUT/'report.json'),'error':r.get('error')}));raise SystemExit(not r['passed'])
