@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "Original unavailable network and observed remaining state are readable"
+    },
+    {
+      "name": "Native state rows are semantic text without actionable disabled buttons"
+    },
+    {
+      "name": "Unsupported shutdown cannot issue a surface action"
+    },
+    {
+      "name": "Keyboard End reveals last supported operation at small size"
+    },
+    {
+      "name": "Keyboard Home reveals Close"
+    },
+    {
+      "name": "Keyboard submits one current surface action"
+    },
+    {
+      "name": "Pending disables changes and retains read-only refresh"
+    },
+    {
+      "name": "Confirmation exposes named cancel and confirm, other changes disabled"
+    },
+    {
+      "name": "Escape closes through matching physical key release"
+    },
+    {
+      "name": "No browser exceptions",
+      "detail": []
+    }
+  ],
+  "captures": [
+    "system-menu-confirmation.png"
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "browserExitCode": 0
+}

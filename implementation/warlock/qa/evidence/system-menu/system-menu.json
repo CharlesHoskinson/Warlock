@@ -1,0 +1,645 @@
+{
+  "checks": {
+    "systemMenuOpenerIntegrated": true,
+    "menuModeAcceptedByProductionRenderer": true,
+    "openingReadFocusMatchesCloseControl": true,
+    "originalUnavailableNetworkShown": true,
+    "remainingStateObserved": true,
+    "oneExplicitVolumeChange": true,
+    "pendingCannotRepeat": true,
+    "committedCannotRepeatOldRevision": true,
+    "unknownCannotReplay": true,
+    "readReconcilesChangedStateWithoutEffect": true,
+    "unavailableNeverSubmits": true,
+    "restartRequiresUIConfirmation": true,
+    "cancelHasNoNativeEffect": true,
+    "confirmedRestartSubmitsOnce": true,
+    "directConfirmationCannotBypassPrompt": true,
+    "wrongReceiptCannotSettle": true,
+    "staleViewCannotSubmit": true,
+    "closingFocusesOpenerWithoutNativeEffect": true,
+    "anotherPopupRetiresSystemWithoutLosingNativeState": true,
+    "allControlsHaveNames": true
+  },
+  "frame": {
+    "surfaceProtocol": 2,
+    "appearance": {
+      "theme": "night",
+      "textScale": 100
+    },
+    "publication": "1",
+    "lease": "1",
+    "mode": "system",
+    "status": "Current system state. Unavailable controls cannot be changed.",
+    "bar": [
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:overview",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:control:overview-opener",
+        "label": "Task View",
+        "ariaLabel": "Open Task View",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "bar:switcher",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:control:switcher-opener",
+        "label": "Switch windows",
+        "ariaLabel": "Open window switcher",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "bar:notifications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:notifications:opener",
+        "label": "Notifications",
+        "ariaLabel": "Open notifications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:system",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:opener",
+        "label": "System",
+        "ariaLabel": "Open system menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:settings",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:settings:opener",
+        "label": "Settings",
+        "ariaLabel": "Open settings",
+        "detail": "",
+        "enabled": true
+      }
+    ],
+    "popup": [
+      {
+        "id": "control:close",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:close",
+        "label": "Close system menu",
+        "ariaLabel": "Close system menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "system:refresh",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:refresh",
+        "label": "Refresh system state",
+        "ariaLabel": "Refresh system state",
+        "detail": "Read current state; never repeat a change",
+        "enabled": true
+      },
+      {
+        "id": "system:volume:state",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:volume:state",
+        "label": "Volume 100%; unmuted · Warlock private audio",
+        "ariaLabel": "Volume 100%; unmuted · Warlock private audio",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:volume-set:0",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:volume-set:0",
+        "label": "Set volume 0%",
+        "ariaLabel": "Set volume 0%",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "system:volume-set:25",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:volume-set:25",
+        "label": "Set volume 25%",
+        "ariaLabel": "Set volume 25%",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "system:volume-set:50",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:volume-set:50",
+        "label": "Set volume 50%",
+        "ariaLabel": "Set volume 50%",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "system:volume-set:75",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:volume-set:75",
+        "label": "Set volume 75%",
+        "ariaLabel": "Set volume 75%",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "system:volume-set:100",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:volume-set:100",
+        "label": "Set volume 100%",
+        "ariaLabel": "Set volume 100%",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:volume-mute:1",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:volume-mute:1",
+        "label": "Mute",
+        "ariaLabel": "Mute",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "system:network:state",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:network:state",
+        "label": "Network unavailable",
+        "ariaLabel": "Network unavailable",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:power:state",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:power:state",
+        "label": "Power · suspend available, restart available, shutdown unavailable",
+        "ariaLabel": "Power · suspend available, restart available, shutdown unavailable",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:suspend:0",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:suspend:0",
+        "label": "Suspend",
+        "ariaLabel": "Suspend",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "system:reboot:0",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:reboot:0",
+        "label": "Restart",
+        "ariaLabel": "Restart",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "system:poweroff:0",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:poweroff:0",
+        "label": "Shut down",
+        "ariaLabel": "Shut down",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:session:state",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:session:state",
+        "label": "Session Warlock private session · active; unlocked",
+        "ariaLabel": "Session Warlock private session · active; unlocked",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:session-lock:0",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:session-lock:0",
+        "label": "Lock session",
+        "ariaLabel": "Lock session",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "system:session-logout:0",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:session-logout:0",
+        "label": "Log out",
+        "ariaLabel": "Log out",
+        "detail": "",
+        "enabled": true
+      }
+    ]
+  },
+  "confirmFrame": {
+    "surfaceProtocol": 2,
+    "appearance": {
+      "theme": "night",
+      "textScale": 100
+    },
+    "publication": "2",
+    "lease": "1",
+    "mode": "system",
+    "status": "Confirm or cancel the requested system change.",
+    "bar": [
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:overview",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:overview-opener",
+        "label": "Task View",
+        "ariaLabel": "Open Task View",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "bar:switcher",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:switcher-opener",
+        "label": "Switch windows",
+        "ariaLabel": "Open window switcher",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "bar:notifications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:notifications:opener",
+        "label": "Notifications",
+        "ariaLabel": "Open notifications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:system",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:opener",
+        "label": "System",
+        "ariaLabel": "Open system menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:settings",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:settings:opener",
+        "label": "Settings",
+        "ariaLabel": "Open settings",
+        "detail": "",
+        "enabled": true
+      }
+    ],
+    "popup": [
+      {
+        "id": "control:close",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:close",
+        "label": "Close system menu",
+        "ariaLabel": "Close system menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "system:refresh",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:refresh",
+        "label": "Refresh system state",
+        "ariaLabel": "Refresh system state",
+        "detail": "Read current state; never repeat a change",
+        "enabled": true
+      },
+      {
+        "id": "system:volume:state",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:volume:state",
+        "label": "Volume 100%; unmuted · Warlock private audio",
+        "ariaLabel": "Volume 100%; unmuted · Warlock private audio",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:volume-set:0",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:volume-set:0",
+        "label": "Set volume 0%",
+        "ariaLabel": "Set volume 0%",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:volume-set:25",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:volume-set:25",
+        "label": "Set volume 25%",
+        "ariaLabel": "Set volume 25%",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:volume-set:50",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:volume-set:50",
+        "label": "Set volume 50%",
+        "ariaLabel": "Set volume 50%",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:volume-set:75",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:volume-set:75",
+        "label": "Set volume 75%",
+        "ariaLabel": "Set volume 75%",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:volume-set:100",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:volume-set:100",
+        "label": "Set volume 100%",
+        "ariaLabel": "Set volume 100%",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:volume-mute:1",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:volume-mute:1",
+        "label": "Mute",
+        "ariaLabel": "Mute",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:network:state",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:network:state",
+        "label": "Network unavailable",
+        "ariaLabel": "Network unavailable",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:power:state",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:power:state",
+        "label": "Power · suspend available, restart available, shutdown unavailable",
+        "ariaLabel": "Power · suspend available, restart available, shutdown unavailable",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:suspend:0",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:suspend:0",
+        "label": "Suspend",
+        "ariaLabel": "Suspend",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:reboot:0",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:reboot:0",
+        "label": "Restart",
+        "ariaLabel": "Restart",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:poweroff:0",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:poweroff:0",
+        "label": "Shut down",
+        "ariaLabel": "Shut down",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:session:state",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:session:state",
+        "label": "Session Warlock private session · active; unlocked",
+        "ariaLabel": "Session Warlock private session · active; unlocked",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:session-lock:0",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:session-lock:0",
+        "label": "Lock session",
+        "ariaLabel": "Lock session",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:session-logout:0",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:session-logout:0",
+        "label": "Log out",
+        "ariaLabel": "Log out",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:confirmation:state",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:confirmation:state",
+        "label": "Confirm Restart? Unsaved work or active connections may be affected.",
+        "ariaLabel": "Confirm Restart? Unsaved work or active connections may be affected.",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:cancel",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:cancel",
+        "label": "Cancel system change",
+        "ariaLabel": "Cancel system change",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "system:confirm",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:confirm",
+        "label": "Confirm Restart",
+        "ariaLabel": "Confirm Restart",
+        "detail": "",
+        "enabled": true
+      }
+    ]
+  },
+  "pendingFrame": {
+    "surfaceProtocol": 2,
+    "appearance": {
+      "theme": "night",
+      "textScale": 100
+    },
+    "publication": "3",
+    "lease": "1",
+    "mode": "system",
+    "status": "Volume: waiting for native result…",
+    "bar": [
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:overview",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:overview-opener",
+        "label": "Task View",
+        "ariaLabel": "Open Task View",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "bar:switcher",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:switcher-opener",
+        "label": "Switch windows",
+        "ariaLabel": "Open window switcher",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "bar:notifications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:notifications:opener",
+        "label": "Notifications",
+        "ariaLabel": "Open notifications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:system",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:opener",
+        "label": "System",
+        "ariaLabel": "Open system menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:settings",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:settings:opener",
+        "label": "Settings",
+        "ariaLabel": "Open settings",
+        "detail": "",
+        "enabled": true
+      }
+    ],
+    "popup": [
+      {
+        "id": "control:close",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:close",
+        "label": "Close system menu",
+        "ariaLabel": "Close system menu",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "system:refresh",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:refresh",
+        "label": "Refresh system state",
+        "ariaLabel": "Refresh system state",
+        "detail": "Read current state; never repeat a change",
+        "enabled": true
+      },
+      {
+        "id": "system:volume:state",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:volume:state",
+        "label": "Volume 100%; unmuted · Warlock private audio",
+        "ariaLabel": "Volume 100%; unmuted · Warlock private audio",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:volume-set:0",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:volume-set:0",
+        "label": "Set volume 0%",
+        "ariaLabel": "Set volume 0%",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:volume-set:25",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:volume-set:25",
+        "label": "Set volume 25%",
+        "ariaLabel": "Set volume 25%",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:volume-set:50",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:volume-set:50",
+        "label": "Set volume 50%",
+        "ariaLabel": "Set volume 50%",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:volume-set:75",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:volume-set:75",
+        "label": "Set volume 75%",
+        "ariaLabel": "Set volume 75%",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:volume-set:100",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:volume-set:100",
+        "label": "Set volume 100%",
+        "ariaLabel": "Set volume 100%",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:volume-mute:1",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:volume-mute:1",
+        "label": "Mute",
+        "ariaLabel": "Mute",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:network:state",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:network:state",
+        "label": "Network unavailable",
+        "ariaLabel": "Network unavailable",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:power:state",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:power:state",
+        "label": "Power · suspend available, restart available, shutdown unavailable",
+        "ariaLabel": "Power · suspend available, restart available, shutdown unavailable",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:suspend:0",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:suspend:0",
+        "label": "Suspend",
+        "ariaLabel": "Suspend",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:reboot:0",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:reboot:0",
+        "label": "Restart",
+        "ariaLabel": "Restart",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:poweroff:0",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:poweroff:0",
+        "label": "Shut down",
+        "ariaLabel": "Shut down",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:session:state",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:session:state",
+        "label": "Session Warlock private session · active; unlocked",
+        "ariaLabel": "Session Warlock private session · active; unlocked",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:session-lock:0",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:session-lock:0",
+        "label": "Lock session",
+        "ariaLabel": "Lock session",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "system:session-logout:0",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:session-logout:0",
+        "label": "Log out",
+        "ariaLabel": "Log out",
+        "detail": "",
+        "enabled": false
+      }
+    ]
+  }
+}

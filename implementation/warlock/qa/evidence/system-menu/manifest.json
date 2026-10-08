@@ -1,0 +1,982 @@
+{
+  "schema": 1,
+  "owner": "root-system-menu",
+  "observedUTC": "2026-10-08T13:30:02.218927+00:00",
+  "requirements": [
+    "ELM-UX-032"
+  ],
+  "scenarios": [
+    "ux-032"
+  ],
+  "originals": [
+    {
+      "id": "ELM-UX-032",
+      "capability": "elm-shell-experience",
+      "pattern": "event-driven",
+      "ears": "WHEN a user opens a system menu, the Elm desktop SHALL present capability-supported controls and display native outcomes for requested system changes.",
+      "phase": "P5",
+      "priority": "must",
+      "verification": "Elm replay assertion and isolated native recording: network control indicates unavailable and remaining controls show observed state.",
+      "legacyEvidence": "new system-menu adapter coverage",
+      "task": "Integrate volume, network, power and session adapters with explicit availability.",
+      "scenarios": [
+        {
+          "name": "ux-032",
+          "given": "network adapter is unavailable",
+          "when": "system menu opens",
+          "then": "network control indicates unavailable and remaining controls show observed state"
+        }
+      ],
+      "source": "docs/elm-roadmap/contributions/experience.json",
+      "status": "proposed",
+      "taskId": "P5-ELM-UX-032",
+      "accountableOwnerRole": "Desktop experience lead",
+      "verifierRole": "Independent acceptance reviewer"
+    }
+  ],
+  "scope": "Integrated immutable Elm system menu and bounded native capability/effect adapters. Actual private native audio and D-Bus observations, unavailable-network physical compositor recording, volume/mute readback and confirmation cancellation. Independent original-scenario acceptance remains open.",
+  "sourceBaseRevision": "9e2b2efb8aaa56099282ebff069ab321615b78c1",
+  "publicBaseRevision": "a83bd6aff1e62beba7c6293c072b39c25a499f76",
+  "sourceHashes": {
+    "implementation/warlock/src/SystemMenu.elm": "cf44c66fe51a5d86f14e33a8235e04f178553261229fd51e0d81cbc35c944054",
+    "implementation/warlock/src/Desktop.elm": "9168a0c1370b5903be5bc6d68eec6d5204fca6c74180c1a666ac08198ea27a16",
+    "implementation/warlock/src/Surface.elm": "2b7c09920693e704d6747f1f7c2ed158f6067d7b7ef4ef23fe33a25c3cdb392a",
+    "implementation/warlock/src/SurfaceRenderer.elm": "ea3290c4a3f2e4d457a544106939d6eb7cc9acd23f462210bb9ec3b3badf20c8",
+    "implementation/warlock/src/SurfaceController.elm": "323f1849911358cf3a6a6c20918d88017b6e8ca14933552985e6198e965b53e2",
+    "implementation/warlock/adapter/system_menu.py": "8e6cba8ae22f821407ab386a0552057de94be3eb03793a87c80817b8c57094e5",
+    "implementation/warlock/adapter/daemon.py": "96f861e39cd5ec8400ae0cf9118ef79f4a572ec6edea838e79357647cfcd19ba",
+    "implementation/warlock/native/host.c": "7af9f8c0c33ffbc746ac42a9e9ce37c42c3839f2cb9e35a55a36562f7dc9fbaa",
+    "implementation/warlock/native/surface.h": "e4f65e9d4c6bf077c26625f0c48883d44f887c59baacc4a2f30f96d0ac983f71",
+    "implementation/warlock/assets/popup-adapter.js": "0864cd7794c8f073d8a866ea27f92085ca874c092f7b2cff5cd16aab0d9b1129",
+    "implementation/warlock/qa/SystemMenuReplay.elm": "ef691a966db5c845053c2dd1b81e3e0d7f758459c0d1aa59a2268d778b61da5f",
+    "implementation/warlock/qa/check-system-menu.py": "aab5cc951f4b17b38ff8dd183ada9b22a4c4c75a4f7aa715d6d7d1a845730410",
+    "implementation/warlock/qa/system-menu.qnt": "49bdff9d446228798c8eb100648d084f9ab5b906a4de5bffeab6637bee83f516",
+    "implementation/warlock/qa/system-menu-browser.mjs": "46ba4feb84e3b3dbcb4c728325be09195a53964cd75d247097c3b776cc6a5cf7",
+    "implementation/warlock/qa/system-menu-provider.py": "e91275f8756f2269b2ec73c1c2d5b89fd632f611469502aca770d3e5b76b9e68",
+    "implementation/warlock/qa/check-search.py": "cb82bca49a1c0143ec8448ef3459db8afa29aa0717c31849e724421284a1a8cb",
+    "implementation/warlock/qa/native-window-feedback.py": "cdfdb31e956448dac864f385eda39e5028c56866515057164abe03e9646500bd",
+    "implementation/warlock/README.md": "68690a619791dd4f3c4b17687502015382f0be4ae249a135af80e918d14ecfb3",
+    "implementation/warlock/assets/elm.js": "2a3fb0d51c6d266479f2b6f330f96c2dfa71897def9a201e883f5368c59a9219",
+    "implementation/warlock/assets/bar.js": "dff9b880c51c1a5622de9ea1133bddd87876fbb4f4610b7e2998114030aef4df",
+    "implementation/warlock/assets/popup.js": "9e7c999c47aa7dac3dc1858ca1c73522989317fc5ac2f38d83bfb185f94bacd9",
+    "implementation/warlock/qa/current-search-build.json": "ab0b1cc5109b2fb4f67670472748d38f18eed3296c6ae9a0a25fde8ba605a314"
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+      "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791457340009159176/elm-window-geometry-authority.so",
+      "sha256": "55be0d723123f8089abfa0ce735f5e496aee558a0d822e1ad8278d50ee958307"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/system-menu-1791465946311061384/elm-host",
+    "sha256": "ab03f0a1b38bebf8a730a61be34e9cd0b43c57773ffef97c8b95c4816c5d46c6",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/system-menu-1791465946311061384/report.json",
+    "heldBuildSHA256": "1208ea9e8e3bdc2d03900cd5e04b4b5967474ec796edf3f554248ee6667448f0"
+  },
+  "compiledAssets": {
+    "elm.js": "2a3fb0d51c6d266479f2b6f330f96c2dfa71897def9a201e883f5368c59a9219",
+    "bar.js": "dff9b880c51c1a5622de9ea1133bddd87876fbb4f4610b7e2998114030aef4df",
+    "popup.js": "9e7c999c47aa7dac3dc1858ca1c73522989317fc5ac2f38d83bfb185f94bacd9"
+  },
+  "observedChecks": {
+    "compiledElm": 20,
+    "actualNativeProviders": 22,
+    "productionBrowser": 10,
+    "quintNamed": 4,
+    "quintInvariantTraces": 100,
+    "nativeGUI": 67
+  },
+  "nativeCampaignPassed": true,
+  "nativeSystemMenuObserved": true,
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "decisiveChecks": [
+    {
+      "name": "OriginalUnavailableNetworkAndObservedRemainingCapabilities",
+      "passed": true,
+      "snapshot": {
+        "service": "17262127025594152539",
+        "revision": "1",
+        "volume": {
+          "percent": 100,
+          "muted": false,
+          "label": "Warlock private audio"
+        },
+        "network": null,
+        "power": {
+          "suspend": "yes",
+          "reboot": "yes",
+          "poweroff": "no"
+        },
+        "session": {
+          "name": "Warlock private session",
+          "state": "active",
+          "locked": false
+        }
+      },
+      "body": {
+        "publication": "13",
+        "lease": "1",
+        "buttons": [
+          {
+            "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:close",
+            "identity": "control:close",
+            "label": "Close system menu",
+            "labelRect": {
+              "x": 24,
+              "y": 73,
+              "width": 652,
+              "height": 18
+            },
+            "accessibleName": "Close system menu",
+            "disabled": false,
+            "x": 11,
+            "y": 64,
+            "width": 678,
+            "height": 36
+          },
+          {
+            "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:refresh",
+            "identity": "system:refresh",
+            "label": "Refresh system stateRead current state; never repeat a change",
+            "labelRect": {
+              "x": 24,
+              "y": 110,
+              "width": 652,
+              "height": 18
+            },
+            "accessibleName": "Refresh system state",
+            "disabled": false,
+            "x": 11,
+            "y": 103,
+            "width": 678,
+            "height": 54
+          },
+          {
+            "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:volume-set:0",
+            "identity": "system:volume-set:0",
+            "label": "Set volume 0%",
+            "labelRect": {
+              "x": 24,
+              "y": 206.375,
+              "width": 652,
+              "height": 18
+            },
+            "accessibleName": "Set volume 0%",
+            "disabled": false,
+            "x": 11,
+            "y": 197.375,
+            "width": 678,
+            "height": 36
+          },
+          {
+            "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:volume-set:25",
+            "identity": "system:volume-set:25",
+            "label": "Set volume 25%",
+            "labelRect": {
+              "x": 24,
+              "y": 245.375,
+              "width": 652,
+              "height": 18
+            },
+            "accessibleName": "Set volume 25%",
+            "disabled": false,
+            "x": 11,
+            "y": 236.375,
+            "width": 678,
+            "height": 36
+          },
+          {
+            "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:volume-set:50",
+            "identity": "system:volume-set:50",
+            "label": "Set volume 50%",
+            "labelRect": {
+              "x": 24,
+              "y": 284.375,
+              "width": 652,
+              "height": 18
+            },
+            "accessibleName": "Set volume 50%",
+            "disabled": false,
+            "x": 11,
+            "y": 275.375,
+            "width": 678,
+            "height": 36
+          },
+          {
+            "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:volume-set:75",
+            "identity": "system:volume-set:75",
+            "label": "Set volume 75%",
+            "labelRect": {
+              "x": 24,
+              "y": 323.375,
+              "width": 652,
+              "height": 18
+            },
+            "accessibleName": "Set volume 75%",
+            "disabled": false,
+            "x": 11,
+            "y": 314.375,
+            "width": 678,
+            "height": 36
+          },
+          {
+            "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:volume-set:100",
+            "identity": "system:volume-set:100",
+            "label": "Set volume 100%",
+            "labelRect": {
+              "x": 24,
+              "y": 362.375,
+              "width": 652,
+              "height": 18
+            },
+            "accessibleName": "Set volume 100%",
+            "disabled": true,
+            "x": 11,
+            "y": 353.375,
+            "width": 678,
+            "height": 36
+          },
+          {
+            "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:volume-mute:1",
+            "identity": "system:volume-mute:1",
+            "label": "Mute",
+            "labelRect": {
+              "x": 24,
+              "y": 401.375,
+              "width": 652,
+              "height": 18
+            },
+            "accessibleName": "Mute",
+            "disabled": false,
+            "x": 11,
+            "y": 392.375,
+            "width": 678,
+            "height": 36
+          },
+          {
+            "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:suspend:0",
+            "identity": "system:suspend:0",
+            "label": "Suspend",
+            "labelRect": {
+              "x": 24,
+              "y": 506.9375,
+              "width": 652,
+              "height": 18
+            },
+            "accessibleName": "Suspend",
+            "disabled": false,
+            "x": 11,
+            "y": 497.9375,
+            "width": 678,
+            "height": 36
+          },
+          {
+            "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:reboot:0",
+            "identity": "system:reboot:0",
+            "label": "Restart",
+            "labelRect": {
+              "x": 24,
+              "y": 545.9375,
+              "width": 652,
+              "height": 18
+            },
+            "accessibleName": "Restart",
+            "disabled": false,
+            "x": 11,
+            "y": 536.9375,
+            "width": 678,
+            "height": 36
+          },
+          {
+            "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:poweroff:0",
+            "identity": "system:poweroff:0",
+            "label": "Shut down",
+            "labelRect": {
+              "x": 24,
+              "y": 584.9375,
+              "width": 652,
+              "height": 18
+            },
+            "accessibleName": "Shut down",
+            "disabled": true,
+            "x": 11,
+            "y": 575.9375,
+            "width": 678,
+            "height": 36
+          },
+          {
+            "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:session-lock:0",
+            "identity": "system:session-lock:0",
+            "label": "Lock session",
+            "labelRect": {
+              "x": 24,
+              "y": 661.3125,
+              "width": 652,
+              "height": 18
+            },
+            "accessibleName": "Lock session",
+            "disabled": false,
+            "x": 11,
+            "y": 652.3125,
+            "width": 678,
+            "height": 36
+          },
+          {
+            "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:session-logout:0",
+            "identity": "system:session-logout:0",
+            "label": "Log out",
+            "labelRect": {
+              "x": 24,
+              "y": 700.3125,
+              "width": 652,
+              "height": 18
+            },
+            "accessibleName": "Log out",
+            "disabled": false,
+            "x": 11,
+            "y": 691.3125,
+            "width": 678,
+            "height": 36
+          }
+        ],
+        "content": [
+          {
+            "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:volume:state",
+            "identity": "system:volume:state",
+            "label": "Volume 100%; unmuted \u00b7 Warlock private audio",
+            "labelRect": {
+              "x": 20.796875,
+              "y": 168.1875,
+              "width": 658.40625,
+              "height": 18
+            },
+            "accessibleName": "Volume 100%; unmuted \u00b7 Warlock private audio",
+            "disabled": true,
+            "x": 20.796875,
+            "y": 168.1875,
+            "width": 658.40625,
+            "height": 18
+          },
+          {
+            "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:network:state",
+            "identity": "system:network:state",
+            "label": "Network unavailable",
+            "labelRect": {
+              "x": 20.796875,
+              "y": 439.5625,
+              "width": 658.40625,
+              "height": 18
+            },
+            "accessibleName": "Network unavailable",
+            "disabled": true,
+            "x": 20.796875,
+            "y": 439.5625,
+            "width": 658.40625,
+            "height": 18
+          },
+          {
+            "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:power:state",
+            "identity": "system:power:state",
+            "label": "Power \u00b7 suspend available, restart available, shutdown unavailable",
+            "labelRect": {
+              "x": 20.796875,
+              "y": 468.75,
+              "width": 658.40625,
+              "height": 18
+            },
+            "accessibleName": "Power \u00b7 suspend available, restart available, shutdown unavailable",
+            "disabled": true,
+            "x": 20.796875,
+            "y": 468.75,
+            "width": 658.40625,
+            "height": 18
+          },
+          {
+            "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:session:state",
+            "identity": "system:session:state",
+            "label": "Session Warlock private session \u00b7 active; unlocked",
+            "labelRect": {
+              "x": 20.796875,
+              "y": 623.125,
+              "width": 658.40625,
+              "height": 18
+            },
+            "accessibleName": "Session Warlock private session \u00b7 active; unlocked",
+            "disabled": true,
+            "x": 20.796875,
+            "y": 623.125,
+            "width": 658.40625,
+            "height": 18
+          }
+        ],
+        "fields": [],
+        "focus": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:close",
+        "documentFocused": true,
+        "fontSize": "16px",
+        "theme": "night",
+        "textScale": "100",
+        "viewportWidth": 700,
+        "viewportHeight": 420,
+        "scrollTop": 0,
+        "scrollHeight": 738,
+        "text": "System\nCurrent system state. Unavailable controls cannot be changed.\n\n\nClose system menu\n\nRefresh system state\nRead current state; never repeat a change\nVolume 100%; unmuted \u00b7 Warlock private audio\n\n\nSet volume 0%\n\nSet volume 25%\n\nSet volume 50%\n\nSet volume 75%\n\nSet volume 100%\n\nMute\nNetwork unavailable\n\nPower \u00b7 suspend available, restart available, shutdown unavailable\n\n\nSuspend\n\nRestart\n\nShut down\nSession Warlock private session \u00b7 active; unlocked\n\n\nLock session\n\nLog out"
+      }
+    },
+    {
+      "name": "UnavailableNetworkHasActualNativeTextPixels",
+      "passed": true,
+      "capture": {
+        "stage": "system-menu-capabilities",
+        "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791465974716796652/popup-system-menu-capabilities.png",
+        "sha256": "3e3e10001792f0a77fb492b5f28b235cc9a3821bffa41ad7d70ae9f17cc111ae",
+        "nativeBox": [
+          50,
+          48,
+          700,
+          420
+        ],
+        "controlRegions": [
+          {
+            "accessibleName": "Suspend",
+            "brightPixels": 201,
+            "paintedPixels": 4704,
+            "area": 4704,
+            "region": [
+              73,
+              433,
+              269,
+              457
+            ]
+          },
+          {
+            "accessibleName": "Volume 100%; unmuted \u00b7 Warlock private audio",
+            "brightPixels": 275,
+            "paintedPixels": 1176,
+            "area": 1176,
+            "region": [
+              82,
+              104,
+              278,
+              110
+            ]
+          },
+          {
+            "accessibleName": "Network unavailable",
+            "brightPixels": 227,
+            "paintedPixels": 1176,
+            "area": 1176,
+            "region": [
+              82,
+              375,
+              278,
+              381
+            ]
+          },
+          {
+            "accessibleName": "Power \u00b7 suspend available, restart available, shutdown unavailable",
+            "brightPixels": 321,
+            "paintedPixels": 1176,
+            "area": 1176,
+            "region": [
+              82,
+              404,
+              278,
+              410
+            ]
+          }
+        ],
+        "body": {
+          "publication": "13",
+          "lease": "1",
+          "buttons": [
+            {
+              "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:close",
+              "identity": "control:close",
+              "label": "Close system menu",
+              "labelRect": {
+                "x": 24,
+                "y": -45,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Close system menu",
+              "disabled": false,
+              "x": 11,
+              "y": -54,
+              "width": 678,
+              "height": 36
+            },
+            {
+              "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:refresh",
+              "identity": "system:refresh",
+              "label": "Refresh system stateRead current state; never repeat a change",
+              "labelRect": {
+                "x": 24,
+                "y": -8,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Refresh system state",
+              "disabled": false,
+              "x": 11,
+              "y": -15,
+              "width": 678,
+              "height": 54
+            },
+            {
+              "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:volume-set:0",
+              "identity": "system:volume-set:0",
+              "label": "Set volume 0%",
+              "labelRect": {
+                "x": 24,
+                "y": 88.375,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Set volume 0%",
+              "disabled": false,
+              "x": 11,
+              "y": 79.375,
+              "width": 678,
+              "height": 36
+            },
+            {
+              "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:volume-set:25",
+              "identity": "system:volume-set:25",
+              "label": "Set volume 25%",
+              "labelRect": {
+                "x": 24,
+                "y": 127.375,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Set volume 25%",
+              "disabled": false,
+              "x": 11,
+              "y": 118.375,
+              "width": 678,
+              "height": 36
+            },
+            {
+              "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:volume-set:50",
+              "identity": "system:volume-set:50",
+              "label": "Set volume 50%",
+              "labelRect": {
+                "x": 24,
+                "y": 166.375,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Set volume 50%",
+              "disabled": false,
+              "x": 11,
+              "y": 157.375,
+              "width": 678,
+              "height": 36
+            },
+            {
+              "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:volume-set:75",
+              "identity": "system:volume-set:75",
+              "label": "Set volume 75%",
+              "labelRect": {
+                "x": 24,
+                "y": 205.375,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Set volume 75%",
+              "disabled": false,
+              "x": 11,
+              "y": 196.375,
+              "width": 678,
+              "height": 36
+            },
+            {
+              "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:volume-set:100",
+              "identity": "system:volume-set:100",
+              "label": "Set volume 100%",
+              "labelRect": {
+                "x": 24,
+                "y": 244.375,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Set volume 100%",
+              "disabled": true,
+              "x": 11,
+              "y": 235.375,
+              "width": 678,
+              "height": 36
+            },
+            {
+              "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:volume-mute:1",
+              "identity": "system:volume-mute:1",
+              "label": "Mute",
+              "labelRect": {
+                "x": 24,
+                "y": 283.375,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Mute",
+              "disabled": false,
+              "x": 11,
+              "y": 274.375,
+              "width": 678,
+              "height": 36
+            },
+            {
+              "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:suspend:0",
+              "identity": "system:suspend:0",
+              "label": "Suspend",
+              "labelRect": {
+                "x": 24,
+                "y": 388.9375,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Suspend",
+              "disabled": false,
+              "x": 11,
+              "y": 379.9375,
+              "width": 678,
+              "height": 36
+            },
+            {
+              "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:reboot:0",
+              "identity": "system:reboot:0",
+              "label": "Restart",
+              "labelRect": {
+                "x": 24,
+                "y": 427.9375,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Restart",
+              "disabled": false,
+              "x": 11,
+              "y": 418.9375,
+              "width": 678,
+              "height": 36
+            },
+            {
+              "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:poweroff:0",
+              "identity": "system:poweroff:0",
+              "label": "Shut down",
+              "labelRect": {
+                "x": 24,
+                "y": 466.9375,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Shut down",
+              "disabled": true,
+              "x": 11,
+              "y": 457.9375,
+              "width": 678,
+              "height": 36
+            },
+            {
+              "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:session-lock:0",
+              "identity": "system:session-lock:0",
+              "label": "Lock session",
+              "labelRect": {
+                "x": 24,
+                "y": 543.3125,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Lock session",
+              "disabled": false,
+              "x": 11,
+              "y": 534.3125,
+              "width": 678,
+              "height": 36
+            },
+            {
+              "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:session-logout:0",
+              "identity": "system:session-logout:0",
+              "label": "Log out",
+              "labelRect": {
+                "x": 24,
+                "y": 582.3125,
+                "width": 652,
+                "height": 18
+              },
+              "accessibleName": "Log out",
+              "disabled": false,
+              "x": 11,
+              "y": 573.3125,
+              "width": 678,
+              "height": 36
+            }
+          ],
+          "content": [
+            {
+              "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:volume:state",
+              "identity": "system:volume:state",
+              "label": "Volume 100%; unmuted \u00b7 Warlock private audio",
+              "labelRect": {
+                "x": 20.796875,
+                "y": 50.1875,
+                "width": 658.40625,
+                "height": 18
+              },
+              "accessibleName": "Volume 100%; unmuted \u00b7 Warlock private audio",
+              "disabled": true,
+              "x": 20.796875,
+              "y": 50.1875,
+              "width": 658.40625,
+              "height": 18
+            },
+            {
+              "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:network:state",
+              "identity": "system:network:state",
+              "label": "Network unavailable",
+              "labelRect": {
+                "x": 20.796875,
+                "y": 321.5625,
+                "width": 658.40625,
+                "height": 18
+              },
+              "accessibleName": "Network unavailable",
+              "disabled": true,
+              "x": 20.796875,
+              "y": 321.5625,
+              "width": 658.40625,
+              "height": 18
+            },
+            {
+              "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:power:state",
+              "identity": "system:power:state",
+              "label": "Power \u00b7 suspend available, restart available, shutdown unavailable",
+              "labelRect": {
+                "x": 20.796875,
+                "y": 350.75,
+                "width": 658.40625,
+                "height": 18
+              },
+              "accessibleName": "Power \u00b7 suspend available, restart available, shutdown unavailable",
+              "disabled": true,
+              "x": 20.796875,
+              "y": 350.75,
+              "width": 658.40625,
+              "height": 18
+            },
+            {
+              "id": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:session:state",
+              "identity": "system:session:state",
+              "label": "Session Warlock private session \u00b7 active; unlocked",
+              "labelRect": {
+                "x": 20.796875,
+                "y": 505.125,
+                "width": 658.40625,
+                "height": 18
+              },
+              "accessibleName": "Session Warlock private session \u00b7 active; unlocked",
+              "disabled": true,
+              "x": 20.796875,
+              "y": 505.125,
+              "width": 658.40625,
+              "height": 18
+            }
+          ],
+          "fields": [],
+          "focus": "applications:{\"lifetime\":\"16007387575364747555\",\"session\":\"3\",\"frontend\":\"1\"}:9:system:suspend:0",
+          "documentFocused": true,
+          "fontSize": "16px",
+          "theme": "night",
+          "textScale": "100",
+          "viewportWidth": 700,
+          "viewportHeight": 420,
+          "scrollTop": 118,
+          "scrollHeight": 738,
+          "text": "System\nCurrent system state. Unavailable controls cannot be changed.\n\n\nClose system menu\n\nRefresh system state\nRead current state; never repeat a change\nVolume 100%; unmuted \u00b7 Warlock private audio\n\n\nSet volume 0%\n\nSet volume 25%\n\nSet volume 50%\n\nSet volume 75%\n\nSet volume 100%\n\nMute\nNetwork unavailable\n\nPower \u00b7 suspend available, restart available, shutdown unavailable\n\n\nSuspend\n\nRestart\n\nShut down\nSession Warlock private session \u00b7 active; unlocked\n\n\nLock session\n\nLog out"
+        },
+        "drawObservations": []
+      }
+    },
+    {
+      "name": "KeyboardVolumeChangeHasOneCorrelatedObservedNativeOutcome",
+      "passed": true,
+      "request": {
+        "protocolVersion": 3,
+        "kind": "system-menu-effect",
+        "binding": {
+          "lifetime": "16007387575364747555",
+          "session": "3",
+          "frontend": "1"
+        },
+        "requestId": "4",
+        "intent": {
+          "service": "17262127025594152539",
+          "revision": "1",
+          "operation": "volume-set",
+          "value": 25
+        }
+      },
+      "receipt": {
+        "protocolVersion": 3,
+        "kind": "system-menu-outcome",
+        "binding": {
+          "lifetime": "16007387575364747555",
+          "session": "3",
+          "frontend": "1"
+        },
+        "requestId": "4",
+        "status": "Committed",
+        "snapshot": {
+          "service": "17262127025594152539",
+          "revision": "2",
+          "volume": {
+            "percent": 25,
+            "muted": false,
+            "label": "Warlock private audio"
+          },
+          "network": null,
+          "power": {
+            "suspend": "yes",
+            "reboot": "yes",
+            "poweroff": "no"
+          },
+          "session": {
+            "name": "Warlock private session",
+            "state": "active",
+            "locked": false
+          }
+        }
+      }
+    },
+    {
+      "name": "MuteReadbackUsesCurrentNativeAudioSink",
+      "passed": true,
+      "receipt": {
+        "protocolVersion": 3,
+        "kind": "system-menu-outcome",
+        "binding": {
+          "lifetime": "16007387575364747555",
+          "session": "3",
+          "frontend": "1"
+        },
+        "requestId": "5",
+        "status": "Committed",
+        "snapshot": {
+          "service": "17262127025594152539",
+          "revision": "3",
+          "volume": {
+            "percent": 25,
+            "muted": true,
+            "label": "Warlock private audio"
+          },
+          "network": null,
+          "power": {
+            "suspend": "yes",
+            "reboot": "yes",
+            "poweroff": "no"
+          },
+          "session": {
+            "name": "Warlock private session",
+            "state": "active",
+            "locked": false
+          }
+        }
+      }
+    },
+    {
+      "name": "RestartPromptDoesNotSubmitNativePowerChange",
+      "passed": true
+    },
+    {
+      "name": "CancelPreservesSessionWithoutNativeEffects",
+      "passed": true
+    },
+    {
+      "name": "RefreshReadsCurrentStateAndNeverRepeatsChanges",
+      "passed": true
+    },
+    {
+      "name": "SystemEscapeClosesWithoutWindowOrLaunchEffects",
+      "passed": true
+    }
+  ],
+  "ownerImageReview": {
+    "reviewer": "root-system-menu",
+    "independent": false,
+    "image": "popup-system-menu-capabilities.png",
+    "observed": "Actual private compositor: current volume, readable Network unavailable and power availability text; Suspend has a visible keyboard focus ring. Host warning overlay belongs to the isolated fixture."
+  },
+  "missingObservations": [
+    "Independent original ux-032 review against this exact source/core/plugin/toolchain tuple.",
+    "Actual hardware/network/power transitions and interactive authorization are not established by private native-protocol fixtures.",
+    "Applicable release AT/IME/resource and full desktop journeys remain separate."
+  ],
+  "retainedFailures": [
+    "failed-elm-shadowing.json",
+    "failed-native-opener.json"
+  ],
+  "files": [
+    {
+      "path": "implementation/warlock/qa/evidence/system-menu/browser-report.json",
+      "sha256": "df3de315ce464577bf99af542426ffca5e12498001c2fd91e8f49d375d9958d1"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/system-menu/component-report.json",
+      "sha256": "1208ea9e8e3bdc2d03900cd5e04b4b5967474ec796edf3f554248ee6667448f0"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/system-menu/failed-elm-shadowing.json",
+      "sha256": "2a24feee49e5ae4ea39d4a6f686cc344e0860ca52103ce91182173565b2ecf99"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/system-menu/failed-native-opener.json",
+      "sha256": "40e2fb351a55686d4502fa22985ae6efc113df9ae5808cce01728c31fdc5a377"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/system-menu/host-self-tests.stdout",
+      "sha256": "5d85be95119fcd0f5941071dc0f9b70a8e75ac1554b059dc3e95f2392855d073"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/system-menu/native-report.json",
+      "sha256": "4a360aa334039b7b47d9695740e31900a0b99faeb77a9f40bdc99a2bf2ddbe14"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/system-menu/popup-system-menu-capabilities.png",
+      "sha256": "3e3e10001792f0a77fb492b5f28b235cc9a3821bffa41ad7d70ae9f17cc111ae"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/system-menu/source.patch",
+      "sha256": "9e0e3d31293d7adc254d17bb6b66c78c6f28df648e020d146ab043583040a4ca"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/system-menu/system-menu-confirmation.png",
+      "sha256": "3194a7844297e33532cc6b6609b3775b9ddc421257498fad73a60b3690a17469"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/system-menu/system-menu.json",
+      "sha256": "932917168963c1f5ddf6679540e2f2f34cb872578399d402e79dfb7b6dc15a9f"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/system-menu/system-model-invariants.stdout",
+      "sha256": "5c319e4cbee735c485a7edb459a54449996fb772441f2fe4b18a2766057585a1"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/system-menu/system-model-named.stdout",
+      "sha256": "dfa0a1d3859d4cfd9e534541e60c63d94e3495e877a4c6e1bffb8de2e2a19d2d"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/system-menu/system-providers.stdout",
+      "sha256": "3b5e2da156fc6236b31055ebf72ae2f1cf4cc41bb49a376b696456ea21846452"
+    }
+  ]
+}

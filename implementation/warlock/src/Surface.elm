@@ -5,6 +5,7 @@ import Switcher
 import Pins
 import Settings
 import Notifications
+import SystemMenu
 import MenuBridge
 import Provider
 import Catalog
@@ -44,7 +45,8 @@ recoveryPopup model = if recoveryNeeded model then [recoveryControl "control:rec
 
 mode : Desktop.Model -> String
 mode model =
-    if model.notificationsOpen then "notifications"
+    if model.systemMenuOpen then "system"
+    else if model.notificationsOpen then "notifications"
     else if model.settingsOpen then "settings"
     else if model.snap/=Nothing then "snap"
     else if Desktop.switcherOpen model then "switcher"
@@ -56,7 +58,35 @@ mode model =
 
 controls : Desktop.Model -> List Control
 controls model =
-    if model.notificationsOpen then
+    if model.systemMenuOpen then
+        let scoped action=Desktop.capture model |> Maybe.map action
+            control identity label detail enabled message={id=identity,domId=Desktop.key model (if identity=="control:close" then "system:close" else identity),label=label,ariaLabel=label,detail=detail,enabled=enabled,message=if enabled then scoped message else Nothing}
+            state section value=control ("system:"++section++":state") value "" False Desktop.CloseSystemMenu
+            rows snapshot =
+                let change operation value label=
+                        let intent=SystemMenu.intent snapshot operation value
+                            ready=model.systemMenu.pending==Nothing && model.systemMenuExpected==Nothing && model.systemMenuConfirmation==Nothing && SystemMenu.supported intent model.systemMenu
+                        in control ("system:"++SystemMenu.code operation++":"++String.fromInt value) label "" ready (\stamp -> Desktop.SystemChange stamp intent)
+                    volume=case snapshot.volume of
+                        Nothing -> [state "volume" "Volume unavailable"]
+                        Just current -> state "volume" ("Volume "++String.fromInt current.percent++"%"++(if current.muted then "; muted" else "; unmuted")++" · "++current.label) :: (List.map (\percent -> change SystemMenu.Volume percent ("Set volume "++String.fromInt percent++"%")) [0,25,50,75,100]) ++ [change SystemMenu.Mute (if current.muted then 0 else 1) (if current.muted then "Unmute" else "Mute")]
+                    network=case snapshot.network of
+                        Nothing -> [state "network" "Network unavailable"]
+                        Just current -> [state "network" ("Network "++(if current.enabled then "enabled" else "disabled")++" · "++current.state++(if current.permission=="no" then "; changes unavailable" else "")),change SystemMenu.Network (if current.enabled then 0 else 1) (if current.enabled then "Disable networking" else "Enable networking")]
+                    capability value=if value=="yes" then "available" else if value=="challenge" then "authorization required" else "unavailable"
+                    power=case snapshot.power of
+                        Nothing -> [state "power" "Power controls unavailable"]
+                        Just current -> [state "power" ("Power · suspend "++capability current.suspend++", restart "++capability current.reboot++", shutdown "++capability current.poweroff),change SystemMenu.Suspend 0 "Suspend",change SystemMenu.Reboot 0 "Restart",change SystemMenu.PowerOff 0 "Shut down"]
+                    session=case snapshot.session of
+                        Nothing -> [state "session" "Session controls unavailable"]
+                        Just current -> [state "session" ("Session "++current.name++" · "++current.state++(if current.locked then "; locked" else "; unlocked")),change SystemMenu.Lock 0 "Lock session",change SystemMenu.Logout 0 "Log out"]
+                in volume++network++power++session
+            confirmation=case model.systemMenuConfirmation of
+                Nothing -> []
+                Just intent -> [state "confirmation" ("Confirm "++SystemMenu.name intent.operation++"? Unsaved work or active connections may be affected."),control "system:cancel" "Cancel system change" "" True Desktop.CancelSystemChange,control "system:confirm" ("Confirm "++SystemMenu.name intent.operation) "" (SystemMenu.supported intent model.systemMenu && model.systemMenu.pending==Nothing && model.systemMenuExpected==Nothing) (\stamp -> Desktop.ConfirmSystemChange stamp intent)]
+        in [control "control:close" "Close system menu" "" True Desktop.CloseSystemMenu,control "system:refresh" "Refresh system state" "Read current state; never repeat a change" (model.systemMenuExpected==Nothing) Desktop.RefreshSystemMenu]
+           ++ (model.systemMenu.snapshot |> Maybe.map rows |> Maybe.withDefault []) ++ confirmation
+    else if model.notificationsOpen then
         let scoped message=Desktop.capture model |> Maybe.map message
             control identity label detail enabled message={id=identity,domId=Desktop.key model (if identity=="control:close" then "notifications:close" else identity),label=label,ariaLabel=label,detail=detail,enabled=enabled,message=if enabled then scoped message else Nothing}
             clean value=String.join " " (String.words value)
@@ -224,11 +254,12 @@ barControls model =
         ordinaryGroups=TaskbarShell.groups model.windows |> List.filter (\group -> List.length (owners group)/=1)
         reconnect = {id="bar:reconnect",domId="reconnect",label="Reconnect",ariaLabel="Reconnect to the window system",detail="",enabled=not model.windows.shell.reconnecting,message=Just (Desktop.Window (TaskbarShell.Native Shell.Reconnect))}
         retry = {id="bar:refresh-windows",domId=Desktop.key model "refresh-windows",label="Refresh windows",ariaLabel="Refresh windows",detail="",enabled=model.choice==Nothing,message=Just Desktop.RetryWindows}
-    in (if model.windows.shell.phase==Shell.Detached then reconnect else application) :: overview :: switcher :: {id="bar:notifications",domId=Desktop.key model "notifications:opener",label="Notifications"++(model.notifications.snapshot |> Maybe.map (\snapshot -> let count=List.length (List.filter (\entry -> entry.state=="live") snapshot.entries) in if count==0 then "" else " · "++String.fromInt count) |> Maybe.withDefault ""),ariaLabel="Open notifications",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenNotifications} :: {id="bar:settings",domId=Desktop.key model "settings:opener",label="Settings",ariaLabel="Open settings",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenSettings} :: List.map pinControl pinIds ++ List.map groupControl ordinaryGroups ++ (if not (String.isEmpty model.choiceNotice) && model.windows.shell.phase/=Shell.Detached then [retry] else []) ++ (if recoveryNeeded model && model.windows.shell.phase/=Shell.Detached then [recoveryControl "bar:recovery-refresh" model] else [])
+    in (if model.windows.shell.phase==Shell.Detached then reconnect else application) :: overview :: switcher :: {id="bar:notifications",domId=Desktop.key model "notifications:opener",label="Notifications"++(model.notifications.snapshot |> Maybe.map (\snapshot -> let count=List.length (List.filter (\entry -> entry.state=="live") snapshot.entries) in if count==0 then "" else " · "++String.fromInt count) |> Maybe.withDefault ""),ariaLabel="Open notifications",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenNotifications} :: {id="bar:system",domId=Desktop.key model "system:opener",label="System",ariaLabel="Open system menu",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenSystemMenu} :: {id="bar:settings",domId=Desktop.key model "settings:opener",label="Settings",ariaLabel="Open settings",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenSettings} :: List.map pinControl pinIds ++ List.map groupControl ordinaryGroups ++ (if not (String.isEmpty model.choiceNotice) && model.windows.shell.phase/=Shell.Detached then [retry] else []) ++ (if recoveryNeeded model && model.windows.shell.phase/=Shell.Detached then [recoveryControl "bar:recovery-refresh" model] else [])
 
 notice : Desktop.Model -> String
 notice model =
-    if model.notificationsOpen then (if model.notificationsExpected/=Nothing then "Loading notifications…" else model.notifications.notice)
+    if model.systemMenuOpen then (if model.systemMenuExpected/=Nothing then "Reading native system state…" else if model.systemMenuConfirmation/=Nothing then "Confirm or cancel the requested system change." else model.systemMenu.notice)
+    else if model.notificationsOpen then (if model.notificationsExpected/=Nothing then "Loading notifications…" else model.notifications.notice)
     else if model.settingsOpen then (if model.settingsExpected/=Nothing then "Loading settings…" else model.settings.notice)
     else if Desktop.switcherOpen model then
         if Switcher.phase model.switcher==Switcher.Waiting then "Loading window activation history…"

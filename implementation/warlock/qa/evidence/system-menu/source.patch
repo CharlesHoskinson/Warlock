@@ -1,0 +1,1425 @@
+diff --git c/implementation/warlock/README.md w/implementation/warlock/README.md
+index be3a359..79cdfcc 100644
+--- c/implementation/warlock/README.md
++++ w/implementation/warlock/README.md
+@@ -105,3 +105,18 @@ notification service owns the name, the center explains its unavailability. It
+ implements plain body/actions, never executes notification text, and does not
+ advertise activation-token, sound, image, markup or persistence capabilities.
+ See the [native notification protocol](https://specifications.freedesktop.org/notification/latest/protocol.html).
++
++The System button opens native volume, networking, power and session controls.
++Unavailable services are named explicitly; supported controls show current
++observed state. Volume presets and mute use the current local audio sink. Network
++changes use NetworkManager, and power/session requests use login1 capabilities
++and the broker's own session. Restart, shutdown, logout and disabling networking
++require confirmation; Cancel has no native effect. Refreshed state never repeats
++a prior request. A confirmed change, an accepted request, a refusal and an unknown
++result have distinct messages. Submitted means the service accepted the request;
++it does not claim that a suspension or shutdown completed.
++
++ELM-UX-032 has a private native-protocol and compositor recording of unavailable
++networking with observed remaining state, physical volume/mute changes and
++confirmation cancellation. Actual hardware, authorization dialogs, accessibility
++and independent original-scenario acceptance remain separate.
+diff --git c/implementation/warlock/adapter/daemon.py w/implementation/warlock/adapter/daemon.py
+index 7f21b75..6aadd78 100644
+--- c/implementation/warlock/adapter/daemon.py
++++ w/implementation/warlock/adapter/daemon.py
+@@ -9,6 +9,7 @@ from reconciliation import Reconciliation
+ from taskbar_projection import coherent_scene
+ from catalog_transport import CatalogTransport
+ from notification_service import Service as NotificationService
++from system_menu import Menu as SystemMenu
+ from recovery_journal import RecoveryFailure,guarded
+ from recovery_store import RecoveryStore as Journal
+ from recovery_fault import after_submit
+@@ -78,13 +79,16 @@ def event_socket(client):
+  except BaseException:connection.close();raise
+ 
+ 
+-def handle_request(client,catalog,request,recovery,reconciliation,notifications=None):
++def handle_request(client,catalog,request,recovery,reconciliation,notifications=None,system_menu=None):
+  if not isinstance(request,dict):raise Refused('Frontend request object')
+  kind=request.get('kind')
+  if kind=='reconciliation-ready':
+   reconciliation.proof_ready(request);return
+  if kind in {'catalog-request','application-launch','taskbar-pins-write','shell-settings-request','shell-settings-write'}:
+   send(catalog.handle(request));return
++ if kind in {'system-menu-request','system-menu-effect'}:
++  if system_menu is None:raise Refused('System menu unavailable')
++  send(system_menu.read(request,client) if kind=='system-menu-request' else system_menu.effect(request,client));return
+  if kind in {'notification-request','notification-effect'}:
+   if notifications is None:raise Refused('Notification service unavailable')
+   send(notifications.read(request,client) if kind=='notification-request' else notifications.effect(request,client));return
+@@ -176,6 +180,7 @@ def main():
+  # authoritative snapshot is requested, never after numbered publication.
+  with event_socket(client) as events,selectors.DefaultSelector() as selector,ExitStack() as lifetime:
+   notification_service=lifetime.enter_context(NotificationService())
++  system_menu=lifetime.enter_context(SystemMenu())
+   hello=client.hello()
+   recovery=lifetime.enter_context(guarded(lambda:Journal(config['runtime'],config['instance'],client.bound['lifetime'])))
+   reconciliation=publish_startup(client,hello,recovery)
+@@ -193,7 +198,7 @@ def main():
+      if not data:incoming.finish();return 0
+      for line in incoming.feed(data):
+       request=json.loads(line,object_pairs_hook=unique)
+-      handle_request(client,catalog,request,recovery,reconciliation,notification_service)
++      handle_request(client,catalog,request,recovery,reconciliation,notification_service,system_menu)
+       if request.get('kind')=='projection-request':have_snapshot=True;dirty=False
+     elif key.data=='notifications':
+      notification_service.drain();send(notification_service.observation(client))
+diff --git c/implementation/warlock/assets/popup-adapter.js w/implementation/warlock/assets/popup-adapter.js
+index 1c8a624..3091f4c 100644
+--- c/implementation/warlock/assets/popup-adapter.js
++++ w/implementation/warlock/assets/popup-adapter.js
+@@ -3,9 +3,9 @@ const app = Elm.Popup.init({node:document.getElementById('app')});
+ window.submitSurfaceAction = value => app.ports.requestAction.send(value);
+ const post = value => window.webkit.messageHandlers.native.postMessage(JSON.stringify(value));
+ let pickerSelection=null,observedPicker=null;
+-const pickerNode=()=>document.querySelector('.surface-popup:is([data-mode="picker"],[data-mode="snap"],[data-mode="settings"],[data-mode="notifications"])');
++const pickerNode=()=>document.querySelector('.surface-popup:is([data-mode="picker"],[data-mode="snap"],[data-mode="settings"],[data-mode="notifications"],[data-mode="system"])');
+ const rememberPicker=control=>{
+-  const node=control?.closest?.('.surface-popup:is([data-mode="picker"],[data-mode="snap"],[data-mode="settings"],[data-mode="notifications"])');
++  const node=control?.closest?.('.surface-popup:is([data-mode="picker"],[data-mode="snap"],[data-mode="settings"],[data-mode="notifications"],[data-mode="system"])');
+   if(node&&!control.disabled&&control.dataset.surfaceControl)pickerSelection={lease:node.dataset.lease,identity:control.dataset.surfaceControl};
+ };
+ const revealPicker=(force=false)=>{
+@@ -23,14 +23,14 @@ const observePicker=()=>{
+   if(node){pickerResize?.observe(node);const controls=node.querySelector('.surface-controls');if(controls)pickerResize?.observe(controls);}
+ };
+ document.addEventListener('focusin',event=>{
+-  if(event.target.closest?.('.surface-popup:is([data-mode="picker"],[data-mode="snap"],[data-mode="settings"],[data-mode="notifications"])')){rememberPicker(event.target);revealPicker(true);}
++  if(event.target.closest?.('.surface-popup:is([data-mode="picker"],[data-mode="snap"],[data-mode="settings"],[data-mode="notifications"],[data-mode="system"])')){rememberPicker(event.target);revealPicker(true);}
+   else if(event.target!==document.body&&event.target!==document.documentElement)pickerSelection=null;
+ });
+ window.addEventListener('focus',()=>{rememberPicker(document.activeElement);revealPicker(true);});
+ window.addEventListener('resize',()=>requestAnimationFrame(()=>revealPicker(true)));
+ document.addEventListener('keydown',event=>{
+   if(!['ArrowUp','ArrowDown','Home','End'].includes(event.key)||event.isComposing||event.defaultPrevented||event.ctrlKey||event.altKey||event.metaKey||event.shiftKey)return;
+-  const node=event.target.closest?.('.surface-popup:is([data-mode="picker"],[data-mode="snap"],[data-mode="settings"],[data-mode="notifications"])');if(!node)return;
++  const node=event.target.closest?.('.surface-popup:is([data-mode="picker"],[data-mode="snap"],[data-mode="settings"],[data-mode="notifications"],[data-mode="system"])');if(!node)return;
+   const items=[...node.querySelectorAll('[data-surface-control]:not(:disabled)')],current=items.indexOf(document.activeElement);if(current<0)return;
+   const index=event.key==='Home'?0:event.key==='End'?items.length-1:Math.max(0,Math.min(items.length-1,current+(event.key==='ArrowDown'?1:-1)));
+   event.preventDefault();event.stopImmediatePropagation();items[index].focus({preventScroll:true});rememberPicker(items[index]);revealPicker(true);
+@@ -43,7 +43,7 @@ window.receivePresentation = value => {
+       // A native reflow replaces the input lease around the same retained view.
+       // Carry only the currently focused eligible DOM control into that lease;
+       // a remembered identity alone never restores focus from an older lease.
+-      if(node.dataset.mode==='notifications' && document.hasFocus() && pickerSelection?.lease===node.dataset.lease &&
++      if(['notifications','system'].includes(node.dataset.mode) && document.hasFocus() && pickerSelection?.lease===node.dataset.lease &&
+          ![...node.querySelectorAll('[data-surface-control]')].some(item=>item.dataset.surfaceControl===pickerSelection.identity&&!item.disabled) &&
+          (document.activeElement===document.body || document.activeElement?.disabled)){
+         const close=node.querySelector('[data-surface-control="control:close"]');close?.focus({preventScroll:true});
+@@ -71,7 +71,7 @@ app.ports.actions.subscribe(post);
+ let switcherTerminal=null;
+ document.addEventListener('keydown',event=>{
+   const node=event.target?.closest?.('.surface-popup');
+-  const dismissal=event.key==='Escape' && ['switcher','overview','picker','snap','settings', 'notifications'].includes(node?.dataset.mode);
++  const dismissal=event.key==='Escape' && ['switcher','overview','picker','snap','settings', 'notifications','system'].includes(node?.dataset.mode);
+   if(!node || (node.dataset.mode!=='switcher' && !dismissal) || event.isComposing ||
+      event.defaultPrevented || event.ctrlKey || event.metaKey) return;
+   const id=event.key==='Tab'?(event.shiftKey?'control:reverse':'control:forward'):
+@@ -94,7 +94,7 @@ document.addEventListener('keyup',event=>{
+   if(!held || held.key!==event.key) return;
+   switcherTerminal=null;event.preventDefault();event.stopImmediatePropagation();
+   if(event.isComposing || event.ctrlKey || event.metaKey || !held.node.isConnected ||
+-    (held.node.dataset.mode!=='switcher' && !(held.key==='Escape' && ['overview','picker','snap','settings', 'notifications'].includes(held.node.dataset.mode))) || held.node.dataset.publication!==held.packet.publication ||
++    (held.node.dataset.mode!=='switcher' && !(held.key==='Escape' && ['overview','picker','snap','settings', 'notifications','system'].includes(held.node.dataset.mode))) || held.node.dataset.publication!==held.packet.publication ||
+     held.node.dataset.lease!==held.packet.lease || !held.node.contains(event.target)) return;
+   app.ports.requestAction.send(held.packet);
+ },true);
+@@ -107,8 +107,8 @@ if (window.elmHostQA) {
+     const buttons=[...document.querySelectorAll('button')].map(button=>{
+       const r=button.getBoundingClientRect(),label=button.querySelector('.control-label')?.getBoundingClientRect();return {id:button.id,identity:button.dataset.surfaceControl,label:button.textContent,labelRect:label?{x:label.x,y:label.y,width:label.width,height:label.height}:null,accessibleName:button.getAttribute('aria-label'),disabled:button.disabled,x:r.x,y:r.y,width:r.width,height:r.height};
+     });
+-    const content=[...document.querySelectorAll('[data-notification-content]')].map(item=>{
+-      const r=item.getBoundingClientRect(),label=item.querySelector('.control-label')?.getBoundingClientRect();return {id:item.id,identity:item.dataset.notificationContent,label:item.textContent,labelRect:label?{x:label.x,y:label.y,width:label.width,height:label.height}:null,accessibleName:item.querySelector('.control-label')?.textContent||'',disabled:true,x:r.x,y:r.y,width:r.width,height:r.height};
++    const content=[...document.querySelectorAll('[data-notification-content],[data-system-content]')].map(item=>{
++      const r=item.getBoundingClientRect(),label=item.querySelector('.control-label')?.getBoundingClientRect();return {id:item.id,identity:item.dataset.notificationContent||item.dataset.systemContent,label:item.textContent,labelRect:label?{x:label.x,y:label.y,width:label.width,height:label.height}:null,accessibleName:item.querySelector('.control-label')?.textContent||'',disabled:true,x:r.x,y:r.y,width:r.width,height:r.height};
+     });
+     const node=document.querySelector('.surface-bar,.surface-popup');
+     const fields=[...document.querySelectorAll('[data-surface-field]')].map(field=>({id:field.id,value:field.value,accessibleName:field.getAttribute('aria-label'),disabled:field.disabled}));
+diff --git c/implementation/warlock/native/host.c w/implementation/warlock/native/host.c
+index a9679f9..e75715c 100644
+--- c/implementation/warlock/native/host.c
++++ w/implementation/warlock/native/host.c
+@@ -295,6 +295,23 @@ static const char *request_kind(JsonNode *root) {
+         if(!surface_fields(obj,names,selection?6:5) || !JSON_NODE_HOLDS_OBJECT(json_object_get_member(obj,"binding")) || !surface_uint(json_object_get_member(obj,"requestId"),&request) || !request || !surface_uint(json_object_get_member(obj,"chord"),&chord) || !chord || (selection && (!surface_uint(json_object_get_member(obj,"root"),&root) || !root)))return NULL;
+         return value;
+     }
++    if(g_str_equal(value,"system-menu-request") || g_str_equal(value,"system-menu-effect")) {
++        gboolean effect=g_str_equal(value,"system-menu-effect");guint64 request;
++        const char *const fields[]={"protocolVersion","kind","binding","requestId","intent"};
++        if(!surface_fields(obj,fields,effect?5:4) || !JSON_NODE_HOLDS_OBJECT(json_object_get_member(obj,"binding")) || !surface_uint(json_object_get_member(obj,"requestId"),&request) || !request)return NULL;
++        if(effect) {
++            JsonNode *node=json_object_get_member(obj,"intent");if(!node || !JSON_NODE_HOLDS_OBJECT(node))return NULL;
++            JsonObject *intent=json_node_get_object(node);const char *const names[]={"service","revision","operation","value"};guint64 service,revision;
++            JsonNode *operation=json_object_get_member(intent,"operation"),*number=json_object_get_member(intent,"value");
++            if(!surface_fields(intent,names,4) || !surface_uint(json_object_get_member(intent,"service"),&service) || !service || !surface_uint(json_object_get_member(intent,"revision"),&revision) || !revision || !surface_text(operation,32,FALSE) || !number || json_node_get_value_type(number)!=G_TYPE_INT64)return NULL;
++            const char *op=json_node_get_string(operation);gint64 n=json_node_get_int(number);
++            if(g_str_equal(op,"volume-set")){if(n<0 || n>100)return NULL;}
++            else if(g_str_equal(op,"volume-mute") || g_str_equal(op,"network-enable")){if(n!=0 && n!=1)return NULL;}
++            else if(g_str_equal(op,"suspend") || g_str_equal(op,"reboot") || g_str_equal(op,"poweroff") || g_str_equal(op,"session-lock") || g_str_equal(op,"session-logout")){if(n!=0)return NULL;}
++            else return NULL;
++        }
++        return value;
++    }
+     if(g_str_equal(value,"notification-request") || g_str_equal(value,"notification-effect")) {
+         gboolean effect=g_str_equal(value,"notification-effect");guint64 request;
+         const char *const fields[]={"protocolVersion","kind","binding","requestId","intent"};
+@@ -466,7 +483,7 @@ static void receive(WebKitUserContentManager *manager,WebKitJavascriptResult *re
+     if (qa_exit && (g_str_equal(kind,"window-effect") || g_str_equal(kind,"application-launch") || g_str_equal(kind,"host-reconnect"))) { g_print("frontend-request: %s\n",text);fflush(stdout); }
+     if (g_str_equal(kind,"host-ready")) backend_start();
+     else if (g_str_equal(kind,"host-reconnect")) backend_restart();
+-    else if ((observation_kind(kind) || g_str_equal(kind,"projection-request") || g_str_equal(kind,"activation-history-request") || g_str_equal(kind,"switcher-selection-request") || g_str_equal(kind,"switcher-cancel-request") || g_str_equal(kind,"window-effect") || g_str_equal(kind,"catalog-request") || g_str_equal(kind,"taskbar-pins-write") || g_str_equal(kind,"notification-request") || g_str_equal(kind,"notification-effect") || g_str_equal(kind,"shell-settings-request") || g_str_equal(kind,"shell-settings-write") || g_str_equal(kind,"application-launch"))) {
++    else if ((observation_kind(kind) || g_str_equal(kind,"projection-request") || g_str_equal(kind,"activation-history-request") || g_str_equal(kind,"switcher-selection-request") || g_str_equal(kind,"switcher-cancel-request") || g_str_equal(kind,"window-effect") || g_str_equal(kind,"catalog-request") || g_str_equal(kind,"taskbar-pins-write") || g_str_equal(kind,"system-menu-request") || g_str_equal(kind,"system-menu-effect") || g_str_equal(kind,"notification-request") || g_str_equal(kind,"notification-effect") || g_str_equal(kind,"shell-settings-request") || g_str_equal(kind,"shell-settings-write") || g_str_equal(kind,"application-launch"))) {
+         if (!backend_ready || shutting_down) return;
+         if (g_queue_get_length(&requests)>=16) { failed=TRUE;backend_ready=FALSE;deliver("{\"kind\":\"host-disconnected\"}");gtk_main_quit();return; }
+         g_queue_push_tail(&requests,g_strconcat(text,"\n",NULL));write_next();
+@@ -707,7 +724,7 @@ static gboolean surface_preflight(SurfaceGate *gate,JsonNode *root,guint queued,
+     for (guint i=0;i<count;i++) {
+         JsonNode *item=json_array_get_element(req,i);const char *rk=request_kind(item);
+         g_autofree char *wire=json_to_string(item,FALSE);
+-        if (!rk || strlen(wire)>4096 || (!observation_kind(rk) && !g_str_equal(rk,"projection-request") && !g_str_equal(rk,"activation-history-request") && !g_str_equal(rk,"switcher-selection-request") && !g_str_equal(rk,"switcher-cancel-request") && !g_str_equal(rk,"catalog-request") && !g_str_equal(rk,"taskbar-pins-write") && !g_str_equal(rk,"notification-request") && !g_str_equal(rk,"notification-effect") && !g_str_equal(rk,"shell-settings-request") && !g_str_equal(rk,"shell-settings-write") && !g_str_equal(rk,"application-launch") && !g_str_equal(rk,"window-effect") && !g_str_equal(rk,"host-reconnect")) || (open && (g_str_equal(rk,"application-launch") || g_str_equal(rk,"window-effect")))) return FALSE;
++        if (!rk || strlen(wire)>4096 || (!observation_kind(rk) && !g_str_equal(rk,"projection-request") && !g_str_equal(rk,"activation-history-request") && !g_str_equal(rk,"switcher-selection-request") && !g_str_equal(rk,"switcher-cancel-request") && !g_str_equal(rk,"catalog-request") && !g_str_equal(rk,"taskbar-pins-write") && !g_str_equal(rk,"system-menu-request") && !g_str_equal(rk,"system-menu-effect") && !g_str_equal(rk,"notification-request") && !g_str_equal(rk,"notification-effect") && !g_str_equal(rk,"shell-settings-request") && !g_str_equal(rk,"shell-settings-write") && !g_str_equal(rk,"application-launch") && !g_str_equal(rk,"window-effect") && !g_str_equal(rk,"host-reconnect")) || (open && (g_str_equal(rk,"application-launch") || g_str_equal(rk,"window-effect")))) return FALSE;
+         if (g_str_equal(rk,"host-reconnect") && count!=1) return FALSE;
+         if (!ready && !g_str_equal(rk,"host-reconnect")) return FALSE;
+     }
+@@ -850,6 +867,15 @@ static void test_surface_preflight(void) {
+     json_object_set_string_member(intent,"verb","execute");g_assert_false(surface_preflight(&gate,root,0,0,TRUE,&out));json_object_set_string_member(intent,"verb","invoke");
+     json_object_set_string_member(intent,"path","/tmp/foreign");g_assert_false(surface_preflight(&gate,root,0,0,TRUE,&out));json_object_remove_member(intent,"path");
+     g_assert_true(surface_preflight(&gate,root,0,0,TRUE,&out));
++    json_object_set_string_member(frame,"mode","system");json_array_remove_element(array,0);
++    JsonNode *system=test_json("{\"protocolVersion\":3,\"kind\":\"system-menu-effect\",\"binding\":{},\"requestId\":\"1\",\"intent\":{\"service\":\"9\",\"revision\":\"1\",\"operation\":\"volume-set\",\"value\":25}}");
++    json_array_add_element(array,system);g_assert_true(surface_preflight(&gate,root,0,0,TRUE,&out));
++    JsonObject *system_intent=json_object_get_object_member(json_node_get_object(system),"intent");
++    json_object_set_int_member(system_intent,"value",101);g_assert_false(surface_preflight(&gate,root,0,0,TRUE,&out));json_object_set_int_member(system_intent,"value",25);
++    json_object_set_string_member(system_intent,"service","0");g_assert_false(surface_preflight(&gate,root,0,0,TRUE,&out));json_object_set_string_member(system_intent,"service","9");
++    json_object_set_string_member(system_intent,"operation","network-enable");g_assert_false(surface_preflight(&gate,root,0,0,TRUE,&out));json_object_set_int_member(system_intent,"value",1);g_assert_true(surface_preflight(&gate,root,0,0,TRUE,&out));
++    json_object_set_string_member(system_intent,"operation","execute");g_assert_false(surface_preflight(&gate,root,0,0,TRUE,&out));json_object_set_string_member(system_intent,"operation","session-lock");json_object_set_int_member(system_intent,"value",0);g_assert_true(surface_preflight(&gate,root,0,0,TRUE,&out));
++    json_object_set_string_member(system_intent,"path","/tmp/foreign");g_assert_false(surface_preflight(&gate,root,0,0,TRUE,&out));json_object_remove_member(system_intent,"path");
+     json_node_unref(root);
+ }
+ static void test_surface_managers(void) {
+diff --git c/implementation/warlock/native/surface.h w/implementation/warlock/native/surface.h
+index c5df294..37414ad 100644
+--- c/implementation/warlock/native/surface.h
++++ w/implementation/warlock/native/surface.h
+@@ -50,9 +50,9 @@ static gboolean surface_frame(JsonNode *node,guint64 *pub,guint64 *lease,gboolea
+     if (!surface_fields(o,names,appearance?8:7) || json_node_get_value_type(json_object_get_member(o,"surfaceProtocol"))!=G_TYPE_INT64 || json_object_get_int_member(o,"surfaceProtocol")!=2 || !surface_uint(json_object_get_member(o,"publication"),pub) || !*pub || !surface_uint(json_object_get_member(o,"lease"),lease) || !surface_text(json_object_get_member(o,"mode"),32,FALSE) || !surface_text(json_object_get_member(o,"status"),1024,TRUE)) return FALSE;
+     const char *mode=json_object_get_string_member(o,"mode");
+     *open=!g_str_equal(mode,"closed");
+-    if (*open && (!*lease || (!g_str_equal(mode,"picker") && !g_str_equal(mode,"applications") && !g_str_equal(mode,"menu") && !g_str_equal(mode,"overview") && !g_str_equal(mode,"switcher") && !g_str_equal(mode,"snap") && !g_str_equal(mode,"settings") && !g_str_equal(mode,"notifications")))) return FALSE;
++    if (*open && (!*lease || (!g_str_equal(mode,"picker") && !g_str_equal(mode,"applications") && !g_str_equal(mode,"menu") && !g_str_equal(mode,"overview") && !g_str_equal(mode,"switcher") && !g_str_equal(mode,"snap") && !g_str_equal(mode,"settings") && !g_str_equal(mode,"notifications") && !g_str_equal(mode,"system")))) return FALSE;
+     g_autoptr(GHashTable) ids=g_hash_table_new(g_str_hash,g_str_equal),doms=g_hash_table_new(g_str_hash,g_str_equal);
+-    if (!surface_controls(json_object_get_member(o,"bar"),292,ids,doms) || !surface_controls(json_object_get_member(o,"popup"),2150,ids,doms)) return FALSE;
++    if (!surface_controls(json_object_get_member(o,"bar"),300,ids,doms) || !surface_controls(json_object_get_member(o,"popup"),2150,ids,doms)) return FALSE;
+     return *open || json_array_get_length(json_object_get_array_member(o,"popup"))==0;
+ }
+ static gboolean surface_admit(SurfaceGate *gate,JsonNode *frame,guint64 *pub,guint64 *lease,gboolean *open) {
+diff --git c/implementation/warlock/qa/check-search.py w/implementation/warlock/qa/check-search.py
+index 6584558..8c1ef23 100644
+--- c/implementation/warlock/qa/check-search.py
++++ w/implementation/warlock/qa/check-search.py
+@@ -1,5 +1,6 @@
+ """Focused compiled launcher/search integration, protected CPU scope only."""
+ import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures,http.server,threading
++SYSTEM=sys.argv[1:]==['--system-menu']
+ NOTIFICATIONS=sys.argv[1:]==['--notifications']
+ SETTINGS=sys.argv[1:]==['--settings']
+ SNAP=sys.argv[1:]==['--snap-chooser']
+@@ -10,11 +11,11 @@ DENSE=sys.argv[1:]==['--dense-taskbar'] or PICKER
+ PINMENUS=sys.argv[1:]==['--pinned-menus'] or (DENSE and not PICKER)
+ PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PINMENUS or PICKER
+ SWITCHER=sys.argv[1:]==['--switcher']
+-NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'];POPUP=sys.argv[1:]==['--native-popup'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or SNAP or SETTINGS or NOTIFICATIONS;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER
++NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'];POPUP=sys.argv[1:]==['--native-popup'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER
+ ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143'
+ sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
+ scope=require_qa_scope();sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
+-OUT=ROOT/'qa/runs'/(('notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
++OUT=ROOT/'qa/runs'/(('system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
+ for folder in ['src','native','adapter','assets','qa']:
+  (INPUT/folder).mkdir()
+  for p in (ROOT/folder).iterdir():
+@@ -72,6 +73,12 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
+   run('compile-task-view',[str(HELD/pinned['compiler']),'make','qa/TaskViewReplay.elm','--optimize','--output=assets/task-view.js'])
+   (INPUT/'qa/task-view-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.TaskViewReplay'));run('typed-task-view',['node','qa/task-view-replay.js','assets/task-view.js',str(OUT/'task-view.json')]);report['typedTaskView']=json.loads((OUT/'task-view.json').read_text());assert all(report['typedTaskView']['checks'].values())
+   run('task-view-model-typecheck',['quint','typecheck','qa/task-view.qnt']);run('task-view-model-named',['quint','test','qa/task-view.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79101']);run('task-view-model-invariants',['quint','run','qa/task-view.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79102'])
++ if SYSTEM:
++  report.update(requirements=['ELM-UX-032'],scenarios=['ux-032'],scope='Current immutable Elm system menu, native capability/outcome admission, actual private audio and D-Bus protocols; physical GUI, hardware and independent acceptance separate')
++  run('system-model-typecheck',['quint','typecheck','qa/system-menu.qnt']);run('system-model-named',['quint','test','qa/system-menu.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79127']);run('system-model-invariants',['quint','run','qa/system-menu.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79128'])
++  report['systemLifecycle']=json.loads(run('system-providers',['/usr/bin/python3','-B','qa/check-system-menu.py']))
++  run('compile-system-menu',[str(HELD/pinned['compiler']),'make','qa/SystemMenuReplay.elm','--optimize','--output=assets/system-menu.js'])
++  (INPUT/'qa/system-menu-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.SystemMenuReplay'));run('typed-system-menu',['node','qa/system-menu-replay.js','assets/system-menu.js',str(OUT/'system-menu.json')]);report['typedSystemMenu']=json.loads((OUT/'system-menu.json').read_text());assert all(report['typedSystemMenu']['checks'].values())
+  if NOTIFICATIONS:
+   report.update(requirements=['ELM-UX-031'],scenarios=['ux-031','notification-valid','notification-reused'],scope='Integrated typed notification center and actual private-D-Bus lifecycle/producer actions; native GUI acceptance remains separate')
+   report['notificationLifecycle']=json.loads(run('notification-producers',['/usr/bin/python3','-B','qa/check-notifications.py']))
+@@ -129,7 +136,7 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
+    if TASKVIEW:
+     # The authority TU is independently compiled against its owning core; none
+     # of these reused GTK host objects link it or include its modal preflight.
+-    excluded=['native/surface.h','native/host.c','native/shared-host.c']+(['native/authority.cpp','native/navigation-modal.hpp'] if NAV else [])+(['native/authority.cpp','native/host-journal.h','native/geometry-effects.inc','native/snap-placement.inc'] if SNAP or SETTINGS or NOTIFICATIONS else [])
++    excluded=['native/surface.h','native/host.c','native/shared-host.c']+(['native/authority.cpp','native/navigation-modal.hpp'] if NAV else [])+(['native/authority.cpp','native/host-journal.h','native/geometry-effects.inc','native/snap-placement.inc'] if SNAP or SETTINGS or NOTIFICATIONS or SYSTEM else [])
+     assert all(sha(INPUT/p)==h for p,h in prior['inputs'].items() if p.startswith('native/') and p not in excluded)
+     assert all('surface.h' not in (INPUT/'native'/name).read_text() for name in units)
+    object_path=prior_path;object_report=prior;seen=set()
+@@ -149,7 +156,7 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
+    run('popup-context-link',['g++',str(OUT/'popup-context.o'),*[str(OUT/(name+'.o')) for name in units],'-o',str(OUT/'popup-context-tests'),*flags])
+    run('popup-context-tests',[str(OUT/'popup-context-tests')])
+  run('host-self-tests',[str(OUT/'elm-host'),'--self-test'])
+- if DENSE or SNAP or SETTINGS or NOTIFICATIONS:
++ if DENSE or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM:
+   if DENSE:report.update(requirements=['ELM-UI-008'],scenarios=['overflow-first-last','overflow-resize','menu-invocation'],scope='Current compiled renderer/adapter dense enlarged-text browser journeys and rebuilt scalable native host; native output/menu/AT observations separate')
+   (INPUT/'qa/dense.html').write_text('<!doctype html><html style="font-size:24px"><head><link rel="stylesheet" href="../assets/shell.css"></head><body class="bar"><div id="app"></div><script>window.nativePackets=[];window.webkit={messageHandlers:{native:{postMessage:s=>nativePackets.push(JSON.parse(s))}}};</script><script src="../assets/bar.js"></script><script src="../assets/bar-adapter.js"></script><script src="../assets/context.js"></script><script src="../assets/activation.js"></script></body></html>')
+   (INPUT/'qa/dense-picker.html').write_text('<!doctype html><html style="font-size:24px"><head><link rel="stylesheet" href="../assets/shell.css"></head><body class="popup"><div id="app"></div><script>window.nativePackets=[];window.webkit={messageHandlers:{native:{postMessage:s=>nativePackets.push(JSON.parse(s))}}};</script><script src="../assets/popup.js"></script><script src="../assets/popup-adapter.js"></script><script src="../assets/context.js"></script><script src="../assets/activation.js"></script></body></html>')
+@@ -161,9 +168,9 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
+    def log_message(self,*args):pass
+   server=http.server.ThreadingHTTPServer(('127.0.0.1',0),Handler);threading.Thread(target=server.serve_forever,daemon=True).start()
+   browser=pathlib.Path('/home/hoskinson/.cache/puppeteer/chrome-headless-shell/linux-154.0.8037.57/chrome-headless-shell-linux64/chrome-headless-shell');report['browserSHA256']=sha(browser)
+-  browser_name='notifications-browser' if NOTIFICATIONS else 'settings-browser' if SETTINGS else 'snap-browser' if SNAP else 'dense-browser';browser_runner='notifications-browser.mjs' if NOTIFICATIONS else 'settings-browser.mjs' if SETTINGS else 'snap-browser.mjs' if SNAP else 'dense-taskbar-browser.mjs'
++  browser_name='system-menu-browser' if SYSTEM else 'notifications-browser' if NOTIFICATIONS else 'settings-browser' if SETTINGS else 'snap-browser' if SNAP else 'dense-browser';browser_runner='system-menu-browser.mjs' if SYSTEM else 'notifications-browser.mjs' if NOTIFICATIONS else 'settings-browser.mjs' if SETTINGS else 'snap-browser.mjs' if SNAP else 'dense-taskbar-browser.mjs'
+   run(browser_name,['node','qa/'+browser_runner,'http://127.0.0.1:'+str(server.server_port),str(OUT),str(browser)])
+-  child_path=OUT/(browser_name+'.json');child=json.loads(child_path.read_text());assert child['passed'] and child['browserExitCode']==0;report['notificationsBrowser' if NOTIFICATIONS else 'settingsBrowser' if SETTINGS else 'snapBrowser' if SNAP else 'denseBrowser']={'path':str(child_path),'sha256':sha(child_path),'checks':child['checks']}
++  child_path=OUT/(browser_name+'.json');child=json.loads(child_path.read_text());assert child['passed'] and child['browserExitCode']==0;report['systemMenuBrowser' if SYSTEM else 'notificationsBrowser' if NOTIFICATIONS else 'settingsBrowser' if SETTINGS else 'snapBrowser' if SNAP else 'denseBrowser']={'path':str(child_path),'sha256':sha(child_path),'checks':child['checks']}
+   if SNAP:
+    run('menu-navigation-regression',['node','qa/dense-taskbar-browser.mjs','http://127.0.0.1:'+str(server.server_port),str(OUT),str(browser)])
+    regression=json.loads((OUT/'dense-browser.json').read_text());assert regression['passed'] and regression['browserExitCode']==0;report['menuNavigationRegression']={'path':str(OUT/'dense-browser.json'),'sha256':sha(OUT/'dense-browser.json'),'checks':regression['checks']}
+diff --git c/implementation/warlock/qa/current-search-build.json w/implementation/warlock/qa/current-search-build.json
+index b480213..5c1ff1e 100644
+--- c/implementation/warlock/qa/current-search-build.json
++++ w/implementation/warlock/qa/current-search-build.json
+@@ -1,13 +1,13 @@
+ {
+   "schema": 1,
+-  "report": "implementation/warlock/qa/runs/notifications-1791463441591656970/report.json",
+-  "reportSHA256": "f3b57d490137136316c84e0e84f7951592a86f4e1ac9a0504846a642c85a7554",
++  "report": "implementation/warlock/qa/runs/system-menu-1791465946311061384/report.json",
++  "reportSHA256": "1208ea9e8e3bdc2d03900cd5e04b4b5967474ec796edf3f554248ee6667448f0",
+   "compiledAssets": {
+-    "elm.js": "f6db14785b37fc32986507cebabb40f243d7b60084eb95c9087e1240ec7cc8cb",
+-    "bar.js": "b4c22fda25f7be71d74c62d7ae5690d38a6f097221f2b0b156069d23dd422153",
+-    "popup.js": "44d4f096605bf871223d5d409786344a91aaa605dffab1654a39cf976ce9808b"
++    "elm.js": "2a3fb0d51c6d266479f2b6f330f96c2dfa71897def9a201e883f5368c59a9219",
++    "bar.js": "dff9b880c51c1a5622de9ea1133bddd87876fbb4f4610b7e2998114030aef4df",
++    "popup.js": "9e7c999c47aa7dac3dc1858ca1c73522989317fc5ac2f38d83bfb185f94bacd9"
+   },
+-  "binarySHA256": "d3f75520794395dcba8602cf4350372be7fe809a79b840317c7732b822703c76",
++  "binarySHA256": "ab03f0a1b38bebf8a730a61be34e9cd0b43c57773ffef97c8b95c4816c5d46c6",
+   "nativeAcceptance": false,
+   "fullReleaseAccepted": false
+ }
+diff --git c/implementation/warlock/qa/native-window-feedback.py w/implementation/warlock/qa/native-window-feedback.py
+index b3b25a7..f349d97 100644
+--- c/implementation/warlock/qa/native-window-feedback.py
++++ w/implementation/warlock/qa/native-window-feedback.py
+@@ -4,6 +4,7 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
+ lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
+ """
+ import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
++SYSTEM=sys.argv[1:]==['--system-menu']
+ NOTIFICATIONS=sys.argv[1:]==['--notifications']
+ SETTINGS=sys.argv[1:]==['--settings']
+ PLACEMENT=sys.argv[1:]==['--snap-placement']
+@@ -19,7 +20,7 @@ PRE_READY_RETIRE=sys.argv[1:]==['--switcher-pre-ready-retirement']
+ MEMBERSHIP=sys.argv[1:]==['--switcher-membership'] or PRE_READY_RETIRE
+ CHORD=sys.argv[1:]==['--switcher-chord'] or MEMBERSHIP
+ SWITCHER=sys.argv[1:]==['--switcher']
+-NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'] or DENSEPICKER;PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS or PINMENUS or REFLOW or SETTINGS or NOTIFICATIONS;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD
++NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'] or DENSEPICKER;PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS or PINMENUS or REFLOW or SETTINGS or NOTIFICATIONS or SYSTEM;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD
+ ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143';RUNTIME=REPO/'implementation/warlock-client-provider-native-v204'
+ sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
+ spec=importlib.util.spec_from_file_location('feedback_private_host',RUNTIME/'candidate_host.py');host=importlib.util.module_from_spec(spec);spec.loader.exec_module(host)
+@@ -57,7 +58,7 @@ else:
+ for row in pair.values():assert sha(row['path'])==row['sha256']
+ assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
+ subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
+-OUT=ROOT/'qa/runs'/(('native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
++OUT=ROOT/'qa/runs'/(('native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+ OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
+ focus_host=None
+ if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
+@@ -106,6 +107,7 @@ if focus_host:report['focusHostAdaptation']=focus_host
+ if retirement_fixture:report['retirementFixture']=retirement_fixture
+ if primary_fixture:report['primaryFixture']=primary_fixture
+ if SEARCH:report.update(requirements=['ELM-UI-005','ELM-UX-029'],scenarios=['search-no-match','search-race','search-refused','launcher-refused'],scope='Actual current query and private catalog, native typing/Enter refusal and no duplicate launch; AT/IME and popup physical presentation acceptance remain pending',popupPresentationAccepted=False)
++if SYSTEM:report.update(requirements=['ELM-UX-032'],scenarios=['ux-032'],scope='Actual isolated native menu with current private PipeWire volume and login1 session/power capabilities, unavailable network, physical keyboard changes, readback, confirmation and pixels; real hardware, AT and independent acceptance remain open.',nativeSystemMenuObserved=False)
+ if NOTIFICATIONS:report.update(requirements=['ELM-UX-031'],scenarios=['ux-031','notification-valid','notification-reused'],scope='Actual private native producers and physical Elm center: exactly-once current dispatch, expired history and reused-incarnation queued refusal; independent/AT acceptance remains open.',nativeNotificationsObserved=False)
+ if SETTINGS:report.update(requirements=['ELM-UX-030'],scenarios=['ux-030'],scope='Actual integrated settings controls, exact saved appearance, native text size/reservation and whole-host restart; native-bound invalid scale refuses without changing stored or presented settings. Independent and applicable AT/IME/release acceptance remain open.',nativeSettingsObserved=False)
+ if PINS:report.update(requirements=['ELM-UI-004','ELM-UX-004'],scenarios=['taskbar-zero','ux-004'],scope='Actual native keyboard pin/reorder, shell restart, identity order and one current zero-window launch; popup physical presentation and AT acceptance remain separate',popupPresentationAccepted=False,nativePinJourneyObserved=False)
+@@ -300,6 +302,16 @@ raise SystemExit(daemon.run())
+     backend_fixture=OUTPUT/'notification-backend.py'
+     backend_fixture.write_text('import json,sys,time\nfrom pathlib import Path\nsys.path.insert(0,'+repr(str(ROOT/'adapter'))+')\nimport daemon\nsys.argv[1]='+repr(str(broker_config))+'\noriginal=daemon.handle_request\ndef handle(*args):\n request=args[2]\n arm=Path('+repr(str(notification_arm))+');waiting=Path('+repr(str(notification_waiting))+');release=Path('+repr(str(notification_release))+')\n if request.get("kind")=="notification-effect" and arm.exists():\n  arm.unlink();waiting.write_text(json.dumps(request));deadline=time.monotonic()+2\n  while not release.exists():\n   if time.monotonic()>=deadline:raise RuntimeError("Notification transport hold expired")\n   time.sleep(.005)\n  release.unlink()\n return original(*args)\ndaemon.handle_request=handle\nraise SystemExit(daemon.run())\n')
+     report['notificationHoldFixture']={'path':str(backend_fixture),'sha256':sha(backend_fixture),'maximumSeconds':2,'scope':'Hold actual queued request before its unchanged admission route; no artificial effect or receipt.'}
++   if SYSTEM:
++    import importlib.util
++    system_spec=importlib.util.spec_from_file_location('private_system_fixture',ROOT/'qa/system-menu-provider.py');system_fixture=importlib.util.module_from_spec(system_spec);system_spec.loader.exec_module(system_fixture)
++    audio_root=s.host.runtime/'system-audio';env=system_fixture.audio_config(audio_root,env)
++    audio_core=s.host.launch('system-audio-core',['/usr/bin/pipewire','-c',str(audio_root/'core.conf')],env=env);apps.append(audio_core);wait(lambda:(audio_root/'warlock-audio').exists())
++    audio_pulse=s.host.launch('system-audio-pulse',['/usr/bin/pipewire-pulse','-c',str(audio_root/'pulse.conf')],env=env);apps.append(audio_pulse);wait(lambda:(audio_root/'pulse/native').exists())
++    system_state=OUTPUT/'system-state.json';system_provider=s.host.launch('system-login-provider',['/usr/bin/python3','-B',str(ROOT/'qa/system-menu-provider.py'),str(system_state)],env=env);apps.append(system_provider);wait(lambda:system_state.exists())
++    backend_fixture=OUTPUT/'system-menu-backend.py'
++    backend_fixture.write_text('import os,sys\nfrom pathlib import Path\nsys.path.insert(0,'+repr(str(ROOT/'adapter'))+')\nimport daemon\nfrom system_menu import Menu\nassert Path(sys.argv[1]).read_text()=='+repr(config_path.read_text())+'\nassert not Path(os.environ["DBUS_SYSTEM_BUS_ADDRESS"].removeprefix("unix:path=")).exists()\nassert os.environ["PULSE_SERVER"]=='+repr(env['PULSE_SERVER'])+'\nsys.argv[1]='+repr(str(broker_config))+'\ndaemon.SystemMenu=lambda:Menu(system_address=os.environ["DBUS_SESSION_BUS_ADDRESS"])\nraise SystemExit(daemon.run())\n')
++    report['systemFixture']={'backend':str(backend_fixture),'backendSHA256':sha(backend_fixture),'provider':str(ROOT/'qa/system-menu-provider.py'),'providerSHA256':sha(ROOT/'qa/system-menu-provider.py'),'audioCoreConfigSHA256':sha(audio_root/'core.conf'),'audioPulseConfigSHA256':sha(audio_root/'pulse.conf'),'audioEndpoint':env['PULSE_SERVER'],'systemBusRemainsRefusing':True,'privateSessionBus':env['DBUS_SESSION_BUS_ADDRESS'],'scope':'Native-only fixture constructor selects owned private login1 provider; unchanged production admission/effect path, real private null audio sink, network owner absent, no hardware/desktop system effect.'}
+    web=s.host.launch('warlock',['%s'%binary,'--assets',str(assets),'--authority-config',str(config_path),'--backend',str(backend_fixture if CATALOG or CHORD else ROOT/'adapter/daemon.py'),'--qa-exit-after-render','--qa-stay-open','--surface-experiment',*(['--text-scale','2' if DENSEMENU else '1.5'] if SMALL else [])],env=env);apps.append(web);log=OUTPUT/'warlock.log';collector=Collector()
+    def text():
+     raw=log.read_text(errors='replace')
+@@ -409,10 +421,11 @@ raise SystemExit(daemon.run())
+      pix=GdkPixbuf.Pixbuf.new_from_file(str(image));pixels=pix.get_pixels();stride=pix.get_rowstride();channels=pix.get_n_channels();regions=[]
+      # Count only current control interiors. Whole-popup counts incorrectly
+      # included the compositor's warning overlay above a black reopened popup.
+-     for button in body['buttons']+(body.get('content',[]) if NOTIFICATIONS else []):
++     for button in body['buttons']+(body.get('content',[]) if NOTIFICATIONS or SYSTEM else []):
+       selected=button['id']==body['focus'] if SETTINGS else button['id']==body['focus'] if SNAP and (projection() or {}).get('mode')=='snap' else button['accessibleName'] in ['Minimize','Close window actions','Maximize'] if PINMENUS else button['accessibleName'].startswith(('Activate ELM-','Restore ELM-')) if SWITCHER or CHORD else (button['accessibleName'].startswith('Browse workspace ') or (NAV and button['accessibleName'].startswith('Restore ELM-ACTIVATION-PEER'))) if TASKVIEW else button['accessibleName'] in ['Refresh applications','Open Files']
++      if SYSTEM:selected=button.get('identity','').endswith(':state') or button['id']==body['focus']
+       if NOTIFICATIONS:selected=button['accessibleName']=='Warlock fixture: Expiring notification'
+-      if not selected or (button['disabled'] and not NOTIFICATIONS) or button['y']<0 or button['y']+button['height']>box[3]:continue
++      if not selected or (button['disabled'] and not (NOTIFICATIONS or SYSTEM)) or button['y']<0 or button['y']+button['height']>box[3]:continue
+       left,top=max(0,int(box[0]+button['x'])+12),max(100,int(box[1]+button['y'])+6)
+       right,bottom=min(pix.get_width(),int(box[0]+button['x']+min(220,button['width']))-12),min(pix.get_height(),box[1]+box[3],int(box[1]+button['y']+button['height'])-6)
+       bright=sum(1 for y in range(top,bottom) for x in range(left,right) if all(pixels[y*stride+x*channels+c]>170 for c in range(3)))
+@@ -849,6 +862,41 @@ raise SystemExit(daemon.run())
+       check('OverviewEscapeReturnsToEligibleOpener',facts()['facts']['focused']==before_focus and any(e['kind']=='key' and e['keyval']==97 and e['window']=='ELM-AUTHORITY-FIXTURE' for e in delivered),events=delivered,before=before_focus,after=facts()['facts']['focused'])
+      check('OverviewDismissalHasNoNativeMutation',len(journal())==before)
+      report['nativeTaskViewJourneyObserved']=not RETIRE_OPENER
++    elif SYSTEM:
++     def system_body():
++      body=popup_body();p=projection()
++      return body if body and p and p.get('mode')=='system' and body['publication']==p['publication'] else None
++     def system_frames():return [json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('backend-frame: ') and json.loads(line.split(': ',1)[1]).get('kind') in ['system-menu-snapshot','system-menu-outcome']]
++     def state():return system_frames()[-1]['snapshot'] if system_frames() else None
++     def navigate(label):
++      target=wait(lambda:next((b for b in (system_body() or {}).get('buttons',[]) if b['accessibleName']==label and not b['disabled']),None))
++      for _ in range(len(system_body()['buttons'])+2):
++       if system_body()['focus']==target['id']:break
++       key(15)
++      wait(lambda:(body:=system_body()) and body['focus']==target['id'])
++     before_window=len(journal());opener=wait(lambda:next((b for b in (bar_body() or {}).get('buttons',[]) if b['accessibleName']=='Open system menu' and not b['disabled']),None));click({'visible':0<=opener['x'] and opener['x']+opener['width']<=800 and 0<=opener['y']<48,'point':[opener['x']+opener['width']/2,opener['y']+opener['height']/2]})
++     body=wait(lambda:(body:=system_body()) and state() and state()['volume'] and state()['session'] and body)
++     check('OriginalUnavailableNetworkAndObservedRemainingCapabilities',state()['network'] is None and 'Network unavailable' in body['text'] and state()['volume']['percent']==100 and state()['power']=={'suspend':'yes','reboot':'yes','poweroff':'no'} and state()['session']['name']=='Warlock private session',snapshot=state(),body=body)
++     check('UnavailableNetworkHasNoActionTarget',not any(b.get('identity','').startswith('system:network-enable:') for b in body['buttons']))
++     navigate('Suspend');popup_capture('system-menu-capabilities');capture=report['popupCaptures'][-1]
++     check('UnavailableNetworkHasActualNativeTextPixels',any(row['accessibleName']=='Network unavailable' and row['brightPixels']>15 for row in capture['controlRegions']),capture=capture)
++     keyboard_button('Set volume 25%',28)
++     wait(lambda:state()['volume']['percent']==25 and system_frames()[-1].get('status')=='Committed')
++     sent=requests('system-menu-effect');receipt=system_frames()[-1]
++     check('KeyboardVolumeChangeHasOneCorrelatedObservedNativeOutcome',len(sent)==1 and sent[0]['intent']['operation']=='volume-set' and sent[0]['intent']['value']==25 and receipt['requestId']==sent[0]['requestId'] and receipt['status']=='Committed',request=sent[0],receipt=receipt)
++     wait(lambda:(body:=system_body()) and any(b.get('identity')=='system:volume-set:25' and b['disabled'] for b in body['buttons']))
++     keyboard_button('Mute',28);wait(lambda:state()['volume']['muted'] and system_frames()[-1].get('status')=='Committed')
++     check('MuteReadbackUsesCurrentNativeAudioSink',len(requests('system-menu-effect'))==2 and 'muted' in system_body()['text'],receipt=system_frames()[-1])
++     before_system=len(requests('system-menu-effect'));keyboard_button('Restart',28)
++     wait(lambda:(body:=system_body()) and any(b.get('identity')=='system:cancel' and not b['disabled'] for b in body['buttons']))
++     check('RestartPromptDoesNotSubmitNativePowerChange',len(requests('system-menu-effect'))==before_system and json.loads(system_state.read_text())['calls']==[])
++     keyboard_button('Cancel system change',28);wait(lambda:(body:=system_body()) and not any(b.get('identity')=='system:confirm' for b in body['buttons']))
++     check('CancelPreservesSessionWithoutNativeEffects',json.loads(system_state.read_text())['calls']==[] and len(requests('system-menu-effect'))==before_system)
++     keyboard_button('Refresh system state',28);wait(lambda:system_frames()[-1]['kind']=='system-menu-snapshot')
++     check('RefreshReadsCurrentStateAndNeverRepeatsChanges',len(requests('system-menu-effect'))==before_system and state()['volume']['percent']==25 and state()['volume']['muted'])
++     key(1);wait(lambda:projection()['mode']=='closed')
++     check('SystemEscapeClosesWithoutWindowOrLaunchEffects',len(journal())==before_window and not launches())
++     report['systemProviderState']=json.loads(system_state.read_text());report['nativeSystemMenuObserved']=True
+     elif NOTIFICATIONS:
+      notification_control=OUTPUT/'notification-control.json'
+      producer=s.host.launch('notification-producers',['/usr/bin/python3','-B',str(ROOT/'qa/notification-producer.py'),str(notification_control)],env=env);apps.append(producer);notification_producer=producer
+diff --git c/implementation/warlock/src/Desktop.elm w/implementation/warlock/src/Desktop.elm
+index 0dfdd1e..bd10f95 100644
+--- c/implementation/warlock/src/Desktop.elm
++++ w/implementation/warlock/src/Desktop.elm
+@@ -6,6 +6,7 @@ import Switcher
+ import Pins
+ import Settings
+ import Notifications
++import SystemMenu
+ import MenuBridge
+ import NativeProvider
+ import Provider
+@@ -33,6 +34,11 @@ type alias Model =
+     , launch : Launch.Model
+     , applications : Maybe Catalog.Snapshot
+     , pins : Pins.Model
++    , systemMenu : SystemMenu.Model
++    , systemMenuOpen : Bool
++    , systemMenuOpening : Bool
++    , systemMenuExpected : Maybe Counter
++    , systemMenuConfirmation : Maybe SystemMenu.Intent
+     , notifications : Notifications.Model
+     , notificationsOpen : Bool
+     , notificationsOpening : Bool
+@@ -83,6 +89,12 @@ type Msg
+     | PresentationOwner (Maybe {outputId : Counter, providerId : Counter})
+     | Incoming D.Value
+     | OpenApplications ViewStamp
++    | OpenSystemMenu ViewStamp
++    | CloseSystemMenu ViewStamp
++    | RefreshSystemMenu ViewStamp
++    | SystemChange ViewStamp SystemMenu.Intent
++    | ConfirmSystemChange ViewStamp SystemMenu.Intent
++    | CancelSystemChange ViewStamp
+     | OpenNotifications ViewStamp
+     | CloseNotifications ViewStamp
+     | RefreshNotifications ViewStamp
+@@ -121,7 +133,7 @@ type Effect
+ 
+ initial : Model
+ initial =
+-    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
++    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
+ 
+ switcherOpen : Model -> Bool
+ switcherOpen model = List.member (Switcher.phase model.switcher) [Switcher.Waiting,Switcher.Browsing]
+@@ -202,7 +214,7 @@ receiveChord chord model =
+         order=old |> Maybe.map (\previous -> UInt64.compare chord.generation previous.generation) |> Maybe.withDefault GT
+         inconsistent=old |> Maybe.map (\previous -> order==EQ && (previous.roots/=chord.roots || previous.history/=chord.history || previous.origin/=chord.origin || List.take (List.length previous.steps) chord.steps/=previous.steps || (previous.released && not chord.released) || (previous.cancelled && not chord.cancelled) || (previous.consumed && not chord.consumed))) |> Maybe.withDefault False
+         closed =
+-            let retired=advance (retireSwitcher {model | notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,nativeSwitcher=Just chord})
++            let retired=advance (retireSwitcher {model | systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,nativeSwitcher=Just chord})
+                 choice=retired.choice |> Maybe.andThen (\pending -> if pending.chord==Just chord.generation then Nothing else Just pending)
+             in ({retired | choice=choice},[])
+     in if chord.generation==UInt64.zero || order==LT then (model,[]) else
+@@ -212,7 +224,7 @@ receiveChord chord model =
+            Nothing -> (retireSwitcher model,[])
+            Just generation ->
+                let windows=model.windows
+-                   base=if order==GT then {model | notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,nativeSwitcher=Just chord,choice=Nothing,choiceNotice="",open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,switcherHistory=Nothing,switcherExpected=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}} else {model | notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,nativeSwitcher=Just chord}
++                   base=if order==GT then {model | systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,nativeSwitcher=Just chord,choice=Nothing,choiceNotice="",open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,switcherHistory=Nothing,switcherExpected=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}} else {model | systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,nativeSwitcher=Just chord}
+                    (stepped,_) = List.foldl (\(ordinal,direction) (state,_) -> Switcher.step generation (ordinal+1) direction state) (base.switcher,Nothing) (List.indexedMap Tuple.pair chord.steps)
+                    (released,selected)=if chord.released then Switcher.release generation (List.length chord.steps) stepped else (stepped,Nothing)
+                    next=advance {base | switcher=released}
+@@ -296,6 +308,11 @@ windowBase message model =
+         , switcherExpected = if disconnected || changed || windows.shell.phase==Shell.Exhausted then Nothing else model.switcherExpected
+         , switcherHistory = if disconnected || changed || windows.shell.phase==Shell.Exhausted then Nothing else model.switcherHistory
+         , pins = pins
++        , systemMenu = if disconnected || changed then SystemMenu.initial else model.systemMenu
++        , systemMenuOpen = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.systemMenuOpen
++        , systemMenuOpening = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.systemMenuOpening
++        , systemMenuExpected = if disconnected || changed then Nothing else model.systemMenuExpected
++        , systemMenuConfirmation = if disconnected || changed || windows.shell.phase==Shell.Exhausted then Nothing else model.systemMenuConfirmation
+         , notifications = if disconnected || changed then Notifications.initial else model.notifications
+         , notificationsOpen = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.notificationsOpen
+         , notificationsOpening = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.notificationsOpening
+@@ -441,7 +458,7 @@ update message model =
+                 Nothing -> (model,[])
+                 Just choice ->
+                     let windows=model.windows
+-                    in (advance (retireSwitcher {model|notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,snap=Just choice,open=False,overview=False,choice=Nothing,
++                    in (advance (retireSwitcher {model|systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,snap=Just choice,open=False,overview=False,choice=Nothing,
+                         expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,
+                         windows={windows|picker=Nothing,menus=MenuBridge.retireChoices windows.menus}}),[])
+         SelectSnap stamp region ->
+@@ -510,7 +527,7 @@ update message model =
+                                 Ok provider ->
+                                     let (next,effects)=windowBase (TaskbarShell.OpenMenu provider) model
+                                     in if (MenuBridge.menuSnapshot next.windows.menus).menu==(MenuBridge.menuSnapshot model.windows.menus).menu then (model,[]) else
+-                                        (retireSwitcher {next | snap=Nothing,open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=model.windows.shell.binding |> Maybe.andThen (\binding -> TaskbarShell.groups model.windows |> List.filter (\group -> List.any (\family -> family.root==root) group.families) |> List.head |> Maybe.map (\group -> {binding=binding,destination=TaskbarGroup group.key,output=Just observed.context.output}))},effects)
++                                        (retireSwitcher {next | systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,snap=Nothing,open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=model.windows.shell.binding |> Maybe.andThen (\binding -> TaskbarShell.groups model.windows |> List.filter (\group -> List.any (\family -> family.root==root) group.families) |> List.head |> Maybe.map (\group -> {binding=binding,destination=TaskbarGroup group.key,output=Just observed.context.output}))},effects)
+         OpenSwitcher stamp direction ->
+             if capture model/=Just stamp || model.choice/=Nothing || not (Shell.available model.windows.shell) || MenuBridge.preparedSnapshot model.windows.menus/=Nothing then (model,[]) else
+             case UInt64.next (Switcher.generation model.switcher) of
+@@ -520,7 +537,7 @@ update message model =
+                         origin=base.windows.shell.effects.observed |> Maybe.andThen (\observed -> Scene.focused observed.scene |> Maybe.andThen (\root -> Scene.rootOf root observed.scene))
+                         (switcher,_)=Switcher.step generation 1 direction base.switcher
+                         windows=base.windows
+-                        opened=advance {base | snap=Nothing,nativeSwitcher=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,switcher=switcher,switcherOrigin=origin,switcherHistory=Nothing,open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing}}
++                        opened=advance {base | snap=Nothing,nativeSwitcher=Nothing,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,switcher=switcher,switcherOrigin=origin,switcherHistory=Nothing,open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing}}
+                         (refreshing,commands)=windowBase (TaskbarShell.Native Shell.Refresh) opened
+                         (next,history)=readSwitcherHistory refreshing
+                     in (next,commands++history)
+@@ -556,7 +573,7 @@ update message model =
+         Window value ->
+             let (next,effects)=window value model
+                 (synced,commands)=syncSwitcher next
+-            in if next.windows.picker/=Nothing && next.windows.picker/=model.windows.picker then (retireSwitcher {next | snap=Nothing,open=False,overview=False,expected=Nothing,menuOrigin=Nothing,returnFocus=Nothing},effects) else (synced,effects++commands)
++            in if next.windows.picker/=Nothing && next.windows.picker/=model.windows.picker then (retireSwitcher {next | systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,snap=Nothing,open=False,overview=False,expected=Nothing,menuOrigin=Nothing,returnFocus=Nothing},effects) else (synced,effects++commands)
+         Incoming raw ->
+             case D.decodeValue (D.field "kind" D.string) raw of
+                 Ok "switcher-journal" ->
+@@ -574,6 +591,22 @@ update message model =
+                             if not (switcherOpen model) || model.windows.shell.binding/=Just receipt.binding || model.switcherExpected/=Just receipt.request then (model,[]) else
+                             syncSwitcher {model | switcherExpected=Nothing,switcherHistory=Just {context=receipt.context,roots=receipt.roots}}
+                         Err _ -> (model,[])
++                Ok "system-menu-snapshot" ->
++                    let decoder=strict ["protocolVersion","kind","binding","requestId","snapshot"] (D.map4 (\_ binding request snapshot -> {binding=binding,request=request,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "snapshot" SystemMenu.decoder))
++                    in case D.decodeValue decoder raw of
++                        Ok receipt ->
++                            if model.windows.shell.binding/=Just receipt.binding || model.systemMenuExpected/=Just receipt.request then (model,[]) else
++                                let next=advance {model | systemMenu=SystemMenu.reconcile receipt.snapshot model.systemMenu,systemMenuExpected=Nothing,systemMenuOpening=False,systemMenuConfirmation=Nothing}
++                                in (next,if model.systemMenuOpen && model.systemMenuOpening then [Focus (key next "system:close")] else [])
++                        Err _ -> (model,[])
++                Ok "system-menu-outcome" ->
++                    let decoder=strict ["protocolVersion","kind","binding","requestId","status","snapshot"] (D.map5 (\_ binding request status snapshot -> {binding=binding,request=request,status=status,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "status" D.string) (D.field "snapshot" SystemMenu.decoder))
++                    in case D.decodeValue decoder raw of
++                        Ok receipt ->
++                            if model.windows.shell.binding/=Just receipt.binding then (model,[]) else
++                                let menu=SystemMenu.receive receipt.request receipt.status receipt.snapshot model.systemMenu
++                                in if menu==model.systemMenu then (model,[]) else (advance {model | systemMenu=menu},[])
++                        Err _ -> (model,[])
+                 Ok "notification-snapshot" ->
+                     let decoder=strict ["protocolVersion","kind","binding","requestId","snapshot"] (D.map4 (\_ binding request snapshot -> {binding=binding,request=request,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "snapshot" Notifications.decoder))
+                     in case D.decodeValue decoder raw of
+@@ -650,10 +683,30 @@ update message model =
+                     let (next,effects)=window (TaskbarShell.Native (Shell.Incoming raw)) model
+                         (synced,commands)=syncSwitcher next
+                     in (synced,effects++commands)
++        OpenSystemMenu stamp ->
++            if capture model/=Just stamp || model.choice/=Nothing || model.windows.shell.binding==Nothing || MenuBridge.preparedSnapshot model.windows.menus/=Nothing then (model,[]) else
++            let windows=model.windows
++                next=advance (retireSwitcher {model | systemMenuOpen=True,systemMenuOpening=True,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,open=False,overview=False,snap=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}})
++                (reading,commands)=readSystemMenu next
++            in (reading,commands++[Focus (key reading "system:close")])
++        CloseSystemMenu stamp ->
++            if capture model/=Just stamp || not model.systemMenuOpen then (model,[]) else
++                let next=advance {model | systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing}
++                in (next,[Focus (key next "system:opener")])
++        RefreshSystemMenu stamp ->
++            if capture model/=Just stamp || not model.systemMenuOpen || model.systemMenuExpected/=Nothing then (model,[]) else readSystemMenu {model | systemMenuConfirmation=Nothing}
++        SystemChange stamp intent ->
++            if capture model/=Just stamp || not model.systemMenuOpen || model.systemMenuExpected/=Nothing || model.systemMenu.pending/=Nothing || not (SystemMenu.supported intent model.systemMenu) then (model,[]) else
++            if SystemMenu.confirmed intent then (advance {model | systemMenuConfirmation=Just intent},[Focus (key model "system:cancel")]) else sendSystemChange intent model
++        ConfirmSystemChange stamp intent ->
++            if capture model/=Just stamp || not model.systemMenuOpen || model.systemMenuConfirmation/=Just intent || model.systemMenuExpected/=Nothing then (model,[]) else sendSystemChange intent {model | systemMenuConfirmation=Nothing}
++        CancelSystemChange stamp ->
++            if capture model/=Just stamp || not model.systemMenuOpen || model.systemMenuConfirmation==Nothing then (model,[]) else
++                (advance {model | systemMenuConfirmation=Nothing},[Focus (key model "system:close")])
+         OpenNotifications stamp ->
+             if capture model/=Just stamp || model.choice/=Nothing || model.windows.shell.binding==Nothing then (model,[]) else
+             let windows=model.windows
+-                next=advance (retireSwitcher {model | notificationsOpen=True,notificationsOpening=True,settingsOpen=False,settingsOpening=False,open=False,overview=False,snap=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}})
++                next=advance (retireSwitcher {model | systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=True,notificationsOpening=True,settingsOpen=False,settingsOpening=False,open=False,overview=False,snap=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}})
+                 (reading,commands)=readNotifications next
+             in (reading,commands++[Focus (key reading "notifications:close")])
+         CloseNotifications stamp ->
+@@ -674,12 +727,12 @@ update message model =
+         OpenSettings stamp ->
+             if capture model/=Just stamp || model.choice/=Nothing || model.windows.shell.binding==Nothing then (model,[]) else
+             let windows=model.windows
+-                next=advance (retireSwitcher {model | notificationsOpen=False,notificationsOpening=False,settingsOpen=True,settingsOpening=True,open=False,overview=False,snap=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}})
++                next=advance (retireSwitcher {model | systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=True,settingsOpening=True,open=False,overview=False,snap=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}})
+                 (reading,commands)=readSettings next
+             in (reading,commands++[Focus (key reading "settings:close")])
+         CloseSettings stamp ->
+             if capture model/=Just stamp || not model.settingsOpen then (model,[]) else
+-                let next=advance {model | notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False}
++                let next=advance {model | systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False}
+                 in (next,[Focus (key next "settings:opener")])
+         EditSettings stamp values ->
+             if capture model/=Just stamp || not model.settingsOpen then (model,[]) else
+@@ -702,7 +755,7 @@ update message model =
+                         Nothing -> model
+                         Just menu -> windowBase (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)) model |> Tuple.first
+                 windows=base.windows
+-                retired = advance (retireSwitcher {base | windows={windows | picker=Nothing}, returnFocus=Nothing, menuOrigin=Nothing, snap=Nothing, notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,open = True, overview = False, applications = Nothing, launch = Launch.catalog E.null model.launch, expected = Nothing, catalogFailure = Nothing})
++                retired = advance (retireSwitcher {base | windows={windows | picker=Nothing}, returnFocus=Nothing, menuOrigin=Nothing, snap=Nothing, systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,open = True, overview = False, applications = Nothing, launch = Launch.catalog E.null model.launch, expected = Nothing, catalogFailure = Nothing})
+             in case (model.windows.shell.binding, UInt64.next model.request) of
+                 (Just binding,Just request) ->
+                     if model.windows.shell.phase == Shell.Detached || retired.presentation == Nothing then (retired,[]) else
+@@ -721,7 +774,7 @@ update message model =
+                     |> Maybe.map (\menu -> windowBase (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)) model |> Tuple.first)
+                     |> Maybe.withDefault model
+                 windows=base.windows
+-                next=advance (retireSwitcher {base | snap=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,overview=True,overviewWorkspace=Nothing,open=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing}})
++                next=advance (retireSwitcher {base | snap=Nothing,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,overview=True,overviewWorkspace=Nothing,open=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing}})
+                 focus=TaskView.activeWorkspace next.windows.shell |> Maybe.map (\workspace -> key next ("overview:workspace:"++workspace)) |> Maybe.withDefault (key next "overview:all")
+             in (next,[Focus focus])
+         CloseOverview stamp ->
+@@ -800,6 +853,22 @@ pinGroups identity model =
+         Nothing -> []
+         Just entry -> TaskbarShell.groups model.windows |> List.filter (\group -> List.any (\family -> family.application==identity || (not (String.isEmpty entry.wmclass) && family.application==entry.wmclass)) group.families)
+ 
++readSystemMenu : Model -> (Model,List Effect)
++readSystemMenu model =
++    case (model.windows.shell.binding,UInt64.next model.request) of
++        (Just binding,Just request) -> (advance {model | request=request,systemMenuExpected=Just request},[Send (E.object [("protocolVersion",E.int 3),("kind",E.string "system-menu-request"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request))])])
++        _ -> (model,[])
++
++sendSystemChange : SystemMenu.Intent -> Model -> (Model,List Effect)
++sendSystemChange intent model =
++    case (model.windows.shell.binding,UInt64.next model.request) of
++        (Just binding,Just request) ->
++            let (menu,proposal)=SystemMenu.propose request intent model.systemMenu
++            in case proposal of
++                Nothing -> (model,[])
++                Just value -> (advance {model | systemMenu=menu,request=request,systemMenuConfirmation=Nothing},[Send (E.object [("protocolVersion",E.int 3),("kind",E.string "system-menu-effect"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request)),("intent",value)])])
++        _ -> (model,[])
++
+ settingsRequest : Binding.Binding -> Counter -> Effect
+ settingsRequest binding request = Send (E.object [("protocolVersion",E.int 3),("kind",E.string "shell-settings-request"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request))])
+ 
+diff --git c/implementation/warlock/src/Surface.elm w/implementation/warlock/src/Surface.elm
+index 58fa01b..e9b435e 100644
+--- c/implementation/warlock/src/Surface.elm
++++ w/implementation/warlock/src/Surface.elm
+@@ -5,6 +5,7 @@ import Switcher
+ import Pins
+ import Settings
+ import Notifications
++import SystemMenu
+ import MenuBridge
+ import Provider
+ import Catalog
+@@ -44,7 +45,8 @@ recoveryPopup model = if recoveryNeeded model then [recoveryControl "control:rec
+ 
+ mode : Desktop.Model -> String
+ mode model =
+-    if model.notificationsOpen then "notifications"
++    if model.systemMenuOpen then "system"
++    else if model.notificationsOpen then "notifications"
+     else if model.settingsOpen then "settings"
+     else if model.snap/=Nothing then "snap"
+     else if Desktop.switcherOpen model then "switcher"
+@@ -56,7 +58,35 @@ mode model =
+ 
+ controls : Desktop.Model -> List Control
+ controls model =
+-    if model.notificationsOpen then
++    if model.systemMenuOpen then
++        let scoped action=Desktop.capture model |> Maybe.map action
++            control identity label detail enabled message={id=identity,domId=Desktop.key model (if identity=="control:close" then "system:close" else identity),label=label,ariaLabel=label,detail=detail,enabled=enabled,message=if enabled then scoped message else Nothing}
++            state section value=control ("system:"++section++":state") value "" False Desktop.CloseSystemMenu
++            rows snapshot =
++                let change operation value label=
++                        let intent=SystemMenu.intent snapshot operation value
++                            ready=model.systemMenu.pending==Nothing && model.systemMenuExpected==Nothing && model.systemMenuConfirmation==Nothing && SystemMenu.supported intent model.systemMenu
++                        in control ("system:"++SystemMenu.code operation++":"++String.fromInt value) label "" ready (\stamp -> Desktop.SystemChange stamp intent)
++                    volume=case snapshot.volume of
++                        Nothing -> [state "volume" "Volume unavailable"]
++                        Just current -> state "volume" ("Volume "++String.fromInt current.percent++"%"++(if current.muted then "; muted" else "; unmuted")++" · "++current.label) :: (List.map (\percent -> change SystemMenu.Volume percent ("Set volume "++String.fromInt percent++"%")) [0,25,50,75,100]) ++ [change SystemMenu.Mute (if current.muted then 0 else 1) (if current.muted then "Unmute" else "Mute")]
++                    network=case snapshot.network of
++                        Nothing -> [state "network" "Network unavailable"]
++                        Just current -> [state "network" ("Network "++(if current.enabled then "enabled" else "disabled")++" · "++current.state++(if current.permission=="no" then "; changes unavailable" else "")),change SystemMenu.Network (if current.enabled then 0 else 1) (if current.enabled then "Disable networking" else "Enable networking")]
++                    capability value=if value=="yes" then "available" else if value=="challenge" then "authorization required" else "unavailable"
++                    power=case snapshot.power of
++                        Nothing -> [state "power" "Power controls unavailable"]
++                        Just current -> [state "power" ("Power · suspend "++capability current.suspend++", restart "++capability current.reboot++", shutdown "++capability current.poweroff),change SystemMenu.Suspend 0 "Suspend",change SystemMenu.Reboot 0 "Restart",change SystemMenu.PowerOff 0 "Shut down"]
++                    session=case snapshot.session of
++                        Nothing -> [state "session" "Session controls unavailable"]
++                        Just current -> [state "session" ("Session "++current.name++" · "++current.state++(if current.locked then "; locked" else "; unlocked")),change SystemMenu.Lock 0 "Lock session",change SystemMenu.Logout 0 "Log out"]
++                in volume++network++power++session
++            confirmation=case model.systemMenuConfirmation of
++                Nothing -> []
++                Just intent -> [state "confirmation" ("Confirm "++SystemMenu.name intent.operation++"? Unsaved work or active connections may be affected."),control "system:cancel" "Cancel system change" "" True Desktop.CancelSystemChange,control "system:confirm" ("Confirm "++SystemMenu.name intent.operation) "" (SystemMenu.supported intent model.systemMenu && model.systemMenu.pending==Nothing && model.systemMenuExpected==Nothing) (\stamp -> Desktop.ConfirmSystemChange stamp intent)]
++        in [control "control:close" "Close system menu" "" True Desktop.CloseSystemMenu,control "system:refresh" "Refresh system state" "Read current state; never repeat a change" (model.systemMenuExpected==Nothing) Desktop.RefreshSystemMenu]
++           ++ (model.systemMenu.snapshot |> Maybe.map rows |> Maybe.withDefault []) ++ confirmation
++    else if model.notificationsOpen then
+         let scoped message=Desktop.capture model |> Maybe.map message
+             control identity label detail enabled message={id=identity,domId=Desktop.key model (if identity=="control:close" then "notifications:close" else identity),label=label,ariaLabel=label,detail=detail,enabled=enabled,message=if enabled then scoped message else Nothing}
+             clean value=String.join " " (String.words value)
+@@ -224,11 +254,12 @@ barControls model =
+         ordinaryGroups=TaskbarShell.groups model.windows |> List.filter (\group -> List.length (owners group)/=1)
+         reconnect = {id="bar:reconnect",domId="reconnect",label="Reconnect",ariaLabel="Reconnect to the window system",detail="",enabled=not model.windows.shell.reconnecting,message=Just (Desktop.Window (TaskbarShell.Native Shell.Reconnect))}
+         retry = {id="bar:refresh-windows",domId=Desktop.key model "refresh-windows",label="Refresh windows",ariaLabel="Refresh windows",detail="",enabled=model.choice==Nothing,message=Just Desktop.RetryWindows}
+-    in (if model.windows.shell.phase==Shell.Detached then reconnect else application) :: overview :: switcher :: {id="bar:notifications",domId=Desktop.key model "notifications:opener",label="Notifications"++(model.notifications.snapshot |> Maybe.map (\snapshot -> let count=List.length (List.filter (\entry -> entry.state=="live") snapshot.entries) in if count==0 then "" else " · "++String.fromInt count) |> Maybe.withDefault ""),ariaLabel="Open notifications",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenNotifications} :: {id="bar:settings",domId=Desktop.key model "settings:opener",label="Settings",ariaLabel="Open settings",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenSettings} :: List.map pinControl pinIds ++ List.map groupControl ordinaryGroups ++ (if not (String.isEmpty model.choiceNotice) && model.windows.shell.phase/=Shell.Detached then [retry] else []) ++ (if recoveryNeeded model && model.windows.shell.phase/=Shell.Detached then [recoveryControl "bar:recovery-refresh" model] else [])
++    in (if model.windows.shell.phase==Shell.Detached then reconnect else application) :: overview :: switcher :: {id="bar:notifications",domId=Desktop.key model "notifications:opener",label="Notifications"++(model.notifications.snapshot |> Maybe.map (\snapshot -> let count=List.length (List.filter (\entry -> entry.state=="live") snapshot.entries) in if count==0 then "" else " · "++String.fromInt count) |> Maybe.withDefault ""),ariaLabel="Open notifications",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenNotifications} :: {id="bar:system",domId=Desktop.key model "system:opener",label="System",ariaLabel="Open system menu",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenSystemMenu} :: {id="bar:settings",domId=Desktop.key model "settings:opener",label="Settings",ariaLabel="Open settings",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenSettings} :: List.map pinControl pinIds ++ List.map groupControl ordinaryGroups ++ (if not (String.isEmpty model.choiceNotice) && model.windows.shell.phase/=Shell.Detached then [retry] else []) ++ (if recoveryNeeded model && model.windows.shell.phase/=Shell.Detached then [recoveryControl "bar:recovery-refresh" model] else [])
+ 
+ notice : Desktop.Model -> String
+ notice model =
+-    if model.notificationsOpen then (if model.notificationsExpected/=Nothing then "Loading notifications…" else model.notifications.notice)
++    if model.systemMenuOpen then (if model.systemMenuExpected/=Nothing then "Reading native system state…" else if model.systemMenuConfirmation/=Nothing then "Confirm or cancel the requested system change." else model.systemMenu.notice)
++    else if model.notificationsOpen then (if model.notificationsExpected/=Nothing then "Loading notifications…" else model.notifications.notice)
+     else if model.settingsOpen then (if model.settingsExpected/=Nothing then "Loading settings…" else model.settings.notice)
+     else if Desktop.switcherOpen model then
+         if Switcher.phase model.switcher==Switcher.Waiting then "Loading window activation history…"
+diff --git c/implementation/warlock/src/SurfaceController.elm w/implementation/warlock/src/SurfaceController.elm
+index 951d925..5088732 100644
+--- c/implementation/warlock/src/SurfaceController.elm
++++ w/implementation/warlock/src/SurfaceController.elm
+@@ -96,7 +96,7 @@ apply message ((Model model) as current) =
+         clearChoices application =
+             let windows=application.windows
+                 shell=windows.shell
+-            in {application|notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,choice=Nothing,overview=False,overviewWorkspace=Nothing,switcher=Switcher.cancel (Switcher.generation application.switcher) application.switcher,switcherExpected=Nothing,switcherHistory=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows|picker=Nothing,menus=MenuBridge.retireChoices windows.menus,shell={shell|deferNotifications=False}}}
++            in {application|systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,choice=Nothing,overview=False,overviewWorkspace=Nothing,switcher=Switcher.cancel (Switcher.generation application.switcher) application.switcher,switcherExpected=Nothing,switcherHistory=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows|picker=Nothing,menus=MenuBridge.retireChoices windows.menus,shell={shell|deferNotifications=False}}}
+         publishDesktop recovery next =
+             if next==model.desktop then (Model {model|recovery=recovery},[]) else
+             case UInt64.next model.publication of
+@@ -173,7 +173,9 @@ update event ((Model model) as current) =
+                     _ -> (Model {model | exhausted=True},[])
+         NativeDismiss lease ->
+             if lease/=model.lease || Surface.mode model.desktop=="closed" then (current,[]) else
+-                if model.desktop.notificationsOpen then
++                if model.desktop.systemMenuOpen then
++                    Desktop.capture model.desktop |> Maybe.map (\stamp -> apply (Desktop.CloseSystemMenu stamp) current) |> Maybe.withDefault (current,[])
++                else if model.desktop.notificationsOpen then
+                     Desktop.capture model.desktop |> Maybe.map (\stamp -> apply (Desktop.CloseNotifications stamp) current) |> Maybe.withDefault (current,[])
+                 else if model.desktop.settingsOpen then
+                     Desktop.capture model.desktop |> Maybe.map (\stamp -> apply (Desktop.CloseSettings stamp) current) |> Maybe.withDefault (current,[])
+diff --git c/implementation/warlock/src/SurfaceRenderer.elm w/implementation/warlock/src/SurfaceRenderer.elm
+index 8274109..7408a1a 100644
+--- c/implementation/warlock/src/SurfaceRenderer.elm
++++ w/implementation/warlock/src/SurfaceRenderer.elm
+@@ -29,12 +29,12 @@ decode raw =
+     let legacy = D.decodeValue (D.field "appearance" D.value) raw |> Result.toMaybe |> (==) Nothing
+         decoder = strict (["surfaceProtocol","publication","lease","mode","status","bar","popup"] ++ (if legacy then [] else ["appearance"]))
+             (D.map8 (\version shown scoped current notice bar popup appearance -> {version=version,shown=shown,scoped=scoped,current=current,notice=notice,bar=bar,popup=popup,appearance=appearance})
+-                (D.field "surfaceProtocol" D.int) (D.field "publication" UInt64.decoder) (D.field "lease" UInt64.decoder) (D.field "mode" (bounded 16)) (D.field "status" (bounded 1024)) (D.field "bar" (controls 292)) (D.field "popup" (controls 2150)) (if legacy then D.succeed Settings.defaults else D.field "appearance" Settings.valuesDecoder))
++                (D.field "surfaceProtocol" D.int) (D.field "publication" UInt64.decoder) (D.field "lease" UInt64.decoder) (D.field "mode" (bounded 16)) (D.field "status" (bounded 1024)) (D.field "bar" (controls 300)) (D.field "popup" (controls 2150)) (if legacy then D.succeed Settings.defaults else D.field "appearance" Settings.valuesDecoder))
+     in D.decodeValue decoder raw |> Result.mapError D.errorToString |> Result.andThen (\record ->
+         let all = record.bar ++ record.popup
+             identities = List.map .identity all
+             unique names = List.length names == Set.size (Set.fromList names)
+-        in if record.version/=2 || record.shown==UInt64.zero || not (List.member record.current ["closed","picker","applications","menu","overview","switcher","snap","settings","notifications"]) || (record.current/="closed" && record.scoped==UInt64.zero) || (record.current=="closed" && not (List.isEmpty record.popup)) || not (unique identities) || not (unique (List.map .domId all)) || List.any (\control -> String.isEmpty control.identity || String.isEmpty control.domId) all then Err "Invalid presentation scope/identities"
++        in if record.version/=2 || record.shown==UInt64.zero || not (List.member record.current ["closed","picker","applications","menu","overview","switcher","snap","settings","notifications","system"]) || (record.current/="closed" && record.scoped==UInt64.zero) || (record.current=="closed" && not (List.isEmpty record.popup)) || not (unique identities) || not (unique (List.map .domId all)) || List.any (\control -> String.isEmpty control.identity || String.isEmpty control.domId) all then Err "Invalid presentation scope/identities"
+         else Ok (Snapshot {publication=record.shown,lease=record.scoped,mode=record.current,status=record.notice,appearance=record.appearance,bar=record.bar,popup=record.popup}))
+ 
+ publication : Snapshot -> Counter
+@@ -78,10 +78,12 @@ viewWithPreview preview popup send ((Snapshot snapshot) as current) =
+             let kind = if String.startsWith "bar:group:" item.identity || String.startsWith "bar:pin:" item.identity then "control-group" else if item.identity=="bar:recovery-refresh" then "control-recovery" else "control-utility"
+             in if popup && snapshot.mode=="notifications" && (String.endsWith ":summary" item.identity || String.endsWith ":body" item.identity) then
+                 p [class "notification-text",id item.domId,attribute "data-notification-content" item.identity] [span [class "control-label"] [text item.label],span [class "control-detail"] [text item.detail]]
++            else if popup && snapshot.mode=="system" && String.endsWith ":state" item.identity then
++                p [class "notification-text",id item.domId,attribute "data-system-content" item.identity] [span [class "control-label"] [text item.label]]
+             else if popup && snapshot.mode=="applications" && item.identity=="control:search" then
+                 let event = D.map2 (\query composing -> (query,composing)) (D.at ["target","value"] D.string) (D.oneOf [D.field "isComposing" D.bool,D.succeed False]) |> D.andThen (\(query,composing) -> D.succeed (send (E.object [("surfaceProtocol",E.int 2),("kind",E.string (if composing then "surface-preedit" else "surface-query")),("surface",E.string "popup"),("publication",E.string (UInt64.string snapshot.publication)),("lease",E.string (UInt64.string snapshot.lease)),("id",E.string item.identity),("query",E.string query)])))
+                 in input [class "launcher-search",id item.domId,type_ "search",placeholder "Search applications",value item.label,attribute "aria-label" item.ariaLabel,attribute "data-surface-field" item.identity,attribute "autocomplete" "off",disabled (not item.enabled),on "input" event,on "compositionend" event] []
+-            else button [class kind,id item.domId,attribute "aria-label" item.ariaLabel,disabled (not item.enabled),attribute "data-surface-control" item.identity,attribute "role" (if popup && snapshot.mode=="menu" then "menuitem" else "button"),attribute "aria-current" (if popup && List.member snapshot.mode ["menu","switcher","snap","settings","notifications"] && item.detail=="Selected" then "true" else "false")] [preview item.identity,span [class "control-label"] [text item.label],span [class "control-detail"] [text item.detail]]
++            else button [class kind,id item.domId,attribute "aria-label" item.ariaLabel,disabled (not item.enabled),attribute "data-surface-control" item.identity,attribute "role" (if popup && snapshot.mode=="menu" then "menuitem" else "button"),attribute "aria-current" (if popup && List.member snapshot.mode ["menu","switcher","snap","settings","notifications","system"] && item.detail=="Selected" then "true" else "false")] [preview item.identity,span [class "control-label"] [text item.label],span [class "control-detail"] [text item.detail]]
+         familyPrefix rows = case rows of
+             first :: rest -> if String.startsWith "overview:family:" first.identity then first :: familyPrefix rest else []
+             [] -> []
+@@ -93,7 +95,7 @@ viewWithPreview preview popup send ((Snapshot snapshot) as current) =
+                         let members = familyPrefix rest
+                         in div [class "overview-workspace",attribute "role" "group",attribute "aria-labelledby" first.domId] (List.map control (first::members)) :: overviewRows (List.drop (List.length members) rest)
+                     else control first :: overviewRows rest
+-    in if popup then div [attribute "data-theme" (Settings.themeName snapshot.appearance.theme),attribute "data-text-scale" (String.fromInt snapshot.appearance.textScale),class "surface-popup",attribute "data-mode" snapshot.mode,attribute "data-publication" (UInt64.string snapshot.publication),attribute "data-lease" (UInt64.string snapshot.lease)] [h1 [] [text (if snapshot.mode=="applications" then "Applications" else if snapshot.mode=="overview" then "Task View" else if snapshot.mode=="switcher" then "Switch windows" else if snapshot.mode=="snap" then "Snap window" else if snapshot.mode=="notifications" then "Notifications" else if snapshot.mode=="settings" then "Settings" else if snapshot.mode=="menu" then "Window actions" else "Choose a window")],p [attribute "role" "status",attribute "aria-live" "polite"] [text snapshot.status],(if snapshot.mode=="overview" then div [class "surface-controls",attribute "role" "group"] (overviewRows snapshot.popup) else Keyed.node "div" [class "surface-controls",attribute "role" (if snapshot.mode=="menu" then "menu" else "group")] (List.map (\item -> ("control:" ++ item.identity,control item)) snapshot.popup))]
++    in if popup then div [attribute "data-theme" (Settings.themeName snapshot.appearance.theme),attribute "data-text-scale" (String.fromInt snapshot.appearance.textScale),class "surface-popup",attribute "data-mode" snapshot.mode,attribute "data-publication" (UInt64.string snapshot.publication),attribute "data-lease" (UInt64.string snapshot.lease)] [h1 [] [text (if snapshot.mode=="applications" then "Applications" else if snapshot.mode=="overview" then "Task View" else if snapshot.mode=="switcher" then "Switch windows" else if snapshot.mode=="snap" then "Snap window" else if snapshot.mode=="system" then "System" else if snapshot.mode=="notifications" then "Notifications" else if snapshot.mode=="settings" then "Settings" else if snapshot.mode=="menu" then "Window actions" else "Choose a window")],p [attribute "role" "status",attribute "aria-live" "polite"] [text snapshot.status],(if snapshot.mode=="overview" then div [class "surface-controls",attribute "role" "group"] (overviewRows snapshot.popup) else Keyed.node "div" [class "surface-controls",attribute "role" (if snapshot.mode=="menu" then "menu" else "group")] (List.map (\item -> ("control:" ++ item.identity,control item)) snapshot.popup))]
+        else Keyed.node "div" [attribute "data-theme" (Settings.themeName snapshot.appearance.theme),attribute "data-text-scale" (String.fromInt snapshot.appearance.textScale),class "surface-bar",attribute "data-publication" (UInt64.string snapshot.publication),attribute "data-lease" (UInt64.string snapshot.lease)]
+             [("actions",Keyed.node "div" [class "surface-actions"] (List.map (\item -> ("control:" ++ item.identity,control item)) snapshot.bar))
+             ,("status",span [class (if String.isEmpty snapshot.status || snapshot.status=="Ready" then "surface-status surface-status-idle" else "surface-status"),attribute "role" "status",attribute "aria-live" "polite",attribute "aria-atomic" "true",attribute "aria-label" snapshot.status,title snapshot.status] [text snapshot.status])]
+diff --git 1/implementation/warlock/src/SystemMenu.elm 2/implementation/warlock/src/SystemMenu.elm
+new file mode 100644
+index 0000000..7af78c4
+--- /dev/null
++++ 2/implementation/warlock/src/SystemMenu.elm
+@@ -0,0 +1,85 @@
++module SystemMenu exposing (Model, Snapshot, Intent, Operation(..), initial, decoder, observe, reconcile, name, code, confirmed, supported, propose, receive, intent, encode)
++
++import Json.Decode as D
++import Json.Encode as E
++import UInt64 exposing (Counter)
++
++type Operation = Volume | Mute | Network | Suspend | Reboot | PowerOff | Lock | Logout
++type alias Intent = { service : Counter, revision : Counter, operation : Operation, value : Int }
++type alias Snapshot =
++    { service : Counter, revision : Counter
++    , volume : Maybe { percent : Int, muted : Bool, label : String }
++    , network : Maybe { enabled : Bool, state : String, permission : String }
++    , power : Maybe { suspend : String, reboot : String, poweroff : String }
++    , session : Maybe { name : String, state : String, locked : Bool }
++    }
++type alias Model = { snapshot : Maybe Snapshot, pending : Maybe { request : Counter, intent : Intent }, spent : List Intent, notice : String }
++initial : Model
++initial = {snapshot=Nothing,pending=Nothing,spent=[],notice="Loading system state…"}
++strict fields child = D.keyValuePairs D.value |> D.andThen (\pairs -> if List.sort (List.map Tuple.first pairs)==List.sort fields then child else D.fail "System fields")
++positive = UInt64.decoder |> D.andThen (\value -> if value==UInt64.zero then D.fail "System identity" else D.succeed value)
++bounded limit = D.string |> D.andThen (\value -> if String.length value<=limit && not (String.any (\c -> Char.toCode c<32) value) then D.succeed value else D.fail "System text")
++option values = D.string |> D.andThen (\value -> if List.member value values then D.succeed value else D.fail "Native capability")
++decoder : D.Decoder Snapshot
++decoder = strict ["service","revision","volume","network","power","session"] (D.map6 Snapshot
++    (D.field "service" positive) (D.field "revision" positive)
++    (D.field "volume" (D.nullable (strict ["percent","muted","label"] (D.map3 (\percent muted label -> {percent=percent,muted=muted,label=label})
++        (D.field "percent" (D.int |> D.andThen (\value -> if value>=0 && value<=1600 then D.succeed value else D.fail "Native volume"))) (D.field "muted" D.bool) (D.field "label" (bounded 128))))))
++    (D.field "network" (D.nullable (strict ["enabled","state","permission"] (D.map3 (\enabled state permission -> {enabled=enabled,state=state,permission=permission}) (D.field "enabled" D.bool) (D.field "state" (bounded 32)) (D.field "permission" (option ["yes","no","auth"]))))))
++    (D.field "power" (D.nullable (strict ["suspend","reboot","poweroff"] (D.map3 (\suspend reboot poweroff -> {suspend=suspend,reboot=reboot,poweroff=poweroff}) (D.field "suspend" (option ["yes","no","na","challenge"])) (D.field "reboot" (option ["yes","no","na","challenge"])) (D.field "poweroff" (option ["yes","no","na","challenge"]))))))
++    (D.field "session" (D.nullable (strict ["name","state","locked"] (D.map3 (\ownerName state locked -> {name=ownerName,state=state,locked=locked}) (D.field "name" (bounded 128)) (D.field "state" (bounded 32)) (D.field "locked" D.bool))))))
++observe current model =
++    let admitted=case model.snapshot of
++            Nothing -> True
++            Just old -> current.service==old.service && (UInt64.compare current.revision old.revision==GT || current==old)
++    in if not admitted then model else {model | snapshot=Just current,notice=if model.pending/=Nothing then model.notice else "Current system state. Unavailable controls cannot be changed."}
++intent snapshot operation value = {service=snapshot.service,revision=snapshot.revision,operation=operation,value=value}
++code operation = case operation of
++    Volume -> "volume-set"
++    Mute -> "volume-mute"
++    Network -> "network-enable"
++    Suspend -> "suspend"
++    Reboot -> "reboot"
++    PowerOff -> "poweroff"
++    Lock -> "session-lock"
++    Logout -> "session-logout"
++name operation = case operation of
++    Volume -> "Volume"
++    Mute -> "Mute"
++    Network -> "Network"
++    Suspend -> "Suspend"
++    Reboot -> "Restart"
++    PowerOff -> "Shut down"
++    Lock -> "Lock session"
++    Logout -> "Log out"
++confirmed value = List.member value.operation [Reboot,PowerOff,Logout] || (value.operation==Network && value.value==0)
++supported value model = case model.snapshot of
++    Nothing -> False
++    Just current ->
++        value.service==current.service && value.revision==current.revision && not (List.member value model.spent) &&
++        (case value.operation of
++            Volume -> current.volume |> Maybe.map (\v -> value.value>=0 && value.value<=100 && value.value/=v.percent) |> Maybe.withDefault False
++            Mute -> current.volume |> Maybe.map (\v -> List.member value.value [0,1] && (value.value==1)/=v.muted) |> Maybe.withDefault False
++            Network -> current.network |> Maybe.map (\v -> List.member v.permission ["yes","auth"] && List.member value.value [0,1] && (value.value==1)/=v.enabled) |> Maybe.withDefault False
++            Suspend -> current.power |> Maybe.map (\v -> List.member v.suspend ["yes","challenge"] && value.value==0) |> Maybe.withDefault False
++            Reboot -> current.power |> Maybe.map (\v -> List.member v.reboot ["yes","challenge"] && value.value==0) |> Maybe.withDefault False
++            PowerOff -> current.power |> Maybe.map (\v -> List.member v.poweroff ["yes","challenge"] && value.value==0) |> Maybe.withDefault False
++            Lock -> current.session |> Maybe.map (\v -> not v.locked && value.value==0) |> Maybe.withDefault False
++            Logout -> current.session |> Maybe.map (\v -> v.state/="closing" && value.value==0) |> Maybe.withDefault False)
++encode value = E.object [("service",E.string (UInt64.string value.service)),("revision",E.string (UInt64.string value.revision)),("operation",E.string (code value.operation)),("value",E.int value.value)]
++propose request value model =
++    if model.pending/=Nothing || not (supported value model) then (model,Nothing) else
++        ({model | pending=Just {request=request,intent=value},spent=List.take 128 (value::model.spent),notice= name value.operation++": waiting for native result…"},Just (encode value))
++receive request status snapshot model = case model.pending of
++    Nothing -> model
++    Just pending ->
++        if request/=pending.request || not (List.member status ["Committed","Submitted","Refused","Unknown"]) || snapshot.service/=pending.intent.service then model else
++        let next=observe snapshot model
++            notice=name pending.intent.operation++(if status=="Committed" then ": change observed." else if status=="Submitted" then ": request accepted by the native service." else if status=="Refused" then ": refused or no longer available. Refresh before choosing again." else ": not confirmed. Refresh only reads state; the request will not be repeated.")
++        in if next.snapshot/=Just snapshot then model else {next | pending=if status=="Unknown" then model.pending else Nothing,notice=notice}
++reconcile snapshot model =
++    let next=observe snapshot model
++    in case next.pending of
++        Nothing -> next
++        Just pending ->
++            if next.snapshot==Just snapshot && UInt64.compare snapshot.revision pending.intent.revision==GT then {next | pending=Nothing,notice="System state refreshed. The previous request will not be repeated."} else next
+diff --git 1/implementation/warlock/adapter/system_menu.py 2/implementation/warlock/adapter/system_menu.py
+new file mode 100644
+index 0000000..9432ae4
+--- /dev/null
++++ 2/implementation/warlock/adapter/system_menu.py
+@@ -0,0 +1,192 @@
++"""Capability observations and one-shot changes in the existing broker.
++
++Native environment selects audio/bus endpoints. Frontend values select only a
++typed operation and bounded value on the current service/revision, never paths,
++commands, D-Bus destinations or session IDs. Native uncertainty never retries.
++"""
++import copy, json, os, pathlib, secrets, selectors, socket, stat, struct, subprocess, time, threading
++from endpoint import Refused, binding, canonical, exact, start_time, unique
++
++OPERATIONS={'volume-set','volume-mute','network-enable','suspend','reboot','poweroff','session-lock','session-logout'}
++NM='org.freedesktop.NetworkManager';NM_PATH='/org/freedesktop/NetworkManager'
++LOGIN='org.freedesktop.login1';LOGIN_PATH='/org/freedesktop/login1';MANAGER=LOGIN+'.Manager'
++
++class Uncertain(RuntimeError):pass
++
++def safe_text(value,limit=128):
++ if not isinstance(value,str):raise Refused('Native system text')
++ return ' '.join(value.split())[:limit]
++
++def command(args,deadline):
++ """Fixed executable/argv, bounded output and absolute native deadline."""
++ if args[0]!='/usr/bin/pactl':raise Refused('Native audio executable')
++ process=subprocess.Popen(args,stdout=subprocess.PIPE,stderr=subprocess.PIPE,env={**os.environ,'LC_ALL':'C'},start_new_session=True)
++ raw=bytearray();errors=bytearray()
++ try:
++  with selectors.DefaultSelector() as selector:
++   for stream,label in [(process.stdout,'out'),(process.stderr,'error')]:os.set_blocking(stream.fileno(),False);selector.register(stream,selectors.EVENT_READ,label)
++   while selector.get_map():
++    left=deadline-time.monotonic()
++    if left<=0:raise Uncertain('Native audio response not confirmed')
++    for key,_ in selector.select(left):
++     data=os.read(key.fileobj.fileno(),8192)
++     if not data:selector.unregister(key.fileobj);continue
++     target=raw if key.data=='out' else errors;target.extend(data)
++     if len(target)>(262144 if key.data=='out' else 4096):raise Uncertain('Native audio response capacity')
++  process.wait(timeout=max(.001,deadline-time.monotonic()))
++  if process.returncode:raise Refused('Audio server refused request')
++  return bytes(raw)
++ finally:
++  if process.poll() is None:process.terminate()
++  try:process.wait(timeout=.3)
++  except subprocess.TimeoutExpired:process.kill();process.wait()
++  process.stdout.close();process.stderr.close()
++
++class Menu:
++ def __init__(self,system_address=None):
++  self.service=str(secrets.randbelow(2**64-1)+1);self.revision=0;self.last=None;self.identity=None
++  self.connection=None;self.system_address=system_address;self.spent=set();self.last_binding=None;self.last_request=0
++  self.audio=None;self.network=None;self.login=None;self.session=None
++ def __enter__(self):return self
++ def __exit__(self,*_):
++  if self.connection:
++   try:self.connection.close_sync(None)
++   except Exception:pass
++ def remaining(self,deadline):
++  left=deadline-time.monotonic()
++  if left<=0:raise Uncertain('Native system response not confirmed')
++  return max(1,min(1000,int(left*1000)))
++ def bus(self,deadline):
++  if self.connection and not self.connection.is_closed():return self.connection
++  import gi
++  gi.require_version('Gio','2.0');from gi.repository import Gio
++  # A refusing QA system address remains refusing: no session/default fallback.
++  address=self.system_address or os.environ.get('DBUS_SYSTEM_BUS_ADDRESS') or 'unix:path=/run/dbus/system_bus_socket'
++  cancel=Gio.Cancellable();timer=threading.Timer(min(.5,max(.001,deadline-time.monotonic())),cancel.cancel);timer.start()
++  try:self.connection=Gio.DBusConnection.new_for_address_sync(address,Gio.DBusConnectionFlags.AUTHENTICATION_CLIENT|Gio.DBusConnectionFlags.MESSAGE_BUS_CONNECTION,None,cancel)
++  finally:timer.cancel();timer.join()
++  self.connection.set_exit_on_close(False);return self.connection
++ def call(self,destination,path,interface,method,signature,values,reply,deadline,effect=False):
++  from gi.repository import Gio,GLib
++  flags=Gio.DBusCallFlags.NO_AUTO_START | (Gio.DBusCallFlags.ALLOW_INTERACTIVE_AUTHORIZATION if effect else Gio.DBusCallFlags.NONE)
++  try:
++   return self.bus(deadline).call_sync(destination,path,interface,method,GLib.Variant(signature,values),GLib.VariantType.new(reply),flags,self.remaining(deadline),None).unpack()
++  except GLib.Error as error:
++   name=Gio.DBusError.get_remote_error(error) or ''
++   if any(name.endswith('.'+suffix) for suffix in ['AccessDenied','AuthFailed','ServiceUnknown','NameHasNoOwner','UnknownObject','UnknownMethod','NotSupported','PermissionDenied']):raise Refused('Native system operation unavailable or refused') from error
++   raise Uncertain('Native system response not confirmed') from error
++ def owner(self,name,deadline):return self.call('org.freedesktop.DBus','/org/freedesktop/DBus','org.freedesktop.DBus','GetNameOwner','(s)',(name,),'(s)',deadline)[0]
++ def properties(self,owner,path,interface,deadline):return self.call(owner,path,'org.freedesktop.DBus.Properties','GetAll','(s)',(interface,),'(a{sv})',deadline)[0]
++ def audio_peer(self):
++  selected=os.environ.get('PULSE_SERVER') or 'unix:'+str(pathlib.Path(os.environ.get('XDG_RUNTIME_DIR','/run/user/'+str(os.getuid())))/'pulse/native')
++  if not selected.startswith('unix:') or ';' in selected:raise Refused('Local audio endpoint unavailable')
++  path=pathlib.Path(selected[5:])
++  if not path.is_absolute() or path.resolve()!=path:raise Refused('Native audio endpoint ancestry')
++  before=path.lstat()
++  if not stat.S_ISSOCK(before.st_mode) or before.st_uid!=os.getuid():raise Refused('Native audio endpoint ownership')
++  with socket.socket(socket.AF_UNIX,socket.SOCK_STREAM) as stream:
++   stream.settimeout(.2);stream.connect(str(path));pid,uid,_=struct.unpack('3i',stream.getsockopt(socket.SOL_SOCKET,socket.SO_PEERCRED,12))
++  after=path.lstat()
++  if uid!=os.getuid() or (before.st_dev,before.st_ino)!=(after.st_dev,after.st_ino):raise Refused('Native audio endpoint changed')
++  return {'server':selected,'pid':pid,'start':start_time(pid),'device':after.st_dev,'inode':after.st_ino}
++ def audio_read(self,deadline):
++  peer=self.audio_peer();args=['/usr/bin/pactl','--server='+peer['server'],'--format=json']
++  info=json.loads(command(args+['info'],deadline),object_pairs_hook=unique);rows=json.loads(command(args+['list','sinks'],deadline),object_pairs_hook=unique)
++  if not isinstance(rows,list) or len(rows)>128:raise Refused('Native audio sink capacity')
++  row=next((r for r in rows if r.get('name')==info.get('default_sink_name')),None)
++  if not row or type(row.get('mute')) is not bool or type(row.get('index')) is not int or not 0<=row['index']<2**32:raise Refused('Native audio default sink unavailable')
++  volumes=row.get('volume');values=[item.get('value') for item in volumes.values()] if isinstance(volumes,dict) else []
++  if not values or len(values)>32 or any(type(v) is not int or not 0<=v<=65536*16 for v in values):raise Refused('Native audio volume unavailable')
++  if self.audio_peer()!=peer:raise Refused('Native audio peer changed')
++  self.audio={**peer,'index':row['index'],'name':row['name'],'raw':values}
++  return {'percent':round(max(values)*100/65536),'muted':row['mute'],'label':safe_text(row.get('description') or row['name'])}
++ def observe(self,deadline=None):
++  deadline=deadline or time.monotonic()+2
++  result={'volume':None,'network':None,'power':None,'session':None};identities={}
++  self.audio=None;self.network=None;self.login=None;self.session=None
++  try:result['volume']=self.audio_read(deadline);identities['audio']=self.audio
++  except (OSError,ValueError,Refused,Uncertain):pass
++  try:
++   owner=self.owner(NM,deadline);props=self.properties(owner,NM_PATH,NM,deadline)
++   permissions=self.call(owner,NM_PATH,NM,'GetPermissions','()',(),'(a{ss})',deadline)[0]
++   enabled=props.get('NetworkingEnabled');state=props.get('State')
++   if type(enabled) is not bool or type(state) is not int:raise Refused('Native network state')
++   access=permissions.get('org.freedesktop.NetworkManager.enable-disable-network','no')
++   if access not in ('yes','no','auth'):access='no'
++   self.network=owner;identities['network']=owner
++   result['network']={'enabled':enabled,'state':{0:'Unknown',10:'Sleeping',20:'Disconnected',30:'Disconnecting',40:'Connecting',50:'Local connection',60:'Site connection',70:'Connected'}.get(state,'Unknown'),'permission':access}
++  except Exception:pass
++  try:
++   owner=self.owner(LOGIN,deadline);caps={}
++   for key,method in [('suspend','CanSuspend'),('reboot','CanReboot'),('poweroff','CanPowerOff')]:
++    value=self.call(owner,LOGIN_PATH,MANAGER,method,'()',(),'(s)',deadline)[0]
++    if value not in ('yes','no','na','challenge'):raise Refused('Native power capability')
++    caps[key]=value
++   self.login=owner;identities['login']=owner;result['power']=caps
++   path=self.call(owner,LOGIN_PATH,MANAGER,'GetSessionByPID','(u)',(os.getpid(),),'(o)',deadline)[0]
++   props=self.properties(owner,path,LOGIN+'.Session',deadline)
++   identifier=props.get('Id');name=props.get('Name');state=props.get('State');locked=props.get('LockedHint');user=props.get('User')
++   if not isinstance(identifier,str) or not identifier or not isinstance(user,tuple) or user[0]!=os.getuid() or type(locked) is not bool:raise Refused('Native session identity')
++   self.session={'owner':owner,'path':path,'id':identifier};identities['session']=self.session
++   result['session']={'name':safe_text(name),'state':safe_text(state,32),'locked':locked}
++  except Exception:pass
++  if result!=self.last or identities!=self.identity:
++   if self.revision>=2**64-1:raise Refused('Native system revision exhausted')
++   self.revision+=1;self.last=copy.deepcopy(result);self.identity=copy.deepcopy(identities)
++   self.spent={key for key in self.spent if key[0]>=self.revision-32}
++  return {'service':self.service,'revision':str(self.revision),**result}
++ def verify(self,request,client,write):
++  exact(request,['protocolVersion','kind','binding','requestId',*(['intent'] if write else [])]);canonical(request['requestId'])
++  if request['kind']!=('system-menu-effect' if write else 'system-menu-request'):raise Refused('Native system request kind')
++  if type(request['protocolVersion']) is not int or request['protocolVersion']!=3 or binding(request['binding'])!=client.bound:raise Refused('Native system binding')
++  client.verify_process();client.verify_paths()
++ def read(self,request,client):
++  self.verify(request,client,False);snapshot=self.observe();self.verify(request,client,False)
++  return {'protocolVersion':3,'kind':'system-menu-snapshot','binding':client.bound,'requestId':request['requestId'],'snapshot':snapshot}
++ def available(self,operation,value,current):
++  if operation=='volume-set':return current['volume'] is not None and current['volume']['percent']!=value
++  if operation=='volume-mute':return current['volume'] is not None and current['volume']['muted']!=(value==1)
++  if operation=='network-enable':return current['network'] is not None and current['network']['permission'] in ('yes','auth') and current['network']['enabled']!=(value==1)
++  if operation in ('suspend','reboot','poweroff'):return current['power'] is not None and current['power'][operation] in ('yes','challenge')
++  if operation=='session-lock':return current['session'] is not None and not current['session']['locked']
++  if operation=='session-logout':return current['session'] is not None and current['session']['state']!='closing'
++  return False
++ def effect(self,request,client):
++  self.verify(request,client,True);intent=request['intent'];exact(intent,['service','revision','operation','value'])
++  canonical(intent['service']);canonical(intent['revision']);operation=intent['operation'];value=intent['value']
++  if operation not in OPERATIONS or type(value) is not int or not 0<=value<=100 or (operation in ('volume-mute','network-enable') and value not in (0,1)) or (operation not in ('volume-set','volume-mute','network-enable') and value!=0):raise Refused('Native system operation/value')
++  deadline=time.monotonic()+3;current=self.observe(deadline);scope=client.bound
++  if scope!=self.last_binding:self.last_binding=copy.deepcopy(scope);self.last_request=0
++  number=int(request['requestId']);key=(int(intent['revision']),operation,value);status='Refused'
++  if number>self.last_request:
++   self.last_request=number
++   if intent['service']==self.service and intent['revision']==current['revision'] and key not in self.spent and self.available(operation,value,current):
++    self.spent.add(key)
++    try:
++     if operation.startswith('volume-'):
++      if self.audio_peer()!={k:v for k,v in self.audio.items() if k not in ('index','name','raw')}:raise Refused('Audio peer changed before submission')
++      audio=copy.deepcopy(self.audio);args=['/usr/bin/pactl','--server='+audio['server']]
++      command(args+(['set-sink-volume',str(audio['index']),str(value)+'%'] if operation=='volume-set' else ['set-sink-mute',str(audio['index']),str(value)]),deadline)
++      readback=self.audio_read(deadline)
++      if self.audio['pid']!=audio['pid'] or self.audio['start']!=audio['start'] or self.audio['index']!=audio['index'] or self.audio['name']!=audio['name']:raise Uncertain('Audio target changed after submission')
++      if (readback['percent']==value if operation=='volume-set' else readback['muted']==(value==1)):status='Committed'
++      else:raise Uncertain('Audio change not observed')
++     elif operation=='network-enable':
++      owner=self.network;self.call(owner,NM_PATH,NM,'Enable','(b)',(value==1,),'()',deadline,True)
++      props=self.properties(owner,NM_PATH,NM,deadline)
++      if self.owner(NM,deadline)==owner and props.get('NetworkingEnabled')==(value==1):status='Committed'
++      else:raise Uncertain('Network change not observed')
++     elif operation=='session-lock':
++      session=copy.deepcopy(self.session);self.call(session['owner'],session['path'],LOGIN+'.Session','Lock','()',(),'()',deadline,True)
++      props=self.properties(session['owner'],session['path'],LOGIN+'.Session',deadline)
++      status='Committed' if props.get('LockedHint') is True else 'Submitted'
++     elif operation=='session-logout':self.call(self.session['owner'],LOGIN_PATH,MANAGER,'TerminateSession','(s)',(self.session['id'],),'()',deadline,True);status='Submitted'
++     else:
++      method={'suspend':'Suspend','reboot':'Reboot','poweroff':'PowerOff'}[operation]
++      self.call(self.login,LOGIN_PATH,MANAGER,method,'(b)',(True,),'()',deadline,True);status='Submitted'
++    except Refused:status='Refused'
++    except Exception:status='Unknown'
++  try:snapshot=self.observe(deadline)
++  except Exception:snapshot=current;status='Unknown' if status in ('Committed','Submitted') else status
++  self.verify(request,client,True)
++  return {'protocolVersion':3,'kind':'system-menu-outcome','binding':client.bound,'requestId':request['requestId'],'status':status,'snapshot':snapshot}
+diff --git 1/implementation/warlock/qa/SystemMenuReplay.elm 2/implementation/warlock/qa/SystemMenuReplay.elm
+new file mode 100644
+index 0000000..e8a7fd9
+--- /dev/null
++++ 2/implementation/warlock/qa/SystemMenuReplay.elm
+@@ -0,0 +1,74 @@
++port module SystemMenuReplay exposing (main)
++import Desktop
++import SystemMenu
++import Surface
++import SurfaceRenderer
++import Json.Decode as D
++import Json.Encode as E
++import Platform
++import UInt64
++port outgoing : E.Value -> Cmd msg
++counter value = D.decodeValue UInt64.decoder (E.string value) |> Result.withDefault UInt64.zero
++bound = E.object [("lifetime",E.string "1"),("session",E.string "1"),("frontend",E.string "1")]
++native raw model = Desktop.update (Desktop.Incoming raw) model |> Tuple.first
++attached = E.object [("protocolVersion",E.int 3),("kind",E.string "attached"),("binding",bound)]
++snapshot revision percent = E.object [("service",E.string "9"),("revision",E.string revision),("volume",E.object [("percent",E.int percent),("muted",E.bool False),("label",E.string "Warlock private audio")]),("network",E.null),("power",E.object [("suspend",E.string "yes"),("reboot",E.string "yes"),("poweroff",E.string "no")]),("session",E.object [("name",E.string "Warlock private session"),("state",E.string "active"),("locked",E.bool False)])]
++loaded request value = E.object [("protocolVersion",E.int 3),("kind",E.string "system-menu-snapshot"),("binding",bound),("requestId",E.string (UInt64.string request)),("snapshot",value)]
++outcome request status value = E.object [("protocolVersion",E.int 3),("kind",E.string "system-menu-outcome"),("binding",bound),("requestId",E.string (UInt64.string request)),("status",E.string status),("snapshot",value)]
++dispatch build model = Desktop.capture model |> Maybe.map (\stamp -> Desktop.update (build stamp) model) |> Maybe.withDefault (model,[])
++effect e = case e of
++    Desktop.Send wire -> D.decodeValue (D.field "kind" D.string) wire==Ok "system-menu-effect"
++    _ -> False
++result =
++    let ready=native attached Desktop.initial
++        (opened,_)=dispatch Desktop.OpenSystemMenu ready
++        request=opened.systemMenuExpected |> Maybe.withDefault UInt64.zero
++        (read,readEffects)=Desktop.update (Desktop.Incoming (loaded request (snapshot "1" 100))) opened
++        current=D.decodeValue SystemMenu.decoder (snapshot "1" 100) |> Result.withDefault {service=counter "9",revision=counter "1",volume=Nothing,network=Nothing,power=Nothing,session=Nothing}
++        volume=SystemMenu.intent current SystemMenu.Volume 25
++        (pending,effects)=dispatch (\stamp -> Desktop.SystemChange stamp volume) read
++        effectRequest=pending.systemMenu.pending |> Maybe.map .request |> Maybe.withDefault UInt64.zero
++        (_,duplicate)=dispatch (\stamp -> Desktop.SystemChange stamp volume) pending
++        committed=native (outcome effectRequest "Committed" (snapshot "2" 25)) pending
++        (_,afterCommit)=dispatch (\stamp -> Desktop.SystemChange stamp volume) committed
++        unknown=native (outcome effectRequest "Unknown" (snapshot "1" 100)) pending
++        (_,unknownRepeat)=dispatch (\stamp -> Desktop.SystemChange stamp volume) unknown
++        (refreshing,refreshEffects)=dispatch Desktop.RefreshSystemMenu unknown
++        reconciled=native (loaded (refreshing.systemMenuExpected |> Maybe.withDefault UInt64.zero) (snapshot "2" 25)) refreshing
++        unavailable=SystemMenu.intent current SystemMenu.Network 0
++        (_,unavailableEffects)=dispatch (\stamp -> Desktop.SystemChange stamp unavailable) read
++        restart=SystemMenu.intent current SystemMenu.Reboot 0
++        (confirm,confirmEffects)=dispatch (\stamp -> Desktop.SystemChange stamp restart) read
++        (cancelled,cancelEffects)=dispatch Desktop.CancelSystemChange confirm
++        (submitted,submitEffects)=dispatch (\stamp -> Desktop.ConfirmSystemChange stamp restart) confirm
++        (_,directConfirm)=dispatch (\stamp -> Desktop.ConfirmSystemChange stamp restart) read
++        wrong=native (outcome (counter "999") "Committed" (snapshot "2" 25)) pending
++        stale=Desktop.capture read |> Maybe.map (\stamp -> Desktop.update (Desktop.SystemChange stamp volume) committed |> Tuple.second) |> Maybe.withDefault []
++        (closed,closeEffects)=dispatch Desktop.CloseSystemMenu read
++        (otherPopup,_)=dispatch Desktop.OpenNotifications read
++        frame=Surface.packet (counter "1") (counter "1") read
++        checked name value=(name,E.bool value)
++        checks=[checked "systemMenuOpenerIntegrated" (D.decodeValue (D.field "bar" (D.list (D.field "id" D.string))) frame |> Result.map (List.member "bar:system") |> Result.withDefault False)
++            ,checked "menuModeAcceptedByProductionRenderer" (SurfaceRenderer.decode frame |> Result.map (SurfaceRenderer.mode >> (==) "system") |> Result.withDefault False)
++            ,checked "openingReadFocusMatchesCloseControl" (List.any (\e -> case e of
++                Desktop.Focus target -> Surface.controls read |> List.any (\c -> c.id=="control:close" && c.domId==target)
++                _ -> False) readEffects)
++            ,checked "originalUnavailableNetworkShown" (List.any (\c -> c.label=="Network unavailable" && not c.enabled && c.message==Nothing) (Surface.controls read))
++            ,checked "remainingStateObserved" (List.any (\c -> String.startsWith "Volume 100%" c.label) (Surface.controls read) && List.any (\c -> String.startsWith "Session Warlock private session" c.label) (Surface.controls read))
++            ,checked "oneExplicitVolumeChange" (List.length (List.filter effect effects)==1)
++            ,checked "pendingCannotRepeat" (List.isEmpty duplicate)
++            ,checked "committedCannotRepeatOldRevision" (List.isEmpty afterCommit && committed.systemMenu.pending==Nothing)
++            ,checked "unknownCannotReplay" (List.isEmpty unknownRepeat && unknown.systemMenu.pending/=Nothing && String.contains "not confirmed" unknown.systemMenu.notice)
++            ,checked "readReconcilesChangedStateWithoutEffect" (reconciled.systemMenu.pending==Nothing && not (List.any effect refreshEffects))
++            ,checked "unavailableNeverSubmits" (List.isEmpty unavailableEffects)
++            ,checked "restartRequiresUIConfirmation" (confirm.systemMenuConfirmation==Just restart && not (List.any effect confirmEffects))
++            ,checked "cancelHasNoNativeEffect" (cancelled.systemMenuConfirmation==Nothing && not (List.any effect cancelEffects))
++            ,checked "confirmedRestartSubmitsOnce" (List.length (List.filter effect submitEffects)==1 && submitted.systemMenu.pending/=Nothing)
++            ,checked "directConfirmationCannotBypassPrompt" (List.isEmpty directConfirm)
++            ,checked "wrongReceiptCannotSettle" (wrong==pending)
++            ,checked "staleViewCannotSubmit" (List.isEmpty stale)
++            ,checked "closingFocusesOpenerWithoutNativeEffect" (not closed.systemMenuOpen && not (List.any effect closeEffects))
++            ,checked "anotherPopupRetiresSystemWithoutLosingNativeState" (not otherPopup.systemMenuOpen && otherPopup.notificationsOpen && otherPopup.systemMenu==read.systemMenu)
++            ,checked "allControlsHaveNames" (List.all (\c -> not (String.isEmpty c.ariaLabel)) (Surface.controls read))]
++    in E.object [("checks",E.object checks),("frame",frame),("confirmFrame",Surface.packet (counter "2") (counter "1") confirm),("pendingFrame",Surface.packet (counter "3") (counter "1") pending)]
++main = Platform.worker {init=\() -> ((),outgoing result),update=\_ model -> (model,Cmd.none),subscriptions=\_ -> Sub.none}
+diff --git 1/implementation/warlock/qa/check-system-menu.py 2/implementation/warlock/qa/check-system-menu.py
+new file mode 100644
+index 0000000..f04ff59
+--- /dev/null
++++ 2/implementation/warlock/qa/check-system-menu.py
+@@ -0,0 +1,84 @@
++"""Bounded actual private PipeWire and login1 protocols, current adapter admission."""
++import copy,importlib.util,json,os,pathlib,subprocess,sys,tempfile,time
++ROOT=pathlib.Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'adapter'))
++from system_menu import Menu,Refused
++spec=importlib.util.spec_from_file_location('system_fixture',ROOT/'qa/system-menu-provider.py');fixture=importlib.util.module_from_spec(spec);spec.loader.exec_module(fixture)
++checks=[]
++def check(name,value):
++ assert value,name
++ checks.append(name)
++class Client:
++ bound={'lifetime':'1','session':'1','frontend':'1'}
++ def verify_process(self):pass
++ def verify_paths(self):pass
++serial=10
++def request(intent=None):
++ global serial
++ serial+=1
++ return {'protocolVersion':3,'kind':'system-menu-effect' if intent else 'system-menu-request','binding':Client.bound,'requestId':str(serial),**({'intent':intent} if intent else {})}
++def effect(menu,snapshot,operation,value=0):return menu.effect(request({'service':snapshot['service'],'revision':snapshot['revision'],'operation':operation,'value':value}),Client())
++def wait(fn):
++ end=time.monotonic()+3
++ while time.monotonic()<end:
++  result=fn()
++  if result:return result
++  time.sleep(.01)
++ raise AssertionError('Private native provider deadline')
++children=[];streams=[];environment=os.environ.copy()
++with tempfile.TemporaryDirectory(prefix='warlock-system-') as temporary:
++ root=pathlib.Path(temporary);os.chmod(root,0o700)
++ env=fixture.audio_config(root,os.environ)
++ def launch(args):
++  stream=open(root/('child-'+str(len(children))+'.log'),'wb');streams.append(stream)
++  child=subprocess.Popen(args,env=env,stdout=stream,stderr=stream);children.append(child);return child
++ try:
++  bus=launch(['dbus-daemon','--session','--nofork','--address=unix:path='+str(root/'bus')]);wait(lambda:(root/'bus').exists());env['DBUS_SESSION_BUS_ADDRESS']='unix:path='+str(root/'bus');env['DBUS_SYSTEM_BUS_ADDRESS']=env['DBUS_SESSION_BUS_ADDRESS']
++  core=launch(['/usr/bin/pipewire','-c',str(root/'core.conf')]);wait(lambda:(root/'warlock-audio').exists())
++  pulse=launch(['/usr/bin/pipewire-pulse','-c',str(root/'pulse.conf')]);wait(lambda:(root/'pulse/native').exists())
++  provider=launch(['/usr/bin/python3','-B',str(ROOT/'qa/system-menu-provider.py'),str(root/'state.json')]);wait(lambda:(root/'state.json').exists())
++  subprocess.run(["/usr/bin/pactl","--server="+env["PULSE_SERVER"],"set-default-sink","warlock.null"],env=env,check=True,capture_output=True,timeout=2)
++  wait(lambda:json.loads(subprocess.run(["/usr/bin/pactl","--server="+env["PULSE_SERVER"],"--format=json","info"],env=env,check=True,capture_output=True,text=True,timeout=1).stdout)["default_sink_name"]=="warlock.null")
++  os.environ.update(env)
++  with Menu() as menu:
++   observed=menu.read(request(),Client())['snapshot'];print('OBSERVED',json.dumps(observed),file=sys.stderr)
++   check('Real private audio exposes current volume',observed['volume'] is not None)
++   check('Absent native network service is unavailable',observed['network'] is None)
++   check('Native power capabilities are observed, including refused shutdown',observed['power']=={'suspend':'yes','reboot':'yes','poweroff':'no'})
++   check('Own native session state is observed',observed['session'] is not None and not observed['session']['locked'])
++   result=effect(menu,observed,'volume-set',25);check('Volume commit follows actual native readback',result['status']=='Committed' and result['snapshot']['volume']['percent']==25)
++   duplicate=effect(menu,observed,'volume-set',25);check('Old revision never replays volume change',duplicate['status']=='Refused')
++   current=result['snapshot'];muted=effect(menu,current,'volume-mute',1);check('Mute commit follows actual native readback',muted['status']=='Committed' and muted['snapshot']['volume']['muted'])
++   check('Unavailable network request has no effect',effect(menu,muted['snapshot'],'network-enable',0)['status']=='Refused' and json.loads((root/'state.json').read_text())['calls']==[])
++   locked=effect(menu,muted['snapshot'],'session-lock');check('Lock commit follows own-session LockedHint',locked['status']=='Committed' and locked['snapshot']['session']['locked'])
++   submitted=effect(menu,locked['snapshot'],'suspend');check('Power return is Submitted rather than invented observed transition',submitted['status']=='Submitted')
++   before=json.loads((root/'state.json').read_text())['calls'];check('Duplicate power intent dispatches once',effect(menu,locked['snapshot'],'suspend')['status']=='Refused' and json.loads((root/'state.json').read_text())['calls']==before)
++   check('Refused native capability never submits',effect(menu,submitted['snapshot'],'poweroff')['status']=='Refused' and json.loads((root/'state.json').read_text())['calls']==before)
++   import gi
++   gi.require_version('Gio','2.0');from gi.repository import Gio,GLib
++   def mode(value):menu.call('org.warlock.SystemFixture','/org/warlock/SystemFixture','org.warlock.SystemFixture','Mode','(s)',(value,),'()',time.monotonic()+1)
++   mode('refused');refused=effect(menu,menu.observe(),'reboot');check('Explicit native denial is Refused',refused['status']=='Refused')
++   mode('unknown');unknown=effect(menu,menu.observe(),'session-logout');check('Lost native response is Unknown',unknown['status']=='Unknown')
++   before=json.loads((root/'state.json').read_text())['calls'];check('Unknown does not replay with another request ID',effect(menu,unknown['snapshot'],'session-logout')['status']=='Refused' and json.loads((root/'state.json').read_text())['calls']==before)
++   bad=request({'service':menu.service,'revision':str(menu.revision),'operation':'volume-set','value':25});bad['intent']['path']='/tmp/foreign'
++   try:menu.effect(bad,Client());raise AssertionError('Frontend path accepted')
++   except Refused:checks.append('Frontend cannot choose commands, paths or native session identities')
++   mode('network');network=menu.observe();check('Available native network shows current state and permission',network['network']=={'enabled':True,'state':'Connected','permission':'yes'})
++   disabled=effect(menu,network,'network-enable',0);check('Network commit follows actual owner-bound readback',disabled['status']=='Committed' and disabled['snapshot']['network']['enabled'] is False)
++   before=json.loads((root/'state.json').read_text())['calls'];check('Old network revision never replays Enable',effect(menu,network,'network-enable',0)['status']=='Refused' and json.loads((root/'state.json').read_text())['calls']==before)
++   enabled=effect(menu,disabled['snapshot'],'network-enable',1);check('Fresh explicit network enable observes current state',enabled['status']=='Committed' and enabled['snapshot']['network']['enabled'] is True)
++   provider.terminate();provider.wait(timeout=2);current=menu.observe();check('Disappearing native owner withdraws session/power',current['session'] is None and current['power'] is None)
++  # Preserve a refusing system-bus override; no fallback to the private session.
++  os.environ['DBUS_SYSTEM_BUS_ADDRESS']='unix:path='+str(root/'absent')
++  with Menu() as absent:check('Refusing system-bus override never falls back',absent.observe()['power'] is None)
++ except Exception:
++  for i,stream in enumerate(streams):
++   stream.flush();print('CHILD',i,(root/('child-'+str(i)+'.log')).read_text()[-1800:],file=sys.stderr)
++  raise
++ finally:
++  os.environ.clear();os.environ.update(environment)
++  for child in reversed(children):
++   if child.poll() is None:child.terminate()
++   try:child.wait(timeout=3)
++   except subprocess.TimeoutExpired:child.kill();child.wait()
++  for stream in streams:stream.close()
++print(json.dumps({'passed':True,'checks':checks,'scenario':'ux-032','evidenceScope':'Actual private native audio and D-Bus protocol providers; no GUI, hardware or release acceptance'}))
+diff --git 1/implementation/warlock/qa/system-menu.qnt 2/implementation/warlock/qa/system-menu.qnt
+new file mode 100644
+index 0000000..682d8a7
+--- /dev/null
++++ 2/implementation/warlock/qa/system-menu.qnt
+@@ -0,0 +1,23 @@
++module SystemMenu {
++ var revision: int
++ var queued: int
++ var available: bool
++ var pending: bool
++ var consumed: Set[int]
++ var effects: int
++ action init = all {revision'=1,queued'=0,available'=true,pending'=false,consumed'=Set(),effects'=0}
++ val valid = queued==revision and available and not(consumed.contains(queued))
++ action capture = all {not(pending),available,queued'=revision,pending'=true,revision'=revision,available'=available,consumed'=consumed,effects'=effects}
++ action change = all {revision'=revision+1,queued'=queued,available'=available,pending'=pending,consumed'=consumed,effects'=effects}
++ action withdraw = all {available'=false,revision'=revision+1,queued'=queued,pending'=pending,consumed'=consumed,effects'=effects}
++ action submit = all {pending,valid,consumed'=consumed.union(Set(queued)),effects'=effects+1,pending'=true,queued'=queued,revision'=revision,available'=available}
++ action refuse = all {pending,not(valid),pending'=false,revision'=revision,queued'=queued,available'=available,consumed'=consumed,effects'=effects}
++ action receipt = all {pending,consumed.contains(queued),pending'=false,revision'=revision,queued'=queued,available'=available,consumed'=consumed,effects'=effects}
++ action verify(condition: bool): bool = all {assert(condition),revision'=revision,queued'=queued,available'=available,pending'=pending,consumed'=consumed,effects'=effects}
++ action step = any {capture,change,withdraw,submit,refuse,receipt}
++ val safety = effects==consumed.size() and effects>=0 and revision>0
++ run currentChangeOnceTest = init.then(capture).then(submit).then(receipt).then(capture).then(refuse).then(verify(effects==1))
++ run staleStateRefusedTest = init.then(capture).then(change).then(refuse).then(verify(effects==0))
++ run unavailableNeverSubmitsTest = init.then(capture).then(withdraw).then(refuse).then(verify(effects==0 and not(available)))
++ run lostReceiptCannotReplayTest = init.then(capture).then(submit).then(refuse).then(capture).then(refuse).then(verify(effects==1))
++}
+diff --git 1/implementation/warlock/qa/system-menu-browser.mjs 2/implementation/warlock/qa/system-menu-browser.mjs
+new file mode 100644
+index 0000000..4faf590
+--- /dev/null
++++ 2/implementation/warlock/qa/system-menu-browser.mjs
+@@ -0,0 +1,55 @@
++import {spawn} from 'node:child_process';
++import fs from 'node:fs';
++import path from 'node:path';
++const [base,out,binary]=process.argv.slice(2), report={passed:false,checks:[],captures:[],errors:[],externalRequests:[],nativeAcceptance:false,fullReleaseAccepted:false};
++const sleep=ms=>new Promise(r=>setTimeout(r,ms));
++const browser=spawn(binary,['--remote-debugging-address=127.0.0.1','--remote-debugging-port=0','--user-data-dir='+path.join(out,'profile'),'--disable-gpu','--disable-breakpad','--disable-crash-reporter','--no-first-run','about:blank'],{stdio:['ignore','pipe','pipe']});
++let stderr='',stdout='',ws,session,sequence=0,pending=new Map();
++browser.stderr.on('data',v=>stderr+=v);browser.stdout.on('data',v=>stdout+=v);
++function call(method,params={},sessionId=session){return new Promise((resolve,reject)=>{const id=++sequence;const timer=setTimeout(()=>{pending.delete(id);reject(new Error('CDP timeout '+method));},15000);pending.set(id,{resolve,reject,timer});ws.send(JSON.stringify({id,method,params,...(sessionId?{sessionId}:{})}));});}
++function check(name,condition,detail){if(!condition)throw Error(name+' '+JSON.stringify(detail));report.checks.push({name,detail});}
++async function evaluate(expression){const r=await call('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error(JSON.stringify(r.exceptionDetails));return r.result.value;}
++async function until(expression){for(let i=0;i<100;i++){if(await evaluate(expression))return;await sleep(30);}throw Error('Condition timeout '+expression);}
++async function click(selector){const rect=await evaluate(`(()=>{const b=document.querySelector(${JSON.stringify(selector)});b.scrollIntoView({block:'center'});const r=b.getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2};})()`);await call('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',clickCount:1,...rect});await call('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',clickCount:1,...rect});await sleep(60);}
++async function route(name){await evaluate('location.hash='+JSON.stringify(name));await until('!!document.querySelector("main h1") && location.hash === '+JSON.stringify('#'+name));await sleep(100);}
++async function viewport(width,height=980){await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false});await sleep(80);}
++async function capture(name){await evaluate('document.fonts.ready');const r=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});fs.writeFileSync(path.join(out,name+'.png'),Buffer.from(r.data,'base64'));report.captures.push(name+'.png');}
++async function observation(){return evaluate('window.fixtureObservation');}
++try{
++ let match;for(let i=0;i<100;i++){match=stderr.match(/DevTools listening on (ws:\/\/[^\s]+)/);if(match)break;if(browser.exitCode!==null)throw Error('Browser exited '+browser.exitCode+' '+stderr);await sleep(30);}if(!match)throw Error('No DevTools endpoint '+stderr);
++ ws=new WebSocket(match[1]);await new Promise((resolve,reject)=>{ws.onopen=resolve;ws.onerror=reject;});
++ ws.onmessage=event=>{const m=JSON.parse(event.data);if(m.id){const p=pending.get(m.id);if(p){pending.delete(m.id);clearTimeout(p.timer);m.error?p.reject(Error(JSON.stringify(m.error))):p.resolve(m.result);}}else if(m.method==='Runtime.exceptionThrown')report.errors.push(m.params.exceptionDetails);};
++ const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;
++
++
++ await call('Page.enable');await call('Runtime.enable');await viewport(640,620);
++ await call('Page.addScriptToEvaluateOnNewDocument',{source:'window.nativePackets=[];window.webkit={messageHandlers:{native:{postMessage:text=>nativePackets.push(JSON.parse(text))}}};'});
++ await call('Page.navigate',{url:base+'/assets/popup.html'});await until('!!window.receivePresentation');
++ const packet=JSON.parse(fs.readFileSync(path.join(out,'system-menu.json'),'utf8'));
++ await evaluate('receivePresentation('+JSON.stringify(packet.frame)+')');
++ await until(`document.querySelector('.surface-popup[data-mode="system"]')?.dataset.publication==="1"`);
++ check('Original unavailable network and observed remaining state are readable',await evaluate(`document.querySelector('h1').textContent==='System' && document.body.textContent.includes('Network unavailable') && document.body.textContent.includes('Volume 100%') && document.body.textContent.includes('Session Warlock private session')`));
++ check('Native state rows are semantic text without actionable disabled buttons',await evaluate(`document.querySelectorAll('[data-system-content]').length===4 && !document.querySelector('[data-surface-control="system:network:state"]')`));
++ check('Unsupported shutdown cannot issue a surface action',await evaluate(`document.querySelector('[data-surface-control="system:poweroff:0"]').disabled`));
++ async function key(key){await call('Input.dispatchKeyEvent',{type:'keyDown',key,code:key});await call('Input.dispatchKeyEvent',{type:'keyUp',key,code:key});await sleep(60);}
++ await viewport(320,220);await evaluate(`document.querySelector('[data-surface-control="control:close"]').focus()`);await key('End');
++ check('Keyboard End reveals last supported operation at small size',await evaluate(`document.activeElement.dataset.surfaceControl==='system:session-logout:0' && document.activeElement.getBoundingClientRect().bottom<=innerHeight+1`));
++ await key('Home');check('Keyboard Home reveals Close',await evaluate(`document.activeElement.dataset.surfaceControl==='control:close' && document.activeElement.getBoundingClientRect().top>=0`));
++ await evaluate(`document.querySelector('[data-surface-control="system:volume-set:25"]').focus()`);await key('Enter');
++ check('Keyboard submits one current surface action',await evaluate(`nativePackets.filter(p=>p.kind==='surface-action' && p.id==='system:volume-set:25' && p.publication==='1').length===1`));
++ await evaluate('receivePresentation('+JSON.stringify(packet.pendingFrame)+')');await until(`document.querySelector('.surface-popup')?.dataset.publication==="3"`);
++ check('Pending disables changes and retains read-only refresh',await evaluate(`document.querySelector('[data-surface-control="system:volume-set:25"]').disabled && !document.querySelector('[data-surface-control="system:refresh"]').disabled && document.body.textContent.includes('waiting for native result')`));
++ const confirmed=structuredClone(packet.confirmFrame);confirmed.publication='4';await evaluate('receivePresentation('+JSON.stringify(confirmed)+')');await until(`document.querySelector('.surface-popup')?.dataset.publication==="4"`);
++ check('Confirmation exposes named cancel and confirm, other changes disabled',await evaluate(`!!document.querySelector('[data-surface-control="system:cancel"]') && document.querySelector('[data-surface-control="system:confirm"]').getAttribute('aria-label')==='Confirm Restart' && document.querySelector('[data-surface-control="system:volume-set:25"]').disabled`));
++ await evaluate(`document.querySelector('[data-surface-control="system:cancel"]').focus()`);await key('Escape');
++ check('Escape closes through matching physical key release',await evaluate(`nativePackets.filter(p=>p.kind==='surface-action' && p.id==='control:close' && p.publication==='4').length===1`));
++ await viewport(640,900);await capture('system-menu-confirmation');
++ check('No browser exceptions',report.errors.length===0,report.errors);report.passed=true;
++}catch(error){report.error=String(error.stack||error);}
++finally{
++ if(ws?.readyState===1){try{await call('Browser.close',{},null);}catch(_){}ws.close();}
++ for(let i=0;i<100&&browser.exitCode===null;i++)await sleep(20);if(browser.exitCode===null)browser.kill('SIGTERM');
++ await new Promise(resolve=>{if(browser.exitCode!==null)resolve();else browser.once('exit',resolve);});report.browserExitCode=browser.exitCode;
++ fs.writeFileSync(path.join(out,'browser.stderr'),stderr);fs.writeFileSync(path.join(out,'browser.stdout'),stdout);fs.writeFileSync(path.join(out,'system-menu-browser.json'),JSON.stringify(report,null,2)+'\n');
++ console.log(JSON.stringify({passed:report.passed,checks:report.checks.length,captures:report.captures,error:report.error}));process.exitCode=report.passed?0:1;
++}
+diff --git 1/implementation/warlock/qa/system-menu-provider.py 2/implementation/warlock/qa/system-menu-provider.py
+new file mode 100644
+index 0000000..f31ea9a
+--- /dev/null
++++ 2/implementation/warlock/qa/system-menu-provider.py
+@@ -0,0 +1,85 @@
++"""Private native-protocol fixtures; no hardware, desktop buses or power effects."""
++import json,os,pathlib,signal,sys
++
++def audio_config(root,environment):
++ root=pathlib.Path(root);root.mkdir(parents=True,exist_ok=True,mode=0o700);(root/'pulse').mkdir(exist_ok=True,mode=0o700)
++ env={**environment,'PIPEWIRE_RUNTIME_DIR':str(root),'PIPEWIRE_REMOTE':'warlock-audio','PIPEWIRE_CORE':'warlock-audio','PULSE_SERVER':'unix:'+str(root/'pulse/native'),'PULSE_RUNTIME_PATH':str(root/'pulse'),'DISABLE_RTKIT':'1'}
++ (root/'core.conf').write_text('''context.properties = { core.daemon = true core.name = warlock-audio }
++context.spa-libs = { support.* = support/libspa-support audio.convert.* = audioconvert/libspa-audioconvert }
++context.modules = [
++ { name = libpipewire-module-protocol-native }
++ { name = libpipewire-module-client-node }
++ { name = libpipewire-module-adapter }
++ { name = libpipewire-module-metadata }
++ { name = libpipewire-module-access args = { access.force = unrestricted } }
++]
++context.objects = [
++ { factory = metadata args = { metadata.name = default metadata.values = [ { key = default.audio.sink value = { name = warlock.null } } ] } }
++ { factory = adapter args = { factory.name = support.null-audio-sink node.name = warlock.null node.description = "Warlock private audio" media.class = Audio/Sink audio.position = [ FL FR ] } }
++]
++''')
++ (root/'pulse.conf').write_text('''context.properties = { core.name = warlock-pulse }
++context.spa-libs = { support.* = support/libspa-support audio.convert.* = audioconvert/libspa-audioconvert }
++context.modules = [
++ { name = libpipewire-module-protocol-native }
++ { name = libpipewire-module-client-node }
++ { name = libpipewire-module-adapter }
++ { name = libpipewire-module-metadata }
++ { name = libpipewire-module-protocol-pulse }
++]
++pulse.properties = { server.address = [ "unix:'''+str(root/'pulse/native')+'''" ] }
++''')
++ return env
++
++MANAGER_XML='''<node><interface name="org.freedesktop.login1.Manager">
++<method name="CanSuspend"><arg type="s" direction="out"/></method><method name="CanReboot"><arg type="s" direction="out"/></method><method name="CanPowerOff"><arg type="s" direction="out"/></method>
++<method name="GetSessionByPID"><arg type="u" direction="in"/><arg type="o" direction="out"/></method>
++<method name="Suspend"><arg type="b" direction="in"/></method><method name="Reboot"><arg type="b" direction="in"/></method><method name="PowerOff"><arg type="b" direction="in"/></method><method name="TerminateSession"><arg type="s" direction="in"/></method>
++</interface></node>'''
++SESSION_XML='''<node><interface name="org.freedesktop.login1.Session"><method name="Lock"/>
++<property name="Id" type="s" access="read"/><property name="Name" type="s" access="read"/><property name="State" type="s" access="read"/><property name="LockedHint" type="b" access="read"/><property name="User" type="(uo)" access="read"/>
++</interface></node>'''
++NETWORK_XML='''<node><interface name="org.freedesktop.NetworkManager"><method name="Enable"><arg type="b" direction="in"/></method><method name="GetPermissions"><arg type="a{ss}" direction="out"/></method><property name="NetworkingEnabled" type="b" access="read"/><property name="State" type="u" access="read"/></interface></node>'''
++CONTROL_XML='''<node><interface name="org.warlock.SystemFixture"><method name="Read"><arg type="s" direction="out"/></method><method name="Mode"><arg type="s" direction="in"/></method><method name="Quit"/></interface></node>'''
++
++def serve(state_path):
++ import gi
++ gi.require_version('Gio','2.0');from gi.repository import Gio,GLib
++ address=os.environ['DBUS_SESSION_BUS_ADDRESS'];connection=Gio.DBusConnection.new_for_address_sync(address,Gio.DBusConnectionFlags.AUTHENTICATION_CLIENT|Gio.DBusConnectionFlags.MESSAGE_BUS_CONNECTION,None,None);connection.set_exit_on_close(False)
++ loop=GLib.MainLoop();session='/org/freedesktop/login1/session/warlock';data={'locked':False,'state':'active','calls':[],'mode':'normal','owner':connection.get_unique_name(),'networkEnabled':True}
++ def save():pathlib.Path(state_path).write_text(json.dumps(data))
++ def method(conn,sender,path,interface,name,args,invocation):
++  values=args.unpack()
++  if name in ['CanSuspend','CanReboot','CanPowerOff']:invocation.return_value(GLib.Variant('(s)',('yes' if name!='CanPowerOff' else 'no',)));return
++  if name=='GetSessionByPID':invocation.return_value(GLib.Variant('(o)',(session,)));return
++  if name=='Read':invocation.return_value(GLib.Variant('(s)',(json.dumps(data),)));return
++  if name=='GetPermissions':invocation.return_value(GLib.Variant('(a{ss})',({'org.freedesktop.NetworkManager.enable-disable-network':'yes'},)));return
++  if name=='Mode':
++   data['mode']=values[0]
++   if values[0]=='network':
++    handles.append(connection.register_object('/org/freedesktop/NetworkManager',Gio.DBusNodeInfo.new_for_xml(NETWORK_XML).interfaces[0],method,prop,None))
++    result=connection.call_sync('org.freedesktop.DBus','/org/freedesktop/DBus','org.freedesktop.DBus','RequestName',GLib.Variant('(su)',('org.freedesktop.NetworkManager',4)),GLib.VariantType.new('(u)'),0,1000,None).unpack()[0];assert result==1
++   save();invocation.return_value(None);return
++  if name=='Quit':invocation.return_value(None);GLib.idle_add(lambda:loop.quit() or False);return
++  data['calls'].append({'operation':name,'values':list(values),'sender':sender});save()
++  if data['mode']=='refused':invocation.return_dbus_error('org.freedesktop.DBus.Error.AccessDenied','Private fixture refusal');return
++  if data['mode']=='unknown':invocation.return_dbus_error('org.freedesktop.DBus.Error.NoReply','Private fixture lost response');return
++  if name=='Enable':data['networkEnabled']=values[0]
++  if name=='Lock':data['locked']=True
++  if name=='TerminateSession':data['state']='closing'
++  save();invocation.return_value(None)
++ def prop(conn,sender,path,interface,name):
++  if interface=='org.freedesktop.NetworkManager':return {'NetworkingEnabled':GLib.Variant('b',data['networkEnabled']),'State':GLib.Variant('u',70 if data['networkEnabled'] else 10)}[name]
++  return {'Id':GLib.Variant('s','warlock'),'Name':GLib.Variant('s','Warlock private session'),'State':GLib.Variant('s',data['state']),'LockedHint':GLib.Variant('b',data['locked']),'User':GLib.Variant('(uo)',(os.getuid(),'/org/freedesktop/login1/user/_'+str(os.getuid())))}[name]
++ handles=[]
++ for path,xml in [('/org/freedesktop/login1',MANAGER_XML),(session,SESSION_XML),('/org/warlock/SystemFixture',CONTROL_XML)]:
++  handles.append(connection.register_object(path,Gio.DBusNodeInfo.new_for_xml(xml).interfaces[0],method,prop if path==session else None,None))
++ for name in ['org.freedesktop.login1','org.warlock.SystemFixture']:
++  reply=connection.call_sync('org.freedesktop.DBus','/org/freedesktop/DBus','org.freedesktop.DBus','RequestName',GLib.Variant('(su)',(name,4)),GLib.VariantType.new('(u)'),0,1000,None).unpack()[0];assert reply==1
++ save();print('ready',flush=True)
++ for sig in [signal.SIGTERM,signal.SIGINT]:GLib.unix_signal_add(GLib.PRIORITY_DEFAULT,sig,lambda:loop.quit() or False)
++ try:loop.run()
++ finally:
++  for handle in handles:connection.unregister_object(handle)
++  connection.close_sync(None)
++if __name__=='__main__':serve(sys.argv[1])

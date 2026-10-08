@@ -9,6 +9,7 @@ from reconciliation import Reconciliation
 from taskbar_projection import coherent_scene
 from catalog_transport import CatalogTransport
 from notification_service import Service as NotificationService
+from system_menu import Menu as SystemMenu
 from recovery_journal import RecoveryFailure,guarded
 from recovery_store import RecoveryStore as Journal
 from recovery_fault import after_submit
@@ -78,13 +79,16 @@ def event_socket(client):
  except BaseException:connection.close();raise
 
 
-def handle_request(client,catalog,request,recovery,reconciliation,notifications=None):
+def handle_request(client,catalog,request,recovery,reconciliation,notifications=None,system_menu=None):
  if not isinstance(request,dict):raise Refused('Frontend request object')
  kind=request.get('kind')
  if kind=='reconciliation-ready':
   reconciliation.proof_ready(request);return
  if kind in {'catalog-request','application-launch','taskbar-pins-write','shell-settings-request','shell-settings-write'}:
   send(catalog.handle(request));return
+ if kind in {'system-menu-request','system-menu-effect'}:
+  if system_menu is None:raise Refused('System menu unavailable')
+  send(system_menu.read(request,client) if kind=='system-menu-request' else system_menu.effect(request,client));return
  if kind in {'notification-request','notification-effect'}:
   if notifications is None:raise Refused('Notification service unavailable')
   send(notifications.read(request,client) if kind=='notification-request' else notifications.effect(request,client));return
@@ -176,6 +180,7 @@ def main():
  # authoritative snapshot is requested, never after numbered publication.
  with event_socket(client) as events,selectors.DefaultSelector() as selector,ExitStack() as lifetime:
   notification_service=lifetime.enter_context(NotificationService())
+  system_menu=lifetime.enter_context(SystemMenu())
   hello=client.hello()
   recovery=lifetime.enter_context(guarded(lambda:Journal(config['runtime'],config['instance'],client.bound['lifetime'])))
   reconciliation=publish_startup(client,hello,recovery)
@@ -193,7 +198,7 @@ def main():
      if not data:incoming.finish();return 0
      for line in incoming.feed(data):
       request=json.loads(line,object_pairs_hook=unique)
-      handle_request(client,catalog,request,recovery,reconciliation,notification_service)
+      handle_request(client,catalog,request,recovery,reconciliation,notification_service,system_menu)
       if request.get('kind')=='projection-request':have_snapshot=True;dirty=False
     elif key.data=='notifications':
      notification_service.drain();send(notification_service.observation(client))

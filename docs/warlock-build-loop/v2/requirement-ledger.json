@@ -8087,14 +8087,50 @@
       "owner": "Desktop experience lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "ux-032",
           "oracle": "network control indicates unavailable and remaining controls show observed state",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/system-menu/manifest.json",
+              "sha256": "18169ce2dad2b4a1fbc02f1205b6b857ff8884288ca1acc4aec931d80697e0ac",
+              "scope": "Integrated immutable Elm system menu and bounded native capability/effect adapters. Actual private native audio and D-Bus observations, unavailable-network physical compositor recording, volume/mute readback and confirmation cancellation. Independent original-scenario acceptance remains open.",
+              "sourceBaseRevision": "9e2b2efb8aaa56099282ebff069ab321615b78c1",
+              "sourceHashes": {
+                "implementation/warlock/src/SystemMenu.elm": "cf44c66fe51a5d86f14e33a8235e04f178553261229fd51e0d81cbc35c944054",
+                "implementation/warlock/src/Desktop.elm": "9168a0c1370b5903be5bc6d68eec6d5204fca6c74180c1a666ac08198ea27a16",
+                "implementation/warlock/src/Surface.elm": "2b7c09920693e704d6747f1f7c2ed158f6067d7b7ef4ef23fe33a25c3cdb392a",
+                "implementation/warlock/src/SurfaceRenderer.elm": "ea3290c4a3f2e4d457a544106939d6eb7cc9acd23f462210bb9ec3b3badf20c8",
+                "implementation/warlock/src/SurfaceController.elm": "323f1849911358cf3a6a6c20918d88017b6e8ca14933552985e6198e965b53e2",
+                "implementation/warlock/adapter/system_menu.py": "8e6cba8ae22f821407ab386a0552057de94be3eb03793a87c80817b8c57094e5",
+                "implementation/warlock/adapter/daemon.py": "96f861e39cd5ec8400ae0cf9118ef79f4a572ec6edea838e79357647cfcd19ba",
+                "implementation/warlock/native/host.c": "7af9f8c0c33ffbc746ac42a9e9ce37c42c3839f2cb9e35a55a36562f7dc9fbaa",
+                "implementation/warlock/native/surface.h": "e4f65e9d4c6bf077c26625f0c48883d44f887c59baacc4a2f30f96d0ac983f71",
+                "implementation/warlock/assets/popup-adapter.js": "0864cd7794c8f073d8a866ea27f92085ca874c092f7b2cff5cd16aab0d9b1129",
+                "implementation/warlock/qa/SystemMenuReplay.elm": "ef691a966db5c845053c2dd1b81e3e0d7f758459c0d1aa59a2268d778b61da5f",
+                "implementation/warlock/qa/check-system-menu.py": "aab5cc951f4b17b38ff8dd183ada9b22a4c4c75a4f7aa715d6d7d1a845730410",
+                "implementation/warlock/qa/system-menu.qnt": "49bdff9d446228798c8eb100648d084f9ab5b906a4de5bffeab6637bee83f516",
+                "implementation/warlock/qa/system-menu-browser.mjs": "46ba4feb84e3b3dbcb4c728325be09195a53964cd75d247097c3b776cc6a5cf7",
+                "implementation/warlock/qa/system-menu-provider.py": "e91275f8756f2269b2ec73c1c2d5b89fd632f611469502aca770d3e5b76b9e68",
+                "implementation/warlock/qa/check-search.py": "cb82bca49a1c0143ec8448ef3459db8afa29aa0717c31849e724421284a1a8cb",
+                "implementation/warlock/qa/native-window-feedback.py": "cdfdb31e956448dac864f385eda39e5028c56866515057164abe03e9646500bd",
+                "implementation/warlock/README.md": "68690a619791dd4f3c4b17687502015382f0be4ae249a135af80e918d14ecfb3",
+                "implementation/warlock/assets/elm.js": "2a3fb0d51c6d266479f2b6f330f96c2dfa71897def9a201e883f5368c59a9219",
+                "implementation/warlock/assets/bar.js": "dff9b880c51c1a5622de9ea1133bddd87876fbb4f4610b7e2998114030aef4df",
+                "implementation/warlock/assets/popup.js": "9e7c999c47aa7dac3dc1858ca1c73522989317fc5ac2f38d83bfb185f94bacd9",
+                "implementation/warlock/qa/current-search-build.json": "ab0b1cc5109b2fb4f67670472748d38f18eed3296c6ae9a0a25fde8ba605a314"
+              },
+              "reviewerDisposition": {
+                "name": "root-system-menu",
+                "independent": false,
+                "disposition": "Owner-observed scenario evidence; independent acceptance pending."
+              }
+            }
+          ],
+          "missingObservation": "Independent original ux-032 review against this exact source/core/plugin/toolchain tuple. Actual hardware/network/power transitions and interactive authorization are not established by private native-protocol fixtures. Applicable release AT/IME/resource and full desktop journeys remain separate."
         }
       ]
     },

@@ -50,9 +50,9 @@ static gboolean surface_frame(JsonNode *node,guint64 *pub,guint64 *lease,gboolea
     if (!surface_fields(o,names,appearance?8:7) || json_node_get_value_type(json_object_get_member(o,"surfaceProtocol"))!=G_TYPE_INT64 || json_object_get_int_member(o,"surfaceProtocol")!=2 || !surface_uint(json_object_get_member(o,"publication"),pub) || !*pub || !surface_uint(json_object_get_member(o,"lease"),lease) || !surface_text(json_object_get_member(o,"mode"),32,FALSE) || !surface_text(json_object_get_member(o,"status"),1024,TRUE)) return FALSE;
     const char *mode=json_object_get_string_member(o,"mode");
     *open=!g_str_equal(mode,"closed");
-    if (*open && (!*lease || (!g_str_equal(mode,"picker") && !g_str_equal(mode,"applications") && !g_str_equal(mode,"menu") && !g_str_equal(mode,"overview") && !g_str_equal(mode,"switcher") && !g_str_equal(mode,"snap") && !g_str_equal(mode,"settings") && !g_str_equal(mode,"notifications")))) return FALSE;
+    if (*open && (!*lease || (!g_str_equal(mode,"picker") && !g_str_equal(mode,"applications") && !g_str_equal(mode,"menu") && !g_str_equal(mode,"overview") && !g_str_equal(mode,"switcher") && !g_str_equal(mode,"snap") && !g_str_equal(mode,"settings") && !g_str_equal(mode,"notifications") && !g_str_equal(mode,"system")))) return FALSE;
     g_autoptr(GHashTable) ids=g_hash_table_new(g_str_hash,g_str_equal),doms=g_hash_table_new(g_str_hash,g_str_equal);
-    if (!surface_controls(json_object_get_member(o,"bar"),292,ids,doms) || !surface_controls(json_object_get_member(o,"popup"),2150,ids,doms)) return FALSE;
+    if (!surface_controls(json_object_get_member(o,"bar"),300,ids,doms) || !surface_controls(json_object_get_member(o,"popup"),2150,ids,doms)) return FALSE;
     return *open || json_array_get_length(json_object_get_array_member(o,"popup"))==0;
 }
 static gboolean surface_admit(SurfaceGate *gate,JsonNode *frame,guint64 *pub,guint64 *lease,gboolean *open) {

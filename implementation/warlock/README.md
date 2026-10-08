@@ -105,3 +105,18 @@ notification service owns the name, the center explains its unavailability. It
 implements plain body/actions, never executes notification text, and does not
 advertise activation-token, sound, image, markup or persistence capabilities.
 See the [native notification protocol](https://specifications.freedesktop.org/notification/latest/protocol.html).
+
+The System button opens native volume, networking, power and session controls.
+Unavailable services are named explicitly; supported controls show current
+observed state. Volume presets and mute use the current local audio sink. Network
+changes use NetworkManager, and power/session requests use login1 capabilities
+and the broker's own session. Restart, shutdown, logout and disabling networking
+require confirmation; Cancel has no native effect. Refreshed state never repeats
+a prior request. A confirmed change, an accepted request, a refusal and an unknown
+result have distinct messages. Submitted means the service accepted the request;
+it does not claim that a suspension or shutdown completed.
+
+ELM-UX-032 has a private native-protocol and compositor recording of unavailable
+networking with observed remaining state, physical volume/mute changes and
+confirmation cancellation. Actual hardware, authorization dialogs, accessibility
+and independent original-scenario acceptance remain separate.

@@ -4,6 +4,7 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
 lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
 """
 import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
+SYSTEM=sys.argv[1:]==['--system-menu']
 NOTIFICATIONS=sys.argv[1:]==['--notifications']
 SETTINGS=sys.argv[1:]==['--settings']
 PLACEMENT=sys.argv[1:]==['--snap-placement']
@@ -19,7 +20,7 @@ PRE_READY_RETIRE=sys.argv[1:]==['--switcher-pre-ready-retirement']
 MEMBERSHIP=sys.argv[1:]==['--switcher-membership'] or PRE_READY_RETIRE
 CHORD=sys.argv[1:]==['--switcher-chord'] or MEMBERSHIP
 SWITCHER=sys.argv[1:]==['--switcher']
-NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'] or DENSEPICKER;PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS or PINMENUS or REFLOW or SETTINGS or NOTIFICATIONS;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD
+NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'] or DENSEPICKER;PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS or PINMENUS or REFLOW or SETTINGS or NOTIFICATIONS or SYSTEM;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143';RUNTIME=REPO/'implementation/warlock-client-provider-native-v204'
 sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
 spec=importlib.util.spec_from_file_location('feedback_private_host',RUNTIME/'candidate_host.py');host=importlib.util.module_from_spec(spec);spec.loader.exec_module(host)
@@ -57,7 +58,7 @@ else:
 for row in pair.values():assert sha(row['path'])==row['sha256']
 assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
 subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
-OUT=ROOT/'qa/runs'/(('native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+OUT=ROOT/'qa/runs'/(('native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
 OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
 focus_host=None
 if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
@@ -106,6 +107,7 @@ if focus_host:report['focusHostAdaptation']=focus_host
 if retirement_fixture:report['retirementFixture']=retirement_fixture
 if primary_fixture:report['primaryFixture']=primary_fixture
 if SEARCH:report.update(requirements=['ELM-UI-005','ELM-UX-029'],scenarios=['search-no-match','search-race','search-refused','launcher-refused'],scope='Actual current query and private catalog, native typing/Enter refusal and no duplicate launch; AT/IME and popup physical presentation acceptance remain pending',popupPresentationAccepted=False)
+if SYSTEM:report.update(requirements=['ELM-UX-032'],scenarios=['ux-032'],scope='Actual isolated native menu with current private PipeWire volume and login1 session/power capabilities, unavailable network, physical keyboard changes, readback, confirmation and pixels; real hardware, AT and independent acceptance remain open.',nativeSystemMenuObserved=False)
 if NOTIFICATIONS:report.update(requirements=['ELM-UX-031'],scenarios=['ux-031','notification-valid','notification-reused'],scope='Actual private native producers and physical Elm center: exactly-once current dispatch, expired history and reused-incarnation queued refusal; independent/AT acceptance remains open.',nativeNotificationsObserved=False)
 if SETTINGS:report.update(requirements=['ELM-UX-030'],scenarios=['ux-030'],scope='Actual integrated settings controls, exact saved appearance, native text size/reservation and whole-host restart; native-bound invalid scale refuses without changing stored or presented settings. Independent and applicable AT/IME/release acceptance remain open.',nativeSettingsObserved=False)
 if PINS:report.update(requirements=['ELM-UI-004','ELM-UX-004'],scenarios=['taskbar-zero','ux-004'],scope='Actual native keyboard pin/reorder, shell restart, identity order and one current zero-window launch; popup physical presentation and AT acceptance remain separate',popupPresentationAccepted=False,nativePinJourneyObserved=False)
@@ -300,6 +302,16 @@ raise SystemExit(daemon.run())
     backend_fixture=OUTPUT/'notification-backend.py'
     backend_fixture.write_text('import json,sys,time\nfrom pathlib import Path\nsys.path.insert(0,'+repr(str(ROOT/'adapter'))+')\nimport daemon\nsys.argv[1]='+repr(str(broker_config))+'\noriginal=daemon.handle_request\ndef handle(*args):\n request=args[2]\n arm=Path('+repr(str(notification_arm))+');waiting=Path('+repr(str(notification_waiting))+');release=Path('+repr(str(notification_release))+')\n if request.get("kind")=="notification-effect" and arm.exists():\n  arm.unlink();waiting.write_text(json.dumps(request));deadline=time.monotonic()+2\n  while not release.exists():\n   if time.monotonic()>=deadline:raise RuntimeError("Notification transport hold expired")\n   time.sleep(.005)\n  release.unlink()\n return original(*args)\ndaemon.handle_request=handle\nraise SystemExit(daemon.run())\n')
     report['notificationHoldFixture']={'path':str(backend_fixture),'sha256':sha(backend_fixture),'maximumSeconds':2,'scope':'Hold actual queued request before its unchanged admission route; no artificial effect or receipt.'}
+   if SYSTEM:
+    import importlib.util
+    system_spec=importlib.util.spec_from_file_location('private_system_fixture',ROOT/'qa/system-menu-provider.py');system_fixture=importlib.util.module_from_spec(system_spec);system_spec.loader.exec_module(system_fixture)
+    audio_root=s.host.runtime/'system-audio';env=system_fixture.audio_config(audio_root,env)
+    audio_core=s.host.launch('system-audio-core',['/usr/bin/pipewire','-c',str(audio_root/'core.conf')],env=env);apps.append(audio_core);wait(lambda:(audio_root/'warlock-audio').exists())
+    audio_pulse=s.host.launch('system-audio-pulse',['/usr/bin/pipewire-pulse','-c',str(audio_root/'pulse.conf')],env=env);apps.append(audio_pulse);wait(lambda:(audio_root/'pulse/native').exists())
+    system_state=OUTPUT/'system-state.json';system_provider=s.host.launch('system-login-provider',['/usr/bin/python3','-B',str(ROOT/'qa/system-menu-provider.py'),str(system_state)],env=env);apps.append(system_provider);wait(lambda:system_state.exists())
+    backend_fixture=OUTPUT/'system-menu-backend.py'
+    backend_fixture.write_text('import os,sys\nfrom pathlib import Path\nsys.path.insert(0,'+repr(str(ROOT/'adapter'))+')\nimport daemon\nfrom system_menu import Menu\nassert Path(sys.argv[1]).read_text()=='+repr(config_path.read_text())+'\nassert not Path(os.environ["DBUS_SYSTEM_BUS_ADDRESS"].removeprefix("unix:path=")).exists()\nassert os.environ["PULSE_SERVER"]=='+repr(env['PULSE_SERVER'])+'\nsys.argv[1]='+repr(str(broker_config))+'\ndaemon.SystemMenu=lambda:Menu(system_address=os.environ["DBUS_SESSION_BUS_ADDRESS"])\nraise SystemExit(daemon.run())\n')
+    report['systemFixture']={'backend':str(backend_fixture),'backendSHA256':sha(backend_fixture),'provider':str(ROOT/'qa/system-menu-provider.py'),'providerSHA256':sha(ROOT/'qa/system-menu-provider.py'),'audioCoreConfigSHA256':sha(audio_root/'core.conf'),'audioPulseConfigSHA256':sha(audio_root/'pulse.conf'),'audioEndpoint':env['PULSE_SERVER'],'systemBusRemainsRefusing':True,'privateSessionBus':env['DBUS_SESSION_BUS_ADDRESS'],'scope':'Native-only fixture constructor selects owned private login1 provider; unchanged production admission/effect path, real private null audio sink, network owner absent, no hardware/desktop system effect.'}
    web=s.host.launch('warlock',['%s'%binary,'--assets',str(assets),'--authority-config',str(config_path),'--backend',str(backend_fixture if CATALOG or CHORD else ROOT/'adapter/daemon.py'),'--qa-exit-after-render','--qa-stay-open','--surface-experiment',*(['--text-scale','2' if DENSEMENU else '1.5'] if SMALL else [])],env=env);apps.append(web);log=OUTPUT/'warlock.log';collector=Collector()
    def text():
     raw=log.read_text(errors='replace')
@@ -409,10 +421,11 @@ raise SystemExit(daemon.run())
      pix=GdkPixbuf.Pixbuf.new_from_file(str(image));pixels=pix.get_pixels();stride=pix.get_rowstride();channels=pix.get_n_channels();regions=[]
      # Count only current control interiors. Whole-popup counts incorrectly
      # included the compositor's warning overlay above a black reopened popup.
-     for button in body['buttons']+(body.get('content',[]) if NOTIFICATIONS else []):
+     for button in body['buttons']+(body.get('content',[]) if NOTIFICATIONS or SYSTEM else []):
       selected=button['id']==body['focus'] if SETTINGS else button['id']==body['focus'] if SNAP and (projection() or {}).get('mode')=='snap' else button['accessibleName'] in ['Minimize','Close window actions','Maximize'] if PINMENUS else button['accessibleName'].startswith(('Activate ELM-','Restore ELM-')) if SWITCHER or CHORD else (button['accessibleName'].startswith('Browse workspace ') or (NAV and button['accessibleName'].startswith('Restore ELM-ACTIVATION-PEER'))) if TASKVIEW else button['accessibleName'] in ['Refresh applications','Open Files']
+      if SYSTEM:selected=button.get('identity','').endswith(':state') or button['id']==body['focus']
       if NOTIFICATIONS:selected=button['accessibleName']=='Warlock fixture: Expiring notification'
-      if not selected or (button['disabled'] and not NOTIFICATIONS) or button['y']<0 or button['y']+button['height']>box[3]:continue
+      if not selected or (button['disabled'] and not (NOTIFICATIONS or SYSTEM)) or button['y']<0 or button['y']+button['height']>box[3]:continue
       left,top=max(0,int(box[0]+button['x'])+12),max(100,int(box[1]+button['y'])+6)
       right,bottom=min(pix.get_width(),int(box[0]+button['x']+min(220,button['width']))-12),min(pix.get_height(),box[1]+box[3],int(box[1]+button['y']+button['height'])-6)
       bright=sum(1 for y in range(top,bottom) for x in range(left,right) if all(pixels[y*stride+x*channels+c]>170 for c in range(3)))
@@ -849,6 +862,41 @@ raise SystemExit(daemon.run())
       check('OverviewEscapeReturnsToEligibleOpener',facts()['facts']['focused']==before_focus and any(e['kind']=='key' and e['keyval']==97 and e['window']=='ELM-AUTHORITY-FIXTURE' for e in delivered),events=delivered,before=before_focus,after=facts()['facts']['focused'])
      check('OverviewDismissalHasNoNativeMutation',len(journal())==before)
      report['nativeTaskViewJourneyObserved']=not RETIRE_OPENER
+    elif SYSTEM:
+     def system_body():
+      body=popup_body();p=projection()
+      return body if body and p and p.get('mode')=='system' and body['publication']==p['publication'] else None
+     def system_frames():return [json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('backend-frame: ') and json.loads(line.split(': ',1)[1]).get('kind') in ['system-menu-snapshot','system-menu-outcome']]
+     def state():return system_frames()[-1]['snapshot'] if system_frames() else None
+     def navigate(label):
+      target=wait(lambda:next((b for b in (system_body() or {}).get('buttons',[]) if b['accessibleName']==label and not b['disabled']),None))
+      for _ in range(len(system_body()['buttons'])+2):
+       if system_body()['focus']==target['id']:break
+       key(15)
+      wait(lambda:(body:=system_body()) and body['focus']==target['id'])
+     before_window=len(journal());opener=wait(lambda:next((b for b in (bar_body() or {}).get('buttons',[]) if b['accessibleName']=='Open system menu' and not b['disabled']),None));click({'visible':0<=opener['x'] and opener['x']+opener['width']<=800 and 0<=opener['y']<48,'point':[opener['x']+opener['width']/2,opener['y']+opener['height']/2]})
+     body=wait(lambda:(body:=system_body()) and state() and state()['volume'] and state()['session'] and body)
+     check('OriginalUnavailableNetworkAndObservedRemainingCapabilities',state()['network'] is None and 'Network unavailable' in body['text'] and state()['volume']['percent']==100 and state()['power']=={'suspend':'yes','reboot':'yes','poweroff':'no'} and state()['session']['name']=='Warlock private session',snapshot=state(),body=body)
+     check('UnavailableNetworkHasNoActionTarget',not any(b.get('identity','').startswith('system:network-enable:') for b in body['buttons']))
+     navigate('Suspend');popup_capture('system-menu-capabilities');capture=report['popupCaptures'][-1]
+     check('UnavailableNetworkHasActualNativeTextPixels',any(row['accessibleName']=='Network unavailable' and row['brightPixels']>15 for row in capture['controlRegions']),capture=capture)
+     keyboard_button('Set volume 25%',28)
+     wait(lambda:state()['volume']['percent']==25 and system_frames()[-1].get('status')=='Committed')
+     sent=requests('system-menu-effect');receipt=system_frames()[-1]
+     check('KeyboardVolumeChangeHasOneCorrelatedObservedNativeOutcome',len(sent)==1 and sent[0]['intent']['operation']=='volume-set' and sent[0]['intent']['value']==25 and receipt['requestId']==sent[0]['requestId'] and receipt['status']=='Committed',request=sent[0],receipt=receipt)
+     wait(lambda:(body:=system_body()) and any(b.get('identity')=='system:volume-set:25' and b['disabled'] for b in body['buttons']))
+     keyboard_button('Mute',28);wait(lambda:state()['volume']['muted'] and system_frames()[-1].get('status')=='Committed')
+     check('MuteReadbackUsesCurrentNativeAudioSink',len(requests('system-menu-effect'))==2 and 'muted' in system_body()['text'],receipt=system_frames()[-1])
+     before_system=len(requests('system-menu-effect'));keyboard_button('Restart',28)
+     wait(lambda:(body:=system_body()) and any(b.get('identity')=='system:cancel' and not b['disabled'] for b in body['buttons']))
+     check('RestartPromptDoesNotSubmitNativePowerChange',len(requests('system-menu-effect'))==before_system and json.loads(system_state.read_text())['calls']==[])
+     keyboard_button('Cancel system change',28);wait(lambda:(body:=system_body()) and not any(b.get('identity')=='system:confirm' for b in body['buttons']))
+     check('CancelPreservesSessionWithoutNativeEffects',json.loads(system_state.read_text())['calls']==[] and len(requests('system-menu-effect'))==before_system)
+     keyboard_button('Refresh system state',28);wait(lambda:system_frames()[-1]['kind']=='system-menu-snapshot')
+     check('RefreshReadsCurrentStateAndNeverRepeatsChanges',len(requests('system-menu-effect'))==before_system and state()['volume']['percent']==25 and state()['volume']['muted'])
+     key(1);wait(lambda:projection()['mode']=='closed')
+     check('SystemEscapeClosesWithoutWindowOrLaunchEffects',len(journal())==before_window and not launches())
+     report['systemProviderState']=json.loads(system_state.read_text());report['nativeSystemMenuObserved']=True
     elif NOTIFICATIONS:
      notification_control=OUTPUT/'notification-control.json'
      producer=s.host.launch('notification-producers',['/usr/bin/python3','-B',str(ROOT/'qa/notification-producer.py'),str(notification_control)],env=env);apps.append(producer);notification_producer=producer
