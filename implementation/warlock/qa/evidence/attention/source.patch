@@ -1,0 +1,658 @@
+diff --git c/implementation/warlock/README.md w/implementation/warlock/README.md
+index 69917c5..da9dd71 100644
+--- c/implementation/warlock/README.md
++++ w/implementation/warlock/README.md
+@@ -157,3 +157,20 @@ exercised; additional taskbar routes, assistive technology and independent
+ original-scenario acceptance remain separate. Run focused component checks with
+ `qa/check-search.py --jump-lists` through the protected CPU launcher and native
+ checks with `qa/native-window-feedback.py --jump-lists` through the v2 loop.
++
++Native attention requests produce an amber top-edge marker and an Attention
++label on an inactive application's taskbar entry. The active application uses a
++blue bottom-edge marker and `aria-current`. Family attention includes eligible
++modal members; native active state takes precedence. The indicators are static,
++with distinct edge shapes in forced colors and darker amber in the Dawn theme.
++Pinned and running applications precede utility controls at the left edge;
++Reconnect remains first when the shell is detached.
++
++Attention is read through the existing native authority's opt-in observation
++version, keyed to the same binding, incarnation and scene revision. Legacy native
++read shapes remain available. Elm joins only coherent bracketing facts and
++rejects contradictory same-revision observations. A click cannot invent attention
++or active state. Actual native GTK attention, visible pixels, activation and key
++recipient checks pass in an isolated desktop; native accessibility consumers and
++independent ELM-UX-009 acceptance remain open. Use `--attention` with the protected
++component and native runners for this slice.
+diff --git c/implementation/warlock/adapter/daemon.py w/implementation/warlock/adapter/daemon.py
+index e25c611..315bdca 100644
+--- c/implementation/warlock/adapter/daemon.py
++++ w/implementation/warlock/adapter/daemon.py
+@@ -143,7 +143,7 @@ def handle_request(client,catalog,request,recovery,reconciliation,notifications=
+  else:
+   canonical(request['requestId'])
+   reconciliation.requested_read('action',request['requestId'])
+-  before=client.scene_facts(request['requestId']);snapshot=client.snapshot(request['requestId']);after=client.scene_facts(request['requestId'])
++  before=client.scene_facts(request['requestId'],attention=True);snapshot=client.snapshot(request['requestId']);after=client.scene_facts(request['requestId'],attention=True)
+   scene=coherent_scene(before,snapshot,after)
+   if scene is None:send({'protocolVersion':3,'kind':'projection-unavailable','binding':client.bound,'requestId':request['requestId'],'reason':'scene-changed'})
+   else:
+@@ -198,7 +198,7 @@ def main():
+   send(notification_service.observation(client));selector.register(notification_service.wake,selectors.EVENT_READ,'notifications')
+   selector.register(0,selectors.EVENT_READ,'stdin');selector.register(events,selectors.EVENT_READ,'events')
+   incoming=FrontendFrames();notifications=bytearray();dirty=False;have_snapshot=False;last_notice=0.0
+-  relevant={b'elmwindowstate',b'workspace',b'workspacev2',b'focusedmon',b'focusedmonv2',b'monitoradded',b'monitoraddedv2',b'monitorremoved',b'fullscreen',b'pin',b'openwindow',b'closewindow',b'windowtitle',b'windowtitlev2',b'activewindow',b'movewindow',b'movewindowv2',b'changefloatingmode'}
++  relevant={b'urgent',b'elmwindowstate',b'workspace',b'workspacev2',b'focusedmon',b'focusedmonv2',b'monitoradded',b'monitoraddedv2',b'monitorremoved',b'fullscreen',b'pin',b'openwindow',b'closewindow',b'windowtitle',b'windowtitlev2',b'activewindow',b'movewindow',b'movewindowv2',b'changefloatingmode'}
+   while True:
+    timeout=max(0.0,.04-(time.monotonic()-last_notice)) if dirty and have_snapshot else None
+    ready=selector.select(timeout)
+diff --git c/implementation/warlock/adapter/effect_endpoint.py w/implementation/warlock/adapter/effect_endpoint.py
+index d3d7ea6..e95aa47 100644
+--- c/implementation/warlock/adapter/effect_endpoint.py
++++ w/implementation/warlock/adapter/effect_endpoint.py
+@@ -36,18 +36,20 @@ class Endpoint(ReadOnlyEndpoint):
+    if not isinstance(window['application'],str) or len(window['application'].encode('utf-16-le'))//2>256 or any(ord(c)<32 for c in window['application']):raise Refused('Application hint')
+    seen.add(identity)
+   return r
+- def scene_facts(self,request_id,minimum_watermark='0'):
++ def scene_facts(self,request_id,minimum_watermark='0',*,attention=False):
+   if not self.bound:raise Refused('Handshake required')
+   canonical(request_id);canonical(minimum_watermark,True)
+-  r=self.request({'protocolVersion':3,'kind':'scene-facts-request','binding':self.bound,'requestId':request_id,'minimumWatermark':minimum_watermark})
+-  exact(r,['protocolVersion','kind','binding','requestId','sequence','revision','outputGeneration','facts'])
++  if type(attention) is not bool:raise Refused('Attention observation option')
++  r=self.request({'protocolVersion':3,'kind':'scene-facts-request','binding':self.bound,'requestId':request_id,'minimumWatermark':minimum_watermark,**({'attentionProtocol':1} if attention else {})})
++  exact(r,['protocolVersion','kind','binding','requestId','sequence','revision','outputGeneration','facts',*(['attentionProtocol'] if attention else [])])
++  if attention and (type(r['attentionProtocol']) is not int or r['attentionProtocol']!=1):raise Refused('Attention protocol')
+   if r['kind']!='scene-facts' or binding(r['binding'])!=self.bound or r['requestId']!=request_id:raise Refused('Facts correlation')
+   for key in ['sequence','revision','outputGeneration']:canonical(r[key])
+   if int(r['sequence'])<int(minimum_watermark):raise Refused('Obsolete facts')
+   facts=r['facts'];exact(facts,['focused','windows'])
+   windows=facts['windows']
+   if not isinstance(windows,list) or len(windows)>256:raise Refused('Facts bound')
+-  bools=['workspaceVisible','hidden','pinned','allowedOverFullscreen','renderOverFullscreen','acceptsInput','shouldRenderAny','shouldRenderOwnMonitor','minimized']
++  bools=['workspaceVisible','hidden','pinned','allowedOverFullscreen','renderOverFullscreen','acceptsInput','shouldRenderAny','shouldRenderOwnMonitor','minimized']+(['attention'] if attention else [])
+   seen=set();positions=set()
+   for window in windows:
+    exact(window,['incarnation','owner','application','stackPosition','workspace','monitor','geometry','fullscreenMode',*bools])
+diff --git c/implementation/warlock/adapter/taskbar_projection.py w/implementation/warlock/adapter/taskbar_projection.py
+index ffcb88c..9015d71 100644
+--- c/implementation/warlock/adapter/taskbar_projection.py
++++ w/implementation/warlock/adapter/taskbar_projection.py
+@@ -4,13 +4,15 @@ def coherent_scene(before, snapshot, after):
+     # revision includes grouping, ownership, native focus and visibility.
+     if before['revision'] != after['revision'] or before['outputGeneration'] != after['outputGeneration']:
+         return None
++    if before.get('attentionProtocol')!=after.get('attentionProtocol') or before['facts']!=after['facts']:
++        return None
+     facts = {w['incarnation']: w for w in after['facts']['windows']}
+     if set(facts) != {w['incarnation'] for w in snapshot['windows']}:
+         return None
+     if any(w['minimized'] != facts[w['incarnation']]['minimized'] or w['application'] != facts[w['incarnation']]['application'] for w in snapshot['windows']):
+         return None
+     return {'revision': after['revision'], 'focused': after['facts']['focused'], 'windows': [
+-        {**w, 'owner': facts[w['incarnation']]['owner'],
++        {**w, **({'attention': facts[w['incarnation']]['attention']} if after.get('attentionProtocol')==1 else {}), 'owner': facts[w['incarnation']]['owner'],
+          'available': not facts[w['incarnation']]['hidden']
+                       and facts[w['incarnation']]['workspace'] is not None and int(facts[w['incarnation']]['workspace']) > 0}
+         for w in snapshot['windows']]}
+diff --git c/implementation/warlock/assets/shell.css w/implementation/warlock/assets/shell.css
+index 8692001..f306acb 100644
+--- c/implementation/warlock/assets/shell.css
++++ w/implementation/warlock/assets/shell.css
+@@ -65,3 +65,9 @@ html[data-theme="dawn"] .surface-popup[data-mode="snap"] [data-surface-control^=
+ 
+ .notification-text { margin: .7rem .8rem; color: inherit; opacity: 1; overflow-wrap: anywhere; }
+ .notification-text .control-detail { display: block; }
++
++/* Observed native window state; static color and shape remain distinct. */
++.bar .control-group[data-window-state="active"]{border-color:var(--shell-focus,#7ed7ff);box-shadow:inset 0 -3px 0 var(--shell-focus,#7ed7ff);background:color-mix(in srgb,var(--shell-control,#263544) 82%,var(--shell-focus,#7ed7ff))}
++.bar .control-group[data-window-state="attention"]{border-color:#ffc66b;box-shadow:inset 0 3px 0 #ffc66b,0 0 8px #ffc66b40;background:color-mix(in srgb,var(--shell-control,#263544) 82%,#ffc66b)}
++html[data-theme="dawn"] .bar .control-group[data-window-state="attention"]{border-color:#8c4e00;box-shadow:inset 0 3px 0 #8c4e00,0 0 8px #8c4e0030}
++@media(forced-colors:active){.bar .control-group[data-window-state="active"]{border-color:Highlight;box-shadow:none;border-bottom-width:4px}.bar .control-group[data-window-state="attention"]{border-color:CanvasText;box-shadow:none;border-top-width:4px}}
+diff --git c/implementation/warlock/native/authority.cpp w/implementation/warlock/native/authority.cpp
+index ff9f7d4..4a6fdaf 100644
+--- c/implementation/warlock/native/authority.cpp
++++ w/implementation/warlock/native/authority.cpp
+@@ -347,7 +347,7 @@ std::string switcherJournal(const Session& session,bool observing=false) {
+     const bool mine=chord.ownerSession==session.id && chord.ownerFrontend==session.frontend;
+     return "{\"generation\":"+quote(std::to_string(chord.generation))+",\"roots\":"+array(chord.roots)+",\"history\":"+array(chord.history)+",\"origin\":"+(chord.origin?quote(std::to_string(*chord.origin)):"null")+",\"steps\":"+steps+",\"released\":"+(chord.released?"true":"false")+",\"cancelled\":"+((chord.cancelled || (!observing && chord.generation && !mine))?"true":"false")+",\"consumed\":"+(chord.consumed?"true":"false")+"}";
+ }
+-std::string sceneFacts() {
++std::string sceneFacts(bool includeAttention=true) {
+     // Native facts only. Vector position is not claimed to be final paint order:
+     // specialized fullscreen/effect passes may currently disagree with it.
+     const auto boolean = [](bool value) { return value ? "true" : "false"; };
+@@ -372,6 +372,7 @@ std::string sceneFacts() {
+             ",\"workspaceVisible\":" + boolean(workspace && workspace->isVisible()) +
+             ",\"hidden\":" + boolean(window->isHidden()) +
+             ",\"pinned\":" + boolean(window->m_pinned) +
++            (includeAttention ? ",\"attention\":" + std::string(boolean(window->m_isUrgent)) : "") +
+             ",\"allowedOverFullscreen\":" + boolean(window->isAllowedOverFullscreen()) +
+             ",\"renderOverFullscreen\":" + boolean(window->shouldRenderOverFullscreen()) +
+             ",\"acceptsInput\":" + boolean(window->acceptsInput()) +
+@@ -833,7 +834,10 @@ std::string observe(eHyprCtlOutputFormat, std::string request) {
+                 if(!found->second.geometryEnabled) reply=error("geometry-negotiation-required");
+                 else reply=performGeometryEffect(found->second,object);
+             } else reply=performEffect(found->second,object,payload);
+-        } else if ((operation == "snapshot-request" || operation == "scene-facts-request" || operation == "activation-history-request" || operation == "render-trace-request" || operation == "retain-render-trace-request" || operation == "retained-render-trace-request") && fields(object,{"protocolVersion","kind","binding","requestId","minimumWatermark"})) {
++        } else if ((operation == "snapshot-request" || operation == "scene-facts-request" || operation == "activation-history-request" || operation == "render-trace-request" || operation == "retain-render-trace-request" || operation == "retained-render-trace-request") && (fields(object,{"protocolVersion","kind","binding","requestId","minimumWatermark"}) || (operation=="scene-facts-request" && fields(object,{"protocolVersion","kind","binding","requestId","minimumWatermark","attentionProtocol"})))) {
++            const auto attentionVersion=json_object_get_member(object,"attentionProtocol");
++            const bool attention=attentionVersion!=nullptr;
++            if(attention && (!JSON_NODE_HOLDS_VALUE(attentionVersion) || json_node_get_value_type(attentionVersion)!=G_TYPE_INT64 || json_node_get_int(attentionVersion)!=1)) throw std::runtime_error("attention-version");
+             const bool history = operation == "activation-history-request";
+             const bool facts = operation == "scene-facts-request" || history;
+             const bool trace = operation == "render-trace-request" || operation == "retain-render-trace-request" || operation == "retained-render-trace-request";
+@@ -870,7 +874,7 @@ std::string observe(eHyprCtlOutputFormat, std::string request) {
+                     reply="{\"protocolVersion\":3,\"kind\":\"activation-history\",\"binding\":"+binding(found->second)+",\"requestId\":"+quote(std::to_string(*requestId))+",\"context\":{\"lifetime\":"+quote(std::to_string(lifetime))+",\"epoch\":"+quote(std::to_string(found->second.frontend))+",\"output\":"+quote(std::to_string(outputGeneration))+",\"revision\":"+quote(std::to_string(factsRevision))+"},\"roots\":"+activationRoots()+"}";
+                 } else reply = "{\"protocolVersion\":3,\"kind\":" + quote(facts ? "scene-facts" : "snapshot") + ",\"binding\":" + binding(found->second) +
+                     ",\"requestId\":\"" + std::to_string(*requestId) + "\",\"sequence\":\"" + std::to_string(activeSequence) +
+-                    "\",\"revision\":\"" + std::to_string(activeRevision) + "\"," + (facts ? "\"outputGeneration\":"+quote(std::to_string(outputGeneration))+",\"facts\":" : "\"windows\":") + value + "}";
++                    "\",\"revision\":\"" + std::to_string(activeRevision) + "\"," + (attention ? "\"attentionProtocol\":1," : "") + (facts ? "\"outputGeneration\":"+quote(std::to_string(outputGeneration))+",\"facts\":" : "\"windows\":") + (facts && !attention ? sceneFacts(false) : value) + "}";
+             }
+         }
+     } catch (...) { /* bounded refusal; no IPC exception escapes into compositor */ }
+diff --git c/implementation/warlock/qa/check-native-authority.py w/implementation/warlock/qa/check-native-authority.py
+index 52f91ad..2b3e062 100644
+--- c/implementation/warlock/qa/check-native-authority.py
++++ w/implementation/warlock/qa/check-native-authority.py
+@@ -1,4 +1,4 @@
+-"""Build the changed navigation authority against the unchanged owning ABI.
++"""Build native attention/navigation authority against the unchanged owning ABI.
+ 
+ Frozen capture/policy dependencies are referenced by hash; no copied lineage.
+ This report proves compilation/closure only. Actual native journeys are separate.
+@@ -13,7 +13,7 @@ HELD=PRIOR.parents[1]
+ OUT=ROOT/'qa/runs'/('native-authority-'+str(time.time_ns()));OUT.mkdir()
+ sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
+ r={'passed':False,'nativeAcceptance':False,'installed':False,'protectedScope':scope,'commands':[],
+-   'scope':'Changed navigation authority TU and modal preflight against unchanged owning core/capture inputs; strict strong-symbol closure; native acceptance separate'}
++   'scope':'Changed native attention read and navigation authority TU against unchanged owning core/capture inputs; strict strong-symbol closure; native acceptance separate'}
+ def run(name,args):
+  p=subprocess.run(args,capture_output=True,text=True,timeout=180)
+  (OUT/(name+'.stdout')).write_text(p.stdout);(OUT/(name+'.stderr')).write_text(p.stderr)
+diff --git c/implementation/warlock/qa/check-search.py w/implementation/warlock/qa/check-search.py
+index 6b61548..2a935b1 100644
+--- c/implementation/warlock/qa/check-search.py
++++ w/implementation/warlock/qa/check-search.py
+@@ -1,5 +1,6 @@
+ """Focused compiled launcher/search integration, protected CPU scope only."""
+ import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures,http.server,threading
++ATTENTION=sys.argv[1:]==['--attention']
+ JUMP=sys.argv[1:]==['--jump-lists']
+ FILES=sys.argv[1:]==['--files']
+ SYSTEM=sys.argv[1:]==['--system-menu']
+@@ -13,11 +14,11 @@ DENSE=sys.argv[1:]==['--dense-taskbar'] or PICKER
+ PINMENUS=sys.argv[1:]==['--pinned-menus'] or (DENSE and not PICKER)
+ PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PINMENUS or PICKER
+ SWITCHER=sys.argv[1:]==['--switcher']
+-NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'];POPUP=sys.argv[1:]==['--native-popup'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER
++NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'];POPUP=sys.argv[1:]==['--native-popup'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER
+ ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143'
+ sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
+ scope=require_qa_scope();sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
+-OUT=ROOT/'qa/runs'/(('jump-lists-' if JUMP else 'files-' if FILES else 'system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
++OUT=ROOT/'qa/runs'/(('attention-' if ATTENTION else 'jump-lists-' if JUMP else 'files-' if FILES else 'system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
+ for folder in ['src','native','adapter','assets','qa']:
+  (INPUT/folder).mkdir()
+  for p in (ROOT/folder).iterdir():
+@@ -75,6 +76,11 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
+   run('compile-task-view',[str(HELD/pinned['compiler']),'make','qa/TaskViewReplay.elm','--optimize','--output=assets/task-view.js'])
+   (INPUT/'qa/task-view-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.TaskViewReplay'));run('typed-task-view',['node','qa/task-view-replay.js','assets/task-view.js',str(OUT/'task-view.json')]);report['typedTaskView']=json.loads((OUT/'task-view.json').read_text());assert all(report['typedTaskView']['checks'].values())
+   run('task-view-model-typecheck',['quint','typecheck','qa/task-view.qnt']);run('task-view-model-named',['quint','test','qa/task-view.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79101']);run('task-view-model-invariants',['quint','run','qa/task-view.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79102'])
++ if ATTENTION:
++  report.update(requirements=['ELM-UX-009'],scenarios=['ux-009'],scope='Compiled immutable native attention projection, exact observed family states, actual renderer/browser color/accessible labels. Native urgency and original AT acceptance separate.')
++  report['attentionProjection']=json.loads(run('attention-projection',['/usr/bin/python3','-B','qa/check-attention.py']))
++  run('compile-attention',[str(HELD/pinned['compiler']),'make','qa/AttentionReplay.elm','--optimize','--output=assets/attention.js'])
++  (INPUT/'qa/attention-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.AttentionReplay'));run('typed-attention',['node','qa/attention-replay.js','assets/attention.js',str(OUT/'attention.json')]);report['typedAttention']=json.loads((OUT/'attention.json').read_text());assert all(report['typedAttention']['checks'].values())
+  if JUMP:
+   report.update(requirements=['ELM-UX-010'],scenarios=['ux-010','jump-list-recent-identity'],scope='Integrated immutable jump lists, exact catalog-declared GIO actions and identity-bound local XBEL recent files; compiled reducer/native adapter/browser evidence, actual native GUI and independent acceptance separate')
+   report['jumpListGio']=json.loads(run('jump-list-native-gio',['/usr/bin/python3','-B','qa/check-jump-lists.py']))
+@@ -150,7 +156,7 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
+    if TASKVIEW:
+     # The authority TU is independently compiled against its owning core; none
+     # of these reused GTK host objects link it or include its modal preflight.
+-    excluded=['native/surface.h','native/host.c','native/shared-host.c']+(['native/authority.cpp','native/navigation-modal.hpp'] if NAV else [])+(['native/authority.cpp','native/host-journal.h','native/geometry-effects.inc','native/snap-placement.inc'] if SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP else [])
++    excluded=['native/surface.h','native/host.c','native/shared-host.c']+(['native/authority.cpp','native/navigation-modal.hpp'] if NAV else [])+(['native/authority.cpp','native/host-journal.h','native/geometry-effects.inc','native/snap-placement.inc'] if SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION else [])
+     assert all(sha(INPUT/p)==h for p,h in prior['inputs'].items() if p.startswith('native/') and p not in excluded)
+     assert all('surface.h' not in (INPUT/'native'/name).read_text() for name in units)
+    object_path=prior_path;object_report=prior;seen=set()
+@@ -170,7 +176,7 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
+    run('popup-context-link',['g++',str(OUT/'popup-context.o'),*[str(OUT/(name+'.o')) for name in units],'-o',str(OUT/'popup-context-tests'),*flags])
+    run('popup-context-tests',[str(OUT/'popup-context-tests')])
+  run('host-self-tests',[str(OUT/'elm-host'),'--self-test'])
+- if DENSE or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP:
++ if DENSE or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION:
+   if DENSE:report.update(requirements=['ELM-UI-008'],scenarios=['overflow-first-last','overflow-resize','menu-invocation'],scope='Current compiled renderer/adapter dense enlarged-text browser journeys and rebuilt scalable native host; native output/menu/AT observations separate')
+   (INPUT/'qa/dense.html').write_text('<!doctype html><html style="font-size:24px"><head><link rel="stylesheet" href="../assets/shell.css"></head><body class="bar"><div id="app"></div><script>window.nativePackets=[];window.webkit={messageHandlers:{native:{postMessage:s=>nativePackets.push(JSON.parse(s))}}};</script><script src="../assets/bar.js"></script><script src="../assets/bar-adapter.js"></script><script src="../assets/context.js"></script><script src="../assets/activation.js"></script></body></html>')
+   (INPUT/'qa/dense-picker.html').write_text('<!doctype html><html style="font-size:24px"><head><link rel="stylesheet" href="../assets/shell.css"></head><body class="popup"><div id="app"></div><script>window.nativePackets=[];window.webkit={messageHandlers:{native:{postMessage:s=>nativePackets.push(JSON.parse(s))}}};</script><script src="../assets/popup.js"></script><script src="../assets/popup-adapter.js"></script><script src="../assets/context.js"></script><script src="../assets/activation.js"></script></body></html>')
+@@ -182,9 +188,9 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
+    def log_message(self,*args):pass
+   server=http.server.ThreadingHTTPServer(('127.0.0.1',0),Handler);threading.Thread(target=server.serve_forever,daemon=True).start()
+   browser=pathlib.Path('/home/hoskinson/.cache/puppeteer/chrome-headless-shell/linux-154.0.8037.57/chrome-headless-shell-linux64/chrome-headless-shell');report['browserSHA256']=sha(browser)
+-  browser_name='jump-lists-browser' if JUMP else 'files-browser' if FILES else 'system-menu-browser' if SYSTEM else 'notifications-browser' if NOTIFICATIONS else 'settings-browser' if SETTINGS else 'snap-browser' if SNAP else 'dense-browser';browser_runner='jump-lists-browser.mjs' if JUMP else 'files-browser.mjs' if FILES else 'system-menu-browser.mjs' if SYSTEM else 'notifications-browser.mjs' if NOTIFICATIONS else 'settings-browser.mjs' if SETTINGS else 'snap-browser.mjs' if SNAP else 'dense-taskbar-browser.mjs'
++  browser_name='attention-browser' if ATTENTION else 'jump-lists-browser' if JUMP else 'files-browser' if FILES else 'system-menu-browser' if SYSTEM else 'notifications-browser' if NOTIFICATIONS else 'settings-browser' if SETTINGS else 'snap-browser' if SNAP else 'dense-browser';browser_runner='attention-browser.mjs' if ATTENTION else 'jump-lists-browser.mjs' if JUMP else 'files-browser.mjs' if FILES else 'system-menu-browser.mjs' if SYSTEM else 'notifications-browser.mjs' if NOTIFICATIONS else 'settings-browser.mjs' if SETTINGS else 'snap-browser.mjs' if SNAP else 'dense-taskbar-browser.mjs'
+   run(browser_name,['node','qa/'+browser_runner,'http://127.0.0.1:'+str(server.server_port),str(OUT),str(browser)])
+-  child_path=OUT/(browser_name+'.json');child=json.loads(child_path.read_text());assert child['passed'] and child['browserExitCode']==0;report['jumpListsBrowser' if JUMP else 'filesBrowser' if FILES else 'systemMenuBrowser' if SYSTEM else 'notificationsBrowser' if NOTIFICATIONS else 'settingsBrowser' if SETTINGS else 'snapBrowser' if SNAP else 'denseBrowser']={'path':str(child_path),'sha256':sha(child_path),'checks':child['checks']}
++  child_path=OUT/(browser_name+'.json');child=json.loads(child_path.read_text());assert child['passed'] and child['browserExitCode']==0;report['attentionBrowser' if ATTENTION else 'jumpListsBrowser' if JUMP else 'filesBrowser' if FILES else 'systemMenuBrowser' if SYSTEM else 'notificationsBrowser' if NOTIFICATIONS else 'settingsBrowser' if SETTINGS else 'snapBrowser' if SNAP else 'denseBrowser']={'path':str(child_path),'sha256':sha(child_path),'checks':child['checks']}
+   if SNAP:
+    run('menu-navigation-regression',['node','qa/dense-taskbar-browser.mjs','http://127.0.0.1:'+str(server.server_port),str(OUT),str(browser)])
+    regression=json.loads((OUT/'dense-browser.json').read_text());assert regression['passed'] and regression['browserExitCode']==0;report['menuNavigationRegression']={'path':str(OUT/'dense-browser.json'),'sha256':sha(OUT/'dense-browser.json'),'checks':regression['checks']}
+diff --git c/implementation/warlock/qa/current-native-pair.json w/implementation/warlock/qa/current-native-pair.json
+index da66078..7a03976 100644
+--- c/implementation/warlock/qa/current-native-pair.json
++++ w/implementation/warlock/qa/current-native-pair.json
+@@ -6,18 +6,18 @@
+       "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+     },
+     "plugin": {
+-      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791457340009159176/elm-window-geometry-authority.so",
+-      "sha256": "55be0d723123f8089abfa0ce735f5e496aee558a0d822e1ad8278d50ee958307"
++      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791472326017744548/elm-window-geometry-authority.so",
++      "sha256": "af6fe4f72eae7ff9df59fc497684b57389cef0edbec154b6e392201a667fd4d1"
+     },
+     "aquamarine": {
+       "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+       "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+     }
+   },
+-  "authorityReport": "implementation/warlock/qa/runs/native-authority-1791457340009159176/report.json",
+-  "authorityReportSHA256": "6004a85004b1b840860958cf49e3d31dd2e1f830556800fc5faee7713e24a42b",
++  "authorityReport": "implementation/warlock/qa/runs/native-authority-1791472326017744548/report.json",
++  "authorityReportSHA256": "466b5630c901544029ba2a92cd902c466250b88215e3f301534fc922605fe7be",
+   "authorityInputs": {
+-    "native/authority.cpp": "5aa4ea53a0d811f24eda60c22b14ee594c81e44ff5722a3d0fb0e4882173e7a4",
++    "native/authority.cpp": "50cb23dd338ed1e3bcaf3c30fdc0341e3fff0f1808b353adbad3219489ab1b6a",
+     "native/navigation-modal.hpp": "f3a1fdabeaa4abdaa3bcd839e0a3b62854a844cd791dd338d8f1a3e5bb488c1e",
+     "native/geometry-effects.inc": "147224d13163a3671f7606cee9df2f596c885a6b65acde9b9cb89436e4260d52",
+     "native/snap-placement.inc": "736badc0ebc3fd423286778539a453f1a704d26b3f41a8fa6416d739b4015d64"
+diff --git c/implementation/warlock/qa/current-search-build.json w/implementation/warlock/qa/current-search-build.json
+index a6e9719..a6d9299 100644
+--- c/implementation/warlock/qa/current-search-build.json
++++ w/implementation/warlock/qa/current-search-build.json
+@@ -1,9 +1,9 @@
+ {
+-  "report": "implementation/warlock/qa/runs/jump-lists-1791471213662138830/report.json",
+-  "reportSHA256": "3c55e462f8006942c5ca34b34643c91887cabe26a1302f5af00085043ab07ff5",
++  "report": "implementation/warlock/qa/runs/attention-1791472713589593299/report.json",
++  "reportSHA256": "b2f8e5c732212aee379ccc5918468df064738ec1aac266ad07486b77e5894b8d",
+   "compiledAssets": {
+-    "elm.js": "dbe4b7762201ebcec5fac295784760fb710738185edc5bd543ef95e0fd412271",
+-    "bar.js": "7626d051069ec4b9d6513bafb37b7469f23f96d8a9913544d8d147a3b1b3df40",
+-    "popup.js": "5dca81f24d0b17e460bd95519837970f31aaaca01318de3a5940a3ef604c5e2f"
++    "elm.js": "78ab8ced00bbb9dbfa59e974cb14bcd4ca0150752567791af3e183e383f02a80",
++    "bar.js": "fbe4416674b120412b0be63abe47d438104aaacd3dee2eea4c81323ea9262d29",
++    "popup.js": "d56f655974b3c128b442e080350aa37276127b7d2d16a8e36c0356f2b3092944"
+   }
+ }
+diff --git c/implementation/warlock/qa/native-window-feedback.py w/implementation/warlock/qa/native-window-feedback.py
+index 5ef72f4..a0e52b1 100644
+--- c/implementation/warlock/qa/native-window-feedback.py
++++ w/implementation/warlock/qa/native-window-feedback.py
+@@ -4,6 +4,7 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
+ lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
+ """
+ import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
++ATTENTION=sys.argv[1:]==['--attention']
+ JUMP=sys.argv[1:]==['--jump-lists']
+ FILES=sys.argv[1:]==['--files']
+ SYSTEM=sys.argv[1:]==['--system-menu']
+@@ -17,7 +18,7 @@ DENSEPICKER=sys.argv[1:]==['--dense-picker'] or DENSEMENU
+ DENSE=sys.argv[1:]==['--dense-taskbar']
+ SMALL=DENSE or DENSEPICKER
+ PINMENUS=sys.argv[1:]==['--pinned-menus'] or DENSE or SNAP
+-PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PINMENUS
++PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PINMENUS or ATTENTION
+ PRE_READY_RETIRE=sys.argv[1:]==['--switcher-pre-ready-retirement']
+ MEMBERSHIP=sys.argv[1:]==['--switcher-membership'] or PRE_READY_RETIRE
+ CHORD=sys.argv[1:]==['--switcher-chord'] or MEMBERSHIP
+@@ -60,7 +61,7 @@ else:
+ for row in pair.values():assert sha(row['path'])==row['sha256']
+ assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
+ subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
+-OUT=ROOT/'qa/runs'/(('native-jump-lists-' if JUMP else 'native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
++OUT=ROOT/'qa/runs'/(('native-attention-' if ATTENTION else 'native-jump-lists-' if JUMP else 'native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+ OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
+ focus_host=None
+ if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
+@@ -92,6 +93,9 @@ if PRIMARY:
+  assert fixture_source.count(initial)==1 and fixture_source.count('control = Path(sys.argv[1])')==1
+  adapted=fixture_source.replace('control = Path(sys.argv[1])',"GLib.set_prgname('warlock-primary-fixture' if sys.argv[2]=='primary' else 'warlock-peer-fixture')\ncontrol = Path(sys.argv[1])")
+  adapted=adapted.replace(initial,"create('ELM-AUTHORITY-FIXTURE', 'red') if sys.argv[2]=='primary' else create('ELM-ACTIVATION-PEER', 'green')")
++ if ATTENTION:
++  needle="        elif request['op'] == 'retire-peer':";assert adapted.count(needle)==1
++  adapted=adapted.replace(needle,"        elif request['op'] == 'request-attention':\n            next(iter(windows.values())).present()\n            log(next(iter(windows)), 'attention-requested')\n"+needle)
+  original_fixture=FIXTURE;FIXTURE=fixture_inputs/'primary-action-fixture.py';FIXTURE.write_text(adapted)
+  primary_fixture={'originalSHA256':sha(original_fixture),'path':str(FIXTURE),'sha256':sha(FIXTURE),'change':'One original colored GTK root per process; distinct program identities create two single-family taskbar entries.'}
+ if CHORD:
+@@ -109,6 +113,7 @@ if focus_host:report['focusHostAdaptation']=focus_host
+ if retirement_fixture:report['retirementFixture']=retirement_fixture
+ if primary_fixture:report['primaryFixture']=primary_fixture
+ if SEARCH:report.update(requirements=['ELM-UI-005','ELM-UX-029'],scenarios=['search-no-match','search-race','search-refused','launcher-refused'],scope='Actual current query and private catalog, native typing/Enter refusal and no duplicate launch; AT/IME and popup physical presentation acceptance remain pending',popupPresentationAccepted=False)
++if ATTENTION:report.update(requirements=['ELM-UX-009'],scenarios=['ux-009'],scope='Actual GTK activation request while inactive, native bound/revisioned urgency read, distinct visible taskbar indicators and accessible DOM state. Actual AT and independent acceptance remain open.',nativeAttentionObserved=False)
+ if JUMP:report.update(requirements=['ELM-UX-010'],scenarios=['ux-010','jump-list-recent-identity'],scope='Physical private native jump list: catalog-declared actions, exact application-bound local XBEL file, actual GIO argv; foreign entries absent. Native negative admission is separate adapter evidence, AT and independent acceptance remain open.',nativeJumpListsObserved=False)
+ if FILES:report.update(requirements=['ELM-UX-033'],scenarios=['ux-033'],scope='Actual installed Files explorer in private home/runtime; physical Elm collection choice, exact native instance reuse, location readback, no unchanged file operation source edits. Independent/AT and other-workspace summon acceptance remain open.',nativeFilesObserved=False)
+ if SYSTEM:report.update(requirements=['ELM-UX-032'],scenarios=['ux-032'],scope='Actual isolated native menu with current private PipeWire volume and login1 session/power capabilities, unavailable network, physical keyboard changes, readback, confirmation and pixels; real hardware, AT and independent acceptance remain open.',nativeSystemMenuObserved=False)
+@@ -134,6 +139,7 @@ LUA=b'''hl.config({xwayland={enabled=false},animations={enabled=false}})
+ hl.monitor({output="WAYLAND-1",mode="800x600@60",position="0x0",scale=1})
+ '''
+ if SMALL:LUA=LUA.replace(b'800x600',b'480x360' if DENSEMENU else b'480x600')
++if ATTENTION:LUA+=b'hl.config({misc={focus_on_activate=false}})\n'
+ if CHORD:LUA+=(ROOT/'native/switcher-bindings.lua').read_bytes()
+ def check(name,condition,**data):
+  report['checks'].append({'name':name,'passed':bool(condition),**data});assert condition,name
+@@ -381,7 +387,46 @@ raise SystemExit(daemon.run())
+     pix=GdkPixbuf.Pixbuf.new_from_file(str(image));data=pix.get_pixels();stride=pix.get_rowstride();channels=pix.get_n_channels();left,top=int(o['x'])+5,int(o['y'])+3;right,bottom=min(800,int(o['x']+o['width'])-3),min(48,int(o['y']+o['height'])-3)
+     bright=sum(1 for y in range(top,bottom) for x in range(left,right) if all(data[y*stride+x*channels+i]>170 for i in range(3)))
+     check(state+'NativeTaskbarHasTextPixels',pix.get_width()==800 and pix.get_height()==600 and bright>30,image=str(image),sha256=sha(image),brightPixels=bright,region=[left,top,right,bottom]);report.setdefault('feedback',{})[state]=body
+-   if PRIMARY and not PINMENUS:
++   if ATTENTION:
++    keyboard=pathlib.Path('/home/hoskinson/window-integration-qa/orca-reader/physical-commands/evdev-keyboard');report['keyboard']={'path':str(keyboard),'sha256':sha(keyboard)}
++    def bar_body():
++     rows=[json.loads(line.split(' ',2)[2])['body'] for line in text().splitlines() if line.startswith('surface-report: origin=bar ')]
++     body=rows[-1] if rows else None;p=projection()
++     return body if body and p and p['phase']=='Coherent' and body['publication']==p['publication'] else None
++    def attention_facts():return client.scene_facts('445',attention=True)
++    def marker(label,state):
++     body=bar_body()
++     return next((b for b in body['buttons'] if b['accessibleName'].startswith(('Activate '+label+';','Minimize '+label+';')) and state in b['accessibleName']),None) if body else None
++    before_native=attention_facts();before_window=len(journal());origin=before_native['facts']['focused'];before_member=sorted((w['incarnation'],w['workspace'],w['monitor']) for w in before_native['facts']['windows'])
++    check('AttentionFixtureTargetIsInitiallyInactive',origin!=target and not next(w for w in before_native['facts']['windows'] if w['incarnation']==target)['attention'],facts=before_native)
++    temp=peer_control.with_suffix('.tmp');temp.write_text(json.dumps({'op':'request-attention'}));temp.replace(peer_control)
++    observed=wait(lambda:(value:=attention_facts()) and next(w for w in value['facts']['windows'] if w['incarnation']==target)['attention'] and value)
++    attention=wait(lambda:marker('ELM-ACTIVATION-PEER','Attention; Open'));active=wait(lambda:marker('ELM-AUTHORITY-FIXTURE','Active'))
++    check('OriginalNativeAttentionDiffersFromActiveAccessibleState','Attention; Open' in attention['accessibleName'] and '; Active' in active['accessibleName'],attention=attention,active=active,facts=observed)
++    check('NativeAttentionRequestDoesNotStealFocusOrSubmitWindowEffect',observed['facts']['focused']==origin and len(journal())==before_window)
++    image=OUTPUT/'taskbar-native-attention.png';helper(['/usr/bin/grim',str(image)])
++    import gi;gi.require_version('GdkPixbuf','2.0');from gi.repository import GdkPixbuf
++    pix=GdkPixbuf.Pixbuf.new_from_file(str(image));pixels=pix.get_pixels();stride=pix.get_rowstride();channels=pix.get_n_channels()
++    def colors(button):
++     left,top=max(0,int(button['x'])),max(0,int(button['y']));right,bottom=min(800,int(button['x']+button['width'])),min(48,int(button['y']+button['height']));amber=blue=0
++     for y in range(top,bottom):
++      for x in range(left,right):
++       at=y*stride+x*channels;r,g,b=pixels[at:at+3];amber+=r>200 and g>140 and b<160;blue+=b>180 and g>160 and r<180
++     return {'amberPixels':amber,'bluePixels':blue,'region':[left,top,right,bottom],'area':max(0,right-left)*max(0,bottom-top)}
++    attention_pixels=colors(attention);active_pixels=colors(active)
++    check('OriginalNativeAttentionAndActiveIndicatorsDifferInPixels',attention_pixels['amberPixels']>30 and active_pixels['bluePixels']>30 and attention_pixels['amberPixels']>active_pixels['amberPixels'],attention=attention_pixels,active=active_pixels,image=str(image),sha256=sha(image))
++    report['nativeAttentionImage']={'path':str(image),'sha256':sha(image),'attention':attention,'active':active,'pixelCounts':{'attention':attention_pixels,'active':active_pixels}}
++    check('NativeAttentionPreservesIdentityAndMembership',sorted((w['incarnation'],w['workspace'],w['monitor']) for w in observed['facts']['windows'])==before_member)
++    check('AttentionTargetActualHitTargetIsVisible',attention['x']>=0 and attention['x']+attention['width']<=800 and attention['y']>=0 and attention['y']+attention['height']<=48,button=attention)
++    click({'visible':True,'point':[attention['x']+attention['width']/2,attention['y']+attention['height']/2]})
++    wait(lambda:attention_facts()['facts']['focused']==target)
++    wait(lambda:marker('ELM-ACTIVATION-PEER','Active'))
++    final=attention_facts();check('ActivatingAttentionTargetShowsObservedActiveAndClearsUrgency',not next(w for w in final['facts']['windows'] if w['incarnation']==target)['attention'] and len(journal())==before_window+1,facts=final,requests=journal()[before_window:])
++    before_events=len(peer_control.with_suffix('.events.jsonl').read_text().splitlines());helper([str(keyboard)],'key 30 1\nsleep 50\nkey 30 0\nsleep 100\nsync\n')
++    delivered=[json.loads(line) for line in peer_control.with_suffix('.events.jsonl').read_text().splitlines()[before_events:]]
++    check('ActivatedAttentionTargetReceivesActualKeyboardInput',any(e['kind']=='key' and e['keyval']==97 and e['window']=='ELM-ACTIVATION-PEER' for e in delivered),events=delivered)
++    report['nativeAttentionFacts']={'before':before_native,'attention':observed,'afterActivation':final};report['nativeAttentionObserved']=True
++   elif PRIMARY and not PINMENUS:
+     keyboard=pathlib.Path('/home/hoskinson/window-integration-qa/orca-reader/physical-commands/evdev-keyboard');report['keyboard']={'path':str(keyboard),'sha256':sha(keyboard)}
+     roots=client.snapshot('443')['windows'];companion=next(w['incarnation'] for w in roots if w['label']=='ELM-AUTHORITY-FIXTURE')
+     check('DistinctSingleFamilyApplicationIdentities',len(roots)==2 and len({w['application'] for w in roots})==2,windows=roots)
+@@ -398,7 +443,7 @@ raise SystemExit(daemon.run())
+      body=rows[-1] if rows else None;p=projection()
+      if not body or not p or p['phase']!='Coherent' or body['publication']!=p['publication']:return None
+      operation='Restore' if minimized else 'Minimize' if focus==target else 'Activate'
+-     button=next((b for b in body['buttons'] if b['accessibleName']==operation+' ELM-ACTIVATION-PEER' and not b['disabled']),None)
++     button=next((b for b in body['buttons'] if b['accessibleName'].startswith(operation+' ELM-ACTIVATION-PEER;') and not b['disabled']),None)
+      cue='Minimized' if minimized else 'Active' if focus==target else 'Open'
+      return (body,button,cue) if button and cue in button['label'] else None
+     def capture(stage,minimized):
+diff --git c/implementation/warlock/src/ActionProjection.elm w/implementation/warlock/src/ActionProjection.elm
+index 14751af..9603317 100644
+--- c/implementation/warlock/src/ActionProjection.elm
++++ w/implementation/warlock/src/ActionProjection.elm
+@@ -6,13 +6,15 @@ import UInt64 exposing (Counter)
+ 
+ -- Coherent window-action facts only; never canonical paint/input admission.
+ type Admitted = Admitted Counter (Maybe Counter) (List Window) (Dict String Counter)
+-type alias Window = { incarnation : Counter, label : String, minimized : Bool, owner : Maybe Counter, application : String, available : Bool }
++type alias Window = { incarnation : Counter, label : String, minimized : Bool, owner : Maybe Counter, application : String, available : Bool, attention : Bool }
+ strict fields decoder = D.keyValuePairs D.value |> D.andThen (\pairs -> if List.sort (List.map Tuple.first pairs) == List.sort fields then decoder else D.fail "Unexpected projection fields")
+ nonzero = UInt64.decoder |> D.andThen (\v -> if v == UInt64.zero then D.fail "Zero identity" else D.succeed v)
+ bounded = D.value |> D.andThen (\v -> case D.decodeValue (D.index 256 D.value) v of
+     Ok _ -> D.fail "Window bound"
+     Err _ -> D.list windowDecoder)
+-windowDecoder = strict ["incarnation","label","minimized","owner","application","available"] (D.map6 Window (D.field "incarnation" nonzero) (D.field "label" D.string) (D.field "minimized" D.bool) (D.field "owner" (D.nullable nonzero)) (D.field "application" D.string) (D.field "available" D.bool))
++windowDecoder = D.oneOf
++    [ strict ["incarnation","label","minimized","owner","application","available","attention"] (D.map7 Window (D.field "incarnation" nonzero) (D.field "label" D.string) (D.field "minimized" D.bool) (D.field "owner" (D.nullable nonzero)) (D.field "application" D.string) (D.field "available" D.bool) (D.field "attention" D.bool))
++    , strict ["incarnation","label","minimized","owner","application","available"] (D.map7 Window (D.field "incarnation" nonzero) (D.field "label" D.string) (D.field "minimized" D.bool) (D.field "owner" (D.nullable nonzero)) (D.field "application" D.string) (D.field "available" D.bool) (D.succeed False)) ]
+ find identity rows = rows |> List.filter (\w -> w.incarnation == identity) |> List.head
+ rootIn fuel identity rows =
+     if fuel <= 0 then Nothing else
+@@ -39,5 +41,5 @@ rootOf identity (Admitted _ _ _ cache) = Dict.get (UInt64.string identity) cache
+ minimized identity projection = find identity (windows projection) |> Maybe.map .minimized
+ actionable identity projection = find identity (windows projection) |> Maybe.map .available |> Maybe.withDefault False
+ sameState left right =
+-    let state projection = windows projection |> List.sortWith (\a b -> UInt64.compare a.incarnation b.incarnation) |> List.map (\w -> ( w.incarnation, (w.minimized,w.owner), (w.application,w.available) ))
++    let state projection = windows projection |> List.sortWith (\a b -> UInt64.compare a.incarnation b.incarnation) |> List.map (\w -> ( w.incarnation, (w.minimized,w.owner), (w.application,(w.available,w.attention)) ))
+     in focused left == focused right && state left == state right
+diff --git c/implementation/warlock/src/Surface.elm w/implementation/warlock/src/Surface.elm
+index abcf08b..efb59e9 100644
+--- c/implementation/warlock/src/Surface.elm
++++ w/implementation/warlock/src/Surface.elm
+@@ -266,13 +266,15 @@ barControls model =
+                     Taskbar.Picker -> "Choose a window from "
+                     _ -> "Unavailable "
+                 label = group.families |> List.head |> Maybe.map .label |> Maybe.withDefault "Windows"
++                attention = List.any .attention group.families && not (List.any .active group.families)
+                 state = case group.families of
+                     [family] ->
+                         if family.minimized then "Minimized"
+                         else if family.active then "Active"
+                         else "Open"
+                     _ -> String.fromInt (List.length group.families) ++ " windows"
+-            in {id="bar:group:" ++ group.key,domId=scoped |> Maybe.map (\stamp -> "group:" ++ Shell.stampKey stamp ++ ":" ++ group.key) |> Maybe.withDefault "detached-group",label=label,ariaLabel=operation ++ label ++ (if blocked then "; awaiting native confirmation" else ""),detail=if blocked then "Awaiting native confirmation" else state,enabled=ready,message=if ready then scoped |> Maybe.map (\stamp -> Desktop.Window (TaskbarShell.Primary stamp group.key)) else Nothing}
++                observedState = if attention then "Attention; "++state else state
++            in {id="bar:group:" ++ group.key,domId=scoped |> Maybe.map (\stamp -> "group:" ++ Shell.stampKey stamp ++ ":" ++ group.key) |> Maybe.withDefault "detached-group",label=label,ariaLabel=operation ++ label ++ "; " ++ observedState ++ (if blocked then "; awaiting native confirmation" else ""),detail=if blocked then "Awaiting native confirmation; " ++ observedState else observedState,enabled=ready,message=if ready then scoped |> Maybe.map (\stamp -> Desktop.Window (TaskbarShell.Primary stamp group.key)) else Nothing}
+         pinIds = Desktop.pinIdentities model
+         owners group = pinIds |> List.filter (\identity -> Desktop.pinnedGroup identity model |> Maybe.map (\matched -> matched.key==group.key) |> Maybe.withDefault False)
+         pinControl identity =
+@@ -292,7 +294,9 @@ barControls model =
+         ordinaryGroups=TaskbarShell.groups model.windows |> List.filter (\group -> List.length (owners group)/=1)
+         reconnect = {id="bar:reconnect",domId="reconnect",label="Reconnect",ariaLabel="Reconnect to the window system",detail="",enabled=not model.windows.shell.reconnecting,message=Just (Desktop.Window (TaskbarShell.Native Shell.Reconnect))}
+         retry = {id="bar:refresh-windows",domId=Desktop.key model "refresh-windows",label="Refresh windows",ariaLabel="Refresh windows",detail="",enabled=model.choice==Nothing,message=Just Desktop.RetryWindows}
+-    in (if model.windows.shell.phase==Shell.Detached then reconnect else application) :: overview :: switcher :: {id="bar:notifications",domId=Desktop.key model "notifications:opener",label="Notifications"++(model.notifications.snapshot |> Maybe.map (\snapshot -> let count=List.length (List.filter (\entry -> entry.state=="live") snapshot.entries) in if count==0 then "" else " · "++String.fromInt count) |> Maybe.withDefault ""),ariaLabel="Open notifications",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenNotifications} :: {id="bar:files",domId=Desktop.key model "files:opener",label="Files",ariaLabel="Open Files menu",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenFiles} :: {id="bar:system",domId=Desktop.key model "system:opener",label="System",ariaLabel="Open system menu",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenSystemMenu} :: {id="bar:settings",domId=Desktop.key model "settings:opener",label="Settings",ariaLabel="Open settings",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenSettings} :: List.map pinControl pinIds ++ List.map groupControl ordinaryGroups ++ (if not (String.isEmpty model.choiceNotice) && model.windows.shell.phase/=Shell.Detached then [retry] else []) ++ (if recoveryNeeded model && model.windows.shell.phase/=Shell.Detached then [recoveryControl "bar:recovery-refresh" model] else [])
++        utilities = (if model.windows.shell.phase==Shell.Detached then reconnect else application) :: overview :: switcher :: {id="bar:notifications",domId=Desktop.key model "notifications:opener",label="Notifications"++(model.notifications.snapshot |> Maybe.map (\snapshot -> let count=List.length (List.filter (\entry -> entry.state=="live") snapshot.entries) in if count==0 then "" else " · "++String.fromInt count) |> Maybe.withDefault ""),ariaLabel="Open notifications",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenNotifications} :: {id="bar:files",domId=Desktop.key model "files:opener",label="Files",ariaLabel="Open Files menu",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenFiles} :: {id="bar:system",domId=Desktop.key model "system:opener",label="System",ariaLabel="Open system menu",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenSystemMenu} :: {id="bar:settings",domId=Desktop.key model "settings:opener",label="Settings",ariaLabel="Open settings",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenSettings} :: []
++        applications = List.map pinControl pinIds ++ List.map groupControl ordinaryGroups
++    in (if model.windows.shell.phase==Shell.Detached then utilities++applications else applications++utilities) ++ (if not (String.isEmpty model.choiceNotice) && model.windows.shell.phase/=Shell.Detached then [retry] else []) ++ (if recoveryNeeded model && model.windows.shell.phase/=Shell.Detached then [recoveryControl "bar:recovery-refresh" model] else [])
+ 
+ notice : Desktop.Model -> String
+ notice model =
+diff --git c/implementation/warlock/src/SurfaceRenderer.elm w/implementation/warlock/src/SurfaceRenderer.elm
+index 9860b89..5de7f32 100644
+--- c/implementation/warlock/src/SurfaceRenderer.elm
++++ w/implementation/warlock/src/SurfaceRenderer.elm
+@@ -86,7 +86,7 @@ viewWithPreview preview popup send ((Snapshot snapshot) as current) =
+             else if popup && List.member snapshot.mode ["applications","files"] && item.identity==fieldIdentity current then
+                 let event = D.map2 (\query composing -> (query,composing)) (D.at ["target","value"] D.string) (D.oneOf [D.field "isComposing" D.bool,D.succeed False]) |> D.andThen (\(query,composing) -> D.succeed (send (E.object [("surfaceProtocol",E.int 2),("kind",E.string (if composing then "surface-preedit" else "surface-query")),("surface",E.string "popup"),("publication",E.string (UInt64.string snapshot.publication)),("lease",E.string (UInt64.string snapshot.lease)),("id",E.string item.identity),("query",E.string query)])))
+                 in input [class "launcher-search",id item.domId,type_ (if snapshot.mode=="files" then "text" else "search"),placeholder (if snapshot.mode=="files" then "/path/to/folder or ~/Documents" else "Search applications"),value item.label,attribute "aria-label" item.ariaLabel,attribute "data-surface-field" item.identity,attribute "autocomplete" "off",disabled (not item.enabled),on "input" event,on "compositionend" event] []
+-            else button [class kind,id item.domId,attribute "aria-label" item.ariaLabel,disabled (not item.enabled),attribute "data-surface-control" item.identity,attribute "role" (if popup && snapshot.mode=="menu" then "menuitem" else "button"),attribute "aria-current" (if popup && List.member snapshot.mode ["menu","switcher","snap","settings","notifications","system","files","jump"] && item.detail=="Selected" then "true" else "false")] [preview item.identity,span [class "control-label"] [text item.label],span [class "control-detail"] [text item.detail]]
++            else button [class kind,id item.domId,attribute "data-window-state" (if kind/="control-group" then "none" else if String.contains "Attention; " item.detail then "attention" else if String.contains "Active" item.detail then "active" else if String.contains "Minimized" item.detail then "minimized" else "open"),attribute "aria-label" item.ariaLabel,disabled (not item.enabled),attribute "data-surface-control" item.identity,attribute "role" (if popup && snapshot.mode=="menu" then "menuitem" else "button"),attribute "aria-current" (if (not popup && kind=="control-group" && String.contains "Active" item.detail && not (String.contains "Attention; " item.detail)) || (popup && List.member snapshot.mode ["menu","switcher","snap","settings","notifications","system","files","jump"] && item.detail=="Selected") then "true" else "false")] [preview item.identity,span [class "control-label"] [text item.label],span [class "control-detail"] [text item.detail]]
+         familyPrefix rows = case rows of
+             first :: rest -> if String.startsWith "overview:family:" first.identity then first :: familyPrefix rest else []
+             [] -> []
+diff --git c/implementation/warlock/src/Taskbar.elm w/implementation/warlock/src/Taskbar.elm
+index e1245e0..96a1eb1 100644
+--- c/implementation/warlock/src/Taskbar.elm
++++ w/implementation/warlock/src/Taskbar.elm
+@@ -5,7 +5,7 @@ import Effects
+ import Json.Encode as E
+ import UInt64 exposing (Counter)
+ 
+-type alias Family = { root : Counter, label : String, application : String, minimized : Bool, available : Bool, active : Bool }
++type alias Family = { root : Counter, label : String, application : String, minimized : Bool, available : Bool, active : Bool, attention : Bool }
+ type alias Group = { key : String, families : List Family }
+ type Decision = Launch | Picker | Apply Effects.Operation Counter | Unavailable
+ 
+@@ -17,7 +17,7 @@ groups projection =
+         family root =
+             let members = List.filter (\w -> Projection.rootOf w.incarnation projection == Just root.incarnation) rows
+                 key = if String.isEmpty root.application then "window:" ++ UInt64.string root.incarnation else "application:" ++ root.application
+-            in (key,{root=root.incarnation,label=root.label,application=root.application,minimized=root.minimized,available=List.all .available members,active=activeRoot==Just root.incarnation})
++            in (key,{root=root.incarnation,label=root.label,application=root.application,minimized=root.minimized,available=List.all .available members,active=activeRoot==Just root.incarnation,attention=List.any .attention members})
+         add (key,entry) accumulated =
+             if List.any (\g -> g.key == key) accumulated then List.map (\g -> if g.key == key then {g | families=g.families ++ [entry]} else g) accumulated
+             else accumulated ++ [{key=key,families=[entry]}]
+@@ -35,4 +35,4 @@ selection entry =
+     if not entry.available then Unavailable
+     else Apply (if entry.minimized then Effects.Restore else Effects.Activate) entry.root
+ encode projection =
+-    E.list (\group -> E.object [("key",E.string group.key),("families",E.list (\f -> E.object [("root",E.string (UInt64.string f.root)),("label",E.string f.label),("minimized",E.bool f.minimized),("active",E.bool f.active),("available",E.bool f.available)]) group.families)]) (groups projection)
++    E.list (\group -> E.object [("key",E.string group.key),("families",E.list (\f -> E.object [("root",E.string (UInt64.string f.root)),("label",E.string f.label),("minimized",E.bool f.minimized),("active",E.bool f.active),("attention",E.bool f.attention),("available",E.bool f.available)]) group.families)]) (groups projection)
+diff --git 1/implementation/warlock/qa/AttentionReplay.elm 2/implementation/warlock/qa/AttentionReplay.elm
+new file mode 100644
+index 0000000..fdf1c86
+--- /dev/null
++++ 2/implementation/warlock/qa/AttentionReplay.elm
+@@ -0,0 +1,54 @@
++port module AttentionReplay exposing (main)
++import ActionProjection as Scene
++import Binding
++import Desktop
++import Effects
++import Json.Decode as D
++import Json.Encode as E
++import Platform
++import Shell
++import Surface
++import SurfaceRenderer
++import Taskbar
++import UInt64
++port outgoing : E.Value -> Cmd msg
++counter value=D.decodeValue UInt64.decoder (E.string value) |> Result.withDefault UInt64.zero
++one=counter "1"
++context={lifetime=one,epoch=one,output=one,revision=one}
++bound=E.object [("lifetime",E.string "1"),("session",E.string "1"),("frontend",E.string "1")]
++window id name owner minimized attention=E.object [("incarnation",E.string id),("label",E.string name),("application",E.string name),("owner",owner),("minimized",E.bool minimized),("available",E.bool True),("attention",E.bool attention)]
++raw revision focus inputRows=E.object [("revision",E.string revision),("focused",focus),("windows",E.list identity inputRows)]
++rows requested=[window "1" "Active Window" E.null False False,window "2" "Attention Window" E.null False requested]
++base requested focus=
++ let initial=Desktop.initial
++     windows=initial.windows
++     shell=windows.shell
++     effects=shell.effects
++     scene=Scene.decode (raw "1" focus (rows requested)) |> Result.toMaybe
++ in {initial | windows={windows | shell={shell | binding=D.decodeValue Binding.decoder bound |> Result.toMaybe,phase=Shell.Ready,effects={effects | connected=True,observed=scene |> Maybe.map (\s -> {context=context,scene=s})}}}}
++result=
++ let current=base True (E.string "1")
++     ordinary=base False (E.string "1")
++     active=base True (E.string "2")
++     group name model=Surface.packet one one model |> D.decodeValue (D.field "bar" (D.list (D.map3 (\label ariaLabel detail -> {label=label,ariaLabel=ariaLabel,detail=detail}) (D.field "label" D.string) (D.field "ariaLabel" D.string) (D.field "detail" D.string)))) |> Result.withDefault [] |> List.filter (\c -> c.label==name) |> List.head
++     nativeScene=Scene.decode (raw "1" (E.string "1") (rows True))
++     legacy=rows False |> List.map (\value -> D.decodeValue (D.keyValuePairs D.value) value |> Result.withDefault [] |> List.filter (Tuple.first >> (/=) "attention") |> E.object)
++     malformed=rows True |> List.map (\value -> D.decodeValue (D.keyValuePairs D.value) value |> Result.withDefault [] |> List.map (\(key,v) -> (key,if key=="attention" then E.int 1 else v)) |> E.object)
++     effects=current.windows.shell.effects
++     (stale,_,failure)=Effects.apply (E.object [("kind",E.string "snapshot"),("context",E.object [("lifetime",E.string "1"),("epoch",E.string "1"),("output",E.string "1"),("revision",E.string "1")]),("scene",raw "1" (E.string "1") (rows False))]) effects
++     family=Scene.decode (raw "1" E.null [window "1" "Parent" E.null False False,window "2" "Child" (E.string "1") False True]) |> Result.map Taskbar.groups |> Result.withDefault []
++     check name yes=(name,E.bool yes)
++     checks=[check "NativeAttentionDecoded" (nativeScene |> Result.map (Scene.windows >> List.any .attention) |> Result.withDefault False)
++       ,check "LegacyObservationDefaultsToNoAttention" (Scene.decode (raw "1" (E.string "1") legacy) |> Result.map (Scene.windows >> List.all (.attention >> not)) |> Result.withDefault False)
++       ,check "NonBooleanAttentionRefused" (Scene.decode (raw "1" (E.string "1") malformed) |> Result.toMaybe |> (==) Nothing)
++       ,check "OriginalAttentionDistinctFromActive" (Maybe.map .detail (group "Attention Window" current)==Just "Attention; Open" && Maybe.map .detail (group "Active Window" current)==Just "Active")
++       ,check "AttentionAccessibleStateIsNamed" (group "Attention Window" current |> Maybe.map (\c -> String.contains "Attention" c.ariaLabel) |> Maybe.withDefault False)
++       ,check "ActiveAccessibleStateIsNamed" (group "Active Window" current |> Maybe.map (\c -> String.contains "Active" c.ariaLabel) |> Maybe.withDefault False)
++       ,check "AttentionClearsOnlyWithObservation" (Maybe.map .detail (group "Attention Window" ordinary)==Just "Open")
++       ,check "ActiveIndicatorWinsOverAttention" (Maybe.map .detail (group "Attention Window" active)==Just "Active")
++       ,check "ModalAttentionAggregatesOnce" (List.length family==1 && (family |> List.concatMap .families |> List.head |> Maybe.map .attention)==Just True)
++       ,check "ContradictorySameRevisionCannotClearAttention" (stale==effects && failure/=Nothing)
++       ,check "SameStateIncludesAttention" ((Maybe.map2 (\a b -> Scene.sameState a.scene b.scene) effects.observed ordinary.windows.shell.effects.observed)==Just False)
++       ,check "ActualSurfaceRendererAcceptsAttentionFrame" (SurfaceRenderer.decode (Surface.packet one one current) |> Result.map (\_ -> True) |> Result.withDefault False)]
++ in E.object [("checks",E.object checks),("frame",Surface.packet one one current),("clearFrame",Surface.packet (counter "2") one ordinary),("activeFrame",Surface.packet (counter "3") one active)]
++main=Platform.worker {init=\() -> ((),outgoing result),update=\_ state -> (state,Cmd.none),subscriptions=\_ -> Sub.none}
+diff --git 1/implementation/warlock/qa/check-attention.py 2/implementation/warlock/qa/check-attention.py
+new file mode 100644
+index 0000000..850bcaf
+--- /dev/null
++++ 2/implementation/warlock/qa/check-attention.py
+@@ -0,0 +1,29 @@
++"""Changed native schema/coherent join checks. Physical native evidence is separate."""
++import copy,json,pathlib,sys
++ROOT=pathlib.Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'adapter'))
++from effect_endpoint import Endpoint
++from taskbar_projection import coherent_scene
++from endpoint import Refused
++bound={'lifetime':'1','session':'1','frontend':'1'}
++window={'incarnation':'1','owner':None,'application':'Editor','stackPosition':0,'workspace':'1','monitor':'0','geometry':[0,0,300,200],'fullscreenMode':0,**{key:False for key in ['hidden','pinned','allowedOverFullscreen','renderOverFullscreen','minimized']},**{key:True for key in ['workspaceVisible','acceptsInput','shouldRenderAny','shouldRenderOwnMonitor']},'attention':True}
++reply={'protocolVersion':3,'kind':'scene-facts','binding':bound,'requestId':'1','sequence':'1','revision':'1','outputGeneration':'1','attentionProtocol':1,'facts':{'focused':None,'windows':[window]}}
++checks=[]
++def check(name,condition):assert condition,name;checks.append(name)
++class Client(Endpoint):
++ def __init__(self,value):self.bound=bound;self.value=value;self.submitted=None
++ def request(self,value):self.submitted=value;return copy.deepcopy(self.value)
++client=Client(reply);before=client.scene_facts('1',attention=True)
++check('Attention read explicitly negotiates version one',client.submitted['attentionProtocol']==1 and before['facts']['windows'][0]['attention'])
++snapshot={'windows':[{'incarnation':'1','application':'Editor','label':'Editor document','minimized':False}]}
++check('Attention joins its exact incarnation',coherent_scene(before,snapshot,before)['windows'][0]['attention'])
++changed=copy.deepcopy(before);changed['facts']['windows'][0]['attention']=False
++check('Contradictory same revision facts are unavailable',coherent_scene(before,snapshot,changed) is None)
++changed['revision']='2';check('Cross revision attention never joins',coherent_scene(before,snapshot,changed) is None)
++changed=copy.deepcopy(before);changed['facts']['windows'][0]['incarnation']='2';check('Foreign incarnation never borrows attention',coherent_scene(before,snapshot,changed) is None)
++legacy=copy.deepcopy(reply);legacy.pop('attentionProtocol');legacy['facts']['windows'][0].pop('attention');client=Client(legacy);old=client.scene_facts('1')
++check('Original native read shape remains supported','attentionProtocol' not in client.submitted and 'attention' not in coherent_scene(old,snapshot,old)['windows'][0])
++for name,transform in [('Downgrade refused',lambda value:value.pop('attentionProtocol')),('Boolean version refused',lambda value:value.update(attentionProtocol=True)),('Nonboolean native attention refused',lambda value:value['facts']['windows'][0].update(attention=1)),('Missing attention refused',lambda value:value['facts']['windows'][0].pop('attention')),('Unknown window fields refused',lambda value:value['facts']['windows'][0].update(exec='/usr/bin/false'))]:
++ value=copy.deepcopy(reply);transform(value)
++ try:Client(value).scene_facts('1',attention=True);raise AssertionError(name)
++ except Refused:checks.append(name)
++print(json.dumps({'passed':True,'checks':checks,'nativeAcceptance':False,'scope':'Changed strict native observation decoder and production coherent scene join; physical native urgency/pixels separate.'}))
+diff --git 1/implementation/warlock/qa/attention-browser.mjs 2/implementation/warlock/qa/attention-browser.mjs
+new file mode 100644
+index 0000000..51c0069
+--- /dev/null
++++ 2/implementation/warlock/qa/attention-browser.mjs
+@@ -0,0 +1,56 @@
++import {spawn} from 'node:child_process';
++import fs from 'node:fs';
++import path from 'node:path';
++const [base,out,binary]=process.argv.slice(2), report={passed:false,checks:[],captures:[],errors:[],externalRequests:[],nativeAcceptance:false,fullReleaseAccepted:false};
++const sleep=ms=>new Promise(r=>setTimeout(r,ms));
++const browser=spawn(binary,['--remote-debugging-address=127.0.0.1','--remote-debugging-port=0','--user-data-dir='+path.join(out,'profile'),'--disable-gpu','--disable-breakpad','--disable-crash-reporter','--no-first-run','about:blank'],{stdio:['ignore','pipe','pipe']});
++let stderr='',stdout='',ws,session,sequence=0,pending=new Map();
++browser.stderr.on('data',v=>stderr+=v);browser.stdout.on('data',v=>stdout+=v);
++function call(method,params={},sessionId=session){return new Promise((resolve,reject)=>{const id=++sequence;const timer=setTimeout(()=>{pending.delete(id);reject(new Error('CDP timeout '+method));},15000);pending.set(id,{resolve,reject,timer});ws.send(JSON.stringify({id,method,params,...(sessionId?{sessionId}:{})}));});}
++function check(name,condition,detail){if(!condition)throw Error(name+' '+JSON.stringify(detail));report.checks.push({name,detail});}
++async function evaluate(expression){const r=await call('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error(JSON.stringify(r.exceptionDetails));return r.result.value;}
++async function until(expression){for(let i=0;i<100;i++){if(await evaluate(expression))return;await sleep(30);}throw Error('Condition timeout '+expression);}
++async function click(selector){const rect=await evaluate(`(()=>{const b=document.querySelector(${JSON.stringify(selector)});b.scrollIntoView({block:'center'});const r=b.getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2};})()`);await call('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',clickCount:1,...rect});await call('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',clickCount:1,...rect});await sleep(60);}
++async function route(name){await evaluate('location.hash='+JSON.stringify(name));await until('!!document.querySelector("main h1") && location.hash === '+JSON.stringify('#'+name));await sleep(100);}
++async function viewport(width,height=980){await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false});await sleep(80);}
++async function capture(name){await evaluate('document.fonts.ready');const r=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});fs.writeFileSync(path.join(out,name+'.png'),Buffer.from(r.data,'base64'));report.captures.push(name+'.png');}
++async function observation(){return evaluate('window.fixtureObservation');}
++try{
++ let match;for(let i=0;i<100;i++){match=stderr.match(/DevTools listening on (ws:\/\/[^\s]+)/);if(match)break;if(browser.exitCode!==null)throw Error('Browser exited '+browser.exitCode+' '+stderr);await sleep(30);}if(!match)throw Error('No DevTools endpoint '+stderr);
++ ws=new WebSocket(match[1]);await new Promise((resolve,reject)=>{ws.onopen=resolve;ws.onerror=reject;});
++ ws.onmessage=event=>{const m=JSON.parse(event.data);if(m.id){const p=pending.get(m.id);if(p){pending.delete(m.id);clearTimeout(p.timer);m.error?p.reject(Error(JSON.stringify(m.error))):p.resolve(m.result);}}else if(m.method==='Runtime.exceptionThrown')report.errors.push(m.params.exceptionDetails);};
++ const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;
++
++
++ await call('Page.enable');await call('Runtime.enable');await viewport(640,620);
++ await call('Page.addScriptToEvaluateOnNewDocument',{source:'window.nativePackets=[];window.webkit={messageHandlers:{native:{postMessage:text=>nativePackets.push(JSON.parse(text))}}};'});
++ await call('Page.navigate',{url:base+'/assets/bar.html'});await until('!!window.receivePresentation');
++ const packet=JSON.parse(fs.readFileSync(path.join(out,'attention.json'),'utf8'));
++ await viewport(800,160);packet.frame.status='Connected';await evaluate('receivePresentation('+JSON.stringify(packet.frame)+')');await until(`document.querySelector('.surface-bar')?.dataset.publication==="1"`);
++ const observed=await evaluate(`(()=>{const rows=[...document.querySelectorAll('.control-group')];return rows.map(b=>({name:b.getAttribute('aria-label'),state:b.dataset.windowState,detail:b.querySelector('.control-detail').textContent,border:getComputedStyle(b).borderTopColor,shadow:getComputedStyle(b).boxShadow,background:getComputedStyle(b).backgroundColor}));})()`);
++ const active=observed.find(row=>row.state==='active'),attention=observed.find(row=>row.state==='attention');
++ check('Original active and attention have distinct visible color and shape',active&&attention&&active.border!==attention.border&&active.shadow!==attention.shadow&&active.background!==attention.background,observed);
++ check('Original accessible state distinguishes attention from active',attention.name.includes('Attention; Open')&&active.name.includes('Active'),observed);
++ check('Active is the current application and attention remains inactive',await evaluate(`document.querySelector('[data-window-state="active"]').getAttribute('aria-current')==='true' && document.querySelector('[data-window-state="attention"]').getAttribute('aria-current')==='false'`));
++ check('Application indicators remain visible before utilities with status present',await evaluate(`(()=>{const area=document.querySelector('.surface-actions').getBoundingClientRect();return [...document.querySelectorAll('.control-group')].every(b=>{const r=b.getBoundingClientRect();return r.left>=area.left&&r.right<=area.right;})&&document.querySelector('.surface-actions').firstElementChild.matches('.control-group');})()`));
++ await capture('attention-active-native-view');
++ check('State has no animated attention flashing',await evaluate(`[...document.querySelectorAll('.control-group')].every(b=>getComputedStyle(b).animationName==='none')`));
++ await evaluate('receivePresentation('+JSON.stringify(packet.clearFrame)+')');await until(`document.querySelector('.surface-bar')?.dataset.publication==="2"`);
++ check('New observation removes attention highlight and label',await evaluate(`!document.querySelector('[data-window-state="attention"]')&&!document.querySelector('[aria-label*="Attention; Open"]')`));
++ await evaluate('receivePresentation('+JSON.stringify(packet.activeFrame)+')');await until(`document.querySelector('.surface-bar')?.dataset.publication==="3"`);
++ check('Native active state takes priority over remaining urgency',await evaluate(`!document.querySelector('[data-window-state="attention"]')&&document.querySelector('[data-window-state="active"]').textContent.includes('Attention Window')`));
++ const dusk=structuredClone(packet.frame);dusk.publication='4';dusk.appearance={...dusk.appearance,theme:'dawn'};
++ await evaluate('receivePresentation('+JSON.stringify(dusk)+')');await until(`document.querySelector('.surface-bar')?.dataset.publication==="4"`);
++ check('Dawn attention has its documented darker amber border',await evaluate(`getComputedStyle(document.querySelector('[data-window-state="attention"]')).borderTopColor==='rgb(140, 78, 0)'`));
++ await call('Emulation.setEmulatedMedia',{features:[{name:'forced-colors',value:'active'}]});
++ check('Forced colors preserves different edge shapes',await evaluate(`getComputedStyle(document.querySelector('[data-window-state="attention"]')).borderTopWidth==='4px'&&getComputedStyle(document.querySelector('[data-window-state="active"]')).borderBottomWidth==='4px'`));
++ check('Observing attention never submits an application or window effect',await evaluate(`!nativePackets.some(p=>p.kind==='window-effect'||p.kind==='application-launch')`));
++ check('No browser exceptions',report.errors.length===0,report.errors);report.passed=true;
++}catch(error){report.error=String(error.stack||error);}
++finally{
++ if(ws?.readyState===1){try{await call('Browser.close',{},null);}catch(_){}ws.close();}
++ for(let i=0;i<100&&browser.exitCode===null;i++)await sleep(20);if(browser.exitCode===null)browser.kill('SIGTERM');
++ await new Promise(resolve=>{if(browser.exitCode!==null)resolve();else browser.once('exit',resolve);});report.browserExitCode=browser.exitCode;
++ fs.writeFileSync(path.join(out,'browser.stderr'),stderr);fs.writeFileSync(path.join(out,'browser.stdout'),stdout);fs.writeFileSync(path.join(out,'attention-browser.json'),JSON.stringify(report,null,2)+'\n');
++ console.log(JSON.stringify({passed:report.passed,checks:report.checks.length,captures:report.captures,error:report.error}));process.exitCode=report.passed?0:1;
++}

@@ -6,13 +6,15 @@ import UInt64 exposing (Counter)
 
 -- Coherent window-action facts only; never canonical paint/input admission.
 type Admitted = Admitted Counter (Maybe Counter) (List Window) (Dict String Counter)
-type alias Window = { incarnation : Counter, label : String, minimized : Bool, owner : Maybe Counter, application : String, available : Bool }
+type alias Window = { incarnation : Counter, label : String, minimized : Bool, owner : Maybe Counter, application : String, available : Bool, attention : Bool }
 strict fields decoder = D.keyValuePairs D.value |> D.andThen (\pairs -> if List.sort (List.map Tuple.first pairs) == List.sort fields then decoder else D.fail "Unexpected projection fields")
 nonzero = UInt64.decoder |> D.andThen (\v -> if v == UInt64.zero then D.fail "Zero identity" else D.succeed v)
 bounded = D.value |> D.andThen (\v -> case D.decodeValue (D.index 256 D.value) v of
     Ok _ -> D.fail "Window bound"
     Err _ -> D.list windowDecoder)
-windowDecoder = strict ["incarnation","label","minimized","owner","application","available"] (D.map6 Window (D.field "incarnation" nonzero) (D.field "label" D.string) (D.field "minimized" D.bool) (D.field "owner" (D.nullable nonzero)) (D.field "application" D.string) (D.field "available" D.bool))
+windowDecoder = D.oneOf
+    [ strict ["incarnation","label","minimized","owner","application","available","attention"] (D.map7 Window (D.field "incarnation" nonzero) (D.field "label" D.string) (D.field "minimized" D.bool) (D.field "owner" (D.nullable nonzero)) (D.field "application" D.string) (D.field "available" D.bool) (D.field "attention" D.bool))
+    , strict ["incarnation","label","minimized","owner","application","available"] (D.map7 Window (D.field "incarnation" nonzero) (D.field "label" D.string) (D.field "minimized" D.bool) (D.field "owner" (D.nullable nonzero)) (D.field "application" D.string) (D.field "available" D.bool) (D.succeed False)) ]
 find identity rows = rows |> List.filter (\w -> w.incarnation == identity) |> List.head
 rootIn fuel identity rows =
     if fuel <= 0 then Nothing else
@@ -39,5 +41,5 @@ rootOf identity (Admitted _ _ _ cache) = Dict.get (UInt64.string identity) cache
 minimized identity projection = find identity (windows projection) |> Maybe.map .minimized
 actionable identity projection = find identity (windows projection) |> Maybe.map .available |> Maybe.withDefault False
 sameState left right =
-    let state projection = windows projection |> List.sortWith (\a b -> UInt64.compare a.incarnation b.incarnation) |> List.map (\w -> ( w.incarnation, (w.minimized,w.owner), (w.application,w.available) ))
+    let state projection = windows projection |> List.sortWith (\a b -> UInt64.compare a.incarnation b.incarnation) |> List.map (\w -> ( w.incarnation, (w.minimized,w.owner), (w.application,(w.available,w.attention)) ))
     in focused left == focused right && state left == state right

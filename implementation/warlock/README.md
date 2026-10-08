@@ -157,3 +157,20 @@ exercised; additional taskbar routes, assistive technology and independent
 original-scenario acceptance remain separate. Run focused component checks with
 `qa/check-search.py --jump-lists` through the protected CPU launcher and native
 checks with `qa/native-window-feedback.py --jump-lists` through the v2 loop.
+
+Native attention requests produce an amber top-edge marker and an Attention
+label on an inactive application's taskbar entry. The active application uses a
+blue bottom-edge marker and `aria-current`. Family attention includes eligible
+modal members; native active state takes precedence. The indicators are static,
+with distinct edge shapes in forced colors and darker amber in the Dawn theme.
+Pinned and running applications precede utility controls at the left edge;
+Reconnect remains first when the shell is detached.
+
+Attention is read through the existing native authority's opt-in observation
+version, keyed to the same binding, incarnation and scene revision. Legacy native
+read shapes remain available. Elm joins only coherent bracketing facts and
+rejects contradictory same-revision observations. A click cannot invent attention
+or active state. Actual native GTK attention, visible pixels, activation and key
+recipient checks pass in an isolated desktop; native accessibility consumers and
+independent ELM-UX-009 acceptance remain open. Use `--attention` with the protected
+component and native runners for this slice.

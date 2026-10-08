@@ -5,7 +5,7 @@ import Effects
 import Json.Encode as E
 import UInt64 exposing (Counter)
 
-type alias Family = { root : Counter, label : String, application : String, minimized : Bool, available : Bool, active : Bool }
+type alias Family = { root : Counter, label : String, application : String, minimized : Bool, available : Bool, active : Bool, attention : Bool }
 type alias Group = { key : String, families : List Family }
 type Decision = Launch | Picker | Apply Effects.Operation Counter | Unavailable
 
@@ -17,7 +17,7 @@ groups projection =
         family root =
             let members = List.filter (\w -> Projection.rootOf w.incarnation projection == Just root.incarnation) rows
                 key = if String.isEmpty root.application then "window:" ++ UInt64.string root.incarnation else "application:" ++ root.application
-            in (key,{root=root.incarnation,label=root.label,application=root.application,minimized=root.minimized,available=List.all .available members,active=activeRoot==Just root.incarnation})
+            in (key,{root=root.incarnation,label=root.label,application=root.application,minimized=root.minimized,available=List.all .available members,active=activeRoot==Just root.incarnation,attention=List.any .attention members})
         add (key,entry) accumulated =
             if List.any (\g -> g.key == key) accumulated then List.map (\g -> if g.key == key then {g | families=g.families ++ [entry]} else g) accumulated
             else accumulated ++ [{key=key,families=[entry]}]
@@ -35,4 +35,4 @@ selection entry =
     if not entry.available then Unavailable
     else Apply (if entry.minimized then Effects.Restore else Effects.Activate) entry.root
 encode projection =
-    E.list (\group -> E.object [("key",E.string group.key),("families",E.list (\f -> E.object [("root",E.string (UInt64.string f.root)),("label",E.string f.label),("minimized",E.bool f.minimized),("active",E.bool f.active),("available",E.bool f.available)]) group.families)]) (groups projection)
+    E.list (\group -> E.object [("key",E.string group.key),("families",E.list (\f -> E.object [("root",E.string (UInt64.string f.root)),("label",E.string f.label),("minimized",E.bool f.minimized),("active",E.bool f.active),("attention",E.bool f.attention),("available",E.bool f.available)]) group.families)]) (groups projection)

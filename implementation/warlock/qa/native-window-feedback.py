@@ -4,6 +4,7 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
 lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
 """
 import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
+ATTENTION=sys.argv[1:]==['--attention']
 JUMP=sys.argv[1:]==['--jump-lists']
 FILES=sys.argv[1:]==['--files']
 SYSTEM=sys.argv[1:]==['--system-menu']
@@ -17,7 +18,7 @@ DENSEPICKER=sys.argv[1:]==['--dense-picker'] or DENSEMENU
 DENSE=sys.argv[1:]==['--dense-taskbar']
 SMALL=DENSE or DENSEPICKER
 PINMENUS=sys.argv[1:]==['--pinned-menus'] or DENSE or SNAP
-PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PINMENUS
+PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PINMENUS or ATTENTION
 PRE_READY_RETIRE=sys.argv[1:]==['--switcher-pre-ready-retirement']
 MEMBERSHIP=sys.argv[1:]==['--switcher-membership'] or PRE_READY_RETIRE
 CHORD=sys.argv[1:]==['--switcher-chord'] or MEMBERSHIP
@@ -60,7 +61,7 @@ else:
 for row in pair.values():assert sha(row['path'])==row['sha256']
 assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
 subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
-OUT=ROOT/'qa/runs'/(('native-jump-lists-' if JUMP else 'native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+OUT=ROOT/'qa/runs'/(('native-attention-' if ATTENTION else 'native-jump-lists-' if JUMP else 'native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
 OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
 focus_host=None
 if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
@@ -92,6 +93,9 @@ if PRIMARY:
  assert fixture_source.count(initial)==1 and fixture_source.count('control = Path(sys.argv[1])')==1
  adapted=fixture_source.replace('control = Path(sys.argv[1])',"GLib.set_prgname('warlock-primary-fixture' if sys.argv[2]=='primary' else 'warlock-peer-fixture')\ncontrol = Path(sys.argv[1])")
  adapted=adapted.replace(initial,"create('ELM-AUTHORITY-FIXTURE', 'red') if sys.argv[2]=='primary' else create('ELM-ACTIVATION-PEER', 'green')")
+ if ATTENTION:
+  needle="        elif request['op'] == 'retire-peer':";assert adapted.count(needle)==1
+  adapted=adapted.replace(needle,"        elif request['op'] == 'request-attention':\n            next(iter(windows.values())).present()\n            log(next(iter(windows)), 'attention-requested')\n"+needle)
  original_fixture=FIXTURE;FIXTURE=fixture_inputs/'primary-action-fixture.py';FIXTURE.write_text(adapted)
  primary_fixture={'originalSHA256':sha(original_fixture),'path':str(FIXTURE),'sha256':sha(FIXTURE),'change':'One original colored GTK root per process; distinct program identities create two single-family taskbar entries.'}
 if CHORD:
@@ -109,6 +113,7 @@ if focus_host:report['focusHostAdaptation']=focus_host
 if retirement_fixture:report['retirementFixture']=retirement_fixture
 if primary_fixture:report['primaryFixture']=primary_fixture
 if SEARCH:report.update(requirements=['ELM-UI-005','ELM-UX-029'],scenarios=['search-no-match','search-race','search-refused','launcher-refused'],scope='Actual current query and private catalog, native typing/Enter refusal and no duplicate launch; AT/IME and popup physical presentation acceptance remain pending',popupPresentationAccepted=False)
+if ATTENTION:report.update(requirements=['ELM-UX-009'],scenarios=['ux-009'],scope='Actual GTK activation request while inactive, native bound/revisioned urgency read, distinct visible taskbar indicators and accessible DOM state. Actual AT and independent acceptance remain open.',nativeAttentionObserved=False)
 if JUMP:report.update(requirements=['ELM-UX-010'],scenarios=['ux-010','jump-list-recent-identity'],scope='Physical private native jump list: catalog-declared actions, exact application-bound local XBEL file, actual GIO argv; foreign entries absent. Native negative admission is separate adapter evidence, AT and independent acceptance remain open.',nativeJumpListsObserved=False)
 if FILES:report.update(requirements=['ELM-UX-033'],scenarios=['ux-033'],scope='Actual installed Files explorer in private home/runtime; physical Elm collection choice, exact native instance reuse, location readback, no unchanged file operation source edits. Independent/AT and other-workspace summon acceptance remain open.',nativeFilesObserved=False)
 if SYSTEM:report.update(requirements=['ELM-UX-032'],scenarios=['ux-032'],scope='Actual isolated native menu with current private PipeWire volume and login1 session/power capabilities, unavailable network, physical keyboard changes, readback, confirmation and pixels; real hardware, AT and independent acceptance remain open.',nativeSystemMenuObserved=False)
@@ -134,6 +139,7 @@ LUA=b'''hl.config({xwayland={enabled=false},animations={enabled=false}})
 hl.monitor({output="WAYLAND-1",mode="800x600@60",position="0x0",scale=1})
 '''
 if SMALL:LUA=LUA.replace(b'800x600',b'480x360' if DENSEMENU else b'480x600')
+if ATTENTION:LUA+=b'hl.config({misc={focus_on_activate=false}})\n'
 if CHORD:LUA+=(ROOT/'native/switcher-bindings.lua').read_bytes()
 def check(name,condition,**data):
  report['checks'].append({'name':name,'passed':bool(condition),**data});assert condition,name
@@ -381,7 +387,46 @@ raise SystemExit(daemon.run())
     pix=GdkPixbuf.Pixbuf.new_from_file(str(image));data=pix.get_pixels();stride=pix.get_rowstride();channels=pix.get_n_channels();left,top=int(o['x'])+5,int(o['y'])+3;right,bottom=min(800,int(o['x']+o['width'])-3),min(48,int(o['y']+o['height'])-3)
     bright=sum(1 for y in range(top,bottom) for x in range(left,right) if all(data[y*stride+x*channels+i]>170 for i in range(3)))
     check(state+'NativeTaskbarHasTextPixels',pix.get_width()==800 and pix.get_height()==600 and bright>30,image=str(image),sha256=sha(image),brightPixels=bright,region=[left,top,right,bottom]);report.setdefault('feedback',{})[state]=body
-   if PRIMARY and not PINMENUS:
+   if ATTENTION:
+    keyboard=pathlib.Path('/home/hoskinson/window-integration-qa/orca-reader/physical-commands/evdev-keyboard');report['keyboard']={'path':str(keyboard),'sha256':sha(keyboard)}
+    def bar_body():
+     rows=[json.loads(line.split(' ',2)[2])['body'] for line in text().splitlines() if line.startswith('surface-report: origin=bar ')]
+     body=rows[-1] if rows else None;p=projection()
+     return body if body and p and p['phase']=='Coherent' and body['publication']==p['publication'] else None
+    def attention_facts():return client.scene_facts('445',attention=True)
+    def marker(label,state):
+     body=bar_body()
+     return next((b for b in body['buttons'] if b['accessibleName'].startswith(('Activate '+label+';','Minimize '+label+';')) and state in b['accessibleName']),None) if body else None
+    before_native=attention_facts();before_window=len(journal());origin=before_native['facts']['focused'];before_member=sorted((w['incarnation'],w['workspace'],w['monitor']) for w in before_native['facts']['windows'])
+    check('AttentionFixtureTargetIsInitiallyInactive',origin!=target and not next(w for w in before_native['facts']['windows'] if w['incarnation']==target)['attention'],facts=before_native)
+    temp=peer_control.with_suffix('.tmp');temp.write_text(json.dumps({'op':'request-attention'}));temp.replace(peer_control)
+    observed=wait(lambda:(value:=attention_facts()) and next(w for w in value['facts']['windows'] if w['incarnation']==target)['attention'] and value)
+    attention=wait(lambda:marker('ELM-ACTIVATION-PEER','Attention; Open'));active=wait(lambda:marker('ELM-AUTHORITY-FIXTURE','Active'))
+    check('OriginalNativeAttentionDiffersFromActiveAccessibleState','Attention; Open' in attention['accessibleName'] and '; Active' in active['accessibleName'],attention=attention,active=active,facts=observed)
+    check('NativeAttentionRequestDoesNotStealFocusOrSubmitWindowEffect',observed['facts']['focused']==origin and len(journal())==before_window)
+    image=OUTPUT/'taskbar-native-attention.png';helper(['/usr/bin/grim',str(image)])
+    import gi;gi.require_version('GdkPixbuf','2.0');from gi.repository import GdkPixbuf
+    pix=GdkPixbuf.Pixbuf.new_from_file(str(image));pixels=pix.get_pixels();stride=pix.get_rowstride();channels=pix.get_n_channels()
+    def colors(button):
+     left,top=max(0,int(button['x'])),max(0,int(button['y']));right,bottom=min(800,int(button['x']+button['width'])),min(48,int(button['y']+button['height']));amber=blue=0
+     for y in range(top,bottom):
+      for x in range(left,right):
+       at=y*stride+x*channels;r,g,b=pixels[at:at+3];amber+=r>200 and g>140 and b<160;blue+=b>180 and g>160 and r<180
+     return {'amberPixels':amber,'bluePixels':blue,'region':[left,top,right,bottom],'area':max(0,right-left)*max(0,bottom-top)}
+    attention_pixels=colors(attention);active_pixels=colors(active)
+    check('OriginalNativeAttentionAndActiveIndicatorsDifferInPixels',attention_pixels['amberPixels']>30 and active_pixels['bluePixels']>30 and attention_pixels['amberPixels']>active_pixels['amberPixels'],attention=attention_pixels,active=active_pixels,image=str(image),sha256=sha(image))
+    report['nativeAttentionImage']={'path':str(image),'sha256':sha(image),'attention':attention,'active':active,'pixelCounts':{'attention':attention_pixels,'active':active_pixels}}
+    check('NativeAttentionPreservesIdentityAndMembership',sorted((w['incarnation'],w['workspace'],w['monitor']) for w in observed['facts']['windows'])==before_member)
+    check('AttentionTargetActualHitTargetIsVisible',attention['x']>=0 and attention['x']+attention['width']<=800 and attention['y']>=0 and attention['y']+attention['height']<=48,button=attention)
+    click({'visible':True,'point':[attention['x']+attention['width']/2,attention['y']+attention['height']/2]})
+    wait(lambda:attention_facts()['facts']['focused']==target)
+    wait(lambda:marker('ELM-ACTIVATION-PEER','Active'))
+    final=attention_facts();check('ActivatingAttentionTargetShowsObservedActiveAndClearsUrgency',not next(w for w in final['facts']['windows'] if w['incarnation']==target)['attention'] and len(journal())==before_window+1,facts=final,requests=journal()[before_window:])
+    before_events=len(peer_control.with_suffix('.events.jsonl').read_text().splitlines());helper([str(keyboard)],'key 30 1\nsleep 50\nkey 30 0\nsleep 100\nsync\n')
+    delivered=[json.loads(line) for line in peer_control.with_suffix('.events.jsonl').read_text().splitlines()[before_events:]]
+    check('ActivatedAttentionTargetReceivesActualKeyboardInput',any(e['kind']=='key' and e['keyval']==97 and e['window']=='ELM-ACTIVATION-PEER' for e in delivered),events=delivered)
+    report['nativeAttentionFacts']={'before':before_native,'attention':observed,'afterActivation':final};report['nativeAttentionObserved']=True
+   elif PRIMARY and not PINMENUS:
     keyboard=pathlib.Path('/home/hoskinson/window-integration-qa/orca-reader/physical-commands/evdev-keyboard');report['keyboard']={'path':str(keyboard),'sha256':sha(keyboard)}
     roots=client.snapshot('443')['windows'];companion=next(w['incarnation'] for w in roots if w['label']=='ELM-AUTHORITY-FIXTURE')
     check('DistinctSingleFamilyApplicationIdentities',len(roots)==2 and len({w['application'] for w in roots})==2,windows=roots)
@@ -398,7 +443,7 @@ raise SystemExit(daemon.run())
      body=rows[-1] if rows else None;p=projection()
      if not body or not p or p['phase']!='Coherent' or body['publication']!=p['publication']:return None
      operation='Restore' if minimized else 'Minimize' if focus==target else 'Activate'
-     button=next((b for b in body['buttons'] if b['accessibleName']==operation+' ELM-ACTIVATION-PEER' and not b['disabled']),None)
+     button=next((b for b in body['buttons'] if b['accessibleName'].startswith(operation+' ELM-ACTIVATION-PEER;') and not b['disabled']),None)
      cue='Minimized' if minimized else 'Active' if focus==target else 'Open'
      return (body,button,cue) if button and cue in button['label'] else None
     def capture(stage,minimized):

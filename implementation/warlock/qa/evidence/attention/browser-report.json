@@ -1,0 +1,83 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "Original active and attention have distinct visible color and shape",
+      "detail": [
+        {
+          "name": "Minimize Active Window; Active",
+          "state": "active",
+          "detail": "Active",
+          "border": "rgb(126, 215, 255)",
+          "shadow": "rgb(126, 215, 255) 0px -3px 0px 0px inset",
+          "background": "color(srgb 0.211137 0.322196 0.398667)"
+        },
+        {
+          "name": "Activate Attention Window; Attention; Open",
+          "state": "attention",
+          "detail": "Attention; Open",
+          "border": "rgb(255, 198, 107)",
+          "shadow": "rgb(255, 198, 107) 0px 3px 0px 0px inset, rgba(255, 198, 107, 0.25) 0px 0px 8px 0px",
+          "background": "color(srgb 0.302196 0.310196 0.294196)"
+        }
+      ]
+    },
+    {
+      "name": "Original accessible state distinguishes attention from active",
+      "detail": [
+        {
+          "name": "Minimize Active Window; Active",
+          "state": "active",
+          "detail": "Active",
+          "border": "rgb(126, 215, 255)",
+          "shadow": "rgb(126, 215, 255) 0px -3px 0px 0px inset",
+          "background": "color(srgb 0.211137 0.322196 0.398667)"
+        },
+        {
+          "name": "Activate Attention Window; Attention; Open",
+          "state": "attention",
+          "detail": "Attention; Open",
+          "border": "rgb(255, 198, 107)",
+          "shadow": "rgb(255, 198, 107) 0px 3px 0px 0px inset, rgba(255, 198, 107, 0.25) 0px 0px 8px 0px",
+          "background": "color(srgb 0.302196 0.310196 0.294196)"
+        }
+      ]
+    },
+    {
+      "name": "Active is the current application and attention remains inactive"
+    },
+    {
+      "name": "Application indicators remain visible before utilities with status present"
+    },
+    {
+      "name": "State has no animated attention flashing"
+    },
+    {
+      "name": "New observation removes attention highlight and label"
+    },
+    {
+      "name": "Native active state takes priority over remaining urgency"
+    },
+    {
+      "name": "Dawn attention has its documented darker amber border"
+    },
+    {
+      "name": "Forced colors preserves different edge shapes"
+    },
+    {
+      "name": "Observing attention never submits an application or window effect"
+    },
+    {
+      "name": "No browser exceptions",
+      "detail": []
+    }
+  ],
+  "captures": [
+    "attention-active-native-view.png"
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "browserExitCode": 0
+}

@@ -143,7 +143,7 @@ def handle_request(client,catalog,request,recovery,reconciliation,notifications=
  else:
   canonical(request['requestId'])
   reconciliation.requested_read('action',request['requestId'])
-  before=client.scene_facts(request['requestId']);snapshot=client.snapshot(request['requestId']);after=client.scene_facts(request['requestId'])
+  before=client.scene_facts(request['requestId'],attention=True);snapshot=client.snapshot(request['requestId']);after=client.scene_facts(request['requestId'],attention=True)
   scene=coherent_scene(before,snapshot,after)
   if scene is None:send({'protocolVersion':3,'kind':'projection-unavailable','binding':client.bound,'requestId':request['requestId'],'reason':'scene-changed'})
   else:
@@ -198,7 +198,7 @@ def main():
   send(notification_service.observation(client));selector.register(notification_service.wake,selectors.EVENT_READ,'notifications')
   selector.register(0,selectors.EVENT_READ,'stdin');selector.register(events,selectors.EVENT_READ,'events')
   incoming=FrontendFrames();notifications=bytearray();dirty=False;have_snapshot=False;last_notice=0.0
-  relevant={b'elmwindowstate',b'workspace',b'workspacev2',b'focusedmon',b'focusedmonv2',b'monitoradded',b'monitoraddedv2',b'monitorremoved',b'fullscreen',b'pin',b'openwindow',b'closewindow',b'windowtitle',b'windowtitlev2',b'activewindow',b'movewindow',b'movewindowv2',b'changefloatingmode'}
+  relevant={b'urgent',b'elmwindowstate',b'workspace',b'workspacev2',b'focusedmon',b'focusedmonv2',b'monitoradded',b'monitoraddedv2',b'monitorremoved',b'fullscreen',b'pin',b'openwindow',b'closewindow',b'windowtitle',b'windowtitlev2',b'activewindow',b'movewindow',b'movewindowv2',b'changefloatingmode'}
   while True:
    timeout=max(0.0,.04-(time.monotonic()-last_notice)) if dirty and have_snapshot else None
    ready=selector.select(timeout)

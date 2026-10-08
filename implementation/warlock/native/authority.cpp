@@ -347,7 +347,7 @@ std::string switcherJournal(const Session& session,bool observing=false) {
     const bool mine=chord.ownerSession==session.id && chord.ownerFrontend==session.frontend;
     return "{\"generation\":"+quote(std::to_string(chord.generation))+",\"roots\":"+array(chord.roots)+",\"history\":"+array(chord.history)+",\"origin\":"+(chord.origin?quote(std::to_string(*chord.origin)):"null")+",\"steps\":"+steps+",\"released\":"+(chord.released?"true":"false")+",\"cancelled\":"+((chord.cancelled || (!observing && chord.generation && !mine))?"true":"false")+",\"consumed\":"+(chord.consumed?"true":"false")+"}";
 }
-std::string sceneFacts() {
+std::string sceneFacts(bool includeAttention=true) {
     // Native facts only. Vector position is not claimed to be final paint order:
     // specialized fullscreen/effect passes may currently disagree with it.
     const auto boolean = [](bool value) { return value ? "true" : "false"; };
@@ -372,6 +372,7 @@ std::string sceneFacts() {
             ",\"workspaceVisible\":" + boolean(workspace && workspace->isVisible()) +
             ",\"hidden\":" + boolean(window->isHidden()) +
             ",\"pinned\":" + boolean(window->m_pinned) +
+            (includeAttention ? ",\"attention\":" + std::string(boolean(window->m_isUrgent)) : "") +
             ",\"allowedOverFullscreen\":" + boolean(window->isAllowedOverFullscreen()) +
             ",\"renderOverFullscreen\":" + boolean(window->shouldRenderOverFullscreen()) +
             ",\"acceptsInput\":" + boolean(window->acceptsInput()) +
@@ -833,7 +834,10 @@ std::string observe(eHyprCtlOutputFormat, std::string request) {
                 if(!found->second.geometryEnabled) reply=error("geometry-negotiation-required");
                 else reply=performGeometryEffect(found->second,object);
             } else reply=performEffect(found->second,object,payload);
-        } else if ((operation == "snapshot-request" || operation == "scene-facts-request" || operation == "activation-history-request" || operation == "render-trace-request" || operation == "retain-render-trace-request" || operation == "retained-render-trace-request") && fields(object,{"protocolVersion","kind","binding","requestId","minimumWatermark"})) {
+        } else if ((operation == "snapshot-request" || operation == "scene-facts-request" || operation == "activation-history-request" || operation == "render-trace-request" || operation == "retain-render-trace-request" || operation == "retained-render-trace-request") && (fields(object,{"protocolVersion","kind","binding","requestId","minimumWatermark"}) || (operation=="scene-facts-request" && fields(object,{"protocolVersion","kind","binding","requestId","minimumWatermark","attentionProtocol"})))) {
+            const auto attentionVersion=json_object_get_member(object,"attentionProtocol");
+            const bool attention=attentionVersion!=nullptr;
+            if(attention && (!JSON_NODE_HOLDS_VALUE(attentionVersion) || json_node_get_value_type(attentionVersion)!=G_TYPE_INT64 || json_node_get_int(attentionVersion)!=1)) throw std::runtime_error("attention-version");
             const bool history = operation == "activation-history-request";
             const bool facts = operation == "scene-facts-request" || history;
             const bool trace = operation == "render-trace-request" || operation == "retain-render-trace-request" || operation == "retained-render-trace-request";
@@ -870,7 +874,7 @@ std::string observe(eHyprCtlOutputFormat, std::string request) {
                     reply="{\"protocolVersion\":3,\"kind\":\"activation-history\",\"binding\":"+binding(found->second)+",\"requestId\":"+quote(std::to_string(*requestId))+",\"context\":{\"lifetime\":"+quote(std::to_string(lifetime))+",\"epoch\":"+quote(std::to_string(found->second.frontend))+",\"output\":"+quote(std::to_string(outputGeneration))+",\"revision\":"+quote(std::to_string(factsRevision))+"},\"roots\":"+activationRoots()+"}";
                 } else reply = "{\"protocolVersion\":3,\"kind\":" + quote(facts ? "scene-facts" : "snapshot") + ",\"binding\":" + binding(found->second) +
                     ",\"requestId\":\"" + std::to_string(*requestId) + "\",\"sequence\":\"" + std::to_string(activeSequence) +
-                    "\",\"revision\":\"" + std::to_string(activeRevision) + "\"," + (facts ? "\"outputGeneration\":"+quote(std::to_string(outputGeneration))+",\"facts\":" : "\"windows\":") + value + "}";
+                    "\",\"revision\":\"" + std::to_string(activeRevision) + "\"," + (attention ? "\"attentionProtocol\":1," : "") + (facts ? "\"outputGeneration\":"+quote(std::to_string(outputGeneration))+",\"facts\":" : "\"windows\":") + (facts && !attention ? sceneFacts(false) : value) + "}";
             }
         }
     } catch (...) { /* bounded refusal; no IPC exception escapes into compositor */ }

@@ -1,4 +1,4 @@
-"""Build the changed navigation authority against the unchanged owning ABI.
+"""Build native attention/navigation authority against the unchanged owning ABI.
 
 Frozen capture/policy dependencies are referenced by hash; no copied lineage.
 This report proves compilation/closure only. Actual native journeys are separate.
@@ -13,7 +13,7 @@ HELD=PRIOR.parents[1]
 OUT=ROOT/'qa/runs'/('native-authority-'+str(time.time_ns()));OUT.mkdir()
 sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
 r={'passed':False,'nativeAcceptance':False,'installed':False,'protectedScope':scope,'commands':[],
-   'scope':'Changed navigation authority TU and modal preflight against unchanged owning core/capture inputs; strict strong-symbol closure; native acceptance separate'}
+   'scope':'Changed native attention read and navigation authority TU against unchanged owning core/capture inputs; strict strong-symbol closure; native acceptance separate'}
 def run(name,args):
  p=subprocess.run(args,capture_output=True,text=True,timeout=180)
  (OUT/(name+'.stdout')).write_text(p.stdout);(OUT/(name+'.stderr')).write_text(p.stderr)

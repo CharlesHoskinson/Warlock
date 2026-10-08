@@ -1,13 +1,105 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-08T14:56:56.833556+00:00",
+  "updatedUTC": "2026-10-08T15:25:02.721166+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "taskbar-attention",
+    "requirements": [
+      "ELM-UX-009"
+    ],
+    "scenarios": [
+      "ux-009"
+    ],
+    "paths": [
+      "implementation/warlock/src/ActionProjection.elm",
+      "implementation/warlock/src/Taskbar.elm",
+      "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/src/SurfaceRenderer.elm",
+      "implementation/warlock/adapter/effect_endpoint.py",
+      "implementation/warlock/adapter/taskbar_projection.py",
+      "implementation/warlock/adapter/daemon.py",
+      "implementation/warlock/native/authority.cpp",
+      "implementation/warlock/assets/shell.css",
+      "implementation/warlock/qa/AttentionReplay.elm",
+      "implementation/warlock/qa/check-attention.py",
+      "implementation/warlock/qa/attention-browser.mjs",
+      "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/check-native-authority.py",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/README.md",
+      "implementation/warlock/assets/elm.js",
+      "implementation/warlock/assets/bar.js",
+      "implementation/warlock/assets/popup.js",
+      "implementation/warlock/qa/current-search-build.json",
+      "implementation/warlock/qa/current-native-pair.json"
+    ],
+    "before": "Taskbar labels native active/minimized state but discards native attention requests and exposes no distinct attention highlight.",
+    "after": "Taskbar active and attention states derive from a coherent incarnation-bound native observation; amber attention and blue active indicators have distinct visible and accessible state.",
+    "verification": [
+      "Changed Elm roots and production replay; strict native coherent attention projection and stale-state refusal; actual rendered browser state and native inactive-window attention recording with pixels and accessible DOM state. Independent AT/original acceptance separate."
+    ],
+    "status": "completed-partial",
+    "evidence": {
+      "path": "implementation/warlock/qa/evidence/attention/manifest.json",
+      "sha256": "37853d8d809722ad10d4029568517bb84d5c03d974ca3f51a18866c1bceba31c",
+      "scope": "Immutable incarnation-bound native attention in taskbar families, static amber top-edge attention versus blue bottom-edge active state, explicit accessible labels and active aria-current. Actual GTK activation request while inactive yields native urgency without focus theft; physical indicators differ, activation clears urgency and the chosen client receives keys. Application controls now precede utilities after original pixels exposed clipping. Independent native-AT/original acceptance remains open.",
+      "sourceBaseRevision": "d7a11a0851c15cf77ee610c45a51e7a581c109a8",
+      "sourceHashes": {
+        "implementation/warlock/src/ActionProjection.elm": "911faed965465fac4e32f404d75a4d130b4e560cda191c7773eb96749be1d062",
+        "implementation/warlock/src/Taskbar.elm": "31ed9ce6b37e5b35065f8833e31412657800d894b6d9e9544f380bc16e7aa519",
+        "implementation/warlock/src/Surface.elm": "980312661ffe9cb1280335ff8a1e301ea022b3b866c392139fc948af0178609d",
+        "implementation/warlock/src/SurfaceRenderer.elm": "296a3a94759730d03a1c9914e341a214392616c346b8cb9daadf22f21c101491",
+        "implementation/warlock/adapter/effect_endpoint.py": "b640c48088929e84fb5a9b520e5eb56b13fe93ce362d6bfdad77690c7807ad6a",
+        "implementation/warlock/adapter/taskbar_projection.py": "3dfc3e88bcdeee2d1e39c8f0fac1661b9940d8b2edf54a775fe060321d1a1aca",
+        "implementation/warlock/adapter/daemon.py": "d060c1112f4f205e6e422c65541415f6f1a8559e1695f4620a7fcd81f767f0ab",
+        "implementation/warlock/native/authority.cpp": "50cb23dd338ed1e3bcaf3c30fdc0341e3fff0f1808b353adbad3219489ab1b6a",
+        "implementation/warlock/assets/shell.css": "f35225501a32fe220787ef0d370f623470f4c10c432cf9bc91544d43c8030631",
+        "implementation/warlock/qa/AttentionReplay.elm": "46ea7fcd9e1a47d01b400738e1fd50cd2da4c7a886f189257f8f14d03d381abc",
+        "implementation/warlock/qa/check-attention.py": "d848071beb1e2fe5694986a76ec7f74ae669d0ee64c8bf43fdbe0ea85b7bc412",
+        "implementation/warlock/qa/attention-browser.mjs": "d72a988c0a208b04b7b5274a95acac15aa7f2f87e56b39b7a93a0f1e923d77ea",
+        "implementation/warlock/qa/check-search.py": "8d143689700b0ef80b8ef2ce31de2a7a6753ab103e2a168b8035654f065f5af6",
+        "implementation/warlock/qa/check-native-authority.py": "6ef0b26cc323aa2c161e2b4ce5618765f94147be44a02b0a60e5a0a4104283d3",
+        "implementation/warlock/qa/native-window-feedback.py": "c367f86e1e2ec40409ed138705c8a044087250bcc86404640d5bee980b1acf79",
+        "implementation/warlock/README.md": "d00849324eba87aa05e1f2702d15f71e307ac35c2b10ee7f6379499de353e23d",
+        "implementation/warlock/assets/elm.js": "78ab8ced00bbb9dbfa59e974cb14bcd4ca0150752567791af3e183e383f02a80",
+        "implementation/warlock/assets/bar.js": "fbe4416674b120412b0be63abe47d438104aaacd3dee2eea4c81323ea9262d29",
+        "implementation/warlock/assets/popup.js": "d56f655974b3c128b442e080350aa37276127b7d2d16a8e36c0356f2b3092944",
+        "implementation/warlock/qa/current-search-build.json": "bdf66bf2dab2f1bf5be14133576ba9470410e9e692db1d0555333da1c85269cd",
+        "implementation/warlock/qa/current-native-pair.json": "990037d094ab0400e3b9073a9fb404e55ab33dc66803da41a7eeb09ca19e5372"
+      },
+      "reviewerDisposition": {
+        "name": "root-attention",
+        "independent": false,
+        "disposition": "Owner-observed original scenario evidence; independent native-AT acceptance pending."
+      }
+    },
+    "observed": "Immutable incarnation-bound native attention in taskbar families, static amber top-edge attention versus blue bottom-edge active state, explicit accessible labels and active aria-current. Actual GTK activation request while inactive yields native urgency without focus theft; physical indicators differ, activation clears urgency and the chosen client receives keys. Application controls now precede utilities after original pixels exposed clipping. Independent native-AT/original acceptance remains open.",
+    "missingObservations": [
+      "Independent original ux-009 review against the exact source/core/plugin/toolchain tuple.",
+      "Accessible labels/current state have compiled/browser and native DOM observations; this GTK/native campaign disables AT and does not establish inspector/Orca accessibility-state export.",
+      "Additional multi-output, scale, dense overflow and actual native theme/forced-color fixtures are not established by this single-output physical recording; full release AT/IME/hardware/resource and desktop journeys remain separate."
+    ]
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "application-jump-lists",
     "requirements": [
       "ELM-UX-010"
@@ -84,102 +176,6 @@
       "Independent review of ux-010 and jump-list-recent-identity against this exact source/core/plugin/toolchain tuple.",
       "Actual taskbar context-menu routes and additional provider/application fixtures are not established by the physical launcher recording.",
       "Foreign recent intent refusal is established by the actual GIO adapter fixture, not a forged physical GUI request. Applicable release AT/IME/hardware/resource and full desktop journeys remain separate."
-    ]
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "files-integration",
-    "requirements": [
-      "ELM-UX-033"
-    ],
-    "scenarios": [
-      "ux-033"
-    ],
-    "paths": [
-      "implementation/warlock/src/Files.elm",
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/src/SurfaceRenderer.elm",
-      "implementation/warlock/src/SurfaceController.elm",
-      "implementation/warlock/adapter/explorer.py",
-      "implementation/warlock/adapter/daemon.py",
-      "implementation/warlock/native/host.c",
-      "implementation/warlock/native/surface.h",
-      "implementation/warlock/assets/popup-adapter.js",
-      "implementation/warlock/qa/FilesReplay.elm",
-      "implementation/warlock/qa/check-files.py",
-      "implementation/warlock/qa/files.qnt",
-      "implementation/warlock/qa/files-browser.mjs",
-      "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/README.md",
-      "implementation/warlock/assets/elm.js",
-      "implementation/warlock/assets/bar.js",
-      "implementation/warlock/assets/popup.js",
-      "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/src/Popup.elm",
-      "implementation/warlock/src/Presentation.elm"
-    ],
-    "before": "The integrated Elm shell has no installed Files collection/path navigation or guarded explorer reuse.",
-    "after": "Files opens requested paths/collections through the installed explorer IPC, reuses its exact native instance, exposes observed outcomes and preserves all file operation sources.",
-    "verification": [
-      "Changed Elm/native admission, real installed explorer with private home/runtime, exactly-once identity/reuse/refusal cases, browser keyboard and original isolated native collection recording."
-    ],
-    "status": "completed-partial",
-    "evidence": {
-      "path": "implementation/warlock/qa/evidence/files/manifest.json",
-      "sha256": "e3b870cbcde846bd926f65b675c976892772b4ba403a75983a2cd64932058666",
-      "scope": "Integrated Files collection/path navigation with immutable Elm state and strict native instance admission. Actual unmodified installed explorer in a private desktop: physical Images selection and typed ~/Documents each reopen the requested location in the same native instance; no file operation or Quint spec changes. Independent original-scenario acceptance remains open.",
-      "sourceBaseRevision": "5fa23732966f1ac15a57139689b6524f392a5ff0",
-      "sourceHashes": {
-        "implementation/warlock/src/Files.elm": "c2099647bca3b325ca21485bb3a246e0b6d7c2a693d0bcfd5f10dedbad7a89f7",
-        "implementation/warlock/src/Desktop.elm": "de7ce3f346d9a4cb50d732eb43dd6fd75361040f7f9d1dc46e2ae82efb73e326",
-        "implementation/warlock/src/Surface.elm": "fdbf5df40bcfefd0e95e01e19d147756675b94f0508775083c8e40e0dc4a8211",
-        "implementation/warlock/src/SurfaceRenderer.elm": "7df645ec876ee641edb6fbc6a8d6acfb72cc5fdf7102a607be5e280e187bc2a7",
-        "implementation/warlock/src/SurfaceController.elm": "b4cdd19452d87525053bdfb4c743678984c7ec8ebd912920e7f2b63ad8d1d398",
-        "implementation/warlock/adapter/explorer.py": "5771d66fe29af0aed5e6f81f0d0287374d816ea048bdeaf08ae07a9cdf681e78",
-        "implementation/warlock/adapter/daemon.py": "b31a2da7d16f687faf4f67e02cb3b7ea834ec88c52b2f999e7452a8ba2348289",
-        "implementation/warlock/native/host.c": "9af3d797a020c2415757f5946c6c92b1066a1a037e907480c4ec4e06f4a0b76e",
-        "implementation/warlock/native/surface.h": "a0627b0e6cf5b49ee1fd2e94836844d2a09f933bba44c35e53863452c1204a5f",
-        "implementation/warlock/assets/popup-adapter.js": "87299dd82e0466026253422ad172b789aa30d9501d977e5270da01233d3b2fbc",
-        "implementation/warlock/qa/FilesReplay.elm": "5e353f83a87e87fde9ea0eb0c85cfe7a1419ac738d647ca0cefb573e62050478",
-        "implementation/warlock/qa/check-files.py": "0b139e5e7a881a66ad149700b455a1c33721c916e0bb74680427dd7e659aed1b",
-        "implementation/warlock/qa/files.qnt": "e564b7e36d92188a28f93f4061475633bf22211317af713ace19128e866c5aa0",
-        "implementation/warlock/qa/files-browser.mjs": "12b09fdad64331ac8296f350a31d96b959bd7a865f21e764bcbbf5302a241c0d",
-        "implementation/warlock/qa/check-search.py": "f31c1a72f30b33ca78ca6e698097cb3808b6ac976b7475009fa679ae30e6e016",
-        "implementation/warlock/qa/native-window-feedback.py": "d65a55fa4cc5eef43138ec034c829db81c18c65b03c19df15b42ca0983048d48",
-        "implementation/warlock/README.md": "5ff16814ccea1c46e689de47a366235dcbe7b5d70665de6504c0303f7dbb267a",
-        "implementation/warlock/assets/elm.js": "f3d1c0cff0b594732b6787b8f6668c1512ce9acc9593fcc42f121ba293a03598",
-        "implementation/warlock/assets/bar.js": "c9c69fcbe3bfad8acf8a865ce67fbc10641c7d88fce9140439549e0b16e00d81",
-        "implementation/warlock/assets/popup.js": "346577fb4154790ef9a22ae71a53ad84751c401e6ad354a92d86541cb2b629d4",
-        "implementation/warlock/qa/current-search-build.json": "26ee61c7dd9a76568660ab620f4aa12d02e359fe9af7ab4326c891a121e162be",
-        "implementation/warlock/src/Popup.elm": "89d09ccd5221862f97ed8c6ef9584b1cdae1c2836a03a36a745c2eb0cb876103",
-        "implementation/warlock/src/Presentation.elm": "d5e5638753d14da9f4a690ee65bfce1a7d727846c56464b84e27c48448b2eb77"
-      },
-      "reviewerDisposition": {
-        "name": "root-files",
-        "independent": false,
-        "disposition": "Owner-observed scenario evidence; independent acceptance pending."
-      }
-    },
-    "observed": "Integrated Files collection/path navigation with immutable Elm state and strict native instance admission. Actual unmodified installed explorer in a private desktop: physical Images selection and typed ~/Documents each reopen the requested location in the same native instance; no file operation or Quint spec changes. Independent original-scenario acceptance remains open.",
-    "missingObservations": [
-      "Independent original ux-033 review against this exact source/core/plugin/toolchain tuple.",
-      "Actual native cold startup and legacy minimized/other-workspace summon behavior are not established by this existing-window fixture.",
-      "Applicable release AT/IME/resource and full desktop journeys remain separate; browser composition evidence does not establish native IME acceptance."
     ]
   },
   "recentSlices": [

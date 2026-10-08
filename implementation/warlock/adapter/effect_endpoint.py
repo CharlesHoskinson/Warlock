@@ -36,18 +36,20 @@ class Endpoint(ReadOnlyEndpoint):
    if not isinstance(window['application'],str) or len(window['application'].encode('utf-16-le'))//2>256 or any(ord(c)<32 for c in window['application']):raise Refused('Application hint')
    seen.add(identity)
   return r
- def scene_facts(self,request_id,minimum_watermark='0'):
+ def scene_facts(self,request_id,minimum_watermark='0',*,attention=False):
   if not self.bound:raise Refused('Handshake required')
   canonical(request_id);canonical(minimum_watermark,True)
-  r=self.request({'protocolVersion':3,'kind':'scene-facts-request','binding':self.bound,'requestId':request_id,'minimumWatermark':minimum_watermark})
-  exact(r,['protocolVersion','kind','binding','requestId','sequence','revision','outputGeneration','facts'])
+  if type(attention) is not bool:raise Refused('Attention observation option')
+  r=self.request({'protocolVersion':3,'kind':'scene-facts-request','binding':self.bound,'requestId':request_id,'minimumWatermark':minimum_watermark,**({'attentionProtocol':1} if attention else {})})
+  exact(r,['protocolVersion','kind','binding','requestId','sequence','revision','outputGeneration','facts',*(['attentionProtocol'] if attention else [])])
+  if attention and (type(r['attentionProtocol']) is not int or r['attentionProtocol']!=1):raise Refused('Attention protocol')
   if r['kind']!='scene-facts' or binding(r['binding'])!=self.bound or r['requestId']!=request_id:raise Refused('Facts correlation')
   for key in ['sequence','revision','outputGeneration']:canonical(r[key])
   if int(r['sequence'])<int(minimum_watermark):raise Refused('Obsolete facts')
   facts=r['facts'];exact(facts,['focused','windows'])
   windows=facts['windows']
   if not isinstance(windows,list) or len(windows)>256:raise Refused('Facts bound')
-  bools=['workspaceVisible','hidden','pinned','allowedOverFullscreen','renderOverFullscreen','acceptsInput','shouldRenderAny','shouldRenderOwnMonitor','minimized']
+  bools=['workspaceVisible','hidden','pinned','allowedOverFullscreen','renderOverFullscreen','acceptsInput','shouldRenderAny','shouldRenderOwnMonitor','minimized']+(['attention'] if attention else [])
   seen=set();positions=set()
   for window in windows:
    exact(window,['incarnation','owner','application','stackPosition','workspace','monitor','geometry','fullscreenMode',*bools])
