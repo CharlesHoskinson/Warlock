@@ -96,7 +96,7 @@ apply message ((Model model) as current) =
         clearChoices application =
             let windows=application.windows
                 shell=windows.shell
-            in {application|choice=Nothing,overview=False,overviewWorkspace=Nothing,switcher=Switcher.cancel (Switcher.generation application.switcher) application.switcher,switcherExpected=Nothing,switcherHistory=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows|picker=Nothing,menus=MenuBridge.retireChoices windows.menus,shell={shell|deferNotifications=False}}}
+            in {application|settingsOpen=False,settingsOpening=False,choice=Nothing,overview=False,overviewWorkspace=Nothing,switcher=Switcher.cancel (Switcher.generation application.switcher) application.switcher,switcherExpected=Nothing,switcherHistory=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows|picker=Nothing,menus=MenuBridge.retireChoices windows.menus,shell={shell|deferNotifications=False}}}
         publishDesktop recovery next =
             if next==model.desktop then (Model {model|recovery=recovery},[]) else
             case UInt64.next model.publication of
@@ -173,7 +173,9 @@ update event ((Model model) as current) =
                     _ -> (Model {model | exhausted=True},[])
         NativeDismiss lease ->
             if lease/=model.lease || Surface.mode model.desktop=="closed" then (current,[]) else
-                if model.desktop.snap/=Nothing then
+                if model.desktop.settingsOpen then
+                    Desktop.capture model.desktop |> Maybe.map (\stamp -> apply (Desktop.CloseSettings stamp) current) |> Maybe.withDefault (current,[])
+                else if model.desktop.snap/=Nothing then
                     Desktop.capture model.desktop |> Maybe.map (\stamp -> apply (Desktop.CloseSnap stamp) current) |> Maybe.withDefault (current,[])
                 else if Surface.mode model.desktop=="menu" then
                     (MenuBridge.menuSnapshot model.desktop.windows.menus).menu |> Maybe.map (\menu -> apply (Desktop.Window (TaskbarShell.MenuEvent (Menu.Dismiss menu.id))) current) |> Maybe.withDefault (current,[])

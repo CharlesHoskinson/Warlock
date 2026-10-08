@@ -1,0 +1,692 @@
+{
+  "schema": 1,
+  "owner": "root-shell-settings",
+  "observedUTC": "2026-10-08T12:05:39.738367+00:00",
+  "requirements": [
+    "ELM-UX-030"
+  ],
+  "scenarios": [
+    "ux-030"
+  ],
+  "originals": [
+    {
+      "id": "ELM-UX-030",
+      "capability": "elm-shell-experience",
+      "pattern": "event-driven",
+      "ears": "WHEN a user changes shell settings, the Elm desktop SHALL persist validated preferences and restore them after host restart without applying invalid values.",
+      "phase": "P5",
+      "priority": "must",
+      "verification": "Elm replay assertion and isolated native recording: valid preference survives and invalid scale is rejected.",
+      "legacyEvidence": "new settings-schema and restart coverage",
+      "task": "Create settings schema, validation and migration UI.",
+      "scenarios": [
+        {
+          "name": "ux-030",
+          "given": "valid theme setting and invalid scale are submitted",
+          "when": "host restarts",
+          "then": "valid preference survives and invalid scale is rejected"
+        }
+      ],
+      "source": "docs/elm-roadmap/contributions/experience.json",
+      "status": "proposed",
+      "taskId": "P5-ELM-UX-030",
+      "accountableOwnerRole": "Desktop experience lead",
+      "verifierRole": "Independent acceptance reviewer"
+    }
+  ],
+  "scope": "Integrated keyboard-operable appearance settings, exact Saved/CAS correlation, private atomic persistence and whole native host restart. Actual committed Dawn/150% rendering, live/restarted 72-pixel bar/popup layout and native-bound invalid-scale refusal observed. Independent original-scenario acceptance remains open.",
+  "sourceBaseRevision": "2c21b154f3a1f7ae1d3565c80a6b93d73667c0ab",
+  "publicBaseRevision": "fdd14c736ce2bd901a89a164b6fa7a928b916b83",
+  "sourceHashes": {
+    "implementation/warlock/src/Settings.elm": "d4b47648e2276c533d23729232ed3fe75f599bc3bad9113b97565f4f40ecb8cc",
+    "implementation/warlock/src/Desktop.elm": "2ad3f0d47f8b4ec91c70558394acd401bc14e4b3461a836be6f2dac41d760f4d",
+    "implementation/warlock/src/Surface.elm": "d489e04da397a5cf443191a413f6f81f06b75815f062c776fe464932872869c5",
+    "implementation/warlock/src/SurfaceRenderer.elm": "2a34e0da8677e1dbab3af99b4319307882291c951404164cd86cf0fc8d921781",
+    "implementation/warlock/src/SurfaceController.elm": "28c563e0444035a663349296745cf5e988c88a77bb5db657fb4d7af6a8043313",
+    "implementation/warlock/native/surface.h": "4e02e5a46a3fb571be1fce32e41148713f0becde8086a87a33f214af90da6851",
+    "implementation/warlock/native/host.c": "1b62ffeacdecceaeb3c9d7ec9470fb623d9a3739e2b5fa2c350877155a2d3de7",
+    "implementation/warlock/adapter/shell_preferences.py": "1e51c07d2fa14eab487a48832261c225491b46869202cd629ccf26f92e3c4577",
+    "implementation/warlock/adapter/catalog_transport.py": "9d7b9b181e589b5766a12c22b6e58e128c2eac6faf28640d3b405e9886a86d4d",
+    "implementation/warlock/adapter/daemon.py": "b83df33c353da1d5aa47b92f58b6662011bfd1ace935b1c2e21e1c192ce303f3",
+    "implementation/warlock/assets/appearance.js": "f4b85c8e551ed319805a07545fd63f72ef921a1ef8db79109f15565244fba784",
+    "implementation/warlock/assets/shell.css": "05daa150a3749164590281eb79d71ac1fbb67e275a6b3515f03c9b9bf27a9157",
+    "implementation/warlock/assets/popup-adapter.js": "d6043e75113aefb018bbe96be1529ae8426a7ebb67d5b1cc1b8e58cb53104f61",
+    "implementation/warlock/assets/bar.html": "b88b0b075fc4bcef147357b023823049b5e63e1b49354eb298737ef003328a66",
+    "implementation/warlock/assets/popup.html": "035cb884860bb1cda77c06773a750c631e5d6f20cf90557989bb37756270c422",
+    "implementation/warlock/assets/elm.js": "c2fe69b60976fdff70c8cb0cac82fb7e1e2c68a9f8e3ed30a1238c6fd3952bb5",
+    "implementation/warlock/assets/bar.js": "1eed3b8af890a66fbb7bc8826b863334506474e48895841f401f5c0649ace837",
+    "implementation/warlock/assets/popup.js": "121dd60f5cfb9247b63fe03de4b9469236e62a745b0861fa7c3142e182d48455",
+    "implementation/warlock/qa/SettingsReplay.elm": "0f6db90669a88127468628485ad4a1053bb7a4a9dd2bfa20842d3effb540288f",
+    "implementation/warlock/qa/check-settings.py": "07a52b6805b88713c649104bd0e42ba46107d75cd039bf925198dd76625f8b05",
+    "implementation/warlock/qa/settings-browser.mjs": "e55418b6dbb13cafdb863d5afbb359bee48d65027a2c6e5dc353efccb55fd60e",
+    "implementation/warlock/qa/check-search.py": "fb6a56e7c5fb131a6d63408de35f64c921f633e60b17ab559f5450609823dfe3",
+    "implementation/warlock/qa/current-search-build.json": "d9fa4cdebf240952955e3fa3ebc4c4f8d8844190ee56f715e58c6e11e720b20c",
+    "implementation/warlock/qa/native-window-feedback.py": "f602c6dec9db26e3699d63569cc34eb2b1214d973a7d0c46056b98e97d95c267",
+    "implementation/warlock/README.md": "a16c7e68d73cfa5d112b23280f1da3bc645654999cad9e85ffb678c085b33ee5",
+    "implementation/warlock/assets/bar-adapter.js": "da127121c241c6078e36c1afe249fd94303140cd7b9517a37ccf1dd197f0042d",
+    "implementation/warlock/qa/settings.qnt": "a171d177b09f2e31ee56e29f75d8bfa37c761bf76588cf942e43d4be3c16ba34",
+    "implementation/warlock/native/shared-host.c": "afc1bd09d1ce78da11bfbdb21f347c18376a3de8298b78c7ebef3518a54ec291"
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+      "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791457340009159176/elm-window-geometry-authority.so",
+      "sha256": "55be0d723123f8089abfa0ce735f5e496aee558a0d822e1ad8278d50ee958307"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/settings-1791460927835718949/elm-host",
+    "sha256": "143fc2a184375bc07135ce360c73851d3197bfbd615ebf40a1122c5dba06beaa",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/settings-1791460927835718949/report.json",
+    "heldBuildSHA256": "6166e770dfb720a42a59bd357f4a92952ebb9a7b21ef6e709f8c4994b0d0d9a0"
+  },
+  "compiledAssets": {
+    "elm.js": "c2fe69b60976fdff70c8cb0cac82fb7e1e2c68a9f8e3ed30a1238c6fd3952bb5",
+    "bar.js": "1eed3b8af890a66fbb7bc8826b863334506474e48895841f401f5c0649ace837",
+    "popup.js": "121dd60f5cfb9247b63fe03de4b9469236e62a745b0861fa7c3142e182d48455"
+  },
+  "runnerSHA256": "f602c6dec9db26e3699d63569cc34eb2b1214d973a7d0c46056b98e97d95c267",
+  "observedChecks": {
+    "elmSettings": 19,
+    "actualStore": 21,
+    "browser": 16,
+    "namedQuint": 6,
+    "invariantTraces": 100,
+    "nativeSettings": 49,
+    "nativeSnapRegression": 104
+  },
+  "observations": {
+    "nativeSettingsBeforeRestart": {
+      "storage": {
+        "schema": 1,
+        "revision": "2",
+        "values": {
+          "theme": "dawn",
+          "textScale": 150
+        }
+      },
+      "body": {
+        "publication": "22",
+        "lease": "2",
+        "buttons": [
+          {
+            "id": "applications:{\"lifetime\":\"14599880900554203916\",\"session\":\"3\",\"frontend\":\"1\"}:14:settings:close",
+            "identity": "control:close",
+            "label": "Close settings",
+            "labelRect": {
+              "x": 24,
+              "y": -157,
+              "width": 652,
+              "height": 28
+            },
+            "accessibleName": "Close settings",
+            "disabled": false,
+            "x": 11,
+            "y": -170,
+            "width": 678,
+            "height": 54
+          },
+          {
+            "id": "applications:{\"lifetime\":\"14599880900554203916\",\"session\":\"3\",\"frontend\":\"1\"}:14:settings:theme:night",
+            "identity": "settings:theme:night",
+            "label": "Night theme",
+            "labelRect": {
+              "x": 24,
+              "y": -100,
+              "width": 652,
+              "height": 28
+            },
+            "accessibleName": "Night theme",
+            "disabled": false,
+            "x": 11,
+            "y": -113,
+            "width": 678,
+            "height": 54
+          },
+          {
+            "id": "applications:{\"lifetime\":\"14599880900554203916\",\"session\":\"3\",\"frontend\":\"1\"}:14:settings:theme:dawn",
+            "identity": "settings:theme:dawn",
+            "label": "Dawn themeSelected",
+            "labelRect": {
+              "x": 24,
+              "y": -49,
+              "width": 652,
+              "height": 28
+            },
+            "accessibleName": "Dawn theme",
+            "disabled": false,
+            "x": 11,
+            "y": -56,
+            "width": 678,
+            "height": 73
+          },
+          {
+            "id": "applications:{\"lifetime\":\"14599880900554203916\",\"session\":\"3\",\"frontend\":\"1\"}:14:settings:scale:100",
+            "identity": "settings:scale:100",
+            "label": "Text size 100%",
+            "labelRect": {
+              "x": 24,
+              "y": 33,
+              "width": 652,
+              "height": 28
+            },
+            "accessibleName": "Text size 100%",
+            "disabled": false,
+            "x": 11,
+            "y": 20,
+            "width": 678,
+            "height": 54
+          },
+          {
+            "id": "applications:{\"lifetime\":\"14599880900554203916\",\"session\":\"3\",\"frontend\":\"1\"}:14:settings:scale:125",
+            "identity": "settings:scale:125",
+            "label": "Text size 125%",
+            "labelRect": {
+              "x": 24,
+              "y": 90,
+              "width": 652,
+              "height": 28
+            },
+            "accessibleName": "Text size 125%",
+            "disabled": false,
+            "x": 11,
+            "y": 77,
+            "width": 678,
+            "height": 54
+          },
+          {
+            "id": "applications:{\"lifetime\":\"14599880900554203916\",\"session\":\"3\",\"frontend\":\"1\"}:14:settings:scale:150",
+            "identity": "settings:scale:150",
+            "label": "Text size 150%Selected",
+            "labelRect": {
+              "x": 24,
+              "y": 141,
+              "width": 652,
+              "height": 28
+            },
+            "accessibleName": "Text size 150%",
+            "disabled": false,
+            "x": 11,
+            "y": 134,
+            "width": 678,
+            "height": 73
+          },
+          {
+            "id": "applications:{\"lifetime\":\"14599880900554203916\",\"session\":\"3\",\"frontend\":\"1\"}:14:settings:scale:200",
+            "identity": "settings:scale:200",
+            "label": "Text size 200%",
+            "labelRect": {
+              "x": 24,
+              "y": 223,
+              "width": 652,
+              "height": 28
+            },
+            "accessibleName": "Text size 200%",
+            "disabled": false,
+            "x": 11,
+            "y": 210,
+            "width": 678,
+            "height": 54
+          },
+          {
+            "id": "applications:{\"lifetime\":\"14599880900554203916\",\"session\":\"3\",\"frontend\":\"1\"}:14:settings:save",
+            "identity": "settings:save",
+            "label": "Save settingsApply and keep across restart",
+            "labelRect": {
+              "x": 24,
+              "y": 274,
+              "width": 652,
+              "height": 28
+            },
+            "accessibleName": "Save settings",
+            "disabled": true,
+            "x": 11,
+            "y": 267,
+            "width": 678,
+            "height": 73
+          },
+          {
+            "id": "applications:{\"lifetime\":\"14599880900554203916\",\"session\":\"3\",\"frontend\":\"1\"}:14:settings:refresh",
+            "identity": "settings:refresh",
+            "label": "Refresh settingsRead stored values; discard unsaved changes",
+            "labelRect": {
+              "x": 24,
+              "y": 350,
+              "width": 652,
+              "height": 28
+            },
+            "accessibleName": "Refresh settings",
+            "disabled": false,
+            "x": 11,
+            "y": 343,
+            "width": 678,
+            "height": 73
+          }
+        ],
+        "fields": [],
+        "focus": "applications:{\"lifetime\":\"14599880900554203916\",\"session\":\"3\",\"frontend\":\"1\"}:14:settings:refresh",
+        "documentFocused": true,
+        "fontSize": "24px",
+        "theme": "dawn",
+        "textScale": "150",
+        "viewportWidth": 700,
+        "viewportHeight": 420,
+        "scrollTop": 256,
+        "scrollHeight": 683,
+        "text": "Settings\nSettings loaded.\n\nClose settings\n\nNight theme\n\nDawn theme\nSelected\n\nText size 100%\n\nText size 125%\n\nText size 150%\nSelected\n\nText size 200%\n\nSave settings\nApply and keep across restart\n\nRefresh settings\nRead stored values; discard unsaved changes"
+      },
+      "writes": [
+        {
+          "protocolVersion": 3,
+          "kind": "shell-settings-write",
+          "binding": {
+            "lifetime": "14599880900554203916",
+            "session": "3",
+            "frontend": "1"
+          },
+          "requestId": "4",
+          "proposal": {
+            "schema": 1,
+            "revision": "1",
+            "values": {
+              "theme": "dawn",
+              "textScale": 150
+            }
+          }
+        }
+      ],
+      "receipt": {
+        "protocolVersion": 3,
+        "kind": "shell-settings-outcome",
+        "binding": {
+          "lifetime": "14599880900554203916",
+          "session": "3",
+          "frontend": "1"
+        },
+        "requestId": "4",
+        "snapshot": {
+          "schema": 1,
+          "revision": "2",
+          "values": {
+            "theme": "dawn",
+            "textScale": 150
+          }
+        },
+        "status": "Saved"
+      }
+    },
+    "nativeSettingsAfterRestart": {
+      "storage": {
+        "schema": 1,
+        "revision": "2",
+        "values": {
+          "theme": "dawn",
+          "textScale": 150
+        }
+      },
+      "body": {
+        "publication": "12",
+        "lease": "1",
+        "buttons": [
+          {
+            "id": "applications:{\"lifetime\":\"14599880900554203916\",\"session\":\"5\",\"frontend\":\"1\"}:8:settings:close",
+            "identity": "control:close",
+            "label": "Close settings",
+            "labelRect": {
+              "x": 24,
+              "y": 99,
+              "width": 652,
+              "height": 28
+            },
+            "accessibleName": "Close settings",
+            "disabled": false,
+            "x": 11,
+            "y": 86,
+            "width": 678,
+            "height": 54
+          },
+          {
+            "id": "applications:{\"lifetime\":\"14599880900554203916\",\"session\":\"5\",\"frontend\":\"1\"}:8:settings:theme:night",
+            "identity": "settings:theme:night",
+            "label": "Night theme",
+            "labelRect": {
+              "x": 24,
+              "y": 156,
+              "width": 652,
+              "height": 28
+            },
+            "accessibleName": "Night theme",
+            "disabled": false,
+            "x": 11,
+            "y": 143,
+            "width": 678,
+            "height": 54
+          },
+          {
+            "id": "applications:{\"lifetime\":\"14599880900554203916\",\"session\":\"5\",\"frontend\":\"1\"}:8:settings:theme:dawn",
+            "identity": "settings:theme:dawn",
+            "label": "Dawn themeSelected",
+            "labelRect": {
+              "x": 24,
+              "y": 207,
+              "width": 652,
+              "height": 28
+            },
+            "accessibleName": "Dawn theme",
+            "disabled": false,
+            "x": 11,
+            "y": 200,
+            "width": 678,
+            "height": 73
+          },
+          {
+            "id": "applications:{\"lifetime\":\"14599880900554203916\",\"session\":\"5\",\"frontend\":\"1\"}:8:settings:scale:100",
+            "identity": "settings:scale:100",
+            "label": "Text size 100%",
+            "labelRect": {
+              "x": 24,
+              "y": 289,
+              "width": 652,
+              "height": 28
+            },
+            "accessibleName": "Text size 100%",
+            "disabled": false,
+            "x": 11,
+            "y": 276,
+            "width": 678,
+            "height": 54
+          },
+          {
+            "id": "applications:{\"lifetime\":\"14599880900554203916\",\"session\":\"5\",\"frontend\":\"1\"}:8:settings:scale:125",
+            "identity": "settings:scale:125",
+            "label": "Text size 125%",
+            "labelRect": {
+              "x": 24,
+              "y": 346,
+              "width": 652,
+              "height": 28
+            },
+            "accessibleName": "Text size 125%",
+            "disabled": false,
+            "x": 11,
+            "y": 333,
+            "width": 678,
+            "height": 54
+          },
+          {
+            "id": "applications:{\"lifetime\":\"14599880900554203916\",\"session\":\"5\",\"frontend\":\"1\"}:8:settings:scale:150",
+            "identity": "settings:scale:150",
+            "label": "Text size 150%Selected",
+            "labelRect": {
+              "x": 24,
+              "y": 397,
+              "width": 652,
+              "height": 28
+            },
+            "accessibleName": "Text size 150%",
+            "disabled": false,
+            "x": 11,
+            "y": 390,
+            "width": 678,
+            "height": 73
+          },
+          {
+            "id": "applications:{\"lifetime\":\"14599880900554203916\",\"session\":\"5\",\"frontend\":\"1\"}:8:settings:scale:200",
+            "identity": "settings:scale:200",
+            "label": "Text size 200%",
+            "labelRect": {
+              "x": 24,
+              "y": 479,
+              "width": 652,
+              "height": 28
+            },
+            "accessibleName": "Text size 200%",
+            "disabled": false,
+            "x": 11,
+            "y": 466,
+            "width": 678,
+            "height": 54
+          },
+          {
+            "id": "applications:{\"lifetime\":\"14599880900554203916\",\"session\":\"5\",\"frontend\":\"1\"}:8:settings:save",
+            "identity": "settings:save",
+            "label": "Save settingsApply and keep across restart",
+            "labelRect": {
+              "x": 24,
+              "y": 530,
+              "width": 652,
+              "height": 28
+            },
+            "accessibleName": "Save settings",
+            "disabled": true,
+            "x": 11,
+            "y": 523,
+            "width": 678,
+            "height": 73
+          },
+          {
+            "id": "applications:{\"lifetime\":\"14599880900554203916\",\"session\":\"5\",\"frontend\":\"1\"}:8:settings:refresh",
+            "identity": "settings:refresh",
+            "label": "Refresh settingsRead stored values; discard unsaved changes",
+            "labelRect": {
+              "x": 24,
+              "y": 606,
+              "width": 652,
+              "height": 28
+            },
+            "accessibleName": "Refresh settings",
+            "disabled": false,
+            "x": 11,
+            "y": 599,
+            "width": 678,
+            "height": 73
+          }
+        ],
+        "fields": [],
+        "focus": "applications:{\"lifetime\":\"14599880900554203916\",\"session\":\"5\",\"frontend\":\"1\"}:8:settings:close",
+        "documentFocused": true,
+        "fontSize": "24px",
+        "theme": "dawn",
+        "textScale": "150",
+        "viewportWidth": 700,
+        "viewportHeight": 420,
+        "scrollTop": 0,
+        "scrollHeight": 683,
+        "text": "Settings\nSettings loaded.\n\nClose settings\n\nNight theme\n\nDawn theme\nSelected\n\nText size 100%\n\nText size 125%\n\nText size 150%\nSelected\n\nText size 200%\n\nSave settings\nApply and keep across restart\n\nRefresh settings\nRead stored values; discard unsaved changes"
+      },
+      "writes": []
+    },
+    "invalidScale": {
+      "request": {
+        "protocolVersion": 3,
+        "kind": "shell-settings-write",
+        "binding": {
+          "lifetime": "14599880900554203916",
+          "session": "1",
+          "frontend": "1"
+        },
+        "requestId": "31000",
+        "proposal": {
+          "schema": 1,
+          "revision": "2",
+          "values": {
+            "theme": "night",
+            "textScale": 77
+          }
+        }
+      },
+      "receipt": {
+        "protocolVersion": 3,
+        "kind": "shell-settings-outcome",
+        "binding": {
+          "lifetime": "14599880900554203916",
+          "session": "1",
+          "frontend": "1"
+        },
+        "requestId": "31000",
+        "snapshot": null,
+        "status": "Refused"
+      },
+      "storedSHA256": "0cef847f8b3039fb26d9bdac9c03c7a191c0ed0922a7317e4210573a06c56504"
+    },
+    "liveAndRestartedNativePopupBoxes": [
+      [
+        50,
+        72,
+        700,
+        420
+      ],
+      [
+        50,
+        72,
+        700,
+        420
+      ]
+    ]
+  },
+  "nativeCampaignPassed": true,
+  "nativeSettingsObserved": true,
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "ownerImageReview": {
+    "path": "implementation/warlock/qa/evidence/shell-settings/popup-settings-after-restart.png",
+    "sha256": "55b7dbdc50037f7f1ffbf89bc74e5669374206a5a95d39576c762fe8636ee54a",
+    "observation": "Owner inspected native Dawn/150% controls: dark labels on light background, current Close focus outline, selected Dawn and text-scale controls; popup starts below the full enlarged bar."
+  },
+  "missingObservations": [
+    "Independent original ux-030 review against the exact source/core/plugin/toolchain tuple.",
+    "Original keyboard-only and applicable AT/IME settings fixtures remain separate; this native recording uses pointer opening and keyboard edits/save/dismissal.",
+    "Reduced motion, notification and other release settings obligations are not supplied by this bounded theme/text-size implementation."
+  ],
+  "retainedFailures": [
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-settings-1791460011544191998/report.json",
+      "sha256": "b30ef3fc94a85e5e6c3b740fdcc50f4d8af3b977be353690353d7494d84db761",
+      "disposition": "Saved appearance and restart passed; final Escape failed because settings opening focus became stale."
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-settings-1791460195213471490/report.json",
+      "sha256": "0579b9af75391e2ff15ee53c805de96409c9475e80592b24bcc7effc87023c0c",
+      "disposition": "Focus still named a nonexistent Close DOM ID; corrected real rendered-control identity and replay oracle."
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-settings-1791460616002700308/report.json",
+      "sha256": "424d1bc1dbb4a610b871583a34c0d49b7cf6022813d5fce80735932ad81b7868",
+      "disposition": "Enlarged popup overlapped the bar; fixed owning per-output native bar size and popup allocation."
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-settings-1791460804786404491/report.json",
+      "sha256": "e2a1f9c19d82be5a10e93081f70dc1fe657232d6515c636eca5b8760a6948833",
+      "disposition": "Bounded restart pass; before-restart image still had old 48-pixel anchor. Superseded by native allocation-triggered live reflow and final 72-pixel anchor observations."
+    }
+  ],
+  "files": [
+    {
+      "path": "implementation/warlock/qa/evidence/shell-settings/component-report.json",
+      "sha256": "6166e770dfb720a42a59bd357f4a92952ebb9a7b21ef6e709f8c4994b0d0d9a0",
+      "origin": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/settings-1791460927835718949/report.json",
+      "originSHA256": "6166e770dfb720a42a59bd357f4a92952ebb9a7b21ef6e709f8c4994b0d0d9a0"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/shell-settings/native-report.json",
+      "sha256": "6369a7bd3cefd4b28c43aa7929a1d0fb6de27835ddb39422615430e5a2bb8f60",
+      "origin": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-settings-1791460957190397457/report.json",
+      "originSHA256": "6369a7bd3cefd4b28c43aa7929a1d0fb6de27835ddb39422615430e5a2bb8f60"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/shell-settings/native-snap-regression-report.json",
+      "sha256": "ee04ea3a7bec57c60f55926fa99292f89bb7bce32645b3fd92af91ea6c58f0c4",
+      "origin": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-snap-placement-1791461028727525327/report.json",
+      "originSHA256": "ee04ea3a7bec57c60f55926fa99292f89bb7bce32645b3fd92af91ea6c58f0c4"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/shell-settings/settings.json",
+      "sha256": "11a18646111a64f4b11741dc1e12f6c718012532dd32686a266b41daad8c4600",
+      "origin": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/settings-1791460927835718949/settings.json",
+      "originSHA256": "11a18646111a64f4b11741dc1e12f6c718012532dd32686a266b41daad8c4600"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/shell-settings/settings-store.stdout",
+      "sha256": "78ce327e47c84c9a53e44a88e255a7cd7fb29a8e03fbfb02be3503316e46211c",
+      "origin": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/settings-1791460927835718949/settings-store.stdout",
+      "originSHA256": "78ce327e47c84c9a53e44a88e255a7cd7fb29a8e03fbfb02be3503316e46211c"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/shell-settings/settings-browser.json",
+      "sha256": "f92b9441fec27554a2eb577a0173a237c6938593e63891abd7b4b0fb14b517c6",
+      "origin": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/settings-1791460927835718949/settings-browser.json",
+      "originSHA256": "f92b9441fec27554a2eb577a0173a237c6938593e63891abd7b4b0fb14b517c6"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/shell-settings/settings-model-named.stdout",
+      "sha256": "691d4b9a72241938ee34f4615425f66ea8375f853d3f1090a4b47d36e9be5f0b",
+      "origin": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/settings-1791460927835718949/settings-model-named.stdout",
+      "originSHA256": "691d4b9a72241938ee34f4615425f66ea8375f853d3f1090a4b47d36e9be5f0b"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/shell-settings/settings-model-invariants.stdout",
+      "sha256": "b9c0700b2d9c95e41a8c2f0b8c75e24bec381dac657215da13d05538e5e8dd80",
+      "origin": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/settings-1791460927835718949/settings-model-invariants.stdout",
+      "originSHA256": "b9c0700b2d9c95e41a8c2f0b8c75e24bec381dac657215da13d05538e5e8dd80"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/shell-settings/host-self-tests.stdout",
+      "sha256": "1024fa4f03b3ba5fc9cd41b6742bcdc2c4c2a2444247b54690e70fde1c927769",
+      "origin": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/settings-1791460927835718949/host-self-tests.stdout",
+      "originSHA256": "1024fa4f03b3ba5fc9cd41b6742bcdc2c4c2a2444247b54690e70fde1c927769"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/shell-settings/settings-dawn-enlarged.png",
+      "sha256": "6ca40ca6948fcdbe7a8ed4c963e65a9680558fb5e6f3a0e30f447176e570bbe0",
+      "origin": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/settings-1791460927835718949/settings-dawn-enlarged.png",
+      "originSHA256": "6ca40ca6948fcdbe7a8ed4c963e65a9680558fb5e6f3a0e30f447176e570bbe0"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/shell-settings/popup-settings-before-restart.png",
+      "sha256": "dc9b3a82989769be2ac1083f0302eefbbf703ff7d284d3c06cb066ecc7e9c9e1",
+      "origin": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791460957190489602/popup-settings-before-restart.png",
+      "originSHA256": "dc9b3a82989769be2ac1083f0302eefbbf703ff7d284d3c06cb066ecc7e9c9e1"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/shell-settings/popup-settings-after-restart.png",
+      "sha256": "55b7dbdc50037f7f1ffbf89bc74e5669374206a5a95d39576c762fe8636ee54a",
+      "origin": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791460957190489602/popup-settings-after-restart.png",
+      "originSHA256": "55b7dbdc50037f7f1ffbf89bc74e5669374206a5a95d39576c762fe8636ee54a"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/shell-settings/physical-commands.json",
+      "sha256": "e6186a57729c437045e56b91cf38c0259b2e961fa8da9eda985bc1e986ec2f55"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/shell-settings/failed-native-1791460011544191998.json",
+      "sha256": "b30ef3fc94a85e5e6c3b740fdcc50f4d8af3b977be353690353d7494d84db761",
+      "origin": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-settings-1791460011544191998/report.json",
+      "originSHA256": "b30ef3fc94a85e5e6c3b740fdcc50f4d8af3b977be353690353d7494d84db761"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/shell-settings/failed-native-1791460195213471490.json",
+      "sha256": "0579b9af75391e2ff15ee53c805de96409c9475e80592b24bcc7effc87023c0c",
+      "origin": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-settings-1791460195213471490/report.json",
+      "originSHA256": "0579b9af75391e2ff15ee53c805de96409c9475e80592b24bcc7effc87023c0c"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/shell-settings/failed-native-1791460616002700308.json",
+      "sha256": "424d1bc1dbb4a610b871583a34c0d49b7cf6022813d5fce80735932ad81b7868",
+      "origin": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-settings-1791460616002700308/report.json",
+      "originSHA256": "424d1bc1dbb4a610b871583a34c0d49b7cf6022813d5fce80735932ad81b7868"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/shell-settings/source.patch",
+      "sha256": "1bfbb7d8a03534317f2f4e4b656f9a5eb6a77472142873f5635744013616cce8"
+    }
+  ]
+}

@@ -4,6 +4,7 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
 lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
 """
 import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
+SETTINGS=sys.argv[1:]==['--settings']
 PLACEMENT=sys.argv[1:]==['--snap-placement']
 SNAP=sys.argv[1:]==['--snap-chooser'] or PLACEMENT
 REFLOW=sys.argv[1:]==['--popup-reflow']
@@ -17,7 +18,7 @@ PRE_READY_RETIRE=sys.argv[1:]==['--switcher-pre-ready-retirement']
 MEMBERSHIP=sys.argv[1:]==['--switcher-membership'] or PRE_READY_RETIRE
 CHORD=sys.argv[1:]==['--switcher-chord'] or MEMBERSHIP
 SWITCHER=sys.argv[1:]==['--switcher']
-NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'] or DENSEPICKER;PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS or PINMENUS or REFLOW;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD
+NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'] or DENSEPICKER;PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS or PINMENUS or REFLOW or SETTINGS;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143';RUNTIME=REPO/'implementation/warlock-client-provider-native-v204'
 sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
 spec=importlib.util.spec_from_file_location('feedback_private_host',RUNTIME/'candidate_host.py');host=importlib.util.module_from_spec(spec);spec.loader.exec_module(host)
@@ -55,7 +56,7 @@ else:
 for row in pair.values():assert sha(row['path'])==row['sha256']
 assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
 subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
-OUT=ROOT/'qa/runs'/(('native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+OUT=ROOT/'qa/runs'/(('native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
 OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
 focus_host=None
 if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
@@ -104,6 +105,7 @@ if focus_host:report['focusHostAdaptation']=focus_host
 if retirement_fixture:report['retirementFixture']=retirement_fixture
 if primary_fixture:report['primaryFixture']=primary_fixture
 if SEARCH:report.update(requirements=['ELM-UI-005','ELM-UX-029'],scenarios=['search-no-match','search-race','search-refused','launcher-refused'],scope='Actual current query and private catalog, native typing/Enter refusal and no duplicate launch; AT/IME and popup physical presentation acceptance remain pending',popupPresentationAccepted=False)
+if SETTINGS:report.update(requirements=['ELM-UX-030'],scenarios=['ux-030'],scope='Actual integrated settings controls, exact saved appearance, native text size/reservation and whole-host restart; native-bound invalid scale refuses without changing stored or presented settings. Independent and applicable AT/IME/release acceptance remain open.',nativeSettingsObserved=False)
 if PINS:report.update(requirements=['ELM-UI-004','ELM-UX-004'],scenarios=['taskbar-zero','ux-004'],scope='Actual native keyboard pin/reorder, shell restart, identity order and one current zero-window launch; popup physical presentation and AT acceptance remain separate',popupPresentationAccepted=False,nativePinJourneyObserved=False)
 if TASKVIEW:report.update(requirements=['ELM-UX-017','ELM-UI-006'],scenarios=['ux-017','overview-cancel'],scope='Actual two populated native workspaces, exact window membership and active marker, keyboard/pointer local browsing and Escape recipient; independent and applicable AT acceptance remain pending',nativeTaskViewJourneyObserved=False)
 if RETIRE_OPENER:report['scope']='Actual native Task View browse then primary opener retirement; Escape must not revive its incarnation or dispatch a window effect. Independent/AT acceptance remains pending.'
@@ -401,14 +403,14 @@ raise SystemExit(daemon.run())
      # Count only current control interiors. Whole-popup counts incorrectly
      # included the compositor's warning overlay above a black reopened popup.
      for button in body['buttons']:
-      selected=button['id']==body['focus'] if SNAP and (projection() or {}).get('mode')=='snap' else button['accessibleName'] in ['Minimize','Close window actions','Maximize'] if PINMENUS else button['accessibleName'].startswith(('Activate ELM-','Restore ELM-')) if SWITCHER or CHORD else (button['accessibleName'].startswith('Browse workspace ') or (NAV and button['accessibleName'].startswith('Restore ELM-ACTIVATION-PEER'))) if TASKVIEW else button['accessibleName'] in ['Refresh applications','Open Files']
+      selected=button['id']==body['focus'] if SETTINGS else button['id']==body['focus'] if SNAP and (projection() or {}).get('mode')=='snap' else button['accessibleName'] in ['Minimize','Close window actions','Maximize'] if PINMENUS else button['accessibleName'].startswith(('Activate ELM-','Restore ELM-')) if SWITCHER or CHORD else (button['accessibleName'].startswith('Browse workspace ') or (NAV and button['accessibleName'].startswith('Restore ELM-ACTIVATION-PEER'))) if TASKVIEW else button['accessibleName'] in ['Refresh applications','Open Files']
       if not selected or button['disabled'] or button['y']<0 or button['y']+button['height']>box[3]:continue
       left,top=max(0,int(box[0]+button['x'])+12),max(100,int(box[1]+button['y'])+6)
       right,bottom=min(pix.get_width(),int(box[0]+button['x']+min(220,button['width']))-12),min(pix.get_height(),box[1]+box[3],int(box[1]+button['y']+button['height'])-6)
       bright=sum(1 for y in range(top,bottom) for x in range(left,right) if all(pixels[y*stride+x*channels+c]>170 for c in range(3)))
       painted=sum(1 for y in range(top,bottom) for x in range(left,right) if all(pixels[y*stride+x*channels+c]>15 for c in range(3)))
       regions.append({'accessibleName':button['accessibleName'],'brightPixels':bright,'paintedPixels':painted,'area':max(0,right-left)*max(0,bottom-top),'region':[left,top,right,bottom]})
-     report.setdefault('popupCaptures',[]).append({'stage':stage,'path':str(image),'sha256':sha(image),'controlRegions':regions,'body':body,'drawObservations':[l for l in text().splitlines() if l.startswith('popup-draw-observation:')][-3:]})
+     report.setdefault('popupCaptures',[]).append({'stage':stage,'path':str(image),'sha256':sha(image),'nativeBox':list(box),'controlRegions':regions,'body':body,'drawObservations':[l for l in text().splitlines() if l.startswith('popup-draw-observation:')][-3:]})
 
     def bar_body():
      rows=[json.loads(l.split(' ',2)[2])['body'] for l in text().splitlines() if l.startswith('surface-report: origin=bar ')]
@@ -839,6 +841,52 @@ raise SystemExit(daemon.run())
       check('OverviewEscapeReturnsToEligibleOpener',facts()['facts']['focused']==before_focus and any(e['kind']=='key' and e['keyval']==97 and e['window']=='ELM-AUTHORITY-FIXTURE' for e in delivered),events=delivered,before=before_focus,after=facts()['facts']['focused'])
      check('OverviewDismissalHasNoNativeMutation',len(journal())==before)
      report['nativeTaskViewJourneyObserved']=not RETIRE_OPENER
+    elif SETTINGS:
+     state_file=pathlib.Path(env['XDG_STATE_HOME'])/'warlock/settings.json'
+     def stored():return json.loads(state_file.read_text()) if state_file.exists() else None
+     def settings_body():
+      body=popup_body();p=projection()
+      return body if body and p and p.get('mode')=='settings' and body['publication']==p['publication'] and any(b['identity']=='settings:theme:dawn' for b in body['buttons']) else None
+     def opener():return next((b for b in (bar_body() or {}).get('buttons',[]) if b['accessibleName']=='Open settings' and not b['disabled']),None)
+     # Pointer opens the surface; every preference edit/save/dismissal uses
+     # actual native keyboard events with the original 6-second observations.
+     button=wait(opener);click({'visible':0<=button['x']<800 and 0<=button['y']<48,'point':[button['x']+button['width']/2,button['y']+button['height']/2]})
+     body=wait(lambda:settings_body() if settings_body() and any(b['identity']=='settings:theme:dawn' and not b['disabled'] for b in settings_body()['buttons']) else None)
+     check('SettingsLoadedNativeDefaultAppearance',body['theme']=='night' and body['textScale']=='100' and body['fontSize']=='16px',body=body)
+     keyboard_button('Dawn theme',28);keyboard_button('Text size 150%',28)
+     check('SettingsDraftDoesNotChangeAppearanceOrWrite',settings_body()['theme']=='night' and settings_body()['textScale']=='100' and not requests('shell-settings-write') and not stored())
+     keyboard_button('Save settings',28)
+     saved=wait(lambda:stored() if stored() and stored()['values']=={'theme':'dawn','textScale':150} else None)
+     body=wait(lambda:settings_body() if settings_body() and settings_body()['theme']=='dawn' and settings_body()['fontSize']=='24px' else None)
+     submitted=requests('shell-settings-write');check('SettingsSavesOneExactProposal',len(submitted)==1 and submitted[0]['proposal']['values']==saved['values'],request=submitted,storage=saved)
+     rows=[json.loads(l.split(': ',1)[1]) for l in text().splitlines() if l.startswith('backend-frame: ')]
+     receipts=[f for f in rows if f.get('kind')=='shell-settings-outcome' and f.get('binding')==submitted[0]['binding'] and f.get('requestId')==submitted[0]['requestId']]
+     check('SettingsHasExactSavedReceipt',len(receipts)==1 and receipts[0]['status']=='Saved' and receipts[0]['snapshot']==saved,receipts=receipts)
+     wait(lambda:(bar_body() or {}).get('theme')=='dawn' and (bar_body() or {}).get('textScale')=='150')
+     monitors=json.loads(s.ctl('monitors','-j'));check('CommittedScaleReservesActualNativeBar',monitors[0]['reserved'][1]==72 and bar_body()['fontSize']=='24px',monitors=monitors,bar=bar_body())
+     check('SettingsStorageIsPrivate',state_file.stat().st_mode&0o777==0o600 and state_file.parent.stat().st_mode&0o777==0o700)
+     # Invalid text scale crosses the real authenticated transport bound to
+     # this native authority, with only its supervisor-owned private storage.
+     from catalog_transport import CatalogTransport
+     from shell_preferences import Store as SettingsStore
+     transport=CatalogTransport(client,roots);transport.settings=SettingsStore(env['XDG_STATE_HOME'])
+     original=state_file.read_bytes();invalid={**saved,'values':{'theme':'night','textScale':77}}
+     bad_request={'protocolVersion':3,'kind':'shell-settings-write','binding':client.bound,'requestId':'31000','proposal':invalid};refusal=transport.handle(bad_request)
+     check('NativeBoundInvalidScaleRefusedAndUnapplied',refusal['status']=='Refused' and refusal['snapshot'] is None and state_file.read_bytes()==original and settings_body()['theme']=='dawn' and settings_body()['textScale']=='150',request=bad_request,receipt=refusal)
+     report['nativeSettingsInvalidScale']={'request':bad_request,'receipt':refusal,'storedSHA256':sha(state_file)}
+     keyboard_button('Refresh settings',28);wait(lambda:settings_body() and settings_body()['theme']=='dawn' and any(b['identity']=='settings:theme:dawn' and not b['disabled'] for b in settings_body()['buttons']))
+     popup_capture('settings-before-restart');check('LiveEnlargedSettingsPopupStartsBelowNativeBar',report['popupCaptures'][-1]['nativeBox'][1]>=72,nativeBox=report['popupCaptures'][-1]['nativeBox']);check('SettingsCaptureShowsActualControls',bool(report['popupCaptures'][-1]['controlRegions']) and all(c['paintedPixels']>.9*c['area'] and c['area']>0 for c in report['popupCaptures'][-1]['controlRegions']))
+     report['nativeSettingsBeforeRestart']={'storage':saved,'body':settings_body(),'writes':submitted,'receipt':receipts[0]}
+     key(1);wait(lambda:(projection() or {}).get('mode')=='closed')
+     owned=next(row for proc,row in s.host.processes if proc is web);s.host.stop(owned,web);web.wait(timeout=5);check('SettingsFirstHostExitsNormallyForRestart',web.returncode==0)
+     web=s.host.launch('warlock-settings-restarted',[str(binary),'--assets',str(assets),'--authority-config',str(config_path),'--backend',str(backend_fixture),'--qa-exit-after-render','--qa-stay-open','--surface-experiment'],env=env);apps.append(web);log=OUTPUT/'warlock-settings-restarted.log';collector=Collector()
+     wait(lambda:(projection() or {}).get('phase')=='Coherent' and (bar_body() or {}).get('theme')=='dawn' and (bar_body() or {}).get('textScale')=='150' and bar_body()['fontSize']=='24px')
+     check('WholeHostRestartRestoresCommittedAppearance',stored()==saved and not requests('shell-settings-write') and not journal() and not launches(),storage=stored(),body=bar_body())
+     button=wait(opener);click({'visible':0<=button['x']<800 and 0<=button['y']<72,'point':[button['x']+button['width']/2,button['y']+button['height']/2]})
+     body=wait(lambda:settings_body() if settings_body() and settings_body()['theme']=='dawn' and settings_body()['fontSize']=='24px' else None)
+     check('ReopenedSettingsReadsSavedValues',body['textScale']=='150' and 'Settings loaded.' in body['text'],body=body)
+     popup_capture('settings-after-restart');check('EnlargedSettingsPopupStartsBelowNativeBar',report['popupCaptures'][-1]['nativeBox'][1]>=72,nativeBox=report['popupCaptures'][-1]['nativeBox']);report['nativeSettingsAfterRestart']={'storage':stored(),'body':body,'writes':requests('shell-settings-write')}
+     key(1);wait(lambda:(projection() or {}).get('mode')=='closed');check('SettingsJourneyNeverMutatesOrLaunchesWindows',not journal() and not launches());report['nativeSettingsObserved']=True
     elif PINS:
      state_file=pathlib.Path(env['XDG_STATE_HOME'])/'warlock/taskbar.json'
      def saved_order():return json.loads(state_file.read_text())['identities'] if state_file.exists() else []

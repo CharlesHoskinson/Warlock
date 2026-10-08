@@ -1,4 +1,4 @@
-*{box-sizing:border-box}html,body{margin:0;height:100%;background:#17202a;color:#f4f6f7;font:16px system-ui}button{font:inherit;color:inherit;background:#263544;border:1px solid #536777;border-radius:5px;padding:6px 12px;margin:3px;min-height:36px}button:focus-visible{outline:3px solid #7ed7ff;outline-offset:1px}button:disabled{opacity:.55}.bar .surface-bar{display:flex;height:48px;overflow:hidden;align-items:center;flex-wrap:nowrap}.control-label{display:block;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.control-detail{display:block;font-size:13px;line-height:13px;white-space:normal;overflow-wrap:anywhere}.control-detail:empty{display:none}.bar .surface-actions>button{margin:1px;padding:0 4px;min-height:46px;max-height:46px;min-width:0;max-width:240px;line-height:18px;flex:0 0 80px}.bar .surface-actions>.control-group{flex:1 1 116px;min-width:112px}.bar .surface-actions>.control-recovery{flex:0 0 120px}.bar .control-recovery .control-label{font-size:14px;white-space:normal;line-height:15px;overflow:visible}.bar [role=status]{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.popup .surface-popup{height:100vh;overflow:auto;padding:8px}.popup .surface-popup>h1{font-size:20px;line-height:24px;margin:0 0 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.popup .surface-popup>p[role=status]{line-height:20px;margin:0 0 8px;white-space:normal;overflow-wrap:anywhere}.popup button{display:block;width:calc(100% - 6px);text-align:left}.popup .control-detail{margin-top:4px;font-size:14px;line-height:18px}.popup [role=status]{margin:6px}
+*{box-sizing:border-box}html,body{margin:0;height:100%;background:var(--shell-background,#17202a);color:var(--shell-foreground,#f4f6f7);font:16px system-ui}button{font:inherit;color:inherit;background:var(--shell-control,#263544);border:1px solid var(--shell-border,#536777);border-radius:5px;padding:6px 12px;margin:3px;min-height:36px}button:focus-visible{outline:3px solid var(--shell-focus,#7ed7ff);outline-offset:1px}button:disabled{opacity:.55}.bar .surface-bar{display:flex;height:48px;overflow:hidden;align-items:center;flex-wrap:nowrap}.control-label{display:block;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.control-detail{display:block;font-size:13px;line-height:13px;white-space:normal;overflow-wrap:anywhere}.control-detail:empty{display:none}.bar .surface-actions>button{margin:1px;padding:0 4px;min-height:46px;max-height:46px;min-width:0;max-width:240px;line-height:18px;flex:0 0 80px}.bar .surface-actions>.control-group{flex:1 1 116px;min-width:112px}.bar .surface-actions>.control-recovery{flex:0 0 120px}.bar .control-recovery .control-label{font-size:14px;white-space:normal;line-height:15px;overflow:visible}.bar [role=status]{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.popup .surface-popup{height:100vh;overflow:auto;padding:8px}.popup .surface-popup>h1{font-size:20px;line-height:24px;margin:0 0 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.popup .surface-popup>p[role=status]{line-height:20px;margin:0 0 8px;white-space:normal;overflow-wrap:anywhere}.popup button{display:block;width:calc(100% - 6px);text-align:left}.popup .control-detail{margin-top:4px;font-size:14px;line-height:18px}.popup [role=status]{margin:6px}
 
 .popup .window-preview{display:block;margin-bottom:4px}.popup .preview-image{display:block;width:auto;height:auto;max-width:100%;max-height:120px}.popup .preview-title,.popup .preview-state,.popup .preview-fidelity{display:block;font-size:13px;line-height:18px}
 
@@ -30,7 +30,7 @@ html{font-size:100%}body{font:1rem system-ui}
 .bar .surface-actions>.control-group{flex-basis:7.25rem;min-width:7rem}
 .bar .surface-actions>.control-recovery{flex-basis:7.5rem}
 .bar .control-detail{font-size:.8125rem;line-height:.8125rem}
-.bar .surface-actions button:focus-visible{outline:none;box-shadow:inset 0 0 0 3px #7ed7ff}
+.bar .surface-actions button:focus-visible{outline:none;box-shadow:inset 0 0 0 3px var(--shell-focus,#7ed7ff)}
 .bar .surface-actions{scrollbar-width:thin}
 .bar .surface-actions::-webkit-scrollbar{height:4px}
 .popup .surface-popup>h1{font-size:1.25rem;line-height:1.5rem}
@@ -53,3 +53,12 @@ html{font-size:100%}body{font:1rem system-ui}
 .surface-popup[data-mode="snap"] [data-surface-control="snap:region:bottom-left"]::before{transform:scaleY(-1)}
 .surface-popup[data-mode="snap"] [data-surface-control="snap:region:bottom-right"]::before{transform:scale(-1)}
 .surface-popup[data-mode="snap"] [aria-current="true"]{border-color:#80c7f0;box-shadow:0 0 0 1px #80c7f0,0 0 18px #80c7f045,inset 0 1px 0 #ffffff25}
+
+/* Committed appearance; browser adapters project these exact typed values. */
+html[data-theme="dawn"]{color-scheme:light;--shell-background:#edf2f7;--shell-foreground:#172536;--shell-control:#fff;--shell-border:#63758a;--shell-focus:#1768b0}
+html[data-theme="night"]{color-scheme:dark}
+html[data-theme="dawn"] .surface-bar>.surface-status{background:#fff;border-color:#1768b0}
+html[data-theme="dawn"] .launcher-search{background:#fff;color:#172536;border-color:#63758a}
+html[data-theme="dawn"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:"]{background:linear-gradient(145deg,#fff,#e4edf6)}
+.surface-popup[data-mode="settings"] [aria-current="true"]{border-color:var(--shell-focus,#7ed7ff);box-shadow:inset 3px 0 var(--shell-focus,#7ed7ff)}
+@media(forced-colors:active){.surface-popup[data-mode="settings"] [aria-current="true"]{border-color:Highlight;box-shadow:none}}

@@ -7883,14 +7883,55 @@
       "owner": "Desktop experience lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "ux-030",
           "oracle": "valid preference survives and invalid scale is rejected",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/shell-settings/manifest.json",
+              "sha256": "1f3fda77b902c3e9445c107aa13a4c4dba6d53c00f3eda6425a2cebaec5ba253",
+              "scope": "Integrated keyboard-operable appearance settings, exact Saved/CAS correlation, private atomic persistence and whole native host restart. Actual committed Dawn/150% rendering, live/restarted 72-pixel bar/popup layout and native-bound invalid-scale refusal observed. Independent original-scenario acceptance remains open."
+            }
+          ],
+          "missingObservation": "Independent original ux-030 review against the exact source/core/plugin/toolchain tuple.; Original keyboard-only and applicable AT/IME settings fixtures remain separate; this native recording uses pointer opening and keyboard edits/save/dismissal.; Reduced motion, notification and other release settings obligations are not supplied by this bounded theme/text-size implementation.",
+          "sourceHashes": {
+            "implementation/warlock/src/Settings.elm": "d4b47648e2276c533d23729232ed3fe75f599bc3bad9113b97565f4f40ecb8cc",
+            "implementation/warlock/src/Desktop.elm": "2ad3f0d47f8b4ec91c70558394acd401bc14e4b3461a836be6f2dac41d760f4d",
+            "implementation/warlock/src/Surface.elm": "d489e04da397a5cf443191a413f6f81f06b75815f062c776fe464932872869c5",
+            "implementation/warlock/src/SurfaceRenderer.elm": "2a34e0da8677e1dbab3af99b4319307882291c951404164cd86cf0fc8d921781",
+            "implementation/warlock/src/SurfaceController.elm": "28c563e0444035a663349296745cf5e988c88a77bb5db657fb4d7af6a8043313",
+            "implementation/warlock/native/surface.h": "4e02e5a46a3fb571be1fce32e41148713f0becde8086a87a33f214af90da6851",
+            "implementation/warlock/native/host.c": "1b62ffeacdecceaeb3c9d7ec9470fb623d9a3739e2b5fa2c350877155a2d3de7",
+            "implementation/warlock/adapter/shell_preferences.py": "1e51c07d2fa14eab487a48832261c225491b46869202cd629ccf26f92e3c4577",
+            "implementation/warlock/adapter/catalog_transport.py": "9d7b9b181e589b5766a12c22b6e58e128c2eac6faf28640d3b405e9886a86d4d",
+            "implementation/warlock/adapter/daemon.py": "b83df33c353da1d5aa47b92f58b6662011bfd1ace935b1c2e21e1c192ce303f3",
+            "implementation/warlock/assets/appearance.js": "f4b85c8e551ed319805a07545fd63f72ef921a1ef8db79109f15565244fba784",
+            "implementation/warlock/assets/shell.css": "05daa150a3749164590281eb79d71ac1fbb67e275a6b3515f03c9b9bf27a9157",
+            "implementation/warlock/assets/popup-adapter.js": "d6043e75113aefb018bbe96be1529ae8426a7ebb67d5b1cc1b8e58cb53104f61",
+            "implementation/warlock/assets/bar.html": "b88b0b075fc4bcef147357b023823049b5e63e1b49354eb298737ef003328a66",
+            "implementation/warlock/assets/popup.html": "035cb884860bb1cda77c06773a750c631e5d6f20cf90557989bb37756270c422",
+            "implementation/warlock/assets/elm.js": "c2fe69b60976fdff70c8cb0cac82fb7e1e2c68a9f8e3ed30a1238c6fd3952bb5",
+            "implementation/warlock/assets/bar.js": "1eed3b8af890a66fbb7bc8826b863334506474e48895841f401f5c0649ace837",
+            "implementation/warlock/assets/popup.js": "121dd60f5cfb9247b63fe03de4b9469236e62a745b0861fa7c3142e182d48455",
+            "implementation/warlock/qa/SettingsReplay.elm": "0f6db90669a88127468628485ad4a1053bb7a4a9dd2bfa20842d3effb540288f",
+            "implementation/warlock/qa/check-settings.py": "07a52b6805b88713c649104bd0e42ba46107d75cd039bf925198dd76625f8b05",
+            "implementation/warlock/qa/settings-browser.mjs": "e55418b6dbb13cafdb863d5afbb359bee48d65027a2c6e5dc353efccb55fd60e",
+            "implementation/warlock/qa/check-search.py": "fb6a56e7c5fb131a6d63408de35f64c921f633e60b17ab559f5450609823dfe3",
+            "implementation/warlock/qa/current-search-build.json": "d9fa4cdebf240952955e3fa3ebc4c4f8d8844190ee56f715e58c6e11e720b20c",
+            "implementation/warlock/qa/native-window-feedback.py": "f602c6dec9db26e3699d63569cc34eb2b1214d973a7d0c46056b98e97d95c267",
+            "implementation/warlock/README.md": "a16c7e68d73cfa5d112b23280f1da3bc645654999cad9e85ffb678c085b33ee5",
+            "implementation/warlock/assets/bar-adapter.js": "da127121c241c6078e36c1afe249fd94303140cd7b9517a37ccf1dd197f0042d",
+            "implementation/warlock/qa/settings.qnt": "a171d177b09f2e31ee56e29f75d8bfa37c761bf76588cf942e43d4be3c16ba34",
+            "implementation/warlock/native/shared-host.c": "afc1bd09d1ce78da11bfbdb21f347c18376a3de8298b78c7ebef3518a54ec291"
+          },
+          "reviewer": {
+            "name": "root-shell-settings",
+            "independent": false,
+            "disposition": "Original native save/restart and invalid-scale oracles observed by owner; independent acceptance remains open."
+          }
         }
       ]
     },
@@ -8011,5 +8052,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-08T11:30:00.079507+00:00"
+  "updatedUTC": "2026-10-08T12:05:39.738367+00:00"
 }

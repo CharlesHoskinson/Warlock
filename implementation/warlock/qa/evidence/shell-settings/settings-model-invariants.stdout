@@ -1,0 +1,238 @@
+An example execution:
+
+[State 0]
+{
+  applied: 100,
+  draft: 100,
+  expected: 1,
+  phase: "idle",
+  revision: 1,
+  stored: 100,
+  writes: 0
+}
+
+[State 1]
+{
+  applied: 100,
+  draft: 200,
+  expected: 1,
+  phase: "idle",
+  revision: 1,
+  stored: 100,
+  writes: 0
+}
+
+[State 2]
+{
+  applied: 100,
+  draft: 100,
+  expected: 1,
+  phase: "idle",
+  revision: 1,
+  stored: 100,
+  writes: 0
+}
+
+[State 3]
+{
+  applied: 100,
+  draft: 150,
+  expected: 1,
+  phase: "idle",
+  revision: 1,
+  stored: 100,
+  writes: 0
+}
+
+[State 4]
+{
+  applied: 100,
+  draft: 200,
+  expected: 1,
+  phase: "idle",
+  revision: 1,
+  stored: 100,
+  writes: 0
+}
+
+[State 5]
+{
+  applied: 100,
+  draft: 125,
+  expected: 1,
+  phase: "idle",
+  revision: 1,
+  stored: 100,
+  writes: 0
+}
+
+[State 6]
+{
+  applied: 100,
+  draft: 125,
+  expected: 1,
+  phase: "idle",
+  revision: 1,
+  stored: 100,
+  writes: 0
+}
+
+[State 7]
+{
+  applied: 100,
+  draft: 125,
+  expected: 1,
+  phase: "pending",
+  revision: 1,
+  stored: 100,
+  writes: 1
+}
+
+[State 8]
+{
+  applied: 100,
+  draft: 125,
+  expected: 1,
+  phase: "unknown",
+  revision: 2,
+  stored: 125,
+  writes: 1
+}
+
+[State 9]
+{
+  applied: 125,
+  draft: 125,
+  expected: 2,
+  phase: "idle",
+  revision: 2,
+  stored: 125,
+  writes: 1
+}
+
+[State 10]
+{
+  applied: 125,
+  draft: 100,
+  expected: 2,
+  phase: "idle",
+  revision: 2,
+  stored: 125,
+  writes: 1
+}
+
+[State 11]
+{
+  applied: 125,
+  draft: 125,
+  expected: 2,
+  phase: "idle",
+  revision: 2,
+  stored: 125,
+  writes: 1
+}
+
+[State 12]
+{
+  applied: 125,
+  draft: 150,
+  expected: 2,
+  phase: "idle",
+  revision: 2,
+  stored: 125,
+  writes: 1
+}
+
+[State 13]
+{
+  applied: 125,
+  draft: 125,
+  expected: 2,
+  phase: "idle",
+  revision: 2,
+  stored: 125,
+  writes: 1
+}
+
+[State 14]
+{
+  applied: 125,
+  draft: 125,
+  expected: 2,
+  phase: "idle",
+  revision: 2,
+  stored: 125,
+  writes: 1
+}
+
+[State 15]
+{
+  applied: 125,
+  draft: 125,
+  expected: 2,
+  phase: "idle",
+  revision: 2,
+  stored: 125,
+  writes: 1
+}
+
+[State 16]
+{
+  applied: 125,
+  draft: 200,
+  expected: 2,
+  phase: "idle",
+  revision: 2,
+  stored: 125,
+  writes: 1
+}
+
+[State 17]
+{
+  applied: 125,
+  draft: 150,
+  expected: 2,
+  phase: "idle",
+  revision: 2,
+  stored: 125,
+  writes: 1
+}
+
+[State 18]
+{
+  applied: 125,
+  draft: 150,
+  expected: 2,
+  phase: "pending",
+  revision: 2,
+  stored: 125,
+  writes: 2
+}
+
+[State 19]
+{
+  applied: 125,
+  draft: 150,
+  expected: 2,
+  phase: "pending",
+  revision: 3,
+  stored: 200,
+  writes: 2
+}
+
+[State 20]
+{
+  applied: 125,
+  draft: 150,
+  expected: 2,
+  phase: "pending",
+  revision: 4,
+  stored: 200,
+  writes: 2
+}
+
+[ok] No violation found (71ms at 1408 traces/second).
+Trace length statistics: max=21, min=21, average=21.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x13514 --backend=typescript to reproduce.

@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "Actual settings popup renders named controls"
+    },
+    {
+      "name": "Loaded appearance is current, not an unsaved draft"
+    },
+    {
+      "name": "Save disabled without changes"
+    },
+    {
+      "name": "Current theme and scale exposed semantically"
+    },
+    {
+      "name": "End reaches refresh and skips disabled Save"
+    },
+    {
+      "name": "Home reveals Close"
+    },
+    {
+      "name": "Arrow reaches first theme"
+    },
+    {
+      "name": "Keyboard theme dispatch uses exact current identity once"
+    },
+    {
+      "name": "Dispatch alone cannot optimistically apply theme"
+    },
+    {
+      "name": "Committed text size applies to real rendering"
+    },
+    {
+      "name": "Dawn colors apply to actual document"
+    },
+    {
+      "name": "Committed selected state follows receipt"
+    },
+    {
+      "name": "Enlarged small viewport reveals last control"
+    },
+    {
+      "name": "Escape submits dismissal after real key release"
+    },
+    {
+      "name": "Invalid presentation scale cannot change appearance"
+    },
+    {
+      "name": "No browser exceptions",
+      "detail": []
+    }
+  ],
+  "captures": [
+    "settings-dawn-enlarged.png"
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "browserExitCode": 0
+}

@@ -98,6 +98,7 @@ typedef struct {
     WebKitUserContentManager *manager;
     gulong geometry_handler;
     gboolean ready,active;
+    gint allocated_height;
     ContextKeySource context_keys;
 } OutputView;
 static GPtrArray *output_views;
@@ -134,7 +135,19 @@ static void shared_context_forward(OutputView *,JsonNode *,gboolean);
 
 static void shared_publish(void) {
     if (!surface_snapshot || shutting_down) return;
-    for (guint i=0;i<output_views->len;i++) {OutputView *row=g_ptr_array_index(output_views,i);if (row->active && row->ready) surface_eval(row->engine,"receivePresentation",surface_snapshot);}
+    JsonNode *appearance=json_object_get_member(json_node_get_object(surface_snapshot),"appearance");
+    gint scale=appearance?json_object_get_int_member(json_node_get_object(appearance),"textScale"):100;
+    gint height=3*shared_text_pixels*scale/100;
+    for(guint i=0;i<output_views->len;i++){
+        OutputView *row=g_ptr_array_index(output_views,i);if(!row->active)continue;
+        gint width,old_height;gtk_widget_get_size_request(row->bar,&width,&old_height);
+        if(old_height!=height){
+            gtk_widget_set_size_request(row->bar,-1,height);
+            gtk_widget_set_size_request(GTK_WIDGET(row->engine),-1,height);
+            gtk_layer_set_exclusive_zone(GTK_WINDOW(row->bar),height);
+        }
+        if(row->ready)surface_eval(row->engine,"receivePresentation",surface_snapshot);
+    }
 }
 static WebKitWebView *shared_focus_target(void) {
     return focus_owner && focus_owner->active ? focus_owner->engine : view;
@@ -453,6 +466,17 @@ static void shared_geometry(GObject *object,GParamSpec *property,gpointer data) 
     guint64 lease=surface_gate.lease;popup_hide();shared_popup_notify("receiveReflow",lease);
     g_print("view-reflow: id=%" G_GUINT64_FORMAT " lease=%" G_GUINT64_FORMAT "\n",row->id,lease);fflush(stdout);
 }
+static void shared_bar_allocated(GtkWidget *widget,GtkAllocation *allocation,gpointer data) {
+    OutputView *row=data;
+    if(!row->active || widget!=row->bar || shutting_down || allocation->height<=0)return;
+    gint prior=row->allocated_height;row->allocated_height=allocation->height;
+    if(!prior || prior==allocation->height || row!=popup_owner || !popup_active)return;
+    /* Retire the old native popup/input lease only after the real bar has its
+     * new allocation. The existing Elm reflow route republishes the same view. */
+    shared_context_cancel();guint64 lease=surface_gate.lease;
+    popup_hide();shared_popup_notify("receiveReflow",lease);
+    g_print("view-bar-reflow: id=%" G_GUINT64_FORMAT " height=%d lease=%" G_GUINT64_FORMAT "\n",row->id,allocation->height,lease);fflush(stdout);
+}
 static void manager_configure(WebKitUserContentManager *manager) {
     if (qa_exit) {WebKitUserScript *script=webkit_user_script_new("window.elmHostQA=true;",WEBKIT_USER_CONTENT_INJECT_TOP_FRAME,WEBKIT_USER_SCRIPT_INJECT_AT_DOCUMENT_START,NULL,NULL);webkit_user_content_manager_add_script(manager,script);webkit_user_script_unref(script);}
     g_signal_connect(manager,"script-message-received::native",G_CALLBACK(shared_receive),NULL);
@@ -483,6 +507,7 @@ static void shared_add(GdkDisplay *display,GdkMonitor *monitor,gpointer unused) 
     gtk_layer_set_layer(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_LAYER_TOP);gtk_layer_set_anchor(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_EDGE_TOP,TRUE);gtk_layer_set_anchor(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_EDGE_LEFT,TRUE);gtk_layer_set_anchor(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_EDGE_RIGHT,TRUE);gtk_layer_set_exclusive_zone(GTK_WINDOW(row->bar),3*shared_text_pixels);gtk_layer_set_keyboard_mode(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_KEYBOARD_MODE_NONE);
     gtk_widget_set_size_request(row->bar,-1,3*shared_text_pixels);gtk_window_resize(GTK_WINDOW(row->bar),1,1);gtk_widget_set_size_request(GTK_WIDGET(row->engine),-1,3*shared_text_pixels);
     gtk_container_add(GTK_CONTAINER(row->bar),GTK_WIDGET(row->engine));
+    g_signal_connect(row->bar,"size-allocate",G_CALLBACK(shared_bar_allocated),row);
     g_signal_connect(row->engine,"decide-policy",G_CALLBACK(policy),NULL);g_signal_connect(row->engine,"web-process-terminated",G_CALLBACK(terminated),NULL);
     g_signal_connect(row->engine,"event",G_CALLBACK(shared_context_event),NULL);
     g_signal_connect(row->engine,"button-press-event",G_CALLBACK(retain_event),NULL);g_signal_connect(row->engine,"key-press-event",G_CALLBACK(retain_event),NULL);

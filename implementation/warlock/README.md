@@ -78,3 +78,14 @@ geometry request allocator, custody journal and native authority. Changed scope
 refuses placement; only a correlated native receipt settles the request. Unknown
 retains the existing read-only recovery path and is never replayed. Original
 scenario observations and independent acceptance remain separate.
+
+
+The taskbar Settings control opens validated appearance preferences. Choose Night
+or Dawn and 100%, 125%, 150% or 200% text size, then Save settings. Draft changes
+remain unapplied until an exact save receipt; committed appearance also changes
+the native taskbar reservation. Tab/arrows/Home/End reach the controls and Escape
+closes the popup. Refresh discards the draft and reads storage without repeating
+an unconfirmed write. The supervisor selects private settings storage; a stale
+revision, invalid value or unsupported schema cannot overwrite the existing copy.
+The bounded native save/whole-host-restart and invalid-scale journey is tracked
+under ELM-UX-030; independent and applicable release acceptance remain separate.

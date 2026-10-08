@@ -3,6 +3,7 @@ module Surface exposing (Control, controls, mode, packet, resolve)
 import Menu
 import Switcher
 import Pins
+import Settings
 import MenuBridge
 import Provider
 import Catalog
@@ -42,7 +43,8 @@ recoveryPopup model = if recoveryNeeded model then [recoveryControl "control:rec
 
 mode : Desktop.Model -> String
 mode model =
-    if model.snap/=Nothing then "snap"
+    if model.settingsOpen then "settings"
+    else if model.snap/=Nothing then "snap"
     else if Desktop.switcherOpen model then "switcher"
     else if model.overview then "overview"
     else if model.open then "applications"
@@ -52,7 +54,18 @@ mode model =
 
 controls : Desktop.Model -> List Control
 controls model =
-    if model.snap/=Nothing then
+    if model.settingsOpen then
+        let scoped message=Desktop.capture model |> Maybe.map message
+            ready=Settings.writable model.settings && model.settingsExpected==Nothing
+            control identity label detail enabled message={id=identity,domId=Desktop.key model (if identity=="control:close" then "settings:close" else identity),label=label,ariaLabel=label,detail=detail,enabled=enabled,message=if enabled then scoped message else Nothing}
+            theme selected label=control ("settings:theme:"++Settings.themeName selected) label (if model.settings.draft.theme==selected then "Selected" else "") ready (\stamp -> Desktop.EditSettings stamp {theme=selected,textScale=model.settings.draft.textScale})
+            scale percent=control ("settings:scale:"++String.fromInt percent) ("Text size "++String.fromInt percent++"%") (if model.settings.draft.textScale==percent then "Selected" else "") ready (\stamp -> Desktop.EditSettings stamp {theme=model.settings.draft.theme,textScale=percent})
+            changed=model.settings.snapshot |> Maybe.map (\current -> current.values/=model.settings.draft) |> Maybe.withDefault False
+        in [control "control:close" "Close settings" "" True Desktop.CloseSettings
+           ,theme Settings.Night "Night theme",theme Settings.Dawn "Dawn theme"]++List.map scale [100,125,150,200]
+           ++[control "settings:save" "Save settings" "Apply and keep across restart" (ready && changed) Desktop.SaveSettings
+             ,control "settings:refresh" "Refresh settings" "Read stored values; discard unsaved changes" (model.settingsExpected==Nothing) Desktop.RefreshSettings]
+    else if model.snap/=Nothing then
         case model.snap of
             Nothing -> []
             Just choice ->
@@ -192,11 +205,12 @@ barControls model =
         ordinaryGroups=TaskbarShell.groups model.windows |> List.filter (\group -> List.length (owners group)/=1)
         reconnect = {id="bar:reconnect",domId="reconnect",label="Reconnect",ariaLabel="Reconnect to the window system",detail="",enabled=not model.windows.shell.reconnecting,message=Just (Desktop.Window (TaskbarShell.Native Shell.Reconnect))}
         retry = {id="bar:refresh-windows",domId=Desktop.key model "refresh-windows",label="Refresh windows",ariaLabel="Refresh windows",detail="",enabled=model.choice==Nothing,message=Just Desktop.RetryWindows}
-    in (if model.windows.shell.phase==Shell.Detached then reconnect else application) :: overview :: switcher :: List.map pinControl pinIds ++ List.map groupControl ordinaryGroups ++ (if not (String.isEmpty model.choiceNotice) && model.windows.shell.phase/=Shell.Detached then [retry] else []) ++ (if recoveryNeeded model && model.windows.shell.phase/=Shell.Detached then [recoveryControl "bar:recovery-refresh" model] else [])
+    in (if model.windows.shell.phase==Shell.Detached then reconnect else application) :: overview :: switcher :: {id="bar:settings",domId=Desktop.key model "settings:opener",label="Settings",ariaLabel="Open settings",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenSettings} :: List.map pinControl pinIds ++ List.map groupControl ordinaryGroups ++ (if not (String.isEmpty model.choiceNotice) && model.windows.shell.phase/=Shell.Detached then [retry] else []) ++ (if recoveryNeeded model && model.windows.shell.phase/=Shell.Detached then [recoveryControl "bar:recovery-refresh" model] else [])
 
 notice : Desktop.Model -> String
 notice model =
-    if Desktop.switcherOpen model then
+    if model.settingsOpen then (if model.settingsExpected/=Nothing then "Loading settings…" else model.settings.notice)
+    else if Desktop.switcherOpen model then
         if Switcher.phase model.switcher==Switcher.Waiting then "Loading window activation history…"
         else if model.nativeSwitcher/=Nothing then "Alt+Tab: next window. Alt+Shift+Tab: previous. Release Alt: activate. Escape: cancel."
         else "Tab or Right: next window. Shift+Tab or Left: previous. Enter: activate. Escape: cancel."
@@ -256,7 +270,7 @@ packet : Counter -> Counter -> Desktop.Model -> E.Value
 packet publication lease model =
     let
         encode control = E.object [("id",E.string control.id),("domId",E.string control.domId),("label",E.string control.label),("ariaLabel",E.string control.ariaLabel),("detail",E.string control.detail),("enabled",E.bool (control.enabled && control.message/=Nothing))]
-    in E.object [("surfaceProtocol",E.int 2),("publication",E.string (UInt64.string publication)),("lease",E.string (UInt64.string lease)),("mode",E.string (mode model)),("status",E.string (notice model)),("bar",E.list encode (barControls model)),("popup",E.list encode (controls model))]
+    in E.object [("surfaceProtocol",E.int 2),("appearance",Settings.encodeValues (model.settings.snapshot |> Maybe.map .values |> Maybe.withDefault Settings.defaults)),("publication",E.string (UInt64.string publication)),("lease",E.string (UInt64.string lease)),("mode",E.string (mode model)),("status",E.string (notice model)),("bar",E.list encode (barControls model)),("popup",E.list encode (controls model))]
 
 resolveAction : Counter -> Counter -> D.Value -> Desktop.Model -> Maybe Desktop.Msg
 resolveAction publication lease raw model =

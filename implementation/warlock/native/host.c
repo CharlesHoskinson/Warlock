@@ -229,7 +229,7 @@ static void write_next(void) {
 
 
 static const char *asset_name(const char *uri) {
-    static const char *names[] = {"index.html", "elm.js", "adapter.js", "shell.css", "popup.html", "popup.js", "popup-adapter.js", "bar.html", "bar.js", "bar-adapter.js", "context.js", "activation.js", "controlled-popup.html", "controlled-popup-adapter.js", "native-preview-admission.js", "native-visual-renderer.js"};
+    static const char *names[] = {"index.html", "elm.js", "adapter.js", "shell.css", "popup.html", "popup.js", "popup-adapter.js", "bar.html", "bar.js", "bar-adapter.js", "context.js", "activation.js", "appearance.js", "controlled-popup.html", "controlled-popup-adapter.js", "native-preview-admission.js", "native-visual-renderer.js"};
     for (guint i=0; i<G_N_ELEMENTS(names); i++) {
         g_autofree char *expected=g_strconcat("elm-shell://app/",names[i],NULL);
         if (g_str_equal(uri,expected)) return names[i];
@@ -293,6 +293,19 @@ static const char *request_kind(JsonNode *root) {
         const char *const names[]={"protocolVersion","kind","binding","requestId","chord","root"};
         guint64 request,chord,root;
         if(!surface_fields(obj,names,selection?6:5) || !JSON_NODE_HOLDS_OBJECT(json_object_get_member(obj,"binding")) || !surface_uint(json_object_get_member(obj,"requestId"),&request) || !request || !surface_uint(json_object_get_member(obj,"chord"),&chord) || !chord || (selection && (!surface_uint(json_object_get_member(obj,"root"),&root) || !root)))return NULL;
+        return value;
+    }
+    if(g_str_equal(value,"shell-settings-request") || g_str_equal(value,"shell-settings-write")) {
+        gboolean write=g_str_equal(value,"shell-settings-write");
+        const char *const fields[]={"protocolVersion","kind","binding","requestId","proposal"};guint64 request,revision;
+        if(!surface_fields(obj,fields,write?5:4) || !JSON_NODE_HOLDS_OBJECT(json_object_get_member(obj,"binding")) || !surface_uint(json_object_get_member(obj,"requestId"),&request) || !request)return NULL;
+        if(write){
+            JsonNode *proposal=json_object_get_member(obj,"proposal");if(!proposal || !JSON_NODE_HOLDS_OBJECT(proposal))return NULL;
+            JsonObject *p=json_node_get_object(proposal);const char *const pfields[]={"schema","revision","values"};JsonNode *version=json_object_get_member(p,"schema"),*values=json_object_get_member(p,"values");
+            if(!surface_fields(p,pfields,3) || !version || json_node_get_value_type(version)!=G_TYPE_INT64 || json_node_get_int(version)!=1 || !surface_uint(json_object_get_member(p,"revision"),&revision) || !revision || !values || !JSON_NODE_HOLDS_OBJECT(values))return NULL;
+            JsonObject *v=json_node_get_object(values);const char *const vfields[]={"theme","textScale"};JsonNode *theme=json_object_get_member(v,"theme"),*scale=json_object_get_member(v,"textScale");
+            if(!surface_fields(v,vfields,2) || !surface_text(theme,16,FALSE) || (!g_str_equal(json_node_get_string(theme),"night") && !g_str_equal(json_node_get_string(theme),"dawn")) || !scale || json_node_get_value_type(scale)!=G_TYPE_INT64 || (json_node_get_int(scale)!=100 && json_node_get_int(scale)!=125 && json_node_get_int(scale)!=150 && json_node_get_int(scale)!=200))return NULL;
+        }
         return value;
     }
     if (g_str_equal(value,"taskbar-pins-write")) {
@@ -439,7 +452,7 @@ static void receive(WebKitUserContentManager *manager,WebKitJavascriptResult *re
     if (qa_exit && (g_str_equal(kind,"window-effect") || g_str_equal(kind,"application-launch") || g_str_equal(kind,"host-reconnect"))) { g_print("frontend-request: %s\n",text);fflush(stdout); }
     if (g_str_equal(kind,"host-ready")) backend_start();
     else if (g_str_equal(kind,"host-reconnect")) backend_restart();
-    else if ((observation_kind(kind) || g_str_equal(kind,"projection-request") || g_str_equal(kind,"activation-history-request") || g_str_equal(kind,"switcher-selection-request") || g_str_equal(kind,"switcher-cancel-request") || g_str_equal(kind,"window-effect") || g_str_equal(kind,"catalog-request") || g_str_equal(kind,"taskbar-pins-write") || g_str_equal(kind,"application-launch"))) {
+    else if ((observation_kind(kind) || g_str_equal(kind,"projection-request") || g_str_equal(kind,"activation-history-request") || g_str_equal(kind,"switcher-selection-request") || g_str_equal(kind,"switcher-cancel-request") || g_str_equal(kind,"window-effect") || g_str_equal(kind,"catalog-request") || g_str_equal(kind,"taskbar-pins-write") || g_str_equal(kind,"shell-settings-request") || g_str_equal(kind,"shell-settings-write") || g_str_equal(kind,"application-launch"))) {
         if (!backend_ready || shutting_down) return;
         if (g_queue_get_length(&requests)>=16) { failed=TRUE;backend_ready=FALSE;deliver("{\"kind\":\"host-disconnected\"}");gtk_main_quit();return; }
         g_queue_push_tail(&requests,g_strconcat(text,"\n",NULL));write_next();
@@ -624,7 +637,7 @@ static gboolean retain_event(GtkWidget *widget,GdkEvent *event,gpointer unused) 
 static gboolean popup_dimensions(int logical_width,int logical_height,int *width,int *height) {
     if (logical_width<=8 || logical_height<=52) return FALSE;
     /* Owning compositor positioner insets its constraint box by four logical pixels. */
-    *width=MIN(700,logical_width-8);*height=MIN(420,logical_height-48-4);return TRUE;
+    *width=MIN(700,logical_width-8);*height=MIN(420,logical_height-(window?MAX(48,gtk_widget_get_allocated_height(window)):48)-4);return *height>0;
 }
 static gboolean popup_open(void) {
     if (popup_active) return TRUE;
@@ -655,7 +668,7 @@ static gboolean popup_open(void) {
     popup_connect(G_OBJECT(popover),"button-press-event",G_CALLBACK(popup_button));
     popup_connect(G_OBJECT(popover),"grab-broken-event",G_CALLBACK(popup_broken));
     gtk_widget_realize(popover);
-    GdkRectangle anchor=has_context_anchor?context_anchor:(GdkRectangle){50,0,1,48};GdkWindow *native=gtk_widget_get_window(popover);
+    GdkRectangle anchor=has_context_anchor?context_anchor:(GdkRectangle){50,0,1,MAX(48,gtk_widget_get_allocated_height(window))};GdkWindow *native=gtk_widget_get_window(popover);
     popup_connect(G_OBJECT(native),"moved-to-rect",G_CALLBACK(popup_positioned));
     gdk_window_move_to_rect(native,&anchor,GDK_GRAVITY_SOUTH_WEST,GDK_GRAVITY_NORTH_WEST,GDK_ANCHOR_SLIDE_X|GDK_ANCHOR_FLIP_Y|GDK_ANCHOR_SLIDE_Y,0,0);
     popup_active=TRUE;
@@ -680,7 +693,7 @@ static gboolean surface_preflight(SurfaceGate *gate,JsonNode *root,guint queued,
     for (guint i=0;i<count;i++) {
         JsonNode *item=json_array_get_element(req,i);const char *rk=request_kind(item);
         g_autofree char *wire=json_to_string(item,FALSE);
-        if (!rk || strlen(wire)>4096 || (!observation_kind(rk) && !g_str_equal(rk,"projection-request") && !g_str_equal(rk,"activation-history-request") && !g_str_equal(rk,"switcher-selection-request") && !g_str_equal(rk,"switcher-cancel-request") && !g_str_equal(rk,"catalog-request") && !g_str_equal(rk,"taskbar-pins-write") && !g_str_equal(rk,"application-launch") && !g_str_equal(rk,"window-effect") && !g_str_equal(rk,"host-reconnect")) || (open && (g_str_equal(rk,"application-launch") || g_str_equal(rk,"window-effect")))) return FALSE;
+        if (!rk || strlen(wire)>4096 || (!observation_kind(rk) && !g_str_equal(rk,"projection-request") && !g_str_equal(rk,"activation-history-request") && !g_str_equal(rk,"switcher-selection-request") && !g_str_equal(rk,"switcher-cancel-request") && !g_str_equal(rk,"catalog-request") && !g_str_equal(rk,"taskbar-pins-write") && !g_str_equal(rk,"shell-settings-request") && !g_str_equal(rk,"shell-settings-write") && !g_str_equal(rk,"application-launch") && !g_str_equal(rk,"window-effect") && !g_str_equal(rk,"host-reconnect")) || (open && (g_str_equal(rk,"application-launch") || g_str_equal(rk,"window-effect")))) return FALSE;
         if (g_str_equal(rk,"host-reconnect") && count!=1) return FALSE;
         if (!ready && !g_str_equal(rk,"host-reconnect")) return FALSE;
     }
@@ -730,6 +743,19 @@ static SurfaceDisposition surface_receive(WebKitUserContentManager *manager,cons
     surface_gate.publication=publication;surface_gate.lease=lease;
     if (surface_snapshot) json_node_unref(surface_snapshot);
     surface_snapshot=json_node_copy(frame);
+    /* Project committed text size into the native layer reservation. This does
+     * not observe or apply the user's draft and cannot submit a window effect. */
+    static gint appearance_height=48;
+    JsonNode *appearance=json_object_get_member(json_node_get_object(frame),"appearance");
+    gint scale=appearance?json_object_get_int_member(json_node_get_object(appearance),"textScale"):100;
+    gint height=48*scale/100;
+    if(!shared_frame_notice && height!=appearance_height){
+        appearance_height=height;
+        gtk_widget_set_size_request(window,-1,height);
+        gtk_widget_set_size_request(GTK_WIDGET(view),-1,height);
+        gtk_layer_set_exclusive_zone(GTK_WINDOW(window),height);
+    }
+
     if (shared_frame_notice) shared_frame_notice();
     applied_publication=0;applied_lease=0;
     if (pending_focus) {json_node_unref(pending_focus);pending_focus=NULL;}
@@ -772,6 +798,12 @@ static void test_bridge_bounds(void) {
 static void test_requests(void) {
     const char *good[]={"{\"protocolVersion\":3,\"kind\":\"host-ready\"}","{\"protocolVersion\":3,\"kind\":\"projection-request\",\"binding\":{},\"requestId\":\"1\"}"};
     const char *bad[]={"[]","{}","{\"protocolVersion\":1,\"kind\":\"host-ready\"}","{\"protocolVersion\":3,\"kind\":\"execute\"}","{\"protocolVersion\":3,\"kind\":\"host-ready\",\"path\":\"/etc/passwd\"}","{\"protocolVersion\":3,\"kind\":\"snapshot-request\"}"};
+    const char *settings_good="{\"protocolVersion\":3,\"kind\":\"shell-settings-write\",\"binding\":{},\"requestId\":\"1\",\"proposal\":{\"schema\":1,\"revision\":\"1\",\"values\":{\"theme\":\"dawn\",\"textScale\":150}}}";
+    g_autoptr(JsonParser) settings_parser=json_parser_new();g_assert_true(json_parser_load_from_data(settings_parser,settings_good,-1,NULL));g_assert_nonnull(request_kind(json_parser_get_root(settings_parser)));
+    JsonObject *settings_proposal=json_object_get_object_member(json_node_get_object(json_parser_get_root(settings_parser)),"proposal"),*settings_values=json_object_get_object_member(settings_proposal,"values");
+    json_object_set_int_member(settings_values,"textScale",77);g_assert_null(request_kind(json_parser_get_root(settings_parser)));
+    json_object_set_int_member(settings_values,"textScale",150);json_object_set_int_member(settings_proposal,"schema",2);g_assert_null(request_kind(json_parser_get_root(settings_parser)));
+    json_object_set_int_member(settings_proposal,"schema",1);json_object_set_string_member(settings_proposal,"path","/tmp/foreign");g_assert_null(request_kind(json_parser_get_root(settings_parser)));
     const char *pins_good="{\"protocolVersion\":3,\"kind\":\"taskbar-pins-write\",\"binding\":{},\"requestId\":\"1\",\"proposal\":{\"revision\":\"1\",\"identities\":[\"files\",\"editor\"]}}";
     g_autoptr(JsonParser) pins_parser=json_parser_new();g_assert_true(json_parser_load_from_data(pins_parser,pins_good,-1,NULL));g_assert_nonnull(request_kind(json_parser_get_root(pins_parser)));
     JsonObject *pins_proposal=json_object_get_object_member(json_node_get_object(json_parser_get_root(pins_parser)),"proposal");json_object_set_string_member(pins_proposal,"path","/tmp/foreign");g_assert_null(request_kind(json_parser_get_root(pins_parser)));json_object_remove_member(pins_proposal,"path");json_array_add_string_element(json_object_get_array_member(pins_proposal,"identities"),"files");g_assert_null(request_kind(json_parser_get_root(pins_parser)));

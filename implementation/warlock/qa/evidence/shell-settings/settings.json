@@ -1,0 +1,261 @@
+{
+  "checks": {
+    "openingReadFocusUsesCurrentControl": true,
+    "settingsOpenerIsIntegrated": true,
+    "settingsFrameAcceptedByRenderer": true,
+    "draftDoesNotApplyAppearance": true,
+    "oneExplicitWrite": true,
+    "pendingWriteCannotRepeat": true,
+    "wrongReceiptCannotApply": true,
+    "sameRequestWrongValuesCannotApply": true,
+    "exactSavedValuesApply": true,
+    "duplicateReceiptIsInert": true,
+    "unknownRetainsNoReplay": true,
+    "explicitReadReconcilesUnknown": true,
+    "ordinaryRefreshDoesNotMoveFocus": true,
+    "unknownRefreshOnlyReads": true,
+    "restartUsesStoredValues": true,
+    "invalidScaleCannotEditOrApply": true,
+    "invalidScaleDecoderRejects": true,
+    "staleViewCannotEdit": true,
+    "allSettingsHaveNames": true
+  },
+  "frame": {
+    "surfaceProtocol": 2,
+    "appearance": {
+      "theme": "night",
+      "textScale": 100
+    },
+    "publication": "1",
+    "lease": "1",
+    "mode": "settings",
+    "status": "Settings loaded.",
+    "bar": [
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:overview",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:overview-opener",
+        "label": "Task View",
+        "ariaLabel": "Open Task View",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "bar:switcher",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:switcher-opener",
+        "label": "Switch windows",
+        "ariaLabel": "Open window switcher",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "bar:settings",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:settings:opener",
+        "label": "Settings",
+        "ariaLabel": "Open settings",
+        "detail": "",
+        "enabled": true
+      }
+    ],
+    "popup": [
+      {
+        "id": "control:close",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:settings:close",
+        "label": "Close settings",
+        "ariaLabel": "Close settings",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "settings:theme:night",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:settings:theme:night",
+        "label": "Night theme",
+        "ariaLabel": "Night theme",
+        "detail": "Selected",
+        "enabled": true
+      },
+      {
+        "id": "settings:theme:dawn",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:settings:theme:dawn",
+        "label": "Dawn theme",
+        "ariaLabel": "Dawn theme",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "settings:scale:100",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:settings:scale:100",
+        "label": "Text size 100%",
+        "ariaLabel": "Text size 100%",
+        "detail": "Selected",
+        "enabled": true
+      },
+      {
+        "id": "settings:scale:125",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:settings:scale:125",
+        "label": "Text size 125%",
+        "ariaLabel": "Text size 125%",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "settings:scale:150",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:settings:scale:150",
+        "label": "Text size 150%",
+        "ariaLabel": "Text size 150%",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "settings:scale:200",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:settings:scale:200",
+        "label": "Text size 200%",
+        "ariaLabel": "Text size 200%",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "settings:save",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:settings:save",
+        "label": "Save settings",
+        "ariaLabel": "Save settings",
+        "detail": "Apply and keep across restart",
+        "enabled": false
+      },
+      {
+        "id": "settings:refresh",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:settings:refresh",
+        "label": "Refresh settings",
+        "ariaLabel": "Refresh settings",
+        "detail": "Read stored values; discard unsaved changes",
+        "enabled": true
+      }
+    ]
+  },
+  "savedFrame": {
+    "surfaceProtocol": 2,
+    "appearance": {
+      "theme": "dawn",
+      "textScale": 150
+    },
+    "publication": "2",
+    "lease": "1",
+    "mode": "settings",
+    "status": "Settings saved.",
+    "bar": [
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "bar:overview",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:control:overview-opener",
+        "label": "Task View",
+        "ariaLabel": "Open Task View",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "bar:switcher",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:control:switcher-opener",
+        "label": "Switch windows",
+        "ariaLabel": "Open window switcher",
+        "detail": "",
+        "enabled": false
+      },
+      {
+        "id": "bar:settings",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:settings:opener",
+        "label": "Settings",
+        "ariaLabel": "Open settings",
+        "detail": "",
+        "enabled": true
+      }
+    ],
+    "popup": [
+      {
+        "id": "control:close",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:settings:close",
+        "label": "Close settings",
+        "ariaLabel": "Close settings",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "settings:theme:night",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:settings:theme:night",
+        "label": "Night theme",
+        "ariaLabel": "Night theme",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "settings:theme:dawn",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:settings:theme:dawn",
+        "label": "Dawn theme",
+        "ariaLabel": "Dawn theme",
+        "detail": "Selected",
+        "enabled": true
+      },
+      {
+        "id": "settings:scale:100",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:settings:scale:100",
+        "label": "Text size 100%",
+        "ariaLabel": "Text size 100%",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "settings:scale:125",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:settings:scale:125",
+        "label": "Text size 125%",
+        "ariaLabel": "Text size 125%",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "settings:scale:150",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:settings:scale:150",
+        "label": "Text size 150%",
+        "ariaLabel": "Text size 150%",
+        "detail": "Selected",
+        "enabled": true
+      },
+      {
+        "id": "settings:scale:200",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:settings:scale:200",
+        "label": "Text size 200%",
+        "ariaLabel": "Text size 200%",
+        "detail": "",
+        "enabled": true
+      },
+      {
+        "id": "settings:save",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:settings:save",
+        "label": "Save settings",
+        "ariaLabel": "Save settings",
+        "detail": "Apply and keep across restart",
+        "enabled": false
+      },
+      {
+        "id": "settings:refresh",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:settings:refresh",
+        "label": "Refresh settings",
+        "ariaLabel": "Refresh settings",
+        "detail": "Read stored values; discard unsaved changes",
+        "enabled": true
+      }
+    ]
+  }
+}

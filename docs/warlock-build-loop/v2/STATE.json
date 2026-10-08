@@ -1,13 +1,77 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-08T11:30:00.079507+00:00",
+  "updatedUTC": "2026-10-08T12:05:39.738367+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "persistent-shell-settings",
+    "requirements": [
+      "ELM-UX-030"
+    ],
+    "scenarios": [
+      "ux-030"
+    ],
+    "paths": [
+      "implementation/warlock/src/Settings.elm",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/src/SurfaceRenderer.elm",
+      "implementation/warlock/src/SurfaceController.elm",
+      "implementation/warlock/native/surface.h",
+      "implementation/warlock/native/host.c",
+      "implementation/warlock/adapter/shell_preferences.py",
+      "implementation/warlock/adapter/catalog_transport.py",
+      "implementation/warlock/adapter/daemon.py",
+      "implementation/warlock/assets/appearance.js",
+      "implementation/warlock/assets/shell.css",
+      "implementation/warlock/assets/popup-adapter.js",
+      "implementation/warlock/assets/bar.html",
+      "implementation/warlock/assets/popup.html",
+      "implementation/warlock/assets/elm.js",
+      "implementation/warlock/assets/bar.js",
+      "implementation/warlock/assets/popup.js",
+      "implementation/warlock/qa/SettingsReplay.elm",
+      "implementation/warlock/qa/check-settings.py",
+      "implementation/warlock/qa/settings-browser.mjs",
+      "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/current-search-build.json",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/README.md",
+      "implementation/warlock/assets/bar-adapter.js",
+      "implementation/warlock/qa/settings.qnt",
+      "implementation/warlock/native/shared-host.c"
+    ],
+    "before": "Integrated shell has no settings surface or validated persistent theme/text scale.",
+    "after": "Keyboard-accessible settings save a validated appearance through native-selected private storage; current committed theme/scale appear after exact receipt and restore after host restart. Unsupported/invalid settings remain unapplied and recoverable.",
+    "verification": [
+      "Changed Main/Bar/Popup compile and settings replay; real store/host codec validation; browser keyboard/theme/scale; protected native save/restart and invalid-scale refusal."
+    ],
+    "status": "native-settings-observed-independent-acceptance-open",
+    "evidence": {
+      "path": "implementation/warlock/qa/evidence/shell-settings/manifest.json",
+      "sha256": "1f3fda77b902c3e9445c107aa13a4c4dba6d53c00f3eda6425a2cebaec5ba253"
+    },
+    "nextAction": "Continue the next original mandatory GUI slice: current-identity notification action/history and expiry, ELM-UX-031; retain independent review and broader settings/AT/IME obligations."
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "native-snap-chooser",
     "requirements": [
       "ELM-UX-019",
@@ -67,62 +131,6 @@
     },
     "nextSourceWork": "Extend the existing typed geometry effect operation, shared request allocator and durable custody through native placement authority; close the chooser before native geometry admission, reconcile fresh exact output/work-area/workspace scope, then qualify actual left-half placement and stale-output refusal using the original isolated oracles.",
     "status": "native-placement-observed-independent-acceptance-open"
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "cross-workspace-native-activation",
-    "requirements": [
-      "ELM-UI-002",
-      "ELM-UI-006",
-      "ELM-UX-008"
-    ],
-    "scenarios": [
-      "activate-other-workspace",
-      "activation-refused",
-      "navigation-partial-refusal",
-      "overview-select",
-      "ux-008"
-    ],
-    "paths": [
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/adapter/taskbar_projection.py",
-      "implementation/warlock/native/authority.cpp",
-      "implementation/warlock/native/navigation-modal.hpp",
-      "implementation/warlock/qa/check-native-authority.py",
-      "implementation/warlock/qa/current-native-pair.json",
-      "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/TaskViewReplay.elm",
-      "implementation/warlock/qa/workspace-navigation.qnt",
-      "implementation/warlock/qa/check-navigation-projection.py",
-      "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/assets/elm.js",
-      "implementation/warlock/assets/bar.js",
-      "implementation/warlock/assets/popup.js",
-      "implementation/warlock/src/Surface.elm"
-    ],
-    "before": "Task View and taskbar cannot activate or restore ordinary windows outside visible workspaces; native effect1 refuses them.",
-    "after": "A current family choice navigates to its preserved workspace on its owning output before restore/activation, preserves membership and native focus/keyboard identity, and refuses stale/protected targets without replay.",
-    "verification": [
-      "Compile changed Elm/adapter and native authority TU against exact unchanged owning core; strict symbol and dependency closure",
-      "Typed current/stale choice replay, bracketing adapter tests and bounded navigation/refusal/Unknown Quint schedules",
-      "Protected native workspace-2 restore through actual Task View and taskbar; focus/pixels/membership and stale refusal observations"
-    ],
-    "state": "implemented; physical Task View workspace-2 restore/receipt/focus/keyboard/membership observed; backend taskbar restore observed but reopened picker paint fails; partial-refusal/other-output/independent/AT remain open",
-    "evidence": "implementation/warlock/qa/evidence/workspace-navigation/current-manifest.json"
   },
   "recentSlices": [
     {
