@@ -28,3 +28,12 @@ the existing Elm/native authority. The ten-member, 150% text native journey,
 member menus, selected-window pixels and real keyboard recipient are recorded in
 `qa/evidence/dense-picker/manifest.json`. Native popup reflow continuity,
 action-menu overflow, applicable AT and independent acceptance remain open.
+
+Window-action menus reveal their current Elm-selected operation after row growth
+or viewport changes. Ordinary publications preserve deliberate wheel scrolling
+and Tab focus on Close; keyboard navigation reveals the current focus again.
+An inactive document cannot acquire operation focus from the view adapter.
+`qa/evidence/dense-menu/manifest.json` records the 480x360 native journey at
+200% text, current operation endpoints/disabled rows/Tab/Escape and text pixels,
+plus the default-size minimize/restore regression. AT, independent original
+acceptance and native popup reflow continuity remain open.

@@ -4,7 +4,8 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
 lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
 """
 import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
-DENSEPICKER=sys.argv[1:]==['--dense-picker']
+DENSEMENU=sys.argv[1:]==['--dense-menu']
+DENSEPICKER=sys.argv[1:]==['--dense-picker'] or DENSEMENU
 DENSE=sys.argv[1:]==['--dense-taskbar']
 SMALL=DENSE or DENSEPICKER
 PINMENUS=sys.argv[1:]==['--pinned-menus'] or DENSE
@@ -110,10 +111,11 @@ if PRIMARY:report.update(requirements=['ELM-UI-004'],scenarios=['taskbar-inactiv
 if PINMENUS:report.update(requirements=['ELM-UI-008','ELM-UX-023'],scenarios=['menu-invocation','keyboard-menus'],scope='Actual current running pin, native secondary click/Menu/Shift-F10 menus and existing minimize/restore path; dense/enlarged-text, AT and independent acceptance remain open',nativePinnedMenusObserved=False)
 if DENSE:report.update(requirements=['ELM-UI-008'],scenarios=['overflow-first-last','overflow-resize','menu-invocation'],scope='Actual small native output, enlarged text, configured overflowing pins, physical keyboard/wheel/menu traversal and output resize; AT and independent review remain open',nativeDenseTaskbarObserved=False)
 if DENSEPICKER:report.update(requirements=['ELM-UI-008','ELM-UI-004'],scenarios=['overflow-first-last','overflow-resize','menu-invocation','taskbar-group'],scope='Actual ten-root native enlarged-text picker arrow/endpoints, first/last menus and identity-bound selection/input; browser resize continuity is separate; native popup reflow, AT and independent review remain open',nativeDensePickerObserved=False)
+if DENSEMENU:report.update(requirements=['ELM-UI-008'],scenarios=['overflow-first-last','menu-invocation'],scope='Actual ten-root 480x360 native output at 200% text; overflow of current three-operation menu, typed endpoint/arrows/disabled/Tab/Escape and operation-label pixels; renderer capacity/growth/blur are component observations; AT/independent and native popup reflow remain open',nativeDenseMenuObserved=False)
 LUA=b'''hl.config({xwayland={enabled=false},animations={enabled=false}})
 hl.monitor({output="WAYLAND-1",mode="800x600@60",position="0x0",scale=1})
 '''
-if SMALL:LUA=LUA.replace(b'800x600',b'480x600')
+if SMALL:LUA=LUA.replace(b'800x600',b'480x360' if DENSEMENU else b'480x600')
 if CHORD:LUA+=(ROOT/'native/switcher-bindings.lua').read_bytes()
 def check(name,condition,**data):
  report['checks'].append({'name':name,'passed':bool(condition),**data});assert condition,name
@@ -208,7 +210,7 @@ try:
      member_selector='address:'+row['address']
      if not row['floating']:check('DenseMemberFixtureFloats',s.ctl('dispatch',"hl.dsp.window.float({action='set',window='"+member_selector+"'})").strip()=='ok')
      check('DenseMemberFixtureSize',s.ctl('dispatch',"hl.dsp.window.resize({x=320,y=240,window='"+member_selector+"'})").strip()=='ok')
-     check('DenseMemberFixturePosition',s.ctl('dispatch',"hl.dsp.window.move({x=70,y=280,window='"+member_selector+"'})").strip()=='ok')
+     check('DenseMemberFixturePosition',s.ctl('dispatch',"hl.dsp.window.move({x=70,y="+('110' if DENSEMENU else '280')+",window='"+member_selector+"'})").strip()=='ok')
    check('FixtureFocus',s.ctl('dispatch',"hl.dsp.focus({window='"+selector+"'})").strip()=='ok')
    if CHORD:
     keyboard=pathlib.Path('/home/hoskinson/window-integration-qa/orca-reader/physical-commands/evdev-keyboard');report['keyboard']={'path':str(keyboard),'sha256':sha(keyboard)}
@@ -272,7 +274,7 @@ daemon.handle_request=handle
 raise SystemExit(daemon.run())
 """)
     report['commitHoldFixture']={'path':str(backend_fixture),'sha256':sha(backend_fixture),'maximumSeconds':2,'scope':'Only delay transport before selection prepare; original effect path and six-second observation deadline unchanged.'}
-   web=s.host.launch('warlock',['%s'%binary,'--assets',str(assets),'--authority-config',str(config_path),'--backend',str(backend_fixture if CATALOG or CHORD else ROOT/'adapter/daemon.py'),'--qa-exit-after-render','--qa-stay-open','--surface-experiment',*(['--text-scale','1.5'] if SMALL else [])],env=env);apps.append(web);log=OUTPUT/'warlock.log';collector=Collector()
+   web=s.host.launch('warlock',['%s'%binary,'--assets',str(assets),'--authority-config',str(config_path),'--backend',str(backend_fixture if CATALOG or CHORD else ROOT/'adapter/daemon.py'),'--qa-exit-after-render','--qa-stay-open','--surface-experiment',*(['--text-scale','2' if DENSEMENU else '1.5'] if SMALL else [])],env=env);apps.append(web);log=OUTPUT/'warlock.log';collector=Collector()
    def text():
     raw=log.read_text(errors='replace')
     # The live file may end in a producer's unfinished JSON record. Observe
@@ -816,6 +818,7 @@ raise SystemExit(daemon.run())
       for capture in report['popupCaptures']:check('ActualPopupControlPixels'+capture['stage'],bool(capture['controlRegions']) and all(r['area']>0 and r['brightPixels']>30 and r['paintedPixels']>.9*r['area'] for r in capture['controlRegions']),capture=capture)
       report['popupControlsPhysicallyObserved']=True
    elif DENSEPICKER:
+    dense_height=360 if DENSEMENU else 600
     keyboard=pathlib.Path('/home/hoskinson/window-integration-qa/orca-reader/physical-commands/evdev-keyboard');report['keyboard']={'path':str(keyboard),'sha256':sha(keyboard)}
     def key(code):helper([str(keyboard)],f'key {code} 1\nsleep 50\nkey {code} 0\nsleep 100\nsync\n')
     def surface_body(origin):
@@ -831,11 +834,11 @@ raise SystemExit(daemon.run())
      button=wait(group_button);body=bar_body();box=body['actions']
      left=max(box['x'],button['x']);right=min(box['x']+box['width'],button['x']+button['width'])
      if right-left<20:
-      helper([str(POINTER),'480','600'],f'move {round(box["x"]+box["width"]/2)} 30\nwheel 400 0\nsleep 100\n')
+      helper([str(POINTER),'480',str(dense_height)],f'move {round(box["x"]+box["width"]/2)} 30\nwheel 400 0\nsleep 100\n')
       button=wait(group_button);body=bar_body();box=body['actions'];left=max(box['x'],button['x']);right=min(box['x']+box['width'],button['x']+button['width'])
      check('ActualGroupPointerIntersection',right-left>=20,button=button,body=body)
      x,y=round((left+right)/2),round(button['y']+button['height']/2)
-     helper([str(POINTER),'480','600'],f'move {x} {y}\nsleep 100\nbutton 272 1\nsleep 50\nbutton 272 0\nsleep 100\n')
+     helper([str(POINTER),'480',str(dense_height)],f'move {x} {y}\nsleep 100\nbutton 272 1\nsleep 50\nbutton 272 0\nsleep 100\n')
      picker=wait(lambda:(projection() or {}).get('picker'))
      wait(lambda:popup_body() and len([b for b in popup_body()['buttons'] if b.get('identity','').startswith('family:')])==10)
      return picker
@@ -850,8 +853,9 @@ raise SystemExit(daemon.run())
      image=OUTPUT/('dense-picker-'+stage+'.png');helper(['/usr/bin/grim',str(image)])
      gi.require_version('GdkPixbuf','2.0');from gi.repository import GdkPixbuf
      pix=GdkPixbuf.Pixbuf.new_from_file(str(image));pixels=pix.get_pixels();stride=pix.get_rowstride();channels=pix.get_n_channels()
-     left,top=max(0,int(box[0]+button['x'])+12),max(100,int(box[1]+button['y'])+6)
-     right,bottom=min(pix.get_width(),int(box[0]+button['x']+min(220,button['width']))-12),min(pix.get_height(),box[1]+box[3],int(box[1]+button['y']+button['height'])-6)
+     label=button['labelRect']
+     left,top=max(0,int(box[0]+label['x'])),max(0,int(box[1]+label['y']))
+     right,bottom=min(pix.get_width(),int(box[0]+label['x']+min(220,label['width']))),min(pix.get_height(),box[1]+box[3],int(box[1]+label['y']+label['height']))
      area=max(0,right-left)*max(0,bottom-top)
      bright=sum(1 for y in range(top,bottom) for x in range(left,right) if all(pixels[y*stride+x*channels+c]>170 for c in range(3)))
      painted=sum(1 for y in range(top,bottom) for x in range(left,right) if all(pixels[y*stride+x*channels+c]>15 for c in range(3)))
@@ -860,7 +864,7 @@ raise SystemExit(daemon.run())
      check(stage+'ActualFocusedControlPixels',area>0 and bright>15 and painted>.9*area,capture=packet)
     before=len(journal());before_launches=len(launches());picker=open_picker();order=[b['identity'] for b in members()]
     check('ActualTenMemberGroupOpensWithoutLaunchOrWindowEffect',len(picker['selections'])==10 and len(journal())==before and len(launches())==before_launches,picker=picker)
-    check('NativePickerHasEnlargedTextAndOverflow',popup_body()['fontSize']=='24px' and popup_body()['scrollHeight']>popup_body()['viewportHeight'],body=popup_body())
+    check('NativePickerHasEnlargedTextAndOverflow',popup_body()['fontSize']==('32px' if DENSEMENU else '24px') and popup_body()['scrollHeight']>popup_body()['viewportHeight'],body=popup_body())
     key(107);wait(lambda:selected(order[-1]));capture('last')
     key(102);wait(lambda:selected('control:close'));key(108);wait(lambda:selected(order[0]));capture('first')
     for identity in order[1:]:
@@ -870,7 +874,7 @@ raise SystemExit(daemon.run())
     import re
     rows=[l for l in text().splitlines() if 'xdg_popup' in l and '.configure(' in l];box=tuple(map(int,re.search(r'configure\((-?\d+), (-?\d+), (\d+), (\d+)\)',rows[-1]).groups()))
     button=members()[0];x,y=round(box[0]+button['x']+button['width']/2),round(box[1]+button['y']+button['height']/2)
-    helper([str(POINTER),'480','600'],f'move {x} {y}\nsleep 100\nbutton 273 1\nsleep 50\nbutton 273 0\nsleep 100\n')
+    helper([str(POINTER),'480',str(dense_height)],f'move {x} {y}\nsleep 100\nbutton 273 1\nsleep 50\nbutton 273 0\nsleep 100\n')
     wait(lambda:(projection() or {}).get('mode')=='menu' and popup_body() and any(b['accessibleName']=='Minimize' and not b['disabled'] for b in popup_body()['buttons']));capture('first-secondary-menu')
     key(1);wait(lambda:(projection() or {}).get('mode')=='closed');wait(lambda:bar_body()['focus']==group_button()['id'])
     open_picker();key(102);key(108);wait(lambda:selected(order[0]));key(127)
@@ -880,6 +884,18 @@ raise SystemExit(daemon.run())
     open_picker();key(107);wait(lambda:selected(order[-1]))
     helper([str(keyboard)],'key 42 1\nkey 68 1\nsleep 50\nkey 68 0\nkey 42 0\nsleep 100\nsync\n')
     wait(lambda:(projection() or {}).get('mode')=='menu' and popup_body() and any(b['accessibleName']=='Minimize' and not b['disabled'] for b in popup_body()['buttons']));capture('last-menu')
+    if DENSEMENU:
+     def menu_selected(label):
+      body=popup_body();button=next((b for b in (body or {}).get('buttons',[]) if b['accessibleName']==label and not b['disabled']),None)
+      return body if button and body['focus']==button['id'] and button['y']>=0 and button['y']+button['height']<=body['viewportHeight'] else None
+     menu_order=[b['identity'] for b in popup_body()['buttons']]
+     check('NativeOperationMenuActuallyOverflowsAt200Percent',popup_body()['fontSize']=='32px' and popup_body()['scrollHeight']>popup_body()['viewportHeight'],body=popup_body())
+     key(107);body=wait(lambda:menu_selected('Maximize'));check('NativeMenuEndRevealsLastEnabledOperation',True,body=body);capture('operation-end')
+     key(102);body=wait(lambda:menu_selected('Minimize'));check('NativeMenuHomeSkipsDisabledRestore',True,body=body)
+     key(103);wait(lambda:menu_selected('Maximize'));key(108);wait(lambda:menu_selected('Minimize'))
+     check('NativeMenuArrowsWrapEnabledOperationsInOriginalOrder',[b['identity'] for b in popup_body()['buttons']]==menu_order and len(journal())==before,body=popup_body())
+     key(15);wait(lambda:menu_selected('Close window actions'));capture('operation-close')
+     key(15);wait(lambda:menu_selected('Minimize'));check('NativeMenuTabReturnsToElmSelectedOperation',len(journal())==before,body=popup_body())
     key(1);wait(lambda:(projection() or {}).get('mode')=='closed');wait(lambda:bar_body()['focus']==group_button()['id'])
     check('FirstLastMenusAndDismissalSendNoWindowEffect',len(journal())==before)
     key(28);picker=wait(lambda:(projection() or {}).get('picker'));wait(lambda:popup_body() and len(members())==10)
@@ -899,6 +915,7 @@ raise SystemExit(daemon.run())
     report['chosenWindowCapture']={'path':str(image),'sha256':sha(image),'chosen':chosen_window,'region':[left,top,right,bottom],'greenPixels':green}
     check('ChosenDenseWindowIsPhysicallyPresented',green>1000,capture=report['chosenWindowCapture'])
     report['nativeDensePickerObserved']=True
+    if DENSEMENU:report['nativeDenseMenuObserved']=True
    elif FOCUS:
     keyboard=pathlib.Path('/home/hoskinson/window-integration-qa/orca-reader/physical-commands/evdev-keyboard')
     report['keyboard']={'path':str(keyboard),'sha256':sha(keyboard)}

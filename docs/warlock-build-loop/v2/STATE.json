@@ -1,27 +1,23 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-08T08:17:35.147091+00:00",
+  "updatedUTC": "2026-10-08T09:10:02.791564+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "dense-window-picker",
+    "id": "dense-menu-reveal",
     "requirements": [
-      "ELM-UI-008",
-      "ELM-UI-004"
+      "ELM-UI-008"
     ],
     "scenarios": [
       "overflow-first-last",
-      "overflow-resize",
-      "menu-invocation",
-      "taskbar-group"
+      "menu-invocation"
     ],
     "paths": [
-      "implementation/warlock/src/SurfaceRenderer.elm",
-      "implementation/warlock/assets/popup-adapter.js",
+      "implementation/warlock/assets/context.js",
       "implementation/warlock/assets/shell.css",
       "implementation/warlock/qa/check-search.py",
       "implementation/warlock/qa/dense-taskbar-browser.mjs",
@@ -30,16 +26,17 @@
       "implementation/warlock/assets/elm.js",
       "implementation/warlock/assets/bar.js",
       "implementation/warlock/assets/popup.js",
-      "implementation/warlock/README.md"
+      "implementation/warlock/README.md",
+      "implementation/warlock/assets/popup-adapter.js"
     ],
-    "before": "Dense picker members can be reached by Tab, but have no explicit arrow/endpoints or retained logical selection through an ordinary publication.",
-    "after": "Dense picker members and controls remain reachable and visible by arrows and endpoints; current logical focus survives the same lease, and selection activates only the chosen current native member.",
+    "before": "Menu policy selects and focuses an operation, but same-node content growth has no explicit selected-row reveal.",
+    "after": "The current Elm-selected operation stays visibly revealed as a bounded menu overflows or its content and viewport change.",
     "verification": [
-      "Actual compiled Popup browser resize/disabled/lease navigation and protected ten-root enlarged-text native picker/menu/activation/recipient journey."
+      "Actual compiled menu projection/navigation/growth/disabled/blur regression and protected short-output 200%-text native endpoint, Tab/Escape and operation-label journey."
     ],
-    "state": "implemented; 30 browser checks, ten-root native keyboard/menu/activation/pixels/recipient and default launcher regression observed; original AT/independent/native popup reflow/action overflow remain open",
-    "nextSourceWork": "Implement and qualify action-menu overflow, then native popup reflow selection continuity and applicable AT.",
-    "evidence": "implementation/warlock/qa/evidence/dense-picker/current-manifest.json"
+    "state": "implemented; native current-operation overflow at 200% text, enabled endpoints, Tab/Escape and label pixels observed; component growth/manual-scroll/Close preservation verified; original AT/independent/native reflow remain open",
+    "nextSourceWork": "Preserve logical menu/picker selection through native active-popup reflow, then obtain applicable AT and independent original-scenario observations.",
+    "evidence": "implementation/warlock/qa/evidence/dense-menu/manifest.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -460,6 +457,40 @@
         "path": "implementation/warlock/qa/evidence/dense-taskbar/manifest.json",
         "sha256": "b8c2dca5159e2e1a766e998c2487f5748b2f3e8c4351b3b754db109a6fb5afc3"
       }
+    },
+    {
+      "id": "dense-window-picker",
+      "requirements": [
+        "ELM-UI-008",
+        "ELM-UI-004"
+      ],
+      "scenarios": [
+        "overflow-first-last",
+        "overflow-resize",
+        "menu-invocation",
+        "taskbar-group"
+      ],
+      "paths": [
+        "implementation/warlock/src/SurfaceRenderer.elm",
+        "implementation/warlock/assets/popup-adapter.js",
+        "implementation/warlock/assets/shell.css",
+        "implementation/warlock/qa/check-search.py",
+        "implementation/warlock/qa/dense-taskbar-browser.mjs",
+        "implementation/warlock/qa/native-window-feedback.py",
+        "implementation/warlock/qa/current-search-build.json",
+        "implementation/warlock/assets/elm.js",
+        "implementation/warlock/assets/bar.js",
+        "implementation/warlock/assets/popup.js",
+        "implementation/warlock/README.md"
+      ],
+      "before": "Dense picker members can be reached by Tab, but have no explicit arrow/endpoints or retained logical selection through an ordinary publication.",
+      "after": "Dense picker members and controls remain reachable and visible by arrows and endpoints; current logical focus survives the same lease, and selection activates only the chosen current native member.",
+      "verification": [
+        "Actual compiled Popup browser resize/disabled/lease navigation and protected ten-root enlarged-text native picker/menu/activation/recipient journey."
+      ],
+      "state": "implemented; 30 browser checks, ten-root native keyboard/menu/activation/pixels/recipient and default launcher regression observed; original AT/independent/native popup reflow/action overflow remain open",
+      "nextSourceWork": "Implement and qualify action-menu overflow, then native popup reflow selection continuity and applicable AT.",
+      "evidence": "implementation/warlock/qa/evidence/dense-picker/current-manifest.json"
     }
   ]
 }

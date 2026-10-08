@@ -1,6 +1,7 @@
 """Focused compiled launcher/search integration, protected CPU scope only."""
 import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures,http.server,threading
-PICKER=sys.argv[1:]==['--dense-picker']
+MENU=sys.argv[1:]==['--dense-menu']
+PICKER=sys.argv[1:]==['--dense-picker'] or MENU
 DENSE=sys.argv[1:]==['--dense-taskbar'] or PICKER
 PINMENUS=sys.argv[1:]==['--pinned-menus'] or (DENSE and not PICKER)
 PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PINMENUS or PICKER
@@ -125,6 +126,7 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
   (INPUT/'qa/dense.html').write_text('<!doctype html><html style="font-size:24px"><head><link rel="stylesheet" href="../assets/shell.css"></head><body class="bar"><div id="app"></div><script>window.nativePackets=[];window.webkit={messageHandlers:{native:{postMessage:s=>nativePackets.push(JSON.parse(s))}}};</script><script src="../assets/bar.js"></script><script src="../assets/bar-adapter.js"></script><script src="../assets/context.js"></script><script src="../assets/activation.js"></script></body></html>')
   (INPUT/'qa/dense-picker.html').write_text('<!doctype html><html style="font-size:24px"><head><link rel="stylesheet" href="../assets/shell.css"></head><body class="popup"><div id="app"></div><script>window.nativePackets=[];window.webkit={messageHandlers:{native:{postMessage:s=>nativePackets.push(JSON.parse(s))}}};</script><script src="../assets/popup.js"></script><script src="../assets/popup-adapter.js"></script><script src="../assets/context.js"></script><script src="../assets/activation.js"></script></body></html>')
   if PICKER:report.update(requirements=['ELM-UI-008','ELM-UI-004'],scenarios=['overflow-first-last','overflow-resize','menu-invocation','taskbar-group'],scope='Actual compiled dense picker and bar enlarged-text component navigation, identity, lease, disabled and resize checks; exact unchanged native host reused; native activation/menu/input and AT obligations separate')
+  if MENU:report.update(requirements=['ELM-UI-008'],scenarios=['overflow-first-last','menu-invocation'],scope='Actual compiled menu selection/navigation, enlarged text, content growth, disabled rows and bounded viewport reveal; exact unchanged native host reused; original native/AT observations separate')
   class Handler(http.server.SimpleHTTPRequestHandler):
    def __init__(self,*args,**kwargs):super().__init__(*args,directory=str(INPUT),**kwargs)
    def log_message(self,*args):pass

@@ -5767,29 +5767,35 @@
             {
               "path": "implementation/warlock/qa/evidence/dense-picker/current-manifest.json",
               "sha256": "d787283f093386ed183528b807c7c244e216b4e0bcc6da2053b600c312d7f418",
-              "scope": "Ten native GTK roots on a 480x600 output at 150% text: arrows visit each member with reveal, Home/End reach endpoints, first/last member menus use secondary click/Menu/Shift-F10, Escape returns bar group focus, keyboard primary opens the same picker with no launch, Enter activates exactly one current incarnation and its visible window receives a real GTK keystroke. Late fallback content growth remains revealed. Default launcher reopen/query/refusal/no-match pixels and input regression passed. Native member navigation/menu/activation/input and physical control/window pixels; component lease/disabled/reorder/viewport resize checks. Native popup reflow continuity, full action-menu overflow, applicable AT and independent original-scenario acceptance remain open."
+              "scope": "Ten native GTK roots on a 480x600 output at 150% text: arrows visit each member with reveal, Home/End reach endpoints, first/last member menus use secondary click/Menu/Shift-F10, Escape returns bar group focus, keyboard primary opens the same picker with no launch, Enter activates exactly one current incarnation and its visible window receives a real GTK keystroke. Late fallback content growth remains revealed. Default launcher reopen/query/refusal/no-match pixels and input regression passed. Native member navigation/menu/activation/input and physical control/window pixels; component lease/disabled/reorder/viewport resize checks. Native popup reflow continuity, full action-menu overflow, applicable AT and independent original-scenario acceptance remain open.",
+              "historicalAfterSourceChange": true
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/dense-menu/manifest.json",
+              "sha256": "b095ec13dd6903bc73f16c980e4eee054e4d7a30216e977b1e1cb5e43ded4b2e",
+              "scope": "At 200% text on a 480x360 native output, the current Restore/Minimize/Maximize menu overflows; End/Home and arrows reveal enabled operation endpoints and skip disabled Restore, Tab reveals Close and returns to the selected operation, Escape returns group focus, and current operation labels paint in actual compositor pixels. Ten-member picker selection still produces one exact activation and real GTK input. Default-size running-pin secondary/Menu/Shift-F10, minimize/restore, typing and Task View dismissal regression passed. Native current three-operation menu overflow and physical keyboard/operation labels; compiled 20-operation projection, growth, viewport, manual-scroll, Close-publication and inactive-document checks. Additional native providers/actions are outside this fixture; original AT and independent acceptance remain open. Active native popup reflow remains unqualified."
             }
           ],
-          "missingObservation": "Applicable assistive-technology navigation, operation names and focus observations; Independent original-scenario review against exact source/ABI/toolchain; Native popup reflow continuity and complete action-menu overflow; browser viewport resizing is component evidence only",
+          "missingObservation": "Applicable assistive-technology operation names, navigation and focus observations; Independent original-scenario review against the exact source/ABI/toolchain; Native active-popup reflow continuity remains unqualified; browser resizing is component evidence only. Additional native action providers are outside the current three-operation fixture.",
           "reviewerDisposition": {
-            "name": "root-dense-picker",
+            "name": "root-dense-menu",
             "independent": false,
-            "disposition": "Owner-observed bounded native/component result; exact original acceptance remains pending."
+            "disposition": "Owner-observed bounded implementation; original scenario/requirement/release acceptance remains pending."
           },
           "sourceTuple": {
-            "sourceParentRevision": "88b84e97c38d1799aa74f9a83f6583c50cd08ff8",
+            "sourceParentRevision": "6cf881f027aa228fcd56363e42ad5c300560a61d",
             "sourceHashes": {
-              "implementation/warlock/src/SurfaceRenderer.elm": "42a02a43780f79107f376a54eba46aa277fc5457b61fda656649cfe495ace0e1",
-              "implementation/warlock/assets/popup-adapter.js": "765e01488ecb7d6107306a16e60e1110300391b3f83f21f995a5eeecf61d3052",
-              "implementation/warlock/assets/shell.css": "e94dcb2274254d874b1fabaaee59a6bd85a0543909238fef3a6ad12bc64f6078",
-              "implementation/warlock/qa/check-search.py": "f59b0e810eb840dea75709fa29e9b43a7f4f43b112ea4f9c71deecbc556ca829",
-              "implementation/warlock/qa/dense-taskbar-browser.mjs": "09be271f9c7eb72581104105fefe1cbeeca2c9aaa27f6427f99556403aa9c4b6",
-              "implementation/warlock/qa/native-window-feedback.py": "500c4bff847b91a7ec07295320b15a4c18910eaa1f68662993ebe54ee6a7be5e",
-              "implementation/warlock/qa/current-search-build.json": "0a7ecc37f93d8bf6f9b4e1c48b3c96403c80f394718d1c1172140795c3d77d7e",
+              "implementation/warlock/assets/context.js": "c96d4916242b14d7549011bbbe006b6cd287e86d72947b1928c40a2ac0822e0c",
+              "implementation/warlock/assets/shell.css": "1e52a8cc2ec4de99296476d4eb5de99fc8cbb2feac9abe132c2395e1c6172ea1",
+              "implementation/warlock/qa/check-search.py": "75413ce22e02daec42f9f3ca2faff89e1c2b59da17b28505fb660432ba608299",
+              "implementation/warlock/qa/dense-taskbar-browser.mjs": "9f9b09cc53f95b718049a2296ff0fd9f381d5624cdea7f9d0b9e0e86e8d04910",
+              "implementation/warlock/qa/native-window-feedback.py": "ad3ca50fd37c982bac7d3301f676909b863d8b71bd8d3f3bd50a0003468cbf46",
+              "implementation/warlock/qa/current-search-build.json": "66df43fe159e558b4e121a7f04327a748b8361933d6d1bb6b7f76bcedf52831e",
               "implementation/warlock/assets/elm.js": "9b48195dd4b61b8f34906444915f070530fcb07e8ec1f2c530fa1e5ed43aa8eb",
               "implementation/warlock/assets/bar.js": "d2bd3e1d84b6dc605744da689c0331e89a0cd45d083c0cdbc3b1ee620a18e860",
               "implementation/warlock/assets/popup.js": "054636c284b4f6a026963b18b0e41b2f1a737fd87f9cdc1d8ef5449d6030222a",
-              "implementation/warlock/README.md": "6cb6d66d5fcba42348ad739e0728d6d3f7b1fe547e777e7aeeb8c483a22fa905"
+              "implementation/warlock/README.md": "2f400e850d730504008f2b8510283364937eb57b804bdae45671b8c7c87351d7",
+              "implementation/warlock/assets/popup-adapter.js": "b120861b35eacacd6a0b7239b00c9007995a1f45279f68a02801f5a33f926fe5"
             },
             "testedWorkingTree": true,
             "core": {
@@ -5801,8 +5807,8 @@
               "sha256": "1805693201328985cbf109f5fef6779b8fe469badf094fd417e8206f91c50b47"
             },
             "toolchain": {
-              "path": "implementation/warlock/qa/runs/taskbar-primary-1791446861278799521/report.json",
-              "sha256": "a32740dbb41a8be34a09b14887582732d57ac9f74ca28fe418ac177c33e24eb0"
+              "path": "implementation/warlock/qa/runs/taskbar-primary-1791449726696723298/report.json",
+              "sha256": "a179152b713745afd22de8ce48fc0e6c460aeff4ddc8c980426e44a593b59157"
             }
           }
         },
@@ -5879,29 +5885,35 @@
             {
               "path": "implementation/warlock/qa/evidence/dense-picker/current-manifest.json",
               "sha256": "d787283f093386ed183528b807c7c244e216b4e0bcc6da2053b600c312d7f418",
-              "scope": "Ten native GTK roots on a 480x600 output at 150% text: arrows visit each member with reveal, Home/End reach endpoints, first/last member menus use secondary click/Menu/Shift-F10, Escape returns bar group focus, keyboard primary opens the same picker with no launch, Enter activates exactly one current incarnation and its visible window receives a real GTK keystroke. Late fallback content growth remains revealed. Default launcher reopen/query/refusal/no-match pixels and input regression passed. Native member navigation/menu/activation/input and physical control/window pixels; component lease/disabled/reorder/viewport resize checks. Native popup reflow continuity, full action-menu overflow, applicable AT and independent original-scenario acceptance remain open."
+              "scope": "Ten native GTK roots on a 480x600 output at 150% text: arrows visit each member with reveal, Home/End reach endpoints, first/last member menus use secondary click/Menu/Shift-F10, Escape returns bar group focus, keyboard primary opens the same picker with no launch, Enter activates exactly one current incarnation and its visible window receives a real GTK keystroke. Late fallback content growth remains revealed. Default launcher reopen/query/refusal/no-match pixels and input regression passed. Native member navigation/menu/activation/input and physical control/window pixels; component lease/disabled/reorder/viewport resize checks. Native popup reflow continuity, full action-menu overflow, applicable AT and independent original-scenario acceptance remain open.",
+              "historicalAfterSourceChange": true
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/dense-menu/manifest.json",
+              "sha256": "b095ec13dd6903bc73f16c980e4eee054e4d7a30216e977b1e1cb5e43ded4b2e",
+              "scope": "At 200% text on a 480x360 native output, the current Restore/Minimize/Maximize menu overflows; End/Home and arrows reveal enabled operation endpoints and skip disabled Restore, Tab reveals Close and returns to the selected operation, Escape returns group focus, and current operation labels paint in actual compositor pixels. Ten-member picker selection still produces one exact activation and real GTK input. Default-size running-pin secondary/Menu/Shift-F10, minimize/restore, typing and Task View dismissal regression passed. Native current three-operation menu overflow and physical keyboard/operation labels; compiled 20-operation projection, growth, viewport, manual-scroll, Close-publication and inactive-document checks. Additional native providers/actions are outside this fixture; original AT and independent acceptance remain open. Active native popup reflow remains unqualified."
             }
           ],
-          "missingObservation": "Applicable assistive-technology navigation, operation names and focus observations; Independent original-scenario review against exact source/ABI/toolchain; Native popup reflow continuity and complete action-menu overflow; browser viewport resizing is component evidence only",
+          "missingObservation": "Applicable assistive-technology operation names, navigation and focus observations; Independent original-scenario review against the exact source/ABI/toolchain; Native active-popup reflow continuity remains unqualified; browser resizing is component evidence only. Additional native action providers are outside the current three-operation fixture.",
           "reviewerDisposition": {
-            "name": "root-dense-picker",
+            "name": "root-dense-menu",
             "independent": false,
-            "disposition": "Owner-observed bounded native/component result; exact original acceptance remains pending."
+            "disposition": "Owner-observed bounded implementation; original scenario/requirement/release acceptance remains pending."
           },
           "sourceTuple": {
-            "sourceParentRevision": "88b84e97c38d1799aa74f9a83f6583c50cd08ff8",
+            "sourceParentRevision": "6cf881f027aa228fcd56363e42ad5c300560a61d",
             "sourceHashes": {
-              "implementation/warlock/src/SurfaceRenderer.elm": "42a02a43780f79107f376a54eba46aa277fc5457b61fda656649cfe495ace0e1",
-              "implementation/warlock/assets/popup-adapter.js": "765e01488ecb7d6107306a16e60e1110300391b3f83f21f995a5eeecf61d3052",
-              "implementation/warlock/assets/shell.css": "e94dcb2274254d874b1fabaaee59a6bd85a0543909238fef3a6ad12bc64f6078",
-              "implementation/warlock/qa/check-search.py": "f59b0e810eb840dea75709fa29e9b43a7f4f43b112ea4f9c71deecbc556ca829",
-              "implementation/warlock/qa/dense-taskbar-browser.mjs": "09be271f9c7eb72581104105fefe1cbeeca2c9aaa27f6427f99556403aa9c4b6",
-              "implementation/warlock/qa/native-window-feedback.py": "500c4bff847b91a7ec07295320b15a4c18910eaa1f68662993ebe54ee6a7be5e",
-              "implementation/warlock/qa/current-search-build.json": "0a7ecc37f93d8bf6f9b4e1c48b3c96403c80f394718d1c1172140795c3d77d7e",
+              "implementation/warlock/assets/context.js": "c96d4916242b14d7549011bbbe006b6cd287e86d72947b1928c40a2ac0822e0c",
+              "implementation/warlock/assets/shell.css": "1e52a8cc2ec4de99296476d4eb5de99fc8cbb2feac9abe132c2395e1c6172ea1",
+              "implementation/warlock/qa/check-search.py": "75413ce22e02daec42f9f3ca2faff89e1c2b59da17b28505fb660432ba608299",
+              "implementation/warlock/qa/dense-taskbar-browser.mjs": "9f9b09cc53f95b718049a2296ff0fd9f381d5624cdea7f9d0b9e0e86e8d04910",
+              "implementation/warlock/qa/native-window-feedback.py": "ad3ca50fd37c982bac7d3301f676909b863d8b71bd8d3f3bd50a0003468cbf46",
+              "implementation/warlock/qa/current-search-build.json": "66df43fe159e558b4e121a7f04327a748b8361933d6d1bb6b7f76bcedf52831e",
               "implementation/warlock/assets/elm.js": "9b48195dd4b61b8f34906444915f070530fcb07e8ec1f2c530fa1e5ed43aa8eb",
               "implementation/warlock/assets/bar.js": "d2bd3e1d84b6dc605744da689c0331e89a0cd45d083c0cdbc3b1ee620a18e860",
               "implementation/warlock/assets/popup.js": "054636c284b4f6a026963b18b0e41b2f1a737fd87f9cdc1d8ef5449d6030222a",
-              "implementation/warlock/README.md": "6cb6d66d5fcba42348ad739e0728d6d3f7b1fe547e777e7aeeb8c483a22fa905"
+              "implementation/warlock/README.md": "2f400e850d730504008f2b8510283364937eb57b804bdae45671b8c7c87351d7",
+              "implementation/warlock/assets/popup-adapter.js": "b120861b35eacacd6a0b7239b00c9007995a1f45279f68a02801f5a33f926fe5"
             },
             "testedWorkingTree": true,
             "core": {
@@ -5913,8 +5925,8 @@
               "sha256": "1805693201328985cbf109f5fef6779b8fe469badf094fd417e8206f91c50b47"
             },
             "toolchain": {
-              "path": "implementation/warlock/qa/runs/taskbar-primary-1791446861278799521/report.json",
-              "sha256": "a32740dbb41a8be34a09b14887582732d57ac9f74ca28fe418ac177c33e24eb0"
+              "path": "implementation/warlock/qa/runs/taskbar-primary-1791449726696723298/report.json",
+              "sha256": "a179152b713745afd22de8ce48fc0e6c460aeff4ddc8c980426e44a593b59157"
             }
           }
         }
@@ -7772,5 +7784,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-08T08:17:35.147091+00:00"
+  "updatedUTC": "2026-10-08T09:10:02.791564+00:00"
 }

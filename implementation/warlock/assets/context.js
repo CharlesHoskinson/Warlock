@@ -61,19 +61,37 @@
       if(event.key==='Tab'){
         event.preventDefault();
         const selected=node.querySelector('[aria-current="true"]'),close=node.querySelector('[data-surface-control="control:menu-close"]');
-        (item===close?selected:close)?.focus();return;
+        (item===close?selected:close)?.focus();revealMenu(false,true);return;
       }
       if(event.key==='Enter' && item.dataset.surfaceControl==='control:menu-close'){
         event.preventDefault();post({surfaceProtocol:2,kind:'surface-menu-navigation',surface:'popup',...stamp(node),key:'Close'});return;
       }
       if(['Escape','ArrowUp','ArrowDown','Home','End','Enter'].includes(event.key)) {
+        if(['ArrowUp','ArrowDown','Home','End'].includes(event.key))revealMenu(false,true);
         event.preventDefault();post({surfaceProtocol:2,kind:'surface-menu-navigation',surface:'popup',...stamp(node),key:event.key});
       }
     }
   },true);
-  new MutationObserver(() => {
+  let observedMenu=null,previousSelection=null,previousLayout=null;
+  const revealMenu=(select=false,force=false)=>{
     const node=document.querySelector('.surface-popup[data-mode="menu"]');
-    const selected=node?.querySelector('[aria-current="true"]');
-    if(selected && !selected.disabled && document.activeElement!==selected) selected.focus();
-  }).observe(document.body,{subtree:true,childList:true,attributes:true});
+    if(node!==observedMenu){
+      menuResize?.disconnect();observedMenu=node;previousSelection=null;previousLayout=null;
+      if(node){menuResize?.observe(node);const controls=node.querySelector('.surface-controls');if(controls)menuResize?.observe(controls);}
+    }
+    const selected=node?.querySelector('[aria-current="true"]'),changed=selected!==previousSelection;
+    previousSelection=selected;
+    const layout=node&&[node.clientWidth,node.clientHeight,node.scrollHeight].join(':');
+    force=force||changed||layout!==previousLayout;previousLayout=layout;
+    if(!node||!document.hasFocus())return;
+    // The selected operation comes only from the current Elm projection.
+    // Preserve Tab focus on Close through unrelated layout/publication changes.
+    if(select&&selected&&!selected.disabled&&(changed||control(document.activeElement)?.dataset.surfaceControl!=='control:menu-close')&&document.activeElement!==selected){selected.focus({preventScroll:true});force=true;}
+    const focused=control(document.activeElement);
+    if(force&&focused&&node.contains(focused)&&!focused.disabled)focused.scrollIntoView({block:'nearest',inline:'nearest'});
+  };
+  const menuResize=window.ResizeObserver&&new ResizeObserver(()=>requestAnimationFrame(()=>revealMenu(false,true)));
+  new MutationObserver(()=>revealMenu(true)).observe(document.body,{subtree:true,childList:true,attributes:true});
+  window.addEventListener('resize',()=>requestAnimationFrame(()=>revealMenu(false,true)));
+  window.addEventListener('focus',()=>revealMenu(true,true));
 })();

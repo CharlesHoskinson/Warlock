@@ -63,6 +63,24 @@ try{
  await evaluate(`document.querySelector('[data-surface-control="family:0"]').focus()`);await key('ArrowUp');await key('ArrowUp');check('Picker arrows clamp at first action',(await pickerState()).id==='control:close');
  await key('End');await key('ArrowDown');check('Picker arrows clamp at final member',(await pickerState()).id==='family:19'&&pickerVisible(await pickerState()));
  check('Picker navigation emits no window action',await evaluate(`nativePackets.filter(p=>p.kind==='surface-action').length===0`));
+ await viewport(480,260);let menuPub=100;
+ async function showMenu(selected=19,allDisabled=false){
+  const frame={surfaceProtocol:2,publication:String(++menuPub),lease:'3',mode:'menu',status:'Window actions',bar:[],popup:[{id:'control:menu-close',domId:'menu-close',label:'Close',ariaLabel:'Close window actions',detail:'',enabled:true},...Array.from({length:20},(_,i)=>({id:'menu:1:'+i,domId:'menu:1:'+i,label:'Operation '+i,ariaLabel:'Operation '+i,detail:i===selected?'Selected':'',enabled:!allDisabled&&i!==18}))]};
+  await evaluate('receivePresentation('+JSON.stringify(frame)+')');await until('document.querySelector(".surface-popup")?.dataset.publication==='+JSON.stringify(frame.publication));await sleep(70);
+ }
+ const menuState=()=>evaluate(`(()=>{const f=document.activeElement,r=f.getBoundingClientRect(),n=document.querySelector('.surface-popup');return {id:f.dataset.surfaceControl,top:r.top,bottom:r.bottom,height:innerHeight,font:getComputedStyle(document.body).fontSize,scroll:n.scrollTop,order:[...n.querySelectorAll('[data-surface-control]')].map(b=>b.dataset.surfaceControl)};})()`);
+ await showMenu();const menuLast=await menuState();check('Overflowing menu projection focuses selected last operation',menuLast.id==='menu:1:19'&&pickerVisible(menuLast),menuLast);
+ await key('Home');check('Menu navigation uses typed native policy request',await evaluate(`nativePackets.at(-1).kind==='surface-menu-navigation'&&nativePackets.at(-1).key==='Home'`));await showMenu(0);check('Projected Home selection reveals first enabled operation',(await menuState()).id==='menu:1:0'&&pickerVisible(await menuState()));
+ await key('End');await showMenu(19);check('Projected End selection reveals final operation',(await menuState()).id==='menu:1:19'&&pickerVisible(await menuState()));
+ await evaluate(`document.querySelector('[data-surface-control="menu:1:19"]').style.minHeight='180px'`);await sleep(100);const grownMenu=await menuState();check('Same focused menu row growth remains fully revealed',grownMenu.id==='menu:1:19'&&pickerVisible(grownMenu),grownMenu);
+ await evaluate(`document.querySelector('[data-surface-control="menu:1:19"]').style.minHeight=''`);await sleep(80);await viewport(320,180);check('Shrinking menu viewport reveals selected operation',pickerVisible(await menuState()),await menuState());
+ await key('Tab');check('Menu Tab reaches visible dismissal control',(await menuState()).id==='control:menu-close'&&pickerVisible(await menuState()),await menuState());
+ await showMenu(19);check('Menu ordinary publication preserves Tab focus on dismissal',(await menuState()).id==='control:menu-close'&&pickerVisible(await menuState()));
+ await key('Tab');check('Menu Tab returns to visible current operation',(await menuState()).id==='menu:1:19'&&pickerVisible(await menuState()));
+ await call('Input.dispatchMouseEvent',{type:'mouseWheel',x:120,y:90,deltaX:0,deltaY:-30000});await sleep(80);await showMenu(19);check('Menu ordinary publication preserves deliberate wheel scrolling',(await menuState()).scroll===0,await menuState());await key('End');check('Menu keyboard navigation reveals existing selection after manual scrolling',pickerVisible(await menuState()));
+ await showMenu(-1,true);await evaluate(`document.querySelector('[data-surface-control="control:menu-close"]').focus()`);await key('Escape');check('All-disabled menu keeps typed dismissal reachable',await evaluate(`nativePackets.at(-1).kind==='surface-menu-navigation'&&nativePackets.at(-1).key==='Escape'`));
+ check('Menu browsing never emits activation',await evaluate(`nativePackets.filter(p=>p.kind==='surface-action').length===0`));
+ await evaluate(`window.originalMenuHasFocus=document.hasFocus.bind(document);document.hasFocus=()=>false;document.body.tabIndex=-1;document.body.focus()`);await showMenu(19);check('Inactive menu document does not restore operation focus',await evaluate('document.activeElement===document.body'));await evaluate(`document.hasFocus=window.originalMenuHasFocus`);
  check('No uncaught browser exceptions',report.errors.length===0,report.errors);report.passed=true;
 }catch(error){report.error=String(error.stack||error);}
 finally{

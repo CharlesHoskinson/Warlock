@@ -96,7 +96,7 @@ if (window.elmHostQA) {
   let last='';
   const observe=()=>requestAnimationFrame(()=>{
     const buttons=[...document.querySelectorAll('button')].map(button=>{
-      const r=button.getBoundingClientRect();return {id:button.id,identity:button.dataset.surfaceControl,label:button.textContent,accessibleName:button.getAttribute('aria-label'),disabled:button.disabled,x:r.x,y:r.y,width:r.width,height:r.height};
+      const r=button.getBoundingClientRect(),label=button.querySelector('.control-label')?.getBoundingClientRect();return {id:button.id,identity:button.dataset.surfaceControl,label:button.textContent,labelRect:label?{x:label.x,y:label.y,width:label.width,height:label.height}:null,accessibleName:button.getAttribute('aria-label'),disabled:button.disabled,x:r.x,y:r.y,width:r.width,height:r.height};
     });
     const node=document.querySelector('.surface-bar,.surface-popup');
     const fields=[...document.querySelectorAll('[data-surface-field]')].map(field=>({id:field.id,value:field.value,accessibleName:field.getAttribute('aria-label'),disabled:field.disabled}));
