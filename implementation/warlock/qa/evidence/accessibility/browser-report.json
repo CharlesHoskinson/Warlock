@@ -1,0 +1,122 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "Taskbar is a named native toolbar"
+    },
+    {
+      "name": "Only active taskbar button is pressed"
+    },
+    {
+      "name": "Named switcher list has three actual window options",
+      "detail": {
+        "name": "Switch windows",
+        "rows": [
+          {
+            "name": "Activate 3",
+            "selected": "false",
+            "id": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:2:switcher:family:3",
+            "identity": "switcher:family:3",
+            "disabled": false
+          },
+          {
+            "name": "Activate 2; selected",
+            "selected": "true",
+            "id": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:2:switcher:family:2",
+            "identity": "switcher:family:2",
+            "disabled": false
+          },
+          {
+            "name": "Activate 1",
+            "selected": "false",
+            "id": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:2:switcher:family:1",
+            "identity": "switcher:family:1",
+            "disabled": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "Exactly one selected state matches typed current choice",
+      "detail": {
+        "name": "Switch windows",
+        "rows": [
+          {
+            "name": "Activate 3",
+            "selected": "false",
+            "id": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:2:switcher:family:3",
+            "identity": "switcher:family:3",
+            "disabled": false
+          },
+          {
+            "name": "Activate 2; selected",
+            "selected": "true",
+            "id": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:2:switcher:family:2",
+            "identity": "switcher:family:2",
+            "disabled": false
+          },
+          {
+            "name": "Activate 1",
+            "selected": "false",
+            "id": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:2:switcher:family:1",
+            "identity": "switcher:family:1",
+            "disabled": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "Switcher actions retain button semantics outside listbox"
+    },
+    {
+      "name": "Chosen option has actual DOM focus"
+    },
+    {
+      "name": "Typed cycle changes exactly one native selection",
+      "detail": {
+        "name": "Switch windows",
+        "rows": [
+          {
+            "name": "Activate 3",
+            "selected": "false",
+            "id": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:switcher:family:3",
+            "identity": "switcher:family:3",
+            "disabled": false
+          },
+          {
+            "name": "Activate 2",
+            "selected": "false",
+            "id": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:switcher:family:2",
+            "identity": "switcher:family:2",
+            "disabled": false
+          },
+          {
+            "name": "Activate 1; selected",
+            "selected": "true",
+            "id": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:switcher:family:1",
+            "identity": "switcher:family:1",
+            "disabled": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "Observation preserves control identity and does not submit window effects"
+    },
+    {
+      "name": "Retired switcher exports no stale selected options"
+    },
+    {
+      "name": "No browser exceptions",
+      "detail": []
+    }
+  ],
+  "captures": [
+    "switcher-accessible-selection.png"
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "browserExitCode": 0
+}

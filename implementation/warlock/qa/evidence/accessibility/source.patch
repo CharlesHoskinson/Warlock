@@ -1,0 +1,284 @@
+diff --git c/implementation/warlock/README.md w/implementation/warlock/README.md
+index 47a0097..f0652a4 100644
+--- c/implementation/warlock/README.md
++++ w/implementation/warlock/README.md
+@@ -237,3 +237,16 @@ outline pixels and restarts the host; the existing Dawn journey is checked
+ separately. Evidence is in `qa/evidence/high-contrast/manifest.json`.
+ ELM-UX-027 remains partial: all-surface native theme/scale coverage, applicable
+ accessibility consumers and independent original acceptance remain open.
++
++The taskbar now projects a named toolbar with an explicit active toggle state,
++and the window switcher projects a named listbox with exactly one selected
++window option. These remain views of the authoritative Elm state. Current
++compiled/browser checks cover names, roles, selection changes and retirement;
++the actual native switcher still cycles, cancels, activates and restores with
++physical keyboard input. Native AT acceptance remains open: two private Orca
++qualification attempts failed before observing both shell surfaces. The
++read-only inspector's desktop-root traversal bug is corrected but has not been
++rerun after the AAR stop threshold. See `qa/evidence/accessibility/manifest.json`
++for the exact failed observations and source tuple. `--accessibility` uses
++explicitly owned nonactivating session/AT buses and a private Orca home; its
++silent speech adapter cannot establish audible or braille acceptance.
+diff --git c/implementation/warlock/qa/SwitcherReplay.elm w/implementation/warlock/qa/SwitcherReplay.elm
+index 8739b63..a876671 100644
+--- c/implementation/warlock/qa/SwitcherReplay.elm
++++ w/implementation/warlock/qa/SwitcherReplay.elm
+@@ -20,7 +20,7 @@ counter value = D.decodeValue UInt64.decoder (E.string value) |> Result.withDefa
+ one=counter "1"
+ two=counter "2"
+ three=counter "3"
+-family id = {root=counter id,label=id,application=id,minimized=False,available=True,active=id=="3"}
++family id = {root=counter id,label=id,application=id,minimized=False,available=True,attention=False,active=id=="3"}
+ rows=List.map family ["1","2","3"]
+ history=[three,two,one]
+ start=S.step one 1 S.Forward S.initial |> Tuple.first
+@@ -131,4 +131,4 @@ result =
+             ,("unknownManualChoiceCannotCommit",let (unchanged,commands)=scoped (\stamp -> Desktop.SwitcherChoose stamp (counter "99")) integrated in unchanged.choice==Nothing && List.isEmpty commands)
+             ,("nativeReadinessDoesNotMutate",List.isEmpty (mutations earlyResolvedEffects) && List.isEmpty (mutations nativeReleaseEffects))
+             ,("rendererAcceptsSwitcher",SurfaceRenderer.decode presentation |> Result.map (SurfaceRenderer.mode >> (==) "switcher") |> Result.withDefault False)]
+-    in E.object [("checks",E.object (List.map (\(name,value) -> (name,E.bool value)) checks)),("scope",E.string "Typed reducer and integrated current-history presentation/choice admission only; no global chord, native focus/AT or atomic cancellation verdict.")]
++    in E.object [("frame",presentation),("taskbarFrame",Surface.packet one one base),("cycledFrame",Surface.packet (counter "2") one (scoped (\stamp -> Desktop.SwitcherStep stamp S.Forward) integrated |> Tuple.first)),("closedFrame",Surface.packet (counter "3") one closed),("checks",E.object (List.map (\(name,value) -> (name,E.bool value)) checks)),("scope",E.string "Typed reducer and integrated current-history presentation/choice admission only; no global chord, native focus/AT or atomic cancellation verdict.")]
+diff --git c/implementation/warlock/qa/check-search.py w/implementation/warlock/qa/check-search.py
+index 08c5617..e8ce82a 100644
+--- c/implementation/warlock/qa/check-search.py
++++ w/implementation/warlock/qa/check-search.py
+@@ -1,5 +1,6 @@
+ """Focused compiled launcher/search integration, protected CPU scope only."""
+ import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures,http.server,threading
++ACCESSIBILITY=sys.argv[1:]==['--accessibility']
+ CONTRAST=sys.argv[1:]==['--high-contrast']
+ DRAG=sys.argv[1:]==['--drag-ownership']
+ KEYBOARD=sys.argv[1:]==['--keyboard-shell']
+@@ -16,12 +17,12 @@ PICKER=sys.argv[1:]==['--dense-picker'] or MENU
+ DENSE=sys.argv[1:]==['--dense-taskbar'] or PICKER
+ PINMENUS=sys.argv[1:]==['--pinned-menus'] or (DENSE and not PICKER)
+ PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PINMENUS or PICKER
+-SWITCHER=sys.argv[1:]==['--switcher']
++SWITCHER=sys.argv[1:]==['--switcher'] or ACCESSIBILITY
+ NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'];POPUP=sys.argv[1:]==['--native-popup'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD or DRAG;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER
+ ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143'
+ sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
+ scope=require_qa_scope();sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
+-OUT=ROOT/'qa/runs'/(('high-contrast-' if CONTRAST else 'drag-ownership-' if DRAG else 'keyboard-shell-' if KEYBOARD else 'attention-' if ATTENTION else 'jump-lists-' if JUMP else 'files-' if FILES else 'system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
++OUT=ROOT/'qa/runs'/(('accessibility-' if ACCESSIBILITY else 'high-contrast-' if CONTRAST else 'drag-ownership-' if DRAG else 'keyboard-shell-' if KEYBOARD else 'attention-' if ATTENTION else 'jump-lists-' if JUMP else 'files-' if FILES else 'system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
+ for folder in ['src','native','adapter','assets','qa']:
+  (INPUT/folder).mkdir()
+  for p in (ROOT/folder).iterdir():
+@@ -75,6 +76,7 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
+   run('compile-switcher',[str(HELD/pinned['compiler']),'make','qa/SwitcherReplay.elm','--optimize','--output=assets/switcher.js'])
+   (INPUT/'qa/switcher-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.SwitcherReplay'));run('typed-switcher',['node','qa/switcher-replay.js','assets/switcher.js',str(OUT/'switcher.json')]);report['typedSwitcher']=json.loads((OUT/'switcher.json').read_text());assert all(report['typedSwitcher']['checks'].values())
+   run('switcher-model-typecheck',['quint','typecheck','qa/switcher.qnt']);run('switcher-model-named',['quint','test','qa/switcher.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79111']);run('switcher-model-invariants',['quint','run','qa/switcher.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79112'])
++ if ACCESSIBILITY:report.update(requirements=['ELM-UX-025'],scenarios=['actual-surface-at'],scope='Actual compiled taskbar button pressed state and switcher listbox selection, names and focus. Native inspector/Orca evidence remains separate.')
+  if TASKVIEW:
+   run('compile-task-view',[str(HELD/pinned['compiler']),'make','qa/TaskViewReplay.elm','--optimize','--output=assets/task-view.js'])
+   (INPUT/'qa/task-view-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.TaskViewReplay'));run('typed-task-view',['node','qa/task-view-replay.js','assets/task-view.js',str(OUT/'task-view.json')]);report['typedTaskView']=json.loads((OUT/'task-view.json').read_text());assert all(report['typedTaskView']['checks'].values())
+@@ -208,7 +210,7 @@ console.log('Current body-target Escape releases once; stale scope, preedit, rep
+    run('popup-context-link',['g++',str(OUT/'popup-context.o'),*[str(OUT/(name+'.o')) for name in units],'-o',str(OUT/'popup-context-tests'),*flags])
+    run('popup-context-tests',[str(OUT/'popup-context-tests')])
+  run('host-self-tests',[str(OUT/'elm-host'),'--self-test'])
+- if DENSE or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION:
++ if ACCESSIBILITY or DENSE or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION:
+   if DENSE:report.update(requirements=['ELM-UI-008'],scenarios=['overflow-first-last','overflow-resize','menu-invocation'],scope='Current compiled renderer/adapter dense enlarged-text browser journeys and rebuilt scalable native host; native output/menu/AT observations separate')
+   (INPUT/'qa/dense.html').write_text('<!doctype html><html style="font-size:24px"><head><link rel="stylesheet" href="../assets/shell.css"></head><body class="bar"><div id="app"></div><script>window.nativePackets=[];window.webkit={messageHandlers:{native:{postMessage:s=>nativePackets.push(JSON.parse(s))}}};</script><script src="../assets/bar.js"></script><script src="../assets/bar-adapter.js"></script><script src="../assets/context.js"></script><script src="../assets/activation.js"></script></body></html>')
+   (INPUT/'qa/dense-picker.html').write_text('<!doctype html><html style="font-size:24px"><head><link rel="stylesheet" href="../assets/shell.css"></head><body class="popup"><div id="app"></div><script>window.nativePackets=[];window.webkit={messageHandlers:{native:{postMessage:s=>nativePackets.push(JSON.parse(s))}}};</script><script src="../assets/popup.js"></script><script src="../assets/popup-adapter.js"></script><script src="../assets/context.js"></script><script src="../assets/activation.js"></script></body></html>')
+@@ -220,9 +222,9 @@ console.log('Current body-target Escape releases once; stale scope, preedit, rep
+    def log_message(self,*args):pass
+   server=http.server.ThreadingHTTPServer(('127.0.0.1',0),Handler);threading.Thread(target=server.serve_forever,daemon=True).start()
+   browser=pathlib.Path('/home/hoskinson/.cache/puppeteer/chrome-headless-shell/linux-154.0.8037.57/chrome-headless-shell-linux64/chrome-headless-shell');report['browserSHA256']=sha(browser)
+-  browser_name='attention-browser' if ATTENTION else 'jump-lists-browser' if JUMP else 'files-browser' if FILES else 'system-menu-browser' if SYSTEM else 'notifications-browser' if NOTIFICATIONS else 'settings-browser' if SETTINGS else 'snap-browser' if SNAP else 'dense-browser';browser_runner='attention-browser.mjs' if ATTENTION else 'jump-lists-browser.mjs' if JUMP else 'files-browser.mjs' if FILES else 'system-menu-browser.mjs' if SYSTEM else 'notifications-browser.mjs' if NOTIFICATIONS else 'settings-browser.mjs' if SETTINGS else 'snap-browser.mjs' if SNAP else 'dense-taskbar-browser.mjs'
++  browser_name='accessibility-browser' if ACCESSIBILITY else 'attention-browser' if ATTENTION else 'jump-lists-browser' if JUMP else 'files-browser' if FILES else 'system-menu-browser' if SYSTEM else 'notifications-browser' if NOTIFICATIONS else 'settings-browser' if SETTINGS else 'snap-browser' if SNAP else 'dense-browser';browser_runner='accessibility-browser.mjs' if ACCESSIBILITY else 'attention-browser.mjs' if ATTENTION else 'jump-lists-browser.mjs' if JUMP else 'files-browser.mjs' if FILES else 'system-menu-browser.mjs' if SYSTEM else 'notifications-browser.mjs' if NOTIFICATIONS else 'settings-browser.mjs' if SETTINGS else 'snap-browser.mjs' if SNAP else 'dense-taskbar-browser.mjs'
+   run(browser_name,['node','qa/'+browser_runner,'http://127.0.0.1:'+str(server.server_port),str(OUT),str(browser)])
+-  child_path=OUT/(browser_name+'.json');child=json.loads(child_path.read_text());assert child['passed'] and child['browserExitCode']==0;report['attentionBrowser' if ATTENTION else 'jumpListsBrowser' if JUMP else 'filesBrowser' if FILES else 'systemMenuBrowser' if SYSTEM else 'notificationsBrowser' if NOTIFICATIONS else 'settingsBrowser' if SETTINGS else 'snapBrowser' if SNAP else 'denseBrowser']={'path':str(child_path),'sha256':sha(child_path),'checks':child['checks']}
++  child_path=OUT/(browser_name+'.json');child=json.loads(child_path.read_text());assert child['passed'] and child['browserExitCode']==0;report['accessibilityBrowser' if ACCESSIBILITY else 'attentionBrowser' if ATTENTION else 'jumpListsBrowser' if JUMP else 'filesBrowser' if FILES else 'systemMenuBrowser' if SYSTEM else 'notificationsBrowser' if NOTIFICATIONS else 'settingsBrowser' if SETTINGS else 'snapBrowser' if SNAP else 'denseBrowser']={'path':str(child_path),'sha256':sha(child_path),'checks':child['checks']}
+   if SNAP:
+    run('menu-navigation-regression',['node','qa/dense-taskbar-browser.mjs','http://127.0.0.1:'+str(server.server_port),str(OUT),str(browser)])
+    regression=json.loads((OUT/'dense-browser.json').read_text());assert regression['passed'] and regression['browserExitCode']==0;report['menuNavigationRegression']={'path':str(OUT/'dense-browser.json'),'sha256':sha(OUT/'dense-browser.json'),'checks':regression['checks']}
+diff --git c/implementation/warlock/qa/current-search-build.json w/implementation/warlock/qa/current-search-build.json
+index 58434c9..388ae4b 100644
+--- c/implementation/warlock/qa/current-search-build.json
++++ w/implementation/warlock/qa/current-search-build.json
+@@ -1,9 +1,9 @@
+ {
+-  "report": "implementation/warlock/qa/runs/high-contrast-1791479698385420636/report.json",
+-  "reportSHA256": "2d593aef4699530c9ef4ed7513be88fab14eaba1bb691660768630139a592206",
++  "report": "implementation/warlock/qa/runs/accessibility-1791481208524331725/report.json",
++  "reportSHA256": "fd1b77d9240460809fba111437a62b13481bede4d114c76521c161d0ce953204",
+   "compiledAssets": {
+-    "elm.js": "22afa12809061904a3987a0307655ebaa07295209de4c0016f256626dc311edb",
+-    "bar.js": "6766287fd648e07026c8237b267f47b76a41f8b0cf146f91760c959fc2ca9fa5",
+-    "popup.js": "f24a06ea2193a13b712d2dce9e65637d404d6642fb4224f11451948145e994aa"
++    "elm.js": "03b9824b04255dfba42c90f0c8e279680a8f84911254b4cd0e781555cac09033",
++    "bar.js": "9eafedc18250a5c523a7b19bba0a325556e15aa760912bb05bfe0eac35a55a56",
++    "popup.js": "1b2104bcdccd16d45e258b4b1951d9b4ad085499d44bde475edfe348366ed70e"
+   }
+ }
+diff --git c/implementation/warlock/qa/native-window-feedback.py w/implementation/warlock/qa/native-window-feedback.py
+index 4aec122..4375b6c 100644
+--- c/implementation/warlock/qa/native-window-feedback.py
++++ w/implementation/warlock/qa/native-window-feedback.py
+@@ -4,6 +4,7 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
+ lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
+ """
+ import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
++ACCESSIBILITY=sys.argv[1:]==['--accessibility']
+ CONTRAST=sys.argv[1:]==['--high-contrast']
+ DRAG=sys.argv[1:]==['--drag-ownership']
+ KEYBOARD=sys.argv[1:]==['--keyboard-shell']
+@@ -25,13 +26,15 @@ PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PINMENUS or ATTENTION
+ PRE_READY_RETIRE=sys.argv[1:]==['--switcher-pre-ready-retirement']
+ MEMBERSHIP=sys.argv[1:]==['--switcher-membership'] or PRE_READY_RETIRE
+ CHORD=sys.argv[1:]==['--switcher-chord'] or MEMBERSHIP
+-SWITCHER=sys.argv[1:]==['--switcher']
++SWITCHER=sys.argv[1:]==['--switcher'] or ACCESSIBILITY
+ NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'] or DENSEPICKER or KEYBOARD;PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS or PINMENUS or REFLOW or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or KEYBOARD;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD or DRAG
+ ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143';RUNTIME=REPO/'implementation/warlock-client-provider-native-v204'
+ sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
+ spec=importlib.util.spec_from_file_location('feedback_private_host',RUNTIME/'candidate_host.py');host=importlib.util.module_from_spec(spec);spec.loader.exec_module(host)
+ host.original.qa.require_qa_scope();sys.path.insert(0,str(RUNTIME/'qa'))
+ from session_bus import isolate_session_host
++if ACCESSIBILITY:
++ spec_at=importlib.util.spec_from_file_location('warlock_accessibility_session',ROOT/'qa/accessibility-session.py');at_session=importlib.util.module_from_spec(spec_at);spec_at.loader.exec_module(at_session);isolate_session_host=at_session.isolate_session_host
+ from system_isolation import supply,validate
+ from inspection import Collector
+ isolate_session_host(host)
+@@ -64,7 +67,7 @@ else:
+ for row in pair.values():assert sha(row['path'])==row['sha256']
+ assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
+ subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
+-OUT=ROOT/'qa/runs'/(('native-high-contrast-' if CONTRAST else 'native-drag-ownership-' if DRAG else 'native-keyboard-shell-' if KEYBOARD else 'native-attention-' if ATTENTION else 'native-jump-lists-' if JUMP else 'native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
++OUT=ROOT/'qa/runs'/(('native-accessibility-' if ACCESSIBILITY else 'native-high-contrast-' if CONTRAST else 'native-drag-ownership-' if DRAG else 'native-keyboard-shell-' if KEYBOARD else 'native-attention-' if ATTENTION else 'native-jump-lists-' if JUMP else 'native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+ OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
+ focus_host=None
+ if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
+@@ -150,6 +153,7 @@ if KEYBOARD or DRAG:LUA+=(ROOT/'native/shell-bindings.lua').read_bytes()
+ if DRAG:
+  LUA+=b'hl.monitor({output="WAYLAND-2",mode="800x600@60",position="800x0",scale=1})\n'
+  report.update(requirements=['ELM-UX-021'],scenarios=['ux-021'],scope='Actual native move/resize input across taskbar and two outputs; native controller owner/serial, real blocked shell shortcut and competing native effect, one end per gesture. No caption/edge, AT, touch/tablet or independent acceptance inferred.')
++if ACCESSIBILITY:report.update(requirements=['ELM-UX-025'],scenarios=['actual-surface-at'],scope='Actual private GTK/WebKit taskbar and switcher AT-SPI tree/states/focus and real Orca observations with physical input; independent original acceptance remains separate.')
+ def check(name,condition,**data):
+  report['checks'].append({'name':name,'passed':bool(condition),**data});assert condition,name
+ def wait(fn,seconds=6):
+@@ -194,6 +198,25 @@ try:
+    client=Endpoint(**config);client.hello();
+    if PLACEMENT:client.geometry_attach('15000')
+    env=supply(s.env,s.host.runtime);validate(env,s.host.runtime);env['XDG_STATE_HOME']=str(s.host.runtime/'private-warlock-state');report['privateStateRoot']=env['XDG_STATE_HOME'];env.update(GTK_A11Y='none',NO_AT_BRIDGE='1',GSETTINGS_BACKEND='memory',GTK_USE_PORTAL='0',WAYLAND_DEBUG='client')
++   if ACCESSIBILITY:
++    env['AT_SPI_BUS_ADDRESS']='unix:path='+str(s.host.runtime/'a11y-bus');env.pop('GTK_A11Y',None);env.pop('NO_AT_BRIDGE',None)
++    s.env.update(AT_SPI_BUS_ADDRESS=env['AT_SPI_BUS_ADDRESS'])
++    at_bus=s.host.launch('accessibility-bus',['/usr/bin/true'],env=env);apps.append(at_bus);wait(lambda:(s.host.runtime/'a11y-bus').exists())
++    at_registry=s.host.launch('accessibility-registry',['/usr/lib/at-spi2-registryd'],env=env);apps.append(at_registry)
++    at_request=OUTPUT/'at-request.json';at_reply=OUTPUT/'at-reply.json';at_ready=OUTPUT/'at-ready.json';at_events=OUTPUT/'at-events.jsonl'
++    at_inspector=s.host.launch('accessibility-inspector',['/usr/bin/python3','-B',str(ROOT/'qa/accessibility-inspector.py'),str(at_request),str(at_reply),str(at_ready),str(at_events)],env=env);apps.append(at_inspector);wait(lambda:at_ready.exists())
++    reader_env=dict(env,ORCA_QA_UTTERANCES=str(OUTPUT/'orca-utterances.jsonl'))
++    at_reader=s.host.launch('accessibility-orca',['/usr/bin/python3','-B',str(ROOT/'qa/accessibility-reader.py')],env=reader_env);apps.append(at_reader)
++    def at_observe():
++     global sequence
++     sequence+=1;temp=at_request.with_suffix('.tmp');temp.write_text(json.dumps({'sequence':sequence}));temp.replace(at_request)
++     def reply():
++      if not at_reply.exists():return None
++      result=json.loads(at_reply.read_text());return result if result['sequence']==sequence else None
++     return wait(reply)
++    wait(lambda:at_observe().get('reader'))
++    held_reader=pathlib.Path('/home/hoskinson/window-integration-qa/orca-reader')
++    report['accessibilityFixture']={'session':env['DBUS_SESSION_BUS_ADDRESS'],'accessibility':env['AT_SPI_BUS_ADDRESS'],'systemBusRemainsRefusing':True,'servicesExplicitlyOwned':True,'activationDisabled':True,'inspectorSHA256':sha(ROOT/'qa/accessibility-inspector.py'),'readerLauncherSHA256':sha(ROOT/'qa/accessibility-reader.py'),'sessionWrapperSHA256':sha(ROOT/'qa/accessibility-session.py'),'orcaPackageSHA256':sha(held_reader/'packages.json'),'readerEntrySHA256':sha(held_reader/'prefix/usr/bin/orca'),'speechAdapterSHA256':sha(held_reader/'silent_factory.py'),'observationAdapterSHA256':sha(held_reader/'data/orca/orca-customizations.py'),'nativeATObserved':False}
+    if CATALOG:
+     catalog_root=pathlib.Path(env['XDG_DATA_HOME'])/'applications';catalog_root.mkdir(mode=0o700,parents=True,exist_ok=True)
+     # Only explicitly owned fixture metadata is visible to this broker.
+@@ -1010,11 +1033,40 @@ raise SystemExit(daemon.run())
+       observed=wait(receipts);check('SwitcherCorrelatedNative'+operation,len(observed)==1 and observed[0]['status']=='Committed',receipts=observed)
+       report.setdefault('switcherReceipts',[]).append({'request':submitted,'receipt':observed[0]})
+       typed_recipient('ELM-ACTIVATION-PEER')
++     if ACCESSIBILITY:
++      dom=wait(lambda:(body if body and body.get('buttons') and any(b['accessibleName'].startswith('Choose a window from') for b in body['buttons']) else None) if (body:=bar_body()) else None);names=[b['accessibleName'] for b in dom['buttons']]
++      def bar_tree():
++       value=at_observe();rows=[row for row in value['nodes'] if any(a['role']=='tool bar' and a['name']=='Warlock taskbar' for a in row['ancestors']) and row['role'] in ['push button','toggle button']]
++       return (value,rows) if len(rows)==len(names) and sorted(row['name'] for row in rows)==sorted(names) else None
++      tree,at_bar=wait(bar_tree);report['accessibilitySnapshots']=[{'stage':'TaskbarInitial',**tree}]
++      check('ActualTaskbarExportsAllControlNames',len(at_bar)==len(names) and sorted(row['name'] for row in at_bar)==sorted(names),native=at_bar,dom=names)
++      check('ActualTaskbarActiveStateHasNativeToggleState',sum(bool({'pressed','checked'} & set(row['states'])) for row in at_bar)==1 and all(bool({'pressed','checked'} & set(row['states']))==('Active' in row['name']) for row in at_bar),native=at_bar)
++      button=next(b for b in dom['buttons'] if b['accessibleName'].startswith('Choose a window from'))
++      click({'visible':0<=button['x']+button['width']/2<800 and 0<=button['y']<48,'point':[button['x']+button['width']/2,button['y']+button['height']/2]})
++      # Click opens the actual group picker. Escape then leaves physical focus
++      # on its existing taskbar opener; no injected DOM/AT focus qualifies it.
++      wait(lambda:(projection() or {}).get('mode')=='picker');key(1);wait(lambda:(projection() or {}).get('mode')=='closed')
++      def bar_focus():
++       value=at_observe();return value if ((value.get('reader') or {}).get('focus') or {}).get('name')==button['accessibleName'] and any(row['name']==button['accessibleName'] and 'focused' in row['states'] for row in value['nodes']) else None
++      bar_state=wait(bar_focus);report['accessibilitySnapshots'].append({'stage':'TaskbarFocusAfterDismissal',**bar_state})
++      check('ActualOrcaAndInspectorAgreeTaskbarFocus',bar_state['reader']['focus']['role'] in ['push button','toggle button'],reader=bar_state['reader'])
++     def accessible_choice(stage,body):
++      name=next(b['accessibleName'] for b in body['buttons'] if b['id']==body['focus'])
++      def agrees():
++       value=at_observe();options=[row for row in value['nodes'] if row['role']=='list item' and any(a['role']=='list box' and a['name']=='Switch windows' for a in row['ancestors'])]
++       reader=value.get('reader') or {};focus=reader.get('focus') or {}
++       selected=[row for row in options if 'selected' in row['states']]
++       return value if len(options)==2 and len(selected)==1 and selected[0]['name']==name and 'focused' in selected[0]['states'] and focus.get('name')==name else None
++      value=wait(agrees);report['accessibilitySnapshots'].append({'stage':stage,**value})
++      check(stage+'NativeNamesRolesSelectionAndOrcaFocusAgree',value['reader']['focus']['role']=='list item',reader=value['reader'])
+      open_switcher();body=wait(lambda:selected_window('ELM-ACTIVATION-PEER'))
++     if ACCESSIBILITY:accessible_choice('SwitcherInitial',body)
+      visible_order=[button['accessibleName'].split(';',1)[0] for button in body['buttons'] if button['accessibleName'].startswith(('Activate ELM-','Restore ELM-'))]
+      check('SwitcherFrozenOrderMatchesNativeHistory',visible_order==['Activate '+labels[root] for root in native_history['roots']],body=body)
+      popup_capture('mru-initial');key(15);wait(lambda:selected_window('ELM-AUTHORITY-FIXTURE'))
++     if ACCESSIBILITY:accessible_choice('SwitcherForward',wait(lambda:selected_window('ELM-AUTHORITY-FIXTURE')))
+      key(105);wait(lambda:selected_window('ELM-ACTIVATION-PEER'))
++     if ACCESSIBILITY:accessible_choice('SwitcherReverse',wait(lambda:selected_window('ELM-ACTIVATION-PEER')))
+      check('SwitcherLocalForwardReverseHasNoWindowEffect',len(journal())==before and facts()['facts']['focused']==before_focus)
+      key(1);wait(lambda:(projection() or {}).get('mode')=='closed' and (projection() or {}).get('phase')=='Coherent')
+      check('SwitcherNativeEscapeRetainsPressUntilPhysicalRelease','surface-native-escape-stored:' in text() and 'surface-terminal-released: key=65307' in text())
+@@ -1027,6 +1079,13 @@ raise SystemExit(daemon.run())
+      check('SwitcherLeavesWorkspaceOutputMembershipUnchanged',sorted((row['incarnation'],row['workspace'],row['monitor']) for row in facts()['facts']['windows'])==original_membership)
+      for capture in report['popupCaptures']:check('ActualSwitcherControlPixels'+capture['stage'],len(capture['controlRegions'])==2 and all(row['area']>0 and row['brightPixels']>30 and row['paintedPixels']>.9*row['area'] for row in capture['controlRegions']),capture=capture)
+      check('SwitcherDoesNotLaunchApplications',not launches())
++     if ACCESSIBILITY:
++      final_at=at_observe();report['accessibilitySnapshots'].append({'stage':'SwitcherRetired',**final_at})
++      check('ActualRetiredSwitcherHasNoSelectedNativeOptions',not any(row['role']=='list item' and 'selected' in row['states'] for row in final_at['nodes']))
++      check('ActualBridgePublishesFocusAndSelectionEvents',any(e['type']=='object:state-changed:focused' and e['detail1']==1 for e in final_at['events']) and any(e['type']=='object:state-changed:selected' for e in final_at['events']),events=final_at['events'])
++      utterances=OUTPUT/'orca-utterances.jsonl';report['orcaSpeechOutput']=[json.loads(line) for line in utterances.read_text().splitlines()]
++      check('ActualOrcaSpeaksTaskbarAndSwitcherNames',any('Choose a window from' in row.get('text','') for row in report['orcaSpeechOutput']) and all(any(label in row.get('text','') for row in report['orcaSpeechOutput']) for label in ['ELM-AUTHORITY-FIXTURE','ELM-ACTIVATION-PEER']),utterances=report['orcaSpeechOutput'])
++      report['accessibilityFixture']['nativeATObserved']=True
+      report['nativeSwitcherJourneyObserved']=True
+     elif NAV:
+      def peer_window():return next(w for w in facts()['facts']['windows'] if w['incarnation']==peer_identity)
+@@ -1644,7 +1703,7 @@ raise SystemExit(daemon.run())
+     if proc.poll() is None:
+      if proc is fixture:fixture_control('quit');proc.wait(timeout=5)
+      else:owned=next(row for p,row in s.host.processes if p is proc);s.host.stop(owned,proc);proc.wait(timeout=5)
+-    check('OwnedClientNormalExit',proc.returncode==0,pid=proc.pid,exitCode=proc.returncode)
++    check('OwnedClientNormalExit',proc.returncode==0 or (ACCESSIBILITY and proc is at_registry and proc.returncode==-signal.SIGTERM),pid=proc.pid,exitCode=proc.returncode,expectedRegistryStop=bool(ACCESSIBILITY and proc is at_registry and proc.returncode==-signal.SIGTERM))
+    if loaded:s.guard();check('OwningPluginUnloads',s.ctl('plugin','unload',pair['plugin']['path']).strip()=='ok');loaded=False
+    registered={row['pid'] for _,row in s.host.processes}
+    for row in reversed([r for r in s.host.descendants() if r['pid'] not in registered]):s.host.stop(row)
+diff --git c/implementation/warlock/src/SurfaceRenderer.elm w/implementation/warlock/src/SurfaceRenderer.elm
+index 5de7f32..68a707c 100644
+--- c/implementation/warlock/src/SurfaceRenderer.elm
++++ w/implementation/warlock/src/SurfaceRenderer.elm
+@@ -78,7 +78,9 @@ view popup send current = viewWithPreview (\_ -> text "") popup send current
+ viewWithPreview : (String -> Html msg) -> Bool -> (E.Value -> msg) -> Snapshot -> Html msg
+ viewWithPreview preview popup send ((Snapshot snapshot) as current) =
+     let control item =
+-            let kind = if String.startsWith "bar:group:" item.identity || String.startsWith "bar:pin:" item.identity then "control-group" else if item.identity=="bar:recovery-refresh" then "control-recovery" else "control-utility"
++            let switcherOption = popup && snapshot.mode=="switcher" && String.startsWith "switcher:family:" item.identity
++                active = not popup && (String.startsWith "bar:group:" item.identity || String.startsWith "bar:pin:" item.identity) && String.contains "Active" item.detail && not (String.contains "Attention; " item.detail)
++                kind = if String.startsWith "bar:group:" item.identity || String.startsWith "bar:pin:" item.identity then "control-group" else if item.identity=="bar:recovery-refresh" then "control-recovery" else "control-utility"
+             in if popup && snapshot.mode=="notifications" && (String.endsWith ":summary" item.identity || String.endsWith ":body" item.identity) then
+                 p [class "notification-text",id item.domId,attribute "data-notification-content" item.identity] [span [class "control-label"] [text item.label],span [class "control-detail"] [text item.detail]]
+             else if popup && List.member snapshot.mode ["system","files","jump"] && String.endsWith ":state" item.identity then
+@@ -86,7 +88,7 @@ viewWithPreview preview popup send ((Snapshot snapshot) as current) =
+             else if popup && List.member snapshot.mode ["applications","files"] && item.identity==fieldIdentity current then
+                 let event = D.map2 (\query composing -> (query,composing)) (D.at ["target","value"] D.string) (D.oneOf [D.field "isComposing" D.bool,D.succeed False]) |> D.andThen (\(query,composing) -> D.succeed (send (E.object [("surfaceProtocol",E.int 2),("kind",E.string (if composing then "surface-preedit" else "surface-query")),("surface",E.string "popup"),("publication",E.string (UInt64.string snapshot.publication)),("lease",E.string (UInt64.string snapshot.lease)),("id",E.string item.identity),("query",E.string query)])))
+                 in input [class "launcher-search",id item.domId,type_ (if snapshot.mode=="files" then "text" else "search"),placeholder (if snapshot.mode=="files" then "/path/to/folder or ~/Documents" else "Search applications"),value item.label,attribute "aria-label" item.ariaLabel,attribute "data-surface-field" item.identity,attribute "autocomplete" "off",disabled (not item.enabled),on "input" event,on "compositionend" event] []
+-            else button [class kind,id item.domId,attribute "data-window-state" (if kind/="control-group" then "none" else if String.contains "Attention; " item.detail then "attention" else if String.contains "Active" item.detail then "active" else if String.contains "Minimized" item.detail then "minimized" else "open"),attribute "aria-label" item.ariaLabel,disabled (not item.enabled),attribute "data-surface-control" item.identity,attribute "role" (if popup && snapshot.mode=="menu" then "menuitem" else "button"),attribute "aria-current" (if (not popup && kind=="control-group" && String.contains "Active" item.detail && not (String.contains "Attention; " item.detail)) || (popup && List.member snapshot.mode ["menu","switcher","snap","settings","notifications","system","files","jump"] && item.detail=="Selected") then "true" else "false")] [preview item.identity,span [class "control-label"] [text item.label],span [class "control-detail"] [text item.detail]]
++            else button ([class kind,id item.domId,attribute "data-window-state" (if kind/="control-group" then "none" else if String.contains "Attention; " item.detail then "attention" else if String.contains "Active" item.detail then "active" else if String.contains "Minimized" item.detail then "minimized" else "open"),attribute "aria-label" item.ariaLabel,disabled (not item.enabled),attribute "data-surface-control" item.identity,attribute "role" (if switcherOption then "option" else if popup && snapshot.mode=="menu" then "menuitem" else "button"),attribute "aria-current" (if (not popup && kind=="control-group" && String.contains "Active" item.detail && not (String.contains "Attention; " item.detail)) || (popup && List.member snapshot.mode ["menu","switcher","snap","settings","notifications","system","files","jump"] && item.detail=="Selected") then "true" else "false")] ++ (if switcherOption then [attribute "aria-selected" (if item.detail=="Selected" then "true" else "false")] else if not popup && kind=="control-group" then [attribute "aria-pressed" (if active then "true" else "false")] else [])) [preview item.identity,span [class "control-label"] [text item.label],span [class "control-detail"] [text item.detail]]
+         familyPrefix rows = case rows of
+             first :: rest -> if String.startsWith "overview:family:" first.identity then first :: familyPrefix rest else []
+             [] -> []
+@@ -98,7 +100,7 @@ viewWithPreview preview popup send ((Snapshot snapshot) as current) =
+                         let members = familyPrefix rest
+                         in div [class "overview-workspace",attribute "role" "group",attribute "aria-labelledby" first.domId] (List.map control (first::members)) :: overviewRows (List.drop (List.length members) rest)
+                     else control first :: overviewRows rest
+-    in if popup then div [attribute "data-theme" (Settings.themeName snapshot.appearance.theme),attribute "data-text-scale" (String.fromInt snapshot.appearance.textScale),class "surface-popup",attribute "data-mode" snapshot.mode,attribute "data-publication" (UInt64.string snapshot.publication),attribute "data-lease" (UInt64.string snapshot.lease)] [h1 [] [text (if snapshot.mode=="applications" then "Applications" else if snapshot.mode=="overview" then "Task View" else if snapshot.mode=="switcher" then "Switch windows" else if snapshot.mode=="snap" then "Snap window" else if snapshot.mode=="jump" then "Application actions" else if snapshot.mode=="files" then "Files" else if snapshot.mode=="system" then "System" else if snapshot.mode=="notifications" then "Notifications" else if snapshot.mode=="settings" then "Settings" else if snapshot.mode=="menu" then "Window actions" else "Choose a window")],p [attribute "role" "status",attribute "aria-live" "polite"] [text snapshot.status],(if snapshot.mode=="overview" then div [class "surface-controls",attribute "role" "group"] (overviewRows snapshot.popup) else Keyed.node "div" [class "surface-controls",attribute "role" (if snapshot.mode=="menu" then "menu" else "group")] (List.map (\item -> ("control:" ++ item.identity,control item)) snapshot.popup))]
++    in if popup then div [attribute "data-theme" (Settings.themeName snapshot.appearance.theme),attribute "data-text-scale" (String.fromInt snapshot.appearance.textScale),class "surface-popup",attribute "data-mode" snapshot.mode,attribute "data-publication" (UInt64.string snapshot.publication),attribute "data-lease" (UInt64.string snapshot.lease)] [h1 [] [text (if snapshot.mode=="applications" then "Applications" else if snapshot.mode=="overview" then "Task View" else if snapshot.mode=="switcher" then "Switch windows" else if snapshot.mode=="snap" then "Snap window" else if snapshot.mode=="jump" then "Application actions" else if snapshot.mode=="files" then "Files" else if snapshot.mode=="system" then "System" else if snapshot.mode=="notifications" then "Notifications" else if snapshot.mode=="settings" then "Settings" else if snapshot.mode=="menu" then "Window actions" else "Choose a window")],p [attribute "role" "status",attribute "aria-live" "polite"] [text snapshot.status],(if snapshot.mode=="overview" then div [class "surface-controls",attribute "role" "group"] (overviewRows snapshot.popup) else if snapshot.mode=="switcher" then div [class "surface-controls",attribute "role" "group",attribute "aria-label" "Window switcher controls"] [Keyed.node "div" [attribute "role" "listbox",attribute "aria-label" "Switch windows",attribute "aria-multiselectable" "false"] (snapshot.popup |> List.filter (\item -> String.startsWith "switcher:family:" item.identity) |> List.map (\item -> ("control:" ++ item.identity,control item))),Keyed.node "div" [attribute "role" "group",attribute "aria-label" "Window switcher actions"] (snapshot.popup |> List.filter (\item -> not (String.startsWith "switcher:family:" item.identity)) |> List.map (\item -> ("control:" ++ item.identity,control item)))] else Keyed.node "div" [class "surface-controls",attribute "role" (if snapshot.mode=="menu" then "menu" else "group")] (List.map (\item -> ("control:" ++ item.identity,control item)) snapshot.popup))]
+        else Keyed.node "div" [attribute "data-theme" (Settings.themeName snapshot.appearance.theme),attribute "data-text-scale" (String.fromInt snapshot.appearance.textScale),class "surface-bar",attribute "data-publication" (UInt64.string snapshot.publication),attribute "data-lease" (UInt64.string snapshot.lease)]
+-            [("actions",Keyed.node "div" [class "surface-actions"] (List.map (\item -> ("control:" ++ item.identity,control item)) snapshot.bar))
++            [("actions",Keyed.node "div" [class "surface-actions",attribute "role" "toolbar",attribute "aria-label" "Warlock taskbar"] (List.map (\item -> ("control:" ++ item.identity,control item)) snapshot.bar))
+             ,("status",span [class (if String.isEmpty snapshot.status || snapshot.status=="Ready" then "surface-status surface-status-idle" else "surface-status"),attribute "role" "status",attribute "aria-live" "polite",attribute "aria-atomic" "true",attribute "aria-label" snapshot.status,title snapshot.status] [text snapshot.status])]

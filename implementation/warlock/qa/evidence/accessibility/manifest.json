@@ -1,0 +1,154 @@
+{
+  "schema": 1,
+  "owner": "root-native-accessibility",
+  "observedUTC": "2026-10-08T17:46:51.054844+00:00",
+  "requirements": [
+    "ELM-UX-025"
+  ],
+  "scenarios": [
+    "actual-surface-at"
+  ],
+  "originals": [
+    {
+      "requirement": "ELM-UX-025",
+      "verification": "Elm replay assertion and isolated native recording: inspector and Orca observe matching name, role, selection and focus.",
+      "scenarios": [
+        {
+          "name": "actual-surface-at",
+          "given": "the full taskbar and switcher exist on the selected host",
+          "when": "AT inspection and navigation run",
+          "then": "both actual surfaces expose matching name, role, selection and focus"
+        }
+      ]
+    }
+  ],
+  "scope": "Actual renderer projects a named taskbar toolbar, active toggle state, named switcher listbox and exactly one selected window option from the immutable Elm root. Current compiled/replay/browser role/name/selection/cycle/retirement checks pass; actual native switcher presentation, local traversal, cancel, chosen activation/restore and real GTK keyboard recipient pass. Original native taskbar/switcher inspector/Orca oracle is unverified; both failed private AT campaigns are retained.",
+  "sourceBaseRevision": "467f0338e57eabc100bd12e9883ed1184cadcdb1",
+  "publicBaseRevision": "7664dee13fa771eeeffea0fd8f3d8263fcbbf993",
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+      "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791477973836253029/elm-window-geometry-authority.so",
+      "sha256": "216c5cce257eaff5d063285d44df6ac20090f285064c9681fac6213e414b0d1c"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/accessibility-1791481208524331725/elm-host",
+    "sha256": "df2d1b62a68f3ec8ed8e6993d9f473d34c14eb0c4064e9e52ac5b90c3b8a829e",
+    "heldBuild": "implementation/warlock/qa/runs/accessibility-1791481208524331725/report.json",
+    "heldBuildSHA256": "fd1b77d9240460809fba111437a62b13481bede4d114c76521c161d0ce953204"
+  },
+  "compiledAssets": {
+    "elm.js": "03b9824b04255dfba42c90f0c8e279680a8f84911254b4cd0e781555cac09033",
+    "bar.js": "9eafedc18250a5c523a7b19bba0a325556e15aa760912bb05bfe0eac35a55a56",
+    "popup.js": "1b2104bcdccd16d45e258b4b1951d9b4ad085499d44bde475edfe348366ed70e"
+  },
+  "observedChecks": {
+    "compiledSwitcher": 32,
+    "browser": 10,
+    "nativeSwitcher": 43
+  },
+  "nativeSwitcherCampaignPassed": true,
+  "nativeATCampaignPassed": false,
+  "originalScenarioDisposition": "implemented-unverified",
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "missingObservations": [
+    "Original actual-surface-at remains implemented-unverified: neither private AT attempt established the taskbar/switcher names, roles, native selection state and Orca focus agreement. The first observed initial empty taskbar DOM and failed its toggle-state check; the second expired at the original six-second bar_tree barrier. Read-only tree traversal incorrectly called get_application on the desktop root; corrected without a third AT campaign. No native host bridge success or failure is inferred.",
+    "The current inspector desktop-root guard and additional private-XDG reader assertions were changed after the attempts and have not been natively rerun.",
+    "Independent original-scenario/requirement acceptance, applicable audible/braille/IME and full release hardware/resource/journey/package/deployment obligations remain open."
+  ],
+  "stopDisposition": "Two consecutive qualification-only AT attempts ended this investigation. Select original ELM-UX-028 actual IME commit/cancel next; no third AT run was used to qualify it. The changed switcher has one proportional existing native presentation/input regression with AT explicitly disabled.",
+  "fixtureChangesAfterComponentSnapshot": {
+    "qa/native-window-feedback.py": {
+      "captured": "323b377b5f14030fd5bc2405dcdf8588755f56b0679a73466e185950d4ee6af4",
+      "current": "fff73c1c84acdcb3233ad5edc49714e0b097a270d073ffdc6cc4fd341ef406b6"
+    },
+    "qa/accessibility-inspector.py": {
+      "captured": "114cdcb8be4c59357fdb4e74e54e19fcee4992420657dade207fd772727c1ca6",
+      "current": "bc4fe7adba15c29f97137b91848971b65b994c1b8f6282109d7edf1e13bd5c27"
+    },
+    "qa/accessibility-reader.py": {
+      "captured": "d9341b9445e9630c37de57192d0c2965e99bb983fc8dd73894bf6c2f812410f1",
+      "current": "66442e00fcdabbb5a4cc7bb7d283377ee40b42d0f6a1c6ec35c4b93369b782fd"
+    }
+  },
+  "failedATCampaigns": [
+    {
+      "report": "implementation/warlock/qa/runs/native-accessibility-1791481238022656547/report.json",
+      "sha256": "f0ae67b8ccb860cec1d473908ae5a36c9598cfc75f317be17a8213a46c81e572",
+      "error": "AssertionError('OwnedClientNormalExit')",
+      "cleanupPassed": true,
+      "runnerSHA256": "323b377b5f14030fd5bc2405dcdf8588755f56b0679a73466e185950d4ee6af4"
+    },
+    {
+      "report": "implementation/warlock/qa/runs/native-accessibility-1791481350907567804/report.json",
+      "sha256": "492861441cc16e37f93ed4704005984da17c67ab3f1f1fdb22ff31ff525a86b6",
+      "error": "RuntimeError('Original observation deadline bar_tree')",
+      "cleanupPassed": true,
+      "runnerSHA256": "fff73c1c84acdcb3233ad5edc49714e0b097a270d073ffdc6cc4fd341ef406b6"
+    }
+  ],
+  "failedComponentReportsByReference": [
+    {
+      "path": "implementation/warlock/qa/runs/accessibility-1791481069679807109/report.json",
+      "sha256": "8f57dff896912568d2fa374bea102b7c603336cc5efe12e3a9003f25318aeacf"
+    },
+    {
+      "path": "implementation/warlock/qa/runs/accessibility-1791481108121984329/report.json",
+      "sha256": "278ee0cd27d9b6d8fdb09717d66d074b1def1b5a929fe6cae664b4dc78e823f6"
+    },
+    {
+      "path": "implementation/warlock/qa/runs/accessibility-1791481141883353037/report.json",
+      "sha256": "2e29ea92864cb1756e89e1c8aaebe3d32c3d38829227c9a23b3e6c84266b2f7c"
+    },
+    {
+      "path": "implementation/warlock/qa/runs/accessibility-1791481163455410581/report.json",
+      "sha256": "0a2919e12b5d8fcf60a43d94f1a45041250a7e76318437c1b1a25fef5b32dd0e"
+    }
+  ],
+  "sources": {
+    "implementation/warlock/src/SurfaceRenderer.elm": "0720abc85594034e312256895fc3c2b940990bb93bd68a6ed00c818a43b19dd4",
+    "implementation/warlock/qa/accessibility-session.py": "69bc3b33c2b99f0b9d54805e18afcb85ff02314dc9aa4d002f4df409a0e57524",
+    "implementation/warlock/qa/accessibility-inspector.py": "bc4fe7adba15c29f97137b91848971b65b994c1b8f6282109d7edf1e13bd5c27",
+    "implementation/warlock/qa/accessibility-reader.py": "66442e00fcdabbb5a4cc7bb7d283377ee40b42d0f6a1c6ec35c4b93369b782fd",
+    "implementation/warlock/qa/accessibility-browser.mjs": "0152f3000eb5c488ec3fe23441fbbc5f40e594500b4e114cb3e800a3e16c64e9",
+    "implementation/warlock/qa/native-window-feedback.py": "fff73c1c84acdcb3233ad5edc49714e0b097a270d073ffdc6cc4fd341ef406b6",
+    "implementation/warlock/qa/check-search.py": "2cf70b906d77a3251b0ab2927ad4698ea31efaa156033415bf726bfc34807574",
+    "implementation/warlock/README.md": "6995909987990b00aa45723b4b6e05f7553ca8b254d00b3c109ecb9f401ed2a3",
+    "implementation/warlock/assets/elm.js": "03b9824b04255dfba42c90f0c8e279680a8f84911254b4cd0e781555cac09033",
+    "implementation/warlock/assets/bar.js": "9eafedc18250a5c523a7b19bba0a325556e15aa760912bb05bfe0eac35a55a56",
+    "implementation/warlock/assets/popup.js": "1b2104bcdccd16d45e258b4b1951d9b4ad085499d44bde475edfe348366ed70e",
+    "implementation/warlock/qa/current-search-build.json": "28fdfd91e27382554b94c690ca099fb6ebf439a3f34d41010da0f477e9381031",
+    "implementation/warlock/qa/SwitcherReplay.elm": "a2091159968a8451b5c9ff4077d5e32ef4d964b94972e35c0d80bcd048f38171"
+  },
+  "artifacts": {
+    "component-report.json": "fd1b77d9240460809fba111437a62b13481bede4d114c76521c161d0ce953204",
+    "native-switcher-regression.json": "5eda3a368a9cafbb457a633722eb08096dab3f0de8b7b8ee4ef65b254b22773e",
+    "browser-report.json": "e7e60e3250786ae56e126430c023ab6419e2fc1ee51f0d2d3ca26a085465b801",
+    "switcher.json": "dd7e0f4d7a1085b2d7fe5353d66ec7f04eb2416d7a6490b1717190b89bd360bc",
+    "typed-switcher.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "switcher-key-routing.stdout": "26955c4d71a20082c4de5fe4a12782ecec45b731ff1a979bdf7cde5a12064af4",
+    "popup-context-tests.stdout": "3b7f4883faa7881ff4a3e4740bc858bb5372704374603003cb71753c4fb54e27",
+    "switcher-accessible-selection.png": "1cd11e0e040cd34cdfafe39807f7c049be3d47d69bcc665987f27f2aa6da7db0",
+    "native-switcher-selected.png": "50c55765e5ace2142b1a7e93c27eb583eed14ee06a251cefeba6cee915aada91",
+    "failed-premature-taskbar-observation.json": "f0ae67b8ccb860cec1d473908ae5a36c9598cfc75f317be17a8213a46c81e572",
+    "failed-premature-taskbar-observation-at-reply.json": "683ec2cd65c7d5f1945fd32878ab26393e68cdf08160d0ab37668834ffd1bec8",
+    "failed-premature-taskbar-observation-at-events.jsonl": "2fd5240ddb3378e89dfb76d13ceec7c30b5f70e4bc81633fca706340eb081548",
+    "failed-premature-taskbar-observation-orca-utterances.jsonl": "8167498efc0283659b3249b696f0e5c90f467806eb2b3c34028878910831cd9f",
+    "failed-inspector-desktop-root.json": "492861441cc16e37f93ed4704005984da17c67ab3f1f1fdb22ff31ff525a86b6",
+    "failed-inspector-desktop-root-at-reply.json": "118b45534b5f13f8ce973d96ae17216e4c969c39bea08989171509ac24e62c29",
+    "failed-inspector-desktop-root-at-events.jsonl": "b515686461539124fb03697698ea04c7d8c3a70f61aa22de08d5d0a42a97b809",
+    "failed-inspector-desktop-root-orca-utterances.jsonl": "030b00a91b16cd63dee241872280e1fa979e749f4afa5672de5b8a9775e52706",
+    "source.patch": "aa8d86553505f8fb19cbb9aedd8ed8720fb45b30b8c51531e503cc9c78fd93e0"
+  }
+}

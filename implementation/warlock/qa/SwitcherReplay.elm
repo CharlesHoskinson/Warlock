@@ -20,7 +20,7 @@ counter value = D.decodeValue UInt64.decoder (E.string value) |> Result.withDefa
 one=counter "1"
 two=counter "2"
 three=counter "3"
-family id = {root=counter id,label=id,application=id,minimized=False,available=True,active=id=="3"}
+family id = {root=counter id,label=id,application=id,minimized=False,available=True,attention=False,active=id=="3"}
 rows=List.map family ["1","2","3"]
 history=[three,two,one]
 start=S.step one 1 S.Forward S.initial |> Tuple.first
@@ -131,4 +131,4 @@ result =
             ,("unknownManualChoiceCannotCommit",let (unchanged,commands)=scoped (\stamp -> Desktop.SwitcherChoose stamp (counter "99")) integrated in unchanged.choice==Nothing && List.isEmpty commands)
             ,("nativeReadinessDoesNotMutate",List.isEmpty (mutations earlyResolvedEffects) && List.isEmpty (mutations nativeReleaseEffects))
             ,("rendererAcceptsSwitcher",SurfaceRenderer.decode presentation |> Result.map (SurfaceRenderer.mode >> (==) "switcher") |> Result.withDefault False)]
-    in E.object [("checks",E.object (List.map (\(name,value) -> (name,E.bool value)) checks)),("scope",E.string "Typed reducer and integrated current-history presentation/choice admission only; no global chord, native focus/AT or atomic cancellation verdict.")]
+    in E.object [("frame",presentation),("taskbarFrame",Surface.packet one one base),("cycledFrame",Surface.packet (counter "2") one (scoped (\stamp -> Desktop.SwitcherStep stamp S.Forward) integrated |> Tuple.first)),("closedFrame",Surface.packet (counter "3") one closed),("checks",E.object (List.map (\(name,value) -> (name,E.bool value)) checks)),("scope",E.string "Typed reducer and integrated current-history presentation/choice admission only; no global chord, native focus/AT or atomic cancellation verdict.")]

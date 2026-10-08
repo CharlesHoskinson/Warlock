@@ -4,6 +4,7 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
 lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
 """
 import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
+ACCESSIBILITY=sys.argv[1:]==['--accessibility']
 CONTRAST=sys.argv[1:]==['--high-contrast']
 DRAG=sys.argv[1:]==['--drag-ownership']
 KEYBOARD=sys.argv[1:]==['--keyboard-shell']
@@ -25,13 +26,15 @@ PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PINMENUS or ATTENTION
 PRE_READY_RETIRE=sys.argv[1:]==['--switcher-pre-ready-retirement']
 MEMBERSHIP=sys.argv[1:]==['--switcher-membership'] or PRE_READY_RETIRE
 CHORD=sys.argv[1:]==['--switcher-chord'] or MEMBERSHIP
-SWITCHER=sys.argv[1:]==['--switcher']
+SWITCHER=sys.argv[1:]==['--switcher'] or ACCESSIBILITY
 NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'] or DENSEPICKER or KEYBOARD;PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS or PINMENUS or REFLOW or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or KEYBOARD;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD or DRAG
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143';RUNTIME=REPO/'implementation/warlock-client-provider-native-v204'
 sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
 spec=importlib.util.spec_from_file_location('feedback_private_host',RUNTIME/'candidate_host.py');host=importlib.util.module_from_spec(spec);spec.loader.exec_module(host)
 host.original.qa.require_qa_scope();sys.path.insert(0,str(RUNTIME/'qa'))
 from session_bus import isolate_session_host
+if ACCESSIBILITY:
+ spec_at=importlib.util.spec_from_file_location('warlock_accessibility_session',ROOT/'qa/accessibility-session.py');at_session=importlib.util.module_from_spec(spec_at);spec_at.loader.exec_module(at_session);isolate_session_host=at_session.isolate_session_host
 from system_isolation import supply,validate
 from inspection import Collector
 isolate_session_host(host)
@@ -64,7 +67,7 @@ else:
 for row in pair.values():assert sha(row['path'])==row['sha256']
 assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
 subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
-OUT=ROOT/'qa/runs'/(('native-high-contrast-' if CONTRAST else 'native-drag-ownership-' if DRAG else 'native-keyboard-shell-' if KEYBOARD else 'native-attention-' if ATTENTION else 'native-jump-lists-' if JUMP else 'native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+OUT=ROOT/'qa/runs'/(('native-accessibility-' if ACCESSIBILITY else 'native-high-contrast-' if CONTRAST else 'native-drag-ownership-' if DRAG else 'native-keyboard-shell-' if KEYBOARD else 'native-attention-' if ATTENTION else 'native-jump-lists-' if JUMP else 'native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
 OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
 focus_host=None
 if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
@@ -150,6 +153,7 @@ if KEYBOARD or DRAG:LUA+=(ROOT/'native/shell-bindings.lua').read_bytes()
 if DRAG:
  LUA+=b'hl.monitor({output="WAYLAND-2",mode="800x600@60",position="800x0",scale=1})\n'
  report.update(requirements=['ELM-UX-021'],scenarios=['ux-021'],scope='Actual native move/resize input across taskbar and two outputs; native controller owner/serial, real blocked shell shortcut and competing native effect, one end per gesture. No caption/edge, AT, touch/tablet or independent acceptance inferred.')
+if ACCESSIBILITY:report.update(requirements=['ELM-UX-025'],scenarios=['actual-surface-at'],scope='Actual private GTK/WebKit taskbar and switcher AT-SPI tree/states/focus and real Orca observations with physical input; independent original acceptance remains separate.')
 def check(name,condition,**data):
  report['checks'].append({'name':name,'passed':bool(condition),**data});assert condition,name
 def wait(fn,seconds=6):
@@ -194,6 +198,25 @@ try:
    client=Endpoint(**config);client.hello();
    if PLACEMENT:client.geometry_attach('15000')
    env=supply(s.env,s.host.runtime);validate(env,s.host.runtime);env['XDG_STATE_HOME']=str(s.host.runtime/'private-warlock-state');report['privateStateRoot']=env['XDG_STATE_HOME'];env.update(GTK_A11Y='none',NO_AT_BRIDGE='1',GSETTINGS_BACKEND='memory',GTK_USE_PORTAL='0',WAYLAND_DEBUG='client')
+   if ACCESSIBILITY:
+    env['AT_SPI_BUS_ADDRESS']='unix:path='+str(s.host.runtime/'a11y-bus');env.pop('GTK_A11Y',None);env.pop('NO_AT_BRIDGE',None)
+    s.env.update(AT_SPI_BUS_ADDRESS=env['AT_SPI_BUS_ADDRESS'])
+    at_bus=s.host.launch('accessibility-bus',['/usr/bin/true'],env=env);apps.append(at_bus);wait(lambda:(s.host.runtime/'a11y-bus').exists())
+    at_registry=s.host.launch('accessibility-registry',['/usr/lib/at-spi2-registryd'],env=env);apps.append(at_registry)
+    at_request=OUTPUT/'at-request.json';at_reply=OUTPUT/'at-reply.json';at_ready=OUTPUT/'at-ready.json';at_events=OUTPUT/'at-events.jsonl'
+    at_inspector=s.host.launch('accessibility-inspector',['/usr/bin/python3','-B',str(ROOT/'qa/accessibility-inspector.py'),str(at_request),str(at_reply),str(at_ready),str(at_events)],env=env);apps.append(at_inspector);wait(lambda:at_ready.exists())
+    reader_env=dict(env,ORCA_QA_UTTERANCES=str(OUTPUT/'orca-utterances.jsonl'))
+    at_reader=s.host.launch('accessibility-orca',['/usr/bin/python3','-B',str(ROOT/'qa/accessibility-reader.py')],env=reader_env);apps.append(at_reader)
+    def at_observe():
+     global sequence
+     sequence+=1;temp=at_request.with_suffix('.tmp');temp.write_text(json.dumps({'sequence':sequence}));temp.replace(at_request)
+     def reply():
+      if not at_reply.exists():return None
+      result=json.loads(at_reply.read_text());return result if result['sequence']==sequence else None
+     return wait(reply)
+    wait(lambda:at_observe().get('reader'))
+    held_reader=pathlib.Path('/home/hoskinson/window-integration-qa/orca-reader')
+    report['accessibilityFixture']={'session':env['DBUS_SESSION_BUS_ADDRESS'],'accessibility':env['AT_SPI_BUS_ADDRESS'],'systemBusRemainsRefusing':True,'servicesExplicitlyOwned':True,'activationDisabled':True,'inspectorSHA256':sha(ROOT/'qa/accessibility-inspector.py'),'readerLauncherSHA256':sha(ROOT/'qa/accessibility-reader.py'),'sessionWrapperSHA256':sha(ROOT/'qa/accessibility-session.py'),'orcaPackageSHA256':sha(held_reader/'packages.json'),'readerEntrySHA256':sha(held_reader/'prefix/usr/bin/orca'),'speechAdapterSHA256':sha(held_reader/'silent_factory.py'),'observationAdapterSHA256':sha(held_reader/'data/orca/orca-customizations.py'),'nativeATObserved':False}
    if CATALOG:
     catalog_root=pathlib.Path(env['XDG_DATA_HOME'])/'applications';catalog_root.mkdir(mode=0o700,parents=True,exist_ok=True)
     # Only explicitly owned fixture metadata is visible to this broker.
@@ -1010,11 +1033,40 @@ raise SystemExit(daemon.run())
       observed=wait(receipts);check('SwitcherCorrelatedNative'+operation,len(observed)==1 and observed[0]['status']=='Committed',receipts=observed)
       report.setdefault('switcherReceipts',[]).append({'request':submitted,'receipt':observed[0]})
       typed_recipient('ELM-ACTIVATION-PEER')
+     if ACCESSIBILITY:
+      dom=wait(lambda:(body if body and body.get('buttons') and any(b['accessibleName'].startswith('Choose a window from') for b in body['buttons']) else None) if (body:=bar_body()) else None);names=[b['accessibleName'] for b in dom['buttons']]
+      def bar_tree():
+       value=at_observe();rows=[row for row in value['nodes'] if any(a['role']=='tool bar' and a['name']=='Warlock taskbar' for a in row['ancestors']) and row['role'] in ['push button','toggle button']]
+       return (value,rows) if len(rows)==len(names) and sorted(row['name'] for row in rows)==sorted(names) else None
+      tree,at_bar=wait(bar_tree);report['accessibilitySnapshots']=[{'stage':'TaskbarInitial',**tree}]
+      check('ActualTaskbarExportsAllControlNames',len(at_bar)==len(names) and sorted(row['name'] for row in at_bar)==sorted(names),native=at_bar,dom=names)
+      check('ActualTaskbarActiveStateHasNativeToggleState',sum(bool({'pressed','checked'} & set(row['states'])) for row in at_bar)==1 and all(bool({'pressed','checked'} & set(row['states']))==('Active' in row['name']) for row in at_bar),native=at_bar)
+      button=next(b for b in dom['buttons'] if b['accessibleName'].startswith('Choose a window from'))
+      click({'visible':0<=button['x']+button['width']/2<800 and 0<=button['y']<48,'point':[button['x']+button['width']/2,button['y']+button['height']/2]})
+      # Click opens the actual group picker. Escape then leaves physical focus
+      # on its existing taskbar opener; no injected DOM/AT focus qualifies it.
+      wait(lambda:(projection() or {}).get('mode')=='picker');key(1);wait(lambda:(projection() or {}).get('mode')=='closed')
+      def bar_focus():
+       value=at_observe();return value if ((value.get('reader') or {}).get('focus') or {}).get('name')==button['accessibleName'] and any(row['name']==button['accessibleName'] and 'focused' in row['states'] for row in value['nodes']) else None
+      bar_state=wait(bar_focus);report['accessibilitySnapshots'].append({'stage':'TaskbarFocusAfterDismissal',**bar_state})
+      check('ActualOrcaAndInspectorAgreeTaskbarFocus',bar_state['reader']['focus']['role'] in ['push button','toggle button'],reader=bar_state['reader'])
+     def accessible_choice(stage,body):
+      name=next(b['accessibleName'] for b in body['buttons'] if b['id']==body['focus'])
+      def agrees():
+       value=at_observe();options=[row for row in value['nodes'] if row['role']=='list item' and any(a['role']=='list box' and a['name']=='Switch windows' for a in row['ancestors'])]
+       reader=value.get('reader') or {};focus=reader.get('focus') or {}
+       selected=[row for row in options if 'selected' in row['states']]
+       return value if len(options)==2 and len(selected)==1 and selected[0]['name']==name and 'focused' in selected[0]['states'] and focus.get('name')==name else None
+      value=wait(agrees);report['accessibilitySnapshots'].append({'stage':stage,**value})
+      check(stage+'NativeNamesRolesSelectionAndOrcaFocusAgree',value['reader']['focus']['role']=='list item',reader=value['reader'])
      open_switcher();body=wait(lambda:selected_window('ELM-ACTIVATION-PEER'))
+     if ACCESSIBILITY:accessible_choice('SwitcherInitial',body)
      visible_order=[button['accessibleName'].split(';',1)[0] for button in body['buttons'] if button['accessibleName'].startswith(('Activate ELM-','Restore ELM-'))]
      check('SwitcherFrozenOrderMatchesNativeHistory',visible_order==['Activate '+labels[root] for root in native_history['roots']],body=body)
      popup_capture('mru-initial');key(15);wait(lambda:selected_window('ELM-AUTHORITY-FIXTURE'))
+     if ACCESSIBILITY:accessible_choice('SwitcherForward',wait(lambda:selected_window('ELM-AUTHORITY-FIXTURE')))
      key(105);wait(lambda:selected_window('ELM-ACTIVATION-PEER'))
+     if ACCESSIBILITY:accessible_choice('SwitcherReverse',wait(lambda:selected_window('ELM-ACTIVATION-PEER')))
      check('SwitcherLocalForwardReverseHasNoWindowEffect',len(journal())==before and facts()['facts']['focused']==before_focus)
      key(1);wait(lambda:(projection() or {}).get('mode')=='closed' and (projection() or {}).get('phase')=='Coherent')
      check('SwitcherNativeEscapeRetainsPressUntilPhysicalRelease','surface-native-escape-stored:' in text() and 'surface-terminal-released: key=65307' in text())
@@ -1027,6 +1079,13 @@ raise SystemExit(daemon.run())
      check('SwitcherLeavesWorkspaceOutputMembershipUnchanged',sorted((row['incarnation'],row['workspace'],row['monitor']) for row in facts()['facts']['windows'])==original_membership)
      for capture in report['popupCaptures']:check('ActualSwitcherControlPixels'+capture['stage'],len(capture['controlRegions'])==2 and all(row['area']>0 and row['brightPixels']>30 and row['paintedPixels']>.9*row['area'] for row in capture['controlRegions']),capture=capture)
      check('SwitcherDoesNotLaunchApplications',not launches())
+     if ACCESSIBILITY:
+      final_at=at_observe();report['accessibilitySnapshots'].append({'stage':'SwitcherRetired',**final_at})
+      check('ActualRetiredSwitcherHasNoSelectedNativeOptions',not any(row['role']=='list item' and 'selected' in row['states'] for row in final_at['nodes']))
+      check('ActualBridgePublishesFocusAndSelectionEvents',any(e['type']=='object:state-changed:focused' and e['detail1']==1 for e in final_at['events']) and any(e['type']=='object:state-changed:selected' for e in final_at['events']),events=final_at['events'])
+      utterances=OUTPUT/'orca-utterances.jsonl';report['orcaSpeechOutput']=[json.loads(line) for line in utterances.read_text().splitlines()]
+      check('ActualOrcaSpeaksTaskbarAndSwitcherNames',any('Choose a window from' in row.get('text','') for row in report['orcaSpeechOutput']) and all(any(label in row.get('text','') for row in report['orcaSpeechOutput']) for label in ['ELM-AUTHORITY-FIXTURE','ELM-ACTIVATION-PEER']),utterances=report['orcaSpeechOutput'])
+      report['accessibilityFixture']['nativeATObserved']=True
      report['nativeSwitcherJourneyObserved']=True
     elif NAV:
      def peer_window():return next(w for w in facts()['facts']['windows'] if w['incarnation']==peer_identity)
@@ -1644,7 +1703,7 @@ raise SystemExit(daemon.run())
     if proc.poll() is None:
      if proc is fixture:fixture_control('quit');proc.wait(timeout=5)
      else:owned=next(row for p,row in s.host.processes if p is proc);s.host.stop(owned,proc);proc.wait(timeout=5)
-    check('OwnedClientNormalExit',proc.returncode==0,pid=proc.pid,exitCode=proc.returncode)
+    check('OwnedClientNormalExit',proc.returncode==0 or (ACCESSIBILITY and proc is at_registry and proc.returncode==-signal.SIGTERM),pid=proc.pid,exitCode=proc.returncode,expectedRegistryStop=bool(ACCESSIBILITY and proc is at_registry and proc.returncode==-signal.SIGTERM))
    if loaded:s.guard();check('OwningPluginUnloads',s.ctl('plugin','unload',pair['plugin']['path']).strip()=='ok');loaded=False
    registered={row['pid'] for _,row in s.host.processes}
    for row in reversed([r for r in s.host.descendants() if r['pid'] not in registered]):s.host.stop(row)

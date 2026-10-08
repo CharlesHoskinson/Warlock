@@ -8238,14 +8238,36 @@
       "owner": "Accessibility lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "actual-surface-at",
           "oracle": "both actual surfaces expose matching name, role, selection and focus",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "implemented-unverified",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/accessibility/manifest.json",
+              "sha256": "edcabfa67297356b0bbeca973d1214b7e82747ac2c468f98a773a3322ebb9298",
+              "scope": "Actual renderer projects a named taskbar toolbar, active toggle state, named switcher listbox and exactly one selected window option from the immutable Elm root. Current compiled/replay/browser role/name/selection/cycle/retirement checks pass; actual native switcher presentation, local traversal, cancel, chosen activation/restore and real GTK keyboard recipient pass. Original native taskbar/switcher inspector/Orca oracle is unverified; both failed private AT campaigns are retained.",
+              "sourceRevision": "467f0338e57eabc100bd12e9883ed1184cadcdb1",
+              "sourceTuple": {
+                "core": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+                  "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+                },
+                "plugin": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791477973836253029/elm-window-geometry-authority.so",
+                  "sha256": "216c5cce257eaff5d063285d44df6ac20090f285064c9681fac6213e414b0d1c"
+                },
+                "aquamarine": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+                  "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+                }
+              },
+              "reviewerDisposition": "Owner-observed compiled semantics and native switcher regression only; original native AT/Orca and independent acceptance remain open."
+            }
+          ],
+          "missingObservation": "Original actual-surface-at remains implemented-unverified: neither private AT attempt established the taskbar/switcher names, roles, native selection state and Orca focus agreement. The first observed initial empty taskbar DOM and failed its toggle-state check; the second expired at the original six-second bar_tree barrier. Read-only tree traversal incorrectly called get_application on the desktop root; corrected without a third AT campaign. No native host bridge success or failure is inferred. The current inspector desktop-root guard and additional private-XDG reader assertions were changed after the attempts and have not been natively rerun. Independent original-scenario/requirement acceptance, applicable audible/braille/IME and full release hardware/resource/journey/package/deployment obligations remain open."
         }
       ]
     },
@@ -8739,5 +8761,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-08T17:20:46.737397+00:00"
+  "updatedUTC": "2026-10-08T17:46:51.054844+00:00"
 }

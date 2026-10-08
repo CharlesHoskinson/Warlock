@@ -237,3 +237,16 @@ outline pixels and restarts the host; the existing Dawn journey is checked
 separately. Evidence is in `qa/evidence/high-contrast/manifest.json`.
 ELM-UX-027 remains partial: all-surface native theme/scale coverage, applicable
 accessibility consumers and independent original acceptance remain open.
+
+The taskbar now projects a named toolbar with an explicit active toggle state,
+and the window switcher projects a named listbox with exactly one selected
+window option. These remain views of the authoritative Elm state. Current
+compiled/browser checks cover names, roles, selection changes and retirement;
+the actual native switcher still cycles, cancels, activates and restores with
+physical keyboard input. Native AT acceptance remains open: two private Orca
+qualification attempts failed before observing both shell surfaces. The
+read-only inspector's desktop-root traversal bug is corrected but has not been
+rerun after the AAR stop threshold. See `qa/evidence/accessibility/manifest.json`
+for the exact failed observations and source tuple. `--accessibility` uses
+explicitly owned nonactivating session/AT buses and a private Orca home; its
+silent speech adapter cannot establish audible or braille acceptance.
