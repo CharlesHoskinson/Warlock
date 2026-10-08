@@ -37,6 +37,28 @@ python3 -B plugins/warlock-contributor/scripts/warlock.py remaining \
   --requirement ELM-UI-003 --markdown --limit 3
 ```
 
+If you do not know the requirement IDs, `capabilities` lists exact original
+capability names, their requirement IDs and recorded scenario counts. Filter
+the checklist by one or more of those capabilities:
+
+```sh
+python3 -B plugins/warlock-contributor/scripts/warlock.py capabilities
+python3 -B plugins/warlock-contributor/scripts/warlock.py remaining \
+  --capability elm-taskbar --markdown --limit 3
+python3 -B plugins/warlock-contributor/scripts/warlock.py inspect \
+  --requirement ELM-UI-008 --scenario menu-invocation
+```
+
+Repeated capability filters form a union; when requirement filters are also
+present, the two sets intersect. Unknown or duplicate names fail instead of
+silently returning an empty backlog. `inspect --scenario` narrows the original
+and ledger scenario arrays together while retaining the requirement statement,
+verification obligations and source pointers. It reports the original scenario
+count and omitted count; it does not imply that the entire requirement was
+inspected. Every selected requirement must have a matching scenario. Omitting
+`--scenario` keeps the complete inspection. Both helpers are read-only and
+return the ledger hash without selecting work or revalidating dispositions.
+
 Pages follow ledger order after filtering. They retain total matching counts,
 the number of omitted rows and a ledger hash; repeat the same filters and limit
 with the reported `nextOffset` (`--offset` in Markdown). Compare hashes before

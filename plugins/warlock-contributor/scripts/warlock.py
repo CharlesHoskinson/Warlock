@@ -644,10 +644,61 @@ def report_markdown(packet):
     return '\n'.join(lines)
 
 
-def remaining(root, reqs, requirements, statuses, summary_only, limit=None, offset=0):
+def capabilities(root, reqs):
+    """Discover original capability identities without selecting contributor work."""
+    ledger = read(safe(root, LEDGER))
+    groups = {}
+    for row in ledger['requirements']:
+        capability = reqs[row['id']]['capability']
+        group = groups.setdefault(capability, {'capability': capability,
+            'requirements': [], 'scenarioCountsByRecordedStatus': {}})
+        group['requirements'].append(row['id'])
+        for scenario in row['scenarios']:
+            status = scenario['status']
+            counts = group['scenarioCountsByRecordedStatus']
+            counts[status] = counts.get(status, 0) + 1
+    rows = [groups[name] for name in sorted(groups)]
+    for row in rows:
+        row['requirementCount'] = len(row['requirements'])
+        row['scenarioCount'] = sum(row['scenarioCountsByRecordedStatus'].values())
+    return {'capabilities': rows, 'ledgerSha256': digest(safe(root, LEDGER)),
+            'recordedOnly': True, 'releaseAccepted': False,
+            'warnings': ['Capability counts describe the frozen baseline and recorded dispositions only; '
+                         'they do not establish implementation, evidence freshness or release acceptance.']}
+
+
+def inspect_requirements(root, reqs, requirements, scenarios):
+    if not 1 <= len(requirements) <= 3 or len(set(requirements)) != len(requirements) or any(i not in reqs for i in requirements):
+        raise ValueError('Inspect needs 1–3 unique original requirement IDs')
+    available = {s['name'] for i in requirements for s in reqs[i]['scenarios']}
+    if len(set(scenarios)) != len(scenarios) or not set(scenarios) <= available:
+        raise ValueError('Inspect needs unique exact scenario names under the selected requirements')
+    if scenarios and any(not any(s['name'] in scenarios for s in reqs[i]['scenarios']) for i in requirements):
+        raise ValueError('Each inspected requirement needs a selected original scenario')
+    rows = {r['id']: r for r in read(safe(root, LEDGER))['requirements']}
+    result = []
+    for identity in requirements:
+        original, row = dict(reqs[identity]), dict(rows[identity])
+        total = len(original['scenarios'])
+        if scenarios:
+            original['scenarios'] = [s for s in original['scenarios'] if s['name'] in scenarios]
+            row['scenarios'] = [s for s in row['scenarios'] if s['name'] in scenarios]
+        result.append({'original': original, 'ledger': row,
+            'originalScenarioCount': total, 'omittedScenarios': total - len(original['scenarios']),
+            'pointers': {'original': BASE, 'ledger': LEDGER, 'contribution': original.get('source'),
+                'openSpec': [str(p.relative_to(root)) for p in (root / 'openspec' / 'changes').glob(
+                    '*/specs/' + original['capability'] + '/spec.md')]}})
+    return {'requirements': result, 'scenarioFilter': scenarios,
+            'ledgerSha256': digest(safe(root, LEDGER))}
+
+
+def remaining(root, reqs, requirements, statuses, summary_only, limit=None, offset=0, selected_capabilities=()):
     """Report recorded backlog, without inferring implementation or acceptance."""
     if len(set(requirements)) != len(requirements) or any(i not in reqs for i in requirements):
         raise ValueError('Remaining needs unique original requirement IDs')
+    available = {r['capability'] for r in reqs.values()}
+    if len(set(selected_capabilities)) != len(selected_capabilities) or not set(selected_capabilities) <= available:
+        raise ValueError('Remaining needs unique exact capabilities; use capabilities to list them')
     ledger = read(safe(root, LEDGER))
     counts, rows = {}, []
     requirement_count = 0
@@ -655,8 +706,10 @@ def remaining(root, reqs, requirements, statuses, summary_only, limit=None, offs
         identity = requirement['id']
         if requirements and identity not in requirements:
             continue
-        requirement_count += 1
         original = reqs[identity]
+        if selected_capabilities and original['capability'] not in selected_capabilities:
+            continue
+        requirement_count += 1
         scenarios = {s['name']: s for s in original['scenarios']}
         for scenario in requirement['scenarios']:
             status = scenario['status']
@@ -671,6 +724,7 @@ def remaining(root, reqs, requirements, statuses, summary_only, limit=None, offs
     omitted_before = 0 if summary_only else min(offset, matching)
     omitted_after = matching - omitted_before - len(shown)
     return {'ledgerSha256': digest(safe(root, LEDGER)), 'recordedOnly': True,
+            'filters': {'requirements': requirements, 'capabilities': list(selected_capabilities), 'statuses': statuses},
             'requirementsConsidered': requirement_count, 'scenarioCountsByRecordedStatus': counts,
             'matchingScenarios': matching, 'scenarios': shown,
             'offset': offset, 'limit': limit, 'shownScenarios': len(shown),
@@ -887,6 +941,8 @@ def main():
     subs = parser.add_subparsers(dest='command', required=True)
     inspect = subs.add_parser('inspect')
     inspect.add_argument('--requirement', action='append', required=True)
+    inspect.add_argument('--scenario', action='append', default=[], help='Exact original scenario name; repeat to narrow inspection')
+    subs.add_parser('capabilities', help='Read-only original capability IDs and recorded counts; does not select work')
     subs.add_parser('status'); check = subs.add_parser('check')
     subs.add_parser('doctor')
     subs.add_parser('self-test', help='Run plugin regression tests in isolated fixtures; no GUI campaigns')
@@ -902,6 +958,7 @@ def main():
     report.add_argument('--markdown', action='store_true', help='Print a reviewable Markdown note instead of the JSON packet')
     backlog = subs.add_parser('remaining', help='Read-only original scenario checklist from recorded ledger dispositions')
     backlog.add_argument('--requirement', action='append', default=[])
+    backlog.add_argument('--capability', action='append', default=[], help='Exact original capability; intersects requirement filters')
     backlog.add_argument('--status', action='append', choices=['unadjudicated', 'missing', 'implemented-unverified', 'partial', 'failed', 'blocked', 'accepted'])
     backlog.add_argument('--summary', action='store_true', help='Counts only; omit scenario details')
     backlog.add_argument('--limit', type=int, help='Maximum matching scenarios to show; positive integer')
@@ -967,10 +1024,12 @@ def main():
             result.update(doctor(root, args.record))
         elif args.command == 'self-test':
             result.update(self_test(root))
+        elif args.command == 'capabilities':
+            result.update(capabilities(root, reqs))
         elif args.command == 'remaining':
             result.update(remaining(root, reqs, args.requirement,
                 args.status or ['unadjudicated', 'missing', 'implemented-unverified', 'partial', 'failed', 'blocked'],
-                args.summary, args.limit, args.offset))
+                args.summary, args.limit, args.offset, args.capability))
         elif args.command == 'plan':
             s = normalize_slice(root, {'id': args.id, 'requirements': args.requirement,
                 'scenarios': args.scenario, 'paths': args.path, 'before': args.before,
@@ -1000,11 +1059,7 @@ def main():
             else:
                 result.update(handoff(root, read(path), reqs, state))
         elif args.command == 'inspect':
-            if not 1 <= len(args.requirement) <= 3 or len(set(args.requirement)) != len(args.requirement) or any(i not in reqs for i in args.requirement):
-                raise ValueError('Inspect needs 1–3 unique original requirement IDs')
-            ledger = read(safe(root, LEDGER))
-            rows = {r['id']: r for r in ledger['requirements']}
-            result['requirements'] = [{'original': reqs[i], 'ledger': rows[i], 'pointers': {'original': BASE, 'ledger': LEDGER, 'contribution': reqs[i].get('source'), 'openSpec': [str(p.relative_to(root)) for p in (root / 'openspec' / 'changes').glob('*/specs/' + reqs[i]['capability'] + '/spec.md')] if (root / 'openspec' / 'changes').exists() else []}} for i in args.requirement]
+            result.update(inspect_requirements(root, reqs, args.requirement, args.scenario))
         elif args.command == 'status':
             result.update(activeSlice=state['activeSlice'], baseline=EXPECTED, recordExists=path.exists(), releaseAccepted=False)
             if path.exists():
