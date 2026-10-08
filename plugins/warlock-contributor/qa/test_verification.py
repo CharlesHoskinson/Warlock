@@ -113,6 +113,15 @@ class VerificationPlannerTests(unittest.TestCase):
         runners = [x['runner'].split('/')[-1] for x in self.packet()['cpuTargets']]
         self.assertEqual(runners, ['check-focus-core.py', 'check-native-authority.py'])
 
+    def test_surface_header_change_compiles_owning_host_instead_of_authority(self):
+        self.select('ELM-UI-007', 'restore-pending', ['native/surface.h'])
+        self.fixture.start()
+        self.fixture.write('implementation/warlock/native/surface.h', 'changed surface protocol\n')
+        packet = self.packet()
+        self.assertEqual([p['runner'].split('/')[-1] for p in packet['cpuTargets']], ['check-search.py'])
+        self.assertEqual(packet['cpuTargets'][0]['arguments'], ['--native-popup'])
+        self.assertEqual(packet['unmappedProductPaths'], [])
+
     def test_primary_surface_change_uses_primary_campaign_instead_of_group_picker(self):
         self.select('ELM-UI-004', 'taskbar-inactive', ['src/Surface.elm'])
         self.fixture.start()

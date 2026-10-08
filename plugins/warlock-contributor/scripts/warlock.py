@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Offline structural contributor checks. Never performs acceptance or executes QA."""
+"""Offline contribution checks and explicit plugin regressions; no GUI acceptance/builds."""
 import argparse
 import fcntl
 import os
@@ -344,7 +344,7 @@ def verification_plan(root, record, reqs, state, selected=False):
                 add('check-native-authority.py', [], [name], 'After the core build, rebuild authority against the same owning headers/provider.')
             else:
                 continue
-        elif relative in ('native/host.c', 'native/shared-host.c'):
+        elif relative in ('native/host.c', 'native/shared-host.c', 'native/surface.h'):
             add('check-search.py', ['--native-popup'], [name], 'Changed host compile, relink and popup lifecycle self-tests.')
         elif relative.startswith('native/'):
             add('check-native-authority.py', [], [name], 'Compile changed authority units against the owning core tuple.')
@@ -417,6 +417,58 @@ def doctor(root, record_path):
                 'skills/warlock-contribute/SKILL.md', '.claude-plugin/plugin.json',
                 '.codex-plugin/plugin.json', 'hooks/hooks.json', 'hooks/codex.json']
     missing = [plugin + n for n in required if not safe(root, plugin + n).is_file()]
+    errors = ['Missing package file: ' + n for n in missing]
+    manifests = {}
+    for name in ('.claude-plugin/plugin.json', '.codex-plugin/plugin.json'):
+        path = safe(root, plugin + name)
+        if not path.is_file():
+            continue
+        try:
+            manifest = read(path)
+            if not isinstance(manifest, dict) or manifest.get('name') != 'warlock-contributor':
+                raise ValueError('Expected warlock-contributor manifest object')
+            version = manifest.get('version')
+            if not isinstance(version, str) or not version.strip():
+                raise ValueError('Missing package version')
+            manifests[name] = version
+            if name.startswith('.codex-plugin/'):
+                for field, directory in (('skills', True), ('hooks', False)):
+                    target = manifest.get(field)
+                    if not isinstance(target, str) or not target.startswith('./'):
+                        raise ValueError(field + ' must be an explicit plugin-relative path')
+                    destination = safe(root, plugin + target)
+                    if not (destination.is_dir() if directory else destination.is_file()):
+                        raise ValueError('Missing ' + field + ' target: ' + target)
+        except (ValueError, OSError, TypeError) as exc:
+            errors.append('Invalid package metadata ' + name + ': ' + str(exc))
+    if len(set(manifests.values())) > 1:
+        errors.append('Claude and Codex package versions differ')
+    for name in ('hooks/hooks.json', 'hooks/codex.json'):
+        path = safe(root, plugin + name)
+        if not path.is_file():
+            continue
+        try:
+            data = read(path)
+            hooks = data.get('hooks') if isinstance(data, dict) else None
+            if not isinstance(hooks, dict):
+                raise ValueError('Expected hooks object')
+            for event in ('SessionStart', 'UserPromptSubmit'):
+                entries = hooks.get(event)
+                if not isinstance(entries, list) or not entries:
+                    raise ValueError('Missing hook entries for ' + event)
+                for entry in entries:
+                    commands = entry.get('hooks') if isinstance(entry, dict) else None
+                    if not isinstance(commands, list) or not commands:
+                        raise ValueError('Missing commands for ' + event)
+                    for command in commands:
+                        if not isinstance(command, dict) or command.get('type') != 'command' \
+                                or not isinstance(command.get('command'), str) or not command['command'].strip():
+                            raise ValueError('Expected nonempty command hook for ' + event)
+                        timeout = command.get('timeout')
+                        if isinstance(timeout, bool) or not isinstance(timeout, (int, float)) or not 0 < timeout <= 60:
+                            raise ValueError('Expected bounded positive hook timeout for ' + event)
+        except (ValueError, OSError, TypeError) as exc:
+            errors.append('Invalid package metadata ' + name + ': ' + str(exc))
     ignored = git_run(root, 'check-ignore', '-q', '--', record_path).returncode == 0
     warnings = ['Client executable availability does not establish installation, enabled hooks or trust. '
                 'Product toolchain and native runtime are checked by their protected runners.']
@@ -429,8 +481,41 @@ def doctor(root, record_path):
         'recordIgnored': ignored,
         'recordExists': safe(root, record_path).exists(),
         'missingPackageFiles': missing,
-        'errors': ['Missing package file: ' + n for n in missing],
+        'manifestVersions': manifests,
+        'metadataValidation': 'Local manifest identity, version agreement, referenced paths and reminder-hook shape only; no client loading or trust inferred.',
+        'errors': errors,
         'warnings': warnings}
+
+
+def self_test(root):
+    """Explicit plugin-only regression run; no product build or native campaign."""
+    qa = safe(root, 'plugins/warlock-contributor/qa')
+    tests = sorted(qa.glob('test_*.py'))
+    if not tests:
+        raise ValueError('Plugin regression tests are missing; use a complete repository checkout')
+    for test in tests:
+        if not safe(root, str(test.relative_to(root))).is_file():
+            raise ValueError('Expected regular plugin test file: ' + test.name)
+    argv = [sys.executable, '-B', '-m', 'unittest', 'discover', '-s', str(qa),
+            '-t', str(qa), '-p', 'test_*.py']
+    env = {key: value for key, value in os.environ.items()
+           if not key.startswith(('GIT_', 'GROK_', 'CLAUDE_', 'PLUGIN_'))
+           and key not in ('PYTHONPATH', 'PYTHONHOME')}
+    env['PYTHONDONTWRITEBYTECODE'] = '1'
+    try:
+        result = subprocess.run(argv, cwd=root, env=env, capture_output=True,
+                                text=True, timeout=300)
+    except subprocess.TimeoutExpired:
+        return {'selfTestSchema': 1, 'executionPerformed': True, 'acceptanceInferred': False,
+                'argv': argv, 'errors': ['Plugin regression suite exceeded its 300-second limit']}
+    errors = ['Plugin regression suite failed'] if result.returncode else []
+    if '\nRan 0 tests in ' in result.stderr:
+        errors = ['Plugin regression suite discovered zero tests']
+    return {'selfTestSchema': 1, 'executionPerformed': True, 'acceptanceInferred': False,
+            'scope': 'Plugin contribution-policy regressions; no GUI build, native/AT oracle or client installation.',
+            'argv': argv, 'returnCode': result.returncode,
+            'stdout': result.stdout, 'stderr': result.stderr,
+            'errors': errors}
 
 
 def contribution_report(root, record, reqs, state):
@@ -671,6 +756,7 @@ def main():
     inspect.add_argument('--requirement', action='append', required=True)
     subs.add_parser('status'); check = subs.add_parser('check')
     subs.add_parser('doctor')
+    subs.add_parser('self-test', help='Run plugin regression tests in isolated fixtures; no GUI campaigns')
     subs.add_parser('handoff')
     verification = subs.add_parser('verify-plan', help='Read-only suggestions for proportional protected checks; never executes QA')
     verification.add_argument('--selected', action='store_true', help='Plan declared paths before edits; default considers only changes since last record')
@@ -733,6 +819,8 @@ def main():
             fcntl.flock(lock, fcntl.LOCK_EX)
         if args.command == 'doctor':
             result.update(doctor(root, args.record))
+        elif args.command == 'self-test':
+            result.update(self_test(root))
         elif args.command == 'remaining':
             result.update(remaining(root, reqs, args.requirement,
                 args.status or ['unadjudicated', 'missing', 'implemented-unverified', 'partial', 'failed', 'blocked'], args.summary))

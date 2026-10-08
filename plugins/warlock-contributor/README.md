@@ -6,6 +6,7 @@ From the repository root:
 
 ```sh
 python3 -B plugins/warlock-contributor/scripts/warlock.py doctor
+python3 -B plugins/warlock-contributor/scripts/warlock.py self-test
 python3 -B plugins/warlock-contributor/scripts/warlock.py status
 python3 -B plugins/warlock-contributor/scripts/warlock.py remaining --summary
 python3 -B plugins/warlock-contributor/scripts/warlock.py inspect --requirement ELM-UX-004
@@ -33,10 +34,21 @@ unadjudicated does not mean unimplemented, and this command does not revalidate
 accepted evidence. The original 242/417 inventory is only part of the full release
 scope. It never selects work or changes the ledger.
 
-`doctor` checks local package files, Python/Git availability and the scratch ignore;
+`doctor` checks local package files, manifest identity/version agreement,
+plugin-relative skill/hook targets, reminder-hook structure and bounded timeouts,
+Python/Git availability and the scratch ignore;
 it reports which client executables are on PATH without launching or installing
 them. It does not establish client trust, enabled hooks or product-toolchain
 readiness. Missing client executables do not prevent direct checker use.
+
+`self-test` explicitly runs the plugin's regression suite using temporary Git
+fixtures. It returns a nonzero exit on failure, missing tests, zero discovered
+tests or a five-minute timeout, and includes captured test output in its JSON
+packet. Use it after changing the plugin or when checking a complete checkout;
+ordinary GUI slices do not require it. It runs no product compiler or native GUI
+campaign and installs no client plugin. Test fixtures do not modify participant
+records, the real Git index or the delivery ledger. Review the repository test
+code before executing it, as with any contributed code.
 
 `plan` builds a slice from original IDs and scenarios and includes their unchanged
 oracles and verification obligations. It does not choose the next feature, change
