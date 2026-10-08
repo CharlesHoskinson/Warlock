@@ -5356,7 +5356,7 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 				$elm$core$List$member,
 				record.aK,
 				_List_fromArray(
-					['closed', 'picker', 'applications', 'menu', 'overview']))) || (((record.aK !== 'closed') && _Utils_eq(record.bl, $author$project$UInt64$zero)) || (((record.aK === 'closed') && (!$elm$core$List$isEmpty(record.v))) || ((!unique(identities)) || ((!unique(
+					['closed', 'picker', 'applications', 'menu', 'overview', 'switcher']))) || (((record.aK !== 'closed') && _Utils_eq(record.bl, $author$project$UInt64$zero)) || (((record.aK === 'closed') && (!$elm$core$List$isEmpty(record.v))) || ((!unique(identities)) || ((!unique(
 				A2(
 					$elm$core$List$map,
 					function ($) {
@@ -5368,7 +5368,7 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 					return $elm$core$String$isEmpty(control.az) || $elm$core$String$isEmpty(control.ac);
 				},
 				all)))))))) ? $elm$core$Result$Err('Invalid presentation scope/identities') : $elm$core$Result$Ok(
-				{N: record.N, bf: record.bl, E: record.aK, v: record.v, a6: record.bn, aa: record.bO});
+				{N: record.N, bf: record.bl, B: record.aK, v: record.v, a6: record.bn, aa: record.bO});
 		},
 		A2(
 			$elm$core$Result$mapError,
@@ -5711,7 +5711,7 @@ var $author$project$NativePreviewRealm$domainDecoder = A3(
 var $elm$json$Json$Decode$map5 = _Json_map5;
 var $author$project$SurfaceRenderer$mode = function (_v0) {
 	var snapshot = _v0;
-	return snapshot.E;
+	return snapshot.B;
 };
 var $author$project$Presentation$query = F2(
 	function (value, _v0) {
@@ -6575,14 +6575,14 @@ var $author$project$PreviewLifecycle$Idle = {$: 0};
 var $author$project$PreviewLifecycle$Loading = {$: 2};
 var $author$project$PreviewLifecycle$Unavailable = {$: 3};
 var $author$project$PreviewLifecycle$loadingStatus = function (st) {
-	return (st.B && (!_Utils_eq(st.f, $author$project$PreviewLifecycle$Idle))) ? $author$project$PreviewLifecycle$Loading : $author$project$PreviewLifecycle$Unavailable;
+	return (st.C && (!_Utils_eq(st.f, $author$project$PreviewLifecycle$Idle))) ? $author$project$PreviewLifecycle$Loading : $author$project$PreviewLifecycle$Unavailable;
 };
 var $author$project$PreviewLifecycle$status = function (st) {
 	var _v0 = st.M;
 	if (!_v0.$) {
 		var lease = _v0.a;
 		var frame = lease;
-		return (st.B && A2($author$project$PreviewLifecycle$authorized, st, frame)) ? ((st.a.ar && (_Utils_eq(frame.d.b.L, st.a.b.L) && _Utils_eq(frame.d.b.ci, st.a.b.ci))) ? $author$project$PreviewLifecycle$Live(lease) : $author$project$PreviewLifecycle$Historical(lease)) : $author$project$PreviewLifecycle$loadingStatus(st);
+		return (st.C && A2($author$project$PreviewLifecycle$authorized, st, frame)) ? ((st.a.ar && (_Utils_eq(frame.d.b.L, st.a.b.L) && _Utils_eq(frame.d.b.ci, st.a.b.ci))) ? $author$project$PreviewLifecycle$Live(lease) : $author$project$PreviewLifecycle$Historical(lease)) : $author$project$PreviewLifecycle$loadingStatus(st);
 	} else {
 		return $author$project$PreviewLifecycle$loadingStatus(st);
 	}
@@ -8473,7 +8473,7 @@ var $author$project$PreviewLifecycle$offer = F2(
 			var _v1 = st.f;
 			if (_v1.$ === 1) {
 				var job = _v1.a;
-				return st.B && (_Utils_eq(job, frame.d) && (A2($author$project$PreviewLifecycle$authorized, st, frame) && (A2($author$project$PreviewLifecycle$before, st.a.Z, frame.d.H) && (!A2($author$project$PreviewLifecycle$heldHandle, st, frame.R)))));
+				return st.C && (_Utils_eq(job, frame.d) && (A2($author$project$PreviewLifecycle$authorized, st, frame) && (A2($author$project$PreviewLifecycle$before, st.a.Z, frame.d.H) && (!A2($author$project$PreviewLifecycle$heldHandle, st, frame.R)))));
 			} else {
 				return false;
 			}
@@ -8555,7 +8555,7 @@ var $author$project$PreviewLifecycle$updatePlain = F2(
 						function (st) {
 							return _Utils_update(
 								st,
-								{B: true});
+								{C: true});
 						},
 						base);
 				case 1:
@@ -8564,13 +8564,13 @@ var $author$project$PreviewLifecycle$updatePlain = F2(
 						function (st) {
 							return _Utils_update(
 								st,
-								{B: false});
+								{C: false});
 						},
 						$author$project$PreviewLifecycle$retireCandidate(
 							$author$project$PreviewLifecycle$cancelCurrent(base)));
 				case 2:
 					var trigger = event.a;
-					if ((!initial.x) && (initial.B && (initial.a.am && (initial.a.ar && ((!initial.a.z) && (initial.a.ag && (_Utils_eq(initial.f, $author$project$PreviewLifecycle$Idle) && ($elm$core$List$isEmpty(initial.w) && ($elm$core$List$isEmpty(initial.t) && (_Utils_eq(trigger.e, initial.a.e) && (_Utils_eq(trigger.b, initial.a.b) && (_Utils_eq(trigger.O, initial.a.O) && A2($author$project$PreviewLifecycle$before, initial.a.Z, trigger.H))))))))))))) {
+					if ((!initial.x) && (initial.C && (initial.a.am && (initial.a.ar && ((!initial.a.z) && (initial.a.ag && (_Utils_eq(initial.f, $author$project$PreviewLifecycle$Idle) && ($elm$core$List$isEmpty(initial.w) && ($elm$core$List$isEmpty(initial.t) && (_Utils_eq(trigger.e, initial.a.e) && (_Utils_eq(trigger.b, initial.a.b) && (_Utils_eq(trigger.O, initial.a.O) && A2($author$project$PreviewLifecycle$before, initial.a.Z, trigger.H))))))))))))) {
 						var _v2 = initial.aB;
 						if (!_v2.$) {
 							var request = _v2.a;
@@ -8604,7 +8604,7 @@ var $author$project$PreviewLifecycle$updatePlain = F2(
 					var _v3 = $author$project$PreviewLifecycle$candidate(initial);
 					if (!_v3.$) {
 						var frame = _v3.a;
-						return (A2($author$project$PreviewLifecycle$sameLease, frame, incoming) && (initial.B && (A2($author$project$PreviewLifecycle$authorized, initial, frame) && A2($author$project$PreviewLifecycle$before, initial.a.Z, frame.d.H)))) ? A2(
+						return (A2($author$project$PreviewLifecycle$sameLease, frame, incoming) && (initial.C && (A2($author$project$PreviewLifecycle$authorized, initial, frame) && A2($author$project$PreviewLifecycle$before, initial.a.Z, frame.d.H)))) ? A2(
 							$author$project$PreviewLifecycle$mapState,
 							function (st) {
 								return _Utils_update(
@@ -9257,7 +9257,7 @@ var $author$project$PreviewLifecycle$retire = function (_v0) {
 		function (st) {
 			return _Utils_update(
 				st,
-				{B: false});
+				{C: false});
 		},
 		$author$project$PreviewLifecycle$revoke(
 			{ad: _List_Nil, h: initial}));
@@ -9563,7 +9563,7 @@ var $author$project$PreviewLifecycle$observe = function (_v0) {
 				$author$project$PreviewLifecycle$encodeScope(st.a)),
 				_Utils_Tuple2(
 				'demand',
-				$elm$json$Json$Encode$bool(st.B)),
+				$elm$json$Json$Encode$bool(st.C)),
 				_Utils_Tuple2(
 				'ready',
 				$elm$json$Json$Encode$bool(!st.x)),
@@ -10076,7 +10076,7 @@ var $author$project$PreviewLifecycle$init = function (_v0) {
 		w: _List_Nil,
 		f: $author$project$PreviewLifecycle$Idle,
 		x: 0,
-		B: false,
+		C: false,
 		y: _List_Nil,
 		a1: $elm$core$Maybe$Nothing,
 		I: scope.z,
@@ -11519,7 +11519,7 @@ var $author$project$NativeActorRetirement$scopeBefore = F2(
 	});
 var $author$project$PreviewLifecycle$settled = function (_v0) {
 	var st = _v0;
-	return (!st.B) && (_Utils_eq(st.f, $author$project$PreviewLifecycle$Idle) && (_Utils_eq(st.M, $elm$core$Maybe$Nothing) && ($elm$core$List$isEmpty(st.y) && ($elm$core$List$isEmpty(st.w) && $elm$core$List$isEmpty(st.t)))));
+	return (!st.C) && (_Utils_eq(st.f, $author$project$PreviewLifecycle$Idle) && (_Utils_eq(st.M, $elm$core$Maybe$Nothing) && ($elm$core$List$isEmpty(st.y) && ($elm$core$List$isEmpty(st.w) && $elm$core$List$isEmpty(st.t)))));
 };
 var $author$project$NativeActorRetirement$settles = F2(
 	function (pending, fact) {
@@ -12735,7 +12735,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 		};
 		var control = function (item) {
 			var kind = A2($elm$core$String$startsWith, 'bar:group:', item.az) ? 'control-group' : ((item.az === 'bar:recovery-refresh') ? 'control-recovery' : 'control-utility');
-			if (popup && ((snapshot.E === 'applications') && (item.az === 'control:search'))) {
+			if (popup && ((snapshot.B === 'applications') && (item.az === 'control:search'))) {
 				var event = A2(
 					$elm$json$Json$Decode$andThen,
 					function (_v2) {
@@ -12819,11 +12819,15 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 							A2(
 							$elm$html$Html$Attributes$attribute,
 							'role',
-							(popup && (snapshot.E === 'menu')) ? 'menuitem' : 'button'),
+							(popup && (snapshot.B === 'menu')) ? 'menuitem' : 'button'),
 							A2(
 							$elm$html$Html$Attributes$attribute,
 							'aria-current',
-							(popup && ((snapshot.E === 'menu') && (item.a_ === 'Selected'))) ? 'true' : 'false')
+							(popup && (A2(
+								$elm$core$List$member,
+								snapshot.B,
+								_List_fromArray(
+									['menu', 'switcher'])) && (item.a_ === 'Selected'))) ? 'true' : 'false')
 						]),
 					_List_fromArray(
 						[
@@ -12891,7 +12895,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 			_List_fromArray(
 				[
 					$elm$html$Html$Attributes$class('surface-popup'),
-					A2($elm$html$Html$Attributes$attribute, 'data-mode', snapshot.E),
+					A2($elm$html$Html$Attributes$attribute, 'data-mode', snapshot.B),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-publication',
@@ -12909,7 +12913,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 					_List_fromArray(
 						[
 							$elm$html$Html$text(
-							(snapshot.E === 'applications') ? 'Applications' : ((snapshot.E === 'overview') ? 'Task View' : ((snapshot.E === 'menu') ? 'Window actions' : 'Choose a window')))
+							(snapshot.B === 'applications') ? 'Applications' : ((snapshot.B === 'overview') ? 'Task View' : ((snapshot.B === 'switcher') ? 'Switch windows' : ((snapshot.B === 'menu') ? 'Window actions' : 'Choose a window'))))
 						])),
 					A2(
 					$elm$html$Html$p,
@@ -12930,9 +12934,9 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 							A2(
 							$elm$html$Html$Attributes$attribute,
 							'role',
-							(snapshot.E === 'menu') ? 'menu' : 'group')
+							(snapshot.B === 'menu') ? 'menu' : 'group')
 						]),
-					(snapshot.E === 'overview') ? overviewRows(snapshot.v) : A2($elm$core$List$map, control, snapshot.v))
+					(snapshot.B === 'overview') ? overviewRows(snapshot.v) : A2($elm$core$List$map, control, snapshot.v))
 				])) : A3(
 			$elm$html$Html$Keyed$node,
 			'div',

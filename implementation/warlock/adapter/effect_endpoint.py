@@ -69,6 +69,17 @@ class Endpoint(ReadOnlyEndpoint):
   if facts['focused'] is not None and canonical(facts['focused']) not in seen:raise Refused('Unknown focus')
   if any(w['owner'] is not None and w['owner'] not in seen for w in windows):raise Refused('Unknown owner')
   return r
+ def activation_history(self,request_id):
+  if not self.bound:raise Refused('Handshake required')
+  canonical(request_id)
+  r=self.request({'protocolVersion':3,'kind':'activation-history-request','binding':self.bound,'requestId':request_id,'minimumWatermark':'0'})
+  exact(r,['protocolVersion','kind','binding','requestId','context','roots'])
+  if type(r['protocolVersion']) is not int or r['protocolVersion']!=3 or r['kind']!='activation-history' or binding(r['binding'])!=self.bound or r['requestId']!=request_id:raise Refused('History scope')
+  exact(r['context'],['lifetime','epoch','output','revision'])
+  for value in r['context'].values():canonical(value)
+  if r['context']['lifetime']!=self.bound['lifetime'] or r['context']['epoch']!=self.bound['frontend']:raise Refused('History authority')
+  if not isinstance(r['roots'],list) or len(r['roots'])>256 or len(set(canonical(value) for value in r['roots']))!=len(r['roots']):raise Refused('History bound/identity')
+  return r
  def context(self,facts):
   if binding(facts['binding'])!=self.bound:raise Refused('Context binding')
   return {'lifetime':self.bound['lifetime'],'epoch':self.bound['frontend'],'output':facts['outputGeneration'],'revision':facts['revision']}

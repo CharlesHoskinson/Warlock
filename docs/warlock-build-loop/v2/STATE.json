@@ -1,47 +1,66 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-08T02:51:50.454948+00:00",
+  "updatedUTC": "2026-10-08T03:54:38.748948+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "taskbar-primary-actions",
+    "id": "switcher-sequence",
     "requirements": [
-      "ELM-UI-004"
+      "ELM-UI-003",
+      "ELM-UX-012",
+      "ELM-UX-013"
     ],
     "scenarios": [
-      "taskbar-inactive",
-      "taskbar-active",
-      "taskbar-minimized"
+      "switcher-order",
+      "switcher-cancel",
+      "switcher-membership",
+      "switcher-zero-one",
+      "switcher-retire-arrive",
+      "ux-012",
+      "ux-013"
     ],
-    "before": "Single-family primary decision policy exists, but native visible activation, minimize succession and restore cases are not yet adjudicated.",
-    "after": "A native single-family primary action visibly activates inactive windows, minimizes the active family to its eligible MRU successor and restores/activates minimized windows without duplicate launch.",
+    "before": "The integrated candidate has no switcher or complete admitted committed-MRU source. Legacy staged switcher has retained native/journal/commit limitations.",
+    "after": "A single typed Elm switcher consumes admitted native MRU history, freezes candidates, cycles in either direction, retires exact identities, cancels without effects and resolves one selection through existing authority. Native chord entry/release and atomic cancellation remain explicit obligations until actual evidence qualifies them.",
     "paths": [
-      "src/Taskbar.elm",
-      "src/TaskbarShell.elm",
-      "src/Surface.elm",
+      "src/Switcher.elm",
       "src/Desktop.elm",
+      "src/Surface.elm",
+      "src/SurfaceController.elm",
+      "src/SurfaceRenderer.elm",
+      "src/Inspection.elm",
+      "src/Effects.elm",
+      "src/TaskbarShell.elm",
       "native/authority.cpp",
       "native/host.c",
       "native/shared-host.c",
-      "qa/native-window-feedback.py",
-      "qa/check-search.py",
-      "qa/current-search-build.json",
-      "qa/check-native-authority.py",
-      "qa/current-native-pair.json",
+      "native/surface.h",
+      "adapter/daemon.py",
+      "adapter/effect_endpoint.py",
+      "assets/popup-adapter.js",
       "assets/elm.js",
       "assets/bar.js",
-      "assets/popup.js"
+      "assets/popup.js",
+      "qa/SwitcherReplay.elm",
+      "qa/switcher.qnt",
+      "qa/check-search.py",
+      "qa/check-native-authority.py",
+      "qa/current-native-pair.json",
+      "qa/current-search-build.json",
+      "qa/native-window-feedback.py"
     ],
     "verification": [
-      "Protected native pointer primary actions with exact identities, committed receipts, actual window pixels and GTK keyboard recipient after each action; eligible MRU focus succession and no launches.",
-      "One native stale-context refusal without target mutation or replay; preserve workspace/output membership. Native primary keyboard and applicable AT obligations are separately recorded."
+      "Compiled real integrated Elm switcher and generation/ordinal replay: A/B/C order, cancellation, zero/one, retirement/new-arrival freeze and early release exactly once.",
+      "Changed owning native authority TU with exact ABI; existing focus succession regression after native history changes.",
+      "Protected native actual switcher controls, local cycling, cancellation, exact chosen activation/restore and current native history; native pre-ready chord journal and AT acceptance remain separately qualified."
     ],
-    "state": "implemented state labels; native pointer primary activation/minimize/restore, MRU/desktop focus, exact receipts and physical labels pass; keyboard/AT/independent acceptance pending",
-    "evidence": "implementation/warlock/qa/evidence/taskbar-primary/current-manifest.json"
+    "state": "integrated native controls verified; complete global native chord journal/modal/original AT coverage next",
+    "lastComponentEvidence": "implementation/warlock/qa/evidence/switcher-native-controls/manifest.json",
+    "lastObservedBehavior": "Native MRU order, local Tab/Left cycling, Escape focus return, repeated Enter activation and minimized restore, current popup pixels and GTK recipients passed. Original global chord acceptance remains partial.",
+    "nextSourceWork": "Native generation/ordinal Alt-Tab journal with history and membership captured at chord entry, compositor cancellation boundary and modal recipient representation; exact native three-window/zero/one/retire-arrive and AT fixtures."
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -283,20 +302,42 @@
       ],
       "state": "implemented; native Escape returns surviving opener keyboard focus; retired opener negative and current-tuple regressions pass; independent/AT remain open",
       "evidence": "implementation/warlock/qa/evidence/taskview-focus-return/manifest.json"
+    },
+    {
+      "id": "taskbar-primary-actions",
+      "requirements": [
+        "ELM-UI-004"
+      ],
+      "scenarios": [
+        "taskbar-inactive",
+        "taskbar-active",
+        "taskbar-minimized"
+      ],
+      "before": "Single-family primary decision policy exists, but native visible activation, minimize succession and restore cases are not yet adjudicated.",
+      "after": "A native single-family primary action visibly activates inactive windows, minimizes the active family to its eligible MRU successor and restores/activates minimized windows without duplicate launch.",
+      "paths": [
+        "src/Taskbar.elm",
+        "src/TaskbarShell.elm",
+        "src/Surface.elm",
+        "src/Desktop.elm",
+        "native/authority.cpp",
+        "native/host.c",
+        "native/shared-host.c",
+        "qa/native-window-feedback.py",
+        "qa/check-search.py",
+        "qa/current-search-build.json",
+        "qa/check-native-authority.py",
+        "qa/current-native-pair.json",
+        "assets/elm.js",
+        "assets/bar.js",
+        "assets/popup.js"
+      ],
+      "verification": [
+        "Protected native pointer primary actions with exact identities, committed receipts, actual window pixels and GTK keyboard recipient after each action; eligible MRU focus succession and no launches.",
+        "One native stale-context refusal without target mutation or replay; preserve workspace/output membership. Native primary keyboard and applicable AT obligations are separately recorded."
+      ],
+      "state": "implemented state labels; native pointer primary activation/minimize/restore, MRU/desktop focus, exact receipts and physical labels pass; keyboard/AT/independent acceptance pending",
+      "evidence": "implementation/warlock/qa/evidence/taskbar-primary/current-manifest.json"
     }
-  ],
-  "nextOriginalSlice": {
-    "id": "switcher-sequence",
-    "requirements": [
-      "ELM-UI-003"
-    ],
-    "scenarios": [
-      "switcher-order",
-      "switcher-cancel",
-      "switcher-zero-one"
-    ],
-    "before": "Integrated candidate has no switcher policy module or native switcher journey.",
-    "after": "A typed immutable switcher freezes exact committed-MRU order, cycles in both directions and cancels without window effects; integration uses the existing window-effect authority and qualified popup scope.",
-    "scopeNote": "Read original switcher/Omarchy entry and release contracts; no arbitrary default shortcut. Remaining keyboard taskbar/AT contracts remain P5 obligations."
-  }
+  ]
 }

@@ -1,6 +1,7 @@
 module Surface exposing (Control, controls, mode, packet, resolve)
 
 import Menu
+import Switcher
 import Pins
 import MenuBridge
 import Provider
@@ -40,7 +41,8 @@ recoveryPopup model = if recoveryNeeded model then [recoveryControl "control:rec
 
 mode : Desktop.Model -> String
 mode model =
-    if model.overview then "overview"
+    if Desktop.switcherOpen model then "switcher"
+    else if model.overview then "overview"
     else if model.open then "applications"
     else if (MenuBridge.menuSnapshot model.windows.menus).menu/=Nothing then "menu"
     else if model.windows.picker /= Nothing then "picker"
@@ -48,7 +50,22 @@ mode model =
 
 controls : Desktop.Model -> List Control
 controls model =
-    if model.overview then
+    if Desktop.switcherOpen model then
+        let scoped message=Desktop.capture model |> Maybe.map message
+            selected=Switcher.selected model.switcher |> Maybe.map .root
+            browsing=Switcher.phase model.switcher==Switcher.Browsing
+            row family=
+                let ready=browsing && family.available && not (familyBlocked model family.root)
+                    identity="switcher:family:"++UInt64.string family.root
+                    detail=if selected==Just family.root then "Selected" else if family.minimized then "Minimized" else "Open"
+                in {id=identity,domId=Desktop.key model identity,label=family.label,ariaLabel=(if family.minimized then "Restore " else "Activate ")++family.label++(if selected==Just family.root then "; selected" else ""),detail=detail,enabled=ready,message=if ready then scoped (\stamp -> Desktop.SwitcherChoose stamp family.root) else Nothing}
+            control identity label enabled message={id=identity,domId=Desktop.key model identity,label=label,ariaLabel=label,detail="",enabled=enabled,message=if enabled then scoped message else Nothing}
+        in [control "control:close" "Cancel window switcher" True Desktop.CloseSwitcher
+           ,control "control:reverse" "Previous window" True (\stamp -> Desktop.SwitcherStep stamp Switcher.Reverse)
+           ,control "control:forward" "Next window" True (\stamp -> Desktop.SwitcherStep stamp Switcher.Forward)
+           ,control "control:commit" "Activate selected window" (browsing && (selected |> Maybe.map (familyBlocked model >> not) |> Maybe.withDefault False)) Desktop.CommitSwitcher]
+           ++ List.map row (Switcher.entries model.switcher)
+    else if model.overview then
         let scoped message = Desktop.capture model |> Maybe.map message
             groups = TaskView.groups model.windows.shell |> Maybe.withDefault []
             workspaceControl group =
@@ -110,6 +127,7 @@ barControls model =
     let
         application = {id="bar:applications",domId=Desktop.key model "control:opener",label="Applications",ariaLabel="Open applications",detail="",enabled=model.windows.shell.phase/=Shell.Detached,message=Desktop.capture model |> Maybe.map Desktop.OpenApplications}
         overview = {id="bar:overview",domId=Desktop.key model "control:overview-opener",label="Task View",ariaLabel="Open Task View",detail="",enabled=Shell.available model.windows.shell && model.choice==Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenOverview}
+        switcher = {id="bar:switcher",domId=Desktop.key model "control:switcher-opener",label="Switch windows",ariaLabel="Open window switcher",detail="",enabled=Shell.available model.windows.shell && model.choice==Nothing,message=Desktop.capture model |> Maybe.map (\stamp -> Desktop.OpenSwitcher stamp Switcher.Forward)}
         groupControl group =
             let scoped = Shell.capture model.windows.shell
                 blocked = case Taskbar.primary False group.families of
@@ -149,11 +167,14 @@ barControls model =
         ordinaryGroups=TaskbarShell.groups model.windows |> List.filter (\group -> List.length (owners group)/=1)
         reconnect = {id="bar:reconnect",domId="reconnect",label="Reconnect",ariaLabel="Reconnect to the window system",detail="",enabled=not model.windows.shell.reconnecting,message=Just (Desktop.Window (TaskbarShell.Native Shell.Reconnect))}
         retry = {id="bar:refresh-windows",domId=Desktop.key model "refresh-windows",label="Refresh windows",ariaLabel="Refresh windows",detail="",enabled=model.choice==Nothing,message=Just Desktop.RetryWindows}
-    in (if model.windows.shell.phase==Shell.Detached then reconnect else application) :: overview :: List.map pinControl pinIds ++ List.map groupControl ordinaryGroups ++ (if not (String.isEmpty model.choiceNotice) && model.windows.shell.phase/=Shell.Detached then [retry] else []) ++ (if recoveryNeeded model && model.windows.shell.phase/=Shell.Detached then [recoveryControl "bar:recovery-refresh" model] else [])
+    in (if model.windows.shell.phase==Shell.Detached then reconnect else application) :: overview :: switcher :: List.map pinControl pinIds ++ List.map groupControl ordinaryGroups ++ (if not (String.isEmpty model.choiceNotice) && model.windows.shell.phase/=Shell.Detached then [retry] else []) ++ (if recoveryNeeded model && model.windows.shell.phase/=Shell.Detached then [recoveryControl "bar:recovery-refresh" model] else [])
 
 notice : Desktop.Model -> String
 notice model =
-    if model.overview then
+    if Desktop.switcherOpen model then
+        if Switcher.phase model.switcher==Switcher.Waiting then "Loading window activation history…"
+        else "Tab or Right: next window. Shift+Tab or Left: previous. Enter: activate. Escape: cancel."
+    else if model.overview then
         if recoveryNeeded model then windowNotice model else
         case TaskView.groups model.windows.shell of
             Nothing -> "Waiting for current workspace information. Refresh window status."

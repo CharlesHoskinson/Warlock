@@ -92,7 +92,7 @@ def handle_request(client,catalog,request,recovery,reconciliation):
  elif kind=='geometry-facts-request':
   if request['geometryProtocol']!=client.geometry_protocol:raise Refused('Geometry negotiated version mismatch')
   exact(request,['protocolVersion','kind','geometryProtocol','binding','requestId','minimumWatermark'])
- elif kind=='projection-request':
+ elif kind in {'projection-request','activation-history-request'}:
   exact(request,['protocolVersion','kind','binding','requestId'])
  else:raise Refused('Unsupported frontend request')
  if type(request['protocolVersion']) is not int or request['protocolVersion']!=3 or binding(request['binding'])!=client.bound:raise Refused('Frontend scope mismatch')
@@ -106,6 +106,8 @@ def handle_request(client,catalog,request,recovery,reconciliation):
   guarded(lambda:recovery.settle(outcome))
   for frame in guarded(lambda:recovery.settlement_frames(client.bound)):send(frame)
   send(outcome)
+ elif kind=='activation-history-request':
+  canonical(request['requestId']);send(client.activation_history(request['requestId']))
  elif kind=='geometry-attach':
   canonical(request['requestId']);send(client.geometry_attach(request['requestId'],request['geometryProtocol']))
  elif kind=='geometry-facts-request':

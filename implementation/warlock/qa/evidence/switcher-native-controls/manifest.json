@@ -1,0 +1,109 @@
+{
+  "schema": 1,
+  "scope": "Integrated title-based switcher with readonly native committed-family history; actual two-window local keyboard cycling/cancel, one committed activation/restore, current pixels and GTK recipients. Three-window sequence/early-release/retirement are compiled component observations only.",
+  "sourceHashes": {
+    "implementation/warlock/src/Switcher.elm": "9fccab0fe45496dd25dd06dc5e401acfb71aee534506ff0944daa19f42e0acfc",
+    "implementation/warlock/src/Desktop.elm": "e04b96dbbfec4dce1cc338940fd16626df2358b3ed0f0c9fe80e509d40105851",
+    "implementation/warlock/src/Surface.elm": "50022ef4566d021a0770a86a31d3e569b276f49f60cf39c1521f250c2f51bff9",
+    "implementation/warlock/src/SurfaceController.elm": "b68ce597342c33f10871e37a495d27a0b6922b62e946bfc6929f22cde1303068",
+    "implementation/warlock/src/SurfaceRenderer.elm": "e633f56a36e65d5468d55f5e73064b1f43ab1e604cda10ce4cbb00239e77a550",
+    "implementation/warlock/src/Inspection.elm": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+    "implementation/warlock/src/Effects.elm": "c41a0732a640ca7727506193c654fd6e9c996e3b9e136ca58e911961233e9e4b",
+    "implementation/warlock/src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+    "implementation/warlock/native/authority.cpp": "143b3c95a069ff1f7b1cb2557dd1b604d27067d41df98fd9d6577d368aac7c76",
+    "implementation/warlock/native/host.c": "476424cf525aebba5c6c83da647f2fff084a9426fbcba8be061dbd5de9700634",
+    "implementation/warlock/native/shared-host.c": "603961b58810985097a8060818be054025dba6138eeeaf31e00e275fc2a7f5ee",
+    "implementation/warlock/native/surface.h": "87b78b8f1f01fcfb98854133f48527476b4bc48422b1cb1c9feba02433dd3f79",
+    "implementation/warlock/adapter/daemon.py": "a47617f587b5efd28b4d80f1f3db26490f1c42710f322620acf17ce7b16254e2",
+    "implementation/warlock/adapter/effect_endpoint.py": "71c3faecc1eab5718053a165b9133f0fb2addb169b4155c58289fb26edf7d8e8",
+    "implementation/warlock/assets/popup-adapter.js": "d5feb1fa150261241d03f88a2bb1937b7d27a00f0fff6eddde37410cf5d9973e",
+    "implementation/warlock/assets/elm.js": "d98e24e7fc1b3c10af72a02fe1440cdc4a4ec37df40958254cbdbdbda0d1bb96",
+    "implementation/warlock/assets/bar.js": "dae4f21e29bc176fec10c686ab619570c42839f247b42bd97a1c7236f84150f1",
+    "implementation/warlock/assets/popup.js": "32a30270c86371cf6bed6755cec7584b39707d4a7ece6c3fd07fbb2f82767706",
+    "implementation/warlock/qa/SwitcherReplay.elm": "df98b9c23ced9c62288afdcbe567d8b223e67e4dbf3c823cc50ccdd162d8ee56",
+    "implementation/warlock/qa/switcher.qnt": "857fe533816977552b06592af152d8c09b2b8f4b7e36eb9f5560520fc2a0bb73",
+    "implementation/warlock/qa/check-search.py": "338b92d629007f2d7c805a0bdd39d5f85cf96f471acdebabb70b575fee5aa255",
+    "implementation/warlock/qa/check-native-authority.py": "c1b36b2225f76a1b42666c05c7f627e705ac75403810ffa0995a58937021aaed",
+    "implementation/warlock/qa/current-native-pair.json": "651d1b1fbd891437707796d5b3b7ed0320c4160c1064d457a5c8a8983ba0224b",
+    "implementation/warlock/qa/current-search-build.json": "210213825d8aeff7bd39581eaf29efd0e4abe631519de0ada63e1c9c4c896337",
+    "implementation/warlock/qa/native-window-feedback.py": "d4ccd992d39cd11b688bd685a0c5e36ef714fac3c861a92014a7b851b9c1ab8d"
+  },
+  "corePluginPair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791424194221212572/Hyprland",
+      "sha256": "d33564c40106bda01fdfb9cc2fdedfe791abb7b2c4744469d64228f0bd4ac105"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791430768696451600/elm-window-geometry-authority.so",
+      "sha256": "608b0c2da7296c3b9a43aa43893257cbbd0aea17bcb03fd998ff45b4aff5bc7a"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "reportsAndImages": [
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-native-controls/component-report.json",
+      "sha256": "c045ac7994951f4a62acf1d525d4ffb41b78dbbd409696635f6c96c328d1f9b6",
+      "rawOrigin": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791431278782103093/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-native-controls/authority-report.json",
+      "sha256": "b96fd93e93c9b1fec234e59cf2efcf4cc06ed3121488100db2a8e493e92362f8",
+      "rawOrigin": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791430768696451600/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-native-controls/before-native-report.json",
+      "sha256": "0ff5b673bbcbdf08f3117f6b980ce0b290350ff5254af10444466d0887ae9ca0",
+      "rawOrigin": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-switcher-1791430831383554319/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-native-controls/after-native-report.json",
+      "sha256": "9a14cb1d8ae15442a53e654f124badc4f79c261ba9b3b1c626597fe74e22896a",
+      "rawOrigin": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-switcher-1791431387146312610/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-native-controls/primary-regression-report.json",
+      "sha256": "1cf5b41c08093a000342a97d0b61c8b8bb867451ede630b3661efc117189b580",
+      "rawOrigin": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-primary-1791431490592287056/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-native-controls/popup-mru-initial.png",
+      "sha256": "bcc6cee659cbf68a633c4c085de0b2afb8c550c15439526285564061e319bae5",
+      "rawOrigin": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791431387146398812/popup-mru-initial.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-native-controls/popup-reopened.png",
+      "sha256": "c25d6d4a2d615ee61fc71ed2fd99818ca23ca18d9b5ae5154d803831423559c2",
+      "rawOrigin": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791431387146398812/popup-reopened.png"
+    }
+  ],
+  "componentChecks": {
+    "mruFirstForward": true,
+    "mruForwardWrap": true,
+    "reverseFirst": true,
+    "releaseReadyStepPermutationsOnce": true,
+    "gapWaits": true,
+    "cancelTombstones": true,
+    "contradictoryDuplicateCancels": true,
+    "oldGenerationIgnored": true,
+    "arrivalExcluded": true,
+    "retiredSelectionAdvances": true,
+    "manualChoiceSurvivesNextStep": true,
+    "zeroResolvesWithoutEffect": true,
+    "oneResolvesSameFamily": true,
+    "integratedNativeHistoryOrder": true,
+    "cancelClosesWithoutMutation": true,
+    "commitClosesAndRefreshesGrant": true,
+    "staleControlCannotCommit": true,
+    "rendererAcceptsSwitcher": true
+  },
+  "nativeSwitcherControlsObserved": true,
+  "originalScenariosAccepted": false,
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "independentReviewAccepted": false,
+  "fullReleaseAccepted": false,
+  "retainedFailure": "The first run activated on Enter keydown, lost the physical release during popup withdrawal and failed the next Enter/restore. The shipped routing holds the immutable gesture until actual keyup; no deadline was changed."
+}

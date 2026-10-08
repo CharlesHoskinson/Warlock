@@ -67,6 +67,8 @@ CHyprSignalListener opened, closed, activated, previewLocked, previewReloaded, p
 uint64_t previewPrivacy=1,previewRendering=1,previewObservation=0;
 std::string previewFdAddress;
 std::vector<PHLWINDOWREF> recentFocus;
+struct Activation { PHLWINDOWREF root; uint64_t incarnation; };
+std::vector<Activation> activationHistory;
 uint64_t outputGeneration=0;
 std::string previousOutputs;
 std::thread::id ownerThread;
@@ -232,6 +234,39 @@ std::string identityOf(const PHLWINDOW& window) {
     const auto found = std::find_if(members.begin(), members.end(), [&](const Member& member) { return member.window.lock() == window; });
     if (found == members.end()) throw std::runtime_error("Unregistered scene member");
     return quote(std::to_string(found->id));
+}
+void recordActivation(const PHLWINDOW& window) noexcept {
+    // Both observations derive from the same committed native activation. The
+    // exported family history grants no focus/effect authority to the frontend.
+    try {
+        std::erase_if(recentFocus,[&](const auto& reference){return !reference.lock() || reference.lock()==window;});
+        if(!window) return;
+        if(recentFocus.size()>=256) recentFocus.erase(recentFocus.begin());
+        recentFocus.emplace_back(window);
+        auto root=window;
+        std::vector<PHLWINDOW> path;
+        while(root->parent()) {
+            if(path.size()>=256 || std::ranges::find(path,root)!=path.end()) return;
+            path.push_back(root);root=root->parent();
+        }
+        const auto member=std::ranges::find_if(members,[&](const Member& item){return item.window.lock()==root;});
+        if(member==members.end() || !root->m_isMapped) return;
+        std::erase_if(activationHistory,[&](const Activation& item){return !item.root.lock() || item.root.lock()==root;});
+        if(activationHistory.size()>=256) activationHistory.erase(activationHistory.begin());
+        activationHistory.push_back({root,member->id});
+    } catch(...) { activationHistory.clear(); }
+}
+std::string activationRoots() {
+    std::string result="[";size_t count=0;
+    for(const auto& entry:activationHistory | std::views::reverse) {
+        const auto root=entry.root.lock();
+        if(!root || !root->m_isMapped || root->parent()) continue;
+        const auto member=std::ranges::find_if(members,[&](const Member& item){return item.window.lock()==root && item.id==entry.incarnation;});
+        if(member==members.end()) continue;
+        if(count++) result+=',';
+        result+=quote(std::to_string(entry.incarnation));
+    }
+    return result+"]";
 }
 std::string sceneFacts() {
     // Native facts only. Vector position is not claimed to be final paint order:
@@ -676,8 +711,9 @@ std::string observe(eHyprCtlOutputFormat, std::string request) {
                 if(!found->second.geometryEnabled) reply=error("geometry-negotiation-required");
                 else reply=performGeometryEffect(found->second,object);
             } else reply=performEffect(found->second,object,payload);
-        } else if ((operation == "snapshot-request" || operation == "scene-facts-request" || operation == "render-trace-request" || operation == "retain-render-trace-request" || operation == "retained-render-trace-request") && fields(object,{"protocolVersion","kind","binding","requestId","minimumWatermark"})) {
-            const bool facts = operation == "scene-facts-request";
+        } else if ((operation == "snapshot-request" || operation == "scene-facts-request" || operation == "activation-history-request" || operation == "render-trace-request" || operation == "retain-render-trace-request" || operation == "retained-render-trace-request") && fields(object,{"protocolVersion","kind","binding","requestId","minimumWatermark"})) {
+            const bool history = operation == "activation-history-request";
+            const bool facts = operation == "scene-facts-request" || history;
             const bool trace = operation == "render-trace-request" || operation == "retain-render-trace-request" || operation == "retained-render-trace-request";
             auto& activeSequence = facts ? factsSequence : sequence;
             auto& activeRevision = facts ? factsRevision : revision;
@@ -708,7 +744,9 @@ std::string observe(eHyprCtlOutputFormat, std::string request) {
                     ++activeRevision; previous = value;
                 }
                 ++activeSequence;
-                reply = "{\"protocolVersion\":3,\"kind\":" + quote(facts ? "scene-facts" : "snapshot") + ",\"binding\":" + binding(found->second) +
+                if(history) {
+                    reply="{\"protocolVersion\":3,\"kind\":\"activation-history\",\"binding\":"+binding(found->second)+",\"requestId\":"+quote(std::to_string(*requestId))+",\"context\":{\"lifetime\":"+quote(std::to_string(lifetime))+",\"epoch\":"+quote(std::to_string(found->second.frontend))+",\"output\":"+quote(std::to_string(outputGeneration))+",\"revision\":"+quote(std::to_string(factsRevision))+"},\"roots\":"+activationRoots()+"}";
+                } else reply = "{\"protocolVersion\":3,\"kind\":" + quote(facts ? "scene-facts" : "snapshot") + ",\"binding\":" + binding(found->second) +
                     ",\"requestId\":\"" + std::to_string(*requestId) + "\",\"sequence\":\"" + std::to_string(activeSequence) +
                     "\",\"revision\":\"" + std::to_string(activeRevision) + "\"," + (facts ? "\"outputGeneration\":"+quote(std::to_string(outputGeneration))+",\"facts\":" : "\"windows\":") + value + "}";
             }
@@ -724,17 +762,16 @@ APICALL EXPORT PLUGIN_DESCRIPTION_INFO PLUGIN_INIT(HANDLE handle) {
     captureProbes.clear();captureBudget=std::make_unique<preview::capture::Budget>(128ULL*1024*1024,2);
     grantRegistry=std::make_unique<Elm::GrantRetirement::Registry>(lifetime);retirementSequence=0;incarnationRetirementSequence=0;captureResourceSequence=0;
     Render::SceneTrace::clearBindings();
-    previewSources.clear();clientTrees.clear();popupTrees.clear();familySources.clear();familyStyles.clear();incarnation = sequence = revision = outputGeneration = 0; previousOutputs.clear(); recentFocus.clear(); previousProjection.clear(); members.clear(); sessions.clear();
+    previewSources.clear();clientTrees.clear();popupTrees.clear();familySources.clear();familyStyles.clear();incarnation = sequence = revision = outputGeneration = 0; previousOutputs.clear(); recentFocus.clear(); activationHistory.clear(); previousProjection.clear(); members.clear(); sessions.clear();
     factsSequence = factsRevision = 0; previousFacts.clear();
     geometryPlacements={};effectBarriers={};geometryWorkspaces={};geometryOutputs={};geometryAreas.clear();geometryAreaRevision=geometrySequence=geometryRevision=0;previousGeometry.clear();
     for (const auto& window : Desktop::windowState()->windows()) if (window->m_isMapped) birth(window);
     opened = Event::bus()->m_events.window.open.listen([](PHLWINDOW window) { try { birth(window); } catch (...) { members.clear(); Render::SceneTrace::clearBindings(); } });
     closed = Event::bus()->m_events.window.close.listen([](PHLWINDOW window) { forget(window); });
     activated = Event::bus()->m_events.window.active.listen([](PHLWINDOW window, Desktop::eFocusReason) {
-        std::erase_if(recentFocus,[&](const auto& reference){return !reference.lock() || reference.lock()==window;});
-        if(window){ if(recentFocus.size()>=256)recentFocus.erase(recentFocus.begin());recentFocus.emplace_back(window);}
+        recordActivation(window);
     });
-    if (const auto current=Desktop::focusState()->window()) recentFocus.emplace_back(current);
+    if (const auto current=Desktop::focusState()->window()) recordActivation(current);
     command = HyprlandAPI::registerHyprCtlCommand(handle,{"elm_observe ",false,observe});
     if (!command) throw std::runtime_error("Authority command registration failed");
     previewPrivacy=previewRendering=1;previewObservation=0;
@@ -746,7 +783,7 @@ APICALL EXPORT PLUGIN_DESCRIPTION_INFO PLUGIN_INIT(HANDLE handle) {
 }
 APICALL EXPORT void PLUGIN_EXIT() {
     stopPreviewFdServer();previewLocked.reset();previewReloaded.reset();previewOutputRemoved.reset();
-    opened.reset(); closed.reset(); activated.reset(); recentFocus.clear();
+    opened.reset(); closed.reset(); activated.reset(); recentFocus.clear();activationHistory.clear();
     if (command) HyprlandAPI::unregisterHyprCtlCommand(pluginHandle,command);
     command.reset();previewSources.clear();clientTrees.clear();popupTrees.clear();familySources.clear();familyStyles.clear();captureProbes.clear();captureBudget.reset(); members.clear(); sessions.clear();grantRegistry.reset(); Render::SceneTrace::clearBindings();
     geometryPlacements={};effectBarriers={};geometryWorkspaces={};geometryOutputs={};geometryAreas.clear();geometryAreaRevision=geometrySequence=geometryRevision=0;previousGeometry.clear();

@@ -22,6 +22,39 @@ window.receiveFocus = value => requestAnimationFrame(() => {
   post({surfaceProtocol:2,kind:'focus-applied',publication:value.publication,lease:value.lease,targets:focused});
 });
 app.ports.actions.subscribe(post);
+// Forward only current-surface key observations. Elm owns candidate order,
+// selection, ordinal bounds and mutation decisions; this is not a global chord
+// journal and cannot attest to input arriving before native popup readiness.
+let switcherTerminal=null;
+document.addEventListener('keydown',event=>{
+  const node=event.target?.closest?.('.surface-popup');
+  if(!node || node.dataset.mode!=='switcher' || event.isComposing ||
+     event.defaultPrevented || event.ctrlKey || event.metaKey) return;
+  const id=event.key==='Tab'?(event.shiftKey?'control:reverse':'control:forward'):
+    event.key==='ArrowRight'?'control:forward':event.key==='ArrowLeft'?'control:reverse':
+    event.key==='Enter'?'control:commit':event.key==='Escape'?'control:close':null;
+  if(!id || ((event.key==='Enter'||event.key==='Escape') && event.repeat)) return;
+  event.preventDefault();event.stopImmediatePropagation();
+  const control=[...node.querySelectorAll('[data-surface-control]')].find(row=>row.dataset.surfaceControl===id);
+  if(!control || control.disabled) return;
+  const packet=Object.freeze({surfaceProtocol:2,kind:'surface-action',surface:'popup',
+    publication:node.dataset.publication,lease:node.dataset.lease,id});
+  // Terminal keys retain the popup until their real keyup. Withdrawing it on
+  // keydown loses the native release and leaves the compositor's repeat guard
+  // held. A changed presentation cancels this gesture instead of reminting it.
+  if(event.key==='Enter'||event.key==='Escape') switcherTerminal={node,key:event.key,packet};
+  else app.ports.requestAction.send(packet);
+},true);
+document.addEventListener('keyup',event=>{
+  const held=switcherTerminal;
+  if(!held || held.key!==event.key) return;
+  switcherTerminal=null;event.preventDefault();event.stopImmediatePropagation();
+  if(event.isComposing || event.ctrlKey || event.metaKey || !held.node.isConnected ||
+    held.node.dataset.mode!=='switcher' || held.node.dataset.publication!==held.packet.publication ||
+    held.node.dataset.lease!==held.packet.lease || !held.node.contains(event.target)) return;
+  app.ports.requestAction.send(held.packet);
+},true);
+window.addEventListener('blur',()=>{switcherTerminal=null;});
 post({surfaceProtocol:2,kind:'presentation-ready'});
 
 if (window.elmHostQA) {

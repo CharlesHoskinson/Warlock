@@ -1,6 +1,8 @@
-module Desktop exposing (Effect(..), ChoiceToken, choiceToken, Model, Msg(..), initial, update, ViewStamp, capture, key, canProveCatalogUnsent, pinnedGroup, pinGroups, pinIdentities)
+module Desktop exposing (Effect(..), ChoiceToken, choiceToken, Model, Msg(..), initial, update, ViewStamp, capture, key, switcherOpen, canProveCatalogUnsent, pinnedGroup, pinGroups, pinIdentities)
 
 import Menu
+import ActionProjection as Scene
+import Switcher
 import Pins
 import MenuBridge
 import NativeProvider
@@ -32,6 +34,10 @@ type alias Model =
     , open : Bool
     , overview : Bool
     , overviewWorkspace : Maybe String
+    , switcher : Switcher.Model
+    , switcherOrigin : Maybe Counter
+    , switcherExpected : Maybe Counter
+    , switcherHistory : Maybe {context : {lifetime : Counter, epoch : Counter, output : Counter, revision : Counter}, roots : List Counter}
     , request : Counter
     , presentation : Maybe Counter
     , expected : Maybe Counter
@@ -58,6 +64,11 @@ type Msg
     | Incoming D.Value
     | OpenApplications ViewStamp
     | OpenOverview ViewStamp
+    | OpenSwitcher ViewStamp Switcher.Direction
+    | SwitcherStep ViewStamp Switcher.Direction
+    | SwitcherChoose ViewStamp Counter
+    | CommitSwitcher ViewStamp
+    | CloseSwitcher ViewStamp
     | CloseOverview ViewStamp
     | OverviewWorkspace ViewStamp (Maybe String)
     | OverviewChoose ViewStamp Counter
@@ -81,7 +92,55 @@ type Effect
 
 initial : Model
 initial =
-    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, open = False, overview = False, overviewWorkspace = Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
+    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, open = False, overview = False, overviewWorkspace = Nothing, switcher=Switcher.initial, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
+
+switcherOpen : Model -> Bool
+switcherOpen model = List.member (Switcher.phase model.switcher) [Switcher.Waiting,Switcher.Browsing]
+
+retireSwitcher : Model -> Model
+retireSwitcher model = {model | switcher=Switcher.cancel (Switcher.generation model.switcher) model.switcher,switcherExpected=Nothing,switcherHistory=Nothing,switcherOrigin=Nothing}
+
+switcherFocus : Model -> List Effect
+switcherFocus model = Switcher.selected model.switcher |> Maybe.map (\family -> [Focus (key model ("switcher:family:"++UInt64.string family.root))]) |> Maybe.withDefault []
+
+historyRequest : Binding.Binding -> Counter -> Effect
+historyRequest binding request = Send (E.object [("protocolVersion",E.int 3),("kind",E.string "activation-history-request"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request))])
+
+readSwitcherHistory : Model -> (Model,List Effect)
+readSwitcherHistory model =
+    case (model.windows.shell.binding,UInt64.next model.request) of
+        (Just binding,Just request) -> ({model | request=request,switcherExpected=Just request,switcherHistory=Nothing},[historyRequest binding request])
+        _ -> (retireSwitcher model,[])
+
+chooseFamily : Taskbar.Family -> Model -> (Model,List Effect)
+chooseFamily family model =
+    case (model.windows.shell.binding,model.windows.shell.effects.observed) of
+        (Just binding,Just observed) ->
+            if model.choice/=Nothing || MenuBridge.blockedFor family.root model.windows.shell model.windows.menus then (retireSwitcher model,[]) else
+            let (next,effects)=windowBase (TaskbarShell.Native Shell.Refresh) (retireSwitcher {model | overview=False,choiceNotice=""})
+            in case next.windows.shell.expected of
+                Just request ->
+                    let token=ChoiceToken binding request
+                    in ({next | choice=Just {binding=binding,output=observed.context.output,root=family.root,application=family.application,token=token}},effects++[ArmChoice token])
+                Nothing -> (next,effects)
+        _ -> (retireSwitcher model,[])
+
+syncSwitcher : Model -> (Model,List Effect)
+syncSwitcher model =
+    if not (switcherOpen model) then (model,[]) else
+    case (model.switcherHistory,model.windows.shell.effects.observed,TaskView.groups model.windows.shell) of
+        (Just history,Just observed,Just groups) ->
+            if Switcher.phase model.switcher==Switcher.Browsing then
+                ( {model | switcher=Switcher.reconcile (List.concatMap .windows groups) model.switcher},[] )
+            else if history.context/=observed.context then
+                if model.switcherExpected==Nothing then readSwitcherHistory model else (model,[])
+            else
+                let (switcher,selected)=Switcher.ready (Switcher.generation model.switcher) history.roots (List.concatMap .windows groups) model.switcherOrigin model.switcher
+                    next=advance {model | switcher=switcher}
+                in case selected of
+                    Just family -> chooseFamily family next
+                    Nothing -> (next,switcherFocus next)
+        _ -> (model,[])
 
 canProveCatalogUnsent : Binding.Binding -> Counter -> Model -> Bool
 canProveCatalogUnsent binding request model =
@@ -100,7 +159,7 @@ advance : Model -> Model
 advance model =
     case model.presentation |> Maybe.andThen UInt64.next of
         Just value -> { model | presentation = Just value }
-        Nothing -> { model | presentation = Nothing, open = False, overview = False, applications = Nothing, expected = Nothing }
+        Nothing -> retireSwitcher { model | presentation = Nothing, open = False, overview = False, applications = Nothing, expected = Nothing }
 
 
 host : Binding.Binding -> String
@@ -135,6 +194,9 @@ windowBase message model =
         , choiceNotice = if disconnected || changed then "" else model.choiceNotice
         , overview = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.overview
         , overviewWorkspace = if disconnected || changed then Nothing else model.overviewWorkspace
+        , switcher = if disconnected || changed || windows.shell.phase==Shell.Exhausted then Switcher.cancel (Switcher.generation model.switcher) model.switcher else model.switcher
+        , switcherExpected = if disconnected || changed || windows.shell.phase==Shell.Exhausted then Nothing else model.switcherExpected
+        , switcherHistory = if disconnected || changed || windows.shell.phase==Shell.Exhausted then Nothing else model.switcherHistory
         , pins = pins
         , request = read |> Maybe.map Tuple.second |> Maybe.withDefault model.request
         , applications = if disconnected || changed then Nothing else model.applications
@@ -254,7 +316,7 @@ update message model =
                     case MenuBridge.currentProvider model.windows.menus of
                         Nothing -> (model,[])
                         Just provider -> windowBase (TaskbarShell.MenuEvent (Menu.Invalidate (Provider.getBinding provider))) model
-            in ({retired | ownerScope=scope,ownerExhausted=False,menuOrigin=Nothing,returnFocus=Nothing},effects)
+            in (retireSwitcher {retired | ownerScope=scope,ownerExhausted=False,menuOrigin=Nothing,returnFocus=Nothing},effects)
         OwnerScope raw ->
             let positive = UInt64.decoder |> D.andThen (\counter -> if counter==UInt64.zero then D.fail "Zero owner identity" else D.succeed counter)
                 decoder = strict ["surfaceProtocol","kind","outputId","providerId"]
@@ -270,7 +332,7 @@ update message model =
                                     case MenuBridge.currentProvider model.windows.menus of
                                         Nothing -> model
                                         Just provider -> windowBase (TaskbarShell.MenuEvent (Menu.Invalidate (Provider.getBinding provider))) model |> Tuple.first
-                            in ({retired | ownerScope=Nothing,ownerExhausted=True,menuOrigin=Nothing,returnFocus=Nothing},[])
+                            in (retireSwitcher {retired | ownerScope=Nothing,ownerExhausted=True,menuOrigin=Nothing,returnFocus=Nothing},[])
                 _ -> (model,[])
         OpenWindowMenu stamp root ->
             if model.ownerExhausted || model.choice/=Nothing || MenuBridge.preparedSnapshot model.windows.menus/=Nothing || Shell.capture model.windows.shell/=Just stamp || not (Shell.available model.windows.shell) then (model,[]) else
@@ -285,12 +347,60 @@ update message model =
                                 Ok provider ->
                                     let (next,effects)=windowBase (TaskbarShell.OpenMenu provider) model
                                     in if (MenuBridge.menuSnapshot next.windows.menus).menu==(MenuBridge.menuSnapshot model.windows.menus).menu then (model,[]) else
-                                        ({next | open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=model.windows.shell.binding |> Maybe.andThen (\binding -> TaskbarShell.groups model.windows |> List.filter (\group -> List.any (\family -> family.root==root) group.families) |> List.head |> Maybe.map (\group -> {binding=binding,destination=TaskbarGroup group.key,output=Just observed.context.output}))},effects)
+                                        (retireSwitcher {next | open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=model.windows.shell.binding |> Maybe.andThen (\binding -> TaskbarShell.groups model.windows |> List.filter (\group -> List.any (\family -> family.root==root) group.families) |> List.head |> Maybe.map (\group -> {binding=binding,destination=TaskbarGroup group.key,output=Just observed.context.output}))},effects)
+        OpenSwitcher stamp direction ->
+            if capture model/=Just stamp || model.choice/=Nothing || not (Shell.available model.windows.shell) || MenuBridge.preparedSnapshot model.windows.menus/=Nothing then (model,[]) else
+            case UInt64.next (Switcher.generation model.switcher) of
+                Nothing -> (retireSwitcher model,[])
+                Just generation ->
+                    let base=(MenuBridge.menuSnapshot model.windows.menus).menu |> Maybe.map (\menu -> windowBase (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)) model |> Tuple.first) |> Maybe.withDefault model
+                        origin=base.windows.shell.effects.observed |> Maybe.andThen (\observed -> Scene.focused observed.scene |> Maybe.andThen (\root -> Scene.rootOf root observed.scene))
+                        (switcher,_)=Switcher.step generation 1 direction base.switcher
+                        windows=base.windows
+                        opened=advance {base | switcher=switcher,switcherOrigin=origin,switcherHistory=Nothing,open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing}}
+                        (refreshing,commands)=windowBase (TaskbarShell.Native Shell.Refresh) opened
+                        (next,history)=readSwitcherHistory refreshing
+                    in (next,commands++history)
+        SwitcherStep stamp direction ->
+            if capture model/=Just stamp || not (switcherOpen model) then (model,[]) else
+            let (switcher,chosen)=Switcher.step (Switcher.generation model.switcher) (Switcher.lastStep model.switcher+1) direction model.switcher
+                next=advance {model | switcher=switcher}
+            in case chosen of
+                Just family -> chooseFamily family next
+                Nothing -> (next,switcherFocus next)
+        SwitcherChoose stamp root ->
+            if capture model/=Just stamp || not (switcherOpen model) then (model,[]) else
+            let switcher=Switcher.choose (Switcher.generation model.switcher) root model.switcher
+                (resolved,selected)=Switcher.commit (Switcher.generation switcher) switcher
+            in case selected of
+                Just family -> chooseFamily family (advance {model | switcher=resolved})
+                Nothing -> (model,[])
+        CommitSwitcher stamp ->
+            if capture model/=Just stamp || not (switcherOpen model) then (model,[]) else
+            let (switcher,selected)=Switcher.commit (Switcher.generation model.switcher) model.switcher
+            in case selected of
+                Just family -> chooseFamily family (advance {model | switcher=switcher})
+                Nothing -> (model,[])
+        CloseSwitcher stamp ->
+            if capture model/=Just stamp || not (switcherOpen model) then (model,[]) else
+            let closed=advance (retireSwitcher model)
+            in windowBase (TaskbarShell.Native Shell.Refresh) closed
         Window value ->
             let (next,effects)=window value model
-            in if next.windows.picker/=Nothing && next.windows.picker/=model.windows.picker then ({next | open=False,overview=False,expected=Nothing,menuOrigin=Nothing,returnFocus=Nothing},effects) else (next,effects)
+                (synced,commands)=syncSwitcher next
+            in if next.windows.picker/=Nothing && next.windows.picker/=model.windows.picker then (retireSwitcher {next | open=False,overview=False,expected=Nothing,menuOrigin=Nothing,returnFocus=Nothing},effects) else (synced,effects++commands)
         Incoming raw ->
             case D.decodeValue (D.field "kind" D.string) raw of
+                Ok "activation-history" ->
+                    let positive=UInt64.decoder |> D.andThen (\value -> if value==UInt64.zero then D.fail "Zero history identity" else D.succeed value)
+                        context= strict ["lifetime","epoch","output","revision"] (D.map4 (\lifetime epoch output revision -> {lifetime=lifetime,epoch=epoch,output=output,revision=revision}) (D.field "lifetime" positive) (D.field "epoch" positive) (D.field "output" positive) (D.field "revision" positive))
+                        roots=D.list positive |> D.andThen (\rows -> if List.length rows<=256 && List.length (List.foldl (\root unique -> if List.member root unique then unique else root::unique) [] rows)==List.length rows then D.succeed rows else D.fail "History bounds/duplicates")
+                        decoder=strict ["protocolVersion","kind","binding","requestId","context","roots"] (D.map5 (\_ binding request scope rows -> {binding=binding,request=request,context=scope,roots=rows}) version (D.field "binding" Binding.decoder) (D.field "requestId" positive) (D.field "context" context) (D.field "roots" roots))
+                    in case D.decodeValue decoder raw of
+                        Ok receipt ->
+                            if not (switcherOpen model) || model.windows.shell.binding/=Just receipt.binding || model.switcherExpected/=Just receipt.request then (model,[]) else
+                            syncSwitcher {model | switcherExpected=Nothing,switcherHistory=Just {context=receipt.context,roots=receipt.roots}}
+                        Err _ -> (model,[])
                 Ok "application-catalog" ->
                     let decoder = D.keyValuePairs D.value |> D.andThen (\pairs ->
                             let fields=List.map Tuple.first pairs
@@ -323,7 +433,10 @@ update message model =
                                 in (next,if refused then [Focus "launcher-search"] else [])
                             else (model,[])
                         Err _ -> (model,[])
-                _ -> window (TaskbarShell.Native (Shell.Incoming raw)) model
+                _ ->
+                    let (next,effects)=window (TaskbarShell.Native (Shell.Incoming raw)) model
+                        (synced,commands)=syncSwitcher next
+                    in (synced,effects++commands)
         OpenApplications stamp ->
             if capture model /= Just stamp || MenuBridge.preparedSnapshot model.windows.menus/=Nothing then (model,[]) else
             let base =
@@ -331,7 +444,7 @@ update message model =
                         Nothing -> model
                         Just menu -> windowBase (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)) model |> Tuple.first
                 windows=base.windows
-                retired = advance {base | windows={windows | picker=Nothing}, returnFocus=Nothing, menuOrigin=Nothing, open = True, overview = False, applications = Nothing, launch = Launch.catalog E.null model.launch, expected = Nothing, catalogFailure = Nothing}
+                retired = advance (retireSwitcher {base | windows={windows | picker=Nothing}, returnFocus=Nothing, menuOrigin=Nothing, open = True, overview = False, applications = Nothing, launch = Launch.catalog E.null model.launch, expected = Nothing, catalogFailure = Nothing})
             in case (model.windows.shell.binding, UInt64.next model.request) of
                 (Just binding,Just request) ->
                     if model.windows.shell.phase == Shell.Detached || retired.presentation == Nothing then (retired,[]) else
@@ -350,7 +463,7 @@ update message model =
                     |> Maybe.map (\menu -> windowBase (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)) model |> Tuple.first)
                     |> Maybe.withDefault model
                 windows=base.windows
-                next=advance {base | overview=True,overviewWorkspace=Nothing,open=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing}}
+                next=advance (retireSwitcher {base | overview=True,overviewWorkspace=Nothing,open=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing}})
                 focus=TaskView.activeWorkspace next.windows.shell |> Maybe.map (\workspace -> key next ("overview:workspace:"++workspace)) |> Maybe.withDefault (key next "overview:all")
             in (next,[Focus focus])
         CloseOverview stamp ->
@@ -392,7 +505,7 @@ update message model =
             let (launch,intent) = Launch.start selection model.launch
             in case (intent,model.windows.shell.binding) of
                 (Just wire,Just binding) ->
-                    ({model | launch = launch, open = False, overview = False, expected = Nothing},Send (E.object [("protocolVersion",E.int 3),("kind",E.string "application-launch"),("binding",Binding.encode binding),("intent",wire)]) :: (Launch.pending launch |> Maybe.map (Arm >> List.singleton) |> Maybe.withDefault []))
+                    (retireSwitcher {model | launch = launch, open = False, overview = False, expected = Nothing},Send (E.object [("protocolVersion",E.int 3),("kind",E.string "application-launch"),("binding",Binding.encode binding),("intent",wire)]) :: (Launch.pending launch |> Maybe.map (Arm >> List.singleton) |> Maybe.withDefault []))
                 _ -> ({model | launch = launch},[])
         Deadline token -> ({model | launch = Launch.timeout token model.launch},[])
         Acknowledge token -> ({model | launch = Launch.acknowledgeUnknown token model.launch},[])
