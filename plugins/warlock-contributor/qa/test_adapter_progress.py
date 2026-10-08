@@ -32,7 +32,7 @@ class AdapterProgressTests(unittest.TestCase):
             self.fixture.write('implementation/warlock/' + name, 'changed ' + name + '\n')
             record = self.record()
             self.assertTrue(record['iterations'][-1]['meaningfulProgress'])
-            self.assertEqual(record['iterations'][-1]['progressPolicy'], 3)
+            self.assertEqual(record['iterations'][-1]['progressPolicy'], 4)
             self.cli('check')
         # Re-recording identical adapter bytes cannot conceal a stalled investigation.
         self.assertFalse(self.record()['iterations'][-1]['meaningfulProgress'])

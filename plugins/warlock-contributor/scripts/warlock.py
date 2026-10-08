@@ -306,8 +306,11 @@ def extend_paths(root, record, reqs, state, args):
             'progress': progress_status(record)}
 
 
-def verdict_key(claim):
-    return json.dumps([claim.get('requirement'), claim.get('scenario'), claim.get('disposition'), claim.get('scope'), sorted(claim.get('missingObservations', []))], sort_keys=True)
+def verdict_key(claim, policy=4):
+    identity = [claim.get('requirement'), claim.get('scenario'), claim.get('disposition')]
+    if policy < 4:
+        identity += [claim.get('scope'), sorted(claim.get('missingObservations', []))]
+    return json.dumps(identity, sort_keys=True)
 
 
 def mark_historical(root, record):
@@ -436,6 +439,7 @@ def verification_plan(root, record, reqs, state, selected=False):
     requirements = set(packet['slice']['requirements'])
     scenarios = set(packet['slice']['scenarios'])
     primary = bool(scenarios & {'taskbar-inactive', 'taskbar-active', 'taskbar-minimized'})
+    reflow = bool(requirements & {'ELM-UI-008'} and 'overflow-resize' in scenarios)
     dense = bool(requirements & {'ELM-UI-008'} and scenarios & {'overflow-first-last', 'overflow-resize'})
     menus = bool(requirements & {'ELM-UI-008'} and 'menu-invocation' in scenarios)
     cpu, mapped = [], set()
@@ -465,7 +469,8 @@ def verification_plan(root, record, reqs, state, selected=False):
             else:
                 continue
         elif relative in ('native/host.c', 'native/shared-host.c', 'native/surface.h'):
-            add('check-search.py', ['--native-popup'], [name], 'Changed host compile, relink and popup lifecycle self-tests.')
+            add('check-search.py', ['--popup-reflow'] if reflow else ['--native-popup'], [name],
+                'Changed host compile, relink and popup lifecycle checks; retain the selected reflow mode.')
         elif relative.startswith('native/'):
             add('check-native-authority.py', [], [name], 'Compile changed authority units against the owning core tuple.')
         elif relative in ('adapter/taskbar_preferences.py', 'adapter/taskbar_projection.py'):
@@ -474,13 +479,15 @@ def verification_plan(root, record, reqs, state, selected=False):
             add('check-search.py', [], [name], 'Compile search views and catalog/launch replays.')
         elif relative in ('src/TaskView.elm', 'src/Taskbar.elm', 'src/TaskbarShell.elm',
                           'src/Surface.elm', 'src/Desktop.elm', 'src/Main.elm',
-                          'src/SurfaceRenderer.elm', 'src/Bar.elm', 'src/ActionProjection.elm',
+                          'src/SurfaceRenderer.elm', 'src/SurfaceController.elm', 'src/Popup.elm',
+                          'src/Bar.elm', 'src/ActionProjection.elm',
                           'assets/adapter.js', 'assets/activation.js', 'assets/bar-adapter.js',
                           'assets/context.js', 'assets/popup-adapter.js', 'assets/shell.css'):
             if requirements & {'ELM-UI-007'}:
                 add('check-feedback.py', [], [name], 'Changed feedback views and state projection.')
             else:
-                flags = ['--dense-taskbar'] if dense else \
+                flags = ['--popup-reflow'] if reflow else \
+                        ['--dense-taskbar'] if dense else \
                         ['--pinned-menus'] if menus else \
                         ['--taskbar-primary'] if primary else \
                         ['--workspace-navigation'] if requirements & {'ELM-UI-002', 'ELM-UX-008'} else \
@@ -495,7 +502,9 @@ def verification_plan(root, record, reqs, state, selected=False):
 
     modes = []
     if product:
-        if dense:
+        if reflow:
+            modes += [['--popup-reflow']]
+        elif dense:
             modes += [['--dense-taskbar']]
         elif menus:
             modes += [['--pinned-menus']]
@@ -1025,17 +1034,18 @@ def validate(root, record, reqs, state):
                 errors.append('Claim extension marker lacks a later source extension')
     iterations = record.get('iterations', [])
     previous = record['sourceHashes']
-    seen_verdicts = set()
+    seen_claims = []
     for index, item in enumerate(iterations):
         previous = extension_baseline(record, previous, index)
         policy = item.get('progressPolicy', 1)
-        if policy not in (1, 2, 3):
+        if policy not in (1, 2, 3, 4):
             errors.append('Unknown iteration progress policy')
-        expected_progress = (item['outcome'] == 'production-fix' and product_delta(item['sourceHashes'], previous, policy in (2, 3), policy == 3)) or (item['outcome'] == 'scenario-verdict' and any(verdict_key(c) not in seen_verdicts for c in item.get('claims', [])))
+        seen_verdicts = {verdict_key(c, policy) for c in seen_claims}
+        expected_progress = (item['outcome'] == 'production-fix' and product_delta(item['sourceHashes'], previous, policy in (2, 3, 4), policy in (3, 4))) or (item['outcome'] == 'scenario-verdict' and any(verdict_key(c, policy) not in seen_verdicts for c in item.get('claims', [])))
         if item['meaningfulProgress'] != expected_progress:
             errors.append('Iteration progress assertion differs from source hashes/recorded verdict')
         previous = item['sourceHashes']
-        seen_verdicts.update(verdict_key(c) for c in item.get('claims', []))
+        seen_claims.extend(item.get('claims', []))
     if progress_status(record)['investigationNeedsChange']:
         warnings.append('Stop expanding this investigation; record missing observation and choose another bounded mandatory slice. Independent work remains allowed.')
     return errors, warnings
@@ -1222,7 +1232,7 @@ def main():
                 previous = extension_baseline(record, record['iterations'][-1]['sourceHashes'] if record['iterations'] else record['sourceHashes'], len(record['iterations']))
                 seen_verdicts = {verdict_key(c) for i in record['iterations'] for c in i.get('claims', [])}
                 progress = (args.outcome == 'production-fix' and product_delta(hashes, previous)) or (args.outcome == 'scenario-verdict' and any(verdict_key(c) not in seen_verdicts for c in claims))
-                record['iterations'].append({'atUTC': now(), 'outcome': args.outcome, 'summary': args.summary, 'sourceHashes': hashes, 'meaningfulProgress': progress, 'progressPolicy': 3, 'claims': claims, 'sourceRevision': git(root, 'rev-parse', 'HEAD').decode().strip()})
+                record['iterations'].append({'atUTC': now(), 'outcome': args.outcome, 'summary': args.summary, 'sourceHashes': hashes, 'meaningfulProgress': progress, 'progressPolicy': 4, 'claims': claims, 'sourceRevision': git(root, 'rev-parse', 'HEAD').decode().strip()})
                 errors, warnings = validate(root, record, reqs, state)
                 if not errors:
                     write_record(path, record)

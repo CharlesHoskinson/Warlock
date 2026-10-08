@@ -229,10 +229,12 @@ before using a suggestion. This command executes nothing; candidate native modes
 are not complete original-scenario coverage. AT/IME, hardware and other original
 verification obligations remain in the observation packet.
 
-Handwritten surface adapters and `shell.css` use the same view routes as the
-Elm renderer. For selected UI-008 overflow scenarios, the map suggests the
-existing `--dense-taskbar` component and native modes; menu invocation suggests
-`--pinned-menus`. Preview transport changes remain explicit unmapped product
+Handwritten surface adapters, `shell.css`, `SurfaceController.elm` and `Popup.elm`
+use the shell/view routes. UI-008 `overflow-first-last` suggests the existing
+`--dense-taskbar` modes; `overflow-resize` suggests `--popup-reflow`, including
+changed host/surface units. Shared targets retain all triggering source paths
+without duplicate runs. Menu invocation suggests `--pinned-menus`.
+Preview transport changes remain explicit unmapped product
 work so the contributor can inspect their authority/lifecycle obligations.
 
 Checks and delivery packets also include `progress`: consecutive iterations
@@ -241,6 +243,15 @@ reasons and an explicit next action. At two iterations or 45 minutes, end expans
 of that investigation and select another bounded mandatory slice. This remains an
 advisory about contributor records; it does not measure feature delivery or block
 independent work. The required loop checks expose these fields on every continuation.
+
+New records use progress policy 4: each original requirement/scenario/disposition
+counts once across the record. Rewording scope or missing observations, changing
+the observer, regenerating reports, or alternating previously recorded
+dispositions does not restart the timer. Actual authored source changes still
+count through `production-fix`. Historical policies 1–3 keep their original
+interpretation; a new iteration compares its disposition against all prior
+observations. These checks detect record consistency, not whether a new verdict
+is true. Retain real source/evidence hashes and review the original oracle.
 
 ## Local development and installation
 
@@ -306,7 +317,7 @@ Changed authored C++ `.cpp`/`.hpp` files and the ten handwritten JavaScript
 adapters listed in [the contract](references/contract.json) count as implementation
 progress alongside Elm, C, Python, CSS and SVG. Compiled `elm.js`, `bar.js`,
 `popup.js`, unknown JavaScript, QA and documentation remain excluded. New
-iterations record progress policy 3; older policy 1/2 records retain their
+iterations record progress policy 4; older policy 1/2/3 records retain their
 original interpretation. Re-recording unchanged bytes does not reset progress.
 A source change remains an implementation observation; GUI acceptance requires
 the original scenario evidence.

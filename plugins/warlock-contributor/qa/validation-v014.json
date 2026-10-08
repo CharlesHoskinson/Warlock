@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "packageVersion": "0.14.0",
+  "checkedUTC": "2026-10-08T09:49:44.649824+00:00",
+  "scope": "Plugin contribution-policy regressions; no GUI build, native/AT oracle or client installation.",
+  "acceptanceInferred": false,
+  "selfTest": {
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/window-integration-qa/qa_run.py",
+      "--",
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/omarchy-windows-parity/plugins/warlock-contributor/scripts/warlock.py",
+      "--json",
+      "self-test"
+    ],
+    "returnCode": 0,
+    "testsRun": 175,
+    "stderr": "Ran 175 tests in 34.488s\n\nOK\n"
+  },
+  "hostValidation": {
+    "claude": "Manifest validation passed",
+    "grok": "Manifest validation passed",
+    "skill": "Skill is valid",
+    "codex": "Local manifest/skill/hook metadata validated by doctor; live installation/trust not performed"
+  },
+  "loopCheckPassed": true,
+  "projectCheckPassed": true,
+  "changedSourceHashes": {
+    "plugins/warlock-contributor/.claude-plugin/plugin.json": "b496ce8797a058f5c9eb50ed79ebd78d30c1a901b6bacbf1b13e072a5a392f69",
+    "plugins/warlock-contributor/.codex-plugin/plugin.json": "11686299bbfc697bb789d05ae2fc332ab1aff6a53a34f7ceea84f7c238963515",
+    "plugins/warlock-contributor/README.md": "f66434e346c69ac822cccc6ea87719569b7eeeac1e00e105b9e0786421730a36",
+    "plugins/warlock-contributor/references/contract.json": "0d7fc50c04f491d085b41032ccc89b2f3b99d0b4b7462fd245d4ef9db93ec210",
+    "plugins/warlock-contributor/scripts/warlock.py": "d3218fc17b62695b3683948e1d9e2f157543afc9c765d9e1b8164b7e76e997c5",
+    "plugins/warlock-contributor/skills/warlock-contribute/SKILL.md": "51ee4a4d81d76ae07871c31342325dca530c18fefa1ec5bb16019afa51d7dc55",
+    "plugins/warlock-contributor/qa/test_verdict_progress.py": "473f06d3260e82d8c7a17838131bc4ddaba221059209fbcae9d80f4fa77a1ff1",
+    "plugins/warlock-contributor/qa/test_verification.py": "9591c42338942181ee3ecce7bf855e7538c3019b7fda20a56f8d92925b95060e",
+    "plugins/warlock-contributor/qa/test_adapter_progress.py": "968d31300c797ca33c4fc1c5b040f33f426441daac0a1db1afc230cd7e97bdde",
+    "plugins/warlock-contributor/qa/test_delivery.py": "ee0186a367147eb95eacd1a6ee3d25111a73e5201caf6487a7dcc89abeb6c919"
+  }
+}

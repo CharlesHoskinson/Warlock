@@ -158,6 +158,36 @@ class VerificationPlannerTests(unittest.TestCase):
         self.assertEqual(packet['cpuTargets'][0]['arguments'], ['--pinned-menus'])
         self.assertEqual([x['arguments'] for x in packet['nativeCandidates']], [['--pinned-menus']])
 
+    def test_reflow_maps_controller_renderer_adapter_and_host_to_actual_reflow_mode(self):
+        paths = ['src/SurfaceController.elm', 'src/Popup.elm', 'assets/popup-adapter.js',
+                 'native/host.c', 'qa/PopupReflowReplay.elm']
+        self.select('ELM-UI-008', 'overflow-resize', paths)
+        self.fixture.start()
+        packet = self.packet('--selected')
+        self.assertEqual(packet['unmappedProductPaths'], [])
+        self.assertEqual(packet['supportPaths'], ['implementation/warlock/qa/PopupReflowReplay.elm'])
+        self.assertEqual(len(packet['cpuTargets']), 1)
+        self.assertEqual(packet['cpuTargets'][0]['arguments'], ['--popup-reflow'])
+        self.assertEqual(packet['cpuTargets'][0]['triggerPaths'], sorted(
+            'implementation/warlock/' + name for name in paths[:-1]))
+        self.assertEqual([x['arguments'] for x in packet['nativeCandidates']], [['--popup-reflow']])
+        self.assertFalse(packet['executionPerformed'])
+        self.assertFalse(packet['acceptanceInferred'])
+
+    def test_reflow_host_header_selects_reflow_without_rebuilding_authority(self):
+        self.select('ELM-UI-008', 'overflow-resize', ['native/surface.h'])
+        self.fixture.start()
+        packet = self.packet('--selected')
+        self.assertEqual([x['runner'].split('/')[-1] for x in packet['cpuTargets']], ['check-search.py'])
+        self.assertEqual(packet['cpuTargets'][0]['arguments'], ['--popup-reflow'])
+
+    def test_popup_renderer_outside_reflow_uses_existing_selected_menu_mode(self):
+        self.select('ELM-UI-008', 'menu-invocation', ['src/Popup.elm'])
+        self.fixture.start()
+        packet = self.packet('--selected')
+        self.assertEqual(packet['unmappedProductPaths'], [])
+        self.assertEqual(packet['cpuTargets'][0]['arguments'], ['--pinned-menus'])
+
     def test_transport_is_unmapped_product_and_generated_js_stays_support(self):
         self.select('ELM-UI-007', 'restore-pending', ['assets/native-preview-proposals.js', 'assets/elm.js'])
         self.fixture.start()
