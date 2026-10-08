@@ -152,7 +152,7 @@ notice model =
         case TaskView.groups model.windows.shell of
             Nothing -> "Waiting for current workspace information. Refresh window status."
             Just [] -> "No windows to show. Close Task View to return."
-            Just _ -> "Choose a window on the current workspace, or browse another workspace."
+            Just _ -> "Choose a window to reveal its workspace, or browse another workspace."
     else if mode model=="menu" then
         case (MenuBridge.menuSnapshot model.windows.menus).menu |> Maybe.map .status of
             Just (Menu.Refused reason) -> reason

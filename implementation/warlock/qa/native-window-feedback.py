@@ -4,7 +4,7 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
 lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
 """
 import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
-FOCUS=sys.argv[1:]==['--taskbar-focus'];PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS;TASKVIEW=sys.argv[1:]==['--task-view'];assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW
+NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'];PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS;TASKVIEW=sys.argv[1:]==['--task-view'] or NAV;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143';RUNTIME=REPO/'implementation/warlock-client-provider-native-v204'
 sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
 spec=importlib.util.spec_from_file_location('feedback_private_host',RUNTIME/'candidate_host.py');host=importlib.util.module_from_spec(spec);spec.loader.exec_module(host)
@@ -15,6 +15,13 @@ from inspection import Collector
 isolate_session_host(host)
 sys.path.insert(0,str(ROOT/'adapter'));from effect_endpoint import Endpoint;from endpoint import start_time
 pre=json.loads((RUNTIME/'qa/preflight.json').read_text());pair=pre['pair'];build_path=pathlib.Path(pre['controlledHostBuild']);build=json.loads(build_path.read_text());assert build['passed'];binary=build_path.parent/'elm-host';assert sha(binary)==build['binarySHA256']
+assert not NAV or (ROOT/'qa/current-native-pair.json').exists()
+assert not (ROOT/'native/authority.cpp').exists() or (ROOT/'qa/current-native-pair.json').exists()
+if (ROOT/'qa/current-native-pair.json').exists():
+ native_pair=json.loads((ROOT/'qa/current-native-pair.json').read_text());authority_path=REPO/native_pair['authorityReport'];assert sha(authority_path)==native_pair['authorityReportSHA256'];authority=json.loads(authority_path.read_text());assert authority['passed'] and authority['missingSymbols']==[]
+ assert native_pair['pair']['core']==pair['core'] and native_pair['pair']['aquamarine']==pair['aquamarine'] and sha(RUNTIME/'qa/preflight.json')==native_pair['unchangedRuntimePreflightSHA256']
+ assert native_pair['authorityInputs']==authority['inputs'] and all(sha(ROOT/p)==h for p,h in authority['inputs'].items()) and all(sha(p)==h for p,h in authority['dependencies'].items())
+ assert native_pair['pair']['plugin']=={'path':authority['binary'],'sha256':authority['binarySHA256']};pair=native_pair['pair']
 CURRENT=(ROOT/'qa/current-search-build.json').exists()
 assert not (CATALOG or TASKVIEW) or CURRENT
 if CURRENT:
@@ -24,13 +31,14 @@ else:
 for row in pair.values():assert sha(row['path'])==row['sha256']
 assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
 subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
-OUT=ROOT/'qa/runs'/(('native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+OUT=ROOT/'qa/runs'/(('native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
 OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
 POINTER=pathlib.Path('/home/hoskinson/.local/share/hypr-window-controls/qa/virtual-pointer');FIXTURE=RUNTIME/'fixture.py'
 report={'schema':1,'requirements':['ELM-UI-007'],'scenarios':['restore-pending','restore-refused','restore-unknown'],'scope':'Actual pointer/Elm/native effect feedback and private compositor pixels; no AT/IME/full release acceptance','nativeFeedbackObserved':False,'nativeAcceptance':False,'assistiveTechnologyAccepted':False,'fullReleaseAccepted':False,'mainDesktopActions':False,'passed':False,'checks':[],'sourceInputs':{str(p.relative_to(ROOT)):sha(p) for folder in ['src','native','adapter','assets'] for p in (ROOT/folder).iterdir() if p.is_file()},'pair':pair,'nativeHost':{'path':str(binary),'sha256':sha(binary),'heldBuild':str(build_path),'heldBuildSHA256':sha(build_path)},'runtimeByReference':{'root':str(RUNTIME),'hostSHA256':sha(RUNTIME/'candidate_host.py')},'helpers':[],'nativeFixtures':[]};s=None;loaded=False;apps=[];broker=None;paused=False;sequence=0
 if SEARCH:report.update(requirements=['ELM-UI-005','ELM-UX-029'],scenarios=['search-no-match','search-race','search-refused','launcher-refused'],scope='Actual current query and private catalog, native typing/Enter refusal and no duplicate launch; AT/IME and popup physical presentation acceptance remain pending',popupPresentationAccepted=False)
 if PINS:report.update(requirements=['ELM-UI-004','ELM-UX-004'],scenarios=['taskbar-zero','ux-004'],scope='Actual native keyboard pin/reorder, shell restart, identity order and one current zero-window launch; popup physical presentation and AT acceptance remain separate',popupPresentationAccepted=False,nativePinJourneyObserved=False)
 if TASKVIEW:report.update(requirements=['ELM-UX-017','ELM-UI-006'],scenarios=['ux-017','overview-cancel'],scope='Actual two populated native workspaces, exact window membership and active marker, keyboard/pointer local browsing and Escape recipient; independent and applicable AT acceptance remain pending',nativeTaskViewJourneyObserved=False)
+if NAV:report.update(requirements=['ELM-UI-002','ELM-UI-006','ELM-UX-008'],scenarios=['activate-other-workspace','overview-select','ux-008','activation-refused'],scope='Actual minimized workspace-2 family selected through Task View and taskbar; native receipts, focus/keyboard, pixels and unchanged membership; stale-context refusal; other-output, partial-refusal and AT acceptance remain separate',nativeNavigationJourneyObserved=False,authorityBuild={'path':str(authority_path),'sha256':sha(authority_path)})
 if FOCUS:report.update(requirements=['ELM-UI-004','ELM-UX-024'],scenarios=['taskbar-group','ux-024'],scope='Actual native picker traversal and Escape/focus recipient diagnosis; menu/AT original acceptance remains pending')
 LUA=b'''hl.config({xwayland={enabled=false},animations={enabled=false}})
 hl.monitor({output="WAYLAND-1",mode="800x600@60",position="0x0",scale=1})
@@ -87,6 +95,15 @@ try:
    if not (FOCUS or TASKVIEW):fixture_control('hide-peer');wait(lambda:len(s.data('clients'))==1)
    if TASKVIEW:
     peer=next(w for w in s.data('clients') if w['title']=='ELM-ACTIVATION-PEER')
+    if NAV:
+     peer_selector='address:'+peer['address'];primary=next(w for w in s.data('clients') if w['title']=='ELM-AUTHORITY-FIXTURE')
+     if not peer['floating']:check('PeerFixtureFloats',s.ctl('dispatch',"hl.dsp.window.float({action='set',window='"+peer_selector+"'})").strip()=='ok')
+     check('PeerFixtureSize',s.ctl('dispatch',"hl.dsp.window.resize({x=320,y=240,window='"+peer_selector+"'})").strip()=='ok')
+     check('PeerFixturePosition',s.ctl('dispatch',"hl.dsp.window.move({x=360,y=150,window='"+peer_selector+"'})").strip()=='ok')
+     check('PrimaryFocusBeforeFixtureMinimize',s.ctl('dispatch',"hl.dsp.focus({window='address:"+primary['address']+"'})").strip()=='ok')
+     peer_identity=next(w['incarnation'] for w in client.snapshot('440')['windows'] if w['label']=='ELM-ACTIVATION-PEER')
+     setup_facts=client.scene_facts('440');setup_intent={'request':'9000','generation':'9000','incarnation':peer_identity,'operation':'minimize','context':client.context(setup_facts)};setup_result=client.effect(setup_intent)
+     report['nativeFixtures'].append({'intent':setup_intent,'result':setup_result});check('PeerFixtureMinimizedBeforeWorkspaceMove',setup_result['status']=='Committed',result=setup_result)
     check('OwnedPeerMovesToWorkspaceTwo',s.ctl('dispatch',"hl.dsp.window.move({workspace=2,follow=false,window='address:"+peer['address']+"'})").strip()=='ok')
     wait(lambda:any(w['title']=='ELM-ACTIVATION-PEER' and w['workspace']['id']==2 for w in s.data('clients')))
    w=next(w for w in s.data('clients') if w['title']=='ELM-AUTHORITY-FIXTURE');selector='address:'+w['address']
@@ -98,7 +115,7 @@ try:
    def text():return log.read_text(errors='replace')
    def projection():return collector.read(text())
    def group(operation):
-    p=projection();return next((g for g in p['groups'] if (FOCUS or g['title']=='ELM-AUTHORITY-FIXTURE') and g['label'].startswith(operation+' ') and not g['disabled']),None) if p and p['phase']=='Coherent' else None
+    p=projection();return next((g for g in p['groups'] if (FOCUS or NAV or g['title']=='ELM-AUTHORITY-FIXTURE') and g['label'].startswith(operation+' ') and not g['disabled']),None) if p and p['phase']=='Coherent' else None
    def journal():return [json.loads(l.split(': ',1)[1]) for l in text().splitlines() if l.startswith('frontend-request: ') and json.loads(l.split(': ',1)[1])['kind']=='window-effect']
    def feedback(state):
     p=projection()
@@ -113,8 +130,8 @@ try:
    initial_workspace=next(w['workspace'] for w in facts()['facts']['windows'] if w['incarnation']==target)
    def current_window():return next(w for w in facts()['facts']['windows'] if w['incarnation']==target)
    def transaction_state():return (projection() or {}).get('transaction')
-   def private_effect(operation):
-    before=facts();n=str(9000+len(report['nativeFixtures']));intent={'request':n,'generation':n,'incarnation':target,'operation':operation,'context':client.context(before)};result=client.effect(intent);report['nativeFixtures'].append({'intent':intent,'result':result});check('ControlledNativeFixture'+operation,result['status']=='Committed',result=result)
+   def private_effect(operation,identity=None):
+    before=facts();n=str(9000+len(report['nativeFixtures']));intent={'request':n,'generation':n,'incarnation':identity or target,'operation':operation,'context':client.context(before)};result=client.effect(intent);report['nativeFixtures'].append({'intent':intent,'result':result});check('ControlledNativeFixture'+operation,result['status']=='Committed',result=result)
    def screenshot(state):
     body=wait(lambda:feedback(state));o=body['feedback'];check(state+'VisibleCorrelatedMessage',o and o['width']>=180 and o['height']==48 and o['clip']=='none' and o['display']!='none' and o['accessibleName']==o['text'] and o['atomic']=='true' and o['live']=='polite',feedback=o)
     image=OUTPUT/(state+'.png');helper(['/usr/bin/grim',str(image)])
@@ -142,7 +159,7 @@ try:
      # Count only current control interiors. Whole-popup counts incorrectly
      # included the compositor's warning overlay above a black reopened popup.
      for button in body['buttons']:
-      selected=button['accessibleName'].startswith('Browse workspace ') if TASKVIEW else button['accessibleName'] in ['Refresh applications','Open Files']
+      selected=(button['accessibleName'].startswith('Browse workspace ') or (NAV and button['accessibleName'].startswith('Restore ELM-ACTIVATION-PEER'))) if TASKVIEW else button['accessibleName'] in ['Refresh applications','Open Files']
       if not selected or button['disabled'] or button['y']<0 or button['y']+button['height']>box[3]:continue
       left,top=max(0,int(box[0]+button['x'])+12),max(100,int(box[1]+button['y'])+6)
       right,bottom=min(800,int(box[0]+button['x']+min(220,button['width']))-12),min(600,box[1]+box[3],int(box[1]+button['y']+button['height'])-6)
@@ -167,7 +184,49 @@ try:
       key(15)
      check('KeyboardReaches'+label,popup_body()['focus']==button['id'],body=popup_body())
      key(57)
-    if TASKVIEW:
+    if NAV:
+     def peer_window():return next(w for w in facts()['facts']['windows'] if w['incarnation']==peer_identity)
+     def native_membership():return sorted((w['incarnation'],w['workspace'],w['monitor']) for w in facts()['facts']['windows'])
+     original_membership=native_membership()
+     check('OriginalWorkspaceTwoMinimizedFixture',peer_window()['workspace']=='2' and peer_window()['minimized'] and not peer_window()['workspaceVisible'] and s.data('monitors')[0]['activeWorkspace']['id']==1,membership=original_membership)
+     def restored(stage,before):
+      wait(lambda:peer_window()['workspaceVisible'] and not peer_window()['minimized'] and facts()['facts']['focused']==peer_identity and (projection() or {}).get('phase')=='Coherent')
+      check(stage+'ExactlyOneRestore',len(journal())==before+1 and journal()[-1]['intent']['incarnation']==peer_identity and journal()[-1]['intent']['operation']=='restore',journal=journal()[before:])
+      submitted=journal()[-1]
+      def correlated_receipts():
+       frames=[json.loads(l.split(': ',1)[1]) for l in text().splitlines() if l.startswith('backend-frame: ')]
+       return [f for f in frames if f.get('kind')=='effect-outcome' and f.get('binding')==submitted['binding'] and f.get('effectProtocol')==submitted['effectProtocol'] and f.get('intent')==submitted['intent']]
+      receipts=wait(correlated_receipts);check(stage+'CorrelatedNativeRestoreReceipt',len(receipts)==1 and receipts[0]['status']=='Committed',request=submitted,receipts=receipts)
+      report.setdefault('navigationReceipts',[]).append({'stage':stage,'request':submitted,'receipt':receipts[0]})
+      check(stage+'PreservesWorkspaceAndOutput',native_membership()==original_membership and s.data('monitors')[0]['activeWorkspace']['id']==2,membership=native_membership())
+      events=control.with_suffix('.events.jsonl');before_events=len(events.read_text().splitlines()) if events.exists() else 0
+      key(30);delivered=[json.loads(l) for l in events.read_text().splitlines()[before_events:]] if events.exists() else []
+      check(stage+'RealKeyboardRecipient',facts()['facts']['focused']==peer_identity and any(e['kind']=='key' and e['keyval']==97 and e['window']=='ELM-ACTIVATION-PEER' for e in delivered),events=delivered)
+      image=OUTPUT/(stage+'.png');helper(['/usr/bin/grim',str(image)])
+      import gi;gi.require_version('GdkPixbuf','2.0');from gi.repository import GdkPixbuf
+      pix=GdkPixbuf.Pixbuf.new_from_file(str(image));data=pix.get_pixels();stride=pix.get_rowstride();channels=pix.get_n_channels();x,y,width,height=map(int,peer_window()['geometry']);left,top=max(0,x+10),max(100,y+10);right,bottom=min(800,x+width-10),min(600,y+height-10)
+      green=sum(1 for py in range(top,bottom) for px in range(left,right) if data[py*stride+px*channels+1]>100 and data[py*stride+px*channels+1]>data[py*stride+px*channels]+30 and data[py*stride+px*channels+1]>data[py*stride+px*channels+2]+30)
+      check(stage+'ActualRestoredWindowPixels',green>1000,image=str(image),sha256=sha(image),region=[left,top,right,bottom],greenPixels=green)
+      report.setdefault('navigationCaptures',[]).append({'stage':stage,'path':str(image),'sha256':sha(image),'nativeFacts':facts(),'events':delivered})
+     opener=wait(lambda:next((b for b in (bar_body() or {}).get('buttons',[]) if b['accessibleName']=='Open Task View' and not b['disabled']),None))
+     before=len(journal());click({'visible':0<=opener['x']<800 and 0<=opener['y']<48,'point':[opener['x']+opener['width']/2,opener['y']+opener['height']/2]})
+     button=wait(lambda:next((b for b in (popup_body() or {}).get('buttons',[]) if 'ELM-ACTIVATION-PEER on workspace 2' in b['accessibleName'] and not b['disabled']),None))
+     popup_capture('task-view-before-select');capture=report['popupCaptures'][-1];check('TaskViewNavigationControlsArePainted',bool(capture['controlRegions']) and all(r['area']>0 and r['brightPixels']>30 and r['paintedPixels']>.9*r['area'] for r in capture['controlRegions']),capture=capture)
+     keyboard_button(button['accessibleName']);restored('TaskViewRestore',before)
+     # Set up a second original journey before its user input. These fixture
+     # actions are never used to repair focus after the GUI selection.
+     private_effect('minimize',peer_identity)
+     check('SecondFixtureReturnsWorkspaceOne',s.ctl('dispatch',"hl.dsp.focus({window='"+selector+"'})").strip()=='ok')
+     wait(lambda:peer_window()['minimized'] and not peer_window()['workspaceVisible'] and s.data('monitors')[0]['activeWorkspace']['id']==1 and (projection() or {}).get('phase')=='Coherent')
+     before=len(journal());click(wait(lambda:group('Choose a window from')))
+     button=wait(lambda:next((b for b in (popup_body() or {}).get('buttons',[]) if 'ELM-ACTIVATION-PEER' in b['accessibleName'] and not b['disabled']),None))
+     popup_capture('taskbar-before-select');capture=report['popupCaptures'][-1];check('TaskbarNavigationControlsArePainted',bool(capture['controlRegions']) and all(r['area']>0 and r['brightPixels']>30 and r['paintedPixels']>.9*r['area'] for r in capture['controlRegions']),capture=capture)
+     keyboard_button(button['accessibleName']);restored('TaskbarRestore',before)
+     old=facts();check('RefusalFixtureFocusChanges',s.ctl('dispatch',"hl.dsp.focus({window='"+selector+"'})").strip()=='ok');wait(lambda:facts()['facts']['focused']==target)
+     before_refusal=facts();n=str(9000+len(report['nativeFixtures']));intent={'request':n,'generation':n,'incarnation':peer_identity,'operation':'activate','context':client.context(old)};receipt=client.effect(intent);report['nativeFixtures'].append({'intent':intent,'result':receipt})
+     check('StaleActivationRefusesWithoutNavigationOrFocus',receipt['status']=='Refused' and receipt['reason']=='dependency-mismatch' and facts()['facts']==before_refusal['facts'] and s.data('monitors')[0]['activeWorkspace']['id']==1,result=receipt,before=before_refusal,after=facts())
+     report['nativeNavigationJourneyObserved']=True
+    elif TASKVIEW:
      wait(lambda:(projection() or {}).get('phase')=='Coherent')
      native_facts=facts();labels={w['incarnation']:w['label'] for w in client.snapshot('443')['windows']}
      membership=[{'incarnation':w['incarnation'],'label':labels[w['incarnation']],'workspace':w['workspace']} for w in native_facts['facts']['windows'] if w['incarnation'] in labels]

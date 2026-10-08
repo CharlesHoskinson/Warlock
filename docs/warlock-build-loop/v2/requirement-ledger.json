@@ -4102,14 +4102,96 @@
       "owner": "Desktop experience lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "activate-other-workspace",
           "oracle": "workspace 2 becomes visible on its owning output and target pixels and focus are observed with membership unchanged",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/workspace-navigation/current-manifest.json",
+              "sha256": "0cfff2972f03d2aa40fc55980076e95b9e07c74b0dde72b36bea7b3fce3e4db0"
+            }
+          ],
+          "missingObservation": "Taskbar reopened selection controls remain black; native restore receipt/focus/target pixels were observed separately. Independent observed results and applicable native AT remain unverified.",
+          "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+          "evidenceScope": "Owner observations of current native workspace navigation, compiled exact-choice/no-replay checks and physical Task View restoration. Taskbar reopen presentation fails; no requirement/release acceptance.",
+          "reviewerDisposition": {
+            "name": "root-workspace-navigation",
+            "independent": false,
+            "disposition": "Owner observed; independent acceptance pending"
+          },
+          "sourceTuple": {
+            "sourceBaseRevision": "e8f23175038a49b9503af79eb4e5540cd0a89ab1",
+            "sourceHashes": {
+              "implementation/warlock/src/Desktop.elm": "63bcac5e0ad15f18d20ea233c38f28c8425459275e977068e406f8c3a3360448",
+              "implementation/warlock/adapter/taskbar_projection.py": "e40a0ef7d937dae465ca6a481442c1e3f7aaf4d0c159613fb9c02dbbc3b729a4",
+              "implementation/warlock/native/authority.cpp": "5ba7996e4bb6606f10e03ad334d0fff8ab433807cf5f1da14099250cd8e78101",
+              "implementation/warlock/native/navigation-modal.hpp": "f3a1fdabeaa4abdaa3bcd839e0a3b62854a844cd791dd338d8f1a3e5bb488c1e",
+              "implementation/warlock/qa/check-native-authority.py": "1fcb6b1838cd77082b411ad90f9ea537fe003d1f05c855820dbf9a1c6199f061",
+              "implementation/warlock/qa/current-native-pair.json": "ba7f28444c9204883de2e3f14d4b19bd2c566f875cb2485f5c0c1412541936bd",
+              "implementation/warlock/qa/check-search.py": "a531464ed855263cf115d0063bf442bf0b717729a655b11a17a537cba0be96b7",
+              "implementation/warlock/qa/native-window-feedback.py": "e8a4c2c2c797cbcaeebd5716798dc7f614b499033dcaa4627c6081ed2cb3e7a1",
+              "implementation/warlock/qa/TaskViewReplay.elm": "7cfe7c2f79b422eb03718475b56d326ce016ad85c59c4c2d93e5d7ca23f6fbc8",
+              "implementation/warlock/qa/workspace-navigation.qnt": "91e24c0cde7b481c8d5cb2710c3be7f5d4f5e63963c88a36d32329050bee126c",
+              "implementation/warlock/qa/check-navigation-projection.py": "8e4ebd614267abdd46f91786fd995778a6ef98b55807e208b171f114ad1cc32a",
+              "implementation/warlock/qa/current-search-build.json": "1eb0100aa17c7163f93971af6e8a8ce88b342de1d5e055cda1805cae7a1ff0c1",
+              "implementation/warlock/assets/elm.js": "667a48618ad94013f16ac1be40090b0144364984fca520ca1d8da692e3cfa560",
+              "implementation/warlock/assets/bar.js": "8cbd65ef673c71ea3c420176440776cf44bb9edf70a18933839adb7c3ad72a97",
+              "implementation/warlock/assets/popup.js": "a44f1caa745e99d7e8049134f1efc6081ccc1e9c531b5049a800c5ffe80a3b0a",
+              "implementation/warlock/src/Surface.elm": "441e2e5e777d5a5eee003dd8d19fe9fad62a08a633b129275354f5008cae3a2f"
+            },
+            "core": {
+              "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v16/build-1791282659756472310/Hyprland",
+              "sha256": "201d543c1e4c4833ebe3bafa07944ccda15236cf2ef7a763941d337592ac80ee"
+            },
+            "plugin": {
+              "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791420463250458704/elm-window-geometry-authority.so",
+              "sha256": "649dac1d070ea5995603de5a261e4a53271302dc16dd6aeb73d8ae535cd2fc3b"
+            },
+            "authorityBuild": {
+              "path": "implementation/warlock/qa/runs/native-authority-1791420463250458704/report.json",
+              "sha256": "b1521d34aa9f13859dab10f0055a073eeec8c58a8c9879b918c17d695f210a72"
+            },
+            "componentBuild": {
+              "path": "implementation/warlock/qa/runs/workspace-navigation-1791420708862297983/report.json",
+              "sha256": "671c6a4450c387ec87428331fb6b5f2f2cc58b3d45b05104f1c0d2398e07a11f"
+            },
+            "nativeDriverSHA256": "e8a4c2c2c797cbcaeebd5716798dc7f614b499033dcaa4627c6081ed2cb3e7a1",
+            "nativeCurrentReport": {
+              "path": "implementation/warlock/qa/runs/native-workspace-navigation-1791421298557348613/report.json",
+              "sha256": "3f6b5f8e1d901675e672b1a8b54f6760025d9f5aeaca14ea10c8cecae30ddb00"
+            }
+          },
+          "scopedObservations": [
+            {
+              "atUTC": "2026-10-08T00:58:53.718567+00:00",
+              "disposition": "partial",
+              "scope": "Owner observations of current native workspace navigation, compiled exact-choice/no-replay checks and physical Task View restoration. Taskbar reopen presentation fails; no requirement/release acceptance.",
+              "missingObservations": [
+                "Taskbar reopened selection controls remain black; native restore receipt/focus/target pixels were observed separately.",
+                "Independent observed results and applicable native AT remain unverified."
+              ],
+              "evidence": {
+                "path": "implementation/warlock/qa/evidence/workspace-navigation/manifest.json",
+                "sha256": "f53d8473cf5d4c25e2655b10954d1ed04f56f4c2521d7321954e57dcbb7de25f"
+              }
+            },
+            {
+              "atUTC": "2026-10-08T01:02:45.927225+00:00",
+              "disposition": "partial",
+              "scope": "Owner observations of current native workspace navigation, compiled exact-choice/no-replay checks and physical Task View restoration. Taskbar reopen presentation fails; no requirement/release acceptance.",
+              "missingObservations": [
+                "Taskbar reopened selection controls remain black; native restore receipt/focus/target pixels were observed separately.",
+                "Independent observed results and applicable native AT remain unverified."
+              ],
+              "evidence": {
+                "path": "implementation/warlock/qa/evidence/workspace-navigation/current-manifest.json",
+                "sha256": "0cfff2972f03d2aa40fc55980076e95b9e07c74b0dde72b36bea7b3fce3e4db0"
+              }
+            }
+          ]
         },
         {
           "name": "activate-other-output",
@@ -4121,16 +4203,180 @@
         {
           "name": "activation-refused",
           "oracle": "current visible focus remains, no hidden target gets focus and correlated refusal appears",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/workspace-navigation/current-manifest.json",
+              "sha256": "0cfff2972f03d2aa40fc55980076e95b9e07c74b0dde72b36bea7b3fce3e4db0"
+            }
+          ],
+          "missingObservation": "Native stale-context Refused preserves current visible focus; actual GUI-correlated refusal presentation is unverified. Independent review and applicable native AT remain unverified.",
+          "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+          "evidenceScope": "Owner observations of current native workspace navigation, compiled exact-choice/no-replay checks and physical Task View restoration. Taskbar reopen presentation fails; no requirement/release acceptance.",
+          "reviewerDisposition": {
+            "name": "root-workspace-navigation",
+            "independent": false,
+            "disposition": "Owner observed; independent acceptance pending"
+          },
+          "sourceTuple": {
+            "sourceBaseRevision": "e8f23175038a49b9503af79eb4e5540cd0a89ab1",
+            "sourceHashes": {
+              "implementation/warlock/src/Desktop.elm": "63bcac5e0ad15f18d20ea233c38f28c8425459275e977068e406f8c3a3360448",
+              "implementation/warlock/adapter/taskbar_projection.py": "e40a0ef7d937dae465ca6a481442c1e3f7aaf4d0c159613fb9c02dbbc3b729a4",
+              "implementation/warlock/native/authority.cpp": "5ba7996e4bb6606f10e03ad334d0fff8ab433807cf5f1da14099250cd8e78101",
+              "implementation/warlock/native/navigation-modal.hpp": "f3a1fdabeaa4abdaa3bcd839e0a3b62854a844cd791dd338d8f1a3e5bb488c1e",
+              "implementation/warlock/qa/check-native-authority.py": "1fcb6b1838cd77082b411ad90f9ea537fe003d1f05c855820dbf9a1c6199f061",
+              "implementation/warlock/qa/current-native-pair.json": "ba7f28444c9204883de2e3f14d4b19bd2c566f875cb2485f5c0c1412541936bd",
+              "implementation/warlock/qa/check-search.py": "a531464ed855263cf115d0063bf442bf0b717729a655b11a17a537cba0be96b7",
+              "implementation/warlock/qa/native-window-feedback.py": "e8a4c2c2c797cbcaeebd5716798dc7f614b499033dcaa4627c6081ed2cb3e7a1",
+              "implementation/warlock/qa/TaskViewReplay.elm": "7cfe7c2f79b422eb03718475b56d326ce016ad85c59c4c2d93e5d7ca23f6fbc8",
+              "implementation/warlock/qa/workspace-navigation.qnt": "91e24c0cde7b481c8d5cb2710c3be7f5d4f5e63963c88a36d32329050bee126c",
+              "implementation/warlock/qa/check-navigation-projection.py": "8e4ebd614267abdd46f91786fd995778a6ef98b55807e208b171f114ad1cc32a",
+              "implementation/warlock/qa/current-search-build.json": "1eb0100aa17c7163f93971af6e8a8ce88b342de1d5e055cda1805cae7a1ff0c1",
+              "implementation/warlock/assets/elm.js": "667a48618ad94013f16ac1be40090b0144364984fca520ca1d8da692e3cfa560",
+              "implementation/warlock/assets/bar.js": "8cbd65ef673c71ea3c420176440776cf44bb9edf70a18933839adb7c3ad72a97",
+              "implementation/warlock/assets/popup.js": "a44f1caa745e99d7e8049134f1efc6081ccc1e9c531b5049a800c5ffe80a3b0a",
+              "implementation/warlock/src/Surface.elm": "441e2e5e777d5a5eee003dd8d19fe9fad62a08a633b129275354f5008cae3a2f"
+            },
+            "core": {
+              "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v16/build-1791282659756472310/Hyprland",
+              "sha256": "201d543c1e4c4833ebe3bafa07944ccda15236cf2ef7a763941d337592ac80ee"
+            },
+            "plugin": {
+              "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791420463250458704/elm-window-geometry-authority.so",
+              "sha256": "649dac1d070ea5995603de5a261e4a53271302dc16dd6aeb73d8ae535cd2fc3b"
+            },
+            "authorityBuild": {
+              "path": "implementation/warlock/qa/runs/native-authority-1791420463250458704/report.json",
+              "sha256": "b1521d34aa9f13859dab10f0055a073eeec8c58a8c9879b918c17d695f210a72"
+            },
+            "componentBuild": {
+              "path": "implementation/warlock/qa/runs/workspace-navigation-1791420708862297983/report.json",
+              "sha256": "671c6a4450c387ec87428331fb6b5f2f2cc58b3d45b05104f1c0d2398e07a11f"
+            },
+            "nativeDriverSHA256": "e8a4c2c2c797cbcaeebd5716798dc7f614b499033dcaa4627c6081ed2cb3e7a1",
+            "nativeCurrentReport": {
+              "path": "implementation/warlock/qa/runs/native-workspace-navigation-1791421298557348613/report.json",
+              "sha256": "3f6b5f8e1d901675e672b1a8b54f6760025d9f5aeaca14ea10c8cecae30ddb00"
+            }
+          },
+          "scopedObservations": [
+            {
+              "atUTC": "2026-10-08T00:58:53.718627+00:00",
+              "disposition": "partial",
+              "scope": "Owner observations of current native workspace navigation, compiled exact-choice/no-replay checks and physical Task View restoration. Taskbar reopen presentation fails; no requirement/release acceptance.",
+              "missingObservations": [
+                "Native stale-context Refused preserves current visible focus; actual GUI-correlated refusal presentation is unverified.",
+                "Independent review and applicable native AT remain unverified."
+              ],
+              "evidence": {
+                "path": "implementation/warlock/qa/evidence/workspace-navigation/manifest.json",
+                "sha256": "f53d8473cf5d4c25e2655b10954d1ed04f56f4c2521d7321954e57dcbb7de25f"
+              }
+            },
+            {
+              "atUTC": "2026-10-08T01:02:45.927346+00:00",
+              "disposition": "partial",
+              "scope": "Owner observations of current native workspace navigation, compiled exact-choice/no-replay checks and physical Task View restoration. Taskbar reopen presentation fails; no requirement/release acceptance.",
+              "missingObservations": [
+                "Native stale-context Refused preserves current visible focus; actual GUI-correlated refusal presentation is unverified.",
+                "Independent review and applicable native AT remain unverified."
+              ],
+              "evidence": {
+                "path": "implementation/warlock/qa/evidence/workspace-navigation/current-manifest.json",
+                "sha256": "0cfff2972f03d2aa40fc55980076e95b9e07c74b0dde72b36bea7b3fce3e4db0"
+              }
+            }
+          ]
         },
         {
           "name": "navigation-partial-refusal",
           "oracle": "eligible visible destination fallback or separately generation-validated compensation restores usable focus; no stale target or uncertain replay occurs",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/workspace-navigation/current-manifest.json",
+              "sha256": "0cfff2972f03d2aa40fc55980076e95b9e07c74b0dde72b36bea7b3fce3e4db0"
+            }
+          ],
+          "missingObservation": "Native post-navigation restore refusal with destination fallback or separately validated compensation has not been exercised. Only implementation, changed authority compile and bounded model support this path; independent/native/AT observations remain open.",
+          "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+          "evidenceScope": "Owner observations of current native workspace navigation, compiled exact-choice/no-replay checks and physical Task View restoration. Taskbar reopen presentation fails; no requirement/release acceptance.",
+          "reviewerDisposition": {
+            "name": "root-workspace-navigation",
+            "independent": false,
+            "disposition": "Owner observed; independent acceptance pending"
+          },
+          "sourceTuple": {
+            "sourceBaseRevision": "e8f23175038a49b9503af79eb4e5540cd0a89ab1",
+            "sourceHashes": {
+              "implementation/warlock/src/Desktop.elm": "63bcac5e0ad15f18d20ea233c38f28c8425459275e977068e406f8c3a3360448",
+              "implementation/warlock/adapter/taskbar_projection.py": "e40a0ef7d937dae465ca6a481442c1e3f7aaf4d0c159613fb9c02dbbc3b729a4",
+              "implementation/warlock/native/authority.cpp": "5ba7996e4bb6606f10e03ad334d0fff8ab433807cf5f1da14099250cd8e78101",
+              "implementation/warlock/native/navigation-modal.hpp": "f3a1fdabeaa4abdaa3bcd839e0a3b62854a844cd791dd338d8f1a3e5bb488c1e",
+              "implementation/warlock/qa/check-native-authority.py": "1fcb6b1838cd77082b411ad90f9ea537fe003d1f05c855820dbf9a1c6199f061",
+              "implementation/warlock/qa/current-native-pair.json": "ba7f28444c9204883de2e3f14d4b19bd2c566f875cb2485f5c0c1412541936bd",
+              "implementation/warlock/qa/check-search.py": "a531464ed855263cf115d0063bf442bf0b717729a655b11a17a537cba0be96b7",
+              "implementation/warlock/qa/native-window-feedback.py": "e8a4c2c2c797cbcaeebd5716798dc7f614b499033dcaa4627c6081ed2cb3e7a1",
+              "implementation/warlock/qa/TaskViewReplay.elm": "7cfe7c2f79b422eb03718475b56d326ce016ad85c59c4c2d93e5d7ca23f6fbc8",
+              "implementation/warlock/qa/workspace-navigation.qnt": "91e24c0cde7b481c8d5cb2710c3be7f5d4f5e63963c88a36d32329050bee126c",
+              "implementation/warlock/qa/check-navigation-projection.py": "8e4ebd614267abdd46f91786fd995778a6ef98b55807e208b171f114ad1cc32a",
+              "implementation/warlock/qa/current-search-build.json": "1eb0100aa17c7163f93971af6e8a8ce88b342de1d5e055cda1805cae7a1ff0c1",
+              "implementation/warlock/assets/elm.js": "667a48618ad94013f16ac1be40090b0144364984fca520ca1d8da692e3cfa560",
+              "implementation/warlock/assets/bar.js": "8cbd65ef673c71ea3c420176440776cf44bb9edf70a18933839adb7c3ad72a97",
+              "implementation/warlock/assets/popup.js": "a44f1caa745e99d7e8049134f1efc6081ccc1e9c531b5049a800c5ffe80a3b0a",
+              "implementation/warlock/src/Surface.elm": "441e2e5e777d5a5eee003dd8d19fe9fad62a08a633b129275354f5008cae3a2f"
+            },
+            "core": {
+              "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v16/build-1791282659756472310/Hyprland",
+              "sha256": "201d543c1e4c4833ebe3bafa07944ccda15236cf2ef7a763941d337592ac80ee"
+            },
+            "plugin": {
+              "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791420463250458704/elm-window-geometry-authority.so",
+              "sha256": "649dac1d070ea5995603de5a261e4a53271302dc16dd6aeb73d8ae535cd2fc3b"
+            },
+            "authorityBuild": {
+              "path": "implementation/warlock/qa/runs/native-authority-1791420463250458704/report.json",
+              "sha256": "b1521d34aa9f13859dab10f0055a073eeec8c58a8c9879b918c17d695f210a72"
+            },
+            "componentBuild": {
+              "path": "implementation/warlock/qa/runs/workspace-navigation-1791420708862297983/report.json",
+              "sha256": "671c6a4450c387ec87428331fb6b5f2f2cc58b3d45b05104f1c0d2398e07a11f"
+            },
+            "nativeDriverSHA256": "e8a4c2c2c797cbcaeebd5716798dc7f614b499033dcaa4627c6081ed2cb3e7a1",
+            "nativeCurrentReport": {
+              "path": "implementation/warlock/qa/runs/native-workspace-navigation-1791421298557348613/report.json",
+              "sha256": "3f6b5f8e1d901675e672b1a8b54f6760025d9f5aeaca14ea10c8cecae30ddb00"
+            }
+          },
+          "scopedObservations": [
+            {
+              "atUTC": "2026-10-08T00:58:53.718672+00:00",
+              "disposition": "partial",
+              "scope": "Owner observations of current native workspace navigation, compiled exact-choice/no-replay checks and physical Task View restoration. Taskbar reopen presentation fails; no requirement/release acceptance.",
+              "missingObservations": [
+                "Native post-navigation restore refusal with destination fallback or separately validated compensation has not been exercised.",
+                "Only implementation, changed authority compile and bounded model support this path; independent/native/AT observations remain open."
+              ],
+              "evidence": {
+                "path": "implementation/warlock/qa/evidence/workspace-navigation/manifest.json",
+                "sha256": "f53d8473cf5d4c25e2655b10954d1ed04f56f4c2521d7321954e57dcbb7de25f"
+              }
+            },
+            {
+              "atUTC": "2026-10-08T01:02:45.927451+00:00",
+              "disposition": "partial",
+              "scope": "Owner observations of current native workspace navigation, compiled exact-choice/no-replay checks and physical Task View restoration. Taskbar reopen presentation fails; no requirement/release acceptance.",
+              "missingObservations": [
+                "Native post-navigation restore refusal with destination fallback or separately validated compensation has not been exercised.",
+                "Only implementation, changed authority compile and bounded model support this path; independent/native/AT observations remain open."
+              ],
+              "evidence": {
+                "path": "implementation/warlock/qa/evidence/workspace-navigation/current-manifest.json",
+                "sha256": "0cfff2972f03d2aa40fc55980076e95b9e07c74b0dde72b36bea7b3fce3e4db0"
+              }
+            }
+          ]
         }
       ]
     },
@@ -4345,9 +4591,89 @@
         {
           "name": "overview-select",
           "oracle": "matching restore/navigation commits and the target becomes visible",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/workspace-navigation/current-manifest.json",
+              "sha256": "0cfff2972f03d2aa40fc55980076e95b9e07c74b0dde72b36bea7b3fce3e4db0"
+            }
+          ],
+          "missingObservation": "Exact physical Task View selection, native receipt, workspace-2 pixels/focus and real keyboard recipient observed by owner. Independent review and applicable native AT remain unverified.",
+          "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+          "evidenceScope": "Owner observations of current native workspace navigation, compiled exact-choice/no-replay checks and physical Task View restoration. Taskbar reopen presentation fails; no requirement/release acceptance.",
+          "reviewerDisposition": {
+            "name": "root-workspace-navigation",
+            "independent": false,
+            "disposition": "Owner observed; independent acceptance pending"
+          },
+          "sourceTuple": {
+            "sourceBaseRevision": "e8f23175038a49b9503af79eb4e5540cd0a89ab1",
+            "sourceHashes": {
+              "implementation/warlock/src/Desktop.elm": "63bcac5e0ad15f18d20ea233c38f28c8425459275e977068e406f8c3a3360448",
+              "implementation/warlock/adapter/taskbar_projection.py": "e40a0ef7d937dae465ca6a481442c1e3f7aaf4d0c159613fb9c02dbbc3b729a4",
+              "implementation/warlock/native/authority.cpp": "5ba7996e4bb6606f10e03ad334d0fff8ab433807cf5f1da14099250cd8e78101",
+              "implementation/warlock/native/navigation-modal.hpp": "f3a1fdabeaa4abdaa3bcd839e0a3b62854a844cd791dd338d8f1a3e5bb488c1e",
+              "implementation/warlock/qa/check-native-authority.py": "1fcb6b1838cd77082b411ad90f9ea537fe003d1f05c855820dbf9a1c6199f061",
+              "implementation/warlock/qa/current-native-pair.json": "ba7f28444c9204883de2e3f14d4b19bd2c566f875cb2485f5c0c1412541936bd",
+              "implementation/warlock/qa/check-search.py": "a531464ed855263cf115d0063bf442bf0b717729a655b11a17a537cba0be96b7",
+              "implementation/warlock/qa/native-window-feedback.py": "e8a4c2c2c797cbcaeebd5716798dc7f614b499033dcaa4627c6081ed2cb3e7a1",
+              "implementation/warlock/qa/TaskViewReplay.elm": "7cfe7c2f79b422eb03718475b56d326ce016ad85c59c4c2d93e5d7ca23f6fbc8",
+              "implementation/warlock/qa/workspace-navigation.qnt": "91e24c0cde7b481c8d5cb2710c3be7f5d4f5e63963c88a36d32329050bee126c",
+              "implementation/warlock/qa/check-navigation-projection.py": "8e4ebd614267abdd46f91786fd995778a6ef98b55807e208b171f114ad1cc32a",
+              "implementation/warlock/qa/current-search-build.json": "1eb0100aa17c7163f93971af6e8a8ce88b342de1d5e055cda1805cae7a1ff0c1",
+              "implementation/warlock/assets/elm.js": "667a48618ad94013f16ac1be40090b0144364984fca520ca1d8da692e3cfa560",
+              "implementation/warlock/assets/bar.js": "8cbd65ef673c71ea3c420176440776cf44bb9edf70a18933839adb7c3ad72a97",
+              "implementation/warlock/assets/popup.js": "a44f1caa745e99d7e8049134f1efc6081ccc1e9c531b5049a800c5ffe80a3b0a",
+              "implementation/warlock/src/Surface.elm": "441e2e5e777d5a5eee003dd8d19fe9fad62a08a633b129275354f5008cae3a2f"
+            },
+            "core": {
+              "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v16/build-1791282659756472310/Hyprland",
+              "sha256": "201d543c1e4c4833ebe3bafa07944ccda15236cf2ef7a763941d337592ac80ee"
+            },
+            "plugin": {
+              "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791420463250458704/elm-window-geometry-authority.so",
+              "sha256": "649dac1d070ea5995603de5a261e4a53271302dc16dd6aeb73d8ae535cd2fc3b"
+            },
+            "authorityBuild": {
+              "path": "implementation/warlock/qa/runs/native-authority-1791420463250458704/report.json",
+              "sha256": "b1521d34aa9f13859dab10f0055a073eeec8c58a8c9879b918c17d695f210a72"
+            },
+            "componentBuild": {
+              "path": "implementation/warlock/qa/runs/workspace-navigation-1791420708862297983/report.json",
+              "sha256": "671c6a4450c387ec87428331fb6b5f2f2cc58b3d45b05104f1c0d2398e07a11f"
+            },
+            "nativeDriverSHA256": "e8a4c2c2c797cbcaeebd5716798dc7f614b499033dcaa4627c6081ed2cb3e7a1",
+            "nativeCurrentReport": {
+              "path": "implementation/warlock/qa/runs/native-workspace-navigation-1791421298557348613/report.json",
+              "sha256": "3f6b5f8e1d901675e672b1a8b54f6760025d9f5aeaca14ea10c8cecae30ddb00"
+            }
+          },
+          "scopedObservations": [
+            {
+              "atUTC": "2026-10-08T00:58:53.718717+00:00",
+              "disposition": "partial",
+              "scope": "Owner observations of current native workspace navigation, compiled exact-choice/no-replay checks and physical Task View restoration. Taskbar reopen presentation fails; no requirement/release acceptance.",
+              "missingObservations": [
+                "Exact physical Task View selection, native receipt, workspace-2 pixels/focus and real keyboard recipient observed by owner. Independent review and applicable native AT remain unverified."
+              ],
+              "evidence": {
+                "path": "implementation/warlock/qa/evidence/workspace-navigation/manifest.json",
+                "sha256": "f53d8473cf5d4c25e2655b10954d1ed04f56f4c2521d7321954e57dcbb7de25f"
+              }
+            },
+            {
+              "atUTC": "2026-10-08T01:02:45.927556+00:00",
+              "disposition": "partial",
+              "scope": "Owner observations of current native workspace navigation, compiled exact-choice/no-replay checks and physical Task View restoration. Taskbar reopen presentation fails; no requirement/release acceptance.",
+              "missingObservations": [
+                "Exact physical Task View selection, native receipt, workspace-2 pixels/focus and real keyboard recipient observed by owner. Independent review and applicable native AT remain unverified."
+              ],
+              "evidence": {
+                "path": "implementation/warlock/qa/evidence/workspace-navigation/current-manifest.json",
+                "sha256": "0cfff2972f03d2aa40fc55980076e95b9e07c74b0dde72b36bea7b3fce3e4db0"
+              }
+            }
+          ]
         },
         {
           "name": "overview-refusal",
@@ -5961,14 +6287,96 @@
       "owner": "Elm presentation lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "ux-008",
           "oracle": "native receipt confirms restore and workspace membership has not become scratchpad",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/workspace-navigation/current-manifest.json",
+              "sha256": "0cfff2972f03d2aa40fc55980076e95b9e07c74b0dde72b36bea7b3fce3e4db0"
+            }
+          ],
+          "missingObservation": "Workspace-2 minimized taskbar group selection yielded exact native Restore and unchanged membership, but the stricter reopened-popup control-paint journey fails. Independent review of the exact original icon-selection journey remains unverified.",
+          "verificationScope": "Elm replay assertion and isolated native recording: native receipt confirms restore and workspace membership has not become scratchpad.",
+          "evidenceScope": "Owner observations of current native workspace navigation, compiled exact-choice/no-replay checks and physical Task View restoration. Taskbar reopen presentation fails; no requirement/release acceptance.",
+          "reviewerDisposition": {
+            "name": "root-workspace-navigation",
+            "independent": false,
+            "disposition": "Owner observed; independent acceptance pending"
+          },
+          "sourceTuple": {
+            "sourceBaseRevision": "e8f23175038a49b9503af79eb4e5540cd0a89ab1",
+            "sourceHashes": {
+              "implementation/warlock/src/Desktop.elm": "63bcac5e0ad15f18d20ea233c38f28c8425459275e977068e406f8c3a3360448",
+              "implementation/warlock/adapter/taskbar_projection.py": "e40a0ef7d937dae465ca6a481442c1e3f7aaf4d0c159613fb9c02dbbc3b729a4",
+              "implementation/warlock/native/authority.cpp": "5ba7996e4bb6606f10e03ad334d0fff8ab433807cf5f1da14099250cd8e78101",
+              "implementation/warlock/native/navigation-modal.hpp": "f3a1fdabeaa4abdaa3bcd839e0a3b62854a844cd791dd338d8f1a3e5bb488c1e",
+              "implementation/warlock/qa/check-native-authority.py": "1fcb6b1838cd77082b411ad90f9ea537fe003d1f05c855820dbf9a1c6199f061",
+              "implementation/warlock/qa/current-native-pair.json": "ba7f28444c9204883de2e3f14d4b19bd2c566f875cb2485f5c0c1412541936bd",
+              "implementation/warlock/qa/check-search.py": "a531464ed855263cf115d0063bf442bf0b717729a655b11a17a537cba0be96b7",
+              "implementation/warlock/qa/native-window-feedback.py": "e8a4c2c2c797cbcaeebd5716798dc7f614b499033dcaa4627c6081ed2cb3e7a1",
+              "implementation/warlock/qa/TaskViewReplay.elm": "7cfe7c2f79b422eb03718475b56d326ce016ad85c59c4c2d93e5d7ca23f6fbc8",
+              "implementation/warlock/qa/workspace-navigation.qnt": "91e24c0cde7b481c8d5cb2710c3be7f5d4f5e63963c88a36d32329050bee126c",
+              "implementation/warlock/qa/check-navigation-projection.py": "8e4ebd614267abdd46f91786fd995778a6ef98b55807e208b171f114ad1cc32a",
+              "implementation/warlock/qa/current-search-build.json": "1eb0100aa17c7163f93971af6e8a8ce88b342de1d5e055cda1805cae7a1ff0c1",
+              "implementation/warlock/assets/elm.js": "667a48618ad94013f16ac1be40090b0144364984fca520ca1d8da692e3cfa560",
+              "implementation/warlock/assets/bar.js": "8cbd65ef673c71ea3c420176440776cf44bb9edf70a18933839adb7c3ad72a97",
+              "implementation/warlock/assets/popup.js": "a44f1caa745e99d7e8049134f1efc6081ccc1e9c531b5049a800c5ffe80a3b0a",
+              "implementation/warlock/src/Surface.elm": "441e2e5e777d5a5eee003dd8d19fe9fad62a08a633b129275354f5008cae3a2f"
+            },
+            "core": {
+              "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-core-family-crop-v16/build-1791282659756472310/Hyprland",
+              "sha256": "201d543c1e4c4833ebe3bafa07944ccda15236cf2ef7a763941d337592ac80ee"
+            },
+            "plugin": {
+              "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791420463250458704/elm-window-geometry-authority.so",
+              "sha256": "649dac1d070ea5995603de5a261e4a53271302dc16dd6aeb73d8ae535cd2fc3b"
+            },
+            "authorityBuild": {
+              "path": "implementation/warlock/qa/runs/native-authority-1791420463250458704/report.json",
+              "sha256": "b1521d34aa9f13859dab10f0055a073eeec8c58a8c9879b918c17d695f210a72"
+            },
+            "componentBuild": {
+              "path": "implementation/warlock/qa/runs/workspace-navigation-1791420708862297983/report.json",
+              "sha256": "671c6a4450c387ec87428331fb6b5f2f2cc58b3d45b05104f1c0d2398e07a11f"
+            },
+            "nativeDriverSHA256": "e8a4c2c2c797cbcaeebd5716798dc7f614b499033dcaa4627c6081ed2cb3e7a1",
+            "nativeCurrentReport": {
+              "path": "implementation/warlock/qa/runs/native-workspace-navigation-1791421298557348613/report.json",
+              "sha256": "3f6b5f8e1d901675e672b1a8b54f6760025d9f5aeaca14ea10c8cecae30ddb00"
+            }
+          },
+          "scopedObservations": [
+            {
+              "atUTC": "2026-10-08T00:58:53.718774+00:00",
+              "disposition": "partial",
+              "scope": "Owner observations of current native workspace navigation, compiled exact-choice/no-replay checks and physical Task View restoration. Taskbar reopen presentation fails; no requirement/release acceptance.",
+              "missingObservations": [
+                "Workspace-2 minimized taskbar group selection yielded exact native Restore and unchanged membership, but the stricter reopened-popup control-paint journey fails.",
+                "Independent review of the exact original icon-selection journey remains unverified."
+              ],
+              "evidence": {
+                "path": "implementation/warlock/qa/evidence/workspace-navigation/manifest.json",
+                "sha256": "f53d8473cf5d4c25e2655b10954d1ed04f56f4c2521d7321954e57dcbb7de25f"
+              }
+            },
+            {
+              "atUTC": "2026-10-08T01:02:45.927674+00:00",
+              "disposition": "partial",
+              "scope": "Owner observations of current native workspace navigation, compiled exact-choice/no-replay checks and physical Task View restoration. Taskbar reopen presentation fails; no requirement/release acceptance.",
+              "missingObservations": [
+                "Workspace-2 minimized taskbar group selection yielded exact native Restore and unchanged membership, but the stricter reopened-popup control-paint journey fails.",
+                "Independent review of the exact original icon-selection journey remains unverified."
+              ],
+              "evidence": {
+                "path": "implementation/warlock/qa/evidence/workspace-navigation/current-manifest.json",
+                "sha256": "0cfff2972f03d2aa40fc55980076e95b9e07c74b0dde72b36bea7b3fce3e4db0"
+              }
+            }
+          ]
         }
       ]
     },

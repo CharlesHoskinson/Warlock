@@ -1,10 +1,10 @@
 """Focused compiled launcher/search integration, protected CPU scope only."""
 import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures
-PINS=sys.argv[1:]==['--pins'];POPUP=sys.argv[1:]==['--native-popup'];TASKVIEW=sys.argv[1:]==['--task-view'];assert not sys.argv[1:] or PINS or POPUP or TASKVIEW
+NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'];POPUP=sys.argv[1:]==['--native-popup'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143'
 sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
 scope=require_qa_scope();sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
-OUT=ROOT/'qa/runs'/(('task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
+OUT=ROOT/'qa/runs'/(('workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
 for folder in ['src','native','adapter','assets','qa']:
  (INPUT/folder).mkdir()
  for p in (ROOT/folder).iterdir():
@@ -20,6 +20,7 @@ try:
  if PINS:report.update(requirements=['ELM-UI-004','ELM-UX-004'],scope='Compiled identity pins/reorder, private atomic native persistence, current integrated host; native restart/pixels acceptance pending')
  if POPUP:report.update(requirements=['ELM-UI-005','ELM-UX-029','ELM-UX-004'],scope='Changed native popup presentation units compiled/relinked; previously verified compiled Elm assets reused unchanged; actual native pixels acceptance pending')
  if TASKVIEW:report.update(requirements=['ELM-UX-017','ELM-UI-006'],scope='Compiled integrated Task View, workspace membership/active marker and guarded native selection; native pixels/input and original acceptance remain separate')
+ if NAV:report.update(requirements=['ELM-UI-002','ELM-UI-006','ELM-UX-008'],scope='Compiled exact current off-workspace choice/restore replay and coherent scene admission; bounded navigation/refusal/no-replay model; separately compiled authority and actual native journeys required')
  if not POPUP:
   for name,target in [('Main','elm'),('Bar','bar'),('Popup','popup')]:run('compile-'+name,[str(HELD/pinned['compiler']),'make','src/'+name+'.elm','--optimize','--output=assets/'+target+'.js'])
   run('compile-search',[str(HELD/pinned['compiler']),'make','qa/SearchReplay.elm','--optimize','--output=assets/search.js'])
@@ -29,6 +30,9 @@ try:
   run('compile-task-view',[str(HELD/pinned['compiler']),'make','qa/TaskViewReplay.elm','--optimize','--output=assets/task-view.js'])
   (INPUT/'qa/task-view-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.TaskViewReplay'));run('typed-task-view',['node','qa/task-view-replay.js','assets/task-view.js',str(OUT/'task-view.json')]);report['typedTaskView']=json.loads((OUT/'task-view.json').read_text());assert all(report['typedTaskView']['checks'].values())
   run('task-view-model-typecheck',['quint','typecheck','qa/task-view.qnt']);run('task-view-model-named',['quint','test','qa/task-view.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79101']);run('task-view-model-invariants',['quint','run','qa/task-view.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79102'])
+ if NAV:
+  run('navigation-projection',['/usr/bin/python3','-B','qa/check-navigation-projection.py'])
+  run('navigation-model-typecheck',['quint','typecheck','qa/workspace-navigation.qnt']);run('navigation-model-named',['quint','test','qa/workspace-navigation.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79103']);run('navigation-model-invariants',['quint','run','qa/workspace-navigation.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79104'])
  if PINS:
   run('compile-pins',[str(HELD/pinned['compiler']),'make','qa/PinsReplay.elm','--optimize','--output=assets/pins.js'])
   (INPUT/'qa/pins-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.PinsReplay'));run('typed-pins',['node','qa/pins-replay.js','assets/pins.js',str(OUT/'pins.json')]);report['typedPins']=json.loads((OUT/'pins.json').read_text());assert all(report['typedPins']['checks'].values());run('pin-storage',['/usr/bin/python3','-B','qa/check-pin-storage.py'])
@@ -47,7 +51,10 @@ try:
    assert all(sha(INPUT/p)==h for p,h in prior['inputs'].items() if p.startswith('native/') and p not in ['native/host.c','native/shared-host.c'])
    assert all(sha(INPUT/'assets'/n)==h for n,h in previous['compiledAssets'].items())
   if TASKVIEW:
-   assert all(sha(INPUT/p)==h for p,h in prior['inputs'].items() if p.startswith('native/') and p!='native/surface.h')
+   # The authority TU is independently compiled against its owning core; none
+   # of these reused GTK host objects link it or include its modal preflight.
+   excluded=['native/surface.h']+(['native/authority.cpp','native/navigation-modal.hpp'] if NAV else [])
+   assert all(sha(INPUT/p)==h for p,h in prior['inputs'].items() if p.startswith('native/') and p not in excluded)
    assert all('surface.h' not in (INPUT/'native'/name).read_text() for name in units)
   for name in units:
    assert sha(INPUT/'native'/name)==prior['inputs']['native/'+name];obj=prior_path.parent/(name+'.o');report['reusedNativeObjects'][name]={'sha256':sha(obj),'sourceSHA256':sha(INPUT/'native'/name),'build':str(prior_path)};shutil.copyfile(obj,OUT/(name+'.o'))

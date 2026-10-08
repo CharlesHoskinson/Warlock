@@ -11,6 +11,6 @@ def coherent_scene(before, snapshot, after):
         return None
     return {'revision': after['revision'], 'focused': after['facts']['focused'], 'windows': [
         {**w, 'owner': facts[w['incarnation']]['owner'],
-         'available': facts[w['incarnation']]['workspaceVisible'] and not facts[w['incarnation']]['hidden']
+         'available': not facts[w['incarnation']]['hidden']
                       and facts[w['incarnation']]['workspace'] is not None and int(facts[w['incarnation']]['workspace']) > 0}
         for w in snapshot['windows']]}

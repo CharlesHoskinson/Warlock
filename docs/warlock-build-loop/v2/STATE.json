@@ -1,13 +1,69 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-08T00:24:46.313976+00:00",
+  "updatedUTC": "2026-10-08T01:02:45.929276+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "cross-workspace-native-activation",
+    "requirements": [
+      "ELM-UI-002",
+      "ELM-UI-006",
+      "ELM-UX-008"
+    ],
+    "scenarios": [
+      "activate-other-workspace",
+      "activation-refused",
+      "navigation-partial-refusal",
+      "overview-select",
+      "ux-008"
+    ],
+    "paths": [
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/adapter/taskbar_projection.py",
+      "implementation/warlock/native/authority.cpp",
+      "implementation/warlock/native/navigation-modal.hpp",
+      "implementation/warlock/qa/check-native-authority.py",
+      "implementation/warlock/qa/current-native-pair.json",
+      "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/qa/TaskViewReplay.elm",
+      "implementation/warlock/qa/workspace-navigation.qnt",
+      "implementation/warlock/qa/check-navigation-projection.py",
+      "implementation/warlock/qa/current-search-build.json",
+      "implementation/warlock/assets/elm.js",
+      "implementation/warlock/assets/bar.js",
+      "implementation/warlock/assets/popup.js",
+      "implementation/warlock/src/Surface.elm"
+    ],
+    "before": "Task View and taskbar cannot activate or restore ordinary windows outside visible workspaces; native effect1 refuses them.",
+    "after": "A current family choice navigates to its preserved workspace on its owning output before restore/activation, preserves membership and native focus/keyboard identity, and refuses stale/protected targets without replay.",
+    "verification": [
+      "Compile changed Elm/adapter and native authority TU against exact unchanged owning core; strict symbol and dependency closure",
+      "Typed current/stale choice replay, bracketing adapter tests and bounded navigation/refusal/Unknown Quint schedules",
+      "Protected native workspace-2 restore through actual Task View and taskbar; focus/pixels/membership and stale refusal observations"
+    ],
+    "state": "implemented; physical Task View workspace-2 restore/receipt/focus/keyboard/membership observed; backend taskbar restore observed but reopened picker paint fails; partial-refusal/other-output/independent/AT remain open",
+    "evidence": "implementation/warlock/qa/evidence/workspace-navigation/current-manifest.json"
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "task-view-workspace-overview",
     "requirements": [
       "ELM-UX-017",
@@ -43,51 +99,6 @@
     ],
     "state": "implemented; original two-workspace native membership/active marker/control pixels and local keyboard/pointer browsing observed; dismissal focus failed twice and is deferred; independent/AT review remains open",
     "evidence": "implementation/warlock/qa/evidence/task-view/manifest.json"
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "launcher-popup-presentation",
-    "requirements": [
-      "ELM-UI-005",
-      "ELM-UX-029",
-      "ELM-UX-004"
-    ],
-    "scenarios": [
-      "search-no-match",
-      "search-refused",
-      "launcher-refused",
-      "ux-004"
-    ],
-    "before": "Native applications popup receives input but retained native capture is solid black; search/pin controls are not physically qualified.",
-    "after": "Current launcher results, refusal/no-match status and pin controls paint in the actual owned popup without altering controlled preview reveal authority.",
-    "paths": [
-      "native/host.c",
-      "native/shared-host.c",
-      "qa/native-window-feedback.py",
-      "qa/check-search.py",
-      "qa/current-search-build.json"
-    ],
-    "verification": [
-      "Changed native host compile and relink with verified unchanged objects",
-      "Actual Wayland popup captures correlated to initial/current query, refusal and no-match; keyboard remains current-scoped",
-      "Controlled preview curtain unchanged; original acceptance and applicable AT remain separate"
-    ],
-    "state": "deferred after two unsuccessful native lifecycle fixes; physical reopened popup remains failed",
-    "evidence": "implementation/warlock/qa/evidence/popup-reopen/manifest.json",
-    "missingObservation": "Initial/filtered popup paints; refused/no-match popup after native close/reopen is black. Whole-popup old pixel count was a false positive. Two attempted fixes are retired."
   },
   "recentSlices": [
     {
@@ -213,21 +224,23 @@
     }
   ],
   "nextOriginalSlice": {
-    "id": "cross-workspace-native-activation",
+    "id": "popup-reopen-native-presentation",
     "requirements": [
-      "ELM-UI-002",
-      "ELM-UI-006",
-      "ELM-UX-008"
+      "ELM-UI-004",
+      "ELM-UI-005",
+      "ELM-UX-029"
     ],
     "scenarios": [
-      "activate-other-workspace",
-      "overview-select",
-      "ux-008"
+      "taskbar-group",
+      "search-no-match",
+      "search-refused",
+      "launcher-refused"
     ],
-    "observedBlocker": "Current native effect1 authority requires workspaceVisible and refuses off-workspace roots; current Task View shows them disabled. Implement identity-bound navigation on the owning output without moving membership, validate current target/fallback before activation, and retain original Refused/Unknown semantics. Do not substitute local browsing for navigation.",
+    "observedBlocker": "Current GTK/WebKit popup paints on first map and displays black current controls after reopening. Native workspace navigation is implemented; fix actual popup remap/repaint in the current host while preserving exact leases, one Elm policy, preview curtain/custody, no-replay and owned cleanup. The strict taskbar native campaign observed zero painted/text pixels in the current Restore control.",
     "deferredOriginalFailures": [
-      "ELM-UI-006 overview-cancel: native eligible opener focus return",
-      "ELM-UI-005 reopened launcher popup physical controls"
+      "ELM-UI-006 overview-cancel native opener focus return",
+      "ELM-UI-002 native other-output and partial-refusal compensation",
+      "Native AT/IME and full release qualification remain open"
     ]
   }
 }

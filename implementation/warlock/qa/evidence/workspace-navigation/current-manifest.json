@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "scope": "Owner observations of current native workspace navigation, compiled exact-choice/no-replay checks and physical Task View restoration. Taskbar reopen presentation fails; no requirement/release acceptance.",
+  "requirements": [
+    "ELM-UI-002",
+    "ELM-UI-006",
+    "ELM-UX-008"
+  ],
+  "sourceBaseRevision": "e8f23175038a49b9503af79eb4e5540cd0a89ab1",
+  "sourceHashes": {
+    "implementation/warlock/src/Desktop.elm": "63bcac5e0ad15f18d20ea233c38f28c8425459275e977068e406f8c3a3360448",
+    "implementation/warlock/adapter/taskbar_projection.py": "e40a0ef7d937dae465ca6a481442c1e3f7aaf4d0c159613fb9c02dbbc3b729a4",
+    "implementation/warlock/native/authority.cpp": "5ba7996e4bb6606f10e03ad334d0fff8ab433807cf5f1da14099250cd8e78101",
+    "implementation/warlock/native/navigation-modal.hpp": "f3a1fdabeaa4abdaa3bcd839e0a3b62854a844cd791dd338d8f1a3e5bb488c1e",
+    "implementation/warlock/qa/check-native-authority.py": "1fcb6b1838cd77082b411ad90f9ea537fe003d1f05c855820dbf9a1c6199f061",
+    "implementation/warlock/qa/current-native-pair.json": "ba7f28444c9204883de2e3f14d4b19bd2c566f875cb2485f5c0c1412541936bd",
+    "implementation/warlock/qa/check-search.py": "a531464ed855263cf115d0063bf442bf0b717729a655b11a17a537cba0be96b7",
+    "implementation/warlock/qa/native-window-feedback.py": "e8a4c2c2c797cbcaeebd5716798dc7f614b499033dcaa4627c6081ed2cb3e7a1",
+    "implementation/warlock/qa/TaskViewReplay.elm": "7cfe7c2f79b422eb03718475b56d326ce016ad85c59c4c2d93e5d7ca23f6fbc8",
+    "implementation/warlock/qa/workspace-navigation.qnt": "91e24c0cde7b481c8d5cb2710c3be7f5d4f5e63963c88a36d32329050bee126c",
+    "implementation/warlock/qa/check-navigation-projection.py": "8e4ebd614267abdd46f91786fd995778a6ef98b55807e208b171f114ad1cc32a",
+    "implementation/warlock/qa/current-search-build.json": "1eb0100aa17c7163f93971af6e8a8ce88b342de1d5e055cda1805cae7a1ff0c1",
+    "implementation/warlock/assets/elm.js": "667a48618ad94013f16ac1be40090b0144364984fca520ca1d8da692e3cfa560",
+    "implementation/warlock/assets/bar.js": "8cbd65ef673c71ea3c420176440776cf44bb9edf70a18933839adb7c3ad72a97",
+    "implementation/warlock/assets/popup.js": "a44f1caa745e99d7e8049134f1efc6081ccc1e9c531b5049a800c5ffe80a3b0a",
+    "implementation/warlock/src/Surface.elm": "441e2e5e777d5a5eee003dd8d19fe9fad62a08a633b129275354f5008cae3a2f"
+  },
+  "reports": {
+    "authority": {
+      "path": "implementation/warlock/qa/runs/native-authority-1791420463250458704/report.json",
+      "sha256": "b1521d34aa9f13859dab10f0055a073eeec8c58a8c9879b918c17d695f210a72"
+    },
+    "component": {
+      "path": "implementation/warlock/qa/runs/workspace-navigation-1791420708862297983/report.json",
+      "sha256": "671c6a4450c387ec87428331fb6b5f2f2cc58b3d45b05104f1c0d2398e07a11f"
+    },
+    "firstNative": {
+      "path": "implementation/warlock/qa/runs/native-workspace-navigation-1791420789488351662/report.json",
+      "sha256": "a5af56307d7fb96d6bd58f8ba338836957d969b3a1cf6cc974bb8c634d84a521"
+    },
+    "backendJourneys": {
+      "path": "implementation/warlock/qa/runs/native-workspace-navigation-1791420851413533542/report.json",
+      "sha256": "ec2f73cad955ce52ecfdcf68283e93ff4a7aba8748f74297bf7319929dd3fb33"
+    },
+    "physicalJourney": {
+      "path": "implementation/warlock/qa/runs/native-workspace-navigation-1791421298557348613/report.json",
+      "sha256": "3f6b5f8e1d901675e672b1a8b54f6760025d9f5aeaca14ea10c8cecae30ddb00"
+    },
+    "localFeedbackRegression": {
+      "path": "implementation/warlock/qa/runs/native-feedback-1791421265918459791/report.json",
+      "sha256": "d86fd8ffd96f28477b3efeddb4fe0081d01701502b15b823451bb1f2a6dcc8ff"
+    }
+  },
+  "images": [
+    {
+      "path": "implementation/warlock/qa/evidence/workspace-navigation/current-task-view-controls.png",
+      "sha256": "0c2e0e5f46ed051421af24448ccc804c305b547891bb4b571c3d00734162006e"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/workspace-navigation/current-task-view-restored.png",
+      "sha256": "14dad79954c7fae0423b45e26d91233fdad3dd0d275af43a84875a216093cdb5"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/workspace-navigation/current-taskbar-reopen-failed.png",
+      "sha256": "99898a86966dc676a04aac0498db2d00c6ca2120f9fcef1f248ff0c2f9dc895f"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/workspace-navigation/taskbar-backend-restored.png",
+      "sha256": "a08f888c80ab3d836dbf94d86a0137724e3594ce8b3de0c6ab5f334577e3168d"
+    }
+  ],
+  "observed": [
+    "Ordinary off-workspace families remain listed; hidden/special and incoherent/retired facts remain unavailable.",
+    "Current workspace-2 minimized selection emits one exact Restore after a fresh matching projection; stale/duplicate/retired observations cannot substitute or replay.",
+    "Physically painted Task View keyboard selection restores workspace 2 on the original owning output, preserves all family membership, yields one correlated Committed receipt, shows actual target pixels and delivers real key a to the target.",
+    "Taskbar group selection also yields one correlated native Restore receipt, native focus/keys and target pixels, but this backend-only campaign did not inspect preselection popup paint.",
+    "Stronger current campaign observes black taskbar popup controls on reopen: zero painted/text pixels inside the current Restore control. Original taskbar presentation remains failed.",
+    "Stale dependency activation produces native Refused without navigation/focus/state changes in the backend campaign; actual correlated GUI refusal presentation remains open.",
+    "The current authority pair is used across all candidate GUI modes. Native Pending/Refused/Unknown, observation-only recovery and no automatic effect replay regression pass with the same current pair."
+  ],
+  "missingObservations": [
+    "Independent scenario review and applicable native AT remain open.",
+    "Taskbar popup repaint on reopening must pass before a usable taskbar journey is accepted.",
+    "Native partial-refusal fallback/compensation and other-output navigation fixtures are unverified.",
+    "Overview cancel focus return, empty workspace, native retirement/refusal journeys and transfers remain mandatory.",
+    "These bounded component observations do not qualify full release, packaging or deployment."
+  ],
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "fullReleaseAccepted": false,
+  "reviewerDisposition": {
+    "name": "root-workspace-navigation",
+    "independent": false,
+    "disposition": "Owner observed; independent acceptance pending"
+  },
+  "previousObservation": {
+    "path": "implementation/warlock/qa/evidence/workspace-navigation/manifest.json",
+    "sha256": "f53d8473cf5d4c25e2655b10954d1ed04f56f4c2521d7321954e57dcbb7de25f"
+  }
+}

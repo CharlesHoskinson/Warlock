@@ -7470,7 +7470,7 @@ var $author$project$Surface$notice = function (model) {
 				if (!_v0.a.b) {
 					return 'No windows to show. Close Task View to return.';
 				} else {
-					return 'Choose a window on the current workspace, or browse another workspace.';
+					return 'Choose a window to reveal its workspace, or browse another workspace.';
 				}
 			}
 		}
