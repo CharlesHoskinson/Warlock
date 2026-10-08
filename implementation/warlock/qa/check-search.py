@@ -1,5 +1,6 @@
 """Focused compiled launcher/search integration, protected CPU scope only."""
 import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures,http.server,threading
+KEYBOARD=sys.argv[1:]==['--keyboard-shell']
 ATTENTION=sys.argv[1:]==['--attention']
 JUMP=sys.argv[1:]==['--jump-lists']
 FILES=sys.argv[1:]==['--files']
@@ -14,11 +15,11 @@ DENSE=sys.argv[1:]==['--dense-taskbar'] or PICKER
 PINMENUS=sys.argv[1:]==['--pinned-menus'] or (DENSE and not PICKER)
 PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PINMENUS or PICKER
 SWITCHER=sys.argv[1:]==['--switcher']
-NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'];POPUP=sys.argv[1:]==['--native-popup'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER
+NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'];POPUP=sys.argv[1:]==['--native-popup'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143'
 sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
 scope=require_qa_scope();sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
-OUT=ROOT/'qa/runs'/(('attention-' if ATTENTION else 'jump-lists-' if JUMP else 'files-' if FILES else 'system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
+OUT=ROOT/'qa/runs'/(('keyboard-shell-' if KEYBOARD else 'attention-' if ATTENTION else 'jump-lists-' if JUMP else 'files-' if FILES else 'system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
 for folder in ['src','native','adapter','assets','qa']:
  (INPUT/folder).mkdir()
  for p in (ROOT/folder).iterdir():
@@ -76,6 +77,26 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
   run('compile-task-view',[str(HELD/pinned['compiler']),'make','qa/TaskViewReplay.elm','--optimize','--output=assets/task-view.js'])
   (INPUT/'qa/task-view-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.TaskViewReplay'));run('typed-task-view',['node','qa/task-view-replay.js','assets/task-view.js',str(OUT/'task-view.json')]);report['typedTaskView']=json.loads((OUT/'task-view.json').read_text());assert all(report['typedTaskView']['checks'].values())
   run('task-view-model-typecheck',['quint','typecheck','qa/task-view.qnt']);run('task-view-model-named',['quint','test','qa/task-view.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79101']);run('task-view-model-invariants',['quint','run','qa/task-view.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79102'])
+ if KEYBOARD:
+  report.update(requirements=['ELM-UX-023'],scenarios=['ux-023','keyboard-launcher','keyboard-taskbar-groups','keyboard-switcher','keyboard-task-view','keyboard-snap-chooser','keyboard-menus','keyboard-settings','keyboard-notifications','keyboard-jump-lists'],scope='Compiled integrated native shortcut reducers and strict admission; epoch/serial/gap/no-replay model. Original physical keyboard-only surface journeys and independent acceptance remain separate.')
+  run('shortcut-popup-release',['node','-e',r"""
+const fs=require('fs'),vm=require('vm'),assert=require('assert');const handlers={},sent=[];
+const node={dataset:{mode:'settings',publication:'7',lease:'2'},isConnected:true,contains:()=>true,querySelectorAll:()=>[{dataset:{surfaceControl:'control:close'},disabled:false}]};
+const body={closest:()=>null},document={body,documentElement:{},getElementById:()=>null,querySelector:()=>node,addEventListener:(name,fn)=>{handlers[name]=fn;}};
+const ports=new Proxy({},{get:()=>({send:packet=>sent.push(packet),subscribe:()=>{}})}),window={addEventListener:()=>{},webkit:{messageHandlers:{native:{postMessage:()=>{}}}}};
+vm.runInNewContext(fs.readFileSync('assets/popup-adapter.js','utf8'),{Elm:{Popup:{init:()=>({ports})}},window,document,requestAnimationFrame:()=>{},Object});
+const event=extra=>({key:'Escape',target:body,preventDefault(){},stopImmediatePropagation(){},...extra});
+handlers.keydown(event());assert.equal(sent.length,0);handlers.keyup(event());assert.equal(sent.length,1);assert.equal(sent[0].id,'control:close');handlers.keyup(event());assert.equal(sent.length,1);
+handlers.keydown(event());node.dataset.publication='8';handlers.keyup(event());assert.equal(sent.length,1);
+handlers.keydown(event({isComposing:true}));handlers.keyup(event());assert.equal(sent.length,1);
+handlers.keydown(event({repeat:true}));handlers.keyup(event());assert.equal(sent.length,1);
+handlers.keydown(event({target:{closest:()=>null}}));handlers.keyup(event());assert.equal(sent.length,1);
+console.log('Current body-target Escape releases once; stale scope, preedit, repeat and foreign target refuse');
+"""])
+  report['shortcutAdmission']=json.loads(run('shortcut-admission',['/usr/bin/python3','-B','qa/check-keyboard-shortcuts.py']))
+  run('compile-shortcuts',[str(HELD/pinned['compiler']),'make','qa/KeyboardShortcutsReplay.elm','--optimize','--output=assets/shortcuts.js'])
+  (INPUT/'qa/shortcuts-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.KeyboardShortcutsReplay'));run('typed-shortcuts',['node','qa/shortcuts-replay.js','assets/shortcuts.js',str(OUT/'shortcuts.json')]);report['typedShortcuts']=json.loads((OUT/'shortcuts.json').read_text());assert all(report['typedShortcuts']['checks'].values())
+  run('shortcut-model-typecheck',['quint','typecheck','qa/keyboard-shortcuts.qnt']);run('shortcut-model-named',['quint','test','qa/keyboard-shortcuts.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79133']);run('shortcut-model-invariants',['quint','run','qa/keyboard-shortcuts.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79134'])
  if ATTENTION:
   report.update(requirements=['ELM-UX-009'],scenarios=['ux-009'],scope='Compiled immutable native attention projection, exact observed family states, actual renderer/browser color/accessible labels. Native urgency and original AT acceptance separate.')
   report['attentionProjection']=json.loads(run('attention-projection',['/usr/bin/python3','-B','qa/check-attention.py']))
@@ -156,7 +177,7 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
    if TASKVIEW:
     # The authority TU is independently compiled against its owning core; none
     # of these reused GTK host objects link it or include its modal preflight.
-    excluded=['native/surface.h','native/host.c','native/shared-host.c']+(['native/authority.cpp','native/navigation-modal.hpp'] if NAV else [])+(['native/authority.cpp','native/host-journal.h','native/geometry-effects.inc','native/snap-placement.inc'] if SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION else [])
+    excluded=['native/surface.h','native/host.c','native/shared-host.c','native/shell-bindings.lua','native/shared-context.h','native/shared-context-test.c']+(['native/authority.cpp','native/navigation-modal.hpp'] if NAV else [])+(['native/authority.cpp','native/host-journal.h','native/geometry-effects.inc','native/snap-placement.inc'] if SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD else [])
     assert all(sha(INPUT/p)==h for p,h in prior['inputs'].items() if p.startswith('native/') and p not in excluded)
     assert all('surface.h' not in (INPUT/'native'/name).read_text() for name in units)
    object_path=prior_path;object_report=prior;seen=set()
@@ -171,7 +192,7 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
     futures=[pool.submit(run,name+'-compile',['g++','-std=c++20','-O2','-Wall','-Wextra','-Werror','-Wno-deprecated-declarations','-c','native/'+name,'-o',str(OUT/(name+'.o')),*flags]) for name in units]
     for future in futures:future.result()
   run('host-link',['g++',str(OUT/'host.o'),*[str(OUT/(name+'.o')) for name in units],'-o',str(OUT/'elm-host'),*flags]);report['binarySHA256']=sha(OUT/'elm-host')
-  if SWITCHER:
+  if SWITCHER or KEYBOARD:
    run('popup-context-compile',['cc','-std=c11','-O2','-Wall','-Wextra','-Werror','-Wno-deprecated-declarations','-c','native/shared-context-test.c','-o',str(OUT/'popup-context.o'),*flags])
    run('popup-context-link',['g++',str(OUT/'popup-context.o'),*[str(OUT/(name+'.o')) for name in units],'-o',str(OUT/'popup-context-tests'),*flags])
    run('popup-context-tests',[str(OUT/'popup-context-tests')])

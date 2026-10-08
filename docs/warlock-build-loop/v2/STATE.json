@@ -1,13 +1,119 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-08T15:25:02.721166+00:00",
+  "updatedUTC": "2026-10-08T16:22:03.353053+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "keyboard-shell-routes",
+    "requirements": [
+      "ELM-UX-023"
+    ],
+    "scenarios": [
+      "ux-023",
+      "keyboard-launcher",
+      "keyboard-taskbar-groups",
+      "keyboard-switcher",
+      "keyboard-task-view",
+      "keyboard-snap-chooser",
+      "keyboard-menus",
+      "keyboard-settings",
+      "keyboard-notifications",
+      "keyboard-jump-lists"
+    ],
+    "paths": [
+      "implementation/warlock/src/Shortcuts.elm",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/adapter/effect_endpoint.py",
+      "implementation/warlock/adapter/daemon.py",
+      "implementation/warlock/native/authority.cpp",
+      "implementation/warlock/native/shell-bindings.lua",
+      "implementation/warlock/qa/KeyboardShortcutsReplay.elm",
+      "implementation/warlock/qa/keyboard-shortcuts.qnt",
+      "implementation/warlock/qa/check-keyboard-shortcuts.py",
+      "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/check-native-authority.py",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/README.md",
+      "implementation/warlock/assets/elm.js",
+      "implementation/warlock/assets/bar.js",
+      "implementation/warlock/assets/popup.js",
+      "implementation/warlock/qa/current-search-build.json",
+      "implementation/warlock/qa/current-native-pair.json",
+      "implementation/warlock/native/shared-host.c",
+      "implementation/warlock/assets/popup-adapter.js",
+      "implementation/warlock/native/shared-context.h",
+      "implementation/warlock/native/shared-context-test.c"
+    ],
+    "before": "Migrated controls have local keyboard traversal but Applications and utility surfaces need pointer entry when an application owns native keyboard focus.",
+    "after": "Adopted native Apps/System/Notification history chords deliver typed epoch-bound shortcut events to Elm, enabling pointer-free opening, operation and dismissal across the existing shell controls.",
+    "verification": [
+      "Compiled actual shortcut/root replay and strict broker decoding; epoch/serial/gap/no-replay model; isolated physical keyboard-only original surface journeys with native outcomes/focus and zero injected pointer events. Native AT and independent original acceptance separate."
+    ],
+    "status": "completed-partial",
+    "evidence": {
+      "path": "implementation/warlock/qa/evidence/keyboard-shell/manifest.json",
+      "sha256": "3e413e0ab486f6c37237e93c98acc79878ed16a2cd78e4e55bec14911dfae878",
+      "scope": "Native epoch-bound Apps/System/Notification history entry integrated with the shared immutable Elm root. Owner-observed keyboard-only launcher/GIO submission, declared jump action, notification/system read/dismissal, Saved settings and actual two-member group activation/input/dismissal. Apps layer-parent eligibility and noneditable physical Escape corrected. Combined journey fails at repeated Home group entry; remaining three surfaces are implemented but unverified here. No requirement/release acceptance.",
+      "sourceBaseRevision": "78a9925dcc75e6c138847047c15f8c3e04d17fba",
+      "sourceHashes": {
+        "implementation/warlock/src/Shortcuts.elm": "4647b05774e5be60a497c8b98f30b273b2b6b3e5928062d83d0c51993c23bedb",
+        "implementation/warlock/src/Desktop.elm": "0b9ca548afbf5a6fe3bc4f9928c8c24b83a61866e6952ff5ef37adedaa32aadf",
+        "implementation/warlock/adapter/effect_endpoint.py": "e0c6d613f7313377f0dd5cf01e9675f500b93b2fc55913944db84770a1f251e0",
+        "implementation/warlock/adapter/daemon.py": "7b4cd4279b85b1ebb1858df5d331629d53471e2c197849e88775e515597b7a75",
+        "implementation/warlock/native/authority.cpp": "304f02636c8c9b7e83f43240f119d4a553b8435ad066f8d962026b1ffcac5404",
+        "implementation/warlock/native/shell-bindings.lua": "31de6d303102d9b37ee21367b6197353960636afd12b653b91ad160961354baf",
+        "implementation/warlock/qa/KeyboardShortcutsReplay.elm": "bc6d7339ac682d886ab6dd4cf3bee74302d6b1476b19052e3c1a47c9b6451fc6",
+        "implementation/warlock/qa/keyboard-shortcuts.qnt": "3cff6d0872adf6ee6599091c4f054820ff55b2a610e1be4cedc1464f2b96e90c",
+        "implementation/warlock/qa/check-keyboard-shortcuts.py": "26bd95d5f97b25495ffddae779c6703ce2512aaf8da2f28fe1ecb6d93d9634d2",
+        "implementation/warlock/qa/check-search.py": "05d53addd38b6898cf1879d70d2421a2b5e646c1f84b8ccaf443efcb744f09bb",
+        "implementation/warlock/qa/check-native-authority.py": "61992b791c75000044f87af114032945d846f7c1d6b719c5b40f37bcf529c727",
+        "implementation/warlock/qa/native-window-feedback.py": "de5c83e3c2922b6c51226bec4cc5753f4ec998b68eb04207e4ee558c90799ab0",
+        "implementation/warlock/README.md": "fc8dbafd848dfa9b83545714e4fe88a9445d405e20fae16cd37d67e5c8f9fbbd",
+        "implementation/warlock/assets/elm.js": "177be78e6cb86d68d1e7979715e076f30612ffb5b7d7360d2b517ebfbc7cc4c6",
+        "implementation/warlock/assets/bar.js": "fbe4416674b120412b0be63abe47d438104aaacd3dee2eea4c81323ea9262d29",
+        "implementation/warlock/assets/popup.js": "d56f655974b3c128b442e080350aa37276127b7d2d16a8e36c0356f2b3092944",
+        "implementation/warlock/qa/current-search-build.json": "259f36269ef09335d35ac547b99e4ac6fb49d47c4f7fe729464a4c0d537edafb",
+        "implementation/warlock/qa/current-native-pair.json": "1c95bf58354862f48cb0c5923319ec6a5dd84d0849342e3818c0c586cafcddd3",
+        "implementation/warlock/native/shared-host.c": "cb04ee89d1b56faf04c28838c5604f5eb0053b19fbc851fac6e63f121817c88a",
+        "implementation/warlock/assets/popup-adapter.js": "65c2ce6c30931e3807eea88985d4f53f62499b48dbf157552b2cecce789b8a4b",
+        "implementation/warlock/native/shared-context.h": "19e1415305fd87a0a74287f5a541b38c80a56df9ab8179a08d357d8cf8f061d1",
+        "implementation/warlock/native/shared-context-test.c": "8cb1d6725456b17df2847fb2dbbf501f34688375bf63d28f693eb67653e83ce9"
+      },
+      "reviewerDisposition": {
+        "name": "root-keyboard-shell",
+        "independent": false,
+        "disposition": "Owner partial observations and failed combined original journey; independent acceptance remains open."
+      }
+    },
+    "observed": "Native epoch-bound Apps/System/Notification history entry integrated with the shared immutable Elm root. Owner-observed keyboard-only launcher/GIO submission, declared jump action, notification/system read/dismissal, Saved settings and actual two-member group activation/input/dismissal. Apps layer-parent eligibility and noneditable physical Escape corrected. Combined journey fails at repeated Home group entry; remaining three surfaces are implemented but unverified here. No requirement/release acceptance.",
+    "missingObservations": [
+      "Combined original ux-023 remains failed: after completed group activation/dismissal, a repeated Home press does not select the current taskbar group within the original six-second deadline. No forced focus, reordered journey or deadline extension qualifies it.",
+      "Remaining keyboard-switcher, keyboard-task-view and keyboard-snap-chooser intervals were not reached in this combined native campaign.",
+      "Menus has observed global System entry/refresh/dismissal; keyboard window-context and snap entry remain unreached in this campaign.",
+      "Native AT/IME consumers and independent original-scenario acceptance remain open; this private campaign disables accessibility bridging.",
+      "Full Omarchy vocabulary/keybindings, multi-output/device/resource and release gates remain separate mandatory work."
+    ],
+    "stopDisposition": "Two consecutive qualification-only results ended further repeated-Home investigation; continue another mandatory product slice under v2."
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "taskbar-attention",
     "requirements": [
       "ELM-UX-009"
@@ -83,99 +189,6 @@
       "Independent original ux-009 review against the exact source/core/plugin/toolchain tuple.",
       "Accessible labels/current state have compiled/browser and native DOM observations; this GTK/native campaign disables AT and does not establish inspector/Orca accessibility-state export.",
       "Additional multi-output, scale, dense overflow and actual native theme/forced-color fixtures are not established by this single-output physical recording; full release AT/IME/hardware/resource and desktop journeys remain separate."
-    ]
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "application-jump-lists",
-    "requirements": [
-      "ELM-UX-010"
-    ],
-    "scenarios": [
-      "ux-010",
-      "jump-list-recent-identity"
-    ],
-    "paths": [
-      "implementation/warlock/src/JumpList.elm",
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/src/SurfaceController.elm",
-      "implementation/warlock/src/SurfaceRenderer.elm",
-      "implementation/warlock/adapter/jump_list.py",
-      "implementation/warlock/adapter/daemon.py",
-      "implementation/warlock/native/host.c",
-      "implementation/warlock/native/surface.h",
-      "implementation/warlock/assets/popup-adapter.js",
-      "implementation/warlock/qa/JumpListReplay.elm",
-      "implementation/warlock/qa/check-jump-lists.py",
-      "implementation/warlock/qa/jump-lists.qnt",
-      "implementation/warlock/qa/jump-lists-browser.mjs",
-      "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/README.md",
-      "implementation/warlock/assets/elm.js",
-      "implementation/warlock/assets/bar.js",
-      "implementation/warlock/assets/popup.js",
-      "implementation/warlock/qa/current-search-build.json"
-    ],
-    "before": "The integrated shell has no application jump lists, declared desktop actions or identity-bound recent-item dispatch.",
-    "after": "A keyboard-operable application jump list presents only native catalog-declared actions and supported recent files for the exact desktop identity; user selections dispatch once through GIO with honest native outcomes.",
-    "verification": [
-      "Compiled Elm UI/identity/replay, real GIO desktop action and application-bound XBEL fixtures with foreign/stale refusal, browser keyboard and original isolated native two-action/recent-file dispatch recordings."
-    ],
-    "status": "completed-partial",
-    "evidence": {
-      "path": "implementation/warlock/qa/evidence/jump-lists/manifest.json",
-      "sha256": "142cda139cc6a1b34350234a39e02fb75471b4271de39421bda6c72a3f00bd2e",
-      "scope": "Integrated immutable application jump lists with catalog-declared native GIO actions and exact desktop-identity local XBEL recent files. Physical private compositor shows the two declared actions, excludes unsupported/foreign entries and dispatches a declared action plus the owned document once with actual native argv. Foreign/stale/replay refusals use separate real GIO adapter evidence. Independent original-scenario acceptance remains open.",
-      "sourceBaseRevision": "9e75f019ec16c193b968aea320b6c81d7eeb377e",
-      "sourceHashes": {
-        "implementation/warlock/src/JumpList.elm": "059841cc0669fdc7fd699498ee72d4211a2aa5d69c466d4aade7558e03b0f68c",
-        "implementation/warlock/src/Desktop.elm": "2037001b5c859d3a709dec506f16df854d97ad555faf9f4479700705ca67fba0",
-        "implementation/warlock/src/Surface.elm": "3ae8df1e8c09f6ed3297c95df11da07803f934434f0bca22b97ef4b81b93f47f",
-        "implementation/warlock/src/SurfaceController.elm": "399283022f7dd4dc345f313c32655d74cca7dd70cd3e4b0811310cb09711fcd1",
-        "implementation/warlock/src/SurfaceRenderer.elm": "05f6da40cd91275bfc543eb22d2f1f33cb826a1f14101ddbfa5b5621f60eafd7",
-        "implementation/warlock/adapter/jump_list.py": "2280c0ab00ff0683c0a28611a99b70ac122887629cafb9226f40c649be581806",
-        "implementation/warlock/adapter/daemon.py": "917b402a2ed17cac957aabb52af4ecb36098c0f3cd523b45f42b8928dc22034e",
-        "implementation/warlock/native/host.c": "3e26780a9a5145982ff9588c218bf023b6494ed9aa025dd1a4114f8bc349655c",
-        "implementation/warlock/native/surface.h": "20a8ce10d0f160612f02d1b1bf65d6fd87afe5f425782ce0973210aefeb0560f",
-        "implementation/warlock/assets/popup-adapter.js": "99022f3ba9bbe779c553ce2eaaf80ad628ae0e6982cd785b2b20312af69474aa",
-        "implementation/warlock/qa/JumpListReplay.elm": "2348233902fb1476b895c6ffffa4335dd541618d4ae7d4591d46b29f01a3acb0",
-        "implementation/warlock/qa/check-jump-lists.py": "bcec6a1b753b4878ca1006d5b6084dc3d873e6d98d3f028cdc8f9a94e1e356af",
-        "implementation/warlock/qa/jump-lists.qnt": "9fc806b4887ad88ccc810fecacff43c30530598646d418f2aba00fc49a965417",
-        "implementation/warlock/qa/jump-lists-browser.mjs": "55da79532acff1a0ebfddecce43333eb2fe2157dab31815ebebf4ff573d7978e",
-        "implementation/warlock/qa/check-search.py": "2e9ca09005a8afaf28eda565a047e0443d04046401206133ef42e1e932397d26",
-        "implementation/warlock/qa/native-window-feedback.py": "09e5aa441107fdbc9702b356011d31176e9716789d0270c0225672fbf3024e57",
-        "implementation/warlock/README.md": "a350af73b73dd35234e1bb40ab2383918ccfaa1aa297781dc0345c891786328e",
-        "implementation/warlock/assets/elm.js": "dbe4b7762201ebcec5fac295784760fb710738185edc5bd543ef95e0fd412271",
-        "implementation/warlock/assets/bar.js": "7626d051069ec4b9d6513bafb37b7469f23f96d8a9913544d8d147a3b1b3df40",
-        "implementation/warlock/assets/popup.js": "5dca81f24d0b17e460bd95519837970f31aaaca01318de3a5940a3ef604c5e2f",
-        "implementation/warlock/qa/current-search-build.json": "12fff5c76a13f6579e43698060449b2b1d2e661b18cde7cd88702e0ecf899c27"
-      },
-      "reviewerDisposition": {
-        "name": "root-jump-lists",
-        "independent": false,
-        "disposition": "Owner-observed original scenario evidence; independent acceptance pending."
-      }
-    },
-    "observed": "Integrated immutable application jump lists with catalog-declared native GIO actions and exact desktop-identity local XBEL recent files. Physical private compositor shows the two declared actions, excludes unsupported/foreign entries and dispatches a declared action plus the owned document once with actual native argv. Foreign/stale/replay refusals use separate real GIO adapter evidence. Independent original-scenario acceptance remains open.",
-    "missingObservations": [
-      "Independent review of ux-010 and jump-list-recent-identity against this exact source/core/plugin/toolchain tuple.",
-      "Actual taskbar context-menu routes and additional provider/application fixtures are not established by the physical launcher recording.",
-      "Foreign recent intent refusal is established by the actual GIO adapter fixture, not a forged physical GUI request. Applicable release AT/IME/hardware/resource and full desktop journeys remain separate."
     ]
   },
   "recentSlices": [

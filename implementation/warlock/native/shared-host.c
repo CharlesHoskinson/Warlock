@@ -158,7 +158,26 @@ static WebKitWebView *shared_focus_target(void) {
 static gboolean shared_foreground_requests(JsonArray *requests,JsonNode *binding) {
     if (!binding) return FALSE;
     for (guint i=0;i<json_array_get_length(requests);i++) {
-        g_autoptr(JsonNode) record=admission_record(json_array_get_element(requests,i));
+        JsonNode *request=json_array_get_element(requests,i);
+        const char *kind=request_kind(request);
+        /* A validated catalog launch relinquishes the same popup parent before
+         * native GIO submission. It does not certify application readiness. */
+        if (kind && g_str_equal(kind,"application-launch") &&
+            json_node_equal(json_object_get_member(json_node_get_object(request),"binding"),binding)) {
+            JsonNode *node=json_object_get_member(json_node_get_object(request),"intent");
+            if (node && JSON_NODE_HOLDS_OBJECT(node)) {
+                JsonObject *intent=json_node_get_object(node);
+                const char *const fields[]={"request","lifetime","generation","entry"};
+                guint64 ordinal,lifetime,generation;
+                if (surface_fields(intent,fields,4) &&
+                    surface_uint(json_object_get_member(intent,"request"),&ordinal) && ordinal &&
+                    surface_uint(json_object_get_member(intent,"lifetime"),&lifetime) && lifetime &&
+                    surface_uint(json_object_get_member(intent,"generation"),&generation) && generation &&
+                    surface_text(json_object_get_member(intent,"entry"),1024,FALSE) &&
+                    g_utf8_strlen(json_object_get_string_member(intent,"entry"),-1)<=256) return TRUE;
+            }
+        }
+        g_autoptr(JsonNode) record=admission_record(request);
         if (!record) continue;
         JsonObject *object=json_node_get_object(record);
         if (!json_node_equal(json_object_get_member(object,"binding"),binding) || json_object_get_int_member(object,"effectProtocol")!=1) continue;
@@ -171,7 +190,7 @@ static void shared_keyboard_parent(OutputView *owner,JsonNode *frame,JsonArray *
     gboolean foreground=shared_foreground_requests(requests,authority_binding);
     if (!owner && !foreground) return; /* Escape/background Minimize retains the parent. */
     const char *mode=json_object_get_string_member(json_node_get_object(frame),"mode");
-    gboolean returns_to_bar=g_str_equal(mode,"menu") || g_str_equal(mode,"picker");
+    gboolean returns_to_bar=g_str_equal(mode,"menu") || g_str_equal(mode,"picker") || g_str_equal(mode,"applications");
     for (guint i=0;i<output_views->len;i++) {
         OutputView *row=g_ptr_array_index(output_views,i);
         if (!row->active) continue;
@@ -580,6 +599,18 @@ static void test_foreground_handoff(void) {
     json_object_set_string_member(intent,"request","0");json_array_add_element(requests,json_node_copy(root));g_assert_false(shared_foreground_requests(requests,binding));
     json_array_remove_element(requests,0);json_object_set_string_member(intent,"request","1");
     json_object_set_string_member(object,"status","Unknown");json_object_set_string_member(object,"kind","effect-outcome");json_array_add_element(requests,json_node_copy(root));g_assert_false(shared_foreground_requests(requests,binding));
+    json_array_remove_element(requests,0);
+    g_autoptr(JsonParser) launch_parser=json_parser_new();
+    g_assert_true(json_parser_load_from_data(launch_parser,"{\"protocolVersion\":3,\"kind\":\"application-launch\",\"binding\":{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"1\",\"lifetime\":\"4\",\"generation\":\"1\",\"entry\":\"editor\"}}",-1,NULL));
+    JsonNode *launch=json_parser_get_root(launch_parser);JsonObject *launch_object=json_node_get_object(launch);
+    json_array_add_element(requests,json_node_copy(launch));g_assert_true(shared_foreground_requests(requests,binding));
+    json_array_remove_element(requests,0);
+    json_object_set_string_member(json_object_get_object_member(launch_object,"binding"),"session","5");
+    json_array_add_element(requests,json_node_copy(launch));g_assert_false(shared_foreground_requests(requests,binding));
+    json_array_remove_element(requests,0);
+    json_object_set_string_member(json_object_get_object_member(launch_object,"binding"),"session","2");
+    json_object_set_string_member(json_object_get_object_member(launch_object,"intent"),"request","0");
+    json_array_add_element(requests,json_node_copy(launch));g_assert_false(shared_foreground_requests(requests,binding));
 }
 static void test_duplicate_fields(void) {
     const char *accepted[]={"{\"scope\":{\"id\":\"1\"},\"other\":{\"id\":\"2\"}}","{\"views\":[{\"id\":\"1\"},{\"id\":\"2\"}]}"};

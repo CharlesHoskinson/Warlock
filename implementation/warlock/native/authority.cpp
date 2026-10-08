@@ -100,6 +100,11 @@ Elm::Placement::Records geometryPlacements;
 Elm::Geometry::Barriers effectBarriers;
 struct Session { std::string start; uint64_t id; uint64_t frontend; uint64_t effectRequest=0, generation=0; std::string lastPayload, lastReply; std::vector<Render::SceneTrace::Frame> retained; int geometryProtocol=0; bool geometryEnabled=false; uint64_t geometryFrontend=0; std::set<std::string> geometryOperations{}; };
 std::map<pid_t, Session> sessions;
+enum class ShellRoute {Applications,System,Notifications};
+struct ShellShortcut {uint64_t serial;ShellRoute route;};
+uint64_t shellShortcutSerial=0,shellShortcutSession=0,shellShortcutFrontend=0;
+std::vector<ShellShortcut> shellShortcuts;
+
 struct ExportedImage {preview::fd::Owned file;preview::capture::Reservation reservation;uint64_t transfer;bool sent=false;};
 struct CaptureProbe {
     uint64_t session{},frontend{},incarnation{},request{},output{},completed{},checksum{};
@@ -319,6 +324,27 @@ void switcherStep(int direction) noexcept {
         if(switcherChord.steps.size()>=4096){cancelSwitcher();return;}
         switcherChord.steps.push_back(direction);notifySwitcher();
     }catch(...){cancelSwitcher();}
+}
+void notifyShellShortcuts() noexcept {try {if(g_pEventManager)g_pEventManager->postEvent(SHyprIPCEvent{"warlockshortcuts",std::to_string(lifetime)});}catch(...) {}}
+void shellShortcut(ShellRoute route) noexcept {
+    try {
+        if(!shellShortcutSession || !shellShortcutFrontend || g_pSessionLockManager->isSessionLocked() || !g_pInputManager->m_exclusiveLSes.empty() || (switcherChord.generation && !switcherChord.cancelled && !switcherChord.consumed && !switcherChord.released) || shellShortcutSerial==std::numeric_limits<uint64_t>::max())return;
+        if(shellShortcuts.size()==64)shellShortcuts.erase(shellShortcuts.begin());
+        shellShortcuts.push_back({++shellShortcutSerial,route});notifyShellShortcuts();
+    } catch(...) {shellShortcuts.clear();}
+}
+int appsMenu(lua_State*){shellShortcut(ShellRoute::Applications);return 0;}
+int systemMenu(lua_State*){shellShortcut(ShellRoute::System);return 0;}
+int notificationHistory(lua_State*){shellShortcut(ShellRoute::Notifications);return 0;}
+std::string shellShortcutJournal(const Session& session,uint64_t request) {
+    const bool blocked=g_pSessionLockManager->isSessionLocked() || !g_pInputManager->m_exclusiveLSes.empty();
+    std::string events="[";
+    if(!blocked)for(const auto& event:shellShortcuts) {
+        if(events.size()>1)events+=',';
+        const std::string route=event.route==ShellRoute::Applications?"applications":event.route==ShellRoute::System?"system":"notifications";
+        events+="{\"serial\":"+quote(std::to_string(event.serial))+",\"route\":"+quote(route)+"}";
+    }
+    return "{\"protocolVersion\":3,\"kind\":\"shell-shortcuts\",\"shortcutProtocol\":1,\"binding\":"+binding(session)+",\"requestId\":"+quote(std::to_string(request))+",\"serial\":"+quote(std::to_string(shellShortcutSerial))+",\"blocked\":"+(blocked?"true":"false")+",\"events\":"+events+"]}";
 }
 int switcherForward(lua_State*){switcherStep(1);return 0;}
 int switcherReverse(lua_State*){switcherStep(-1);return 0;}
@@ -794,6 +820,19 @@ std::string observe(eHyprCtlOutputFormat, std::string request) {
                     reply="{\"protocolVersion\":3,\"kind\":\"geometry-facts\",\"geometryProtocol\":"+std::to_string(found->second.geometryProtocol)+",\"binding\":"+binding(found->second)+",\"requestId\":"+quote(std::to_string(*requestId))+",\"sequence\":"+quote(std::to_string(geometrySequence))+",\"revision\":"+quote(std::to_string(geometryRevision))+",\"outputGeneration\":"+quote(std::to_string(outputGeneration))+",\"facts\":"+facts+"}";
                 }
             }
+        } else if(operation=="shell-shortcuts-request" && fields(object,{"protocolVersion","kind","binding","requestId"})) {
+            const auto bound=objectMember(object,"binding");const auto requestId=counter(object,"requestId");const auto found=sessions.find(peer);
+            if(!bound || !fields(bound,{"lifetime","session","frontend"}) || !requestId)throw std::runtime_error("shortcut-schema");
+            const auto native=counter(bound,"lifetime"),sessionId=counter(bound,"session"),frontend=counter(bound,"frontend");
+            if(!native || !sessionId || !frontend || found==sessions.end() || found->second.start!=start || *native!=lifetime || *sessionId!=found->second.id || *frontend!=found->second.frontend || !grantRegistry->callerMatches(verifiedPeer(peer,start),{lifetime,*sessionId,*frontend})) reply=error("binding-mismatch");
+            else {
+                if(shellShortcutSession!=*sessionId || shellShortcutFrontend!=*frontend) {
+                    const bool alive=std::ranges::any_of(sessions,[&](const auto& entry){return entry.second.id==shellShortcutSession && entry.second.frontend==shellShortcutFrontend && startTime(entry.first)==entry.second.start;});
+                    if(alive)throw std::runtime_error("shortcut-owner-busy");
+                    shellShortcuts.clear();shellShortcutSerial=0;shellShortcutSession=*sessionId;shellShortcutFrontend=*frontend;
+                }
+                reply=shellShortcutJournal(found->second,*requestId);
+            }
         } else if(((operation=="switcher-journal-request" || operation=="switcher-journal-observe-request") && fields(object,{"protocolVersion","kind","binding","requestId"})) ||
                   (operation=="switcher-selection-request" && fields(object,{"protocolVersion","kind","binding","requestId","chord","root"})) ||
                   (operation=="switcher-cancel-request" && fields(object,{"protocolVersion","kind","binding","requestId","chord"}))) {
@@ -899,18 +938,21 @@ APICALL EXPORT PLUGIN_DESCRIPTION_INFO PLUGIN_INIT(HANDLE handle) {
         recordActivation(window);
     });
     if (const auto current=Desktop::focusState()->window()) recordActivation(current);
+    shellShortcuts.clear();shellShortcutSerial=shellShortcutSession=shellShortcutFrontend=0;
     switcherKeys=Event::bus()->m_events.input.keyboard.key.listen(switcherKey);
+    if(!HyprlandAPI::addLuaFunction(handle,"warlock","apps_menu",appsMenu) || !HyprlandAPI::addLuaFunction(handle,"warlock","system_menu",systemMenu) || !HyprlandAPI::addLuaFunction(handle,"warlock","notification_history",notificationHistory))throw std::runtime_error("Shell shortcut binding registration failed");
     if(!HyprlandAPI::addLuaFunction(handle,"warlock","switcher_forward",switcherForward) || !HyprlandAPI::addLuaFunction(handle,"warlock","switcher_reverse",switcherReverse))throw std::runtime_error("Switcher binding registration failed");
     command = HyprlandAPI::registerHyprCtlCommand(handle,{"elm_observe ",false,observe});
     if (!command) throw std::runtime_error("Authority command registration failed");
     previewPrivacy=previewRendering=1;previewObservation=0;
-    previewLocked=g_pSessionLockManager->m_events.lock.listen([]{cancelSwitcher();revokePreview(true);});
-    previewReloaded=Event::bus()->m_events.config.preReload.listen([]{cancelSwitcher();switcherAlts.clear();switcherTab=switcherStepAvailable=false;revokePreview(false);});
+    previewLocked=g_pSessionLockManager->m_events.lock.listen([]{cancelSwitcher();shellShortcuts.clear();notifyShellShortcuts();revokePreview(true);});
+    previewReloaded=Event::bus()->m_events.config.preReload.listen([]{cancelSwitcher();shellShortcuts.clear();notifyShellShortcuts();switcherAlts.clear();switcherTab=switcherStepAvailable=false;revokePreview(false);});
     previewOutputRemoved=Event::bus()->m_events.monitor.removed.listen([](PHLMONITOR){revokePreview(false);});
     startPreviewFdServer();
     return {"elm-observation-authority","Native first-class minimize/restore authority experiment","local","0.2"};
 }
 APICALL EXPORT void PLUGIN_EXIT() {
+    shellShortcuts.clear();shellShortcutSerial=shellShortcutSession=shellShortcutFrontend=0;
     switcherKeys.reset();switcherSelections.clear();switcherAlts.clear();switcherChord={};switcherOwnerSession=switcherOwnerFrontend=0;
     stopPreviewFdServer();previewLocked.reset();previewReloaded.reset();previewOutputRemoved.reset();
     opened.reset(); closed.reset(); activated.reset(); recentFocus.clear();activationHistory.clear();

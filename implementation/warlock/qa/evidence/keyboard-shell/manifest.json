@@ -1,0 +1,406 @@
+{
+  "schema": 1,
+  "owner": "root-keyboard-shell",
+  "observedUTC": "2026-10-08T16:22:03.353053+00:00",
+  "requirements": [
+    "ELM-UX-023"
+  ],
+  "scenarios": [
+    "ux-023",
+    "keyboard-launcher",
+    "keyboard-taskbar-groups",
+    "keyboard-switcher",
+    "keyboard-task-view",
+    "keyboard-snap-chooser",
+    "keyboard-menus",
+    "keyboard-settings",
+    "keyboard-notifications",
+    "keyboard-jump-lists"
+  ],
+  "originals": [
+    {
+      "requirement": "ELM-UX-023",
+      "verification": "Elm replay assertion and isolated native recording: each surface can be opened, operated and dismissed without pointer events.",
+      "scenarios": [
+        {
+          "name": "ux-023",
+          "given": "pointer is unused",
+          "when": "keyboard-only acceptance script visits all migrated surfaces",
+          "then": "each surface can be opened, operated and dismissed without pointer events"
+        },
+        {
+          "name": "keyboard-launcher",
+          "given": "the launcher surface and no pointer input",
+          "when": "the keyboard acceptance fixture opens, traverses, operates and dismisses it",
+          "then": "each operation completes with recorded keyboard focus and no pointer events"
+        },
+        {
+          "name": "keyboard-taskbar-groups",
+          "given": "the taskbar groups surface and no pointer input",
+          "when": "the keyboard acceptance fixture opens, traverses, operates and dismisses it",
+          "then": "each operation completes with recorded keyboard focus and no pointer events"
+        },
+        {
+          "name": "keyboard-switcher",
+          "given": "the switcher surface and no pointer input",
+          "when": "the keyboard acceptance fixture opens, traverses, operates and dismisses it",
+          "then": "each operation completes with recorded keyboard focus and no pointer events"
+        },
+        {
+          "name": "keyboard-task-view",
+          "given": "the Task View surface and no pointer input",
+          "when": "the keyboard acceptance fixture opens, traverses, operates and dismisses it",
+          "then": "each operation completes with recorded keyboard focus and no pointer events"
+        },
+        {
+          "name": "keyboard-snap-chooser",
+          "given": "the snap chooser surface and no pointer input",
+          "when": "the keyboard acceptance fixture opens, traverses, operates and dismisses it",
+          "then": "each operation completes with recorded keyboard focus and no pointer events"
+        },
+        {
+          "name": "keyboard-menus",
+          "given": "the menus surface and no pointer input",
+          "when": "the keyboard acceptance fixture opens, traverses, operates and dismisses it",
+          "then": "each operation completes with recorded keyboard focus and no pointer events"
+        },
+        {
+          "name": "keyboard-settings",
+          "given": "the settings surface and no pointer input",
+          "when": "the keyboard acceptance fixture opens, traverses, operates and dismisses it",
+          "then": "each operation completes with recorded keyboard focus and no pointer events"
+        },
+        {
+          "name": "keyboard-notifications",
+          "given": "the notifications surface and no pointer input",
+          "when": "the keyboard acceptance fixture opens, traverses, operates and dismisses it",
+          "then": "each operation completes with recorded keyboard focus and no pointer events"
+        },
+        {
+          "name": "keyboard-jump-lists",
+          "given": "the jump lists surface and no pointer input",
+          "when": "the keyboard acceptance fixture opens, traverses, operates and dismisses it",
+          "then": "each operation completes with recorded keyboard focus and no pointer events"
+        }
+      ]
+    }
+  ],
+  "scope": "Native epoch-bound Apps/System/Notification history entry integrated with the shared immutable Elm root. Owner-observed keyboard-only launcher/GIO submission, declared jump action, notification/system read/dismissal, Saved settings and actual two-member group activation/input/dismissal. Apps layer-parent eligibility and noneditable physical Escape corrected. Combined journey fails at repeated Home group entry; remaining three surfaces are implemented but unverified here. No requirement/release acceptance.",
+  "sourceBaseRevision": "78a9925dcc75e6c138847047c15f8c3e04d17fba",
+  "publicBaseRevision": "f6e8492298f6b798c707fb0329dd8fbe0102a428",
+  "sourceHashes": {
+    "implementation/warlock/src/Shortcuts.elm": "4647b05774e5be60a497c8b98f30b273b2b6b3e5928062d83d0c51993c23bedb",
+    "implementation/warlock/src/Desktop.elm": "0b9ca548afbf5a6fe3bc4f9928c8c24b83a61866e6952ff5ef37adedaa32aadf",
+    "implementation/warlock/adapter/effect_endpoint.py": "e0c6d613f7313377f0dd5cf01e9675f500b93b2fc55913944db84770a1f251e0",
+    "implementation/warlock/adapter/daemon.py": "7b4cd4279b85b1ebb1858df5d331629d53471e2c197849e88775e515597b7a75",
+    "implementation/warlock/native/authority.cpp": "304f02636c8c9b7e83f43240f119d4a553b8435ad066f8d962026b1ffcac5404",
+    "implementation/warlock/native/shell-bindings.lua": "31de6d303102d9b37ee21367b6197353960636afd12b653b91ad160961354baf",
+    "implementation/warlock/qa/KeyboardShortcutsReplay.elm": "bc6d7339ac682d886ab6dd4cf3bee74302d6b1476b19052e3c1a47c9b6451fc6",
+    "implementation/warlock/qa/keyboard-shortcuts.qnt": "3cff6d0872adf6ee6599091c4f054820ff55b2a610e1be4cedc1464f2b96e90c",
+    "implementation/warlock/qa/check-keyboard-shortcuts.py": "26bd95d5f97b25495ffddae779c6703ce2512aaf8da2f28fe1ecb6d93d9634d2",
+    "implementation/warlock/qa/check-search.py": "05d53addd38b6898cf1879d70d2421a2b5e646c1f84b8ccaf443efcb744f09bb",
+    "implementation/warlock/qa/check-native-authority.py": "61992b791c75000044f87af114032945d846f7c1d6b719c5b40f37bcf529c727",
+    "implementation/warlock/qa/native-window-feedback.py": "de5c83e3c2922b6c51226bec4cc5753f4ec998b68eb04207e4ee558c90799ab0",
+    "implementation/warlock/README.md": "fc8dbafd848dfa9b83545714e4fe88a9445d405e20fae16cd37d67e5c8f9fbbd",
+    "implementation/warlock/assets/elm.js": "177be78e6cb86d68d1e7979715e076f30612ffb5b7d7360d2b517ebfbc7cc4c6",
+    "implementation/warlock/assets/bar.js": "fbe4416674b120412b0be63abe47d438104aaacd3dee2eea4c81323ea9262d29",
+    "implementation/warlock/assets/popup.js": "d56f655974b3c128b442e080350aa37276127b7d2d16a8e36c0356f2b3092944",
+    "implementation/warlock/qa/current-search-build.json": "259f36269ef09335d35ac547b99e4ac6fb49d47c4f7fe729464a4c0d537edafb",
+    "implementation/warlock/qa/current-native-pair.json": "1c95bf58354862f48cb0c5923319ec6a5dd84d0849342e3818c0c586cafcddd3",
+    "implementation/warlock/native/shared-host.c": "cb04ee89d1b56faf04c28838c5604f5eb0053b19fbc851fac6e63f121817c88a",
+    "implementation/warlock/assets/popup-adapter.js": "65c2ce6c30931e3807eea88985d4f53f62499b48dbf157552b2cecce789b8a4b",
+    "implementation/warlock/native/shared-context.h": "19e1415305fd87a0a74287f5a541b38c80a56df9ab8179a08d357d8cf8f061d1",
+    "implementation/warlock/native/shared-context-test.c": "8cb1d6725456b17df2847fb2dbbf501f34688375bf63d28f693eb67653e83ce9"
+  },
+  "sourceTuple": {
+    "pair": {
+      "core": {
+        "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+        "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+      },
+      "plugin": {
+        "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791474749783865339/elm-window-geometry-authority.so",
+        "sha256": "6491fa0a6596c4ce263764e6da62303e48c79d8e52a7d482d425adedb93b6f59"
+      },
+      "aquamarine": {
+        "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+        "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+      }
+    },
+    "nativeHost": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/keyboard-shell-1791476030611970206/elm-host",
+      "sha256": "ed21a43f16555c25364f405ad302d6985f42e8dbdaa911ca119ca6204e2e6d76",
+      "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/keyboard-shell-1791476030611970206/report.json",
+      "heldBuildSHA256": "69ab073e05f4adc253b825fcaa2dcab156a0b8ad94dc595ab8a0ca76f6ecbffe"
+    },
+    "componentReport": "implementation/warlock/qa/runs/keyboard-shell-1791476030611970206/report.json",
+    "componentReportSHA256": "69ab073e05f4adc253b825fcaa2dcab156a0b8ad94dc595ab8a0ca76f6ecbffe",
+    "authorityReport": "implementation/warlock/qa/runs/native-authority-1791474749783865339/report.json",
+    "authorityReportSHA256": "5a9f0458ba72585a7345f6c78db38787305acef549d051740b5fc54db8f5006e",
+    "compiledAssets": {
+      "elm.js": "177be78e6cb86d68d1e7979715e076f30612ffb5b7d7360d2b517ebfbc7cc4c6",
+      "bar.js": "fbe4416674b120412b0be63abe47d438104aaacd3dee2eea4c81323ea9262d29",
+      "popup.js": "d56f655974b3c128b442e080350aa37276127b7d2d16a8e36c0356f2b3092944"
+    }
+  },
+  "observedChecks": {
+    "compiledElm": 18,
+    "strictDecoder": 13,
+    "nativeContextGuards": 219,
+    "namedShortcutModelTests": 5,
+    "shortcutInvariantTraces": 100,
+    "nativeKeyboardChecks": 23,
+    "completedNativeSurfaceIntervals": 6,
+    "nativePrimaryRegression": 75
+  },
+  "nativeKeyboardCampaignPassed": false,
+  "nativePrimaryRegressionPassed": true,
+  "pointerInputAudit": {
+    "injected": 0,
+    "nativeFixturePointerEvents": 0,
+    "basis": "Frozen registered helpers, physical command journal and actual GTK event recording; only completed partial intervals qualified."
+  },
+  "nativeSurfaces": [
+    {
+      "surface": "launcher",
+      "passed": true,
+      "events": [
+        {
+          "argv": [
+            "RECENT"
+          ],
+          "pid": 2593895
+        }
+      ],
+      "outcome": {
+        "protocolVersion": 3,
+        "kind": "application-launch-outcome",
+        "binding": {
+          "lifetime": "379444649107527752",
+          "session": "3",
+          "frontend": "1"
+        },
+        "outcome": {
+          "catalogProtocol": 1,
+          "kind": "launch-outcome",
+          "intent": {
+            "request": "1",
+            "lifetime": "2512693796557882276",
+            "generation": "1",
+            "entry": "warlock-editor"
+          },
+          "status": "Submitted",
+          "reason": "native-submission-accepted"
+        }
+      }
+    },
+    {
+      "surface": "jump-lists",
+      "passed": true,
+      "events": [
+        {
+          "argv": [
+            "RECENT"
+          ],
+          "pid": 2593895
+        },
+        {
+          "argv": [
+            "ALPHA"
+          ],
+          "pid": 2593904
+        }
+      ],
+      "dismissed": true
+    },
+    {
+      "surface": "notifications",
+      "passed": true,
+      "snapshots": 2,
+      "dismissed": true
+    },
+    {
+      "surface": "menus",
+      "passed": true,
+      "systemSnapshots": 2,
+      "dismissed": true
+    },
+    {
+      "surface": "settings",
+      "passed": true,
+      "receipt": {
+        "protocolVersion": 3,
+        "kind": "shell-settings-outcome",
+        "binding": {
+          "lifetime": "379444649107527752",
+          "session": "3",
+          "frontend": "1"
+        },
+        "requestId": "16",
+        "snapshot": {
+          "schema": 1,
+          "revision": "2",
+          "values": {
+            "theme": "dawn",
+            "textScale": 100
+          }
+        },
+        "status": "Saved"
+      },
+      "dismissed": true
+    },
+    {
+      "surface": "taskbar-groups",
+      "passed": true,
+      "selected": {
+        "incarnation": "1",
+        "title": "ELM-ACTIVATION-PEER",
+        "state": "Open",
+        "domId": "picker:{\"lifetime\":\"379444649107527752\",\"session\":\"3\",\"frontend\":\"1\"}:1:2:1:1",
+        "disabled": false,
+        "label": "Activate ELM-ACTIVATION-PEER",
+        "point": [
+          400.0,
+          198.0
+        ],
+        "rect": [
+          61,
+          151,
+          678,
+          94
+        ],
+        "clip": [
+          50,
+          48,
+          750,
+          468
+        ],
+        "visible": true
+      },
+      "events": [
+        {
+          "window": "ELM-ACTIVATION-PEER",
+          "kind": "key",
+          "keyval": 97,
+          "keycode": 38
+        }
+      ],
+      "dismissed": true
+    }
+  ],
+  "scenarioDispositions": {
+    "ux-023": "failed",
+    "keyboard-launcher": "partial",
+    "keyboard-taskbar-groups": "partial",
+    "keyboard-switcher": "implemented-unverified",
+    "keyboard-task-view": "implemented-unverified",
+    "keyboard-snap-chooser": "implemented-unverified",
+    "keyboard-menus": "partial",
+    "keyboard-settings": "partial",
+    "keyboard-notifications": "partial",
+    "keyboard-jump-lists": "partial"
+  },
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "missingObservations": [
+    "Combined original ux-023 remains failed: after completed group activation/dismissal, a repeated Home press does not select the current taskbar group within the original six-second deadline. No forced focus, reordered journey or deadline extension qualifies it.",
+    "Remaining keyboard-switcher, keyboard-task-view and keyboard-snap-chooser intervals were not reached in this combined native campaign.",
+    "Menus has observed global System entry/refresh/dismissal; keyboard window-context and snap entry remain unreached in this campaign.",
+    "Native AT/IME consumers and independent original-scenario acceptance remain open; this private campaign disables accessibility bridging.",
+    "Full Omarchy vocabulary/keybindings, multi-output/device/resource and release gates remain separate mandatory work."
+  ],
+  "verificationFreshness": "Current production source matches compiled roots/host, exact authority tuple and both frozen native reports. The native fixture acquired a document-focus/group-readiness assertion after component compilation; its exact latest runner hash is in native-report.json. Failed evidence remains immutable.",
+  "stopDisposition": "Two consecutive qualification-only results ended further repeated-Home investigation; continue another mandatory product slice under v2.",
+  "files": [
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-shell/authority-report.json",
+      "sha256": "5a9f0458ba72585a7345f6c78db38787305acef549d051740b5fc54db8f5006e"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-shell/component-report.json",
+      "sha256": "69ab073e05f4adc253b825fcaa2dcab156a0b8ad94dc595ab8a0ca76f6ecbffe"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-shell/failed-apps-bar-return.json",
+      "sha256": "b79bda232635661a63346cc2f97ae5d90a7ae952b4f3d30f705ff36e1fb50bfc"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-shell/failed-jump-parent-expectation.json",
+      "sha256": "9492562ac48c479cfdfc19c1aa7f17c7994b17a065625c3c5fee1d466be31da9"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-shell/failed-model-collection-api.json",
+      "sha256": "b47cd2f6536bf6eca876c7c7492cce14ccd8c577a1e23585abaa5e674c91a9f2"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-shell/failed-model-list-fold-api.json",
+      "sha256": "b212cebba08f7de5f4e6fb389502772dca4842b07fbc6293c840e1dd8d7865f3"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-shell/failed-native-settings-escape.json",
+      "sha256": "2762e6f8c0ca8b9f09c5b03cb0508fa43ff01bdc133b4b3a18a81239d3974adb"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-shell/failed-repeated-picker-entry.json",
+      "sha256": "7e1a4c36113e7fde5ef19200b317430f011b990cc121dad49f6edec3c2448f2d"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-shell/failed-settings-body-escape.json",
+      "sha256": "b31c32a1b3b7e5dc246f4c7b7f87cdf636db1bd90806c424475b25321f55295a"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-shell/failed-startup-fixture-cleanup.json",
+      "sha256": "19258841a38dc3e36f74c19716970c6ebaad20970c920a5d6dedf093c6de0923"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-shell/host-self-tests.stdout",
+      "sha256": "5be8e06509f71fa75e23e42fe110814b2b745de47b42313f03fd5392e494144a"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-shell/native-gio-events.jsonl",
+      "sha256": "4e25a1af552cd89ea6879fdfc93e2e6d3faa82c08c8a3bcd7e02e68fd04bdf06"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-shell/native-key-events.jsonl",
+      "sha256": "57522041e6e1522a60207d7e0ca702ea92fc4f7d50f4c19839c4c29b67ffe704"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-shell/native-report.json",
+      "sha256": "c750c8ccbd6f1153145f5d8caf62a64eb6aa5f7600c30401ff5288ef6fb61dd4"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-shell/popup-context-tests.stdout",
+      "sha256": "3b7f4883faa7881ff4a3e4740bc858bb5372704374603003cb71753c4fb54e27"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-shell/primary-regression-report.json",
+      "sha256": "3dcadec3f0078c984279eff6a6ced22d836a8ec78eadf0801b1cca2b8c0a39a5"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-shell/shortcut-admission.stdout",
+      "sha256": "89cb0c1d188b8816050dd2c658acc97242a3d4267b49571220775cff02d554a5"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-shell/shortcut-model-invariants.stdout",
+      "sha256": "47848c5ee0509a4c98f9df94819b197fbdf3c005ff30772df6a2b99e63fc295c"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-shell/shortcut-model-named.stdout",
+      "sha256": "76ffe696012a8f0782ece9eb940d75b212bc85eec313f30bf779624109fe350e"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-shell/shortcut-popup-release.stdout",
+      "sha256": "44cd39ea940911e09716278830ddc356251f3fc1a70f28bf9f995a664354e5be"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-shell/shortcuts.json",
+      "sha256": "20ce5fcc2544f3dcedee726329c71482b0ebe804c84399b1f74971b97813fd9a"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/keyboard-shell/source.patch",
+      "sha256": "0184c787fc28fc9a217e90696347c939e2d1a945dbf002210ec1c2bab58306e5"
+    }
+  ]
+}

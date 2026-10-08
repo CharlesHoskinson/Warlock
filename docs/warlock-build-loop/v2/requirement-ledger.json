@@ -7755,44 +7755,260 @@
         {
           "name": "ux-023",
           "oracle": "each surface can be opened, operated and dismissed without pointer events",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "failed",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/keyboard-shell/manifest.json",
+              "sha256": "3e413e0ab486f6c37237e93c98acc79878ed16a2cd78e4e55bec14911dfae878",
+              "scope": "Native epoch-bound Apps/System/Notification history entry integrated with the shared immutable Elm root. Owner-observed keyboard-only launcher/GIO submission, declared jump action, notification/system read/dismissal, Saved settings and actual two-member group activation/input/dismissal. Apps layer-parent eligibility and noneditable physical Escape corrected. Combined journey fails at repeated Home group entry; remaining three surfaces are implemented but unverified here. No requirement/release acceptance.",
+              "sourceBaseRevision": "78a9925dcc75e6c138847047c15f8c3e04d17fba",
+              "sourceHashes": {
+                "implementation/warlock/src/Shortcuts.elm": "4647b05774e5be60a497c8b98f30b273b2b6b3e5928062d83d0c51993c23bedb",
+                "implementation/warlock/src/Desktop.elm": "0b9ca548afbf5a6fe3bc4f9928c8c24b83a61866e6952ff5ef37adedaa32aadf",
+                "implementation/warlock/adapter/effect_endpoint.py": "e0c6d613f7313377f0dd5cf01e9675f500b93b2fc55913944db84770a1f251e0",
+                "implementation/warlock/adapter/daemon.py": "7b4cd4279b85b1ebb1858df5d331629d53471e2c197849e88775e515597b7a75",
+                "implementation/warlock/native/authority.cpp": "304f02636c8c9b7e83f43240f119d4a553b8435ad066f8d962026b1ffcac5404",
+                "implementation/warlock/native/shell-bindings.lua": "31de6d303102d9b37ee21367b6197353960636afd12b653b91ad160961354baf",
+                "implementation/warlock/qa/KeyboardShortcutsReplay.elm": "bc6d7339ac682d886ab6dd4cf3bee74302d6b1476b19052e3c1a47c9b6451fc6",
+                "implementation/warlock/qa/keyboard-shortcuts.qnt": "3cff6d0872adf6ee6599091c4f054820ff55b2a610e1be4cedc1464f2b96e90c",
+                "implementation/warlock/qa/check-keyboard-shortcuts.py": "26bd95d5f97b25495ffddae779c6703ce2512aaf8da2f28fe1ecb6d93d9634d2",
+                "implementation/warlock/qa/check-search.py": "05d53addd38b6898cf1879d70d2421a2b5e646c1f84b8ccaf443efcb744f09bb",
+                "implementation/warlock/qa/check-native-authority.py": "61992b791c75000044f87af114032945d846f7c1d6b719c5b40f37bcf529c727",
+                "implementation/warlock/qa/native-window-feedback.py": "de5c83e3c2922b6c51226bec4cc5753f4ec998b68eb04207e4ee558c90799ab0",
+                "implementation/warlock/README.md": "fc8dbafd848dfa9b83545714e4fe88a9445d405e20fae16cd37d67e5c8f9fbbd",
+                "implementation/warlock/assets/elm.js": "177be78e6cb86d68d1e7979715e076f30612ffb5b7d7360d2b517ebfbc7cc4c6",
+                "implementation/warlock/assets/bar.js": "fbe4416674b120412b0be63abe47d438104aaacd3dee2eea4c81323ea9262d29",
+                "implementation/warlock/assets/popup.js": "d56f655974b3c128b442e080350aa37276127b7d2d16a8e36c0356f2b3092944",
+                "implementation/warlock/qa/current-search-build.json": "259f36269ef09335d35ac547b99e4ac6fb49d47c4f7fe729464a4c0d537edafb",
+                "implementation/warlock/qa/current-native-pair.json": "1c95bf58354862f48cb0c5923319ec6a5dd84d0849342e3818c0c586cafcddd3",
+                "implementation/warlock/native/shared-host.c": "cb04ee89d1b56faf04c28838c5604f5eb0053b19fbc851fac6e63f121817c88a",
+                "implementation/warlock/assets/popup-adapter.js": "65c2ce6c30931e3807eea88985d4f53f62499b48dbf157552b2cecce789b8a4b",
+                "implementation/warlock/native/shared-context.h": "19e1415305fd87a0a74287f5a541b38c80a56df9ab8179a08d357d8cf8f061d1",
+                "implementation/warlock/native/shared-context-test.c": "8cb1d6725456b17df2847fb2dbbf501f34688375bf63d28f693eb67653e83ce9"
+              },
+              "reviewerDisposition": {
+                "name": "root-keyboard-shell",
+                "independent": false,
+                "disposition": "Owner partial observations and failed combined original journey; independent acceptance remains open."
+              }
+            }
+          ],
+          "missingObservation": "Combined original ux-023 remains failed: after completed group activation/dismissal, a repeated Home press does not select the current taskbar group within the original six-second deadline. No forced focus, reordered journey or deadline extension qualifies it. Remaining keyboard-switcher, keyboard-task-view and keyboard-snap-chooser intervals were not reached in this combined native campaign. Menus has observed global System entry/refresh/dismissal; keyboard window-context and snap entry remain unreached in this campaign. Native AT/IME consumers and independent original-scenario acceptance remain open; this private campaign disables accessibility bridging. Full Omarchy vocabulary/keybindings, multi-output/device/resource and release gates remain separate mandatory work."
         },
         {
           "name": "keyboard-launcher",
           "oracle": "each operation completes with recorded keyboard focus and no pointer events",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/keyboard-shell/manifest.json",
+              "sha256": "3e413e0ab486f6c37237e93c98acc79878ed16a2cd78e4e55bec14911dfae878",
+              "scope": "Native epoch-bound Apps/System/Notification history entry integrated with the shared immutable Elm root. Owner-observed keyboard-only launcher/GIO submission, declared jump action, notification/system read/dismissal, Saved settings and actual two-member group activation/input/dismissal. Apps layer-parent eligibility and noneditable physical Escape corrected. Combined journey fails at repeated Home group entry; remaining three surfaces are implemented but unverified here. No requirement/release acceptance.",
+              "sourceBaseRevision": "78a9925dcc75e6c138847047c15f8c3e04d17fba",
+              "sourceHashes": {
+                "implementation/warlock/src/Shortcuts.elm": "4647b05774e5be60a497c8b98f30b273b2b6b3e5928062d83d0c51993c23bedb",
+                "implementation/warlock/src/Desktop.elm": "0b9ca548afbf5a6fe3bc4f9928c8c24b83a61866e6952ff5ef37adedaa32aadf",
+                "implementation/warlock/adapter/effect_endpoint.py": "e0c6d613f7313377f0dd5cf01e9675f500b93b2fc55913944db84770a1f251e0",
+                "implementation/warlock/adapter/daemon.py": "7b4cd4279b85b1ebb1858df5d331629d53471e2c197849e88775e515597b7a75",
+                "implementation/warlock/native/authority.cpp": "304f02636c8c9b7e83f43240f119d4a553b8435ad066f8d962026b1ffcac5404",
+                "implementation/warlock/native/shell-bindings.lua": "31de6d303102d9b37ee21367b6197353960636afd12b653b91ad160961354baf",
+                "implementation/warlock/qa/KeyboardShortcutsReplay.elm": "bc6d7339ac682d886ab6dd4cf3bee74302d6b1476b19052e3c1a47c9b6451fc6",
+                "implementation/warlock/qa/keyboard-shortcuts.qnt": "3cff6d0872adf6ee6599091c4f054820ff55b2a610e1be4cedc1464f2b96e90c",
+                "implementation/warlock/qa/check-keyboard-shortcuts.py": "26bd95d5f97b25495ffddae779c6703ce2512aaf8da2f28fe1ecb6d93d9634d2",
+                "implementation/warlock/qa/check-search.py": "05d53addd38b6898cf1879d70d2421a2b5e646c1f84b8ccaf443efcb744f09bb",
+                "implementation/warlock/qa/check-native-authority.py": "61992b791c75000044f87af114032945d846f7c1d6b719c5b40f37bcf529c727",
+                "implementation/warlock/qa/native-window-feedback.py": "de5c83e3c2922b6c51226bec4cc5753f4ec998b68eb04207e4ee558c90799ab0",
+                "implementation/warlock/README.md": "fc8dbafd848dfa9b83545714e4fe88a9445d405e20fae16cd37d67e5c8f9fbbd",
+                "implementation/warlock/assets/elm.js": "177be78e6cb86d68d1e7979715e076f30612ffb5b7d7360d2b517ebfbc7cc4c6",
+                "implementation/warlock/assets/bar.js": "fbe4416674b120412b0be63abe47d438104aaacd3dee2eea4c81323ea9262d29",
+                "implementation/warlock/assets/popup.js": "d56f655974b3c128b442e080350aa37276127b7d2d16a8e36c0356f2b3092944",
+                "implementation/warlock/qa/current-search-build.json": "259f36269ef09335d35ac547b99e4ac6fb49d47c4f7fe729464a4c0d537edafb",
+                "implementation/warlock/qa/current-native-pair.json": "1c95bf58354862f48cb0c5923319ec6a5dd84d0849342e3818c0c586cafcddd3",
+                "implementation/warlock/native/shared-host.c": "cb04ee89d1b56faf04c28838c5604f5eb0053b19fbc851fac6e63f121817c88a",
+                "implementation/warlock/assets/popup-adapter.js": "65c2ce6c30931e3807eea88985d4f53f62499b48dbf157552b2cecce789b8a4b",
+                "implementation/warlock/native/shared-context.h": "19e1415305fd87a0a74287f5a541b38c80a56df9ab8179a08d357d8cf8f061d1",
+                "implementation/warlock/native/shared-context-test.c": "8cb1d6725456b17df2847fb2dbbf501f34688375bf63d28f693eb67653e83ce9"
+              },
+              "reviewerDisposition": {
+                "name": "root-keyboard-shell",
+                "independent": false,
+                "disposition": "Owner partial observations and failed combined original journey; independent acceptance remains open."
+              }
+            }
+          ],
+          "missingObservation": "Combined original ux-023 remains failed: after completed group activation/dismissal, a repeated Home press does not select the current taskbar group within the original six-second deadline. No forced focus, reordered journey or deadline extension qualifies it. Remaining keyboard-switcher, keyboard-task-view and keyboard-snap-chooser intervals were not reached in this combined native campaign. Menus has observed global System entry/refresh/dismissal; keyboard window-context and snap entry remain unreached in this campaign. Native AT/IME consumers and independent original-scenario acceptance remain open; this private campaign disables accessibility bridging. Full Omarchy vocabulary/keybindings, multi-output/device/resource and release gates remain separate mandatory work."
         },
         {
           "name": "keyboard-taskbar-groups",
           "oracle": "each operation completes with recorded keyboard focus and no pointer events",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/keyboard-shell/manifest.json",
+              "sha256": "3e413e0ab486f6c37237e93c98acc79878ed16a2cd78e4e55bec14911dfae878",
+              "scope": "Native epoch-bound Apps/System/Notification history entry integrated with the shared immutable Elm root. Owner-observed keyboard-only launcher/GIO submission, declared jump action, notification/system read/dismissal, Saved settings and actual two-member group activation/input/dismissal. Apps layer-parent eligibility and noneditable physical Escape corrected. Combined journey fails at repeated Home group entry; remaining three surfaces are implemented but unverified here. No requirement/release acceptance.",
+              "sourceBaseRevision": "78a9925dcc75e6c138847047c15f8c3e04d17fba",
+              "sourceHashes": {
+                "implementation/warlock/src/Shortcuts.elm": "4647b05774e5be60a497c8b98f30b273b2b6b3e5928062d83d0c51993c23bedb",
+                "implementation/warlock/src/Desktop.elm": "0b9ca548afbf5a6fe3bc4f9928c8c24b83a61866e6952ff5ef37adedaa32aadf",
+                "implementation/warlock/adapter/effect_endpoint.py": "e0c6d613f7313377f0dd5cf01e9675f500b93b2fc55913944db84770a1f251e0",
+                "implementation/warlock/adapter/daemon.py": "7b4cd4279b85b1ebb1858df5d331629d53471e2c197849e88775e515597b7a75",
+                "implementation/warlock/native/authority.cpp": "304f02636c8c9b7e83f43240f119d4a553b8435ad066f8d962026b1ffcac5404",
+                "implementation/warlock/native/shell-bindings.lua": "31de6d303102d9b37ee21367b6197353960636afd12b653b91ad160961354baf",
+                "implementation/warlock/qa/KeyboardShortcutsReplay.elm": "bc6d7339ac682d886ab6dd4cf3bee74302d6b1476b19052e3c1a47c9b6451fc6",
+                "implementation/warlock/qa/keyboard-shortcuts.qnt": "3cff6d0872adf6ee6599091c4f054820ff55b2a610e1be4cedc1464f2b96e90c",
+                "implementation/warlock/qa/check-keyboard-shortcuts.py": "26bd95d5f97b25495ffddae779c6703ce2512aaf8da2f28fe1ecb6d93d9634d2",
+                "implementation/warlock/qa/check-search.py": "05d53addd38b6898cf1879d70d2421a2b5e646c1f84b8ccaf443efcb744f09bb",
+                "implementation/warlock/qa/check-native-authority.py": "61992b791c75000044f87af114032945d846f7c1d6b719c5b40f37bcf529c727",
+                "implementation/warlock/qa/native-window-feedback.py": "de5c83e3c2922b6c51226bec4cc5753f4ec998b68eb04207e4ee558c90799ab0",
+                "implementation/warlock/README.md": "fc8dbafd848dfa9b83545714e4fe88a9445d405e20fae16cd37d67e5c8f9fbbd",
+                "implementation/warlock/assets/elm.js": "177be78e6cb86d68d1e7979715e076f30612ffb5b7d7360d2b517ebfbc7cc4c6",
+                "implementation/warlock/assets/bar.js": "fbe4416674b120412b0be63abe47d438104aaacd3dee2eea4c81323ea9262d29",
+                "implementation/warlock/assets/popup.js": "d56f655974b3c128b442e080350aa37276127b7d2d16a8e36c0356f2b3092944",
+                "implementation/warlock/qa/current-search-build.json": "259f36269ef09335d35ac547b99e4ac6fb49d47c4f7fe729464a4c0d537edafb",
+                "implementation/warlock/qa/current-native-pair.json": "1c95bf58354862f48cb0c5923319ec6a5dd84d0849342e3818c0c586cafcddd3",
+                "implementation/warlock/native/shared-host.c": "cb04ee89d1b56faf04c28838c5604f5eb0053b19fbc851fac6e63f121817c88a",
+                "implementation/warlock/assets/popup-adapter.js": "65c2ce6c30931e3807eea88985d4f53f62499b48dbf157552b2cecce789b8a4b",
+                "implementation/warlock/native/shared-context.h": "19e1415305fd87a0a74287f5a541b38c80a56df9ab8179a08d357d8cf8f061d1",
+                "implementation/warlock/native/shared-context-test.c": "8cb1d6725456b17df2847fb2dbbf501f34688375bf63d28f693eb67653e83ce9"
+              },
+              "reviewerDisposition": {
+                "name": "root-keyboard-shell",
+                "independent": false,
+                "disposition": "Owner partial observations and failed combined original journey; independent acceptance remains open."
+              }
+            }
+          ],
+          "missingObservation": "Combined original ux-023 remains failed: after completed group activation/dismissal, a repeated Home press does not select the current taskbar group within the original six-second deadline. No forced focus, reordered journey or deadline extension qualifies it. Remaining keyboard-switcher, keyboard-task-view and keyboard-snap-chooser intervals were not reached in this combined native campaign. Menus has observed global System entry/refresh/dismissal; keyboard window-context and snap entry remain unreached in this campaign. Native AT/IME consumers and independent original-scenario acceptance remain open; this private campaign disables accessibility bridging. Full Omarchy vocabulary/keybindings, multi-output/device/resource and release gates remain separate mandatory work."
         },
         {
           "name": "keyboard-switcher",
           "oracle": "each operation completes with recorded keyboard focus and no pointer events",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "implemented-unverified",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/keyboard-shell/manifest.json",
+              "sha256": "3e413e0ab486f6c37237e93c98acc79878ed16a2cd78e4e55bec14911dfae878",
+              "scope": "Native epoch-bound Apps/System/Notification history entry integrated with the shared immutable Elm root. Owner-observed keyboard-only launcher/GIO submission, declared jump action, notification/system read/dismissal, Saved settings and actual two-member group activation/input/dismissal. Apps layer-parent eligibility and noneditable physical Escape corrected. Combined journey fails at repeated Home group entry; remaining three surfaces are implemented but unverified here. No requirement/release acceptance.",
+              "sourceBaseRevision": "78a9925dcc75e6c138847047c15f8c3e04d17fba",
+              "sourceHashes": {
+                "implementation/warlock/src/Shortcuts.elm": "4647b05774e5be60a497c8b98f30b273b2b6b3e5928062d83d0c51993c23bedb",
+                "implementation/warlock/src/Desktop.elm": "0b9ca548afbf5a6fe3bc4f9928c8c24b83a61866e6952ff5ef37adedaa32aadf",
+                "implementation/warlock/adapter/effect_endpoint.py": "e0c6d613f7313377f0dd5cf01e9675f500b93b2fc55913944db84770a1f251e0",
+                "implementation/warlock/adapter/daemon.py": "7b4cd4279b85b1ebb1858df5d331629d53471e2c197849e88775e515597b7a75",
+                "implementation/warlock/native/authority.cpp": "304f02636c8c9b7e83f43240f119d4a553b8435ad066f8d962026b1ffcac5404",
+                "implementation/warlock/native/shell-bindings.lua": "31de6d303102d9b37ee21367b6197353960636afd12b653b91ad160961354baf",
+                "implementation/warlock/qa/KeyboardShortcutsReplay.elm": "bc6d7339ac682d886ab6dd4cf3bee74302d6b1476b19052e3c1a47c9b6451fc6",
+                "implementation/warlock/qa/keyboard-shortcuts.qnt": "3cff6d0872adf6ee6599091c4f054820ff55b2a610e1be4cedc1464f2b96e90c",
+                "implementation/warlock/qa/check-keyboard-shortcuts.py": "26bd95d5f97b25495ffddae779c6703ce2512aaf8da2f28fe1ecb6d93d9634d2",
+                "implementation/warlock/qa/check-search.py": "05d53addd38b6898cf1879d70d2421a2b5e646c1f84b8ccaf443efcb744f09bb",
+                "implementation/warlock/qa/check-native-authority.py": "61992b791c75000044f87af114032945d846f7c1d6b719c5b40f37bcf529c727",
+                "implementation/warlock/qa/native-window-feedback.py": "de5c83e3c2922b6c51226bec4cc5753f4ec998b68eb04207e4ee558c90799ab0",
+                "implementation/warlock/README.md": "fc8dbafd848dfa9b83545714e4fe88a9445d405e20fae16cd37d67e5c8f9fbbd",
+                "implementation/warlock/assets/elm.js": "177be78e6cb86d68d1e7979715e076f30612ffb5b7d7360d2b517ebfbc7cc4c6",
+                "implementation/warlock/assets/bar.js": "fbe4416674b120412b0be63abe47d438104aaacd3dee2eea4c81323ea9262d29",
+                "implementation/warlock/assets/popup.js": "d56f655974b3c128b442e080350aa37276127b7d2d16a8e36c0356f2b3092944",
+                "implementation/warlock/qa/current-search-build.json": "259f36269ef09335d35ac547b99e4ac6fb49d47c4f7fe729464a4c0d537edafb",
+                "implementation/warlock/qa/current-native-pair.json": "1c95bf58354862f48cb0c5923319ec6a5dd84d0849342e3818c0c586cafcddd3",
+                "implementation/warlock/native/shared-host.c": "cb04ee89d1b56faf04c28838c5604f5eb0053b19fbc851fac6e63f121817c88a",
+                "implementation/warlock/assets/popup-adapter.js": "65c2ce6c30931e3807eea88985d4f53f62499b48dbf157552b2cecce789b8a4b",
+                "implementation/warlock/native/shared-context.h": "19e1415305fd87a0a74287f5a541b38c80a56df9ab8179a08d357d8cf8f061d1",
+                "implementation/warlock/native/shared-context-test.c": "8cb1d6725456b17df2847fb2dbbf501f34688375bf63d28f693eb67653e83ce9"
+              },
+              "reviewerDisposition": {
+                "name": "root-keyboard-shell",
+                "independent": false,
+                "disposition": "Owner partial observations and failed combined original journey; independent acceptance remains open."
+              }
+            }
+          ],
+          "missingObservation": "Combined original ux-023 remains failed: after completed group activation/dismissal, a repeated Home press does not select the current taskbar group within the original six-second deadline. No forced focus, reordered journey or deadline extension qualifies it. Remaining keyboard-switcher, keyboard-task-view and keyboard-snap-chooser intervals were not reached in this combined native campaign. Menus has observed global System entry/refresh/dismissal; keyboard window-context and snap entry remain unreached in this campaign. Native AT/IME consumers and independent original-scenario acceptance remain open; this private campaign disables accessibility bridging. Full Omarchy vocabulary/keybindings, multi-output/device/resource and release gates remain separate mandatory work."
         },
         {
           "name": "keyboard-task-view",
           "oracle": "each operation completes with recorded keyboard focus and no pointer events",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "implemented-unverified",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/keyboard-shell/manifest.json",
+              "sha256": "3e413e0ab486f6c37237e93c98acc79878ed16a2cd78e4e55bec14911dfae878",
+              "scope": "Native epoch-bound Apps/System/Notification history entry integrated with the shared immutable Elm root. Owner-observed keyboard-only launcher/GIO submission, declared jump action, notification/system read/dismissal, Saved settings and actual two-member group activation/input/dismissal. Apps layer-parent eligibility and noneditable physical Escape corrected. Combined journey fails at repeated Home group entry; remaining three surfaces are implemented but unverified here. No requirement/release acceptance.",
+              "sourceBaseRevision": "78a9925dcc75e6c138847047c15f8c3e04d17fba",
+              "sourceHashes": {
+                "implementation/warlock/src/Shortcuts.elm": "4647b05774e5be60a497c8b98f30b273b2b6b3e5928062d83d0c51993c23bedb",
+                "implementation/warlock/src/Desktop.elm": "0b9ca548afbf5a6fe3bc4f9928c8c24b83a61866e6952ff5ef37adedaa32aadf",
+                "implementation/warlock/adapter/effect_endpoint.py": "e0c6d613f7313377f0dd5cf01e9675f500b93b2fc55913944db84770a1f251e0",
+                "implementation/warlock/adapter/daemon.py": "7b4cd4279b85b1ebb1858df5d331629d53471e2c197849e88775e515597b7a75",
+                "implementation/warlock/native/authority.cpp": "304f02636c8c9b7e83f43240f119d4a553b8435ad066f8d962026b1ffcac5404",
+                "implementation/warlock/native/shell-bindings.lua": "31de6d303102d9b37ee21367b6197353960636afd12b653b91ad160961354baf",
+                "implementation/warlock/qa/KeyboardShortcutsReplay.elm": "bc6d7339ac682d886ab6dd4cf3bee74302d6b1476b19052e3c1a47c9b6451fc6",
+                "implementation/warlock/qa/keyboard-shortcuts.qnt": "3cff6d0872adf6ee6599091c4f054820ff55b2a610e1be4cedc1464f2b96e90c",
+                "implementation/warlock/qa/check-keyboard-shortcuts.py": "26bd95d5f97b25495ffddae779c6703ce2512aaf8da2f28fe1ecb6d93d9634d2",
+                "implementation/warlock/qa/check-search.py": "05d53addd38b6898cf1879d70d2421a2b5e646c1f84b8ccaf443efcb744f09bb",
+                "implementation/warlock/qa/check-native-authority.py": "61992b791c75000044f87af114032945d846f7c1d6b719c5b40f37bcf529c727",
+                "implementation/warlock/qa/native-window-feedback.py": "de5c83e3c2922b6c51226bec4cc5753f4ec998b68eb04207e4ee558c90799ab0",
+                "implementation/warlock/README.md": "fc8dbafd848dfa9b83545714e4fe88a9445d405e20fae16cd37d67e5c8f9fbbd",
+                "implementation/warlock/assets/elm.js": "177be78e6cb86d68d1e7979715e076f30612ffb5b7d7360d2b517ebfbc7cc4c6",
+                "implementation/warlock/assets/bar.js": "fbe4416674b120412b0be63abe47d438104aaacd3dee2eea4c81323ea9262d29",
+                "implementation/warlock/assets/popup.js": "d56f655974b3c128b442e080350aa37276127b7d2d16a8e36c0356f2b3092944",
+                "implementation/warlock/qa/current-search-build.json": "259f36269ef09335d35ac547b99e4ac6fb49d47c4f7fe729464a4c0d537edafb",
+                "implementation/warlock/qa/current-native-pair.json": "1c95bf58354862f48cb0c5923319ec6a5dd84d0849342e3818c0c586cafcddd3",
+                "implementation/warlock/native/shared-host.c": "cb04ee89d1b56faf04c28838c5604f5eb0053b19fbc851fac6e63f121817c88a",
+                "implementation/warlock/assets/popup-adapter.js": "65c2ce6c30931e3807eea88985d4f53f62499b48dbf157552b2cecce789b8a4b",
+                "implementation/warlock/native/shared-context.h": "19e1415305fd87a0a74287f5a541b38c80a56df9ab8179a08d357d8cf8f061d1",
+                "implementation/warlock/native/shared-context-test.c": "8cb1d6725456b17df2847fb2dbbf501f34688375bf63d28f693eb67653e83ce9"
+              },
+              "reviewerDisposition": {
+                "name": "root-keyboard-shell",
+                "independent": false,
+                "disposition": "Owner partial observations and failed combined original journey; independent acceptance remains open."
+              }
+            }
+          ],
+          "missingObservation": "Combined original ux-023 remains failed: after completed group activation/dismissal, a repeated Home press does not select the current taskbar group within the original six-second deadline. No forced focus, reordered journey or deadline extension qualifies it. Remaining keyboard-switcher, keyboard-task-view and keyboard-snap-chooser intervals were not reached in this combined native campaign. Menus has observed global System entry/refresh/dismissal; keyboard window-context and snap entry remain unreached in this campaign. Native AT/IME consumers and independent original-scenario acceptance remain open; this private campaign disables accessibility bridging. Full Omarchy vocabulary/keybindings, multi-output/device/resource and release gates remain separate mandatory work."
         },
         {
           "name": "keyboard-snap-chooser",
           "oracle": "each operation completes with recorded keyboard focus and no pointer events",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "implemented-unverified",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/keyboard-shell/manifest.json",
+              "sha256": "3e413e0ab486f6c37237e93c98acc79878ed16a2cd78e4e55bec14911dfae878",
+              "scope": "Native epoch-bound Apps/System/Notification history entry integrated with the shared immutable Elm root. Owner-observed keyboard-only launcher/GIO submission, declared jump action, notification/system read/dismissal, Saved settings and actual two-member group activation/input/dismissal. Apps layer-parent eligibility and noneditable physical Escape corrected. Combined journey fails at repeated Home group entry; remaining three surfaces are implemented but unverified here. No requirement/release acceptance.",
+              "sourceBaseRevision": "78a9925dcc75e6c138847047c15f8c3e04d17fba",
+              "sourceHashes": {
+                "implementation/warlock/src/Shortcuts.elm": "4647b05774e5be60a497c8b98f30b273b2b6b3e5928062d83d0c51993c23bedb",
+                "implementation/warlock/src/Desktop.elm": "0b9ca548afbf5a6fe3bc4f9928c8c24b83a61866e6952ff5ef37adedaa32aadf",
+                "implementation/warlock/adapter/effect_endpoint.py": "e0c6d613f7313377f0dd5cf01e9675f500b93b2fc55913944db84770a1f251e0",
+                "implementation/warlock/adapter/daemon.py": "7b4cd4279b85b1ebb1858df5d331629d53471e2c197849e88775e515597b7a75",
+                "implementation/warlock/native/authority.cpp": "304f02636c8c9b7e83f43240f119d4a553b8435ad066f8d962026b1ffcac5404",
+                "implementation/warlock/native/shell-bindings.lua": "31de6d303102d9b37ee21367b6197353960636afd12b653b91ad160961354baf",
+                "implementation/warlock/qa/KeyboardShortcutsReplay.elm": "bc6d7339ac682d886ab6dd4cf3bee74302d6b1476b19052e3c1a47c9b6451fc6",
+                "implementation/warlock/qa/keyboard-shortcuts.qnt": "3cff6d0872adf6ee6599091c4f054820ff55b2a610e1be4cedc1464f2b96e90c",
+                "implementation/warlock/qa/check-keyboard-shortcuts.py": "26bd95d5f97b25495ffddae779c6703ce2512aaf8da2f28fe1ecb6d93d9634d2",
+                "implementation/warlock/qa/check-search.py": "05d53addd38b6898cf1879d70d2421a2b5e646c1f84b8ccaf443efcb744f09bb",
+                "implementation/warlock/qa/check-native-authority.py": "61992b791c75000044f87af114032945d846f7c1d6b719c5b40f37bcf529c727",
+                "implementation/warlock/qa/native-window-feedback.py": "de5c83e3c2922b6c51226bec4cc5753f4ec998b68eb04207e4ee558c90799ab0",
+                "implementation/warlock/README.md": "fc8dbafd848dfa9b83545714e4fe88a9445d405e20fae16cd37d67e5c8f9fbbd",
+                "implementation/warlock/assets/elm.js": "177be78e6cb86d68d1e7979715e076f30612ffb5b7d7360d2b517ebfbc7cc4c6",
+                "implementation/warlock/assets/bar.js": "fbe4416674b120412b0be63abe47d438104aaacd3dee2eea4c81323ea9262d29",
+                "implementation/warlock/assets/popup.js": "d56f655974b3c128b442e080350aa37276127b7d2d16a8e36c0356f2b3092944",
+                "implementation/warlock/qa/current-search-build.json": "259f36269ef09335d35ac547b99e4ac6fb49d47c4f7fe729464a4c0d537edafb",
+                "implementation/warlock/qa/current-native-pair.json": "1c95bf58354862f48cb0c5923319ec6a5dd84d0849342e3818c0c586cafcddd3",
+                "implementation/warlock/native/shared-host.c": "cb04ee89d1b56faf04c28838c5604f5eb0053b19fbc851fac6e63f121817c88a",
+                "implementation/warlock/assets/popup-adapter.js": "65c2ce6c30931e3807eea88985d4f53f62499b48dbf157552b2cecce789b8a4b",
+                "implementation/warlock/native/shared-context.h": "19e1415305fd87a0a74287f5a541b38c80a56df9ab8179a08d357d8cf8f061d1",
+                "implementation/warlock/native/shared-context-test.c": "8cb1d6725456b17df2847fb2dbbf501f34688375bf63d28f693eb67653e83ce9"
+              },
+              "reviewerDisposition": {
+                "name": "root-keyboard-shell",
+                "independent": false,
+                "disposition": "Owner partial observations and failed combined original journey; independent acceptance remains open."
+              }
+            }
+          ],
+          "missingObservation": "Combined original ux-023 remains failed: after completed group activation/dismissal, a repeated Home press does not select the current taskbar group within the original six-second deadline. No forced focus, reordered journey or deadline extension qualifies it. Remaining keyboard-switcher, keyboard-task-view and keyboard-snap-chooser intervals were not reached in this combined native campaign. Menus has observed global System entry/refresh/dismissal; keyboard window-context and snap entry remain unreached in this campaign. Native AT/IME consumers and independent original-scenario acceptance remain open; this private campaign disables accessibility bridging. Full Omarchy vocabulary/keybindings, multi-output/device/resource and release gates remain separate mandatory work."
         },
         {
           "name": "keyboard-menus",
@@ -7800,12 +8016,42 @@
           "status": "partial",
           "evidence": [
             {
-              "path": "implementation/warlock/qa/evidence/pinned-window-menus/manifest.json",
-              "sha256": "558e5294161a44057a20fc2fa18c8495cd9dbd1c4be738f32f3be3de88e14384",
-              "scope": "Physical keyboard-only interval after pointer setup: Menu/Shift-F10 opens, arrows traverse, Enter minimizes exactly once, Menu reopens the current minimized menu and Escape returns focus. Full zero-pointer setup and independent original-scenario review remain separate."
+              "path": "implementation/warlock/qa/evidence/keyboard-shell/manifest.json",
+              "sha256": "3e413e0ab486f6c37237e93c98acc79878ed16a2cd78e4e55bec14911dfae878",
+              "scope": "Native epoch-bound Apps/System/Notification history entry integrated with the shared immutable Elm root. Owner-observed keyboard-only launcher/GIO submission, declared jump action, notification/system read/dismissal, Saved settings and actual two-member group activation/input/dismissal. Apps layer-parent eligibility and noneditable physical Escape corrected. Combined journey fails at repeated Home group entry; remaining three surfaces are implemented but unverified here. No requirement/release acceptance.",
+              "sourceBaseRevision": "78a9925dcc75e6c138847047c15f8c3e04d17fba",
+              "sourceHashes": {
+                "implementation/warlock/src/Shortcuts.elm": "4647b05774e5be60a497c8b98f30b273b2b6b3e5928062d83d0c51993c23bedb",
+                "implementation/warlock/src/Desktop.elm": "0b9ca548afbf5a6fe3bc4f9928c8c24b83a61866e6952ff5ef37adedaa32aadf",
+                "implementation/warlock/adapter/effect_endpoint.py": "e0c6d613f7313377f0dd5cf01e9675f500b93b2fc55913944db84770a1f251e0",
+                "implementation/warlock/adapter/daemon.py": "7b4cd4279b85b1ebb1858df5d331629d53471e2c197849e88775e515597b7a75",
+                "implementation/warlock/native/authority.cpp": "304f02636c8c9b7e83f43240f119d4a553b8435ad066f8d962026b1ffcac5404",
+                "implementation/warlock/native/shell-bindings.lua": "31de6d303102d9b37ee21367b6197353960636afd12b653b91ad160961354baf",
+                "implementation/warlock/qa/KeyboardShortcutsReplay.elm": "bc6d7339ac682d886ab6dd4cf3bee74302d6b1476b19052e3c1a47c9b6451fc6",
+                "implementation/warlock/qa/keyboard-shortcuts.qnt": "3cff6d0872adf6ee6599091c4f054820ff55b2a610e1be4cedc1464f2b96e90c",
+                "implementation/warlock/qa/check-keyboard-shortcuts.py": "26bd95d5f97b25495ffddae779c6703ce2512aaf8da2f28fe1ecb6d93d9634d2",
+                "implementation/warlock/qa/check-search.py": "05d53addd38b6898cf1879d70d2421a2b5e646c1f84b8ccaf443efcb744f09bb",
+                "implementation/warlock/qa/check-native-authority.py": "61992b791c75000044f87af114032945d846f7c1d6b719c5b40f37bcf529c727",
+                "implementation/warlock/qa/native-window-feedback.py": "de5c83e3c2922b6c51226bec4cc5753f4ec998b68eb04207e4ee558c90799ab0",
+                "implementation/warlock/README.md": "fc8dbafd848dfa9b83545714e4fe88a9445d405e20fae16cd37d67e5c8f9fbbd",
+                "implementation/warlock/assets/elm.js": "177be78e6cb86d68d1e7979715e076f30612ffb5b7d7360d2b517ebfbc7cc4c6",
+                "implementation/warlock/assets/bar.js": "fbe4416674b120412b0be63abe47d438104aaacd3dee2eea4c81323ea9262d29",
+                "implementation/warlock/assets/popup.js": "d56f655974b3c128b442e080350aa37276127b7d2d16a8e36c0356f2b3092944",
+                "implementation/warlock/qa/current-search-build.json": "259f36269ef09335d35ac547b99e4ac6fb49d47c4f7fe729464a4c0d537edafb",
+                "implementation/warlock/qa/current-native-pair.json": "1c95bf58354862f48cb0c5923319ec6a5dd84d0849342e3818c0c586cafcddd3",
+                "implementation/warlock/native/shared-host.c": "cb04ee89d1b56faf04c28838c5604f5eb0053b19fbc851fac6e63f121817c88a",
+                "implementation/warlock/assets/popup-adapter.js": "65c2ce6c30931e3807eea88985d4f53f62499b48dbf157552b2cecce789b8a4b",
+                "implementation/warlock/native/shared-context.h": "19e1415305fd87a0a74287f5a541b38c80a56df9ab8179a08d357d8cf8f061d1",
+                "implementation/warlock/native/shared-context-test.c": "8cb1d6725456b17df2847fb2dbbf501f34688375bf63d28f693eb67653e83ce9"
+              },
+              "reviewerDisposition": {
+                "name": "root-keyboard-shell",
+                "independent": false,
+                "disposition": "Owner partial observations and failed combined original journey; independent acceptance remains open."
+              }
             }
           ],
-          "missingObservation": "Complete no-pointer fixture coverage beyond this current running-pin interval and independent original-scenario review remain open.",
+          "missingObservation": "Combined original ux-023 remains failed: after completed group activation/dismissal, a repeated Home press does not select the current taskbar group within the original six-second deadline. No forced focus, reordered journey or deadline extension qualifies it. Remaining keyboard-switcher, keyboard-task-view and keyboard-snap-chooser intervals were not reached in this combined native campaign. Menus has observed global System entry/refresh/dismissal; keyboard window-context and snap entry remain unreached in this campaign. Native AT/IME consumers and independent original-scenario acceptance remain open; this private campaign disables accessibility bridging. Full Omarchy vocabulary/keybindings, multi-output/device/resource and release gates remain separate mandatory work.",
           "reviewerDisposition": {
             "name": "root-pinned-menus",
             "independent": false,
@@ -7815,23 +8061,131 @@
         {
           "name": "keyboard-settings",
           "oracle": "each operation completes with recorded keyboard focus and no pointer events",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/keyboard-shell/manifest.json",
+              "sha256": "3e413e0ab486f6c37237e93c98acc79878ed16a2cd78e4e55bec14911dfae878",
+              "scope": "Native epoch-bound Apps/System/Notification history entry integrated with the shared immutable Elm root. Owner-observed keyboard-only launcher/GIO submission, declared jump action, notification/system read/dismissal, Saved settings and actual two-member group activation/input/dismissal. Apps layer-parent eligibility and noneditable physical Escape corrected. Combined journey fails at repeated Home group entry; remaining three surfaces are implemented but unverified here. No requirement/release acceptance.",
+              "sourceBaseRevision": "78a9925dcc75e6c138847047c15f8c3e04d17fba",
+              "sourceHashes": {
+                "implementation/warlock/src/Shortcuts.elm": "4647b05774e5be60a497c8b98f30b273b2b6b3e5928062d83d0c51993c23bedb",
+                "implementation/warlock/src/Desktop.elm": "0b9ca548afbf5a6fe3bc4f9928c8c24b83a61866e6952ff5ef37adedaa32aadf",
+                "implementation/warlock/adapter/effect_endpoint.py": "e0c6d613f7313377f0dd5cf01e9675f500b93b2fc55913944db84770a1f251e0",
+                "implementation/warlock/adapter/daemon.py": "7b4cd4279b85b1ebb1858df5d331629d53471e2c197849e88775e515597b7a75",
+                "implementation/warlock/native/authority.cpp": "304f02636c8c9b7e83f43240f119d4a553b8435ad066f8d962026b1ffcac5404",
+                "implementation/warlock/native/shell-bindings.lua": "31de6d303102d9b37ee21367b6197353960636afd12b653b91ad160961354baf",
+                "implementation/warlock/qa/KeyboardShortcutsReplay.elm": "bc6d7339ac682d886ab6dd4cf3bee74302d6b1476b19052e3c1a47c9b6451fc6",
+                "implementation/warlock/qa/keyboard-shortcuts.qnt": "3cff6d0872adf6ee6599091c4f054820ff55b2a610e1be4cedc1464f2b96e90c",
+                "implementation/warlock/qa/check-keyboard-shortcuts.py": "26bd95d5f97b25495ffddae779c6703ce2512aaf8da2f28fe1ecb6d93d9634d2",
+                "implementation/warlock/qa/check-search.py": "05d53addd38b6898cf1879d70d2421a2b5e646c1f84b8ccaf443efcb744f09bb",
+                "implementation/warlock/qa/check-native-authority.py": "61992b791c75000044f87af114032945d846f7c1d6b719c5b40f37bcf529c727",
+                "implementation/warlock/qa/native-window-feedback.py": "de5c83e3c2922b6c51226bec4cc5753f4ec998b68eb04207e4ee558c90799ab0",
+                "implementation/warlock/README.md": "fc8dbafd848dfa9b83545714e4fe88a9445d405e20fae16cd37d67e5c8f9fbbd",
+                "implementation/warlock/assets/elm.js": "177be78e6cb86d68d1e7979715e076f30612ffb5b7d7360d2b517ebfbc7cc4c6",
+                "implementation/warlock/assets/bar.js": "fbe4416674b120412b0be63abe47d438104aaacd3dee2eea4c81323ea9262d29",
+                "implementation/warlock/assets/popup.js": "d56f655974b3c128b442e080350aa37276127b7d2d16a8e36c0356f2b3092944",
+                "implementation/warlock/qa/current-search-build.json": "259f36269ef09335d35ac547b99e4ac6fb49d47c4f7fe729464a4c0d537edafb",
+                "implementation/warlock/qa/current-native-pair.json": "1c95bf58354862f48cb0c5923319ec6a5dd84d0849342e3818c0c586cafcddd3",
+                "implementation/warlock/native/shared-host.c": "cb04ee89d1b56faf04c28838c5604f5eb0053b19fbc851fac6e63f121817c88a",
+                "implementation/warlock/assets/popup-adapter.js": "65c2ce6c30931e3807eea88985d4f53f62499b48dbf157552b2cecce789b8a4b",
+                "implementation/warlock/native/shared-context.h": "19e1415305fd87a0a74287f5a541b38c80a56df9ab8179a08d357d8cf8f061d1",
+                "implementation/warlock/native/shared-context-test.c": "8cb1d6725456b17df2847fb2dbbf501f34688375bf63d28f693eb67653e83ce9"
+              },
+              "reviewerDisposition": {
+                "name": "root-keyboard-shell",
+                "independent": false,
+                "disposition": "Owner partial observations and failed combined original journey; independent acceptance remains open."
+              }
+            }
+          ],
+          "missingObservation": "Combined original ux-023 remains failed: after completed group activation/dismissal, a repeated Home press does not select the current taskbar group within the original six-second deadline. No forced focus, reordered journey or deadline extension qualifies it. Remaining keyboard-switcher, keyboard-task-view and keyboard-snap-chooser intervals were not reached in this combined native campaign. Menus has observed global System entry/refresh/dismissal; keyboard window-context and snap entry remain unreached in this campaign. Native AT/IME consumers and independent original-scenario acceptance remain open; this private campaign disables accessibility bridging. Full Omarchy vocabulary/keybindings, multi-output/device/resource and release gates remain separate mandatory work."
         },
         {
           "name": "keyboard-notifications",
           "oracle": "each operation completes with recorded keyboard focus and no pointer events",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/keyboard-shell/manifest.json",
+              "sha256": "3e413e0ab486f6c37237e93c98acc79878ed16a2cd78e4e55bec14911dfae878",
+              "scope": "Native epoch-bound Apps/System/Notification history entry integrated with the shared immutable Elm root. Owner-observed keyboard-only launcher/GIO submission, declared jump action, notification/system read/dismissal, Saved settings and actual two-member group activation/input/dismissal. Apps layer-parent eligibility and noneditable physical Escape corrected. Combined journey fails at repeated Home group entry; remaining three surfaces are implemented but unverified here. No requirement/release acceptance.",
+              "sourceBaseRevision": "78a9925dcc75e6c138847047c15f8c3e04d17fba",
+              "sourceHashes": {
+                "implementation/warlock/src/Shortcuts.elm": "4647b05774e5be60a497c8b98f30b273b2b6b3e5928062d83d0c51993c23bedb",
+                "implementation/warlock/src/Desktop.elm": "0b9ca548afbf5a6fe3bc4f9928c8c24b83a61866e6952ff5ef37adedaa32aadf",
+                "implementation/warlock/adapter/effect_endpoint.py": "e0c6d613f7313377f0dd5cf01e9675f500b93b2fc55913944db84770a1f251e0",
+                "implementation/warlock/adapter/daemon.py": "7b4cd4279b85b1ebb1858df5d331629d53471e2c197849e88775e515597b7a75",
+                "implementation/warlock/native/authority.cpp": "304f02636c8c9b7e83f43240f119d4a553b8435ad066f8d962026b1ffcac5404",
+                "implementation/warlock/native/shell-bindings.lua": "31de6d303102d9b37ee21367b6197353960636afd12b653b91ad160961354baf",
+                "implementation/warlock/qa/KeyboardShortcutsReplay.elm": "bc6d7339ac682d886ab6dd4cf3bee74302d6b1476b19052e3c1a47c9b6451fc6",
+                "implementation/warlock/qa/keyboard-shortcuts.qnt": "3cff6d0872adf6ee6599091c4f054820ff55b2a610e1be4cedc1464f2b96e90c",
+                "implementation/warlock/qa/check-keyboard-shortcuts.py": "26bd95d5f97b25495ffddae779c6703ce2512aaf8da2f28fe1ecb6d93d9634d2",
+                "implementation/warlock/qa/check-search.py": "05d53addd38b6898cf1879d70d2421a2b5e646c1f84b8ccaf443efcb744f09bb",
+                "implementation/warlock/qa/check-native-authority.py": "61992b791c75000044f87af114032945d846f7c1d6b719c5b40f37bcf529c727",
+                "implementation/warlock/qa/native-window-feedback.py": "de5c83e3c2922b6c51226bec4cc5753f4ec998b68eb04207e4ee558c90799ab0",
+                "implementation/warlock/README.md": "fc8dbafd848dfa9b83545714e4fe88a9445d405e20fae16cd37d67e5c8f9fbbd",
+                "implementation/warlock/assets/elm.js": "177be78e6cb86d68d1e7979715e076f30612ffb5b7d7360d2b517ebfbc7cc4c6",
+                "implementation/warlock/assets/bar.js": "fbe4416674b120412b0be63abe47d438104aaacd3dee2eea4c81323ea9262d29",
+                "implementation/warlock/assets/popup.js": "d56f655974b3c128b442e080350aa37276127b7d2d16a8e36c0356f2b3092944",
+                "implementation/warlock/qa/current-search-build.json": "259f36269ef09335d35ac547b99e4ac6fb49d47c4f7fe729464a4c0d537edafb",
+                "implementation/warlock/qa/current-native-pair.json": "1c95bf58354862f48cb0c5923319ec6a5dd84d0849342e3818c0c586cafcddd3",
+                "implementation/warlock/native/shared-host.c": "cb04ee89d1b56faf04c28838c5604f5eb0053b19fbc851fac6e63f121817c88a",
+                "implementation/warlock/assets/popup-adapter.js": "65c2ce6c30931e3807eea88985d4f53f62499b48dbf157552b2cecce789b8a4b",
+                "implementation/warlock/native/shared-context.h": "19e1415305fd87a0a74287f5a541b38c80a56df9ab8179a08d357d8cf8f061d1",
+                "implementation/warlock/native/shared-context-test.c": "8cb1d6725456b17df2847fb2dbbf501f34688375bf63d28f693eb67653e83ce9"
+              },
+              "reviewerDisposition": {
+                "name": "root-keyboard-shell",
+                "independent": false,
+                "disposition": "Owner partial observations and failed combined original journey; independent acceptance remains open."
+              }
+            }
+          ],
+          "missingObservation": "Combined original ux-023 remains failed: after completed group activation/dismissal, a repeated Home press does not select the current taskbar group within the original six-second deadline. No forced focus, reordered journey or deadline extension qualifies it. Remaining keyboard-switcher, keyboard-task-view and keyboard-snap-chooser intervals were not reached in this combined native campaign. Menus has observed global System entry/refresh/dismissal; keyboard window-context and snap entry remain unreached in this campaign. Native AT/IME consumers and independent original-scenario acceptance remain open; this private campaign disables accessibility bridging. Full Omarchy vocabulary/keybindings, multi-output/device/resource and release gates remain separate mandatory work."
         },
         {
           "name": "keyboard-jump-lists",
           "oracle": "each operation completes with recorded keyboard focus and no pointer events",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/keyboard-shell/manifest.json",
+              "sha256": "3e413e0ab486f6c37237e93c98acc79878ed16a2cd78e4e55bec14911dfae878",
+              "scope": "Native epoch-bound Apps/System/Notification history entry integrated with the shared immutable Elm root. Owner-observed keyboard-only launcher/GIO submission, declared jump action, notification/system read/dismissal, Saved settings and actual two-member group activation/input/dismissal. Apps layer-parent eligibility and noneditable physical Escape corrected. Combined journey fails at repeated Home group entry; remaining three surfaces are implemented but unverified here. No requirement/release acceptance.",
+              "sourceBaseRevision": "78a9925dcc75e6c138847047c15f8c3e04d17fba",
+              "sourceHashes": {
+                "implementation/warlock/src/Shortcuts.elm": "4647b05774e5be60a497c8b98f30b273b2b6b3e5928062d83d0c51993c23bedb",
+                "implementation/warlock/src/Desktop.elm": "0b9ca548afbf5a6fe3bc4f9928c8c24b83a61866e6952ff5ef37adedaa32aadf",
+                "implementation/warlock/adapter/effect_endpoint.py": "e0c6d613f7313377f0dd5cf01e9675f500b93b2fc55913944db84770a1f251e0",
+                "implementation/warlock/adapter/daemon.py": "7b4cd4279b85b1ebb1858df5d331629d53471e2c197849e88775e515597b7a75",
+                "implementation/warlock/native/authority.cpp": "304f02636c8c9b7e83f43240f119d4a553b8435ad066f8d962026b1ffcac5404",
+                "implementation/warlock/native/shell-bindings.lua": "31de6d303102d9b37ee21367b6197353960636afd12b653b91ad160961354baf",
+                "implementation/warlock/qa/KeyboardShortcutsReplay.elm": "bc6d7339ac682d886ab6dd4cf3bee74302d6b1476b19052e3c1a47c9b6451fc6",
+                "implementation/warlock/qa/keyboard-shortcuts.qnt": "3cff6d0872adf6ee6599091c4f054820ff55b2a610e1be4cedc1464f2b96e90c",
+                "implementation/warlock/qa/check-keyboard-shortcuts.py": "26bd95d5f97b25495ffddae779c6703ce2512aaf8da2f28fe1ecb6d93d9634d2",
+                "implementation/warlock/qa/check-search.py": "05d53addd38b6898cf1879d70d2421a2b5e646c1f84b8ccaf443efcb744f09bb",
+                "implementation/warlock/qa/check-native-authority.py": "61992b791c75000044f87af114032945d846f7c1d6b719c5b40f37bcf529c727",
+                "implementation/warlock/qa/native-window-feedback.py": "de5c83e3c2922b6c51226bec4cc5753f4ec998b68eb04207e4ee558c90799ab0",
+                "implementation/warlock/README.md": "fc8dbafd848dfa9b83545714e4fe88a9445d405e20fae16cd37d67e5c8f9fbbd",
+                "implementation/warlock/assets/elm.js": "177be78e6cb86d68d1e7979715e076f30612ffb5b7d7360d2b517ebfbc7cc4c6",
+                "implementation/warlock/assets/bar.js": "fbe4416674b120412b0be63abe47d438104aaacd3dee2eea4c81323ea9262d29",
+                "implementation/warlock/assets/popup.js": "d56f655974b3c128b442e080350aa37276127b7d2d16a8e36c0356f2b3092944",
+                "implementation/warlock/qa/current-search-build.json": "259f36269ef09335d35ac547b99e4ac6fb49d47c4f7fe729464a4c0d537edafb",
+                "implementation/warlock/qa/current-native-pair.json": "1c95bf58354862f48cb0c5923319ec6a5dd84d0849342e3818c0c586cafcddd3",
+                "implementation/warlock/native/shared-host.c": "cb04ee89d1b56faf04c28838c5604f5eb0053b19fbc851fac6e63f121817c88a",
+                "implementation/warlock/assets/popup-adapter.js": "65c2ce6c30931e3807eea88985d4f53f62499b48dbf157552b2cecce789b8a4b",
+                "implementation/warlock/native/shared-context.h": "19e1415305fd87a0a74287f5a541b38c80a56df9ab8179a08d357d8cf8f061d1",
+                "implementation/warlock/native/shared-context-test.c": "8cb1d6725456b17df2847fb2dbbf501f34688375bf63d28f693eb67653e83ce9"
+              },
+              "reviewerDisposition": {
+                "name": "root-keyboard-shell",
+                "independent": false,
+                "disposition": "Owner partial observations and failed combined original journey; independent acceptance remains open."
+              }
+            }
+          ],
+          "missingObservation": "Combined original ux-023 remains failed: after completed group activation/dismissal, a repeated Home press does not select the current taskbar group within the original six-second deadline. No forced focus, reordered journey or deadline extension qualifies it. Remaining keyboard-switcher, keyboard-task-view and keyboard-snap-chooser intervals were not reached in this combined native campaign. Menus has observed global System entry/refresh/dismissal; keyboard window-context and snap entry remain unreached in this campaign. Native AT/IME consumers and independent original-scenario acceptance remain open; this private campaign disables accessibility bridging. Full Omarchy vocabulary/keybindings, multi-output/device/resource and release gates remain separate mandatory work."
         }
       ]
     },

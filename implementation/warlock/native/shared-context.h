@@ -164,9 +164,11 @@ static gboolean shared_native_escape_press(GtkWidget *widget) {
     JsonObject *snapshot=json_node_get_object(surface_snapshot);guint64 publication,lease;
     const char *mode=json_object_get_string_member(snapshot,"mode");
     gboolean menu=g_strcmp0(mode,"menu")==0;
-    // Text entry retains its renderer/IME route. These three modes have no
-    // editable controls; physical Escape can only retire their native grab.
-    gboolean ordinary=g_strcmp0(mode,"overview")==0 || g_strcmp0(mode,"picker")==0 || g_strcmp0(mode,"switcher")==0;
+    // Applications and Files retain their renderer/IME routes. Noneditable
+    // surfaces can retire their grab even after an operation disables focus.
+    gboolean ordinary=g_strcmp0(mode,"overview")==0 || g_strcmp0(mode,"picker")==0 || g_strcmp0(mode,"switcher")==0
+        || g_strcmp0(mode,"snap")==0 || g_strcmp0(mode,"settings")==0 || g_strcmp0(mode,"notifications")==0
+        || g_strcmp0(mode,"system")==0 || g_strcmp0(mode,"jump")==0;
     if((!menu && !ordinary) ||
        !surface_uint(json_object_get_member(snapshot,"publication"),&publication) || publication!=proof->publication ||
        !surface_uint(json_object_get_member(snapshot,"lease"),&lease) || lease!=proof->lease)return FALSE;

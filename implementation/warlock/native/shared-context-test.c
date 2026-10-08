@@ -182,7 +182,7 @@ int main(void) {
     }
     proof(&one,TRUE);context_proof.key=GDK_KEY_Return;held_context_keys=128;
     CHECK("native Escape helper cannot admit Enter before DOM ready",!shared_native_escape_press((GtkWidget*)popup_view) && !context_terminal_current(&context_proof));
-    const char *popup_modes[]={"overview","picker","switcher"};
+    const char *popup_modes[]={"overview","picker","switcher","snap","settings","notifications","system","jump"};
     for(guint i=0;i<G_N_ELEMENTS(popup_modes);i++) {
         json_object_set_string_member(json_node_get_object(surface_snapshot),"mode",popup_modes[i]);
         proof(&one,TRUE);context_proof.key=GDK_KEY_Escape;held_context_keys=4;applied_publication=9;
@@ -202,6 +202,8 @@ int main(void) {
     CHECK("unknown popup mode cannot mint native dismissal",!shared_native_escape_press((GtkWidget*)popup_view));
     json_object_set_string_member(json_node_get_object(surface_snapshot),"mode","applications");
     CHECK("editable popup retains its renderer and IME Escape route",!shared_native_escape_press((GtkWidget*)popup_view));
+    json_object_set_string_member(json_node_get_object(surface_snapshot),"mode","files");
+    CHECK("folder field retains renderer and IME Escape route",!shared_native_escape_press((GtkWidget*)popup_view));
     held_context_keys=0;applied_publication=10;
     json_node_unref(nav);
     json_node_unref(menu);

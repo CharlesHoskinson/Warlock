@@ -195,6 +195,7 @@ def main():
   recovery=lifetime.enter_context(guarded(lambda:Journal(config['runtime'],config['instance'],client.bound['lifetime'])))
   reconciliation=publish_startup(client,hello,recovery)
   chord_request=1;send(client.switcher_journal(str(chord_request)))
+  shortcuts_request=1;send(client.shell_shortcuts(str(shortcuts_request)))
   send(notification_service.observation(client));selector.register(notification_service.wake,selectors.EVENT_READ,'notifications')
   selector.register(0,selectors.EVENT_READ,'stdin');selector.register(events,selectors.EVENT_READ,'events')
   incoming=FrontendFrames();notifications=bytearray();dirty=False;have_snapshot=False;last_notice=0.0
@@ -220,6 +221,8 @@ def main():
      while b'\n' in notifications:
       line,_,rest=notifications.partition(b'\n');notifications=bytearray(rest)
       event=bytes(line.split(b'>>',1)[0])
+      if event==b'warlockshortcuts':
+       shortcuts_request+=1;canonical(str(shortcuts_request));send(client.shell_shortcuts(str(shortcuts_request)))
       if event==b'warlockswitcher':
        chord_request+=1
        canonical(str(chord_request));send(client.switcher_journal(str(chord_request)))

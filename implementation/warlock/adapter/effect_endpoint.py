@@ -82,6 +82,20 @@ class Endpoint(ReadOnlyEndpoint):
   if r['context']['lifetime']!=self.bound['lifetime'] or r['context']['epoch']!=self.bound['frontend']:raise Refused('History authority')
   if not isinstance(r['roots'],list) or len(r['roots'])>256 or len(set(canonical(value) for value in r['roots']))!=len(r['roots']):raise Refused('History bound/identity')
   return r
+ def shell_shortcuts(self,request_id):
+  canonical(request_id)
+  r=self.request({'protocolVersion':3,'kind':'shell-shortcuts-request','binding':self.bound,'requestId':request_id})
+  exact(r,['protocolVersion','kind','shortcutProtocol','binding','requestId','serial','blocked','events'])
+  if r['protocolVersion']!=3 or r['kind']!='shell-shortcuts' or type(r['shortcutProtocol']) is not int or r['shortcutProtocol']!=1 or binding(r['binding'])!=self.bound or r['requestId']!=request_id or type(r['blocked']) is not bool:raise Refused('Shortcut correlation/protocol')
+  high=int(canonical(r['serial'],True));rows=r['events']
+  if not isinstance(rows,list) or len(rows)>64:raise Refused('Shortcut capacity')
+  previous=None
+  for row in rows:
+   exact(row,['serial','route']);serial=int(canonical(row['serial']))
+   if row['route'] not in ['applications','system','notifications'] or (previous is not None and serial!=previous+1):raise Refused('Shortcut route/order')
+   previous=serial
+  if previous is not None and previous!=high:raise Refused('Shortcut watermark')
+  return r
  def switcher_journal(self,request_id,observe=False):
   canonical(request_id)
   kind='switcher-journal-observe-request' if observe else 'switcher-journal-request'

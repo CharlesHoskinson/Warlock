@@ -1,0 +1,322 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      blocked: false,
+      epoch: 1,
+      exposures: [],
+      first: 1,
+      high: 0,
+      owner: 1,
+      route: 0,
+      seen: 0
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      blocked: false,
+      epoch: 1,
+      exposures: [],
+      first: 1,
+      high: 1,
+      owner: 1,
+      route: 1,
+      seen: 0
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      blocked: false,
+      epoch: 1,
+      exposures: [],
+      first: 1,
+      high: 1,
+      owner: 1,
+      route: 1,
+      seen: 1
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      blocked: false,
+      epoch: 1,
+      exposures: [],
+      first: 1,
+      high: 1,
+      owner: 1,
+      route: 1,
+      seen: 1
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      blocked: false,
+      epoch: 1,
+      exposures: [],
+      first: 1,
+      high: 1,
+      owner: 1,
+      route: 1,
+      seen: 1
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      blocked: false,
+      epoch: 1,
+      exposures: [],
+      first: 1,
+      high: 1,
+      owner: 1,
+      route: 1,
+      seen: 1
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      blocked: false,
+      epoch: 1,
+      exposures: [],
+      first: 1,
+      high: 2,
+      owner: 1,
+      route: 2,
+      seen: 1
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      blocked: false,
+      epoch: 1,
+      exposures: [2],
+      first: 1,
+      high: 2,
+      owner: 1,
+      route: 2,
+      seen: 2
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      blocked: false,
+      epoch: 1,
+      exposures: [2],
+      first: 2,
+      high: 2,
+      owner: 1,
+      route: 2,
+      seen: 2
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      blocked: false,
+      epoch: 1,
+      exposures: [2],
+      first: 2,
+      high: 2,
+      owner: 1,
+      route: 2,
+      seen: 2
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      blocked: false,
+      epoch: 1,
+      exposures: [2],
+      first: 2,
+      high: 2,
+      owner: 1,
+      route: 2,
+      seen: 2
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      blocked: false,
+      epoch: 1,
+      exposures: [2],
+      first: 2,
+      high: 3,
+      owner: 1,
+      route: 3,
+      seen: 2
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      blocked: false,
+      epoch: 1,
+      exposures: [2, 3],
+      first: 2,
+      high: 3,
+      owner: 1,
+      route: 3,
+      seen: 3
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      blocked: false,
+      epoch: 2,
+      exposures: [2, 3],
+      first: 2,
+      high: 3,
+      owner: 1,
+      route: 3,
+      seen: 3
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      blocked: false,
+      epoch: 2,
+      exposures: [2, 3],
+      first: 2,
+      high: 3,
+      owner: 1,
+      route: 3,
+      seen: 3
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      blocked: false,
+      epoch: 2,
+      exposures: [2, 3],
+      first: 2,
+      high: 3,
+      owner: 1,
+      route: 3,
+      seen: 3
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      blocked: false,
+      epoch: 2,
+      exposures: [2, 3],
+      first: 2,
+      high: 3,
+      owner: 1,
+      route: 3,
+      seen: 3
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      blocked: false,
+      epoch: 2,
+      exposures: [2, 3],
+      first: 2,
+      high: 4,
+      owner: 1,
+      route: 1,
+      seen: 3
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      blocked: true,
+      epoch: 2,
+      exposures: [2, 3],
+      first: 2,
+      high: 4,
+      owner: 1,
+      route: 1,
+      seen: 3
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      blocked: true,
+      epoch: 2,
+      exposures: [2, 3],
+      first: 4,
+      high: 4,
+      owner: 1,
+      route: 1,
+      seen: 3
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      blocked: false,
+      epoch: 2,
+      exposures: [2, 3],
+      first: 4,
+      high: 4,
+      owner: 1,
+      route: 1,
+      seen: 3
+    }
+}
+
+[ok] No violation found (67ms at 1493 traces/second).
+Trace length statistics: max=21, min=21, average=21.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x1351e --backend=typescript to reproduce.

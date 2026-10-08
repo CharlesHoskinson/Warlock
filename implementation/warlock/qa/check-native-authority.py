@@ -13,7 +13,7 @@ HELD=PRIOR.parents[1]
 OUT=ROOT/'qa/runs'/('native-authority-'+str(time.time_ns()));OUT.mkdir()
 sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
 r={'passed':False,'nativeAcceptance':False,'installed':False,'protectedScope':scope,'commands':[],
-   'scope':'Changed native attention read and navigation authority TU against unchanged owning core/capture inputs; strict strong-symbol closure; native acceptance separate'}
+   'scope':'Changed epoch-bound native shell shortcut journal and navigation authority TU against unchanged owning core/capture inputs; strict strong-symbol closure; native acceptance separate'}
 def run(name,args):
  p=subprocess.run(args,capture_output=True,text=True,timeout=180)
  (OUT/(name+'.stdout')).write_text(p.stdout);(OUT/(name+'.stderr')).write_text(p.stderr)

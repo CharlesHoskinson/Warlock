@@ -1,0 +1,22 @@
+{
+  "checks": {
+    "FirstCurrentShortcutRoutes": true,
+    "DuplicateNeverReopens": true,
+    "OlderWatermarkIgnored": true,
+    "BlockedWatermarkConsumedWithoutRoute": true,
+    "MissingHistoryRefusedWithoutReplay": true,
+    "NavigationBurstChoosesLatestOverlay": true,
+    "BurstNeverReplays": true,
+    "NewBindingAdoptsBaselineWithoutHistoryReplay": true,
+    "ForeignBindingCannotRoute": true,
+    "UnknownRouteRefused": true,
+    "MalformedWatermarkRefused": true,
+    "RootOpensApplicationsFromNativeEvent": true,
+    "AppsCloseRestoresNamedControl": true,
+    "OldNativeEventCannotReopenAfterDismissal": true,
+    "SystemRetiresApplications": true,
+    "NotificationsRetireSystem": true,
+    "DetachedNativeEventInert": true,
+    "ShortcutRoutesCannotLaunchOrMutateWindows": true
+  }
+}

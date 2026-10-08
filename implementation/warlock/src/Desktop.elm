@@ -7,6 +7,7 @@ import Pins
 import Settings
 import Notifications
 import JumpList
+import Shortcuts
 import Files
 import SystemMenu
 import MenuBridge
@@ -36,6 +37,7 @@ type alias Model =
     , launch : Launch.Model
     , applications : Maybe Catalog.Snapshot
     , pins : Pins.Model
+    , shortcuts : Shortcuts.Model
     , jumpList : JumpList.Model
     , jumpEntry : Maybe String
     , jumpOpening : Bool
@@ -154,7 +156,7 @@ type Effect
 
 initial : Model
 initial =
-    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, jumpList = JumpList.initial, jumpEntry = Nothing, jumpOpening = False, jumpExpected = Nothing, jumpBack = False, files = Files.initial, filesOpen = False, filesOpening = False, filesExpected = Nothing, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
+    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, shortcuts = Shortcuts.initial, jumpList = JumpList.initial, jumpEntry = Nothing, jumpOpening = False, jumpExpected = Nothing, jumpBack = False, files = Files.initial, filesOpen = False, filesOpening = False, filesExpected = Nothing, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
 
 switcherOpen : Model -> Bool
 switcherOpen model = List.member (Switcher.phase model.switcher) [Switcher.Waiting,Switcher.Browsing]
@@ -329,6 +331,7 @@ windowBase message model =
         , switcherExpected = if disconnected || changed || windows.shell.phase==Shell.Exhausted then Nothing else model.switcherExpected
         , switcherHistory = if disconnected || changed || windows.shell.phase==Shell.Exhausted then Nothing else model.switcherHistory
         , pins = pins
+        , shortcuts = if disconnected || changed then Shortcuts.initial else model.shortcuts
         , jumpList = if disconnected || changed then JumpList.disconnect model.jumpList else model.jumpList
         , jumpEntry = if disconnected || changed || windows.shell.phase==Shell.Exhausted then Nothing else model.jumpEntry
         , jumpOpening = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.jumpOpening
@@ -605,6 +608,18 @@ update message model =
             in if next.windows.picker/=Nothing && next.windows.picker/=model.windows.picker then (retireSwitcher {next | jumpEntry=Nothing,jumpOpening=False,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,snap=Nothing,open=False,overview=False,expected=Nothing,menuOrigin=Nothing,returnFocus=Nothing},effects) else (synced,effects++commands)
         Incoming raw ->
             case D.decodeValue (D.field "kind" D.string) raw of
+                Ok "shell-shortcuts" ->
+                    case D.decodeValue Shortcuts.decoder raw of
+                        Err _ -> (model,[])
+                        Ok snapshot ->
+                            if model.windows.shell.phase==Shell.Detached || model.windows.shell.phase==Shell.Exhausted then (model,[]) else
+                            let (shortcuts,route,failure)=Shortcuts.receive model.windows.shell.binding snapshot model.shortcuts
+                                next={model | shortcuts=shortcuts,choiceNotice=failure |> Maybe.withDefault model.choiceNotice}
+                            in case (route,capture next) of
+                                (Just Shortcuts.Applications,Just stamp) -> update (OpenApplications stamp) next
+                                (Just Shortcuts.System,Just stamp) -> update (OpenSystemMenu stamp) next
+                                (Just Shortcuts.Notifications,Just stamp) -> update (OpenNotifications stamp) next
+                                _ -> (next,[])
                 Ok "switcher-journal" ->
                     let decoder=strict ["protocolVersion","kind","binding","requestId","chord"] (D.map4 (\_ binding request chord -> {binding=binding,request=request,chord=chord}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "chord" nativeChordDecoder))
                     in case D.decodeValue decoder raw of

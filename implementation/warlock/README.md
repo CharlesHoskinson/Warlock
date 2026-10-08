@@ -174,3 +174,27 @@ or active state. Actual native GTK attention, visible pixels, activation and key
 recipient checks pass in an isolated desktop; native accessibility consumers and
 independent ELM-UX-009 acceptance remain open. Use `--attention` with the protected
 component and native runners for this slice.
+
+The candidate's `native/shell-bindings.lua` adopts three recorded Omarchy
+keyboard routes: Super+Alt+Space opens Applications, Super+Escape opens System,
+and Super+Shift+Alt+Comma opens notification history. Load it with the matching
+Warlock authority and load user overrides afterwards. These source bindings
+have not been installed in the user's desktop configuration.
+
+The native callbacks publish fixed typed navigation events through a bounded
+64-event journal, scoped to its admitted live frontend. The broker strictly
+decodes the read-only journal; the shared immutable Elm root owns surface
+selection. Initial binding adoption skips history, duplicate/old events cannot
+reopen a dismissed surface, gaps require a fresh shortcut, and an accumulated
+navigation burst opens its latest surface. Locked/exclusive-input sessions
+cannot publish routes. Navigation never adds window or application effect
+authority.
+
+From Applications, Escape returns keyboard focus to its current taskbar control.
+Arrow keys/Home/End reach the other taskbar controls; Enter/Space, Tab, Escape
+and Menu/Shift-F10 operate the existing migrated surfaces. Focused verification
+uses `--keyboard-shell` with the protected component and native runners. The
+compiled reducer/model checks establish event admission and no-replay behavior;
+physical surface journeys and independent ELM-UX-023 acceptance are separately
+recorded in `qa/evidence/keyboard-shell/manifest.json`. Omarchy's remaining
+commands/keybindings and applicable native accessibility gates stay open.

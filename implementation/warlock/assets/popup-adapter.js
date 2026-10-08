@@ -70,7 +70,12 @@ app.ports.actions.subscribe(post);
 // journal and cannot attest to input arriving before native popup readiness.
 let switcherTerminal=null;
 document.addEventListener('keydown',event=>{
-  const node=event.target?.closest?.('.surface-popup');
+  // Saving or refreshing can disable the focused control and move DOM focus
+  // to the body. Escape still belongs to this document's current popup.
+  const bodyEscape=event.key==='Escape' &&
+    (event.target===document.body || event.target===document.documentElement);
+  const node=event.target?.closest?.('.surface-popup') ||
+    (bodyEscape ? document.querySelector?.('.surface-popup') : null);
   const dismissal=event.key==='Escape' && ['switcher','overview','picker','snap','settings', 'notifications','system','files','jump'].includes(node?.dataset.mode);
   if(!node || (node.dataset.mode!=='switcher' && !dismissal) || event.isComposing ||
      event.defaultPrevented || event.ctrlKey || event.metaKey) return;

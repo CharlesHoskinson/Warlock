@@ -4,6 +4,7 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
 lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
 """
 import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
+KEYBOARD=sys.argv[1:]==['--keyboard-shell']
 ATTENTION=sys.argv[1:]==['--attention']
 JUMP=sys.argv[1:]==['--jump-lists']
 FILES=sys.argv[1:]==['--files']
@@ -23,7 +24,7 @@ PRE_READY_RETIRE=sys.argv[1:]==['--switcher-pre-ready-retirement']
 MEMBERSHIP=sys.argv[1:]==['--switcher-membership'] or PRE_READY_RETIRE
 CHORD=sys.argv[1:]==['--switcher-chord'] or MEMBERSHIP
 SWITCHER=sys.argv[1:]==['--switcher']
-NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'] or DENSEPICKER;PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS or PINMENUS or REFLOW or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD
+NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'] or DENSEPICKER or KEYBOARD;PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS or PINMENUS or REFLOW or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or KEYBOARD;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143';RUNTIME=REPO/'implementation/warlock-client-provider-native-v204'
 sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
 spec=importlib.util.spec_from_file_location('feedback_private_host',RUNTIME/'candidate_host.py');host=importlib.util.module_from_spec(spec);spec.loader.exec_module(host)
@@ -61,7 +62,7 @@ else:
 for row in pair.values():assert sha(row['path'])==row['sha256']
 assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
 subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
-OUT=ROOT/'qa/runs'/(('native-attention-' if ATTENTION else 'native-jump-lists-' if JUMP else 'native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+OUT=ROOT/'qa/runs'/(('native-keyboard-shell-' if KEYBOARD else 'native-attention-' if ATTENTION else 'native-jump-lists-' if JUMP else 'native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
 OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
 focus_host=None
 if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
@@ -113,6 +114,7 @@ if focus_host:report['focusHostAdaptation']=focus_host
 if retirement_fixture:report['retirementFixture']=retirement_fixture
 if primary_fixture:report['primaryFixture']=primary_fixture
 if SEARCH:report.update(requirements=['ELM-UI-005','ELM-UX-029'],scenarios=['search-no-match','search-race','search-refused','launcher-refused'],scope='Actual current query and private catalog, native typing/Enter refusal and no duplicate launch; AT/IME and popup physical presentation acceptance remain pending',popupPresentationAccepted=False)
+if KEYBOARD:report.update(requirements=['ELM-UX-023'],scenarios=['ux-023','keyboard-launcher','keyboard-taskbar-groups','keyboard-switcher','keyboard-task-view','keyboard-snap-chooser','keyboard-menus','keyboard-settings','keyboard-notifications','keyboard-jump-lists'],scope='Original physical keyboard-only migrated-surface journey; no pointer helper, native focus/effect/readback. Applicable AT and independent original acceptance remain separate.',nativeKeyboardShellObserved=False,keyboardSurfaces=[])
 if ATTENTION:report.update(requirements=['ELM-UX-009'],scenarios=['ux-009'],scope='Actual GTK activation request while inactive, native bound/revisioned urgency read, distinct visible taskbar indicators and accessible DOM state. Actual AT and independent acceptance remain open.',nativeAttentionObserved=False)
 if JUMP:report.update(requirements=['ELM-UX-010'],scenarios=['ux-010','jump-list-recent-identity'],scope='Physical private native jump list: catalog-declared actions, exact application-bound local XBEL file, actual GIO argv; foreign entries absent. Native negative admission is separate adapter evidence, AT and independent acceptance remain open.',nativeJumpListsObserved=False)
 if FILES:report.update(requirements=['ELM-UX-033'],scenarios=['ux-033'],scope='Actual installed Files explorer in private home/runtime; physical Elm collection choice, exact native instance reuse, location readback, no unchanged file operation source edits. Independent/AT and other-workspace summon acceptance remain open.',nativeFilesObserved=False)
@@ -140,7 +142,8 @@ hl.monitor({output="WAYLAND-1",mode="800x600@60",position="0x0",scale=1})
 '''
 if SMALL:LUA=LUA.replace(b'800x600',b'480x360' if DENSEMENU else b'480x600')
 if ATTENTION:LUA+=b'hl.config({misc={focus_on_activate=false}})\n'
-if CHORD:LUA+=(ROOT/'native/switcher-bindings.lua').read_bytes()
+if CHORD or KEYBOARD:LUA+=(ROOT/'native/switcher-bindings.lua').read_bytes()
+if KEYBOARD:LUA+=(ROOT/'native/shell-bindings.lua').read_bytes()
 def check(name,condition,**data):
  report['checks'].append({'name':name,'passed':bool(condition),**data});assert condition,name
 def wait(fn,seconds=6):
@@ -190,7 +193,7 @@ try:
     report['catalogFixture']={'backend':str(backend_fixture),'backendSHA256':sha(backend_fixture),'roots':roots,'originalConfigUnchanged':True}
     desktop=catalog_root/'warlock-files.desktop';desktop.write_text('[Desktop Entry]\nType=Application\nName=Files\nGenericName=File manager\nKeywords=folders;documents;\nExec=/usr/bin/true\n')
     (catalog_root/'warlock-editor.desktop').write_text('[Desktop Entry]\nType=Application\nName=Editor\nGenericName=Text editor\nExec=/usr/bin/true\n')
-   if JUMP:
+   if JUMP or KEYBOARD:
     import gi;gi.require_version('GLib','2.0');from gi.repository import GLib
     jump_events=OUTPUT/'jump-action-events.jsonl';jump_recorder=OUTPUT/'jump-action-recorder.py'
     jump_recorder.write_text('import json,os,sys\nwith open(sys.argv[1],"a") as stream:stream.write(json.dumps({"argv":sys.argv[2:],"pid":os.getpid()})+"\\n")\n')
@@ -373,7 +376,7 @@ raise SystemExit(daemon.run())
    def click(item):
     check('PointerTargetWithinActualViewport',item['visible'],item=item);x,y=map(round,item['point']);helper([str(POINTER),'800','600'],f'move {x} {y}\nsleep 100\nbutton 272 1\nsleep 50\nbutton 272 0\nsleep 100\n')
    def facts():return client.scene_facts('441')
-   initial=None if TASKVIEW or SWITCHER or CHORD or FILES or JUMP else wait(lambda:group('Activate' if PRIMARY else 'Choose a window from' if FOCUS else 'Minimize'))
+   initial=None if TASKVIEW or SWITCHER or CHORD or FILES or JUMP or KEYBOARD else wait(lambda:group('Activate' if PRIMARY else 'Choose a window from' if FOCUS else 'Minimize'))
    target=next(w['incarnation'] for w in client.snapshot('442')['windows'] if w['label']==('ELM-ACTIVATION-PEER' if PRIMARY else 'ELM-AUTHORITY-FIXTURE'))
    initial_workspace=next(w['workspace'] for w in facts()['facts']['windows'] if w['incarnation']==target)
    def current_window():return next(w for w in facts()['facts']['windows'] if w['incarnation']==target)
@@ -505,6 +508,7 @@ raise SystemExit(daemon.run())
      # included the compositor's warning overlay above a black reopened popup.
      for button in body['buttons']+(body.get('content',[]) if NOTIFICATIONS or SYSTEM or FILES or JUMP else []):
       selected=button['id']==body['focus'] if SETTINGS else button['id']==body['focus'] if SNAP and (projection() or {}).get('mode')=='snap' else button['accessibleName'] in ['Minimize','Close window actions','Maximize'] if PINMENUS else button['accessibleName'].startswith(('Activate ELM-','Restore ELM-')) if SWITCHER or CHORD else (button['accessibleName'].startswith('Browse workspace ') or (NAV and button['accessibleName'].startswith('Restore ELM-ACTIVATION-PEER'))) if TASKVIEW else button['accessibleName'] in ['Refresh applications','Open Files']
+      if KEYBOARD:selected=button['id']==body['focus']
       if JUMP:selected=button.get("identity","")=="jump:title:state" or button["id"]==body["focus"]
       if FILES:selected=button.get('identity','') in ['files:location:state','files:collection:images'] or button['id']==body['focus']
       if SYSTEM:selected=button.get('identity','').endswith(':state') or button['id']==body['focus']
@@ -533,7 +537,114 @@ raise SystemExit(daemon.run())
       key(15)
      check('KeyboardReaches'+label,popup_body()['focus']==button['id'],body=popup_body())
      key(code)
-    if DENSE:
+    if KEYBOARD:
+     # A persistent real virtual keyboard keeps modifier ownership across
+     # observations. Every key retains the original 50ms/100ms cadence.
+     fifo=OUTPUT/'keyboard-shell.fifo';os.mkfifo(fifo,0o600);chord_writer=os.open(fifo,os.O_RDWR|os.O_NOFOLLOW)
+     wrapper=OUTPUT/'keyboard-shell-input.py';wrapper.write_text('import os,stat,sys\nfd=os.open(sys.argv[1],os.O_RDONLY|os.O_NOFOLLOW)\nst=os.fstat(fd)\nassert stat.S_ISFIFO(st.st_mode) and st.st_uid==os.getuid() and stat.S_IMODE(st.st_mode)==0o600\nos.dup2(fd,0);os.close(fd)\nos.execv(sys.argv[2],[sys.argv[2]])\n')
+     chord_keyboard=s.host.launch('chord-keyboard',['/usr/bin/python3','-B',str(wrapper),str(fifo),str(keyboard)],env=s.env)
+     report['persistentInput']={'wrapper':str(wrapper),'sha256':sha(wrapper),'commands':[]}
+     def physical(commands):
+      assert chord_keyboard.poll() is None
+      path=OUTPUT/'chord-keyboard.log';before=path.read_text().splitlines().count('ready')
+      raw=(commands+'\nsync\n').encode();assert len(raw)<=4096 and os.write(chord_writer,raw)==len(raw)
+      report['persistentInput']['commands'].append(commands);wait(lambda:path.read_text().splitlines().count('ready')>before)
+     def key(code):physical(f'key {code} 1\nsleep 50\nkey {code} 0\nsleep 100')
+     def chord(modifiers,code):physical(''.join(f'key {mod} 1\n' for mod in modifiers)+f'key {code} 1\nsleep 50\nkey {code} 0\n'+''.join(f'key {mod} 0\n' for mod in reversed(modifiers))+'sleep 100')
+     def body_for(mode):
+      body=popup_body();p=projection()
+      return body if body and p and p.get('mode')==mode and p['publication']==body['publication'] else None
+     def closed():return (projection() or {}).get('mode')=='closed' and (projection() or {}).get('phase')=='Coherent'
+     def frames(kind):return [json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('backend-frame: ') and json.loads(line.split(': ',1)[1]).get('kind')==kind]
+     def events():return [json.loads(line) for line in jump_events.read_text().splitlines()] if jump_events.exists() else []
+     def open_apps():
+      chord([125,56],57)
+      return wait(lambda:(body:=body_for('applications')) and body['focus']=='launcher-search' and any(b['accessibleName']=='Actions for A Warlock Editor' and not b['disabled'] for b in body['buttons']) and body)
+     def bar_focus():
+      body=bar_body();p=projection()
+      return body if body and body.get('documentFocused') and p and closed() and body['publication']==p['publication'] and any(b['id']==body['focus'] and not b['disabled'] for b in body['buttons']) else None
+     def enter_bar():
+      open_apps();key(1);return wait(bar_focus)
+     def bar_route(label):
+      enter_bar();key(102)
+      button=wait(lambda:next((b for b in (bar_focus() or {}).get('buttons',[]) if b['accessibleName']==label and not b['disabled']),None))
+      for _ in range(len(bar_body()['buttons'])+1):
+       if (bar_focus() or {}).get('focus')==button['id']:break
+       key(106)
+      check('KeyboardBarRoute'+label,(bar_focus() or {}).get('focus')==button['id'],body=bar_body());key(28)
+     def reached(name,details):report['keyboardSurfaces'].append({'surface':name,'passed':True,**details})
+     # Establish the original attached, observed surface before user input.
+     wait(lambda:closed() and bool(frames('shell-shortcuts')))
+     # Launcher: current catalog query and one real GIO launch.
+     open_apps();key(30);wait(lambda:field_value()=='a');before=len(launches());key(28)
+     wait(lambda:closed() and len(events())==1 and len(frames('application-launch-outcome'))>0)
+     check('KeyboardLauncherDispatchesOneNativeCatalogEntry',len(launches())==before+1 and events()[0]['argv']==['RECENT'],requests=launches(),events=events())
+     reached('launcher',{'events':events(),'outcome':frames('application-launch-outcome')[-1]})
+     # Jump lists: native declared action once, then keyboard dismissal.
+     open_apps();keyboard_button('Actions for A Warlock Editor',28);wait(lambda:body_for('jump'))
+     keyboard_button('New document',28);wait(lambda:closed() and len(events())==2)
+     check('KeyboardJumpListDispatchesExactlyOnce',events()[-1]['argv']==['ALPHA'] and len(requests('jump-list-effect'))==1,events=events())
+     open_apps();keyboard_button('Actions for A Warlock Editor',28);wait(lambda:body_for('jump'));key(1);wait(lambda:body_for('applications'));key(1);wait(closed)
+     reached('jump-lists',{'events':events(),'dismissed':True})
+     # Recorded Omarchy bindings enter notifications and the system menu.
+     chord([125,42,56],51);wait(lambda:body_for('notifications'));before=len(requests('notification-request'))
+     keyboard_button('Refresh notifications',28);wait(lambda:len(requests('notification-request'))==before+1 and len(frames('notification-snapshot'))>=2)
+     key(1);wait(closed);reached('notifications',{'snapshots':len(frames('notification-snapshot')),'dismissed':True})
+     chord([125],1);wait(lambda:body_for('system'));before=len(requests('system-menu-request'))
+     keyboard_button('Refresh system state',28);wait(lambda:len(requests('system-menu-request'))==before+1 and len(frames('system-menu-snapshot'))>=2)
+     key(1);wait(closed);reached('menus',{'systemSnapshots':len(frames('system-menu-snapshot')),'dismissed':True})
+     # Settings: current native Saved receipt/readback without pointer entry.
+     bar_route('Open settings');wait(lambda:body_for('settings'));keyboard_button('Dawn theme',28);keyboard_button('Save settings',28)
+     saved=wait(lambda:next((f for f in frames('shell-settings-outcome') if f.get('status')=='Saved'),None))
+     check('KeyboardSettingsNativeSaved',saved['snapshot']['values']=={'theme':'dawn','textScale':100},receipt=saved)
+     wait(lambda:(body:=body_for('settings')) and body['theme']=='dawn' and 'Settings saved.' in body['text'] and ('surface-presentation-applied: publication='+body['publication']+' lease='+body['lease']) in text().splitlines())
+     key(1);wait(closed);reached('settings',{'receipt':saved,'dismissed':True})
+     # Taskbar groups: exact selected incarnation, committed activation and input.
+     enter_bar();key(102);wait(lambda:(body:=bar_focus()) and any(b['id']==body['focus'] and b['identity'].startswith('bar:group:') for b in body['buttons']));key(28);picker=wait(lambda:(projection() or {}).get('picker'));wait(lambda:body_for('picker'))
+     check('KeyboardGroupOpensWithoutDuplicateLaunch',len(picker['selections'])==2 and len(launches())==1,picker=picker)
+     selected=next(row for row in picker['selections'] if row['title']=='ELM-ACTIVATION-PEER')
+     label=next(b['accessibleName'] for b in popup_body()['buttons'] if 'ELM-ACTIVATION-PEER' in b['accessibleName'] and not b['disabled'])
+     before=len(journal());keyboard_button(label,28);wait(lambda:closed() and len(journal())==before+1 and facts()['facts']['focused']==selected['incarnation'])
+     event_path=control.with_suffix('.events.jsonl');before_input=len(event_path.read_text().splitlines());key(30)
+     delivered=[json.loads(line) for line in event_path.read_text().splitlines()[before_input:]]
+     check('KeyboardChosenGroupMemberReceivesInput',any(e['kind']=='key' and e['keyval']==97 and e['window']==selected['title'] for e in delivered),events=delivered)
+     enter_bar();key(102);wait(lambda:(body:=bar_focus()) and any(b['id']==body['focus'] and b['identity'].startswith('bar:group:') for b in body['buttons']));key(28);wait(lambda:body_for('picker'));key(1);wait(closed)
+     reached('taskbar-groups',{'selected':selected,'events':delivered,'dismissed':True})
+     # Window menu and snap chooser: select a current native family with Shift-F10.
+     enter_bar();key(102);wait(lambda:(body:=bar_focus()) and any(b['id']==body['focus'] and b['identity'].startswith('bar:group:') for b in body['buttons']));key(28);wait(lambda:body_for('picker'))
+     button=next(b for b in popup_body()['buttons'] if 'ELM-AUTHORITY-FIXTURE' in b['accessibleName'] and not b['disabled'])
+     for _ in range(len(popup_body()['buttons'])+2):
+      if popup_body()['focus']==button['id']:break
+      key(15)
+     check('KeyboardMenuTargetIsCurrentFamily',popup_body()['focus']==button['id']);chord([42],68);wait(lambda:body_for('menu'))
+     keyboard_button('Open snapping',28);wait(lambda:body_for('snap'))
+     label=next(b['accessibleName'] for b in popup_body()['buttons'] if b['identity']=='snap:region:right-half');keyboard_button(label,28)
+     before_geometry=current_window()['geometry'];keyboard_button('Snap to right half',28)
+     receipt=wait(lambda:next((f for f in frames('effect-outcome') if f.get('status')=='Committed' and f.get('intent',{}).get('operation')=='snap'),None))
+     wait(lambda:closed() and current_window()['geometry']!=before_geometry)
+     check('KeyboardSnapHasNativeCommittedPlacement',receipt['intent']['incarnation']==target and current_window()['geometry']!=before_geometry,receipt=receipt,geometry=current_window()['geometry'])
+     reached('snap-chooser',{'receipt':receipt,'geometry':current_window()['geometry'],'dismissed':True})
+     # Task View: browse the observed workspace, activate its exact member, dismiss.
+     bar_route('Open Task View');wait(lambda:body_for('overview'))
+     workspace=next(b['accessibleName'] for b in popup_body()['buttons'] if b['accessibleName'].startswith('Browse workspace '));keyboard_button(workspace,28)
+     label=next(b['accessibleName'] for b in popup_body()['buttons'] if 'ELM-ACTIVATION-PEER on workspace' in b['accessibleName'] and not b['disabled'])
+     before=len(journal());keyboard_button(label,28);wait(lambda:closed() and len(journal())==before+1 and facts()['facts']['focused']==selected['incarnation'])
+     bar_route('Open Task View');wait(lambda:body_for('overview'));key(1);wait(closed)
+     reached('task-view',{'selected':selected,'dismissed':True})
+     # Global Alt-Tab keeps Alt held through two actual native observations.
+     before=len(journal());physical('key 56 1\nkey 15 1\nsleep 50\nkey 15 0\nsleep 100');wait(lambda:body_for('switcher'))
+     first=next(b['identity'] for b in popup_body()['buttons'] if b['id']==popup_body()['focus'])
+     key(15);wait(lambda:(body:=body_for('switcher')) and any(b['id']==body['focus'] and b['identity']!=first for b in body['buttons']))
+     physical('key 56 0\nsleep 100');wait(lambda:closed() and len(journal())==before+1)
+     physical('key 56 1\nkey 15 1\nsleep 50\nkey 15 0\nsleep 100');wait(lambda:body_for('switcher'));key(1);physical('key 56 0\nsleep 100');wait(closed)
+     reached('switcher',{'request':journal()[-1],'dismissed':True})
+     open_apps();popup_capture('keyboard-shell-finished');key(1);wait(closed)
+     pointer_events=[json.loads(line) for line in event_path.read_text().splitlines() if json.loads(line)['kind'] in ['pressed','released']]
+     check('OriginalJourneyUsesZeroInjectedPointerEvents',not pointer_events and not any(str(POINTER) in row['command'] for row in report['helpers']),events=pointer_events)
+     report['pointerEventsInjected']=0
+     check('OriginalAllNineKeyboardSurfacesCompleted',len(report['keyboardSurfaces'])==9 and {row['surface'] for row in report['keyboardSurfaces']}=={'launcher','taskbar-groups','switcher','task-view','snap-chooser','menus','settings','notifications','jump-lists'},surfaces=report['keyboardSurfaces'])
+     report['nativeKeyboardShellObserved']=True
+    elif DENSE:
      def dense_body():
       body=bar_body();p=projection()
       return body if body and p and p['phase']=='Coherent' and p['mode']=='closed' and body['publication']==p['publication'] and len([b for b in body['buttons'] if b.get('identity','').startswith('bar:pin:')])==len(dense_ids) else None
